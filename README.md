@@ -1,6 +1,6 @@
-# Erdae
+# ZIN
 
-Permanent local Hearts of Iron IV map mod. This repository is local only and must not be pushed or published.
+Permanent local Hearts of Iron IV map mod for the world of **Erdae**. This repository is local only and must not be pushed or published.
 
 ## Current status
 
@@ -18,7 +18,7 @@ Reviewed names will be recorded in [docs/name_table.md](docs/name_table.md). Ref
 
 Use the standard `map/`, `history/`, `common/`, and `localisation/english/` directories. Do not add events, focus trees, or decisions as part of the map-only scaffold.
 
-The adjacent launcher descriptor is `../erdae.mod`. Creation of these descriptors does not enable the mod in the launcher or change game settings. Offline generation does not launch the game. User-authorized live acceptance uses the isolated Linux test game only; the Windows launcher playset and settings remain untouched.
+The adjacent launcher descriptor is `../zin.mod`. Creation of these descriptors does not enable the mod in the launcher or change game settings. Offline generation does not launch the game. User-authorized live acceptance uses the isolated Linux test game only; the Windows launcher playset and settings remain untouched.
 
 ## Agentic setup
 

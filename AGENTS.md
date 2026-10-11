@@ -1,4 +1,4 @@
-# Erdae project instructions
+# ZIN project instructions
 
 This is a permanent, local-only map mod repository. Never push or publish this repository.
 
