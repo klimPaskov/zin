@@ -1,5 +1,5 @@
 version="0.1.0"
-tags={ "Alternative History" }
+tags={ "Alternative History" "Total Conversion" }
 name="ZIN"
 replace_path="history/states"
 replace_path="history/countries"
