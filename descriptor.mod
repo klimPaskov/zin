@@ -1,0 +1,9 @@
+version="0.1.0"
+tags={ "Alternative History" }
+name="Erdae"
+replace_path="history/states"
+replace_path="history/countries"
+replace_path="history/units"
+replace_path="map/strategicregions"
+replace_path="map/supplyareas"
+replace_path="common/bookmarks"

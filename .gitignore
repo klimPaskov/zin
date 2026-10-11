@@ -1,0 +1,12 @@
+# Local transient evidence and logs
+*.log
+.tmp/
+.cache/
+artifacts/private/
+
+# Private original reference art; generated mod assets are tracked
+docs/reference/originals/
+
+# Editor and OS metadata
+.DS_Store
+Thumbs.db
