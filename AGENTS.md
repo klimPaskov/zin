@@ -6,7 +6,7 @@ Preserve the supplied reference geography. East Earth is a naming correction, no
 
 Keep this work map-only: map assets, states, countries, strategic regions, supply areas, bookmarks, localisation, and documentation. Do not add events, focus trees, or decisions without a separate request.
 
-Never launch, control, or capture Hearts of Iron IV. Use offline generated renders and static validation. Do not enable the mod or edit launcher/game configuration.
+The MCP product performs offline generation and validation only. The author explicitly authorizes isolated Linux live acceptance under the shared WSL game lock; never control the Windows game or modify its launcher playset or settings. Keep the production mod disabled in Windows until the author enables it.
 
 Keep generated map assets trackable. Keep original private reference art under `docs/reference/originals/`, which is ignored. Record source provenance, seed, exact generator invocation, unsupported constructs, and validation limitations honestly.
 

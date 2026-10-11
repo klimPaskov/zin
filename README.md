@@ -18,4 +18,8 @@ Reviewed names will be recorded in [docs/name_table.md](docs/name_table.md). Ref
 
 Use the standard `map/`, `history/`, `common/`, and `localisation/english/` directories. Do not add events, focus trees, or decisions as part of the map-only scaffold.
 
-The adjacent launcher descriptor is `../erdae.mod`. Creation of these descriptors does not enable the mod in the launcher or change game settings. Never launch or automate Hearts of Iron IV as part of offline map generation or validation.
+The adjacent launcher descriptor is `../erdae.mod`. Creation of these descriptors does not enable the mod in the launcher or change game settings. Offline generation does not launch the game. User-authorized live acceptance uses the isolated Linux test game only; the Windows launcher playset and settings remain untouched.
+
+## Agentic setup
+
+The checked HOI4 Mod Setup build has no supported headless project-install command. Its headless end-to-end harness uses synthetic fixtures and does not perform a native installation. Run the setup app on this folder next to install its development workflow; no desktop application or global client settings were changed during map preparation.
