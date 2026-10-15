@@ -20,6 +20,8 @@ Use the request with hoi4.map_rewrite. Set preview to true first to inspect the 
 
 ## Local use
 
+The generator is released as [HOI4 Agent Tools 4.1.0](https://github.com/klimPaskov/hoi4-agent-tools/releases/tag/v4.1.0). The configured runtime is pinned to that version and passed a fresh read-only lookup plus full-world preview with the default Node heap. Existing MCP clients should reconnect to load the new tool schema.
+
 The adjacent zin.mod descriptor is synchronized. The Windows launcher playset and game settings were not changed; enable ZIN yourself when ready. Use a new campaign for a regenerated world.
 
 The political setup is provisional under the owner's instruction. East Earth is a naming correction, not a relocation. The project remains map-only: no new authored events, focus trees or decisions. See the existing [name table](docs/name_table.md) for uncertain readings.

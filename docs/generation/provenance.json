@@ -4,7 +4,7 @@
   "generator": {
     "package": "hoi4-agent-tools",
     "version": "4.1.0",
-    "revision": "abbf59a22ac41d5646711779c61915a0a1af6459"
+    "revision": "0a4ebb177178422314c277da0756c884e3f2ed0d"
   },
   "original": {
     "file": "docs/reference/originals/Erdae.png",
@@ -83,5 +83,49 @@
     "Native startup reports unused inherited vanilla decision/focus/idea references; count was stable through 37 campaign days.",
     "Reload succeeds but still adds 104 empty-icon diagnostics, including after the explicit unknown-leader portrait change.",
     "Only the isolated Linux game was tested; Windows launcher remains disabled and under owner control."
-  ]
+  ],
+  "release": {
+    "version": "4.1.0",
+    "tag": "v4.1.0",
+    "commit": "0a4ebb177178422314c277da0756c884e3f2ed0d",
+    "url": "https://github.com/klimPaskov/hoi4-agent-tools/releases/tag/v4.1.0",
+    "releaseId": 414131548,
+    "immutable": true,
+    "npmIntegrity": "sha512-Y4cVps9QOLSeuadpd7wzS9lQHiBXEFYPwgNm9fX85fcs85TgmaRnHB0wNZhn/irePDjdJVXahJ2Hs40M7lncMA==",
+    "pr": 31,
+    "prCi": 38763895972,
+    "mainCi": 38770807908,
+    "releaseRun": 38777346554,
+    "publicationVerified": true,
+    "publicInstallVerified": true
+  },
+  "installedRuntime": {
+    "server": {
+      "name": "hoi4-agent-tools",
+      "version": "4.1.0",
+      "websiteUrl": "https://github.com/klimPaskov/hoi4-agent-tools"
+    },
+    "entry": "C:/Users/klimp/AppData/Local/hoi4-agent-tools/runtime-v401/node_modules/hoi4-agent-tools/dist/bin/stdio.js",
+    "defaultNodeHeap": true,
+    "readOnly": true,
+    "milliseconds": 60306,
+    "lookupCode": "MAP_LOOKUP_COMPLETED",
+    "preview": {
+      "countries": 13,
+      "height": 3072,
+      "offlineRepresentation": true,
+      "provinces": 7406,
+      "regions": 359,
+      "states": 814,
+      "warningCount": 781,
+      "width": 4096
+    },
+    "verification": "Read-only lookup and full image-world preview; no heap override"
+  },
+  "repository": {
+    "localOnly": true,
+    "remoteConfigured": false,
+    "generatedByteHashesPreserved": true,
+    "verifiedGeneratedFiles": 1720
+  }
 }
