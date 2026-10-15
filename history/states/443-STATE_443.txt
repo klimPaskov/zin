@@ -1,0 +1,18 @@
+state = {
+	id = 443
+	name = "STATE_443"
+	manpower = 17000
+	state_category = town
+	history = {
+		owner = Z11
+		add_core_of = Z11
+		victory_points = { 6765 5 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			6765 = { naval_base = 1 }
+		}
+	}
+	provinces = { 6765 }
+}

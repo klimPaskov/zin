@@ -1,0 +1,19 @@
+state = {
+	id = 421
+	name = "STATE_421"
+	manpower = 36000
+	state_category = large_town
+	history = {
+		owner = Z04
+		add_core_of = Z04
+		victory_points = { 3261 6 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			dockyard = 1
+			3261 = { naval_base = 1 }
+		}
+	}
+	provinces = { 3261 }
+}

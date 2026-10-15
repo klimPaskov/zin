@@ -1,0 +1,20 @@
+state = {
+	id = 317
+	name = "STATE_317"
+	manpower = 86000
+	state_category = pastoral
+	resources = {
+		steel = 14
+		tungsten = 3
+	}
+	history = {
+		owner = Z12
+		add_core_of = Z12
+		victory_points = { 7055 2 }
+		buildings = {
+			infrastructure = 2
+			7055 = { naval_base = 1 }
+		}
+	}
+	provinces = { 7013 7055 7069 7094 7116 7130 7152 7192 }
+}

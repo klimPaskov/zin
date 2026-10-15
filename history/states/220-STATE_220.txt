@@ -1,0 +1,22 @@
+state = {
+	id = 220
+	name = "STATE_220"
+	manpower = 329000
+	state_category = pastoral
+	resources = {
+		oil = 4
+		steel = 14
+		tungsten = 4
+	}
+	history = {
+		owner = Z08
+		add_core_of = Z08
+		victory_points = { 5771 2 }
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			5612 = { naval_base = 1 }
+		}
+	}
+	provinces = { 5612 5640 5643 5646 5669 5710 5771 5890 5965 }
+}

@@ -1,0 +1,20 @@
+state = {
+	id = 416
+	name = "STATE_416"
+	manpower = 35000
+	state_category = pastoral
+	resources = {
+		steel = 12
+		tungsten = 2
+	}
+	history = {
+		owner = Z05
+		add_core_of = Z05
+		victory_points = { 1712 2 }
+		buildings = {
+			infrastructure = 2
+			1712 = { naval_base = 1 }
+		}
+	}
+	provinces = { 1703 1712 1760 1814 1829 }
+}

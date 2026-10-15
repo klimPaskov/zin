@@ -1,0 +1,21 @@
+state = {
+	id = 23
+	name = "STATE_23"
+	manpower = 580000
+	state_category = city
+	resources = {
+		aluminium = 2
+		steel = 5
+		tungsten = 2
+	}
+	history = {
+		owner = Z03
+		add_core_of = Z03
+		victory_points = { 1580 8 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+		}
+	}
+	provinces = { 1492 1505 1563 1580 }
+}

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "generator": {
+    "package": "hoi4-agent-tools",
+    "version": "4.1.0",
+    "revision": "abbf59a22ac41d5646711779c61915a0a1af6459"
+  },
+  "original": {
+    "file": "docs/reference/originals/Erdae.png",
+    "width": 17520,
+    "height": 12720,
+    "bytes": 447024071,
+    "sha256": "37ef59399903bc8217dbc527e26158c06a133eace0340a5b95e233c1cadc2ecf",
+    "unchanged": true
+  },
+  "cleaned": {
+    "file": "docs/reference/cleaned/Erdae-clean-v1.png",
+    "width": 1472,
+    "height": 1069,
+    "sha256": "fd4c922db3e16849139ce99de5bedc6527365ce1294de2977967531c9117ed13",
+    "method": "Image edit removing handwritten text, ruling lines, sheet joins and paper texture; visually compared with original. Small outlines are reconstructed, not pixel-identical to the artwork."
+  },
+  "generation": {
+    "tool": "hoi4.map_rewrite",
+    "request": "request.json",
+    "seed": 73,
+    "width": 4096,
+    "height": 3072,
+    "lastWriteMilliseconds": 87237,
+    "jobWorkerMaxHeapMiB": 8192,
+    "jobDeadlineSeconds": 1800
+  },
+  "counts": {
+    "countries": 13,
+    "provinces": 7406,
+    "land": 6444,
+    "sea": 785,
+    "lakes": 177,
+    "states": 814,
+    "strategicRegions": 359,
+    "rivers": 64,
+    "victoryPointSettlements": 817,
+    "ports": 292,
+    "supplyHubs": 814,
+    "railwayRecords": 544
+  },
+  "review": {
+    "total": 711,
+    "confirmedInBounds": 464,
+    "uncertain": 228,
+    "outsideMosaic": 32,
+    "explicitCityAndCapitalAnchors": 19
+  },
+  "nativeAcceptance": {
+    "engine": "HOI4 1.19.3.0c01a",
+    "environment": "Isolated Ubuntu-24.04 / Xvfb / llvmpipe",
+    "country": "Z08",
+    "start": "1936.1.1.12",
+    "savedAndReloaded": "1936.2.7.1",
+    "save": "Z08_1936_02_07_01.hoi4",
+    "unitMove": {
+      "fromProvince": 5798,
+      "toProvince": 5860,
+      "divisions": 2
+    },
+    "supplyVerified": true,
+    "windowsGameUsed": false,
+    "windowsPlaysetChanged": false
+  },
+  "finalFollowup": {
+    "change": "Explicit installed unknown-leader portrait",
+    "save": "Z08_1936_01_01_12.hoi4",
+    "reloadPassed": true,
+    "startupCounter": 1961,
+    "postReloadCounter": 2065,
+    "remainingEmptyIconMessages": 104,
+    "gameStoppedAndLeaseReleased": true
+  },
+  "limitations": [
+    "Provisional politics, boundaries, population, industry, resources and capital settlements; no authored campaign.",
+    "710 one-pixel corridor and 59 enclave/hole review findings remain; no undersized-province or blocking offline findings.",
+    "Native startup reports unused inherited vanilla decision/focus/idea references; count was stable through 37 campaign days.",
+    "Reload succeeds but still adds 104 empty-icon diagnostics, including after the explicit unknown-leader portrait change.",
+    "Only the isolated Linux game was tested; Windows launcher remains disabled and under owner control."
+  ]
+}

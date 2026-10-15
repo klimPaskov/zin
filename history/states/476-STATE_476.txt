@@ -1,0 +1,22 @@
+state = {
+	id = 476
+	name = "STATE_476"
+	manpower = 555000
+	state_category = large_town
+	resources = {
+		steel = 6
+		tungsten = 3
+	}
+	history = {
+		owner = Z01
+		add_core_of = Z01
+		victory_points = { 260 6 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			dockyard = 1
+			221 = { naval_base = 1 }
+		}
+	}
+	provinces = { 221 260 334 376 }
+}

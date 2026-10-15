@@ -1,0 +1,21 @@
+state = {
+	id = 331
+	name = "STATE_331"
+	manpower = 31000
+	state_category = rural
+	resources = {
+		oil = 9
+	}
+	history = {
+		owner = Z04
+		add_core_of = Z04
+		victory_points = { 1872 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			1872 = { naval_base = 1 }
+		}
+	}
+	provinces = { 1860 1861 1872 }
+}

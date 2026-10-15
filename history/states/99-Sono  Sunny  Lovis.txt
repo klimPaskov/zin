@@ -1,0 +1,21 @@
+state = {
+	id = 99
+	name = "STATE_99"
+	manpower = 654000
+	state_category = rural
+	resources = {
+		aluminium = 2
+		oil = 16
+	}
+	history = {
+		owner = Z11
+		add_core_of = Z11
+		victory_points = { 7155 4 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			7155 = { naval_base = 1 }
+		}
+	}
+	provinces = { 7000 7001 7007 7011 7072 7088 7101 7114 7155 7179 }
+}

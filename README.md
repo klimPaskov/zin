@@ -1,25 +1,25 @@
 # ZIN
 
-Permanent local Hearts of Iron IV map mod for the world of **Erdae**. This repository is local only and must not be pushed or published.
+Local-only Hearts of Iron IV map mod for **Erdae**. Never push or publish this repository.
 
-## Current status
+## Current build
 
-The initial repository contains only the map-mod folder skeleton and descriptors. Generated map data, countries, states, and offline validation evidence are pending. This skeleton is not yet a game-loadable map.
+The cleaned source has been converted into a 4096×3072 map with **13 provisional countries, 7,406 provinces, 814 states, 359 strategic regions, 817 victory-point settlements, 292 ports, 814 supply hubs and 64 rivers**. Terrain, relief, water, forests, city footprints, buildings, flags, localisation, recruitment templates, starting divisions and stockpiles are generated.
 
-Geography follows the supplied source reference. East Earth is a naming correction; it does not move or reshape the source geography.
+The isolated Linux HOI4 1.19.3.0c01a test entered a campaign, moved two divisions, verified supply, advanced from 1 January to 7 February 1936, saved and reloaded. Native and offline evidence are separate under [docs/generation](docs/generation/). This does not claim long-term balance or an authored campaign. Startup warnings from unused vanilla definitions remain.
 
-## Reproduction
+## Reference and reproduction
 
-The map generation seed, source-art provenance, exact generator call, dimensions, and validation results will be recorded here when the generated map is installed. No generator run or seed is claimed by this initial skeleton.
+[Cleaned reference](docs/reference/cleaned/Erdae-clean-v1.png) · [Terrain preview](docs/generation/terrain.png) · [Political preview](docs/generation/political.png)
 
-Reviewed names will be recorded in [docs/name_table.md](docs/name_table.md). Reference assets and their provenance belong under `docs/reference/`; private original art is ignored by default. Generated mod assets remain trackable.
+The original is unchanged and ignored under docs/reference/originals. Handwritten names, lines and paper seams were removed in a separate reference before the accepted rebuild. Names are retained as localisation, not burned into terrain pixels. Small coastlines are approximate.
 
-## Local development
+[Exact MCP request](docs/generation/request.json) · [Hashes and measured evidence](docs/generation/provenance.json) · [Assumptions](docs/generation/assumptions.md) · [Name assignments](docs/generation/name_assignments.json)
 
-Use the standard `map/`, `history/`, `common/`, and `localisation/english/` directories. Do not add events, focus trees, or decisions as part of the map-only scaffold.
+Use the request with hoi4.map_rewrite. Set preview to true first to inspect the proposed world. Generation is deterministic with seed 73. Keep .hoi4-agent-world.json: it protects edited generated files and safely removes obsolete outputs on rebuild.
 
-The adjacent launcher descriptor is `../zin.mod`. Creation of these descriptors does not enable the mod in the launcher or change game settings. Offline generation does not launch the game. User-authorized live acceptance uses the isolated Linux test game only; the Windows launcher playset and settings remain untouched.
+## Local use
 
-## Agentic setup
+The adjacent zin.mod descriptor is synchronized. The Windows launcher playset and game settings were not changed; enable ZIN yourself when ready. Use a new campaign for a regenerated world.
 
-The checked HOI4 Mod Setup build has no supported headless project-install command. Its headless end-to-end harness uses synthetic fixtures and does not perform a native installation. Run the setup app on this folder next to install its development workflow; no desktop application or global client settings were changed during map preparation.
+The political setup is provisional under the owner's instruction. East Earth is a naming correction, not a relocation. The project remains map-only: no new authored events, focus trees or decisions. See the existing [name table](docs/name_table.md) for uncertain readings.

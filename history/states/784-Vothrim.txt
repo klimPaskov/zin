@@ -1,0 +1,23 @@
+state = {
+	id = 784
+	name = "STATE_784"
+	manpower = 1280000
+	state_category = large_town
+	resources = {
+		oil = 7
+		steel = 8
+	}
+	history = {
+		owner = Z06
+		add_core_of = Z06
+		victory_points = { 2753 6 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			dockyard = 1
+			2552 = { naval_base = 1 }
+		}
+	}
+	provinces = { 2552 2562 2563 2583 2629 2644 2647 2738 2739 2753 2843 2845 }
+}

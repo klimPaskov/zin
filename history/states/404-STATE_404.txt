@@ -1,0 +1,17 @@
+state = {
+	id = 404
+	name = "STATE_404"
+	manpower = 68000
+	state_category = town
+	history = {
+		owner = Z07
+		add_core_of = Z07
+		victory_points = { 3912 5 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			3912 = { naval_base = 1 }
+		}
+	}
+	provinces = { 3912 3950 }
+}

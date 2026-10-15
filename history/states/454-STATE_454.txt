@@ -1,0 +1,18 @@
+state = {
+	id = 454
+	name = "STATE_454"
+	manpower = 16000
+	state_category = rural
+	history = {
+		owner = Z05
+		add_core_of = Z05
+		victory_points = { 911 3 }
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			911 = { naval_base = 1 }
+		}
+	}
+	provinces = { 911 912 }
+}

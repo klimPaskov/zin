@@ -1,0 +1,18 @@
+state = {
+	id = 505
+	name = "STATE_505"
+	manpower = 30000
+	state_category = large_town
+	history = {
+		owner = Z04
+		add_core_of = Z04
+		victory_points = { 2211 6 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+			2211 = { naval_base = 1 }
+		}
+	}
+	provinces = { 2211 }
+}

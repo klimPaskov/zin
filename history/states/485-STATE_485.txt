@@ -1,0 +1,18 @@
+state = {
+	id = 485
+	name = "STATE_485"
+	manpower = 30000
+	state_category = city
+	history = {
+		owner = Z06
+		add_core_of = Z06
+		victory_points = { 2066 7 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			2066 = { naval_base = 1 }
+		}
+	}
+	provinces = { 2066 }
+}

@@ -1,0 +1,22 @@
+state = {
+	id = 402
+	name = "STATE_402"
+	manpower = 74000
+	state_category = city
+	resources = {
+		aluminium = 1
+	}
+	history = {
+		owner = Z06
+		add_core_of = Z06
+		victory_points = { 2116 8 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			2116 = { naval_base = 1 }
+		}
+	}
+	provinces = { 2099 2116 2117 2126 }
+}
