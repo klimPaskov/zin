@@ -57,3 +57,15 @@ The specs were written in parallel, so some of them use different names or value
 | S9 | **Compiler extensions** requested by the specs are accepted: any condition in `allow_branch`; `ROOT`, `FROM` and `OVERLORD` as targets of `for_country`, `event_for` and `invite`; timed country flags; full mechanic idea ids in spirit effects; an event id base so a tree and its mechanic can share a namespace. |
 | S10 | **The content builder moves into the ZIN repository** (`tools/content/`), so the public mod can be rebuilt from itself. Done in phase 1. |
 | S11 | Game text writes **Šodolôro** (the game font cannot draw ō); documents keep the vault's Šodolôrō. |
+
+## Art (decided 19 October 2026, after the first art runs)
+
+| # | Decision |
+| --- | --- |
+| A1 | **Generation size.** The image model returns about 1.57 megapixels in the prompt's aspect and ignores requested sizes (4:3 comes back as 1448x1086). Loading screens and menu backgrounds are upscaled with Lanczos 3 to 1920x1440; thumbnails are a 10x box downscale. |
+| A2 | **Sheet backgrounds are flat black,** not magenta: the model keeps black flat and does not keep a magenta key. Interface strips are generated one per job on a black canvas with ends darkening to black and cut by rows. |
+| A3 | **Focus and idea icons are round bronze-rimmed medallions with a dark enamel field** (answers icon catalog open question 1). Idea icons take a square crop of the field; focus icons use the medallion outline as alpha. |
+| A4 | **Prompt frame** always includes "no signature or maker's mark; corners and bottom edge hold only plain ground", "no lettering" and "no real-world religious symbol"; review brightens the corners. |
+| A5 | **Menu art:** three main-menu backgrounds (Parim, the strait, the Wall); thumbnails live in `gfx/interface/zin/loadingscreens/`; the bookmark picture is 180x104 (measured from the game). `load_24` is cropped to x 0-1400, y 0-1050 before the resize to remove a painted mark. |
+| A6 | **Horos** pictures (yeldenne_hall, glo_given) are drawn from the established text only, not from the owner's private drawings, until the owner says otherwise. |
+| A7 | Loading tips live in `tools/content/data/loading_tips.json` (builder data). |
