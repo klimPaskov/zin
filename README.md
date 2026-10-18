@@ -1,27 +1,35 @@
 # ZIN
 
-Local-only Hearts of Iron IV map mod for **Erdae**. Never push or publish this repository.
+A total-conversion Hearts of Iron IV mod set in **Erdae**, the world of ZIN, during the Fourth Age and the reign of the Golden King.
 
-## Current build
+ZIN is in early development. The world, countries, peoples, ideologies and interface are in place; the content overhaul (mechanics, events, focus trees, units and technologies) is planned in [docs/design/overhaul.md](docs/design/overhaul.md) and not yet written.
 
-The cleaned source has been converted into a 4096×3072 map with **13 provisional countries, 7,406 provinces, 814 states, 359 strategic regions, 817 victory-point settlements, 292 ports, 814 supply hubs and 64 rivers**. Terrain, relief, water, forests, city footprints, buildings, flags, localisation, recruitment templates, starting divisions and stockpiles are generated.
+## What is in the current build
 
-The isolated Linux HOI4 1.19.3.0c01a test entered a campaign, moved two divisions, verified supply, advanced from 1 January to 7 February 1936, saved and reloaded. Native and offline evidence are separate under [docs/generation](docs/generation/). This does not claim long-term balance or an authored campaign. Startup warnings from unused vanilla definitions remain.
+- **Map.** A 5120 × 2560 Erdae map built from the owner's hand-drawn sheets, with a widened central sea: 275 strategic regions and 1,332 states. Layout and every generation decision are in [docs/generation/assumptions.md](docs/generation/assumptions.md).
+- **Countries.** 305 regional countries, among them Aenor (the Middle Kingdom) with its puppets, Volgan's Dead Lands, Zol's Mistake, the Worshipdom of Afrit, Horos's Castle of Yeldenne and the elven realms. The Great Wall of Aenor is a hard border between the Middle Lands and the Magical Lands.
+- **Peoples.** Men, elves, Sunhot elves, giants, ents, yeti, trolls, orcs, grave hosts and demons, each as a national spirit. Every country's people, ideology and stance come from the editable table [docs/design/countries.csv](docs/design/countries.csv).
+- **Ideologies.** Light, Dominion, Shadow and the Wild replace the four vanilla ideologies, each with its own stances.
+- **Interface.** A Realm panel for each country's people and standing.
+- **Art.** Every picture is image-generated for ZIN: flags, emblems, portraits and interface art. The prompts, model and hashes of each source sheet are recorded in [art/source/provenance.jsonl](art/source/provenance.jsonl). No assets are taken from other mods.
+- **Lore.** The lore vault in [docs/lore/vault](docs/lore/vault/) is canon; its Canon Policy separates established facts from proposals. The owner's original drawings are not published.
 
-## Reference and reproduction
+## Installing
 
-[Cleaned reference](docs/reference/cleaned/Erdae-clean-v1.png) · [Terrain preview](docs/generation/terrain.png) · [Political preview](docs/generation/political.png)
+1. Clone this repository into `Documents/Paradox Interactive/Hearts of Iron IV/mod/zin`.
+2. Next to it, create `mod/zin.mod` with the contents of [descriptor.mod](descriptor.mod) plus a `path` line, for example `path="C:/Users/<you>/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin"`.
+3. Enable ZIN in the launcher and start a new campaign.
 
-The original is unchanged and ignored under docs/reference/originals. Handwritten names, lines and paper seams were removed in a separate reference before the accepted rebuild. Names are retained as localisation, not burned into terrain pixels. Small coastlines are approximate.
+## Known issues
 
-[Exact MCP request](docs/generation/request.json) · [Hashes and measured evidence](docs/generation/provenance.json) · [Assumptions](docs/generation/assumptions.md) · [Name assignments](docs/generation/name_assignments.json)
+- Starting a campaign as **Aenor** currently crashes the game. Its neighbours (Lerendor, Zol, Selen) start normally. The cause is still under investigation.
+- Generated settlement and ruler names are placeholders until the lore names them.
+- Startup warnings from unused vanilla definitions remain.
 
-Use the request with hoi4.map_rewrite. Set preview to true first to inspect the proposed world. Generation is deterministic with seed 73. Keep .hoi4-agent-world.json: it protects edited generated files and safely removes obsolete outputs on rebuild.
+## Development
 
-## Local use
+The map, states and countries are generated with [HOI4 Agent Tools](https://github.com/klimPaskov/hoi4-agent-tools). The repository also carries the [Agentic HOI4 Modding](https://github.com/klimPaskov/Agentic-HOI4-Modding) kit for coding agents; see [AGENTS.md](AGENTS.md). Game testing happens only in an isolated Linux install.
 
-The generator is released as [HOI4 Agent Tools 4.1.0](https://github.com/klimPaskov/hoi4-agent-tools/releases/tag/v4.1.0). The configured runtime is pinned to that version and passed a fresh read-only lookup plus full-world preview with the default Node heap. Existing MCP clients should reconnect to load the new tool schema.
+## License
 
-The adjacent zin.mod descriptor is synchronized. The Windows launcher playset and game settings were not changed; enable ZIN yourself when ready. Use a new campaign for a regenerated world.
-
-The political setup is provisional under the owner's instruction. East Earth is a naming correction, not a relocation. The project remains map-only: no new authored events, focus trees or decisions. See the existing [name table](docs/name_table.md) for uncertain readings.
+No license is granted. All code, art and lore are © Klim Pashkov, all rights reserved. You may download and play the mod; ask before reusing any part of it.

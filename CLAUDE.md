@@ -6,7 +6,7 @@ It is a complete, self-contained instruction file. It does not import or depend 
 
 ## ZIN project rules (override the generic kit where they conflict)
 
-This is a permanent, local-only Hearts of Iron IV overhaul set in Erdae. Never push or publish this repository.
+This is a permanent Hearts of Iron IV overhaul set in Erdae, published at https://github.com/klimPaskov/zin (no license: all rights reserved). Push only reviewed, tested commits on `master`. The owner's original drawings stay private and ignored: `docs/reference/originals/` and `docs/lore/vault/Maps/`. Never commit them or anything that embeds them.
 
 ### Scope
 
