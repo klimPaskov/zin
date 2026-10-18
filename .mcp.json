@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "hoi4_agent_tools": {
+      "type": "stdio",
+      "command": "hoi4-agent-tools.cmd",
+      "args": [],
+      "env": {}
+    },
+    "meshy": {
+      "type": "stdio",
+      "command": "C:\Users\klimp\AppData\Local\HOI4 Mod Setup\hoi4-mod-setup.exe",
+      "args": ["--run-verified-meshy-mcp"],
+      "env": { "MESHY_API_KEY": "${MESHY_API_KEY}" }
+    },
+    "blender_hoi4": {
+      "type": "stdio",
+      "command": "cmd.exe",
+      "args": ["/d", "/c", "call", ".tools/3d_pipeline/wrappers/run_blender_hoi4_adapter.cmd"],
+      "env": {}
+    }
+  }
+}

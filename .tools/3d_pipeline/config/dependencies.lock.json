@@ -1,0 +1,385 @@
+{
+  "schema_version": "1.0.0",
+  "lock_name": "hoi4-3d-model-pipeline",
+  "resolution_policy": "latest_at_bootstrap",
+  "resolved_at_utc": "2026-10-18T09:05:26Z",
+  "bootstrap": ".tools/3d_pipeline/bootstrap_3d_workflow.py",
+  "routes": {
+    "meshy_mcp": {
+      "package": "@meshy-ai/meshy-mcp-server",
+      "version": "0.4.0",
+      "integrity": "sha512-py2xFIrrBcU4SW7ked90/qjRqa6bheVn0fNLEW8Lnki3BCJTFaVvWN0W6a9mJYr26+M9y0WezGsTCKalzWrGtg==",
+      "runtime_root": "C:/Users/klimp/AppData/Local/HOI4 Mod Setup/runtimes/meshy-0.4.0",
+      "runtime_tree_sha256": "720075e2b1e266208f435b08d8ab81609f5e5e1a247ca4680c51b5a4f00f2011",
+      "runtime_file_count": 3916,
+      "resolution": "pinned npm lock and verified complete runtime tree"
+    },
+    "meshy_tool_contract": {
+      "path": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/config/meshy_tool_contract.json",
+      "sha256": "D4A209C1D2D8716A023B4B23593C033C7E5AED9D3B4DD5A9723FF1D5F7B8B5D4",
+      "contract": {
+        "schema_version": "1.0.0",
+        "server_package": "@meshy-ai/meshy-mcp-server",
+        "resolution_policy": "latest_at_bootstrap",
+        "required_tools": {
+          "meshy_check_balance": {
+            "paid": false,
+            "required_arguments": []
+          },
+          "meshy_image_to_3d": {
+            "paid": true,
+            "required_arguments": [
+              "ai_model"
+            ],
+            "required_ai_model": "meshy-7",
+            "accepted_ai_models": [
+              "meshy-7"
+            ],
+            "required_argument_groups": [
+              [
+                "file_path",
+                "image_url",
+                "input_task_id"
+              ]
+            ],
+            "input_exclusivity": [
+              "file_path",
+              "image_url",
+              "input_task_id"
+            ],
+            "forbidden_arguments": [
+              "multi_view_thumbnails"
+            ]
+          },
+          "meshy_get_task_status": {
+            "paid": false,
+            "required_arguments": [
+              "task_id"
+            ]
+          },
+          "meshy_download_model": {
+            "paid": false,
+            "required_arguments": [
+              "task_id"
+            ]
+          },
+          "meshy_remesh": {
+            "paid": true,
+            "input_exclusivity": [
+              "input_task_id",
+              "model_url"
+            ]
+          },
+          "meshy_rig": {
+            "paid": true,
+            "input_exclusivity": [
+              "input_task_id",
+              "model_url"
+            ]
+          },
+          "meshy_convert": {
+            "paid": true,
+            "required_arguments": [
+              "target_formats"
+            ],
+            "required_argument_groups": [
+              [
+                "input_task_id",
+                "model_url"
+              ]
+            ],
+            "input_exclusivity": [
+              "input_task_id",
+              "model_url"
+            ]
+          },
+          "meshy_animate": {
+            "paid": true,
+            "required_arguments": [
+              "rig_task_id",
+              "action_id"
+            ]
+          }
+        },
+        "optional_capabilities": {
+          "text_to_motion": {
+            "requires_live_verified_app_launcher_exposure": true,
+            "tool_names": [
+              "meshy_text_to_motion",
+              "meshy_get_motion_status",
+              "meshy_list_motion_tasks",
+              "meshy_download_motion",
+              "meshy_animation_library"
+            ],
+            "generated_retarget_requires": {
+              "tool": "meshy_animate",
+              "arguments": [
+                "rig_task_id",
+                "motion_task_id"
+              ],
+              "exclusive_with": "action_id"
+            },
+            "missing_capability_policy": "exact blocker; authorized Blender recovery, no project credential wrapper or direct REST"
+          }
+        },
+        "provider_policy": {
+          "input_image_count": 1,
+          "allow_multi_view_thumbnails": false,
+          "required_generation_model": "meshy-7",
+          "default_generation_model": "Meshy 7 via explicit ai_model=meshy-7",
+          "silent_model_downgrade": false,
+          "planned_paid_operations_pre_authorized": true,
+          "max_rig_attempts": 1,
+          "max_action_attempts_per_role": 1,
+          "blender_recovery_pre_authorized": true,
+          "geometry_recovery_within_declared_limits_pre_authorized": true,
+          "provider_source_substitution_requires_confirmation": true
+        }
+      },
+      "live_schema_verification_required_before_provider_calls": true
+    },
+    "blender_lab_mcp": {
+      "repository": "https://projects.blender.org/lab/blender_mcp.git",
+      "ref_type": "tag",
+      "ref": "26.04.10",
+      "commit": "3746c944504191db1f9a950d95f0c76375b8cbea",
+      "default_branch": "main",
+      "default_head": "dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
+      "resolution": "latest semantic release tag",
+      "project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp",
+      "wrapper": ".tools/3d_pipeline/wrappers/run_blender_lab_mcp.cmd",
+      "profile": "development_only",
+      "enabled_in_production": false
+    },
+    "blender_hoi4_adapter": {
+      "id": "hoi4_blender_adapter",
+      "version": "1.6.0",
+      "project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/adapter",
+      "module": "hoi4_blender_mcp",
+      "wrapper": ".tools/3d_pipeline/wrappers/run_blender_hoi4_adapter.cmd",
+      "config": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/config/blender_hoi4_adapter.json",
+      "tool_identifiers": [
+        "hoi4_blender_health",
+        "hoi4_blender_prepare_candidate",
+        "hoi4_blender_inspect_scene",
+        "hoi4_blender_review_humanoid_components",
+        "hoi4_blender_process_textures",
+        "hoi4_blender_bake_static_mesh_transforms",
+        "hoi4_blender_inspect_mesh_winding",
+        "hoi4_blender_repair_mesh_winding",
+        "hoi4_blender_inspect_fitted_humanoid_source",
+        "hoi4_blender_author_fitted_humanoid_rig",
+        "hoi4_blender_author_fitted_humanoid_action",
+        "hoi4_blender_partition_skeletal_mesh_export_batches",
+        "hoi4_blender_partition_static_mesh_export_batches",
+        "hoi4_blender_promote_accepted_reimport",
+        "hoi4_blender_author_locator",
+        "hoi4_blender_export_mesh",
+        "hoi4_blender_export_animation",
+        "hoi4_blender_import_animation_action",
+        "hoi4_blender_retime_animation_action",
+        "hoi4_blender_author_locomotion_action",
+        "hoi4_blender_author_humanoid_rig",
+        "hoi4_blender_patch_existing_humanoid_action_phases",
+        "hoi4_blender_author_humanoid_actions",
+        "hoi4_blender_isolate_humanoid_weapon",
+        "hoi4_blender_attach_rigid_weapon_from_checkpoint",
+        "hoi4_blender_segment_creature_components",
+        "hoi4_blender_calibrate_creature_scale",
+        "hoi4_blender_inspect_mesh_landmarks",
+        "hoi4_blender_repair_explicit_skin",
+        "hoi4_blender_preview_explicit_skin_selection",
+        "hoi4_blender_author_measured_creature_rig",
+        "hoi4_blender_attach_rigid_component",
+        "hoi4_blender_author_measured_creature_action",
+        "hoi4_blender_author_creature_rig",
+        "hoi4_blender_author_creature_action",
+        "hoi4_blender_correct_action_grounding",
+        "hoi4_blender_import_bvh_animation_action",
+        "hoi4_blender_prepare_export_coordinate_checkpoint",
+        "hoi4_blender_offset_action_root",
+        "hoi4_blender_sanitize_runtime_candidate",
+        "hoi4_blender_reimport_export",
+        "hoi4_blender_save_checkpoint",
+        "hoi4_blender_repair_explicit_mesh_winding",
+        "hoi4_blender_ground_existing_action",
+        "hoi4_blender_repair_explicit_mesh_patch",
+        "hoi4_blender_edit_explicit_mesh_vertices",
+        "hoi4_blender_bind_existing_pdx_material",
+        "hoi4_blender_repair_explicit_mesh_winding_batch",
+        "hoi4_blender_repair_explicit_skin_batch",
+        "hoi4_blender_replace_explicit_corner_normals",
+        "hoi4_blender_repair_explicit_vertex_remap",
+        "hoi4_blender_rotate_existing_assembly_yaw",
+        "hoi4_blender_collapse_identity_leaf_joints",
+        "hoi4_blender_inspect_animation_source"
+      ],
+      "worker_operations": [
+        "health",
+        "prepare_candidate",
+        "inspect_scene",
+        "review_humanoid_components",
+        "process_textures",
+        "bake_static_mesh_transforms",
+        "inspect_mesh_winding",
+        "repair_mesh_winding",
+        "inspect_fitted_humanoid_source",
+        "author_fitted_humanoid_rig",
+        "author_fitted_humanoid_action",
+        "partition_skeletal_mesh_export_batches",
+        "partition_static_mesh_export_batches",
+        "promote_accepted_reimport",
+        "author_locator",
+        "export_mesh",
+        "export_animation",
+        "import_animation_action",
+        "retime_animation_action",
+        "author_locomotion_action",
+        "author_humanoid_rig",
+        "patch_existing_humanoid_action_phases",
+        "author_humanoid_actions",
+        "isolate_humanoid_weapon",
+        "attach_rigid_weapon_from_checkpoint",
+        "segment_creature_components",
+        "calibrate_creature_scale",
+        "inspect_mesh_landmarks",
+        "repair_explicit_skin",
+        "preview_explicit_skin_selection",
+        "author_measured_creature_rig",
+        "attach_rigid_component",
+        "author_measured_creature_action",
+        "author_creature_rig",
+        "author_creature_action",
+        "correct_action_grounding",
+        "import_bvh_animation_action",
+        "prepare_export_coordinate_checkpoint",
+        "offset_action_root",
+        "sanitize_runtime_candidate",
+        "reimport_export",
+        "save_checkpoint",
+        "repair_explicit_mesh_winding",
+        "ground_existing_action",
+        "repair_explicit_mesh_patch",
+        "edit_explicit_mesh_vertices",
+        "bind_existing_pdx_material",
+        "repair_explicit_mesh_winding_batch",
+        "repair_explicit_skin_batch",
+        "replace_explicit_corner_normals",
+        "repair_explicit_vertex_remap",
+        "rotate_existing_assembly_yaw",
+        "collapse_identity_leaf_joints",
+        "inspect_animation_source"
+      ],
+      "source_files_sha256": {
+        "animation_root_export.py": "D03799E55F410E2F60C2D51957910DD0573A5956BBB4D0AD460C567C3EA8B6B0",
+        "assembly_yaw.py": "1C53102A3923E367D01CB723AA7A4F6DB18D7E87A6A66A8DCACA2362B2C9A57D",
+        "blender_worker.py": "75D7D8AC02F95F413E6AC9F745F80E36BADEAE8BEB566AAFA4B02DD91666F03D",
+        "explicit_batch_repair.py": "EBD3CE21E5502A876114614B49B2BFCB493676DBD90C242FAD0333F354FD7624",
+        "explicit_skin_repair.py": "F5B7AC956C22AFF07C4DB1CDE52851AA16EA0A76125D9AC13F9EE9C89D2BE788",
+        "explicit_vertex_remap.py": "7BB930E54EFCFFA8CCFE5BFD2A46FB4448737301DC18BE43213BA3D0653B3423",
+        "fitted_humanoid_repair.py": "0459CD347D3A387C79C737A1EADEC1F550716E23AB978D67F1BD234AF705D699",
+        "hoi4_blender_mcp.py": "B2CB7798DCB10081DFE46821615B7157AD06D2C66E7845A199CB0C8E6019FC62",
+        "identity_leaf_alias.py": "77F4D984DBE0B3C033F375569F25AD09ED0877058CE790E671B28FF0497552F9",
+        "manual_creature_rig.py": "1B91A65C7654E7F1B0C84E1F1F6156A79193A2EF301259806A307391C780449A",
+        "material_visibility_probe.py": "B69AAC8C92A335F3B686E13C45EBAE5B9B915888D112D4EEEB15188563C3CBFB",
+        "mesh_patch_repair.py": "6E5C981DBB375156643547960E5EF1E8D27D2651C2D122654B5DE3163E364489",
+        "mesh_vertex_material_repair.py": "57F65BE8638C253962CB5654A86970C3C649FAFB460892A1D74A548B839DE175",
+        "mesh_winding_repair.py": "2D5934D36C3E5700816164123257C19BA7527A514B1762348C06FD7E73925F74",
+        "mesh_winding_seam.py": "9A3976844A3F6D5EEA83DEB110B9381B08B82A342D3001F9881E151B0DA15A9E",
+        "normalization_convergence.py": "91AC1D4BA9BE4D39AB4697F9044060A9F119A8998E1DADA8F4A8E6F58A5F9ED5",
+        "pdx_skin_membership.py": "3365A7A3D596A6A1018D171CBD0138CE3F38F58E0B1F5DBB4A92596FAE10B130",
+        "retarget_root_motion.py": "1B8834F5EF6C83CA00EA32392F415243B58C8165C93F826F9785EF17459BE899",
+        "skeletal_export_partition.py": "8A0EB171AF4E06B965E864A2999440C81884AA7F8E139FE6098E4B898C87EB08"
+      },
+      "dependency_lock": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/adapter/uv.lock",
+      "checksums": {
+        "pyproject_sha256": "C49011E42ADB018E3F6131D4CCE194A13835B3F40D90BD07CF25A7CB0E1C976F",
+        "module_sha256": "B2CB7798DCB10081DFE46821615B7157AD06D2C66E7845A199CB0C8E6019FC62",
+        "worker_sha256": "75D7D8AC02F95F413E6AC9F745F80E36BADEAE8BEB566AAFA4B02DD91666F03D",
+        "wrapper_sha256": "B1559651AE35FF7EBFCAD5BBCF3EDC9537022DCBCDCEA4F81169296D8AB04DB9",
+        "config_sha256": "100504AA3DC1F565BD4D949E884C926FB9FB7620B9881F74593F3294492900F3",
+        "uv_lock_sha256": "29D0CAAF2864A1D6CF75DEBC5CA9B914E39510119F32BA8BD5C91DC47DD570C0"
+      },
+      "unrestricted_blender_python": false,
+      "runtime_wiring": "parent_owned"
+    },
+    "blender_mcp_addon": {
+      "repository": "https://projects.blender.org/lab/blender_mcp.git",
+      "ref": "26.04.10",
+      "commit": "3746c944504191db1f9a950d95f0c76375b8cbea",
+      "addon_id": "mcp",
+      "version": "0.2.0",
+      "source_root": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp/addon/blender_mcp_addon",
+      "archive": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp_addon_cache/26.04.10-mcp-0.2.0.zip",
+      "sha256": "A7C5DA0B333E10DE28ABB0D34EB30EF649BADCFA46D56AD94647DB0908FD502C",
+      "extension_repo": "lab_blender_org",
+      "install_root": "C:/Users/klimp/AppData/Roaming/Blender Foundation/Blender/5.1/extensions/lab_blender_org/mcp",
+      "blender_mcp_project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp",
+      "bridge": {
+        "host": "localhost",
+        "port": 9876,
+        "resolution": "latest resolved Blender MCP add-on source"
+      }
+    },
+    "blender_bridge": {
+      "host": "localhost",
+      "port": 9876,
+      "resolution": "latest resolved Blender MCP add-on source",
+      "probe_host": "127.0.0.1",
+      "reachable": true,
+      "started_by_bootstrap": true,
+      "process_id": 26396,
+      "start_command": [
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--background",
+        "--online-mode",
+        "--command",
+        "blender_mcp",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "9876"
+      ]
+    },
+    "blender": {
+      "executable": "C:/Program Files/Blender Foundation/Blender 5.1/blender.exe",
+      "shortcut": "C:/Users/klimp/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Blender/Blender 5.1.lnk",
+      "version": "5.1.2"
+    },
+    "io_pdx_mesh": {
+      "release": "0.91",
+      "version": "0.91.0",
+      "download_url": "https://github.com/ross-g/io_pdx_mesh/releases/download/0.91/blender-io_pdx_mesh.zip",
+      "archive": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/io_pdx_mesh/0.91-blender-io_pdx_mesh.zip",
+      "sha256": "A683DF08318CB700014C7FE9A3D15139E5FB2313C7E98715204263E48931F7C2",
+      "installed_archive_sha256": "A683DF08318CB700014C7FE9A3D15139E5FB2313C7E98715204263E48931F7C2",
+      "compatibility_applied": false,
+      "installed_patch_files_sha256": {},
+      "installed_extension_id": "io_pdx_mesh",
+      "blender_minor": "5.1",
+      "install_root": "C:/Users/klimp/AppData/Roaming/Blender Foundation/Blender/5.1/extensions/user_default/io_pdx_mesh"
+    }
+  },
+  "policy": {
+    "provider_input_image_count": 1,
+    "allow_meshy_multiview_thumbnails": false,
+    "required_generation_model": "meshy-7",
+    "default_generation_model": "Meshy 7 via explicit ai_model=meshy-7",
+    "retry_paid_calls": false,
+    "runtime_sources_must_not_reference_docs_assets": true,
+    "silent_generation_model_downgrade": false,
+    "planned_paid_operations_pre_authorized": true,
+    "failure_recovery_requires_confirmation": true,
+    "runtime_copy_requires_selected_source_hash": true,
+    "mesh_and_anim_reimport_required": true,
+    "loop_phase_samples": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "building_footprint_and_object_name_evidence_required": true,
+    "runtime_wiring_owner": "parent"
+  }
+}

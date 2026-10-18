@@ -10,3 +10,19 @@ docs/reference/originals/
 # Editor and OS metadata
 .DS_Store
 Thumbs.db
+
+# Agentic HOI4 Modding kit: machine-local 3D bootstrap caches and runtime records
+/.tools/3d_pipeline/vendor/
+/.tools/3d_pipeline/**/__pycache__/
+/.tools/3d_pipeline/adapter/.venv/
+/.tools/3d_pipeline/adapter/uv.lock
+/.tools/3d_pipeline/config/runtime.json
+/.tools/3d_pipeline/config/meshy_mcp_version.txt
+/.tools/3d_pipeline/config/blender_mcp_project.txt
+/.tools/3d_pipeline/config/uv_executable.txt
+/.tools/3d_pipeline/config/blender_mcp_host.txt
+/.tools/3d_pipeline/config/blender_mcp_port.txt
+/.agents/skills/**/__pycache__/
+# Kit reference material from third parties stays on disk for agents but out of ZIN's history
+/paradox_wiki/
+/.agents/skills/**/vanilla_reference/
