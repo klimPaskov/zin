@@ -2,8 +2,30 @@
   "schema_version": "1.0.0",
   "lock_name": "hoi4-3d-model-pipeline",
   "resolution_policy": "latest_at_bootstrap",
-  "resolved_at_utc": "2026-10-18T17:42:25Z",
+  "resolved_at_utc": "2026-10-18T19:44:53Z",
   "bootstrap": ".tools/3d_pipeline/bootstrap_3d_workflow.py",
+  "sources": {
+    "meshy_mcp": "npm:@meshy-ai/meshy-mcp-server@0.6.2",
+    "blender_lab_mcp": "https://projects.blender.org/lab/blender_mcp.git@dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
+    "io_pdx_mesh": "https://github.com/ross-g/io_pdx_mesh/releases/download/0.91/blender-io_pdx_mesh.zip"
+  },
+  "compatibility": {
+    "io_pdx_mesh": {
+      "source_sha256": "A683DF08318CB700014C7FE9A3D15139E5FB2313C7E98715204263E48931F7C2",
+      "source_size": 235195,
+      "builder": ".tools/3d_pipeline/build_io_pdx_py313_compat.py",
+      "blender_minors": [
+        "5.2"
+      ],
+      "archive_sha256": "A0ED30187494889B5415D579C823D888CFEAF197A3D4FC6A2D024E6BB0E10697",
+      "archive_size": 244643,
+      "installed_patch_files_sha256": {
+        "__init__.py": "F2C70DB6465AEB2E0E32EB8096255ADF78A7A12B09E1724BB3D4AAC09784F8F4",
+        "pdx_maya/maya_ui.py": "3ADE7A263A0475B4270254DB2323B0E0958A34648F9632024FD304B49B8E2ED7",
+        "pdx_blender/blender_import_export.py": "CA396896F1B963C86C33F75ADC9B27E10C2C35200D0C691FAE265B4DE22DFF57"
+      }
+    }
+  },
   "routes": {
     "meshy_mcp": {
       "package": "@meshy-ai/meshy-mcp-server",
@@ -151,7 +173,7 @@
     },
     "blender_hoi4_adapter": {
       "id": "hoi4_blender_adapter",
-      "version": "1.6.0",
+      "version": "1.6.1",
       "project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/adapter",
       "module": "hoi4_blender_mcp",
       "wrapper": ".tools/3d_pipeline/wrappers/run_blender_hoi4_adapter.cmd",
@@ -271,12 +293,12 @@
       "source_files_sha256": {
         "animation_root_export.py": "D03799E55F410E2F60C2D51957910DD0573A5956BBB4D0AD460C567C3EA8B6B0",
         "assembly_yaw.py": "1C53102A3923E367D01CB723AA7A4F6DB18D7E87A6A66A8DCACA2362B2C9A57D",
-        "blender_worker.py": "9D9ADB090293A854F7D611C357F32AABBFAE75800306310FCD6425F21C2DB2B0",
+        "blender_worker.py": "71C830D0F6B6BC3EBC011DAE1A7CB90FB849633BEF60F78ECEFBFBA828B186F9",
         "explicit_batch_repair.py": "EBD3CE21E5502A876114614B49B2BFCB493676DBD90C242FAD0333F354FD7624",
         "explicit_skin_repair.py": "F5B7AC956C22AFF07C4DB1CDE52851AA16EA0A76125D9AC13F9EE9C89D2BE788",
         "explicit_vertex_remap.py": "7BB930E54EFCFFA8CCFE5BFD2A46FB4448737301DC18BE43213BA3D0653B3423",
         "fitted_humanoid_repair.py": "0459CD347D3A387C79C737A1EADEC1F550716E23AB978D67F1BD234AF705D699",
-        "hoi4_blender_mcp.py": "05E62BFDF289811E60A4EC5E37F5EAE47C7916FD2DCA9F92DBB3D3D01551370A",
+        "hoi4_blender_mcp.py": "489B7DCA7B126F5B1CF3E3D90F8EA46785608207E0B79340A23D7D1DBD4316BF",
         "identity_leaf_alias.py": "77F4D984DBE0B3C033F375569F25AD09ED0877058CE790E671B28FF0497552F9",
         "manual_creature_rig.py": "1B91A65C7654E7F1B0C84E1F1F6156A79193A2EF301259806A307391C780449A",
         "material_visibility_probe.py": "B69AAC8C92A335F3B686E13C45EBAE5B9B915888D112D4EEEB15188563C3CBFB",
@@ -291,12 +313,12 @@
       },
       "dependency_lock": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/adapter/uv.lock",
       "checksums": {
-        "pyproject_sha256": "22A95C9316B00B02D8FFF4D02D383415FEEC554F5E335249C302121921147A80",
-        "module_sha256": "05E62BFDF289811E60A4EC5E37F5EAE47C7916FD2DCA9F92DBB3D3D01551370A",
-        "worker_sha256": "9D9ADB090293A854F7D611C357F32AABBFAE75800306310FCD6425F21C2DB2B0",
+        "pyproject_sha256": "C57F011FC17570362088B1BAEBF6C3FD4178C39D43132F5CBF50D06D4D9A9953",
+        "module_sha256": "489B7DCA7B126F5B1CF3E3D90F8EA46785608207E0B79340A23D7D1DBD4316BF",
+        "worker_sha256": "71C830D0F6B6BC3EBC011DAE1A7CB90FB849633BEF60F78ECEFBFBA828B186F9",
         "wrapper_sha256": "B1559651AE35FF7EBFCAD5BBCF3EDC9537022DCBCDCEA4F81169296D8AB04DB9",
-        "config_sha256": "882DBABD1BB330DF37272CC0EDD52E5CA96A48481AFFC18A5F2DC9D92507296D",
-        "uv_lock_sha256": "7072C184F991770371F93233787BCBB052C8B2B73FA09FEFCB2E3CF014F9EF6E"
+        "config_sha256": "F1C6C73D69F7F86A5E3E85305252421931111D5F574513289C489CFA5D3BBEC9",
+        "uv_lock_sha256": "A73E30D90ACC6C091D90CDC21823748CE5A349F7B446A81F61EC4A8F1D0C44AE"
       },
       "unrestricted_blender_python": false,
       "runtime_wiring": "parent_owned"
