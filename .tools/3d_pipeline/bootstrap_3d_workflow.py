@@ -9,6 +9,7 @@ import hashlib
 import io
 import json
 import os
+import pkgutil
 import re
 import shutil
 import site
@@ -16,6 +17,7 @@ import socket
 import stat
 import subprocess
 import sys
+import sysconfig
 import time
 import urllib.parse
 import urllib.request
@@ -25,13 +27,14 @@ from pathlib import Path, PurePosixPath
 
 PIPELINE_ROOT = Path(__file__).resolve().parent
 MESHY_PACKAGE = "@meshy-ai/meshy-mcp-server"
-MESHY_VERSION = "0.4.0"
-MESHY_INTEGRITY = "sha512-py2xFIrrBcU4SW7ked90/qjRqa6bheVn0fNLEW8Lnki3BCJTFaVvWN0W6a9mJYr26+M9y0WezGsTCKalzWrGtg=="
-MESHY_RUNTIME_PACKAGE_SHA256 = "dc41c1df4d4243b435362fd0a4406433e728307e88815acfbf1183ce7c38ef11"
-MESHY_RUNTIME_LOCK_SHA256 = "3f70a2384d25e338c6a03a1547218cca97320c4087cee14a8def4793fd24d3ce"
-MESHY_RUNTIME_TREE_SHA256 = "720075e2b1e266208f435b08d8ab81609f5e5e1a247ca4680c51b5a4f00f2011"
-MESHY_RUNTIME_FILE_COUNT = 3916
+MESHY_VERSION = "0.6.2"
+MESHY_INTEGRITY = "sha512-xEgw7YE5vmK1mT8kBwO6ytmZf+zdaxPd3jdIvO/4o+YFKSSmv9VDnFob3PE2HojC20g57uslQt7m1w4iaWGFZA=="
+MESHY_RUNTIME_PACKAGE_SHA256 = "1741490e35df4fd92eb7ffe6c31aa753f1c85063cd08948543928331752f79c7"
+MESHY_RUNTIME_LOCK_SHA256 = "5b28ae2903d9b67b9324e3799b6fcf776739dcaa2beb375bcf595df10629dd58"
+MESHY_RUNTIME_TREE_SHA256 = "3ad84a9d8f6a1c4ccd97fe8cc15d710d9102911960664ece373d79f0b32430db"
+MESHY_RUNTIME_FILE_COUNT = 3952
 BLENDER_MCP_REPOSITORY = "https://projects.blender.org/lab/blender_mcp.git"
+BLENDER_MCP_REVISION = "dbbf836ad4b1025f14a2b3b504c43903f39e0b04"
 IO_PDX_RELEASE = "0.91"
 IO_PDX_ASSET_NAME = "blender-io_pdx_mesh.zip"
 IO_PDX_DOWNLOAD_URL = "https://github.com/ross-g/io_pdx_mesh/releases/download/0.91/blender-io_pdx_mesh.zip"
@@ -490,52 +493,18 @@ def ensure_meshy_runtime(pipeline_root: Path, npx: Path) -> dict:
 
 
 def resolve_blender_mcp() -> dict:
-    symref_output = run(["git", "ls-remote", "--symref", BLENDER_MCP_REPOSITORY, "HEAD"])
-    default_branch = "main"
-    default_commit = ""
-    for line in symref_output.splitlines():
-        if line.startswith("ref: refs/heads/") and line.endswith("\tHEAD"):
-            default_branch = line.split("refs/heads/", 1)[1].split("\t", 1)[0]
-        parts = line.split()
-        if len(parts) == 2 and parts[1] == "HEAD":
-            default_commit = parts[0]
-    if not default_commit:
-        raise SetupError("The Blender MCP repository did not expose a default-branch head.")
-
-    tag_output = run(["git", "ls-remote", "--tags", "--refs", BLENDER_MCP_REPOSITORY])
-    tags: list[tuple[tuple[int, int, int], str, str]] = []
-    for line in tag_output.splitlines():
-        parts = line.split()
-        if len(parts) != 2 or not parts[1].startswith("refs/tags/"):
-            continue
-        tag = parts[1].split("refs/tags/", 1)[1]
-        parsed = version_tuple(tag)
-        if parsed is not None and re.search(r"\d+\.\d+", tag):
-            tags.append((parsed, tag, parts[0]))
-
-    if tags:
-        _, tag, commit = max(tags, key=lambda item: (item[0], item[1]))
-        return {
-            "repository": BLENDER_MCP_REPOSITORY,
-            "ref_type": "tag",
-            "ref": tag,
-            "commit": commit,
-            "default_branch": default_branch,
-            "default_head": default_commit,
-            "resolution": "latest semantic release tag",
-        }
     return {
         "repository": BLENDER_MCP_REPOSITORY,
-        "ref_type": "branch",
-        "ref": default_branch,
-        "commit": default_commit,
-        "default_branch": default_branch,
-        "default_head": default_commit,
-        "resolution": "latest default-branch head",
+        "ref_type": "commit",
+        "ref": BLENDER_MCP_REVISION,
+        "commit": BLENDER_MCP_REVISION,
+        "resolution": "reviewed newest source commit pinned by the package",
     }
 
 
 def ensure_blender_mcp(pipeline_root: Path, resolution: dict) -> Path:
+    if resolution.get("commit") != BLENDER_MCP_REVISION or resolution.get("repository") != BLENDER_MCP_REPOSITORY:
+        raise SetupError("Blender MCP resolution does not match the reviewed package pin.")
     vendor_root = pipeline_root / "vendor" / "blender_mcp"
     if not (vendor_root / ".git").exists():
         if vendor_root.exists():
@@ -555,7 +524,7 @@ def ensure_blender_mcp(pipeline_root: Path, resolution: dict) -> Path:
         exclude.write_text("\n".join([*excluded_lines, "uv.lock"]).rstrip() + "\n", encoding="utf-8")
     if run(["git", "status", "--porcelain"], cwd=vendor_root).strip():
         raise SetupError(f"Blender MCP checkout has local changes and cannot be updated safely: {vendor_root}")
-    run(["git", "fetch", "--tags", "--prune", "origin"], cwd=vendor_root)
+    run(["git", "fetch", "origin", BLENDER_MCP_REVISION], cwd=vendor_root)
     try:
         run(["git", "cat-file", "-e", f"{resolution['commit']}^{{commit}}"], cwd=vendor_root)
     except SetupError:
@@ -563,7 +532,7 @@ def ensure_blender_mcp(pipeline_root: Path, resolution: dict) -> Path:
     run(["git", "checkout", "--detach", resolution["commit"]], cwd=vendor_root)
     head = run(["git", "rev-parse", "HEAD"], cwd=vendor_root).strip()
     if head.lower() != resolution["commit"].lower():
-        raise SetupError(f"Blender MCP did not resolve to the latest selected ref: {head}")
+        raise SetupError(f"Blender MCP did not resolve to the reviewed source commit: {head}")
     project_candidates = [vendor_root, vendor_root / "mcp"]
     for project_root in project_candidates:
         pyproject = project_root / "pyproject.toml"
@@ -906,7 +875,22 @@ def adapter_source_hashes(adapter_root: Path) -> dict[str, str]:
     sources = sorted(adapter_root.glob("*.py"), key=lambda path: path.name)
     local_modules = {path.stem for path in sources}
     external_modules = {"bpy", "bmesh", "mathutils", "mcp", "io_pdx_mesh", "io_anim_bvh"}
-    allowed_modules = set(sys.stdlib_module_names) | external_modules | local_modules
+    stdlib_modules = getattr(sys, "stdlib_module_names", None)
+    if stdlib_modules is None:  # Python 3.9 has no stdlib_module_names.
+        stdlib_root = sysconfig.get_path("stdlib")
+        stdlib_roots = {
+            stdlib_root,
+            str(Path(stdlib_root) / "lib-dynload"),
+            str(Path(sys.base_prefix) / "DLLs"),
+        }
+        dynamic_root = sysconfig.get_config_var("DESTSHARED")
+        if dynamic_root:
+            stdlib_roots.add(str(dynamic_root))
+        stdlib_modules = set(sys.builtin_module_names) | {
+            module.name for module in pkgutil.iter_modules(sorted(stdlib_roots))
+            if module.name not in {"site-packages", "dist-packages"}
+        }
+    allowed_modules = set(stdlib_modules) | external_modules | local_modules
     for source in sources:
         if source.is_symlink():
             raise SetupError(f"Blender adapter source must not be a symlink: {source.name}")
@@ -1358,6 +1342,48 @@ default_tools_approval_mode = "prompt"
     return config_path.resolve()
 
 
+def register_claude_routes(root: Path, config_path: Path) -> str:
+    """Mirror the verified Meshy and Blender routes into Claude Code's local scope.
+
+    Claude Code is the primary runtime, but these routes name machine-local
+    executables, so they are registered with `claude mcp add-json --scope local`
+    (stored in the user's Claude Code settings for this project) instead of the
+    shared `.mcp.json`. The step is best effort: without the Claude Code CLI the
+    Codex routes still work and the result says what to run later.
+    """
+    claude = shutil.which("claude")
+    if claude is None:
+        return "claude_cli_not_found"
+    routes = parse_reviewed_mcp_routes(config_path.read_text(encoding="utf-8"))
+    registered = []
+    for route_id in ("meshy", "blender_hoi4"):
+        route = routes.get(route_id)
+        if not route:
+            continue
+        args = [
+            (root / arg).as_posix() if isinstance(arg, str) and arg.startswith(".tools/") else arg
+            for arg in route.get("args", [])
+        ]
+        definition = {
+            "type": "stdio",
+            "command": route["command"],
+            "args": args,
+            "env": {name: "${" + name + "}" for name in route.get("env_vars", [])},
+        }
+        subprocess.run([claude, "mcp", "remove", "--scope", "local", route_id], cwd=root, capture_output=True, text=True, timeout=60)
+        result = subprocess.run(
+            [claude, "mcp", "add-json", "--scope", "local", route_id, json.dumps(definition)],
+            cwd=root,
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        if result.returncode != 0:
+            return f"claude_registration_failed:{route_id}"
+        registered.append(route_id)
+    return "registered:" + ",".join(registered) if registered else "no_routes"
+
+
 def write_json(path: Path, payload: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
@@ -1492,6 +1518,7 @@ def main() -> int:
                 ),
             )
         )
+        claude_registration = register_claude_routes(root, config_path)
         resolved_at = utc_now()
 
         payload = {
@@ -1511,6 +1538,7 @@ def main() -> int:
             "io_pdx_mesh": io_pdx_mesh,
             "blender_hoi4_adapter": blender_hoi4_adapter,
             "config_path": config_path.as_posix(),
+            "claude_registration": claude_registration,
             "template_removed": True,
         }
         lock_path = write_dependency_record(root, payload)

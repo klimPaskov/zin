@@ -63,7 +63,6 @@ Use this skill with:
 - `hoi4-focus-trees` when the event creates, unlocks, modifies, or depends on focus trees
 - `hoi4-decisions-missions` when the event creates or depends on decisions, missions, timed objectives, formables, or decision-driven mechanics
 - `hoi4-scripted-gui` when the event owns or opens a scripted GUI; that skill owns reference-image mapping, layout, iterative MCP previews, and visual acceptance while this event skill retains gameplay and lifecycle ownership
-- `hoi4-state-ledgers` when the event moves civilian population between states, keeps cohort registries or reception ledgers, or projects those flows onto a state mapmode
 - `hoi4-subagents` when bounded research, asset production, event-owned UI layout work, small patches, or completion audits should be delegated
 - `hoi4_3d_model_pipeline` for bounded model geometry, textures, rigs, skeletal actions, sourced custom-unit audio research and synchronization design, `.mesh`/`.anim` exports, reimport proof, and runtime handoff when the event owns a 3D unit or building surface
 - `hoi4-improvement-loop` when an implemented event works but is still shallow, generic, disconnected, or underdeveloped
@@ -80,7 +79,7 @@ For every event-chain surface supported by the installed MCP server, use the eve
 2. Use a narrow selector with `trace`, `explain_path`, `state_flow`, or `impact`.
 3. Read linked JSON only when the compact result lacks necessary evidence.
 4. Edit the event and connected mod files through the normal source workflow.
-5. Run `hoi4.event_compare` with the baseline revision as `before`, then run `hoi4.event_inspect` in `lint` mode and the most relevant `hoi4.event_render` view.
+5. Run `hoi4.event_inspect` with `mode: "compare"` with the baseline revision as `before`, then run `hoi4.event_inspect` in `lint` mode and the most relevant `hoi4.event_render` view.
 
 The event tools are read-only. Comparison refreshes edited source by default. Use bounded depth and node limits so MCP remains one small part of the larger skills, subagent, and repository workflow.
 
@@ -88,9 +87,9 @@ The event tools are read-only. Comparison refreshes edited source by default. Us
 
 Before treating an event inspection or render as lifecycle evidence, read its `analysisMode`, `complete`, indexed helper count, files-scanned or source-hash inventory, unresolved entries, and diagnostics. In the installed event service, `trace` and `explain_path` use focused analysis, and `scan`, `roots`, `lint`, or `event_render` use focused analysis when a selector is supplied. Focused analysis reads only the bounded event and on-action sources, disables workspace-wide helper projections and lifecycle passes, and keeps the focused-boundary blocker even when helper expansion is requested. `state_flow` and `impact` request full analysis even when narrowed, while selector-free `scan` requests full analysis. Use a full route when helper or lifecycle coverage is required, and do not treat a focused trace or zero helper count as proof that a chain has no helpers.
 
-`event_compare` accepts cached revisions, validated event-graph artifacts, or proposed source overlays. Report-only trace artifacts and render or manifest artifacts may fail artifact graph validation because they do not contain an event-graph payload. Use a graph-bearing artifact or another supported compare input when available. If none is available, preserve the exact blocker and do not invent a conversion or comparison result.
+`event_inspect` with `mode: "compare"` accepts cached revisions, validated event-graph artifacts, or proposed source overlays. Report-only trace artifacts and render or manifest artifacts may fail artifact graph validation because they do not contain an event-graph payload. Use a graph-bearing artifact or another supported compare input when available. If none is available, preserve the exact blocker and do not invent a conversion or comparison result.
 
-For every event-option `ai_chance`, event MTTH, direct random chance, or `random_list` surface, route the read-only probability pass through `hoi4_ai_probability_auditor`. Establish named baseline scenarios with `hoi4.probability_inspect`, let the owning agent apply any bounded patch, then run mandatory `hoi4.probability_compare` against the same scenarios. Use `hoi4.probability_evaluate`, `hoi4.probability_sweep`, `hoi4.probability_simulate`, `hoi4.probability_sequence`, and `hoi4.probability_render` only when their declared evidence conditions apply. Provide complete option or list pools when normalization applies, and provide scheduled state changes for timing questions. Treat exact, bounded, sampled, score-only, and unresolved results as different evidence. For `hoi4.probability_compare`, pass both `before` and `after` as probability-source objects with a source identifier or path, inline Clausewitz, or virtual patch, or pass before and after manifests under an identical scenario set. Do not put a cached `analysisId` in a source identifier; it belongs only to rendering. The auditor does not choose balance targets or edit event source. If the probability route is unavailable, record the exact blocker and leave the conclusion unresolved.
+For every event-option `ai_chance`, event MTTH, direct random chance, or `random_list` surface, route the read-only probability pass through `hoi4_ai_probability_auditor`. Establish named baseline scenarios with `hoi4.probability_inspect`, let the owning agent apply any bounded patch, then run mandatory `hoi4.probability_analyze` with `analysis: "compare"` against the same scenarios. Use `hoi4.probability_inspect`, `hoi4.probability_analyze` with `analysis: "sweep"`, `hoi4.probability_analyze` with `analysis: "simulate"`, `hoi4.probability_analyze` with `analysis: "sequence"`, and `hoi4.probability_analyze` with `analysis: "render"` only when their declared evidence conditions apply. Provide complete option or list pools when normalization applies, and provide scheduled state changes for timing questions. Treat exact, bounded, sampled, score-only, and unresolved results as different evidence. For `hoi4.probability_analyze` with `analysis: "compare"`, pass both `before` and `after` as probability-source objects with a source identifier or path, inline Clausewitz, or virtual patch, or pass before and after manifests under an identical scenario set. Do not put a cached `analysisId` in a source identifier; it belongs only to rendering. The auditor does not choose balance targets or edit event source. If the probability route is unavailable, record the exact blocker and leave the conclusion unresolved.
 
 For event-option audits, qualify a reused option identifier with its parent event identifier and include every option in that event's local candidate pool. Verify the installed server version and live route schema before building scenarios; use top-level scenario dates, explicit controller maps, and typed scope bindings only when that schema accepts them. Inspect returned `poolComplete` and `unresolved` fields before interpreting a normalized share. Treat `candidateOverrides` as declared assumptions, not proof of live eligibility. An option share conditional on an event firing does not include the event's firing chance.
 
@@ -187,48 +186,7 @@ Every subagent edit must produce a handoff under `docs/plans/<feature_slug>/suba
 
 ## Major-event defeat aftermath
 
-Some major events should also have a structured aftermath when the threat is beaten.
-
-Use a defeat aftermath package when all of these are true:
-
-- the defeated threat was global or near-global in reach
-- the campaign lasted long enough to feel like a world crisis
-- the cost in casualties, destruction, or political disruption was high enough that the world should not simply snap back to normal
-
-Typical aftermath content:
-
-- a sourced defeat quote, cultural remark, or audio cue when the feature needs one
-- postwar treaties, compacts, or new world orders
-- recurring remembrance, reconstruction, or vigilance events
-- lasting ideas, tech-sharing groups, or diplomatic rules that exist because the world learned from the crisis
-
-Do not add a treaty/new world order after every contained or short-lived disaster. Those only make sense when the event genuinely reshaped the campaign.
-
-
-### 7. Duration fields and constants
-
-Use `script_constants` for shared tuning, but remember that some duration fields reject both `constant:` and variable tokens.
-
-Before adding or extending `script_constants`, read the installed `common/script_constants/documentation.md` and `documentation/script_concept_documentation.md` (Script Constants), then inspect the existing group.
-Every new group must begin with `schema` matching its key and data kinds (`int`, `fixed_point`, or a documented complex schema); new keys in an existing group inherit and must satisfy that schema.
-A basic brace parse does not validate schema correctness.
-Keep script constant category IDs unique across files so helpers with different schemas cannot redeclare the same category.
-
-**Variable arithmetic evidence:** distinguish getter, modifier, normal variable, and script constant representations. Read the installed `documentation/script_concept_documentation.md` (Math Expressions) and the offline `paradox_wiki/Data structures - Hearts of Iron 4 Wiki.md` (Variables), and record precision conflicts rather than inferring a universal normal-variable maximum from math-expression fixed point, modifier-only three-decimal precision, or the deprecated raw-manpower getter overflow near 2.1 million.
-Audit actual source operations with a conservative bounded fixed-point model, explicit rounding or truncation assumptions, and independent integer-floor boundary and count-type cases; a later division or clamp does not prove intermediate safety, and passing unbounded Python arithmetic does not prove engine behavior.
-Never turn an unsupported numeric maximum into an eligibility gate or no-payment policy, or silently cap actual history.
-For integer receipt validation, prefer modulo by one on scratch storage using the documented `modulo_temp_variable` effect and trigger forms without rounding the receipt or adding maximum or count caps; use ratio quotient and remainder or rational scaled coefficients only when proven equivalent under the stated arithmetic assumptions.
-
-Known sensitive fields:
-
-- `set_country_flag = { days = ... }`
-- `set_global_flag = { days = ... }`
-- any other timed field that throws `Malformed token` for either `constant:category.key` or a variable token
-
-For those fields, use a file-scoped `@NAME = literal` constant in the same script file and pass `days = @NAME`. Keep the value mirrored with the matching `common/script_constants/` tuning entry, and update both in the same change.
-
-Do not work around this by setting a temp variable and passing `days = temp_name`. those fields can reject variable tokens too. In which case, a `meta_effect` must be used if possible.
-
+Read [`references/major-event-aftermath.md`](references/major-event-aftermath.md) whenever a major event can be defeated, contained, or end with an aftermath state. It contains the complete standard for this section and its subsections.
 
 ## Documentation rules
 
@@ -298,33 +256,12 @@ Use scripted helpers for formation effects. Do not duplicate formation logic in 
 
 Hidden formables should still have implementation coverage. They need reveal events, hidden flags, visibility triggers, localisation, assets, AI rules, and cleanup.
 
-When exact state control is the formation proof, use the manifest-driven state-puzzle workflow under `.agents/skills/hoi4-decisions-missions/templates/formable_state_puzzle/`. Keep generated state pieces, the shared territory helper, formation decision, AI path, and every in-scope decision category synchronized. Complete `category_attachment_audit.md`; under a strict family policy every category metadata block must attach the generated `context_type = decision_category` scripted GUI. A category picture or text-only description does not replace that attachment.
+When exact state control is the formation proof, use the manifest-driven state-puzzle workflow under `.claude/skills/hoi4-decisions-missions/templates/formable_state_puzzle/`. Keep generated state pieces, the shared territory helper, formation decision, AI path, and every in-scope decision category synchronized. Complete `category_attachment_audit.md`; under a strict family policy every category metadata block must attach the generated `context_type = decision_category` scripted GUI. A category picture or text-only description does not replace that attachment.
 
 
 ## Scripted GUI and animated event presentation
 
-Major event mechanics can use scripted GUI windows, decision-category interfaces, animated leader portraits, or custom buttons when they make the system easier to play. Treat that UI as part of the event contract, not as decoration added later. Static and animated category pictures must pass the simple-category eligibility gate in `hoi4-decisions-missions`: description, ordinary decision list, and at most basic formatted value tables, with no complex GUI, meters, extra custom controls, rich panels, or other animations alongside the picture.
-
-When the event specifically adds a dedicated scripted GUI or mechanic window, route its bounded layout implementation and visual-quality pass to `hoi4_event_ui_worker`. The worker must follow `hoi4-scripted-gui` for the accepted reference, native-element mapping, mandatory `hoi4.gui_inspect`, iterative `hoi4.gui_render` state/resolution/hierarchy/click-region views, corrections, and matched post-change comparison evidence. Reviewed source edits may be applied directly or through optional `hoi4.gui_rewrite`. Do not send shared event logs, event-detail frameworks, settings, super-event frameworks, shared registries, or unrelated existing UIs to this worker. A UI is eligible only when the accepted event spec or source proves that the event introduces and owns it.
-
-When an event uses a custom interface, align these surfaces:
-
-- decision category or entry button
-- scripted GUI definition
-- scripted triggers and effects
-- costs and tooltips
-- animated and static sprites
-- localisation and scripted localisation
-- AI fallback behavior
-- cleanup and invalidation rules
-- documentation and asset manifest
-
-For a formable state puzzle, add the manifest-to-category attachment crosswalk to the event handoff and verify every in-scope category against the generated scripted-GUI identifier and window. Use the actual read-only map and GUI inspect/render routes for the linked category; a state-piece render alone never proves category coverage.
-
-Every player-clickable GUI button that changes gameplay must validate the same requirements as a normal decision. It must show costs and missing requirements clearly. It must call scripted effects that can also be used by AI, decisions, focuses, and cleanup systems.
-
-Animated leader portraits, animated route emblems, glow effects, particles, and float effects should be used for major reveals, extreme-route escalation, hidden formables, supernatural leaders, or final transformations. Each animated asset needs a static fallback and manifest entry.
-
+Read [`references/event-presentation.md`](references/event-presentation.md) whenever an event adds a scripted GUI, an animated presentation, or a custom popup. It contains the complete standard for this section and its subsections.
 
 ## 3D model and entity integration
 
@@ -344,7 +281,7 @@ Use the `hoi4-feature-assets` skill whenever an event task requires generated or
 
 For every generated asset:
 
-1. Create the base artwork by following the official `$imagegen` skill workflow through `hoi4-feature-assets`.
+1. Create the base artwork by following the image generator's workflow through `hoi4-feature-assets`.
 2. Save the original generated image as a source PNG.
 3. Create a processed PNG preview at the correct HOI4 target size.
 4. Convert the processed PNG to DDS 32 bit unsigned BGRB 8.8.8.8.

@@ -1,0 +1,27 @@
+{
+  "tier_policy": {
+    "opus": ["hoi4-improvement-loop-planner"],
+    "sonnet": ["hoi4-3d-model-pipeline", "hoi4-feature-completion-auditor", "hoi4-localisation-auditor", "hoi4-scripted-system-architect", "hoi4-skill-maintainer"],
+    "default": "haiku"
+  },
+  "effort_policy": {"opus": "xhigh", "sonnet": "high", "haiku": "medium"},
+  "codex": {
+    "tiers": {
+      "opus": { "model_reasoning_effort": "xhigh" },
+      "sonnet": { "model_reasoning_effort": "high" },
+      "haiku": { "model_reasoning_effort": "medium" }
+    },
+    "sandbox": {
+      "read-only": "read-only",
+      "can edit": "workspace-write"
+    }
+  },
+  "cursor": { "model": "inherit" },
+  "opencode": { "model": "inherit" },
+  "qoder": {
+    "tools": {
+      "read-only": "Read, Grep, Glob, Bash, WebFetch, WebSearch",
+      "can edit": "Read, Grep, Glob, Bash, Edit, Write, WebFetch, WebSearch"
+    }
+  }
+}

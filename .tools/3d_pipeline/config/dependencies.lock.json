@@ -2,25 +2,25 @@
   "schema_version": "1.0.0",
   "lock_name": "hoi4-3d-model-pipeline",
   "resolution_policy": "latest_at_bootstrap",
-  "resolved_at_utc": "2026-10-18T09:05:26Z",
+  "resolved_at_utc": "2026-10-18T09:47:35Z",
   "bootstrap": ".tools/3d_pipeline/bootstrap_3d_workflow.py",
   "routes": {
     "meshy_mcp": {
       "package": "@meshy-ai/meshy-mcp-server",
-      "version": "0.4.0",
-      "integrity": "sha512-py2xFIrrBcU4SW7ked90/qjRqa6bheVn0fNLEW8Lnki3BCJTFaVvWN0W6a9mJYr26+M9y0WezGsTCKalzWrGtg==",
-      "runtime_root": "C:/Users/klimp/AppData/Local/HOI4 Mod Setup/runtimes/meshy-0.4.0",
-      "runtime_tree_sha256": "720075e2b1e266208f435b08d8ab81609f5e5e1a247ca4680c51b5a4f00f2011",
-      "runtime_file_count": 3916,
+      "version": "0.6.2",
+      "integrity": "sha512-xEgw7YE5vmK1mT8kBwO6ytmZf+zdaxPd3jdIvO/4o+YFKSSmv9VDnFob3PE2HojC20g57uslQt7m1w4iaWGFZA==",
+      "runtime_root": "C:/Users/klimp/AppData/Local/HOI4 Mod Setup/runtimes/meshy-0.6.2",
+      "runtime_tree_sha256": "3ad84a9d8f6a1c4ccd97fe8cc15d710d9102911960664ece373d79f0b32430db",
+      "runtime_file_count": 3952,
       "resolution": "pinned npm lock and verified complete runtime tree"
     },
     "meshy_tool_contract": {
       "path": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/config/meshy_tool_contract.json",
-      "sha256": "D4A209C1D2D8716A023B4B23593C033C7E5AED9D3B4DD5A9723FF1D5F7B8B5D4",
+      "sha256": "7AF308B44B818F261601E7A5BF1A336B76FE54F6B1ADB27B51D3CD4A476010E2",
       "contract": {
         "schema_version": "1.0.0",
         "server_package": "@meshy-ai/meshy-mcp-server",
-        "resolution_policy": "latest_at_bootstrap",
+        "resolution_policy": "exact_package_lock_at_bootstrap",
         "required_tools": {
           "meshy_check_balance": {
             "paid": false,
@@ -140,13 +140,11 @@
     },
     "blender_lab_mcp": {
       "repository": "https://projects.blender.org/lab/blender_mcp.git",
-      "ref_type": "tag",
-      "ref": "26.04.10",
-      "commit": "3746c944504191db1f9a950d95f0c76375b8cbea",
-      "default_branch": "main",
-      "default_head": "dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
-      "resolution": "latest semantic release tag",
-      "project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp",
+      "ref_type": "commit",
+      "ref": "dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
+      "commit": "dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
+      "resolution": "reviewed newest source commit pinned by the package",
+      "project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp/mcp",
       "wrapper": ".tools/3d_pipeline/wrappers/run_blender_lab_mcp.cmd",
       "profile": "development_only",
       "enabled_in_production": false
@@ -273,7 +271,7 @@
       "source_files_sha256": {
         "animation_root_export.py": "D03799E55F410E2F60C2D51957910DD0573A5956BBB4D0AD460C567C3EA8B6B0",
         "assembly_yaw.py": "1C53102A3923E367D01CB723AA7A4F6DB18D7E87A6A66A8DCACA2362B2C9A57D",
-        "blender_worker.py": "75D7D8AC02F95F413E6AC9F745F80E36BADEAE8BEB566AAFA4B02DD91666F03D",
+        "blender_worker.py": "FF8924B04204BC7FAEF798C79A0FA925B6E02CF966D2AC3E8486E1DA1FB475C5",
         "explicit_batch_repair.py": "EBD3CE21E5502A876114614B49B2BFCB493676DBD90C242FAD0333F354FD7624",
         "explicit_skin_repair.py": "F5B7AC956C22AFF07C4DB1CDE52851AA16EA0A76125D9AC13F9EE9C89D2BE788",
         "explicit_vertex_remap.py": "7BB930E54EFCFFA8CCFE5BFD2A46FB4448737301DC18BE43213BA3D0653B3423",
@@ -295,9 +293,9 @@
       "checksums": {
         "pyproject_sha256": "C49011E42ADB018E3F6131D4CCE194A13835B3F40D90BD07CF25A7CB0E1C976F",
         "module_sha256": "B2CB7798DCB10081DFE46821615B7157AD06D2C66E7845A199CB0C8E6019FC62",
-        "worker_sha256": "75D7D8AC02F95F413E6AC9F745F80E36BADEAE8BEB566AAFA4B02DD91666F03D",
+        "worker_sha256": "FF8924B04204BC7FAEF798C79A0FA925B6E02CF966D2AC3E8486E1DA1FB475C5",
         "wrapper_sha256": "B1559651AE35FF7EBFCAD5BBCF3EDC9537022DCBCDCEA4F81169296D8AB04DB9",
-        "config_sha256": "100504AA3DC1F565BD4D949E884C926FB9FB7620B9881F74593F3294492900F3",
+        "config_sha256": "C0A0DC3F17A0576D873051989299481CCF5021C3D63AB394CB6227C706CE3CE2",
         "uv_lock_sha256": "29D0CAAF2864A1D6CF75DEBC5CA9B914E39510119F32BA8BD5C91DC47DD570C0"
       },
       "unrestricted_blender_python": false,
@@ -305,16 +303,16 @@
     },
     "blender_mcp_addon": {
       "repository": "https://projects.blender.org/lab/blender_mcp.git",
-      "ref": "26.04.10",
-      "commit": "3746c944504191db1f9a950d95f0c76375b8cbea",
+      "ref": "dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
+      "commit": "dbbf836ad4b1025f14a2b3b504c43903f39e0b04",
       "addon_id": "mcp",
-      "version": "0.2.0",
+      "version": "1.0.0",
       "source_root": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp/addon/blender_mcp_addon",
-      "archive": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp_addon_cache/26.04.10-mcp-0.2.0.zip",
-      "sha256": "A7C5DA0B333E10DE28ABB0D34EB30EF649BADCFA46D56AD94647DB0908FD502C",
+      "archive": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp_addon_cache/dbbf836ad4b1025f14a2b3b504c43903f39e0b04-mcp-1.0.0.zip",
+      "sha256": "90AD7EB3838C30BABFA3B3C49674FBDF677E6FE2701C8BFB7B0BB37B3344D1F8",
       "extension_repo": "lab_blender_org",
       "install_root": "C:/Users/klimp/AppData/Roaming/Blender Foundation/Blender/5.1/extensions/lab_blender_org/mcp",
-      "blender_mcp_project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp",
+      "blender_mcp_project": "C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tools/3d_pipeline/vendor/blender_mcp/mcp",
       "bridge": {
         "host": "localhost",
         "port": 9876,
@@ -327,19 +325,9 @@
       "resolution": "latest resolved Blender MCP add-on source",
       "probe_host": "127.0.0.1",
       "reachable": true,
-      "started_by_bootstrap": true,
-      "process_id": 26396,
-      "start_command": [
-        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
-        "--background",
-        "--online-mode",
-        "--command",
-        "blender_mcp",
-        "--host",
-        "127.0.0.1",
-        "--port",
-        "9876"
-      ]
+      "started_by_bootstrap": false,
+      "process_id": null,
+      "start_command": null
     },
     "blender": {
       "executable": "C:/Program Files/Blender Foundation/Blender 5.1/blender.exe",

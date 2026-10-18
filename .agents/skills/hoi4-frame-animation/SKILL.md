@@ -52,11 +52,11 @@ Use this skill with `hoi4-feature-assets`.
 
 `hoi4-feature-assets` owns source mode, reference folders, DDS conversion, manifests, final asset placement, and sprite handoffs. This skill owns frame planning, per-frame generation discipline, anchor normalization, sheet construction, GIF previews, contact sheets, and HOI4 animation QA.
 
-Use `$imagegen` for generated frame art. If `$imagegen` is unavailable, stop and report the blocker. Do not invent another image generation route.
+Use the image generator for generated frame art. If the image generator is unavailable, stop and report the blocker. Do not invent another image generation route.
 
 Read [generated source art and review](../hoi4-feature-assets/references/generation-and-review.md) before seed or frame production. Use its model preference only when the actual tool exposes selection. After accepting a seed, use that seed or a neighbouring accepted frame as each edit target, name the exact motion-state delta, and preserve subject, camera, palette, canvas, anchor, and alpha. Record each frame's input candidate and repair lineage. Compare every accepted frame with the seed to detect accumulated drift and loop discontinuity. Each frame still needs its own real visual state.
 
-For every alpha-backed animation family, request a genuine transparent background in the initial ImageGen call for every generated source frame and preserve the alpha through normalization, sheet assembly, preview creation, and DDS conversion. Do not generate opaque or chroma-backed frames as the normal route. Use the fallback background-removal workflow in `hoi4-feature-assets` only when native transparency fails or an inherited, sourced, or user-provided frame begins with an unwanted opaque backdrop.
+For every alpha-backed animation family, request a genuine transparent background in the initial image-generation call for every generated source frame and preserve the alpha through normalization, sheet assembly, preview creation, and DDS conversion. Do not generate opaque or chroma-backed frames as the normal route. Use the fallback background-removal workflow in `hoi4-feature-assets` only when native transparency fails or an inherited, sourced, or user-provided frame begins with an unwanted opaque backdrop.
 
 Use `hoi4-focus-trees`, `hoi4-decisions-missions`, `hoi4-events`, or the relevant repository-specific implementation skill for the gameplay surface that uses the animation.
 
@@ -102,7 +102,7 @@ Use this skill for:
 
 A valid source frame can be:
 
-- a separate `$imagegen` output created from the frame plan
+- a separate image-generator output created from the frame plan
 - an edit of the approved seed frame where the frame prompt asks for a specific visual state
 - a sourced historical image frame when the animation is based on real material
 - a user-provided frame
@@ -148,7 +148,7 @@ The brief must include:
 
 ## 8. Frame plan
 
-Create a frame plan before calling `$imagegen`.
+Create a frame plan before calling the image generator.
 
 Recommended frame plan table:
 
@@ -175,12 +175,12 @@ For generated frames:
 2. Keep one subject, one camera angle, one palette, and one composition across all frames.
 3. Use the same target framing and anchor language in every frame prompt.
 4. Vary only the planned motion state, light state, expression, particle state, or route-state element.
-5. For an alpha-backed family, request real transparency in the first ImageGen call for every frame and retain the native-alpha source. Do not plan routine background removal.
+5. For an alpha-backed family, request real transparency in the first image-generation call for every frame and retain the native-alpha source. Do not plan routine background removal.
 6. Do not ask for text in generated frames.
 7. Save every source frame before processing.
 8. Reject frames with drifted silhouettes, wrong subject identity, wrong palette, opaque background for an alpha-backed family, fake checkerboards, halos, matte pixels, alpha drift, visible generated text, or broken loop behavior.
 
-If a frame fails native-transparency validation, use the `hoi4-feature-assets` fallback order: targeted built-in ImageGen edit-to-transparency first, then an actually available verified local removal process only if necessary. Preserve the untouched source, record the fallback and settings, and reject clipped silhouettes, coloured spill, internal holes, or edge drift. Never allow one repaired frame to use materially different alpha bounds from the rest of the family without an explicit motion reason.
+If a frame fails native-transparency validation, use the `hoi4-feature-assets` fallback order: targeted a built-in edit-to-transparency request to the image generator first, then an actually available verified local removal process only if necessary. Preserve the untouched source, record the fallback and settings, and reject clipped silhouettes, coloured spill, internal holes, or edge drift. Never allow one repaired frame to use materially different alpha bounds from the rest of the family without an explicit motion reason.
 
 For real people, do not generate fake motion that implies real footage, speech, or new real-world behavior. Use sourced stills and subtle symbolic layers only when the parent scope allows it. Keep the result clearly an in-game portrait or UI asset.
 
@@ -213,7 +213,7 @@ For the common `frameAnimatedSpriteType` pattern, build a one-row horizontal she
 Rules:
 
 - every processed frame must have identical dimensions
-- each frame must use the target asset type's background rule; alpha-backed families default to native ImageGen transparency, while deliberately painted full-canvas families remain opaque only when their inspected consumer requires it
+- each frame must use the target asset type's background rule; alpha-backed families default to native image-generator transparency, while deliberately painted full-canvas families remain opaque only when their inspected consumer requires it
 - frame order is left to right
 - sheet width must be `frame_width * noOfFrames`
 - sheet height must be `frame_height`
@@ -490,7 +490,7 @@ Before marking an animation complete, verify:
 
 Stop and report a blocker when:
 
-- `$imagegen` is unavailable for generated frame art
+- the image generator is unavailable for generated frame art
 - required native transparency cannot be obtained or fallback removal damages the subject, silhouette, or frame-to-frame alpha bounds
 - required source frames for a sourced animation cannot be found
 - the offline HOI4 wiki page, vanilla file, or existing repository example needed for wiring cannot be inspected

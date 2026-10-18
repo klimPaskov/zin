@@ -45,7 +45,7 @@ Every delivered workbook must have no visible `#REF!`, `#DIV/0!`, `#VALUE!`, `#N
 3. From the repository root run:
 
 ```text
-python .agents/skills/xlsx/recalc.py <workbook.xlsx> [timeout_seconds]
+python .claude/skills/xlsx/recalc.py <workbook.xlsx> [timeout_seconds]
 ```
 
 4. Read the JSON result. Fix every reported formula error and rerun until `status` is `success`.

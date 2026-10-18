@@ -1,0 +1,26 @@
+{
+  "asset_id": "zin_trolls_brute",
+  "people": "trolls",
+  "mode": "source_free_owner_rule",
+  "rationale": "ZIN rule (owner, 17 October 2026): all art is new and image-generated; never copy assets from other mods. This overrides the kit's third-party source search, so no external source exists for this reference.",
+  "owner_approval": {
+    "at": "2026-10-18",
+    "quote": "Approved all five unit references."
+  },
+  "generator": {
+    "route": "gptimage library (owner ChatGPT plan)",
+    "model": "gpt-6-astra",
+    "size": "1024x1536",
+    "quality": "high",
+    "generated_at": "2026-10-18T09:27:09.003Z",
+    "prompt": "A single full-body character for a 3D model reference, for a dark painterly fantasy grand-strategy game. Straight front view, the whole figure from head to feet visible and centred with margin on every side, standing on nothing, relaxed A-pose with arms angled about 30 degrees away from the body and legs slightly apart, hands open and empty, fingers separated. He holds no weapon, no shield, no staff and no banner; nothing is attached to the hands. Plain flat uniform light grey (#c8c8c8) background, even soft studio lighting, no cast shadow, no ground, no scenery, no text, no frame. Clear readable silhouette, no loose cloth streamers, no thin floating parts, armour pieces solid and attached to the body. The figure is a hulking mountain troll: a massive hunched humanoid with grey stony mottled skin, long thick arms, huge hands, a heavy brow, wearing only a crude hide loincloth, rough iron bands on the wrists and a few chained stone plates on the shoulders. Bare large feet."
+  },
+  "meshy_input": {
+    "path": "refs/original/meshy_input.png",
+    "sha256": "6391503db3fb34d4dc367631f51a63fa1a3f6da3c5ff85a3c85953dbe408faa6",
+    "bytes": 2282592
+  },
+  "rejected_attempts": [
+    "black background, arms against the body, non-standard size"
+  ]
+}

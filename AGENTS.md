@@ -1,6 +1,8 @@
-# Repository Guidelines
+# Project Instructions
 
 This file describes how you should read, edit and extend the `ZIN` codebase.
+
+It is a complete, self-contained instruction file. It does not import or depend on an `AGENTS.md`.
 
 ## ZIN project rules (override the generic kit where they conflict)
 
@@ -71,6 +73,11 @@ For GUI work, consult pertinent Interface modding and Scripted GUI modding secti
 When a live result includes `omittedSources`, those required sources were excluded by the result limit; increase the limit or use targeted `hoi4.reference_search` and `hoi4.reference_read` before claiming coverage.
 Unlike `omittedSources`, `missing` identifies absent files; a limit of 1 can retain only installed documentation, while a limit of 2 or more can retain both available required source kinds.
 
+Maintenance:
+
+- Refresh the snapshot with `python -B .tools/wiki/sync_wiki_snapshot.py` and accept it with `python -B .tools/wiki/verify_wiki_snapshot.py`. See `.tools/wiki/README.md`.
+- Refreshing the snapshot is its own task. Do not re-fetch wiki pages while implementing a mechanic; work from the committed snapshot.
+
 Web access:
 
 - For general web research, use your default web search tool.
@@ -137,7 +144,7 @@ Use `hoi4-portrait-production` and `hoi4_portrait_creator` for every character p
 
 ### HOI4 MCP setup (bootstrap; remove after setup)
 
-This section is only for first-time setup. After the package is installed and the MCP client entry is registered, delete this entire section from the copied or generated `AGENTS.md`. Keep the normal MCP routing and use guidance below; do not leave bootstrap commands in the project instructions.
+This section is only for first-time setup. After the package is installed and the MCP client entry is registered, delete this entire section from the copied or generated instruction file. Keep the normal MCP routing and use guidance below; do not leave bootstrap commands in the project instructions.
 
 For manual setup, install the exact package version declared by the current setup manifest and repository bootstrap. The current starter revision uses the following reproducible Windows command; update the version and integrity evidence together when the manifest changes:
 
@@ -147,7 +154,7 @@ npm install --global --prefix "$env:APPDATA\npm" --ignore-scripts --registry=htt
 
 If the exact package is unavailable from npm, stop and record the package/version blocker instead of silently substituting an unpinned clone or an older release.
 
-Register the server with the target mod as its working directory, for example in Codex:
+Register the server with the target mod as its working directory. For Codex:
 
 ```toml
 [mcp_servers.hoi4_agent_tools]
@@ -155,7 +162,7 @@ command = "hoi4-agent-tools.cmd"
 cwd = "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin"
 ```
 
-Reload the agent. For a mod-local `cwd`, no server configuration or mod-selection command is needed. Use `hoi4-agent-tools-setup --init` only for persistent multi-mod or remote configurations. Once setup is complete, remove this setup section from the copied agents file before normal work begins.
+Reload the agent. For a mod-local `cwd`, no server configuration or mod-selection command is needed. Use `hoi4-agent-tools-setup --init` only for persistent multi-mod or remote configurations. Once setup is complete, remove this setup section from the copied instruction file before normal work begins.
 
 ### HOI4 MCP
 
@@ -179,17 +186,52 @@ Keep the detailed capability, artifact-authority, probability-scenario, rewrite-
 
 Codex is the canonical authoring runtime. Maintain each custom subagent only in `.codex/agents/*.toml`; Qoder, Cursor, OpenCode, and Claude Code definitions are generated projections and never separate prompt sources.
 
-- Run `python .tools/sync/sync_qoder_agents.py`, `python .tools/sync/sync_cursor_agents.py`, `python .tools/sync/sync_opencode_agents.py`, and `python .tools/sync/sync_claude_agents.py` after every canonical agent change. Run the same commands with `--check` during validation.
+Run `python .tools/sync/sync_qoder_agents.py`, `python .tools/sync/sync_cursor_agents.py`, `python .tools/sync/sync_opencode_agents.py`, and `python .tools/sync/sync_claude_agents.py` after every canonical agent change. Run the same commands with `--check` during validation.
+
 - Qoder uses generated `.qoder/agents/*.md`, Cursor uses generated `.cursor/agents/*.md`, OpenCode uses generated `.opencode/agent/*.md`, and Claude Code uses generated `.claude/agents/*.md`. Canonical snake-case names become hyphen-case runtime names.
 - Qoder, Cursor, OpenCode, and Claude Code project agent projections are generated but tracked so a checkout works immediately. Never hand-edit or treat any projection as authority; edit the TOML source and regenerate. Keep personal overrides and machine-local caches out of Git.
 - Claude Code specialist model tiers are mapped per role in `.tools/sync/agent_sync_common.py`. Add a tier when adding a canonical agent; the generator fails on missing entries.
-- Claude Code loads `CLAUDE.md`, `.claude/settings.json`, and root `.mcp.json`. Install `CLAUDE_template.md` as `CLAUDE.md`; it is a complete standalone instruction file and does not require this `AGENTS.md` to exist.
-- DSH loads `AGENTS.md` and `CLAUDE.md` from the project root, interprets no `@path` imports, and collapses the two only when their content is identical. It reads no `.codex/agents/*.toml` and has no project-scoped MCP file, so its subagents are composed from the delegated prompt and its MCP servers are profile configuration under `$DSH_HOME`.
-- Keep exactly one instruction authority per project. Install this file as `AGENTS.md`, install `CLAUDE_template.md` as `CLAUDE.md`, or keep both in perfect sync; never maintain two drifted copies of these rules, and never leave an `@AGENTS.md` import in a project that has no `AGENTS.md`.
 - Each runtime owns its own MCP registration. Do not copy Codex-only approval, sandbox, absolute path, environment, or tool-allowlist settings into another runtime unless that runtime has a verified equivalent.
 - During a non-Codex session, treat `.codex/**` as read-only canonical input. During a Codex session, leave generated alternate-runtime definitions untouched except through the synchronizers.
 - Every runtime must give a custom subagent a fully explicit, self-contained prompt with no inherited conversation context. Runtime isolation does not remove the parent's responsibility to pass paths, accepted decisions, constraints, handoffs, and scope boundaries.
-- Per-runtime instruction discovery, skill roots, subagent registries, and MCP registration shapes are documented in `docs/runtimes.md`.
+
+The per-runtime layout, discovery rules, instruction-file precedence, and model-selection policy are documented in `docs/runtimes.md`. Read it before adapting a runtime-specific file.
+
+#### Claude Code runtime
+
+- Claude Code loads this file as `CLAUDE.md`, shared project settings from `.claude/settings.json`, generated project subagents from `.claude/agents/*.md`, personal overrides from `.claude/settings.local.json`, and project MCP servers from the root `.mcp.json`.
+- Invoke the generated lowercase hyphen-case specialist through Claude Code's `Agent` tool and give it a fully explicit, self-contained task message. Claude Code subagents receive their own context plus project `CLAUDE.md`; do not assume they inherit the parent conversation.
+- Do not substitute Claude Code's built-in `Explore`, `Plan`, or `general-purpose` agents for a named project specialist.
+- Claude Code requires a one-time trust decision before using a project-scoped MCP server. After trust, verify the `hoi4_agent_tools` registration with `/mcp` and require its advertised routes exactly as described in the HOI4 MCP section above.
+- Keep credentials and personal overrides out of shared files; use environment variables and `.claude/settings.local.json` for machine-local values.
+
+#### DeepSeek Harness (DSH) runtime
+
+- DSH loads project instructions from `CLAUDE.md` and `AGENTS.md` in every directory from the project root down to the working directory, in broad-to-specific order, together with the user-global `$DSH_HOME/AGENTS.md`. Each of those names is an independent candidate, so this file is loaded even when no `AGENTS.md` exists.
+- `@path` import lines are not interpreted by DSH. A `CLAUDE.md` that relies on `@AGENTS.md` gets no rules from that file, which is the reason this template is written as a complete, standalone instruction file.
+- Sibling files in the same directory are collapsed only when their content is byte-identical after trimming surrounding whitespace. Different content from the pair is loaded in full, so a drifted pair hands the runtime two competing rule sets instead of one authority.
+- DSH caps the rendered instruction baseline at 65,536 bytes by default and drops whole broader files before truncating the most specific one, reporting the omission in a visible `Workspace instruction budget` notice. A single source file above 1 MiB is not loaded at all. These instruction files are large enough to exceed that cap together, and when both are installed the broader `AGENTS.md` is the file dropped, so install `CLAUDE.md` alone unless the project deliberately needs the pair, and move rarely needed detail into skills or `docs/` pages instead of growing this file without limit.
+- DSH reads local overlays named `AGENTS.local.md` and `CLAUDE.local.md` after the base files. Keep machine-local paths, credentials, and personal preferences there, and keep those files out of Git.
+- DSH discovers skills from `<project_root>/.dsh/skills` and `<project_root>/.agents/skills`. The repository skill library already lives in `.agents/skills/`, so every repo skill is available in DSH through its `name` and `description` frontmatter. A skill with invalid frontmatter is skipped with a warning, so check the frontmatter when a skill does not appear.
+- DSH has no project-local registry of named subagents and does not read `.codex/agents/*.toml`. Its delegation tool composes a subagent at call time from the prompt it is given, so the canonical snake_case identifiers are routing and ownership contracts rather than loadable definitions.
+  - Write the role boundary, allowed files, forbidden files, ownership limits, evidence format, and handoff path directly into the delegated prompt instead of assuming a named definition supplies them.
+  - DSH subagents never inherit the parent conversation. Every path, accepted decision, constraint, correction, and prior handoff fact must be in the prompt.
+  - Because no definition supplies the model, confirm the subagent route explicitly when the task depends on a specific model or reasoning effort, and state the resulting route in the handoff.
+- DSH has no project-scoped MCP file. MCP servers are registered as configuration rows in the active DSH profile under `$DSH_HOME/profiles/<profile>/`, not in the project tree. Add one row per server, and declare `@deepseek-ai/dsh-mcp-client` as a dependency of that profile when it is not already installed there:
+
+  ```yaml
+  - id: mcp-hoi4-agent-tools
+    name: '@deepseek-ai/dsh-mcp-client'
+    config:
+      serverName: hoi4_agent_tools
+      transport: stdio
+      command: hoi4-agent-tools.cmd
+      cwd: "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin"
+  ```
+
+  DSH exposes that server's tools to the model as `mcp__hoi4_agent_tools__hoi4_<route>`, so the route names in the HOI4 MCP section above appear under that prefix in a DSH session.
+
+- Keep machine-local DSH profile rows, credentials, and caches out of the project repository and out of Git.
 
 ### Subagents
 
@@ -199,7 +241,7 @@ Use project custom subagents when a task needs bounded research, asset productio
 
 The main agent remains responsible for final implementation, final wiring, final review, validation, and completion claims. Subagents return evidence, files, manifests, spec addenda, patches, or handoff notes depending on the parent-granted mode. The main agent must review their outputs and carry blockers or uncertainty into the final report.
 
-All project custom subagents must receive a fully explicit, self-contained prompt and no inherited conversation context. In Codex this means `fork_turns="none"`; Claude Code, Cursor, Qoder, and OpenCode use their isolated generated-agent route; DSH composes the subagent from the delegated prompt alone and reads no agent definition files. If a subagent needs a user correction, task constraint, current implementation status, or prior handoff detail, the parent must pass it explicitly in the prompt or write it into the relevant spec, plan, handoff, or repo file before spawning. In DSH, treat the canonical snake_case identifiers as routing and ownership contracts and write the role boundary, allowed and forbidden files, ownership limits, evidence format, and handoff path into the prompt, because no named definition supplies them.
+All project custom subagents must receive a fully explicit, self-contained prompt and no inherited conversation context. In Codex this means `fork_turns="none"`; alternate runtimes use their isolated generated-agent route, and DSH composes the subagent from the prompt alone. If a subagent needs a user correction, task constraint, current implementation status, or prior handoff detail, the parent must pass it explicitly in the prompt or write it into the relevant spec, plan, handoff, or repo file before spawning.
 
 Use these high-level routing rules:
 
@@ -207,7 +249,7 @@ Use these high-level routing rules:
 - Use asset subagents for non-portrait visual production: `hoi4_asset_source_researcher`, `hoi4_generated_feature_art`, and `hoi4_icon_artist`. All character portrait work belongs to `hoi4_portrait_creator`.
 - Use `hoi4_event_ui_worker` only for a dedicated scripted GUI introduced and owned by one named event or event-owned mechanic. The parent prompt must prove event ownership and name exact GUI identifiers, files, entry point, states, resolutions, assets, and handoff path. The worker owns bounded layout implementation and the iterative MCP live-preview and comparison evidence required by `hoi4-scripted-gui`, while the parent and decision owner retain gameplay, costs, effects, AI, balance, final integration, and in-game validation. It must not audit event logs, event-detail frameworks, settings, super-event frameworks, shared registries, or unrelated existing UIs.
 - Use `hoi4_portrait_creator` for complete portrait production: grounded source research and wired source placeholders, fictional native ImageGen portraits, user-supplied grounded-final validation, processing, DDS conversion, portrait-specific wiring, manifests, and handoffs. The user owns the configured grounded-subject provider run; the agent never operates RunPod.
-- When an asset subagent is asked to produce animation, the parent prompt must require `hoi4-frame-animation` for 2D frame-sheet assets and `hoi4-3d-model-pipeline` for skeletal `.anim` actions; 3D prompts must include the provider-dependent Meshy key gate, modern-designed-art search and excluded historical/documentary source families, immutable source/search evidence, a substantially original source-informed ImageGen refinement and comparison, explicit approval before a source-free fallback, Meshy 7, the one-image-per-geometry-task rule, vanilla scale crosswalk, material packing, reimport proof, and parent-owned runtime wiring. Firearm-bearing units require a fresh weapon-free Meshy body plus separate Meshy geometry/input/download lineage for each gun, then one verified Meshy body rig/action attempt where the biped and live route support it, followed by Blender fitting, attachment, contact correction, and recovery; existing non-firearm repairs use Blender directly; other provider-eligible bipeds receive one supported Meshy rig/action attempt, while non-bipedal anatomy goes directly to live Blender authoring. Do not pay for rig/action retries, omit required components, or substitute static/aliased motion. Custom-unit prompts must also require Internet sound-source research, original downloads, source URLs, licensing evidence, checksums, animation synchronization points, and a blocked state when no defensible sourced file exists. Selection audio and its exact engine consumer are mandatory; when selection uses a country or original-tag infantry voice template, enumerate every consumer under that identity and block per-subunit claims that the engine cannot bind separately. Generated, synthesized, recorded, manually authored, placeholder, test-tone, and unlicensed unit audio is forbidden. Every new custom unit must also receive bespoke counters for every counter surface it uses. Inspect the exact installed-vanilla counter definition/DDS and matching skill-local reference family first, sample the vanilla green palette, and route original counter production to `hoi4_icon_artist`; reused counters, arbitrary green, and unreferenced imitations are incomplete.
+- When an asset subagent is asked to produce animation, the parent prompt must require `hoi4-frame-animation` for 2D frame-sheet assets and `hoi4-3d-model-pipeline` for skeletal `.anim` actions; 3D prompts must include the provider-dependent Meshy key gate, modern-designed-art search and excluded historical/documentary source families, immutable source/search evidence, a substantially original source-informed ImageGen refinement and comparison, explicit approval before a source-free fallback, Meshy 7, the one-image-per-geometry-task rule, vanilla scale crosswalk, material packing, reimport proof, and parent-owned runtime wiring. Firearm-bearing units require a fresh weapon-free Meshy body plus separate Meshy geometry/input/download lineage for each gun, then one verified Meshy body rig/action attempt where the biped and live route support it, followed by Blender fitting, attachment, contact correction, and recovery; existing non-firearm repairs use Blender directly; other provider-eligible bipeds receive one supported Meshy rig/action attempt, while non-bipedal anatomy goes directly to live Blender authoring. Do not pay for rig/action retries, omit required components, or substitute static/aliased motion. Custom-unit prompts must also require Internet sound-source research, original downloads, source URLs, licensing evidence, checksums, animation synchronization points, and a blocked state when no defensible sourced file exists. Selection audio and its exact engine consumer are mandatory; when selection uses a country or original-tag infantry voice template, enumerate every consumer under that identity and block per-subunit claims that the engine cannot bind separately. Generated, synthesized, recorded, manually authored, placeholder, test-tone, and unlicensed unit audio is forbidden. Every new custom unit must also receive bespoke counters for every counter surface it uses. Inspect the exact installed-vanilla counter definition/DDS and matching skill-local reference family first, sample the vanilla green palette, and route original counter production to `hoi4_icon_artist`; reused counters, arbitrary green, and unreferenced imitations are incomplete. The parent owns `.asset`, entity, counter GFX, sound definitions, runtime wiring, and live proof.
 - Use quote and audio research subagents only for specialised sourced text or audio work: `hoi4_quote_remark_researcher` and `hoi4_audio_researcher`. For registered super-events, use the narrower `hoi4_super_event_quote_researcher`, `hoi4_super_event_audio_researcher`, and `hoi4_super_event_art_researcher` routes where their registration contract applies.
 - Use audit subagents before completion claims: `hoi4_focus_tree_auditor`, `hoi4_decision_mission_auditor`, `hoi4_country_package_auditor`, `hoi4_localisation_auditor`, `hoi4_ai_probability_auditor`, and `hoi4_feature_completion_auditor`.
 - Use `hoi4_ai_probability_auditor` for read-only scenario-based audits of AI weights, MTTH, event `ai_chance`, random lists, focus and research selection, decision and mission scores, AI strategy factors, and declared custom weighted pools. It must use the HOI4 MCP probability workflow and must not patch source or choose the intended balance target.
@@ -431,7 +473,7 @@ A goal can never be marked complete unless it is actually complete.
 
 For every goal, especially large event, mechanic, focus-tree, country-package, balance, UI, or asset goals, completion requires evidence. The agent must finish the requested implementation, update all related files, run or document the required checks, and report any blocker or simplification.
 
-Validation reporting must be useful. Run basic syntax hygiene internally when helpful, but do not spend the final report listing checks that only restate mandatory AGENTS.md rules, such as unsupported operator checks or brackets balance or BOM encoding checks, etc. Never tell the user directly: `Validation passed: diff whitespace check, brace balance on touched scripts, no unsupported <=/>=, localisation BOM intact, git diff --check passed, no remaining X references, workspace is clean.` Mention validation only when it is task-specific, could realistically fail, found a problem, changed the implementation, or gives the user useful evidence. Leave passing boilerplate checks out of the user-facing report.
+Validation reporting must be useful. Run basic syntax hygiene internally when helpful, but do not spend the final report listing checks that only restate mandatory rules, such as unsupported operator checks or brackets balance or BOM encoding checks, etc. Never tell the user directly: `Validation passed: diff whitespace check, brace balance on touched scripts, no unsupported <=/>=, localisation BOM intact, git diff --check passed, no remaining X references, workspace is clean.` Mention validation only when it is task-specific, could realistically fail, found a problem, changed the implementation, or gives the user useful evidence. Leave passing boilerplate checks out of the user-facing report.
 
 Do not claim completion when:
 
@@ -471,7 +513,7 @@ For event implementation, use `hoi4-events`.
 1. Wire the event script, namespace or category registration, trigger or firing route, localisation and name mappings, and any maintained event-log or event-detail surfaces together in the same change.
 2. If the event has evolutions, terminal branches, or a super-event outcome, wire the related log entries, super-event integration, assets, audio, and localisation in the same change.
 3. Keep gameplay files, specs, implementation docs, maintained spreadsheets or presentations, asset manifests, and player-facing detail text aligned.
-4. Treat any project-specific event id, entry-root format, catalog exporter, or maintained log framework as a repository source-of-truth rule and preserve it explicitly in the copied `AGENTS.md`.
+4. Treat any project-specific event id, entry-root format, catalog exporter, or maintained log framework as a repository source-of-truth rule and preserve it explicitly in this file.
 
 ## 7. Focus Trees and Large Content
 
@@ -511,6 +553,8 @@ Rules:
 8. Do not bloat skills with one-off details that will not help future tasks.
 9. During large multi-feature runs, review skill gaps after each completed feature or shared system. Update or create skills before starting the next feature if something reusable was learned.
 10. Report which skills were used, created, or updated at the end of each task.
+
+Skill files must keep valid frontmatter, because a skill with missing or invalid `name` or `description` frontmatter is skipped by the runtime instead of being reported as broken. Keep `name` kebab-case and matching the containing directory or file name, and keep `description` a complete sentence that names when the skill applies.
 
 ## 10. Git
 

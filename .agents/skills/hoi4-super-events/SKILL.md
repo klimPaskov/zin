@@ -657,7 +657,7 @@ Default rule:
 
 - use generated super-event images when the moment is fictional, alternate-history, symbolic, supernatural, surreal, or needs a unique emotional composition
 - use internet-sourced images when the super-event must depict a real historical person, real photographed event, or real archival artifact
-- follow `hoi4-feature-assets` and the official `$imagegen` workflow for generated images
+- follow `hoi4-feature-assets` and the image generator's workflow for generated images
 
 The super-event skill should define the image direction:
 
@@ -680,7 +680,7 @@ The asset skill handles:
 - main-agent `.gfx` wiring
 - manifest
 
-Treat project-root `docs/assets/<feature_slug>/` as temporary evidence for super-event image and audio work. Retain source files, previews, contact sheets, manifests, provenance, research notes, and handoffs while work is active, blocked, awaiting review, or undergoing acceptance scenarios. Before declaring the feature goal fully complete, move or copy durable evidence into `docs/events/`, `docs/plans/`, `docs/specs/`, `docs/super_events/`, or another permanent documentation surface, then delete only that feature-scoped workspace. Never delete skill-local reusable assets under `.agents/skills/.../assets/` or unrelated workspaces. Do not require the deleted workspace to exist for a completion claim.
+Treat project-root `docs/assets/<feature_slug>/` as temporary evidence for super-event image and audio work. Retain source files, previews, contact sheets, manifests, provenance, research notes, and handoffs while work is active, blocked, awaiting review, or undergoing acceptance scenarios. Before declaring the feature goal fully complete, move or copy durable evidence into `docs/events/`, `docs/plans/`, `docs/specs/`, `docs/super_events/`, or another permanent documentation surface, then delete only that feature-scoped workspace. Never delete skill-local reusable assets under `.claude/skills/.../assets/` or unrelated workspaces. Do not require the deleted workspace to exist for a completion claim.
 
 ## 20. Super-event slot wiring
 

@@ -1,6 +1,6 @@
 ---
 name: hoi4-debug-playtest
-description: Explicit-invocation-only workflow for controlling a Windows desktop to launch Hearts of Iron IV in debug mode, inspect fresh logs, repair one selected mod, relaunch until attributable errors are gone, run bounded gameplay and UI tests, capture screenshots, fix confirmed defects, and verify the fixes in game. Never use unless the user names this skill or explicitly asks for autonomous desktop playtesting.
+description: Explicit-invocation-only workflow for playing Hearts of Iron IV through the selected live-testing provider to launch the game in debug mode, inspect fresh logs, repair one selected mod, relaunch until attributable errors are gone, run bounded gameplay and UI tests, capture screenshots, fix confirmed defects, and verify the fixes in game. Never use unless the user names this skill or explicitly asks for autonomous desktop playtesting.
 ---
 
 # HOI4 Autonomous Debug Playtest
@@ -13,24 +13,18 @@ Do not trigger this skill as a normal coding, review, validation, audit, or comp
 
 This skill defines a workflow. It does not install or grant computer-control capabilities.
 
-Before starting, confirm that the current Codex environment exposes all of the following:
+<!-- HOI4_MOD_SETUP:LIVE_TESTING_PROVIDER:START -->
+Live-testing provider: manual until HOI4 Mod Setup writes the selected route.
+<!-- HOI4_MOD_SETUP:LIVE_TESTING_PROVIDER:END -->
 
-- a desktop-control tool that can identify windows, capture screenshots, click, type, send keys, and inspect the visible result
-- filesystem access to the selected mod repository and the HOI4 log directory
-- process-launch capability for a Windows executable or shortcut
-- process inspection and bounded process termination
-- an editing environment for the selected mod
-
-If desktop control is unavailable, stop and report that the skill cannot operate the computer in the current environment. Do not pretend that shell access alone is equivalent to playing the game.
-
-If screenshots cannot be captured or retained, stop before visual testing. Log-only validation is not a substitute for the requested live test.
+Follow `hoi4-live-playtest` before any operation. Inspect the selected server tool list, use qualified tool names, and map each step below to an advertised capability. These recipes describe test goals; Windows desktop mechanics apply only to a provider that supports them. Clausewitz supports direct native Linux HOI4 1.19.2 state reads without OCR or saves, and does not promise the Live Tools launch, console, UI, or save operations. Report unsupported steps and request manual observations. Do not automatically fall back to desktop control. Manual desktop testing requires explicit user authorization and available controls.
 
 ## 2. Required invocation contract
 
 Resolve these values from the user prompt, a supplied test brief, or the current repository. Do not search unrelated drives or folders.
 
-- `mod_root`: absolute Windows path to the one mod that may be edited
-- `launch_target`: absolute path to a debug-enabled `.lnk` or executable
+- `mod_root`: absolute path to the one mod that may be edited
+- `launch_target`: provider-supported debug launch target, only when launching is supported and requested
 - `launch_arguments`: optional arguments when the target is an executable
 - `log_root`: the active Hearts of Iron IV `logs` directory, or a bounded list of candidates
 - `test_scope`: changed feature, named feature list, event list, issue list, or explicit full-mod pass
@@ -166,6 +160,8 @@ Do not dismiss a new error introduced after the agent's own patch as pre-existin
 
 ## 8. Startup repair loop
 
+With HOI4 Live Tools, "close" is `hoi4_shutdown confirm=true` and "relaunch" is `hoi4_launch restart=true`. Restart only when the edit changed content the game reads at launch (script, localisation, ideas, focus trees); interface and texture edits reload in place with `reloadinterface` and `reload_textures` through `hoi4_console`.
+
 Before gameplay testing, reach a stable clean startup checkpoint.
 
 For each repair cycle:
@@ -247,7 +243,15 @@ Use separate saves when testing:
 - decisions that consume unique resources
 - scripted GUI state that cannot be reset safely
 
-Before the run, confirm with the user that the game writes plain-text saves (`save_as_binary=no` in the HOI4 `settings.txt`); do not edit that file yourself. Plain-text checkpoint saves let `hoi4-save-inspection` read the real runtime state. Name them after the test step, such as `qa_<run_id>_020_event_pre` and `..._post`, and record which inspector commands produced each piece of evidence.
+Before the run, confirm with the user that the game writes plain-text saves (`save_as_binary=no` in the HOI4 `settings.txt`); do not edit that file yourself. Plain-text checkpoint saves let `hoi4-save-inspection` and `hoi4_save_query` read the real runtime state. Name them after the test step, such as `qa_<run_id>_020_event_pre` and `..._post` (the server prefixes `hoi4live_`), and record which query or inspector command produced each piece of evidence.
+
+### 10.5 Efficiency
+
+- Keep one running game and one loaded dedicated save for the whole scope. Independent test cases run in sequence on the same loaded position; go back to a checkpoint only when a case contaminated the state.
+- After a fix, retest the failed case on the running game (restart only for content the game reads at launch), plus the one nearby regression check. Do not rerun passed cases or restart the coverage ledger.
+- Save only when a file answers the question: a diff around an option, a persistence check, a briefing's deep sections. Read everything else from the screen and tool output.
+- Repeat only the step that failed; repeat the whole sequence only when the step concerns persistence.
+- Delete your own `hoi4live_` saves when the run is done.
 
 ## 11. Generic HOI4 test matrix
 
@@ -358,12 +362,12 @@ When the intended design is unclear, mark `needs_user_review` instead of redesig
 When a live defect is confirmed:
 
 1. Save the dedicated test state and evidence.
-2. Close HOI4 safely.
+2. Keep the game running unless the fix needs a restart (content read at launch).
 3. Read the repository instructions and the skill or documentation for the affected system.
 4. Patch the smallest complete surface, including directly dependent localisation, GUI, GFX, or cleanup when required.
 5. Run targeted static checks.
-6. Relaunch through the same debug target.
-7. Return to the same test setup or a clean equivalent setup.
+6. Restart through the same debug target when the fix requires it.
+7. Return to the same test setup or a clean equivalent setup (on a running game, the loaded checkpoint).
 8. Reproduce the original sequence, and confirm persistent state with a before-and-after save diff when the fix changed it.
 9. Capture the corrected state.
 10. Check the fresh log delta.

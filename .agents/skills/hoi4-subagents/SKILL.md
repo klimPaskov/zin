@@ -1,13 +1,13 @@
 ---
 name: hoi4-subagents
-description: Use when coordinating custom Codex subagents for HOI4 mod implementation, asset production, text and audio research, audits, active small patches, planning handoffs, or documentation work.
+description: Use when coordinating project subagents for HOI4 mod implementation, asset production, text and audio research, audits, active small patches, planning handoffs, or documentation work.
 ---
 
 # HOI4 Subagents
 
-Use this skill when a HOI4 modding task should be split across custom Codex subagents.
+Use this skill when a HOI4 modding task should be split across project subagents.
 
-The parent Codex agent remains responsible for final integration, validation, and completion claims. Subagents can inspect, patch, create assets, write addenda, or produce reports. The parent must review their outputs, wire final cross-surface behavior, and carry blockers into the final report.
+The parent agent remains responsible for final integration, validation, and completion claims. Subagents can inspect, patch, create assets, write addenda, or produce reports. The parent must review their outputs, wire final cross-surface behavior, and carry blockers into the final report.
 
 Capture a task baseline before patch-capable subagents begin. Assign disjoint files and serialize any work that would touch the same source.
 
@@ -15,13 +15,13 @@ Do not use subagents to hide uncertainty or pass off responsibility. A subagent 
 
 ## Fork context rule
 
-All custom Codex subagents must be spawned with `fork_turns="none"`.
+All project subagents must be spawned without inherited conversation context.
 
-When the repository has generated alternate-runtime definitions, Qoder, Cursor, OpenCode, and Claude Code subagents are isolated by their runtime. Invoke the generated named specialist through that runtime's native route and do not substitute a generic built-in agent for a named HOI4 specialist. Keep canonical snake_case names in `.codex/agents/*.toml`; generated alternate-runtime files and maps are projections and must not be hand-edited.
+Claude Code subagents start isolated: invoke the specialist through the `Agent` tool by its hyphen-case name (`hoi4-repo-explorer` for `hoi4_repo_explorer`). In Codex, spawn the generated agent with `fork_turns="none"`. Cursor, Qoder, and OpenCode isolate their generated agents by runtime. Never substitute a generic built-in agent for a named HOI4 specialist.
 
 Do not spawn any subagent with inherited parent-thread context. The parent prompt must include every path, user correction, task constraint, scope boundary, previous handoff status, accepted plan, queued plan, and design rule the subagent needs.
 
-If the needed context only exists in conversation, summarize it into the subagent prompt or write it to the relevant spec, plan, handoff, or repo file before spawning. Then spawn the subagent with `fork_turns="none"`.
+If the needed context only exists in conversation, summarize it into the subagent prompt or write it to the relevant spec, plan, handoff, or repo file before spawning. Then spawn the subagent without inherited conversation context.
 
 This rule applies to every subagent type:
 
@@ -39,7 +39,7 @@ The goal is to keep subagents narrow, reproducible, and grounded in explicit inp
 
 ## Available subagents
 
-Canonical subagent definitions live in `.codex/agents/*.toml`. When alternate-runtime projections are present, regenerate them with the repository's synchronizers after changing a canonical TOML and use their `--check` mode to detect stale, missing, or unmapped outputs.
+Canonical subagent definitions are the Claude Code files in `.claude/agents/<hyphen-name>.md`; prose uses the snake_case routing names. The `model` field sets each role's Claude tier (Opus for `hoi4_improvement_loop_planner`; Sonnet for `hoi4_3d_model_pipeline`, `hoi4_feature_completion_auditor`, `hoi4_localisation_auditor`, `hoi4_scripted_system_architect`, and `hoi4_skill_maintainer`; Haiku for every other role). After changing a canonical file, run `python .tools/sync/sync_agents.py` to regenerate the Codex, Cursor, Qoder, and OpenCode projections, and use `--check` to detect stale or missing outputs. Never hand-edit a projection.
 
 Use `hoi4_repo_explorer` only for read-only repo exploration when touched-file mapping, pattern search, vanilla reference mapping, missing-file recovery, dependency mapping, or edit-order planning is actually unclear. It is not a default preflight agent.
 
@@ -47,7 +47,7 @@ Use `hoi4_improvement_loop_planner` for feature improvement loop planning, detai
 
 Use `hoi4_asset_source_researcher` for non-portrait real or archival image sourcing, historical flags, historical symbols, user-provided source photos, source-image processing, and report, news, or custom feature images that must depict real historical material.
 
-Use `hoi4_portrait_creator` for every character portrait. It researches and archives grounded sources, creates crops and placeholders, validates styled finals from the selected Cloud, Local, or RunPod route, invokes native ImageGen for fictional or impossible subjects, processes PNG/DDS outputs, installs portrait-specific wiring, and writes manifests and handoffs.
+Use `hoi4_portrait_creator` for every character portrait. It researches and archives grounded sources, creates crops and placeholders, validates styled finals from the selected Cloud, Local, or RunPod route, invokes the image generator for fictional or impossible subjects, processes PNG/DDS outputs, installs portrait-specific wiring, and writes manifests and handoffs.
 
 Use `hoi4_generated_feature_art` for generated non-icon art, including fictional or alternate-history report images, news images, large presentation images, custom feature images, fictional flags, faction emblems, UI panels, dossier art, progression-state base art, and animated non-icon presentation pieces. Do not route final character portraits through this worker.
 
@@ -63,7 +63,7 @@ Use `hoi4_focus_tree_auditor` for focus tree audits and active small patches cov
 
 Use `hoi4_decision_mission_auditor` for decision and mission audits and active small patches covering category lifecycle, objective quality, costs, tooltips, scripted GUI decision hooks, AI behavior, cleanup, balance, and exploit risk.
 
-Use `hoi4_event_ui_worker` to create or improve the scripted GUI window that one named event or event-owned mechanic specifically adds. It uses the dedicated UI model configured in its canonical TOML and the active MCP live-preview and comparison workflow from `hoi4-scripted-gui`, while `hoi4-decisions-missions` retains gameplay action integrity. It must not audit event logs, event-detail frameworks, settings, shared framework windows, or unrelated existing UIs.
+Use `hoi4_event_ui_worker` to create or improve the scripted GUI window that one named event or event-owned mechanic specifically adds. It uses the model tier set in its canonical agent file and the active MCP live-preview and comparison workflow from `hoi4-scripted-gui`, while `hoi4-decisions-missions` retains gameplay action integrity. It must not audit event logs, event-detail frameworks, settings, shared framework windows, or unrelated existing UIs.
 
 Use `hoi4_country_package_auditor` for country package audits and active small patches covering tags, history, states, leaders, portraits, flags, parties, focus loading, ideas, advisors, units, technologies, claims, cores, localisation, AI, formables, and playable setup.
 
@@ -83,7 +83,7 @@ Do not route new work to obsolete planner aliases. Use `hoi4_improvement_loop_pl
 
 ## Event UI worker gate
 
-Spawn `hoi4_event_ui_worker` with `fork_turns="none"` only when the accepted event spec or implementation explicitly introduces a dedicated scripted GUI or mechanic window. The parent prompt must provide the event id or stable feature slug, exact GUI identifiers and owning files, entry point, accepted layout brief, intended states and resolutions, linked decisions and scripted-GUI identifiers, approved asset handoffs, allowed files, and handoff path.
+Spawn `hoi4_event_ui_worker` without inherited conversation context only when the accepted event spec or implementation explicitly introduces a dedicated scripted GUI or mechanic window. The parent prompt must provide the event id or stable feature slug, exact GUI identifiers and owning files, entry point, accepted layout brief, intended states and resolutions, linked decisions and scripted-GUI identifiers, approved asset handoffs, allowed files, and handoff path.
 
 The worker is patch-capable for the accepted event-owned `.gui`, presentation-only `common/scripted_guis` wiring, event-owned `.gfx`, and event-owned GUI localisation. It owns layout implementation, visual hierarchy, spacing, alignment, background coverage, state presentation, click-region accuracy, and MCP before-and-after evidence. The parent and decision worker retain event outcomes, decision costs, AI, balance, reusable helper logic, final integration, and in-game validation.
 
@@ -107,7 +107,7 @@ Do not spawn `hoi4_repo_explorer` for small or already bounded work, including:
 
 - known-file edits
 - user-provided file updates
-- direct skill, prompt, or TOML updates
+- direct skill, prompt, or agent-definition updates
 - small bug fixes where the relevant files are already named
 - localisation-only cleanup with known keys
 - asset-only production that belongs to an asset subagent
@@ -156,11 +156,11 @@ The parent owns temporary-workspace cleanup. Keep the workspace while the featur
 
 ### 3D model-production agents
 
-Route `hoi4_3d_model_pipeline` only when the feature actually needs a 3D output, with `fork_turns="none"` and a context-complete prompt containing the exact deterministic job root, reference-image path or authorized modern-artwork source-search scope, output folders, handoff path, asset profile, named vanilla references, scale relationship, required action roles, custom-unit sound roles, Internet source and licensing requirements, custom-unit counter consumers/tokens, exact installed-vanilla counter definition and DDS paths, matching skill-local counter family, `hoi4_icon_artist` handoff path, baseline planned paid operations, extra-recovery credit and paid-attempt limits, dependency lock, and forbidden simplifications.
+Route `hoi4_3d_model_pipeline` only when the feature actually needs a 3D output, without inherited conversation context and a context-complete prompt containing the exact deterministic job root, reference-image path or authorized modern-artwork source-search scope, output folders, handoff path, asset profile, named vanilla references, scale relationship, required action roles, custom-unit sound roles, Internet source and licensing requirements, custom-unit counter consumers/tokens, exact installed-vanilla counter definition and DDS paths, matching skill-local counter family, `hoi4_icon_artist` handoff path, baseline planned paid operations, extra-recovery credit and paid-attempt limits, dependency lock, and forbidden simplifications.
 
-Before spawning it, the parent must run `.tools/3d_pipeline/bootstrap_3d_workflow.py` if the feature needs 3D work and the concrete Meshy/Blender entries are not already present in `.codex/config.toml`. This keeps ordinary mods free of 3D setup while ensuring the 3D worker starts only after its routes and dependency record exist.
+Before spawning it, the parent must run `.tools/3d_pipeline/bootstrap_3d_workflow.py` if the feature needs 3D work and the concrete Meshy/Blender entries are not already present in `.codex/config.toml` (the bootstrap also registers them for Claude Code in local scope). This keeps ordinary mods free of 3D setup while ensuring the 3D worker starts only after its routes and dependency record exist.
 
-The parent prompt must require the `MESHY_API_KEY` gate before provider preparation or calls and the autonomous 3D bootstrap for provider-dependent work; an Internet search across eligible game, tabletop, fantasy/horror, and professional design artwork when no authoritative source exists; exclusion of archival, museum, historical, antiquities, archaeological, ethnographic, reenactment, and documentary material from the model-reference pool; immutable source and search evidence; a substantially original, model-ready ImageGen refinement informed by the selected source traits, with a source-to-refinement comparison; and explicit parent or user direction before a source-free fallback. It must also require Meshy 7 (`meshy-7`) as the generation model, exactly one approved image per Meshy geometry task, no multi-view provider board, immediate provider download and checksum, protected provider source, topology repair, PDX packed-material validation, hash-aware runtime synchronization, and `.mesh`/`.anim` reimport evidence.
+The parent prompt must require the `MESHY_API_KEY` gate before provider preparation or calls and the autonomous 3D bootstrap for provider-dependent work; an Internet search across eligible game, tabletop, fantasy/horror, and professional design artwork when no authoritative source exists; exclusion of archival, museum, historical, antiquities, archaeological, ethnographic, reenactment, and documentary material from the model-reference pool; immutable source and search evidence; a substantially original, model-ready generated refinement informed by the selected source traits, with a source-to-refinement comparison; and explicit parent or user direction before a source-free fallback. It must also require Meshy 7 (`meshy-7`) as the generation model, exactly one approved image per Meshy geometry task, no multi-view provider board, immediate provider download and checksum, protected provider source, topology repair, PDX packed-material validation, hash-aware runtime synchronization, and `.mesh`/`.anim` reimport evidence.
 
 The prompt must select the route before provider calls: firearm-bearing units use a fresh weapon-free Meshy 7 body plus a separate Meshy 7 geometry task from one firearm-only input for each required gun, independent task/credit/download lineage, then one verified Meshy body rig/action attempt where the biped and live route support it, with Blender fitting/attachment, rigid controls, locators, contacts, and recovery; existing non-firearm repairs proceed directly in Blender; other provider-eligible bipeds get one supported Meshy rig attempt and one action attempt per missing role, while non-bipedal anatomy goes directly to live Blender authoring. Planned provider calls and bounded geometry recovery are pre-authorized while balance and capability permit them, but there are no paid rig/action retries. Complete every missing required component and action through the verified Blender adapter without renewed approval, preserve passing outputs, and block only when the required verified capability is absent. Static, transform-only, whole-rig-only, or semantically aliased actions remain forbidden. For custom units, require Internet sound-source research, immutable original downloads, source URLs, licensing and usage evidence, access dates, checksums, animation synchronization points, and a blocked state when no defensible sourced file exists; generated, synthesized, recorded, manually authored, placeholder, test-tone, and unlicensed audio is forbidden. Selection audio is mandatory: require its stable identifier, exact engine consumer and binding scope, effective country or original tag, every consumer sharing that identity, and actual selection evidence rather than idle or entity-state evidence. If the engine cannot bind distinct per-subunit selection voices under a shared tag, record that limitation as a blocker. Also require bespoke counters for every used counter surface, mandatory inspection of the exact installed-vanilla counter definition/DDS and matching reference family, and the sampled vanilla green palette; reused counters, arbitrary green, and unreferenced imitations are forbidden. For humanoids, name the installed vanilla source mesh and entity and pass the source-height/entity-scale/effective-runtime crosswalk; for buildings, pass the valid state/province pair and entity visibility test.
 
@@ -198,7 +198,7 @@ Active small patches include:
 - fixing an existing formable decision check, reveal condition, or state-control requirement
 - correcting country package references such as focus loading, party names, leader ids, tag setup, localisation, and simple starting setup
 
-Any patch to an AI weight, probability-bearing modifier, MTTH-backed score, random-selection weight, strategy factor, or weighted target check requires an audit-patch-compare cycle. Run `hoi4_ai_probability_auditor` first to establish named baseline scenarios. Before editing, the owner preserves an immutable pre-edit source copy at a real filesystem path, the exact scenario fixture, and SHA-256 hashes of the copied bytes. The owner applies the bounded change, then the auditor runs `hoi4.probability_compare` against the same scenarios using actual before and after paths. The probability auditor remains read-only, does not choose the intended balance target, and does not patch source.
+Any patch to an AI weight, probability-bearing modifier, MTTH-backed score, random-selection weight, strategy factor, or weighted target check requires an audit-patch-compare cycle. Run `hoi4_ai_probability_auditor` first to establish named baseline scenarios. Before editing, the owner preserves an immutable pre-edit source copy at a real filesystem path, the exact scenario fixture, and SHA-256 hashes of the copied bytes. The owner applies the bounded change, then the auditor runs `hoi4.probability_analyze` with `analysis: "compare"` against the same scenarios using actual before and after paths. The probability auditor remains read-only, does not choose the intended balance target, and does not patch source.
 
 If immutable probability snapshots are committed as durable before-source evidence, preserve the copied bytes through narrowly scoped Git attributes and any clean filters.
 When attributes change after staging, plain `git add` may reuse cached normalization; force a path-specific `git add --renormalize` under byte-preserving attributes and filters, or explicitly promote a blob with `git hash-object -w --no-filters` and a path-specific index update.
@@ -257,7 +257,7 @@ For large binary resources returned through an MCP resource reader, treat the re
 
 Use the artifact template's bounded byte-range reads, such as `?offset=<bytes>&length=<bytes>`, with small ranges. When payload is base64, prefer decoded-byte lengths divisible by 3 so each non-tail chunk can be decoded independently, then follow `continuationURI` through the final tail. Preserve metadata and exact offset and length for every range, reject invalid characters or embedded truncation text, independently decode and validate chunks, concatenate in offset order, and validate reconstructed bytes against the declared type before display or downstream processing. Treat a failed display after a one-shot read as an artifact-retrieval blocker; recover with bounded chunk reads or report unresolved instead of regenerating the artifact.
 
-When the parent supplies observer-run tallies from `hoi4-save-inspection`, the auditor reports them as live observations beside its MCP scenarios and states how many runs back them; they never replace the MCP workflow. For probability work, `hoi4_ai_probability_auditor` must start with `hoi4.probability_inspect`, name the analyzed surface and scenario ids, preserve the scenario hash, state whether the candidate pool and external factors were complete, and distinguish exact, bounded, sampled, score-only, and unresolved results. It must use `hoi4.probability_evaluate`, `hoi4.probability_sweep`, and `hoi4.probability_compare` according to the scenario, with simulation, sequence analysis, and rendering only under their declared evidence conditions. For technology or doctrine work, list the affected technology, folder, unlock, grant, bonus, or asset IDs and require the installed read-only `hoi4.tech_inspect`, `hoi4.tech_render`, and `hoi4.tech_compare` routes. If an exact route is unavailable, report the exact missing tool and block that evidence instead of inventing viewer evidence; source-only review is not equivalent.
+When the parent supplies observer-run tallies from `hoi4-save-inspection`, the auditor reports them as live observations beside its MCP scenarios and states how many runs back them; they never replace the MCP workflow. For probability work, `hoi4_ai_probability_auditor` must start with `hoi4.probability_inspect`, name the analyzed surface and scenario ids, preserve the scenario hash, state whether the candidate pool and external factors were complete, and distinguish exact, bounded, sampled, score-only, and unresolved results. It must use `hoi4.probability_inspect`, `hoi4.probability_analyze` with `analysis: "sweep"`, and `hoi4.probability_analyze` with `analysis: "compare"` according to the scenario, with simulation, sequence analysis, and rendering only under their declared evidence conditions. For technology or doctrine work, list the affected technology, folder, unlock, grant, bonus, or asset IDs and require the installed read-only `hoi4.tech_inspect`, `hoi4.tech_render`, and `hoi4.tech_inspect` with `mode: "compare"` routes. If an exact route is unavailable, report the exact missing tool and block that evidence instead of inventing viewer evidence; source-only review is not equivalent.
 
 For probability inspect and evaluate calls, use the installed schema's mod-relative source object, such as `source: { path: "common/decisions/example.txt" }`. Before compare, inspect the live schema and supply real, nonempty `before.path` and `after.path` source paths with the identical saved `scenarioSet`. Keep source hashes and revisions in the handoff, not inside the source objects. Do not substitute an analysis URI or compare the current file to itself when the pre-edit source is unavailable. Record the adapter's actual fixture validation errors and mark unsupported numeric variables, incomplete pools, or partial score-only output unresolved.
 
@@ -298,7 +298,7 @@ The parent agent must give each asset subagent a bounded prompt with exact asset
 
 For flags, the parent prompt must state whether each flag is a base flag, ideology variant, route variant, cosmetic-tag flag, historical flag, or fictional flag. Base flags for existing countries must be preserved unless explicitly in scope. Ideology variants must be distinct designs, not recolors or copied emblems. Historical flags and attested symbols belong with `hoi4_asset_source_researcher`. Fictional or alternate-history variants belong with `hoi4_generated_feature_art`.
 
-Asset subagents may create source files, PNG previews, DDS files, contact sheets, manifests, and `gfx_handoff.md`. The portrait worker additionally owns portrait research or ImageGen generation, portrait-specific `.gfx`, and existing character portrait references. It must not edit unrelated localisation, GUI, event, focus, idea, decision, script, history, country, or workbook files unless the parent explicitly expands scope.
+Asset subagents may create source files, PNG previews, DDS files, contact sheets, manifests, and `gfx_handoff.md`. The portrait worker additionally owns portrait research or image generation, portrait-specific `.gfx`, and existing character portrait references. It must not edit unrelated localisation, GUI, event, focus, idea, decision, script, history, country, or workbook files unless the parent explicitly expands scope.
 
 ## Quote, remark, and audio research routing
 
@@ -365,5 +365,5 @@ A subagent patch can reduce workload. It never owns the final completion claim.
 
 When the installed `hoi4-super-events` workflow is selected, route bounded work to `hoi4_super_event_quote_researcher` for quote candidates, attribution, response text, cultural fit, and copyright notes; `hoi4_super_event_audio_researcher` for source, license, download, verified conversion, and audio evidence; and `hoi4_super_event_art_researcher` for image direction, source-mode research, named-reference review, and explicitly authorized image production.
 
-Spawn each with `fork_turns="none"`. Include the mod root, stable registration ID, presentation role, owning caller, accepted plan path, exact question, named inputs, exact outputs and handoff path, source mode or audio decision, user constraints, and forbidden files. These agents do not edit gameplay, event, GUI, GFX, localisation, scripted localisation, sound definitions, or registry files; the main agent reviews the handoff and owns final wiring and completion.
+Spawn each without inherited conversation context. Include the mod root, stable registration ID, presentation role, owning caller, accepted plan path, exact question, named inputs, exact outputs and handoff path, source mode or audio decision, user constraints, and forbidden files. These agents do not edit gameplay, event, GUI, GFX, localisation, scripted localisation, sound definitions, or registry files; the main agent reviews the handoff and owns final wiring and completion.
 <!-- HOI4_MOD_SETUP_SUPER_EVENTS_END -->

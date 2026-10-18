@@ -9,14 +9,14 @@ The grounded-portrait source stage preserves the unchanged archival master and w
 Run automatic mode with an output crop path in the durable owner package:
 
 ```powershell
-python -B .agents/skills/hoi4-feature-assets/tools/extract_portrait_source_crop.py `
+python -B .claude/skills/hoi4-feature-assets/tools/extract_portrait_source_crop.py `
 	<archival_master.jpg> <subject_source_crop.png>
 ```
 
 The command writes co-located source copy, JSON, processed `156x210` PNG, and provenance files. For an independently reviewed detector miss or known boundary, use the explicit recovery rectangle:
 
 ```powershell
-python -B .agents/skills/hoi4-feature-assets/tools/extract_portrait_source_crop.py `
+python -B .claude/skills/hoi4-feature-assets/tools/extract_portrait_source_crop.py `
 	<archival_master.jpg> <archival_crop.png> `
 	--crop <left> <top> <right> <bottom> `
 	--metadata <archival_crop.json>
@@ -35,7 +35,7 @@ The compositor loads the complete source canvas without a pre-crop or warp, meas
 Run it with all review artifacts:
 
 ```powershell
-python -B .agents/skills/hoi4-feature-assets/tools/create_advisor_icon.py `
+python -B .claude/skills/hoi4-feature-assets/tools/create_advisor_icon.py `
 	--source <approved_portrait> `
 	--portrait-size <width> <height> `
 	--rotation <degrees> `
@@ -56,7 +56,7 @@ The native preview, nearest-neighbour `4x` review, placement study, alignment ov
 Convert only an approved processed PNG to the repository's verified one-level uncompressed 32-bit BGRA DDS contract:
 
 ```powershell
-python -B .agents/skills/hoi4-feature-assets/tools/convert_to_dds.py `
+python -B .claude/skills/hoi4-feature-assets/tools/convert_to_dds.py `
 	--input <processed.png> --output <runtime.dds> `
 	--width <pixels> --height <pixels>
 ```
@@ -78,7 +78,7 @@ The tool uses these verified workflow inputs by default:
 Keep source and output directories separate unless replacement is explicitly intended with `--in-place --force`. The tool refuses non-64x64 or incomplete inputs, an already-templated outer border, and existing output without `--force`.
 
 ```powershell
-python -B .agents/skills/hoi4-feature-assets/tools/process_achievement_icons.py `
+python -B .claude/skills/hoi4-feature-assets/tools/process_achievement_icons.py `
 	--input <source_triplet_directory> `
 	--achievement-id <achievement_id> `
 	--output-dir <separate_output_directory> `
@@ -92,6 +92,6 @@ Bulk, explicit-triplet, dry-run, and audit modes are supported. Final filenames 
 Use only for report-event image processing, as described in the skill. It is not a portrait, icon, flag, or generic fallback.
 
 ```powershell
-python -B .agents/skills/hoi4-feature-assets/tools/process_report_event_image.py `
+python -B .claude/skills/hoi4-feature-assets/tools/process_report_event_image.py `
 	<input.png> <processed_report_event.png>
 ```
