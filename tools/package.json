@@ -1,0 +1,17 @@
+{
+  "name": "zin-tools",
+  "private": true,
+  "description": "Build tooling for the ZIN Hearts of Iron IV overhaul: the deterministic content builder and its apply and image-generation scripts.",
+  "type": "module",
+  "engines": {
+    "node": "^22.19.0 || ^24.0.0"
+  },
+  "scripts": {
+    "build": "node content/build.mjs",
+    "test": "node --test content/build.test.mjs"
+  },
+  "dependencies": {
+    "sharp": "0.35.5",
+    "tsx": "4.23.11"
+  }
+}
