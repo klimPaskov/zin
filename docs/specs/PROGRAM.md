@@ -52,7 +52,7 @@ Nothing a player sees is vanilla unless it is engine-generic (for example, the m
 
 | Area | State | Notes |
 | --- | --- | --- |
-| Stable start for every country | in progress | Aenor crashes at start (Windows and Linux); bisection running |
+| Stable start for every country | in progress | Aenor crash fixed 19 October (near-empty subject state); every-country start test not yet run |
 | Error-free log | not started | vanilla leftovers produce most of today's ~1,900 lines |
 | Map accuracy | specified | [01_map](01_map/) |
 | Calendar 4A 1748 | specified | [00_foundation/01_start_and_calendar.md](00_foundation/01_start_and_calendar.md) |

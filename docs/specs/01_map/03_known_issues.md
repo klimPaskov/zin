@@ -2,7 +2,10 @@
 
 **Status:** In progress. **Priority:** 1. **Phase:** 1.
 
-## 1. Starting as Aenor crashes the game
+## 1. Starting as Aenor crashes the game (resolved 19 October 2026)
+
+**Cause and fix.** Dariap, one of Aenor's subjects, had a single state with 4,492 people. Its recruitable manpower rounded to zero, and the game divides by it when the player is its overlord or faction leader (Windows: integer divide by zero; Linux: segmentation fault). Bisection in the Linux copy: Aenor started with a minimal history, with no subjects and no faction, and with everything except Dariap. The politics step now gives every state at least 30,000 people (`STATE_MANPOWER_FLOOR`), with a regression test; 19 countries had fewer than 25,000. Aenor starts in the Linux run.
+
 
 **Symptom.** In the isolated Linux game, choosing Aenor and pressing Start crashes with a segmentation fault. The stack is the same every time: `(+0x266a46c) (+0x13cf698) (+0x13cef6b)…`. The binary is stripped.
 
