@@ -1,0 +1,19 @@
+state = {
+	id = 1051
+	name = "STATE_1051"
+	manpower = 290540
+	state_category = town
+	resources = { chromium = 1 }
+	history = {
+		owner = Y1P
+		add_core_of = Y1P
+		victory_points = { 1567 1 }
+		victory_points = { 1605 5 }
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+	provinces = { 1558 1567 1583 1605 1613 }
+}

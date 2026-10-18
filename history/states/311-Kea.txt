@@ -1,0 +1,19 @@
+state = {
+	id = 311
+	name = "STATE_311"
+	manpower = 6000
+	state_category = rural
+	resources = { steel = 9 }
+	history = {
+		owner = Y6A
+		add_core_of = Y6A
+		victory_points = { 6503 2 }
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+			6503 = { naval_base = 1 }
+		}
+	}
+	provinces = { 6503 6535 }
+}

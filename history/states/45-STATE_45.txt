@@ -1,0 +1,19 @@
+state = {
+	id = 45
+	name = "STATE_45"
+	manpower = 1302000
+	state_category = town
+	resources = { aluminium = 1 }
+	history = {
+		owner = Y5B
+		add_core_of = Y5B
+		victory_points = { 4420 5 }
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			industrial_complex = 2
+			4420 = { naval_base = 1 }
+		}
+	}
+	provinces = { 4319 4326 4405 4420 4500 4519 4551 4572 4581 4604 4614 4725 4763 }
+}

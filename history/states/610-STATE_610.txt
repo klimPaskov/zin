@@ -1,17 +1,16 @@
 state = {
 	id = 610
 	name = "STATE_610"
-	manpower = 900000
-	state_category = city
+	manpower = 234000
+	state_category = pastoral
+	resources = { steel = 32 tungsten = 5 }
 	history = {
-		owner = Z12
-		add_core_of = Z12
-		victory_points = { 4422 8 }
+		owner = Y0U
+		add_core_of = Y0U
+		victory_points = { 117 2 }
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 3
-			arms_factory = 1
+			infrastructure = 2
 		}
 	}
-	provinces = { 4315 4341 4365 4369 4422 4423 4442 4460 }
+	provinces = { 90 91 92 93 117 133 157 179 246 255 }
 }

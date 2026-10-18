@@ -1,44 +1,9 @@
-bookmarks = {
-	bookmark = {
-		name = "WORLD_BOOKMARK_NAME"
-		desc = "WORLD_BOOKMARK_DESC"
-		date = 1936.1.1.12
-		picture = "GFX_select_date_1936"
-		default_country = "Z08"
-		default = yes
-		"Z08" = {
-			history = "Z08_WORLD_DESC"
-			ideology = neutrality
-		}
-		"Z01" = {
-			history = "Z01_WORLD_DESC"
-			ideology = neutrality
-		}
-		"Z12" = {
-			history = "Z12_WORLD_DESC"
-			ideology = neutrality
-		}
-		"Z13" = {
-			history = "Z13_WORLD_DESC"
-			ideology = neutrality
-		}
-		"Z06" = {
-			history = "Z06_WORLD_DESC"
-			ideology = neutrality
-		}
-		"Z05" = {
-			history = "Z05_WORLD_DESC"
-			ideology = neutrality
-		}
-		"Z03" = {
-			history = "Z03_WORLD_DESC"
-			ideology = neutrality
-		}
-		"---" = {
-			history = "WORLD_OTHER_DESC"
-		}
-		effect = {
-			randomize_weather = 22345
-		}
-	}
-}
+bookmarks = { bookmark = { name = "WORLD_BOOKMARK_NAME" desc = "WORLD_BOOKMARK_DESC" date = 1936.1.1.12 picture = "GFX_select_date_1936" default_country = "Y0L" default = yes
+ "Y0L" = { history = "Y0L_WORLD_DESC" ideology = fascism }
+ "Y0G" = { history = "Y0G_WORLD_DESC" ideology = fascism }
+ "Y0U" = { history = "Y0U_WORLD_DESC" ideology = communism }
+ "Y8D" = { history = "Y8D_WORLD_DESC" ideology = communism }
+ "Y01" = { history = "Y01_WORLD_DESC" ideology = fascism }
+ "Y14" = { history = "Y14_WORLD_DESC" ideology = fascism }
+ "Y16" = { history = "Y16_WORLD_DESC" ideology = fascism }
+ "---" = { history = "WORLD_OTHER_DESC" } effect = { randomize_weather = 22345 } } }

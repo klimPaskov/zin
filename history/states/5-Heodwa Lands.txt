@@ -1,0 +1,21 @@
+state = {
+	id = 5
+	name = "STATE_5"
+	manpower = 78247
+	state_category = town
+	resources = { steel = 10 tungsten = 2 }
+	history = {
+		owner = Y2V
+		add_core_of = Y2V
+		victory_points = { 2360 2 }
+		victory_points = { 2343 5 }
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			arms_factory = 1
+			industrial_complex = 1
+			2415 = { naval_base = 1 }
+		}
+	}
+	provinces = { 2288 2343 2360 2415 }
+}

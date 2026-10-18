@@ -1,0 +1,76 @@
+defined_text = {
+	name = zin_people_name
+	text = { trigger = { has_country_flag = zin_people_men } localization_key = zin_people_men }
+	text = { trigger = { has_country_flag = zin_people_elves } localization_key = zin_people_elves }
+	text = { trigger = { has_country_flag = zin_people_sun_elves } localization_key = zin_people_sun_elves }
+	text = { trigger = { has_country_flag = zin_people_giants } localization_key = zin_people_giants }
+	text = { trigger = { has_country_flag = zin_people_ents } localization_key = zin_people_ents }
+	text = { trigger = { has_country_flag = zin_people_yeti } localization_key = zin_people_yeti }
+	text = { trigger = { has_country_flag = zin_people_trolls } localization_key = zin_people_trolls }
+	text = { trigger = { has_country_flag = zin_people_orcs } localization_key = zin_people_orcs }
+	text = { trigger = { has_country_flag = zin_people_the_dead } localization_key = zin_people_the_dead }
+	text = { trigger = { has_country_flag = zin_people_demons } localization_key = zin_people_demons }
+	text = { localization_key = zin_people_men }
+}
+defined_text = {
+	name = zin_people_text
+	text = { trigger = { has_country_flag = zin_people_men } localization_key = zin_people_men_desc }
+	text = { trigger = { has_country_flag = zin_people_elves } localization_key = zin_people_elves_desc }
+	text = { trigger = { has_country_flag = zin_people_sun_elves } localization_key = zin_people_sun_elves_desc }
+	text = { trigger = { has_country_flag = zin_people_giants } localization_key = zin_people_giants_desc }
+	text = { trigger = { has_country_flag = zin_people_ents } localization_key = zin_people_ents_desc }
+	text = { trigger = { has_country_flag = zin_people_yeti } localization_key = zin_people_yeti_desc }
+	text = { trigger = { has_country_flag = zin_people_trolls } localization_key = zin_people_trolls_desc }
+	text = { trigger = { has_country_flag = zin_people_orcs } localization_key = zin_people_orcs_desc }
+	text = { trigger = { has_country_flag = zin_people_the_dead } localization_key = zin_people_the_dead_desc }
+	text = { trigger = { has_country_flag = zin_people_demons } localization_key = zin_people_demons_desc }
+	text = { localization_key = zin_people_men_desc }
+}
+defined_text = {
+	name = zin_stance_name
+	text = { trigger = { has_country_leader_ideology = zin_light_council } localization_key = zin_light_council }
+	text = { trigger = { has_country_leader_ideology = zin_light_kinship } localization_key = zin_light_kinship }
+	text = { trigger = { has_country_leader_ideology = zin_light_wardens } localization_key = zin_light_wardens }
+	text = { trigger = { has_country_leader_ideology = zin_light_sanctuary } localization_key = zin_light_sanctuary }
+	text = { trigger = { has_country_leader_ideology = zin_dom_crown } localization_key = zin_dom_crown }
+	text = { trigger = { has_country_leader_ideology = zin_dom_court } localization_key = zin_dom_court }
+	text = { trigger = { has_country_leader_ideology = zin_dom_warlord } localization_key = zin_dom_warlord }
+	text = { trigger = { has_country_leader_ideology = zin_dom_conquest } localization_key = zin_dom_conquest }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_dread } localization_key = zin_shadow_dread }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_worship } localization_key = zin_shadow_worship }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_grave } localization_key = zin_shadow_grave }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_horde } localization_key = zin_shadow_horde }
+	text = { trigger = { has_country_leader_ideology = zin_wild_clans } localization_key = zin_wild_clans }
+	text = { trigger = { has_country_leader_ideology = zin_wild_seclusion } localization_key = zin_wild_seclusion }
+	text = { trigger = { has_country_leader_ideology = zin_wild_freeholds } localization_key = zin_wild_freeholds }
+	text = { trigger = { has_country_leader_ideology = zin_wild_tribes } localization_key = zin_wild_tribes }
+	text = { localization_key = ZIN_UNKNOWN }
+}
+defined_text = {
+	name = zin_stance_text
+	text = { trigger = { has_country_leader_ideology = zin_light_council } localization_key = zin_light_council_desc }
+	text = { trigger = { has_country_leader_ideology = zin_light_kinship } localization_key = zin_light_kinship_desc }
+	text = { trigger = { has_country_leader_ideology = zin_light_wardens } localization_key = zin_light_wardens_desc }
+	text = { trigger = { has_country_leader_ideology = zin_light_sanctuary } localization_key = zin_light_sanctuary_desc }
+	text = { trigger = { has_country_leader_ideology = zin_dom_crown } localization_key = zin_dom_crown_desc }
+	text = { trigger = { has_country_leader_ideology = zin_dom_court } localization_key = zin_dom_court_desc }
+	text = { trigger = { has_country_leader_ideology = zin_dom_warlord } localization_key = zin_dom_warlord_desc }
+	text = { trigger = { has_country_leader_ideology = zin_dom_conquest } localization_key = zin_dom_conquest_desc }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_dread } localization_key = zin_shadow_dread_desc }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_worship } localization_key = zin_shadow_worship_desc }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_grave } localization_key = zin_shadow_grave_desc }
+	text = { trigger = { has_country_leader_ideology = zin_shadow_horde } localization_key = zin_shadow_horde_desc }
+	text = { trigger = { has_country_leader_ideology = zin_wild_clans } localization_key = zin_wild_clans_desc }
+	text = { trigger = { has_country_leader_ideology = zin_wild_seclusion } localization_key = zin_wild_seclusion_desc }
+	text = { trigger = { has_country_leader_ideology = zin_wild_freeholds } localization_key = zin_wild_freeholds_desc }
+	text = { trigger = { has_country_leader_ideology = zin_wild_tribes } localization_key = zin_wild_tribes_desc }
+	text = { localization_key = ZIN_UNKNOWN }
+}
+defined_text = {
+	name = zin_alignment_name
+	text = { trigger = { has_government = democratic } localization_key = ZIN_ALIGNMENT_democratic }
+	text = { trigger = { has_government = fascism } localization_key = ZIN_ALIGNMENT_fascism }
+	text = { trigger = { has_government = communism } localization_key = ZIN_ALIGNMENT_communism }
+	text = { trigger = { has_government = neutrality } localization_key = ZIN_ALIGNMENT_neutrality }
+	text = { localization_key = ZIN_UNKNOWN }
+}

@@ -1,0 +1,20 @@
+state = {
+	id = 202
+	name = "STATE_202"
+	manpower = 471000
+	state_category = city
+	resources = { chromium = 2 }
+	history = {
+		owner = Y0M
+		add_core_of = Y0M
+		victory_points = { 3106 7 }
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			dockyard = 1
+			industrial_complex = 2
+			3051 = { naval_base = 1 }
+		}
+	}
+	provinces = { 3051 3060 3106 3150 }
+}

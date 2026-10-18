@@ -1,0 +1,21 @@
+division_template = { name = "Infantry Division" regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+units = {
+	division = { name = "Volgan Infantry 1" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 2" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 3" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 4" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 5" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 6" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 7" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 8" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 9" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 10" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 11" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Volgan Infantry 12" location = 6318 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+}
+instant_effect = {
+ add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 18000 producer = Y8D }
+ add_equipment_to_stockpile = { type = convoy amount = 100 producer = Y8D }
+ add_equipment_to_stockpile = { type = train_equipment_1 amount = 100 producer = Y8D }
+ add_equipment_production = { equipment = { type = infantry_equipment_1 creator = Y8D } requested_factories = 1 progress = 0.5 efficiency = 50 }
+}

@@ -1,0 +1,124 @@
+guiTypes = {
+	containerWindowType = {
+		name = "zin_realm_button_window"
+		position = { x = 8 y = 86 }
+		size = { width = 132 height = 30 }
+		orientation = upper_left
+		buttonType = {
+			name = "zin_realm_toggle"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_zin_button"
+			buttonText = "ZIN_REALM_BUTTON"
+			buttonFont = "hoi_18mbs"
+			pdx_tooltip = "ZIN_REALM_BUTTON_TT"
+		}
+	}
+	containerWindowType = {
+		name = "zin_realm_window"
+		position = { x = -300 y = -230 }
+		size = { width = 600 height = 460 }
+		orientation = center
+		moveable = yes
+		background = {
+			name = "zin_realm_bg"
+			spriteType = "GFX_zin_frame"
+		}
+		instantTextBoxType = {
+			name = "zin_realm_title"
+			position = { x = 40 y = 22 }
+			font = "hoi_24header"
+			text = "ZIN_REALM_TITLE"
+			maxWidth = 520
+			maxHeight = 32
+			format = centre
+			fixedsize = yes
+		}
+		buttonType = {
+			name = "zin_realm_close"
+			position = { x = 556 y = 14 }
+			quadTextureSprite = "GFX_closebutton"
+			shortcut = "ESCAPE"
+		}
+		iconType = {
+			name = "zin_realm_rule_top"
+			spriteType = "GFX_zin_rule"
+			position = { x = 40 y = 60 }
+		}
+		iconType = {
+			name = "zin_realm_people_icon"
+			spriteType = "GFX_zin_people_strip"
+			position = { x = 44 y = 88 }
+			scale = 1.5
+		}
+		instantTextBoxType = {
+			name = "zin_realm_people"
+			position = { x = 160 y = 92 }
+			font = "hoi_18mbs"
+			text = "ZIN_REALM_PEOPLE"
+			maxWidth = 400
+			maxHeight = 26
+			format = left
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "zin_realm_people_desc"
+			position = { x = 160 y = 120 }
+			font = "hoi_16mbs"
+			text = "ZIN_REALM_PEOPLE_DESC"
+			maxWidth = 400
+			maxHeight = 60
+			format = left
+			fixedsize = yes
+		}
+		iconType = {
+			name = "zin_realm_rule_mid"
+			spriteType = "GFX_zin_rule"
+			position = { x = 40 y = 200 }
+		}
+		instantTextBoxType = {
+			name = "zin_realm_alignment"
+			position = { x = 44 y = 222 }
+			font = "hoi_18mbs"
+			text = "ZIN_REALM_ALIGNMENT"
+			maxWidth = 520
+			maxHeight = 26
+			format = left
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "zin_realm_stance"
+			position = { x = 44 y = 252 }
+			font = "hoi_18mbs"
+			text = "ZIN_REALM_STANCE"
+			maxWidth = 520
+			maxHeight = 26
+			format = left
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "zin_realm_stance_desc"
+			position = { x = 44 y = 282 }
+			font = "hoi_16mbs"
+			text = "ZIN_REALM_STANCE_DESC"
+			maxWidth = 520
+			maxHeight = 60
+			format = left
+			fixedsize = yes
+		}
+		iconType = {
+			name = "zin_realm_rule_low"
+			spriteType = "GFX_zin_rule"
+			position = { x = 40 y = 360 }
+		}
+		instantTextBoxType = {
+			name = "zin_realm_footer"
+			position = { x = 44 y = 382 }
+			font = "hoi_16mbs"
+			text = "ZIN_REALM_FOOTER"
+			maxWidth = 520
+			maxHeight = 50
+			format = centre
+			fixedsize = yes
+		}
+	}
+}

@@ -1,0 +1,20 @@
+state = {
+	id = 618
+	name = "STATE_618"
+	manpower = 942000
+	state_category = city
+	resources = { aluminium = 6 }
+	history = {
+		owner = Y21
+		add_core_of = Y21
+		victory_points = { 920 8 }
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			dockyard = 1
+			industrial_complex = 3
+			920 = { naval_base = 1 }
+		}
+	}
+	provinces = { 852 920 949 998 1040 1041 }
+}

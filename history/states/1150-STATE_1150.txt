@@ -1,0 +1,20 @@
+state = {
+	id = 1150
+	name = "STATE_1150"
+	manpower = 403109
+	state_category = city
+	resources = { steel = 1 tungsten = 1 }
+	history = {
+		owner = Y45
+		add_core_of = Y45
+		victory_points = { 2856 8 }
+		victory_points = { 3031 5 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			arms_factory = 1
+			2856 = { naval_base = 1 }
+		}
+	}
+	provinces = { 2856 3031 }
+}

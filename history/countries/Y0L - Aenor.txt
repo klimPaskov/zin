@@ -1,0 +1,142 @@
+# Regional political interpretation; see docs/generation/regional-politics.json.
+capital = 238
+oob = "Y0L_world"
+add_ideas = { limited_conscription civilian_economy export_focus }
+set_research_slots = 4
+set_stability = 0.6
+set_war_support = 0.4
+set_technology = { infantry_weapons = 1 infantry_weapons1 = 1 basic_train = 1 tech_support = 1 tech_recon = 1 }
+set_politics = { ruling_party = fascism last_election = "1932.1.1" election_frequency = 48 elections_allowed = no }
+set_popularities = { fascism = 60 neutrality = 20 democratic = 10 communism = 10 }
+recruit_character = Y0L_zin_ruler
+set_autonomy = {
+	target = Y0M
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y0N
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y0O
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y0P
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y0Q
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y0R
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y0S
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y0T
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4N
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4O
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4P
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4Q
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4R
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4S
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4T
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4U
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4V
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4W
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4X
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4Y
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y4Z
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y50
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y51
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y52
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y53
+	autonomous_state = autonomy_puppet
+}
+set_autonomy = {
+	target = Y55
+	autonomous_state = autonomy_puppet
+}
+create_faction_from_template = { template = faction_template_generic name = ZIN_FACTION_Y0L }
+add_to_faction = Y0M
+add_to_faction = Y0N
+add_to_faction = Y0O
+add_to_faction = Y0P
+add_to_faction = Y0Q
+add_to_faction = Y0R
+add_to_faction = Y0S
+add_to_faction = Y0T
+add_to_faction = Y4N
+add_to_faction = Y4O
+add_to_faction = Y4P
+add_to_faction = Y4Q
+add_to_faction = Y4R
+add_to_faction = Y4S
+add_to_faction = Y4T
+add_to_faction = Y4U
+add_to_faction = Y4V
+add_to_faction = Y4W
+add_to_faction = Y4X
+add_to_faction = Y4Y
+add_to_faction = Y4Z
+add_to_faction = Y50
+add_to_faction = Y51
+add_to_faction = Y52
+add_to_faction = Y53
+add_to_faction = Y55

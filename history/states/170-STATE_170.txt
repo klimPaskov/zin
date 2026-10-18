@@ -1,19 +1,19 @@
 state = {
 	id = 170
 	name = "STATE_170"
-	manpower = 194000
-	state_category = pastoral
-	resources = {
-		steel = 18
-		tungsten = 4
-	}
+	manpower = 1127706
+	state_category = town
+	resources = { oil = 2 steel = 4 }
 	history = {
-		owner = Z01
-		add_core_of = Z01
-		victory_points = { 409 2 }
+		owner = Y5H
+		add_core_of = Y5H
+		victory_points = { 3907 5 }
+		victory_points = { 3730 5 }
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
 		}
 	}
-	provinces = { 409 479 487 537 543 }
+	provinces = { 3567 3663 3730 3776 3828 3907 3920 4042 }
 }

@@ -1,0 +1,199 @@
+ZIN / ERDAE MAP HANDOFF — 2026-10-17
+
+Continue the ZIN / Erdae HOI4 map work. Read both repositories' AGENTS.md first.
+
+REPOSITORIES AND RULES
+
+Tools: C:/Users/klimp/Documents/Projects/hoi4-agent-tools
+ZIN: C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin
+
+ZIN is a LOCAL-ONLY Git repository. Never push or publish it. It has no remote. Keep it disabled in the Windows launcher. Do not control the Windows game. ZIN's AGENTS.md explicitly permits isolated Linux acceptance under the shared WSL lock. The MCP product itself must remain offline.
+
+Work autonomously. Do not ask the owner to locate labels that can be researched from regional drawings. No subagents unless subsequently authorized. All real mod writes must use the shared atomic rewrite engine. Do not add events, focuses or decisions without a separate request.
+
+LATEST OWNER REQUIREMENTS — ALL ACTIVE
+
+- Hundreds of regional countries, not continent-sized countries. South Earth, North Earth, etc. are geographic areas.
+- Small named polities must exist, explicitly Bordon, Dreson, Dulundur, Troll Forest, Nolorim and Herez. Distinct tags can be satellites; Herez may be a Rush satellite.
+- Merge related names logically: Kilinti + Kilinti Forests, Lerendor + Lerenwaith, and comparable families. Mountains and generic biome annotations are not automatically countries. Troll Forest is explicitly requested as a country.
+- Countries need connected mainland territory, without scattered fragments. Island possessions are allowed.
+- Rush must be much larger. The Rush Land mainland should be under Rush's direct or puppet control. Most surrounding named countries should be Rush satellites; evil regions remain outside its control.
+- Edvoid is now Zol. Rename the place to Zol's Mistake. Zol should own Sodoloro / Šodolôrō and the surrounding black lands and islands.
+- Volgan should dominate the southern Dead Lands, with a few named satellites.
+- Very small islands should usually have one polity, not several neighbors. Some islands should belong to larger powers.
+- Follow the drawings' coastlines and regional borders more accurately; soften excessively straight segments and remove paper seams.
+- Keep handwritten labels and assembly lines out of map textures.
+- Implement actual subject relationships and meaningful rival powers, not only documentation.
+
+VERIFIED STATE AT HANDOFF
+
+Tools HEAD: 0a4ebb177178422314c277da0756c884e3f2ed0d
+ZIN HEAD: 05e6dbe51c878c9dbebe5775d9bbc719f4858c7b
+Both working trees were clean before saving this handoff file.
+
+NONE OF THE NEW POLITICAL SETUP HAS BEEN SUCCESSFULLY APPLIED. ZIN still contains the accepted 13-country build.
+
+An attempted 338-country atomic write failed in post-validation and rolled back completely. ZIN git status was confirmed clean. Cause: private writer's localisation hash ordering bug, described below. This is not an unresolved filesystem permission failure.
+
+Linux HOI4 and Xvfb were stopped at handoff.
+
+Earlier tools work is already released and installed as 4.1.0:
+https://github.com/klimPaskov/hoi4-agent-tools/releases/tag/v4.1.0
+Windows/Ubuntu CI and previous Linux gameplay acceptance passed. Do not repeat that release unless new product changes require it. Current follow-up changes only private scripts/data; public source is untouched.
+
+Installed runtime:
+C:/Users/klimp/AppData/Local/hoi4-agent-tools/runtime-v401/node_modules/hoi4-agent-tools/dist/bin/stdio.js
+
+REFERENCE DRAWINGS
+
+Original full mosaic, read-only:
+C:/Users/klimp/Documents/ZIN/World/Erdae/Maps/Colored/Erdae Full Colored Map.png
+17520 x 12720, approximately 447 MB.
+SHA256: 37ef59399903bc8217dbc527e26158c06a133eace0340a5b95e233c1cadc2ecf
+Ignored identical copy: zin/docs/reference/originals/Erdae.png
+
+Original regional scans are under:
+C:/Users/klimp/Documents/ZIN/World/Erdae/Maps/Colored/
+Subdirectories: Cold Lands, East-Earth, West-Earth, Rush Land, Rush Islands, Dark Lands, Dead Lands, Magical Lands, South-Earth, Sunhot, Ocean of Edvoid, Islands of The South, Triton's Islands.
+
+Convenient reviewed images:
+C:/Users/klimp/Videos/chaos_redux_trailer/records/cx/refs/erdae_world/working/
+Contains overview.jpg and 13 regional JPGs. All 13 were visually examined during this work.
+
+Reviewed anchors:
+C:/Users/klimp/Videos/chaos_redux_trailer/records/cx/refs/erdae_world/name-review/global-name-table.json
+711 rows with normalized regional/global coordinates, label type, confidence and whether inside the full mosaic. The previous build used 464 confirmed in-bounds labels. The expanded draft also uses regional names rechecked visually, preserving uncertainty in its interpretation report.
+
+Corrections:
+- Dreson is interpreted as the overpainted northwest Dark Lands region southwest of Bordon, previously uncertainly transcribed Bredo.
+- Troll Forest uses the nearby western Dark Lands anchor previously uncertainly transcribed Troy's Forest.
+- Use the owner's spellings and document this interpretation. Inspection crop: tools repo .tmp/zin-politics/dark-west-detail.png.
+- East-Earth's drawing is headed WEST EARTH, but the owner's corrected geographic name is East Earth. Do not relocate it. West-Earth's drawing is headed North Earth.
+
+CURRENT ACCEPTED MAP
+
+4096 x 3072; 7406 provinces (6444 land, 785 sea, 177 lakes); 814 states; 359 strategic regions; 817 VP settlements; 292 ports; 814 supply hubs; 544 railway records; 64 rivers.
+
+Current generation source: zin/docs/reference/cleaned/Erdae-clean-v1.png.
+It removed writing/seams but approximates fine geography. Do not assume its coastline meets the latest accuracy request.
+
+Existing owner docs: zin/docs/generation/, including request, provenance, assumptions, political/terrain previews and native evidence. They still describe the OLD 13-country build.
+
+Full parsed catalog: tools repo .tmp/zin-workflow/final-inspect-artifacts/map-terrain.json.
+About 38 MB and mostly one line. Parse selected fields; never dump it wholesale.
+
+PRIVATE FOLLOW-UP SCRIPTS (RELATIVE TO TOOLS REPO)
+
+1. .tmp/zin-regional-design.mjs
+Initial 55-country design. Owner rejected its granularity. Now only an imported source of major names/roles and initial factions.
+
+2. .tmp/zin-regional-design-expanded.mjs
+Current main political data. Initially 338 countries; latest merges now produce 310 draft countries before more tiny-island consolidation.
+Exports countries, factions, rivalries, subjects, politicalMerges, interpretation, reviewedRows, displayName, mergeTinyIslandCountries and retag.
+Tags: Y plus two base36 digits.
+
+Latest draft:
+- Zol absorbs Šodolôrō, Ocean of Edvoid islands, Dlomntod, Medek and Lost Lands.
+- Rush absorbs central Arcedor, Leimon, Huno, Eronola, Infous, Deodolor and Daldar to enlarge its homeland.
+- Asgard absorbs Rish, Tinta, Holod and Faber on the small Rush Island.
+- Volgan absorbs southern Dead Lands places, keeping Demon, Dolon and Nezer as subjects.
+- Declares 26 Rush subjects and 3 Volgan subjects.
+- Cursed Lands excluded from Rush subjects.
+- Bloody Forest is added only if a matching review row exists: verify this actually happens.
+- Nan.maxY = .84 and Volgan.minY = .84 distinguish northern Nan from Volgan's southern domain.
+
+These latest subject/merge changes are DATA ONLY: not rendered, tested or written yet.
+
+3. .tmp/zin-allocate-provinces.mjs
+Multi-source province adjacency allocation, then splits original states along country borders. Preserves province raster and population/resources/factories during splits. Adds province capital anchors. Unseeded islands go to nearest named territory; island labels prefer small physical components.
+Old 338-country draft produced 1496 states.
+
+Still required:
+- Enforce connected mainland territory; multi-seed growth currently permits disconnected pockets.
+- Honor minY/maxY, currently ignored.
+- Actually consolidate tiny-island countries; exported helper is not called.
+- Follow drawn regional borders better, not predominantly distance growth.
+- If physical geography changes, use the NEW map catalog.
+
+4. .tmp/zin-regional-politics.mts
+Builds country definitions/histories/flags/localisation, states, factions, units, capital supply hubs and inventory. Uses TransactionManager for writes.
+Commands formerly used:
+node --import tsx .tmp/zin-regional-politics.mts plan
+node --import tsx .tmp/zin-regional-politics.mts apply
+
+DO NOT APPLY UNCHANGED. Known defects/incomplete work:
+- HASH ORDERING BUG: final = new Map(original) is computed before the final displayName(loc) and localisation set(). Inventory hash differs from written localisation. Normalize all contents BEFORE constructing final and manifest. Test each planned file against its manifest entry. This caused the cleanly rolled-back write.
+- Minor capitals get town category even when inherited factories exceed town's four slots. Ten old-draft states were affected. Choose sufficient slots for actual factory totals.
+- Does not yet write puppet/autonomy relationships, despite subjects now existing.
+- Does not include subject/merge information in output report.
+- Ignores capitalName overrides: wire Zol's Mistake and Volgan correctly.
+- Update majors/bookmark/descriptions/checks/date for latest design.
+- Source catalog/reference dimensions are hardcoded to previous map.
+- Planning overwrites .tmp/zin-politics/; retain meaningful versions.
+- After successful apply, do not blindly rerun with stale catalog/current modified files. Preserve a reproducible baseline or explicitly load correct new inputs.
+
+5. .tmp/zin-politics.test.mjs
+Eight tests passed for OLD 338-country draft: required countries, family unions, unique land assignment, owned/supplied capitals, raster preservation, factions, split conservation, missing/distant anchor rejection.
+STALE for latest design. Update for Zol/Volgan, puppets, connectedness, island consolidation, new geography, inventory hashes, building slots.
+
+Old outputs in .tmp/zin-politics/: political.png, political-base.png, regional-politics.json, plan.json.
+These are obsolete 338-country previews, NOT the latest owner requirements.
+
+NEW GEOGRAPHY INVESTIGATION
+
+.tmp/zin-extract-drawing.mts completed read-only extraction through prepareReferenceWorld using original-source .tmp/zin-workflow/request.json and coastDetail .88.
+This is native typed map-data extraction, not repainting artwork.
+
+Outputs:
+.tmp/zin-drawing/source-terrain.png
+.tmp/zin-drawing/kind.bin
+.tmp/zin-drawing/terrain.bin
+.tmp/zin-drawing/metadata.json
+
+Duration approximately 10.995 seconds. Target 4096x3072. Working source 3072x2230. Reference bounds x=0,y=49,width=4096,height=2973.
+Diagnostics include paper/water texture cleanup, lettering masking, speckle removal and biome smoothing.
+
+THIS NEW TERRAIN IMAGE HAS NOT BEEN VISUALLY INSPECTED OR ACCEPTED. Inspect it next against the regional drawings and cleaned-v1 map. Check label-shaped artifacts, seams, tiny islands, Sea of Gods and straight edges. Extraction success does not establish geographic accuracy.
+
+Original-source request includes reviewed caption/seam masks and Sea of Gods water annotation. See .tmp/zin-build-request.mjs and .tmp/zin-workflow/request.json.
+Product automatic political-color inference caps at 32 colors and filters small regions; cannot directly represent hundreds of minors.
+
+REUSABLE HELPERS
+
+.tmp/zin-mcp.mjs: fresh source SDK client/private ZIN config. inspect; render <request.json>; preview <request.json>; write <request.json> <unique-suffix>. 8GB worker heap, 1800-second deadline. Owner render layer is owner.
+.tmp/zin-read-artifacts.mjs: export validated artifacts from recent MCP run.
+.tmp/zin-persist.mts: atomic file-copy helper; unchanged/no-op validation bug, so fix fallback if necessary.
+.tmp/zin-owner-bundle.mts: hardcodes OLD 13-country data. Do not rerun unchanged.
+.tmp/zin-verify-index.mjs: checks staged files against generated inventory.
+.tmp/zin-release-state.md: completed 4.1.0 release history, not current politics.
+
+Domain source: src/hoi4_agent_tools/map/ (NOT core/map/).
+Atomic services: src/hoi4_agent_tools/core/.
+
+ISOLATED LINUX ACCEPTANCE
+
+Private harness: zin/.tmp/zin-live.sh
+Run from ZIN directory:
+wsl -d Ubuntu-24.04 -u klim -- bash '/mnt/c/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin/.tmp/zin-live.sh' sync
+Then start, capture <simple-name>, status, stop.
+
+Do not run prepare again: profile exists.
+Runtime: /home/klim/.local/share/zin-acceptance-20261015
+Game: /home/klim/games/hoi4; previously 1.19.3.0c01a.
+Display :96, Xvfb, llvmpipe.
+Shared lock /tmp/hoi4_wsl.lock, owned token zin_acceptance_20261015.
+Never steal a lock or stop another task's game. Sync verifies managed source/destination hashes.
+Hold mouse/key events about .4 seconds; very short events were missed. Never chain commands after xdotool type.
+Previous native acceptance belongs to the OLD 13-country build. New geography, politics and puppets need fresh acceptance.
+Inherited vanilla/icon warnings exist; do not claim zero error log without evidence.
+
+NEXT STEPS
+
+1. Inspect/improve original-drawing geography, preserving bays/peninsulas and smoothing only excessively straight segments/seams.
+2. Finalize hundreds of countries, connected mainland territory, Rush/Zol/Volgan domains and puppets, sensible island ownership.
+3. Fix private writer's inventory ordering/building slots and implement real subject effects using installed-game/reference evidence.
+4. Update tests for connectivity, ownership, subjects, unions, inventory and intended geometry changes.
+5. Apply atomically, render full/regional previews, run isolated Linux acceptance.
+6. Update ZIN documentation/provenance and make a verified LOCAL-ONLY commit. Never push ZIN.
+
+No clarification is pending. The owner instructed us to research the available regional maps ourselves.

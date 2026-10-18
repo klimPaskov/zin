@@ -1,0 +1,19 @@
+state = {
+	id = 617
+	name = "STATE_617"
+	manpower = 544647
+	state_category = town
+	resources = { oil = 3 }
+	history = {
+		owner = Y2L
+		add_core_of = Y2L
+		victory_points = { 4822 5 }
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+			4822 = { naval_base = 1 }
+		}
+	}
+	provinces = { 4694 4822 4842 4858 4892 }
+}

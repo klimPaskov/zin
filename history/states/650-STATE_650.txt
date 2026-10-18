@@ -1,16 +1,17 @@
 state = {
 	id = 650
 	name = "STATE_650"
-	manpower = 179000
-	state_category = rural
+	manpower = 637999
+	state_category = large_town
 	history = {
-		owner = Z01
-		add_core_of = Z01
-		victory_points = { 1102 3 }
+		owner = Y23
+		add_core_of = Y23
+		victory_points = { 1751 1 }
 		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
+			infrastructure = 3
+			dockyard = 1
+			industrial_complex = 2
 		}
 	}
-	provinces = { 1091 1102 1151 1157 }
+	provinces = { 1751 1756 1783 1816 1828 1845 1880 }
 }

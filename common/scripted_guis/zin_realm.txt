@@ -1,0 +1,24 @@
+scripted_gui = {
+	zin_realm_button = {
+		context_type = player_context
+		window_name = "zin_realm_button_window"
+		visible = { always = yes }
+		effects = {
+			zin_realm_toggle_click = {
+				if = { limit = { has_country_flag = zin_realm_open } clr_country_flag = zin_realm_open }
+				else = { set_country_flag = zin_realm_open }
+			}
+		}
+	}
+	zin_realm = {
+		context_type = player_context
+		window_name = "zin_realm_window"
+		visible = { has_country_flag = zin_realm_open }
+		properties = {
+			zin_realm_people_icon = { frame = zin_people_frame }
+		}
+		effects = {
+			zin_realm_close_click = { clr_country_flag = zin_realm_open }
+		}
+	}
+}

@@ -1,0 +1,22 @@
+state = {
+	id = 320
+	name = "STATE_320"
+	manpower = 127313
+	state_category = town
+	resources = { chromium = 1 }
+	history = {
+		owner = Y7S
+		add_core_of = Y7S
+		victory_points = { 6039 25 }
+		victory_points = { 6014 5 }
+		buildings = {
+			infrastructure = 3
+			air_base = 2
+			dockyard = 1
+			industrial_complex = 2
+			arms_factory = 1
+			6039 = { naval_base = 3 }
+		}
+	}
+	provinces = { 6014 6039 6045 }
+}

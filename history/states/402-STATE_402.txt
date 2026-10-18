@@ -1,22 +1,16 @@
 state = {
 	id = 402
 	name = "STATE_402"
-	manpower = 74000
-	state_category = city
-	resources = {
-		aluminium = 1
-	}
+	manpower = 340000
+	state_category = pastoral
+	resources = { oil = 9 }
 	history = {
-		owner = Z06
-		add_core_of = Z06
-		victory_points = { 2116 8 }
+		owner = Y6U
+		add_core_of = Y6U
+		victory_points = { 7027 2 }
 		buildings = {
-			infrastructure = 4
-			industrial_complex = 2
-			arms_factory = 1
-			dockyard = 1
-			2116 = { naval_base = 1 }
+			infrastructure = 2
 		}
 	}
-	provinces = { 2099 2116 2117 2126 }
+	provinces = { 6853 6911 6921 6933 6954 6973 6996 7024 7027 7049 }
 }

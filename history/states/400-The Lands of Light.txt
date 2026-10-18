@@ -1,0 +1,21 @@
+state = {
+	id = 400
+	name = "STATE_400"
+	manpower = 239000
+	state_category = town
+	resources = { oil = 13 }
+	history = {
+		owner = Y6U
+		add_core_of = Y6U
+		victory_points = { 6765 1 }
+		victory_points = { 6834 5 }
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			arms_factory = 1
+			industrial_complex = 1
+			6834 = { naval_base = 1 }
+		}
+	}
+	provinces = { 6734 6757 6765 6774 6798 6834 6836 6884 6906 6915 }
+}

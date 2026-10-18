@@ -1,0 +1,24 @@
+spriteTypes = {
+	corneredTileSpriteType = {
+		name = "GFX_zin_frame"
+		size = { x = 128 y = 128 }
+		texturefile = "gfx/interface/zin/frame.dds"
+		borderSize = { x = 32 y = 32 }
+		tilingCenter = yes
+	}
+	spriteType = {
+		name = "GFX_zin_button"
+		texturefile = "gfx/interface/zin/button.dds"
+		noOfFrames = 3
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_zin_rule"
+		texturefile = "gfx/interface/zin/rule.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_people_strip"
+		texturefile = "gfx/interface/zin/people_strip.dds"
+		noOfFrames = 10
+	}
+}

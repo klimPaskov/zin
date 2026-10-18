@@ -1,0 +1,15 @@
+division_template = { name = "Infantry Division" regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 1 y = 1 } infantry = { x = 1 y = 2 } } }
+units = {
+	division = { name = "Zol Infantry 1" location = 2577 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Zol Infantry 2" location = 2577 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Zol Infantry 3" location = 2577 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Zol Infantry 4" location = 2577 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Zol Infantry 5" location = 2577 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+	division = { name = "Zol Infantry 6" location = 2577 division_template = "Infantry Division" start_experience_factor = 0.1 start_equipment_factor = 1 }
+}
+instant_effect = {
+ add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 9000 producer = Y0U }
+ add_equipment_to_stockpile = { type = convoy amount = 100 producer = Y0U }
+ add_equipment_to_stockpile = { type = train_equipment_1 amount = 100 producer = Y0U }
+ add_equipment_production = { equipment = { type = infantry_equipment_1 creator = Y0U } requested_factories = 1 progress = 0.5 efficiency = 50 }
+}
