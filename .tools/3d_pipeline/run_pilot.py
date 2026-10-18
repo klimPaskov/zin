@@ -726,7 +726,7 @@ def _finalize_pdx_runtime_texture(
             dds.unlink()
         except OSError as exc:
             raise RuntimeError(f"Unable to replace existing DDS output: {dds}") from exc
-    converter = REPO_ROOT / ".agents" / "skills" / "hoi4-event-assets" / "tools" / "convert_to_dds.py"
+    converter = REPO_ROOT / ".agents" / "skills" / "hoi4-feature-assets" / "tools" / "convert_to_dds.py"
     converter_args = [
         sys.executable,
         str(converter),
@@ -821,7 +821,7 @@ def _apply_runtime_diffuse_grade(
         if not dds.is_file():
             raise RuntimeError(f"Runtime diffuse DDS target is not a file: {dds}")
         dds.unlink()
-    converter = REPO_ROOT / ".agents" / "skills" / "hoi4-event-assets" / "tools" / "convert_to_dds.py"
+    converter = REPO_ROOT / ".agents" / "skills" / "hoi4-feature-assets" / "tools" / "convert_to_dds.py"
     converter_args = [
         sys.executable,
         str(converter),

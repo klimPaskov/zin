@@ -1,0 +1,725 @@
+{
+  "schema_version": "1.0.0",
+  "feature": "zin units_pilot",
+  "owner_id": "hoi4_3d_model_jobs",
+  "spec": "docs/specs/03_gameplay/01_warfare.md section 14",
+  "route": "per-unit Meshy 7 geometry, one Meshy rig and one Meshy action per verified role (idle 0, attack 4, death 8), Blender move/defend/retreat",
+  "budget_credits": 285,
+  "jobs": {
+    "zin_men_infantry": {
+      "asset_id": "zin.model.unit.zin_men_infantry",
+      "people": "men",
+      "serves_subunits": "men levy, line infantry, heavy infantry, sea soldiers, hill companies",
+      "profile": "humanoid_unit",
+      "asset_kind": "humanoid",
+      "reference_path": "refs/original/meshy_input.png",
+      "reference_source_mode": "source_free_owner_rule",
+      "reference_generator_output": "gptimage gpt-6-astra 1024x1536 high; prompt, owner approval quote and checksum in refs/source/provenance.json",
+      "asset_brief": "Middle Kingdom royal infantryman of the Golden King: sturdy human soldier, dark steel open-faced helmet with short gold crest, mail shirt under a deep blue tabard with a small gold sun emblem, steel shoulder plates, leather belt and pouches, steel greaves over boots. Weapon-free A-pose body; weapons become separate attachment entities later.",
+      "required_components": [
+        "complete weapon-free humanoid body matching the approved reference",
+        "head, torso, two arms with hands, two legs with feet, all attached",
+        "armour and clothing pieces solid and attached to the body",
+        "grounded riggable biped proportions"
+      ],
+      "forbidden_additions": [
+        "weapons or held props on the body mesh",
+        "shields, banners, staffs",
+        "extra characters",
+        "floating disconnected geometry",
+        "ground plane or base",
+        "multi-view board",
+        "turnaround collage",
+        "text or watermark"
+      ],
+      "excluded_provider_objects": [
+        "Icosphere"
+      ],
+      "meshy_ai_model": "meshy-7",
+      "resolved_meshy_ai_model": "meshy-7",
+      "meshy_pose_mode": "a-pose",
+      "pose_preparation_mode": "a_pose",
+      "target_polycount": 30000,
+      "rig_source_target_polycount": 50000,
+      "target_height_m": 1.8,
+      "provider_height_policy": "Meshy rig height_meters is the in-world character height; Blender calibration uses blender_target_height_m (vanilla source-mesh height x ZIN size factor).",
+      "size_factor_vs_vanilla_infantry": 1.0,
+      "blender_target_height_m": 7.3518242835,
+      "blender_effective_runtime_height_m": 5.8814594268,
+      "runtime_entity_scale": 0.8,
+      "runtime_diffuse_gamma": 0.72,
+      "vanilla_scale_reference": {
+        "mesh": "C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/gfx/models/units/western_european_infantry.mesh",
+        "pdxmesh": "generic_western_european_rifle_infantry_mesh",
+        "entity": "gfx/entities/units_infantry.asset#infantry_rifle_entity (and infantry_entity clone, scale 0.8)",
+        "mesh_object_names": [
+          "polySurface106"
+        ],
+        "exclude_name_patterns": [
+          "collision"
+        ],
+        "forward_axis": "-Y",
+        "up_axis": "+Z",
+        "mesh_height": 7.3518242835,
+        "entity_scale": 0.8,
+        "runtime_height": 5.8814594268
+      },
+      "image_to_3d_estimate_credits": 30,
+      "remesh_estimate_credits": 5,
+      "rig_estimate_credits": 5,
+      "animation_estimate_credits": 3,
+      "planned_total_credits": 49,
+      "provider_paid_attempts": 1,
+      "provider_retry_paid_calls": false,
+      "generation_stage": "generation",
+      "rig_input_mode": "input_task_id",
+      "humanoid_rig_route": "",
+      "texture_source_rels": {
+        "diffuse": "provider/downloads/generation_model_textures/base_color.png",
+        "normal": "provider/downloads/generation_model_textures/normal.png",
+        "specular": "provider/downloads/generation_model_textures/metallic_roughness.png"
+      },
+      "required_actions": [
+        {
+          "role": "idle",
+          "provider_action_id": 0,
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "move",
+          "provider_action_id": null,
+          "task_type": "blender_authored_skeletal",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "attack",
+          "provider_action_id": 4,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "death",
+          "provider_action_id": 8,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        }
+      ],
+      "additional_blender_actions": [
+        {
+          "role": "defend",
+          "route": "blender patch_existing_humanoid_action_phases from accepted attack action",
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "retreat",
+          "route": "blender patch_existing_humanoid_action_phases from accepted move action",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        }
+      ],
+      "deferred_roles": {
+        "support_attack": "reuses attack (ZIN warfare spec 14.2 step 6)",
+        "training": "reuses idle (ZIN warfare spec 14.2 step 6)"
+      },
+      "runtime_stem": "zin_men_infantry",
+      "proposed_runtime_identifiers": {
+        "sprite": "zin_men_infantry",
+        "entity": "zin_men_infantry_entity",
+        "pdxmesh": "zin_men_infantry_mesh",
+        "animations": {
+          "idle": "zin_men_infantry_idle",
+          "move": "zin_men_infantry_move",
+          "attack": "zin_men_infantry_attack",
+          "defend": "zin_men_infantry_defend",
+          "retreat": "zin_men_infantry_retreat",
+          "death": "zin_men_infantry_death"
+        },
+        "model_dir": "gfx/models/units/zin/zin_men_infantry/",
+        "entity_scale": 0.8,
+        "consumer": "land-unit entity"
+      },
+      "_requires_reference_approval": true
+    },
+    "zin_elves_warden": {
+      "asset_id": "zin.model.unit.zin_elves_warden",
+      "people": "elves",
+      "serves_subunits": "all elven foot",
+      "profile": "humanoid_unit",
+      "asset_kind": "humanoid",
+      "reference_path": "refs/original/meshy_input.png",
+      "reference_source_mode": "source_free_owner_rule",
+      "reference_generator_output": "gptimage gpt-6-astra 1024x1536 high; prompt, owner approval quote and checksum in refs/source/provenance.json",
+      "asset_brief": "Tall slender elf warden: light forest-toned layered armour and cloak kept close to the body, long limbs, narrow face. Weapon-free A-pose body; bow/spear attachments come later.",
+      "required_components": [
+        "complete weapon-free humanoid body matching the approved reference",
+        "head, torso, two arms with hands, two legs with feet, all attached",
+        "armour and clothing pieces solid and attached to the body",
+        "grounded riggable biped proportions"
+      ],
+      "forbidden_additions": [
+        "weapons or held props on the body mesh",
+        "shields, banners, staffs",
+        "extra characters",
+        "floating disconnected geometry",
+        "ground plane or base",
+        "multi-view board",
+        "turnaround collage",
+        "text or watermark"
+      ],
+      "excluded_provider_objects": [
+        "Icosphere"
+      ],
+      "meshy_ai_model": "meshy-7",
+      "resolved_meshy_ai_model": "meshy-7",
+      "meshy_pose_mode": "a-pose",
+      "pose_preparation_mode": "a_pose",
+      "target_polycount": 30000,
+      "rig_source_target_polycount": 50000,
+      "target_height_m": 1.95,
+      "provider_height_policy": "Meshy rig height_meters is the in-world character height; Blender calibration uses blender_target_height_m (vanilla source-mesh height x ZIN size factor).",
+      "size_factor_vs_vanilla_infantry": 1.0,
+      "blender_target_height_m": 7.3518242835,
+      "blender_effective_runtime_height_m": 5.8814594268,
+      "runtime_entity_scale": 0.8,
+      "runtime_diffuse_gamma": 0.72,
+      "vanilla_scale_reference": {
+        "mesh": "C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/gfx/models/units/western_european_infantry.mesh",
+        "pdxmesh": "generic_western_european_rifle_infantry_mesh",
+        "entity": "gfx/entities/units_infantry.asset#infantry_rifle_entity (and infantry_entity clone, scale 0.8)",
+        "mesh_object_names": [
+          "polySurface106"
+        ],
+        "exclude_name_patterns": [
+          "collision"
+        ],
+        "forward_axis": "-Y",
+        "up_axis": "+Z",
+        "mesh_height": 7.3518242835,
+        "entity_scale": 0.8,
+        "runtime_height": 5.8814594268
+      },
+      "image_to_3d_estimate_credits": 30,
+      "remesh_estimate_credits": 5,
+      "rig_estimate_credits": 5,
+      "animation_estimate_credits": 3,
+      "planned_total_credits": 49,
+      "provider_paid_attempts": 1,
+      "provider_retry_paid_calls": false,
+      "generation_stage": "generation",
+      "rig_input_mode": "input_task_id",
+      "humanoid_rig_route": "",
+      "texture_source_rels": {
+        "diffuse": "provider/downloads/generation_model_textures/base_color.png",
+        "normal": "provider/downloads/generation_model_textures/normal.png",
+        "specular": "provider/downloads/generation_model_textures/metallic_roughness.png"
+      },
+      "required_actions": [
+        {
+          "role": "idle",
+          "provider_action_id": 0,
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "move",
+          "provider_action_id": null,
+          "task_type": "blender_authored_skeletal",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "attack",
+          "provider_action_id": 4,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "death",
+          "provider_action_id": 8,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        }
+      ],
+      "additional_blender_actions": [
+        {
+          "role": "defend",
+          "route": "blender patch_existing_humanoid_action_phases from accepted attack action",
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "retreat",
+          "route": "blender patch_existing_humanoid_action_phases from accepted move action",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        }
+      ],
+      "deferred_roles": {
+        "support_attack": "reuses attack (ZIN warfare spec 14.2 step 6)",
+        "training": "reuses idle (ZIN warfare spec 14.2 step 6)"
+      },
+      "runtime_stem": "zin_elves_warden",
+      "proposed_runtime_identifiers": {
+        "sprite": "zin_elves_warden",
+        "entity": "zin_elves_warden_entity",
+        "pdxmesh": "zin_elves_warden_mesh",
+        "animations": {
+          "idle": "zin_elves_warden_idle",
+          "move": "zin_elves_warden_move",
+          "attack": "zin_elves_warden_attack",
+          "defend": "zin_elves_warden_defend",
+          "retreat": "zin_elves_warden_retreat",
+          "death": "zin_elves_warden_death"
+        },
+        "model_dir": "gfx/models/units/zin/zin_elves_warden/",
+        "entity_scale": 0.8,
+        "consumer": "land-unit entity"
+      },
+      "_requires_reference_approval": true
+    },
+    "zin_orcs_warrior": {
+      "asset_id": "zin.model.unit.zin_orcs_warrior",
+      "people": "orcs",
+      "serves_subunits": "orc warbands; goblins via a 0.75 scaled entity clone",
+      "profile": "humanoid_unit",
+      "asset_kind": "humanoid",
+      "reference_path": "refs/original/meshy_input.png",
+      "reference_source_mode": "source_free_owner_rule",
+      "reference_generator_output": "gptimage gpt-6-astra 1024x1536 high; prompt, owner approval quote and checksum in refs/source/provenance.json",
+      "asset_brief": "Broad heavily muscled orc warrior in crude dark iron and leather armour, hunched powerful frame. Weapon-free A-pose body; club/axe attachments come later.",
+      "required_components": [
+        "complete weapon-free humanoid body matching the approved reference",
+        "head, torso, two arms with hands, two legs with feet, all attached",
+        "armour and clothing pieces solid and attached to the body",
+        "grounded riggable biped proportions"
+      ],
+      "forbidden_additions": [
+        "weapons or held props on the body mesh",
+        "shields, banners, staffs",
+        "extra characters",
+        "floating disconnected geometry",
+        "ground plane or base",
+        "multi-view board",
+        "turnaround collage",
+        "text or watermark"
+      ],
+      "excluded_provider_objects": [
+        "Icosphere"
+      ],
+      "meshy_ai_model": "meshy-7",
+      "resolved_meshy_ai_model": "meshy-7",
+      "meshy_pose_mode": "a-pose",
+      "pose_preparation_mode": "a_pose",
+      "target_polycount": 30000,
+      "rig_source_target_polycount": 50000,
+      "target_height_m": 1.9,
+      "provider_height_policy": "Meshy rig height_meters is the in-world character height; Blender calibration uses blender_target_height_m (vanilla source-mesh height x ZIN size factor).",
+      "size_factor_vs_vanilla_infantry": 1.0,
+      "blender_target_height_m": 7.3518242835,
+      "blender_effective_runtime_height_m": 5.8814594268,
+      "runtime_entity_scale": 0.8,
+      "runtime_diffuse_gamma": 0.72,
+      "vanilla_scale_reference": {
+        "mesh": "C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/gfx/models/units/western_european_infantry.mesh",
+        "pdxmesh": "generic_western_european_rifle_infantry_mesh",
+        "entity": "gfx/entities/units_infantry.asset#infantry_rifle_entity (and infantry_entity clone, scale 0.8)",
+        "mesh_object_names": [
+          "polySurface106"
+        ],
+        "exclude_name_patterns": [
+          "collision"
+        ],
+        "forward_axis": "-Y",
+        "up_axis": "+Z",
+        "mesh_height": 7.3518242835,
+        "entity_scale": 0.8,
+        "runtime_height": 5.8814594268
+      },
+      "image_to_3d_estimate_credits": 30,
+      "remesh_estimate_credits": 5,
+      "rig_estimate_credits": 5,
+      "animation_estimate_credits": 3,
+      "planned_total_credits": 49,
+      "provider_paid_attempts": 1,
+      "provider_retry_paid_calls": false,
+      "generation_stage": "generation",
+      "rig_input_mode": "input_task_id",
+      "humanoid_rig_route": "",
+      "texture_source_rels": {
+        "diffuse": "provider/downloads/generation_model_textures/base_color.png",
+        "normal": "provider/downloads/generation_model_textures/normal.png",
+        "specular": "provider/downloads/generation_model_textures/metallic_roughness.png"
+      },
+      "required_actions": [
+        {
+          "role": "idle",
+          "provider_action_id": 0,
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "move",
+          "provider_action_id": null,
+          "task_type": "blender_authored_skeletal",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "attack",
+          "provider_action_id": 4,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "death",
+          "provider_action_id": 8,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        }
+      ],
+      "additional_blender_actions": [
+        {
+          "role": "defend",
+          "route": "blender patch_existing_humanoid_action_phases from accepted attack action",
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "retreat",
+          "route": "blender patch_existing_humanoid_action_phases from accepted move action",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        }
+      ],
+      "deferred_roles": {
+        "support_attack": "reuses attack (ZIN warfare spec 14.2 step 6)",
+        "training": "reuses idle (ZIN warfare spec 14.2 step 6)"
+      },
+      "runtime_stem": "zin_orcs_warrior",
+      "proposed_runtime_identifiers": {
+        "sprite": "zin_orcs_warrior",
+        "entity": "zin_orcs_warrior_entity",
+        "pdxmesh": "zin_orcs_warrior_mesh",
+        "animations": {
+          "idle": "zin_orcs_warrior_idle",
+          "move": "zin_orcs_warrior_move",
+          "attack": "zin_orcs_warrior_attack",
+          "defend": "zin_orcs_warrior_defend",
+          "retreat": "zin_orcs_warrior_retreat",
+          "death": "zin_orcs_warrior_death"
+        },
+        "model_dir": "gfx/models/units/zin/zin_orcs_warrior/",
+        "entity_scale": 0.8,
+        "consumer": "land-unit entity"
+      },
+      "_requires_reference_approval": true
+    },
+    "zin_the_dead_revenant": {
+      "asset_id": "zin.model.unit.zin_the_dead_revenant",
+      "people": "the_dead",
+      "serves_subunits": "grave hosts (Volgan only); never Zol's deathless",
+      "profile": "humanoid_unit",
+      "asset_kind": "humanoid",
+      "reference_path": "refs/original/meshy_input.png",
+      "reference_source_mode": "source_free_owner_rule",
+      "reference_generator_output": "gptimage gpt-6-astra 1024x1536 high; prompt, owner approval quote and checksum in refs/source/provenance.json",
+      "asset_brief": "Undead revenant warrior in corroded green-bronze armour over a withered body. Weapon-free A-pose body.",
+      "required_components": [
+        "complete weapon-free humanoid body matching the approved reference",
+        "head, torso, two arms with hands, two legs with feet, all attached",
+        "armour and clothing pieces solid and attached to the body",
+        "grounded riggable biped proportions"
+      ],
+      "forbidden_additions": [
+        "weapons or held props on the body mesh",
+        "shields, banners, staffs",
+        "extra characters",
+        "floating disconnected geometry",
+        "ground plane or base",
+        "multi-view board",
+        "turnaround collage",
+        "text or watermark"
+      ],
+      "excluded_provider_objects": [
+        "Icosphere"
+      ],
+      "meshy_ai_model": "meshy-7",
+      "resolved_meshy_ai_model": "meshy-7",
+      "meshy_pose_mode": "a-pose",
+      "pose_preparation_mode": "a_pose",
+      "target_polycount": 30000,
+      "rig_source_target_polycount": 50000,
+      "target_height_m": 1.8,
+      "provider_height_policy": "Meshy rig height_meters is the in-world character height; Blender calibration uses blender_target_height_m (vanilla source-mesh height x ZIN size factor).",
+      "size_factor_vs_vanilla_infantry": 1.0,
+      "blender_target_height_m": 7.3518242835,
+      "blender_effective_runtime_height_m": 5.8814594268,
+      "runtime_entity_scale": 0.8,
+      "runtime_diffuse_gamma": 0.72,
+      "vanilla_scale_reference": {
+        "mesh": "C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/gfx/models/units/western_european_infantry.mesh",
+        "pdxmesh": "generic_western_european_rifle_infantry_mesh",
+        "entity": "gfx/entities/units_infantry.asset#infantry_rifle_entity (and infantry_entity clone, scale 0.8)",
+        "mesh_object_names": [
+          "polySurface106"
+        ],
+        "exclude_name_patterns": [
+          "collision"
+        ],
+        "forward_axis": "-Y",
+        "up_axis": "+Z",
+        "mesh_height": 7.3518242835,
+        "entity_scale": 0.8,
+        "runtime_height": 5.8814594268
+      },
+      "image_to_3d_estimate_credits": 30,
+      "remesh_estimate_credits": 5,
+      "rig_estimate_credits": 5,
+      "animation_estimate_credits": 3,
+      "planned_total_credits": 49,
+      "provider_paid_attempts": 1,
+      "provider_retry_paid_calls": false,
+      "generation_stage": "generation",
+      "rig_input_mode": "input_task_id",
+      "humanoid_rig_route": "",
+      "texture_source_rels": {
+        "diffuse": "provider/downloads/generation_model_textures/base_color.png",
+        "normal": "provider/downloads/generation_model_textures/normal.png",
+        "specular": "provider/downloads/generation_model_textures/metallic_roughness.png"
+      },
+      "required_actions": [
+        {
+          "role": "idle",
+          "provider_action_id": 0,
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "move",
+          "provider_action_id": null,
+          "task_type": "blender_authored_skeletal",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "attack",
+          "provider_action_id": 4,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "death",
+          "provider_action_id": 8,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        }
+      ],
+      "additional_blender_actions": [
+        {
+          "role": "defend",
+          "route": "blender patch_existing_humanoid_action_phases from accepted attack action",
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "retreat",
+          "route": "blender patch_existing_humanoid_action_phases from accepted move action",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        }
+      ],
+      "deferred_roles": {
+        "support_attack": "reuses attack (ZIN warfare spec 14.2 step 6)",
+        "training": "reuses idle (ZIN warfare spec 14.2 step 6)"
+      },
+      "runtime_stem": "zin_the_dead_revenant",
+      "proposed_runtime_identifiers": {
+        "sprite": "zin_the_dead_revenant",
+        "entity": "zin_the_dead_revenant_entity",
+        "pdxmesh": "zin_the_dead_revenant_mesh",
+        "animations": {
+          "idle": "zin_the_dead_revenant_idle",
+          "move": "zin_the_dead_revenant_move",
+          "attack": "zin_the_dead_revenant_attack",
+          "defend": "zin_the_dead_revenant_defend",
+          "retreat": "zin_the_dead_revenant_retreat",
+          "death": "zin_the_dead_revenant_death"
+        },
+        "model_dir": "gfx/models/units/zin/zin_the_dead_revenant/",
+        "entity_scale": 0.8,
+        "consumer": "land-unit entity"
+      },
+      "_requires_reference_approval": true
+    },
+    "zin_trolls_brute": {
+      "asset_id": "zin.model.unit.zin_trolls_brute",
+      "people": "trolls",
+      "serves_subunits": "troll brutes; ogres until their own model",
+      "profile": "humanoid_unit",
+      "asset_kind": "humanoid",
+      "reference_path": "refs/original/meshy_input.png",
+      "reference_source_mode": "source_free_owner_rule",
+      "reference_generator_output": "gptimage gpt-6-astra 1024x1536 high; prompt, owner approval quote and checksum in refs/source/provenance.json",
+      "asset_brief": "Hulking troll brute with long arms, heavy hide plates and iron bindings; humanoid biped, larger than men (ZIN size target 1.6x vanilla infantry). Weapon-free A-pose body.",
+      "required_components": [
+        "complete weapon-free humanoid body matching the approved reference",
+        "head, torso, two arms with hands, two legs with feet, all attached",
+        "armour and clothing pieces solid and attached to the body",
+        "grounded riggable biped proportions"
+      ],
+      "forbidden_additions": [
+        "weapons or held props on the body mesh",
+        "shields, banners, staffs",
+        "extra characters",
+        "floating disconnected geometry",
+        "ground plane or base",
+        "multi-view board",
+        "turnaround collage",
+        "text or watermark"
+      ],
+      "excluded_provider_objects": [
+        "Icosphere"
+      ],
+      "meshy_ai_model": "meshy-7",
+      "resolved_meshy_ai_model": "meshy-7",
+      "meshy_pose_mode": "a-pose",
+      "pose_preparation_mode": "a_pose",
+      "target_polycount": 30000,
+      "rig_source_target_polycount": 50000,
+      "target_height_m": 2.9,
+      "provider_height_policy": "Meshy rig height_meters is the in-world character height; Blender calibration uses blender_target_height_m (vanilla source-mesh height x ZIN size factor).",
+      "size_factor_vs_vanilla_infantry": 1.6,
+      "blender_target_height_m": 11.7629188536,
+      "blender_effective_runtime_height_m": 9.4103350829,
+      "runtime_entity_scale": 0.8,
+      "runtime_diffuse_gamma": 0.72,
+      "vanilla_scale_reference": {
+        "mesh": "C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/gfx/models/units/western_european_infantry.mesh",
+        "pdxmesh": "generic_western_european_rifle_infantry_mesh",
+        "entity": "gfx/entities/units_infantry.asset#infantry_rifle_entity (and infantry_entity clone, scale 0.8)",
+        "mesh_object_names": [
+          "polySurface106"
+        ],
+        "exclude_name_patterns": [
+          "collision"
+        ],
+        "forward_axis": "-Y",
+        "up_axis": "+Z",
+        "mesh_height": 7.3518242835,
+        "entity_scale": 0.8,
+        "runtime_height": 5.8814594268
+      },
+      "image_to_3d_estimate_credits": 30,
+      "remesh_estimate_credits": 5,
+      "rig_estimate_credits": 5,
+      "animation_estimate_credits": 3,
+      "planned_total_credits": 49,
+      "provider_paid_attempts": 1,
+      "provider_retry_paid_calls": false,
+      "generation_stage": "generation",
+      "rig_input_mode": "input_task_id",
+      "humanoid_rig_route": "",
+      "texture_source_rels": {
+        "diffuse": "provider/downloads/generation_model_textures/base_color.png",
+        "normal": "provider/downloads/generation_model_textures/normal.png",
+        "specular": "provider/downloads/generation_model_textures/metallic_roughness.png"
+      },
+      "required_actions": [
+        {
+          "role": "idle",
+          "provider_action_id": 0,
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "move",
+          "provider_action_id": null,
+          "task_type": "blender_authored_skeletal",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "attack",
+          "provider_action_id": 4,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "death",
+          "provider_action_id": 8,
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        }
+      ],
+      "additional_blender_actions": [
+        {
+          "role": "defend",
+          "route": "blender patch_existing_humanoid_action_phases from accepted attack action",
+          "fps": 24,
+          "loop": false,
+          "root_policy": "in_place"
+        },
+        {
+          "role": "retreat",
+          "route": "blender patch_existing_humanoid_action_phases from accepted move action",
+          "fps": 24,
+          "loop": true,
+          "root_policy": "in_place"
+        }
+      ],
+      "deferred_roles": {
+        "support_attack": "reuses attack (ZIN warfare spec 14.2 step 6)",
+        "training": "reuses idle (ZIN warfare spec 14.2 step 6)"
+      },
+      "runtime_stem": "zin_trolls_brute",
+      "proposed_runtime_identifiers": {
+        "sprite": "zin_trolls_brute",
+        "entity": "zin_trolls_brute_entity",
+        "pdxmesh": "zin_trolls_brute_mesh",
+        "animations": {
+          "idle": "zin_trolls_brute_idle",
+          "move": "zin_trolls_brute_move",
+          "attack": "zin_trolls_brute_attack",
+          "defend": "zin_trolls_brute_defend",
+          "retreat": "zin_trolls_brute_retreat",
+          "death": "zin_trolls_brute_death"
+        },
+        "model_dir": "gfx/models/units/zin/zin_trolls_brute/",
+        "entity_scale": 0.8,
+        "consumer": "land-unit entity"
+      },
+      "_requires_reference_approval": true
+    }
+  }
+}

@@ -309,6 +309,11 @@ def duplicate_hierarchy(
     mapping: Dict[bpy.types.Object, bpy.types.Object] = {}
     for source in source_objects:
         duplicate = source.copy()
+        # Object.copy() also copies imported NLA tracks; the working rig keeps only its active action,
+        # so tools that refuse NLA scenes can operate on it. The provider source keeps its tracks as evidence.
+        if duplicate.animation_data is not None:
+            for track in list(duplicate.animation_data.nla_tracks):
+                duplicate.animation_data.nla_tracks.remove(track)
         if source.data is not None:
             try:
                 duplicate.data = source.data.copy()
@@ -4745,8 +4750,27 @@ def _promotion_animation_state(block: Any) -> Any:
     animation = getattr(block, "animation_data", None)
     if animation is None:
         return None
-    if animation.drivers or animation.nla_tracks:
+    if animation.drivers:
         raise ValueError("Promotion does not support driver/NLA proof scenes.")
+    if animation.nla_tracks:
+        # Protected provider sources keep the NLA track the glTF importer created, as evidence. Promotion never
+        # edits them, so their tracks are fingerprinted instead of refused; editable blocks still may not have NLA.
+        if not (block.get("hoi4_source_protected") or block.get("hoi4_reference_read_only")):
+            raise ValueError("Promotion does not support driver/NLA proof scenes.")
+        return {
+            "scalars": _promotion_scalars(animation),
+            "nla_tracks": [
+                {
+                    "name": track.name,
+                    "mute": bool(track.mute),
+                    "strips": [
+                        {"name": strip.name, "action": strip.action.name if strip.action else None, "frame_start": float(strip.frame_start), "frame_end": float(strip.frame_end)}
+                        for strip in track.strips
+                    ],
+                }
+                for track in animation.nla_tracks
+            ],
+        }
     return _promotion_scalars(animation)
 
 

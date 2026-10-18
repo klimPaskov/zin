@@ -1,0 +1,38 @@
+{
+  "arguments": {
+    "input_task_id": "01a14f80-a59d-7057-9b8a-90c6e16c096b",
+    "response_format": "json",
+    "target_formats": [
+      "glb",
+      "fbx"
+    ],
+    "target_polycount": 50000,
+    "topology": "triangle"
+  },
+  "automatic_retry": false,
+  "estimate_credits": 5,
+  "lifecycle": {
+    "cleanup_inspection_error": null,
+    "owned_process_ids_at_cleanup": [],
+    "ownership": "windows_job_object",
+    "root_pid": 41728,
+    "surviving_process_ids": []
+  },
+  "response": {
+    "content": [
+      {
+        "text": "{\n  \"task_id\": \"01a14f8f-0e93-7394-bab2-58038a57fe87\",\n  \"status\": \"PENDING\",\n  \"message\": \"Remesh task created successfully. Task ID: 01a14f8f-0e93-7394-bab2-58038a57fe87\",\n  \"estimated_time\": \"1-2 minutes\"\n}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "estimated_time": "1-2 minutes",
+      "message": "Remesh task created successfully. Task ID: 01a14f8f-0e93-7394-bab2-58038a57fe87",
+      "status": "PENDING",
+      "task_id": "01a14f8f-0e93-7394-bab2-58038a57fe87"
+    }
+  },
+  "state": "response_received",
+  "timestamp": "2026-10-18T15:07:47Z",
+  "tool": "meshy_remesh"
+}

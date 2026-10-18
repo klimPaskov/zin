@@ -1,0 +1,1009 @@
+{
+  "slug": "zin_the_dead_revenant",
+  "started_at": "2026-10-18T17:54:43Z",
+  "steps": [
+    {
+      "result": {
+        "blend": "blender/checkpoints/rt_death_d84dab1180_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "zin_the_dead_revenant_attack",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 73,
+              "frame_end": 72,
+              "frame_start": 0,
+              "name": "zin_the_dead_revenant_death",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "zin_the_dead_revenant_idle",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_idle_checkpoint"
+    },
+    {
+      "result": {
+        "blend": "blender/checkpoints/move_root_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 25,
+              "frame_end": 24,
+              "frame_start": 0,
+              "name": "Armature|Move|baselayer_WORKING",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_move_checkpoint"
+    },
+    {
+      "result": {
+        "action": "zin_the_dead_revenant_idle",
+        "action_sha256": "87B05E22E695841F08CAE35239CA54F391504F1F82DAD2F733FE336CA75CF16B",
+        "fps": 24,
+        "range": [
+          0,
+          97
+        ]
+      },
+      "step": "idle_source"
+    },
+    {
+      "result": {
+        "bones": [
+          "Head",
+          "Hips",
+          "LeftArm",
+          "LeftFoot",
+          "LeftForeArm",
+          "LeftHand",
+          "LeftLeg",
+          "LeftShoulder",
+          "LeftToeBase",
+          "LeftUpLeg",
+          "RightArm",
+          "RightFoot",
+          "RightForeArm",
+          "RightHand",
+          "RightLeg",
+          "RightShoulder",
+          "RightToeBase",
+          "RightUpLeg",
+          "Spine",
+          "Spine01",
+          "Spine02",
+          "head_end",
+          "headfront",
+          "neck"
+        ],
+        "max_cross_phase_rest_drift": 3.141387116961658e-06
+      },
+      "step": "rest_solve"
+    },
+    {
+      "result": {
+        "action": "Armature|Move|baselayer_WORKING",
+        "action_sha256": "B6F2D4C7B214ADD398E8FFF0E4F4CEC68511FEDC44D7749CC72D474757AC6052",
+        "fps": 24,
+        "range": [
+          0,
+          24
+        ]
+      },
+      "step": "move_source"
+    },
+    {
+      "result": {
+        "action": "zin_the_dead_revenant_defend",
+        "anim": {
+          "bytes": 77395,
+          "name": "zin_the_dead_revenant_defend.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_the_dead_revenant\\export\\anim\\zin_the_dead_revenant_defend.anim",
+          "relative_path": "export/anim/zin_the_dead_revenant_defend.anim",
+          "sha256": "A645188554C78642534271AD29F6324D8132DB93E15E8DD594041499F0BB2B5B"
+        },
+        "export": {
+          "action": "zin_the_dead_revenant_defend",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "45bceac419ea40649953e9792960a86b",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/45bceac419ea40649953e9792960a86b.result.json"
+          },
+          "anim": "export/anim/zin_the_dead_revenant_defend.anim",
+          "anim_bytes": 77395,
+          "anim_text": "export/anim/zin_the_dead_revenant_defend.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/defend_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_the_dead_revenant_defend",
+              "factor": 0.04085014760494232,
+              "keyframes": 6480,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.04085014760494232,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.04085014760494232,
+              0.04085014760494232,
+              0.04085014760494232
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.04085014760494232,
+                0.04085014760494232,
+                0.04085014760494232
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 97,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.6121757626533508,
+                    0.2766607403755188,
+                    0.24182963371276855,
+                    0.7001557946205139
+                  ],
+                  "t": [
+                    2.434264168016398e-08,
+                    3.784916639328003,
+                    -0.048223383724689484
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.6121757626533508,
+                    0.2766607403755188,
+                    0.24182963371276855,
+                    0.7001557946205139
+                  ],
+                  "t": [
+                    2.434264168016398e-08,
+                    3.7858669757843018,
+                    -0.048223383724689484
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.6121757626533508,
+                  0.2766607403755188,
+                  0.24182963371276855,
+                  0.7001557946205139
+                ],
+                "t": [
+                  2.434264168016398e-08,
+                  3.784916639328003,
+                  -0.048223383724689484
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "21C0B0611844889512F199D1DD24AF0D337AAC2B34DC35C19C62AFD79FA81C27",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 2,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 196,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "LeftArm": 0.7697580512613058,
+            "LeftForeArm": 1.156028002500534,
+            "LeftHand": 0.18142469972372055,
+            "RightArm": 0.7798694968223572,
+            "RightForeArm": 1.1940243244171143,
+            "RightHand": 0.18338629603385925,
+            "Spine": 0.05098198354244232,
+            "Spine01": 0.08459369838237762,
+            "Spine02": 0.08631987869739532,
+            "neck": 0.1211223378777504
+          },
+          "checkpoint": "blender/checkpoints/defend_pre_export.blend",
+          "frame_range": [
+            0,
+            97
+          ],
+          "motion_bone_chain": [],
+          "output_sha256": "85A61771F72E37F66EEBBBEFCA97300142E63D7EBA5E11F2C6B8302B61738D62",
+          "phase_frames": {
+            "guard_hold": 48,
+            "guard_release": 78,
+            "guard_start": 24
+          },
+          "semantic_role": "defend",
+          "source_fps": 24,
+          "target_action_sha256": "90D4B78B099524A300131F45436FC3636248453EB4602131BFAE671A1A384E52"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/defend_f000_front.png",
+              "blender/previews/defend_f000_left.png"
+            ]
+          },
+          {
+            "frame": 48,
+            "previews": [
+              "blender/previews/defend_f048_front.png",
+              "blender/previews/defend_f048_left.png"
+            ]
+          },
+          {
+            "frame": 97,
+            "previews": [
+              "blender/previews/defend_f097_front.png",
+              "blender/previews/defend_f097_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "48c6ab9de00a44a4b10d34bace592cfe",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/48c6ab9de00a44a4b10d34bace592cfe.result.json"
+          },
+          "anim": "export/anim/zin_the_dead_revenant_defend.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                1.6351863145828247,
+                1.230112910270691,
+                7.106781482696533
+              ],
+              "bounds_min": [
+                -1.5421122312545776,
+                -1.9738143682479858,
+                -3.0766241252422333e-06
+              ],
+              "dimensions": [
+                3.1772985458374023,
+                3.2039272785186768,
+                7.106784343719482
+              ],
+              "frame": 1,
+              "ground_contact_z": -3.0766241252422333e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.3990535736083984,
+                1.5436410903930664,
+                7.056062698364258
+              ],
+              "bounds_min": [
+                -1.7348003387451172,
+                -1.8877065181732178,
+                -1.0949093848466873e-05
+              ],
+              "dimensions": [
+                4.133853912353516,
+                3.431347608566284,
+                7.0560736656188965
+              ],
+              "frame": 25,
+              "ground_contact_z": -1.0949093848466873e-05,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.6207690238952637,
+                1.52671217918396,
+                6.961653232574463
+              ],
+              "bounds_min": [
+                -2.3002817630767822,
+                -2.0801358222961426,
+                -2.9026996344327927e-06
+              ],
+              "dimensions": [
+                3.921050786972046,
+                3.6068480014801025,
+                6.961656093597412
+              ],
+              "frame": 50,
+              "ground_contact_z": -2.9026996344327927e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                0.8638089299201965,
+                1.2721197605133057,
+                7.102227210998535
+              ],
+              "bounds_min": [
+                -2.467224597930908,
+                -2.666470527648926,
+                -6.211921572685242e-07
+              ],
+              "dimensions": [
+                3.33103346824646,
+                3.9385902881622314,
+                7.102227687835693
+              ],
+              "frame": 74,
+              "ground_contact_z": -6.211921572685242e-07,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.6349732875823975,
+                1.2301056385040283,
+                7.106870651245117
+              ],
+              "bounds_min": [
+                -1.5423461198806763,
+                -1.9738081693649292,
+                -3.5301782190799713e-06
+              ],
+              "dimensions": [
+                3.1773195266723633,
+                3.203913688659668,
+                7.106873989105225
+              ],
+              "frame": 98,
+              "ground_contact_z": -3.5301782190799713e-06,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 2622,
+            "bounds_max": [
+              2.3970556259155273,
+              0.8039031624794006,
+              7.3518242835998535
+            ],
+            "bounds_min": [
+              -2.40041184425354,
+              -0.8016429543495178,
+              0.0
+            ],
+            "branched_boundary_component_count": 270,
+            "closed_boundary_component_count": 2352,
+            "degenerate_faces": 0,
+            "dimensions": [
+              4.797467231750488,
+              1.6055461168289185,
+              7.3518242835998535
+            ],
+            "loose_boundary_edges": 19588,
+            "max_boundary_component_edges": 58,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 21000,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 214,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 44,
+                  "branched_boundary_component_count": 5,
+                  "closed_boundary_component_count": 39,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 214,
+                  "max_boundary_component_edges": 16,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 21000,
+                  "vertices_after_position_weld": 10475,
+                  "vertices_before": 22743,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 21000,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 22743,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_the_dead_revenant.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 21000,
+              "vertices": 22743
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_001_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_001_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_025_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_025_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_025_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_050_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_050_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_050_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_074_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_074_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_074_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_098_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_098_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_defend_frame_098_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_the_dead_revenant_defend.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/defend_pre_export.blend"
+      },
+      "step": "defend_export"
+    },
+    {
+      "result": {
+        "action": "zin_the_dead_revenant_retreat",
+        "anim": {
+          "bytes": 21331,
+          "name": "zin_the_dead_revenant_retreat.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_the_dead_revenant\\export\\anim\\zin_the_dead_revenant_retreat.anim",
+          "relative_path": "export/anim/zin_the_dead_revenant_retreat.anim",
+          "sha256": "1738E9B6B56B69AB11C856333DD1F773C169753DC5CFB705503CBC6271381B6A"
+        },
+        "export": {
+          "action": "zin_the_dead_revenant_retreat",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "e3a6ca93e21a49fa8863621599a86518",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/e3a6ca93e21a49fa8863621599a86518.result.json"
+          },
+          "anim": "export/anim/zin_the_dead_revenant_retreat.anim",
+          "anim_bytes": 21331,
+          "anim_text": "export/anim/zin_the_dead_revenant_retreat.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/retreat_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_the_dead_revenant_retreat",
+              "factor": 0.04085014760494232,
+              "keyframes": 400,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.04085014760494232,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.04085014760494232,
+              0.04085014760494232,
+              0.04085014760494232
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.04085014760494232,
+                0.04085014760494232,
+                0.04085014760494232
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 24,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.6212881207466125,
+                    0.27347156405448914,
+                    0.24543032050132751,
+                    0.6920826435089111
+                  ],
+                  "t": [
+                    0.003763230750337243,
+                    4.147282123565674,
+                    -0.0355600044131279
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.6212881207466125,
+                    0.27347156405448914,
+                    0.24543032050132751,
+                    0.6920826435089111
+                  ],
+                  "t": [
+                    0.003763230750337243,
+                    4.148232460021973,
+                    -0.0355600044131279
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.6212881207466125,
+                  0.27347156405448914,
+                  0.24543032050132751,
+                  0.6920826435089111
+                ],
+                "t": [
+                  0.003763230750337243,
+                  4.147282123565674,
+                  -0.0355600044131279
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "68B6B08B97627DFA279398445F0C458F83512E3E9C75990ECB8BE9DCE8B53DA2",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 2,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 50,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "Head": 0.26566654443740845,
+            "Spine": 0.18547439575195312,
+            "Spine01": 0.1853790581226349,
+            "Spine02": 0.15503078699111938,
+            "neck": 0.24251015484333038
+          },
+          "checkpoint": "blender/checkpoints/retreat_pre_export.blend",
+          "frame_range": [
+            0,
+            24
+          ],
+          "motion_bone_chain": [
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "neck",
+            "Head"
+          ],
+          "output_sha256": "6380141315680F56857D354968AE1BEAB4EC78FE5C38535CA314F0B206913191",
+          "phase_frames": {
+            "disengage": 6,
+            "recovery": 18,
+            "withdrawal": 12
+          },
+          "semantic_role": "retreat",
+          "source_fps": 24,
+          "target_action_sha256": "B24BAFAE9FBA9F0D27C323C5C7226F4C8F065D300F1E783E640EA3A6BD3091A0"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/retreat_f000_front.png",
+              "blender/previews/retreat_f000_left.png"
+            ]
+          },
+          {
+            "frame": 6,
+            "previews": [
+              "blender/previews/retreat_f006_front.png",
+              "blender/previews/retreat_f006_left.png"
+            ]
+          },
+          {
+            "frame": 12,
+            "previews": [
+              "blender/previews/retreat_f012_front.png",
+              "blender/previews/retreat_f012_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "f87c0244aba1406aa4f9f0146aa6d3a3",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/f87c0244aba1406aa4f9f0146aa6d3a3.result.json"
+          },
+          "anim": "export/anim/zin_the_dead_revenant_retreat.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                1.8889474868774414,
+                0.956881046295166,
+                7.267343997955322
+              ],
+              "bounds_min": [
+                -2.2242095470428467,
+                -1.7076246738433838,
+                2.5331974029541016e-06
+              ],
+              "dimensions": [
+                4.113157272338867,
+                2.66450572013855,
+                7.267341613769531
+              ],
+              "frame": 1,
+              "ground_contact_z": 2.5331974029541016e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.2134037017822266,
+                1.1927897930145264,
+                6.990016937255859
+              ],
+              "bounds_min": [
+                -1.5603742599487305,
+                -2.0567736625671387,
+                -7.695052772760391e-08
+              ],
+              "dimensions": [
+                3.773777961730957,
+                3.249563455581665,
+                6.990016937255859
+              ],
+              "frame": 7,
+              "ground_contact_z": -7.695052772760391e-08,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.249717950820923,
+                1.831778645515442,
+                6.775319576263428
+              ],
+              "bounds_min": [
+                -1.6913440227508545,
+                -2.98573637008667,
+                -1.862645149230957e-06
+              ],
+              "dimensions": [
+                3.9410619735717773,
+                4.817514896392822,
+                6.7753214836120605
+              ],
+              "frame": 13,
+              "ground_contact_z": -1.862645149230957e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.2134037017822266,
+                1.1927897930145264,
+                6.990016937255859
+              ],
+              "bounds_min": [
+                -1.5603742599487305,
+                -2.0567736625671387,
+                -7.695052772760391e-08
+              ],
+              "dimensions": [
+                3.773777961730957,
+                3.249563455581665,
+                6.990016937255859
+              ],
+              "frame": 19,
+              "ground_contact_z": -7.695052772760391e-08,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.8889474868774414,
+                0.956881046295166,
+                7.267343997955322
+              ],
+              "bounds_min": [
+                -2.2242095470428467,
+                -1.7076246738433838,
+                2.5331974029541016e-06
+              ],
+              "dimensions": [
+                4.113157272338867,
+                2.66450572013855,
+                7.267341613769531
+              ],
+              "frame": 25,
+              "ground_contact_z": 2.5331974029541016e-06,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 2622,
+            "bounds_max": [
+              2.3970556259155273,
+              0.8039031624794006,
+              7.3518242835998535
+            ],
+            "bounds_min": [
+              -2.40041184425354,
+              -0.8016429543495178,
+              0.0
+            ],
+            "branched_boundary_component_count": 270,
+            "closed_boundary_component_count": 2352,
+            "degenerate_faces": 0,
+            "dimensions": [
+              4.797467231750488,
+              1.6055461168289185,
+              7.3518242835998535
+            ],
+            "loose_boundary_edges": 19588,
+            "max_boundary_component_edges": 58,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 21000,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 214,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 44,
+                  "branched_boundary_component_count": 5,
+                  "closed_boundary_component_count": 39,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 214,
+                  "max_boundary_component_edges": 16,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 21000,
+                  "vertices_after_position_weld": 10475,
+                  "vertices_before": 22743,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 21000,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 22743,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_the_dead_revenant.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 21000,
+              "vertices": 22743
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_001_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_001_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_007_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_007_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_007_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_013_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_013_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_013_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_019_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_019_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_019_three_quarter.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_025_front.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_025_left.png",
+            "blender/previews/reimport_zin_the_dead_revenant_retreat_frame_025_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_the_dead_revenant_retreat.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/retreat_pre_export.blend"
+      },
+      "step": "retreat_export"
+    }
+  ]
+}

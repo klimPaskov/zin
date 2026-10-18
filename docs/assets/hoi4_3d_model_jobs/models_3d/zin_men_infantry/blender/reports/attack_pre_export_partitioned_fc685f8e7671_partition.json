@@ -1,0 +1,134 @@
+{
+  "checkpoint": "blender/checkpoints/attack_pre_export_partitioned_fc685f8e7671.blend",
+  "conservative_triangle_index_entry_budget": 24000,
+  "error": "Promotion does not support driver/NLA proof scenes.",
+  "geometry_before": {
+    "boundary_component_count": 22,
+    "bounds_max": [
+      1.9897284507751465,
+      0.8074378967285156,
+      7.3518242835998535
+    ],
+    "bounds_min": [
+      -1.9901021718978882,
+      -0.8062288165092468,
+      0.0
+    ],
+    "branched_boundary_component_count": 2,
+    "closed_boundary_component_count": 20,
+    "degenerate_faces": 0,
+    "dimensions": [
+      3.979830741882324,
+      1.6136667728424072,
+      7.3518242835998535
+    ],
+    "loose_boundary_edges": 93,
+    "max_boundary_component_edges": 6,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 29999,
+    "triangles": 29999,
+    "uv_layers": {
+      "char1.001": [
+        "UVMap"
+      ]
+    },
+    "vertices": 15006,
+    "zero_length_normals": 0
+  },
+  "locators_before": [],
+  "maximum_export_vertices": 24000,
+  "new_provider_call": false,
+  "operation": "partition_skeletal_mesh_export_batches",
+  "output_approved": false,
+  "policy": "identical_material_copies_and_polygon_material_indices_only",
+  "report": "blender/reports/attack_pre_export_partitioned_fc685f8e7671_partition.json",
+  "source_blend": "blender/checkpoints/attack_pre_export.blend",
+  "source_sha256": "FC685F8E7671C947427A86CEC9602BC5183EE8320982097BBCA6BB3EB82B39B9",
+  "status": "fail",
+  "weights_before": [
+    {
+      "armature_modifiers": [
+        "Armature"
+      ],
+      "influence_histogram": {
+        "1": 2798,
+        "2": 26702,
+        "3": 13251,
+        "4": 17161
+      },
+      "object": "char1",
+      "vertex_groups": 24,
+      "vertices": 59912,
+      "vertices_over_four_influences": 0,
+      "vertices_with_non_bone_groups": 0,
+      "weight_sum_max": 1.0000001192092896,
+      "weight_sum_min": 0.9999998677521944,
+      "zero_weight_vertices": 0
+    },
+    {
+      "armature_modifiers": [],
+      "influence_histogram": {
+        "0": 42
+      },
+      "object": "Icosphere",
+      "vertex_groups": 0,
+      "vertices": 42,
+      "vertices_over_four_influences": 0,
+      "vertices_with_non_bone_groups": 0,
+      "weight_sum_max": 0,
+      "weight_sum_min": 0,
+      "zero_weight_vertices": 42
+    },
+    {
+      "armature_modifiers": [
+        "Armature.001"
+      ],
+      "influence_histogram": {
+        "1": 793,
+        "2": 6724,
+        "3": 3326,
+        "4": 4030,
+        "5": 131,
+        "6": 2
+      },
+      "object": "char1.001",
+      "vertex_groups": 24,
+      "vertices": 15006,
+      "vertices_over_four_influences": 133,
+      "vertices_with_non_bone_groups": 0,
+      "weight_sum_max": 1.0000001788139343,
+      "weight_sum_min": 0.9999998062849045,
+      "zero_weight_vertices": 0
+    },
+    {
+      "armature_modifiers": [],
+      "influence_histogram": {
+        "0": 8
+      },
+      "object": "pCube1",
+      "vertex_groups": 0,
+      "vertices": 8,
+      "vertices_over_four_influences": 0,
+      "vertices_with_non_bone_groups": 0,
+      "weight_sum_max": 0,
+      "weight_sum_min": 0,
+      "zero_weight_vertices": 8
+    },
+    {
+      "armature_modifiers": [],
+      "influence_histogram": {
+        "0": 2021
+      },
+      "object": "polySurface106",
+      "vertex_groups": 0,
+      "vertices": 2021,
+      "vertices_over_four_influences": 0,
+      "vertices_with_non_bone_groups": 0,
+      "weight_sum_max": 0,
+      "weight_sum_min": 0,
+      "zero_weight_vertices": 2021
+    }
+  ]
+}

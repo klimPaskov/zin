@@ -1,0 +1,57 @@
+{
+  "channel_stats": {
+    "A": {
+      "max": 170,
+      "mean": 95.8395,
+      "min": 53
+    },
+    "B": {
+      "max": 116,
+      "mean": 0.0028,
+      "min": 0
+    },
+    "G": {
+      "max": 32,
+      "mean": 32.0,
+      "min": 32
+    },
+    "R": {
+      "max": 0,
+      "mean": 0.0,
+      "min": 0
+    }
+  },
+  "dimensions": [
+    2048,
+    2048
+  ],
+  "layout": {
+    "alpha": "glossiness_255_minus_roughness",
+    "blue": "metallic",
+    "green": "specular_level_32",
+    "red": "unused_mask_zero"
+  },
+  "output": {
+    "bytes": 1731207,
+    "path": "provider/downloads/generation_model_textures/pdx_specular.png",
+    "sha256": "e99268167aee8f1254260cc0f76a6a2ecde4d868e94c8d22d3088511da48b32b"
+  },
+  "source": {
+    "glTF_packed_map": {
+      "bytes": 1731587,
+      "path": "provider/downloads/generation_model_textures/metallic_roughness.png",
+      "sha256": "170eb61df332b7d5b8b83b0743aa74e36c9228b5b90a752eda0250781fe8c69c"
+    },
+    "metallic": {
+      "bytes": 19477,
+      "path": "provider/downloads/generation_model_textures/metallic.png",
+      "sha256": "c0dd966a204056cb4e364b25b94f7027f9b663bb2a632d8e1f7d9868a7de8e70"
+    },
+    "roughness": {
+      "bytes": 1639324,
+      "path": "provider/downloads/generation_model_textures/roughness.png",
+      "sha256": "1cb41a9b8f2fd12d38bd404b39aa376709e263e4ad9b99cc58d3084994f955ad"
+    }
+  },
+  "status": "packed"
+}

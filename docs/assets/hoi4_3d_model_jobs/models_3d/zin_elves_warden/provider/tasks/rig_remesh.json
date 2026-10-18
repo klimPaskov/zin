@@ -1,0 +1,34 @@
+{
+  "consumed_credits": 5,
+  "estimated_credits": 5,
+  "final_response": {
+    "consumed_credits": 5,
+    "model_urls": {
+      "fbx": "https://assets.meshy.ai/d60d46ca-ef2d-43f4-ab50-84b883e9e946/tasks/01a14f8f-0e93-7394-bab2-58038a57fe87/output/model.fbx?Expires=1792595489&Signature=FJRiObOwfYZe0bHtRKk9xaZ5w3fBOCziwnsfamXGUYKRvXAqW5kGTsdi-MTchzrF6XLiNDv8pEDdoUT4bChRBURz6tOnivSiP77AYRyWeMnNXdy81ZNpT5hOcT6znCwOyRNWhLoecbr-tUxAUv2A6tbbZ4HBO~SE5Ni7bdO0yKFrDviRvzaPSk4vackvtMGxebH0uX58fJTpRPZNOtxleBQQejcucEhUFoJoGaZVK0CvcCXDAvsy0m72Z6rzlPbyYU5iKdTY-bqxePV3gPRzYSNeiU70wMbl4KJH6XgRKrfy9UDjnenN9ZMf~i1vffaMKV5wAF0hhwW90U5Psr-Umw__&Key-Pair-Id=K1VGYTHIYLM9UM",
+      "glb": "https://assets.meshy.ai/d60d46ca-ef2d-43f4-ab50-84b883e9e946/tasks/01a14f8f-0e93-7394-bab2-58038a57fe87/output/model.glb?Expires=1792595489&Signature=GfcOJcCcPzqGU~TCf328msiETJrwUqt9KOtpHo1c-8nOgvdZGhZ8BfE-pJ5keiew0bzCFo2ZrSGpOex6tBnsviDOFae21~7DYu3MsN31sDhLjmdj2o~POorQW7Wh2rKkajDF6OISPJVDba~oo9WQ5~svX8uUl79T5C44MTrAIzsUmWVZCEvuXICxTdf-jiqb54TuGoQgMD0kZ0PKO2unFps8-Z-AqCH9EXTOtOxa1gQllyj1c20v7AmevRgod6fbx6yiqeCB0f6KFKcYPW3Xn~GS8VrsVSsxb3SkcEno9y-wPWRLV017~UaqSIA-xmiCsD42YIxQ6VXi~fpcSP1ewQ__&Key-Pair-Id=K1VGYTHIYLM9UM"
+    },
+    "outcome": "SUCCEEDED",
+    "poll_count": 7,
+    "progress": 100,
+    "status": "SUCCEEDED",
+    "task_id": "01a14f8f-0e93-7394-bab2-58038a57fe87",
+    "wait_time_seconds": 99
+  },
+  "initial_response": {
+    "estimated_time": "1-2 minutes",
+    "message": "Remesh task created successfully. Task ID: 01a14f8f-0e93-7394-bab2-58038a57fe87",
+    "status": "PENDING",
+    "task_id": "01a14f8f-0e93-7394-bab2-58038a57fe87"
+  },
+  "input_stage": "generation",
+  "provider": {
+    "server_package": "@meshy-ai/meshy-mcp-server",
+    "server_version": "0.6.2"
+  },
+  "recorded_at": "2026-10-18T15:11:48Z",
+  "schema_version": "1.0.0",
+  "stage": "rig_remesh",
+  "status": "SUCCEEDED",
+  "task_id": "01a14f8f-0e93-7394-bab2-58038a57fe87",
+  "task_type": "remesh"
+}

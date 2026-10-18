@@ -1,0 +1,194 @@
+{
+  "backend": "repository convert_to_dds.py",
+  "conversions": [
+    {
+      "dds": "textures/dds/texture_0.dds",
+      "height": 1024,
+      "image": "texture_0",
+      "log": "logs/adapter/dds_000.log",
+      "png": "textures/processed/texture_0.png",
+      "width": 1024
+    },
+    {
+      "dds": "textures/dds/texture_normal.dds",
+      "height": 1024,
+      "image": "texture_normal",
+      "layout": {
+        "alpha": "source_normal_green_tangent_y",
+        "blue": "unused_zero",
+        "green": "source_normal_red_tangent_x",
+        "red": "unused_zero"
+      },
+      "log": "logs/adapter/dds_001.log",
+      "png": "textures/processed/texture_normal.png",
+      "width": 1024
+    },
+    {
+      "dds": "textures/dds/texture_specular.dds",
+      "height": 1024,
+      "image": "texture_specular",
+      "layout": {
+        "alpha": "roughness",
+        "blue": "metallic",
+        "green": "specular_level_32",
+        "red": "unused_mask_zero"
+      },
+      "log": "logs/adapter/dds_002.log",
+      "png": "textures/processed/texture_specular.png",
+      "width": 1024
+    }
+  ],
+  "extracted": {
+    "adapter": {
+      "id": "hoi4_blender_adapter",
+      "request_id": "20d938b40a164f7f861f9e2f0de4febc",
+      "version": "1.6.0",
+      "worker_log": "logs/adapter/20d938b40a164f7f861f9e2f0de4febc.result.json"
+    },
+    "blend": "blender/checkpoints/05_pre_export.blend",
+    "textures": [
+      {
+        "bytes": 6701470,
+        "image": "texture_0",
+        "material": "BakedMaterial",
+        "processed_png": "textures/processed/texture_0.png"
+      },
+      {
+        "bytes": 5998724,
+        "image": "texture_normal",
+        "material": "BakedMaterial",
+        "processed_png": "textures/processed/texture_normal.png"
+      },
+      {
+        "bytes": 1726347,
+        "image": "texture_specular",
+        "material": "BakedMaterial",
+        "processed_png": "textures/processed/texture_specular.png"
+      }
+    ]
+  },
+  "pdx_normal_pack": {
+    "channel_stats": {
+      "A": {
+        "max": 190,
+        "mean": 127.0015,
+        "min": 67
+      },
+      "B": {
+        "max": 0,
+        "mean": 0.0,
+        "min": 0
+      },
+      "G": {
+        "max": 186,
+        "mean": 127.0014,
+        "min": 68
+      },
+      "R": {
+        "max": 0,
+        "mean": 0.0,
+        "min": 0
+      }
+    },
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "layout": {
+      "alpha": "source_normal_green_tangent_y",
+      "blue": "unused_zero",
+      "green": "source_normal_red_tangent_x",
+      "red": "unused_zero"
+    },
+    "output": {
+      "bytes": 4668223,
+      "path": "provider/downloads/generation_model_textures/pdx_normal.png",
+      "sha256": "92e6fb0903dc87496c5089bed142895cdddecf8a5d26d366d4133947e86a341a"
+    },
+    "source": {
+      "bytes": 5998724,
+      "path": "provider/downloads/generation_model_textures/normal.png",
+      "sha256": "4145fdfde6237a82c37d3e6e8948d3d0e7480302903f8ad407a17504ad7d3932"
+    },
+    "status": "packed"
+  },
+  "pdx_specular_pack": {
+    "channel_stats": {
+      "A": {
+        "max": 199,
+        "mean": 109.3979,
+        "min": 65
+      },
+      "B": {
+        "max": 175,
+        "mean": 23.6636,
+        "min": 0
+      },
+      "G": {
+        "max": 32,
+        "mean": 32.0,
+        "min": 32
+      },
+      "R": {
+        "max": 0,
+        "mean": 0.0,
+        "min": 0
+      }
+    },
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "layout": {
+      "alpha": "glossiness_255_minus_roughness",
+      "blue": "metallic",
+      "green": "specular_level_32",
+      "red": "unused_mask_zero"
+    },
+    "output": {
+      "bytes": 2924144,
+      "path": "provider/downloads/generation_model_textures/pdx_specular.png",
+      "sha256": "ee65456bd832a73aa668853b5535b5ad462232c7dee34478119799d93c50d65d"
+    },
+    "source": {
+      "glTF_packed_map": {
+        "bytes": 2924878,
+        "path": "provider/downloads/generation_model_textures/metallic_roughness.png",
+        "sha256": "e0e3b583ac7b52b9e756688769966c3b9c73e1db85500047b101dc572210a51a"
+      },
+      "metallic": {
+        "bytes": 1189553,
+        "path": "provider/downloads/generation_model_textures/metallic.png",
+        "sha256": "5cf71d8d076dd59d08daf400b1bbf6cdce5c1b00d75f62905a8e26c1934aa5e8"
+      },
+      "roughness": {
+        "bytes": 1726347,
+        "path": "provider/downloads/generation_model_textures/roughness.png",
+        "sha256": "a9d2b05454428217589104cf67a3256b9da54efb5b4caed1535fde236880ae78"
+      }
+    },
+    "status": "packed"
+  },
+  "relinked": {
+    "adapter": {
+      "id": "hoi4_blender_adapter",
+      "request_id": "4c8ffe0f5cea47379b7f70bc0cc7fcfc",
+      "version": "1.6.0",
+      "worker_log": "logs/adapter/4c8ffe0f5cea47379b7f70bc0cc7fcfc.result.json"
+    },
+    "blend": "blender/checkpoints/05_pre_export.blend",
+    "textures": []
+  },
+  "runtime_diffuse_grade": {
+    "dds": "textures/dds/texture_0.dds",
+    "gamma": 0.72,
+    "policy": "provider_source_rebuilt_each_run_with_single_gamma_lift",
+    "processed": "textures/processed/texture_0.png",
+    "source": "provider/downloads/generation_model_textures/base_color.png"
+  },
+  "runtime_texture_sources": {
+    "diffuse": "provider/downloads/generation_model_textures/base_color.png",
+    "normal": "provider/downloads/generation_model_textures/normal.png",
+    "specular": "provider/downloads/generation_model_textures/metallic_roughness.png"
+  }
+}

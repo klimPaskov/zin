@@ -1,0 +1,239 @@
+{
+  "actions": [
+    "io_pdx_rigAction"
+  ],
+  "anim": "export/anim/zin_elves_warden_attack.anim",
+  "animation_bounds": [
+    {
+      "bounds_max": [
+        1.697114109992981,
+        3.706437110900879,
+        6.424745082855225
+      ],
+      "bounds_min": [
+        -2.2325050830841064,
+        -0.054198384284973145,
+        -0.001047760248184204
+      ],
+      "dimensions": [
+        3.929619312286377,
+        3.7606353759765625,
+        6.425792694091797
+      ],
+      "frame": 1,
+      "ground_contact_z": -0.001047760248184204,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        1.141432523727417,
+        4.077718734741211,
+        7.527297019958496
+      ],
+      "bounds_min": [
+        -1.5894826650619507,
+        1.025963306427002,
+        -0.4164557158946991
+      ],
+      "dimensions": [
+        2.730915069580078,
+        3.051755428314209,
+        7.943752765655518
+      ],
+      "frame": 18,
+      "ground_contact_z": -0.4164557158946991,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        2.2015748023986816,
+        5.451870918273926,
+        5.9746994972229
+      ],
+      "bounds_min": [
+        -0.9150382280349731,
+        0.2458987832069397,
+        0.590627133846283
+      ],
+      "dimensions": [
+        3.1166129112243652,
+        5.205972194671631,
+        5.384072303771973
+      ],
+      "frame": 35,
+      "ground_contact_z": 0.590627133846283,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        1.7316936254501343,
+        3.892920732498169,
+        6.413512229919434
+      ],
+      "bounds_min": [
+        -1.542250156402588,
+        -1.1767278909683228,
+        0.36336034536361694
+      ],
+      "dimensions": [
+        3.2739439010620117,
+        5.069648742675781,
+        6.050151824951172
+      ],
+      "frame": 52,
+      "ground_contact_z": 0.36336034536361694,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        1.7028429508209229,
+        3.70550799369812,
+        6.425899982452393
+      ],
+      "bounds_min": [
+        -2.226696729660034,
+        -0.055357158184051514,
+        -3.712065517902374e-05
+      ],
+      "dimensions": [
+        3.929539680480957,
+        3.7608652114868164,
+        6.425937175750732
+      ],
+      "frame": 69,
+      "ground_contact_z": -3.712065517902374e-05,
+      "locators": []
+    }
+  ],
+  "armatures": [
+    {
+      "bones": 24,
+      "name": "io_pdx_rig"
+    }
+  ],
+  "geometry": {
+    "boundary_component_count": 2077,
+    "bounds_max": [
+      2.0334901809692383,
+      0.7444736361503601,
+      7.3518242835998535
+    ],
+    "bounds_min": [
+      -2.0347659587860107,
+      -0.7424226999282837,
+      0.0
+    ],
+    "branched_boundary_component_count": 263,
+    "closed_boundary_component_count": 1814,
+    "degenerate_faces": 0,
+    "dimensions": [
+      4.068256378173828,
+      1.486896276473999,
+      7.3518242835998535
+    ],
+    "loose_boundary_edges": 17951,
+    "max_boundary_component_edges": 64,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 20999,
+    "position_welded_topology": {
+      "degenerate_faces": 0,
+      "loose_boundary_edges": 563,
+      "non_manifold_edges": 0,
+      "objects": [
+        {
+          "boundary_component_count": 122,
+          "branched_boundary_component_count": 16,
+          "closed_boundary_component_count": 106,
+          "degenerate_faces": 0,
+          "loose_boundary_edges": 563,
+          "max_boundary_component_edges": 16,
+          "non_manifold_edges": 0,
+          "object": "output_unwrapped.002",
+          "triangles": 20997,
+          "vertices_after_position_weld": 10508,
+          "vertices_before": 21457,
+          "weld_distance": 1e-06,
+          "zero_length_normals": 0
+        }
+      ],
+      "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+      "weld_distance": 1e-06
+    },
+    "triangles": 20999,
+    "uv_layers": {
+      "output_unwrapped.002": [
+        "map1"
+      ]
+    },
+    "vertices": 21457,
+    "zero_length_normals": 0
+  },
+  "locators": [],
+  "mesh": "export/mesh/zin_elves_warden.mesh",
+  "meshes": [
+    {
+      "materials": [
+        "PDXmat_output_unwrapped.002"
+      ],
+      "name": "output_unwrapped.002",
+      "polygons": 20999,
+      "vertices": 21457
+    }
+  ],
+  "objects": [
+    {
+      "name": "io_pdx_rig",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "ARMATURE"
+    },
+    {
+      "name": "output_unwrapped.002",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "MESH"
+    }
+  ],
+  "previews": [
+    "blender/previews/reimport_zin_elves_warden_attack_frame_001_front.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_001_left.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_001_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_018_front.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_018_left.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_018_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_035_front.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_035_left.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_035_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_052_front.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_052_left.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_052_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_069_front.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_069_left.png",
+    "blender/previews/reimport_zin_elves_warden_attack_frame_069_three_quarter.png"
+  ],
+  "proof_blend": "blender/checkpoints/reimport_zin_elves_warden_attack.blend",
+  "runtime_texture_staging": [
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_0.dds",
+      "staged": "export/mesh/texture_0.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_specular.dds",
+      "staged": "export/mesh/texture_specular.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_normal.dds",
+      "staged": "export/mesh/texture_normal.dds"
+    }
+  ]
+}

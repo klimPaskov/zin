@@ -1,0 +1,94 @@
+{
+  "blend": "blender/checkpoints/attack_pre_export.blend",
+  "conservative_triangle_index_entry_budget": 65535,
+  "export_transforms": {
+    "animation_translation_channels": {
+      "action": "Armature|Attack|baselayer_WORKING",
+      "factor": 0.04085014760494232,
+      "keyframes": 5610,
+      "location_fcurves": 66,
+      "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+    },
+    "armature": "Armature.001",
+    "armature_data_scale_factor": 0.04085014760494232,
+    "armature_world_scale_after": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armature_world_scale_before": [
+      0.04085014760494232,
+      0.04085014760494232,
+      0.04085014760494232
+    ],
+    "mesh_world_scales_after": {
+      "char1.001": [
+        0.04085014760494232,
+        0.04085014760494232,
+        0.04085014760494232
+      ]
+    },
+    "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+  },
+  "exported_checkpoint": "blender/checkpoints/06_exported.blend",
+  "geometry": {
+    "boundary_component_count": 44,
+    "bounds_max": [
+      2.3970556259155273,
+      0.8039031624794006,
+      7.3518242835998535
+    ],
+    "bounds_min": [
+      -2.40041184425354,
+      -0.8016429543495178,
+      0.0
+    ],
+    "branched_boundary_component_count": 5,
+    "closed_boundary_component_count": 39,
+    "degenerate_faces": 0,
+    "dimensions": [
+      4.797467231750488,
+      1.6055461168289185,
+      7.3518242835998535
+    ],
+    "loose_boundary_edges": 214,
+    "max_boundary_component_edges": 16,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 21000,
+    "triangles": 21000,
+    "uv_layers": {
+      "char1.001": [
+        "UVMap"
+      ]
+    },
+    "vertices": 10475,
+    "zero_length_normals": 0
+  },
+  "locator_coordinate_policy": "bone_head_local_rest_export_with_uniform_rig_scale_conversion",
+  "locators": [],
+  "maximum_stream_triangle_indices": 63000,
+  "maximum_stream_vertices": 22743,
+  "mesh": "export/mesh/zin_the_dead_revenant.mesh",
+  "mesh_bytes": 2074146,
+  "mesh_streams": [
+    {
+      "maximum_index": 22742,
+      "mesh_index": 0,
+      "minimum_index": 0,
+      "object_name": "output_unwrapped.002",
+      "position_components": 68229,
+      "stream_index": 0,
+      "triangle_indices": 63000,
+      "triangles": 21000,
+      "vertices": 22743
+    }
+  ],
+  "mesh_text": "export/mesh/zin_the_dead_revenant.txt",
+  "selected_export_objects": [
+    "char1.001"
+  ],
+  "vertex_stream_limit": 65535,
+  "warnings": []
+}

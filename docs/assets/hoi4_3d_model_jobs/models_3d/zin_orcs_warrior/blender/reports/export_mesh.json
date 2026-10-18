@@ -1,0 +1,94 @@
+{
+  "blend": "blender/checkpoints/attack_pre_export.blend",
+  "conservative_triangle_index_entry_budget": 65535,
+  "export_transforms": {
+    "animation_translation_channels": {
+      "action": "Armature|Attack|baselayer_WORKING",
+      "factor": 0.03862284496426582,
+      "keyframes": 5610,
+      "location_fcurves": 66,
+      "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+    },
+    "armature": "Armature.001",
+    "armature_data_scale_factor": 0.03862284496426582,
+    "armature_world_scale_after": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armature_world_scale_before": [
+      0.03862284496426582,
+      0.03862284496426582,
+      0.03862284496426582
+    ],
+    "mesh_world_scales_after": {
+      "char1.001": [
+        0.03862284496426582,
+        0.03862284496426582,
+        0.03862284496426582
+      ]
+    },
+    "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+  },
+  "exported_checkpoint": "blender/checkpoints/06_exported.blend",
+  "geometry": {
+    "boundary_component_count": 122,
+    "bounds_max": [
+      2.629110336303711,
+      1.0374785661697388,
+      7.351823806762695
+    ],
+    "bounds_min": [
+      -2.6312506198883057,
+      -1.0425350666046143,
+      0.0
+    ],
+    "branched_boundary_component_count": 3,
+    "closed_boundary_component_count": 119,
+    "degenerate_faces": 0,
+    "dimensions": [
+      5.2603607177734375,
+      2.0800137519836426,
+      7.351823806762695
+    ],
+    "loose_boundary_edges": 468,
+    "max_boundary_component_edges": 10,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 21000,
+    "triangles": 21000,
+    "uv_layers": {
+      "char1.001": [
+        "UVMap"
+      ]
+    },
+    "vertices": 10453,
+    "zero_length_normals": 0
+  },
+  "locator_coordinate_policy": "bone_head_local_rest_export_with_uniform_rig_scale_conversion",
+  "locators": [],
+  "maximum_stream_triangle_indices": 63000,
+  "maximum_stream_vertices": 34161,
+  "mesh": "export/mesh/zin_orcs_warrior.mesh",
+  "mesh_bytes": 2987586,
+  "mesh_streams": [
+    {
+      "maximum_index": 34160,
+      "mesh_index": 0,
+      "minimum_index": 0,
+      "object_name": "output_unwrapped.002",
+      "position_components": 102483,
+      "stream_index": 0,
+      "triangle_indices": 63000,
+      "triangles": 21000,
+      "vertices": 34161
+    }
+  ],
+  "mesh_text": "export/mesh/zin_orcs_warrior.txt",
+  "selected_export_objects": [
+    "char1.001"
+  ],
+  "vertex_stream_limit": 65535,
+  "warnings": []
+}

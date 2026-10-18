@@ -1,0 +1,3498 @@
+{
+  "adapter": {
+    "id": "hoi4_blender_adapter",
+    "request_id": "ccd391fcfb82468eaef5375c83ffe8d5",
+    "version": "1.6.0",
+    "worker_log": "logs/adapter/ccd391fcfb82468eaef5375c83ffe8d5.result.json"
+  },
+  "changed_bones": {
+    "Head": 0.2634744346141815,
+    "Spine": 0.18596893548965454,
+    "Spine01": 0.1859101802110672,
+    "Spine02": 0.15545378625392914,
+    "neck": 0.2422789018601179
+  },
+  "checkpoint": "blender/checkpoints/retreat_pre_export.blend",
+  "frame_range": [
+    0,
+    24
+  ],
+  "manual_or_procedural_replacement_authored": true,
+  "motion_bone_chain": [
+    "Spine02",
+    "Spine01",
+    "Spine",
+    "neck",
+    "Head"
+  ],
+  "new_provider_call": false,
+  "numerical_identity_tolerance": 1e-06,
+  "operation": "patch_existing_humanoid_action_phases",
+  "original_actions_unchanged": true,
+  "output_bytes": 5232577,
+  "output_sha256": "6C0EC4B330714DBFB9C9B94B7817C0CCC0F1E86069E40732FE9F1581618021F2",
+  "patched_channels": {
+    "Head": [
+      "rotation_quaternion"
+    ],
+    "Spine": [
+      "rotation_quaternion"
+    ],
+    "Spine01": [
+      "rotation_quaternion"
+    ],
+    "Spine02": [
+      "rotation_quaternion"
+    ],
+    "neck": [
+      "rotation_quaternion"
+    ]
+  },
+  "phase_frames": {
+    "disengage": 6,
+    "recovery": 18,
+    "withdrawal": 12
+  },
+  "phase_transitions": {
+    "disengage/withdrawal": {
+      "Head": 0.07696151733398438,
+      "Spine": 0.05438894033432007,
+      "Spine01": 0.054437220096588135,
+      "Spine02": 0.04598994553089142,
+      "neck": 0.07215380668640137
+    },
+    "withdrawal/recovery": {
+      "Head": 0.07696151733398438,
+      "Spine": 0.05438894033432007,
+      "Spine01": 0.054437220096588135,
+      "Spine02": 0.04598994553089142,
+      "neck": 0.07215380668640137
+    }
+  },
+  "preserved_after": {
+    "actions": [
+      "Armature|Idle|baselayer",
+      "Armature|Idle|baselayer_WORKING",
+      "Armature|Move|baselayer_WORKING"
+    ],
+    "image_retention": {
+      "content_sha256": "7245E4CC293FB2950552277FE2A8FF98FDB7128100072AEA4406388C26B85BE4",
+      "inventory": {
+        "Render Result": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": true,
+          "fake_user": false,
+          "id_consumers": [],
+          "local": true,
+          "material_consumers": [],
+          "material_nodes": [],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "2745E9521E0089FCAB70E1DFFD99A28B03B0FEE5B6479FCA463E168A378CEF1E",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 1
+        },
+        "Viewer Node": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": true,
+          "fake_user": false,
+          "id_consumers": [],
+          "local": true,
+          "material_consumers": [],
+          "material_nodes": [],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": "30E14955EBF1352266DC2FF8067E68104607E750ABB9D3B36582B8AF909FCB58",
+          "protected": false,
+          "record_sha256": "6914A94487B683E966C846F9A39EE71833818B1C438A7F2A6161E40B8AF311DD",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 1
+        },
+        "texture_0": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "BakedMaterial"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "BakedMaterial"
+          ],
+          "material_nodes": [
+            {
+              "material": "BakedMaterial",
+              "node": "HOI4_DIFFUSE_TEXTURE",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "D14D3E175D396DF5303C956C6D6BF86CE10F5591880CA034025566005BC329AE",
+          "retained_node_trees": [],
+          "source_file": {
+            "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\provider\\downloads\\generation_model_textures\\base_color.png",
+            "sha256": "9507B1D4326B4F4B44DE8AF667423F9C269314A139F09E48B675264E21BF8C23"
+          },
+          "users": 1
+        },
+        "texture_normal": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "BakedMaterial"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "BakedMaterial"
+          ],
+          "material_nodes": [
+            {
+              "material": "BakedMaterial",
+              "node": "HOI4_NORMAL_TEXTURE",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "92C0D5036D8E9CD4AE178F2B34A0FBF3FC49885A076436F399B9EB765D0D59C7",
+          "retained_node_trees": [],
+          "source_file": {
+            "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\provider\\downloads\\generation_model_textures\\normal.png",
+            "sha256": "CD341A54D6FC7AC71BB3202C0B1D48019E01FE02CCC636353395FE05D5E39C27"
+          },
+          "users": 1
+        },
+        "texture_specular": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "BakedMaterial"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "BakedMaterial"
+          ],
+          "material_nodes": [
+            {
+              "material": "BakedMaterial",
+              "node": "HOI4_SPECULAR_TEXTURE",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "B5A68C87F5B81499B488913ACC781C6B13F053C27F7AB01FED69D8C21C0ADE49",
+          "retained_node_trees": [],
+          "source_file": {
+            "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\provider\\downloads\\generation_model_textures\\roughness.png",
+            "sha256": "B064591C24ABA264C2BBFE24C16DD69BCD0192329729374C5A7C6890CAEDCDD8"
+          },
+          "users": 1
+        },
+        "western_europe_infantry_diffuse.dds": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "PDXmat_polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "PDXmat_polySurfaceShape106"
+          ],
+          "material_nodes": [
+            {
+              "material": "PDXmat_polySurfaceShape106",
+              "node": "western_europe_infantry_diffuse.dds",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "DA7592098B9D98F3258F68244706B81BC9AE03F442FD849558DACA4EC5953EED",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 2
+        },
+        "western_europe_infantry_normal.dds": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "PDXmat_polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "PDXmat_polySurfaceShape106"
+          ],
+          "material_nodes": [
+            {
+              "material": "PDXmat_polySurfaceShape106",
+              "node": "western_europe_infantry_normal.dds",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "D854AA7172AE92483D1198BEC027CC84BAC5BBE1FE078A9DC40DDABD0AABFD4D",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 2
+        },
+        "western_europe_infantry_spec.dds": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "PDXmat_polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "PDXmat_polySurfaceShape106"
+          ],
+          "material_nodes": [
+            {
+              "material": "PDXmat_polySurfaceShape106",
+              "node": "western_europe_infantry_spec.dds",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "706E77464055CED4B299C332DFD41CAEEDA51AE5CF0E5EBCDC211FFBF83E8735",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 2
+        }
+      }
+    },
+    "material_retention": {
+      "inventory": {
+        "BakedMaterial": {
+          "discardable_orphan": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "output_unwrapped"
+            },
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "output_unwrapped.002"
+            }
+          ],
+          "local": true,
+          "mesh_slots": [
+            [
+              "output_unwrapped",
+              0
+            ],
+            [
+              "output_unwrapped.002",
+              0
+            ]
+          ],
+          "object_slots": [
+            [
+              "char1",
+              0,
+              "DATA"
+            ],
+            [
+              "char1.001",
+              0,
+              "DATA"
+            ]
+          ],
+          "protected": false,
+          "record_sha256": "F5661ACE3D6181CD5E27DC12959196FF0F2DFDB1EB1E707D8EF85B63E1B5CA96",
+          "tree_retained": false,
+          "users": 2
+        },
+        "PDXmat_pCubeShape1": {
+          "discardable_orphan": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "pCubeShape1"
+            }
+          ],
+          "local": true,
+          "mesh_slots": [
+            [
+              "pCubeShape1",
+              0
+            ]
+          ],
+          "object_slots": [
+            [
+              "pCube1",
+              0,
+              "DATA"
+            ]
+          ],
+          "protected": false,
+          "record_sha256": "E7FC28D8A7331F41AFB79ABAFD17BA53FB5F3A922D440C102D6316840148553A",
+          "tree_retained": false,
+          "users": 2
+        },
+        "PDXmat_polySurfaceShape106": {
+          "discardable_orphan": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "mesh_slots": [
+            [
+              "polySurfaceShape106",
+              0
+            ]
+          ],
+          "object_slots": [
+            [
+              "polySurface106",
+              0,
+              "DATA"
+            ]
+          ],
+          "protected": false,
+          "record_sha256": "DBC775D67CB5D4F7A6F482E37A017890C535695707FE371528B5BEDC0EE10703",
+          "tree_retained": false,
+          "users": 2
+        }
+      },
+      "retained_sha256": "06D83C898FE62CF3D8E4BBC57F834F0A788D6EC695592D2F24650588BA8D0D04"
+    },
+    "mesh_counts": {
+      "Icosphere": {
+        "loops": 240,
+        "polygons": 80,
+        "vertices": 42
+      },
+      "char1": {
+        "loops": 155970,
+        "polygons": 51990,
+        "vertices": 103409
+      },
+      "char1.001": {
+        "loops": 63000,
+        "polygons": 21000,
+        "vertices": 10453
+      },
+      "pCube1": {
+        "loops": 36,
+        "polygons": 12,
+        "vertices": 8
+      },
+      "polySurface106": {
+        "loops": 9054,
+        "polygons": 3018,
+        "vertices": 2021
+      }
+    },
+    "objects": [
+      "Armature",
+      "Armature.001",
+      "Icosphere",
+      "char1",
+      "char1.001",
+      "pCube1",
+      "polySurface106"
+    ],
+    "sha256": {
+      "actions": "71AC783570FBDD6FAAA78512EE1EEEC81AC87BA04E8A9589AA6C2A94601384B6",
+      "geometry": "5522E8B3FEABEE948650844253F9109E03D8100C8A270077BF44101FDEF1082F",
+      "images": "7245E4CC293FB2950552277FE2A8FF98FDB7128100072AEA4406388C26B85BE4",
+      "materials": "06D83C898FE62CF3D8E4BBC57F834F0A788D6EC695592D2F24650588BA8D0D04",
+      "objects": "C1723B3C55CE266EC603D710622129B59098BAC1986344BE756064F4ADABA14D",
+      "rigs": "178702170AEA04025ED677A6B5D0560333111A4F8E0E4155D0CF8C037DC9FE4F",
+      "scene": "E4735AD32B73CFAEEBB8B1F5AE1E1D232067D9E26C868C3FC4D654871BDCC31C"
+    }
+  },
+  "preserved_before": {
+    "actions": [
+      "Armature|Idle|baselayer",
+      "Armature|Idle|baselayer_WORKING",
+      "Armature|Move|baselayer_WORKING"
+    ],
+    "image_retention": {
+      "content_sha256": "7245E4CC293FB2950552277FE2A8FF98FDB7128100072AEA4406388C26B85BE4",
+      "inventory": {
+        "Render Result": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": true,
+          "fake_user": false,
+          "id_consumers": [],
+          "local": true,
+          "material_consumers": [],
+          "material_nodes": [],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "2745E9521E0089FCAB70E1DFFD99A28B03B0FEE5B6479FCA463E168A378CEF1E",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 1
+        },
+        "Viewer Node": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": true,
+          "fake_user": false,
+          "id_consumers": [],
+          "local": true,
+          "material_consumers": [],
+          "material_nodes": [],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": "30E14955EBF1352266DC2FF8067E68104607E750ABB9D3B36582B8AF909FCB58",
+          "protected": false,
+          "record_sha256": "6914A94487B683E966C846F9A39EE71833818B1C438A7F2A6161E40B8AF311DD",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 1
+        },
+        "texture_0": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "BakedMaterial"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "BakedMaterial"
+          ],
+          "material_nodes": [
+            {
+              "material": "BakedMaterial",
+              "node": "HOI4_DIFFUSE_TEXTURE",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "D14D3E175D396DF5303C956C6D6BF86CE10F5591880CA034025566005BC329AE",
+          "retained_node_trees": [],
+          "source_file": {
+            "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\provider\\downloads\\generation_model_textures\\base_color.png",
+            "sha256": "9507B1D4326B4F4B44DE8AF667423F9C269314A139F09E48B675264E21BF8C23"
+          },
+          "users": 1
+        },
+        "texture_normal": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "BakedMaterial"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "BakedMaterial"
+          ],
+          "material_nodes": [
+            {
+              "material": "BakedMaterial",
+              "node": "HOI4_NORMAL_TEXTURE",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "92C0D5036D8E9CD4AE178F2B34A0FBF3FC49885A076436F399B9EB765D0D59C7",
+          "retained_node_trees": [],
+          "source_file": {
+            "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\provider\\downloads\\generation_model_textures\\normal.png",
+            "sha256": "CD341A54D6FC7AC71BB3202C0B1D48019E01FE02CCC636353395FE05D5E39C27"
+          },
+          "users": 1
+        },
+        "texture_specular": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "BakedMaterial"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "BakedMaterial"
+          ],
+          "material_nodes": [
+            {
+              "material": "BakedMaterial",
+              "node": "HOI4_SPECULAR_TEXTURE",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": false,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "B5A68C87F5B81499B488913ACC781C6B13F053C27F7AB01FED69D8C21C0ADE49",
+          "retained_node_trees": [],
+          "source_file": {
+            "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\provider\\downloads\\generation_model_textures\\roughness.png",
+            "sha256": "B064591C24ABA264C2BBFE24C16DD69BCD0192329729374C5A7C6890CAEDCDD8"
+          },
+          "users": 1
+        },
+        "western_europe_infantry_diffuse.dds": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "PDXmat_polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "PDXmat_polySurfaceShape106"
+          ],
+          "material_nodes": [
+            {
+              "material": "PDXmat_polySurfaceShape106",
+              "node": "western_europe_infantry_diffuse.dds",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "DA7592098B9D98F3258F68244706B81BC9AE03F442FD849558DACA4EC5953EED",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 2
+        },
+        "western_europe_infantry_normal.dds": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "PDXmat_polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "PDXmat_polySurfaceShape106"
+          ],
+          "material_nodes": [
+            {
+              "material": "PDXmat_polySurfaceShape106",
+              "node": "western_europe_infantry_normal.dds",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "D854AA7172AE92483D1198BEC027CC84BAC5BBE1FE078A9DC40DDABD0AABFD4D",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 2
+        },
+        "western_europe_infantry_spec.dds": {
+          "consumer_map_complete": true,
+          "exclusive_orphan_consumers": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Material",
+              "library": null,
+              "name": "PDXmat_polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "material_consumers": [
+            "PDXmat_polySurfaceShape106"
+          ],
+          "material_nodes": [
+            {
+              "material": "PDXmat_polySurfaceShape106",
+              "node": "western_europe_infantry_spec.dds",
+              "tree": "Shader Nodetree"
+            }
+          ],
+          "missing_data_sentinel": true,
+          "other_id_consumers": [],
+          "packed_hashes": [],
+          "pixel_sha256": null,
+          "protected": false,
+          "record_sha256": "706E77464055CED4B299C332DFD41CAEEDA51AE5CF0E5EBCDC211FFBF83E8735",
+          "retained_node_trees": [],
+          "source_file": null,
+          "users": 2
+        }
+      }
+    },
+    "material_retention": {
+      "inventory": {
+        "BakedMaterial": {
+          "discardable_orphan": false,
+          "extra_user": false,
+          "fake_user": false,
+          "id_consumers": [
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "output_unwrapped"
+            },
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "output_unwrapped.002"
+            }
+          ],
+          "local": true,
+          "mesh_slots": [
+            [
+              "output_unwrapped",
+              0
+            ],
+            [
+              "output_unwrapped.002",
+              0
+            ]
+          ],
+          "object_slots": [
+            [
+              "char1",
+              0,
+              "DATA"
+            ],
+            [
+              "char1.001",
+              0,
+              "DATA"
+            ]
+          ],
+          "protected": false,
+          "record_sha256": "F5661ACE3D6181CD5E27DC12959196FF0F2DFDB1EB1E707D8EF85B63E1B5CA96",
+          "tree_retained": false,
+          "users": 2
+        },
+        "PDXmat_pCubeShape1": {
+          "discardable_orphan": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "pCubeShape1"
+            }
+          ],
+          "local": true,
+          "mesh_slots": [
+            [
+              "pCubeShape1",
+              0
+            ]
+          ],
+          "object_slots": [
+            [
+              "pCube1",
+              0,
+              "DATA"
+            ]
+          ],
+          "protected": false,
+          "record_sha256": "E7FC28D8A7331F41AFB79ABAFD17BA53FB5F3A922D440C102D6316840148553A",
+          "tree_retained": false,
+          "users": 2
+        },
+        "PDXmat_polySurfaceShape106": {
+          "discardable_orphan": false,
+          "extra_user": false,
+          "fake_user": true,
+          "id_consumers": [
+            {
+              "id_type": "Mesh",
+              "library": null,
+              "name": "polySurfaceShape106"
+            }
+          ],
+          "local": true,
+          "mesh_slots": [
+            [
+              "polySurfaceShape106",
+              0
+            ]
+          ],
+          "object_slots": [
+            [
+              "polySurface106",
+              0,
+              "DATA"
+            ]
+          ],
+          "protected": false,
+          "record_sha256": "DBC775D67CB5D4F7A6F482E37A017890C535695707FE371528B5BEDC0EE10703",
+          "tree_retained": false,
+          "users": 2
+        }
+      },
+      "retained_sha256": "06D83C898FE62CF3D8E4BBC57F834F0A788D6EC695592D2F24650588BA8D0D04"
+    },
+    "mesh_counts": {
+      "Icosphere": {
+        "loops": 240,
+        "polygons": 80,
+        "vertices": 42
+      },
+      "char1": {
+        "loops": 155970,
+        "polygons": 51990,
+        "vertices": 103409
+      },
+      "char1.001": {
+        "loops": 63000,
+        "polygons": 21000,
+        "vertices": 10453
+      },
+      "pCube1": {
+        "loops": 36,
+        "polygons": 12,
+        "vertices": 8
+      },
+      "polySurface106": {
+        "loops": 9054,
+        "polygons": 3018,
+        "vertices": 2021
+      }
+    },
+    "objects": [
+      "Armature",
+      "Armature.001",
+      "Icosphere",
+      "char1",
+      "char1.001",
+      "pCube1",
+      "polySurface106"
+    ],
+    "sha256": {
+      "actions": "71AC783570FBDD6FAAA78512EE1EEEC81AC87BA04E8A9589AA6C2A94601384B6",
+      "geometry": "5522E8B3FEABEE948650844253F9109E03D8100C8A270077BF44101FDEF1082F",
+      "images": "7245E4CC293FB2950552277FE2A8FF98FDB7128100072AEA4406388C26B85BE4",
+      "materials": "06D83C898FE62CF3D8E4BBC57F834F0A788D6EC695592D2F24650588BA8D0D04",
+      "objects": "C1723B3C55CE266EC603D710622129B59098BAC1986344BE756064F4ADABA14D",
+      "rigs": "178702170AEA04025ED677A6B5D0560333111A4F8E0E4155D0CF8C037DC9FE4F",
+      "scene": "E4735AD32B73CFAEEBB8B1F5AE1E1D232067D9E26C868C3FC4D654871BDCC31C"
+    }
+  },
+  "procedural_generator_used": false,
+  "quaternion_norm_tolerance": 1e-05,
+  "reopen_comparison": {
+    "accepted": true,
+    "mismatches": [],
+    "policy": "exact_all_image_content_and_ids_only_proven_removed_orphan_material_consumer_release",
+    "removed_orphan_materials": [],
+    "retained_images_with_released_orphan_consumers": []
+  },
+  "root_policy": "no_object_channels_authored_source_root_bone_channels_preserved_unless_explicitly_patched",
+  "runtime_acceptance": false,
+  "semantic_acceptance": false,
+  "semantic_role": "retreat",
+  "source": "blender/checkpoints/move_root_grounded.blend",
+  "source_action_name": "Armature|Move|baselayer_WORKING",
+  "source_action_sha256": "929F7FD410D9FA1FB8872FD7F3DF6456AF291FB0F9E65F2D433697110122F3C2",
+  "source_bytes": 5212151,
+  "source_fps": 24,
+  "source_fps_base": 1.0,
+  "source_immutable": true,
+  "source_phases": {
+    "disengage": {
+      "bones": {
+        "Head": {
+          "basis": [
+            [
+              0.941345751285553,
+              0.03926458954811096,
+              0.33515146374702454,
+              7.155373964451428e-07
+            ],
+            [
+              -0.08739790320396423,
+              0.9876856207847595,
+              0.12976397573947906,
+              -3.802517767326208e-06
+            ],
+            [
+              -0.3259291648864746,
+              -0.15144430100917816,
+              0.933185338973999,
+              -1.2521998371539667e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9963037967681885,
+              0.017633657902479172,
+              -0.0840715765953064,
+              -1.475436806678772
+            ],
+            [
+              -0.07110711932182312,
+              -0.3798093795776367,
+              -0.9223277568817139,
+              -6.89419412612915
+            ],
+            [
+              -0.048195213079452515,
+              0.9248965978622437,
+              -0.37715181708335876,
+              161.45834350585938
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.038480088114738464,
+              0.0006810620543546975,
+              -0.0032470833975821733,
+              -0.05698556825518608
+            ],
+            [
+              -0.0027463592123240232,
+              -0.014669318683445454,
+              -0.03562292084097862,
+              -0.2662733793258667
+            ],
+            [
+              -0.0018614362925291061,
+              0.03572213649749756,
+              -0.014566675759851933,
+              6.241186141967773
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine": {
+          "basis": [
+            [
+              0.9859118461608887,
+              0.04672292619943619,
+              0.16060742735862732,
+              2.2640929842054902e-07
+            ],
+            [
+              -0.013698076829314232,
+              0.9795223474502563,
+              -0.20086902379989624,
+              -2.6701949536800385e-05
+            ],
+            [
+              -0.16670376062393188,
+              0.19583915174007416,
+              0.966362714767456,
+              9.419311997049817e-10
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.938953697681427,
+              -0.10582985728979111,
+              -0.32736244797706604,
+              0.3267589807510376
+            ],
+            [
+              -0.34314852952957153,
+              -0.356678307056427,
+              -0.8689244985580444,
+              -0.7793236970901489
+            ],
+            [
+              -0.02480500563979149,
+              0.9282137155532837,
+              -0.37121984362602234,
+              145.9834747314453
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.036265064030885696,
+              -0.004087449982762337,
+              -0.012643668800592422,
+              0.012620361521840096
+            ],
+            [
+              -0.01325337216258049,
+              -0.013775930739939213,
+              -0.033560335636138916,
+              -0.030099697411060333
+            ],
+            [
+              -0.0009580398909747601,
+              0.03585025295615196,
+              -0.014337566681206226,
+              5.643502712249756
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine01": {
+          "basis": [
+            [
+              0.986186146736145,
+              0.04523465037345886,
+              0.15934482216835022,
+              -1.426086093658796e-08
+            ],
+            [
+              -0.012266681529581547,
+              0.9792917966842651,
+              -0.2020818442106247,
+              1.9073484054388246e-06
+            ],
+            [
+              -0.16518618166446686,
+              0.19733567535877228,
+              0.9663188457489014,
+              -4.7683710135970614e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.871397852897644,
+              -0.056819066405296326,
+              -0.48727574944496155,
+              1.0811737775802612
+            ],
+            [
+              -0.48949557542800903,
+              -0.16662998497486115,
+              -0.8559373617172241,
+              1.4330984354019165
+            ],
+            [
+              -0.03256126865744591,
+              0.9843810796737671,
+              -0.17301377654075623,
+              132.91342163085938
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.033655863255262375,
+              -0.0021945140324532986,
+              -0.01881997659802437,
+              0.04175800830125809
+            ],
+            [
+              -0.01890571229159832,
+              -0.006435723975300789,
+              -0.033058736473321915,
+              0.05535033717751503
+            ],
+            [
+              -0.0012576088774949312,
+              0.03801959753036499,
+              -0.00668228417634964,
+              5.138700008392334
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine02": {
+          "basis": [
+            [
+              0.9966529607772827,
+              0.010969306342303753,
+              0.08100981265306473,
+              5.308537609494124e-08
+            ],
+            [
+              -0.005034041125327349,
+              0.9973111748695374,
+              -0.07310992479324341,
+              -9.536742027194123e-07
+            ],
+            [
+              -0.08159396052360535,
+              0.07245741039514542,
+              0.9940283298492432,
+              -2.336794230187368e-16
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.7791453003883362,
+              0.03213795647025108,
+              -0.6260191202163696,
+              0.6670203804969788
+            ],
+            [
+              -0.6266604065895081,
+              0.015794478356838226,
+              -0.7791325449943542,
+              1.2295640707015991
+            ],
+            [
+              -0.015152178704738617,
+              0.9993587136268616,
+              0.03244567662477493,
+              120.03484344482422
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.030092807486653328,
+              0.0012412592768669128,
+              -0.0241786390542984,
+              0.025762224569916725
+            ],
+            [
+              -0.024203408509492874,
+              0.0006100276950746775,
+              -0.03009231574833393,
+              0.047489263117313385
+            ],
+            [
+              -0.0005852202302776277,
+              0.03859807550907135,
+              0.0012531443499028683,
+              4.641292572021484
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "neck": {
+          "basis": [
+            [
+              0.9997504353523254,
+              0.0029285342898219824,
+              -0.02214810438454151,
+              8.399324258334673e-08
+            ],
+            [
+              -0.0033894421067088842,
+              0.9997778534889221,
+              -0.020801430568099022,
+              9.536741345073096e-06
+            ],
+            [
+              0.022082267329096794,
+              0.02087130956351757,
+              0.9995383024215698,
+              -1.1382518191882518e-12
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9318491816520691,
+              -0.10988907516002655,
+              -0.34580594301223755,
+              -0.6395647525787354
+            ],
+            [
+              -0.36104175448417664,
+              -0.3757396936416626,
+              -0.8535037040710449,
+              -4.0361247062683105
+            ],
+            [
+              -0.036142364144325256,
+              0.9201869964599609,
+              -0.3898073434829712,
+              154.4589385986328
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03599066659808159,
+              -0.004244228824973106,
+              -0.013356009498238564,
+              -0.024701809510588646
+            ],
+            [
+              -0.013944460079073906,
+              -0.014512135647237301,
+              -0.032964739948511124,
+              -0.15588662028312683
+            ],
+            [
+              -0.001395920873619616,
+              0.03554023802280426,
+              -0.015055468305945396,
+              5.97084903717041
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      },
+      "frame": 6,
+      "locators": [],
+      "meshes": [
+        {
+          "bounds_max": [
+            1.9760286808013916,
+            1.5304348468780518,
+            7.18797492980957
+          ],
+          "bounds_min": [
+            -1.998725414276123,
+            -2.173863649368286,
+            -7.152557373046875e-07
+          ],
+          "ground_contact_verified": false,
+          "lowest_vertex_index": 10067,
+          "lowest_world_position": [
+            -1.113040804862976,
+            1.0846083164215088,
+            -7.152557373046875e-07
+          ],
+          "name": "char1.001"
+        }
+      ],
+      "seconds_from_action_start": 0.25
+    },
+    "recovery": {
+      "bones": {
+        "Head": {
+          "basis": [
+            [
+              0.941345751285553,
+              0.03926458954811096,
+              0.33515146374702454,
+              7.155373964451428e-07
+            ],
+            [
+              -0.08739790320396423,
+              0.9876856207847595,
+              0.12976397573947906,
+              -3.802517767326208e-06
+            ],
+            [
+              -0.3259291648864746,
+              -0.15144430100917816,
+              0.933185338973999,
+              -1.2521998371539667e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9963037967681885,
+              0.017633657902479172,
+              -0.0840715765953064,
+              -1.475436806678772
+            ],
+            [
+              -0.07110711932182312,
+              -0.3798093795776367,
+              -0.9223277568817139,
+              -6.89419412612915
+            ],
+            [
+              -0.048195213079452515,
+              0.9248965978622437,
+              -0.37715181708335876,
+              161.45834350585938
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.038480088114738464,
+              0.0006810620543546975,
+              -0.0032470833975821733,
+              -0.05698556825518608
+            ],
+            [
+              -0.0027463592123240232,
+              -0.014669318683445454,
+              -0.03562292084097862,
+              -0.2662733793258667
+            ],
+            [
+              -0.0018614362925291061,
+              0.03572213649749756,
+              -0.014566675759851933,
+              6.241186141967773
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine": {
+          "basis": [
+            [
+              0.9859118461608887,
+              0.04672292619943619,
+              0.16060742735862732,
+              2.2640929842054902e-07
+            ],
+            [
+              -0.013698076829314232,
+              0.9795223474502563,
+              -0.20086902379989624,
+              -2.6701949536800385e-05
+            ],
+            [
+              -0.16670376062393188,
+              0.19583915174007416,
+              0.966362714767456,
+              9.419311997049817e-10
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.938953697681427,
+              -0.10582985728979111,
+              -0.32736244797706604,
+              0.3267589807510376
+            ],
+            [
+              -0.34314852952957153,
+              -0.356678307056427,
+              -0.8689244985580444,
+              -0.7793236970901489
+            ],
+            [
+              -0.02480500563979149,
+              0.9282137155532837,
+              -0.37121984362602234,
+              145.9834747314453
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.036265064030885696,
+              -0.004087449982762337,
+              -0.012643668800592422,
+              0.012620361521840096
+            ],
+            [
+              -0.01325337216258049,
+              -0.013775930739939213,
+              -0.033560335636138916,
+              -0.030099697411060333
+            ],
+            [
+              -0.0009580398909747601,
+              0.03585025295615196,
+              -0.014337566681206226,
+              5.643502712249756
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine01": {
+          "basis": [
+            [
+              0.986186146736145,
+              0.04523465037345886,
+              0.15934482216835022,
+              -1.426086093658796e-08
+            ],
+            [
+              -0.012266681529581547,
+              0.9792917966842651,
+              -0.2020818442106247,
+              1.9073484054388246e-06
+            ],
+            [
+              -0.16518618166446686,
+              0.19733567535877228,
+              0.9663188457489014,
+              -4.7683710135970614e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.871397852897644,
+              -0.056819066405296326,
+              -0.48727574944496155,
+              1.0811737775802612
+            ],
+            [
+              -0.48949557542800903,
+              -0.16662998497486115,
+              -0.8559373617172241,
+              1.4330984354019165
+            ],
+            [
+              -0.03256126865744591,
+              0.9843810796737671,
+              -0.17301377654075623,
+              132.91342163085938
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.033655863255262375,
+              -0.0021945140324532986,
+              -0.01881997659802437,
+              0.04175800830125809
+            ],
+            [
+              -0.01890571229159832,
+              -0.006435723975300789,
+              -0.033058736473321915,
+              0.05535033717751503
+            ],
+            [
+              -0.0012576088774949312,
+              0.03801959753036499,
+              -0.00668228417634964,
+              5.138700008392334
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine02": {
+          "basis": [
+            [
+              0.9966529607772827,
+              0.010969306342303753,
+              0.08100981265306473,
+              5.308537609494124e-08
+            ],
+            [
+              -0.005034041125327349,
+              0.9973111748695374,
+              -0.07310992479324341,
+              -9.536742027194123e-07
+            ],
+            [
+              -0.08159396052360535,
+              0.07245741039514542,
+              0.9940283298492432,
+              -2.336794230187368e-16
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.7791453003883362,
+              0.03213795647025108,
+              -0.6260191202163696,
+              0.6670203804969788
+            ],
+            [
+              -0.6266604065895081,
+              0.015794478356838226,
+              -0.7791325449943542,
+              1.2295640707015991
+            ],
+            [
+              -0.015152178704738617,
+              0.9993587136268616,
+              0.03244567662477493,
+              120.03484344482422
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.030092807486653328,
+              0.0012412592768669128,
+              -0.0241786390542984,
+              0.025762224569916725
+            ],
+            [
+              -0.024203408509492874,
+              0.0006100276950746775,
+              -0.03009231574833393,
+              0.047489263117313385
+            ],
+            [
+              -0.0005852202302776277,
+              0.03859807550907135,
+              0.0012531443499028683,
+              4.641292572021484
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "neck": {
+          "basis": [
+            [
+              0.9997504353523254,
+              0.0029285342898219824,
+              -0.02214810438454151,
+              8.399324258334673e-08
+            ],
+            [
+              -0.0033894421067088842,
+              0.9997778534889221,
+              -0.020801430568099022,
+              9.536741345073096e-06
+            ],
+            [
+              0.022082267329096794,
+              0.02087130956351757,
+              0.9995383024215698,
+              -1.1382518191882518e-12
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9318491816520691,
+              -0.10988907516002655,
+              -0.34580594301223755,
+              -0.6395647525787354
+            ],
+            [
+              -0.36104175448417664,
+              -0.3757396936416626,
+              -0.8535037040710449,
+              -4.0361247062683105
+            ],
+            [
+              -0.036142364144325256,
+              0.9201869964599609,
+              -0.3898073434829712,
+              154.4589385986328
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03599066659808159,
+              -0.004244228824973106,
+              -0.013356009498238564,
+              -0.024701809510588646
+            ],
+            [
+              -0.013944460079073906,
+              -0.014512135647237301,
+              -0.032964739948511124,
+              -0.15588662028312683
+            ],
+            [
+              -0.001395920873619616,
+              0.03554023802280426,
+              -0.015055468305945396,
+              5.97084903717041
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      },
+      "frame": 18,
+      "locators": [],
+      "meshes": [
+        {
+          "bounds_max": [
+            1.9760286808013916,
+            1.5304348468780518,
+            7.18797492980957
+          ],
+          "bounds_min": [
+            -1.998725414276123,
+            -2.173863649368286,
+            -7.152557373046875e-07
+          ],
+          "ground_contact_verified": false,
+          "lowest_vertex_index": 10067,
+          "lowest_world_position": [
+            -1.113040804862976,
+            1.0846083164215088,
+            -7.152557373046875e-07
+          ],
+          "name": "char1.001"
+        }
+      ],
+      "seconds_from_action_start": 0.75
+    },
+    "withdrawal": {
+      "bones": {
+        "Head": {
+          "basis": [
+            [
+              0.941345751285553,
+              0.04510777071118355,
+              0.3344150483608246,
+              7.155373964451428e-07
+            ],
+            [
+              -0.08739788085222244,
+              0.9897999167442322,
+              0.11250678449869156,
+              -3.802517767326208e-06
+            ],
+            [
+              -0.32592904567718506,
+              -0.13513495028018951,
+              0.9356862902641296,
+              -1.2521998371539667e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9932647347450256,
+              0.05844775587320328,
+              -0.10004609823226929,
+              0.6505311727523804
+            ],
+            [
+              -0.07383754849433899,
+              -0.34613126516342163,
+              -0.9352761507034302,
+              -4.25811767578125
+            ],
+            [
+              -0.08929389715194702,
+              0.936363697052002,
+              -0.3394843637943268,
+              162.21499633789062
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.038362711668014526,
+              0.0022574185859411955,
+              -0.003864065045490861,
+              0.02512536384165287
+            ],
+            [
+              -0.002851816127076745,
+              -0.013368573971092701,
+              -0.03612302616238594,
+              -0.16446061432361603
+            ],
+            [
+              -0.003448784351348877,
+              0.0361650288105011,
+              -0.01311185210943222,
+              6.270410060882568
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine": {
+          "basis": [
+            [
+              0.9859118461608887,
+              0.04672292619943619,
+              0.16060742735862732,
+              2.2640929842054902e-07
+            ],
+            [
+              -0.013698076829314232,
+              0.9795223474502563,
+              -0.20086902379989624,
+              -2.6701949536800385e-05
+            ],
+            [
+              -0.16670376062393188,
+              0.19583915174007416,
+              0.966362714767456,
+              9.419311997049817e-10
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9376617074012756,
+              -0.05671694129705429,
+              -0.34289050102233887,
+              1.681307315826416
+            ],
+            [
+              -0.3440541923046112,
+              -0.2910502552986145,
+              -0.8927019834518433,
+              0.8784918189048767
+            ],
+            [
+              -0.049167096614837646,
+              0.9550251960754395,
+              -0.2924203872680664,
+              146.32183837890625
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.0362151637673378,
+              -0.0021905696485191584,
+              -0.013243407011032104,
+              0.06493686884641647
+            ],
+            [
+              -0.013288351707160473,
+              -0.011241189204156399,
+              -0.03447869047522545,
+              0.03392985463142395
+            ],
+            [
+              -0.0018989731324836612,
+              0.03688579052686691,
+              -0.01129410695284605,
+              5.656571388244629
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine01": {
+          "basis": [
+            [
+              0.986186146736145,
+              0.03964603319764137,
+              0.1608264148235321,
+              -1.426086093658796e-08
+            ],
+            [
+              -0.01226668432354927,
+              0.9857478141784668,
+              -0.16778188943862915,
+              1.9073484054388246e-06
+            ],
+            [
+              -0.16518618166446686,
+              0.1634913682937622,
+              0.9726171493530273,
+              -4.7683710135970614e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.8703212141990662,
+              -0.0055657848715782166,
+              -0.4924534559249878,
+              1.7552098035812378
+            ],
+            [
+              -0.49058496952056885,
+              -0.0975470021367073,
+              -0.8659164905548096,
+              2.17366886138916
+            ],
+            [
+              -0.043217919766902924,
+              0.9952153563499451,
+              -0.08762775361537933,
+              133.10792541503906
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03361428156495094,
+              -0.00021496645058505237,
+              -0.019019953906536102,
+              0.06779119372367859
+            ],
+            [
+              -0.018947787582874298,
+              -0.0037675427738577127,
+              -0.03344415873289108,
+              0.08395327627658844
+            ],
+            [
+              -0.0016691989731043577,
+              0.03843804821372032,
+              -0.0033844332210719585,
+              5.146212577819824
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine02": {
+          "basis": [
+            [
+              0.9966529607772827,
+              0.008844949305057526,
+              0.08126917481422424,
+              5.308537609494124e-08
+            ],
+            [
+              -0.005034040659666061,
+              0.9988832473754883,
+              -0.04697820171713829,
+              -9.536742027194123e-07
+            ],
+            [
+              -0.08159393817186356,
+              0.046411849558353424,
+              0.9955844283103943,
+              -2.336794230187368e-16
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.778878390789032,
+              0.06646234542131424,
+              -0.623643696308136,
+              0.8987234830856323
+            ],
+            [
+              -0.626937747001648,
+              0.05514618381857872,
+              -0.7771154046058655,
+              1.4630151987075806
+            ],
+            [
+              -0.017257418483495712,
+              0.9962639212608337,
+              0.08461983501911163,
+              120.26923370361328
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.030082499608397484,
+              0.0025669648312032223,
+              -0.02408689446747303,
+              0.03471125662326813
+            ],
+            [
+              -0.024214118719100952,
+              0.002129902597516775,
+              -0.030014406889677048,
+              0.05650581046938896
+            ],
+            [
+              -0.0006665305700153112,
+              0.0384785458445549,
+              0.0032682588789612055,
+              4.650345802307129
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "neck": {
+          "basis": [
+            [
+              0.9997504353523254,
+              0.0025415527634322643,
+              -0.02219584211707115,
+              8.399324258334673e-08
+            ],
+            [
+              -0.0033894421067088842,
+              0.9992625713348389,
+              -0.03824669495224953,
+              9.536741345073096e-06
+            ],
+            [
+              0.022082269191741943,
+              0.038312382996082306,
+              0.9990217685699463,
+              -1.1382518191882518e-12
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9300481081008911,
+              -0.06742895394563675,
+              -0.3611980378627777,
+              1.1634302139282227
+            ],
+            [
+              -0.36269474029541016,
+              -0.3259117007255554,
+              -0.8730603456497192,
+              -1.779064416885376
+            ],
+            [
+              -0.05884917825460434,
+              0.9429925680160522,
+              -0.32756972312927246,
+              155.0421142578125
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03592110425233841,
+              -0.002604298060759902,
+              -0.013950495980679989,
+              0.04493498429656029
+            ],
+            [
+              -0.014008303172886372,
+              -0.012587636709213257,
+              -0.03372007608413696,
+              -0.06871253252029419
+            ],
+            [
+              -0.0022729227785021067,
+              0.03642105683684349,
+              -0.012651674449443817,
+              5.993373394012451
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      },
+      "frame": 12,
+      "locators": [],
+      "meshes": [
+        {
+          "bounds_max": [
+            2.017585515975952,
+            2.040817975997925,
+            7.229363918304443
+          ],
+          "bounds_min": [
+            -1.7792553901672363,
+            -3.0769546031951904,
+            -5.774199962615967e-07
+          ],
+          "ground_contact_verified": false,
+          "lowest_vertex_index": 10085,
+          "lowest_world_position": [
+            -0.7494709491729736,
+            1.340717077255249,
+            -5.774199962615967e-07
+          ],
+          "name": "char1.001"
+        }
+      ],
+      "seconds_from_action_start": 0.5
+    }
+  },
+  "source_sha256": "995A7427BC518EB2CDAFB31217BBED8B4B4AD7C53E50E00CD1FAA2628E214095",
+  "target_action_name": "zin_orcs_warrior_retreat",
+  "target_action_record_sha256": "2325DA4A58D8E3FE991500A3C3532D2771AFB631CC70B55766F07921A2DE789E",
+  "target_action_reopen_exact": true,
+  "target_action_sha256": "C3EB8C445B5D8DF6AD16C43B8CA3CE05D8C62C0C09E38695CF1F8749884D5853",
+  "target_phases": {
+    "disengage": {
+      "bones": {
+        "Head": {
+          "basis": [
+            [
+              0.8009638786315918,
+              -0.010192513465881348,
+              0.598625898361206,
+              7.155373964451428e-07
+            ],
+            [
+              -0.16252942383289337,
+              0.9586073160171509,
+              0.23378676176071167,
+              -3.802517767326208e-06
+            ],
+            [
+              -0.5762300491333008,
+              -0.2845490872859955,
+              0.7661532163619995,
+              -1.2521998371539667e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.5283814668655396,
+              0.022178523242473602,
+              0.8487173318862915,
+              -0.2292107790708542
+            ],
+            [
+              0.7665835618972778,
+              -0.4421299695968628,
+              -0.4656941592693329,
+              -15.273080825805664
+            ],
+            [
+              0.36491504311561584,
+              0.8966767191886902,
+              -0.2506150007247925,
+              158.38047790527344
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.020407594740390778,
+              0.0008565976750105619,
+              0.03277987614274025,
+              -0.008852772414684296
+            ],
+            [
+              0.029607638716697693,
+              -0.017076317220926285,
+              -0.01798643358051777,
+              -0.5898898243904114
+            ],
+            [
+              0.014094057492911816,
+              0.034632205963134766,
+              -0.009679464623332024,
+              6.122310161590576
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine": {
+          "basis": [
+            [
+              0.9356487989425659,
+              0.10075866430997849,
+              0.3382440209388733,
+              2.2640929842054902e-07
+            ],
+            [
+              -0.013538986444473267,
+              0.9679232835769653,
+              -0.25088077783584595,
+              -2.6701949536800385e-05
+            ],
+            [
+              -0.3526726961135864,
+              0.2301568239927292,
+              0.9070004224777222,
+              9.419311997049817e-10
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9781668782234192,
+              0.006278421729803085,
+              0.20772604644298553,
+              -0.485359787940979
+            ],
+            [
+              0.16959568858146667,
+              -0.6018103361129761,
+              -0.780424177646637,
+              -5.132746696472168
+            ],
+            [
+              0.12011183798313141,
+              0.7986143827438354,
+              -0.589735746383667,
+              145.06834411621094
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.037779588252305984,
+              0.00024249051057267934,
+              0.008022970519959927,
+              -0.01874597556889057
+            ],
+            [
+              0.006550267804414034,
+              -0.023243626579642296,
+              -0.030142201110720634,
+              -0.19824127852916718
+            ],
+            [
+              0.004639060702174902,
+              0.030844759196043015,
+              -0.022777272388339043,
+              5.608157634735107
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine01": {
+          "basis": [
+            [
+              0.9363343715667725,
+              0.10909377038478851,
+              0.33373117446899414,
+              -1.426086093658796e-08
+            ],
+            [
+              -0.00304613308981061,
+              0.9529925584793091,
+              -0.3029784560203552,
+              1.9073484054388246e-06
+            ],
+            [
+              -0.35109636187553406,
+              0.28267255425453186,
+              0.8926519751548767,
+              -4.7683710135970614e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9867795705795288,
+              -0.06617274880409241,
+              -0.14794373512268066,
+              0.3932468295097351
+            ],
+            [
+              -0.1620464026927948,
+              -0.38779670000076294,
+              -0.9073891639709473,
+              0.016203761100769043
+            ],
+            [
+              0.002672303467988968,
+              0.9193665385246277,
+              -0.39339298009872437,
+              132.86151123046875
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03811223432421684,
+              -0.002555779879912734,
+              -0.005714008118957281,
+              0.015188311226665974
+            ],
+            [
+              -0.006258693058043718,
+              -0.014977811835706234,
+              -0.03504595160484314,
+              0.0006258353241719306
+            ],
+            [
+              0.00010321196168661118,
+              0.03550855070352554,
+              -0.015193955972790718,
+              5.136695384979248
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine02": {
+          "basis": [
+            [
+              0.9714961051940918,
+              0.047801144421100616,
+              0.23218613862991333,
+              5.308537609494124e-08
+            ],
+            [
+              -0.0019281442509964108,
+              0.9810196161270142,
+              -0.19389906525611877,
+              -9.536742027194123e-07
+            ],
+            [
+              -0.23704774677753448,
+              0.18792448937892914,
+              0.9531488418579102,
+              -2.336794230187368e-16
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.8673630952835083,
+              -0.021244242787361145,
+              -0.49722230434417725,
+              0.6670203804969788
+            ],
+            [
+              -0.49685990810394287,
+              -0.09415443986654282,
+              -0.8627082109451294,
+              1.2295640707015991
+            ],
+            [
+              -0.028488174080848694,
+              0.9953309297561646,
+              -0.09222161024808884,
+              120.03484344482422
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.033500030636787415,
+              -0.0008205131161957979,
+              -0.019204139709472656,
+              0.025762224569916725
+            ],
+            [
+              -0.019190143793821335,
+              -0.003636512439697981,
+              -0.033320244401693344,
+              0.047489263117313385
+            ],
+            [
+              -0.001100294291973114,
+              0.03844251111149788,
+              -0.0035618608817458153,
+              4.641292572021484
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "neck": {
+          "basis": [
+            [
+              0.9753652215003967,
+              0.017056956887245178,
+              0.21993587911128998,
+              8.399324258334673e-08
+            ],
+            [
+              -0.013272978365421295,
+              0.999737560749054,
+              -0.01867126114666462,
+              9.536741345073096e-06
+            ],
+            [
+              -0.22019663453102112,
+              0.01529209315776825,
+              0.9753356575965881,
+              -1.1382518191882518e-12
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9082460403442383,
+              0.026137955486774445,
+              0.41761937737464905,
+              -0.42803266644477844
+            ],
+            [
+              0.3452523350715637,
+              -0.6106940507888794,
+              -0.7126387357711792,
+              -10.627832412719727
+            ],
+            [
+              0.2364107370376587,
+              0.791435182094574,
+              -0.5636846423149109,
+              152.3604278564453
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.035079047083854675,
+              0.0010095222387462854,
+              0.016129648312926292,
+              -0.016531839966773987
+            ],
+            [
+              0.013334627263247967,
+              -0.023586740717291832,
+              -0.027524136006832123,
+              -0.4104771316051483
+            ],
+            [
+              0.009130855090916157,
+              0.030567478388547897,
+              -0.021771105006337166,
+              5.889798641204834
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      },
+      "frame": 6,
+      "locators": [],
+      "meshes": [
+        {
+          "bounds_max": [
+            2.529057025909424,
+            1.33661687374115,
+            7.029170989990234
+          ],
+          "bounds_min": [
+            -2.0639681816101074,
+            -2.173863649368286,
+            -7.152557373046875e-07
+          ],
+          "ground_contact_verified": false,
+          "lowest_vertex_index": 10067,
+          "lowest_world_position": [
+            -1.113040804862976,
+            1.0846083164215088,
+            -7.152557373046875e-07
+          ],
+          "name": "char1.001"
+        }
+      ],
+      "seconds_from_action_start": 0.25
+    },
+    "recovery": {
+      "bones": {
+        "Head": {
+          "basis": [
+            [
+              0.8009638786315918,
+              -0.010192513465881348,
+              0.598625898361206,
+              7.155373964451428e-07
+            ],
+            [
+              -0.16252942383289337,
+              0.9586073160171509,
+              0.23378676176071167,
+              -3.802517767326208e-06
+            ],
+            [
+              -0.5762300491333008,
+              -0.2845490872859955,
+              0.7661532163619995,
+              -1.2521998371539667e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.5283814668655396,
+              0.022178523242473602,
+              0.8487173318862915,
+              -0.2292107790708542
+            ],
+            [
+              0.7665835618972778,
+              -0.4421299695968628,
+              -0.4656941592693329,
+              -15.273080825805664
+            ],
+            [
+              0.36491504311561584,
+              0.8966767191886902,
+              -0.2506150007247925,
+              158.38047790527344
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.020407594740390778,
+              0.0008565976750105619,
+              0.03277987614274025,
+              -0.008852772414684296
+            ],
+            [
+              0.029607638716697693,
+              -0.017076317220926285,
+              -0.01798643358051777,
+              -0.5898898243904114
+            ],
+            [
+              0.014094057492911816,
+              0.034632205963134766,
+              -0.009679464623332024,
+              6.122310161590576
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine": {
+          "basis": [
+            [
+              0.9356487989425659,
+              0.10075866430997849,
+              0.3382440209388733,
+              2.2640929842054902e-07
+            ],
+            [
+              -0.013538986444473267,
+              0.9679232835769653,
+              -0.25088077783584595,
+              -2.6701949536800385e-05
+            ],
+            [
+              -0.3526726961135864,
+              0.2301568239927292,
+              0.9070004224777222,
+              9.419311997049817e-10
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9781668782234192,
+              0.006278421729803085,
+              0.20772604644298553,
+              -0.485359787940979
+            ],
+            [
+              0.16959568858146667,
+              -0.6018103361129761,
+              -0.780424177646637,
+              -5.132746696472168
+            ],
+            [
+              0.12011183798313141,
+              0.7986143827438354,
+              -0.589735746383667,
+              145.06834411621094
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.037779588252305984,
+              0.00024249051057267934,
+              0.008022970519959927,
+              -0.01874597556889057
+            ],
+            [
+              0.006550267804414034,
+              -0.023243626579642296,
+              -0.030142201110720634,
+              -0.19824127852916718
+            ],
+            [
+              0.004639060702174902,
+              0.030844759196043015,
+              -0.022777272388339043,
+              5.608157634735107
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine01": {
+          "basis": [
+            [
+              0.9363343715667725,
+              0.10909377038478851,
+              0.33373117446899414,
+              -1.426086093658796e-08
+            ],
+            [
+              -0.00304613308981061,
+              0.9529925584793091,
+              -0.3029784560203552,
+              1.9073484054388246e-06
+            ],
+            [
+              -0.35109636187553406,
+              0.28267255425453186,
+              0.8926519751548767,
+              -4.7683710135970614e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9867795705795288,
+              -0.06617274880409241,
+              -0.14794373512268066,
+              0.3932468295097351
+            ],
+            [
+              -0.1620464026927948,
+              -0.38779670000076294,
+              -0.9073891639709473,
+              0.016203761100769043
+            ],
+            [
+              0.002672303467988968,
+              0.9193665385246277,
+              -0.39339298009872437,
+              132.86151123046875
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03811223432421684,
+              -0.002555779879912734,
+              -0.005714008118957281,
+              0.015188311226665974
+            ],
+            [
+              -0.006258693058043718,
+              -0.014977811835706234,
+              -0.03504595160484314,
+              0.0006258353241719306
+            ],
+            [
+              0.00010321196168661118,
+              0.03550855070352554,
+              -0.015193955972790718,
+              5.136695384979248
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine02": {
+          "basis": [
+            [
+              0.9714961051940918,
+              0.047801144421100616,
+              0.23218613862991333,
+              5.308537609494124e-08
+            ],
+            [
+              -0.0019281442509964108,
+              0.9810196161270142,
+              -0.19389906525611877,
+              -9.536742027194123e-07
+            ],
+            [
+              -0.23704774677753448,
+              0.18792448937892914,
+              0.9531488418579102,
+              -2.336794230187368e-16
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.8673630952835083,
+              -0.021244242787361145,
+              -0.49722230434417725,
+              0.6670203804969788
+            ],
+            [
+              -0.49685990810394287,
+              -0.09415443986654282,
+              -0.8627082109451294,
+              1.2295640707015991
+            ],
+            [
+              -0.028488174080848694,
+              0.9953309297561646,
+              -0.09222161024808884,
+              120.03484344482422
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.033500030636787415,
+              -0.0008205131161957979,
+              -0.019204139709472656,
+              0.025762224569916725
+            ],
+            [
+              -0.019190143793821335,
+              -0.003636512439697981,
+              -0.033320244401693344,
+              0.047489263117313385
+            ],
+            [
+              -0.001100294291973114,
+              0.03844251111149788,
+              -0.0035618608817458153,
+              4.641292572021484
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "neck": {
+          "basis": [
+            [
+              0.9753652215003967,
+              0.017056956887245178,
+              0.21993587911128998,
+              8.399324258334673e-08
+            ],
+            [
+              -0.013272978365421295,
+              0.999737560749054,
+              -0.01867126114666462,
+              9.536741345073096e-06
+            ],
+            [
+              -0.22019663453102112,
+              0.01529209315776825,
+              0.9753356575965881,
+              -1.1382518191882518e-12
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9082460403442383,
+              0.026137955486774445,
+              0.41761937737464905,
+              -0.42803266644477844
+            ],
+            [
+              0.3452523350715637,
+              -0.6106940507888794,
+              -0.7126387357711792,
+              -10.627832412719727
+            ],
+            [
+              0.2364107370376587,
+              0.791435182094574,
+              -0.5636846423149109,
+              152.3604278564453
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.035079047083854675,
+              0.0010095222387462854,
+              0.016129648312926292,
+              -0.016531839966773987
+            ],
+            [
+              0.013334627263247967,
+              -0.023586740717291832,
+              -0.027524136006832123,
+              -0.4104771316051483
+            ],
+            [
+              0.009130855090916157,
+              0.030567478388547897,
+              -0.021771105006337166,
+              5.889798641204834
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      },
+      "frame": 18,
+      "locators": [],
+      "meshes": [
+        {
+          "bounds_max": [
+            2.529057025909424,
+            1.33661687374115,
+            7.029170989990234
+          ],
+          "bounds_min": [
+            -2.0639681816101074,
+            -2.173863649368286,
+            -7.152557373046875e-07
+          ],
+          "ground_contact_verified": false,
+          "lowest_vertex_index": 10067,
+          "lowest_world_position": [
+            -1.113040804862976,
+            1.0846083164215088,
+            -7.152557373046875e-07
+          ],
+          "name": "char1.001"
+        }
+      ],
+      "seconds_from_action_start": 0.75
+    },
+    "withdrawal": {
+      "bones": {
+        "Head": {
+          "basis": [
+            [
+              0.8530600666999817,
+              0.012442932464182377,
+              0.5216643810272217,
+              7.155373964451428e-07
+            ],
+            [
+              -0.14697867631912231,
+              0.9649683237075806,
+              0.21733245253562927,
+              -3.802517767326208e-06
+            ],
+            [
+              -0.5006853342056274,
+              -0.2620711624622345,
+              0.8250047564506531,
+              -1.2521998371539667e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.774713397026062,
+              0.0454694889485836,
+              0.630675733089447,
+              -0.5326307415962219
+            ],
+            [
+              0.5896247029304504,
+              -0.41221189498901367,
+              -0.6945676803588867,
+              -12.384661674499512
+            ],
+            [
+              0.2283904105424881,
+              0.9099528193473816,
+              -0.3461560606956482,
+              159.73110961914062
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.02992163598537445,
+              0.0017561609856784344,
+              0.024358490481972694,
+              -0.020571714267134666
+            ],
+            [
+              0.022772982716560364,
+              -0.015920795500278473,
+              -0.026826180517673492,
+              -0.4783308804035187
+            ],
+            [
+              0.008821086958050728,
+              0.03514496609568596,
+              -0.01336953230202198,
+              6.17447566986084
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine": {
+          "basis": [
+            [
+              0.9544121026992798,
+              0.08513449877500534,
+              0.2860938012599945,
+              2.2640929842054902e-07
+            ],
+            [
+              -0.01115082111209631,
+              0.9679635763168335,
+              -0.2508430480957031,
+              -2.6701949536800385e-05
+            ],
+            [
+              -0.29828375577926636,
+              0.2362174540758133,
+              0.9247854351997375,
+              9.419311997049817e-10
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9979890584945679,
+              -0.039883363991975784,
+              0.04926641285419464,
+              0.0036986751947551966
+            ],
+            [
+              0.020258218050003052,
+              -0.5357858538627625,
+              -0.8441110253334045,
+              -3.200277328491211
+            ],
+            [
+              0.06006218492984772,
+              0.8434116840362549,
+              -0.5339004993438721,
+              145.75250244140625
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03854517638683319,
+              -0.0015404089353978634,
+              0.0019028090173378587,
+              0.00014285335782915354
+            ],
+            [
+              0.00078242999734357,
+              -0.020693574100732803,
+              -0.032601967453956604,
+              -0.12360381335020065
+            ],
+            [
+              0.002319772494956851,
+              0.032574959099292755,
+              -0.02062075585126877,
+              5.634582042694092
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine01": {
+          "basis": [
+            [
+              0.954983115196228,
+              0.08056505024433136,
+              0.2855110466480255,
+              -1.426086093658796e-08
+            ],
+            [
+              -0.0007938083144836128,
+              0.963108241558075,
+              -0.2691132128238678,
+              1.9073484054388246e-06
+            ],
+            [
+              -0.2966591417789459,
+              0.25677192211151123,
+              0.9198160171508789,
+              -4.7683710135970614e-07
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9646126627922058,
+              -0.06881871074438095,
+              -0.2545321583747864,
+              0.9174371957778931
+            ],
+            [
+              -0.26326143741607666,
+              -0.30518442392349243,
+              -0.9151809215545654,
+              0.8517934679985046
+            ],
+            [
+              -0.014697710052132607,
+              0.9498034715652466,
+              -0.31250208616256714,
+              133.1415557861328
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03725608438253403,
+              -0.002657974371686578,
+              -0.009830756112933159,
+              0.03543403372168541
+            ],
+            [
+              -0.010167906060814857,
+              -0.011787090450525284,
+              -0.03534689173102379,
+              0.032898686826229095
+            ],
+            [
+              -0.0005676673608832061,
+              0.03668411076068878,
+              -0.012069719843566418,
+              5.1475114822387695
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "Spine02": {
+          "basis": [
+            [
+              0.9815787672996521,
+              0.03215371072292328,
+              0.18833275139331818,
+              5.308537609494124e-08
+            ],
+            [
+              -5.6314402172574773e-05,
+              0.9857856631278992,
+              -0.16800789535045624,
+              -9.536742027194123e-07
+            ],
+            [
+              -0.19105780124664307,
+              0.16490237414836884,
+              0.9676280617713928,
+              -2.336794230187368e-16
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.8429725766181946,
+              0.0014523640275001526,
+              -0.5379546880722046,
+              0.8987234830856323
+            ],
+            [
+              -0.5372917652130127,
+              -0.04742937535047531,
+              -0.8420619368553162,
+              1.4630151987075806
+            ],
+            [
+              -0.026737898588180542,
+              0.9988735914230347,
+              -0.039201393723487854,
+              120.26923370361328
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.03255799785256386,
+              5.609443178400397e-05,
+              -0.020777340978384018,
+              0.03471125662326813
+            ],
+            [
+              -0.02075173705816269,
+              -0.0018318573711439967,
+              -0.03252282738685608,
+              0.05650581046938896
+            ],
+            [
+              -0.0010326936608180404,
+              0.038579341024160385,
+              -0.0015140693867579103,
+              4.650345802307129
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        "neck": {
+          "basis": [
+            [
+              0.9888977408409119,
+              0.015549060888588428,
+              0.1477820724248886,
+              8.399324258334673e-08
+            ],
+            [
+              -0.010257513262331486,
+              0.9992809295654297,
+              -0.03650137409567833,
+              9.536741345073096e-06
+            ],
+            [
+              -0.14824338257312775,
+              0.03458024933934212,
+              0.9883461594581604,
+              -1.1382518191882518e-12
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "pose": [
+            [
+              0.9800148606300354,
+              -0.022633204236626625,
+              0.19763295352458954,
+              -0.3604736328125
+            ],
+            [
+              0.15066301822662354,
+              -0.5642752647399902,
+              -0.8117231130599976,
+              -8.092496871948242
+            ],
+            [
+              0.12989124655723572,
+              0.8252766132354736,
+              -0.5495882034301758,
+              153.45364379882812
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world": [
+            [
+              0.037850961089134216,
+              -0.0008741587516851723,
+              0.007633146829903126,
+              -0.01392251718789339
+            ],
+            [
+              0.005819034297019243,
+              -0.021793916821479797,
+              -0.031351055949926376,
+              -0.3125552535057068
+            ],
+            [
+              0.005016769282519817,
+              0.031874530017375946,
+              -0.021226659417152405,
+              5.9320220947265625
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      },
+      "frame": 12,
+      "locators": [],
+      "meshes": [
+        {
+          "bounds_max": [
+            2.65720796585083,
+            2.040817975997925,
+            7.097788333892822
+          ],
+          "bounds_min": [
+            -1.7792553901672363,
+            -3.0769546031951904,
+            -5.774199962615967e-07
+          ],
+          "ground_contact_verified": false,
+          "lowest_vertex_index": 10085,
+          "lowest_world_position": [
+            -0.7494709491729736,
+            1.340717077255249,
+            -5.774199962615967e-07
+          ],
+          "name": "char1.001"
+        }
+      ],
+      "seconds_from_action_start": 0.5
+    }
+  },
+  "vector_key_count": 25
+}

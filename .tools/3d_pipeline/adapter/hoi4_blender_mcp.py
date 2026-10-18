@@ -228,6 +228,7 @@ def _texture_resize_for_job(job: Path, png: Path) -> tuple[int | None, int | Non
             stderr=subprocess.STDOUT,
             timeout=30,
             check=True,
+            stdin=subprocess.DEVNULL,
         )
         width, height = (int(value) for value in probe.stdout.strip().split("x", 1))
         largest = max(width, height)
@@ -274,6 +275,7 @@ def _process_textures(job_id: str, blend_rel: str) -> Dict[str, Any]:
         completed = subprocess.run(
             converter_args,
             cwd=str(REPO_ROOT),
+            stdin=subprocess.DEVNULL,
             text=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
@@ -1376,10 +1378,6 @@ def hoi4_blender_collapse_identity_leaf_joints(job_id: str, blend_rel: str, chec
 def hoi4_blender_inspect_animation_source(job_id: str, source_rel: str, source_sha256: str) -> Dict[str, Any]:
     """Read standalone FBX skeleton/action identity in a disposable scene without a target checkpoint."""
     return _run(job_id, "inspect_animation_source", {"source_rel": source_rel, "source_sha256": source_sha256})
-
-
-if __name__ == "__main__":
-    main()
 
 
 def main() -> None:

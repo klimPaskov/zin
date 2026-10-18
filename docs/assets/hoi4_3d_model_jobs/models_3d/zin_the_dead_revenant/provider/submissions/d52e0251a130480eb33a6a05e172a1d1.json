@@ -1,0 +1,33 @@
+{
+  "arguments": {
+    "height_meters": 1.8,
+    "input_task_id": "01a14fd1-1de5-75dd-8009-0c4bc2dcd690",
+    "response_format": "json"
+  },
+  "automatic_retry": false,
+  "estimate_credits": 5,
+  "lifecycle": {
+    "cleanup_inspection_error": null,
+    "owned_process_ids_at_cleanup": [],
+    "ownership": "windows_job_object",
+    "root_pid": 39460,
+    "surviving_process_ids": []
+  },
+  "response": {
+    "content": [
+      {
+        "text": "{\n  \"task_id\": \"01a14fda-b744-7401-bae5-ba27f4e84e71\",\n  \"status\": \"PENDING\",\n  \"message\": \"Rigging task created successfully. Task ID: 01a14fda-b744-7401-bae5-ba27f4e84e71\",\n  \"estimated_time\": \"2-3 minutes\"\n}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "estimated_time": "2-3 minutes",
+      "message": "Rigging task created successfully. Task ID: 01a14fda-b744-7401-bae5-ba27f4e84e71",
+      "status": "PENDING",
+      "task_id": "01a14fda-b744-7401-bae5-ba27f4e84e71"
+    }
+  },
+  "state": "response_received",
+  "timestamp": "2026-10-18T16:30:06Z",
+  "tool": "meshy_rig"
+}

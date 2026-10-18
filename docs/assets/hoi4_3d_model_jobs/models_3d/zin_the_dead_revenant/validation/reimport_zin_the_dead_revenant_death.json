@@ -1,0 +1,239 @@
+{
+  "actions": [
+    "io_pdx_rigAction"
+  ],
+  "anim": "export/anim/zin_the_dead_revenant_death.anim",
+  "animation_bounds": [
+    {
+      "bounds_max": [
+        2.0303242206573486,
+        -5.842281341552734,
+        6.2957963943481445
+      ],
+      "bounds_min": [
+        -2.1734378337860107,
+        -9.32986068725586,
+        -0.0010122510138899088
+      ],
+      "dimensions": [
+        4.203762054443359,
+        3.487579345703125,
+        6.29680871963501
+      ],
+      "frame": 1,
+      "ground_contact_z": -0.0010122510138899088,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        1.6851112842559814,
+        -5.3291449546813965,
+        6.387916088104248
+      ],
+      "bounds_min": [
+        -2.502990484237671,
+        -8.209463119506836,
+        -0.5904194116592407
+      ],
+      "dimensions": [
+        4.188101768493652,
+        2.8803181648254395,
+        6.978335380554199
+      ],
+      "frame": 19,
+      "ground_contact_z": -0.5904194116592407,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        2.2844457626342773,
+        -5.337142467498779,
+        6.473679065704346
+      ],
+      "bounds_min": [
+        -2.576383590698242,
+        -8.0667724609375,
+        0.6452795267105103
+      ],
+      "dimensions": [
+        4.8608293533325195,
+        2.7296299934387207,
+        5.828399658203125
+      ],
+      "frame": 37,
+      "ground_contact_z": 0.6452795267105103,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        3.5000534057617188,
+        -2.61716365814209,
+        3.9315078258514404
+      ],
+      "bounds_min": [
+        -1.5349067449569702,
+        -11.262185096740723,
+        1.8452870845794678
+      ],
+      "dimensions": [
+        5.0349602699279785,
+        8.645021438598633,
+        2.0862207412719727
+      ],
+      "frame": 55,
+      "ground_contact_z": 1.8452870845794678,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        3.579932689666748,
+        -2.6246814727783203,
+        3.926873207092285
+      ],
+      "bounds_min": [
+        -1.6057350635528564,
+        -11.364821434020996,
+        2.0565619468688965
+      ],
+      "dimensions": [
+        5.185667991638184,
+        8.740139961242676,
+        1.8703112602233887
+      ],
+      "frame": 73,
+      "ground_contact_z": 2.0565619468688965,
+      "locators": []
+    }
+  ],
+  "armatures": [
+    {
+      "bones": 24,
+      "name": "io_pdx_rig"
+    }
+  ],
+  "geometry": {
+    "boundary_component_count": 2622,
+    "bounds_max": [
+      2.3970556259155273,
+      0.8039031624794006,
+      7.3518242835998535
+    ],
+    "bounds_min": [
+      -2.40041184425354,
+      -0.8016429543495178,
+      0.0
+    ],
+    "branched_boundary_component_count": 270,
+    "closed_boundary_component_count": 2352,
+    "degenerate_faces": 0,
+    "dimensions": [
+      4.797467231750488,
+      1.6055461168289185,
+      7.3518242835998535
+    ],
+    "loose_boundary_edges": 19588,
+    "max_boundary_component_edges": 58,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 21000,
+    "position_welded_topology": {
+      "degenerate_faces": 0,
+      "loose_boundary_edges": 214,
+      "non_manifold_edges": 0,
+      "objects": [
+        {
+          "boundary_component_count": 44,
+          "branched_boundary_component_count": 5,
+          "closed_boundary_component_count": 39,
+          "degenerate_faces": 0,
+          "loose_boundary_edges": 214,
+          "max_boundary_component_edges": 16,
+          "non_manifold_edges": 0,
+          "object": "output_unwrapped.002",
+          "triangles": 21000,
+          "vertices_after_position_weld": 10475,
+          "vertices_before": 22743,
+          "weld_distance": 1e-06,
+          "zero_length_normals": 0
+        }
+      ],
+      "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+      "weld_distance": 1e-06
+    },
+    "triangles": 21000,
+    "uv_layers": {
+      "output_unwrapped.002": [
+        "map1"
+      ]
+    },
+    "vertices": 22743,
+    "zero_length_normals": 0
+  },
+  "locators": [],
+  "mesh": "export/mesh/zin_the_dead_revenant.mesh",
+  "meshes": [
+    {
+      "materials": [
+        "PDXmat_output_unwrapped.002"
+      ],
+      "name": "output_unwrapped.002",
+      "polygons": 21000,
+      "vertices": 22743
+    }
+  ],
+  "objects": [
+    {
+      "name": "io_pdx_rig",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "ARMATURE"
+    },
+    {
+      "name": "output_unwrapped.002",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "MESH"
+    }
+  ],
+  "previews": [
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_001_front.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_001_left.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_001_three_quarter.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_019_front.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_019_left.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_019_three_quarter.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_037_front.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_037_left.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_037_three_quarter.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_055_front.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_055_left.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_055_three_quarter.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_073_front.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_073_left.png",
+    "blender/previews/reimport_zin_the_dead_revenant_death_frame_073_three_quarter.png"
+  ],
+  "proof_blend": "blender/checkpoints/reimport_zin_the_dead_revenant_death.blend",
+  "runtime_texture_staging": [
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_0.dds",
+      "staged": "export/mesh/texture_0.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_specular.dds",
+      "staged": "export/mesh/texture_specular.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_normal.dds",
+      "staged": "export/mesh/texture_normal.dds"
+    }
+  ]
+}

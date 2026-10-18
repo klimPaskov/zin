@@ -1,0 +1,2282 @@
+{
+  "action": "zin_trolls_brute_death",
+  "action_provenance": {
+    "processing_policy": "verified_source_transfer_only",
+    "provenance_rel": "provider/animation_receipts/death.json",
+    "source_action_name": "Armature|Dead|baselayer",
+    "source_kind": "meshy_animate",
+    "source_reference_id": "01a15006-b009-7643-a0c3-f8624ce30e44",
+    "source_sha256": "0887322B4F26F12FA9781BF71DF9EA701614C6B00CC7E1C8DE06A7607355827B"
+  },
+  "audited_target_promotion": {
+    "applied": false,
+    "policy": "working objects only",
+    "promoted_meshes": [],
+    "requested": false,
+    "target_armature": null
+  },
+  "blend": "blender/checkpoints/rt_attack_74f55ed388.blend",
+  "bone_chains": {
+    "Head": [
+      "Head"
+    ],
+    "Hips": [
+      "Hips"
+    ],
+    "LeftArm": [
+      "LeftArm"
+    ],
+    "LeftFoot": [
+      "LeftFoot"
+    ],
+    "LeftForeArm": [
+      "LeftForeArm"
+    ],
+    "LeftHand": [
+      "LeftHand"
+    ],
+    "LeftLeg": [
+      "LeftLeg"
+    ],
+    "LeftShoulder": [
+      "LeftShoulder"
+    ],
+    "LeftToeBase": [
+      "LeftToeBase"
+    ],
+    "LeftUpLeg": [
+      "LeftUpLeg"
+    ],
+    "RightArm": [
+      "RightArm"
+    ],
+    "RightFoot": [
+      "RightFoot"
+    ],
+    "RightForeArm": [
+      "RightForeArm"
+    ],
+    "RightHand": [
+      "RightHand"
+    ],
+    "RightLeg": [
+      "RightLeg"
+    ],
+    "RightShoulder": [
+      "RightShoulder"
+    ],
+    "RightToeBase": [
+      "RightToeBase"
+    ],
+    "RightUpLeg": [
+      "RightUpLeg"
+    ],
+    "Spine": [
+      "Spine"
+    ],
+    "Spine01": [
+      "Spine01"
+    ],
+    "Spine02": [
+      "Spine02"
+    ],
+    "neck": [
+      "neck"
+    ]
+  },
+  "checkpoint": "blender/checkpoints/rt_death_74f55ed388.blend",
+  "data_length_ratio": 1.0,
+  "fps": 24,
+  "frame_end": 72,
+  "frame_start": 0,
+  "imported_objects_removed": [
+    "Armature.002",
+    "char1.002",
+    "Icosphere.001"
+  ],
+  "location_coordinate_space": "pose_bone_matrix_basis_translation",
+  "location_scale": 0.24669310394517152,
+  "location_scale_formula": "source_world_delta * measured_world_joint_span_ratio then inverse_target_world_rest_basis",
+  "new_provider_call": false,
+  "policy": "provider_skeletal_action_retargeted_by_explicit_bone_chains_and_hierarchy_aware_target_rest_bases",
+  "provenance": "provider/animation_receipts/death.json",
+  "provider_actions_removed": [
+    "Armature|Dead|baselayer"
+  ],
+  "rest_data_length_ratio_applied_to_location": false,
+  "retained_action_hashes": {
+    "Armature|Attack|baselayer": "0CCB0BC9DB2D4E18B93AF4CC37668A747A1E66B9A0FD6CFCB4E21F0A38123587",
+    "Armature|Attack|baselayer_WORKING": "999896FCC97123E4583D8265EC29469A0EA7DCDCFAFDB8C893A69EC0E962F5D4",
+    "zin_trolls_brute_attack": "A94E253E4993429977EBBF33FFD027F68449DEEF7DE9EF2C364747CD0408C3E6",
+    "zin_trolls_brute_idle": "F2956603EC2AA9C79AA2F59344466727A2A0B4C965770819AFD66CE8D13D5473"
+  },
+  "retained_actions_preserved": true,
+  "retention_evidence": {
+    "manual_or_procedural_replacement_authored": false,
+    "provider_source_objects_removed_after_transfer": [
+      "Armature.002",
+      "char1.002",
+      "Icosphere.001"
+    ],
+    "source_driven_bones": [
+      "Head",
+      "Hips",
+      "LeftArm",
+      "LeftFoot",
+      "LeftForeArm",
+      "LeftHand",
+      "LeftLeg",
+      "LeftShoulder",
+      "LeftToeBase",
+      "LeftUpLeg",
+      "RightArm",
+      "RightFoot",
+      "RightForeArm",
+      "RightHand",
+      "RightLeg",
+      "RightShoulder",
+      "RightToeBase",
+      "RightUpLeg",
+      "Spine",
+      "Spine01",
+      "Spine02",
+      "neck"
+    ],
+    "source_motion_peak": 17.088756959137324,
+    "target_action_fcurves": 168,
+    "target_driven_bones": [
+      "Head",
+      "Hips",
+      "LeftArm",
+      "LeftFoot",
+      "LeftForeArm",
+      "LeftHand",
+      "LeftLeg",
+      "LeftShoulder",
+      "LeftToeBase",
+      "LeftUpLeg",
+      "RightArm",
+      "RightFoot",
+      "RightForeArm",
+      "RightHand",
+      "RightLeg",
+      "RightShoulder",
+      "RightToeBase",
+      "RightUpLeg",
+      "Spine",
+      "Spine01",
+      "Spine02",
+      "neck"
+    ],
+    "target_motion_peak": 17.088758044096288
+  },
+  "root_cleanup": {
+    "action": "zin_trolls_brute_death",
+    "anatomical_scale": {
+      "policy": "measured_world_joint_head_span",
+      "ratio": 4.053619887753665,
+      "reference": {
+        "source_head_bones": [
+          "LeftFoot",
+          "Head"
+        ],
+        "target_head_bones": [
+          "LeftFoot",
+          "Head"
+        ]
+      },
+      "source_world_span": 2.281181123190578,
+      "target_world_span": 9.247041168533569
+    },
+    "data_length_ratio": 1.0,
+    "location_coordinate_space": "pose_bone_matrix_basis_translation",
+    "location_scale": 0.24669310394517152,
+    "location_scale_formula": "source_world_delta * measured_world_joint_span_ratio then inverse_target_world_rest_basis",
+    "maximum_world_root_error": 6.556510925292969e-07,
+    "policy": "source hierarchy world-root delta scaled by explicit measured joint-head span; world X/Y removed; world Z converted through inverse target armature/rest-root basis; rotations conjugated through source/target object orientations",
+    "rest_data_length_ratio_applied_to_location": false,
+    "source_armature_world_scale": [
+      0.009999999776482582,
+      0.009999999776482582,
+      0.009999999776482582
+    ],
+    "source_root_location": [
+      -3.254042863845825,
+      -35.435420989990234,
+      -2.79347825050354
+    ],
+    "source_root_z_delta_peak": 93.81614518165588,
+    "target_armature_world_scale": [
+      0.040536195039749146,
+      0.040536195039749146,
+      0.040536195039749146
+    ],
+    "target_root": "Hips",
+    "world_root_displacement_proof": [
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame": 0,
+        "source_world": [
+          -0.035545364022254944,
+          0.05205857753753662,
+          1.2545320987701416
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -0.062381744384765625
+        ],
+        "error": 2.4586915969848633e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -0.062381498515605927
+        ],
+        "frame": 1,
+        "source_world": [
+          -0.025771720334887505,
+          0.09486881643533707,
+          1.2391430139541626
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -0.27662038803100586
+        ],
+        "error": 2.086162567138672e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -0.27662017941474915
+        ],
+        "frame": 2,
+        "source_world": [
+          0.014479859732091427,
+          0.27790728211402893,
+          1.1862918138504028
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -0.2554740905761719
+        ],
+        "error": 2.9802322387695312e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -0.2554740607738495
+        ],
+        "frame": 3,
+        "source_world": [
+          0.03922663629055023,
+          0.381488174200058,
+          1.191508412361145
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -0.10754966735839844
+        ],
+        "error": 2.5331974029541016e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -0.10754941403865814
+        ],
+        "frame": 4,
+        "source_world": [
+          0.06787171959877014,
+          0.43496641516685486,
+          1.2280004024505615
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.10038042068481445
+        ],
+        "error": 1.9371509552001953e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.10038022696971893
+        ],
+        "frame": 5,
+        "source_world": [
+          0.1017143726348877,
+          0.45263221859931946,
+          1.2792952060699463
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.23316287994384766
+        ],
+        "error": 1.4901161193847656e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.23316289484500885
+        ],
+        "frame": 6,
+        "source_world": [
+          0.120491161942482,
+          0.45383498072624207,
+          1.312051773071289
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.3182835578918457
+        ],
+        "error": 1.4901161193847656e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.31828370690345764
+        ],
+        "frame": 7,
+        "source_world": [
+          0.13056929409503937,
+          0.4492473602294922,
+          1.3330504894256592
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.3853917121887207
+        ],
+        "error": 4.470348358154297e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.3853921592235565
+        ],
+        "frame": 8,
+        "source_world": [
+          0.13704469799995422,
+          0.4409622848033905,
+          1.349605679512024
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.4405202865600586
+        ],
+        "error": 5.960464477539062e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.44052088260650635
+        ],
+        "frame": 9,
+        "source_world": [
+          0.1410820484161377,
+          0.4295484721660614,
+          1.3632055521011353
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.4903531074523926
+        ],
+        "error": 2.980232238769531e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.49035340547561646
+        ],
+        "frame": 10,
+        "source_world": [
+          0.14410661160945892,
+          0.4165993332862854,
+          1.37549889087677
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.5399384498596191
+        ],
+        "error": 5.364418029785156e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.5399389863014221
+        ],
+        "frame": 11,
+        "source_world": [
+          0.14710275828838348,
+          0.40332692861557007,
+          1.3877313137054443
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.5903644561767578
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.5903644561767578
+        ],
+        "frame": 12,
+        "source_world": [
+          0.1501263827085495,
+          0.38987860083580017,
+          1.400170922279358
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.6393194198608398
+        ],
+        "error": 4.76837158203125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.639319896697998
+        ],
+        "frame": 13,
+        "source_world": [
+          0.15248338878154755,
+          0.3754505217075348,
+          1.412247896194458
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.6850070953369141
+        ],
+        "error": 2.980232238769531e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.6850067973136902
+        ],
+        "frame": 14,
+        "source_world": [
+          0.15414376556873322,
+          0.3599920868873596,
+          1.4235185384750366
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.7273077964782715
+        ],
+        "error": 1.1920928955078125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.7273076772689819
+        ],
+        "frame": 15,
+        "source_world": [
+          0.15542741119861603,
+          0.3438815474510193,
+          1.433953881263733
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.7658190727233887
+        ],
+        "error": 5.960464477539063e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.7658191323280334
+        ],
+        "frame": 16,
+        "source_world": [
+          0.15649323165416718,
+          0.3272894620895386,
+          1.443454384803772
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.7990574836730957
+        ],
+        "error": 5.960464477539063e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.7990575432777405
+        ],
+        "frame": 17,
+        "source_world": [
+          0.1575799584388733,
+          0.31037744879722595,
+          1.451654076576233
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.8277497291564941
+        ],
+        "error": 4.172325134277344e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.8277493119239807
+        ],
+        "frame": 18,
+        "source_world": [
+          0.1588672548532486,
+          0.29330629110336304,
+          1.4587321281433105
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.8537788391113281
+        ],
+        "error": 4.172325134277344e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.8537784218788147
+        ],
+        "frame": 19,
+        "source_world": [
+          0.16012580692768097,
+          0.27587732672691345,
+          1.4651533365249634
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.8773384094238281
+        ],
+        "error": 3.5762786865234375e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.8773387670516968
+        ],
+        "frame": 20,
+        "source_world": [
+          0.16124829649925232,
+          0.25803321599960327,
+          1.4709655046463013
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.8969230651855469
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.8969230651855469
+        ],
+        "frame": 21,
+        "source_world": [
+          0.16224025189876556,
+          0.23983699083328247,
+          1.4757968187332153
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.9120211601257324
+        ],
+        "error": 5.960464477539063e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.9120211005210876
+        ],
+        "frame": 22,
+        "source_world": [
+          0.16319720447063446,
+          0.22154708206653595,
+          1.47952139377594
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.9226584434509277
+        ],
+        "error": 5.960464477539063e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.922658383846283
+        ],
+        "frame": 23,
+        "source_world": [
+          0.16417960822582245,
+          0.2033344805240631,
+          1.4821455478668213
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.9284672737121582
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.9284672737121582
+        ],
+        "frame": 24,
+        "source_world": [
+          0.16524282097816467,
+          0.1853264570236206,
+          1.4835785627365112
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.9277644157409668
+        ],
+        "error": 2.980232238769531e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.9277647137641907
+        ],
+        "frame": 25,
+        "source_world": [
+          0.16655734181404114,
+          0.16778682172298431,
+          1.4834052324295044
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.9224772453308105
+        ],
+        "error": 5.960464477539063e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.9224771857261658
+        ],
+        "frame": 26,
+        "source_world": [
+          0.1683473140001297,
+          0.15071605145931244,
+          1.4821008443832397
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.9120984077453613
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.9120984077453613
+        ],
+        "frame": 27,
+        "source_world": [
+          0.17049859464168549,
+          0.13396118581295013,
+          1.479540467262268
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.8942527770996094
+        ],
+        "error": 4.76837158203125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.8942532539367676
+        ],
+        "frame": 28,
+        "source_world": [
+          0.17282888293266296,
+          0.11744596809148788,
+          1.4751381874084473
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.8620405197143555
+        ],
+        "error": 1.7881393432617188e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.8620406985282898
+        ],
+        "frame": 29,
+        "source_world": [
+          0.1749965399503708,
+          0.10108472406864166,
+          1.4671915769577026
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.8151559829711914
+        ],
+        "error": 3.5762786865234375e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.8151563405990601
+        ],
+        "frame": 30,
+        "source_world": [
+          0.17654146254062653,
+          0.08494912087917328,
+          1.4556255340576172
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.7611203193664551
+        ],
+        "error": 3.5762786865234375e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.7611206769943237
+        ],
+        "frame": 31,
+        "source_world": [
+          0.1768927127122879,
+          0.07022405415773392,
+          1.4422953128814697
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.6967563629150391
+        ],
+        "error": 6.556510925292969e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.6967570185661316
+        ],
+        "frame": 32,
+        "source_world": [
+          0.17567846179008484,
+          0.05759510397911072,
+          1.4264172315597534
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.5316853523254395
+        ],
+        "error": 5.960464477539063e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.5316854119300842
+        ],
+        "frame": 33,
+        "source_world": [
+          0.1741989254951477,
+          0.04068515822291374,
+          1.385695219039917
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          0.14113330841064453
+        ],
+        "error": 4.470348358154297e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          0.1411333531141281
+        ],
+        "frame": 34,
+        "source_world": [
+          0.1751241236925125,
+          0.007484157104045153,
+          1.2893487215042114
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -0.49810361862182617
+        ],
+        "error": 2.980232238769531e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -0.49810391664505005
+        ],
+        "frame": 35,
+        "source_world": [
+          0.17828691005706787,
+          -0.042037639766931534,
+          1.1316533088684082
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.215299129486084
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.215299129486084
+        ],
+        "frame": 36,
+        "source_world": [
+          0.18242986500263214,
+          -0.09221965819597244,
+          0.9547262191772461
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.3046321868896484
+        ],
+        "error": 4.76837158203125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.3046317100524902
+        ],
+        "frame": 37,
+        "source_world": [
+          0.18720050156116486,
+          -0.1137559562921524,
+          0.9326884746551514
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.3066020011901855
+        ],
+        "error": 3.5762786865234375e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.3066023588180542
+        ],
+        "frame": 38,
+        "source_world": [
+          0.19204625487327576,
+          -0.12546274065971375,
+          0.9322023391723633
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.2908196449279785
+        ],
+        "error": 1.1920928955078125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.290819764137268
+        ],
+        "frame": 39,
+        "source_world": [
+          0.19511814415454865,
+          -0.14260053634643555,
+          0.9360957741737366
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.254112720489502
+        ],
+        "error": 2.384185791015625e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.2541124820709229
+        ],
+        "frame": 40,
+        "source_world": [
+          0.19597697257995605,
+          -0.17064931988716125,
+          0.9451512098312378
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.1803436279296875
+        ],
+        "error": 5.960464477539062e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.1803430318832397
+        ],
+        "frame": 41,
+        "source_world": [
+          0.1961657553911209,
+          -0.20311734080314636,
+          0.9633496403694153
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.0985326766967773
+        ],
+        "error": 5.960464477539062e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.0985320806503296
+        ],
+        "frame": 42,
+        "source_world": [
+          0.1963038593530655,
+          -0.23757024109363556,
+          0.9835318326950073
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.0304746627807617
+        ],
+        "error": 1.1920928955078125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.0304745435714722
+        ],
+        "frame": 43,
+        "source_world": [
+          0.19628840684890747,
+          -0.2761729061603546,
+          1.0003211498260498
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -0.995307445526123
+        ],
+        "error": 3.5762786865234375e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -0.9953070878982544
+        ],
+        "frame": 44,
+        "source_world": [
+          0.19608253240585327,
+          -0.3207862079143524,
+          1.0089967250823975
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.0432348251342773
+        ],
+        "error": 1.1920928955078125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.0432347059249878
+        ],
+        "frame": 45,
+        "source_world": [
+          0.19537247717380524,
+          -0.3771742284297943,
+          0.9971733093261719
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.2135357856750488
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.2135357856750488
+        ],
+        "frame": 46,
+        "source_world": [
+          0.19413909316062927,
+          -0.4492853581905365,
+          0.9551612138748169
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -1.5537056922912598
+        ],
+        "error": 2.384185791015625e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -1.5537054538726807
+        ],
+        "frame": 47,
+        "source_world": [
+          0.19298090040683746,
+          -0.5413141250610352,
+          0.8712437152862549
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -2.0589985847473145
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -2.0589985847473145
+        ],
+        "frame": 48,
+        "source_world": [
+          0.19346997141838074,
+          -0.6458861231803894,
+          0.7465913891792297
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -2.6224138736724854
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -2.6224138736724854
+        ],
+        "frame": 49,
+        "source_world": [
+          0.1963004767894745,
+          -0.741106390953064,
+          0.607600748538971
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -3.062044382095337
+        ],
+        "error": 2.384185791015625e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.062044620513916
+        ],
+        "frame": 50,
+        "source_world": [
+          0.199212908744812,
+          -0.8125773668289185,
+          0.49914687871932983
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          1.4901161193847656e-08,
+          -3.2724435329437256
+        ],
+        "error": 1.5359765386647212e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.2724435329437256
+        ],
+        "frame": 51,
+        "source_world": [
+          0.19990473985671997,
+          -0.8594924211502075,
+          0.4472428858280182
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          1.4901161193847656e-08,
+          -3.195418119430542
+        ],
+        "error": 2.38912831914782e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.195418357849121
+        ],
+        "frame": 52,
+        "source_world": [
+          0.1970152109861374,
+          -0.8844863772392273,
+          0.46624448895454407
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -2.96040940284729
+        ],
+        "error": 2.384185791015625e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -2.960409641265869
+        ],
+        "frame": 53,
+        "source_world": [
+          0.19269603490829468,
+          -0.8924356698989868,
+          0.5242195129394531
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          0.0,
+          -2.854027271270752
+        ],
+        "error": 3.725290298461914e-09,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -2.854027271270752
+        ],
+        "frame": 54,
+        "source_world": [
+          0.19050756096839905,
+          -0.8997184038162231,
+          0.5504633188247681
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          0.0,
+          -2.8610002994537354
+        ],
+        "error": 3.725290298461914e-09,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -2.8610002994537354
+        ],
+        "frame": 55,
+        "source_world": [
+          0.1898447573184967,
+          -0.9070399403572083,
+          0.5487431287765503
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -2.9247000217437744
+        ],
+        "error": 2.384185791015625e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -2.9247002601623535
+        ],
+        "frame": 56,
+        "source_world": [
+          0.18979883193969727,
+          -0.9123980402946472,
+          0.533028781414032
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -3.0104753971099854
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.0104753971099854
+        ],
+        "frame": 57,
+        "source_world": [
+          0.1895434409379959,
+          -0.9155636429786682,
+          0.5118686556816101
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          1.4901161193847656e-08,
+          -3.09318470954895
+        ],
+        "error": 2.38912831914782e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.0931849479675293
+        ],
+        "frame": 58,
+        "source_world": [
+          0.1886565238237381,
+          -0.9180379509925842,
+          0.491464763879776
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          0.0,
+          -3.181771993637085
+        ],
+        "error": 2.384476811558792e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.181772232055664
+        ],
+        "frame": 59,
+        "source_world": [
+          0.18715417385101318,
+          -0.9195023775100708,
+          0.46961089968681335
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          1.4901161193847656e-08,
+          -3.274784564971924
+        ],
+        "error": 1.4901161193847656e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.274784564971924
+        ],
+        "frame": 60,
+        "source_world": [
+          0.18515783548355103,
+          -0.9199107885360718,
+          0.4466654062271118
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          1.4901161193847656e-08,
+          -3.3297595977783203
+        ],
+        "error": 2.388837865275353e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.329759359359741
+        ],
+        "frame": 61,
+        "source_world": [
+          0.183572918176651,
+          -0.9206506013870239,
+          0.4331034719944
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -5.587935447692871e-09,
+          1.4901161193847656e-08,
+          -3.3402674198150635
+        ],
+        "error": 2.3894913368392996e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.3402676582336426
+        ],
+        "frame": 62,
+        "source_world": [
+          0.18276748061180115,
+          -0.9221780896186829,
+          0.43051114678382874
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          1.4901161193847656e-08,
+          -3.325246810913086
+        ],
+        "error": 2.388837865275353e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.325246572494507
+        ],
+        "frame": 63,
+        "source_world": [
+          0.1825633943080902,
+          -0.9238972067832947,
+          0.43421676754951477
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          1.4901161193847656e-08,
+          -3.3055694103240967
+        ],
+        "error": 2.388837865275353e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.3055691719055176
+        ],
+        "frame": 64,
+        "source_world": [
+          0.1827152818441391,
+          -0.9253772497177124,
+          0.43907102942466736
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          0.0,
+          -3.3034496307373047
+        ],
+        "error": 3.725290298461914e-09,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.3034496307373047
+        ],
+        "frame": 65,
+        "source_world": [
+          0.1829347312450409,
+          -0.9262340068817139,
+          0.43959394097328186
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          1.4901161193847656e-08,
+          -3.3053629398345947
+        ],
+        "error": 2.388837865275353e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.3053627014160156
+        ],
+        "frame": 66,
+        "source_world": [
+          0.18324463069438934,
+          -0.9268758296966553,
+          0.4391219913959503
+        ]
+      },
+      {
+        "actual_target_delta": [
+          -3.725290298461914e-09,
+          1.4901161193847656e-08,
+          -3.308934211730957
+        ],
+        "error": 2.38912831914782e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.308933973312378
+        ],
+        "frame": 67,
+        "source_world": [
+          0.18353143334388733,
+          -0.9273876547813416,
+          0.4382409453392029
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -3.3124358654022217
+        ],
+        "error": 0.0,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.3124358654022217
+        ],
+        "frame": 68,
+        "source_world": [
+          0.1836572289466858,
+          -0.9278395771980286,
+          0.43737709522247314
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -3.3143370151519775
+        ],
+        "error": 2.384185791015625e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.3143372535705566
+        ],
+        "frame": 69,
+        "source_world": [
+          0.1833222657442093,
+          -0.928252637386322,
+          0.4369080364704132
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          1.4901161193847656e-08,
+          -3.3159568309783936
+        ],
+        "error": 1.4901161193847656e-08,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.3159568309783936
+        ],
+        "frame": 70,
+        "source_world": [
+          0.18275849521160126,
+          -0.9286019206047058,
+          0.4365084767341614
+        ]
+      },
+      {
+        "actual_target_delta": [
+          0.0,
+          0.0,
+          -3.317432165145874
+        ],
+        "error": 4.76837158203125e-07,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.317431688308716
+        ],
+        "frame": 71,
+        "source_world": [
+          0.1820794641971588,
+          -0.9289140105247498,
+          0.43614462018013
+        ]
+      },
+      {
+        "actual_target_delta": [
+          1.862645149230957e-09,
+          0.0,
+          -3.31887149810791
+        ],
+        "error": 1.862645149230957e-09,
+        "expected_target_delta": [
+          0.0,
+          0.0,
+          -3.31887149810791
+        ],
+        "frame": 72,
+        "source_world": [
+          0.18139676749706268,
+          -0.9292206168174744,
+          0.43578946590423584
+        ]
+      }
+    ]
+  },
+  "scale_cleanup": {
+    "action": "zin_trolls_brute_death",
+    "policy": "only location/quaternion authored; existing action scale channels untouched"
+  },
+  "source": "provider/downloads/animation_death_provider.glb",
+  "source_action": "Armature|Dead|baselayer",
+  "source_armature": "Armature.002",
+  "source_armature_world_scale": [
+    0.009999999776482582,
+    0.009999999776482582,
+    0.009999999776482582
+  ],
+  "source_driven_bones": [
+    "Head",
+    "Hips",
+    "LeftArm",
+    "LeftFoot",
+    "LeftForeArm",
+    "LeftHand",
+    "LeftLeg",
+    "LeftShoulder",
+    "LeftToeBase",
+    "LeftUpLeg",
+    "RightArm",
+    "RightFoot",
+    "RightForeArm",
+    "RightHand",
+    "RightLeg",
+    "RightShoulder",
+    "RightToeBase",
+    "RightUpLeg",
+    "Spine",
+    "Spine01",
+    "Spine02",
+    "neck"
+  ],
+  "source_fcurves": 220,
+  "source_sha256": "0887322B4F26F12FA9781BF71DF9EA701614C6B00CC7E1C8DE06A7607355827B",
+  "source_target_motion_crosscheck": {
+    "metric": "sum_of_mapped_bone_angular_deltas_radians; world_root_translation_verified_separately_per_frame",
+    "sample_frames": [
+      0,
+      18,
+      36,
+      54,
+      72
+    ],
+    "samples": [
+      {
+        "bones": [
+          {
+            "bone": "Head",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Hips",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftArm",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftFoot",
+            "source_delta_from_start": 0.0006905339694324072,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftForeArm",
+            "source_delta_from_start": 0.0006905339694324072,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftHand",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftLeg",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftShoulder",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftToeBase",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "LeftUpLeg",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightArm",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightFoot",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightForeArm",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightHand",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightLeg",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightShoulder",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightToeBase",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "RightUpLeg",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Spine",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Spine01",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Spine02",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "neck",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          }
+        ],
+        "frame": 0,
+        "source_motion_total": 0.0013810679388648144,
+        "target_motion_total": 0.0
+      },
+      {
+        "bones": [
+          {
+            "bone": "Head",
+            "source_delta_from_start": 0.09807780686518296,
+            "target_delta_from_start": 0.0980802387222735
+          },
+          {
+            "bone": "Hips",
+            "source_delta_from_start": 0.23810344219506285,
+            "target_delta_from_start": 0.2381054495722244
+          },
+          {
+            "bone": "LeftArm",
+            "source_delta_from_start": 1.3373463941130275,
+            "target_delta_from_start": 1.337346201823054
+          },
+          {
+            "bone": "LeftFoot",
+            "source_delta_from_start": 0.2762163153423562,
+            "target_delta_from_start": 0.27621544943199694
+          },
+          {
+            "bone": "LeftForeArm",
+            "source_delta_from_start": 0.08240247541030629,
+            "target_delta_from_start": 0.0824053695207073
+          },
+          {
+            "bone": "LeftHand",
+            "source_delta_from_start": 0.41659062567157323,
+            "target_delta_from_start": 0.41659062567157323
+          },
+          {
+            "bone": "LeftLeg",
+            "source_delta_from_start": 0.3929992972109265,
+            "target_delta_from_start": 0.3929992972109265
+          },
+          {
+            "bone": "LeftShoulder",
+            "source_delta_from_start": 0.40115981850052607,
+            "target_delta_from_start": 0.4011604168272159
+          },
+          {
+            "bone": "LeftToeBase",
+            "source_delta_from_start": 0.12226500509182135,
+            "target_delta_from_start": 0.12226500509182135
+          },
+          {
+            "bone": "LeftUpLeg",
+            "source_delta_from_start": 0.611338909306093,
+            "target_delta_from_start": 0.6113385131718846
+          },
+          {
+            "bone": "RightArm",
+            "source_delta_from_start": 1.3984196366995194,
+            "target_delta_from_start": 1.398419451480648
+          },
+          {
+            "bone": "RightFoot",
+            "source_delta_from_start": 0.3087588515269545,
+            "target_delta_from_start": 0.3087588515269545
+          },
+          {
+            "bone": "RightForeArm",
+            "source_delta_from_start": 0.6442488324903523,
+            "target_delta_from_start": 0.6442488324903523
+          },
+          {
+            "bone": "RightHand",
+            "source_delta_from_start": 1.5116798260039892,
+            "target_delta_from_start": 1.5116796522041998
+          },
+          {
+            "bone": "RightLeg",
+            "source_delta_from_start": 0.1961659528675376,
+            "target_delta_from_start": 0.1961659528675376
+          },
+          {
+            "bone": "RightShoulder",
+            "source_delta_from_start": 0.6556806047286841,
+            "target_delta_from_start": 0.6556806047286841
+          },
+          {
+            "bone": "RightToeBase",
+            "source_delta_from_start": 0.07490742222082573,
+            "target_delta_from_start": 0.0749042385657472
+          },
+          {
+            "bone": "RightUpLeg",
+            "source_delta_from_start": 0.7924118517564558,
+            "target_delta_from_start": 0.7924121606519953
+          },
+          {
+            "bone": "Spine",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Spine01",
+            "source_delta_from_start": 0.36366124454518256,
+            "target_delta_from_start": 0.36366190377745955
+          },
+          {
+            "bone": "Spine02",
+            "source_delta_from_start": 0.1361455766491344,
+            "target_delta_from_start": 0.13614732919435882
+          },
+          {
+            "bone": "neck",
+            "source_delta_from_start": 0.5886520843869871,
+            "target_delta_from_start": 0.5886512625224596
+          }
+        ],
+        "frame": 18,
+        "source_motion_total": 10.647231973582498,
+        "target_motion_total": 10.647236807054073
+      },
+      {
+        "bones": [
+          {
+            "bone": "Head",
+            "source_delta_from_start": 0.39983715928662716,
+            "target_delta_from_start": 0.3998377595660054
+          },
+          {
+            "bone": "Hips",
+            "source_delta_from_start": 0.6131687730823229,
+            "target_delta_from_start": 0.6131687730823229
+          },
+          {
+            "bone": "LeftArm",
+            "source_delta_from_start": 1.579967592832572,
+            "target_delta_from_start": 1.579967592832572
+          },
+          {
+            "bone": "LeftFoot",
+            "source_delta_from_start": 1.0898340269815243,
+            "target_delta_from_start": 1.089833797001854
+          },
+          {
+            "bone": "LeftForeArm",
+            "source_delta_from_start": 0.7024870105310097,
+            "target_delta_from_start": 0.7024870105310097
+          },
+          {
+            "bone": "LeftHand",
+            "source_delta_from_start": 0.6193513782689225,
+            "target_delta_from_start": 0.6193525517810231
+          },
+          {
+            "bone": "LeftLeg",
+            "source_delta_from_start": 0.7362609963239247,
+            "target_delta_from_start": 0.7362606650689869
+          },
+          {
+            "bone": "LeftShoulder",
+            "source_delta_from_start": 0.5395544599128846,
+            "target_delta_from_start": 0.5395540126263769
+          },
+          {
+            "bone": "LeftToeBase",
+            "source_delta_from_start": 0.9323959511724492,
+            "target_delta_from_start": 0.932396216380597
+          },
+          {
+            "bone": "LeftUpLeg",
+            "source_delta_from_start": 0.29163664188976807,
+            "target_delta_from_start": 0.291635821464984
+          },
+          {
+            "bone": "RightArm",
+            "source_delta_from_start": 1.6448123310379041,
+            "target_delta_from_start": 1.6448123310379041
+          },
+          {
+            "bone": "RightFoot",
+            "source_delta_from_start": 1.0194284719433515,
+            "target_delta_from_start": 1.019428716260789
+          },
+          {
+            "bone": "RightForeArm",
+            "source_delta_from_start": 0.4935244249560563,
+            "target_delta_from_start": 0.4935244249560563
+          },
+          {
+            "bone": "RightHand",
+            "source_delta_from_start": 1.380771213927463,
+            "target_delta_from_start": 1.380771213927463
+          },
+          {
+            "bone": "RightLeg",
+            "source_delta_from_start": 1.4058049694569894,
+            "target_delta_from_start": 1.4058051538673308
+          },
+          {
+            "bone": "RightShoulder",
+            "source_delta_from_start": 0.47098564316153796,
+            "target_delta_from_start": 0.47098564316153796
+          },
+          {
+            "bone": "RightToeBase",
+            "source_delta_from_start": 0.06157235445176217,
+            "target_delta_from_start": 0.06157235445176217
+          },
+          {
+            "bone": "RightUpLeg",
+            "source_delta_from_start": 0.5325249469994758,
+            "target_delta_from_start": 0.532525400046979
+          },
+          {
+            "bone": "Spine",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Spine01",
+            "source_delta_from_start": 0.37875080840385816,
+            "target_delta_from_start": 0.3787501751383275
+          },
+          {
+            "bone": "Spine02",
+            "source_delta_from_start": 0.29581002615185137,
+            "target_delta_from_start": 0.29580921721917064
+          },
+          {
+            "bone": "neck",
+            "source_delta_from_start": 0.32913798704599034,
+            "target_delta_from_start": 0.32913798704599034
+          }
+        ],
+        "frame": 36,
+        "source_motion_total": 15.517617167818246,
+        "target_motion_total": 15.517616817449042
+      },
+      {
+        "bones": [
+          {
+            "bone": "Head",
+            "source_delta_from_start": 0.6302174460307591,
+            "target_delta_from_start": 0.6302170613850919
+          },
+          {
+            "bone": "Hips",
+            "source_delta_from_start": 1.7248908976881216,
+            "target_delta_from_start": 1.7248910546589755
+          },
+          {
+            "bone": "LeftArm",
+            "source_delta_from_start": 2.021309773599317,
+            "target_delta_from_start": 2.021309773599317
+          },
+          {
+            "bone": "LeftFoot",
+            "source_delta_from_start": 1.2569404070384267,
+            "target_delta_from_start": 1.256940204269783
+          },
+          {
+            "bone": "LeftForeArm",
+            "source_delta_from_start": 0.5734984680087853,
+            "target_delta_from_start": 0.5734984680087853
+          },
+          {
+            "bone": "LeftHand",
+            "source_delta_from_start": 0.7306179604467308,
+            "target_delta_from_start": 0.7306186278408482
+          },
+          {
+            "bone": "LeftLeg",
+            "source_delta_from_start": 0.5393415106223646,
+            "target_delta_from_start": 0.5393415106223646
+          },
+          {
+            "bone": "LeftShoulder",
+            "source_delta_from_start": 0.4164072689112216,
+            "target_delta_from_start": 0.4164072689112216
+          },
+          {
+            "bone": "LeftToeBase",
+            "source_delta_from_start": 0.0202269564927365,
+            "target_delta_from_start": 0.020238740431429293
+          },
+          {
+            "bone": "LeftUpLeg",
+            "source_delta_from_start": 0.5481590874203198,
+            "target_delta_from_start": 0.5481590874203198
+          },
+          {
+            "bone": "RightArm",
+            "source_delta_from_start": 1.9470528883333273,
+            "target_delta_from_start": 1.9470528883333273
+          },
+          {
+            "bone": "RightFoot",
+            "source_delta_from_start": 0.6013243698101229,
+            "target_delta_from_start": 0.6013239672836302
+          },
+          {
+            "bone": "RightForeArm",
+            "source_delta_from_start": 0.7152525701876582,
+            "target_delta_from_start": 0.7152525701876582
+          },
+          {
+            "bone": "RightHand",
+            "source_delta_from_start": 2.0143840816701384,
+            "target_delta_from_start": 2.0143840816701384
+          },
+          {
+            "bone": "RightLeg",
+            "source_delta_from_start": 0.12042680371928419,
+            "target_delta_from_start": 0.12042680371928419
+          },
+          {
+            "bone": "RightShoulder",
+            "source_delta_from_start": 0.16164812360635952,
+            "target_delta_from_start": 0.16164812360635952
+          },
+          {
+            "bone": "RightToeBase",
+            "source_delta_from_start": 0.08118958297209952,
+            "target_delta_from_start": 0.08118958297209952
+          },
+          {
+            "bone": "RightUpLeg",
+            "source_delta_from_start": 1.424764087896097,
+            "target_delta_from_start": 1.424764087896097
+          },
+          {
+            "bone": "Spine",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Spine01",
+            "source_delta_from_start": 0.272517655601614,
+            "target_delta_from_start": 0.2725185331871864
+          },
+          {
+            "bone": "Spine02",
+            "source_delta_from_start": 0.23183041153567707,
+            "target_delta_from_start": 0.2318283500771715
+          },
+          {
+            "bone": "neck",
+            "source_delta_from_start": 0.9782284601417973,
+            "target_delta_from_start": 0.9782282064208533
+          }
+        ],
+        "frame": 54,
+        "source_motion_total": 17.01022881173296,
+        "target_motion_total": 17.010238992501943
+      },
+      {
+        "bones": [
+          {
+            "bone": "Head",
+            "source_delta_from_start": 0.525144691555068,
+            "target_delta_from_start": 0.525144691555068
+          },
+          {
+            "bone": "Hips",
+            "source_delta_from_start": 1.7306563899383471,
+            "target_delta_from_start": 1.7306565465231585
+          },
+          {
+            "bone": "LeftArm",
+            "source_delta_from_start": 1.8664726836661254,
+            "target_delta_from_start": 1.866472832019317
+          },
+          {
+            "bone": "LeftFoot",
+            "source_delta_from_start": 0.9420646497202632,
+            "target_delta_from_start": 0.9420649124077567
+          },
+          {
+            "bone": "LeftForeArm",
+            "source_delta_from_start": 0.5477828277307687,
+            "target_delta_from_start": 0.5477823869979707
+          },
+          {
+            "bone": "LeftHand",
+            "source_delta_from_start": 0.8171464841945898,
+            "target_delta_from_start": 0.8171470842908607
+          },
+          {
+            "bone": "LeftLeg",
+            "source_delta_from_start": 0.8420048524537451,
+            "target_delta_from_start": 0.8420048524537451
+          },
+          {
+            "bone": "LeftShoulder",
+            "source_delta_from_start": 0.28281334126175955,
+            "target_delta_from_start": 0.2828124954199247
+          },
+          {
+            "bone": "LeftToeBase",
+            "source_delta_from_start": 0.16935679257623268,
+            "target_delta_from_start": 0.16935679257623268
+          },
+          {
+            "bone": "LeftUpLeg",
+            "source_delta_from_start": 0.5922171235949232,
+            "target_delta_from_start": 0.5922167150644629
+          },
+          {
+            "bone": "RightArm",
+            "source_delta_from_start": 2.034991892297041,
+            "target_delta_from_start": 2.034991892297041
+          },
+          {
+            "bone": "RightFoot",
+            "source_delta_from_start": 0.6064347245838471,
+            "target_delta_from_start": 0.6064347245838471
+          },
+          {
+            "bone": "RightForeArm",
+            "source_delta_from_start": 0.7833769562245058,
+            "target_delta_from_start": 0.7833766439535191
+          },
+          {
+            "bone": "RightHand",
+            "source_delta_from_start": 1.6240983952494317,
+            "target_delta_from_start": 1.6240983952494317
+          },
+          {
+            "bone": "RightLeg",
+            "source_delta_from_start": 0.0834007064774204,
+            "target_delta_from_start": 0.08340356596885243
+          },
+          {
+            "bone": "RightShoulder",
+            "source_delta_from_start": 0.27302005271955976,
+            "target_delta_from_start": 0.27302005271955976
+          },
+          {
+            "bone": "RightToeBase",
+            "source_delta_from_start": 0.09760976864562089,
+            "target_delta_from_start": 0.09760976864562089
+          },
+          {
+            "bone": "RightUpLeg",
+            "source_delta_from_start": 1.6302883176060112,
+            "target_delta_from_start": 1.6302883176060112
+          },
+          {
+            "bone": "Spine",
+            "source_delta_from_start": 0.0,
+            "target_delta_from_start": 0.0
+          },
+          {
+            "bone": "Spine01",
+            "source_delta_from_start": 0.3447198849639763,
+            "target_delta_from_start": 0.3447198849639763
+          },
+          {
+            "bone": "Spine02",
+            "source_delta_from_start": 0.25572304622155134,
+            "target_delta_from_start": 0.25572211134340006
+          },
+          {
+            "bone": "neck",
+            "source_delta_from_start": 1.039433377456537,
+            "target_delta_from_start": 1.039433377456537
+          }
+        ],
+        "frame": 72,
+        "source_motion_total": 17.088756959137324,
+        "target_motion_total": 17.088758044096288
+      }
+    ],
+    "source_motion_peak": 17.088756959137324,
+    "status": "pass",
+    "target_motion_peak": 17.088758044096288
+  },
+  "target_armature": "Armature.001",
+  "target_armature_world_scale": [
+    0.040536195039749146,
+    0.040536195039749146,
+    0.040536195039749146
+  ],
+  "target_driven_bones": [
+    "Head",
+    "Hips",
+    "LeftArm",
+    "LeftFoot",
+    "LeftForeArm",
+    "LeftHand",
+    "LeftLeg",
+    "LeftShoulder",
+    "LeftToeBase",
+    "LeftUpLeg",
+    "RightArm",
+    "RightFoot",
+    "RightForeArm",
+    "RightHand",
+    "RightLeg",
+    "RightShoulder",
+    "RightToeBase",
+    "RightUpLeg",
+    "Spine",
+    "Spine01",
+    "Spine02",
+    "neck"
+  ],
+  "target_source_sha256": "6816E1DE377DA98AC3479F9837A0CA780C6884887225CAB684798C950C501992",
+  "unmapped_target_controls": {
+    "names": [
+      "head_end",
+      "headfront"
+    ],
+    "policy": "identity_local_transform_keys_at_start_and_end_inherit_animated_parent"
+  },
+  "warnings": []
+}

@@ -1,0 +1,1009 @@
+{
+  "slug": "zin_trolls_brute",
+  "started_at": "2026-10-18T17:58:30Z",
+  "steps": [
+    {
+      "result": {
+        "blend": "blender/checkpoints/rt_death_74f55ed388_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "zin_trolls_brute_attack",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 73,
+              "frame_end": 72,
+              "frame_start": 0,
+              "name": "zin_trolls_brute_death",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "zin_trolls_brute_idle",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_idle_checkpoint"
+    },
+    {
+      "result": {
+        "blend": "blender/checkpoints/move_root_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 25,
+              "frame_end": 24,
+              "frame_start": 0,
+              "name": "Armature|Move|baselayer_WORKING",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_move_checkpoint"
+    },
+    {
+      "result": {
+        "action": "zin_trolls_brute_idle",
+        "action_sha256": "C15AA1F08AB8CA12D29AB2D1884E6A54108C837880816BAC3A776ADE94046D8C",
+        "fps": 24,
+        "range": [
+          0,
+          97
+        ]
+      },
+      "step": "idle_source"
+    },
+    {
+      "result": {
+        "bones": [
+          "Head",
+          "Hips",
+          "LeftArm",
+          "LeftFoot",
+          "LeftForeArm",
+          "LeftHand",
+          "LeftLeg",
+          "LeftShoulder",
+          "LeftToeBase",
+          "LeftUpLeg",
+          "RightArm",
+          "RightFoot",
+          "RightForeArm",
+          "RightHand",
+          "RightLeg",
+          "RightShoulder",
+          "RightToeBase",
+          "RightUpLeg",
+          "Spine",
+          "Spine01",
+          "Spine02",
+          "head_end",
+          "headfront",
+          "neck"
+        ],
+        "max_cross_phase_rest_drift": 9.193420489814197e-07
+      },
+      "step": "rest_solve"
+    },
+    {
+      "result": {
+        "action": "Armature|Move|baselayer_WORKING",
+        "action_sha256": "7B510901C9808279E7DC6063B84F03A680A1A4355EB085376C5C19AF6BE4CF54",
+        "fps": 24,
+        "range": [
+          0,
+          24
+        ]
+      },
+      "step": "move_source"
+    },
+    {
+      "result": {
+        "action": "zin_trolls_brute_defend",
+        "anim": {
+          "bytes": 77395,
+          "name": "zin_trolls_brute_defend.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_trolls_brute\\export\\anim\\zin_trolls_brute_defend.anim",
+          "relative_path": "export/anim/zin_trolls_brute_defend.anim",
+          "sha256": "50A276C00E2645BD2DC2ED15CFA1A162D94603DFC15A6B95DACBF849881AEDF0"
+        },
+        "export": {
+          "action": "zin_trolls_brute_defend",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "ff5423b0f969455ca33c29f0ccd9a683",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/ff5423b0f969455ca33c29f0ccd9a683.result.json"
+          },
+          "anim": "export/anim/zin_trolls_brute_defend.anim",
+          "anim_bytes": 77395,
+          "anim_text": "export/anim/zin_trolls_brute_defend.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/defend_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_trolls_brute_defend",
+              "factor": 0.040536195039749146,
+              "keyframes": 6480,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.040536195039749146,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.040536195039749146,
+              0.040536195039749146,
+              0.040536195039749146
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.040536195039749146,
+                0.040536195039749146,
+                0.040536195039749146
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 97,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.6029419898986816,
+                    0.27326342463493347,
+                    0.23813650012016296,
+                    0.710689127445221
+                  ],
+                  "t": [
+                    -0.02589952014386654,
+                    6.582556247711182,
+                    0.17872709035873413
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.6029419898986816,
+                    0.27326342463493347,
+                    0.23813650012016296,
+                    0.710689127445221
+                  ],
+                  "t": [
+                    -0.02589952014386654,
+                    6.581497669219971,
+                    0.17872709035873413
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.6029419898986816,
+                  0.27326342463493347,
+                  0.23813650012016296,
+                  0.710689127445221
+                ],
+                "t": [
+                  -0.02589952014386654,
+                  6.582556247711182,
+                  0.17872709035873413
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "DE89BA93DEB31E478F7CEB1E51176FF8209BE9BC170F9D7BF25C01DDCCA81662",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 2,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 185,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "LeftArm": 0.7465409636497498,
+            "LeftForeArm": 1.186361938714981,
+            "LeftHand": 0.1711001694202423,
+            "RightArm": 0.7728820899501443,
+            "RightForeArm": 1.1777736246585846,
+            "RightHand": 0.17063170671463013,
+            "Spine": 0.05095638334751129,
+            "Spine01": 0.08459441363811493,
+            "Spine02": 0.0859544575214386,
+            "neck": 0.12174298008903861
+          },
+          "checkpoint": "blender/checkpoints/defend_pre_export.blend",
+          "frame_range": [
+            0,
+            97
+          ],
+          "motion_bone_chain": [],
+          "output_sha256": "54C0A054CCDFF32BF3D5E87B993D5BF0FD9039DBCD484087DD3FA588EA873DEA",
+          "phase_frames": {
+            "guard_hold": 48,
+            "guard_release": 78,
+            "guard_start": 24
+          },
+          "semantic_role": "defend",
+          "source_fps": 24,
+          "target_action_sha256": "A0A5DA21C34B23E5DD386CEBA5FDA3A5E240B97D641BCCC6E1BCD02CFD751275"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/defend_f000_front.png",
+              "blender/previews/defend_f000_left.png"
+            ]
+          },
+          {
+            "frame": 48,
+            "previews": [
+              "blender/previews/defend_f048_front.png",
+              "blender/previews/defend_f048_left.png"
+            ]
+          },
+          {
+            "frame": 97,
+            "previews": [
+              "blender/previews/defend_f097_front.png",
+              "blender/previews/defend_f097_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "c5c93e0de2024fa3813f36232d579940",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/c5c93e0de2024fa3813f36232d579940.result.json"
+          },
+          "anim": "export/anim/zin_trolls_brute_defend.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                4.108190536499023,
+                3.0230844020843506,
+                11.550501823425293
+              ],
+              "bounds_min": [
+                -3.668046474456787,
+                -3.649317741394043,
+                -2.401880919933319e-06
+              ],
+              "dimensions": [
+                7.7762370109558105,
+                6.672402381896973,
+                11.550504684448242
+              ],
+              "frame": 1,
+              "ground_contact_z": -2.401880919933319e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                5.616991996765137,
+                3.672454833984375,
+                11.62893295288086
+              ],
+              "bounds_min": [
+                -4.177125930786133,
+                -4.062401294708252,
+                -3.3443793654441833e-06
+              ],
+              "dimensions": [
+                9.79411792755127,
+                7.734856128692627,
+                11.628936767578125
+              ],
+              "frame": 25,
+              "ground_contact_z": -3.3443793654441833e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                3.665616989135742,
+                3.774390697479248,
+                11.341323852539062
+              ],
+              "bounds_min": [
+                -5.345731735229492,
+                -4.5421552658081055,
+                -3.6926940083503723e-06
+              ],
+              "dimensions": [
+                9.011348724365234,
+                8.316545486450195,
+                11.341327667236328
+              ],
+              "frame": 50,
+              "ground_contact_z": -3.6926940083503723e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.43708872795105,
+                3.19041109085083,
+                11.492501258850098
+              ],
+              "bounds_min": [
+                -5.6070051193237305,
+                -5.776185035705566,
+                -5.047768354415894e-07
+              ],
+              "dimensions": [
+                8.04409408569336,
+                8.966596603393555,
+                11.492502212524414
+              ],
+              "frame": 74,
+              "ground_contact_z": -5.047768354415894e-07,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                4.107781410217285,
+                3.0230634212493896,
+                11.550643920898438
+              ],
+              "bounds_min": [
+                -3.6684975624084473,
+                -3.6493077278137207,
+                -1.6763806343078613e-08
+              ],
+              "dimensions": [
+                7.776278972625732,
+                6.672370910644531,
+                11.550643920898438
+              ],
+              "frame": 98,
+              "ground_contact_z": -1.6763806343078613e-08,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 1842,
+            "bounds_max": [
+              5.086521148681641,
+              2.0758769512176514,
+              11.762918472290039
+            ],
+            "bounds_min": [
+              -5.084177494049072,
+              -2.0745673179626465,
+              0.0
+            ],
+            "branched_boundary_component_count": 251,
+            "closed_boundary_component_count": 1591,
+            "degenerate_faces": 0,
+            "dimensions": [
+              10.170698165893555,
+              4.150444030761719,
+              11.762918472290039
+            ],
+            "loose_boundary_edges": 16539,
+            "max_boundary_component_edges": 71,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 20999,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 371,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 75,
+                  "branched_boundary_component_count": 17,
+                  "closed_boundary_component_count": 58,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 371,
+                  "max_boundary_component_edges": 12,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 20997,
+                  "vertices_after_position_weld": 10247,
+                  "vertices_before": 20475,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 20999,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 20475,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_trolls_brute.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 20999,
+              "vertices": 20475
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_001_front.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_001_left.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_025_front.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_025_left.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_025_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_050_front.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_050_left.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_050_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_074_front.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_074_left.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_074_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_098_front.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_098_left.png",
+            "blender/previews/reimport_zin_trolls_brute_defend_frame_098_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_trolls_brute_defend.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/defend_pre_export.blend"
+      },
+      "step": "defend_export"
+    },
+    {
+      "result": {
+        "action": "zin_trolls_brute_retreat",
+        "anim": {
+          "bytes": 21331,
+          "name": "zin_trolls_brute_retreat.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_trolls_brute\\export\\anim\\zin_trolls_brute_retreat.anim",
+          "relative_path": "export/anim/zin_trolls_brute_retreat.anim",
+          "sha256": "FE50DA9127D7644435333B3D18C3213E43D87FB943EDD32AB23D3E2D7272EA7D"
+        },
+        "export": {
+          "action": "zin_trolls_brute_retreat",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "462d83687aba45beab0bed841818aff2",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/462d83687aba45beab0bed841818aff2.result.json"
+          },
+          "anim": "export/anim/zin_trolls_brute_retreat.anim",
+          "anim_bytes": 21331,
+          "anim_text": "export/anim/zin_trolls_brute_retreat.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/retreat_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_trolls_brute_retreat",
+              "factor": 0.040536195039749146,
+              "keyframes": 400,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.040536195039749146,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.040536195039749146,
+              0.040536195039749146,
+              0.040536195039749146
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.040536195039749146,
+                0.040536195039749146,
+                0.040536195039749146
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 24,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.6121929287910461,
+                    0.27012282609939575,
+                    0.24169297516345978,
+                    0.7027360200881958
+                  ],
+                  "t": [
+                    -0.029314160346984863,
+                    7.122583866119385,
+                    0.2409188449382782
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.6121929287910461,
+                    0.27012282609939575,
+                    0.24169297516345978,
+                    0.7027360200881958
+                  ],
+                  "t": [
+                    -0.029314160346984863,
+                    7.121525287628174,
+                    0.2409188449382782
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.6121929287910461,
+                  0.27012282609939575,
+                  0.24169297516345978,
+                  0.7027360200881958
+                ],
+                "t": [
+                  -0.029314160346984863,
+                  7.122583866119385,
+                  0.2409188449382782
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "DAE0401457232CEF455BD542CD6B8543B5EBD80C5CE8C090E5E4BCFAA28F9995",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 2,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 50,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "Head": 0.26239246129989624,
+            "Spine": 0.1838780790567398,
+            "Spine01": 0.18384307622909546,
+            "Spine02": 0.15483026206493378,
+            "neck": 0.2419000267982483
+          },
+          "checkpoint": "blender/checkpoints/retreat_pre_export.blend",
+          "frame_range": [
+            0,
+            24
+          ],
+          "motion_bone_chain": [
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "neck",
+            "Head"
+          ],
+          "output_sha256": "D3EA593B3174C536D0E98AC65CCC29509995179AF97E45884363D7B95684979B",
+          "phase_frames": {
+            "disengage": 6,
+            "recovery": 18,
+            "withdrawal": 12
+          },
+          "semantic_role": "retreat",
+          "source_fps": 24,
+          "target_action_sha256": "3DA63057770293547DE607200112BE3096B854A4857C111079A510BD5FBE92A1"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/retreat_f000_front.png",
+              "blender/previews/retreat_f000_left.png"
+            ]
+          },
+          {
+            "frame": 6,
+            "previews": [
+              "blender/previews/retreat_f006_front.png",
+              "blender/previews/retreat_f006_left.png"
+            ]
+          },
+          {
+            "frame": 12,
+            "previews": [
+              "blender/previews/retreat_f012_front.png",
+              "blender/previews/retreat_f012_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "9b30d86830da4aa3970d5301c9a50743",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/9b30d86830da4aa3970d5301c9a50743.result.json"
+          },
+          "anim": "export/anim/zin_trolls_brute_retreat.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                4.522056579589844,
+                2.495105028152466,
+                11.946249008178711
+              ],
+              "bounds_min": [
+                -4.214311599731445,
+                -2.9403867721557617,
+                7.450580596923828e-06
+              ],
+              "dimensions": [
+                8.736368179321289,
+                5.435491561889648,
+                11.94624137878418
+              ],
+              "frame": 1,
+              "ground_contact_z": 7.450580596923828e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                5.238085746765137,
+                2.9846668243408203,
+                11.508710861206055
+              ],
+              "bounds_min": [
+                -3.6643874645233154,
+                -3.7836546897888184,
+                -4.043802618980408e-06
+              ],
+              "dimensions": [
+                8.902473449707031,
+                6.768321514129639,
+                11.50871467590332
+              ],
+              "frame": 7,
+              "ground_contact_z": -4.043802618980408e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                5.473095893859863,
+                4.219576835632324,
+                11.001668930053711
+              ],
+              "bounds_min": [
+                -3.352386474609375,
+                -5.263534069061279,
+                -4.902482032775879e-06
+              ],
+              "dimensions": [
+                8.825482368469238,
+                9.483110427856445,
+                11.001673698425293
+              ],
+              "frame": 13,
+              "ground_contact_z": -4.902482032775879e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                5.238085746765137,
+                2.9846668243408203,
+                11.508710861206055
+              ],
+              "bounds_min": [
+                -3.6643874645233154,
+                -3.7836546897888184,
+                -4.043802618980408e-06
+              ],
+              "dimensions": [
+                8.902473449707031,
+                6.768321514129639,
+                11.50871467590332
+              ],
+              "frame": 19,
+              "ground_contact_z": -4.043802618980408e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                4.522056579589844,
+                2.495105028152466,
+                11.946249008178711
+              ],
+              "bounds_min": [
+                -4.214311599731445,
+                -2.9403867721557617,
+                7.450580596923828e-06
+              ],
+              "dimensions": [
+                8.736368179321289,
+                5.435491561889648,
+                11.94624137878418
+              ],
+              "frame": 25,
+              "ground_contact_z": 7.450580596923828e-06,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 1842,
+            "bounds_max": [
+              5.086521148681641,
+              2.0758769512176514,
+              11.762918472290039
+            ],
+            "bounds_min": [
+              -5.084177494049072,
+              -2.0745673179626465,
+              0.0
+            ],
+            "branched_boundary_component_count": 251,
+            "closed_boundary_component_count": 1591,
+            "degenerate_faces": 0,
+            "dimensions": [
+              10.170698165893555,
+              4.150444030761719,
+              11.762918472290039
+            ],
+            "loose_boundary_edges": 16539,
+            "max_boundary_component_edges": 71,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 20999,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 371,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 75,
+                  "branched_boundary_component_count": 17,
+                  "closed_boundary_component_count": 58,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 371,
+                  "max_boundary_component_edges": 12,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 20997,
+                  "vertices_after_position_weld": 10247,
+                  "vertices_before": 20475,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 20999,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 20475,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_trolls_brute.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 20999,
+              "vertices": 20475
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_001_front.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_001_left.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_007_front.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_007_left.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_007_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_013_front.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_013_left.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_013_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_019_front.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_019_left.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_019_three_quarter.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_025_front.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_025_left.png",
+            "blender/previews/reimport_zin_trolls_brute_retreat_frame_025_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_trolls_brute_retreat.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/retreat_pre_export.blend"
+      },
+      "step": "retreat_export"
+    }
+  ]
+}

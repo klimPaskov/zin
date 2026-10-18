@@ -1,0 +1,94 @@
+{
+  "blend": "blender/checkpoints/attack_pre_export.blend",
+  "conservative_triangle_index_entry_budget": 65535,
+  "export_transforms": {
+    "animation_translation_channels": {
+      "action": "Armature|Attack|baselayer_WORKING",
+      "factor": 0.040536195039749146,
+      "keyframes": 5610,
+      "location_fcurves": 66,
+      "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+    },
+    "armature": "Armature.001",
+    "armature_data_scale_factor": 0.040536195039749146,
+    "armature_world_scale_after": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armature_world_scale_before": [
+      0.040536195039749146,
+      0.040536195039749146,
+      0.040536195039749146
+    ],
+    "mesh_world_scales_after": {
+      "char1.001": [
+        0.040536195039749146,
+        0.040536195039749146,
+        0.040536195039749146
+      ]
+    },
+    "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+  },
+  "exported_checkpoint": "blender/checkpoints/06_exported.blend",
+  "geometry": {
+    "boundary_component_count": 76,
+    "bounds_max": [
+      5.086521148681641,
+      2.0758769512176514,
+      11.762918472290039
+    ],
+    "bounds_min": [
+      -5.084177494049072,
+      -2.0745673179626465,
+      0.0
+    ],
+    "branched_boundary_component_count": 16,
+    "closed_boundary_component_count": 60,
+    "degenerate_faces": 0,
+    "dimensions": [
+      10.170698165893555,
+      4.150444030761719,
+      11.762918472290039
+    ],
+    "loose_boundary_edges": 365,
+    "max_boundary_component_edges": 10,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 20999,
+    "triangles": 20999,
+    "uv_layers": {
+      "char1.001": [
+        "UVMap"
+      ]
+    },
+    "vertices": 10247,
+    "zero_length_normals": 0
+  },
+  "locator_coordinate_policy": "bone_head_local_rest_export_with_uniform_rig_scale_conversion",
+  "locators": [],
+  "maximum_stream_triangle_indices": 62997,
+  "maximum_stream_vertices": 20475,
+  "mesh": "export/mesh/zin_trolls_brute.mesh",
+  "mesh_bytes": 1892694,
+  "mesh_streams": [
+    {
+      "maximum_index": 20474,
+      "mesh_index": 0,
+      "minimum_index": 0,
+      "object_name": "output_unwrapped.002",
+      "position_components": 61425,
+      "stream_index": 0,
+      "triangle_indices": 62997,
+      "triangles": 20999,
+      "vertices": 20475
+    }
+  ],
+  "mesh_text": "export/mesh/zin_trolls_brute.txt",
+  "selected_export_objects": [
+    "char1.001"
+  ],
+  "vertex_stream_limit": 65535,
+  "warnings": []
+}

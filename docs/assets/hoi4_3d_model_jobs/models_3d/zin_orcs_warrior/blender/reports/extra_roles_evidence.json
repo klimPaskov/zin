@@ -1,0 +1,1009 @@
+{
+  "slug": "zin_orcs_warrior",
+  "started_at": "2026-10-18T17:56:03Z",
+  "steps": [
+    {
+      "result": {
+        "blend": "blender/checkpoints/rt_death_e5dd87663e_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "zin_orcs_warrior_attack",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 73,
+              "frame_end": 72,
+              "frame_start": 0,
+              "name": "zin_orcs_warrior_death",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "zin_orcs_warrior_idle",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_idle_checkpoint"
+    },
+    {
+      "result": {
+        "blend": "blender/checkpoints/move_root_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 25,
+              "frame_end": 24,
+              "frame_start": 0,
+              "name": "Armature|Move|baselayer_WORKING",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_move_checkpoint"
+    },
+    {
+      "result": {
+        "action": "zin_orcs_warrior_idle",
+        "action_sha256": "09EE23777646C4AEA4F4C44835E989D31B30EA81DA02681453369B35D4DE52A8",
+        "fps": 24,
+        "range": [
+          0,
+          97
+        ]
+      },
+      "step": "idle_source"
+    },
+    {
+      "result": {
+        "bones": [
+          "Head",
+          "Hips",
+          "LeftArm",
+          "LeftFoot",
+          "LeftForeArm",
+          "LeftHand",
+          "LeftLeg",
+          "LeftShoulder",
+          "LeftToeBase",
+          "LeftUpLeg",
+          "RightArm",
+          "RightFoot",
+          "RightForeArm",
+          "RightHand",
+          "RightLeg",
+          "RightShoulder",
+          "RightToeBase",
+          "RightUpLeg",
+          "Spine",
+          "Spine01",
+          "Spine02",
+          "head_end",
+          "headfront",
+          "neck"
+        ],
+        "max_cross_phase_rest_drift": 7.67571140381125e-07
+      },
+      "step": "rest_solve"
+    },
+    {
+      "result": {
+        "action": "Armature|Move|baselayer_WORKING",
+        "action_sha256": "929F7FD410D9FA1FB8872FD7F3DF6456AF291FB0F9E65F2D433697110122F3C2",
+        "fps": 24,
+        "range": [
+          0,
+          24
+        ]
+      },
+      "step": "move_source"
+    },
+    {
+      "result": {
+        "action": "zin_orcs_warrior_defend",
+        "anim": {
+          "bytes": 77395,
+          "name": "zin_orcs_warrior_defend.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\export\\anim\\zin_orcs_warrior_defend.anim",
+          "relative_path": "export/anim/zin_orcs_warrior_defend.anim",
+          "sha256": "763B8214C749BE386A674CA408458AF070B585B580F5B1F98DF54C831D32CF51"
+        },
+        "export": {
+          "action": "zin_orcs_warrior_defend",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "0f0ecb8361124d40839063b63cf8df5a",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/0f0ecb8361124d40839063b63cf8df5a.result.json"
+          },
+          "anim": "export/anim/zin_orcs_warrior_defend.anim",
+          "anim_bytes": 77395,
+          "anim_text": "export/anim/zin_orcs_warrior_defend.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/defend_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_orcs_warrior_defend",
+              "factor": 0.03862284496426582,
+              "keyframes": 6480,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.03862284496426582,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.03862284496426582,
+              0.03862284496426582,
+              0.03862284496426582
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.03862284496426582,
+                0.03862284496426582,
+                0.03862284496426582
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 97,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.6213710308074951,
+                    0.275614857673645,
+                    0.24687720835208893,
+                    0.6906418204307556
+                  ],
+                  "t": [
+                    -0.0163067989051342,
+                    4.09982967376709,
+                    0.01405816338956356
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.6213710308074951,
+                    0.275614857673645,
+                    0.24687720835208893,
+                    0.6906418204307556
+                  ],
+                  "t": [
+                    -0.0163067989051342,
+                    4.094624042510986,
+                    0.01405816338956356
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.6213710308074951,
+                  0.275614857673645,
+                  0.24687720835208893,
+                  0.6906418204307556
+                ],
+                "t": [
+                  -0.0163067989051342,
+                  4.09982967376709,
+                  0.01405816338956356
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "551B025B9F0C1B5198A9BAB4EFAE962C7DF9D4241193F6E0366688245AA745E9",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 1,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 98,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "LeftArm": 0.781838446855545,
+            "LeftForeArm": 1.178199678659439,
+            "LeftHand": 0.181895911693573,
+            "RightArm": 0.820009171962738,
+            "RightForeArm": 1.205009549856186,
+            "RightHand": 0.17598649859428406,
+            "Spine": 0.05096866190433502,
+            "Spine01": 0.08458513021469116,
+            "Spine02": 0.08663592487573624,
+            "neck": 0.12026041001081467
+          },
+          "checkpoint": "blender/checkpoints/defend_pre_export.blend",
+          "frame_range": [
+            0,
+            97
+          ],
+          "motion_bone_chain": [],
+          "output_sha256": "8D7206541BD54E2C07909FDC724E52974F17FCB1167942795095B4686125572E",
+          "phase_frames": {
+            "guard_hold": 48,
+            "guard_release": 78,
+            "guard_start": 24
+          },
+          "semantic_role": "defend",
+          "source_fps": 24,
+          "target_action_sha256": "4ED949152DF85FA7FEB2F179576B49B38E1746BFE8181C89D2FADA21FA7A0217"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/defend_f000_front.png",
+              "blender/previews/defend_f000_left.png"
+            ]
+          },
+          {
+            "frame": 48,
+            "previews": [
+              "blender/previews/defend_f048_front.png",
+              "blender/previews/defend_f048_left.png"
+            ]
+          },
+          {
+            "frame": 97,
+            "previews": [
+              "blender/previews/defend_f097_front.png",
+              "blender/previews/defend_f097_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "0edee90d35814dc4a9115345a53bef0a",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/0edee90d35814dc4a9115345a53bef0a.result.json"
+          },
+          "anim": "export/anim/zin_orcs_warrior_defend.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                1.9707424640655518,
+                1.5347696542739868,
+                7.141444206237793
+              ],
+              "bounds_min": [
+                -1.9748270511627197,
+                -2.056971311569214,
+                -7.487833499908447e-07
+              ],
+              "dimensions": [
+                3.9455695152282715,
+                3.5917410850524902,
+                7.141445159912109
+              ],
+              "frame": 1,
+              "ground_contact_z": -7.487833499908447e-07,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.7742538452148438,
+                1.4942147731781006,
+                7.0727925300598145
+              ],
+              "bounds_min": [
+                -2.011826753616333,
+                -2.1354458332061768,
+                -5.505979061126709e-06
+              ],
+              "dimensions": [
+                4.786080360412598,
+                3.6296606063842773,
+                7.072798252105713
+              ],
+              "frame": 25,
+              "ground_contact_z": -5.505979061126709e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.8168331384658813,
+                1.5616456270217896,
+                6.978623390197754
+              ],
+              "bounds_min": [
+                -2.7345876693725586,
+                -2.4011168479919434,
+                -1.8402934074401855e-06
+              ],
+              "dimensions": [
+                4.55142068862915,
+                3.9627623558044434,
+                6.978625297546387
+              ],
+              "frame": 50,
+              "ground_contact_z": -1.8402934074401855e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.4584834575653076,
+                1.463355541229248,
+                7.13306999206543
+              ],
+              "bounds_min": [
+                -2.855255365371704,
+                -2.9542317390441895,
+                -1.5832483768463135e-06
+              ],
+              "dimensions": [
+                4.313738822937012,
+                4.4175872802734375,
+                7.133071422576904
+              ],
+              "frame": 74,
+              "ground_contact_z": -1.5832483768463135e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.9705326557159424,
+                1.534684658050537,
+                7.1415324211120605
+              ],
+              "bounds_min": [
+                -1.9750633239746094,
+                -2.0569746494293213,
+                -1.7695128917694092e-07
+              ],
+              "dimensions": [
+                3.9455959796905518,
+                3.5916593074798584,
+                7.1415324211120605
+              ],
+              "frame": 98,
+              "ground_contact_z": -1.7695128917694092e-07,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 7021,
+            "bounds_max": [
+              2.629110336303711,
+              1.0374785661697388,
+              7.351823806762695
+            ],
+            "bounds_min": [
+              -2.6312506198883057,
+              -1.0425350666046143,
+              0.0
+            ],
+            "branched_boundary_component_count": 450,
+            "closed_boundary_component_count": 6571,
+            "degenerate_faces": 0,
+            "dimensions": [
+              5.2603607177734375,
+              2.0800137519836426,
+              7.351823806762695
+            ],
+            "loose_boundary_edges": 33512,
+            "max_boundary_component_edges": 61,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 21000,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 468,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 122,
+                  "branched_boundary_component_count": 3,
+                  "closed_boundary_component_count": 119,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 468,
+                  "max_boundary_component_edges": 10,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 21000,
+                  "vertices_after_position_weld": 10453,
+                  "vertices_before": 34161,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 21000,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 34161,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_orcs_warrior.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 21000,
+              "vertices": 34161
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_001_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_001_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_025_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_025_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_025_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_050_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_050_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_050_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_074_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_074_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_074_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_098_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_098_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_defend_frame_098_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_orcs_warrior_defend.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/defend_pre_export.blend"
+      },
+      "step": "defend_export"
+    },
+    {
+      "result": {
+        "action": "zin_orcs_warrior_retreat",
+        "anim": {
+          "bytes": 21331,
+          "name": "zin_orcs_warrior_retreat.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_orcs_warrior\\export\\anim\\zin_orcs_warrior_retreat.anim",
+          "relative_path": "export/anim/zin_orcs_warrior_retreat.anim",
+          "sha256": "318F1FF3C0EDA32A1E950A83DD88966743B5441B29DDEB0AF89991D40ACA80F8"
+        },
+        "export": {
+          "action": "zin_orcs_warrior_retreat",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "8c13aa43345b403db792dc0298a483e8",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/8c13aa43345b403db792dc0298a483e8.result.json"
+          },
+          "anim": "export/anim/zin_orcs_warrior_retreat.anim",
+          "anim_bytes": 21331,
+          "anim_text": "export/anim/zin_orcs_warrior_retreat.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/retreat_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_orcs_warrior_retreat",
+              "factor": 0.03862284496426582,
+              "keyframes": 400,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.03862284496426582,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.03862284496426582,
+              0.03862284496426582,
+              0.03862284496426582
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.03862284496426582,
+                0.03862284496426582,
+                0.03862284496426582
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 24,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.630358099937439,
+                    0.272359699010849,
+                    0.2504637837409973,
+                    0.6824491024017334
+                  ],
+                  "t": [
+                    -0.01054640207439661,
+                    4.236360549926758,
+                    0.006130759604275227
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.630358099937439,
+                    0.272359699010849,
+                    0.2504637837409973,
+                    0.6824491024017334
+                  ],
+                  "t": [
+                    -0.01054640207439661,
+                    4.231154918670654,
+                    0.006130759604275227
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.630358099937439,
+                  0.272359699010849,
+                  0.2504637837409973,
+                  0.6824491024017334
+                ],
+                "t": [
+                  -0.01054640207439661,
+                  4.236360549926758,
+                  0.006130759604275227
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "E348AB7FCA41FE59465C7338C38476180B6F5234121964C67D98913D7E6EE40D",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 1,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 25,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "Head": 0.2634744346141815,
+            "Spine": 0.18596893548965454,
+            "Spine01": 0.1859101802110672,
+            "Spine02": 0.15545378625392914,
+            "neck": 0.2422789018601179
+          },
+          "checkpoint": "blender/checkpoints/retreat_pre_export.blend",
+          "frame_range": [
+            0,
+            24
+          ],
+          "motion_bone_chain": [
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "neck",
+            "Head"
+          ],
+          "output_sha256": "6C0EC4B330714DBFB9C9B94B7817C0CCC0F1E86069E40732FE9F1581618021F2",
+          "phase_frames": {
+            "disengage": 6,
+            "recovery": 18,
+            "withdrawal": 12
+          },
+          "semantic_role": "retreat",
+          "source_fps": 24,
+          "target_action_sha256": "C3EB8C445B5D8DF6AD16C43B8CA3CE05D8C62C0C09E38695CF1F8749884D5853"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/retreat_f000_front.png",
+              "blender/previews/retreat_f000_left.png"
+            ]
+          },
+          {
+            "frame": 6,
+            "previews": [
+              "blender/previews/retreat_f006_front.png",
+              "blender/previews/retreat_f006_left.png"
+            ]
+          },
+          {
+            "frame": 12,
+            "previews": [
+              "blender/previews/retreat_f012_front.png",
+              "blender/previews/retreat_f012_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "c1dbb87fca064bd1bd6d617d2c3b3747",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/c1dbb87fca064bd1bd6d617d2c3b3747.result.json"
+          },
+          "anim": "export/anim/zin_orcs_warrior_retreat.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                2.1519393920898438,
+                1.0741164684295654,
+                7.055122375488281
+              ],
+              "bounds_min": [
+                -3.0156798362731934,
+                -1.455127239227295,
+                -5.029141902923584e-06
+              ],
+              "dimensions": [
+                5.167619228363037,
+                2.5292437076568604,
+                7.0551276206970215
+              ],
+              "frame": 1,
+              "ground_contact_z": -5.029141902923584e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.5290675163269043,
+                1.3366119861602783,
+                7.029171466827393
+              ],
+              "bounds_min": [
+                -2.0639703273773193,
+                -2.173903465270996,
+                2.5704503059387207e-07
+              ],
+              "dimensions": [
+                4.5930376052856445,
+                3.5105154514312744,
+                7.029170989990234
+              ],
+              "frame": 7,
+              "ground_contact_z": 2.5704503059387207e-07,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.657215118408203,
+                2.040808916091919,
+                7.097789287567139
+              ],
+              "bounds_min": [
+                -1.7792584896087646,
+                -3.0769829750061035,
+                -1.6205012798309326e-06
+              ],
+              "dimensions": [
+                4.436473846435547,
+                5.117792129516602,
+                7.097790718078613
+              ],
+              "frame": 13,
+              "ground_contact_z": -1.6205012798309326e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.5290675163269043,
+                1.3366119861602783,
+                7.029171466827393
+              ],
+              "bounds_min": [
+                -2.0639703273773193,
+                -2.173903465270996,
+                2.5704503059387207e-07
+              ],
+              "dimensions": [
+                4.5930376052856445,
+                3.5105154514312744,
+                7.029170989990234
+              ],
+              "frame": 19,
+              "ground_contact_z": 2.5704503059387207e-07,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.1519393920898438,
+                1.0741164684295654,
+                7.055122375488281
+              ],
+              "bounds_min": [
+                -3.0156798362731934,
+                -1.455127239227295,
+                -5.029141902923584e-06
+              ],
+              "dimensions": [
+                5.167619228363037,
+                2.5292437076568604,
+                7.0551276206970215
+              ],
+              "frame": 25,
+              "ground_contact_z": -5.029141902923584e-06,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 7021,
+            "bounds_max": [
+              2.629110336303711,
+              1.0374785661697388,
+              7.351823806762695
+            ],
+            "bounds_min": [
+              -2.6312506198883057,
+              -1.0425350666046143,
+              0.0
+            ],
+            "branched_boundary_component_count": 450,
+            "closed_boundary_component_count": 6571,
+            "degenerate_faces": 0,
+            "dimensions": [
+              5.2603607177734375,
+              2.0800137519836426,
+              7.351823806762695
+            ],
+            "loose_boundary_edges": 33512,
+            "max_boundary_component_edges": 61,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 21000,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 468,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 122,
+                  "branched_boundary_component_count": 3,
+                  "closed_boundary_component_count": 119,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 468,
+                  "max_boundary_component_edges": 10,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 21000,
+                  "vertices_after_position_weld": 10453,
+                  "vertices_before": 34161,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 21000,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 34161,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_orcs_warrior.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 21000,
+              "vertices": 34161
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_001_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_001_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_007_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_007_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_007_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_013_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_013_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_013_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_019_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_019_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_019_three_quarter.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_025_front.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_025_left.png",
+            "blender/previews/reimport_zin_orcs_warrior_retreat_frame_025_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_orcs_warrior_retreat.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/retreat_pre_export.blend"
+      },
+      "step": "retreat_export"
+    }
+  ]
+}

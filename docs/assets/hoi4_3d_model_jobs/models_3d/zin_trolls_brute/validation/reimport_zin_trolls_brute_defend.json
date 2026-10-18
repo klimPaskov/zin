@@ -1,0 +1,239 @@
+{
+  "actions": [
+    "io_pdx_rigAction"
+  ],
+  "anim": "export/anim/zin_trolls_brute_defend.anim",
+  "animation_bounds": [
+    {
+      "bounds_max": [
+        4.108190536499023,
+        3.0230844020843506,
+        11.550501823425293
+      ],
+      "bounds_min": [
+        -3.668046474456787,
+        -3.649317741394043,
+        -2.401880919933319e-06
+      ],
+      "dimensions": [
+        7.7762370109558105,
+        6.672402381896973,
+        11.550504684448242
+      ],
+      "frame": 1,
+      "ground_contact_z": -2.401880919933319e-06,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        5.616991996765137,
+        3.672454833984375,
+        11.62893295288086
+      ],
+      "bounds_min": [
+        -4.177125930786133,
+        -4.062401294708252,
+        -3.3443793654441833e-06
+      ],
+      "dimensions": [
+        9.79411792755127,
+        7.734856128692627,
+        11.628936767578125
+      ],
+      "frame": 25,
+      "ground_contact_z": -3.3443793654441833e-06,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        3.665616989135742,
+        3.774390697479248,
+        11.341323852539062
+      ],
+      "bounds_min": [
+        -5.345731735229492,
+        -4.5421552658081055,
+        -3.6926940083503723e-06
+      ],
+      "dimensions": [
+        9.011348724365234,
+        8.316545486450195,
+        11.341327667236328
+      ],
+      "frame": 50,
+      "ground_contact_z": -3.6926940083503723e-06,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        2.43708872795105,
+        3.19041109085083,
+        11.492501258850098
+      ],
+      "bounds_min": [
+        -5.6070051193237305,
+        -5.776185035705566,
+        -5.047768354415894e-07
+      ],
+      "dimensions": [
+        8.04409408569336,
+        8.966596603393555,
+        11.492502212524414
+      ],
+      "frame": 74,
+      "ground_contact_z": -5.047768354415894e-07,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        4.107781410217285,
+        3.0230634212493896,
+        11.550643920898438
+      ],
+      "bounds_min": [
+        -3.6684975624084473,
+        -3.6493077278137207,
+        -1.6763806343078613e-08
+      ],
+      "dimensions": [
+        7.776278972625732,
+        6.672370910644531,
+        11.550643920898438
+      ],
+      "frame": 98,
+      "ground_contact_z": -1.6763806343078613e-08,
+      "locators": []
+    }
+  ],
+  "armatures": [
+    {
+      "bones": 24,
+      "name": "io_pdx_rig"
+    }
+  ],
+  "geometry": {
+    "boundary_component_count": 1842,
+    "bounds_max": [
+      5.086521148681641,
+      2.0758769512176514,
+      11.762918472290039
+    ],
+    "bounds_min": [
+      -5.084177494049072,
+      -2.0745673179626465,
+      0.0
+    ],
+    "branched_boundary_component_count": 251,
+    "closed_boundary_component_count": 1591,
+    "degenerate_faces": 0,
+    "dimensions": [
+      10.170698165893555,
+      4.150444030761719,
+      11.762918472290039
+    ],
+    "loose_boundary_edges": 16539,
+    "max_boundary_component_edges": 71,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 20999,
+    "position_welded_topology": {
+      "degenerate_faces": 0,
+      "loose_boundary_edges": 371,
+      "non_manifold_edges": 0,
+      "objects": [
+        {
+          "boundary_component_count": 75,
+          "branched_boundary_component_count": 17,
+          "closed_boundary_component_count": 58,
+          "degenerate_faces": 0,
+          "loose_boundary_edges": 371,
+          "max_boundary_component_edges": 12,
+          "non_manifold_edges": 0,
+          "object": "output_unwrapped.002",
+          "triangles": 20997,
+          "vertices_after_position_weld": 10247,
+          "vertices_before": 20475,
+          "weld_distance": 1e-06,
+          "zero_length_normals": 0
+        }
+      ],
+      "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+      "weld_distance": 1e-06
+    },
+    "triangles": 20999,
+    "uv_layers": {
+      "output_unwrapped.002": [
+        "map1"
+      ]
+    },
+    "vertices": 20475,
+    "zero_length_normals": 0
+  },
+  "locators": [],
+  "mesh": "export/mesh/zin_trolls_brute.mesh",
+  "meshes": [
+    {
+      "materials": [
+        "PDXmat_output_unwrapped.002"
+      ],
+      "name": "output_unwrapped.002",
+      "polygons": 20999,
+      "vertices": 20475
+    }
+  ],
+  "objects": [
+    {
+      "name": "io_pdx_rig",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "ARMATURE"
+    },
+    {
+      "name": "output_unwrapped.002",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "MESH"
+    }
+  ],
+  "previews": [
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_001_front.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_001_left.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_001_three_quarter.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_025_front.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_025_left.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_025_three_quarter.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_050_front.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_050_left.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_050_three_quarter.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_074_front.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_074_left.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_074_three_quarter.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_098_front.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_098_left.png",
+    "blender/previews/reimport_zin_trolls_brute_defend_frame_098_three_quarter.png"
+  ],
+  "proof_blend": "blender/checkpoints/reimport_zin_trolls_brute_defend.blend",
+  "runtime_texture_staging": [
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_0.dds",
+      "staged": "export/mesh/texture_0.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_specular.dds",
+      "staged": "export/mesh/texture_specular.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_normal.dds",
+      "staged": "export/mesh/texture_normal.dds"
+    }
+  ]
+}

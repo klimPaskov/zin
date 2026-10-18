@@ -1,0 +1,1009 @@
+{
+  "slug": "zin_elves_warden",
+  "started_at": "2026-10-18T17:51:13Z",
+  "steps": [
+    {
+      "result": {
+        "blend": "blender/checkpoints/rt_death_d3b169225a_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "Armature|Attack|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 69,
+              "frame_end": 68,
+              "frame_start": 0,
+              "name": "zin_elves_warden_attack",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 73,
+              "frame_end": 72,
+              "frame_start": 0,
+              "name": "zin_elves_warden_death",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "zin_elves_warden_idle",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_idle_checkpoint"
+    },
+    {
+      "result": {
+        "blend": "blender/checkpoints/move_root_grounded.blend",
+        "rig_and_actions": {
+          "actions": [
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer",
+              "scale_fcurves": 66
+            },
+            {
+              "fps": 24,
+              "frame_count": 98,
+              "frame_end": 97,
+              "frame_start": 0,
+              "name": "Armature|Idle|baselayer_WORKING",
+              "scale_fcurves": 0
+            },
+            {
+              "fps": 24,
+              "frame_count": 25,
+              "frame_end": 24,
+              "frame_start": 0,
+              "name": "Armature|Move|baselayer_WORKING",
+              "scale_fcurves": 0
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "Armature.001"
+            }
+          ]
+        }
+      },
+      "step": "inspect_move_checkpoint"
+    },
+    {
+      "result": {
+        "action": "zin_elves_warden_idle",
+        "action_sha256": "E5B0F1F6A91E1888C28279B1E999BB885D9DD0614629B242AF3AB5307B1F1700",
+        "fps": 24,
+        "range": [
+          0,
+          97
+        ]
+      },
+      "step": "idle_source"
+    },
+    {
+      "result": {
+        "bones": [
+          "Head",
+          "Hips",
+          "LeftArm",
+          "LeftFoot",
+          "LeftForeArm",
+          "LeftHand",
+          "LeftLeg",
+          "LeftShoulder",
+          "LeftToeBase",
+          "LeftUpLeg",
+          "RightArm",
+          "RightFoot",
+          "RightForeArm",
+          "RightHand",
+          "RightLeg",
+          "RightShoulder",
+          "RightToeBase",
+          "RightUpLeg",
+          "Spine",
+          "Spine01",
+          "Spine02",
+          "head_end",
+          "headfront",
+          "neck"
+        ],
+        "max_cross_phase_rest_drift": 1.6588652540228122e-06
+      },
+      "step": "rest_solve"
+    },
+    {
+      "result": {
+        "action": "Armature|Move|baselayer_WORKING",
+        "action_sha256": "698BDC7171F5D1434484B7B697BC2080755B7483F384250739E4998581B7BFBA",
+        "fps": 24,
+        "range": [
+          0,
+          24
+        ]
+      },
+      "step": "move_source"
+    },
+    {
+      "result": {
+        "action": "zin_elves_warden_defend",
+        "anim": {
+          "bytes": 77395,
+          "name": "zin_elves_warden_defend.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_elves_warden\\export\\anim\\zin_elves_warden_defend.anim",
+          "relative_path": "export/anim/zin_elves_warden_defend.anim",
+          "sha256": "BB9CC6A96834B06C33FAFF983F7475E5BD4A335E134F66428632C202299007E5"
+        },
+        "export": {
+          "action": "zin_elves_warden_defend",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "a198de300d1941af94e1eb60b7bc705f",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/a198de300d1941af94e1eb60b7bc705f.result.json"
+          },
+          "anim": "export/anim/zin_elves_warden_defend.anim",
+          "anim_bytes": 77395,
+          "anim_text": "export/anim/zin_elves_warden_defend.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/defend_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_elves_warden_defend",
+              "factor": 0.03771020099520683,
+              "keyframes": 6480,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.03771020099520683,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.03771020099520683,
+              0.03771020099520683,
+              0.03771020099520683
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.03771020099520683,
+                0.03771020099520683,
+                0.03771020099520683
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 97,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.6102262139320374,
+                    0.2746536135673523,
+                    0.240247443318367,
+                    0.70318603515625
+                  ],
+                  "t": [
+                    0.0007632447523064911,
+                    3.9818928241729736,
+                    -0.058950118720531464
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.6102262139320374,
+                    0.2746536135673523,
+                    0.240247443318367,
+                    0.70318603515625
+                  ],
+                  "t": [
+                    0.0007632447523064911,
+                    3.982950448989868,
+                    -0.058950118720531464
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.6102262139320374,
+                  0.2746536135673523,
+                  0.240247443318367,
+                  0.70318603515625
+                ],
+                "t": [
+                  0.0007632447523064911,
+                  3.9818928241729736,
+                  -0.058950118720531464
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "501995C65CC99BF4C06F0457F9E39C2B7D46C512844743203F43A5370F12CC66",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 1,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 98,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "LeftArm": 0.8342628106474876,
+            "LeftForeArm": 1.1527323126792908,
+            "LeftHand": 0.17054471373558044,
+            "RightArm": 0.8618038296699524,
+            "RightForeArm": 1.1898265480995178,
+            "RightHand": 0.17270520329475403,
+            "Spine": 0.05097635090351105,
+            "Spine01": 0.08459646999835968,
+            "Spine02": 0.08623676747083664,
+            "neck": 0.12138238921761513
+          },
+          "checkpoint": "blender/checkpoints/defend_pre_export.blend",
+          "frame_range": [
+            0,
+            97
+          ],
+          "motion_bone_chain": [],
+          "output_sha256": "F1699453CF1A2AAFDEABB685A4BE63D02AC899BE2EA413F3013F243297C53DF8",
+          "phase_frames": {
+            "guard_hold": 48,
+            "guard_release": 78,
+            "guard_start": 24
+          },
+          "semantic_role": "defend",
+          "source_fps": 24,
+          "target_action_sha256": "1C5569DC56ADD09B72FA903EF96D165A0719500486C57FF59CC42970E0343D5C"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/defend_f000_front.png",
+              "blender/previews/defend_f000_left.png"
+            ]
+          },
+          {
+            "frame": 48,
+            "previews": [
+              "blender/previews/defend_f048_front.png",
+              "blender/previews/defend_f048_left.png"
+            ]
+          },
+          {
+            "frame": 97,
+            "previews": [
+              "blender/previews/defend_f097_front.png",
+              "blender/previews/defend_f097_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "45b5bbfb7ccf4284a702eae888aab33e",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/45b5bbfb7ccf4284a702eae888aab33e.result.json"
+          },
+          "anim": "export/anim/zin_elves_warden_defend.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                1.4584646224975586,
+                1.1420360803604126,
+                7.215712547302246
+              ],
+              "bounds_min": [
+                -1.5490816831588745,
+                -1.7974467277526855,
+                -2.0405277609825134e-06
+              ],
+              "dimensions": [
+                3.0075464248657227,
+                2.9394826889038086,
+                7.215714454650879
+              ],
+              "frame": 1,
+              "ground_contact_z": -2.0405277609825134e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.0398614406585693,
+                1.4034926891326904,
+                7.072174072265625
+              ],
+              "bounds_min": [
+                -1.469903826713562,
+                -1.8461217880249023,
+                -1.7499551177024841e-06
+              ],
+              "dimensions": [
+                3.509765148162842,
+                3.2496144771575928,
+                7.072175979614258
+              ],
+              "frame": 25,
+              "ground_contact_z": -1.7499551177024841e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.3228189945220947,
+                1.37557053565979,
+                7.0343523025512695
+              ],
+              "bounds_min": [
+                -2.013930559158325,
+                -1.8052189350128174,
+                -2.9942020773887634e-06
+              ],
+              "dimensions": [
+                3.33674955368042,
+                3.1807894706726074,
+                7.034355163574219
+              ],
+              "frame": 50,
+              "ground_contact_z": -2.9942020773887634e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                0.7783440351486206,
+                1.17420494556427,
+                7.191766738891602
+              ],
+              "bounds_min": [
+                -2.2952115535736084,
+                -2.341177463531494,
+                -5.392357707023621e-07
+              ],
+              "dimensions": [
+                3.0735554695129395,
+                3.5153822898864746,
+                7.19176721572876
+              ],
+              "frame": 74,
+              "ground_contact_z": -5.392357707023621e-07,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.4584197998046875,
+                1.142025113105774,
+                7.215737819671631
+              ],
+              "bounds_min": [
+                -1.5492857694625854,
+                -1.7974448204040527,
+                -1.4463439583778381e-06
+              ],
+              "dimensions": [
+                3.0077056884765625,
+                2.939469814300537,
+                7.2157392501831055
+              ],
+              "frame": 98,
+              "ground_contact_z": -1.4463439583778381e-06,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 2077,
+            "bounds_max": [
+              2.0334901809692383,
+              0.7444736361503601,
+              7.3518242835998535
+            ],
+            "bounds_min": [
+              -2.0347659587860107,
+              -0.7424226999282837,
+              0.0
+            ],
+            "branched_boundary_component_count": 263,
+            "closed_boundary_component_count": 1814,
+            "degenerate_faces": 0,
+            "dimensions": [
+              4.068256378173828,
+              1.486896276473999,
+              7.3518242835998535
+            ],
+            "loose_boundary_edges": 17951,
+            "max_boundary_component_edges": 64,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 20999,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 563,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 122,
+                  "branched_boundary_component_count": 16,
+                  "closed_boundary_component_count": 106,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 563,
+                  "max_boundary_component_edges": 16,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 20997,
+                  "vertices_after_position_weld": 10508,
+                  "vertices_before": 21457,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 20999,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 21457,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_elves_warden.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 20999,
+              "vertices": 21457
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_elves_warden_defend_frame_001_front.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_001_left.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_025_front.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_025_left.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_025_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_050_front.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_050_left.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_050_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_074_front.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_074_left.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_074_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_098_front.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_098_left.png",
+            "blender/previews/reimport_zin_elves_warden_defend_frame_098_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_elves_warden_defend.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/defend_pre_export.blend"
+      },
+      "step": "defend_export"
+    },
+    {
+      "result": {
+        "action": "zin_elves_warden_retreat",
+        "anim": {
+          "bytes": 21331,
+          "name": "zin_elves_warden_retreat.anim",
+          "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_elves_warden\\export\\anim\\zin_elves_warden_retreat.anim",
+          "relative_path": "export/anim/zin_elves_warden_retreat.anim",
+          "sha256": "9EFA8CA61A618FCB5788B33EB248B16DFD497953A8180670B832AC3510F2AC4E"
+        },
+        "export": {
+          "action": "zin_elves_warden_retreat",
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "07f05cefc84b41ffa1e0fc90ac6131c8",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/07f05cefc84b41ffa1e0fc90ac6131c8.result.json"
+          },
+          "anim": "export/anim/zin_elves_warden_retreat.anim",
+          "anim_bytes": 21331,
+          "anim_text": "export/anim/zin_elves_warden_retreat.txt",
+          "armature": "Armature.001",
+          "armature_world_scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "blend": "blender/checkpoints/retreat_pre_export.blend",
+          "export_transforms": {
+            "animation_translation_channels": {
+              "action": "zin_elves_warden_retreat",
+              "factor": 0.03771020099520683,
+              "keyframes": 400,
+              "location_fcurves": 72,
+              "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+            },
+            "armature": "Armature.001",
+            "armature_data_scale_factor": 0.03771020099520683,
+            "armature_world_scale_after": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "armature_world_scale_before": [
+              0.03771020099520683,
+              0.03771020099520683,
+              0.03771020099520683
+            ],
+            "mesh_world_scales_after": {
+              "char1.001": [
+                0.03771020099520683,
+                0.03771020099520683,
+                0.03771020099520683
+              ]
+            },
+            "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+          },
+          "fps": 24,
+          "frame_end": 24,
+          "frame_start": 0,
+          "initial_root_world_pose": {
+            "changes": {
+              "Hips": {
+                "after": {
+                  "q": [
+                    -0.6193785071372986,
+                    0.2714853286743164,
+                    0.24382194876670837,
+                    0.6951380372047424
+                  ],
+                  "t": [
+                    0.0028355764225125313,
+                    4.055843830108643,
+                    -0.045036181807518005
+                  ]
+                },
+                "before": {
+                  "q": [
+                    -0.6193785071372986,
+                    0.2714853286743164,
+                    0.24382194876670837,
+                    0.6951380372047424
+                  ],
+                  "t": [
+                    0.0028355764225125313,
+                    4.056901454925537,
+                    -0.045036181807518005
+                  ]
+                }
+              }
+            },
+            "child_and_sample_fields_preserved": true,
+            "expected_world_initial_roots": {
+              "Hips": {
+                "q": [
+                  -0.6193785071372986,
+                  0.2714853286743164,
+                  0.24382194876670837,
+                  0.6951380372047424
+                ],
+                "t": [
+                  0.0028355764225125313,
+                  4.055843830108643,
+                  -0.045036181807518005
+                ]
+              }
+            },
+            "frame_start": 0,
+            "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+            "retained_fields_sha256": "0B10AD6E3CEC2834C77CACA17AC84D1FAF75B46AA1F6B64A42E18CA9EEF017C0",
+            "serialized_readback_passed": true
+          },
+          "scale_normalization": {
+            "initial_scale_values_changed": 1,
+            "initial_translation_values_changed": 0,
+            "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+            "remaining_non_unit_initial_scales": 0,
+            "remaining_non_unit_sample_scales": 0,
+            "sample_scale_values_changed": 25,
+            "sample_translation_values_changed": 0,
+            "translation_scale": 1.0
+          },
+          "warnings": []
+        },
+        "patch": {
+          "changed_bones": {
+            "Head": 0.26477622985839844,
+            "Spine": 0.18476687371730804,
+            "Spine01": 0.18468709290027618,
+            "Spine02": 0.15485060960054398,
+            "neck": 0.24239141680300236
+          },
+          "checkpoint": "blender/checkpoints/retreat_pre_export.blend",
+          "frame_range": [
+            0,
+            24
+          ],
+          "motion_bone_chain": [
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "neck",
+            "Head"
+          ],
+          "output_sha256": "DC963280AB8075FE1B95DCE275D4FA387880DCA3BD4BF599F3C8D7970AE3BC20",
+          "phase_frames": {
+            "disengage": 6,
+            "recovery": 18,
+            "withdrawal": 12
+          },
+          "semantic_role": "retreat",
+          "source_fps": 24,
+          "target_action_sha256": "84467EBC77C2BFB2FCAF42EA7ED9E1DDBE39618F1C23EAADC3D6764D52DFB105"
+        },
+        "previews": [
+          {
+            "frame": 0,
+            "previews": [
+              "blender/previews/retreat_f000_front.png",
+              "blender/previews/retreat_f000_left.png"
+            ]
+          },
+          {
+            "frame": 6,
+            "previews": [
+              "blender/previews/retreat_f006_front.png",
+              "blender/previews/retreat_f006_left.png"
+            ]
+          },
+          {
+            "frame": 12,
+            "previews": [
+              "blender/previews/retreat_f012_front.png",
+              "blender/previews/retreat_f012_left.png"
+            ]
+          }
+        ],
+        "reimport": {
+          "actions": [
+            "io_pdx_rigAction"
+          ],
+          "adapter": {
+            "id": "hoi4_blender_adapter",
+            "request_id": "56a1cd7b3b4e45958004b2dc4b9925ee",
+            "version": "1.6.0",
+            "worker_log": "logs/adapter/56a1cd7b3b4e45958004b2dc4b9925ee.result.json"
+          },
+          "anim": "export/anim/zin_elves_warden_retreat.anim",
+          "animation_bounds": [
+            {
+              "bounds_max": [
+                1.6839220523834229,
+                0.6924645900726318,
+                7.000326156616211
+              ],
+              "bounds_min": [
+                -2.4018735885620117,
+                -1.3946027755737305,
+                -1.519918441772461e-06
+              ],
+              "dimensions": [
+                4.0857954025268555,
+                2.0870673656463623,
+                7.0003275871276855
+              ],
+              "frame": 1,
+              "ground_contact_z": -1.519918441772461e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.1136856079101562,
+                1.105125904083252,
+                6.989841461181641
+              ],
+              "bounds_min": [
+                -1.4504563808441162,
+                -1.8778648376464844,
+                -4.638452082872391e-06
+              ],
+              "dimensions": [
+                3.5641419887542725,
+                2.9829907417297363,
+                6.989846229553223
+              ],
+              "frame": 7,
+              "ground_contact_z": -4.638452082872391e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.1795921325683594,
+                1.7450315952301025,
+                6.843420028686523
+              ],
+              "bounds_min": [
+                -1.4451260566711426,
+                -2.8511006832122803,
+                -2.942979335784912e-06
+              ],
+              "dimensions": [
+                3.624718189239502,
+                4.596132278442383,
+                6.843422889709473
+              ],
+              "frame": 13,
+              "ground_contact_z": -2.942979335784912e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                2.1136856079101562,
+                1.105125904083252,
+                6.989841461181641
+              ],
+              "bounds_min": [
+                -1.4504563808441162,
+                -1.8778648376464844,
+                -4.638452082872391e-06
+              ],
+              "dimensions": [
+                3.5641419887542725,
+                2.9829907417297363,
+                6.989846229553223
+              ],
+              "frame": 19,
+              "ground_contact_z": -4.638452082872391e-06,
+              "locators": []
+            },
+            {
+              "bounds_max": [
+                1.6839220523834229,
+                0.6924645900726318,
+                7.000326156616211
+              ],
+              "bounds_min": [
+                -2.4018735885620117,
+                -1.3946027755737305,
+                -1.519918441772461e-06
+              ],
+              "dimensions": [
+                4.0857954025268555,
+                2.0870673656463623,
+                7.0003275871276855
+              ],
+              "frame": 25,
+              "ground_contact_z": -1.519918441772461e-06,
+              "locators": []
+            }
+          ],
+          "armatures": [
+            {
+              "bones": 24,
+              "name": "io_pdx_rig"
+            }
+          ],
+          "geometry": {
+            "boundary_component_count": 2077,
+            "bounds_max": [
+              2.0334901809692383,
+              0.7444736361503601,
+              7.3518242835998535
+            ],
+            "bounds_min": [
+              -2.0347659587860107,
+              -0.7424226999282837,
+              0.0
+            ],
+            "branched_boundary_component_count": 263,
+            "closed_boundary_component_count": 1814,
+            "degenerate_faces": 0,
+            "dimensions": [
+              4.068256378173828,
+              1.486896276473999,
+              7.3518242835998535
+            ],
+            "loose_boundary_edges": 17951,
+            "max_boundary_component_edges": 64,
+            "negative_scale_objects": [],
+            "non_manifold_edges": 0,
+            "objects": 1,
+            "polygons": 20999,
+            "position_welded_topology": {
+              "degenerate_faces": 0,
+              "loose_boundary_edges": 563,
+              "non_manifold_edges": 0,
+              "objects": [
+                {
+                  "boundary_component_count": 122,
+                  "branched_boundary_component_count": 16,
+                  "closed_boundary_component_count": 106,
+                  "degenerate_faces": 0,
+                  "loose_boundary_edges": 563,
+                  "max_boundary_component_edges": 16,
+                  "non_manifold_edges": 0,
+                  "object": "output_unwrapped.002",
+                  "triangles": 20997,
+                  "vertices_after_position_weld": 10508,
+                  "vertices_before": 21457,
+                  "weld_distance": 1e-06,
+                  "zero_length_normals": 0
+                }
+              ],
+              "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+              "weld_distance": 1e-06
+            },
+            "triangles": 20999,
+            "uv_layers": {
+              "output_unwrapped.002": [
+                "map1"
+              ]
+            },
+            "vertices": 21457,
+            "zero_length_normals": 0
+          },
+          "locators": [],
+          "mesh": "export/mesh/zin_elves_warden.mesh",
+          "meshes": [
+            {
+              "materials": [
+                "PDXmat_output_unwrapped.002"
+              ],
+              "name": "output_unwrapped.002",
+              "polygons": 20999,
+              "vertices": 21457
+            }
+          ],
+          "objects": [
+            {
+              "name": "io_pdx_rig",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "ARMATURE"
+            },
+            {
+              "name": "output_unwrapped.002",
+              "parent": null,
+              "parent_bone": null,
+              "parent_type": null,
+              "type": "MESH"
+            }
+          ],
+          "previews": [
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_001_front.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_001_left.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_001_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_007_front.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_007_left.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_007_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_013_front.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_013_left.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_013_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_019_front.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_019_left.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_019_three_quarter.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_025_front.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_025_left.png",
+            "blender/previews/reimport_zin_elves_warden_retreat_frame_025_three_quarter.png"
+          ],
+          "proof_blend": "blender/checkpoints/reimport_zin_elves_warden_retreat.blend",
+          "runtime_texture_staging": [
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_0.dds",
+              "staged": "export/mesh/texture_0.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_specular.dds",
+              "staged": "export/mesh/texture_specular.dds"
+            },
+            {
+              "bytes": 4194432,
+              "copied": false,
+              "source": "textures/dds/texture_normal.dds",
+              "staged": "export/mesh/texture_normal.dds"
+            }
+          ]
+        },
+        "source_checkpoint": "blender/checkpoints/retreat_pre_export.blend"
+      },
+      "step": "retreat_export"
+    }
+  ]
+}

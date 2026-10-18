@@ -1,0 +1,239 @@
+{
+  "actions": [
+    "io_pdx_rigAction"
+  ],
+  "anim": "export/anim/zin_elves_warden_death.anim",
+  "animation_bounds": [
+    {
+      "bounds_max": [
+        1.789434552192688,
+        1.31209397315979,
+        6.425793170928955
+      ],
+      "bounds_min": [
+        -2.140181303024292,
+        -2.4485368728637695,
+        8.723698556423187e-06
+      ],
+      "dimensions": [
+        3.9296159744262695,
+        3.7606308460235596,
+        6.425784587860107
+      ],
+      "frame": 1,
+      "ground_contact_z": 8.723698556423187e-06,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        1.9349114894866943,
+        1.4569735527038574,
+        6.847597599029541
+      ],
+      "bounds_min": [
+        -2.3614511489868164,
+        -1.2344374656677246,
+        -1.930631697177887e-06
+      ],
+      "dimensions": [
+        4.29636287689209,
+        2.691411018371582,
+        6.847599506378174
+      ],
+      "frame": 19,
+      "ground_contact_z": -1.930631697177887e-06,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        2.3373525142669678,
+        1.6056208610534668,
+        5.376147747039795
+      ],
+      "bounds_min": [
+        -2.4466753005981445,
+        -1.026241660118103,
+        -2.7805566787719727e-05
+      ],
+      "dimensions": [
+        4.784028053283691,
+        2.6318626403808594,
+        5.376175403594971
+      ],
+      "frame": 37,
+      "ground_contact_z": -2.7805566787719727e-05,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        3.480738639831543,
+        4.1891770362854,
+        2.1335067749023438
+      ],
+      "bounds_min": [
+        -1.4699132442474365,
+        -4.212691307067871,
+        1.9073486328125e-06
+      ],
+      "dimensions": [
+        4.950652122497559,
+        8.40186882019043,
+        2.133504867553711
+      ],
+      "frame": 55,
+      "ground_contact_z": 1.9073486328125e-06,
+      "locators": []
+    },
+    {
+      "bounds_max": [
+        3.5413084030151367,
+        4.243649959564209,
+        1.5383238792419434
+      ],
+      "bounds_min": [
+        -1.3799488544464111,
+        -4.3451642990112305,
+        9.059906005859375e-06
+      ],
+      "dimensions": [
+        4.921257019042969,
+        8.588813781738281,
+        1.5383148193359375
+      ],
+      "frame": 73,
+      "ground_contact_z": 9.059906005859375e-06,
+      "locators": []
+    }
+  ],
+  "armatures": [
+    {
+      "bones": 24,
+      "name": "io_pdx_rig"
+    }
+  ],
+  "geometry": {
+    "boundary_component_count": 2077,
+    "bounds_max": [
+      2.0334901809692383,
+      0.7444736361503601,
+      7.3518242835998535
+    ],
+    "bounds_min": [
+      -2.0347659587860107,
+      -0.7424226999282837,
+      0.0
+    ],
+    "branched_boundary_component_count": 263,
+    "closed_boundary_component_count": 1814,
+    "degenerate_faces": 0,
+    "dimensions": [
+      4.068256378173828,
+      1.486896276473999,
+      7.3518242835998535
+    ],
+    "loose_boundary_edges": 17951,
+    "max_boundary_component_edges": 64,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 20999,
+    "position_welded_topology": {
+      "degenerate_faces": 0,
+      "loose_boundary_edges": 563,
+      "non_manifold_edges": 0,
+      "objects": [
+        {
+          "boundary_component_count": 122,
+          "branched_boundary_component_count": 16,
+          "closed_boundary_component_count": 106,
+          "degenerate_faces": 0,
+          "loose_boundary_edges": 563,
+          "max_boundary_component_edges": 16,
+          "non_manifold_edges": 0,
+          "object": "output_unwrapped.002",
+          "triangles": 20997,
+          "vertices_after_position_weld": 10508,
+          "vertices_before": 21457,
+          "weld_distance": 1e-06,
+          "zero_length_normals": 0
+        }
+      ],
+      "policy": "diagnostic_position_weld_only; exported UV and normal seams remain unchanged",
+      "weld_distance": 1e-06
+    },
+    "triangles": 20999,
+    "uv_layers": {
+      "output_unwrapped.002": [
+        "map1"
+      ]
+    },
+    "vertices": 21457,
+    "zero_length_normals": 0
+  },
+  "locators": [],
+  "mesh": "export/mesh/zin_elves_warden.mesh",
+  "meshes": [
+    {
+      "materials": [
+        "PDXmat_output_unwrapped.002"
+      ],
+      "name": "output_unwrapped.002",
+      "polygons": 20999,
+      "vertices": 21457
+    }
+  ],
+  "objects": [
+    {
+      "name": "io_pdx_rig",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "ARMATURE"
+    },
+    {
+      "name": "output_unwrapped.002",
+      "parent": null,
+      "parent_bone": null,
+      "parent_type": null,
+      "type": "MESH"
+    }
+  ],
+  "previews": [
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_001_front.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_001_left.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_001_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_019_front.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_019_left.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_019_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_037_front.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_037_left.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_037_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_055_front.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_055_left.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_055_three_quarter.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_073_front.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_073_left.png",
+    "blender/previews/reimport_zin_elves_warden_death_fixed_frame_073_three_quarter.png"
+  ],
+  "proof_blend": "blender/checkpoints/reimport_zin_elves_warden_death_fixed.blend",
+  "runtime_texture_staging": [
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_0.dds",
+      "staged": "export/mesh/texture_0.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_specular.dds",
+      "staged": "export/mesh/texture_specular.dds"
+    },
+    {
+      "bytes": 4194432,
+      "copied": false,
+      "source": "textures/dds/texture_normal.dds",
+      "staged": "export/mesh/texture_normal.dds"
+    }
+  ]
+}

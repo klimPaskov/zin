@@ -1,0 +1,108 @@
+{
+  "action": "zin_the_dead_revenant_idle",
+  "anim": "export/anim/zin_the_dead_revenant_idle.anim",
+  "anim_bytes": 77395,
+  "anim_text": "export/anim/zin_the_dead_revenant_idle.txt",
+  "armature": "Armature.001",
+  "armature_world_scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "blend": "blender/checkpoints/rt_death_d84dab1180_grounded.blend",
+  "export_transforms": {
+    "animation_translation_channels": {
+      "action": "zin_the_dead_revenant_idle",
+      "factor": 0.04085014760494232,
+      "keyframes": 6480,
+      "location_fcurves": 72,
+      "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+    },
+    "armature": "Armature.001",
+    "armature_data_scale_factor": 0.04085014760494232,
+    "armature_world_scale_after": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "armature_world_scale_before": [
+      0.04085014760494232,
+      0.04085014760494232,
+      0.04085014760494232
+    ],
+    "mesh_world_scales_after": {
+      "char1.001": [
+        0.04085014760494232,
+        0.04085014760494232,
+        0.04085014760494232
+      ]
+    },
+    "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+  },
+  "fps": 24,
+  "frame_end": 97,
+  "frame_start": 0,
+  "initial_root_world_pose": {
+    "changes": {
+      "Hips": {
+        "after": {
+          "q": [
+            -0.6121757626533508,
+            0.2766607403755188,
+            0.24182963371276855,
+            0.7001557946205139
+          ],
+          "t": [
+            2.434264168016398e-08,
+            3.784916639328003,
+            -0.048223383724689484
+          ]
+        },
+        "before": {
+          "q": [
+            -0.6121757626533508,
+            0.2766607403755188,
+            0.24182963371276855,
+            0.7001557946205139
+          ],
+          "t": [
+            2.434264168016398e-08,
+            3.7858669757843018,
+            -0.048223383724689484
+          ]
+        }
+      }
+    },
+    "child_and_sample_fields_preserved": true,
+    "expected_world_initial_roots": {
+      "Hips": {
+        "q": [
+          -0.6121757626533508,
+          0.2766607403755188,
+          0.24182963371276855,
+          0.7001557946205139
+        ],
+        "t": [
+          2.434264168016398e-08,
+          3.784916639328003,
+          -0.048223383724689484
+        ]
+      }
+    },
+    "frame_start": 0,
+    "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+    "retained_fields_sha256": "0FBAB2E8B2E49C7D3981FA4252E4431A2AD10062E207071813A1EC62C330F697",
+    "serialized_readback_passed": true
+  },
+  "scale_normalization": {
+    "initial_scale_values_changed": 2,
+    "initial_translation_values_changed": 0,
+    "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+    "remaining_non_unit_initial_scales": 0,
+    "remaining_non_unit_sample_scales": 0,
+    "sample_scale_values_changed": 196,
+    "sample_translation_values_changed": 0,
+    "translation_scale": 1.0
+  },
+  "warnings": []
+}

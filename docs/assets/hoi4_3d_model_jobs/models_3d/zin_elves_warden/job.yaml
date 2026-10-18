@@ -1,0 +1,207 @@
+{
+  "action_sources": {
+    "attack": {
+      "action": "zin_elves_warden_attack",
+      "checkpoint": "blender/checkpoints/rt_death_d3b169225a_grounded.blend"
+    },
+    "death": {
+      "action": "zin_elves_warden_death",
+      "checkpoint": "blender/checkpoints/rt_death_d3b169225a_grounded.blend"
+    },
+    "idle": {
+      "action": "zin_elves_warden_idle",
+      "checkpoint": "blender/checkpoints/rt_death_d3b169225a_grounded.blend"
+    },
+    "move": {
+      "action": "Armature|Move|baselayer_WORKING",
+      "checkpoint": "blender/checkpoints/move_root_grounded.blend"
+    }
+  },
+  "animation_estimate_credits": 3,
+  "asset_id": "zin.model.unit.zin_elves_warden",
+  "asset_kind": "humanoid",
+  "asset_slug": "zin_elves_warden",
+  "blender_plan": {
+    "dependency_lock": ".tools/3d_pipeline/config/dependencies.lock.json",
+    "effective_runtime_height_m": 5.8814594268,
+    "max_runtime_footprint_m": null,
+    "provider_height_m": 1.95,
+    "runtime_diffuse_gamma": 0.72,
+    "runtime_entity_scale": 0.8,
+    "runtime_footprint_policy": "reject",
+    "runtime_stem": "zin_elves_warden",
+    "target_height_m": 7.3518242835,
+    "vanilla_scale_reference": {
+      "entity": "gfx/entities/units_infantry.asset#infantry_rifle_entity (and infantry_entity clone, scale 0.8)",
+      "entity_scale": 0.8,
+      "exclude_name_patterns": [
+        "collision"
+      ],
+      "forward_axis": "-Y",
+      "mesh": "C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV/gfx/models/units/western_european_infantry.mesh",
+      "mesh_height": 7.3518242835,
+      "mesh_object_names": [
+        "polySurface106"
+      ],
+      "pdxmesh": "generic_western_european_rifle_infantry_mesh",
+      "runtime_height": 5.8814594268,
+      "up_axis": "+Z"
+    }
+  },
+  "brief": "Tall slender elf warden: light forest-toned layered armour and cloak kept close to the body, long limbs, narrow face. Weapon-free A-pose body; bow/spear attachments come later.",
+  "created_at": "2026-10-18T13:33:14Z",
+  "creature_rig_family": null,
+  "estimated_credits": 49,
+  "excluded_provider_objects": [
+    "Icosphere"
+  ],
+  "exports": {
+    "animations": {
+      "attack": "export/anim/zin_elves_warden_attack.anim",
+      "death": "export/anim/zin_elves_warden_death.anim",
+      "defend": "export/anim/zin_elves_warden_defend.anim",
+      "idle": "export/anim/zin_elves_warden_idle.anim",
+      "move": "export/anim/zin_elves_warden_move.anim",
+      "retreat": "export/anim/zin_elves_warden_retreat.anim"
+    },
+    "mesh": "export/mesh/zin_elves_warden.mesh",
+    "role_mapping": {
+      "support_attack": "attack",
+      "training": "idle"
+    }
+  },
+  "extra_roles_route": "blender patch_existing_humanoid_action_phases (no verified Meshy action id for defend/retreat)",
+  "forbidden_additions": [
+    "weapons or held props on the body mesh",
+    "shields, banners, staffs",
+    "extra characters",
+    "floating disconnected geometry",
+    "ground plane or base",
+    "multi-view board",
+    "turnaround collage",
+    "text or watermark"
+  ],
+  "generation_stage": "generation",
+  "handoff": {
+    "crosswalk": "runtime/crosswalk.md",
+    "manifest": "manifest.md",
+    "runtime_handoff": "runtime/handoff.md"
+  },
+  "humanoid_rig_route": "",
+  "image_to_3d_estimate_credits": 30,
+  "job_id": "hoi4_3d_model_jobs_zin_elves_warden",
+  "meshy_input_gate": {
+    "image": "refs/original/meshy_input.png",
+    "image_count": 1,
+    "multi_view_thumbnails": false,
+    "side_profile_sheet": false,
+    "turnaround_board": false
+  },
+  "owner_id": "hoi4_3d_model_jobs",
+  "profile": "humanoid_unit",
+  "provider_plan": {
+    "ai_model": "meshy-7",
+    "enable_pbr": true,
+    "estimated_credits": {
+      "animation": 3,
+      "image_to_3d": 30,
+      "remesh": 5,
+      "rig": 5
+    },
+    "model_type": "standard",
+    "paid_attempts": 1,
+    "pose_mode": "a-pose",
+    "resolved_ai_model": "meshy-7",
+    "retry_paid_calls": false,
+    "should_texture": true,
+    "target_polycount": 30000,
+    "topology": "triangle"
+  },
+  "remesh_estimate_credits": 5,
+  "required_actions": [
+    {
+      "fps": 24,
+      "loop": true,
+      "provider_action_id": 0,
+      "role": "idle",
+      "root_policy": "in_place"
+    },
+    {
+      "fps": 24,
+      "loop": true,
+      "provider_action_id": null,
+      "role": "move",
+      "root_policy": "in_place",
+      "task_type": "blender_authored_skeletal"
+    },
+    {
+      "fps": 24,
+      "loop": false,
+      "provider_action_id": 4,
+      "role": "attack",
+      "root_policy": "in_place"
+    },
+    {
+      "fps": 24,
+      "loop": false,
+      "provider_action_id": 8,
+      "role": "death",
+      "root_policy": "in_place"
+    }
+  ],
+  "required_components": [
+    "complete weapon-free humanoid body matching the approved reference",
+    "head, torso, two arms with hands, two legs with feet, all attached",
+    "armour and clothing pieces solid and attached to the body",
+    "grounded riggable biped proportions"
+  ],
+  "rig_estimate_credits": 5,
+  "rig_input_mode": "input_task_id",
+  "rig_source_target_polycount": 50000,
+  "rig_stage": null,
+  "runtime": {
+    "actual_registration": null,
+    "in_game_evidence": null,
+    "live_consumer": null,
+    "proposed_identifiers": {
+      "animations": {
+        "attack": "zin_elves_warden_attack",
+        "death": "zin_elves_warden_death",
+        "defend": "zin_elves_warden_defend",
+        "idle": "zin_elves_warden_idle",
+        "move": "zin_elves_warden_move",
+        "retreat": "zin_elves_warden_retreat"
+      },
+      "consumer": "land-unit entity",
+      "entity": "zin_elves_warden_entity",
+      "entity_scale": 0.8,
+      "model_dir": "gfx/models/units/zin/zin_elves_warden/",
+      "pdxmesh": "zin_elves_warden_mesh",
+      "sprite": "zin_elves_warden"
+    }
+  },
+  "scale_crosswalk": null,
+  "schema_version": "1.0.0",
+  "selected_provider_task": "01a14f80-a59d-7057-9b8a-90c6e16c096b",
+  "shared_humanoid_batch": null,
+  "shared_humanoid_rig_owner": null,
+  "shared_humanoid_role": null,
+  "source": {
+    "authorization": "User-authorized agent-generated model reference.",
+    "dimensions": {
+      "height": 1536,
+      "width": 1024
+    },
+    "generator_output": "gptimage gpt-6-astra 1024x1536 high; prompt, owner approval quote and checksum in refs/source/provenance.json",
+    "mode": "source_free_owner_rule",
+    "reference": {
+      "bytes": 1764238,
+      "name": "meshy_input.png",
+      "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_elves_warden\\refs\\original\\meshy_input.png",
+      "relative_path": "refs/original/meshy_input.png",
+      "sha256": "87218B8255187EFAEC50F4D5CBE1BAB8D0C47A3813ACD30567877C5E02B4CFD9"
+    }
+  },
+  "status": "pdx_exported",
+  "updated_at": "2026-10-18T17:55:00Z"
+}

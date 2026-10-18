@@ -1,0 +1,46 @@
+{
+  "arguments": {
+    "ai_model": "meshy-7",
+    "enable_pbr": true,
+    "file_path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_trolls_brute\\refs\\original\\meshy_input.png",
+    "image_enhancement": true,
+    "model_type": "standard",
+    "multi_view_thumbnails": false,
+    "pose_mode": "a-pose",
+    "response_format": "json",
+    "should_remesh": false,
+    "should_texture": true,
+    "target_formats": [
+      "glb",
+      "fbx"
+    ],
+    "target_polycount": 30000,
+    "topology": "triangle"
+  },
+  "automatic_retry": false,
+  "estimate_credits": 30,
+  "lifecycle": {
+    "cleanup_inspection_error": null,
+    "owned_process_ids_at_cleanup": [],
+    "ownership": "windows_job_object",
+    "root_pid": 21620,
+    "surviving_process_ids": []
+  },
+  "response": {
+    "content": [
+      {
+        "text": "{\n  \"task_id\": \"01a14fd3-3484-7565-9d07-214511fa391b\",\n  \"status\": \"PENDING\",\n  \"message\": \"3D generation task created successfully. Task ID: 01a14fd3-3484-7565-9d07-214511fa391b\",\n  \"estimated_time\": \"2-3 minutes\"\n}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "estimated_time": "2-3 minutes",
+      "message": "3D generation task created successfully. Task ID: 01a14fd3-3484-7565-9d07-214511fa391b",
+      "status": "PENDING",
+      "task_id": "01a14fd3-3484-7565-9d07-214511fa391b"
+    }
+  },
+  "state": "response_received",
+  "timestamp": "2026-10-18T16:21:11Z",
+  "tool": "meshy_image_to_3d"
+}

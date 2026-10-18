@@ -30,3 +30,13 @@ Thumbs.db
 /.claude/skills/**/__pycache__/
 # The owner's original drawings in the lore vault stay private (owner decision, 18 October 2026)
 /docs/lore/vault/Maps/
+
+# 3D pipeline job roots: bulky working files stay on disk as pipeline evidence, out of history. Kept: refs,
+# job.yaml, manifest, history, runtime handoffs, validation and Blender JSON reports. The shipped models live in
+# gfx/models/units/zin/ (hashes recorded in each runtime/handoff.md).
+/docs/assets/hoi4_3d_model_jobs/**/blender/*
+!/docs/assets/hoi4_3d_model_jobs/**/blender/reports/
+/docs/assets/hoi4_3d_model_jobs/**/provider/downloads/
+/docs/assets/hoi4_3d_model_jobs/**/logs/
+/docs/assets/hoi4_3d_model_jobs/**/export/
+/docs/assets/hoi4_3d_model_jobs/**/textures/

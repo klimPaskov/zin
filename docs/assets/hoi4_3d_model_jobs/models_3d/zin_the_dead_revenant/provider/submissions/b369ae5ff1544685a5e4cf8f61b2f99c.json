@@ -1,0 +1,33 @@
+{
+  "arguments": {
+    "action_id": 0,
+    "response_format": "json",
+    "rig_task_id": "01a14fda-b744-7401-bae5-ba27f4e84e71"
+  },
+  "automatic_retry": false,
+  "estimate_credits": 3,
+  "lifecycle": {
+    "cleanup_inspection_error": null,
+    "owned_process_ids_at_cleanup": [],
+    "ownership": "windows_job_object",
+    "root_pid": 40244,
+    "surviving_process_ids": []
+  },
+  "response": {
+    "content": [
+      {
+        "text": "{\n  \"task_id\": \"01a14fe3-03b4-71cc-9f6f-cd1c8ebf9b16\",\n  \"status\": \"PENDING\",\n  \"message\": \"Animation task created successfully. Task ID: 01a14fe3-03b4-71cc-9f6f-cd1c8ebf9b16\",\n  \"estimated_time\": \"1-2 minutes\"\n}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "estimated_time": "1-2 minutes",
+      "message": "Animation task created successfully. Task ID: 01a14fe3-03b4-71cc-9f6f-cd1c8ebf9b16",
+      "status": "PENDING",
+      "task_id": "01a14fe3-03b4-71cc-9f6f-cd1c8ebf9b16"
+    }
+  },
+  "state": "response_received",
+  "timestamp": "2026-10-18T16:39:03Z",
+  "tool": "meshy_animate"
+}

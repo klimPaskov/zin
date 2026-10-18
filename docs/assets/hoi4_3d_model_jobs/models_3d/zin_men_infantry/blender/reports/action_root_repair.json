@@ -1,0 +1,5588 @@
+{
+  "defect": "Rebuild the kit runner's humanoid actions with correct root placement, then re-export.\n\nKit defect found in the infantry pilot (no kit file is edited here):\nblender_worker.sanitize_root_translation_channels (inside prepare_candidate)\nand author_locomotion_action \"ground\" an in-place action by moving Hips\nlocation array index 2, assuming it is vertical. On glTF-imported Meshy rigs\nthat channel is horizontal (world -Y), the measured derivative is tiny, and the\ncorrection becomes hundreds of source units of slide: the reimported proofs put\nthe body at Y -7.3 (attack), +9.9 (death), +53.2 (idle) and +68.8 (move) while\nthe rest mesh sits at the origin. Locking the root to its first key also threw\naway the provider's vertical root motion (crouching attack and falling death\nthen cut 0.6 into the ground, and the dead body ends 2.3 above it).",
+  "final_provider_checkpoint": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+  "move_checkpoint": "blender/checkpoints/move_root_grounded.blend",
+  "recorded_at": "2026-10-18T17:37:22Z",
+  "roles": {
+    "attack": {
+      "action": "zin_men_infantry_attack",
+      "anim_after": {
+        "bytes": 55123,
+        "name": "zin_men_infantry_attack.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_attack.anim",
+        "relative_path": "export/anim/zin_men_infantry_attack.anim",
+        "sha256": "5E3182CF0046DFFA74B52DFF21150FF81ED4EF5FCC0652E3E5F25DD703FCB1DF"
+      },
+      "anim_before": {
+        "bytes": 54294,
+        "name": "zin_men_infantry_attack.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_attack.anim",
+        "relative_path": "export/anim/zin_men_infantry_attack.anim",
+        "sha256": "A6645718658EBAE2DEC53CA96AAD01236C6131D308586F0BB23FDFBD84CABE48"
+      },
+      "armature": "Armature.001",
+      "export": {
+        "action": "zin_men_infantry_attack",
+        "adapter": {
+          "id": "hoi4_blender_adapter",
+          "request_id": "40f78327f78a465aa7cd677baa621894",
+          "version": "1.6.0",
+          "worker_log": "logs/adapter/40f78327f78a465aa7cd677baa621894.result.json"
+        },
+        "anim": "export/anim/zin_men_infantry_attack.anim",
+        "anim_bytes": 55123,
+        "anim_text": "export/anim/zin_men_infantry_attack.txt",
+        "armature": "Armature.001",
+        "armature_world_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "blend": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+        "export_transforms": {
+          "animation_translation_channels": {
+            "action": "zin_men_infantry_attack",
+            "factor": 0.040848881006240845,
+            "keyframes": 4566,
+            "location_fcurves": 72,
+            "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+          },
+          "armature": "Armature.001",
+          "armature_data_scale_factor": 0.040848881006240845,
+          "armature_world_scale_after": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "armature_world_scale_before": [
+            0.040848881006240845,
+            0.040848881006240845,
+            0.040848881006240845
+          ],
+          "mesh_world_scales_after": {
+            "char1.001": [
+              0.040848881006240845,
+              0.040848881006240845,
+              0.040848881006240845
+            ]
+          },
+          "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+        },
+        "fps": 24,
+        "frame_end": 68,
+        "frame_start": 0,
+        "initial_root_world_pose": {
+          "changes": {
+            "Hips": {
+              "after": {
+                "q": [
+                  -0.5982245206832886,
+                  -0.16708919405937195,
+                  -0.1189405620098114,
+                  0.7746365666389465
+                ],
+                "t": [
+                  -0.02062949538230896,
+                  3.1846117973327637,
+                  0.02170247957110405
+                ]
+              },
+              "before": {
+                "q": [
+                  -0.5982245206832886,
+                  -0.16708919405937195,
+                  -0.1189405620098114,
+                  0.7746365666389465
+                ],
+                "t": [
+                  -0.02062949538230896,
+                  3.185544013977051,
+                  0.02170247957110405
+                ]
+              }
+            }
+          },
+          "child_and_sample_fields_preserved": true,
+          "expected_world_initial_roots": {
+            "Hips": {
+              "q": [
+                -0.5982245206832886,
+                -0.16708919405937195,
+                -0.1189405620098114,
+                0.7746365666389465
+              ],
+              "t": [
+                -0.02062949538230896,
+                3.1846117973327637,
+                0.02170247957110405
+              ]
+            }
+          },
+          "frame_start": 0,
+          "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+          "retained_fields_sha256": "791C7CCF31AE8D21B208CEB38CE959991BC1A6D9F9EA9C037A32C674286B25A5",
+          "serialized_readback_passed": true
+        },
+        "scale_normalization": {
+          "initial_scale_values_changed": 2,
+          "initial_translation_values_changed": 0,
+          "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+          "remaining_non_unit_initial_scales": 0,
+          "remaining_non_unit_sample_scales": 0,
+          "sample_scale_values_changed": 80,
+          "sample_translation_values_changed": 0,
+          "translation_scale": 1.0
+        },
+        "warnings": []
+      },
+      "grounding": {
+        "checkpoint": "blender/checkpoints/rt_attack_f66607d4cd_grounded.blend",
+        "fps": 24,
+        "frame_end": 68,
+        "frame_start": 0,
+        "ground_contact_after": {
+          "maximum": 7.992202881723642e-06,
+          "minimum": -1.2300442904233932e-05
+        },
+        "ground_contact_before": {
+          "maximum": 1.0478819608688354,
+          "minimum": 0.6242977380752563
+        },
+        "max_absolute_correction_source_units": 25.653190644899578,
+        "root_location_axis_index": 1,
+        "root_location_axis_world_z_responses": [
+          -0.0002219080924987793,
+          0.040847599506378174,
+          -0.00013339519500732422
+        ],
+        "status": "pass"
+      },
+      "import": {
+        "action": "zin_men_infantry_attack",
+        "checkpoint": "blender/checkpoints/rt_attack_f66607d4cd.blend",
+        "frame_end": 68,
+        "frame_start": 0,
+        "reused_checkpoint": null,
+        "root_cleanup": {
+          "action": "zin_men_infantry_attack",
+          "anatomical_scale": {
+            "policy": "measured_world_joint_head_span",
+            "ratio": 4.084888247107322,
+            "reference": {
+              "source_head_bones": [
+                "LeftFoot",
+                "Head"
+              ],
+              "target_head_bones": [
+                "LeftFoot",
+                "Head"
+              ]
+            },
+            "source_world_span": 1.3819304112372273,
+            "target_world_span": 5.645031295183138
+          },
+          "data_length_ratio": 1.0,
+          "location_coordinate_space": "pose_bone_matrix_basis_translation",
+          "location_scale": 0.2448047420186319,
+          "location_scale_formula": "source_world_delta * measured_world_joint_span_ratio then inverse_target_world_rest_basis",
+          "maximum_world_root_error": 4.246830940246582e-07,
+          "policy": "source hierarchy world-root delta scaled by explicit measured joint-head span; world X/Y removed; world Z converted through inverse target armature/rest-root basis; rotations conjugated through source/target object orientations",
+          "rest_data_length_ratio_applied_to_location": false,
+          "source_armature_world_scale": [
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582
+          ],
+          "source_root_location": [
+            -1.7360714673995972,
+            -21.070730209350586,
+            -0.4691047668457031
+          ],
+          "source_root_z_delta_peak": 35.667274475097656,
+          "target_armature_world_scale": [
+            0.040848881006240845,
+            0.040848881006240845,
+            0.040848881006240845
+          ],
+          "target_root": "Hips",
+          "world_root_displacement_proof": [
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "frame": 0,
+              "source_world": [
+                -0.022357936948537827,
+                0.010081338696181774,
+                0.7849348187446594
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0009303092956542969
+              ],
+              "error": 2.648448571562767e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.0009305741405114532
+              ],
+              "frame": 1,
+              "source_world": [
+                -0.021476885303854942,
+                0.013418874703347683,
+                0.7847070097923279
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0056552886962890625
+              ],
+              "error": 1.7695128917694092e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.005655271001160145
+              ],
+              "frame": 2,
+              "source_world": [
+                -0.017082327976822853,
+                0.0295989029109478,
+                0.7835503816604614
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.004109859466552734
+              ],
+              "error": 1.8905848264694214e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.004109670408070087
+              ],
+              "frame": 3,
+              "source_world": [
+                -0.012625508941709995,
+                0.04317318648099899,
+                0.7839287519454956
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.01445627212524414
+              ],
+              "error": 9.313225746154785e-09,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.014456281438469887
+              ],
+              "frame": 4,
+              "source_world": [
+                -0.007983272895216942,
+                0.052906591445207596,
+                0.7884737849235535
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.05110597610473633
+              ],
+              "error": 3.650784492492676e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.05110561102628708
+              ],
+              "frame": 5,
+              "source_world": [
+                -0.003103384980931878,
+                0.05913465470075607,
+                0.7974457144737244
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.09528398513793945
+              ],
+              "error": 3.725290298461914e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.09528402239084244
+              ],
+              "frame": 6,
+              "source_world": [
+                0.003357897512614727,
+                0.059843551367521286,
+                0.8082607984542847
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.14383172988891602
+              ],
+              "error": 7.450580596923828e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.14383165538311005
+              ],
+              "frame": 7,
+              "source_world": [
+                0.011972513981163502,
+                0.05486312136054039,
+                0.8201454877853394
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.1980738639831543
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.19807398319244385
+              ],
+              "frame": 8,
+              "source_world": [
+                0.022401539608836174,
+                0.04532764479517937,
+                0.8334242701530457
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.25505733489990234
+              ],
+              "error": 1.7881393432617188e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.255057156085968
+              ],
+              "frame": 9,
+              "source_world": [
+                0.03333767130970955,
+                0.032094020396471024,
+                0.8473740220069885
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.30375242233276367
+              ],
+              "error": 1.7881393432617188e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.303752601146698
+              ],
+              "frame": 10,
+              "source_world": [
+                0.042623672634363174,
+                0.016863180324435234,
+                0.8592948913574219
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.33887147903442383
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.33887141942977905
+              ],
+              "frame": 11,
+              "source_world": [
+                0.04949098825454712,
+                0.0011577010154724121,
+                0.8678921461105347
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.3612203598022461
+              ],
+              "error": 1.7881393432617188e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.3612205386161804
+              ],
+              "frame": 12,
+              "source_world": [
+                0.05458229035139084,
+                -0.014256300404667854,
+                0.8733633160591125
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.37792348861694336
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.3779236376285553
+              ],
+              "frame": 13,
+              "source_world": [
+                0.059838373214006424,
+                -0.028980573639273643,
+                0.8774523138999939
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.3916473388671875
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.3916472792625427
+              ],
+              "frame": 14,
+              "source_world": [
+                0.06547737121582031,
+                -0.043422799557447433,
+                0.8808119297027588
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.4010787010192871
+              ],
+              "error": 2.9802322387695312e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.4010786712169647
+              ],
+              "frame": 15,
+              "source_world": [
+                0.07092219591140747,
+                -0.057912614196538925,
+                0.8831207752227783
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.40525054931640625
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.4052504301071167
+              ],
+              "frame": 16,
+              "source_world": [
+                0.07581047713756561,
+                -0.0726628303527832,
+                0.8841420412063599
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.4015622138977051
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.401561975479126
+              ],
+              "frame": 17,
+              "source_world": [
+                0.0793541744351387,
+                -0.08813762664794922,
+                0.8832390904426575
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.3895883560180664
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.38958844542503357
+              ],
+              "frame": 18,
+              "source_world": [
+                0.08097459375858307,
+                -0.10471518337726593,
+                0.8803079128265381
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.3696269989013672
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.36962684988975525
+              ],
+              "frame": 19,
+              "source_world": [
+                0.08047209680080414,
+                -0.12253198027610779,
+                0.8754212260246277
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.3412957191467285
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.3412954807281494
+              ],
+              "frame": 20,
+              "source_world": [
+                0.07744317501783371,
+                -0.1418609321117401,
+                0.8684855699539185
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.29645252227783203
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.2964526116847992
+              ],
+              "frame": 21,
+              "source_world": [
+                0.06873621791601181,
+                -0.16518384218215942,
+                0.8575078248977661
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.20938920974731445
+              ],
+              "error": 4.470348358154297e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.20938916504383087
+              ],
+              "frame": 22,
+              "source_world": [
+                0.04565679281949997,
+                -0.2000066339969635,
+                0.8361942768096924
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.08794260025024414
+              ],
+              "error": 4.246830940246582e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.08794217556715012
+              ],
+              "frame": 23,
+              "source_world": [
+                0.01078109722584486,
+                -0.24269737303256989,
+                0.8064634799957275
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.04894685745239258
+              ],
+              "error": 7.450580596923828e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.04894693195819855
+              ],
+              "frame": 24,
+              "source_world": [
+                -0.02970760688185692,
+                -0.28603631258010864,
+                0.7729523777961731
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.17653107643127441
+              ],
+              "error": 4.470348358154297e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.17653103172779083
+              ],
+              "frame": 25,
+              "source_world": [
+                -0.06706597656011581,
+                -0.31672680377960205,
+                0.7417191863059998
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.29818058013916016
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.29818081855773926
+              ],
+              "frame": 26,
+              "source_world": [
+                -0.10119126737117767,
+                -0.32831647992134094,
+                0.711938738822937
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.38866424560546875
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.388664186000824
+              ],
+              "frame": 27,
+              "source_world": [
+                -0.12904444336891174,
+                -0.32744932174682617,
+                0.6897879838943481
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.4086432456970215
+              ],
+              "error": 2.9802322387695312e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.40864327549934387
+              ],
+              "frame": 28,
+              "source_world": [
+                -0.14500710368156433,
+                -0.3154129087924957,
+                0.6848970055580139
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.3554115295410156
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.3554116189479828
+              ],
+              "frame": 29,
+              "source_world": [
+                -0.14671450853347778,
+                -0.2938760221004486,
+                0.6979283690452576
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.34334778785705566
+              ],
+              "error": 2.9802322387695312e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.3433477580547333
+              ],
+              "frame": 30,
+              "source_world": [
+                -0.14655502140522003,
+                -0.28816795349121094,
+                0.7008816599845886
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.3687169551849365
+              ],
+              "error": 2.9802322387695312e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.3687169849872589
+              ],
+              "frame": 31,
+              "source_world": [
+                -0.14676423370838165,
+                -0.2958773076534271,
+                0.6946711540222168
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.41074156761169434
+              ],
+              "error": 2.682209014892578e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.4107418358325958
+              ],
+              "frame": 32,
+              "source_world": [
+                -0.14664673805236816,
+                -0.30993419885635376,
+                0.6843832731246948
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.4579148292541504
+              ],
+              "error": 1.7881393432617188e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.4579150080680847
+              ],
+              "frame": 33,
+              "source_world": [
+                -0.14590051770210266,
+                -0.32488635182380676,
+                0.6728350520133972
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.4979114532470703
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.4979114532470703
+              ],
+              "frame": 34,
+              "source_world": [
+                -0.14472278952598572,
+                -0.3351854681968689,
+                0.663043737411499
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.5293433666229248
+              ],
+              "error": 1.7881393432617188e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.5293435454368591
+              ],
+              "frame": 35,
+              "source_world": [
+                -0.14339350163936615,
+                -0.3405337333679199,
+                0.6553490161895752
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.5572640895843506
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.5572641491889954
+              ],
+              "frame": 36,
+              "source_world": [
+                -0.14222024381160736,
+                -0.34340110421180725,
+                0.648513913154602
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.585242509841919
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.585242748260498
+              ],
+              "frame": 37,
+              "source_world": [
+                -0.1412193477153778,
+                -0.34537413716316223,
+                0.6416646242141724
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.609978437423706
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6099786758422852
+              ],
+              "frame": 38,
+              "source_world": [
+                -0.13992512226104736,
+                -0.345473051071167,
+                0.6356091499328613
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6292703151702881
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6292704343795776
+              ],
+              "frame": 39,
+              "source_world": [
+                -0.13806216418743134,
+                -0.34305447340011597,
+                0.630886435508728
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6408922672271729
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6408921480178833
+              ],
+              "frame": 40,
+              "source_world": [
+                -0.13535837829113007,
+                -0.3374042809009552,
+                0.6280413866043091
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6379828453063965
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6379827857017517
+              ],
+              "frame": 41,
+              "source_world": [
+                -0.1309407353401184,
+                -0.3258627653121948,
+                0.6287536025047302
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6200342178344727
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6200343370437622
+              ],
+              "frame": 42,
+              "source_world": [
+                -0.1243755891919136,
+                -0.3076213300228119,
+                0.6331474781036377
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.5880913734436035
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.5880914330482483
+              ],
+              "frame": 43,
+              "source_world": [
+                -0.11510363221168518,
+                -0.2815009355545044,
+                0.6409672498703003
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.5461459159851074
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.5461459755897522
+              ],
+              "frame": 44,
+              "source_world": [
+                -0.10301513224840164,
+                -0.2475171834230423,
+                0.6512356996536255
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.5001912117004395
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.5001911520957947
+              ],
+              "frame": 45,
+              "source_world": [
+                -0.08829610794782639,
+                -0.20658473670482635,
+                0.662485659122467
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.45825719833374023
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.45825710892677307
+              ],
+              "frame": 46,
+              "source_world": [
+                -0.07270140200853348,
+                -0.16400881111621857,
+                0.6727513074874878
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.42259669303894043
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.4225965440273285
+              ],
+              "frame": 47,
+              "source_world": [
+                -0.05728786811232567,
+                -0.12276608496904373,
+                0.6814811825752258
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.39276957511901855
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.3927697241306305
+              ],
+              "frame": 48,
+              "source_world": [
+                -0.04326219856739044,
+                -0.08546622842550278,
+                0.6887829303741455
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.3665273189544678
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.36652737855911255
+              ],
+              "frame": 49,
+              "source_world": [
+                -0.033984530717134476,
+                -0.0579390786588192,
+                0.6952071785926819
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.33757638931274414
+              ],
+              "error": 2.086162567138672e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.33757659792900085
+              ],
+              "frame": 50,
+              "source_world": [
+                -0.029292374849319458,
+                -0.037912920117378235,
+                0.7022944688796997
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.3043239116668701
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.30432403087615967
+              ],
+              "frame": 51,
+              "source_world": [
+                -0.028238903731107712,
+                -0.023099826648831367,
+                0.7104348540306091
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.26772236824035645
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.2677224278450012
+              ],
+              "frame": 52,
+              "source_world": [
+                -0.030077077448368073,
+                -0.012391234748065472,
+                0.719395101070404
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.2301321029663086
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.23013204336166382
+              ],
+              "frame": 53,
+              "source_world": [
+                -0.03417438268661499,
+                -0.00542115792632103,
+                0.7285974025726318
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.19459867477416992
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.19459882378578186
+              ],
+              "frame": 54,
+              "source_world": [
+                -0.03854566067457199,
+                0.0002890950418077409,
+                0.7372961044311523
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.1623985767364502
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.1623985767364502
+              ],
+              "frame": 55,
+              "source_world": [
+                -0.042397789657115936,
+                0.005686790216714144,
+                0.7451788783073425
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.13402462005615234
+              ],
+              "error": 2.086162567138672e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.13402482867240906
+              ],
+              "frame": 56,
+              "source_world": [
+                -0.04558705538511276,
+                0.011028094217181206,
+                0.7521249055862427
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.10929512977600098
+              ],
+              "error": 9.685754776000977e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.10929522663354874
+              ],
+              "frame": 57,
+              "source_world": [
+                -0.04983328655362129,
+                0.014222683385014534,
+                0.7581788301467896
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08715295791625977
+              ],
+              "error": 1.4156103134155273e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08715281635522842
+              ],
+              "frame": 58,
+              "source_world": [
+                -0.05443895235657692,
+                0.015824899077415466,
+                0.7635993957519531
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.06774783134460449
+              ],
+              "error": 7.450580596923828e-09,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.06774783879518509
+              ],
+              "frame": 59,
+              "source_world": [
+                -0.058578040450811386,
+                0.016373569145798683,
+                0.768349826335907
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.05117082595825195
+              ],
+              "error": 2.7939677238464355e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.05117110535502434
+              ],
+              "frame": 60,
+              "source_world": [
+                -0.061483368277549744,
+                0.01631416380405426,
+                0.7724078893661499
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0385899543762207
+              ],
+              "error": 1.4156103134155273e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.038590095937252045
+              ],
+              "frame": 61,
+              "source_world": [
+                -0.06112382933497429,
+                0.016250183805823326,
+                0.7754877805709839
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.028825759887695312
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.02882564067840576
+              ],
+              "frame": 62,
+              "source_world": [
+                -0.058520130813121796,
+                0.016072191298007965,
+                0.7778781652450562
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.021436691284179688
+              ],
+              "error": 1.30385160446167e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.02143656089901924
+              ],
+              "frame": 63,
+              "source_world": [
+                -0.054355040192604065,
+                0.015561169944703579,
+                0.7796870470046997
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.015966415405273438
+              ],
+              "error": 1.6205012798309326e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.01596657745540142
+              ],
+              "frame": 64,
+              "source_world": [
+                -0.049009669572114944,
+                0.014727178029716015,
+                0.7810261249542236
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.012145519256591797
+              ],
+              "error": 1.5273690223693848e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.012145671993494034
+              ],
+              "frame": 65,
+              "source_world": [
+                -0.04265889897942543,
+                0.013618610799312592,
+                0.7819615006446838
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.00872039794921875
+              ],
+              "error": 2.644956111907959e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.00872066244482994
+              ],
+              "frame": 66,
+              "source_world": [
+                -0.036078907549381256,
+                0.012447953224182129,
+                0.7827999591827393
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.005174160003662109
+              ],
+              "error": 2.4121254682540894e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.005174401216208935
+              ],
+              "frame": 67,
+              "source_world": [
+                -0.029585953801870346,
+                0.011301719583570957,
+                0.7836681008338928
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0009546279907226562
+              ],
+              "error": 2.939486876130104e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.0009549219394102693
+              ],
+              "frame": 68,
+              "source_world": [
+                -0.02351023070514202,
+                0.010270025581121445,
+                0.7847010493278503
+              ]
+            }
+          ]
+        }
+      },
+      "receipt": "provider/animation_receipts/attack.json",
+      "reimport_frames": [
+        {
+          "center_x": -0.12527787685394287,
+          "center_y": -0.6254458427429199,
+          "frame": 1,
+          "ground_z": 7.877126336097717e-06,
+          "top_z": 6.293401718139648
+        },
+        {
+          "center_x": -0.11425149440765381,
+          "center_y": 0.1314988136291504,
+          "frame": 18,
+          "ground_z": -3.635883331298828e-06,
+          "top_z": 7.998966217041016
+        },
+        {
+          "center_x": 0.7167737185955048,
+          "center_y": 0.4126530885696411,
+          "frame": 35,
+          "ground_z": 3.426498733460903e-05,
+          "top_z": 5.240093231201172
+        },
+        {
+          "center_x": 0.25702178478240967,
+          "center_y": -1.0906492471694946,
+          "frame": 52,
+          "ground_z": 2.0880717784166336e-05,
+          "top_z": 5.8747029304504395
+        },
+        {
+          "center_x": -0.11956954002380371,
+          "center_y": -0.6266491413116455,
+          "frame": 69,
+          "ground_z": 1.6058562323451042e-05,
+          "top_z": 6.293442726135254
+        }
+      ],
+      "reimport_previews": [
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_001_front.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_001_left.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_001_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_018_front.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_018_left.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_018_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_035_front.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_035_left.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_035_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_052_front.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_052_left.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_052_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_069_front.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_069_left.png",
+        "blender/previews/reimport_zin_men_infantry_attack_fixed_frame_069_three_quarter.png"
+      ],
+      "reimport_proof": "blender/checkpoints/reimport_zin_men_infantry_attack_fixed.blend",
+      "source_checkpoint": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+      "status": "pass",
+      "task_id": "01a14f63-558d-74f6-81bb-94c17b47e74f"
+    },
+    "death": {
+      "action": "zin_men_infantry_death",
+      "anim_after": {
+        "bytes": 58195,
+        "name": "zin_men_infantry_death.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_death.anim",
+        "relative_path": "export/anim/zin_men_infantry_death.anim",
+        "sha256": "BBDEA22A91CC1068F37235D9D49B2FF218B0E367D01CF65490DA7C1062825DAE"
+      },
+      "anim_before": {
+        "bytes": 57318,
+        "name": "zin_men_infantry_death.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_death.anim",
+        "relative_path": "export/anim/zin_men_infantry_death.anim",
+        "sha256": "052B197E2398E0AF4BA85FAB67DD3C08215F92188743833497300B504ED0C94F"
+      },
+      "armature": "Armature.001",
+      "export": {
+        "action": "zin_men_infantry_death",
+        "adapter": {
+          "id": "hoi4_blender_adapter",
+          "request_id": "237cc47b1c584ba7b2a1677529601c07",
+          "version": "1.6.0",
+          "worker_log": "logs/adapter/237cc47b1c584ba7b2a1677529601c07.result.json"
+        },
+        "anim": "export/anim/zin_men_infantry_death.anim",
+        "anim_bytes": 58195,
+        "anim_text": "export/anim/zin_men_infantry_death.txt",
+        "armature": "Armature.001",
+        "armature_world_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "blend": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+        "export_transforms": {
+          "animation_translation_channels": {
+            "action": "zin_men_infantry_death",
+            "factor": 0.040848881006240845,
+            "keyframes": 4830,
+            "location_fcurves": 72,
+            "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+          },
+          "armature": "Armature.001",
+          "armature_data_scale_factor": 0.040848881006240845,
+          "armature_world_scale_after": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "armature_world_scale_before": [
+            0.040848881006240845,
+            0.040848881006240845,
+            0.040848881006240845
+          ],
+          "mesh_world_scales_after": {
+            "char1.001": [
+              0.040848881006240845,
+              0.040848881006240845,
+              0.040848881006240845
+            ]
+          },
+          "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+        },
+        "fps": 24,
+        "frame_end": 72,
+        "frame_start": 0,
+        "initial_root_world_pose": {
+          "changes": {
+            "Hips": {
+              "after": {
+                "q": [
+                  -0.5982249975204468,
+                  -0.16708900034427643,
+                  -0.11894077062606812,
+                  0.7746361494064331
+                ],
+                "t": [
+                  -0.02062937431037426,
+                  3.18463397026062,
+                  0.02170240692794323
+                ]
+              },
+              "before": {
+                "q": [
+                  -0.5982249975204468,
+                  -0.16708900034427643,
+                  -0.11894077062606812,
+                  0.7746361494064331
+                ],
+                "t": [
+                  -0.02062937431037426,
+                  3.1855661869049072,
+                  0.02170240692794323
+                ]
+              }
+            }
+          },
+          "child_and_sample_fields_preserved": true,
+          "expected_world_initial_roots": {
+            "Hips": {
+              "q": [
+                -0.5982249975204468,
+                -0.16708900034427643,
+                -0.11894077062606812,
+                0.7746361494064331
+              ],
+              "t": [
+                -0.02062937431037426,
+                3.18463397026062,
+                0.02170240692794323
+              ]
+            }
+          },
+          "frame_start": 0,
+          "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+          "retained_fields_sha256": "8B3AB9A423D0F2BC48AE61E2C1D43A422F90D391AE496D1F97396138CD153ABC",
+          "serialized_readback_passed": true
+        },
+        "scale_normalization": {
+          "initial_scale_values_changed": 2,
+          "initial_translation_values_changed": 0,
+          "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+          "remaining_non_unit_initial_scales": 0,
+          "remaining_non_unit_sample_scales": 0,
+          "sample_scale_values_changed": 106,
+          "sample_translation_values_changed": 0,
+          "translation_scale": 1.0
+        },
+        "warnings": []
+      },
+      "grounding": {
+        "checkpoint": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+        "fps": 24,
+        "frame_end": 72,
+        "frame_start": 0,
+        "ground_contact_after": {
+          "maximum": 5.349924322217703e-06,
+          "minimum": -1.18840835057199e-05
+        },
+        "ground_contact_before": {
+          "maximum": 1.1763842105865479,
+          "minimum": 0.7087678909301758
+        },
+        "max_absolute_correction_source_units": 28.799053283448803,
+        "root_location_axis_index": 1,
+        "root_location_axis_world_z_responses": [
+          -0.0002218484878540039,
+          0.0408480167388916,
+          -0.00013339519500732422
+        ],
+        "status": "pass"
+      },
+      "import": {
+        "action": "zin_men_infantry_death",
+        "checkpoint": "blender/checkpoints/rt_death_f66607d4cd.blend",
+        "frame_end": 72,
+        "frame_start": 0,
+        "reused_checkpoint": null,
+        "root_cleanup": {
+          "action": "zin_men_infantry_death",
+          "anatomical_scale": {
+            "policy": "measured_world_joint_head_span",
+            "ratio": 4.084888247107322,
+            "reference": {
+              "source_head_bones": [
+                "LeftFoot",
+                "Head"
+              ],
+              "target_head_bones": [
+                "LeftFoot",
+                "Head"
+              ]
+            },
+            "source_world_span": 1.3819304112372273,
+            "target_world_span": 5.645031295183138
+          },
+          "data_length_ratio": 1.0,
+          "location_coordinate_space": "pose_bone_matrix_basis_translation",
+          "location_scale": 0.2448047420186319,
+          "location_scale_formula": "source_world_delta * measured_world_joint_span_ratio then inverse_target_world_rest_basis",
+          "maximum_world_root_error": 4.76837158203125e-07,
+          "policy": "source hierarchy world-root delta scaled by explicit measured joint-head span; world X/Y removed; world Z converted through inverse target armature/rest-root basis; rotations conjugated through source/target object orientations",
+          "rest_data_length_ratio_applied_to_location": false,
+          "source_armature_world_scale": [
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582
+          ],
+          "source_root_location": [
+            -1.7286142110824585,
+            -22.44330406188965,
+            -0.4646177291870117
+          ],
+          "source_root_z_delta_peak": 61.988749504089355,
+          "target_armature_world_scale": [
+            0.040848881006240845,
+            0.040848881006240845,
+            0.040848881006240845
+          ],
+          "target_root": "Hips",
+          "world_root_displacement_proof": [
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "frame": 0,
+              "source_world": [
+                -0.0223578829318285,
+                0.01008125301450491,
+                0.7712088823318481
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.03965187072753906
+              ],
+              "error": 3.3527612686157227e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.03965190425515175
+              ],
+              "frame": 1,
+              "source_world": [
+                -0.016193000599741936,
+                0.03708450123667717,
+                0.7615019083023071
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.1758284568786621
+              ],
+              "error": 1.341104507446289e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.17582859098911285
+              ],
+              "frame": 2,
+              "source_world": [
+                0.009196329861879349,
+                0.1525389403104782,
+                0.7281652092933655
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.16238737106323242
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.16238737106323242
+              ],
+              "frame": 3,
+              "source_world": [
+                0.024805758148431778,
+                0.21787427365779877,
+                0.7314556837081909
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.06836199760437012
+              ],
+              "error": 1.4156103134155273e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.06836213916540146
+              ],
+              "frame": 4,
+              "source_world": [
+                0.042874112725257874,
+                0.2516065537929535,
+                0.7544735074043274
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.06380414962768555
+              ],
+              "error": 7.450580596923828e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.06380422413349152
+              ],
+              "frame": 5,
+              "source_world": [
+                0.06422089040279388,
+                0.2627495229244232,
+                0.7868284583091736
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.14820575714111328
+              ],
+              "error": 2.682209014892578e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.1482054889202118
+              ],
+              "frame": 6,
+              "source_world": [
+                0.07606465369462967,
+                0.2635082006454468,
+                0.8074902892112732
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.20231056213378906
+              ],
+              "error": 4.470348358154297e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.20231051743030548
+              ],
+              "frame": 7,
+              "source_world": [
+                0.08242159336805344,
+                0.2606144845485687,
+                0.8207354545593262
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.24496698379516602
+              ],
+              "error": 1.9371509552001953e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.24496717751026154
+              ],
+              "frame": 8,
+              "source_world": [
+                0.08650605380535126,
+                0.2553884983062744,
+                0.8311780095100403
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.28000879287719727
+              ],
+              "error": 2.9802322387695312e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.28000882267951965
+              ],
+              "frame": 9,
+              "source_world": [
+                0.08905268460512161,
+                0.2481890469789505,
+                0.8397563695907593
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.31168365478515625
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.31168365478515625
+              ],
+              "frame": 10,
+              "source_world": [
+                0.09096047282218933,
+                0.24002118408679962,
+                0.8475105166435242
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.3432021141052246
+              ],
+              "error": 2.086162567138672e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.3432019054889679
+              ],
+              "frame": 11,
+              "source_world": [
+                0.09285034239292145,
+                0.23164944350719452,
+                0.8552263379096985
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.37525320053100586
+              ],
+              "error": 2.086162567138672e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.3752534091472626
+              ],
+              "frame": 12,
+              "source_world": [
+                0.0947575643658638,
+                0.22316667437553406,
+                0.8630726933479309
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.4063715934753418
+              ],
+              "error": 2.9802322387695312e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.4063716232776642
+              ],
+              "frame": 13,
+              "source_world": [
+                0.09624424576759338,
+                0.21406595408916473,
+                0.8706905841827393
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.4354114532470703
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.4354115426540375
+              ],
+              "frame": 14,
+              "source_world": [
+                0.09729157388210297,
+                0.20431531965732574,
+                0.8777996897697449
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.46229982376098633
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.4622995853424072
+              ],
+              "frame": 15,
+              "source_world": [
+                0.09810127317905426,
+                0.1941533237695694,
+                0.8843820095062256
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.48677825927734375
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.4867781698703766
+              ],
+              "frame": 16,
+              "source_world": [
+                0.0987735316157341,
+                0.18368762731552124,
+                0.890374481678009
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5079059600830078
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5079059600830078
+              ],
+              "frame": 17,
+              "source_world": [
+                0.09945902973413467,
+                0.17302004992961884,
+                0.8955466747283936
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5261435508728027
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.526143491268158
+              ],
+              "frame": 18,
+              "source_world": [
+                0.10027098655700684,
+                0.16225217282772064,
+                0.9000113010406494
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5426883697509766
+              ],
+              "error": 2.980232238769531e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5426880717277527
+              ],
+              "frame": 19,
+              "source_world": [
+                0.10106483846902847,
+                0.15125860273838043,
+                0.904061496257782
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5576639175415039
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5576639175415039
+              ],
+              "frame": 20,
+              "source_world": [
+                0.10177288949489594,
+                0.14000311493873596,
+                0.9077276587486267
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5701117515563965
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5701117515563965
+              ],
+              "frame": 21,
+              "source_world": [
+                0.10239855200052261,
+                0.1285255402326584,
+                0.9107749462127686
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.579709529876709
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5797094702720642
+              ],
+              "frame": 22,
+              "source_world": [
+                0.10300217568874359,
+                0.116988904774189,
+                0.9131245017051697
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5864701271057129
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5864701271057129
+              ],
+              "frame": 23,
+              "source_world": [
+                0.10362185537815094,
+                0.10550102591514587,
+                0.914779543876648
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5901632308959961
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5901631712913513
+              ],
+              "frame": 24,
+              "source_world": [
+                0.10429249703884125,
+                0.09414217621088028,
+                0.9156836271286011
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5897164344787598
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.589716374874115
+              ],
+              "frame": 25,
+              "source_world": [
+                0.10512161999940872,
+                0.0830787643790245,
+                0.9155742526054382
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5863552093505859
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5863552093505859
+              ],
+              "frame": 26,
+              "source_world": [
+                0.10625069588422775,
+                0.07231108844280243,
+                0.914751410484314
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5797591209411621
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.579758882522583
+              ],
+              "frame": 27,
+              "source_world": [
+                0.1076076477766037,
+                0.06174270436167717,
+                0.9131366014480591
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5684161186218262
+              ],
+              "error": 1.7881393432617188e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5684159398078918
+              ],
+              "frame": 28,
+              "source_world": [
+                0.10907749086618423,
+                0.05132545903325081,
+                0.910359799861908
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5479402542114258
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5479403734207153
+              ],
+              "frame": 29,
+              "source_world": [
+                0.1104448214173317,
+                0.041005346924066544,
+                0.9053472876548767
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.5181398391723633
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.5181396007537842
+              ],
+              "frame": 30,
+              "source_world": [
+                0.11141928285360336,
+                0.030827544629573822,
+                0.898051917552948
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.4837923049926758
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.48379239439964294
+              ],
+              "frame": 31,
+              "source_world": [
+                0.11164084821939468,
+                0.0215394739061594,
+                0.8896435499191284
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.44288063049316406
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.4428804814815521
+              ],
+              "frame": 32,
+              "source_world": [
+                0.11087494343519211,
+                0.013573553413152695,
+                0.8796281218528748
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.33795642852783203
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.33795619010925293
+              ],
+              "frame": 33,
+              "source_world": [
+                0.10994172096252441,
+                0.0029073297046124935,
+                0.8539421558380127
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.08970928192138672
+              ],
+              "error": 1.862645149230957e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0897090956568718
+              ],
+              "frame": 34,
+              "source_world": [
+                0.11052525043487549,
+                -0.018034767359495163,
+                0.7931700944900513
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.31661033630371094
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.3166104257106781
+              ],
+              "frame": 35,
+              "source_world": [
+                0.1125202476978302,
+                -0.049271468073129654,
+                0.6937011480331421
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.7724823951721191
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.7724824547767639
+              ],
+              "frame": 36,
+              "source_world": [
+                0.11513347178697586,
+                -0.08092459291219711,
+                0.5821015238761902
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.8292646408081055
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.829264760017395
+              ],
+              "frame": 37,
+              "source_world": [
+                0.11814265698194504,
+                -0.09450899809598923,
+                0.568200945854187
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.8305172920227051
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.8305171728134155
+              ],
+              "frame": 38,
+              "source_world": [
+                0.12119917571544647,
+                -0.10189323872327805,
+                0.5678943395614624
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.8204855918884277
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.8204856514930725
+              ],
+              "frame": 39,
+              "source_world": [
+                0.12313682585954666,
+                -0.11270315945148468,
+                0.5703501105308533
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.7971529960632324
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.797153115272522
+              ],
+              "frame": 40,
+              "source_world": [
+                0.1236785501241684,
+                -0.13039541244506836,
+                0.576062023639679
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.7502627372741699
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.7502628564834595
+              ],
+              "frame": 41,
+              "source_world": [
+                0.12379762530326843,
+                -0.15087512135505676,
+                0.5875409841537476
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6982614994049072
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6982614994049072
+              ],
+              "frame": 42,
+              "source_world": [
+                0.12388473004102707,
+                -0.17260684072971344,
+                0.6002711653709412
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6550021171569824
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6550021767616272
+              ],
+              "frame": 43,
+              "source_world": [
+                0.12387498468160629,
+                -0.19695605337619781,
+                0.6108612418174744
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6326479911804199
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.632648229598999
+              ],
+              "frame": 44,
+              "source_world": [
+                0.12374511361122131,
+                -0.22509659826755524,
+                0.6163336038589478
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.6631119251251221
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.6631119847297668
+              ],
+              "frame": 45,
+              "source_world": [
+                0.12329723685979843,
+                -0.26066431403160095,
+                0.6088759303092957
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.7713603973388672
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.771360456943512
+              ],
+              "frame": 46,
+              "source_world": [
+                0.12251927703619003,
+                -0.30614954233169556,
+                0.5823761820793152
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.9875833988189697
+              ],
+              "error": 1.7881393432617188e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.987583577632904
+              ],
+              "frame": 47,
+              "source_world": [
+                0.12178874015808105,
+                -0.3641981780529022,
+                0.5294437408447266
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.3087637424468994
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.3087637424468994
+              ],
+              "frame": 48,
+              "source_world": [
+                0.1220972016453743,
+                -0.4301586449146271,
+                0.4508173167705536
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.6668875217437744
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.666887640953064
+              ],
+              "frame": 49,
+              "source_world": [
+                0.12388260662555695,
+                -0.49022048711776733,
+                0.36314690113067627
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.946331262588501
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.946331262588501
+              ],
+              "frame": 50,
+              "source_world": [
+                0.12571965157985687,
+                -0.5353018641471863,
+                0.2947377562522888
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.0800676345825195
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.0800676345825195
+              ],
+              "frame": 51,
+              "source_world": [
+                0.1261560469865799,
+                -0.5648943781852722,
+                0.2619984447956085
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.0311079025268555
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.0311076641082764
+              ],
+              "frame": 52,
+              "source_world": [
+                0.12433342635631561,
+                -0.5806595683097839,
+                0.27398407459259033
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.881727933883667
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.8817278146743774
+              ],
+              "frame": 53,
+              "source_world": [
+                0.12160904705524445,
+                -0.5856737494468689,
+                0.3105529844760895
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.8141083717346191
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.8141084909439087
+              ],
+              "frame": 54,
+              "source_world": [
+                0.1202286034822464,
+                -0.5902674794197083,
+                0.3271065354347229
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.8185408115386963
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.8185406923294067
+              ],
+              "frame": 55,
+              "source_world": [
+                0.11981052905321121,
+                -0.5948855876922607,
+                0.3260214924812317
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.8590309619903564
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.8590309619903564
+              ],
+              "frame": 56,
+              "source_world": [
+                0.11978156864643097,
+                -0.5982654094696045,
+                0.316109299659729
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.9135515689849854
+              ],
+              "error": 1.1920928955078125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.913551688194275
+              ],
+              "frame": 57,
+              "source_world": [
+                0.11962047219276428,
+                -0.6002621054649353,
+                0.30276235938072205
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -1.966125249862671
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -1.966125249862671
+              ],
+              "frame": 58,
+              "source_world": [
+                0.11906104534864426,
+                -0.6018229126930237,
+                0.2898921072483063
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.022433042526245
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.022433280944824
+              ],
+              "frame": 59,
+              "source_world": [
+                0.1181134283542633,
+                -0.6027466058731079,
+                0.27610763907432556
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.081555128097534
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.0815553665161133
+              ],
+              "frame": 60,
+              "source_world": [
+                0.11685419827699661,
+                -0.6030042171478271,
+                0.26163429021835327
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1164984703063965
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.1164987087249756
+              ],
+              "frame": 61,
+              "source_world": [
+                0.11585448682308197,
+                -0.6034708619117737,
+                0.25307998061180115
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.123178005218506
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.123178243637085
+              ],
+              "frame": 62,
+              "source_world": [
+                0.11534643918275833,
+                -0.6044344305992126,
+                0.2514447867870331
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1136302947998047
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.113630533218384
+              ],
+              "frame": 63,
+              "source_world": [
+                0.11521770805120468,
+                -0.6055187582969666,
+                0.25378212332725525
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1011228561401367
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.101123094558716
+              ],
+              "frame": 64,
+              "source_world": [
+                0.11531351506710052,
+                -0.6064522862434387,
+                0.25684401392936707
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.0997745990753174
+              ],
+              "error": 4.76837158203125e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.0997750759124756
+              ],
+              "frame": 65,
+              "source_world": [
+                0.11545193195343018,
+                -0.6069926619529724,
+                0.25717398524284363
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1009912490844727
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.1009914875030518
+              ],
+              "frame": 66,
+              "source_world": [
+                0.11564740538597107,
+                -0.6073974967002869,
+                0.2568762004375458
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1032614707946777
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.103261709213257
+              ],
+              "frame": 67,
+              "source_world": [
+                0.11582831293344498,
+                -0.6077203750610352,
+                0.2563204765319824
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1054868698120117
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.1054866313934326
+              ],
+              "frame": 68,
+              "source_world": [
+                0.11590766906738281,
+                -0.6080054044723511,
+                0.2557757496833801
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1066956520080566
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.1066958904266357
+              ],
+              "frame": 69,
+              "source_world": [
+                0.11569639295339584,
+                -0.6082660555839539,
+                0.25547972321510315
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.107724905014038
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.107725143432617
+              ],
+              "frame": 70,
+              "source_world": [
+                0.11534077674150467,
+                -0.6084862351417542,
+                0.25522780418395996
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1086628437042236
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.1086630821228027
+              ],
+              "frame": 71,
+              "source_world": [
+                0.11491245776414871,
+                -0.6086830496788025,
+                0.25499817728996277
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -2.1095776557922363
+              ],
+              "error": 2.384185791015625e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.1095778942108154
+              ],
+              "frame": 72,
+              "source_world": [
+                0.1144818589091301,
+                -0.6088764667510986,
+                0.2547742426395416
+              ]
+            }
+          ]
+        }
+      },
+      "receipt": "provider/animation_receipts/death.json",
+      "reimport_frames": [
+        {
+          "center_x": -0.12527120113372803,
+          "center_y": -0.6254454851150513,
+          "frame": 1,
+          "ground_z": 1.634843647480011e-05,
+          "top_z": 6.293421745300293
+        },
+        {
+          "center_x": -0.3549710512161255,
+          "center_y": 0.1313234567642212,
+          "frame": 19,
+          "ground_z": 1.0551651939749718e-05,
+          "top_z": 6.951460838317871
+        },
+        {
+          "center_x": -0.1195904016494751,
+          "center_y": 0.23179876804351807,
+          "frame": 37,
+          "ground_z": 5.245208740234375e-06,
+          "top_z": 5.843212127685547
+        },
+        {
+          "center_x": 0.860148012638092,
+          "center_y": 0.20969319343566895,
+          "frame": 55,
+          "ground_z": 0.0,
+          "top_z": 2.1681180000305176
+        },
+        {
+          "center_x": 0.9277739524841309,
+          "center_y": 0.18636584281921387,
+          "frame": 73,
+          "ground_z": 0.0,
+          "top_z": 1.622575044631958
+        }
+      ],
+      "reimport_previews": [
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_001_front.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_001_left.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_001_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_019_front.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_019_left.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_019_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_037_front.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_037_left.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_037_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_055_front.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_055_left.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_055_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_073_front.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_073_left.png",
+        "blender/previews/reimport_zin_men_infantry_death_fixed_frame_073_three_quarter.png"
+      ],
+      "reimport_proof": "blender/checkpoints/reimport_zin_men_infantry_death_fixed.blend",
+      "source_checkpoint": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+      "status": "pass",
+      "task_id": "01a14f68-9cfa-70c8-886a-007ba46eac52"
+    },
+    "idle": {
+      "action": "zin_men_infantry_idle",
+      "anim_after": {
+        "bytes": 77395,
+        "name": "zin_men_infantry_idle.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_idle.anim",
+        "relative_path": "export/anim/zin_men_infantry_idle.anim",
+        "sha256": "BB91667DB70DF525F90EA7616F604CD9D0C16E03354C2D05F79CB3258772C5DD"
+      },
+      "anim_before": {
+        "bytes": 76218,
+        "name": "zin_men_infantry_idle.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_idle.anim",
+        "relative_path": "export/anim/zin_men_infantry_idle.anim",
+        "sha256": "51EF92AD7DFEEF0A9FB3DE3F8127C9B393F512C9378D301C61602CFCFC6B59F8"
+      },
+      "armature": "Armature.001",
+      "export": {
+        "action": "zin_men_infantry_idle",
+        "adapter": {
+          "id": "hoi4_blender_adapter",
+          "request_id": "bf1b3fe16bc9406cae7122e9ab5192f0",
+          "version": "1.6.0",
+          "worker_log": "logs/adapter/bf1b3fe16bc9406cae7122e9ab5192f0.result.json"
+        },
+        "anim": "export/anim/zin_men_infantry_idle.anim",
+        "anim_bytes": 77395,
+        "anim_text": "export/anim/zin_men_infantry_idle.txt",
+        "armature": "Armature.001",
+        "armature_world_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "blend": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+        "export_transforms": {
+          "animation_translation_channels": {
+            "action": "zin_men_infantry_idle",
+            "factor": 0.040848881006240845,
+            "keyframes": 6480,
+            "location_fcurves": 72,
+            "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+          },
+          "armature": "Armature.001",
+          "armature_data_scale_factor": 0.040848881006240845,
+          "armature_world_scale_after": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "armature_world_scale_before": [
+            0.040848881006240845,
+            0.040848881006240845,
+            0.040848881006240845
+          ],
+          "mesh_world_scales_after": {
+            "char1.001": [
+              0.040848881006240845,
+              0.040848881006240845,
+              0.040848881006240845
+            ]
+          },
+          "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+        },
+        "fps": 24,
+        "frame_end": 97,
+        "frame_start": 0,
+        "initial_root_world_pose": {
+          "changes": {
+            "Hips": {
+              "after": {
+                "q": [
+                  -0.6140856146812439,
+                  0.2783397436141968,
+                  0.24388952553272247,
+                  0.6970966458320618
+                ],
+                "t": [
+                  -0.016295036301016808,
+                  3.985626220703125,
+                  0.019065365195274353
+                ]
+              },
+              "before": {
+                "q": [
+                  -0.6140856146812439,
+                  0.2783397436141968,
+                  0.24388952553272247,
+                  0.6970966458320618
+                ],
+                "t": [
+                  -0.016295036301016808,
+                  3.986558437347412,
+                  0.019065365195274353
+                ]
+              }
+            }
+          },
+          "child_and_sample_fields_preserved": true,
+          "expected_world_initial_roots": {
+            "Hips": {
+              "q": [
+                -0.6140856146812439,
+                0.2783397436141968,
+                0.24388952553272247,
+                0.6970966458320618
+              ],
+              "t": [
+                -0.016295036301016808,
+                3.985626220703125,
+                0.019065365195274353
+              ]
+            }
+          },
+          "frame_start": 0,
+          "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+          "retained_fields_sha256": "8F3458974C3AC604F8AB07B10F24A56C1A532E31DE828130300E533BFAA0A1FB",
+          "serialized_readback_passed": true
+        },
+        "scale_normalization": {
+          "initial_scale_values_changed": 2,
+          "initial_translation_values_changed": 0,
+          "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+          "remaining_non_unit_initial_scales": 0,
+          "remaining_non_unit_sample_scales": 0,
+          "sample_scale_values_changed": 150,
+          "sample_translation_values_changed": 0,
+          "translation_scale": 1.0
+        },
+        "warnings": []
+      },
+      "grounding": {
+        "checkpoint": "blender/checkpoints/rt_idle_f66607d4cd_grounded.blend",
+        "fps": 24,
+        "frame_end": 97,
+        "frame_start": 0,
+        "ground_contact_after": {
+          "maximum": 9.41101461648941e-07,
+          "minimum": -1.3817334547638893e-06
+        },
+        "ground_contact_before": {
+          "maximum": 0.1342676728963852,
+          "minimum": 0.07575862109661102
+        },
+        "max_absolute_correction_source_units": 3.286986736123271,
+        "root_location_axis_index": 1,
+        "root_location_axis_world_z_responses": [
+          -0.00022190064191818237,
+          0.04084794223308563,
+          -0.0001333877444267273
+        ],
+        "status": "pass"
+      },
+      "import": {
+        "action": "zin_men_infantry_idle",
+        "checkpoint": "blender/checkpoints/rt_idle_f66607d4cd.blend",
+        "frame_end": 97,
+        "frame_start": 0,
+        "reused_checkpoint": null,
+        "root_cleanup": {
+          "action": "zin_men_infantry_idle",
+          "anatomical_scale": {
+            "policy": "measured_world_joint_head_span",
+            "ratio": 4.084888247107322,
+            "reference": {
+              "source_head_bones": [
+                "LeftFoot",
+                "Head"
+              ],
+              "target_head_bones": [
+                "LeftFoot",
+                "Head"
+              ]
+            },
+            "source_world_span": 1.3819304112372273,
+            "target_world_span": 5.645031295183138
+          },
+          "data_length_ratio": 1.0,
+          "location_coordinate_space": "pose_bone_matrix_basis_translation",
+          "location_scale": 0.2448047420186319,
+          "location_scale_formula": "source_world_delta * measured_world_joint_span_ratio then inverse_target_world_rest_basis",
+          "maximum_world_root_error": 3.855675458908081e-07,
+          "policy": "source hierarchy world-root delta scaled by explicit measured joint-head span; world X/Y removed; world Z converted through inverse target armature/rest-root basis; rotations conjugated through source/target object orientations",
+          "rest_data_length_ratio_applied_to_location": false,
+          "source_armature_world_scale": [
+            0.009999999776482582,
+            0.009999999776482582,
+            0.009999999776482582
+          ],
+          "source_root_location": [
+            0.12532536685466766,
+            -6.261471748352051,
+            -0.16572551429271698
+          ],
+          "source_root_z_delta_peak": 1.5698789805173874,
+          "target_armature_world_scale": [
+            0.040848881006240845,
+            0.040848881006240845,
+            0.040848881006240845
+          ],
+          "target_root": "Hips",
+          "world_root_displacement_proof": [
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "error": 0.0,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "frame": 0,
+              "source_world": [
+                -0.002959643490612507,
+                0.006459342315793037,
+                0.9329134821891785
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                3.0994415283203125e-05
+              ],
+              "error": 7.266862803760644e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                3.092174665653147e-05
+              ],
+              "frame": 1,
+              "source_world": [
+                -0.0029453847091645002,
+                0.00644279271364212,
+                0.9329210519790649
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.00021123886108398438
+              ],
+              "error": 1.4316173905836542e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0002110956993419677
+              ],
+              "frame": 2,
+              "source_world": [
+                -0.0028705382719635963,
+                0.006379884202033281,
+                0.9329651594161987
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.00010824203491210938
+              ],
+              "error": 1.3766111806035042e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.00010810437379404902
+              ],
+              "frame": 3,
+              "source_world": [
+                -0.002794613828882575,
+                0.00634779455140233,
+                0.9329399466514587
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.00040435791015625
+              ],
+              "error": 5.957554094493389e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.00040441748569719493
+              ],
+              "frame": 4,
+              "source_world": [
+                -0.0027411978226155043,
+                0.006287271622568369,
+                0.9328144788742065
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0005903244018554688
+              ],
+              "error": 1.3294629752635956e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.0005901914555579424
+              ],
+              "frame": 5,
+              "source_world": [
+                -0.0027489601634442806,
+                0.006264872383326292,
+                0.9327690005302429
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0003204345703125
+              ],
+              "error": 1.7113052308559418e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.00032041745726019144
+              ],
+              "frame": 6,
+              "source_world": [
+                -0.002728309016674757,
+                0.006268130615353584,
+                0.932835042476654
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -4.863739013671875e-05
+              ],
+              "error": 5.8273144077758724e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -4.8695663281250745e-05
+              ],
+              "frame": 7,
+              "source_world": [
+                -0.002676813630387187,
+                0.006189974490553141,
+                0.9329015612602234
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.00046634674072265625
+              ],
+              "error": 8.576898835599422e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.00046626097173430026
+              ],
+              "frame": 8,
+              "source_world": [
+                -0.002769416430965066,
+                0.005963553674519062,
+                0.9330276250839233
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0009317398071289062
+              ],
+              "error": 5.168840289115906e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0009317914955317974
+              ],
+              "frame": 9,
+              "source_world": [
+                -0.0028342092409729958,
+                0.005754042882472277,
+                0.9331415891647339
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0010547637939453125
+              ],
+              "error": 1.57160684466362e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0010547480778768659
+              ],
+              "frame": 10,
+              "source_world": [
+                -0.0029970069881528616,
+                0.005530105903744698,
+                0.9331716895103455
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0007648468017578125
+              ],
+              "error": 8.14325176179409e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0007647653692401946
+              ],
+              "frame": 11,
+              "source_world": [
+                -0.003172358265146613,
+                0.0053786421194672585,
+                0.933100700378418
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0008158683776855469
+              ],
+              "error": 2.7474015951156616e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.000815895851701498
+              ],
+              "frame": 12,
+              "source_world": [
+                -0.00326334941200912,
+                0.00524389510974288,
+                0.9327137470245361
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.004327297210693359
+              ],
+              "error": 2.8638169169425964e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.004327583592385054
+              ],
+              "frame": 13,
+              "source_world": [
+                -0.0034439971204847097,
+                0.005054343957453966,
+                0.9318540692329407
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.007506847381591797
+              ],
+              "error": 7.59027898311615e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.007506923284381628
+              ],
+              "frame": 14,
+              "source_world": [
+                -0.0041574230417609215,
+                0.004920959006994963,
+                0.9310757517814636
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.00981903076171875
+              ],
+              "error": 3.725290298461914e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.009818993508815765
+              ],
+              "frame": 15,
+              "source_world": [
+                -0.0053963991813361645,
+                0.004758278839290142,
+                0.9305097460746765
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.012049674987792969
+              ],
+              "error": 6.705522537231445e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.012049742043018341
+              ],
+              "frame": 16,
+              "source_world": [
+                -0.006472084205597639,
+                0.004437787923961878,
+                0.9299636483192444
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.014647483825683594
+              ],
+              "error": 7.171183824539185e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.014647412113845348
+              ],
+              "frame": 17,
+              "source_world": [
+                -0.007295185700058937,
+                0.0038955279160290956,
+                0.9293277263641357
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.018091678619384766
+              ],
+              "error": 2.2351741790771484e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.018091656267642975
+              ],
+              "frame": 18,
+              "source_world": [
+                -0.007839521393179893,
+                0.003095342079177499,
+                0.9284845590591431
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.022325992584228516
+              ],
+              "error": 2.4959444999694824e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.02232574298977852
+              ],
+              "frame": 19,
+              "source_world": [
+                -0.00815421249717474,
+                0.0021926609333604574,
+                0.927448034286499
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.027666091918945312
+              ],
+              "error": 1.3783574104309082e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.02766595408320427
+              ],
+              "frame": 20,
+              "source_world": [
+                -0.008245278149843216,
+                0.0011248600203543901,
+                0.9261407256126404
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.03404664993286133
+              ],
+              "error": 1.4156103134155273e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.03404679149389267
+              ],
+              "frame": 21,
+              "source_world": [
+                -0.00813159067183733,
+                -0.00039751469739712775,
+                0.9245786666870117
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.041735172271728516
+              ],
+              "error": 6.705522537231445e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.04173510521650314
+              ],
+              "frame": 22,
+              "source_world": [
+                -0.007983843795955181,
+                -0.002132965251803398,
+                0.9226965308189392
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.05049610137939453
+              ],
+              "error": 3.2782554626464844e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.050496429204940796
+              ],
+              "frame": 23,
+              "source_world": [
+                -0.007977883331477642,
+                -0.00403227424249053,
+                0.9205517172813416
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.060277462005615234
+              ],
+              "error": 2.2351741790771484e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.060277439653873444
+              ],
+              "frame": 24,
+              "source_world": [
+                -0.007995402440428734,
+                -0.005834013223648071,
+                0.9181572794914246
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.06946229934692383
+              ],
+              "error": 1.2665987014770508e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.06946217268705368
+              ],
+              "frame": 25,
+              "source_world": [
+                -0.00814814306795597,
+                -0.00706850178539753,
+                0.9159088134765625
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.07804036140441895
+              ],
+              "error": 3.725290298461914e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.07804039865732193
+              ],
+              "frame": 26,
+              "source_world": [
+                -0.008322000503540039,
+                -0.007812083698809147,
+                0.9138088226318359
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08519577980041504
+              ],
+              "error": 3.725290298461914e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08519574254751205
+              ],
+              "frame": 27,
+              "source_world": [
+                -0.00862486008554697,
+                -0.008175753057003021,
+                0.9120571613311768
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08926844596862793
+              ],
+              "error": 4.470348358154297e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08926840126514435
+              ],
+              "frame": 28,
+              "source_world": [
+                -0.008819431066513062,
+                -0.008230471052229404,
+                0.9110601544380188
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.09047579765319824
+              ],
+              "error": 1.4901161193847656e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.09047581255435944
+              ],
+              "frame": 29,
+              "source_world": [
+                -0.009255632758140564,
+                -0.007949341088533401,
+                0.9107645750045776
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.09026098251342773
+              ],
+              "error": 8.195638656616211e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.0902610644698143
+              ],
+              "frame": 30,
+              "source_world": [
+                -0.010166889056563377,
+                -0.00747261755168438,
+                0.9108171463012695
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08864760398864746
+              ],
+              "error": 7.450580596923828e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08864752948284149
+              ],
+              "frame": 31,
+              "source_world": [
+                -0.01148311235010624,
+                -0.006926530506461859,
+                0.911212146282196
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08656501770019531
+              ],
+              "error": 4.470348358154297e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.0865650624036789
+              ],
+              "frame": 32,
+              "source_world": [
+                -0.012902623042464256,
+                -0.006299953442066908,
+                0.91172194480896
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08585143089294434
+              ],
+              "error": 7.450580596923828e-09,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08585142344236374
+              ],
+              "frame": 33,
+              "source_world": [
+                -0.014106175862252712,
+                -0.0057261548936367035,
+                0.9118966460227966
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08576321601867676
+              ],
+              "error": 7.450580596923828e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08576329052448273
+              ],
+              "frame": 34,
+              "source_world": [
+                -0.015358101576566696,
+                -0.005110083147883415,
+                0.9119182229042053
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08436107635498047
+              ],
+              "error": 2.2351741790771484e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08436109870672226
+              ],
+              "frame": 35,
+              "source_world": [
+                -0.01651347242295742,
+                -0.0041103968396782875,
+                0.9122614860534668
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.08157491683959961
+              ],
+              "error": 5.960464477539063e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.08157497644424438
+              ],
+              "frame": 36,
+              "source_world": [
+                -0.01740284450352192,
+                -0.0026157365646213293,
+                0.9129435420036316
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.07785677909851074
+              ],
+              "error": 3.725290298461914e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.07785681635141373
+              ],
+              "frame": 37,
+              "source_world": [
+                -0.01773020438849926,
+                -0.0008316385792568326,
+                0.9138537645339966
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0742042064666748
+              ],
+              "error": 1.9371509552001953e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.07420440018177032
+              ],
+              "frame": 38,
+              "source_world": [
+                -0.017529798671603203,
+                0.000837140076328069,
+                0.9147478938102722
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.06958723068237305
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.06958732008934021
+              ],
+              "frame": 39,
+              "source_world": [
+                -0.01675916276872158,
+                0.002339337719604373,
+                0.915878176689148
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.06429338455200195
+              ],
+              "error": 2.3096799850463867e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.06429361552000046
+              ],
+              "frame": 40,
+              "source_world": [
+                -0.015791211277246475,
+                0.0036333624739199877,
+                0.9171741008758545
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.05903959274291992
+              ],
+              "error": 3.725290298461914e-09,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.05903959646821022
+              ],
+              "frame": 41,
+              "source_world": [
+                -0.014879245311021805,
+                0.0046813590452075005,
+                0.9184603095054626
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.053992271423339844
+              ],
+              "error": 2.2351741790771484e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.053992047905921936
+              ],
+              "frame": 42,
+              "source_world": [
+                -0.014449665322899818,
+                0.005681764800101519,
+                0.9196959733963013
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.04898214340209961
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.04898199439048767
+              ],
+              "frame": 43,
+              "source_world": [
+                -0.014116390608251095,
+                0.00640766741707921,
+                0.9209224581718445
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.04409980773925781
+              ],
+              "error": 4.0978193283081055e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.04409976676106453
+              ],
+              "frame": 44,
+              "source_world": [
+                -0.013532648794353008,
+                0.006765355821698904,
+                0.9221176505088806
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.03803396224975586
+              ],
+              "error": 2.9802322387695312e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.03803399205207825
+              ],
+              "frame": 45,
+              "source_world": [
+                -0.013053134083747864,
+                0.006930572912096977,
+                0.9236025810241699
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.031571388244628906
+              ],
+              "error": 2.0116567611694336e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.03157158941030502
+              ],
+              "frame": 46,
+              "source_world": [
+                -0.012987768277525902,
+                0.006945502012968063,
+                0.9251846075057983
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.024800777435302734
+              ],
+              "error": 1.6763806343078613e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.024800945073366165
+              ],
+              "frame": 47,
+              "source_world": [
+                -0.012954764068126678,
+                0.006997887976467609,
+                0.9268420934677124
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.018000125885009766
+              ],
+              "error": 1.6763806343078613e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.018000109121203423
+              ],
+              "frame": 48,
+              "source_world": [
+                -0.012930717319250107,
+                0.007040972355753183,
+                0.9285069704055786
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.01007080078125
+              ],
+              "error": 5.122274160385132e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.010070749558508396
+              ],
+              "frame": 49,
+              "source_world": [
+                -0.013089844025671482,
+                0.006958591751754284,
+                0.9304481148719788
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -0.0024995803833007812
+              ],
+              "error": 2.1141022443771362e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -0.002499791793525219
+              ],
+              "frame": 50,
+              "source_world": [
+                -0.013425812125205994,
+                0.0067728362046182156,
+                0.9323015213012695
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.004090309143066406
+              ],
+              "error": 1.2665987014770508e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.004090435802936554
+              ],
+              "frame": 51,
+              "source_world": [
+                -0.013737262226641178,
+                0.006376755889505148,
+                0.933914840221405
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.009904861450195312
+              ],
+              "error": 8.009374141693115e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.00990494154393673
+              ],
+              "frame": 52,
+              "source_world": [
+                -0.014271093532443047,
+                0.005783418659120798,
+                0.9353382587432861
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.015249252319335938
+              ],
+              "error": 3.818422555923462e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.015249290503561497
+              ],
+              "frame": 53,
+              "source_world": [
+                -0.01473900955170393,
+                0.004900764673948288,
+                0.936646580696106
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.020223617553710938
+              ],
+              "error": 6.51925802230835e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.020223552361130714
+              ],
+              "frame": 54,
+              "source_world": [
+                -0.015229976736009121,
+                0.003708847099915147,
+                0.9378643035888672
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.024741649627685547
+              ],
+              "error": 1.1362135410308838e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.024741536006331444
+              ],
+              "frame": 55,
+              "source_world": [
+                -0.015541858039796352,
+                0.002318035811185837,
+                0.9389703273773193
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.028256893157958984
+              ],
+              "error": 1.6763806343078613e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.02825687639415264
+              ],
+              "frame": 56,
+              "source_world": [
+                -0.015676775947213173,
+                0.0006062501342967153,
+                0.9398308992385864
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.030456066131591797
+              ],
+              "error": 1.4901161193847656e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.030456215143203735
+              ],
+              "frame": 57,
+              "source_world": [
+                -0.015703532844781876,
+                -0.0010680145351216197,
+                0.9403693079948425
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03275012969970703
+              ],
+              "error": 1.043081283569336e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.032750025391578674
+              ],
+              "frame": 58,
+              "source_world": [
+                -0.015635235235095024,
+                -0.0026327769737690687,
+                0.9409308433532715
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03473091125488281
+              ],
+              "error": 5.21540641784668e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.03473096340894699
+              ],
+              "frame": 59,
+              "source_world": [
+                -0.015478895977139473,
+                -0.004150917287915945,
+                0.9414157867431641
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03578376770019531
+              ],
+              "error": 2.4586915969848633e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.035783521831035614
+              ],
+              "frame": 60,
+              "source_world": [
+                -0.015375565737485886,
+                -0.005547055043280125,
+                0.9416734576225281
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03594684600830078
+              ],
+              "error": 4.842877388000488e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.03594689443707466
+              ],
+              "frame": 61,
+              "source_world": [
+                -0.015413094311952591,
+                -0.006684042047709227,
+                0.9417134523391724
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03540945053100586
+              ],
+              "error": 1.564621925354004e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.035409294068813324
+              ],
+              "frame": 62,
+              "source_world": [
+                -0.015553022734820843,
+                -0.007606079336255789,
+                0.9415818452835083
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.034549713134765625
+              ],
+              "error": 1.043081283569336e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.03454981744289398
+              ],
+              "frame": 63,
+              "source_world": [
+                -0.015941327437758446,
+                -0.008308825083076954,
+                0.9413714408874512
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03386068344116211
+              ],
+              "error": 1.5273690223693848e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.03386053070425987
+              ],
+              "frame": 64,
+              "source_world": [
+                -0.016624830663204193,
+                -0.008773251436650753,
+                0.941202700138092
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.033589839935302734
+              ],
+              "error": 1.862645149230957e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.03359002619981766
+              ],
+              "frame": 65,
+              "source_world": [
+                -0.01760152354836464,
+                -0.009075875394046307,
+                0.9411364793777466
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03342437744140625
+              ],
+              "error": 1.601874828338623e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.033424217253923416
+              ],
+              "frame": 66,
+              "source_world": [
+                -0.0187875647097826,
+                -0.009180529974400997,
+                0.9410958886146545
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03307819366455078
+              ],
+              "error": 4.0978193283081055e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.033078234642744064
+              ],
+              "frame": 67,
+              "source_world": [
+                -0.02006644941866398,
+                -0.008994816802442074,
+                0.9410111904144287
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03243875503540039
+              ],
+              "error": 1.3783574104309082e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.03243861719965935
+              ],
+              "frame": 68,
+              "source_world": [
+                -0.021349310874938965,
+                -0.008281620219349861,
+                0.9408546090126038
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.03158903121948242
+              ],
+              "error": 8.940696716308594e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.031589120626449585
+              ],
+              "frame": 69,
+              "source_world": [
+                -0.022373901680111885,
+                -0.00689387321472168,
+                0.9406466484069824
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.030460834503173828
+              ],
+              "error": 2.3655593395233154e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.030460597947239876
+              ],
+              "frame": 70,
+              "source_world": [
+                -0.02309204824268818,
+                -0.005186126567423344,
+                0.9403703808784485
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.029938220977783203
+              ],
+              "error": 1.1548399925231934e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.029938336461782455
+              ],
+              "frame": 71,
+              "source_world": [
+                -0.023513980209827423,
+                -0.0034513561986386776,
+                0.9402425289154053
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.029066085815429688
+              ],
+              "error": 1.1175870895385742e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.02906619757413864
+              ],
+              "frame": 72,
+              "source_world": [
+                -0.02349092625081539,
+                -0.001933595514856279,
+                0.9400290250778198
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.026876449584960938
+              ],
+              "error": 9.685754776000977e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.026876352727413177
+              ],
+              "frame": 73,
+              "source_world": [
+                -0.023183822631835938,
+                -0.0005260020261630416,
+                0.93949294090271
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.024190902709960938
+              ],
+              "error": 1.1548399925231934e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.024190787225961685
+              ],
+              "frame": 74,
+              "source_world": [
+                -0.023001233115792274,
+                0.0006640421925112605,
+                0.9388355016708374
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.021642684936523438
+              ],
+              "error": 3.855675458908081e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.021642299368977547
+              ],
+              "frame": 75,
+              "source_world": [
+                -0.0227443166077137,
+                0.0016904091462492943,
+                0.9382116198539734
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.020036697387695312
+              ],
+              "error": 1.0617077350616455e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.02003680355846882
+              ],
+              "frame": 76,
+              "source_world": [
+                -0.02224765159189701,
+                0.002640804508700967,
+                0.9378185868263245
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.01865530014038086
+              ],
+              "error": 7.450580596923828e-09,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.018655307590961456
+              ],
+              "frame": 77,
+              "source_world": [
+                -0.02143385075032711,
+                0.0031439880840480328,
+                0.9374803900718689
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.016581058502197266
+              ],
+              "error": 1.862645149230957e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.016580872237682343
+              ],
+              "frame": 78,
+              "source_world": [
+                -0.02058759704232216,
+                0.0031179403886198997,
+                0.9369725584983826
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.013983726501464844
+              ],
+              "error": 2.0675361156463623e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.013983933255076408
+              ],
+              "frame": 79,
+              "source_world": [
+                -0.019632769748568535,
+                0.00295126810669899,
+                0.9363368153572083
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.011739253997802734
+              ],
+              "error": 5.3085386753082275e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.011739307083189487
+              ],
+              "frame": 80,
+              "source_world": [
+                -0.018578313291072845,
+                0.0029542637057602406,
+                0.9357873201370239
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.009833335876464844
+              ],
+              "error": 2.2351741790771484e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.009833358228206635
+              ],
+              "frame": 81,
+              "source_world": [
+                -0.0176989808678627,
+                0.003365297568961978,
+                0.9353207349777222
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.007868289947509766
+              ],
+              "error": 4.470348358154297e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.007868245244026184
+              ],
+              "frame": 82,
+              "source_world": [
+                -0.01674594357609749,
+                0.003910027910023928,
+                0.93483966588974
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.006401538848876953
+              ],
+              "error": 2.505257725715637e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0064012883231043816
+              ],
+              "frame": 83,
+              "source_world": [
+                -0.015660855919122696,
+                0.004397634882479906,
+                0.9344805479049683
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0052967071533203125
+              ],
+              "error": 8.009374141693115e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.005296627059578896
+              ],
+              "frame": 84,
+              "source_world": [
+                -0.014483461156487465,
+                0.004773861728608608,
+                0.9342101216316223
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.004573345184326172
+              ],
+              "error": 9.220093488693237e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.004573252983391285
+              ],
+              "frame": 85,
+              "source_world": [
+                -0.013277369551360607,
+                0.00496590044349432,
+                0.9340330362319946
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.004099369049072266
+              ],
+              "error": 7.543712854385376e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0040994444862008095
+              ],
+              "frame": 86,
+              "source_world": [
+                -0.012090166099369526,
+                0.0049909865483641624,
+                0.9339170455932617
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0036025047302246094
+              ],
+              "error": 4.656612873077393e-10,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0036025051958858967
+              ],
+              "frame": 87,
+              "source_world": [
+                -0.010935872793197632,
+                0.0049471319653093815,
+                0.9337953925132751
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0031027793884277344
+              ],
+              "error": 1.3527460396289825e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0031026441138237715
+              ],
+              "frame": 88,
+              "source_world": [
+                -0.00985090620815754,
+                0.004927848931401968,
+                0.9336730241775513
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0026040077209472656
+              ],
+              "error": 2.3632310330867767e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0026042440440505743
+              ],
+              "frame": 89,
+              "source_world": [
+                -0.008826559409499168,
+                0.00503145158290863,
+                0.933551013469696
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.00214385986328125
+              ],
+              "error": 3.329478204250336e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0021438265684992075
+              ],
+              "frame": 90,
+              "source_world": [
+                -0.007845546118915081,
+                0.005126297939568758,
+                0.9334383010864258
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.001705169677734375
+              ],
+              "error": 9.103678166866302e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0017050786409527063
+              ],
+              "frame": 91,
+              "source_world": [
+                -0.006895596627146006,
+                0.005150319077074528,
+                0.9333308935165405
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0012965202331542969
+              ],
+              "error": 1.7462298274040222e-09,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0012965219793841243
+              ],
+              "frame": 92,
+              "source_world": [
+                -0.0059960149228572845,
+                0.005214606411755085,
+                0.9332308769226074
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0009298324584960938
+              ],
+              "error": 2.3224856704473495e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.000929600209929049
+              ],
+              "frame": 93,
+              "source_world": [
+                -0.005175350699573755,
+                0.005430556368082762,
+                0.9331410527229309
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0006055831909179688
+              ],
+              "error": 5.2619725465774536e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.000605530571192503
+              ],
+              "frame": 94,
+              "source_world": [
+                -0.0044388617388904095,
+                0.005693885497748852,
+                0.9330617189407349
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0003352165222167969
+              ],
+              "error": 1.9036815279277183e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.0003350261540617794
+              ],
+              "frame": 95,
+              "source_world": [
+                -0.003801951417699456,
+                0.005994109436869621,
+                0.9329954981803894
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                0.0001220703125
+              ],
+              "error": 8.767528804328245e-08,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                0.00012198263721074909
+              ],
+              "frame": 96,
+              "source_world": [
+                -0.003277582349255681,
+                0.006266117095947266,
+                0.9329433441162109
+              ]
+            },
+            {
+              "actual_target_delta": [
+                0.0,
+                0.0,
+                -4.76837158203125e-07
+              ],
+              "error": 2.3335883203807357e-07,
+              "expected_target_delta": [
+                0.0,
+                0.0,
+                -2.4347832550120074e-07
+              ],
+              "frame": 97,
+              "source_world": [
+                -0.0029597675893455744,
+                0.006459464319050312,
+                0.9329134225845337
+              ]
+            }
+          ]
+        }
+      },
+      "receipt": "provider/animation_receipts/idle.json",
+      "reimport_frames": [
+        {
+          "center_x": -0.010261893272399902,
+          "center_y": -0.30881285667419434,
+          "frame": 1,
+          "ground_z": 3.816443495452404e-06,
+          "top_z": 7.165377140045166
+        },
+        {
+          "center_x": 0.029617130756378174,
+          "center_y": -0.1815909743309021,
+          "frame": 25,
+          "ground_z": 4.702946171164513e-06,
+          "top_z": 7.109352111816406
+        },
+        {
+          "center_x": -0.10937297344207764,
+          "center_y": -0.1838383674621582,
+          "frame": 50,
+          "ground_z": 4.027271643280983e-06,
+          "top_z": 7.091949939727783
+        },
+        {
+          "center_x": -0.1532391905784607,
+          "center_y": -0.17547112703323364,
+          "frame": 74,
+          "ground_z": 3.703869879245758e-06,
+          "top_z": 7.218710422515869
+        },
+        {
+          "center_x": -0.010467112064361572,
+          "center_y": -0.3088606595993042,
+          "frame": 98,
+          "ground_z": 4.7032954171299934e-06,
+          "top_z": 7.165462017059326
+        }
+      ],
+      "reimport_previews": [
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_001_front.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_001_left.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_001_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_025_front.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_025_left.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_025_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_050_front.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_050_left.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_050_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_074_front.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_074_left.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_074_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_098_front.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_098_left.png",
+        "blender/previews/reimport_zin_men_infantry_idle_fixed_frame_098_three_quarter.png"
+      ],
+      "reimport_proof": "blender/checkpoints/reimport_zin_men_infantry_idle_fixed.blend",
+      "source_checkpoint": "blender/checkpoints/rt_death_f66607d4cd_grounded.blend",
+      "status": "pass",
+      "task_id": "01a14f5d-7c24-70e4-ace8-aa0648c223be"
+    },
+    "move": {
+      "action": "Armature|Move|baselayer_WORKING",
+      "anim_after": {
+        "bytes": 21331,
+        "name": "zin_men_infantry_move.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_move.anim",
+        "relative_path": "export/anim/zin_men_infantry_move.anim",
+        "sha256": "2EB5AD25ED5E568AD5BE3E0F4A3F6152F2752834AB4455C345578CBF4977F48E"
+      },
+      "anim_before": {
+        "bytes": 21331,
+        "name": "zin_men_infantry_move.anim",
+        "path": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_men_infantry\\export\\anim\\zin_men_infantry_move.anim",
+        "relative_path": "export/anim/zin_men_infantry_move.anim",
+        "sha256": "66359AD2E07916FAE410C5623B51FD7D24B429A0B7456FC1F1C52CA772BFE025"
+      },
+      "armature": "Armature.001",
+      "contact_before_lift": {
+        "max": -0.13419972360134125,
+        "min": -0.6844035387039185
+      },
+      "export": {
+        "action": "Armature|Move|baselayer_WORKING",
+        "adapter": {
+          "id": "hoi4_blender_adapter",
+          "request_id": "e3402c75ea444aa79b1bb5c4ee961015",
+          "version": "1.6.0",
+          "worker_log": "logs/adapter/e3402c75ea444aa79b1bb5c4ee961015.result.json"
+        },
+        "anim": "export/anim/zin_men_infantry_move.anim",
+        "anim_bytes": 21331,
+        "anim_text": "export/anim/zin_men_infantry_move.txt",
+        "armature": "Armature.001",
+        "armature_world_scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "blend": "blender/checkpoints/move_root_grounded.blend",
+        "export_transforms": {
+          "animation_translation_channels": {
+            "action": "Armature|Move|baselayer_WORKING",
+            "factor": 0.040848881006240845,
+            "keyframes": 400,
+            "location_fcurves": 72,
+            "policy": "scale_local_bone_translation_channels_with_armature_data_bake"
+          },
+          "armature": "Armature.001",
+          "armature_data_scale_factor": 0.040848881006240845,
+          "armature_world_scale_after": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "armature_world_scale_before": [
+            0.040848881006240845,
+            0.040848881006240845,
+            0.040848881006240845
+          ],
+          "mesh_world_scales_after": {
+            "char1.001": [
+              0.040848881006240845,
+              0.040848881006240845,
+              0.040848881006240845
+            ]
+          },
+          "policy": "bake_uniform_armature_object_scale_into_armature_data_and_preserve_mesh_world_transform"
+        },
+        "fps": 24,
+        "frame_end": 24,
+        "frame_start": 0,
+        "initial_root_world_pose": {
+          "changes": {
+            "Hips": {
+              "after": {
+                "q": [
+                  -0.623157799243927,
+                  0.27512338757514954,
+                  0.24751198291778564,
+                  0.688998818397522
+                ],
+                "t": [
+                  -0.010874338448047638,
+                  4.034574031829834,
+                  0.02560804970562458
+                ]
+              },
+              "before": {
+                "q": [
+                  -0.623157799243927,
+                  0.27512338757514954,
+                  0.24751198291778564,
+                  0.688998818397522
+                ],
+                "t": [
+                  -0.010874338448047638,
+                  4.035506248474121,
+                  0.02560804970562458
+                ]
+              }
+            }
+          },
+          "child_and_sample_fields_preserved": true,
+          "expected_world_initial_roots": {
+            "Hips": {
+              "q": [
+                -0.623157799243927,
+                0.27512338757514954,
+                0.24751198291778564,
+                0.688998818397522
+              ],
+              "t": [
+                -0.010874338448047638,
+                4.034574031829834,
+                0.02560804970562458
+              ]
+            }
+          },
+          "frame_start": 0,
+          "policy": "initial root t/q use identical locked POSE-to-WORLD conversion as samples; child/sample payload retained",
+          "retained_fields_sha256": "584ACFCEBE5ECE9AD3D8A8FBD47D217F1DB9220B538B82CF18A0CC3596DC0FD9",
+          "serialized_readback_passed": true
+        },
+        "scale_normalization": {
+          "initial_scale_values_changed": 2,
+          "initial_translation_values_changed": 0,
+          "policy": "normalize_exported_bone_scales_and_preserve_mesh_unit_translations",
+          "remaining_non_unit_initial_scales": 0,
+          "remaining_non_unit_sample_scales": 0,
+          "sample_scale_values_changed": 41,
+          "sample_translation_values_changed": 0,
+          "translation_scale": 1.0
+        },
+        "warnings": []
+      },
+      "per_frame_offsets_source_units": {
+        "0": 5.499876699216128,
+        "1": 9.495092045129546,
+        "2": 13.18522112426968,
+        "3": 16.11786095757286,
+        "4": 16.754878041662533,
+        "5": 14.179963695579849,
+        "6": 5.650650940587991,
+        "7": 9.701372067776033,
+        "8": 12.65692468875672,
+        "9": 14.614879851046817,
+        "10": 14.636097800138915,
+        "11": 11.851484570621436,
+        "12": 3.285342455159372,
+        "13": 8.460497055372995,
+        "14": 12.253249595806897,
+        "15": 14.61487401432332,
+        "16": 15.039772893088736,
+        "17": 13.092367608519282,
+        "18": 5.650650940587991,
+        "19": 10.788977639512284,
+        "20": 14.372022541426144,
+        "21": 16.117866794296354,
+        "22": 15.568082461229563,
+        "23": 12.886070075702303,
+        "24": 5.499876699216128
+      },
+      "policy": "per-frame root lift through offset_action_root on a fully baked root channel",
+      "reimport_frames": [
+        {
+          "center_x": -0.6234287023544312,
+          "center_y": -0.012656211853027344,
+          "frame": 1,
+          "ground_z": -5.632638931274414e-06,
+          "top_z": 7.177596569061279
+        },
+        {
+          "center_x": -0.0420680046081543,
+          "center_y": -0.35029780864715576,
+          "frame": 7,
+          "ground_z": 4.346482455730438e-06,
+          "top_z": 7.220484733581543
+        },
+        {
+          "center_x": 0.06831079721450806,
+          "center_y": -0.49933934211730957,
+          "frame": 13,
+          "ground_z": 4.6193599700927734e-06,
+          "top_z": 7.148854732513428
+        },
+        {
+          "center_x": -0.0420680046081543,
+          "center_y": -0.35029780864715576,
+          "frame": 19,
+          "ground_z": 4.346482455730438e-06,
+          "top_z": 7.220484733581543
+        },
+        {
+          "center_x": -0.6234287023544312,
+          "center_y": -0.012656211853027344,
+          "frame": 25,
+          "ground_z": -5.632638931274414e-06,
+          "top_z": 7.177596569061279
+        }
+      ],
+      "reimport_previews": [
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_001_front.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_001_left.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_001_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_007_front.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_007_left.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_007_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_013_front.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_013_left.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_013_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_019_front.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_019_left.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_019_three_quarter.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_025_front.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_025_left.png",
+        "blender/previews/reimport_zin_men_infantry_move_fixed_frame_025_three_quarter.png"
+      ],
+      "reimport_proof": "blender/checkpoints/reimport_zin_men_infantry_move_fixed.blend",
+      "slide_undo_source_units": 1685.313898009565,
+      "source_checkpoint": "blender/checkpoints/move_root_grounded.blend",
+      "status": "pass",
+      "vertical_axis_index": 1,
+      "vertical_gain_world_per_unit": 0.0408480167388916
+    }
+  },
+  "slug": "zin_men_infantry"
+}

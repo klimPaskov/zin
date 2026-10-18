@@ -1,0 +1,45 @@
+{
+  "channel_stats": {
+    "A": {
+      "max": 186,
+      "mean": 127.0003,
+      "min": 62
+    },
+    "B": {
+      "max": 0,
+      "mean": 0.0,
+      "min": 0
+    },
+    "G": {
+      "max": 187,
+      "mean": 127.0025,
+      "min": 72
+    },
+    "R": {
+      "max": 0,
+      "mean": 0.0,
+      "min": 0
+    }
+  },
+  "dimensions": [
+    2048,
+    2048
+  ],
+  "layout": {
+    "alpha": "source_normal_green_tangent_y",
+    "blue": "unused_zero",
+    "green": "source_normal_red_tangent_x",
+    "red": "unused_zero"
+  },
+  "output": {
+    "bytes": 4779377,
+    "path": "provider/downloads/generation_model_textures/pdx_normal.png",
+    "sha256": "ea4bedc792cd6f6b0768e1ab553654c36303b6597588903c228c34cd2b8634a2"
+  },
+  "source": {
+    "bytes": 6076558,
+    "path": "provider/downloads/generation_model_textures/normal.png",
+    "sha256": "8fe488c6db24380a554fa348c1f01214d8cce40e819010b58ef6455bf95fd026"
+  },
+  "status": "packed"
+}

@@ -1,0 +1,555 @@
+{
+  "asset_kind": "humanoid",
+  "base_weight_sanitization": null,
+  "checkpoints": {
+    "geometry": "blender/checkpoints/01_geometry_approved.blend",
+    "imported": "blender/checkpoints/00_imported_candidate.blend",
+    "materials": "blender/checkpoints/02_materials_approved.blend",
+    "pre_export": "blender/checkpoints/05_pre_export.blend",
+    "rig": "blender/checkpoints/03_rig_approved.blend",
+    "source": "blender/source/zin_the_dead_revenant_death_provider_source.blend"
+  },
+  "controlled_reduction": {
+    "after_triangles": 21000,
+    "applied": true,
+    "before_triangles": 51369,
+    "method": "bounded iterative Blender DECIMATE collapse followed by explicit triangulation",
+    "objects": [
+      {
+        "after_triangles": 21000,
+        "before_triangles": 51369,
+        "object": "char1.001",
+        "passes": [
+          {
+            "after_triangles": 21000,
+            "before_triangles": 51369,
+            "ratio": 0.4088068679553816
+          }
+        ],
+        "target_triangles": 21000
+      }
+    ],
+    "target_triangles": 21000
+  },
+  "dual_source_base_rig": null,
+  "excluded_provider_objects": [
+    "Icosphere"
+  ],
+  "geometry": {
+    "boundary_component_count": 44,
+    "bounds_max": [
+      2.3970556259155273,
+      0.8039031624794006,
+      7.3518242835998535
+    ],
+    "bounds_min": [
+      -2.40041184425354,
+      -0.8016429543495178,
+      0.0
+    ],
+    "branched_boundary_component_count": 5,
+    "closed_boundary_component_count": 39,
+    "degenerate_faces": 0,
+    "dimensions": [
+      4.797467231750488,
+      1.6055461168289185,
+      7.3518242835998535
+    ],
+    "loose_boundary_edges": 214,
+    "max_boundary_component_edges": 16,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 21000,
+    "triangles": 21000,
+    "uv_layers": {
+      "char1.001": [
+        "UVMap"
+      ]
+    },
+    "vertices": 10475,
+    "zero_length_normals": 0
+  },
+  "geometry_source": null,
+  "geometry_transfer": null,
+  "imported_geometry": {
+    "boundary_component_count": 12033,
+    "bounds_max": [
+      0.5872036814689636,
+      0.19626162946224213,
+      1.8000006675720215
+    ],
+    "bounds_min": [
+      -0.5872035622596741,
+      -0.19626162946224213,
+      -1.5937835939894285e-07
+    ],
+    "branched_boundary_component_count": 2,
+    "closed_boundary_component_count": 12031,
+    "degenerate_faces": 0,
+    "dimensions": [
+      1.1744072437286377,
+      0.39252325892448425,
+      1.800000786781311
+    ],
+    "loose_boundary_edges": 68590,
+    "max_boundary_component_edges": 172,
+    "negative_scale_objects": [],
+    "non_manifold_edges": 0,
+    "objects": 1,
+    "polygons": 51488,
+    "triangles": 51488,
+    "uv_layers": {
+      "char1.001": [
+        "UVMap"
+      ]
+    },
+    "vertices": 71862,
+    "zero_length_normals": 0
+  },
+  "io_pdx_mesh_manifest": "C:\\Users\\klimp\\AppData\\Roaming\\Blender Foundation\\Blender\\5.1\\extensions\\user_default\\io_pdx_mesh\\blender_manifest.toml",
+  "materials": {
+    "materials": [
+      "BakedMaterial"
+    ],
+    "shader": "PdxMeshAdvanced",
+    "texture_bindings": [
+      {
+        "image": "texture_0",
+        "node_bindings": 1,
+        "role": "diffuse",
+        "size": [
+          2048,
+          2048
+        ],
+        "source": "provider/downloads/generation_model_textures/base_color.png"
+      },
+      {
+        "image": "texture_normal",
+        "node_bindings": 1,
+        "role": "normal",
+        "size": [
+          2048,
+          2048
+        ],
+        "source": "provider/downloads/generation_model_textures/normal.png"
+      },
+      {
+        "image": "texture_specular",
+        "node_bindings": 1,
+        "role": "specular",
+        "size": [
+          2048,
+          2048
+        ],
+        "source": "provider/downloads/generation_model_textures/roughness.png"
+      }
+    ]
+  },
+  "normalization": {
+    "bounds_max": [
+      2.3983423709869385,
+      0.8016002178192139,
+      7.3518242835998535
+    ],
+    "bounds_min": [
+      -2.3983418941497803,
+      -0.8016002178192139,
+      0.0
+    ],
+    "ground_contact_z": 0.0,
+    "scale_factor": 4.084344947749661,
+    "target_height_m": 7.3518242835
+  },
+  "normalization_persistence": {
+    "armatures": [
+      {
+        "name": "Armature.001",
+        "world_scale": [
+          0.04085014760494232,
+          0.04085014760494232,
+          0.04085014760494232
+        ]
+      }
+    ],
+    "checkpoint": "blender/checkpoints/05_pre_export.blend",
+    "dependency_graph_corrections": [
+      {
+        "correction_factor": 1.0001639922110563,
+        "height_delta_m": -0.0012054442360840412,
+        "normalization": {
+          "bounds_max": [
+            2.3970556259155273,
+            0.8039031624794006,
+            7.3518242835998535
+          ],
+          "bounds_min": [
+            -2.40041184425354,
+            -0.8016429543495178,
+            0.0
+          ],
+          "ground_contact_z": 0.0,
+          "scale_factor": 1.0001640104033922,
+          "target_height_m": 7.3518242835
+        },
+        "pass": 0,
+        "persisted_height_m": 7.350618839263916,
+        "target_height_m": 7.3518242835
+      },
+      {
+        "correction_factor": null,
+        "height_delta_m": 9.985345883478658e-11,
+        "pass": 1,
+        "persisted_height_m": 7.3518242835998535,
+        "target_height_m": 7.3518242835
+      }
+    ],
+    "geometry": {
+      "boundary_component_count": 44,
+      "bounds_max": [
+        2.3970556259155273,
+        0.8039031624794006,
+        7.3518242835998535
+      ],
+      "bounds_min": [
+        -2.40041184425354,
+        -0.8016429543495178,
+        0.0
+      ],
+      "branched_boundary_component_count": 5,
+      "closed_boundary_component_count": 39,
+      "degenerate_faces": 0,
+      "dimensions": [
+        4.797467231750488,
+        1.6055461168289185,
+        7.3518242835998535
+      ],
+      "loose_boundary_edges": 214,
+      "max_boundary_component_edges": 16,
+      "negative_scale_objects": [],
+      "non_manifold_edges": 0,
+      "objects": 1,
+      "polygons": 21000,
+      "triangles": 21000,
+      "uv_layers": {
+        "char1.001": [
+          "UVMap"
+        ]
+      },
+      "vertices": 10475,
+      "zero_length_normals": 0
+    },
+    "height_delta_m": 9.985345883478658e-11,
+    "persisted_height_m": 7.3518242835998535,
+    "policy": "save_reopen_monotonic_convergence_and_strict_reverify",
+    "post_stabilization_verification": {
+      "armatures": [
+        {
+          "name": "Armature.001",
+          "world_scale": [
+            0.04085014760494232,
+            0.04085014760494232,
+            0.04085014760494232
+          ]
+        }
+      ],
+      "checkpoint": "C:\\Users\\klimp\\OneDrive\\Documents\\Paradox Interactive\\Hearts of Iron IV\\mod\\zin\\docs\\assets\\hoi4_3d_model_jobs\\models_3d\\zin_the_dead_revenant\\blender\\checkpoints\\05_pre_export.blend",
+      "geometry": {
+        "boundary_component_count": 44,
+        "bounds_max": [
+          2.3970556259155273,
+          0.8039031624794006,
+          7.3518242835998535
+        ],
+        "bounds_min": [
+          -2.40041184425354,
+          -0.8016429543495178,
+          0.0
+        ],
+        "branched_boundary_component_count": 5,
+        "closed_boundary_component_count": 39,
+        "degenerate_faces": 0,
+        "dimensions": [
+          4.797467231750488,
+          1.6055461168289185,
+          7.3518242835998535
+        ],
+        "loose_boundary_edges": 214,
+        "max_boundary_component_edges": 16,
+        "negative_scale_objects": [],
+        "non_manifold_edges": 0,
+        "objects": 1,
+        "polygons": 21000,
+        "triangles": 21000,
+        "uv_layers": {
+          "char1.001": [
+            "UVMap"
+          ]
+        },
+        "vertices": 10475,
+        "zero_length_normals": 0
+      },
+      "height_delta_m": 9.985345883478658e-11,
+      "persisted_height_m": 7.3518242835998535,
+      "policy": "save_reopen_and_remeasure_working_world_bounds",
+      "target_height_m": 7.3518242835,
+      "tolerance_m": 7.3518242835e-05
+    },
+    "target_height_m": 7.3518242835,
+    "tolerance_m": 7.3518242835e-05
+  },
+  "previews": [
+    "blender/previews/zin_the_dead_revenant_death_front.png",
+    "blender/previews/zin_the_dead_revenant_death_left.png",
+    "blender/previews/zin_the_dead_revenant_death_rear.png",
+    "blender/previews/zin_the_dead_revenant_death_right.png",
+    "blender/previews/zin_the_dead_revenant_death_three_quarter.png",
+    "blender/previews/zin_the_dead_revenant_death_top.png",
+    "blender/previews/zin_the_dead_revenant_death_underside.png"
+  ],
+  "rig_and_actions": {
+    "actions": [
+      {
+        "fps": 24,
+        "frame_count": 73,
+        "frame_end": 72,
+        "frame_start": 0,
+        "name": "Armature|Dead|baselayer",
+        "scale_fcurves": 66
+      },
+      {
+        "fps": 24,
+        "frame_count": 73,
+        "frame_end": 72,
+        "frame_start": 0,
+        "name": "Armature|Dead|baselayer_WORKING",
+        "scale_fcurves": 0
+      }
+    ],
+    "armatures": [
+      {
+        "bones": 24,
+        "name": "Armature.001"
+      }
+    ],
+    "root_translation_sanitization": {
+      "actions": [
+        {
+          "action": "Armature|Dead|baselayer_WORKING",
+          "armature": "Armature.001",
+          "changed_keyframes": 267,
+          "fixed_values": {
+            "0": -1.843125581741333,
+            "1": -22.373714447021484,
+            "2": -0.7326688766479492
+          },
+          "ground_contact_after": -4.6316763473441824e-05,
+          "ground_contact_before": -0.05868741497397423,
+          "ground_correction_source_units": 172.62527942143328,
+          "location_fcurves": 3,
+          "policy": "in_place_root_translation_locked_to_first_keyframe"
+        }
+      ],
+      "policy": "remove_provider_root_motion_for_in_place_unit_actions"
+    },
+    "scale_sanitization": {
+      "actions": [
+        {
+          "action": "Armature|Dead|baselayer_WORKING",
+          "armature": "Armature.001",
+          "removed_fcurves": 66,
+          "removed_paths": [
+            "pose.bones[\"Head\"].scale",
+            "pose.bones[\"Head\"].scale",
+            "pose.bones[\"Head\"].scale",
+            "pose.bones[\"neck\"].scale",
+            "pose.bones[\"neck\"].scale",
+            "pose.bones[\"neck\"].scale",
+            "pose.bones[\"LeftHand\"].scale",
+            "pose.bones[\"LeftHand\"].scale",
+            "pose.bones[\"LeftHand\"].scale",
+            "pose.bones[\"LeftForeArm\"].scale",
+            "pose.bones[\"LeftForeArm\"].scale",
+            "pose.bones[\"LeftForeArm\"].scale",
+            "pose.bones[\"LeftArm\"].scale",
+            "pose.bones[\"LeftArm\"].scale",
+            "pose.bones[\"LeftArm\"].scale",
+            "pose.bones[\"LeftShoulder\"].scale",
+            "pose.bones[\"LeftShoulder\"].scale",
+            "pose.bones[\"LeftShoulder\"].scale",
+            "pose.bones[\"RightHand\"].scale",
+            "pose.bones[\"RightHand\"].scale",
+            "pose.bones[\"RightHand\"].scale",
+            "pose.bones[\"RightForeArm\"].scale",
+            "pose.bones[\"RightForeArm\"].scale",
+            "pose.bones[\"RightForeArm\"].scale",
+            "pose.bones[\"RightArm\"].scale",
+            "pose.bones[\"RightArm\"].scale",
+            "pose.bones[\"RightArm\"].scale",
+            "pose.bones[\"RightShoulder\"].scale",
+            "pose.bones[\"RightShoulder\"].scale",
+            "pose.bones[\"RightShoulder\"].scale",
+            "pose.bones[\"Spine\"].scale",
+            "pose.bones[\"Spine\"].scale",
+            "pose.bones[\"Spine\"].scale",
+            "pose.bones[\"Spine01\"].scale",
+            "pose.bones[\"Spine01\"].scale",
+            "pose.bones[\"Spine01\"].scale",
+            "pose.bones[\"Spine02\"].scale",
+            "pose.bones[\"Spine02\"].scale",
+            "pose.bones[\"Spine02\"].scale",
+            "pose.bones[\"LeftToeBase\"].scale",
+            "pose.bones[\"LeftToeBase\"].scale",
+            "pose.bones[\"LeftToeBase\"].scale",
+            "pose.bones[\"LeftFoot\"].scale",
+            "pose.bones[\"LeftFoot\"].scale",
+            "pose.bones[\"LeftFoot\"].scale",
+            "pose.bones[\"LeftLeg\"].scale",
+            "pose.bones[\"LeftLeg\"].scale",
+            "pose.bones[\"LeftLeg\"].scale",
+            "pose.bones[\"LeftUpLeg\"].scale",
+            "pose.bones[\"LeftUpLeg\"].scale",
+            "pose.bones[\"LeftUpLeg\"].scale",
+            "pose.bones[\"RightToeBase\"].scale",
+            "pose.bones[\"RightToeBase\"].scale",
+            "pose.bones[\"RightToeBase\"].scale",
+            "pose.bones[\"RightFoot\"].scale",
+            "pose.bones[\"RightFoot\"].scale",
+            "pose.bones[\"RightFoot\"].scale",
+            "pose.bones[\"RightLeg\"].scale",
+            "pose.bones[\"RightLeg\"].scale",
+            "pose.bones[\"RightLeg\"].scale",
+            "pose.bones[\"RightUpLeg\"].scale",
+            "pose.bones[\"RightUpLeg\"].scale",
+            "pose.bones[\"RightUpLeg\"].scale",
+            "pose.bones[\"Hips\"].scale",
+            "pose.bones[\"Hips\"].scale",
+            "pose.bones[\"Hips\"].scale"
+          ],
+          "reset_pose_scale_bones": []
+        }
+      ],
+      "policy": "remove_all_working_action_scale_fcurves",
+      "remaining_scale_fcurves": 0
+    }
+  },
+  "runtime_calibration": {
+    "effective_runtime_height_m": 5.8814594268,
+    "entity_scale": 0.8,
+    "mesh_target_height_m": 7.3518242835,
+    "policy": "bake the calibrated pilot source height into mesh coordinates and preserve the specified vanilla entity scale"
+  },
+  "runtime_footprint": {
+    "max_runtime_footprint_m": null,
+    "policy": "reject",
+    "status": "not_configured"
+  },
+  "source": "provider/downloads/animation_death_provider.glb",
+  "source_objects": 3,
+  "topology_repair": {
+    "applied": true,
+    "method": "pre-reduction seam weld followed by post-reduction bounded repair",
+    "post_reduction": {
+      "applied": false,
+      "method": "bmesh remove_doubles at 0, remove duplicate-overlap faces, then bounded holes_fill/triangle_fill on loops up to 96 edges with cap-only non-manifold rollback",
+      "objects": [
+        {
+          "boundary_edges_after": 214,
+          "boundary_edges_before": 214,
+          "cap_methods": {
+            "holes_fill": 30,
+            "triangle_fill": 2
+          },
+          "component_rejections": 7,
+          "degenerate_faces_removed": 0,
+          "duplicate_faces_removed": 0,
+          "faces_added": 0,
+          "non_manifold_edges_after": 0,
+          "non_manifold_edges_before": 0,
+          "object": "char1.001",
+          "rolled_back_non_manifold": true,
+          "skipped_components": 12,
+          "triangles_after": 21000,
+          "weld_rolled_back": false,
+          "welded_boundary_edges": 214,
+          "welded_non_manifold_edges": 0,
+          "welded_vertices": 0
+        }
+      ]
+    },
+    "pre_reduction": {
+      "applied": true,
+      "method": "bmesh remove_doubles at 0, remove duplicate-overlap faces, then bounded holes_fill/triangle_fill on loops up to 96 edges with cap-only non-manifold rollback",
+      "objects": [
+        {
+          "boundary_edges_after": 229,
+          "boundary_edges_before": 68590,
+          "cap_methods": {
+            "holes_fill": 25,
+            "triangle_fill": 3
+          },
+          "component_rejections": 11,
+          "degenerate_faces_removed": 0,
+          "duplicate_faces_removed": 119,
+          "faces_added": 0,
+          "non_manifold_edges_after": 0,
+          "non_manifold_edges_before": 0,
+          "object": "char1.001",
+          "rolled_back_non_manifold": true,
+          "skipped_components": 16,
+          "triangles_after": 51369,
+          "weld_rolled_back": false,
+          "welded_boundary_edges": 229,
+          "welded_non_manifold_edges": 0,
+          "welded_vertices": 46167
+        }
+      ]
+    },
+    "weld_distance": 0.0
+  },
+  "triangulation": {
+    "triangulated_objects": [
+      "char1.001"
+    ]
+  },
+  "vanilla_reference": {
+    "bounds_max": [
+      2.724771022796631,
+      0.758027970790863,
+      7.360243797302246
+    ],
+    "bounds_min": [
+      -2.724771022796631,
+      -0.7881979942321777,
+      0.00841899961233139
+    ],
+    "effective_runtime_height": 5.881459838151932,
+    "entity_scale": 0.8,
+    "excluded_patterns": [
+      "collision"
+    ],
+    "expected_mesh_height": 7.3518242835,
+    "expected_runtime_height": 5.8814594268,
+    "final_effective_runtime_height": 5.880495071411133,
+    "final_mesh_height": 7.350618839263916,
+    "final_runtime_height_delta": -0.0009643553888674106,
+    "forward_axis": "-Y",
+    "ground_contact_z": 0.00841899961233139,
+    "mesh_rel": "blender/reference/western_european_infantry.mesh",
+    "objects": [
+      "pCube1",
+      "polySurface106"
+    ],
+    "pilot_entity_scale": 0.8,
+    "pilot_target_runtime_height": 5.8814594268,
+    "reference_policy": "read_only_vanilla_source_measurement; pilot mesh target may bake its calibrated runtime scale",
+    "selected_meshes": [
+      "polySurface106"
+    ],
+    "source_mesh_height": 7.351824797689915,
+    "status": "passed",
+    "up_axis": "+Z"
+  },
+  "working_objects": 2,
+  "working_source_objects": 2
+}
