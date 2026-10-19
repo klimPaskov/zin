@@ -125,24 +125,24 @@ The world is complete, not just a map: everything that would exist in a real pla
 
 | Area | State | Evidence and notes (updated 19 October 2026) |
 | --- | --- | --- |
-| Planning package | in progress | 88 specs Ready (`9a4634e`); this goal rewritten; inventory, reference lessons, master plan, map plan and tool plan being written |
+| Planning package | met (P3) | 88 specs Ready (`9a4634e`); goal, inventory (734 rows), reference lessons, master plan, geography model, world bible, languages, demography written; the improvement-loop audit is still to run |
 | Stability | partly met | flag-sheet crash fixed (`ca01fa3`): four Linux runs of 10 to 15 minutes with the clock running; Windows confirmation and the every-country sweep open (V3) |
-| Error log | partly met | 641 lines in the Linux run (1,900 before), all category B14 (generic vanilla files that the warfare stage replaces) |
-| Vanilla removal | stage 1 applied | 34 `replace_path` lines, 349 single-country vanilla files silenced; stages 2 to 4 open |
-| Map | open (M1 to M8) | owner review: lakes are not lakes, the map reads as a globe, borders are artificial, terrain is weak, detail missing. Rebuild planned |
-| World bible: cultures, languages, population | open (W1 to W5) | requested 19 October 2026: population distribution, cultures, languages, histories; a world bible and demography model are being written |
-| Calendar | open (T1) | the game still opens on 1 January 1936 |
-| Warfare, technology, energy | open (S1, T4) | vanilla; five Meshy infantry units exist |
-| Economy and laws | partial (S2) | laws re-themed; resources, buildings and energy vanilla |
-| Mechanics | specified (S3 to S5) | all Ready, none built |
-| Focus trees | specified (C1) | interim Long Peace tree only |
-| Events and story | specified (C3) | stubs only |
-| Interface | partial (U1 to U3) | Realm panel, menu backgrounds, loading screens, 175 + 175 icons, 71 pictures |
+| Error log | partly met | stage 2 now removes the vanilla ruleset in the build (67 disposition rows flipped); the new error count is unmeasured until the next Linux run |
+| Vanilla removal | stage 2 mostly built | technologies and doctrines, units, equipment and ships, economy and energy, diplomacy and factions, institutions, forces (AI templates, 305 starting orders of battle) wired into the build; still vanilla: scorers, country aliases, difficulty, cosmetic tags, portraits, DLC music lists, naval bases |
+| Map | tools in progress (M1 to M9) | HOI4 Agent Tools: phase 0 (lakes, colour map, validators, edge) merged in PR 35; relief, hydrology and the feature-aware partition in PR 36; climate and colour solver, territory service, straits, ports and names being built; the new map is not generated yet |
+| World bible: cultures, languages, population | partly built (W1 to W5) | world bible, 24 languages, 53 cultures, 35 faiths, demography and a name generator written and tested; cultures and faiths exist as game content (53 culture ideas, 38 faith spirits); applying them waits for the new map |
+| Calendar | met in game (T1) | 1 Thaw 4A 1748 with Erdae months, verified in the isolated run |
+| Warfare, technology, energy | built, unverified in game (S1, T4) | 168 technologies and 15 grand doctrines, 61 sub-units and 92 equipment types, energy re-themed as Provisions and Stored Essence; no Linux run yet since the wiring |
+| Economy and laws | built, unverified (S2) | 7 resources, 33 buildings, 13 state categories, 17 spirits; treasury decisions and economic events unfinished |
+| Mechanics | 14 specs in implementation (S3 to S5) | four engineers writing them in parallel |
+| Focus trees | 36 tree specs in implementation (C1) | compiler and schema built and tested (65 tests); nine engineers authoring major, regional and shared trees |
+| Events and story | 5 specs in implementation (C3) | two engineers |
+| Interface | infrastructure built (U1 to U3) | 31,561 vanilla entries inventoried, 53 sheets planned; 48 sheets generated, review in progress; the text sweep rewrote 2,240 keys across 7 families |
 | Chronicle | specified (C4) | not built |
 | Music and sound | specified (A4) | not built |
-| Assets | partial (A1 to A3) | see the asset inventory |
-| AI | open (AI1, AI2) | peaceful-start AI specified |
-| Tools | open (P2) | map pipeline gaps found; none fixed yet |
+| Assets | partial (A1 to A3) | manifest and checks built (1,514 assets); 225 flag references unresolved (75 dynamic tags) |
+| AI | forces built (AI1, AI2) | AI templates, equipment, naval goals and plans for 305 countries; unverified in game |
+| Tools | in progress (P2) | PR 35 merged (phase 0, geography input, border metric); PR 36 open; three more tool branches running |
 
 ## Resume packet
 
