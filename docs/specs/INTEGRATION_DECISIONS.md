@@ -164,3 +164,11 @@ The stage-2 slices (technologies, economy, diplomacy, institutions, warfare, cul
 | I11 | Defines pulled forward to stage 1 with their slices: the three economy energy rows, `BASE_TECH_COST` and `BASE_YEAR_AHEAD_PENALTY_FACTOR = 2` (the interim 0 row is removed), and `NProduction.LICENSE_IC_COST_YEAR_INCREASE` (institutions). |
 | I12 | Check 4 of the interface reskin (reachability) is published (`docs/design/ui/check_report.json`) and not enforced yet: with the slices staged, ZIN script and text name 355 sprites that `reskin.json` files as unreachable (`U`/`H`), some by identifiers that merely equal a sprite name (`weather`, `research`). `lib/ui_plan.mjs` must promote the true ones to `R`; the other eight checks are enforced. Check 3 now ignores `gfx/loadingscreens/` (a folder `presentation.mjs` fills). |
 | I13 | The warfare sprites for `convoy`, `train_equipment` and `motorized_equipment` are not redefined: the vanilla `interface/Technologies.gfx` (kept) defines five of them, and a second definition logs a duplicate. |
+
+### Owner direction: lore expansion and alternate history (19 October 2026)
+
+| Id | Decision |
+| --- | --- |
+| L1 | The owner authorises expanding the lore: new history, dynasties, cities, cultures, faiths, wars, treaties and figures that the vault never mentions are wanted. Expansions are labelled ZIN-proposed in the specs; the vault's established facts are never contradicted and its open questions stay open. |
+| L2 | A place the lore names is not automatically central. Castle Yeldenne is a castle in the far north of the Cold Lands, and the settlement around it is an ordinary northern town; nothing makes it a capital or a hub of a country. Capitals, hubs and key sites are chosen from geography, history and each country's own story. |
+| L3 | The vault's storyline is the main historical direction, as the Second World War is in the base game: it is what happens when nobody diverges. The player and the AI can diverge at every beat, and every system (events, decisions, focus trees, mechanics, AI, endings) stays coherent, dynamic and replayable when they do. The story rule (historical, plausible, free) and the beat-by-beat divergence table in `04_mechanics/10_alternate_history.md` govern this. |
