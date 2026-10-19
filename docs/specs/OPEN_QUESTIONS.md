@@ -48,6 +48,29 @@ This page is generated from the spec authors' reports; when it is regenerated, k
 | 27 | Are Belurithon and Vothrim the family seats of Tarec Belurith and Ilsabet Vothrim? | No link; rulers keep generated names | [05_focus_trees/shared/shared_concord_dominions.md](05_focus_trees/shared/shared_concord_dominions.md) |
 | 28 | Lerendor's king: the characters spec's King Ferlin III, or the generated name? | King Ferlin III (proposed); answers lerendor question 4 | [02_lore/02_characters.md](02_lore/02_characters.md) |
 
+### From the geography model (19 October 2026)
+
+| # | Question | Working proposal | Spec |
+| --- | --- | --- | --- |
+| 29 | Is the game layout of 18 October (the cleaned 5,120 by 2,560 reference) the frame for the rebuild, with the working drawing used only for shapes? | Yes. The drawing frame is provided as a secondary field. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 30 | Where do the Organ Mountains and Lunhrim stand, and which side of the Wall is Kingson? | Organ Mountains at the north end on the Narrow Strait; Lunhrim mid-wall; Kingson inside a ring of mountains on the Aenor side; the Wall on the Magic Mountains' west foot. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 31 | Is the Narrow Strait the water between R'en and the Organ cape (short list 3)? | Yes. The two Dark Straits are the water between the Dark Lands and each neighbour; all three are sea-only crossings. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 32 | Is the Sea of Darkness an inland sea, and what is the drawn grey island of that name? | An inner sea that opens to the Crown Ocean; the grey island is a separate land. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 33 | What is the central sea called? | Crown Ocean (replaces the superseded Rush Ocean). | [05_geography_model.md](01_map/05_geography_model.md) |
+| 34 | How big may the Great Lake be? | About 205 by 200 pixels (the reference shows 124 by 173). | [05_geography_model.md](01_map/05_geography_model.md) |
+| 35 | Should the Dead Lands be larger? In the layout they are small (about 270 by 300 pixels for the main island). | Keep the layout; add the Nether island; scale only on the owner's word. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 36 | Is the Abyss a chasm, a hidden depth, or a boundary of magic? | A geographically accessible chasm at the east tip of the Dead Lands island. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 37 | Is Mirolon joined to Volgan's island by land? | No. Mirolon Sound separates them; Mirolon's passes close its northern neck. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 38 | Where are the Worshipdom's three valleys in the Zilin Hills? | Three valleys of the brown hills, with the Lake of Mirolon on the west. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 39 | Which island is Howan (the wreck), which has the shrine, which has the night reef? | Howan the wreck island; the ring island Enhis Is Rond the shrine; Nara the reef (all placements *proposed*). | [05_geography_model.md](01_map/05_geography_model.md) |
+| 40 | How far does the South Lands desert reach? | The Sun Desert lobe and the Noris Desert south of the Hot Lake (the spec of 18 October proposed "desert states at or below row 1,550 of 2,560"). | [05_geography_model.md](01_map/05_geography_model.md) |
+| 41 | The drawing shows a Wall of Rush on the Middle Lands' north-west coast. Is it the Great Wall? | No. The vault puts the Great Wall in the east; the north-west rim is only a coastal ridge (Hiloff Rim). | [05_geography_model.md](01_map/05_geography_model.md) |
+| 42 | Are the new river names welcome (Aenar, Selenar, Safen, Fandan, Grey River, Elwen and others)? | Yes; they are placeholders in each region's style. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 43 | What lies beyond the edges? | Nothing: cliffs of ice, basalt, lava and dunes close the map; the vault leaves the beyond open. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 44 | Should the Mushroom Forest be forest terrain or jungle terrain? | Forest with fungal density. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 45 | Should Gondolin get a coast on the northern sea? | Yes: the Gondolin Coast plain reaches the snow coast. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 46 | Do the elves want volcanoes in the Magical Lands? | No. The Magical Lands keep their snow ridges, not fire. | [05_geography_model.md](01_map/05_geography_model.md) |
+
 Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is not a Lost Cause member at the start, O8); the events questions on the Hierarch (Ilvane, High Confessor, N10 and O7); elves 1 and lerendor 1 (Andos Enda, S5); elves 9 (N6), 10 (N7) and 17 (N8); lerendor 4 (King Ferlin III, question 28).
 
 

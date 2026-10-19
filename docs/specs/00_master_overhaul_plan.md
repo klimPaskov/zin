@@ -37,7 +37,7 @@ Every system answers to these. A feature that serves none is cut.
 | P10 | Vanilla interface text is replaced from one master glossary (text sweep, section 6); English is written, the other nine languages copy it. | About 12,000 core and 4,100 tooltip keys have no author. |
 | P11 | The career profile, ribbons, medals, achievements, the wiki button and the officer-corps view are hidden or replaced; the weekday names are renamed. | Inventory owner questions, proposals adopted. |
 | P12 | Music and sound are synthesised in code from ZIN-written scores and recipes; vanilla audio stays until each ZIN track is accepted. | INTEGRATION_DECISIONS A9. |
-| P13 | The 40 available Meshy credits go to the Great Wall segment and four building houses; units of the other peoples reuse the five existing models with new textures, which is the recorded fallback. | Credits are limited. |
+| P13 | The 40 available Meshy credits buy one 30-credit model, the Great Wall segment. Units of the other peoples reuse the five existing models with new image-generated textures; building houses reuse the vanilla mesh geometry with new image-generated textures (the mesh is referenced, not copied) until credits exist. These are the recorded fallbacks. | Credits are limited. |
 | P14 | Languages are generated: every culture has a language, and names come from it. | W2. |
 
 ## 3. Tracks

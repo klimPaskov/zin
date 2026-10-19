@@ -1,0 +1,4934 @@
+{
+ "schema": "zin-demography/1",
+ "status": "Draft",
+ "written": "2026-10-19",
+ "spec": "docs/specs/02_lore/07_demography_and_settlement.md",
+ "labels": "All numbers are proposed design targets. They are living people; the dead of Volgan and Zol are not counted.",
+ "world": {
+  "total_people": 86640400,
+  "assumption_range_millions": [
+   60,
+   120
+  ],
+  "note": "A pre-modern world after seventeen centuries of peace, better farming (Second Age) and medicine; a little above medieval Europe at its peak."
+ },
+ "regions": {
+  "Middle Lands": {
+   "target": 24.5,
+   "urban": 0.24,
+   "largest": 380,
+   "dev": 0.6,
+   "density_note": "Great Lake basin and plains: the best fed land of Erdae; about 40 to 55 people per square kilometre on the plains and up to 110 beside the Aenar, the Great River and the Great Lake shore.",
+   "character": "The most fertile and populous land by density; Aenor and the Concord dominions; many cities around the lake.",
+   "target_people": 24500000,
+   "computed_people": 24500000,
+   "states": 96,
+   "countries": 30,
+   "share": 0.2828,
+   "hierarchy": {
+    "urban_people": 5880000,
+    "largest_city": 380000,
+    "cities_100k_plus": 3,
+    "cities_20k_to_100k": 16,
+    "market_towns_5k_to_20k": 501,
+    "villages": 44333,
+    "forts_and_shrines": 681
+   }
+  },
+  "East Lands": {
+   "target": 21.5,
+   "urban": 0.2,
+   "largest": 240,
+   "dev": 0.5,
+   "density_note": "Rivers and oases carry the people; the deserts hold almost none. River valleys and lake shores run 70 to 110 per square kilometre; the open desert under one.",
+   "character": "The richest and most divided land: river kingdoms, caravan cities, desert tribes.",
+   "target_people": 21500000,
+   "computed_people": 21500100,
+   "states": 337,
+   "countries": 35,
+   "share": 0.2482,
+   "hierarchy": {
+    "urban_people": 4300000,
+    "largest_city": 240000,
+    "cities_100k_plus": 2,
+    "cities_20k_to_100k": 10,
+    "market_towns_5k_to_20k": 377,
+    "villages": 40952,
+    "forts_and_shrines": 597
+   }
+  },
+  "Cold Lands": {
+   "target": 10.5,
+   "urban": 0.08,
+   "largest": 85,
+   "dev": 0.25,
+   "density_note": "The largest landmass but sparse: coastal and valley farms 12 to 20 per square kilometre, the interior under two, the far north-west almost none.",
+   "character": "Sparse but hardy; clans, herds, western ports; the far north holds the silent castle.",
+   "target_people": 10500000,
+   "computed_people": 10499800,
+   "states": 285,
+   "countries": 31,
+   "share": 0.1212,
+   "hierarchy": {
+    "urban_people": 840000,
+    "largest_city": 85000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 4,
+    "market_towns_5k_to_20k": 72,
+    "villages": 23000,
+    "forts_and_shrines": 292
+   }
+  },
+  "West Lands": {
+   "target": 8.2,
+   "urban": 0.17,
+   "largest": 70,
+   "dev": 0.4,
+   "density_note": "Temperate hills and river plains: 20 to 35 per square kilometre.",
+   "character": "Clan hills, river towns, guild ports.",
+   "target_people": 8200000,
+   "computed_people": 8200100,
+   "states": 86,
+   "countries": 21,
+   "share": 0.0946,
+   "hierarchy": {
+    "urban_people": 1394000,
+    "largest_city": 70000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 3,
+    "market_towns_5k_to_20k": 135,
+    "villages": 16205,
+    "forts_and_shrines": 228
+   }
+  },
+  "North Lands": {
+   "target": 6.8,
+   "urban": 0.16,
+   "largest": 120,
+   "dev": 0.45,
+   "density_note": "Coastal belts and fjord valleys: 15 to 30 per square kilometre.",
+   "character": "Sea-crowns on the strait and small hill kingdoms.",
+   "target_people": 6800000,
+   "computed_people": 6800100,
+   "states": 60,
+   "countries": 28,
+   "share": 0.0785,
+   "hierarchy": {
+    "urban_people": 1088000,
+    "largest_city": 120000,
+    "cities_100k_plus": 1,
+    "cities_20k_to_100k": 5,
+    "market_towns_5k_to_20k": 77,
+    "villages": 13600,
+    "forts_and_shrines": 189
+   }
+  },
+  "Lands of the Sun": {
+   "target": 4,
+   "urban": 0.12,
+   "largest": 55,
+   "dev": 0.4,
+   "density_note": "Very fertile but thinly peopled: the Sunhot elves are few and long-lived; 10 to 20 per square kilometre.",
+   "character": "Sun-blessed fields; elves in sanctuaries; Gala; the three realms of Sunfolk.",
+   "target_people": 4000000,
+   "computed_people": 3999200,
+   "states": 87,
+   "countries": 47,
+   "share": 0.0462,
+   "hierarchy": {
+    "urban_people": 480000,
+    "largest_city": 55000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 2,
+    "market_towns_5k_to_20k": 43,
+    "villages": 8381,
+    "forts_and_shrines": 111
+   }
+  },
+  "Dark Lands": {
+   "target": 3.4,
+   "urban": 0.07,
+   "largest": 55,
+   "dev": 0.3,
+   "density_note": "Hills, forest, marsh and volcano: 6 to 14 per square kilometre.",
+   "character": "Orc holds, Dondor, the troll forest, volcano country.",
+   "target_people": 3400000,
+   "computed_people": 3399700,
+   "states": 47,
+   "countries": 24,
+   "share": 0.0392,
+   "hierarchy": {
+    "urban_people": 238000,
+    "largest_city": 55000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 2,
+    "market_towns_5k_to_20k": 17,
+    "villages": 7529,
+    "forts_and_shrines": 94
+   }
+  },
+  "Magical Lands": {
+   "target": 2.4,
+   "urban": 0.1,
+   "largest": 25,
+   "dev": 0.35,
+   "density_note": "Rich forest land held by long-lived elves: 4 to 8 per square kilometre in the realms, near nothing in the black areas.",
+   "character": "Elven realms in groves; the Wall; Dragon Mountain; the Worshipdom valleys.",
+   "target_people": 2400000,
+   "computed_people": 2400000,
+   "states": 131,
+   "countries": 22,
+   "share": 0.0277,
+   "hierarchy": {
+    "urban_people": 240000,
+    "largest_city": 25000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 1,
+    "market_towns_5k_to_20k": 21,
+    "villages": 5143,
+    "forts_and_shrines": 67
+   }
+  },
+  "Triton's Islands": {
+   "target": 2,
+   "urban": 0.14,
+   "largest": 20,
+   "dev": 0.3,
+   "density_note": "Small islands, fully used coasts: 25 to 40 per square kilometre on inhabited isles.",
+   "character": "Chart-houses and corsair isles; harbour towns.",
+   "target_people": 2000000,
+   "computed_people": 2000700,
+   "states": 45,
+   "countries": 34,
+   "share": 0.0231,
+   "hierarchy": {
+    "urban_people": 280000,
+    "largest_city": 20000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 1,
+    "market_towns_5k_to_20k": 25,
+    "villages": 4095,
+    "forts_and_shrines": 56
+   }
+  },
+  "Dead Lands": {
+   "target": 1.9,
+   "urban": 0.09,
+   "largest": 60,
+   "dev": 0.3,
+   "density_note": "Hot desert and hills, storm-girt coasts: lake country and the north coast 8 to 15, the interior under one.",
+   "character": "Thin: Mirolon's lake country, coast freeholds, the Nether realms and Volgan's hosts (the dead are not counted).",
+   "target_people": 1900000,
+   "computed_people": 1900200,
+   "states": 30,
+   "countries": 13,
+   "share": 0.0219,
+   "hierarchy": {
+    "urban_people": 171000,
+    "largest_city": 60000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 3,
+    "market_towns_5k_to_20k": 9,
+    "villages": 4117,
+    "forts_and_shrines": 53
+   }
+  },
+  "Islands of the South": {
+   "target": 1.3,
+   "urban": 0.08,
+   "largest": 8,
+   "dev": 0.25,
+   "density_note": "Reef islands with fishing coasts: 20 to 35 per square kilometre.",
+   "character": "Small, poor and hospitable.",
+   "target_people": 1300000,
+   "computed_people": 1300500,
+   "states": 24,
+   "countries": 19,
+   "share": 0.015,
+   "hierarchy": {
+    "urban_people": 104000,
+    "largest_city": 8000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 0,
+    "market_towns_5k_to_20k": 11,
+    "villages": 2848,
+    "forts_and_shrines": 36
+   }
+  },
+  "Zol's Mistake": {
+   "target": 0.14,
+   "urban": 0.1,
+   "largest": 12,
+   "dev": 0,
+   "density_note": "Black wasteland: 0.02 per square kilometre outside Furviatlon.",
+   "character": "Nearly empty; only the town of Furviatlon and a few fishers on the islands; the dead are not counted.",
+   "target_people": 140000,
+   "computed_people": 140000,
+   "states": 104,
+   "countries": 1,
+   "share": 0.0016,
+   "hierarchy": {
+    "urban_people": 14000,
+    "largest_city": 12000,
+    "cities_100k_plus": 0,
+    "cities_20k_to_100k": 0,
+    "market_towns_5k_to_20k": 2,
+    "villages": 300,
+    "forts_and_shrines": 4
+   }
+  }
+ },
+ "peoples": {
+  "men": {
+   "people": 76933900,
+   "share": 0.888
+  },
+  "sun_elves": {
+   "people": 3556800,
+   "share": 0.0411
+  },
+  "orcs": {
+   "people": 2600500,
+   "share": 0.03
+  },
+  "elves": {
+   "people": 2389000,
+   "share": 0.0276
+  },
+  "the_dead": {
+   "people": 275000,
+   "share": 0.0032
+  },
+  "yeti": {
+   "people": 272200,
+   "share": 0.0031
+  },
+  "demons": {
+   "people": 178100,
+   "share": 0.0021
+  },
+  "giants": {
+   "people": 123800,
+   "share": 0.0014
+  },
+  "ents": {
+   "people": 123100,
+   "share": 0.0014
+  },
+  "goblins": {
+   "people": 84900,
+   "share": 0.001
+  },
+  "trolls": {
+   "people": 46300,
+   "share": 0.0005
+  },
+  "ogres": {
+   "people": 45000,
+   "share": 0.0005
+  },
+  "mycids": {
+   "people": 11800,
+   "share": 0.0001
+  }
+ },
+ "minor_peoples": [
+  {
+   "host": "Goldoroth",
+   "people": "goblins",
+   "share": 0.12
+  },
+  {
+   "host": "Dulundur",
+   "people": "goblins",
+   "share": 0.08
+  },
+  {
+   "host": "Volgan",
+   "people": "orcs",
+   "share": 0.3
+  },
+  {
+   "host": "Volgan",
+   "people": "ogres",
+   "share": 0.15
+  },
+  {
+   "host": "Volgan",
+   "people": "demons",
+   "share": 0.1
+  },
+  {
+   "host": "Kilinti",
+   "people": "men",
+   "share": 0.35
+  },
+  {
+   "host": "Goldoroth",
+   "people": "trolls",
+   "share": 0.05
+  },
+  {
+   "host": "Magical Forest",
+   "people": "mycids",
+   "share": 0.03
+  },
+  {
+   "host": "Hilofrim",
+   "people": "giants",
+   "share": 0.04
+  }
+ ],
+ "density_classes": [
+  {
+   "id": "rich_plain",
+   "per_km2": 55,
+   "terrain": "Alluvial or loess plain of high fertility",
+   "note": "Vale of Aenor, Hunhun Downs, Novez Fields, Eekedor Vale, Teste Vale"
+  },
+  {
+   "id": "farmland",
+   "per_km2": 40,
+   "terrain": "Open farmland, orchard and fen-edge",
+   "note": "Safeton coast, Lands of the Sun fields, Delbiz Grasslands edge"
+  },
+  {
+   "id": "downs",
+   "per_km2": 25,
+   "terrain": "Rolling hills and downs",
+   "note": "Gunwaith Downs, North Lands coasts"
+  },
+  {
+   "id": "woodland",
+   "per_km2": 9,
+   "terrain": "Forest and managed woodland (dense forest counts half)",
+   "note": "Selen Weald, West Wood, Magical Forest edges"
+  },
+  {
+   "id": "pasture",
+   "per_km2": 6,
+   "terrain": "Steppe, moor and upland pasture",
+   "note": "Hunhun and Konori downs, Cold Lands moors"
+  },
+  {
+   "id": "jungle",
+   "per_km2": 6,
+   "terrain": "Warm jungle",
+   "note": "Obmi Jungle"
+  },
+  {
+   "id": "marsh",
+   "per_km2": 4,
+   "terrain": "Marsh and fen",
+   "note": "Great Swamp of Mirolon, Papz Swamp, Saeton Swamp"
+  },
+  {
+   "id": "mountain",
+   "per_km2": 3,
+   "terrain": "Mountains and high passes",
+   "note": "Magic Mountains, Isengar Mountains, Crown Mountains"
+  },
+  {
+   "id": "tundra",
+   "per_km2": 0.8,
+   "terrain": "Tundra and taiga",
+   "note": "Far Cold Lands"
+  },
+  {
+   "id": "desert_oasis",
+   "per_km2": 35,
+   "terrain": "Oasis strip and wadi",
+   "note": "Noris Wadi, Hot Lake, the Sand Road wells"
+  },
+  {
+   "id": "desert",
+   "per_km2": 0.3,
+   "terrain": "Open desert and dune sea",
+   "note": "Noris Desert, Alodale Desert, Sun Desert, Plutondo Dunes"
+  },
+  {
+   "id": "ice",
+   "per_km2": 0.05,
+   "terrain": "Ice sheet and glacier",
+   "note": "Mp'E, Titanos Heights"
+  },
+  {
+   "id": "wasteland",
+   "per_km2": 0.02,
+   "terrain": "Black wasteland",
+   "note": "Zol's Mistake outside Furviatlon"
+  },
+  {
+   "id": "reef_island",
+   "per_km2": 30,
+   "terrain": "Reef island with fishing coast",
+   "note": "Triton's Islands, Islands of the South"
+  }
+ ],
+ "density_modifiers": {
+  "river_or_lake_within_40_px": 2,
+  "coast_with_harbour": 1.15,
+  "fertility": [
+   0.5,
+   1.5
+  ],
+  "crossroads": 1.1,
+  "mine": 1.1,
+  "pass_town": 1.05,
+  "history": {
+   "restored_after_third_age": 1.1,
+   "ruined_battlefield": 0.5,
+   "black_roots_scar": 0.25,
+   "orc_raided_march": 0.8,
+   "long_peace_core": 1.15
+  },
+  "people_factor": {
+   "men": 1,
+   "orcs": 0.9,
+   "goblins": 0.9,
+   "trolls": 0.15,
+   "elves": 0.15,
+   "sun_elves": 0.15,
+   "giants": 0.05,
+   "yeti": 0.08,
+   "ents": 0.03,
+   "demons": 0.1,
+   "the_dead": 0
+  },
+  "note": "The river and lake rule follows the geography model (05_geography_model.md section 5: population doubled within 40 pixels of a river of width 2 or more or a lake). Elves and other long-lived peoples multiply the density of their land by the people factor because they are few. A state with a mixed population uses the weighted mean."
+ },
+ "state_population_rule": "state_people = region_calibration × Σ over land provinces of (province_area × density_class(terrain) × river/lake/coast/crossroads modifiers × fertility × history × people_factor). region_calibration is chosen so that the region total equals the region target within 1%. Settlements of the settlement list are then added on top as their stated sizes minus the people already counted for their province.",
+ "categories": [
+  {
+   "key": "wasteland",
+   "rule": "state_people under 25,000 and no settlement of 5,000"
+  },
+  {
+   "key": "enclave",
+   "rule": "one-province hold with under 60,000 people"
+  },
+  {
+   "key": "tiny_island",
+   "rule": "island of one province"
+  },
+  {
+   "key": "small_island",
+   "rule": "island of two to four provinces"
+  },
+  {
+   "key": "large_island",
+   "rule": "island of five or more provinces"
+  },
+  {
+   "key": "pastoral",
+   "rule": "pasture, tundra or upland, under 90,000"
+  },
+  {
+   "key": "rural",
+   "rule": "90,000 to 200,000 with no settlement of 20,000"
+  },
+  {
+   "key": "town",
+   "rule": "largest settlement 5,000 to 20,000, or 150,000 to 280,000 people"
+  },
+  {
+   "key": "large_town",
+   "rule": "largest settlement 20,000 to 40,000"
+  },
+  {
+   "key": "city",
+   "rule": "largest settlement 40,000 to 100,000"
+  },
+  {
+   "key": "large_city",
+   "rule": "largest settlement 100,000 to 250,000, or a regional capital"
+  },
+  {
+   "key": "metropolis",
+   "rule": "largest settlement 250,000 or more, or a great power capital with 100,000 or more"
+  },
+  {
+   "key": "megalopolis",
+   "rule": "Parim only (380,000)"
+  }
+ ],
+ "game_numbers": {
+  "manpower_per_state": "state manpower = state_people × 0.11 (the share of men of fighting age who could be raised in a war); a people may multiply it by its recruitable_population_factor.",
+  "manpower_share_by_people": {
+   "men": 0.11,
+   "orcs": 0.14,
+   "goblins": 0.12,
+   "trolls": 0.09,
+   "elves": 0.04,
+   "sun_elves": 0.03,
+   "giants": 0.05,
+   "yeti": 0.08,
+   "ents": 0.02,
+   "demons": 0.05,
+   "the_dead": 0
+  },
+  "resource_rule": "Resources keep the economy spec's region weights; population does not change them. Essence and Gold stay scarce.",
+  "starting_factories": "workshops = urban_people ÷ 75,000 × (region_dev ÷ 0.60); armouries = workshops × 0.45 in Aenor and Lerendor, × 0.55 in orc and Volgan lands, × 0.5 elsewhere; shipwrights = coastal urban_people ÷ 400,000. Round to the nearest whole building; no factory in a state under 25,000 people.",
+  "infrastructure": "infrastructure level = 1 + floor(density rank of the state in its region ÷ 0.25); roads follow settlement size (a settlement of 20,000 or more has level 3; of 100,000 or more level 4); the Restoration roads give the Middle Lands +1.",
+  "starting_class_targets": [
+   {
+    "class": "Great power of men (Aenor)",
+    "people": "8.5 to 9.5 million",
+    "workshops": 32,
+    "armouries": 14,
+    "shipwrights": 6,
+    "divisions": "14 to 18"
+   },
+   {
+    "class": "Great power of men (Lerendor, Coldor, Noris, Stabilo, Gunwaith)",
+    "people": "1.2 to 3.5 million",
+    "workshops": "10 to 16",
+    "armouries": "6 to 8",
+    "shipwrights": "2 to 6",
+    "divisions": "8 to 12"
+   },
+   {
+    "class": "Orc and dark great powers (Goldoroth, Volgan)",
+    "people": "0.5 to 0.9 million living",
+    "workshops": "5 to 6",
+    "armouries": "7 to 14",
+    "shipwrights": "0 to 1",
+    "divisions": "Goldoroth 8 to 10, Volgan 16"
+   },
+   {
+    "class": "Regional power (tier B)",
+    "people": "0.2 to 1.5 million",
+    "workshops": "2 to 8",
+    "armouries": "1 to 4",
+    "shipwrights": "0 to 3",
+    "divisions": "2 to 6"
+   },
+   {
+    "class": "Concord dominion",
+    "people": "0.1 to 0.6 million",
+    "workshops": "1 to 5",
+    "armouries": "0 to 2",
+    "shipwrights": "0 to 2",
+    "divisions": "1 to 3"
+   },
+   {
+    "class": "Minor realm (tier C)",
+    "people": "0.01 to 0.2 million",
+    "workshops": "0 to 2",
+    "armouries": "0 to 1",
+    "shipwrights": "0 to 1",
+    "divisions": "1 to 3"
+   }
+  ],
+  "principle": "A country's strength follows its land, its rivers and its trade. The class table gives the usual outcome of the formulas. It is never a target to be forced."
+ },
+ "minorities_and_borders": [
+  {
+   "region": "Middle Lands",
+   "rows": "Aenor holds many dominions of its own culture; the Selen, Kilinti and Hiloron border has men, ents and giants living side by side; the south marches mix march-folk with refugees from the Dead Lands coast; the Veiled and Redbark are enclaves inside Aenor's roads."
+  },
+  {
+   "region": "North Lands",
+   "rows": "The strait coast is Leren; the inland crowns are Free Crowns; Blackton on the Dark Lands coast is mixed Dondor and Leren; Leren sailors settle R'en."
+  },
+  {
+   "region": "West Lands",
+   "rows": "Gunwaith clans and Girdon wardens mix along the Grey Ford; guild towns have Aenoran merchants; Buldor companies recruit from every clan."
+  },
+  {
+   "region": "Cold Lands",
+   "rows": "Ice clans mix with yeti and giants at the high valleys; Windwaith and the western ports have Gunwaithic traders."
+  },
+  {
+   "region": "Dark Lands",
+   "rows": "Goblins live in orc holds, trolls in the Troll Forest; Dondor and Blackton hold human towns beside orc hills; Belonton and the sea orcs share islands with Leren fishers."
+  },
+  {
+   "region": "Magical Lands",
+   "rows": "Mushroom-forest mycids live inside an elven realm [O]; the Worshipdom valleys are men inside the elven region; the rift coast has Alerhic merchants."
+  },
+  {
+   "region": "East Lands",
+   "rows": "Noric, Stabilic and Alerhic peoples mix at the crossroads; caravan towns host every tongue; the Hidden Council's eastern clients are present in every city. [secret]"
+  },
+  {
+   "region": "Lands of the Sun",
+   "rows": "The Sunfolk of Goodin live among the Sunhot; the Gala court has a few men and Sunhot courtiers."
+  },
+  {
+   "region": "Dead Lands",
+   "rows": "Mirolon's wardens, coast freeholders and the Nether realms; Volgan's Dominion holds orcs, ogres and demons beside the dead."
+  }
+ ],
+ "core_and_claim_logic": [
+  "Every country cores its own states at the start. No claims at the start (foundation spec).",
+  "A people that lived in a state before a conquest keeps it as a cultural claim for play: the Gunwaith claim nothing from Aenor at the start but resent its old charts; the Veiled and Redbark never accept Aenor's authority; Leren crowns resist Lerendor's supremacy but accept its protection.",
+  "Resistance follows culture: a state of a different culture than its ruler's adds +20% resistance target; a state of a people of Great Folk ruled by Common Folk adds +10%; a state whose faith differs from the ruler's adds +5%; the Wall-Folk and Lake Aenorans treat each other as one culture."
+ ],
+ "settlements": [
+  {
+   "name": "Parim",
+   "country": "Aenor",
+   "culture": "lake_aenoran",
+   "people": "men",
+   "role": "Crown city; seat of the Golden King, the Concord Council and the University",
+   "population_thousands": 380,
+   "placement": "In Aenor's capital state, on the Great Lake's north shore at the mouth of the largest river that enters it; palace on the headland, Golden Court north of the bridges."
+  },
+  {
+   "name": "Dolepar",
+   "country": "Aenor",
+   "culture": "lake_aenoran",
+   "people": "men",
+   "role": "Great Lake port and shipyard",
+   "population_thousands": 62,
+   "placement": "On the Great Lake's south shore at the best deep-water bay, in an Aenor state with a naval base."
+  },
+  {
+   "name": "Silesire",
+   "country": "Aenor",
+   "culture": "lake_aenoran",
+   "people": "men",
+   "role": "River-mouth grain port",
+   "population_thousands": 55,
+   "placement": "On the Great Lake's east shore where the largest eastern river enters it."
+  },
+  {
+   "name": "Kerepael",
+   "country": "Aenor",
+   "culture": "lake_aenoran",
+   "people": "men",
+   "role": "Fortress town on the road to the Wall",
+   "population_thousands": 34,
+   "placement": "In the Aenor state nearest Kingson, where the main east road leaves the plain for the foothills."
+  },
+  {
+   "name": "Hifeco",
+   "country": "Selen",
+   "culture": "selen_ranger",
+   "people": "men",
+   "role": "Dominion capital; the University of Selen",
+   "population_thousands": 38,
+   "placement": "In Selen's capital state, at the forest edge where the first road leaves the wood; the University stands on the hill above."
+  },
+  {
+   "name": "Arrovez",
+   "country": "Konori",
+   "culture": "steppe_rider",
+   "people": "men",
+   "role": "Steppe royal seat",
+   "population_thousands": 22,
+   "placement": "In Konori's capital state, at the river ford on the steppe edge."
+  },
+  {
+   "name": "Ollolor",
+   "country": "Kilinti",
+   "culture": "kilinti_ents",
+   "people": "ents",
+   "role": "Moot-grove of the ents",
+   "population_thousands": 4,
+   "placement": "In Kilinti's capital state, inside the oldest grove; no walls."
+  },
+  {
+   "name": "Deolofson",
+   "country": "Kingson",
+   "culture": "wall_folk",
+   "people": "men",
+   "role": "Gate town of the Great Wall",
+   "population_thousands": 26,
+   "placement": "In Kingson's capital state, where the main road crosses the Great Wall."
+  },
+  {
+   "name": "Lunhrim",
+   "country": "Kingson",
+   "culture": "wall_folk",
+   "people": "men",
+   "role": "Wall fort at one end of the Great Wall [E name; place O]",
+   "population_thousands": 8,
+   "placement": "On the Great Wall line, at the end the owner has not placed; proceeds at the Wall's northern end near the foothills."
+  },
+  {
+   "name": "Bedogus",
+   "country": "Hiloron",
+   "culture": "hill_giants",
+   "people": "giants",
+   "role": "Giants' hall above the cairn-fields",
+   "population_thousands": 5,
+   "placement": "In Hiloron's capital state, on the highest hill."
+  },
+  {
+   "name": "Lotrenri",
+   "country": "Safeton",
+   "culture": "lake_aenoran",
+   "people": "men",
+   "role": "Lake haven",
+   "population_thousands": 30,
+   "placement": "In Safeton's capital state, on a sheltered bay of the Great Lake west of Parim."
+  },
+  {
+   "name": "Saelori",
+   "country": "Noleksun",
+   "culture": "march_folk",
+   "people": "men",
+   "role": "Frontier moot town",
+   "population_thousands": 18,
+   "placement": "In Noleksun's capital state, at the crossing of the south-eastern roads."
+  },
+  {
+   "name": "Borrak",
+   "country": "Asgard",
+   "culture": "isle_houses",
+   "people": "men",
+   "role": "Harbour of Aenor Isle; shipwrights",
+   "population_thousands": 28,
+   "placement": "In Asgard's capital state, in the best natural harbour facing the central sea."
+  },
+  {
+   "name": "Ulrono",
+   "country": "Hunhun",
+   "culture": "steppe_rider",
+   "people": "men",
+   "role": "Riders' gathering ground",
+   "population_thousands": 14,
+   "placement": "In Hunhun's capital state, on the open plain at the permanent gathering ground; mostly tents."
+  },
+  {
+   "name": "Hugomon",
+   "country": "Herez",
+   "culture": "march_folk",
+   "people": "men",
+   "role": "Southern march fort",
+   "population_thousands": 12,
+   "placement": "In Herez's capital state, on the pass where the southern road enters the marches."
+  },
+  {
+   "name": "Hordorton",
+   "country": "Freshon",
+   "culture": "lake_aenoran",
+   "people": "men",
+   "role": "Spring market",
+   "population_thousands": 40,
+   "placement": "In Freshon's capital state, around the spring where the lake road meets the south road."
+  },
+  {
+   "name": "Horlomon",
+   "country": "Pazoma",
+   "culture": "lake_aenoran",
+   "people": "men",
+   "role": "Rich lake town",
+   "population_thousands": 45,
+   "placement": "In Pazoma's capital state, on a deep lake bay."
+  },
+  {
+   "name": "Morluma",
+   "country": "Cursed Lands",
+   "culture": "veiled_folk",
+   "people": "men",
+   "role": "Hidden cord-hall",
+   "population_thousands": 3,
+   "placement": "In the Cursed Lands' capital state, deep in the sour ground; no road leads to it."
+  },
+  {
+   "name": "Giritren",
+   "country": "Bloody Forest",
+   "culture": "redbark_tribes",
+   "people": "men",
+   "role": "Tree-halls of the Redbark tribes",
+   "population_thousands": 6,
+   "placement": "In the Bloody Forest's capital state, in the oldest stand of red oak."
+  },
+  {
+   "name": "Hungohon",
+   "country": "Klungori Guard",
+   "culture": "wall_folk",
+   "people": "men",
+   "role": "Garrison town of the Wall's southern flank",
+   "population_thousands": 9,
+   "placement": "In Klungori Guard's capital state, on the Wall road south of Kingson."
+  },
+  {
+   "name": "Ulton",
+   "country": "Belurithon",
+   "culture": "march_folk",
+   "people": "men",
+   "role": "March town",
+   "population_thousands": 7,
+   "placement": "In Belurithon's capital state, on the southern frontier road."
+  },
+  {
+   "name": "Sonargur",
+   "country": "Lerendor",
+   "culture": "leren_sea_kings",
+   "people": "men",
+   "role": "Seat of the united Leren crown; the Singing Quay",
+   "population_thousands": 120,
+   "placement": "In Lerendor's capital state, on the strait shore at the best natural harbour; naval base level 3 or more."
+  },
+  {
+   "name": "Perhy",
+   "country": "Eekedor",
+   "culture": "leren_sea_kings",
+   "people": "men",
+   "role": "Arbitration town of the North",
+   "population_thousands": 14,
+   "placement": "In Eekedor's capital state, on the inlet that is its harbour."
+  },
+  {
+   "name": "Farnardur",
+   "country": "R'en",
+   "culture": "leren_sea_kings",
+   "people": "men",
+   "role": "Gateway of the strait",
+   "population_thousands": 18,
+   "placement": "In R'en's capital state, at the narrowest point of the strait."
+  },
+  {
+   "name": "Altovian",
+   "country": "Molot",
+   "culture": "free_crowns_north",
+   "people": "men",
+   "role": "Marcher fortress",
+   "population_thousands": 12,
+   "placement": "In Molot's capital state, behind the marsh line."
+  },
+  {
+   "name": "Agtosai",
+   "country": "Sensai",
+   "culture": "free_crowns_north",
+   "people": "men",
+   "role": "Seat of the largest free crown",
+   "population_thousands": 16,
+   "placement": "In Sensai's capital state, in the long vale."
+  },
+  {
+   "name": "Gilvian",
+   "country": "Mina",
+   "culture": "free_crowns_north",
+   "people": "men",
+   "role": "Mining crown's town",
+   "population_thousands": 9,
+   "placement": "In Mina's capital state, below the ore hills."
+  },
+  {
+   "name": "Fandanar",
+   "country": "Coldor",
+   "culture": "winter_crown",
+   "people": "men",
+   "role": "Seat of the Winter Crown; the Frost-Hall",
+   "population_thousands": 85,
+   "placement": "In Coldor's capital state, in the interior valley between the Frozen Mountains and the Cold Mountains."
+  },
+  {
+   "name": "Minnolomak",
+   "country": "Isengard",
+   "culture": "isengard_warlords",
+   "people": "men",
+   "role": "Warlord's fort-city",
+   "population_thousands": 30,
+   "placement": "In Isengard's capital state, at the mouth of the main pass of the Isengar Mountains."
+  },
+  {
+   "name": "Ollondo",
+   "country": "Horidor",
+   "culture": "ice_clans",
+   "people": "men",
+   "role": "Clan-realm seat allied to Coldor",
+   "population_thousands": 14,
+   "placement": "In Horidor's capital state, on the valley road to Fandanar."
+  },
+  {
+   "name": "Porideon",
+   "country": "Windwaith",
+   "culture": "windwaith_seafarers",
+   "people": "men",
+   "role": "Council port of the wind-coast",
+   "population_thousands": 24,
+   "placement": "In Windwaith's capital state, on the westward headland."
+  },
+  {
+   "name": "Alorio",
+   "country": "Greenle",
+   "culture": "windwaith_seafarers",
+   "people": "men",
+   "role": "Western port; the Harbour-Master's seat",
+   "population_thousands": 22,
+   "placement": "In Greenle's capital state, in the best harbour of the western coast."
+  },
+  {
+   "name": "Vaestia",
+   "country": "Wonderland",
+   "culture": "ice_clans",
+   "people": "men",
+   "role": "Coast-and-forest seat",
+   "population_thousands": 11,
+   "placement": "In Wonderland's capital state, where the forest meets the coast road."
+  },
+  {
+   "name": "Fentene",
+   "country": "Yeti Lands",
+   "culture": "yeti_clans",
+   "people": "yeti",
+   "role": "The largest cave-gathering of the yeti",
+   "population_thousands": 4,
+   "placement": "In the Yeti Lands' capital state, in the highest valley."
+  },
+  {
+   "name": "Xitore",
+   "country": "Titanos",
+   "culture": "ice_giants",
+   "people": "giants",
+   "role": "Ice-throne of the Frost-King",
+   "population_thousands": 3,
+   "placement": "In Titanos's capital state, on the glacier plain."
+  },
+  {
+   "name": "Castle of Yeldenne",
+   "country": "Yeldenne",
+   "culture": "ice_clans",
+   "people": "men",
+   "role": "Horos's castle, keeper of Glo [E]; victory point Simoto today",
+   "population_thousands": 2,
+   "placement": "In the state named Mp'E, in the frozen north of the Cold Lands; exact place O."
+  },
+  {
+   "name": "Bulligon",
+   "country": "Gunwaith",
+   "culture": "gunwaith_clans",
+   "people": "men",
+   "role": "Seat of the northern crown of the West Lands",
+   "population_thousands": 70,
+   "placement": "In Gunwaith's capital state, near the neck road to the Cold Lands."
+  },
+  {
+   "name": "Arligon",
+   "country": "Girdon",
+   "culture": "girdon_wardens",
+   "people": "men",
+   "role": "Warden-town of the river fords",
+   "population_thousands": 40,
+   "placement": "In Girdon's capital state, at the main ford of the river that borders Gunwaith."
+  },
+  {
+   "name": "Bolbin",
+   "country": "Kradlon",
+   "culture": "western_guilds",
+   "people": "men",
+   "role": "Guild port",
+   "population_thousands": 38,
+   "placement": "In Kradlon's capital state, on the western sea."
+  },
+  {
+   "name": "Oslodon",
+   "country": "Corogon",
+   "culture": "western_guilds",
+   "people": "men",
+   "role": "Trading port",
+   "population_thousands": 34,
+   "placement": "In Corogon's capital state, on the bay facing the central sea."
+  },
+  {
+   "name": "Varlibo",
+   "country": "Varnondor",
+   "culture": "gunwaith_clans",
+   "people": "men",
+   "role": "Lowland royal seat",
+   "population_thousands": 20,
+   "placement": "In Varnondor's capital state, on the plain."
+  },
+  {
+   "name": "Toplipor",
+   "country": "Buldor",
+   "culture": "buldor_companies",
+   "people": "men",
+   "role": "Barracks-town of the companies",
+   "population_thousands": 16,
+   "placement": "In Buldor's capital state, at the crossroads of the southern roads."
+  },
+  {
+   "name": "Arropon",
+   "country": "Lambin",
+   "culture": "gunwaith_clans",
+   "people": "men",
+   "role": "Farm-and-hill seat",
+   "population_thousands": 18,
+   "placement": "In Lambin's capital state, below the hills."
+  },
+  {
+   "name": "Aunaza",
+   "country": "Adel",
+   "culture": "chart_islanders",
+   "people": "men",
+   "role": "Chart-house league seat",
+   "population_thousands": 20,
+   "placement": "In Adel's capital state, in the best harbour of the Adel Mountains' island."
+  },
+  {
+   "name": "Montah",
+   "country": "Pollos",
+   "culture": "chart_islanders",
+   "people": "men",
+   "role": "Trading league harbour",
+   "population_thousands": 14,
+   "placement": "In Pollos's capital state, on the harbour."
+  },
+  {
+   "name": "Seidailos",
+   "country": "Raerby",
+   "culture": "chart_islanders",
+   "people": "men",
+   "role": "Seafaring league harbour",
+   "population_thousands": 12,
+   "placement": "In Raerby's capital state, below the Raerby Mountains."
+  },
+  {
+   "name": "Kudaini",
+   "country": "Nondondor",
+   "culture": "corsair_lords",
+   "people": "men",
+   "role": "Sea-king's cliff harbour",
+   "population_thousands": 9,
+   "placement": "In Nondondor's capital state, on the cliff harbour that holds the isles' naval frontier."
+  },
+  {
+   "name": "Cocanoor",
+   "country": "Goldoroth",
+   "culture": "volcano_clans",
+   "people": "orcs",
+   "role": "Seat of the Warking beneath the Fire-Mountain; victory point Fabdernor today",
+   "population_thousands": 55,
+   "placement": "In Goldoroth's capital state, at the foot of the Goldoroth Volcano."
+  },
+  {
+   "name": "Notbuton",
+   "country": "Dondor",
+   "culture": "dondor_brutes",
+   "people": "men",
+   "role": "Seat of the Dondor kings; victory point Dunnoor today",
+   "population_thousands": 30,
+   "placement": "In Dondor's capital state, on the forest edge facing the straits."
+  },
+  {
+   "name": "Dontadur",
+   "country": "Blackton",
+   "culture": "dondor_brutes",
+   "people": "men",
+   "role": "Free human coast town",
+   "population_thousands": 14,
+   "placement": "In Blackton's capital state, on the coast."
+  },
+  {
+   "name": "Lesderle",
+   "country": "Dulundur",
+   "culture": "iron_clans",
+   "people": "orcs",
+   "role": "Largest free orc hold",
+   "population_thousands": 18,
+   "placement": "In Dulundur's capital state, in the largest valley."
+  },
+  {
+   "name": "Notle",
+   "country": "Belonton",
+   "culture": "sea_orcs",
+   "people": "orcs",
+   "role": "Sea-orc harbour",
+   "population_thousands": 7,
+   "placement": "In Belonton's capital state, on the borderland coast."
+  },
+  {
+   "name": "Fablundor",
+   "country": "Troll Forest",
+   "culture": "troll_tribes",
+   "people": "trolls",
+   "role": "Troll heap-hall",
+   "population_thousands": 3,
+   "placement": "In the Troll Forest's capital state, in the heart of the forest."
+  },
+  {
+   "name": "Doldes",
+   "country": "Dark Gate",
+   "culture": "volcano_clans",
+   "people": "orcs",
+   "role": "Gate hold on the road south",
+   "population_thousands": 6,
+   "placement": "In Dark Gate's capital state, at the pass."
+  },
+  {
+   "name": "Gollonlon",
+   "country": "Fondor",
+   "culture": "iron_clans",
+   "people": "orcs",
+   "role": "Hold town at the Fonoor Forest",
+   "population_thousands": 6,
+   "placement": "In Fondor's capital state, at the forest edge."
+  },
+  {
+   "name": "Dobudo",
+   "country": "Dunbulinor",
+   "culture": "iron_clans",
+   "people": "orcs",
+   "role": "Hold town",
+   "population_thousands": 6,
+   "placement": "In Dunbulinor's capital state, in the hills."
+  },
+  {
+   "name": "Nafeher",
+   "country": "Volgan",
+   "culture": "grave_hosts",
+   "people": "the_dead",
+   "role": "Seat of Volgan; a great city at most [E working seat]; victory point Neleelon today",
+   "population_thousands": 60,
+   "placement": "In Volgan's capital state, on the inland plateau behind the storms."
+  },
+  {
+   "name": "Miherta",
+   "country": "Mirolon",
+   "culture": "mirolon_wardens",
+   "people": "men",
+   "role": "Warden-town on the lake",
+   "population_thousands": 50,
+   "placement": "In Mirolon's capital state, on the Lake of Mirolon."
+  },
+  {
+   "name": "Gelroze",
+   "country": "Nezer",
+   "culture": "netherborn",
+   "people": "demons",
+   "role": "Hall of Queen Nazara",
+   "population_thousands": 22,
+   "placement": "In Nezer's capital state, in the Nezerun hills."
+  },
+  {
+   "name": "Miherze",
+   "country": "Demon",
+   "culture": "netherborn",
+   "people": "demons",
+   "role": "Hall of Hazarel the Horned",
+   "population_thousands": 20,
+   "placement": "In Demon's capital state, in the Nether foothills."
+  },
+  {
+   "name": "Unzeky",
+   "country": "Dolon",
+   "culture": "netherborn",
+   "people": "demons",
+   "role": "Salt-coast pact-hall",
+   "population_thousands": 12,
+   "placement": "In Dolon's capital state, on the Dead Sea."
+  },
+  {
+   "name": "Larorun",
+   "country": "Nan",
+   "culture": "dead_lands_freeholds",
+   "people": "men",
+   "role": "Hill warlord's fort",
+   "population_thousands": 10,
+   "placement": "In Nan's capital state, in the Nan Mountains."
+  },
+  {
+   "name": "Memate",
+   "country": "Magical Forest",
+   "culture": "forest_council_elves",
+   "people": "elves",
+   "role": "Seat of the First Speaker; tree-city",
+   "population_thousands": 25,
+   "placement": "In the Magical Forest's capital state, inside the Living Forest."
+  },
+  {
+   "name": "Ennaton",
+   "country": "Nolorim",
+   "culture": "pass_wardens",
+   "people": "elves",
+   "role": "Pass-warden hold",
+   "population_thousands": 6,
+   "placement": "In Nolorim's capital state, on the high pass."
+  },
+  {
+   "name": "Verozo",
+   "country": "Herrodon",
+   "culture": "hill_kingdom_elves",
+   "people": "elves",
+   "role": "Hill-kingdom hall",
+   "population_thousands": 14,
+   "placement": "In Herrodon's capital state, on the Herrodon Mountains' lower slope."
+  },
+  {
+   "name": "Enliras",
+   "country": "Andos Enda",
+   "culture": "lake_elves",
+   "people": "elves",
+   "role": "Lake-realm water garden",
+   "population_thousands": 12,
+   "placement": "In Andos Enda's capital state, on its main lake."
+  },
+  {
+   "name": "Lenlakron",
+   "country": "Worshipdom",
+   "culture": "zilin_pilgrims",
+   "people": "men",
+   "role": "Pilgrim town of the Zilin Hills [secret hub]",
+   "population_thousands": 9,
+   "placement": "In the Worshipdom's capital state, in the central of the three Zilin valleys."
+  },
+  {
+   "name": "Lenkei",
+   "country": "The End",
+   "culture": "rift_coast_elves",
+   "people": "elves",
+   "role": "Rift-coast lantern city",
+   "population_thousands": 15,
+   "placement": "In The End's capital state, on the rift sea shore."
+  },
+  {
+   "name": "Hidirim",
+   "country": "Lccimio",
+   "culture": "rift_coast_elves",
+   "people": "elves",
+   "role": "Rift-coast realm seat",
+   "population_thousands": 14,
+   "placement": "In Lccimio's capital state, on the rift sea shore."
+  },
+  {
+   "name": "Dragon Mountain Roost",
+   "country": "Herrodon",
+   "culture": "hill_kingdom_elves",
+   "people": "elves",
+   "role": "Roost-hold at Dragon Mountain [E feature]",
+   "population_thousands": 2,
+   "placement": "In the Dragon Mountain state, held by the nearest elven realm."
+  },
+  {
+   "name": "Furvior",
+   "country": "Noris",
+   "culture": "noris_riders",
+   "people": "men",
+   "role": "Seat of the camel kings; city of the Seven Wells",
+   "population_thousands": 210,
+   "placement": "In Noris's capital state, on a hill of wells at the junction of the Salt Road and the Sand Road."
+  },
+  {
+   "name": "Postondoroth",
+   "country": "Stabilo",
+   "culture": "caravan_princes",
+   "people": "men",
+   "role": "Seat of the caravan princes; the Hall of Scales",
+   "population_thousands": 240,
+   "placement": "In Stabilo's capital state (the capital moves here [map S5]), at the Gold Road's great harbour-market."
+  },
+  {
+   "name": "Porrenva",
+   "country": "Alerhia",
+   "culture": "river_kings",
+   "people": "men",
+   "role": "Stair-city of the river kings",
+   "population_thousands": 160,
+   "placement": "In Alerhia's capital state, on the river above the flood-line."
+  },
+  {
+   "name": "Erdozan",
+   "country": "Miaed",
+   "culture": "river_kings",
+   "people": "men",
+   "role": "Desert-pass capital",
+   "population_thousands": 120,
+   "placement": "In Miaed's capital state, at the great pass."
+  },
+  {
+   "name": "Atonto",
+   "country": "Erco",
+   "culture": "river_kings",
+   "people": "men",
+   "role": "River kingdom capital",
+   "population_thousands": 95,
+   "placement": "In Erco's capital state, on its river."
+  },
+  {
+   "name": "Vobibiz",
+   "country": "Plutondo",
+   "culture": "river_kings",
+   "people": "men",
+   "role": "Southern river capital",
+   "population_thousands": 110,
+   "placement": "In Plutondo's capital state, on its river."
+  },
+  {
+   "name": "Ohitus",
+   "country": "Ostoroth",
+   "culture": "lake_road_cities",
+   "people": "men",
+   "role": "Lake Road capital",
+   "population_thousands": 70,
+   "placement": "In Ostoroth's capital state, on the Lake Road."
+  },
+  {
+   "name": "Gonnois",
+   "country": "Mora",
+   "culture": "lake_road_cities",
+   "people": "men",
+   "role": "Lake-city council town",
+   "population_thousands": 60,
+   "placement": "In Mora's capital state, on the Hot Lake."
+  },
+  {
+   "name": "Reerenta",
+   "country": "Gondolin",
+   "culture": "noris_riders",
+   "people": "men",
+   "role": "Ally of Noris",
+   "population_thousands": 45,
+   "placement": "In Gondolin's capital state, on the desert's northern edge."
+  },
+  {
+   "name": "Pordoce",
+   "country": "Avalon",
+   "culture": "red_lands_tribunes",
+   "people": "men",
+   "role": "Kiln-city of the Red Lands",
+   "population_thousands": 35,
+   "placement": "In Avalon's capital state, on the red clay."
+  },
+  {
+   "name": "Cereosa",
+   "country": "Mostok",
+   "culture": "caravan_princes",
+   "people": "men",
+   "role": "Central trade city",
+   "population_thousands": 40,
+   "placement": "In Mostok's capital state, at the central road junction."
+  },
+  {
+   "name": "Furtonlin",
+   "country": "Delbiz Grasslands",
+   "culture": "river_kings",
+   "people": "men",
+   "role": "Grassland kingdom capital",
+   "population_thousands": 28,
+   "placement": "In Delbiz Grasslands' capital state, on the rift coast."
+  },
+  {
+   "name": "Kerdoco",
+   "country": "Obmi",
+   "culture": "caravan_princes",
+   "people": "men",
+   "role": "Jungle-edge city",
+   "population_thousands": 30,
+   "placement": "In Obmi's capital state, at the jungle edge."
+  },
+  {
+   "name": "Pehami",
+   "country": "Woqood",
+   "culture": "noris_riders",
+   "people": "men",
+   "role": "North-coast desert capital",
+   "population_thousands": 25,
+   "placement": "In Woqood's capital state, on the Ocean of Zol coast."
+  },
+  {
+   "name": "Delgidor",
+   "country": "Arcon",
+   "culture": "caravan_princes",
+   "people": "men",
+   "role": "Southern city on the Gold Road",
+   "population_thousands": 24,
+   "placement": "In Arcon's capital state, on the Gold Road."
+  },
+  {
+   "name": "Liohado",
+   "country": "Lorvens",
+   "culture": "lake_road_cities",
+   "people": "men",
+   "role": "Northern coast city",
+   "population_thousands": 18,
+   "placement": "In Lorvens's capital state, on the coast."
+  },
+  {
+   "name": "Torsain",
+   "country": "Howan",
+   "culture": "southern_islanders",
+   "people": "men",
+   "role": "Island harbour",
+   "population_thousands": 8,
+   "placement": "In Howan's capital state, in the lee of the reef."
+  },
+  {
+   "name": "Yumhuy",
+   "country": "Nara",
+   "culture": "southern_islanders",
+   "people": "men",
+   "role": "Island harbour",
+   "population_thousands": 7,
+   "placement": "In Nara's capital state, behind the reef."
+  },
+  {
+   "name": "Jinsain",
+   "country": "Enhis Is Rond",
+   "culture": "southern_islanders",
+   "people": "men",
+   "role": "Harbour near the tide-shrine [P]",
+   "population_thousands": 5,
+   "placement": "In Enhis Is Rond's capital state, near the southern shore where the shrine lies."
+  },
+  {
+   "name": "Eldoga",
+   "country": "The Lands of Light",
+   "culture": "sunhot_light",
+   "people": "sun_elves",
+   "role": "Seat of the Radiant Speaker",
+   "population_thousands": 55,
+   "placement": "In the Lands of Light's capital state, in the largest valley."
+  },
+  {
+   "name": "Sodoli",
+   "country": "Gala Elves",
+   "culture": "gala_court",
+   "people": "elves",
+   "role": "Court of King Lorien; the Mirror's courtyard [P]",
+   "population_thousands": 12,
+   "placement": "In the Gala Elves' capital state, in the old courtyard garden above the harbour."
+  },
+  {
+   "name": "Googavis",
+   "country": "Elvana",
+   "culture": "sunhot_western",
+   "people": "sun_elves",
+   "role": "Sanctuary town",
+   "population_thousands": 9,
+   "placement": "In Elvana's capital state, in its sanctuary vale."
+  },
+  {
+   "name": "Repgin",
+   "country": "Igara",
+   "culture": "sunhot_western",
+   "people": "sun_elves",
+   "role": "Sanctuary town",
+   "population_thousands": 8,
+   "placement": "In Igara's capital state, in its sanctuary vale."
+  },
+  {
+   "name": "Ileslia",
+   "country": "Hengyang",
+   "culture": "sunhot_isles",
+   "people": "sun_elves",
+   "role": "Isle sanctuary harbour",
+   "population_thousands": 12,
+   "placement": "In Hengyang's capital state, on the island's main harbour."
+  },
+  {
+   "name": "Ilonlen",
+   "country": "Poyang",
+   "culture": "sunhot_isles",
+   "people": "sun_elves",
+   "role": "Isle realm harbour",
+   "population_thousands": 14,
+   "placement": "In Poyang's capital state, on its main island."
+  },
+  {
+   "name": "Sudoni",
+   "country": "Heaven",
+   "culture": "sunhot_western",
+   "people": "sun_elves",
+   "role": "Pilgrimage town",
+   "population_thousands": 6,
+   "placement": "In Heaven's capital state, on the shore."
+  },
+  {
+   "name": "Menmic",
+   "country": "Flame",
+   "culture": "sunhot_western",
+   "people": "sun_elves",
+   "role": "Pilgrimage town",
+   "population_thousands": 5,
+   "placement": "In Flame's capital state, below the Great Volcano [E label]."
+  },
+  {
+   "name": "Wefolen",
+   "country": "Godland",
+   "culture": "sunhot_western",
+   "people": "sun_elves",
+   "role": "Pilgrimage town on the Sea of Gods",
+   "population_thousands": 7,
+   "placement": "In Godland's capital state, on the shore of the Sea of Gods [E label]."
+  },
+  {
+   "name": "Furviatlon",
+   "country": "Zol",
+   "culture": "zols_dead",
+   "people": "the_dead",
+   "role": "Seat of Zol's realm; at most a town; who governs it is open [O]",
+   "population_thousands": 12,
+   "placement": "In Zol's capital state, inland on the black plain."
+  },
+  {
+   "name": "Sodoloro",
+   "country": "Zol",
+   "culture": "zols_dead",
+   "people": "the_dead",
+   "role": "A named place in the Mistake [E]; written Sodolôrō in documents; the game font cannot draw ō",
+   "population_thousands": 1,
+   "placement": "On the Šodolôrō label in Zol's Mistake [E]."
+  }
+ ],
+ "countries": [
+  {
+   "country": "Aenor",
+   "tag": "Y0L",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 18,
+   "population": 9800900,
+   "urban_people": 2469800,
+   "density_multiplier": 2.3
+  },
+  {
+   "country": "Selen",
+   "tag": "Y0M",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "selen_ranger",
+   "states": 7,
+   "population": 1325700,
+   "urban_people": 318200,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Konori",
+   "tag": "Y0N",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "steppe_rider",
+   "states": 5,
+   "population": 532700,
+   "urban_people": 127800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Kilinti",
+   "tag": "Y0O",
+   "region": "Middle Lands",
+   "people": "ents",
+   "culture": "kilinti_ents",
+   "states": 4,
+   "population": 189400,
+   "urban_people": 45500,
+   "density_multiplier": 0.2
+  },
+  {
+   "country": "Kingson",
+   "tag": "Y0P",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "wall_folk",
+   "states": 4,
+   "population": 757600,
+   "urban_people": 181800,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Hiloron",
+   "tag": "Y0Q",
+   "region": "Middle Lands",
+   "people": "giants",
+   "culture": "hill_giants",
+   "states": 2,
+   "population": 56800,
+   "urban_people": 13600,
+   "density_multiplier": 0.12
+  },
+  {
+   "country": "Safeton",
+   "tag": "Y0R",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 2,
+   "population": 757600,
+   "urban_people": 181800,
+   "density_multiplier": 1.6
+  },
+  {
+   "country": "Noleksun",
+   "tag": "Y0S",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "march_folk",
+   "states": 8,
+   "population": 1041600,
+   "urban_people": 250000,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Asgard",
+   "tag": "Y0T",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "isle_houses",
+   "states": 1,
+   "population": 260400,
+   "urban_people": 62500,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Fotan",
+   "tag": "Y4M",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 1,
+   "population": 355100,
+   "urban_people": 85200,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Ulgus",
+   "tag": "Y4N",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 1,
+   "population": 355100,
+   "urban_people": 85200,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Vothrim",
+   "tag": "Y4O",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "selen_ranger",
+   "states": 2,
+   "population": 378800,
+   "urban_people": 90900,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Stendorler",
+   "tag": "Y4P",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 1,
+   "population": 355100,
+   "urban_people": 85200,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Olvinc-un",
+   "tag": "Y4Q",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "wall_folk",
+   "states": 2,
+   "population": 378800,
+   "urban_people": 90900,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Svenlor",
+   "tag": "Y4R",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "selen_ranger",
+   "states": 2,
+   "population": 378800,
+   "urban_people": 90900,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Tieri",
+   "tag": "Y4S",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 2,
+   "population": 710200,
+   "urban_people": 170400,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Hilofrim",
+   "tag": "Y4T",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "wall_folk",
+   "states": 1,
+   "population": 189400,
+   "urban_people": 45500,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Klungori Guard",
+   "tag": "Y4U",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "wall_folk",
+   "states": 2,
+   "population": 378800,
+   "urban_people": 90900,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Kunhrim",
+   "tag": "Y4V",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "steppe_rider",
+   "states": 3,
+   "population": 319600,
+   "urban_people": 76700,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Hunhun",
+   "tag": "Y4W",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "steppe_rider",
+   "states": 3,
+   "population": 319600,
+   "urban_people": 76700,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Dariap",
+   "tag": "Y4X",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 1,
+   "population": 355100,
+   "urban_people": 85200,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Novez",
+   "tag": "Y4Y",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 1,
+   "population": 355100,
+   "urban_people": 85200,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Noloreh",
+   "tag": "Y4Z",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "steppe_rider",
+   "states": 2,
+   "population": 213100,
+   "urban_people": 51100,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Mondon",
+   "tag": "Y50",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 2,
+   "population": 710200,
+   "urban_people": 170400,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Freshon",
+   "tag": "Y51",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 4,
+   "population": 1420400,
+   "urban_people": 340900,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Belurithon",
+   "tag": "Y52",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "march_folk",
+   "states": 2,
+   "population": 260400,
+   "urban_people": 62500,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Pazoma",
+   "tag": "Y53",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "lake_aenoran",
+   "states": 4,
+   "population": 1420400,
+   "urban_people": 340900,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Herez",
+   "tag": "Y55",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "march_folk",
+   "states": 5,
+   "population": 651000,
+   "urban_people": 156200,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Cursed Lands",
+   "tag": "Y54",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "veiled_folk",
+   "states": 1,
+   "population": 59200,
+   "urban_people": 14200,
+   "density_multiplier": 0.25
+  },
+  {
+   "country": "Bloody Forest",
+   "tag": "Y8E",
+   "region": "Middle Lands",
+   "people": "men",
+   "culture": "redbark_tribes",
+   "states": 3,
+   "population": 213100,
+   "urban_people": 51100,
+   "density_multiplier": 0.3
+  },
+  {
+   "country": "Zol",
+   "tag": "Y0U",
+   "region": "Zol's Mistake",
+   "people": "the_dead",
+   "culture": "zols_dead",
+   "states": 104,
+   "population": 140000,
+   "urban_people": 14000,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Lerendor",
+   "tag": "Y0G",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "leren_sea_kings",
+   "states": 6,
+   "population": 1240500,
+   "urban_people": 198500,
+   "density_multiplier": 1.8
+  },
+  {
+   "country": "Molot",
+   "tag": "Y0H",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 2,
+   "population": 183800,
+   "urban_people": 29400,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Eekedor",
+   "tag": "Y0I",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "leren_sea_kings",
+   "states": 1,
+   "population": 149300,
+   "urban_people": 23900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "R'en",
+   "tag": "Y0J",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "leren_sea_kings",
+   "states": 3,
+   "population": 448000,
+   "urban_people": 71700,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Tolhon",
+   "tag": "Y0K",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "leren_sea_kings",
+   "states": 1,
+   "population": 149300,
+   "urban_people": 23900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Allegro",
+   "tag": "Y2M",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "leren_sea_kings",
+   "states": 2,
+   "population": 298600,
+   "urban_people": 47800,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Keredor-Hellekton",
+   "tag": "Y2N",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "leren_sea_kings",
+   "states": 1,
+   "population": 149300,
+   "urban_people": 23900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Belg",
+   "tag": "Y2O",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 3,
+   "population": 275700,
+   "urban_people": 44100,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Goran",
+   "tag": "Y2P",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 3,
+   "population": 275700,
+   "urban_people": 44100,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Sensai",
+   "tag": "Y2Q",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 7,
+   "population": 723600,
+   "urban_people": 115800,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Gil'dul",
+   "tag": "Y2R",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Ashorn",
+   "tag": "Y2S",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Gul'dur",
+   "tag": "Y2T",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Low-ness Islands",
+   "tag": "Y2U",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "leren_sea_kings",
+   "states": 1,
+   "population": 149300,
+   "urban_people": 23900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Heodwa Lands",
+   "tag": "Y2V",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 3,
+   "population": 275700,
+   "urban_people": 44100,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Nuatax",
+   "tag": "Y2W",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 2,
+   "population": 183800,
+   "urban_people": 29400,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Solenkovi",
+   "tag": "Y2X",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 3,
+   "population": 275700,
+   "urban_people": 44100,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Stork",
+   "tag": "Y2Y",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Cinargo",
+   "tag": "Y2Z",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "The Hold",
+   "tag": "Y30",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 3,
+   "population": 275700,
+   "urban_people": 44100,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Mustnom",
+   "tag": "Y31",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Ferlinon",
+   "tag": "Y32",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Thowson",
+   "tag": "Y33",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Mina",
+   "tag": "Y34",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 4,
+   "population": 367600,
+   "urban_people": 58800,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Mine Din",
+   "tag": "Y35",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 2,
+   "population": 183800,
+   "urban_people": 29400,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Oirt",
+   "tag": "Y36",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Pertawn",
+   "tag": "Y37",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 3,
+   "population": 275700,
+   "urban_people": 44100,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Filit",
+   "tag": "Y38",
+   "region": "North Lands",
+   "people": "men",
+   "culture": "free_crowns_north",
+   "states": 1,
+   "population": 91900,
+   "urban_people": 14700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Coldor",
+   "tag": "Y01",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "winter_crown",
+   "states": 24,
+   "population": 1633400,
+   "urban_people": 130700,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Isengard",
+   "tag": "Y02",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "isengard_warlords",
+   "states": 12,
+   "population": 742400,
+   "urban_people": 59400,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Horidor",
+   "tag": "Y03",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 15,
+   "population": 510400,
+   "urban_people": 40800,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Windwaith",
+   "tag": "Y04",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "windwaith_seafarers",
+   "states": 12,
+   "population": 742400,
+   "urban_people": 59400,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Holdon",
+   "tag": "Y05",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 5,
+   "population": 170100,
+   "urban_people": 13600,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Wonderland",
+   "tag": "Y06",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 8,
+   "population": 272200,
+   "urban_people": 21800,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Celen",
+   "tag": "Y1I",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 7,
+   "population": 238200,
+   "urban_people": 19100,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Titanos",
+   "tag": "Y1J",
+   "region": "Cold Lands",
+   "people": "giants",
+   "culture": "ice_giants",
+   "states": 8,
+   "population": 59400,
+   "urban_people": 4800,
+   "density_multiplier": 0.12
+  },
+  {
+   "country": "Radeon",
+   "tag": "Y1K",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 8,
+   "population": 272200,
+   "urban_people": 21800,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Orewele",
+   "tag": "Y1L",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 10,
+   "population": 340300,
+   "urban_people": 27200,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Gaadon",
+   "tag": "Y1M",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 4,
+   "population": 136100,
+   "urban_people": 10900,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Portogalor",
+   "tag": "Y1N",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 9,
+   "population": 306300,
+   "urban_people": 24500,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Omar",
+   "tag": "Y1O",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 13,
+   "population": 442400,
+   "urban_people": 35400,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Felkond",
+   "tag": "Y1P",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 11,
+   "population": 374300,
+   "urban_people": 29900,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Greenle",
+   "tag": "Y1Q",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "windwaith_seafarers",
+   "states": 3,
+   "population": 185600,
+   "urban_people": 14800,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Yeneldmore",
+   "tag": "Y1R",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 1,
+   "population": 34000,
+   "urban_people": 2700,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Rion",
+   "tag": "Y1S",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 7,
+   "population": 238200,
+   "urban_people": 19100,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Xison",
+   "tag": "Y1T",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 9,
+   "population": 306300,
+   "urban_people": 24500,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Hendair",
+   "tag": "Y1U",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 6,
+   "population": 204200,
+   "urban_people": 16300,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Agoron",
+   "tag": "Y1V",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 2,
+   "population": 68100,
+   "urban_people": 5400,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Belor",
+   "tag": "Y1W",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 2,
+   "population": 68100,
+   "urban_people": 5400,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Yeti Lands",
+   "tag": "Y1X",
+   "region": "Cold Lands",
+   "people": "yeti",
+   "culture": "yeti_clans",
+   "states": 22,
+   "population": 272200,
+   "urban_people": 21800,
+   "density_multiplier": 0.2
+  },
+  {
+   "country": "Pertolor",
+   "tag": "Y1Y",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 5,
+   "population": 170100,
+   "urban_people": 13600,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Londor",
+   "tag": "Y1Z",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 12,
+   "population": 408300,
+   "urban_people": 32700,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Naepu",
+   "tag": "Y20",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 8,
+   "population": 272200,
+   "urban_people": 21800,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Fearno",
+   "tag": "Y21",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 25,
+   "population": 773400,
+   "urban_people": 61900,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Neridor",
+   "tag": "Y22",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 7,
+   "population": 238200,
+   "urban_people": 19100,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Poloto",
+   "tag": "Y23",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 8,
+   "population": 272200,
+   "urban_people": 21800,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Worlond",
+   "tag": "Y24",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 15,
+   "population": 510400,
+   "urban_people": 40800,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Hozoson",
+   "tag": "Y25",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 6,
+   "population": 204200,
+   "urban_people": 16300,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Yeldenne",
+   "tag": "Y8H",
+   "region": "Cold Lands",
+   "people": "men",
+   "culture": "ice_clans",
+   "states": 1,
+   "population": 34000,
+   "urban_people": 2700,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Gunwaith",
+   "tag": "Y07",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "gunwaith_clans",
+   "states": 12,
+   "population": 1203400,
+   "urban_people": 204600,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Girdon",
+   "tag": "Y08",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "girdon_wardens",
+   "states": 2,
+   "population": 216000,
+   "urban_people": 36700,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Kradlon",
+   "tag": "Y09",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 6,
+   "population": 648000,
+   "urban_people": 110200,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Corogon",
+   "tag": "Y0A",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 5,
+   "population": 540000,
+   "urban_people": 91800,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Varnondor",
+   "tag": "Y0B",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "gunwaith_clans",
+   "states": 4,
+   "population": 339400,
+   "urban_people": 57700,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Werlendor",
+   "tag": "Y26",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "gunwaith_clans",
+   "states": 7,
+   "population": 594000,
+   "urban_people": 101000,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Lambin",
+   "tag": "Y27",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "gunwaith_clans",
+   "states": 10,
+   "population": 848500,
+   "urban_people": 144200,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Thenon",
+   "tag": "Y28",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "gunwaith_clans",
+   "states": 5,
+   "population": 424300,
+   "urban_people": 72100,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Hky",
+   "tag": "Y29",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "gunwaith_clans",
+   "states": 5,
+   "population": 424300,
+   "urban_people": 72100,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Lothoro",
+   "tag": "Y2A",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "gunwaith_clans",
+   "states": 4,
+   "population": 339400,
+   "urban_people": 57700,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Buldor",
+   "tag": "Y2B",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "buldor_companies",
+   "states": 6,
+   "population": 462800,
+   "urban_people": 78700,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Toples",
+   "tag": "Y2C",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 1,
+   "population": 108000,
+   "urban_people": 18400,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Sarudon",
+   "tag": "Y2D",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 1,
+   "population": 108000,
+   "urban_people": 18400,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Saopon",
+   "tag": "Y2E",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 3,
+   "population": 324000,
+   "urban_people": 55100,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Sobre",
+   "tag": "Y2F",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 3,
+   "population": 324000,
+   "urban_people": 55100,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Canako",
+   "tag": "Y2G",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 2,
+   "population": 216000,
+   "urban_people": 36700,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Forbo",
+   "tag": "Y2H",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 1,
+   "population": 108000,
+   "urban_people": 18400,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Argo",
+   "tag": "Y2I",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "girdon_wardens",
+   "states": 4,
+   "population": 432000,
+   "urban_people": 73400,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Pernogon",
+   "tag": "Y2J",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "girdon_wardens",
+   "states": 2,
+   "population": 216000,
+   "urban_people": 36700,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Oslinod",
+   "tag": "Y2K",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 2,
+   "population": 216000,
+   "urban_people": 36700,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Trilino",
+   "tag": "Y2L",
+   "region": "West Lands",
+   "people": "men",
+   "culture": "western_guilds",
+   "states": 1,
+   "population": 108000,
+   "urban_people": 18400,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Adel",
+   "tag": "Y0C",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 2,
+   "population": 101000,
+   "urban_people": 14100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Pollos",
+   "tag": "Y0D",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Nondondor",
+   "tag": "Y0E",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Raerby",
+   "tag": "Y0F",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Ziza",
+   "tag": "Y39",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 2,
+   "population": 101000,
+   "urban_people": 14100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "The Lens",
+   "tag": "Y3A",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Fineger",
+   "tag": "Y3B",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 2,
+   "population": 101000,
+   "urban_people": 14100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Tses - The Vestes",
+   "tag": "Y3C",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 2,
+   "population": 101000,
+   "urban_people": 14100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Beemste",
+   "tag": "Y3D",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Hiohon",
+   "tag": "Y3E",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 2,
+   "population": 101000,
+   "urban_people": 14100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Anbei",
+   "tag": "Y3F",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Seite Islands",
+   "tag": "Y3G",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 4,
+   "population": 202000,
+   "urban_people": 28300,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Mondeluz",
+   "tag": "Y3H",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Kile Islands",
+   "tag": "Y3I",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Hesos",
+   "tag": "Y3J",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Aatah",
+   "tag": "Y3K",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Previous Dark",
+   "tag": "Y3L",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Benan",
+   "tag": "Y3M",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Bono",
+   "tag": "Y3N",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "The Cursed Square",
+   "tag": "Y3O",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Kusu",
+   "tag": "Y3P",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Santon",
+   "tag": "Y3Q",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Dani",
+   "tag": "Y3R",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Kim",
+   "tag": "Y3S",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Tined",
+   "tag": "Y3T",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Halenor",
+   "tag": "Y3U",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 4,
+   "population": 202000,
+   "urban_people": 28300,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Li",
+   "tag": "Y3V",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Urbolon",
+   "tag": "Y3W",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "chart_islanders",
+   "states": 1,
+   "population": 50500,
+   "urban_people": 7100,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Lemo",
+   "tag": "Y3X",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Arpos",
+   "tag": "Y3Y",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Sondor",
+   "tag": "Y3Z",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Cheko",
+   "tag": "Y40",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Amarelo",
+   "tag": "Y41",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Windy Lands",
+   "tag": "Y42",
+   "region": "Triton's Islands",
+   "people": "men",
+   "culture": "corsair_lords",
+   "states": 1,
+   "population": 35400,
+   "urban_people": 5000,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Dondor",
+   "tag": "Y19",
+   "region": "Dark Lands",
+   "people": "men",
+   "culture": "dondor_brutes",
+   "states": 1,
+   "population": 303200,
+   "urban_people": 21200,
+   "density_multiplier": 4
+  },
+  {
+   "country": "Goldoroth",
+   "tag": "Y1A",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "volcano_clans",
+   "states": 6,
+   "population": 545800,
+   "urban_people": 38200,
+   "density_multiplier": 1.2
+  },
+  {
+   "country": "Belonton",
+   "tag": "Y1B",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "sea_orcs",
+   "states": 1,
+   "population": 53100,
+   "urban_people": 3700,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Dun",
+   "tag": "Y1C",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "wild_holds",
+   "states": 1,
+   "population": 37900,
+   "urban_people": 2700,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Bordon",
+   "tag": "Y43",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 1,
+   "population": 60600,
+   "urban_people": 4200,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Dreson",
+   "tag": "Y44",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 1,
+   "population": 60600,
+   "urban_people": 4200,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Troll Forest",
+   "tag": "Y45",
+   "region": "Dark Lands",
+   "people": "trolls",
+   "culture": "troll_tribes",
+   "states": 1,
+   "population": 19000,
+   "urban_people": 1300,
+   "density_multiplier": 0.25
+  },
+  {
+   "country": "The Doltu",
+   "tag": "Y46",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "wild_holds",
+   "states": 1,
+   "population": 37900,
+   "urban_people": 2700,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Wild Lands",
+   "tag": "Y47",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "wild_holds",
+   "states": 1,
+   "population": 37900,
+   "urban_people": 2700,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Sungodor",
+   "tag": "Y48",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "volcano_clans",
+   "states": 1,
+   "population": 75800,
+   "urban_people": 5300,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Dark Gate",
+   "tag": "Y49",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "volcano_clans",
+   "states": 2,
+   "population": 151600,
+   "urban_people": 10600,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Zuriath",
+   "tag": "Y4A",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "volcano_clans",
+   "states": 1,
+   "population": 75800,
+   "urban_people": 5300,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Bold",
+   "tag": "Y4B",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "volcano_clans",
+   "states": 2,
+   "population": 151600,
+   "urban_people": 10600,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Gord",
+   "tag": "Y4C",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "volcano_clans",
+   "states": 1,
+   "population": 75800,
+   "urban_people": 5300,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Beriath",
+   "tag": "Y4D",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 1,
+   "population": 60600,
+   "urban_people": 4200,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Gull Kingdom",
+   "tag": "Y4E",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "sea_orcs",
+   "states": 1,
+   "population": 53100,
+   "urban_people": 3700,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Britadon",
+   "tag": "Y4F",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 1,
+   "population": 60600,
+   "urban_people": 4200,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Lestern Isles",
+   "tag": "Y4G",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "sea_orcs",
+   "states": 1,
+   "population": 53100,
+   "urban_people": 3700,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "Dulundur",
+   "tag": "Y4H",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 4,
+   "population": 242600,
+   "urban_people": 17000,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Blackton",
+   "tag": "Y4I",
+   "region": "Dark Lands",
+   "people": "men",
+   "culture": "dondor_brutes",
+   "states": 5,
+   "population": 454800,
+   "urban_people": 31800,
+   "density_multiplier": 1.2
+  },
+  {
+   "country": "Colost",
+   "tag": "Y4J",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 3,
+   "population": 181900,
+   "urban_people": 12700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "The Darks",
+   "tag": "Y4K",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 4,
+   "population": 242600,
+   "urban_people": 17000,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Dunbulinor",
+   "tag": "Y4L",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 3,
+   "population": 181900,
+   "urban_people": 12700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Fondor",
+   "tag": "Y8C",
+   "region": "Dark Lands",
+   "people": "orcs",
+   "culture": "iron_clans",
+   "states": 3,
+   "population": 181900,
+   "urban_people": 12700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Mirolon",
+   "tag": "Y0Y",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "mirolon_wardens",
+   "states": 6,
+   "population": 800000,
+   "urban_people": 72000,
+   "density_multiplier": 1.8
+  },
+  {
+   "country": "Nan",
+   "tag": "Y0Z",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 1,
+   "population": 59300,
+   "urban_people": 5300,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Nezer",
+   "tag": "Y10",
+   "region": "Dead Lands",
+   "people": "demons",
+   "culture": "netherborn",
+   "states": 2,
+   "population": 74100,
+   "urban_people": 6700,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Mirodor",
+   "tag": "Y7M",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 1,
+   "population": 59300,
+   "urban_people": 5300,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Mencnon",
+   "tag": "Y7N",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 2,
+   "population": 118500,
+   "urban_people": 10700,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Luminor",
+   "tag": "Y7O",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 1,
+   "population": 59300,
+   "urban_people": 5300,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Bennen",
+   "tag": "Y7P",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 1,
+   "population": 59300,
+   "urban_people": 5300,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Gelon",
+   "tag": "Y7Q",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 1,
+   "population": 59300,
+   "urban_people": 5300,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Olen",
+   "tag": "Y7R",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 3,
+   "population": 177800,
+   "urban_people": 16000,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Dra",
+   "tag": "Y7S",
+   "region": "Dead Lands",
+   "people": "men",
+   "culture": "dead_lands_freeholds",
+   "states": 1,
+   "population": 59300,
+   "urban_people": 5300,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Demon",
+   "tag": "Y7T",
+   "region": "Dead Lands",
+   "people": "demons",
+   "culture": "netherborn",
+   "states": 1,
+   "population": 37000,
+   "urban_people": 3300,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Dolon",
+   "tag": "Y7U",
+   "region": "Dead Lands",
+   "people": "demons",
+   "culture": "netherborn",
+   "states": 1,
+   "population": 37000,
+   "urban_people": 3300,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Volgan",
+   "tag": "Y8D",
+   "region": "Dead Lands",
+   "people": "the_dead",
+   "culture": "grave_hosts",
+   "states": 9,
+   "population": 300000,
+   "urban_people": 27000,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Herrodon",
+   "tag": "Y0V",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "hill_kingdom_elves",
+   "states": 6,
+   "population": 100600,
+   "urban_people": 10100,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Andos Enda",
+   "tag": "Y0W",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "lake_elves",
+   "states": 5,
+   "population": 83800,
+   "urban_people": 8400,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Nolorim",
+   "tag": "Y0X",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "pass_wardens",
+   "states": 2,
+   "population": 25200,
+   "urban_people": 2500,
+   "density_multiplier": 0.3
+  },
+  {
+   "country": "Sacomananos",
+   "tag": "Y7V",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "hill_kingdom_elves",
+   "states": 2,
+   "population": 33500,
+   "urban_people": 3400,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Velakton",
+   "tag": "Y7W",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "hill_kingdom_elves",
+   "states": 2,
+   "population": 33500,
+   "urban_people": 3400,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Teste",
+   "tag": "Y7X",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "hill_kingdom_elves",
+   "states": 3,
+   "population": 50300,
+   "urban_people": 5000,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Filion",
+   "tag": "Y7Y",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "hill_kingdom_elves",
+   "states": 8,
+   "population": 134100,
+   "urban_people": 13400,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Nolivorak",
+   "tag": "Y7Z",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "pass_wardens",
+   "states": 5,
+   "population": 62900,
+   "urban_people": 6300,
+   "density_multiplier": 0.3
+  },
+  {
+   "country": "Kingdom",
+   "tag": "Y80",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "forest_council_elves",
+   "states": 7,
+   "population": 117400,
+   "urban_people": 11700,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Endelond",
+   "tag": "Y81",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "rift_coast_elves",
+   "states": 3,
+   "population": 50300,
+   "urban_people": 5000,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "The End",
+   "tag": "Y82",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "rift_coast_elves",
+   "states": 13,
+   "population": 218000,
+   "urban_people": 21800,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Lccimio",
+   "tag": "Y83",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "rift_coast_elves",
+   "states": 14,
+   "population": 234800,
+   "urban_people": 23500,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Luv-zhise",
+   "tag": "Y84",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "rift_coast_elves",
+   "states": 10,
+   "population": 167700,
+   "urban_people": 16800,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Lengoli",
+   "tag": "Y85",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "rift_coast_elves",
+   "states": 9,
+   "population": 150900,
+   "urban_people": 15100,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Lusteli",
+   "tag": "Y86",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "rift_coast_elves",
+   "states": 1,
+   "population": 16800,
+   "urban_people": 1700,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Greenland",
+   "tag": "Y87",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "forest_council_elves",
+   "states": 3,
+   "population": 50300,
+   "urban_people": 5000,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Perloia",
+   "tag": "Y88",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "lake_elves",
+   "states": 4,
+   "population": 67100,
+   "urban_people": 6700,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Ossa",
+   "tag": "Y89",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "lake_elves",
+   "states": 7,
+   "population": 117400,
+   "urban_people": 11700,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Dulo-Dulo",
+   "tag": "Y8A",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "forest_council_elves",
+   "states": 2,
+   "population": 33500,
+   "urban_people": 3400,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Heron",
+   "tag": "Y8B",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "forest_council_elves",
+   "states": 5,
+   "population": 83800,
+   "urban_people": 8400,
+   "density_multiplier": 0.4
+  },
+  {
+   "country": "Magical Forest",
+   "tag": "Y8F",
+   "region": "Magical Lands",
+   "people": "elves",
+   "culture": "forest_council_elves",
+   "states": 17,
+   "population": 392000,
+   "urban_people": 39200,
+   "density_multiplier": 0.55
+  },
+  {
+   "country": "Worshipdom",
+   "tag": "Y8G",
+   "region": "Magical Lands",
+   "people": "men",
+   "culture": "zilin_pilgrims",
+   "states": 3,
+   "population": 176100,
+   "urban_people": 17600,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Ostoroth",
+   "tag": "Y11",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 9,
+   "population": 539200,
+   "urban_people": 107800,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Gondolin",
+   "tag": "Y12",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 6,
+   "population": 221200,
+   "urban_people": 44200,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Mora",
+   "tag": "Y13",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 5,
+   "population": 299600,
+   "urban_people": 59900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Noris",
+   "tag": "Y14",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 24,
+   "population": 1216700,
+   "urban_people": 243300,
+   "density_multiplier": 1.1
+  },
+  {
+   "country": "Drak",
+   "tag": "Y15",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 11,
+   "population": 760500,
+   "urban_people": 152100,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Stabilo",
+   "tag": "Y16",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 14,
+   "population": 1225900,
+   "urban_people": 245200,
+   "density_multiplier": 1.9
+  },
+  {
+   "country": "Avalon",
+   "tag": "Y17",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "red_lands_tribunes",
+   "states": 3,
+   "population": 193600,
+   "urban_people": 38700,
+   "density_multiplier": 1.4
+  },
+  {
+   "country": "Miaed",
+   "tag": "Y18",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "river_kings",
+   "states": 19,
+   "population": 788100,
+   "urban_people": 157600,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Woqood",
+   "tag": "Y56",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 8,
+   "population": 295000,
+   "urban_people": 59000,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Hacsen",
+   "tag": "Y57",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 6,
+   "population": 221200,
+   "urban_people": 44200,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Vigodor",
+   "tag": "Y58",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 8,
+   "population": 295000,
+   "urban_people": 59000,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Fladev",
+   "tag": "Y59",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 1,
+   "population": 36900,
+   "urban_people": 7400,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Orato",
+   "tag": "Y5A",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 5,
+   "population": 184400,
+   "urban_people": 36900,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Ernois",
+   "tag": "Y5B",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 10,
+   "population": 599100,
+   "urban_people": 119800,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Cream",
+   "tag": "Y5C",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 10,
+   "population": 599100,
+   "urban_people": 119800,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Nethnu",
+   "tag": "Y5D",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 5,
+   "population": 299600,
+   "urban_people": 59900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Eraver",
+   "tag": "Y5E",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 9,
+   "population": 539200,
+   "urban_people": 107800,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Grova",
+   "tag": "Y5F",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 8,
+   "population": 479300,
+   "urban_people": 95900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Lorvens",
+   "tag": "Y5G",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 3,
+   "population": 179700,
+   "urban_people": 35900,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Mylunur",
+   "tag": "Y5H",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 4,
+   "population": 147500,
+   "urban_people": 29500,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Fosoco",
+   "tag": "Y5I",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "river_kings",
+   "states": 10,
+   "population": 783500,
+   "urban_people": 156700,
+   "density_multiplier": 1.7
+  },
+  {
+   "country": "Delbiz Grasslands",
+   "tag": "Y5J",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "river_kings",
+   "states": 17,
+   "population": 1331900,
+   "urban_people": 266400,
+   "density_multiplier": 1.7
+  },
+  {
+   "country": "The Moco",
+   "tag": "Y5K",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "noris_riders",
+   "states": 11,
+   "population": 405600,
+   "urban_people": 81100,
+   "density_multiplier": 0.8
+  },
+  {
+   "country": "Mostok",
+   "tag": "Y5L",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 12,
+   "population": 829600,
+   "urban_people": 165900,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Kersian",
+   "tag": "Y5M",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "lake_road_cities",
+   "states": 10,
+   "population": 599100,
+   "urban_people": 119800,
+   "density_multiplier": 1.3
+  },
+  {
+   "country": "Azano",
+   "tag": "Y5N",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 11,
+   "population": 760500,
+   "urban_people": 152100,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Oreton",
+   "tag": "Y5O",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 6,
+   "population": 414800,
+   "urban_people": 83000,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Erco",
+   "tag": "Y5P",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "river_kings",
+   "states": 16,
+   "population": 1253600,
+   "urban_people": 250700,
+   "density_multiplier": 1.7
+  },
+  {
+   "country": "Arcon",
+   "tag": "Y5Q",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 7,
+   "population": 483900,
+   "urban_people": 96800,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Obmi",
+   "tag": "Y5R",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 7,
+   "population": 483900,
+   "urban_people": 96800,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Pornivior",
+   "tag": "Y5S",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 9,
+   "population": 622200,
+   "urban_people": 124400,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Furro",
+   "tag": "Y5T",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 6,
+   "population": 414800,
+   "urban_people": 83000,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Olor",
+   "tag": "Y5U",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "caravan_princes",
+   "states": 5,
+   "population": 345700,
+   "urban_people": 69100,
+   "density_multiplier": 1.5
+  },
+  {
+   "country": "Plutondo",
+   "tag": "Y5V",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "river_kings",
+   "states": 16,
+   "population": 1253600,
+   "urban_people": 250700,
+   "density_multiplier": 1.7
+  },
+  {
+   "country": "Alerhia",
+   "tag": "Y5W",
+   "region": "East Lands",
+   "people": "men",
+   "culture": "river_kings",
+   "states": 26,
+   "population": 2396600,
+   "urban_people": 479300,
+   "density_multiplier": 2
+  },
+  {
+   "country": "Howan",
+   "tag": "Y1D",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Nara",
+   "tag": "Y1E",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Dunn",
+   "tag": "Y5X",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Finn",
+   "tag": "Y5Y",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Lua",
+   "tag": "Y5Z",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Verde",
+   "tag": "Y60",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Angsutz",
+   "tag": "Y61",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Enhis Is Rond",
+   "tag": "Y62",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Yowi-yoor",
+   "tag": "Y63",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Yongyong",
+   "tag": "Y64",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Jingar",
+   "tag": "Y65",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Torsor",
+   "tag": "Y66",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Yongrost",
+   "tag": "Y67",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Meng",
+   "tag": "Y68",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Sidea Islands",
+   "tag": "Y69",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Kea",
+   "tag": "Y6A",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 3,
+   "population": 162500,
+   "urban_people": 13000,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Agla",
+   "tag": "Y6B",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 3,
+   "population": 162500,
+   "urban_people": 13000,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Yumbo",
+   "tag": "Y6C",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 2,
+   "population": 108300,
+   "urban_people": 8700,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Pon",
+   "tag": "Y6D",
+   "region": "Islands of the South",
+   "people": "men",
+   "culture": "southern_islanders",
+   "states": 1,
+   "population": 54200,
+   "urban_people": 4300,
+   "density_multiplier": 0.9
+  },
+  {
+   "country": "Hengyang",
+   "tag": "Y1F",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 3,
+   "population": 119500,
+   "urban_people": 14300,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Elvana",
+   "tag": "Y1G",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Igara",
+   "tag": "Y1H",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Soyano",
+   "tag": "Y6E",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Tangsie",
+   "tag": "Y6F",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Wenyene",
+   "tag": "Y6G",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Pinion",
+   "tag": "Y6H",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Sus",
+   "tag": "Y6I",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Tei",
+   "tag": "Y6J",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Armic",
+   "tag": "Y6K",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Hel",
+   "tag": "Y6L",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 2,
+   "population": 79600,
+   "urban_people": 9600,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Ofos",
+   "tag": "Y6M",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Hol",
+   "tag": "Y6N",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 2,
+   "population": 79600,
+   "urban_people": 9600,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Poyang",
+   "tag": "Y6O",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 5,
+   "population": 199100,
+   "urban_people": 23900,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Heilmon",
+   "tag": "Y6P",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Yungin",
+   "tag": "Y6Q",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Rana",
+   "tag": "Y6R",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Loyol",
+   "tag": "Y6S",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Biggen",
+   "tag": "Y6T",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_isles",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "The Lands of Light",
+   "tag": "Y6U",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_light",
+   "states": 15,
+   "population": 929200,
+   "urban_people": 111500,
+   "density_multiplier": 0.7
+  },
+  {
+   "country": "North Gala",
+   "tag": "Y6V",
+   "region": "Lands of the Sun",
+   "people": "elves",
+   "culture": "gala_court",
+   "states": 1,
+   "population": 44200,
+   "urban_people": 5300,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Godrela",
+   "tag": "Y6W",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Gala Elves",
+   "tag": "Y6X",
+   "region": "Lands of the Sun",
+   "people": "elves",
+   "culture": "gala_court",
+   "states": 1,
+   "population": 88500,
+   "urban_people": 10600,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Sunweli",
+   "tag": "Y6Y",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Goodin",
+   "tag": "Y6Z",
+   "region": "Lands of the Sun",
+   "people": "men",
+   "culture": "goodin_sunfolk",
+   "states": 1,
+   "population": 88500,
+   "urban_people": 10600,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Goodton",
+   "tag": "Y70",
+   "region": "Lands of the Sun",
+   "people": "men",
+   "culture": "goodin_sunfolk",
+   "states": 1,
+   "population": 88500,
+   "urban_people": 10600,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Guuden",
+   "tag": "Y71",
+   "region": "Lands of the Sun",
+   "people": "men",
+   "culture": "goodin_sunfolk",
+   "states": 1,
+   "population": 88500,
+   "urban_people": 10600,
+   "density_multiplier": 1
+  },
+  {
+   "country": "Land of the Sun",
+   "tag": "Y72",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Gala",
+   "tag": "Y73",
+   "region": "Lands of the Sun",
+   "people": "elves",
+   "culture": "gala_court",
+   "states": 1,
+   "population": 44200,
+   "urban_people": 5300,
+   "density_multiplier": 0.5
+  },
+  {
+   "country": "Godson",
+   "tag": "Y74",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 3,
+   "population": 119500,
+   "urban_people": 14300,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Beforelands of Gulia",
+   "tag": "Y75",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Menga",
+   "tag": "Y76",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Sono",
+   "tag": "Y77",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 2,
+   "population": 79600,
+   "urban_people": 9600,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Sunny",
+   "tag": "Y78",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Via",
+   "tag": "Y79",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Lovis",
+   "tag": "Y7A",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 2,
+   "population": 79600,
+   "urban_people": 9600,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Sensun",
+   "tag": "Y7B",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Sun God Land",
+   "tag": "Y7C",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 3,
+   "population": 119500,
+   "urban_people": 14300,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Godland",
+   "tag": "Y7D",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 4,
+   "population": 159300,
+   "urban_people": 19100,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Godton",
+   "tag": "Y7E",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 3,
+   "population": 119500,
+   "urban_people": 14300,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Flame",
+   "tag": "Y7F",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 2,
+   "population": 79600,
+   "urban_people": 9600,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Sali",
+   "tag": "Y7G",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Helen",
+   "tag": "Y7H",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 3,
+   "population": 119500,
+   "urban_people": 14300,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Heaven",
+   "tag": "Y7I",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Him",
+   "tag": "Y7J",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 1,
+   "population": 39800,
+   "urban_people": 4800,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Dreamland",
+   "tag": "Y7K",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 2,
+   "population": 79600,
+   "urban_people": 9600,
+   "density_multiplier": 0.45
+  },
+  {
+   "country": "Dein Lands",
+   "tag": "Y7L",
+   "region": "Lands of the Sun",
+   "people": "sun_elves",
+   "culture": "sunhot_western",
+   "states": 4,
+   "population": 159300,
+   "urban_people": 19100,
+   "density_multiplier": 0.45
+  }
+ ],
+ "checks": {
+  "world_total_in_range": true,
+  "parim_is_largest_city": true,
+  "settlement_count": 100,
+  "aenor_is_largest_country": "Aenor",
+  "settlement_errors": []
+ }
+}

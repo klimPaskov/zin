@@ -1,0 +1,2116 @@
+{
+ "schema": "zin-cultures/1",
+ "status": "Draft",
+ "cultures": {
+  "lake_aenoran": {
+   "id": "lake_aenoran",
+   "name": "Lake Aenorans",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "lake",
+   "faith": "deliverer",
+   "faith_secondary": "lamp_furrow",
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2f5d8a",
+    "#e8d9a0",
+    "#f2f0e6"
+   ],
+   "heraldry_and_look": {
+    "flag": "Blue field, gold lamp or bell; Aenor adds a crown. Dominions add a charter-seal border.",
+    "portrait": "Fair to olive; rounded faces; guild collars; scribes with ink-stained hands.",
+    "building": "Pale stone, blue slate, bridges, bell towers, gilded roofs in Parim.",
+    "unit": "Blue-tabarded pikes and crossbows; plate on the royal cavalry.",
+    "music": "Choral and bells, bright and stately."
+   },
+   "countries": [
+    "Aenor",
+    "Safeton",
+    "Fotan",
+    "Ulgus",
+    "Stendorler",
+    "Tieri",
+    "Dariap",
+    "Novez",
+    "Mondon",
+    "Freshon",
+    "Pazoma"
+   ],
+   "secondary_countries": []
+  },
+  "selen_ranger": {
+   "id": "selen_ranger",
+   "name": "Selen Rangers",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "ranger",
+   "faith": "green_lords",
+   "faith_secondary": "lamp_furrow",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3f6b2e",
+    "#8a6a3c",
+    "#c9d6c0"
+   ],
+   "heraldry_and_look": {
+    "flag": "Green field, three silver arrows or an oak.",
+    "portrait": "Weathered, hooded, long hair, lean.",
+    "building": "Timber halls, tree-houses, a stone University.",
+    "unit": "Green cloaked archers and skirmishers.",
+    "music": "Horns and wood-pipes, quiet."
+   },
+   "countries": [
+    "Selen",
+    "Vothrim",
+    "Svenlor"
+   ],
+   "secondary_countries": [
+    "Kilinti"
+   ]
+  },
+  "steppe_rider": {
+   "id": "steppe_rider",
+   "name": "Steppe Riders",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "rider",
+   "faith": "horse_oath",
+   "faith_secondary": "lamp_furrow",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#b04a30",
+    "#e6e0cc",
+    "#c9a45a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Red or white, horse head or horse-hair standard.",
+    "portrait": "Broad, weathered, braided, felt hats.",
+    "building": "Felt tents, wood palisades.",
+    "unit": "Horse archers, lancers.",
+    "music": "Drum and horse-fiddle, driving."
+   },
+   "countries": [
+    "Konori",
+    "Kunhrim",
+    "Hunhun",
+    "Noloreh"
+   ],
+   "secondary_countries": []
+  },
+  "wall_folk": {
+   "id": "wall_folk",
+   "name": "Wall-Folk",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "march",
+   "faith": "stone_vigil",
+   "faith_secondary": "lamp_furrow",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#6b6f76",
+    "#a98d54",
+    "#d8d4c4"
+   ],
+   "heraldry_and_look": {
+    "flag": "Grey with a tower or key.",
+    "portrait": "Stern, weathered, iron-grey.",
+    "building": "Grey towers, gates, barracks.",
+    "unit": "Crossbows and pole-arms.",
+    "music": "Horns and slow marches."
+   },
+   "countries": [
+    "Kingson",
+    "Olvinc-un",
+    "Hilofrim",
+    "Klungori Guard"
+   ],
+   "secondary_countries": []
+  },
+  "march_folk": {
+   "id": "march_folk",
+   "name": "March-Folk",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "march",
+   "faith": "lamp_furrow",
+   "faith_secondary": "stone_vigil",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#b38a3a",
+    "#4e6b3a",
+    "#d8cba0"
+   ],
+   "heraldry_and_look": {
+    "flag": "Ochre, a beacon.",
+    "portrait": "Sunburnt farmers.",
+    "building": "Palisades, beacons.",
+    "unit": "Spear militia, slings.",
+    "music": "Fiddle, plain."
+   },
+   "countries": [
+    "Noleksun",
+    "Belurithon",
+    "Herez"
+   ],
+   "secondary_countries": [
+    "Noloreh"
+   ]
+  },
+  "isle_houses": {
+   "id": "isle_houses",
+   "name": "Isle Houses of Asgard",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "isle",
+   "faith": "isle_tide",
+   "faith_secondary": "lamp_furrow",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#4a6f7c",
+    "#ece4d0",
+    "#8a7a52"
+   ],
+   "heraldry_and_look": {
+    "flag": "Grey-green, a wave, an oar or a lighthouse.",
+    "portrait": "Weather-bitten, sea-grey eyes.",
+    "building": "Harbour stone, lighthouses.",
+    "unit": "Marines, galleys.",
+    "music": "Shanties."
+   },
+   "countries": [
+    "Asgard"
+   ],
+   "secondary_countries": []
+  },
+  "veiled_folk": {
+   "id": "veiled_folk",
+   "name": "The Veiled",
+   "people": "men",
+   "language": "orran",
+   "dialect": "cursed",
+   "faith": "old_knots",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a5560",
+    "#2b2830",
+    "#9d98a3"
+   ],
+   "heraldry_and_look": {
+    "flag": "Grey with a black knot.",
+    "portrait": "Veiled faces, only eyes.",
+    "building": "Turf halls half buried.",
+    "unit": "Veiled archers, trappers.",
+    "music": "Low chant."
+   },
+   "countries": [
+    "Cursed Lands"
+   ],
+   "secondary_countries": []
+  },
+  "redbark_tribes": {
+   "id": "redbark_tribes",
+   "name": "Redbark Tribes",
+   "people": "men",
+   "language": "orran",
+   "dialect": "forest",
+   "faith": "old_knots",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#8a2f26",
+    "#3b2a1c",
+    "#c9a28a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Red, black knot or antlers.",
+    "portrait": "Painted, braided, red leather.",
+    "building": "Tree-halls.",
+    "unit": "Skirmishers.",
+    "music": "Drums and flutes."
+   },
+   "countries": [
+    "Bloody Forest"
+   ],
+   "secondary_countries": []
+  },
+  "leren_sea_kings": {
+   "id": "leren_sea_kings",
+   "name": "Leren of the Strait",
+   "people": "men",
+   "language": "leren",
+   "dialect": "court",
+   "faith": "strait_litany",
+   "faith_secondary": "lamp_furrow",
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2a5a82",
+    "#e8e6dc",
+    "#9fb4c4"
+   ],
+   "heraldry_and_look": {
+    "flag": "Sea blue or white, ship or crown over waves.",
+    "portrait": "Tall, fair or sea-weathered, braided.",
+    "building": "Wooden quays, tall roofs.",
+    "unit": "Axe infantry, longships.",
+    "music": "Horns and shanties."
+   },
+   "countries": [
+    "Lerendor",
+    "Eekedor",
+    "R'en",
+    "Tolhon",
+    "Allegro",
+    "Keredor-Hellekton",
+    "Low-ness Islands"
+   ],
+   "secondary_countries": [
+    "Molot",
+    "Blackton"
+   ]
+  },
+  "free_crowns_north": {
+   "id": "free_crowns_north",
+   "name": "Free Crowns of the North",
+   "people": "men",
+   "language": "leren",
+   "dialect": "inland",
+   "faith": "strait_litany",
+   "faith_secondary": "lamp_furrow",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#7a6a54",
+    "#4e5e4a",
+    "#c8bfa4"
+   ],
+   "heraldry_and_look": {
+    "flag": "A single animal or tree on a plain field.",
+    "portrait": "Weathered, furred collars.",
+    "building": "Hill forts.",
+    "unit": "Spear levies.",
+    "music": "Pipes."
+   },
+   "countries": [
+    "Molot",
+    "Belg",
+    "Goran",
+    "Sensai",
+    "Gil'dul",
+    "Ashorn",
+    "Gul'dur",
+    "Heodwa Lands",
+    "Nuatax",
+    "Solenkovi",
+    "Stork",
+    "Cinargo",
+    "The Hold",
+    "Mustnom",
+    "Ferlinon",
+    "Thowson",
+    "Mina",
+    "Mine Din",
+    "Oirt",
+    "Pertawn",
+    "Filit"
+   ],
+   "secondary_countries": [
+    "Allegro"
+   ]
+  },
+  "dondor_brutes": {
+   "id": "dondor_brutes",
+   "name": "Dondor Brutes",
+   "people": "men",
+   "language": "dondric",
+   "dialect": "hold",
+   "faith": "hearth_iron",
+   "faith_secondary": "skull_fire",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3a3a3e",
+    "#7a4a2a",
+    "#a8a8a0"
+   ],
+   "heraldry_and_look": {
+    "flag": "Black or grey with an axe or chain.",
+    "portrait": "Broad, scarred, bearded.",
+    "building": "Iron-bound halls, stockades.",
+    "unit": "Axe infantry.",
+    "music": "War-drums and iron bells."
+   },
+   "countries": [
+    "Dondor",
+    "Blackton"
+   ],
+   "secondary_countries": []
+  },
+  "mirolon_wardens": {
+   "id": "mirolon_wardens",
+   "name": "Wardens of Mirolon",
+   "people": "men",
+   "language": "mirolic",
+   "dialect": "warden",
+   "faith": "warden_vigil",
+   "faith_secondary": "lamp_furrow",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3c5f78",
+    "#9fa7ae",
+    "#cbbd8e"
+   ],
+   "heraldry_and_look": {
+    "flag": "Lake blue, a beacon or lamp.",
+    "portrait": "Lean, sun-browned, watchful.",
+    "building": "Stilt towns, beacon towers.",
+    "unit": "Scouts, archers, couriers.",
+    "music": "Horn calls, flute."
+   },
+   "countries": [
+    "Mirolon"
+   ],
+   "secondary_countries": []
+  },
+  "dead_lands_freeholds": {
+   "id": "dead_lands_freeholds",
+   "name": "Dead Lands Freeholders",
+   "people": "men",
+   "language": "mirolic",
+   "dialect": "coast",
+   "faith": "mourning_dust",
+   "faith_secondary": "lamp_furrow",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#c9b58a",
+    "#3e6b78",
+    "#8a5a3a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Sand with a boat or salt-pan.",
+    "portrait": "Sun-tanned, hooded.",
+    "building": "Mud-brick, sea walls.",
+    "unit": "Slingers, short swords.",
+    "music": "Flute and drum."
+   },
+   "countries": [
+    "Nan",
+    "Mirodor",
+    "Mencnon",
+    "Luminor",
+    "Bennen",
+    "Gelon",
+    "Olen",
+    "Dra"
+   ],
+   "secondary_countries": []
+  },
+  "winter_crown": {
+   "id": "winter_crown",
+   "name": "Winter-Crown Folk",
+   "people": "men",
+   "language": "coldic",
+   "dialect": "crown",
+   "faith": "winter_hearth",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#cfd9e2",
+    "#4a5f78",
+    "#8a8f96"
+   ],
+   "heraldry_and_look": {
+    "flag": "White or ice blue, a snowflake, wolf or crown.",
+    "portrait": "Fur-collared, windburnt, braided.",
+    "building": "Dark stone halls, turf roofs.",
+    "unit": "Long-spears, sleds.",
+    "music": "Drums and throat-songs."
+   },
+   "countries": [
+    "Coldor"
+   ],
+   "secondary_countries": [
+    "Horidor"
+   ]
+  },
+  "ice_clans": {
+   "id": "ice_clans",
+   "name": "Ice Clans",
+   "people": "men",
+   "language": "coldic",
+   "dialect": "clan",
+   "faith": "winter_hearth",
+   "faith_secondary": "storm_court",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#bcc6cf",
+    "#6b5a48",
+    "#3f5870"
+   ],
+   "heraldry_and_look": {
+    "flag": "A clan beast on white or brown.",
+    "portrait": "Fur-hooded, weathered.",
+    "building": "Turf halls.",
+    "unit": "Spear bands.",
+    "music": "Drum and throat."
+   },
+   "countries": [
+    "Horidor",
+    "Holdon",
+    "Wonderland",
+    "Celen",
+    "Radeon",
+    "Orewele",
+    "Gaadon",
+    "Portogalor",
+    "Omar",
+    "Felkond",
+    "Yeneldmore",
+    "Rion",
+    "Xison",
+    "Hendair",
+    "Agoron",
+    "Belor",
+    "Pertolor",
+    "Londor",
+    "Naepu",
+    "Fearno",
+    "Neridor",
+    "Poloto",
+    "Worlond",
+    "Hozoson",
+    "Yeldenne"
+   ],
+   "secondary_countries": []
+  },
+  "isengard_warlords": {
+   "id": "isengard_warlords",
+   "name": "Isengard Warlords",
+   "people": "men",
+   "language": "coldic",
+   "dialect": "march",
+   "faith": "storm_court",
+   "faith_secondary": "winter_hearth",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2f2f33",
+    "#8a2a2a",
+    "#9a9aa0"
+   ],
+   "heraldry_and_look": {
+    "flag": "Black or grey, a tower or chain.",
+    "portrait": "Scarred, mailed.",
+    "building": "Black forts.",
+    "unit": "Iron foot.",
+    "music": "Drum and iron."
+   },
+   "countries": [
+    "Isengard"
+   ],
+   "secondary_countries": []
+  },
+  "windwaith_seafarers": {
+   "id": "windwaith_seafarers",
+   "name": "Windwaith Seafarers",
+   "people": "men",
+   "language": "coldic",
+   "dialect": "coast",
+   "faith": "storm_court",
+   "faith_secondary": "winter_hearth",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3f6f74",
+    "#d6d2c4",
+    "#8a6a4a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Teal, a ship or wind-rose.",
+    "portrait": "Weathered, oilskin.",
+    "building": "Harbour towns.",
+    "unit": "Marines.",
+    "music": "Shanties."
+   },
+   "countries": [
+    "Windwaith",
+    "Greenle"
+   ],
+   "secondary_countries": [
+    "Wonderland"
+   ]
+  },
+  "gunwaith_clans": {
+   "id": "gunwaith_clans",
+   "name": "Gunwaith Clans",
+   "people": "men",
+   "language": "gunwaithic",
+   "dialect": "hill",
+   "faith": "clan_stones",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#6b2f2a",
+    "#2f5a4a",
+    "#d4c07a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Plaid or a stag/stone ring on a clan colour.",
+    "portrait": "Red-haired, torcs, braids.",
+    "building": "Hill forts.",
+    "unit": "Clan bands.",
+    "music": "Pipes and harps."
+   },
+   "countries": [
+    "Gunwaith",
+    "Varnondor",
+    "Werlendor",
+    "Lambin",
+    "Thenon",
+    "Hky",
+    "Lothoro"
+   ],
+   "secondary_countries": []
+  },
+  "girdon_wardens": {
+   "id": "girdon_wardens",
+   "name": "Girdon Wardens",
+   "people": "men",
+   "language": "gunwaithic",
+   "dialect": "river",
+   "faith": "river_wardens",
+   "faith_secondary": "clan_stones",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#4a6b52",
+    "#8a6f4a",
+    "#d8d0b8"
+   ],
+   "heraldry_and_look": {
+    "flag": "River green, a bridge.",
+    "portrait": "Weathered, wide hats.",
+    "building": "Bridge towns.",
+    "unit": "River militia.",
+    "music": "Fiddle."
+   },
+   "countries": [
+    "Girdon",
+    "Argo",
+    "Pernogon"
+   ],
+   "secondary_countries": []
+  },
+  "western_guilds": {
+   "id": "western_guilds",
+   "name": "Western Guildmen",
+   "people": "men",
+   "language": "gunwaithic",
+   "dialect": "guild",
+   "faith": "guild_hall",
+   "faith_secondary": "lamp_furrow",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#7a3b4e",
+    "#c9a24a",
+    "#3f5f7a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Bright guild colours, craft symbol.",
+    "portrait": "Chains and caps.",
+    "building": "Guild halls, canals.",
+    "unit": "Town militia.",
+    "music": "Brass."
+   },
+   "countries": [
+    "Kradlon",
+    "Corogon",
+    "Toples",
+    "Sarudon",
+    "Saopon",
+    "Sobre",
+    "Canako",
+    "Forbo",
+    "Oslinod",
+    "Trilino"
+   ],
+   "secondary_countries": []
+  },
+  "buldor_companies": {
+   "id": "buldor_companies",
+   "name": "Buldor Companies",
+   "people": "men",
+   "language": "gunwaithic",
+   "dialect": "company",
+   "faith": "company_banner",
+   "faith_secondary": "clan_stones",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a3f2f",
+    "#a8a36a",
+    "#2f3f5a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Company banners.",
+    "portrait": "Scarred veterans.",
+    "building": "Barracks towns.",
+    "unit": "Professional soldiers.",
+    "music": "Drum and fife."
+   },
+   "countries": [
+    "Buldor"
+   ],
+   "secondary_countries": []
+  },
+  "chart_islanders": {
+   "id": "chart_islanders",
+   "name": "Chart-Islanders",
+   "people": "men",
+   "language": "tritonic",
+   "dialect": "chart",
+   "faith": "tide_charts",
+   "faith_secondary": "lamp_furrow",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2f6f78",
+    "#e0d8be",
+    "#a8513a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Teal, a compass rose.",
+    "portrait": "Tanned, tattooed.",
+    "building": "Stilt harbours.",
+    "unit": "Marines.",
+    "music": "Conch and drum."
+   },
+   "countries": [
+    "Adel",
+    "Pollos",
+    "Raerby",
+    "Ziza",
+    "The Lens",
+    "Fineger",
+    "Tses - The Vestes",
+    "Beemste",
+    "Hiohon",
+    "Anbei",
+    "Seite Islands",
+    "Mondeluz",
+    "Kile Islands",
+    "Hesos",
+    "Halenor",
+    "Urbolon"
+   ],
+   "secondary_countries": []
+  },
+  "corsair_lords": {
+   "id": "corsair_lords",
+   "name": "Corsair Lords",
+   "people": "men",
+   "language": "tritonic",
+   "dialect": "corsair",
+   "faith": "ransom_tide",
+   "faith_secondary": "tide_charts",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2a2a2e",
+    "#a83a2a",
+    "#c8a85a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Black and red, a blade.",
+    "portrait": "Scarred, scarves.",
+    "building": "Cliff harbours.",
+    "unit": "Raiders.",
+    "music": "Fiddle."
+   },
+   "countries": [
+    "Nondondor",
+    "Aatah",
+    "Previous Dark",
+    "Benan",
+    "Bono",
+    "The Cursed Square",
+    "Kusu",
+    "Santon",
+    "Dani",
+    "Kim",
+    "Tined",
+    "Li",
+    "Lemo",
+    "Arpos",
+    "Sondor",
+    "Cheko",
+    "Amarelo",
+    "Windy Lands"
+   ],
+   "secondary_countries": []
+  },
+  "noris_riders": {
+   "id": "noris_riders",
+   "name": "Noris Camel Warriors",
+   "people": "men",
+   "language": "noric",
+   "dialect": "desert",
+   "faith": "well_oath",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2b3f7a",
+    "#c9964a",
+    "#efe3c4"
+   ],
+   "heraldry_and_look": {
+    "flag": "Indigo, a well or a camel or stars.",
+    "portrait": "Veiled, sun-browned, kohl eyes.",
+    "building": "Mud-brick, wind-towers.",
+    "unit": "Camel riders.",
+    "music": "Drums and reed pipes."
+   },
+   "countries": [
+    "Gondolin",
+    "Noris",
+    "Woqood",
+    "Hacsen",
+    "Vigodor",
+    "Fladev",
+    "Orato",
+    "Mylunur",
+    "The Moco"
+   ],
+   "secondary_countries": []
+  },
+  "caravan_princes": {
+   "id": "caravan_princes",
+   "name": "Caravan Princes",
+   "people": "men",
+   "language": "stabilic",
+   "dialect": "trade",
+   "faith": "scale_creed",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#a8742a",
+    "#8a2f2a",
+    "#3f6b4a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Bronze and red, a scale or coin.",
+    "portrait": "Olive, jewelled collars.",
+    "building": "Bronze roofs, colonnades.",
+    "unit": "Bronze infantry, crossbows.",
+    "music": "Lyre and flute."
+   },
+   "countries": [
+    "Drak",
+    "Stabilo",
+    "Mostok",
+    "Azano",
+    "Oreton",
+    "Arcon",
+    "Obmi",
+    "Pornivior",
+    "Furro",
+    "Olor"
+   ],
+   "secondary_countries": [
+    "Erco"
+   ]
+  },
+  "river_kings": {
+   "id": "river_kings",
+   "name": "River-Kings of the East",
+   "people": "men",
+   "language": "alerhic",
+   "dialect": "court",
+   "faith": "river_temples",
+   "faith_secondary": "scale_creed",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#c9a24a",
+    "#2f5f8a",
+    "#4a7a4a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Gold and blue, a river or a stair.",
+    "portrait": "Painted eyes, gold collars.",
+    "building": "Stair temples, canals.",
+    "unit": "Chariots, archers.",
+    "music": "Harp and drum."
+   },
+   "countries": [
+    "Miaed",
+    "Fosoco",
+    "Delbiz Grasslands",
+    "Erco",
+    "Plutondo",
+    "Alerhia"
+   ],
+   "secondary_countries": [
+    "Ostoroth"
+   ]
+  },
+  "lake_road_cities": {
+   "id": "lake_road_cities",
+   "name": "Lake Road Cities",
+   "people": "men",
+   "language": "alerhic",
+   "dialect": "lake",
+   "faith": "lake_litany",
+   "faith_secondary": "river_temples",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a8aa8",
+    "#d8d4c4",
+    "#3f5f4a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Silver-blue, a fish or lantern.",
+    "portrait": "Lake-tanned.",
+    "building": "Stilt towns.",
+    "unit": "Boat archers.",
+    "music": "Lute and flute."
+   },
+   "countries": [
+    "Ostoroth",
+    "Mora",
+    "Ernois",
+    "Cream",
+    "Nethnu",
+    "Eraver",
+    "Grova",
+    "Lorvens",
+    "Kersian"
+   ],
+   "secondary_countries": []
+  },
+  "red_lands_tribunes": {
+   "id": "red_lands_tribunes",
+   "name": "Red Lands Tribunes",
+   "people": "men",
+   "language": "alerhic",
+   "dialect": "clay",
+   "faith": "red_hearth",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#a8452f",
+    "#d4a46a",
+    "#6b4a3a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Red clay with a kiln.",
+    "portrait": "Clay-stained.",
+    "building": "Kilns.",
+    "unit": "Slingers.",
+    "music": "Whistle and drum."
+   },
+   "countries": [
+    "Avalon"
+   ],
+   "secondary_countries": []
+  },
+  "southern_islanders": {
+   "id": "southern_islanders",
+   "name": "Southern Islanders",
+   "people": "men",
+   "language": "yonic",
+   "dialect": "reef",
+   "faith": "wave_tally",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3f9aa8",
+    "#efe6c8",
+    "#c9644a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Turquoise, a shell.",
+    "portrait": "Tattooed, shell necklaces.",
+    "building": "Stilt houses.",
+    "unit": "Spearmen, canoes.",
+    "music": "Drum and nose-flute."
+   },
+   "countries": [
+    "Howan",
+    "Nara",
+    "Dunn",
+    "Finn",
+    "Lua",
+    "Verde",
+    "Angsutz",
+    "Enhis Is Rond",
+    "Yowi-yoor",
+    "Yongyong",
+    "Jingar",
+    "Torsor",
+    "Yongrost",
+    "Meng",
+    "Sidea Islands",
+    "Kea",
+    "Agla",
+    "Yumbo",
+    "Pon"
+   ],
+   "secondary_countries": []
+  },
+  "zilin_pilgrims": {
+   "id": "zilin_pilgrims",
+   "name": "Zilin Pilgrim-Folk",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "pilgrim",
+   "faith": "deliverer",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": true,
+   "palette": [
+    "#efe9d0",
+    "#c9a24a",
+    "#8aa8c9"
+   ],
+   "heraldry_and_look": {
+    "flag": "White and gold, a lamp.",
+    "portrait": "Serene, white robes.",
+    "building": "Terraced hostels.",
+    "unit": "White-tabarded wardens.",
+    "music": "Chant and bell."
+   },
+   "countries": [
+    "Worshipdom"
+   ],
+   "secondary_countries": []
+  },
+  "goodin_sunfolk": {
+   "id": "goodin_sunfolk",
+   "name": "Goodin Sunfolk",
+   "people": "men",
+   "language": "sunhot",
+   "dialect": "sunfolk",
+   "faith": "noon_pilgrimage",
+   "faith_secondary": "lamp_furrow",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#e0b23a",
+    "#5a8a4a",
+    "#f2e6b8"
+   ],
+   "heraldry_and_look": {
+    "flag": "Yellow, a sun.",
+    "portrait": "Sun-browned, tall.",
+    "building": "Sun-baked brick.",
+    "unit": "Militia.",
+    "music": "Flute."
+   },
+   "countries": [
+    "Goodin",
+    "Goodton",
+    "Guuden"
+   ],
+   "secondary_countries": []
+  },
+  "forest_council_elves": {
+   "id": "forest_council_elves",
+   "name": "Council Elves of the Magical Forest",
+   "people": "elves",
+   "language": "sylvan",
+   "dialect": "high",
+   "faith": "kindred_song",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#4f9a5a",
+    "#d8e0d2",
+    "#9aa6b0"
+   ],
+   "heraldry_and_look": {
+    "flag": "Leaf green and silver, a leaf, a tree or a harp.",
+    "portrait": "Fine-boned, long hair, silver circlet, timeless.",
+    "building": "Living-tree cities, silver bridges.",
+    "unit": "Elven rangers, bowmen, swordsmen; dragons rare.",
+    "music": "Voices and harp, slow and bright."
+   },
+   "countries": [
+    "Kingdom",
+    "Greenland",
+    "Dulo-Dulo",
+    "Heron",
+    "Magical Forest"
+   ],
+   "secondary_countries": []
+  },
+  "hill_kingdom_elves": {
+   "id": "hill_kingdom_elves",
+   "name": "Hill-Kingdom Elves",
+   "people": "elves",
+   "language": "sylvan",
+   "dialect": "hill",
+   "faith": "kindred_song",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3f6f4a",
+    "#c9c9d2",
+    "#a8402f"
+   ],
+   "heraldry_and_look": {
+    "flag": "Green and silver, a roost.",
+    "portrait": "Sharper features, dark hair.",
+    "building": "Hillside halls.",
+    "unit": "Rangers, rare dragons.",
+    "music": "Horn and harp."
+   },
+   "countries": [
+    "Herrodon",
+    "Sacomananos",
+    "Velakton",
+    "Teste",
+    "Filion"
+   ],
+   "secondary_countries": []
+  },
+  "lake_elves": {
+   "id": "lake_elves",
+   "name": "Lake Elves",
+   "people": "elves",
+   "language": "sylvan",
+   "dialect": "lake",
+   "faith": "kindred_song",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#4a8a8a",
+    "#d8e0e0",
+    "#8a9ab0"
+   ],
+   "heraldry_and_look": {
+    "flag": "Blue-green, a wave.",
+    "portrait": "Pale, dark-haired.",
+    "building": "Water gardens.",
+    "unit": "Boat archers.",
+    "music": "Lute and voice."
+   },
+   "countries": [
+    "Andos Enda",
+    "Perloia",
+    "Ossa"
+   ],
+   "secondary_countries": []
+  },
+  "pass_wardens": {
+   "id": "pass_wardens",
+   "name": "Pass-Warden Elves",
+   "people": "elves",
+   "language": "sylvan",
+   "dialect": "pass",
+   "faith": "kindred_song",
+   "faith_secondary": "stone_vigil",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5f7a6a",
+    "#c9ceca",
+    "#6a6f78"
+   ],
+   "heraldry_and_look": {
+    "flag": "Grey-green, a pass.",
+    "portrait": "Grey-cloaked, lean.",
+    "building": "Pass forts.",
+    "unit": "Mountain archers.",
+    "music": "Horn."
+   },
+   "countries": [
+    "Nolorim",
+    "Nolivorak"
+   ],
+   "secondary_countries": []
+  },
+  "rift_coast_elves": {
+   "id": "rift_coast_elves",
+   "name": "Rift-Coast Elves",
+   "people": "elves",
+   "language": "sylvan",
+   "dialect": "coast",
+   "faith": "kindred_song",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3f8a8a",
+    "#d6dce0",
+    "#8a96aa"
+   ],
+   "heraldry_and_look": {
+    "flag": "Teal and silver, a lantern.",
+    "portrait": "Sea-pale.",
+    "building": "Shore towers.",
+    "unit": "Sea archers.",
+    "music": "Voice and harp."
+   },
+   "countries": [
+    "Endelond",
+    "The End",
+    "Lccimio",
+    "Luv-zhise",
+    "Lengoli",
+    "Lusteli"
+   ],
+   "secondary_countries": []
+  },
+  "gala_court": {
+   "id": "gala_court",
+   "name": "Gala Elves",
+   "people": "elves",
+   "language": "galic",
+   "dialect": "court",
+   "faith": "rain_mirror",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#e0c36a",
+    "#f2eedc",
+    "#8aa8c9"
+   ],
+   "heraldry_and_look": {
+    "flag": "White and gold, a sun over water.",
+    "portrait": "Ageless, gold-hair, white robes.",
+    "building": "White and gold halls.",
+    "unit": "Ancient swordsmen, ships.",
+    "music": "Voice and harp."
+   },
+   "countries": [
+    "North Gala",
+    "Gala Elves",
+    "Gala"
+   ],
+   "secondary_countries": []
+  },
+  "sunhot_light": {
+   "id": "sunhot_light",
+   "name": "Sunhot Elves of the Light",
+   "people": "sun_elves",
+   "language": "sunhot",
+   "dialect": "light",
+   "faith": "noon_pilgrimage",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#e0a02a",
+    "#f2e6c4",
+    "#b04a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Gold and white, a rising sun.",
+    "portrait": "Tall, gold-skinned.",
+    "building": "Sun sanctuaries.",
+    "unit": "Tall elven guards.",
+    "music": "Gong and flute."
+   },
+   "countries": [
+    "The Lands of Light"
+   ],
+   "secondary_countries": []
+  },
+  "sunhot_western": {
+   "id": "sunhot_western",
+   "name": "Western Sanctuary Sunhot",
+   "people": "sun_elves",
+   "language": "sunhot",
+   "dialect": "western",
+   "faith": "noon_pilgrimage",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#d89a2a",
+    "#f2e6c4",
+    "#a8452a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Gold and white, a sun.",
+    "portrait": "Tall, gold-skinned.",
+    "building": "Sanctuaries.",
+    "unit": "Tall guards.",
+    "music": "Gong."
+   },
+   "countries": [
+    "Elvana",
+    "Igara",
+    "Godrela",
+    "Sunweli",
+    "Land of the Sun",
+    "Godson",
+    "Beforelands of Gulia",
+    "Menga",
+    "Sono",
+    "Sunny",
+    "Via",
+    "Lovis",
+    "Sensun",
+    "Sun God Land",
+    "Godland",
+    "Godton",
+    "Flame",
+    "Sali",
+    "Helen",
+    "Heaven",
+    "Him",
+    "Dreamland",
+    "Dein Lands"
+   ],
+   "secondary_countries": []
+  },
+  "sunhot_isles": {
+   "id": "sunhot_isles",
+   "name": "Isle Sunhot",
+   "people": "sun_elves",
+   "language": "sunhot",
+   "dialect": "isle",
+   "faith": "noon_pilgrimage",
+   "faith_secondary": "wave_tally",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2f8a8a",
+    "#e0b23a",
+    "#f0e8cc"
+   ],
+   "heraldry_and_look": {
+    "flag": "Teal and gold, a sun over waves.",
+    "portrait": "Tall, tanned.",
+    "building": "Shore sanctuaries.",
+    "unit": "Tall guards.",
+    "music": "Gong."
+   },
+   "countries": [
+    "Hengyang",
+    "Soyano",
+    "Tangsie",
+    "Wenyene",
+    "Pinion",
+    "Sus",
+    "Tei",
+    "Armic",
+    "Hel",
+    "Ofos",
+    "Hol",
+    "Poyang",
+    "Heilmon",
+    "Yungin",
+    "Rana",
+    "Loyol",
+    "Biggen"
+   ],
+   "secondary_countries": []
+  },
+  "volcano_clans": {
+   "id": "volcano_clans",
+   "name": "Volcano Clans",
+   "people": "orcs",
+   "language": "orcish",
+   "dialect": "volcano",
+   "faith": "skull_fire",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2a2a2e",
+    "#a83a26",
+    "#7a7a74"
+   ],
+   "heraldry_and_look": {
+    "flag": "Black with a red flame or mountain.",
+    "portrait": "Green-grey skin, tusks, scars, ash-paint.",
+    "building": "Black cliff-cities, forges.",
+    "unit": "Axe infantry, war-beasts.",
+    "music": "Drums and horns."
+   },
+   "countries": [
+    "Goldoroth",
+    "Sungodor",
+    "Dark Gate",
+    "Zuriath",
+    "Bold",
+    "Gord"
+   ],
+   "secondary_countries": []
+  },
+  "iron_clans": {
+   "id": "iron_clans",
+   "name": "Iron Clans",
+   "people": "orcs",
+   "language": "orcish",
+   "dialect": "iron",
+   "faith": "skull_fire",
+   "faith_secondary": "hold_luck",
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a5a60",
+    "#8a4a2a",
+    "#a8a8a0"
+   ],
+   "heraldry_and_look": {
+    "flag": "Iron grey, an anvil.",
+    "portrait": "Green-grey, tusked.",
+    "building": "Hold towns.",
+    "unit": "Mail infantry.",
+    "music": "Anvil and drum."
+   },
+   "countries": [
+    "Bordon",
+    "Dreson",
+    "Beriath",
+    "Britadon",
+    "Dulundur",
+    "Colost",
+    "The Darks",
+    "Dunbulinor",
+    "Fondor"
+   ],
+   "secondary_countries": []
+  },
+  "wild_holds": {
+   "id": "wild_holds",
+   "name": "Wild Holds",
+   "people": "orcs",
+   "language": "orcish",
+   "dialect": "wild",
+   "faith": "hold_luck",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#6a5a40",
+    "#3a3a30",
+    "#a8a070"
+   ],
+   "heraldry_and_look": {
+    "flag": "Brown, a charm.",
+    "portrait": "Scruffy orcs.",
+    "building": "Burrows.",
+    "unit": "Raiders.",
+    "music": "Bone drum."
+   },
+   "countries": [
+    "Dun",
+    "The Doltu",
+    "Wild Lands"
+   ],
+   "secondary_countries": []
+  },
+  "sea_orcs": {
+   "id": "sea_orcs",
+   "name": "Sea Orcs",
+   "people": "orcs",
+   "language": "orcish",
+   "dialect": "sea",
+   "faith": "tide_skull",
+   "faith_secondary": "skull_fire",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3a5a62",
+    "#8a8a82",
+    "#a8a090"
+   ],
+   "heraldry_and_look": {
+    "flag": "Teal, a skull.",
+    "portrait": "Salt-stained orcs.",
+    "building": "Cliff harbours.",
+    "unit": "Boarders.",
+    "music": "Drum."
+   },
+   "countries": [
+    "Belonton",
+    "Gull Kingdom",
+    "Lestern Isles"
+   ],
+   "secondary_countries": []
+  },
+  "goblin_warrens": {
+   "id": "goblin_warrens",
+   "name": "Goblin Warrens",
+   "people": "orcs",
+   "language": "goblin",
+   "dialect": "cant",
+   "faith": "warren_luck",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#5a6a3a",
+    "#3a3a2a",
+    "#c8b868"
+   ],
+   "heraldry_and_look": {
+    "flag": "A lamp.",
+    "portrait": "Small, big-eared.",
+    "building": "Warren holes.",
+    "unit": "Slingers, trappers.",
+    "music": "Clatter."
+   },
+   "countries": [],
+   "secondary_countries": []
+  },
+  "troll_tribes": {
+   "id": "troll_tribes",
+   "name": "Troll Tribes",
+   "people": "trolls",
+   "language": "trollish",
+   "dialect": "forest",
+   "faith": "stone_hunger",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#6d7a5a",
+    "#4a4030",
+    "#a09878"
+   ],
+   "heraldry_and_look": {
+    "flag": "Brown, a boulder.",
+    "portrait": "Huge, grey-green.",
+    "building": "Caves.",
+    "unit": "Brutes.",
+    "music": "Rock drum."
+   },
+   "countries": [
+    "Troll Forest"
+   ],
+   "secondary_countries": []
+  },
+  "hill_giants": {
+   "id": "hill_giants",
+   "name": "Hill Giants of Hiloron",
+   "people": "giants",
+   "language": "gigantic",
+   "dialect": "hiloron",
+   "faith": "giant_cairn",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#7c6a58",
+    "#4a4a40",
+    "#b0a888"
+   ],
+   "heraldry_and_look": {
+    "flag": "Brown, a stone.",
+    "portrait": "Huge, rough-hewn.",
+    "building": "Huge stone halls.",
+    "unit": "Giants, few.",
+    "music": "Deep horn."
+   },
+   "countries": [
+    "Hiloron"
+   ],
+   "secondary_countries": [
+    "Hilofrim"
+   ]
+  },
+  "ice_giants": {
+   "id": "ice_giants",
+   "name": "Ice Giants of Titanos",
+   "people": "giants",
+   "language": "gigantic",
+   "dialect": "titanos",
+   "faith": "giant_cairn",
+   "faith_secondary": "winter_hearth",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#9fc4d8",
+    "#e8eef2",
+    "#506a7a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Ice blue, a throne.",
+    "portrait": "Huge, pale.",
+    "building": "Ice halls.",
+    "unit": "Giants.",
+    "music": "Deep horn."
+   },
+   "countries": [
+    "Titanos"
+   ],
+   "secondary_countries": []
+  },
+  "yeti_clans": {
+   "id": "yeti_clans",
+   "name": "Yeti Clans",
+   "people": "yeti",
+   "language": "yetic",
+   "dialect": "clan",
+   "faith": "yeti_hum",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#c9d6e3",
+    "#8a96a8",
+    "#4a5a6a"
+   ],
+   "heraldry_and_look": {
+    "flag": "White, a mountain.",
+    "portrait": "Furred, tall.",
+    "building": "Caves.",
+    "unit": "Yeti.",
+    "music": "Hum."
+   },
+   "countries": [
+    "Yeti Lands"
+   ],
+   "secondary_countries": []
+  },
+  "kilinti_ents": {
+   "id": "kilinti_ents",
+   "name": "Ents of Kilinti",
+   "people": "ents",
+   "language": "longspeech",
+   "dialect": "eldest",
+   "faith": "ent_slow",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3f6b2e",
+    "#6a5a3a",
+    "#a8b890"
+   ],
+   "heraldry_and_look": {
+    "flag": "Green, a tree.",
+    "portrait": "Bark and moss.",
+    "building": "Groves.",
+    "unit": "Ents.",
+    "music": "Slow."
+   },
+   "countries": [
+    "Kilinti"
+   ],
+   "secondary_countries": []
+  },
+  "grave_hosts": {
+   "id": "grave_hosts",
+   "name": "Grave Hosts of Volgan",
+   "people": "the_dead",
+   "language": "grave_rite",
+   "dialect": "rite",
+   "faith": "grave_cult",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2a2530",
+    "#5b5566",
+    "#a83a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "Black, an eye or gate.",
+    "portrait": "Hooded, skull-faced.",
+    "building": "Black fortress.",
+    "unit": "Revenant hosts.",
+    "music": "Dirge."
+   },
+   "countries": [
+    "Volgan"
+   ],
+   "secondary_countries": []
+  },
+  "zols_dead": {
+   "id": "zols_dead",
+   "name": "Zol's Dead",
+   "people": "the_dead",
+   "language": null,
+   "dialect": null,
+   "faith": "none",
+   "faith_secondary": null,
+   "tier": 1,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#0a0a0c",
+    "#2a2a30",
+    "#6a6a72"
+   ],
+   "heraldry_and_look": {
+    "flag": "Black sigil on a void.",
+    "portrait": "Emblem only.",
+    "building": "Black ruins.",
+    "unit": "Hosts.",
+    "music": "Silence."
+   },
+   "countries": [
+    "Zol"
+   ],
+   "secondary_countries": []
+  },
+  "netherborn": {
+   "id": "netherborn",
+   "name": "Netherborn",
+   "people": "demons",
+   "language": "infernal",
+   "dialect": "nether",
+   "faith": "pact_rite",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#9b2a2a",
+    "#2a1a1a",
+    "#d8a060"
+   ],
+   "heraldry_and_look": {
+    "flag": "Red and black, a horn.",
+    "portrait": "Horned, ember-eyed.",
+    "building": "Obsidian halls.",
+    "unit": "Elite demons.",
+    "music": "Brass and bass."
+   },
+   "countries": [
+    "Nezer",
+    "Demon",
+    "Dolon"
+   ],
+   "secondary_countries": [
+    "Volgan"
+   ]
+  }
+ },
+ "faiths": {
+  "deliverer": {
+   "name": "The Faith of the Deliverer",
+   "short": "Faith of the Deliverer",
+   "kind": "devotion",
+   "belief": "The Deliverer, a New God of deliverance, protection and renewal, saved Erdae when the Great Necromancer fell and still keeps the peace. [E public worship; P doctrine] Believers keep a lamp and a loaf for the stranger and give a tenth of the first harvest to the Houses of the First Light.",
+   "sites": "The House of the First Light at Parim; the pilgrim hostels of the Zilin Hills; a house in every town of Aenor.",
+   "clergy": "Confessors who hear, teach and write the birth rolls; healers of the Houses; the High Confessor at the head, seated in the Zilin Hills.",
+   "festivals": "The Lamp-Lighting (1 Thaw), the Day of Deliverance (the Third Age's end, in Mistfall), the Thousand-Year Jubilee every hundred years (last in 4A 1000).",
+   "secret": true
+  },
+  "lamp_furrow": {
+   "name": "The Lamp and the Furrow",
+   "short": "Lamp and Furrow",
+   "kind": "devotion",
+   "belief": "Households honour the New Gods in two folk images: a lamp that never goes out, and rain over a ploughed field. These are the pictures people carry; the gods are more than the pictures. [Images taken from Eindil's vision in the chronicle; P as folk images]",
+   "sites": "Hearth shrines; lamp-posts at crossroads; rain-stones in the fields.",
+   "clergy": "None. Mothers and eldest sons keep the lamp; the village keeps the rain-stone.",
+   "festivals": "Thaw Lamp (1 Thaw), Rain-Feast (Rainwake), Harvest Home (Harvest), the Vigil of Longnight."
+  },
+  "green_lords": {
+   "name": "The Green Lords",
+   "short": "Green Lords",
+   "kind": "spirit",
+   "belief": "Every old wood has a Wild Spirit, a Lord of the Green, who must be asked before an arrow is loosed. Rangers keep the Quiet Law: no bow is drawn in the forest during the Hallow Month. [Wild Spirits are a proposed nature in the vault]",
+   "sites": "Hollow oaks; the Moot Tree of Selen; the shrine glades along the Wall's western edge.",
+   "clergy": "Tree-wardens, one for each wood, chosen by the woodland moot.",
+   "festivals": "Hallow Month (Fallowing), Green-Waking (Thaw, when the first leaves are counted), the Three Arrows (midsummer shooting)."
+  },
+  "horse_oath": {
+   "name": "The Horse-Oath",
+   "short": "Horse-Oath",
+   "kind": "spirit",
+   "belief": "The herd and the sky are one thing. A rider swears on a horse, and the horse carries the oath to the sky, where the spirits of the wind listen. An oath broken is a horse lost.",
+   "sites": "Felt-tents of the oath at the great summer gatherings; horse-barrows facing east.",
+   "clergy": "Oath-riders, old riders who witness oaths and judge their breaking.",
+   "festivals": "The Gathering (Highsun), the Foaling (Thaw), the Last Ride (Mistfall)."
+  },
+  "stone_vigil": {
+   "name": "The Stone Vigil",
+   "short": "Stone Vigil",
+   "kind": "duty",
+   "belief": "The Wall is a promise. Those who keep it keep faith with the dead of the Third Age. A watch-family is born to its post, and the post is holy.",
+   "sites": "The watch-shrines in every tower of the Wall; the Gate at Kingson; the Names Wall of those who fell holding the Pale March.",
+   "clergy": "Watch-chaplains, soldiers who also keep the rolls of the fallen.",
+   "festivals": "The Accord-Day (the Wall Accord, 4A 96), the Night Watch of Longnight, the Reading of Names."
+  },
+  "isle_tide": {
+   "name": "The Tide-Houses",
+   "short": "Tide-Houses",
+   "kind": "ancestor",
+   "belief": "The dead go out with the tide and return with it. Each island house keeps a tide-chamber where its ancestors are named at the flood.",
+   "sites": "Tide-chambers cut in the island rock; the lighthouse-shrines of Asgard.",
+   "clergy": "Tide-mothers, eldest women of each house.",
+   "festivals": "Spring Tide (Thaw), the Boat-Burning (Emberleaf), Drowned Night."
+  },
+  "old_knots": {
+   "name": "The Old Knots",
+   "short": "Old Knots",
+   "kind": "ancestor",
+   "belief": "Names are knots in a cord: a child is tied into the cord of her mother's line, and the dead are never untied. A name stolen is a knot cut. [Orran customs are older than Aenor and survive the Registers of the Lost]",
+   "sites": "Knot-trees hung with cords in the Bloody Forest; the cord-halls of the Cursed Lands.",
+   "clergy": "Cord-mothers, who tie and read the cords.",
+   "festivals": "The Tying (Rainwake), the Untying of the Year (Longnight)."
+  },
+  "strait_litany": {
+   "name": "The Strait Litany",
+   "short": "Strait Litany",
+   "kind": "devotion",
+   "belief": "The sea-lords sing a litany to the New Gods at each tide, naming the ships lost that year, and to the storm that took them, which they do not call a god.",
+   "sites": "The Singing Quay at Sonargur; sea-chapels on the Leren skerries.",
+   "clergy": "Litany-singers, one to each fleet.",
+   "festivals": "The Ship-Blessing (Thaw), the Reading of the Lost (Longnight)."
+  },
+  "winter_hearth": {
+   "name": "The Winter Hearth",
+   "short": "Winter Hearth",
+   "kind": "ancestor",
+   "belief": "The hearth-fire is the first law. During the Long Dark each house lets its fire go out and relights it from the clan fire, so that no family is alone with its cold.",
+   "sites": "The Clan Fire of each hold; the Frost-Hall at Fandanar.",
+   "clergy": "Fire-keepers, one to each clan and many to the Winter Crown.",
+   "festivals": "The Relighting (the end of the Long Dark, early Thaw), the Frost Moot, the Dead Night."
+  },
+  "storm_court": {
+   "name": "The Storm Court",
+   "short": "Storm Court",
+   "kind": "spirit",
+   "belief": "Storms are the court of the sea. Captains and warlords bargain with the Elemental Spirits of wind and water and keep tokens of each. [Elemental Spirits are a proposed nature]",
+   "sites": "Wind-towers on the Windwaith headlands; the Black Gallery in Isengard's forts.",
+   "clergy": "Wind-readers and storm-speakers.",
+   "festivals": "The Calm (Highsun), the First Gale (Fallowing)."
+  },
+  "clan_stones": {
+   "name": "The Standing Stones",
+   "short": "Standing Stones",
+   "kind": "law",
+   "belief": "An oath sworn at a standing stone binds the stone, the swearer and the clan. The Lawspeaker remembers every oath. The hills have their Wild Spirits, but the stones have the law.",
+   "sites": "The Stone of the Grey Ford; the Oath-Ring of Gunwaith.",
+   "clergy": "Lawspeakers, who are judges and priests together.",
+   "festivals": "The Ring-Moot (Highsun), the Truce-Day (the Grey Ford's anniversary, Thaw)."
+  },
+  "river_wardens": {
+   "name": "The River Wardens' Rite",
+   "short": "Warden's Rite",
+   "kind": "spirit",
+   "belief": "Each river has a keeper spirit that mistakes the town for a guest. The wardens feed the river a loaf at the flood and keep the ford clear. [mortals may mistake a Lesser Spirit for a god; the vault leaves it open]",
+   "sites": "Ford-shrines on the Girdon rivers; the bridge-stones.",
+   "clergy": "Ford-wardens, who are also magistrates.",
+   "festivals": "The First Flood (Rainwake), the Bridge-Night."
+  },
+  "guild_hall": {
+   "name": "The Guild Halls",
+   "short": "Guild Halls",
+   "kind": "devotion",
+   "belief": "Each guild honours one of the New Gods under a craft-aspect and keeps a patron-day and a hall. Contracts are sworn on the guild book, not on a god.",
+   "sites": "The great guild-halls of Kradlon and Corogon.",
+   "clergy": "Guild-chaplains.",
+   "festivals": "Patron-days, one for each guild; the Fair of Contracts (Goldfield)."
+  },
+  "company_banner": {
+   "name": "The Banner-Oath",
+   "short": "Banner-Oath",
+   "kind": "duty",
+   "belief": "A company's banner is its soul. Sworn men pray before it, and a fallen banner ends the company.",
+   "sites": "Company chapels in Buldor's barracks-towns.",
+   "clergy": "Banner-chaplains.",
+   "festivals": "The Unfurling (Thaw), the Last Muster (Mistfall)."
+  },
+  "tide_charts": {
+   "name": "The Chart-Faith",
+   "short": "Chart-Faith",
+   "kind": "devotion",
+   "belief": "To chart a reef is to give a gift to every sailor to come. A chart-house honours its first pilot and the reef-spirits that spared him.",
+   "sites": "Chart-houses on every Triton harbour; reef-shrines on the Seite Islands.",
+   "clergy": "Master-pilots.",
+   "festivals": "The Charting Day (Rainwake), the Drowned Names."
+  },
+  "ransom_tide": {
+   "name": "The Ransom Tide",
+   "short": "Ransom Tide",
+   "kind": "law",
+   "belief": "Corsair lords honour the tide that returns every ship. A captive who is ransomed is under the god of the harbour; one who is not is under the sea.",
+   "sites": "The tide-courts of the corsair isles.",
+   "clergy": "Tide-judges.",
+   "festivals": "The Ransoming (Emberleaf), the Black Flag Night."
+  },
+  "well_oath": {
+   "name": "The Well-Oath",
+   "short": "Well-Oath",
+   "kind": "law",
+   "belief": "A well is a promise from the earth. Sharing water makes kin, and one who poisons or seals a well is cast from every tribe. The New Gods are honoured at wells in the form of the rain they send.",
+   "sites": "The Seven Wells of Noris; the oases along the Salt Road.",
+   "clergy": "Well-lords and well-wives.",
+   "festivals": "The First Water (Rainwake), the Night of Stars (Highsun), the Caravan Blessing."
+  },
+  "scale_creed": {
+   "name": "The Creed of the Honest Scale",
+   "short": "Honest Scale",
+   "kind": "law",
+   "belief": "An honest weight pleases the New Gods. Each house keeps a set of scales in its temple. A false weight is the worst crime in Stabilo.",
+   "sites": "The Hall of Scales at Postondoroth.",
+   "clergy": "Weighers, who are also judges of contracts.",
+   "festivals": "The Weighing (Harvest), the Opening of the Roads (Thaw)."
+  },
+  "river_temples": {
+   "name": "The River Temples",
+   "short": "River Temples",
+   "kind": "devotion",
+   "belief": "The river is the oldest god we can see. The kings of the river lands honour the New Gods in tall temples above the flood-line and the river itself in water-courts below.",
+   "sites": "The Flood-Court of Alerhia; the temple stair of Porrenva.",
+   "clergy": "Temple scribes and flood-priests; a priest-king in the oldest realms.",
+   "festivals": "The Rising (the flood), the Falling, the King's Walk."
+  },
+  "lake_litany": {
+   "name": "The Lake Litany",
+   "short": "Lake Litany",
+   "kind": "devotion",
+   "belief": "The lakes along the Lake Road keep the memory of the caravans. Merchants and fishers pray together at the water.",
+   "sites": "The lake-shrines of Mora and Ostoroth.",
+   "clergy": "Lake-readers.",
+   "festivals": "The Fish-Fair (Goldfield), the Lantern Float (Longnight)."
+  },
+  "red_hearth": {
+   "name": "The Red Hearth",
+   "short": "Red Hearth",
+   "kind": "ancestor",
+   "belief": "The red clay is the bone of the first mothers. Each house keeps a clay figure of its first mother and re-fires it each spring.",
+   "sites": "The kiln-shrines of Avalon.",
+   "clergy": "Kiln-mothers.",
+   "festivals": "The Refiring (Thaw), the Clay Night."
+  },
+  "wave_tally": {
+   "name": "The Wave-Tally",
+   "short": "Wave-Tally",
+   "kind": "ancestor",
+   "belief": "Each island counts its dead as waves on the reef. A shrine repeats a name long forgotten, and the islanders say the name is needed. [one shrine repeats Aen's name without knowing why; vault P]",
+   "sites": "Reef-shrines; the shrine beneath the tide (P).",
+   "clergy": "Tally-keepers.",
+   "festivals": "The Reef-Opening (Rainwake), the Calling of Names."
+  },
+  "noon_pilgrimage": {
+   "name": "The Noon Pilgrimage",
+   "short": "Noon Pilgrimage",
+   "kind": "devotion",
+   "belief": "The Lands of the Sun are the nearest earthly place to the divine realm that mortals call Heaven. The Sunhot elves keep sanctuaries where visitors may rest and look at the Sea of Gods. [P belief; the vault only says Eindil's spirit reached a divine realm he understood as Heaven]",
+   "sites": "The Sea of Gods; the sanctuaries of Godland, Heaven and Flame.",
+   "clergy": "Sanctuary-wardens and Keepers of the Noon.",
+   "festivals": "Noon-Day (Highsun), the Gathering at the Sea, the Dreaming Night."
+  },
+  "kindred_song": {
+   "name": "The Kindred Song",
+   "short": "Kindred Song",
+   "kind": "reverence",
+   "belief": "Elves tell many stories of how their kind began, and no elf claims the right one. All agree that the world was sung, and that to listen well is a duty. [Great Folk origin is open in the vault; these are tellings, not facts]",
+   "sites": "The Singing Groves; the Living Forest; the Great Wall's elven gates.",
+   "clergy": "Loremasters and song-wardens.",
+   "festivals": "The First Leaf (Thaw), the Long Listening (Longnight), the Dragon-Watch."
+  },
+  "rain_mirror": {
+   "name": "The Mirror Vigil",
+   "short": "Mirror Vigil",
+   "kind": "reverence",
+   "belief": "The Gala remember the oldest days and keep a spring where the past and the possible can be glimpsed. They do not trust prophecy: a vision shown too plainly makes men do what it shows. [Mirror of First Rain is P]",
+   "sites": "The Mirror of First Rain at Gala (P); the old courts of Dardan's dead.",
+   "clergy": "Keepers of the Mirror.",
+   "festivals": "The First Rain (Rainwake), the Reading of the Dead of Dardan (in Mistfall)."
+  },
+  "skull_fire": {
+   "name": "The Skull and the Fire",
+   "short": "Skull and Fire",
+   "kind": "ancestor",
+   "belief": "The clan honours its dead on a cairn of skulls and its mountain with a fire that never goes out. The fire of Goldoroth burns under the Fire-Mountain above Cocanoor. Orcs do not say what lives in the mountain. [the Fire-Mountain is flavour in the Dark Lands spec; its nature is open]",
+   "sites": "The skull-cairns of every hold; the Fire-Mountain above Cocanoor.",
+   "clergy": "Fire-Speakers (shamans).",
+   "festivals": "The Ember-Night, the Tithe of Iron."
+  },
+  "hold_luck": {
+   "name": "The Luck of the Hold",
+   "short": "Hold-Luck",
+   "kind": "spirit",
+   "belief": "The Wild Holds trust charms, bones and lucky stones, and honour the spirit of whichever place they live in. They are suspicious of every priest.",
+   "sites": "The lucky stones of each hold.",
+   "clergy": "Charm-wives.",
+   "festivals": "The Thawing, the Bone-Casting."
+  },
+  "tide_skull": {
+   "name": "The Salt Tithe",
+   "short": "Salt Tithe",
+   "kind": "ancestor",
+   "belief": "Sea orcs sink a skull in the first catch of each season and pay the sea a tithe of salt.",
+   "sites": "The skerry-cairns of the Lestern Isles.",
+   "clergy": "Salt-priests.",
+   "festivals": "The First Catch, the Black Tide."
+  },
+  "warren_luck": {
+   "name": "The Warren Luck",
+   "short": "Warren Luck",
+   "kind": "spirit",
+   "belief": "A goblin warren trusts the luck of its lamp. A lamp gone out is a warren doomed.",
+   "sites": "The Lamp-Hole of each warren.",
+   "clergy": "None; the loudest goblin keeps the lamp.",
+   "festivals": "Lamp-Night."
+  },
+  "stone_hunger": {
+   "name": "The Hunger and the Stone",
+   "short": "Stone-Hunger",
+   "kind": "spirit",
+   "belief": "The troll tribes honour the stone that feeds them and the hunger that drives them. They place the dead in bogs.",
+   "sites": "Stone-heaps at tribe borders.",
+   "clergy": "None.",
+   "festivals": "The Eldest's Rest."
+  },
+  "giant_cairn": {
+   "name": "The Cairn-Faith",
+   "short": "Cairn-Faith",
+   "kind": "ancestor",
+   "belief": "A giant leaves one stone for each year of life. The great cairns are the giants' memory. Titanos honours the cold itself as an old Elemental Spirit of ice.",
+   "sites": "The Cairn-Fields of Hiloron; the Ice-Throne of Titanos.",
+   "clergy": "Stone-keepers.",
+   "festivals": "The Stone-Laying (Thaw), the Frost-Hour."
+  },
+  "yeti_hum": {
+   "name": "The Hum",
+   "short": "The Hum",
+   "kind": "spirit",
+   "belief": "Yeti hold that the mountain hums and that the hum must be answered at dusk. A clan with no hum is lost.",
+   "sites": "The Hum-Caves.",
+   "clergy": "Hum-keepers.",
+   "festivals": "The Winter Hum (Longnight)."
+  },
+  "ent_slow": {
+   "name": "The Slow Rite",
+   "short": "Slow Rite",
+   "kind": "spirit",
+   "belief": "The ents answer to the grove and the grove to the season. They hold no rites a man can see; a moot of ents may take three years to say one sentence.",
+   "sites": "The Moot-Grove of Kilinti.",
+   "clergy": "None; the Eldest speaks last.",
+   "festivals": "The Ent-Moot (every seventh Thaw)."
+  },
+  "grave_cult": {
+   "name": "The Children of Volgan's Dread",
+   "short": "Dread Cult",
+   "kind": "dark",
+   "belief": "Volgan is worshipped as a god though he is a Great Spirit. The dead of his Dominion keep a rite of Names and Gates. [Volgan's rank is E Great Spirit; mortals' belief is not proof]",
+   "sites": "The Gate of Nafeher; the grave-fields behind the storms.",
+   "clergy": "Necromantic orders; wardens of the Gates.",
+   "festivals": "The Muster of Names, the Opening of the Gates."
+  },
+  "pact_rite": {
+   "name": "The Pact-Rite of the Nether",
+   "short": "Pact-Rite",
+   "kind": "dark",
+   "belief": "Every lord of the Nether keeps a pact and a pact-name known only to the pact. Oaths are blood and ash.",
+   "sites": "The pact-halls of Demon, Dolon and Nezer.",
+   "clergy": "Pact-heralds.",
+   "festivals": "The Ash Night."
+  },
+  "mourning_dust": {
+   "name": "The Mourning Customs of the Dead Lands",
+   "short": "Mourning Customs",
+   "kind": "ancestor",
+   "belief": "People of the Dead Lands bury quickly and bury deep, with salt, and say nothing of Zol or Volgan at the grave. Their gods are the New Gods of safe harbours.",
+   "sites": "Salt-graves along the north coast.",
+   "clergy": "Grave-wives.",
+   "festivals": "The Salt Day."
+  },
+  "warden_vigil": {
+   "name": "The Warden's Vigil",
+   "short": "Warden's Vigil",
+   "kind": "duty",
+   "belief": "Mirolon honours the New Gods as watchers. Every warden keeps a night vigil each month and every watch-tower keeps a lamp lit toward the south.",
+   "sites": "The beacon towers; the Lake of Mirolon.",
+   "clergy": "Vigil-captains.",
+   "festivals": "The Long Watch, the Beacon-Night."
+  },
+  "hearth_iron": {
+   "name": "Hearth-Iron",
+   "short": "Hearth-Iron",
+   "kind": "ancestor",
+   "belief": "A bar of iron is kept at every hearth and passed to the eldest son. The New Gods are honoured as the forges that make iron. Old feuds are settled over the bar.",
+   "sites": "The iron-halls of Dondor; the beacon forges.",
+   "clergy": "Iron-keepers (smiths).",
+   "festivals": "The Forging (Thaw), the Iron Night."
+  },
+  "none": {
+   "name": "(none written)",
+   "short": "(none written)",
+   "kind": "open",
+   "belief": "The vault does not say what the dead of Zol's Mistake believe, if anything. Nothing is invented. [O]",
+   "sites": "(open)",
+   "clergy": "(open)",
+   "festivals": "(open)"
+  }
+ }
+}
