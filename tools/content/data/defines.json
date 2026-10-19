@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "spec": "docs/specs/00_foundation/05_defines_and_rules.md",
+ "note": "Every row is a define the installed 1.19.3 common/defines/00_defines.lua holds under the same category (the build checks it: the engine ignores an unknown define silently). fromStage is the vanilla-removal stage in which the row takes effect; for one key, the row with the highest fromStage not above the current stage wins. Other specs add their own blocks to this table (economy, warfare).",
+ "rows": [
+  { "category": "NGame", "key": "START_DATE", "value": "$START_DATE", "owner": "00_foundation/01_start_and_calendar.md", "fromStage": 1, "why": "1 Thaw 4A 1748" },
+  { "category": "NGame", "key": "END_DATE", "value": "$END_DATE", "owner": "00_foundation/01_start_and_calendar.md", "fromStage": 1, "why": "40 years of sandbox after the historical end (V3)" },
+  { "category": "NDiplomacy", "key": "TENSION_TIME_SCALE_START_DATE", "value": "$START_DATE", "owner": "00_foundation/01_start_and_calendar.md", "fromStage": 1, "why": "start date" },
+  { "category": "NDiplomacy", "key": "TENSION_TIME_SCALE_MONTHLY_FACTOR", "value": -0.003, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "tension still matters when the great war comes in 4A 1755" },
+  { "category": "NDiplomacy", "key": "TENSION_DECAY_DAILY", "value": 0.01, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "a world at peace forgets small quarrels fast" },
+  { "category": "NDiplomacy", "key": "TENSION_NO_CB_WAR", "value": 20, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "an unprovoked war shocks a world long at peace" },
+  { "category": "NDiplomacy", "key": "TENSION_FACTION_JOIN", "value": 2, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "the old leagues are standing treaties, not threats" },
+  { "category": "NDiplomacy", "key": "TENSION_ANNEX_NO_CLAIM", "value": 0.30, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "conquest without a claim alarms every crown" },
+  { "category": "NDiplomacy", "key": "BASE_TRUCE_PERIOD", "value": 360, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "slower, older diplomacy" },
+  { "category": "NDiplomacy", "key": "IDEOLOGY_JOIN_FACTION_MIN_LEVEL", "value": 0.1, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "Erdae's leagues mix Light, Dominion and Wild members" },
+  { "category": "NDiplomacy", "key": "BASE_PEACE_FORCE_GOVERNMENT_COST", "value": 150, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "overturning a realm's rule costs more than taking land" },
+  { "category": "NCountry", "key": "MIN_MAJOR_COUNTRIES", "value": 9, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 3, "why": "the nine working-table great powers; set_major in their histories (stage 3)" },
+  { "category": "NCountry", "key": "POPULATION_YEARLY_GROWTH_BASE", "value": 0.008, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "pre-modern growth" },
+  { "category": "NCountry", "key": "DEFAULT_STABILITY", "value": 0.6, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "fallback; a long peace" },
+  { "category": "NCountry", "key": "DEFAULT_WAR_SUPPORT", "value": 0.15, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "fallback; nobody expects war" },
+  { "category": "NTechnology", "key": "BASE_YEAR_AHEAD_PENALTY_FACTOR", "value": 0, "owner": "00_foundation/01_start_and_calendar.md", "fromStage": 1, "why": "vanilla 1936+ technology years would punish every start technology until the warfare stage replaces them" },
+  { "category": "NTechnology", "key": "BASE_YEAR_AHEAD_PENALTY_FACTOR", "value": 2, "owner": "03_gameplay/01_warfare.md", "fromStage": 2, "why": "Erdae technologies carry Fourth Age years; the penalty returns" },
+  { "category": "NTechnology", "key": "BASE_TECH_COST", "value": 165, "owner": "03_gameplay/01_warfare.md", "fromStage": 2, "why": "the game spans 52 years, not 13" },
+  { "category": "NCharacter", "key": "COUNTRY_LEADER_BASE_EXPIRE_YEAR_LENGTH", "value": 10, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "generated rulers reign longer" },
+  { "category": "NCharacter", "key": "COUNTRY_LEADER_BASE_RANDOM_MAX_YEAR_LENGTH", "value": 20, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "same" },
+  { "category": "NRaids", "key": "NUCLEAR_BOMB_PRODUCTION_SCALE", "value": 1000000.0, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "no nuclear production can yield a weapon" },
+  { "category": "NRaids", "key": "THERMONUCLEAR_BOMB_PRODUCTION_SCALE", "value": 1000000.0, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "same" },
+  { "category": "NProject", "key": "BREAKTHROUGH_DAILY_NUCLEAR_REACTOR_GAIN", "value": 0, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "no reactor breakthroughs" }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "source": "Names of other owners that the focus compiler may reference but cannot read from the staged files of earlier builder modules: patterns of name families (contract additions, Patterns) and the lists of decision E4 for allow_branch. A name a builder module writes is found by scanning the staged files and needs no entry. Add a name here only while its module does not exist yet; remove it when the module lands. <key> matches [a-z0-9_]+.",
+ "scripted_effects": [],
+ "scripted_triggers": [],
+ "events": [],
+ "namespaces": [],
+ "ideas": [],
+ "decisions": [],
+ "opinion_modifiers": [],
+ "sub_units": [],
+ "characters": [],
+ "flags": [],
+ "global_flags": [],
+ "faction_templates": [],
+ "patterns": {
+  "flags": ["zin_people_<key>", "zin_people_minor_<key>", "zin_region_<key>"],
+  "scripted_triggers": ["zin_people_is_<key>", "zin_people_includes_<key>"]
+ },
+ "branch": {
+  "fixed_checks": [],
+  "refreshed_checks": ["zin_shared_has_coast", "zin_shared_is_island_realm", "zin_shared_north_in_compact", "zin_tritons_ship_has_sailed"],
+  "patterns": ["zin_shared_borders_<key>"],
+  "refreshed_flags": ["zin_eindil_awake", "zin_eindil_war_king", "zin_eindil_returned", "zin_volgan_body_destroyed"]
+ }
+}

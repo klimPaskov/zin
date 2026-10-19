@@ -1,0 +1,211 @@
+{
+  "id": "testland",
+  "tier": "major",
+  "countries": ["Testland"],
+  "summary": "A synthetic tree that uses every effect, condition and block of the format.",
+  "event_namespace": "zin_testland",
+  "event_base": 500,
+  "name_prefixes": ["zin_testmech_"],
+  "spirits": {
+    "golden_court": {
+      "name": "The Golden Court",
+      "desc": "Gilded halls where offices are sold.",
+      "modifier": { "political_power_gain": 0.1, "stability_factor": -0.02 },
+      "cancel": [ { "global_flag": "zin_test_court_fell" } ]
+    },
+    "open_court": {
+      "name": "The Open Court",
+      "desc": "Doors stand open and the ledgers are read aloud.",
+      "icon": "council_table",
+      "modifier": { "production_speed_arms_factory_factor": 0.1, "army_org_factor": 0.025 },
+      "research_bonus": { "land_doctrine": 0.1 },
+      "equipment_bonus": { "infantry_equipment": { "instant": true, "armor_value": 0.1 } }
+    },
+    "road_wardens": {
+      "name": "The Road Wardens",
+      "desc": "Wardens keep the roads of the realm.",
+      "modifier": { "weekly_manpower": 100 }
+    },
+    "secret_keepers": {
+      "name": "The Veiled Faithful",
+      "desc": "The faithful of the Deliverer, now known by another name: Afrit.",
+      "icon": "mask_veiled",
+      "text_gate": "zin_afrit_revealed",
+      "modifier": { "stability_factor": 0.05 }
+    }
+  },
+  "events": {
+    "feast": {
+      "n": 0,
+      "title": "A Feast at Court",
+      "desc": "The steward asks how the high table should be laid.",
+      "picture": "court_feast",
+      "options": [
+        { "name": "A modest board", "effects": [ { "stability": 0.02 } ] },
+        {
+          "name": "Gild the tables",
+          "ai_chance": { "base": 50, "modifiers": [ { "factor": 2, "if": [ { "flag": "zin_testland_rich" } ] } ] },
+          "effects": [ { "political_power": 25 }, { "tooltip": "The court remembers the feast." } ]
+        }
+      ]
+    },
+    "toll": {
+      "n": 1,
+      "title": "Ships at the Toll Chain",
+      "desc": "Ships queue at the chain.",
+      "picture": "strait_toll",
+      "news": true,
+      "options": [ { "name": "Let them pass" } ]
+    },
+    "mask": {
+      "n": 2,
+      "title": "The Veil Falls",
+      "desc": "The name of the Deliverer is spoken at last: Afrit.",
+      "picture": "unmasking",
+      "text_gate": "zin_afrit_revealed",
+      "options": [ { "name": "So it is", "effects": [ { "stability": -0.05 } ] } ]
+    },
+    "quiet": {
+      "n": 3,
+      "hidden": true,
+      "options": [ { "effects": [ { "flag": "zin_testland_quiet" } ] } ]
+    }
+  },
+  "scripted_effects": {
+    "zin_testland_offer_treaties": {
+      "args": { "value": "number", "who": "country", "charter": { "keyword": { "old": 0, "golden": 1, "free": 3 } } },
+      "effects": [ { "political_power": 10 }, { "raw": "set_temp_variable = { zin_testland_tmp = zin_arg_value }" } ]
+    },
+    "zin_testmech_ring_bells": {
+      "effects": [ { "event": "quiet" }, { "tooltip": "The bells ring." } ]
+    }
+  },
+  "scripted_triggers": {
+    "zin_testland_court_open": {
+      "conditions": [ { "flag": "zin_testland_court" }, { "not": [ { "global_flag": "zin_test_court_fell" } ] } ]
+    },
+    "zin_testland_branch_ready": {
+      "conditions": [ { "people": "men" }, { "ideology": "light" } ]
+    }
+  },
+  "opinion_modifiers": {
+    "envoys_welcomed": { "name": "Envoys Welcomed", "value": 20 },
+    "gifts_refused": { "value": -10, "decay": 0.5, "months": 12, "trade": true }
+  },
+  "ai_strategies": [
+    { "country": "Testland", "type": "befriend", "target": "Northmark", "value": 20, "if": [ { "global_flag": "zin_test_peace" } ] },
+    { "country": "all", "type": "area_priority", "target": "north", "value": 40 }
+  ],
+  "focuses": [
+    {
+      "key": "root", "name": "The Test Crown", "desc": "Every tree starts somewhere.", "icon": "crown_gold",
+      "x": 4, "y": 0, "days": 35, "filters": ["political", "stability", "war_support", "manpower", "army", "navy", "air"],
+      "ai": { "base": 100 },
+      "effects": [
+        { "political_power": 50 }, { "stability": 0.05 }, { "war_support": 0.05 }, { "army_experience": 10 }, { "navy_experience": 5 },
+        { "air_experience": 5 }, { "manpower": 5000 }, { "flag": "zin_testland_rich" }
+      ]
+    },
+    {
+      "key": "court_path", "name": "The Court Path", "desc": "Keep the old court.", "x": 2, "y": 1, "days": 70,
+      "icon": { "default": "censer", "after": [ { "global_flag": "zin_afrit_revealed", "icon": "throne_ashen" } ] },
+      "prerequisite": [["root"]], "mutually_exclusive": ["free_path"],
+      "ai": { "base": 10, "modifiers": [ { "factor": 2, "if": [ { "flag": "zin_testland_rich" } ] }, { "add": 5, "if": [ { "not_flag": "zin_testland_court" } ] } ] },
+      "effects": [
+        { "add_spirit": "golden_court" }, { "event": "feast" }, { "flag": "zin_testland_court" },
+        { "popularity": { "ideology": "light", "value": 0.1 } }
+      ]
+    },
+    {
+      "key": "free_path", "name": "The Free Path", "desc": "Open the court to the roads.", "icon": "charter_free", "x": 6, "y": 1, "days": 70,
+      "prerequisite": [["root"]],
+      "effects": [ { "timed_spirit": { "key": "open_court", "days": 365 } }, { "government": "wild" } ]
+    },
+    {
+      "key": "treaties", "name": "Treaties of Parim", "desc": "Send envoys to every court.", "icon": "seal_royal", "x": 1, "y": 2, "days": 35,
+      "prerequisite": [["court_path"]],
+      "effects": [
+        { "swap_spirit": ["golden_court", "open_court"] }, { "remove_spirit": "road_wardens" },
+        { "flag": { "name": "zin_testland_envoys", "days": 180 } }, { "clear_flag": "zin_testland_rich" }, { "global_flag": "zin_test_peace" },
+        { "variable": { "name": "zin_testland_counter", "add": 1 } }, { "variable": { "name": "zin_testland_level", "set": 3 } },
+        { "call": "zin_testland_offer_treaties", "args": { "value": 5, "who": "FROM", "charter": "golden" } },
+        { "call": "zin_aenor_add_camp_support", "args": { "camp": "host", "value": 10 } },
+        { "call": "zin_aenor_event_for_parim", "args": { "event": "feast", "days": 3 } },
+        { "event": { "key": "toll", "days": 2 } }, { "event_for": { "country": "Northmark", "key": "quiet" } },
+        { "event": "zin_mech.12" }, { "add_spirit": "zin_mech_idea" }
+      ]
+    },
+    {
+      "key": "concord", "name": "The Concord", "desc": "A table for every dominion.", "icon": "council_table", "x": 3, "y": 2, "days": 70,
+      "prerequisite": [["court_path"]],
+      "effects": [ { "global_flag": "zin_test_court_fell" }, { "add_spirit": "road_wardens" } ]
+    },
+    {
+      "key": "open_roads", "name": "Open Roads", "desc": "Roads for caravans.", "icon": "handshake_oath", "x": 6, "y": 2, "days": 35,
+      "prerequisite": [["free_path"]],
+      "effects": [
+        { "building": { "type": "infrastructure", "level": 1, "where": "capital" } },
+        { "building": { "type": "industrial_complex", "level": 2, "where": "random_owned" } },
+        { "building": { "type": "dockyard", "level": 1, "where": "random_coastal" } },
+        { "building": { "type": "arms_factory", "level": 1, "where": "old_keep" } },
+        { "building": { "type": "bunker", "level": 1, "where": "region:test_lands" } },
+        { "building": { "type": "coastal_bunker", "level": 1, "where": "random_owned" } },
+        { "building": { "type": "naval_base", "level": 1, "where": "random_coastal" } }
+      ]
+    },
+    {
+      "key": "builders", "name": "The Builders", "desc": "Masons come to the court.", "icon": "workshop_tools", "x": 2, "y": 3, "days": 70,
+      "prerequisite": [["treaties", "concord"]],
+      "effects": [
+        { "research": { "categories": ["land_doctrine", "naval_doctrine", "construction_tech", "industry"], "bonus": 0.5, "uses": 1 } },
+        { "equipment": { "type": "infantry_equipment", "amount": 500 } }
+      ]
+    },
+    {
+      "key": "wardens_of_the_road", "name": "Wardens of the Road", "desc": "Wardens for the caravan roads.", "icon": "lighthouse", "x": 6, "y": 3, "days": 70,
+      "prerequisite": [["open_roads"]],
+      "available": [ { "check": "zin_testland_court_open" } ],
+      "effects": [ { "add_spirit": "road_wardens" } ]
+    },
+    {
+      "key": "reveal", "name": "The Name Revealed", "desc": "What was hidden is named.", "icon": "scroll_sealed", "x": 4, "y": 3, "days": 35,
+      "prerequisite": [["court_path", "free_path"]],
+      "available": [ { "global_flag": "zin_afrit_revealed" } ],
+      "effects": [ { "event": "mask" }, { "add_spirit": "secret_keepers" } ]
+    },
+    {
+      "key": "diplomacy", "name": "Reach Abroad", "desc": "Friends, faction and the like.", "icon": "alliance_rings", "x": 3, "y": 4, "days": 70,
+      "prerequisite": [["builders"], ["wardens_of_the_road"]],
+      "effects": [
+        { "annex": "Weststead" }, { "puppet": "Sunreach" }, { "wargoal": { "target": "Weststead", "type": "annex_everything" } },
+        { "claims_on": "Weststead" }, { "cores_on": "Sunreach" }, { "guarantee": "Northmark" }, { "non_aggression": "Eastmark" },
+        { "opinion": { "target": "Northmark", "modifier": "envoys_welcomed", "both_ways": true } },
+        { "opinion": { "target": "FROM", "modifier": "zin_mech_goodwill" } },
+        { "faction": "testing_league" }, { "invite": "Northmark" }, { "join_faction_of": "Eastmark" }
+      ]
+    },
+    {
+      "key": "conditions", "name": "Every Condition", "desc": "A focus that reads every condition.", "icon": "eye_watchful", "x": 6, "y": 4, "days": 35,
+      "prerequisite": [["wardens_of_the_road"]],
+      "allow_branch": [ { "people": "men" }, { "country": "Testland" }, { "rule": { "name": "zin_rule_historical_path", "option": "HISTORICAL" } }, { "region": "Test Lands" }, { "ideology": "light" } ],
+      "available": [
+        { "ideology": "light" },
+        { "flag": "zin_testland_court" }, { "not_flag": "zin_testland_quiet" }, { "global_flag": "zin_test_peace" }, { "exists": "Northmark" },
+        { "at_war": false }, { "at_war_with": "ROOT" }, { "after": "1750.1.1" }, { "before": "1755.1.1" }, { "focus_done": "root" },
+        { "spirit": "road_wardens" }, { "people": "men" }, { "rule": { "name": "zin_rule_story_pace", "option": "STANDARD" } },
+        { "is_subject": false }, { "subject_of": "OVERLORD" }, { "country": "Testland" }, { "region": "Test Marches" },
+        { "stability_above": 0.5 }, { "variable": { "name": "zin_testland_counter", "above": 2 } },
+        { "variable": { "name": "zin_testland_counter", "below": 9 } }, { "variable": { "name": "zin_testland_level", "equals": 3 } },
+        { "check": "zin_mech_ready" }, { "not": [ { "flag": "zin_testland_quiet" } ] },
+        { "or": [ { "at_war": true }, { "and": [ { "is_subject": true }, { "check": "zin_testland_branch_ready" } ] } ] },
+        { "raw": "has_manpower = 1000" }
+      ],
+      "bypass": [ { "global_flag": "zin_test_court_fell" } ],
+      "effects": [
+        { "for_country": { "country": "Northmark", "effects": [ { "stability": 0.01 }, { "call": "zin_testmech_ring_bells" } ] } },
+        { "if": { "limit": [ { "flag": "zin_testland_court" } ], "then": [ { "political_power": 5 } ], "else": [ { "political_power": 10 } ] } },
+        { "raw": "add_command_power = 5" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+ "source": "Number codes of the keyword arguments of scripted effects (decision E1), copied from each owning spec's code table. A call from a focus tree writes the code into zin_arg_<name>. focus.test.mjs checks every code against its spec. A keyword with no code here fails the build; a value that is a country name or ROOT/FROM/OVERLORD passes as that country. An owner applies to the effects whose id starts with one of its prefixes (the longest prefix wins).",
+ "owners": [
+  {
+   "owner": "aenor_court_and_succession",
+   "spec": "docs/specs/04_mechanics/aenor_court_and_succession.md",
+   "prefixes": ["zin_aenor_"],
+   "args": {
+    "charter": { "old": 0, "golden": 1, "shield": 2, "free": 3, "wall": 4 },
+    "camp": { "court": 1, "faithful": 2, "dominions": 3, "host": 4 }
+   }
+  },
+  {
+   "owner": "afrit_hidden_council",
+   "spec": "docs/specs/04_mechanics/afrit_hidden_council.md",
+   "prefixes": ["zin_afrit_"],
+   "args": {
+    "seat": { "seals": 1, "censers": 2, "whispers": 3, "relics": 4 },
+    "artifact": { "ring": 1, "crown": 2, "bracelet": 3, "necklace": 4 },
+    "region": { "middle_lands": 1, "north_lands": 2, "cold_lands": 3, "west_lands": 4, "tritons_islands": 5, "dark_lands": 6, "magical_lands": 7, "zols_mistake": 8, "dead_lands": 9, "east_lands": 10, "islands_of_the_south": 11, "lands_of_the_sun": 12 }
+   }
+  },
+  {
+   "owner": "cold_lands",
+   "spec": "docs/specs/04_mechanics/cold_lands.md",
+   "prefixes": ["zin_cold_"],
+   "args": {
+    "winner": { "coldor": 1, "isengard": 2 }
+   }
+  },
+  {
+   "owner": "dark_lands",
+   "spec": "docs/specs/04_mechanics/dark_lands.md",
+   "prefixes": ["zin_dark_"],
+   "args": {
+    "bloc": { "volcano": 1, "iron": 2, "war": 3, "warrens": 4 },
+    "kind": { "march": 1, "hold": 2, "corsair": 3 },
+    "strait": { "north": 1, "south": 2 },
+    "target": { "bordering": -1, "holds": -2 }
+   }
+  },
+  {
+   "owner": "eastern_kings",
+   "spec": "docs/specs/04_mechanics/eastern_kings.md",
+   "prefixes": ["zin_east_"],
+   "args": {
+    "road": { "salt": 1, "gold": 2, "rift": 3, "lake": 4, "sand": 5 }
+   }
+  },
+  {
+   "owner": "lands_of_the_sun",
+   "spec": "docs/specs/04_mechanics/lands_of_the_sun.md",
+   "prefixes": ["zin_sun_"],
+   "args": {
+    "sight": { "north": 1, "south": 2, "seas": 3, "east": 4, "centre": 5, "any": 0 }
+   }
+  },
+  {
+   "owner": "volgan_southern_dominion",
+   "spec": "docs/specs/04_mechanics/volgan_southern_dominion.md",
+   "prefixes": ["zin_volgan_", "zin_dominion_"],
+   "args": {
+    "target": { "all": -1, "orcs": -2 },
+    "where": { "capital": 0 }
+   }
+  },
+  {
+   "owner": "western_crossing",
+   "spec": "docs/specs/04_mechanics/western_crossing.md",
+   "prefixes": ["zin_west_"],
+   "args": {
+    "how": { "peace": 0, "decided": 1, "escalated": 2 },
+    "route": { "divided": 1, "crossing": 2, "relief": 3, "hold": 4 },
+    "choice": { "claim": 1, "pledge": 2 },
+    "event": { "named": 1, "refused": 2, "released": 3, "fled": 4 }
+   }
+  },
+  {
+   "owner": "yeldenne_and_glo",
+   "spec": "docs/specs/04_mechanics/yeldenne_and_glo.md",
+   "prefixes": ["zin_yeldenne_", "zin_glo_"],
+   "args": {
+    "case": { "a": 1, "b1": 2, "b2": 3, "c": 4, "d": 5 },
+    "to": { "eindil": 1, "second_bearer": 2, "seal": 3 }
+   }
+  }
+ ]
+}

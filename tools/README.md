@@ -16,6 +16,10 @@ by hand, and do not point the builder at the repository.
 | `content/modules/vanilla_removal.mjs`, `content/modules/vanilla_bridges.mjs` | Vanilla removal stage 1 (`docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md`): the `replace_path` lines of `descriptor.mod` from `content/data/vanilla/dispositions.json`, the ZIN files of every replaced folder, the interim stubs (`zin_interim_*`), the overrides of `00_game_rules.txt`, `tutorial.txt` and `achievements.txt`, the engine hook files, and the bridges check C3 asks for (`# bridge: remove in stage N`). |
 | `content/checks/vanilla_refs.mjs`, `content/checks/error_budget.mjs` | Checks C1-C5 (dispositions, descriptors, loaded references, stubs, vanilla text) and C6-C7 (`node content/checks/error_budget.mjs <error.log> [text.log] [stage]` on the Linux run's logs). |
 | `content/vanilla.test.mjs` | Tests the checks and the stage-1 content, with negative tests for each check. |
+| `content/modules/focus_compiler.mjs` | The focus tree compiler (spec `docs/specs/05_focus_trees/00_format_and_compiler.md`): reads every `docs/design/focus/*.json`, validates it, expands `copy` blocks, runs the build checks and stages each tree's focus tree, spirits, events, scripted effects and triggers, opinion modifiers, AI strategies and localisation, plus the shared layout refresh `common/on_actions/zin_focus_layout.txt`. With no tree file it stages nothing. See "Focus trees" below. |
+| `content/lib/focus_schema.mjs`, `content/lib/focus_model.mjs` | The strict schema of a tree file, and the helpers the compiler and its checks share (compiled ids, event numbers, absolute positions, walkers, copy expansion). |
+| `content/checks/focus_checks.mjs` | The compiler's build checks and the registry of names other modules write (`content/data/focus_registry.json`, plus a scan of the staged files). |
+| `content/focus.test.mjs` | Tests the compiler on the synthetic trees under `content/fixtures/focus/` with exact expected files, determinism, and one negative test per check. `ZIN_UPDATE_FOCUS_FIXTURES=1` rewrites `fixtures/focus/expected/` after a reviewed change. |
 | `content/sync/zin_mod_descriptor.mjs` | Copies the `replace_path` lines of `descriptor.mod` into the launcher descriptor `mod/zin.mod` through the shared rewrite engine (`node --import tsx content/sync/zin_mod_descriptor.mjs [descriptor] [plan\|apply]`, from `tools/`). Run it after every apply that changes the descriptor. |
 | `content/data/vanilla/` | `dispositions.json` (one row per vanilla folder or file: action, stage, owner, reason), `baseline_errors.json` (B1-B13 patterns, counts and stage budgets), `error_allowlist.json` (empty). The builder publishes them under `docs/design/`. |
 | `content/apply.mts` | Compares the staged tree with the mod. `plan` reports the writes and deletes without changing anything. `apply` performs them in one TransactionManager transaction and updates `.zin-content.json` (and `.hoi4-agent-world.json` hashes for shared entry points). |
@@ -27,6 +31,24 @@ by hand, and do not point the builder at the repository.
 | `content/preview.mjs` | Builds a contact sheet PNG from staged DDS sprites, for review. |
 | `content/lib/paths.mjs` | Holds every path the tools use (see the next section). |
 | `content/data/` | Inputs: `countries.json` (countries from the map build), `labels.json` (reviewed drawing labels, used for names), `flags-cells.json` (the cell map the flag sheets were generated and sliced with). |
+
+## Focus trees
+
+`modules/focus_compiler.mjs` turns the tree files in `docs/design/focus/` (see the README there) into game files. `build.mjs` calls it last, so its checks see every name the other modules stage. A build with no tree file stages nothing and does not fail. Otherwise it stages, per tree `<id>`:
+
+| File | Content |
+| --- | --- |
+| `common/national_focus/zin_<id>.txt` | The focus tree, selected by the countries' original tags (`factor = 0`, `add = 10`, so it beats the interim tree) |
+| `common/ideas/zin_focus_<id>.txt` | The spirits, ids `zin_<id>_<key>` |
+| `events/zin_<id>.txt` | The events: namespace `zin_<id>` or `event_namespace`, number `event_base + n`, every one `is_triggered_only` with `timeout_days = 30` |
+| `common/scripted_effects/zin_<id>.txt`, `common/scripted_triggers/zin_<id>.txt` | The tree's declared effects and triggers, and the generated opinion helper `zin_<id>_opinion` |
+| `common/opinion_modifiers/zin_<id>.txt`, `common/ai_strategy/zin_<id>.txt` | Opinion modifiers (`zin_<id>_<key>`) and AI strategies (`zin_<id>_ai_<n>`) |
+| `localisation/english/zin_focus_<id>_l_english.yml` | All text, UTF-8 with BOM |
+| `common/on_actions/zin_focus_layout.txt` | Written once when at least one tree exists: `mark_focus_tree_layout_dirty` in the six on_actions of decision E4 |
+
+The build fails, listing every problem, when any check of the spec fails: schema (unknown fields are errors), duplicate keys and positions, prerequisites at or above their focus, loops, exclusives that name no focus or a prerequisite, days that are not a multiple of 7 or lie outside 7 to 140, icons and pictures missing from the catalog (`content/data/presentation-cells.json`), unresolved spirits, events, flags, scripted effects and triggers, key collisions (F3: a spirit key equal to a focus key, a tree or compiled id equal to an id a module writes, ids shared by two trees), keyword arguments without a code in `content/data/focus_arg_codes.json`, the E4 rule for `allow_branch`, text outside Windows-1252, superseded and retired names (read from the retired table of `docs/specs/04_mechanics/00_contract_additions.md`), Afrit and the Hidden Council named in text that is reachable before `zin_afrit_revealed` (unless the item declares `text_gate` and the compiler can prove the gate), a tier's focus count outside its range counted over the whole tree (F6), and more than ten `raw` blocks in a major tree. The check that every country of the roster has exactly one tree runs in full once every tree of `docs/specs/05_focus_trees/01_tiers_and_coverage.md` has a file; before that, only a country claimed by two trees fails. Unprovable picture gates and `raw` blocks are warnings on stderr.
+
+Names owned by other modules are found in the staged files of the modules that ran before the compiler. `content/data/focus_registry.json` lists the names of modules that do not exist yet, patterns of name families, and the lists of decision E4 (`refreshed_checks`, `refreshed_flags`) that decide which conditions may stand in `allow_branch`. Keyword codes of scripted-effect arguments (E1) live in `content/data/focus_arg_codes.json`; `focus.test.mjs` compares them with the specs they were copied from. Dates in `after` and `before` conditions are shifted per `zin_rule_story_pace` option with `paceDate()` of `lib/story_dates.mjs` when that library exists, and with the same formula otherwise.
 
 ## Paths
 

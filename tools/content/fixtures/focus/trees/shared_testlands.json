@@ -1,0 +1,31 @@
+{
+  "id": "shared_testlands",
+  "tier": "shared",
+  "countries": ["Eastmark", "Sunreach", "Weststead"],
+  "summary": "A synthetic shared tree with one copyable module.",
+  "spirits": {
+    "tower_spirit": { "name": "The Beacon Towers", "desc": "Towers watch every road of [ROOT.GetName].", "module": "E4", "modifier": { "army_defence_factor": 0.05 } }
+  },
+  "events": {
+    "echo": { "title": "The Beacons Answer", "desc": "A beacon answers from [ROOT.GetName].", "picture": "generic_peace", "options": [ { "name": "Light another" } ] }
+  },
+  "scripted_effects": {
+    "zin_shared_testlands_ring": { "module": "E4", "effects": [ { "stability": 0.01 } ] }
+  },
+  "scripted_triggers": {
+    "zin_shared_testlands_ready": { "module": "E4", "conditions": [ { "stability_above": 0.4 } ] }
+  },
+  "opinion_modifiers": {
+    "watch_thanks": { "module": "E4", "value": 15 }
+  },
+  "focuses": [
+    { "key": "shared_root", "name": "The Shared Crown", "desc": "Every shared tree begins here.", "icon": "crown_iron", "x": 0, "y": 0, "days": 35 },
+    { "key": "watch_root", "name": "Keep Watch", "desc": "Light the first beacon.", "icon": "beacon", "module": "E4", "x": 2, "y": 1, "days": 35, "prerequisite": [["shared_root"]] },
+    {
+      "key": "watch_tower", "name": "Raise the Tower", "desc": "A tower on every hill.", "icon": "lighthouse", "module": "E4", "x": 2, "y": 2, "days": 70, "prerequisite": [["watch_root"]],
+      "available": [ { "check": "zin_shared_testlands_ready" } ],
+      "effects": [ { "add_spirit": "tower_spirit" }, { "call": "zin_shared_testlands_ring" }, { "opinion": { "target": "FROM", "modifier": "watch_thanks" } } ]
+    },
+    { "key": "watch_banner", "name": "Raise the Banner", "desc": "A banner above the tower.", "icon": "banner_league", "module": "E4", "x": 3, "y": 2, "days": 35, "prerequisite": [["watch_root"]], "mutually_exclusive": ["watch_tower"] }
+  ]
+}

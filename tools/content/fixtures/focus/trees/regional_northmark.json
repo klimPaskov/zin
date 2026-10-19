@@ -1,0 +1,13 @@
+{
+  "id": "regional_northmark",
+  "tier": "regional",
+  "countries": ["Northmark"],
+  "summary": "A synthetic regional tree that copies a module of the shared tree.",
+  "spirits": {
+    "northern_guard": { "name": "The Northern Guard", "desc": "Spears on the northern road.", "icon": "spear_levy", "modifier": { "army_defence_factor": 0.05 } }
+  },
+  "focuses": [
+    { "key": "north_root", "name": "The Northern Crown", "desc": "The march begins here.", "icon": "crown_iron", "x": 10, "y": 0, "days": 35, "effects": [ { "add_spirit": "northern_guard" } ] }
+  ],
+  "copy": [ { "from": "shared_testlands", "module": "E4", "root_at": [10, 1], "root_prerequisite": [["north_root"]] } ]
+}
