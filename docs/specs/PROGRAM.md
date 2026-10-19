@@ -121,6 +121,21 @@ The world is complete, not just a map: everything that would exist in a real pla
 - **Budget limits become recorded fallbacks.** Where a route needs credits that are not available (Meshy), the run records the blocker and the fallback used (for example fewer unique 3D models, reusing a model across peoples with new textures) and keeps going.
 - **Out of scope:** other languages beyond English (tips and the Chronicle may be copied), multiplayer balance, Steam Workshop publishing.
 
+## Owner review criteria (second review, 19 October 2026)
+
+The owner reviewed the game and added these criteria. They apply to everything, not only the item raised.
+
+| Id | Criterion | Check |
+| --- | --- | --- |
+| F1 | No bureaucratic names: factions, institutions, laws and mechanics carry names a people would really use; no modern administrative words | the names audit () and the banned list |
+| F2 | Every country has a real three-letter tag from its name (NOR, AEN...), never a debug-looking tag; the total stays below 439 | the tag check and  |
+| F3 | No country is named after its leader (Zol's Mistake, not Zol; the Southern Dominion or the lore's own name, not Volgan) | the names audit |
+| F4 | Every flag has culture and purpose: no regional cliches (no palm trees across a region), distinct heraldry, family resemblance within a culture | the flag design check and the accepted flag sheets |
+| F5 | The geography reads as real fantasy geography: coherent seas and regions with no contradictory names, plausible rivers and ranges, the Nether below the Dead Lands | the geography model checker |
+| F6 | No debug or placeholder final text, no names with separators such as a slash | the text scan rules |
+| F7 | Lore quotes carry worldbuilding; none compares gods and men as trivia | the text audit |
+| F8 | Assets follow the game's gfx standard: focus, idea and similar icons are transparent shaped emblems, not opaque boxes | the gfx standard check |
+
 ## Progress
 
 | Area | State | Evidence and notes (updated 19 October 2026) |
