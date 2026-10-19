@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "note": "Vanilla files ZIN deliberately keeps loaded and points at (05_asset_manifest.md section 2.3, 03_full_asset_inventory.md check 3). A ZIN sprite or entity that names a vanilla file not matched here is reported as VANILLA_TEXTURE.",
+  "kept": [
+    { "match": "^gfx/FX/", "reason": "engine shaders (buttonstate and friends); never touched", "reach": "engine" },
+    { "match": "^gfx/interface/goals/shine_overlay\\.dds$", "reason": "the focus shine animation overlay is an engine-generic gradient", "reach": "engine" },
+    { "match": "^gfx/interface/focusview/", "reason": "focus view chrome stays vanilla until the reskin spec lands", "reach": "visible", "expires": "reskin spec G1" }
+  ]
+}

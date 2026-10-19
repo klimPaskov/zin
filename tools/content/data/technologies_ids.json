@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/03_gameplay/01_warfare.md sections 3, 4, 7, 8 and 14.3; 09_naval_air_doctrines.md section 2.3",
+  "note": "Ids that technologies and doctrines name but other modules write (warfare.mjs: sub-units, equipment, unit tags, ship modules; economy.mjs: buildings and specialisations; the rules module: game rules). The technology module checks every id it writes against these lists, and the integration note repeats them as dependencies. A variant id is <archetype>_<n> with 0 <= n <= 5.",
+  "subUnits": [
+    "zin_men_levy", "zin_men_infantry", "zin_men_archers", "zin_men_heavy_infantry", "zin_men_hill_companies", "zin_men_sea_soldiers", "zin_men_rangers",
+    "zin_men_cavalry", "zin_men_horse_archers", "zin_men_knights", "zin_men_camel_riders", "zin_men_temple_wardens",
+    "zin_elves_warden", "zin_elves_archers", "zin_elves_riders", "zin_elves_rangers", "zin_sun_elves_guard", "zin_sun_elves_bowmen",
+    "zin_orcs_warrior", "zin_orcs_goblins", "zin_orcs_raiders", "zin_ogres_brutes", "zin_abyss_folk",
+    "zin_trolls_brute", "zin_giants_host", "zin_giants_hurlers", "zin_ents_grove", "zin_yeti_band",
+    "zin_demons_netherborn", "zin_demons_shachihata", "zin_demons_bound",
+    "zin_the_dead_revenant", "zin_dead_grave_riders", "zin_dead_necromancers", "zin_zol_deathless", "zin_zol_deathless_crews",
+    "zin_siege_catapult", "zin_siege_trebuchet", "zin_support_catapults", "zin_support_ballistae", "zin_support_scorpions",
+    "zin_support_scouts", "zin_support_sappers", "zin_support_healers", "zin_support_heralds", "zin_support_quartermasters", "zin_support_provosts", "zin_support_armourers", "zin_support_wardens", "zin_elves_wardsingers",
+    "zin_glo_bearer", "zin_volgan_presence", "zin_great_spirit", "zin_zol_manifestation",
+    "zin_ship_galley", "zin_ship_warship", "zin_ship_great_warship", "zin_ship_raider",
+    "zin_air_griffin_riders", "zin_air_dragon_flight"
+  ],
+  "archetypes": [
+    "zin_arms_equipment", "zin_bows_equipment", "zin_armour_equipment", "zin_mounts_equipment", "zin_elven_arms_equipment", "zin_camp_equipment", "zin_ward_equipment",
+    "zin_catapult_equipment", "zin_trebuchet_equipment", "zin_ballista_equipment", "zin_scorpion_equipment",
+    "zin_troll_gear_equipment", "zin_giant_gear_equipment", "zin_ent_grove_equipment", "zin_yeti_gear_equipment", "zin_ogre_gear_equipment",
+    "zin_grave_arms_equipment", "zin_nether_arms_equipment", "zin_deathless_equipment", "zin_griffin_equipment", "zin_dragon_equipment",
+    "zin_hull_galley", "zin_hull_warship", "zin_hull_great_warship", "zin_hull_raider",
+    "convoy", "train_equipment", "motorized_equipment"
+  ],
+  "modules": [
+    "zin_mod_oars", "zin_mod_sails", "zin_mod_oars_and_sail", "zin_mod_elven_sails", "zin_mod_black_sails",
+    "zin_mod_ram", "zin_mod_ballista_battery", "zin_mod_catapult_deck", "zin_mod_fire_pots", "zin_mod_archers_deck",
+    "zin_mod_planking", "zin_mod_bronze_sheathing", "zin_mod_warded_hull",
+    "zin_mod_boarding_party", "zin_mod_lookouts", "zin_mod_rowers_benches"
+  ],
+  "zinCategories": ["category_zin_archers", "category_zin_dead", "category_zin_great_beings", "category_zin_monsters", "category_zin_siege"],
+  "equipmentTypes": ["screen_ship", "capital_ship", "submarine"],
+  "buildings": ["radar_station", "anti_air_building", "stronghold_network", "air_base", "rocket_site", "mega_gun_emplacement", "nuclear_reactor", "nuclear_reactor_heavy_water", "commercial_nuclear_reactor", "fuel_silo", "synthetic_refinery"],
+  "specializations": ["specialization_nuclear", "specialization_naval", "specialization_air"],
+  "gameRules": { "zin_rule_skies": ["dragons_only", "beasts", "none"] },
+  "globalFlags": ["zin_zol_rising", "zin_afrit_revealed"],
+  "countryFlags": ["zin_war_dragon_pact"],
+  "variables": ["zin_dragon_flights", "global.zin_gathering_dark"],
+  "peopleFlags": ["men", "elves", "sun_elves", "orcs", "trolls", "giants", "ents", "yeti", "demons", "the_dead"],
+  "regionFlags": ["east_lands", "tritons_islands", "middle_lands"]
+}

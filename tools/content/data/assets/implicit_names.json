@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "note": "Names the engine builds from script values (05_asset_manifest.md section 3.1) and the fallback sprites it substitutes silently (section 3.2). The check derives each exact name and requires it to resolve by itself.",
+  "idea": { "dirs": ["common/ideas/"], "key": "picture", "prefix": "GFX_idea_" },
+  "focus": { "dirs": ["common/national_focus/"], "keys": ["icon"], "shine_suffix": "_shine" },
+  "decision": { "dirs": ["common/decisions/"], "excludeDirs": ["common/decisions/categories/"], "key": "icon", "prefix": "GFX_decision_" },
+  "fallback_sprites": [
+    "GFX_idea_unknown",
+    "GFX_goal_unknown",
+    "GFX_leader_unknown",
+    "GFX_technology_medium",
+    "GFX_decision_generic_decision",
+    "GFX_event_unknown",
+    "GFX_unknown"
+  ],
+  "fallback_patterns": ["_unknown$"],
+  "catalog_fallback_keys": ["generic", "generic_court"],
+  "sprite_value_keys_note": "Any value spelled GFX_<name> in a shipped script, window or portrait file is a sprite use; the keys below only decide how the use is described in findings.",
+  "text_keys": ["text", "buttonText", "pdx_tooltip", "pdx_tooltip_delayed", "tooltip", "tooltipText", "name_key"],
+  "font_keys": ["font", "buttonFont", "bitmapfont", "fontname"],
+  "sound_keys": ["clicksound", "oversound", "soundeffect", "sound_effect", "scoped_sound_effect", "play_song"],
+  "sprite_keys": ["spriteType", "quadTextureSprite", "texture", "frameType", "progressbartype", "iconSprite"]
+}

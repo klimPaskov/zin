@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "note": "Shipped files that the engine loads by path or name with no script reference (05_asset_manifest.md check AC11). Each row says why. A file that replaces a vanilla path is never an orphan either (the manifest sets 'replaces'). Intentionally unreferenced spares go in 'spares' with a reason and an owner; an empty list means none.",
+  "bound": [
+    { "match": "^gfx/flags/(medium/|small/)?[A-Za-z0-9]{3}\\.tga$", "reason": "flags are bound by country tag (checked by AC9)" },
+    { "match": "^gfx/loadingscreens/load_[0-9]+\\.dds$", "reason": "the engine picks loading screens by number" },
+    { "match": "^gfx/cursors/", "reason": "cursors are bound by the engine's fixed cursor names (AC8)" },
+    { "match": "^gfx/fonts/", "reason": "font pages are bound by bitmapfont entries" },
+    { "match": "^map/.+\\.(bmp|dds|png|tga)$", "reason": "map textures are named by default.map or the engine and are written by the map pipeline" },
+    { "match": "^sound/", "reason": "sound files are bound by sound assets (AC6)" },
+    { "match": "^music/", "reason": "music files are bound by music assets (AC6)" }
+  ],
+  "spares": []
+}

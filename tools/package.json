@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node content/build.mjs",
-    "test": "node --test content/build.test.mjs content/vanilla.test.mjs content/presentation.test.mjs content/calendar.test.mjs content/focus.test.mjs"
+    "test": "node --test content/build.test.mjs content/vanilla.test.mjs content/presentation.test.mjs content/calendar.test.mjs content/focus.test.mjs content/assets.test.mjs content/names.test.mjs content/technologies.test.mjs content/economy.test.mjs content/diplomacy.test.mjs"
   },
   "dependencies": {
     "sharp": "0.35.5",

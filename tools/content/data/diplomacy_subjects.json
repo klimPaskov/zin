@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+  "note": "Builder data for subjects (autonomy states), occupation laws, resistance modifiers, research sharing, the interim balance of power and the three power-balance modifier files. Script is stored as arrays of lines (the builder indents by braces).",
+  "autonomy": [
+    {
+      "id": "autonomy_puppet",
+      "name": "Vassal",
+      "desc": "A realm that lost a war to its liege and now serves it. Its levies and coin flow to the liege, and it may not make war alone.",
+      "default": true,
+      "min_freedom_level": 0.4,
+      "manpower_influence": 0.9,
+      "rule": {
+        "can_not_declare_war": true,
+        "can_decline_call_to_war": false,
+        "can_be_spymaster": false,
+        "contributes_operatives": false,
+        "can_create_collaboration_government": false
+      },
+      "modifier": {
+        "autonomy_manpower_share": 0.9,
+        "can_master_build_for_us": 1,
+        "extra_trade_to_overlord_factor": 1,
+        "overlord_trade_cost_factor": -0.9,
+        "peace_score_ratio_transferred_to_overlord": 0.1,
+        "lend_lease_tension_with_overlord": -0.4,
+        "research_sharing_per_country_bonus_factor": -0.5,
+        "faction_influence_contribution_factor": -0.25
+      },
+      "garrison": "always = no",
+      "peaceWeight": [
+        "base = 0",
+        "modifier = {",
+        "add = 10",
+        "FROM = {",
+        "OR = {",
+        "has_wargoal_against = { target = ROOT type = puppet_wargoal_focus }",
+        "has_rule = can_puppet",
+        "}",
+        "}",
+        "}"
+      ]
+    },
+    {
+      "id": "zin_autonomy_chartered_dominion",
+      "name": "Chartered Dominion",
+      "desc": "A dominion bound to the crown by the Charters of Parim. It governs itself, trades with its liege first and answers the common muster.",
+      "min_freedom_level": 0.5,
+      "manpower_influence": 0.3,
+      "icon": "autonomy_dominion_icon",
+      "rule": {
+        "can_not_declare_war": true,
+        "can_decline_call_to_war": false,
+        "can_be_spymaster": true,
+        "contributes_operatives": true,
+        "can_create_collaboration_government": false
+      },
+      "modifier": {
+        "autonomy_manpower_share": 0.1,
+        "extra_trade_to_overlord_factor": 0.25,
+        "overlord_trade_cost_factor": -0.25,
+        "peace_score_ratio_transferred_to_overlord": 0.05,
+        "lend_lease_tension_with_overlord": -0.1,
+        "faction_influence_contribution_factor": -0.1
+      },
+      "garrison": "always = no"
+    },
+    {
+      "id": "zin_autonomy_sworn_realm",
+      "name": "Sworn Realm",
+      "desc": "A realm that swore its oath to Volgan. Its host, its levies and its coin serve the Southern Dominion.",
+      "min_freedom_level": 0.1,
+      "manpower_influence": 0.8,
+      "icon": "autonomy_integrated_puppet_icon",
+      "rule": {
+        "can_not_declare_war": true,
+        "can_decline_call_to_war": false,
+        "can_be_spymaster": false,
+        "contributes_operatives": false,
+        "can_create_collaboration_government": false
+      },
+      "modifier": {
+        "autonomy_manpower_share": 0.3,
+        "extra_trade_to_overlord_factor": 0.4,
+        "overlord_trade_cost_factor": -0.4,
+        "peace_score_ratio_transferred_to_overlord": 0.1,
+        "lend_lease_tension_with_overlord": -0.3,
+        "faction_influence_contribution_factor": -0.5
+      },
+      "garrison": "always = yes"
+    },
+    {
+      "id": "zin_autonomy_eastern_client",
+      "name": "Eastern Client",
+      "desc": "A court that knelt to the King of the East. It keeps its throne and its freedom to fight, and pays its liege in trade.",
+      "min_freedom_level": 0.45,
+      "manpower_influence": 0.4,
+      "icon": "autonomy_puppet_icon",
+      "rule": {
+        "can_not_declare_war": false,
+        "can_decline_call_to_war": true,
+        "can_be_spymaster": false,
+        "contributes_operatives": false,
+        "can_create_collaboration_government": false
+      },
+      "modifier": {
+        "extra_trade_to_overlord_factor": 0.15,
+        "lend_lease_tension_with_overlord": -0.2,
+        "faction_influence_contribution_factor": -0.15
+      },
+      "garrison": "always = no"
+    },
+    {
+      "id": "zin_autonomy_tributary_hold",
+      "name": "Tributary Hold",
+      "desc": "An orc hold that bent the knee to Goldoroth. It sends tribute and levies and keeps its own fires.",
+      "min_freedom_level": 0.35,
+      "manpower_influence": 0.5,
+      "icon": "autonomy_colony_icon",
+      "rule": {
+        "can_not_declare_war": true,
+        "can_decline_call_to_war": false,
+        "can_be_spymaster": false,
+        "contributes_operatives": false,
+        "can_create_collaboration_government": false
+      },
+      "modifier": {
+        "autonomy_manpower_share": 0.2,
+        "extra_trade_to_overlord_factor": 0.2,
+        "overlord_trade_cost_factor": -0.2,
+        "peace_score_ratio_transferred_to_overlord": 0.05,
+        "lend_lease_tension_with_overlord": -0.2,
+        "faction_influence_contribution_factor": -0.25
+      },
+      "garrison": "always = no"
+    }
+  ],
+  "occupation": [
+    {
+      "id": "zin_occupation_light_hand",
+      "name": "The Light Hand",
+      "icon": 2,
+      "sound": "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM",
+      "default": true,
+      "gui_order": 1,
+      "desc": "Local lords keep their courts, and the people learn that the new banner is no worse than the old. Obedience grows quickly, but the conquered are watched only lightly.",
+      "state_modifier": {
+        "compliance_gain": 0.05,
+        "resistance_target": -0.1,
+        "required_garrison_factor": -0.25,
+        "resistance_damage_to_garrison": -0.25
+      },
+      "ai": [
+        "base = 120",
+        "modifier = {",
+        "check_variable = { resistance_target_without_law < 0.1 }",
+        "add = 200",
+        "}",
+        "modifier = {",
+        "FROM = { has_government = democratic }",
+        "add = 150",
+        "}"
+      ]
+    },
+    {
+      "id": "harsh_quotas_occupation",
+      "name": "Garrison and Toll",
+      "icon": 9,
+      "sound": "Martial_Law_Interface_Harsh_Quotas_Occupation",
+      "gui_order": 2,
+      "desc": "A garrison holds the roads and the tollgates. The conquered pay in grain and iron, and no more is asked of them.",
+      "state_modifier": {
+        "compliance_gain": 0,
+        "resistance_target": -0.2,
+        "local_resources": 0.1,
+        "local_factories": 0.05
+      },
+      "ai": [
+        "base = 60",
+        "modifier = {",
+        "check_variable = { resistance_target_without_law > 0.15 }",
+        "add = 200",
+        "}"
+      ]
+    },
+    {
+      "id": "zin_occupation_iron_hand",
+      "name": "The Iron Hand",
+      "icon": 7,
+      "sound": "Martial_Law_Interface_Martial_Law_Occupation_Default",
+      "gui_order": 3,
+      "desc": "Captains rule the conquered land by the sword. Revolt is crushed before it grows, and the people learn only fear.",
+      "state_modifier": {
+        "compliance_gain": -0.05,
+        "resistance_target": -0.35,
+        "local_resources": 0.1,
+        "local_manpower": 0.08
+      },
+      "ai": [
+        "base = 0",
+        "modifier = {",
+        "check_variable = { resistance_target_without_law > 0.34 }",
+        "add = 400",
+        "}",
+        "modifier = {",
+        "check_variable = { resistance_target_without_law > 0.24 }",
+        "FROM = { has_government = fascism }",
+        "add = 200",
+        "}"
+      ]
+    },
+    {
+      "id": "forced_labor_occupation",
+      "name": "Tithe and Levy",
+      "icon": 8,
+      "sound": "Martial_Law_Interface_Forced_Labor_Occupation",
+      "gui_order": 4,
+      "desc": "The conquered owe a tithe of every harvest and a levy of every village. The land gives much and loves its masters little.",
+      "state_modifier": {
+        "compliance_gain": -0.03,
+        "resistance_target": -0.15,
+        "local_manpower": 0.15,
+        "local_resources": 0.2
+      },
+      "ai": [
+        "base = 0",
+        "modifier = {",
+        "check_variable = { resistance_target_without_law > 0.1 }",
+        "FROM = { has_government = fascism }",
+        "add = 250",
+        "}"
+      ]
+    },
+    {
+      "id": "zin_occupation_no_garrison",
+      "name": "No Garrison",
+      "icon": 1,
+      "sound": "Martial_Law_Interface_No_Garrison",
+      "gui_order": 5,
+      "desc": "No host is left to watch the land. Nothing is taken from it, and nothing is held.",
+      "state_modifier": {
+        "resistance_target": 0.4,
+        "no_compliance_gain": 1,
+        "required_garrison_factor": -1
+      },
+      "suppressed_state_modifier": {
+        "required_garrison_factor": -1,
+        "resistance_target": 0.4
+      },
+      "ai": [
+        "base = 0",
+        "modifier = {",
+        "FROM = { surrender_progress > 0.15 }",
+        "add = 100",
+        "}",
+        "modifier = {",
+        "FROM = { surrender_progress > 0.4 }",
+        "add = 500",
+        "}",
+        "modifier = {",
+        "check_variable = { uncapped_resistance_target > -0.4 }",
+        "add = -60",
+        "}"
+      ]
+    },
+    {
+      "id": "zin_occupation_missing_garrison",
+      "name": "Garrison Missing",
+      "hidden": true,
+      "missing_garrison_law": true,
+      "icon": 1,
+      "sound": "Martial_Law_Interface_No_Garrison",
+      "desc": "Where the garrison is too thin, the law's strength fades and the land slips away from its holders.",
+      "state_modifier": {
+        "resistance_target": 0.1,
+        "compliance_gain": -0.045
+      },
+      "ai": [
+        "base = 0"
+      ]
+    }
+  ],
+  "resistance": [
+    {
+      "id": "resistance_25",
+      "type": "state_resistance_modifier",
+      "icon": 1,
+      "threshold": 25,
+      "name": "Hidden Bands",
+      "state_modifier": {
+        "resistance_garrison_penetration_chance": 0.5
+      }
+    },
+    {
+      "id": "resistance_50",
+      "type": "state_resistance_modifier",
+      "icon": 2,
+      "threshold": 50,
+      "name": "Open Defiance",
+      "state_modifier": {
+        "resistance_damage_to_garrison": 1
+      }
+    },
+    {
+      "id": "resistance_75",
+      "type": "state_resistance_modifier",
+      "icon": 3,
+      "threshold": 75,
+      "name": "Rising of the Folk",
+      "state_modifier": {
+        "army_speed_factor_for_controller": -0.5,
+        "local_supplies_for_controller": -0.5,
+        "attrition_for_controller": 0.3,
+        "disable_strategic_redeployment_for_controller": 1
+      }
+    },
+    {
+      "id": "resistance_90",
+      "type": "core_resistance_modifier",
+      "icon": 4,
+      "threshold": 90,
+      "name": "Banners Raised",
+      "alert": true,
+      "state_modifier": {
+        "local_factories": -0.03
+      },
+      "uprising": true
+    }
+  ],
+  "sharing": {
+    "bonus": 0.1,
+    "picture": "GFX_technology_sharing_default"
+  },
+  "powerBalance": [
+    {
+      "file": "AAT_power_balance_modifiers.txt",
+      "id": "zin_interim_power_balance_1",
+      "modifier": {
+        "power_balance_weekly": 0.01
+      }
+    },
+    {
+      "file": "BBA_power_balance_modifiers.txt",
+      "id": "zin_interim_power_balance_2",
+      "modifier": {
+        "power_balance_weekly": 0.01
+      }
+    },
+    {
+      "file": "MUN_power_balance_modifiers.txt",
+      "id": "zin_interim_power_balance_3",
+      "modifier": {
+        "power_balance_weekly": 0.01
+      }
+    }
+  ],
+  "bop": {
+    "id": "zin_interim_bop",
+    "left": "zin_interim_bop_left",
+    "right": "zin_interim_bop_right",
+    "leftIcon": "GFX_idea_zin_crown_gold",
+    "rightIcon": "GFX_idea_zin_crown_iron"
+  }
+}

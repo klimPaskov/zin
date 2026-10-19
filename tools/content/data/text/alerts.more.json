@@ -1,0 +1,62 @@
+{
+  "family": "alerts",
+  "note": "Part of the alerts family: the remaining alerts (research seats, decisions, licences, observers, raids, the harbour admiralty). Same rules as alerts.json.",
+  "lit": {
+    "alert_no_research_instant": "§YA Seat for {research} Stands Empty§!",
+    "alert_no_research_delayed": "$COUNT|Y$ seat(s) for {research} stand empty.",
+    "alert_no_goal_instant": "§HNo Goal Set§!",
+    "alert_no_goal_delayed": "§TYou may choose a goal.§!",
+    "alert_decision_new_instant": "§HDecisions Await§!",
+    "alert_decision_new_delayed": "These decisions are ready to be taken:\n$LIST$§GRight-click to set aside§!",
+    "alert_decision_timeout_instant": "§HEvents or Decisions Running Out§!",
+    "alert_decision_timeout_delayed": "These events or decisions are about to lapse:\n$LIST$§GRight-click to set aside§!",
+    "alert_bop_timeout_delayed": "These Balance of Power events or decisions are about to lapse:\n$LIST$§GRight-click to set aside§!",
+    "alert_non_payed_license_instant": "§HUnpaid {license_production:p}§!",
+    "alert_non_payed_license_delayed": "These realms are not lending {industrial_complex:p:lc} for craft under a {license_production:lc}:\n$LIST$§GRight-click to set aside§!",
+    "alert_industrial_org_sizeup_instant": "§HUnlock traits in {military_industrial_organization:p}§!",
+    "alert_industrial_org_sizeup_delayed": "You can unlock traits for these {military_industrial_organization:p}:\n$LIST$§GRight-click to set aside§!",
+    "alert_outdated_equipment_instant": "§HOld gear in the works§!",
+    "alert_outdated_equipment_delayed": "We are making the following outdated gear:\n$LIST|H$",
+    "alert_players_lagging_behind_title": "§HPlayers Falling Behind§!",
+    "alert_players_lagging_behind_desc": "\nThe host of the game may slow the pace automatically until these players catch up:",
+    "alert_is_observer_instant": "You are watching the game through the eyes of $COUNTRY$",
+    "alert_is_observer_delayed_enter": "Click to enter the mode for choosing a realm",
+    "alert_is_observer_delayed_exit": "Click to leave the mode for choosing a realm",
+    "alert_is_observer_delayed_desc": ", Choose a realm to watch by Ctrl-clicking, or by clicking in the mode for choosing a realm, on the map or on any flag",
+    "alert_can_play_observed_instant": "You can take up the rule of $COUNTRY$; click here to do so.",
+    "alert_port_strike_results_instant": "§HUnread Results of Harbour Raids§!",
+    "alert_port_strike_results_delayed_list": "Harbour raids with unread results in:\n$LIST$",
+    "alert_port_strike_results_delayed_click": "§GClick to centre the map on the next result.\nClick the £mapicon_port_strike_result_text icon in the region to read the report.\n§!",
+    "alert_is_at_war_instant": "War is upon us!",
+    "alert_is_at_war_delayed_list": "We are at war with: $COUNTRY_LIST$",
+    "alert_is_at_war_delayed_majors": "We are at war with $NUM_MAJORS|Y$ great powers: $COUNTRY_LIST$",
+    "alert_raid_available_instant": "§YRaids open§!",
+    "alert_raid_available_delayed_header": "These raids can be planned:",
+    "alert_raid_launchable_instant": "§YRaids ready to set out§!",
+    "alert_raid_launchable_delayed_header": "These raids are ready to set out:",
+    "alert_raid_detected_instant": "§YRaids Coming, and Seen§!",
+    "alert_raid_detected_delayed_header": "The plans for these raids were caught:",
+    "alert_raid_completed_instant": "§YRaids Done§!",
+    "alert_raid_completed_delayed_entry": "We have carried out $RAID_TYPE_NAME|H$ on $TARGET_NAME$. The raid ended in $OUTCOME$.",
+    "alert_got_raided_instant": "§YEnemy Raids Carried Out§!",
+    "alert_got_raided_delayed_entry": "$TARGET_NAME$ was struck by $RAID_TYPE_NAME|H$. The raid ended in $OUTCOME$.",
+    "alert_headquarter_admiral_instant": "A {admiral:lc} can be named to the {naval_headquarters}:",
+    "alert_headquarter_admiral_delayed": "Name a {admiral:lc} to make the §Ytask forces§! working within reach of the {naval_headquarters} stronger",
+    "alert_faction_can_select_goal_instant": "§HYou can choose a new goal for the {faction:lc}§!",
+    "alert_faction_can_select_goal_delayed_header": "Other members of the {faction:lc} might choose a goal if we do not act"
+  },
+  "neutral": [
+    {
+      "keys": [
+        "victory_color",
+        "defeat_color",
+        "ALERT_PRIORITY_NORMAL",
+        "ALERT_PRIORITY_HIGH",
+        "alert_decision_new_delayed_more",
+        "alert_exiled_unit",
+        "alert_players_lagging_behind_desc_entry"
+      ],
+      "reason": "A colour-coded word or count with no modern word; the installed text is already plain"
+    }
+  ]
+}

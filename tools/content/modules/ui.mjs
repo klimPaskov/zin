@@ -1,13 +1,12 @@
 // The Realm panel: a themed window opened from a button under the top bar. It shows the country's people,
 // alignment and stance now, and is the frame later mechanic panels (Aenor's court, Afrit's footholds, Volgan's
 // dominion) are built in. All art is image-generated (modules/art.mjs); code only arranges it.
-import { Canvas, dds } from '../lib/raster.mjs';
+import { dds } from '../lib/raster.mjs';
+import { strip } from '../lib/fit.mjs';   // strip assembly (copies generated pixels side by side) lives in lib/fit.mjs
 import { PEOPLES } from './peoples.mjs';
 import { IDEOLOGIES } from './ideologies.mjs';
 
 export const PEOPLE_ORDER = Object.keys(PEOPLES);
-// Strip assembly only copies generated pixels side by side (sprite frames); it paints nothing.
-function strip(canvases) { const w = canvases[0].w, h = canvases[0].h, s = new Canvas(w * canvases.length, h); canvases.forEach((cv, i) => { for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { const a = (y * w + x) * 4, b = (y * s.w + i * w + x) * 4; for (let k = 0; k < 4; k++) s.px[b + k] = cv.px[a + k]; } }); return s; }
 
 const sprite = (name, file, extra = '') => `\tspriteType = {\n\t\tname = "${name}"\n\t\ttexturefile = "${file}"${extra}\n\t}`;
 

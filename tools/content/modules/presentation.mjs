@@ -16,6 +16,9 @@ import sharp from 'sharp';
 import { ART, GAME, rawFile, provenanceFile } from '../lib/paths.mjs';
 import { findRegionsAdaptive } from '../lib/sheets.mjs';
 import { fromRaw, dds } from '../lib/raster.mjs';
+// The mattes and fits live in lib/fit.mjs (spec 02); they are re-exported so existing imports keep working.
+import { boxDownscale, keyMatte, alphaBox, stripWindow, stripRgba, medallionMask } from '../lib/fit.mjs';
+export { boxDownscale, keyMatte };
 
 export const CELLS_COPY = fileURLToPath(new URL('../data/presentation-cells.json', import.meta.url));
 export const TIPS_FILE = fileURLToPath(new URL('../data/loading_tips.json', import.meta.url));
@@ -120,80 +123,6 @@ const RGBA = img => img.ensureAlpha().raw().toBuffer({ resolveWithObject: true }
 async function rgba(img, w, h) { const { data, info } = await RGBA(img); if (info.width !== w || info.height !== h || info.channels !== 4) throw new Error(`raster ${info.width}x${info.height}x${info.channels}, expected ${w}x${h}x4`); return data; }
 const ddsOf = (buf, w, h) => dds(fromRaw(buf, w, h));
 const rawImage = (buf, w, h) => sharp(buf, { raw: { width: w, height: h, channels: 4 } });
-// Exact integer box downscale (A1 thumbnails): each output pixel is the rounded mean of an f x f block.
-export function boxDownscale(buf, w, h, f) {
-  const ow = w / f, oh = h / f, out = Buffer.alloc(ow * oh * 4), n = f * f;
-  if (!Number.isInteger(ow) || !Number.isInteger(oh)) throw new Error(`box downscale ${w}x${h} by ${f}`);
-  for (let y = 0; y < oh; y++) for (let x = 0; x < ow; x++) for (let c = 0; c < 4; c++) {
-    let s = 0; for (let yy = y * f; yy < y * f + f; yy++) for (let xx = x * f; xx < x * f + f; xx++) s += buf[(yy * w + xx) * 4 + c];
-    out[(y * ow + x) * 4 + c] = Math.floor((s + n / 2) / n);
-  }
-  return out;
-}
-// Colour-key matte (art pipeline §4 step 4): alpha from the distance to the key, transparent below lo and opaque
-// above hi, linear between; edge pixels are un-mixed from the key so no magenta spill remains.
-export function keyMatte(rgb, w, h, key = [255, 0, 255], lo = 40, hi = 120) {
-  const out = Buffer.alloc(w * h * 4);
-  for (let i = 0; i < w * h; i++) {
-    const r = rgb[i * 3], g = rgb[i * 3 + 1], b = rgb[i * 3 + 2], d = Math.hypot(r - key[0], g - key[1], b - key[2]);
-    const a = d <= lo ? 0 : d >= hi ? 1 : (d - lo) / (hi - lo);
-    const o = i * 4;
-    if (a > 0) for (const [k, v] of [[0, r], [1, g], [2, b]]) out[o + k] = Math.max(0, Math.min(255, Math.round((v - (1 - a) * key[k]) / a)));
-    out[o + 3] = Math.round(a * 255);
-  }
-  return out;
-}
-const alphaBox = (buf, w, h) => { let x0 = w, y0 = h, x1 = -1, y1 = -1; for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) if (buf[(y * w + x) * 4 + 3]) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; } return { left: x0, top: y0, width: x1 - x0 + 1, height: y1 - y0 + 1 }; };
-
-// Interface strips on black (A2): the band's rows and columns are where the mean brightness rises above the black
-// ground; alpha follows each column's brightness, so the ends that darken to black fade out as vanilla's do.
-async function stripProfile(file) {
-  const { data, info } = await sharp(file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
-  const W = info.width, H = info.height, v = (x, y) => { const i = (y * W + x) * 3; return Math.max(data[i], data[i + 1], data[i + 2]); };
-  const xa = Math.floor(W * 0.2), xb = Math.floor(W * 0.8), rows = [];
-  for (let y = 0; y < H; y++) { let s = 0; for (let x = xa; x < xb; x++) s += v(x, y); rows.push(s / (xb - xa)); }
-  const edge = Math.max(1, Math.floor(H * 0.05)), bg = [...rows.slice(0, edge), ...rows.slice(-edge)].sort((a, b) => a - b)[edge];
-  const on = rows.map(m => m > bg + 4), y0 = on.indexOf(true), y1 = on.lastIndexOf(true);
-  if (y0 < 0 || y1 - y0 < 8) throw new Error(`${file}: no strip found`);
-  return { data, W, H, y0, y1, v };
-}
-function stripColumns({ W, v }, y0, y1) {
-  const cols = []; for (let x = 0; x < W; x++) { let s = 0; for (let y = y0; y <= y1; y++) s += v(x, y); cols.push(s / (y1 - y0 + 1)); }
-  return cols;
-}
-async function stripRgba(file, win, w, h) {
-  const p = await stripProfile(file), cols = stripColumns(p, win.y0, win.y1);
-  const mid = cols.slice(Math.floor(p.W * 0.25), Math.floor(p.W * 0.75)).sort((a, b) => a - b), ref = mid[Math.floor(mid.length / 2)];
-  const cw = win.x1 - win.x0 + 1, ch = win.y1 - win.y0 + 1, buf = Buffer.alloc(cw * ch * 4);
-  for (let y = 0; y < ch; y++) for (let x = 0; x < cw; x++) {
-    const i = ((win.y0 + y) * p.W + win.x0 + x) * 3, o = (y * cw + x) * 4;
-    buf[o] = p.data[i]; buf[o + 1] = p.data[i + 1]; buf[o + 2] = p.data[i + 2];
-    buf[o + 3] = Math.round(255 * Math.max(0, Math.min(1, cols[win.x0 + x] / (0.5 * ref))));
-  }
-  return rgba(rawImage(buf, cw, ch).resize(w, h, { fit: 'fill', kernel: 'lanczos3' }), w, h);
-}
-async function stripWindow(file) {
-  const p = await stripProfile(file), cols = stripColumns(p, p.y0, p.y1);
-  const mid = cols.slice(Math.floor(p.W * 0.25), Math.floor(p.W * 0.75)).sort((a, b) => a - b), ref = mid[Math.floor(mid.length / 2)];
-  const on = cols.map(m => m > ref * 0.04);
-  return { x0: on.indexOf(true), x1: on.lastIndexOf(true), y0: p.y0, y1: p.y1 };
-}
-
-// Focus icons (A3): the medallion's outline is the alpha. Inside the found region, every row and every column is
-// filled between its first and last pixel brighter than the black ground, so the dark enamel field stays opaque.
-function medallionMask(rgb, W, r, threshold = 12) {
-  const pad = 6, x0 = Math.max(0, r.x0 - pad), y0 = Math.max(0, r.y0 - pad), x1 = Math.min(W, r.x1 + pad), w = x1 - x0, h = r.y1 + pad - y0;
-  const fg = (x, y) => { const i = ((y0 + y) * W + x0 + x) * 3; return Math.max(rgb[i], rgb[i + 1], rgb[i + 2]) > threshold; };
-  const rowSpan = [], colSpan = [];
-  for (let y = 0; y < h; y++) { let a = -1, b = -2; for (let x = 0; x < w; x++) if (fg(x, y)) { if (a < 0) a = x; b = x; } rowSpan.push([a, b]); }
-  for (let x = 0; x < w; x++) { let a = -1, b = -2; for (let y = 0; y < h; y++) if (fg(x, y)) { if (a < 0) a = y; b = y; } colSpan.push([a, b]); }
-  const buf = Buffer.alloc(w * h * 4);
-  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
-    const i = ((y0 + y) * W + x0 + x) * 3, o = (y * w + x) * 4, inside = x >= rowSpan[y][0] && x <= rowSpan[y][1] && y >= colSpan[x][0] && y <= colSpan[x][1];
-    buf[o] = rgb[i]; buf[o + 1] = rgb[i + 1]; buf[o + 2] = rgb[i + 2]; buf[o + 3] = inside ? 255 : 0;
-  }
-  return { buf, w, h, x0, y0 };
-}
 
 // ------------------------------------------------------------------------------------------------ data
 async function readJson(file) { return JSON.parse(await readFile(file, 'utf8')); }

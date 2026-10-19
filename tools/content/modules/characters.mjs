@@ -11,7 +11,7 @@ export function rulerId(tag) { return `${tag}_zin_ruler`; }
 export function buildCharacters(staged, countries, table, pools) {
   const chars = {}, loc = {};
   for (const c of countries) {
-    const t = table.get(c.tag), r = rng(`ruler:${c.tag}`), pool = pools.get(c.scan);
+    const t = table.get(c.tag), r = rng(`ruler:${c.tag}`), pool = pools.get(c.tag) ?? pools.get(c.scan);
     const female = NAMED[c.name] ? NAMED[c.name][1] : r() < 0.3;
     const given = female ? pool.female[Math.floor(r() * pool.female.length)] : pool.male[Math.floor(r() * pool.male.length)];
     const name = NAMED[c.name]?.[0] ?? `${given} ${pool.surnames[Math.floor(r() * pool.surnames.length)]}`;

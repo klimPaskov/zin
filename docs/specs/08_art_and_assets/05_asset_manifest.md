@@ -1,6 +1,6 @@
 # Asset manifest and completeness
 
-**Status:** Draft. Written 19 October 2026 as the gap spec for the asset manifest rows of [00_master_overhaul_plan.md](../00_master_overhaul_plan.md) §7. **Priority:** 5. **Phase:** the manifest and the check land in wave 1 of [the production plan](03_full_asset_inventory.md) §7 and run in every build from then on; the unplanned families (section 7) land in waves 3, 4 and 6; the release gate (placeholders fail) is phase 7.
+**Status:** In progress (the manifest, the completeness check and the baseline gate are implemented; see "Implementation status" below). Written 19 October 2026 as the gap spec for the asset manifest rows of [00_master_overhaul_plan.md](../00_master_overhaul_plan.md) §7. **Priority:** 5. **Phase:** the manifest and the check land in wave 1 of [the production plan](03_full_asset_inventory.md) §7 and run in every build from then on; the unplanned families (section 7) land in waves 3, 4 and 6; the release gate (placeholders fail) is phase 7.
 
 ## Purpose
 
@@ -379,6 +379,21 @@ Measured on 19 October 2026 from `art/source/provenance.jsonl`: 181 generation l
 | `tools/content/modules/names.mjs` | extended | Operation name blocks from `battleplan_names.json` |
 | `tools/content/modules/units3d.mjs` | extended | Entity sound events point at the audio module's names; the pack-train entity (AP6) |
 | `tools/content/assets.test.mjs` | new | Tests of the check and the manifest |
+
+### Implementation status (19 October 2026)
+
+Built, in `tools/content/` (see "Assets" in `tools/README.md`):
+
+| Part | State | Notes |
+| --- | --- | --- |
+| `modules/assets.mjs` | done | Last step of `build.mjs`. One record per shipped asset (section 2.1 fields; state `shipped` only), joined from the staged tree over the repository, the module manifests, the provenance log and the reference graph. Written through the staged tree to `art/source/asset_manifest.json` and `art/source/asset_manifest_summary.json` (**deviation:** not `docs/design/art/asset_manifest.json`; the published copy and the plan join wait for `inventory.json`). Family ids use the inventory's (`A1`, `A3`, `D7`, `E1`, `F1` to `F3`, `G2`, `I1`, `K`) plus `M` (map files), `S`, `MU`, `FN` and `U` (not yet classified), all proposed here; the rules are `data/assets/families.json`. |
+| `checks/assets.mjs` | done for AC1, AC3 to AC14 and AC16 | Finding codes name the rule (`SPRITE_UNDEFINED`, `SIZE_MISMATCH`, `VANILLA_COPY`, `UNIQ_EXACT_DUP`, ...; list in the README) instead of the numbers `AC1` to `AC18`. The check reads the installed game lazily and read-only, hashes vanilla files only when a shipped file of the same size exists, and reports to stdout and, with `--report`, as JSON. |
+| Baseline gate | done | `docs/design/validation/asset_baseline.json` holds the accepted findings and counts. A build fails only on an error not listed there; `ZIN_ASSETS_UPDATE_BASELINE=1 node tools/content/build.mjs` rewrites it. The first baseline was taken on 19 October 2026; its findings belong to other specs and are not fixed here. |
+| `lib/loaded_assets.mjs`, `asset_sources.mjs`, `asset_schema.mjs`, `dds_info.mjs`, `phash.mjs` | done | `loaded_assets.mjs` covers `gfx`, `interface`, `sound`, `music`, `localisation`, `portraits` and the map for ZIN's own files and indexes the vanilla install by name; it does not yet follow every reference inside kept vanilla files (the loaded-set scan of section 3 is limited to what ZIN ships). |
+| `assets.test.mjs`, `fixtures/assets/` | done | Positive cases and one negative test per check family. |
+| Not built | open | AC2 (needs `inventory.json`), AC15 gates for portraits and event pictures, AC17 budgets, AC18 hidden records, `lib/bc3.mjs`, `art/queue.mjs`, `art/x-jobs.mjs`, the `kept` and `hidden` records, the `ZIN_ASSET_CANARY` textures, the X-family files and the `imagegen.mjs` changes. |
+
+Deviations in the rules, with reason: findings in interim and bridge files are warnings (they are placeholders by design); map-sized files are exempt from the replaced-shape rule (the overhaul map is larger than the vanilla one by owner decision); `gfx/interface/bookmarks/zin_fourth_age.dds` and the two `select_date_*.dds` files are a declared alias (decision A5); a reference into the art working directory (`$ZIN_ART/raw`) is allowed in a generation line, as pipeline check 3 says.
 
 ### Data files
 

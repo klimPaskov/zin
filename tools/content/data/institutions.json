@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "spec": "docs/specs/03_gameplay/08_institutions.md",
+  "note": "Data of tools/content/modules/institutions.mjs, sections 1 to 5: the War Camp, the Council of Captains, Orders and Valour, the Great Fairs and Folk Wares, Guild Licences and Sending Arms. Names are working labels of the spec (proposed). Every picture is a key of the icon catalog (data/presentation-cells.json). Numbers are design targets; the engine keys stay as the game defines them.",
+  "tiers": {
+    "a": ["Aenor","Lerendor","Volgan","Zol","Worshipdom","Magical Forest","Gala Elves","Coldor","Noris","Stabilo","Gunwaith","Goldoroth","Mirolon"],
+    "b": ["Noleksun","Selen","Herez","Konori","Kilinti","Kingson","Bloody Forest","Hunhun","Hiloron","Cursed Lands","Asgard","Sensai","Mina","R'en","Molot","Eekedor","Fearno","Yeti Lands","Horidor","Isengard","Windwaith","Titanos","Yeldenne","Lambin","Buldor","Kradlon","Corogon","Varnondor","Girdon","Halenor","Seite Islands","Adel","Nondondor","Pollos","Raerby","Blackton","Dulundur","Bordon","Dondor","Dreson","Troll Forest","Lccimio","The End","Herrodon","Andos Enda","Nolorim","Olen","Nezer","Demon","Dolon","Nan","Alerhia","Miaed","Erco","Plutondo","Drak","Ostoroth","Gondolin","Mora","Avalon","Enhis Is Rond","Howan","Nara","Verde","The Lands of Light","Poyang","Godland","Hengyang","Elvana","Goodin","Heaven"],
+    "noChairs": ["Zol"],
+    "noValour": ["Zol","Yeldenne"]
+  },
+  "engineText": {
+    "_note": "Text of engine-owned keys that ZIN re-themes (ranks, role names, advisor slots, command power and experience). Staged in localisation/replace/zin_inst_engine_l_english.yml.",
+    "rank1": "Banneret",
+    "rank2": "Warden of Hosts",
+    "rank3": "Captain-General",
+    "rank4": "Marshal of the Crown",
+    "naval_rank1": "Sea-Captain",
+    "naval_rank2": "Sea-Warden",
+    "naval_rank3": "Admiral",
+    "naval_rank4": "Lord Admiral",
+    "cc_leader": "Host-Captain",
+    "fm_leader": "Marshal",
+    "navy_leader": "Sea-Lord",
+    "DIVISION_EXPERIENCE_TITLE_DEFAULT": "Captain",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_0": "Captain of a Hundred",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_1": "Captain of a Hundred",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_2": "Banneret",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_3": "Banneret",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_4": "Warden of Hosts",
+    "army_chief": "Master of the Host",
+    "navy_chief": "Lord of the Fleet",
+    "air_chief": "Master of the Eyries",
+    "high_command": "Marshal of the Council",
+    "theorist": "Master of Lore",
+    "COMMAND_POWER": "Orders"
+  },
+  "chairs": {
+    "army": {"slot":"army_chief","ledger":"army","label":"Master of the Host","art":"war_council_map"},
+    "navy": {"slot":"navy_chief","ledger":"navy","label":"Lord of the Fleet","art":"sea_charts"},
+    "air": {"slot":"air_chief","ledger":"air","label":"Master of the Eyries","art":"dragon_wing"},
+    "marshal_1": {"slot":"high_command","ledger":"army","label":"Marshal of the Council","art":"banner_league"},
+    "marshal_2": {"slot":"high_command","ledger":"army","label":"Marshal of the Council","art":"banner_league"},
+    "master": {"slot":"theorist","ledger":"army","label":"Master of Lore","art":"book_lore"}
+  },
+  "chairPlan": {
+    "a": ["army","navy","air","marshal_1","marshal_2","master"],
+    "b": ["army","master"]
+  },
+  "chairCost": 150,
+  "chiefTierFor": {
+    "a": [2,3],
+    "b": [1,2]
+  },
+  "chiefFamilies": [
+    {"id":"shield","chair":"army","name":"Shield of the Host","desc":"Holds the line where the horns blow; the host behind him stands harder.","modifier":"army_defence_factor","tiers":[0.05,0.1,0.15],"art":"sword_shield"},
+    {"id":"spear","chair":"army","name":"Spear of the Host","desc":"Counsels the strike first and the reckoning after.","modifier":"army_attack_factor","tiers":[0.05,0.1,0.15],"art":"spear_levy"},
+    {"id":"drill","chair":"army","name":"Drill-Master","desc":"Keeps the yards busy; levies reach the line sooner and better taught.","modifier":"training_time_factor","tiers":[-0.1,-0.2,-0.3],"art":"levy_muster"},
+    {"id":"banner","chair":"army","name":"Keeper of Banners","desc":"Every company knows its standard, and clings to it when the day turns.","modifier":"army_org_factor","tiers":[0.04,0.08,0.12],"art":"banner_plain"},
+    {"id":"march","chair":"army","name":"Master of the Road","desc":"Knows each ford and each water-stop between here and the border.","modifier":"army_speed_factor","tiers":[0.05,0.1,0.15],"art":"roads_paved"},
+    {"id":"ditch","chair":"army","name":"Ditch-Master","desc":"Hosts under his eye are behind earth before the enemy is in sight.","modifier":"dig_in_speed_factor","tiers":[0.1,0.2,0.3],"art":"fort_wall"},
+    {"id":"old_guard","chair":"army","name":"Greybeard of the Council","desc":"Cautious of new ways, and steadying to the old hands who follow him.","modifier":"experience_gain_army_factor","tiers":[-0.1],"extra":{"army_morale_factor":0.05},"art":"council_table"},
+    {"id":"battle_line","chair":"navy","name":"Master of the Line","desc":"Teaches captains to hold station and let the great hulls speak.","modifier":"naval_damage_factor","tiers":[0.05,0.1,0.15],"art":"great_warship"},
+    {"id":"raiding","chair":"navy","name":"Raider's Eye","desc":"Knows where merchant fleets sail, and where they are slow.","modifier":"convoy_raiding_efficiency_factor","tiers":[0.1,0.2,0.3],"art":"corsair_raider"},
+    {"id":"seamanship","chair":"navy","name":"Master of Sails","desc":"Fleets under his orders make harbour a day before the weather does.","modifier":"naval_speed_factor","tiers":[0.05,0.1,0.15],"art":"ship_voyage"},
+    {"id":"yards","chair":"navy","name":"Yard-Master","desc":"Turns every voyage into a lesson for the next crew.","modifier":"experience_gain_navy_factor","tiers":[0.05,0.1,0.15],"art":"shipwright_yard"},
+    {"id":"wing_craft","chair":"air","name":"Wing-Master","desc":"Rider and beast learn each other in his rookeries.","modifier":"experience_gain_air_factor","tiers":[0.05,0.1,0.15],"art":"dragon_wing"},
+    {"id":"safe_landings","chair":"air","name":"Warden of Landings","desc":"Few wings are lost on his roosts.","modifier":"air_accidents_factor","tiers":[-0.1,-0.2,-0.3],"art":"lighthouse"},
+    {"id":"field_support","chair":"air","name":"Friend of the Foot","desc":"Teaches the winged to strike where the ground host needs them.","modifier":"army_bonus_air_superiority_factor","tiers":[0.05,0.1,0.15],"art":"griffin_rider"},
+    {"id":"lore","chair":"master","name":"Lore-Master","desc":"Reads the old campaigns and tells the Council what they cost.","modifier":"research_speed_factor","tiers":[0.03,0.05,0.08],"art":"book_lore"}
+  ],
+  "chiefTierNames": ["I","II","III"],
+  "customs": [
+    {"id":"squires_yard","category":"academy_spirit","name":"Squires' Yard","desc":"Young captains learn the field by taking it in turn at the standard.","modifier":{"experience_gain_army_factor":0.15},"art":"spear_levy","stance":"all"},
+    {"id":"chair_of_strategy","category":"academy_spirit","name":"Chair of Strategy","desc":"A seat at the Council is kept for one who studies old campaigns.","modifier":{"planning_speed":0.1,"max_planning":0.05},"art":"war_council_map","stance":"all"},
+    {"id":"veterans_lodge","category":"academy_spirit","name":"Veterans' Lodge","desc":"Old soldiers teach new ones how to keep a host fed, warm and in good heart.","modifier":{"army_morale_factor":0.1,"land_reinforce_rate":0.01},"art":"sword_shield","stance":"all"},
+    {"id":"heralds_school","category":"academy_spirit","name":"Heralds' School","desc":"Riders and heralds are drilled to carry word faster than the enemy can learn of it.","modifier":{"recon_factor":0.1,"army_speed_factor":0.03},"art":"scout_lantern","stance":"all"},
+    {"id":"shield_wall_custom","category":"army_spirit","name":"The Shield Wall","desc":"When the horn sounds, the first rank locks shields and the second sets spears over them.","modifier":{"army_defence_factor":0.08,"dig_in_speed_factor":0.15},"art":"fort_wall","stance":"defend"},
+    {"id":"spear_rush_custom","category":"army_spirit","name":"The Spear Rush","desc":"The host charges as one body; a broken charge costs the host dear.","modifier":{"army_attack_factor":0.08,"org_loss_when_moving":0.05},"art":"spear_levy","stance":"attack"},
+    {"id":"oath_companies","category":"army_spirit","name":"Oath Companies","desc":"Companies swear to one lord and one banner, and stand or fall with them.","modifier":{"army_org_factor":0.06,"army_morale_factor":0.06},"art":"handshake_oath","stance":"all"},
+    {"id":"foragers","category":"army_spirit","name":"The Foragers","desc":"Every company keeps a few who can find supper in an empty field.","modifier":{"supply_consumption_factor":-0.08,"attrition":-0.05},"art":"granary","stance":"all"},
+    {"id":"banner_fast","category":"division_command_spirit","name":"Fast Banners","desc":"Captains of a hundred are trusted to move on their own word.","modifier":{"army_org_factor":0.06},"art":"banner_plain","stance":"all"},
+    {"id":"free_captains","category":"division_command_spirit","name":"Free Captains","desc":"Each captain plans his own part of the field and answers for it.","modifier":{"max_planning":0.1},"art":"war_drums","stance":"all"},
+    {"id":"chain_of_banners","category":"division_command_spirit","name":"Chain of Banners","desc":"Orders pass from standard to standard down the line, each one repeated.","modifier":{"planning_speed":0.1,"army_org_factor":0.03},"art":"banner_league","stance":"all"},
+    {"id":"household_levy","category":"division_command_spirit","name":"Household Levy","desc":"Every great house sends its household to the muster, and replaces its dead.","modifier":{"conscription_factor":0.05,"land_reinforce_rate":0.02},"art":"levy_muster","stance":"all"},
+    {"id":"pilots_school","category":"naval_academy_spirit","name":"The Pilots' Hall","desc":"Young captains serve a year under the harbour pilots before they command.","modifier":{"experience_gain_navy_factor":0.15},"art":"shipwright_yard","stance":"all"},
+    {"id":"chart_room","category":"naval_academy_spirit","name":"The Chart Room","desc":"Every shore sketched by a captain is copied, corrected and kept.","modifier":{"naval_detection":0.1},"art":"sea_charts","stance":"all"},
+    {"id":"rope_and_rigging","category":"naval_academy_spirit","name":"Rope and Rigging","desc":"Crews learn to mend sails in a gale and to keep hulls sound on long voyages.","modifier":{"naval_speed_factor":0.05,"naval_attrition":-0.05},"art":"anchor_rope","stance":"all"},
+    {"id":"line_of_battle_custom","category":"navy_spirit","name":"The Line of Battle","desc":"Ships hold station in a long line and let the great hulls decide the day.","modifier":{"naval_damage_factor":0.08},"art":"great_warship","stance":"all"},
+    {"id":"lane_wardens","category":"navy_spirit","name":"The Lane Wardens","desc":"Galleys shadow the merchant fleets along every trade lane.","modifier":{"convoy_escort_efficiency":0.1,"screening_efficiency":0.05},"art":"lighthouse","stance":"all"},
+    {"id":"boarders_pride","category":"navy_spirit","name":"Boarders' Pride","desc":"Crews are proud of their grapples; they land well and keep their nerve.","modifier":{"naval_morale_factor":0.1,"naval_invasion_capacity":5},"art":"corsair_raider","stance":"all"},
+    {"id":"sea_lords_council","category":"naval_command_spirit","name":"The Sea-Lords' Council","desc":"Fleet commanders meet each winter to settle one plan for the year.","modifier":{"navy_org_factor":0.06},"art":"council_table","stance":"all"},
+    {"id":"free_corsair_captains","category":"naval_command_spirit","name":"Free Corsair Captains","desc":"Raiding captains sail on their own account and know when to run.","modifier":{"convoy_raiding_efficiency_factor":0.15,"naval_retreat_chance":0.05},"art":"black_hulls","stance":"all"},
+    {"id":"harbour_masters","category":"naval_command_spirit","name":"The Harbour Masters","desc":"Victualling is kept in every port, so the fleet can range further and longer.","modifier":{"naval_supply_consumption_factor":-0.1,"navy_max_range_factor":0.1},"art":"harbour_lake","stance":"all"},
+    {"id":"roost_school","category":"air_force_academy_spirit","name":"The Roost School","desc":"Young riders learn first to keep a beast calm, then to keep it fighting.","modifier":{"experience_gain_air_factor":0.15},"art":"dragon_mountain","stance":"all","sky":true},
+    {"id":"wind_masters","category":"air_force_academy_spirit","name":"The Wind-Masters","desc":"Riders learn to read the wind from a stable window before they ever fly.","modifier":{"air_weather_penalty":-0.1,"air_accidents_factor":-0.1},"art":"storm_veil","stance":"all","sky":true},
+    {"id":"wing_oaths","category":"air_force_spirit","name":"Wing Oaths","desc":"Each wing swears to fly together and to return together.","modifier":{"air_mission_efficiency":0.1},"art":"dragon_wing","stance":"all","sky":true},
+    {"id":"eyrie_watch","category":"air_force_spirit","name":"The Eyrie Watch","desc":"A rider is always aloft over the border, whatever the season.","modifier":{"air_range_factor":0.1,"air_detection":0.1},"art":"eye_watchful","stance":"all","sky":true},
+    {"id":"master_of_wings","category":"air_force_command_spirit","name":"The Master of Wings","desc":"One captain commands every wing and sends each where the ground host needs it.","modifier":{"air_cas_efficiency":0.1},"art":"griffin_rider","stance":"all","sky":true},
+    {"id":"dragon_wardens","category":"air_force_command_spirit","name":"Dragon Wardens","desc":"Sworn wardens keep the great beasts fed, rested and obedient to their riders.","modifier":{"air_manpower_requirement_factor":-0.1,"air_attack_factor":0.05},"art":"warden_crown","stance":"all","sky":true}
+  ],
+  "customCategoryLabels": {
+    "academy_spirit": "The Yard",
+    "army_spirit": "Customs of the Host",
+    "division_command_spirit": "Banner Customs",
+    "naval_academy_spirit": "The Slip",
+    "navy_spirit": "Customs of the Fleet",
+    "naval_command_spirit": "Banner of the Sea",
+    "air_force_academy_spirit": "The Roost School",
+    "air_force_spirit": "Customs of the Wing",
+    "air_force_command_spirit": "Banner of the Wing"
+  },
+  "valour": {
+    "category": "zin_inst_valour",
+    "categoryName": "Valour and Drill",
+    "categoryDesc": "Hosts, fleets and wings grow fierce only by drilling. Each drill costs Orders, stores and some blood.",
+    "decisions": [
+      {"id":"zin_inst_great_manoeuvres","name":"Great Manoeuvres","desc":"Muster the hosts in the field for a season of drill. Some will be hurt, and the stores will be much spent, but the captains learn.","pool":"army","minUnits":5,"unitsPerStep":5,"base":8,"step":1,"cap":20,"orders":20,"authority":25,"gear":{"zin_camp_equipment":300,"zin_arms_equipment":200},"wear":0.02,"cooldown":180,"art":"levy_muster"},
+      {"id":"zin_inst_sea_trials","name":"Sea Trials","desc":"Send the fleet out on a long cruise in bad weather. Hulls will be strained, but the crews come home sailors.","pool":"navy","minUnits":6,"unitsPerStep":4,"base":6,"step":1,"cap":15,"orders":15,"authority":15,"wear":0.05,"cooldown":180,"art":"ship_voyage"},
+      {"id":"zin_inst_wing_trials","name":"Wing Trials","desc":"Fly every wing hard for a season. Some beasts will be lost to the wind, but the riders learn their trade.","pool":"air","minUnits":1,"unitsPerStep":1,"base":6,"step":2,"cap":12,"orders":15,"authority":20,"wear":0.05,"cooldown":240,"art":"dragon_wing","sky":true}
+    ]
+  },
+  "startValour": {
+    "classes": [
+      {"id":"tier_a_free","tier":"a","peoples":["men","orcs"],"army":150,"navy":100,"air":0},
+      {"id":"tier_a_elves","tier":"a","peoples":["elves","sun_elves"],"army":120,"navy":60,"air":0},
+      {"id":"tier_a_dead","tier":"a","peoples":["the_dead"],"army":200,"navy":50,"air":0},
+      {"id":"tier_b","tier":"b","peoples":["*"],"army":100,"navy":50,"air":0},
+      {"id":"tier_c","tier":"c","peoples":["*"],"army":50,"navy":0,"air":0}
+    ],
+    "note": "Navy Valour is paid to realms with a coast only. Sky Valour starts at 0 for everyone: no dragon is granted at the start (04_magic_and_world_systems). Zol and Yeldenne start with nothing."
+  },
+  "abilities": [
+    {"id":"zin_ab_charge_home","vanilla":"force_attack","name":"Press the Attack","desc":"The host throws itself forward. Blows land harder and the line breaks sooner, but the dead are many and no one may turn back.","cost":0.22,"duration":168,"sound":"command_power_ability_offensive","noGroup":true,"mods":{"offence":0.2,"breakthrough_factor":0.25,"org_damage_multiplier":-1,"str_damage_multiplier":0.6,"war_support_reduction_on_damage":0.2,"cannot_retreat_while_attacking":1},"ai":"offensive","art":"spear_levy"},
+    {"id":"zin_ab_stand_fast","vanilla":"last_stand","name":"Stand to the Last","desc":"The host digs in and swears to hold. It cannot give ground, and it loses men for every hour it stands.","cost":0.22,"duration":168,"sound":"command_power_ability_offensive","noGroup":true,"mods":{"defence":0.2,"combat_entrenchment":0.25,"org_damage_multiplier":-1,"str_damage_multiplier":0.6,"war_support_reduction_on_damage":0.2,"cannot_retreat_while_defending":1},"ai":"defensive","art":"sword_shield"},
+    {"id":"zin_ab_war_council","vanilla":"staff_office_plan","name":"Council of War","desc":"The captains gather round the map and settle the plan in a fraction of the usual time.","cost":0.12,"duration":168,"sound":"command_power_ability_defensive","mods":{"planning_speed":4},"ai":"planning","art":"war_council_map"},
+    {"id":"zin_ab_siege_engines","vanilla":"siege_artillery","name":"Raise the Engines","desc":"Siege engines are hauled forward and set against the walls. Forts fall faster, and the town beside them suffers.","cost":0.1,"duration":168,"trait":"fortress_buster","mods":{"fort":{"attack":0.2},"fortification_damage":2,"fortification_collateral_chance":2},"ai":"siege","art":"siege_trebuchet"},
+    {"id":"zin_ab_ships_gathered","vanilla":"faster_naval_invasion_planning","name":"Gather the Ships","desc":"Every hull in the harbour is pressed into the landing, and the plan is made in half the time.","cost":0.1,"duration":168,"trait":"invader_ii","mods":{"naval_invasion_prep_speed":0.5},"art":"galley_oars"},
+    {"id":"zin_ab_probe","vanilla":"probing_attack","name":"Probe the Line","desc":"Light attacks test the enemy without leaving the earthworks. The blows are weak, but the ditch is kept.","cost":0.1,"duration":-1,"cancelable":true,"trait":"skirmisher","mods":{"dont_lose_dig_in_on_attack":1,"offence":-0.2},"art":"scout_lantern"},
+    {"id":"zin_ab_ford_and_raft","vanilla":"makeshift_bridges","name":"Fords and Rafts","desc":"Sappers lash rafts and mark fords. The river is no longer a wall.","cost":0.1,"duration":168,"trait":"expert_improviser","mods":{"river_crossing_factor":-0.4,"river":{"attack":0.2}},"ai":"river","art":"river_ford"},
+    {"id":"zin_ab_foraging","vanilla":"extra_suplies","name":"Forage the Country","desc":"Companies spread out and take what the land offers, so the host does not go hungry for a week.","cost":0.2,"duration":168,"cooldown":504,"trait":"logistics_wizard","mods":{"no_supply_grace":168},"oneTime":"supply_units = 168","art":"granary"},
+    {"id":"zin_ab_healers_afield","vanilla":"extra_medics","name":"Healers Afield","desc":"Healers walk the field behind the line, and more of the hurt return to the ranks.","cost":0.22,"duration":336,"sound":"ability_local_reserves","hq":"zin_hq_healers_tent","mods":{"casualty_trickleback":0.04},"ai":"medics","art":"healer_herbs"},
+    {"id":"zin_ab_deeper_trenches","vanilla":"deeper_dig_in","name":"Deeper Ditches","desc":"The master of sappers sets every company to the spade. Ditches deepen far faster than usual.","cost":0.12,"duration":168,"sound":"ability_deeper_dig_in","hq":"zin_hq_sapper_master","mods":{"dig_in_speed":6},"ai":"dig","art":"fort_wall"},
+    {"id":"zin_ab_hold_in_depth","vanilla":"defense_in_depth","name":"Defence in Depth","desc":"The host spreads itself in layers behind the line. Plans are harder to make, but the ground is held more deeply.","cost":0.1,"duration":-1,"cancelable":true,"sound":"ability_defence_in_depth","hq":"zin_hq_scout_master","mods":{"max_planning":-0.5,"max_dig_in":3},"art":"pass_fort"},
+    {"id":"zin_ab_overrun","vanilla":"front_overrun","name":"Ride Them Down","desc":"Once the line breaks, the host presses on without stopping. It tires less on the move and bleeds less of its plan.","cost":0.1,"duration":-1,"cancelable":true,"sound":"ability_front_overrun","hq":"zin_hq_quartermaster_general","mods":{"org_loss_when_moving":-0.1,"planning_decay_rate_factor":-0.2,"str_damage_multiplier":0.4},"art":"horse_cavalry"},
+    {"id":"zin_ab_rotate_reserves","vanilla":"rotating_reserves","name":"Rotate the Reserves","desc":"Tired companies are drawn back and fresh ones sent in, so the line is always filled.","cost":0.12,"duration":168,"sound":"ability_local_command","hq":"zin_hq_horn_master","mods":{"land_reinforce_rate":0.06},"ai":"reserves","art":"banner_league"}
+  ],
+  "hq": {
+    "common": {"max_strength":1,"max_organisation":30,"default_morale":0.05,"manpower":200,"deployment_cost":1,"training_time":120,"weight":0.1},
+    "units": [
+      {"id":"zin_hq_banner","role":"banner","name":"Standard-Bearers","desc":"The banner and its guard. Where they stand, the host knows its lord is present.","abbr":"STD","kind":"support","need":{"zin_camp_equipment":20},"leader":{"skill_bonus_factor":0.2},"who":"all","art":"banner_plain","model":true},
+      {"id":"zin_hq_sapper_master","role":"sapper","name":"Master of Sappers","desc":"Digs the ditches, breaks the walls and builds the camp palisade.","abbr":"SAP","kind":"support","need":{"zin_arms_equipment":20,"zin_camp_equipment":10},"leader":{"fortification_damage":0.2,"amphibious_invasion_defence":0.05},"ability":"zin_ab_deeper_trenches","stats":{"entrenchment":2,"defense":0.1,"breakthrough":0.5,"soft_attack":-0.5},"extraCats":["category_front_line"],"who":"all but ents and yeti","art":"workshop_tools"},
+      {"id":"zin_hq_scout_master","role":"scout","name":"Master of Scouts","desc":"Sends riders and woodsmen ahead of the host and reads their reports.","abbr":"SCO","kind":"support","need":{"zin_arms_equipment":20,"zin_camp_equipment":10},"leader":{"terrain_trait_xp_gain_factor":0.2,"recon_factor":0.1},"ability":"zin_ab_hold_in_depth","stats":{"defense":-0.5,"breakthrough":-0.5,"soft_attack":-0.9,"hard_attack":-0.9,"recon":1},"extraCats":["category_front_line","category_recon"],"who":"all","art":"scout_lantern"},
+      {"id":"zin_hq_provost_marshal","role":"provost","name":"Provost-Marshal","desc":"Keeps order in the camp and on the road, and hangs thieves.","abbr":"PRV","kind":"support","need":{"zin_camp_equipment":10},"leader":{"army_speed_factor":0.05},"stats":{"suppression_factor":0.2},"who":"all but orcs","art":"chain_broken"},
+      {"id":"zin_hq_master_armourer","role":"armourer","name":"Master Armourer","desc":"Mends mail, grinds blades and keeps the host's iron in order.","abbr":"ARM","kind":"support","need":{"zin_camp_equipment":10},"leader":{"attrition":-0.1,"equipment_capture_factor":0.02},"stats":{"reliability_factor":0.05,"equipment_capture_factor":0.05},"who":"all","art":"forge_anvil"},
+      {"id":"zin_hq_healers_tent","role":"healer","name":"The Healers' Tent","desc":"Herbs, bandages and patient hands. The hurt are carried here first.","abbr":"HLR","kind":"support","need":{"zin_camp_equipment":10},"leader":{"wounded_chance_factor":-0.25,"sickness_chance":-0.25,"experience_gain_army_unit_factor":0.1},"ability":"zin_ab_healers_afield","stats":{"casualty_trickleback":0.2,"experience_loss_factor":-0.15},"who":"all but orcs and the dead","art":"healer_herbs"},
+      {"id":"zin_hq_quartermaster_general","role":"quartermaster","name":"Quartermaster-General","desc":"Counts the wagons, the sacks and the days to the next depot.","abbr":"QMG","kind":"support","need":{"zin_camp_equipment":10},"leader":{"max_commander_army_size":2,"supply_consumption_factor":-0.05},"ability":"zin_ab_overrun","who":"all","art":"granary"},
+      {"id":"zin_hq_horn_master","role":"horn","name":"Master of Horns","desc":"Sets the calls and the beacons that carry the lord's orders across the field.","abbr":"HRN","kind":"support","need":{"zin_camp_equipment":10},"leader":{"max_planning":0.03,"recon_factor_while_entrenched":0.1,"enemy_operative_capture_chance_factor":0.1},"ability":"zin_ab_rotate_reserves","who":"all","art":"war_drums"},
+      {"id":"zin_hq_harbour_liaison","role":"harbour","name":"Harbour Liaison","desc":"A captain of the fleet who rides with the camp and speaks for the ships.","abbr":"HBR","kind":"support","need":{"zin_camp_equipment":10},"leader":{"shore_bombardment_bonus":0.15,"extra_marine_supply_grace":24,"amphibious_invasion":0.05},"who":"coastal realms","art":"harbour_lake"},
+      {"id":"zin_hq_eyrie_liaison","role":"eyrie","name":"Eyrie Liaison","desc":"A rider of the wings who rides with the camp and tells the host where its beasts will strike.","abbr":"EYR","kind":"support","need":{"zin_camp_equipment":10},"leader":{"air_cas_efficiency":0.05,"cas_damage_reduction":0.05,"air_superiority_bonus_in_combat":0.05},"active":false,"who":"where the sky rule is not none","art":"dragon_wing"},
+      {"id":"zin_hq_ranger_captain","role":"ranger","name":"Ranger-Captain","desc":"Leads the few who go ahead of the scouts and behind the enemy.","abbr":"RNG","kind":"support","need":{"zin_camp_equipment":10},"leader":{"special_forces_out_of_supply_factor":-0.1,"special_forces_attack_factor":0.05},"who":"men, elves, sun elves, orcs","art":"ranger_cloak"},
+      {"id":"zin_hq_household_foot","role":"household_foot","name":"Household Foot","desc":"The lord's own foot, picked men who guard the camp and the banner.","abbr":"HHF","kind":"foot","need":{"zin_arms_equipment":60},"stats":{"suppression":1.5},"who":"men, elves, sun elves, orcs","art":"spear_levy"},
+      {"id":"zin_hq_household_grave","role":"household_foot","name":"Household of the Grave","desc":"The risen dead who never leave their lord's side.","abbr":"HHG","kind":"foot","need":{"zin_grave_arms_equipment":60},"stats":{"suppression":1.5},"who":"the dead","art":"grave_host"},
+      {"id":"zin_hq_household_nether","role":"household_foot","name":"Household of the Nether","desc":"Bound demons sworn to guard their master's tent.","abbr":"HHN","kind":"foot","need":{"zin_nether_arms_equipment":60},"stats":{"suppression":1.5},"who":"demons","art":"demon_horn"},
+      {"id":"zin_hq_household_riders","role":"household_riders","name":"Household Riders","desc":"Mounted guards who carry the lord's word and ride down those who flee.","abbr":"HHR","kind":"riders","need":{"zin_arms_equipment":60,"zin_mounts_equipment":20},"stats":{"suppression":2},"who":"men, elves, orcs","art":"horse_cavalry"},
+      {"id":"zin_hq_household_knights","role":"household_knights","name":"Household Knights","desc":"Armoured lords of the lord's own house, who ride at the centre of the charge.","abbr":"HHK","kind":"knights","need":{"zin_arms_equipment":40,"zin_armour_equipment":30,"zin_mounts_equipment":30},"stats":{"breakthrough":0.1,"suppression":2.5},"who":"men","art":"knight_lance"},
+      {"id":"zin_hq_household_kin_trolls","role":"household_kin","name":"Great-Kin Guard of the Trolls","desc":"Trolls of the lord's own warren, bound by hunger and loyalty to the camp.","abbr":"GKT","kind":"kin","need":{"zin_troll_gear_equipment":40},"who":"trolls","art":"troll_club"},
+      {"id":"zin_hq_household_kin_giants","role":"household_kin","name":"Great-Kin Guard of the Giants","desc":"Giants of the lord's own kin, who carry the banner at three times the height of a man.","abbr":"GKG","kind":"kin","need":{"zin_giant_gear_equipment":40},"who":"giants","art":"giant_hammer"},
+      {"id":"zin_hq_household_kin_ents","role":"household_kin","name":"Great-Kin Guard of the Ents","desc":"A grove of ents who stand around the camp and do not move until they must.","abbr":"GKE","kind":"kin","need":{"zin_ent_grove_equipment":40},"who":"ents","art":"ent_branch"},
+      {"id":"zin_hq_household_kin_yeti","role":"household_kin","name":"Great-Kin Guard of the Yeti","desc":"Yeti of the high snows, who keep the camp from the cold as well as from the foe.","abbr":"GKY","kind":"kin","need":{"zin_yeti_gear_equipment":40},"who":"yeti","art":"yeti_claw"}
+    ]
+  },
+  "market": {
+    "note": "AI strategies of the Great Fairs (section 4). Thresholds are in units of equipment. Types are those the installed game documents.",
+    "forSale": [
+      {"id":"zin_arms_equipment","threshold":500,"min":100},
+      {"id":"zin_bows_equipment","threshold":300,"min":60},
+      {"id":"zin_armour_equipment","threshold":200,"min":40},
+      {"id":"zin_mounts_equipment","threshold":200,"min":40},
+      {"id":"zin_camp_equipment","threshold":400,"min":80},
+      {"id":"zin_catapult_equipment","threshold":60,"min":10},
+      {"id":"zin_trebuchet_equipment","threshold":60,"min":10},
+      {"id":"zin_ballista_equipment","threshold":60,"min":10},
+      {"id":"zin_scorpion_equipment","threshold":60,"min":10}
+    ],
+    "neverForSale": ["zin_hull_galley","zin_hull_warship","zin_hull_great_warship","zin_hull_raider","convoy","train_equipment","motorized_equipment"],
+    "buying": [
+      {"id":"zin_arms_equipment","threshold":-20},
+      {"id":"zin_bows_equipment","threshold":-20}
+    ],
+    "buyWhenDarkAbove": 25,
+    "spendWorkshops": 3
+  },
+  "licences": {
+    "note": "can_license per archetype group (section 5). Warfare writes the fields on its equipment; this table is the agreed answer and the builder test reads it.",
+    "yes": ["zin_arms_equipment","zin_bows_equipment","zin_armour_equipment","zin_mounts_equipment","zin_camp_equipment","zin_ward_equipment","zin_elven_arms_equipment","zin_troll_gear_equipment","zin_giant_gear_equipment","zin_ent_grove_equipment","zin_yeti_gear_equipment","zin_ogre_gear_equipment","zin_catapult_equipment","zin_trebuchet_equipment","zin_ballista_equipment","zin_scorpion_equipment","zin_hull_galley","zin_hull_warship","zin_hull_raider","zin_hull_great_warship","zin_grave_arms_equipment","zin_nether_arms_equipment","motorized_equipment","train_equipment","convoy"],
+    "no": ["zin_deathless_equipment","zin_shachihata_equipment","zin_glo_blade_equipment","zin_glo_blade_equipment_shard","zin_volgan_presence_equipment","zin_great_spirit_equipment","zin_zol_manifestation_equipment","zin_dragon_equipment","zin_griffin_equipment"]
+  },
+  "lend": {
+    "weights": {"zin_arms_equipment":1,"zin_bows_equipment":1,"zin_armour_equipment":2,"zin_mounts_equipment":2,"zin_camp_equipment":0.5,"zin_ward_equipment":3,"zin_catapult_equipment":4,"zin_ballista_equipment":3,"zin_scorpion_equipment":3,"zin_trebuchet_equipment":8,"convoy":0},
+    "notLendable": ["zin_hull_galley","zin_hull_warship","zin_hull_great_warship","zin_hull_raider","zin_deathless_equipment","zin_shachihata_equipment","zin_glo_blade_equipment","zin_glo_blade_equipment_shard","zin_volgan_presence_equipment","zin_great_spirit_equipment","zin_zol_manifestation_equipment","zin_dragon_equipment","zin_griffin_equipment"],
+    "opinionMin": 50,
+    "overlordDesire": 60
+  },
+  "defines": [
+    {"category":"NProduction","key":"LICENSE_IC_COST_YEAR_INCREASE","value":0,"fromStage":2,"why":"The term counts years after 1936; ZIN equipment years run 1600 to 1790 (spec 08_institutions section 5)","owner":"03_gameplay/08_institutions.md"}
+  ],
+  "externalNames": {
+    "note": "Identifiers this module reads but other modules write. The integration note lists them as open dependencies.",
+    "scriptedTriggers": ["zin_rules_skies_present","zin_diplo_refusal_binds","zin_diplo_is_dark_power","zin_world_peace_holds"],
+    "variables": ["global.zin_gathering_dark"],
+    "equipment": ["zin_arms_equipment","zin_camp_equipment","zin_bows_equipment","zin_armour_equipment","zin_mounts_equipment","zin_grave_arms_equipment","zin_nether_arms_equipment","zin_troll_gear_equipment","zin_giant_gear_equipment","zin_ent_grove_equipment","zin_yeti_gear_equipment"],
+    "unitCategories": ["category_zin_monsters"]
+  }
+}

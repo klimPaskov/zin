@@ -1,0 +1,42 @@
+{
+ "id": "icons-map-arrows",
+ "family": "map_interface",
+ "kind": "grid",
+ "aspect": "3:2",
+ "grid": [
+  3,
+  2
+ ],
+ "ground": "black",
+ "matte": "outline",
+ "group": "map_arrows",
+ "needs": [],
+ "cells": [
+  {
+   "key": "arrow_attack",
+   "subject": "a broad cinnabar arrow texture, flat with a darker edge, seamless along its length",
+   "lum": "mid"
+  },
+  {
+   "key": "arrow_move",
+   "subject": "a broad bronze arrow texture, flat with a darker edge, seamless along its length",
+   "lum": "mid"
+  },
+  {
+   "key": "arrow_naval",
+   "subject": "a broad lapis arrow texture, flat with a darker edge, seamless along its length",
+   "lum": "mid"
+  },
+  {
+   "key": "arrow_retreat",
+   "subject": "a broad dull iron arrow texture, flat with a darker edge, seamless along its length",
+   "lum": "mid"
+  },
+  {
+   "key": "arrow_special",
+   "subject": "a broad gilt arrow texture, flat with a darker edge, seamless along its length",
+   "lum": "mid"
+  }
+ ],
+ "tranche": 5
+}

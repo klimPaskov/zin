@@ -1,0 +1,24 @@
+guiTypes = {
+	containerWindowType = {
+		name = "zin_test_window"
+		position = { x = 0 y = 0 }
+		size = { width = 200 height = 100 }
+		iconType = {
+			name = "zin_test_icon"
+			spriteType = "GFX_idea_zin_test_a"
+			position = { x = 4 y = 4 }
+		}
+		buttonType = {
+			name = "zin_test_button"
+			quadTextureSprite = "GFX_vanilla_icon"
+			buttonFont = "hoi_18mbs"
+			buttonText = "ZIN_TEST_BUTTON"
+			clicksound = click_default
+		}
+		instantTextBoxType = {
+			name = "zin_test_text"
+			font = "hoi_18mbs"
+			text = "ZIN_TEST_TEXT"
+		}
+	}
+}

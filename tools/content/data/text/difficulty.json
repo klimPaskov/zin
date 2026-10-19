@@ -1,0 +1,12 @@
+{
+  "family": "difficulty",
+  "note": "The difficulty names are decided in the glossary (diff_* entries, docs/specs/07_interface/03_main_menu_and_frontend.md). The FE_DIFFICULTY_* labels of the main menu are written by frontend.mjs; the sweep writes the realm-side names the engine shows in the game.",
+  "lit": {
+    "diff_very_easy_player": "{diff_very_easy} Difficulty",
+    "diff_easy_player": "{diff_easy} Difficulty",
+    "diff_very_hard_player": "{diff_very_hard} Difficulty"
+  },
+  "neutral": [
+    { "keys": ["diff_hard_player"], "reason": "Veteran is the glossary term for the fourth difficulty and plain English; the installed label already reads it" }
+  ]
+}

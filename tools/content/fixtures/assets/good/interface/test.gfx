@@ -1,0 +1,61 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_zin_test_a"
+		texturefile = "gfx/interface/ideas/zin/test_a.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zin_test_a"
+		texturefile = "gfx/interface/goals/zin/test_a.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zin_test_b"
+		texturefile = "gfx/interface/goals/zin/test_b.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zin_test_c"
+		texturefile = "gfx/interface/goals/zin/test_c.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_zin_test_a_shine"
+		texturefile = "gfx/interface/goals/zin/test_a.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/zin/test_a.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+		}
+	}
+	SpriteType = {
+		name = "GFX_focus_zin_test_b_shine"
+		texturefile = "gfx/interface/goals/zin/test_b.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/zin/test_b.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+		}
+	}
+	SpriteType = {
+		name = "GFX_focus_zin_test_c_shine"
+		texturefile = "gfx/interface/goals/zin/test_c.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/zin/test_c.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+		}
+	}
+	spriteType = {
+		name = "GFX_zin_evt_one"
+		texturefile = "gfx/event_pictures/zin/zin_evt_one.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_evt_two"
+		texturefile = "gfx/event_pictures/zin/zin_evt_two.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_portrait_men_male_1"
+		texturefile = "gfx/leaders/zin/men_male_1.dds"
+	}
+	spriteType = {
+		name = "GFX_zin_portrait_men_male_2"
+		texturefile = "gfx/leaders/zin/men_male_2.dds"
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "note": "Uniqueness rules per family (05_asset_manifest.md section 5). Thresholds are Hamming distances of the 64-bit hashes (the larger of dHash and aHash); two assets of one group closer than the threshold are NEAR_DUPLICATE. Caps are design targets; the report prints the real histogram.",
+  "exact_everywhere": true,
+  "aliases": [
+    { "paths": ["gfx/interface/bookmarks/zin_fourth_age.dds", "gfx/interface/select_date_1936.dds", "gfx/interface/select_date_1939.dds"], "reason": "the engine's select_date pictures show the bookmark picture (integration decision A5)" }
+  ],
+  "stub_files": ["bridge", "interim"],
+  "groups": {
+    "flag.large": { "threshold": 10, "maxReuse": 1, "siblingSetMax": 3, "label": "one flag per tag" },
+    "flag.medium": { "threshold": 10, "maxReuse": 1, "siblingSetMax": 3, "exactSeverity": "warning", "label": "one flag per tag" },
+    "flag.small": { "threshold": 0, "maxReuse": 1, "exactSeverity": "warning", "label": "one flag per tag (10x7 flags can coincide by chance, so only a warning)" },
+    "focus_icon": { "threshold": 12, "perTreeMax": 2, "sharedTreeMax": 3, "gameMax": 40, "label": "catalog focus icons" },
+    "idea_icon": { "threshold": 12, "label": "idea icons" },
+    "people_emblem": { "threshold": 12, "label": "people emblems" },
+    "event_picture": { "threshold": 12, "gameMax": 8, "tierAMax": 3, "label": "event pictures" },
+    "news_picture": { "threshold": 12, "gameMax": 8, "label": "news pictures" },
+    "scene": { "threshold": 14, "label": "loading, menu and bookmark scenes" },
+    "scene.thumb": { "threshold": 0, "label": "thumbnails (exact only)" },
+    "portrait.named": { "threshold": 14, "maxReuse": 1, "label": "named characters" },
+    "portrait.generic": { "threshold": 12, "label": "generic pools: at most ceil(slots / pool size) + 1 characters per portrait; never twice in one country start roster" },
+    "ui": { "threshold": 0, "label": "interface chrome (exact only)" }
+  },
+  "near_duplicate_severity": "warning"
+}

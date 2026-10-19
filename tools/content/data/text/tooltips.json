@@ -1,0 +1,12 @@
+{
+  "family": "tooltips",
+  "note": "Trigger, effect and modifier text (docs/specs/07_interface/05_text_sweep.md family tooltips). A modifier is named by its own id: the stem rows below compose its label from the id's tokens through the glossary stems and the multi-word glossary ids, and only where the id names a banned concept; the rest of the modifier labels keep the text the game ships. Sentences of triggers and effects are written in tooltips.triggers.json and tooltips.effects.json.",
+  "rows": [
+    { "stem": "^MODIFIER_([A-Z0-9_]+?)_DESC$", "frame": "modifies", "drop": ["factor", "tt", "mult"], "map": { "ai": "AI" } },
+    { "stem": "^MODIFIERS_([A-Z0-9_]+?)_DESC$", "frame": "modifies", "drop": ["factor", "tt", "mult"], "map": { "ai": "AI" } },
+    { "stem": "^MODIFIER_([A-Z0-9_]+)$", "frame": "label", "drop": ["factor", "tt", "mult"], "map": { "ai": "AI" } },
+    { "stem": "^MODIFIERS_([A-Z0-9_]+)$", "frame": "label", "drop": ["factor", "tt", "mult"], "map": { "ai": "AI" } },
+    { "stem": "^([a-z0-9_]+?)_desc$", "frame": "modifies", "drop": ["factor", "tt", "mult"], "map": { "ai": "AI" } },
+    { "stem": "^([a-z][a-z0-9_]*)$", "frame": "label", "drop": ["factor", "tt", "mult"], "map": { "ai": "AI" } }
+  ]
+}

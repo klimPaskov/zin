@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "spec": "docs/specs/03_gameplay/08_institutions.md sections 6 to 8",
+  "note": "Seals and Codes, the Courts of Whispers and Court Intrigue. Upgrade ids, branch ids and level counts are the engine's and never change. Operation ids stay the engine's; names, text and pictures are Erdae's. No text names the Hidden Council, Afrit or the Deliverer. Pictures are keys of the icon catalog.",
+  "branches": {
+    "branch_intelligence": "Informants",
+    "branch_defense": "Watch and Ward",
+    "branch_operation": "Daring Work",
+    "branch_operative": "Schools of Whispers",
+    "branch_crypto": "The Reading Room"
+  },
+  "upgrades": [
+    {"id":"upgrade_economy_civilian","branch":"branch_intelligence","name":"Market Informants","desc":"§LStall-keepers, carters and counting-house clerks tell us what the rival court buys, sells and owes.§!","art":"market_stalls","ai":1,"use":5,"levels":[{"civilian_intel_factor":0.25}]},
+    {"id":"upgrade_army_department","branch":"branch_intelligence","name":"Barracks Informants","desc":"§LSutlers and armourers carry word of musters, marches and the mood of the ranks.§!","art":"sword_shield","ai":2,"use":5,"levels":[{"army_intel_factor":0.25}]},
+    {"id":"upgrade_naval_department","branch":"branch_intelligence","name":"Harbour Informants","desc":"§LPilots and quay-hands tell us which hulls sail, and with what cargo.§!","art":"harbour_lake","ai":1,"use":5,"levels":[{"navy_intel_factor":0.25}]},
+    {"id":"upgrade_airforce_department","branch":"branch_intelligence","name":"Eyrie Informants","desc":"§LDragon-keepers and stable-hands tell us how many wings fly, and how well they are fed.§!","art":"dragon_wing","ai":1,"use":5,"sky":true,"levels":[{"airforce_intel_factor":0.25}]},
+    {"id":"upgrade_passive_defense","branch":"branch_defense","name":"Watchful Households","desc":"§LEvery steward, porter and cook is taught to remember strangers. Hostile deeds against the realm cost more to carry out.§!","art":"eye_watchful","ai":2,"use":5,"levels":[{"intelligence_agency_defense":1.5},{"intelligence_agency_defense":1.25},{"intelligence_agency_defense":1},{"intelligence_agency_defense":1}]},
+    {"id":"upgrade_anti_partisan","branch":"branch_defense","name":"Root Out the Hidden","desc":"§LTrusted men learn to find those who plot in barns and cellars, and bring them to the magistrate.§!","art":"pass_fort","ai":1,"use":5,"levels":[{"root_out_resistance_effectiveness_factor":0.25},{"root_out_resistance_effectiveness_factor":0.25}]},
+    {"id":"upgrade_blueprint_stealing","branch":"branch_operation","name":"Copyists' Bribes","desc":"§LA purse in the right hand opens a guild's plan-chests for a single night.§!","art":"scroll_sealed","ai":1,"use":5,"levels":[{"operation_steal_tech_outcome":0.25}]},
+    {"id":"upgrade_portable_radios","branch":"branch_operation","name":"Rider Relays","desc":"§LA chain of fast riders and beacon keepers lets agents in the field strike together on a single signal.§!","art":"beacon","ai":1,"use":8,"avail":"has_tech = zin_tech_heralds","levels":[{"operation_coordinated_strike_outcome":1}]},
+    {"id":"upgrade_invisible_ink","branch":"branch_operation","name":"Secret Writing","desc":"§LLetters in lemon-juice and wax-blind scripts carry more word home, and are safer to carry.§!","art":"seal_wax","ai":1,"use":5,"levels":[{"intel_from_operatives_factor":0.2,"operation_steal_tech_risk":-0.25}]},
+    {"id":"upgrade_plastic_explosives","branch":"branch_operation","name":"Fire-Pots and Pitch","desc":"§LAgents learn which barrel burns slow and which burns fast, and where to leave each.§!","art":"foundry_fire","ai":1,"use":8,"levels":[{"target_sabotage_factor":0.25,"boost_resistance_factor":0.25}]},
+    {"id":"upgrade_suicide_pills","branch":"branch_operation","name":"Hidden Poison","desc":"§LA vial sewn into a hem. A captured agent can end the questioning, and the questioners know it.§!","art":"healer_herbs","ai":1,"use":5,"levels":[{"operative_death_on_capture_chance":0.1,"own_operative_detection_chance":-0.05}]},
+    {"id":"upgrade_training_centers","branch":"branch_operative","name":"Courtier Schools","desc":"§LA house in the capital where young folk learn manners, languages and the weight of a rumour. A further agent can be trained at a time.§!","art":"university_hall","ai":2,"use":10,"levels":[{"enemy_operative_recruitment_chance":0.25,"occupied_operative_recruitment_chance":0.25,"new_operative_slot_bonus":1}]},
+    {"id":"upgrade_commando_training","branch":"branch_operative","name":"Knife-School","desc":"§LA few agents are taught to fight as hard as they hide.§!","art":"lone_sword","ai":1,"use":5,"levels":[{"commando_trait_chance_factor":1}]},
+    {"id":"upgrade_interrogation_techniques","branch":"branch_operative","name":"The Questioners","desc":"§LPatient men learn to draw more from captured agents, and to do it quietly.§!","art":"chain_broken","ai":1,"use":5,"levels":[{"enemy_operative_capture_chance_factor":1,"enemy_operative_intel_extraction_rate":0.25}]},
+    {"id":"upgrade_diplo_training","branch":"branch_operative","name":"The Envoy's Tongue","desc":"§LAgents are taught to haggle over tolls, press envoys and win a quarrel with a smile.§!","art":"envoy","ai":1,"use":5,"levels":[{"control_trade_mission_factor":0.25,"diplomatic_pressure_mission_factor":0.25}]},
+    {"id":"upgrade_psycho_warfare","branch":"branch_operative","name":"Whisper Campaigns","desc":"§LTales told in the right tavern at the right hour move factions faster than any edict.§!","art":"feast_table","ai":1,"use":8,"levels":[{"propaganda_mission_factor":0.25,"boost_ideology_mission_factor":0.25}]},
+    {"id":"upgrade_form_department","branch":"branch_crypto","name":"Found the Reading Room","desc":"§LA locked room under the chancery where seals are copied, wheels are turned and letters are read. Unlocks reading, and gives a first seal.§!","art":"book_lore","aiBase":2,"use":8,"levels":[{"crypto_department_enabled":1,"crypto_strength":1,"decryption_power":25}]},
+    {"id":"upgrade_decryption_boost","branch":"branch_crypto","name":"Cipher Wheels in Hand","desc":"§LBrass wheels and ruled tables turn a night of guessing into an afternoon of reading.§!","art":"compass_rose","ai":2,"use":5,"avail":"has_done_agency_upgrade = upgrade_form_department","levels":[{"decryption_power":25},{"decryption_power":10}]},
+    {"id":"upgrade_decryption_boost_2","branch":"branch_crypto","name":"Learned Tables","desc":"§LScholars of the great schools compile every frequency of every tongue, and the Reading Room grows quicker.§!","art":"university_hall","ai":1,"use":10,"avail":"has_done_agency_upgrade = upgrade_decryption_boost\nhas_tech = zin_tech_universities","levels":[{"decryption_power":25},{"decryption_power":15},{"decryption_power":10}]},
+    {"id":"upgrade_crypto_strength","branch":"branch_crypto","name":"The School of Seals","desc":"§LCouriers are taught new knots, new wax and new words, so that stolen letters are harder to read.§!","art":"seal_royal","ai":2,"use":5,"avail":"has_done_agency_upgrade = upgrade_form_department","levels":[{"crypto_strength":1},{"crypto_strength":1}]},
+    {"id":"upgrade_crypto_strength_2","branch":"branch_crypto","name":"Learned Seals","desc":"§LScholars design seals no clerk could copy by eye, and a cipher that changes with the season.§!","art":"seal_chancellor","ai":1,"use":15,"avail":"has_done_agency_upgrade = upgrade_crypto_strength\nhas_tech = zin_tech_universities","levels":[{"crypto_strength":2},{"crypto_strength":2},{"crypto_strength":2}]}
+  ],
+  "agencies": [
+    {"id":"men_hands","people":"men","names":["The Quiet Hands"],"art":"seal_wax","default":true},
+    {"id":"men_room","people":"men","names":["The Sealed Room"],"art":"scroll_sealed"},
+    {"id":"men_lamp","people":"men","names":["The Lamp-Keepers"],"art":"lantern_chain"},
+    {"id":"elves_leaf","people":"elves","names":["The Leaf-Watchers"],"art":"tree_silver","default":true},
+    {"id":"elves_long","people":"elves","names":["The Long Listeners"],"art":"forest_ancient"},
+    {"id":"sun_listeners","people":"sun_elves","names":["The Sunward Listeners"],"art":"sun_flowers","default":true},
+    {"id":"orcs_pit","people":"orcs","names":["The Pit-Whisperers"],"art":"war_drums","default":true},
+    {"id":"orcs_ash","people":"orcs","names":["The Ash Ears"],"art":"ashen_waste"},
+    {"id":"trolls_bridge","people":"trolls","names":["The Bridge-Listeners"],"art":"troll_club","default":true},
+    {"id":"giants_far","people":"giants","names":["The Far-Watchers"],"art":"giant_hammer","default":true},
+    {"id":"ents_roots","people":"ents","names":["The Slow Roots"],"art":"ent_branch","default":true},
+    {"id":"yeti_snow","people":"yeti","names":["The Snow-Trackers"],"art":"footprints_snow","default":true},
+    {"id":"demons_oath","people":"demons","names":["The Oathbound Ears"],"art":"handshake_oath","default":true},
+    {"id":"dead_grave","people":"the_dead","names":["The Grave-Listeners"],"art":"book_lore","default":true},
+    {"id":"worshipdom_roll","country":"Worshipdom","names":["The Almoners' Roll"],"art":"alms_bread","default":true}
+  ],
+  "tokens": [
+    {"id":"token_civilian","name":"Seat in the Household","desc":"Holds a seat in the household of this court, and hears what is said there.","art":"palace_parim","bg":"GFX_infiltrate_civilian_bg","icon":"GFX_text_infiltrate_civilian_token"},
+    {"id":"token_army","name":"Name on the Roll","desc":"Has a name on the muster rolls of this realm's host, and hears what is said in the ranks.","art":"levy_muster","bg":"GFX_infiltrate_army_bg","icon":"GFX_text_infiltrate_army_token"},
+    {"id":"token_navy","name":"Berth Aboard","desc":"Holds a berth in this realm's fleet, and hears what is said on its decks.","art":"galley_oars","bg":"GFX_infiltrate_navy_bg","icon":"GFX_text_infiltrate_navy_token"},
+    {"id":"token_airforce","name":"Place in the Roost","desc":"Has a friend among this realm's dragon-keepers, and hears what is said in the roosts.","art":"dragon_wing","bg":"GFX_infiltrate_air_bg","icon":"GFX_text_infiltrate_air_token","sky":true},
+    {"id":"token_resistance_contacts","name":"Hidden Friends","desc":"Has friends among the unwilling subjects of this realm, who will act when asked.","art":"wild_hunt","bg":"GFX_contact_resistance_bg","icon":"GFX_text_contact_resistance_token"}
+  ],
+  "missions": {
+    "BUILD_INTEL_NETWORK": ["Weave a Web of Informants","Weaving a web of informants"],
+    "QUIET_INTEL_NETWORK": ["Let the Web Sleep","Letting a web of informants sleep"],
+    "COUNTER_INTELLIGENCE": ["Guard the Court","Guarding the court against strangers"],
+    "ROOT_OUT_RESISTANCE": ["Root Out the Hidden","Rooting out the hidden"],
+    "BOOST_IDEOLOGY": ["Raise a Faction","Raising a faction"],
+    "PROPAGANDA": ["Spread a Tale","Spreading a tale"],
+    "CONTROL_TRADE": ["Hold the Purse","Holding the purse"],
+    "DIPLOMATIC_PRESSURE": ["Press the Envoys","Pressing the envoys"]
+  },
+  "operativeSkills": ["Runner","Courier","Whisperer","Shadow","Master of Whispers"],
+  "operations": [
+    {"id":"operation_rescue_operative","short":"rescue_operative","priority":0,"name":"Bring Our Own Home","desc":"Free an agent of ours who sits in a rival's cells. A sound plan, a quiet door and a fast horse are all it takes.","art":"chain_broken","days":35,"net":30,"agents":1,"risk":0.1,"mid":["agent"],"exfil":true,"infil":"std"},
+    {"id":"operation_rescue_general","short":"rescue_general","priority":1,"name":"Ransom a Captain","desc":"A captain of ours is held by a rival lord. Agents may parley a ransom, storm the hold or smuggle him out in a carriage.","art":"lone_sword","days":35,"net":30,"agents":1,"risk":0.1,"mid":["captain"],"exfil":"short","infil":"short"},
+    {"id":"operation_infiltrate_civilian","short":"infiltrate_civilian","priority":1,"name":"Take Service at Court","desc":"An agent takes a place in a rival household and learns who comes and goes.","art":"palace_parim","days":90,"net":35,"agents":2,"risk":0.1,"kind":"infiltrate","token":"token_civilian","mid":["force_civilian"],"infil":"std","exfil":true},
+    {"id":"operation_fake_intel","short":"fake_intel","priority":2,"name":"Plant False Letters","desc":"A forged letter, planted where the enemy's seals will find it. Their captains march after phantoms.","art":"scroll_sealed","days":60,"net":40,"agents":2,"risk":0,"kind":"fake","mid":["fake1","fake2","fake3"],"infil":"none","exfil":"none"},
+    {"id":"operation_capture_cipher","short":"capture_cipher","priority":3,"name":"Steal the Cipher-Book","desc":"A courier's book of seals, copied in a night. The Reading Room does the rest.","art":"book_lore","days":75,"net":40,"agents":2,"risk":0.2,"kind":"cipher","mid":["cipher"],"infil":"std","exfil":true},
+    {"id":"operation_infiltrate_armed_forces_army","short":"infiltrate_army","priority":4,"name":"Enlist on the Roll","desc":"A name added to a rival's muster rolls, and a friend among his captains.","art":"levy_muster","days":75,"net":50,"agents":2,"risk":0.1,"kind":"infiltrate","token":"token_army","pool":"army","mid":["force_all"],"infil":"std","exfil":true},
+    {"id":"operation_infiltrate_armed_forces_navy","short":"infiltrate_navy","priority":5,"name":"Sign Aboard","desc":"A berth in a rival's fleet, and a quiet word with the boatswain.","art":"galley_oars","days":75,"net":50,"agents":2,"risk":0.1,"kind":"infiltrate","token":"token_navy","pool":"navy","mid":["force_all"],"infil":"std","exfil":true},
+    {"id":"operation_infiltrate_armed_forces_airforce","short":"infiltrate_air","priority":6,"name":"Befriend the Roost","desc":"A friend among a rival's dragon-keepers and riders, who talks over wine.","art":"dragon_wing","days":75,"net":50,"agents":2,"risk":0.1,"kind":"infiltrate","token":"token_airforce","pool":"air","sky":true,"mid":["force_all"],"infil":"std","exfil":true},
+    {"id":"operation_coup_government","short":"coup","priority":7,"name":"Raise the Captains","desc":"The captains rise against their lord. Arms are sent ahead, and a few of the household look the other way.","art":"crown_broken","days":180,"net":70,"agents":2,"risk":0.3,"exp":2.5,"kind":"coup","mid":["coup"],"infil":"std","exfil":"none"},
+    {"id":"operation_boost_resistance","short":"boost_resistance","priority":8,"name":"Arm the Hidden","desc":"Spears, shields and the knowledge to use them, handed to the unwilling subjects of a rival's holding.","art":"banner_black","days":50,"net":35,"agents":2,"risk":0.2,"exp":1.5,"costMult":0.25,"kind":"boost","mid":["support"],"infil":"boost","exfil":true},
+    {"id":"operation_make_resistance_contacts","short":"resistance_contacts","priority":9,"name":"Find the Hidden","desc":"Friends among the unwilling, found in markets and chapels, who will remember a kindness.","art":"hermitage_hills","days":60,"net":40,"agents":2,"risk":0.1,"kind":"contacts","mid":["contacts"],"infil":"contacts","exfil":true},
+    {"id":"operation_collaboration_government","short":"collaboration","priority":10,"name":"Seat a Friendly Regent","desc":"In a conquered land, a regent of our choosing governs in our name, and the folk obey him more readily than they would us.","art":"regency_seals","days":90,"net":50,"agents":2,"risk":0.1,"exp":1.5,"costMult":0.25,"kind":"regent","mid":["regent"],"infil":"std","exfil":true},
+    {"id":"operation_coordinated_strike","short":"coordinated_strike","priority":11,"name":"The Dawn Blow","desc":"Agents open a gate, cut the signal fires and guide the host in, so that war begins with the fort already ours.","art":"pass_fort","days":3,"net":70,"agents":2,"risk":0.3,"exp":2,"kind":"strike","mid":["strike1","strike2","strike3"],"infil":"std","exfil":"none"},
+    {"id":"operation_steal_tech_civilian","short":"steal_civilian","priority":12,"name":"Copy a Guild's Secrets","desc":"Pattern-books copied by candlelight from a rival's guild halls.","art":"scroll_sealed","days":120,"net":35,"agents":3,"risk":0.2,"exp":2,"costMult":0.05,"kind":"steal","token":"token_civilian","folders":["industry_folder","electronics_folder"],"mid":["steal_civ"],"infil":"std","exfil":true},
+    {"id":"operation_targeted_sabotage_industry","short":"sabotage_workshops","priority":13,"name":"Spoil the Workshops","desc":"Pitch and fire in the halls of the rival's smiths and joiners.","art":"foundry_fire","days":90,"net":35,"agents":3,"risk":0.2,"exp":2,"kind":"sabotage","var":"targeted_sabotage_industry","mid":["sab_industry"],"infil":"std","exfil":true},
+    {"id":"operation_targeted_sabotage_infrastructure","short":"sabotage_roads","priority":14,"name":"Cut the Roads","desc":"A bridge, a ford, a mountain road. The rival's carts and hosts go the long way round.","art":"roads_paved","days":90,"net":35,"agents":3,"risk":0.2,"exp":2,"kind":"sabotage","var":"targeted_sabotage_infrastructure","mid":["sab_roads"],"infil":"std","exfil":true},
+    {"id":"operation_targeted_sabotage_resources","short":"sabotage_mines","priority":15,"name":"Flood the Mines","desc":"Drowned shafts, spoiled granaries and blighted fields in the rival's lands.","art":"mine_cart","days":90,"net":35,"agents":3,"risk":0.2,"exp":2,"kind":"sabotage","var":"targeted_sabotage_resources","mid":["sab_stores"],"infil":"std","exfil":true},
+    {"id":"operation_steal_tech_army","short":"steal_army","priority":16,"name":"Copy the Smiths' Patterns","desc":"Arms, mail and engines drawn from a rival's armouries and copied.","art":"forge_anvil","days":120,"net":50,"agents":3,"risk":0.2,"exp":2,"costMult":0.05,"kind":"steal","token":"token_army","folders":["zin_arms_folder","zin_mounts_folder","zin_engines_folder","zin_lore_folder","zin_camp_folder"],"mid":["steal_army"],"infil":"std","exfil":true},
+    {"id":"operation_steal_tech_navy","short":"steal_navy","priority":17,"name":"Copy the Shipwrights' Plans","desc":"Hull plans and rigging drawings, copied in a rival's yards.","art":"shipwright_yard","days":120,"net":50,"agents":3,"risk":0.2,"exp":2,"costMult":0.05,"kind":"steal","token":"token_navy","folders":["zin_naval_folder"],"mid":["steal_navy"],"infil":"std","exfil":true},
+    {"id":"operation_steal_tech_airforce","short":"steal_air","priority":18,"name":"Copy the Roost-Lore","desc":"The old keepers' lore of feed and handling, copied from a rival's roosts.","art":"dragon_mountain","days":120,"net":50,"agents":3,"risk":0.2,"exp":2,"costMult":0.05,"kind":"steal","token":"token_airforce","folders":["zin_skies_folder"],"sky":true,"mid":["steal_air"],"infil":"std","exfil":true}
+  ],
+  "phaseGroups": {
+    "std": [
+      ["zin_ph_in_border",25],
+      ["zin_ph_in_ship",25],
+      ["zin_ph_in_wing",25],
+      ["zin_ph_in_embassy",25]
+    ],
+    "short": [
+      ["zin_ph_in_border",25],
+      ["zin_ph_in_wing",25]
+    ],
+    "boost": [
+      ["zin_ph_in_border",50],
+      ["zin_ph_in_ship",25],
+      ["zin_ph_in_wing",25]
+    ],
+    "contacts": [
+      ["zin_ph_in_border",25],
+      ["zin_ph_in_ship",25],
+      ["zin_ph_in_wing",25]
+    ],
+    "exfilStd": [
+      ["zin_ph_out_wing",15],
+      ["zin_ph_out_border",30],
+      ["zin_ph_out_ground",30],
+      ["zin_ph_out_ship",25]
+    ],
+    "exfilShort": [
+      ["zin_ph_out_wing",15],
+      ["zin_ph_out_border",30],
+      ["zin_ph_out_ground",30]
+    ],
+    "agent": [
+      ["zin_ph_agent_transit",33],
+      ["zin_ph_agent_camp",33],
+      ["zin_ph_agent_tools",33]
+    ],
+    "captain": [
+      ["zin_ph_captain_parley",33],
+      ["zin_ph_captain_hold",33],
+      ["zin_ph_captain_carriage",33]
+    ],
+    "force_all": [
+      ["zin_ph_force_bribe",25],
+      ["zin_ph_force_lover",25],
+      ["zin_ph_force_prisoner",25],
+      ["zin_ph_force_believer",25]
+    ],
+    "force_civilian": [
+      ["zin_ph_force_bribe",25],
+      ["zin_ph_force_lover",25],
+      ["zin_ph_force_believer",25]
+    ],
+    "fake1": [
+      ["zin_ph_fake_fires",33],
+      ["zin_ph_fake_horns",33],
+      ["zin_ph_fake_leaks",33]
+    ],
+    "fake2": [
+      ["zin_ph_fake_rumours",50],
+      ["zin_ph_fake_turncoat",50]
+    ],
+    "fake3": [
+      ["zin_ph_fake_proofs",50],
+      ["zin_ph_fake_prisoner",50]
+    ],
+    "cipher": [
+      ["zin_ph_cipher_courier",20],
+      ["zin_ph_cipher_raid",20],
+      ["zin_ph_cipher_scribe",20],
+      ["zin_ph_cipher_smuggle",20],
+      ["zin_ph_cipher_wheel",20]
+    ],
+    "coup": [
+      ["zin_ph_coup_meet",100]
+    ],
+    "coup2": [
+      ["zin_ph_coup_standard",100]
+    ],
+    "support": [
+      ["zin_ph_sup_armouries",25],
+      ["zin_ph_sup_handout",25],
+      ["zin_ph_sup_drill",25],
+      ["zin_ph_sup_bands",25]
+    ],
+    "contacts_mid": [
+      ["zin_ph_res_beacons",33],
+      ["zin_ph_res_birds",33],
+      ["zin_ph_res_barn",33]
+    ],
+    "regent": [
+      ["zin_ph_regent_council",33],
+      ["zin_ph_regent_garrison",33],
+      ["zin_ph_regent_captains",33]
+    ],
+    "strike1": [
+      ["zin_ph_strike_scout",50],
+      ["zin_ph_strike_mark",50]
+    ],
+    "strike2": [
+      ["zin_ph_strike_fires",34],
+      ["zin_ph_strike_guide",34],
+      ["zin_ph_strike_bridges",34]
+    ],
+    "strike3": [
+      ["zin_ph_strike_bridges",100]
+    ],
+    "steal_civ": [
+      ["zin_ph_steal_clerk",40],
+      ["zin_ph_steal_apprentice",40],
+      ["zin_ph_steal_foreman",20]
+    ],
+    "steal_army": [
+      ["zin_ph_steal_clerk",50],
+      ["zin_ph_steal_apprentice",50]
+    ],
+    "steal_navy": [
+      ["zin_ph_steal_clerk",40],
+      ["zin_ph_steal_apprentice",40],
+      ["zin_ph_steal_chest",20]
+    ],
+    "steal_air": [
+      ["zin_ph_steal_clerk",40],
+      ["zin_ph_steal_apprentice",40],
+      ["zin_ph_steal_model",20]
+    ],
+    "sab_industry": [
+      ["zin_ph_sab_pitch",90],
+      ["zin_ph_sab_meetings",10]
+    ],
+    "sab_roads": [
+      ["zin_ph_sab_bridge",25],
+      ["zin_ph_sab_gallery",25],
+      ["zin_ph_sab_signposts",25],
+      ["zin_ph_sab_carts",25]
+    ],
+    "sab_stores": [
+      ["zin_ph_sab_granary",50],
+      ["zin_ph_sab_tools",50]
+    ]
+  },
+  "phases": [
+    {"id":"zin_ph_in_border","name":"By the Border","desc":"The agents cross the march on foot, between two watch-posts, in the dark of the moon.","outcome":"Our agents slipped across the border and were not challenged.","art":"mountain_pass","req":"FROM = {\n\tany_neighbor_country = {\n\t\tNOT = { has_war_with = ROOT }\n\t\tNOT = { has_war_with = FROM }\n\t}\n}"},
+    {"id":"zin_ph_in_ship","name":"By a Night Ship","desc":"A small boat puts them ashore on a quiet beach, and sails again before dawn.","outcome":"A night ship set our agents ashore, and no watch saw her.","art":"ship_voyage","req":"FROM = {\n\tany_controlled_state = { is_coastal = yes }\n}"},
+    {"id":"zin_ph_in_wing","name":"By Wing","desc":"A dragon-keeper in our debt carries them over the border on a night flight.","outcome":"A rider set our agents down in a pasture far from any road.","art":"dragon_wing","req":"zin_rules_skies_present = yes"},
+    {"id":"zin_ph_in_embassy","name":"Through the Embassy","desc":"The agents travel openly with an envoy's train, and are lodged with the envoy's household.","outcome":"Our agents entered under the envoy's cloak, and the court was too polite to ask questions.","art":"envoy","eq":"civilian_factories = {\n\tamount = 1\n\tdays = 15\n}","req":"ROOT = { has_war = no }\nFROM = { has_war = no }","wt":{"modifier":"factor = 20\nROOT = { has_war = no }\nFROM = { has_war = no }","except":"FROM = { has_war_with = ROOT }"}},
+    {"id":"zin_ph_out_border","name":"Out by the Border","desc":"The agents walk home by the way they came, with the passes closing behind them.","outcome":"Our agents crossed the border safely.","extra":"Our agents were last seen at the border. They did not report back, and the watch-posts were loud that night.","art":"mountain_pass"},
+    {"id":"zin_ph_out_ground","name":"To Ground","desc":"The agents hide in a safe house in the capital until the hunt is over.","outcome":"Our agents lay hidden until the search had ended, and walked out as merchants.","extra":"Our agents went to ground, but a neighbour talked. The safe house was searched.","art":"hermitage_hills"},
+    {"id":"zin_ph_out_ship","name":"A Sea Pickup","desc":"A fishing boat comes in on the night tide to take them off the shore.","outcome":"A boat took our agents off a lonely beach.","extra":"A boat came for our agents, but the shore was watched. Some did not return.","art":"fishing_boats","req":"FROM = {\n\tany_controlled_state = { is_coastal = yes }\n}"},
+    {"id":"zin_ph_out_wing","name":"Out by Wing","desc":"A rider lifts the agents out of a quiet field at midnight.","outcome":"A rider carried our agents out over the hills.","extra":"A rider came for our agents, but beasts were heard and archers were set. Some did not return.","art":"dragon_wing","req":"zin_rules_skies_present = yes"},
+    {"id":"zin_ph_agent_transit","name":"In Transit","desc":"Our agent is moved between two strongholds. The cart is stopped on a lonely road.","outcome":"Our agent was freed on the road, and the guards never found out which way he went.","art":"traders_road"},
+    {"id":"zin_ph_agent_camp","name":"At the Camp","desc":"Our agent sits in a camp lock-up. A friend inside opens the gate.","outcome":"A gate opened from within, and our agent walked out.","art":"fort_wall"},
+    {"id":"zin_ph_agent_tools","name":"Hidden Tools","desc":"A file in a loaf, a key in a boot. The prisoner does the rest.","outcome":"Our agent had the tools he needed and made his own way out.","art":"chain_broken"},
+    {"id":"zin_ph_captain_parley","name":"A Ransom Parley","desc":"Envoys meet the captor and name a price. The ransom is paid in silver and in promises.","outcome":"The ransom was paid, and our captain came home on a borrowed horse.","art":"handshake_oath"},
+    {"id":"zin_ph_captain_hold","name":"A Stormed Hold","desc":"The captain is held in a small keep. Agents, a few friends and a ladder will do.","outcome":"The hold was taken in a night, and the captain brought out through the postern.","art":"pass_fort"},
+    {"id":"zin_ph_captain_carriage","name":"A Disguised Carriage","desc":"A closed carriage, a false pass and a driver who does not speak.","outcome":"The captain rode out in a lady's carriage, and no guard looked inside.","art":"caravan"},
+    {"id":"zin_ph_steal_clerk","name":"A Bribed Clerk","desc":"A clerk who keeps the keys is short of silver and long on grudges.","outcome":"The clerk let us into the plan-chests and kept the door.","art":"ledger_coins","eq":"civilian_factories = {\n\tamount = 1\n\tdays = 15\n}"},
+    {"id":"zin_ph_steal_apprentice","name":"A Charming Apprentice","desc":"An apprentice of ours takes a place beside the master, who is fond of a willing pupil.","outcome":"The apprentice copied the master's patterns, line by line.","art":"workshop_tools"},
+    {"id":"zin_ph_steal_chest","name":"A Copied Plan-Chest","desc":"Night after night, a few sheets are taken, copied and returned before the yard wakes.","outcome":"A plan-chest was copied and returned with no seal broken.","art":"shipwright_yard"},
+    {"id":"zin_ph_steal_model","name":"A Stolen Model","desc":"A small wooden model of the working, meant to be carried to the master's bench.","outcome":"A model was taken from the bench and carried across the border.","art":"dragon_mountain"},
+    {"id":"zin_ph_steal_foreman","name":"A Talkative Foreman","desc":"A foreman who drinks too long on market days, and speaks too freely when he does.","outcome":"The foreman told us all he knew, and thought he was only complaining.","art":"guild_hall"},
+    {"id":"zin_ph_force_bribe","name":"A Bribe","desc":"A purse changes hands in a back room of an inn.","outcome":"The purse was taken and the debt noted.","art":"coin_chest"},
+    {"id":"zin_ph_force_lover","name":"A Lover","desc":"A friendship of the heart gives an agent the ear of someone who matters.","outcome":"A fond word gave our agent the ear of a person with the keys.","art":"feast_table"},
+    {"id":"zin_ph_force_prisoner","name":"A Prisoner Turned","desc":"A captive taken in the last quarrel is offered his freedom for a few small favours.","outcome":"A prisoner chose his freedom, and now writes to us.","art":"chain_broken"},
+    {"id":"zin_ph_force_believer","name":"A Believer","desc":"Someone who holds a creed of our people close to his heart, and little love for his own lord.","outcome":"A believer in our cause gave us his service freely.","art":"olive_branch"},
+    {"id":"zin_ph_sab_pitch","name":"Pitch in the Halls","desc":"Casks of pitch carried in with the morning delivery, and a spark at midnight.","outcome":"The halls burned, and the fire could not be traced to a hand.","art":"foundry_fire","eq":"zin_camp_equipment = 500"},
+    {"id":"zin_ph_sab_meetings","name":"Stalled Meetings","desc":"Quarrels at the guild table, over small things, until nothing is decided.","outcome":"The guild masters argued for a season and made nothing.","art":"council_table"},
+    {"id":"zin_ph_sab_bridge","name":"A Broken Bridge","desc":"A pier cut half through, so that the bridge falls under the first heavy cart.","outcome":"The bridge fell under the first loaded wagon, and the stream took it.","art":"river_ford","eq":"zin_camp_equipment = 500"},
+    {"id":"zin_ph_sab_gallery","name":"A Collapsed Gallery","desc":"Props cut in the old mine road, so that the roof comes down on the next shift.","outcome":"The old gallery fell, and the road beyond it is closed for a season.","art":"mine_cart","eq":"zin_camp_equipment = 500"},
+    {"id":"zin_ph_sab_signposts","name":"Stolen Signposts","desc":"Milestones turned about and signposts taken down, so that carters lose their way.","outcome":"Carters took the wrong road for a month, and many never arrived.","art":"compass_rose"},
+    {"id":"zin_ph_sab_carts","name":"Stranded Carts","desc":"Axles cut halfway through, so that a long train breaks down far from any smith.","outcome":"A train of carts broke down on the high road, and the goods were left to rot.","art":"traders_road"},
+    {"id":"zin_ph_sab_granary","name":"A Burned Granary","desc":"A fire in the stores at harvest, set by someone who knew where the rats were.","outcome":"The granary burned to the ground, and the winter will be hard.","art":"granary"},
+    {"id":"zin_ph_sab_tools","name":"Spoiled Mining Tools","desc":"Picks quenched too hot, so that they shatter on the first deep stone.","outcome":"The miners' picks broke one by one, and the shaft was left idle.","art":"quarry_stone"},
+    {"id":"zin_ph_res_beacons","name":"Beacon Codes","desc":"Hill-top fires are lit in a pattern only the hidden know.","outcome":"A beacon code was agreed, and the hidden know which fires are ours.","art":"beacon"},
+    {"id":"zin_ph_res_birds","name":"Carrier Birds","desc":"Pigeons taken to the unwilling villages, with a promise of more.","outcome":"The hidden have birds now, and will send word when they need us.","art":"white_deer"},
+    {"id":"zin_ph_res_barn","name":"A Briefing in a Barn","desc":"A night meeting among the straw, with a lantern shuttered.","outcome":"A meeting in a barn settled who will be asked and who will answer.","art":"farm_sowing"},
+    {"id":"zin_ph_sup_armouries","name":"Hidden Armouries","desc":"Spears and bows buried in a dry well, wrapped in oiled cloth.","outcome":"A hidden armoury was laid, and the hidden know where it lies.","art":"quarry_stone","eq":"zin_arms_equipment = 200"},
+    {"id":"zin_ph_sup_handout","name":"Arms Handed Out","desc":"A cart of hoes and scythes, each with an edge a smith has set.","outcome":"A cartload of tools with edges was shared out on a feast day.","art":"spear_levy"},
+    {"id":"zin_ph_sup_drill","name":"Teaching Drill","desc":"A few veterans of our host teach the hidden to hold a line.","outcome":"The hidden learned to march and stand, and will not break at the first charge.","art":"war_drums"},
+    {"id":"zin_ph_sup_bands","name":"Joining the Bands","desc":"Agents ride with the hidden for a season, and show them the paths between the holds.","outcome":"Our agents rode with the hidden and showed them the safe paths.","art":"wild_hunt"},
+    {"id":"zin_ph_cipher_courier","name":"A Bribed Courier","desc":"The rider who carries the book is paid to lose it for a single night.","outcome":"The courier was paid, and the cipher-book was copied before dawn.","art":"courier_pilgrim"},
+    {"id":"zin_ph_cipher_raid","name":"A Raid on the Seal-Room","desc":"Three agents, a lantern and a stolen key take the seal-room while the clerks sleep.","outcome":"The seal-room was emptied and filled again before the clerks woke.","art":"seal_chancellor"},
+    {"id":"zin_ph_cipher_scribe","name":"A Wooed Scribe","desc":"A scribe who dines with an agent, and who likes to be asked about his work.","outcome":"The scribe talked all evening, and the agent remembered it all.","art":"book_lore"},
+    {"id":"zin_ph_cipher_smuggle","name":"A Smuggled Book","desc":"The cipher-book is borrowed under a merchant's cloak and carried out in a bale of cloth.","outcome":"The book was carried out in a bolt of cloth and carried back the same way.","art":"caravan"},
+    {"id":"zin_ph_cipher_wheel","name":"A Copied Wheel","desc":"A brass cipher wheel is pressed in wax, and a founder in our pay casts a twin.","outcome":"A twin of the cipher wheel now turns in our Reading Room.","art":"compass_rose"},
+    {"id":"zin_ph_fake_fires","name":"Decoy Camp-Fires","desc":"Hundreds of fires lit on a ridge where no host lies, to be counted by the enemy's scouts.","outcome":"A ridge of fires drew the enemy's scouts, and he counted a host that was never there.","art":"scout_lantern"},
+    {"id":"zin_ph_fake_horns","name":"False Signal Horns","desc":"Horn calls from the wrong hills, sounded at the hours when an army would sound them.","outcome":"False horns called from the wrong hills, and the enemy answered them.","art":"war_drums"},
+    {"id":"zin_ph_fake_leaks","name":"Deliberate Leaks","desc":"A word dropped in a tavern frequented by clerks, which the enemy will pass up the line.","outcome":"A well-placed whisper reached the enemy's council as a warning.","art":"market_stalls"},
+    {"id":"zin_ph_fake_rumours","name":"Market Rumours","desc":"Traders tell a tale of our muster at every fair, and the tale grows in the telling.","outcome":"The rumour ran the length of the high road and was believed.","art":"market_stalls"},
+    {"id":"zin_ph_fake_turncoat","name":"A Turned Agent","desc":"An enemy spy who works for us, and feeds his masters what we choose.","outcome":"The enemy's spy sent home a report that we wrote.","art":"two_crowns"},
+    {"id":"zin_ph_fake_proofs","name":"Planted Proofs","desc":"Orders, tallies and a sealed letter, left where a careless officer will find them.","outcome":"The planted proofs were found, and carried to the enemy council as truth.","art":"seal_wax"},
+    {"id":"zin_ph_fake_prisoner","name":"A Released Prisoner","desc":"A captive freed with a head full of what he was told, and a plausible story of how he escaped.","outcome":"A freed prisoner carried our story home, and swore it was true.","art":"banner_laid_down"},
+    {"id":"zin_ph_regent_council","name":"A Planning Council","desc":"Our envoys sit with the chosen regent and sketch how the land will be governed.","outcome":"The regent and our envoys settled how the land would be ruled.","art":"council_table"},
+    {"id":"zin_ph_regent_garrison","name":"Training a Garrison","desc":"The regent's own guard is drilled in our ways, and sworn to him and to us.","outcome":"The regent has a guard that answers to him, and to us.","art":"levy_muster"},
+    {"id":"zin_ph_regent_captains","name":"Friendly Captains","desc":"Captains of the old order are won over one by one with titles and with promises.","outcome":"The old captains accepted the regent, and brought their companies.","art":"banner_league"},
+    {"id":"zin_ph_strike_scout","name":"Scouting the Gate","desc":"Agents walk every wall and note every sentry, every hour and every lamp.","outcome":"Every gate was walked and written down, and the plan was drawn.","art":"scout_lantern","eq":"zin_camp_equipment = 100"},
+    {"id":"zin_ph_strike_mark","name":"Marking the Targets","desc":"Chalk on doors, coloured ribbons on posts. The host will know what to take first.","outcome":"The targets were marked in a way that only the host could read.","art":"map_unrolled","eq":"zin_camp_equipment = 100"},
+    {"id":"zin_ph_strike_fires","name":"Cutting the Signal Fires","desc":"On the night of the blow, every beacon on the border is put out before it is lit.","outcome":"The beacons were put out one by one, and the realm slept on.","art":"beacon","eq":"zin_camp_equipment = 100"},
+    {"id":"zin_ph_strike_guide","name":"Guiding the Host","desc":"Agents wait at every crossroads with a lantern and show the vanguard the paths.","outcome":"The vanguard found its way through the dark by our lanterns.","art":"lighthouse","eq":"zin_camp_equipment = 100"},
+    {"id":"zin_ph_strike_bridges","name":"Seizing the Bridges","desc":"At the signal, the agents and a few friends hold the bridges against the garrison.","outcome":"The bridges were held until the host came up.","art":"river_ford","eq":"zin_arms_equipment = 1000"},
+    {"id":"zin_ph_coup_meet","name":"The Captains Meet","desc":"In a hunting lodge, far from the court, the captains agree who will rise and when.","outcome":"The captains met in secret and swore to rise together.","art":"council_table"},
+    {"id":"zin_ph_coup_standard","name":"The Standard Is Raised","desc":"A banner, new-sewn, is hung from a captain's tower, and the host splits in two.","outcome":"The captains raised their own standard, and the host divided.","art":"banner_black"}
+  ],
+  "raids": {
+    "category": {"id":"zin_night_raids","name":"Night Raid","header":"Night Raids","desc":"§HNight raids§!\nSmall bands slip behind the enemy's line in the dark, to burn what he stores, free those he holds and be gone by dawn.","fluff":"§LA few fast riders and a lantern.§!","art":"ranger_cloak"},
+    "types": [
+      {"id":"zin_raid_ransom_captain","name":"Ransom a Captain by Night","desc":"A band slips into the hold where an enemy keeps one of our captains and brings him out by night.","captive":"§Y$NAME$§! is held captive here.","art":"lone_sword","days":60,"again":60,"speed":10,"range":20,"cp":20,"kind":"rescue"},
+      {"id":"zin_raid_depot_night","name":"Burn the Depot","desc":"A band falls on a depot of the enemy and burns the stores before the guard can wake.","art":"granary","days":15,"again":120,"speed":1.25,"cp":25,"kind":"depot","building":"supply_node"},
+      {"id":"zin_raid_granary_fire","name":"Fire the Granary","desc":"A band finds the enemy's granary on the edge of a town and sets it alight.","art":"farm_sowing","days":20,"again":150,"speed":1,"cp":25,"kind":"granary","building":"energy_infrastructure"}
+    ]
+  },
+  "timedActivity": {
+    "id": "stage_coup",
+    "equipment": {"zin_arms_equipment":1000}
+  },
+  "ai": {
+    "agencyBranches": {"branch_crypto":2000,"branch_defense":1000,"branch_intelligence":1000,"branch_operation":500,"branch_operative":100},
+    "usableWorkshops": {"default":5,"major":10},
+    "operationWeights": [
+      {"stance":"dominion_wild","operation":"operation_infiltrate_civilian","value":800},
+      {"stance":"dominion_wild","operation":"operation_infiltrate_armed_forces_army","value":600},
+      {"stance":"dominion_wild","operation":"operation_targeted_sabotage_infrastructure","value":300},
+      {"stance":"light","operation":"operation_infiltrate_civilian","value":600},
+      {"stance":"light","operation":"operation_make_resistance_contacts","value":400}
+    ],
+    "missionWeights": [
+      {"mission":"build_intel_network","value":1000},
+      {"mission":"counter_intelligence","value":800}
+    ],
+    "coupFloorDark": 40
+  }
+}

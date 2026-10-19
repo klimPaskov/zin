@@ -1,0 +1,21 @@
+{
+  "family": "rules",
+  "note": "The labels of the rules a realm obeys (rules_l_english.yml) and the text of the 19 game rules ZIN keeps. The kept rules already carry ZIN keys written by modules/vanilla_removal.mjs (ZIN_RULE_*, common/game_rules/00_game_rules.txt), so the vanilla game_rules keys are unreachable and only the engine labels below are swept (docs/specs/07_interface/05_text_sweep.md family rules).",
+  "lit": {
+    "CAN_ACCESS_MARKET": "Can use the {international_market} (§Y{puppet:p}§! and §Y{overlord:p}§! can always use each other's fairs)",
+    "CAN_BE_SPYMASTER": "Can hold the post of {spymaster}",
+    "CAN_BOOST_OTHER_IDEOLOGIES": "Can raise the popularity of other alignments",
+    "CAN_BOOST_OWN_IDEOLOGY": "Can raise the popularity of its own party in other realms",
+    "CAN_CREATE_COLLABORATION_GOVERNMENT": "Can set up {collaboration_government:p:lc}",
+    "CAN_DECLARE_WAR_ON_SAME_IDEOLOGY": "Can build a claim against a realm of the same alignment and declare war on it",
+    "CAN_DECLARE_WAR_WITHOUT_WARGOAL_WHEN_IN_WAR": "Can declare war on a neighbour without a cause of war while at war with a great power",
+    "CAN_FORCE_GOVERNMENT": "Can force the {government:lc} of another realm to take on the same alignment",
+    "CAN_GUARANTEE_OTHER_IDEOLOGIES": "Can give a {guarantee:lc} to realms of other alignments",
+    "CAN_JOIN_FACTIONS": "Can join a {faction:lc}",
+    "CAN_JOIN_FACTIONS_NOT_ALLOWED_DIPLOMACY": "$COUNTRY|H$ is not allowed to join a {faction:lc}",
+    "CAN_ONLY_JUSTIFY_WAR_ON_THREAT_COUNTRY": "Can build a claim only against a realm that has added to {world_tension}",
+    "CAN_PUPPET": "Can bind a realm as {puppet:a}",
+    "CAN_USE_UNDERWAY_REPLENISHMENT": "Can restock ships at sea",
+    "CONTRIBUTES_OPERATIVES": "Lends {operative:p:lc} to the {spymaster}: Yes"
+  }
+}

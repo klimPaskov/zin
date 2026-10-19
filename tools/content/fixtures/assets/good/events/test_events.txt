@@ -1,0 +1,18 @@
+add_namespace = zin_test
+country_event = {
+	id = zin_test.1
+	title = zin_test.1.t
+	picture = GFX_zin_evt_one
+	option = {
+		name = zin_test.1.a
+		country_event = { id = zin_test.2 }
+	}
+}
+country_event = {
+	id = zin_test.2
+	title = zin_test.2.t
+	picture = GFX_zin_evt_two
+	option = {
+		name = zin_test.2.a
+	}
+}

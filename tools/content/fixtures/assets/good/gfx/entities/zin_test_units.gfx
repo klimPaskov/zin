@@ -1,0 +1,15 @@
+objectTypes = {
+	pdxmesh = {
+		name = "zin_test_unit_mesh"
+		file = "gfx/models/units/zin/zin_test_unit/zin_test_unit.mesh"
+		meshsettings = {
+			name = "output_unwrapped.002"
+			index = 0
+			texture_diffuse = "zin_test_unit_diffuse.dds"
+			texture_normal = "zin_test_unit_normal.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		animation = { id = "idle" type = "zin_test_unit_idle_animation" }
+		animation = { id = "move" type = "zin_test_unit_move_animation" }
+	}
+}

@@ -1,0 +1,1094 @@
+{
+  "version": 1,
+  "spec": "docs/specs/03_gameplay/02_economy.md",
+  "note": "Builder data of tools/content/modules/economy.mjs: the seven resources, the energy system (Provisions) and the Stored Essence bar, the building names, the state category names, the regional economic identity, the regional spirits and the Golden Court's treasury. Engine keys never change; names change through localisation. Every name, number and text here is proposed by the economy spec. The master plan's P5 sentence ('charcoal and coal') is read as the economy spec reads it: Provisions fed by Grain and Stored Essence (text sweep spec, glossary entries energy and fuel).",
+  "resources": [
+    {
+      "key": "oil",
+      "frame": 1,
+      "name": "Essence",
+      "scarce": true,
+      "role": "Raw magic from wellsprings, elder groves, ley-stones and the vents of the Dead Lands",
+      "warfareUse": "Wards and other magical equipment; the Stored Essence bar",
+      "cic": 0.125,
+      "convoys": 0.1
+    },
+    {
+      "key": "aluminium",
+      "frame": 2,
+      "name": "Timber",
+      "role": "Seasoned oak, pine and yew",
+      "warfareUse": "Hulls (main input), siege engines, bows",
+      "cic": 0.125,
+      "convoys": 0.1
+    },
+    {
+      "key": "rubber",
+      "frame": 3,
+      "name": "Horses",
+      "role": "Horses, camels and other mounts",
+      "warfareUse": "Mounted equipment and pack trains",
+      "cic": 0.125,
+      "convoys": 0.1
+    },
+    {
+      "key": "tungsten",
+      "frame": 4,
+      "name": "Stone",
+      "role": "Quarried and dressed stone, shot",
+      "warfareUse": "Engines",
+      "cic": 0.125,
+      "convoys": 0.1
+    },
+    {
+      "key": "steel",
+      "frame": 5,
+      "name": "Iron",
+      "role": "Ore and bloomery iron",
+      "warfareUse": "Arms, armour, hulls, engines",
+      "cic": 0.125,
+      "convoys": 0.1
+    },
+    {
+      "key": "chromium",
+      "frame": 6,
+      "name": "Gold",
+      "scarce": true,
+      "role": "Gold and silver",
+      "warfareUse": "Elven arms, knightly plate and flagship fittings",
+      "cic": 0.125,
+      "convoys": 0.1
+    },
+    {
+      "key": "coal",
+      "frame": 7,
+      "name": "Grain",
+      "energy": true,
+      "role": "Grain, fish and fodder; it feeds the Provisions of every workshop, forge and yard",
+      "warfareUse": "Never in a cost; it becomes Provisions",
+      "cic": 0.125,
+      "convoys": 0.1
+    }
+  ],
+  "energy": {
+    "engineResource": "coal",
+    "fuelResource": "oil",
+    "provisions": "Provisions",
+    "storedEssence": "Stored Essence",
+    "meaning": "The engine's energy system is the Provisions of Erdae: bread, fodder and firewood that keep the hands of every workshop, forge and yard at work. Grain extracted in a realm is eaten as Provisions (RESOURCE_TO_ENERGY_COEFFICIENT per unit) on top of a small base the hearths always supply (BASE_COUNTRY_ENERGY_PRODUCTION). The engine's fuel bar is Stored Essence: present, never spent, because every equipment burns 0 fuel (warfare spec).",
+    "buildings": {
+      "energy_infrastructure": "Granaries",
+      "industrial_infrastructure": "Mine and Quarry Roads"
+    },
+    "effects": {
+      "workshops": "A realm short of Provisions loses output in each Guild Workshop and builds more slowly (the alert names both).",
+      "armouries": "Each Armoury makes less and the Output modifier of the forges falls by the same share.",
+      "shipwrights": "Each Shipwright makes less and the Output modifier of the yards falls by the same share."
+    },
+    "model": {
+      "note": "Design model, assumed from the comments of the installed defines (to be measured in the Linux run with the console command energy_ratio and the top bar tooltip): the demand of one building is min(ENERGY_COST_CAP, BASE_ENERGY_COST + ENERGY_SCALING_COST_BY_FACTORY_COUNT x all buildings) and the supply is BASE_COUNTRY_ENERGY_PRODUCTION + RESOURCE_TO_ENERGY_COEFFICIENT x Grain used.",
+      "baseCost": 0.25,
+      "scaling": 0.0225,
+      "cap": 6.6,
+      "coefficient": 9,
+      "base": 12
+    },
+    "texticons": [
+      {
+        "name": "energy_texticon",
+        "sprite": "GFX_energy_texticon",
+        "means": "Provisions (a loaf and a sack)"
+      },
+      {
+        "name": "energy_consumption_texticon",
+        "sprite": "GFX_energy_consumption_texticon",
+        "means": "Grain eaten as Provisions (an ear of grain)"
+      },
+      {
+        "name": "out_of_power_texticon",
+        "sprite": "GFX_out_of_power_texticon",
+        "means": "Empty sack: Provisions run short"
+      },
+      {
+        "name": "power_balance_texticon",
+        "sprite": "GFX_power_balance_texticon",
+        "means": "Balance of Provisions (a pair of scales)"
+      }
+    ]
+  },
+  "buildings": [
+    {
+      "key": "infrastructure",
+      "status": "used",
+      "name": "Road",
+      "plural": "Roads",
+      "desc": "Roads and bridges let hosts march faster, carry more supplies up from the depots and let mines and quarries yield more."
+    },
+    {
+      "key": "arms_factory",
+      "status": "used",
+      "name": "Armoury",
+      "plural": "Armouries",
+      "desc": "Forges and benches where smiths and armourers turn out arms and gear for the host. A slot can be turned back into a guild workshop when the realm has need."
+    },
+    {
+      "key": "industrial_complex",
+      "status": "used",
+      "name": "Guild Workshop",
+      "plural": "Guild Workshops",
+      "desc": "Guild craftsmen raise new buildings and make wares for the folk and for trade. A slot can be turned into an armoury when the realm has need."
+    },
+    {
+      "key": "dockyard",
+      "status": "used",
+      "name": "Shipwright",
+      "plural": "Shipwrights",
+      "desc": "Slips and sheds where ships are built and mended for the fleet."
+    },
+    {
+      "key": "naval_base",
+      "status": "used",
+      "name": "Harbour",
+      "plural": "Harbours",
+      "desc": "Quays and sea-walls from which fleets sail and are mended. A harbour opens the sea road to cargo and trade, and each level lets more supplies pass."
+    },
+    {
+      "key": "air_base",
+      "status": "used",
+      "name": "Eyrie",
+      "plural": "Eyries",
+      "desc": "Roosts and stables for the winged hosts of the realm. None stand at the start; they are raised once a realm holds dragons."
+    },
+    {
+      "key": "supply_node",
+      "status": "used",
+      "name": "Depot",
+      "plural": "Depots",
+      "desc": "A depot is a storehouse on a high road, away from the cities, where the host may draw its supplies."
+    },
+    {
+      "key": "rail_way",
+      "status": "used",
+      "name": "High Road",
+      "plural": "High Roads",
+      "desc": "High roads join the depots, so that supplies may be drawn from far beyond the capital."
+    },
+    {
+      "key": "bunker",
+      "status": "used",
+      "name": "Stone Fort",
+      "plural": "Stone Forts",
+      "desc": "Each level of a stone fort lowers an attacker's strength in battle by $VALUE|+%0$. Attacks from several sides blunt a fort's worth."
+    },
+    {
+      "key": "coastal_bunker",
+      "status": "used",
+      "name": "Sea Fort",
+      "plural": "Sea Forts",
+      "desc": "Each level of a sea fort lowers an attacker's strength by $VALUE|+%0$ when the enemy lands from the sea."
+    },
+    {
+      "key": "stronghold_network",
+      "status": "used",
+      "name": "Fortress Network",
+      "plural": "Fortress Networks",
+      "desc": "Great forts, walls and signal towers that stand together as one defence, built to turn back an enemy and to hold the key lands."
+    },
+    {
+      "key": "anti_air_building",
+      "status": "used",
+      "name": "Scorpion Towers",
+      "plural": "Scorpion Towers",
+      "desc": "Tall towers where bolt-throwers command the sky. They shield the state from raiders on the wing and shoot at those who dive on it."
+    },
+    {
+      "key": "radar_station",
+      "status": "used",
+      "name": "Beacon Tower",
+      "plural": "Beacon Towers",
+      "desc": "Watch fires and signal horns tell us what moves in the nearby states.\nA higher tower in a state carries the warning further.\nWatchers on the towers also give early word of winged raiders, so our own riders can meet them.\nThey spot hostile fleets at sea as well."
+    },
+    {
+      "key": "naval_supply_hub",
+      "status": "used",
+      "name": "Victualling Yard",
+      "plural": "Victualling Yards",
+      "desc": "A victualling yard lets our fleets take on stores in this harbour as well as in their home ports, which carries their reach further.\nIt can only be raised in a coastal province that has a harbour of at least level 8."
+    },
+    {
+      "key": "naval_headquarters",
+      "status": "used",
+      "name": "Admiralty",
+      "plural": "Admiralties",
+      "desc": "An admiralty lets us seat an admiral to strengthen the fleets that sail within its reach.\n\nUp to $MAXNUM|H$ admiralties can have an admiral seated at one time.\n   Seated now: $CURRNUM|H$\n\nAn admiralty can only be raised in a coastal province that has a harbour of at least level 8."
+    },
+    {
+      "key": "energy_infrastructure",
+      "status": "used",
+      "name": "Granary",
+      "plural": "Granaries",
+      "desc": "Deep granaries and well-kept bakehouses mean our workshops, forges and yards eat less of the realm's Provisions, however busy the year."
+    },
+    {
+      "key": "industrial_infrastructure",
+      "status": "used",
+      "name": "Mine and Quarry Roads",
+      "plural": "Mine and Quarry Roads",
+      "desc": "Cart-ways cut to the pits and quarries let more ore and stone come out of the ground and reach the forges."
+    },
+    {
+      "key": "synthetic_refinery",
+      "status": "hidden",
+      "name": "Essence Still",
+      "plural": "Essence Stills",
+      "desc": "A still draws Stored Essence from the raw essence of the state. No art of Erdae raises one."
+    },
+    {
+      "key": "fuel_silo",
+      "status": "hidden",
+      "name": "Essence Vault",
+      "plural": "Essence Vaults",
+      "desc": "A warded vault with room for more Stored Essence. No art of Erdae raises one."
+    },
+    {
+      "key": "rocket_site",
+      "status": "hidden",
+      "name": "Ritual Ground",
+      "plural": "Ritual Grounds",
+      "desc": "A ring of stones kept for the rarest rites. None stand in Erdae."
+    },
+    {
+      "key": "mega_gun_emplacement",
+      "status": "hidden",
+      "name": "Great Engine",
+      "plural": "Great Engines",
+      "desc": "A siege engine of a size no wright of Erdae has built."
+    },
+    {
+      "key": "nuclear_reactor",
+      "status": "hidden",
+      "name": "Deep Crucible",
+      "plural": "Deep Crucibles",
+      "desc": "A sealed crucible for the deepest rites. None are raised."
+    },
+    {
+      "key": "nuclear_reactor_heavy_water",
+      "status": "hidden",
+      "name": "Cold Crucible",
+      "plural": "Cold Crucibles",
+      "desc": "A sealed crucible of a colder kind. None are raised."
+    },
+    {
+      "key": "commercial_nuclear_reactor",
+      "status": "hidden",
+      "name": "Hearth Crucible",
+      "plural": "Hearth Crucibles",
+      "desc": "A sealed crucible meant for the hearths of the folk. None are raised."
+    },
+    {
+      "key": "nuclear_facility",
+      "status": "hidden",
+      "name": "Deep Circle",
+      "plural": "Deep Circles",
+      "desc": "A circle of stones where scholars work the Deep Rites.",
+      "owner": "03_gameplay/08_institutions.md"
+    },
+    {
+      "key": "air_facility",
+      "status": "hidden",
+      "name": "Roost Circle",
+      "plural": "Roost Circles",
+      "desc": "A circle of stones where scholars work the Sky Rites.",
+      "owner": "03_gameplay/08_institutions.md"
+    },
+    {
+      "key": "naval_facility",
+      "status": "hidden",
+      "name": "Tide Circle",
+      "plural": "Tide Circles",
+      "desc": "A circle of stones on the shore where scholars work the Tide Rites.",
+      "owner": "03_gameplay/08_institutions.md"
+    },
+    {
+      "key": "land_facility",
+      "status": "hidden",
+      "name": "Warding Circle",
+      "plural": "Warding Circles",
+      "desc": "A circle of stones where scholars work the War Rites.",
+      "owner": "03_gameplay/08_institutions.md"
+    },
+    {
+      "key": "dam",
+      "status": "hidden",
+      "name": "Mill Weir",
+      "plural": "Mill Weirs",
+      "desc": "A weir across a river to turn mills and feed the channels. None are raised."
+    },
+    {
+      "key": "dam_mountain",
+      "status": "hidden",
+      "name": "Mountain Weir",
+      "plural": "Mountain Weirs",
+      "desc": "A weir in a mountain gorge. None are raised."
+    },
+    {
+      "key": "cataract_dam_mountain",
+      "status": "hidden",
+      "name": "Cataract Weir",
+      "plural": "Cataract Weirs",
+      "desc": "A great weir above a cataract. None are raised."
+    },
+    {
+      "key": "canal_kiel",
+      "status": "hidden",
+      "name": "Cut Locks",
+      "plural": "Cut Locks",
+      "desc": "The locks of a sea-cut. None are raised."
+    },
+    {
+      "key": "canal_panama",
+      "status": "hidden",
+      "name": "Neck Locks",
+      "plural": "Neck Locks",
+      "desc": "The locks of a cut through a neck of land. None are raised."
+    }
+  ],
+  "interimLandmark": {
+    "key": "zin_interim_landmark",
+    "name": "Standing Monument",
+    "desc": "A monument that stands in no state until Erdae's own landmarks, such as the Golden Court and the gate at Kingson, are raised."
+  },
+  "stateCategories": [
+    {
+      "key": "wasteland",
+      "slots": 0,
+      "name": "Barren Waste"
+    },
+    {
+      "key": "enclave",
+      "slots": 0,
+      "name": "Holdfast"
+    },
+    {
+      "key": "tiny_island",
+      "slots": 0,
+      "name": "Skerry"
+    },
+    {
+      "key": "small_island",
+      "slots": 1,
+      "name": "Isle"
+    },
+    {
+      "key": "pastoral",
+      "slots": 1,
+      "name": "Steading"
+    },
+    {
+      "key": "rural",
+      "slots": 2,
+      "name": "Shire"
+    },
+    {
+      "key": "large_island",
+      "slots": 3,
+      "name": "Great Isle"
+    },
+    {
+      "key": "town",
+      "slots": 4,
+      "name": "Market Town"
+    },
+    {
+      "key": "large_town",
+      "slots": 5,
+      "name": "Walled Town"
+    },
+    {
+      "key": "city",
+      "slots": 6,
+      "name": "Chartered City"
+    },
+    {
+      "key": "large_city",
+      "slots": 8,
+      "name": "Great City"
+    },
+    {
+      "key": "metropolis",
+      "slots": 10,
+      "name": "Royal City"
+    },
+    {
+      "key": "megalopolis",
+      "slots": 12,
+      "name": "Crown City"
+    }
+  ],
+  "regionByRoster": {
+    "Rush Land": "middle_lands",
+    "Rush Islands": "middle_lands",
+    "East-Earth": "north_lands",
+    "Cold Lands": "cold_lands",
+    "West-Earth": "west_lands",
+    "Tritons Islands": "tritons_islands",
+    "Dark Lands": "dark_lands",
+    "Magical Lands": "magical_lands",
+    "Ocean of Edvoid": "zols_mistake",
+    "Dead Lands": "dead_lands",
+    "South-Earth": "east_lands",
+    "Islands of The South": "islands_of_the_south",
+    "Sunhot": "lands_of_the_sun"
+  },
+  "regions": [
+    {
+      "key": "middle_lands",
+      "name": "Middle Lands",
+      "weights": {
+        "steel": 2,
+        "aluminium": 2,
+        "rubber": 2,
+        "tungsten": 2,
+        "chromium": 1,
+        "oil": 1,
+        "coal": 3
+      },
+      "development": 0.6,
+      "identity": "The richest heartland: workshops, lake harbours, high roads",
+      "spirit": "zin_econ_middle_lands"
+    },
+    {
+      "key": "north_lands",
+      "name": "North Lands",
+      "weights": {
+        "steel": 2,
+        "aluminium": 3,
+        "rubber": 1,
+        "tungsten": 1,
+        "chromium": 0,
+        "oil": 0,
+        "coal": 1
+      },
+      "development": 0.45,
+      "identity": "Shipwrights and the strait",
+      "spirit": "zin_econ_north_lands"
+    },
+    {
+      "key": "cold_lands",
+      "name": "Cold Lands",
+      "weights": {
+        "steel": 3,
+        "aluminium": 2,
+        "rubber": 1,
+        "tungsten": 2,
+        "chromium": 0,
+        "oil": 0,
+        "coal": 0
+      },
+      "development": 0.25,
+      "identity": "Iron and furs; hard winters; the largest and least developed land",
+      "spirit": "zin_econ_cold_lands"
+    },
+    {
+      "key": "west_lands",
+      "name": "West Lands",
+      "weights": {
+        "steel": 2,
+        "aluminium": 2,
+        "rubber": 3,
+        "tungsten": 1,
+        "chromium": 0,
+        "oil": 0,
+        "coal": 2
+      },
+      "development": 0.4,
+      "identity": "Horses, freeholds and mercenary companies",
+      "spirit": "zin_econ_west_lands"
+    },
+    {
+      "key": "tritons_islands",
+      "name": "Triton's Islands",
+      "weights": {
+        "steel": 0,
+        "aluminium": 2,
+        "rubber": 0,
+        "tungsten": 0,
+        "chromium": 0,
+        "oil": 0,
+        "coal": 1
+      },
+      "development": 0.3,
+      "identity": "Fishing, piracy and charts",
+      "spirit": "zin_econ_tritons_islands"
+    },
+    {
+      "key": "dark_lands",
+      "name": "Dark Lands",
+      "weights": {
+        "steel": 2,
+        "aluminium": 1,
+        "rubber": 1,
+        "tungsten": 2,
+        "chromium": 0,
+        "oil": 1,
+        "coal": 1
+      },
+      "development": 0.3,
+      "identity": "Forge-pits of the orc holds",
+      "spirit": "zin_econ_dark_lands",
+      "armouryShare": 0.5
+    },
+    {
+      "key": "magical_lands",
+      "name": "Magical Lands",
+      "weights": {
+        "steel": 0,
+        "aluminium": 3,
+        "rubber": 1,
+        "tungsten": 1,
+        "chromium": 0,
+        "oil": 3,
+        "coal": 2
+      },
+      "development": 0.35,
+      "identity": "Elder groves and essence wellsprings",
+      "spirit": "zin_econ_magical_lands"
+    },
+    {
+      "key": "zols_mistake",
+      "name": "Zol's Mistake",
+      "weights": {
+        "steel": 0,
+        "aluminium": 0,
+        "rubber": 0,
+        "tungsten": 0,
+        "chromium": 0,
+        "oil": 0,
+        "coal": 0
+      },
+      "development": 0,
+      "identity": "Nothing grows",
+      "spirit": null
+    },
+    {
+      "key": "dead_lands",
+      "name": "Dead Lands",
+      "weights": {
+        "steel": 2,
+        "aluminium": 0,
+        "rubber": 0,
+        "tungsten": 2,
+        "chromium": 1,
+        "oil": 3,
+        "coal": 0
+      },
+      "development": 0.3,
+      "identity": "Essence vents and war-forges",
+      "spirit": "zin_econ_dead_lands",
+      "armouryShare": 0.5
+    },
+    {
+      "key": "east_lands",
+      "name": "East Lands",
+      "weights": {
+        "steel": 1,
+        "aluminium": 1,
+        "rubber": 2,
+        "tungsten": 2,
+        "chromium": 3,
+        "oil": 1,
+        "coal": 2
+      },
+      "development": 0.5,
+      "identity": "Gold and caravans",
+      "spirit": "zin_econ_east_lands"
+    },
+    {
+      "key": "islands_of_the_south",
+      "name": "Islands of the South",
+      "weights": {
+        "steel": 0,
+        "aluminium": 1,
+        "rubber": 0,
+        "tungsten": 0,
+        "chromium": 0,
+        "oil": 0,
+        "coal": 2
+      },
+      "development": 0.25,
+      "identity": "Poor and hospitable",
+      "spirit": "zin_econ_islands_of_the_south"
+    },
+    {
+      "key": "lands_of_the_sun",
+      "name": "Lands of the Sun",
+      "weights": {
+        "steel": 1,
+        "aluminium": 1,
+        "rubber": 1,
+        "tungsten": 1,
+        "chromium": 2,
+        "oil": 1,
+        "coal": 3
+      },
+      "development": 0.4,
+      "identity": "Sun-blessed fields of the Sunhot elves",
+      "spirit": "zin_econ_lands_of_the_sun"
+    }
+  ],
+  "worldTotals": {
+    "steel": 2400,
+    "coal": 2200,
+    "aluminium": 1800,
+    "rubber": 1300,
+    "tungsten": 1100,
+    "oil": 800,
+    "chromium": 650,
+    "tolerance": 0.1,
+    "drawSpread": 0.25,
+    "seed": "state id"
+  },
+  "specialSites": {
+    "Dragon Mountain": {
+      "oil": 12
+    },
+    "The Abyss": {},
+    "Parim": {
+      "chromium": 6
+    },
+    "noris_south_desert": [
+      "chromium",
+      "tungsten"
+    ]
+  },
+  "spirits": {
+    "regional": [
+      {
+        "key": "zin_econ_middle_lands",
+        "region": "middle_lands",
+        "name": "The Great Lake Markets",
+        "desc": "Ships and carts from every shore meet at the Great Lake, and its guilds work in good order.",
+        "picture": "zin_market_stalls",
+        "modifier": {
+          "production_factory_max_efficiency_factor": 0.05,
+          "consumer_goods_factor": -0.02
+        }
+      },
+      {
+        "key": "zin_econ_north_lands",
+        "region": "north_lands",
+        "name": "Northern Shipwrights",
+        "desc": "The yards of the strait are old, and their masters know every plank of a hull.",
+        "picture": "zin_shipwright_yard",
+        "modifier": {
+          "industrial_capacity_dockyard": 0.1,
+          "production_speed_dockyard_factor": 0.1
+        }
+      },
+      {
+        "key": "zin_econ_cold_lands",
+        "region": "cold_lands",
+        "name": "The Long Winters",
+        "desc": "The cold has made the folk hard and every building slow to raise.",
+        "picture": "zin_ice_field",
+        "modifier": {
+          "winter_attrition_factor": -0.25,
+          "production_speed_buildings_factor": -0.1
+        }
+      },
+      {
+        "key": "zin_econ_west_lands",
+        "region": "west_lands",
+        "name": "Western Freeholds",
+        "desc": "Free farmers and horse-breeders trade easily and send many sons to the muster.",
+        "picture": "zin_herds",
+        "modifier": {
+          "trade_opinion_factor": 0.1,
+          "recruitable_population_factor": 0.05
+        }
+      },
+      {
+        "key": "zin_econ_tritons_islands",
+        "region": "tritons_islands",
+        "name": "Charts of the Pupor Ocean",
+        "desc": "The islanders keep the oldest sea charts, and their fleets read the water well.",
+        "picture": "zin_sea_charts",
+        "modifier": {
+          "naval_detection": 0.1,
+          "convoy_escort_efficiency": 0.1
+        }
+      },
+      {
+        "key": "zin_econ_dark_lands",
+        "region": "dark_lands",
+        "name": "Forge-Pits",
+        "desc": "The orc holds burn day and night, and the smiths ask few questions about the folk's needs.",
+        "picture": "zin_foundry_fire",
+        "modifier": {
+          "production_speed_arms_factory_factor": 0.1,
+          "consumer_goods_factor": 0.02
+        }
+      },
+      {
+        "key": "zin_econ_magical_lands",
+        "region": "magical_lands",
+        "name": "Elder Groves",
+        "desc": "Old lore lives in the groves, and craft and study go hand in hand.",
+        "picture": "zin_forest_ancient",
+        "modifier": {
+          "research_speed_factor": 0.05,
+          "production_factory_efficiency_gain_factor": 0.05
+        }
+      },
+      {
+        "key": "zin_econ_dead_lands",
+        "region": "dead_lands",
+        "name": "Furnace Lands",
+        "desc": "The Dead Lands are hot and storm-girt, and their war-forges never go cold.",
+        "picture": "zin_ember_desert",
+        "modifier": {
+          "heat_attrition_factor": -0.5,
+          "production_speed_arms_factory_factor": 0.05
+        }
+      },
+      {
+        "key": "zin_econ_east_lands",
+        "region": "east_lands",
+        "name": "The Caravan Roads",
+        "desc": "Caravans carry the gold of the East to every court that will pay.",
+        "picture": "zin_caravan",
+        "modifier": {
+          "trade_opinion_factor": 0.15,
+          "consumer_goods_factor": -0.02
+        }
+      },
+      {
+        "key": "zin_econ_islands_of_the_south",
+        "region": "islands_of_the_south",
+        "name": "Hospitable Isles",
+        "desc": "Poor in goods and rich in welcome, the isles keep a gentle peace.",
+        "picture": "zin_fishing_boats",
+        "modifier": {
+          "stability_factor": 0.05
+        }
+      },
+      {
+        "key": "zin_econ_lands_of_the_sun",
+        "region": "lands_of_the_sun",
+        "name": "Sun-Blessed Fields",
+        "desc": "The fields of the Sunhot elves are ripe all year, and no one goes hungry.",
+        "picture": "zin_sun_flowers",
+        "modifier": {
+          "monthly_population": 0.1,
+          "stability_factor": 0.03
+        }
+      }
+    ],
+    "timed": [
+      {
+        "key": "zin_econ_full_granaries",
+        "name": "Full Granaries",
+        "desc": "The King's stores are full to the roof, and the builders work without fear of a hard year.",
+        "picture": "zin_granary",
+        "days": 365,
+        "modifier": {
+          "production_speed_buildings_factor": 0.05,
+          "stability_factor": 0.02
+        }
+      },
+      {
+        "key": "zin_econ_crown_debts",
+        "name": "Crown Debts",
+        "desc": "The treasury is bare and the creditors are at the gate.",
+        "picture": "zin_coin_chest",
+        "days": 180,
+        "modifier": {
+          "stability_factor": -0.05,
+          "consumer_goods_factor": 0.03,
+          "political_power_gain": -0.1
+        }
+      },
+      {
+        "key": "zin_econ_triumph",
+        "name": "The Triumph",
+        "desc": "A great procession through Parim has lifted the people's hearts for a season.",
+        "picture": "zin_feast_table",
+        "days": 180,
+        "modifier": {
+          "stability_factor": 0.05
+        }
+      },
+      {
+        "key": "zin_econ_tariff_paid",
+        "name": "Western Tariffs Paid",
+        "desc": "The realm has paid the tariffs of the West, and its workshops make more for the folk to cover them.",
+        "picture": "zin_toll_house",
+        "days": 180,
+        "modifier": {
+          "consumer_goods_factor": 0.02
+        }
+      },
+      {
+        "key": "zin_econ_lean_harvest",
+        "name": "A Lean Year",
+        "desc": "The harvest was thin, and the folk have tightened their belts.",
+        "picture": "zin_farm_sowing",
+        "days": 90,
+        "modifier": {
+          "stability_factor": -0.03
+        }
+      },
+      {
+        "key": "zin_econ_new_hall",
+        "name": "The King's New Hall",
+        "desc": "A new hall in the Golden Court gives the courtiers something to admire.",
+        "picture": "zin_palace_parim",
+        "days": 90,
+        "modifier": {
+          "stability_factor": 0.02
+        }
+      }
+    ]
+  },
+  "treasury": {
+    "variable": "zin_aenor_gold",
+    "min": 0,
+    "max": 2000,
+    "start": 400,
+    "crownRevenue": 20,
+    "goldMines": [
+      {
+        "amount": 5,
+        "income": 5
+      },
+      {
+        "amount": 10,
+        "income": 10
+      },
+      {
+        "amount": 20,
+        "income": 20
+      }
+    ],
+    "concordTribute": {
+      "perDominion": 1,
+      "loyaltyAtLeast": 40
+    },
+    "greatLakeMarkets": {
+      "income": 5,
+      "workshopsAtLeast": 30
+    },
+    "wallCustoms": {
+      "accord": 3,
+      "coldRoads": 1,
+      "roadsClosed": 0
+    },
+    "courtUpkeep": {
+      "alive": 0.3,
+      "dead": 0.15
+    },
+    "debtDays": 180
+  },
+  "startIndustry": [
+    {
+      "country": "Aenor",
+      "workshops": 32,
+      "armouries": 14,
+      "shipwrights": 6,
+      "resources": "Grain, Iron, Gold"
+    },
+    {
+      "country": "Lerendor",
+      "workshops": 10,
+      "armouries": 6,
+      "shipwrights": 6,
+      "resources": "Timber, Iron"
+    },
+    {
+      "country": "Coldor",
+      "workshops": 14,
+      "armouries": 7,
+      "shipwrights": 3,
+      "resources": "Iron, Stone"
+    },
+    {
+      "country": "Noris",
+      "workshops": 16,
+      "armouries": 8,
+      "shipwrights": 2,
+      "resources": "Gold, Horses"
+    },
+    {
+      "country": "Stabilo",
+      "workshops": 14,
+      "armouries": 7,
+      "shipwrights": 3,
+      "resources": "Gold, Stone"
+    },
+    {
+      "country": "Goldoroth",
+      "workshops": 5,
+      "armouries": 7,
+      "shipwrights": 0,
+      "resources": "Iron, Stone"
+    },
+    {
+      "country": "Dondor",
+      "workshops": 3,
+      "armouries": 2,
+      "shipwrights": 1,
+      "resources": "Iron"
+    },
+    {
+      "country": "Volgan",
+      "workshops": 6,
+      "armouries": 14,
+      "shipwrights": 1,
+      "resources": "Essence, Iron, Stone"
+    },
+    {
+      "country": "Mirolon",
+      "workshops": 5,
+      "armouries": 5,
+      "shipwrights": 1,
+      "resources": "Iron, Grain"
+    },
+    {
+      "country": "Gunwaith",
+      "workshops": 7,
+      "armouries": 4,
+      "shipwrights": 2,
+      "resources": "Horses, Timber"
+    },
+    {
+      "country": "Magical Forest",
+      "workshops": 9,
+      "armouries": 4,
+      "shipwrights": 0,
+      "resources": "Essence, Timber"
+    },
+    {
+      "country": "Gala Elves",
+      "workshops": 2,
+      "armouries": 1,
+      "shipwrights": 1,
+      "resources": "Essence, Grain"
+    },
+    {
+      "country": "Worshipdom",
+      "workshops": 3,
+      "armouries": 0,
+      "shipwrights": 0,
+      "resources": "none"
+    },
+    {
+      "country": "Zol",
+      "workshops": 1,
+      "armouries": 0,
+      "shipwrights": 0,
+      "resources": "none"
+    }
+  ],
+  "sprites": {
+    "note": "Pictures the art track draws for this module. Names are the engine's; the module only lists them. A frame number is the icon_frame or the order of the strip.",
+    "strips": [
+      {
+        "sprite": "GFX_resources_strip",
+        "path": "gfx/interface/resources_strip.dds",
+        "frames": 7,
+        "size": "27x27",
+        "order": [
+          "oil Essence",
+          "aluminium Timber",
+          "rubber Horses",
+          "tungsten Stone",
+          "steel Iron",
+          "chromium Gold",
+          "coal Grain"
+        ]
+      },
+      {
+        "sprite": "GFX_missing_resources_strip",
+        "path": "gfx/interface/missing_resources_strip.dds",
+        "frames": 7,
+        "size": "27x27",
+        "order": "same order, shown when a store is short"
+      },
+      {
+        "sprite": "GFX_buildings_strip",
+        "path": "gfx/interface/buildings/building_icon_strip.dds",
+        "frames": 31,
+        "size": "46x46",
+        "order": "icon_frame of each building; the 17 used buildings get Erdae icons and the rest a plain plate"
+      }
+    ],
+    "texticons": [
+      "GFX_energy_texticon",
+      "GFX_energy_consumption_texticon",
+      "GFX_out_of_power_texticon",
+      "GFX_power_balance_texticon",
+      "GFX_fuel_texticon",
+      "GFX_civ_factory",
+      "GFX_civ_factory_output",
+      "GFX_mil_factory",
+      "GFX_nav_dockyard_texticon",
+      "GFX_production_cost",
+      "GFX_navprod_cost",
+      "GFX_consumer_goods_texticon",
+      "GFX_convoy_texticon",
+      "GFX_supply_texticon",
+      "GFX_supply_hub_texticon",
+      "GFX_naval_supply_hub_texticon",
+      "GFX_infrastructure_texticon",
+      "GFX_railways_texticon",
+      "GFX_train_texticon",
+      "GFX_resources_to_market_icon",
+      "GFX_market_subsidy_small_texticon"
+    ],
+    "topbar": [
+      "gfx/interface/topbar/fuel_icon.dds (Stored Essence)",
+      "gfx/interface/topbar/topbar_convoys.dds (Merchant Fleets)",
+      "gfx/interface/topbar/industrial_capacity_icon.dds (Craft Capacity)",
+      "gfx/interface/topbar/consumer_goods_icon.dds (Folk Wares)"
+    ],
+    "alertFrames": [
+      {
+        "alert": "alert_lack_of_power",
+        "means": "Provisions run short (empty sack)"
+      },
+      {
+        "alert": "alert_lack_of_resources",
+        "means": "A store is short (empty chest)"
+      },
+      {
+        "alert": "alert_out_of_fuel",
+        "means": "Stored Essence is empty (empty vial)"
+      },
+      {
+        "alert": "alert_free_civilian_factories",
+        "means": "Idle Guild Workshops"
+      },
+      {
+        "alert": "alert_free_military_factories",
+        "means": "Idle Armouries"
+      },
+      {
+        "alert": "alert_free_naval_dockyards",
+        "means": "Idle Shipwrights"
+      },
+      {
+        "alert": "alert_low_supply, alert_very_low_supply",
+        "means": "Hosts short of supplies (empty wagon)"
+      },
+      {
+        "alert": "alert_base_low_supply, alert_base_very_low_supply",
+        "means": "Harbours and roosts short of supplies"
+      },
+      {
+        "alert": "alert_trade_import_unfullfilled",
+        "means": "A trade bargain is not met (cargo on the quay)"
+      }
+    ],
+    "ideas": "The spirits use catalog icons GFX_idea_zin_<picture> from interface/zin_catalog_ideas.gfx; no new idea art is needed."
+  }
+}

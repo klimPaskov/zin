@@ -24,6 +24,7 @@ import { buildSilenced } from './modules/vanilla_silence.mjs';
 import { buildCalendar } from './modules/calendar.mjs';
 import { buildDefines } from './modules/defines.mjs';
 import { buildFocusTrees } from './modules/focus_compiler.mjs';
+import { buildAssets } from './modules/assets.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export { ZIN };
@@ -73,6 +74,10 @@ const bridgeCounts = Object.fromEntries([...bridges.triggers.map(b => 'trigger')
 
 // Focus trees (docs/design/focus/*.json): compiled last, so the checks see every name the other modules stage.
 const focusTrees = await buildFocusTrees(staged, { countries });
+// Asset manifest and completeness check (docs/specs/08_art_and_assets/05_asset_manifest.md): the very last step, so it
+// sees every staged file. It reports everything and fails only on errors that docs/design/validation/asset_baseline.json
+// does not list.
+const assets = await buildAssets(staged);
 await staged.write(out);
 const counts = {}; for (const rel of staged.files.keys()) { const top = rel.split('/').slice(0, 2).join('/'); counts[top] = (counts[top] ?? 0) + 1; }
-console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, calendar, defines, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));
+console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, assets: assets.summary, calendar, defines, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));

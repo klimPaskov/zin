@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/07_interface/05_text_sweep.md",
+  "note": "Rules the text sweep found missing while it read the installed interface (the banned list is a floor, spec section 8). They load after banned_words.json and use the same fields. The spec owner folds them into banned_words.json at the next revision; until then this file is the only place they live.",
+  "rules": [
+    { "id": "bwx_001", "class": "military_modern", "severity": "error", "pattern": "squadrons?|sorties?|dogfights?|airmen|aviators?|aviation", "caseSensitive": false, "replace": "wing, flight", "why": "Air-force vocabulary of the base game" },
+    { "id": "bwx_002", "class": "game_and_platform", "severity": "error", "pattern": "kia|eu4", "caseSensitive": false, "replace": "fallen", "why": "A casualty status code and another Paradox game named in a status line" },
+    { "id": "bwx_003", "class": "real_world", "severity": "error", "pattern": "raaf|rcaf|rnzaf|saaf|iaf|raj", "caseSensitive": false, "replace": "a ZIN wing name", "why": "Air forces of real countries in the wing name fallbacks" },
+    { "id": "bwx_004", "class": "modern_industry", "severity": "error", "pattern": "infrastructure", "caseSensitive": false, "replace": "roads", "why": "Glossary: infrastructure is Road (economy spec)" },
+    { "id": "bwx_005", "class": "military_modern", "severity": "error", "pattern": "intel", "caseSensitive": false, "replace": "foreknowledge, spies", "why": "Glossary: intelligence is Intrigue, intel advantage is Foreknowledge" },
+    { "id": "bwx_006", "class": "military_modern", "severity": "review", "pattern": "fighters?|interceptors?", "caseSensitive": false, "replace": "swift fliers", "why": "Glossary stems: fighter is swift flier" },
+    { "id": "bwx_007", "class": "military_modern", "severity": "review", "pattern": "equipment", "caseSensitive": false, "replace": "gear", "why": "Glossary: equipment is Gear" },
+    { "id": "bwx_008", "class": "modern_society", "severity": "review", "pattern": "ideolog(?:y|ies|ical|ically)", "caseSensitive": false, "replace": "alignment", "why": "Glossary: ideology is Alignment (foundation spec)" }
+  ]
+}

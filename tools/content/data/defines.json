@@ -25,6 +25,9 @@
   { "category": "NCharacter", "key": "COUNTRY_LEADER_BASE_RANDOM_MAX_YEAR_LENGTH", "value": 20, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "same" },
   { "category": "NRaids", "key": "NUCLEAR_BOMB_PRODUCTION_SCALE", "value": 1000000.0, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "no nuclear production can yield a weapon" },
   { "category": "NRaids", "key": "THERMONUCLEAR_BOMB_PRODUCTION_SCALE", "value": 1000000.0, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "same" },
-  { "category": "NProject", "key": "BREAKTHROUGH_DAILY_NUCLEAR_REACTOR_GAIN", "value": 0, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "no reactor breakthroughs" }
+  { "category": "NProject", "key": "BREAKTHROUGH_DAILY_NUCLEAR_REACTOR_GAIN", "value": 0, "owner": "00_foundation/05_defines_and_rules.md", "fromStage": 1, "why": "no reactor breakthroughs" },
+  { "category": "NProduction", "key": "BASE_COUNTRY_ENERGY_PRODUCTION", "value": 12, "owner": "03_gameplay/02_economy.md", "fromStage": 2, "why": "Provisions: small realms keep a few workshops fed without Grain (vanilla 10)" },
+  { "category": "NAI", "key": "NUM_FACTORIES_IN_STATE_TO_WANT_ENERGY_REDUCTION", "value": 3, "owner": "03_gameplay/02_economy.md", "fromStage": 2, "why": "armouries are a third of the workshops (half in the Dark Lands and Dead Lands), so six in one state is rare: the AI considers Granaries from three (vanilla 6)" },
+  { "category": "NAI", "key": "TOTAL_STATE_EXTRACTED_RESOURCES_FOR_BUILDING_RESOURCE_CAP_BUILDING", "value": 12.0, "owner": "03_gameplay/02_economy.md", "fromStage": 2, "why": "Erdae deposits are small (about ten stores per productive state): the AI raises Mine and Quarry Roads from twelve (vanilla 30)" }
  ]
 }

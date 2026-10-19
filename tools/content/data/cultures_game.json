@@ -1,0 +1,803 @@
+{
+  "schema": "zin-cultures-game/1",
+  "status": "Draft",
+  "owner": "docs/specs/02_lore/08_world_in_game.md",
+  "note": "Game data of the culture and faith layer (tools/content/modules/cultures.mjs). Names, tiers, languages, faiths and palettes come from world/cultures.json and country assignments from world/country_cultures.json; this file holds what the game adds: spirits, modifiers, hooks, text and the mappings other modules read. Every value is a proposed design target that can be tuned here. Modifier keys are checked against the installed game; values are checked against `bounds`.",
+  "limits": {
+    "culture_modifiers": [3, 5],
+    "faith_modifiers": [2, 4],
+    "secondary_factor": 0.5,
+    "text_max_chars": 260,
+    "max_pair_similarity": 0.6,
+    "max_minority_total": 0.6,
+    "owner_second_share": 0.25,
+    "festival_days": 7
+  },
+  "bounds": {
+    "default": [-0.12, 0.12],
+    "modifiers": {
+      "army_leader_start_level": [0, 1],
+      "female_random_admiral_chance": [0, 0.5],
+      "trade_opinion_factor": [-0.3, 0.3],
+      "opinion_gain_monthly_factor": [-0.3, 0.3],
+      "justify_war_goal_time": [-0.3, 0.3],
+      "acclimatization_cold_climate_gain_factor": [-0.3, 0.3],
+      "heat_attrition_factor": [-0.25, 0.25],
+      "winter_attrition_factor": [-0.25, 0.25],
+      "army_leader_cost_factor": [-0.25, 0.25],
+      "special_project_speed_factor": [-0.2, 0.2],
+      "supply_consumption_factor": [-0.15, 0.15],
+      "training_time_army_factor": [-0.2, 0.2],
+      "drift_defence_factor": [-0.2, 0.2],
+      "required_garrison_factor": [-0.2, 0.2],
+      "resistance_damage_to_garrison": [-0.15, 0.15],
+      "equipment_capture_factor": [-0.2, 0.2],
+      "enemy_attrition": [-0.15, 0.15],
+      "political_power_gain": [-0.1, 0.1],
+      "land_reinforce_rate": [-0.15, 0.15],
+      "conscription_factor": [-0.1, 0.1],
+      "monthly_population": [-0.1, 0.1],
+      "navy_max_range_factor": [-0.2, 0.2],
+      "planning_speed": [-0.15, 0.15],
+      "recon_factor": [-0.15, 0.15],
+      "dig_in_speed_factor": [-0.15, 0.15],
+      "production_factory_efficiency_gain_factor": [-0.15, 0.15]
+    }
+  },
+  "idea_category": { "tier1": "country", "tier2": "country", "tier3": "hidden_ideas", "secondary": "hidden_ideas", "faith": "country" },
+  "portrait_pools": { "per_sex_by_tier": { "1": 6, "2": 4, "3": 2 }, "per_sex_overrides": { "goblin_warrens": 1 } },
+  "flag_shapes": { "default": "rect", "leren_sea_kings": "swallowtail", "free_crowns_north": "swallowtail", "steppe_rider": "pennant" },
+  "kin": [["wall_folk", "lake_aenoran"]],
+  "no_language_cultures": ["zols_dead"],
+  "magic_attitudes": ["respected", "regulated", "wary", "distrusted", "neutral", "natural", "core", "none"],
+  "resistance_levels": { "none": 0, "passive": 0, "low": 0.1, "medium": 0.25, "strong": 0.4, "total": 0.6 },
+  "resistance_rules": { "other_culture": 0.2, "great_folk_under_common_folk": 0.1, "other_faith": 0.05 },
+  "great_folk_peoples": ["elves", "sun_elves", "demons"],
+  "common_folk_peoples": ["men"],
+  "language_ids": {
+    "aenoran": 1, "ainic": 2, "dondric": 3, "leren": 4, "mirolic": 5, "grave_rite": 6, "orran": 7, "alerhic": 8,
+    "coldic": 9, "gunwaithic": 10, "noric": 11, "stabilic": 12, "tritonic": 13, "yonic": 14, "galic": 15, "sunhot": 16,
+    "sylvan": 17, "gigantic": 18, "goblin": 19, "infernal": 20, "longspeech": 21, "orcish": 22, "trollish": 23, "yetic": 24
+  },
+  "cultures": {
+    "lake_aenoran": {
+      "id": 1, "adjective": "Lake Aenoran", "icon": "crown_bell", "magic": "regulated",
+      "spirit": "Peace of the One Crown",
+      "spirit_desc": "No lord may wage war for his own quarrel, and written law binds every house. Scribes, bells and barges keep the Lake's realms learned and slow to anger.",
+      "text": "Farmers, bargemen and scribes of the Great Lake, the best-fed folk of Erdae. They keep written law and ring a bell for every order.",
+      "modifier": { "research_speed_factor": 0.05, "army_org_factor": 0.04, "production_speed_buildings_factor": 0.05, "justify_war_goal_time": 0.1 },
+      "flag": { "motif": "lamp", "alt": ["bell", "crown"] }, "building": "lake_stone", "music": "choral_bells", "unit_group": "aenoran_blue"
+    },
+    "selen_ranger": {
+      "id": 2, "adjective": "Selen", "icon": "oak_arrows", "magic": "wary",
+      "spirit": "The Quiet Law",
+      "spirit_desc": "No bow is drawn in the Hallow Month, and no ranger shoots from rank. The woods are known, and the rangers wait in them.",
+      "text": "Rangers of the Selen woods, ruled by moots. They ask the wood before they loose an arrow.",
+      "modifier": { "army_core_defence_factor": 0.08, "recon_factor": 0.1, "dig_in_speed_factor": 0.1, "army_org_factor": -0.03 },
+      "flag": { "motif": "arrows", "alt": ["oak"] }, "building": "forest_timber", "music": "woodland", "unit_group": "ranger_green"
+    },
+    "steppe_rider": {
+      "id": 3, "adjective": "Steppe Rider", "icon": "horse_head", "magic": "wary",
+      "spirit": "The Rider's Oath-Law",
+      "spirit_desc": "A dispute is paid in mares, and a rider's herd feeds his host. Riders go far and build little.",
+      "text": "Horse-lords of Konori and Hunhun. Their land belongs to the herds, and their word to the horse they swear on.",
+      "modifier": { "cavalry_attack_factor": 0.1, "army_speed_factor": 0.04, "supply_consumption_factor": -0.05, "production_speed_buildings_factor": -0.08 },
+      "flag": { "motif": "horse_head", "alt": ["horse_hair_standard"] }, "building": "felt_tents", "music": "steppe_drums", "unit_group": "steppe_riders"
+    },
+    "wall_folk": {
+      "id": 4, "adjective": "Wall-Folk", "icon": "tower_key", "magic": "neutral",
+      "spirit": "The Watch-Family Posts",
+      "spirit_desc": "A post passes to the eldest of a watch-family, and a breach of watch is a hanging matter. The Wall is held with patience and drill.",
+      "text": "Watch-families of the Great Wall. They keep its gates in the king's name.",
+      "modifier": { "max_dig_in_factor": 0.1, "army_defence_factor": 0.05, "required_garrison_factor": -0.1, "army_speed_factor": -0.03 },
+      "flag": { "motif": "tower", "alt": ["key"] }, "building": "wall_grey", "music": "choral_bells", "unit_group": "aenoran_blue"
+    },
+    "march_folk": {
+      "id": 5, "adjective": "March-Folk", "icon": "beacon_plough", "magic": "wary",
+      "spirit": "Beacon and Plough",
+      "spirit_desc": "Free farmers raise a levy at the beacon's call. Every farm is a post, and every beacon buys a day.",
+      "text": "Free farmers of the southern marches, led by elected speakers. They plough with a sling at the belt.",
+      "modifier": { "conscription_factor": 0.05, "monthly_population": 0.05, "planning_speed": 0.1, "army_org_factor": -0.03 },
+      "flag": { "motif": "beacon", "alt": [] }, "building": "march_palisade", "music": "woodland", "unit_group": "aenoran_blue"
+    },
+    "isle_houses": {
+      "id": 6, "adjective": "Isle-House", "icon": "lighthouse_wave", "magic": "respected",
+      "spirit": "The Tide-Mother's Law",
+      "spirit_desc": "The eldest woman of each house speaks for it, and daughters inherit. The island houses learn the sea early and watch it long.",
+      "text": "Seafaring houses of Asgard, led by their eldest women. They know the central sea as a neighbour.",
+      "modifier": { "navy_org_factor": 0.08, "naval_speed_factor": 0.05, "experience_gain_navy_factor": 0.1, "female_random_admiral_chance": 0.3 },
+      "flag": { "motif": "wave", "alt": ["oar", "lighthouse"] }, "building": "harbour_stone", "music": "sea_horns", "unit_group": "aenoran_blue"
+    },
+    "veiled_folk": {
+      "id": 7, "adjective": "Veiled", "icon": "knot_veil", "magic": "wary",
+      "spirit": "The Cord-Mothers' Hush",
+      "spirit_desc": "Debts and feuds are tied and untied on the cord, and strangers are not welcome. No charter has ever been read here.",
+      "text": "A veiled people of the Cursed Lands. They trade little and forgive nothing.",
+      "modifier": { "army_core_defence_factor": 0.08, "enemy_attrition": 0.1, "resistance_damage_to_garrison": 0.1, "trade_opinion_factor": -0.25 },
+      "flag": { "motif": "knot", "alt": [] }, "building": "turf_halls", "music": "woodland", "unit_group": "forest_tribes"
+    },
+    "redbark_tribes": {
+      "id": 8, "adjective": "Redbark", "icon": "red_antlers", "magic": "wary",
+      "spirit": "The Red Raid",
+      "spirit_desc": "Clans choose a war-chief for each raid and fight light and fast. They take iron where they find it and refuse every charter.",
+      "text": "Clans of the Bloody Forest, led by cord-mothers. They paint themselves red and bow to no crown.",
+      "modifier": { "army_speed_factor": 0.05, "equipment_capture_factor": 0.1, "army_defence_factor": -0.05, "resistance_damage_to_garrison": 0.08 },
+      "flag": { "motif": "antlers", "alt": ["knot"] }, "building": "tree_halls", "music": "woodland", "unit_group": "forest_tribes"
+    },
+    "leren_sea_kings": {
+      "id": 9, "adjective": "Leren", "icon": "ship_crown", "magic": "wary",
+      "spirit": "The Speakers' Tolls",
+      "spirit_desc": "Shipowners vote the taxes, and the strait pays its tolls. The Leren read the sea as a ledger.",
+      "text": "Sea-lords of the Narrow Strait. One High Crown rules two realms, and a Speakers' Hall counts the ships.",
+      "modifier": { "navy_org_factor": 0.06, "experience_gain_navy_factor": 0.1, "trade_opinion_factor": 0.15, "political_power_gain": 0.05 },
+      "flag": { "motif": "ship", "alt": ["crown", "waves"] }, "building": "quay_timber", "music": "sea_horns", "unit_group": "north_sea"
+    },
+    "free_crowns_north": {
+      "id": 10, "adjective": "Free Crown", "icon": "beast_crown", "magic": "wary",
+      "spirit": "The Crown-Sharing Marriages",
+      "spirit_desc": "Neighbouring kings marry across their borders and take their feuds to Eekedor. Wars start slowly, and levies stay small.",
+      "text": "Small kingdoms of the inland North, each ruled by a king with a council of landowners.",
+      "modifier": { "opinion_gain_monthly_factor": 0.2, "justify_war_goal_time": 0.1, "army_core_defence_factor": 0.04, "conscription_factor": -0.03 },
+      "flag": { "motif": "beast", "alt": ["tree"] }, "building": "hill_fort", "music": "sea_horns", "unit_group": "north_sea"
+    },
+    "dondor_brutes": {
+      "id": 11, "adjective": "Dondor", "icon": "axe_chain", "magic": "distrusted",
+      "spirit": "The Blood-Price",
+      "spirit_desc": "A death is paid for in iron or in blood. Axe-men fight in mail behind shield walls and trust no spell.",
+      "text": "Clan-moot kings and iron-halls of Dondor. They tax the iron road and leave magic to the Fire-speakers.",
+      "modifier": { "army_infantry_attack_factor": 0.06, "army_defence_factor": 0.04, "special_project_speed_factor": -0.15, "research_speed_factor": -0.03 },
+      "flag": { "motif": "axe", "alt": ["chain"] }, "building": "iron_hall", "music": "iron_drums", "unit_group": "iron_brute"
+    },
+    "mirolon_wardens": {
+      "id": 12, "adjective": "Mirolon", "icon": "beacon_lake", "magic": "respected",
+      "spirit": "The Beacon Roll",
+      "spirit_desc": "Every tower keeps a lamp lit toward the south, and every warden keeps a night watch. Scouts and couriers see a host long before it comes.",
+      "text": "Wardens of the lake and the northern passes, chosen for life by their captains.",
+      "modifier": { "recon_factor": 0.12, "planning_speed": 0.1, "max_dig_in_factor": 0.06, "special_project_speed_factor": 0.1 },
+      "flag": { "motif": "beacon", "alt": ["lamp"] }, "building": "stilt_beacon", "music": "warden_horns", "unit_group": "warden_blue"
+    },
+    "dead_lands_freeholds": {
+      "id": 13, "adjective": "Dead Lands", "icon": "salt_boat", "magic": "wary",
+      "spirit": "Salt and Silence",
+      "spirit_desc": "Freeholders bury quickly, tax lightly and avoid war. The sun and the salt have made them hard.",
+      "text": "Salt-pan and fishing freeholds of the Dead Lands coast. They do not speak of what lies to the south.",
+      "modifier": { "heat_attrition_factor": -0.15, "war_support_factor": -0.05, "trade_opinion_factor": 0.1, "army_org_factor": -0.03 },
+      "flag": { "motif": "boat", "alt": ["salt_pan"] }, "building": "mud_brick_sea", "music": "warden_horns", "unit_group": "warden_blue"
+    },
+    "winter_crown": {
+      "id": 14, "adjective": "Winter-Crown", "icon": "fire_crown", "magic": "wary",
+      "spirit": "The Hearth-Law",
+      "spirit_desc": "No feud may be carried past a shared fire. The Long Dark is met by clans bound together.",
+      "text": "The Winter Crown of the Cold Lands and its clan-fire keepers. They count the year in dark and light.",
+      "modifier": { "winter_attrition_factor": -0.2, "acclimatization_cold_climate_gain_factor": 0.25, "stability_factor": 0.03, "army_org_factor": 0.03 },
+      "flag": { "motif": "snowflake", "alt": ["wolf", "crown"] }, "building": "frost_stone", "music": "northern_throat", "unit_group": "winter_crown"
+    },
+    "ice_clans": {
+      "id": 15, "adjective": "Ice Clan", "icon": "sled_beast", "magic": "respected",
+      "spirit": "The Winter Moot",
+      "spirit_desc": "Feuds are settled before the Long Dark begins. The clans move fast on ice and live hard on little.",
+      "text": "Reindeer clans and sled-bands of the Cold Lands, ruled by chieftains of the moot.",
+      "modifier": { "winter_attrition_factor": -0.15, "org_loss_when_moving": -0.1, "conscription_factor": 0.04, "production_speed_buildings_factor": -0.05 },
+      "flag": { "motif": "clan_beast", "alt": [] }, "building": "turf_hall", "music": "northern_throat", "unit_group": "winter_crown"
+    },
+    "isengard_warlords": {
+      "id": 16, "adjective": "Isengard", "icon": "tower_chain", "magic": "distrusted",
+      "spirit": "The Oath-Companies",
+      "spirit_desc": "The best sworn man inherits the hall, not the eldest son. Mailed foot hold the mountain forts.",
+      "text": "Warlords of the iron forts, bound by oath-companies. They suspect every hedge-wise.",
+      "modifier": { "army_org_factor": 0.05, "army_infantry_defence_factor": 0.05, "stability_factor": -0.04, "army_leader_cost_factor": -0.15 },
+      "flag": { "motif": "tower", "alt": ["chain"] }, "building": "black_fort", "music": "iron_drums", "unit_group": "iron_brute"
+    },
+    "windwaith_seafarers": {
+      "id": 17, "adjective": "Windwaith", "icon": "ship_windrose", "magic": "respected",
+      "spirit": "The Ship-Share",
+      "spirit_desc": "Land is held by share in a ship, and a Council of Captains elects its Speaker. Windwaith ships range far for timber and whalebone.",
+      "text": "Captains of the Windwaith headlands. They read the wind the way others read letters.",
+      "modifier": { "naval_speed_factor": 0.05, "navy_max_range_factor": 0.1, "experience_gain_navy_factor": 0.08, "trade_opinion_factor": 0.1 },
+      "flag": { "motif": "ship", "alt": ["wind_rose"] }, "building": "harbour_wood", "music": "sea_horns", "unit_group": "winter_crown"
+    },
+    "gunwaith_clans": {
+      "id": 18, "adjective": "Gunwaith", "icon": "stag_stone", "magic": "respected",
+      "spirit": "The Lawspeaker's Memory",
+      "spirit_desc": "Oaths are sworn at the stone and remembered by the Lawspeaker. Clan bands ride and fight for kin and for wergild.",
+      "text": "Hill clans of Gunwaith, whose kings are acclaimed at a standing stone. The chiefs hold the real power.",
+      "modifier": { "army_attack_factor": 0.04, "cavalry_attack_factor": 0.06, "conscription_factor": 0.05, "stability_factor": -0.03 },
+      "flag": { "motif": "stag_stone_ring", "alt": ["plaid"] }, "building": "hill_ring_fort", "music": "western_pipes", "unit_group": "western_clan"
+    },
+    "girdon_wardens": {
+      "id": 19, "adjective": "Girdon", "icon": "bridge_river", "magic": "respected",
+      "spirit": "The River Court",
+      "spirit_desc": "Ford-wardens judge the river towns and keep every bridge in repair. A river militia digs in fast on its own bank.",
+      "text": "Ford-wardens and bridge-towns of the Girdon rivers.",
+      "modifier": { "dig_in_speed_factor": 0.1, "production_speed_buildings_factor": 0.06, "army_core_defence_factor": 0.05, "army_speed_factor": -0.02 },
+      "flag": { "motif": "bridge", "alt": [] }, "building": "bridge_town", "music": "western_pipes", "unit_group": "western_clan"
+    },
+    "western_guilds": {
+      "id": 20, "adjective": "Guildman", "icon": "guild_chain", "magic": "regulated",
+      "spirit": "The Guild Book",
+      "spirit_desc": "Contracts are sworn on the guild book and enforced by the guild council. The towns hire their wars and pay for their workshops.",
+      "text": "Guild towns of the western coast. They trade across the central sea and hire others to fight.",
+      "modifier": { "trade_opinion_factor": 0.2, "production_factory_efficiency_gain_factor": 0.1, "conscription_factor": -0.05, "special_project_speed_factor": 0.05 },
+      "flag": { "motif": "craft_symbol", "alt": [] }, "building": "guild_canal", "music": "western_pipes", "unit_group": "western_clan"
+    },
+    "buldor_companies": {
+      "id": 21, "adjective": "Buldor", "icon": "banner_company", "magic": "neutral",
+      "spirit": "The Company Contract",
+      "spirit_desc": "A company is its banner and its contract. Veterans drill quickly and cost much to keep.",
+      "text": "Hired companies of Buldor, who recruit from every clan. A fallen banner ends a company.",
+      "modifier": { "training_time_army_factor": -0.15, "experience_gain_army_factor": 0.1, "conscription_factor": -0.06, "army_leader_cost_factor": -0.1 },
+      "flag": { "motif": "company_banner", "alt": [] }, "building": "barracks", "music": "western_pipes", "unit_group": "western_clan"
+    },
+    "chart_islanders": {
+      "id": 22, "adjective": "Chart-Islander", "icon": "compass_chart", "magic": "respected",
+      "spirit": "The Chartmakers' Gift",
+      "spirit_desc": "To chart a reef is a gift to every sailor to come. The chart-houses trade pearls and knowledge.",
+      "text": "Pilots and chart-houses of Triton's Islands. They sell their charts and keep their reefs.",
+      "modifier": { "navy_max_range_factor": 0.15, "trade_opinion_factor": 0.12, "research_speed_factor": 0.03, "naval_speed_factor": 0.04 },
+      "flag": { "motif": "compass_rose", "alt": [] }, "building": "stilt_harbour", "music": "sea_horns", "unit_group": "island_marines"
+    },
+    "corsair_lords": {
+      "id": 23, "adjective": "Corsair", "icon": "black_blade", "magic": "wary",
+      "spirit": "The Ransom Law",
+      "spirit_desc": "A captive is ransomed or lost to the sea. Corsair lords take what they can and sell it back.",
+      "text": "Sword-lords of the cliff harbours. The isle's best captain wears its crown.",
+      "modifier": { "equipment_capture_factor": 0.15, "naval_speed_factor": 0.05, "stability_factor": -0.04, "trade_opinion_factor": -0.15 },
+      "flag": { "motif": "blade", "alt": [] }, "building": "cliff_harbour", "music": "sea_horns", "unit_group": "island_marines"
+    },
+    "noris_riders": {
+      "id": 24, "adjective": "Noric", "icon": "well_camel", "magic": "respected",
+      "spirit": "The Well-Law",
+      "spirit_desc": "Water is never refused, and one who seals a well is cast out. Camel-riders cross the sand where armies thirst.",
+      "text": "Camel warriors of the Noris desert, led by the well-lords. They count their seasons by caravans.",
+      "modifier": { "heat_attrition_factor": -0.2, "supply_consumption_factor": -0.08, "cavalry_attack_factor": 0.06, "army_speed_factor": 0.03 },
+      "flag": { "motif": "well", "alt": ["camel", "stars"] }, "building": "mud_wind_tower", "music": "desert_reeds", "unit_group": "desert_riders"
+    },
+    "caravan_princes": {
+      "id": 25, "adjective": "Caravan", "icon": "scale_coin", "magic": "regulated",
+      "spirit": "The Bench of Houses",
+      "spirit_desc": "A bench of merchant houses chooses the Prince and keeps the purse. Contracts are sealed, and hired companies fight them.",
+      "text": "Merchant houses of Stabilo who rule the caravan roads. Their law is contract and their weights are honest.",
+      "modifier": { "trade_opinion_factor": 0.25, "production_speed_buildings_factor": 0.05, "political_power_gain": 0.05, "conscription_factor": -0.05 },
+      "flag": { "motif": "scale", "alt": ["coin"] }, "building": "bronze_colonnade", "music": "lyre_bronze", "unit_group": "bronze_merchants"
+    },
+    "river_kings": {
+      "id": 26, "adjective": "River-King", "icon": "river_stair", "magic": "respected",
+      "spirit": "The Scribe-Council",
+      "spirit_desc": "Temple scribes record the flood and the king's decrees. The river lends grain, and the temples lend their wizards.",
+      "text": "Kings of the river lands, named for their rivers and advised by temple scribes.",
+      "modifier": { "monthly_population": 0.08, "research_speed_factor": 0.03, "special_project_speed_factor": 0.1, "army_speed_factor": -0.02 },
+      "flag": { "motif": "river", "alt": ["stair"] }, "building": "stair_temple", "music": "lyre_bronze", "unit_group": "bronze_merchants"
+    },
+    "lake_road_cities": {
+      "id": 27, "adjective": "Lake Road", "icon": "lantern_fish", "magic": "neutral",
+      "spirit": "The Road of Lanterns",
+      "spirit_desc": "Fishers and merchants share the water and the law. The lake towns grow with every caravan.",
+      "text": "Lake towns on the road from the East to the Great Wall. They have kings in Ostoroth and speakers in Mora.",
+      "modifier": { "trade_opinion_factor": 0.15, "monthly_population": 0.04, "production_speed_buildings_factor": 0.04, "army_defence_factor": -0.03 },
+      "flag": { "motif": "fish", "alt": ["lantern"] }, "building": "stilt_lantern", "music": "lyre_bronze", "unit_group": "bronze_merchants"
+    },
+    "red_lands_tribunes": {
+      "id": 28, "adjective": "Red Lands", "icon": "kiln_red", "magic": "neutral",
+      "spirit": "The Tribune's Year",
+      "spirit_desc": "A tribune holds office for one year and swears his oath again. The kilns never cool.",
+      "text": "Clay-working villages of the Red Lands, led by tribunes chosen by the village heads.",
+      "modifier": { "production_speed_buildings_factor": 0.06, "drift_defence_factor": 0.1, "conscription_factor": 0.03, "army_attack_factor": -0.03 },
+      "flag": { "motif": "kiln", "alt": [] }, "building": "kiln_brick", "music": "lyre_bronze", "unit_group": "bronze_merchants"
+    },
+    "southern_islanders": {
+      "id": 29, "adjective": "Southern Islander", "icon": "shell_canoe", "magic": "respected",
+      "spirit": "The Feast and the Elder",
+      "spirit_desc": "Each harbour shares its catch at the feast, and its elder's word ends a dispute. War is rare and soon over.",
+      "text": "Reef and lagoon islanders of the south. They count their dead as waves on the reef.",
+      "modifier": { "stability_factor": 0.04, "monthly_population": 0.05, "war_support_factor": -0.06, "naval_speed_factor": 0.03 },
+      "flag": { "motif": "shell", "alt": [] }, "building": "stilt_reef", "music": "sea_horns", "unit_group": "island_marines"
+    },
+    "zilin_pilgrims": {
+      "id": 30, "adjective": "Zilin", "icon": "lamp_gate", "magic": "respected",
+      "spirit": "The Hostel Rule",
+      "spirit_desc": "No weapon passes the hostel gate, and every traveller finds a bed and a lamp. The pilgrim valleys heal what the roads break.",
+      "text": "Keepers of the pilgrim hostels in the Zilin Hills. They copy books, make salves and welcome all.",
+      "modifier": { "land_reinforce_rate": 0.1, "stability_factor": 0.04, "trade_opinion_factor": 0.1, "army_attack_factor": -0.05 },
+      "flag": { "motif": "lamp", "alt": [] }, "building": "lake_stone", "music": "choral_bells", "unit_group": "aenoran_blue"
+    },
+    "goodin_sunfolk": {
+      "id": 31, "adjective": "Sunfolk", "icon": "sun_town", "magic": "respected",
+      "spirit": "The Guest-Town Peace",
+      "spirit_desc": "Guest-towns shelter every pilgrim, and their elders settle disputes by agreement. The Sunfolk do not march to war.",
+      "text": "Farmers of the sunlit guest-towns who live among the Sunhot elves.",
+      "modifier": { "army_speed_factor": -0.05, "monthly_population": 0.04, "war_support_factor": -0.06, "heat_attrition_factor": -0.1, "stability_factor": 0.03 },
+      "flag": { "motif": "sun", "alt": [] }, "building": "sun_brick", "music": "gong_flute", "unit_group": "sun_elven"
+    },
+    "forest_council_elves": {
+      "id": 32, "adjective": "Council Elven", "icon": "leaf_harp", "magic": "natural",
+      "spirit": "The Council of Houses",
+      "spirit_desc": "The houses vote, the First Speaker serves for centuries, and the book of precedents is renewed each hundred years. The council is slow, learned and gentle.",
+      "text": "The great elven houses of the Magical Forest. They hold no crown and keep a book of precedents.",
+      "modifier": { "research_speed_factor": 0.06, "army_org_factor": 0.05, "special_project_speed_factor": 0.12, "stability_factor": 0.03 },
+      "flag": { "motif": "leaf", "alt": ["tree", "harp"] }, "building": "living_tree", "music": "elven_voices", "unit_group": "elven"
+    },
+    "hill_kingdom_elves": {
+      "id": 33, "adjective": "Hill-Kingdom Elven", "icon": "dragon_roost", "magic": "natural",
+      "spirit": "The Hall of Judgments",
+      "spirit_desc": "A hall's book of judgments is read aloud each spring. Hill rangers walk the ledges and read the signs of dragons.",
+      "text": "Elves of the hill halls, ruled by queens and kings whom the hall-keepers accept. They know dragon-craft best.",
+      "modifier": { "experience_gain_army_factor": 0.06, "special_project_speed_factor": 0.1, "army_core_defence_factor": 0.06, "org_loss_when_moving": -0.08 },
+      "flag": { "motif": "roost", "alt": [] }, "building": "hillside_hall", "music": "elven_voices", "unit_group": "elven"
+    },
+    "lake_elves": {
+      "id": 34, "adjective": "Lake-Elven", "icon": "lake_wave", "magic": "natural",
+      "spirit": "The Water-Court",
+      "spirit_desc": "A court of the water-houses judges disputes about weirs and boats. Dowsers and healers keep the lake-fevers away.",
+      "text": "Boat-archers and healers of the elven lakes, led by the Speaker of the water-houses.",
+      "modifier": { "land_reinforce_rate": 0.08, "trade_opinion_factor": 0.08, "special_project_speed_factor": 0.06, "naval_speed_factor": 0.04 },
+      "flag": { "motif": "wave", "alt": [] }, "building": "water_garden", "music": "elven_voices", "unit_group": "elven"
+    },
+    "pass_wardens": {
+      "id": 35, "adjective": "Pass-Warden", "icon": "pass_lamp", "magic": "natural",
+      "spirit": "The Watch-Roll",
+      "spirit_desc": "Each fort keeps a roll of its watch-houses, and a pass stays closed until the warden's vigil breaks. Little passes, and little is sold.",
+      "text": "Mountain archers and ropemen who have held the Nolorim passes for centuries.",
+      "modifier": { "dig_in_speed_factor": 0.12, "army_core_defence_factor": 0.06, "recon_factor": 0.06, "trade_opinion_factor": -0.1 },
+      "flag": { "motif": "pass", "alt": [] }, "building": "pass_fort_elf", "music": "elven_voices", "unit_group": "elven"
+    },
+    "rift_coast_elves": {
+      "id": 36, "adjective": "Rift-Coast", "icon": "lantern_tower", "magic": "natural",
+      "spirit": "The Lantern Towers",
+      "spirit_desc": "Light-singers on the towers signal any crossing of the rift. Lantern, dye and salt cross the water to the river kings.",
+      "text": "Sea-archers and lantern-keepers of the Rift coast, led by the wardens of each shore.",
+      "modifier": { "navy_org_factor": 0.05, "trade_opinion_factor": 0.1, "planning_speed": 0.08, "experience_gain_navy_factor": 0.06 },
+      "flag": { "motif": "lantern", "alt": [] }, "building": "shore_tower", "music": "elven_voices", "unit_group": "elven"
+    },
+    "gala_court": {
+      "id": 37, "adjective": "Gala", "icon": "sun_water", "magic": "natural",
+      "spirit": "The King's Memory",
+      "spirit_desc": "The king reigns as long as he wills, and the keepers' rolls hold his law. Gala remembers Dardan and does not forget.",
+      "text": "The ageless court of Gala under King Lorien. They keep their dead in memory and their counsel quiet.",
+      "modifier": { "special_project_speed_factor": 0.15, "stability_factor": 0.04, "war_support_factor": -0.05, "army_leader_start_level": 1 },
+      "flag": { "motif": "sun_over_water", "alt": [] }, "building": "white_gold_hall", "music": "elven_voices", "unit_group": "sun_elven"
+    },
+    "sunhot_light": {
+      "id": 38, "adjective": "Sunhot", "icon": "sun_door", "magic": "natural",
+      "spirit": "The Keepers of Noon",
+      "spirit_desc": "The tall guards stand in doorways and do not march. Warmth heals, and light turns the stranger aside.",
+      "text": "Sunhot elves of the Lands of Light, led by a Radiant Speaker whom the sanctuaries choose.",
+      "modifier": { "land_reinforce_rate": 0.1, "army_defence_factor": 0.05, "war_support_factor": -0.05, "special_project_speed_factor": 0.08, "stability_factor": 0.03 },
+      "flag": { "motif": "rising_sun", "alt": [] }, "building": "sun_sanctuary", "music": "gong_flute", "unit_group": "sun_elven"
+    },
+    "sunhot_western": {
+      "id": 39, "adjective": "Sanctuary", "icon": "door_sun", "magic": "natural",
+      "spirit": "The Open Door",
+      "spirit_desc": "No weapon passes a sanctuary door, and every pilgrim road is kept open. The realms argue at the Council and seldom fight.",
+      "text": "Sunhot realms of the western sanctuaries, each led by a Speaker its sanctuary chooses.",
+      "modifier": { "trade_opinion_factor": 0.12, "stability_factor": 0.04, "opinion_gain_monthly_factor": 0.15, "war_support_factor": -0.05 },
+      "flag": { "motif": "sun", "alt": [] }, "building": "sun_sanctuary", "music": "gong_flute", "unit_group": "sun_elven"
+    },
+    "sunhot_isles": {
+      "id": 40, "adjective": "Isle Sunhot", "icon": "chain_sun", "magic": "natural",
+      "spirit": "The Council of the Chain",
+      "spirit_desc": "Quarrelling isles send their quarrel to the Lands of Light. Sea-law and sanctuary-law keep the harbours at peace.",
+      "text": "Sunhot elves of the eastern isles, who sit at the Council of the Chain.",
+      "modifier": { "naval_speed_factor": 0.03, "trade_opinion_factor": 0.1, "land_reinforce_rate": 0.06, "justify_war_goal_time": 0.15 },
+      "flag": { "motif": "sun_over_waves", "alt": [] }, "building": "shore_sanctuary", "music": "gong_flute", "unit_group": "sun_elven"
+    },
+    "volcano_clans": {
+      "id": 41, "adjective": "Volcano Clan", "icon": "ring_flame", "magic": "respected",
+      "spirit": "The Warking's Ring",
+      "spirit_desc": "A warking holds the throne until a stronger orc breaks him in the ring. Hooked axes and war-beasts follow whoever wins.",
+      "text": "Orc clans of the fire-mountain, led by a warking whom the chiefs acclaim.",
+      "modifier": { "army_attack_factor": 0.06, "conscription_factor": 0.08, "army_org_factor": -0.04, "equipment_capture_factor": 0.1 },
+      "flag": { "motif": "flame_mountain", "alt": [] }, "building": "black_cliff_city", "music": "iron_drums", "unit_group": "orc_horde"
+    },
+    "iron_clans": {
+      "id": 42, "adjective": "Iron Clan", "icon": "anvil_horn", "magic": "respected",
+      "spirit": "The Free Moot of the Holds",
+      "spirit_desc": "Each hold keeps its iron and sends its chief to the moot to settle tolls and prices. Mail and chain go out by the bar.",
+      "text": "Orc holds of the iron hills. A shared battle-horn calls their levies.",
+      "modifier": { "production_factory_efficiency_gain_factor": 0.1, "army_infantry_defence_factor": 0.05, "trade_opinion_factor": 0.1, "army_org_factor": -0.03 },
+      "flag": { "motif": "anvil", "alt": [] }, "building": "hold_town", "music": "iron_drums", "unit_group": "orc_horde"
+    },
+    "wild_holds": {
+      "id": 43, "adjective": "Wild Hold", "icon": "bone_charm", "magic": "wary",
+      "spirit": "The Hold's Own Way",
+      "spirit_desc": "A hold has a chief by strength and splits when it grows too big. Raiders trust charms and sell nothing.",
+      "text": "Orc holds of the wild hills, with no council and no priest.",
+      "modifier": { "army_speed_factor": 0.04, "conscription_factor": 0.05, "trade_opinion_factor": -0.2, "army_defence_factor": -0.04 },
+      "flag": { "motif": "charm", "alt": [] }, "building": "burrow", "music": "iron_drums", "unit_group": "orc_horde"
+    },
+    "sea_orcs": {
+      "id": 44, "adjective": "Sea-Orc", "icon": "hook_skull", "magic": "wary",
+      "spirit": "The Tide-Ring",
+      "spirit_desc": "A sea-chief rules by voyages won, and captains meet in council on the Lestern Isles. Boarders with hooks take ships whole.",
+      "text": "Orc boarders of the skerries and the cliff harbours.",
+      "modifier": { "navy_org_factor": 0.04, "experience_gain_navy_factor": 0.08, "equipment_capture_factor": 0.08, "stability_factor": -0.03 },
+      "flag": { "motif": "skull", "alt": [] }, "building": "cliff_harbour_orc", "music": "iron_drums", "unit_group": "orc_horde"
+    },
+    "goblin_warrens": {
+      "id": 45, "adjective": "Goblin", "icon": "lamp_hole", "magic": "neutral",
+      "spirit": "The Loud and the Clever",
+      "spirit_desc": "The loudest, cleverest goblin leads until someone cleverer arrives. Traps, slings and tunnels do the fighting.",
+      "text": "Tunnel-dwelling goblins under the orc holds. They sell lamps and traps to those above.",
+      "modifier": { "enemy_attrition": 0.1, "dig_in_speed_factor": 0.1, "conscription_factor": 0.06, "army_attack_factor": -0.05 },
+      "flag": { "motif": "lamp", "alt": [] }, "building": "warren", "music": "iron_drums", "unit_group": "orc_horde",
+      "unused": "No country has the warrens as its dominant or second culture: goblins are a minor people inside orc holds (demography.json, minor_peoples). The culture is kept for the state function (state_cultures.json) and for a future country."
+    },
+    "troll_tribes": {
+      "id": 46, "adjective": "Troll", "icon": "boulder_heap", "magic": "none",
+      "spirit": "The Eldest Unbeaten",
+      "spirit_desc": "The oldest troll who has not been beaten leads, and the loser feeds the tribe. They throw stones and fear fire.",
+      "text": "Bog-dwelling trolls of the Troll Forest, who heap stones at their borders.",
+      "modifier": { "supply_consumption_factor": -0.1, "army_infantry_attack_factor": 0.04, "research_speed_factor": -0.05, "stability_factor": -0.03 },
+      "flag": { "motif": "boulder", "alt": [] }, "building": "cave_heap", "music": "slow_bass", "unit_group": "troll"
+    },
+    "hill_giants": {
+      "id": 47, "adjective": "Hiloron Giant", "icon": "cairn_giant", "magic": "none",
+      "spirit": "The Cairn-Count",
+      "spirit_desc": "A dispute is judged by which side can name the older cairn. Giants quarry stone and raise walls that outlast kings.",
+      "text": "Giants of Hiloron who count years by stones, led by a High Chief of the cairn-keepers.",
+      "modifier": { "production_speed_buildings_factor": 0.08, "max_dig_in_factor": 0.08, "stability_factor": 0.03, "conscription_factor": -0.05 },
+      "flag": { "motif": "stone", "alt": [] }, "building": "giant_hall", "music": "slow_bass", "unit_group": "giant"
+    },
+    "ice_giants": {
+      "id": 48, "adjective": "Titanos Giant", "icon": "ice_throne", "magic": "natural",
+      "spirit": "The Frost-Throne",
+      "spirit_desc": "A Frost-King sits an ice throne chosen by the cairn-keepers. The cold itself is an old and patient ally.",
+      "text": "Giants of Titanos who carve ice and ivory. They honour the cold as an elder spirit.",
+      "modifier": { "winter_attrition_factor": -0.15, "army_defence_factor": 0.04, "acclimatization_cold_climate_gain_factor": 0.2, "production_speed_buildings_factor": -0.05 },
+      "flag": { "motif": "throne", "alt": [] }, "building": "ice_hall", "music": "slow_bass", "unit_group": "giant"
+    },
+    "yeti_clans": {
+      "id": 49, "adjective": "Yeti", "icon": "song_mountain", "magic": "natural",
+      "spirit": "The Far-Carrying Song",
+      "spirit_desc": "The clan follows the Eldest whose song carries furthest. Yeti hold the mountain at dusk and raid in winter.",
+      "text": "Furred clans of the Yeti Lands. Their names are sung at the winter gathering.",
+      "modifier": { "army_morale_factor": 0.05, "army_org_factor": 0.04, "heat_attrition_factor": 0.1, "recon_factor": 0.06 },
+      "flag": { "motif": "mountain", "alt": [] }, "building": "cave_home", "music": "northern_throat", "unit_group": "yeti"
+    },
+    "kilinti_ents": {
+      "id": 50, "adjective": "Ent", "icon": "moot_tree", "magic": "natural",
+      "spirit": "The Last-Speaking Moot",
+      "spirit_desc": "The Eldest speaks last, and a moot may take three years to say one sentence. The forest is slow to rouse and nearly impossible to break.",
+      "text": "The ents of Kilinti Forest. A few men live at its edge and keep its accounts.",
+      "modifier": { "army_core_defence_factor": 0.08, "army_speed_factor": -0.05, "stability_factor": 0.05, "justify_war_goal_time": 0.3 },
+      "flag": { "motif": "tree", "alt": [] }, "building": "grove", "music": "slow_bass", "unit_group": "ent"
+    },
+    "grave_hosts": {
+      "id": 51, "adjective": "Grave-Host", "icon": "drum_skull", "magic": "core",
+      "spirit": "The Dirge-Drum",
+      "spirit_desc": "The hosts march to the drum and answer to Volgan. They count their dead by name and do not leave the field.",
+      "text": "The dead and the living of Volgan's Dominion, led by his chosen captains. Mass hosts follow the dirge-drum.",
+      "modifier": { "army_org_factor": 0.05, "war_support_factor": 0.05, "opinion_gain_monthly_factor": -0.2, "research_speed_factor": -0.04 },
+      "flag": { "motif": "eye_gate", "alt": [] }, "building": "black_fortress", "music": "dread", "unit_group": "dead"
+    },
+    "zols_dead": {
+      "id": 52, "adjective": "Zol's", "icon": "black_sigil", "magic": "core",
+      "spirit": "Hosts Without Number",
+      "spirit_desc": "Numbered hosts march where Zol wills, and ordinary weapons do not end them. They build nothing and learn nothing.",
+      "text": "The numbered hosts of Zol's Mistake. No tongue is recorded for them, and no rite.",
+      "modifier": { "army_defence_factor": 0.06, "army_org_factor": 0.05, "research_speed_factor": -0.08, "production_speed_buildings_factor": -0.1 },
+      "flag": { "motif": "black_sigil", "alt": [] }, "building": "black_ruin", "music": "dread", "unit_group": "dead"
+    },
+    "netherborn": {
+      "id": 53, "adjective": "Netherborn", "icon": "horn_pact", "magic": "core",
+      "spirit": "The Pact-Name",
+      "spirit_desc": "Each lord keeps a pact and a pact-name, and oaths are sealed in blood and ash. The Netherborn are few and fearless.",
+      "text": "The demon realms of the Nether, each ruled by a Lord or Queen bound to a pact.",
+      "modifier": { "army_morale_factor": 0.05, "army_attack_factor": 0.04, "justify_war_goal_time": -0.15, "opinion_gain_monthly_factor": -0.15 },
+      "flag": { "motif": "horn", "alt": [] }, "building": "obsidian_hall", "music": "dread", "unit_group": "demon"
+    }
+  },
+  "faiths": {
+    "deliverer": {
+      "id": 1, "icon": "lamp_loaf", "clergy": "Confessors",
+      "spirit_desc": "Believers keep a lamp and a loaf for the stranger and give a tenth of the first harvest to the Houses of the First Light. The Houses are clinic, granary and school.",
+      "text": "A New God of deliverance, protection and renewal, honoured in the Houses of the First Light. Its confessors teach and heal.",
+      "modifier": { "stability_factor": 0.04, "land_reinforce_rate": 0.05, "research_speed_factor": 0.02 },
+      "festivals": [{ "id": "lamp_lighting", "name": "The Lamp-Lighting", "month": "Thaw" }, { "id": "day_of_deliverance", "name": "The Day of Deliverance", "month": "Mistfall" }, { "id": "jubilee", "name": "The Thousand-Year Jubilee", "month": null, "days": 14 }],
+      "holy_sites": ["site_parim", "site_zilin_hills"]
+    },
+    "lamp_furrow": {
+      "id": 2, "icon": "lamp_rain", "clergy": null,
+      "spirit_desc": "Households honour the gods in two images, a lamp that never goes out and rain over a ploughed field. The mother keeps the lamp and the village keeps the rain-stone.",
+      "text": "The folk faith of most households in the Middle Lands and beyond. It has no priests.",
+      "modifier": { "army_morale_factor": 0.03, "monthly_population": 0.04, "stability_factor": 0.02 },
+      "festivals": [{ "id": "thaw_lamp", "name": "The Thaw Lamp", "month": "Thaw" }, { "id": "rain_feast", "name": "The Rain-Feast", "month": "Rainwake" }, { "id": "harvest_home", "name": "Harvest Home", "month": "Harvest" }, { "id": "longnight_vigil", "name": "The Vigil of Longnight", "month": "Longnight" }],
+      "holy_sites": []
+    },
+    "green_lords": {
+      "id": 3, "icon": "green_lord", "clergy": "Tree-wardens",
+      "spirit_desc": "Every old wood has a Lord of the Green who must be asked before an arrow is loosed. No bow is drawn in the Hallow Month.",
+      "text": "A faith of woods and rangers, led by tree-wardens whom the moot chooses.",
+      "modifier": { "supply_consumption_factor": -0.04, "army_morale_factor": 0.03, "special_project_speed_factor": 0.04 },
+      "festivals": [{ "id": "hallow_month", "name": "The Hallow Month", "month": "Fallowing" }, { "id": "green_waking", "name": "The Green-Waking", "month": "Thaw" }, { "id": "three_arrows", "name": "The Three Arrows", "month": "Highsun" }],
+      "holy_sites": ["site_selen", "forest_selen"]
+    },
+    "horse_oath": {
+      "id": 4, "icon": "horse_sky", "clergy": "Oath-riders",
+      "spirit_desc": "A rider swears on a horse, and the horse carries the oath to the sky. An oath broken is a horse lost.",
+      "text": "The faith of the steppe riders, witnessed by old riders called oath-riders.",
+      "modifier": { "army_morale_factor": 0.04, "cavalry_defence_factor": 0.05, "stability_factor": 0.02 },
+      "festivals": [{ "id": "gathering", "name": "The Gathering", "month": "Highsun" }, { "id": "foaling", "name": "The Foaling", "month": "Thaw" }, { "id": "last_ride", "name": "The Last Ride", "month": "Mistfall" }],
+      "holy_sites": ["site_hunhun", "site_konori"]
+    },
+    "stone_vigil": {
+      "id": 5, "icon": "names_wall", "clergy": "Watch-chaplains",
+      "spirit_desc": "The Wall is a promise to the dead of the Third Age, and every post is holy. Watch-chaplains keep the roll of the fallen.",
+      "text": "A faith of duty on the Great Wall and the marches.",
+      "modifier": { "army_morale_factor": 0.04, "max_dig_in_factor": 0.05, "war_support_factor": 0.03 },
+      "festivals": [{ "id": "accord_day", "name": "The Accord-Day", "month": null }, { "id": "night_watch", "name": "The Night Watch", "month": "Longnight" }, { "id": "reading_of_names", "name": "The Reading of Names", "month": null }],
+      "holy_sites": ["site_kingson", "pass_kingson_gate"]
+    },
+    "isle_tide": {
+      "id": 6, "icon": "tide_chamber", "clergy": "Tide-mothers",
+      "spirit_desc": "The dead go out with the tide and return with it. Each house names its ancestors in the tide-chamber at the flood.",
+      "text": "The ancestor-faith of Asgard, kept by the tide-mothers.",
+      "modifier": { "navy_org_factor": 0.04, "stability_factor": 0.03 },
+      "festivals": [{ "id": "spring_tide", "name": "The Spring Tide", "month": "Thaw" }, { "id": "boat_burning", "name": "The Boat-Burning", "month": "Emberleaf" }, { "id": "drowned_night", "name": "Drowned Night", "month": null }],
+      "holy_sites": ["site_asgard"]
+    },
+    "old_knots": {
+      "id": 7, "icon": "cord_knot", "clergy": "Cord-mothers",
+      "spirit_desc": "Names are tied into a cord, and the dead are never untied. A stolen name is a cut cord.",
+      "text": "The oldest faith of the Orran folk, kept by cord-mothers.",
+      "modifier": { "stability_factor": 0.04, "resistance_damage_to_garrison": 0.06 },
+      "festivals": [{ "id": "the_tying", "name": "The Tying", "month": "Rainwake" }, { "id": "untying_of_the_year", "name": "The Untying of the Year", "month": "Longnight" }],
+      "holy_sites": ["forest_bloody", "waste_cursed_lands"]
+    },
+    "strait_litany": {
+      "id": 8, "icon": "litany_ship", "clergy": "Litany-singers",
+      "spirit_desc": "A litany is sung at every tide, naming the ships lost that year. The Leren sing to the gods and to the storm that took them.",
+      "text": "The sea-faith of the Narrow Strait, with a litany-singer in each fleet.",
+      "modifier": { "experience_gain_navy_factor": 0.05, "war_support_factor": 0.03, "navy_org_factor": 0.02 },
+      "festivals": [{ "id": "ship_blessing", "name": "The Ship-Blessing", "month": "Thaw" }, { "id": "reading_of_the_lost", "name": "The Reading of the Lost", "month": "Longnight" }],
+      "holy_sites": ["site_sonargur"]
+    },
+    "winter_hearth": {
+      "id": 9, "icon": "clan_fire", "clergy": "Fire-keepers",
+      "spirit_desc": "In the Long Dark each house lets its fire go out and relights it from the clan fire. No family is alone with its cold.",
+      "text": "The ancestor-faith of the cold north, kept by fire-keepers.",
+      "modifier": { "stability_factor": 0.04, "winter_attrition_factor": -0.08, "army_org_factor": 0.02 },
+      "festivals": [{ "id": "relighting", "name": "The Relighting", "month": "Thaw" }, { "id": "frost_moot", "name": "The Frost Moot", "month": null }, { "id": "dead_night", "name": "The Dead Night", "month": null }],
+      "holy_sites": ["site_fandanar"]
+    },
+    "storm_court": {
+      "id": 10, "icon": "storm_tokens", "clergy": "Wind-readers",
+      "spirit_desc": "Storms are the court of the sea. Captains and warlords bargain with the spirits of wind and water.",
+      "text": "A faith of wind-readers and storm-speakers.",
+      "modifier": { "naval_speed_factor": 0.04, "experience_gain_navy_factor": 0.04, "stability_factor": -0.02 },
+      "festivals": [{ "id": "the_calm", "name": "The Calm", "month": "Highsun" }, { "id": "first_gale", "name": "The First Gale", "month": "Fallowing" }],
+      "holy_sites": ["region_windwaith", "site_isengard"]
+    },
+    "clan_stones": {
+      "id": 11, "icon": "standing_stone", "clergy": "Lawspeakers",
+      "spirit_desc": "An oath sworn at a standing stone binds the stone, the swearer and the clan. The Lawspeaker remembers every oath.",
+      "text": "The law-faith of the western hills, spoken by lawspeakers who are judges and priests together.",
+      "modifier": { "stability_factor": 0.03, "opinion_gain_monthly_factor": 0.1, "justify_war_goal_time": 0.05 },
+      "festivals": [{ "id": "ring_moot", "name": "The Ring-Moot", "month": "Highsun" }, { "id": "truce_day", "name": "The Truce-Day", "month": "Thaw" }],
+      "holy_sites": ["pass_grey_ford", "site_gunwaith"]
+    },
+    "river_wardens": {
+      "id": 12, "icon": "river_loaf", "clergy": "Ford-wardens",
+      "spirit_desc": "Each river has a keeper that mistakes the town for a guest. The wardens feed it a loaf at the flood and keep the ford clear.",
+      "text": "A faith of ford-wardens, who are also magistrates.",
+      "modifier": { "production_speed_buildings_factor": 0.04, "dig_in_speed_factor": 0.05 },
+      "festivals": [{ "id": "first_flood", "name": "The First Flood", "month": "Rainwake" }, { "id": "bridge_night", "name": "The Bridge-Night", "month": null }],
+      "holy_sites": ["site_girdon"]
+    },
+    "guild_hall": {
+      "id": 13, "icon": "guild_hall", "clergy": "Guild-chaplains",
+      "spirit_desc": "Each guild honours one god under a craft-aspect and keeps a patron-day and a hall. Contracts are sworn on the guild book.",
+      "text": "A faith of crafts, kept in the great halls of Kradlon and Corogon.",
+      "modifier": { "production_factory_efficiency_gain_factor": 0.05, "trade_opinion_factor": 0.08 },
+      "festivals": [{ "id": "fair_of_contracts", "name": "The Fair of Contracts", "month": "Goldfield" }],
+      "holy_sites": ["site_kradlon"]
+    },
+    "company_banner": {
+      "id": 14, "icon": "banner_soul", "clergy": "Banner-chaplains",
+      "spirit_desc": "A company's banner is its soul, and sworn men pray before it. A fallen banner ends the company.",
+      "text": "The soldiers' faith of Buldor, led by banner-chaplains.",
+      "modifier": { "army_morale_factor": 0.05, "training_time_army_factor": -0.05 },
+      "festivals": [{ "id": "unfurling", "name": "The Unfurling", "month": "Thaw" }, { "id": "last_muster", "name": "The Last Muster", "month": "Mistfall" }],
+      "holy_sites": []
+    },
+    "tide_charts": {
+      "id": 15, "icon": "pilot_chart", "clergy": "Master-pilots",
+      "spirit_desc": "To chart a reef is a gift to every sailor to come. A chart-house honours its first pilot and the reefs that spared him.",
+      "text": "The pilots' faith of Triton's Islands.",
+      "modifier": { "research_speed_factor": 0.03, "navy_max_range_factor": 0.08 },
+      "festivals": [{ "id": "charting_day", "name": "The Charting Day", "month": "Rainwake" }, { "id": "drowned_names", "name": "The Drowned Names", "month": null }],
+      "holy_sites": ["region_tritons_islands"]
+    },
+    "ransom_tide": {
+      "id": 16, "icon": "ransom_tide", "clergy": "Tide-judges",
+      "spirit_desc": "The tide returns every ship. A captive who is ransomed is under the god of the harbour, and one who is not is under the sea.",
+      "text": "The law-faith of the corsair isles, kept by tide-judges.",
+      "modifier": { "equipment_capture_factor": 0.08, "political_power_gain": 0.03 },
+      "festivals": [{ "id": "ransoming", "name": "The Ransoming", "month": "Emberleaf" }, { "id": "black_flag_night", "name": "Black Flag Night", "month": null }],
+      "holy_sites": []
+    },
+    "well_oath": {
+      "id": 17, "icon": "seven_wells", "clergy": "Well-lords and well-wives",
+      "spirit_desc": "A well is a promise from the earth. Sharing water makes kin, and one who poisons a well is cast from every tribe.",
+      "text": "The desert law-faith of Noris, kept by well-lords and well-wives.",
+      "modifier": { "supply_consumption_factor": -0.04, "opinion_gain_monthly_factor": 0.1, "stability_factor": 0.03 },
+      "festivals": [{ "id": "first_water", "name": "The First Water", "month": "Rainwake" }, { "id": "night_of_stars", "name": "The Night of Stars", "month": "Highsun" }, { "id": "caravan_blessing", "name": "The Caravan Blessing", "month": null }],
+      "holy_sites": ["site_noris"]
+    },
+    "scale_creed": {
+      "id": 18, "icon": "honest_scale", "clergy": "Weighers",
+      "spirit_desc": "An honest weight pleases the gods. A false weight is the worst crime, and every temple keeps its scales.",
+      "text": "The trade-faith of Stabilo, kept by weighers who also judge contracts.",
+      "modifier": { "trade_opinion_factor": 0.12, "stability_factor": 0.03, "production_factory_efficiency_gain_factor": 0.03 },
+      "festivals": [{ "id": "the_weighing", "name": "The Weighing", "month": "Harvest" }, { "id": "opening_of_the_roads", "name": "The Opening of the Roads", "month": "Thaw" }],
+      "holy_sites": ["site_postondoroth"]
+    },
+    "river_temples": {
+      "id": 19, "icon": "flood_temple", "clergy": "Temple scribes and flood-priests",
+      "spirit_desc": "The river is the oldest god we can see. Tall temples honour the gods above the flood-line, and the river below it.",
+      "text": "The faith of the river kings, served by temple scribes and flood-priests.",
+      "modifier": { "research_speed_factor": 0.03, "monthly_population": 0.04, "stability_factor": 0.02 },
+      "festivals": [{ "id": "the_rising", "name": "The Rising", "month": null }, { "id": "the_falling", "name": "The Falling", "month": null }, { "id": "kings_walk", "name": "The King's Walk", "month": null }],
+      "holy_sites": ["site_alerhia"]
+    },
+    "lake_litany": {
+      "id": 20, "icon": "lake_lantern", "clergy": "Lake-readers",
+      "spirit_desc": "The lakes keep the memory of the caravans. Merchants and fishers pray together at the water.",
+      "text": "The lake-shrine faith of the Lake Road cities, read by lake-readers.",
+      "modifier": { "trade_opinion_factor": 0.08, "stability_factor": 0.03 },
+      "festivals": [{ "id": "fish_fair", "name": "The Fish-Fair", "month": "Goldfield" }, { "id": "lantern_float", "name": "The Lantern Float", "month": "Longnight" }],
+      "holy_sites": ["site_mora", "site_ostoroth"]
+    },
+    "red_hearth": {
+      "id": 21, "icon": "clay_mother", "clergy": "Kiln-mothers",
+      "spirit_desc": "The red clay is the bone of the first mothers. Each house re-fires its clay mother every spring.",
+      "text": "The clay-faith of the Red Lands, kept by kiln-mothers.",
+      "modifier": { "production_speed_buildings_factor": 0.05, "stability_factor": 0.03 },
+      "festivals": [{ "id": "refiring", "name": "The Refiring", "month": "Thaw" }, { "id": "clay_night", "name": "The Clay Night", "month": null }],
+      "holy_sites": ["site_avalon"]
+    },
+    "wave_tally": {
+      "id": 22, "icon": "reef_tally", "clergy": "Tally-keepers",
+      "spirit_desc": "Each island counts its dead as waves on the reef. A shrine repeats a name long forgotten, and the islanders say the name is needed.",
+      "text": "The ancestor-faith of the southern reefs, kept by tally-keepers.",
+      "modifier": { "stability_factor": 0.03, "naval_speed_factor": 0.03 },
+      "festivals": [{ "id": "reef_opening", "name": "The Reef-Opening", "month": "Rainwake" }, { "id": "calling_of_names", "name": "The Calling of Names", "month": null }],
+      "holy_sites": ["region_islands_south"]
+    },
+    "noon_pilgrimage": {
+      "id": 23, "icon": "noon_sun", "clergy": "Keepers of the Noon",
+      "spirit_desc": "The Lands of the Sun are the nearest place to the divine realm that mortals call Heaven. The sanctuaries give rest to every pilgrim.",
+      "text": "The faith of the Sunhot sanctuaries, kept by sanctuary-wardens and Keepers of the Noon.",
+      "modifier": { "stability_factor": 0.04, "opinion_gain_monthly_factor": 0.12, "war_support_factor": -0.03 },
+      "festivals": [{ "id": "noon_day", "name": "Noon-Day", "month": "Highsun" }, { "id": "gathering_at_the_sea", "name": "The Gathering at the Sea", "month": null }, { "id": "dreaming_night", "name": "The Dreaming Night", "month": null }],
+      "holy_sites": ["site_godland", "site_heaven", "site_flame", "lake_sun"]
+    },
+    "kindred_song": {
+      "id": 24, "icon": "world_song", "clergy": "Loremasters and song-wardens",
+      "spirit_desc": "The elves hold that the world was sung and that to listen well is a duty. No elf claims to know the one true telling.",
+      "text": "The reverence of the elves, kept by loremasters and song-wardens.",
+      "modifier": { "research_speed_factor": 0.05, "army_org_factor": 0.03, "special_project_speed_factor": 0.05 },
+      "festivals": [{ "id": "first_leaf", "name": "The First Leaf", "month": "Thaw" }, { "id": "long_listening", "name": "The Long Listening", "month": "Longnight" }, { "id": "dragon_watch", "name": "The Dragon-Watch", "month": null }],
+      "holy_sites": ["site_magical_forest", "forest_living"]
+    },
+    "rain_mirror": {
+      "id": 25, "icon": "first_rain_mirror", "clergy": "Keepers of the Mirror",
+      "spirit_desc": "The Gala keep a spring where the past and the possible may be glimpsed. They do not trust a vision shown too plainly.",
+      "text": "The vigil of Gala, kept by the keepers of the Mirror.",
+      "modifier": { "stability_factor": 0.03, "special_project_speed_factor": 0.06, "war_support_factor": -0.03 },
+      "festivals": [{ "id": "first_rain", "name": "The First Rain", "month": "Rainwake" }, { "id": "reading_of_dardan", "name": "The Reading of the Dead of Dardan", "month": "Mistfall" }],
+      "holy_sites": ["site_mirror_first_rain", "site_gala"]
+    },
+    "skull_fire": {
+      "id": 26, "icon": "skull_flame", "clergy": "Fire-Speakers",
+      "spirit_desc": "The clan honours its dead on a cairn of skulls and its mountain with a fire that never goes out. Orcs do not say what lives in the mountain.",
+      "text": "The ancestor-faith of the orc clans, led by Fire-Speakers.",
+      "modifier": { "army_attack_factor": 0.03, "army_morale_factor": 0.04, "conscription_factor": 0.03 },
+      "festivals": [{ "id": "ember_night", "name": "The Ember-Night", "month": null }, { "id": "tithe_of_iron", "name": "The Tithe of Iron", "month": null }],
+      "holy_sites": ["site_cocanoor", "volcano_goldoroth"]
+    },
+    "hold_luck": {
+      "id": 27, "icon": "lucky_stone", "clergy": "Charm-wives",
+      "spirit_desc": "The holds trust charms, bones and lucky stones, and honour the spirit of whatever place they live in. Every priest is suspect.",
+      "text": "The luck-faith of the wild holds, kept by charm-wives.",
+      "modifier": { "army_speed_factor": 0.03, "trade_opinion_factor": -0.1, "stability_factor": -0.02 },
+      "festivals": [{ "id": "the_thawing", "name": "The Thawing", "month": "Thaw" }, { "id": "bone_casting", "name": "The Bone-Casting", "month": null }],
+      "holy_sites": []
+    },
+    "tide_skull": {
+      "id": 28, "icon": "salt_skull", "clergy": "Salt-priests",
+      "spirit_desc": "Sea orcs sink a skull in the first catch of each season and pay the sea a tithe of salt.",
+      "text": "The sea-faith of the orc skerries, kept by salt-priests.",
+      "modifier": { "navy_org_factor": 0.03, "equipment_capture_factor": 0.05 },
+      "festivals": [{ "id": "first_catch", "name": "The First Catch", "month": null }, { "id": "black_tide", "name": "The Black Tide", "month": null }],
+      "holy_sites": []
+    },
+    "warren_luck": {
+      "id": 29, "icon": "warren_lamp", "clergy": null,
+      "spirit_desc": "A warren trusts the luck of its lamp. A lamp gone out is a warren doomed.",
+      "text": "The lamp-faith of the goblin warrens. The loudest goblin keeps the lamp.",
+      "modifier": { "conscription_factor": 0.04, "enemy_attrition": 0.05 },
+      "festivals": [{ "id": "lamp_night", "name": "Lamp-Night", "month": null }],
+      "holy_sites": []
+    },
+    "stone_hunger": {
+      "id": 30, "icon": "stone_hunger", "clergy": null,
+      "spirit_desc": "The trolls honour the stone that feeds them and the hunger that drives them. Their dead are laid in bogs.",
+      "text": "The faith of the troll tribes. It has no priests.",
+      "modifier": { "supply_consumption_factor": -0.05, "army_morale_factor": 0.03 },
+      "festivals": [{ "id": "eldests_rest", "name": "The Eldest's Rest", "month": null }],
+      "holy_sites": ["forest_troll"]
+    },
+    "giant_cairn": {
+      "id": 31, "icon": "cairn_stones", "clergy": "Stone-keepers",
+      "spirit_desc": "A giant leaves one stone for each year of life. The great cairns are the giants' memory.",
+      "text": "The cairn-faith of Hiloron and Titanos, kept by stone-keepers.",
+      "modifier": { "stability_factor": 0.04, "production_speed_buildings_factor": 0.03 },
+      "festivals": [{ "id": "stone_laying", "name": "The Stone-Laying", "month": "Thaw" }, { "id": "frost_hour", "name": "The Frost-Hour", "month": null }],
+      "holy_sites": ["site_hiloron"]
+    },
+    "yeti_hum": {
+      "id": 32, "icon": "hum_cave", "clergy": "Hum-keepers",
+      "spirit_desc": "The mountain hums, and the hum must be answered at dusk. A clan with no hum is lost.",
+      "text": "The faith of the yeti, kept by hum-keepers in the caves.",
+      "modifier": { "army_org_factor": 0.03, "winter_attrition_factor": -0.08 },
+      "festivals": [{ "id": "winter_hum", "name": "The Winter Hum", "month": "Longnight" }],
+      "holy_sites": ["hills_yeti_lands"]
+    },
+    "ent_slow": {
+      "id": 33, "icon": "moot_grove", "clergy": null,
+      "spirit_desc": "The ents answer to the grove and the grove to the season. Men see no rite, and a moot may take three years to say one sentence.",
+      "text": "The faith of Kilinti, which has no priests. The Eldest speaks last.",
+      "modifier": { "stability_factor": 0.04, "justify_war_goal_time": 0.1, "army_core_defence_factor": 0.03 },
+      "festivals": [{ "id": "ent_moot", "name": "The Ent-Moot", "month": "Thaw", "days": 14 }],
+      "holy_sites": ["site_kilinti"]
+    },
+    "grave_cult": {
+      "id": 34, "icon": "names_gate", "clergy": "Necromantic orders",
+      "spirit_desc": "The hosts keep a rite of Names and Gates, and many worship Volgan as a god.",
+      "text": "The dark rite of the Dominion, kept by necromantic orders and the wardens of the Gates.",
+      "modifier": { "war_support_factor": 0.04, "army_morale_factor": 0.04, "army_org_factor": 0.02 },
+      "festivals": [{ "id": "muster_of_names", "name": "The Muster of Names", "month": null }, { "id": "opening_of_the_gates", "name": "The Opening of the Gates", "month": null }],
+      "holy_sites": ["site_nafeher"]
+    },
+    "pact_rite": {
+      "id": 35, "icon": "pact_ash", "clergy": "Pact-heralds",
+      "spirit_desc": "Every lord keeps a pact and a pact-name known only to the pact. Oaths are sealed in blood and ash.",
+      "text": "The dark rite of the Nether, kept by pact-heralds.",
+      "modifier": { "army_morale_factor": 0.04, "army_attack_factor": 0.02, "opinion_gain_monthly_factor": -0.1 },
+      "festivals": [{ "id": "ash_night", "name": "The Ash Night", "month": null }],
+      "holy_sites": ["site_nether", "site_demon_dolon", "site_nezer"]
+    },
+    "mourning_dust": {
+      "id": 36, "icon": "salt_grave", "clergy": "Grave-wives",
+      "spirit_desc": "The dead are buried quickly and deep, with salt, and nothing is said of Zol or Volgan at the grave. Their gods are the gods of safe harbours.",
+      "text": "The mourning customs of the Dead Lands coast, kept by grave-wives.",
+      "modifier": { "stability_factor": 0.04, "war_support_factor": -0.03 },
+      "festivals": [{ "id": "salt_day", "name": "The Salt Day", "month": null }],
+      "holy_sites": []
+    },
+    "warden_vigil": {
+      "id": 37, "icon": "vigil_lamp", "clergy": "Vigil-captains",
+      "spirit_desc": "Mirolon honours the gods as watchers. Every warden keeps a night vigil each month, and every tower keeps its lamp toward the south.",
+      "text": "The watch-faith of Mirolon, led by vigil-captains.",
+      "modifier": { "recon_factor": 0.06, "army_morale_factor": 0.03, "planning_speed": 0.05 },
+      "festivals": [{ "id": "long_watch", "name": "The Long Watch", "month": null }, { "id": "beacon_night", "name": "The Beacon-Night", "month": null }],
+      "holy_sites": ["site_mirolon", "lake_mirolon"]
+    },
+    "hearth_iron": {
+      "id": 38, "icon": "iron_bar", "clergy": "Iron-keepers",
+      "spirit_desc": "A bar of iron is kept at every hearth and passed to the eldest son. Old feuds are settled over the bar.",
+      "text": "The iron-faith of Dondor, kept by smiths called iron-keepers.",
+      "modifier": { "stability_factor": 0.03, "army_defence_factor": 0.03, "production_factory_efficiency_gain_factor": 0.03 },
+      "festivals": [{ "id": "the_forging", "name": "The Forging", "month": "Thaw" }, { "id": "iron_night", "name": "The Iron Night", "month": null }],
+      "holy_sites": ["site_notbuton"]
+    },
+    "none": {
+      "id": 39, "name": "No Faith Recorded", "icon": null, "clergy": null,
+      "spirit_desc": null,
+      "text": "No faith is recorded.",
+      "modifier": {},
+      "festivals": [],
+      "holy_sites": []
+    }
+  }
+}

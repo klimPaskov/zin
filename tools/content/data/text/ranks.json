@@ -1,0 +1,27 @@
+{
+  "family": "ranks",
+  "note": "Weekday names (docs/specs/07_interface/06_career_honours.md section 6), commander ranks and the six default division titles (section 7). The citation, history and Honours text belongs to text_honours.mjs; when that module writes a key below it is removed here (the sweep skips keys another module already staged).",
+  "lit": {
+    "Monday": "{weekday_mon}",
+    "Tuesday": "{weekday_tue}",
+    "Wednesday": "{weekday_wed}",
+    "Thursday": "{weekday_thu}",
+    "Friday": "{weekday_fri}",
+    "Saturday": "{weekday_sat}",
+    "Sunday": "{weekday_sun}",
+    "rank1": "{rank_land_1}",
+    "rank2": "{rank_land_2}",
+    "rank3": "{rank_land_3}",
+    "rank4": "{rank_land_4}",
+    "naval_rank1": "{rank_naval_1}",
+    "naval_rank2": "{rank_naval_2}",
+    "naval_rank3": "{rank_naval_3}",
+    "naval_rank4": "{rank_naval_4}",
+    "DIVISION_EXPERIENCE_TITLE_DEFAULT": "{division_title_default}",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_0": "{division_title_0}",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_1": "{division_title_1}",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_2": "{division_title_2}",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_3": "{division_title_3}",
+    "DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_4": "{division_title_4}"
+  }
+}

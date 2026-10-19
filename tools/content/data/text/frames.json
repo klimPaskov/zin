@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/07_interface/05_text_sweep.md",
+  "note": "ZIN-written sentence shapes with named holes ({$name}). A family row calls a frame by id and fills the holes with glossary slots or literals; a stem row fills {$label} and {$label_lc} from the key's own id and {$v1}, {$v2} with the vanilla key's variables in order. Frames hold ZIN text only. A frame is added when three keys share a shape; later family authors add frames and never change one another family uses.",
+  "frames": {
+    "label": { "slots": ["label"], "body": "{$label}" },
+    "modifies": { "slots": ["label_lc"], "body": "Modifies {$label_lc}." },
+    "title_of": { "slots": ["what"], "body": "{$what}" }
+  }
+}

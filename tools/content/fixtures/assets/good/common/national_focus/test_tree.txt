@@ -1,0 +1,27 @@
+focus_tree = {
+	id = zin_test_tree
+	country = { factor = 0 }
+	focus = {
+		id = zin_test_one
+		icon = GFX_focus_zin_test_a
+		x = 0
+		y = 0
+		cost = 5
+	}
+	focus = {
+		id = zin_test_two
+		icon = GFX_focus_zin_test_b
+		prerequisite = { focus = zin_test_one }
+		x = 0
+		y = 1
+		cost = 5
+	}
+	focus = {
+		id = zin_test_three
+		icon = GFX_focus_zin_test_c
+		prerequisite = { focus = zin_test_two }
+		x = 0
+		y = 2
+		cost = 5
+	}
+}

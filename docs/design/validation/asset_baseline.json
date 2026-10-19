@@ -1,0 +1,3584 @@
+{
+ "version": 1,
+ "note": "Findings accepted as pre-existing (tools/content/checks/assets.mjs). The build fails only on an error that is not listed here. Regenerate with: node tools/content/checks/assets.mjs --write-baseline.",
+ "phase": 1,
+ "counts": {
+  "shippedFiles": 2551,
+  "assetFiles": 1514,
+  "byFamily": {
+   "A1": 350,
+   "A3": 10,
+   "D7": 40,
+   "E1": 71,
+   "F1": 53,
+   "F2": 6,
+   "F3": 4,
+   "G2": 4,
+   "I1": 915,
+   "K": 50,
+   "M": 11
+  },
+  "sprites": 702,
+  "spriteUses": 6804,
+  "spritesUnused": 632,
+  "entities": 13,
+  "meshes": 5,
+  "animations": 30,
+  "references": 9945,
+  "unresolved": 225,
+  "orphans": 0,
+  "boundUnreferenced": 945,
+  "replacesVanilla": 7,
+  "filesWithoutFormatRule": 11,
+  "provenanceLinked": 1503,
+  "tags": 380,
+  "locKeys": 5475,
+  "parseErrors": 0
+ },
+ "references": {
+  "total": 9945,
+  "unresolved": 225,
+  "byKind": {
+   "animation": {
+    "total": 40,
+    "unresolved": 0
+   },
+   "animation_file": {
+    "total": 30,
+    "unresolved": 0
+   },
+   "culture_entity": {
+    "total": 10,
+    "unresolved": 0
+   },
+   "entity_clone": {
+    "total": 3,
+    "unresolved": 0
+   },
+   "entity_mesh": {
+    "total": 10,
+    "unresolved": 0
+   },
+   "entity_state_animation": {
+    "total": 80,
+    "unresolved": 0
+   },
+   "flag": {
+    "total": 1140,
+    "unresolved": 225
+   },
+   "focus_shine": {
+    "total": 138,
+    "unresolved": 0
+   },
+   "font": {
+    "total": 8,
+    "unresolved": 0
+   },
+   "localisation": {
+    "total": 9,
+    "unresolved": 0
+   },
+   "map_file": {
+    "total": 12,
+    "unresolved": 0
+   },
+   "mesh_file": {
+    "total": 5,
+    "unresolved": 0
+   },
+   "mesh_texture": {
+    "total": 15,
+    "unresolved": 0
+   },
+   "sound": {
+    "total": 10,
+    "unresolved": 0
+   },
+   "sprite_effect": {
+    "total": 189,
+    "unresolved": 0
+   },
+   "sprite_texture": {
+    "total": 1442,
+    "unresolved": 0
+   },
+   "sprite_use": {
+    "total": 6791,
+    "unresolved": 0
+   },
+   "sprite_use_implicit": {
+    "total": 13,
+    "unresolved": 0
+   }
+  }
+ },
+ "bySeverity": {
+  "error": 38,
+  "warning": 449,
+  "info": 0
+ },
+ "byCode": {
+  "PROV_UNREVIEWED": 33,
+  "REPLACE_SHAPE": 1,
+  "UNIQ_PORTRAIT_POOL": 4,
+  "FLAG_MISSING": 225,
+  "UNIQ_ICON_GAME_CAP": 1,
+  "UNIQ_ICON_PREREQUISITE": 1,
+  "UNIQ_ICON_TREE_CAP": 1,
+  "UNIQ_NEAR_DUPLICATE": 221
+ },
+ "uniqueness": {
+  "exactGroups": 0,
+  "nearPairs": 439,
+  "focusIcons": {
+   "GFX_focus_zin_elves": 1,
+   "GFX_focus_zin_giants": 1,
+   "GFX_focus_zin_men": 134,
+   "GFX_focus_zin_orcs": 1,
+   "GFX_focus_zin_sun_elves": 1
+  },
+  "eventPictures": {},
+  "portraits": {
+   "GFX_zin_portrait_demons_male_1": 3,
+   "GFX_zin_portrait_elves_female_1": 2,
+   "GFX_zin_portrait_elves_female_2": 5,
+   "GFX_zin_portrait_elves_male_1": 6,
+   "GFX_zin_portrait_elves_male_2": 11,
+   "GFX_zin_portrait_ents_male_1": 1,
+   "GFX_zin_portrait_giants_female_1": 2,
+   "GFX_zin_portrait_men_female_1": 21,
+   "GFX_zin_portrait_men_female_2": 32,
+   "GFX_zin_portrait_men_male_1": 89,
+   "GFX_zin_portrait_men_male_2": 67,
+   "GFX_zin_portrait_orcs_female_1": 3,
+   "GFX_zin_portrait_orcs_female_2": 6,
+   "GFX_zin_portrait_orcs_male_1": 5,
+   "GFX_zin_portrait_orcs_male_2": 7,
+   "GFX_zin_portrait_sun_elves_female_1": 5,
+   "GFX_zin_portrait_sun_elves_female_2": 6,
+   "GFX_zin_portrait_sun_elves_male_1": 10,
+   "GFX_zin_portrait_sun_elves_male_2": 20,
+   "GFX_zin_portrait_the_dead_male_1": 2,
+   "GFX_zin_portrait_trolls_male_1": 1,
+   "GFX_zin_portrait_yeti_male_2": 1
+  }
+ },
+ "notChecked": [
+  "AC2: tools/content/data/art/inventory.json does not exist yet, so plan and manifest are not compared",
+  "AC15: gate flags are owned by the focus compiler and are not yet checked for portraits and event pictures",
+  "AC17: tools/content/data/art/meshy_budget.json does not exist yet",
+  "AC18: no asset has the state hidden yet"
+ ],
+ "findings": [
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/emblems/emblems-peoples.png",
+   "message": "no review line for the exact bytes of art/source/emblems/emblems-peoples.png (affects 11 shipped files, for example gfx/interface/ideas/zin_people_demons.dds).",
+   "key": "PROV_UNREVIEWED|art/source/emblems/emblems-peoples.png|no review line for the exact bytes of art/source/emblems/emblems-peoples.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-01.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-01.png (affects 48 shipped files, for example gfx/flags/Y01.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-01.png|no review line for the exact bytes of art/source/flags/flags-sheet-01.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-03.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-03.png (affects 48 shipped files, for example gfx/flags/Y0X.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-03.png|no review line for the exact bytes of art/source/flags/flags-sheet-03.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-04.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-04.png (affects 48 shipped files, for example gfx/flags/Y1E.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-04.png|no review line for the exact bytes of art/source/flags/flags-sheet-04.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-05.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-05.png (affects 48 shipped files, for example gfx/flags/Y1U.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-05.png|no review line for the exact bytes of art/source/flags/flags-sheet-05.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-06.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-06.png (affects 48 shipped files, for example gfx/flags/Y2A.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-06.png|no review line for the exact bytes of art/source/flags/flags-sheet-06.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-07.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-07.png (affects 48 shipped files, for example gfx/flags/Y2Q.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-07.png|no review line for the exact bytes of art/source/flags/flags-sheet-07.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-08.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-08.png (affects 48 shipped files, for example gfx/flags/Y36.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-08.png|no review line for the exact bytes of art/source/flags/flags-sheet-08.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-09.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-09.png (affects 48 shipped files, for example gfx/flags/Y3M.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-09.png|no review line for the exact bytes of art/source/flags/flags-sheet-09.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-10.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-10.png (affects 48 shipped files, for example gfx/flags/Y42.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-10.png|no review line for the exact bytes of art/source/flags/flags-sheet-10.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-11.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-11.png (affects 48 shipped files, for example gfx/flags/Y4I.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-11.png|no review line for the exact bytes of art/source/flags/flags-sheet-11.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-12.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-12.png (affects 48 shipped files, for example gfx/flags/Y4Y.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-12.png|no review line for the exact bytes of art/source/flags/flags-sheet-12.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-13.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-13.png (affects 48 shipped files, for example gfx/flags/Y5E.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-13.png|no review line for the exact bytes of art/source/flags/flags-sheet-13.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-14.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-14.png (affects 48 shipped files, for example gfx/flags/Y5W.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-14.png|no review line for the exact bytes of art/source/flags/flags-sheet-14.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-15.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-15.png (affects 48 shipped files, for example gfx/flags/Y6C.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-15.png|no review line for the exact bytes of art/source/flags/flags-sheet-15.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-16.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-16.png (affects 48 shipped files, for example gfx/flags/Y6S.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-16.png|no review line for the exact bytes of art/source/flags/flags-sheet-16.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-17.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-17.png (affects 48 shipped files, for example gfx/flags/Y79.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-17.png|no review line for the exact bytes of art/source/flags/flags-sheet-17.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-18.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-18.png (affects 48 shipped files, for example gfx/flags/Y7Q.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-18.png|no review line for the exact bytes of art/source/flags/flags-sheet-18.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-19.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-19.png (affects 36 shipped files, for example gfx/flags/Y86.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-19.png|no review line for the exact bytes of art/source/flags/flags-sheet-19.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/flags/flags-sheet-20.png",
+   "message": "no review line for the exact bytes of art/source/flags/flags-sheet-20.png (affects 15 shipped files, for example gfx/flags/Y18.tga).",
+   "key": "PROV_UNREVIEWED|art/source/flags/flags-sheet-20.png|no review line for the exact bytes of art/source/flags/flags-sheet-20.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-demons.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-demons.png (affects 4 shipped files, for example gfx/leaders/zin/demons_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-demons.png|no review line for the exact bytes of art/source/portraits/portraits-demons.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-elves.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-elves.png (affects 4 shipped files, for example gfx/leaders/zin/elves_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-elves.png|no review line for the exact bytes of art/source/portraits/portraits-elves.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-ents.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-ents.png (affects 4 shipped files, for example gfx/leaders/zin/ents_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-ents.png|no review line for the exact bytes of art/source/portraits/portraits-ents.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-giants.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-giants.png (affects 4 shipped files, for example gfx/leaders/zin/giants_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-giants.png|no review line for the exact bytes of art/source/portraits/portraits-giants.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-men.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-men.png (affects 4 shipped files, for example gfx/leaders/zin/men_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-men.png|no review line for the exact bytes of art/source/portraits/portraits-men.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-orcs.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-orcs.png (affects 4 shipped files, for example gfx/leaders/zin/orcs_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-orcs.png|no review line for the exact bytes of art/source/portraits/portraits-orcs.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-sun_elves.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-sun_elves.png (affects 4 shipped files, for example gfx/leaders/zin/sun_elves_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-sun_elves.png|no review line for the exact bytes of art/source/portraits/portraits-sun_elves.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-the_dead.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-the_dead.png (affects 4 shipped files, for example gfx/leaders/zin/the_dead_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-the_dead.png|no review line for the exact bytes of art/source/portraits/portraits-the_dead.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-trolls.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-trolls.png (affects 4 shipped files, for example gfx/leaders/zin/trolls_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-trolls.png|no review line for the exact bytes of art/source/portraits/portraits-trolls.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/portraits/portraits-yeti.png",
+   "message": "no review line for the exact bytes of art/source/portraits/portraits-yeti.png (affects 4 shipped files, for example gfx/leaders/zin/yeti_female_1.dds).",
+   "key": "PROV_UNREVIEWED|art/source/portraits/portraits-yeti.png|no review line for the exact bytes of art/source/portraits/portraits-yeti.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/ui/ui-button.png",
+   "message": "no review line for the exact bytes of art/source/ui/ui-button.png (affects 1 shipped file, for example gfx/interface/zin/button.dds).",
+   "key": "PROV_UNREVIEWED|art/source/ui/ui-button.png|no review line for the exact bytes of art/source/ui/ui-button.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/ui/ui-frame.png",
+   "message": "no review line for the exact bytes of art/source/ui/ui-frame.png (affects 1 shipped file, for example gfx/interface/zin/frame.dds).",
+   "key": "PROV_UNREVIEWED|art/source/ui/ui-frame.png|no review line for the exact bytes of art/source/ui/ui-frame.png"
+  },
+  {
+   "code": "PROV_UNREVIEWED",
+   "severity": "error",
+   "path": "art/source/ui/ui-rule.png",
+   "message": "no review line for the exact bytes of art/source/ui/ui-rule.png (affects 1 shipped file, for example gfx/interface/zin/rule.dds).",
+   "key": "PROV_UNREVIEWED|art/source/ui/ui-rule.png|no review line for the exact bytes of art/source/ui/ui-rule.png"
+  },
+  {
+   "code": "REPLACE_SHAPE",
+   "severity": "error",
+   "path": "gfx/interface/logo_game.dds",
+   "message": "gfx/interface/logo_game.dds replaces a vanilla file but differs from it: 1 mips vs 9.",
+   "key": "REPLACE_SHAPE|gfx/interface/logo_game.dds|shape"
+  },
+  {
+   "code": "UNIQ_PORTRAIT_POOL",
+   "severity": "error",
+   "path": "common/characters/zin_rulers.txt",
+   "message": "Generic portrait GFX_zin_portrait_elves_male_2 serves 11 characters; the pool elves.male (2 portraits, 17 characters) allows 10.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_elves_male_2"
+  },
+  {
+   "code": "UNIQ_PORTRAIT_POOL",
+   "severity": "error",
+   "path": "common/characters/zin_rulers.txt",
+   "message": "Generic portrait GFX_zin_portrait_men_female_2 serves 32 characters; the pool men.female (2 portraits, 53 characters) allows 28.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_men_female_2"
+  },
+  {
+   "code": "UNIQ_PORTRAIT_POOL",
+   "severity": "error",
+   "path": "common/characters/zin_rulers.txt",
+   "message": "Generic portrait GFX_zin_portrait_men_male_1 serves 89 characters; the pool men.male (2 portraits, 156 characters) allows 79.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_men_male_1"
+  },
+  {
+   "code": "UNIQ_PORTRAIT_POOL",
+   "severity": "error",
+   "path": "common/characters/zin_rulers.txt",
+   "message": "Generic portrait GFX_zin_portrait_sun_elves_male_2 serves 20 characters; the pool sun_elves.male (2 portraits, 30 characters) allows 16.",
+   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_sun_elves_male_2"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D01.tga",
+   "message": "Dynamic tag D01 has no gfx/flags/D01.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D01.tga|gfx/flags/D01.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D02.tga",
+   "message": "Dynamic tag D02 has no gfx/flags/D02.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D02.tga|gfx/flags/D02.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D03.tga",
+   "message": "Dynamic tag D03 has no gfx/flags/D03.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D03.tga|gfx/flags/D03.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D04.tga",
+   "message": "Dynamic tag D04 has no gfx/flags/D04.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D04.tga|gfx/flags/D04.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D05.tga",
+   "message": "Dynamic tag D05 has no gfx/flags/D05.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D05.tga|gfx/flags/D05.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D06.tga",
+   "message": "Dynamic tag D06 has no gfx/flags/D06.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D06.tga|gfx/flags/D06.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D07.tga",
+   "message": "Dynamic tag D07 has no gfx/flags/D07.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D07.tga|gfx/flags/D07.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D08.tga",
+   "message": "Dynamic tag D08 has no gfx/flags/D08.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D08.tga|gfx/flags/D08.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D09.tga",
+   "message": "Dynamic tag D09 has no gfx/flags/D09.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D09.tga|gfx/flags/D09.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D10.tga",
+   "message": "Dynamic tag D10 has no gfx/flags/D10.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D10.tga|gfx/flags/D10.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D11.tga",
+   "message": "Dynamic tag D11 has no gfx/flags/D11.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D11.tga|gfx/flags/D11.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D12.tga",
+   "message": "Dynamic tag D12 has no gfx/flags/D12.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D12.tga|gfx/flags/D12.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D13.tga",
+   "message": "Dynamic tag D13 has no gfx/flags/D13.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D13.tga|gfx/flags/D13.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D14.tga",
+   "message": "Dynamic tag D14 has no gfx/flags/D14.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D14.tga|gfx/flags/D14.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D15.tga",
+   "message": "Dynamic tag D15 has no gfx/flags/D15.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D15.tga|gfx/flags/D15.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D16.tga",
+   "message": "Dynamic tag D16 has no gfx/flags/D16.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D16.tga|gfx/flags/D16.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D17.tga",
+   "message": "Dynamic tag D17 has no gfx/flags/D17.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D17.tga|gfx/flags/D17.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D18.tga",
+   "message": "Dynamic tag D18 has no gfx/flags/D18.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D18.tga|gfx/flags/D18.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D19.tga",
+   "message": "Dynamic tag D19 has no gfx/flags/D19.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D19.tga|gfx/flags/D19.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D20.tga",
+   "message": "Dynamic tag D20 has no gfx/flags/D20.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D20.tga|gfx/flags/D20.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D21.tga",
+   "message": "Dynamic tag D21 has no gfx/flags/D21.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D21.tga|gfx/flags/D21.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D22.tga",
+   "message": "Dynamic tag D22 has no gfx/flags/D22.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D22.tga|gfx/flags/D22.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D23.tga",
+   "message": "Dynamic tag D23 has no gfx/flags/D23.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D23.tga|gfx/flags/D23.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D24.tga",
+   "message": "Dynamic tag D24 has no gfx/flags/D24.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D24.tga|gfx/flags/D24.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D25.tga",
+   "message": "Dynamic tag D25 has no gfx/flags/D25.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D25.tga|gfx/flags/D25.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D26.tga",
+   "message": "Dynamic tag D26 has no gfx/flags/D26.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D26.tga|gfx/flags/D26.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D27.tga",
+   "message": "Dynamic tag D27 has no gfx/flags/D27.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D27.tga|gfx/flags/D27.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D28.tga",
+   "message": "Dynamic tag D28 has no gfx/flags/D28.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D28.tga|gfx/flags/D28.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D29.tga",
+   "message": "Dynamic tag D29 has no gfx/flags/D29.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D29.tga|gfx/flags/D29.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D30.tga",
+   "message": "Dynamic tag D30 has no gfx/flags/D30.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D30.tga|gfx/flags/D30.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D31.tga",
+   "message": "Dynamic tag D31 has no gfx/flags/D31.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D31.tga|gfx/flags/D31.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D32.tga",
+   "message": "Dynamic tag D32 has no gfx/flags/D32.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D32.tga|gfx/flags/D32.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D33.tga",
+   "message": "Dynamic tag D33 has no gfx/flags/D33.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D33.tga|gfx/flags/D33.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D34.tga",
+   "message": "Dynamic tag D34 has no gfx/flags/D34.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D34.tga|gfx/flags/D34.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D35.tga",
+   "message": "Dynamic tag D35 has no gfx/flags/D35.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D35.tga|gfx/flags/D35.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D36.tga",
+   "message": "Dynamic tag D36 has no gfx/flags/D36.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D36.tga|gfx/flags/D36.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D37.tga",
+   "message": "Dynamic tag D37 has no gfx/flags/D37.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D37.tga|gfx/flags/D37.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D38.tga",
+   "message": "Dynamic tag D38 has no gfx/flags/D38.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D38.tga|gfx/flags/D38.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D39.tga",
+   "message": "Dynamic tag D39 has no gfx/flags/D39.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D39.tga|gfx/flags/D39.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D40.tga",
+   "message": "Dynamic tag D40 has no gfx/flags/D40.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D40.tga|gfx/flags/D40.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D41.tga",
+   "message": "Dynamic tag D41 has no gfx/flags/D41.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D41.tga|gfx/flags/D41.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D42.tga",
+   "message": "Dynamic tag D42 has no gfx/flags/D42.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D42.tga|gfx/flags/D42.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D43.tga",
+   "message": "Dynamic tag D43 has no gfx/flags/D43.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D43.tga|gfx/flags/D43.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D44.tga",
+   "message": "Dynamic tag D44 has no gfx/flags/D44.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D44.tga|gfx/flags/D44.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D45.tga",
+   "message": "Dynamic tag D45 has no gfx/flags/D45.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D45.tga|gfx/flags/D45.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D46.tga",
+   "message": "Dynamic tag D46 has no gfx/flags/D46.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D46.tga|gfx/flags/D46.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D47.tga",
+   "message": "Dynamic tag D47 has no gfx/flags/D47.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D47.tga|gfx/flags/D47.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D48.tga",
+   "message": "Dynamic tag D48 has no gfx/flags/D48.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D48.tga|gfx/flags/D48.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D49.tga",
+   "message": "Dynamic tag D49 has no gfx/flags/D49.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D49.tga|gfx/flags/D49.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D50.tga",
+   "message": "Dynamic tag D50 has no gfx/flags/D50.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D50.tga|gfx/flags/D50.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D51.tga",
+   "message": "Dynamic tag D51 has no gfx/flags/D51.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D51.tga|gfx/flags/D51.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D52.tga",
+   "message": "Dynamic tag D52 has no gfx/flags/D52.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D52.tga|gfx/flags/D52.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D53.tga",
+   "message": "Dynamic tag D53 has no gfx/flags/D53.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D53.tga|gfx/flags/D53.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D54.tga",
+   "message": "Dynamic tag D54 has no gfx/flags/D54.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D54.tga|gfx/flags/D54.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D55.tga",
+   "message": "Dynamic tag D55 has no gfx/flags/D55.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D55.tga|gfx/flags/D55.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D56.tga",
+   "message": "Dynamic tag D56 has no gfx/flags/D56.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D56.tga|gfx/flags/D56.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D57.tga",
+   "message": "Dynamic tag D57 has no gfx/flags/D57.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D57.tga|gfx/flags/D57.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D58.tga",
+   "message": "Dynamic tag D58 has no gfx/flags/D58.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D58.tga|gfx/flags/D58.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D59.tga",
+   "message": "Dynamic tag D59 has no gfx/flags/D59.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D59.tga|gfx/flags/D59.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D60.tga",
+   "message": "Dynamic tag D60 has no gfx/flags/D60.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D60.tga|gfx/flags/D60.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D61.tga",
+   "message": "Dynamic tag D61 has no gfx/flags/D61.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D61.tga|gfx/flags/D61.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D62.tga",
+   "message": "Dynamic tag D62 has no gfx/flags/D62.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D62.tga|gfx/flags/D62.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D63.tga",
+   "message": "Dynamic tag D63 has no gfx/flags/D63.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D63.tga|gfx/flags/D63.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D64.tga",
+   "message": "Dynamic tag D64 has no gfx/flags/D64.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D64.tga|gfx/flags/D64.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D65.tga",
+   "message": "Dynamic tag D65 has no gfx/flags/D65.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D65.tga|gfx/flags/D65.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D66.tga",
+   "message": "Dynamic tag D66 has no gfx/flags/D66.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D66.tga|gfx/flags/D66.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D67.tga",
+   "message": "Dynamic tag D67 has no gfx/flags/D67.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D67.tga|gfx/flags/D67.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D68.tga",
+   "message": "Dynamic tag D68 has no gfx/flags/D68.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D68.tga|gfx/flags/D68.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D69.tga",
+   "message": "Dynamic tag D69 has no gfx/flags/D69.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D69.tga|gfx/flags/D69.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D70.tga",
+   "message": "Dynamic tag D70 has no gfx/flags/D70.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D70.tga|gfx/flags/D70.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D71.tga",
+   "message": "Dynamic tag D71 has no gfx/flags/D71.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D71.tga|gfx/flags/D71.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D72.tga",
+   "message": "Dynamic tag D72 has no gfx/flags/D72.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D72.tga|gfx/flags/D72.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D73.tga",
+   "message": "Dynamic tag D73 has no gfx/flags/D73.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D73.tga|gfx/flags/D73.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D74.tga",
+   "message": "Dynamic tag D74 has no gfx/flags/D74.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D74.tga|gfx/flags/D74.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/D75.tga",
+   "message": "Dynamic tag D75 has no gfx/flags/D75.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/D75.tga|gfx/flags/D75.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D01.tga",
+   "message": "Dynamic tag D01 has no gfx/flags/medium/D01.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D01.tga|gfx/flags/medium/D01.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D02.tga",
+   "message": "Dynamic tag D02 has no gfx/flags/medium/D02.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D02.tga|gfx/flags/medium/D02.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D03.tga",
+   "message": "Dynamic tag D03 has no gfx/flags/medium/D03.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D03.tga|gfx/flags/medium/D03.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D04.tga",
+   "message": "Dynamic tag D04 has no gfx/flags/medium/D04.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D04.tga|gfx/flags/medium/D04.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D05.tga",
+   "message": "Dynamic tag D05 has no gfx/flags/medium/D05.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D05.tga|gfx/flags/medium/D05.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D06.tga",
+   "message": "Dynamic tag D06 has no gfx/flags/medium/D06.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D06.tga|gfx/flags/medium/D06.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D07.tga",
+   "message": "Dynamic tag D07 has no gfx/flags/medium/D07.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D07.tga|gfx/flags/medium/D07.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D08.tga",
+   "message": "Dynamic tag D08 has no gfx/flags/medium/D08.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D08.tga|gfx/flags/medium/D08.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D09.tga",
+   "message": "Dynamic tag D09 has no gfx/flags/medium/D09.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D09.tga|gfx/flags/medium/D09.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D10.tga",
+   "message": "Dynamic tag D10 has no gfx/flags/medium/D10.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D10.tga|gfx/flags/medium/D10.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D11.tga",
+   "message": "Dynamic tag D11 has no gfx/flags/medium/D11.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D11.tga|gfx/flags/medium/D11.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D12.tga",
+   "message": "Dynamic tag D12 has no gfx/flags/medium/D12.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D12.tga|gfx/flags/medium/D12.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D13.tga",
+   "message": "Dynamic tag D13 has no gfx/flags/medium/D13.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D13.tga|gfx/flags/medium/D13.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D14.tga",
+   "message": "Dynamic tag D14 has no gfx/flags/medium/D14.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D14.tga|gfx/flags/medium/D14.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D15.tga",
+   "message": "Dynamic tag D15 has no gfx/flags/medium/D15.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D15.tga|gfx/flags/medium/D15.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D16.tga",
+   "message": "Dynamic tag D16 has no gfx/flags/medium/D16.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D16.tga|gfx/flags/medium/D16.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D17.tga",
+   "message": "Dynamic tag D17 has no gfx/flags/medium/D17.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D17.tga|gfx/flags/medium/D17.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D18.tga",
+   "message": "Dynamic tag D18 has no gfx/flags/medium/D18.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D18.tga|gfx/flags/medium/D18.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D19.tga",
+   "message": "Dynamic tag D19 has no gfx/flags/medium/D19.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D19.tga|gfx/flags/medium/D19.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D20.tga",
+   "message": "Dynamic tag D20 has no gfx/flags/medium/D20.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D20.tga|gfx/flags/medium/D20.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D21.tga",
+   "message": "Dynamic tag D21 has no gfx/flags/medium/D21.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D21.tga|gfx/flags/medium/D21.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D22.tga",
+   "message": "Dynamic tag D22 has no gfx/flags/medium/D22.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D22.tga|gfx/flags/medium/D22.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D23.tga",
+   "message": "Dynamic tag D23 has no gfx/flags/medium/D23.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D23.tga|gfx/flags/medium/D23.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D24.tga",
+   "message": "Dynamic tag D24 has no gfx/flags/medium/D24.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D24.tga|gfx/flags/medium/D24.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D25.tga",
+   "message": "Dynamic tag D25 has no gfx/flags/medium/D25.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D25.tga|gfx/flags/medium/D25.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D26.tga",
+   "message": "Dynamic tag D26 has no gfx/flags/medium/D26.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D26.tga|gfx/flags/medium/D26.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D27.tga",
+   "message": "Dynamic tag D27 has no gfx/flags/medium/D27.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D27.tga|gfx/flags/medium/D27.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D28.tga",
+   "message": "Dynamic tag D28 has no gfx/flags/medium/D28.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D28.tga|gfx/flags/medium/D28.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D29.tga",
+   "message": "Dynamic tag D29 has no gfx/flags/medium/D29.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D29.tga|gfx/flags/medium/D29.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D30.tga",
+   "message": "Dynamic tag D30 has no gfx/flags/medium/D30.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D30.tga|gfx/flags/medium/D30.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D31.tga",
+   "message": "Dynamic tag D31 has no gfx/flags/medium/D31.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D31.tga|gfx/flags/medium/D31.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D32.tga",
+   "message": "Dynamic tag D32 has no gfx/flags/medium/D32.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D32.tga|gfx/flags/medium/D32.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D33.tga",
+   "message": "Dynamic tag D33 has no gfx/flags/medium/D33.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D33.tga|gfx/flags/medium/D33.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D34.tga",
+   "message": "Dynamic tag D34 has no gfx/flags/medium/D34.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D34.tga|gfx/flags/medium/D34.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D35.tga",
+   "message": "Dynamic tag D35 has no gfx/flags/medium/D35.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D35.tga|gfx/flags/medium/D35.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D36.tga",
+   "message": "Dynamic tag D36 has no gfx/flags/medium/D36.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D36.tga|gfx/flags/medium/D36.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D37.tga",
+   "message": "Dynamic tag D37 has no gfx/flags/medium/D37.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D37.tga|gfx/flags/medium/D37.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D38.tga",
+   "message": "Dynamic tag D38 has no gfx/flags/medium/D38.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D38.tga|gfx/flags/medium/D38.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D39.tga",
+   "message": "Dynamic tag D39 has no gfx/flags/medium/D39.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D39.tga|gfx/flags/medium/D39.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D40.tga",
+   "message": "Dynamic tag D40 has no gfx/flags/medium/D40.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D40.tga|gfx/flags/medium/D40.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D41.tga",
+   "message": "Dynamic tag D41 has no gfx/flags/medium/D41.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D41.tga|gfx/flags/medium/D41.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D42.tga",
+   "message": "Dynamic tag D42 has no gfx/flags/medium/D42.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D42.tga|gfx/flags/medium/D42.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D43.tga",
+   "message": "Dynamic tag D43 has no gfx/flags/medium/D43.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D43.tga|gfx/flags/medium/D43.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D44.tga",
+   "message": "Dynamic tag D44 has no gfx/flags/medium/D44.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D44.tga|gfx/flags/medium/D44.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D45.tga",
+   "message": "Dynamic tag D45 has no gfx/flags/medium/D45.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D45.tga|gfx/flags/medium/D45.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D46.tga",
+   "message": "Dynamic tag D46 has no gfx/flags/medium/D46.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D46.tga|gfx/flags/medium/D46.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D47.tga",
+   "message": "Dynamic tag D47 has no gfx/flags/medium/D47.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D47.tga|gfx/flags/medium/D47.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D48.tga",
+   "message": "Dynamic tag D48 has no gfx/flags/medium/D48.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D48.tga|gfx/flags/medium/D48.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D49.tga",
+   "message": "Dynamic tag D49 has no gfx/flags/medium/D49.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D49.tga|gfx/flags/medium/D49.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D50.tga",
+   "message": "Dynamic tag D50 has no gfx/flags/medium/D50.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D50.tga|gfx/flags/medium/D50.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D51.tga",
+   "message": "Dynamic tag D51 has no gfx/flags/medium/D51.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D51.tga|gfx/flags/medium/D51.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D52.tga",
+   "message": "Dynamic tag D52 has no gfx/flags/medium/D52.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D52.tga|gfx/flags/medium/D52.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D53.tga",
+   "message": "Dynamic tag D53 has no gfx/flags/medium/D53.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D53.tga|gfx/flags/medium/D53.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D54.tga",
+   "message": "Dynamic tag D54 has no gfx/flags/medium/D54.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D54.tga|gfx/flags/medium/D54.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D55.tga",
+   "message": "Dynamic tag D55 has no gfx/flags/medium/D55.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D55.tga|gfx/flags/medium/D55.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D56.tga",
+   "message": "Dynamic tag D56 has no gfx/flags/medium/D56.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D56.tga|gfx/flags/medium/D56.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D57.tga",
+   "message": "Dynamic tag D57 has no gfx/flags/medium/D57.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D57.tga|gfx/flags/medium/D57.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D58.tga",
+   "message": "Dynamic tag D58 has no gfx/flags/medium/D58.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D58.tga|gfx/flags/medium/D58.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D59.tga",
+   "message": "Dynamic tag D59 has no gfx/flags/medium/D59.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D59.tga|gfx/flags/medium/D59.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D60.tga",
+   "message": "Dynamic tag D60 has no gfx/flags/medium/D60.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D60.tga|gfx/flags/medium/D60.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D61.tga",
+   "message": "Dynamic tag D61 has no gfx/flags/medium/D61.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D61.tga|gfx/flags/medium/D61.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D62.tga",
+   "message": "Dynamic tag D62 has no gfx/flags/medium/D62.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D62.tga|gfx/flags/medium/D62.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D63.tga",
+   "message": "Dynamic tag D63 has no gfx/flags/medium/D63.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D63.tga|gfx/flags/medium/D63.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D64.tga",
+   "message": "Dynamic tag D64 has no gfx/flags/medium/D64.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D64.tga|gfx/flags/medium/D64.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D65.tga",
+   "message": "Dynamic tag D65 has no gfx/flags/medium/D65.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D65.tga|gfx/flags/medium/D65.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D66.tga",
+   "message": "Dynamic tag D66 has no gfx/flags/medium/D66.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D66.tga|gfx/flags/medium/D66.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D67.tga",
+   "message": "Dynamic tag D67 has no gfx/flags/medium/D67.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D67.tga|gfx/flags/medium/D67.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D68.tga",
+   "message": "Dynamic tag D68 has no gfx/flags/medium/D68.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D68.tga|gfx/flags/medium/D68.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D69.tga",
+   "message": "Dynamic tag D69 has no gfx/flags/medium/D69.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D69.tga|gfx/flags/medium/D69.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D70.tga",
+   "message": "Dynamic tag D70 has no gfx/flags/medium/D70.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D70.tga|gfx/flags/medium/D70.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D71.tga",
+   "message": "Dynamic tag D71 has no gfx/flags/medium/D71.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D71.tga|gfx/flags/medium/D71.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D72.tga",
+   "message": "Dynamic tag D72 has no gfx/flags/medium/D72.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D72.tga|gfx/flags/medium/D72.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D73.tga",
+   "message": "Dynamic tag D73 has no gfx/flags/medium/D73.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D73.tga|gfx/flags/medium/D73.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D74.tga",
+   "message": "Dynamic tag D74 has no gfx/flags/medium/D74.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D74.tga|gfx/flags/medium/D74.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/medium/D75.tga",
+   "message": "Dynamic tag D75 has no gfx/flags/medium/D75.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/medium/D75.tga|gfx/flags/medium/D75.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D01.tga",
+   "message": "Dynamic tag D01 has no gfx/flags/small/D01.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D01.tga|gfx/flags/small/D01.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D02.tga",
+   "message": "Dynamic tag D02 has no gfx/flags/small/D02.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D02.tga|gfx/flags/small/D02.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D03.tga",
+   "message": "Dynamic tag D03 has no gfx/flags/small/D03.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D03.tga|gfx/flags/small/D03.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D04.tga",
+   "message": "Dynamic tag D04 has no gfx/flags/small/D04.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D04.tga|gfx/flags/small/D04.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D05.tga",
+   "message": "Dynamic tag D05 has no gfx/flags/small/D05.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D05.tga|gfx/flags/small/D05.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D06.tga",
+   "message": "Dynamic tag D06 has no gfx/flags/small/D06.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D06.tga|gfx/flags/small/D06.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D07.tga",
+   "message": "Dynamic tag D07 has no gfx/flags/small/D07.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D07.tga|gfx/flags/small/D07.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D08.tga",
+   "message": "Dynamic tag D08 has no gfx/flags/small/D08.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D08.tga|gfx/flags/small/D08.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D09.tga",
+   "message": "Dynamic tag D09 has no gfx/flags/small/D09.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D09.tga|gfx/flags/small/D09.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D10.tga",
+   "message": "Dynamic tag D10 has no gfx/flags/small/D10.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D10.tga|gfx/flags/small/D10.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D11.tga",
+   "message": "Dynamic tag D11 has no gfx/flags/small/D11.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D11.tga|gfx/flags/small/D11.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D12.tga",
+   "message": "Dynamic tag D12 has no gfx/flags/small/D12.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D12.tga|gfx/flags/small/D12.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D13.tga",
+   "message": "Dynamic tag D13 has no gfx/flags/small/D13.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D13.tga|gfx/flags/small/D13.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D14.tga",
+   "message": "Dynamic tag D14 has no gfx/flags/small/D14.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D14.tga|gfx/flags/small/D14.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D15.tga",
+   "message": "Dynamic tag D15 has no gfx/flags/small/D15.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D15.tga|gfx/flags/small/D15.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D16.tga",
+   "message": "Dynamic tag D16 has no gfx/flags/small/D16.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D16.tga|gfx/flags/small/D16.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D17.tga",
+   "message": "Dynamic tag D17 has no gfx/flags/small/D17.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D17.tga|gfx/flags/small/D17.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D18.tga",
+   "message": "Dynamic tag D18 has no gfx/flags/small/D18.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D18.tga|gfx/flags/small/D18.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D19.tga",
+   "message": "Dynamic tag D19 has no gfx/flags/small/D19.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D19.tga|gfx/flags/small/D19.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D20.tga",
+   "message": "Dynamic tag D20 has no gfx/flags/small/D20.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D20.tga|gfx/flags/small/D20.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D21.tga",
+   "message": "Dynamic tag D21 has no gfx/flags/small/D21.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D21.tga|gfx/flags/small/D21.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D22.tga",
+   "message": "Dynamic tag D22 has no gfx/flags/small/D22.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D22.tga|gfx/flags/small/D22.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D23.tga",
+   "message": "Dynamic tag D23 has no gfx/flags/small/D23.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D23.tga|gfx/flags/small/D23.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D24.tga",
+   "message": "Dynamic tag D24 has no gfx/flags/small/D24.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D24.tga|gfx/flags/small/D24.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D25.tga",
+   "message": "Dynamic tag D25 has no gfx/flags/small/D25.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D25.tga|gfx/flags/small/D25.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D26.tga",
+   "message": "Dynamic tag D26 has no gfx/flags/small/D26.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D26.tga|gfx/flags/small/D26.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D27.tga",
+   "message": "Dynamic tag D27 has no gfx/flags/small/D27.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D27.tga|gfx/flags/small/D27.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D28.tga",
+   "message": "Dynamic tag D28 has no gfx/flags/small/D28.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D28.tga|gfx/flags/small/D28.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D29.tga",
+   "message": "Dynamic tag D29 has no gfx/flags/small/D29.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D29.tga|gfx/flags/small/D29.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D30.tga",
+   "message": "Dynamic tag D30 has no gfx/flags/small/D30.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D30.tga|gfx/flags/small/D30.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D31.tga",
+   "message": "Dynamic tag D31 has no gfx/flags/small/D31.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D31.tga|gfx/flags/small/D31.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D32.tga",
+   "message": "Dynamic tag D32 has no gfx/flags/small/D32.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D32.tga|gfx/flags/small/D32.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D33.tga",
+   "message": "Dynamic tag D33 has no gfx/flags/small/D33.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D33.tga|gfx/flags/small/D33.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D34.tga",
+   "message": "Dynamic tag D34 has no gfx/flags/small/D34.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D34.tga|gfx/flags/small/D34.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D35.tga",
+   "message": "Dynamic tag D35 has no gfx/flags/small/D35.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D35.tga|gfx/flags/small/D35.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D36.tga",
+   "message": "Dynamic tag D36 has no gfx/flags/small/D36.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D36.tga|gfx/flags/small/D36.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D37.tga",
+   "message": "Dynamic tag D37 has no gfx/flags/small/D37.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D37.tga|gfx/flags/small/D37.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D38.tga",
+   "message": "Dynamic tag D38 has no gfx/flags/small/D38.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D38.tga|gfx/flags/small/D38.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D39.tga",
+   "message": "Dynamic tag D39 has no gfx/flags/small/D39.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D39.tga|gfx/flags/small/D39.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D40.tga",
+   "message": "Dynamic tag D40 has no gfx/flags/small/D40.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D40.tga|gfx/flags/small/D40.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D41.tga",
+   "message": "Dynamic tag D41 has no gfx/flags/small/D41.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D41.tga|gfx/flags/small/D41.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D42.tga",
+   "message": "Dynamic tag D42 has no gfx/flags/small/D42.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D42.tga|gfx/flags/small/D42.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D43.tga",
+   "message": "Dynamic tag D43 has no gfx/flags/small/D43.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D43.tga|gfx/flags/small/D43.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D44.tga",
+   "message": "Dynamic tag D44 has no gfx/flags/small/D44.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D44.tga|gfx/flags/small/D44.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D45.tga",
+   "message": "Dynamic tag D45 has no gfx/flags/small/D45.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D45.tga|gfx/flags/small/D45.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D46.tga",
+   "message": "Dynamic tag D46 has no gfx/flags/small/D46.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D46.tga|gfx/flags/small/D46.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D47.tga",
+   "message": "Dynamic tag D47 has no gfx/flags/small/D47.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D47.tga|gfx/flags/small/D47.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D48.tga",
+   "message": "Dynamic tag D48 has no gfx/flags/small/D48.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D48.tga|gfx/flags/small/D48.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D49.tga",
+   "message": "Dynamic tag D49 has no gfx/flags/small/D49.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D49.tga|gfx/flags/small/D49.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D50.tga",
+   "message": "Dynamic tag D50 has no gfx/flags/small/D50.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D50.tga|gfx/flags/small/D50.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D51.tga",
+   "message": "Dynamic tag D51 has no gfx/flags/small/D51.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D51.tga|gfx/flags/small/D51.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D52.tga",
+   "message": "Dynamic tag D52 has no gfx/flags/small/D52.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D52.tga|gfx/flags/small/D52.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D53.tga",
+   "message": "Dynamic tag D53 has no gfx/flags/small/D53.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D53.tga|gfx/flags/small/D53.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D54.tga",
+   "message": "Dynamic tag D54 has no gfx/flags/small/D54.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D54.tga|gfx/flags/small/D54.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D55.tga",
+   "message": "Dynamic tag D55 has no gfx/flags/small/D55.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D55.tga|gfx/flags/small/D55.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D56.tga",
+   "message": "Dynamic tag D56 has no gfx/flags/small/D56.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D56.tga|gfx/flags/small/D56.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D57.tga",
+   "message": "Dynamic tag D57 has no gfx/flags/small/D57.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D57.tga|gfx/flags/small/D57.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D58.tga",
+   "message": "Dynamic tag D58 has no gfx/flags/small/D58.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D58.tga|gfx/flags/small/D58.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D59.tga",
+   "message": "Dynamic tag D59 has no gfx/flags/small/D59.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D59.tga|gfx/flags/small/D59.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D60.tga",
+   "message": "Dynamic tag D60 has no gfx/flags/small/D60.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D60.tga|gfx/flags/small/D60.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D61.tga",
+   "message": "Dynamic tag D61 has no gfx/flags/small/D61.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D61.tga|gfx/flags/small/D61.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D62.tga",
+   "message": "Dynamic tag D62 has no gfx/flags/small/D62.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D62.tga|gfx/flags/small/D62.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D63.tga",
+   "message": "Dynamic tag D63 has no gfx/flags/small/D63.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D63.tga|gfx/flags/small/D63.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D64.tga",
+   "message": "Dynamic tag D64 has no gfx/flags/small/D64.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D64.tga|gfx/flags/small/D64.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D65.tga",
+   "message": "Dynamic tag D65 has no gfx/flags/small/D65.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D65.tga|gfx/flags/small/D65.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D66.tga",
+   "message": "Dynamic tag D66 has no gfx/flags/small/D66.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D66.tga|gfx/flags/small/D66.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D67.tga",
+   "message": "Dynamic tag D67 has no gfx/flags/small/D67.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D67.tga|gfx/flags/small/D67.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D68.tga",
+   "message": "Dynamic tag D68 has no gfx/flags/small/D68.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D68.tga|gfx/flags/small/D68.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D69.tga",
+   "message": "Dynamic tag D69 has no gfx/flags/small/D69.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D69.tga|gfx/flags/small/D69.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D70.tga",
+   "message": "Dynamic tag D70 has no gfx/flags/small/D70.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D70.tga|gfx/flags/small/D70.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D71.tga",
+   "message": "Dynamic tag D71 has no gfx/flags/small/D71.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D71.tga|gfx/flags/small/D71.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D72.tga",
+   "message": "Dynamic tag D72 has no gfx/flags/small/D72.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D72.tga|gfx/flags/small/D72.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D73.tga",
+   "message": "Dynamic tag D73 has no gfx/flags/small/D73.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D73.tga|gfx/flags/small/D73.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D74.tga",
+   "message": "Dynamic tag D74 has no gfx/flags/small/D74.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D74.tga|gfx/flags/small/D74.tga"
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "warning",
+   "path": "gfx/flags/small/D75.tga",
+   "message": "Dynamic tag D75 has no gfx/flags/small/D75.tga (family X11 is planned; probe AP5).",
+   "key": "FLAG_MISSING|gfx/flags/small/D75.tga|gfx/flags/small/D75.tga"
+  },
+  {
+   "code": "UNIQ_ICON_GAME_CAP",
+   "severity": "warning",
+   "path": "common/national_focus/zin_interim_default.txt",
+   "message": "Icon GFX_focus_zin_men is used by 134 focuses in the game; the cap is 40.",
+   "key": "UNIQ_ICON_GAME_CAP|common/national_focus/zin_interim_default.txt|GFX_focus_zin_men"
+  },
+  {
+   "code": "UNIQ_ICON_PREREQUISITE",
+   "severity": "warning",
+   "path": "common/national_focus/zin_interim_default.txt",
+   "message": "Focus zin_long_peace_open_markets shares an icon with its prerequisite zin_long_peace_keep_the_peace.",
+   "key": "UNIQ_ICON_PREREQUISITE|common/national_focus/zin_interim_default.txt|zin_long_peace_tree/zin_long_peace_open_markets"
+  },
+  {
+   "code": "UNIQ_ICON_TREE_CAP",
+   "severity": "warning",
+   "path": "common/national_focus/zz_zin_bridge_focuses.txt",
+   "message": "Icon GFX_focus_zin_men is used by 131 focuses of tree (shared); the cap is 3.",
+   "key": "UNIQ_ICON_TREE_CAP|common/national_focus/zz_zin_bridge_focuses.txt|(shared)|GFX_focus_zin_men"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y16.tga",
+   "message": "gfx/flags/Y16.tga and gfx/flags/Y3X.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y16.tga|gfx/flags/Y3X.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y1X.tga",
+   "message": "gfx/flags/Y1X.tga and gfx/flags/Y37.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y1X.tga|gfx/flags/Y37.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y2K.tga",
+   "message": "gfx/flags/Y2K.tga and gfx/flags/Y6V.tga are 8 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y2K.tga|gfx/flags/Y6V.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y37.tga",
+   "message": "gfx/flags/Y37.tga and gfx/flags/Y6C.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y37.tga|gfx/flags/Y6C.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y3D.tga",
+   "message": "gfx/flags/Y3D.tga and gfx/flags/Y4E.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y3D.tga|gfx/flags/Y4E.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y3D.tga",
+   "message": "gfx/flags/Y3D.tga and gfx/flags/Y6V.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y3D.tga|gfx/flags/Y6V.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y3Q.tga",
+   "message": "gfx/flags/Y3Q.tga and gfx/flags/Y41.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y3Q.tga|gfx/flags/Y41.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y3X.tga",
+   "message": "gfx/flags/Y3X.tga and gfx/flags/Y5M.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y3X.tga|gfx/flags/Y5M.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y3Y.tga",
+   "message": "gfx/flags/Y3Y.tga and gfx/flags/Y52.tga are 8 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y3Y.tga|gfx/flags/Y52.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y4E.tga",
+   "message": "gfx/flags/Y4E.tga and gfx/flags/Y81.tga are 9 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y4E.tga|gfx/flags/Y81.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y5A.tga",
+   "message": "gfx/flags/Y5A.tga and gfx/flags/Y6C.tga are 7 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y5A.tga|gfx/flags/Y6C.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/Y6V.tga",
+   "message": "gfx/flags/Y6V.tga and gfx/flags/Y81.tga are 7 of 64 bits apart (group flag.large, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/Y6V.tga|gfx/flags/Y81.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y1X.tga",
+   "message": "gfx/flags/medium/Y1X.tga and gfx/flags/medium/Y37.tga are 7 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y1X.tga|gfx/flags/medium/Y37.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y37.tga",
+   "message": "gfx/flags/medium/Y37.tga and gfx/flags/medium/Y6C.tga are 9 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y37.tga|gfx/flags/medium/Y6C.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y3Q.tga",
+   "message": "gfx/flags/medium/Y3Q.tga and gfx/flags/medium/Y41.tga are 8 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y3Q.tga|gfx/flags/medium/Y41.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y4E.tga",
+   "message": "gfx/flags/medium/Y4E.tga and gfx/flags/medium/Y6V.tga are 9 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y4E.tga|gfx/flags/medium/Y6V.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y4E.tga",
+   "message": "gfx/flags/medium/Y4E.tga and gfx/flags/medium/Y81.tga are 9 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y4E.tga|gfx/flags/medium/Y81.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y51.tga",
+   "message": "gfx/flags/medium/Y51.tga and gfx/flags/medium/Y5A.tga are 7 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y51.tga|gfx/flags/medium/Y5A.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y5A.tga",
+   "message": "gfx/flags/medium/Y5A.tga and gfx/flags/medium/Y6C.tga are 9 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y5A.tga|gfx/flags/medium/Y6C.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y6T.tga",
+   "message": "gfx/flags/medium/Y6T.tga and gfx/flags/medium/Y73.tga are 9 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y6T.tga|gfx/flags/medium/Y73.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/flags/medium/Y6V.tga",
+   "message": "gfx/flags/medium/Y6V.tga and gfx/flags/medium/Y81.tga are 6 of 64 bits apart (group flag.medium, threshold 10).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/flags/medium/Y6V.tga|gfx/flags/medium/Y81.tga"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/abyss_stair.dds",
+   "message": "gfx/interface/goals/zin/abyss_stair.dds and gfx/interface/goals/zin/black_compact.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/abyss_stair.dds|gfx/interface/goals/zin/black_compact.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/abyss_stair.dds",
+   "message": "gfx/interface/goals/zin/abyss_stair.dds and gfx/interface/goals/zin/dead_crown.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/abyss_stair.dds|gfx/interface/goals/zin/dead_crown.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/abyss_stair.dds",
+   "message": "gfx/interface/goals/zin/abyss_stair.dds and gfx/interface/goals/zin/elven_council.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/abyss_stair.dds|gfx/interface/goals/zin/elven_council.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/alliance_rings.dds",
+   "message": "gfx/interface/goals/zin/alliance_rings.dds and gfx/interface/goals/zin/black_compact.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/alliance_rings.dds|gfx/interface/goals/zin/black_compact.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/alliance_rings.dds",
+   "message": "gfx/interface/goals/zin/alliance_rings.dds and gfx/interface/goals/zin/book_lore.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/alliance_rings.dds|gfx/interface/goals/zin/book_lore.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/alliance_rings.dds",
+   "message": "gfx/interface/goals/zin/alliance_rings.dds and gfx/interface/goals/zin/demon_horn.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/alliance_rings.dds|gfx/interface/goals/zin/demon_horn.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/alms_bread.dds",
+   "message": "gfx/interface/goals/zin/alms_bread.dds and gfx/interface/goals/zin/ember_desert.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/alms_bread.dds|gfx/interface/goals/zin/ember_desert.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/anchor_rope.dds",
+   "message": "gfx/interface/goals/zin/anchor_rope.dds and gfx/interface/goals/zin/charter_shield.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/anchor_rope.dds|gfx/interface/goals/zin/charter_shield.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/anchor_rope.dds",
+   "message": "gfx/interface/goals/zin/anchor_rope.dds and gfx/interface/goals/zin/corsair_raider.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/anchor_rope.dds|gfx/interface/goals/zin/corsair_raider.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/anchor_rope.dds",
+   "message": "gfx/interface/goals/zin/anchor_rope.dds and gfx/interface/goals/zin/crown_radiant.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/anchor_rope.dds|gfx/interface/goals/zin/crown_radiant.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/anchor_rope.dds",
+   "message": "gfx/interface/goals/zin/anchor_rope.dds and gfx/interface/goals/zin/empty_throne.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/anchor_rope.dds|gfx/interface/goals/zin/empty_throne.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/anchor_rope.dds",
+   "message": "gfx/interface/goals/zin/anchor_rope.dds and gfx/interface/goals/zin/lantern_chain.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/anchor_rope.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/anchor_rope.dds",
+   "message": "gfx/interface/goals/zin/anchor_rope.dds and gfx/interface/goals/zin/palace_wards.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/anchor_rope.dds|gfx/interface/goals/zin/palace_wards.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/banner_black.dds",
+   "message": "gfx/interface/goals/zin/banner_black.dds and gfx/interface/goals/zin/camel_rider.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/banner_black.dds|gfx/interface/goals/zin/camel_rider.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/banner_black.dds",
+   "message": "gfx/interface/goals/zin/banner_black.dds and gfx/interface/goals/zin/concord_circle.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/banner_black.dds|gfx/interface/goals/zin/concord_circle.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/banner_black.dds",
+   "message": "gfx/interface/goals/zin/banner_black.dds and gfx/interface/goals/zin/dragon_mountain.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/banner_black.dds|gfx/interface/goals/zin/dragon_mountain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/banner_black.dds",
+   "message": "gfx/interface/goals/zin/banner_black.dds and gfx/interface/goals/zin/order_divine.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/banner_black.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/beacon.dds",
+   "message": "gfx/interface/goals/zin/beacon.dds and gfx/interface/goals/zin/birth_rolls.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/beacon.dds|gfx/interface/goals/zin/birth_rolls.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/beacon.dds",
+   "message": "gfx/interface/goals/zin/beacon.dds and gfx/interface/goals/zin/black_hulls.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/beacon.dds|gfx/interface/goals/zin/black_hulls.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/beacon.dds",
+   "message": "gfx/interface/goals/zin/beacon.dds and gfx/interface/goals/zin/concord_circle.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/beacon.dds|gfx/interface/goals/zin/concord_circle.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/beacon.dds",
+   "message": "gfx/interface/goals/zin/beacon.dds and gfx/interface/goals/zin/regency_seals.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/beacon.dds|gfx/interface/goals/zin/regency_seals.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/birth_rolls.dds",
+   "message": "gfx/interface/goals/zin/birth_rolls.dds and gfx/interface/goals/zin/bow_archers.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/birth_rolls.dds|gfx/interface/goals/zin/bow_archers.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/birth_rolls.dds",
+   "message": "gfx/interface/goals/zin/birth_rolls.dds and gfx/interface/goals/zin/bracelet_seal.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/birth_rolls.dds|gfx/interface/goals/zin/bracelet_seal.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/birth_rolls.dds",
+   "message": "gfx/interface/goals/zin/birth_rolls.dds and gfx/interface/goals/zin/concord_circle.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/birth_rolls.dds|gfx/interface/goals/zin/concord_circle.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/birth_rolls.dds",
+   "message": "gfx/interface/goals/zin/birth_rolls.dds and gfx/interface/goals/zin/feast_table.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/birth_rolls.dds|gfx/interface/goals/zin/feast_table.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/birth_rolls.dds",
+   "message": "gfx/interface/goals/zin/birth_rolls.dds and gfx/interface/goals/zin/orc_axe.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/birth_rolls.dds|gfx/interface/goals/zin/orc_axe.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/birth_rolls.dds",
+   "message": "gfx/interface/goals/zin/birth_rolls.dds and gfx/interface/goals/zin/ring_doors.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/birth_rolls.dds|gfx/interface/goals/zin/ring_doors.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_compact.dds",
+   "message": "gfx/interface/goals/zin/black_compact.dds and gfx/interface/goals/zin/book_lore.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_compact.dds|gfx/interface/goals/zin/book_lore.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_compact.dds",
+   "message": "gfx/interface/goals/zin/black_compact.dds and gfx/interface/goals/zin/grave_field.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_compact.dds|gfx/interface/goals/zin/grave_field.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_compact.dds",
+   "message": "gfx/interface/goals/zin/black_compact.dds and gfx/interface/goals/zin/knight_lance.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_compact.dds|gfx/interface/goals/zin/knight_lance.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_compact.dds",
+   "message": "gfx/interface/goals/zin/black_compact.dds and gfx/interface/goals/zin/mushroom_grove.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_compact.dds|gfx/interface/goals/zin/mushroom_grove.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_compact.dds",
+   "message": "gfx/interface/goals/zin/black_compact.dds and gfx/interface/goals/zin/necklace_deep.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_compact.dds|gfx/interface/goals/zin/necklace_deep.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/bones_risen.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/bones_risen.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/charter_free.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/charter_free.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/charter_shield.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/charter_shield.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/council_table.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/council_table.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/elven_council.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/elven_council.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/ember_desert.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/ember_desert.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/generic.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/grave_field.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/grave_field.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_hulls.dds",
+   "message": "gfx/interface/goals/zin/black_hulls.dds and gfx/interface/goals/zin/lantern_chain.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_hulls.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_isles.dds",
+   "message": "gfx/interface/goals/zin/black_isles.dds and gfx/interface/goals/zin/order_divine.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_isles.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_isles.dds",
+   "message": "gfx/interface/goals/zin/black_isles.dds and gfx/interface/goals/zin/order_lesser.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_isles.dds|gfx/interface/goals/zin/order_lesser.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/black_isles.dds",
+   "message": "gfx/interface/goals/zin/black_isles.dds and gfx/interface/goals/zin/tribute_chest.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/black_isles.dds|gfx/interface/goals/zin/tribute_chest.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/book_lore.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/book_lore.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/chain_broken.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/chain_broken.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/charter_free.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/charter_free.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/charter_old.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/charter_old.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/crown_gold.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/crown_gold.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/crown_radiant.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/crown_radiant.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/ember_desert.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/ember_desert.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/forge_anvil.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/forge_anvil.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/generic.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/grave_field.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/grave_field.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/lantern_chain.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/order_divine.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/order_great.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/order_great.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/seal_chancellor.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/seal_chancellor.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bones_risen.dds",
+   "message": "gfx/interface/goals/zin/bones_risen.dds and gfx/interface/goals/zin/storm_sea.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bones_risen.dds|gfx/interface/goals/zin/storm_sea.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/book_lore.dds",
+   "message": "gfx/interface/goals/zin/book_lore.dds and gfx/interface/goals/zin/crystal_green.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/book_lore.dds|gfx/interface/goals/zin/crystal_green.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/book_lore.dds",
+   "message": "gfx/interface/goals/zin/book_lore.dds and gfx/interface/goals/zin/generic.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/book_lore.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/book_lore.dds",
+   "message": "gfx/interface/goals/zin/book_lore.dds and gfx/interface/goals/zin/grave_field.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/book_lore.dds|gfx/interface/goals/zin/grave_field.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/book_lore.dds",
+   "message": "gfx/interface/goals/zin/book_lore.dds and gfx/interface/goals/zin/mask_veiled.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/book_lore.dds|gfx/interface/goals/zin/mask_veiled.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/book_lore.dds",
+   "message": "gfx/interface/goals/zin/book_lore.dds and gfx/interface/goals/zin/order_divine.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/book_lore.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/book_lore.dds",
+   "message": "gfx/interface/goals/zin/book_lore.dds and gfx/interface/goals/zin/seal_chancellor.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/book_lore.dds|gfx/interface/goals/zin/seal_chancellor.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/crown_broken.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/crown_broken.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/ember_desert.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/ember_desert.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/fort_wall.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/fort_wall.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/foundry_fire.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/foundry_fire.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/lake_town.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/lake_town.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/mask_veiled.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/mask_veiled.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/mine_cart.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/mine_cart.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/order_divine.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/order_lesser.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/order_lesser.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bow_archers.dds",
+   "message": "gfx/interface/goals/zin/bow_archers.dds and gfx/interface/goals/zin/sword_shield.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bow_archers.dds|gfx/interface/goals/zin/sword_shield.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/charter_old.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/charter_old.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/crown_gold.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/crown_gold.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/feast_table.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/feast_table.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/generic.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/heir_rolls.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/heir_rolls.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/knight_lance.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/knight_lance.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/regency_seals.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/regency_seals.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/river_ford.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/river_ford.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "message": "gfx/interface/goals/zin/bracelet_seal.dds and gfx/interface/goals/zin/troll_club.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/bracelet_seal.dds|gfx/interface/goals/zin/troll_club.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/camel_rider.dds",
+   "message": "gfx/interface/goals/zin/camel_rider.dds and gfx/interface/goals/zin/concord_circle.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/camel_rider.dds|gfx/interface/goals/zin/concord_circle.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/camel_rider.dds",
+   "message": "gfx/interface/goals/zin/camel_rider.dds and gfx/interface/goals/zin/crown_broken.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/camel_rider.dds|gfx/interface/goals/zin/crown_broken.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/camel_rider.dds",
+   "message": "gfx/interface/goals/zin/camel_rider.dds and gfx/interface/goals/zin/crown_iron.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/camel_rider.dds|gfx/interface/goals/zin/crown_iron.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/camel_rider.dds",
+   "message": "gfx/interface/goals/zin/camel_rider.dds and gfx/interface/goals/zin/ring_doors.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/camel_rider.dds|gfx/interface/goals/zin/ring_doors.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/camel_rider.dds",
+   "message": "gfx/interface/goals/zin/camel_rider.dds and gfx/interface/goals/zin/scout_lantern.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/camel_rider.dds|gfx/interface/goals/zin/scout_lantern.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/camel_rider.dds",
+   "message": "gfx/interface/goals/zin/camel_rider.dds and gfx/interface/goals/zin/silent_throne.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/camel_rider.dds|gfx/interface/goals/zin/silent_throne.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/charter_free.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/charter_free.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/charter_golden.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/charter_golden.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/crown_broken.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/crown_broken.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/crown_gold.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/crown_gold.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/crown_radiant.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/crown_radiant.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/order_divine.dds are 7 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/order_lesser.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/order_lesser.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/regency_seals.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/regency_seals.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/scroll_sealed.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/scroll_sealed.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/seal_chancellor.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/seal_chancellor.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/tribute_chest.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/tribute_chest.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/chain_broken.dds",
+   "message": "gfx/interface/goals/zin/chain_broken.dds and gfx/interface/goals/zin/zol_sigil.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/chain_broken.dds|gfx/interface/goals/zin/zol_sigil.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/coin_chest.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/coin_chest.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/concord_circle.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/concord_circle.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/council_table.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/council_table.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/crown_broken.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/crown_broken.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/dead_ranks_far.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/dead_ranks_far.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/demon_horn.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/demon_horn.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/generic.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/giant_hammer.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/giant_hammer.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/lantern_chain.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/order_divine.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/order_great.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/order_great.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/order_lesser.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/order_lesser.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/regency_seals.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/regency_seals.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/seal_chancellor.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/seal_chancellor.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_free.dds",
+   "message": "gfx/interface/goals/zin/charter_free.dds and gfx/interface/goals/zin/seal_royal.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_free.dds|gfx/interface/goals/zin/seal_royal.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_golden.dds",
+   "message": "gfx/interface/goals/zin/charter_golden.dds and gfx/interface/goals/zin/university_hall.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_golden.dds|gfx/interface/goals/zin/university_hall.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_old.dds",
+   "message": "gfx/interface/goals/zin/charter_old.dds and gfx/interface/goals/zin/crystal_green.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_old.dds|gfx/interface/goals/zin/crystal_green.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_old.dds",
+   "message": "gfx/interface/goals/zin/charter_old.dds and gfx/interface/goals/zin/envoy.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_old.dds|gfx/interface/goals/zin/envoy.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_old.dds",
+   "message": "gfx/interface/goals/zin/charter_old.dds and gfx/interface/goals/zin/mirror_rain.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_old.dds|gfx/interface/goals/zin/mirror_rain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_old.dds",
+   "message": "gfx/interface/goals/zin/charter_old.dds and gfx/interface/goals/zin/reliquary.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_old.dds|gfx/interface/goals/zin/reliquary.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_old.dds",
+   "message": "gfx/interface/goals/zin/charter_old.dds and gfx/interface/goals/zin/scroll_treaty.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_old.dds|gfx/interface/goals/zin/scroll_treaty.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/crystal_green.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/crystal_green.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/fishing_boats.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/fishing_boats.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/forge_anvil.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/forge_anvil.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/giant_hammer.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/giant_hammer.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/grave_field.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/grave_field.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/mask_veiled.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/mask_veiled.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/order_great.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/order_great.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_shield.dds",
+   "message": "gfx/interface/goals/zin/charter_shield.dds and gfx/interface/goals/zin/strait_chain.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_shield.dds|gfx/interface/goals/zin/strait_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/charter_wall.dds",
+   "message": "gfx/interface/goals/zin/charter_wall.dds and gfx/interface/goals/zin/warship_sail.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/charter_wall.dds|gfx/interface/goals/zin/warship_sail.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/coin_chest.dds",
+   "message": "gfx/interface/goals/zin/coin_chest.dds and gfx/interface/goals/zin/crown_radiant.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/coin_chest.dds|gfx/interface/goals/zin/crown_radiant.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/coin_chest.dds",
+   "message": "gfx/interface/goals/zin/coin_chest.dds and gfx/interface/goals/zin/demon_horn.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/coin_chest.dds|gfx/interface/goals/zin/demon_horn.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/coin_chest.dds",
+   "message": "gfx/interface/goals/zin/coin_chest.dds and gfx/interface/goals/zin/kilinti_grove.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/coin_chest.dds|gfx/interface/goals/zin/kilinti_grove.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/coin_chest.dds",
+   "message": "gfx/interface/goals/zin/coin_chest.dds and gfx/interface/goals/zin/mushroom_grove.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/coin_chest.dds|gfx/interface/goals/zin/mushroom_grove.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/coin_chest.dds",
+   "message": "gfx/interface/goals/zin/coin_chest.dds and gfx/interface/goals/zin/troll_club.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/coin_chest.dds|gfx/interface/goals/zin/troll_club.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/concord_circle.dds",
+   "message": "gfx/interface/goals/zin/concord_circle.dds and gfx/interface/goals/zin/council_table.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/concord_circle.dds|gfx/interface/goals/zin/council_table.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/concord_circle.dds",
+   "message": "gfx/interface/goals/zin/concord_circle.dds and gfx/interface/goals/zin/crown_broken.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/concord_circle.dds|gfx/interface/goals/zin/crown_broken.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/concord_circle.dds",
+   "message": "gfx/interface/goals/zin/concord_circle.dds and gfx/interface/goals/zin/crown_hailed.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/concord_circle.dds|gfx/interface/goals/zin/crown_hailed.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/concord_circle.dds",
+   "message": "gfx/interface/goals/zin/concord_circle.dds and gfx/interface/goals/zin/lantern_chain.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/concord_circle.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/concord_circle.dds",
+   "message": "gfx/interface/goals/zin/concord_circle.dds and gfx/interface/goals/zin/ring_doors.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/concord_circle.dds|gfx/interface/goals/zin/ring_doors.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/concord_circle.dds",
+   "message": "gfx/interface/goals/zin/concord_circle.dds and gfx/interface/goals/zin/siege_trebuchet.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/concord_circle.dds|gfx/interface/goals/zin/siege_trebuchet.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/concord_circle.dds",
+   "message": "gfx/interface/goals/zin/concord_circle.dds and gfx/interface/goals/zin/two_crowns.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/concord_circle.dds|gfx/interface/goals/zin/two_crowns.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/confessional.dds",
+   "message": "gfx/interface/goals/zin/confessional.dds and gfx/interface/goals/zin/crown_broken.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/confessional.dds|gfx/interface/goals/zin/crown_broken.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/confessional.dds",
+   "message": "gfx/interface/goals/zin/confessional.dds and gfx/interface/goals/zin/generic.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/confessional.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/confessional.dds",
+   "message": "gfx/interface/goals/zin/confessional.dds and gfx/interface/goals/zin/ring_doors.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/confessional.dds|gfx/interface/goals/zin/ring_doors.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/confessional.dds",
+   "message": "gfx/interface/goals/zin/confessional.dds and gfx/interface/goals/zin/scout_lantern.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/confessional.dds|gfx/interface/goals/zin/scout_lantern.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/confessional.dds",
+   "message": "gfx/interface/goals/zin/confessional.dds and gfx/interface/goals/zin/throne_gold.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/confessional.dds|gfx/interface/goals/zin/throne_gold.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/confessional.dds",
+   "message": "gfx/interface/goals/zin/confessional.dds and gfx/interface/goals/zin/two_crowns.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/confessional.dds|gfx/interface/goals/zin/two_crowns.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/corsair_raider.dds",
+   "message": "gfx/interface/goals/zin/corsair_raider.dds and gfx/interface/goals/zin/crown_radiant.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/corsair_raider.dds|gfx/interface/goals/zin/crown_radiant.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/corsair_raider.dds",
+   "message": "gfx/interface/goals/zin/corsair_raider.dds and gfx/interface/goals/zin/empty_throne.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/corsair_raider.dds|gfx/interface/goals/zin/empty_throne.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/corsair_raider.dds",
+   "message": "gfx/interface/goals/zin/corsair_raider.dds and gfx/interface/goals/zin/palace_wards.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/corsair_raider.dds|gfx/interface/goals/zin/palace_wards.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/council_table.dds",
+   "message": "gfx/interface/goals/zin/council_table.dds and gfx/interface/goals/zin/crown_hailed.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/council_table.dds|gfx/interface/goals/zin/crown_hailed.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/council_table.dds",
+   "message": "gfx/interface/goals/zin/council_table.dds and gfx/interface/goals/zin/palace_wards.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/council_table.dds|gfx/interface/goals/zin/palace_wards.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/courier_pilgrim.dds",
+   "message": "gfx/interface/goals/zin/courier_pilgrim.dds and gfx/interface/goals/zin/ember_desert.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/courier_pilgrim.dds|gfx/interface/goals/zin/ember_desert.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/courier_pilgrim.dds",
+   "message": "gfx/interface/goals/zin/courier_pilgrim.dds and gfx/interface/goals/zin/lighthouse.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/courier_pilgrim.dds|gfx/interface/goals/zin/lighthouse.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_aen.dds",
+   "message": "gfx/interface/goals/zin/crown_aen.dds and gfx/interface/goals/zin/crown_gold.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_aen.dds|gfx/interface/goals/zin/crown_gold.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_aen.dds",
+   "message": "gfx/interface/goals/zin/crown_aen.dds and gfx/interface/goals/zin/envoy.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_aen.dds|gfx/interface/goals/zin/envoy.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_aen.dds",
+   "message": "gfx/interface/goals/zin/crown_aen.dds and gfx/interface/goals/zin/ice_cavern.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_aen.dds|gfx/interface/goals/zin/ice_cavern.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/crown_gold.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/crown_gold.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/crown_iron.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/crown_iron.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/crown_radiant.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/crown_radiant.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/generic.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/giant_hammer.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/giant_hammer.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/lantern_chain.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/necklace_deep.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/necklace_deep.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/order_divine.dds are 6 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/order_great.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/order_great.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/order_lesser.dds are 6 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/order_lesser.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/reliquary.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/reliquary.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/ring_doors.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/ring_doors.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/river_ford.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/river_ford.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/scroll_sealed.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/scroll_sealed.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/seal_chancellor.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/seal_chancellor.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/sword_shield.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/sword_shield.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/tribute_chest.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/tribute_chest.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_broken.dds",
+   "message": "gfx/interface/goals/zin/crown_broken.dds and gfx/interface/goals/zin/white_deer.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_broken.dds|gfx/interface/goals/zin/white_deer.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/crown_iron.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/crown_iron.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/crown_radiant.dds are 6 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/crown_radiant.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/crown_witnesses.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/crown_witnesses.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/crystal_green.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/crystal_green.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/forge_anvil.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/forge_anvil.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/galley_oars.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/galley_oars.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/generic.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/lantern_chain.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/mask_veiled.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/mask_veiled.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/mushroom_grove.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/mushroom_grove.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/necklace_deep.dds are 9 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/necklace_deep.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/nether_gate.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/nether_gate.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/order_divine.dds are 7 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/order_great.dds are 8 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/order_great.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/order_lesser.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/order_lesser.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/seal_chancellor.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/seal_chancellor.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_gold.dds",
+   "message": "gfx/interface/goals/zin/crown_gold.dds and gfx/interface/goals/zin/troll_club.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_gold.dds|gfx/interface/goals/zin/troll_club.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_hailed.dds",
+   "message": "gfx/interface/goals/zin/crown_hailed.dds and gfx/interface/goals/zin/seal_royal.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_hailed.dds|gfx/interface/goals/zin/seal_royal.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_iron.dds",
+   "message": "gfx/interface/goals/zin/crown_iron.dds and gfx/interface/goals/zin/generic.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_iron.dds|gfx/interface/goals/zin/generic.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_iron.dds",
+   "message": "gfx/interface/goals/zin/crown_iron.dds and gfx/interface/goals/zin/lantern_chain.dds are 10 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_iron.dds|gfx/interface/goals/zin/lantern_chain.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_iron.dds",
+   "message": "gfx/interface/goals/zin/crown_iron.dds and gfx/interface/goals/zin/order_divine.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_iron.dds|gfx/interface/goals/zin/order_divine.dds"
+  },
+  {
+   "code": "UNIQ_NEAR_DUPLICATE",
+   "severity": "warning",
+   "path": "gfx/interface/goals/zin/crown_iron.dds",
+   "message": "gfx/interface/goals/zin/crown_iron.dds and gfx/interface/goals/zin/order_lesser.dds are 11 of 64 bits apart (group focus_icon, threshold 12).",
+   "key": "UNIQ_NEAR_DUPLICATE|gfx/interface/goals/zin/crown_iron.dds|gfx/interface/goals/zin/order_lesser.dds"
+  }
+ ]
+}

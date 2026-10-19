@@ -38,6 +38,8 @@ Scripted triggers `zin_culture_is_<id>` and `zin_faith_is_<id>` are generated, a
 
 The replacement of `names.mjs` is specified in [06_languages.md](06_languages.md) section 9. The `default` pool, which names the 75 dynamic tags, comes from the Aenoran and Coldic lists (the Common Speech), so that civil-war leaders sound like Erdae.
 
+**Status, 19 October 2026 (built):** `buildNames` draws every country's male, female, surname and callsign pools from its culture's language (`tools/content/modules/names.mjs`, `lib/language_generator.mjs`). The `default` pool and Zol's Mistake, which has no language, take a neutral blend of the four languages that the Middle Lands countries speak (Aenoran, Orran, the Giants' Speech and the Long Speech, weighted by the square root of their countries), as the work order asked; this section's wording, the Aenoran and Coldic lists, is not what the build does. `placeNames(country or region, kind, n)` names cities, states, regions, rivers, lakes, mountains, seas, straits and forests for the map and politics steps through the same registry; state, victory-point, strategic-region and province names are not yet written because those steps have not run on the new map.
+
 ## 3. Characters and ruler naming
 
 - **Rulers.** `characters.mjs` stops reading syllable pools and calls `resolveName` with kind `given_m` or `given_f`, then the culture's house style. Ruler titles come from `person.titles`. The canon rulers (the Golden King, Volgan, the Will of Zol, Aurevan the Deliverer, Horos, King Lorien) keep their fixed ids and names. Named councillors of the characters spec keep their names; where a name in [02_characters.md](../02_lore/02_characters.md) does not fit its culture's language, the characters spec gives the language-driven alternative in the Chronicle notes and the owner decides.
@@ -208,6 +210,8 @@ U = unique to the culture; V = variant of a shared kit; S = shared. "Names" is a
 8. **Determinism.** Two builds give identical `names_resolved.json`, `state_population.json` and culture flags.
 9. **Label check.** The bible, the language file and this spec carry no TODO or TBD, and every proposal is either unmarked in a proposal table or marked P.
 
+**Status, 19 October 2026:** checks 1 (leak, with the signature measured on places and on the pools as far as each language's dictionary allows), 6 (the reserved vault names in `data/world/reserved_names.json`, the superseded names and the banned substrings `zol`, `volgan` and `afrit`; the descriptive do-not-generate entries have no name to match) and 7 (the substrings of `names.mjs`, the modern blocklist and `data/banned_words.json`) are built in `tools/content/checks/names_check.mjs` and fail the build; the same file checks Windows-1252, the 250-and-250 reference run and the relatedness of each family by its sound laws. Checks 2 to 5, 8 (`names_resolved.json` and `state_population.json` do not exist yet; `names_report.json` is deterministic and tested) and 9 are not built.
+
 ### Linux run (start as Aenor, Lerendor, Noris, Coldor, the Magical Forest, Volgan)
 
 1. A console read of `zin_culture_*`, `zin_language_*` and `zin_faith_*` on the six countries returns the table values.
@@ -221,15 +225,15 @@ U = unique to the culture; V = variant of a shared kit; S = shared. "Names" is a
 
 | File or module | Change | Written by |
 | --- | --- | --- |
-| `tools/content/modules/naming.mjs` (new) | The generator of the language contract | Content builder |
-| `tools/content/modules/names.mjs` | Becomes a thin wrapper over `naming.mjs` | Content builder |
+| `tools/content/modules/naming.mjs` (new) | The generator of the language contract. **Built as `tools/content/lib/language_generator.mjs` (generator, registry, filters) and `lib/sound_laws.mjs` (sound-law engine), 19 October 2026** | Content builder |
+| `tools/content/modules/names.mjs` | Becomes a thin wrapper over `naming.mjs`. **Built:** `buildNames` (pools by language, same return shape plus pools by tag), `placeNames`, `resolveName`, `docs/design/names_report.json` | Content builder |
 | `tools/content/modules/peoples.mjs` | Writes the culture, language and faith flags and triggers | Content builder |
-| `tools/content/modules/characters.mjs` | Reads cultures for rulers and houses | Content builder |
+| `tools/content/modules/characters.mjs` | Reads cultures for rulers and houses. **Partly built:** a ruler's name comes from the pool of the country's tag, so it is in the culture's language; houses, ruler titles and councillors from the language are not built | Content builder |
 | `tools/content/modules/portraits.mjs` | Culture portrait pools | Content builder |
 | `tools/content/modules/terms.mjs` | The label table gains the bible's [secret] rows | Content builder |
 | `tools/content/modules/units3d.mjs` | `cultureOf` returns the unit look group | Content builder |
 | `tools/content/data/world/*.json` | The four data files of this package | Design (this package) |
-| `tools/content/checks/world_data.mjs` | The checks of section 14 | Content builder |
+| `tools/content/checks/world_data.mjs` | The checks of section 14. **Not built.** The name checks of section 14 (1, 7 and the reserved-name part of 6) are built in `tools/content/checks/names_check.mjs` and run inside `buildNames` | Content builder |
 | `docs/design/countries.csv` | Columns `culture`, `culture2`, `faith` | Content builder, owner-editable |
 
 ## 16. Open questions

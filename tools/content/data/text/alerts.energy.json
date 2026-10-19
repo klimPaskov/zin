@@ -1,0 +1,18 @@
+{
+  "family": "alerts",
+  "note": "ECONOMY ENGINEER: this section is yours. It holds the alerts of the energy system, which docs/specs/03_gameplay/02_economy.md re-themes as Provisions fed by Grain, and of the fuel system, whose bar reads Stored Essence. The keys, placeholders and icons are fixed by the game; the wording may change as long as every placeholder and icon of the installed key stays (the sweep refuses a row that loses one). docs/design/stage2/economy.md did not exist when this file was written, so the wording follows the economy spec.",
+  "lit": {
+    "alert_lack_of_power_instant": "§H{energy} Run Short§!",
+    "alert_lack_of_power_delayed_header": "We hold $COAL|R$£out_of_power_texticon {coal} \nThe workshops have $PERCENTAGE|.0H%$ of the {energy} they need, with these effects:",
+    "alert_lack_of_power_delayed_civ": "Each £civ_factory {industrial_complex} gives $VALUE|H$ £civ_factory_output  less, and the speed of building falls by $PERCENTAGE|.0R%$",
+    "alert_lack_of_power_delayed_mil": "Each £mil_factory {arms_factory} gives $VALUE|H$ £production_cost  less, and the output of the {arms_factory:p:lc} falls by $PERCENTAGE|.0R%$",
+    "alert_lack_of_power_delayed_nav": "Each £nav_dockyard_texticon {dockyard} gives $VALUE|H$ £navprod_cost  less, and the output of the {dockyard:p:lc} falls by $PERCENTAGE|.0R%$",
+    "alert_out_of_fuel_instant": "§H{fuel} Is Spent§!",
+    "alert_out_of_fuel_delayed_header": "Need: §Y{oil} ($VALUE$)§!\n{oil} is needed to work war engines, wings and ships.",
+    "alert_out_of_fuel_delayed_entry_army": "§YArmy§!\nAt $LOW_THRESHOLD|Y1%$ of the {fuel} store, fighting strength begins to suffer.\nAt §Y0%§! {fuel}:\nSpeed: $ARMY_SPEED_PENALTY|R1%$\nFighting strength (gear that uses {fuel}): $ARMY_COMBAT_PENALTY|R1%$\nExperience gained in drill: $ARMY_TRAINING_XP_GAIN|R1%$ daily",
+    "alert_out_of_fuel_delayed_entry_air": "§YWings§!\nWhen {fuel} is spent:\nMission strength: $AIR_EFFICIENCY_PENALTY|R1%$",
+    "alert_out_of_fuel_delayed_entry_navy": "§YNavy§!\nWhen {fuel} is spent:",
+    "alert_out_of_fuel_delayed_subentry_navy_range": "Reach: $NAVAL_RANGE_PENALTY|R1%$",
+    "alert_out_of_fuel_delayed_subentry_navy_torpedo": "Attack of {submarine:p}: $NAVAL_TORPEDO_PENALTY|R1%$"
+  }
+}

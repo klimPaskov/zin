@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "spec": "docs/specs/03_gameplay/08_institutions.md sections 9 and 10",
+  "note": "Guilds and Orders (the nine workshops, their policies and AI weights) and Spells (special projects, scholars, rewards and scars). Equipment names are the archetypes of the warfare spec section 3; technology names are those of the technology specs; categories are the zin_cat_* of 07_industry_and_electronics_techs section 2.2. Pictures are keys of the icon catalog.",
+  "tree": {
+    "columns": [
+      ["methods",1,"Methods"],
+      ["patterns",3,"Patterns"],
+      ["standing",5,"Standing"]
+    ],
+    "methods": [
+      {"token":"m1","name":"Fair Dealing","desc":"Honest weights and a plain ledger mean fewer disputes and cheaper work.","prod":{"production_cost_factor":-0.05},"icon":"cost"},
+      {"token":"m2","name":"Guild Habits","desc":"Journeymen pass on their tricks, and the work gets faster each season.","prod":{"production_efficiency_gain_factor":0.1},"icon":"speed","gate":true},
+      {"token":"m3","name":"The Master's Pace","desc":"A master's hand sets the pace, and the line settles into a steady rhythm.","prod":{"production_efficiency_cap_factor":0.1},"icon":"speed","gate":true}
+    ],
+    "standing": [
+      {"token":"s1","name":"Patrons","desc":"Lords and merchants give the guild their custom, and fund its study.","org":{"military_industrial_organization_research_bonus":0.1},"icon":"research"},
+      {"token":"s2","name":"The Journeymen's Hall","desc":"A hall where the guild keeps its books and trains its young. More work can be taken at once.","org":{"military_industrial_organization_task_capacity":1},"icon":"size","tech":"zin_tech_libraries"},
+      {"token":"s3","name":"The Counting-House","desc":"The guild's coin is counted, lent and returned with interest.","org":{"military_industrial_organization_funds_gain":0.25},"icon":"funds","tech":"zin_tech_universities"}
+    ],
+    "capstoneTech": "zin_tech_scholars_conclaves"
+  },
+  "workshops": [
+    {"id":"zin_workshop_smiths","short":"smiths","kind":"guild","name":"The Smiths' Guild","desc":"Smiths of every town who answer to one guild and one hall. They shape arms for all comers.","art":"forge_anvil","eq":["zin_arms_equipment","zin_troll_gear_equipment","zin_giant_gear_equipment","zin_yeti_gear_equipment","zin_ogre_gear_equipment"],"cats":["zin_cat_arms","zin_cat_kin"],"peoples":["men","elves","sun_elves","orcs","giants","trolls","yeti"],"ai":2,"initial":{"name":"Good Iron","eq":{"build_cost_ic":-0.05,"reliability":0.05}},"p":[{"name":"Hardened Edges","desc":"Edges are quenched twice and last a campaign.","eq":{"defense":0.04,"reliability":0.05}},{"name":"Cleaving Blades","desc":"Blades are weighted for the downward stroke.","eq":{"soft_attack":0.05,"breakthrough":0.04}},{"name":"Piercing Points","desc":"Spearheads are forged to find the seam in the plate.","eq":{"hard_attack":0.04,"reliability":0.05}}],"cap":{"name":"The Master's Mark","desc":"A guild mark that every buyer trusts, and every thief copies.","eq":{"reliability":0.1,"defense":0.05,"soft_attack":0.05},"prod":{"production_resource_need_factor":-0.1}},"gates":{"m2":"zin_tech_standard_patterns","m3":"zin_tech_division_of_labour","p3":"zin_tech_forged_steel"},"sign":{"id":"iron_hall","name":"The Iron Hall","penalty":{"production_capacity_factor":-0.05}}},
+    {"id":"zin_workshop_bowyers","short":"bowyers","kind":"guild","name":"The Bowyers' Hall","desc":"Yew, horn and sinew. The Hall fixes the length of every bow and the price of every string.","art":"bow_archers","eq":["zin_bows_equipment"],"cats":["zin_cat_bows"],"peoples":["men","orcs"],"ai":2,"initial":{"name":"Seasoned Wood","eq":{"build_cost_ic":-0.05}},"p":[{"name":"Longer Draw","desc":"Bows are cut a hand longer and shoot a pace further.","eq":{"soft_attack":0.05}},{"name":"Waxed Strings","desc":"Strings keep their strength through rain and frost.","eq":{"reliability":0.05}},{"name":"Bodkin Heads","desc":"Narrow points that find the gap in mail.","eq":{"breakthrough":0.04,"soft_attack":0.04}}],"cap":{"name":"The Composite Secret","desc":"Horn, wood and sinew glued in layers by a method the Hall will never write down.","eq":{"soft_attack":0.1,"reliability":0.05},"prod":{"production_resource_need_factor":-0.1}},"gates":{"p2":"zin_tech_composite_bows","p3":"zin_tech_crossbows"},"sign":{"id":"quiver_ledger","name":"The Quiver Ledger","penalty":{"build_cost_ic":0.05}}},
+    {"id":"zin_workshop_armourers","short":"armourers","kind":"guild","name":"The Armourers' Hall","desc":"Mail-makers and plate-smiths under one roof. A knight is only as safe as the Hall's last proof.","art":"knight_lance","eq":["zin_armour_equipment"],"cats":["zin_cat_armour"],"peoples":["men","orcs","giants"],"ai":1,"initial":{"name":"Tight Rings","eq":{"armor_value":0.03}},"p":[{"name":"Riveted Mail","desc":"Each ring is riveted shut, and the mail turns a blade.","eq":{"armor_value":0.04}},{"name":"Padded Under-Coats","desc":"A quilted coat beneath the mail spreads each blow.","eq":{"defense":0.05,"build_cost_ic":-0.03}},{"name":"Plate Harness","desc":"Shaped plates over the chest and thigh, proof against a bodkin.","eq":{"armor_value":0.05}}],"cap":{"name":"The Tempered Plate","desc":"Plate hardened in three oils and proved with a crossbow before it leaves the Hall.","eq":{"armor_value":0.1,"defense":0.05},"prod":{"production_resource_need_factor":-0.1}},"gates":{"p1":"zin_tech_mail","p3":"zin_tech_full_plate"},"sign":{"id":"plate_tally","name":"The Plate Tally","penalty":{"production_capacity_factor":-0.05}}},
+    {"id":"zin_workshop_shipwrights","short":"shipwrights","kind":"guild","name":"The Shipwrights' Guild","desc":"Keel-layers, caulkers and rope-makers. Its slips stand by every harbour worth the name.","art":"shipwright_yard","eq":["zin_hull_galley","zin_hull_warship","zin_hull_great_warship","zin_hull_raider"],"cats":["zin_cat_galleys","zin_cat_warships","zin_cat_yards"],"coastal":true,"ai":2,"initial":{"name":"Seasoned Planking","eq":{"naval_speed":0.03}},"p":[{"name":"Cleaner Lines","desc":"Hulls are shaped long and low and slip through the water.","eq":{"naval_speed":0.05}},{"name":"Doubled Timbers","desc":"Ribs set closer and planking doubled at the waterline.","eq":{"max_strength":0.05,"armor_value":0.05}},{"name":"Long Water-Casks","desc":"Holds are fitted for longer voyages between harbours.","eq":{"naval_range":0.08}}],"cap":{"name":"The Master Shipwrights","desc":"Hulls signed by the masters of the Guild, who stake their name on every keel.","eq":{"max_strength":0.1,"naval_speed":0.05,"build_cost_ic":-0.05},"prod":{}},"gates":{"m2":"zin_tech_dry_docks","m3":"zin_tech_great_yards","p3":"zin_tech_deep_water_hulls"},"sign":{"id":"slip_and_keel","name":"Slip and Keel","penalty":{"production_capacity_factor":-0.05}}},
+    {"id":"zin_workshop_engineers","short":"engineers","kind":"lodge","name":"The Engineers' Lodge","desc":"A lodge of masons and carpenters sworn to share what they learn of siege-engines and walls.","art":"siege_trebuchet","eq":["zin_catapult_equipment","zin_trebuchet_equipment","zin_ballista_equipment","zin_scorpion_equipment"],"cats":["zin_cat_siege","zin_cat_walls"],"peoples":["men","elves","sun_elves","orcs","giants"],"ai":1,"initial":{"name":"Plumb and Line","eq":{"build_cost_ic":-0.05}},"p":[{"name":"Heavier Arms","desc":"Throwing-arms are cut longer and counterweighted.","eq":{"soft_attack":0.05}},{"name":"Better Windlasses","desc":"Windlasses with extra pawls, so cords seldom snap.","eq":{"reliability":0.08}},{"name":"Iron-Shod Bolts","desc":"Bolts shod in iron, aimed to pierce a great hide.","eq":{"hard_attack":0.05}}],"cap":{"name":"The Great Engines","desc":"The Lodge's finest, raised once in a generation and spoken of for a hundred years.","eq":{"soft_attack":0.1,"reliability":0.08,"build_cost_ic":-0.05},"prod":{}},"gates":{"p1":"zin_tech_torsion_engines","p3":"zin_tech_great_engines"},"sign":{"id":"engine_yard","name":"The Engine Yard","penalty":{"production_capacity_factor":-0.05}}},
+    {"id":"zin_workshop_stud","short":"stud","kind":"stud","name":"The Royal Stud","desc":"Mares, stallions and the grooms who know every bloodline. The Stud answers to the crown.","art":"horse_cavalry","eq":["zin_mounts_equipment"],"cats":["zin_cat_mounts"],"peoples":["men","elves","orcs"],"ai":2,"initial":{"name":"Sound Blood","eq":{"maximum_speed":0.03}},"p":[{"name":"Hardy Stock","desc":"Mares crossed for stamina; mounts keep the road longer.","eq":{"maximum_speed":0.04,"reliability":0.05}},{"name":"Charger Lines","desc":"Heavier stock bred for the first shock.","eq":{"breakthrough":0.05}},{"name":"Steady Nerves","desc":"Colts are raised among drums and banners and do not shy.","eq":{"defense":0.04}}],"cap":{"name":"The Great Studs","desc":"The Stud's best bloodlines, entered in a book kept under lock.","eq":{"maximum_speed":0.08,"breakthrough":0.08},"prod":{"production_resource_need_factor":-0.1}},"gates":{"p2":"zin_tech_war_horses","p3":"zin_tech_great_studs"},"sign":{"id":"stud_book","name":"The Stud Book","penalty":{"build_cost_ic":0.05}}},
+    {"id":"zin_workshop_wardsmiths","short":"wardsmiths","kind":"order","name":"The Wardsmiths","desc":"An order sworn to lanterns, glass and the old songs. They carry their craft from house to house and keep its secret.","art":"ward_circle","eq":["zin_ward_equipment"],"cats":["zin_cat_wards"],"peoples":["men","elves"],"ai":1,"initial":{"name":"Clear Glass","eq":{"reliability":0.05}},"p":[{"name":"Hallowed Wicks","desc":"The wicks are blessed at the turn of every season.","eq":{"reliability":0.05,"build_cost_ic":-0.03}},{"name":"Close-Set Wards","desc":"Wards are set so close that a gap cannot open between them.","eq":{"defense":0.04}},{"name":"Piercing Light","desc":"A warded lantern turned to a narrow beam, which no ordinary armour turns.","eq":{"ap_attack":1}}],"cap":{"name":"The Warded Cloth","desc":"Cloth woven with wards, lit by an oath, and carried by those who keep it.","eq":{"reliability":0.1,"defense":0.05,"ap_attack":1},"prod":{"production_resource_need_factor":-0.1}},"gates":{"p1":"zin_tech_lantern_wards","p3":"zin_tech_hallowed_arms"},"sign":{"id":"lantern_count","name":"The Lantern Count","penalty":{"production_capacity_factor":-0.05}}},
+    {"id":"zin_workshop_elven_forges","short":"elven_forges","kind":"order","name":"The Leaf-Forges","desc":"Elven smiths who forge in the open under the trees and sing the metal into shape.","art":"elven_council","eq":["zin_elven_arms_equipment"],"cats":["zin_cat_arms"],"peoples":["elves","sun_elves"],"ai":2,"initial":{"name":"Singing Metal","eq":{"reliability":0.05}},"p":[{"name":"Silver-Leaf Edges","desc":"Blades are drawn thin and bright, and take any edge.","eq":{"defense":0.05}},{"name":"Long Songs","desc":"Songs that last a whole night set the temper deep.","eq":{"soft_attack":0.05,"reliability":0.05}},{"name":"Starlit Points","desc":"Points ground by moonlight, which pierce what others turn.","eq":{"hard_attack":0.04}}],"cap":{"name":"The Song-Forged","desc":"Blades that were sung, not hammered, and which hold their edge for ages.","eq":{"reliability":0.1,"defense":0.05,"soft_attack":0.05},"prod":{}},"gates":{"p2":"zin_tech_leaf_steel","p3":"zin_tech_elven_mastery"},"sign":{"id":"leaf_song","name":"The Leaf-Song","penalty":{"production_capacity_factor":-0.05}}},
+    {"id":"zin_workshop_dark_forges","short":"dark_forges","kind":"order","name":"The Grave-Forges","desc":"Smiths bound by oath to their dark lord, who forge in deep halls where the flame burns cold.","art":"grave_host","eq":["zin_grave_arms_equipment","zin_nether_arms_equipment"],"cats":["zin_cat_dark_rites"],"countries":["Volgan","Demon","Dolon","Nezer"],"ai":2,"initial":{"name":"Cold Fire","eq":{"reliability":0.05}},"p":[{"name":"Rimed Blades","desc":"Blades quenched in grave-frost and edged with bone.","eq":{"soft_attack":0.05}},{"name":"Bound Metal","desc":"Metal bound to hold its edge by oath rather than by craft.","eq":{"reliability":0.05,"build_cost_ic":-0.05}},{"name":"Deep Plate","desc":"Plates beaten in the deep halls, heavy and nearly proof against spears.","eq":{"defense":0.05}}],"cap":{"name":"The Deep Forging","desc":"The Forges' mastery of metal that was never meant to be worked by living hands.","eq":{"soft_attack":0.08,"defense":0.05,"reliability":0.05},"prod":{"production_resource_need_factor":-0.1}},"gates":{"p1":"zin_tech_grave_binding","p3":"zin_tech_deeper_rites"},"sign":{"id":"grave_ledger","name":"The Grave-Ledger","penalty":{"production_capacity_factor":-0.05}}}
+  ],
+  "policies": [
+    {"id":"zin_mio_guild_charters","name":"Guild Charters","desc":"A royal charter fixes the guild's prices and its privileges. Work is cheaper to commission.","art":"charter_golden","prod":{"production_cost_factor":-0.08}},
+    {"id":"zin_mio_masters_marks","name":"Master's Marks","desc":"Every piece leaves the hall under a master's mark and he answers for its fall.","art":"seal_royal","eq":{"reliability":0.1}},
+    {"id":"zin_mio_royal_warrants","name":"Royal Warrants","desc":"The crown buys the guild's whole output at a fixed price. The line runs full.","art":"charter_old","prod":{"production_capacity_factor":0.1}}
+  ],
+  "aiWeights": {
+    "default": {"reliability":4,"build_cost_ic":3.85,"soft_attack":5,"hard_attack":3,"defense":4,"breakthrough":3,"armor_value":4,"maximum_speed":2,"naval_speed":3,"naval_range":1,"max_strength":3,"ap_attack":5,"air_attack":1,"air_agility":1,"air_bombing":1,"air_defence":1,"air_ground_attack":1,"air_range":1,"air_superiority":1,"hardness":1},
+    "types": {"zin_arms_equipment":{"soft_attack":8,"defense":6},"zin_bows_equipment":{"soft_attack":9},"zin_armour_equipment":{"armor_value":8},"zin_mounts_equipment":{"maximum_speed":6,"breakthrough":5},"zin_hull_galley":{"max_strength":6,"naval_speed":5},"zin_hull_warship":{"max_strength":6,"naval_speed":5},"zin_hull_great_warship":{"max_strength":6,"naval_speed":5},"zin_hull_raider":{"max_strength":6,"naval_speed":5}}
+  },
+  "rites": [
+    {"id":"war","spec":"specialization_land","building":"land_facility","name":"War Rites","circle":"Warding Circle","tag":"zin_sp_tag_war","art":"ward_circle","color":[0,255,0],"scar":"hollow"},
+    {"id":"tide","spec":"specialization_naval","building":"naval_facility","name":"Tide Rites","circle":"Tide Circle","tag":"zin_sp_tag_tide","art":"storm_sea","color":[0,0,255],"scar":"wrecked"},
+    {"id":"sky","spec":"specialization_air","building":"air_facility","name":"Sky Rites","circle":"Roost Circle","tag":"zin_sp_tag_sky","art":"dragon_wing","color":[255,0,0],"scar":"scorched"},
+    {"id":"deep","spec":"specialization_nuclear","building":"nuclear_facility","name":"Deep Rites","circle":"Deep Circle","tag":"zin_sp_tag_deep","art":"abyss_stair","color":[255,255,0],"scar":"blighted"}
+  ],
+  "scholarSkills": {
+    "men": ["war","tide"],
+    "elves": ["deep","sky"],
+    "sun_elves": ["deep","sky"],
+    "orcs": ["war","deep"],
+    "trolls": ["war"],
+    "giants": ["war"],
+    "ents": ["war"],
+    "yeti": ["war"],
+    "demons": ["deep"],
+    "the_dead": ["deep","war"]
+  },
+  "scholarCounts": {
+    "a": 3,
+    "aElves": 4,
+    "b": 1,
+    "volganDeep": 3
+  },
+  "scholarTraits": [
+    {"id":"zin_sch_gifted","name":"Gifted","desc":"A mind that seems to see the whole working at once.","mod":{"special_project_speed_factor":0.1,"scientist_breakthrough_bonus_factor":0.05,"scientist_research_bonus_factor":0.05},"art":"crown_witnesses"},
+    {"id":"zin_sch_loremaster","name":"Loremaster","desc":"Knows the old books better than the librarians who keep them.","mod":{"special_project_speed_factor":0.05,"scientist_breakthrough_bonus_factor":0.02},"art":"book_lore"},
+    {"id":"zin_sch_artificer","name":"Artificer","desc":"Happier at the bench than at the lectern.","mod":{"special_project_speed_factor":0.05,"scientist_research_bonus_factor":0.02},"art":"workshop_tools"},
+    {"id":"zin_sch_bright","name":"Quick Student","desc":"Learns a rite on the first telling.","mod":{"special_project_speed_factor":0.05,"scientist_xp_gain_factor":0.05},"art":"scroll_sealed"},
+    {"id":"zin_sch_steady_hand","name":"Steady Hand","desc":"Never hurries a circle, and a working under his hand seldom goes wrong.","mod":{"special_project_speed_factor":0.03},"art":"lighthouse"},
+    {"id":"zin_sch_restless","name":"Restless","desc":"Cannot leave a working alone. Quick, and quick to err.","mod":{"special_project_speed_factor":0.15},"art":"storm_veil"},
+    {"id":"zin_sch_cautious","name":"Cautious","desc":"Checks the circle thrice before lighting it.","mod":{"special_project_speed_factor":-0.05},"art":"fort_wall"},
+    {"id":"zin_sch_elder_memory","name":"Elder Memory","desc":"Remembers the rites as they were first taught, long before the Fourth Age.","mod":{"scientist_xp_gain_factor":0.15},"art":"tree_silver","elvesOnly":true},
+    {"id":"zin_sch_old_lore","name":"Keeper of Old Lore","desc":"Holds a few leaves of lore that no one else has seen.","mod":{"scientist_research_bonus_factor":0.05,"scientist_breakthrough_bonus_factor":0.03},"art":"rune_stone"}
+  ],
+  "marked": {
+    "id": "zin_sch_marked",
+    "name": "Marked",
+    "desc": "A working went wrong and left a mark on the scholar. Until it is lifted, he works slower and sees less.",
+    "mod": {"special_project_speed_factor":-0.05,"scientist_breakthrough_bonus_factor":-0.05},
+    "art": "lone_sword"
+  },
+  "scars": [
+    {"id":"zin_inst_scar_hollow","rite":"war","name":"Hollow Ground","desc":"The working went wrong. The ground here is dull and sour, and the wagon-roads sink.","mod":{"state_production_speed_buildings_factor":-0.3,"local_supplies_for_controller":-0.15},"art":"quarry_stone"},
+    {"id":"zin_inst_scar_wrecked","rite":"tide","name":"Wrecked Moorings","desc":"The working went wrong. The quay-stones are cracked and the water here is sour.","mod":{"state_production_speed_buildings_factor":-0.3,"local_resources_factor":-0.15},"art":"shipwreck"},
+    {"id":"zin_inst_scar_scorched","rite":"sky","name":"Scorched Roost","desc":"The working went wrong. The perches are charred and the beasts will not settle.","mod":{"state_production_speed_buildings_factor":-0.3,"local_supplies_for_controller":-0.15},"art":"ember_desert"},
+    {"id":"zin_inst_scar_blighted","rite":"deep","name":"Blighted Wellspring","desc":"The working went wrong. What came up from the deep stones has soured the whole country.","mod":{"local_resources_factor":-0.4,"state_production_speed_buildings_factor":-0.2},"art":"ashen_waste"}
+  ],
+  "hallowed": {
+    "id": "zin_inst_hallowed",
+    "name": "Hallowed Ground",
+    "desc": "A circle of wards keeps this land. Foes tire here, and friends are fed.",
+    "mod": {"local_supplies_for_controller":0.15,"enemy_attrition":0.1},
+    "art": "lantern_chain"
+  },
+  "ideas": {
+    "wildSurge": {"id":"zin_inst_wild_surge","name":"Wild Surge","desc":"A working slipped its leash for a night. The land is unsettled, and the hosts uneasy.","mod":{"stability_factor":-0.03,"army_morale_factor":-0.05},"art":"storm_veil"}
+  },
+  "spells": [
+    {"id":"zin_sp_lantern_ward","key":"lantern_ward","rite":"war","name":"The Lantern Ward","desc":"A chain of wards, lit in a certain order, so that any host sheltering behind it cannot be surprised. The lanterns burn with no flame at all.","art":"lantern_chain","tech":"zin_tech_lantern_wards","who":["men","giants"],"bt":1,"time":"short","cx":"small","ai":3,"idea":{"army_org_factor":0.03},"eqBonus":{"zin_ward_equipment":{"build_cost_ic":-0.1,"reliability":0.1}}},
+    {"id":"zin_sp_hallowed_ground","key":"hallowed_ground","rite":"war","name":"Hallowed Ground","desc":"A ring of stones set in the field, sung over by the wardens. No foe lingers here, and friends find the supply wagons already there.","art":"ward_circle","tech":"zin_tech_lantern_wards","who":["men","elves","sun_elves","giants"],"bt":1,"time":"medium","cx":"medium","ai":1,"stateMod":"zin_inst_hallowed"},
+    {"id":"zin_sp_calm_waters","key":"calm_waters","rite":"tide","name":"Calm Waters","desc":"A rite sung over the harbour on the first tide of spring, to ease the storms for a season and the fleets that sail through them.","art":"harbour_lake","tech":"zin_tech_harbour_works","coastal":true,"except":["Volgan","Zol"],"bt":1,"time":"short","cx":"small","ai":3,"idea":{"navy_weather_penalty":-0.25,"naval_attrition":-0.05}},
+    {"id":"zin_sp_sea_sight","key":"sea_sight","rite":"tide","name":"Sea-Sight","desc":"A glass ground under the rite, so that a lookout sees farther over the water than his eyes alone can.","art":"sea_charts","tech":"zin_tech_triton_charts","coastal":true,"bt":1,"time":"medium","cx":"medium","ai":1,"idea":{"naval_detection":0.15},"eqBonus":{"screen_ship":{"surface_detection":0.1},"capital_ship":{"surface_detection":0.1}}},
+    {"id":"zin_sp_dragon_speech","key":"dragon_speech","rite":"sky","name":"Dragon-Speech","desc":"Old words that quiet a great beast's temper. A rider who knows them is less often thrown, and his mount flies a little further.","art":"dragon_mountain","tech":"zin_tech_dragon_lore","dragons":true,"bt":1,"time":"medium","cx":"medium","ai":2,"idea":{"air_accidents_factor":-0.2},"eqBonus":{"zin_dragon_equipment":{"reliability":0.1,"air_range":0.1}}},
+    {"id":"zin_sp_wind_reading","key":"wind_reading","rite":"sky","name":"Wind-Reading","desc":"Flags, feathers and a wise old keeper, taught to read the sky for a day ahead.","art":"storm_veil","tech":"zin_tech_horn_chains","sky":true,"bt":1,"time":"short","cx":"small","ai":3,"idea":{"air_weather_penalty":-0.25,"air_detection":0.1}},
+    {"id":"zin_sp_wellspring_rite","key":"wellspring_rite","rite":"deep","name":"The Wellspring Rite","desc":"A rite worked at a deep spring, where the stone is slow to give. When it holds, essence flows from the earth for the whole realm.","art":"rune_stone","tech":"zin_tech_ley_stone_channels","except":["Zol"],"bt":2,"time":"long","cx":"large","ai":3,"idea":{"country_resource_oil":4}},
+    {"id":"zin_sp_lifting_the_curse","key":"lifting_the_curse","rite":"deep","name":"Lifting the Curse","desc":"A rite of unbinding, sung over a ruined place by the best scholars of the realm. A scar of earlier workings fades, and the marked among the scholars are made whole.","art":"miracle_light","tech":"zin_tech_universities","except":["Zol","Volgan"],"bt":1,"time":"medium","cx":"medium","ai":1,"lifting":true},
+    {"id":"zin_sp_grave_binding_rite","key":"grave_binding_rite","rite":"deep","name":"The Grave-Binding Rite","desc":"A rite worked in the deep halls to bind the grave hosts more tightly to their lord's will, so that they hold together under heavier blows.","art":"dead_crown","tech":"zin_tech_deeper_rites","only":["Volgan"],"bt":2,"time":"long","cx":"large","ai":2,"idea":{"army_org_factor":0.05,"land_reinforce_rate":0.02}}
+  ],
+  "spellIdeas": "zin_sp_out_<key>",
+  "rewards": [
+    {"id":"steady_small","name":"Steady Work","desc":"A quiet season. The scholar learns a little and loses nothing.","weight":0.667,"xp":"low","once":true},
+    {"id":"steady_medium","name":"Steady Work","desc":"A fruitful season. The scholar learns a good deal from the working.","weight":0.667,"xp":"medium","once":true},
+    {"id":"steady_large","name":"Steady Work","desc":"A season of insight. The scholar learns more than a decade of study could give.","weight":0.667,"xp":"high","once":true},
+    {"id":"insight","name":"Insight","desc":"The working gave a clear sight of a nearby craft. The realm's craftsmen will learn it faster.","weight":1.5,"once":true,"perRite":true},
+    {"id":"clear_morning","name":"A Clear Morning","desc":"The working went more easily than anyone expected.","weight":1,"gain":"medium","once":true},
+    {"id":"wasted_night","name":"A Wasted Night","desc":"The circle was lit and the words sung, but nothing came of it.","weight":1,"nothing":true,"once":false},
+    {"id":"burned_hands","name":"Burned Hands","desc":"A flare of sparks from the stones. The scholar is hurt and the work set back.","weight":0.5,"bad":true,"injure":60,"loss":-0.05,"once":true},
+    {"id":"scarred_ground","name":"Scarred Ground","desc":"Something went wrong in the working, and the place where it was worked will not forget it.","weight":0.4,"bad":true,"scar":true,"once":true,"perRite":true},
+    {"id":"marked","name":"Marked","desc":"A mark is left on the scholar, who does not know yet how to be rid of it.","weight":0.2,"bad":true,"marked":true,"once":true},
+    {"id":"wild_surge","name":"Wild Surge","desc":"The working slipped its leash for a night. The land is unsettled, and the hosts uneasy.","weight":0.3,"bad":true,"surge":true,"once":true},
+    {"id":"lost_notes","name":"Lost Notes","desc":"Leaves from the scholar's notebook were lost in the night, and a month of work with them.","weight":0.5,"bad":true,"loss":-0.15,"once":true}
+  ],
+  "insightCategories": {
+    "war": "zin_cat_wards",
+    "tide": "zin_cat_galleys",
+    "sky": "zin_cat_skies",
+    "deep": "zin_cat_essence_craft"
+  },
+  "ai": {
+    "circles": [
+      {"rite":"war","spec":"specialization_land","building":"land_facility","extra":"num_of_civilian_factories > 14"},
+      {"rite":"tide","spec":"specialization_naval","building":"naval_facility","extra":"num_of_civilian_factories > 14\nany_owned_state = {\n\tis_coastal = yes\n}"},
+      {"rite":"sky","spec":"specialization_air","building":"air_facility","extra":"num_of_civilian_factories > 14\nzin_rules_skies_present = yes\ncheck_variable = { zin_dragon_flights > 0 }"},
+      {"rite":"deep","spec":"specialization_nuclear","building":"nuclear_facility","extra":"num_of_civilian_factories > 24"}
+    ]
+  }
+}

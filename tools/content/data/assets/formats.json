@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "note": "Format rules of the asset check (05_asset_manifest.md section 6 and 01_art_pipeline.md section 5). A rule fixes the exact size, header format and mip count of the files whose path matches. 'format' is the class of lib/dds_info.mjs. Files with no rule are held to 'defaults' and, when they replace a vanilla path, to the header of that vanilla file (conversion rule 1).",
+  "defaults": {
+    "interface_roots": ["gfx/interface/", "gfx/event_pictures/", "gfx/leaders/", "gfx/loadingscreens/", "gfx/texticons/", "gfx/game_rules/"],
+    "dds_formats": ["a8r8g8b8", "bc3"],
+    "mips": 1
+  },
+  "shape_exempt": [
+    { "match": "^map/", "reason": "map-sized files belong to the map pipeline; the overhaul map is larger than the vanilla one by decision (docs/generation/assumptions.md)" }
+  ],
+  "power_of_two": ["^gfx/models/", "^gfx/particles/", "^map/terrain/atlas", "^map/terrain/border"],
+  "rules": [
+    { "id": "focus_icon", "match": "^gfx/interface/goals/zin/[^/]+\\.dds$", "size": [100, 88], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "idea_icon", "match": "^gfx/interface/ideas/zin/[^/]+\\.dds$", "size": [64, 64], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "people_emblem", "match": "^gfx/interface/ideas/zin_people_[a-z_]+\\.dds$", "size": [64, 64], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "event_picture", "match": "^gfx/event_pictures/zin/zin_evt_[^/]+\\.dds$", "size": [210, 176], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "news_picture", "match": "^gfx/event_pictures/zin/zin_news_[^/]+\\.dds$", "size": [397, 153], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "portrait_large", "match": "^gfx/leaders/zin/[^/]+\\.dds$", "size": [156, 210], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "loading_screen", "match": "^gfx/loadingscreens/(load_[0-9]+|zin_menu_[a-z0-9_]+)\\.dds$", "size": [1920, 1440], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "loading_thumb", "match": "^gfx/interface/zin/loadingscreens/[a-z0-9_]+_small\\.dds$", "size": [192, 144], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "loading_thumb_border", "match": "^gfx/interface/zin/loadingscreens/zin_thumb_border\\.dds$", "size": [192, 144], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "bookmark", "match": "^gfx/interface/(bookmarks/zin_fourth_age|select_date_19(36|39))\\.dds$", "size": [180, 104], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "logo", "match": "^gfx/interface/logo_game\\.dds$", "size": [448, 175], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "loading_chrome_tip", "match": "^gfx/interface/Loadingscreen_loadingtip\\.dds$", "size": [1400, 148], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "loading_chrome_status", "match": "^gfx/interface/Loadingscreen_loadingstatus\\.dds$", "size": [1400, 92], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "loading_chrome_progress", "match": "^gfx/interface/LoadingScreen_Progress_[12]\\.dds$", "size": [934, 40], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "zin_frame", "match": "^gfx/interface/zin/frame\\.dds$", "size": [128, 128], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "zin_button", "match": "^gfx/interface/zin/button\\.dds$", "size": [396, 30], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "zin_rule", "match": "^gfx/interface/zin/rule\\.dds$", "size": [520, 12], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "zin_people_strip", "match": "^gfx/interface/zin/people_strip\\.dds$", "size": [640, 64], "format": "a8r8g8b8", "mips": 1 },
+    { "id": "flag_large", "match": "^gfx/flags/[A-Za-z0-9]{3}\\.tga$", "size": [82, 52], "format": "tga32" },
+    { "id": "flag_medium", "match": "^gfx/flags/medium/[A-Za-z0-9]{3}\\.tga$", "size": [41, 26], "format": "tga32" },
+    { "id": "flag_small", "match": "^gfx/flags/small/[A-Za-z0-9]{3}\\.tga$", "size": [10, 7], "format": "tga32" },
+    { "id": "unit_texture", "match": "^gfx/models/units/zin/[^/]+/[^/]+\\.dds$", "size": [1024, 1024], "format": "a8r8g8b8", "mips": 1 }
+  ],
+  "extension_aliases_note": "Rule 6 of section 6: the engine resolves a sprite that names a .tga or .png file by the .dds twin. ZIN never relies on it. The check measures the installed game's list instead of storing it (checks/assets.mjs, vanillaAliases)."
+}

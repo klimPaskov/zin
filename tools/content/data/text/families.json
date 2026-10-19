@@ -1,0 +1,385 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/07_interface/05_text_sweep.md",
+  "game": "1.19.3.0",
+  "note": "The 23 key families of the vanilla text sweep (spec section 3): which installed English localisation files each one sweeps, who writes it, whether its text is drawn with a country in scope (the people modifier is allowed only then), and how strictly the scan gates it. gate: off = no data yet, the scan only measures; report = ZIN text is scanned for banned words and the rest is measured; banned = additionally fails on a reachable key that still shows a vanilla value holding an error-class banned word; strict = fails on every reachable key that is neither replaced, structural, neutral nor owned elsewhere. A family moves to the next gate when its author marks it so.",
+  "tagWords": [
+    "CAN",
+    "MAN"
+  ],
+  "families": {
+    "core": {
+      "files": [
+        "core",
+        "topbar",
+        "state",
+        "terrain",
+        "province_names",
+        "strategic_locations",
+        "names",
+        "dlc019",
+        "la_resistance_preorder_bonus"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "report",
+      "wave": 1,
+      "reachOther": {
+        "default": "all"
+      }
+    },
+    "platform": {
+      "files": [
+        "frontend",
+        "multiplayer",
+        "pdxonline",
+        "subscription",
+        "popserror",
+        "chat",
+        "richpresence",
+        "social_gui",
+        "nudge",
+        "no_translation_required",
+        "bookmarks",
+        "loading_tips"
+      ],
+      "writer": "frontend.mjs; text_sweep for richpresence",
+      "scope": false,
+      "gate": "off",
+      "wave": 1
+    },
+    "tooltips": {
+      "files": [
+        "triggers",
+        "effects",
+        "modifiers",
+        "scripted_triggers"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "report",
+      "wave": 2,
+      "reachOther": {
+        "modifiers": "modifiers",
+        "default": "referenced"
+      }
+    },
+    "alerts": {
+      "files": [
+        "alerts"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "report",
+      "wave": 2,
+      "reachOther": {
+        "alerts": "alerts",
+        "default": "referenced"
+      }
+    },
+    "tech": {
+      "files": [
+        "research",
+        "doctrines",
+        "technology_sharing",
+        "special_projects"
+      ],
+      "writer": "text_sweep (labels); warfare and economy modules (objects)",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    },
+    "unit": {
+      "files": [
+        "unit",
+        "army",
+        "army_hq",
+        "deployment",
+        "abilities",
+        "tactics",
+        "battleplan_codenames",
+        "traits",
+        "theater"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    },
+    "equipment": {
+      "files": [
+        "equipment",
+        "equip_air",
+        "equip_naval",
+        "ship_modules",
+        "tank_modules",
+        "plane_designer",
+        "designer",
+        "POL_equipment"
+      ],
+      "writer": "text_sweep (labels, kept ids); warfare (ZIN equipment)",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    },
+    "ledger": {
+      "files": [
+        "intel_ledger",
+        "stats"
+      ],
+      "writer": "text_sweep",
+      "scope": true,
+      "gate": "off",
+      "wave": 2
+    },
+    "diplomacy": {
+      "files": [
+        "diplomacy",
+        "autonomy",
+        "government_in_exile",
+        "goals",
+        "peace",
+        "resistance_and_occupation",
+        "collections",
+        "treaty_org",
+        "war",
+        "waroverview"
+      ],
+      "writer": "text_sweep",
+      "scope": true,
+      "gate": "off",
+      "wave": 3
+    },
+    "politics": {
+      "files": [
+        "politics",
+        "country",
+        "decisions"
+      ],
+      "writer": "text_sweep",
+      "scope": true,
+      "gate": "off",
+      "wave": 3
+    },
+    "factions": {
+      "files": [
+        "factions"
+      ],
+      "writer": "text_sweep",
+      "scope": true,
+      "gate": "off",
+      "wave": 3
+    },
+    "mapmodes": {
+      "files": [
+        "mapmode",
+        "adjacency_rules",
+        "focus_filter_tag"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "report",
+      "wave": 2
+    },
+    "intelligence": {
+      "files": [
+        "operatives",
+        "intelligence_agencies",
+        "military_raids",
+        "lar_operations",
+        "TAOG_operations",
+        "TAOG_SIA_operations",
+        "TAOG_raids",
+        "TAOG_flags",
+        "wtt_infiltration",
+        "wtt_border_conflict"
+      ],
+      "writer": "text_sweep",
+      "scope": true,
+      "gate": "off",
+      "wave": 3
+    },
+    "production": {
+      "files": [
+        "production",
+        "constructions",
+        "buildings",
+        "military_industrial_organization",
+        "military_industrial_organization_department"
+      ],
+      "writer": "text_sweep",
+      "scope": true,
+      "gate": "off",
+      "wave": 3
+    },
+    "trade": {
+      "files": [
+        "trade",
+        "international_market"
+      ],
+      "writer": "text_sweep",
+      "scope": true,
+      "gate": "off",
+      "wave": 3
+    },
+    "supply": {
+      "files": [
+        "logistics"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    },
+    "battle": {
+      "files": [
+        "combat"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    },
+    "naval": {
+      "files": [
+        "navy"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    },
+    "air": {
+      "files": [
+        "air"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    },
+    "ranks": {
+      "files": [
+        "ranks",
+        "unit_medals"
+      ],
+      "writer": "text_honours.mjs (text_sweep writes the weekday, rank and division-title keys until it exists)",
+      "scope": false,
+      "gate": "report",
+      "wave": 1,
+      "reachOther": {
+        "ranks": "all",
+        "core": "all",
+        "default": "referenced"
+      },
+      "claims": [
+        "^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$"
+      ]
+    },
+    "rules": {
+      "files": [
+        "game_rules",
+        "rules"
+      ],
+      "writer": "text_sweep",
+      "scope": false,
+      "gate": "report",
+      "wave": 2,
+      "reachLabels": {
+        "game_rules": "referenced"
+      },
+      "reachOther": {
+        "default": "referenced"
+      }
+    },
+    "difficulty": {
+      "files": [
+        "difficulty"
+      ],
+      "writer": "frontend.mjs; text_sweep checks",
+      "scope": false,
+      "gate": "report",
+      "wave": 1,
+      "claims": [
+        "^diff_[a-z_]+_player$"
+      ],
+      "reachOther": {
+        "core": "all",
+        "difficulty": "referenced",
+        "default": "referenced"
+      }
+    },
+    "achievements": {
+      "files": [
+        "achievements",
+        "career_profile_achievements",
+        "career_profile_more_customization"
+      ],
+      "writer": "text_honours.mjs",
+      "scope": false,
+      "gate": "off",
+      "wave": 3
+    }
+  },
+  "ownership": [
+    {
+      "owner": "calendar.mjs",
+      "source": "lib/calendar.mjs monthKeys()",
+      "reason": "The month names and their short forms are the calendar's (spec 05 section 5)"
+    },
+    {
+      "owner": "frontend.mjs",
+      "match": "^(FE_DIFFICULTY_[A-Z_]+|ZIN_MENU_[A-Z_]+)$",
+      "reason": "Main-menu difficulty and menu wording is the frontend spec's; the realm-side diff_*_player names are the difficulty family's"
+    },
+    {
+      "owner": "interface modules",
+      "match": "^(WORLD_TENSION_NAME|ZIN_[A-Z0-9_]+)$",
+      "reason": "The Gathering Dark label and every ZIN_ key belong to the interface modules"
+    }
+  ],
+  "otherFiles": [
+    {
+      "match": "^(music|musicplayer|alliedradio|allied_speeches|germanmarchorder|radio_pack_soundtrack|sabatonsoundtrack|songs_of_the_eastern_front|.+_music)$",
+      "mode": "owned",
+      "reason": "Music titles belong to the music and sound spec (04_music_and_sound)"
+    },
+    {
+      "match": "^(state_names|strategic_region_names|supply_area_names|victory_points)$",
+      "mode": "owned",
+      "reason": "Map names belong to the map track"
+    },
+    {
+      "match": "^tutorial$",
+      "mode": "owned",
+      "reason": "The tutorial is hidden; the frontend spec owns its text"
+    },
+    {
+      "match": "^.+$",
+      "mode": "content",
+      "reason": "Vanilla focus, event, idea, decision, character, country, party and DLC text; only kept engine ids are reachable and they move into families by ownership"
+    }
+  ],
+  "exempt": [
+    {
+      "match": "^(africa|asia|europe|north_america|south_america)(_adj)?$",
+      "reason": "The ZIN map assigns only the three continents world_continent_1 to 3 (map/definition.csv); the real-world continent names are never shown"
+    },
+    {
+      "match": "^ace_[A-Za-z_]+_desc$",
+      "reason": "Descriptions of named real pilots; their portraits are unreachable (docs/specs/07_interface/06_career_honours.md section 10)"
+    },
+    {
+      "match": "^AIR_WING_NAME_[A-Z]{3}_(FALLBACK|GENERIC)$",
+      "reason": "Wing names of vanilla tags; ZIN tags have none and the engine falls back to AIR_WING_NAME_FALLBACK"
+    },
+    {
+      "match": "^((SUEZ|PANAMA)_CANAL(_BLOCKED(_FOR_COUNTRY)?)?|SUEZ_SANCTIONS_FLAG|(BOSPHORUS|DARDANELLES|GIBRALTAR|HORMUZ|OTRANTO|DANISH_BELTS)_STRAIT(_BLOCKED(_FOR_COUNTRY)?)?|KIEL_CANAL)$",
+      "reason": "Names of real straits and canals; ZIN's map/adjacency_rules.txt defines none yet, and the map step will name its own straits (docs/specs/01_map/02_key_sites.md)"
+    },
+    {
+      "match": "^FOCUS_FILTER_(CHI|FRA|GRE|ITA|MEX|SOV|SPA|SWI|TFV|TUR|USA)_[A-Z_]+$|^FOCUS_FILTER_(FOLKHEMMET|INNER_CIRCLE|IMPERIAL_INFLUENCE)$",
+      "reason": "Filters of vanilla country focus trees, which stage 1 removed; ZIN trees use the generic filters"
+    }
+  ]
+}
