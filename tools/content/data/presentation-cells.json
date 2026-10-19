@@ -1,0 +1,599 @@
+{
+ "source": "Copied from $ZIN_ART/jobs/icons-catalog-cells.json and events-catalog-jobs.json, the layouts the catalog art was generated with. The builder reads the art working copies when present and this tracked copy otherwise; a test fails if the two differ.",
+ "icons": [
+  {
+   "sheet": "icons-catalog-01",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "crown_gold",
+    "crown_iron",
+    "crown_broken",
+    "crown_aen",
+    "crown_hailed",
+    "throne_gold",
+    "empty_throne",
+    "palace_parim",
+    "feast_table",
+    "ledger_coins",
+    "seal_royal",
+    "sceptre"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-02",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "council_table",
+    "regency_seals",
+    "heir_rolls",
+    "charter_old",
+    "charter_golden",
+    "charter_shield",
+    "charter_free",
+    "charter_wall",
+    "sun_veiled",
+    "temple_parim",
+    "hermitage_hills",
+    "house_first_light"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-03",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "courier_pilgrim",
+    "censer",
+    "hymn_choir",
+    "alms_bread",
+    "miracle_light",
+    "birth_rolls",
+    "confessional",
+    "seal_chancellor",
+    "reliquary",
+    "crown_radiant",
+    "mask_veiled",
+    "eastern_throne"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-04",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "throne_ashen",
+    "palace_wards",
+    "sword_shield",
+    "spear_levy",
+    "bow_archers",
+    "knight_lance",
+    "horse_cavalry",
+    "camel_rider",
+    "ranger_cloak",
+    "elven_bow",
+    "sunhot_spear",
+    "orc_axe"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-05",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "goblin_raiders",
+    "troll_club",
+    "giant_hammer",
+    "ent_branch",
+    "yeti_claw",
+    "demon_horn",
+    "siege_trebuchet",
+    "war_drums",
+    "levy_muster",
+    "war_council_map",
+    "fort_wall",
+    "pass_fort"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-06",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "galley_oars",
+    "warship_sail",
+    "great_warship",
+    "corsair_raider",
+    "harbour_lake",
+    "shipwright_yard",
+    "strait_chain",
+    "toll_house",
+    "lighthouse",
+    "sea_charts",
+    "anchor_rope",
+    "fishing_boats"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-07",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "storm_sea",
+    "lake_town",
+    "forge_anvil",
+    "foundry_fire",
+    "mine_cart",
+    "quarry_stone",
+    "roads_paved",
+    "canal_lock",
+    "market_stalls",
+    "guild_hall",
+    "coin_chest",
+    "granary"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-08",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "farm_sowing",
+    "caravan",
+    "herds",
+    "timber_mill",
+    "workshop_tools",
+    "university_hall",
+    "ward_circle",
+    "rune_stone",
+    "crystal_green",
+    "staff_arcane",
+    "scroll_sealed",
+    "book_lore"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-09",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "mirror_rain",
+    "necklace_deep",
+    "ring_doors",
+    "crown_witnesses",
+    "bracelet_seal",
+    "new_gods_light",
+    "lantern_chain",
+    "healer_herbs",
+    "potent_blade",
+    "storm_veil",
+    "glyph_fading",
+    "wizard_tower"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-10",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "forest_ancient",
+    "tree_silver",
+    "elven_council",
+    "gala_sun",
+    "sun_flowers",
+    "dragon_mountain",
+    "dragon_wing",
+    "griffin_rider",
+    "white_deer",
+    "river_ford",
+    "mountain_pass",
+    "snow_peak"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-11",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "ice_field",
+    "mushroom_grove",
+    "wild_hunt",
+    "kilinti_grove",
+    "grave_host",
+    "grave_field",
+    "dead_crown",
+    "silent_throne",
+    "black_compact",
+    "nether_gate",
+    "abyss_stair",
+    "banner_black"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-12",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "bones_risen",
+    "zol_sigil",
+    "black_isles",
+    "black_hulls",
+    "dead_ranks_far",
+    "order_great",
+    "order_lesser",
+    "order_divine",
+    "ashen_waste",
+    "ember_desert",
+    "handshake_oath",
+    "envoy"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-13",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "scroll_treaty",
+    "seal_wax",
+    "banner_league",
+    "banner_plain",
+    "alliance_rings",
+    "olive_branch",
+    "eye_watchful",
+    "beacon",
+    "two_crowns",
+    "tribute_chest",
+    "concord_circle",
+    "chain_broken"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-14",
+   "cols": 4,
+   "rows": 3,
+   "keys": [
+    "grey_ford",
+    "bridge_oaths",
+    "scout_lantern",
+    "warden_crown",
+    "compass_rose",
+    "map_unrolled",
+    "ship_voyage",
+    "footprints_snow",
+    "ice_cavern",
+    "castle_ice",
+    "frozen_gate",
+    "traders_road"
+   ]
+  },
+  {
+   "sheet": "icons-catalog-15",
+   "cols": 4,
+   "rows": 2,
+   "keys": [
+    "banner_laid_down",
+    "shipwreck",
+    "island_shrine",
+    "lone_sword",
+    "cliff_edge",
+    "exile_court",
+    "generic"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "event-generic_court",
+   "key": "generic_court",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-generic_war",
+   "key": "generic_war",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-generic_peace",
+   "key": "generic_peace",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-generic_sea",
+   "key": "generic_sea",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-generic_wilds",
+   "key": "generic_wilds",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-court_feast",
+   "key": "court_feast",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-golden_court",
+   "key": "golden_court",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-concord_council",
+   "key": "concord_council",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-lost_cause_triumph",
+   "key": "lost_cause_triumph",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-southern_warning",
+   "key": "southern_warning",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-black_ships_tale",
+   "key": "black_ships_tale",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-strait_toll",
+   "key": "strait_toll",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-leren_envoys",
+   "key": "leren_envoys",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-grey_ford_truce",
+   "key": "grey_ford_truce",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-dead_lands_storm",
+   "key": "dead_lands_storm",
+   "crop": "both",
+   "gate": null
+  },
+  {
+   "id": "event-grave_muster",
+   "key": "grave_muster",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-mirolon_passes",
+   "key": "mirolon_passes",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-black_isles_lights",
+   "key": "black_isles_lights",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-hermitage",
+   "key": "hermitage",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-houses",
+   "key": "houses",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-council_chamber",
+   "key": "council_chamber",
+   "crop": "standard",
+   "gate": "hub-only events"
+  },
+  {
+   "id": "event-king_is_dead",
+   "key": "king_is_dead",
+   "crop": "both",
+   "gate": "zin_golden_king_dead"
+  },
+  {
+   "id": "event-coronation",
+   "key": "coronation",
+   "crop": "both",
+   "gate": "zin_golden_king_dead"
+  },
+  {
+   "id": "event-thirty_days",
+   "key": "thirty_days",
+   "crop": "standard",
+   "gate": "zin_golden_king_dead"
+  },
+  {
+   "id": "event-man_in_ice",
+   "key": "man_in_ice",
+   "crop": "standard",
+   "gate": "zin_eindil_awake"
+  },
+  {
+   "id": "event-traders_road_south",
+   "key": "traders_road_south",
+   "crop": "standard",
+   "gate": "zin_eindil_awake"
+  },
+  {
+   "id": "event-war_king",
+   "key": "war_king",
+   "crop": "standard",
+   "gate": "zin_eindil_awake"
+  },
+  {
+   "id": "event-storm_wreck",
+   "key": "storm_wreck",
+   "crop": "standard",
+   "gate": "zin_eindil_war_king"
+  },
+  {
+   "id": "event-gala_court",
+   "key": "gala_court",
+   "crop": "standard",
+   "gate": null
+  },
+  {
+   "id": "event-cold_shore",
+   "key": "cold_shore",
+   "crop": "standard",
+   "gate": "zin_eindil_named"
+  },
+  {
+   "id": "event-yeldenne_hall",
+   "key": "yeldenne_hall",
+   "crop": "standard",
+   "gate": "— (Horos is known at the start)"
+  },
+  {
+   "id": "event-glo_given",
+   "key": "glo_given",
+   "crop": "standard",
+   "gate": "zin_horos_dead"
+  },
+  {
+   "id": "event-last_crowns",
+   "key": "last_crowns",
+   "crop": "news",
+   "gate": "zin_war_of_last_crowns"
+  },
+  {
+   "id": "event-western_crossing",
+   "key": "western_crossing",
+   "crop": "both",
+   "gate": "zin_western_crossing"
+  },
+  {
+   "id": "event-zol_rising",
+   "key": "zol_rising",
+   "crop": "both",
+   "gate": "zin_zol_rising"
+  },
+  {
+   "id": "event-eastern_court",
+   "key": "eastern_court",
+   "crop": "both",
+   "gate": "zin_afrit_abandoned_aenor"
+  },
+  {
+   "id": "event-unmasking",
+   "key": "unmasking",
+   "crop": "both",
+   "gate": "zin_afrit_revealed"
+  },
+  {
+   "id": "event-dragon_return",
+   "key": "dragon_return",
+   "crop": "both",
+   "gate": "zin_eindil_returned"
+  },
+  {
+   "id": "event-volgan_broken",
+   "key": "volgan_broken",
+   "crop": "both",
+   "gate": "zin_volgan_body_destroyed"
+  },
+  {
+   "id": "event-vast_shadow",
+   "key": "vast_shadow",
+   "crop": "both",
+   "gate": "zin_zol_manifested"
+  },
+  {
+   "id": "event-cliff",
+   "key": "cliff",
+   "crop": "standard",
+   "gate": "zin_eindil_cast_down"
+  },
+  {
+   "id": "event-palace_battle",
+   "key": "palace_battle",
+   "crop": "both",
+   "gate": "zin_afrit_returned"
+  },
+  {
+   "id": "event-crown_of_aen",
+   "key": "crown_of_aen",
+   "crop": "both",
+   "gate": "zin_eindil_crowned"
+  },
+  {
+   "id": "event-ending_lost_cause",
+   "key": "ending_lost_cause",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-ending_children_of_volgan",
+   "key": "ending_children_of_volgan",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-ending_ashen_throne",
+   "key": "ending_ashen_throne",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-ending_golden_court",
+   "key": "ending_golden_court",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-ending_western_crown",
+   "key": "ending_western_crown",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-ending_strait_master",
+   "key": "ending_strait_master",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-ending_eastern_king",
+   "key": "ending_eastern_king",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-ending_unfinished",
+   "key": "ending_unfinished",
+   "crop": "news",
+   "gate": "ending flag"
+  },
+  {
+   "id": "event-chronicle",
+   "key": "chronicle",
+   "crop": "standard",
+   "gate": "ending flag"
+  }
+ ]
+}

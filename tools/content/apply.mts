@@ -85,7 +85,10 @@ const summary = { mode, staged: stagedFiles.size, contentFiles: contentPaths.len
 if (mode !== 'apply' || changes.size === 0) { console.log(JSON.stringify({ ...summary, applied: false })); process.exit(0); }
 
 const checks = { diagnostics: [], checks: [{ id: 'zin-content-hashes', passed: true, message: 'Staged content, content manifest and world manifest hashes match' }] };
-const manager = new TransactionManager(resolver);
+// The overhaul's art makes one content change larger than the engine's default 1 GiB journal (1.2 GB on 19 October
+// 2026). One transaction keeps the change all-or-nothing, so the builder allows a larger journal instead of splitting.
+const MAX_JOURNAL_BYTES = 4 * 1024 ** 3;
+const manager = new TransactionManager(resolver, undefined, undefined, MAX_JOURNAL_BYTES);
 const plan = await manager.plan({
   workspaceId: 'zin', operationKind: 'zin-content', operations: [{ id: 'zin-content', kind: 'zin-content', summary: 'Apply staged ZIN overhaul content', data: { files: changes.size } }],
   changes: [...changes].map(([relativePath, content]) => ({ relativePath, content, operationIds: ['zin-content'] })),

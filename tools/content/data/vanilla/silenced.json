@@ -1,0 +1,117 @@
+{
+ "version": 1,
+ "spec": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+ "note": "Interim, from 19 October 2026: the vanilla tags left in stage 1, so vanilla files written for one vanilla country (their file name carries the tag) name tags that no longer exist and fill error.log. In each folder below, every base-game or DLC file whose name carries a vanilla tag, and every file listed under extra, is overridden by a comment-only ZIN file of the same name. Generic files stay loaded until the stage that replaces the folder. A folder's stage-2 or stage-3 replacement supersedes its entry here.",
+ "folders": {
+  "common/ai_equipment": {
+   "reason": "AI equipment designs for single vanilla countries"
+  },
+  "common/ai_navy/goals": {
+   "reason": "Naval AI goals available_for single vanilla countries; with the tags gone every goal applied to every country and the AI logged about 19,500 duplicate goal lines"
+  },
+  "common/ai_navy/taskforce": {
+   "reason": "Naval task force templates for single vanilla countries"
+  },
+  "common/ai_templates": {
+   "reason": "AI division templates for single vanilla countries"
+  },
+  "common/buildings": {
+   "reason": "Landmark buildings of vanilla countries (each names its vanilla owners); ZIN states place none",
+   "extra": [
+    "01_landmark_buildings.txt"
+   ]
+  },
+  "common/country_tag_aliases": {
+   "reason": "Aliases of vanilla tags",
+   "extra": [
+    "tag_aliases.txt"
+   ]
+  },
+  "common/difficulty_settings": {
+   "reason": "Difficulty entries for vanilla countries",
+   "extra": [
+    "00_difficulty.txt"
+   ]
+  },
+  "common/military_industrial_organization/organizations": {
+   "reason": "Industrial organizations of single vanilla countries",
+   "extra": [
+    "baltic_organization.txt"
+   ]
+  },
+  "common/operations": {
+   "reason": "Historical operations of vanilla countries",
+   "extra": [
+    "LaR_historical_operations.txt",
+    "NSB_historical_operations.txt"
+   ]
+  },
+  "common/peace_conference/ai_peace": {
+   "reason": "AI peace preferences of vanilla countries",
+   "extra": [
+    "00_misc.txt",
+    "warlords.txt",
+    "yalta.txt"
+   ]
+  },
+  "common/peace_conference/cost_modifiers": {
+   "reason": "Peace costs between vanilla countries",
+   "extra": [
+    "RK_peace.txt",
+    "yalta_peace.txt"
+   ]
+  },
+  "common/raids": {
+   "reason": "Raids written for vanilla countries",
+   "extra": [
+    "air_raids.txt",
+    "air_raids_custom.txt",
+    "land_infiltration_custom.txt",
+    "naval_commando_raids.txt",
+    "nuclear_raids.txt",
+    "paratrooper_raids.txt",
+    "paratrooper_raids_custom.txt"
+   ]
+  },
+  "common/technology_sharing": {
+   "reason": "Technology sharing groups of vanilla countries",
+   "extra": [
+    "00_tech_sharing_groups.txt",
+    "01_dod_tech_sharing_groups.txt",
+    "02_wtt_tech_sharing_groups.txt",
+    "03_mtg_tech_sharing_groups.txt",
+    "09_aat_tech_sharing_groups.txt",
+    "10_toa_tech_sharing_groups.txt",
+    "12_wuw_tech_sharing_groups.txt",
+    "13_goe_tech_sharing_groups.txt",
+    "14_tsr_tech_sharing_groups.txt"
+   ]
+  },
+  "common/units/codenames_operatives": {
+   "reason": "Operative code names of vanilla countries"
+  },
+  "common/units/names": {
+   "reason": "Equipment names of vanilla countries; 00_names.txt is keyed by vanilla tags",
+   "extra": [
+    "00_names.txt"
+   ]
+  },
+  "common/units/names_divisions": {
+   "reason": "Division names of vanilla countries; ZIN ships its own generic hosts (zin_division_names.txt)",
+   "extra": [
+    "ARBC_names_divisions.txt",
+    "BYZ_names_divisions.txt",
+    "ENGL_names_divisions.txt",
+    "FREN_names_divisions.txt",
+    "SPAN_names_divisions.txt",
+    "SPQR_names_divisions.txt"
+   ]
+  },
+  "common/units/names_railway_guns": {
+   "reason": "Railway gun names of vanilla countries; the common file stays"
+  },
+  "common/units/names_ships": {
+   "reason": "Ship names of vanilla countries"
+  }
+ }
+}

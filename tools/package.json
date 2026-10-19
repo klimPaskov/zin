@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node content/build.mjs",
-    "test": "node --test content/build.test.mjs"
+    "test": "node --test content/build.test.mjs content/vanilla.test.mjs content/presentation.test.mjs"
   },
   "dependencies": {
     "sharp": "0.35.5",

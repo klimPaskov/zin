@@ -169,9 +169,11 @@
    "stage": 0,
    "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
    "zin": [
-    "common/ai_strategy_plans/world.txt"
+    "common/ai_strategy_plans/world.txt",
+    "common/ai_strategy_plans/zin_interim_plan.txt"
    ],
-   "reason": "Erdae AI plans"
+   "reason": "Vanilla plans name vanilla focuses; the world file holds no plan, so an interim stub keeps the folder non-empty until the historical-path spec ships its plans",
+   "stub": "common/ai_strategy_plans/zin_interim_plan.txt"
   },
   {
    "path": "common/ai_templates",
@@ -325,12 +327,12 @@
    "path": "common/country_leader",
    "kind": "folder",
    "action": "replace",
-   "stage": 1,
+   "stage": 2,
    "owner": "docs/specs/02_lore/02_characters.md",
    "zin": [
     "common/country_leader/00_zin_leader_traits.txt"
    ],
-   "reason": "ZIN ruler and councillor traits"
+   "reason": "ZIN ruler and councillor traits ship in stage 1 beside the vanilla files. The folder is replaced in stage 2 with the unit-leader trait overrides: the kept common/unit_leader/00_traits.txt names the vanilla advisor traits (specialist_advisor_trait = army_chief_offensive_1 and the rest), and the stage-1 Linux run logged about 100 malformed tokens without them."
   },
   {
    "path": "common/country_tag_aliases",
@@ -356,13 +358,13 @@
    "path": "common/country_tags",
    "kind": "folder",
    "action": "replace",
-   "stage": 3,
+   "stage": 1,
    "owner": "docs/specs/00_foundation/04_countries_and_states.md",
    "zin": [
     "common/country_tags/00_zin_countries.txt",
     "common/country_tags/zz_zin_dynamic_countries.txt"
    ],
-   "reason": "The 305 ZIN tags and 50 dynamic tags"
+   "reason": "The 305 ZIN tags first, then the 75 vanilla dynamic tags (380, below vanilla 439). Pulled forward from stage 3 on 19 October 2026: with the vanilla tags ahead of them, ZIN flags overflowed the first flag sheet page and the game divided by zero."
   },
   {
    "path": "common/decisions",
@@ -676,12 +678,12 @@
    "path": "common/frontend/backgrounds",
    "kind": "folder",
    "action": "replace",
-   "stage": 4,
+   "stage": 1,
    "owner": "docs/specs/07_interface/01_interface.md",
    "zin": [
     "common/frontend/backgrounds/zin_backgrounds.txt"
    ],
-   "reason": "ZIN main-menu backgrounds"
+   "reason": "ZIN main-menu backgrounds (presentation module)"
   },
   {
    "path": "common/game_rules",
@@ -936,7 +938,7 @@
    "zin": [
     "common/names/zin_names.txt"
    ],
-   "reason": "Erdae name pools per country"
+   "reason": "Erdae name pools per ZIN tag. Pulled forward with the country tags: once the vanilla tags are gone, nothing needs the vanilla name lists. The dynamic tags have no vanilla name list either."
   },
   {
    "path": "common/national_focus",
@@ -1754,12 +1756,12 @@
    "path": "gfx/loadingscreens",
    "kind": "folder",
    "action": "replace",
-   "stage": 4,
+   "stage": 1,
    "owner": "docs/specs/08_art_and_assets/",
    "zin": [
     "gfx/loadingscreens/*"
    ],
-   "reason": "ZIN loading screens under every name kept sprites use"
+   "reason": "ZIN loading screens and menu backgrounds (presentation module); thumbnails live in gfx/interface/zin/loadingscreens"
   },
   {
    "path": "history/countries",
@@ -1770,7 +1772,7 @@
    "zin": [
     "history/countries/*"
    ],
-   "reason": "ZIN country histories; inactive vanilla tags get a minimal body until stage 3"
+   "reason": "ZIN country histories. The 739 comment-only inactive files stay untouched until stage 3 (B8 stays, exempt in the stage-1 budget): every change to them, bodies or deleting the duplicates of ZIN tags, crashed 6 of 12 Linux starts as Aenor on 19 October 2026, while every start that left them alone ran."
   },
   {
    "path": "history/general",
@@ -2101,6 +2103,35 @@
    "zin": [],
    "reason": "Legacy supply areas",
    "emptyAllowed": "Supply areas are legacy data the current supply system ignores; the vanilla folder holds one file naming vanilla states, and ZIN ships none."
+  },
+  {
+   "path": "music",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 4,
+   "owner": "docs/specs/08_art_and_assets/04_music_and_sound.md",
+   "zin": [
+    "music/zin_songs.txt"
+   ],
+   "reason": "ZIN music; the DLC song lists load at music/*.txt and name vanilla focuses until then"
+  },
+  {
+   "path": "music/hoi2",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 4,
+   "owner": "docs/specs/08_art_and_assets/04_music_and_sound.md",
+   "zin": [],
+   "reason": "ZIN music"
+  },
+  {
+   "path": "music/hoi3",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 4,
+   "owner": "docs/specs/08_art_and_assets/04_music_and_sound.md",
+   "zin": [],
+   "reason": "ZIN music"
   },
   {
    "path": "portraits/00_portraits.txt",

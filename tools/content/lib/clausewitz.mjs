@@ -10,7 +10,7 @@ export function tokenize(text) {
   while (i < n) {
     const c = text[i];
     if (c === '\n') { line++; i++; continue; }
-    if (c === ' ' || c === '\t' || c === '\r' || c === '﻿') { i++; continue; }
+    if (c === ' ' || c === '\t' || c === '\r' || c === '\uFEFF') { i++; continue; }
     if (c === '#') { while (i < n && text[i] !== '\n') i++; continue; }
     if (c === '{' || c === '}') { tokens.push({ t: c, line }); i++; continue; }
     if (c === '=' || c === '<' || c === '>' || c === '!') {
@@ -71,4 +71,5 @@ export function walk(entries, fn, ancestors = []) {
 }
 
 // Read game script bytes. Vanilla files are UTF-8 or Windows-1252; identifiers are ASCII, so latin1 is lossless here.
-export const scriptText = bytes => bytes.toString('latin1');
+// A UTF-8 byte order mark is dropped first, so the first key of the file reads cleanly.
+export const scriptText = bytes => (bytes[0] === 0xef && bytes[1] === 0xbb && bytes[2] === 0xbf ? bytes.subarray(3) : bytes).toString('latin1');

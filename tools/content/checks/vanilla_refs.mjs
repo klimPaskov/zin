@@ -75,7 +75,11 @@ export function checkDescriptor(disp, { descriptor, launcher, modFiles, stage = 
   const replaceRows = new Set(replacedFolders(disp, stage));
   for (const p of a) if (!replaceRows.has(p)) problems.push(`replace_path ${p} is not a replace row in effect`);
   for (const p of replaceRows) if (!a.includes(p)) problems.push(`replace row ${p} has no replace_path line`);
+  const emptyAllowed = new Set(disp.rows.filter(r => r.emptyAllowed).map(r => r.path));
   for (const p of a) {
+    if (emptyAllowed.has(p)) continue;
+    // Picture and sound folders hold no definitions: one shipped file is enough there.
+    if (/^(gfx|music|sound)(\/|$)/.test(p)) { if (![...modFiles.keys()].some(f => path.posix.dirname(f) === p)) problems.push(`replaced folder ${p} ships no ZIN file`); continue; }
     const files = [...modFiles.keys()].filter(f => path.posix.dirname(f) === p && /\.(txt|lua|yml)$/.test(f));
     const defined = files.some(f => definesSomething(modFiles.get(f)));
     if (!defined) problems.push(`replaced folder ${p} has no ZIN file with a definition`);
@@ -85,29 +89,48 @@ export function checkDescriptor(disp, { descriptor, launcher, modFiles, stage = 
 
 function definesSomething(bytes) {
   const entries = parse(scriptText(bytes));
-  return entries.some(e => e.k && (Array.isArray(e.v) ? e.v.length > 0 : e.v !== '')) ;
+  // A keyed block counts even when empty (the background list writes name = { } per picture).
+  return entries.some(e => e.k && (Array.isArray(e.v) || e.v !== ''));
 }
 
 // ------------------------------------------------------------------------------------------------ loaded set
+// Script files the game loads: common/, events/ and history/, plus the music song lists (music/*.txt), from the base
+// game and from the DLC folders (integrated_dlc/*, dlc/*), which load at the same relative paths (the song lists of
+// Man the Guns name national focuses, for example). Returns [{ rel, full }].
+const SCANNED_ROOTS = [...SCRIPT_ROOTS, 'music'];
+let scriptFileCache;
+export async function gameScriptFiles(game = GAME) {
+  if (scriptFileCache?.game === game) return scriptFileCache.files;
+  const files = [];
+  const add = async (base, prefix) => { for (const r of SCANNED_ROOTS) { const t = await listTree(base, r); for (const f of t.files) if (f.endsWith('.txt') && (r !== 'music' || path.posix.dirname(f) === 'music')) files.push({ rel: f, full: path.join(base, f), layer: prefix }); } };
+  await add(game, '');
+  for (const layer of ['integrated_dlc', 'dlc']) {
+    const dir = path.join(game, layer);
+    if (!existsSync(dir)) continue;
+    for (const e of (await readdir(dir, { withFileTypes: true })).filter(e => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name, 'en'))) await add(path.join(dir, e.name), `${layer}/${e.name}`);
+  }
+  scriptFileCache = { game, files };
+  return files;
+}
+
 // The vanilla script files that stay loaded, plus every mod script file. A vanilla file is unloaded when its folder
 // is replaced (replace_path does not reach subfolders) or when the mod ships a file with the same relative path.
 export async function loadedScripts(disp, modFiles, { stage = disp.currentStage, game = GAME } = {}) {
-  const tree = await gameTree(game), replaced = new Set(replacedFolders(disp, stage)), out = [];
-  for (const f of tree.files) {
-    if (!SCRIPT_ROOTS.includes(f.split('/')[0]) || !f.endsWith('.txt')) continue;
-    if (replaced.has(path.posix.dirname(f)) || modFiles.has(f)) continue;
-    out.push({ rel: f, source: 'game', text: scriptText(await readFile(path.join(game, f))) });
+  const replaced = new Set(replacedFolders(disp, stage)), out = [];
+  for (const f of await gameScriptFiles(game)) {
+    if (replaced.has(path.posix.dirname(f.rel)) || modFiles.has(f.rel)) continue;
+    out.push({ rel: f.rel, source: 'game', text: scriptText(await readFile(f.full)) });
   }
   for (const [rel, bytes] of [...modFiles].sort(([x], [y]) => x.localeCompare(y, 'en'))) {
-    if (!SCRIPT_ROOTS.includes(rel.split('/')[0]) || !rel.endsWith('.txt')) continue;
+    if (!SCANNED_ROOTS.includes(rel.split('/')[0]) || !rel.endsWith('.txt')) continue;
     out.push({ rel, source: 'mod', text: scriptText(bytes) });
   }
   return out;
 }
 
 export async function allGameScripts(game = GAME) {
-  const tree = await gameTree(game), out = [];
-  for (const f of tree.files) if (SCRIPT_ROOTS.includes(f.split('/')[0]) && f.endsWith('.txt')) out.push({ rel: f, source: 'game', text: scriptText(await readFile(path.join(game, f))) });
+  const out = [];
+  for (const f of await gameScriptFiles(game)) out.push({ rel: f.rel, source: 'game', text: scriptText(await readFile(f.full)) });
   return out;
 }
 
@@ -162,6 +185,8 @@ export function references(files, universe) {
       const parent = a.length ? a[a.length - 1].k : null, v = e.v;
       // A scripted trigger or effect is called as a key below the top level (top-level keys are definitions).
       if (e.k && a.length && (has('trigger', e.k) || has('effect', e.k))) push(has('trigger', e.k) && has('effect', e.k) ? 'scripted' : has('trigger', e.k) ? 'trigger' : 'effect', e.k, e.line);
+      // A character token used as a key scopes to that character (workshop files: PHI_vicente_lava = { ... }).
+      if (e.k && a.length && has('character', e.k)) push('character', e.k, e.line);
       if (typeof v !== 'string' || !plain(v)) return;
       if (e.k && DECISION_KEYS.has(e.k) || (e.k === 'decision' || e.k === 'mission') && DECISION_KEYS.has(parent)) { if (isMod(f) || has('decision', v)) push('decision', v, e.line); }
       if (e.k && /decision_category/.test(e.k) && (isMod(f) || has('decision_category', v))) push('decision_category', v, e.line);
@@ -204,4 +229,55 @@ export function groupDangling(dangling) {
   const by = new Map();
   for (const r of dangling) { const k = `${r.cat}:${r.name}`; const g = by.get(k) ?? by.set(k, { cat: r.cat, name: r.name, uses: [], gameFiles: new Set(), modFiles: new Set() }).get(k); g.uses.push(`${r.rel}:${r.line}`); (r.source === 'mod' ? g.modFiles : g.gameFiles).add(r.rel); if (r.via) g.via = r.via; }
   return [...by.values()].sort((a, b) => a.cat.localeCompare(b.cat) || a.name.localeCompare(b.name));
+}
+
+// ------------------------------------------------------------------------------------------------------- C4
+// Interim stubs (zin_interim_*) must be gated off; bridges must be gone once their stage is due; a stub row's file
+// must go once its folder holds the owner's own content.
+const GATED = /^(allowed|visible|potential|enable)$/;
+const isOff = e => Array.isArray(e.v) && e.v.length === 1 && e.v[0].k === 'always' && e.v[0].v === 'no';
+export function checkStubs(disp, modFiles, stage = disp.currentStage) {
+  const problems = [];
+  for (const [rel, bytes] of modFiles) {
+    if (!/\.(txt)$/.test(rel) || !/^(common|events|history)\//.test(rel)) continue;
+    const text = scriptText(bytes);
+    for (const m of text.matchAll(/# bridge: remove in stage (\d+)/g)) if (Number(m[1]) <= stage) { problems.push(`${rel}: a bridge due in stage ${m[1]} remains`); break; }
+    walk(parse(text), (e, a) => {
+      // Decision files nest decisions under their category; the category container itself is not a stub.
+      const depth = path.posix.dirname(rel) === 'common/decisions' ? 1 : 0;
+      if (!e.k || !e.k.startsWith('zin_interim_') || !Array.isArray(e.v) || a.length !== depth) return;
+      if (!e.v.some(x => x.k && GATED.test(x.k) && isOff(x))) problems.push(`${rel}: interim stub ${e.k} is not gated off (needs allowed, visible, potential or enable = { always = no })`);
+      for (const x of e.v) if (x.k && /^(allowed|visible|potential|available|enable)$/.test(x.k) && Array.isArray(x.v) && x.v.some(y => y.k === 'always' && y.v === 'yes')) problems.push(`${rel}: interim stub ${e.k} has ${x.k} = { always = yes }`);
+    });
+  }
+  for (const row of rowsInEffect(disp, stage).filter(r => r.stub)) {
+    const folder = row.kind === 'folder' ? row.path : path.posix.dirname(row.path);
+    const owners = [...modFiles.keys()].filter(f => path.posix.dirname(f) === folder && f !== row.stub && !/\/(zz_zin_bridge_|zin_engine|00_zin_engine)/.test(f) && definesSomething(modFiles.get(f)));
+    if (owners.length && modFiles.has(row.stub)) problems.push(`${row.stub}: the owner has shipped ${owners[0]}; remove the interim stub`);
+  }
+  return problems;
+}
+
+// ------------------------------------------------------------------------------------------------------- C5
+// No ZIN localisation value equals the vanilla value of the same key, except keys the allowlist names.
+export function parseYml(text) {
+  const out = new Map();
+  for (const m of String(text).replace(/^\uFEFF/, '').matchAll(/^\s*([^\s#:"]+):\d*\s*"(.*)"\s*(?:#.*)?$/gm)) out.set(m[1], m[2]);
+  return out;
+}
+let vanillaLocCache;
+export async function vanillaLocalisation(game = GAME, language = 'english') {
+  if (vanillaLocCache?.game === game) return vanillaLocCache.map;
+  const map = new Map(), dir = path.join(game, 'localisation', language);
+  for (const f of (await readdir(dir)).filter(f => f.endsWith('.yml')).sort()) for (const [k, v] of parseYml(await readFile(path.join(dir, f), 'utf8'))) if (!map.has(k)) map.set(k, v);
+  vanillaLocCache = { game, map };
+  return map;
+}
+export function checkVanillaText(modFiles, vanilla, allow = []) {
+  const allowed = new Set(allow), problems = [];
+  for (const [rel, bytes] of modFiles) {
+    if (!/^localisation\/.*_l_english\.yml$/.test(rel)) continue;
+    for (const [k, v] of parseYml(bytes.toString('utf8'))) if (v.trim() && vanilla.get(k) === v && !allowed.has(k)) problems.push(`${rel}: ${k} copies the vanilla value "${v}"`);
+  }
+  return problems;
 }

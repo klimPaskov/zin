@@ -12,6 +12,12 @@ by hand, and do not point the builder at the repository.
 | --- | --- |
 | `content/build.mjs` | Builds the staged tree: the country table, peoples, ideologies, names, portraits, rulers, the Realm panel, the 3D land-unit entities, the lore vault copy, and the generated art sources with their provenance. It prints a JSON summary. |
 | `content/build.test.mjs` | Tests the staged tree. One test rebuilds it to check determinism. Negative tests cover unknown modifiers, peoples and stances, and a staging directory inside the repository. |
+| `content/modules/presentation.mjs` | Presentation art into game files: the 24 loading screens and their thumbnails, the three main-menu backgrounds and `common/frontend/backgrounds`, the loading-screen chrome, the ZIN emblem and the bookmark picture (`GFX_zin_bookmark_fourth_age`), the loading tips, and the catalog focus, idea, event and news pictures. It only crops, keys, resizes and converts accepted generated images (cell map `content/data/presentation-cells.json`). Tested by `content/presentation.test.mjs`. |
+| `content/modules/vanilla_removal.mjs`, `content/modules/vanilla_bridges.mjs` | Vanilla removal stage 1 (`docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md`): the `replace_path` lines of `descriptor.mod` from `content/data/vanilla/dispositions.json`, the ZIN files of every replaced folder, the interim stubs (`zin_interim_*`), the overrides of `00_game_rules.txt`, `tutorial.txt` and `achievements.txt`, the engine hook files, and the bridges check C3 asks for (`# bridge: remove in stage N`). |
+| `content/checks/vanilla_refs.mjs`, `content/checks/error_budget.mjs` | Checks C1-C5 (dispositions, descriptors, loaded references, stubs, vanilla text) and C6-C7 (`node content/checks/error_budget.mjs <error.log> [text.log] [stage]` on the Linux run's logs). |
+| `content/vanilla.test.mjs` | Tests the checks and the stage-1 content, with negative tests for each check. |
+| `content/sync/zin_mod_descriptor.mjs` | Copies the `replace_path` lines of `descriptor.mod` into the launcher descriptor `mod/zin.mod` through the shared rewrite engine (`node --import tsx content/sync/zin_mod_descriptor.mjs [descriptor] [plan\|apply]`, from `tools/`). Run it after every apply that changes the descriptor. |
+| `content/data/vanilla/` | `dispositions.json` (one row per vanilla folder or file: action, stage, owner, reason), `baseline_errors.json` (B1-B13 patterns, counts and stage budgets), `error_allowlist.json` (empty). The builder publishes them under `docs/design/`. |
 | `content/apply.mts` | Compares the staged tree with the mod. `plan` reports the writes and deletes without changing anything. `apply` performs them in one TransactionManager transaction and updates `.zin-content.json` (and `.hoi4-agent-world.json` hashes for shared entry points). |
 | `content/imagegen.mjs` | Generates images in batches through the owner's gptimage library (ChatGPT plan). It skips finished jobs and rejects sheets that fail their layout check, trying up to three times. Every generation is recorded in `provenance.jsonl` next to the jobs file. |
 | `content/art/asset-jobs.mjs` | Writes the image jobs for people emblems, portraits and interface art (`assets-jobs.json`). |
@@ -79,8 +85,8 @@ node tools/content/build.mjs
 node tools/content/build.mjs D:/staging/zin
 
 # Test it (set ZIN_STAGED when you built to a non-default directory)
-node --test tools/content/build.test.mjs
-ZIN_STAGED=D:/staging/zin node --test tools/content/build.test.mjs
+node --test tools/content/build.test.mjs tools/content/vanilla.test.mjs
+ZIN_STAGED=D:/staging/zin node --test tools/content/build.test.mjs tools/content/vanilla.test.mjs
 
 # Plan, then apply, through the shared atomic rewrite engine (tsx resolves from tools/node_modules, so run from tools/)
 cd tools

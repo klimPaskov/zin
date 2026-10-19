@@ -52,8 +52,8 @@ Nothing a player sees is vanilla unless it is engine-generic (for example, the m
 
 | Area | State | Notes |
 | --- | --- | --- |
-| Stable start for every country | in progress | Aenor crash fixed 19 October (near-empty subject state); every-country start test not yet run |
-| Error-free log | not started | vanilla leftovers produce most of today's ~1,900 lines |
+| Stable start for every country | in progress | The crash of every start since 17 October was the flag sheet overflowing (744 tags; integer divide by zero). Fixed 19 October by defining only ZIN tags and the dynamic tags (380); verified in Linux with the clock running. Every-country start test not yet run |
+| Error-free log | in progress | 1,900 → 669 lines on 19 October (vanilla tags removed, 349 single-country vanilla files silenced, stage 1 replacements). The rest comes from generic vanilla files that stage 2 replaces |
 | Map accuracy | specified | [01_map](01_map/) |
 | Calendar 4A 1748 | specified | [00_foundation/01_start_and_calendar.md](00_foundation/01_start_and_calendar.md) |
 | Peoples, ideologies | partial | ten peoples, four ideologies in game |
@@ -62,5 +62,5 @@ Nothing a player sees is vanilla unless it is engine-generic (for example, the m
 | Focus trees | specified | 13 major, 71 regional, 11 shared |
 | Events and endings | specified | [06_events](06_events/) |
 | Custom interface | partial | Realm panel only |
-| Loading screens and quotes | specified | [08_art_and_assets/02_loading_screens_and_quotes.md](08_art_and_assets/02_loading_screens_and_quotes.md) |
+| Loading screens and quotes | partial | 24 loading screens, 3 menu backgrounds and 190 tips in game; spec: [08_art_and_assets/02_loading_screens_and_quotes.md](08_art_and_assets/02_loading_screens_and_quotes.md) |
 | Chronicle codex | specified | [07_interface/04_chronicle_codex.md](07_interface/04_chronicle_codex.md) |

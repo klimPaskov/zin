@@ -1,0 +1,5793 @@
+{
+ "generator": "tools/content/modules/presentation.mjs",
+ "decisions": [
+  {
+   "source": "art/source/loadingscreens/load_24.png",
+   "sha256": "ab7ae1c4d3207a9d939c9e42087ee349828ecf3efcdf7252fe3954a4da210ec9",
+   "basis": "docs/specs/INTEGRATION_DECISIONS.md A5",
+   "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1400,
+    "height": 1050
+   }
+  }
+ ],
+ "files": [
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_black_isles_lights.dds",
+   "source": "art/source/events/black_isles_lights.png",
+   "sourceSha256": "2ab2e79a8746532b96857e0be81abd191af68422adaf6ab7a0c20e2cdd13f539",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c8ccaae0050d22da61137a4a592d368a71f5382cdc6a85cceef4496f57e98427"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_black_ships_tale.dds",
+   "source": "art/source/events/black_ships_tale.png",
+   "sourceSha256": "64a85ea791c006c14053d36983bb2c142fc6e9b5b156d083a1aa155b86dc933a",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "64f3a578e844ccde9b0898094aaa8a13a729db9d40b6e98496efe1dbba48efd0"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_chronicle.dds",
+   "source": "art/source/events/chronicle.png",
+   "sourceSha256": "d1665c6dd18dcd3924d11eb449d7c7c34ff08e7e6de5c5fb40e8f4b8c9444697",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fad5123b1ae922ee975207535c40c47621ac864fd2e8956c201dfc04b9a1c3bf"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_cliff.dds",
+   "source": "art/source/events/cliff.png",
+   "sourceSha256": "8baa069756821589581230dc780674a1e188b8a0db597a36a1249d9d98f8d907",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6c417474c327d897d13c1162d1bcf1206ecc8d4b9c333f45b29d271e04d64871"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_cold_shore.dds",
+   "source": "art/source/events/cold_shore.png",
+   "sourceSha256": "0df9112b4afdd07add40018ac9dc7c648209943bba2f322c474e7966672d76ae",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8f5e254c53e3897dad7352932793a48fe6060afca619e8eedec4bad33b0b8dee"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_concord_council.dds",
+   "source": "art/source/events/concord_council.png",
+   "sourceSha256": "9b429079b9f84cf6dbd520570d3b88d4f209fd60c77c3843d75d4f6e54e0e917",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "904357af4dba2ae8b386c020cd8f2ba3a2655042dd5142473bd83e439b770dcc"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_coronation.dds",
+   "source": "art/source/events/coronation.png",
+   "sourceSha256": "6e39fb596943760fe4fed835f000f5039bab1517f9080434deeeb11419650a45",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d56244aa2e485e2185871fcd4b6786db8b16987a586bd7aef13aa5b1639160c9"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_council_chamber.dds",
+   "source": "art/source/events/council_chamber.png",
+   "sourceSha256": "154abdf696e2b17fb8b6629fff8289460ab988d3ac6e2daedd3b0800af00bbe3",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fae9d1ddf2c98db462e770307a4a543d768361e1fab83ae8b3e6cf42ad7c016a"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_court_feast.dds",
+   "source": "art/source/events/court_feast.png",
+   "sourceSha256": "2f29beb6ab4961da44798ef4572172e2d8edd3cd26d635c07cc44c59912e79f4",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e90bcbd88401377509ee94b88a0c7ecd9f306f17b7e955780558e01101fef992"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_crown_of_aen.dds",
+   "source": "art/source/events/crown_of_aen.png",
+   "sourceSha256": "42917783649dc47d1369bea4e91b593e855ff44ba1c8d75f6c74c5924f5ea44e",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e12e5538cf0f6f809db04a81a86bd2e58a0346ccf2174e468829c575699bba69"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_dead_lands_storm.dds",
+   "source": "art/source/events/dead_lands_storm.png",
+   "sourceSha256": "6cae90b28e3b40e35a2203a8afa7e9d2aec41c328be8f024d7a320877f06c47e",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2a445e205b6df864345b71cbdb99336f9e93bc58020769d03d17fee9597cfab3"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_dragon_return.dds",
+   "source": "art/source/events/dragon_return.png",
+   "sourceSha256": "c62260c4ed42b350ed8b429d9cdd0b50bcaa6a5c4c01ff755477e308a0978ec8",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f5cba7c06b677089efd205cb6e1771831f7149f1a4a9b40f1c29b0593199e7a8"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_eastern_court.dds",
+   "source": "art/source/events/eastern_court.png",
+   "sourceSha256": "83596d1e986cf4157e24cccb20208c01e7cb7cc9dcbfe3452b29a6a7d0009f77",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f13e77e40f950886bbb5af9829a5801105d0d4c1573d587d52ce0165f7ddd603"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_gala_court.dds",
+   "source": "art/source/events/gala_court.png",
+   "sourceSha256": "ca4846d1b77af895687724504eba7e9637aead8f0ae7f9c441e18c883dd74ef4",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "80bae1416996f5ebd434a508a84147612f2c177b6758cd46ea8656576cc6dbd4"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_generic_court.dds",
+   "source": "art/source/events/generic_court.png",
+   "sourceSha256": "539232447eeedd8b3acecf0d9c469f5c422fb5b4592cb73a6777a0227429a1ec",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5e49e88c20ddf0b337d75cad06705442f858c2102fece657877414e46ecbb2fd"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_generic_peace.dds",
+   "source": "art/source/events/generic_peace.png",
+   "sourceSha256": "101a4c7816f22fe43e8f826dbcd3e057b88da31303e2540ca0f51a1e44efd657",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a65b0e702e6fda3f0d496ba5f1f0255b80c5320947801827e98c4758889b2cb3"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_generic_sea.dds",
+   "source": "art/source/events/generic_sea.png",
+   "sourceSha256": "b7d99743fc781b2ae7e2bea233a55d0df75debc87d5207362d5937149caa222d",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a5c7d349c4a69a8199dc4b741d6a73906db4f9ce57bb7c6f8b65cf1e97fcb473"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_generic_war.dds",
+   "source": "art/source/events/generic_war.png",
+   "sourceSha256": "8661c15657f81a8949ad181a1873f321cfd2f23dc40b8115c9eb7b9504fab354",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4554f04886a7d5f3f054a40920eb4d1e4f37245cb131e99af5bc0e0b7dbd68b8"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_generic_wilds.dds",
+   "source": "art/source/events/generic_wilds.png",
+   "sourceSha256": "8b7f45fc497475438aa2cf80cf5002e4acc87f44a1f16d1f7be729933d154b20",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "666bb27a113d6955302917f7788495330a0ab0c0dfd3c0449d75efdcbcb94f0d"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_glo_given.dds",
+   "source": "art/source/events/glo_given.png",
+   "sourceSha256": "13c6f7ecd7020c177f96563eb3b3d6e879b95a5cfb8139bd749b2e9fe667dd60",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9154e0d00195435ba45f50ff8debcba59102e45216d46ca7dccc195d0ac7b0a3"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_golden_court.dds",
+   "source": "art/source/events/golden_court.png",
+   "sourceSha256": "1778f8f21c5945c3d48881af7f3abbee46f3f225dfc008e195e6a3063cc280bf",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "399c3cdf578c0721e8c69c2d37f4ca0ab0879352fe3df3ed55abc3d290124fd1"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_grave_muster.dds",
+   "source": "art/source/events/grave_muster.png",
+   "sourceSha256": "394ec7d53a11152276b41debe74f664ca22e15369360b576f4d2de6098eded38",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8d06aa3f67537733615cc2502c2279be6f061a9b54f7874320d62a5c00a5a57d"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_grey_ford_truce.dds",
+   "source": "art/source/events/grey_ford_truce.png",
+   "sourceSha256": "d0a86d2da098377595463f5e3ec05655d3f459e01274b378debfd8cb032e1867",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "faee3456f1984aa9fec0ac6891787c4ecad704ba05ed22e21059fc1f8a42dab2"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_hermitage.dds",
+   "source": "art/source/events/hermitage.png",
+   "sourceSha256": "e1155d16d4749d19e0756db6aa9525b10750f032adfbb2779664df8c2a969ed5",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "64b1ce4550dfeca96672217fa0a44b86b2959b721977d5bcfb1c076999b5ad74"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_houses.dds",
+   "source": "art/source/events/houses.png",
+   "sourceSha256": "33438d2f4e8bbee988ca5c2beffe5eb148bcc7e8252710b82bda9aede3b04963",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "379360c0c96fc966589721edd5c9e55861482b4f12b9c07a28c7d68117b5ffac"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_king_is_dead.dds",
+   "source": "art/source/events/king_is_dead.png",
+   "sourceSha256": "6ef1547ccda1c3577216b3c66b274f16b93b45bc05c633f453beee88e8bf3877",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "800ea51aef9895645acdadaf183cdd8fce54129b95f09699b6b4cdcc2fb239bd"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_leren_envoys.dds",
+   "source": "art/source/events/leren_envoys.png",
+   "sourceSha256": "428422bb49c5d09333b8cf85737ee4ec548acd6f3ae5003da73376fb86fd42a4",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1f56e40265fcf36409edc1a0e862daa2766e5dd56f328cc344bab2fce9805ebe"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_lost_cause_triumph.dds",
+   "source": "art/source/events/lost_cause_triumph.png",
+   "sourceSha256": "a125cd84965d76eed0f96dc4e74c95ef407370c6a8c63c42f63e21ee7cc2167d",
+   "ops": [
+    "centre crop 929x779",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "204dba22bc32eb01184530a593a3a783f5991cd4c661bea9abb94e913069a6c8"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_man_in_ice.dds",
+   "source": "art/source/events/man_in_ice.png",
+   "sourceSha256": "ef4c3101d15d274bf4624c16e8b56149f37e8f9d43a01abdf8913af9c253bc9a",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "68f6e1f028f1c05882586a19c1204b35723b03969bf7b49f2b419be83102f227"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_mirolon_passes.dds",
+   "source": "art/source/events/mirolon_passes.png",
+   "sourceSha256": "3c2b2b22d84c49fe225f1ef11011ebcdb142a1873fb1606b6bd3af5dc2042393",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1fd3fe957801458de8f88b418c51b11c2aba80aa4b68f7659567c54e0e221b73"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_palace_battle.dds",
+   "source": "art/source/events/palace_battle.png",
+   "sourceSha256": "42f6d425e54fa06f570d0608dd07004f90053ce045ed14c7f160f535069601c4",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c8fcf0dc7da003ea61c699c1d7399884089f50ca8503baa01aa63fc84607c29c"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_southern_warning.dds",
+   "source": "art/source/events/southern_warning.png",
+   "sourceSha256": "92bb0282bf54dfc5ad2ac6a109be73d0ef571dc9e01bef2a95684d170085aaa1",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "445ccbabe2eda166ca667bfc6a9d8968861df23c146cf71e776347d2ac2d03ab"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_storm_wreck.dds",
+   "source": "art/source/events/storm_wreck.png",
+   "sourceSha256": "94b94f412f32a5ee0d5b8212300eb6be62aea5fac96395e91d49ac1ebcc2fc89",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5bf2be0d3eb73e467f92780d8e9b2b506febe1f4c97848fc1fb9c5e1f7651c07"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_strait_toll.dds",
+   "source": "art/source/events/strait_toll.png",
+   "sourceSha256": "47599304e407819559f84e57e33edec17090516ed822dd7723f5eb2330ab7449",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c83325d5b4c04a3a19a6e2d1db4df47ef92bb682bd8fe4d18249df66376f5e88"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_thirty_days.dds",
+   "source": "art/source/events/thirty_days.png",
+   "sourceSha256": "9e0b229e3c97d61bf548dc46eddfaa10d2ffd92e26d239a4408a1cd1d565c916",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2d760485ea859cb9840ffe1d652e8dd663d45e9bebf07071699f5c84c0e91d8f"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_traders_road_south.dds",
+   "source": "art/source/events/traders_road_south.png",
+   "sourceSha256": "48774d3b0303a550f65f1b78fa7c6170edaf2d65772a1c6e86b40121cc42b3e7",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b87d3038cf43c2d400b0794d2b90b1b2f763a72046f049f08948183aed667c31"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_unmasking.dds",
+   "source": "art/source/events/unmasking.png",
+   "sourceSha256": "ae3de0fd19f1d36cb30006932df380817f93287e344fa33c9263cc6015bb3726",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "617b782ac640bca31e2eff173463a3eb14f12734a97b9a840579176c148bfe95"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_vast_shadow.dds",
+   "source": "art/source/events/vast_shadow.png",
+   "sourceSha256": "d11023762209de8e79a04f243b6810a707d89209de720391555d71c6c3f9a45b",
+   "ops": [
+    "centre crop 929x779",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9b012d47fee263dd64e5112167e71f0b73252868ac3eab5bd9609cd190d73204"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_volgan_broken.dds",
+   "source": "art/source/events/volgan_broken.png",
+   "sourceSha256": "c15f28dc6a4818da537a9c0ef5ae464081d4b021b139f4c4d54847b6484a2606",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4e672a06002336c1cee8739bb5ac3d53a44ec7f5ea51c544136d02c38f55df47"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_war_king.dds",
+   "source": "art/source/events/war_king.png",
+   "sourceSha256": "7e25d07e2f244516ff72332600c9de5b3a5c72fb70f70450c2094b0bdfe0663b",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c506a379b92e314dcb094e12c8598aa6389996606c374c8bb5c4e5284a0b27db"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_western_crossing.dds",
+   "source": "art/source/events/western_crossing.png",
+   "sourceSha256": "5a88a3318162667452b99cb28c80949362ec22e66713e433b1b02373cdd9b52d",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0261bbf44e0ed50a0b28efa3cc470ad7c7e48bbef067dd7fa0d248aa10464877"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_yeldenne_hall.dds",
+   "source": "art/source/events/yeldenne_hall.png",
+   "sourceSha256": "4c56909fa94e22c9c4fb684bcdbabfff9dd7a81ce085188eebbb4b83dc164c8f",
+   "ops": [
+    "lanczos3 cover 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8f15f6bce3e592110cf8c7f158b00eee3d5453722fa55fb485c2c251b02a7fdb"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_zol_rising.dds",
+   "source": "art/source/events/zol_rising.png",
+   "sourceSha256": "346a71d353a36b466952557c7d57867f8a22b2f16469c1fe5606ab42521abe6a",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "330b03926631955a31fa28314246b86c4ec9382e3e7b587a3a2051ccd35b3cd5"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_coronation.dds",
+   "source": "art/source/events/coronation.png",
+   "sourceSha256": "6e39fb596943760fe4fed835f000f5039bab1517f9080434deeeb11419650a45",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2f6c20b6a0c00f7466538a062984e06a43492c2a17fd515e0510d68f20d6889d"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_crown_of_aen.dds",
+   "source": "art/source/events/crown_of_aen.png",
+   "sourceSha256": "42917783649dc47d1369bea4e91b593e855ff44ba1c8d75f6c74c5924f5ea44e",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5f59d6f17738d2bf3422c362d3bb6c2b1118c758356dbfb3e28d627e83db2424"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_dead_lands_storm.dds",
+   "source": "art/source/events/dead_lands_storm.png",
+   "sourceSha256": "6cae90b28e3b40e35a2203a8afa7e9d2aec41c328be8f024d7a320877f06c47e",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "063de682a66f7ddda1abc34af4d75064560135d9e1fb9821a99959fb26748454"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_dragon_return.dds",
+   "source": "art/source/events/dragon_return.png",
+   "sourceSha256": "c62260c4ed42b350ed8b429d9cdd0b50bcaa6a5c4c01ff755477e308a0978ec8",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "56d1a9babc5c9746be9243313efcecf86b116c013dd79609810cc501041ec7ae"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_eastern_court.dds",
+   "source": "art/source/events/eastern_court.png",
+   "sourceSha256": "83596d1e986cf4157e24cccb20208c01e7cb7cc9dcbfe3452b29a6a7d0009f77",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9e0f24998e783911db18cde1db8514358f3dea451d38ad9187f7f6c98e2f7536"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_ashen_throne.dds",
+   "source": "art/source/events/ending_ashen_throne.png",
+   "sourceSha256": "09b154860710a286fe272e1ba94741a8ff5403f679a8a6b04df1c3fb6e9d81e2",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e5e86b8f8bffc3d5defe203f72503a8065f09d488d2013f9c179c2f887e56e97"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_children_of_volgan.dds",
+   "source": "art/source/events/ending_children_of_volgan.png",
+   "sourceSha256": "b9bbb23707f17e9f46f1ca952266bda9d4b909e0ea765babae9ed6b6813252a1",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d0652a65e02be9a1c692e46fb35b9337a1eac853b28dc8ddeb883f9f56c0f5e1"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_eastern_king.dds",
+   "source": "art/source/events/ending_eastern_king.png",
+   "sourceSha256": "0c8b68734b7ef25b3fe9cd5c831dfbcf255365d7f69afd352e89eccec4cc4b5f",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c81ecabcea6b5025bcd91700e01ef64e62811ca44ead1056a9a4f8ea913de25c"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_golden_court.dds",
+   "source": "art/source/events/ending_golden_court.png",
+   "sourceSha256": "ded2288262013b6634878e3c5c43a63aa7697559c092e151c421c80a546fc0d7",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c5d84d6c21920eb715fc462177e9aff2553b18254c857c1e88b8834da81896d4"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_lost_cause.dds",
+   "source": "art/source/events/ending_lost_cause.png",
+   "sourceSha256": "89e173cf92ca0876f8bfeb007d331d1965f6abfb80cdd9dbf443ac779e21f84b",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5be06fc09698d33622aaac7b791e593cc0a96d7ee64e20fa8458830e684ff8fc"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_strait_master.dds",
+   "source": "art/source/events/ending_strait_master.png",
+   "sourceSha256": "39ada5606b70924416f4d5ed3f7ae8671dad9752fe820de8dadc318058873323",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "11bf45e45621c199ee533802d97027916f1ddff68b509b115c51cf2e6d0dfc58"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_unfinished.dds",
+   "source": "art/source/events/ending_unfinished.png",
+   "sourceSha256": "05ead16dfd1e1285fc1988989991d8ff1f4df9f23156a1f5a51d12100dee24ad",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "054e8aaf16ce1922c354ba2f4877f4fef38ebee1491011e6f08df1575f86602b"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ending_western_crown.dds",
+   "source": "art/source/events/ending_western_crown.png",
+   "sourceSha256": "395cdd35f0229e42fb49f7d3b84aaae26c236dc57e750d02e7ec3113f46d2f97",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d7372130603c01e08e5d7e38903937659ab46a6081ef51d25d35ce0113df22c5"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_generic_court.dds",
+   "source": "art/source/events/generic_court.png",
+   "sourceSha256": "539232447eeedd8b3acecf0d9c469f5c422fb5b4592cb73a6777a0227429a1ec",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "360a33474b67e749ffa8aef7a723019841fb8d2c749ba8213bdef5fccc50211d"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_generic_peace.dds",
+   "source": "art/source/events/generic_peace.png",
+   "sourceSha256": "101a4c7816f22fe43e8f826dbcd3e057b88da31303e2540ca0f51a1e44efd657",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "81a224bdb60113ee8163a549d8393d42d6fde82b7e137969b81abc557da507e1"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_generic_sea.dds",
+   "source": "art/source/events/generic_sea.png",
+   "sourceSha256": "b7d99743fc781b2ae7e2bea233a55d0df75debc87d5207362d5937149caa222d",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "82d2ccecd20f2ab2acd294af08a6663d051a4ef20f3442a9d9f05078ac825203"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_generic_war.dds",
+   "source": "art/source/events/generic_war.png",
+   "sourceSha256": "8661c15657f81a8949ad181a1873f321cfd2f23dc40b8115c9eb7b9504fab354",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "49510c376878b94381816ca9fb8c13995a42340dbb41c747d5d09f13aeed1ede"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_golden_court.dds",
+   "source": "art/source/events/golden_court.png",
+   "sourceSha256": "1778f8f21c5945c3d48881af7f3abbee46f3f225dfc008e195e6a3063cc280bf",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "547fdc6b4be14a4f556e8c1ef59cf51c80c30dfc239e85807442c2213de81628"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_king_is_dead.dds",
+   "source": "art/source/events/king_is_dead.png",
+   "sourceSha256": "6ef1547ccda1c3577216b3c66b274f16b93b45bc05c633f453beee88e8bf3877",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "de035c76bdcf62243f476a91e0ae1f03f17c7ec41a5004e4225f5c7113e14094"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_last_crowns.dds",
+   "source": "art/source/events/last_crowns.png",
+   "sourceSha256": "c396ca0f9e6bfa2928eb435198f69639d1730b59492ee17da6922857aede07c9",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "51e149b822793bb30739a1627a0560b21f1de0bd0c71eb0cbef38d90e07e27e7"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_lost_cause_triumph.dds",
+   "source": "art/source/events/lost_cause_triumph.png",
+   "sourceSha256": "a125cd84965d76eed0f96dc4e74c95ef407370c6a8c63c42f63e21ee7cc2167d",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5e75ffdb9f27668b8626b5df1527ce8f98f208c23956e4d52258f51642fb47d7"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_palace_battle.dds",
+   "source": "art/source/events/palace_battle.png",
+   "sourceSha256": "42f6d425e54fa06f570d0608dd07004f90053ce045ed14c7f160f535069601c4",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3541e7aa98c2aea555388c1f2c835e6ec1dc50656da661f06c79a90a0f18d7ec"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_strait_toll.dds",
+   "source": "art/source/events/strait_toll.png",
+   "sourceSha256": "47599304e407819559f84e57e33edec17090516ed822dd7723f5eb2330ab7449",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "80651d3c6d9a358e8c1e594ae0d5c115864139daf9834ab2d87695dc539d3583"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_unmasking.dds",
+   "source": "art/source/events/unmasking.png",
+   "sourceSha256": "ae3de0fd19f1d36cb30006932df380817f93287e344fa33c9263cc6015bb3726",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3bda70241a7d0291f4691385cbadec6c134f55acb4c8fb3b9ae73b96cadc18eb"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_vast_shadow.dds",
+   "source": "art/source/events/vast_shadow.png",
+   "sourceSha256": "d11023762209de8e79a04f243b6810a707d89209de720391555d71c6c3f9a45b",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8d4ef821616f896e23a9538b335960b697d97504223bc050b8565d506279d500"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_volgan_broken.dds",
+   "source": "art/source/events/volgan_broken.png",
+   "sourceSha256": "c15f28dc6a4818da537a9c0ef5ae464081d4b021b139f4c4d54847b6484a2606",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0f429d0f71b7a498fc5399542ffa678d8514735c55575c36a7c9c322b2fe1dc0"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_western_crossing.dds",
+   "source": "art/source/events/western_crossing.png",
+   "sourceSha256": "5a88a3318162667452b99cb28c80949362ec22e66713e433b1b02373cdd9b52d",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8ce9dcda9b0b4775a5b858c2410a8001a0f7dfc3545e6753b4fdb98358948823"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_zol_rising.dds",
+   "source": "art/source/events/zol_rising.png",
+   "sourceSha256": "346a71d353a36b466952557c7d57867f8a22b2f16469c1fe5606ab42521abe6a",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8906555f15d6117188e06e0927b088bf1e9d20321c4f90e7fabc3573605a651c"
+  },
+  {
+   "out": "gfx/interface/bookmarks/zin_fourth_age.dds",
+   "source": "art/source/menu/frontend-bookmark.png",
+   "sourceSha256": "16fd4ee5a80324c1493d66492511d750229850ab0e4f20c543b120aeb81d13cf",
+   "ops": [
+    "lanczos3 cover 180x104",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0ff1c623a77ee9ee6a304233f14f05e3256f83b725d4f3467e4cd479857a57e4"
+  },
+  {
+   "out": "gfx/interface/goals/zin/abyss_stair.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "564b8661dba1ef62ecccea111fa6d6b7bc2d6efe707cde4475813b25eee7f91b"
+  },
+  {
+   "out": "gfx/interface/goals/zin/alliance_rings.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4461e7e47e91ec1a7ddc57bb2eb1ceb96588579f0253e74032462de458f0e1c9"
+  },
+  {
+   "out": "gfx/interface/goals/zin/alms_bread.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "41e77d61c332ba866218de7eea3a1019db7ed01fc2e723f1f5d82e66a0488257"
+  },
+  {
+   "out": "gfx/interface/goals/zin/anchor_rope.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9fc4b0f56ed87bc20970da250431a0946e45c5f3f033c2365ea2ff715b0dd6be"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ashen_waste.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "22613645411c850f6f5e9155f4fda482c76972e70ccf7cb0c884411de78f6093"
+  },
+  {
+   "out": "gfx/interface/goals/zin/banner_black.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f62aa4a1c694afd0fb39fed8c95cf86cebbf4436d9c82c26e813c4ed4847df8d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/banner_laid_down.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c50e7d15f77556746770b112070a4a20cd3e3e3321f59ba83f8892dd8f8fdb77"
+  },
+  {
+   "out": "gfx/interface/goals/zin/banner_league.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6a3791fa2cb7b1f01f202ffb4e689ebcb62d3488667920362c868545b556e2d0"
+  },
+  {
+   "out": "gfx/interface/goals/zin/banner_plain.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4a7bf8c565e93affe8ae126f619eaaf692fe64af21c8f91c2e197e39312a7dd9"
+  },
+  {
+   "out": "gfx/interface/goals/zin/beacon.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "761ed1ee22c09537013e5b0a0a78cd9c88b455602df3e43ec18ccb0fd321238e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/birth_rolls.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "84bc5c71a13eb97db91954941cc2da815c883214c733edb21c143a87d56979da"
+  },
+  {
+   "out": "gfx/interface/goals/zin/black_compact.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "423b6a45e0dc3ab37c0fd7729651658365618a38415eabb39b9589cf2c947eab"
+  },
+  {
+   "out": "gfx/interface/goals/zin/black_hulls.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b00ae14b334d05a6f217070e0c8cc2e28672c0be9872f5f06a78c226887b0a20"
+  },
+  {
+   "out": "gfx/interface/goals/zin/black_isles.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "556bb9dc8ffd9c8466b3f4bb974c0bbf2394dc5c7dd9cbb6e378a4da1f5114dc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/bones_risen.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b0bc2a5dfd64571418529170446ac78d3e511a510d8ee42b05a05492d8bebee1"
+  },
+  {
+   "out": "gfx/interface/goals/zin/book_lore.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "dc6f529b15224ed94aada3582590af9cb1077f1f6265c9d384dd3b551c78e7fe"
+  },
+  {
+   "out": "gfx/interface/goals/zin/bow_archers.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "01e7a334722514fdddab1d3bf88c48f9362b97d393c2a345231e471bc6fbee93"
+  },
+  {
+   "out": "gfx/interface/goals/zin/bracelet_seal.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "371e7084f91d962c263ce1348beefc3ce74862ac95bde912a38fa7eda29b28d8"
+  },
+  {
+   "out": "gfx/interface/goals/zin/bridge_oaths.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "461fffbbf4f22dfc01a35b185a9efe57e878d717451c280fe69b5dbbaed9e949"
+  },
+  {
+   "out": "gfx/interface/goals/zin/camel_rider.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7cac37a7534a7e3862128336fe15ff0696e58b5d954f8c9cc26112fcef745c40"
+  },
+  {
+   "out": "gfx/interface/goals/zin/canal_lock.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8abaa65f030b7335a6a3777d559a9655fb431cf379893a694f7890158a5722f1"
+  },
+  {
+   "out": "gfx/interface/goals/zin/caravan.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f3ba16c9e6333625d17bd02617fbf29f5ea3063b2f6e59980f910b2c08453fe6"
+  },
+  {
+   "out": "gfx/interface/goals/zin/castle_ice.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a1a87fb80d6ac88fc1b2c072b44a01476d77cb9c1ff69d684b1fff755c910e30"
+  },
+  {
+   "out": "gfx/interface/goals/zin/censer.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a08c8e94801dfd6fa00009ea454c82b48e017005b2278710f77d53d54b1c0d50"
+  },
+  {
+   "out": "gfx/interface/goals/zin/chain_broken.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "501d4ea250481c071ac483405e60c7a9b2f807fb956ad968e87eb30225a65842"
+  },
+  {
+   "out": "gfx/interface/goals/zin/charter_free.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bd8154cbce4da2b9d8222632f6940bd1e73371e09a4cb6c4d25f0d003e5b0f11"
+  },
+  {
+   "out": "gfx/interface/goals/zin/charter_golden.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e93d3aee5fa5bde0ead629d0a3fd3ff57454bec9253519f080d6427b387059c3"
+  },
+  {
+   "out": "gfx/interface/goals/zin/charter_old.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b012cf6307f171083f42462e62d3aa630571ae05fc88e7843f66b811532fe61d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/charter_shield.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c44908eb3b62cc123ff544a59c352cb0b0439d695c30e1cd6280d4d7a9394a1c"
+  },
+  {
+   "out": "gfx/interface/goals/zin/charter_wall.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "952cb32bf0bd39adac44ce5a27b479b0a6d042a12f9c564a72e9116a1dd67328"
+  },
+  {
+   "out": "gfx/interface/goals/zin/cliff_edge.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4ce6709c28f2bdb304b04bd998e893de6aaa3da69d64221b6301e8be4e88ccbc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/coin_chest.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2954a59601a1066124ce60dddedeee10a7d5ab39fbcfaa97bfe3259665f19a3d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/compass_rose.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c570dc962c2e94fa05e909d579191440a5f3706161b1fdda6ed9d4ac546792dd"
+  },
+  {
+   "out": "gfx/interface/goals/zin/concord_circle.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3a8e587067badfff12c18736552912b991179677400904a86c2c0233dc4a067f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/confessional.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c994aa030af8303f940e5e1198857428bdc285544e271f4eb52619cdb1d38df5"
+  },
+  {
+   "out": "gfx/interface/goals/zin/corsair_raider.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "33692fc6265898d4b543985964c3ad7fe36b63a941b24da0008a9b1919eda72c"
+  },
+  {
+   "out": "gfx/interface/goals/zin/council_table.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "974bee2328439cc385bdd0fa4aad3045b228a48cda1f14fef0e56c66d9738d7d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/courier_pilgrim.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5fd400e84a59d28d686d02f6552b52b70eccc456a2fda207e57ae9a8cf63e01b"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crown_aen.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b10507447dbaa16a7da5a5dfd7ad6815aed67fa9e6bb24555367726bcb1bab17"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crown_broken.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "66856248e2ced496694c418a0de51ab7887fb65d76a0eb7bc2be109d3430a990"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crown_gold.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "39e43ca754464a8bc78e0fed8de3c808da285160fbc4cf4100e3b8d80c463a0b"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crown_hailed.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7e53229f2848d5704c8c0df98e67de1023b7d36835655196ffc468a6f893f942"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crown_iron.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "eb198b64e402da1abdc523d6c5e53d93be555cb5856277f30852f40e4c6d1888"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crown_radiant.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3d49b4e09dfc07ee6083fdc9b514dfbd85418d33487031b525778de9f18eb1c2"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crown_witnesses.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0e55c0edf7eb1e3261a9f90524afe7c2fb83474b17acc419278b5eb2ab822703"
+  },
+  {
+   "out": "gfx/interface/goals/zin/crystal_green.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cc325b69afc66855465fdfaed6950573655a515e069fc32451b23157820ec030"
+  },
+  {
+   "out": "gfx/interface/goals/zin/dead_crown.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ebfffde17ab787ad408b2506d15dd8e436d22701fe668fbbc903f814312c0da6"
+  },
+  {
+   "out": "gfx/interface/goals/zin/dead_ranks_far.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "16bc0658efe397450c48dc9a53e31fa2cc89d76cb17fd7c50c0d04a3927a1d2f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/demon_horn.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f0be765fbaa95aff78a7d5ab2732d1bc38679c10a53a86a77bf3783ae9d43fff"
+  },
+  {
+   "out": "gfx/interface/goals/zin/dragon_mountain.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3803a83cf3b6c7f17b65397d22f68626d02b0c4228e315fa2e4dd39b227f809d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/dragon_wing.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7c97b3bb904a003dae58567051df613b7641512959832db9c05b70e71aed8362"
+  },
+  {
+   "out": "gfx/interface/goals/zin/eastern_throne.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "53e7fd13349ed9fd9f105a3a26f5d70c96e9a4fddb377fa3d943e96fe293ce67"
+  },
+  {
+   "out": "gfx/interface/goals/zin/elven_bow.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "458f0548b77049a66bb54c514e2918721e8a089416e1e2bc7976e1706fbf1085"
+  },
+  {
+   "out": "gfx/interface/goals/zin/elven_council.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "58a85b0217ef4d40377aaf3199c926de38410a77dd1be341bcaa246f4f2ce436"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ember_desert.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7212a5c77f84e49be985ee3b203ddcee90b1f1b3bb84bca90dacab3c5841edfc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/empty_throne.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "30606e2ad9eaa0389c923ff811b8ee6a8a2096958057a4cf1a2a75e92725c29f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ent_branch.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d7f454d1b436639c5d54985f0d764097900fa4f50eb72cb2209dd5546e544277"
+  },
+  {
+   "out": "gfx/interface/goals/zin/envoy.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "49fa3216bb93a1e036569213fe760b81a963dcd98de356f89aeb566ab58b380f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/exile_court.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6635cd0b03bc18a201f7741db46778913ade0d00f1cb9d1503ae31385a8fe72d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/eye_watchful.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ef0afe3970b63815619070f08cd58da403a49b98bf313ba2d21a294002b4d7a7"
+  },
+  {
+   "out": "gfx/interface/goals/zin/farm_sowing.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "443e41ab3b0370ae470b8990dae6f60a702423e86a04b3ee40212e1fb520646e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/feast_table.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "61320d64ebf1ce79235d27d7838e1bf93c825b9d96116daf37a3a0861ac38882"
+  },
+  {
+   "out": "gfx/interface/goals/zin/fishing_boats.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5e9199edfab8c383b0cb13e45a1d1c4e566cab3e8e1ac85fedf04e83ee9f935e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/footprints_snow.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "da3daba1fb0e1103e803a824c140b63621eb10cb53f4c3d283ce3aa2f20284de"
+  },
+  {
+   "out": "gfx/interface/goals/zin/forest_ancient.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "394e9bcad2fcbf5458b8e62c0610afe1a5818d8ff74e6aea6b9d9c6182e71dc7"
+  },
+  {
+   "out": "gfx/interface/goals/zin/forge_anvil.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2bc7e3b672390a216059331155122d77ae75a2a5ba2eb92fb82914ab618fac8a"
+  },
+  {
+   "out": "gfx/interface/goals/zin/fort_wall.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "550d74614be551edec261f0c195aa53734aaab31c63b8c1aab9d2aabd82ab019"
+  },
+  {
+   "out": "gfx/interface/goals/zin/foundry_fire.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c20ae0a4f23c77ba940c46ea142c2a401deb2fca9ec0ca2a2de7ce5e16501244"
+  },
+  {
+   "out": "gfx/interface/goals/zin/frozen_gate.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "38ee021c163f6496b452f25d4747320585ff5ab7e7e8e9dcc24930b704d30cb5"
+  },
+  {
+   "out": "gfx/interface/goals/zin/gala_sun.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6ce8e16153231dbabdd030dbfdab0d1aa5e181267e4a94d174e8c46b4b0eebf2"
+  },
+  {
+   "out": "gfx/interface/goals/zin/galley_oars.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7699735cb00e85c05a5fbf2f227b1f9d0b85821bfb427faed1d43d900413b859"
+  },
+  {
+   "out": "gfx/interface/goals/zin/generic.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1f1cd5723b01743b7ef092212718b9fc09afad4fc8bccb595bb5f7282d5ae370"
+  },
+  {
+   "out": "gfx/interface/goals/zin/giant_hammer.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ca49e326ea7be63b5f3f7ca1a4c744eb11ee15facb0a4d93ef76cd34518f9e95"
+  },
+  {
+   "out": "gfx/interface/goals/zin/glyph_fading.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "68fb83c9397771f251589ec299d12a59c52e9fcf68e2a6ba6dc23249033095a3"
+  },
+  {
+   "out": "gfx/interface/goals/zin/goblin_raiders.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "868bde03f7bbfbe26c1fb3235d2da6165f161c2c79a799a0d214f40330636301"
+  },
+  {
+   "out": "gfx/interface/goals/zin/granary.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "073fcccbae679cee3e2c0d164d9dfab20827eab548203c272bfde7b456d72af7"
+  },
+  {
+   "out": "gfx/interface/goals/zin/grave_field.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bc6020fdbde9bb2b6d3ca616ef0917bf1fa39f09ab299e528bb48ae8e0d2ce8c"
+  },
+  {
+   "out": "gfx/interface/goals/zin/grave_host.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "75fdfeef79203219d5d3259e7df94b76e1ae90cf175f3ec7f58ebcbce361ba29"
+  },
+  {
+   "out": "gfx/interface/goals/zin/great_warship.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "879d3a5b95265d739229fea2a21a54f166d13a633ce201aa4129ee5383a24c78"
+  },
+  {
+   "out": "gfx/interface/goals/zin/grey_ford.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "472b7cba768b891e2d3010c929806048d410e62feaa8fdb3ec1da0ef6b45d1ae"
+  },
+  {
+   "out": "gfx/interface/goals/zin/griffin_rider.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "adc1c70dbee751e7de4a5d74138db27e23b4c9b35087b63b43e5a52bded85dd9"
+  },
+  {
+   "out": "gfx/interface/goals/zin/guild_hall.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6c0dd6536343ad28e0aaaefc299f6d442f03d401506df5560f6f1f413b6181f0"
+  },
+  {
+   "out": "gfx/interface/goals/zin/handshake_oath.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9237c5ea9e2e4bb6c26273647752c88fc198e7d11ce8f0286bd8c8efcc18a98c"
+  },
+  {
+   "out": "gfx/interface/goals/zin/harbour_lake.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b796227388d6a20843d19fa1dce4c79c34b45f38174863b2066e2779de8fa5e9"
+  },
+  {
+   "out": "gfx/interface/goals/zin/healer_herbs.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2459885c448c102636182d738ea1934c05361f4b2fcb3843f82616d22182848b"
+  },
+  {
+   "out": "gfx/interface/goals/zin/heir_rolls.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3d3ac0151c5329b23415abd05f8d843066931521d89b0966e887ddc52a67b50a"
+  },
+  {
+   "out": "gfx/interface/goals/zin/herds.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2c40eaa7ec13721ec0ad90cf7b25203ab680f3d073f299d95d1f0268613540e6"
+  },
+  {
+   "out": "gfx/interface/goals/zin/hermitage_hills.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "94d05c94e56de1b90253b1180ff782849f3afb5721138c3a11326c5790696692"
+  },
+  {
+   "out": "gfx/interface/goals/zin/horse_cavalry.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0f6edd46b312fcbbb01e2f795568deb2918543a8a3d0f3f667f332a3bccaf588"
+  },
+  {
+   "out": "gfx/interface/goals/zin/house_first_light.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4cd8735cd2386faa1d6b158390507263f118cfd4fd0bea80c4147be9d2e0984b"
+  },
+  {
+   "out": "gfx/interface/goals/zin/hymn_choir.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "42bdf8a1e4b442ada21621f81563d3e9884add75cfa115cf59885840ac48c360"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ice_cavern.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "332272c29344ea90e7d922fe36934cf8bab2bf08f1625a820e3d10f8a10547e9"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ice_field.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "546e587a6d0b5d2ddd10fd7498762b43c11d43917288ae8f828993a5db433f20"
+  },
+  {
+   "out": "gfx/interface/goals/zin/island_shrine.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a41b45f04c9da98241c0b5ebe2c0e22f51eb25dc2cc0738293d5efd1faceaaa6"
+  },
+  {
+   "out": "gfx/interface/goals/zin/kilinti_grove.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a861ae0ca7ab8022a7d07f5142926c8877c488da1af687ba5b9a3508341a54bd"
+  },
+  {
+   "out": "gfx/interface/goals/zin/knight_lance.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d84d8a75a30cc9476bb73b4b3c0be00a84e9836f73590faefde06d360b4c2c8c"
+  },
+  {
+   "out": "gfx/interface/goals/zin/lake_town.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7491b5070d52af8217293f89a707e24345100b2330e0e496f7f3664fab702ccf"
+  },
+  {
+   "out": "gfx/interface/goals/zin/lantern_chain.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b145603ac186d1f0a53ffb23dddc7ca0541c8949a867ed0cffc61512281db3dc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ledger_coins.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8149d67c049695d37311653814d1177fc0a42fc58cde7df1b65448e1b9f5233d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/levy_muster.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5691334ed97e505e0a03ef432ec6bbec71bc537cf35cfa434f02142c38c1127d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/lighthouse.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a2d74e829c52c4f33d45cd5889b4dee2f05b48461991683014ae60e2a49c2a98"
+  },
+  {
+   "out": "gfx/interface/goals/zin/lone_sword.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5850ee0c7b9f82c17d3d0f3b2b374ae23412c8a18b45153c4d7e4969595abc31"
+  },
+  {
+   "out": "gfx/interface/goals/zin/map_unrolled.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "71b2f470ccd04930a48eff22f85abe847a22ea6fdbff723f4ec5d252b3b23aef"
+  },
+  {
+   "out": "gfx/interface/goals/zin/market_stalls.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "917cb4b77cc3cbf429bb3bf9f26db699f7b486bce3608a2bb89e0beddab47460"
+  },
+  {
+   "out": "gfx/interface/goals/zin/mask_veiled.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3bc73066e43b27789ee665c90b42c4f009d33486792ec13a3b336dd9172d274f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/mine_cart.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e45db3d92f26cc2f9661c2720741f8fd12e2b0eeb1daa987328465ee86e10d2a"
+  },
+  {
+   "out": "gfx/interface/goals/zin/miracle_light.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b2b08cc0bb3394e0f1fb0ab32174faeb702cfbb1e9c8ce188d72e34e5fb9373d"
+  },
+  {
+   "out": "gfx/interface/goals/zin/mirror_rain.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e24054bff1e2525097a9739fe7ce0cc44d4cddfdb7f26977e33ccda0da862992"
+  },
+  {
+   "out": "gfx/interface/goals/zin/mountain_pass.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "76e0a22a8ec64391bbdde09c26cfd908a426668068c79d3811bd003a3d4d7e09"
+  },
+  {
+   "out": "gfx/interface/goals/zin/mushroom_grove.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "107d1bfa0fdc778e2f50d6f1582a4055f4d5a99cdd217b2fbf5ef7ddad375fd5"
+  },
+  {
+   "out": "gfx/interface/goals/zin/necklace_deep.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a881c90bba03ae292d065eabf553c5262f19a9953277dfa7d5e124f75da2b1dc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/nether_gate.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f50009fd941003463b6e6ec14c50d5193ddb855d269448b2864bf6884536d0a7"
+  },
+  {
+   "out": "gfx/interface/goals/zin/new_gods_light.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f52a0ef24521947697d806d33fea7f6684cc52f88fd8c0fcc596abdaa122e7d7"
+  },
+  {
+   "out": "gfx/interface/goals/zin/olive_branch.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0eecdc6ae467c3fa976549aae6f7b776169c29d2248e2fa3a3ebd25df110a826"
+  },
+  {
+   "out": "gfx/interface/goals/zin/orc_axe.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a84cf3ca3e6bd3b2bf7defa0f0c9087b34330c6ef6fea47da9cd6e7e7024a6bc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/order_divine.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cb4e86464c84e5490e99dcae661d687835d70de8c193c754b31a47519918ce5e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/order_great.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "89f971467e12c0126f95a670a36226005c811ed499367ba0fd7c524141bce2db"
+  },
+  {
+   "out": "gfx/interface/goals/zin/order_lesser.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e39e15dbb5a925a85456cd0dfd1219057560063da40dab8397f1180e879e9f09"
+  },
+  {
+   "out": "gfx/interface/goals/zin/palace_parim.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ca6074f4b873b393c8bbfe003a2523b889f6e30ac2ca23a213f56a717ae9a0cf"
+  },
+  {
+   "out": "gfx/interface/goals/zin/palace_wards.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3352f80ccbcefe5a86345206df12413942f988e0570830fb423c7f2b38e74ebc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/pass_fort.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8ced3c0db8bb0950043e05ea69383347a69d4396d34e0de93eb4990645aac60c"
+  },
+  {
+   "out": "gfx/interface/goals/zin/potent_blade.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f2871115a22bd207f0813d6c040036622735165024fae51b82ae7841bd77bcb9"
+  },
+  {
+   "out": "gfx/interface/goals/zin/quarry_stone.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fb8da0a86c7ff223a8fe5903f4050bdb3641eb759fcece6b14223c50b8eac243"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ranger_cloak.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7869e85da900d4fc7779e8faa2a65d17a0d82994050d99583e8413d2a0169960"
+  },
+  {
+   "out": "gfx/interface/goals/zin/regency_seals.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4799a90a652fa6d7533059d8333d345b113fb5c66e801c97179acabf7b86d36f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/reliquary.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f64d0d374e9ae7072efd0ffdd2bbe4b4f5c3f69b6e6672576ccce97c1613a962"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ring_doors.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "90938ecea7ae2c382b1dc6d6d4f75ddc960bcdf237df28ab78819b583c0ed88e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/river_ford.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6bcccea44ab4a6161d44affca93ef75548c3ac15fb945a20d59942b8dccfbab5"
+  },
+  {
+   "out": "gfx/interface/goals/zin/roads_paved.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "43d8472314455cbe4b56b221eab4ebc0f672bae0665124cffec1312d0478b61b"
+  },
+  {
+   "out": "gfx/interface/goals/zin/rune_stone.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c26e50a90a26362cafc7895190e7e8444b917cdac3664a7016b49f89a8edf20f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/sceptre.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "eee9321c0d04bc3339b20a8eed0b947c4264ed7cc095e45148c2ec45d927c00f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/scout_lantern.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d173428df65660db6dee9134383149f66966cf8575b35b0e09600d4daaba3185"
+  },
+  {
+   "out": "gfx/interface/goals/zin/scroll_sealed.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "79841378362bc15d069441ee3bef9f463e2c5df8aedbd95c893faca7c7cc0666"
+  },
+  {
+   "out": "gfx/interface/goals/zin/scroll_treaty.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ebfa0a202584f525934b5977367c8637eceb8ee0a02e0474c4fb301af54dd247"
+  },
+  {
+   "out": "gfx/interface/goals/zin/sea_charts.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "055bfcdc40195f2a405ec9125725535f33bffabdf3c19c90e8e1400c6a29d023"
+  },
+  {
+   "out": "gfx/interface/goals/zin/seal_chancellor.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "27268cd745bdb9057183e3ef511ad54cd2eba3a4a81ff12b1e71573d4f361bbb"
+  },
+  {
+   "out": "gfx/interface/goals/zin/seal_royal.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e0b64e00b4e4d8bdab772089de865bcc2e98ab74325c98633c49ccbf9b4dce79"
+  },
+  {
+   "out": "gfx/interface/goals/zin/seal_wax.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fefd7a24517fe6c29640b4260fe9bb6dd9f30681baa8066fc24858947324edd0"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ship_voyage.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b2fdfef7c8a81befebba4a9d766c04f07a950744e731db2b045e6df779bd08fe"
+  },
+  {
+   "out": "gfx/interface/goals/zin/shipwreck.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "de84e7d72fe24942a38c5ecaa2ab3cd419cacdeb6f1447d125711df0ceb4455e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/shipwright_yard.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b33ab2cefe218964c8c23938dbf9c1e12316bbb6b6812f2b8b2b68e495eb6f94"
+  },
+  {
+   "out": "gfx/interface/goals/zin/siege_trebuchet.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b1baf21137da23d51713fec2ac1da61d824f095d252fc8c3aeb6acb5456cfd84"
+  },
+  {
+   "out": "gfx/interface/goals/zin/silent_throne.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3bfd866557081abf03fc061b285b939e0a0fd49345c2afd05a3d61e54180c655"
+  },
+  {
+   "out": "gfx/interface/goals/zin/snow_peak.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4190b605a8e75319cb2d45f18a412092931cebb9f9b8aa786b71ca322a50e46a"
+  },
+  {
+   "out": "gfx/interface/goals/zin/spear_levy.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "84c9b95a5ee78e458ab6b5fc58193abc7e0078c1631a4c33b43d27da13dd5b53"
+  },
+  {
+   "out": "gfx/interface/goals/zin/staff_arcane.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f0203e6838982f5151280117874cb288a6590f0bb073bd8c51566b80e94683a7"
+  },
+  {
+   "out": "gfx/interface/goals/zin/storm_sea.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a5b48c1d0435a1fe2766339326193deb1b976341528b3cc5206361f7becdece3"
+  },
+  {
+   "out": "gfx/interface/goals/zin/storm_veil.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "46813b4058dc5dbd98512b37df12b77b1858e9a00824fa26f36af6924e18d1cb"
+  },
+  {
+   "out": "gfx/interface/goals/zin/strait_chain.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2df3167320ee53ef27ecaa0632b5461afd28e287872756ba94ac310f448826c6"
+  },
+  {
+   "out": "gfx/interface/goals/zin/sun_flowers.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "009f455ddb023f179c64ce6debda4165566c150ef5ca9665f0e84ee38d540ecf"
+  },
+  {
+   "out": "gfx/interface/goals/zin/sun_veiled.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e88b9acdb8014cb9d2f6460a8efd9e6ce28e0b8e9e727f517bb4e2da63ec232a"
+  },
+  {
+   "out": "gfx/interface/goals/zin/sunhot_spear.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 10",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "44381a451c441e20499afdec863f5909b0debcdd16a64932c23cd8be73f23aac"
+  },
+  {
+   "out": "gfx/interface/goals/zin/sword_shield.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3a9ac8497e3aed40b101c884376fdc5ae792df0481c1a98a7dbab52d9852fe03"
+  },
+  {
+   "out": "gfx/interface/goals/zin/temple_parim.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b2150bdcdfca53d7f87b9d58beeb0fc1c611decc901ce66699a8bda745245d8e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/throne_ashen.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 0",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "44a6da54645457779a2b0f84bf69b54c6a814576cf8162116552ec7438266920"
+  },
+  {
+   "out": "gfx/interface/goals/zin/throne_gold.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "65dfd2665670028370435cf82671465f8e94947aa1aba48d9e08c73461f04aa6"
+  },
+  {
+   "out": "gfx/interface/goals/zin/timber_mill.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "119a6f72abc8e0960653b27df0c980497f18d9960e9cf11f748aa835d7923cae"
+  },
+  {
+   "out": "gfx/interface/goals/zin/toll_house.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0ab1719829f2a451ec3671a15c07ebacca55be0d80cce36e2255d50f42f68378"
+  },
+  {
+   "out": "gfx/interface/goals/zin/traders_road.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c03362400cf9f5609b822a5d79a0eaa26b22c8458654cd3b852538b82973a05b"
+  },
+  {
+   "out": "gfx/interface/goals/zin/tree_silver.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c64075e63785fe934356cf700798786276eb844f5f101281375cd4228798f993"
+  },
+  {
+   "out": "gfx/interface/goals/zin/tribute_chest.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ad4ed4782e40baeeeebe6955f96a57545e11d66fba1caa61d62beccb5a5d20f4"
+  },
+  {
+   "out": "gfx/interface/goals/zin/troll_club.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9191c96ff67ce9186b2881bc1fbc5f51031c3bdfbd3180fee5c71404928627d4"
+  },
+  {
+   "out": "gfx/interface/goals/zin/two_crowns.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cbe685699eb21d21663c244b21f102c4a1c708051580bb260a7f00024fefbccd"
+  },
+  {
+   "out": "gfx/interface/goals/zin/university_hall.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 5",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "156e7ec3372433dc0d34390ca22073c11c53d34b7c73a5df89d6351f5f65ae7e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/war_council_map.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 9",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "dab962e7797faf206260c65afb69a61bdae53bc257665494db9a1321c7705694"
+  },
+  {
+   "out": "gfx/interface/goals/zin/war_drums.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 7",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b182a74cc3044ffd6a526ac56f0fe98e2d8fd56d13caa8edb88c81555f1197ed"
+  },
+  {
+   "out": "gfx/interface/goals/zin/ward_circle.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 6",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "92776946bf88d44edf29aee7220d532c466c93004855580d2144b6f19a2af16e"
+  },
+  {
+   "out": "gfx/interface/goals/zin/warden_crown.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 3",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7975916bb2cba2f5b1137954a678554b12228fbeefd761328cfbc51af98c89bd"
+  },
+  {
+   "out": "gfx/interface/goals/zin/warship_sail.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ef89048d33a380a15059b81724706859385eb87a929738dd37886fdd5b6e9089"
+  },
+  {
+   "out": "gfx/interface/goals/zin/white_deer.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 8",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b3487e7692bfd884ff30c8ba8a9d0eecc19fb4d4958aacce3fcb33f3f3d67bb5"
+  },
+  {
+   "out": "gfx/interface/goals/zin/wild_hunt.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 2",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5b2ebf9e6d84593cd826c334f0b38fae29963b53a58244874aa1a4a94ab865bc"
+  },
+  {
+   "out": "gfx/interface/goals/zin/wizard_tower.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 11",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "320e18b246e1fcd40e30f00e971ae39340805c74f32e28a7dbbf904cb464c4c8"
+  },
+  {
+   "out": "gfx/interface/goals/zin/workshop_tools.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "aa50cdcbe5d59d3d1e411a4192c303fc5de3330964f3ade1b79ac3467ca9747f"
+  },
+  {
+   "out": "gfx/interface/goals/zin/yeti_claw.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 4",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "994ec2380b9264c5ee23c06d2fd4003c8c0f7c81e3fa3e5a4a0a948ff42e35ea"
+  },
+  {
+   "out": "gfx/interface/goals/zin/zol_sigil.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 1",
+    "medallion outline alpha",
+    "lanczos3 contain 94x82",
+    "pad 3",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "dc57152d9fb4eade479ce4f7494b152ea2d3a4c1263528cb3829567b7c27ef5c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/abyss_stair.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6932078a4cf6d631e0cf5a0a9edfdfa1a527319bb2cdcdba742b40d582ac3779"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/alliance_rings.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 4",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "815ef6114e9854a5e62459b1a258b8daa093e7206bd91050db12e585b9d252fd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/alms_bread.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 3",
+    "square 195 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "83aafcb7773017b54c65dad7d31886f5dda908339b434992f99e11c8e21466ed"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/anchor_rope.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fe5fb68f52c797680419c08610b64e29e3e70819abe4bf8b4aa2c6a051f5d066"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ashen_waste.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 8",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c9b16c88687ba4857e2d56805f601c2ea8abfc891347f6bed02306cf4ff1a113"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/banner_black.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 11",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e86bec531c9f89172f305580fa15cde3443d863603d185336af18eb38d76e57b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/banner_laid_down.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 0",
+    "square 241 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9281bba3afa519f37fec2da696b222d78254e9f65bf218fdf91fcaa292f4bb11"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/banner_league.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 2",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fc54b587f38a01ed438e90c0e1420c1d99c4f176ff41d2e38db6e49c42ceffce"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/banner_plain.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 3",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ce7e65f0120c0fa1845304104911019ccf576d68e93f0638bdb2fcf265e69c3f"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/beacon.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "694fe564ae5fce329c6ca111e3ef0b9c8d04e13e25065be1144f1e40c3e97d1b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/birth_rolls.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 5",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "57b92d9258494a3f9e4211f043e7487f76e9acd57c6cf3ef5e2e18b14819ca9e"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/black_compact.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 8",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bafe80fd4fab3f4685472522f1bf1dd97707c9651fb0b4b63b3c2f70c69a3231"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/black_hulls.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 3",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e7383a771c58a8199c40659cdfec8a4a2b1e8fc2dc3f4fae0b632bd7f1e8c77e"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/black_isles.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 2",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2feaad80c26807b0ad191e2d96ba6262188deedeac1cc5d1e618bfc3a2c0722d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/bones_risen.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b418b18d3dd21be7b1ad0dd4621783d2f7c2574f8bc96a6310002ab439c10674"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/book_lore.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d5d2bab6d7ccab10cfcb8aad8fc7240640c52cde0b17236594d775b6e915e350"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/bow_archers.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 4",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "75ff2dbd5b3c74626308bc81c84ece21ac260e3c54ddc327b1ae393dbc3135e3"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/bracelet_seal.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 4",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9728bad35e2bc0150c6be000a941b6efbfc935ed1deae8d00107252ebe9c21e2"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/bridge_oaths.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 1",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "18c596e593d9fd0b214416e7cd4de0dd2fce6e4166e76ca9558cd1df2815fe64"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/camel_rider.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 7",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b7ecc2fa74c427f579a8147db67e270af3d5e9b8611eb56ec780071d0b6b0836"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/canal_lock.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d7846e9c638ba742216282ce2a47ae9bfac588a06c341270aaf38f27576f5822"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/caravan.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 1",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "eb30074aff77535dd5eff8dd11f744f1dfd778c433cc5c1cd4faddb788684b99"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/castle_ice.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 9",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "06802521e03bfe0abb69073cd62b081d2dcd04098827d398f4e5b7a6fdddf160"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/censer.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 1",
+    "square 195 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b280855795e14409f5186312515442b16fe704fe529b044ac481ce32411156dd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/chain_broken.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 11",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e93b4cef75a23b3d45b2f55f24b52dec1b5686fecca506ef075850710b894a4b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/charter_free.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 6",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "eeb3242f17e81376e8804ff3ab80ba166336e716cd6b8517658b7bbf12e1d7bb"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/charter_golden.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 4",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c2a4f5ccd784bf8992871e1a9b157f924db98b1a44c56feb507b4bcb302b56c5"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/charter_old.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 3",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "94c9a95dee4333b65515db3556f6356a0074c40098330fd7de4fe7274c16b88f"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/charter_shield.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 5",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cd12c535dc9540311025491501289e475ef22fc9ce5b96f4b9b7d1e0fdc54856"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/charter_wall.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 7",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b76c6b26eea4b679cfdf6242d6517e5f348179302534fa6632d998eb3587ea5b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/cliff_edge.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 4",
+    "square 246 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1504af38946e06b53c1fcc1b0706cbf1c83baedce11c49e3bac6aaa1c5292bea"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/coin_chest.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b6056e10132ff3bd1b9f64ab57ba8a81eb5595efea97faf978802fd16c85b1f6"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/compass_rose.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 4",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4489e92441f21bcb28f75f051354485fb8d1417cb8cd42ffdf53c19a9cb1d36b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/concord_circle.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 10",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "cb4e5f89aea0d3f5cb69e45298c51b117dd5fd9dd35f3cc5941b3b8d7029a659"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/confessional.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 6",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a992c8a8bac0def8b69ec5dde52e737c15c16d470ef3729f06ebf81b02ddc265"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/corsair_raider.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 3",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7e4bce501fee03f74774ecbf7808002606e22a94595144c08b91aadf67301348"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/council_table.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e7fa24edc79a4d9fe714ec1718e520c63804db75bc18ce3518afac59c98132f3"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/courier_pilgrim.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 0",
+    "square 195 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7e56406f69d26c33b33225e5e8bebaed05391b11b5b04954f8e8fc89aa8d24e6"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crown_aen.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 3",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "37ec4c87800cc2de39e596830b57fd3dc53b9e5147b5b560f2df9e87f87ea84d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crown_broken.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 2",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3409ffa272ba4ee7e17f6c6ff5dca79ba886ad26662af4603a6bc07e09343da2"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crown_gold.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "545a657f38ef4eb29f82b4b87881deed4b96441166a543177ce3d41256f18cd1"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crown_hailed.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 4",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "49423ae7b9bbd6f0a539f0819a533b6eccfb23e40f19abbf8f7b80c12ff8200e"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crown_iron.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 1",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d90d7ccca4173bfdb83c328ff0ae6ea62792baf3c021e7833fa91874b995d4b8"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crown_radiant.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3216b7e944aee1a09aa1e1ba4a09ad481b327b694d43f48ae4ba6b40f98f6251"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crown_witnesses.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 3",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ad3857388ee01a05ad7661d13d818452681978c4779e7fa1ab2c8395380f9771"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/crystal_green.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 8",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "44d4111a946fa5734d9ff6151e28d36ccb3c34ee01f67fd76c461724bd1864bc"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/dead_crown.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 6",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "756acafd23b8776503f3226cb53bc89fe9ec16f9958a62708953d006cc4aeec0"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/dead_ranks_far.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 4",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5f0c59bcfd0d9ab86cad491638cda6a8a2fc5844cd3db3c56933e6559cb41787"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/demon_horn.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 5",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5eab66c08497f2f12d5b44b0bb744e5774e1b52abbc8a35bfe07aa05b14fd4dd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/dragon_mountain.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 5",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "705c014eb7251bafad8e4f99144576cd33514417042e6be8038b35e73f7c840c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/dragon_wing.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 6",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2231e75d2958ca6ac1ee21ab3bc69e82d3db2a0a1d5890f3ca021f1927b713d6"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/eastern_throne.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b59ebbc13d6138fe00b21817fc911e5c565c7f925a7d18e2c740ceebc82dbe44"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/elven_bow.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 9",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "009ab734aae648bc1af7af27760022f179f63689cc56957e790d089db5db1344"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/elven_council.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 2",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9d2bcd648ecb56bdd19dd420d0c0a8832a9077ccd9abdcca16ec552443ac4a0c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ember_desert.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 9",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "95054335e6cf042d29067954f7d624283d94e7b81526ae51938f877b276a69ec"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/empty_throne.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 6",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "08b1fb12795fbd6379227696aa322d5918013cf291f12708ce08ef1a1c812dfd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ent_branch.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 3",
+    "square 192 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3fe423b2ea38c79f0e99eb50fbbc399d246cbec4b4c8d5b66026788dae95e8b9"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/envoy.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 11",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0e0b728493a29a64029ba58fcc8ab413d37b8081ad647a7acb299bf085651160"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/exile_court.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 5",
+    "square 246 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5e788182446912f0abe505f861ef3f12db5175501295a6c22c7c92cd1fa0a867"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/eye_watchful.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 6",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "41c51f3630e756188c19b59a3215aeb547450fc7b34987da7e5314813f6e8479"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/farm_sowing.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8747ea92b949115a176a44027d9b85a52cff1b290cd3cfb94ffaafb1e46ec66b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/feast_table.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 8",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c974edfa89f0535d51d4bd2ca25597865d9b62d0cd97be1e24b54e00e6246ced"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/fishing_boats.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b4d19cdcae2c4ae8d12ff8043d787035df4c289221e0d5b507834006435a415c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/footprints_snow.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "319c9c496a8778664cbf3037c40395560099ca7610bd2a8c485c55d5a26288a2"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/forest_ancient.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 0",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "28edfb46234d997ab3af9121a656da4c25269c7304f45d583dab725a59a1fbe4"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/forge_anvil.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 2",
+    "square 195 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "214d85faa5fec4167b0b1ab12431b1483d90392c62be5ddb84a13d4ce6580914"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/fort_wall.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6aabbe4bfcd08b0515d1e50f200a5b09b9f5d36270f1c4b34720038ead51bbb3"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/foundry_fire.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 3",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "db36521de2740195d316ee739478cfc98d358b3fb8a65a6fb68a080560a80adf"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/frozen_gate.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 10",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "aed565940e550cc89a793d6a7383f87b8b8d95e64cc4f25812bdf6a6e3dbf9ea"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/gala_sun.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 3",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0db578b124847200d88bc2ff33b6a4e976246b4428ff3bb5fe961000f5effd7d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/galley_oars.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 0",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "71365d5ef1665ad76d6e5ebdab47b1a73ad8fd009ffde21846eb17b6338d2767"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/generic.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 6",
+    "square 246 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "163c97a5597c7c09981c6993602609a0cf6db8c0538af8253fdae45c7c966298"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/giant_hammer.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 2",
+    "square 192 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1cc3cb73a2e3eba3e049bb1370db1ca28ca6893ac15d6db28bc723c322dea0fa"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/glyph_fading.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 10",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6d8cbbc9cd69f86571e7a88b483b9fe23effca98ff10abe696fd8f4449a870cb"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/goblin_raiders.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "45967ceb79250b7246c45e210f53cc1db3a67094334e1e7a3dd347f21750dc62"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/granary.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ad569d44a59281fa9d7260f3a4258ce132d2a3a498c40f8bdc637a6ac085e9dc"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/grave_field.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 5",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3e2cc31a5f722905731741def080c00b53a62e9cb13f323fa649b0f58681a918"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/grave_host.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 4",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "26ee795ce39c3966b766b94c42653e4a7f5cf8f67dfa0df221dda6f843f1d43c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/great_warship.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 2",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9c9c2543ecdd3b8da3298c3e168594362e161fb2c22120e1d3095894835bf8bd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/grey_ford.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c209d809683b0c7134ce3286569149f53571f50895db70149a6f43ece64189ab"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/griffin_rider.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "04f848467d08734afe7173fe663160e19310fd1ef44d290b2ba61a9d8dfa8c41"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/guild_hall.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b1ccae3a238f93d8578d5d0bac3daa73062c79711083b83e92ff8f9f349f4d40"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/handshake_oath.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1c9f2879eb6795165ce46a99770625db3188573ad32ce98379f7094f2dc01dbe"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/harbour_lake.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 4",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6ff068fbdef537a309b2f3ae956ae46b4afa6b4febc14d6ff96cdd05c44c9874"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/healer_herbs.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e700102c841fe746444e06077cf7bf9aea6957252276dc2837c3823563ee8855"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/heir_rolls.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 2",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0337d6a6d60fbd5d7b8d786278a4373cb7b9c03ba70d4e0e666fddb6bbffe6c8"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/herds.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 2",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a7af3f376f6981c9fe8ae3a5857e962cfd9efc1b15f4b423dfb01fbe9187e4e4"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/hermitage_hills.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8fb281f6503794f18fa1431f6a2ce51fb4cac7b752e78380b429a92a054653cd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/horse_cavalry.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 6",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e19a29aea8a9aff3ba6f79fceb934a65527484f1fa3294f90720435667205356"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/house_first_light.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "621a38bea4d3fdb1588134cd762819f1b0ef0392ee4c3d7e05eea27dd954d348"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/hymn_choir.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 2",
+    "square 195 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5c5893541b20ca8f19a6c5b0fe4aa3bc2919240ab980332a327a9fd1becb7a25"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ice_cavern.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 8",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3b76f68a1c4bfdabe91ad2db739d4b4c3f0514c5b01c462178133b4c228d1c39"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ice_field.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f6646e4b6bf6f9c71b4d3661d785e15503d53dc084dce23d9fabc71c2b10cdfa"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/island_shrine.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 2",
+    "square 241 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "36354ae692a7ba4f507c9e75a83b1f99f40f4febadd46201e7cf492c4bd82f10"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/kilinti_grove.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 3",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f3440dc283746cd3962cb31b52620d0845facff1b33ccc048a090c4c6335f729"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/knight_lance.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 5",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5945b8171bac841fa950763d5d71aa30220fc66f9dfbf1d42f6b3ef8ecfda603"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/lake_town.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 1",
+    "square 195 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6dda30da6b2f8af26985f333ea4fa1f92d85e5c281d7f2116ec1a94914571ad5"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/lantern_chain.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 6",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e3541d3cd7301fc3216f9174c5a62677fcc62e07e9651cf71aee2ea0ee805465"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ledger_coins.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "98714a332cc5c9d3b92069ebba5d05144c331d4681dec3407f7c60a9b9143470"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/levy_muster.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 8",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "440b87255931c8d1d5143d6936ad5f26a6b5ad60ce21f218f6ea7def35dc00dd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/lighthouse.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 8",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5a02958bbba46dec45987860045f87ed2178df7fd44896c1ff7048a1574bb52f"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/lone_sword.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 3",
+    "square 241 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0ab8dfeac13bd1196de33a7186e6bea572cbdcdde062c0f0dbb7a1086e71239d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/map_unrolled.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 5",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "56760f90ad1cb4b3f4f2203669eeae4ecf053f16e2a53f750564803fc2107241"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/market_stalls.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 8",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5df07abc4ad46ff1ccb087653d56cce53ee262b3dedb0d8a9320c363028c707d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/mask_veiled.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1b2699e542f77be6b0acec10fe64f45dc226416ab0496a52a4f5cbbd5d91bc1a"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/mine_cart.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 4",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d9ada325c632583e16ea0536b1d11de53793be4678cd6cd079503e135fa0ca8b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/miracle_light.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 4",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4939a3f70521938518a062f421b2ea30ca36e72a92b38b947074fdabe310cb1b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/mirror_rain.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "10d59ef5395af32e63a7c4ca5ee219be0732df6fac80043c253aab2b1e2c39e1"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/mountain_pass.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 10",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5ef12ff5d5eaf18e45f8b4bca7ef1218461d197d57e501338fc4c92c0b0874fe"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/mushroom_grove.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 1",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f59d402f7870f3e639fd6b29b4a4afde285d464e10fc5021581eeb1e88611357"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/necklace_deep.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 1",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5fb3e803d908e7488db406c9bdd810e2d013bd003a55784e5717b493a9acf89c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/nether_gate.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0004f07b9fc3748761069873c9db9022d1cae7c3d1718c22d9ca58f5477b2199"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/new_gods_light.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 5",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e1a78176fe5e96af57200e2ea6678df004dbf2ac2fc8325e1a423794f73996a3"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/olive_branch.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 5",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e9fb2eedb8adcd88704f90156737b630aa31c34d9250ba894b60914f14f62f28"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/orc_axe.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 11",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2b954d856592c6751149a7ac265523824c763df58df1aa99d7ccd6b4ae586911"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/order_divine.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 7",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "090e68de4a5915fdeb8b5b3ace9e8bc7875b0eab52ba8d8acb72da52b5208017"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/order_great.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 5",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "55f0a2de1a0487dd43aaccd54f984bf02e8cc06c2c3173103f01ff72cb280f52"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/order_lesser.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 6",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "211c0a529aac156abc2993449a01bf418fc4da17c32123d8145c6b2eb2090d84"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/palace_parim.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "03935d38dcc9af4908268224bc81286eaa2180ab338fe53d9587a78bb56dd809"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/palace_wards.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 1",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "aaccf7719f8bffa63ffc7da36f5ed389a55e3be129ae4367150a3f32e83a8e90"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/pass_fort.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "806b6dfa29ef2ebe3cc3766662bfb5125cf8b6218780e074bf95f4b65f06556b"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/potent_blade.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 8",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "4e2b68ddcc3dc0f6611a9e6a99137308d7bea8eaee9df80c0539be890a5a2b00"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/quarry_stone.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 5",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6db6eaa15cfa34501a5256e149c3ede949de9a61ec2a89a97c3ee1b943c573f9"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ranger_cloak.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 8",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a3cff771636885b37f3b06675a17a6cde3818f3cf57d977f3ffa3ee05f77d1f5"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/regency_seals.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 1",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c2441323bb1eebd078d537d6298bec16ddc3e53345b0feba58dc8962a448472c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/reliquary.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 8",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7e5fba17e7917a6bf9e98b50e375aa102e5bab4639e31432ee7e6cb753e4b4cd"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ring_doors.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 2",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0ed6960360ac6f86f3d0f684ad88cc7dbbb978e203f89b1559d1eb4d53cc8b14"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/river_ford.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 9",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c31f9c886f519f0ac2b224d397c48799220ca6d80fedb90743bc317937a20a43"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/roads_paved.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 6",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "180c681320fa4863b2a3874ec7cf3d1e641a7ba34c599027d1473571b22e881d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/rune_stone.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "db83922735a2bdf604bf77d47f0d5f14cc2e594ebd26742c20b50e90cd9f5295"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/sceptre.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2bf098996d931ac799c5508e417a678bedc1e8b4d7360570691f4c0289a9710e"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/scout_lantern.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 2",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6f4097407fa11e690348a54aa629c195f49ce936d009b3f66be2082720a11a98"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/scroll_sealed.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 10",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b2b859574b43c43e99c05a8a236479186304906985bc9041ce174f2f9172683c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/scroll_treaty.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 0",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a3daeed0d0aa69b4de321286dde24c012ad189f7b65062eaef475665387c4827"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/sea_charts.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "da743fa18a5b81f191dd357ed05c72d01bf5249345e7bb1c95968ff28e38a6a7"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/seal_chancellor.dds",
+   "source": "art/source/icons/icons-catalog-03.png",
+   "sourceSha256": "d6363776b84fad3cef40831fd3c1be8fcd41a3b9e2c2b5efdc6df43c7a89240c",
+   "ops": [
+    "cell 7",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "85d38a11514055a9d0591bfd72f4d1071c66c914da2d9d1b2735d9c69f122cca"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/seal_royal.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 10",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2349892364ba52f30b4db15fb22beb8181d4c48086cd1f7a9fc276db6454727d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/seal_wax.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 1",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "63a501c0d03ce4169c8acf661fa80af4c575b20385d4f7de1ac01d87d211f860"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ship_voyage.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 6",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ed530caf66838ddbd2780041cd3b75dbcf04cc6b8218ace1c0fa4f04a00a9f87"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/shipwreck.dds",
+   "source": "art/source/icons/icons-catalog-15.png",
+   "sourceSha256": "1f75d14041ba84e1c9310249562ac706d2c83cafb0d7a6e868239ded3a6f11b2",
+   "ops": [
+    "cell 1",
+    "square 241 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "611774c72071d5a6d38db68d97d23df58864f515873a8868e6fadd830da2da41"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/shipwright_yard.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 5",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0d96db0a152c577c929c89600486a385d4d5e59ae802edeb8c5662c2b41e8a1e"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/siege_trebuchet.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 6",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "430dff8098d876efa275ec52be2a0c0446417e821439c2a7951166f494933eb5"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/silent_throne.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 7",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "060d364226b0b8a8e2e7cc67f1399f29e566427ae2618c77f2bb8e138fb9680c"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/snow_peak.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d2e0c5c6bab202380a38031eb0e54d4ed1508322e6ba4d41ae0a969b951c9a40"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/spear_levy.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 3",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8b9be58746b9a0da53178826b78d152a4b1f8b3ba1c7366765fbf9d0f61574d9"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/staff_arcane.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "90d479cf8c91faed7ea00990546bb890f12e42c2a59866667875faa4ce43a095"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/storm_sea.dds",
+   "source": "art/source/icons/icons-catalog-07.png",
+   "sourceSha256": "ec7c9f7a86170b9493a571386b8978842b41ff58fc3e4b8894509cbd819139da",
+   "ops": [
+    "cell 0",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e9afe8f4200c4c16e652576bc95cb648a86d00fd8ec90fbf861acf413ce7932d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/storm_veil.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c2fb887785ff191ea0a2d9b48bcc5ebc2500a39dbb5198bec2e16cb6c7d70207"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/strait_chain.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 6",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "221266ce0e64c228dd2aea5995ea3306aee86446d340f70d4ebd2ed629a83aac"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/sun_flowers.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 4",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b6750c0d8db2dcbaabdabc205af844822e27535e286d11f4ac9ba7e6674186cf"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/sun_veiled.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 8",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fefc937de37d5782bd7477612658c6e56ff81c1e70159c472a90bc99d6e38496"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/sunhot_spear.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 10",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "45c8ffffc33da86651b356a61f8ab2949ed7cd4e1181fec409c576295766f97a"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/sword_shield.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 2",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b6fb71b1700ff4b58ff426025c9dfd800c3210ee48aeab9caed4220ad5d34fa2"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/temple_parim.dds",
+   "source": "art/source/icons/icons-catalog-02.png",
+   "sourceSha256": "820462b246bc501cea3a60d37b827e3172d6b62cbb3e1174c0633b87b55c3ef2",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5d50ca288ce0091241e6990187376ded925a89a9a4611c73a425e68f83b74524"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/throne_ashen.dds",
+   "source": "art/source/icons/icons-catalog-04.png",
+   "sourceSha256": "2ace01ae59816bffd0641e73f31fc59b9a4efe6c43c1df7f913c34fa16f08dfd",
+   "ops": [
+    "cell 0",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1bdc79928e5ae26282dee6a65d926a946c96a781fee80d35b3d02984f5135482"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/throne_gold.dds",
+   "source": "art/source/icons/icons-catalog-01.png",
+   "sourceSha256": "bc91d55aa4f0537257175a386d96c5521798295e8ae06d0e29c98450b30fa678",
+   "ops": [
+    "cell 5",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "02d61e24c63aea9d1ade7be7ace5c8b7d74762cd9311eba51f413f47b1d3f7b3"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/timber_mill.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 3",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "79e485d504f0578c858a7c1e87defbfed9ffe602346d73f9b6909ad7aa9abca1"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/toll_house.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 7",
+    "square 202 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c44bfd8aed842746ec725af1cf09c94ec56263ef50752729fb61fff6650505d4"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/traders_road.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 11",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "af9aee7bd7fbcdc77f5d7fe958c6b8a0126dd197e37a355eb641f86682191b1d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/tree_silver.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 1",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0f442a100f555458c7186ef9b911f6f8ba41632d3434d9ba042e76a9cf133094"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/tribute_chest.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 9",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e0a013ff3956f0e27632604445535acc0ae2af01e2bd4b45de7dbc58cd5162b7"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/troll_club.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 1",
+    "square 192 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3fce8b3e2f1bc0e4e954462e64f5e7864b2ba37de264b9e961daa00f4e00d4c9"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/two_crowns.dds",
+   "source": "art/source/icons/icons-catalog-13.png",
+   "sourceSha256": "51456205f6e9a83d8b0973663768d8793e88a766071e8949a8ae82c2d3e114fe",
+   "ops": [
+    "cell 8",
+    "square 199 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "8de1aca4b9f62b44d6b6bc128aacc4028b21d56ae2bd06a49693b86a1ef2eef2"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/university_hall.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 5",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0cea2bf614a65ce31750d0519c2d531b4a46fafee861bc85c6ee52544074a63d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/war_council_map.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 9",
+    "square 200 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3047b9c87f8f4d7467a87588fa027cb5fa253be318e9cdf64cba72f21cda6774"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/war_drums.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 7",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ea9da21f9a706d512e9fc3e16442f2aba4f7452b01358f0d232169b358e521ed"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/ward_circle.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 6",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "1496c2c3be1c86064ab088ee7f1e69e23e95bb6ea461dba589ee6abdca6ec42d"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/warden_crown.dds",
+   "source": "art/source/icons/icons-catalog-14.png",
+   "sourceSha256": "8e3c827c4a08e8dbef605802cba1be4a7ffc2f0530b792a319550a04980fef6a",
+   "ops": [
+    "cell 3",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "755164ac36e5bad1840e9958e57516ed46b4ddc3343fdb4e1278d9f48ec620e4"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/warship_sail.dds",
+   "source": "art/source/icons/icons-catalog-06.png",
+   "sourceSha256": "2f181da25768a3bc03674223c8f82085b6da8442027873137e4f3463f37d059b",
+   "ops": [
+    "cell 1",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ab23c84439de429ee951d353bdd1eb3db04aae6c0323e6ad65ef62f47ef75766"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/white_deer.dds",
+   "source": "art/source/icons/icons-catalog-10.png",
+   "sourceSha256": "640d28309d896126d329187bd8feb0cb52b979edbf295a449162da0a5f576750",
+   "ops": [
+    "cell 8",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d41f6ba3d72328470052eed68e6be43789327880bc8f92cbf969731940c31b5f"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/wild_hunt.dds",
+   "source": "art/source/icons/icons-catalog-11.png",
+   "sourceSha256": "dd6b667fd7134be9e18a0ec5ad3a78d20dc15875d773cba036d3e0c1689be2bb",
+   "ops": [
+    "cell 2",
+    "square 194 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "62255412aca8d0032541df34ffbd84c243e90ecd19b2de7012011675815ea208"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/wizard_tower.dds",
+   "source": "art/source/icons/icons-catalog-09.png",
+   "sourceSha256": "dfe08bb0e9d32929606bac452065a9dde69341f43c661f1076e4c747147bbfec",
+   "ops": [
+    "cell 11",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b1ff0ce71b996469fa77e79b1cef18689bea7943f28656b2b869326a6d8af776"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/workshop_tools.dds",
+   "source": "art/source/icons/icons-catalog-08.png",
+   "sourceSha256": "44430b753790315fa1ce3cc0a32673b11a1fea673a8cd7b0f4c44031c6be227d",
+   "ops": [
+    "cell 4",
+    "square 201 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2d33f517f5bbf7902298bb48629beeb99295c1fbb6e11731d261d86e321f85e4"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/yeti_claw.dds",
+   "source": "art/source/icons/icons-catalog-05.png",
+   "sourceSha256": "fdf5648690ba681310d5597e46b90c1508b1ab1e7678362a9a8176d455cdaec2",
+   "ops": [
+    "cell 4",
+    "square 198 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "02987f46a14cdcee612d8c5ddfcc0886581284350aa5a68276b66eafe736157a"
+  },
+  {
+   "out": "gfx/interface/ideas/zin/zol_sigil.dds",
+   "source": "art/source/icons/icons-catalog-12.png",
+   "sourceSha256": "d4543d6223671e6c489f42ccd5fa940b35e392385479e9136479a0c1a64a4adc",
+   "ops": [
+    "cell 1",
+    "square 193 in the field",
+    "lanczos3 64x64",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "98321459a2e861044485b79dbe66e089b10fd682e8225a6d06edb1062a373304"
+  },
+  {
+   "out": "gfx/interface/Loadingscreen_loadingstatus.dds",
+   "source": "art/source/ui/loading-statusband.png",
+   "sourceSha256": "f88818801fb9c01394e4b74b7d4edd5c97ab632cb9892c3ecd6106f6c7832add",
+   "ops": [
+    "crop x 121-2053 y 301-418",
+    "column brightness matte",
+    "lanczos3 fill 1400x92",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c4d5e8b94563a92cb448e5b6ced87f2a9632ebc51ec8af3ebe2d2ab76ce16a35"
+  },
+  {
+   "out": "gfx/interface/Loadingscreen_loadingtip.dds",
+   "source": "art/source/ui/loading-tipband.png",
+   "sourceSha256": "414c5553d2c3dd0c9e71c07bb050b44c0ea7cc9ad66ef356c7fd849fce9cd9c3",
+   "ops": [
+    "crop x 119-2027 y 252-447",
+    "column brightness matte",
+    "lanczos3 fill 1400x148",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "005bf1da8b00b2d18739959fb049d4dcc3d5449899f60b0c1da160e67366b0ac"
+  },
+  {
+   "out": "gfx/interface/LoadingScreen_Progress_1.dds",
+   "source": "art/source/ui/loading-progress-track.png",
+   "sourceSha256": "30349392936a52cfd2391fd7d6d79add62e2bf1af1c976a577faca962d3bef1a",
+   "ops": [
+    "crop x 82-2063 y 304-413",
+    "column brightness matte",
+    "lanczos3 fill 934x40",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "f049fa56af3faf67663bf618d548585f1d1439ac327bd407523d6e166023637b"
+  },
+  {
+   "out": "gfx/interface/LoadingScreen_Progress_2.dds",
+   "source": "art/source/ui/loading-progress-fill.png",
+   "sourceSha256": "6d4b7b688ebde1b72a3191faff7ff7ccbca4ce907467541a20564e09c7ff477c",
+   "ops": [
+    "crop x 82-2063 y 304-413",
+    "column brightness matte",
+    "lanczos3 fill 934x40",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2af569a7103bf3c36dd6869c7b0446497a182b131ca3d43a5d3a0b329ecd4dd9"
+  },
+  {
+   "out": "gfx/interface/logo_game.dds",
+   "source": "art/source/menu/frontend-emblem.png",
+   "sourceSha256": "d1abe8cbbfbe9a69dce5f6b1ff161d783de39539dc1bcffb21e4693cd622ee10",
+   "ops": [
+    "magenta key matte",
+    "trim to alpha",
+    "lanczos3 contain 440x167",
+    "pad 4",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "dfb85b57a67e619c97830c1770aac29cf0560680e3b91a4b69958c2643994501"
+  },
+  {
+   "out": "gfx/interface/select_date_1936.dds",
+   "source": "art/source/menu/frontend-bookmark.png",
+   "sourceSha256": "16fd4ee5a80324c1493d66492511d750229850ab0e4f20c543b120aeb81d13cf",
+   "ops": [
+    "lanczos3 cover 180x104",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0ff1c623a77ee9ee6a304233f14f05e3256f83b725d4f3467e4cd479857a57e4"
+  },
+  {
+   "out": "gfx/interface/select_date_1939.dds",
+   "source": "art/source/menu/frontend-bookmark.png",
+   "sourceSha256": "16fd4ee5a80324c1493d66492511d750229850ab0e4f20c543b120aeb81d13cf",
+   "ops": [
+    "lanczos3 cover 180x104",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0ff1c623a77ee9ee6a304233f14f05e3256f83b725d4f3467e4cd479857a57e4"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_1_small.dds",
+   "source": "art/source/loadingscreens/load_1.png",
+   "sourceSha256": "d3516ad4b49ca790b32c2f599ac6cf7e57fdc7b80616e2d098e32523ae68958b",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "26b082f0640ec37e9a1f83fdef77bf26687bd838a45ca6df7d10834c7828a3d5"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_10_small.dds",
+   "source": "art/source/loadingscreens/load_10.png",
+   "sourceSha256": "61bbf004be466ffe414067fa265b7180435d96f1ab2cd76679d226dfd8d62549",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e47bbcdb67396b7eacdc0f136527117ad26c70de746c0177a9b929645f81bd7e"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_11_small.dds",
+   "source": "art/source/loadingscreens/load_11.png",
+   "sourceSha256": "cbcbd35b9e3eda1169108cd4b88150c8b1c1501b97fcc7acd835e10860b4793c",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "291eb5a64b2cee834303f6c63f02d211dde6c6cf870570595b60255a1f38d208"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_12_small.dds",
+   "source": "art/source/loadingscreens/load_12.png",
+   "sourceSha256": "149f03c3b96aac5b837fd88ca48f4ac049977e856c0c99b5ed173a49f9e5def4",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "051a1f73cddefa9ebfa08b517d3c898d2dba9b1540b07cec29057a8ded75451d"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_13_small.dds",
+   "source": "art/source/loadingscreens/load_13.png",
+   "sourceSha256": "7264154d014e4224da21630f9afefa6e096b0d36d781e0f245a0638b75143e72",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c66773f171d3aea50a7587721bc768111599345c4b26f5a54038869ed6f85b72"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_14_small.dds",
+   "source": "art/source/loadingscreens/load_14.png",
+   "sourceSha256": "828d529e43bfc4abef0a649f76c8e70f5604476dc4b75a33402d12b545747af1",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "373488e589d31bf4bb80ecfca17bee12546ff52ec39ff25d536bd2b2d230b187"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_15_small.dds",
+   "source": "art/source/loadingscreens/load_15.png",
+   "sourceSha256": "7cad129eb85165301363a87172d95877a8ac26b731fa91026f8248ee91cea136",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7887f552a330d53a84246decf05aad4d8b9e2150905ebf715532b927f980474a"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_16_small.dds",
+   "source": "art/source/loadingscreens/load_16.png",
+   "sourceSha256": "c808943fb63bf217de8aa075ada1adbd12af4ba5444f56b7f457c499e55a8c54",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "544f71c15ace0e8b41dd552c03dfa5195cb111a1b22d4dbb81b2346c0b73c3f6"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_17_small.dds",
+   "source": "art/source/loadingscreens/load_17.png",
+   "sourceSha256": "67a79f391c51bed4e18ca4d6b0b5fd4079a520783c7aa6e325a187d97ac43c56",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "0a5adf86b3291fddd4ff3a79b5e75e6b53dd2d148fdbb20c99b5ee205e278ee8"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_18_small.dds",
+   "source": "art/source/loadingscreens/load_18.png",
+   "sourceSha256": "5950532f10c3d7827ef0e04f290cce1b04cb54c7335afdee253f76c2d16d1758",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3e0b860b4ca8953a2b498fdc5fe83ad9aa689fab8c8573cf38979f5db673b1fd"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_19_small.dds",
+   "source": "art/source/loadingscreens/load_19.png",
+   "sourceSha256": "6076f9e1721cabff9f586953f772486e6d0604f62113388356597934e89d6cdf",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d467999e02bfd3e12b87d2e47365a18a11c59af6e956744e6b3e23fa155cc48a"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_2_small.dds",
+   "source": "art/source/loadingscreens/load_2.png",
+   "sourceSha256": "a1107851237a5b990df1a2d189d74c42689e97dd4f1f60afbfd6a7bb92e84a1c",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d1706913f697ffb418c686c0a09522c61dc2d3162fe1d6e1d1b2af67aef541b5"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_20_small.dds",
+   "source": "art/source/loadingscreens/load_20.png",
+   "sourceSha256": "23eb9ecc7706ac9c36b6502851ebb463584aa0c80d3d2b1d857dc0616c2da8f7",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d0d9b991844e5dd0054dc03b5608afb086225e93c91b9ccd5089b0c446cc19ca"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_21_small.dds",
+   "source": "art/source/loadingscreens/load_21.png",
+   "sourceSha256": "116af57a76d78e6b49a1e5866ce6210915af920b3c72e74f3b41f844854e6309",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "290c1abc2b1a704202b9f967292820341fa8965b9948ea2db1324a0ea5de332f"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_22_small.dds",
+   "source": "art/source/loadingscreens/load_22.png",
+   "sourceSha256": "f11ba75c1903dcd86fb17836bba4f1267190ebe2d4bc12ff09da5c12cb061d43",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "745d11b6a1e1acf861e0c0b52cb19c8d2a2c66c9e8d99ca7b0284f4bb28f1939"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_23_small.dds",
+   "source": "art/source/loadingscreens/load_23.png",
+   "sourceSha256": "38ce8f73fdc11aa4791affce2a8bb737c77c41fc009095c08e815dac9f1b20cc",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2f45c0897dcea18f340f56058be6bc64940deb4c9553de98ea312d273b3ad55c"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_24_small.dds",
+   "source": "art/source/loadingscreens/load_24.png",
+   "sourceSha256": "ab7ae1c4d3207a9d939c9e42087ee349828ecf3efcdf7252fe3954a4da210ec9",
+   "ops": [
+    "crop x 0-1400 y 0-1050 (docs/specs/INTEGRATION_DECISIONS.md A5)",
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7cf9cc14e601eddcc05a62047731fa69391a225d1fa9f538cb8611cf7edfaec9"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_3_small.dds",
+   "source": "art/source/loadingscreens/load_3.png",
+   "sourceSha256": "dfdf60965630af551d17ed997156f2ff8913d429a879d687cfdcf552d9843a2b",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "c7b2b01142676c88ee452b4debbdc979f0b8ad8b42bc5820c37edf17dbaba9ad"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_4_small.dds",
+   "source": "art/source/loadingscreens/load_4.png",
+   "sourceSha256": "163ca6e8a84f6edf130895d4fd49257fb024ac420c2573887f7882b85559e057",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e95662ae9723e62c37bf31083afdd3c8ec4ac9ff71d1dbd0d269004aa0f9a86e"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_5_small.dds",
+   "source": "art/source/loadingscreens/load_5.png",
+   "sourceSha256": "0f4b3a5b971bf3d71c3fb1af5d1056a8d07c61163cbceaea2b4ce0cae69eb858",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a64e81c18ca5148c75f6ccbb6b8f25a162e8c46195fdd4bc98c323966305e2f0"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_6_small.dds",
+   "source": "art/source/loadingscreens/load_6.png",
+   "sourceSha256": "f559b9fb5f8618dc717dfab43bd1e864b0c56c5ca050fbdc9bd3991669b0bb38",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "91dfc54e633139a2075d31cefabb156ea49843b673e46deb6066594eaaf22c21"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_7_small.dds",
+   "source": "art/source/loadingscreens/load_7.png",
+   "sourceSha256": "9a76893d3926746ad49841954a784b80d1e9ced19eb31e23291209adc538d23c",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "ee76b90252e5025895d1c9ba466e51cb0a8b0b36191a2156c22a612b6b093817"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_8_small.dds",
+   "source": "art/source/loadingscreens/load_8.png",
+   "sourceSha256": "f6c62d5d1656d0ea3ea0cf57403d547d2dd275f5002b1658ffaa5f5055425ed4",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "dfbb328cf18a5b2cc247af7e77f62ab47e2dfd58fd1b927d81890b6e886d9e7f"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/load_9_small.dds",
+   "source": "art/source/loadingscreens/load_9.png",
+   "sourceSha256": "8144912baf2af45d41ab6caa15e261af8a171698a3c1906ea0743b45c56dd066",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "b022054c860766bbe3e6c924c1301bdd90150f8f3562a83d8988f2b30d5c3616"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/zin_menu_parim_small.dds",
+   "source": "art/source/menu/zin_menu_parim.png",
+   "sourceSha256": "4077223345b56d82287fe1e3b11cd72477735926c9e3cc897213f0026e181158",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "de30f984841eb5e2b8a1ef913c3662a1b499ebd8198397cd187bbf73a4ec6a2b"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/zin_menu_strait_small.dds",
+   "source": "art/source/menu/zin_menu_strait.png",
+   "sourceSha256": "45de4a0ed739cbfad46747f247cac95bb6047785833a50632b9040e25529f43b",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "e8267b2e65eca8ec4f2e529c30e4dfeeedb09843604770d635a713570c91b771"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/zin_menu_wall_small.dds",
+   "source": "art/source/menu/zin_menu_wall.png",
+   "sourceSha256": "57732d36940a34463f22e348c478987454c3e942063b73c12ae51ed9128a97ba",
+   "ops": [
+    "lanczos3 1920x1440",
+    "box 10x 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "520fa202684f7b090f7cda307be6ff301164f9568f480ca77962abe655f46d2e"
+  },
+  {
+   "out": "gfx/interface/zin/loadingscreens/zin_thumb_border.dds",
+   "source": "art/source/loadingscreens/loading-thumb-border.png",
+   "sourceSha256": "7e2762aeb5c625dc2c031e4776fe17b0a029bf2b84aecf4b98ff1ffdbbec6ff9",
+   "ops": [
+    "magenta key matte",
+    "lanczos3 192x144",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "a97280c96aa4e341b09355a65ecf2f648f3fbc49355c71c30d0cd438b1461cfd"
+  },
+  {
+   "out": "gfx/loadingscreens/load_1.dds",
+   "source": "art/source/loadingscreens/load_1.png",
+   "sourceSha256": "d3516ad4b49ca790b32c2f599ac6cf7e57fdc7b80616e2d098e32523ae68958b",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5552da55ab15ea9a6125aaedbeaeb3f45df2990c88657b3bdf8aafa6b4c064d4"
+  },
+  {
+   "out": "gfx/loadingscreens/load_10.dds",
+   "source": "art/source/loadingscreens/load_10.png",
+   "sourceSha256": "61bbf004be466ffe414067fa265b7180435d96f1ab2cd76679d226dfd8d62549",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9973242d482d740d0242ffe87bc120d8f858d3036b6fc04e348c1017c1d63e28"
+  },
+  {
+   "out": "gfx/loadingscreens/load_11.dds",
+   "source": "art/source/loadingscreens/load_11.png",
+   "sourceSha256": "cbcbd35b9e3eda1169108cd4b88150c8b1c1501b97fcc7acd835e10860b4793c",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "3ea483a1e6ab6ff4030f4aacd1a671a655067decfb01226e34d0314d7fcf6b85"
+  },
+  {
+   "out": "gfx/loadingscreens/load_12.dds",
+   "source": "art/source/loadingscreens/load_12.png",
+   "sourceSha256": "149f03c3b96aac5b837fd88ca48f4ac049977e856c0c99b5ed173a49f9e5def4",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7b5cc400154f50c98e8914b10ebf5c909da40db72d3f6115cd2d1e15c0441892"
+  },
+  {
+   "out": "gfx/loadingscreens/load_13.dds",
+   "source": "art/source/loadingscreens/load_13.png",
+   "sourceSha256": "7264154d014e4224da21630f9afefa6e096b0d36d781e0f245a0638b75143e72",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "611b8235b80f7757fcf8b9fcd25620d213a06eea74f4e4a4697b5d86e837cb00"
+  },
+  {
+   "out": "gfx/loadingscreens/load_14.dds",
+   "source": "art/source/loadingscreens/load_14.png",
+   "sourceSha256": "828d529e43bfc4abef0a649f76c8e70f5604476dc4b75a33402d12b545747af1",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "11e26c5959dd1f67387d4e990cfa27de1927fa52f42deaad6dbce48cebce67fe"
+  },
+  {
+   "out": "gfx/loadingscreens/load_15.dds",
+   "source": "art/source/loadingscreens/load_15.png",
+   "sourceSha256": "7cad129eb85165301363a87172d95877a8ac26b731fa91026f8248ee91cea136",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7c547c5a5098caa9d5869deea5fa1a29a0435c0ee46091e37474cd014b05e60f"
+  },
+  {
+   "out": "gfx/loadingscreens/load_16.dds",
+   "source": "art/source/loadingscreens/load_16.png",
+   "sourceSha256": "c808943fb63bf217de8aa075ada1adbd12af4ba5444f56b7f457c499e55a8c54",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9e4b744ffeb71d2ffd9ffb7cbda90ec15ee15d80de9792f8a76e8522686a3220"
+  },
+  {
+   "out": "gfx/loadingscreens/load_17.dds",
+   "source": "art/source/loadingscreens/load_17.png",
+   "sourceSha256": "67a79f391c51bed4e18ca4d6b0b5fd4079a520783c7aa6e325a187d97ac43c56",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "534196387294ec6fdfbac091820892072a17bb4e01d7c6f716b8f93a54a5beac"
+  },
+  {
+   "out": "gfx/loadingscreens/load_18.dds",
+   "source": "art/source/loadingscreens/load_18.png",
+   "sourceSha256": "5950532f10c3d7827ef0e04f290cce1b04cb54c7335afdee253f76c2d16d1758",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "bf8532c08fc1f1ae962fe4508d1565db9d3903c07108dc8a4fe87e5b1b9a9fe1"
+  },
+  {
+   "out": "gfx/loadingscreens/load_19.dds",
+   "source": "art/source/loadingscreens/load_19.png",
+   "sourceSha256": "6076f9e1721cabff9f586953f772486e6d0604f62113388356597934e89d6cdf",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "810bd5a2920538c21bedda7baddc184ef938019a5d12eab6f69c9b05f5ae8802"
+  },
+  {
+   "out": "gfx/loadingscreens/load_2.dds",
+   "source": "art/source/loadingscreens/load_2.png",
+   "sourceSha256": "a1107851237a5b990df1a2d189d74c42689e97dd4f1f60afbfd6a7bb92e84a1c",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9380b50dd6d29c77da38ce246619206c3d783908cef9435a4c3ac4da399e7374"
+  },
+  {
+   "out": "gfx/loadingscreens/load_20.dds",
+   "source": "art/source/loadingscreens/load_20.png",
+   "sourceSha256": "23eb9ecc7706ac9c36b6502851ebb463584aa0c80d3d2b1d857dc0616c2da8f7",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "7249c9acd27341058320721af5757a28e131f10f93f8b28993a4c1065349d939"
+  },
+  {
+   "out": "gfx/loadingscreens/load_21.dds",
+   "source": "art/source/loadingscreens/load_21.png",
+   "sourceSha256": "116af57a76d78e6b49a1e5866ce6210915af920b3c72e74f3b41f844854e6309",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "d26d7f89e70eef0ea5bdd45403e319208e92f91ce2a0f441f843f00deac007bc"
+  },
+  {
+   "out": "gfx/loadingscreens/load_22.dds",
+   "source": "art/source/loadingscreens/load_22.png",
+   "sourceSha256": "f11ba75c1903dcd86fb17836bba4f1267190ebe2d4bc12ff09da5c12cb061d43",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "08b43813da106a55300889adf5523eee079b84313b3abe80121d2cc0e4bfa22d"
+  },
+  {
+   "out": "gfx/loadingscreens/load_23.dds",
+   "source": "art/source/loadingscreens/load_23.png",
+   "sourceSha256": "38ce8f73fdc11aa4791affce2a8bb737c77c41fc009095c08e815dac9f1b20cc",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "26f4f13f062a8dd72d32a2b4927656495033d69939c7110905a2583f7abf58bd"
+  },
+  {
+   "out": "gfx/loadingscreens/load_24.dds",
+   "source": "art/source/loadingscreens/load_24.png",
+   "sourceSha256": "ab7ae1c4d3207a9d939c9e42087ee349828ecf3efcdf7252fe3954a4da210ec9",
+   "ops": [
+    "crop x 0-1400 y 0-1050 (docs/specs/INTEGRATION_DECISIONS.md A5)",
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "5deece7e5f95957b6eb92dcff1978974d587df6fca6a56dbbd1f0da8b14d6e14"
+  },
+  {
+   "out": "gfx/loadingscreens/load_3.dds",
+   "source": "art/source/loadingscreens/load_3.png",
+   "sourceSha256": "dfdf60965630af551d17ed997156f2ff8913d429a879d687cfdcf552d9843a2b",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "fa0946ef85cbf14c662ca67828efcbd1abb57cc06a854d7ab5433c774ba28e22"
+  },
+  {
+   "out": "gfx/loadingscreens/load_4.dds",
+   "source": "art/source/loadingscreens/load_4.png",
+   "sourceSha256": "163ca6e8a84f6edf130895d4fd49257fb024ac420c2573887f7882b85559e057",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "56f84911432939347062e322c3344df1068311bc8d0cf6c2245cc6161ea32658"
+  },
+  {
+   "out": "gfx/loadingscreens/load_5.dds",
+   "source": "art/source/loadingscreens/load_5.png",
+   "sourceSha256": "0f4b3a5b971bf3d71c3fb1af5d1056a8d07c61163cbceaea2b4ce0cae69eb858",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "19330d0390b629bffe1ce2d1b62bd8b76af0bce4e2dd7ab5c31c63bfc1232fec"
+  },
+  {
+   "out": "gfx/loadingscreens/load_6.dds",
+   "source": "art/source/loadingscreens/load_6.png",
+   "sourceSha256": "f559b9fb5f8618dc717dfab43bd1e864b0c56c5ca050fbdc9bd3991669b0bb38",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "dc5bde69fb64c29bfa0c61b6bf1896d7156be470cd80681ed4119c5882d14919"
+  },
+  {
+   "out": "gfx/loadingscreens/load_7.dds",
+   "source": "art/source/loadingscreens/load_7.png",
+   "sourceSha256": "9a76893d3926746ad49841954a784b80d1e9ced19eb31e23291209adc538d23c",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "aef79b64d7f3e085dc98fc4798e866a3e7c9f387ee4179784f36213441d3cd0d"
+  },
+  {
+   "out": "gfx/loadingscreens/load_8.dds",
+   "source": "art/source/loadingscreens/load_8.png",
+   "sourceSha256": "f6c62d5d1656d0ea3ea0cf57403d547d2dd275f5002b1658ffaa5f5055425ed4",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9d70765aa1ff040b6947a876605b6ec1195e0f1d84c71c011a3687222a3a4f7b"
+  },
+  {
+   "out": "gfx/loadingscreens/load_9.dds",
+   "source": "art/source/loadingscreens/load_9.png",
+   "sourceSha256": "8144912baf2af45d41ab6caa15e261af8a171698a3c1906ea0743b45c56dd066",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "78890ea271b5a2111ba4d1a7f86e2207892320e2e52e5d414389c84d6c55c043"
+  },
+  {
+   "out": "gfx/loadingscreens/zin_menu_parim.dds",
+   "source": "art/source/menu/zin_menu_parim.png",
+   "sourceSha256": "4077223345b56d82287fe1e3b11cd72477735926c9e3cc897213f0026e181158",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "6385217a69457e68a13903b04a68052e30538f5b63abcc31bdb01ef12093cbbc"
+  },
+  {
+   "out": "gfx/loadingscreens/zin_menu_strait.dds",
+   "source": "art/source/menu/zin_menu_strait.png",
+   "sourceSha256": "45de4a0ed739cbfad46747f247cac95bb6047785833a50632b9040e25529f43b",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "9f898958424d70a6f94aa4a18a7f821ba659892e605b378be40786bb683a1cd0"
+  },
+  {
+   "out": "gfx/loadingscreens/zin_menu_wall.dds",
+   "source": "art/source/menu/zin_menu_wall.png",
+   "sourceSha256": "57732d36940a34463f22e348c478987454c3e942063b73c12ae51ed9128a97ba",
+   "ops": [
+    "lanczos3 1920x1440",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "de9d3abf4caa26e635a1d9c23a8d04e3795d3e186e666ea5a3f3050473b2373c"
+  }
+ ]
+}

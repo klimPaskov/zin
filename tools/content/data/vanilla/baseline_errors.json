@@ -7,25 +7,163 @@
  "total": 1902,
  "note": "Each pattern is a JavaScript regular expression matched against the message part of an error.log line (after the [time][date][source]: prefix). A line belongs to the first category whose pattern matches it.",
  "categories": [
-  { "id": "B1", "name": "Invalid Decision ID for unlock_decision_tooltip", "pattern": "^Invalid Decision ID for unlock_decision_tooltip ", "count": 557, "stage": 1 },
-  { "id": "B2", "name": "Invalid Decision ID for targeted decision effect", "pattern": "^Invalid Decision ID for targeted decision effect ", "count": 145, "stage": 1 },
-  { "id": "B3", "name": "Invalid Decision ID for activate_mission / activate_mission_tooltip", "pattern": "^Invalid Decision ID for activate_mission(_tooltip)? ", "count": 107, "stage": 1 },
-  { "id": "B4", "name": "Invalid Decision ID for add_days_mission_timeout", "pattern": "^Invalid Decision ID for add_days_mission_timeout ", "count": 46, "stage": 1 },
-  { "id": "B5", "name": "Invalid Decision ID for activate decision effect", "pattern": "^Invalid Decision ID for activate decision effect ", "count": 21, "stage": 1 },
-  { "id": "B6", "name": "Invalid decision in has_active_timed_decision / has_decision trigger", "pattern": "^Invalid decision in (has_active_timed_decision|has_decision) trigger", "count": 133, "stage": 1 },
-  { "id": "B7", "name": "Trigger failed to validate", "pattern": "^Trigger failed to validate: ", "count": 133, "stage": 1 },
-  { "id": "B8", "name": "<TAG> - is missing a history file", "pattern": "^[A-Z][A-Z0-9]{2} - is missing a history file\\.", "count": 728, "stage": 1 },
-  { "id": "B9", "name": "Error loading flag (vanilla Komi)", "pattern": "^Error loading (country )?flag", "count": 12, "stage": 3 },
-  { "id": "B10", "name": "AI faction theater region list contains invalid entries", "pattern": "region list contains invalid entries \\(max id = \\d+!\\)", "count": 11, "stage": 1 },
-  { "id": "B11", "name": "Missing equipment entities", "pattern": "^(Entity referenced in equipment graphic database does not exist|Failed to find entity \".*\" for attachment)", "count": 6, "stage": 2 },
-  { "id": "B12", "name": "Localisation key collisions", "pattern": "^The game has loc key collisions", "count": 1, "stage": 1 },
-  { "id": "B13", "name": "Ship in port too far from center", "pattern": "Ship in port (moving )?is too far away from center", "count": 2, "stage": 1 }
+  {
+   "id": "B1",
+   "name": "Invalid Decision ID for unlock_decision_tooltip",
+   "pattern": "^Invalid Decision ID for unlock_decision_tooltip ",
+   "count": 557,
+   "stage": 1
+  },
+  {
+   "id": "B2",
+   "name": "Invalid Decision ID for targeted decision effect",
+   "pattern": "^Invalid Decision ID for targeted decision effect ",
+   "count": 145,
+   "stage": 1
+  },
+  {
+   "id": "B3",
+   "name": "Invalid Decision ID for activate_mission / activate_mission_tooltip",
+   "pattern": "^Invalid Decision ID for activate_mission(_tooltip)? ",
+   "count": 107,
+   "stage": 1
+  },
+  {
+   "id": "B4",
+   "name": "Invalid Decision ID for add_days_mission_timeout",
+   "pattern": "^Invalid Decision ID for add_days_mission_timeout ",
+   "count": 46,
+   "stage": 1
+  },
+  {
+   "id": "B5",
+   "name": "Invalid Decision ID for activate decision effect",
+   "pattern": "^Invalid Decision ID for activate decision effect ",
+   "count": 21,
+   "stage": 1
+  },
+  {
+   "id": "B6",
+   "name": "Invalid decision in has_active_timed_decision / has_decision trigger",
+   "pattern": "^Invalid decision in (has_active_timed_decision|has_decision) trigger",
+   "count": 133,
+   "stage": 1
+  },
+  {
+   "id": "B7",
+   "name": "Trigger failed to validate",
+   "pattern": "^Trigger failed to validate: ",
+   "count": 133,
+   "stage": 1
+  },
+  {
+   "id": "B8",
+   "name": "<TAG> - is missing a history file",
+   "pattern": "^[A-Z][A-Z0-9]{2} - is missing a history file\\.",
+   "count": 728,
+   "stage": 3
+  },
+  {
+   "id": "B9",
+   "name": "Error loading flag (vanilla Komi)",
+   "pattern": "^Error loading (country )?flag",
+   "count": 12,
+   "stage": 3
+  },
+  {
+   "id": "B10",
+   "name": "AI faction theater region list contains invalid entries",
+   "pattern": "region list contains invalid entries \\(max id = \\d+!\\)",
+   "count": 11,
+   "stage": 1
+  },
+  {
+   "id": "B11",
+   "name": "Missing equipment entities",
+   "pattern": "^(Entity referenced in equipment graphic database does not exist|Failed to find entity \".*\" for attachment)",
+   "count": 6,
+   "stage": 2
+  },
+  {
+   "id": "B12",
+   "name": "Localisation key collisions",
+   "pattern": "^The game has loc key collisions",
+   "count": 1,
+   "stage": 1
+  },
+  {
+   "id": "B13",
+   "name": "Ship in port too far from center",
+   "pattern": "Ship in port (moving )?is too far away from center",
+   "count": 2,
+   "stage": 1
+  },
+  {
+   "id": "B14",
+   "name": "Vanilla tags named by kept generic vanilla files",
+   "pattern": "([A-Z][A-Z0-9]{2} - is not in the tag list|Invalid country tag|Invalid trigger '[A-Z][A-Z0-9]{2}'|Unknown (trigger|effect)-type: [A-Z][A-Z0-9]{2},|Invalid effect '[A-Z][A-Z0-9]{2}'|Invalid tag.|Expected 'default', a continent name or a country tag|Malformed token: [A-Z][A-Z0-9]{2},|does not match any MIO in database|unknown tag in for_countries scope|Errors occurred while reading math expression|^Error: \"\" in file: \"common/factions/goals/)",
+   "count": 0,
+   "measured": {
+    "date": "2026-10-19",
+    "lines": 638,
+    "note": "isolated Linux run of the applied stage-1 build (vanilla tags removed, single-country vanilla files silenced): technologies, faction goals and rules, generic naval goals, generic organizations, occupation laws, leader traits, scorers, the commonwealth song list and the operative code names still name vanilla tags"
+   },
+   "stage": 2
+  }
  ],
  "budget": [
-  { "stage": 0, "max": 1902, "allowed": ["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9", "B10", "B11", "B12", "B13"] },
-  { "stage": 1, "max": 20, "allowed": ["B9", "B11", "B12"], "limits": { "B12": 2 } },
-  { "stage": 2, "max": 13, "allowed": ["B9", "B12"] },
-  { "stage": 3, "max": 1, "allowed": ["B12"] },
-  { "stage": 4, "max": 0, "allowed": [] }
+  {
+   "stage": 0,
+   "max": 1902,
+   "allowed": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "B9",
+    "B10",
+    "B11",
+    "B12",
+    "B13"
+   ]
+  },
+  {
+   "stage": 1,
+   "max": 20,
+   "allowed": [
+    "B11",
+    "B12"
+   ],
+   "limits": {
+    "B12": 2
+   },
+   "note": "The country tags were pulled into stage 1 on 19 October 2026 (the flag-sheet divide-by-zero crash), so B8 and B9 (vanilla tags without history, the Komi flag) are gone and not allowed. B11 (vanilla equipment graphics) leaves with the warfare replacements in stage 2. B14 (vanilla tags named by generic vanilla files that stage 2 replaces) is exempt up to 650 lines; its lines may not grow.",
+   "exempt": {
+    "B14": 650
+   }
+  },
+  {
+   "stage": 2,
+   "max": 13,
+   "allowed": [
+    "B12"
+   ]
+  },
+  {
+   "stage": 3,
+   "max": 1,
+   "allowed": [
+    "B12"
+   ]
+  },
+  {
+   "stage": 4,
+   "max": 0,
+   "allowed": []
+  }
  ]
 }

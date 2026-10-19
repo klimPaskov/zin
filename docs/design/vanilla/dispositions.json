@@ -1,0 +1,2168 @@
+{
+ "version": 1,
+ "spec": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+ "gameVersion": "1.19.3",
+ "measured": "2026-10-18",
+ "currentStage": 1,
+ "note": "Source of truth for section 3 of the spec. stage is the stage in which the action takes effect (0 = in effect before stage 1). The builder writes a replace_path line for every replace row with stage <= currentStage and the overrides of every override row in effect. A row with stub names the interim file C4 removes once the owner ships content; emptyAllowed records why a replaced folder may ship no file.",
+ "rows": [
+  {
+   "path": "common/abilities",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/abilities/zin_abilities.txt"
+   ],
+   "reason": "Generic commander abilities, re-themed"
+  },
+  {
+   "path": "common/acclimatation.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "common/aces",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Generic engine data, re-themed through localisation"
+  },
+  {
+   "path": "common/achievements.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [
+    "common/achievements.txt"
+   ],
+   "reason": "ZIN has no Steam achievements. Pulled forward from stage 3: the file names 51 vanilla focuses and 28 vanilla characters (C3)."
+  },
+  {
+   "path": "common/ai_areas",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
+   "zin": [
+    "common/ai_areas/world.txt"
+   ],
+   "reason": "Erdae AI areas"
+  },
+  {
+   "path": "common/ai_attitudes.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "common/ai_equipment",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/ai_equipment/zin_ai_equipment.txt"
+   ],
+   "reason": "ZIN AI equipment designs"
+  },
+  {
+   "path": "common/ai_faction_theaters",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
+   "zin": [
+    "common/ai_faction_theaters/zin_theaters.txt"
+   ],
+   "reason": "One theater per Erdae region, built from the strategic regions; fixes B10"
+  },
+  {
+   "path": "common/ai_focuses",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
+   "zin": [
+    "common/ai_focuses/zin_ai_focuses.txt"
+   ],
+   "reason": "The engine AI research focuses under their engine keys, with ZIN weights"
+  },
+  {
+   "path": "common/ai_navy",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Holds only subfolders"
+  },
+  {
+   "path": "common/ai_navy/fleet",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/ai_navy/fleet/zin_fleet.txt"
+   ],
+   "reason": "ZIN navy AI"
+  },
+  {
+   "path": "common/ai_navy/goals",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/ai_navy/goals/zin_goals.txt"
+   ],
+   "reason": "ZIN navy AI"
+  },
+  {
+   "path": "common/ai_navy/taskforce",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/ai_navy/taskforce/zin_taskforce.txt"
+   ],
+   "reason": "ZIN navy AI"
+  },
+  {
+   "path": "common/ai_personalities.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "common/ai_strategy",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
+   "zin": [
+    "common/ai_strategy/zin_interim_ai_strategy.txt"
+   ],
+   "reason": "Vanilla AI strategies name vanilla tags and states; an interim stub keeps the folder non-empty until the historical-path spec ships",
+   "stub": "common/ai_strategy/zin_interim_ai_strategy.txt"
+  },
+  {
+   "path": "common/ai_strategy_plans",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
+   "zin": [
+    "common/ai_strategy_plans/world.txt",
+    "common/ai_strategy_plans/zin_interim_plan.txt"
+   ],
+   "reason": "Vanilla plans name vanilla focuses; the world file holds no plan, so an interim stub keeps the folder non-empty until the historical-path spec ships its plans",
+   "stub": "common/ai_strategy_plans/zin_interim_plan.txt"
+  },
+  {
+   "path": "common/ai_templates",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/ai_templates/zin_ai_templates.txt"
+   ],
+   "reason": "ZIN AI templates for every template role"
+  },
+  {
+   "path": "common/alerts.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "common/autonomous_states",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/autonomous_states/zin_autonomy.txt"
+   ],
+   "reason": "Vassal plus the ZIN autonomy states"
+  },
+  {
+   "path": "common/bookmarks",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/01_start_and_calendar.md",
+   "zin": [
+    "common/bookmarks/world.txt"
+   ],
+   "reason": "ZIN start bookmark"
+  },
+  {
+   "path": "common/bop",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/04_mechanics/",
+   "zin": [
+    "common/bop/zin_bop.txt"
+   ],
+   "reason": "ZIN balance-of-power mechanics"
+  },
+  {
+   "path": "common/buildings",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [],
+   "reason": "Engine building types; 01_landmark_buildings.txt is overridden in stage 2"
+  },
+  {
+   "path": "common/buildings/01_landmark_buildings.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/buildings/01_landmark_buildings.txt"
+   ],
+   "reason": "ZIN landmarks or one unused landmark"
+  },
+  {
+   "path": "common/characters",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/02_lore/02_characters.md",
+   "zin": [
+    "common/characters/zin_rulers.txt"
+   ],
+   "reason": "ZIN rulers now; court, generals and hidden figures from the characters spec"
+  },
+  {
+   "path": "common/collections",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/collections/zin_generic_collections.txt"
+   ],
+   "reason": "ZIN generic collections (the engine names country_and_all_subjects and faction_members)"
+  },
+  {
+   "path": "common/combat_tactics.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/combat_tactics.txt"
+   ],
+   "reason": "Vanilla content minus the JAP and SOV tactics, generated by the warfare module"
+  },
+  {
+   "path": "common/continuous_focus",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/continuous_focus/zin_continuous.txt"
+   ],
+   "reason": "ZIN continuous focuses; the folder must not be empty"
+  },
+  {
+   "path": "common/countries",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [],
+   "reason": "Country files load only through country_tags paths; colors.txt and cosmetic.txt are overridden"
+  },
+  {
+   "path": "common/countries/colors.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [
+    "common/countries/colors.txt"
+   ],
+   "reason": "ZIN colours"
+  },
+  {
+   "path": "common/countries/cosmetic.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [
+    "common/countries/cosmetic.txt"
+   ],
+   "reason": "ZIN cosmetic tags"
+  },
+  {
+   "path": "common/country_leader",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/02_lore/02_characters.md",
+   "zin": [
+    "common/country_leader/00_zin_leader_traits.txt"
+   ],
+   "reason": "ZIN ruler and councillor traits ship in stage 1 beside the vanilla files. The folder is replaced in stage 2 with the unit-leader trait overrides: the kept common/unit_leader/00_traits.txt names the vanilla advisor traits (specialist_advisor_trait = army_chief_offensive_1 and the rest), and the stage-1 Linux run logged about 100 malformed tokens without them."
+  },
+  {
+   "path": "common/country_tag_aliases",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [],
+   "reason": "Overridden by file in stage 3"
+  },
+  {
+   "path": "common/country_tag_aliases/tag_aliases.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [
+    "common/country_tag_aliases/tag_aliases.txt"
+   ],
+   "reason": "Aliases the Aenor succession needs"
+  },
+  {
+   "path": "common/country_tags",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [
+    "common/country_tags/00_zin_countries.txt",
+    "common/country_tags/zz_zin_dynamic_countries.txt"
+   ],
+   "reason": "The 305 ZIN tags first, then the 75 vanilla dynamic tags (380, below vanilla 439). Pulled forward from stage 3 on 19 October 2026: with the vanilla tags ahead of them, ZIN flags overflowed the first flag sheet page and the game divided by zero."
+  },
+  {
+   "path": "common/decisions",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/04_mechanics/",
+   "zin": [
+    "common/decisions/zin_decisions_interim.txt"
+   ],
+   "reason": "Vanilla decisions are removed; one hidden interim decision until the mechanic specs ship",
+   "stub": "common/decisions/zin_decisions_interim.txt"
+  },
+  {
+   "path": "common/decisions/categories",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/04_mechanics/",
+   "zin": [
+    "common/decisions/categories/zin_interim_categories.txt"
+   ],
+   "reason": "replace_path does not reach subfolders; the 57 vanilla category files produced B7 lines",
+   "stub": "common/decisions/categories/zin_interim_categories.txt"
+  },
+  {
+   "path": "common/defines",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/05_defines_and_rules.md",
+   "zin": [],
+   "reason": "Never override 00_defines.lua; ZIN adds zin_defines.lua"
+  },
+  {
+   "path": "common/difficulty_settings",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [],
+   "reason": "Overridden by file in stage 3"
+  },
+  {
+   "path": "common/difficulty_settings/00_difficulty.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [
+    "common/difficulty_settings/00_difficulty.txt"
+   ],
+   "reason": "Difficulty entries for the great powers"
+  },
+  {
+   "path": "common/doctrines",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Holds only subfolders"
+  },
+  {
+   "path": "common/doctrines/folders",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/doctrines/folders/zin_doctrines.txt"
+   ],
+   "reason": "ZIN doctrines"
+  },
+  {
+   "path": "common/doctrines/grand_doctrines",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/doctrines/grand_doctrines/zin_doctrines.txt"
+   ],
+   "reason": "ZIN doctrines"
+  },
+  {
+   "path": "common/doctrines/subdoctrines",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Holds only subfolders"
+  },
+  {
+   "path": "common/doctrines/subdoctrines/air",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/doctrines/subdoctrines/air/zin_doctrines.txt"
+   ],
+   "reason": "ZIN doctrines"
+  },
+  {
+   "path": "common/doctrines/subdoctrines/land",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/doctrines/subdoctrines/land/zin_doctrines.txt"
+   ],
+   "reason": "ZIN doctrines"
+  },
+  {
+   "path": "common/doctrines/subdoctrines/sea",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/doctrines/subdoctrines/sea/zin_doctrines.txt"
+   ],
+   "reason": "ZIN doctrines"
+  },
+  {
+   "path": "common/doctrines/subdoctrines/special_forces",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/doctrines/subdoctrines/special_forces/zin_doctrines.txt"
+   ],
+   "reason": "ZIN doctrines"
+  },
+  {
+   "path": "common/doctrines/tracks",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/doctrines/tracks/zin_doctrines.txt"
+   ],
+   "reason": "ZIN doctrines"
+  },
+  {
+   "path": "common/dynamic_modifiers",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/04_mechanics/",
+   "zin": [
+    "common/dynamic_modifiers/zin_dynamic_modifiers.txt"
+   ],
+   "reason": "ZIN dynamic modifiers, including the ones kept engine files apply by name"
+  },
+  {
+   "path": "common/equipment_groups",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/equipment_groups/zin_equipment_groups.txt"
+   ],
+   "reason": "ZIN groups for workshop organisations"
+  },
+  {
+   "path": "common/event_modifiers.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "common/factions",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "Holds only subfolders"
+  },
+  {
+   "path": "common/factions/goals",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/goals/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/icons",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/icons/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/member_upgrades",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/member_upgrades/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/member_upgrades/member_groups",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/member_upgrades/member_groups/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/rules",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/rules/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/rules/groups",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/rules/groups/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/templates",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/templates/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/upgrades",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/upgrades/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/factions/upgrades/groups",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/factions/upgrades/groups/zin_factions.txt"
+   ],
+   "reason": "The ZIN leagues, goals and rules"
+  },
+  {
+   "path": "common/focus_inlay_windows",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/05_focus_trees/",
+   "zin": [
+    "common/focus_inlay_windows/zin_inlays.txt"
+   ],
+   "reason": "One hidden interim inlay until the Aenor tree ships its own",
+   "stub": "common/focus_inlay_windows/zin_inlays.txt"
+  },
+  {
+   "path": "common/frontend",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Holds only backgrounds/"
+  },
+  {
+   "path": "common/frontend/backgrounds",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [
+    "common/frontend/backgrounds/zin_backgrounds.txt"
+   ],
+   "reason": "ZIN main-menu backgrounds (presentation module)"
+  },
+  {
+   "path": "common/game_rules",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/05_defines_and_rules.md",
+   "zin": [],
+   "reason": "The vanilla rules file is overridden in stage 1"
+  },
+  {
+   "path": "common/game_rules/00_game_rules.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/05_defines_and_rules.md",
+   "zin": [
+    "common/game_rules/00_game_rules.txt"
+   ],
+   "reason": "The 16 generic rules and the three peace score rules with ZIN text; the 70 vanilla country rules are dropped"
+  },
+  {
+   "path": "common/generation",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine generation table"
+  },
+  {
+   "path": "common/graphicalculturetype.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/03_peoples.md",
+   "zin": [
+    "common/graphicalculturetype.txt"
+   ],
+   "reason": "Vanilla list plus ZIN cultures"
+  },
+  {
+   "path": "common/idea_tags",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine slot categories; re-named through localisation only"
+  },
+  {
+   "path": "common/ideas",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/ideas/00_zin_laws.txt",
+    "common/ideas/zin_peoples.txt",
+    "common/ideas/zin_hidden.txt"
+   ],
+   "reason": "ZIN laws under the vanilla law keys history and the engine read; peoples; engine ideas"
+  },
+  {
+   "path": "common/ideologies",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/02_ideologies_and_politics.md",
+   "zin": [],
+   "reason": "Only 00_ideologies.txt, which is overridden"
+  },
+  {
+   "path": "common/ideologies/00_ideologies.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/02_ideologies_and_politics.md",
+   "zin": [
+    "common/ideologies/00_ideologies.txt"
+   ],
+   "reason": "The four engine ideologies re-themed"
+  },
+  {
+   "path": "common/intelligence_agencies",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/intelligence_agencies/zin_agencies.txt"
+   ],
+   "reason": "Agency names and emblems of Erdae courts"
+  },
+  {
+   "path": "common/intelligence_agency_upgrades",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "Overridden by file in stage 2"
+  },
+  {
+   "path": "common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt"
+   ],
+   "reason": "Without the vanilla tag condition"
+  },
+  {
+   "path": "common/map_modes",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Documentation only"
+  },
+  {
+   "path": "common/medals",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Generic engine data, re-themed through localisation"
+  },
+  {
+   "path": "common/military_industrial_organization",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [],
+   "reason": "Holds only subfolders"
+  },
+  {
+   "path": "common/military_industrial_organization/ai_bonus_weights",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/military_industrial_organization/ai_bonus_weights/zin_ai_bonus_weights.txt"
+   ],
+   "reason": "ZIN AI bonus weights"
+  },
+  {
+   "path": "common/military_industrial_organization/organizations",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/military_industrial_organization/organizations/zin_workshops.txt"
+   ],
+   "reason": "Erdae workshops"
+  },
+  {
+   "path": "common/military_industrial_organization/policies",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/military_industrial_organization/policies/zin_workshop_policies.txt"
+   ],
+   "reason": "ZIN workshop policies"
+  },
+  {
+   "path": "common/modifier_definitions",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Script modifiers kept files may use; ZIN adds its own file"
+  },
+  {
+   "path": "common/modifiers",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "Static and event modifiers the engine applies by name; the three power-balance files are overridden in stage 2"
+  },
+  {
+   "path": "common/modifiers/AAT_power_balance_modifiers.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/modifiers/AAT_power_balance_modifiers.txt"
+   ],
+   "reason": "One unused ZIN modifier each, emptied with common/bop"
+  },
+  {
+   "path": "common/modifiers/BBA_power_balance_modifiers.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/modifiers/BBA_power_balance_modifiers.txt"
+   ],
+   "reason": "One unused ZIN modifier each, emptied with common/bop"
+  },
+  {
+   "path": "common/modifiers/MUN_power_balance_modifiers.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/modifiers/MUN_power_balance_modifiers.txt"
+   ],
+   "reason": "One unused ZIN modifier each, emptied with common/bop"
+  },
+  {
+   "path": "common/msgrdk_achievements.json",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Microsoft Store table; the Steam build does not read it"
+  },
+  {
+   "path": "common/mtth",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
+   "zin": [
+    "common/mtth/zin_mtth.txt"
+   ],
+   "reason": "ZIN story mean times"
+  },
+  {
+   "path": "common/names",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/03_peoples.md",
+   "zin": [
+    "common/names/zin_names.txt"
+   ],
+   "reason": "Erdae name pools per ZIN tag. Pulled forward with the country tags: once the vanilla tags are gone, nothing needs the vanilla name lists. The dynamic tags have no vanilla name list either."
+  },
+  {
+   "path": "common/national_focus",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/05_focus_trees/",
+   "zin": [
+    "common/national_focus/zin_interim_default.txt"
+   ],
+   "reason": "One shared interim tree (The Long Peace) until the ZIN trees ship; a tree must exist or the game crashes"
+  },
+  {
+   "path": "common/occupation_laws",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "Overridden by file in stage 2"
+  },
+  {
+   "path": "common/occupation_laws/occupation_laws.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/occupation_laws/occupation_laws.txt"
+   ],
+   "reason": "ZIN occupation laws without tag conditions"
+  },
+  {
+   "path": "common/on_actions",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [
+    "common/on_actions/world.txt",
+    "common/on_actions/zin_startup.txt"
+   ],
+   "reason": "ZIN on_actions only"
+  },
+  {
+   "path": "common/operation_phases",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/operation_phases/zin_operation_phases.txt"
+   ],
+   "reason": "Court intrigue operation phases"
+  },
+  {
+   "path": "common/operation_tokens",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Generic engine tokens"
+  },
+  {
+   "path": "common/operations",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/operations/zin_operations.txt"
+   ],
+   "reason": "Court intrigue operations"
+  },
+  {
+   "path": "common/opinion_modifiers",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/opinion_modifiers/00_zin_opinion_modifiers.txt"
+   ],
+   "reason": "The engine opinion modifiers re-themed plus the ZIN start modifiers"
+  },
+  {
+   "path": "common/peace_conference",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "Holds only subfolders"
+  },
+  {
+   "path": "common/peace_conference/ai_peace",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/peace_conference/ai_peace/zin_peace.txt"
+   ],
+   "reason": "ZIN peace AI, categories (keeps the vanilla keys) and costs"
+  },
+  {
+   "path": "common/peace_conference/categories",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/peace_conference/categories/zin_peace.txt"
+   ],
+   "reason": "ZIN peace AI, categories (keeps the vanilla keys) and costs"
+  },
+  {
+   "path": "common/peace_conference/cost_modifiers",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/peace_conference/cost_modifiers/zin_peace.txt"
+   ],
+   "reason": "ZIN peace AI, categories (keeps the vanilla keys) and costs"
+  },
+  {
+   "path": "common/profile_backgrounds",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/08_art_and_assets/",
+   "zin": [],
+   "reason": "Overridden by file in stage 3"
+  },
+  {
+   "path": "common/profile_backgrounds/00_profile_background.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/08_art_and_assets/",
+   "zin": [
+    "common/profile_backgrounds/00_profile_background.txt"
+   ],
+   "reason": "ZIN career-profile backgrounds"
+  },
+  {
+   "path": "common/profile_pictures",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/08_art_and_assets/",
+   "zin": [],
+   "reason": "Overridden by file in stage 3"
+  },
+  {
+   "path": "common/profile_pictures/00_profile_picture.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/08_art_and_assets/",
+   "zin": [
+    "common/profile_pictures/00_profile_picture.txt"
+   ],
+   "reason": "ZIN career-profile pictures"
+  },
+  {
+   "path": "common/raids",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/raids/zin_raids.txt"
+   ],
+   "reason": "Night raids only"
+  },
+  {
+   "path": "common/raids/categories",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/raids/categories/zin_raid_categories.txt"
+   ],
+   "reason": "One raid category"
+  },
+  {
+   "path": "common/region_colors.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "common/resistance_activity",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine resistance actions, generic; ZIN defines the effect and dynamic modifier it calls"
+  },
+  {
+   "path": "common/resistance_compliance_modifiers",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "compliance_modifiers.txt is kept; resistance_modifiers.txt is overridden in stage 2"
+  },
+  {
+   "path": "common/resistance_compliance_modifiers/resistance_modifiers.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/resistance_compliance_modifiers/resistance_modifiers.txt"
+   ],
+   "reason": "Without vanilla tag conditions"
+  },
+  {
+   "path": "common/resources",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [],
+   "reason": "Overridden by file in stage 2"
+  },
+  {
+   "path": "common/resources/00_resources.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/resources/00_resources.txt"
+   ],
+   "reason": "Iron, Timber, Horses, Stone, Gold, Essence and Grain"
+  },
+  {
+   "path": "common/ribbons",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Overridden by file in stage 3"
+  },
+  {
+   "path": "common/ribbons/00_ribbons.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/ribbons/00_ribbons.txt"
+   ],
+   "reason": "ZIN ribbons without vanilla tags"
+  },
+  {
+   "path": "common/scientist_traits",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/scientist_traits/zin_scholar_traits.txt"
+   ],
+   "reason": "ZIN scholars and artificers"
+  },
+  {
+   "path": "common/scorers",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "Holds only country/"
+  },
+  {
+   "path": "common/scorers/country",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [],
+   "reason": "The four files are overridden in stage 2"
+  },
+  {
+   "path": "common/scorers/country/ai_decryption_scorer.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/scorers/country/ai_decryption_scorer.txt"
+   ],
+   "reason": "ZIN targets without vanilla tag weights"
+  },
+  {
+   "path": "common/scorers/country/generic_operation_target_scorer.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/scorers/country/generic_operation_target_scorer.txt"
+   ],
+   "reason": "ZIN targets without vanilla tag weights"
+  },
+  {
+   "path": "common/scorers/country/generic_platonic_scorers.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/scorers/country/generic_platonic_scorers.txt"
+   ],
+   "reason": "ZIN targets without vanilla tag weights"
+  },
+  {
+   "path": "common/scorers/country/operative_mission_scorer.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/scorers/country/operative_mission_scorer.txt"
+   ],
+   "reason": "ZIN targets without vanilla tag weights"
+  },
+  {
+   "path": "common/script_constants",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/04_mechanics/",
+   "zin": [
+    "common/script_constants/zin_constants.txt"
+   ],
+   "reason": "ZIN state and country groups; the special-project constants are bridged until stage 2"
+  },
+  {
+   "path": "common/script_enums.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/script_enums.txt"
+   ],
+   "reason": "Vanilla identifiers plus ZIN equipment archetypes (rule 5)"
+  },
+  {
+   "path": "common/scripted_diplomatic_actions",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Generic engine actions; no vanilla references"
+  },
+  {
+   "path": "common/scripted_effects",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/04_mechanics/",
+   "zin": [
+    "common/scripted_effects/00_zin_engine.txt"
+   ],
+   "reason": "ZIN effects per system; 00_zin_engine.txt holds every effect a kept vanilla file calls"
+  },
+  {
+   "path": "common/scripted_guis",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [
+    "common/scripted_guis/zin_realm.txt"
+   ],
+   "reason": "ZIN scripted GUIs; the vanilla .gui files of removed scripted GUIs stay and are never opened"
+  },
+  {
+   "path": "common/scripted_localisation",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [
+    "common/scripted_localisation/zin_realm.txt"
+   ],
+   "reason": "ZIN scripted localisation"
+  },
+  {
+   "path": "common/scripted_triggers",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/04_mechanics/",
+   "zin": [
+    "common/scripted_triggers/00_zin_engine_hooks.txt"
+   ],
+   "reason": "ZIN triggers per system; 00_zin_engine_hooks.txt holds the engine hooks and every trigger a kept vanilla file calls"
+  },
+  {
+   "path": "common/special_projects",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [],
+   "reason": "Holds only subfolders"
+  },
+  {
+   "path": "common/special_projects/project_tags",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/special_projects/project_tags/zin_great_works.txt"
+   ],
+   "reason": "Great works; one hidden project until the economy spec fills the folder"
+  },
+  {
+   "path": "common/special_projects/projects",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/special_projects/projects/zin_great_works.txt"
+   ],
+   "reason": "Great works; one hidden project until the economy spec fills the folder"
+  },
+  {
+   "path": "common/special_projects/prototype_rewards",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/special_projects/prototype_rewards/zin_great_works.txt"
+   ],
+   "reason": "Great works; one hidden project until the economy spec fills the folder"
+  },
+  {
+   "path": "common/special_projects/specialization",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [
+    "common/special_projects/specialization/zin_great_works.txt"
+   ],
+   "reason": "Great works; one hidden project until the economy spec fills the folder"
+  },
+  {
+   "path": "common/state_category",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [],
+   "reason": "Engine data with no vanilla references; re-themed through localisation"
+  },
+  {
+   "path": "common/strategic_locations",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Generic location bonuses"
+  },
+  {
+   "path": "common/synchronized_dynamic_tokens",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/synchronized_dynamic_tokens/zin_tokens.txt"
+   ],
+   "reason": "ZIN equipment and unit tokens"
+  },
+  {
+   "path": "common/technologies",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/technologies/zin_technologies.txt"
+   ],
+   "reason": "ZIN technology tree"
+  },
+  {
+   "path": "common/technology_sharing",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/technology_sharing/zin_tech_sharing.txt"
+   ],
+   "reason": "Groups for the ZIN leagues"
+  },
+  {
+   "path": "common/technology_tags",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/technology_tags/zin_technology_tags.txt"
+   ],
+   "reason": "ZIN folders and categories"
+  },
+  {
+   "path": "common/terrain",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [],
+   "reason": "Engine data with no vanilla references; re-themed through localisation"
+  },
+  {
+   "path": "common/timed_activities",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/timed_activities/zin_timed_activities.txt"
+   ],
+   "reason": "The coup activity with ZIN equipment needs"
+  },
+  {
+   "path": "common/triggered_modifiers.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "common/unit_leader",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Engine skill tables; five trait files are overridden in stage 2 (never replace_path: it crashes at map/rocketsites.txt)"
+  },
+  {
+   "path": "common/unit_leader/00_traits.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/unit_leader/00_traits.txt"
+   ],
+   "reason": "ZIN commander traits without vanilla tag or DLC country conditions"
+  },
+  {
+   "path": "common/unit_leader/ETH_traits.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/unit_leader/ETH_traits.txt"
+   ],
+   "reason": "ZIN commander traits without vanilla tag or DLC country conditions"
+  },
+  {
+   "path": "common/unit_leader/JAP_traits.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/unit_leader/JAP_traits.txt"
+   ],
+   "reason": "ZIN commander traits without vanilla tag or DLC country conditions"
+  },
+  {
+   "path": "common/unit_leader/NSB_traits.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/unit_leader/NSB_traits.txt"
+   ],
+   "reason": "ZIN commander traits without vanilla tag or DLC country conditions"
+  },
+  {
+   "path": "common/unit_leader/SWE_traits.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/unit_leader/SWE_traits.txt"
+   ],
+   "reason": "ZIN commander traits without vanilla tag or DLC country conditions"
+  },
+  {
+   "path": "common/unit_medals",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Overridden by file in stage 3"
+  },
+  {
+   "path": "common/unit_medals/00_default.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/unit_medals/00_default.txt"
+   ],
+   "reason": "ZIN medals without vanilla tags"
+  },
+  {
+   "path": "common/unit_tags",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/unit_tags/zin_unit_tags.txt"
+   ],
+   "reason": "Vanilla categories plus ZIN categories"
+  },
+  {
+   "path": "common/units",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/zin_units.txt"
+   ],
+   "reason": "ZIN sub-units; every equipment needs a sub-unit"
+  },
+  {
+   "path": "common/units/codenames_operatives",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "zin": [
+    "common/units/codenames_operatives/zin_operative_codenames.txt"
+   ],
+   "reason": "Agents of courts"
+  },
+  {
+   "path": "common/units/critical_parts",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Engine parts, re-localised"
+  },
+  {
+   "path": "common/units/equipment",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/equipment/zin_equipment.txt"
+   ],
+   "reason": "ZIN equipment archetypes; keeps convoy, train_equipment and motorized_equipment"
+  },
+  {
+   "path": "common/units/equipment/modules",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/equipment/modules/zin_modules.txt"
+   ],
+   "reason": "ZIN replacement (warfare section 15)"
+  },
+  {
+   "path": "common/units/equipment/upgrades",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/equipment/upgrades/zin_upgrades.txt"
+   ],
+   "reason": "ZIN replacement (warfare section 15)"
+  },
+  {
+   "path": "common/units/names",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/names/zin_names.txt"
+   ],
+   "reason": "Erdae host and ship names per people"
+  },
+  {
+   "path": "common/units/names_divisions",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/names_divisions/zin_names_divisions.txt"
+   ],
+   "reason": "Erdae host and ship names per people"
+  },
+  {
+   "path": "common/units/names_railway_guns",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/names_railway_guns/zin_names_railway_guns.txt"
+   ],
+   "reason": "Erdae host and ship names per people"
+  },
+  {
+   "path": "common/units/names_ships",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "common/units/names_ships/zin_names_ships.txt"
+   ],
+   "reason": "Erdae host and ship names per people"
+  },
+  {
+   "path": "common/units/unit_modifiers",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [],
+   "reason": "Engine modifiers, re-localised"
+  },
+  {
+   "path": "common/wargoals",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/02_economy.md",
+   "zin": [],
+   "reason": "Engine data with no vanilla references; re-themed through localisation"
+  },
+  {
+   "path": "common/weather.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "none",
+   "zin": [],
+   "reason": "Engine-wide data with no vanilla tags, decisions or equipment"
+  },
+  {
+   "path": "country_metadata/00_country_metadata.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 3,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [
+    "country_metadata/00_country_metadata.txt"
+   ],
+   "reason": "default plus the great powers"
+  },
+  {
+   "path": "events",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/06_events/",
+   "zin": [
+    "events/zin_world.txt"
+   ],
+   "reason": "ZIN events per namespace; one hidden event until the events specs ship",
+   "stub": "events/zin_world.txt"
+  },
+  {
+   "path": "gfx/loadingscreens",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/08_art_and_assets/",
+   "zin": [
+    "gfx/loadingscreens/*"
+   ],
+   "reason": "ZIN loading screens and menu backgrounds (presentation module); thumbnails live in gfx/interface/zin/loadingscreens"
+  },
+  {
+   "path": "history/countries",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [
+    "history/countries/*"
+   ],
+   "reason": "ZIN country histories. The 739 comment-only inactive files stay untouched until stage 3 (B8 stays, exempt in the stage-1 budget): every change to them, bodies or deleting the duplicates of ZIN tags, crashed 6 of 12 Linux starts as Aenor on 19 October 2026, while every start that left them alone ran."
+  },
+  {
+   "path": "history/general",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 1,
+   "owner": "docs/specs/02_lore/02_characters.md",
+   "zin": [
+    "history/general/zin_general.txt"
+   ],
+   "reason": "Vanilla generic_advisors.txt gave modern advisors to every ZIN country"
+  },
+  {
+   "path": "history/states",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [
+    "history/states/*"
+   ],
+   "reason": "Erdae states from the map build"
+  },
+  {
+   "path": "history/units",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "history/units/<TAG>_world.txt"
+   ],
+   "reason": "ZIN orders of battle"
+  },
+  {
+   "path": "interface/building_roster",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/buildings",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/career_profile",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/doctrines",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/equipmentdesigner",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/equipmentdesigner/planes",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/equipmentdesigner/ships",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/equipmentdesigner/tanks",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/factions",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/integrity",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/international_market",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/military_industrial_organization",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/military_raids",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/notifications",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/pdx_online",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/special_projects",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "interface/widgets",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine windows and sprites"
+  },
+  {
+   "path": "localisation/braz_por",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/english",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/english/state_names_l_english.yml",
+   "kind": "file",
+   "action": "override",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [
+    "localisation/english/state_names_l_english.yml"
+   ],
+   "reason": "ZIN state names only, moved out of localisation/replace (B12); written by the politics step"
+  },
+  {
+   "path": "localisation/english/strategic_region_names_l_english.yml",
+   "kind": "file",
+   "action": "override",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [
+    "localisation/english/strategic_region_names_l_english.yml"
+   ],
+   "reason": "ZIN strategic region names only; the vanilla regions go with map/strategicregions (B12); written by the politics step"
+  },
+  {
+   "path": "localisation/english/victory_points_l_english.yml",
+   "kind": "file",
+   "action": "override",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/04_countries_and_states.md",
+   "zin": [
+    "localisation/english/victory_points_l_english.yml"
+   ],
+   "reason": "ZIN victory point names only (B12); written by the politics step"
+  },
+  {
+   "path": "localisation/french",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/german",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/japanese",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/korean",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/polish",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/russian",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/simp_chinese",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "localisation/spanish",
+   "kind": "folder",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/07_interface/01_interface.md",
+   "zin": [],
+   "reason": "Engine and interface text; unused vanilla keys log nothing"
+  },
+  {
+   "path": "map/strategicregions",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/01_map/",
+   "zin": [
+    "map/strategicregions/*"
+   ],
+   "reason": "Erdae strategic regions"
+  },
+  {
+   "path": "map/supplyareas",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 0,
+   "owner": "docs/specs/01_map/",
+   "zin": [],
+   "reason": "Legacy supply areas",
+   "emptyAllowed": "Supply areas are legacy data the current supply system ignores; the vanilla folder holds one file naming vanilla states, and ZIN ships none."
+  },
+  {
+   "path": "music",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 4,
+   "owner": "docs/specs/08_art_and_assets/04_music_and_sound.md",
+   "zin": [
+    "music/zin_songs.txt"
+   ],
+   "reason": "ZIN music; the DLC song lists load at music/*.txt and name vanilla focuses until then"
+  },
+  {
+   "path": "music/hoi2",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 4,
+   "owner": "docs/specs/08_art_and_assets/04_music_and_sound.md",
+   "zin": [],
+   "reason": "ZIN music"
+  },
+  {
+   "path": "music/hoi3",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 4,
+   "owner": "docs/specs/08_art_and_assets/04_music_and_sound.md",
+   "zin": [],
+   "reason": "ZIN music"
+  },
+  {
+   "path": "portraits/00_portraits.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 2,
+   "owner": "docs/specs/02_lore/02_characters.md",
+   "zin": [
+    "portraits/00_portraits.txt"
+   ],
+   "reason": "ZIN portrait sets by graphical culture, no vanilla tag blocks"
+  },
+  {
+   "path": "portraits/998_scientist_portraits.txt",
+   "kind": "file",
+   "action": "keep",
+   "stage": 0,
+   "owner": "docs/specs/02_lore/02_characters.md",
+   "zin": [],
+   "reason": "Generic scientist portrait pools with no tag blocks"
+  },
+  {
+   "path": "tutorial/tutorial.txt",
+   "kind": "file",
+   "action": "override",
+   "stage": 1,
+   "owner": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
+   "zin": [
+    "tutorial/tutorial.txt"
+   ],
+   "reason": "tutorial = { }; the vanilla tutorial names vanilla state 550"
+  }
+ ]
+}

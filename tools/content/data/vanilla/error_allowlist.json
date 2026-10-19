@@ -2,5 +2,13 @@
  "version": 1,
  "spec": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
  "rule": "An entry needs all three: the same text pattern in a Linux control run of the same game version with no mod enabled; a source no mod file can override or replace; and a record of pattern, reason, control-run date, game version and date added.",
- "entries": []
+ "entries": [
+  {
+   "pattern": "^Could not find DLC '[^']+' in store backend\\.$",
+   "source": "dlc.cpp",
+   "reason": "The Linux build's store layer reports three DLCs it cannot find in its store backend (Anniversary Pack, Poland: United and Ready, Rocket Launcher Unit Pack). The engine writes these lines while it registers DLCs, before any mod loads; no mod file can change them.",
+   "controlRun": { "date": "2026-10-19", "gameVersion": "1.19.3", "platform": "isolated Linux run (WSL), no mod enabled, main menu", "lines": 3 },
+   "added": "2026-10-19"
+  }
+ ]
 }

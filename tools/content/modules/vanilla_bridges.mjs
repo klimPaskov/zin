@@ -26,7 +26,7 @@ export function removalStage(disp, rel) {
 export async function modFilesAfterBuild(staged, zin = ZIN) {
   const world = JSON.parse(await readFile(`${zin}/.hoi4-agent-world.json`, 'utf8'));
   const files = new Map();
-  for (const f of world.files) if (/^(common|events|history)\//.test(f.relativePath) && f.relativePath.endsWith('.txt')) files.set(f.relativePath, await readFile(`${zin}/${f.relativePath}`));
+  for (const f of world.files) if (/^(common|events|history|music)\//.test(f.relativePath) && f.relativePath.endsWith('.txt')) files.set(f.relativePath, await readFile(`${zin}/${f.relativePath}`));
   for (const [rel, bytes] of staged.files) files.set(rel, bytes);
   return files;
 }
@@ -73,7 +73,7 @@ export async function writeBridgeFiles(staged, bridges, loc) {
   const ideas = by('idea');
   if (ideas.length) staged.text('common/ideas/zz_zin_bridge_ideas.txt', `${HEADER}\nideas = {\n\thidden_ideas = {\n${ideas.map(b => `\t\t${b.name} = { allowed = { always = no } } ${mark(b)}`).join('\n')}\n\t}\n}\n`);
   const focuses = by('focus'), trees = by('focus_tree');
-  if (focuses.length || trees.length) staged.text('common/national_focus/zz_zin_bridge_focuses.txt', `${HEADER}\n${focuses.map(b => `shared_focus = { id = ${b.name} icon = GFX_idea_zin_people_men x = 0 y = 0 cost = 1 available = { always = no } } ${mark(b)}`).join('\n')}\n${trees.map((b, i) => `focus_tree = { ${mark(b)}\n\tid = ${b.name}\n\tcountry = { factor = 0 }\n\tdefault = no\n\tfocus = { id = zin_bridge_tree_focus_${i + 1} icon = GFX_idea_zin_people_men x = 0 y = 0 cost = 1 available = { always = no } }\n}`).join('\n')}\n`);
+  if (focuses.length || trees.length) staged.text('common/national_focus/zz_zin_bridge_focuses.txt', `${HEADER}\n${focuses.map(b => `shared_focus = { id = ${b.name} icon = GFX_focus_zin_men x = 0 y = 0 cost = 1 available = { always = no } } ${mark(b)}`).join('\n')}\n${trees.map((b, i) => `focus_tree = { ${mark(b)}\n\tid = ${b.name}\n\tcountry = { factor = 0 }\n\tdefault = no\n\tfocus = { id = zin_bridge_tree_focus_${i + 1} icon = GFX_focus_zin_men x = 0 y = 0 cost = 1 available = { always = no } }\n}`).join('\n')}\n`);
   const chars = by('character');
   if (chars.length) { loc.text.ZIN_BRIDGE_CHARACTER = 'Unnamed'; staged.text('common/characters/zz_zin_bridge_characters.txt', `${HEADER}\ncharacters = {\n${chars.map(b => `\t${b.name} = { name = ZIN_BRIDGE_CHARACTER portraits = { civilian = { large = GFX_zin_portrait_men_male_1 } } } ${mark(b)}`).join('\n')}\n}\n`); }
   const traits = by('trait');
@@ -98,6 +98,9 @@ export async function writeBridgeFiles(staged, bridges, loc) {
     staged.text('common/collections/zz_zin_bridge_collections.txt', `${HEADER}\n${collections.map(b => `${b.name} = { input = ${inputs.get(b.name) ?? 'game:all_countries'} operators = { limit = { always = no } } name = ZIN_BRIDGE_COLLECTION } ${mark(b)}`).join('\n')}\n`);
   }
   await writeConstants(staged, by('constant'));
+  // Scripted localisation the kept faction and collection text calls (shown in the faction screen until stage 2).
+  loc.text.ZIN_BRIDGE_CONTINENT = 'these lands';
+  staged.text('common/scripted_localisation/zz_zin_bridge_scripted_localisation.txt', `${HEADER}\ndefined_text = { # bridge: remove in stage 2\n\tname = GetCountryContinent\n\ttext = {\n\t\tlocalization_key = ZIN_BRIDGE_CONTINENT\n\t}\n}\n`);
   const known = new Set(['idea', 'focus', 'focus_tree', 'character', 'trait', 'opinion_modifier', 'decision_category', 'decision', 'event', 'theater', 'collection', 'constant']);
   const unknown = bridges.other.filter(b => !known.has(b.cat));
   if (unknown.length) throw new Error(`No bridge form for ${unknown.map(b => `${b.cat} ${b.name}`).join(', ')}`);
