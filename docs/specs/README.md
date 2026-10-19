@@ -4,7 +4,7 @@ This folder is the build plan for ZIN. Each specification says what a part of th
 
 Start with [ROADMAP.md](ROADMAP.md) for the order of work and [CONVENTIONS.md](CONVENTIONS.md) for rules that apply everywhere. [INTEGRATION_DECISIONS.md](INTEGRATION_DECISIONS.md) settles conflicts between specs, and [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) gathers the questions for the owner, with the short list that blocks early phases at the top.
 
-## What the package holds (18 October 2026)
+## What the package holds (18 October 2026; review to Ready under way 19 October)
 
 - About 85 specs across ten folders, 3.5 MB.
 - **Focus trees:** 13 major trees and Yeldenne's tree fully enumerated (1,467 focuses), 11 shared regional trees (659 focuses), and regional trees for all 71 tier B countries as key-focus outlines.
@@ -46,7 +46,7 @@ The campaign starts on **1 Thaw, 4A 1748** (owner-fixed situation, proposed date
 Each spec starts with a status line:
 
 - **Draft:** written, not reviewed against the lore or the code.
-- **Ready:** reviewed; implementation can start.
+- **Ready:** reviewed against the six criteria in [CONVENTIONS.md](CONVENTIONS.md) ("Status"); implementation can start.
 - **In progress:** implementation has started; the spec lists what is done.
 - **Done:** implemented and accepted; the spec now documents the system.
 - **Superseded:** replaced by another spec, which it names.

@@ -1,6 +1,6 @@
 # Regional Trees: The Dead Lands
 
-**Status:** Draft. **Priority:** 6. **Phase:** 6 (tier B).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 6. **Phase:** 6 (tier B).
 
 ## Purpose
 
@@ -37,8 +37,11 @@ The trees play [Volgan and the Southern Dominion](../../04_mechanics/volgan_sout
 - **No Houses in the Dominion.** The demon realms' footholds cap is 0 (Afrit spec); no focus touches `zin_footholds` there.
 - **Volgan's numbers stay hidden.** Sworn realms add to `zin_dominion_strength` and the Nether pact through Volgan's effects; their focus text never states the size of his hosts.
 - **Volgan's fate is open.** After `zin_volgan_body_destroyed`, texts say only that "the throne in Nafeher does not answer" and "what remains, no one living can say".
-- **Prerequisites.** A focus with no "←" in its entry has no prerequisite: every row-0 focus and every branch head in rows 6 and below. A branch head's gate is its `available` (and `allow_branch` where stated).
-- **Days** 35 unless marked 70; war focuses may be 21. **AI** "hist" = `check zin_rules_is_historical`; "free" = `check zin_rules_is_free`.
+- **Prerequisites.** A focus with no "←" in its entry has no prerequisite: every row-0 focus and every branch head in rows 6 and below. A branch head's gate is its `available` (and `allow_branch` where stated). Prerequisites and exclusives name exact focus keys of the same tree; `a + b` means both, `a / b` either; "excl" pairs are written on both focuses.
+- **Key-focus tables** summarise; the branch lists are the definition.
+- **Spirit keys** never repeat a focus key of the same tree (focus and idea localisation keys would collide); where a spirit shares its focus's name the key ends in `_spirit`.
+- **Icons.** The backticked key after each focus's position is its catalog icon ([../02_icon_catalog.md](../02_icon_catalog.md), sprite `GFX_focus_zin_<key>`); a spirit takes the icon of the focus that adds it.
+- **Days** 35 unless marked 70; war focuses marked 21. **AI** "AI n" is `ai.base`; "hist ×f" and "free ×f" are `ai` modifiers with factor f under `check zin_rules_is_historical` and `check zin_rules_is_free`; "AI 0; n when available" compiles to `ai.base` n: the AI can only pick a focus once its `available` holds.
 
 ### Notation
 
@@ -49,10 +52,16 @@ The trees play [Volgan and the Southern Dominion](../../04_mechanics/volgan_sout
 | strength ±n | `for_country Volgan: call zin_volgan_add_dominion_strength(value = n)` |
 | nether pact ±n | `for_country Volgan: call zin_volgan_add_nether_pact(value = n)` |
 | proof ±n | `for_country Mirolon: call zin_mirolon_add_proof(value = n)` |
-| autonomy +r | `call zin_<tree>_gain_autonomy(value = r)` (`add_autonomy_ratio`) |
+| autonomy +r | `call zin_regional_<tree>_gain_autonomy(value = r)` (`add_autonomy_ratio`) |
 | own road | country flag `zin_dominion_own_road` (proposed: set by the "seek its own road" option of the Volgan spec's `zin_dominion.22`) |
 | regard ±n | `call zin_eindil_add_regard(value = n)` |
-| opinion X ±n (k) | `call zin_<tree>_opinion(who = X, modifier = k)` |
+| renown ±n | `call zin_eindil_add_renown(value = n)` |
+| footholds ±n | `call zin_afrit_add_footholds(value = n)` on ROOT (Afrit spec; respects caps) |
+| opinion X ±n (k) | `call zin_regional_<tree>_opinion(who = X, modifier = k)`: the tree opinion modifier `zin_regional_<tree>_<k>` both ways |
+| Volgan's subject | condition `subject_of: Volgan`; "not a subject" is `not [ is_subject ]` |
+| oath < n | `not [ check zin_regional_<tree>_oath_at_least(value = n) ]` |
+| own road head | `available`: `or [ oath < 40, flag zin_dominion_own_road ]` |
+| stage | the global contract variable `zin_eindil_stage` (`variable global.zin_eindil_stage above n`) |
 
 ---
 
@@ -81,49 +90,49 @@ Nezer is the southern confederacy of the Dominion: two lands of one demon family
 
 **A. The Two Crowns of Nezer** (x 0–2, rows 0–4). Exclusive: *The Queen's Hand* / *The Houses Rule*.
 - `two_crowns_of_nezer` The Two Crowns of Nezer (1,0; 70) `demon_horn`: political_power 50; event `two_crowns`. AI 40.
-- `nazaras_court` Nazara's Court (0,1; ← crowns) `throne_gold`: political_power 25; stability 0.03. AI 20.
-- `the_nezerun_houses` The Nezerun Houses (2,1; ← crowns) `council_table`: stability 0.05. AI 20.
-- `one_family` One Family (1,2; ← court + houses) `handshake_oath`: add_spirit `one_family`. AI 15.
-- `the_queens_hand` The Queen's Hand (0,3; ← family; excl houses_rule) `sceptre`: swap_spirit `one_family` → `queens_hand`. AI 15; hist ×2.
-- `the_houses_rule` The Houses Rule (2,3; ← family; excl queens_hand) `council_table`: swap_spirit `one_family` → `houses_rule`. AI 10.
-- `the_ember_coast` The Ember Coast (1,4; ← either; 70) `ember_desert`: political_power 75; stability 0.03. AI 15.
+- `nazaras_court` Nazara's Court (0,1; ← two_crowns_of_nezer) `throne_gold`: political_power 25; stability 0.03. AI 20.
+- `the_nezerun_houses` The Nezerun Houses (2,1; ← two_crowns_of_nezer) `council_table`: stability 0.05. AI 20.
+- `one_family` One Family (1,2; ← nazaras_court + the_nezerun_houses) `handshake_oath`: add_spirit `one_family_spirit`. AI 15.
+- `the_queens_hand` The Queen's Hand (0,3; ← one_family; excl the_houses_rule) `sceptre`: swap_spirit `one_family_spirit` → `queens_hand`. AI 15; hist ×2.
+- `the_houses_rule` The Houses Rule (2,3; ← one_family; excl the_queens_hand) `council_table`: swap_spirit `one_family_spirit` → `houses_rule`. AI 10.
+- `the_ember_coast` The Ember Coast (1,4; ← the_queens_hand / the_houses_rule; 70) `ember_desert`: political_power 75; stability 0.03. AI 15.
 
 **B. Bound to Nafeher** (x 4–6, rows 0–2). The oath.
 - `answer_the_summons` Answer the Summons (5,0) `banner_black`: oath +5; political_power 25. AI 30; hist ×2.
-- `war_bands_for_the_dominion` War-Bands for the Dominion (4,1; ← summons) `demon_horn`: army_experience 10; strength +1. AI 20.
-- `tribute_of_nezer` The Tribute of Nezer (6,1; ← summons) `tribute_chest`: oath +5; political_power −25. AI 15.
-- `the_dominions_vanguard` The Dominion's Vanguard (5,2; ← both; 70) `war_drums`: Avail: oath ≥ 50. add_spirit `dominion_vanguard`; oath +10. AI 20.
+- `war_bands_for_the_dominion` War-Bands for the Dominion (4,1; ← answer_the_summons) `demon_horn`: army_experience 10; strength +1. AI 20.
+- `tribute_of_nezer` The Tribute of Nezer (6,1; ← answer_the_summons) `tribute_chest`: oath +5; political_power −25. AI 15.
+- `the_dominions_vanguard` The Dominion's Vanguard (5,2; ← war_bands_for_the_dominion + tribute_of_nezer; 70) `war_drums`: Avail: oath ≥ 50. add_spirit `dominion_vanguard`; oath +10. AI 20.
 
 **C. The Burning Gate** (x 8–10, rows 0–2). Exclusive: *Keep the Gate Sealed* / *Open the Gate for Nafeher*.
 - `the_burning_gate_remembered` The Burning Gate Remembered (9,0) `nether_gate`: event `burning_gate`. AI 25.
-- `wardens_of_the_gate` Wardens of the Gate (8,1; ← gate) `fort_wall`: building bunker 1 @capital. AI 15.
-- `old_portal_lore` Old Portal Lore (10,1; ← gate) `nether_gate`: research [zin_cat_dark_rites] 50% ×1. AI 15.
-- `keep_the_gate_sealed` Keep the Gate Sealed (8,2; ← wardens / lore; excl open) `fort_wall`: add_spirit `sealed_gate`; oath −5. AI 10; hist ×0.5.
-- `open_the_gate_for_nafeher` Open the Gate for Nafeher (10,2; ← wardens / lore; excl sealed) `nether_gate`: nether pact +5; oath +5. AI 15; hist ×2.
+- `wardens_of_the_gate` Wardens of the Gate (8,1; ← the_burning_gate_remembered) `fort_wall`: building bunker 1 @capital. AI 15.
+- `old_portal_lore` Old Portal Lore (10,1; ← the_burning_gate_remembered) `nether_gate`: research [zin_cat_dark_rites] 50% ×1. AI 15.
+- `keep_the_gate_sealed` Keep the Gate Sealed (8,2; ← wardens_of_the_gate / old_portal_lore; excl open_the_gate_for_nafeher) `fort_wall`: add_spirit `sealed_gate`; oath −5. AI 10; hist ×0.5.
+- `open_the_gate_for_nafeher` Open the Gate for Nafeher (10,2; ← wardens_of_the_gate / old_portal_lore; excl keep_the_gate_sealed) `nether_gate`: nether pact +5; oath +5. AI 15; hist ×2.
 
 **D. Our Own Road** (x 12–14, rows 0–2). Head `available`: variable `zin_dominion_oath` below 40, or flag own road.
 - `the_oath_weighs_heavy` The Oath Weighs Heavy (13,0) `chain_broken`: autonomy +0.10. AI 0; 20 when available.
-- `quiet_councils` Quiet Councils (12,1; ← oath_weighs) `council_table`: political_power 50. AI 15.
-- `ember_trade` Ember Trade (14,1; ← oath_weighs) `caravan`: add_spirit `ember_trade`. AI 15.
-- `a_crown_not_a_chain` A Crown, Not a Chain (13,2; ← both; 70) `crown_broken`: autonomy +0.15; oath −10. AI 10; hist ×0.2 before `zin_volgan_body_destroyed`.
+- `quiet_councils` Quiet Councils (12,1; ← the_oath_weighs_heavy) `council_table`: political_power 50. AI 15.
+- `ember_trade` Ember Trade (14,1; ← the_oath_weighs_heavy) `caravan`: add_spirit `ember_trade_spirit`. AI 15.
+- `a_crown_not_a_chain` A Crown, Not a Chain (13,2; ← quiet_councils + ember_trade; 70) `crown_broken`: autonomy +0.15; oath −10. AI 10; hist ×0.2 before `zin_volgan_body_destroyed`.
 
 **E. Ember Forges** (x 16–18, rows 0–2).
 - `ember_forges` Ember Forges (17,0; 70) `foundry_fire`: building arms_factory 1 @capital. AI 30.
-- `obsidian_quarries` Obsidian Quarries (16,1; ← forges) `quarry_stone`: building industrial_complex 1 @random_owned. AI 15.
-- `the_hot_roads` The Hot Roads (18,1; ← forges) `roads_paved`: building infrastructure 1 @capital. AI 15.
-- `nezers_furnaces` Nezer's Furnaces (17,2; ← quarries + roads) `forge_anvil`: add_spirit `nezers_furnaces`. AI 15.
+- `obsidian_quarries` Obsidian Quarries (16,1; ← ember_forges) `quarry_stone`: building industrial_complex 1 @random_owned. AI 15.
+- `the_hot_roads` The Hot Roads (18,1; ← ember_forges) `roads_paved`: building infrastructure 1 @capital. AI 15.
+- `nezers_furnaces` Nezer's Furnaces (17,2; ← obsidian_quarries + the_hot_roads) `forge_anvil`: add_spirit `nezers_furnaces_spirit`. AI 15.
 
 **F. The War-Bands Ride** (x 4–6, rows 6–8). Head `available`: `at_war`.
 - `the_war_bands_ride` The War-Bands Ride (5,6; 21) `demon_horn`: war_support 0.10; manpower 2000. AI 0; 300 when available.
-- `nezer_marches_north` Nezer Marches North (4,7; ← ride; 21) `banner_black`: Avail: global_flag `zin_volgan_marches`. army_experience 15. AI 100.
-- `burning_vanguard` The Burning Vanguard (6,7; ← ride; 21) `nether_gate`: timed_spirit `burning_vanguard` 180. AI 100.
-- `the_ember_host` The Ember Host (5,8; ← either) `war_drums`: army_experience 10; oath +5. AI 100.
+- `nezer_marches_north` Nezer Marches North (4,7; ← the_war_bands_ride; 21) `banner_black`: Avail: global_flag `zin_volgan_marches`. army_experience 15. AI 100.
+- `burning_vanguard` The Burning Vanguard (6,7; ← the_war_bands_ride; 21) `nether_gate`: timed_spirit `burning_vanguard_spirit` 180. AI 100.
+- `the_ember_host` The Ember Host (5,8; ← nezer_marches_north / burning_vanguard) `war_drums`: army_experience 10; oath +5. AI 100.
 
 **G. When the Throne Is Silent** (x 12–14, rows 6–8). Head `available`: global_flag `zin_volgan_body_destroyed`. Exclusive: *Stand with the Steward* / *The Queen's Own Crown*.
 - `a_name_that_does_not_answer` A Name That Does Not Answer (13,6) `silent_throne`: stability 0.05; event `silent_south`. AI 0; 300 when available.
-- `stand_with_the_steward` Stand with the Steward (12,7; ← name; excl own_crown) `banner_black`: Avail: ROOT is Volgan's subject. oath +20; stability 0.05. AI 20; ×3 if oath ≥ 40.
-- `the_queens_own_crown` The Queen's Own Crown (14,7; ← name; excl steward) `crown_iron`: call `zin_regional_nezer_crown_free` (if still Volgan's subject: autonomy +0.5; if free: add_spirit `own_crown`). AI 20; ×3 if oath < 40.
-- `the_ember_coast_endures` The Ember Coast Endures (13,8; ← either) `ember_desert`: political_power 50; stability 0.05. AI 100.
+- `stand_with_the_steward` Stand with the Steward (12,7; ← a_name_that_does_not_answer; excl the_queens_own_crown) `banner_black`: Avail: ROOT is Volgan's subject. oath +20; stability 0.05. AI 20; ×3 if oath ≥ 40.
+- `the_queens_own_crown` The Queen's Own Crown (14,7; ← a_name_that_does_not_answer; excl stand_with_the_steward) `crown_iron`: call `zin_regional_nezer_crown_free` (if still Volgan's subject: autonomy +0.5; if free: add_spirit `own_crown`). AI 20; ×3 if oath < 40.
+- `the_ember_coast_endures` The Ember Coast Endures (13,8; ← stand_with_the_steward / the_queens_own_crown) `ember_desert`: political_power 50; stability 0.05. AI 100.
 
 ### Key focuses
 
@@ -141,23 +150,23 @@ Nezer is the southern confederacy of the Dominion: two lands of one demon family
 
 | Key | Name | Modifiers | Added / removed |
 | --- | --- | --- | --- |
-| `one_family` | One Family | `stability_factor` 0.05 | `one_family`; replaced by the next two |
+| `one_family_spirit` | One Family | `stability_factor` 0.05 | `one_family`; replaced by the next two |
 | `queens_hand` | The Queen's Hand | `political_power_gain` 0.10, `stability_factor` 0.03 | `the_queens_hand` |
 | `houses_rule` | The Houses Rule | `stability_factor` 0.08, `political_power_factor` −0.05 | `the_houses_rule` |
 | `dominion_vanguard` | The Dominion's Vanguard | `army_attack_factor` 0.05, `war_support_factor` 0.05 | `the_dominions_vanguard`; removed when Nezer leaves Volgan |
 | `sealed_gate` | The Gate Kept Sealed | `army_core_defence_factor` 0.10, `drift_defence_factor` 0.10 | `keep_the_gate_sealed` |
-| `ember_trade` | Ember Trade | `trade_opinion_factor` 0.10 | `ember_trade` |
-| `nezers_furnaces` | Nezer's Furnaces | `production_speed_arms_factory_factor` 0.05, `production_speed_buildings_factor` 0.05 | `nezers_furnaces` |
-| `burning_vanguard` | The Burning Vanguard | `army_attack_factor` 0.10, `breakthrough_factor` 0.05 | timed, 180 days |
+| `ember_trade_spirit` | Ember Trade | `trade_opinion_factor` 0.10 | `ember_trade` |
+| `nezers_furnaces_spirit` | Nezer's Furnaces | `production_speed_arms_factory_factor` 0.05, `production_speed_buildings_factor` 0.05 | `nezers_furnaces` |
+| `burning_vanguard_spirit` | The Burning Vanguard | `army_attack_factor` 0.10, `breakthrough_factor` 0.05 | timed, 180 days |
 | `own_crown` | The Queen's Own Crown | `stability_factor` 0.10, `drift_defence_factor` 0.15 | `the_queens_own_crown` (free Nezer) |
 
 ### Events (namespace `zin_regional_nezer`)
 
-| # | Key | Title | To | Trigger | Options |
-| ---: | --- | --- | --- | --- | --- |
-| 1 | `two_crowns` | Two Crowns, One Family | Nezer | The Two Crowns of Nezer | "Nezerun leads." (political_power 25) / "Nezer and Nezerun as equals." (stability 0.03) |
-| 2 | `burning_gate` | The Burning Gate | Nezer | The Burning Gate Remembered | One option. Text: in an older age a gate of fire stood open in one of Nezer's strongholds; men, elves and dark soldiers closed it together and forgot it together. Nobody in Nezer says who opened it |
-| 3 | `silent_south` | The Silence from Nafeher | Nezer | A Name That Does Not Answer | One option. Text: the summons have stopped; the Steward speaks in a name that does not answer; what remains of the master of Nafeher, no one living can say |
+| # | Key | Title | To | Trigger | Picture | Options |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | `two_crowns` | Two Crowns, One Family | Nezer | The Two Crowns of Nezer | `generic_court` | "Nezerun leads." (political_power 25) / "Nezer and Nezerun as equals." (stability 0.03) |
+| 2 | `burning_gate` | The Burning Gate | Nezer | The Burning Gate Remembered | `dead_lands_storm` | One option. Text: in an older age a gate of fire stood open in one of Nezer's strongholds; men, elves and dark soldiers closed it together and forgot it together. Nobody in Nezer says who opened it |
+| 3 | `silent_south` | The Silence from Nafeher | Nezer | A Name That Does Not Answer | `grave_muster` | One option. Text: the summons have stopped; the Steward speaks in a name that does not answer; what remains of the master of Nafeher, no one living can say |
 
 ### Historical AI route
 
@@ -189,47 +198,47 @@ Demon is the horned court of the Dominion: one land of cinder plains and vents o
 
 **A. The Horned Court** (x 0–2, rows 0–3). Exclusive: *The Horned Throne* / *The House Council*.
 - `the_horned_court` The Horned Court (1,0; 70) `demon_horn`: political_power 50; event `horned_court`. AI 40.
-- `hazarels_word` Hazarel's Word (0,1; ← court) `seal_royal`: political_power 25. AI 20.
-- `the_netherborn_houses` The Netherborn Houses (2,1; ← court) `council_table`: stability 0.05. AI 20.
-- `the_horned_throne` The Horned Throne (0,2; ← word / houses; excl council) `crown_iron`: add_spirit `horned_throne`. AI 15; hist ×2.
-- `the_house_council` The House Council (2,2; ← word / houses; excl throne) `council_table`: add_spirit `house_council`. AI 10.
-- `court_of_cinders` The Court of Cinders (1,3; ← either; 70) `ember_desert`: political_power 75. AI 15.
+- `hazarels_word` Hazarel's Word (0,1; ← the_horned_court) `seal_royal`: political_power 25. AI 20.
+- `the_netherborn_houses` The Netherborn Houses (2,1; ← the_horned_court) `council_table`: stability 0.05. AI 20.
+- `the_horned_throne` The Horned Throne (0,2; ← hazarels_word / the_netherborn_houses; excl the_house_council) `crown_iron`: add_spirit `horned_throne`. AI 15; hist ×2.
+- `the_house_council` The House Council (2,2; ← hazarels_word / the_netherborn_houses; excl the_horned_throne) `council_table`: add_spirit `house_council`. AI 10.
+- `court_of_cinders` The Court of Cinders (1,3; ← the_horned_throne / the_house_council; 70) `ember_desert`: political_power 75. AI 15.
 
 **B. First of the Sworn** (x 4–6, rows 0–2).
 - `first_of_the_sworn` First of the Sworn (5,0) `banner_black`: oath +10. AI 30; hist ×2.
-- `netherborn_levies_for_nafeher` Netherborn Levies for Nafeher (4,1; ← first) `demon_horn`: manpower 2000; strength +1. AI 20.
-- `the_dominions_due` The Dominion's Due (6,1; ← first) `tribute_chest`: oath +5; political_power 25. AI 15.
-- `first_into_the_storm` First into the Storm (5,2; ← both; 70) `war_drums`: Avail: oath ≥ 50. add_spirit `first_into_the_storm`. AI 20.
+- `netherborn_levies_for_nafeher` Netherborn Levies for Nafeher (4,1; ← first_of_the_sworn) `demon_horn`: manpower 2000; strength +1. AI 20.
+- `the_dominions_due` The Dominion's Due (6,1; ← first_of_the_sworn) `tribute_chest`: oath +5; political_power 25. AI 15.
+- `first_into_the_storm` First into the Storm (5,2; ← netherborn_levies_for_nafeher + the_dominions_due; 70) `war_drums`: Avail: oath ≥ 50. add_spirit `first_into_the_storm_spirit`. AI 20.
 
 **C. The Nether's Edge** (x 8–10, rows 0–2).
 - `the_nethers_edge` The Nether's Edge (9,0) `nether_gate`: event `southern_heat`. AI 25.
-- `envoys_below` Envoys Below (8,1; ← edge) `envoy`: nether pact +3; political_power −25. AI 15; hist ×2.
-- `old_portal_sites` Old Portal Sites (10,1; ← edge) `nether_gate`: research [zin_cat_dark_rites] 50% ×1. AI 15.
-- `the_bargain_of_this_reign` The Bargain of This Reign (9,2; ← both; 70) `scroll_sealed`: Avail: Volgan has country flag `zin_volgan_nether_bargain` or `zin_volgan_nether_bent`. nether pact +5; oath +5. AI 20.
+- `envoys_below` Envoys Below (8,1; ← the_nethers_edge) `envoy`: nether pact +3; political_power −25. AI 15; hist ×2.
+- `old_portal_sites` Old Portal Sites (10,1; ← the_nethers_edge) `nether_gate`: research [zin_cat_dark_rites] 50% ×1. AI 15.
+- `the_bargain_of_this_reign` The Bargain of This Reign (9,2; ← envoys_below + old_portal_sites; 70) `scroll_sealed`: Avail: check `zin_regional_demon_volgan_bargained` (Volgan has country flag `zin_volgan_nether_bargain` or `zin_volgan_nether_bent`). nether pact +5; oath +5. AI 20.
 
 **D. Our Own Road** (x 12–14, rows 0–2). Head `available`: variable `zin_dominion_oath` below 40, or flag own road.
 - `the_horned_crown_alone` The Horned Crown Alone (13,0) `chain_broken`: autonomy +0.10. AI 0; 20 when available.
-- `counsel_of_cinders` Counsel of Cinders (12,1; ← alone) `council_table`: political_power 50. AI 15.
-- `trade_with_the_free` Trade with the Free (14,1; ← alone) `caravan`: add_spirit `cinder_trade`. AI 15.
-- `a_court_of_our_own` A Court of Our Own (13,2; ← both; 70) `crown_broken`: autonomy +0.15; oath −10. AI 10; hist ×0.2 before the body breaks.
+- `counsel_of_cinders` Counsel of Cinders (12,1; ← the_horned_crown_alone) `council_table`: political_power 50. AI 15.
+- `trade_with_the_free` Trade with the Free (14,1; ← the_horned_crown_alone) `caravan`: add_spirit `cinder_trade`. AI 15.
+- `a_court_of_our_own` A Court of Our Own (13,2; ← counsel_of_cinders + trade_with_the_free; 70) `crown_broken`: autonomy +0.15; oath −10. AI 10; hist ×0.2 before the body breaks.
 
 **E. Cinder Forges** (x 16–18, rows 0–2).
 - `cinder_forges` Cinder Forges (17,0; 70) `foundry_fire`: building arms_factory 1 @capital. AI 30.
-- `vent_mines` Vent Mines (16,1; ← forges) `mine_cart`: building industrial_complex 1 @capital. AI 15.
-- `the_burning_roads` The Burning Roads (18,1; ← forges) `roads_paved`: building infrastructure 1 @capital. AI 15.
-- `furnaces_of_demon` Furnaces of Demon (17,2; ← mines + roads) `forge_anvil`: add_spirit `furnaces_of_demon`. AI 15.
+- `vent_mines` Vent Mines (16,1; ← cinder_forges) `mine_cart`: building industrial_complex 1 @capital. AI 15.
+- `the_burning_roads` The Burning Roads (18,1; ← cinder_forges) `roads_paved`: building infrastructure 1 @capital. AI 15.
+- `furnaces_of_demon` Furnaces of Demon (17,2; ← vent_mines + the_burning_roads) `forge_anvil`: add_spirit `furnaces_of_demon_spirit`. AI 15.
 
 **F. The Horned Host** (x 4–6, rows 6–8). Head `available`: `at_war`.
 - `the_horned_host` The Horned Host (5,6; 21) `demon_horn`: war_support 0.10; manpower 2000. AI 0; 300 when available.
-- `netherborn_vanguard` The Netherborn Vanguard (4,7; ← host; 21) `banner_black`: Avail: global_flag `zin_volgan_marches`. army_experience 15. AI 100.
-- `fire_at_the_gate` Fire at the Gate (6,7; ← host; 21) `nether_gate`: Avail: Volgan has country flag `zin_volgan_gate_pact`. nether pact +5. AI 100.
-- `the_host_returns` The Host Returns (5,8; ← either) `war_drums`: Avail: not at_war. stability 0.05; oath +5. AI 100.
+- `netherborn_vanguard` The Netherborn Vanguard (4,7; ← the_horned_host; 21) `banner_black`: Avail: global_flag `zin_volgan_marches`. army_experience 15. AI 100.
+- `fire_at_the_gate` Fire at the Gate (6,7; ← the_horned_host; 21) `nether_gate`: Avail: check `zin_regional_demon_volgan_gate_pact` (Volgan has country flag `zin_volgan_gate_pact`). nether pact +5. AI 100.
+- `the_host_returns` The Host Returns (5,8; ← netherborn_vanguard / fire_at_the_gate) `war_drums`: Avail: not at_war. stability 0.05; oath +5. AI 100.
 
 **G. A Silent Throne in the South** (x 12–14, rows 6–8). Head `available`: global_flag `zin_volgan_body_destroyed`. Exclusive: *Stand with the Steward* / *The Horned Crown Free*.
 - `silence_from_nafeher` Silence from Nafeher (13,6) `silent_throne`: stability 0.05; event `silence_from_nafeher`. AI 0; 300 when available.
-- `stand_with_the_steward` Stand with the Steward (12,7; ← silence; excl free) `banner_black`: Avail: ROOT is Volgan's subject. oath +20; stability 0.05. AI 20; ×3 if oath ≥ 40.
-- `the_horned_crown_free` The Horned Crown Free (14,7; ← silence; excl steward) `crown_iron`: call `zin_regional_demon_crown_free` (as Nezer's). AI 20; ×3 if oath < 40.
-- `cinders_cool` The Cinders Cool (13,8; ← either) `ember_desert`: political_power 50; stability 0.05. AI 100.
+- `stand_with_the_steward` Stand with the Steward (12,7; ← silence_from_nafeher; excl the_horned_crown_free) `banner_black`: Avail: ROOT is Volgan's subject. oath +20; stability 0.05. AI 20; ×3 if oath ≥ 40.
+- `the_horned_crown_free` The Horned Crown Free (14,7; ← silence_from_nafeher; excl stand_with_the_steward) `crown_iron`: call `zin_regional_demon_crown_free` (as Nezer's). AI 20; ×3 if oath < 40.
+- `cinders_cool` The Cinders Cool (13,8; ← stand_with_the_steward / the_horned_crown_free) `ember_desert`: political_power 50; stability 0.05. AI 100.
 
 ### Key focuses
 
@@ -248,18 +257,18 @@ Demon is the horned court of the Dominion: one land of cinder plains and vents o
 | --- | --- | --- | --- |
 | `horned_throne` | The Horned Throne | `political_power_gain` 0.10, `war_support_factor` 0.05 | `the_horned_throne` |
 | `house_council` | The House Council | `stability_factor` 0.08 | `the_house_council` |
-| `first_into_the_storm` | First into the Storm | `army_attack_factor` 0.05, `army_morale_factor` 0.05 | `first_into_the_storm`; removed when Demon leaves Volgan |
+| `first_into_the_storm_spirit` | First into the Storm | `army_attack_factor` 0.05, `army_morale_factor` 0.05 | `first_into_the_storm`; removed when Demon leaves Volgan |
 | `cinder_trade` | Trade with the Free | `trade_opinion_factor` 0.10 | `trade_with_the_free` |
-| `furnaces_of_demon` | Furnaces of Demon | `production_speed_arms_factory_factor` 0.05, `production_speed_buildings_factor` 0.05 | `furnaces_of_demon` |
+| `furnaces_of_demon_spirit` | Furnaces of Demon | `production_speed_arms_factory_factor` 0.05, `production_speed_buildings_factor` 0.05 | `furnaces_of_demon` |
 | `own_crown` | The Horned Crown Free | `stability_factor` 0.10, `drift_defence_factor` 0.15 | `the_horned_crown_free` (free Demon) |
 
 ### Events (namespace `zin_regional_demon`)
 
-| # | Key | Title | To | Trigger | Options |
-| ---: | --- | --- | --- | --- | --- |
-| 1 | `horned_court` | The Horned Court Sits | Demon | The Horned Court | "Hazarel speaks." (political_power 25) / "The houses speak." (stability 0.03) |
-| 2 | `southern_heat` | Into the Southern Heat | Demon | The Nether's Edge | One option. Text: Demon's envoys walk south into the heat toward the Nether's court and come back with answers they keep to themselves. Nothing names the King of Demons or what he owes |
-| 3 | `silence_from_nafeher` | Silence from Nafeher | Demon | Silence from Nafeher | One option. Same rule as Nezer's event 3 |
+| # | Key | Title | To | Trigger | Picture | Options |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | `horned_court` | The Horned Court Sits | Demon | The Horned Court | `generic_court` | "Hazarel speaks." (political_power 25) / "The houses speak." (stability 0.03) |
+| 2 | `southern_heat` | Into the Southern Heat | Demon | The Nether's Edge | `dead_lands_storm` | One option. Text: Demon's envoys walk south into the heat toward the Nether's court and come back with answers they keep to themselves. Nothing names the King of Demons or what he owes |
+| 3 | `silence_from_nafeher` | Silence from Nafeher | Demon | Silence from Nafeher | `grave_muster` | One option. Same rule as Nezer's event 3 |
 
 ### Historical AI route
 
@@ -292,45 +301,45 @@ Dolon is the forge of the Dominion: one land of salt flats, ash kilns and black 
 
 **A. The Court of the Dead Sea** (x 0–2, rows 0–3). Exclusive: *The Iron Steward* / *The Salt Council*.
 - `court_of_the_dead_sea` The Court of the Dead Sea (1,0; 70) `storm_sea`: political_power 50; event `dead_sea_court`. AI 40.
-- `morvaths_ledger` Morvath's Ledger (0,1; ← court) `ledger_coins`: political_power 25. AI 20.
-- `the_salt_lords` The Salt-Lords (2,1; ← court) `granary`: stability 0.05. AI 20.
-- `the_iron_steward` The Iron Steward (0,2; ← ledger / lords; excl salt_council) `seal_royal`: add_spirit `iron_steward`. AI 15; hist ×2.
-- `the_salt_council` The Salt Council (2,2; ← ledger / lords; excl iron) `council_table`: add_spirit `salt_council`. AI 10.
-- `dolon_endures` Dolon Endures (1,3; ← either; 70) `ember_desert`: political_power 75. AI 15.
+- `morvaths_ledger` Morvath's Ledger (0,1; ← court_of_the_dead_sea) `ledger_coins`: political_power 25. AI 20.
+- `the_salt_lords` The Salt-Lords (2,1; ← court_of_the_dead_sea) `granary`: stability 0.05. AI 20.
+- `the_iron_steward` The Iron Steward (0,2; ← morvaths_ledger / the_salt_lords; excl the_salt_council) `seal_royal`: add_spirit `iron_steward`. AI 15; hist ×2.
+- `the_salt_council` The Salt Council (2,2; ← morvaths_ledger / the_salt_lords; excl the_iron_steward) `council_table`: add_spirit `salt_council`. AI 10.
+- `dolon_endures` Dolon Endures (1,3; ← the_iron_steward / the_salt_council; 70) `ember_desert`: political_power 75. AI 15.
 
 **B. The Forges of Dolon** (x 4–6, rows 0–3).
 - `forges_of_dolon` The Forges of Dolon (5,0; 70) `forge_anvil`: building arms_factory 1 @capital; oath +5. AI 30.
-- `salt_of_the_dead_sea` Salt of the Dead Sea (4,1; ← forges) `granary`: add_spirit `dead_sea_salt`. AI 15.
-- `ash_kilns` Ash Kilns (6,1; ← forges) `foundry_fire`: building arms_factory 1 @capital. AI 15.
-- `deep_salt_pans` Deep Salt-Pans (4,2; ← salt) `quarry_stone`: building industrial_complex 1 @capital. AI 10.
-- `arms_for_nafeher` Arms for Nafeher (6,2; ← kilns) `tribute_chest`: Avail: ROOT is Volgan's subject. call `zin_regional_dolon_send_arms` (`send_equipment` 500 `zin_arms_equipment` to Volgan); strength +1; oath +5. AI 20; hist ×2.
-- `arms_of_dolon` The Arms of Dolon (5,3; ← pans / arms; 70) `forge_anvil`: add_spirit `arms_of_dolon`. AI 15.
+- `salt_of_the_dead_sea` Salt of the Dead Sea (4,1; ← forges_of_dolon) `granary`: add_spirit `dead_sea_salt`. AI 15.
+- `ash_kilns` Ash Kilns (6,1; ← forges_of_dolon) `foundry_fire`: building arms_factory 1 @capital. AI 15.
+- `deep_salt_pans` Deep Salt-Pans (4,2; ← salt_of_the_dead_sea) `quarry_stone`: building industrial_complex 1 @capital. AI 10.
+- `arms_for_nafeher` Arms for Nafeher (6,2; ← ash_kilns) `tribute_chest`: Avail: ROOT is Volgan's subject. call `zin_regional_dolon_send_arms` (`send_equipment` 500 `zin_arms_equipment` to Volgan); strength +1; oath +5. AI 20; hist ×2.
+- `arms_of_dolon` The Arms of Dolon (5,3; ← deep_salt_pans / arms_for_nafeher; 70) `forge_anvil`: add_spirit `arms_of_dolon_spirit`. AI 15.
 
 **C. Black Galleys of the Storm Coast** (x 8–10, rows 0–3). `allow_branch` and `available` on the head: check `zin_regional_dolon_is_coastal`.
 - `black_galleys` Black Galleys (9,0) `galley_oars`: building dockyard 1 @random_coastal. AI 20.
-- `storm_pilots_of_dolon` Storm Pilots of Dolon (8,1; ← galleys) `storm_sea`: navy_experience 10; research [zin_cat_galleys] 50% ×1. AI 15.
-- `salt_harbour` The Salt Harbour (10,1; ← galleys) `harbour_lake`: building naval_base 1 @random_coastal. AI 15.
-- `galleys_for_the_dominion` Galleys for the Dominion (9,2; ← pilots + harbour) `corsair_raider`: navy_experience 10; oath +3. AI 15.
-- `storm_harbour_chain` The Storm-Harbour Chain (9,3; ← galleys_for) `strait_chain`: building coastal_bunker 1 @random_coastal. AI 10.
+- `storm_pilots_of_dolon` Storm Pilots of Dolon (8,1; ← black_galleys) `storm_sea`: navy_experience 10; research [zin_cat_galleys] 50% ×1. AI 15.
+- `salt_harbour` The Salt Harbour (10,1; ← black_galleys) `harbour_lake`: building naval_base 1 @random_coastal. AI 15.
+- `galleys_for_the_dominion` Galleys for the Dominion (9,2; ← storm_pilots_of_dolon + salt_harbour) `corsair_raider`: navy_experience 10; oath +3. AI 15.
+- `storm_harbour_chain` The Storm-Harbour Chain (9,3; ← galleys_for_the_dominion) `strait_chain`: building coastal_bunker 1 @random_coastal. AI 10.
 
 **D. Our Own Road** (x 12–14, rows 0–3). Head `available`: variable `zin_dominion_oath` below 40, or flag own road.
 - `a_ledger_of_our_own` A Ledger of Our Own (13,0) `ledger_coins`: autonomy +0.10. AI 0; 20 when available.
-- `trade_beyond_the_storms` Trade Beyond the Storms (12,1; ← ledger) `ship_voyage`: add_spirit `beyond_the_storms`. AI 15.
-- `quiet_from_nafeher` Quiet from Nafeher (14,1; ← ledger) `seal_wax`: political_power 50. AI 15.
-- `a_steward_of_salt` A Steward of Salt (13,2; ← both; 70) `crown_broken`: autonomy +0.15; oath −10. AI 10; hist ×0.2 before the body breaks.
-- `dolon_for_dolon` Dolon for Dolon (13,3; ← steward) `banner_plain`: Avail: ROOT is not a subject. stability 0.10; add_spirit `own_crown`. AI 100 when available.
+- `trade_beyond_the_storms` Trade Beyond the Storms (12,1; ← a_ledger_of_our_own) `ship_voyage`: add_spirit `beyond_the_storms`. AI 15.
+- `quiet_from_nafeher` Quiet from Nafeher (14,1; ← a_ledger_of_our_own) `seal_wax`: political_power 50. AI 15.
+- `a_steward_of_salt` A Steward of Salt (13,2; ← trade_beyond_the_storms + quiet_from_nafeher; 70) `crown_broken`: autonomy +0.15; oath −10. AI 10; hist ×0.2 before the body breaks.
+- `dolon_for_dolon` Dolon for Dolon (13,3; ← a_steward_of_salt) `banner_plain`: Avail: ROOT is not a subject. stability 0.10; add_spirit `own_crown`. AI 100 when available.
 
 **E. Dolon Marches** (x 4–6, rows 6–8). Head `available`: `at_war`.
 - `dolon_marches` Dolon Marches (5,6; 21) `banner_black`: war_support 0.10; manpower 1500. AI 0; 300 when available.
-- `forges_never_rest` The Forges Never Rest (4,7; ← marches; 21) `foundry_fire`: timed_spirit `forges_never_rest` 365. AI 100.
-- `shields_of_dolon` Shields of Dolon (6,7; ← marches; 21) `sword_shield`: Avail: global_flag `zin_volgan_marches`. army_experience 15. AI 100.
-- `dolon_at_peace` Dolon at Peace (5,8; ← either) `olive_branch`: Avail: not at_war. stability 0.05. AI 100.
+- `forges_never_rest` The Forges Never Rest (4,7; ← dolon_marches; 21) `foundry_fire`: timed_spirit `forges_never_rest_spirit` 365. AI 100.
+- `shields_of_dolon` Shields of Dolon (6,7; ← dolon_marches; 21) `sword_shield`: Avail: global_flag `zin_volgan_marches`. army_experience 15. AI 100.
+- `dolon_at_peace` Dolon at Peace (5,8; ← forges_never_rest / shields_of_dolon) `olive_branch`: Avail: not at_war. stability 0.05. AI 100.
 
 **F. The Throne That Does Not Answer** (x 12–14, rows 6–8). Head `available`: global_flag `zin_volgan_body_destroyed`. Exclusive: *Stand with the Steward* / *Free Dolon*.
 - `a_throne_that_does_not_answer` A Throne That Does Not Answer (13,6) `silent_throne`: stability 0.05; event `silence_on_the_dead_sea`. AI 0; 300 when available.
-- `stand_with_the_steward` Stand with the Steward (12,7; ← throne; excl free) `banner_black`: Avail: ROOT is Volgan's subject. oath +20. AI 20; ×3 if oath ≥ 40.
-- `free_dolon` Free Dolon (14,7; ← throne; excl steward) `chain_broken`: call `zin_regional_dolon_crown_free` (as Nezer's). AI 20; ×3 if oath < 40.
-- `salt_and_iron_endure` Salt and Iron Endure (13,8; ← either) `forge_anvil`: political_power 50; stability 0.05. AI 100.
+- `stand_with_the_steward` Stand with the Steward (12,7; ← a_throne_that_does_not_answer; excl free_dolon) `banner_black`: Avail: ROOT is Volgan's subject. oath +20. AI 20; ×3 if oath ≥ 40.
+- `free_dolon` Free Dolon (14,7; ← a_throne_that_does_not_answer; excl stand_with_the_steward) `chain_broken`: call `zin_regional_dolon_crown_free` (as Nezer's). AI 20; ×3 if oath < 40.
+- `salt_and_iron_endure` Salt and Iron Endure (13,8; ← stand_with_the_steward / free_dolon) `forge_anvil`: political_power 50; stability 0.05. AI 100.
 
 ### Key focuses
 
@@ -349,17 +358,17 @@ Dolon is the forge of the Dominion: one land of salt flats, ash kilns and black 
 | `iron_steward` | The Iron Steward | `political_power_gain` 0.10, `production_factory_efficiency_gain_factor` 0.03 | `the_iron_steward` |
 | `salt_council` | The Salt Council | `stability_factor` 0.05, `trade_opinion_factor` 0.10 | `the_salt_council` |
 | `dead_sea_salt` | Salt of the Dead Sea | `consumer_goods_factor` −0.03 | `salt_of_the_dead_sea` |
-| `arms_of_dolon` | The Arms of Dolon | `production_speed_arms_factory_factor` 0.10 | `arms_of_dolon` |
+| `arms_of_dolon_spirit` | The Arms of Dolon | `production_speed_arms_factory_factor` 0.10 | `arms_of_dolon` |
 | `beyond_the_storms` | Trade Beyond the Storms | `trade_opinion_factor` 0.10, `political_power_gain` 0.05 | `trade_beyond_the_storms` |
 | `own_crown` | Dolon for Dolon | `stability_factor` 0.10, `drift_defence_factor` 0.15 | `dolon_for_dolon` or `free_dolon` (free Dolon) |
-| `forges_never_rest` | The Forges Never Rest | `production_speed_arms_factory_factor` 0.10, `industrial_capacity_factory` 0.05 | timed, 365 days |
+| `forges_never_rest_spirit` | The Forges Never Rest | `production_speed_arms_factory_factor` 0.10, `industrial_capacity_factory` 0.05 | timed, 365 days |
 
 ### Events (namespace `zin_regional_dolon`)
 
-| # | Key | Title | To | Trigger | Options |
-| ---: | --- | --- | --- | --- | --- |
-| 1 | `dead_sea_court` | The Court of the Dead Sea | Dolon | The Court of the Dead Sea | "Count the ledgers." (political_power 25) / "Feast the salt-lords." (stability 0.03) |
-| 2 | `silence_on_the_dead_sea` | Silence on the Dead Sea | Dolon | A Throne That Does Not Answer | One option. Same rule as Nezer's event 3 |
+| # | Key | Title | To | Trigger | Picture | Options |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | `dead_sea_court` | The Court of the Dead Sea | Dolon | The Court of the Dead Sea | `generic_court` | "Count the ledgers." (political_power 25) / "Feast the salt-lords." (stability 0.03) |
+| 2 | `silence_on_the_dead_sea` | Silence on the Dead Sea | Dolon | A Throne That Does Not Answer | `grave_muster` | One option. Same rule as Nezer's event 3 |
 
 ### Historical AI route
 
@@ -391,47 +400,47 @@ Olen is a free realm of men on the cliffs of the Dead Lands' coast: three provin
 
 **A. The Holy Breeze** (x 0–2, rows 0–4). Exclusive: *The Breeze and the Lamp* / *The Breeze Alone*.
 - `the_holy_breeze` The Holy Breeze (1,0; 70) `lighthouse`: political_power 50; event `breeze_rises`. AI 40.
-- `olenas_counsel` Olena's Counsel (0,1; ← breeze) `book_lore`: political_power 25; stability 0.02. AI 20.
-- `breeze_shrines` The Breeze Shrines (2,1; ← breeze) `rune_stone`: stability 0.05. AI 20.
-- `the_breeze_keepers` The Breeze-Keepers (1,2; ← counsel + shrines) `hymn_choir`: add_spirit `breeze_keepers`. AI 15.
-- `the_breeze_and_the_lamp` The Breeze and the Lamp (0,3; ← keepers; excl alone) `house_first_light`: footholds +1; stability 0.05; add_spirit `breeze_and_lamp`. Text: healers of the Houses of the First Light are welcomed beside the shrines. AI 20; hist ×1.5.
-- `the_breeze_alone` The Breeze Alone (2,3; ← keepers; excl lamp) `banner_plain`: footholds −1; add_spirit `breeze_alone`. Text: Olen keeps its own shrines and its own healers. AI 15.
-- `olen_at_peace` Olen at Peace (1,4; ← either; 70) `olive_branch`: political_power 75; stability 0.03. AI 15.
+- `olenas_counsel` Olena's Counsel (0,1; ← the_holy_breeze) `book_lore`: political_power 25; stability 0.02. AI 20.
+- `breeze_shrines` The Breeze Shrines (2,1; ← the_holy_breeze) `rune_stone`: stability 0.05. AI 20.
+- `the_breeze_keepers` The Breeze-Keepers (1,2; ← olenas_counsel + breeze_shrines) `hymn_choir`: add_spirit `breeze_keepers`. AI 15.
+- `the_breeze_and_the_lamp` The Breeze and the Lamp (0,3; ← the_breeze_keepers; excl the_breeze_alone) `house_first_light`: footholds +1; stability 0.05; add_spirit `breeze_and_lamp`. Text: healers of the Houses of the First Light are welcomed beside the shrines. AI 20; hist ×1.5.
+- `the_breeze_alone` The Breeze Alone (2,3; ← the_breeze_keepers; excl the_breeze_and_the_lamp) `banner_plain`: footholds −1; add_spirit `breeze_alone`. Text: Olen keeps its own shrines and its own healers. AI 15.
+- `olen_at_peace` Olen at Peace (1,4; ← the_breeze_and_the_lamp / the_breeze_alone; 70) `olive_branch`: political_power 75; stability 0.03. AI 15.
 
 **B. Cool Wind, Hot Land** (x 4–6, rows 0–3).
-- `cliff_terraces` Cliff Terraces (5,0; 70) `farm_sowing`: add_spirit `cliff_terraces`. AI 30.
-- `windmills_of_the_cliffs` Windmills of the Cliffs (4,1; ← terraces) `workshop_tools`: building industrial_complex 1 @random_owned. AI 15.
-- `cistern_roads` Cistern Roads (6,1; ← terraces) `roads_paved`: building infrastructure 1 @random_owned. AI 15.
-- `the_cool_harbour` The Cool Harbour (4,2; ← windmills) `harbour_lake`: Avail: check `zin_regional_olen_is_coastal`. building dockyard 1 @random_coastal. AI 15.
-- `breeze_markets` Breeze Markets (6,2; ← cisterns) `market_stalls`: add_spirit `breeze_markets`. AI 15.
-- `olen_prospers` Olen Prospers (5,3; ← harbour / markets; 70) `coin_chest`: building industrial_complex 1 @random_owned; political_power 50. AI 15.
+- `cliff_terraces` Cliff Terraces (5,0; 70) `farm_sowing`: add_spirit `cliff_terraces_spirit`. AI 30.
+- `windmills_of_the_cliffs` Windmills of the Cliffs (4,1; ← cliff_terraces) `workshop_tools`: building industrial_complex 1 @random_owned. AI 15.
+- `cistern_roads` Cistern Roads (6,1; ← cliff_terraces) `roads_paved`: building infrastructure 1 @random_owned. AI 15.
+- `the_cool_harbour` The Cool Harbour (4,2; ← windmills_of_the_cliffs) `harbour_lake`: Avail: check `zin_regional_olen_is_coastal`. building dockyard 1 @random_coastal. AI 15.
+- `breeze_markets` Breeze Markets (6,2; ← cistern_roads) `market_stalls`: add_spirit `breeze_markets_spirit`. AI 15.
+- `olen_prospers` Olen Prospers (5,3; ← the_cool_harbour / breeze_markets; 70) `coin_chest`: building industrial_complex 1 @random_owned; political_power 50. AI 15.
 
 **C. Nafeher's Shadow** (x 8–12, rows 0–2). Three-way exclusive at row 1.
 - `the_southern_storm` The Southern Storm (10,0) `storm_veil`: event `rumours_from_nafeher`. AI 30.
-- `keep_the_old_quiet` Keep the Old Quiet (8,1; ← storm; excl wardens, cliffs) `tribute_chest`: Avail: exists Volgan. event_for Volgan `olen_offers_tribute`. AI 20; hist ×0.5.
-- `stand_with_the_wardens` Stand with the Wardens (10,1; ← storm; excl quiet, cliffs) `warden_crown`: Avail: exists Mirolon. event_for Mirolon `olen_offers_friendship`; proof +2. AI 20; hist ×2.
-- `behind_our_cliffs` Behind Our Cliffs (12,1; ← storm; excl quiet, wardens) `fort_wall`: building bunker 2 @capital; building coastal_bunker 1 @random_coastal. AI 15.
-- `the_quiet_kept` The Quiet Kept (8,2; ← quiet) `olive_branch`: Avail: flag `zin_dominion_tributary_friend`. stability 0.05; political_power 50. AI 20.
-- `the_warden_league` The Warden League (10,2; ← wardens) `banner_league`: Avail: flag `zin_mirolon_league_friend`; Mirolon leads a faction. `join_faction_of` Mirolon. AI 30; hist ×2.
-- `the_cliffs_hold` The Cliffs Hold (12,2; ← cliffs) `pass_fort`: add_spirit `cliffs_hold`. AI 15.
+- `keep_the_old_quiet` Keep the Old Quiet (8,1; ← the_southern_storm; excl stand_with_the_wardens, behind_our_cliffs) `tribute_chest`: Avail: exists Volgan. event_for Volgan `olen_offers_tribute`. AI 20; hist ×0.5.
+- `stand_with_the_wardens` Stand with the Wardens (10,1; ← the_southern_storm; excl keep_the_old_quiet, behind_our_cliffs) `warden_crown`: Avail: exists Mirolon. event_for Mirolon `olen_offers_friendship`; proof +2. AI 20; hist ×2.
+- `behind_our_cliffs` Behind Our Cliffs (12,1; ← the_southern_storm; excl keep_the_old_quiet, stand_with_the_wardens) `fort_wall`: building bunker 2 @capital; building coastal_bunker 1 @random_coastal. AI 15.
+- `the_quiet_kept` The Quiet Kept (8,2; ← keep_the_old_quiet) `olive_branch`: Avail: flag `zin_dominion_tributary_friend`. stability 0.05; political_power 50. AI 20.
+- `the_warden_league` The Warden League (10,2; ← stand_with_the_wardens) `banner_league`: Avail: flag `zin_mirolon_league_friend`; check `zin_regional_olen_mirolon_leads_faction`. `join_faction_of` Mirolon. AI 30; hist ×2.
+- `the_cliffs_hold` The Cliffs Hold (12,2; ← behind_our_cliffs) `pass_fort`: add_spirit `cliffs_hold`. AI 15.
 
 **D. The Breeze Healers** (x 14–16, rows 0–2).
-- `breeze_healers` The Breeze Healers (15,0) `healer_herbs`: add_spirit `breeze_healers`. AI 20.
-- `healers_to_mirolon` Healers to Mirolon (14,1; ← healers) `lake_town`: Avail: exists Mirolon. opinion Mirolon +15 (`healers_sent`) both ways; proof +2. AI 15.
-- `healers_to_the_north` Healers to the North (16,1; ← healers) `envoy`: Avail: exists Aenor. opinion Aenor +10 (`healers_sent`). AI 10.
-- `the_breeze_carries_word` The Breeze Carries Word (15,2; ← either) `scout_lantern`: Avail: global_flag `zin_eindil_named`; global variable `zin_eindil_stage` above 7. regard +15; renown +2. Description uses `[zin_loc_eindil]`. AI 0; 50 when available.
+- `breeze_healers` The Breeze Healers (15,0) `healer_herbs`: add_spirit `breeze_healers_spirit`. AI 20.
+- `healers_to_mirolon` Healers to Mirolon (14,1; ← breeze_healers) `lake_town`: Avail: exists Mirolon. opinion Mirolon +15 (`healers_sent`); proof +2. AI 15.
+- `healers_to_the_north` Healers to the North (16,1; ← breeze_healers) `envoy`: Avail: exists Aenor. opinion Aenor +10 (`healers_sent`). AI 10.
+- `the_breeze_carries_word` The Breeze Carries Word (15,2; ← healers_to_mirolon / healers_to_the_north) `scout_lantern`: Avail: global_flag `zin_eindil_named`; stage above 7. regard +15; renown +2. Description uses `[zin_loc_eindil]`. AI 0; 50 when available.
 
 **E. The Breeze Guard** (x 18–20, rows 0–2).
 - `breeze_guard` The Breeze Guard (19,0; 70) `spear_levy`: army_experience 10; research [zin_cat_arms] 50% ×1. AI 25.
-- `cliff_archers` Cliff Archers (18,1; ← guard) `bow_archers`: research [zin_cat_bows] 50% ×1. AI 15.
-- `sea_watch` The Sea Watch (20,1; ← guard) `lighthouse`: add_spirit `sea_watch`. AI 15.
-- `guard_of_the_breeze` Guard of the Breeze (19,2; ← archers + watch; 70) `sword_shield`: add_spirit `guard_of_the_breeze`. AI 15.
+- `cliff_archers` Cliff Archers (18,1; ← breeze_guard) `bow_archers`: research [zin_cat_bows] 50% ×1. AI 15.
+- `sea_watch` The Sea Watch (20,1; ← breeze_guard) `lighthouse`: add_spirit `sea_watch_spirit`. AI 15.
+- `guard_of_the_breeze` Guard of the Breeze (19,2; ← cliff_archers + sea_watch; 70) `sword_shield`: add_spirit `guard_of_the_breeze_spirit`. AI 15.
 
 **F. The Breeze Turns** (x 8–10, rows 6–8). Head `available`: `at_war`.
 - `the_breeze_turns` The Breeze Turns (9,6; 21) `storm_sea`: war_support 0.10; manpower 1500. AI 0; 300 when available.
-- `hold_the_cliffs` Hold the Cliffs (8,7; ← turns; 21) `fort_wall`: building bunker 1 @capital; timed_spirit `hold_the_cliffs` 180. AI 100.
-- `the_shrines_shelter` The Shrines Shelter (10,7; ← turns; 21) `healer_herbs`: Avail: global_flag `zin_volgan_marches`. manpower 2000; stability 0.05. Text: refugees from the north climb to the shrines. AI 100.
-- `the_breeze_returns` The Breeze Returns (9,8; ← either) `olive_branch`: Avail: not at_war. stability 0.10. AI 100.
+- `hold_the_cliffs` Hold the Cliffs (8,7; ← the_breeze_turns; 21) `fort_wall`: building bunker 1 @capital; timed_spirit `hold_the_cliffs_spirit` 180. AI 100.
+- `the_shrines_shelter` The Shrines Shelter (10,7; ← the_breeze_turns; 21) `healer_herbs`: Avail: global_flag `zin_volgan_marches`. manpower 2000; stability 0.05. Text: refugees from the north climb to the shrines. AI 100.
+- `the_breeze_returns` The Breeze Returns (9,8; ← hold_the_cliffs / the_shrines_shelter) `olive_branch`: Avail: not at_war. stability 0.10. AI 100.
 
 ### Key focuses
 
@@ -451,23 +460,24 @@ Olen is a free realm of men on the cliffs of the Dead Lands' coast: three provin
 | `breeze_keepers` | The Breeze-Keepers | `stability_factor` 0.05, `drift_defence_factor` 0.05 | `the_breeze_keepers` |
 | `breeze_and_lamp` | The Breeze and the Lamp | `monthly_population` 0.05, `stability_factor` 0.02 | `the_breeze_and_the_lamp` |
 | `breeze_alone` | The Breeze Alone | `drift_defence_factor` 0.15 | `the_breeze_alone` |
-| `cliff_terraces` | Cliff Terraces | `monthly_population` 0.05, `consumer_goods_factor` −0.02 | `cliff_terraces` |
-| `breeze_markets` | Breeze Markets | `trade_opinion_factor` 0.10 | `breeze_markets` |
+| `cliff_terraces_spirit` | Cliff Terraces | `monthly_population` 0.05, `consumer_goods_factor` −0.02 | `cliff_terraces` |
+| `breeze_markets_spirit` | Breeze Markets | `trade_opinion_factor` 0.10 | `breeze_markets` |
 | `cliffs_hold` | The Cliffs Hold | `army_core_defence_factor` 0.10, `amphibious_invasion_defence` 0.20 | `the_cliffs_hold` |
-| `breeze_healers` | The Breeze Healers | `army_org_factor` 0.03, `stability_factor` 0.02 | `breeze_healers` |
-| `sea_watch` | The Sea Watch | `naval_detection` 0.10 | `sea_watch` |
-| `guard_of_the_breeze` | Guard of the Breeze | `army_defence_factor` 0.05, `army_morale_factor` 0.05 | `guard_of_the_breeze` |
-| `hold_the_cliffs` | Hold the Cliffs | `army_defence_factor` 0.10 | timed, 180 days |
+| `breeze_healers_spirit` | The Breeze Healers | `army_org_factor` 0.03, `stability_factor` 0.02 | `breeze_healers` |
+| `sea_watch_spirit` | The Sea Watch | `naval_detection` 0.10 | `sea_watch` |
+| `guard_of_the_breeze_spirit` | Guard of the Breeze | `army_defence_factor` 0.05, `army_morale_factor` 0.05 | `guard_of_the_breeze` |
+| `hold_the_cliffs_spirit` | Hold the Cliffs | `army_defence_factor` 0.10 | timed, 180 days |
 
 ### Events (namespace `zin_regional_olen`)
 
-| # | Key | Title | To | Trigger | Options |
-| ---: | --- | --- | --- | --- | --- |
-| 1 | `breeze_rises` | The Evening Breeze | Olen | The Holy Breeze | "Light the shrines." (stability 0.03) / "Open the cisterns." (political_power 25) |
-| 2 | `rumours_from_nafeher` | Rumours from Nafeher | Olen | The Southern Storm | One option. Text: the galleys of Dolon buy more salt than a peaceful land eats; the storms over Nafeher have not lifted in a year |
-| 3 | `olen_offers_tribute` | Tribute from Olen | Volgan | Keep the Old Quiet | "The quiet holds." (`diplomatic_relation` non_aggression_pact with Olen; Volgan +25 political power; Olen −50 political power; Olen country flag `zin_dominion_tributary_friend`; AI 80) / "Nafeher takes no gifts from the north." (AI 20) |
-| 4 | `olen_offers_friendship` | Friendship from Olen | Mirolon | Stand with the Wardens | "Stand together." (Olen flag `zin_mirolon_league_friend`; opinion `healers_sent` +15 both ways; AI 80) / "We keep our own counsel." (AI 20) |
-| 5 | `an_answer_on_the_wind` | An Answer on the Wind | Olen | Reply to 3 and 4 | Result text |
+| # | Key | Title | To | Trigger | Picture | Options |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | `breeze_rises` | The Evening Breeze | Olen | The Holy Breeze | `generic_peace` | "Light the shrines." (stability 0.03) / "Open the cisterns." (political_power 25) |
+| 2 | `rumours_from_nafeher` | Rumours from Nafeher | Olen | The Southern Storm | `dead_lands_storm` | One option. Text: the galleys of Dolon buy more salt than a peaceful land eats; the storms over Nafeher have not lifted in a year |
+| 3 | `olen_offers_tribute` | Tribute from Olen | Volgan | Keep the Old Quiet | `generic_court` | "The quiet holds." (non_aggression with Olen; Volgan political_power 25; for_country Olen: political_power −50 and flag `zin_dominion_tributary_friend`; event_for Olen `an_answer_on_the_wind`; AI 80) / "Nafeher takes no gifts from the north." (event_for Olen `the_wind_falls_still`; AI 20) |
+| 4 | `olen_offers_friendship` | Friendship from Olen | Mirolon | Stand with the Wardens | `mirolon_passes` | "Stand together." (for_country Olen: flag `zin_mirolon_league_friend`; opinion Olen +15 (`healers_sent`); event_for Olen `an_answer_on_the_wind`; AI 80) / "We keep our own counsel." (event_for Olen `the_wind_falls_still`; AI 20) |
+| 5 | `an_answer_on_the_wind` | An Answer on the Wind | Olen | Accepting options of 3 and 4 | `generic_peace` | One option, "So the wind carries it." Text: the answer has come back on the evening wind, and it is yes |
+| 6 | `the_wind_falls_still` | The Wind Falls Still | Olen | Refusing options of 3 and 4 | `dead_lands_storm` | One option, "We keep our cliffs." (stability 0.02). Text: the envoys came back with nothing |
 
 ### Historical AI route
 
@@ -500,45 +510,45 @@ Nan is a warlord's realm of islands and peninsulas: Nan and Vez Nan, held togeth
 
 **A. The Warlord of Vez Nan** (x 0–2, rows 0–3). Exclusive: *One Warlord* / *The Captains' Moot*.
 - `warlord_of_vez_nan` The Warlord of Vez Nan (1,0; 70) `crown_iron`: political_power 50; event `warlord_speaks`. AI 40.
-- `dumars_captains` Dumar's Captains (0,1; ← warlord) `war_council_map`: army_experience 5; political_power 25. AI 20.
-- `the_island_lords` The Island Lords (2,1; ← warlord) `anchor_rope`: stability 0.05. AI 20.
-- `one_warlord` One Warlord (0,2; ← captains / lords; excl moot) `sword_shield`: add_spirit `one_warlord`. AI 15; hist ×2.
-- `the_captains_moot` The Captains' Moot (2,2; ← captains / lords; excl one) `council_table`: add_spirit `captains_moot`. AI 10.
-- `nan_and_vez_nan` Nan and Vez Nan (1,3; ← either; 70) `alliance_rings`: add_spirit `nan_and_vez_nan`; political_power 50. AI 15.
+- `dumars_captains` Dumar's Captains (0,1; ← warlord_of_vez_nan) `war_council_map`: army_experience 5; political_power 25. AI 20.
+- `the_island_lords` The Island Lords (2,1; ← warlord_of_vez_nan) `anchor_rope`: stability 0.05. AI 20.
+- `one_warlord` One Warlord (0,2; ← dumars_captains / the_island_lords; excl the_captains_moot) `sword_shield`: add_spirit `one_warlord_spirit`. AI 15; hist ×2.
+- `the_captains_moot` The Captains' Moot (2,2; ← dumars_captains / the_island_lords; excl one_warlord) `council_table`: add_spirit `captains_moot`. AI 10.
+- `nan_and_vez_nan` Nan and Vez Nan (1,3; ← one_warlord / the_captains_moot; 70) `alliance_rings`: add_spirit `nan_and_vez_nan_spirit`; political_power 50. AI 15.
 
 **B. The Storm Pilots** (x 4–6, rows 0–3).
-- `storm_pilots` The Storm Pilots (5,0; 70) `storm_sea`: add_spirit `storm_pilots`; navy_experience 10. AI 35.
-- `black_reefs_charted` The Black Reefs Charted (4,1; ← pilots) `sea_charts`: research [zin_cat_galleys] 50% ×1; building dockyard 1 @random_coastal. AI 15.
-- `harbour_of_nan` The Harbour of Nan (6,1; ← pilots) `harbour_lake`: building naval_base 1 @capital. AI 15.
-- `the_storm_is_our_wall` The Storm Is Our Wall (5,2; ← both; 70) `storm_sea`: building coastal_bunker 2 @capital; add_spirit `storm_wall`. AI 20.
-- `pilots_for_hire` Pilots for Hire (5,3; ← wall) `coin_chest`: political_power 50. AI 15.
+- `storm_pilots` The Storm Pilots (5,0; 70) `storm_sea`: add_spirit `storm_pilots_spirit`; navy_experience 10. AI 35.
+- `black_reefs_charted` The Black Reefs Charted (4,1; ← storm_pilots) `sea_charts`: research [zin_cat_galleys] 50% ×1; building dockyard 1 @random_coastal. AI 15.
+- `harbour_of_nan` The Harbour of Nan (6,1; ← storm_pilots) `harbour_lake`: building naval_base 1 @capital. AI 15.
+- `the_storm_is_our_wall` The Storm Is Our Wall (5,2; ← black_reefs_charted + harbour_of_nan; 70) `storm_sea`: building coastal_bunker 2 @capital; add_spirit `storm_wall`. AI 20.
+- `pilots_for_hire` Pilots for Hire (5,3; ← the_storm_is_our_wall) `coin_chest`: political_power 50. AI 15.
 
 **C. The Stair Below** (x 8–10, rows 0–2).
 - `tales_of_the_stair` Tales of the Stair (9,0) `abyss_stair`: event `tales_of_the_stair`. AI 20.
-- `watchers_on_the_rim` Watchers on the Rim (8,1; ← tales) `eye_watchful`: add_spirit `rim_watch`. AI 15.
-- `leave_the_deep_alone` Leave the Deep Alone (10,1; ← tales) `olive_branch`: stability 0.05. AI 15.
-- `what_the_deep_keeps` What the Deep Keeps (9,2; ← either) `book_lore`: political_power 25; research [zin_cat_dark_rites] 25% ×1. Text: the elders say the Abyss-folk keep to their dark, and Nan keeps to its sea. AI 10.
+- `watchers_on_the_rim` Watchers on the Rim (8,1; ← tales_of_the_stair) `eye_watchful`: add_spirit `rim_watch`. AI 15.
+- `leave_the_deep_alone` Leave the Deep Alone (10,1; ← tales_of_the_stair) `olive_branch`: stability 0.05. AI 15.
+- `what_the_deep_keeps` What the Deep Keeps (9,2; ← watchers_on_the_rim / leave_the_deep_alone) `book_lore`: political_power 25; research [zin_cat_dark_rites] 25% ×1. Text: the elders say the Abyss-folk keep to their dark, and Nan keeps to its sea. AI 10.
 
 **D. Between Storm and Sea** (x 12–16, rows 0–2). Three-way exclusive at row 1.
 - `between_storm_and_sea` Between Storm and Sea (14,0) `scroll_treaty`: political_power 25. AI 30.
-- `pilots_for_nafeher` Pilots for Nafeher (12,1; ← between; excl wardens, no_one) `banner_black`: Avail: exists Volgan. event_for Volgan `nan_offers_pilots`. AI 10; hist ×0.3; free ×2.
-- `pilots_for_the_wardens` Pilots for the Wardens (14,1; ← between; excl nafeher, no_one) `warden_crown`: Avail: exists Mirolon. event_for Mirolon `nan_offers_pilots`. AI 10; hist ×0.5.
-- `pilots_for_no_one` Pilots for No One (16,1; ← between; excl nafeher, wardens) `storm_sea`: add_spirit `own_storms`. AI 15; hist ×3.
-- `dark_coin` Dark Coin (12,2; ← nafeher) `coin_chest`: political_power 50; equipment zin_arms_equipment 300. AI 20.
-- `the_exiles_road` The Exiles' Road (14,2; ← wardens) `ship_voyage`: Avail: global_flag `zin_mirolon_fallen`, or Mirolon at_war_with Volgan. event_for Mirolon `ships_for_the_exiles`. AI 100 when available.
-- `the_warlords_neutrality` The Warlord's Neutrality (16,2; ← no_one) `banner_plain`: stability 0.05; political_power 25. AI 20.
+- `pilots_for_nafeher` Pilots for Nafeher (12,1; ← between_storm_and_sea; excl pilots_for_the_wardens, pilots_for_no_one) `banner_black`: Avail: exists Volgan. event_for Volgan `nan_offers_pilots`. AI 10; hist ×0.3; free ×2.
+- `pilots_for_the_wardens` Pilots for the Wardens (14,1; ← between_storm_and_sea; excl pilots_for_nafeher, pilots_for_no_one) `warden_crown`: Avail: exists Mirolon. event_for Mirolon `nan_pilots_for_the_wardens`. AI 10; hist ×0.5.
+- `pilots_for_no_one` Pilots for No One (16,1; ← between_storm_and_sea; excl pilots_for_nafeher, pilots_for_the_wardens) `storm_sea`: add_spirit `own_storms`. AI 15; hist ×3.
+- `dark_coin` Dark Coin (12,2; ← pilots_for_nafeher) `coin_chest`: political_power 50; equipment zin_arms_equipment 300. AI 20.
+- `the_exiles_road` The Exiles' Road (14,2; ← pilots_for_the_wardens) `ship_voyage`: Avail: check `zin_regional_nan_exiles_road_open` (global flag `zin_mirolon_fallen`, or Mirolon at war with Volgan). event_for Mirolon `ships_for_the_exiles`. AI 100 when available.
+- `the_warlords_neutrality` The Warlord's Neutrality (16,2; ← pilots_for_no_one) `banner_plain`: stability 0.05; political_power 25. AI 20.
 
 **E. Island Warbands** (x 18–20, rows 0–2).
 - `island_warbands` Island Warbands (19,0; 70) `sword_shield`: army_experience 10; research [zin_cat_arms] 50% ×1. AI 25.
-- `reef_raiders` Reef Raiders (18,1; ← warbands) `corsair_raider`: army_experience 5; navy_experience 5. AI 15.
-- `peninsula_forts` Peninsula Forts (20,1; ← warbands) `fort_wall`: building bunker 1 @capital. AI 15.
-- `the_warlords_host` The Warlord's Host (19,2; ← both; 70) `war_drums`: add_spirit `warlords_host`. AI 15.
+- `reef_raiders` Reef Raiders (18,1; ← island_warbands) `corsair_raider`: army_experience 5; navy_experience 5. AI 15.
+- `peninsula_forts` Peninsula Forts (20,1; ← island_warbands) `fort_wall`: building bunker 1 @capital. AI 15.
+- `the_warlords_host` The Warlord's Host (19,2; ← reef_raiders + peninsula_forts; 70) `war_drums`: add_spirit `warlords_host`. AI 15.
 
 **F. The Isles at War** (x 8–10, rows 6–8). Head `available`: `at_war`.
 - `the_isles_at_war` The Isles at War (9,6; 21) `storm_sea`: war_support 0.10; manpower 1000. AI 0; 300 when available.
-- `the_storm_shelters_us` The Storm Shelters Us (8,7; ← isles; 21) `storm_sea`: timed_spirit `storm_shelter` 365. AI 100.
-- `raiders_of_the_reefs` Raiders of the Reefs (10,7; ← isles; 21) `corsair_raider`: navy_experience 15. AI 100.
-- `the_isles_endure` The Isles Endure (9,8; ← either) `anchor_rope`: Avail: not at_war. stability 0.10. AI 100.
+- `the_storm_shelters_us` The Storm Shelters Us (8,7; ← the_isles_at_war; 21) `storm_sea`: timed_spirit `storm_shelter` 365. AI 100.
+- `raiders_of_the_reefs` Raiders of the Reefs (10,7; ← the_isles_at_war; 21) `corsair_raider`: navy_experience 15. AI 100.
+- `the_isles_endure` The Isles Endure (9,8; ← the_storm_shelters_us / raiders_of_the_reefs) `anchor_rope`: Avail: not at_war. stability 0.10. AI 100.
 
 ### Key focuses
 
@@ -555,26 +565,28 @@ Nan is a warlord's realm of islands and peninsulas: Nan and Vez Nan, held togeth
 
 | Key | Name | Modifiers | Added / removed |
 | --- | --- | --- | --- |
-| `one_warlord` | One Warlord | `political_power_gain` 0.10, `war_support_factor` 0.05 | `one_warlord` |
+| `one_warlord_spirit` | One Warlord | `political_power_gain` 0.10, `war_support_factor` 0.05 | `one_warlord` |
 | `captains_moot` | The Captains' Moot | `stability_factor` 0.05, `naval_detection` 0.05 | `the_captains_moot` |
-| `nan_and_vez_nan` | Nan and Vez Nan | `stability_factor` 0.05, `political_power_gain` 0.05 | `nan_and_vez_nan` |
-| `storm_pilots` | The Storm Pilots | `naval_speed_factor` 0.05, `navy_org_factor` 0.05, `naval_detection` 0.10 | `storm_pilots` |
+| `nan_and_vez_nan_spirit` | Nan and Vez Nan | `stability_factor` 0.05, `political_power_gain` 0.05 | `nan_and_vez_nan` |
+| `storm_pilots_spirit` | The Storm Pilots | `naval_speed_factor` 0.05, `navy_org_factor` 0.05, `naval_detection` 0.10 | `storm_pilots` |
 | `storm_wall` | The Storm Is Our Wall | `amphibious_invasion_defence` 0.25, `coastal_bunker_effectiveness_factor` 0.10 | `the_storm_is_our_wall` |
 | `rim_watch` | Watchers on the Rim | `army_intel_factor` 0.05, `enemy_operative_detection_chance_factor` 0.10 | `watchers_on_the_rim` |
 | `own_storms` | Pilots for No One | `drift_defence_factor` 0.10, `trade_opinion_factor` 0.05 | `pilots_for_no_one` |
 | `warlords_host` | The Warlord's Host | `army_attack_factor` 0.05, `army_org_factor` 0.03 | `the_warlords_host` |
 | `storm_shelter` | The Storm Shelters Us | `amphibious_invasion_defence` 0.25, `army_defence_factor` 0.05 | timed, 365 days |
-| `pilots_of_nafeher` (given to Volgan, idea `zin_regional_nan_pilots_of_nafeher`) | Pilots of Nan | `naval_speed_factor` 0.05, `naval_invasion_prep_speed` 0.20 | Volgan; removed if Volgan goes to war with Nan |
+| `pilots_of_nafeher` (given to Volgan, idea `zin_regional_nan_pilots_of_nafeher`) | Pilots of Nan | `naval_speed_factor` 0.05, `naval_invasion_prep_speed` 0.20 | Volgan, timed 730 days (event 3) |
 
 ### Events (namespace `zin_regional_nan`)
 
-| # | Key | Title | To | Trigger | Options |
-| ---: | --- | --- | --- | --- | --- |
-| 1 | `warlord_speaks` | The Warlord Speaks | Nan | The Warlord of Vez Nan | "The captains obey." (political_power 25) / "The isles are heard." (stability 0.03) |
-| 2 | `tales_of_the_stair` | Tales of the Stair | Nan | Tales of the Stair | One option. Text: inland of Vez Nan a stair goes down into the dark; long ago a stranger from the north went down it and came back up; the elders do not say what he carried, and no one in Nan has gone to look |
-| 3 | `nan_offers_pilots` | Pilots from Nan | Volgan or Mirolon | Pilots for Nafeher / for the Wardens | Volgan: "Take the pilots." (add idea `zin_regional_nan_pilots_of_nafeher`; non-aggression with Nan; Nan +50 political power; Nan flag `zin_dominion_tributary_friend`; AI 70) / "Nafeher needs no ships." (AI 30). Mirolon: "Take their hands." (Nan flag `zin_mirolon_league_friend`; opinion +15 both ways; AI 70) / "Nan sells to anyone." (AI 30) |
-| 4 | `ships_for_the_exiles` | Ships for the Exiles | Mirolon | The Exiles' Road | "Carry our people north." (Mirolon manpower +3,000; Mirolon opinion of Nan +20; AI 100) |
-| 5 | `an_answer_from_the_isles` | An Answer from the Isles | Nan | Reply to 3 and 4 | Result text |
+| # | Key | Title | To | Trigger | Picture | Options |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | `warlord_speaks` | The Warlord Speaks | Nan | The Warlord of Vez Nan | `generic_court` | "The captains obey." (political_power 25) / "The isles are heard." (stability 0.03) |
+| 2 | `tales_of_the_stair` | Tales of the Stair | Nan | Tales of the Stair | `dead_lands_storm` | One option. Text: inland of Vez Nan a stair goes down into the dark; long ago a stranger from the north went down it and came back up; the elders do not say what he carried, and no one in Nan has gone to look |
+| 3 | `nan_offers_pilots` | Pilots from Nan | Volgan | Pilots for Nafeher | `generic_sea` | "Take the pilots." (timed_spirit `pilots_of_nafeher` 730 days on Volgan; non_aggression with Nan; for_country Nan: political_power 50 and flag `zin_dominion_tributary_friend`; event_for Nan `an_answer_from_the_isles`; AI 70) / "Nafeher needs no ships." (event_for Nan `the_offer_refused`; AI 30) |
+| 4 | `ships_for_the_exiles` | Ships for the Exiles | Mirolon | The Exiles' Road | `generic_sea` | One option, "Carry our people north." (manpower 3000; opinion Nan +20 (`exiles_carried`); AI 100) |
+| 5 | `an_answer_from_the_isles` | An Answer from the Isles | Nan | Accepting options of 3 and 6 | `generic_sea` | One option, "The isles are paid." Text: the offer was taken |
+| 6 | `nan_pilots_for_the_wardens` | Pilots for the Wardens | Mirolon | Pilots for the Wardens | `mirolon_passes` | "Take their hands." (for_country Nan: flag `zin_mirolon_league_friend`; opinion Nan +15 (`pilots_friend`); event_for Nan `an_answer_from_the_isles`; AI 70) / "Nan sells to anyone." (event_for Nan `the_offer_refused`; AI 30) |
+| 7 | `the_offer_refused` | The Offer Refused | Nan | Refusing options of 3 and 6 | `generic_sea` | One option, "Then we keep our storm." (stability 0.02). Text: the envoys came back with nothing |
 
 ### Historical AI route
 
@@ -584,70 +596,90 @@ Nan is a warlord's realm of islands and peninsulas: Nan and Vez Nan, held togeth
 
 ## Implementation
 
-### Files (per tree)
+### Builder and files (per tree)
+
+The content builder's focus compiler, `tools/content/modules/focus_compiler.mjs` ([00_format_and_compiler.md](../00_format_and_compiler.md)), reads each tree's data file and writes these files in the builder's one transaction through the shared rewrite engine (`tools/content/apply.mts`). Names: `nezer`, `demon`, `dolon`, `olen`, `nan`. The builder resolves country names (Volgan, Mirolon, Aenor and the five owners) to tags at build time.
 
 | Path | Content |
 | --- | --- |
-| `docs/design/focus/regional_<name>.json` | Tree data, `"tier": "regional"` |
-| `common/national_focus/zin_regional_<name>.txt` | Compiled tree |
+| `docs/design/focus/regional_<name>.json` | Tree data, `"tier": "regional"`, `"countries": ["<Country>"]` |
+| `common/national_focus/zin_regional_<name>.txt` | Compiled tree; its `country` block selects the owner, so the interim Long Peace tree no longer applies to it |
 | `common/ideas/zin_focus_regional_<name>.txt` | Spirits (Nan's file also holds `zin_regional_nan_pilots_of_nafeher`, given to Volgan) |
 | `events/zin_regional_<name>.txt` | Events (effect-triggered only) |
-| `common/scripted_effects/zin_regional_<name>.txt`, `common/scripted_triggers/zin_regional_<name>.txt` | Below |
-| `common/opinion_modifiers/zin_regional_olen.txt` | `healers_sent` (+15, decay 0.25) |
-| `common/characters/zin_regional_<name>.txt` | Advisors and generals |
+| `common/scripted_effects/zin_regional_<name>.txt`, `common/scripted_triggers/zin_regional_<name>.txt` | The scripts below |
+| `common/opinion_modifiers/zin_regional_<name>.txt` | Olen: `healers_sent` (+15, decay 0.25). Nan: `pilots_friend` (+15, decay 0.25), `exiles_carried` (+20, decay 0.25). From the tree data's `opinion_modifiers` block |
+| `common/ai_strategy/zin_regional_<name>.txt` | The strategies under AI, from the tree data's `ai_strategies` block |
 | `localisation/english/zin_focus_regional_<name>_l_english.yml` | Text |
+
+**Characters.** The rulers are the characters spec's `<TAG>_zin_ruler`. The advisors and leaders in each "Ruler and court" table are entries in `tools/content/data/characters.json` ([characters](../../02_lore/02_characters.md)), built by `tools/content/modules/characters.mjs` into `common/characters/zin_lore_characters.txt` and recruited by their country at the start (the characters spec's "Start" rule); no focus recruits them.
 
 ### Tree-declared scripted triggers and effects
 
 | Name | Kind | Tree | Does / true when |
 | --- | --- | --- | --- |
 | `zin_regional_<tree>_oath_at_least` (`value`) | trigger | Nezer, Demon, Dolon | `check_variable = { zin_dominion_oath >= $value$ }` |
-| `zin_regional_<tree>_gain_autonomy` (`value`) | effect | Nezer, Demon, Dolon | `add_autonomy_ratio = { value = $value$ }` if ROOT is a subject |
-| `zin_regional_<tree>_crown_free` | effect | Nezer, Demon, Dolon | If ROOT is Volgan's subject: autonomy +0.5. If free: add the tree's `own_crown` spirit; stance stays `zin_shadow_dread` |
-| `zin_regional_dolon_send_arms` | effect | Dolon | `send_equipment = { target = Volgan type = zin_arms_equipment amount = 500 }` |
+| `zin_regional_<tree>_gain_autonomy` (`value`) | effect | Nezer, Demon, Dolon | `if = { limit = { is_subject = yes } add_autonomy_ratio = { value = $value$ localization = zin_regional_<tree>_autonomy } }` |
+| `zin_regional_<tree>_crown_free` | effect | Nezer, Demon, Dolon | If ROOT is Volgan's subject: `add_autonomy_ratio` 0.5. If free: `add_ideas = zin_regional_<tree>_own_crown`. The stance stays `zin_shadow_dread` |
+| `zin_regional_dolon_send_arms` | effect | Dolon | `send_equipment = { target = <Volgan tag> type = zin_arms_equipment amount = 500 }` |
 | `zin_regional_dolon_is_coastal`, `zin_regional_olen_is_coastal` | trigger | Dolon, Olen | `any_owned_state = { is_coastal = yes }` |
-| `zin_regional_<tree>_opinion` | effect | Olen | Tree opinion modifier helper |
+| `zin_regional_demon_volgan_bargained` | trigger | Demon | `<Volgan tag> = { OR = { has_country_flag = zin_volgan_nether_bargain has_country_flag = zin_volgan_nether_bent } }` |
+| `zin_regional_demon_volgan_gate_pact` | trigger | Demon | `<Volgan tag> = { has_country_flag = zin_volgan_gate_pact }` |
+| `zin_regional_olen_mirolon_leads_faction` | trigger | Olen | `<Mirolon tag> = { is_faction_leader = yes }` |
+| `zin_regional_nan_exiles_road_open` | trigger | Nan | `OR = { has_global_flag = zin_mirolon_fallen <Mirolon tag> = { has_war_with = <Volgan tag> } }` |
+| `zin_regional_<tree>_opinion` (`who`, `modifier`) | effect | Olen, Nan | `add_opinion_modifier = { target = $who$ modifier = zin_regional_<tree>_$modifier$ }` and `$who$ = { add_opinion_modifier = { target = ROOT modifier = zin_regional_<tree>_$modifier$ } }` |
 
 ### Names other systems read or this spec needs
 
 | Name | Kind | Owner | Use |
 | --- | --- | --- | --- |
-| `zin_dominion_own_road` | country flag (proposed) | set by the Volgan spec's `zin_dominion.22` option "seek its own road" | Opens the sworn realms' branch D before oath falls below 40 |
-| `zin_dominion_tributary_friend` | country flag (proposed) | set by Olen's and Nan's events to Volgan, and by the shared Dead Lands tree | Volgan's AI does not plan war on this realm before `zin_volgan_marches`; after the march it offers client-crown terms rather than conquest (dependency on the Volgan spec's AI) |
-| `zin_mirolon_league_friend` | country flag (Mirolon tree) | set here by Mirolon's answers | Mirolon's *The Warden League* invites the realm |
-| `zin_dominion_oath` | variable (Volgan spec) | read and changed through `zin_volgan_add_oath` | Sworn realms' branches |
+| `zin_volgan_add_oath` (`target`, `value`), `zin_volgan_add_dominion_strength` (`value`), `zin_volgan_add_nether_pact` (`value`), `zin_mirolon_add_proof` (`value`) | scripted effects | [Volgan spec](../../04_mechanics/volgan_southern_dominion.md) | The shorthands |
+| `zin_dominion_oath` | variable, member country | Volgan spec | Sworn realms' branches |
+| `zin_volgan_nether_bargain`, `zin_volgan_nether_bent`, `zin_volgan_gate_pact` | Volgan country flags | Volgan spec | Demon's branch C and F |
+| `zin_volgan_marches`, `zin_volgan_body_destroyed`, `zin_mirolon_fallen`, `zin_eindil_named`, `zin_eindil_stage` | global flags and variable | contract, Volgan spec | Gates |
+| `zin_dominion_own_road` | country flag (contract additions) | set by the Volgan spec's `zin_dominion.22` option "seek its own road" | Opens the sworn realms' branch D before oath falls below 40 |
+| `zin_dominion_tributary_friend` | country flag (contract additions) | set by Olen's and Nan's events to Volgan, and by the shared Dead Lands tree | Volgan's AI does not plan war on this realm before `zin_volgan_marches`; after the march it offers client-crown terms rather than conquest (dependency on the Volgan spec's AI) |
+| `zin_mirolon_league_friend` | country flag (Mirolon tree, contract additions) | set here by Mirolon's answers | Mirolon's *The Warden League* invites the realm |
+| `zin_afrit_add_footholds` | scripted effect | [Afrit](../../04_mechanics/afrit_hidden_council.md) | Olen's footholds (the demon realms' cap is 0 and they never call it) |
+| `zin_eindil_add_regard`, `zin_eindil_add_renown` | scripted effects | [Eindil's journey](../../04_mechanics/eindil_journey.md) | Olen's *The Breeze Carries Word* |
+| `zin_shadow_dread`, `zin_wild_freeholds`, `zin_dom_warlord`, `zin_adv_*` | stances and advisor traits | [ideologies and politics](../../00_foundation/02_ideologies_and_politics.md) | Rulers and courts |
+| `zin_rules_is_historical`, `zin_rules_is_free` | scripted triggers | [defines and rules](../../00_foundation/05_defines_and_rules.md) | AI factors |
 
 ### Raw blocks
 
-None in the trees; `check_variable` and `send_equipment` live in tree-declared scripts.
+None in the trees; `check_variable`, `add_autonomy_ratio`, `send_equipment` and the cross-country checks live in tree-declared scripts.
 
 ### Icons
 
-Catalog keys only; none new. Event pictures: `dead_lands_storm` (storm and rumour events), `generic_court` (court events), `grave_muster` (silence events, no figure), `mirolon_passes` (friendship events with Mirolon), `generic_sea` (Nan's ships).
+Catalog keys only; none new. Each event's picture is in its table: `dead_lands_storm`, `generic_court`, `generic_peace`, `grave_muster` (no figure), `mirolon_passes`, `generic_sea`.
+
+### Current game state
+
+Today Nezer, Demon and Dolon are Volgan's subjects (roster) but carry the roster's Wild ideology; the politics spec makes them Shadow (`zin_shadow_dread`) before these trees ship. All five run the interim Long Peace tree, their rulers carry generated names until the characters spec ships, and the game still starts in 1936 until the calendar spec ships. The trees call the Volgan, Mirolon, Afrit and journey systems, so they are built in phase 6 after those mechanics (phase 3).
 
 ## AI
 
-- Historical routes above apply under `check zin_rules_is_historical`; PLAUSIBLE halves the "hist" factors' distance from 1; FREE uses base weights.
-- **Sworn realms** keep their oath: each takes its oath focuses in 4A 1748–1750, and the "own road" head stays at weight 0 until it becomes available. They take the war head the month Volgan's war begins. After the body breaks the aftermath choice follows the oath (×3 toward the side the oath favours), which agrees with the Volgan spec's `zin_dominion.18`.
+- Historical routes above apply under `check zin_rules_is_historical`; PLAUSIBLE uses the "hist" factors moved halfway toward 1; FREE uses base weights.
+- **Sworn realms** keep their oath: each takes its oath focuses in 4A 1748–1750, and the "own road" head stays unavailable until oath falls below 40 or the realm seeks its own road. They take the war head the month Volgan's war begins. After the body breaks the aftermath choice follows the oath (×3 toward the side the oath favours), which agrees with the Volgan spec's `zin_dominion.18`.
 - **Olen** takes *Stand with the Wardens* (hist ×2) and joins the Warden League if Mirolon forms it; **Nan** takes *Pilots for No One* (hist ×3).
-- **AI strategies** (`common/ai_strategy/zin_regional_dead.txt`): sworn realms `befriend` Volgan 50; Olen `befriend` Mirolon 30; Nan none.
+- **AI strategies** (tree data `ai_strategies`): sworn realms `befriend` Volgan 50; Olen `befriend` Mirolon 30; Nan none.
 
 ## Acceptance
 
-1. Each tree compiles with its focus count, unique positions and every focus below its prerequisites; the compiler and the HOI4 Agent Tools focus inspector pass.
-2. On 1 Thaw 4A 1748 no focus available to the five countries declares war, creates a war goal or claim; no sworn realm's focus touches `zin_footholds`.
-3. A 12-year historical run: Demon, Dolon and Nezer's oaths stay at 50 or more until 4A 1755; each sworn realm takes its war head within 30 days of Volgan's war on Mirolon; Olen takes *Stand with the Wardens*; Nan takes *Pilots for No One*.
-4. After `zin_volgan_body_destroyed`, each sworn realm's aftermath head becomes available and no `zin_regional_*` text states that Volgan's spirit died, survived or lives on (localisation check for "is dead", "destroyed forever", "survives", "lives on").
-5. *Open the Gate for Nafeher*, *Envoys Below*, *The Bargain of This Reign* and *Fire at the Gate* change `zin_nether_pact` through `zin_volgan_add_nether_pact` only.
-6. Olen's event 3 sets `zin_dominion_tributary_friend`; Volgan's AI declares no war on Olen before `zin_volgan_marches` in a test with Volgan's war open early (FREE rule).
-7. No text names Afrit, names the King of Demons, states Roka's fate or places Dardan.
-8. Every modifier in the spirit tables exists in the modifier documentation; every called effect and trigger exists in the staged files.
+1. The compiler builds the five trees with 32, 30, 30, 32 and 30 focuses, unique positions, every focus below its prerequisites, every exclusive pair written on both focuses, days multiples of 7 and every icon in the catalog; the HOI4 Agent Tools focus inspector and script validator pass on the staged files.
+2. Scan: no focus of the five trees has `wargoal`, `claims_on`, `cores_on` or a war declaration; no Nezer, Demon or Dolon focus calls `zin_afrit_add_footholds`.
+3. No localisation key is shared by a focus and an idea of the same tree; every spirit modifier exists in the 1.19.3 modifier documentation; every called effect and trigger exists in the staged files.
+4. Localisation scan: no `zin_regional_nezer`, `_demon`, `_dolon`, `_olen` or `_nan` text names Afrit or the King of Demons, states Roka's fate, places Dardan, or says that Volgan's spirit died, survived or lives on ("is dead", "destroyed forever", "survives", "lives on").
+5. *Open the Gate for Nafeher*, *Envoys Below*, *The Bargain of This Reign* and *Fire at the Gate* change `zin_nether_pact` only through `zin_volgan_add_nether_pact` (scan).
+6. Scripted tests with forced flags and variables: each sworn realm's own-road head is available only with oath below 40 or `zin_dominion_own_road`; each aftermath head only after `zin_volgan_body_destroyed`; Olen's event 3 accept option sets `zin_dominion_tributary_friend` on Olen; Nan's event 3 accept option gives Volgan `zin_regional_nan_pilots_of_nafeher` for 730 days.
+7. One in-game year in the isolated Linux run from 1 Thaw 4A 1748 (historical rule): no Dead Lands war starts, the five trees load without errors in the log, Nezer, Demon and Dolon take *Answer the Summons*, *First of the Sworn* and *The Forges of Dolon* in the first year, and their oaths stay at 50 or more.
 
 ## Open questions
 
-1. **Who owns the Nether?** Demon's tree speaks of "the Nether's edge" and the Nether's court without owning it. If the owner gives the Nether to a separate demon realm, Demon's branch C should become diplomacy with that country.
-2. **Vez Nan and the Abyss.** The map's state "Vez Nan / Abyss" lies in Volgan's realm, while the roster says Nan holds Nan and Vez Nan. Which is right, and does Nan border the Abyss?
-3. **The sworn realms after the body breaks.** This spec expects Demon to stay with the Steward and Nezer to go its own way, by their oaths. Should the historical path fix this?
-4. **Olen's Holy Breeze.** May Olen keep a faith of the sea wind (proposed), and may the Houses of the First Light work beside it?
-5. **Nan's storm pilots.** May Nan's men sail the storm belt that wrecks other fleets (the magic spec spares Dead Lands realms)?
-6. **Dolon's Dead Sea.** Is "of the Dead Sea" in Morvath's name a place (a salt inland water, proposed) or only an epithet?
+Owner questions are listed in [OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md) (regions: dark, magical, dead, 9 to 13); the work proceeds on the proposal given.
+
+1. **Who owns the Nether?** (owner) Works on: the Nether is a court beyond Demon's border, not a country (Volgan spec); Demon's branch C speaks of "the Nether's edge". If the owner gives the Nether to a separate demon realm, branch C becomes diplomacy with that country.
+2. **Vez Nan and the Abyss.** (owner) Works on: the roster, Nan holds Nan and Vez Nan; Nan's branch C speaks of a stair inland of Vez Nan without placing the Abyss.
+3. **The sworn realms after the body breaks.** (owner) Works on: the oath decides; on the historical path Demon stays with the Steward and Nezer goes its own way.
+4. **Olen's Holy Breeze and the tribute.** (owner) Works on: Olen keeps a faith of the sea wind (proposed) and the Houses' healers may work beside it; free realms may buy Volgan's quiet with tribute before the march.
+5. **Dolon's Dead Sea.** (owner) Works on: a salt inland water (proposed).
+6. **Nan's storm pilots.** Settled: Nan's men may sail the storm belt, as the magic spec spares the Dead Lands realms; *The Storm Pilots* gives naval modifiers only and changes no storm rule.

@@ -1,6 +1,6 @@
 # Historical path and AI
 
-**Status:** Draft. **Priority:** 3. **Phase:** 3 (frame), 5 (full chain).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3 (frame), 5 (full chain).
 
 ## Purpose
 
@@ -16,6 +16,8 @@ The checkpoints use the story flags of the [shared contract](../04_mechanics/00_
 
 **Proposed in this spec:** the checkpoint list and windows, the checkpoint states and divergence, the watchdog, the meaning of each rule option for the AI.
 
+**Decisions applied** ([INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md)): D3 (the world learns the name Afrit at his flight east, historically 4A 1756, or earlier only when a player exposes the plot), D8 (*Pacify the Bloody Forest* has AI weight 0 before the Golden King's death), N4 (`zin_rule_golden_king_death`), N12 (one exposure flag, `zin_golden_king_plot_exposed`), N15 (the King dies only when the Council and Aenor's clock both allow), V3 (the sandbox runs to 4A 1800), V4 and R2 (every fixed date reads `zin_story_pace`), R1 (per-power rules start with `DEFAULT`), R6 (an actor's owning spec sets its timing and AI weights), E2 (timeouts take the first option), S2 (the Host of Eindil is Selen on the historical path).
+
 ## Design
 
 ### The game rule
@@ -28,9 +30,9 @@ The checkpoints use the story flags of the [shared contract](../04_mechanics/00_
 | `PLAUSIBLE` | | AI weights favour history (historical option weight ×3) but other routes stay possible. Once `zin_path_divergence` ≥ 50, the favour drops to ×1.5 | The War of the Last Crowns by 1 Thaw 4A 1756 at the latest; owners' catch-ups only where they say so |
 | `FREE` | | AI weighs every choice by its own situation | Nothing. Checkpoints still resolve (diverged or skipped) by their deadlines |
 
-Story events outside any country's choice (Eindil's waking and journey floors, the Council's plot clock) run under every option unless their own rule changes them (`zin_rule_eindil_waking`, `zin_rule_golden_king` and the rest).
+Story events outside any country's choice (Eindil's waking and journey floors, the Council's plot clock) run under every option unless their own rule changes them (`zin_rule_eindil_waking`, `zin_rule_golden_king_death` (N4) and the rest).
 
-**Story pace.** `zin_rule_story_pace` (foundation) stretches dates by `zin_story_pace` (1.0, 1.5 or 0.75): a checkpoint date *d* becomes start + (*d* − start) × pace. The builder writes the three shifted date sets into the checkpoint triggers and the tick uses the set that matches the rule. Owner specs that use fixed floor dates must read the same pace (dependency).
+**Story pace.** `zin_rule_story_pace` (foundation) stretches dates by `zin_story_pace` (1.0, 1.5 or 0.75): a checkpoint date *d* becomes start + (*d* − start) × pace. The builder writes the three shifted date sets into the checkpoint triggers and the tick uses the set that matches the rule. Every owner spec's fixed floor date (Eindil's stages, Zol's forced rising, Afrit's flight, the Aenor clock) reads the same pace (V4): owners take their shifted dates from the one helper `paceDate()` in `tools/content/lib/story_dates.mjs` (new), which this spec's module also uses.
 
 ### Checkpoint states
 
@@ -43,7 +45,7 @@ Each checkpoint has a global variable `zin_path_cpNN`:
 | 2 | diverged | Happened another way, or a deadline passed without it |
 | 3 | skipped | Can no longer happen (an actor is gone or a precondition is impossible) |
 
-`zin_path_divergence` (0–100) rises by the checkpoint's weight × 10 when it diverges and × 5 when it is skipped. The Chronicle of the Age reads the states ([05_world_tension_and_endings.md](05_world_tension_and_endings.md)).
+`zin_path_divergence` (0–100) rises by the checkpoint's weight × 10 when it diverges and × 5 when it is skipped. The Chronicle of the Age reads the states (its lines `zin_loc_chronicle_cp<NN>` belong to the [endings spec](../06_events/04_endings.md)).
 
 **The rule against deadlock:** a checkpoint waits only for its predecessors to be **resolved** (1, 2 or 3), never for them to be historical, and every checkpoint has a latest date after which it resolves.
 
@@ -57,7 +59,7 @@ Dates are engine dates at the standard pace (month 2 is Ironfrost, 3 Thaw, 4 Rai
 | 02 | Eindil wakes | [Eindil's journey](../04_mechanics/eindil_journey.md) | `zin_eindil_awake` (stage 1) | 1749.2.1 | 1752.1.1 | woken under `zin_rule_eindil_waking` EARLY or LATE | — | 2 |
 | 03 | The Grey Ford truce breaks | [Western Crossing](../04_mechanics/western_crossing.md) | `zin_west_truce_broken` | 1750.4.1 | 1750.10.1 | `zin_west_truce_permanent`, or still unbroken | Gunwaith or Girdon gone | 1 |
 | 04 | Eindil, war-king of the West, makes peace | Eindil's journey, West | `zin_eindil_war_king` (stage 3) | 1750.8.1 | 1751.3.1 | named by another confederation, or the fallback | `zin_eindil_lost` | 2 |
-| 05 | The Golden King dies | [Aenor](../04_mechanics/aenor_court_and_succession.md), [Afrit](../04_mechanics/afrit_hidden_council.md) | `zin_golden_king_dead` after `zin_afrit_regicide_ready` | 1750.11.10 | 1753.1.1 | `zin_afrit_regicide_exposed`, `zin_golden_king_survives`, or the King alive at the latest date | — | 5 |
+| 05 | The Golden King dies | [Aenor](../04_mechanics/aenor_court_and_succession.md), [Afrit](../04_mechanics/afrit_hidden_council.md) | `zin_golden_king_dead` after `zin_afrit_regicide_ready` and Aenor's clock (N15) | 1750.11.10 | 1753.1.1 | `zin_golden_king_plot_exposed` (N12), `zin_golden_king_survives`, or the King alive at the latest date | — | 5 |
 | 06 | Aurevan is crowned | Afrit, Aenor | `zin_aurevan_crowned` | 05 + 14 days | 05 + 90 days | `zin_afrit_kingdom_behind_throne`, or another camp rules | 05 diverged | 5 |
 | 07 | The storm; the Islands of the South | Eindil's journey | stage 4 | 1751.3.1 | 1752.3.1 | — | `zin_eindil_lost` | 1 |
 | 08 | Lorien names Eindil | Eindil's journey | `zin_eindil_named` (stage 5) | 1752.1.15 | 1753.1.1 | named by another route of the journey spec | Gala Elves gone or `zin_lorien_dead` | 3 |
@@ -85,8 +87,8 @@ The two contract flags without a clear single setter are now placed: `zin_war_of
 ### What the fail-safes may and may not do
 
 - **May force** (under the options above): story events of the world or of AI countries; declarations of war by AI under HISTORICAL, made by the owner's event with `create_wargoal` and `declare_war_on`; the War of the Last Crowns flag.
-- **May never force:** a battle result, a state's control, a capitulation, or any choice a human makes for their own country. Player choice events put the historical option first and carry `timeout_days = 30`; a timeout counts as the player's refusal (diverged), never as acceptance.
-- **Never early:** no fail-safe reveals Afrit before 1754.6.1, shows Eindil before checkpoint 02, or starts a great war before checkpoint 11. The Grey Ford feud (CP 03) is a border war (`start_border_war`) between Gunwaith and Girdon, so no major takes part.
+- **May never force:** a battle result, a state's control, a capitulation, or any choice a human makes for their own country. Every event carries `timeout_days = 30`, and a timed-out event takes its **first** option (decision E2). A human-facing event that decides a checkpoint therefore puts the non-committal option first and the historical option second, so a timeout never accepts history for the player; the checkpoint then resolves by its own diverged or latest-date rule.
+- **Never early:** no fail-safe reveals Afrit before checkpoint 17 (his flight east, target 1756.3.1; D3), shows Eindil before checkpoint 02, or starts a great war before checkpoint 11. Only a player's exposure of the plot reveals Afrit earlier. The Grey Ford feud (CP 03) is a border war (`start_border_war`) between Gunwaith and Girdon, so no major takes part.
 
 ### The path tick
 
@@ -104,18 +106,18 @@ The tick never runs an owner's event itself. Owners fire their moments; the tick
 ### How the AI follows or diverges
 
 - **Focus trees.** Every major tree marks its historical branch. Historical focuses carry `ai.modifiers` `{ "factor": 10, "if": [ { "check": "zin_rules_is_historical" } ] }`; alternative branches `{ "factor": 0, … }` under HISTORICAL. Under PLAUSIBLE the factors are 3 and 1 (1.5 and 1 once `zin_path_divergence` ≥ 50). Under FREE no path factor applies.
-- **Events.** Every choice that matters to the path puts the historical option first. `ai_chance`: HISTORICAL 100/0; PLAUSIBLE 75/25, then 60/40 once divergence ≥ 50; FREE uses the owner's situational weights.
-- **Situational weights** are each owner's (for example Lerendor's standing, the West's resolve, the East's footholds, Volgan's strength, Zol's power). This spec requires every owner to list them so FREE play is predictable.
+- **Events.** Every choice that matters to the path marks its historical option (`hist`); for human-facing checkpoint events it is the second option (E2). `ai_chance` follows the mark, not the position: historical option / the others, HISTORICAL 100/0; PLAUSIBLE 75/25, then 60/40 once divergence ≥ 50; FREE uses the owner's situational weights.
+- **Situational weights** are each owner's (for example Lerendor's standing, the West's resolve, the East's footholds, Volgan's strength, Zol's power). This spec requires every owner to list them so FREE play is predictable. Where an owner and this spec give an actor different timing or weights, the owner wins (R6): for example the Western route's AI weights are the Western Crossing spec's, and Afrit's voyage north and his 180-day restart after a failed palace attempt are the Afrit spec's.
 - **AI strategy plans.** `common/ai_strategy_plans/zin_<tree>_historical.txt` for each tier A country, enabled by `zin_rules_is_historical`, listing focus order, laws and research weights; a `zin_<tree>_plausible.txt` variant enabled under PLAUSIBLE.
-- **War direction.** When a war checkpoint fires, its owner's event adds AI strategies with `add_ai_strategy`. The minimum set, which owners may extend:
+- **War direction.** When a war checkpoint fires, its owner's event adds AI strategies with `add_ai_strategy`. The table lists the owners' values (R6); an owner may extend them, and where an owner's spec changes a value, the owner's value is used:
 
 | CP | Who | Strategy |
 | --- | --- | --- |
 | 03 | Gunwaith, Girdon | border war only; no `conquer` |
-| 13 | The Western Crossing faction | `invade` Aenor's coast 100; `conquer` the Aenor realm 100 |
-| 14 | The eastern coalition | `conquer` the Magical Lands realms on the rift 80 |
-| 15 | Volgan | `conquer` Mirolon 150; after `zin_volgan_marches`, `conquer` the Aenor realm 100 |
-| 16 | Zol | `conquer` the North Lands coast and Aenor 80; avoids potent-magic armies (Zol spec) |
+| 13 | The Western Crossing faction | every member `invade` the foe 200 and `conquer` the foe 150; the leader `area_priority` `zin_area_middle_lands` 100 (Western Crossing spec) |
+| 14 | The eastern coalition | `conquer` the Magical Lands realms on the rift 80 (eastern kings spec) |
+| 15 | Volgan | `conquer` Mirolon 150; after `zin_volgan_marches`, `conquer` 200 and `front_unit_request` 50 on the Parim holder and on Herez (Volgan spec) |
+| 16 | Zol | `conquer` Aenor 200, `antagonize` and `invade` Aenor, `area_priority` `zin_area_middle_lands`; avoids potent-magic armies (Zol spec) |
 | 19–26 | Eindil's host and the Lost Cause | `area_priority` and `front_unit_request` against Zol, then Volgan, then Afrit's realm |
 | 24 | Afrit's realm | `conquer` the controller of Parim 150 |
 
@@ -129,17 +131,27 @@ The tick never runs an owner's event itself. Owners fire their moments; the tick
 
 ## Implementation
 
-### Files
+### What is in the game today (commit `ca01fa3`)
 
-| Path | Content |
-| --- | --- |
-| `docs/design/path/checkpoints.json` | The table as data: id, owner, flags for historical, diverged and skipped, target and latest dates (three pace sets), weight |
-| `common/scripted_triggers/zin_path.txt` | Generated: `zin_path_cpNN_historical`, `zin_path_cpNN_diverged`, `zin_path_cpNN_skipped`, `zin_path_cpNN_due` |
-| `common/scripted_effects/zin_path.txt` | `zin_path_tick`, `zin_path_resolve` (args `cp`, `state`) |
-| `events/zin_path.txt` | Namespace `zin_path`: `zin_path.1` hidden startup check (no war, no story flag, `zin_eindil` unrecruited; logs and sets `zin_path_stalled` on failure) |
-| `common/ai_strategy_plans/zin_*_historical.txt`, `zin_*_plausible.txt` | AI plans for tier A countries |
-| `common/ai_strategy/zin_path.txt` | Standing strategies enabled by the war checkpoints' flags |
-| `localisation/english/zin_path_l_english.yml` | Chronicle lines for each checkpoint and state |
+The vanilla removal module already replaced the AI folders this spec owns and keeps them non-empty with stubs: `common/ai_strategy/zin_interim_ai_strategy.txt`, `common/ai_strategy_plans/zin_interim_plan.txt`, `common/ai_focuses/zin_ai_focuses.txt`, `common/ai_faction_theaters/zin_theaters.txt` (one theater per Erdae region), `common/ai_areas` (Erdae areas from the politics step) and `common/mtth/zin_mtth.txt` (`zin_story_mean_time`, base 365). No checkpoint, plan or strategy of this spec exists yet.
+
+### Builder module and data
+
+A new content-builder module, `tools/content/modules/historical_path.mjs`, writes every file below and removes the interim AI stubs it supersedes (check C4). It runs after every owner module, because its build checks read their flags.
+
+| Path | Kind | Content |
+| --- | --- | --- |
+| `tools/content/data/path_checkpoints.json` (new) | builder data | The checkpoint table: id, owner spec, flags for historical, diverged and skipped, target and latest dates, weight, predecessors |
+| `tools/content/lib/story_dates.mjs` (new) | builder library | `paceDate(date, pace)`: the shifted engine date for each `zin_story_pace` (1.0, 1.5, 0.75); used by this module and by every owner module with floor dates |
+| `common/scripted_triggers/zin_path.txt` | generated | `zin_path_cpNN_historical`, `zin_path_cpNN_diverged`, `zin_path_cpNN_skipped`, `zin_path_cpNN_due` (one date set per pace, chosen by `check_variable = { zin_story_pace = … }`) |
+| `common/scripted_effects/zin_path.txt` | generated | `zin_path_tick`, `zin_path_resolve` (args `cp`, `state`) |
+| `events/zin_path.txt` | generated | Namespace `zin_path`: `zin_path.1` hidden startup check (no war, no story flag, `zin_eindil` unrecruited; writes a `log` line and sets `zin_path_stalled` on failure) |
+| `common/ai_strategy_plans/zin_<tree>_historical.txt`, `zin_<tree>_plausible.txt` | generated | AI plans for each tier A country (`<tree>` from [tiers and coverage](../05_focus_trees/01_tiers_and_coverage.md)): `ai_national_focuses`, `focus_factors` and `research` weights, enabled by `zin_rules_is_historical` or PLAUSIBLE |
+| `common/ai_strategy/zin_path.txt` | generated | Standing strategies enabled by the war checkpoints' flags |
+| `common/mtth/zin_mtth.txt` | generated | `zin_story_mean_time` scaled by `zin_story_pace` (one entry per pace) |
+| `localisation/english/zin_path_l_english.yml` | generated | Checkpoint names for logs and tooltips. The Chronicle lines for each checkpoint and state (`zin_loc_chronicle_cp<NN>`) are written by the endings spec's module into `zin_ending_l_english.yml` and `common/scripted_localisation/zin_ending.txt`; this module writes none |
+
+The interim tree's AI weights and the major trees' `ai.modifiers` are written by the focus compiler ([00_format_and_compiler.md](../05_focus_trees/00_format_and_compiler.md)) from each tree's data; this spec only fixes the factors below.
 
 ### Variables and flags
 
@@ -151,7 +163,7 @@ The tick never runs an owner's event itself. Owners fire their moments; the tick
 
 ### Build checks
 
-1. Every flag named in the checkpoint table is defined in the contract or in the owner spec named.
+1. Every flag named in the checkpoint table is defined in the contract or in the owner spec named; none is a retired name of the contract register (for example the old exposure flag, N12).
 2. Every checkpoint has a latest date and a skip condition, except 01 and 11, which cannot be skipped.
 3. No checkpoint's latest date is before a predecessor's target date.
 
@@ -174,11 +186,19 @@ The whole spec is AI policy. In short:
 6. **Skip test:** annexing Yeldenne by console in 4A 1750 resolves CP 09 as diverged or skipped (per the hall rules), and checkpoints 10 to 26 still resolve.
 7. **Lost heir test:** setting `zin_eindil_lost` by console in 4A 1756 skips 19, 21 and 25 (and 26 resolves diverged); the endings spec reaches another ending or the fallback; no stall.
 8. **Pace test:** under `zin_rule_story_pace` SLOW, CP 11 resolves historical on the shifted date (1 Rainwake 4A 1755 moved by half the days since the start).
+9. **The name stays hidden:** in the HISTORICAL observer runs, `zin_afrit_revealed` is first set on or after the day CP 17 resolves, never earlier.
+10. **Build checks** 1–3 below pass, and every owner module's floor dates come from `paceDate()` (builder test).
+11. **Timeouts:** every event of a checkpoint owner sets `timeout_days = 30`; in a scenario where a human Lerendor lets `zin_leren.20` time out, the first (non-committal) option is taken, `zin_leren_withdrawal` is not set by the timeout, and CP 12 resolves by its own rule; `zin_path_l_english.yml` holds no `zin_loc_chronicle_cp` key (builder test).
+
+Observer, scenario and console tests run in the isolated Linux run with the clock unpaused (at least one in-game year from phase 3 on). The Windows game is never launched.
 
 ## Open questions
 
-1. Are the windows right? In particular, how late may the Golden King's death come before the path counts it as diverged (here 1 Deepwinter 4A 1753)?
-2. Should PLAUSIBLE stop favouring history once the world has drifted far (here at divergence 50), or keep favouring it to the end?
-3. When should the world learn the name Afrit on the historical path: at Eindil's warning (4A 1754) or at Afrit's flight (4A 1756, as the Afrit spec proposes)?
-4. If Lorien cannot name Eindil, may another route name him, or does the journey end there?
-5. Which western crown leads the Western Crossing on the historical path (the West spec proposes Gunwaith)?
+All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md).
+
+1. Are the windows right? In particular, how late may the Golden King's death come before the path counts it as diverged? **Proposal, in use:** the table above (latest 1 Deepwinter 4A 1753).
+2. Should PLAUSIBLE stop favouring history once the world has drifted far, or keep favouring it to the end? **Proposal, in use:** the favour drops to ×1.5 at divergence 50.
+3. If Lorien cannot name Eindil, may another route name him? **Proposal, in use:** the Eindil's journey spec's other routes (CP 08 "diverged when").
+4. Which western crown leads the Western Crossing on the historical path? **Proposal, in use:** Gunwaith, as convener of the Ford Council (owner short list 9).
+
+Settled: the world learns the name Afrit at his flight east (D3), so CP 17 carries `zin_afrit_revealed` on the historical path.

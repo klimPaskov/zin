@@ -1,10 +1,10 @@
 # Erdae warfare
 
-**Status:** Draft. **Priority:** 3. **Phase:** 3.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. This spec is **stage 2 of the vanilla removal** ([06_vanilla_removal_and_zero_errors.md](../00_foundation/06_vanilla_removal_and_zero_errors.md) §5): §15 names every vanilla folder the stage replaces and how it clears category B14.
 
 ## Purpose
 
-ZIN still fights with vanilla rifles, tanks, battleships and aircraft. This spec replaces all of it with the warfare of Erdae in the Fourth Age: hosts of men, elves, orcs, the dead and the great kin; siege engines and walls; galleys and warships; a small, optional sky of griffins and dragons. It also defines the special units the story needs (Zol's deathless dead, the bearer of Glo, Volgan's own presence, dragons), the Great Wall forts, the technology tree with Fourth Age years, doctrines per people, AI templates, the 3D unit pipeline, and the migration from vanilla.
+ZIN still fights with vanilla rifles, tanks, battleships and aircraft. This spec replaces all of it with the warfare of Erdae in the Fourth Age: hosts of men, elves, orcs, the dead and the great kin; siege engines and walls; galleys and warships; a small sky of dragons (griffins only under a game rule). It also defines the special units the story needs (Zol's deathless dead, the bearer of Glo, Volgan's own presence, dragons), the Great Wall forts, the technology tree with Fourth Age years, doctrines per people, AI templates, the 3D unit pipeline, and the migration from vanilla.
 
 The combat engine stays HOI4's. Every Erdae unit is built from HOI4 sub-units, equipment, technologies and doctrines, so the AI, the division designer and the production screen keep working.
 
@@ -38,17 +38,21 @@ The Great Wall's origin in Elzon's Pale March; Mirolon fortifying its passes (c.
 
 ### Proposed by this spec
 
-Every unit name, equipment name, technology name and year, doctrine, stat, ship and beast design, the piercing rule for the deathless, griffins as a beast of war, "grave-host strain", "great being" companies, and all identifiers below. No gunpowder exists in the Fourth Age; crossbows and torsion engines are the most advanced missile weapons (proposed assumption, see open questions).
+Every unit name, equipment name, technology name and year, doctrine, stat, ship and beast design, the piercing rule for the deathless, griffins as an optional beast of war, "grave-host strain", "great being" companies, and all identifiers below. No gunpowder exists in the Fourth Age; crossbows and torsion engines are the most advanced missile weapons, and only dragons fly by default (owner short list 13, proposal in use).
+
+### Decisions applied
+
+[INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md): V2 (Timber feeds hulls, Horses mounted equipment, Essence magical equipment), S4 (Zol's armies are numbered hosts, not named commanders), S6 (dragons use the air layer), N1 (`zin_horos_sword_broken`), R3 (a mechanic's own realm keeps that mechanic's start forces: Zol and Yeldenne start with no divisions), R1 (rules sit in `RULE_GROUP_ZIN`; `zin_rule_skies` defaults to `dragons_only`), E6 (doctrines cost experience), F3 (no sub-unit id equals a tree's focus or spirit id), A9 (unit sounds are synthesised by the builder).
 
 ### Open (this spec never closes them)
 
-Who administers Zol's Mistake (Zol's armies have no named commanders); whether Volgan's spirit survives (Volgan's presence company is removed when his body is destroyed, nothing more); the relationship of Gala and Sunhot elves (separate unit families, no shared lineage text); what Glo bestows after the sword breaks (gameplay keeps a reduced effect, see open questions); the dwarves' homeland (no dwarven units at start); the taxonomy of the dead (Volgan's grave hosts and Zol's deathless are separate unit families with no claimed relation).
+Who administers Zol's Mistake (Zol's armies are numbered hosts, S4); whether Volgan's spirit survives (Volgan's presence company is removed when his body is destroyed, nothing more); the relationship of Gala and Sunhot elves (separate unit families, no shared lineage text); what Glo bestows after the sword breaks (gameplay keeps a reduced effect, see open questions); the dwarves' homeland (no dwarven units at start); the taxonomy of the dead (Volgan's grave hosts and Zol's deathless are separate unit families with no claimed relation).
 
 ### Start constraints
 
 - No great war at start. Every army stands inside its own territory.
 - No unit, equipment, technology, doctrine or division name readable before `zin_afrit_revealed` contains "Afrit" or calls the Deliverer a demon. Afrit's bound demons exist only after the reveal.
-- Eindil's units do not exist at start. The bearer of Glo, Eindil's host and the Glo shockwave appear only after `zin_glo_with_eindil`.
+- Eindil's units do not exist at start. The bearer of Glo, Eindil's host and Glo's Wave (Yeldenne spec) appear only after `zin_glo_with_eindil`.
 - Zol's deathless stand only inside the Mistake until `zin_zol_rising`. Wards against death cannot be researched before `zin_zol_rising`.
 - No dragon is in any stockpile or air wing at start.
 
@@ -74,7 +78,7 @@ Who administers Zol's Mistake (Zol's armies have no named commanders); whether V
 | Anti-air | Scorpions (bolt-throwers) | Only matters if the sky is on |
 | Support companies | Scouts, sappers, healers, heralds, quartermasters, provosts, armourers, wardens, necromancers | Camp |
 | Special forces | Rangers, hill companies, sea soldiers, temple wardens | Special forces cap |
-| Aircraft | Griffin riders (fighter), dragon flights (close support) | Game rule; may be off |
+| Aircraft | Dragon flights (close support) by grant; griffin riders (fighter) only under `zin_rule_skies = beasts` | S6; game rule |
 | Destroyers, cruisers | War galleys | Screens |
 | Battleships | Warships, great warships | Capitals |
 | Submarines | Corsairs and black ships | Hidden raiders |
@@ -114,6 +118,7 @@ All are proposed. Variants are `<archetype>_0` to `_5`. `type` is the HOI4 equip
 | `zin_deathless_equipment` | Deathless bonds | `infantry` | nobody (granted) | Zol's deathless |
 | `zin_shachihata_equipment` | Shachihata | `infantry` | nobody (granted) | Shachihata |
 | `zin_glo_blade_equipment` | The bearer of Glo | `support` | nobody (granted) | Glo bearer company |
+| `zin_glo_blade_equipment_shard` | The bearer of Glo (the broken blade) | `support` | nobody (granted) | Glo bearer company after `zin_horos_sword_broken` (§6.2) |
 | `zin_volgan_presence_equipment` | Volgan's presence | `support` | nobody (granted) | Volgan's presence company |
 | `zin_great_spirit_equipment` | A great spirit | `support` | nobody (granted) | Great spirit company |
 | `zin_zol_manifestation_equipment` | Zol made flesh | `support` | nobody (granted) | Zol manifestation company |
@@ -124,16 +129,38 @@ All are proposed. Variants are `<archetype>_0` to `_5`. `type` is the HOI4 equip
 | `zin_hull_warship` | Warship hull | `capital_ship` | all with a dockyard | Warships |
 | `zin_hull_great_warship` | Great warship hull | `capital_ship` | all with a dockyard | Great warships |
 | `zin_hull_raider` | Raider hull | `submarine` | all with a dockyard | Corsairs, black ships |
-| `zin_griffin_equipment` | Griffins | `fighter` | men (rule on) | Griffin riders |
+| `zin_griffin_equipment` | Griffins | `fighter` | men (rule `beasts` only) | Griffin riders |
 | `zin_dragon_equipment` | Dragons | `cas` | nobody (granted) | Dragon flights |
 
-Every equipment has `fuel_consumption = 0`. Resource costs use the economy spec's re-themed resources; until then use vanilla keys: arms and armour `steel`; bows `steel` 1; mounts none (manpower and IC); engines `steel` and `tungsten`; elven arms `chromium` (rare stuff); hulls `steel`. Equipment with "nobody" has `is_buildable = no` and `can_be_produced = { always = no }`.
+Every equipment has `fuel_consumption = 0`. Resource costs use the economy spec's resources under their engine keys (V2):
+
+| Equipment | Resources per unit (design targets) |
+| --- | --- |
+| Arms; troll, giant, yeti and ogre gear | Iron (`steel`) 1 |
+| Bows | Timber (`aluminium`) 1 |
+| Armour | Iron 2; knights' plate variants `_3`+ add Gold (`chromium`) 1 |
+| Mounts | Horses (`rubber`) 1 |
+| Elven arms | Gold 1 ("rare stuff"), Timber 1 |
+| Camp gear | none |
+| Wards | Essence (`oil`) 1 |
+| Grave arms, nether arms | Iron 1, Essence 1 |
+| Catapults, trebuchets | Timber 1, Stone (`tungsten`) 1 |
+| Ballistae, scorpions | Timber 1, Iron 1 |
+| Pack trains | Horses 1 |
+| Wagon trains, merchant cogs | Timber 1 |
+| Galley hull | Timber 2 |
+| Warship and raider hulls | Timber 2, Iron 1 |
+| Great warship hull | Timber 3, Iron 1, Gold 1 (flagship fittings) |
+| Griffins | none (manpower and production only) |
+| Granted equipment ("nobody") | none |
+
+Grain (`coal`) is never a cost. Equipment with "nobody" has `is_buildable = no` and `can_be_produced = { always = no }`.
 
 **Vanilla slot map.** `infantry_equipment` becomes arms, bows, elven, kin, grave and nether arms; `support_equipment` becomes camp gear and wards; `artillery_equipment` becomes catapults and trebuchets; `anti_tank_equipment` becomes ballistae; `anti_air_equipment` becomes scorpions. Tank chassis, armoured cars, motorised, mechanised, amphibious, rocket, railway guns, helicopters, missiles, nuclear weapons, floating harbours and all airframes except two are removed.
 
 ### 4. Land units
 
-Stats are targets for a battalion with the 1748 baseline variant (`_1`), equipment and sub-unit combined. Org = organisation, HP = strength, SA/HA = soft/hard attack, Def, Brk = breakthrough, Arm = armour, Prc = piercing, Spd = km/h, W = combat width, MP = manpower, Days = training. Reference: men line infantry equals vanilla 1936 infantry.
+Stats are targets for a battalion with the 1748 baseline variant (`_1`), equipment and sub-unit combined. The Role column gives the engine `group` (`infantry`, `mobile`, `armor`, `combat_support`, `support`) and the sub-unit categories without their `category_` prefix. Org = organisation, HP = strength, SA/HA = soft/hard attack, Def, Brk = breakthrough, Arm = armour, Prc = piercing, Spd = km/h, W = combat width, MP = manpower, Days = training. Reference: men line infantry equals vanilla 1936 infantry.
 
 #### 4.1 Men
 
@@ -175,8 +202,11 @@ Elven wardens and rangers +20% attack and defence in forest. Sunhot battalions a
 | `zin_orcs_goblins` | Goblin Skirmishers | infantry; militia, all_infantry | bows 60 | 35 | 15 | 5 | 0.5 | 12 | 3 | 0 | 2 | 5 | 1 | 600 | 30 |
 | `zin_orcs_raiders` | Orc Raiders | mobile; cavalry | mounts 100, arms 60 | 45 | 22 | 8 | 1 | 10 | 6 | 0 | 4 | 9 | 2 | 800 | 90 |
 | `zin_ogres_brutes` | Ogre Brutes | armor; zin_monsters, all_armor | ogre gear 40 | 40 | 50 | 12 | 6 | 14 | 14 | 15 | 10 | 4 | 3 | 300 | 120 |
+| `zin_abyss_folk` | Abyss-folk | armor; zin_monsters, all_armor | ogre gear 40 | 40 | 50 | 12 | 6 | 14 | 14 | 15 | 10 | 4 | 3 | 300 | 120 |
 
 Orc mounts are unnamed until the owner decides (open question 2). Orc warbands +10% attack at night (`land_night_attack` through the people idea). Ogres are available to orc realms and to Volgan.
+
+**The Abyss-folk** (proposed descriptive name; their own name is open in the vault) are Roka's rhinoceros-headed people of the Abyss. Only Volgan fields them, and only through the Volgan mechanic's *Abyss Host* (focus "Lords of the Deep", [Volgan](../04_mechanics/volgan_southern_dominion.md)); they are never in a recruitment list, so `allowed` limits the sub-unit to Volgan and the battalion is created only by that spawn. Their stats are the ogre brutes' until the art and lore give them their own (contract additions: "stats of `zin_ogres_brutes` until drawn"). Their text says nothing about Roka's fate.
 
 #### 4.4 The great kin
 
@@ -184,7 +214,7 @@ Orc mounts are unnamed until the owner decides (open question 2). Orc warbands +
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | `zin_trolls_brute` | Troll Brutes | trolls | armor; zin_monsters | troll gear 40 | 40 | 60 | 14 | 8 | 16 | 16 | 22 | 14 | 3.5 | 3 | 250 | 150 |
 | `zin_giants_host` | Giant Host | giants | armor; zin_monsters | giant gear 40 | 50 | 70 | 14 | 10 | 24 | 14 | 20 | 18 | 4 | 4 | 200 | 180 |
-| `zin_giants_hurlers` | Giant Hurlers | giants | artillery; artillery, line_artillery, zin_siege | giant gear 30 | 30 | 30 | 30 | 5 | 6 | 2 | 10 | 12 | 4 | 3 | 150 | 180 |
+| `zin_giants_hurlers` | Giant Hurlers | giants | combat_support; artillery, line_artillery, zin_siege | giant gear 30 | 30 | 30 | 30 | 5 | 6 | 2 | 10 | 12 | 4 | 3 | 150 | 180 |
 | `zin_ents_grove` | Ent Grove | ents | armor; zin_monsters | grove wardings 40 | 60 | 90 | 10 | 12 | 40 | 8 | 30 | 20 | 2.5 | 4 | 150 | 240 |
 | `zin_yeti_band` | Yeti Band | yeti | infantry; front_line, zin_monsters | yeti gear 60 | 55 | 40 | 10 | 3 | 20 | 10 | 6 | 6 | 5 | 3 | 300 | 120 |
 
@@ -206,7 +236,7 @@ Netherborn ignore heat attrition and suffer +50% winter attrition (people idea).
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | `zin_the_dead_revenant` | Grave Host | Volgan | infantry; front_line, all_infantry, zin_dead | grave arms 100 | 80 | 30 | 6 | 1 | 24 | 3 | 4 | 4 | 3.5 | 2 | 200 | 30 |
 | `zin_dead_grave_riders` | Grave Riders | Volgan | mobile; cavalry, zin_dead | mounts 80, grave arms 60 | 70 | 28 | 7 | 1 | 14 | 6 | 4 | 5 | 8 | 2 | 200 | 60 |
-| `zin_dead_necromancers` | Necromantic Order | Volgan | support company; support_battalions | grave arms 10 | 60 | 5 | 2 | 0 | 3 | 1 | 0 | 8 | - | 0 | 50 | 120 |
+| `zin_dead_necromancers` | Necromantic Order | Volgan | support; support_battalions | grave arms 10 | 60 | 5 | 2 | 0 | 3 | 1 | 0 | 8 | - | 0 | 50 | 120 |
 | `zin_zol_deathless` | The Deathless | Zol | infantry; front_line, all_infantry, zin_dead | deathless bonds 100 | 30 | 30 | 7 | 2 | 26 | 5 | 80 | 8 | 4 | 2 | 20 | 30 |
 | `zin_zol_deathless_crews` | Black Ship Crews | Zol | infantry; marines, zin_dead | deathless bonds 100 | 30 | 25 | 7 | 2 | 22 | 5 | 80 | 8 | 4 | 2 | 20 | 30 |
 
@@ -217,8 +247,8 @@ Netherborn ignore heat attrition and suffer +50% winter attrition (people idea).
 
 | Key | Name | Role | Needs | Org | HP | SA | HA | Def | Brk | Arm | Prc | Spd | W | MP | Days |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `zin_siege_catapult` | Catapults | artillery; artillery, line_artillery, zin_siege | catapults 12 | 20 | 6 | 22 | 2 | 6 | 2 | 0 | 5 | 3.5 | 3 | 500 | 120 |
-| `zin_siege_trebuchet` | Trebuchets | artillery; artillery, line_artillery, zin_siege | trebuchets 8 | 15 | 6 | 36 | 4 | 4 | 2 | 0 | 8 | 2.5 | 4 | 600 | 150 |
+| `zin_siege_catapult` | Catapults | combat_support; artillery, line_artillery, zin_siege | catapults 12 | 20 | 6 | 22 | 2 | 6 | 2 | 0 | 5 | 3.5 | 3 | 500 | 120 |
+| `zin_siege_trebuchet` | Trebuchets | combat_support; artillery, line_artillery, zin_siege | trebuchets 8 | 15 | 6 | 36 | 4 | 4 | 2 | 0 | 8 | 2.5 | 4 | 600 | 150 |
 | `zin_support_catapults` | Catapult Company | support; artillery, support_artillery, zin_siege | catapults 6 | 0 | 0.6 | 12 | 1 | 4 | 1 | 0 | 5 | 3.5 | 0 | 300 | 120 |
 | `zin_support_ballistae` | Ballista Company | support; anti_tank, zin_siege | ballistae 6 | 0 | 0.6 | 2 | 12 | 6 | 1 | 0 | 40 | 3.5 | 0 | 300 | 120 |
 | `zin_support_scorpions` | Scorpion Company | support; anti_air, zin_siege | scorpions 6 | 0 | 0.6 | 1 | 1 | 4 | 0 | 0 | 5 | 3.5 | 0 | 300 | 120 |
@@ -248,9 +278,27 @@ Ents, yeti and trolls may use scouts only. Orcs may not use healers or heralds. 
 | `zin_glo_bearer` | The Bearer of Glo | `zin_glo_blade_equipment` 1 | Eindil's journey, on `zin_glo_with_eindil`, to the country Eindil serves | Piercing 300, SA 20, HA 20; division piercing then passes the deathless armour |
 | `zin_volgan_presence` | Volgan Himself | `zin_volgan_presence_equipment` 1 | Volgan mechanic, on `zin_volgan_marches` | SA 60, HA 30, piercing 200; removed on `zin_volgan_body_destroyed` |
 | `zin_great_spirit` | A Great Spirit | `zin_great_spirit_equipment` 1 each | Volgan mechanic (his "great spirits"), up to 3 | SA 15, piercing 60, org +10 |
-| `zin_zol_manifestation` | Zol Made Flesh | `zin_zol_manifestation_equipment` 1 | Zol mechanic, on `zin_zol_manifested`, for a limited time | SA 100, HA 60, piercing 300; removed on `zin_zol_withdrawn` |
+| `zin_zol_manifestation` | Zol Made Flesh | `zin_zol_manifestation_equipment` 1 | Zol mechanic, on `zin_zol_manifested`, for a limited time: its template `zin_zol_the_presence` is 4 deathless battalions and this company | SA 100, HA 60, piercing 300; removed on `zin_zol_withdrawn` |
 
 A great being can only exist in a division that also has at least one line battalion. Each has `category_zin_great_beings` so doctrines and scripts can find it.
+
+#### 4.9a Story templates
+
+Mechanics create these division templates with the `division_template` effect when they first need them (never in `history/units`). Their battalions are this spec's sub-units; until stage 2 each owner uses vanilla `infantry` in the same counts, as its spec says.
+
+| Template name | Created by | Composition (regiments; support) | Notes |
+| --- | --- | --- | --- |
+| "The Host of the Ice" (`zin_eindil_host_template`) | `zin_war_grant_glo_bearer` (this spec) | 6 line battalions of the country's people, 2 archers; the bearer company, scouts | §6.2 |
+| "White Company" (`zin_cold_white_company`) | [Cold Lands](../04_mechanics/cold_lands.md), `zin_cold_sail_white_companies` | 6 `zin_men_infantry`, 2 `zin_men_archers`, 1 `zin_men_cavalry`; scouts, healers, quartermasters | Coldor's three companies sailing to the living (proposed); they use men's arms, bows and mounts, so the 3,000 arms Coldor pays are `zin_arms_equipment` |
+| "Host of the East" | [Afrit](../04_mechanics/afrit_hidden_council.md), `zin_afrit_raise_eastern_host` | 6 `zin_men_infantry`, 2 `zin_men_camel_riders` (`zin_men_cavalry` if the hub lacks `zin_tech_camel_corps`), 2 `zin_men_archers`; scouts, sappers | Raised for the hub after the flight east; the name says nothing of Afrit's nature. The hub gains `zin_tech_camel_corps` with the template |
+| "Abyss Host" | Volgan mechanic | 6 `zin_abyss_folk` | See §4.3 |
+| "Grave Host" | Volgan mechanic, `zin_volgan_spawn_grave_host` | 8 `zin_the_dead_revenant` | The AI template `zin_ai_volgan_grave_host` is its fuller form for AI recruitment |
+| `zin_zol_deathless_host` | Zol mechanic | 10 `zin_zol_deathless` | Raised only at and after the rising |
+| "The Presence" (`zin_zol_the_presence`) | Zol mechanic | 4 `zin_zol_deathless`; the great-being company `zin_zol_manifestation` | Only while Zol is manifested |
+| "Buldor Company" | [Economy](02_economy.md), Hire the Buldor Companies | 6 `zin_men_infantry`, 2 `zin_men_archers` | Aenor's hired swords, 365 days |
+| `zin_west_crossing_host` | [Western Crossing](../04_mechanics/western_crossing.md), `zin_west.1` | as that spec sets, from this spec's men's sub-units | Created on every West Lands country |
+
+Each owner names the template by the exact string in the first column; this spec's builder test checks that every sub-unit named here exists and that the composition is valid for the creating country's people (the Host of the East uses men's sub-units because the hub's people is men).
 
 #### 4.10 Who recruits what
 
@@ -265,7 +313,7 @@ A great being can only exist in a division that also has at least one line batta
 | ents | ent groves, plus men levy, archers, rangers | none | scouts, healers | Kilinti |
 | yeti | yeti bands | none | scouts | |
 | demons | Netherborn | catapults | scouts, sappers | Shachihata by grant |
-| the_dead (Volgan) | grave hosts, grave riders, orcs, ogres, Netherborn | catapults, trebuchets, ballistae | scouts, sappers, necromancers, quartermasters | Great beings by grant |
+| the_dead (Volgan) | grave hosts, grave riders, orcs, ogres, Netherborn | catapults, trebuchets, ballistae | scouts, sappers, necromancers, quartermasters | Great beings by grant; Abyss-folk only through the Volgan mechanic's Abyss Host |
 | the_dead (Zol) | deathless, black ship crews | none | none | Great being by grant |
 
 ### 5. Armour, piercing and the deathless
@@ -290,27 +338,30 @@ Division piercing is the engine's blend of the best and the average sub-unit pie
 | Elven host with wardsingers | 28 to 34 | 100% | 35% |
 | Any host with the bearer of Glo | 120 or more | 100% | 100% |
 
-**Balance invariant (testable).** No mortal or elven technology at any year up to 4A 1790 lifts a division's piercing to half the deathless armour. Only the bearer of Glo, the Glo shockwave (6.2) and the softened game rule break this. This keeps the established rule: ordinary arms cannot end Zol's dead; only potent magic can.
+**Balance invariant (testable).** No mortal or elven technology at any year up to 4A 1790 lifts a division's piercing to half the deathless armour. Only the bearer of Glo, Glo's Wave (the Yeldenne and Glo spec, 6.2) and the softened game rule break this. This keeps the established rule: ordinary arms cannot end Zol's dead; only potent magic can.
 
 ### 6. Special units and their rules
 
 #### 6.1 Zol's deathless
 
-- `zin_deathless_equipment` cannot be produced. Each month the Zol mechanic calls `zin_war_feed_deathless`, which adds `zin_mistake_power × 25` bonds to Zol's stockpile (target: 0 at power 0, 2,500 a month at power 100). Before `zin_zol_rising` the feed is capped at what keeps the starting garrison full.
+- `zin_deathless_equipment` cannot be produced. Each month the Zol mechanic calls `zin_war_feed_deathless`, which adds `zin_mistake_power × 25` bonds to Zol's stockpile (target: 0 at power 0, 2,500 a month at power 100). Zol has no divisions before the rising (Zol spec; R3), so before `zin_zol_rising` the feed stops at the stock the Zol spec's first raising needs (its host cap × 10 battalions × 100 bonds). The Zol spec's raisings take their bonds from this stock; the Zol spec names the same `zin_deathless_equipment` (the two kinds of dead share no equipment; Volgan's `zin_grave_arms_equipment` is never given to Zol).
 - The deathless sub-units need almost no manpower (20). Zol's realm is "almost empty of the living".
 - Zol's army idea `zin_war_deathless_nature`: `attrition = -0.75`, `winter_attrition_factor = -1`, `heat_attrition_factor = -0.5`, `out_of_supply_factor = -0.8`, `no_supply_grace = 240`, `army_org_regain = 0.25` (they re-form fast).
-- Zol's divisions have no named commanders. The generator gives Zol nameless unit leaders shown as "a Deathless Captain" with no portrait text implying an administrator (open question 6).
+- Zol's hosts are led by the Zol spec's numbered host commanders, "The First Host", "The Second Host" and so on (`zin_zol_host_1` … `_12`, [02_characters.md](../02_lore/02_characters.md); S4). Zol's general name list holds only these ordinals, so no personal name and no administrator is ever implied.
 - Game rule `zin_rule_deathless = softened` adds idea `zin_war_deathless_softened` to Zol: `equipment_bonus = { zin_deathless_equipment = { armor_value = -45 } }`.
 
 #### 6.2 Glo
 
-- On `zin_glo_with_eindil`, `zin_war_grant_glo_bearer` gives the country holding `zin_eindil` one `zin_glo_blade_equipment`, creates the template "The Host of the Ice" (`zin_eindil_host`: 6 men infantry or the country's line battalions, 2 archers, the bearer, scouts) and spawns one division led by Eindil. Eindil gets unit leader trait `zin_trait_glo_bearer`.
-- **Glo shockwave** decision `zin_war_glo_shockwave` (state-targeted, for the country holding the bearer): available when Eindil's division is in or next to a state holding Zol's divisions. Effect: `damage_units` on Zol's divisions in that state, `org_damage = 1.0`, `str_damage = 0.6`. Cost 50 command power; cooldown 60 days. Unavailable after `zin_zol_manifested` (the blade is crushed, established).
-- After `zin_zol_manifested`, the bearer's equipment is swapped to the "Shard" variant: piercing 120 instead of 300 (it still wounds the manifestation, established; how much Glo keeps is open, see open question 5).
+The [Yeldenne and Glo](../04_mechanics/yeldenne_and_glo.md) spec owns Glo, its power and **Glo's Wave** (decision `zin_glo_wave_decision`, effect `zin_glo_wave`), which unmakes Zol's dead in a state. This spec only provides the bearer's unit.
+
+- On `zin_glo_with_eindil`, `zin_war_grant_glo_bearer` gives the country holding `zin_eindil` one `zin_glo_blade_equipment`, creates the template "The Host of the Ice" (`zin_eindil_host_template`: 6 men infantry or the country's line battalions, 2 archers, the bearer company, scouts) and spawns one division of it led by Eindil. Eindil's trait is the journey's `zin_eindil_bearer_of_glo`; this spec adds no second trait.
+- A second bearer (`zin_glo_state` = 4) gets the same company through the same effect, on the Yeldenne spec's call.
+- On `zin_horos_sword_broken` (set by the Zol spec's `zin_mistake.21`, N1), `zin_war.6` swaps the bearer's equipment to the "Shard" variant `zin_glo_blade_equipment_shard`: piercing 120 instead of 300 (it still wounds the manifestation, established; how much Glo keeps is open, so this is gameplay only, warfare question 5).
+- Warfare defines no shockwave of its own: Glo's Wave (Yeldenne and Glo) is the only one, and the event id `zin_war.3` stays unused.
 
 #### 6.3 Dragons
 
-- Dragon flights are air wings of `zin_air_dragon_flight` with `land_air_wing_size = 3`. `zin_dragon_equipment` cannot be produced.
+- Dragons use the air layer (S6). Dragon flights are air wings of `zin_dragon_equipment`, a non-modular air equipment of type `cas` with `is_buildable = no`; a flight is a wing of 3 dragons. The Linux run confirms that a granted wing can be deployed; if 1.19.3 refuses non-modular air equipment, the dragon is instead a one-slot airframe with one fixed module and no designer choices (same key).
 - `zin_war_grant_dragons` (country scope, argument `amount`) adds dragons to the stockpile and adds `amount` to `zin_dragon_flights`. Only the magic and world systems spec decides who receives dragons and when: elven realms through pacts with Dragon Mountain, Afrit's country through corruption after the reveal, and the dragon Eindil rides in 4A 1757 (one dragon to the country Eindil serves).
 - Lost dragons are not replaced. A country never holds more dragons than `zin_dragon_flights × 3`.
 - With `zin_rule_skies = none`, dragons are not air wings. `zin_war_grant_dragons` then adds the timed idea `zin_war_dragon_ally` (`army_attack_factor = 0.05`, `army_morale_factor = 0.05`) for 180 days per flight.
@@ -360,8 +411,8 @@ Game rule `zin_rule_skies`:
 
 | Option | Effect |
 | --- | --- |
-| `beasts` (default) | Griffin riders (fighter) for men; dragon flights (close support, port and naval strike) by grant |
-| `dragons_only` | Dragon flights only; the Eyries folder shows dragon lore only; scorpions stay |
+| `dragons_only` (default) | Dragon flights only, by grant; the Eyries folder shows dragon lore only; scorpions stay (owner short list 13, proposal in use) |
+| `beasts` | Adds griffin riders (fighter) for men (griffins are a proposed creature, not in the vault) |
 | `none` | No air units; the Eyries folder and scorpions hidden; dragons become the timed idea of 6.3 |
 
 | Sub-unit | Name | HOI4 type | Wing size | Air atk | Air def | Agility | Speed | Range | Ground atk | Naval strike | Cost |
@@ -369,9 +420,9 @@ Game rule `zin_rule_skies`:
 | `zin_air_griffin_riders` | Griffin Riders | fighter | 20 | 18 | 14 | 45 | 150 | 300 | 2 | 0 | 3 IC each |
 | `zin_air_dragon_flight` | Dragon Flight | cas | 3 | 60 | 150 | 25 | 220 | 900 | 90 | 30 | granted |
 
-Griffins are a proposed creature (open question 1). Air bases are **eyries**. Strategic bombing, naval bombers, transports, scouts, carriers and missiles are removed. Air superiority matters less: `NMilitary.ENEMY_AIR_SUPERIORITY_IMPACT = -0.20`, `ENEMY_AIR_SUPERIORITY_SPEED_IMPACT = -0.15`. Volgan and Zol have no fliers unless a mechanic grants dragons (open question 3).
+Griffins are a proposed creature and appear only under `beasts`. Air bases are **eyries**; no state starts with one (the state pass removes the vanilla levels), and a country may build them once it holds dragons or, under `beasts`, knows `zin_tech_eyries`. Strategic bombing, naval bombers, transports, scouts, carriers and missiles are removed. Air superiority matters less: `NMilitary.ENEMY_AIR_SUPERIORITY_IMPACT = -0.20`, `ENEMY_AIR_SUPERIORITY_SPEED_IMPACT = -0.15`. Volgan and Zol have no fliers unless a mechanic grants dragons (the magic spec grants them none).
 
-If the engine requires modular airframes for air sub-units, each beast is a frame with one fixed slot and one default module, and no designer choices.
+Griffins follow the dragons' rule of 6.3: non-modular air equipment, or a one-slot airframe if the Linux run shows 1.19.3 needs one.
 
 ### 9. Fortification and the Great Wall
 
@@ -412,7 +463,7 @@ Fourth Age years. Techs at or before 1745 are starting knowledge (by package, se
 
 The economy spec re-themes `industry_folder` and `electronics_folder`. No ZIN folder has a DLC condition.
 
-New technology categories (`common/technology_tags`): `zin_cat_arms`, `zin_cat_bows`, `zin_cat_armour`, `zin_cat_mounts`, `zin_cat_kin`, `zin_cat_siege`, `zin_cat_walls`, `zin_cat_wards`, `zin_cat_dark_rites`, `zin_cat_camp`, `zin_cat_galleys`, `zin_cat_warships`, `zin_cat_skies`. Focus and idea research bonuses name these.
+New technology categories (`common/technology_tags`): `zin_cat_arms`, `zin_cat_bows`, `zin_cat_armour`, `zin_cat_mounts`, `zin_cat_kin`, `zin_cat_siege`, `zin_cat_walls`, `zin_cat_wards`, `zin_cat_dark_rites`, `zin_cat_camp`, `zin_cat_galleys`, `zin_cat_warships`, `zin_cat_skies`. Focus and idea research bonuses name these. The engine categories `industry` and `construction_tech` stay defined in `zin_technology_tags.txt` for the economy spec's re-themed industry technologies, and tree research bonuses may name them. Doctrines cost army, navy or air experience in 1.19.3, so a tree's doctrine boost compiles to `add_doctrine_cost_reduction` and any other research boost to `add_tech_bonus` (E6; the focus compiler writes both).
 
 `allow_branch` limits people branches; the triggers use `has_country_flag = zin_people_<key>` and, for Volgan, Zol and the Worshipdom, the generator-resolved country.
 
@@ -559,7 +610,7 @@ Rites and tide techs sit in the folder only for the countries that may have them
 
 | Key | Name | Year | Requires | Unlocks | Who |
 | --- | --- | ---: | --- | --- | --- |
-| `zin_tech_eyries` | Eyries | 1700 | - | griffins `_0`; griffin riders | men; rule `beasts` |
+| `zin_tech_eyries` | Eyries | 1700 | - | griffins `_0`; griffin riders | men; only under rule `beasts` |
 | `zin_tech_griffin_harness` | Griffin Harness | 1752 | eyries | griffins `_1` | |
 | `zin_tech_sky_lances` | Sky Lances | 1758 | harness | griffins `_2` | |
 | `zin_tech_dragon_lore` | Dragon Lore | 1500 | - | dragon flight sub-unit (dragons only by grant) | elves; any country granted dragons gets it with the grant |
@@ -567,7 +618,7 @@ Rites and tide techs sit in the folder only for the countries that may have them
 
 ### 12. Doctrines
 
-ZIN uses the doctrine system of grand doctrines, tracks and subdoctrines. All vanilla land, sea and air doctrines are replaced. The special forces folder is removed (it is DLC-gated and hidden). Each grand doctrine has `available` and `visible` on the people (and country, for Volgan and Zol).
+ZIN uses the doctrine system of grand doctrines, tracks and subdoctrines. All vanilla land, sea and air doctrines are replaced. The special forces subfolder holds one hidden ZIN subdoctrine, `zin_sub_hidden_special_forces` (`visible = { always = no }`), so the replaced folder is not empty (vanilla removal rule 3). Each grand doctrine has `available` and `visible` on the people (and country, for Volgan and Zol).
 
 #### 12.1 Land tracks
 
@@ -611,7 +662,7 @@ Each subdoctrine has three rewards. Subdoctrines restricted to a people use `ava
 | Folder | Grand doctrines | Tracks |
 | --- | --- | --- |
 | naval | `zin_gd_command_of_the_sea` (warship battle lines: `naval_damage_factor = 0.10`, `positioning = 0.05`); `zin_gd_oar_and_ram` (galleys and coasts: `screening_efficiency = 0.10`, `naval_speed_factor = 0.05`, `naval_invasion_prep_speed = 0.10`); `zin_gd_corsair_fleets` (raiders: `convoy_raiding_efficiency_factor = 0.15`, `naval_retreat_chance = 0.10`) | `zin_track_galleys` (screen_ship), `zin_track_warships` (capital_ship), `zin_track_raiders` (submarine), `zin_track_sea_lanes` (convoy) |
-| air (rule on) | `zin_gd_wings_of_the_mountain` (dragon pacts; elves: `air_attack_factor = 0.10`, `air_cas_efficiency = 0.10`); `zin_gd_griffin_eyries` (men: `air_agility_factor = 0.10`, `air_range_factor = 0.10`) | `zin_track_griffins` (fighter), `zin_track_dragons` (cas) |
+| air (rule not `none`; the griffin doctrine only under `beasts`) | `zin_gd_wings_of_the_mountain` (dragon pacts; elves: `air_attack_factor = 0.10`, `air_cas_efficiency = 0.10`); `zin_gd_griffin_eyries` (men: `air_agility_factor = 0.10`, `air_range_factor = 0.10`) | `zin_track_griffins` (fighter), `zin_track_dragons` (cas) |
 
 Zol uses `zin_gd_corsair_fleets` only.
 
@@ -635,11 +686,11 @@ All forces are at home and at peace. Most armies have little experience: Erdae h
 | Mirolon | 10 | Hill and line hosts on the passes | 0.3 | 3 galleys | Watches the passes |
 | Volgan | 40 | 20 grave hosts, 10 dominion vanguards, 10 monster clans | 0.4 | 4 galleys | Low intel for others; all inside the Dead Lands |
 | Demon, Dolon, Nezer | 4 each | Netherborn hosts | 0.3 | none | |
-| Zol | 8 | Deathless hosts in the interior of the Mistake | 0.3 | 3 corsairs (black ships) | Nothing near another realm's border |
+| Zol | 0 | None at start: the Zol spec raises hosts (template `zin_zol_deathless_host`, 10 deathless battalions) at the rising | — | 3 corsairs (black ships, P) in Zol's waters | The realm is almost empty of the living; nothing stands near another realm's border |
 | Magical Forest | 12 | Warden hosts, riders | 0.1 | none | No dragons deployed |
 | Gala Elves | 4 | Warden hosts | 0.2 | 3 galleys (elven sails) | |
 | Worshipdom | 1 | Valley wardens | 0.05 | none | "Almost no army" (P) |
-| Yeldenne | 0 | - | - | - | The castle's guard is the Yeldenne mechanic, not an army |
+| Yeldenne | 0 | - | - | - | The castle's guard is the Yeldenne mechanic, not an army; the politics step stops writing the one division it writes today (R3) |
 | Selen | 3 | 2 ranger divisions, 1 host | 0.3 | none | Selen's rangers (E) |
 | Kingson | 4 | Wall wardens | 0.2 | none | Wall gate |
 | Hiloron | 3 | Giant hosts with men | 0.05 | none | |
@@ -667,32 +718,34 @@ All forces are at home and at peace. Most armies have little experience: Erdae h
 | Nether | Demon, Dolon, Nezer | nether pacts, catapults, scouts, sappers |
 | Mistake | Zol | deathless tide 1, oared galleys, corsair craft |
 
-Starting grand doctrines (`set_grand_doctrine` in history): Shield Wall for Aenor, the Concord, Lerendor, Dondor, Mirolon and Isengard; Horse and Lance for Hunhun, Noris, Stabilo and Coldor; Great Muster for other men and orcs that are not Goldoroth; Blood and Warband for Goldoroth and Troll Forest; Old Ways, Sun Guard, Strength of the Wild, Nether Fury, Grave Muster and Deathless Tide by people. Naval: Command of the Sea for Lerendor and Aenor; Corsair Fleets for Triton's Islands and Zol; Oar and Ram for everyone else with a navy.
+Starting grand doctrines (`set_grand_doctrine` in country history, written by the politics step from this spec's package export, §15.7): Shield Wall for Aenor, the Concord, Lerendor, Dondor, Mirolon and Isengard; Horse and Lance for Hunhun, Noris, Stabilo and Coldor; Great Muster for other men and orcs that are not Goldoroth; Blood and Warband for Goldoroth and Troll Forest; Old Ways, Sun Guard, Strength of the Wild, Nether Fury, Grave Muster and Deathless Tide by people. Naval: Command of the Sea for Lerendor and Aenor; Corsair Fleets for Triton's Islands and Zol; Oar and Ram for everyone else with a navy.
 
 ### 14. 3D unit pipeline
 
 #### 14.1 Pilot units
 
-| Asset id | Sub-units it serves | Reference | State |
-| --- | --- | --- | --- |
-| `zin_men_infantry` | men levy, line infantry, heavy infantry, sea soldiers, hill companies (until their own models) | Owner-approved 18 Oct 2026, `docs/assets/hoi4_3d_model_jobs/models_3d/zin_men_infantry/refs/original/meshy_input.png` | Waiting for Meshy |
-| `zin_elves_warden` | all elven foot | same layout | Waiting for Meshy |
-| `zin_orcs_warrior` | orc warbands, goblins (scaled 0.75) | same layout | Waiting for Meshy |
-| `zin_the_dead_revenant` | grave hosts (Volgan only) | same layout | Waiting for Meshy |
-| `zin_trolls_brute` | troll brutes, ogres (until their own model) | same layout | Waiting for Meshy |
+Five Meshy models are in the game since commit `ca01fa3` (`tools/content/modules/units3d.mjs`, files in `gfx/models/units/zin/<asset id>/`). Today each serves its people as the entity `zin_<people>_gfx_infantry_entity`, which the engine shows for the vanilla infantry sprite. Peoples without a model borrow the nearest one (Sunhot elves the elf warden; giants, yeti and ents the troll; demons the revenant).
 
-Meshy work is blocked until the HOI4 Mod Setup launcher bug is fixed (roadmap). Zol's deathless get their own model later; they never reuse the revenant, because the vault does not tie the two kinds of dead together.
+| Asset id | Sub-units it serves from stage 2 | State |
+| --- | --- | --- |
+| `zin_men_infantry` | men levy, line infantry, heavy infantry, sea soldiers, hill companies, valley wardens (until their own models) | In game |
+| `zin_elves_warden` | all elven and Sunhot foot | In game |
+| `zin_orcs_warrior` | orc warbands, goblins (scaled 0.75), Netherborn (until their own model) | In game |
+| `zin_the_dead_revenant` | grave hosts (Volgan only) | In game |
+| `zin_trolls_brute` | troll brutes, ogres, giant hosts, ent groves, yeti bands (until their own models) | In game |
+
+From stage 2 every ZIN sub-unit has its own sprite (its asset id or the asset it borrows), so `units3d.mjs` also writes the generic `<asset id>_entity` for each model and keeps the people entities until the vanilla infantry sprite is gone. Zol's deathless get their own model later; they never reuse the revenant, because the vault does not tie the two kinds of dead together. Until their model exists, the deathless and the other sub-units without a model show their generated counter only, and the builder records each such fallback in the 3D report (acceptance 14).
 
 #### 14.2 Route (the kit's `hoi4-3d-model-pipeline`)
 
 1. One clean, weapon-free `meshy_input.png` per asset (done for the pilots). No turnaround sheets go to Meshy.
 2. Meshy 7 geometry; one supported rig attempt and one action attempt per missing role for bipeds; Blender recovery after that. Non-bipeds (ents, giants if their anatomy fails the rig, dragons, griffins) go straight to Blender.
-3. Weapons are separate attachment entities, as vanilla rifles are. Each weapon (spear, sword, shield, axe, bow, club) gets its own approved weapon-only image and Meshy 7 geometry task, by analogy with the kit's firearm route (needs owner approval of the new references, open question 9).
+3. Weapons are separate attachment entities, as vanilla rifles are. Each weapon (spear, sword, shield, axe, bow, club) gets its own approved weapon-only image and Meshy 7 geometry task, by analogy with the kit's firearm route (needs owner approval of the new references, open question 8).
 4. Calibrate against the installed vanilla infantry mesh and entity (`generic_western_european_rifle_infantry_mesh`, `infantry_entity`, scale 0.8). Apply entity scale once. Size targets: men, elves, orcs, revenants = vanilla infantry height; trolls 1.6×; Sunhot elves 1.5×; giants 2.2×; ents 2.5×.
 5. PDX material audit; `.mesh` and `.anim` export through the locked `io_pdx_mesh`; byte-level reimport proof.
 6. Actions for every land unit: `idle`, `move`, `attack`, `defend`, `retreat`, `death`. `training` and `support_attack` reuse `idle` and `attack` until made.
 7. Bespoke counters (large and map) matched to the vanilla green counter palette, made by the icon worker from generated art.
-8. Sound: selection, movement, attack and death roles from licensed external sources with provenance, as the kit requires (open question 10). No generated audio.
+8. Sound: selection, movement, attack and death roles from licensed external sources with provenance, as the kit requires, once the owner approves (open question 9); until then the engine's generic sound events by name. No generated audio.
 9. Never launch the Windows game. Live evidence comes from the Linux run.
 
 #### 14.3 Naming
@@ -713,94 +766,134 @@ The division's model is its highest-`priority` battalion. Priorities: great kin 
 
 #### 14.4 Graphical cultures
 
-`common/graphicalculturetype.txt` keeps the vanilla list and adds (proposed):
+`common/graphicalculturetype.txt` (overridden today) keeps the vanilla list and adds one culture per people: `zin_men_gfx`, `zin_elves_gfx`, `zin_sun_elves_gfx`, `zin_giants_gfx`, `zin_ents_gfx`, `zin_yeti_gfx`, `zin_trolls_gfx`, `zin_orcs_gfx`, `zin_the_dead_gfx`, `zin_demons_gfx`. The politics step assigns each country its people's culture. Each has a `_2d` twin for portraits.
 
-| Culture | Who |
+Regional cultures for men (proposed, phase 7): `zin_middle_gfx`, `zin_north_gfx`, `zin_west_gfx`, `zin_east_gfx` and `zin_south_gfx`, for regional dress on men's models. They are added only when their models exist; until then men use `zin_men_gfx`.
+
+### 15. Migration from vanilla: stage 2 of the vanilla removal
+
+This section is **stage 2** of [06_vanilla_removal_and_zero_errors.md](../00_foundation/06_vanilla_removal_and_zero_errors.md) (§5): one build, one Linux run, one commit. It replaces or overrides every row of that spec's §3.3 and the other stage-2 items of §5, so that no generic vanilla military, technology, faction, intelligence, occupation or economy file stays loaded. The equipment, technology, unit, AI template and doctrine folders land together, because each names the others; the other owners' folders land in the same build, because their vanilla files name vanilla equipment and tags.
+
+#### 15.1 What is in the game before stage 2 (commit `ca01fa3`)
+
+- Stage 1 is applied: 34 `replace_path` lines; only the 305 ZIN tags and D01–D75 exist; 349 single-country vanilla files are silenced by comment-only ZIN files (`tools/content/data/vanilla/silenced.json`, `vanilla_silence.mjs`).
+- Generic vanilla technologies, equipment, sub-units, doctrines, AI templates, faction goals and rules, naval AI goals, organisations, occupation laws, leader traits and scorers still load. They name vanilla tags: **category B14**, 638 lines in the applied build on 19 October 2026 (exempt up to 650 in stage 1).
+- `gfx/entities/zin_vanilla_model_gaps.asset` bridges B11 with clones of three vanilla vehicle entities ("bridge: remove in stage 2").
+- `history/units/<TAG>_world.txt` (politics step) holds vanilla infantry templates; country histories `set_technology` vanilla infantry, train, support and recon technologies.
+- `NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR` is set to 0 by the calendar spec until this stage.
+
+#### 15.2 Folders and files of stage 2
+
+Each row is one disposition of `tools/content/data/vanilla/dispositions.json`; this stage moves `currentStage` to 2 and updates each row's `zin` list to the files named here. "Module" is the content-builder module that writes the ZIN files. Every replaced folder ships at least one ZIN file with at least one valid definition (vanilla removal rule 3).
+
+**Warfare (this spec, `tools/content/modules/warfare.mjs` unless noted):**
+
+| Vanilla path | Action | ZIN content |
+| --- | --- | --- |
+| `common/units` | replace | `zin_men.txt`, `zin_elves.txt`, `zin_sun_elves.txt`, `zin_orcs.txt`, `zin_kin.txt`, `zin_demons.txt`, `zin_dead.txt`, `zin_siege.txt`, `zin_camp.txt`, `zin_great_beings.txt`, `zin_ships.txt`, `zin_air.txt`: every sub-unit of §4, §7 and §8. Every equipment has a sub-unit that uses it (an equipment without one crashes the AI) |
+| `common/units/equipment` | replace | `zin_equipment_land.txt`, `zin_equipment_naval.txt`, `zin_equipment_air.txt`, `zin_equipment_granted.txt`: the archetypes of §3 with variants `_0`–`_5`, and the kept keys `convoy`, `train_equipment` and `motorized_equipment` defined in ZIN files |
+| `common/units/equipment/modules` | replace | `zin_ship_modules.txt` (§7.2) |
+| `common/units/equipment/upgrades` | replace | `zin_upgrades.txt`: hull upgrades (range, reliability, armour) for the ship designer |
+| `common/units/names` | replace | `zin_names.txt`: variant name lists per people |
+| `common/units/names_divisions` | replace | `zin_names_divisions.txt`: host names per people and region ("First Host of Parim"); Zol's list holds only the ordinal hosts |
+| `common/units/names_ships` | replace | `zin_names_ships.txt`: ship names per region |
+| `common/units/names_railway_guns` | replace | `zin_names_railway_guns.txt`: one generic list with no entries used (no railway guns exist) |
+| `common/units/critical_parts`, `common/units/unit_modifiers` | keep | Engine parts and modifiers, re-localised |
+| `common/unit_tags` | replace | `zin_unit_tags.txt`: the engine's category keys (an identifier list generated from the installed file, rule 5) plus `category_zin_archers`, `_dead`, `_great_beings`, `_monsters`, `_siege` |
+| `common/equipment_groups` | replace | `zin_equipment_groups.txt`: one group per workshop of the economy spec (arms and kin gear, bows, armour, mounts, elven arms, engines, wards, hulls, grave and nether arms) |
+| `common/technologies`, `common/technology_tags` | replace | `zin_arms.txt`, `zin_mounts.txt`, `zin_engines.txt`, `zin_lore.txt`, `zin_camp.txt`, `zin_naval.txt`, `zin_skies.txt`; `zin_technology_tags.txt` with the folders and categories of §11. The economy spec's re-themed `industry_folder` and `electronics_folder` technologies live in `zin_industry.txt` (written by `economy.mjs`) |
+| `common/doctrines/folders`, `/grand_doctrines`, `/tracks`, `/subdoctrines/land`, `/sea`, `/air`, `/special_forces` | replace | `zin_doctrines.txt` in each: §12; the special forces subfolder holds the one hidden subdoctrine |
+| `common/abilities` | replace | `zin_abilities.txt`: the engine's generic commander abilities re-themed (for example "Rally the Host", "Forced March"), no tag condition |
+| `common/combat_tactics.txt` | override | Same file name: the installed file without its three `JAP` and `SOV` tactics, generated at build time (rule 5), names re-localised |
+| `common/raids`, `common/raids/categories` | replace | `zin_raids.txt`: land infiltration raids re-themed as night raids; `zin_raid_categories.txt`: one category. No air, nuclear or paratrooper raid |
+| `common/ai_templates`, `common/ai_equipment`, `common/ai_navy/fleet`, `/goals`, `/taskforce` | replace | `zin_ai_templates.txt` (AI section), `zin_ai_equipment.txt` (one design per hull and people), `zin_fleet.txt`, `zin_goals.txt`, `zin_taskforce.txt` |
+| `common/unit_leader/00_traits.txt`, `ETH_traits.txt`, `JAP_traits.txt`, `NSB_traits.txt`, `SWE_traits.txt` | override | `00_traits.txt` holds the ZIN commander traits: the generic trait keys the characters spec uses (`ranger`, `ambusher`, `winter_specialist`, `desert_fox`, `cavalry_leader`, `hill_fighter`, `trait_mountaineer`, `organizer`, `inspirational_leader`, `old_guard`, `career_officer`, `trickster`, `defensive_doctrine`, `offensive_doctrine`, `harsh_leader`, `trait_reckless`, `unyielding_defender`, `naval_invader`, `blue_water_expert`, `green_water_expert`, `bold`) written with ZIN names and ZIN values, plus the other generic terrain and skill-gain keys the engine awards, with no tank, air or submarine trait and no specialist advisor trait. The four tag files are comment-only. The eight `00_*_skills.txt` and `SIA_traits.txt` stay (never `replace_path`: it crashes at `map/rocketsites.txt`) |
+| `common/scientist_traits` | replace | `zin_scholar_traits.txt`: scholars and artificers |
+| `common/synchronized_dynamic_tokens` | replace | `zin_tokens.txt`: ZIN equipment and unit tokens |
+| `common/script_enums.txt` | override | Generated from the installed file plus every ZIN archetype in `script_enum_equipment_bonus_type` (rule 5) |
+| `gfx/interface/equipmentdesigner/graphic_db` | replace | `zin_graphic_db.txt`: ZIN hulls and dragons. Fixes B11; `gfx/entities/zin_vanilla_model_gaps.asset` is deleted in the same build |
+| `history/units` | (replaced already) | `<TAG>_world.txt` OOBs and templates from `start_forces.json` (§13), now written by `warfare.mjs`; the politics step stops writing them |
+| `gfx/entities/zin_units.asset`, `gfx/models/units/zin/` | add | `units3d.mjs` (§14) |
+
+**Other owners, same build:**
+
+| Vanilla path | Action | Owner and module |
+| --- | --- | --- |
+| `common/country_leader` | replace | [Characters](../02_lore/02_characters.md), `characters.mjs`: `00_zin_leader_traits.txt` |
+| `portraits/00_portraits.txt` | override | Characters, `portraits.mjs` |
+| `common/resources/00_resources.txt`, `common/buildings/01_landmark_buildings.txt` | override | [Economy](02_economy.md), `economy.mjs` |
+| `common/military_industrial_organization/organizations`, `/policies`, `/ai_bonus_weights` | replace | Economy, `economy.mjs` (Erdae workshops) |
+| `common/special_projects/projects`, `/project_tags`, `/prototype_rewards`, `/specialization` | replace | Economy, `economy.mjs` (the interim great work) |
+| `common/autonomous_states`; `common/factions/goals`, `/icons`, `/member_upgrades`, `/member_upgrades/member_groups`, `/rules`, `/rules/groups`, `/templates`, `/upgrades`, `/upgrades/groups` | replace | [Diplomacy](03_diplomacy_and_factions.md), `diplomacy.mjs` |
+| `common/intelligence_agencies`, `common/operations`, `common/operation_phases`, `common/timed_activities`, `common/technology_sharing`, `common/units/codenames_operatives`, `common/peace_conference/ai_peace`, `/categories`, `/cost_modifiers` | replace | Diplomacy, `diplomacy.mjs` (the coup activity needs this spec's arms) |
+| `common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt`, `common/occupation_laws/occupation_laws.txt`, `common/resistance_compliance_modifiers/resistance_modifiers.txt`, the four `common/scorers/country` files, `common/modifiers/AAT_`, `BBA_`, `MUN_power_balance_modifiers.txt` | override | Diplomacy, `diplomacy.mjs` |
+| `common/bop` | replace | The mechanic specs; until one ships a balance, `vanilla_removal.mjs` writes `zin_bop.txt` with one balance gated to no country (`zin_interim_bop`) |
+| The DLC song lists that name vanilla tags (`music/*_songs.txt` of the installed DLC, found by check C3 with tag checking switched on) | override (interim) | [Music and sound](../08_art_and_assets/04_music_and_sound.md) owns `music` from stage 4; until then `vanilla_silence.mjs` lists these files under `extra` in `silenced.json`, so they load as comment-only files |
+| Country histories (`set_technology`, `set_grand_doctrine`, `create_faction_from_template`, `set_autonomy`) | change | Politics step: ZIN technologies and doctrines from this spec's package export (§15.7), ZIN faction templates and autonomy states (diplomacy spec). A politics test fails a history that names a vanilla technology, doctrine, template or autonomy state |
+
+**Rows of §3.3 outside stage 2.** `common/ai_focuses` and `common/ai_faction_theaters` were replaced in stage 1 (historical path spec, `vanilla_removal.mjs`); `common/operation_tokens`, `common/units/critical_parts` and `common/units/unit_modifiers` are kept (generic engine data, re-localised). Every other row of §3.3 is in the two tables above.
+
+**Bridges and stubs.** Every bridge marked "remove in stage 2" (`zz_zin_bridge_*` files, `00_zin_engine_hooks.txt` and `00_zin_engine.txt` entries) is deleted in this build; check C4 fails if one remains. Check C3 then reports zero references from loaded files to undefined names.
+
+**Descriptor.** The stage adds the `replace_path` lines of the vanilla removal spec's final descriptor for every folder above marked "replace" (58 lines; 92 in all with stage 1's 34; the three music lines follow in stage 4), written by `vanilla_removal.mjs` from the dispositions data and copied into `mod/zin.mod` by the sync step.
+
+#### 15.3 How stage 2 clears category B14
+
+| B14 source in the stage-1 log | Removed by |
 | --- | --- |
-| `zin_middle_gfx` | men of the Middle Lands and Aenor Isle |
-| `zin_north_gfx` | men of the North Lands and Cold Lands |
-| `zin_west_gfx` | men of the West Lands and Triton's Islands |
-| `zin_east_gfx` | men of the East Lands and the Dark Lands |
-| `zin_south_gfx` | men of the Dead Lands (Mirolon) and the Islands of the South |
-| `zin_elves_gfx`, `zin_sun_elves_gfx`, `zin_orcs_gfx`, `zin_dead_gfx`, `zin_demons_gfx`, `zin_kin_gfx` | the other peoples |
+| Generic technologies (tag conditions in `allow`, `ai_will_do`) | `common/technologies` replaced |
+| Faction goals, rules, templates and manifests | `common/factions/*` replaced (diplomacy) |
+| Generic naval AI goals | `common/ai_navy/goals` replaced |
+| Generic organisations ("does not match any MIO in database", tag scopes) | MIO folders replaced (economy) |
+| Occupation laws | `occupation_laws.txt` overridden (diplomacy) |
+| Leader traits (country and unit leaders, including the specialist advisor traits named by `00_traits.txt`) | `common/country_leader` replaced (characters), the five unit-leader files overridden (this spec) |
+| Scorers | the four scorer files overridden (diplomacy) |
+| Operative code names | `common/units/codenames_operatives` replaced (diplomacy) |
+| Song lists naming vanilla tags | silenced until stage 4 (music) |
 
-Each has a `_2d` twin for the portraits spec. Only men's cultures change models (their uniforms differ); other peoples' sprites are already unique. Until a culture entity exists, the generic entity shows.
+After stage 2 the error budget is **≤ 13 lines, all B12** (vanilla removal §6): no B11 and no B14 line remains.
 
-### 15. Migration from vanilla
+#### 15.4 Keep, re-theme only
 
-#### 15.1 Replace (add to `descriptor.mod`)
-
-| Path | Why |
-| --- | --- |
-| `common/units`, `common/units/equipment`, `common/units/equipment/modules`, `common/units/equipment/upgrades` | All sub-units, equipment and modules are ZIN's |
-| `common/units/names`, `common/units/names_divisions`, `common/units/names_ships`, `common/units/names_railway_guns` | Erdae names; railway gun names emptied |
-| `common/technologies`, `common/technology_tags` | ZIN tree, folders and categories |
-| `common/doctrines/folders`, `common/doctrines/grand_doctrines`, `common/doctrines/tracks`, `common/doctrines/subdoctrines/land`, `.../sea`, `.../air`, `.../special_forces` | ZIN doctrines; special forces folder removed |
-| `common/unit_tags` | Vanilla categories plus `category_zin_monsters`, `category_zin_dead`, `category_zin_great_beings`, `category_zin_siege`, `category_zin_archers` |
-| `common/ai_templates`, `common/ai_equipment`, `common/ai_navy/fleet`, `common/ai_navy/goals`, `common/ai_navy/taskforce` | ZIN AI |
-| `common/special_projects/projects`, `.../project_tags`, `.../prototype_rewards` | No modern projects |
-| `common/equipment_groups`, `common/military_industrial_organization/organizations` | Name vanilla equipment; the economy spec may add Erdae workshops |
-| `common/raids` | Air, nuclear and paratrooper raids name removed units |
-
-`common/ai_strategy`, `history/units`, `common/decisions`, `events` and `common/on_actions` are already replaced.
-
-#### 15.2 Overwrite single files
-
-| File | Change |
-| --- | --- |
-| `common/script_enums.txt` | Vanilla content plus every ZIN equipment archetype in `script_enum_equipment_bonus_type`, so `equipment_bonus` accepts them |
-| `common/graphicalculturetype.txt` | Vanilla list plus ZIN cultures |
-| `common/defines/zin_defines.lua` | Warfare block (Implementation) |
-
-#### 15.3 Keep, re-theme only
-
-`common/combat_tactics.txt`, `common/terrain`, `common/abilities`, `common/aces`, `common/unit_leader` (traits re-localised; panzer, air and submarine traits hidden through `allowed`), buildings keys `bunker`, `coastal_bunker`, `naval_base`, `air_base`, `anti_air_building` (names and art changed by the economy spec), `motorized_equipment`, `train_equipment`, `convoy` keys, critical parts. `gfx/entities` stays (buildings need it); no ZIN sprite points to a vanilla unit entity.
-
-#### 15.4 Must be replaced or emptied by their owning specs
-
-These vanilla folders name vanilla equipment, techs or sub-units and will log errors once warfare lands: `common/national_focus` (focus spec), `common/ideas` and `common/scripted_effects`, `common/scripted_triggers`, `common/scripted_localisation` (politics and mechanics), `common/operations`, `common/operation_phases`, `common/intelligence_agency_upgrades` (diplomacy), `common/factions`, `common/bop`, `common/timed_activities`, `common/synchronized_dynamic_tokens`, `common/scientist_traits`, `common/country_leader` (foundation). Warfare lands only after these are replaced, or in the same build.
+`common/terrain`, `common/aces`, `common/medals`, the building keys `bunker`, `coastal_bunker`, `naval_base`, `air_base`, `anti_air_building` (names and art from the economy spec), the kept equipment keys, critical parts and unit modifiers. `gfx/entities` stays (buildings need it); no ZIN sprite points to a vanilla unit entity. `common/ribbons/00_ribbons.txt` and `common/unit_medals/00_default.txt` are overridden in stage 3 by this spec (ZIN entries with no vanilla tag).
 
 #### 15.5 People ideas
 
-The existing ideas in `common/ideas/zin_peoples.txt` give some peoples `army_attack_factor` and `army_defence_factor`. Unit stats now carry that strength. The peoples spec moves those combat modifiers out (or halves them) when warfare lands, keeping recruitment, attrition and acclimatisation modifiers. Target people modifiers that stay: yeti `winter_attrition_factor = -0.5`; Netherborn realms `heat_attrition_factor = -1`, `winter_attrition_factor = 0.5`; orcs `land_night_attack = 0.10`; ents `army_speed_factor = -0.1`.
+The ideas in `common/ideas/zin_peoples.txt` (peoples module) give some peoples `army_attack_factor` and `army_defence_factor` (seven lines today). Unit stats now carry that strength. In the same build the peoples module removes those combat modifiers and keeps recruitment, attrition and acclimatisation. People modifiers that stay: yeti `winter_attrition_factor = -0.5`; Netherborn realms (people `demons`) `heat_attrition_factor = -1`, `winter_attrition_factor = 0.5`; orcs `land_night_attack = 0.10`; ents `army_speed_factor = -0.1`; Sunhot elves `recruitable_population_factor = -0.5` (few and huge).
 
-#### 15.6 Order of work
+#### 15.6 Order of work inside the stage
 
-1. Data and generator (units, equipment, techs, doctrines as JSON).
-2. Replace paths, script enums, defines; restore the ahead-of-time penalty.
-3. History: technologies, doctrines, templates, OOB, stockpiles for all 305 countries.
-4. AI templates, strategies, naval and air designs.
-5. Localisation and placeholder icons (generated); then counters; then 3D pilots as Meshy unblocks.
-6. Special units and their scripted effects once the owning mechanics exist.
+1. Data: `tools/content/data/warfare/*.json` (units, equipment, technologies, doctrines, templates, start forces, naval, air).
+2. `warfare.mjs` and the other owners' stage-2 files; the dispositions rows; the `replace_path` lines; script enums; the defines (the ahead-of-time penalty restored).
+3. The politics step's history changes (§15.7) and `history/units` from `warfare.mjs`.
+4. AI templates, strategies, naval designs.
+5. Localisation and generated icons; then counters; the 3D sprite entities (§14).
+6. Special units and their scripted effects, called by the owning mechanics as they land.
+7. Checks C1–C7, the B14 clearance check (§15.3), and the Linux run (L1 start cases, R1–R3, L8 of [01_acceptance.md](../09_validation/01_acceptance.md)) before the commit. If the stage crashes, it is bisected by folder (vanilla removal §5).
+
+#### 15.7 Start packages for the politics step
+
+`warfare.mjs` exports `tools/content/data/warfare/start_packages.json` (country name → technology keys known at start from §13.3, starting land and naval grand doctrines). The politics step reads it and writes `set_technology` and `set_grand_doctrine` in each country history. A builder test checks that every country of the roster has a package and that every key in it is defined.
 
 ## Implementation
 
 ### Generator data
 
-All warfare content is generated by the ZIN content builder from `docs/design/warfare/`: `units.json`, `equipment.json`, `technologies.json`, `doctrines.json`, `templates.json` (AI and history), `start_forces.json`, `naval.json`, `air.json`. The builder writes through the shared rewrite engine. Never hand-edit generated files.
+All warfare content is generated by `tools/content/modules/warfare.mjs` from `tools/content/data/warfare/`: `units.json`, `equipment.json`, `technologies.json`, `doctrines.json`, `templates.json` (AI and history), `start_forces.json`, `naval.json`, `air.json`, `traits.json` (commander and scholar traits), and the export `start_packages.json`. The 3D files are written by `tools/content/modules/units3d.mjs`. The builder writes through the shared atomic rewrite engine. Never hand-edit generated files.
 
 ### Game files
 
 | File | Content |
 | --- | --- |
-| `common/units/zin_men.txt`, `zin_elves.txt`, `zin_sun_elves.txt`, `zin_orcs.txt`, `zin_kin.txt`, `zin_demons.txt`, `zin_dead.txt`, `zin_siege.txt`, `zin_camp.txt`, `zin_great_beings.txt`, `zin_ships.txt`, `zin_air.txt` | Sub-units |
-| `common/units/equipment/zin_*.txt`, `modules/zin_ship_modules.txt` | Equipment, hulls, modules |
-| `common/units/names_divisions/zin_*.txt`, `names_ships/zin_*.txt` | Names by people and region |
-| `common/technologies/zin_arms.txt`, `zin_mounts.txt`, `zin_engines.txt`, `zin_lore.txt`, `zin_camp.txt`, `zin_naval.txt`, `zin_skies.txt` | Techs |
-| `common/technology_tags/zin_technology.txt` | Categories and folders |
-| `common/doctrines/...` | Folders, grand doctrines, tracks, subdoctrines |
-| `common/unit_tags/zin_categories.txt` | Categories |
-| `common/ai_templates/zin_*.txt`, `common/ai_equipment/zin_*.txt`, `common/ai_navy/...`, `common/ai_strategy/zin_war.txt` | AI |
-| `common/scripted_effects/zin_war.txt`, `common/scripted_triggers/zin_war.txt` | Shared logic |
-| `common/dynamic_modifiers/zin_war.txt`, `common/ideas/zin_war.txt` | Modifiers and ideas |
-| `common/decisions/zin_war.txt`, `common/decisions/categories/zin_war.txt` | Glo shockwave |
+| §15.2 tables | Sub-units, equipment, modules, upgrades, names, unit tags, equipment groups, technologies, doctrines, abilities, tactics, raids, AI, traits, tokens, script enums, graphic database, OOBs |
+| `common/scripted_effects/zin_war.txt`, `common/scripted_triggers/zin_war.txt` | Shared logic (below) |
+| `common/dynamic_modifiers/zin_war.txt`, `common/ideas/zin_war.txt` | `zin_war_great_wall`; `zin_war_deathless_nature`, `zin_war_deathless_softened`, `zin_war_dragon_ally` |
 | `events/zin_war.txt` | Namespace `zin_war` |
-| `common/on_actions/zin_war.txt` | Startup and monthly hooks |
-| `common/game_rules/zin_war_rules.txt` | Rules |
-| `history/countries/*` (generated blocks), `history/units/*` | Techs, doctrines, OOB |
-| `gfx/entities/zin_units.asset`, `zin_units.gfx`, `gfx/models/units/zin/...` | 3D |
-| `interface/zin_units.gfx`, `zin_equipment.gfx`, `zin_technologies.gfx`, `zin_doctrines.gfx` | Sprites |
-| `sound/zin_units.asset` | Sounds |
+| `common/on_actions/zin_war.txt` | Startup (rule ideas, start checks) and monthly hooks |
+| `common/game_rules/zin_war_rules.txt` | `zin_rule_skies`, `zin_rule_deathless` (group `RULE_GROUP_ZIN`) |
+| `common/defines/zin_defines.lua` (warfare block) | Defines below |
+| `interface/zin_units.gfx`, `zin_equipment.gfx`, `zin_technologies.gfx`, `zin_doctrines.gfx` | Sprites from generated art |
+| `sound/zin_units.asset` | Unit sound events (open question 9; A9) |
 | `localisation/english/zin_war_l_english.yml` | All text |
 
 ### Scripted triggers
@@ -808,24 +901,22 @@ All warfare content is generated by the ZIN content builder from `docs/design/wa
 | Trigger | Scope | Meaning |
 | --- | --- | --- |
 | `zin_is_site_great_wall` | state | The state is a Great Wall state (generated from the map's wall list) |
-| `zin_is_region_dead_lands` | state | The state lies in the Dead Lands region |
+| `zin_is_region_dead_lands` | state | The state lies in the Dead Lands region (one of the generated `zin_is_region_<key>` triggers) |
 | `zin_war_has_deathless_in_state` | state | Zol has divisions with `zin_zol_deathless` in this state |
-| `zin_war_can_shockwave` | country | Holds the bearer of Glo, `zin_glo_with_eindil` set, `zin_zol_manifested` not set |
 
 ### Scripted effects
 
 | Effect | Scope | What it does |
 | --- | --- | --- |
-| `zin_war_feed_deathless` | Zol | Adds `zin_mistake_power × 25` deathless bonds (cap before `zin_zol_rising`) |
-| `zin_war_grant_glo_bearer` | country | Adds the bearer equipment, the Eindil host template and division, the leader trait |
-| `zin_war_glo_shockwave` | state | `damage_units` on Zol's divisions in the state; event `zin_war.3` to both sides |
-| `zin_war_grant_dragons` | country | Argument `amount`: adds dragons, raises `zin_dragon_flights`, grants dragon lore; or the timed idea when the sky rule is none |
+| `zin_war_feed_deathless` | Zol | Adds `zin_mistake_power × 25` deathless bonds (capped before `zin_zol_rising`) |
+| `zin_war_grant_glo_bearer` | country | Adds the bearer equipment, the Host of the Ice template and its division led by Eindil |
+| `zin_war_grant_dragons` | country | Argument `amount`: adds dragons (3 per flight), raises `zin_dragon_flights`, grants dragon lore; or the timed idea when the sky rule is none |
 | `zin_war_grant_volgan_presence` | Volgan | Adds the presence equipment and attaches it to Volgan's division |
 | `zin_war_remove_volgan_presence` | Volgan | Removes it everywhere |
 | `zin_war_grant_great_spirit` | Volgan | Adds one great spirit (max 3) |
-| `zin_war_grant_zol_manifestation` / `zin_war_remove_zol_manifestation` | Zol | Zol mechanic's manifestation unit |
+| `zin_war_grant_zol_manifestation` / `zin_war_remove_zol_manifestation` | Zol | The Zol mechanic's manifestation company |
 | `zin_war_grant_shachihata` | country | Adds one Shachihata (demons, Volgan) |
-| `zin_war_build_great_wall` | global | Sets fort levels on wall states and adds `zin_war_great_wall` (used by the generator check and by world systems repairs) |
+| `zin_war_build_great_wall` | global | Sets fort levels on wall states and adds `zin_war_great_wall` (used by the builder check and by world systems repairs) |
 
 ### Variables and flags
 
@@ -833,26 +924,26 @@ All warfare content is generated by the ZIN content builder from `docs/design/wa
 | --- | --- | --- | --- |
 | `zin_dragon_flights` | variable 0–10 | country | Dragon flights the country may hold under its pact |
 | `zin_war_dragon_pact` | country flag | country | The country has a dragon pact (set by world systems) |
-| `zin_war_shockwave_used` | country flag (timed) | country | Shockwave cooldown |
 
 ### Events (`zin_war`)
 
 | Event | Purpose |
 | --- | --- |
-| `zin_war.1` | Hidden, `on_startup`: apply rule ideas (skies, deathless), assert start constraints in debug builds (no Zol unit outside the Mistake, no granted equipment) |
+| `zin_war.1` | Hidden, `on_startup`: apply rule ideas (skies, deathless); with `zin_rule_debug_checks` on, assert the start constraints (no Zol unit anywhere, no granted equipment) |
 | `zin_war.2` | "Dragons Answer the Call": shown to the receiver of `zin_war_grant_dragons` |
-| `zin_war.3` | "The Light of Glo": report of a shockwave, to both sides |
 | `zin_war.4` | "Shapes That Will Not Stay Broken": first war against Zol after `zin_zol_rising`; explains that ordinary arms cannot end the deathless |
 | `zin_war.5` | "Wards Against Death": `zin_zol_rising` opens the ward techs to men |
-| `zin_war.6` | "The Blade Is Broken": on `zin_zol_manifested`, swaps the bearer to the shard variant, shockwave ends |
+| `zin_war.6` | "The Blade Is Broken": on `zin_horos_sword_broken`, swaps the bearer to the shard variant |
 | `zin_war.7` | Hidden: on `zin_volgan_body_destroyed`, removes Volgan's presence |
-| `zin_war.20` | Hidden monthly: grave-host strain; deathless feed (if the Zol mechanic delegates it) |
+| `zin_war.20` | Hidden monthly: grave-host strain; deathless feed (when the Zol mechanic delegates it) |
+
+`zin_war.3` is unused (§6.2).
 
 ### Game rules
 
 | Rule | Options |
 | --- | --- |
-| `zin_rule_skies` | `beasts` (default), `dragons_only`, `none` |
+| `zin_rule_skies` | `dragons_only` (default, R1), `beasts`, `none` |
 | `zin_rule_deathless` | `canon` (default), `softened` |
 
 ### Defines (warfare block of `zin_defines.lua`)
@@ -865,9 +956,11 @@ All warfare content is generated by the ZIN content builder from `docs/design/wa
 | `NDefines.NMilitary.ENEMY_AIR_SUPERIORITY_SPEED_IMPACT` | `-0.15` |
 | `NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR` | `2` (restored from 0; see the start and calendar spec) |
 
+All five exist in the installed `common/defines/00_defines.lua` (checked 19 October 2026).
+
 ### Localisation
 
-Short, plain names as in the tables. Descriptions one or two sentences. Bound demons, their tech and equipment use keys whose text is filled only after `zin_afrit_revealed` (scripted localisation shows "Unknown" before). No Afrit, Einendil, Edvoid or Rush.
+Short, plain names as in the tables. Descriptions one or two sentences. Bound demons, their tech and equipment use keys whose text is filled only after `zin_afrit_revealed` (scripted localisation shows "Unknown" before). No Afrit, Einendil, Edvoid or Rush (names spec checks T1, T2).
 
 ## AI
 
@@ -897,67 +990,78 @@ Short, plain names as in the tables. Descriptions one or two sentences. Bound de
 | `zin_ai_volgan_grave_host` | Volgan | infantry | 8 grave hosts, 1 ogres; necromancers |
 | `zin_ai_volgan_vanguard` | Volgan | armor | 4 Netherborn, 2 ogres, 2 orc warbands; ballistae |
 | `zin_ai_volgan_monster_clan` | Volgan | infantry | 3 ogres, 4 orc warbands, 2 goblins |
-| `zin_ai_zol_deathless` | Zol | infantry | 8 deathless |
+| `zin_ai_zol_deathless` | Zol | infantry | 10 deathless (the Zol spec's template `zin_zol_deathless_host`) |
 | `zin_ai_zol_crews` | Zol | marines | 6 black ship crews |
 
 Countries next to Troll Forest, the Dark Lands or the Dead Lands add a ballista company to their line host.
 
 ### Strategy
 
-- **Peace first.** Until a contract story flag or 1 Thaw 4A 1749, the AI builds only to its starting army plus 10% (`ai_strategy` with the start plan of the historical path spec). No AI declares war (start situation spec).
+- **Peace first.** Until a contract story flag or 1 Thaw 4A 1749, the AI builds only to its starting army plus 10% (`ai_strategy = { type = ai_wanted_divisions_factor value = -50 }` in `common/ai_strategy/zin_war.txt`, enabled before 1 Thaw 4A 1749 and while no contract story flag is set). No AI declares war (the start spec's `zin_start_peace`).
 - **Role ratios** by people: men 55% infantry, 15% cavalry, 10% armor (knights), 10% artillery, 10% garrison; elves 60/25/0/15 (archers inside infantry); orcs 70/15/10/5; Volgan 50/10/25/15; Zol 100% deathless.
 - **Production.** Arms first, then bows or armour, then mounts and engines. Zol never orders deathless bonds (cannot). Elves never order dragons.
 - **Zol** keeps all divisions inside the Mistake until `zin_zol_rising` (historical path spec). **Volgan** keeps them inside the Dead Lands until `zin_volgan_marches`.
-- **Glo shockwave.** The AI uses it whenever available and Zol's divisions in the target state total at least 4.
+- **Glo's Wave** is the Yeldenne spec's decision; its AI uses it whenever available and Zol's divisions in the target state total at least 4.
 - **Dragons.** Elven AI uses dragon flights only on close support in states it owns or borders, unless at war.
 - **Doctrines.** `ai_will_do` per grand doctrine: 10 for the people's starting doctrine, 1 for the others, 0 for unavailable ones.
 - **Navy.** Galleys patrol and escort; warships form the strike force; corsairs raid convoys. A West Lands AI builds deep-water hulls and cogs only after the Western Crossing mechanic prepares the crossing. `ai_equipment` gives one default design per hull and people.
-- **Air.** Men with eyries keep griffins at 10% of their military production when at war, 0% in peace.
+- **Air.** Under `beasts`, men with eyries keep griffins at 10% of their military production when at war, 0% in peace. Dragons are never produced.
 
 ## Acceptance
 
-1. **No vanilla left.** The staged mod defines no vanilla sub-unit, equipment, technology or doctrine key except the kept `convoy`, `train_equipment` and `motorized_equipment`. The Linux run's `error.log` has no "unknown equipment", "unknown technology" or "unknown sub unit" lines from ZIN or vanilla files.
-2. **Everyone can fight.** A generator test over all 305 countries: each can recruit at least one line template from its people, research at least one technology in every folder it sees, and, if coastal, build one ship.
-3. **Start constraints.** On 1 Thaw 4A 1748: no country at war; no division outside its owner's territory; no Zol division outside Zol's states; no `zin_glo_blade_equipment`, `zin_dragon_equipment`, `zin_volgan_presence_equipment`, `zin_zol_manifestation_equipment` or `zin_shachihata_equipment` anywhere; the bound-demon tech and unit are invisible to every country.
-4. **Secret.** The compiler's secret scan finds no "Afrit" or Deliverer-as-demon text in any warfare localisation reachable before `zin_afrit_revealed`.
-5. **Deathless invariant.** An offline calculator in the builder tests computes division piercing for the best template of every people at tech years 1748, 1755, 1760, 1775 and 1790: every ratio against the deathless armour stays below 0.5; with the bearer of Glo it is at least 1.0.
-6. **Deathless in play.** A scenario test (HOI4 Agent Tools scenario tester, then the Linux run): an Aenor host of 10 divisions against 8 deathless divisions for 60 days leaves the deathless with at least 85% strength; one shockwave removes at least 50% of the strength in its state.
-7. **Research years.** Every tech's `start_year` is between 1500 and 1790; no starting tech shows an ahead-of-time penalty; a 1750 tech researched in 1748 shows one.
-8. **Doctrines.** Each people sees at least one land grand doctrine; only Zol sees the Deathless Tide; only Volgan sees the Grave Muster.
-9. **Navy and the sea.** A West Lands naval invasion plan to Aenor's coast is invalid without `zin_tech_deep_water_hulls` and valid with it (Linux run).
-10. **Skies rule.** With `none`, no air sub-unit, air tech or scorpion is visible; with `beasts`, Aenor can build griffins.
-11. **Great Wall.** Every `zin_is_site_great_wall` state has forts at level 5 or more on the Aenor side and the `zin_war_great_wall` modifier.
-12. **365-day Linux run.** The AI recruits ZIN templates, produces ZIN equipment and researches ZIN techs; no new errors.
-13. **Validation tools.** HOI4 Agent Tools script validation and tech inspection pass; the tech renderer produces a review image of every folder.
-14. **3D pilots.** Each pilot passes the kit's evidence list (calibration, actions, reimport proof, counters); every sub-unit sprite has an entity or a recorded fallback to the generic entity.
-15. **Script enums.** Every ZIN archetype named in an `equipment_bonus` is listed in `script_enum_equipment_bonus_type`.
+1. **No vanilla left.** The staged mod defines no vanilla sub-unit, equipment, technology or doctrine key except the kept `convoy`, `train_equipment` and `motorized_equipment`, and no file of §15.2 marked "replace" or "override" loads its vanilla content (vanilla removal checks C1 and C2). The Linux run's `error.log` has no "unknown equipment", "unknown technology" or "unknown sub unit" line.
+2. **Stage 2 budget.** After the stage-2 build, the Linux run's `error.log` has at most 13 lines, all in B12; no line matches the B11 or B14 patterns of `tools/content/data/vanilla/baseline_errors.json` (check C6). C3 reports no reference to an undefined name, and C4 finds no bridge marked "remove in stage 2".
+3. **Everyone can fight.** A builder test over all 305 countries: each can recruit at least one line template from its people, research at least one technology in every folder it sees, and, if coastal, build one ship; every country has a start package.
+4. **Start constraints.** On 1 Thaw 4A 1748: no country at war; no division outside its owner's territory; Zol has no division; no `zin_glo_blade_equipment`, `zin_dragon_equipment`, `zin_volgan_presence_equipment`, `zin_zol_manifestation_equipment` or `zin_shachihata_equipment` anywhere; the bound-demon tech and unit are invisible to every country (`zin_war.1` with `zin_rule_debug_checks` on, Linux run).
+5. **Secret.** Names spec check T2 finds no "Afrit" or Deliverer-as-demon text in any warfare localisation reachable before `zin_afrit_revealed`.
+6. **Deathless invariant.** An offline calculator in the builder tests computes division piercing for the best template of every people at tech years 1748, 1755, 1760, 1775 and 1790: every ratio against the deathless armour stays below 0.5; with the bearer of Glo it is at least 1.0.
+7. **Deathless in play.** A scenario test (HOI4 Agent Tools scenario tester, then the Linux run): an Aenor host of 10 divisions against 8 deathless divisions for 60 days leaves the deathless with at least 85% strength; one Glo's Wave (Yeldenne spec, later wave) removes at least 50% of the strength in its state.
+8. **Research years.** Every tech's `start_year` is between 1500 and 1790; no starting tech shows an ahead-of-time penalty; a 1750 tech researched in 1748 shows one (Linux run).
+9. **Doctrines.** Each people sees at least one land grand doctrine; only Zol sees the Deathless Tide; only Volgan sees the Grave Muster (builder test on `visible` and `available`).
+10. **Navy and the sea.** A West Lands naval invasion plan to Aenor's coast is invalid without `zin_tech_deep_water_hulls` and valid with it (Linux run).
+11. **Skies rule.** With `dragons_only` (default), no griffin unit or tech is visible and a granted dragon wing can be deployed; with `none`, no air sub-unit, air tech or scorpion is visible; with `beasts`, Aenor can build griffins (Linux run, one start per option).
+12. **Great Wall.** Every `zin_is_site_great_wall` state has forts at level 5 or more on the Aenor side and the `zin_war_great_wall` modifier (builder test on the staged states and the startup effect).
+13. **365-day Linux run.** The AI recruits ZIN templates, produces ZIN equipment and researches ZIN techs; no new error line.
+14. **Validation tools.** HOI4 Agent Tools script validation and tech inspection pass; the tech renderer produces a review image of every folder; every sub-unit sprite has an entity or a recorded fallback.
+15. **3D pilots.** Each pilot keeps the kit's evidence list (calibration, actions, reimport proof, counters).
+16. **Script enums.** Every ZIN archetype named in an `equipment_bonus` is listed in `script_enum_equipment_bonus_type` (builder test).
+17. **Resources.** Every equipment cost uses only the six non-Grain resources, and Timber, Horses and Essence each have a consumer (V2; economy acceptance 8).
+18. **Crash tests.** The Aenor start (R1) and the eight L1 start cases do not crash with the stage-2 build (vanilla removal rule 8).
+19. **Story templates and ids.** Every template of §4.9a is valid (its sub-units exist; its people may use them); `zin_abyss_folk` is recruitable by no country and is created only by the Volgan mechanic's spawn; no sub-unit id of this spec equals a focus or spirit id of any tree (decision F3; the build fails on a collision); `zin_rule_skies` sits in `RULE_GROUP_ZIN` with `dragons_only` as its default (builder test).
 
 ## Open questions
 
-1. **The sky.** Keep griffins (a proposed creature, not in the vault), use dragons only, or remove air entirely?
-2. **Orc mounts.** What, if anything, do orc raiders ride?
-3. **Dragons and the dark.** Dragons served Volgan in the First Age. May Volgan receive dragons in the Fourth Age, and how?
-4. **Gunpowder.** Is the Fourth Age free of gunpowder, with crossbows and torsion engines as the peak?
-5. **Glo after the sword.** Gameplay keeps a reduced bearer effect (piercing 120) after Zol crushes the sword, and ends the shockwave. The vault leaves Glo's remaining power open. Is this acceptable as gameplay only?
-6. **Zol's commanders.** Zol's divisions are led by nameless "Deathless Captains". Acceptable, given that who administers the Mistake is open?
-7. **Two kinds of dead.** Volgan's grave hosts and Zol's deathless are separate unit families with separate models and no stated relation. Confirm.
-8. **Dwarves.** Their homeland is open. Should dwarves appear at all (for example as hired engineers), or wait for the lore?
-9. **Weapon references.** The pilots are weapon-free. May the 3D route make separate weapon-only references (spear, sword, shield, axe, bow, club) for owner approval?
-10. **Unit sound.** The kit requires licensed external audio with provenance. Is that acceptable for ZIN, given that all art is generated?
-11. **Sunhot elves at war.** They are "among the most peaceful" peoples. Should their AI ever attack, or only defend?
-12. **Grave-host strain.** Volgan's grave hosts lose strength outside the Dead Lands, extending the Third Age rule about Elzon's corpses. Keep it?
-13. **Great spirits as units.** Volgan's "great spirits" become rare support companies (up to three). Acceptable, or should they be generals only?
-14. **Yeldenne's army.** Yeldenne starts with no divisions; Horos and the castle's protections are a mechanic. Confirm.
+All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md) (warfare questions and owner short list 13).
+
+1. **The sky.** Dragons only, griffins under a rule, or no air at all? **Proposal, in use:** dragons only by default; griffins under `beasts`.
+2. **Orc mounts.** What, if anything, do orc raiders ride? **Proposal, in use:** unnamed "mounts" (the raider line uses the generic mounts equipment).
+3. **Dragons and the dark.** May Volgan receive dragons in the Fourth Age? **Proposal, in use:** no route (magic spec).
+4. **Gunpowder.** **Proposal, in use:** none; crossbows and torsion engines are the peak.
+5. **Glo after the sword.** **Proposal, in use:** a reduced bearer (piercing 120) after `zin_horos_sword_broken`, as gameplay only.
+6. **Two kinds of dead.** **Proposal, in use:** Volgan's grave hosts and Zol's deathless are separate unit families with separate models and equipment, and no stated relation.
+7. **Dwarves.** **Proposal, in use:** no dwarven units until the lore places them (owner short list 12).
+8. **Weapon references.** **Proposal, in use:** models stay weapon-free until the owner approves separate weapon-only reference images.
+9. **Unit sound.** **Proposal, in use:** ZIN units use the engine's generic sound events by name (no audio file is copied or shipped) until the builder's synthesised unit sounds are accepted (A9: sound is synthesised in code from ZIN-written recipes; no samples, library or AI audio; [music and sound](../08_art_and_assets/04_music_and_sound.md)).
+10. **Sunhot elves at war.** **Proposal, in use:** their AI defends and joins defensive wars only (AI strategy `avoid_starting_wars` 200 for every Sunhot realm).
+11. **Grave-host strain.** **Proposal, in use:** kept (§6.5).
+12. **Great spirits as units.** **Proposal, in use:** up to three rare support companies.
+13. **Yeldenne's army.** **Proposal, in use:** no divisions; Horos and the castle's protections are the Yeldenne mechanic.
+14. **Black ships at start.** Zol starts with three corsairs in its own waters (proposed from the 4A 1744 fishermen's tales), though the Zol spec gives Zol no starting divisions. **Proposal, in use:** the three corsairs.
+
+Settled: Zol's commanders are numbered hosts (S4); dragons use the air layer (S6); Zol and Yeldenne start with no divisions (R3), Zol with its three corsairs only.
 
 ## Dependencies
 
 - [Start and calendar](../00_foundation/01_start_and_calendar.md): start date; this spec restores the ahead-of-time penalty.
-- Peoples and politics (00_foundation): people flags and ideas; combat modifiers moved out (15.5).
+- [Vanilla removal](../00_foundation/06_vanilla_removal_and_zero_errors.md): this spec is its stage 2; dispositions, checks C1–C7 and the error budget.
+- Peoples and politics (00_foundation): people flags and ideas; combat modifiers moved out (15.5); the politics step's history changes (15.7).
 - [Map accuracy](../01_map/01_map_accuracy.md), [key sites](../01_map/02_key_sites.md): wall states, fort levels, Dead Lands storms, Mirolon's passes, Dragon Mountain.
-- [Start situation](../02_lore/01_start_situation.md): peaceful start, the secret, Worshipdom's tiny army, generals and characters.
-- Economy (03_gameplay): resources, buildings (eyries, harbours, forts), industry and electronics folders, MIOs.
-- [Magic and world systems](04_magic_and_world_systems.md): dragons, Glo, the Great Wall, the deathless, Dead Lands storms.
+- [Start situation](../02_lore/01_start_situation.md): peaceful start, the secret, the Worshipdom's tiny army, the start peace strategy.
+- [Characters](../02_lore/02_characters.md): commanders and their traits; country-leader traits (stage 2).
+- [Economy](02_economy.md): resources, buildings (eyries, harbours, forts), the industry and electronics folders, workshops, special projects.
+- [Diplomacy](03_diplomacy_and_factions.md): factions, autonomy, intelligence, occupation, peace and scorer replacements in the same build.
+- [Magic and world systems](04_magic_and_world_systems.md): dragons, the Great Wall's life, the deathless rules, Dead Lands storms.
 - [Historical path and AI](06_historical_path_and_ai.md): war timing, peace-first AI.
-- [Shared contract](../04_mechanics/00_shared_contract.md) and the mechanics specs: Zol (`zin_mistake_power`, manifestation), Volgan (`zin_dominion_strength`, presence), Afrit (bound demons, corrupted dragons), Eindil's journey (bearer of Glo, the dragon), Western Crossing.
+- [Shared contract](../04_mechanics/00_shared_contract.md) and the mechanics specs: Zol (`zin_mistake_power`, hosts, manifestation), Volgan (`zin_dominion_strength`, presence), Afrit (bound demons, corrupted dragons), Eindil's journey (bearer of Glo, the dragon, `zin_eindil_bearer_of_glo`), [Yeldenne and Glo](../04_mechanics/yeldenne_and_glo.md) (Glo's Wave), Western Crossing.
 - [Focus tree format](../05_focus_trees/00_format_and_compiler.md): research bonuses use the new tech categories; equipment effects use ZIN archetypes.
-- 07_interface: technology folder and doctrine GUIs. 08_art_and_assets: icons, counters, 3D pipeline. 09_validation: Linux run and offline checks.
+- 07_interface: technology folder and doctrine GUIs. 08_art_and_assets: icons, counters, 3D pipeline, music (the song lists). 09_validation: Linux run and offline checks.

@@ -1753,6 +1753,17 @@
    "stub": "events/zin_world.txt"
   },
   {
+   "path": "gfx/interface/equipmentdesigner/graphic_db",
+   "kind": "folder",
+   "action": "replace",
+   "stage": 2,
+   "owner": "docs/specs/03_gameplay/01_warfare.md",
+   "zin": [
+    "gfx/interface/equipmentdesigner/graphic_db/zin_equipment_icons.txt"
+   ],
+   "reason": "The equipment designer icon database names vanilla tags and two models vanilla never defines (B11); the warfare replacements write ZIN chassis and hull icons"
+  },
+  {
    "path": "gfx/loadingscreens",
    "kind": "folder",
    "action": "replace",
@@ -1772,7 +1783,7 @@
    "zin": [
     "history/countries/*"
    ],
-   "reason": "ZIN country histories. The 739 comment-only inactive files stay untouched until stage 3 (B8 stays, exempt in the stage-1 budget): every change to them, bodies or deleting the duplicates of ZIN tags, crashed 6 of 12 Linux starts as Aenor on 19 October 2026, while every start that left them alone ran."
+   "reason": "ZIN country histories. The 739 comment-only inactive files were deleted with the vanilla tags in stage 1 (19 October 2026); the earlier start crashes blamed on changing them were the flag-sheet overflow."
   },
   {
    "path": "history/general",

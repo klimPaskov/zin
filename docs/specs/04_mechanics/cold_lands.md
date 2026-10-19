@@ -1,6 +1,6 @@
 # The Cold Lands: the Northern Accord, the tribes and the far north
 
-**Status:** Draft. **Priority:** 3. **Phase:** 3.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ This spec defines the mechanic that makes the Cold Lands their own world:
 - **The western ports and the Neck Road**: the Cold Lands' trade with the West Lands and their part in the Western Crossing.
 - **The Cold Lands in the War of the Last Crowns**: what Coldor may do when the south burns.
 
-The focus tree [../05_focus_trees/major/coldor.md](../05_focus_trees/major/coldor.md) drives most of it. Isengard, Horidor, Windwaith, Fearno, Titanos, the Yeti Lands and Yeldenne act through events here and through their regional trees; the clans through the shared Cold Lands tree. Yeldenne, Horos and Glo belong to [Yeldenne and Glo](yeldenne_and_glo.md); Eindil to [Eindil's journey](eindil_journey.md).
+The focus tree [../05_focus_trees/major/coldor.md](../05_focus_trees/major/coldor.md) drives most of it; the regional trees are in [../05_focus_trees/regional/cold_lands.md](../05_focus_trees/regional/cold_lands.md) and the shared tree in [../05_focus_trees/shared/shared_cold_lands.md](../05_focus_trees/shared/shared_cold_lands.md). Isengard, Horidor, Windwaith, Fearno, Titanos, the Yeti Lands and Yeldenne act through events here and through their regional trees; the clans through the shared Cold Lands tree. Yeldenne, Horos and Glo belong to [Yeldenne and Glo](yeldenne_and_glo.md); Eindil to [Eindil's journey](eindil_journey.md).
 
 ## Lore basis
 
@@ -38,6 +38,19 @@ The focus tree [../05_focus_trees/major/coldor.md](../05_focus_trees/major/coldo
 **Proposed by this spec:** defiance, reach, lean, winters, pacts, the winter moots, the March Forts border war, the Neck Road, the white companies; all numbers, events and decisions. The vault says nothing about the Cold Lands in the War of the Last Crowns; every war route here is play, never history.
 
 **Kept open:** the exact place of Eindil's ice and of the Castle of Yeldenne (vault open; the map step picks proposed states); who lives in the castle besides Horos; what yeti and giants are in the order of beings. Text never states them. Nothing visible at the start mentions a sleeper in the ice (the start-situation spec keeps such foreshadowing out until the owner allows it).
+
+## Decisions applied
+
+| Decision | How this spec applies it |
+| --- | --- |
+| D3, D4 | No Cold Lands text names Afrit or Eindil. The temple party in `zin_cold.60` is never given a master; the stranger is "the man from the ice" until `zin_eindil_named`. |
+| V4 | The historical-path dates here (the March Forts in 4A 1752, the timber sales in 4A 1753 and 1754) are written at the standard pace and scaled by `zin_story_pace` (Implementation, "Dates"). |
+| N9 | Coldor's guides are one more guide term in the journey's ambush formula; the historical path keeps the ambush at 4 or more (section 6). |
+| N11 | Every shared name here is registered once in [00_contract_additions.md](00_contract_additions.md) with this spec as owner. |
+| S9, E4 | Coldor's hidden branches use `allow_branch` only on conditions E4 allows: conditions fixed at the start, and the story flags `zin_eindil_awake` and `zin_horos_dead`, whose layouts refresh at E4's points (the journey's setter; `zin_cold_monthly`) and which the focus repeats in `available` (Coldor tree). `zin_war_of_last_crowns` gates its branch through `available` only, so that branch stays visible. `zin_cold_monthly` refreshes the Cold Lands trees' layouts (Implementation). |
+| R1 | `zin_rule_cold_isengard` sits in `RULE_GROUP_ZIN` with `DEFAULT` first. |
+| R3, R4 | Coldor's and the clans' start values are this spec's; start footholds are the Afrit spec's (every Cold Lands country except Yeldenne 1). |
+| E1 | Effects listed with arguments compile to temporary variables `zin_arg_<name>` (Implementation). |
 
 ## Design
 
@@ -86,11 +99,11 @@ Dynamic modifier `zin_cold_reach_mod` on Coldor: `political_power_gain` = reach 
 | **The Iron Hand** (historical) | `zin_cold_iron_hand` | The March Forts border war, then pressure | Isengard swears, or stays defiant and humbled |
 | **Isengard Must Kneel** | `zin_cold_conquest` | Full war for a puppet (only from the Iron Hand, late) | Isengard a Coldor subject |
 
-**The March Forts** (`zin_cold_start_march_war`): a border war (`start_border_war`) between the Coldor and Isengard states with `zin_is_site_isengard_march`; `change_state_after_war = no`; minimum 45 days; combat width 80; 4 provinces a side. Needs `zin_cold_march_war_allowed`: after 1 Thaw 1751 and (`zin_gathering_dark` ≥ 15 or Isengard's defiance ≥ 80), or, under the historical rule, after 1 Thaw 1752. Win and loss go through `zin_cold_end_march_war`: defiance −25 or +15; winner war support +5 %; the loser stability −5 %; news `zin_cold.32`.
+**The March Forts** (`zin_cold_start_march_war`): a border war (`start_border_war`) between the Coldor and Isengard states with `zin_is_site_isengard_march`; `change_state_after_war = no`; minimum 45 days; combat width 80; 4 provinces a side. Needs `zin_cold_march_war_allowed`: after 1 Thaw 1751 (`zin_cold_date_march_open`) and (`zin_gathering_dark` ≥ 15 or Isengard's defiance ≥ 80), or, under the historical rule, after 1 Thaw 1752 (`zin_cold_date_march_historical`). Win and loss go through `zin_cold_end_march_war`: defiance −25 or +15; winner war support +5 %; the loser stability −5 %; news `zin_cold.32`.
 
 **Isengard swears** (`zin_cold_isengard_swears`): Isengard joins the Northern Accord faction (`add_to_faction`); flag `zin_cold_isengard_sworn`; `zin_opinion_cold_rivalry` removed both ways and `zin_cold_accord_kin` (+15) added; Isengard gets `zin_cold_sworn_to_the_accord` (proposed: Isengard keeps its warlord and its forts; the Accord is a league, not a crown). If Isengard is a player, it is asked (`zin_cold.30`); the AI accepts at defiance ≤ 30. On the Open Hand, `zin_cold.30` comes from Coldor's focus *A Charter for Isengard*. On the Iron Hand, `zin_cold_monthly` fires it once when the March Forts have been fought and defiance first falls to 30 or below (the charter offered at the sword's point).
 
-**Isengard Must Kneel**: Coldor's war focus creates a `puppet_wargoal_focus` war goal on Isengard and declares war. Needs `zin_cold_iron_hand`, the March Forts fought, defiance > 30, and (`zin_gathering_dark` ≥ 30 or `zin_war_of_last_crowns`). Never on the historical path. A Coldor that annexes Isengard by war gets the Glo spec's `zin_glo_conqueror` through its own `on_annex` rule.
+**Isengard Must Kneel**: Coldor's war focus creates a `puppet_wargoal_focus` war goal on Isengard and declares war. Needs `zin_cold_iron_hand`, the March Forts fought, defiance > 30, and (`zin_gathering_dark` ≥ 30 or `zin_war_of_last_crowns`). Never on the historical path. Declaring that war gives Coldor the Glo spec's `zin_glo_conqueror` (its `on_declare_war` rule), so a conquering Coldor can never be a worthy claimant of Glo. The March Forts border war is not a declared war and does not.
 
 ### 2. The tribes and the winter moots
 
@@ -115,21 +128,21 @@ Dynamic modifier `zin_cold_reach_mod` on Coldor: `political_power_gain` = reach 
 
 | Key | Requires | Cost | Effect | Cooldown |
 | --- | --- | --- | --- | --- |
-| `zin_cold_send_envoys` | — | 25 PP | lean +10 | 120 days per target |
-| `zin_cold_feed_the_steadings` | winter is hard or bitter; 1 Mistfall to 1 Thaw | 50 PP (25 with `zin_cold_winter_stores`) | lean +15; target stability +3 %; flag `zin_cold_fed_by_fandanar` | once per target per winter |
+| `zin_cold_send_envoys` | — | 25 PP (15 PP with the Coldor tree's flag `zin_coldor_cheap_envoys`, *Steading Charters*) | lean +10 | 120 days per target |
+| `zin_cold_feed_the_steadings` | `zin_cold_winter_is_hard` | 50 PP (25 with `zin_cold_winter_stores`) | lean +15; target stability +3 %; flag `zin_cold_fed_by_fandanar` | once per target per winter |
 | `zin_cold_invite_to_accord` | lean ≥ 50; target not in a faction; focus *Open the Accord* | 25 PP | `zin_cold.40` | 180 days per target |
 | `zin_cold_offer_protection` | lean ≥ 80; reach ≥ 40 | 100 PP | `zin_cold.41` | 365 days per target |
-| `zin_cold_bread_for_isengard` | winter hard or bitter; Coldor on the Open Hand | 75 PP | Isengard gets `zin_cold_bread_from_fandanar` (90 days) | once per winter |
+| `zin_cold_bread_for_isengard` | `zin_cold_winter_is_hard`; Coldor on the Open Hand | 75 PP | Isengard gets `zin_cold_bread_from_fandanar` (90 days) | once per winter |
 
-**Isengard's counter** (category `zin_cold_isengard`, Isengard only): `zin_cold_winter_gifts` (25 PP, target lean −10, 120 days per target) and `zin_cold_isengard_feeds` (in a hard or bitter winter, 50 PP, lean −15, flag `zin_cold_fed_by_isengard`). The AI uses them on its neighbours.
+**Isengard's counter** (category `zin_cold_isengard`, Isengard only): `zin_cold_winter_gifts` (25 PP, target lean −10, 120 days per target) and `zin_cold_isengard_feeds` (while `zin_cold_winter_is_hard`, 50 PP, lean −15, flag `zin_cold_fed_by_isengard`). The AI uses them on its neighbours.
 
 `zin_cold.40` *An Invitation from Fandanar*: join the Accord (AI chance = lean) or decline (lean −10). `zin_cold.41` *The Crown's Protection*: accept (Coldor `puppet`s the target; AI chance = lean − 40, ×2 if the target is at war) or refuse (lean −20).
 
 ### 3. The Long Winters
 
-`zin_cold_winter` (global, 0 mild, 1 hard, 2 bitter) is set each year on 1 Mistfall by the hidden `zin_cold.10` (weights 40 / 40 / 20) and announced by `zin_cold.11` to every Cold Lands country. Under `zin_rule_historical_path` the winters follow a fixed list so test runs repeat: 1748 hard, 1749 mild, 1750 hard, 1751 bitter, 1752 hard, 1753 mild, 1754 hard, 1755 bitter, 1756 hard, 1757 mild, 1758 hard, 1759 mild (proposed).
+`zin_cold_winter` (global, 0 mild, 1 hard, 2 bitter) is set each year on 1 Mistfall by the hidden `zin_cold.10` (weights 40 / 40 / 20) and announced by `zin_cold.11` to every Cold Lands country. The startup event schedules `zin_cold.10` for 1 Mistfall 4A 1748 (245 days after the start) and `zin_cold.20` for 1 Deepwinter 4A 1749 (306 days); each schedules itself again 365 days later (the engine year has no leap days). `zin_cold.10` sets the global flag `zin_cold_winter_season`; the hidden `zin_cold.13` *The Thaw*, 120 days later on 1 Thaw, clears it and removes the winter modifier. Under `zin_rule_historical_path` the winters follow a fixed list so test runs repeat: 1748 hard, 1749 mild, 1750 hard, 1751 bitter, 1752 hard, 1753 mild, 1754 hard, 1755 bitter, 1756 hard, 1757 mild, 1758 hard, 1759 mild (proposed).
 
-From 1 Mistfall to 1 Thaw every Cold Lands country carries dynamic modifier `zin_cold_winter_mod`:
+While `zin_cold_winter_season` is set (1 Mistfall to 1 Thaw) every Cold Lands country carries dynamic modifier `zin_cold_winter_mod`:
 
 | Winter | `winter_attrition_factor` | `stability_factor` | `monthly_population` |
 | --- | ---: | ---: | ---: |
@@ -153,7 +166,7 @@ Coldor holds two pact levels, `zin_cold_yeti_pact` and `zin_cold_giant_pact` (0�
 | 2 | Trackers in the Snow / Giants on the Passes | Coldor's tree spirits unlock (*Yeti Trackers*, *Giant Levies*) |
 | 3 | Hearth and Height | That realm joins any defensive war in which an outsider invades a Cold Lands state of Coldor (`zin_cold.50`, AI accepts); it does not join a faction and stays independent |
 
-The answering event lets the people accept (level 1; AI chance 60 + lean ÷ 2) or refuse (level stays 0; lean −5). A refused offer can be repeated after 180 days through decision `zin_cold_renew_old_pact`.
+The answering event lets the people accept (level 1; AI chance 60 + lean ÷ 2) or refuse (level stays 0; lean −5). A refused offer can be repeated after 180 days through decision `zin_cold_renew_old_pact`. The two peoples' regional trees steer the answer through flags this spec reads: `zin_regional_yeti_lands_open_to_truce` doubles the AI chance of accepting `zin_cold.51` and `zin_regional_titanos_open_to_pacts` that of `zin_cold.52`; `zin_regional_yeti_lands_apart` and `zin_regional_titanos_apart` set the AI chance to 0 and make `zin_cold_renew_old_pact` unavailable against that people ([regional Cold Lands](../05_focus_trees/regional/cold_lands.md)).
 
 ### 5. The far north-west
 
@@ -171,26 +184,26 @@ At the start it is only a cold edge of the map. Its states carry state modifier 
 | The wardens' option | Coldor | With `zin_cold_far_ice_charted`, journey event 11 *Talk of a Man from the Ice* gains a fourth option for Coldor: **Send the wardens to watch over him**: regard +10, renown +2, no delay. Historical AI: "Ignore northern tales" (journey) |
 | The Neck Road | Coldor and Gunwaith | If `zin_cold_neck_road` is set when the journey's *The Traders' Road South* fires, its "Give him provisions" option also adds lean +5 toward Fandanar for the host (the traders carry Coldor's goods) |
 
-Coldor's tree branch about these hooks is hidden (`allow_branch` on `zin_eindil_awake`).
+Coldor's tree branch about these hooks opens on `zin_eindil_awake` through `available` (decision E4: `allow_branch` holds only start-fixed conditions). The journey owns events 10, 11 and 12; the wardens' option and the Neck Road addition are hooks the journey adds to its own events, with the effects written here (`zin_cold_send_wardens`, `zin_cold_reward_ice_host`). The option text calls the stranger "the man from the ice" (D4).
 
 ### 6. Mp'E and the silent castle
 
 Yeldenne is one state, Mp'E, ruled by Horos ([Yeldenne and Glo](yeldenne_and_glo.md)). This spec only sets how the Cold Lands around it behave.
 
 - **The approach.** `zin_is_region_mpe_approach` (states adjacent to Mp'E) and `zin_is_site_yeldenne_landing` (the coastal state nearest Mp'E; the journey spec asks for this row) are generated sites.
-- **Respecting the hall.** Coldor's focus *Leave the Hall in Peace* sets `zin_cold_hall_respected`: non-aggression pact with Yeldenne; opinion +20 both ways. **Proposed hook for the Glo spec:** a Dominion petitioner with `zin_cold_hall_respected` is refused as a friend, not rebuked.
-- **Guides.** Coldor's focus *Guides of the Snow* sets `zin_cold_guides_north`. **Proposed hook for the journey spec:** it counts as one more guide flag in the ambush formula when Coldor owns `zin_is_site_yeldenne_landing` or leads the faction or is the overlord of its owner. The historical ambush strength (5) stays ≥ 4 with one more guide, so the canonical "none survive" still holds.
-- **Watch fires.** Coldor's focus *Watch-Fires of the North* sets `zin_cold_watch_fires`. While the Glo spec's internal flag `zin_glo_afrit_waiting` is set, Coldor gets `zin_cold.60` *Strangers in the Snow* once: a party of temple pilgrims with too many swords, camped on the northern coast. **Warn the castle** (sets the Glo spec's `zin_yeldenne_forewarned`; Coldor opinion of Aenor's crown −10) or **Keep out of it** (historical; AI always under the historical rule). The text never names the party's master.
+- **Respecting the hall.** Coldor's focus *Leave the Hall in Peace* sets `zin_cold_hall_respected`: non-aggression pact with Yeldenne; opinion `zin_cold_hall_friend` (+20) both ways. Hook for the Glo spec's decision `zin_glo_petition_horos`: a Dominion petitioner with `zin_cold_hall_respected` gets the Light answer (refused as a friend), not the rebuke.
+- **Guides.** Coldor's focus *Guides of the Snow* sets `zin_cold_guides_north`. It counts as one more guide term (−1) in the journey's ambush formula when Coldor owns `zin_is_site_yeldenne_landing`, leads the owner's faction, or is the owner's overlord. The historical strength is 4 (the journey's base 5, one betrayed port, the elven crew, Yeldenne's coast watch) plus the Afrit spec's terms (N9). So that the canonical "none survive" holds, Coldor's AI never takes *Guides of the Snow* under the historical rule; a human Coldor that does makes a divergence.
+- **Watch fires.** Coldor's focus *Watch-Fires of the North* sets `zin_cold_watch_fires`. While Afrit's party waits at the approach (the Afrit spec's `zin_afrit_at_yeldenne` is set and `zin_horos_dead` is not), Coldor gets `zin_cold.60` *Strangers in the Snow* once: a party of temple pilgrims with too many swords, camped on the northern coast. **Warn the castle** (sets the Glo spec's `zin_yeldenne_forewarned`; opinion `zin_cold_temple_swords` (−10) of Coldor toward the Aenor realm holding Parim) or **Keep out of it** (historical; AI always under the historical rule). The text never names the party's master.
 - **A guard outside the hall.** Coldor's focus *Stand Guard Outside the Hall* fires `zin_cold.61` to Yeldenne: accept (Coldor guarantees Yeldenne; `zin_yeldenne_add_wards` +5; Coldor gets `zin_cold_hall_guard`) or refuse. Horos's AI accepts if Coldor has `zin_cold_hall_respected` and has never petitioned for Glo; the guard never enters the hall.
-- **After the hall.** When `zin_horos_dead` is set, Coldor's hidden branch *The Empty Hall* opens. If Glo is sealed (`zin_glo_sealed`), Coldor may keep a watch on the hall (guarantee the Warden of Mp'E; wards cannot change after Horos's death in the Glo spec, so this is only a guarantee and opinion). Coldor can never take Glo: it is not a worthy-claimant system here, and the Glo spec's rules apply unchanged.
+- **After the hall.** When `zin_horos_dead` is set, Coldor's branch *The Empty Hall* becomes available. If Glo is sealed (`zin_glo_sealed`), Coldor may keep a watch on the hall (guarantee the Warden of Mp'E; wards cannot change after Horos's death in the Glo spec, so this is only a guarantee and opinion). Coldor can never take Glo: it is not a worthy-claimant system here, and the Glo spec's rules apply unchanged.
 
 ### 7. The western ports and the Neck Road
 
 **The Neck Road** (proposed name) is the land road over the broad neck between the Cold Lands and the West Lands (`zin_is_site_neck_road` states). Gunwaith's focus *The Neck Road* fires `zin_cold.70` to Coldor: **Open the road** (global flag `zin_cold_neck_road`; Coldor and Gunwaith get `zin_cold_neck_road_trade` for 730 days; AI yes) or **Keep it closed** (Gunwaith opinion −10).
 
-**Timber for the West.** Coldor's focus *Timber for the West* sets `zin_cold_timber_market` and opens decision `zin_cold_sell_timber_west` (Coldor; needs the West's Ford Council sitting or a western route chosen, [western crossing](western_crossing.md); 180-day cooldown): Coldor +40 PP; `zin_west_add_fleet` 5. On the historical path Coldor sells twice, in 4A 1753 and 4A 1754 (proposed).
+**Timber for the West.** Coldor's focus *Timber for the West* sets `zin_cold_timber_market` and opens decision `zin_cold_sell_timber_west` (Coldor; needs the West's Ford Council sitting, the global flag `zin_west_council`, or a western route chosen, any `zin_west_route_*` flag ([western crossing](western_crossing.md)); 180-day cooldown) runs `zin_cold_sell_timber`: Coldor +40 PP; `zin_west_add_fleet` 5. On the historical path Coldor sells twice: the AI takes the decision once on or after 1 Thaw 4A 1753 (`zin_cold_date_timber_1`) and once on or after 1 Thaw 4A 1754 (`zin_cold_date_timber_2`) (proposed).
 
-**Windwaith.** The maritime republic competes with Coldor's ports. Coldor's focus *The Windwaith Question* fires `zin_cold.71` to Windwaith: **A Harbour Compact** (both get `zin_cold_harbour_compact`; Windwaith lean +20) or **Refuse Fandanar's terms** (lean −10). The AI accepts at lean ≥ 0.
+**Windwaith.** The maritime republic competes with Coldor's ports. Coldor's focus *The Windwaith Question* fires `zin_cold.71` to Windwaith: **A Harbour Compact** (both get `zin_cold_harbour_compact`; Windwaith lean +20) or **Refuse Fandanar's terms** (lean −10). The AI accepts at lean ≥ 0, and always refuses when Windwaith has the regional tree's flag `zin_regional_windwaith_free_harbours` (*Free Harbours*). If Windwaith already has `zin_cold_harbour_compact` (its own tree's *A Harbour Compact*), the event does nothing.
 
 ### 8. The Cold Lands in the War of the Last Crowns
 
@@ -202,7 +215,7 @@ The vault says nothing about the Cold Lands in the final war. This spec offers t
 | **Timber and Ships for the West** | `zin_cold_route_crossing` | More timber sales; optionally *A Share of the Plunder*: global flag `zin_cold_joins_crossing`, Coldor joins the Western Crossing faction (joining rule in the western spec) and its war |
 | **The White Companies** | `zin_cold_route_companies` | Coldor joins the Lost Cause and, after `zin_eindil_returned`, Eindil's coalition; `zin_cold_sail_white_companies` lands three divisions in a friendly Middle Lands port |
 
-`zin_cold_sail_white_companies`: Coldor pays 30,000 manpower and 3,000 infantry equipment (placeholder type); three divisions of template `zin_cold_white_company` (warfare spec) are created in the coastal state controlled by the Host of Eindil (or the Aenor realm in the coalition) nearest the West; Coldor joins the coalition through `zin_eindil_join_coalition`; regard +15. Joining does not make Coldor a subject (established for the coalition).
+`zin_cold_sail_white_companies`: Coldor pays 30,000 manpower and 3,000 infantry equipment (the warfare spec's men's infantry equipment; vanilla `infantry_equipment` until that phase); three divisions of template "White Company" (`zin_cold_white_company`) are created in the coastal state controlled by the Host of Eindil (or the Aenor realm in the coalition) nearest the West; Coldor joins the coalition through `zin_eindil_join_coalition`; regard +15. Joining does not make Coldor a subject (established for the coalition). The effect defines the template with the `division_template` effect the first time it runs, with the warfare spec's composition (6 men's line infantry, 2 archers, 1 cavalry; scouts, healers, quartermasters; [03_gameplay/01_warfare.md](../03_gameplay/01_warfare.md) §4.9a); until the warfare phase, nine vanilla `infantry` battalions. The 3,000 equipment Coldor pays is the warfare spec's `zin_arms_equipment`.
 
 If the map gives any Cold Lands country a coast on the Ocean of Zol, it is on the Zol spec's rumour list; this spec adds nothing for Zol.
 
@@ -232,6 +245,16 @@ If the map gives any Cold Lands country a coast on the Ocean of Zol, it is on th
 
 ## Implementation
 
+### Builder
+
+A new content builder module, `tools/content/modules/mech_cold_lands.mjs`, writes every file below from the data file `tools/content/data/mechanics/cold_lands.json` (start leans by country name, the historical winter list, pact names, the decision table, dates and text keys) and is called from `tools/content/build.mjs`. It resolves names to tags with `tools/content/data/countries.json` (the 31 Cold Lands countries carry `"scan": "Cold Lands"` there) and fails the build if a named country is missing. The clan realms bordering Isengard are read from the map adjacency at build time. Everything goes through the one transaction of `tools/content/apply.mts`; no game file is hand-edited.
+
+**Arguments** (decision E1). Scripted effects take no parameters in 1.19.3: a call such as `zin_cold_add_lean` (`value`) compiles to the temporary variable `zin_arg_value` set just before the call; `zin_cold_end_march_war` (`winner`) uses the code 1 Coldor, 2 Isengard; `zin_cold_feed` (`target`) and `zin_cold_reward_ice_host` keep their country in `zin_arg_target`.
+
+**Start spirit and layouts.** The startup event `zin_cold.1` adds the Coldor tree's start spirit `zin_coldor_ports_against_interior` to Coldor (country histories come from the politics step; [Coldor tree](../05_focus_trees/major/coldor.md)). After its other work, `zin_cold_monthly` runs `mark_focus_tree_layout_dirty` for every Cold Lands country (decision E4), so tree branches that read this spec's variables refresh.
+
+Rows supplied to shared files: the rule `zin_rule_cold_isengard` in the foundation's `common/game_rules/zin_game_rules.txt` ([00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md)); the site rows below, which the key sites table already carries (`tools/content/data/sites.json`, written by `tools/content/modules/sites.mjs`); the start opinion `zin_opinion_cold_rivalry` in the start-situation opinions.
+
 ### Files
 
 | Path | Content |
@@ -243,10 +266,21 @@ If the map gives any Cold Lands country a coast on the Ocean of Zol, it is on th
 | `common/opinion_modifiers/zin_cold.txt` | Opinion modifiers below |
 | `common/decisions/categories/zin_cold.txt`, `common/decisions/zin_cold.txt` | Categories `zin_cold_accord`, `zin_cold_isengard`, `zin_cold_trade` |
 | `events/zin_cold.txt` | Namespace `zin_cold` (mechanic-owned; may use `trigger` and `mean_time_to_happen`) |
-| `common/on_actions/zin_cold.txt` | `on_startup` → `zin_cold.1`; monthly pulse on Coldor (or the largest Cold Lands country if Coldor is gone) → `zin_cold_monthly` |
-| `common/game_rules/zin_cold.txt` | `zin_rule_cold_isengard` |
-| `history/units/zin_cold.txt` | Template `zin_cold_white_company` for Coldor (warfare spec fills it) |
+| `common/on_actions/zin_cold.txt` | `on_startup` → `zin_cold.1`; `on_monthly` → `zin_cold_monthly` on Coldor (or, if Coldor is gone, the Cold Lands country with the most states, the anchor of the yearly events) |
 | `localisation/english/zin_cold_l_english.yml` | All text |
+
+### Dates
+
+Standard-pace engine dates; the module writes each as a scripted trigger with the three pace-shifted date sets of `zin_rule_story_pace`, as the historical path spec does.
+
+| Trigger | Standard date |
+| --- | --- |
+| `zin_cold_date_march_open` | 1751.3.1 |
+| `zin_cold_date_march_historical` | 1752.3.1 |
+| `zin_cold_date_timber_1` | 1753.3.1 |
+| `zin_cold_date_timber_2` | 1754.3.1 |
+
+The yearly winter and moot events keep their calendar days: they are seasons, not story dates.
 
 ### Variables
 
@@ -268,6 +302,7 @@ If the map gives any Cold Lands country a coast on the Ocean of Zol, it is on th
 | `zin_cold_isengard_sworn` | global | Isengard joined the Accord |
 | `zin_cold_fed_by_fandanar`, `zin_cold_fed_by_isengard` | country, cleared each moot | Fed this winter |
 | `zin_cold_winter_stores` | country | Halves the winter |
+| `zin_cold_winter_season` | global | Between 1 Mistfall and 1 Thaw |
 | `zin_cold_far_ice_charted` | Coldor | The far north-west charted |
 | `zin_cold_hall_respected`, `zin_cold_guides_north`, `zin_cold_watch_fires` | Coldor | Mp'E hooks |
 | `zin_cold_neck_road` | global | The Neck Road is open |
@@ -280,13 +315,14 @@ If the map gives any Cold Lands country a coast on the Ocean of Zol, it is on th
 | Trigger | Scope | True when |
 | --- | --- | --- |
 | `zin_cold_is_cold` | country | `has_country_flag = zin_region_cold_lands` |
-| `zin_cold_is_clan_realm` | country | Cold Lands, has `zin_cold_lean`, not Coldor, Isengard or Yeldenne |
+| `zin_cold_is_clan_realm` | country | Cold Lands, has `zin_cold_lean`, not Coldor, Isengard or Yeldenne. Intended to cover every lean-holding Cold Lands country, Horidor, Holdon, Fearno, Windwaith, the Yeti Lands and Titanos included: the winter feeding, the moot and the lean effects reach them all, while the old peoples' pacts (section 4) and Windwaith's compact are extra routes on top |
 | `zin_cold_march_war_allowed` | any | section 1 |
 | `zin_cold_isengard_may_swear` | any | Isengard exists, defiance ≤ 30, not at war with Coldor |
 | `zin_cold_isengard_settled` | any | `zin_cold_isengard_sworn` is set, or Isengard is a subject of Coldor (`is_subject_of`), or Isengard no longer exists and Coldor owns its former capital; read by Coldor's *The Cold Lands at Peace* |
-| `zin_cold_winter_is_hard` | any | `zin_cold_winter` ≥ 1 and the date is between 1 Mistfall and 1 Thaw |
-| `zin_cold_historical` | any | `zin_rule_cold_isengard` = historical or `zin_rule_historical_path` |
-| `zin_is_region_cold_lands`, `zin_is_region_far_northwest`, `zin_is_region_mpe_approach`, `zin_is_site_isengard_march`, `zin_is_site_neck_road`, `zin_is_site_fandanar`, `zin_is_site_eindil_ice`, `zin_is_site_yeldenne_landing` | state | generated site tests |
+| `zin_cold_winter_is_hard` | any | `zin_cold_winter` ≥ 1 and `zin_cold_winter_season` is set |
+| `zin_cold_date_*` | any | Dates |
+| `zin_cold_historical` | any | `zin_rule_cold_isengard` resolves to `HISTORICAL` |
+| `zin_is_region_cold_lands`, `zin_is_region_far_northwest`, `zin_is_region_mpe_approach`, `zin_is_site_isengard_march`, `zin_is_site_neck_road`, `zin_is_site_fandanar`, `zin_is_site_eindil_ice`, `zin_is_site_yeldenne_landing` | state | site tests generated in `common/scripted_triggers/zin_sites.txt` from the key sites table (owner: [01_map/02_key_sites.md](../01_map/02_key_sites.md)) |
 
 ### Scripted effects
 
@@ -307,6 +343,7 @@ If the map gives any Cold Lands country a coast on the Ocean of Zol, it is on th
 | `zin_cold_sail_white_companies` | Coldor | Section 8 |
 | `zin_cold_chart_far_ice` | Coldor | Sets `zin_cold_far_ice_charted`; lean +5 on every clan realm with a far north-west state |
 | `zin_cold_reward_ice_host` (`value`) | Coldor | Lean +value toward Fandanar for the owner of `zin_is_site_eindil_ice` |
+| `zin_cold_send_wardens` | Coldor | The wardens' option of journey event 11: `zin_eindil_add_regard` +10 on Coldor, `zin_eindil_add_renown` +2, no delay |
 | `zin_cold_join_crossing` | Coldor | Sets `zin_cold_joins_crossing`; adds Coldor to the Western Crossing faction and to its war on the Aenor realm |
 | `zin_cold_monthly` | Coldor | Drifts, reach, dynamic values, Isengard's counter checks |
 
@@ -340,6 +377,7 @@ Engine effects used: `start_border_war`, `cancel_border_war`, `add_to_faction`, 
 | `zin_cold_accord_kin` | +15 | Between Accord members; added on joining |
 | `zin_cold_fed_us` | +15 | Fed country → feeder; decays 1 a month |
 | `zin_cold_hall_friend` | +20 | Coldor ↔ Yeldenne with `zin_cold_hall_respected` |
+| `zin_cold_temple_swords` | −10 | Coldor → the Aenor realm holding Parim, after "Warn the castle"; decays 0.5 a month |
 
 ### Decisions
 
@@ -349,10 +387,11 @@ Categories `zin_cold_accord` and `zin_cold_isengard` as in section 2. Category `
 
 | Id | Title | For | Trigger | Options (AI) |
 | --- | --- | --- | --- | --- |
-| .1 | (hidden) Startup | Cold Lands countries | on_startup | Variables, leans, opinions, winter roll |
+| .1 | (hidden) Startup | Cold Lands countries | on_startup | Variables, leans, opinions, winter roll; Coldor's start spirit `zin_coldor_ports_against_interior` |
 | .10 | (hidden) The Year Turns Cold | anchor | 1 Mistfall each year | `zin_cold_roll_winter` |
 | .11 | The Winter Comes (mild / hard / bitter text) | Cold Lands countries | after .10 | OK |
 | .12 | Raiders from the Snow | Coldor, Isengard | bitter winter, MTTH 60 days | Pay them off / Punish them / Feed them |
+| .13 | (hidden) The Thaw | anchor | 120 days after .10 | Clears `zin_cold_winter_season`; removes `zin_cold_winter_mod` |
 | .20 | (hidden) The Winter Moot | anchor | 1 Deepwinter | Lean settlement |
 | .21 | The Winter Moot | Coldor, Isengard | after .20 | OK (summary tooltip) |
 | .30 | The Winter Charter | Isengard | Coldor's focus *A Charter for Isengard* | Swear to the Accord (AI if defiance ≤ 30) / Refuse (defiance +5) |
@@ -364,14 +403,14 @@ Categories `zin_cold_accord` and `zin_cold_isengard` as in section 2. Category `
 | .50 | Hearth and Height | Yeti Lands or Titanos | pact level 3 and an invasion of Coldor | Answer the call (AI) / Stay in the snow |
 | .51 | Envoys at the Hunting Grounds | Yeti Lands | Coldor's focus | Accept the pact / Refuse |
 | .52 | Envoys at the Frost-King's Hall | Titanos | Coldor's focus | Accept the pact / Refuse |
-| .60 | Strangers in the Snow | Coldor | `zin_cold_watch_fires` and `zin_glo_afrit_waiting` | Warn the castle / Keep out of it (hist) |
+| .60 | Strangers in the Snow | Coldor | `zin_cold_watch_fires`, `zin_afrit_at_yeldenne` and not `zin_horos_dead` | Keep out of it (hist; first, so a timeout keeps Coldor out, E2) / Warn the castle |
 | .61 | A Crown Offers a Guard | Yeldenne | Coldor's focus | Accept / Refuse |
 | .70 | The Neck Road | Coldor | Gunwaith's focus | Open the road (hist) / Keep it closed |
 | .71 | The Windwaith Question | Windwaith | Coldor's focus | A Harbour Compact / Refuse |
 
 ### Game rules
 
-`zin_rule_cold_isengard` (group "ZIN regions"): `historical` (default: Iron Hand, the March Forts in 1752, no full war), `open_hand`, `conquest`, `free`. `zin_rule_historical_path` forces `historical`.
+`zin_rule_cold_isengard` (in the foundation's rules file, group `RULE_GROUP_ZIN`, decision R1): `DEFAULT` (first option; follows `zin_rule_historical_path`: `HISTORICAL` under its HISTORICAL, otherwise `FREE`), `HISTORICAL` (Iron Hand, the March Forts in 1752, no full war), `OPEN_HAND`, `CONQUEST`, `FREE`. As every ZIN rule, it never acts on a player's country.
 
 ### Defines
 
@@ -392,11 +431,11 @@ New rows for the key sites table ([../01_map/02_key_sites.md](../01_map/02_key_s
 
 ## AI
 
-- **Coldor** follows `zin_rule_cold_isengard`. On `free`: Open Hand weight = 100 − defiance; Iron Hand weight = defiance; conquest only after `zin_war_of_last_crowns` with a 2:1 division lead.
+- **Coldor** follows `zin_rule_cold_isengard`. On `FREE`: Open Hand weight = 100 − defiance; Iron Hand weight = defiance; conquest only after `zin_war_of_last_crowns` with a 2:1 division lead.
 - **Accord decisions:** Coldor sends envoys to the three highest-lean clans first; feeds every clan with lean between −20 and 50 in hard and bitter winters while PP ≥ 100; invites at lean ≥ 60; never targets a country Isengard guarantees.
 - **Isengard** uses its counter-decisions on its neighbours; starts the March Forts itself only at defiance ≥ 80 and never under the historical rule (the historical rule has Coldor start it in 1752).
 - **Startup strategies:** Coldor `befriend` Horidor (50) and `antagonize` Isengard (20); Isengard `antagonize` Coldor (30); clans `befriend` the crown they lean to above 50.
-- **The final war:** Coldor stands apart under the historical rule; on `free`, the White Companies weight = Coldor's Eindil regard + 25 if Coldor is in the Lost Cause.
+- **The final war:** Coldor stands apart under the historical rule; on `FREE`, the White Companies weight = Coldor's Eindil regard + 25 if Coldor is in the Lost Cause.
 
 ## Acceptance
 
@@ -405,26 +444,34 @@ New rows for the key sites table ([../01_map/02_key_sites.md](../01_map/02_key_s
 3. No text, modifier or state name visible before `zin_eindil_awake` hints at a sleeper in the ice (compiler text check over `zin_cold` and the far north-west state names).
 4. Under the historical rule the winter list is as given, and Coldor feeds at least three clans in the 1751 winter.
 5. Historical run: the March Forts border war starts in 4A 1752; Coldor never declares a full war; Coldor sells timber twice by the end of 1754 and the western fleet rises by 10; Coldor takes *The Cold Lands Stand Apart* within 120 days of `zin_war_of_last_crowns`.
-6. With `zin_rule_cold_isengard = open_hand`, Isengard swears to the Accord in at least one of three seeds by 1760.
+6. With `zin_rule_cold_isengard` = `OPEN_HAND`, Isengard swears to the Accord in at least one of three seeds by 1760.
 7. Scenario: Coldor with `zin_cold_far_ice_charted` receives journey event 11 with the wardens' option; choosing it adds regard and no delay.
-8. Scenario: Coldor with `zin_cold_watch_fires` while `zin_glo_afrit_waiting` is set receives `zin_cold.60`; "Keep out of it" changes nothing in the Glo system; "Warn the castle" sets `zin_yeldenne_forewarned`.
-9. Every modifier key here exists in the game's modifier documentation; every engine effect and trigger named exists in the effect and trigger documentation.
+8. Scenario: Coldor with `zin_cold_watch_fires` while `zin_afrit_at_yeldenne` is set and Horos lives receives `zin_cold.60`; "Keep out of it" changes nothing in the Glo system; "Warn the castle" sets `zin_yeldenne_forewarned`.
+9. Every modifier key here exists in the 1.19.3 modifier documentation; every engine effect and trigger named exists in the effect and trigger documentation; the HOI4 Agent Tools script validator reports no errors in the `zin_cold` files.
+10. Under the historical rule Coldor never takes *Guides of the Snow*, and the journey's ambush strength stays at 4 or more in the historical run.
+11. With `zin_rule_story_pace` = `SLOW`, the historical March Forts start 1.5 times as far from the start (Thaw 4A 1754).
+12. A build test fails if a country named in the data file is missing from `countries.json` or is not a Cold Lands country there.
+13. In a 12-year run the winter season flag is set from 1 Mistfall to 1 Thaw each year, and no winter modifier remains outside it.
+14. On day 1 Coldor has `zin_coldor_ports_against_interior`; with `zin_coldor_cheap_envoys` *Send Envoys* costs 15 PP; with `zin_regional_windwaith_free_harbours` the Windwaith AI refuses `zin_cold.71`; with `zin_regional_titanos_apart` the Titanos AI refuses `zin_cold.52` and `zin_cold_renew_old_pact` cannot target it (scenario test).
+15. `zin_cold_monthly` contains `mark_focus_tree_layout_dirty`; no Coldor `allow_branch` reads a story flag; every event sets `timeout_days = 30` (builder test).
 
 ## Dependencies on other specs
 
-- [Eindil's journey](eindil_journey.md): event 11 gains Coldor's wardens' option (section 5); the ambush formula may count `zin_cold_guides_north` (section 6); *The Traders' Road South* reads `zin_cold_neck_road`.
-- [Yeldenne and Glo](yeldenne_and_glo.md): `zin_cold.60` may set `zin_yeldenne_forewarned`; `zin_cold_hall_respected` turns a Dominion petition into a friendly refusal (proposed); `zin_glo_afrit_waiting` is read.
+- [Eindil's journey](eindil_journey.md): event 11 gains Coldor's wardens' option (section 5); the ambush formula counts `zin_cold_guides_north` (section 6); *The Traders' Road South* reads `zin_cold_neck_road`; `zin_eindil_join_coalition`, `zin_eindil_add_regard`, `zin_eindil_add_renown`.
+- [Yeldenne and Glo](yeldenne_and_glo.md): `zin_cold.60` may set `zin_yeldenne_forewarned`; `zin_cold_hall_respected` turns a Dominion petition into a friendly refusal (proposed); `zin_afrit_at_yeldenne` and `zin_horos_dead` are read.
 - [Western crossing](western_crossing.md): `zin_west_add_fleet`; the joining rule for `zin_cold_joins_crossing`; the Ford Council state.
 - [Diplomacy](../03_gameplay/03_diplomacy_and_factions.md): Northern Accord faction (`zin_faction_northern_accord`); add `zin_opinion_cold_rivalry` to its start opinions.
 - [Economy](../03_gameplay/02_economy.md): `zin_econ_cold_lands`; region flags `zin_region_<key>`.
-- Warfare spec (not yet written): template `zin_cold_white_company`.
+- [Warfare](../03_gameplay/01_warfare.md): the units of `zin_cold_white_company` and the men's infantry equipment.
+- [Key sites](../01_map/02_key_sites.md): the site rows in "Map and site dependencies".
 - Regional specs for Isengard, Horidor, Windwaith, Fearno, Titanos, the Yeti Lands and Yeldenne, and the shared Cold Lands tree: their answers to `zin_cold.30`, `.33`, `.40`, `.41`, `.51`, `.52`, `.71` and their own uses of lean and the winter.
 
 ## Open questions
 
-1. **Coldor in the final war.** The vault is silent. This spec proposes that the Cold Lands stand apart and sell timber to the West. Should Coldor take part instead, and on which side?
-2. **Isengard.** Is the rivalry meant to end in the Fourth Age, or stay open forever? The historical path leaves it to the dice of a border war.
-3. **The far north-west.** Which states are the far north-west, and which clan realm owns Eindil's ice?
-4. **Yeti and giants.** Should the Yeti Lands and Titanos be courted at all by a human crown, or keep wholly apart?
-5. **A queen or a king in Fandanar?** The characters spec proposes Queen Vaestia; the tree uses "the Queen" in text.
-6. **The Winter Moot.** Is a yearly moot of the clans a good fit for the Cold Lands' tribes, or should the tribes have no common gathering?
+All proceed on the labelled proposal; the owner's questions are listed in [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md) under "west and cold lands".
+
+1. **Coldor in the final war.** The vault is silent. Proposal: the Cold Lands stand apart and sell timber to the West (west and cold lands 9).
+2. **Isengard.** Does the rivalry end in the Fourth Age? Proposal: it stays open; the historical path leaves it to a border war (west and cold lands 10).
+3. **The far north-west.** Which states, and which clan realm owns Eindil's ice? Proposal: the 12 Cold Lands states farthest from Fandanar on the north-west edge; a north-western clan realm owns the ice (west and cold lands 11).
+4. **Yeti and giants, and the moot.** May a human crown court them, and is a yearly Winter Moot a fit? Proposal: yes to both (west and cold lands 12).
+5. **A queen or a king in Fandanar?** Proposal: Queen Vaestia, as the characters spec proposes (west and cold lands 13).

@@ -1,6 +1,6 @@
 # Noris Focus Tree
 
-**Status:** Draft. **Priority:** 4. **Phase:** 4.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 4. **Phase:** 4.
 
 ## Purpose
 
@@ -16,13 +16,15 @@ The tree has 112 focuses in ten branches, 30 columns wide (x 0 to 29).
 
 **Proposed** (vault proposals this tree builds on): the caravan roads opening in 4A 600 to 780 and the rivalry with Stabilo they began; the eastern branch's courtship from about 4A 1300; the start on 1 Thaw 4A 1748; the play choices "Noris and Stabilo can fight each other, fight Aenor, or fight him"; the outcome "the East unites under one king who is not Afrit".
 
-**Proposed here:** every focus, spirit, event and number; the three great clans (the royal House of Esiur, the rider clans of the Furan, the caravan houses of the Kersi), named after the proposed characters King Esiurth II, Rider-General Tumo Furan and Alodar Kersi; the Oasis-Keepers of the deep desert; the Tent Moot; the Indigo Guard; clan accord. Which eastern kings follow Afrit is **open** in the vault: the tree offers both answers and never states one as history. Before `zin_afrit_revealed` no text names Afrit; the King of the East is "the Deliverer" or "King Aurevan" through `zin_afrit_name`.
+**Proposed here:** every focus, spirit, event and number; the three great clans (the royal House of Esiur, the rider clans of the Furan, the caravan houses of the Kersi), named after the proposed characters King Esiurth II, Rider-General Tumo Furan and Alodar Kersi; the Oasis-Keepers of the deep desert; the Tent Moot; the Indigo Guard; clan accord. Which eastern kings follow Afrit is **open** in the vault: the tree offers both answers and never states one as history. Before `zin_afrit_revealed` no text names Afrit or the Hidden Council; the King of the East is "the Deliverer" or "King Aurevan" through the scripted localisation `zin_loc_deliverer` (contract additions). Before `zin_eindil_named` no text names Eindil; after it the tree still says "the stranger".
+
+**The King of the East (decision S1).** The King of the East is the Worshipdom under the cosmetic name "the Dominion of the East". A court that kneels becomes its subject with the autonomy state `zin_autonomy_eastern_client` and the flag `zin_afrit_eastern_client`; it does not join a faction. Which courts kneel is decided in each game by footholds, crises and choices.
 
 ## Design
 
 ### The peaceful start
 
-On 1 Thaw 4A 1748 every available focus is about the court, the clans, caravans, wells, envoys or the army's training. No focus before the route junction can create a war goal, a claim or a war. War content opens only from story flags (`zin_golden_king_dead`, `zin_war_of_last_crowns`, `zin_eastern_invasion`, `zin_east_turns_west`, `zin_afrit_king_of_east`, `zin_afrit_returned`, `zin_afrit_dead`, `zin_eindil_returned`) or from the mechanic's peace gates (the Caravan War gate).
+On 1 Thaw 4A 1748 every available focus is about the court, the clans, caravans, wells, envoys or the army's training. No focus before the route junction can create a war goal, a claim or a war. War content opens only from story flags (`zin_golden_king_dead`, `zin_war_of_last_crowns`, `zin_eastern_invasion`, `zin_east_turns_west`, `zin_afrit_king_of_east`, `zin_afrit_returned`, `zin_afrit_dead`, `zin_eindil_returned`) or from the mechanic's peace gates (the Caravan War gate). The start opinion between Noris and Stabilo is `zin_opinion_caravan_rivalry` (−25, decision N5).
 
 ### Clan accord (tree mechanic)
 
@@ -54,13 +56,14 @@ Noris is one crown over many tents. `zin_noris_clan_accord` (Noris, 0–100, sta
 
 - **Prerequisites:** `a + b` means a and b; `a / b` means a or b.
 - **x,y:** grid column and row.
-- **Effects** use the compiler vocabulary of [../00_format_and_compiler.md](../00_format_and_compiler.md): `political_power 50`, `stability 0.05`, `war_support 0.05`, `army_experience 10`, `manpower 10000`, `add_spirit k`, `swap_spirit old→new`, `remove_spirit k`, `timed_spirit k 365d`, `event zin_noris.n`, `event_for Name zin_x.n`, `flag f` (country flag), `building type level @where`, `research [categories] 50% ×uses`, `equipment type amount`, `popularity ideology value`, `for_country Name: …`, `call effect(args)`. Spirit keys are short; they compile to `zin_noris_<key>`.
+- **Effects** use the compiler vocabulary of [../00_format_and_compiler.md](../00_format_and_compiler.md): `political_power 50`, `stability 0.05`, `war_support 0.05`, `army_experience 10`, `manpower 10000`, `add_spirit k`, `swap_spirit old→new`, `remove_spirit k`, `timed_spirit k 365d`, `event zin_noris.n`, `event_for Name zin_noris.n`, `flag f` (country flag), `building type level @where`, `research [categories] 50% ×uses`, `equipment type amount`, `popularity ideology value`, `for_country Name: …`, `call effect(args)`. Spirit keys are short; they compile to `zin_noris_<key>`.
 - **Shorthands:** **Inf +n road** = `call zin_east_add_road_influence(road, n)`. **Lean +n on X** = `for_country X: call zin_east_add_lean(n)` (positive is toward Noris). **Rivalry +n** = `call zin_east_add_rivalry(n)`. **Accord +n** = `call zin_noris_add_accord(n)`. **Footholds ±n** = `call zin_afrit_add_footholds(n)` on Noris (Afrit spec; respects caps). **Bonus +n** = `variable zin_east_caravan_bonus add n`.
-- **Where:** `@capital`; `@road_<key>` = a random owned state with `zin_is_site_road_<key>`; `@south_lands` = a random owned state with `zin_is_region_south_lands`; `@random_owned`.
+- **Where:** `@capital`; `@road_<key>` = a random owned state with `zin_is_site_road_<key>`; `@south_lands` = a random owned state with `zin_is_region_south_lands` (compiler `where` form `region:south_lands`); `@random_owned`.
 - **Avail:** the focus's `available` conditions. Bypass is never used.
+- **Mechanic events** (`zin_east.*`, `zin_afrit.*`) are never fired with the compiler's `event` effect, which names this tree's events; each goes through a tree-declared scripted effect (Implementation). "footholds ≥ 3" is `{ "variable": { "name": "zin_footholds", "above": 2 } }`; "client" and "refuser" are flag conditions; "accord ≥ 50" reads `zin_noris_clan_accord`.
 - **AI** is `ai.base` and its main factors. "hist" means the factor applies under the historical path (`zin_rule_historical_path` HISTORICAL, or `zin_rule_ai_east` DEFAULT following it). "client" means Noris has `zin_afrit_eastern_client`; "refuser" means `zin_afrit_refused_east`.
 
-Equipment and technology categories are vanilla placeholders until the warfare spec replaces them; the content builder maps them. Camel riders are vanilla cavalry until then.
+Research categories are the warfare spec's `zin_cat_*` with the vanilla category in parentheses as the fallback until warfare stage 2 ([../../03_gameplay/01_warfare.md](../../03_gameplay/01_warfare.md)). Doctrines cost experience in 1.19.3, so doctrine bonuses are army experience. Equipment is `zin_arms_equipment` (fallback `infantry_equipment`), `zin_mounts_equipment` (camels are its variant line; fallback `infantry_equipment`, which vanilla cavalry uses) and `zin_catapult_equipment` (fallback `artillery_equipment`). Camel riders are vanilla cavalry until then.
 
 ### Branch 1: The Desert Throne
 
@@ -69,19 +72,19 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `desert_throne` | The Desert Throne | – | – | 2,0 | 70 | event zin_noris.1; political_power 50; accord +5 | 50 |
-| `house_of_esiur` | The House of Esiur | desert_throne | – | 1,1 | 70 | add_spirit house_of_esiur | 20 |
+| `house_of_esiur` | The House of Esiur | desert_throne | – | 1,1 | 70 | add_spirit house_of_esiur_spirit | 20 |
 | `gathering_of_the_clans` | The Gathering of the Clans | desert_throne | – | 4,1 | 70 | event zin_noris.2; accord +5 | 20 |
 | `indigo_court` | The Indigo Court | house_of_esiur | – | 0,2 | 35 | political_power 50; stability 0.03 | 15 |
 | `bride_from_the_tents` | A Bride from the Tents | house_of_esiur / gathering_of_the_clans | – | 2,2 | 70 | event zin_noris.3 | 15 |
 | `oath_of_the_furan` | The Oath of the Furan | gathering_of_the_clans | – | 4,2 | 70 | accord +5; army_experience 10 | 15 |
 | `kersi_caravan_houses` | The Kersi Caravan Houses | gathering_of_the_clans | – | 5,2 | 70 | Inf +5 salt; political_power 25; accord +5 | 15 |
-| `throne_of_furvior` | The Throne of Furvior | indigo_court / bride_from_the_tents | tent_moot | 1,3 | 70 | add_spirit throne_of_furvior; accord −10 | 10; hist ×2 |
-| `tent_moot` | The Tent Moot | bride_from_the_tents / oath_of_the_furan / kersi_caravan_houses | throne_of_furvior | 4,3 | 70 | add_spirit tent_moot; accord +15 | 10; ×2 if accord < 35 |
+| `throne_of_furvior` | The Throne of Furvior | indigo_court / bride_from_the_tents | tent_moot | 1,3 | 70 | add_spirit throne_of_furvior_spirit; accord −10 | 10; hist ×2 |
+| `tent_moot` | The Tent Moot | bride_from_the_tents / oath_of_the_furan / kersi_caravan_houses | throne_of_furvior | 4,3 | 70 | add_spirit tent_moot_spirit; accord +15 | 10; ×2 if accord < 35 |
 | `royal_tax_farms` | The Royal Tax Farms | throne_of_furvior | – | 0,4 | 70 | building industrial_complex 1 @capital; political_power 50 | 15 |
 | `kings_law_in_the_sand` | The King's Law in the Sand | throne_of_furvior | – | 2,4 | 70 | stability 0.05; popularity dominion 0.05; accord −5 | 15 |
 | `moot_at_the_wells` | The Moot at the Wells | tent_moot | – | 4,4 | 70 | accord +10; manpower 10000 | 15 |
 | `one_crown_many_tents` | One Crown, Many Tents | royal_tax_farms / kings_law_in_the_sand / moot_at_the_wells | – | 2,5 | 70 | event zin_noris.4; accord +10 | 20 |
-| `clan_marshals` | The Clan Marshals | moot_at_the_wells | – | 4,5 | 70 | add_spirit clan_marshals; army_experience 10 | 10 |
+| `clan_marshals` | The Clan Marshals | moot_at_the_wells | – | 4,5 | 70 | add_spirit clan_marshals_spirit; army_experience 10 | 10 |
 | `council_of_the_sands` | The Council of the Sands | one_crown_many_tents | – | 2,6 | 70 | political_power 75; stability 0.05; accord +5 | 20 |
 
 ### Branch 2: The Salt Road
@@ -91,14 +94,14 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `salt_road` | The Salt Road | – | – | 8,0 | 70 | Inf +10 salt; political_power 25 | 40 |
-| `master_of_caravans` | The Master of Caravans | salt_road | – | 7,1 | 70 | add_spirit master_of_caravans; Bonus +0.25 | 20 |
+| `master_of_caravans` | The Master of Caravans | salt_road | – | 7,1 | 70 | add_spirit master_of_caravans_spirit; Bonus +0.25 | 20 |
 | `wells_of_mylunur` | The Wells of Mylunur | salt_road | – | 9,1 | 70 | event_for Mylunur zin_noris.5; Inf +5 salt | 20 |
 | `caravanserais_of_the_north` | Caravanserais of the North | master_of_caravans | – | 6,2 | 70 | building infrastructure 1 @road_salt ×2; Inf +5 salt | 12 |
 | `harbours_of_gondolin` | The Harbours of Gondolin | master_of_caravans / wells_of_mylunur | – | 8,2 | 70 | Lean +10 on Gondolin; for_country Gondolin: building industrial_complex 1 @capital | 12 |
 | `claim_the_rift_road` | Claim the Rift Road | wells_of_mylunur | – | 10,2 | 70 | Inf +15 rift; Lean +10 on Delbiz Grasslands | 20; ×2 if the rift road is free |
 | `salt_markets_of_furvior` | The Salt Markets of Furvior | caravanserais_of_the_north / harbours_of_gondolin | – | 7,3 | 70 | building industrial_complex 2 @capital | 15 |
 | `down_the_lake_road` | Down the Lake Road | harbours_of_gondolin / claim_the_rift_road | – | 9,3 | 70 | Inf +15 lake; Lean +10 on Mora | 15 |
-| `caravan_guilds` | The Caravan Guilds | salt_markets_of_furvior | – | 6,4 | 70 | add_spirit caravan_guilds; Bonus +0.25 | 12 |
+| `caravan_guilds` | The Caravan Guilds | salt_markets_of_furvior | – | 6,4 | 70 | add_spirit caravan_guilds_spirit; Bonus +0.25 | 12 |
 | `rift_ports` | The Rift Ports | salt_markets_of_furvior / down_the_lake_road | – | 8,4 | 70 | building industrial_complex 1 @road_rift; event zin_noris.6 | 12 |
 | `undercut_the_gold_road` | Undercut the Gold Road | down_the_lake_road | – | 10,4 | 35 | Inf +10 gold; Rivalry +5; political_power 25 | 8; hist ×0.5 |
 | `gold_of_the_desert` | Gold of the Desert | caravan_guilds / rift_ports | – | 7,5 | 70 | building industrial_complex 1 @random_owned; political_power 50 | 12 |
@@ -112,15 +115,15 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `wells_of_the_south` | The Wells of the South | – | – | 12,0 | 70 | flag zin_east_wells_unlocked (Dig the Wells); political_power 25 | 20 |
-| `survey_the_noris_desert` | Survey the Noris Desert | wells_of_the_south | – | 11,1 | 35 | building infrastructure 1 @south_lands; research [support_tech] 50% ×1 | 12 |
+| `survey_the_noris_desert` | Survey the Noris Desert | wells_of_the_south | – | 11,1 | 35 | building infrastructure 1 @south_lands; research [zin_cat_camp (support_tech)] 50% ×1 | 12 |
 | `oasis_keepers` | The Oasis-Keepers | wells_of_the_south | – | 13,1 | 70 | event zin_noris.7; call zin_noris_south_lean(10) | 12 |
 | `cisterns_of_furvior` | The Cisterns of Furvior | survey_the_noris_desert | – | 11,2 | 70 | building infrastructure 2 @capital; stability 0.03 | 10 |
 | `the_sand_road` | The Sand Road | oasis_keepers | – | 13,2 | 70 | Inf +15 sand | 12 |
-| `desert_wardens` | The Desert Wardens | cisterns_of_furvior / the_sand_road | – | 12,3 | 70 | add_spirit desert_wardens | 12 |
-| `into_the_deep_sand` | Into the Deep Sand | the_sand_road | – | 14,3 | 70 | event zin_east.35 | 5 |
+| `desert_wardens` | The Desert Wardens | cisterns_of_furvior / the_sand_road | – | 12,3 | 70 | add_spirit desert_wardens_spirit | 12 |
+| `into_the_deep_sand` | Into the Deep Sand | the_sand_road | – | 14,3 | 70 | call zin_noris_tree_deep_sand (fires `zin_east.35`) | 5 |
 | `water_rights_of_the_south` | Water Rights of the South | desert_wardens | – | 11,4 | 70 | call zin_noris_south_lean(10); political_power 50 | 10 |
 | `salt_pans` | The Salt Pans | desert_wardens / into_the_deep_sand | – | 13,4 | 70 | building industrial_complex 1 @south_lands | 10 |
-| `garden_in_the_sands` | A Garden in the Sands | water_rights_of_the_south / salt_pans | – | 12,5 | 70 | add_spirit garden_in_the_sands; call zin_east_wells_random; call zin_east_wells_random | 10 |
+| `garden_in_the_sands` | A Garden in the Sands | water_rights_of_the_south / salt_pans | – | 12,5 | 70 | add_spirit garden_in_the_sands_spirit; call zin_east_wells_random; call zin_east_wells_random | 10 |
 
 ### Branch 4: The Noris Treaty
 
@@ -136,7 +139,7 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | `mora_and_the_lake_towns` | Mora and the Lake Towns | envoys_to_the_eastern_courts | – | 19,2 | 70 | Lean +15 on Mora; Lean +10 on Ernois; Lean +10 on Ostoroth | 12 |
 | `open_the_treaty` | Open the Treaty | treaty_council_at_furvior / embassy_to_alerhia | – | 16,3 | 70 | flag zin_noris_open_treaty (Invite to the Treaty); political_power 50 | 20 |
 | `passes_of_miaed` | The Passes of Miaed | embassy_to_alerhia / mora_and_the_lake_towns | – | 18,3 | 70 | event_for Miaed zin_noris.10 | 12 |
-| `treaty_levies` | The Treaty Levies | open_the_treaty | – | 15,4 | 70 | add_spirit treaty_levies | 10 |
+| `treaty_levies` | The Treaty Levies | open_the_treaty | – | 15,4 | 70 | add_spirit treaty_levies_spirit | 10 |
 | `letters_to_erco_and_plutondo` | Letters to Erco and Plutondo | open_the_treaty / passes_of_miaed | – | 17,4 | 70 | Lean +10 on Erco; Lean +10 on Plutondo; Rivalry +2 | 10; hist ×0.5 |
 | `gondolins_watch` | Gondolin's Watch on the North | mora_and_the_lake_towns / passes_of_miaed | – | 19,4 | 35 | event_for Gondolin zin_noris.14; flag zin_noris_northern_watch | 8; ×3 after `zin_zol_rising` |
 | `first_among_the_eastern_crowns` | First Among the Eastern Crowns | treaty_levies / letters_to_erco_and_plutondo | banner_over_the_sands | 16,5 | 70 | call zin_noris_treaty_lean(10); stability 0.05; political_power 50 | 10; hist ×3; refuser ×2 |
@@ -149,20 +152,20 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| `riders_of_the_sand` | Riders of the Sand | – | – | 23,0 | 70 | army_experience 15; research [land_doctrine] 50% ×1 | 30 |
-| `the_camel_corps` | The Camel Corps | riders_of_the_sand | – | 22,1 | 70 | add_spirit camel_corps; equipment infantry_equipment 1000 | 20 |
+| `riders_of_the_sand` | Riders of the Sand | – | – | 23,0 | 70 | army_experience 25 | 30 |
+| `the_camel_corps` | The Camel Corps | riders_of_the_sand | – | 22,1 | 70 | add_spirit camel_corps; equipment zin_mounts_equipment 500 | 20 |
 | `rider_general_tumo` | Rider-General Tumo Furan | riders_of_the_sand | – | 24,1 | 35 | call zin_noris_honour_tumo; army_experience 10 | 15 |
-| `desert_fox_doctrine` | The Desert-Fox Doctrine | the_camel_corps | – | 21,2 | 70 | research [land_doctrine] 50% ×2 | 12 |
+| `desert_fox_doctrine` | The Desert-Fox Doctrine | the_camel_corps | – | 21,2 | 70 | army_experience 35 | 12 |
 | `forges_of_furvior` | The Forges of Furvior | the_camel_corps / rider_general_tumo | – | 23,2 | 70 | building arms_factory 2 @capital | 15 |
 | `forts_on_the_stabilo_march` | Forts on the Stabilo March | rider_general_tumo | – | 25,2 | 70 | call zin_noris_fortify_march | 8; ×2 if rivalry ≥ 60 |
 | `the_long_ride` | The Long Ride | desert_fox_doctrine / forges_of_furvior | – | 22,3 | 70 | add_spirit long_ride | 12 |
 | `muster_of_the_tents` | The Muster of the Tents | forges_of_furvior / forts_on_the_stabilo_march | – | 24,3 | 70 | if accord ≥ 50: manpower 15000; else manpower 8000 | 12 |
-| `sun_and_steel` | Sun and Steel | the_long_ride | – | 21,4 | 70 | research [infantry_weapons] 50% ×2 | 10 |
+| `sun_and_steel` | Sun and Steel | the_long_ride | – | 21,4 | 70 | research [zin_cat_arms (infantry_weapons)] 50% ×2 | 10 |
 | `the_indigo_guard` | The Indigo Guard | the_long_ride / muster_of_the_tents | – | 23,4 | 70 | add_spirit indigo_guard | 10 |
-| `siege_trains` | Siege Trains | muster_of_the_tents | – | 25,4 | 70 | research [artillery] 50% ×1; equipment artillery_equipment 100 | 8 |
+| `siege_trains` | Siege Trains | muster_of_the_tents | – | 25,4 | 70 | research [zin_cat_siege (artillery)] 50% ×1; equipment zin_catapult_equipment 100 | 8 |
 | `masters_of_the_desert_war` | Masters of the Desert War | sun_and_steel / the_indigo_guard | – | 22,5 | 70 | army_experience 25; add_spirit desert_war_masters | 10 |
 | `the_war_council` | The War Council | the_indigo_guard / siege_trains | – | 24,5 | 35 | Avail: `zin_golden_king_dead` or after 1752.3.1; war_support 0.05; political_power 25 | 10; 0 hist before 1754.3.1 |
-| `the_host_of_noris` | The Host of Noris | masters_of_the_desert_war + the_war_council | – | 23,6 | 70 | Avail: at war, or `zin_war_of_last_crowns`; manpower 20000; equipment infantry_equipment 2000 | 200 when available |
+| `the_host_of_noris` | The Host of Noris | masters_of_the_desert_war + the_war_council | – | 23,6 | 70 | Avail: at war, or `zin_war_of_last_crowns`; manpower 20000; equipment zin_arms_equipment 2000 | 200 when available |
 
 ### Branch 6: Temples and Gold
 
@@ -175,7 +178,7 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | `count_the_temple_gold` | Count the Temple Gold | temples_and_gold | welcome_the_generous_friends | 28,1 | 70 | Footholds −1; flag zin_noris_audit; political_power 50; stability −0.02 | 10; ×2 if accord ≥ 60 |
 | `houses_of_healing` | Houses of Healing | welcome_the_generous_friends | – | 26,2 | 70 | stability 0.05; political_power 25 | 10 |
 | `the_kings_own_coffers` | The King's Own Coffers | count_the_temple_gold | – | 28,2 | 70 | building industrial_complex 1 @capital; political_power 25 | 10 |
-| `the_temples_loans` | The Temples' Loans | houses_of_healing | – | 26,3 | 35 | event zin_east.30 (the offer arrives at once) | 8 |
+| `the_temples_loans` | The Temples' Loans | houses_of_healing | – | 26,3 | 35 | call zin_noris_tree_temple_loan (fires `zin_east.30` at once) | 8 |
 | `eyes_on_the_priests` | Eyes on the Priests | the_kings_own_coffers | – | 28,3 | 70 | add_spirit watchful_court | 8 |
 | `faith_and_treasury` | Faith and Treasury | the_temples_loans / eyes_on_the_priests | – | 27,4 | 70 | political_power 50; stability 0.03 | 8 |
 
@@ -194,7 +197,7 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | `the_deliverers_sword` | The Deliverer's Sword | question_of_the_east | shield_of_the_east, high_king_of_the_sands | 3,8 | 70 | Avail: footholds ≥ 3; not refuser; flag zin_east_pledged; flag zin_noris_route_deliverer; Footholds +1; political_power 50 | hist: 1000 if client, else 0; free: 10 × footholds + bias ÷ 2 |
 | `captains_of_the_temple` | Captains of the Temple | the_deliverers_sword | – | 2,9 | 70 | army_experience 15; political_power 25 | 50 |
 | `envoys_to_zilin` | Envoys to the Zilin Hills | the_deliverers_sword | – | 4,9 | 35 | event zin_noris.13 | 50 |
-| `kneel_to_the_king` | Kneel to the King of the East | captains_of_the_temple / envoys_to_zilin | – | 3,10 | 35 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; not refuser; if not client: `country_event zin_afrit.51` (the Afrit spec's offer; its kneel option calls `zin_east_prepare_kneel`); add_spirit sword_of_the_east | 500 when available |
+| `kneel_to_the_king` | Kneel to the King of the East | captains_of_the_temple / envoys_to_zilin | – | 3,10 | 35 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; not refuser; if not client: call zin_noris_tree_kneel_offer (fires the Afrit spec's offer `zin_afrit.51`; its kneel option calls `zin_east_prepare_kneel` and makes Noris a subject with `zin_autonomy_eastern_client`); add_spirit sword_of_the_east | 500 when available |
 | `riders_for_the_host` | Riders for the Eastern Host | kneel_to_the_king | – | 1,11 | 70 | Avail: client; flag zin_noris_riders_for_host (counts as levies in `zin_east.52`); army_experience 20 | 60 |
 | `promised_spoils` | Promised Spoils Beyond the Rift | kneel_to_the_king | – | 3,11 | 70 | Avail: client; `zin_eastern_invasion`; call zin_east_claim_rift; war_support 0.05 | 40 |
 | `tribute_of_the_free_crowns` | Tribute of the Free Crowns | kneel_to_the_king | – | 5,11 | 70 | Avail: client; at war with a country with `zin_east_free_crown`; call zin_noris_claim_free_crown | 60 when available |
@@ -204,7 +207,7 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 
 ### Branch 8: The Shield of the East
 
-**Purpose:** Noris refuses the King of the East and leads the eastern crowns against him. Before the proclamation it closes its ears to the generous friends and guards the rift ports. After it, Noris becomes First of the Free Crowns, aids the elven realms across the rift, breaks the coalition with gold and threats, fights the Eastern Throne, and lets free riders serve the stranger's coalition. **Opens:** from The Question of the East. **Mutual exclusions:** the route focus excludes the other two routes. **Mechanic:** `zin_noris_route_shield` (bias −100, coalition weight −100), `zin_east_free_crowns_leader`, `zin_east_grant_free_cb`, `zin_east_offer_coalition_peace`, `zin_east_companies_with_eindil`.
+**Purpose:** Noris refuses the King of the East and leads the eastern crowns against him. Before the proclamation it closes its ears to the generous friends and guards the rift ports. After it, Noris becomes First of the Free Crowns, aids the elven realms across the rift, breaks the coalition with gold and threats, fights the King of the East, and lets free riders serve the stranger's coalition. **Opens:** from The Question of the East. **Mutual exclusions:** the route focus excludes the other two routes. **Mechanic:** `zin_noris_route_shield` (bias −100, coalition weight −100), `zin_east_free_crowns_leader`, `zin_east_grant_free_cb`, `zin_east_offer_coalition_peace`, `zin_east_companies_with_eindil`.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
@@ -212,12 +215,12 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | `close_the_temple_houses` | Close the Temple Houses | shield_of_the_east | – | 8,9 | 35 | Avail: `zin_afrit_revealed` or has `zin_afrit_suspicious`; call zin_afrit_purge_houses | 100 when available |
 | `letters_to_the_eastern_kings` | Letters to the Eastern Kings | shield_of_the_east | – | 10,9 | 35 | call zin_noris_treaty_lean(10); political_power 25 | 50 |
 | `guard_the_rift_ports` | Guard the Rift Ports | shield_of_the_east | – | 12,9 | 70 | building bunker 1 @road_rift; building bunker 1 @road_rift | 30 |
-| `first_of_the_free_crowns` | First of the Free Crowns | letters_to_the_eastern_kings | – | 9,10 | 70 | Avail: `zin_afrit_king_of_east`; not client; if not refuser: flag zin_afrit_refused_east; if no country has `zin_east_free_crowns_leader`: flag zin_east_free_crowns_leader and event zin_east.51; add_spirit free_crowns_banner | 500 when available |
+| `first_of_the_free_crowns` | First of the Free Crowns | letters_to_the_eastern_kings | – | 9,10 | 70 | Avail: `zin_afrit_king_of_east`; not client; if not refuser: flag zin_afrit_refused_east; call zin_noris_tree_lead_free_crowns (if no country has `zin_east_free_crowns_leader`: sets it on Noris and fires `zin_east.51`); add_spirit free_crowns_banner | 500 when available |
 | `aid_to_the_elder_groves` | Aid to the Elder Groves | letters_to_the_eastern_kings / guard_the_rift_ports | – | 11,10 | 70 | Avail: `zin_eastern_invasion`; not `zin_east_coalition_member`; call zin_noris_guarantee_rift; political_power −25 | 60 when available |
-| `against_the_eastern_throne` | Against the Eastern Throne | first_of_the_free_crowns | – | 8,11 | 70 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; call zin_east_grant_free_cb; war_support 0.10 | 100 when available |
+| `against_the_eastern_throne` | Against the King of the East | first_of_the_free_crowns | – | 8,11 | 70 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; call zin_east_grant_free_cb; war_support 0.10 | 100 when available |
 | `break_the_coalition` | Break the Coalition | first_of_the_free_crowns / aid_to_the_elder_groves | – | 10,11 | 70 | Avail: `zin_eastern_invasion`; not `zin_east_coalition_member`; call zin_east_offer_coalition_peace; political_power −50 | 60 when available |
 | `free_riders_for_the_coalition` | Free Riders for the Stranger | aid_to_the_elder_groves | – | 12,11 | 70 | Avail: `zin_eindil_returned`; flag zin_east_companies_with_eindil; army_experience 15 | 200 when available |
-| `the_free_east` | The Free East | against_the_eastern_throne / break_the_coalition / free_riders_for_the_coalition | – | 10,12 | 70 | Avail: `zin_afrit_dead`, or no East Lands country is a member of the Worshipdom's faction; add_spirit free_east; tooltip "An outcome of this game, not history." | 100 when available |
+| `the_free_east` | The Free East | against_the_eastern_throne / break_the_coalition / free_riders_for_the_coalition | – | 10,12 | 70 | Avail: `zin_afrit_dead`, or no East Lands country has `zin_afrit_eastern_client` (no court is the Worshipdom's eastern client); add_spirit free_east; tooltip "An outcome of this game, not history." | 100 when available |
 
 ### Branch 9: High King of the Sands
 
@@ -243,7 +246,7 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `close_the_roads_to_stabilo` | Close the Roads to Stabilo | the_war_council | – | 23,7 | 35 | Avail: check `zin_east_caravan_war_open`; call zin_diplo_grant_cb(cb=zin_cb_caravan_roads, target=Stabilo, days=365); Rivalry +5 | hist: 0 unless `zin_war_of_last_crowns` and (Noris client and Stabilo refuser, or the reverse), then 50; free: 20, ×3 at rivalry ≥ 90 |
 | `seize_the_gold_road` | Seize the Gold Road | close_the_roads_to_stabilo | – | 22,8 | 70 | Avail: at war with Stabilo; call zin_east_claim_road(road=gold) | 100 when available |
-| `the_caravan_peace` | The Caravan Peace | seize_the_gold_road | – | 23,9 | 35 | Avail: at war with Stabilo; check zin_noris_holds_gold_road; event_for Stabilo zin_east.26 | 200 when available |
+| `the_caravan_peace` | The Caravan Peace | seize_the_gold_road | – | 23,9 | 35 | Avail: at war with Stabilo; check zin_noris_holds_gold_road; call zin_noris_tree_caravan_peace (fires `zin_east.26` for Stabilo) | 200 when available |
 | `answer_the_coalition` | Answer the Eastern Coalition | masters_of_the_desert_war / the_war_council | – | 27,7 | 35 | Avail: flag `zin_east_coalition_member`; war_support 0.05; army_experience 10 | 300 when available |
 | `spoils_of_the_elder_groves` | Spoils of the Elder Groves | answer_the_coalition | – | 28,8 | 70 | Avail: at war with a Magical Lands realm; call zin_east_claim_rift | 80 when available |
 | `the_road_to_parim` | The Road to Parim | answer_the_coalition / spoils_of_the_elder_groves | – | 27,9 | 70 | Avail: `zin_east_turns_west`; war_support 0.05; army_experience 15 | 80 when available |
@@ -255,7 +258,7 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 
 | Path | Content |
 | --- | --- |
-| `docs/design/focus/noris.json` | Tree data (source of truth) |
+| `docs/design/focus/noris.json` | Tree data (source of truth); compiled by `tools/content/modules/focus_compiler.mjs` (new) into every file below |
 | `common/national_focus/zin_noris.txt` | Compiled tree; `country = { factor = 0 modifier = { add = 10 zin_is_noris = yes } }` |
 | `common/ideas/zin_focus_noris.txt` | Spirits below |
 | `common/dynamic_modifiers/zin_noris.txt` | `zin_noris_clans` (declared by this tree) |
@@ -264,7 +267,7 @@ Equipment and technology categories are vanilla placeholders until the warfare s
 | `common/scripted_triggers/zin_noris.txt` | Tree triggers below |
 | `localisation/english/zin_focus_noris_l_english.yml` | All text |
 
-The mechanic's effects, triggers, decisions and events (`zin_east_*`, namespace `zin_east`) are only called here. Noris's ruler and councillors come from the characters spec; this tree adds no new character.
+The mechanic's effects, triggers, decisions and events (`zin_east_*`, namespace `zin_east`) are written by `tools/content/modules/mech_eastern_kings.mjs` and only called here; that module writes `zin_noris_monthly` as a stub until this tree is compiled. The compiled tree replaces the interim "Long Peace" tree (`zin_long_peace_*`, written today by `tools/content/modules/vanilla_removal.mjs`) for Noris; `zin_is_noris` is the mechanic's generated tag trigger. Noris's ruler King Esiurth II, `zin_noris_alodar` and `zin_noris_tumo` come from the characters spec ([../../02_lore/02_characters.md](../../02_lore/02_characters.md)) through `tools/content/modules/characters.mjs`; this tree adds no new character. Start values: `zin_noris_monthly` sets `zin_noris_clan_accord` to 45 on its first run (flag `zin_noris_accord_set`) and adds `zin_noris_clans`.
 
 ### Variables and flags
 
@@ -276,6 +279,8 @@ The mechanic's effects, triggers, decisions and events (`zin_east_*`, namespace 
 | `zin_noris_audit` | Noris flag | No temple loans to Noris |
 | `zin_noris_envoys`, `zin_noris_open_treaty`, `zin_noris_banner`, `zin_noris_charter_masters`, `zin_noris_northern_watch`, `zin_noris_riders_for_host` | Noris flags | Unlocks and markers |
 | `zin_noris_accord_high_seen` | Noris flag | `zin_noris.21` fired once |
+| `zin_noris_accord_set` | Noris flag | Start value of accord written once |
+| `zin_east_caravan_bonus` | Noris variable (mechanic) | Caravan wealth bonus ("Bonus +n") |
 
 ### Tree-declared scripted effects and triggers
 
@@ -293,6 +298,11 @@ The mechanic's effects, triggers, decisions and events (`zin_east_*`, namespace 
 | `zin_noris_claim_free_crown` | effect | `add_state_claim` on the road states of the free crown at war with Noris that owns the most road states |
 | `zin_noris_withdraw_from_rift` | effect | `white_peace` with every enemy whose capital is in the Magical or Middle Lands |
 | `zin_noris_holds_gold_road` | trigger | Noris and its subjects control 3 or more `zin_is_site_road_gold` states |
+| `zin_noris_tree_deep_sand` | effect | `country_event = { id = zin_east.35 }` (Into the Deep Sand) |
+| `zin_noris_tree_temple_loan` | effect | `country_event = { id = zin_east.30 }` (the temples' loan offer) |
+| `zin_noris_tree_kneel_offer` | effect | `country_event = { id = zin_afrit.51 }` on Noris, sent from the Worshipdom (`FROM` = the hub) |
+| `zin_noris_tree_lead_free_crowns` | effect | If no country has `zin_east_free_crowns_leader`: `set_country_flag = zin_east_free_crowns_leader` and `country_event = { id = zin_east.51 }` |
+| `zin_noris_tree_caravan_peace` | effect | Stabilo: `country_event = { id = zin_east.26 }` (Terms at the Wells) |
 
 ### Spirits
 
@@ -300,17 +310,17 @@ Ids are `zin_noris_<key>`. Every modifier key exists in the game's modifier docu
 
 | Key | Name | Modifiers | Added / removed |
 | --- | --- | --- | --- |
-| `house_of_esiur` | The House of Esiur | political_power_gain 0.10, stability_factor 0.02 | The House of Esiur; permanent |
-| `throne_of_furvior` | The Throne of Furvior | political_power_factor 0.10, drift_defence_factor 0.10 | The Throne of Furvior; accord drift −0.1 a month while present |
-| `tent_moot` | The Tent Moot | conscription_factor 0.05, stability_factor 0.03, political_power_gain -0.05 | The Tent Moot; accord drift +0.2 a month while present |
-| `clan_marshals` | The Clan Marshals | experience_gain_army_factor 0.10, army_org_factor 0.03 | The Clan Marshals |
-| `master_of_caravans` | The Master of Caravans | trade_opinion_factor 0.10, consumer_goods_factor -0.02 | The Master of Caravans (with Bonus +0.25) |
-| `caravan_guilds` | The Caravan Guilds | production_speed_buildings_factor 0.05, consumer_goods_factor -0.02 | The Caravan Guilds (with Bonus +0.25) |
+| `house_of_esiur_spirit` | The House of Esiur | political_power_gain 0.10, stability_factor 0.02 | The House of Esiur; permanent |
+| `throne_of_furvior_spirit` | The Throne of Furvior | political_power_factor 0.10, drift_defence_factor 0.10 | The Throne of Furvior; accord drift −0.1 a month while present |
+| `tent_moot_spirit` | The Tent Moot | conscription_factor 0.05, stability_factor 0.03, political_power_gain -0.05 | The Tent Moot; accord drift +0.2 a month while present |
+| `clan_marshals_spirit` | The Clan Marshals | experience_gain_army_factor 0.10, army_org_factor 0.03 | The Clan Marshals |
+| `master_of_caravans_spirit` | The Master of Caravans | trade_opinion_factor 0.10, consumer_goods_factor -0.02 | The Master of Caravans (with Bonus +0.25) |
+| `caravan_guilds_spirit` | The Caravan Guilds | production_speed_buildings_factor 0.05, consumer_goods_factor -0.02 | The Caravan Guilds (with Bonus +0.25) |
 | `queen_of_roads` | Furvior, Queen of Roads | political_power_gain 0.10, production_factory_max_efficiency_factor 0.05, trade_opinion_factor 0.10 | Furvior, Queen of Roads (with Bonus +0.5) |
-| `desert_wardens` | The Desert Wardens | attrition -0.10, heat_attrition_factor -0.25, supply_consumption_factor -0.05 | The Desert Wardens |
-| `garden_in_the_sands` | A Garden in the Sands | monthly_population 0.10, stability_factor 0.03 | A Garden in the Sands |
+| `desert_wardens_spirit` | The Desert Wardens | attrition -0.10, heat_attrition_factor -0.25, supply_consumption_factor -0.05 | The Desert Wardens |
+| `garden_in_the_sands_spirit` | A Garden in the Sands | monthly_population 0.10, stability_factor 0.03 | A Garden in the Sands |
 | `treaty_council` | The Treaty Council | opinion_gain_monthly_factor 0.15, improve_relations_maintain_cost_factor -0.20 | The Treaty Council at Furvior |
-| `treaty_levies` | The Treaty Levies | conscription_factor 0.05, army_defence_factor 0.03 | The Treaty Levies |
+| `treaty_levies_spirit` | The Treaty Levies | conscription_factor 0.05, army_defence_factor 0.03 | The Treaty Levies |
 | `camel_corps` | The Camel Corps | cavalry_attack_factor 0.10, army_speed_factor 0.05, heat_attrition_factor -0.15 | The Camel Corps |
 | `long_ride` | The Long Ride | army_speed_factor 0.05, org_loss_when_moving -0.10 | The Long Ride |
 | `indigo_guard` | The Indigo Guard | army_morale_factor 0.05, army_attack_factor 0.05 | The Indigo Guard |
@@ -333,37 +343,55 @@ The mechanic adds its own ideas to Noris when they apply (`zin_east_temple_loan`
 
 ### Events (namespace `zin_noris`)
 
-All are fired by focus, option or tree-effect calls; none has its own trigger. Text before `zin_afrit_revealed` never names Afrit.
+All are fired by focus, option or tree-effect calls; none has its own trigger (`.20` and `.21` are fired by `zin_noris_monthly`). Text before `zin_afrit_revealed` never names Afrit. Pictures are existing catalog keys; the wanted pictures `desert_court` (Furvior's tented court, ungated) and `caravan_road` (a camel caravan on a desert road, ungated) do not exist yet: `generic_court` and `generic_wilds` stand in until they are generated.
 
-| Id | Title | For | Fired by | Options (effects; AI) |
-| --- | --- | --- | --- | --- |
-| .1 | The Desert Throne | Noris | The Desert Throne | "Furvior first" (political_power 50; accord −5) / "The tents first" (accord +10); AI 50/50 |
-| .2 | The Gathering of the Clans | Noris | The Gathering of the Clans | Honour the Furan riders (army_experience 10; accord +5) / Honour the Kersi caravan houses (Inf +5 salt; Inf +5 rift; accord +5) / Honour all, favour none (political_power −25; accord +10); AI 40/40/20 |
-| .3 | A Bride from the Tents | Noris | A Bride from the Tents | A daughter of the Furan (accord +10) / A daughter of the Kersi (Inf +5 on every road) / A princess of Gondolin (Lean +20 on Gondolin; accord −5); AI 40/30/30 |
-| .4 | One Crown, Many Tents | Noris | One Crown, Many Tents | The king rides from tent to tent and is cheered. "So it shall be" (stability 0.03) |
-| .5 | The Wells of Mylunur | Mylunur | The Wells of Mylunur | Sell the well rights to Furvior (Lean +15; Noris Inf +5 salt) / The wells stay ours (Lean −5); AI chance = 50 + lean |
-| .22 | Mylunur's Answer | Noris | option of .5 | Result text |
-| .6 | The Rift Ports | Noris | The Rift Ports | Merchants of Aenor and pilgrims bound for the Zilin Hills crowd the quays. Tax the pilgrims (political_power 50; Worshipdom's opinion of Noris −10) / Welcome them (stability 0.02; Worshipdom's opinion +10); AI 50/50 |
-| .7 | The Oasis-Keepers | Noris | The Oasis-Keepers | The keepers of the deep wells ask that their water rights be honoured. Honour them (political_power −25; call zin_noris_south_lean(5)) / Rule them (political_power 25; accord −5); AI 70/30 |
-| .8 | Friendship with Gondolin | Gondolin | Friendship with Gondolin | Renew the Treaty (Lean +15; Noris ↔ Gondolin opinion +15) / Ask more of Furvior (Lean +5; Gondolin political_power 25); AI 70/30 |
-| .23 | Gondolin's Answer | Noris | option of .8 | Result text |
-| .9 | An Embassy from Furvior | Alerhia | An Embassy to Alerhia | Welcome the riders (Lean +15) / Hear both sides (Lean +5) / Postondoroth pays better (Lean −10); AI chance by lean: 40 + lean / 40 / 20 − lean |
-| .24 | Alerhia's Answer | Noris | option of .9 | Result text |
-| .10 | The Passes of Miaed | Miaed | The Passes of Miaed | Grant passage rights (Lean +15; Noris Inf +10 sand) / The passes are ours (Lean −5); AI chance = 50 + lean |
-| .25 | Miaed's Answer | Noris | option of .10 | Result text |
-| .11 | Temples and Gold | Noris | Temples and Gold | The temples offer to regild the great shrine of Furvior at their own cost. "Gladly" (stability 0.02) / "Furvior pays for its own shrines" (political_power −25; accord +3); AI 70/30 |
-| .12 | The Question of the East | Noris | The Question of the East | Council debate; shows rivalry, dominance, coalition and footholds. "The king will answer" |
-| .13 | Gifts from the Zilin Hills | Noris | Envoys to the Zilin Hills | Pilgrim envoys bring blessings and gold. "Accept the blessing" (political_power 75) |
-| .14 | Gondolin's Watch | Gondolin | Gondolin's Watch on the North | Gondolin's captains are asked to watch the northern sea. "Keep the watch" (army_experience 5; flag) / "We see only fishing boats" (nothing). If `zin_zol_rising` is set, the text speaks of the dead on the northern shores; otherwise of strange ships nobody can name |
-| .15 | The Crown of the High King | Noris | The Crown of the High King | The clans raise Esiurth on a shield above the wells of Furvior. "Long live the High King" (war_support 0.05; accord +5) |
-| .20 | Unrest in the Tents | Noris | `zin_noris_monthly`, accord ≤ 20, mean time 180 days | Grant the clans' petition (political_power −50; accord +15) / Ride them down (accord +5; stability −0.05; war_support 0.03); AI 70/30 |
-| .21 | The Clans Ride as One | Noris | `zin_noris_monthly`, accord ≥ 80 the first time | Flavour; manpower 5000 |
+| Id | Title | For | Fired by | Picture | Options (effects; AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | The Desert Throne | Noris | The Desert Throne | `generic_court` | "Furvior first" (political_power 50; accord −5) / "The tents first" (accord +10); AI 50/50 |
+| .2 | The Gathering of the Clans | Noris | The Gathering of the Clans | `generic_court` | Honour the Furan riders (army_experience 10; accord +5) / Honour the Kersi caravan houses (Inf +5 salt; Inf +5 rift; accord +5) / Honour all, favour none (political_power −25; accord +10); AI 40/40/20 |
+| .3 | A Bride from the Tents | Noris | A Bride from the Tents | `generic_court` | A daughter of the Furan (accord +10) / A daughter of the Kersi (Inf +5 on every road) / A princess of Gondolin (Lean +20 on Gondolin; accord −5); AI 40/30/30 |
+| .4 | One Crown, Many Tents | Noris | One Crown, Many Tents | `generic_peace` | The king rides from tent to tent and is cheered. "So it shall be" (stability 0.03) |
+| .5 | The Wells of Mylunur | Mylunur | The Wells of Mylunur | `generic_wilds` | Sell the well rights to Furvior (Lean +15; Noris Inf +5 salt) / The wells stay ours (Lean −5); AI chance = 50 + lean |
+| .22 | Mylunur's Answer | Noris | option of .5 | `generic_wilds` | Result text |
+| .6 | The Rift Ports | Noris | The Rift Ports | `generic_sea` | Merchants of Aenor and pilgrims bound for the Zilin Hills crowd the quays. Tax the pilgrims (political_power 50; Worshipdom's opinion of Noris −10) / Welcome them (stability 0.02; Worshipdom's opinion +10); AI 50/50 |
+| .7 | The Oasis-Keepers | Noris | The Oasis-Keepers | `generic_wilds` | The keepers of the deep wells ask that their water rights be honoured. Honour them (political_power −25; call zin_noris_south_lean(5)) / Rule them (political_power 25; accord −5); AI 70/30 |
+| .8 | Friendship with Gondolin | Gondolin | Friendship with Gondolin | `generic_court` | Renew the Treaty (Lean +15; Noris ↔ Gondolin opinion +15) / Ask more of Furvior (Lean +5; Gondolin political_power 25); AI 70/30 |
+| .23 | Gondolin's Answer | Noris | option of .8 | `generic_court` | Result text |
+| .9 | An Embassy from Furvior | Alerhia | An Embassy to Alerhia | `generic_court` | Welcome the riders (Lean +15) / Hear both sides (Lean +5) / Postondoroth pays better (Lean −10); AI chance by lean: 40 + lean / 40 / 20 − lean |
+| .24 | Alerhia's Answer | Noris | option of .9 | `generic_court` | Result text |
+| .10 | The Passes of Miaed | Miaed | The Passes of Miaed | `generic_wilds` | Grant passage rights (Lean +15; Noris Inf +10 sand) / The passes are ours (Lean −5); AI chance = 50 + lean |
+| .25 | Miaed's Answer | Noris | option of .10 | `generic_wilds` | Result text |
+| .11 | Temples and Gold | Noris | Temples and Gold | `houses` | The temples offer to regild the great shrine of Furvior at their own cost. "Gladly" (stability 0.02) / "Furvior pays for its own shrines" (political_power −25; accord +3); AI 70/30 |
+| .12 | The Question of the East | Noris | The Question of the East | `generic_court` | Council debate; shows rivalry, dominance, coalition and footholds. "The king will answer" |
+| .13 | Gifts from the Zilin Hills | Noris | Envoys to the Zilin Hills | `hermitage` | Pilgrim envoys bring blessings and gold. "Accept the blessing" (political_power 75) |
+| .14 | Gondolin's Watch | Gondolin | Gondolin's Watch on the North | `generic_sea` | Gondolin's captains are asked to watch the northern sea. "Keep the watch" (army_experience 5; flag) / "We see only fishing boats" (nothing). If `zin_zol_rising` is set, the text speaks of the dead on the northern shores; otherwise of strange ships nobody can name |
+| .15 | The Crown of the High King | Noris | The Crown of the High King | `generic_court` | The clans raise Esiurth on a shield above the wells of Furvior. "Long live the High King" (war_support 0.05; accord +5) |
+| .20 | Unrest in the Tents | Noris | `zin_noris_monthly`, accord ≤ 20, mean time 180 days | `generic_war` | Grant the clans' petition (political_power −50; accord +15) / Ride them down (accord +5; stability −0.05; war_support 0.03); AI 70/30 |
+| .21 | The Clans Ride as One | Noris | `zin_noris_monthly`, accord ≥ 80 the first time | `generic_war` | Flavour; manpower 5000 |
+
+### Icons
+
+Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.md)); the sprites `GFX_focus_zin_<key>` and `GFX_idea_zin_<key>` exist in game today. Spirits use the icon of the focus that adds them. `eastern_throne` appears only on a focus that needs `zin_afrit_king_of_east`, when the King of the East is public.
+
+| Branch | Focus → icon |
+| --- | --- |
+| 1 | desert_throne `throne_gold`; house_of_esiur `sceptre`; gathering_of_the_clans `banner_league`; indigo_court `council_table`; bride_from_the_tents `alliance_rings`; oath_of_the_furan `handshake_oath`; kersi_caravan_houses `caravan`; throne_of_furvior `throne_gold`; tent_moot `exile_court`; royal_tax_farms `ledger_coins`; kings_law_in_the_sand `seal_royal`; moot_at_the_wells `council_table`; one_crown_many_tents `crown_hailed`; clan_marshals `war_council_map`; council_of_the_sands `council_table` |
+| 2 | salt_road `traders_road`; master_of_caravans `caravan`; wells_of_mylunur `granary`; caravanserais_of_the_north `traders_road`; harbours_of_gondolin `harbour_lake`; claim_the_rift_road `roads_paved`; salt_markets_of_furvior `market_stalls`; down_the_lake_road `lake_town`; caravan_guilds `guild_hall`; rift_ports `anchor_rope`; undercut_the_gold_road `coin_chest`; gold_of_the_desert `coin_chest`; masters_of_the_charters `scroll_treaty`; furvior_queen_of_roads `map_unrolled` |
+| 3 | wells_of_the_south `granary`; survey_the_noris_desert `compass_rose`; oasis_keepers `herds`; cisterns_of_furvior `canal_lock`; the_sand_road `caravan`; desert_wardens `ranger_cloak`; into_the_deep_sand `compass_rose`; water_rights_of_the_south `seal_wax`; salt_pans `quarry_stone`; garden_in_the_sands `farm_sowing` |
+| 4 | noris_treaty `scroll_treaty`; friendship_with_gondolin `handshake_oath`; envoys_to_the_eastern_courts `envoy`; treaty_council_at_furvior `council_table`; embassy_to_alerhia `envoy`; mora_and_the_lake_towns `lake_town`; open_the_treaty `seal_wax`; passes_of_miaed `mountain_pass`; treaty_levies `levy_muster`; letters_to_erco_and_plutondo `scroll_sealed`; gondolins_watch `lighthouse`; first_among_the_eastern_crowns `alliance_rings`; banner_over_the_sands `banner_plain`; the_greater_treaty `banner_league` |
+| 5 | riders_of_the_sand `camel_rider`; the_camel_corps `camel_rider`; rider_general_tumo `horse_cavalry`; desert_fox_doctrine `war_council_map`; forges_of_furvior `forge_anvil`; forts_on_the_stabilo_march `fort_wall`; the_long_ride `horse_cavalry`; muster_of_the_tents `levy_muster`; sun_and_steel `sword_shield`; the_indigo_guard `knight_lance`; siege_trains `siege_trebuchet`; masters_of_the_desert_war `camel_rider`; the_war_council `war_council_map`; the_host_of_noris `war_drums` |
+| 6 | temples_and_gold `sun_veiled`; welcome_the_generous_friends `alms_bread`; count_the_temple_gold `ledger_coins`; houses_of_healing `house_first_light`; the_kings_own_coffers `coin_chest`; the_temples_loans `tribute_chest`; eyes_on_the_priests `eye_watchful`; faith_and_treasury `seal_royal` |
+| Question | question_of_the_east `council_table` |
+| 7 | the_deliverers_sword `sun_veiled`; captains_of_the_temple `sword_shield`; envoys_to_zilin `hermitage_hills`; kneel_to_the_king `eastern_throne`; riders_for_the_host `camel_rider`; promised_spoils `tribute_chest`; tribute_of_the_free_crowns `coin_chest`; march_west_with_the_king `war_drums`; satrap_of_the_sands `crown_iron`; when_the_king_falls `crown_broken` |
+| 8 | shield_of_the_east `fort_wall`; close_the_temple_houses `scroll_sealed`; letters_to_the_eastern_kings `envoy`; guard_the_rift_ports `lighthouse`; first_of_the_free_crowns `banner_league`; aid_to_the_elder_groves `tree_silver`; against_the_eastern_throne `sword_shield`; break_the_coalition `chain_broken`; free_riders_for_the_coalition `camel_rider`; the_free_east `banner_plain` |
+| 9 | high_king_of_the_sands `crown_hailed`; claim_every_road `map_unrolled`; oaths_of_the_tents `handshake_oath`; protectorate_of_the_sands `charter_shield`; crown_of_the_high_king `crown_hailed`; the_high_kings_due `tribute_chest`; the_great_kingdoms_bend `two_crowns`; no_god_king_in_the_east `empty_throne`; one_east_under_furvior `alliance_rings` |
+| 10 | close_the_roads_to_stabilo `toll_house`; seize_the_gold_road `caravan`; the_caravan_peace `olive_branch`; answer_the_coalition `ship_voyage`; spoils_of_the_elder_groves `forest_ancient`; the_road_to_parim `palace_parim`; bring_the_riders_home `banner_laid_down` |
 
 ### Data checks for this tree
 
 - 112 focuses; unique keys; unique (x,y); x from 0 to 29; every focus's y is greater than the y of each of its prerequisites.
 - Exclusive pairs: throne_of_furvior / tent_moot; first_among_the_eastern_crowns / banner_over_the_sands; welcome_the_generous_friends / count_the_temple_gold; the three route focuses. The compiler makes them symmetric.
-- Days are 35 or 70.
+- Days are multiples of 7 (35 or 70).
 - `raw` blocks: none planned.
 - Every `call` and `check` names an effect or trigger defined here, in the mechanic spec, the Afrit spec (`zin_afrit_add_footholds`, `zin_afrit_purge_houses`), or the diplomacy spec (`zin_diplo_grant_cb`).
 
@@ -384,7 +412,7 @@ Under the historical path the AI follows the weights marked "hist". Which answer
 | 1754 | First Among the Eastern Crowns, Treaty Levies, The Desert-Fox Doctrine, The Long Ride, The Muster of the Tents, The War Council (after Thaw 1754), Desert Wardens | Envoys speak of the rift |
 | 1755 | The Indigo Guard, Masters of the Desert War, The Host of Noris (on `zin_war_of_last_crowns`); Answer the Eastern Coalition if Noris joined | The coalition crosses the rift |
 | 1756 | The Question of the East (after `zin_afrit_king_of_east`); The Deliverer's Sword → Kneel (client) **or** The Shield of the East → First of the Free Crowns, Letters to the Eastern Kings (refuser) | The King of the East is proclaimed |
-| 1757 | Client: Riders for the Eastern Host, Promised Spoils. Refuser: Against the Eastern Throne, Break the Coalition, Free Riders for the Stranger (on `zin_eindil_returned`). Either: Bring the Riders Home once the dead and Volgan's hosts strike | Eindil returns |
+| 1757 | Client: Riders for the Eastern Host, Promised Spoils. Refuser: Against the King of the East, Break the Coalition, Free Riders for the Stranger (on `zin_eindil_returned`). Either: Bring the Riders Home once the dead and Volgan's hosts strike | Eindil returns |
 | 1758 | Client: March West with the King. Refuser: Close the Temple Houses (after the reveal), Guard the Rift Ports | The King's host marches west |
 | 1759–1760 | Client: When the King Falls. Refuser: The Free East. Remaining economy and wells focuses | Afrit dies; the East is divided |
 
@@ -407,20 +435,30 @@ The Caravan War line is taken under the historical path only if Noris and Stabil
 
 ## Acceptance
 
-1. The compiler accepts `noris.json`: 112 focuses, unique positions, prerequisites above their focuses, symmetric exclusions, days multiples of 7, no unknown modifier, effect or trigger.
-2. The HOI4 Agent Tools focus inspector reports no errors; the focus renderer's review image shows ten readable branches within 30 columns.
-3. On 1 Thaw 4A 1748 no available focus can create a war goal, a claim or a war (offline scan of every focus reachable without story flags).
-4. The Question of the East is unavailable on day one and becomes available on `zin_afrit_king_of_east`, on `zin_eastern_invasion`, or after 1 Thaw 4A 1753 once `zin_golden_king_dead` is set.
-5. Historical AI run: Noris takes exactly one route focus in 4A 1756; it is The Deliverer's Sword if and only if Noris is a client, else The Shield of the East; Noris does not fight Stabilo before `zin_war_of_last_crowns`.
-6. UNITE_WITHOUT_AFRIT run where Noris has the higher dominance: Noris takes High King of the Sands and reaches The High King's Due.
-7. Clan accord crossing 20 and 80 fires `zin_noris.20` and `.21` as specified; the dynamic modifier follows accord.
-8. No text reachable before `zin_afrit_revealed` names Afrit (compiler secret check); no text uses "Sunhot" as a place.
-9. All 22 spirits load; every modifier key is in the game's modifier documentation.
+Build checks (focus compiler, `npm test` in `tools/`, including `tools/content/mech_eastern_kings.test.mjs` for the stubs):
+
+1. `noris.json` compiles: 112 focuses, unique keys and positions in columns 0–29 and rows 0–13, every prerequisite and exclusive exists, every focus sits below its prerequisites, the exclusive pairs and the three route focuses are symmetric, every `days` is a multiple of 7, no `raw` block, no unknown modifier, effect or trigger.
+2. Every icon is a catalog key and every event picture a picture key; no gated picture is used.
+3. Every `call` and `check` resolves to this tree's, the eastern mechanic's, the Afrit spec's (`zin_afrit_add_footholds`, `zin_afrit_purge_houses`) or the diplomacy spec's (`zin_diplo_grant_cb`) effects and triggers; the mechanic's stub `zin_noris_monthly` is replaced by the compiled one.
+4. Offline scan: on 1 Thaw 4A 1748 no available focus can create a war goal, a claim or a war (every focus reachable without story flags).
+5. The Question of the East is unavailable on day one and becomes available on `zin_afrit_king_of_east`, on `zin_eastern_invasion`, or after 1 Thaw 4A 1753 once `zin_golden_king_dead` is set.
+6. Text scan: no text reachable before `zin_afrit_revealed` names Afrit or the Hidden Council; no text names Eindil; no text uses "Sunhot" as a place (compiler secret check).
+7. All 22 spirits and the dynamic modifier load; every modifier key is in the 1.19.3 modifier documentation.
+8. HOI4 Agent Tools focus inspector reports no errors; the focus renderer shows ten readable branches within 30 columns.
+
+Isolated Linux run:
+
+9. One in-game year from 1 Thaw 4A 1748: Noris uses this tree (not `zin_long_peace_*`), takes The Desert Throne, The Salt Road and The Noris Treaty first, declares no war; `zin_noris_clan_accord` starts at 45 and moves only by the listed drifts and effects; `error.log` has no line from `zin_noris` files.
+10. Historical observer run to 4A 1760 (PROGRAM observer run): Noris takes exactly one route focus in 4A 1756; it is The Deliverer's Sword if and only if Noris is a client (a subject with `zin_autonomy_eastern_client`), else The Shield of the East; Noris does not fight Stabilo before `zin_war_of_last_crowns`.
+11. A `zin_rule_ai_east` = UNITE_WITHOUT_AFRIT run where Noris has the higher dominance: Noris takes High King of the Sands and reaches The High King's Due.
+12. Console tests: accord set to 20 fires `zin_noris.20` within its mean time; accord 80 fires `zin_noris.21` once.
 
 ## Open questions
 
-1. Are the three clans (the royal House of Esiur, the rider Furan, the caravan Kersi) acceptable, named after the proposed characters, or does the owner have Noris clans in mind?
-2. Should the Oasis-Keepers be a people of their own (a South Lands nomad tradition flag), or stay a court faction of Noris?
-3. Should Noris have a navy at all? The map gives it no coast today; Gondolin, its Treaty partner, is the "northern maritime crown" but also shows no coastal state in the province data.
-4. Is "High King of the Sands" a good title for a Noris that unites the East, or should it use an older eastern title?
-5. Should a Noris that kneels be able to break with the King of the East before his death (for example after he loses Parim), or must it stay until he falls?
+Each proceeds on the proposal written into the design; the owner's questions are in [../../OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md), section "east lands".
+
+1. The three clans (Esiur, Furan, Kersi), named after the proposed characters. **Proceeds on:** adopted, labelled proposed ("east lands" 8).
+2. Should the Oasis-Keepers be a people or tradition of their own? **Proceeds on:** a court faction of Noris shown only in events, with no people flag. Listed for the integrator as a new owner question.
+3. Should Noris have a navy? **Proceeds on:** no naval branch; the tree uses only the rift ports it gains on the Rift Road ("east lands" 11).
+4. Is "High King of the Sands" the right title? **Proceeds on:** adopted, labelled proposed. Listed for the integrator as a new owner question.
+5. May a kneeling Noris break with the King of the East before his death? **Proceeds on:** no; the client stays until `zin_afrit_dead` (When the King Falls). Listed for the integrator as a new owner question; which courts kneel stays open per game ("east lands" 1, decision S1).

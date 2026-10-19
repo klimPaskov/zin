@@ -1,6 +1,6 @@
 # Cold Lands regional focus trees
 
-**Status:** Draft. **Priority:** 6. **Phase:** 6.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 6. **Phase:** 6.
 
 ## Purpose
 
@@ -42,6 +42,9 @@ Each tree makes its country play differently inside the [Cold Lands mechanic](..
 ### Conventions for every tree in this file
 
 - **Ids.** Tree id `regional_<name>`; focus ids `zin_regional_<name>_<key>`; spirits `zin_regional_<name>_<key>`; events namespace `zin_regional_<name>`; characters `zin_regional_<name>_<person>`; tree-declared scripted effects and triggers `zin_regional_<name>_<verb>` (as the compiler spec requires). Spirit keys never repeat a focus key of the same tree.
+- **Icons.** The backticked key after each focus's position is its catalog icon ([../02_icon_catalog.md](../02_icon_catalog.md), sprite `GFX_focus_zin_<key>`); a spirit takes the icon of the focus that adds it, and a start spirit the icon of its tree's first focus. Every prerequisite and exclusive names an exact focus key of the same tree; exclusives are written on both focuses. Key-focus tables give the full effects of the focuses marked ★; the branch lists give everything else.
+- **Recruiting.** "recruit `zin_regional_<name>_<person>`" is `call zin_regional_<name>_recruit_<person>`, a tree-declared effect (`recruit_character`, then the role in the court table). The characters themselves are entries in `tools/content/data/characters.json` (characters spec).
+- **Start spirits.** "Start spirit" is a spirit of the tree applied on 1 Thaw 4A 1748 through the start-situation data (`tools/content/data/start_situation.json`, [01_start_situation.md](../../02_lore/01_start_situation.md)); country histories come from the politics step and are never edited by these trees.
 - **Defaults.** Days 35 unless marked 70d. AI base 10 unless given. A focus has no `available` block unless one is given. Focus lines read: `key` **Name** (x,y) ← prerequisites: effects. "a, b" in prerequisites means a **or** b; "a + b" means a **and** b.
 - **Shorthand.** **lean ±n self** is `call zin_cold_add_lean (n)` on ROOT; **lean ±n (Name)** is the same on that country; **lean ±n all** is `call zin_cold_add_lean_all (n)`; **lean ±n neighbours** is `call zin_shared_cold_lands_lean_neighbours (n)` (shared tree effect: every neighbouring country passing `zin_cold_is_clan_realm`); **defiance ±n** is `call zin_cold_add_defiance (n)`; **regard ±n** and **renown ±n** call `zin_eindil_add_regard` (on ROOT) and `zin_eindil_add_renown`; **LC +n** is `flag zin_lost_cause_member` plus `call zin_lost_cause_add_strength (n)`; **aid host {m, e}** is `call zin_eindil_aid_host {manpower m, equipment e}`; **join coalition** is `call zin_eindil_join_coalition`; **friend** is `check zin_eindil_friend`.
 - **Historical factor.** "hist ×f" applies while `zin_cold_historical` is true (the region's rule is historical or `zin_rule_historical_path` is HISTORICAL).
@@ -73,7 +76,7 @@ Yeldenne's tree (`regional_yeldenne`, 36 focuses) is specified in [yeldenne.md](
 
 ### Situation in 4A 1748
 
-Isengard holds twelve states of iron hills and fortified valleys along Coldor's border. In 4A 850 the kings of Coldor brought the frozen interior under one crown; Isengard's hall refused, and it has kept its border forts manned ever since (proposed). Warlord Ezhan Isenmar rules through warband chiefs who boast of the refusal at every feast. His envoys bring salt, iron and winter grain to the clans along the march, and some of them now look to the Iron Hall rather than to Fandanar. Coldor and Isengard hold each other in open contempt (opinion "Cold Rivalry", −30 both ways), but nobody is at war, and no claim or war goal exists. Isengard's defiance (`zin_cold_isengard_defiance`) starts at 70.
+Isengard holds twelve states of iron hills and fortified valleys along Coldor's border. In 4A 850 the kings of Coldor brought the frozen interior under one crown; Isengard's hall refused, and it has kept its border forts manned ever since (proposed). Warlord Ezhan Isenmar rules through warband chiefs who boast of the refusal at every feast. His envoys bring salt, iron and winter grain to the clans along the march, and some of them now look to the Iron Hall rather than to Fandanar. Coldor and Isengard hold each other in open contempt (opinion `zin_opinion_cold_rivalry`, "Cold Rivalry", −30 both ways, cold lands mechanic), but nobody is at war, and no claim or war goal exists. Isengard's defiance (`zin_cold_isengard_defiance`) starts at 70.
 
 ### Role
 
@@ -88,7 +91,7 @@ Isengard holds twelve states of iron hills and fortified valleys along Coldor's 
 | `zin_regional_isengard_brana` | Brana of the Ninth Fort | Corps commander, skill 3, traits `unyielding_defender`, `winter_specialist`; recruited by *The Ninth Fort* | this spec (proposed) |
 | `zin_regional_isengard_veska` | Veska the Gift-Giver | Political advisor, trait `zin_adv_envoy`; recruited by *The Gift-Giver* | this spec (proposed) |
 
-Start spirit (country history): `refusal_of_850`.
+Start spirit (start-situation data): `refusal_of_850`.
 
 ### Tree
 
@@ -102,71 +105,71 @@ Start spirit (country history): `refusal_of_850`.
 | F. The Iron Host | 20–22 | 0–3 | start | Army |
 | G. Beyond the March | 9–12 | 6–8 | `zin_war_of_last_crowns` | The final war |
 
-**A. The Iron Hall.** The warlord's court and the memory of 850. Icons: `crown_iron`, `war_council_map`, `forge_anvil`, `fort_wall`.
+**A. The Iron Hall.** The warlord's court and the memory of 850.
 
-- `the_iron_hall` **The Iron Hall** (2,0) 70d: political power 75; spirit `warlords_hall`. AI 100.
-- `warband_chiefs` **The Warband Chiefs** (1,1) ← the_iron_hall: war support 0.03; political power 25.
-- `the_old_refusal` **The Old Refusal** (3,1) ← the_iron_hall: defiance +5; stability 0.02; tooltip "In 850 the hall said no. It still says no." AI 15; hist ×2.
-- `counsel_of_the_forges` **Counsel of the Forges** (0,2) ← warband_chiefs: political power 50.
-- `law_of_the_hall` **Law of the Hall** (2,2) ← warband_chiefs, the_old_refusal: stability 0.05.
-- `heirs_of_isenmar` **Heirs of Isenmar** (4,2) ← the_old_refusal: war support 0.02; army experience 5.
-- `one_hall_many_forts` **One Hall, Many Forts** (2,3) 70d ← law_of_the_hall: swap spirit `warlords_hall` → `iron_crown`.
+- `the_iron_hall` **The Iron Hall** (2,0) `crown_iron` 70d: political power 75; spirit `warlords_hall`. AI 100.
+- `warband_chiefs` **The Warband Chiefs** (1,1) `war_council_map` ← the_iron_hall: war support 0.03; political power 25.
+- `the_old_refusal` **The Old Refusal** (3,1) `chain_broken` ← the_iron_hall: defiance +5; stability 0.02; tooltip "In 850 the hall said no. It still says no." AI 15; hist ×2.
+- `counsel_of_the_forges` **Counsel of the Forges** (0,2) `forge_anvil` ← warband_chiefs: political power 50.
+- `law_of_the_hall` **Law of the Hall** (2,2) `seal_royal` ← warband_chiefs, the_old_refusal: stability 0.05.
+- `heirs_of_isenmar` **Heirs of Isenmar** (4,2) `sword_shield` ← the_old_refusal: war support 0.02; army experience 5.
+- `one_hall_many_forts` **One Hall, Many Forts** (2,3) `fort_wall` 70d ← law_of_the_hall: swap spirit `warlords_hall` → `iron_crown`.
 
-**B. The March Forts.** Forts on the border with Coldor and the border war. Icons: `fort_wall`, `pass_fort`, `eye_watchful`, `war_drums`.
+**B. The March Forts.** Forts on the border with Coldor and the border war.
 
-- `man_the_march` **Man the March** (6,0): building bunker 1 `isengard_march`. AI 30.
-- `count_the_stones` **Count the Stones** (5,1) ← man_the_march: army experience 5; research {zin_cat_walls} 0.5×1.
-- `watchtowers_of_the_march` **Watchtowers of the March** (7,1) ← man_the_march: spirit `march_watch`.
-- `the_ninth_fort` **The Ninth Fort** (6,2) 70d ← count_the_stones, watchtowers_of_the_march: building bunker 2 `isengard_march`; recruit `zin_regional_isengard_brana`.
-- ★ `meet_them_at_the_forts` **Meet Them at the Forts** (5,3) ← the_ninth_fort. See key focuses.
-- `stone_upon_stone` **Stone upon Stone** (6,3) ← the_ninth_fort: building bunker 1 capital; building bunker 1 random_owned.
-- ★ `ride_to_the_forts` **Ride to the Forts** (7,3) ← the_ninth_fort. See key focuses.
-- ★ `the_march_remembers` **The March Remembers** (6,4) ← meet_them_at_the_forts, ride_to_the_forts. See key focuses.
+- `man_the_march` **Man the March** (6,0) `fort_wall`: building bunker 1 `isengard_march`. AI 30.
+- `count_the_stones` **Count the Stones** (5,1) `quarry_stone` ← man_the_march: army experience 5; research {zin_cat_walls} 0.5×1.
+- `watchtowers_of_the_march` **Watchtowers of the March** (7,1) `eye_watchful` ← man_the_march: spirit `march_watch`.
+- `the_ninth_fort` **The Ninth Fort** (6,2) `pass_fort` 70d ← count_the_stones, watchtowers_of_the_march: building bunker 2 `isengard_march`; recruit `zin_regional_isengard_brana`.
+- ★ `meet_them_at_the_forts` **Meet Them at the Forts** (5,3) `war_drums` ← the_ninth_fort: see key focuses.
+- `stone_upon_stone` **Stone upon Stone** (6,3) `fort_wall` ← the_ninth_fort: building bunker 1 capital; building bunker 1 random_owned.
+- ★ `ride_to_the_forts` **Ride to the Forts** (7,3) `horse_cavalry` ← the_ninth_fort: see key focuses.
+- ★ `the_march_remembers` **The March Remembers** (6,4) `banner_plain` ← meet_them_at_the_forts, ride_to_the_forts: see key focuses.
 
-**C. Gifts to the Steadings.** Isengard's answer to the Accord: gifts, bread and promises to the clans along the march. Icons: `tribute_chest`, `granary`, `envoy`, `handshake_oath`.
+**C. Gifts to the Steadings.** Isengard's answer to the Accord: gifts, bread and promises to the clans along the march.
 
-- `winter_gifts` **Winter Gifts** (10,0): lean −5 neighbours; political power 25. AI 30.
-- `the_gift_giver` **The Gift-Giver** (9,1) ← winter_gifts: recruit `zin_regional_isengard_veska`; political power 25.
-- `salt_and_iron_for_the_clans` **Salt and Iron for the Clans** (11,1) ← winter_gifts: lean −5 neighbours.
-- `granaries_of_the_hall` **Granaries of the Hall** (10,2) ← the_gift_giver, salt_and_iron_for_the_clans: flag `zin_cold_winter_stores`; stability 0.03.
-- `hosts_at_the_winter_moot` **Hosts at the Winter Moot** (9,3) ← granaries_of_the_hall: lean −3 all; political power 25.
-- ★ `oath_brothers` **Oath-Brothers of the March** (11,3) ← granaries_of_the_hall. See key focuses.
-- `the_iron_halls_bread` **The Iron Hall's Bread** (10,4) ← hosts_at_the_winter_moot, oath_brothers: lean −5 neighbours; stability 0.03.
+- `winter_gifts` **Winter Gifts** (10,0) `tribute_chest`: lean −5 neighbours; political power 25. AI 30.
+- `the_gift_giver` **The Gift-Giver** (9,1) `envoy` ← winter_gifts: recruit `zin_regional_isengard_veska`; political power 25.
+- `salt_and_iron_for_the_clans` **Salt and Iron for the Clans** (11,1) `caravan` ← winter_gifts: lean −5 neighbours.
+- `granaries_of_the_hall` **Granaries of the Hall** (10,2) `granary` ← the_gift_giver, salt_and_iron_for_the_clans: flag `zin_cold_winter_stores`; stability 0.03.
+- `hosts_at_the_winter_moot` **Hosts at the Winter Moot** (9,3) `feast_table` ← granaries_of_the_hall: lean −3 all; political power 25.
+- ★ `oath_brothers` **Oath-Brothers of the March** (11,3) `handshake_oath` ← granaries_of_the_hall: see key focuses.
+- `the_iron_halls_bread` **The Iron Hall's Bread** (10,4) `alms_bread` ← hosts_at_the_winter_moot, oath_brothers: lean −5 neighbours; stability 0.03.
 
-**D. The Answer to Fandanar.** Never kneel, or take a seat at Fandanar. Icons: `envoy`, `chain_broken`, `two_crowns`, `banner_league`.
+**D. The Answer to Fandanar.** Never kneel, or take a seat at Fandanar.
 
-- `envoys_from_fandanar` **The Envoys from Fandanar** (14,0): political power 25. AI 30.
-- ★ `never_kneel` **Never Kneel** (13,1) ← envoys_from_fandanar; exclusive with a_seat_at_fandanar.
-- ★ `a_seat_at_fandanar` **A Seat at Fandanar** (15,1) ← envoys_from_fandanar; exclusive with never_kneel.
-- `the_free_north` **The Free North** (13,2) ← never_kneel: lean −5 neighbours; war support 0.03.
-- `a_daughter_of_the_hall` **A Daughter of the Hall** (15,2) ← a_seat_at_fandanar: event `marriage_offer` to Coldor.
-- ★ `iron_against_the_crown` **Iron Against the Crown** (13,3) ← the_free_north. See key focuses.
-- ★ `under_the_accords_banner` **Under the Accord's Banner** (15,3) ← a_daughter_of_the_hall. See key focuses.
-- `the_hall_unbowed` **The Hall Unbowed** (13,4) ← the_free_north: stability 0.05; political power 50.
-- `kin_across_the_march` **Kin Across the March** (15,4) ← under_the_accords_banner: lean +5 all; stability 0.03.
+- `envoys_from_fandanar` **The Envoys from Fandanar** (14,0) `envoy`: political power 25. AI 30.
+- ★ `never_kneel` **Never Kneel** (13,1) `chain_broken` ← envoys_from_fandanar; exclusive with a_seat_at_fandanar: see key focuses.
+- ★ `a_seat_at_fandanar` **A Seat at Fandanar** (15,1) `two_crowns` ← envoys_from_fandanar; exclusive with never_kneel: see key focuses.
+- `the_free_north` **The Free North** (13,2) `banner_plain` ← never_kneel: lean −5 neighbours; war support 0.03.
+- `a_daughter_of_the_hall` **A Daughter of the Hall** (15,2) `seal_wax` ← a_seat_at_fandanar: event `marriage_offer` to Coldor.
+- ★ `iron_against_the_crown` **Iron Against the Crown** (13,3) `war_council_map` ← the_free_north: see key focuses.
+- ★ `under_the_accords_banner` **Under the Accord's Banner** (15,3) `banner_league` ← a_daughter_of_the_hall: see key focuses.
+- `the_hall_unbowed` **The Hall Unbowed** (13,4) `crown_iron` ← the_free_north: stability 0.05; political power 50.
+- `kin_across_the_march` **Kin Across the March** (15,4) `handshake_oath` ← under_the_accords_banner: lean +5 all; stability 0.03.
 
-**E. The Iron Hills.** Icons: `mine_cart`, `forge_anvil`, `roads_paved`.
+**E. The Iron Hills.**
 
-- `iron_hills` **The Iron Hills** (18,0): building industrial_complex 1 capital. AI 25.
-- `deep_shafts` **Deep Shafts** (17,1) ← iron_hills: building industrial_complex 1 random_owned.
-- `forge_halls` **Forge-Halls** (19,1) ← iron_hills: building arms_factory 1 capital.
-- `sledge_ways` **Sledge-Ways** (18,2) 70d ← deep_shafts, forge_halls: building infrastructure 1 random_owned, twice.
-- `iron_for_the_forts` **Iron for the Forts** (18,3) ← sledge_ways: building arms_factory 1 random_owned; equipment zin_arms_equipment 500.
+- `iron_hills` **The Iron Hills** (18,0) `mine_cart`: building industrial_complex 1 capital. AI 25.
+- `deep_shafts` **Deep Shafts** (17,1) `mine_cart` ← iron_hills: building industrial_complex 1 random_owned.
+- `forge_halls` **Forge-Halls** (19,1) `forge_anvil` ← iron_hills: building arms_factory 1 capital.
+- `sledge_ways` **Sledge-Ways** (18,2) `roads_paved` 70d ← deep_shafts, forge_halls: building infrastructure 1 random_owned, twice.
+- `iron_for_the_forts` **Iron for the Forts** (18,3) `foundry_fire` ← sledge_ways: building arms_factory 1 random_owned; equipment zin_arms_equipment 500.
 
-**F. The Iron Host.** Icons: `sword_shield`, `spear_levy`, `levy_muster`.
+**F. The Iron Host.**
 
-- `the_iron_host` **The Iron Host** (21,0): army experience 10. AI 20.
-- `shield_wall_drill` **Shield-Wall Drill** (20,1) ← the_iron_host: research {zin_cat_armour} 0.5×1.
-- `valley_spears` **Valley Spears** (22,1) ← the_iron_host: research {zin_cat_arms} 0.5×1.
-- `heavy_hosts` **Heavy Hosts** (21,2) 70d ← shield_wall_drill, valley_spears: spirit `heavy_hosts_drilled`.
-- `levy_of_the_valleys` **Levy of the Valleys** (21,3) ← heavy_hosts: manpower 8,000.
+- `the_iron_host` **The Iron Host** (21,0) `sword_shield`: army experience 10. AI 20.
+- `shield_wall_drill` **Shield-Wall Drill** (20,1) `sword_shield` ← the_iron_host: research {zin_cat_armour} 0.5×1.
+- `valley_spears` **Valley Spears** (22,1) `spear_levy` ← the_iron_host: research {zin_cat_arms} 0.5×1.
+- `heavy_hosts` **Heavy Hosts** (21,2) `war_drums` 70d ← shield_wall_drill, valley_spears: spirit `heavy_hosts_drilled`.
+- `levy_of_the_valleys` **Levy of the Valleys** (21,3) `levy_muster` ← heavy_hosts: manpower 8,000.
 
-**G. Beyond the March.** Opens with the War of the Last Crowns. Icons: `banner_plain`, `fort_wall`, `lone_sword`.
+**G. Beyond the March.** Opens with the War of the Last Crowns.
 
-- `beyond_the_march` **Beyond the March** (10,6): available `zin_war_of_last_crowns`; political power 50. AI 200.
-- ★ `hold_the_north` **Hold the North** (9,7) ← beyond_the_march; exclusive with iron_for_the_living.
-- ★ `iron_for_the_living` **Iron for the Living** (11,7) ← beyond_the_march; exclusive with hold_the_north.
-- ★ `the_iron_companies_march` **The Iron Companies March South** (11,8) ← iron_for_the_living.
+- `beyond_the_march` **Beyond the March** (10,6) `banner_plain`: available `zin_war_of_last_crowns`; political power 50. AI 200.
+- ★ `hold_the_north` **Hold the North** (9,7) `fort_wall` ← beyond_the_march; exclusive with iron_for_the_living: see key focuses.
+- ★ `iron_for_the_living` **Iron for the Living** (11,7) `lone_sword` ← beyond_the_march; exclusive with hold_the_north: see key focuses.
+- ★ `the_iron_companies_march` **The Iron Companies March South** (11,8) `banner_league` ← iron_for_the_living.
 
 ### Key focuses
 
@@ -199,10 +202,10 @@ Start spirit (country history): `refusal_of_850`.
 
 ### Events (namespace `zin_regional_isengard`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `marriage_offer` | A Daughter of the Iron Hall | Coldor | *A Daughter of the Hall* | **Accept the match** (AI 70): Isengard defiance −10; opinion modifier `zin_regional_isengard_marriage` (+20) both ways. **Decline**: Isengard defiance +5 |
-| 2 | `iron_halls_promise` | The Iron Hall Stands Behind Us | each guaranteed clan realm | *Oath-Brothers of the March* | One option: lean −5 self. Text: the warlord's envoy swears that no crown will take their steading |
+| Id | Key | Title | To | Trigger | Picture | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `marriage_offer` | A Daughter of the Iron Hall | Coldor | *A Daughter of the Hall* | `generic_court` | **Accept the match** (AI 70): Isengard defiance −10; opinion modifier `zin_regional_isengard_marriage` (+20) both ways. **Decline**: Isengard defiance +5 |
+| 2 | `iron_halls_promise` | The Iron Hall Stands Behind Us | each guaranteed clan realm | *Oath-Brothers of the March* | `generic_court` | One option: lean −5 self. Text: the warlord's envoy swears that no crown will take their steading |
 
 Mechanic events that reach Isengard (`zin_cold.30` charter, `.31` Isengard rides to the forts, `.32` news, `.33` marriage, `.12` raiders) are owned by the mechanic.
 
@@ -244,7 +247,7 @@ Horidor is a highland kingdom of fifteen states east of the frozen interior: hig
 | `zin_regional_horidor_maela` | Maela Highcairn | Corps commander, skill 3, traits `trait_mountaineer`, `hill_fighter`; recruited by *High-Pass Scouts* | this spec (proposed) |
 | `zin_regional_horidor_tarvo` | Old Tarvo, Keeper of the Cairns | Political advisor, trait `zin_adv_elder`; recruited by *Ollon's Hearth* | this spec (proposed) |
 
-Start spirit (country history): `chiefs_of_the_cairns`.
+Start spirit (start-situation data): `chiefs_of_the_cairns`.
 
 ### Tree
 
@@ -257,55 +260,55 @@ Start spirit (country history): `chiefs_of_the_cairns`.
 | E. Neighbours of the High Snows | 16–18 | 0–2 | start | Lean on the valleys |
 | F. When the South Burns | 4–8 | 6–8 | `zin_war_of_last_crowns` or `zin_western_crossing` | The final war |
 
-**A. The Highland Moot.** Icons: `council_table`, `rune_stone`, `feast_table`.
+**A. The Highland Moot.**
 
-- `highland_moot` **The Highland Moot** (1,0): political power 50. AI 100.
-- `voices_of_the_cairns` **Voices of the Cairns** (0,1) ← highland_moot: stability 0.03.
-- `ollons_hearth` **Ollon's Hearth** (2,1) ← highland_moot: recruit `zin_regional_horidor_tarvo`; political power 25.
-- `the_chiefs_grumble` **The Chiefs Grumble** (1,2) ← voices_of_the_cairns, ollons_hearth: event `chiefs_grumble`.
-- `one_moot_one_voice` **One Moot, One Voice** (1,3) 70d ← the_chiefs_grumble: swap spirit `chiefs_of_the_cairns` → `highland_moot_united`.
+- `highland_moot` **The Highland Moot** (1,0) `council_table`: political power 50. AI 100.
+- `voices_of_the_cairns` **Voices of the Cairns** (0,1) `rune_stone` ← highland_moot: stability 0.03.
+- `ollons_hearth` **Ollon's Hearth** (2,1) `feast_table` ← highland_moot: recruit `zin_regional_horidor_tarvo`; political power 25.
+- `the_chiefs_grumble` **The Chiefs Grumble** (1,2) `war_drums` ← voices_of_the_cairns, ollons_hearth: event `chiefs_grumble`.
+- `one_moot_one_voice` **One Moot, One Voice** (1,3) `council_table` 70d ← the_chiefs_grumble: swap spirit `chiefs_of_the_cairns` → `highland_moot_united`.
 
-**B. The Accord Question.** Icons: `banner_league`, `handshake_oath`, `crown_iron`, `envoy`.
+**B. The Accord Question.**
 
-- `the_accord_question` **The Accord Question** (6,0): political power 25. AI 30.
-- ★ `shield_of_the_accord` **Shield of the Accord** (5,1) ← the_accord_question; exclusive with the_highland_crown.
-- ★ `the_highland_crown` **The Highland Crown** (7,1) ← the_accord_question; exclusive with shield_of_the_accord.
-- `highland_envoys` **Highland Envoys** (5,2) ← shield_of_the_accord: lean +5 neighbours.
-- `accord_war_council` **The Accord's War Council** (5,3) ← highland_envoys: available `check zin_regional_horidor_in_accord`; army experience 10; Coldor army experience 5.
-- `two_banners` **Two Banners, One March** (5,4) 70d ← accord_war_council: spirit `two_banners_raised`.
-- `our_own_hearth` **Our Own Hearth** (7,2) ← the_highland_crown: spirit `own_hearth`; stability 0.05.
-- `king_of_the_cairns` **King of the Cairns** (7,3) ← our_own_hearth: `call zin_politics_add_drift {ideology dominion, value 10}`; political power 50.
-- ★ `the_cairn_crown` **The Cairn Crown** (7,4) 70d ← king_of_the_cairns.
+- `the_accord_question` **The Accord Question** (6,0) `envoy`: political power 25. AI 30.
+- ★ `shield_of_the_accord` **Shield of the Accord** (5,1) `banner_league` ← the_accord_question; exclusive with the_highland_crown: see key focuses.
+- ★ `the_highland_crown` **The Highland Crown** (7,1) `crown_iron` ← the_accord_question; exclusive with shield_of_the_accord: see key focuses.
+- `highland_envoys` **Highland Envoys** (5,2) `envoy` ← shield_of_the_accord: lean +5 neighbours.
+- `accord_war_council` **The Accord's War Council** (5,3) `war_council_map` ← highland_envoys: available `check zin_regional_horidor_in_accord`; army experience 10; Coldor army experience 5.
+- `two_banners` **Two Banners, One March** (5,4) `banner_league` 70d ← accord_war_council: spirit `two_banners_raised`.
+- `our_own_hearth` **Our Own Hearth** (7,2) `banner_plain` ← the_highland_crown: spirit `own_hearth`; stability 0.05.
+- `king_of_the_cairns` **King of the Cairns** (7,3) `rune_stone` ← our_own_hearth: `call zin_politics_add_drift {ideology dominion, value 10}`; political power 50.
+- ★ `the_cairn_crown` **The Cairn Crown** (7,4) `crown_iron` 70d ← king_of_the_cairns.
 
-**C. Herds and Passes.** Icons: `herds`, `roads_paved`, `quarry_stone`, `granary`.
+**C. Herds and Passes.**
 
-- `highland_herds` **Herds of the High Pastures** (10,0): building industrial_complex 1 capital. AI 25.
-- `the_cairn_roads` **The Cairn Roads** (9,1) ← highland_herds: building infrastructure 1 random_owned.
-- `wool_and_hide` **Wool and Hide** (11,1) ← highland_herds: spirit `wool_and_hide_trade`.
-- `granite_and_iron` **Granite and Iron** (10,2) ← the_cairn_roads, wool_and_hide: building industrial_complex 1 random_owned.
-- `highland_stores` **Highland Stores** (10,3) ← granite_and_iron: flag `zin_cold_winter_stores`; stability 0.03.
+- `highland_herds` **Herds of the High Pastures** (10,0) `herds`: building industrial_complex 1 capital. AI 25.
+- `the_cairn_roads` **The Cairn Roads** (9,1) `roads_paved` ← highland_herds: building infrastructure 1 random_owned.
+- `wool_and_hide` **Wool and Hide** (11,1) `market_stalls` ← highland_herds: spirit `wool_and_hide_trade`.
+- `granite_and_iron` **Granite and Iron** (10,2) `quarry_stone` ← the_cairn_roads, wool_and_hide: building industrial_complex 1 random_owned.
+- `highland_stores` **Highland Stores** (10,3) `granary` ← granite_and_iron: flag `zin_cold_winter_stores`; stability 0.03.
 
-**D. The Highland Host.** Icons: `spear_levy`, `scout_lantern`, `fort_wall`.
+**D. The Highland Host.**
 
-- `clan_levies` **The Clan Levies** (14,0): manpower 5,000. AI 20.
-- `cairn_wardens` **Cairn Wardens** (13,1) ← clan_levies: research {zin_cat_arms} 0.5×1.
-- `high_pass_scouts` **High-Pass Scouts** (15,1) ← clan_levies: recruit `zin_regional_horidor_maela`; spirit `pass_scouts`.
-- `the_highland_host` **The Highland Host** (14,2) 70d ← cairn_wardens, high_pass_scouts: army experience 15; spirit `highland_host`.
-- `hill_forts` **Hill Forts** (14,3) ← the_highland_host: building bunker 1 capital; building bunker 1 random_owned.
+- `clan_levies` **The Clan Levies** (14,0) `spear_levy`: manpower 5,000. AI 20.
+- `cairn_wardens` **Cairn Wardens** (13,1) `rune_stone` ← clan_levies: research {zin_cat_arms} 0.5×1.
+- `high_pass_scouts` **High-Pass Scouts** (15,1) `scout_lantern` ← clan_levies: recruit `zin_regional_horidor_maela`; spirit `pass_scouts`.
+- `the_highland_host` **The Highland Host** (14,2) `levy_muster` 70d ← cairn_wardens, high_pass_scouts: army experience 15; spirit `highland_host`.
+- `hill_forts` **Hill Forts** (14,3) `pass_fort` ← the_highland_host: building bunker 1 capital; building bunker 1 random_owned.
 
-**E. Neighbours of the High Snows.** Icons: `envoy`, `market_stalls`, `eye_watchful`.
+**E. Neighbours of the High Snows.**
 
-- `the_independent_valleys` **The Independent Valleys** (17,0): lean +3 neighbours; political power 25.
-- `watch_on_isengard` **A Watch on Isengard** (16,1) ← the_independent_valleys: available Isengard exists; building bunker 1 random_owned.
-- `markets_for_the_valleys` **Markets for the Valleys** (18,1) ← the_independent_valleys: spirit `valley_markets`.
-- `a_seat_at_the_moot_fire` **A Seat at the Moot Fire** (17,2) ← watch_on_isengard, markets_for_the_valleys: lean +3 neighbours; stability 0.03.
+- `the_independent_valleys` **The Independent Valleys** (17,0) `envoy`: lean +3 neighbours; political power 25.
+- `watch_on_isengard` **A Watch on Isengard** (16,1) `eye_watchful` ← the_independent_valleys: available Isengard exists; building bunker 1 random_owned.
+- `markets_for_the_valleys` **Markets for the Valleys** (18,1) `market_stalls` ← the_independent_valleys: spirit `valley_markets`.
+- `a_seat_at_the_moot_fire` **A Seat at the Moot Fire** (17,2) `handshake_oath` ← watch_on_isengard, markets_for_the_valleys: lean +3 neighbours; stability 0.03.
 
-**F. When the South Burns.** Icons: `banner_plain`, `banner_league`, `lone_sword`.
+**F. When the South Burns.**
 
-- `when_the_south_burns` **When the South Burns** (6,6): available `zin_war_of_last_crowns` or `zin_western_crossing`; political power 50. AI 200.
-- `stand_with_fandanar` **Stand with Fandanar** (5,7) ← when_the_south_burns; exclusive with ride_with_the_white_companies: spirit `beside_fandanar`. AI 40; hist ×100.
-- ★ `ride_with_the_white_companies` **Ride with the White Companies** (7,7) ← when_the_south_burns; exclusive with stand_with_fandanar.
-- `highlanders_beside_the_heir` **Highlanders Beside the Heir** (7,8) ← ride_with_the_white_companies: available `zin_eindil_returned`, friend; aid host {2000, zin_arms_equipment 400}; join coalition. AI 100.
+- `when_the_south_burns` **When the South Burns** (6,6) `banner_plain`: available `zin_war_of_last_crowns` or `zin_western_crossing`; political power 50. AI 200.
+- `stand_with_fandanar` **Stand with Fandanar** (5,7) `banner_league` ← when_the_south_burns; exclusive with ride_with_the_white_companies: spirit `beside_fandanar`. AI 40; hist ×100.
+- ★ `ride_with_the_white_companies` **Ride with the White Companies** (7,7) `horse_cavalry` ← when_the_south_burns; exclusive with stand_with_fandanar: see key focuses.
+- `highlanders_beside_the_heir` **Highlanders Beside the Heir** (7,8) `lone_sword` ← ride_with_the_white_companies: available `zin_eindil_returned`, friend; aid host {2000, zin_arms_equipment 400}; join coalition. AI 100.
 
 ### Key focuses
 
@@ -333,9 +336,9 @@ Start spirit (country history): `chiefs_of_the_cairns`.
 
 ### Events (namespace `zin_regional_horidor`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `chiefs_grumble` | The Chiefs Grumble | Horidor | *The Chiefs Grumble* | **"Fandanar speaks for friends."** (AI 60, hist ×3): lean +5 self; stability 0.02. **"The moot speaks for itself."**: lean −5 self; political power 25 |
+| Id | Key | Title | To | Trigger | Picture | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `chiefs_grumble` | The Chiefs Grumble | Horidor | *The Chiefs Grumble* | `generic_court` | **"Fandanar speaks for friends."** (AI 60, hist ×3): lean +5 self; stability 0.02. **"The moot speaks for itself."**: lean −5 self; political power 25 |
 
 ### Historical AI route
 
@@ -374,7 +377,7 @@ Windwaith holds the long western arm of the Cold Lands: twelve states of fjord h
 | `zin_regional_windwaith_tamsin` | Captain Tamsin Gale | Navy leader, skill 3, traits `blue_water_expert`, `spotter`; recruited by *Sea-Wardens* | this spec (proposed) |
 | `zin_regional_windwaith_odo` | Harbour-Warden Odo Fenn | Political advisor, trait `zin_adv_merchant_prince`; recruited by *The Carrying Trade* | this spec (proposed) |
 
-Start spirit (country history): `sails_council`.
+Start spirit (start-situation data): `sails_council`.
 
 ### Tree
 
@@ -387,57 +390,57 @@ Start spirit (country history): `sails_council`.
 | E. Sails in the Great War | 4–8 | 7–9 | `zin_war_of_last_crowns` or `zin_western_crossing` | The final war |
 | F. The Harbour Levy | 17–19 | 0–2 | start | Army |
 
-**A. The Council of Sails.** Icons: `council_table`, `guild_hall`, `farm_sowing`, `charter_free`.
+**A. The Council of Sails.**
 
-- `council_of_sails` **The Council of Sails** (1,0): political power 50. AI 100.
-- `harbour_guilds` **The Harbour Guilds** (0,1) ← council_of_sails: political power 25.
-- `inland_freeholders` **The Inland Freeholders** (2,1) ← council_of_sails: stability 0.03.
-- `the_speakers_seat` **The Speaker's Seat** (1,2) ← harbour_guilds, inland_freeholders: event `speakers_vote`.
-- `open_council_rolls` **Open Council Rolls** (1,3) 70d ← the_speakers_seat: swap spirit `sails_council` → `windward_council`.
+- `council_of_sails` **The Council of Sails** (1,0) `council_table`: political power 50. AI 100.
+- `harbour_guilds` **The Harbour Guilds** (0,1) `guild_hall` ← council_of_sails: political power 25.
+- `inland_freeholders` **The Inland Freeholders** (2,1) `farm_sowing` ← council_of_sails: stability 0.03.
+- `the_speakers_seat` **The Speaker's Seat** (1,2) `seal_wax` ← harbour_guilds, inland_freeholders: event `speakers_vote`.
+- `open_council_rolls` **Open Council Rolls** (1,3) `charter_free` 70d ← the_speakers_seat: swap spirit `sails_council` → `windward_council`.
 
-**B. The Windward Harbours.** Icons: `harbour_lake`, `fishing_boats`, `market_stalls`, `lighthouse`, `shipwright_yard`, `sea_charts`.
+**B. The Windward Harbours.**
 
-- `windward_harbours` **The Windward Harbours** (6,0): building naval_base 1 random_coastal. AI 30.
-- `fish_and_seal` **Fish and Seal** (5,1) ← windward_harbours: spirit `fish_and_seal_trade`.
-- `the_carrying_trade` **The Carrying Trade** (7,1) ← windward_harbours: recruit `zin_regional_windwaith_odo`; political power 25.
-- `terms_from_fandanar` **Terms from Fandanar** (6,2) ← fish_and_seal, the_carrying_trade: political power 25; tooltip "Fandanar's harbour-masters want a share of our trade."
-- ★ `a_harbour_compact` **A Harbour Compact** (5,3) ← terms_from_fandanar; exclusive with free_harbours.
-- ★ `free_harbours` **Free Harbours** (7,3) ← terms_from_fandanar; exclusive with a_harbour_compact.
-- `shared_lighthouses` **Shared Lighthouses** (5,4) ← a_harbour_compact: available Windwaith has idea `zin_cold_harbour_compact`; building naval_base 1 random_coastal; lean +5 self.
-- ★ `hulls_for_the_west` **Hulls for the West** (7,4) ← free_harbours.
-- `charts_and_soundings` **Charts and Soundings** (6,5) ← shared_lighthouses, hulls_for_the_west: navy experience 10; research {zin_cat_galleys} 0.5×1.
+- `windward_harbours` **The Windward Harbours** (6,0) `harbour_lake`: building naval_base 1 random_coastal. AI 30.
+- `fish_and_seal` **Fish and Seal** (5,1) `fishing_boats` ← windward_harbours: spirit `fish_and_seal_trade`.
+- `the_carrying_trade` **The Carrying Trade** (7,1) `ship_voyage` ← windward_harbours: recruit `zin_regional_windwaith_odo`; political power 25.
+- `terms_from_fandanar` **Terms from Fandanar** (6,2) `scroll_treaty` ← fish_and_seal, the_carrying_trade: political power 25; tooltip "Fandanar's harbour-masters want a share of our trade."
+- ★ `a_harbour_compact` **A Harbour Compact** (5,3) `handshake_oath` ← terms_from_fandanar; exclusive with free_harbours: see key focuses.
+- ★ `free_harbours` **Free Harbours** (7,3) `charter_free` ← terms_from_fandanar; exclusive with a_harbour_compact: see key focuses.
+- `shared_lighthouses` **Shared Lighthouses** (5,4) `lighthouse` ← a_harbour_compact: available Windwaith has idea `zin_cold_harbour_compact`; building naval_base 1 random_coastal; lean +5 self.
+- ★ `hulls_for_the_west` **Hulls for the West** (7,4) `shipwright_yard` ← free_harbours.
+- `charts_and_soundings` **Charts and Soundings** (6,5) `sea_charts` ← shared_lighthouses, hulls_for_the_west: navy experience 10; research {zin_cat_galleys} 0.5×1.
 
-**C. The Shipwrights of the Arm.** Icons: `shipwright_yard`, `galley_oars`, `warship_sail`.
+**C. The Shipwrights of the Arm.**
 
-- `shipwrights_of_the_arm` **Shipwrights of the Arm** (10,0): building dockyard 1 random_coastal. AI 20.
-- `war_galleys` **War Galleys** (9,1) ← shipwrights_of_the_arm: research {zin_cat_galleys} 0.5×1.
-- `sea_wardens` **Sea-Wardens** (11,1) ← shipwrights_of_the_arm: recruit `zin_regional_windwaith_tamsin`; navy experience 10.
-- `the_long_hulls` **The Long Hulls** (10,2) 70d ← war_galleys, sea_wardens: building dockyard 1 random_coastal; research {zin_cat_warships} 0.5×1.
-- `the_windward_squadron` **The Windward Squadron** (10,3) ← the_long_hulls: spirit `windward_squadron`.
+- `shipwrights_of_the_arm` **Shipwrights of the Arm** (10,0) `shipwright_yard`: building dockyard 1 random_coastal. AI 20.
+- `war_galleys` **War Galleys** (9,1) `galley_oars` ← shipwrights_of_the_arm: research {zin_cat_galleys} 0.5×1.
+- `sea_wardens` **Sea-Wardens** (11,1) `warship_sail` ← shipwrights_of_the_arm: recruit `zin_regional_windwaith_tamsin`; navy experience 10.
+- `the_long_hulls` **The Long Hulls** (10,2) `shipwright_yard` 70d ← war_galleys, sea_wardens: building dockyard 1 random_coastal; research {zin_cat_warships} 0.5×1.
+- `the_windward_squadron` **The Windward Squadron** (10,3) `warship_sail` ← the_long_hulls: spirit `windward_squadron`.
 
-**D. The Cold Sea Watch.** Icons: `lighthouse`, `black_isles`, `beacon`, `compass_rose`.
+**D. The Cold Sea Watch.**
 
-- `the_cold_sea_watch` **The Cold Sea Watch** (14,0): building coastal_bunker 1 random_coastal.
-- `hear_the_fishermen` **Hear the Fishermen** (13,1) ← the_cold_sea_watch: flag `zin_regional_windwaith_heard_fishermen`; navy experience 5; tooltip "Black ships in the north, the old men say. Nobody else believes them."
-- `lighthouses_of_the_arm` **Lighthouses of the Arm** (15,1) ← the_cold_sea_watch: spirit `arm_lights`.
-- ★ `harbour_for_strangers` **A Harbour for Strangers** (14,2) ← hear_the_fishermen, lighthouses_of_the_arm.
-- `against_the_black_water` **Against the Black Water** (13,3) ← hear_the_fishermen: available `zin_zol_rising`; building coastal_bunker 1 random_coastal, twice; spirit `black_water_watch`. AI 100.
-- `pilots_of_the_cold_coast` **Pilots of the Cold Coast** (15,3) ← lighthouses_of_the_arm: navy experience 10; research {zin_cat_galleys} 0.5×1.
+- `the_cold_sea_watch` **The Cold Sea Watch** (14,0) `lighthouse`: building coastal_bunker 1 random_coastal.
+- `hear_the_fishermen` **Hear the Fishermen** (13,1) `black_isles` ← the_cold_sea_watch: flag `zin_regional_windwaith_heard_fishermen`; navy experience 5; tooltip "Black ships in the north, the old men say. Nobody else believes them."
+- `lighthouses_of_the_arm` **Lighthouses of the Arm** (15,1) `lighthouse` ← the_cold_sea_watch: spirit `arm_lights`.
+- ★ `harbour_for_strangers` **A Harbour for Strangers** (14,2) `anchor_rope` ← hear_the_fishermen, lighthouses_of_the_arm.
+- `against_the_black_water` **Against the Black Water** (13,3) `beacon` ← hear_the_fishermen: available `zin_zol_rising`; building coastal_bunker 1 random_coastal, twice; spirit `black_water_watch`. AI 100.
+- `pilots_of_the_cold_coast` **Pilots of the Cold Coast** (15,3) `compass_rose` ← lighthouses_of_the_arm: navy experience 10; research {zin_cat_galleys} 0.5×1.
 
-**E. Sails in the Great War.** Icons: `warship_sail`, `ship_voyage`, `banner_league`.
+**E. Sails in the Great War.**
 
-- `when_the_south_burns` **When the South Burns** (6,7): available `zin_war_of_last_crowns` or `zin_western_crossing`; political power 50. AI 200.
-- `neutral_sails` **Neutral Sails** (5,8) ← when_the_south_burns; exclusive with sails_for_the_living: spirit `sails_neutral`. AI 40; hist ×100.
-- ★ `sails_for_the_living` **Sails for the Living** (7,8) ← when_the_south_burns; exclusive with neutral_sails.
-- `the_free_harbours_endure` **The Free Harbours Endure** (5,9) ← neutral_sails: available `zin_afrit_dead` or `zin_eindil_crowned`; political power 50; stability 0.05.
-- `convoys_to_the_heir` **Convoys to the Heir** (7,9) ← sails_for_the_living: available `zin_eindil_returned`, friend; aid host {1000, zin_arms_equipment 500}; join coalition. AI 100.
+- `when_the_south_burns` **When the South Burns** (6,7) `banner_plain`: available `zin_war_of_last_crowns` or `zin_western_crossing`; political power 50. AI 200.
+- `neutral_sails` **Neutral Sails** (5,8) `ship_voyage` ← when_the_south_burns; exclusive with sails_for_the_living: spirit `sails_neutral`. AI 40; hist ×100.
+- ★ `sails_for_the_living` **Sails for the Living** (7,8) `warship_sail` ← when_the_south_burns; exclusive with neutral_sails: see key focuses.
+- `the_free_harbours_endure` **The Free Harbours Endure** (5,9) `olive_branch` ← neutral_sails: available `zin_afrit_dead` or `zin_eindil_crowned`; political power 50; stability 0.05.
+- `convoys_to_the_heir` **Convoys to the Heir** (7,9) `banner_league` ← sails_for_the_living: available `zin_eindil_returned`, friend; aid host {1000, zin_arms_equipment 500}; join coalition. AI 100.
 
-**F. The Harbour Levy.** Icons: `levy_muster`, `sword_shield`, `bow_archers`.
+**F. The Harbour Levy.**
 
-- `harbour_militia` **The Harbour Militia** (18,0): manpower 3,000.
-- `sea_soldiers` **Sea Soldiers** (17,1) ← harbour_militia: spirit `sea_soldiers_drilled`.
-- `coast_bows` **Bows of the Coast** (19,1) ← harbour_militia: research {zin_cat_bows} 0.5×1.
-- `the_windward_host` **The Windward Host** (18,2) 70d ← sea_soldiers, coast_bows: army experience 10; manpower 3,000.
+- `harbour_militia` **The Harbour Militia** (18,0) `levy_muster`: manpower 3,000.
+- `sea_soldiers` **Sea Soldiers** (17,1) `sword_shield` ← harbour_militia: spirit `sea_soldiers_drilled`.
+- `coast_bows` **Bows of the Coast** (19,1) `bow_archers` ← harbour_militia: research {zin_cat_bows} 0.5×1.
+- `the_windward_host` **The Windward Host** (18,2) `spear_levy` 70d ← sea_soldiers, coast_bows: army experience 10; manpower 3,000.
 
 ### Key focuses
 
@@ -465,10 +468,10 @@ Start spirit (country history): `sails_council`.
 
 ### Events (namespace `zin_regional_windwaith`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `speakers_vote` | The Council of Sails Votes | Windwaith | *The Speaker's Seat* | **The harbours carry the vote** (AI 60): political power 50. **The steadings carry the vote**: stability 0.03; lean +5 self |
-| 2 | `compact_offer` | Windwaith Asks for Terms | Coldor | *A Harbour Compact* | **Agree the compact** (AI 80): both get the mechanic's `zin_cold_harbour_compact`; Windwaith lean +20. **Refuse**: Windwaith lean −10 |
+| Id | Key | Title | To | Trigger | Picture | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `speakers_vote` | The Council of Sails Votes | Windwaith | *The Speaker's Seat* | `generic_court` | **The harbours carry the vote** (AI 60): political power 50. **The steadings carry the vote**: stability 0.03; lean +5 self |
+| 2 | `compact_offer` | Windwaith Asks for Terms | Coldor | *A Harbour Compact* | `generic_sea` | **Agree the compact** (AI 80): both get the mechanic's `zin_cold_harbour_compact`; Windwaith lean +20. **Refuse**: Windwaith lean −10 |
 
 The mechanic's `zin_cold.71` (*The Windwaith Question*, from Coldor's tree) may reach Windwaith first; it applies the same spirit. Once either compact path or `free_harbours` is taken, the other source does nothing (the focus is unavailable when the idea is present; `zin_cold.71` reads the flag).
 
@@ -510,7 +513,7 @@ Fearno is the largest free realm of the Cold Lands: twenty-five states of pine f
 | `zin_regional_fearno_hroth` | Huntmaster Hroth Vael | Corps commander, skill 3, traits `winter_specialist`, `ambusher`; recruited by *The Huntmaster* | this spec (proposed) |
 | `zin_regional_fearno_ilse` | Steward Ilse Morrow | Political advisor, trait `zin_adv_treasurer`; recruited by *The Lords of Fearno* | this spec (proposed) |
 
-Start spirit (country history): `proud_fearno`.
+Start spirit (start-situation data): `proud_fearno`.
 
 ### Tree
 
@@ -523,69 +526,69 @@ Start spirit (country history): `proud_fearno`.
 | E. Tales of the North | 17–19 | 0–3 | start; lower half hidden until `zin_eindil_awake` | Legends; Eindil regard |
 | F. The South Burns | 10–13 | 6–8 | `zin_war_of_last_crowns` or `zin_western_crossing` | The final war |
 
-**A. Lord Esrom's Hall.** Icons: `council_table`, `wild_hunt`, `feast_table`.
+**A. Lord Esrom's Hall.**
 
-- `lord_esroms_hall` **Lord Esrom's Hall** (1,0) 70d: political power 75. AI 100.
-- `the_lords_of_fearno` **The Lords of Fearno** (0,1) ← lord_esroms_hall: recruit `zin_regional_fearno_ilse`; political power 25.
-- `the_great_hunt` **The Great Hunt** (2,1) ← lord_esroms_hall: army experience 5; stability 0.02.
-- `the_hall_of_many_lords` **The Hall of Many Lords** (1,2) ← the_lords_of_fearno, the_great_hunt: event `many_lords`.
-- `pride_of_fearno` **The Pride of Fearno** (1,3) 70d ← the_hall_of_many_lords: swap spirit `proud_fearno` → `fearno_united`.
+- `lord_esroms_hall` **Lord Esrom's Hall** (1,0) `council_table` 70d: political power 75. AI 100.
+- `the_lords_of_fearno` **The Lords of Fearno** (0,1) `feast_table` ← lord_esroms_hall: recruit `zin_regional_fearno_ilse`; political power 25.
+- `the_great_hunt` **The Great Hunt** (2,1) `wild_hunt` ← lord_esroms_hall: army experience 5; stability 0.02.
+- `the_hall_of_many_lords` **The Hall of Many Lords** (1,2) `council_table` ← the_lords_of_fearno, the_great_hunt: event `many_lords`.
+- `pride_of_fearno` **The Pride of Fearno** (1,3) `banner_plain` 70d ← the_hall_of_many_lords: swap spirit `proud_fearno` → `fearno_united`.
 
-**B. Between Two Crowns.** Icons: `two_crowns`, `handshake_oath`, `banner_league`, `charter_free`, `roads_paved`.
+**B. Between Two Crowns.**
 
-- `between_two_crowns` **Between Two Crowns** (6,0): political power 25. AI 30.
-- ★ `friends_of_the_winter_crown` **Friends of the Winter Crown** (4,1) ← between_two_crowns; exclusive with a_lord_among_lords, the_free_steadings.
-- ★ `a_lord_among_lords` **A Lord Among Lords** (6,1) ← between_two_crowns; exclusive with the other two.
-- ★ `the_free_steadings` **The Free Steadings** (8,1) ← between_two_crowns; exclusive with the other two.
-- `envoys_to_fandanar` **Envoys to Fandanar** (4,2) ← friends_of_the_winter_crown: event `fearno_envoys` to Coldor.
-- `the_accords_door` **The Accord's Door** (4,3) ← envoys_to_fandanar: available `variable zin_cold_lean above 49`; lean +10 self; political power 25; tooltip "Fandanar may now invite us into the Accord."
-- `under_the_accord` **Under the Accord** (4,4) ← the_accords_door: available `check zin_regional_fearno_in_accord`; spirit `accord_hunters`.
-- `markets_for_both_crowns` **Markets for Both Crowns** (6,2) ← a_lord_among_lords: political power 50.
-- `the_open_road` **The Open Road** (6,3) ← markets_for_both_crowns: building infrastructure 1 random_owned, twice.
-- `neither_crown_nor_iron` **Neither Crown nor Iron** (6,4) 70d ← the_open_road: swap spirit `lord_among_lords` → `neither_crown`; stability 0.05.
-- ★ `call_the_free_steadings` **Call the Free Steadings** (8,2) 70d ← the_free_steadings.
-- `the_steadings_moot` **The Steadings' Moot** (8,3) ← call_the_free_steadings: available `check zin_regional_fearno_steadings_gathered` (two or more other members); spirit `free_steadings`.
-- `shield_of_the_steadings` **Shield of the Steadings** (8,4) ← the_steadings_moot: `call zin_regional_fearno_guarantee_members`.
+- `between_two_crowns` **Between Two Crowns** (6,0) `two_crowns`: political power 25. AI 30.
+- ★ `friends_of_the_winter_crown` **Friends of the Winter Crown** (4,1) `handshake_oath` ← between_two_crowns; exclusive with a_lord_among_lords, the_free_steadings: see key focuses.
+- ★ `a_lord_among_lords` **A Lord Among Lords** (6,1) `banner_plain` ← between_two_crowns; exclusive with friends_of_the_winter_crown, the_free_steadings: see key focuses.
+- ★ `the_free_steadings` **The Free Steadings** (8,1) `charter_free` ← between_two_crowns; exclusive with friends_of_the_winter_crown, a_lord_among_lords: see key focuses.
+- `envoys_to_fandanar` **Envoys to Fandanar** (4,2) `envoy` ← friends_of_the_winter_crown: event `fearno_envoys` to Coldor.
+- `the_accords_door` **The Accord's Door** (4,3) `scroll_treaty` ← envoys_to_fandanar: available `variable zin_cold_lean above 49`; lean +10 self; political power 25; tooltip "Fandanar may now invite us into the Accord."
+- `under_the_accord` **Under the Accord** (4,4) `banner_league` ← the_accords_door: available `check zin_regional_fearno_in_accord`; spirit `accord_hunters`.
+- `markets_for_both_crowns` **Markets for Both Crowns** (6,2) `market_stalls` ← a_lord_among_lords: political power 50.
+- `the_open_road` **The Open Road** (6,3) `roads_paved` ← markets_for_both_crowns: building infrastructure 1 random_owned, twice.
+- `neither_crown_nor_iron` **Neither Crown nor Iron** (6,4) `chain_broken` 70d ← the_open_road: swap spirit `lord_among_lords` → `neither_crown`; stability 0.05.
+- ★ `call_the_free_steadings` **Call the Free Steadings** (8,2) `banner_league` 70d ← the_free_steadings.
+- `the_steadings_moot` **The Steadings' Moot** (8,3) `alliance_rings` ← call_the_free_steadings: available `check zin_regional_fearno_steadings_gathered` (two or more other members); spirit `free_steadings`.
+- `shield_of_the_steadings` **Shield of the Steadings** (8,4) `fort_wall` ← the_steadings_moot: `call zin_regional_fearno_guarantee_members`.
 
-**C. Furs, Timber and Iron.** Icons: `market_stalls`, `timber_mill`, `mine_cart`, `granary`.
+**C. Furs, Timber and Iron.**
 
-- `the_fur_markets` **The Fur Markets** (11,0): building industrial_complex 1 capital. AI 25.
-- `timber_of_fearno` **Timber of Fearno** (10,1) ← the_fur_markets: building industrial_complex 1 random_owned.
-- `iron_of_the_north_hills` **Iron of the North Hills** (12,1) ← the_fur_markets: building arms_factory 1 capital.
-- `the_long_roads` **The Long Roads** (11,2) 70d ← timber_of_fearno, iron_of_the_north_hills: building infrastructure 1 random_owned, twice.
-- `stores_against_the_winter` **Stores Against the Winter** (11,3) ← the_long_roads: flag `zin_cold_winter_stores`; stability 0.03.
+- `the_fur_markets` **The Fur Markets** (11,0) `market_stalls`: building industrial_complex 1 capital. AI 25.
+- `timber_of_fearno` **Timber of Fearno** (10,1) `timber_mill` ← the_fur_markets: building industrial_complex 1 random_owned.
+- `iron_of_the_north_hills` **Iron of the North Hills** (12,1) `mine_cart` ← the_fur_markets: building arms_factory 1 capital.
+- `the_long_roads` **The Long Roads** (11,2) `roads_paved` 70d ← timber_of_fearno, iron_of_the_north_hills: building infrastructure 1 random_owned, twice.
+- `stores_against_the_winter` **Stores Against the Winter** (11,3) `granary` ← the_long_roads: flag `zin_cold_winter_stores`; stability 0.03.
 
-**D. Hunters and Wardens.** Icons: `wild_hunt`, `bow_archers`, `footprints_snow`, `ranger_cloak`.
+**D. Hunters and Wardens.**
 
-- `the_hunting_host` **The Hunting Host** (15,0): army experience 10. AI 20.
-- `snow_trackers` **Snow Trackers** (14,1) ← the_hunting_host: spirit `snow_trackers_trained`.
-- `bowmen_of_the_pines` **Bowmen of the Pines** (16,1) ← the_hunting_host: research {zin_cat_bows} 0.5×1.
-- `the_huntmaster` **The Huntmaster** (15,2) ← snow_trackers, bowmen_of_the_pines: recruit `zin_regional_fearno_hroth`; manpower 10,000.
-- `wardens_of_fearno` **Wardens of Fearno** (15,3) 70d ← the_huntmaster: spirit `fearno_wardens`.
+- `the_hunting_host` **The Hunting Host** (15,0) `wild_hunt`: army experience 10. AI 20.
+- `snow_trackers` **Snow Trackers** (14,1) `footprints_snow` ← the_hunting_host: spirit `snow_trackers_trained`.
+- `bowmen_of_the_pines` **Bowmen of the Pines** (16,1) `bow_archers` ← the_hunting_host: research {zin_cat_bows} 0.5×1.
+- `the_huntmaster` **The Huntmaster** (15,2) `ranger_cloak` ← snow_trackers, bowmen_of_the_pines: recruit `zin_regional_fearno_hroth`; manpower 10,000.
+- `wardens_of_fearno` **Wardens of Fearno** (15,3) `ranger_cloak` 70d ← the_huntmaster: spirit `fearno_wardens`.
 
-**E. Tales of the North.** Icons: `book_lore`, `castle_ice`, `ice_field`, `footprints_snow`.
+**E. Tales of the North.**
 
-- `tales_of_the_north` **Tales of the North** (18,0): political power 25.
-- `the_silent_castle_tale` **The Silent Castle** (17,1) ← tales_of_the_north: stability 0.02; tooltip "A green light in the north, and a castle no hunter reaches."
-- `hunters_of_the_far_ice` **Hunters of the Far Ice** (19,1) ← tales_of_the_north: building infrastructure 1 random_owned; political power 25.
-- `the_stranger_of_the_ice` **The Stranger from the Ice** (18,2) ← the_silent_castle_tale, hunters_of_the_far_ice: `allow_branch` `global_flag zin_eindil_awake`; renown +2; regard +5; political power 25.
-- `songs_of_the_houseless_king` **Songs of the King Without a House** (18,3) ← the_stranger_of_the_ice: available `zin_eindil_war_king`; regard +5; war support 0.02.
+- `tales_of_the_north` **Tales of the North** (18,0) `book_lore`: political power 25.
+- `the_silent_castle_tale` **The Silent Castle** (17,1) `castle_ice` ← tales_of_the_north: stability 0.02; tooltip "A green light in the north, and a castle no hunter reaches."
+- `hunters_of_the_far_ice` **Hunters of the Far Ice** (19,1) `ice_field` ← tales_of_the_north: building infrastructure 1 random_owned; political power 25.
+- `the_stranger_of_the_ice` **The Stranger from the Ice** (18,2) `footprints_snow` ← the_silent_castle_tale, hunters_of_the_far_ice: `allow_branch` `global_flag zin_eindil_awake`; renown +2; regard +5; political power 25.
+- `songs_of_the_houseless_king` **Songs of the King Without a House** (18,3) `banner_laid_down` ← the_stranger_of_the_ice: available `zin_eindil_war_king`; regard +5; war support 0.02.
 
-**F. The South Burns.** Icons: `banner_plain`, `wild_hunt`, `lone_sword`.
+**F. The South Burns.**
 
-- `the_south_burns` **The South Burns** (11,6): available `zin_war_of_last_crowns` or `zin_western_crossing`; political power 50. AI 200.
-- `fearno_keeps_its_snows` **Fearno Keeps Its Snows** (10,7) ← the_south_burns; exclusive with hunters_for_the_living: spirit `keeps_its_snows`. AI 40; hist ×100.
-- `hunters_for_the_living` **Hunters for the Living** (12,7) ← the_south_burns; exclusive with fearno_keeps_its_snows: available `variable zin_gathering_dark above 49` or `zin_eindil_named`; LC +3. AI 20, ×2 if regard ≥ 25; hist ×0.
-- `the_hunt_rides_south` **The Hunt Rides South** (12,8) ← hunters_for_the_living: available `zin_eindil_returned`, friend; aid host {4000, zin_arms_equipment 800}; join coalition. AI 100.
+- `the_south_burns` **The South Burns** (11,6) `banner_plain`: available `zin_war_of_last_crowns` or `zin_western_crossing`; political power 50. AI 200.
+- `fearno_keeps_its_snows` **Fearno Keeps Its Snows** (10,7) `snow_peak` ← the_south_burns; exclusive with hunters_for_the_living: spirit `keeps_its_snows`. AI 40; hist ×100.
+- `hunters_for_the_living` **Hunters for the Living** (12,7) `wild_hunt` ← the_south_burns; exclusive with fearno_keeps_its_snows: available `variable zin_gathering_dark above 49` or `zin_eindil_named`; LC +3. AI 20, ×2 if regard ≥ 25; hist ×0.
+- `the_hunt_rides_south` **The Hunt Rides South** (12,8) `lone_sword` ← hunters_for_the_living: available `zin_eindil_returned`, friend; aid host {4000, zin_arms_equipment 800}; join coalition. AI 100.
 
 ### Key focuses
 
 | Key | Name | Prerequisites | Effects summary |
 | --- | --- | --- | --- |
 | `friends_of_the_winter_crown` | Friends of the Winter Crown | between_two_crowns | Exclusive with a_lord_among_lords, the_free_steadings. Lean +20 self. AI 30; hist ×0 |
-| `a_lord_among_lords` | A Lord Among Lords | between_two_crowns | Exclusive with the other two. Spirit `lord_among_lords`. AI 40; hist ×10 |
-| `the_free_steadings` | The Free Steadings | between_two_crowns | Exclusive with the other two. Flag `zin_regional_fearno_steadings_path`; political power 25. AI 15; hist ×0 |
-| `call_the_free_steadings` | Call the Free Steadings | the_free_steadings | Available: not in a faction; not at war. Faction "The Free Steadings" (proposed name); `call zin_regional_fearno_invite_steadings` (event `steadings_invited` to every country passing `zin_cold_is_clan_realm` with lean between −30 and 30, not in a faction, not a subject). AI 50 |
+| `a_lord_among_lords` | A Lord Among Lords | between_two_crowns | Exclusive with friends_of_the_winter_crown, the_free_steadings. Spirit `lord_among_lords`. AI 40; hist ×10 |
+| `the_free_steadings` | The Free Steadings | between_two_crowns | Exclusive with friends_of_the_winter_crown, a_lord_among_lords. Flag `zin_regional_fearno_steadings_path`; political power 25. AI 15; hist ×0 |
+| `call_the_free_steadings` | Call the Free Steadings | the_free_steadings | Available: not in a faction; not at war. Faction "The Free Steadings" (proposed name; `create_faction_from_template` with template `zin_faction_free_steadings`, decision E3, template and joining rule requested from the diplomacy spec); `call zin_regional_fearno_invite_steadings` (event `steadings_invited` to every country passing `zin_cold_is_clan_realm` with lean between −30 and 30, not in a faction, not a subject). AI 50 |
 
 ### Spirits
 
@@ -603,11 +606,11 @@ Start spirit (country history): `proud_fearno`.
 
 ### Events (namespace `zin_regional_fearno`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `many_lords` | The Hall of Many Lords | Fearno | *The Hall of Many Lords* | **Esrom speaks first** (AI 50): political power 50. **Every lord speaks**: stability 0.03 |
-| 2 | `fearno_envoys` | Envoys from Fearno | Coldor | *Envoys to Fandanar* | **Welcome them** (AI 90): opinion modifier `zin_regional_fearno_friendship` (+20) both ways; Fearno lean +10. **Keep them waiting**: nothing |
-| 3 | `steadings_invited` | The Free Steadings Call | invited clan realm | *Call the Free Steadings* | **Join the Free Steadings** (AI 40; ×0 at lean above 40 or below −40): the invitee joins Fearno's faction. **Keep our own counsel**: nothing |
+| Id | Key | Title | To | Trigger | Picture | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `many_lords` | The Hall of Many Lords | Fearno | *The Hall of Many Lords* | `generic_court` | **Esrom speaks first** (AI 50): political power 50. **Every lord speaks**: stability 0.03 |
+| 2 | `fearno_envoys` | Envoys from Fearno | Coldor | *Envoys to Fandanar* | `generic_court` | **Welcome them** (AI 90): opinion modifier `zin_regional_fearno_friendship` (+20) both ways; Fearno lean +10. **Keep them waiting**: nothing |
+| 3 | `steadings_invited` | The Free Steadings Call | invited clan realm | *Call the Free Steadings* | `generic_court` | **Join the Free Steadings** (AI 40; ×0 at lean above 40 or below −40): the invitee joins Fearno's faction. **Keep our own counsel**: nothing |
 
 ### Historical AI route
 
@@ -647,7 +650,7 @@ Titanos is the land of the ice giants: eight states of high snowfields, glacier 
 | `zin_regional_titanos_skarn` | Skarn Glacier-Hand | Corps commander, skill 3, traits `fortress_buster`, `winter_specialist`; recruited by *Skarn's Band* | this spec (proposed) |
 | `zin_regional_titanos_hrimla` | Old Mother Hrimla | Political advisor, trait `zin_adv_elder`; recruited by *The Old Mothers* | this spec (proposed) |
 
-Start spirit (country history): `the_frost_kings_court`.
+Start spirit (start-situation data): `the_frost_kings_court`.
 
 ### Tree
 
@@ -660,53 +663,53 @@ Start spirit (country history): `the_frost_kings_court`.
 | E. The Snow's Edge | 16–18 | 0–2 | start | Neighbours |
 | F. The Dark Wakes | 8–12 | 6–8 | `zin_war_of_last_crowns` or `zin_zol_rising` | The final war |
 
-**A. The Frost-King's Hall.** Icons: `giant_hammer`, `council_table`, `book_lore`.
+**A. The Frost-King's Hall.**
 
-- `frost_kings_hall` **The Frost-King's Hall** (1,0) 70d: political power 50. AI 100.
-- `moot_of_the_high_snows` **Moot of the High Snows** (0,1) ← frost_kings_hall: stability 0.03.
-- `the_old_mothers` **The Old Mothers** (2,1) ← frost_kings_hall: recruit `zin_regional_titanos_hrimla`; political power 25.
-- `memory_of_the_giants` **Memory of the Giants** (1,2) ← moot_of_the_high_snows, the_old_mothers: political power 25; tooltip "The giants keep their own count of years."
+- `frost_kings_hall` **The Frost-King's Hall** (1,0) `giant_hammer` 70d: political power 50. AI 100.
+- `moot_of_the_high_snows` **Moot of the High Snows** (0,1) `council_table` ← frost_kings_hall: stability 0.03.
+- `the_old_mothers` **The Old Mothers** (2,1) `book_lore` ← frost_kings_hall: recruit `zin_regional_titanos_hrimla`; political power 25.
+- `memory_of_the_giants` **Memory of the Giants** (1,2) `rune_stone` ← moot_of_the_high_snows, the_old_mothers: political power 25; tooltip "The giants keep their own count of years."
 
-**B. The Passes and the Toll.** Icons: `mountain_pass`, `toll_house`, `quarry_stone`.
+**B. The Passes and the Toll.**
 
-- `the_giants_toll_roads` **The Toll Roads** (5,0): political power 25. AI 20.
-- `salt_and_iron_traders` **Salt and Iron Traders** (4,1) ← the_giants_toll_roads: political power 50; event `trader_at_the_toll`.
-- `toll_halls_on_the_passes` **Toll-Halls on the Passes** (6,1) ← the_giants_toll_roads: building infrastructure 1 random_owned; spirit `toll_halls`.
-- `quarries_of_the_ice` **Quarries of the Ice** (5,2) ← salt_and_iron_traders, toll_halls_on_the_passes: building industrial_complex 1 capital.
-- `ice_halls` **Halls in the Ice** (5,3) 70d ← quarries_of_the_ice: building industrial_complex 1 random_owned.
+- `the_giants_toll_roads` **The Toll Roads** (5,0) `mountain_pass`: political power 25. AI 20.
+- `salt_and_iron_traders` **Salt and Iron Traders** (4,1) `caravan` ← the_giants_toll_roads: political power 50; event `trader_at_the_toll`.
+- `toll_halls_on_the_passes` **Toll-Halls on the Passes** (6,1) `toll_house` ← the_giants_toll_roads: building infrastructure 1 random_owned; spirit `toll_halls`.
+- `quarries_of_the_ice` **Quarries of the Ice** (5,2) `quarry_stone` ← salt_and_iron_traders, toll_halls_on_the_passes: building industrial_complex 1 capital.
+- `ice_halls` **Halls in the Ice** (5,3) `ice_cavern` 70d ← quarries_of_the_ice: building industrial_complex 1 random_owned.
 
-**C. Answers to Crowns.** Icons: `envoy`, `handshake_oath`, `frozen_gate`, `snow_peak`.
+**C. Answers to Crowns.**
 
-- `envoys_in_the_snow` **Envoys in the Snow** (10,0): political power 25. AI 30.
-- ★ `the_old_pacts_kept` **The Old Pacts Kept** (9,1) ← envoys_in_the_snow; exclusive with the_high_snows_apart.
-- ★ `the_high_snows_apart` **The High Snows Apart** (11,1) ← envoys_in_the_snow; exclusive with the_old_pacts_kept.
-- `gifts_for_the_frost_king` **Gifts for the Frost-King** (9,2) ← the_old_pacts_kept: political power 25; stability 0.03.
-- `giants_on_the_passes_sworn` **Giants on the Passes** (9,3) ← gifts_for_the_frost_king: available `check zin_regional_titanos_pact_two`; army experience 10; spirit `pass_guardians`.
-- `hearth_and_height_answered` **Hearth and Height** (9,4) ← giants_on_the_passes_sworn: available `check zin_regional_titanos_pact_three`; stability 0.05; political power 50.
-- `doors_of_ice_closed` **The Doors of Ice Closed** (11,2) ← the_high_snows_apart: building bunker 1 capital; building bunker 1 random_owned.
-- `no_crown_above_the_snow` **No Crown Above the Snow** (11,3) 70d ← doors_of_ice_closed: stability 0.05; political power 50.
+- `envoys_in_the_snow` **Envoys in the Snow** (10,0) `envoy`: political power 25. AI 30.
+- ★ `the_old_pacts_kept` **The Old Pacts Kept** (9,1) `handshake_oath` ← envoys_in_the_snow; exclusive with the_high_snows_apart: see key focuses.
+- ★ `the_high_snows_apart` **The High Snows Apart** (11,1) `frozen_gate` ← envoys_in_the_snow; exclusive with the_old_pacts_kept: see key focuses.
+- `gifts_for_the_frost_king` **Gifts for the Frost-King** (9,2) `tribute_chest` ← the_old_pacts_kept: political power 25; stability 0.03.
+- `giants_on_the_passes_sworn` **Giants on the Passes** (9,3) `pass_fort` ← gifts_for_the_frost_king: available `check zin_regional_titanos_pact_two`; army experience 10; spirit `pass_guardians`.
+- `hearth_and_height_answered` **Hearth and Height** (9,4) `alliance_rings` ← giants_on_the_passes_sworn: available `check zin_regional_titanos_pact_three`; stability 0.05; political power 50.
+- `doors_of_ice_closed` **The Doors of Ice Closed** (11,2) `frozen_gate` ← the_high_snows_apart: building bunker 1 capital; building bunker 1 random_owned.
+- `no_crown_above_the_snow` **No Crown Above the Snow** (11,3) `snow_peak` 70d ← doors_of_ice_closed: stability 0.05; political power 50.
 
-**D. The Giants' Host.** Icons: `giant_hammer`, `siege_trebuchet`, `levy_muster`.
+**D. The Giants' Host.**
 
-- `the_giants_host` **The Giants' Host** (14,0): army experience 10. AI 20.
-- `great_hammers` **Great Hammers** (13,1) ← the_giants_host: research {zin_cat_kin} 0.5×1.
-- `the_hurlers` **The Hurlers** (15,1) ← the_giants_host: research {zin_cat_siege} 0.5×1.
-- `skarns_band` **Skarn's Band** (14,2) ← great_hammers, the_hurlers: recruit `zin_regional_titanos_skarn`; spirit `glacier_host`.
-- `the_frost_levy` **The Frost Levy** (14,3) ← skarns_band: manpower 2,000; equipment zin_giant_gear_equipment 200.
+- `the_giants_host` **The Giants' Host** (14,0) `giant_hammer`: army experience 10. AI 20.
+- `great_hammers` **Great Hammers** (13,1) `giant_hammer` ← the_giants_host: research {zin_cat_kin} 0.5×1.
+- `the_hurlers` **The Hurlers** (15,1) `siege_trebuchet` ← the_giants_host: research {zin_cat_siege} 0.5×1.
+- `skarns_band` **Skarn's Band** (14,2) `levy_muster` ← great_hammers, the_hurlers: recruit `zin_regional_titanos_skarn`; spirit `glacier_host`.
+- `the_frost_levy` **The Frost Levy** (14,3) `spear_levy` ← skarns_band: manpower 2,000; equipment zin_giant_gear_equipment 200.
 
-**E. The Snow's Edge.** Icons: `snow_peak`, `yeti_claw`, `castle_ice`.
+**E. The Snow's Edge.**
 
-- `the_snows_edge` **The Snow's Edge** (17,0): political power 25.
-- `the_yeti_neighbours` **The Yeti Neighbours** (16,1) ← the_snows_edge: available Yeti Lands exists; non-aggression Yeti Lands.
-- `the_light_in_the_north` **The Light in the North** (18,1) ← the_snows_edge: stability 0.02; tooltip "A green light burns in the north. The giants do not go there."
-- `old_peoples_of_the_ice` **Old Peoples of the Ice** (17,2) ← the_yeti_neighbours, the_light_in_the_north: stability 0.05.
+- `the_snows_edge` **The Snow's Edge** (17,0) `snow_peak`: political power 25.
+- `the_yeti_neighbours` **The Yeti Neighbours** (16,1) `yeti_claw` ← the_snows_edge: available Yeti Lands exists; non-aggression Yeti Lands.
+- `the_light_in_the_north` **The Light in the North** (18,1) `snow_peak` ← the_snows_edge: stability 0.02; tooltip "A green light burns in the north. The giants do not go there."
+- `old_peoples_of_the_ice` **Old Peoples of the Ice** (17,2) `ice_field` ← the_yeti_neighbours, the_light_in_the_north: stability 0.05.
 
-**F. The Dark Wakes.** Icons: `banner_plain`, `giant_hammer`, `lone_sword`.
+**F. The Dark Wakes.**
 
-- `the_dark_wakes` **The Dark Wakes** (10,6): available `zin_war_of_last_crowns` or `zin_zol_rising`; political power 50. AI 200.
-- `the_high_snows_hold` **The High Snows Hold** (9,7) ← the_dark_wakes; exclusive with giants_against_the_dark: spirit `high_snows_hold`. AI 40; hist ×100.
-- `giants_against_the_dark` **Giants Against the Dark** (11,7) ← the_dark_wakes; exclusive with the_high_snows_hold: available `variable zin_gathering_dark above 49`, `zin_eindil_named` or `zin_zol_rising`; LC +3. AI 15; hist ×0.
-- `giants_on_the_southern_road` **Giants on the Southern Road** (11,8) ← giants_against_the_dark: available `zin_eindil_returned`, friend; aid host {800, zin_giant_gear_equipment 200}; join coalition. AI 100.
+- `the_dark_wakes` **The Dark Wakes** (10,6) `banner_plain`: available `zin_war_of_last_crowns` or `zin_zol_rising`; political power 50. AI 200.
+- `the_high_snows_hold` **The High Snows Hold** (9,7) `frozen_gate` ← the_dark_wakes; exclusive with giants_against_the_dark: spirit `high_snows_hold`. AI 40; hist ×100.
+- `giants_against_the_dark` **Giants Against the Dark** (11,7) `giant_hammer` ← the_dark_wakes; exclusive with the_high_snows_hold: available `variable zin_gathering_dark above 49`, `zin_eindil_named` or `zin_zol_rising`; LC +3. AI 15; hist ×0.
+- `giants_on_the_southern_road` **Giants on the Southern Road** (11,8) `lone_sword` ← giants_against_the_dark: available `zin_eindil_returned`, friend; aid host {800, zin_giant_gear_equipment 200}; join coalition. AI 100.
 
 ### Key focuses
 
@@ -728,9 +731,9 @@ Start spirit (country history): `the_frost_kings_court`.
 
 ### Events (namespace `zin_regional_titanos`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `trader_at_the_toll` | Salt for Iron | Titanos | *Salt and Iron Traders* | **A fair toll** (AI 60): political power 25; opinion +10 from a random neighbour. **A giant's toll**: political power 50 |
+| Id | Key | Title | To | Trigger | Picture | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `trader_at_the_toll` | Salt for Iron | Titanos | *Salt and Iron Traders* | `generic_wilds` | **A fair toll** (AI 60): political power 25; call `zin_regional_titanos_fair_toll` (one random neighbouring country gains opinion `zin_regional_titanos_fair_toll` +10 of Titanos). **A giant's toll**: political power 50 |
 
 ### Historical AI route
 
@@ -767,7 +770,7 @@ The Yeti Lands are twenty-two states of deep snow, ice fields and high hunting g
 | `zin_regional_yeti_lands_oruk` | Oruk Long-Stride | Corps commander, skill 3, traits `winter_specialist`, `ambusher`; recruited by *Long Stride* | this spec (proposed) |
 | `zin_regional_yeti_lands_sima` | Sima Who Remembers | Political advisor, trait `zin_adv_elder`; recruited by *Songs of the Long Snow* | this spec (proposed) |
 
-Start spirit (country history): `eldests_fire`.
+Start spirit (start-situation data): `eldests_fire`.
 
 ### Tree
 
@@ -780,53 +783,53 @@ Start spirit (country history): `eldests_fire`.
 | E. The Far Snows | 16–18 | 0–2 | start; one focus hidden until `zin_eindil_awake` | Legends; Eindil regard |
 | F. The Dead and the Snow | 8–12 | 6–8 | `zin_war_of_last_crowns` or `zin_zol_rising` | The final war |
 
-**A. The Eldest's Fire.** Icons: `yeti_claw`, `council_table`, `book_lore`.
+**A. The Eldest's Fire.**
 
-- `the_eldests_fire` **The Eldest's Fire** (1,0) 70d: political power 50. AI 100.
-- `the_fire_moot` **The Fire Moot** (0,1) ← the_eldests_fire: stability 0.03.
-- `songs_of_the_long_snow` **Songs of the Long Snow** (2,1) ← the_eldests_fire: recruit `zin_regional_yeti_lands_sima`; political power 25.
-- `the_clans_of_the_deep_snow` **The Clans of the Deep Snow** (1,2) 70d ← the_fire_moot, songs_of_the_long_snow: swap spirit `eldests_fire` → `moot_of_fires`.
+- `the_eldests_fire` **The Eldest's Fire** (1,0) `yeti_claw` 70d: political power 50. AI 100.
+- `the_fire_moot` **The Fire Moot** (0,1) `council_table` ← the_eldests_fire: stability 0.03.
+- `songs_of_the_long_snow` **Songs of the Long Snow** (2,1) `book_lore` ← the_eldests_fire: recruit `zin_regional_yeti_lands_sima`; political power 25.
+- `the_clans_of_the_deep_snow` **The Clans of the Deep Snow** (1,2) `banner_league` 70d ← the_fire_moot, songs_of_the_long_snow: swap spirit `eldests_fire` → `moot_of_fires`.
 
-**B. The Hunting Grounds.** Icons: `herds`, `wild_hunt`, `market_stalls`, `granary`.
+**B. The Hunting Grounds.**
 
-- `the_hunting_grounds` **The Hunting Grounds** (5,0): political power 25; event `traders_at_the_snowline`. AI 20.
-- `herds_of_the_high_snow` **Herds of the High Snow** (4,1) ← the_hunting_grounds: stability 0.03.
-- `bone_and_hide` **Bone and Hide** (6,1) ← the_hunting_grounds: equipment zin_yeti_gear_equipment 300.
-- `snowline_fairs` **Snowline Fairs** (5,2) ← herds_of_the_high_snow, bone_and_hide: political power 50; building industrial_complex 1 capital.
-- `stores_of_the_long_winter` **Stores of the Long Winter** (5,3) ← snowline_fairs: flag `zin_cold_winter_stores`.
+- `the_hunting_grounds` **The Hunting Grounds** (5,0) `wild_hunt`: political power 25; event `traders_at_the_snowline`. AI 20.
+- `herds_of_the_high_snow` **Herds of the High Snow** (4,1) `herds` ← the_hunting_grounds: stability 0.03.
+- `bone_and_hide` **Bone and Hide** (6,1) `workshop_tools` ← the_hunting_grounds: equipment zin_yeti_gear_equipment 300.
+- `snowline_fairs` **Snowline Fairs** (5,2) `market_stalls` ← herds_of_the_high_snow, bone_and_hide: political power 50; building industrial_complex 1 capital.
+- `stores_of_the_long_winter` **Stores of the Long Winter** (5,3) `granary` ← snowline_fairs: flag `zin_cold_winter_stores`.
 
-**C. The Old Truces.** Icons: `handshake_oath`, `castle_ice`, `footprints_snow`, `ice_field`.
+**C. The Old Truces.**
 
-- `the_old_truces` **The Old Truces** (10,0): political power 25. AI 30.
-- ★ `the_hunting_truce` **The Hunting Truce** (9,1) ← the_old_truces; exclusive with the_deep_snow_is_ours.
-- ★ `the_deep_snow_is_ours` **The Deep Snow Is Ours** (11,1) ← the_old_truces; exclusive with the_hunting_truce.
-- `the_castles_compact` **The Castle's Compact** (9,2) ← the_hunting_truce: available Yeldenne exists; non-aggression Yeldenne; stability 0.02.
-- `trackers_for_the_crown` **Trackers for the Crown** (9,3) ← the_castles_compact: available `check zin_regional_yeti_lands_pact_two`; army experience 10; spirit `crown_trackers`.
-- `hearth_and_height_kept` **Hearth and Height** (9,4) ← trackers_for_the_crown: available `check zin_regional_yeti_lands_pact_three`; stability 0.05; political power 50.
-- `the_white_silence` **The White Silence** (11,2) ← the_deep_snow_is_ours: swap spirit `deep_snow` → `white_silence`.
-- `no_road_through_the_snow` **No Road Through the Snow** (11,3) ← the_white_silence: army experience 10; stability 0.05.
+- `the_old_truces` **The Old Truces** (10,0) `handshake_oath`: political power 25. AI 30.
+- ★ `the_hunting_truce` **The Hunting Truce** (9,1) `scroll_treaty` ← the_old_truces; exclusive with the_deep_snow_is_ours: see key focuses.
+- ★ `the_deep_snow_is_ours` **The Deep Snow Is Ours** (11,1) `ice_field` ← the_old_truces; exclusive with the_hunting_truce: see key focuses.
+- `the_castles_compact` **The Castle's Compact** (9,2) `castle_ice` ← the_hunting_truce: available Yeldenne exists; non-aggression Yeldenne; stability 0.02.
+- `trackers_for_the_crown` **Trackers for the Crown** (9,3) `footprints_snow` ← the_castles_compact: available `check zin_regional_yeti_lands_pact_two`; army experience 10; spirit `crown_trackers`.
+- `hearth_and_height_kept` **Hearth and Height** (9,4) `alliance_rings` ← trackers_for_the_crown: available `check zin_regional_yeti_lands_pact_three`; stability 0.05; political power 50.
+- `the_white_silence` **The White Silence** (11,2) `snow_peak` ← the_deep_snow_is_ours: swap spirit `deep_snow` → `white_silence`.
+- `no_road_through_the_snow` **No Road Through the Snow** (11,3) `frozen_gate` ← the_white_silence: army experience 10; stability 0.05.
 
-**D. The Deep Snow Host.** Icons: `yeti_claw`, `footprints_snow`, `storm_veil`.
+**D. The Deep Snow Host.**
 
-- `the_deep_snow_host` **The Deep Snow Host** (14,0): army experience 10. AI 20.
-- `long_stride` **Long Stride** (13,1) ← the_deep_snow_host: recruit `zin_regional_yeti_lands_oruk`; spirit `long_stride_bands`.
-- `claws_in_the_storm` **Claws in the Storm** (15,1) ← the_deep_snow_host: research {zin_cat_kin} 0.5×1.
-- `the_storm_bands` **The Storm Bands** (14,2) 70d ← long_stride, claws_in_the_storm: manpower 3,000; spirit `storm_bands`.
-- `the_great_hunt_mustered` **The Great Hunt Mustered** (14,3) ← the_storm_bands: equipment zin_yeti_gear_equipment 500.
+- `the_deep_snow_host` **The Deep Snow Host** (14,0) `yeti_claw`: army experience 10. AI 20.
+- `long_stride` **Long Stride** (13,1) `footprints_snow` ← the_deep_snow_host: recruit `zin_regional_yeti_lands_oruk`; spirit `long_stride_bands`.
+- `claws_in_the_storm` **Claws in the Storm** (15,1) `yeti_claw` ← the_deep_snow_host: research {zin_cat_kin} 0.5×1.
+- `the_storm_bands` **The Storm Bands** (14,2) `war_drums` 70d ← long_stride, claws_in_the_storm: manpower 3,000; spirit `storm_bands`.
+- `the_great_hunt_mustered` **The Great Hunt Mustered** (14,3) `wild_hunt` ← the_storm_bands: equipment zin_yeti_gear_equipment 500.
 
-**E. The Far Snows.** Icons: `ice_field`, `footprints_snow`, `castle_ice`.
+**E. The Far Snows.**
 
-- `the_far_snows` **The Far Snows** (17,0): political power 25.
-- `tracks_without_end` **Tracks Without End** (16,1) ← the_far_snows: building infrastructure 1 random_owned.
-- `the_light_in_the_north` **The Light in the North** (18,1) ← the_far_snows: stability 0.02; tooltip "The green light in the north does not move with the stars."
-- `the_man_who_walked_from_the_ice` **The Man Who Walked from the Ice** (17,2) ← tracks_without_end, the_light_in_the_north: `allow_branch` `global_flag zin_eindil_awake`; renown +2; regard +5.
+- `the_far_snows` **The Far Snows** (17,0) `ice_field`: political power 25.
+- `tracks_without_end` **Tracks Without End** (16,1) `footprints_snow` ← the_far_snows: building infrastructure 1 random_owned.
+- `the_light_in_the_north` **The Light in the North** (18,1) `snow_peak` ← the_far_snows: stability 0.02; tooltip "The green light in the north does not move with the stars."
+- `the_man_who_walked_from_the_ice` **The Man Who Walked from the Ice** (17,2) `footprints_snow` ← tracks_without_end, the_light_in_the_north: `allow_branch` `global_flag zin_eindil_awake`; renown +2; regard +5.
 
-**F. The Dead and the Snow.** Icons: `banner_plain`, `yeti_claw`, `bones_risen`.
+**F. The Dead and the Snow.**
 
-- `the_dead_and_the_snow` **The Dead and the Snow** (10,6): available `zin_war_of_last_crowns` or `zin_zol_rising`; political power 50. AI 200.
-- `the_snows_stay_silent` **The Snows Stay Silent** (9,7) ← the_dead_and_the_snow; exclusive with hunters_against_the_dead: spirit `silent_snows`. AI 40; hist ×100.
-- `hunters_against_the_dead` **Hunters Against the Dead** (11,7) ← the_dead_and_the_snow; exclusive with the_snows_stay_silent: available `variable zin_gathering_dark above 49` or `zin_zol_rising`; LC +3. AI 15; hist ×0.
-- `the_storm_walks_south` **The Storm Walks South** (11,8) ← hunters_against_the_dead: available `zin_eindil_returned`, friend; aid host {1000, zin_yeti_gear_equipment 300}; join coalition. AI 100.
+- `the_dead_and_the_snow` **The Dead and the Snow** (10,6) `banner_plain`: available `zin_war_of_last_crowns` or `zin_zol_rising`; political power 50. AI 200.
+- `the_snows_stay_silent` **The Snows Stay Silent** (9,7) `snow_peak` ← the_dead_and_the_snow; exclusive with hunters_against_the_dead: spirit `silent_snows`. AI 40; hist ×100.
+- `hunters_against_the_dead` **Hunters Against the Dead** (11,7) `bones_risen` ← the_dead_and_the_snow; exclusive with the_snows_stay_silent: available `variable zin_gathering_dark above 49` or `zin_zol_rising`; LC +3. AI 15; hist ×0.
+- `the_storm_walks_south` **The Storm Walks South** (11,8) `lone_sword` ← hunters_against_the_dead: available `zin_eindil_returned`, friend; aid host {1000, zin_yeti_gear_equipment 300}; join coalition. AI 100.
 
 ### Key focuses
 
@@ -850,9 +853,9 @@ Start spirit (country history): `eldests_fire`.
 
 ### Events (namespace `zin_regional_yeti_lands`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `traders_at_the_snowline` | Traders at the Snowline | Yeti Lands | *The Hunting Grounds* | **Trade furs for salt** (AI 70): political power 25. **Send them back down**: stability 0.02 |
+| Id | Key | Title | To | Trigger | Picture | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `traders_at_the_snowline` | Traders at the Snowline | Yeti Lands | *The Hunting Grounds* | `generic_wilds` | **Trade furs for salt** (AI 70): political power 25. **Send them back down**: stability 0.02 |
 
 ### Historical AI route
 
@@ -869,29 +872,31 @@ Start spirit (country history): `eldests_fire`.
 
 ## Implementation
 
-### Files
+### Builder and files
 
-For each tree `<t>` in `regional_isengard`, `regional_horidor`, `regional_windwaith`, `regional_fearno`, `regional_titanos`, `regional_yeti_lands`:
+The content builder's focus compiler, `tools/content/modules/focus_compiler.mjs` ([00_format_and_compiler.md](../00_format_and_compiler.md)), reads each tree's data file and writes these files in the builder's one transaction through the shared rewrite engine (`tools/content/apply.mts`). The builder resolves country names to tags at build time. For each tree `<t>` in `regional_isengard`, `regional_horidor`, `regional_windwaith`, `regional_fearno`, `regional_titanos`, `regional_yeti_lands`:
 
 | Path | What |
 | --- | --- |
 | `docs/design/focus/<t>.json` | Tree data, `"tier": "regional"`, `"countries": ["<Name>"]` |
-| `common/national_focus/zin_<t>.txt` | Compiled tree |
-| `common/ideas/zin_focus_<t>.txt` | Its spirits |
-| `events/zin_<t>.txt` | Its events (namespace `zin_<t>`) |
+| `common/national_focus/zin_<t>.txt` | Compiled tree; its `country` block selects the owner, so the interim Long Peace tree no longer applies to it |
+| `common/ideas/zin_focus_<t>.txt` | Its spirits, including the start spirit |
+| `events/zin_<t>.txt` | Its events (namespace `zin_<t>`, effect-triggered only) |
 | `common/scripted_effects/zin_<t>.txt`, `common/scripted_triggers/zin_<t>.txt` | Tree-declared effects and triggers below |
-| `common/opinion_modifiers/zin_<t>.txt` | Tree opinion modifiers below |
+| `common/opinion_modifiers/zin_<t>.txt` | Tree opinion modifiers below, from the tree data's `opinion_modifiers` block |
 | `localisation/english/zin_focus_<t>_l_english.yml` | All text |
-| `history/countries/<tag>` (generated) | Start spirit and recruited characters |
+
+Outside the compiler: the proposed lieutenants and advisors are entries in `tools/content/data/characters.json` (built by `tools/content/modules/characters.mjs` into `common/characters/zin_lore_characters.txt`, not recruited at the start), and the six start spirits are entries in `tools/content/data/start_situation.json` (start-situation spec).
 
 ### Tree-declared scripted effects
 
 | Effect | Tree | Does |
 | --- | --- | --- |
-| `zin_regional_<name>_recruit` (`character`) | every tree here | Recruits the named proposed character with its role (the pattern the major trees use) |
+| `zin_regional_<name>_recruit_<person>` | every tree here | `recruit_character = zin_regional_<name>_<person>`; the character's role and traits come from `characters.json` (corps commander, navy leader or political advisor as tabled) |
+| `zin_regional_titanos_fair_toll` | Titanos | `random_neighbor_country = { add_opinion_modifier = { target = ROOT modifier = zin_regional_titanos_fair_toll } }` |
 | `zin_regional_isengard_guarantee_oath_brothers` | Isengard | `every_neighbor_country` with `zin_cold_is_clan_realm` and `zin_cold_lean` ≤ −40: `ROOT = { give_guarantee = PREV }`; fires `zin_regional_isengard.2` |
 | `zin_regional_isengard_wargoal_march` | Isengard | For every Coldor-owned state with `zin_is_site_isengard_march`: `create_wargoal = { type = take_state_focus target = <Coldor> generator = { <state> } }` |
-| `zin_regional_horidor_leave_accord` | Horidor | `leave_faction = yes`; removes `zin_cold_accord_kin` both ways with every Accord member; adds opinion modifier `zin_regional_horidor_left_accord` (−25) from Coldor; `mark_focus_tree_layout_dirty` not needed |
+| `zin_regional_horidor_leave_accord` | Horidor | `leave_faction = yes`; removes `zin_cold_accord_kin` both ways with every Accord member (`remove_opinion_modifier`); Coldor gains opinion modifier `zin_regional_horidor_left_accord` (−25) of Horidor |
 | `zin_regional_fearno_invite_steadings` | Fearno | Fires `zin_regional_fearno.3` to every country with `zin_cold_is_clan_realm`, lean between −30 and 30, not in a faction, not a subject |
 | `zin_regional_fearno_guarantee_members` | Fearno | `give_guarantee` to every member of Fearno's faction |
 
@@ -917,14 +922,16 @@ The shared tree owns `zin_shared_cold_lands_lean_neighbours` (`value`), which th
 | `zin_regional_isengard_marriage` | +20 | Coldor ↔ Isengard after the marriage; decays 1 a month |
 | `zin_regional_horidor_left_accord` | −25 | Coldor → Horidor; decays 1 a month |
 | `zin_regional_fearno_friendship` | +20 | Coldor ↔ Fearno; decays 1 a month |
+| `zin_regional_titanos_fair_toll` | +10 | a neighbour → Titanos; decays 0.5 a month |
 
 ### Mechanic calls and reads
 
 - Cold Lands mechanic: `zin_cold_add_lean`, `zin_cold_add_lean_all`, `zin_cold_add_defiance`, `zin_cold_start_march_war`; triggers `zin_cold_is_clan_realm`, `zin_cold_march_war_allowed`, `zin_cold_historical`; flags `zin_cold_winter_stores`, `zin_cold_isengard_sworn`, `zin_cold_march_war_fought`, `zin_cold_route_companies`; variables `zin_cold_lean`, `zin_cold_isengard_defiance`, `zin_cold_yeti_pact`, `zin_cold_giant_pact`; idea `zin_cold_harbour_compact`.
 - Western Crossing: `zin_west_add_fleet`; flag `zin_west_council`.
-- Eindil's journey: `zin_eindil_add_regard`, `zin_eindil_add_renown`, `zin_eindil_aid_host`, `zin_eindil_join_coalition`; trigger `zin_eindil_friend`; flags `zin_eindil_awake`, `zin_eindil_war_king`, `zin_eindil_named`, `zin_eindil_returned`.
-- Diplomacy: `zin_lost_cause_add_strength`; flag `zin_lost_cause_member`.
-- Politics: `zin_politics_add_drift`, `zin_politics_set_stance`.
+- Eindil's journey: `zin_eindil_add_regard`, `zin_eindil_add_renown`, `zin_eindil_aid_host` (`manpower`, `equipment`; the equipment type named in each aid is passed as the effect's type, see the journey spec), `zin_eindil_join_coalition`; trigger `zin_eindil_friend`; flags `zin_eindil_awake`, `zin_eindil_war_king`, `zin_eindil_named`, `zin_eindil_returned`; proposed hook flag `zin_eindil_safe_harbour` (contract additions).
+- Shared Cold Lands tree: `zin_shared_cold_lands_lean_neighbours` (`value`).
+- Lost Cause and politics: `zin_lost_cause_add_strength`, flag `zin_lost_cause_member` (diplomacy); `zin_politics_add_drift`, `zin_politics_set_stance`, stances `zin_dom_warlord`, `zin_dom_crown`, `zin_wild_clans`, `zin_light_council`, advisor traits `zin_adv_*` (politics); name key `zin_name_horidor_cairn_king` (contract additions).
+- Coldor's tree: event `zin_coldor.2`.
 
 ### `allow_branch` roots
 
@@ -936,7 +943,11 @@ No new game rules: the trees use `zin_cold_historical` (from `zin_rule_cold_isen
 
 ### Icons
 
-All keys above come from the shared catalog ([02_icon_catalog.md](../02_icon_catalog.md)). No new keys are needed. Event pictures: `generic_court` (court events), `generic_wilds` (yeti, giants), `cold_shore` (Windwaith), `generic_peace` (envoys). All art is image-generated.
+All focus icons come from the shared catalog ([02_icon_catalog.md](../02_icon_catalog.md)); no new keys are needed. Each event's picture is in its table (`generic_court`, `generic_sea`, `generic_wilds`). All art is image-generated.
+
+### Current game state
+
+All six countries run the interim Long Peace tree today; their rulers carry generated names until the characters spec ships, and the game still starts in 1936 until the calendar spec ships. The trees call the Cold Lands, journey, Western Crossing and Lost Cause systems and the shared Cold Lands tree, so they are built in phase 6 after those mechanics (phase 3) and with the shared tree.
 
 ## AI
 
@@ -947,21 +958,22 @@ All keys above come from the shared catalog ([02_icon_catalog.md](../02_icon_cat
 
 ## Acceptance
 
-1. The compiler accepts the six trees: focus counts as tabled (45, 32, 34, 37, 30, 30); unique keys and positions; every prerequisite above its focus; exclusives symmetric; days multiples of 7; no `raw` blocks.
-2. The HOI4 Agent Tools focus inspector reports no errors; the renderer produces a clean image of each tree.
-3. On 1 Thaw 4A 1748: no focus that creates a war goal, starts a border war or joins a war is available in any of the six trees; no visible focus or tooltip mentions a stranger or a sleeper in the ice; no text names Afrit.
-4. Text check: no focus, spirit or event text calls giants or yeti Great Folk, Common Folk or beasts, or states their origin.
-5. Historical observer run, 4A 1748 to 4A 1760: Isengard takes `never_kneel` by the end of 1749 and `meet_them_at_the_forts` during the March Forts; Horidor takes `shield_of_the_accord` and stays in the Accord; Windwaith takes `free_harbours` and, once the Ford Council sits, `hulls_for_the_west`; Fearno takes `a_lord_among_lords`; Titanos and the Yeti Lands take the pact focuses; every tree takes its stand-apart focus within 120 days of `zin_war_of_last_crowns`. None of the six declares a war.
-6. Scenario: Isengard with defiance 85 on 1 Thaw 1751 and `zin_gathering_dark` 20 under the free rule: `ride_to_the_forts` is available and starts the March Forts border war; under the historical rule it is not.
-7. Scenario: Horidor completes `the_highland_crown`: it leaves the Northern Accord, Coldor's reach falls on its next monthly update, and Horidor gets no war.
-8. Scenario: Fearno completes `call_the_free_steadings` with three clan realms at lean 0: the faction exists and invitations reach exactly the eligible realms.
-9. Every modifier in the spirit tables exists in the game's modifier documentation; every engine effect and trigger named exists in the effect and trigger documentation.
+1. The compiler builds the six trees with 45, 32, 34, 37, 30 and 30 focuses: unique keys and positions; every prerequisite above its focus; every exclusive written on both focuses; days multiples of 7; every icon and event picture in the catalog; no `raw` blocks. The HOI4 Agent Tools focus inspector and script validator pass on the staged files; the renderer produces a clean image of each tree.
+2. Scan: on 1 Thaw 4A 1748 no focus that creates a war goal, starts a border war or joins a war is available in any of the six trees; no visible focus or tooltip mentions a stranger or a sleeper in the ice; no text names Afrit.
+3. Text check: no focus, spirit or event text calls giants or yeti Great Folk, Common Folk or beasts, or states their origin.
+4. Every modifier in the spirit tables exists in the 1.19.3 modifier documentation; every engine effect and trigger named exists in the effect and trigger documentation; no localisation key is shared by a focus and an idea of the same tree.
+5. Scenario: Isengard with defiance 85 on 1 Thaw 1751 and `zin_gathering_dark` 20 under the free rule: `ride_to_the_forts` is available and starts the March Forts border war; under the historical rule it is not.
+6. Scenario: Horidor completes `the_highland_crown`: it leaves the Northern Accord, Coldor's reach falls on its next monthly update, and Horidor gets no war.
+7. Scenario: Fearno completes `call_the_free_steadings` with three clan realms at lean 0: the faction exists and invitations reach exactly the eligible realms.
+8. One in-game year in the isolated Linux run from 1 Thaw 4A 1748 (historical rule): the six trees load without errors in the log, nobody in the Cold Lands is at war, Isengard has taken `the_iron_hall` and Horidor `the_accord_question`, and the six start spirits are present.
 
 ## Open questions
 
-1. **Isengard's seat.** The vault names no seat for Isengard. Should the Iron Hall stay a hall without a city name, or does the owner want a seat named?
-2. **Horidor's crown.** Is a Horidor that leaves the Accord and crowns its chieftain a welcome alternative, or should Horidor always stay in the Accord?
-3. **Fearno.** Fearno has 25 states and no lore beyond its name. Is a proud third pole (the Free Steadings) a good fit, or should Fearno lean to one crown?
-4. **Windwaith's fishermen.** Does the Windwaith arm reach the Ocean of Zol, so that its fishermen's tales are about Zol's black ships? The tree keeps the tale vague either way.
-5. **Giants and yeti.** Should Titanos and the Yeti Lands be able to send help south against the dark at all, given that their nature and their part in the age are open?
-6. **The silent castle legend.** Fearno, Titanos and the Yeti Lands repeat the "green light in the north" tale (proposed, from the history-for-play spec). Is a visible light at Yeldenne acceptable as rumour?
+All six are owner questions already listed in [OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md) (Cold Lands, 1 and 2). The work proceeds on the proposal given.
+
+1. **Isengard's seat.** Works on: the Iron Hall stays a hall without a city name.
+2. **Horidor's crown.** Works on: leaving the Accord and crowning the chieftain is a player alternative (AI ×0 on the historical path).
+3. **Fearno.** Works on: a proud third pole (the Free Steadings) as an alternative; historically a lord among lords.
+4. **Windwaith's fishermen.** Works on: the tale stays vague (black ships in the north), whether or not the arm reaches the Ocean of Zol.
+5. **Giants and yeti.** Works on: they may send help south only off the historical path (hist ×0), and no text states their nature.
+6. **The silent castle legend.** Works on: Fearno, Titanos and the Yeti Lands repeat the "green light in the north" as rumour (history-for-play spec).

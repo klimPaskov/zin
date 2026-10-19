@@ -1,6 +1,6 @@
 # Map accuracy
 
-**Status:** Ready. **Priority:** 1. **Phase:** 1.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 1. **Phase:** 1.
 
 ## Purpose
 
@@ -57,12 +57,12 @@ Sites that lore or mechanics need. Detail and requirements per site in [02_key_s
 | --- | --- | --- | --- | --- |
 | K1 | The Great Lake | established, Aenor's heartland | map label | Victory point cities around it in Aenor's states |
 | K2 | Dragon Mountain | established, home of dragons; not a country | map label | Make it a named state with no owner rights issue: owned by the nearest elven realm, with the dragon mechanic anchored there |
-| K3 | The Abyss | established, Dead Lands, Roka's domain | label; state "Vez Nan / Abyss" in Volgan's realm | Split or rename so a state is called the Abyss |
-| K4 | The Nether | established, south of the Dead Lands, seat of the King of Demons | label | A named state; decide owner (Volgan or a demon realm) per the mechanics spec |
+| K3 | The Abyss | established, Dead Lands, Roka's domain | label; state 298 "Vez Nan / Abyss" in Volgan's realm | Split or rename so a state is called the Abyss; `zin_is_site_abyss` reads state 298 until then ([02_key_sites.md](02_key_sites.md)) |
+| K4 | The Nether | established, south of the Dead Lands, seat of the King of Demons | label inside Volgan's capital state 299 | A named state in the south of the Dead Lands owned by Volgan (owner short list 5 proposal; the Volgan spec). Until the map gives it a state, `zin_is_site_nether` is the same state as `zin_is_site_nafeher` (299) |
 | K5 | Dardan | established battle of the First Age; place open | missing | Do **not** place until the owner decides; the vault lists its location as open |
 | K6 | Organ Mountains and Lunhrim | owner, Great Wall description | missing | Map labels at the wall's ends |
 | K7 | Castle of Yeldenne | established, Cold Lands | state Mp'E | See S11 |
-| K8 | Šodolôrō | established, in Zol's Mistake | region label | A named victory point |
+| K8 | Šodolôrō | established, in Zol's Mistake | region label | A named victory point, written "Šodolôro" in game text (S11) |
 | K9 | Mirolon's passes | proposed (the gate Volgan must take) | none | Forts on Mirolon's northern border |
 | K10 | Zilin Hills | established (Worshipdom) | state | matches |
 
@@ -71,19 +71,21 @@ Sites that lore or mechanics need. Detail and requirements per site in [02_key_s
 | # | Item | Today | Action |
 | --- | --- | --- | --- |
 | N1 | Strategic regions | "Region 1" … "Region 275" | Name every strategic region from the drawn labels in its area; sea regions by drawn sea names (Pupor Ocean, Sea of Darkness, Ocean of Zol, Sea of Gods…) |
-| N2 | Superseded names (Edvoid, Rush, Klinti, Sunhot as a place) | absent from localisation; present in internal file names | Rename internal strategic region files when they are regenerated; no player-facing change needed |
+| N2 | Superseded names (Edvoid, Rush, Klinti, Sunhot as a place) | absent from localisation except the drawn Sunhot place labels ("Lands of the Sun Desert", "Lands of the Sun Grasslands" in strategic region, state and victory point names); present in internal file names | The politics step renames the drawn labels to **Sun Desert**, **Sun Gate** and **Sun Grasslands** (owner, 19 October 2026; [03_names_and_terms.md](../02_lore/03_names_and_terms.md)) and the internal strategic region files when they are regenerated |
 | N3 | Generated placeholder names | settlements and some capitals | Keep until the owner names them; never use an antagonist's or region's name |
 
 ## Acceptance
 
 - Every row above is "matches", "accepted" or has a recorded owner decision.
 - The five map checks of the map rewrite pass.
-- The Linux run starts a campaign as Aenor, Volgan, Zol, Lerendor and the Magical Forest.
+- The Linux run starts a campaign as Aenor, Volgan, Zol, Lerendor and the Magical Forest and runs each with the clock unpaused at top speed for at least 10 minutes and 60 game days (S8a, case L1 of [01_acceptance.md](../09_validation/01_acceptance.md)).
 - A render of the political map with region names is attached to the phase report.
 
 ## Open questions for the owner
 
-1. Do the black areas on the Magical Lands sheet (Dlomntod, Medek, Lost Lands) belong to Zol's Mistake?
-2. Where is Dardan? Where are the Organ Mountains and Lunhrim exactly?
-3. Who owns the Nether at the start: Volgan, or the King of Demons as a separate realm?
-4. Should Mirolon also hold lands on the Magical Lands sheet (it does today)?
+All proceed on their proposals; the owner's copies are in [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md).
+
+1. Do the black areas on the Magical Lands sheet (Dlomntod, Medek, Lost Lands) belong to Zol's Mistake? Proceeds on: yes, as the map has them (G4).
+2. Where is Dardan? Where are the Organ Mountains and Lunhrim exactly? Proceeds on: Dardan stays unplaced; the Organ Mountains and Lunhrim are labels at the Wall's two ends (short list 3).
+3. Who owns the Nether at the start: Volgan, or the King of Demons as a separate realm? Proceeds on: Volgan (short list 5).
+4. Should Mirolon also hold lands on the Magical Lands sheet (it does today)? Proceeds on: the map stays as it is; Mirolon gains no refuge there (Mirolon tree owner answer).

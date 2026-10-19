@@ -1,8 +1,20 @@
 # Loading screens and quotes
 
-**Status:** Draft. **Priority:** 5. **Phase:** 7.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 5. **Phase:** 7.
 
 The text half (quotes, tips, status lines) has no art dependency and may ship as early as phase 2.
+
+**Current state (19 October 2026, commit ca01fa3).** Most of this spec is in the game, written by `tools/content/modules/presentation.mjs`:
+
+| Item | State |
+| --- | --- |
+| The 24 loading screens `gfx/loadingscreens/load_1.dds` … `load_24.dds` and their thumbnails | **done** (agent-accepted; owner approval pending) |
+| The 3 main-menu backgrounds in the same folder (decision A5), the background list and the picker sprites (`interface/small_background.gfx`) | **done** |
+| `replace_path="gfx/loadingscreens"` and `replace_path="common/frontend/backgrounds"` in `descriptor.mod` (stage 1 of the vanilla removal) | **done** |
+| The loading chrome (4 textures, exact vanilla case) and the picker frame `zin_thumb_border.dds` | **done** |
+| The 190 loading tips `LOADING_TIP_0` … `LOADING_TIP_189` (`localisation/replace/zin_loading_tips_l_english.yml`, data `tools/content/data/loading_tips.json`, decision A7) | **done** |
+| The 18 loading status lines (§8) | to do |
+| Tips and status lines in the other game languages (§7) | to do |
 
 ## Purpose
 
@@ -16,7 +28,7 @@ The loading screen is the first and the most frequent thing a ZIN player sees. T
 
 It also fixes the file names, sizes and formats, the builder modules that produce them, and how the result is checked.
 
-This spec takes over §13 "Loading screens" of [07_interface/01_interface.md](../07_interface/01_interface.md). That section asks for nine screens named `load_1` to `load_9`. This spec raises the count to 24, keeps the interface spec's nine subjects among them, and moves the thumbnails (see Implementation). The main-menu picture `zin_menu_parim` and the bookmark picture stay with the interface spec. The art pipeline's inventory row "Loading screens and main menu: 10 (+10 small), ~14 calls" becomes 25 (+25 small) and about 34 calls ([01_art_pipeline.md](01_art_pipeline.md) §8).
+This spec owns the loading screens for the whole mod ([07_interface/01_interface.md](../07_interface/01_interface.md) §13 points here). It keeps the interface spec's nine early subjects among the 24 and moves the thumbnails out of the loading folder (decision A5). The main-menu backgrounds' subjects and the bookmark picture belong to [03_main_menu_and_frontend.md](../07_interface/03_main_menu_and_frontend.md); this spec only requires that the loading folder and the picker stay ZIN-only.
 
 ## Lore basis
 
@@ -57,15 +69,15 @@ This spec takes over §13 "Loading screens" of [07_interface/01_interface.md](..
 
 1. **Replace the folders.** `descriptor.mod` and the launcher's `zin.mod` both gain `replace_path="gfx/loadingscreens"` and `replace_path="common/frontend/backgrounds"` (the wiki requires the line in both files). No vanilla or DLC loading picture, thumbnail or background entry then loads. Each folder keeps ZIN content, as the wiki requires of every replaced folder.
 2. **Use the vanilla names as well.** ZIN's pictures are named `load_1` … `load_24`. The first nine therefore also override the vanilla files of the same name, which covers the case where the very first launch screen is drawn before `replace_path` takes effect (open question 3).
-3. **Keep the loading folder pure.** `gfx/loadingscreens/` holds exactly the 24 pictures and the interface spec's `zin_menu_parim.dds`, nothing else. Thumbnails and the thumbnail frame live in `gfx/interface/zin/loadingscreens/`, because every file in the loading folder may be drawn as a loading screen. The menu picture therefore also appears as a 25th loading screen, which is intended (it is spoiler-free).
+3. **Keep the loading folder pure.** `gfx/loadingscreens/` holds exactly the 24 pictures and the three menu backgrounds (`zin_menu_parim.dds`, `zin_menu_strait.dds`, `zin_menu_wall.dds`), nothing else. Thumbnails and the thumbnail frame live in `gfx/interface/zin/loadingscreens/` (A5), because every file in the loading folder may be drawn as a loading screen. The menu pictures may therefore also appear as loading screens, which is intended (they are spoiler-free).
 4. **Re-texture the chrome** by shipping ZIN textures under the exact vanilla paths and file names (same mixed case, which matters on Linux). No `.gui` or `.gfx` file of the loading screen is overridden, and the Paradox and Clausewitz logos stay as they are.
 5. **Replace every loading tip** through `localisation/replace/`, with 190 keys (`LOADING_TIP_0` … `LOADING_TIP_189`). Because the replace folder overrides keys and 190 > 163, no vanilla tip can survive even though the vanilla file still loads.
 6. **Replace the 18 status lines** through `localisation/replace/`.
-7. **The main-menu picker** lists `zin_menu_parim` first, then `load_1` … `load_24` (proposed: every loading screen can be chosen as the menu background).
+7. **The main-menu picker** lists exactly the three menu backgrounds, `zin_menu_parim` first (decision A5). Loading screens are not offered as menu backgrounds.
 
 ### 3. Rotation
 
-The engine chooses the picture and the tip independently and at random each time a loading screen is shown (game launch, starting a game, loading a save, returning to the menu). There is no weighting, no condition and no memory of what was shown before; repeats happen. ZIN does not try to control this, which is why every picture and every tip must be safe at any moment of any game. With 25 pictures and 190 tips, a player sees on average a new picture in four loads out of five, and the chance of seeing the same tip twice within ten loads is about one in four.
+The engine chooses the picture and the tip independently and at random each time a loading screen is shown (game launch, starting a game, loading a save, returning to the menu). There is no weighting, no condition and no memory of what was shown before; repeats happen. ZIN does not try to control this, which is why every picture and every tip must be safe at any moment of any game. With 27 pictures and 190 tips, a player sees on average a new picture in four loads out of five, and the chance of seeing the same tip twice within ten loads is about one in four.
 
 The tips are not interleaved by kind. Quotes take the keys 0 to 149 and gameplay tips 150 to 189, so roughly one load in five shows a gameplay tip.
 
@@ -73,12 +85,12 @@ The tips are not interleaved by kind. Quotes take the keys 0 to 149 and gameplay
 
 | Item | Value |
 | --- | --- |
-| Generation | `generate_image`, one scene per call, 2048×1536, `quality: high`; up to three attempts per screen (art pipeline §3) |
+| Generation | `tools/content/imagegen.mjs`, one scene per call, aspect 4:3, `quality: high`; up to three attempts per screen (art pipeline §3). The model returns 1448×1086 (decision A1) |
 | Shipped picture | `gfx/loadingscreens/load_<n>.dds`, 1920×1440, uncompressed DDS A8R8G8B8, top-left origin, no mipmaps (as vanilla); 11,059,328 bytes each |
-| Shipped thumbnail | `gfx/interface/zin/loadingscreens/load_<n>_small.dds`, 192×144, same format, made from the shipped 1920×1440 picture by an exact 10× box downscale |
-| Resize | 2048×1536 → 1920×1440 with Lanczos 3 (art pipeline §4 step 5); no crop, both are 4:3 |
-| Budget | 24 pictures ≈ 265 MB uncompressed. If the owner prefers a smaller repository, BC1 (DXT1) without alpha is the fallback (about 1.4 MB each); the manifest records the format (open question 4) |
-| Approval | The owner approves every loading screen (art pipeline §6). The review checklist and the composition check below are recorded for each one |
+| Shipped thumbnail | `gfx/interface/zin/loadingscreens/load_<n>_small.dds`, 192×144, same format, made from the shipped 1920×1440 picture by an exact 10× box downscale (A1) |
+| Resize | 1448×1086 → 1920×1440 with Lanczos 3 (A1); no crop, both are 4:3. The one exception is `load_24`, cropped to x 0–1400, y 0–1050 before the resize to remove a painted mark (A5) |
+| Budget | 24 pictures ≈ 265 MB uncompressed, as shipped. BC1 (DXT1) without alpha (about 1.4 MB each) is the fallback only if the Linux run or the Workshop size limit requires it; the manifest then records the format (proposed) |
+| Approval | Every screen has an agent review line. The owner approves every loading screen before the phase 7 release (art pipeline §6). The review checklist and the composition check below are recorded for each one |
 
 **Composition.** The engine either crops the 4:3 picture to the screen's width or fits it to the screen's height; both happen depending on resolution. The loading bars cover the top 92 and the bottom 148 screen pixels, and the logos sit in the lower corners. One rule works in both cases:
 
@@ -93,11 +105,13 @@ The review renders each accepted picture at 1920×1080 (cropped), 1280×720 and 
 
 **Prompt.** Every job uses the builder's style line and this frame (proposed):
 
-> Painted dark-fantasy strategy-game art in a consistent style: rich oil-paint texture, dramatic soft lighting, muted earthy palette with gold accents. A wide 4:3 painted scene for the loading screen of a fantasy strategy game, filling the whole image edge to edge, no border. *[Brief from the table, then light and palette.]* Keep the main subject in the middle of the picture, with quiet sky above and quiet ground below. No text, no letters, no numbers, no runes, no frames, no labels, no logos, no watermark. No modern objects. No battle, no corpses, no blood.
+> Painted dark-fantasy strategy-game art in a consistent style: rich oil-paint texture, dramatic soft lighting, muted earthy palette with gold accents. A wide 4:3 painted scene for the loading screen of a fantasy strategy game, filling the whole image edge to edge, no border. *[Brief from the table, then light and palette.]* Keep the main subject in the middle of the picture, with quiet sky above and quiet ground below. No text, no letters, no numbers, no runes, no frames, no labels, no logos, no watermark; no signature or maker's mark; corners and bottom edge hold only plain ground; no real-world religious symbol. No modern objects. No battle, no corpses, no blood.
+
+The clause about marks, corners and religious symbols is decision A4. It came after the first runs, so screens 1–24 were reviewed for it (corners brightened) rather than regenerated.
 
 **Never in any loading picture** (in addition to the art pipeline's checklist): Eindil or any lone heroic stranger from the north; any figure that could be read as the Deliverer, Aurevan or Afrit (no radiant robed figure, no statue or painted image with a face in a temple); demons; the undead; Zol in any form, a skull sigil or ships of the dead; Horos or Glo itself; Volgan; a recognisable face of Lorien, the Golden King or any other lore figure; a battle, siege or burning town; dwarves in a homeland (their homeland is open); Sunhot elves and Gala elves in the same picture.
 
-### 5. The 24 loading screens
+### 5. The 24 loading screens (in game)
 
 Palettes follow the icon catalog: Middle Lands gold and red; North Lands sea-green and iron; Cold Lands white and pale blue; West Lands green and brown; East Lands ochre and turquoise; Dark Lands rust and black; Dead Lands ash and ember; Magical Lands silver and leaf-green; Lands of the Sun white gold; the Mistake black and cold grey. Region coverage: Middle Lands 8, Magical Lands 3, Cold Lands 3, Lands of the Sun 2, and one each for the North Lands, West Lands, Triton's Islands, Islands of the South, Dark Lands, Dead Lands border, East Lands and Zol's shores. Peoples shown: men, elves, Sunhot elves, giants, ents, yeti, orcs and goblins. Demons and the dead are left out on purpose.
 
@@ -128,19 +142,19 @@ Palettes follow the icon catalog: Middle Lands gold and red; North Lands sea-gre
 | 23 | `load_23` | The salt road | East Lands; men | A long camel caravan crosses ochre dunes at dusk toward a caravan city with turquoise domes. Camel riders ride escort along its flank. | Dusk; ochre and turquoise | The caravan roads (P), Noris camel warriors (E) |
 | 24 | `load_24` | The black island | Ocean of Zol; men | Small fishing boats with lanterns row away at dusk from a jagged black island under a cold grey sky, mist on the water. Nothing and nobody on the island. | Dusk; black and cold grey, lantern gold | Zol's Mistake and its black islands (E), the fishermen's rumours (P); interface list |
 
-### 6. The loading screen chrome
+### 6. The loading screen chrome (in game)
 
-| Texture (exact path and case) | Size | Generated as | Rule |
+| Texture (exact path and case) | Size | Job (one per strip, A2) | Rule |
 | --- | --- | --- | --- |
-| `gfx/interface/Loadingscreen_loadingtip.dds` | 1400×148 | Strip 1 of the chrome sheet | A dark weathered leather band with a fine gold filigree edge along the top and bottom; ends fading softly into the key colour. The centre must stay dark (mean luminance at most 25%) so the white tip text reads |
-| `gfx/interface/Loadingscreen_loadingstatus.dds` | 1400×92 | Strip 2 | The same band, thinner |
-| `gfx/interface/LoadingScreen_Progress_1.dds` (track, `textureFile2`) | 934×40 | Strip 3 | An empty iron groove with a thin gold rim |
-| `gfx/interface/LoadingScreen_Progress_2.dds` (fill, `textureFile1`) | 934×40 | Strip 4 | The same groove filled with molten gold light |
-| `gfx/interface/zin/loadingscreens/zin_thumb_border.dds` | 192×144 | Single job | A thin gold frame with a transparent centre, for the background picker |
+| `gfx/interface/Loadingscreen_loadingtip.dds` | 1400×148 | `loading-tipband` | A dark weathered leather band with a fine gold filigree edge along the top and bottom; ends darkening to the black ground. The centre must stay dark (mean luminance at most 25%) so the white tip text reads |
+| `gfx/interface/Loadingscreen_loadingstatus.dds` | 1400×92 | `loading-statusband` | The same band, thinner |
+| `gfx/interface/LoadingScreen_Progress_1.dds` (track, `textureFile2`) | 934×40 | `loading-progress-track` | An empty iron groove with a thin gold rim |
+| `gfx/interface/LoadingScreen_Progress_2.dds` (fill, `textureFile1`) | 934×40 | `loading-progress-fill` | The same groove filled with molten gold light |
+| `gfx/interface/zin/loadingscreens/zin_thumb_border.dds` | 192×144 | `loading-thumb-border` | A thin gold frame with a transparent centre, for the background picker |
 
-**Chrome sheet job** `loading-chrome` (proposed): 1536×1024, flat magenta `#FF00FF` background, four horizontal strips stacked top to bottom with wide gutters, in the order above, each spanning about 90% of the width (aspects about 9.5:1, 15:1, 23:1 and 23:1). Slicing: `findRegionsAdaptive` with `expected: 4`, aspect range 8 to 30, cells ordered top to bottom; alpha matte and despill from the key (art pipeline §4 step 4); resize each strip to its target with `fit: 'fill'`.
+**Strips (A2).** Each band is one job on a flat black canvas, its ends darkening to black. `presentation.mjs` finds the band's rows where the mean brightness rises above the ground, takes alpha from each column's brightness (so the ends fade as vanilla's do), and resizes with Lanczos 3 to the exact target (`fit: 'fill'`). The progress track and fill share one crop window, so the fill lies exactly over the groove. An earlier try with all four strips on one magenta sheet (job `loading-chrome`) was not used; the four strip jobs supersede it.
 
-**Thumbnail frame job** `loading-thumb-border`: 1024×768 on magenta, a thin ornamental gold frame touching all four edges with a magenta centre; keyed, then resized to 192×144.
+**Thumbnail frame** `loading-thumb-border`: one single on flat magenta, a thin ornamental gold frame touching all four edges with a magenta centre; keyed with despill (`keyMatte`), then resized to 192×144.
 
 ### 7. Loading quotes and tips
 
@@ -153,22 +167,24 @@ Palettes follow the icon catalog: Middle Lands gold and red; North Lands sea-gre
 | Tips | Keys 150–189. String: `§YCounsel:§! <text>` |
 | Length | Quote and tip text under 220 characters (the longest quote here is 147, the longest tip 184); the whole string under 300 |
 | Characters | Windows-1252 only. The texts below are plain ASCII; `§` (0xA7) appears only in the tip prefix. No `"`, `$`, `[` or `]` in any text |
-| File | `localisation/replace/zin_loading_tips_l_english.yml`, UTF-8 with BOM, header `l_english:` |
+| File | `localisation/replace/zin_loading_tips_l_english.yml`, UTF-8 with BOM, header `l_english:`, lines ` LOADING_TIP_<n>:0 "<string>"` (in game) |
+| Data | `tools/content/data/loading_tips.json` (A7): one record per key in key order with `key`, `kind`, `group` (quotes) or `topic` and `refs` (tips), `text`, `attribution` (quotes), `status` |
 | Order | As in the tables below; the builder never reorders, so a key keeps its text across builds |
+| Other languages | The same strings are written for every other language folder of the installed game (`braz_por`, `french`, `german`, `japanese`, `korean`, `polish`, `russian`, `simp_chinese`, `spanish`) as `localisation/replace/zin_loading_tips_l_<language>.yml` with the header `l_<language>:`, so no vanilla tip shows in any language (proposed; to do) |
 
 Example lines:
 
 ```
 l_english:
- LOADING_TIP_0: "A crown is gold on the outside and work on the inside. Most kings only look at the outside.\n- Saying of the Middle Lands"
- LOADING_TIP_150: "§YCounsel:§! The Erdae bar under your flag shows the year of the Fourth Age, the Gathering Dark and up to three meters of your own realm. Hover any of them to learn what it means."
+ LOADING_TIP_0:0 "A crown is gold on the outside and work on the inside. Most kings only look at the outside.\n- Saying of the Middle Lands"
+ LOADING_TIP_150:0 "§YCounsel:§! The Erdae bar under your flag shows the year of the Fourth Age, the Gathering Dark and up to three meters of your own realm. Hover any of them to learn what it means."
 ```
 
 #### Attribution style
 
 - **Sayings of peoples** name the people or place: "Saying of the Gunwaith clans", "Fishermen's saying, Ocean of Zol".
 - **Lines from chronicles** name a source (all titles proposed): *The Chronicle of Erdae* with its age (the same name as the in-game codex, [04_chronicle_codex.md](../07_interface/04_chronicle_codex.md)), *The Annals of Parim*, *The Annals of Gunwaith*, *The Harbour Rolls of Sonargur*, *The Litany of the Deliverer*, *A western reading of the Chronicle*, *A commentary on the Chronicle*.
-- **Words of figures** name the figure with a title. Every attributed line is **proposed**, including those given to established figures (Aen, King Edran, Lorien, Varner, the Golden King, Alleria). Lines for Aen and Varner are framed as remembered ("Words the heralds give to Aen", "as the elves remember him"), because nobody alive heard them. Proposed characters come from [02_characters.md](../02_lore/02_characters.md) and the vault's proposed First and Second Age characters; the High Confessor is **Ilvane** (integration N10), never the retired "Hierarch Aubren".
+- **Words of figures** name the figure with a title. Every attributed line is **proposed**, including those given to established figures (Aen, King Edran, Lorien, Varner, the Golden King, Alleria). Lines for Aen and Varner are framed as remembered ("Words the heralds give to Aen", "as the elves remember him"), because nobody alive heard them. Proposed characters come from [02_characters.md](../02_lore/02_characters.md) and the vault's proposed First and Second Age characters; the High Confessor is **Ilvane** (integration N10).
 - **Volgan** speaks only through Mirolon's songs. Zol, the Deliverer himself, Horos and Eindil are never quoted.
 
 The "Basis" column gives the vault fact each line rests on and its status (E, W, P). Every quote text itself is proposed.
@@ -261,7 +277,7 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 | `LOADING_TIP_69` | A caravan is a kingdom that moves. Mine simply moves faster than Stabilo's. | King Esiurth II of Noris | Noris and the caravan roads (P) |
 | `LOADING_TIP_70` | Noris owns the desert. We own the people who must cross it. | Prince Cereos of Postondoroth | Stabilo's rivalry with Noris (W, P) |
 | `LOADING_TIP_71` | A warking who cannot win a fight cannot keep a crown. A warking who must fight every day has already lost it. | Warking Gorduth of Cocanoor | Goldoroth (W); ruler (P) |
-| `LOADING_TIP_72` | Mirolon does not ask the north to love us. Only to look south once a year. | First Warden Aldis Veleran of Mirolon | Mirolon watches the south (E rivalry, P ruler) |
+| `LOADING_TIP_72` | Mirolon does not ask the north to love us. Only to look south once a year. | High Warden Maeric of Mirolon | Mirolon watches the south (E rivalry, P ruler; the Mirolon tree's ruler wins over the characters spec's earlier "First Warden Aldis Veleran", O7; the in-game attribution in `loading_tips.json` changes in the next build) |
 | `LOADING_TIP_73` | I told the court in Parim that the Dead Lands were arming. They laughed so hard the King spilt his wine. I hope it stained. | Envoy Hessa Mencnor of Mirolon | The envoy of 4A 1736 (P) |
 | `LOADING_TIP_74` | Watch the dust on the southern road. Dust does not lie, and it does not laugh at you in Parim. | Captain Bennar of the Passes | Mirolon's scouts (P) |
 
@@ -404,7 +420,7 @@ Public faith only. These lines are sincere, and they stay true to what believers
 
 ### Gameplay tips (complete text)
 
-Each tip names only systems that the specs define and stays true if their numbers are tuned. The "Refs" field in the data file (Implementation) lists the spec each tip depends on, so a rename shows up in review. No tip mentions a story flag, a hidden figure or a later-game unit (no bearer of Glo, no Host of Eindil, no manifestation).
+Each tip names only systems that the specs define and stays true if their numbers are tuned. The tips describe the target game: today several describe systems not yet built (the Erdae bar in 150 and 152, the calendar in 154, warfare, economy and mechanic tips from 155 on). They ship now because they spoil nothing; the phase 7 review (Acceptance 7) checks each against the built game and rewrites any that is still untrue. The "Refs" field in the data file (Implementation) lists the spec each tip depends on, so a rename shows up in review. No tip mentions a story flag, a hidden figure or a later-game unit (no bearer of Glo, no Host of Eindil, no manifestation).
 
 | Key | Topic | Text | Refs |
 | --- | --- | --- | --- |
@@ -435,7 +451,7 @@ Each tip names only systems that the specs define and stays true if their number
 | `LOADING_TIP_174` | Navy | A war galley's ram strikes hard at close quarters. Warships carry ballista decks and the reach to stay at sea for long. | warfare §7.1 |
 | `LOADING_TIP_175` | Rules | The Historical Path rule decides whether the AI follows the chronicle of the age, leans toward it, or follows only its own interests. | `zin_rule_historical_path` |
 | `LOADING_TIP_176` | Rules | The Story Pace rule stretches or shortens the time between the great moments of the age. It never changes what can happen. | `zin_rule_story_pace` |
-| `LOADING_TIP_177` | Rules | With the skies rule off, there are no griffin riders in the air, and dragons fight beside armies instead of as wings. | `zin_rule_skies`, warfare §6.3 |
+| `LOADING_TIP_177` | Rules | Griffin riders take to the air only when the skies rule allows beasts. With the skies closed, dragons fight beside armies instead of as wings. | `zin_rule_skies` (default `dragons_only`, R1), warfare §6.3; replaces the in-game text, which read as if griffins flew by default |
 | `LOADING_TIP_178` | Aenor | Playing Aenor? The Golden Court meter shows how rotten your court is. A gilded court is rich, but rot weakens everything it touches. | interface §2, Aenor |
 | `LOADING_TIP_179` | Aenor | Concord dominions show their loyalty as Steadfast, Loyal, Restless or Defiant. Keep them content, or they will ask for freer charters. | interface §2, shared Concord tree |
 | `LOADING_TIP_180` | Aenor | The Lost Cause begins as the King's ornament inside Aenor. Its frontier companies are real soldiers, and what it becomes is up to you. | integration S3, Aenor |
@@ -451,7 +467,7 @@ Each tip names only systems that the specs define and stays true if their number
 
 ### 8. Loading status lines
 
-Shown in the status band (font `loadscreen_header`, max width 800, so at most 40 characters). `$NAME$` must be kept. File: `localisation/replace/zin_loading_status_l_english.yml`.
+To do. Shown in the status band (font `loadscreen_header`, max width 800, so at most 40 characters). `$NAME$` must be kept. All 18 keys exist in the installed `localisation/english/core_l_english.yml`. File: `localisation/replace/zin_loading_status_l_english.yml` (and the other languages as in §7); data `tools/content/data/loading_status.json` (new).
 
 | Key | Vanilla | ZIN (proposed) |
 | --- | --- | --- |
@@ -478,57 +494,66 @@ The builder reads the vanilla `core_l_english.yml` at build time (when the insta
 
 ## Implementation
 
-### Files in the mod (all generated by the content builder and written through the shared atomic rewrite engine)
+### Files in the mod
 
-| Path | Content |
-| --- | --- |
-| `descriptor.mod` and the launcher file `../zin.mod` | Add `replace_path="gfx/loadingscreens"` and `replace_path="common/frontend/backgrounds"` |
-| `gfx/loadingscreens/load_1.dds` … `load_24.dds` | The 24 screens, 1920×1440 A8R8G8B8 |
-| `gfx/loadingscreens/zin_menu_parim.dds` | Main-menu picture (interface spec owns its art); the only other file allowed in this folder |
-| `gfx/interface/zin/loadingscreens/load_1_small.dds` … `load_24_small.dds`, `zin_menu_parim_small.dds` | Thumbnails, 192×144 |
-| `gfx/interface/zin/loadingscreens/zin_thumb_border.dds` | Picker frame, 192×144 |
-| `gfx/interface/Loadingscreen_loadingtip.dds`, `gfx/interface/Loadingscreen_loadingstatus.dds`, `gfx/interface/LoadingScreen_Progress_1.dds`, `gfx/interface/LoadingScreen_Progress_2.dds` | Chrome, exact vanilla names and case, A8R8G8B8 with alpha |
-| `interface/small_background.gfx` | Overrides the vanilla file of the same name. Sprites `GFX_load_1_small` … `GFX_load_24_small` and `GFX_zin_menu_parim_small` → the thumbnails above; `GFX_frontend_loading_screen_border_small` → `zin_thumb_border.dds`. No sprite points into the vanilla `gfx/loadingscreens/` |
-| `common/frontend/backgrounds/zin_backgrounds.txt` | `zin_menu_parim = {}`, then `load_1 = {}` … `load_24 = {}`; no `dlc_allowed`, no `locale` |
-| `localisation/replace/zin_loading_tips_l_english.yml` | `LOADING_TIP_0` … `LOADING_TIP_189` |
-| `localisation/replace/zin_loading_status_l_english.yml` | The 18 status lines |
+All generated by the content builder (`tools/content/build.mjs`) and written to the mod through `tools/content/apply.mts`, the shared atomic rewrite engine.
 
-The interface spec keeps `GFX_frontend_bg` and `GFX_frontend_bg_basic` (vanilla `interface/frontendmainviewbg.gfx`, `frontendmainviewbg_basic.gfx`) pointing at `zin_menu_parim` rather than vanilla `load_5`; this spec only requires that neither points at a vanilla file.
+| Path | Content | Writer | State |
+| --- | --- | --- | --- |
+| `descriptor.mod` | `replace_path="gfx/loadingscreens"` and `replace_path="common/frontend/backgrounds"` | `modules/vanilla_removal.mjs` (from `data/vanilla/dispositions.json`); the launcher file `mod/zin.mod` gets the same lines from `tools/content/sync/zin_mod_descriptor.mjs` | done |
+| `gfx/loadingscreens/load_1.dds` … `load_24.dds` | The 24 screens, 1920×1440 A8R8G8B8 | `modules/presentation.mjs` | done |
+| `gfx/loadingscreens/zin_menu_parim.dds`, `zin_menu_strait.dds`, `zin_menu_wall.dds` | Main-menu pictures (frontend spec owns their subjects); the only other files allowed in this folder | same | done |
+| `gfx/interface/zin/loadingscreens/load_<n>_small.dds`, `zin_menu_<key>_small.dds` | Thumbnails, 192×144 | same | done |
+| `gfx/interface/zin/loadingscreens/zin_thumb_border.dds` | Picker frame, 192×144 | same | done |
+| `gfx/interface/Loadingscreen_loadingtip.dds`, `gfx/interface/Loadingscreen_loadingstatus.dds`, `gfx/interface/LoadingScreen_Progress_1.dds`, `gfx/interface/LoadingScreen_Progress_2.dds` | Chrome, exact vanilla names and case, A8R8G8B8 with alpha | same | done |
+| `interface/small_background.gfx` | Overrides the vanilla file of the same name: `GFX_zin_menu_<key>_small` and `GFX_load_<n>_small` → the thumbnails above; `GFX_frontend_loading_screen_border_small` → `zin_thumb_border.dds`. No sprite points into the vanilla `gfx/loadingscreens/` | same | done |
+| `common/frontend/backgrounds/zin_backgrounds.txt` | `zin_menu_parim = {}`, `zin_menu_strait = {}`, `zin_menu_wall = {}` (A5); no `dlc_allowed`, no `locale` | same | done |
+| `localisation/replace/zin_loading_tips_l_english.yml` | `LOADING_TIP_0` … `LOADING_TIP_189` | same | done |
+| `localisation/replace/zin_loading_tips_l_<language>.yml` | The same tips for the other nine languages | same (extended) | to do |
+| `localisation/replace/zin_loading_status_l_english.yml` and `_l_<language>.yml` | The 18 status lines | same (extended) | to do |
+| `art/source/loadingscreens/`, `art/source/menu/`, `art/source/ui/`, `art/source/presentation_manifest.json` | Accepted sources and the manifest | same | done |
+
+`presentation.mjs` also points `GFX_frontend_bg` and `GFX_frontend_bg_basic` (`interface/frontendmainviewbg.gfx`, `frontendmainviewbg_basic.gfx`) at `zin_menu_parim` rather than vanilla `load_5`; this spec only requires that neither points at a vanilla file.
 
 ### Design data (source of truth)
 
-| Path | Content |
-| --- | --- |
-| `docs/design/loading_screens.json` (new) | One record per screen: `n`, `title`, `region`, `peoples`, `brief`, `light`, `palette`, `forbid` (extra exclusions), `basis`, `status` (`placeholder`, `generated`, `accepted`) |
-| `docs/design/loading_tips.json` (new) | One record per key in key order: `key`, `kind` (`quote` or `tip`), `group` or `topic`, `text`, `attribution` (quotes), `basis`, `refs` (tips), `status` (`proposed`) |
-| `docs/design/loading_status.json` (new) | The status-line table |
+| Path | Content | State |
+| --- | --- | --- |
+| `tools/content/data/loading_tips.json` | The 190 tips (§7, A7) | done |
+| `tools/content/data/loading_status.json` (new) | The status-line table (§8) | to do |
+| `tools/content/data/loading_screens.json` (new) | One record per screen: `n`, `title`, `region`, `peoples`, `brief`, `light`, `palette`, `forbid` (extra exclusions), `basis`; it feeds new or replacement generations | to do |
+| `tools/content/data/presentation-cells.json` | Tracked copy of the cell maps the presentation sheets were generated with | done |
 
 The tables in this spec are the initial content of these files. After the first build the JSON files are the source; this spec records the final values when they change.
 
-### Builder modules (today under `.tmp/zin-content/`, moving to `tools/content/` per integration S10)
+### Builder modules
 
-| Module | Role |
-| --- | --- |
-| `art/loading-jobs.mjs` (new) | Emits the 24 screen jobs (`loading-screen-<n>`, 2048×1536, high), the `loading-chrome` sheet and the `loading-thumb-border` job from `loading_screens.json`, with the prompt frame in §4. Writes `loading-jobs.json` beside the other job lists |
-| `lib/raster.mjs` | Existing `dds()`; add a Lanczos 3 resize (art pipeline builder change) and an exact integer box downscale for thumbnails |
-| `lib/sheets.mjs` | Existing `findRegionsAdaptive` and `cropRegion`, with the key-colour matte the art pipeline adds |
-| `modules/loading.mjs` (new) | Stages the screens, thumbnails, chrome and frame from accepted sources; writes `interface/small_background.gfx`, `common/frontend/backgrounds/zin_backgrounds.txt` (taking the menu entry from `docs/design/interface.json`) and both localisation files; adds the manifest lines; runs the checks below |
-| `build.mjs` | Calls `buildLoading(staged, art)` after the UI module; adds the two `replace_path` lines to the descriptor it stages and verifies the launcher file |
+| Module | Role | State |
+| --- | --- | --- |
+| `tools/content/modules/presentation.mjs` | Stages the screens, thumbnails, chrome and frame from accepted sources; writes `interface/small_background.gfx`, `common/frontend/backgrounds/zin_backgrounds.txt` and the tips file; checks the tips (`checkTips`) against the vanilla tip count read from the installed `loading_tips_l_english.yml` (163); gates every source with `acceptance()`; writes the manifest. Gains the status lines and the language copies | existing; extended |
+| `tools/content/art/loading-jobs.mjs` (new) | Writes `$ZIN_ART/jobs/loading-jobs.json` from `data/loading_screens.json` with the prompt frame in §4, for a replacement screen or a new chrome strip | new |
+| `tools/content/imagegen.mjs` | Generation | existing |
+| `tools/content/presentation.test.mjs` | The checks below | existing; extended |
 
-Until a screen is accepted, the builder ships nothing for that number (the engine simply has fewer pictures) and warns once; it never ships a vanilla or placeholder picture under a ZIN name. Phase 7 fails the build if any of the 24 is not accepted.
+Until a screen is accepted, the builder ships nothing for that number (the engine simply has fewer pictures) and warns once; it never ships a vanilla or placeholder picture under a ZIN name. A source with a rejected last review line is not shipped.
 
 ### Builder checks
 
-1. `gfx/loadingscreens/` in the staged mod holds exactly `load_1.dds` … `load_24.dds` and `zin_menu_parim.dds` (phase 7), and nothing else.
-2. Every DDS listed above has the size and format in this spec (DDS header read): pictures 1920×1440, thumbnails 192×144, chrome as §6, no mipmaps; or BC1 if the owner picks it and the manifest says so.
-3. Every background entry has a picture in `gfx/loadingscreens/` and a `GFX_<name>_small` sprite whose file exists.
-4. Loading tips: keys `LOADING_TIP_0` to `LOADING_TIP_<N−1>` with no gap or duplicate; N ≥ the vanilla count read from the installed `loading_tips_l_english.yml` (163 today; constant fallback 163 when the game is absent).
-5. Every quote and tip text is under 220 characters and every full string under 300; Windows-1252 only; no unescaped `"`; no `$`, `[` or `]`; `§` only in the tip prefix.
-6. The secret scan of [03_names_and_terms.md](../02_lore/03_names_and_terms.md) runs over both files with **no** whitelist: no gated term (Afrit, Hidden Council, Eindil, the thief's name, the lesser artifacts, the plot), and additionally none of: Ein (as a word), "the Man from the Ice", sleeper, Necklace, Roka, Glernaen, heart (with Glo or Horos), demon (with Deliverer).
-7. The superseded-name check (Einendil, Edvoid, Rush, Klinti, Gorbat, Sovereign Spirit) and the modern-word check (factory, rifle, democracy, 1936 and the program's list) pass.
-8. The four chrome files exist with the exact vanilla case; a test build that writes `loadingscreen_loadingtip.dds` in lower case fails.
-9. Both `.mod` files contain both `replace_path` lines.
-10. Every shipped image has a manifest line and an accepted provenance line (art pipeline checks).
+Checks 1–10 run today in `presentation.test.mjs` or inside `presentation.mjs`; 11–13 are added with the remaining work.
+
+1. `gfx/loadingscreens/` in the staged mod holds exactly `load_1.dds` … `load_24.dds` and the three `zin_menu_<key>.dds`, and nothing else.
+2. Every DDS listed above has the size and format in this spec (DDS header read): pictures 1920×1440, thumbnails 192×144, chrome as §6, no mipmaps.
+3. Thumbnails are the exact 10× box downscale of the shipped pictures.
+4. Every background entry has a picture in `gfx/loadingscreens/` and a `GFX_<name>_small` sprite whose file exists; no frontend file points at a vanilla picture.
+5. Loading tips: keys `LOADING_TIP_0` to `LOADING_TIP_<N−1>` with no gap or duplicate; quotes 0–149, tips 150–189; N ≥ the vanilla count (163; constant fallback 163 when the game is absent).
+6. Every quote and tip text is under 220 characters and every full string under 300; Windows-1252 only; no `"`, `$`, `[` or `]`; `§` only in the tip prefix.
+7. The secret scan with **no** whitelist: no Afrit, Hidden Council, Eindil, Ein (as a word), "the Man from the Ice", sleeper, Necklace, the thief's name, the lesser artifacts, Roka, Glernaen, King of Demons, heart (with Glo or Horos), demon (with Deliverer).
+8. The superseded-name check (Einendil, Edvoid, Rush, Klinti, Gorbat, Sovereign Spirit) and the modern-word check (factory, rifle, democracy, 193x, gunpowder, firearm, tank) pass.
+9. The four chrome files exist with the exact vanilla case.
+10. Every shipped image has a manifest line and an accepted review line for its exact bytes (or the A5 decision for `load_24`); no shipped file equals the installed vanilla file at the same path; a second build is byte-identical.
+11. Both `.mod` files contain both `replace_path` lines.
+12. Status lines: the builder reads the installed `core_l_english.yml` and fails if a key of §8 no longer exists, or if a vanilla key whose English value begins with "Loading", "Creating" or "Initializing" is missing from the table; every line is at most 40 characters and keeps `$NAME$` where vanilla has it.
+13. Every language folder of the installed game has a tips file and a status file with the right header and the same keys as the English files.
 
 ### Variables, events, game rules, defines
 
@@ -540,22 +565,24 @@ None.
 
 ## Acceptance
 
-1. The builder checks above pass on a fresh build, and re-slicing and re-resizing the accepted sources gives byte-identical files.
-2. `hoi4.package_check` and `hoi4.gui_inspect` report no missing texture or sprite for `small_background.gfx`, the chrome textures or the background entries.
-3. **Linux run** (acceptance L7 of [01_acceptance.md](../09_validation/01_acceptance.md), widened): three cold launches, one new game as Aenor, one save load and one return to the menu. In every loading screen captured by the isolated run: the picture is one of the 25 ZIN pictures; the tip is a ZIN text; the tip and status bands and the progress bar are the ZIN textures; the status line is a ZIN line. No vanilla or DLC picture, tip or status line appears.
-4. The main-menu background picker lists exactly the 25 ZIN entries, with ZIN thumbnails in the ZIN frame, and nothing from vanilla or a DLC.
+1. The builder checks above pass on a fresh build (`npm test` in `tools/`), each with its negative test (a planted gated name, a key gap, a bad character, a short list, an unaccepted source, a lower-case chrome file).
+2. `hoi4.package_check` and `hoi4.gui_inspect` report no missing texture or sprite for `small_background.gfx`, the chrome textures (`load_screen` window, `interface/load_screen.gui`) or the background entries.
+3. **Linux run** (G4, case L7 of [01_acceptance.md](../09_validation/01_acceptance.md), widened): three cold launches, one new game as Aenor, one save load and one return to the menu. In every loading screen captured by the isolated run: the picture is one of the 27 ZIN pictures; the tip is a ZIN text; the tip and status bands and the progress bar are the ZIN textures; once §8 ships, the status line is a ZIN line. No vanilla or DLC picture, tip or status line appears.
+4. The main-menu background picker lists exactly the 3 ZIN entries, with ZIN thumbnails in the ZIN frame, and nothing from vanilla or a DLC.
 5. `error.log` has no line about `gfx/loadingscreens`, `small_background.gfx`, `zin_backgrounds.txt`, `LOADING_TIP_*` or the status keys.
-6. Each accepted screen has a recorded composition check (§4, three resolutions with the bands drawn over it), the art review checklist and the owner's approval.
-7. A reviewer reads all 190 tip strings in the staged file and confirms each against this spec's rules: nothing that is untrue at 1 Thaw 4A 1748 for any country, nothing that is a spoiler at any later date.
+6. Each accepted screen has a recorded composition check (§4, three resolutions with the bands drawn over it, offline renders labelled as tool-generated), the art review checklist and, before the phase 7 release, the owner's approval line.
+7. Before the phase 7 release, a reviewer reads all 190 tip strings in the staged file and confirms each against this spec's rules and the built game: nothing that is untrue at 1 Thaw 4A 1748 for any country, nothing that is a spoiler at any later date.
 
 ## Open questions
 
-1. **The Man from the Ice.** The assignment allowed the phrase "the Man from the Ice" in loading text. This spec uses it nowhere, because a loading tip cannot know whether he has woken and the history-for-play spec rules out any legend of a sleeper in the ice. Should the owner want foreshadowing, one Cold Lands line could be added (for example a hospitality saying about strangers found in the snow), but it would show in every game from the first day.
-2. **Thumbnails in the loading folder.** Vanilla keeps `_small` files beside the pictures, and every file in that folder is said to be loaded. This spec moves ZIN's thumbnails out of the folder to be safe. Does the engine skip `_small` files anyway? The Linux run can show this; nothing in the design depends on the answer.
-3. **The first launch screen.** Is the very first loading screen at game start drawn before `replace_path` takes effect? Naming the first nine screens `load_1` … `load_9` covers vanilla. If DLC pictures still appear there, the fallback is to ship ZIN copies under the DLC names (`load_lar`, `load_nsb`, `load_nsb2`, `load_bba`, `load_aat`, `load_aat2`, `load_ww`, `load_ncns_chi`, `load_ncns_jap` and the older DLC names in `base_backgrounds.txt`), about 15 more files.
-4. **Size.** 24 uncompressed screens are about 265 MB in a public repository. Keep the vanilla format, or ship BC1 (about 34 MB in all)?
-5. **Attributed lines.** Are the proposed lines given to Aen, King Edran, Lorien, Varner, the Golden King and Alleria acceptable, and are the First and Second Age proposals (Taryn, Senra, Tavriel, Arelon) welcome as remembered names?
-6. **Source titles.** Approve or replace "The Chronicle of Erdae: the First Age" (and the other ages), "The Annals of Parim", "The Annals of Gunwaith", "The Harbour Rolls of Sonargur" and "The Litany of the Deliverer".
-7. **Other languages.** ZIN ships English text only. Players running the game in another language still see vanilla tips and status lines. Should the builder copy the English files to the other language folders?
-8. **Menu backgrounds.** May every loading screen also be offered as a main-menu background (proposed here), or only `zin_menu_parim`?
-9. **Calendar phrases.** Lines 30 and 33 say "twelve centuries" and "twelve hundred years" for the Third Age, which is at least 1,200 years (established) and 1,260 (proposed). Acceptable?
+Each proceeds on the proposal; the owner may overrule.
+
+1. **The Man from the Ice.** Loading text never uses the phrase, because a loading tip cannot know whether he has woken and the history-for-play spec rules out any legend of a sleeper in the ice (proposed).
+2. **Thumbnails in the loading folder.** Settled by A5: thumbnails live in `gfx/interface/zin/loadingscreens/`.
+3. **The first launch screen.** Naming the first nine screens `load_1` … `load_9` covers vanilla. If the Linux run shows DLC pictures before `replace_path` takes effect, the builder also ships ZIN copies under the DLC names listed in the installed `common/frontend/backgrounds/base_backgrounds.txt` (`load_lar`, `load_nsb`, `load_nsb2`, `load_bba`, `load_aat`, `load_aat2`, `load_ww`, `load_ncns_chi`, `load_ncns_jap` and the older ones), about 15 files (proposed fallback).
+4. **Size.** Keep the vanilla format; BC1 only if a limit requires it (proposed).
+5. **Attributed lines.** The proposed lines given to Aen, King Edran, Lorien, Varner, the Golden King and Alleria, and the remembered First and Second Age names (Taryn, Senra, Tavriel, Arelon), ship as written (proposed; in game).
+6. **Source titles.** "The Chronicle of Erdae: the First Age" (and the other ages), "The Annals of Parim", "The Annals of Gunwaith", "The Harbour Rolls of Sonargur" and "The Litany of the Deliverer" ship as written (proposed; in game).
+7. **Other languages.** The English text is copied to every language folder (owner answer, 19 October 2026: yes; §7).
+8. **Menu backgrounds.** Settled by A5: only the three menu pictures are offered.
+9. **Calendar phrases.** "Twelve centuries" and "twelve hundred years" for the Third Age stay: the vault establishes at least 1,200 years (proposed reading).

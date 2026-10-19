@@ -2,32 +2,33 @@
 
 Phases run in order. A phase is done when its acceptance criteria pass; later phases may start early only on parts that don't depend on unfinished work. Each phase names the specs it implements.
 
-## Where ZIN stands (18 October 2026)
+## Where ZIN stands (19 October 2026)
 
 | Area | State |
 | --- | --- |
-| Map | 5120 × 2560 Erdae with the widened central sea, 7,108 provinces, 1,332 states, 275 strategic regions. Great Wall border, Aenor Isle in the Middle Lands, Zol owning the whole black north. Several lore seats and sites are missing (see [01_map/01_map_accuracy.md](01_map/01_map_accuracy.md)). |
-| Countries | 305 countries with image-generated flags, rulers, peoples, ideologies and stances from `docs/design/countries.csv`; the Middle Kingdom Concord and six other factions. |
-| Politics | Light, Dominion, Shadow and Wild replace the vanilla ideologies, with Erdae stances. |
-| Peoples | Ten peoples as national spirits and country flags. |
-| Interface | A Realm panel with generated frames and buttons. |
+| Map | 5120 × 2560 Erdae with the widened central sea, 7,108 provinces, 1,332 states, 275 strategic regions. Great Wall border, Aenor Isle in the Middle Lands, Zol owning the whole black north. Several lore seats and sites are missing, and 941 states are still named "District N" ([01_map/01_map_accuracy.md](01_map/01_map_accuracy.md), [01_map/03_known_issues.md](01_map/03_known_issues.md)). |
+| Countries | 305 countries with image-generated flags, rulers, peoples, ideologies and stances from `docs/design/countries.csv`; the Middle Kingdom Concord and six other factions. Only ZIN tags and the 75 dynamic tags exist (380 of a 439 limit). |
+| Stability | The flag-sheet crash is fixed (commit `ca01fa3`); four Linux runs ran 10 to 15 minutes at top speed. Windows confirmation and the every-country start test are open. |
+| Errors | `error.log` 641 lines in the Linux run (1,900 before). All are category B14: generic vanilla files that stage 2 replaces. |
+| Vanilla removal | Stage 1 applied: 34 `replace_path` lines, ZIN laws, interim Long Peace tree, stubs and bridges, 349 single-country vanilla files silenced. |
+| Politics | Light, Dominion, Shadow and Wild replace the vanilla ideologies, with Erdae stances. The secret holds at the start (D1, D5). |
+| Peoples | Ten peoples as national spirits, country flags and graphical cultures. |
+| Interface and art | A Realm panel; 24 loading screens, 3 main-menu backgrounds, the bookmark picture, 175 focus and 175 idea icons, 43 event and 28 news pictures, 190 loading tips. |
 | Calendar | **Not done.** The bookmark still starts in 1936. |
-| Warfare, technology, economy | **Vanilla.** |
-| Mechanics, focus trees, events | **None yet.** |
-| 3D units | Five approved pilot references; Meshy is blocked by a HOI4 Mod Setup launcher bug (fix in progress). |
-| Known defect | Starting a campaign as Aenor crashes the game (see [01_map/03_known_issues.md](01_map/03_known_issues.md)). |
+| Warfare, technology, economy | **Vanilla** (stage 2). Five Meshy 3D infantry units, one per people group. |
+| Mechanics, focus trees, events | **Specified, not built.** Every spec is Ready (19 October): reviewed against CONVENTIONS "Status" and integrated through [INTEGRATION_DECISIONS.md](INTEGRATION_DECISIONS.md) E1–E7, F1–F7, R1–R6, O1–O9, N12–N16. |
 
 ## Phase 1: map accuracy and stability
 
 Specs: [01_map](01_map/).
 
-- Fix the Aenor start crash.
+- Fix the start crash (done 19 October: the flag-sheet overflow).
 - Fix the data defects in [01_map/03_known_issues.md](01_map/03_known_issues.md), first the leak of Afrit's secret.
-- Move the content builder into this repository (`tools/content/`), so the public mod rebuilds from itself.
+- Move the content builder into this repository (`tools/content/`), so the public mod rebuilds from itself (done 19 October).
 - Bring the map in line with the lore: seats, key sites, region and state names, the Great Wall, Dragon Mountain, the Abyss and the Nether, Dardan.
 - Every lore site that a mechanic or event needs exists as a named state or victory point.
 
-**Done when:** every row of the map accuracy table is "matches" or "accepted difference"; a campaign starts as Aenor, Volgan, Zol, Lerendor and the Magical Forest in the Linux run; no new errors from ZIN files.
+**Done when:** every row of the map accuracy table is "matches" or "accepted difference"; a campaign starts as Aenor, Volgan, Zol, Lerendor and the Magical Forest in the Linux run and runs at least 10 minutes with the clock unpaused; no error line from ZIN files, and the stage-1 error budget passes.
 
 ## Phase 2: base lore in the game
 

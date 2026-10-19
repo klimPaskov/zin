@@ -1,14 +1,14 @@
 # Diplomacy and factions
 
-**Status:** Draft. **Priority:** 3. **Phase:** 3.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3.
 
 ## Purpose
 
 Erdae opens in a long peace. Diplomacy must keep that peace believable at the start, let it fray as the dark gathers, and give each bloc a reason to exist. This spec is the shared diplomatic frame: the seven working factions, how the Treaty of the Narrow Strait and the Lost Cause sit beside them, the subject types, the Elven Refusal and the Wall Accord, and the rules for justifying war while the peace holds.
 
-**This spec owns:** faction templates, joining rules and manifests; the ZIN autonomy states; the Elven Refusal; the Wall Accord; casus belli and the peace-breaker rule; the Lost Cause's cross-faction musters.
+**This spec owns:** faction templates, rules, goals and manifests; the ZIN autonomy states; the Elven Refusal; the Wall Accord; casus belli and the peace-breaker rule; the Lost Cause's cross-faction musters; and the stage-2 replacements of the vanilla diplomatic and intelligence folders ([06_vanilla_removal_and_zero_errors.md](../00_foundation/06_vanilla_removal_and_zero_errors.md) §3.2, §3.3; table under Implementation).
 
-**Others own:** the treaty's standing, tolls, calls and withdrawal ([Lerendor](../04_mechanics/lerendor_narrow_strait.md)); the Lost Cause's strength, paths and Concord charters ([Aenor](../04_mechanics/aenor_court_and_succession.md)); the Southern Dominion's oaths ([Volgan](../04_mechanics/volgan_southern_dominion.md)); Afrit's eastern dominion ([Afrit](../04_mechanics/afrit_hidden_council.md)); start opinions and truces ([02_lore/01_start_situation.md](../02_lore/01_start_situation.md)); ideology tension values and game rules ([00_foundation](../00_foundation/)).
+**Others own:** the treaty's standing, tolls, calls and withdrawal ([Lerendor](../04_mechanics/lerendor_narrow_strait.md)); the Lost Cause's strength, paths and Concord charters ([Aenor](../04_mechanics/aenor_court_and_succession.md)); the Southern Dominion's oaths ([Volgan](../04_mechanics/volgan_southern_dominion.md)); Afrit's eastern dominion ([Afrit](../04_mechanics/afrit_hidden_council.md), [eastern kings](../04_mechanics/eastern_kings.md)); start opinions and truces ([02_lore/01_start_situation.md](../02_lore/01_start_situation.md)); ideology tension values and game rules ([00_foundation](../00_foundation/)); `common/bop` (the mechanic specs).
 
 ## Lore basis
 
@@ -23,55 +23,91 @@ Erdae opens in a long peace. Diplomacy must keep that peace believable at the st
 
 **Proposed in the vault** (*Fourth Age Chronology*, *The Campaign of 4A 1748*): the Charters of Parim (4A 3); the First Concord Council (4A 212: a common army in war, free roads in peace); the name Treaty of the Narrow Strait (4A 512); the **Wall Accord** (4A 96); the Truce of the Grey Ford (4A 1745).
 
-**Proposed in this spec:** faction constitutions, templates, rules and manifests; autonomy states; the Refusal's game rules; the Wall Accord's mechanics; casus belli; all numbers.
+**Decisions:** S1 and O5 (eastern courts that kneel become subjects with `zin_autonomy_eastern_client`, not faction members; no faction is made for them), S3 (the Lost Cause is an institution), S5 (Andos Enda is not in the Leren Compact at the start), O8 (Mirolon is not a Lost Cause member at the start), E3 (factions are made with `create_faction_from_template`), D6 (Dominion and Shadow `generate_wargoal_tension = 0.25`), N6 (`zin_opinion_old_estrangement`) ([INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md)).
+
+**Proposed in this spec:** faction constitutions, templates, rules, goals and manifests; autonomy states; the Refusal's game rules; the Wall Accord's mechanics; casus belli; intrigue operations and occupation laws; all numbers.
 
 ## Design
 
 ### The peace at the start
 
-On 1 Thaw 4A 1748 no country is at war, seven factions exist, and the start situation's relations hold (opinions such as "The Toll of 1716", "Old Claims Remembered", "Caravan Rivalry", "Border Raids", "Edran's Folly"; the Gunwaith–Girdon truce until 1 Thaw 4A 1750). Goldoroth and Dondor are in an armed peace: raids are flavour, never a declared war at the start.
+On 1 Thaw 4A 1748 no country is at war, seven factions exist, and the start situation's relations hold (opinions such as "The Toll of 1716", "Old Claims Remembered", "Caravan Rivalry", "Border Raids", "Old Estrangement"; the Gunwaith–Girdon truce until 1 Thaw 4A 1750). Goldoroth and Dondor are in an armed peace: raids are flavour, never a declared war at the start.
 
-A **great war** is a war with a major on each side. The majors are the nine working-table great powers (Aenor, Lerendor, Coldor, Noris, Stabilo, Goldoroth, Dondor, Volgan, Zol), set with `set_major = yes` by the countries and states spec; scripts test `is_major = yes`. No great war may begin before the historical path or a casus belli allows it.
+A **great war** is a war with a major on each side. The majors are the nine working-table great powers (Aenor, Lerendor, Coldor, Noris, Stabilo, Goldoroth, Dondor, Volgan, Zol), set with `set_major = yes` by the politics step (countries and states spec); scripts test `is_major = yes`. No great war may begin before the historical path or a casus belli allows it.
 
 ### The seven working factions
 
-Created in history with ZIN faction templates (replacing `faction_template_generic`). Names keep their current localisation keys (`ZIN_FACTION_<leader>`). Constitutions are proposed.
+Created in history by the politics step with ZIN faction templates (replacing `faction_template_generic`, which the politics step writes today). Names keep their current localisation keys (`ZIN_FACTION_<leader tag>`). Constitutions are proposed.
 
 | Faction | Leader | Members at start | Purpose (proposed) | Template |
 | --- | --- | --- | --- | --- |
 | **Middle Kingdom Concord** | Aenor | The 26 chartered dominions | A common army in war, free roads in peace | `zin_faction_concord` |
-| **Leren Compact** | Lerendor | Eekedor | The North's fleets and its command of the strait | `zin_faction_leren_compact` |
+| **Leren Compact** | Lerendor | Eekedor (not Andos Enda, S5) | The North's fleets and its command of the strait | `zin_faction_leren_compact` |
 | **Northern Accord** | Coldor | Horidor | One crown over the frozen interior; a check on Isengard | `zin_faction_northern_accord` |
 | **Noris Treaty** | Noris | Gondolin | The northern caravan roads and the desert | `zin_faction_noris_treaty` |
 | **Stabilo Pact** | Stabilo | Drak | The southern caravan roads | `zin_faction_stabilo_pact` |
 | **Dark Sea Accord** | Dondor | Belonton | Defence against Goldoroth around the Sea of Darkness | `zin_faction_dark_sea_accord` |
 | **Southern Dominion** | Volgan | Demon, Dolon, Nezer (sworn realms) | Volgan's dominion of the Dead Lands | `zin_faction_southern_dominion` |
 
-One more template exists for a faction formed in play: **the Western Crossing** (`zin_faction_western_crossing`), created by the [Western Crossing](../04_mechanics/western_crossing.md) mechanic when the West's coalition sails. Its joining rule is `zin_faction_rule_join_crossing`; its other rules are `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never` and `faction_peace_rule_conquest_focus`; it has no manifest.
+**Factions formed in play.** Ten more templates exist for factions that scripts found during play (all proposed; every one is made with `create_faction_from_template`, decision E3, and is script-only like the start templates):
 
-Rules per faction (ids beginning `zin_faction_rule_` are new; the rest are vanilla):
+| Faction | Template | Founded by | Joining rule | Other rules | Template and rule written by |
+| --- | --- | --- | --- | --- | --- |
+| **The Western Crossing** | `zin_faction_western_crossing` | The [Western Crossing](../04_mechanics/western_crossing.md) mechanic when the West's coalition sails | `zin_faction_rule_join_crossing` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`, `faction_peace_rule_conquest_focus`; manifest `zin_faction_manifest_cross_the_sea` | this module |
+| **The Free Crowns** | `zin_faction_free_crowns` | The First of the Free Crowns ([eastern kings](../04_mechanics/eastern_kings.md)) | `zin_faction_rule_join_east_lands` (this spec) | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`, `faction_peace_rule_liberation_focus`; no manifest | the eastern kings module (`common/factions/templates/zin_east.txt`) |
+| **The Kindred of the Woods** | `zin_faction_kindred` | `zin_elves_raise_kindred` ([elves](../04_mechanics/elves_wall_and_dragons.md)) | `zin_faction_rule_join_elven_kin` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`; manifest `zin_faction_manifest_kindred` | the elves module (`zin_elves.txt`, `zin_elves_rules.txt`, `zin_elves_manifest.txt`) |
+| **The Noon League** | `zin_faction_noon_league` | `zin_sun_form_noon_league` ([Lands of the Sun](../04_mechanics/lands_of_the_sun.md)) | `zin_faction_rule_join_sun_realms` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only` | the Lands of the Sun module (`common/factions/templates/zin_sun.txt`, `rules/zin_sun.txt`) |
+| **The Pupor Charter** | `zin_faction_pupor_charter` | `zin_tritons_found_charter` ([shared Triton's Islands tree](../05_focus_trees/shared/shared_tritons_islands.md)) | `zin_faction_rule_join_pupor_charter` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never` (the leader never changes), `faction_peace_rule_no_puppeting`; no manifest; the Charter never declares wars | this module |
+| **The Free Crowns of the North** | `zin_faction_free_north` | Sensai's focus *The Free Crowns of the North* ([regional North Lands tree](../05_focus_trees/regional/north_lands.md)) | `zin_faction_rule_join_free_north` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`, `faction_peace_rule_no_puppeting`; no manifest | this module |
+| **The Warden League** | `zin_faction_warden_league` | Mirolon's focus *The Warden League* ([Mirolon tree](../05_focus_trees/major/mirolon.md)) | `zin_faction_rule_join_warden_league` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`; no manifest | this module |
+| **The Free Steadings** | `zin_faction_free_steadings` | Fearno's focus *Call the Free Steadings* ([regional Cold Lands tree](../05_focus_trees/regional/cold_lands.md)) | `zin_faction_rule_join_free_steadings` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`, `faction_peace_rule_no_puppeting`; no manifest | this module |
+| **The Free Dominions** | `zin_faction_free_dominions` | The largest seceding dominion when the Dominions camp wins Aenor's succession ([Aenor](../04_mechanics/aenor_court_and_succession.md)); the Middle Lands trees' *The League of Free Dominions* if no country leads them | `zin_faction_rule_join_free_dominions` | `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`; no manifest | this module |
+| **The Lost Cause** | `zin_faction_lost_cause` | The Host of Eindil when it leads no faction after *Give the Lost Cause to the Heir* ([journey](../04_mechanics/eindil_journey.md)). On the Shield path the succession renames the Concord "The Lost Cause" instead (`set_faction_name`, Aenor spec; S3), and no template is used | `zin_faction_rule_join_lost_cause` | `war_declaration_rule_faction_leader_only`, `change_leader_rule_never`; no manifest | this module |
+
+The names `zin_faction_<key>` and `zin_faction_rule_join_<key>` follow this spec's pattern; where another module writes a template or rule (the "written by" column), that spec defines it and this spec only lists it, so every joining rule sits in one rule group (below).
+
+Each template sets `visible = { always = no }` (never offered in the create-faction screen; created only by history and effects), `can_leader_join_other_factions = no`, an icon from the ZIN icon pool, its goals, its manifest and `default_rules` from the table below.
+
+Rules per faction (ids beginning `zin_faction_rule_` are new; the rest are the engine's rule keys, which the ZIN rules file defines again with ZIN text):
 
 | Faction | Joining | War declaration | Call to war | Leader change | Peace |
 | --- | --- | --- | --- | --- | --- |
-| Concord | `zin_faction_rule_join_concord`, `zin_faction_rule_join_no_refusal`, `zin_faction_rule_join_not_shadow` | `war_declaration_rule_faction_leader_only` | `call_to_war_rule_faction_leader_only` | `change_leader_rule_never` | vanilla default |
+| Concord | `zin_faction_rule_join_concord`, `zin_faction_rule_join_no_refusal`, `zin_faction_rule_join_not_shadow` | `war_declaration_rule_faction_leader_only` | `call_to_war_rule_faction_leader_only` | `change_leader_rule_never` | `faction_peace_rule_puppeting_focus` |
 | Leren Compact | `zin_faction_rule_join_leren`, `zin_faction_rule_join_no_refusal` | `war_declaration_rule_any_country` | `call_to_war_rule_faction_leader_only` | `change_leader_rule_never` | `faction_peace_rule_no_puppeting` |
-| Northern Accord | `zin_faction_rule_join_cold_lands`, `zin_faction_rule_join_no_refusal` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_manpower` | vanilla default |
-| Noris Treaty | `zin_faction_rule_join_east_lands`, `zin_faction_rule_join_no_refusal` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_industry` | vanilla default |
-| Stabilo Pact | `zin_faction_rule_join_east_lands`, `zin_faction_rule_join_no_refusal` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_industry` | vanilla default |
-| Dark Sea Accord | `zin_faction_rule_join_dark_lands`, `zin_faction_rule_join_no_refusal`, `zin_faction_rule_join_not_shadow` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_manpower` | vanilla default |
+| Northern Accord | `zin_faction_rule_join_cold_lands`, `zin_faction_rule_join_no_refusal` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_manpower` | `faction_peace_rule_conquest_focus` |
+| Noris Treaty | `zin_faction_rule_join_east_lands`, `zin_faction_rule_join_no_refusal` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_industry` | `faction_peace_rule_conquest_focus` |
+| Stabilo Pact | `zin_faction_rule_join_east_lands`, `zin_faction_rule_join_no_refusal` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_industry` | `faction_peace_rule_conquest_focus` |
+| Dark Sea Accord | `zin_faction_rule_join_dark_lands`, `zin_faction_rule_join_no_refusal`, `zin_faction_rule_join_not_shadow` | `war_declaration_rule_any_country` | `call_to_war_rule_major_only` | `change_leader_rule_manpower` | `faction_peace_rule_liberation_focus` |
 | Southern Dominion | `zin_faction_rule_join_sworn` | `war_declaration_rule_faction_leader_only` | `call_to_war_rule_faction_leader_only` | `change_leader_rule_never` | `faction_peace_rule_conquest_focus` |
 
-New joining rules (type `joining_rule`; scope = joining country, FROM = leader). Region tests use the generated state triggers `zin_is_region_<key>` on the joiner's capital, as the warfare and Lerendor specs do.
+New joining rules (`type = joining_rules`; scope = joining country, FROM = leader). Region tests use the generated state triggers `zin_is_region_<key>` on the joiner's capital, as the warfare and Lerendor specs do.
 
 | Rule | Trigger |
 | --- | --- |
-| `zin_faction_rule_join_concord` | capital in the Middle Lands or Aenor Isle; or `is_subject_of = FROM`; or (`zin_lost_cause_shield` and `has_country_flag = zin_lost_cause_member`), so the Aenor spec's Shield path can bring honorary crowns in |
-| `zin_faction_rule_join_leren` | `zin_leren_is_north_crown` or `zin_leren_is_dark_shore` (Lerendor spec), or `is_subject_of = FROM` |
+| `zin_faction_rule_join_concord` | capital in the Middle Lands or Aenor Isle; or `is_subject_of = FROM`; or (`has_global_flag = zin_lost_cause_shield` and `has_country_flag = zin_lost_cause_member`), so the Aenor spec's Shield path can bring honorary crowns in |
+| `zin_faction_rule_join_leren` | `zin_leren_is_north_crown` or `zin_leren_is_dark_shore` (Lerendor spec), or `is_subject_of = FROM`, or the country is Andos Enda (generated tag check) with `has_country_flag = zin_refusal_lifted` (the Lerendor spec's courting of Andos Enda, S5; the Compact's `zin_faction_rule_join_no_refusal` also holds once the Refusal is lifted) |
 | `zin_faction_rule_join_<region>` (cold_lands, east_lands, dark_lands) | capital in that region, or `is_subject_of = FROM` |
 | `zin_faction_rule_join_no_refusal` | `NOT = { zin_diplo_refusal_binds = yes }` |
 | `zin_faction_rule_join_not_shadow` | `NOT = { has_government = communism }` (Shadow) |
 | `zin_faction_rule_join_sworn` | `is_subject_of = FROM`, or capital in the Dead Lands or the Dark Lands (Volgan's sworn Dark Lands realms; the Volgan spec controls who is invited) |
-| `zin_faction_rule_join_crossing` | `has_country_flag = zin_region_west_lands` or `zin_region_tritons_islands`, or a Cold Lands country with `zin_cold_joins_crossing` (Western Crossing spec) |
+| `zin_faction_rule_join_crossing` | `has_country_flag = zin_region_west_lands` or `has_country_flag = zin_region_tritons_islands`, or a Cold Lands country with `zin_cold_joins_crossing` (Western Crossing spec) |
+| `zin_faction_rule_join_pupor_charter` | `has_country_flag = zin_region_tritons_islands` and `NOT = { has_country_flag = zin_tritons_corsair_haven }` (the Triton's Islands tree's corsair havens may not join) |
+| `zin_faction_rule_join_free_north` | capital state has `zin_is_region_north_lands`; not Lerendor; not in a faction with Lerendor; `NOT = { has_government = communism }`; `zin_leren_lean` between −40 and 40 (Lerendor spec) |
+| `zin_faction_rule_join_warden_league` | `has_country_flag = zin_mirolon_league_friend` (Mirolon tree) |
+| `zin_faction_rule_join_free_steadings` | `zin_cold_is_clan_realm` (Cold Lands spec), not a subject, `zin_cold_lean` between −30 and 30 (proposed; the Fearno tree invites the same realms) |
+| `zin_faction_rule_join_free_dominions` | `has_country_flag = zin_aenor_free_dominion` (Aenor spec) |
+| `zin_faction_rule_join_lost_cause` | `zin_eindil_regard` ≥ 25, or `has_country_flag = zin_west_stranded`, or `has_country_flag = zin_east_companies_with_eindil` (journey spec's invitations) |
+
+The ZIN rules file also defines the engine rule keys the vanilla templates and rule groups name: the war declaration, call to war, leader change, peace, dismissal, goal-setting, government-in-exile and manpower contribution rules listed in the installed `common/factions/rules` files, each with ZIN text and its trigger written for ZIN (no vanilla tag or DLC country condition). Rule groups (`common/factions/rules/groups`) are the engine's groups with ZIN names, plus **one** group, `zin_rule_group_joining`, that lists every ZIN joining rule, whoever writes it: `zin_faction_rule_join_concord`, `_leren`, `_cold_lands`, `_east_lands`, `_dark_lands`, `_no_refusal`, `_not_shadow`, `_sworn`, `_crossing`, `_pupor_charter`, `_free_north`, `_warden_league`, `_free_steadings`, `_free_dominions`, `_lost_cause` (this module), `zin_faction_rule_join_elven_kin` (elves module) and `zin_faction_rule_join_sun_realms` (Lands of the Sun module). The Free Crowns use `zin_faction_rule_join_east_lands`. A rule listed in the group must be defined by the build (check C3); a ZIN joining rule missing from the group fails the builder test.
+
+**Goals.** Each faction has two ZIN goals (`common/factions/goals/zin_faction_goals.txt`) instead of the vanilla ones:
+
+| Goal | Term | Fulfilled when |
+| --- | --- | --- |
+| `zin_faction_goal_grow_the_league` | short | The faction has two more members than at its founding |
+| `zin_faction_goal_hold_the_line` | medium | No member has lost a core state for 365 days while the faction is at war |
+| `zin_faction_goal_against_the_dark` | long (Concord, Leren Compact, Northern Accord, Dark Sea Accord) | The faction is at war with a dark power and controls all its members' cores |
+| `zin_faction_goal_dominion_of_the_south` | long (Southern Dominion) | Volgan controls Mirolon's capital |
 
 **Manifests** (proposed). They need the faction DLC; without it the factions still work, and no ZIN logic reads manifest progress.
 
@@ -84,8 +120,11 @@ New joining rules (type `joining_rule`; scope = joining country, FROM = leader).
 | Stabilo Pact | `zin_faction_manifest_southern_roads` | as above | `trade_opinion_factor = 0.10` |
 | Dark Sea Accord | `zin_faction_manifest_hold_the_dark_sea` | Dark Lands states not controlled by Goldoroth ÷ all | `army_defence_factor = 0.05` |
 | Southern Dominion | `zin_faction_manifest_dominion_of_the_south` | Dead Lands states controlled ÷ all | `army_attack_factor = 0.05` |
+| Western Crossing | `zin_faction_manifest_cross_the_sea` | Middle Lands coastal states controlled ÷ Middle Lands coastal states | `naval_invasion_prep_speed = 0.10` |
 
-Denominators come from generated state collections named `zin_region_<key>` (`common/collections/zin_regions.txt`; the eastern kings spec reads `zin_region_east_lands`), frozen at build time so conquest does not change them. They share their names with the economy spec's country flags on purpose: one is the list of a region's states, the other marks a realm's region of origin. Each faction also takes two vanilla goals (`faction_goal_growing_the_faction` and one military goal) until the events phase writes ZIN goals.
+Denominators come from generated state collections named `zin_region_<key>` (`common/collections/zin_regions.txt`; the eastern kings spec reads `zin_region_east_lands`), frozen at build time so conquest does not change them. They share their names with the economy spec's country flags on purpose: one is the list of a region's states, the other marks a realm's region of origin.
+
+**Upgrades and icons.** The faction upgrade and member-upgrade folders hold the engine's generic upgrade kinds re-themed (for example "Common Muster", "Shared Roads", "Joint Watch"), each in one ZIN group, with no vanilla tag condition. The icon pool (`common/factions/icons/zin_factions.txt`) lists one generated emblem per faction and ten spare emblems for factions formed in play.
 
 ### The Treaty of the Narrow Strait
 
@@ -100,7 +139,7 @@ The treaty is not a faction or an engine guarantee. The Lerendor spec owns it: `
 
 ### The Lost Cause as a league
 
-The Aenor spec owns the league: its strength `zin_aenor_lost_cause` (Aenor, 0–100), its three paths (ornament; Shield of the Concord, `zin_lost_cause_shield`; Eindil's army, `zin_lost_cause_with_eindil`), its honorary crowns (country flag `zin_lost_cause_member`; Mirolon at start) and the division of the league when Eindil comes (`zin_aenor.160`). Honorary membership carries no faction or war obligation. This spec adds only what crosses faction lines:
+The Aenor spec owns the league (an institution, not a faction, S3): its strength `zin_aenor_lost_cause` (Aenor, 0–100, start 20), its three paths (ornament; Shield of the Concord, `zin_lost_cause_shield`; Eindil's army, `zin_lost_cause_with_eindil`), its honorary crowns (country flag `zin_lost_cause_member`; none at the start: Parim laughed at Mirolon's envoy, decision O8) and the division of the league when Eindil comes (`zin_aenor.160`). Honorary membership carries no faction or war obligation. This spec adds only what crosses faction lines:
 
 **The league's lord** is the Aenor realm, until `zin_lost_cause_with_eindil` is set; then it is Eindil's host (`global.zin_eindil_host`, Eindil's journey spec).
 
@@ -108,25 +147,26 @@ The Aenor spec owns the league: its strength `zin_aenor_lost_cause` (Aenor, 0–
 
 **Name an Honorary Crown** (decision of the lord, targeted, 50 political power, 180-day cooldown per target). Target: any country that is not Shadow, not bound by the Elven Refusal, not a dark power. The target gets `zin_diplo.23`: accept (country flag `zin_lost_cause_member`, +15 opinion of the lord) or decline. AI acceptance: base −20; +20 if `zin_gathering_dark` ≥ 25; +30 if it borders a dark power; + the target's opinion of the lord ÷ 4.
 
-**The muster.** When a dark power (`zin_diplo_is_dark_power`: Volgan, a Southern Dominion member, Zol, or Afrit's country once `zin_afrit_revealed`) declares war on Aenor, a Concord dominion or an honorary crown, and `zin_aenor_lost_cause` ≥ 30, every other honorary crown and every Concord dominion not already in the war gets `zin_diplo.20` "The Lost Cause Musters": join the defender (`add_to_war`, `zin_aenor_add_lost_cause` +2) or stand aside (`zin_aenor_add_lost_cause` −1). An honorary crown that stands aside twice loses `zin_lost_cause_member`. Dominions are already bound by their charters; for them the event only offers the league's thanks or reproach.
+**The muster.** When a dark power (`zin_diplo_is_dark_power`) declares war on Aenor, a Concord dominion or an honorary crown, and `zin_aenor_lost_cause` ≥ 30, every other honorary crown and every Concord dominion not already in the war gets `zin_diplo.20` "The Lost Cause Musters": join the defender (`add_to_war`, `zin_aenor_add_lost_cause` +2) or stand aside (`zin_aenor_add_lost_cause` −1). An honorary crown that stands aside twice loses `zin_lost_cause_member`. Dominions are already bound by their charters; for them the event only offers the league's thanks or reproach.
 
 ### Subjects
 
-Three ZIN autonomy states (proposed). Vanilla `autonomy_puppet` stays for conquest puppets and is renamed **Vassal**.
+Three ZIN autonomy states (proposed) in `common/autonomous_states/zin_autonomy.txt`, and a fourth written by the Dark Lands module, beside the engine key `autonomy_puppet`, which stays for conquest puppets and is renamed **Vassal**. The other vanilla autonomy states leave with the folder in stage 2; no ZIN file or kept file uses them (check C3).
 
 | Autonomy state | Used for | Key settings |
 | --- | --- | --- |
 | `zin_autonomy_chartered_dominion`: Chartered Dominion | The Concord's 26 dominions | `min_freedom_level = 0.5`; rule `can_not_declare_war = yes`, `can_decline_call_to_war = no` (a common army in war); modifier `extra_trade_to_overlord_factor = 0.25`, `overlord_trade_cost_factor = -0.25`, `autonomy_manpower_share = 0.10` |
 | `zin_autonomy_sworn_realm`: Sworn Realm | Demon, Dolon and Nezer under Volgan | `min_freedom_level = 0`; `can_not_declare_war = yes`, `can_decline_call_to_war = no`; `autonomy_manpower_share = 0.30` |
-| `zin_autonomy_client_crown`: Client Crown | Available to the Afrit spec for eastern crowns that follow the King of the East | `min_freedom_level = 0.4`; `can_not_declare_war = no`; `extra_trade_to_overlord_factor = 0.15` |
+| `zin_autonomy_eastern_client`: Eastern Client | Eastern courts that kneel to the King of the East (S1, O5; the Afrit and eastern kings specs choose who and when) | `min_freedom_level = 0.4`; `can_not_declare_war = no`; `extra_trade_to_overlord_factor = 0.15` |
+| `zin_autonomy_tributary_hold`: Tributary Hold | Orc holds that bend the knee to Goldoroth ([Dark Lands](../04_mechanics/dark_lands.md) owns it and writes it in `common/autonomous_states/zin_tributary_hold.txt`) | `min_freedom_level = 0.4`; `can_not_declare_war = yes`, `can_decline_call_to_war = no`; `autonomy_manpower_share = 0.2`, `extra_trade_to_overlord_factor = 0.2` |
 
-Loyalty, charters and secession are the Aenor spec's; oaths and breaking free are the Volgan spec's. Neither the autonomy score drift nor the release of a subject is scripted here.
+The politics step writes the start subjects with `set_autonomy` to these states (it writes vanilla puppets today). Loyalty, charters and secession are the Aenor spec's; oaths and breaking free are the Volgan spec's. Neither the autonomy score drift nor the release of a subject is scripted here.
 
 ### The Elven Refusal
 
 The Refusal is established history and starts in force: global flag `zin_elven_refusal`, never cleared during the Fourth Age.
 
-**Who it binds** (`zin_diplo_refusal_binds`): every country with `zin_people_elves` or `zin_people_sun_elves` without the country flag `zin_refusal_lifted`. Binding the Sunhot elves too is a proposed game choice; the vault does not say whether they took part.
+**Who it binds** (`zin_diplo_refusal_binds`): every country with `zin_people_elves` or `zin_people_sun_elves` without the country flag `zin_refusal_lifted`. Binding the Sunhot elves too is a proposed game choice; the vault does not say whether they took part (world systems question 7).
 
 **What it does:**
 
@@ -140,8 +180,9 @@ The Refusal is established history and starts in force: global flag `zin_elven_r
 | Way | Who | Condition |
 | --- | --- | --- |
 | The Old Lords Ride | Gala Elves (historical) | The Zol spec's event `zin_mistake.22` (Lorien rides against the manifested Zol) calls `zin_diplo_lift_refusal` for every realm that rides |
-| Break the Refusal (decision) | Any bound realm | 100 political power; at war with a dark power that controls one of its states, and `zin_gathering_dark` ≥ 75 |
-| The elves march | AI only | Game rule `zin_rule_ai_elves = MARCH`: AI realms lift at `zin_gathering_dark` ≥ 75 if any elven realm is at war with a dark power. `RANDOM`: half of them, decided at start. `DEFAULT`: only the two ways above |
+| Break the Refusal (decision `zin_diplo_break_the_refusal`) | Any bound realm | 100 political power; at war with a dark power that controls one of its states, and `zin_gathering_dark` ≥ 75 |
+| The elves march | AI only | Game rule `zin_rule_ai_elves = MARCH`: AI realms lift at `zin_gathering_dark` ≥ 75 if any elven realm is at war with a dark power. `RANDOM`: half of them, decided once at start by the elves spec's `zin_elves.1` (country flag `zin_elves_ai_marcher`, read through that spec's `zin_elves_marches_by_rule`). `DEFAULT`: only the other ways in this table |
+| Zol walks (proposed) | Magical Lands elven realms | `zin_zol_manifested` is set: an Old God walking threatens all the living, the reason Lorien rides. The elves spec's trigger `zin_elves_march_allowed` opens the Magical Forest tree's *The Kindred Marches*, which calls `zin_diplo_lift_refusal` for the realms that march. No AI takes it under `HISTORICAL`, and no text says the Magical Lands elves marched ([elves](../04_mechanics/elves_wall_and_dragons.md)) |
 
 A lifted realm returns to the Refusal 365 days after its last war with a dark power ends (`zin_refusal_lifted` cleared; it leaves any human faction).
 
@@ -149,15 +190,15 @@ A lifted realm returns to the Refusal 365 days after its last war with a dark po
 
 Proposed (vault, 4A 96): Aenor and the elven realms keep the Great Wall as a customs line and a shared guard.
 
-**At start:** global flag `zin_wall_accord`; a non-aggression pact between Aenor and each elven realm that owns a state bordering a Great Wall state (`zin_is_site_great_wall`; the builder computes the list); opinion `zin_opinion_wall_accord` +15 both ways. While the Accord holds, Aenor earns the Wall customs in its treasury ([02_economy.md](02_economy.md)).
+**At start:** global flag `zin_wall_accord`; a non-aggression pact (`diplomatic_relation = { country = <tag> relation = non_aggression_pact active = yes }`) between Aenor and each elven realm that owns a state bordering a Great Wall state (`zin_is_site_great_wall`; the builder computes the list from the map); opinion `zin_opinion_wall_accord` +15 both ways. While the Accord holds, Aenor earns the Wall customs in its treasury ([02_economy.md](02_economy.md)).
 
 **Breaking it.** If Aenor or a chartered dominion declares war on an Accord realm, or an Accord realm declares war on them, `on_declare_war` sets `zin_wall_accord_broken` and clears `zin_wall_accord`. Effects: the pacts end; every elven realm gets `zin_opinion_wall_broken` (−50) toward the breaker; `zin_world_add_gathering_dark` +3; for 1,825 days no elven realm may use Break the Refusal on the breaker's side. An attack on the elves by a third party (the eastern invasion) does not break the Accord.
 
 ### War justification during the peace
 
-**How it is gated.** Engine world tension follows `zin_gathering_dark` ([05_world_tension_and_endings.md](05_world_tension_and_endings.md)). Each ideology's `generate_wargoal_tension` (set in the foundation's ideology table) then decides who may justify a war goal without a cause. Today Light has 1.0 (only against threatening countries) and Wild 0.5. Dominion and Shadow have none, so they could justify at once; this spec asks the foundation to give both **0.25** (open question 1). Engine tension is kept at (meter − 10) ÷ 100, so it is 0 at the start value of 10. With the requested value nobody may justify freely at the start: Dominion and Shadow gain the right when the meter reaches 35, Wild at 60, Light only against countries that threaten.
+**How it is gated.** Engine world tension follows `zin_gathering_dark` ([05_world_tension_and_endings.md](05_world_tension_and_endings.md)). Each ideology's `generate_wargoal_tension` (set in the foundation's ideology table) then decides who may justify a war goal without a cause: Light 1.0 (only against threatening countries), Wild 0.5, Dominion and Shadow 0.25 (D6). Engine tension is kept at (meter − 10) ÷ 100, so it is 0 at the start value of 10. Nobody may justify freely at the start: Dominion and Shadow gain the right when the meter reaches 35, Wild at 60, Light only against countries that threaten.
 
-**Casus belli.** A cause lets one country justify against one target whatever the meter. Each is a dynamic modifier on the holder with a targeted `generate_wargoal_tension_against` toward the target. The sign follows vanilla's `imperial_sanction` leader trait, which uses a positive targeted value to let Japan justify on China; confirm it in a test. All are proposed.
+**Casus belli.** A cause lets one country justify against one target whatever the meter. Each is a dynamic modifier on the holder with a targeted `generate_wargoal_tension_against` toward the target. The value is +1.0, following the installed game's precedent (the generic leader trait `imperial_sanction` in `common/country_leader/00_traits.txt` gives Japan `generate_wargoal_tension_against = 0.75` toward China). The Linux run confirms the effect with a console test (acceptance 3); if the engine reads the sign the other way, the builder flips the one constant `CB_TENSION` in `diplomacy.mjs`. All are proposed.
 
 | Cause | Holder → target | Granted when | Lasts |
 | --- | --- | --- | --- |
@@ -175,26 +216,60 @@ Volgan's war on Mirolon, Lerendor's claims and the Concord's restoration wars ar
 
 **Historical wars** are created by their owners' events (`create_wargoal`, `declare_war_on`), so the AI cannot fail to start them ([06_historical_path_and_ai.md](06_historical_path_and_ai.md)).
 
+### Intrigue, occupation and peace (stage-2 replacements)
+
+The vanilla intelligence, occupation and peace folders name vanilla tags and equipment (category B14). Stage 2 replaces them with ZIN content that keeps the engine keys the engine and AI read.
+
+- **Intelligence agencies.** One agency name and emblem per people (`zin_agency_<people>`, for example "The Quiet Hands" for men, "The Leaf-Watchers" for elves), chosen by `has_country_flag = zin_people_<key>`; emblems are generated art.
+- **Operations.** The engine's generic operation keys (`operation_infiltrate_civilian`, `operation_infiltrate_armed_forces_army`, `_navy`, `_airforce`, `operation_steal_tech_civilian`, `_army`, `_navy`, `_airforce`, `operation_targeted_sabotage_industry`, `_infrastructure`, `_resources`, `operation_boost_resistance`, `operation_make_resistance_contacts`, `operation_coup_government`, `operation_collaboration_government`, `operation_coordinated_strike`, `operation_rescue_operative`, `operation_fake_intel`, `operation_capture_cipher`) with Erdae names (for example "Infiltrate a Court", "Steal a Smith's Secrets", "Burn the Granaries"), Erdae equipment needs (warfare's arms and mounts) and no vanilla tag condition. The tag-specific operation files leave with the folder. Operation phases are the engine's generic phases with Erdae names.
+- **Stage a coup** (`common/timed_activities`): the engine's coup activity with warfare's arms as its equipment need.
+- **Occupation laws** (`common/occupation_laws/occupation_laws.txt`, override): **The Light Hand** (`default_law = yes`), **Garrison and Toll**, **The Iron Hand**, **Tithe and Levy**, and **No Garrison** (`missing_garrison_law = yes`, `main_fallback_law = yes`), with ZIN modifiers (design targets: compliance growth +0.05 / 0 / −0.05 / −0.03; resistance target −0.10 / −0.20 / −0.35 / −0.15) and no country condition.
+- **Resistance** (`resistance_modifiers.txt`, override): the generic resistance modifiers without vanilla tag conditions.
+- **Peace conferences.** `zin_peace_categories.txt` keeps the engine's peace action category keys with Erdae names; `zin_ai_peace.txt` holds one generic AI peace block per ideology and one for Volgan and one for Zol (Zol takes no states: Zol spec); `zin_peace_costs.txt` holds the generic cost modifiers.
+- **Research sharing** (`common/technology_sharing/zin_tech_sharing.txt`): one group per faction of this spec, `available` on faction membership, 0.10 per member.
+- **Operative code names** (`common/units/codenames_operatives/zin_operative_codenames.txt`): one list per people from the names module's syllable pools.
+- **Scorers** (`common/scorers/country/*`, override of the four files): the same scorer ids the engine and AI read (for example `ai_decryption_target_scorer`, `fascist_major_scorer`, the `operative_mission_*` scorers), with ZIN targets (majors, neighbours, rivals of the start table) and no vanilla tag weight.
+- **Power balance** (`common/modifiers/AAT_`, `BBA_`, `MUN_power_balance_modifiers.txt`, override): one unused ZIN modifier each, `zin_interim_power_balance_<n>`, until a mechanic spec uses `common/bop`.
+
 ## Implementation
 
-### Files
+### What is in the game today (commit `ca01fa3`)
 
-| Path | Content |
-| --- | --- |
-| `common/factions/templates/zin_factions.txt` | The seven templates and `zin_faction_western_crossing` |
-| `common/factions/rules/zin_joining_rules.txt` | `zin_faction_rule_join_*` |
-| `common/factions/goals/zin_faction_manifests.txt` | The seven manifests |
-| `common/collections/zin_regions.txt` | Region state collections `zin_region_<key>` |
-| `common/autonomous_states/zin_chartered_dominion.txt`, `zin_sworn_realm.txt`, `zin_client_crown.txt` | Autonomy states |
-| `common/dynamic_modifiers/zin_diplomacy.txt` | The seven causes |
-| `common/ideas/zin_diplomacy.txt` | `zin_diplo_peace_breaker` |
-| `common/opinion_modifiers/zin_diplomacy.txt` | `zin_opinion_wall_accord`, `zin_opinion_wall_broken` |
-| `common/decisions/zin_diplomacy.txt` | Name an Honorary Crown, Break the Refusal |
-| `common/scripted_triggers/zin_diplomacy.txt`, `common/scripted_effects/zin_diplomacy.txt` | Below |
-| `common/on_actions/zin_diplomacy.txt` | `on_declare_war` (musters, Wall Accord, peace breaker); `on_monthly` (manifest counters, Refusal expiry); `on_startup` (flags, pacts, rules) |
-| `events/zin_diplo.txt` | Namespace `zin_diplo` |
-| `history/countries/*.txt` | Templates and autonomy states (politics step) |
-| `localisation/english/zin_diplomacy_l_english.yml` | Text |
+The politics step creates the seven factions with `faction_template_generic` and adds members; subjects are vanilla puppets. `common/opinion_modifiers/00_zin_opinion_modifiers.txt` holds the engine's opinion keys re-themed (vanilla removal module). `common/collections/zin_generic_collections.txt` exists; `zin_regions.txt` does not yet. `common/ai_faction_theaters/zin_theaters.txt` gives one AI theater per Erdae region. The faction, autonomy, intelligence, operations, peace, scorer and occupation folders are still vanilla and part of category B14.
+
+### Builder module and data
+
+A new content-builder module, `tools/content/modules/diplomacy.mjs`, writes every file below. Its stage-2 files land in the same build as the warfare module ([01_warfare.md](01_warfare.md) §15), which lists the whole stage.
+
+| Path | Kind | Content |
+| --- | --- | --- |
+| `tools/content/data/diplomacy.json` (new) | builder data | Factions (leader and members by country name), rules, goals, manifests, autonomy states, causes, Refusal and Wall Accord data, agencies, operation names, occupation laws |
+| `common/factions/templates/zin_factions.txt` | generated, stage 2 | The seven templates, `zin_faction_western_crossing`, `zin_faction_pupor_charter`, `zin_faction_free_north`, `zin_faction_warden_league`, `zin_faction_free_steadings`, `zin_faction_free_dominions` and `zin_faction_lost_cause` |
+| `common/factions/rules/zin_factions.txt`, `rules/groups/zin_factions.txt` | generated, stage 2 | Every rule key above (including `zin_faction_rule_join_pupor_charter`, `_free_north`, `_warden_league`, `_free_steadings`, `_free_dominions` and `_lost_cause`) and the rule groups, with the single joining group `zin_rule_group_joining` |
+| `common/factions/goals/zin_factions.txt` | generated, stage 2 | Goals and the eight manifests |
+| `common/factions/upgrades/zin_factions.txt`, `upgrades/groups/zin_factions.txt`, `member_upgrades/zin_factions.txt`, `member_upgrades/member_groups/zin_factions.txt` | generated, stage 2 | Re-themed generic upgrades |
+| `common/factions/icons/zin_factions.txt` | generated, stage 2 | Icon pool |
+| `common/collections/zin_regions.txt` | generated | Region state collections `zin_region_<key>` |
+| `common/autonomous_states/zin_autonomy.txt` | generated, stage 2 | `autonomy_puppet` and the three ZIN states |
+| `common/dynamic_modifiers/zin_diplomacy.txt` | generated | The seven causes |
+| `common/ideas/zin_diplomacy.txt` | generated | `zin_diplo_peace_breaker` |
+| `common/opinion_modifiers/zin_diplomacy.txt` | generated | `zin_opinion_wall_accord`, `zin_opinion_wall_broken` |
+| `common/decisions/zin_diplomacy.txt`, `common/decisions/categories/zin_diplomacy.txt` | generated | Name an Honorary Crown, Break the Refusal |
+| `common/scripted_triggers/zin_diplomacy.txt`, `common/scripted_effects/zin_diplomacy.txt` | generated | Names below |
+| `common/on_actions/zin_diplomacy.txt` | generated | `on_declare_war` (musters, Wall Accord, peace breaker); `on_monthly` (manifest counters, Refusal expiry); `on_startup` (flags, Wall Accord pacts and opinions, elven rules) |
+| `common/intelligence_agencies/zin_agencies.txt`, `common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt` | generated, stage 2 | Agencies; the upgrades file generated from the installed one with its one vanilla tag condition removed (vanilla removal §3.3) |
+| `common/operations/zin_operations.txt`, `common/operation_phases/zin_operation_phases.txt`, `common/timed_activities/zin_timed_activities.txt` | generated, stage 2 | Intrigue |
+| `common/occupation_laws/occupation_laws.txt`, `common/resistance_compliance_modifiers/resistance_modifiers.txt` | generated, stage 2 overrides | Occupation |
+| `common/peace_conference/ai_peace/zin_peace.txt`, `categories/zin_peace.txt`, `cost_modifiers/zin_peace.txt` | generated, stage 2 | Peace |
+| `common/technology_sharing/zin_tech_sharing.txt` | generated, stage 2 | Research sharing |
+| `common/units/codenames_operatives/zin_operative_codenames.txt` | generated, stage 2 | Code names |
+| `common/scorers/country/ai_decryption_scorer.txt`, `generic_operation_target_scorer.txt`, `generic_platonic_scorers.txt`, `operative_mission_scorer.txt` | generated, stage 2 overrides | Scorers |
+| `common/modifiers/AAT_power_balance_modifiers.txt`, `BBA_`, `MUN_` | generated, stage 2 overrides | Interim modifiers |
+| `common/ai_strategy/zin_diplomacy.txt` | generated | AI strategies |
+| `events/zin_diplo.txt` | generated | Namespace `zin_diplo` |
+| `localisation/english/zin_diplomacy_l_english.yml` | generated | Text |
+
+The politics step changes in the same build: `create_faction_from_template` names the ZIN templates, and start subjects use `set_autonomy` with the ZIN states (a politics test fails a history that names `faction_template_generic` or a vanilla autonomy state).
 
 ### Names
 
@@ -211,6 +286,10 @@ Volgan's war on Mirolon, Lerendor's claims and the Concord's restoration wars ar
 | `zin_diplo_refusal_binds` | scripted trigger | Elven realm without `zin_refusal_lifted` |
 | `zin_diplo_grant_cb` | scripted effect | Args `cb`, `target`, `days`: adds the cause |
 | `zin_diplo_lift_refusal` | scripted effect | Sets `zin_refusal_lifted` on the scoped realm and removes its volunteer ban |
+| `zin_autonomy_chartered_dominion`, `zin_autonomy_sworn_realm`, `zin_autonomy_eastern_client` | autonomy states | Subject types |
+| `zin_faction_pupor_charter`, `zin_faction_free_north`, `zin_faction_warden_league`, `zin_faction_free_steadings`, `zin_faction_free_dominions`, `zin_faction_lost_cause` | faction templates | Factions formed in play that this module writes (table above) |
+| `zin_faction_rule_join_pupor_charter`, `zin_faction_rule_join_free_north`, `zin_faction_rule_join_warden_league`, `zin_faction_rule_join_free_steadings`, `zin_faction_rule_join_free_dominions`, `zin_faction_rule_join_lost_cause` | joining rules | Their joining rules |
+| `zin_rule_group_joining` | faction rule group | Every ZIN joining rule |
 
 `zin_world_peace_holds` is defined in the tension spec.
 
@@ -218,7 +297,7 @@ Volgan's war on Mirolon, Lerendor's claims and the Concord's restoration wars ar
 
 | Id | Purpose |
 | --- | --- |
-| `zin_diplo.1` | Hidden startup: flags, Wall Accord pacts, elven rules |
+| `zin_diplo.1` | Hidden startup: flags, Wall Accord pacts, elven rules (the `RANDOM` elves draw is the elves spec's `zin_elves.1`) |
 | `zin_diplo.11` | The North calls on the treaty (Aenor) |
 | `zin_diplo.20` | The Lost Cause musters |
 | `zin_diplo.23` | Invitation to be an honorary crown |
@@ -241,19 +320,22 @@ Every text obeys the secret: until `zin_afrit_revealed` nothing names Afrit, and
 
 ## Acceptance
 
-1. On 1 Thaw 4A 1748 the seven factions exist with the members above, no country is at war, and the Wall Accord pacts are in force (Linux run, console).
+1. On 1 Thaw 4A 1748 the seven factions exist with the members above (Andos Enda not in the Leren Compact), no country is at war, and the Wall Accord pacts are in force (Linux run, console).
 2. For 365 days of AI play with the meter below 25, no great war begins (Linux run, 3 seeds).
-3. With the requested ideology value, a Dominion country cannot justify against a non-threatening neighbour at start; it can after receiving a cause against that neighbour (console test).
-4. Aenor declaring war on the Magical Forest sets `zin_wall_accord_broken`, ends the pacts and adds 3 to the meter.
-5. A bound elven realm cannot join the Concord or send volunteers; after `zin_mistake.22` the Gala Elves can.
-6. With Lerendor in a defensive war and the treaty in force, Aenor receives `zin_diplo.11` once per war; under the Golden King the AI sends words.
-7. A dark power declaring war on Mirolon with `zin_aenor_lost_cause` ≥ 30 fires `zin_diplo.20` to the other honorary crowns and the dominions.
-8. No text reachable before `zin_afrit_revealed` contains "Afrit" (compiler check).
+3. A Dominion country cannot justify against a non-threatening neighbour at start; it can after receiving a cause against that neighbour (Linux run, console test).
+4. Aenor declaring war on the Magical Forest sets `zin_wall_accord_broken`, ends the pacts and adds 3 to the meter (scenario test).
+5. A bound elven realm cannot join the Concord or send volunteers; after `zin_mistake.22` the Gala Elves can (scenario test).
+6. With Lerendor in a defensive war and the treaty in force, Aenor receives `zin_diplo.11` once per war; under the Golden King the AI sends words (scenario test).
+7. With one honorary crown named (`zin_lost_cause_member`), a dark power declaring war on it with `zin_aenor_lost_cause` ≥ 30 fires `zin_diplo.20` to the other honorary crowns and the dominions (scenario test). On 1 Thaw 4A 1748 no country has `zin_lost_cause_member` (O8).
+8. No text reachable before `zin_afrit_revealed` contains "Afrit" (names spec check T2).
+9. After stage 2, no vanilla faction, autonomy, agency, operation, peace, sharing, code-name, scorer or occupation definition loads (vanilla removal checks C1–C3), and category B14 has no line from those folders (check C6 on the Linux run's `error.log`).
+10. Every modifier, trigger, effect and AI strategy named here exists in 1.19.3 (builder check; faction rule types match the installed `common/factions/_documentation.md`).
+11. `common/factions/rules/groups/zin_factions.txt` has exactly one group with ZIN joining rules, `zin_rule_group_joining`, and it lists all seventeen rules named under "Rules per faction" and "Factions formed in play"; each is defined once in the build (builder test). In a scenario test, a corsair haven cannot join the Pupor Charter, Lerendor cannot join the Free Crowns of the North, and Andos Enda can join the Leren Compact only after `zin_refusal_lifted`.
 
 ## Open questions
 
-1. May Dominion and Shadow get `generate_wargoal_tension = 0.25` in the foundation's ideology table? Without it, the "no great war at start" rule rests on the AI alone.
-2. The vault lists **Andos Enda** as a Leren Compact member, but the map makes it an elven realm bound by the Refusal. Keep it out (as here), or make an exception?
-3. Do the Sunhot elves share the Elven Refusal, or only the Magical Lands elves and Gala?
-4. Should the Concord's constitution (a common army in war, free roads in peace) become canon?
-5. Which crowns, besides Mirolon, were honorary members of the Lost Cause at its founding?
+All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md).
+
+1. Do the Sunhot elves share the Elven Refusal, or only the Magical Lands elves and Gala? **Proposal, in use:** they share it (world systems question 7).
+2. Should the Concord's constitution (a common army in war, free roads in peace) become canon? **Proposal, in use:** proposed only.
+Settled: Dominion and Shadow at 0.25 (D6); Andos Enda outside the Leren Compact (S5); eastern clients are subjects (S1, O5); no honorary crown at the start, Mirolon included (O8).

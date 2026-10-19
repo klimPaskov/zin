@@ -1,6 +1,6 @@
 # Stabilo Focus Tree
 
-**Status:** Draft. **Priority:** 4. **Phase:** 4.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 4. **Phase:** 4.
 
 ## Purpose
 
@@ -16,13 +16,17 @@ The tree has 111 focuses in ten branches, 30 columns wide (x 0 to 29).
 
 **Proposed** (vault proposals this tree builds on): the caravan roads of 4A 600 to 780 and the rivalry they began; the eastern branch's courtship from about 4A 1300; the start on 1 Thaw 4A 1748; the choices "Noris and Stabilo can fight each other, fight Aenor, or fight him"; the outcome "the East unites under one king who is not Afrit".
 
-**Proposed here:** every focus, spirit, event and number; the great houses (the Prince's own house, the House of Azano that keeps the treasury, the House of Shindor that keeps the companies) named after the proposed characters Prince Cereos, Lady Mylun Azano and General Hardfic Shindor; the Guild of Scales; the Ledger and its debts; the shield-companies. Which eastern kings follow Afrit is **open** in the vault: the tree offers both answers and never states one as history. Before `zin_afrit_revealed` no text names Afrit; the King of the East is "the Deliverer" or "King Aurevan" through `zin_afrit_name`.
+**Proposed here:** every focus, spirit, event and number; the great houses (the Prince's own house, the House of Azano that keeps the treasury, the House of Shindor that keeps the companies) named after the proposed characters Prince Cereos, Lady Mylun Azano and General Hardfic Shindor; the Guild of Scales; the Ledger and its debts; the shield-companies. Which eastern kings follow Afrit is **open** in the vault: the tree offers both answers and never states one as history. Before `zin_afrit_revealed` no text names Afrit or the Hidden Council; the King of the East is "the Deliverer" or "King Aurevan" through the scripted localisation `zin_loc_deliverer` (contract additions). Before `zin_eindil_named` no text names Eindil; after it the tree still says "the stranger".
+
+**The King of the East (decision S1).** The King of the East is the Worshipdom under the cosmetic name "the Dominion of the East". A court that kneels becomes its subject with the autonomy state `zin_autonomy_eastern_client` and the flag `zin_afrit_eastern_client`; it does not join a faction. Which courts kneel is decided in each game by footholds, crises and choices.
+
+**Postondoroth on today's map.** The Postondoroth victory point lies in Drak's state, and Stabilo's capital is Fudol (OPEN_QUESTIONS "east lands" 2). Every `@postondoroth` effect therefore falls back to `@capital` while Stabilo does not own the `zin_is_site_postondoroth` state.
 
 ## Design
 
 ### The peaceful start
 
-On 1 Thaw 4A 1748 every available focus is about the houses, credit, caravans, envoys or hired companies. No focus before the route junction can create a war goal, a claim or a war. War content opens only from story flags (`zin_golden_king_dead`, `zin_war_of_last_crowns`, `zin_eastern_invasion`, `zin_east_turns_west`, `zin_afrit_king_of_east`, `zin_afrit_returned`, `zin_afrit_dead`, `zin_eindil_returned`) or from the mechanic's peace gates.
+On 1 Thaw 4A 1748 every available focus is about the houses, credit, caravans, envoys or hired companies. No focus before the route junction can create a war goal, a claim or a war. War content opens only from story flags (`zin_golden_king_dead`, `zin_war_of_last_crowns`, `zin_eastern_invasion`, `zin_east_turns_west`, `zin_afrit_king_of_east`, `zin_afrit_returned`, `zin_afrit_dead`, `zin_eindil_returned`) or from the mechanic's peace gates. The start opinion between Stabilo and Noris is `zin_opinion_caravan_rivalry` (−25, decision N5).
 
 ### The Ledger of the East (tree mechanic)
 
@@ -36,7 +40,7 @@ Postondoroth lends to princes. Every East Lands court except Noris and Stabilo c
 | --- | --- | ---: | --- | --- | --- |
 | `zin_stabilo_lend` | target debt < 80 | 50 PP | `zin_stabilo.30` to the target: accept → timed idea `zin_stabilo_credit` (365 days), debt +15, lean +5 toward Stabilo; decline → nothing | 180 days per target | courts with lean −40 to +20, crisis first |
 | `zin_stabilo_great_loan` | `zin_stabilo_loans_to_kings`; target owns 12+ states; debt < 60 | 100 PP | `zin_stabilo.30` (great loan text): accept → target political power +100, debt +30, lean +10 toward Stabilo | 365 days per target | the four great kingdoms first |
-| `zin_stabilo_call_in_debt` | `zin_stabilo_collect`; debt ≥ 30 | 10 PP | `zin_stabilo.31` to the target: pay in gold (target political power −75, Stabilo +75, debt −30) / pay in kind (target sends 500 infantry equipment, debt −20) / default (debt to 0, lean −20, opinion of Stabilo −30; Stabilo gets `zin_stabilo.33`) | 180 days per target | when Stabilo's political power < 50 |
+| `zin_stabilo_call_in_debt` | `zin_stabilo_collect`; debt ≥ 30 | 10 PP | `zin_stabilo.31` to the target: pay in gold (target political power −75, Stabilo +75, debt −30) / pay in kind (target sends 500 `zin_arms_equipment`, debt −20) / default (debt to 0, lean −20, opinion of Stabilo −30; Stabilo gets `zin_stabilo.33`) | 180 days per target | when Stabilo's political power < 50 |
 | `zin_stabilo_forgive_debt` | debt ≥ 20 | 25 PP | debt −20; lean +15 toward Stabilo; target opinion of Stabilo +20 | 365 days per target | before inviting a court to the Pact |
 
 AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if stability < 40%, + (lean toward Stabilo) ÷ 2, −30 if the court owes the temples (`zin_east_owes_temples`). The mechanic's temple loan event offers a third option to borrow from Postondoroth instead (`zin_stabilo_add_debt(10)`).
@@ -71,8 +75,10 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 - **Prerequisites:** `a + b` means a and b; `a / b` means a or b.
 - **x,y:** grid column and row.
 - **Effects** use the compiler vocabulary of [../00_format_and_compiler.md](../00_format_and_compiler.md) as in the Noris spec. Spirit keys compile to `zin_stabilo_<key>`.
+- **Mechanic events** (`zin_east.*`, `zin_afrit.*`) are never fired with the compiler's `event` effect, which names this tree's events; each goes through a tree-declared scripted effect (Implementation). "footholds ≥ 3" is `{ "variable": { "name": "zin_footholds", "above": 2 } }`; "client" and "refuser" are flag conditions.
+- **Research and equipment** are the warfare spec's `zin_cat_*` categories with the vanilla category in parentheses as the fallback until warfare stage 2, and `zin_arms_equipment` (fallback `infantry_equipment`). Doctrines cost experience in 1.19.3, so doctrine bonuses are army experience.
 - **Shorthands:** **Inf +n road** = `call zin_east_add_road_influence(road, n)`. **Lean +n on X** = `for_country X: call zin_east_add_lean(−n)`: in this tree a positive lean shorthand always means toward Stabilo. **Rivalry +n** = `call zin_east_add_rivalry(n)`. **Debt +n on X** = `for_country X: call zin_stabilo_add_debt(n)`. **Footholds ±n** = `call zin_afrit_add_footholds(n)` on Stabilo. **Bonus +n** = `variable zin_east_caravan_bonus add n`.
-- **Where:** `@capital`; `@postondoroth` = the `zin_is_site_postondoroth` state; `@road_<key>`; `@random_owned`.
+- **Where:** `@capital`; `@postondoroth` = the `zin_is_site_postondoroth` state if Stabilo owns it, else the capital; `@road_<key>`; `@random_owned`.
 - **Avail:** the focus's `available` conditions. Bypass is never used.
 - **AI:** "hist" = the historical path; "client" = Stabilo has `zin_afrit_eastern_client`; "refuser" = `zin_afrit_refused_east`.
 
@@ -86,11 +92,11 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `prince_of_postondoroth` | The Prince of Postondoroth | the_merchant_houses | – | 1,1 | 70 | add_spirit princes_household | 20 |
 | `house_of_azano` | The House of Azano | the_merchant_houses | – | 3,1 | 35 | political_power 25; stability 0.02 | 20 |
 | `seat_at_postondoroth` | The Seat at Postondoroth | prince_of_postondoroth | – | 0,2 | 70 | building industrial_complex 1 @postondoroth; political_power 25 | 15 |
-| `contract_courts` | The Contract Courts | prince_of_postondoroth / house_of_azano | – | 2,2 | 70 | add_spirit contract_courts | 15 |
+| `contract_courts` | The Contract Courts | prince_of_postondoroth / house_of_azano | – | 2,2 | 70 | add_spirit contract_courts_spirit | 15 |
 | `house_of_shindor` | The House of Shindor | house_of_azano | – | 4,2 | 35 | army_experience 10; political_power 25 | 12 |
 | `guild_of_scales` | The Guild of Scales | house_of_azano | – | 5,2 | 70 | Inf +5 gold; Inf +5 sand | 12 |
-| `princes_purse` | The Prince's Purse | seat_at_postondoroth / contract_courts | council_of_houses | 1,3 | 70 | add_spirit princes_purse | 10; hist ×2 |
-| `council_of_houses` | The Council of Houses | contract_courts / house_of_shindor / guild_of_scales | princes_purse | 4,3 | 70 | add_spirit council_of_houses; popularity light 0.05 | 10; ×2 if stability < 40% |
+| `princes_purse` | The Prince's Purse | seat_at_postondoroth / contract_courts | council_of_houses | 1,3 | 70 | add_spirit princes_purse_spirit | 10; hist ×2 |
+| `council_of_houses` | The Council of Houses | contract_courts / house_of_shindor / guild_of_scales | princes_purse | 4,3 | 70 | add_spirit council_of_houses_spirit; popularity light 0.05 | 10; ×2 if stability < 40% |
 | `minted_crowns` | The Minted Crowns | princes_purse | – | 0,4 | 70 | building industrial_complex 1 @capital; political_power 50 | 15 |
 | `law_of_the_scales` | The Law of the Scales | princes_purse / council_of_houses | – | 2,4 | 70 | stability 0.05 | 15 |
 | `the_houses_vote` | The Houses Vote | council_of_houses | – | 4,4 | 35 | event zin_stabilo.3 | 15 |
@@ -106,7 +112,7 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `ledger_of_the_east` | The Ledger of the East | – | – | 8,0 | 70 | flag zin_stabilo_ledger_open (Lend, Forgive a Debt); political_power 25 | 40 |
 | `bankers_of_fudol` | The Bankers of Fudol | ledger_of_the_east | – | 7,1 | 70 | building industrial_complex 1 @capital | 20 |
-| `letters_of_credit` | Letters of Credit | ledger_of_the_east | – | 9,1 | 70 | add_spirit letters_of_credit; Bonus +0.25 | 20 |
+| `letters_of_credit` | Letters of Credit | ledger_of_the_east | – | 9,1 | 70 | add_spirit letters_of_credit_spirit; Bonus +0.25 | 20 |
 | `loans_to_the_kings` | Loans to the Kings | bankers_of_fudol | – | 6,2 | 70 | flag zin_stabilo_loans_to_kings (Great Loan) | 15 |
 | `the_counting_houses` | The Counting Houses | bankers_of_fudol / letters_of_credit | – | 8,2 | 70 | political_power 50; stability 0.02 | 15 |
 | `caravan_insurance` | Caravan Insurance | letters_of_credit | – | 10,2 | 70 | call zin_stabilo_insure_roads; Bonus +0.25 | 12 |
@@ -133,8 +139,8 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `markets_of_the_moco` | The Markets of The Moco | west_to_alerhia / wells_of_obmi | – | 12,3 | 70 | Lean +15 on The Moco; Inf +10 lake | 12 |
 | `trade_of_the_south_lands` | Trade of the South Lands | wells_of_obmi / desert_patrols | – | 14,3 | 70 | call zin_stabilo_south_lean(10) | 12 |
 | `a_bid_for_the_rift_road` | A Bid for the Rift Road | markets_of_the_moco | – | 11,4 | 70 | Inf +15 rift; Rivalry +3 | 10; hist ×0.5 |
-| `fortified_caravanserais` | Fortified Caravanserais | markets_of_the_moco / trade_of_the_south_lands | – | 13,4 | 70 | building bunker 1 @road_gold ×2; add_spirit fortified_caravanserais | 10 |
-| `beyond_the_dunes` | Beyond the Dunes | trade_of_the_south_lands | – | 15,4 | 70 | event zin_east.35 | 5 |
+| `fortified_caravanserais` | Fortified Caravanserais | markets_of_the_moco / trade_of_the_south_lands | – | 13,4 | 70 | building bunker 1 @road_gold ×2; add_spirit fortified_caravanserais_spirit | 10 |
+| `beyond_the_dunes` | Beyond the Dunes | trade_of_the_south_lands | – | 15,4 | 70 | call zin_stabilo_tree_deep_sand (fires `zin_east.35`) | 5 |
 | `prince_of_the_caravans` | Prince of the Caravans | a_bid_for_the_rift_road / fortified_caravanserais / beyond_the_dunes | – | 13,5 | 70 | add_spirit prince_of_caravans; Bonus +0.5; building industrial_complex 2 @random_owned | 12 |
 
 ### Branch 4: The Stabilo Pact
@@ -146,13 +152,13 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `stabilo_pact` | The Stabilo Pact | – | – | 18,0 | 70 | flag zin_east_courts_stabilo (decision category); Lean +10 on Drak; political_power 25 | 40 |
 | `friendship_of_drak` | The Friendship of Drak | stabilo_pact | – | 17,1 | 70 | event_for Drak zin_stabilo.6 | 20 |
 | `envoys_of_the_pact` | Envoys of the Pact | stabilo_pact | – | 19,1 | 35 | flag zin_stabilo_envoys (Court Gifts); political_power 25 | 20 |
-| `pact_council` | The Pact Council | friendship_of_drak | – | 16,2 | 70 | add_spirit pact_council | 12 |
+| `pact_council` | The Pact Council | friendship_of_drak | – | 16,2 | 70 | add_spirit pact_council_spirit | 12 |
 | `prince_blozan` | A Letter to Prince Blozan | friendship_of_drak / envoys_of_the_pact | – | 18,2 | 70 | event_for Plutondo zin_stabilo.7 | 20 |
 | `mines_of_erco` | The Mines of Erco | envoys_of_the_pact | – | 20,2 | 70 | event_for Erco zin_stabilo.8 | 15 |
 | `open_the_pact` | Open the Pact | pact_council / prince_blozan | – | 17,3 | 70 | flag zin_stabilo_open_pact (Invite to the Pact); political_power 50 | 20 |
 | `oreton_and_the_red_lands` | Oreton and the Red Lands | prince_blozan / mines_of_erco | – | 19,3 | 70 | Lean +15 on Oreton; Lean +10 on Avalon | 12 |
 | `bargain_with_miaed` | A Bargain with Miaed | mines_of_erco | – | 21,3 | 70 | event_for Miaed zin_stabilo.9 | 12 |
-| `pact_garrisons` | Pact Garrisons | open_the_pact | – | 16,4 | 70 | add_spirit pact_garrisons | 10 |
+| `pact_garrisons` | Pact Garrisons | open_the_pact | – | 16,4 | 70 | add_spirit pact_garrisons_spirit | 10 |
 | `marriage_in_the_pact` | A Marriage in the Pact | open_the_pact / oreton_and_the_red_lands | – | 18,4 | 70 | event zin_stabilo.10 | 12 |
 | `the_mountain_road` | The Mountain Road to Erco | oreton_and_the_red_lands / bargain_with_miaed | – | 20,4 | 70 | for_country Erco: building infrastructure 1 @capital; Lean +10 on Erco; Inf +5 sand | 10 |
 | `pact_of_equals` | The Pact of Equals | pact_garrisons / marriage_in_the_pact | pact_under_the_prince | 17,5 | 70 | call zin_stabilo_pact_lean(10); stability 0.05; political_power 50 | 10; hist ×3; refuser ×2 |
@@ -165,20 +171,20 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| `shield_companies` | The Shield-Companies | – | – | 24,0 | 70 | add_spirit shield_companies; army_experience 10 | 30 |
+| `shield_companies` | The Shield-Companies | – | – | 24,0 | 70 | add_spirit shield_companies_spirit; army_experience 10 | 30 |
 | `hire_the_sellswords` | Hire the Sellswords | shield_companies | – | 23,1 | 35 | manpower 10000; political_power −25 | 15 |
 | `general_shindor` | General Hardfic Shindor | shield_companies | – | 25,1 | 35 | call zin_stabilo_honour_hardfic; army_experience 10 | 15 |
-| `contracts_of_service` | Contracts of Service | hire_the_sellswords | – | 22,2 | 70 | add_spirit contracts_of_service | 12 |
+| `contracts_of_service` | Contracts of Service | hire_the_sellswords | – | 22,2 | 70 | add_spirit contracts_of_service_spirit | 12 |
 | `arsenal_of_fudol` | The Arsenal of Fudol | hire_the_sellswords / general_shindor | – | 24,2 | 70 | building arms_factory 2 @capital | 15 |
 | `forts_on_the_noris_march` | Forts on the Noris March | general_shindor | – | 26,2 | 70 | call zin_stabilo_fortify_march | 8; ×2 if rivalry ≥ 60 |
-| `paid_in_full` | Paid in Full | contracts_of_service / arsenal_of_fudol | – | 23,3 | 70 | equipment infantry_equipment 1500 | 12 |
-| `pikes_of_postondoroth` | The Pikes of Postondoroth | arsenal_of_fudol / forts_on_the_noris_march | – | 25,3 | 70 | research [infantry_weapons] 50% ×2 | 10 |
-| `foreign_captains` | Foreign Captains | paid_in_full | – | 22,4 | 70 | research [land_doctrine] 50% ×1; army_experience 10 | 10 |
-| `siege_engineers` | Siege Engineers | paid_in_full / pikes_of_postondoroth | – | 24,4 | 70 | research [artillery] 50% ×1; research [cat_fortification] 50% ×1 | 8 |
+| `paid_in_full` | Paid in Full | contracts_of_service / arsenal_of_fudol | – | 23,3 | 70 | equipment zin_arms_equipment 1500 | 12 |
+| `pikes_of_postondoroth` | The Pikes of Postondoroth | arsenal_of_fudol / forts_on_the_noris_march | – | 25,3 | 70 | research [zin_cat_arms (infantry_weapons)] 50% ×2 | 10 |
+| `foreign_captains` | Foreign Captains | paid_in_full | – | 22,4 | 70 | army_experience 25 | 10 |
+| `siege_engineers` | Siege Engineers | paid_in_full / pikes_of_postondoroth | – | 24,4 | 70 | research [zin_cat_siege (artillery)] 50% ×1; research [zin_cat_walls (cat_fortification)] 50% ×1 | 8 |
 | `the_desert_shield` | The Desert Shield | pikes_of_postondoroth | – | 26,4 | 70 | add_spirit desert_shield | 10 |
-| `standing_companies` | The Standing Companies | foreign_captains / siege_engineers | – | 23,5 | 70 | swap_spirit shield_companies→standing_companies | 10 |
+| `standing_companies` | The Standing Companies | foreign_captains / siege_engineers | – | 23,5 | 70 | swap_spirit shield_companies_spirit→standing_companies_spirit | 10 |
 | `war_chest_of_the_pact` | The War Chest of the Pact | siege_engineers / the_desert_shield | – | 25,5 | 35 | Avail: `zin_golden_king_dead` or after 1752.3.1; political_power 50; war_support 0.05 | 10; 0 hist before 1754.3.1 |
-| `army_of_the_pact` | The Army of the Pact | standing_companies + war_chest_of_the_pact | – | 24,6 | 70 | Avail: at war, or `zin_war_of_last_crowns`; manpower 15000; equipment infantry_equipment 2500 | 200 when available |
+| `army_of_the_pact` | The Army of the Pact | standing_companies + war_chest_of_the_pact | – | 24,6 | 70 | Avail: at war, or `zin_war_of_last_crowns`; manpower 15000; equipment zin_arms_equipment 2500 | 200 when available |
 
 ### Branch 6: The Temple Accounts
 
@@ -191,7 +197,7 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `audit_the_temples` | Audit the Temples | temple_accounts | partners_of_the_temple_banks | 29,1 | 70 | Footholds −1; flag zin_stabilo_audit; political_power 50; stability −0.02 | 10; ×2 with `zin_stabilo_ledger_open` |
 | `relief_houses_of_fudol` | The Relief Houses of Fudol | partners_of_the_temple_banks | – | 27,2 | 70 | stability 0.05 | 10 |
 | `the_princes_auditors` | The Prince's Auditors | audit_the_temples | – | 29,2 | 70 | add_spirit princes_auditors | 10 |
-| `temple_loans_for_the_roads` | Temple Loans for the Roads | relief_houses_of_fudol | – | 27,3 | 35 | event zin_east.30 (the offer arrives at once); Inf +5 gold; Inf +5 sand | 8 |
+| `temple_loans_for_the_roads` | Temple Loans for the Roads | relief_houses_of_fudol | – | 27,3 | 35 | call zin_stabilo_tree_temple_loan (fires `zin_east.30` at once); Inf +5 gold; Inf +5 sand | 8 |
 | `close_the_books_to_the_temples` | Close the Books to the Temples | the_princes_auditors | – | 29,3 | 70 | call zin_stabilo_debtor_lean(5); political_power 25 | 8 |
 | `faith_and_interest` | Faith and Interest | temple_loans_for_the_roads / close_the_books_to_the_temples | – | 28,4 | 70 | political_power 50; stability 0.03 | 8 |
 
@@ -210,8 +216,8 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `treasurer_of_the_east` | Treasurer of the East | reckoning_of_the_east | paymaster_of_the_free_crowns, prince_of_all_roads | 3,8 | 70 | Avail: footholds ≥ 3; not refuser; flag zin_east_pledged; flag zin_stabilo_route_treasurer; Footholds +1; political_power 50 | hist: 1000 if client, else 0; free: 10 × footholds + bias ÷ 2 |
 | `gold_for_the_deliverer` | Gold for the Deliverer | treasurer_of_the_east | – | 2,9 | 35 | political_power −50; for_country Worshipdom: political_power 100; tooltip "The temples will remember." | 50 |
 | `contracts_with_the_temple` | Contracts with the Temple | treasurer_of_the_east | – | 4,9 | 70 | Bonus +0.25; political_power 25 | 50 |
-| `kneel_with_open_ledgers` | Kneel with Open Ledgers | gold_for_the_deliverer / contracts_with_the_temple | – | 3,10 | 35 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; not refuser; if not client: `country_event zin_afrit.51`; add_spirit treasury_of_the_east | 500 when available |
-| `paymaster_of_the_host` | Paymaster of the Eastern Host | kneel_with_open_ledgers | – | 2,11 | 70 | Avail: client; flag zin_stabilo_pays_host; equipment infantry_equipment 2000 | 60 |
+| `kneel_with_open_ledgers` | Kneel with Open Ledgers | gold_for_the_deliverer / contracts_with_the_temple | – | 3,10 | 35 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; not refuser; if not client: call zin_stabilo_tree_kneel_offer (fires the Afrit spec's offer `zin_afrit.51`; its kneel option calls `zin_east_prepare_kneel` and makes Stabilo a subject with `zin_autonomy_eastern_client`); add_spirit treasury_of_the_east | 500 when available |
+| `paymaster_of_the_host` | Paymaster of the Eastern Host | kneel_with_open_ledgers | – | 2,11 | 70 | Avail: client; flag zin_stabilo_pays_host; equipment zin_arms_equipment 2000 | 60 |
 | `debts_of_the_refusers` | The Debts of the Refusers | kneel_with_open_ledgers | – | 4,11 | 70 | Avail: client; at war with a country with `zin_east_free_crown`; call zin_stabilo_seize_refuser_debts | 60 when available |
 | `the_kings_mint` | The King's Mint | paymaster_of_the_host / debts_of_the_refusers | – | 3,12 | 70 | Avail: `zin_afrit_returned` or `zin_afrit_claims_erdae`; political_power 100; add_spirit kings_mint | 100 when available |
 | `close_the_kings_books` | Close the King's Books | the_kings_mint | – | 3,13 | 35 | Avail: `zin_afrit_dead`; remove_spirit treasury_of_the_east; remove_spirit kings_mint; political_power 50; tooltip "Postondoroth must answer for its loans." | 500 when available |
@@ -226,11 +232,11 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `close_the_temple_accounts` | Close the Temple Accounts | paymaster_of_the_free_crowns | – | 7,9 | 35 | Avail: `zin_afrit_revealed` or has `zin_afrit_suspicious`; call zin_afrit_purge_houses | 100 when available |
 | `subsidies_for_the_courts` | Subsidies for the Courts | paymaster_of_the_free_crowns | – | 9,9 | 70 | call zin_stabilo_subsidise; political_power −50 | 50 |
 | `arms_for_the_elder_groves` | Arms for the Elder Groves | paymaster_of_the_free_crowns | – | 11,9 | 70 | Avail: `zin_eastern_invasion`; not `zin_east_coalition_member`; call zin_stabilo_arm_the_groves | 60 when available |
-| `the_free_crowns_purse` | The Free Crowns' Purse | subsidies_for_the_courts | – | 8,10 | 70 | Avail: `zin_afrit_king_of_east`; not client; if not refuser: flag zin_afrit_refused_east; if no country has `zin_east_free_crowns_leader`: flag zin_east_free_crowns_leader and event zin_east.51; add_spirit free_crowns_purse | 500 when available |
+| `the_free_crowns_purse` | The Free Crowns' Purse | subsidies_for_the_courts | – | 8,10 | 70 | Avail: `zin_afrit_king_of_east`; not client; if not refuser: flag zin_afrit_refused_east; call zin_stabilo_tree_lead_free_crowns (if no country has `zin_east_free_crowns_leader`: sets it on Stabilo and fires `zin_east.51`); add_spirit free_crowns_purse | 500 when available |
 | `buy_off_the_coalition` | Buy Off the Coalition | subsidies_for_the_courts / arms_for_the_elder_groves | – | 10,10 | 70 | Avail: `zin_eastern_invasion`; not `zin_east_coalition_member`; call zin_east_offer_coalition_peace; call zin_stabilo_buy_off; political_power −75 | 60 when available |
 | `war_for_the_free_crowns` | War for the Free Crowns | the_free_crowns_purse | – | 8,11 | 70 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; call zin_east_grant_free_cb; war_support 0.10 | 100 when available |
 | `companies_for_the_stranger` | Companies for the Stranger | buy_off_the_coalition | – | 10,11 | 70 | Avail: `zin_eindil_returned`; flag zin_east_companies_with_eindil; army_experience 15 | 200 when available |
-| `the_free_roads` | The Free Roads | war_for_the_free_crowns / companies_for_the_stranger | – | 9,12 | 70 | Avail: `zin_afrit_dead`, or no East Lands country is a member of the Worshipdom's faction; add_spirit free_roads; tooltip "An outcome of this game, not history." | 100 when available |
+| `the_free_roads` | The Free Roads | war_for_the_free_crowns / companies_for_the_stranger | – | 9,12 | 70 | Avail: `zin_afrit_dead`, or no East Lands country has `zin_afrit_eastern_client` (no court is the Worshipdom's eastern client); add_spirit free_roads; tooltip "An outcome of this game, not history." | 100 when available |
 
 ### Branch 9: The Prince of All Roads
 
@@ -256,7 +262,7 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `close_the_roads_to_noris` | Close the Roads to Noris | war_chest_of_the_pact | – | 23,7 | 35 | Avail: check `zin_east_caravan_war_open`; call zin_diplo_grant_cb(cb=zin_cb_caravan_roads, target=Noris, days=365); Rivalry +5 | hist: 0 unless `zin_war_of_last_crowns` and Noris and Stabilo stand on opposite sides of the King of the East, then 50; free: 15, ×3 at rivalry ≥ 90 |
 | `seize_the_salt_road` | Seize the Salt Road | close_the_roads_to_noris | – | 22,8 | 70 | Avail: at war with Noris; call zin_east_claim_road(road=salt) | 100 when available |
-| `terms_at_postondoroth` | Terms at Postondoroth | seize_the_salt_road | – | 23,9 | 35 | Avail: at war with Noris; check zin_stabilo_holds_salt_road; event_for Noris zin_east.26 | 200 when available |
+| `terms_at_postondoroth` | Terms at Postondoroth | seize_the_salt_road | – | 23,9 | 35 | Avail: at war with Noris; check zin_stabilo_holds_salt_road; call zin_stabilo_tree_caravan_peace (fires `zin_east.26` for Noris) | 200 when available |
 | `answer_the_coalition` | Answer the Eastern Coalition | standing_companies / war_chest_of_the_pact | – | 27,7 | 35 | Avail: flag `zin_east_coalition_member`; war_support 0.05; army_experience 10 | 300 when available |
 | `spoils_for_the_ledger` | Spoils for the Ledger | answer_the_coalition | – | 28,8 | 70 | Avail: at war with a Magical Lands realm; call zin_east_claim_rift; political_power 25 | 80 when available |
 | `the_road_to_parim` | The Road to Parim | answer_the_coalition / spoils_for_the_ledger | – | 27,9 | 70 | Avail: `zin_east_turns_west`; war_support 0.05; army_experience 15 | 80 when available |
@@ -268,7 +274,7 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 
 | Path | Content |
 | --- | --- |
-| `docs/design/focus/stabilo.json` | Tree data (source of truth) |
+| `docs/design/focus/stabilo.json` | Tree data (source of truth); compiled by `tools/content/modules/focus_compiler.mjs` (new) into every file below |
 | `common/national_focus/zin_stabilo.txt` | Compiled tree; `country = { factor = 0 modifier = { add = 10 zin_is_stabilo = yes } }` |
 | `common/ideas/zin_focus_stabilo.txt` | Spirits below, plus `zin_stabilo_credit` (the ledger's loan idea, given to debtors) |
 | `common/dynamic_modifiers/zin_stabilo.txt` | `zin_stabilo_ledger_income` |
@@ -277,7 +283,7 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `common/scripted_triggers/zin_stabilo.txt` | Tree triggers below |
 | `localisation/english/zin_focus_stabilo_l_english.yml` | All text |
 
-The ledger's decisions live in the mechanic's decision file under category `zin_east_ledger`. The mechanic's effects, triggers, decisions and events (`zin_east_*`) are only called here. Stabilo's ruler and councillors come from the characters spec; this tree adds no new character.
+The ledger's decisions live in the mechanic's decision file under category `zin_east_ledger`. The mechanic's effects, triggers, decisions and events (`zin_east_*`) are written by `tools/content/modules/mech_eastern_kings.mjs` and only called here; that module writes `zin_stabilo_monthly`, `zin_stabilo_add_debt` and `zin_stabilo_debt` as stubs until this tree is compiled. The compiled tree replaces the interim "Long Peace" tree (`zin_long_peace_*`, written today by `tools/content/modules/vanilla_removal.mjs`) for Stabilo; `zin_is_stabilo` is the mechanic's generated tag trigger. Prince Cereos, `zin_stabilo_mylun` and `zin_stabilo_hardfic` come from the characters spec ([../../02_lore/02_characters.md](../../02_lore/02_characters.md)) through `tools/content/modules/characters.mjs`; this tree adds no new character. Start values: `zin_stabilo_monthly` writes the start debts (Drak 20, Plutondo 10, Mostok 10) on its first run (flag `zin_stabilo_debts_set`) and adds `zin_stabilo_ledger_income`.
 
 ### Variables and flags
 
@@ -291,6 +297,8 @@ The ledger's decisions live in the mechanic's decision file under category `zin_
 | `zin_stabilo_ledger_open`, `zin_stabilo_loans_to_kings`, `zin_stabilo_collect`, `zin_stabilo_rival_banks`, `zin_stabilo_envoys`, `zin_stabilo_open_pact`, `zin_stabilo_pact_under_prince`, `zin_stabilo_pays_host` | Stabilo flags | Unlocks and markers |
 | `zin_stabilo_cannot_pay` | court flag, 730 days | Stops `zin_stabilo.32` repeating for that court |
 | `zin_stabilo_bought_off` | court flag | Set by Buy Off the Coalition; raises the court's peace chance in `zin_east.45` by 20 |
+| `zin_stabilo_debts_set` | Stabilo flag | Start debts written once |
+| `zin_east_caravan_bonus` | Stabilo variable (mechanic) | Caravan wealth bonus ("Bonus +n") |
 
 ### Tree-declared scripted effects and triggers
 
@@ -303,18 +311,23 @@ The ledger's decisions live in the mechanic's decision file under category `zin_
 | `zin_stabilo_pact_gift` | effect | Every Stabilo faction member: political power +25, opinion of Stabilo +10, debt −10 |
 | `zin_stabilo_debtor_lean` (`value`) | effect | `zin_east_add_lean(−value)` on every court with debt ≥ 20 |
 | `zin_stabilo_insure_roads` | effect | Influence +5 on every road whose charter Stabilo holds; +3 on the others |
-| `zin_stabilo_debt_tribute` | effect | Every court with debt ≥ 40 sends 300 infantry equipment to Stabilo; its debt −10 |
+| `zin_stabilo_debt_tribute` | effect | Every court with debt ≥ 40 sends 300 `zin_arms_equipment` to Stabilo (`send_equipment`); its debt −10 |
 | `zin_stabilo_creditor` | effect | Every court with debt ≥ 50: lean +10 toward Stabilo |
 | `zin_stabilo_honour_hardfic` | effect | `add_skill_level` 1 to `zin_stabilo_hardfic` if he serves Stabilo |
 | `zin_stabilo_fortify_march` | effect | Bunker +1 in up to three Stabilo states that border a Noris state |
 | `zin_stabilo_subsidise` | effect | Every court with debt ≥ 20: debt −10, lean +10 toward Stabilo |
-| `zin_stabilo_arm_the_groves` | effect | The Magical Lands realm with the most `zin_is_site_rift_west` states at war with a coalition member receives 1,000 infantry equipment from Stabilo's stockpile (`send_equipment` if available, else `add_equipment_to_stockpile` on the target and a matching removal) |
+| `zin_stabilo_arm_the_groves` | effect | The Magical Lands realm with the most `zin_is_site_rift_west` states at war with a coalition member receives 1,000 `zin_arms_equipment` from Stabilo's stockpile (`send_equipment`) |
 | `zin_stabilo_buy_off` | effect | Every coalition member with debt ≥ 30: debt −20 and its AI chance to make peace in `zin_east.45` +20 (country flag `zin_stabilo_bought_off`, read by that event) |
 | `zin_stabilo_seize_refuser_debts` | effect | Every free crown at war with Stabilo with debt ≥ 30: `add_state_claim` on its road states |
 | `zin_stabilo_debt_vassals` | effect | Every court with debt ≥ 70 and lean ≤ −40: `zin_east.71` (protection offer) |
 | `zin_stabilo_ask_homage` | effect | `zin_east.73` to Alerhia, Miaed, Erco and Plutondo where they exist and are not Stabilo's subjects |
 | `zin_stabilo_withdraw_from_rift` | effect | `white_peace` with every enemy whose capital is in the Magical or Middle Lands |
 | `zin_stabilo_holds_salt_road` | trigger | Stabilo and its subjects control 3 or more `zin_is_site_road_salt` states |
+| `zin_stabilo_tree_deep_sand` | effect | `country_event = { id = zin_east.35 }` (Into the Deep Sand) |
+| `zin_stabilo_tree_temple_loan` | effect | `country_event = { id = zin_east.30 }` (the temples' loan offer) |
+| `zin_stabilo_tree_kneel_offer` | effect | `country_event = { id = zin_afrit.51 }` on Stabilo, sent from the Worshipdom (`FROM` = the hub) |
+| `zin_stabilo_tree_lead_free_crowns` | effect | If no country has `zin_east_free_crowns_leader`: `set_country_flag = zin_east_free_crowns_leader` and `country_event = { id = zin_east.51 }` |
+| `zin_stabilo_tree_caravan_peace` | effect | Noris: `country_event = { id = zin_east.26 }` (Terms at the Wells) |
 
 ### Spirits
 
@@ -323,18 +336,18 @@ Ids are `zin_stabilo_<key>`. Every modifier key exists in the game's modifier do
 | Key | Name | Modifiers | Added / removed |
 | --- | --- | --- | --- |
 | `princes_household` | The Prince's Household | political_power_gain 0.10, trade_opinion_factor 0.05 | The Prince of Postondoroth; permanent |
-| `contract_courts` | The Contract Courts | stability_factor 0.03, consumer_goods_factor -0.02 | The Contract Courts |
-| `princes_purse` | The Prince's Purse | political_power_factor 0.10, stability_factor -0.03 | The Prince's Purse |
-| `council_of_houses` | The Council of Houses | stability_factor 0.08, political_power_gain -0.05 | The Council of Houses |
-| `letters_of_credit` | Letters of Credit | trade_opinion_factor 0.10, consumer_goods_factor -0.02 | Letters of Credit (with Bonus +0.25) |
+| `contract_courts_spirit` | The Contract Courts | stability_factor 0.03, consumer_goods_factor -0.02 | The Contract Courts |
+| `princes_purse_spirit` | The Prince's Purse | political_power_factor 0.10, stability_factor -0.03 | The Prince's Purse |
+| `council_of_houses_spirit` | The Council of Houses | stability_factor 0.08, political_power_gain -0.05 | The Council of Houses |
+| `letters_of_credit_spirit` | Letters of Credit | trade_opinion_factor 0.10, consumer_goods_factor -0.02 | Letters of Credit (with Bonus +0.25) |
 | `great_ledger` | The Great Ledger | political_power_gain 0.10, production_factory_max_efficiency_factor 0.05 | The Great Ledger |
-| `fortified_caravanserais` | Fortified Caravanserais | army_core_defence_factor 0.05, supply_consumption_factor -0.05 | Fortified Caravanserais |
+| `fortified_caravanserais_spirit` | Fortified Caravanserais | army_core_defence_factor 0.05, supply_consumption_factor -0.05 | Fortified Caravanserais |
 | `prince_of_caravans` | Prince of the Caravans | trade_opinion_factor 0.10, production_speed_buildings_factor 0.10, consumer_goods_factor -0.03 | Prince of the Caravans (with Bonus +0.5) |
-| `pact_council` | The Pact Council | opinion_gain_monthly_factor 0.15, improve_relations_maintain_cost_factor -0.20 | The Pact Council |
-| `pact_garrisons` | Pact Garrisons | army_core_defence_factor 0.05, army_defence_factor 0.03 | Pact Garrisons |
-| `shield_companies` | The Shield-Companies | training_time_army_factor -0.10, experience_gain_army_factor 0.05 | The Shield-Companies; swapped by The Standing Companies |
-| `standing_companies` | The Standing Companies | army_org_factor 0.05, training_time_army_factor -0.10, army_defence_factor 0.03 | The Standing Companies |
-| `contracts_of_service` | Contracts of Service | army_morale_factor 0.05, land_reinforce_rate 0.02 | Contracts of Service |
+| `pact_council_spirit` | The Pact Council | opinion_gain_monthly_factor 0.15, improve_relations_maintain_cost_factor -0.20 | The Pact Council |
+| `pact_garrisons_spirit` | Pact Garrisons | army_core_defence_factor 0.05, army_defence_factor 0.03 | Pact Garrisons |
+| `shield_companies_spirit` | The Shield-Companies | training_time_army_factor -0.10, experience_gain_army_factor 0.05 | The Shield-Companies; swapped by The Standing Companies |
+| `standing_companies_spirit` | The Standing Companies | army_org_factor 0.05, training_time_army_factor -0.10, army_defence_factor 0.03 | The Standing Companies |
+| `contracts_of_service_spirit` | Contracts of Service | army_morale_factor 0.05, land_reinforce_rate 0.02 | Contracts of Service |
 | `desert_shield` | The Desert Shield | army_core_defence_factor 0.10, heat_attrition_factor -0.20 | The Desert Shield |
 | `temple_partners` | Partners of the Temple Banks | stability_factor 0.05, political_power_gain -0.03 | Partners of the Temple Banks; removed by Close the Temple Accounts |
 | `princes_auditors` | The Prince's Auditors | enemy_operative_detection_chance_factor 0.10, political_power_gain 0.05 | The Prince's Auditors |
@@ -355,37 +368,55 @@ The mechanic adds its own ideas to Stabilo when they apply (`zin_east_temple_loa
 
 ### Events (namespace `zin_stabilo`)
 
-All are fired by focus, decision, option or tree-effect calls; none has its own trigger. Text before `zin_afrit_revealed` never names Afrit.
+All are fired by focus, decision, option or tree-effect calls; none has its own trigger (`.32` is fired by `zin_stabilo_monthly`). Text before `zin_afrit_revealed` never names Afrit. Pictures are existing catalog keys; the wanted picture `counting_house` (merchants at a counting-table with ledgers and coin, ungated) does not exist yet: `generic_court` stands in until it is generated.
 
-| Id | Title | For | Fired by | Options (effects; AI) |
-| --- | --- | --- | --- | --- |
-| .1 | The Merchant Houses | Stabilo | The Merchant Houses | "The Prince keeps the keys" (political_power 50) / "The houses share the table" (stability 0.03); AI 60/40 |
-| .3 | The Houses Vote | Stabilo | The Houses Vote | Vote for roads (Inf +5 on every road) / Vote for credit (Debt +5 on Drak; political_power 25) / Vote for companies (army_experience 10); AI 40/40/20 |
-| .4 | The Prince and the Houses | Stabilo | The Prince and the Houses | The houses and the prince sign a charter of duties. "Sealed" (stability 0.03) |
-| .5 | The Wells of Obmi | Obmi | The Wells of Obmi | Lease the wells to Postondoroth (Lean +15 toward Stabilo; Stabilo Inf +10 sand) / The wells are ours (lean −5 toward Stabilo); AI chance = 50 − lean |
-| .21 | Obmi's Answer | Stabilo | option of .5 | Result text |
-| .6 | The Friendship of Drak | Drak | The Friendship of Drak | Renew the Pact (Lean +15 toward Stabilo; Stabilo ↔ Drak opinion +15) / Ask Postondoroth to forgive our debt (debt −15; Lean +5 toward Stabilo); AI 60/40 |
-| .22 | Drak's Answer | Stabilo | option of .6 | Result text |
-| .7 | A Letter from Postondoroth | Plutondo | A Letter to Prince Blozan | Accept the Pact's friendship (Lean +15 toward Stabilo) / Ask for a loan first (Debt +10; political_power 50 for Plutondo) / Keep our distance (lean −5 toward Stabilo); AI by lean |
-| .23 | Plutondo's Answer | Stabilo | option of .7 | Result text |
-| .8 | The Mines of Erco | Erco | The Mines of Erco | Sell ore to the Pact (Lean +15 toward Stabilo; Erco political_power 25) / The mountains keep their own (lean −5 toward Stabilo); AI chance = 40 − lean |
-| .24 | Erco's Answer | Stabilo | option of .8 | Result text |
-| .9 | A Bargain with Miaed | Miaed | A Bargain with Miaed | Open the passes to Pact caravans (Lean +15 toward Stabilo; Stabilo Inf +10 sand) / The passes stay closed (lean −5 toward Stabilo); AI chance = 50 − lean |
-| .25 | Miaed's Answer | Stabilo | option of .9 | Result text |
-| .10 | A Marriage in the Pact | Stabilo | A Marriage in the Pact | A daughter of Drak's royal house (Lean +20 toward Stabilo on Drak) / A prince of Plutondo (Lean +20 toward Stabilo on Plutondo) / A daughter of the House of Azano (stability 0.03; political_power 25); AI 40/40/20 |
-| .11 | The Temple Accounts | Stabilo | The Temple Accounts | The temple banks offer the prince a partnership in the caravan trade. "Consider it" (political_power 25) / "Send them the auditors' compliments" (stability −0.01; political_power 25) |
-| .12 | The Crowned Ledger | Stabilo | The Crowned Ledger | The prince is crowned on the counting-table of Postondoroth. "Long live the Prince of All Roads" (war_support 0.05) |
-| .13 | The Reckoning of the East | Stabilo | The Reckoning of the East | Council debate; shows rivalry, dominance, total debt and footholds. "The prince will answer" |
-| .30 | A Loan from Postondoroth | target court | `zin_stabilo_lend`, `zin_stabilo_great_loan` | Accept (effects per decision) / Decline; AI as in the ledger section |
-| .31 | Postondoroth Calls In a Debt | target court | `zin_stabilo_call_in_debt` | Pay in gold / Pay in kind / Default; AI: gold if political power ≥ 100, kind if it has 1,000 infantry equipment spare, else default |
-| .32 | A Debtor Cannot Pay | Stabilo | `zin_stabilo_monthly`, a court at debt ≥ 90 | Restructure / Press for payment / Forgive; AI 60/20/20 |
-| .33 | A Court Defaults | Stabilo | default option of .31 | Acknowledge; if a peace gate is open, a claim on one road state of the defaulter |
+| Id | Title | For | Fired by | Picture | Options (effects; AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | The Merchant Houses | Stabilo | The Merchant Houses | `generic_court` | "The Prince keeps the keys" (political_power 50) / "The houses share the table" (stability 0.03); AI 60/40 |
+| .3 | The Houses Vote | Stabilo | The Houses Vote | `generic_court` | Vote for roads (Inf +5 on every road) / Vote for credit (Debt +5 on Drak; political_power 25) / Vote for companies (army_experience 10); AI 40/40/20 |
+| .4 | The Prince and the Houses | Stabilo | The Prince and the Houses | `generic_court` | The houses and the prince sign a charter of duties. "Sealed" (stability 0.03) |
+| .5 | The Wells of Obmi | Obmi | The Wells of Obmi | `generic_wilds` | Lease the wells to Postondoroth (Lean +15 toward Stabilo; Stabilo Inf +10 sand) / The wells are ours (lean −5 toward Stabilo); AI chance = 50 − lean |
+| .21 | Obmi's Answer | Stabilo | option of .5 | `generic_wilds` | Result text |
+| .6 | The Friendship of Drak | Drak | The Friendship of Drak | `generic_court` | Renew the Pact (Lean +15 toward Stabilo; Stabilo ↔ Drak opinion +15) / Ask Postondoroth to forgive our debt (debt −15; Lean +5 toward Stabilo); AI 60/40 |
+| .22 | Drak's Answer | Stabilo | option of .6 | `generic_court` | Result text |
+| .7 | A Letter from Postondoroth | Plutondo | A Letter to Prince Blozan | `generic_court` | Accept the Pact's friendship (Lean +15 toward Stabilo) / Ask for a loan first (Debt +10; political_power 50 for Plutondo) / Keep our distance (lean −5 toward Stabilo); AI by lean |
+| .23 | Plutondo's Answer | Stabilo | option of .7 | `generic_court` | Result text |
+| .8 | The Mines of Erco | Erco | The Mines of Erco | `generic_wilds` | Sell ore to the Pact (Lean +15 toward Stabilo; Erco political_power 25) / The mountains keep their own (lean −5 toward Stabilo); AI chance = 40 − lean |
+| .24 | Erco's Answer | Stabilo | option of .8 | `generic_wilds` | Result text |
+| .9 | A Bargain with Miaed | Miaed | A Bargain with Miaed | `generic_wilds` | Open the passes to Pact caravans (Lean +15 toward Stabilo; Stabilo Inf +10 sand) / The passes stay closed (lean −5 toward Stabilo); AI chance = 50 − lean |
+| .25 | Miaed's Answer | Stabilo | option of .9 | `generic_wilds` | Result text |
+| .10 | A Marriage in the Pact | Stabilo | A Marriage in the Pact | `generic_peace` | A daughter of Drak's royal house (Lean +20 toward Stabilo on Drak) / A prince of Plutondo (Lean +20 toward Stabilo on Plutondo) / A daughter of the House of Azano (stability 0.03; political_power 25); AI 40/40/20 |
+| .11 | The Temple Accounts | Stabilo | The Temple Accounts | `houses` | The temple banks offer the prince a partnership in the caravan trade. "Consider it" (political_power 25) / "Send them the auditors' compliments" (stability −0.01; political_power 25) |
+| .12 | The Crowned Ledger | Stabilo | The Crowned Ledger | `generic_court` | The prince is crowned on the counting-table of Postondoroth. "Long live the Prince of All Roads" (war_support 0.05) |
+| .13 | The Reckoning of the East | Stabilo | The Reckoning of the East | `generic_court` | Council debate; shows rivalry, dominance, total debt and footholds. "The prince will answer" |
+| .30 | A Loan from Postondoroth | target court | `zin_stabilo_lend`, `zin_stabilo_great_loan` | `generic_court` | Accept (effects per decision) / Decline; AI as in the ledger section |
+| .31 | Postondoroth Calls In a Debt | target court | `zin_stabilo_call_in_debt` | `generic_court` | Pay in gold / Pay in kind / Default; AI: gold if political power ≥ 100, kind if it has 1,000 `zin_arms_equipment` spare, else default |
+| .32 | A Debtor Cannot Pay | Stabilo | `zin_stabilo_monthly`, a court at debt ≥ 90 | `generic_court` | Restructure / Press for payment / Forgive; AI 60/20/20 |
+| .33 | A Court Defaults | Stabilo | default option of .31 | `generic_court` | Acknowledge; if a peace gate is open, a claim on one road state of the defaulter |
+
+### Icons
+
+Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.md)); the sprites `GFX_focus_zin_<key>` and `GFX_idea_zin_<key>` exist in game today. Spirits use the icon of the focus that adds them; `credit` uses `scroll_sealed`. `eastern_throne` appears only on a focus that needs `zin_afrit_king_of_east`, when the King of the East is public.
+
+| Branch | Focus → icon |
+| --- | --- |
+| 1 | the_merchant_houses `guild_hall`; prince_of_postondoroth `sceptre`; house_of_azano `ledger_coins`; seat_at_postondoroth `throne_gold`; contract_courts `seal_wax`; house_of_shindor `sword_shield`; guild_of_scales `toll_house`; princes_purse `coin_chest`; council_of_houses `council_table`; minted_crowns `coin_chest`; law_of_the_scales `seal_royal`; the_houses_vote `council_table`; hall_of_the_golden_ledger `ledger_coins`; the_pact_council_sits `banner_league`; prince_and_houses `charter_old` |
+| 2 | ledger_of_the_east `ledger_coins`; bankers_of_fudol `coin_chest`; letters_of_credit `scroll_sealed`; loans_to_the_kings `tribute_chest`; the_counting_houses `ledger_coins`; caravan_insurance `caravan`; collect_the_debts `seal_wax`; interest_of_peace `olive_branch`; debts_paid_in_iron `mine_cart`; rivals_of_the_temple_banks `eye_watchful`; credit_for_the_rift `anchor_rope`; the_great_ledger `book_lore`; creditor_of_kings `two_crowns` |
+| 3 | the_southern_roads `traders_road`; caravanserais_of_the_gold_road `traders_road`; sand_road_charter `charter_old`; west_to_alerhia `roads_paved`; wells_of_obmi `granary`; desert_patrols `camel_rider`; markets_of_the_moco `market_stalls`; trade_of_the_south_lands `caravan`; a_bid_for_the_rift_road `map_unrolled`; fortified_caravanserais `fort_wall`; beyond_the_dunes `compass_rose`; prince_of_the_caravans `caravan` |
+| 4 | stabilo_pact `scroll_treaty`; friendship_of_drak `handshake_oath`; envoys_of_the_pact `envoy`; pact_council `council_table`; prince_blozan `scroll_sealed`; mines_of_erco `mine_cart`; open_the_pact `seal_wax`; oreton_and_the_red_lands `map_unrolled`; bargain_with_miaed `mountain_pass`; pact_garrisons `fort_wall`; marriage_in_the_pact `alliance_rings`; the_mountain_road `roads_paved`; pact_of_equals `alliance_rings`; pact_under_the_prince `charter_shield`; the_greater_pact `banner_league` |
+| 5 | shield_companies `sword_shield`; hire_the_sellswords `coin_chest`; general_shindor `war_council_map`; contracts_of_service `scroll_treaty`; arsenal_of_fudol `forge_anvil`; forts_on_the_noris_march `fort_wall`; paid_in_full `tribute_chest`; pikes_of_postondoroth `spear_levy`; foreign_captains `banner_plain`; siege_engineers `siege_trebuchet`; the_desert_shield `fort_wall`; standing_companies `levy_muster`; war_chest_of_the_pact `coin_chest`; army_of_the_pact `war_drums` |
+| 6 | temple_accounts `sun_veiled`; partners_of_the_temple_banks `handshake_oath`; audit_the_temples `ledger_coins`; relief_houses_of_fudol `house_first_light`; the_princes_auditors `eye_watchful`; temple_loans_for_the_roads `tribute_chest`; close_the_books_to_the_temples `book_lore`; faith_and_interest `seal_royal` |
+| Reckoning | reckoning_of_the_east `council_table` |
+| 7 | treasurer_of_the_east `sun_veiled`; gold_for_the_deliverer `tribute_chest`; contracts_with_the_temple `scroll_treaty`; kneel_with_open_ledgers `eastern_throne`; paymaster_of_the_host `coin_chest`; debts_of_the_refusers `seal_wax`; the_kings_mint `foundry_fire`; close_the_kings_books `book_lore` |
+| 8 | paymaster_of_the_free_crowns `banner_league`; close_the_temple_accounts `scroll_sealed`; subsidies_for_the_courts `coin_chest`; arms_for_the_elder_groves `elven_bow`; the_free_crowns_purse `tribute_chest`; buy_off_the_coalition `olive_branch`; war_for_the_free_crowns `sword_shield`; companies_for_the_stranger `banner_plain`; the_free_roads `traders_road` |
+| 9 | prince_of_all_roads `crown_hailed`; buy_the_charters `scroll_treaty`; protection_contracts `charter_shield`; vassals_by_contract `seal_wax`; the_crowned_ledger `crown_hailed`; the_princes_due `tribute_chest`; the_great_kingdoms_sign `two_crowns`; no_credit_for_a_god_king `empty_throne`; one_east_under_postondoroth `alliance_rings` |
+| 10 | close_the_roads_to_noris `toll_house`; seize_the_salt_road `caravan`; terms_at_postondoroth `olive_branch`; answer_the_coalition `ship_voyage`; spoils_for_the_ledger `tribute_chest`; the_road_to_parim `palace_parim`; call_back_the_companies `banner_laid_down` |
 
 ### Data checks for this tree
 
 - 111 focuses; unique keys; unique (x,y); x from 0 to 29; every focus's y is greater than the y of each of its prerequisites.
 - Exclusive pairs: princes_purse / council_of_houses; pact_of_equals / pact_under_the_prince; partners_of_the_temple_banks / audit_the_temples; the three route focuses. The compiler makes them symmetric.
-- Days are 35 or 70.
+- Days are multiples of 7 (35 or 70).
 - `raw` blocks: none planned.
 - Every `call` and `check` names an effect or trigger defined here, in the mechanic spec, the Afrit spec (`zin_afrit_add_footholds`, `zin_afrit_purge_houses`), or the diplomacy spec (`zin_diplo_grant_cb`).
 
@@ -429,20 +460,30 @@ The Caravan War line is taken under the historical path only if Noris and Stabil
 
 ## Acceptance
 
-1. The compiler accepts `stabilo.json`: 111 focuses, unique positions, prerequisites above their focuses, symmetric exclusions, days multiples of 7, no unknown modifier, effect or trigger.
-2. The HOI4 Agent Tools focus inspector reports no errors; the focus renderer's review image shows ten readable branches within 30 columns.
-3. On 1 Thaw 4A 1748 no available focus can create a war goal, a claim or a war (offline scan).
-4. Start debts: Drak 20, Plutondo 10, Mostok 10; ledger income follows the total; interest adds 0.2 a month; `zin_stabilo.32` fires at 90 and not again for that court within 730 days.
+Build checks (focus compiler, `npm test` in `tools/`, including `tools/content/mech_eastern_kings.test.mjs` for the stubs):
+
+1. `stabilo.json` compiles: 111 focuses, unique keys and positions in columns 0–29 and rows 0–13, every prerequisite and exclusive exists, every focus sits below its prerequisites, the exclusive pairs and the three route focuses are symmetric, every `days` is a multiple of 7, no `raw` block, no unknown modifier, effect or trigger.
+2. Every icon is a catalog key and every event picture a picture key; no gated picture is used.
+3. Every `call` and `check` resolves to this tree's, the eastern mechanic's, the Afrit spec's or the diplomacy spec's effects and triggers; the mechanic's stubs `zin_stabilo_monthly`, `zin_stabilo_add_debt` and `zin_stabilo_debt` are replaced by the compiled ones.
+4. Offline scan: on 1 Thaw 4A 1748 no available focus can create a war goal, a claim or a war.
 5. The Reckoning of the East is unavailable on day one and opens on `zin_afrit_king_of_east`, on `zin_eastern_invasion`, or after 1 Thaw 4A 1753 once `zin_golden_king_dead` is set.
-6. Historical AI run: Stabilo takes exactly one route focus in 4A 1756; it is Treasurer of the East if and only if Stabilo is a client, else Paymaster of the Free Crowns; Stabilo does not fight Noris before `zin_war_of_last_crowns`.
-7. UNITE_WITHOUT_AFRIT run where Stabilo has the higher dominance: Stabilo takes The Prince of All Roads and reaches The Prince's Due.
-8. No text reachable before `zin_afrit_revealed` names Afrit (compiler secret check); no text uses "Sunhot" as a place.
-9. All 22 spirits load; every modifier key is in the game's modifier documentation.
+6. Text scan: no text reachable before `zin_afrit_revealed` names Afrit or the Hidden Council; no text names Eindil; no text uses "Sunhot" as a place (compiler secret check).
+7. All 22 spirits and the dynamic modifier load; every modifier key is in the 1.19.3 modifier documentation.
+8. HOI4 Agent Tools focus inspector reports no errors; the focus renderer shows ten readable branches within 30 columns.
+
+Isolated Linux run:
+
+9. One in-game year from 1 Thaw 4A 1748: Stabilo uses this tree (not `zin_long_peace_*`), takes The Merchant Houses, The Ledger of the East and The Southern Roads first, declares no war; start debts are Drak 20, Plutondo 10, Mostok 10; interest adds 0.2 a month; ledger income follows the total; `error.log` has no line from `zin_stabilo` files.
+10. Console test: a court set to debt 90 fires `zin_stabilo.32` once and not again for that court within 730 days.
+11. Historical observer run to 4A 1760 (PROGRAM observer run): Stabilo takes exactly one route focus in 4A 1756; it is Treasurer of the East if and only if Stabilo is a client (a subject with `zin_autonomy_eastern_client`), else Paymaster of the Free Crowns; Stabilo does not fight Noris before `zin_war_of_last_crowns`.
+12. A `zin_rule_ai_east` = UNITE_WITHOUT_AFRIT run where Stabilo has the higher dominance: Stabilo takes The Prince of All Roads and reaches The Prince's Due.
 
 ## Open questions
 
-1. Are the houses (the Prince's own, Azano, Shindor) and the Guild of Scales acceptable, named after the proposed characters, or does the owner have Stabilo's great families in mind?
-2. Should Stabilo's lending compete openly with the temples (Rivals of the Temple Banks), or would the owner rather keep the Deliverer's friends unopposed in the East?
-3. Postondoroth is today a victory point in Drak's land (map spec S5). If it stays there, should the tree gain a focus to buy or reclaim the old seat from Drak?
-4. Is "The Prince of All Roads" a good title for a Stabilo that unites the East?
-5. Should debt ever let Stabilo annex a court outright, or only make it a subject (as here)?
+Each proceeds on the proposal written into the design; the owner's questions are in [../../OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md), section "east lands".
+
+1. The houses (the Prince's, Azano, Shindor) and the Guild of Scales. **Proceeds on:** adopted, labelled proposed ("east lands" 8).
+2. Should Stabilo's lending compete openly with the temples? **Proceeds on:** yes, through Rivals of the Temple Banks; it never reveals the Deliverer ("east lands" 10).
+3. Postondoroth lies in Drak's land on today's map. **Proceeds on:** no extra focus; `@postondoroth` falls back to the capital, and the map spec's capital decision settles it ("east lands" 2).
+4. Is "The Prince of All Roads" the right title? **Proceeds on:** adopted, labelled proposed. Listed for the integrator as a new owner question.
+5. May debt ever annex a court outright? **Proceeds on:** no; at most a subject through Vassals by Contract. Listed for the integrator as a new owner question.

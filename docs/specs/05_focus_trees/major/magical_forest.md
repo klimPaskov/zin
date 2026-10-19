@@ -1,6 +1,6 @@
 # Magical Forest Focus Tree
 
-**Status:** Draft. **Priority:** 4. **Phase:** 4.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 4. **Phase:** 4.
 
 ## Purpose
 
@@ -14,9 +14,9 @@ The tree has 121 focuses in thirteen groups, 30 columns wide (x 0–29), 15 rows
 
 **Proposed in the vault:** the Wall Accord of 4A 96 and the Pale March; the elected council of houses; the Worshipdom as a hermitage of about 4A 1520; the dragon entrusted to Eindil as a free ally by elves of the Magical Lands; the start on 1 Thaw 4A 1748.
 
-**Working table (not fixed canon):** Herrodon and Andos Enda are rivals; Nolorim stays a separate country; the table also lists Andos Enda in the Leren Compact (left open here).
+**Working table (not fixed canon):** Herrodon and Andos Enda are rivals; Nolorim stays a separate country. The table also lists Andos Enda in the Leren Compact; decision S5 settles the game: Andos Enda is not in the Leren Compact at the start (the Elven Refusal), and Lerendor can court it. This tree adds no Leren link.
 
-**Proposed here:** every focus, spirit, event, the proposed general Ithrandel, and every number. The Old Houses and the Open Houses are proposed leanings of the council, not lore parties. The tree never states how the eastern invasion ends for the elves, where Varner lives, what his death means for the Magical Lands, or whether Andos Enda belongs to the Leren Compact. Before `zin_afrit_revealed` no text names Afrit or calls the hermitage dark; before `zin_eindil_named` no text names Eindil.
+**Proposed here:** every focus, spirit, event, the proposed general Ithrandel, and every number. The Old Houses and the Open Houses are proposed leanings of the council, not lore parties. The tree never states how the eastern invasion ends for the elves, where Varner lives, or what his death means for the Magical Lands. Before `zin_afrit_revealed` no text names Afrit or the Hidden Council or calls the hermitage dark; before `zin_eindil_named` no text names Eindil (players read "the Man from the Ice", decision D4).
 
 ## Design
 
@@ -48,12 +48,13 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 
 - **Prerequisites:** `a + b` means a and b; `a / b` means a or b.
 - **x,y:** grid column and row.
-- **Effects** use the compiler vocabulary of [../00_format_and_compiler.md](../00_format_and_compiler.md): `political_power 50`, `stability 0.05`, `war_support 0.05`, `army_experience 10`, `navy_experience 10`, `manpower 5000`, `add_spirit k`, `swap_spirit old→new`, `remove_spirit k`, `event zin_x.n`, `event_for Name zin_x.n`, `flag f` (country flag), `global_flag f`, `building type level @where`, `research [categories] 50% ×uses`, `equipment type amount`, `wargoal Name type`, `for_country Name: …`, `call effect(args)`, `tooltip`. Spirit keys are short and compile to `zin_magical_forest_<key>`.
+- **Effects** use the compiler vocabulary of [../00_format_and_compiler.md](../00_format_and_compiler.md): `political_power 50`, `stability 0.05`, `war_support 0.05`, `army_experience 10`, `navy_experience 10`, `manpower 5000`, `add_spirit k`, `swap_spirit old→new`, `remove_spirit k`, `event zin_magical_forest.n`, `event_for Name zin_magical_forest.n`, `flag f` (country flag), `global_flag f`, `building type level @where`, `research [categories] 50% ×uses`, `equipment type amount`, `wargoal Name type`, `for_country Name: …`, `call effect(args)`, `tooltip`. Spirit keys are short and compile to `zin_magical_forest_<key>`.
 - **Mechanic shorthand:** `kinship +n` = `call zin_elves_add_kinship(n)`; `rivalry +n` = `call zin_elves_add_rivalry(n)`; `grievance +n` = `call zin_elves_add_wall_grievance(n)`; `bond +n` = `call zin_elves_add_roost_bond(n)`; `pass watch +n` = `call zin_elves_add_pass_watch(n)`; `goodwill X` = `call zin_elves_goodwill(target = X)`.
 - **Avail:** the focus's `available` conditions. **Bypass:** used once (*Call the Kindred*).
+- **Mechanic events** (`zin_elves.*`, `zin_diplo.*`) are never fired with the compiler's `event` effect, which names this tree's events; each goes through a tree-declared scripted effect (Implementation).
 - **Where keys:** `@capital`, `@random_owned`, `@random_coastal`, `@elven_wall` (an owned state adjacent to a `zin_is_site_great_wall` state; site trigger `zin_is_site_elven_wall`).
-- **Research categories** are the warfare spec's `zin_cat_*` and vanilla `industry`, `land_doctrine`; equipment is `zin_elven_arms_equipment` (warfare spec).
-- **Secret-safe names.** Focus names are visible in the tree from day one, so no focus name contains "Eindil", "son of Ein" or "Afrit". Descriptions of story focuses use scripted localisation that shows the name only after `zin_eindil_named` (the journey spec's naming rule: "the stranger" until then).
+- **Research categories** are the warfare spec's `zin_cat_*` ([../../03_gameplay/01_warfare.md](../../03_gameplay/01_warfare.md); until warfare stage 2 the builder maps each to its vanilla fallback (proposed): `zin_cat_arms` and `zin_cat_bows` to `infantry_weapons`, `zin_cat_mounts` to `support_tech`, `zin_cat_wards` and `zin_cat_skies` to `electronics`, `zin_cat_galleys` to `naval_equipment`) and vanilla `industry`; equipment is `zin_elven_arms_equipment` (warfare spec; fallback `infantry_equipment`). Doctrines cost experience in 1.19.3, so doctrine bonuses are army experience.
+- **Secret-safe names.** Focus names are visible in the tree from day one, so no focus name contains "Eindil", "son of Ein" or "Afrit". Descriptions of story focuses use the scripted localisation `zin_loc_eindil`, which shows "the Man from the Ice" before `zin_eindil_named` and "Eindil" after (decision D4).
 - **AI** is `ai.base` and its main factors. "hist" applies under `zin_rule_historical_path = HISTORICAL` (or `zin_rule_ai_elves = DEFAULT` following it); under `PLAUSIBLE` each "hist" factor f applies as 1 + (f − 1) ÷ 2 (×0 becomes ×0.5); "free" under `FREE`; "mar" when `zin_rule_ai_elves = MARCH`; "hid" when the AI drifts to the Hidden Woods (`FREE` with *The Old Houses Speak* taken). "N when available" means the base before the condition is met is 0 and becomes N once it is.
 
 ### Branch 1: The Council of Houses
@@ -63,16 +64,16 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `council_of_houses` | The Council of Houses | – | – | 1,0 | 70 | political_power 50; event zin_magical_forest.1 | 50 |
-| `speakers_chair` | The First Speaker's Chair | council_of_houses | – | 0,1 | 35 | add_spirit speakers_chair | 20 |
+| `speakers_chair` | The First Speaker's Chair | council_of_houses | – | 0,1 | 35 | add_spirit speakers_chair_spirit | 20 |
 | `roll_of_houses` | The Roll of the Houses | council_of_houses | – | 2,1 | 70 | stability 0.05; kinship +3 | 20 |
 | `long_election` | The Long Election | speakers_chair / roll_of_houses | – | 1,2 | 70 | Avail: after 1748.9.1; event zin_magical_forest.2; popularity light 0.05 | 20; ×3 before 1749.3.1 (election month) |
-| `old_houses` | The Old Houses Speak | long_election | open_houses | 0,3 | 35 | add_spirit old_houses; grievance +5 | 10; hid ×4; mar ×0.2 |
-| `open_houses` | The Open Houses Speak | long_election | old_houses | 2,3 | 35 | add_spirit open_houses; grievance -5 | 10; hist ×2; mar ×2 |
-| `speakers_of_peace` | Speakers of Peace | old_houses / open_houses | – | 1,4 | 70 | swap_spirit speakers_chair→speakers_of_peace; political_power 50 | 15 |
+| `old_houses` | The Old Houses Speak | long_election | open_houses | 0,3 | 35 | add_spirit old_houses_spirit; grievance +5 | 10; hid ×4; mar ×0.2 |
+| `open_houses` | The Open Houses Speak | long_election | old_houses | 2,3 | 35 | add_spirit open_houses_spirit; grievance -5 | 10; hist ×2; mar ×2 |
+| `speakers_of_peace` | Speakers of Peace | old_houses / open_houses | – | 1,4 | 70 | swap_spirit speakers_chair_spirit→speakers_of_peace_spirit; political_power 50 | 15 |
 | `remember_edrans_folly` | Remember Edran's Folly | speakers_of_peace | erdae_is_shared | 0,5 | 35 | political_power 50; flag zin_magical_forest_folly_remembered (route weights) | 10; hist ×2; hid ×3 |
 | `erdae_is_shared` | Erdae Is Shared | speakers_of_peace | remember_edrans_folly | 2,5 | 35 | goodwill Aenor; goodwill Kingson; flag zin_magical_forest_erdae_shared (route weights) | 10; mar ×5 |
 | `houses_in_harmony` | Houses in Harmony | remember_edrans_folly / erdae_is_shared | – | 1,6 | 70 | stability 0.05; political_power 50 | 15 |
-| `counsel_of_ancients` | Counsel of the Ancients | houses_in_harmony | – | 1,7 | 70 | add_spirit counsel_of_ancients | 15 |
+| `counsel_of_ancients` | Counsel of the Ancients | houses_in_harmony | – | 1,7 | 70 | add_spirit counsel_of_ancients_spirit | 15 |
 
 ### Branch 2: The Old Groves
 
@@ -81,15 +82,15 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `old_groves` | The Old Groves | – | – | 5,0 | 70 | building infrastructure 1 @capital; political_power 25 | 40 |
-| `elder_archive` | The Elder Archive | old_groves | – | 4,1 | 70 | add_spirit elder_archive | 20 |
+| `elder_archive` | The Elder Archive | old_groves | – | 4,1 | 70 | add_spirit elder_archive_spirit | 20 |
 | `wellsprings` | The Essence Wellsprings | old_groves | – | 6,1 | 70 | building synthetic_refinery 1 @capital (Essence Distillery) | 15 |
-| `loremasters` | The Loremasters | elder_archive | – | 3,2 | 35 | research [land_doctrine] 50% ×1; political_power 25 | 15 |
+| `loremasters` | The Loremasters | elder_archive | – | 3,2 | 35 | army_experience 15; political_power 25 | 15 |
 | `deep_timber` | Timber of the Deep Woods | old_groves | – | 5,2 | 70 | building industrial_complex 1 @random_owned | 20 |
 | `songs_of_making` | Songs of Making | loremasters | – | 3,3 | 70 | research [industry] 50% ×2 | 15 |
 | `grove_workshops` | The Grove Workshops | deep_timber | – | 5,3 | 70 | building arms_factory 1 @capital; equipment zin_elven_arms_equipment 500 | 15 |
 | `mushroom_trade` | Trade With the Mushroom Forest | grove_workshops / wellsprings | – | 7,4 | 70 | building infrastructure 1 @random_owned; political_power 25 | 10 |
-| `harvest_moots` | The Harvest Moots | songs_of_making / grove_workshops | – | 4,4 | 70 | add_spirit harvest_moots | 15 |
-| `living_halls` | The Living Halls | harvest_moots + mushroom_trade | – | 5,5 | 70 | building industrial_complex 2 @random_owned; add_spirit living_halls | 10 |
+| `harvest_moots` | The Harvest Moots | songs_of_making / grove_workshops | – | 4,4 | 70 | add_spirit harvest_moots_spirit | 15 |
+| `living_halls` | The Living Halls | harvest_moots + mushroom_trade | – | 5,5 | 70 | building industrial_complex 2 @random_owned; add_spirit living_halls_spirit | 10 |
 | `forest_provides` | The Forest Provides | living_halls | – | 5,6 | 70 | building arms_factory 1 @random_owned; research [zin_cat_arms] 50% ×1 | 8; ×3 after zin_eastern_invasion |
 
 ### Branch 3: The Accord of the Wall
@@ -100,7 +101,7 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `wall_accord` | The Accord of the Wall | – | – | 9,0 | 70 | event zin_magical_forest.4; goodwill Kingson; political_power 25 | 40 |
 | `customs_at_the_gate` | Customs at the Gate | wall_accord | – | 8,1 | 35 | event_for Aenor zin_magical_forest.5 | 20; hist ×2 |
-| `wall_traders` | Traders of the Wall Roads | wall_accord | – | 10,1 | 70 | add_spirit wall_traders | 20 |
+| `wall_traders` | Traders of the Wall Roads | wall_accord | – | 10,1 | 70 | add_spirit wall_traders_spirit | 20 |
 | `friends_at_kingson` | Friends at Kingson | customs_at_the_gate / wall_traders | – | 9,2 | 70 | goodwill Kingson; political_power 25; grievance -5 | 15 |
 | `watch_from_our_side` | Watch From Our Side | wall_traders | – | 11,2 | 70 | building bunker 1 @elven_wall; army_experience 5 | 10 |
 | `wall_moot` | The Wall Moot | friends_at_kingson | – | 8,3 | 70 | flag zin_magical_forest_wall_moot (decision cost 25); grievance -10 | 20; hist ×2 |
@@ -123,12 +124,12 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | `mediate_rivals` | Mediate Between the Rivals | old_rivalry | – | 14,2 | 70 | rivalry -15; kinship +5; flag zin_magical_forest_mediator (mediation decision cooldown 180 days) | 25; hist ×2 |
 | `wardens_for_passes` | Wardens for Nolorim's Passes | envoys_to_kin / mediate_rivals | – | 13,3 | 70 | Avail: exists Nolorim; pass watch +15; kinship +3 | 15; ×3 with zin_magical_forest_forewarned_east |
 | `boundary_groves` | The Boundary Groves | mediate_rivals | – | 15,3 | 35 | event_for Herrodon zin_magical_forest.11; event_for Andos Enda zin_magical_forest.11 | 20 |
-| `elder_moot` | The Elder Moot | gifts_to_great_realms / wardens_for_passes | – | 13,4 | 70 | Avail: kinship ≥ 40; event zin_elves.30 (the Elder Moot); kinship +10 | 20 |
+| `elder_moot` | The Elder Moot | gifts_to_great_realms / wardens_for_passes | – | 13,4 | 70 | Avail: kinship ≥ 40; call zin_magical_forest_call_moot (fires the mechanic's `zin_elves.30`, the Elder Moot); kinship +10 | 20 |
 | `stone_in_passes` | Stone in the High Passes | wardens_for_passes | – | 14,4 | 70 | Avail: exists Nolorim; pass watch +15; for_country Nolorim: equipment zin_elven_arms_equipment 300 | 10; ×3 with zin_magical_forest_forewarned_east |
-| `shared_songs` | Shared Songs of the Kin | elder_moot | – | 12,5 | 70 | add_spirit shared_songs; research [zin_cat_wards] 50% ×1 | 15 |
+| `shared_songs` | Shared Songs of the Kin | elder_moot | – | 12,5 | 70 | add_spirit shared_songs_spirit; research [zin_cat_wards] 50% ×1 | 15 |
 | `bind_the_rivals` | Bind the Old Rivals | elder_moot + boundary_groves | – | 14,5 | 70 | Avail: rivalry ≤ 40; rivalry -20; kinship +10 | 10 |
 | `kindred_of_the_woods` | The Kindred of the Woods | shared_songs / bind_the_rivals | – | 13,6 | 70 | Avail: check zin_elves_kindred_ready; call zin_elves_raise_kindred | 10; ×20 when available after zin_eastern_invasion |
-| `first_among_kin` | First Among the Kin | kindred_of_the_woods | – | 13,7 | 70 | add_spirit first_among_kin; kinship +10 | 15 |
+| `first_among_kin` | First Among the Kin | kindred_of_the_woods | – | 13,7 | 70 | add_spirit first_among_kin_spirit; kinship +10 | 15 |
 
 ### Branch 5: Keepers of the Roosts
 
@@ -156,7 +157,7 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | `pilgrim_roads` | Pilgrims on the Elven Roads | – | – | 20,0 | 35 | event zin_magical_forest.14 | 30 |
 | `pilgrim_hostels` | Hostels for the Pilgrims | pilgrim_roads | road_tolls | 19,1 | 70 | call zin_elves_set_pilgrim_roads(2); stability 0.03 | 15; hist ×2 |
 | `road_tolls` | Tolls on the Pilgrim Roads | pilgrim_roads | pilgrim_hostels | 21,1 | 70 | call zin_elves_set_pilgrim_roads(1); political_power 75 | 10 |
-| `eyes_on_roads` | Eyes on the Roads | pilgrim_hostels / road_tolls | – | 20,2 | 70 | add_spirit eyes_on_roads | 10 |
+| `eyes_on_roads` | Eyes on the Roads | pilgrim_hostels / road_tolls | – | 20,2 | 70 | add_spirit eyes_on_roads_spirit | 10 |
 | `courtesy_to_hermitage` | Courtesy to the Hermitage | eyes_on_roads | – | 19,3 | 35 | goodwill Worshipdom; political_power 25 | 10; hist ×2 |
 | `quiet_valleys` | Questions About the Quiet Valleys | eyes_on_roads | – | 21,3 | 70 | event zin_magical_forest.15 | 10 |
 | `temple_in_our_woods` | The Temple in Our Woods | courtesy_to_hermitage / quiet_valleys | – | 20,4 | 35 | Avail: zin_afrit_revealed; event zin_magical_forest.16; call zin_elves_set_pilgrim_roads(0) | 0; 100 when available |
@@ -174,12 +175,12 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | `elven_steeds` | Elven Steeds | wardens_of_woods | – | 24,1 | 70 | research [zin_cat_mounts] 50% ×1 | 15 |
 | `wardsong` | The Wardsong | forest_rangers | – | 22,2 | 70 | research [zin_cat_wards] 50% ×2 | 15 |
 | `archers_of_houses` | Archers of the Houses | forest_rangers / elven_steeds | – | 23,2 | 70 | equipment zin_elven_arms_equipment 1000; army_experience 10 | 15 |
-| `long_patrols` | The Long Patrols | elven_steeds | – | 25,2 | 70 | add_spirit long_patrols | 15 |
+| `long_patrols` | The Long Patrols | elven_steeds | – | 25,2 | 70 | add_spirit long_patrols_spirit | 15 |
 | `leaf_steel` | Leaf-Steel | archers_of_houses | – | 23,3 | 70 | research [zin_cat_arms] 50% ×2 | 10 |
-| `old_ways` | The Old Ways | wardsong / leaf_steel | – | 22,4 | 70 | add_spirit old_ways; army_experience 15 | 10 |
+| `old_ways` | The Old Ways | wardsong / leaf_steel | – | 22,4 | 70 | add_spirit old_ways_spirit; army_experience 15 | 10 |
 | `captains_of_houses` | Captains of the Houses | leaf_steel / long_patrols | – | 24,4 | 35 | call zin_magical_forest_recruit(zin_magical_forest_ithrandel); army_experience 5 | 10 |
-| `house_musters` | Every House a Muster | old_ways + captains_of_houses | – | 23,5 | 70 | Avail: at_war or zin_war_of_last_crowns or zin_eastern_invasion; add_spirit house_musters; manpower 5000 | 0; 100 when available |
-| `host_of_woods` | The Host of the Woods | house_musters | – | 23,6 | 70 | add_spirit host_of_woods; equipment zin_elven_arms_equipment 1500 | 0; 100 when available |
+| `house_musters` | Every House a Muster | old_ways + captains_of_houses | – | 23,5 | 70 | Avail: at_war or zin_war_of_last_crowns or zin_eastern_invasion; add_spirit house_musters_spirit; manpower 5000 | 0; 100 when available |
+| `host_of_woods` | The Host of the Woods | house_musters | – | 23,6 | 70 | add_spirit host_of_woods_spirit; equipment zin_elven_arms_equipment 1500 | 0; 100 when available |
 
 ### Branch 8: Varner's Trail
 
@@ -188,11 +189,11 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `tales_of_wizard` | Tales of the Wizard | – | – | 26,0 | 35 | event zin_magical_forest.17; research [zin_cat_wards] 50% ×1 | 25 |
-| `lantern_memory` | The Lantern Memory | tales_of_wizard | – | 26,1 | 70 | add_spirit lantern_memory | 15 |
+| `lantern_memory` | The Lantern Memory | tales_of_wizard | – | 26,1 | 70 | add_spirit lantern_memory_spirit | 15 |
 | `wards_against_death` | Wards Against Death | lantern_memory | – | 26,2 | 70 | Avail: zin_zol_rising; research [zin_cat_wards] 100% ×2 | 0; 200 when available |
-| `seek_the_wizard` | Seek the Wizard | lantern_memory | – | 27,2 | 35 | Avail: gathering dark ≥ 25 or zin_eindil_named or zin_zol_rising; flag zin_elves_varner_sought; event zin_elves.50 in 60 days | 30 |
+| `seek_the_wizard` | Seek the Wizard | lantern_memory | – | 27,2 | 35 | Avail: gathering dark ≥ 25 or zin_eindil_named or zin_zol_rising; flag zin_elves_varner_sought; call zin_magical_forest_seek_wizard (fires the mechanic's `zin_elves.50` in 60 days) | 30 |
 | `wizard_and_servant` | The Wizard and His Servant | seek_the_wizard | – | 27,3 | 35 | Avail: check zin_magical_forest_hosts_bearer; flag zin_magical_forest_wizard_found (Eindil event .87 after 30 days, not 90) | 0; 200 when available |
-| `wizard_falls` | When the Wizard Falls | wards_against_death / wizard_and_servant | – | 26,4 | 35 | Avail: zin_varner_dead; remove_spirit lantern_memory; add_spirit wizard_remembered | 0; 200 when available |
+| `wizard_falls` | When the Wizard Falls | wards_against_death / wizard_and_servant | – | 26,4 | 35 | Avail: zin_varner_dead; remove_spirit lantern_memory_spirit; add_spirit wizard_remembered | 0; 200 when available |
 
 ### Branch 9: The Rift Sea
 
@@ -209,10 +210,10 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | `call_the_kindred` | Call the Kindred | sails_on_rift | – | 24,9 | 35 | Bypass: check zin_elves_kindred_exists; call zin_elves_raise_kindred | 0; 300 when available |
 | `hold_high_passes` | Hold the High Passes | sails_on_rift | – | 26,9 | 70 | Avail: exists Nolorim; pass watch +20; for_country Nolorim: equipment zin_elven_arms_equipment 500 | 0; 200 when available |
 | `every_tree_a_wall` | Every Tree a Wall | sails_on_rift | – | 28,9 | 70 | add_spirit every_tree | 0; 300 when available |
-| `into_the_sea` | Throw Them Into the Sea | hold_high_passes / every_tree_a_wall | – | 27,10 | 70 | add_spirit into_the_sea | 0; 150 when available |
+| `into_the_sea` | Throw Them Into the Sea | hold_high_passes / every_tree_a_wall | – | 27,10 | 70 | add_spirit into_the_sea_spirit | 0; 150 when available |
 | `no_elf_pursues` | No Elf Pursues | into_the_sea | war_across_rift | 26,11 | 35 | flag zin_magical_forest_no_pursuit (AI seeks white peace once the invader holds no Magical Lands state); stability 0.05 | 50; hist ×10; free ×1 |
 | `war_across_rift` | Carry the War Across the Rift | into_the_sea | no_elf_pursues | 28,11 | 70 | call zin_magical_forest_wargoal_on_invader; war_support 0.05 | 10; hist ×0; free ×2; mar ×2 |
-| `woods_stand` | The Woods Stand | no_elf_pursues / war_across_rift | – | 27,12 | 70 | Avail: zin_eastern_invasion, not at war with an East Lands country; remove_spirit every_tree; remove_spirit into_the_sea; add_spirit woods_stand; kinship +10 | 0; 100 when available |
+| `woods_stand` | The Woods Stand | no_elf_pursues / war_across_rift | – | 27,12 | 70 | Avail: zin_eastern_invasion, not at war with an East Lands country; remove_spirit every_tree; remove_spirit into_the_sea_spirit; add_spirit woods_stand_spirit; kinship +10 | 0; 100 when available |
 
 ### Branch 10: The Question of the Refusal
 
@@ -228,14 +229,14 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| `refusal_stands` | The Refusal Stands | question_of_refusal | hidden_woods, kindred_marches | 9,9 | 35 | add_spirit refusal_stands; flag zin_magical_forest_route_refusal | 30; hist ×10; free ×2 |
+| `refusal_stands` | The Refusal Stands | question_of_refusal | hidden_woods, kindred_marches | 9,9 | 35 | add_spirit refusal_stands_spirit; flag zin_magical_forest_route_refusal | 30; hist ×10; free ×2 |
 | `healers_not_hosts` | Healers, Not Hosts | refusal_stands | – | 8,10 | 35 | flag zin_magical_forest_healers (Wanderer decisions -15 PP, 3 active instead of 2); political_power 25 | 20 |
 | `defend_what_is_ours` | Defend What Is Ours | refusal_stands | – | 10,10 | 70 | add_spirit defend_ours; building bunker 1 @capital | 20 |
 | `heed_the_warning` | Heed the Warning | healers_not_hosts / defend_what_is_ours | – | 9,11 | 35 | Avail: zin_eindil_named, zin_eindil_stage ≥ 8; war_support 0.05; kinship +5; research [zin_cat_wards] 50% ×1 | 0; 200 when available |
 | `shelter_the_bearer` | Shelter the Bearer | heed_the_warning | – | 8,12 | 35 | Avail: check zin_magical_forest_hosts_bearer; flag zin_magical_forest_shelters_bearer (discovery rolls halved); stability 0.03 | 0; 200 when available |
 | `free_ally` | A Free Ally From the Mountain | heed_the_warning | – | 10,12 | 35 | Avail: zin_eindil_named, zin_eindil_stage ≥ 8, check zin_world_is_dragon_keeper or opinion of the Keeper ≥ 50; flag zin_magical_forest_bearer_dragon_ready; bond -5 | 0; 200 when available |
 | `elder_wanderers` | The Elder Wanderers | shelter_the_bearer / free_ally | – | 9,13 | 70 | Avail: zin_war_of_last_crowns; timed flag zin_magical_forest_free_wanderers 180 days (Wanderer decisions cost 0); political_power 50 | 50 |
-| `refusal_remembered` | The Refusal Remembered | elder_wanderers | – | 8,14 | 70 | Avail: zin_eindil_crowned or after 1760.1.1; swap_spirit refusal_stands→refusal_remembered | 50 |
+| `refusal_remembered` | The Refusal Remembered | elder_wanderers | – | 8,14 | 70 | Avail: zin_eindil_crowned or after 1760.1.1; swap_spirit refusal_stands_spirit→refusal_remembered_spirit | 50 |
 | `new_accord` | A New Accord at the Wall | elder_wanderers | – | 10,14 | 70 | Avail: zin_afrit_dead or zin_eindil_crowned; not zin_wall_accord_broken; event_for Aenor zin_magical_forest.20 | 50 |
 
 ### Branch 12: The Kindred Marches
@@ -245,14 +246,14 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `kindred_marches` | The Kindred Marches | question_of_refusal | refusal_stands, hidden_woods | 16,9 | 35 | Avail: check zin_elves_march_allowed; event zin_magical_forest.21; call zin_diplo_lift_refusal (sets `zin_refusal_lifted`; news `zin_diplo.30`); call zin_elves_sync_refusal; global_flag zin_elves_march | 0; hist ×0; mar 100; free 5 |
-| `elven_host` | The Elven Host | kindred_marches | – | 15,10 | 70 | add_spirit elven_host; manpower 5000 | 100 |
+| `elven_host` | The Elven Host | kindred_marches | – | 15,10 | 70 | add_spirit elven_host_spirit; manpower 5000 | 100 |
 | `kin_beside_us` | Kin Beside Us | kindred_marches | – | 17,10 | 35 | if not check zin_elves_kindred_exists: call zin_elves_raise_kindred; event_for each Kindred member zin_magical_forest.22 | 100 |
 | `over_wall_as_friends` | Over the Wall as Friends | elven_host | – | 14,11 | 70 | Avail: not zin_wall_accord_broken; Aenor at war with a dark power; event_for Aenor zin_magical_forest.23 | 30 |
 | `against_the_dark` | Against the Dark | elven_host / kin_beside_us | – | 16,11 | 70 | Avail: check zin_magical_forest_dark_war_open; call zin_magical_forest_join_war_against_dark; war_support 0.10 | 100 when available |
 | `dragons_of_march` | Dragons of the March | kin_beside_us | – | 18,11 | 35 | Avail: zin_dragons_free ≥ 1, bond ≥ 40, `zin_world_dragon_pacts` < 3; call zin_elves_focus_dragon_pact | 100 when available |
-| `grand_alliance_remembered` | The Grand Alliance Remembered | against_the_dark / over_wall_as_friends | – | 15,12 | 70 | event zin_magical_forest.24; add_spirit grand_alliance_remembered | 50 |
+| `grand_alliance_remembered` | The Grand Alliance Remembered | against_the_dark / over_wall_as_friends | – | 15,12 | 70 | event zin_magical_forest.24; add_spirit grand_alliance_remembered_spirit | 50 |
 | `no_crown_from_victory` | No Crown From Victory | grand_alliance_remembered / dragons_of_march | – | 17,13 | 35 | stability 0.05; flag zin_magical_forest_asks_nothing (no claims or cores in peace deals); goodwill Aenor | 50 |
-| `home_to_woods` | Home to the Woods | no_crown_from_victory | – | 16,14 | 70 | Avail: not at war; clear_flag zin_refusal_lifted (an early return; otherwise the diplomacy spec returns the realm 365 days after its last war with a dark power); event zin_diplo.31; call zin_elves_sync_refusal; remove_spirit elven_host; remove_spirit grand_alliance_remembered; stability 0.05 | 100 when available |
+| `home_to_woods` | Home to the Woods | no_crown_from_victory | – | 16,14 | 70 | Avail: not at war; clear_flag zin_refusal_lifted (an early return; otherwise the diplomacy spec returns the realm 365 days after its last war with a dark power); call zin_magical_forest_return_to_refusal (fires the diplomacy spec's news `zin_diplo.31`); call zin_elves_sync_refusal; remove_spirit elven_host_spirit; remove_spirit grand_alliance_remembered_spirit; stability 0.05 | 100 when available |
 
 ### Branch 13: The Hidden Woods
 
@@ -260,13 +261,13 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| `hidden_woods` | The Hidden Woods | question_of_refusal | refusal_stands, kindred_marches | 3,9 | 35 | add_spirit hidden_woods | 5; hid 100; free ×2 with old_houses |
+| `hidden_woods` | The Hidden Woods | question_of_refusal | refusal_stands, kindred_marches | 3,9 | 35 | add_spirit hidden_woods_spirit | 5; hid 100; free ×2 with old_houses |
 | `wandering_paths` | Paths That Wander | hidden_woods | – | 2,10 | 70 | call zin_magical_forest_wandering_paths | 50 |
 | `no_men_in_woods` | No Men in the Woods | hidden_woods | – | 4,10 | 35 | call zin_elves_set_pilgrim_roads(0); call zin_elves_close_wall_roads (bypass-safe); political_power 25 | 50 |
 | `forest_forgets` | The Forest Forgets Men | wandering_paths / no_men_in_woods | – | 3,11 | 70 | call zin_afrit_add_footholds(-2) on ROOT; political_power 100 | 50 |
 | `groves_of_refuge` | Groves of Refuge | forest_forgets | – | 2,12 | 70 | building bunker 2 @capital; building bunker 1 @random_owned | 50 |
 | `secret_roosts` | The Secret Roosts | forest_forgets | – | 4,12 | 35 | flag zin_elves_roosts_sealed (Gifts for the Mountain unavailable while the Keeper holds it); bond +10 | 50 |
-| `woods_endure` | The Woods Endure | groves_of_refuge / secret_roosts | – | 3,13 | 70 | add_spirit woods_endure | 50 |
+| `woods_endure` | The Woods Endure | groves_of_refuge / secret_roosts | – | 3,13 | 70 | add_spirit woods_endure_spirit | 50 |
 
 ## Implementation
 
@@ -274,16 +275,16 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 
 | Path | Content |
 | --- | --- |
-| `docs/design/focus/magical_forest.json` | Tree data (source of truth) |
+| `docs/design/focus/magical_forest.json` | Tree data (source of truth); compiled by `tools/content/modules/focus_compiler.mjs` (new) into the next five files and the localisation |
 | `common/national_focus/zin_magical_forest.txt` | Compiled tree; `country = { factor = 0 modifier = { add = 10 original_tag = <Magical Forest> } }` (tag resolved by the builder) |
 | `common/ideas/zin_focus_magical_forest.txt` | Spirits below |
 | `events/zin_magical_forest.txt` | Namespace `zin_magical_forest`; effect-triggered only |
 | `common/scripted_effects/zin_magical_forest.txt` | Tree effects below |
 | `common/scripted_triggers/zin_magical_forest.txt` | Tree triggers below |
-| `common/characters/zin_magical_forest.txt` | The proposed general |
+| `common/characters/zin_magical_forest.txt` | The proposed general Ithrandel, written by `tools/content/modules/characters.mjs` from the characters spec's data (the focus compiler writes no characters; the row is requested from the characters spec) |
 | `localisation/english/zin_focus_magical_forest_l_english.yml` | All text |
 
-Mechanic effects, triggers, variables, decisions and events (`zin_elves_*`, namespace `zin_elves`) belong to the mechanic spec and are only called here.
+Mechanic effects, triggers, variables, decisions and events (`zin_elves_*`, namespace `zin_elves`) belong to the mechanic spec, are written by its module (proposed `tools/content/modules/mech_elves.mjs`) and are only called here. The compiled tree replaces the interim "Long Peace" tree (`zin_long_peace_*`, written today by `tools/content/modules/vanilla_removal.mjs`) for the Magical Forest.
 
 ### Tree-declared scripted effects and triggers
 
@@ -297,6 +298,9 @@ Mechanic effects, triggers, variables, decisions and events (`zin_elves_*`, name
 | `zin_magical_forest_join_war_against_dark` | effect | `add_to_war` against the strongest dark power at war (Volgan, then Zol, then Afrit's realm after the reveal) on the side of Aenor if it fights it, else Eindil's host, else the Light country with most Middle Lands states at war with it |
 | `zin_magical_forest_wandering_paths` | effect | `add_dynamic_modifier` `zin_elves_wandering_paths` (`enemy_attrition = 0.15`, `enemy_army_speed_factor = -0.10`) on every owned state |
 | `zin_magical_forest_hosts_bearer` | trigger | ROOT employs `zin_eindil` (`has_character = zin_eindil`) or is `global.zin_eindil_host` |
+| `zin_magical_forest_call_moot` | effect | `country_event = { id = zin_elves.30 }` (the mechanic's Elder Moot) |
+| `zin_magical_forest_seek_wizard` | effect | `country_event = { id = zin_elves.50 days = 60 }` (Word From the Wizard) |
+| `zin_magical_forest_return_to_refusal` | effect | The diplomacy spec's news `zin_diplo.31` (a realm returns to the Refusal) for every country it names |
 | `zin_magical_forest_dark_war_open` | trigger | A country with `zin_diplo_is_dark_power` is at war with Aenor or controls a Middle Lands or Magical Lands state |
 
 ### Characters
@@ -316,36 +320,36 @@ Ids are `zin_magical_forest_<key>`. Every modifier key exists in the game's modi
 
 | Key | Name | Modifiers | Added / removed |
 | --- | --- | --- | --- |
-| `speakers_chair` | The First Speaker's Chair | political_power_gain 0.10 | The First Speaker's Chair; swapped by Speakers of Peace |
-| `speakers_of_peace` | Speakers of Peace | political_power_gain 0.15, stability_factor 0.05 | Speakers of Peace |
-| `old_houses` | The Old Houses | drift_defence_factor 0.15, stability_factor 0.05, opinion_gain_monthly_factor -0.10 | The Old Houses Speak |
-| `open_houses` | The Open Houses | opinion_gain_monthly_factor 0.15, production_speed_buildings_factor 0.05, trade_opinion_factor 0.10 | The Open Houses Speak |
-| `counsel_of_ancients` | Counsel of the Ancients | research_speed_factor 0.05, political_power_gain 0.05 | Counsel of the Ancients |
-| `elder_archive` | The Elder Archive | research_speed_factor 0.05 | The Elder Archive |
-| `harvest_moots` | The Harvest Moots | consumer_goods_factor -0.03, stability_factor 0.03 | The Harvest Moots |
-| `living_halls` | The Living Halls | production_factory_max_efficiency_factor 0.05, production_factory_efficiency_gain_factor 0.05 | The Living Halls |
-| `wall_traders` | Traders of the Wall Roads | trade_opinion_factor 0.10, consumer_goods_factor -0.02 | Traders of the Wall Roads; suspended (removed) while `zin_elves_wall_roads_closed`, restored on reopening |
-| `shared_songs` | Shared Songs of the Kin | research_speed_factor 0.03, opinion_gain_monthly_factor 0.10 | Shared Songs of the Kin |
-| `first_among_kin` | First Among the Kin | political_power_gain 0.05, improve_relations_maintain_cost_factor -0.20 | First Among the Kin |
+| `speakers_chair_spirit` | The First Speaker's Chair | political_power_gain 0.10 | The First Speaker's Chair; swapped by Speakers of Peace |
+| `speakers_of_peace_spirit` | Speakers of Peace | political_power_gain 0.15, stability_factor 0.05 | Speakers of Peace |
+| `old_houses_spirit` | The Old Houses | drift_defence_factor 0.15, stability_factor 0.05, opinion_gain_monthly_factor -0.10 | The Old Houses Speak |
+| `open_houses_spirit` | The Open Houses | opinion_gain_monthly_factor 0.15, production_speed_buildings_factor 0.05, trade_opinion_factor 0.10 | The Open Houses Speak |
+| `counsel_of_ancients_spirit` | Counsel of the Ancients | research_speed_factor 0.05, political_power_gain 0.05 | Counsel of the Ancients |
+| `elder_archive_spirit` | The Elder Archive | research_speed_factor 0.05 | The Elder Archive |
+| `harvest_moots_spirit` | The Harvest Moots | consumer_goods_factor -0.03, stability_factor 0.03 | The Harvest Moots |
+| `living_halls_spirit` | The Living Halls | production_factory_max_efficiency_factor 0.05, production_factory_efficiency_gain_factor 0.05 | The Living Halls |
+| `wall_traders_spirit` | Traders of the Wall Roads | trade_opinion_factor 0.10, consumer_goods_factor -0.02 | Traders of the Wall Roads; suspended (removed) while `zin_elves_wall_roads_closed`, restored on reopening |
+| `shared_songs_spirit` | Shared Songs of the Kin | research_speed_factor 0.03, opinion_gain_monthly_factor 0.10 | Shared Songs of the Kin |
+| `first_among_kin_spirit` | First Among the Kin | political_power_gain 0.05, improve_relations_maintain_cost_factor -0.20 | First Among the Kin |
 | `wyrm_songs` | Songs for the Wyrms | stability_factor 0.02, air_attack_factor 0.05 | Songs for the Wyrms; while present the bond gains 0.5 a month (mechanic) |
-| `eyes_on_roads` | Eyes on the Roads | enemy_operative_detection_chance_factor 0.15, civilian_intel_factor 0.05 | Eyes on the Roads |
-| `long_patrols` | The Long Patrols | army_intel_factor 0.15, experience_gain_army_factor 0.05 | The Long Patrols |
-| `old_ways` | The Old Ways | terrain_penalty_reduction 0.10, army_org_factor 0.03 | The Old Ways |
-| `house_musters` | Every House a Muster | conscription_factor 0.15, recruitable_population_factor 0.10 | Every House a Muster; removed 365 days after the last war ends |
-| `host_of_woods` | The Host of the Woods | army_defence_factor 0.10, army_org_factor 0.05 | The Host of the Woods |
-| `lantern_memory` | The Lantern Memory | research_speed_factor 0.03, stability_factor 0.02 | The Lantern Memory; removed by When the Wizard Falls |
+| `eyes_on_roads_spirit` | Eyes on the Roads | enemy_operative_detection_chance_factor 0.15, civilian_intel_factor 0.05 | Eyes on the Roads |
+| `long_patrols_spirit` | The Long Patrols | army_intel_factor 0.15, experience_gain_army_factor 0.05 | The Long Patrols |
+| `old_ways_spirit` | The Old Ways | terrain_penalty_reduction 0.10, army_org_factor 0.03 | The Old Ways |
+| `house_musters_spirit` | Every House a Muster | conscription_factor 0.15, recruitable_population_factor 0.10 | Every House a Muster; removed 365 days after the last war ends |
+| `host_of_woods_spirit` | The Host of the Woods | army_defence_factor 0.10, army_org_factor 0.05 | The Host of the Woods |
+| `lantern_memory_spirit` | The Lantern Memory | research_speed_factor 0.03, stability_factor 0.02 | The Lantern Memory; removed by When the Wizard Falls |
 | `wizard_remembered` | The Wizard Remembered | war_support_factor 0.05, army_morale_factor 0.05 | When the Wizard Falls |
 | `eastern_beacons` | Beacons on the Eastern Shore | coastal_bunker_effectiveness_factor 0.10, naval_detection 0.10 | Beacons on the Eastern Shore |
 | `every_tree` | Roots Like Walls | dig_in_speed_factor 0.20, max_dig_in 2, army_core_defence_factor 0.05 | Every Tree a Wall; removed by The Woods Stand |
-| `into_the_sea` | Throw Them Into the Sea | army_attack_factor 0.10, army_core_attack_factor 0.10 | Throw Them Into the Sea; removed by The Woods Stand |
-| `woods_stand` | The Woods Stand | stability_factor 0.05, war_support_factor 0.05 | The Woods Stand |
-| `refusal_stands` | The Refusal Stands | stability_factor 0.05, drift_defence_factor 0.10 | The Refusal Stands; swapped by The Refusal Remembered |
+| `into_the_sea_spirit` | Throw Them Into the Sea | army_attack_factor 0.10, army_core_attack_factor 0.10 | Throw Them Into the Sea; removed by The Woods Stand |
+| `woods_stand_spirit` | The Woods Stand | stability_factor 0.05, war_support_factor 0.05 | The Woods Stand |
+| `refusal_stands_spirit` | The Refusal Stands | stability_factor 0.05, drift_defence_factor 0.10 | The Refusal Stands; swapped by The Refusal Remembered |
 | `defend_ours` | Defend What Is Ours | army_core_defence_factor 0.10, war_support_factor 0.03 | Defend What Is Ours |
-| `refusal_remembered` | The Refusal Remembered | stability_factor 0.05, research_speed_factor 0.03 | The Refusal Remembered |
-| `elven_host` | The Elven Host | army_attack_factor 0.10, army_org_factor 0.05 | The Elven Host; removed by Home to the Woods |
-| `grand_alliance_remembered` | The Grand Alliance Remembered | army_morale_factor 0.10, experience_gain_army_factor 0.05 | The Grand Alliance Remembered; removed by Home to the Woods |
-| `hidden_woods` | The Hidden Woods | drift_defence_factor 0.25, stability_factor 0.05, opinion_gain_monthly_factor -0.20 | The Hidden Woods |
-| `woods_endure` | The Woods Endure | army_core_defence_factor 0.15, recruitable_population_factor 0.10 | The Woods Endure |
+| `refusal_remembered_spirit` | The Refusal Remembered | stability_factor 0.05, research_speed_factor 0.03 | The Refusal Remembered |
+| `elven_host_spirit` | The Elven Host | army_attack_factor 0.10, army_org_factor 0.05 | The Elven Host; removed by Home to the Woods |
+| `grand_alliance_remembered_spirit` | The Grand Alliance Remembered | army_morale_factor 0.10, experience_gain_army_factor 0.05 | The Grand Alliance Remembered; removed by Home to the Woods |
+| `hidden_woods_spirit` | The Hidden Woods | drift_defence_factor 0.25, stability_factor 0.05, opinion_gain_monthly_factor -0.20 | The Hidden Woods |
+| `woods_endure_spirit` | The Woods Endure | army_core_defence_factor 0.15, recruitable_population_factor 0.10 | The Woods Endure |
 
 The mechanic's ideas (`zin_elves_the_old_refusal`, `zin_elves_refusal_set_aside`, `zin_elves_woods_defended`, and others) are separate and managed by the mechanic.
 
@@ -378,7 +382,7 @@ All are fired by focus or option effects. Text before `zin_afrit_revealed` never
 
 ### Icons
 
-Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.md)); no new focus icon is needed. Spirits use the icon of the focus that adds them.
+Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.md)); the sprites `GFX_focus_zin_<key>` and `GFX_idea_zin_<key>` exist in game today, and no new focus icon is needed. Spirits use the icon of the focus that adds them.
 
 | Branch | Focus → icon |
 | --- | --- |
@@ -399,7 +403,7 @@ Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.m
 
 - 121 focuses; unique keys; unique (x,y); x from 0 to 29; every focus's y is greater than every prerequisite's y (checked with the generator script used to draft this spec).
 - Every exclusive pair is listed on both sides; the compiler makes it symmetric.
-- Days are 35 or 70.
+- Days are multiples of 7 (35 or 70).
 - `raw` blocks: none planned (limit 10).
 - Every `call` and `check` names an effect or trigger in the mechanic spec, this spec, the shared contract or another named spec (`zin_afrit_add_footholds` from the Afrit spec, `zin_diplo_lift_refusal` from the diplomacy spec, `zin_economy_add_gold` from the economy spec; the dragon grants go through the mechanic's `zin_elves_focus_dragon_pact`, which calls the magic spec's `zin_world_give_dragon`).
 - Focus names contain no "Eindil", "son of Ein" or "Afrit" (compiler secret scan; names are always visible).
@@ -445,20 +449,28 @@ With `zin_rule_historical_path = HISTORICAL` (and `zin_rule_ai_elves = DEFAULT`)
 
 ## Acceptance
 
-1. The compiler accepts `magical_forest.json`: 121 focuses, unique positions, prerequisites above their focuses, symmetric exclusions, days multiples of 7, no unknown modifier, effect or trigger.
-2. The HOI4 Agent Tools focus inspector reports no errors; the focus renderer's review image shows thirteen readable groups within 30 columns.
-3. On 1 Thaw 4A 1748 no available focus can create a war goal, a claim or a war (offline scan of every focus reachable before 4A 1751 without story flags).
-4. The Question of the Refusal is unavailable on day one and becomes available after `zin_golden_king_dead`, `zin_eindil_named`, `zin_eastern_invasion` or on 1 Thaw 4A 1751.
-5. *The Kindred Marches* is never available under `HISTORICAL` with `zin_rule_ai_elves = DEFAULT` before `zin_zol_manifested`.
-6. Historical AI run: The Refusal Stands is taken in 4A 1751–1752; Sails on the Rift Sea within 60 days of `zin_eastern_invasion`; Shelter the Bearer and A Free Ally From the Mountain while Eindil is in the forest; `zin_refusal_lifted` is never set on the Magical Forest; `zin_wall_accord_broken` is never set; the realm ends 4A 1760 at peace.
-7. `MARCH`-rule run: The Kindred Marches and Against the Dark are taken after `zin_elves_march_allowed`; Home to the Woods clears `zin_refusal_lifted` at peace.
-8. No text reachable before `zin_afrit_revealed` names Afrit; none before `zin_eindil_named` names Eindil (compiler secret check).
-9. All 30 spirits load; every modifier key is in the game's modifier documentation.
+Build checks (focus compiler and `npm test` in `tools/`):
+
+1. `magical_forest.json` compiles: 121 focuses, unique keys and positions in columns 0–29 and rows 0–14, every prerequisite and exclusive exists, every focus sits below its prerequisites, the exclusive pairs and the three route roots are symmetric, every `days` is a multiple of 7, no `raw` block, no unknown modifier, effect or trigger.
+2. Every icon is a catalog key; every event picture is a picture key, and `unmasking` is used only by `.16`, whose focus needs `zin_afrit_revealed`.
+3. Every `call` and `check` resolves to this tree's, the elves mechanic's, the Afrit spec's (`zin_afrit_add_footholds`), the diplomacy spec's (`zin_diplo_lift_refusal`) or the economy spec's (`zin_economy_add_gold`) effects and triggers; all 30 spirits load and every modifier key is in the 1.19.3 modifier documentation.
+4. Offline scan: on 1 Thaw 4A 1748 no available focus can create a war goal, a claim or a war (every focus reachable before 4A 1751 without story flags).
+5. The Question of the Refusal is unavailable on day one and becomes available after `zin_golden_king_dead`, `zin_eindil_named`, `zin_eastern_invasion` or on 1 Thaw 4A 1751; *The Kindred Marches* is never available under `HISTORICAL` with `zin_rule_ai_elves = DEFAULT` before `zin_zol_manifested`.
+6. Text scan: no focus name contains "Eindil", "son of Ein" or "Afrit"; no text reachable before `zin_afrit_revealed` names Afrit or the Hidden Council; none before `zin_eindil_named` names Eindil (compiler secret check).
+7. HOI4 Agent Tools focus inspector reports no errors; the focus renderer's review image shows thirteen readable groups within 30 columns.
+
+Isolated Linux run:
+
+8. One in-game year from 1 Thaw 4A 1748: the Magical Forest uses this tree (not `zin_long_peace_*`), takes The Council of Houses first, declares no war; `error.log` has no line from `zin_magical_forest` files.
+9. Historical observer run to 4A 1760 (PROGRAM observer run): The Refusal Stands is taken in 4A 1751–1752; Sails on the Rift Sea within 60 days of `zin_eastern_invasion`; Shelter the Bearer and A Free Ally From the Mountain while Eindil is in the forest; `zin_refusal_lifted` is never set on the Magical Forest; `zin_wall_accord_broken` is never set; the realm ends 4A 1760 at peace.
+10. `MARCH`-rule run: The Kindred Marches and Against the Dark are taken after `zin_elves_march_allowed`; Home to the Woods clears `zin_refusal_lifted` at peace.
 
 ## Open questions
 
-1. Are the Old Houses and the Open Houses acceptable as the council's two leanings, or does the owner have elven houses in mind?
-2. Should the tree name the First Speaker and the general (Lusiel, Ithrandel are proposals), or stay with offices?
-3. May the Kindred Marches route exist at all, as a far-diverged game, given the Refusal "should not be rewritten as a new alliance in the final invasion"? It never opens on the historical path.
-4. Should *Drive Out the Temple* stay (the elves take the Zilin Hills after the reveal), or should the elves only close their roads?
-5. The Magical Forest may not own a rift-coast state on the map. Should the tree's rift branch stay (defending the kin), or move to the rift realms' own trees?
+Each proceeds on the proposal written into the design; the owner's questions are in [../../OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md), section "elves" unless noted.
+
+1. The Old Houses and the Open Houses as the council's two leanings. **Proceeds on:** adopted, labelled proposed ("elves" 20; elections: "foundation" 4).
+2. Name the First Speaker and the general (Lusiel, Ithrandel)? **Proceeds on:** both named, labelled proposed ("elves" 20).
+3. May the Kindred Marches route exist at all? **Proceeds on:** kept as a far-diverged route that never opens on the historical path ("elves" 3).
+4. Keep *Drive Out the Temple*? **Proceeds on:** kept, after the reveal only, AI 0 under `HISTORICAL` ("elves" 7).
+5. The rift branch if the Magical Forest owns no rift-coast state. **Proceeds on:** kept; `zin_magical_forest_rift_watch` builds in kin realms' rift states, so the branch works without one ("elves" 22). Dragon Mountain is the Magical Forest's at the start ("elves" 2).

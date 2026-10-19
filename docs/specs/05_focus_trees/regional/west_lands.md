@@ -1,6 +1,6 @@
 # West Lands regional focus trees
 
-**Status:** Draft. **Priority:** 6. **Phase:** 6.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 6. **Phase:** 6 (tier B).
 
 ## Purpose
 
@@ -40,7 +40,8 @@ All six are realms of men.
 ### Conventions for every tree in this file
 
 - **Ids.** Tree id `regional_<name>`; focus ids `zin_regional_<name>_<key>`; spirits `zin_regional_<name>_<key>`; events namespace `zin_regional_<name>`; characters `zin_regional_<name>_<person>`; tree-declared effects and triggers `zin_regional_<name>_<verb>`. Spirit keys never repeat a focus key of the same tree.
-- **Defaults.** Days 35 unless marked 70d; AI base 10 unless given; no `available` block unless given. Lines read `key` **Name** (x,y) ← prerequisites: effects. "a, b" means a **or** b; "a + b" means a **and** b.
+- **Defaults.** Days 35 unless marked 70d; AI base 10 unless given; no `available` block unless given. Lines read `key` **Name** (x,y) ← prerequisites: effects. "a, b" means a **or** b; "a + b" means a **and** b; every name is a focus key of the same tree; "exclusive with" lists every excluded focus, on both sides. ★ marks a focus whose effects are in its tree's "Key focuses" table. Each tree's `### Icons` table gives every focus its catalog icon (sprite `GFX_focus_zin_<key>`); event pictures are in the events tables (`GFX_zin_evt_<key>`, standard crop).
+- **Effects** use the compiler vocabulary of [../00_format_and_compiler.md](../00_format_and_compiler.md): "research {cat} 0.5×1" is the `research` effect on a warfare category; "building X 1 random_coastal" is `building` with that `where`; "recruit `id`" is `call zin_regional_<name>_recruit {character: id}`; "event `k` to X" is `event_for`; "event `k` to the Aenor realm that holds Parim" is `call zin_aenor_event_for_parim {event: k}`, the Aenor mechanic's `zin_aenor_event_for_parim` (decision F7); the trees declare no helpers of their own for it.
 - **Shorthand.** **grudge ±n self** is `call zin_west_add_grudge (n)` on ROOT; **truce ±n**, **unity ±n**, **fleet ±n** call `zin_west_add_truce`, `zin_west_add_unity`, `zin_west_add_fleet`; **regard**, **renown** call `zin_eindil_add_regard` (ROOT) and `zin_eindil_add_renown`; **LC +n** is `flag zin_lost_cause_member` plus `call zin_lost_cause_add_strength (n)`; **join coalition** is `call zin_eindil_join_coalition`; **friend** is `check zin_eindil_friend`.
 - **Historical factor.** "hist ×f" applies while `zin_west_historical` is true.
 - **Research.** Warfare categories `zin_cat_*`; equipment `zin_arms_equipment`, `zin_armour_equipment`.
@@ -94,7 +95,7 @@ Start spirit (country history): `long_feuds_toll`, beside the start spec's `zin_
 | E. The Wardens' Host | 18–20 | 0–3 | start | Army |
 | F. The Sea Question | 4–8 | 6–9 | the Ford Council and the routes | Delegate, pledge, ships, stranded, relief |
 
-**A. The Wardens' Assembly.** Icons: `council_table`, `olive_branch`, `war_drums`, `seal_royal`.
+**A. The Wardens' Assembly.**
 
 - `wardens_assembly` **The Wardens' Assembly** (1,0) 70d: political power 75. AI 100.
 - `the_truce_party` **The Truce Party** (0,1) ← wardens_assembly: truce +3; stability 0.02. AI 15; hist ×0.5.
@@ -102,7 +103,7 @@ Start spirit (country history): `long_feuds_toll`, beside the start spec's `zin_
 - `pernias_seal` **Pernia's Seal** (1,2) ← the_truce_party, the_old_feud_party: political power 50; stability 0.03.
 - `the_assembly_united` **The Assembly United** (1,3) 70d ← pernias_seal: swap spirit `long_feuds_toll` → `wardens_of_the_river`.
 
-**B. The Grey Ford.** Icons: `grey_ford`, `river_ford`, `fort_wall`, `coin_chest`.
+**B. The Grey Ford.**
 
 - `the_ford_wardens` **The Ford Wardens** (6,0): political power 25; truce +2. AI 20.
 - ★ `propose_the_commission` **Propose a Commission** (5,1) ← the_ford_wardens.
@@ -113,7 +114,7 @@ Start spirit (country history): `long_feuds_toll`, beside the start spec's `zin_
 - ★ `the_winter_ford_remembered` **The Winter Ford Remembered** (7,3) ← defend_the_ford, walls_at_the_ford.
 - `peace_on_the_river` **Peace on the River** (6,4) ← a_lasting_peace, defend_the_ford, the_winter_ford_remembered: available not `zin_west_grey_ford_war`; stability 0.05; unity +5. AI 60.
 
-**C. The River's Wealth.** Icons: `canal_lock`, `timber_mill`, `toll_house`, `shipwright_yard`, `forge_anvil`.
+**C. The River's Wealth.**
 
 - `river_barges` **River Barges** (10,0): building infrastructure 1 random_owned. AI 25.
 - `the_mills_of_girdon` **The Mills of Girdon** (9,1) ← river_barges: building industrial_complex 1 capital; recruit `zin_regional_girdon_corla`.
@@ -121,18 +122,18 @@ Start spirit (country history): `long_feuds_toll`, beside the start spec's `zin_
 - `the_river_mouth_yards` **The River-Mouth Yards** (10,2) ← the_mills_of_girdon, river_tolls: building dockyard 1 random_coastal; if `zin_west_council`: fleet +1.
 - `arsenal_of_the_wardens` **The Wardens' Arsenal** (10,3) 70d ← the_river_mouth_yards: building arms_factory 1 capital.
 
-**D. Girdon's Friends.** Icons: `handshake_oath`, `crown_gold`, `alliance_rings`, `fort_wall`.
+**D. Girdon's Friends.**
 
 - `girdons_friends` **Girdon's Friends** (15,0): available not `zin_west_grey_ford_war`; political power 25. AI 30.
 - ★ `brothers_across_the_ford` **Brothers Across the Ford** (13,1) ← girdons_friends; exclusive with aenors_old_friend, the_southern_councils.
-- ★ `aenors_old_friend` **Parim's Old Friend** (15,1) ← girdons_friends; exclusive with the other two.
-- ★ `the_southern_councils` **The Southern Councils** (17,1) ← girdons_friends; exclusive with the other two.
+- ★ `aenors_old_friend` **Parim's Old Friend** (15,1) ← girdons_friends; exclusive with brothers_across_the_ford, the_southern_councils.
+- ★ `the_southern_councils` **The Southern Councils** (17,1) ← girdons_friends; exclusive with brothers_across_the_ford, aenors_old_friend.
 - `the_river_league_answered` **The River League Answered** (13,2) ← brothers_across_the_ford: available flag `zin_regional_girdon_brothers`; stability 0.05; unity +5.
 - `the_kings_guarantee` **The King's Guarantee** (15,2) ← aenors_old_friend: available flag `zin_regional_girdon_parims_friend`; spirit `kings_guarantee`.
 - `a_league_of_councils` **A League of Councils** (17,2) ← the_southern_councils: available flag `zin_regional_girdon_council_pact`; spirit `council_league`.
 - ★ `the_river_will_not_bend` **The River Will Not Bend** (15,3) ← the_river_league_answered, the_kings_guarantee, a_league_of_councils.
 
-**E. The Wardens' Host.** Icons: `sword_shield`, `bow_archers`, `spear_levy`, `levy_muster`.
+**E. The Wardens' Host.**
 
 - `warden_companies` **Warden Companies** (19,0): army experience 10. AI 20.
 - `river_bows` **River Bows** (18,1) ← warden_companies: research {zin_cat_bows} 0.5×1.
@@ -140,7 +141,7 @@ Start spirit (country history): `long_feuds_toll`, beside the start spec's `zin_
 - `aldos_wardens` **Aldo's Wardens** (19,2) ← river_bows, pike_and_shield: recruit `zin_regional_girdon_aldo`; spirit `warden_drill`.
 - `the_river_levy` **The River Levy** (19,3) ← aldos_wardens: manpower 2,000.
 
-**F. The Sea Question.** Icons: `scroll_treaty`, `banner_league`, `ship_voyage`, `banner_laid_down`.
+**F. The Sea Question.**
 
 - `a_delegate_to_the_ford` **A Delegate to the Ford Council** (6,6): available `zin_west_council`; unity +2; political power 25. AI 50.
 - `the_wardens_cross` **The Wardens Cross** (5,7) ← a_delegate_to_the_ford: available flag `zin_west_pledged`; manpower 2,000; army experience 10. AI 100.
@@ -148,6 +149,19 @@ Start spirit (country history): `long_feuds_toll`, beside the start spec's `zin_
 - `stranded_wardens` **Wardens Beyond the Sea** (5,8) ← the_wardens_cross: available flag `zin_west_stranded` + `zin_eindil_returned`; join coalition. AI 300.
 - `wardens_for_the_relief` **Wardens for the Relief** (7,8) ← girdon_sends_ships: available `zin_west_route_relief`; LC +3; regard +5. AI 50.
 - `home_from_the_sea` **Home from the Sea** (6,9) ← stranded_wardens, wardens_for_the_relief, girdon_sends_ships: available `zin_afrit_dead` or `zin_eindil_crowned`; stability 0.05; political power 50. AI 60.
+
+### Icons
+
+Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_zin_<key>`, `GFX_idea_zin_<key>`). Spirits use the icon of the focus that adds them; the start spirit `long_feuds_toll` uses `grey_ford`.
+
+| Branch | Focus → icon |
+| --- | --- |
+| A | wardens_assembly `council_table`; the_truce_party `olive_branch`; the_old_feud_party `war_drums`; pernias_seal `seal_royal`; the_assembly_united `banner_plain` |
+| B | the_ford_wardens `grey_ford`; propose_the_commission `scroll_treaty`; walls_at_the_ford `fort_wall`; the_blood_price `coin_chest`; defend_the_ford `sword_shield`; a_lasting_peace `scroll_treaty`; the_winter_ford_remembered `river_ford`; peace_on_the_river `olive_branch` |
+| C | river_barges `canal_lock`; the_mills_of_girdon `timber_mill`; river_tolls `toll_house`; the_river_mouth_yards `shipwright_yard`; arsenal_of_the_wardens `forge_anvil` |
+| D | girdons_friends `envoy`; brothers_across_the_ford `handshake_oath`; aenors_old_friend `palace_parim`; the_southern_councils `alliance_rings`; the_river_league_answered `banner_league`; the_kings_guarantee `charter_shield`; a_league_of_councils `council_table`; the_river_will_not_bend `fort_wall` |
+| E | warden_companies `sword_shield`; river_bows `bow_archers`; pike_and_shield `spear_levy`; aldos_wardens `war_council_map`; the_river_levy `levy_muster` |
+| F | a_delegate_to_the_ford `scroll_treaty`; the_wardens_cross `ship_voyage`; girdon_sends_ships `warship_sail`; stranded_wardens `lone_sword`; wardens_for_the_relief `banner_league`; home_from_the_sea `banner_laid_down` |
 
 ### Key focuses
 
@@ -177,12 +191,12 @@ Start spirit (country history): `long_feuds_toll`, beside the start spec's `zin_
 
 ### Events (namespace `zin_regional_girdon`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `commission_proposal` | Girdon Proposes a Commission | Gunwaith | *Propose a Commission* | **Sit with them** (AI 50; ×0.2 if Gunwaith has `zin_gunwaith_war_thanes`; hist ×0.2): global flag `zin_west_ford_commission`; truce +10. **Refuse**: truce −5 |
-| 2 | `brotherhood_offer` | Brothers Across the Ford? | Gunwaith | *Brothers Across the Ford* | **Clasp hands** (AI 50; hist ×2; ×2 after the war-king's peace): non-aggression pact with Girdon; opinion modifier `zin_regional_girdon_brothers` (+25) both ways; Girdon flag `zin_regional_girdon_brothers`; unity +5. **Not while the dead of the ford lie unburied**: nothing |
-| 3 | `parims_friendship` | The River Wardens Seek Parim's Friendship | Aenor realm | *Parim's Old Friend* | **Guarantee them** (AI 40; 70 while ruled by Aurevan): the realm guarantees Girdon; Girdon flag `zin_regional_girdon_parims_friend`; opinion +20 both ways. **Decline**: Girdon grudge +5 |
-| 4 | `council_pact` | A Pact of Councils | Corogon | *The Southern Councils* | **Sign** (AI 50): Corogon and Girdon guarantee each other; Girdon flag `zin_regional_girdon_council_pact`. **Decline**: nothing |
+| Id | Key | Title | Picture | To | Trigger | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `commission_proposal` | Girdon Proposes a Commission | `grey_ford_truce` | Gunwaith | *Propose a Commission* | **Sit with them** (AI 50; ×0.2 if Gunwaith has `zin_gunwaith_war_thanes`; hist ×0.2): global flag `zin_west_ford_commission`; truce +10. **Refuse**: truce −5 |
+| 2 | `brotherhood_offer` | Brothers Across the Ford? | `grey_ford_truce` | Gunwaith | *Brothers Across the Ford* | **Clasp hands** (AI 50; hist ×2; ×2 after the war-king's peace): non-aggression pact with Girdon; opinion modifier `zin_regional_girdon_brothers` (+25) both ways; Girdon flag `zin_regional_girdon_brothers`; unity +5. **Not while the dead of the ford lie unburied**: nothing |
+| 3 | `parims_friendship` | The River Wardens Seek Parim's Friendship | `generic_court` | Aenor realm | *Parim's Old Friend* | **Guarantee them** (AI 40; 70 while ruled by Aurevan): the realm guarantees Girdon; Girdon flag `zin_regional_girdon_parims_friend`; opinion +20 both ways. **Decline**: Girdon grudge +5 |
+| 4 | `council_pact` | A Pact of Councils | `generic_peace` | Corogon | *The Southern Councils* | **Sign** (AI 50): Corogon and Girdon guarantee each other; Girdon flag `zin_regional_girdon_council_pact`. **Decline**: nothing |
 
 Mechanic and journey events that reach Girdon: `zin_west.20` (Ford Commission), `.21` (raids), `.22`, `.24`, `.30`, `.31`, `.61`–`.63`, `.70`; journey *Girdon's Winter Ford* (event 21) and *The War-King's Terms* (event 33). Their owners hold the text.
 
@@ -237,7 +251,7 @@ Start spirit (country history): `downs_granaries`.
 | E. Lambin's Lances | 17–19 | 0–3 | start | Army |
 | F. The Far Shore | 8–12 | 6–9 | a western route chosen | The Crossing, the downs kept, the stranded |
 
-**A. Lord Werl's Court.** Icons: `feast_table`, `charter_old`, `granary`, `council_table`.
+**A. Lord Werl's Court.**
 
 - `lord_werls_court` **Lord Werl's Court** (1,0) 70d: political power 75. AI 100.
 - `ruins_of_the_old_stations` **Ruins of the Old Stations** (0,1) ← lord_werls_court: grudge +3 self; tooltip "Aenor's traders built here in the First Age. Their stones still stand." AI 15.
@@ -245,7 +259,7 @@ Start spirit (country history): `downs_granaries`.
 - `a_neutral_hall` **A Neutral Hall** (1,2) ← ruins_of_the_old_stations, the_grain_lords: stability 0.03.
 - `the_downs_united` **The Downs United** (1,3) 70d ← a_neutral_hall: swap spirit `downs_granaries` → `downs_united`.
 
-**B. Downs and Granaries.** Icons: `granary`, `horse_cavalry`, `farm_sowing`, `timber_mill`.
+**B. Downs and Granaries.**
 
 - `granaries_of_the_downs` **Granaries of the Downs** (5,0): building industrial_complex 1 capital. AI 25.
 - `horse_runs` **Horse Runs** (4,1) ← granaries_of_the_downs: spirit `horse_runs_kept`.
@@ -253,7 +267,7 @@ Start spirit (country history): `downs_granaries`.
 - `the_mill_towns` **The Mill Towns** (5,2) ← horse_runs, grain_for_the_sea: building industrial_complex 1 random_owned; building infrastructure 1 random_owned.
 - `the_great_granary` **The Great Granary** (5,3) 70d ← the_mill_towns: stability 0.05; flag `zin_regional_lambin_great_granary`.
 
-**C. The Peacemakers.** Icons: `olive_branch`, `envoy`, `grey_ford`, `banner_laid_down`, `handshake_oath`.
+**C. The Peacemakers.**
 
 - `the_peace_of_the_west` **The Peace of the West** (10,0): political power 25; truce +3. AI 30.
 - `envoys_to_the_ford` **Envoys to the Ford** (9,1) ← the_peace_of_the_west: truce +5; unity +2. AI 20; hist ×2.
@@ -263,7 +277,7 @@ Start spirit (country history): `downs_granaries`.
 - ★ `host_the_peace_talks` **Host the Peace Talks** (11,3) ← the_neutral_ground.
 - `the_war_kings_hosts` **Hosts of the War-King** (10,4) ← a_stranger_on_the_downs, host_the_peace_talks: available `zin_eindil_war_king`; regard +10; unity +5. AI 40.
 
-**D. The Old Claims.** Icons: `charter_old`, `granary`, `scroll_treaty`, `banner_league`.
+**D. The Old Claims.**
 
 - `the_old_claims` **The Old Claims** (14,0): grudge +3 self; political power 25. AI 20.
 - ★ `aenoran_grain_buyers` **Aenoran Grain Buyers** (13,1) ← the_old_claims; exclusive with the_claims_remembered.
@@ -272,7 +286,7 @@ Start spirit (country history): `downs_granaries`.
 - `bread_for_the_host` **Bread for the Host** (13,3) ← a_delegate_from_lambin: available `zin_west_route_crossing` or `zin_west_route_relief`; `call zin_regional_lambin_supply_convener`; political power 25. AI 30.
 - `the_downs_pledge` **The Downs' Pledge** (15,3) ← a_delegate_from_lambin: available flag `zin_west_pledged`; manpower 4,000; war support 0.05. AI 60.
 
-**E. Lambin's Lances.** Icons: `knight_lance`, `horse_cavalry`, `spear_levy`.
+**E. Lambin's Lances.**
 
 - `lances_of_lambin` **Lances of Lambin** (18,0): army experience 10. AI 20.
 - `riders_of_the_downs` **Riders of the Downs** (17,1) ← lances_of_lambin: research {zin_cat_mounts} 0.5×1; recruit `zin_regional_lambin_essa`.
@@ -280,13 +294,26 @@ Start spirit (country history): `downs_granaries`.
 - `the_lances_ride` **The Lances Ride** (18,2) 70d ← riders_of_the_downs, foot_of_the_mill_towns: spirit `lances_ride`.
 - `the_downs_levy` **The Downs Levy** (18,3) ← the_lances_ride: manpower 5,000.
 
-**F. The Far Shore.** Icons: `ship_voyage`, `granary`, `banner_laid_down`.
+**F. The Far Shore.**
 
 - `the_call_from_the_ford` **The Call from the Ford** (10,6): available `zin_west_route_crossing`, `zin_west_route_relief` or `zin_west_route_divided`; political power 50. AI 100.
 - `lambin_crosses` **Lambin Crosses** (9,7) ← the_call_from_the_ford: available flag `zin_west_pledged` + `zin_western_crossing`; timed spirit `across_the_sea` 180 days. AI 100.
 - `lambin_keeps_the_downs` **Lambin Keeps the Downs** (11,7) ← the_call_from_the_ford: available `zin_west_route_divided`, or no flag `zin_west_pledged`; stability 0.05; spirit `downs_kept`. AI 40.
 - `bread_for_the_stranded` **Bread for the Stranded** (9,8) ← lambin_crosses: available flag `zin_west_stranded`; stability 0.03; political power 25. AI 60.
 - `under_the_war_kings_banner_again` **Under the War-King's Banner Again** (9,9) ← bread_for_the_stranded: available `zin_eindil_returned`; join coalition; war support 0.05. AI 300.
+
+### Icons
+
+Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_zin_<key>`, `GFX_idea_zin_<key>`). Spirits use the icon of the focus that adds them; the start spirit `downs_granaries` uses `granary`.
+
+| Branch | Focus → icon |
+| --- | --- |
+| A | lord_werls_court `feast_table`; ruins_of_the_old_stations `quarry_stone`; the_grain_lords `granary`; a_neutral_hall `council_table`; the_downs_united `banner_plain` |
+| B | granaries_of_the_downs `farm_sowing`; horse_runs `horse_cavalry`; grain_for_the_sea `ship_voyage`; the_mill_towns `timber_mill`; the_great_granary `granary` |
+| C | the_peace_of_the_west `olive_branch`; envoys_to_the_ford `envoy`; grain_for_both_banks `grey_ford`; the_neutral_ground `handshake_oath`; a_stranger_on_the_downs `traders_road`; host_the_peace_talks `scroll_treaty`; the_war_kings_hosts `crown_hailed` |
+| D | the_old_claims `charter_old`; aenoran_grain_buyers `coin_chest`; the_claims_remembered `seal_wax`; a_delegate_from_lambin `scroll_treaty`; bread_for_the_host `caravan`; the_downs_pledge `banner_league` |
+| E | lances_of_lambin `knight_lance`; riders_of_the_downs `horse_cavalry`; foot_of_the_mill_towns `spear_levy`; the_lances_ride `war_drums`; the_downs_levy `levy_muster` |
+| F | the_call_from_the_ford `grey_ford`; lambin_crosses `ship_voyage`; lambin_keeps_the_downs `farm_sowing`; bread_for_the_stranded `alms_bread`; under_the_war_kings_banner_again `lone_sword` |
 
 ### Key focuses
 
@@ -313,9 +340,9 @@ Start spirit (country history): `downs_granaries`.
 
 ### Events (namespace `zin_regional_lambin`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `grain_contract` | Grain from Lambin | Aenor realm | *Aenoran Grain Buyers* | **Sign the contract** (AI 60; 70 under Aurevan): Lambin gets `grain_contract`; Lambin grudge −10; the realm +25 political power. **Refuse**: Lambin grudge +5 |
+| Id | Key | Title | Picture | To | Trigger | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `grain_contract` | Grain from Lambin | `generic_peace` | Aenor realm | *Aenoran Grain Buyers* | **Sign the contract** (AI 60; 70 under Aurevan): Lambin gets `grain_contract`; Lambin grudge −10; the realm +25 political power. **Refuse**: Lambin grudge +5 |
 
 Journey events that may reach Lambin: *The Bridge of the Three Oaths* (if Lambin owns the site), *The King Without a House*, *A Crown Offered*, *The War-King's Terms*, *The Crown Laid Down* (as confederation leader), *West Over the Sea* (as departure host). Mechanic events: `zin_west.30`, `.31`, `.61`–`.63`, `.70`.
 
@@ -371,7 +398,7 @@ Start spirit (country history): `company_books`.
 | E. Recruiting Drums | 17–19 | 0–2 | start | Manpower |
 | F. The Great War Pays | 10–13 | 5–7 | `zin_war_of_last_crowns` | Stranded companies; Eindil's contract |
 
-**A. The Company Hall.** Icons: `guild_hall`, `council_table`, `ledger_coins`, `scroll_sealed`.
+**A. The Company Hall.**
 
 - `the_company_hall` **The Company Hall** (1,0) 70d: political power 75. AI 100.
 - `council_of_captains` **The Council of Captains** (0,1) ← the_company_hall: political power 25.
@@ -379,12 +406,12 @@ Start spirit (country history): `company_books`.
 - `articles_of_the_companies` **Articles of the Companies** (1,2) ← council_of_captains, the_paymasters_ledger: stability 0.03.
 - `the_free_companies` **The Free Companies** (1,3) 70d ← articles_of_the_companies: swap spirit `company_books` → `free_companies_sworn`.
 
-**B. Contracts.** Icons: `coin_chest`, `banner_league`, `crown_gold`, `ledger_coins`.
+**B. Contracts.**
 
 - ★ `open_the_books` **Open the Books** (6,0).
 - ★ `swords_for_the_west` **Swords for the West** (4,1) ← open_the_books; exclusive with whoever_pays, swords_for_parim.
-- ★ `whoever_pays` **Whoever Pays** (6,1) ← open_the_books; exclusive with the other two.
-- ★ `swords_for_parim` **Swords for Parim** (8,1) ← open_the_books; exclusive with the other two.
+- ★ `whoever_pays` **Whoever Pays** (6,1) ← open_the_books; exclusive with swords_for_the_west, swords_for_parim.
+- ★ `swords_for_parim` **Swords for Parim** (8,1) ← open_the_books; exclusive with swords_for_the_west, whoever_pays.
 - `the_western_contracts` **The Western Contracts** (4,2) ← swords_for_the_west: unity +3; political power 25.
 - `companies_for_the_crossing` **Companies for the Crossing** (4,3) ← the_western_contracts: available flag `zin_west_pledged`; manpower 3,000; army experience 10. AI 80.
 - `contracts_in_every_court` **Contracts in Every Court** (6,2) ← whoever_pays: variable `zin_regional_buldor_contract_cap` +1; political power 25.
@@ -392,7 +419,7 @@ Start spirit (country history): `company_books`.
 - `the_crowns_companies` **The Crown's Companies** (8,2) ← swords_for_parim: available `variable zin_gathering_dark above 24`; LC +2.
 - `shields_for_the_concord` **Shields for the Concord** (8,3) ← the_crowns_companies: available `zin_war_of_last_crowns`; manpower 2,000; `call zin_lost_cause_add_strength (3)`. AI 50.
 
-**C. The Company Drill.** Icons: `sword_shield`, `bow_archers`, `war_council_map`.
+**C. The Company Drill.**
 
 - `company_drill` **Company Drill** (11,0): army experience 10. AI 20.
 - `pike_and_crossbow` **Pike and Crossbow** (10,1) ← company_drill: research {zin_cat_bows} 0.5×1.
@@ -400,26 +427,39 @@ Start spirit (country history): `company_books`.
 - `captains_school` **The Captains' School** (11,2) ← pike_and_crossbow, veterans_of_many_wars: recruit `zin_regional_buldor_mara`; army experience 5.
 - `the_iron_discipline` **The Iron Discipline** (11,3) 70d ← captains_school: spirit `iron_discipline`.
 
-**D. Arsenals and Pay.** Icons: `forge_anvil`, `market_stalls`, `coin_chest`.
+**D. Arsenals and Pay.**
 
 - `the_arsenals` **The Arsenals** (15,0): building arms_factory 1 capital. AI 20.
 - `plunder_markets` **The Plunder Markets** (14,1) ← the_arsenals: political power 50.
 - `the_pay_chests` **The Pay-Chests** (16,1) ← the_arsenals: political power 50.
 - `armourers_row` **Armourers' Row** (15,2) ← plunder_markets, the_pay_chests: building arms_factory 1 random_owned; equipment zin_armour_equipment 200.
 
-**E. Recruiting Drums.** Icons: `war_drums`, `levy_muster`.
+**E. Recruiting Drums.**
 
 - `recruiting_drums` **Recruiting Drums** (18,0): manpower 3,000.
-- `sons_of_every_land` **Sons of Every Land** (17,1) ← recruiting_drums: spirit `sons_of_every_land`.
+- `sons_of_every_land` **Sons of Every Land** (17,1) ← recruiting_drums: spirit `sons_of_every_land_spirit`.
 - `the_company_roll` **The Company Roll** (19,1) ← recruiting_drums: manpower 3,000.
 - `the_great_muster` **The Great Muster** (18,2) ← sons_of_every_land, the_company_roll: available at war, or `zin_war_of_last_crowns`; manpower 5,000.
 
-**F. The Great War Pays.** Icons: `coin_chest`, `banner_laid_down`, `lone_sword`.
+**F. The Great War Pays.**
 
 - `the_great_war_pays` **The Great War Pays** (11,5): available `zin_war_of_last_crowns`; political power 100. AI 200.
 - `stranded_companies` **Companies Beyond the Sea** (10,6) ← the_great_war_pays: available flag `zin_west_stranded`; stability 0.03; army experience 10. AI 60.
 - `contracts_with_the_heir` **A Contract with the Heir** (12,6) ← the_great_war_pays: available `zin_eindil_returned`, and friend or flag `zin_west_stranded`; join coalition; regard +5. AI 300.
 - `the_companies_come_home` **The Companies Come Home** (11,7) ← stranded_companies, contracts_with_the_heir: available `zin_afrit_dead` or `zin_eindil_crowned`; stability 0.05; political power 50.
+
+### Icons
+
+Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_zin_<key>`, `GFX_idea_zin_<key>`). Spirits use the icon of the focus that adds them; the start spirit `company_books` uses `ledger_coins`.
+
+| Branch | Focus → icon |
+| --- | --- |
+| A | the_company_hall `guild_hall`; council_of_captains `council_table`; the_paymasters_ledger `ledger_coins`; articles_of_the_companies `scroll_sealed`; the_free_companies `banner_plain` |
+| B | open_the_books `coin_chest`; swords_for_the_west `banner_league`; whoever_pays `tribute_chest`; swords_for_parim `palace_parim`; the_western_contracts `scroll_treaty`; companies_for_the_crossing `ship_voyage`; contracts_in_every_court `envoy`; the_highest_bidder `coin_chest`; the_crowns_companies `crown_gold`; shields_for_the_concord `concord_circle` |
+| C | company_drill `spear_levy`; pike_and_crossbow `bow_archers`; veterans_of_many_wars `sword_shield`; captains_school `war_council_map`; the_iron_discipline `levy_muster` |
+| D | the_arsenals `forge_anvil`; plunder_markets `market_stalls`; the_pay_chests `coin_chest`; armourers_row `foundry_fire` |
+| E | recruiting_drums `war_drums`; sons_of_every_land `banner_league`; the_company_roll `ledger_coins`; the_great_muster `levy_muster` |
+| F | the_great_war_pays `coin_chest`; stranded_companies `ship_voyage`; contracts_with_the_heir `lone_sword`; the_companies_come_home `olive_branch` |
 
 ### Key focuses
 
@@ -432,7 +472,7 @@ Start spirit (country history): `company_books`.
 
 ### Decisions: The Company Books (proposed)
 
-Category `zin_regional_buldor_contracts`, visible to Buldor with flag `zin_regional_buldor_books_open`. The focus compiler's data format has no decision block today; these two decisions are written by the content builder from this tree's data once the compiler gains an optional `decisions` block (dependency, below).
+Category `zin_regional_buldor_contracts`, visible to Buldor with flag `zin_regional_buldor_books_open`. The focus compiler writes no decisions, so these two decisions come from a `decisions` block in `docs/design/focus/regional_buldor.json` that a new builder module, `tools/content/modules/decisions_regional.mjs` (proposed), compiles to `common/decisions/categories/zin_regional_buldor.txt` and `common/decisions/zin_regional_buldor.txt` in the same transaction. Their effects call this tree's scripted effects `zin_regional_buldor_offer_contract` and `zin_regional_buldor_end_contract`.
 
 | Key | Target | Available | Cost | Effect | AI |
 | --- | --- | --- | --- | --- | --- |
@@ -451,16 +491,16 @@ An accepted contract: the employer pays 50 PP and gets the timed idea `company_c
 | `highest_bidder` | The Highest Bidder | `political_power_gain` 0.10 | *The Highest Bidder* |
 | `veterans` | Veterans of Many Wars | `army_org_factor` 0.05, `experience_gain_army_factor` 0.05 | *Veterans of Many Wars* |
 | `iron_discipline` | The Iron Discipline | `army_morale_factor` 0.05, `army_defence_factor` 0.05 | *The Iron Discipline* |
-| `sons_of_every_land` | Sons of Every Land | `recruitable_population_factor` 0.05 | *Sons of Every Land* |
+| `sons_of_every_land_spirit` | Sons of Every Land | `recruitable_population_factor` 0.05 | *Sons of Every Land* |
 | `company_contract` | A Buldor Company | `army_attack_factor` 0.03, `army_defence_factor` 0.03, `experience_gain_army_factor` 0.05 | On an employer, 365 days |
 
 ### Events (namespace `zin_regional_buldor`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `companies_offered` | The Buldor Companies Offer Their Swords | Aenor realm | *Swords for Parim* | **Take them into the king's pay** (AI 60): opinion +20 both ways; Buldor +50 PP. **Parim needs no hired swords**: Buldor grudge +5 |
-| 2 | `contract_offer` | A Contract from Buldor | employer | decision | **Sign the contract** (AI 70 if at war with a major, else 30; ×0 under 50 PP): as above. **No**: nothing |
-| 3 | `contract_ends` | (hidden) The contract ends | Buldor | 365 days after a signing | Count −1; manpower +2,000 |
+| Id | Key | Title | Picture | To | Trigger | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `companies_offered` | The Buldor Companies Offer Their Swords | `generic_court` | Aenor realm | *Swords for Parim* | **Take them into the king's pay** (AI 60): opinion +20 both ways; Buldor +50 PP. **Parim needs no hired swords**: Buldor grudge +5 |
+| 2 | `contract_offer` | A Contract from Buldor | `generic_peace` | employer | decision | **Sign the contract** (AI 70 if at war with a major, else 30; ×0 under 50 PP): as above. **No**: nothing |
+| 3 | `contract_ends` | (hidden) The contract ends | `generic_court` | Buldor | fired with `days = 365` by the signing (`zin_regional_buldor_sign_contract`) | `call zin_regional_buldor_end_contract`: count −1; manpower +2,000 |
 
 Gunwaith's `zin_gunwaith.4` (*Contracts from Gunwaith*) also reaches Buldor; its "Our swords go west" option sets the same flag `zin_west_buldor_west` and does not lock this tree's route.
 
@@ -515,7 +555,7 @@ Start spirit (country history): `aenoran_duties`.
 | E. The Ford Council and the Sea | 16–19 | 0–4 | the Ford Council and the routes | Hulls, pledge, arms for the host, the stranded |
 | F. The Stranger at the Forge | 20 | 0–1 | hidden until `zin_eindil_awake` | Regard |
 
-**A. The Guild Moot.** Icons: `guild_hall`, `forge_anvil`, `workshop_tools`, `seal_royal`, `charter_free`.
+**A. The Guild Moot.**
 
 - `the_guild_moot` **The Guild Moot** (1,0) 70d: political power 75. AI 100.
 - `masters_of_the_forges` **Masters of the Forges** (0,1) ← the_guild_moot: political power 25.
@@ -524,7 +564,7 @@ Start spirit (country history): `aenoran_duties`.
 - `apprentice_rolls` **Apprentice Rolls** (2,2) ← the_journeymen: manpower 1,500.
 - `charter_of_the_guilds` **Charter of the Guilds** (1,3) 70d ← the_first_guildsmans_chain: swap spirit `aenoran_duties` → `guild_charter`.
 
-**B. Workshops of the West.** Icons: `workshop_tools`, `roads_paved`, `forge_anvil`, `foundry_fire`, `mine_cart`.
+**B. Workshops of the West.**
 
 - `workshops_of_the_west` **Workshops of the West** (5,0): building industrial_complex 1 capital. AI 25.
 - `the_wagon_works` **The Wagon-Works** (4,1) ← workshops_of_the_west: building infrastructure 1 random_owned, twice.
@@ -533,24 +573,24 @@ Start spirit (country history): `aenoran_duties`.
 - `coal_and_ore_carts` **Coal and Ore Carts** (7,2) ← forge_rows: building infrastructure 1 random_owned; political power 25.
 - `master_smiths` **Master Smiths** (5,3) ← the_great_hammer_halls: research {zin_cat_arms} 0.5×2.
 
-**C. The Tariff Quarrel.** Icons: `toll_house`, `scroll_sealed`, `ledger_coins`, `market_stalls`, `forge_anvil`.
+**C. The Tariff Quarrel.**
 
 - `the_tariff_quarrel` **The Tariff Quarrel** (10,0): grudge +3 self. AI 20.
-- `the_guilds_petition` **The Guilds' Petition** (9,1) ← the_tariff_quarrel: `event_for` the Aenor realm that holds Parim: `zin_west.10` (*A Protest from the West*, protester = Kradlon). AI 15; hist ×2.
+- `the_guilds_petition` **The Guilds' Petition** (9,1) ← the_tariff_quarrel: `call zin_aenor_event_for_parim {event: zin_west.10}` (*A Protest from the West*, protester = Kradlon as FROM). AI 15; hist ×2.
 - `count_the_duties` **Count the Duties** (11,1) ← the_tariff_quarrel: political power 50.
 - ★ `trade_before_grudge` **Trade Before Grudge** (9,2) ← the_guilds_petition, count_the_duties; exclusive with the_guilds_remember.
 - ★ `the_guilds_remember` **The Guilds Remember** (11,2) ← the_guilds_petition, count_the_duties; exclusive with trade_before_grudge.
 - `markets_across_the_sea` **Markets Across the Sea** (9,3) ← trade_before_grudge: spirit `sea_markets`.
 - `arms_for_the_west` **Arms for the West** (11,3) ← the_guilds_remember: spirit `western_arsenal`; flag `zin_regional_kradlon_arms_west`.
 
-**D. The Guild Militia.** Icons: `levy_muster`, `bow_archers`, `fort_wall`.
+**D. The Guild Militia.**
 
 - `guild_militia` **The Guild Militia** (14,0): manpower 3,000. AI 15.
 - `crossbow_guilds` **Crossbow Guilds** (13,1) ← guild_militia: research {zin_cat_bows} 0.5×1.
 - `wagon_forts` **Wagon-Forts** (15,1) ← guild_militia: recruit `zin_regional_kradlon_bram`; spirit `wagon_forts_drill`.
 - `the_militia_drilled` **The Militia Drilled** (14,2) ← crossbow_guilds, wagon_forts: army experience 10.
 
-**E. The Ford Council and the Sea.** Icons: `scroll_treaty`, `shipwright_yard`, `banner_league`, `forge_anvil`, `banner_laid_down`.
+**E. The Ford Council and the Sea.**
 
 - `voices_at_the_ford` **Voices at the Ford** (17,0): available `zin_west_council`; unity +3; political power 25. AI 50.
 - `hulls_from_kradlon` **Hulls from Kradlon** (16,1) ← voices_at_the_ford: available `check zin_regional_kradlon_is_coastal`; fleet +3; building dockyard 1 random_coastal. AI 30.
@@ -560,10 +600,23 @@ Start spirit (country history): `aenoran_duties`.
 - `stranded_journeymen` **Journeymen Beyond the Sea** (18,3) ← arm_the_western_host: available flag `zin_west_stranded` + `zin_eindil_returned`; join coalition. AI 300.
 - `the_long_road_home` **The Long Road Home** (17,4) ← the_guilds_across_the_sea, stranded_journeymen: available `zin_afrit_dead` or `zin_eindil_crowned`; stability 0.05. AI 60.
 
-**F. The Stranger at the Forge.** Icons: `traders_road`, `scroll_sealed`.
+**F. The Stranger at the Forge.**
 
 - `the_stranger_at_the_forge` **The Stranger at the Forge** (20,0): `allow_branch` `zin_eindil_awake`; renown +2; regard +5. AI 20.
 - `heed_the_warning` **Heed the Warning** (20,1) ← the_stranger_at_the_forge: available `zin_eindil_named` + flag `zin_eindil_heeded`; grudge −10 self; regard +10. AI 20; hist ×0.
+
+### Icons
+
+Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_zin_<key>`, `GFX_idea_zin_<key>`). Spirits use the icon of the focus that adds them; the start spirit `aenoran_duties` uses `toll_house`.
+
+| Branch | Focus → icon |
+| --- | --- |
+| A | the_guild_moot `guild_hall`; masters_of_the_forges `forge_anvil`; the_journeymen `workshop_tools`; the_first_guildsmans_chain `seal_royal`; apprentice_rolls `book_lore`; charter_of_the_guilds `charter_old` |
+| B | workshops_of_the_west `workshop_tools`; the_wagon_works `roads_paved`; forge_rows `forge_anvil`; the_great_hammer_halls `foundry_fire`; coal_and_ore_carts `mine_cart`; master_smiths `forge_anvil` |
+| C | the_tariff_quarrel `toll_house`; the_guilds_petition `scroll_sealed`; count_the_duties `ledger_coins`; trade_before_grudge `market_stalls`; the_guilds_remember `seal_wax`; markets_across_the_sea `ship_voyage`; arms_for_the_west `sword_shield` |
+| D | guild_militia `levy_muster`; crossbow_guilds `bow_archers`; wagon_forts `fort_wall`; the_militia_drilled `war_drums` |
+| E | voices_at_the_ford `scroll_treaty`; hulls_from_kradlon `shipwright_yard`; the_guild_pledge `banner_league`; arm_the_western_host `tribute_chest`; the_guilds_across_the_sea `ship_voyage`; stranded_journeymen `lone_sword`; the_long_road_home `banner_laid_down` |
+| F | the_stranger_at_the_forge `traders_road`; heed_the_warning `beacon` |
 
 ### Key focuses
 
@@ -587,11 +640,11 @@ Start spirit (country history): `aenoran_duties`.
 
 ### Events (namespace `zin_regional_kradlon`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `kradlon_market` | The Guilds of Kradlon Ask for a Market | Aenor realm | *Trade Before Grudge* | **Open the market** (AI 50): Kradlon gets `parim_market`; the realm +25 political power. **Refuse**: Kradlon grudge +10 |
+| Id | Key | Title | Picture | To | Trigger | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `kradlon_market` | The Guilds of Kradlon Ask for a Market | `generic_peace` | Aenor realm | *Trade Before Grudge* | **Open the market** (AI 50): Kradlon gets `parim_market`; the realm +25 political power. **Refuse**: Kradlon grudge +10 |
 
-`zin_west.10` (*A Protest from the West*) belongs to the mechanic; this tree fires it with Kradlon as FROM (dependency).
+`zin_west.10` (*A Protest from the West*) belongs to the mechanic; this tree fires it with Kradlon as FROM.
 
 ### Historical AI route
 
@@ -643,7 +696,7 @@ Start spirit (country history): `tariff_squeeze`.
 | E. The Harbour Guard | 17–19 | 0–2 | start | Army |
 | F. The Purse Spent | 8–11 | 5–7 | the stranger, the Crossing, the stranded | Late |
 
-**A. The Consuls.** Icons: `council_table`, `harbour_lake`, `ledger_coins`, `envoy`, `charter_free`.
+**A. The Consuls.**
 
 - `the_consuls` **The Consuls of Corogon** (1,0) 70d: political power 75. AI 100.
 - `the_harbour_assembly` **The Harbour Assembly** (0,1) ← the_consuls: stability 0.03.
@@ -652,7 +705,7 @@ Start spirit (country history): `tariff_squeeze`.
 - `consul_canaks_embassy` **Consul Canak's Embassy** (2,2) ← the_counting_houses: available Raerby exists; event `corogon_embassy` to Raerby.
 - `the_consular_charter` **The Consular Charter** (1,3) 70d ← elections_at_the_harbour: swap spirit `tariff_squeeze` → `consular_charter`.
 
-**B. Southern Trade.** Icons: `harbour_lake`, `sea_charts`, `market_stalls`, `envoy`.
+**B. Southern Trade.**
 
 - `southern_trade` **Southern Trade** (5,0): building naval_base 1 random_coastal. AI 25.
 - `the_island_routes` **The Island Routes** (4,1) ← southern_trade: available Pollos exists; event `island_routes` to Pollos.
@@ -660,7 +713,7 @@ Start spirit (country history): `tariff_squeeze`.
 - `the_market_quays` **The Market Quays** (5,2) ← the_island_routes, spice_and_salt: building industrial_complex 1 capital.
 - `consulates_abroad` **Consulates Abroad** (5,3) ← the_market_quays: spirit `consulates`.
 
-**C. The Merchant Fleet.** Icons: `shipwright_yard`, `anchor_rope`, `warship_sail`, `galley_oars`.
+**C. The Merchant Fleet.**
 
 - `merchant_fleet` **The Merchant Fleet** (9,0): building dockyard 1 random_coastal. AI 20.
 - `convoy_charters` **Convoy Charters** (8,1) ← merchant_fleet: political power 25; spirit `convoy_charters_kept`.
@@ -669,7 +722,7 @@ Start spirit (country history): `tariff_squeeze`.
 - `war_galleys_of_corogon` **War Galleys of Corogon** (11,2) ← sea_captains_of_corogon: research {zin_cat_galleys} 0.5×1.
 - `hulls_for_hire` **Hulls for Hire** (9,3) ← the_long_keels: available `zin_west_council`; fleet +5; political power 25. AI 30; hist ×2.
 
-**D. Tariffs and the Sea.** Icons: `toll_house`, `charter_golden`, `coin_chest`, `ship_voyage`, `banner_league`.
+**D. Tariffs and the Sea.**
 
 - `tariffs_and_the_sea` **Tariffs and the Sea** (14,0): grudge +3 self. AI 20.
 - ★ `the_merchants_peace` **The Merchants' Peace** (12,1) ← tariffs_and_the_sea; exclusive with the_sea_remembers.
@@ -679,19 +732,32 @@ Start spirit (country history): `tariff_squeeze`.
 - `the_purse_of_the_crossing` **The Purse of the Crossing** (16,2) ← the_sea_remembers: available `zin_west_route_crossing`; fleet +5; political power −50. AI 50.
 - `the_corogon_pledge` **The Corogon Pledge** (16,3) ← the_purse_of_the_crossing: available flag `zin_west_pledged`; manpower 3,000. AI 60.
 
-**E. The Harbour Guard.** Icons: `levy_muster`, `sword_shield`, `bow_archers`.
+**E. The Harbour Guard.**
 
 - `harbour_guard` **The Harbour Guard** (18,0): manpower 2,000. AI 15.
 - `sea_soldiers_of_corogon` **Sea Soldiers of Corogon** (17,1) ← harbour_guard: spirit `corogon_sea_soldiers`.
 - `crossbow_decks` **Crossbow Decks** (19,1) ← harbour_guard: research {zin_cat_bows} 0.5×1.
 - `the_harbour_host` **The Harbour Host** (18,2) 70d ← sea_soldiers_of_corogon, crossbow_decks: army experience 10.
 
-**F. The Purse Spent.** Icons: `ship_voyage`, `coin_chest`, `banner_laid_down`.
+**F. The Purse Spent.**
 
 - `a_ship_for_the_houseless_king` **A Ship for the King Without a House** (9,5): `allow_branch` `zin_eindil_awake`; available `zin_eindil_war_king`; regard +5; renown +2. AI 20.
 - `the_crossing_purse_spent` **The Crossing Purse Spent** (11,5): available `zin_western_crossing`; timed spirit `crossing_purse` 180 days. AI 50.
 - `corogons_stranded` **Corogon's Stranded Marines** (10,6) ← a_ship_for_the_houseless_king, the_crossing_purse_spent: available flag `zin_west_stranded` + `zin_eindil_returned`; join coalition. AI 300.
 - `home_ports` **Home Ports** (10,7) ← corogons_stranded, the_crossing_purse_spent: available `zin_afrit_dead` or `zin_eindil_crowned`; stability 0.05. AI 60.
+
+### Icons
+
+Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_zin_<key>`, `GFX_idea_zin_<key>`). Spirits use the icon of the focus that adds them; the start spirit `tariff_squeeze` uses `toll_house`.
+
+| Branch | Focus → icon |
+| --- | --- |
+| A | the_consuls `council_table`; the_harbour_assembly `harbour_lake`; the_counting_houses `ledger_coins`; elections_at_the_harbour `seal_wax`; consul_canaks_embassy `envoy`; the_consular_charter `charter_old` |
+| B | southern_trade `anchor_rope`; the_island_routes `sea_charts`; spice_and_salt `market_stalls`; the_market_quays `guild_hall`; consulates_abroad `envoy` |
+| C | merchant_fleet `shipwright_yard`; convoy_charters `scroll_sealed`; sea_captains_of_corogon `compass_rose`; the_long_keels `warship_sail`; war_galleys_of_corogon `galley_oars`; hulls_for_hire `coin_chest` |
+| D | tariffs_and_the_sea `toll_house`; the_merchants_peace `scroll_treaty`; the_sea_remembers `storm_sea`; under_parims_charter `palace_parim`; relief_from_the_south_sea `ship_voyage`; the_purse_of_the_crossing `coin_chest`; the_corogon_pledge `banner_league` |
+| E | harbour_guard `levy_muster`; sea_soldiers_of_corogon `sword_shield`; crossbow_decks `bow_archers`; the_harbour_host `war_drums` |
+| F | a_ship_for_the_houseless_king `ship_voyage`; the_crossing_purse_spent `tribute_chest`; corogons_stranded `lone_sword`; home_ports `harbour_lake` |
 
 ### Key focuses
 
@@ -715,12 +781,12 @@ Start spirit (country history): `tariff_squeeze`.
 
 ### Events (namespace `zin_regional_corogon`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `harbour_election` | Election at the Harbour | Corogon | *Elections at the Harbour* | **The ship-owners win** (AI 60): political power 50. **The quays win**: stability 0.03 |
-| 2 | `corogon_charter` | A Charter for Corogon's Ships | Aenor realm | *The Merchants' Peace* | **Grant it** (AI 50; 70 under Aurevan): Corogon flag `zin_regional_corogon_charter_signed`; Corogon grudge −5; the realm +25 political power. **Refuse**: Corogon grudge +10 |
-| 3 | `corogon_embassy` | An Embassy from Corogon | Raerby | *Consul Canak's Embassy* | **Receive them** (AI 80): opinion modifier `zin_regional_corogon_embassy` (+15) both ways. **Not now**: nothing |
-| 4 | `island_routes` | The Island Routes | Pollos | *The Island Routes* | **Open the routes** (AI 80): both get timed idea `zin_regional_corogon_island_trade` (730 days). **Keep the market for islanders**: nothing |
+| Id | Key | Title | Picture | To | Trigger | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `harbour_election` | Election at the Harbour | `generic_court` | Corogon | *Elections at the Harbour* | **The ship-owners win** (AI 60): political power 50. **The quays win**: stability 0.03 |
+| 2 | `corogon_charter` | A Charter for Corogon's Ships | `generic_court` | Aenor realm | *The Merchants' Peace* | **Grant it** (AI 50; 70 under Aurevan): Corogon flag `zin_regional_corogon_charter_signed`; Corogon grudge −5; the realm +25 political power. **Refuse**: Corogon grudge +10 |
+| 3 | `corogon_embassy` | An Embassy from Corogon | `generic_sea` | Raerby | *Consul Canak's Embassy* | **Receive them** (AI 80): opinion modifier `zin_regional_corogon_embassy` (+15) both ways. **Not now**: nothing |
+| 4 | `island_routes` | The Island Routes | `generic_sea` | Pollos | *The Island Routes* | **Open the routes** (AI 80): both get timed idea `zin_regional_corogon_island_trade` (730 days). **Keep the market for islanders**: nothing |
 
 ### Historical AI route
 
@@ -772,7 +838,7 @@ Start spirit (country history): `approach_watchers`.
 | E. The Cape Levy | 17–19 | 0–2 | start | Army |
 | F. The Fleets Gather | 8–12 | 5–8 | `zin_western_crossing` | The landing, the stranded |
 
-**A. King Oslin's Court.** Icons: `crown_iron`, `council_table`, `harbour_lake`, `charter_old`.
+**A. King Oslin's Court.**
 
 - `king_oslins_court` **King Oslin's Court** (1,0) 70d: political power 75. AI 100.
 - `the_cape_lords` **The Cape Lords** (0,1) ← king_oslins_court: political power 25.
@@ -780,7 +846,7 @@ Start spirit (country history): `approach_watchers`.
 - `old_landings_remembered` **The Old Landings Remembered** (1,2) ← the_cape_lords, the_kings_harbour: grudge +3 self; tooltip "Aenor's fleets came ashore on these capes in the First Age."
 - `the_peninsula_crown` **The Peninsula Crown** (1,3) 70d ← old_landings_remembered: spirit `peninsula_crown`.
 
-**B. The Blue-Sea Approaches.** Icons: `lighthouse`, `fort_wall`, `eye_watchful`, `beacon`.
+**B. The Blue-Sea Approaches.**
 
 - `the_approaches` **The Blue-Sea Approaches** (5,0): building coastal_bunker 1 random_coastal. AI 25.
 - `lighthouses_of_the_capes` **Lighthouses of the Capes** (4,1) ← the_approaches: spirit `cape_lights`.
@@ -788,7 +854,7 @@ Start spirit (country history): `approach_watchers`.
 - `the_sea_watch` **The Sea Watch** (5,2) ← lighthouses_of_the_capes, cape_forts: recruit `zin_regional_varnondor_sevra`; navy experience 10.
 - `watch_on_the_far_shore` **Watch on the Far Shore** (5,3) 70d ← the_sea_watch: spirit `far_shore_watch`.
 
-**C. Harbours for the Host.** Icons: `harbour_lake`, `shipwright_yard`, `anchor_rope`, `compass_rose`.
+**C. Harbours for the Host.**
 
 - `harbours_for_the_host` **Harbours of the Peninsula** (9,0): building naval_base 1 random_coastal. AI 20.
 - `the_staging_yards` **The Staging Yards** (8,1) ← harbours_for_the_host: building dockyard 1 random_coastal; if `zin_west_council`: fleet +2.
@@ -796,31 +862,44 @@ Start spirit (country history): `approach_watchers`.
 - ★ `the_muster_harbour` **The Muster Harbour** (9,2) 70d ← the_staging_yards, anchorages_of_the_peninsula.
 - `pilots_of_the_approaches` **Pilots of the Approaches** (10,2) ← anchorages_of_the_peninsula: navy experience 10; research {zin_cat_galleys} 0.5×1.
 
-**D. The Old Grudge.** Icons: `charter_old`, `fort_wall`, `banner_league`, `lighthouse`, `scroll_treaty`.
+**D. The Old Grudge.**
 
 - `the_old_grudge` **The Old Grudge** (14,0): grudge +3 self. AI 20.
 - ★ `close_the_approaches` **Close the Approaches** (12,1) ← the_old_grudge; exclusive with open_the_approaches, watch_for_parim.
-- ★ `open_the_approaches` **Open the Approaches** (14,1) ← the_old_grudge; exclusive with the other two.
-- ★ `watch_for_parim` **Lanterns for Parim** (16,1) ← the_old_grudge; exclusive with the other two.
+- ★ `open_the_approaches` **Open the Approaches** (14,1) ← the_old_grudge; exclusive with close_the_approaches, watch_for_parim.
+- ★ `watch_for_parim` **Lanterns for Parim** (16,1) ← the_old_grudge; exclusive with close_the_approaches, open_the_approaches.
 - `the_neutral_capes` **The Neutral Capes** (12,2) ← close_the_approaches: political power 50; stability 0.03.
 - `a_delegate_from_the_capes` **A Delegate from the Capes** (14,2) ← open_the_approaches: available `zin_west_council`; unity +3. AI 50.
 - `the_kings_lanterns` **The King's Lanterns** (16,2) ← watch_for_parim: available flag `zin_regional_varnondor_parims_friend`; spirit `kings_lanterns`; political power 25.
 - `the_varnondor_pledge` **The Varnondor Pledge** (14,3) ← a_delegate_from_the_capes: available flag `zin_west_pledged`; manpower 2,500. AI 60.
 
-**E. The Cape Levy.** Icons: `levy_muster`, `sword_shield`, `bow_archers`.
+**E. The Cape Levy.**
 
 - `the_cape_levy` **The Cape Levy** (18,0): manpower 2,000. AI 15.
 - `sea_soldiers_of_the_capes` **Sea Soldiers of the Capes** (17,1) ← the_cape_levy: recruit `zin_regional_varnondor_tomas`; spirit `cape_sea_soldiers`.
 - `bows_of_the_capes` **Bows of the Capes** (19,1) ← the_cape_levy: research {zin_cat_bows} 0.5×1.
 - `the_peninsula_host` **The Peninsula Host** (18,2) 70d ← sea_soldiers_of_the_capes, bows_of_the_capes: army experience 10.
 
-**F. The Fleets Gather.** Icons: `warship_sail`, `ship_voyage`, `fort_wall`, `banner_laid_down`.
+**F. The Fleets Gather.**
 
 - `the_fleets_gather` **The Fleets Gather** (10,5): available `zin_western_crossing`; political power 50; fleet +3. AI 200.
 - `first_ashore` **First Ashore** (9,6) ← the_fleets_gather: available flag `zin_west_pledged`; timed spirit `first_ashore_host` 180 days. AI 100.
 - `the_capes_hold` **The Capes Hold** (11,6) ← the_fleets_gather: available no flag `zin_west_pledged`; building coastal_bunker 1 random_coastal; stability 0.03. AI 50.
 - `stranded_on_the_far_shore` **Stranded on the Far Shore** (9,7) ← first_ashore: available flag `zin_west_stranded` + `zin_eindil_returned`; join coalition. AI 300.
 - `the_capes_remember` **The Capes Remember** (10,8) ← first_ashore, the_capes_hold, stranded_on_the_far_shore: available `zin_afrit_dead` or `zin_eindil_crowned`; stability 0.05; political power 50. AI 60.
+
+### Icons
+
+Every key is from the [icon catalog](../02_icon_catalog.md) (sprites `GFX_focus_zin_<key>`, `GFX_idea_zin_<key>`). Spirits use the icon of the focus that adds them; the start spirit `approach_watchers` uses `lighthouse`.
+
+| Branch | Focus → icon |
+| --- | --- |
+| A | king_oslins_court `crown_iron`; the_cape_lords `council_table`; the_kings_harbour `harbour_lake`; old_landings_remembered `book_lore`; the_peninsula_crown `sceptre` |
+| B | the_approaches `fort_wall`; lighthouses_of_the_capes `lighthouse`; cape_forts `fort_wall`; the_sea_watch `eye_watchful`; watch_on_the_far_shore `scout_lantern` |
+| C | harbours_for_the_host `harbour_lake`; the_staging_yards `shipwright_yard`; anchorages_of_the_peninsula `anchor_rope`; the_muster_harbour `warship_sail`; pilots_of_the_approaches `compass_rose` |
+| D | the_old_grudge `charter_old`; close_the_approaches `strait_chain`; open_the_approaches `ship_voyage`; watch_for_parim `beacon`; the_neutral_capes `olive_branch`; a_delegate_from_the_capes `scroll_treaty`; the_kings_lanterns `palace_parim`; the_varnondor_pledge `banner_league` |
+| E | the_cape_levy `levy_muster`; sea_soldiers_of_the_capes `sword_shield`; bows_of_the_capes `bow_archers`; the_peninsula_host `war_drums` |
+| F | the_fleets_gather `great_warship`; first_ashore `war_council_map`; the_capes_hold `fort_wall`; stranded_on_the_far_shore `lone_sword`; the_capes_remember `banner_laid_down` |
 
 ### Key focuses
 
@@ -847,9 +926,9 @@ Start spirit (country history): `approach_watchers`.
 
 ### Events (namespace `zin_regional_varnondor`)
 
-| Id | Key | Title | To | Trigger | Options |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `lanterns_on_the_capes` | Lanterns on the Capes | Aenor realm | *Lanterns for Parim* | **Accept their friendship** (AI 50; 70 under Aurevan): opinion +20 both ways; Varnondor flag `zin_regional_varnondor_parims_friend`. **Ignore them**: Varnondor grudge +5 |
+| Id | Key | Title | Picture | To | Trigger | Options |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `lanterns_on_the_capes` | Lanterns on the Capes | `generic_sea` | Aenor realm | *Lanterns for Parim* | **Accept their friendship** (AI 50; 70 under Aurevan): opinion +20 both ways; Varnondor flag `zin_regional_varnondor_parims_friend`. **Ignore them**: Varnondor grudge +5 |
 
 ### Historical AI route
 
@@ -868,29 +947,50 @@ The AI never takes `close_the_approaches` or `watch_for_parim` on the historical
 
 ## Implementation
 
+### Build
+
+Every tree is compiled by `tools/content/modules/focus_compiler.mjs` ([compiler spec](../00_format_and_compiler.md)) from its data file, run by `tools/content/build.mjs` and written in the same transaction as every other module through `tools/content/apply.mts` (the shared atomic rewrite engine). Each compiled tree replaces the interim Long Peace tree (`zin_long_peace_*`) for its country: the country history's `load_focus_tree` names the new tree. No tree has a `raw` block. Country names (Gunwaith, Corogon, Raerby, Pollos) resolve to tags through `tools/content/data/countries.json` at build time.
+
 ### Files
 
 For each tree `<t>` in `regional_girdon`, `regional_lambin`, `regional_buldor`, `regional_kradlon`, `regional_corogon`, `regional_varnondor`:
 
-| Path | What |
-| --- | --- |
-| `docs/design/focus/<t>.json` | Tree data, `"tier": "regional"`, `"countries": ["<Name>"]` |
-| `common/national_focus/zin_<t>.txt` | Compiled tree |
-| `common/ideas/zin_focus_<t>.txt` | Spirits (including ideas applied to other countries by events: `company_contract`, `island_trade`, `grain_contract`, `parim_market`) |
-| `events/zin_<t>.txt` | Events |
-| `common/scripted_effects/zin_<t>.txt`, `common/scripted_triggers/zin_<t>.txt` | Below |
-| `common/opinion_modifiers/zin_<t>.txt` | Below |
-| `common/decisions/categories/zin_regional_buldor.txt`, `common/decisions/zin_regional_buldor.txt` | Buldor only (needs the compiler's `decisions` block) |
-| `localisation/english/zin_focus_<t>_l_english.yml` | All text |
+| Path | What | Written by |
+| --- | --- | --- |
+| `docs/design/focus/<t>.json` | Tree data, `"id": "<t>"`, `"tier": "regional"`, `"countries": ["<Name>"]` | source |
+| `common/national_focus/zin_<t>.txt` | Compiled tree | focus compiler |
+| `common/ideas/zin_focus_<t>.txt` | Spirits `zin_<t>_<key>`, the start spirit and the ideas events apply to other countries (`company_contract`, `island_trade`, `grain_contract`, `parim_market`) | focus compiler |
+| `events/zin_<t>.txt` | Events (namespace `zin_<t>`; effect-triggered only) | focus compiler |
+| `common/scripted_effects/zin_<t>.txt`, `common/scripted_triggers/zin_<t>.txt` | Below | focus compiler |
+| `common/opinion_modifiers/zin_<t>.txt` | Below (Girdon, Corogon), from the tree's `opinion_modifiers` block | focus compiler |
+| `common/decisions/categories/zin_regional_buldor.txt`, `common/decisions/zin_regional_buldor.txt` | Buldor's *Company Books* | `tools/content/modules/decisions_regional.mjs` (new, proposed), from the `decisions` block of `regional_buldor.json` |
+| `localisation/english/zin_focus_<t>_l_english.yml` | All text | focus compiler (the decisions module adds its decision text to the same file) |
+
+**Start spirits.** Country histories come from the politics step, so each tree's start spirit (`zin_regional_girdon_long_feuds_toll`, `zin_regional_lambin_downs_granaries`, `zin_regional_buldor_company_books`, `zin_regional_kradlon_aenoran_duties`, `zin_regional_corogon_tariff_squeeze`, `zin_regional_varnondor_approach_watchers`) is defined in the tree's ideas file and added on game start by the start situation module (`tools/content/modules/start_situation.mjs`, data `tools/content/data/start_situation.json`, `on_startup` in `common/on_actions/zin_start_situation.txt`), which already adds `zin_west_old_claims` ([start situation](../../02_lore/01_start_situation.md)).
+
+**Characters.** Rulers keep their generated ids `<TAG>_zin_ruler`; their names come from the [characters spec](../../02_lore/02_characters.md). The named advisors and commanders are entries in `tools/content/data/characters.json`, which `tools/content/modules/characters.mjs` writes to `common/characters/zin_rulers.txt` and `common/characters/zin_lore_characters.txt`; they are defined but not recruited at the start, and their focuses recruit them. Advisor traits are the ideologies spec's `zin_adv_*`; unit leader traits (`unyielding_defender`, `trait_engineer`, `cavalry_leader`, `skirmisher`, `infantry_leader`, `inshore_fighter`, `blue_water_expert`, `spotter`, `naval_invader`) are the engine's, re-localised by the warfare spec. Portraits are image-generated and wired by `tools/content/modules/portraits.mjs`.
+
+### Identifiers created
+
+| Tree | Focuses | Spirits | Events |
+| --- | ---: | ---: | --- |
+| Girdon | 37 | 8 | `zin_regional_girdon.1`–`.4` |
+| Lambin | 33 | 9 | `zin_regional_lambin.1` |
+| Buldor | 32 | 8 | `zin_regional_buldor.1`–`.3` |
+| Kradlon | 32 | 7 | `zin_regional_kradlon.1` |
+| Corogon | 32 | 8 | `zin_regional_corogon.1`–`.4` |
+| Varnondor | 32 | 9 | `zin_regional_varnondor.1` |
 
 ### Tree-declared scripted effects
 
 | Effect | Tree | Does |
 | --- | --- | --- |
-| `zin_regional_<name>_recruit` (`character`) | all | Recruits the named proposed character |
+| `zin_regional_<name>_recruit` (`character`) | all | `recruit_character` of the named proposed character |
 | `zin_regional_lambin_supply_convener` | Lambin | `send_equipment` 500 `zin_arms_equipment` to `global.zin_west_convener` (kept if Lambin is the convener) |
 | `zin_regional_kradlon_arm_convener` | Kradlon | `send_equipment` 1,000 `zin_arms_equipment` to `global.zin_west_convener` (kept if Kradlon is the convener) |
-| `zin_regional_buldor_sign_contract` / `_end_contract` | Buldor | Contract bookkeeping (variable `zin_regional_buldor_contracts`, idea on the employer, manpower and PP transfers) |
+| `zin_regional_buldor_offer_contract` | Buldor | Decision *Sell a Contract*: fires `zin_regional_buldor.2` to the target |
+| `zin_regional_buldor_sign_contract` | Buldor | Accept option of event 2: the employer pays 50 PP and gets `zin_regional_buldor_company_contract` (365 days); Buldor gains 75 PP and 5 army experience, pays 3,000 manpower, adds 1 to `zin_regional_buldor_contracts` and fires event 3 to itself with `days = 365` |
+| `zin_regional_buldor_end_contract` | Buldor | Event 3 and the decision *Recall a Company*: removes the newest employer's idea if it is still active, lowers `zin_regional_buldor_contracts` by 1, returns 2,000 manpower |
 
 ### Tree-declared scripted triggers
 
@@ -900,7 +1000,7 @@ For each tree `<t>` in `regional_girdon`, `regional_lambin`, `regional_buldor`, 
 | `zin_regional_girdon_episodes_past` | Girdon | `global.zin_eindil_stage` ≥ 3 |
 | `zin_regional_girdon_claimed` | Girdon | Gunwaith has a claim on any Girdon-owned state |
 | `zin_regional_kradlon_is_coastal` | Kradlon | `any_owned_state = { is_coastal = yes }` |
-| `zin_regional_buldor_contract_allowed` | Buldor | Target passes the route's filter (West only / any / Aenor realms and Lost Cause members) and is not a dark power |
+| `zin_regional_buldor_contract_allowed` | Buldor | Target passes the route's filter (West only / any / Aenor realms and Lost Cause members) and is not `zin_diplo_is_dark_power` |
 
 ### Opinion modifiers
 
@@ -911,11 +1011,21 @@ For each tree `<t>` in `regional_girdon`, `regional_lambin`, `regional_buldor`, 
 
 ### Mechanic calls and reads
 
-Western Crossing: `zin_west_add_grudge`, `zin_west_add_truce`, `zin_west_add_unity`, `zin_west_add_fleet`; triggers `zin_west_historical`; flags `zin_west_truce_broken`, `zin_west_grey_ford_war`, `zin_west_ford_commission`, `zin_west_council`, `zin_west_route_crossing`, `zin_west_route_relief`, `zin_west_route_divided`, `zin_west_pledged`, `zin_western_crossing`, `zin_west_stranded`, `zin_west_buldor_west`; variables `zin_west_truce`, `zin_west_convener`; event `zin_west.10`. Journey: `zin_eindil_add_regard`, `zin_eindil_add_renown`, `zin_eindil_join_coalition`, `zin_eindil_friend`; flags `zin_eindil_awake`, `zin_eindil_war_king`, `zin_eindil_named`, `zin_eindil_heeded`, `zin_eindil_returned`; variable `zin_eindil_stage`. Diplomacy: `zin_lost_cause_add_strength`, `zin_diplo_is_dark_power`. Gunwaith tree: spirit `zin_gunwaith_war_thanes` (read by Girdon's commission event).
+| Names | Owner |
+| --- | --- |
+| `zin_west_add_grudge`, `zin_west_add_truce`, `zin_west_add_unity`, `zin_west_add_fleet`; trigger `zin_west_historical`; flags `zin_west_truce_broken`, `zin_west_grey_ford_war`, `zin_west_ford_commission`, `zin_west_council`, `zin_west_route_crossing`, `zin_west_route_relief`, `zin_west_route_divided`, `zin_west_pledged`, `zin_western_crossing`, `zin_west_stranded`, `zin_west_aenoran_gold`; variables `zin_west_truce`, `zin_west_convener`; spirit `zin_west_old_claims`; site `zin_is_site_grey_ford`; events `zin_west.10`, `.20`–`.24`, `.30`, `.31`, `.61`–`.63`, `.70`; game rule `zin_rule_west_route` | [Western Crossing](../../04_mechanics/western_crossing.md) |
+| `zin_west_buldor_west`, `zin_gunwaith.4`, `zin_gunwaith_war_thanes` (read by Girdon's commission event) | [Gunwaith's tree](../major/gunwaith.md); Western Crossing |
+| `zin_eindil_add_regard`, `zin_eindil_add_renown`, `zin_eindil_join_coalition`, `zin_eindil_friend`; flags `zin_eindil_awake`, `zin_eindil_war_king`, `zin_eindil_named`, `zin_eindil_heeded`, `zin_eindil_returned`; variable `zin_eindil_stage` | [Eindil's journey](../../04_mechanics/eindil_journey.md) |
+| `zin_lost_cause_add_strength`, `zin_lost_cause_member`, `zin_diplo_is_dark_power` | [Aenor](../../04_mechanics/aenor_court_and_succession.md); [diplomacy](../../03_gameplay/03_diplomacy_and_factions.md) |
+| `zin_aenor_is_realm`, `zin_is_site_parim` | Aenor; key sites |
+| `zin_tradition_girdon_wardens`, `zin_tradition_buldor_companies` | [peoples](../../00_foundation/03_peoples.md) |
+| `zin_light_council`, `zin_wild_freeholds`, `zin_adv_*` | [ideologies and politics](../../00_foundation/02_ideologies_and_politics.md) |
+| `zin_regional_raerby`, `zin_regional_pollos` (receivers of Corogon's events 3 and 4) | [Triton's Islands trees](tritons_islands.md) |
+| `zin_rules_is_free`, `zin_rule_historical_path` | [defines and rules](../../00_foundation/05_defines_and_rules.md) |
 
 ### `allow_branch` roots
 
-`the_winter_ford_remembered` (Girdon), `a_stranger_on_the_downs` (Lambin), `the_stranger_at_the_forge` (Kradlon) and `a_ship_for_the_houseless_king` (Corogon) carry `allow_branch = global_flag zin_eindil_awake`. The journey effect that sets the flag calls `mark_focus_tree_layout_dirty` for every West Lands country.
+`the_winter_ford_remembered` (Girdon), `a_stranger_on_the_downs` (Lambin), `the_stranger_at_the_forge` (Kradlon) and `a_ship_for_the_houseless_king` (Corogon) carry `allow_branch = global_flag zin_eindil_awake`. The journey effect that sets the flag calls `mark_focus_tree_layout_dirty` for every West Lands country (request to the journey spec).
 
 ### Game rules and defines
 
@@ -923,7 +1033,7 @@ No new game rules; the trees read `zin_west_historical` (`zin_rule_west_route` a
 
 ### Icons and pictures
 
-All focus icons come from the shared catalog; no new keys. Event pictures: `grey_ford_truce` (Girdon), `generic_court` (court and election events), `western_crossing` (late events), `generic_peace` (envoys and contracts). All art is image-generated.
+Every focus names its icon in its tree's `### Icons` table; all are catalog keys and in the game today, so no new key is needed. Ideas that events put on other countries use: `company_contract` `coin_chest`, `island_trade` `sea_charts`, `grain_contract` `granary`, `parim_market` `market_stalls`. Event pictures are in the events tables: `grey_ford_truce` (Girdon and Gunwaith), `generic_court` (courts, elections, Parim), `generic_peace` (contracts and markets), `generic_sea` (Corogon's sea events). All art is image-generated.
 
 ## AI
 
@@ -934,19 +1044,16 @@ All focus icons come from the shared catalog; no new keys. Event pictures: `grey
 
 ## Acceptance
 
-1. The compiler accepts the six trees: focus counts as tabled (37, 33, 32, 32, 32, 32); unique keys and positions; prerequisites above their focuses; exclusives symmetric; days multiples of 7; no `raw` blocks.
-2. The HOI4 Agent Tools focus inspector reports no errors; each tree renders cleanly.
-3. On 1 Thaw 4A 1748: no focus in these trees creates a war goal or joins a war; no visible focus mentions the stranger; no text names Afrit.
-4. Historical observer run: Girdon takes `defend_the_ford` within 60 days of the truce breaking and `brothers_across_the_ford` after the war-king's peace; Lambin takes `a_stranger_on_the_downs` and `host_the_peace_talks` in 4A 1750; Kradlon fires `zin_west.10` and takes `the_guilds_remember`; Corogon and Varnondor raise the western fleet by at least 10 between them by Thaw 1755; at least four of the six pledge to the Crossing; every stranded country among them takes its coalition focus within 60 days of `zin_eindil_returned`.
-5. Scenario: Buldor on *Whoever Pays* sells a contract to a country at war; the employer has `company_contract` for 365 days; Buldor's count returns to 0 after the hidden event.
-6. Scenario: Varnondor completes `close_the_approaches`; with `zin_rule_west_route = divided`, Varnondor never joins a war with Aenor before 1760.
-7. Every modifier in the spirit tables exists in the game's modifier documentation; every engine effect and trigger named exists in the documentation.
+1. The compiler builds the six trees with these counts: Girdon 37, Lambin 33, Buldor 32, Kradlon 32, Corogon 32, Varnondor 32. Keys and positions are unique, prerequisites sit above their focuses, exclusives are symmetric (the three-way choices of Girdon, Buldor and Varnondor list both others), days are multiples of 7, no tree has a `raw` block, and the HOI4 Agent Tools focus inspector and script validator pass; each tree renders cleanly.
+2. On 1 Thaw 4A 1748: no focus in these trees creates a war goal or joins a war; no visible focus mentions the stranger; no text names Afrit (compiler secret scan); each country carries its start spirit.
+3. Historical observer run, 4A 1748 to 1760 (one in-game year per phase from phase 3; the dates assume the 4A 1748 calendar): Girdon takes `defend_the_ford` within 60 days of the truce breaking and `brothers_across_the_ford` after the war-king's peace; Lambin takes `a_stranger_on_the_downs` and `host_the_peace_talks` in 4A 1750; Kradlon fires `zin_west.10` and takes `the_guilds_remember`; Corogon and Varnondor raise the western fleet by at least 10 between them by Thaw 1755; at least four of the six pledge to the Crossing; every stranded country among them takes its coalition focus within 60 days of `zin_eindil_returned`.
+4. Scenario test: Buldor on *Whoever Pays* sells a contract to a country at war; the employer has `zin_regional_buldor_company_contract` for 365 days; Buldor's count returns to 0 after the hidden event.
+5. Scenario test: Varnondor completes `close_the_approaches`; with `zin_rule_west_route = divided`, Varnondor never joins a war with Aenor before 1760.
+6. Every modifier in the spirit tables exists in the 1.19.3 modifier documentation; every engine effect and trigger named exists in the documentation; every icon and picture is a catalog key.
+7. None of the six countries loads the interim Long Peace tree.
 
 ## Open questions
 
-1. **Lambin and the confederation.** The tree makes Lambin the likeliest leader of the Grey Ford Confederation by raising its regard. Does the owner have another western court in mind, or should the confederation stay unnamed?
-2. **Lambin's old stations.** Is a ruined First Age Aenoran trading station on Lambin's coast a welcome proposal?
-3. **Buldor's contracts.** Should the companies be able to serve Volgan or Afrit's realm for pay? The spec says no ("not a dark power").
-4. **Kradlon's guilds.** The roster calls Kradlon a workers' realm. Is a league of guild towns under a First Guildsman the right Fourth Age reading?
-5. **Varnondor as the staging port.** The spec makes Varnondor's harbours the crossing fleet's anchorage. Is the eastern peninsula the right place, given that where the fleets crossed is open?
-6. **Girdon in the Crossing.** Girdon pledges only if its grudge reaches 45. Should it cross with Gunwaith on the historical path at all?
+1. **Lambin and the confederation; Lambin's old stations.** OPEN_QUESTIONS, "regions: cold, west, tritons" 4. Proceeds on the proposal: Lambin is the likeliest (not fixed) leader of the Grey Ford Confederation through its regard, and a ruined First Age Aenoran trading station stands on its coast.
+2. **Buldor, Kradlon, Varnondor and Girdon.** OPEN_QUESTIONS, "regions: cold, west, tritons" 5. Proceeds on the proposals: the Buldor companies never serve a dark power; Kradlon is a league of guild towns under a First Guildsman; Varnondor's harbours are the staging anchorage, and no text says where the fleets landed; Girdon crosses only if its grudge reaches 45.
+3. **Who broke the truce; Girdon and the Crossing.** OPEN_QUESTIONS, "west and cold lands" 5 and 7. Proceeds on the Western Crossing spec's proposal: Gunwaith's war-thanes break the truce, and Girdon's pledge follows its grudge.

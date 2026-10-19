@@ -1,10 +1,10 @@
 # Aenor focus tree
 
-**Status:** Draft. **Priority:** 4. **Phase:** 4.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 4. **Phase:** 4.
 
 ## Purpose
 
-Aenor's tree is the deepest in ZIN: 140 focuses that carry the Middle Kingdom from the gilded, peaceful court of 4A 1748 through the Golden King's murder, the four-camp succession, the War of the Last Crowns and, on the historical path, Eindil's coronation in 4A 1760. It drives the systems of [../../04_mechanics/aenor_court_and_succession.md](../../04_mechanics/aenor_court_and_succession.md): `zin_court_corruption`, `zin_council_influence`, `zin_concord_loyalty`, the Lost Cause, the death clock and the succession camps. Data file: `docs/design/focus/aenor.json` (tree id `aenor`, tier `major`, countries `["Aenor"]`). The tree is loaded by original tag, so every Aenor civil-war breakaway uses it too.
+Aenor's tree is the deepest in ZIN: 140 focuses that carry the Middle Kingdom from the gilded, peaceful court of 4A 1748 through the Golden King's murder, the four-camp succession, the War of the Last Crowns and, on the historical path, Eindil's coronation in 4A 1760. It drives the systems of [../../04_mechanics/aenor_court_and_succession.md](../../04_mechanics/aenor_court_and_succession.md): `zin_court_corruption`, `zin_council_influence`, `zin_concord_loyalty`, the Lost Cause, the death clock and the succession camps. Data file: `docs/design/focus/aenor.json` (tree id `aenor`, tier `major`, countries `["Aenor"]`). The tree is loaded by original tag, so every Aenor civil-war breakaway uses it too. In the game today Aenor runs the interim Long Peace tree; this tree replaces it for Aenor when it is compiled.
 
 ## Lore basis
 
@@ -27,21 +27,25 @@ Open questions the tree never closes: the Golden King's name and heirs, Merovan'
 - **Peaceful start.** The first-era branches (rows 0–6) are court, economy, Concord, Lost Cause, temples and army preparation. No first-era focus declares war except *Pacify the Bloody Forest*, a deliberate choice against a hostile enclave (AI weight 0 before the King's death).
 - **War branches** unlock only from story flags (`zin_golden_king_dead`, `zin_war_of_last_crowns`, `zin_western_crossing`, `zin_leren_withdrawal`, `zin_volgan_marches`, `zin_zol_rising`, `zin_eindil_returned`) or a deliberate focus (*Mobilise the Realm*, *Restore the Charters by Force*).
 - **The secret.** No focus or event text visible before `zin_afrit_revealed` names Afrit or calls the Deliverer a demon. The Faithful branch reads as a benevolent god-king's reign. Texts that change after the reveal use scripted localisation keyed on that flag.
-- **Era gating.** Succession branches open by `zin_aenor_ruling_camp` (the scripted triggers `zin_aenor_ruled_by_*`). They are not mutually exclusive with each other, because the historical path passes through three of them in turn (Faithful, Captains' Regency, Host). A branch whose camp loses power stops: its remaining focuses carry the camp trigger in `available`.
+- **The stranger's name.** Focus names are visible to every player at every date, so no focus name says "Eindil" or "son of Ein" before `zin_eindil_named` (decision D4). *Son of Ein, Son of Aen* is two-faced (decision D7): before `zin_eindil_named` it reads *The Hailed King's Claim*; its description uses scripted localisation on the same global flag.
+- **Era gating.** Succession branches open by `zin_aenor_ruling_camp` (the mechanic's scripted triggers `zin_aenor_ruled_by_court`, `_faithful`, `_dominions`, `_host`, `_captains`). They are not mutually exclusive with each other, because the historical path passes through three of them in turn (Faithful, Captains' Regency, Host). A branch whose camp loses power stops: **every** focus of branches H, I, K and L carries its branch condition in `available` (H `check zin_aenor_ruled_by_court`; I `check zin_aenor_ruled_by_faithful`; K `check zin_aenor_ruled_by_host` or `flag zin_aenor_hailed_king`; L `check zin_aenor_ruled_by_captains`), and every focus of branch J after its root carries `not check zin_aenor_ruled_by_faithful`. The tables show the condition only on each root.
 
 ### Effect notation in the tables
 
 Effects use the compiler vocabulary of [../00_format_and_compiler.md](../00_format_and_compiler.md), abbreviated:
 
 - `political_power 50`, `stability 0.03`, `war_support 0.05`, `army_experience 10`, `navy_experience 10`, `manpower 5000` as in the vocabulary.
-- `add_spirit k`, `remove_spirit k`, `swap_spirit k1→k2`, `timed_spirit k 365`. Keys without a `zin_` prefix are this tree's spirits (compiled `zin_aenor_<key>`); full ids (`zin_aenor_…`) are mechanic ideas from the mechanics spec. **The compiler must accept full mechanic idea ids** (see Open questions).
-- `call name(v)` = `{ "call": "name", "args": { "value": v } }`. `call name{camp: host, value: 10}` passes named arguments.
+- `add_spirit k`, `remove_spirit k`, `swap_spirit k1→k2`, `timed_spirit k 365`. Keys without a `zin_` prefix are this tree's spirits (compiled `zin_aenor_<key>`); full ids (`zin_aenor_…`) are mechanic ideas from the mechanics spec, which the compiler accepts and checks (integration decision S9).
+- `call name(v)` = `{ "call": "name", "args": { "value": v } }`. `call name{camp: host, value: 10}` passes named arguments (`call zin_aenor_delay_death_clock{days: 120}` passes `days`).
 - Shorthand calls: `corruption(v)` = `call zin_aenor_add_court_corruption(v)`; `council(v)` = `call zin_aenor_add_council_influence(v)`; `loyalty_all(v)` = `call zin_aenor_add_concord_loyalty_all(v)`; `lost_cause(v)` = `call zin_aenor_add_lost_cause(v)`; `camp(c, v)` = `call zin_aenor_add_camp_support{camp: c, value: v}`.
-- `building type level where`: `where` is `capital`, `random_owned`, `random_coastal` or a site key: `great_lake_ports`, `great_wall` (resolved through the `zin_is_site_*` triggers of [../../01_map/02_key_sites.md](../../01_map/02_key_sites.md)).
+- `building type level where`: `where` is `capital`, `random_owned`, `random_coastal` or a site key: `great_lake_ports` (trigger `zin_is_site_great_lake_ports`, requested from the key sites spec) or `great_wall` (`zin_is_site_great_wall`), resolved through the `zin_is_site_*` triggers of [../../01_map/02_key_sites.md](../../01_map/02_key_sites.md). Building types are the game's: `industrial_complex`, `arms_factory`, `dockyard`, `infrastructure`, `naval_base`, `bunker`, `coastal_bunker`.
+- `research c b ×n` = `{ "research": { "categories": [c], "bonus": b, "uses": n } }`. `land_doctrine` is a doctrine category: in 1.19.3 the compiler writes `add_doctrine_cost_reduction` for it and `add_tech_bonus` for technology categories. `construction_tech` is the game's category, kept until the economy spec renames it; naval bonuses name the warfare spec's `zin_cat_galleys` (vanilla `naval_equipment` until the warfare stage replaces the technologies).
+- `equipment arms n` = `{ "equipment": { "type": "zin_arms_equipment", "amount": n } }`, the warfare spec's arms archetype (vanilla `infantry_equipment` until the warfare stage lands).
 - `event k` fires this tree's event `k`; `event_for Country k` fires it for that country.
 - `for Country [ … ]` = `for_country`.
+- `zin_aenor_*` effects named with `call` are the mechanic's, except the four the tree declares itself (Implementation).
 
-AI notes give `base` and multipliers. "hist" means under `zin_rule_historical_path`; "alt" otherwise.
+AI notes give `base` and multipliers. "hist" means `zin_rule_historical_path = HISTORICAL` (at `PLAUSIBLE` the historical choice gets the historical-path spec's ×3 favour instead, [06_historical_path_and_ai.md](../../03_gameplay/06_historical_path_and_ai.md)); "alt" otherwise.
 
 ### Layout
 
@@ -97,12 +101,12 @@ Width: columns 0–28 (29). Every position is unique; every focus sits below all
 | lake_shipwrights | Lake Shipwrights | great_lake_ports | — | 7,1 | 70 | building dockyard 2 great_lake_ports; navy_experience 10 | 30 |
 | market_charters | Market Charters | great_lake_ports | — | 9,1 | 35 | building industrial_complex 1 random_owned; corruption(2) | 50 |
 | canal_works | The Canal Works | roads_of_parim | — | 5,2 | 70 | research construction_tech 0.5 ×1; building infrastructure 1 random_owned (×2) | 50 |
-| lake_fleet | The Lake Fleet | lake_shipwrights | — | 7,2 | 70 | add_spirit fleet_of_the_lake; research naval_equipment 0.5 ×1 | 30 |
+| lake_fleet | The Lake Fleet | lake_shipwrights | — | 7,2 | 70 | add_spirit fleet_of_the_lake; research zin_cat_galleys 0.5 ×1 | 30 |
 | sea_trade | Trade Across the Sea | market_charters | — | 9,2 | 70 | add_spirit sea_routes | 40 |
 | royal_foundries | The Royal Foundries | canal_works | — | 5,3 | 70 | building industrial_complex 2 random_owned | 60 |
 | guild_halls | The Guild Halls | lake_fleet \| sea_trade | — | 8,3 | 70 | building arms_factory 1 capital; building industrial_complex 1 random_coastal | 50 |
 | eastern_caravans | The Eastern Caravans | sea_trade | — | 9,3 | 35 | political_power 25; event_for Noris caravan_envoys; event_for Stabilo caravan_envoys | 40 |
-| arsenals_of_parim | The Arsenals of Parim | royal_foundries | — | 5,4 | 70 | building arms_factory 2 capital; equipment infantry_equipment 1000 | 50 |
+| arsenals_of_parim | The Arsenals of Parim | royal_foundries | — | 5,4 | 70 | building arms_factory 2 capital; equipment arms 1000 | 50 |
 | universities | The Universities of Parim and Selen | guild_halls | — | 8,4 | 70 | add_spirit learned_halls; for Selen [ call zin_aenor_add_concord_loyalty(5) ] | 50 |
 | kingdom_of_plenty | A Kingdom of Plenty | arsenals_of_parim, universities | — | 7,5 | 70 | add_spirit realm_of_plenty | 60 |
 | kingdoms_armouries | The Kingdom's Armouries | kingdom_of_plenty | — | 7,6 | 70 | available: global_flag zin_golden_king_dead \| global_flag zin_war_of_last_crowns \| focus_done mobilise_the_realm; building arms_factory 3 random_owned | 80 once available |
@@ -114,10 +118,10 @@ Width: columns 0–28 (29). Every position is unique; every focus sits below all
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | middle_kingdom_concord | The Middle Kingdom Concord | — | — | 12,0 | 70 | political_power 25; loyalty_all(3); flag zin_aenor_charters_open (charter decisions visible) | hist 70 |
-| concord_council | Convene the Concord Council | middle_kingdom_concord | — | 11,1 | 35 | call zin_aenor_convene_concord_council | 50 |
+| convene_the_concord | Convene the Concord Council | middle_kingdom_concord | — | 11,1 | 35 | call zin_aenor_convene_concord_council | 50 |
 | royal_envoys | Royal Envoys to the Dominions | middle_kingdom_concord | — | 13,1 | 35 | loyalty_all(3); flag zin_aenor_envoys (Realm panel shows exact loyalty) | 40 |
-| golden_charters | The Golden Charters | concord_council | charters_renewed | 10,2 | 70 | flag zin_aenor_golden_charters_open; political_power 50; corruption(5) | hist 70; alt 20 |
-| charters_renewed | The Charters of Parim Renewed | concord_council | golden_charters | 12,2 | 70 | flag zin_aenor_free_charters_open; loyalty_all(8); corruption(−3) | hist 0; alt 40, ×2 if average loyalty < 50 |
+| golden_charters | The Golden Charters | convene_the_concord | charters_renewed | 10,2 | 70 | flag zin_aenor_golden_charters_open; political_power 50; corruption(5) | hist 70; alt 20 |
+| charters_renewed | The Charters of Parim Renewed | convene_the_concord | golden_charters | 12,2 | 70 | flag zin_aenor_free_charters_open; loyalty_all(8); corruption(−3) | hist 0; alt 40, ×2 if average loyalty < 50 |
 | wall_charter | The Wall Charter | royal_envoys | — | 14,2 | 35 | for Kingson [ call zin_aenor_add_concord_loyalty(10) ]; building bunker 1 great_wall | 30 |
 | concord_levies | The Concord Levies | golden_charters | — | 10,3 | 70 | add_spirit levies_of_the_concord; loyalty_all(−3) | hist 40 |
 | selen_accord | An Accord with Selen | charters_renewed \| royal_envoys | — | 12,3 | 70 | event_for Selen selen_accord; for Selen [ call zin_aenor_add_concord_loyalty(15) ] | 40; hist 20 |
@@ -145,9 +149,9 @@ Width: columns 0–28 (29). Every position is unique; every focus sits below all
 | old_genealogies | The Old Genealogies | scholars_of_the_cause | — | 19,2 | 70 | flag zin_aenor_genealogies; lost_cause(5) | hist 30 after 1751 |
 | black_ships | The Black Ships | rangers_of_selen | — | 17,3 | 35 | event black_ships; building coastal_bunker 1 random_coastal; lost_cause(3) | 30 |
 | southern_warnings | Heed the Southern Warnings | rangers_of_selen \| watchers_on_the_wall | — | 18,3 | 35 | event southern_warnings; war_support 0.02; lost_cause(5) | 30 |
-| the_kings_tasters | The King's Tasters | rangers_of_selen \| old_genealogies | — | 19,3 | 35 | available: check zin_aenor_king_alive; timed_spirit zin_aenor_kings_tasters 365; call zin_aenor_delay_death_clock(120); council(−5); unlocks the King's Health decisions | hist 0; alt 30 |
+| the_kings_tasters | The King's Tasters | rangers_of_selen \| old_genealogies | — | 19,3 | 35 | available: check zin_aenor_king_alive; timed_spirit zin_aenor_kings_tasters 365; call zin_aenor_delay_death_clock{days: 120}; council(−5); the mechanic's King's Health decisions become visible (they test this focus) | hist 0; alt 30 |
 | shield_of_the_concord | The Shield of the Concord | triumph_of_the_league \| honorary_crowns, black_ships \| southern_warnings | — | 16,4 | 70 | available: variable zin_aenor_lost_cause above 59; call zin_aenor_raise_lost_cause_shield; loyalty_all(5) | hist 0 before `zin_war_of_last_crowns`, 60 after; alt 50 |
-| the_hidden_hand | The Hidden Hand | the_kings_tasters | — | 19,4 | 70 | flag zin_aenor_hidden_hand_seen; council(−5); event hidden_hand | hist 0; alt 40 |
+| the_hidden_hand | The Hidden Hand | the_kings_tasters | — | 19,4 | 70 | flag zin_aenor_hidden_hand_seen; council(−5); if flag zin_aenor_audit_done then lost_cause(5); event hidden_hand | hist 0; alt 40 |
 | proof_of_blood | Proof of Blood | old_genealogies | — | 18,5 | 70 | available: global_flag zin_eindil_named; flag zin_aenor_proof_of_blood; camp(host, 15) | 60 unless ruled by the Faithful (0) |
 | lost_cause_reborn | The Lost Cause Reborn | shield_of_the_concord \| proof_of_blood | — | 17,6 | 70 | available: global_flag zin_eindil_named, not check zin_aenor_ruled_by_faithful; global_flag zin_lost_cause_with_eindil; lost_cause(15); camp(host, 20) | 100 once available |
 
@@ -185,7 +189,7 @@ Width: columns 0–28 (29). Every position is unique; every focus sits below all
 | pacify_bloody_forest | Pacify the Bloody Forest | golden_guard | — | 24,3 | 70 | available: not at_war, exists Bloody Forest; wargoal { target Bloody Forest, type annex_everything }; claims_on Cursed Lands | 0 before `zin_golden_king_dead`; 10 after |
 | new_doctrine | A New Doctrine of War | golden_guard \| drill_fields | — | 26,3 | 70 | research land_doctrine 0.5 ×2; army_experience 10 | 50 |
 | strait_fortresses | Fortresses on the Strait | coastal_watch | — | 28,3 | 70 | building naval_base 1 random_coastal; building coastal_bunker 2 random_coastal | 30; ×3 with `zin_leren_withdrawal` |
-| kings_host | The King's Host | new_doctrine | — | 26,4 | 70 | add_spirit host_of_the_king; equipment infantry_equipment 2000 | 50 |
+| kings_host | The King's Host | new_doctrine | — | 26,4 | 70 | add_spirit host_of_the_king; equipment arms 2000 | 50 |
 | mobilise_the_realm | Mobilise the Realm | kings_host, strait_fortresses \| wall_garrisons | — | 27,5 | 70 | available: global_flag zin_golden_king_dead \| global_flag zin_war_of_last_crowns \| at_war; add_spirit realm_mobilised; war_support 0.05 | 100 once available |
 
 ### G. The King Endures (columns 0–2)
@@ -198,7 +202,7 @@ Width: columns 0–28 (29). Every position is unique; every focus sits below all
 | arrest_the_chancellor | Arrest the Chancellor | poison_in_the_cup | — | 0,9 | 35 | council(−10); tooltip "Chancellor Merovan is removed from the King's council." | 100 |
 | seize_the_ledgers | Seize the Houses' Ledgers | poison_in_the_cup | — | 2,9 | 70 | remove_spirit first_light_houses; council(−10); stability −0.03 | 60 |
 | the_loyal_clergy | The Loyal Clergy | arrest_the_chancellor \| seize_the_ledgers | — | 1,10 | 70 | stability 0.05; council(−5) | 60 |
-| the_kings_war | The King's War | arrest_the_chancellor | — | 0,11 | 35 | available: at_war; add_spirit kings_war | 100 if at war |
+| the_kings_war | The King's War | arrest_the_chancellor | — | 0,11 | 35 | available: at_war; timed_spirit kings_war 365 | 100 if at war |
 | golden_king_reborn | The Golden King Reborn | the_kings_war \| the_loyal_clergy | — | 1,12 | 70 | available: global_flag zin_golden_king_survives; add_spirit sobered_king; corruption(−20) | 100 |
 
 ### H. The Regency of Gold (columns 4–8)
@@ -250,14 +254,14 @@ Width: columns 0–28 (29). Every position is unique; every focus sits below all
 
 ### K. The King Without a House (columns 20–24)
 
-**Purpose.** Eindil leads Aenor as the Hailed King: the historical branch of 4A 1757–1760. **Opens:** `check zin_aenor_ruled_by_host` (or flag `zin_aenor_hailed_king`); also for a Host breakaway. **Drives:** Host support, the Lost Cause with Eindil, the free peoples' coalition, retaking Parim, the coronation.
+**Purpose.** Aenor follows Eindil as the Hailed King: the historical branch of 4A 1757–1760. Until his coronation Eindil stays Selen's general and leads the Host, not Aenor (decisions S2 and O1); Aenor hails him as its king-to-be and fights in his coalition. Only a realm that is itself his Host (the Host camp or its breakaway) has him as leader before the crown. **Opens:** `check zin_aenor_ruled_by_host` (or flag `zin_aenor_hailed_king`); also for a Host breakaway. **Drives:** Host support, the Lost Cause with Eindil, the free peoples' coalition, retaking Parim, the coronation.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| king_without_a_house | The King Without a House | — | — | 22,8 | 35 | available: check zin_aenor_ruled_by_host \| flag zin_aenor_hailed_king; add_spirit popular_host | 100 |
+| king_without_a_house | The King Without a House | — | — | 22,8 | 35 | available: check zin_aenor_ruled_by_host \| flag zin_aenor_hailed_king; add_spirit popular_host; remove_spirit captains_command | 100 |
 | son_of_ein | Son of Ein, Son of Aen | king_without_a_house | — | 21,9 | 70 | available: global_flag zin_eindil_named; global_flag zin_lost_cause_with_eindil; loyalty_all(10); stability 0.05 | 100 |
 | men_of_selen | The Men of Selen | king_without_a_house | — | 23,9 | 35 | event_for Selen men_of_selen; for Selen [ call zin_aenor_add_concord_loyalty(15) ] | 90 |
-| call_the_free_peoples | Call the Free Peoples | son_of_ein | — | 20,10 | 70 | manpower 10000; flag zin_aenor_free_peoples (decisions invite any country at war with Volgan or Zol to fight alongside) | 80 |
+| call_the_free_peoples | Call the Free Peoples | son_of_ein | — | 20,10 | 70 | manpower 10000; flag zin_aenor_free_peoples; call zin_aenor_call_free_peoples (event free_peoples to every country at war with Volgan or Zol) | 80 |
 | light_of_glo | The Light of Glo | son_of_ein \| men_of_selen | — | 22,10 | 70 | available: global_flag zin_glo_with_eindil; add_spirit glo_light | 100 |
 | no_crown_by_force | No Crown Taken by Force | men_of_selen | — | 24,10 | 35 | call zin_aenor_set_charter_all{charter: free}; loyalty_all(10); flag zin_aenor_no_crown_by_force | 90 |
 | the_last_alliance | The Last Alliance of Men | call_the_free_peoples | — | 21,11 | 70 | add_spirit last_alliance; if not global_flag zin_lost_cause_shield then call zin_aenor_raise_lost_cause_shield | 80 |
@@ -273,9 +277,9 @@ The coronation itself is the mechanic event zin_aenor.400; *The People Choose Th
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| abandoned_throne | The Abandoned Throne | — | — | 27,8 | 35 | available: check zin_aenor_ruled_by_captains; stability 0.08 | 100 |
+| abandoned_throne | The Abandoned Throne | — | — | 27,8 | 35 | available: check zin_aenor_ruled_by_captains; stability 0.08; remove_spirit deliverer_crowned; remove_spirit chancery; remove_spirit altar_and_throne; remove_spirit sworn_realm; remove_spirit blessed_realm | 100 |
 | the_captains_rule | The Captains' Rule | abandoned_throne | — | 26,9 | 35 | add_spirit captains_command; army_experience 20 | 90 |
-| open_temple_vaults | Open the Temple Vaults | abandoned_throne | — | 28,9 | 35 | political_power 100; equipment infantry_equipment 3000; council(−30); remove_spirit first_light_houses | 80 |
+| open_temple_vaults | Open the Temple Vaults | abandoned_throne | — | 28,9 | 35 | political_power 100; equipment arms 3000; council(−30); remove_spirit first_light_houses | 80 |
 | send_for_the_stranger | Send for the Stranger | the_captains_rule \| open_temple_vaults | — | 27,10 | 35 | available: global_flag zin_eindil_named; camp(host, 25); lost_cause(10) | 100 |
 
 ### M. Aenor Beset (columns 10–18, rows 15–18)
@@ -292,10 +296,10 @@ The coronation itself is the mechanic event zin_aenor.400; *The People Choose Th
 | the_southern_front | The Southern Front | aenor_beset | — | 18,16 | 70 | available: global_flag zin_volgan_marches; building bunker 2 random_owned; event_for Mirolon southern_aid | 70 |
 | levy_of_the_lake | The Levy of the Lake | hold_the_western_shore \| the_strait_betrayed | — | 11,17 | 35 | add_spirit lake_levy; manpower 25000 | 90 |
 | fortress_parim | Fortress Parim | hold_the_western_shore \| the_strait_betrayed \| against_the_deathless | — | 13,17 | 70 | building bunker 3 capital | 90 |
-| a_common_cause | A Common Cause | the_wall_holds \| the_southern_front | — | 16,17 | 35 | add_spirit common_cause; flag zin_aenor_common_cause (decisions offer military access and alliance to any country at war with Volgan or Zol) | 70 |
+| a_common_cause | A Common Cause | the_wall_holds \| the_southern_front | — | 16,17 | 35 | add_spirit common_cause; flag zin_aenor_common_cause; call zin_aenor_offer_common_cause (event common_cause_offer to every country at war with Volgan or Zol) | 70 |
 | last_stand | The Last Stand of the Middle Kingdom | levy_of_the_lake \| fortress_parim, a_common_cause | — | 14,18 | 70 | add_spirit final_stand | 90 |
 
-The southern front's `random_owned` is a placeholder: when the map spec adds a site key for Aenor's southern marches, use it.
+The southern front builds in `random_owned` states by design: the key sites spec has no site for Aenor's southern marches, and the tree does not need one.
 
 ### N. The Crown of Aen (columns 13–15, rows 20–21)
 
@@ -303,19 +307,77 @@ The southern front's `random_owned` is a placeholder: when the map spec adds a s
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| a_kingdom_of_ruins | A Kingdom of Ruins | — | — | 13,20 | 70 | available: global_flag zin_eindil_crowned, check zin_aenor_eindil_rules; add_spirit kingdom_of_ruins; building infrastructure 2 capital | 100 |
-| treaties_not_conquest | Treaties, Not Conquest | — | — | 15,20 | 70 | available: as above; add_spirit peace_of_treaties; call zin_aenor_set_charter_all{charter: free}; event treaties | 100 |
-| the_fourth_age_ends | The Fourth Age Ends | a_kingdom_of_ruins, treaties_not_conquest | — | 14,21 | 70 | swap_spirit kingdom_of_ruins→age_of_the_king; event fourth_age_ends | 100 |
+| a_kingdom_of_ruins | A Kingdom of Ruins | — | — | 13,20 | 70 | available: global_flag zin_eindil_crowned, check zin_aenor_eindil_rules; add_spirit kingdom_of_ruins; remove_spirit realm_beset; building infrastructure 2 capital | 100 |
+| treaties_not_conquest | Treaties, Not Conquest | — | — | 15,20 | 70 | available: as above; add_spirit peace_of_treaties; call zin_aenor_set_charter_all{charter: free}; call zin_aenor_offer_treaties (event treaties to every country at war with Aenor except Volgan, Zol, the Worshipdom and its subjects) | 100 |
+| the_fourth_age_ends | The Fourth Age Ends | a_kingdom_of_ruins, treaties_not_conquest | — | 14,21 | 70 | available: global_flag zin_eindil_crowned; swap_spirit kingdom_of_ruins→age_of_the_king; call zin_aenor_announce_fourth_age (event fourth_age_ends to every country) | 100 |
 
 ## Implementation
 
 ### Files
 
-As in the compiler spec: `docs/design/focus/aenor.json` → `common/national_focus/zin_aenor.txt`, `common/ideas/zin_focus_aenor.txt`, `events/zin_aenor.txt`, `localisation/english/zin_focus_aenor_l_english.yml`. The tree declares no scripted effects or triggers of its own: every `call` and `check` is defined in the mechanics spec's `zin_aenor_court.txt` files. The tree's focus `country` filter uses the original tag so breakaways receive it.
+| File | Written by | Content |
+| --- | --- | --- |
+| `docs/design/focus/aenor.json` | hand-authored data (source of truth) | The tree in the compiler format |
+| `common/national_focus/zin_aenor.txt` | `tools/content/modules/focus_compiler.mjs` | The 140 focuses; focus tree `country` filter on the original tag, so breakaways receive it |
+| `common/ideas/zin_focus_aenor.txt` | same | The tree's 53 spirits (`zin_aenor_<key>`) |
+| `events/zin_aenor.txt` | same | The tree's events, namespace `zin_aenor`, id base 500 (ids 500–519); the mechanic's `events/zin_aenor_court.txt` uses 1–499 in the same namespace (decision S9) |
+| `common/scripted_effects/zin_aenor.txt` | same | The four tree-declared effects below |
+| `common/opinion_modifiers/zin_aenor.txt` | same | The tree's opinion modifiers below |
+| `localisation/english/zin_focus_aenor_l_english.yml` | same | All the tree's text, UTF-8 with BOM |
+
+The compiler writes every file in the builder's one transaction through the shared rewrite engine (`tools/content/apply.mts`). Compiled, the tree replaces the interim Long Peace tree (`zin_long_peace_*`, written today by `tools/content/modules/vanilla_removal.mjs`) for Aenor and its breakaways. Every other `call` and `check` is the mechanic's: [aenor_court_and_succession.md](../../04_mechanics/aenor_court_and_succession.md) defines them in `common/scripted_effects/zin_aenor_court.txt` and `common/scripted_triggers/zin_aenor_court.txt`, written by that spec's builder module. The tree uses no `raw` block.
+
+### Tree-declared scripted effects
+
+| Effect | Does |
+| --- | --- |
+| `zin_aenor_call_free_peoples` | For every country at war with Volgan or Zol, not at war with ROOT and not ROOT's subject: `country_event = zin_aenor.518` |
+| `zin_aenor_offer_common_cause` | For every country at war with Volgan or Zol and not at war with ROOT: `country_event = zin_aenor.519` |
+| `zin_aenor_offer_treaties` | For every country at war with ROOT that is not Volgan, not Zol, not the Worshipdom and not a subject of the Worshipdom: `country_event = zin_aenor.516` |
+| `zin_aenor_announce_fourth_age` | For every country: `country_event = zin_aenor.517` |
+
+Countries are resolved by name to tags at build time; "at war with" is the engine trigger `has_war_with`.
+
+### Opinion modifiers (tree-declared, proposed)
+
+Written to `common/opinion_modifiers/zin_aenor.txt` by the pattern `zin_<tree>_opinion` recorded in [00_contract_additions.md](../../04_mechanics/00_contract_additions.md).
+
+| Id | Value | Decay | Used by |
+| --- | ---: | --- | --- |
+| `zin_aenor_opinion_envoys_welcomed` | +20 | none | zin_aenor.502 "Welcome them" (both ways) |
+| `zin_aenor_opinion_envoys_received` | +5 | none | zin_aenor.502 "Be wary" |
+| `zin_aenor_opinion_honorary_crown` | +15 | none | zin_aenor.504 "Accept" |
+| `zin_aenor_opinion_gifts_accepted` | +25 | none | zin_aenor.512 "Accept" |
+| `zin_aenor_opinion_gifts_refused` | −10 | 1 per month | zin_aenor.512 "Refuse" |
+| `zin_aenor_opinion_southern_aid` | +20 | none | zin_aenor.514 "Accept" |
+
+### Flags the tree sets
+
+All are country flags on the Aenor realm unless marked global. Tree-owned flags are named `zin_aenor_<name>`; the others are the mechanic's or the contract's.
+
+| Flag | Set by | Read by |
+| --- | --- | --- |
+| `zin_aenor_charters_open` | *The Middle Kingdom Concord* | The mechanic's charter decisions (visible with it) |
+| `zin_aenor_golden_charters_open` | *The Golden Charters* | Golden Charter decision (the mechanic names the focus; the flag is the same fact) |
+| `zin_aenor_free_charters_open` | *The Charters of Parim Renewed*, *The Concord of Equals* | Free Charter decision; zin_aenor.503 |
+| `zin_aenor_envoys` | *Royal Envoys to the Dominions* | The Realm panel shows exact loyalty ([07_interface/01_interface.md](../../07_interface/01_interface.md)) |
+| `zin_aenor_genealogies` | *The Old Genealogies* | Record only |
+| `zin_aenor_proof_of_blood` | *Proof of Blood* | Record only |
+| `zin_aenor_audit_done` | zin_aenor.501 | *The Hidden Hand* (Lost Cause +5) |
+| `zin_aenor_saw_black_ships` | zin_aenor.507 | Record only |
+| `zin_aenor_hidden_hand_seen` (mechanic) | *The Hidden Hand* | The mechanic relabels Temple Favour |
+| `zin_aenor_eindil_denounced` (mechanic) | *Denounce the Impostor* | The mechanic and Eindil's journey |
+| `zin_aenor_regency_secure` | *A Crown Kept for No King* | Record only; the mechanic's `zin_aenor_regency_endures` is set by the mechanic |
+| `zin_aenor_restore_by_force` | *Restore the Charters by Force* | The mechanic's *Restore the Charter of [Dominion]* |
+| `zin_aenor_concord_of_equals` (mechanic outcome) | *The Concord Stands* | World systems' endings |
+| `zin_aenor_free_peoples`, `zin_aenor_common_cause` | *Call the Free Peoples*, *A Common Cause* | Record only (the effects fire the offers) |
+| `zin_aenor_no_crown_by_force` | *No Crown Taken by Force* | AI of *Restore the Charters by Force* |
+| `zin_lost_cause_with_eindil` (global, mechanic) | *The Lost Cause Reborn* | Contract readers |
+| `zin_lost_cause_member` (mechanic) | zin_aenor.504 on the accepting crown | The mechanic |
 
 ### Spirits
 
-Compiled ids are `zin_aenor_<key>`. Keys are chosen not to collide with focus ids (their localisation keys would clash).
+Compiled ids are `zin_aenor_<key>`. Keys are chosen not to collide with focus ids (their localisation keys would clash). The focus *Convene the Concord Council* is keyed `convene_the_concord` (`zin_aenor_convene_the_concord`) so that it does not equal the mechanic's decision `zin_aenor_concord_council` (F3).
 
 | Key | Name | Modifiers | Added / removed |
 | --- | --- | --- | --- |
@@ -329,7 +391,7 @@ Compiled ids are `zin_aenor_<key>`. Keys are chosen not to collide with focus id
 | sea_routes | Trade Across the Sea | `trade_opinion_factor` +0.25 | *Trade Across the Sea* |
 | learned_halls | The Universities | `research_speed_factor` +0.05 | *The Universities of Parim and Selen* |
 | realm_of_plenty | A Kingdom of Plenty | `production_factory_max_efficiency_factor` +0.05, `global_building_slots_factor` +0.10 | *A Kingdom of Plenty* |
-| levies_of_the_concord | The Concord Levies | `weekly_manpower` +300 | *The Concord Levies*; removed when Aenor rules no dominion |
+| levies_of_the_concord | The Concord Levies | `weekly_manpower` +300 | *The Concord Levies*; permanent |
 | common_army_drill | The Common Army | `experience_gain_army_factor` +0.10, `army_org_factor` +0.03 | *The Common Army of the Concord* |
 | concord_renewed | The Concord Reborn | `stability_factor` +0.05, `political_power_gain` +0.25 | *The Concord Reborn* |
 | league_of_the_king | The King's League | `political_power_gain` +0.25, `war_support_factor` +0.05 | *The King's League* (replaces `zin_aenor_lost_cause_court`) |
@@ -339,7 +401,7 @@ Compiled ids are `zin_aenor_<key>`. Keys are chosen not to collide with focus id
 | almoners | The Royal Almoners | `stability_factor` +0.03, `consumer_goods_factor` −0.02 | *The Royal Almoners* |
 | counted_realm | The Birth Rolls | `conscription_factor` +0.05 | *The Birth Rolls*; 730 days |
 | crown_blessed | The Blessed Crown | `drift_defence_factor` +0.20, `political_power_factor` +0.05 | *The Blessed Crown* |
-| blessed_realm | One Faith, One Realm | `stability_factor` +0.10, `drift_defence_factor` +0.25, `war_support_factor` −0.05 | *One Faith, One Realm*; removed by zin_aenor.300 |
+| blessed_realm | One Faith, One Realm | `stability_factor` +0.10, `drift_defence_factor` +0.25, `war_support_factor` −0.05 | *One Faith, One Realm*; removed by *The Abandoned Throne* |
 | own_counsel | The King's Own Counsel | `political_power_factor` +0.10, `stability_factor` −0.03 | *The King's Own Counsel* |
 | bought_commissions | Commissions for Sale | `army_org_factor` −0.05, `army_leader_cost_factor` −0.25 | *Commissions for Sale* |
 | merit_commissions | Commissions by Merit | `army_leader_start_level` +1, `experience_gain_army_factor` +0.10 | *Commissions by Merit* |
@@ -348,15 +410,15 @@ Compiled ids are `zin_aenor_<key>`. Keys are chosen not to collide with focus id
 | host_of_the_king | The King's Host | `army_morale_factor` +0.05, `conscription_factor` +0.10 | *The King's Host* |
 | realm_mobilised | The Realm Mobilised | `war_support_factor` +0.10, `conscription` +0.01 | *Mobilise the Realm* |
 | kings_awakening | The King Awakes | `political_power_factor` +0.10, `stability_factor` +0.05 | *Poison in the Cup* |
-| kings_war | The King's War | `army_attack_factor` +0.05, `war_support_factor` +0.10 | *The King's War*; removed at peace |
+| kings_war | The King's War | `army_attack_factor` +0.05, `war_support_factor` +0.10 | *The King's War*; 365 days |
 | sobered_king | A Sobered King | `stability_factor` +0.10, `political_power_gain` +0.25 | *The Golden King Reborn* |
 | gold_regency | The Regency of Gold | `political_power_gain` +0.5, `stability_factor` −0.05 | *The Regency of Gold* |
 | regency_war_chest | The Treasury of War | `production_speed_arms_factory_factor` +0.10, `army_org_factor` +0.03 | *The Treasury of War* |
-| deliverer_crowned | The Deliverer Crowned | `stability_factor` +0.10, `drift_defence_factor` +0.30 | *First of His Name*; removed by zin_aenor.300 |
-| chancery | The Seals of Government | `political_power_factor` +0.15 | *The Seals of Government*; removed by zin_aenor.300 |
-| altar_and_throne | Temple and Crown | `party_popularity_stability_factor` +0.10, `drift_defence_factor` +0.10 | *Temple and Crown*; removed by zin_aenor.300 |
+| deliverer_crowned | The Deliverer Crowned | `stability_factor` +0.10, `drift_defence_factor` +0.30 | *First of His Name*; removed by *The Abandoned Throne* |
+| chancery | The Seals of Government | `political_power_factor` +0.15 | *The Seals of Government*; removed by *The Abandoned Throne* |
+| altar_and_throne | Temple and Crown | `party_popularity_stability_factor` +0.10, `drift_defence_factor` +0.10 | *Temple and Crown*; removed by *The Abandoned Throne* |
 | deliverance_shield | The Shield of Deliverance | `army_core_defence_factor` +0.05, `max_dig_in` +2 | *The Shield of Deliverance* |
-| sworn_realm | The Oaths of the Realm | `war_support_factor` +0.05, `stability_factor` +0.05 | *The Oaths of the Realm*; removed by zin_aenor.300 |
+| sworn_realm | The Oaths of the Realm | `war_support_factor` +0.05, `stability_factor` +0.05 | *The Oaths of the Realm*; removed by *The Abandoned Throne* |
 | speakers_concord | The Speakers' Council | `stability_factor` +0.05, `political_power_gain` +0.25 | *The Speakers' Council* |
 | defence_pact | A Common Defence | `army_defence_factor` +0.05, `experience_gain_army_factor` +0.05 | *A Common Defence* |
 | concord_stands | The Concord Stands | `stability_factor` +0.10, `production_factory_max_efficiency_factor` +0.05 | *The Concord Stands* |
@@ -364,8 +426,8 @@ Compiled ids are `zin_aenor_<key>`. Keys are chosen not to collide with focus id
 | glo_light | The Light of Glo | `army_attack_factor` +0.05 (Glo's real power is in the magic systems spec) | *The Light of Glo* |
 | banner_of_the_dragon | The Dragon Banner | `army_morale_factor` +0.05, `war_support_factor` +0.05 | *The Dragon Banner* |
 | last_alliance | The Last Alliance of Men | `army_org_factor` +0.05, `opinion_gain_monthly_factor` +0.20 | *The Last Alliance of Men* |
-| captains_command | The Captains' Command | `army_org_factor` +0.05, `political_power_factor` −0.10 | *The Captains' Rule*; removed when Eindil leads |
-| realm_beset | Aenor Beset | `army_core_defence_factor` +0.10, `war_support_factor` +0.10 | *Aenor Beset*; removed 365 days after peace with all great powers |
+| captains_command | The Captains' Command | `army_org_factor` +0.05, `political_power_factor` −0.10 | *The Captains' Rule*; removed by *The King Without a House* |
+| realm_beset | Aenor Beset | `army_core_defence_factor` +0.10, `war_support_factor` +0.10 | *Aenor Beset*; removed by *A Kingdom of Ruins* |
 | lake_levy | The Levy of the Lake | `conscription` +0.015 | *The Levy of the Lake* |
 | common_cause | A Common Cause | `opinion_gain_monthly_factor` +0.25 | *A Common Cause* |
 | final_stand | The Last Stand | `army_core_defence_factor` +0.10, `army_core_attack_factor` +0.05, `surrender_limit` +0.10 | *The Last Stand of the Middle Kingdom* |
@@ -373,30 +435,55 @@ Compiled ids are `zin_aenor_<key>`. Keys are chosen not to collide with focus id
 | peace_of_treaties | Treaties, Not Conquest | `stability_factor` +0.05, `justify_war_goal_time` +0.5 | *Treaties, Not Conquest* |
 | age_of_the_king | The Age of the King | `stability_factor` +0.10, `political_power_gain` +0.5, `research_speed_factor` +0.05 | *The Fourth Age Ends* |
 
-### Events (namespace `zin_aenor`, ids 500–699)
+### Events (namespace `zin_aenor`, ids 500–519)
 
-All fired by focus effects; none declares a mean time to happen.
+All fired by focus effects or tree-declared effects; none declares a mean time to happen. Pictures are catalog keys ([../02_icon_catalog.md](../02_icon_catalog.md)); a gated picture is used only where the focus that fires it requires the gate flag.
 
-| Key (id) | Title | Fired by | For | Options |
-| --- | --- | --- | --- | --- |
-| court_feast (500) | A Feast in the Golden Court | *The Golden Court* | Aenor | Gild the tables (+25 PP, corruption +3; AI hist) / A modest feast (stability +0.02) |
-| auditors_ledger (501) | The Auditors' Ledger | *Audit the Royal Treasury* | Aenor | Publish it (corruption −5, stability −0.03) / Keep it quiet (+25 PP); either sets `zin_aenor_audit_done`, which lowers the Lost Cause cost of *The Hidden Hand* by 14 days |
-| caravan_envoys (502) | Envoys from Parim | *The Eastern Caravans* | Noris, Stabilo | Welcome them (opinion +20 both ways) / Be wary (opinion +5) |
-| selen_accord (503) | An Accord with Parim | *An Accord with Selen* | Selen | Accept (loyalty +10 more; Aenor +army experience 5) / Ask for more (Free Charter offered if `zin_aenor_free_charters_open`, else loyalty −5) |
-| honorary_crowns (504) | An Honour from Parim | *Honorary Crowns* | five crowns | Accept (flag `zin_lost_cause_member`; opinion +15) / Decline politely; AI accepts at opinion ≥ 0 and not Dominion-hostile |
-| league_triumph (505) | A Triumph for the League | *A Triumph for the League* | Aenor | flavour: the treasury spent on banners and a parade |
-| rangers_of_selen (506) | The Rangers Answer | *The Rangers of Selen* | Selen | Send rangers (Selen loses 1,000 manpower; Aenor Lost Cause +5) / Keep them home (loyalty −5) |
-| black_ships (507) | The Black Ships | *The Black Ships* | Aenor | Fishermen's tales (+10 PP) / Send a ship north (Lost Cause +5, −25 PP; sets `zin_aenor_saw_black_ships`) |
-| southern_warnings (508) | Warnings from the South | *Heed the Southern Warnings* | Aenor | Laugh, as the court did in 4A 1736 (+25 PP, corruption +2) / Listen (Lost Cause +5; event_for Mirolon southern_aid) |
-| hidden_hand (509) | The Hidden Hand | *The Hidden Hand* | Aenor | The appointments follow a pattern no king set. OK (Temple Favour relabelled; never names who) |
-| deliverer_feast (510) | The Feast of the Deliverer | *The Feast of the Deliverer* | Aenor | flavour; stability already granted |
-| ledger_of_heirs (511) | The Ledger of Heirs | *The Ledger of Heirs* | Aenor | Rule in the crown's name (Court +10) / Search the old rolls for an heir (Lost Cause +5; if `zin_eindil_named`, Host +10). Names no relative of the Golden King. |
-| eastern_friends (512) | Gifts from Parim | *Friends in the East* | Noris, Stabilo, Alerhia | Accept (opinion +25 with Aenor) / Refuse (opinion −10) |
-| men_of_selen (513) | The Men of Selen | *The Men of Selen* | Selen | March with the Hailed King (Selen joins Aenor's wars; military access) / Guard Selen first (loyalty −5) |
-| southern_aid (514) | Aid from Aenor | *Heed the Southern Warnings* or *The Southern Front* | Mirolon | Accept (Mirolon gets 2,000 infantry equipment from Aenor; opinion +20) / Decline |
-| league_invite (515) | The League of Free Crowns | *The League of Free Crowns* | Mirolon, Lerendor, Gunwaith | Join the faction / Decline; AI joins when at war with Volgan or Zol |
-| treaties (516) | Treaties, Not Conquest | *Treaties, Not Conquest* | every country at war with Aenor that is not Volgan, Zol or an Afrit-led country | Accept peace (white peace with Aenor) / Fight on |
-| fourth_age_ends (517) | The Fourth Age Ends | *The Fourth Age Ends* | news, all countries | OK. Says the King wears the Necklace of the Abyss and that its price is not known. |
+| Key (id) | Title | Fired by | For | Picture | Options |
+| --- | --- | --- | --- | --- | --- |
+| court_feast (500) | A Feast in the Golden Court | *The Golden Court* | Aenor | `court_feast` | Gild the tables (+25 PP, corruption +3; AI hist) / A modest feast (stability +0.02) |
+| auditors_ledger (501) | The Auditors' Ledger | *Audit the Royal Treasury* | Aenor | `golden_court` | Publish it (corruption −5, stability −0.03) / Keep it quiet (+25 PP); either sets `zin_aenor_audit_done` (*The Hidden Hand* then adds Lost Cause +5) |
+| caravan_envoys (502) | Envoys from Parim | *The Eastern Caravans* | Noris, Stabilo | `generic_peace` | Welcome them (`zin_aenor_opinion_envoys_welcomed` both ways) / Be wary (`zin_aenor_opinion_envoys_received` towards Aenor) |
+| selen_accord (503) | An Accord with Parim | *An Accord with Selen* | Selen | `concord_council` | Accept (loyalty +10 more; Aenor army experience +5) / Ask for more (Free Charter set on Selen if Aenor has `zin_aenor_free_charters_open`, else loyalty −5) |
+| honorary_crowns (504) | An Honour from Parim | *Honorary Crowns* | Lerendor, Gunwaith, Girdon, Coldor, Dondor | `generic_court` | Accept (flag `zin_lost_cause_member`; `zin_aenor_opinion_honorary_crown`) / Decline politely; AI accepts at opinion of Aenor ≥ 0 unless its government is Dominion or Shadow |
+| league_triumph (505) | A Triumph for the League | *A Triumph for the League* | Aenor | `lost_cause_triumph` | OK: the treasury spent on banners and a parade |
+| rangers_of_selen (506) | The Rangers Answer | *The Rangers of Selen* | Selen | `generic_wilds` | Send rangers (Selen loses 1,000 manpower; Aenor Lost Cause +5) / Keep them home (loyalty −5) |
+| black_ships (507) | The Black Ships | *The Black Ships* | Aenor | `black_ships_tale` | Fishermen's tales (+10 PP) / Send a ship north (Lost Cause +5, −25 PP; sets `zin_aenor_saw_black_ships`) |
+| southern_warnings (508) | Warnings from the South | *Heed the Southern Warnings* | Aenor | `southern_warning` | Laugh, as the court did in 4A 1736 (+25 PP, corruption +2) / Listen (Lost Cause +5; event_for Mirolon southern_aid) |
+| hidden_hand (509) | The Hidden Hand | *The Hidden Hand* | Aenor | `generic_court` | The appointments follow a pattern no king set. OK (Temple Favour relabelled; never names who) |
+| deliverer_feast (510) | The Feast of the Deliverer | *The Feast of the Deliverer* | Aenor | `houses` | OK: flavour; stability already granted |
+| ledger_of_heirs (511) | The Ledger of Heirs | *The Ledger of Heirs* | Aenor | `thirty_days` (gate `zin_golden_king_dead`: branch H opens only after it) | Rule in the crown's name (Court +10) / Search the old rolls for an heir (Lost Cause +5; if `zin_eindil_named`, Host +10). Names no relative of the Golden King. |
+| eastern_friends (512) | Gifts from Parim | *Friends in the East* | Noris, Stabilo, Alerhia | `generic_court` | Accept (`zin_aenor_opinion_gifts_accepted`) / Refuse (`zin_aenor_opinion_gifts_refused`) |
+| men_of_selen (513) | The Men of Selen | *The Men of Selen* | Selen | `generic_war` | March with the Hailed King (Selen gives Aenor military access; loyalty +5) / Guard Selen first (loyalty −5) |
+| southern_aid (514) | Aid from Aenor | *Heed the Southern Warnings* (option Listen) or *The Southern Front* | Mirolon | `mirolon_passes` | Accept (Aenor sends 2,000 arms with `send_equipment`; `zin_aenor_opinion_southern_aid`) / Decline |
+| league_invite (515) | The League of Free Crowns | *The League of Free Crowns* | Mirolon, Lerendor, Gunwaith | `concord_council` | Join Aenor's faction (`add_to_faction` from Aenor) / Decline; AI joins when at war with Volgan or Zol |
+| treaties (516) | Treaties, Not Conquest | `zin_aenor_offer_treaties` | each country it names | `generic_peace` | Accept peace (`white_peace` with Aenor) / Fight on |
+| fourth_age_ends (517) | The Fourth Age Ends | `zin_aenor_announce_fourth_age` | every country | `crown_of_aen` (gate `zin_eindil_crowned`: the focus requires it) | OK. Says the King wears the Necklace of the Abyss and that its price is not known. |
+| free_peoples (518) | The Free Peoples Are Called | `zin_aenor_call_free_peoples` | each country it names | `generic_war` | Fight beside Aenor (`add_to_faction` from Aenor if Aenor leads a faction, else military access both ways) / Stand alone; AI accepts unless at war with an ally of Aenor |
+| common_cause_offer (519) | A Common Cause | `zin_aenor_offer_common_cause` | each country it names | `generic_war` | Open the roads (`give_military_access` to Aenor; Aenor gives it back) / Refuse |
+
+`white_peace`, `add_to_faction`, `give_military_access`, `send_equipment`, `has_war_with` and `country_event` are 1.19.3 engine names.
+
+### Icons
+
+Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.md)); no new key is needed. Spirits use the icon of the focus that adds them. No icon shows the Deliverer, Eindil or Zol; *The Light of Glo* shows only the crystal.
+
+| Branch | Focus → icon |
+| --- | --- |
+| A | the_golden_court `crown_gold`; sale_of_offices `seal_royal`; audit_treasury `ledger_coins`; gilded_halls `palace_parim`; merchant_princes `guild_hall`; honest_ledgers `seal_wax`; dismiss_flatterers `sceptre`; royal_triumph `war_drums`; golden_tribute `tribute_chest`; royal_mint `coin_chest`; court_of_accounts `council_table`; crown_purse `coin_chest`; golden_jubilee `feast_table`; reform_the_court `charter_old` |
+| B | great_lake_ports `harbour_lake`; roads_of_parim `roads_paved`; lake_shipwrights `shipwright_yard`; market_charters `market_stalls`; canal_works `canal_lock`; lake_fleet `galley_oars`; sea_trade `ship_voyage`; royal_foundries `foundry_fire`; guild_halls `guild_hall`; eastern_caravans `caravan`; arsenals_of_parim `forge_anvil`; universities `university_hall`; kingdom_of_plenty `granary`; kingdoms_armouries `sword_shield` |
+| C | middle_kingdom_concord `concord_circle`; convene_the_concord `council_table`; royal_envoys `envoy`; golden_charters `charter_golden`; charters_renewed `charter_old`; wall_charter `charter_wall`; concord_levies `levy_muster`; selen_accord `scroll_treaty`; asgard_isle `lighthouse`; kingson_gate `fort_wall`; tribute_roads `tribute_chest`; peoples_of_the_concord `banner_league`; common_army `spear_levy`; concord_reborn `alliance_rings` |
+| D | oaths_of_the_lost_cause `handshake_oath`; kings_league `banner_league`; frontier_companies `scout_lantern`; scholars_of_the_cause `book_lore`; triumph_of_the_league `war_drums`; honorary_crowns `crown_iron`; rangers_of_selen `ranger_cloak`; watchers_on_the_wall `beacon`; old_genealogies `heir_rolls`; black_ships `black_hulls`; southern_warnings `ember_desert`; the_kings_tasters `healer_herbs`; shield_of_the_concord `charter_shield`; the_hidden_hand `eye_watchful`; proof_of_blood `scroll_sealed`; lost_cause_reborn `banner_plain` |
+| E | temples_of_the_deliverer `temple_parim`; houses_of_the_first_light `house_first_light`; temple_schools `book_lore`; merovans_seals `seal_chancellor`; royal_almoners `alms_bread`; birth_rolls `birth_rolls`; blessed_crown `crown_radiant`; kings_own_counsel `seal_royal`; feast_of_the_deliverer `censer`; one_faith_one_realm `sun_veiled` |
+| F | royal_army `sword_shield`; commissions_for_sale `coin_chest`; commissions_by_merit `scroll_sealed`; great_wall `fort_wall`; golden_guard `knight_lance`; drill_fields `spear_levy`; wall_garrisons `fort_wall`; coastal_watch `lighthouse`; pacify_bloody_forest `forest_ancient`; new_doctrine `war_council_map`; strait_fortresses `strait_chain`; kings_host `levy_muster`; mobilise_the_realm `war_drums` |
+| G | poison_in_the_cup `healer_herbs`; arrest_the_chancellor `seal_chancellor`; seize_the_ledgers `ledger_coins`; the_loyal_clergy `hymn_choir`; the_kings_war `sword_shield`; golden_king_reborn `crown_gold` |
+| H | regency_of_gold `regency_seals`; buy_the_captains `coin_chest`; ledger_of_heirs `heir_rolls`; a_golden_peace `olive_branch`; crush_the_pretenders `crown_broken`; gold_for_the_dominions `tribute_chest`; treasury_of_war `ledger_coins`; crown_kept_for_no_king `empty_throne` |
+| I | first_of_his_name `crown_radiant`; seals_of_government `seal_chancellor`; silence_the_dissenters `confessional`; temple_and_crown `temple_parim`; deliverers_relief `alms_bread`; friends_in_the_east `caravan`; denounce_the_impostor `scroll_sealed`; shield_of_deliverance `palace_wards`; oaths_of_the_realm `handshake_oath`; hold_parim `palace_parim` |
+| J | concord_of_equals `concord_circle`; speakers_council `council_table`; letters_to_the_free `scroll_treaty`; common_defence `alliance_rings`; equal_tolls `toll_house`; restore_by_force `siege_trebuchet`; league_of_free_crowns `banner_league`; the_concord_stands `charter_free` |
+| K | king_without_a_house `crown_hailed`; son_of_ein `lone_sword`; men_of_selen `ranger_cloak`; call_the_free_peoples `beacon`; light_of_glo `crystal_green`; no_crown_by_force `charter_free`; the_last_alliance `alliance_rings`; dragon_banner `dragon_wing`; retake_parim `siege_trebuchet`; the_people_choose `banner_plain` |
+| L | abandoned_throne `empty_throne`; the_captains_rule `war_council_map`; open_temple_vaults `reliquary`; send_for_the_stranger `envoy` |
+| M | aenor_beset `fort_wall`; hold_the_western_shore `anchor_rope`; the_strait_betrayed `strait_chain`; against_the_deathless `dead_ranks_far`; the_wall_holds `fort_wall`; the_southern_front `pass_fort`; levy_of_the_lake `levy_muster`; fortress_parim `palace_parim`; a_common_cause `handshake_oath`; last_stand `sword_shield` |
+| N | a_kingdom_of_ruins `quarry_stone`; treaties_not_conquest `olive_branch`; the_fourth_age_ends `crown_aen` |
 
 ## AI
 
@@ -408,7 +495,7 @@ Approximate dates; 70-day focuses unless noted.
 | --- | --- |
 | Thaw 1748 – Harvest 1748 | the_golden_court (35), temples_of_the_deliverer (35), sale_of_offices, oaths_of_the_lost_cause (35), kings_league |
 | Fallowing 1748 – Highsun 1749 | houses_of_the_first_light, triumph_of_the_league (35), great_lake_ports, merovans_seals (35), middle_kingdom_concord |
-| Goldfield 1749 – Highsun 1750 | concord_council (35), golden_charters, gilded_halls, royal_army, commissions_for_sale (35), birth_rolls |
+| Goldfield 1749 – Highsun 1750 | convene_the_concord (35), golden_charters, gilded_halls, royal_army, commissions_for_sale (35), birth_rolls |
 | Highsun – Mistfall 1750 | temple_schools, blessed_crown; feast_of_the_deliverer in progress when the King dies |
 | Longnight 1750 – 1751 | first_of_his_name (35), silence_the_dissenters (35), seals_of_government, deliverers_relief, feast_of_the_deliverer, one_faith_one_realm |
 | 1751 – 1753 | temple_and_crown, friends_in_the_east, merchant_princes, golden_tribute, roads_of_parim, market_charters, honorary_crowns, shield_of_deliverance, scholars_of_the_cause, old_genealogies, concord_levies |
@@ -430,26 +517,27 @@ The historical AI never takes: audit_treasury, charters_renewed, commissions_by_
 | **The Regency of Gold** | Gild everything, choose the Court at zin_aenor.201, branch H | `zin_aenor_regency_endures` if it survives to 1760 |
 | **The Concord of Equals** | Choose the Dominions at zin_aenor.201, branch J | `zin_aenor_concord_of_equals` |
 | **The Deliverer's kingdom** | Choose the Faithful and keep them in power past 1756 (Afrit spec permitting) | The Ashen Throne (Afrit spec, world systems) |
-| **The early host** | Lost Cause scholars and frontier, shelter Eindil at zin_aenor.310, back the Host when it rises | Eindil leads Aenor before 1757; coronation still waits for `zin_afrit_dead` |
+| **The early host** | Lost Cause scholars and frontier, shelter Eindil through the journey's warning event `zin_eindil.82` ("Shelter him", flag `zin_eindil_crown_shelters`; the journey owns this one warning, decision O4), back the Host when it rises | Aenor hails Eindil and fights beside his Host before 1757; he becomes its leader only at the coronation (O1), which still waits for `zin_afrit_dead` |
 
 AI personalities outside the historical rule weigh by situation: corruption above 75 raises the reform focuses ×2; Volgan or Zol bordering an Aenor ally raises Lost Cause frontier focuses ×2; a Free Dominions league raises branch J ×2 and keeps *Restore the Charters by Force* at weight 5.
 
 ## Acceptance
 
-1. The compiler builds `aenor.json` with 140 focuses, no errors, at most 0 `raw` blocks; positions are unique, the tree is 29 columns wide and every focus sits below its prerequisites (compiler check 2).
-2. Every modifier in the spirits table exists in `modifiers_documentation.md`; every `call` and `check` resolves to a scripted effect or trigger in the mechanics spec's files.
-3. On 1 Thaw 4A 1748, no available focus declares war except *Pacify the Bloody Forest*, and its AI weight is 0; no war-branch root (G–N) is available.
-4. The secret check passes: no text reachable before `zin_afrit_revealed` names Afrit.
-5. The HOI4 Agent Tools focus inspector reports no errors; the focus renderer produces a readable image with branches A–N in the tabled columns.
-6. In the Linux historical run, AI Aenor takes the focuses of the historical route within ±120 days of the tabled periods, takes *Denounce the Impostor* in 4A 1754, *Send for the Stranger* in 4A 1756 and *The People Choose Their King* before Eindil's coronation in 4A 1760.
-7. A civil-war breakaway of Aenor shows the Aenor tree and can take its camp's branch root.
-8. With `zin_golden_king_plot_exposed` forced, branch G opens; with the Court forced as ruling camp, branch H opens; with the Dominions forced, branch J opens.
+1. The compiler builds `aenor.json` with 140 focuses and no errors; compiler checks 1–7 pass; the tree is 29 columns wide (x 0–28) and 22 rows deep (y 0–21); positions are unique; every focus sits below its prerequisites; the two-way exclusives (*The Sale of Offices* / *Audit the Royal Treasury*, *The Golden Jubilee* / *Reform the Court*, *The Golden Charters* / *The Charters of Parim Renewed*, *The King's Own Counsel* / *One Faith, One Realm*, *Commissions for Sale* / *Commissions by Merit*, *Equal Tolls* / *Restore the Charters by Force*) are symmetric; every cost is 35 or 70 days; the tree has 0 `raw` blocks.
+2. Every focus icon and spirit icon is one of the catalog's 175 keys and every event picture one of its 52 picture keys with the right crop; `ledger_of_heirs` and `fourth_age_ends` pass the gated-picture check.
+3. Every modifier in the spirits table exists in the game's `modifiers_documentation.md`; every `call` and `check` resolves to a scripted effect or trigger of the mechanic's files or of `common/scripted_effects/zin_aenor.txt`; every full mechanic idea id exists in `common/ideas/zin_aenor_court.txt`.
+4. On 1 Thaw 4A 1748 no available focus declares war except *Pacify the Bloody Forest*, and its AI weight is 0; no root of branches G–N is available.
+5. The secret check passes: no text reachable before `zin_afrit_revealed` names Afrit; before `zin_eindil_named` no text names Eindil.
+6. The HOI4 Agent Tools focus inspector and script validator report no errors in the staged files; `hoi4_focus_render` draws branches A–N in the tabled columns.
+7. Isolated Linux run, one in-game year from 1 Thaw 4A 1748 under the historical rule: AI Aenor completes *The Golden Court*, *The Temples of the Deliverer*, *The Sale of Offices*, *The Oaths of the Lost Cause* and *The King's League* in that order within ±120 days of the tabled period, and nobody is at war.
+8. Long historical observer run (4A 1748–1760): AI Aenor takes *Denounce the Impostor* in 4A 1754, *Send for the Stranger* in 4A 1756 and *The People Choose Their King* before Eindil's coronation in 4A 1760.
+9. A civil-war breakaway of Aenor shows the Aenor tree and can take its camp's branch root.
+10. With `zin_golden_king_plot_exposed` forced, branch G opens; with the Court forced as ruling camp, branch H opens; with the Dominions forced, branch J opens; after the ruling camp changes, the old camp's branch focuses are unavailable.
 
 ## Open questions
 
-1. The compiler format names spirits by tree-local keys. May a tree reference mechanic ideas by full id (`zin_aenor_lost_cause_court`, `zin_aenor_kings_tasters`, `zin_aenor_interregnum`) in `swap_spirit`, `timed_spirit` and `remove_spirit`? If not, the mechanics spec's ideas must move into the tree file.
-2. Tree events and mechanic events share namespace `zin_aenor`. The compiler needs an event id base (500 here) or a separate namespace.
-3. Is 140 focuses too many to keep readable? Branch L (4 focuses) and N (3) could fold into K if the owner prefers fewer columns.
-4. Should *Pacify the Bloody Forest* exist at all in a game that starts in peace, or wait until the King's death?
-5. Should the eastern courts Aenor befriends under the Faithful (Noris, Stabilo, Alerhia) be the same ones that later follow Afrit east? The vault leaves which eastern kings join him open.
-6. Who in Selen answers *The Men of Selen*: should Alleria appear by name in Aenor's events before the palace battle, or stay Selen's?
+Settled since the draft: the compiler accepts full mechanic idea ids and an event id base (decision S9), so the tree keeps `zin_aenor` with ids 500–519; *Pacify the Bloody Forest* stays as a player-only choice with AI weight 0 before the Golden King's death (decision D8); the tree keeps 140 focuses and branches L and N stay separate (proposed); *Friends in the East* only sends gifts and decides nothing about which courts later kneel, which each game decides (decision S1, owner short list 11).
+
+Owner question still open ([OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md), aenor 10):
+
+1. Should Alleria appear by name in Aenor's events before the palace battle? Proposal the work proceeds on: no; Aenor's events name only Selen and its rangers.

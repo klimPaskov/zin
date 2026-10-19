@@ -1,6 +1,6 @@
 # Open questions for the owner
 
-**Status:** Draft. Generated from the spec authors' reports on 18 October 2026.
+**Status:** Ready. Generated from the spec authors' reports on 18 October 2026; updated from the review to Ready on 19 October 2026. Every question has a working proposal, and the work proceeds on it until the owner answers.
 
 Each spec keeps its own open questions; this page gathers them so the owner can answer in one place. Answers go into the lore vault (for lore) or the named spec (for design). Until answered, specs use the labelled proposal.
 
@@ -29,6 +29,27 @@ These are lore decisions that the map, the start or the great powers depend on. 
 | 15 | Are **Huhun** and **Hunhun** the same place? | Same place, spelled Hunhun | phase 2 |
 
 This page is generated from the spec authors' reports; when it is regenerated, keep this section.
+
+## Added in the review to Ready (19 October 2026)
+
+| # | Question | Working proposal | Spec |
+| --- | --- | --- | --- |
+| 16 | **Meshy credits:** the remaining 3D units need about 433 credits; the recorded balance is 40. Top up? | Hold: no new 3D generation until the owner tops up | [08_art_and_assets/03_full_asset_inventory.md](08_art_and_assets/03_full_asset_inventory.md) |
+| 17 | **Audio:** synthesise music and sound in code with no external audio, or commission a main theme? | Synthesis in code (A9); no commission | [08_art_and_assets/04_music_and_sound.md](08_art_and_assets/04_music_and_sound.md) |
+| 18 | Ship a patched copy of the vanilla `core.gfx`? | No; aliases in an additive file | [07_interface/02_full_ui_reskin.md](07_interface/02_full_ui_reskin.md) |
+| 19 | Copy the English loading tips to every game language? | Yes | [08_art_and_assets/02_loading_screens_and_quotes.md](08_art_and_assets/02_loading_screens_and_quotes.md) |
+| 20 | Does the Worshipdom's private record open to Aenor after the reveal? | Yes, in the Chronicle | [02_lore/02_characters.md](02_lore/02_characters.md) |
+| 21 | Rename the "Sunhot" place labels to "Sun Desert", "Sun Gate" and "Sun Grasslands"? | Yes | [02_lore/03_names_and_terms.md](02_lore/03_names_and_terms.md) |
+| 22 | Does Mirolon have a refuge on the Magical Lands sheet? | No | [05_focus_trees/major/mirolon.md](05_focus_trees/major/mirolon.md) |
+| 23 | Are the Oasis-Keepers a people? | A court faction only | [05_focus_trees/major/noris.md](05_focus_trees/major/noris.md) |
+| 24 | Are "High King of the Sands" and "The Prince of All Roads" the right titles? | Yes | [05_focus_trees/major/noris.md](05_focus_trees/major/noris.md), [stabilo.md](05_focus_trees/major/stabilo.md) |
+| 25 | May a kneeling court break with the King of the East early, or debt annex a court outright? | No and no (a subject at most) | [04_mechanics/eastern_kings.md](04_mechanics/eastern_kings.md) |
+| 26 | Are the Worshipdom's public chapter names right, and is the jubilee separate from the Night of a Thousand Oaths? | Yes; separate | [05_focus_trees/major/worshipdom.md](05_focus_trees/major/worshipdom.md) |
+| 27 | Are Belurithon and Vothrim the family seats of Tarec Belurith and Ilsabet Vothrim? | No link; rulers keep generated names | [05_focus_trees/shared/shared_concord_dominions.md](05_focus_trees/shared/shared_concord_dominions.md) |
+| 28 | Lerendor's king: the characters spec's King Ferlin III, or the generated name? | King Ferlin III (proposed); answers lerendor question 4 | [02_lore/02_characters.md](02_lore/02_characters.md) |
+
+Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is not a Lost Cause member at the start, O8); the events questions on the Hierarch (Ilvane, High Confessor, N10 and O7); elves 1 and lerendor 1 (Andos Enda, S5); elves 9 (N6), 10 (N7) and 17 (N8); lerendor 4 (King Ferlin III, question 28).
+
 
 ## aenor
 
@@ -151,7 +172,7 @@ This page is generated from the spec authors' reports; when it is regenerated, k
 ## foundation
 
 1. Is the Worshipdom's public stance right as Light Sanctuary until the reveal, or should it show as Dominion?
-2. Approve the proposed party names, the stance zin_dom_divine ('Divine Crown') and a new pale-sky colour for Light (it currently looks like Dominion's bronze).
+2. Approve the proposed party names and a new pale-sky colour for Light (it currently looks like Dominion's bronze). (The stance zin_dom_divine was withdrawn by N14: the crowned Aenor of the Faithful stays Light until the reveal.)
 3. 'Dominion' names both an ideology and Volgan's Southern Dominion: keep both or rename the ideology (for example 'Crown')?
 4. Should the Magical Forest hold elections?
 5. Should Zol's emblem leader carry a name ('The Will of Zol', proposed) or none?

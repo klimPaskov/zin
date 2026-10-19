@@ -1,6 +1,6 @@
 # Mirolon focus tree
 
-**Status:** Draft. **Priority:** 4. **Phase:** 4.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 4. **Phase:** 4.
 
 ## Purpose
 
@@ -16,7 +16,7 @@ Tree id `mirolon`; country Mirolon (tier A, [01_tiers_and_coverage.md](../01_tie
 
 **Proposed (this spec):** every focus, spirit, event and number; Mirolon as an elective warden-realm whose High Warden is chosen for life by the pass-lords and the lake towns (it fits the map's Light ideology and `zin_light_wardens` stance and the vault's "human kingdom"); High Warden Maeric, Captain Selda Varrow and Scout-Master Hadric Thorne; the Warden League; the exile court; Mirolon's return after the body breaks.
 
-**Kept open:** the place of Dardan, the King of Demons, what remains of Volgan. Mirolon's texts speak of "the fields where the First Age died" and never place Dardan. "Mirolon Rises Again" says the master of Nafeher has fallen, not that he is dead.
+**Kept open:** the place of Dardan, the King of Demons, what remains of Volgan. Mirolon's texts speak of "the fields where the First Age died" and never place Dardan. "Mirolon Rises Again" says the master of Nafeher has fallen, not that he is dead. No Mirolon text names Afrit, and none names Eindil: "Hope from the North" speaks only of "news from the north".
 
 ## Design
 
@@ -42,7 +42,7 @@ Nothing in rows 0 to 6 is a war. Mirolon scouts, builds, argues in the Wardens' 
 
 ### Notation
 
-As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proof" is `zin_mirolon_add_proof`; "passes" is `zin_mirolon_add_passes`; "veil" is `zin_volgan_add_veil` run in Volgan's scope (`for_country Volgan`). Spirit keys compile to `zin_mirolon_<key>`; events to `zin_mirolon.<n>`. AI is the base weight.
+As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proof" is `zin_mirolon_add_proof`; "passes" is `zin_mirolon_add_passes`; "veil" is `zin_volgan_add_veil` run in Volgan's scope (`for_country Volgan`). Spirit keys compile to `zin_mirolon_<key>`; events to `zin_mirolon.<n>`. AI is the base weight. Research categories are the warfare spec's `zin_cat_*` (vanilla fallback in brackets until warfare stage 2); `zin_arms_equipment` falls back to `infantry_equipment`. Doctrines cost experience in 1.19.3, so doctrine bonuses are army experience. `@mirolon_passes` is a building `where` key: every pass state Mirolon controls (`zin_is_site_mirolon_passes`).
 
 ### Branch 1: Lake and Coast
 
@@ -51,16 +51,16 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `lake_and_coast` | Lake and Coast | — | — | 2,0 | 70 | building industrial_complex 1 capital; political_power 25 | 20 |
-| `lake_fisheries` | The Lake Fisheries | lake_and_coast | — | 1,1 | 35 | add_spirit lake_fisheries | 10 |
+| `lake_fisheries` | The Lake Fisheries | lake_and_coast | — | 1,1 | 35 | add_spirit lake_fisheries_spirit | 10 |
 | `coast_harbours` | Harbours of the Coast | lake_and_coast | — | 3,1 | 35 | building naval_base 2 random_coastal; building dockyard 1 random_coastal | 8 |
-| `storm_pilots` | Storm Pilots | lake_fisheries | — | 0,2 | 35 | navy_experience 10; research naval bonus 0.5 uses 1 | 5 |
+| `storm_pilots` | Storm Pilots | lake_fisheries | — | 0,2 | 35 | navy_experience 10; research zin_cat_galleys [naval_equipment] bonus 0.5 uses 1 | 5 |
 | `trade_with_the_north` | Trade with the North | lake_fisheries and coast_harbours | — | 2,2 | 35 | building industrial_complex 1 random_owned; political_power 25 | 10 |
 | `coastal_watch_towers` | Coastal Watch-Towers | coast_harbours | — | 4,2 | 35 | building coastal_bunker 2 random_coastal; proof +2 | 8 |
 | `forest_timber` | Timber of the Forests | trade_with_the_north | — | 1,3 | 35 | building industrial_complex 1 random_owned | 10 |
 | `arms_of_the_lake` | Arms of the Lake Towns | trade_with_the_north and coastal_watch_towers | — | 3,3 | 35 | building arms_factory 1 capital | 12 |
-| `siege_granaries` | Granaries Against the Siege | forest_timber and arms_of_the_lake | — | 2,4 | 35 | add_spirit siege_granaries | 12 |
+| `siege_granaries` | Granaries Against the Siege | forest_timber and arms_of_the_lake | — | 2,4 | 35 | add_spirit siege_granaries_spirit | 12 |
 | `parim_bankers` | Loans from Parim's Bankers | siege_granaries | own_coin | 1,5 | 35 | building industrial_complex 1 random_owned (twice); add_spirit parim_debts | 30 |
-| `own_coin` | Mirolon's Own Coin | siege_granaries | parim_bankers | 3,5 | 35 | add_spirit own_coin | 70 |
+| `own_coin` | Mirolon's Own Coin | siege_granaries | parim_bankers | 3,5 | 35 | add_spirit own_coin_spirit | 70 |
 | `war_footing` | A Realm on War Footing | parim_bankers or own_coin | — | 2,6 | 70 | building arms_factory 2 capital | 15 |
 
 ### Branch 2: The Watch on the Passes
@@ -72,12 +72,12 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | `watch_on_the_passes` | The Watch on the Passes | — | — | 6,0 | 35 | flag zin_mirolon_watch_open; proof +3 | 60 |
 | `scouts_beyond_the_heat` | Scouts Beyond the Heat | watch_on_the_passes | — | 5,1 | 35 | proof +5; for_country Volgan: veil −3 | 20 |
 | `counting_the_fires` | Counting the Fires | watch_on_the_passes | — | 7,1 | 35 | proof +5; army_experience 5 | 15 |
-| `scout_masters_school` | The Scout-Master's School | scouts_beyond_the_heat | — | 5,2 | 35 | raw: `recruit_character = zin_mirolon_hadric`; proof +3 | 15 |
+| `scout_masters_school` | The Scout-Master's School | scouts_beyond_the_heat | — | 5,2 | 35 | raw: `recruit_character = zin_mirolon_hadric` (advisor, mechanic's character); proof +3 | 15 |
 | `signs_at_the_grave_fields` | Signs at the Grave-Fields | counting_the_fires | — | 7,2 | 35 | event grave_signs (zin_mirolon.2) | 15 |
-| `ledger_of_warnings` | The Ledger of Warnings | scout_masters_school and signs_at_the_grave_fields | — | 6,3 | 70 | proof +10; event_for Aenor (zin_dominion.5) | 20 |
-| `deep_patrols` | Deep Patrols | ledger_of_warnings | — | 5,4 | 35 | add_spirit deep_patrols; proof +5; for_country Volgan: veil −5 | 15 |
-| `proof_no_court_can_laugh_at` | Proof No Court Can Laugh At | ledger_of_warnings | — | 7,4 | 70 | available: variable zin_mirolon_proof above 59; proof +15; remove_spirit unheeded_warnings; event_for Aenor (zin_dominion.5) | 50 (hist ×0) |
-| `watch_never_sleeps` | The Watch Never Sleeps | deep_patrols or proof_no_court_can_laugh_at | — | 6,5 | 35 | add_spirit watch_never_sleeps | 12 |
+| `ledger_of_warnings` | The Ledger of Warnings | scout_masters_school and signs_at_the_grave_fields | — | 6,3 | 70 | proof +10; call zin_mirolon_tree_warn_parim | 20 |
+| `deep_patrols` | Deep Patrols | ledger_of_warnings | — | 5,4 | 35 | add_spirit deep_patrols_spirit; proof +5; for_country Volgan: veil −5 | 15 |
+| `proof_no_court_can_laugh_at` | Proof No Court Can Laugh At | ledger_of_warnings | — | 7,4 | 70 | available: variable zin_mirolon_proof above 59; proof +15; remove_spirit unheeded_warnings; call zin_mirolon_tree_warn_parim | 50 (hist ×0) |
+| `watch_never_sleeps` | The Watch Never Sleeps | deep_patrols or proof_no_court_can_laugh_at | — | 6,5 | 35 | add_spirit watch_never_sleeps_spirit | 12 |
 
 ### Branch 3: The Memory of the First Conquest
 
@@ -86,7 +86,7 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `memory_of_the_first_conquest` | The Memory of the First Conquest | — | — | 9,0 | 35 | event archives (zin_mirolon.8); war_support 0.05 | 15 |
-| `chronicles_of_the_alliance` | Chronicles of the Grand Alliance | memory_of_the_first_conquest | — | 9,1 | 35 | research land_doctrine bonus 0.5 uses 1 | 10 |
+| `chronicles_of_the_alliance` | Chronicles of the Grand Alliance | memory_of_the_first_conquest | — | 9,1 | 35 | army_experience 15 | 10 |
 | `songs_of_the_occupied_years` | Songs of the Occupied Years | chronicles_of_the_alliance | — | 10,2 | 35 | stability 0.05; add_spirit occupied_years_remembered | 12 |
 | `never_again` | Never Again | songs_of_the_occupied_years | — | 9,3 | 35 | war_support 0.1; army_experience 10 | 12 |
 | `what_the_elves_remember` | What the Elves Remember | never_again | — | 10,4 | 35 | flag zin_mirolon_elves_remember; political_power 25 | 8 |
@@ -104,7 +104,7 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | `the_wardens_law` | The Wardens' Law | high_wardens_council and charter_of_the_lake_towns | — | 13,2 | 35 | popularity light 0.05; stability 0.05 | 12 |
 | `open_the_muster_rolls` | Open the Muster Rolls | charter_of_the_lake_towns | — | 15,2 | 35 | manpower 3000 | 12 |
 | `elective_crown` | The Elective Crown | seats_for_pass_lords and the_wardens_law | warden_assembly | 12,3 | 70 | add_spirit warden_kingship | 60 |
-| `warden_assembly` | The Assembly of Wardens | the_wardens_law and open_the_muster_rolls | elective_crown | 14,3 | 70 | add_spirit warden_assembly | 40 |
+| `warden_assembly` | The Assembly of Wardens | the_wardens_law and open_the_muster_rolls | elective_crown | 14,3 | 70 | add_spirit warden_assembly_spirit | 40 |
 | `one_realm_one_watch` | One Realm, One Watch | elective_crown or warden_assembly | — | 13,4 | 35 | political_power 100; proof +5 | 20 |
 | `mirolon_forests` | The Mirolon Forests | one_realm_one_watch | — | 12,5 | 35 | add_spirit forest_rangers | 12 |
 | `last_free_realm` | The Last Free Realm of the South | one_realm_one_watch | — | 14,5 | 35 | war_support 0.1; political_power 25 | 12 |
@@ -116,12 +116,12 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `stone_on_the_passes` | Stone on the Passes | — | — | 17,0 | 70 | passes +10 | 60 |
-| `quarry_roads` | Quarry Roads | stone_on_the_passes | — | 16,1 | 35 | building infrastructure 1 at site mirolon_passes | 15 |
-| `masons_guild` | The Masons' Guild | stone_on_the_passes | — | 18,1 | 35 | add_spirit masons_guild | 15 |
+| `quarry_roads` | Quarry Roads | stone_on_the_passes | — | 16,1 | 35 | building infrastructure 1 @mirolon_passes | 15 |
+| `masons_guild` | The Masons' Guild | stone_on_the_passes | — | 18,1 | 35 | add_spirit masons_guild_spirit | 15 |
 | `the_first_gate` | The First Gate | quarry_roads | — | 16,2 | 35 | passes +10 | 20 |
 | `signal_towers` | Signal Towers | masons_guild | — | 18,2 | 35 | passes +5; proof +3 | 15 |
 | `the_second_gate` | The Second Gate | the_first_gate and signal_towers | — | 17,3 | 70 | passes +15 | 20 |
-| `fallback_lines` | Sunken Roads and Fallback Lines | the_second_gate | — | 16,4 | 35 | building bunker 1 capital; add_spirit fallback_lines | 12 |
+| `fallback_lines` | Sunken Roads and Fallback Lines | the_second_gate | — | 16,4 | 35 | building bunker 1 capital; add_spirit fallback_lines_spirit | 12 |
 | `the_iron_gate` | The Iron Gate | the_second_gate | — | 18,4 | 70 | available: variable zin_mirolon_passes above 49; passes +15 | 20 |
 | `passes_are_shut` | The Passes Are Shut | fallback_lines and the_iron_gate | — | 17,5 | 35 | available: variable zin_mirolon_passes above 69; add_spirit passes_shut | 20 |
 
@@ -132,17 +132,17 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `voices_to_the_north` | Voices to the North | — | — | 23,0 | 35 | political_power 25 | 30 |
-| `envoy_to_parim` | An Envoy to Parim | voices_to_the_north | — | 21,1 | 35 | event_for Aenor (zin_dominion.5) | 30 |
+| `envoy_to_parim` | An Envoy to Parim | voices_to_the_north | — | 21,1 | 35 | call zin_mirolon_tree_warn_parim | 30 |
 | `friendship_with_herez` | Friendship with Herez | voices_to_the_north | — | 23,1 | 35 | event_for Herez herez_friendship (zin_mirolon.3) | 20 |
-| `free_realms_of_the_dead_lands` | Free Realms of the Dead Lands | voices_to_the_north | — | 25,1 | 35 | event_for Olen, Luminor, Gelon, Mencnon, Bennen, Dra, Mirodor and Nan: league_invite (zin_mirolon.4) | 20 |
+| `free_realms_of_the_dead_lands` | Free Realms of the Dead Lands | voices_to_the_north | — | 25,1 | 35 | event_for each of Olen, Luminor, Gelon, Mencnon, Bennen, Dra, Mirodor and Nan that exists: league_invite (zin_mirolon.4) | 20 |
 | `ask_the_lost_cause` | Ask the Lost Cause | envoy_to_parim | warden_league | 21,2 | 35 | event_for Aenor lost_cause_request (zin_mirolon.6) | 50, ×0.1 with flag zin_mirolon_parim_laughed |
 | `southern_marches_pact` | The Southern Marches Pact | friendship_with_herez | — | 23,2 | 35 | available: flag zin_mirolon_herez_friend; event_for Herez marches_pact (zin_mirolon.5) | 15 |
-| `warden_league` | The Warden League | free_realms_of_the_dead_lands | ask_the_lost_cause | 25,2 | 35 | faction "The Warden League"; invite every country with flag zin_mirolon_league_friend | 50 |
-| `through_the_concord_doors` | Through the Concord's Doors | ask_the_lost_cause | — | 21,3 | 35 | available: flag zin_mirolon_lost_cause_friend; add_spirit concord_backing; equipment infantry_equipment 1000 | 20 |
+| `warden_league` | The Warden League | free_realms_of_the_dead_lands | ask_the_lost_cause | 25,2 | 35 | faction `warden_league` (template `zin_faction_warden_league`, E3); call zin_mirolon_tree_invite_league (invites every country with flag zin_mirolon_league_friend) | 50 |
+| `through_the_concord_doors` | Through the Concord's Doors | ask_the_lost_cause | — | 21,3 | 35 | available: flag zin_mirolon_lost_cause_friend; add_spirit concord_backing; equipment zin_arms_equipment 1000 | 20 |
 | `appeal_to_gala` | An Appeal to Gala | southern_marches_pact | — | 23,3 | 35 | event_for Gala Elves appeal_to_gala (zin_mirolon.7) | 10 |
-| `league_musters` | The League Musters | warden_league | — | 25,3 | 35 | add_spirit league_musters | 15 |
+| `league_musters` | The League Musters | warden_league | — | 25,3 | 35 | add_spirit league_musters_spirit | 15 |
 | `a_wall_of_realms` | A Wall of Realms | through_the_concord_doors or league_musters | — | 23,4 | 35 | war_support 0.1; proof +5 | 15 |
-| `the_north_listens` | The North Listens | a_wall_of_realms | — | 23,5 | 35 | available: variable zin_mirolon_proof above 74; call zin_world_add_gathering_dark (3); every member of Aenor's faction: opinion of Mirolon +15; event_for Aenor (zin_dominion.5) with the guarantee option's AI weight ×3 | 20 |
+| `the_north_listens` | The North Listens | a_wall_of_realms | — | 23,5 | 35 | available: variable zin_mirolon_proof above 74; call zin_world_add_gathering_dark (3); flag zin_mirolon_north_listens (the guarantee option of `zin_dominion.5` gets AI ×3); call zin_mirolon_tree_warn_parim | 20 |
 
 ### Branch 7: The Army of the Passes
 
@@ -151,13 +151,13 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `army_of_the_passes` | The Army of the Passes | one_realm_one_watch or never_again | — | 7,6 | 35 | army_experience 15 | 20 |
-| `pass_warden_companies` | Pass Warden Companies | army_of_the_passes | — | 6,7 | 35 | manpower 4000; equipment infantry_equipment 500 | 15 |
+| `pass_warden_companies` | Pass Warden Companies | army_of_the_passes | — | 6,7 | 35 | manpower 4000; equipment zin_arms_equipment 500 | 15 |
 | `levies_of_the_lake_towns` | Levies of the Lake Towns | army_of_the_passes | — | 8,7 | 35 | add_spirit lake_levies | 12 |
-| `doctrine_of_the_narrows` | Doctrine of the Narrows | pass_warden_companies | — | 5,8 | 35 | research land_doctrine bonus 0.5 uses 2; add_spirit narrows_doctrine | 15 |
+| `doctrine_of_the_narrows` | Doctrine of the Narrows | pass_warden_companies | — | 5,8 | 35 | army_experience 25; add_spirit narrows_doctrine | 15 |
 | `rangers_of_the_forests` | Rangers of the Forests | pass_warden_companies and levies_of_the_lake_towns | — | 7,8 | 35 | army_experience 15; manpower 2000 | 12 |
-| `fire_against_the_dead` | Fire Against the Dead | levies_of_the_lake_towns | — | 9,8 | 35 | research artillery bonus 0.5 uses 1; add_spirit fire_against_dead | 12 |
-| `captain_of_the_passes` | The Captain of the Passes | doctrine_of_the_narrows and rangers_of_the_forests | — | 6,9 | 35 | raw: `recruit_character = zin_mirolon_selda`; army_experience 10 | 15 |
-| `arms_from_the_lake_forges` | Arms from the Lake Forges | rangers_of_the_forests and fire_against_the_dead | — | 8,9 | 35 | equipment infantry_equipment 1000 | 12 |
+| `fire_against_the_dead` | Fire Against the Dead | levies_of_the_lake_towns | — | 9,8 | 35 | research zin_cat_siege [artillery] bonus 0.5 uses 1; add_spirit fire_against_dead | 12 |
+| `captain_of_the_passes` | The Captain of the Passes | doctrine_of_the_narrows and rangers_of_the_forests | — | 6,9 | 35 | raw: `recruit_character = zin_mirolon_selda` (general, mechanic's character); army_experience 10 | 15 |
+| `arms_from_the_lake_forges` | Arms from the Lake Forges | rangers_of_the_forests and fire_against_the_dead | — | 8,9 | 35 | equipment zin_arms_equipment 1000 | 12 |
 | `every_hand_a_warden` | Every Hand a Warden | captain_of_the_passes and arms_from_the_lake_forges | — | 7,10 | 70 | available: at_war_with Volgan or variable zin_mirolon_proof above 49; add_spirit every_hand | 20 |
 
 ### Branch 8: The Storm Comes
@@ -170,7 +170,7 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | `last_stand_at_the_passes` | The Last Stand at the Passes | the_storm_comes | the_exile_court | 12,8 | 14 | add_spirit last_stand | 50 if proof ≥ 50; hist ×0 |
 | `the_exile_court` | The Exile Court | the_storm_comes | last_stand_at_the_passes | 14,8 | 14 | flag zin_mirolon_exile_ready; manpower 5000 | 50 if proof < 50; hist 100 |
 | `burn_the_bridges` | Burn the Bridges | last_stand_at_the_passes | — | 11,9 | 14 | call zin_mirolon_scorch | 50 |
-| `hold_every_stone` | Hold Every Stone | last_stand_at_the_passes or the_exile_court | — | 13,9 | 21 | timed_spirit hold_every_stone 180 | 100 |
+| `hold_every_stone` | Hold Every Stone | last_stand_at_the_passes or the_exile_court | — | 13,9 | 21 | timed_spirit hold_every_stone_spirit 180 | 100 |
 | `evacuate_the_lake_towns` | Evacuate the Lake Towns | the_exile_court | — | 15,9 | 21 | manpower 10000; flag zin_mirolon_evacuated | 80 |
 | `the_passes_held` | The Passes Held | burn_the_bridges and hold_every_stone | — | 12,10 | 35 | available: flag zin_mirolon_holds; add_spirit pride_of_the_passes; event passes_held (zin_mirolon.9) | 100 |
 | `the_court_abroad` | The Court Abroad | evacuate_the_lake_towns | — | 15,10 | 35 | available: raw `is_government_in_exile = yes`; political_power 50; manpower 5000 | 100 |
@@ -184,7 +184,7 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `mirolon_rises_again` | Mirolon Rises Again | hope_from_the_north | — | 13,13 | 35 | available: global_flag zin_volgan_body_destroyed; call zin_mirolon_restore; event mirolon_rises (zin_mirolon.11) | 500 |
-| `rebuild_the_gates` | Rebuild the Gates | mirolon_rises_again | — | 12,14 | 35 | passes +20; building bunker 2 at site mirolon_passes | 50 |
+| `rebuild_the_gates` | Rebuild the Gates | mirolon_rises_again | — | 12,14 | 35 | passes +20; building bunker 2 @mirolon_passes | 50 |
 | `bury_the_dead_of_two_ages` | Bury the Dead of Two Ages | mirolon_rises_again | — | 14,14 | 35 | stability 0.15 | 50 |
 | `carry_the_war_south` | Carry the War South | rebuild_the_gates | a_watch_for_the_ages | 12,15 | 35 | event carry_war_south (zin_mirolon.12) | 10 |
 | `a_watch_for_the_ages` | A Watch for the Ages | bury_the_dead_of_two_ages | carry_the_war_south | 14,15 | 35 | add_spirit watch_for_ages | 90 |
@@ -211,52 +211,54 @@ Keys compile to `zin_mirolon_<key>`. Mechanic spirits that reach Mirolon (`zin_d
 
 | Key | Name | Modifiers | Added / removed |
 | --- | --- | --- | --- |
-| `long_watch` | The Long Watch | `recon_factor` 0.1, `army_defence_factor` 0.05 | Start (history); permanent |
-| `unheeded_warnings` | Unheeded Warnings | `political_power_gain` −0.1 | Start; removed by "Proof No Court Can Laugh At" or the mechanic at proof 75 |
-| `lake_fisheries` | The Lake Fisheries | `monthly_population` 0.1, `stability_factor` 0.03 | "The Lake Fisheries" |
-| `siege_granaries` | Granaries Against the Siege | `supply_consumption_factor` −0.1, `stability_factor` 0.03 | "Granaries Against the Siege" |
+| `long_watch` | The Long Watch | `recon_factor` 0.1, `army_defence_factor` 0.05 | Start (added by `zin_dominion.1`); permanent |
+| `unheeded_warnings` | Unheeded Warnings | `political_power_gain` −0.1 | Start (`zin_dominion.1`); removed by "Proof No Court Can Laugh At" or the mechanic at proof 75 |
+| `lake_fisheries_spirit` | The Lake Fisheries | `monthly_population` 0.1, `stability_factor` 0.03 | "The Lake Fisheries" |
+| `siege_granaries_spirit` | Granaries Against the Siege | `supply_consumption_factor` −0.1, `stability_factor` 0.03 | "Granaries Against the Siege" |
 | `parim_debts` | Debts in Parim | `consumer_goods_factor` 0.03 | "Loans from Parim's Bankers"; permanent |
-| `own_coin` | Mirolon's Own Coin | `political_power_gain` 0.05, `production_speed_buildings_factor` 0.05 | "Mirolon's Own Coin" |
-| `deep_patrols` | Deep Patrols | `recon_factor` 0.05, `enemy_operative_detection_chance_factor` 0.15 | "Deep Patrols" |
-| `watch_never_sleeps` | The Watch Never Sleeps | `recon_factor` 0.15, `land_night_attack` 0.1 | "The Watch Never Sleeps" |
+| `own_coin_spirit` | Mirolon's Own Coin | `political_power_gain` 0.05, `production_speed_buildings_factor` 0.05 | "Mirolon's Own Coin" |
+| `deep_patrols_spirit` | Deep Patrols | `recon_factor` 0.05, `enemy_operative_detection_chance_factor` 0.15 | "Deep Patrols" |
+| `watch_never_sleeps_spirit` | The Watch Never Sleeps | `recon_factor` 0.15, `land_night_attack` 0.1 | "The Watch Never Sleeps" |
 | `occupied_years_remembered` | The Occupied Years Remembered | `war_support_factor` 0.1, `boost_resistance_factor` 0.2 | "Songs of the Occupied Years" |
 | `lake_charter` | Charter of the Lake Towns | `stability_factor` 0.05, `production_speed_buildings_factor` 0.05 | "Charter of the Lake Towns" |
 | `warden_kingship` | The Elective Crown | `political_power_gain` 0.15, `war_support_factor` 0.05 | "The Elective Crown" |
-| `warden_assembly` | The Assembly of Wardens | `stability_factor` 0.1, `political_power_gain` 0.05 | "The Assembly of Wardens" |
+| `warden_assembly_spirit` | The Assembly of Wardens | `stability_factor` 0.1, `political_power_gain` 0.05 | "The Assembly of Wardens" |
 | `forest_rangers` | Rangers of the Mirolon Forests | `recon_factor` 0.1, `terrain_penalty_reduction` 0.1 | "The Mirolon Forests" |
-| `masons_guild` | The Masons' Guild | `production_speed_bunker_factor` 0.25, `production_speed_buildings_factor` 0.05 | "The Masons' Guild" |
-| `fallback_lines` | Fallback Lines | `army_core_defence_factor` 0.05 | "Sunken Roads and Fallback Lines" |
+| `masons_guild_spirit` | The Masons' Guild | `production_speed_bunker_factor` 0.25, `production_speed_buildings_factor` 0.05 | "The Masons' Guild" |
+| `fallback_lines_spirit` | Fallback Lines | `army_core_defence_factor` 0.05 | "Sunken Roads and Fallback Lines" |
 | `passes_shut` | The Passes Are Shut | `army_defence_factor` 0.1, `max_dig_in` 5 | "The Passes Are Shut" |
 | `concord_backing` | The Concord's Backing | `war_support_factor` 0.05, `army_defence_factor` 0.05 | "Through the Concord's Doors" |
-| `league_musters` | The League Musters | `army_defence_factor` 0.05, `recruitable_population_factor` 0.05 | "The League Musters" |
+| `league_musters_spirit` | The League Musters | `army_defence_factor` 0.05, `recruitable_population_factor` 0.05 | "The League Musters" |
 | `lake_levies` | Levies of the Lake Towns | `recruitable_population_factor` 0.05, `training_time_army_factor` −0.05 | "Levies of the Lake Towns" |
 | `narrows_doctrine` | Doctrine of the Narrows | `army_defence_factor` 0.05, `max_dig_in` 3 | "Doctrine of the Narrows" |
 | `fire_against_dead` | Fire Against the Dead | `army_attack_factor` 0.05 | "Fire Against the Dead" |
 | `every_hand` | Every Hand a Warden | `recruitable_population_factor` 0.1, `war_support_factor` 0.05 | "Every Hand a Warden" |
 | `last_stand` | The Last Stand | `army_defence_factor` 0.15, `army_core_defence_factor` 0.1 | "The Last Stand at the Passes"; removed at peace |
-| `hold_every_stone` | Hold Every Stone | `army_defence_factor` 0.1, `land_reinforce_rate` 0.02 | "Hold Every Stone"; 180 days |
+| `hold_every_stone_spirit` | Hold Every Stone | `army_defence_factor` 0.1, `land_reinforce_rate` 0.02 | "Hold Every Stone"; 180 days |
 | `pride_of_the_passes` | The Pride of the Passes | `war_support_factor` 0.1, `army_org_factor` 0.05 | "The Passes Held" |
 | `southern_war` | The War Carried South | `army_attack_factor` 0.1, `war_support_factor` 0.05 | `zin_mirolon.12` option "Carry it south."; 180 days |
 | `watch_for_ages` | A Watch for the Ages | `army_defence_factor` 0.1, `stability_factor` 0.05 | "A Watch for the Ages" |
 
 ## Events (namespace `zin_mirolon`)
 
-| Id | Key | Title | Trigger | Options (effects; AI weight) |
-| --- | --- | --- | --- | --- |
-| 1 | `wardens_council` | The High Warden's Council | Focus | "Hear the pass-lords." (passes +5; AI 60) / "Hear the lake towns." (+50 PP; AI 40) |
-| 2 | `grave_signs` | Signs at the Grave-Fields | Focus | "Send more scouts." (proof +5, Volgan veil −3; if veil ≥ 70, 20% chance of `zin_dominion.6` instead; AI 60) / "Write it down and wait." (proof +3; AI 40) |
-| 3 | `herez_friendship` | Friendship with Mirolon (to Herez) | Focus | "Herez stands with Mirolon." (opinion +25 both ways; Mirolon flag zin_mirolon_herez_friend; AI 60, ×0.5 if Aenor's `zin_court_corruption` > 60) / "Herez answers to Parim." (AI 40) |
-| 4 | `league_invite` | An Invitation from Mirolon (to a free Dead Lands realm) | Focus | "Stand with the wardens." (country flag zin_mirolon_league_friend; AI 40, ×2 if Light or Wild, ×0 if Shadow or a Volgan subject) / "We keep our own counsel." (AI 60) |
-| 5 | `marches_pact` | The Southern Marches Pact (to Herez) | Focus | "If the storm comes, Herez will send men." (Herez flag zin_herez_marches_pact: Herez AI sends volunteers to Mirolon at war; AI 50) / "Herez cannot promise." (AI 50) |
-| 6 | `lost_cause_request` | Mirolon Asks to Join the Lost Cause (to Aenor) | Focus | "Admit Mirolon." (Mirolon flag zin_mirolon_lost_cause_friend; Mirolon joins the Lost Cause as the Aenor spec defines it; AI 20 + proof / 2, ×0.5 if `zin_court_corruption` > 60) / "A frontier realm's fears are not ours." (Mirolon opinion of Aenor −15; AI 80) |
-| 7 | `appeal_to_gala` | Mirolon Remembers (to the Gala Elves) | Focus | "Send rangers north." (Mirolon gets 500 infantry equipment and flag zin_gala_rangers_mirolon; AI 15, ×2 with zin_mirolon_elves_remember; Gala spec may override) / "The elves made their choice long ago." (AI 85) |
-| 8 | `archives` | The Archives of the First Conquest | Focus | "Read it to the young." (war_support +0.02) |
-| 9 | `passes_held` | The Passes Held (news) | Focus | "Mirolon stands." |
-| 10 | `storm_comes` | The Storm Comes | Focus | "To the passes!" |
-| 11 | `mirolon_rises` | Mirolon Rises Again | Focus | "Home." (stability +0.05). Text: the master of Nafeher has fallen; what remains of him no one can say. |
-| 12 | `carry_war_south` | Into the Dead Lands? | Focus | "Carry it south." (war goal `annex_everything` on Volgan if not at war; timed_spirit southern_war 180; AI 20) / "Remember Edran's host." (+100 PP; flag zin_mirolon_declined_south; AI 80). The text recalls that the First Age invasion of the Dead Lands failed. |
+All are fired by focus or option effects (no trigger, no mean time). Pictures are existing catalog keys; event 9 is a news event and uses a news crop.
 
-The mechanic's events that reach Mirolon (`zin_dominion.2`, `.3`, `.6`, `.7`, `.10`, `.11`, `.20`, `.24`) are listed in the mechanic spec.
+| Id | Key | Title | Trigger | Picture | Options (effects; AI weight) |
+| --- | --- | --- | --- | --- | --- |
+| 1 | `wardens_council` | The High Warden's Council | Focus | `generic_court` | "Hear the pass-lords." (passes +5; AI 60) / "Hear the lake towns." (+50 PP; AI 40) |
+| 2 | `grave_signs` | Signs at the Grave-Fields | Focus | `grave_muster` | "Send more scouts." (proof +5, Volgan veil −3; if veil ≥ 70, 20% chance of `zin_dominion.6` instead; AI 60) / "Write it down and wait." (proof +3; AI 40) |
+| 3 | `herez_friendship` | Friendship with Mirolon (to Herez) | Focus | `generic_court` | "Herez stands with Mirolon." (opinion +25 both ways through the opinion modifier `zin_dominion_mirolon_friendship` (requested from the mechanic's `common/opinion_modifiers/zin_dominion.txt`); Mirolon flag zin_mirolon_herez_friend; Herez flag `zin_herez_heard_mirolon`; AI 60, ×0.5 if Aenor's `zin_court_corruption` > 60) / "Herez answers to Parim." (AI 40) |
+| 4 | `league_invite` | An Invitation from Mirolon (to a free Dead Lands realm) | Focus | `generic_court` | "Stand with the wardens." (country flag zin_mirolon_league_friend; AI 40, ×2 if Light or Wild, ×0 if Shadow, a Volgan subject or flagged `zin_dominion_tributary_friend`) / "We keep our own counsel." (AI 60) |
+| 5 | `marches_pact` | The Southern Marches Pact (to Herez) | Focus | `generic_peace` | "If the storm comes, Herez will send men." (Herez flag zin_herez_marches_pact: Herez AI sends volunteers to Mirolon at war; AI 50) / "Herez cannot promise." (AI 50) |
+| 6 | `lost_cause_request` | Mirolon Asks to Join the Lost Cause (to Aenor) | Focus | `concord_council` | "Admit Mirolon." (Mirolon flags zin_mirolon_lost_cause_friend and `zin_lost_cause_member`: an honorary member of the Lost Cause, which is an institution inside Aenor's mechanic, not a faction, decision S3; AI 20 + proof / 2, ×0.5 if `zin_court_corruption` > 60) / "A frontier realm's fears are not ours." (flag `zin_mirolon_parim_laughed`; AI 80) |
+| 7 | `appeal_to_gala` | Mirolon Remembers (to the Gala Elves) | Focus | `gala_court` | "Send rangers north." (Mirolon gets 500 `zin_arms_equipment` and flag zin_gala_rangers_mirolon; AI 15, ×2 with zin_mirolon_elves_remember; the Lands of the Sun spec may override) / "The elves made their choice long ago." (AI 85) |
+| 8 | `archives` | The Archives of the First Conquest | Focus | `generic_court` | "Read it to the young." (war_support +0.02) |
+| 9 | `passes_held` | The Passes Held (news) | Focus | `generic_war` (news) | "Mirolon stands." |
+| 10 | `storm_comes` | The Storm Comes | Focus | `dead_lands_storm` | "To the passes!" |
+| 11 | `mirolon_rises` | Mirolon Rises Again | Focus | `generic_peace` | "Home." (stability +0.05). Text: the master of Nafeher has fallen; what remains of him no one can say. |
+| 12 | `carry_war_south` | Into the Dead Lands? | Focus | `dead_lands_storm` | "Carry it south." (war goal `annex_everything` on Volgan if not at war; timed_spirit southern_war 180; AI 20) / "Remember Edran's host." (+100 PP; flag zin_mirolon_declined_south; AI 80). The text recalls that the First Age invasion of the Dead Lands failed. |
+
+The mechanic's events that reach Mirolon (`zin_dominion.2`, `.3`, `.5`, `.6`, `.7`, `.10`, `.11`, `.20`, `.24`) are listed in the mechanic spec. The tree reaches `zin_dominion.5` (Mirolon's Warning, to Aenor) only through its own effect below.
 
 ## Historical AI route
 
@@ -292,15 +294,64 @@ On the historical path Mirolon never takes `proof_no_court_can_laugh_at`, `ask_t
 
 ## Implementation
 
-- Data: `docs/design/focus/mirolon.json` (id `mirolon`, tier `major`, countries `["Mirolon"]`).
-- Compiled: `common/national_focus/zin_mirolon.txt`, `common/ideas/zin_focus_mirolon.txt`, `events/zin_mirolon.txt`, `localisation/english/zin_focus_mirolon_l_english.yml`.
-- Scripted effects and triggers come from the mechanic (`zin_dominion.txt`): `zin_mirolon_add_proof`, `zin_mirolon_add_passes`, `zin_mirolon_scorch`, `zin_mirolon_raise_resistance`, `zin_mirolon_restore`, `zin_volgan_add_veil`, `zin_mirolon_occupied`, `zin_world_add_gathering_dark`.
-- History: `history/countries/<Mirolon tag>`: spirits `long_watch`, `unheeded_warnings`; `zin_mirolon_proof` 15; `zin_mirolon_passes` 30; country leader `zin_mirolon_maeric` (replaces the generated ruler); characters `zin_mirolon_selda` and `zin_mirolon_hadric` defined but not recruited.
-- Faction "The Warden League" (proposed name), created by `warden_league`; Mirolon leads.
-- Building target "site mirolon_passes" uses `zin_is_site_mirolon_passes` (every pass state Mirolon controls).
-- Tree flags: `zin_mirolon_elves_remember`, `zin_mirolon_herez_friend`, `zin_mirolon_lost_cause_friend`, `zin_mirolon_evacuated`, `zin_mirolon_declined_south`, `zin_mirolon_free_south` (Mirolon); `zin_mirolon_league_friend` (invitees); `zin_herez_marches_pact` (Herez); `zin_gala_rangers_mirolon` (Mirolon, set by Gala's answer).
-- `raw` blocks: three (two `recruit_character`, one `is_government_in_exile` condition). Limit is ten.
-- Icons from the shared catalog; proposed new icons: `pass_fort`, `scout_lantern`, `lake_town`, `warden_crown`, `exile_court`. All image-generated.
+### Files and builder
+
+| Path | Written by | Content |
+| --- | --- | --- |
+| `docs/design/focus/mirolon.json` | authored data (source of truth) | id `mirolon`, tier `major`, countries `["Mirolon"]`, in the format of [00_format_and_compiler.md](../00_format_and_compiler.md) |
+| `common/national_focus/zin_mirolon.txt` | `tools/content/modules/focus_compiler.mjs` (new) | The compiled tree; `country` weight on Mirolon's tag, resolved from the name at build time |
+| `common/ideas/zin_focus_mirolon.txt` | focus compiler | The spirits above (`zin_mirolon_<key>`) |
+| `events/zin_mirolon.txt` | focus compiler | Namespace `zin_mirolon`, the 12 events above |
+| `common/scripted_effects/zin_mirolon.txt` | focus compiler | The tree-declared effects below |
+| `localisation/english/zin_focus_mirolon_l_english.yml` | focus compiler | All text (UTF-8 with BOM, Windows-1252 characters only) |
+
+The compiled tree replaces the interim "Long Peace" tree (`zin_long_peace_*`, written today by `tools/content/modules/vanilla_removal.mjs`) for Mirolon. The mechanic's files (`zin_dominion.*`) come from the mechanic's module (proposed `tools/content/modules/mech_volgan_dominion.mjs`, [volgan_southern_dominion.md](../../04_mechanics/volgan_southern_dominion.md)), including the characters `zin_mirolon_maeric` (leader), `zin_mirolon_selda` and `zin_mirolon_hadric`. The tree adds no character; it recruits the last two.
+
+**Start state.** Country history comes from the politics step, so the mechanic's startup event `zin_dominion.1` adds the start spirits `zin_mirolon_long_watch` and `zin_mirolon_unheeded_warnings`, sets `zin_mirolon_proof` 15 and `zin_mirolon_passes` 30, and makes `zin_mirolon_maeric` the leader in place of the generated ruler (stance `zin_light_wardens`).
+
+### Tree-declared scripted effects
+
+| Effect | Does |
+| --- | --- |
+| `zin_mirolon_tree_warn_parim` | Calls the Aenor mechanic's `zin_aenor_event_for_parim` with `zin_dominion.5` (Mirolon's Warning): the Aenor realm that holds Parim, else Aenor (decision F7) |
+| `zin_mirolon_tree_invite_league` | `every_country` with flag `zin_mirolon_league_friend` that is in no faction: `add_to_faction` into Mirolon's Warden League |
+
+### Flags and names
+
+| Name | Kind | Set by | Read by |
+| --- | --- | --- | --- |
+| `zin_mirolon_watch_open`, `zin_mirolon_exile_ready`, `zin_mirolon_holds`, `zin_mirolon_parim_laughed` | Mirolon flags | this tree; the mechanic | the mechanic's decisions and events |
+| `zin_mirolon_elves_remember`, `zin_mirolon_herez_friend`, `zin_mirolon_lost_cause_friend`, `zin_mirolon_evacuated`, `zin_mirolon_declined_south`, `zin_mirolon_free_south`, `zin_mirolon_north_listens` | Mirolon flags | this tree | this tree (AI and availability); `zin_mirolon_north_listens` also by the AI of `zin_dominion.5` |
+| `zin_mirolon_league_friend` | flag on invitees | event 4 | `zin_mirolon_tree_invite_league` |
+| `zin_herez_marches_pact`, `zin_herez_heard_mirolon` | Herez flags | events 5 and 3 | Herez's tree and AI |
+| `zin_gala_rangers_mirolon` | Mirolon flag | event 7 | this tree |
+| `zin_lost_cause_member` | country flag (Aenor mechanic) | event 6 | Aenor's Lost Cause |
+| `zin_mirolon_add_proof` ("proof"), `zin_mirolon_add_passes` ("passes"), `zin_mirolon_scorch`, `zin_mirolon_raise_resistance`, `zin_mirolon_restore`, `zin_volgan_add_veil`, `zin_world_add_gathering_dark` | scripted effects | the mechanic; world systems | — |
+| `zin_mirolon_occupied`, `zin_is_site_mirolon_passes` | scripted triggers | the mechanic; key sites | — |
+| `zin_mirolon_proof`, `zin_mirolon_passes`, `zin_court_corruption` | variables (conditions) | the mechanic; Aenor | — |
+
+The faction "The Warden League" (proposed) is created by `warden_league` with Mirolon as leader through `create_faction_from_template` (decision E3). Its template `zin_faction_warden_league` and joining rule `zin_faction_rule_join_warden_league` (members: countries with `zin_mirolon_league_friend`; rules `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`) are requested from the diplomacy spec's list of factions formed in play. The road is exclusive with the Lost Cause road.
+
+### Compiler notes
+
+- "variable zin_mirolon_proof above 59" compiles to the variable condition; "at_war_with Volgan or variable …" to an `or`.
+- `raw` blocks: three (two `recruit_character`, one `is_government_in_exile = yes` condition, which have no compiler form). Limit ten.
+
+### Icons
+
+Every key is from the icon catalog ([02_icon_catalog.md](../02_icon_catalog.md)); the sprites `GFX_focus_zin_<key>` and `GFX_idea_zin_<key>` exist in game today. Spirits use the icon of the focus that adds them; the start spirits use `pass_fort` (`long_watch`) and `seal_royal` (`unheeded_warnings`).
+
+| Branch | Focus → icon |
+| --- | --- |
+| 1 | lake_and_coast `harbour_lake`; lake_fisheries `fishing_boats`; coast_harbours `harbour_lake`; storm_pilots `storm_sea`; trade_with_the_north `market_stalls`; coastal_watch_towers `lighthouse`; forest_timber `timber_mill`; arms_of_the_lake `forge_anvil`; siege_granaries `granary`; parim_bankers `ledger_coins`; own_coin `coin_chest`; war_footing `levy_muster` |
+| 2 | watch_on_the_passes `pass_fort`; scouts_beyond_the_heat `scout_lantern`; counting_the_fires `beacon`; scout_masters_school `scout_lantern`; signs_at_the_grave_fields `grave_field`; ledger_of_warnings `scroll_sealed`; deep_patrols `ranger_cloak`; proof_no_court_can_laugh_at `seal_royal`; watch_never_sleeps `eye_watchful` |
+| 3 | memory_of_the_first_conquest `book_lore`; chronicles_of_the_alliance `banner_league`; songs_of_the_occupied_years `hymn_choir`; never_again `lone_sword`; what_the_elves_remember `tree_silver` |
+| 4 | wardens_hall `warden_crown`; high_wardens_council `council_table`; charter_of_the_lake_towns `charter_old`; seats_for_pass_lords `mountain_pass`; the_wardens_law `scroll_treaty`; open_the_muster_rolls `levy_muster`; elective_crown `warden_crown`; warden_assembly `council_table`; one_realm_one_watch `banner_plain`; mirolon_forests `forest_ancient`; last_free_realm `chain_broken` |
+| 5 | stone_on_the_passes `quarry_stone`; quarry_roads `roads_paved`; masons_guild `guild_hall`; the_first_gate `pass_fort`; signal_towers `beacon`; the_second_gate `fort_wall`; fallback_lines `fort_wall`; the_iron_gate `pass_fort`; passes_are_shut `mountain_pass` |
+| 6 | voices_to_the_north `envoy`; envoy_to_parim `palace_parim`; friendship_with_herez `handshake_oath`; free_realms_of_the_dead_lands `banner_league`; ask_the_lost_cause `concord_circle`; southern_marches_pact `scroll_treaty`; warden_league `alliance_rings`; through_the_concord_doors `charter_shield`; appeal_to_gala `gala_sun`; league_musters `levy_muster`; a_wall_of_realms `fort_wall`; the_north_listens `beacon` |
+| 7 | army_of_the_passes `sword_shield`; pass_warden_companies `spear_levy`; levies_of_the_lake_towns `levy_muster`; doctrine_of_the_narrows `war_council_map`; rangers_of_the_forests `ranger_cloak`; fire_against_the_dead `siege_trebuchet`; captain_of_the_passes `pass_fort`; arms_from_the_lake_forges `forge_anvil`; every_hand_a_warden `spear_levy` |
+| 8 | the_storm_comes `ember_desert`; last_stand_at_the_passes `pass_fort`; the_exile_court `exile_court`; burn_the_bridges `river_ford`; hold_every_stone `fort_wall`; evacuate_the_lake_towns `lake_town`; the_passes_held `mountain_pass`; the_court_abroad `exile_court`; the_hidden_mirolon `scout_lantern`; hope_from_the_north `beacon` |
+| 9 | mirolon_rises_again `warden_crown`; rebuild_the_gates `quarry_stone`; bury_the_dead_of_two_ages `grave_field`; carry_the_war_south `banner_plain`; a_watch_for_the_ages `eye_watchful`; the_free_south `chain_broken` |
 
 ## AI
 
@@ -310,17 +361,26 @@ On the historical path Mirolon never takes `proof_no_court_can_laugh_at`, `ask_t
 
 ## Acceptance
 
-1. The compiler accepts `mirolon.json`: 83 focuses, unique keys and positions, every prerequisite above its focus, exclusives symmetric, days multiples of 7, three raw blocks.
-2. The HOI4 Agent Tools focus inspector reports no errors; the renderer shows the tree within 26 columns.
-3. On 1 Thaw 1748 no focus starts a war; "The Storm Comes" is unavailable until Volgan is at war with Mirolon.
-4. In the historical AI run Mirolon's passes reach at least 80 and proof between 50 and 74 before 1 Rainwake 1755, the Golden Court laughs at the envoy, Mirolon takes the Exile Court, falls in 1755, and returns after `zin_volgan_body_destroyed`.
-5. In a test where Mirolon holds every pass state for 365 days of war, `zin_mirolon_holds` is set and "The Passes Held" becomes available.
-6. No Mirolon text places Dardan, names Afrit or states Volgan's final fate.
-7. Every modifier in the spirits table exists in the game's modifier documentation.
+Build checks (focus compiler and `npm test` in `tools/`):
+
+1. `mirolon.json` compiles: 83 focuses, unique keys and positions in columns 0–25 and rows 0–16, every prerequisite and exclusive exists, every focus sits below its prerequisites, the five exclusive pairs (Parim's Bankers / Own Coin, Elective Crown / Assembly, Ask the Lost Cause / Warden League, Last Stand / Exile Court, Carry the War South / A Watch for the Ages) are symmetric, every `days` is a multiple of 7, exactly three `raw` blocks.
+2. Every icon is a catalog key and every event picture a picture key; event 9 uses a news key.
+3. Every spirit modifier is in the 1.19.3 modifier documentation; every `call` and `check` resolves to the mechanic's, world systems' or this tree's effects and triggers; every research category is a warfare `zin_cat_*` key or its stated vanilla fallback.
+4. Offline scan: no focus reachable on 1 Thaw 4A 1748 has a war goal or war effect; "The Storm Comes" needs war with Volgan; "Carry the War South" can only follow `zin_volgan_body_destroyed`.
+5. Text scan: no Mirolon text places Dardan, names Afrit or Eindil, or states Volgan's fate (compiler secret check plus a read of event 11).
+6. HOI4 Agent Tools focus inspector reports no errors; the renderer shows the tree within 26 columns.
+
+Isolated Linux run:
+
+7. One in-game year from 1 Thaw 4A 1748: Mirolon uses this tree (not `zin_long_peace_*`), has High Warden Maeric as leader, `zin_mirolon_long_watch` and `zin_mirolon_unheeded_warnings`, takes `wardens_hall`, `watch_on_the_passes` and `stone_on_the_passes` first, declares no war; `error.log` has no line from `zin_mirolon` files.
+8. Historical observer run to 4A 1760 (PROGRAM observer run): passes reach at least 80 and proof between 50 and 74 before 1 Rainwake 1755, the Golden Court laughs at the envoy (`zin_mirolon_parim_laughed`), Mirolon takes the Exile Court, falls in 1755, and returns after `zin_volgan_body_destroyed`.
+9. A console test where Mirolon holds every pass state for 365 days of war sets `zin_mirolon_holds` and makes "The Passes Held" available.
 
 ## Open questions
 
-1. Is Mirolon a kingdom, a republic, or the elective warden-realm proposed here? Do you want to name its ruler?
-2. Should Mirolon be able to join Aenor's Lost Cause at all, given the Golden Court laughed at its envoy in 4A 1736?
-3. Does Mirolon hold lands on the Magical Lands sheet (map open question 4), and if so, should the tree treat them as a refuge for the exile court?
-4. Should the Gala Elves ever answer Mirolon's appeal, or does the Elven Refusal rule it out entirely?
+Each proceeds on the proposal written into the design; the owner's questions are in [../../OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md).
+
+1. Kingdom, republic or elective warden-realm, and a named ruler? **Proceeds on:** the elective warden-realm under High Warden Maeric (owner short list 7; "volgan and mirolon" 2).
+2. Can Mirolon join Aenor's Lost Cause at all? **Proceeds on:** yes, as an honorary member through event 6, rarely on the historical path because Parim laughed ("volgan and mirolon" 10; "aenor" 3).
+3. Does Mirolon hold lands on the Magical Lands sheet, as a refuge for the exile court? **Proceeds on:** the tree uses no such land; the exile court goes to Herez, Aenor or Gala through the mechanic's event 24. Listed for the integrator as a new owner question.
+4. Can the Gala Elves ever answer Mirolon's appeal despite the Refusal? **Proceeds on:** yes, rarely (AI 15, ×2), as rangers sent by individuals' choice, never an army ("volgan and mirolon" 10).

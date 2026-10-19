@@ -1,6 +1,6 @@
 # Tiers and coverage
 
-**Status:** Ready. **Priority:** 4 (tier A), 6 (tiers B and C). **Phase:** 4 and 6.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 4 (tier A), 6 (tiers B and C). **Phase:** 4 and 6.
 
 ## Purpose
 
@@ -14,7 +14,9 @@ Every one of the 305 countries gets an Erdae focus tree. No country falls back t
 | **B: regional** | 71 countries with lore weight, size or a role in the story | 30 to 50 focuses | Own spec section in [regional/](regional/); a unique core plus pieces of its region's shared tree |
 | **C: shared** | Every other country | 40 to 70 focuses in one tree per region | One shared tree per region with branches by people, ideology, overlord and coast; text names the country |
 
-A tier B tree may reuse branches of its region's shared tree by copying them into its own file with new keys; it never shares focus ids with another tree.
+A tier's focus range counts the whole tree, not one country's view of it (decision F6): a shared tree of 70 focuses is in range even when a country with no coast or of another people sees 36 of them.
+
+A tier B tree may reuse modules of its region's shared tree through the compiler's `copy` block, which gives the copied focuses the tier B tree's own ids ([00_format_and_compiler.md](00_format_and_compiler.md), F1); it never shares focus ids with another tree.
 
 ## Tier A
 
@@ -117,7 +119,7 @@ A tier B tree may reuse branches of its region's shared tree by copying them int
 | C | 221 |
 | **All** | **305** |
 
-The Ocean of Zol region holds only Zol (tier A). Aenor Isle shares the Middle Lands' dominion tree.
+The Ocean of Zol region holds only Zol (tier A). Aenor Isle holds only Asgard, which has its own tier B tree (`regional_asgard`, in [regional/middle_lands.md](regional/middle_lands.md)); it does not use the Middle Lands' shared dominion tree.
 
 ## Acceptance
 

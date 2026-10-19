@@ -1,6 +1,6 @@
 # Full interface reskin
 
-**Status:** Draft. **Priority:** 5. **Phase:** 7 (the inventory, tooling, frontend and shared chrome may start in phase 2 so the first screen a player sees is Erdae's).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 5. **Phase:** 7 (the inventory, tooling, frontend and shared chrome may start in phase 2 so the first screen a player sees is Erdae's).
 
 ## Purpose
 
@@ -9,6 +9,17 @@
 For each surface it says which textures are replaced with image-generated Erdae art (path, size, frame count, format), which `.gui` or `.gfx` files are overridden and why, and what stays engine-generic. It fixes the visual language (materials, palette, text colours, ideology colours), the generator design (one theme sheet per family, sliced by code), the production order, and the offline and Linux acceptance checks.
 
 The main menu, bookmark, country selection, credits and game rules screens are specified in detail in [03_main_menu_and_frontend.md](03_main_menu_and_frontend.md). The loading screen pictures, quotes and tips are in [02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md); this spec covers only the loading screen's frame.
+
+## Current state (19 October 2026, commit ca01fa3)
+
+| Item | In game | Writer |
+| --- | --- | --- |
+| Loading screen chrome `gfx/interface/Loadingscreen_loadingtip.dds`, `Loadingscreen_loadingstatus.dds`, `LoadingScreen_Progress_1.dds`, `LoadingScreen_Progress_2.dds` (`R`, exact vanilla case) | yes | `tools/content/modules/presentation.mjs` |
+| ZIN emblem in `gfx/interface/logo_game.dds` (`R`, 448 × 175) | yes | same |
+| Bookmark picture and its `R` copies `gfx/interface/select_date_1936.dds`, `select_date_1939.dds` (180 × 104) | yes | same |
+| `interface/frontendmainviewbg.gfx`, `interface/frontendmainviewbg_basic.gfx` (`O`: `GFX_frontend_bg`, `GFX_frontend_bg_basic`, `GFX_frontend_bg_basic_small` point at `zin_menu_parim`) | yes | same |
+| `interface/small_background.gfx` (`O`: background picker thumbnails and their frame) | yes | same |
+| Every other surface of section 4 | no (vanilla chrome) | this spec |
 
 ## Lore basis
 
@@ -35,21 +46,21 @@ The chrome is shared by every country, so it must be neutral: no faith, no realm
 4. **Neutral chrome.** Window chrome uses one shared Erdae material set (section 3). Faction and mechanic colour appears only in ZIN's own panels ([01_interface.md](01_interface.md) §12) and in content (flags, icons, portraits).
 5. **Spoiler-free at every date.** Chrome is visible from the first frame of the main menu, so it never shows the veiled sun, a demon, a sigil of Zol, Eindil, a battle or a later-state picture. Ornament comes from the neutral vocabulary in section 3.6.
 6. **No lettering in art.** Every word on screen is localisation drawn by a game font.
-7. **Measured from the installed game.** Sizes, frames, border sizes and luminance come from the installed game files (game version 1.19.3.0 on 18 October 2026), read by the builder as data. Vanilla pixels are measured, never copied, never passed to the image generator and never shipped.
+7. **Measured from the installed game.** Sizes, frames, border sizes and luminance come from the installed game files (game version 1.19.3.0, the `rawVersion` of the installed `launcher-settings.json`), read by the builder as data. Vanilla pixels are measured, never copied, never passed to the image generator and never shipped.
 8. **Everything reachable is themed.** A surface a player can open in ZIN is themed or listed as engine-generic with a reason. Vanilla sprites that no ZIN content can reach (vanilla focus icons, idea pictures, tank designer modules) are classified unreachable and need no art (section 7).
 
 ### 2. Methods
 
 #### 2.1 Methods per sprite
 
-Every sprite in the vanilla `interface/*.gfx` files gets exactly one disposition in `docs/design/ui/reskin.json`.
+Every sprite in the vanilla `interface/*.gfx` files gets exactly one disposition in `tools/content/data/ui/reskin.json`.
 
 | Code | Method | When | What ships |
 | --- | --- | --- | --- |
 | `R` | **Replace** the texture at the same path | Default for chrome | A generated texture at the vanilla path, same extension (`.dds`, `.tga` or `.png`), same width and height, same frame count |
 | `Z` | **ZIN sprite** in a ZIN-owned `.gfx` | ZIN content (icons, pictures, portraits) and ZIN windows | New sprite names `GFX_zin_*` in `interface/zin_*.gfx`; owned by the content specs |
 | `O` | **Re-authored override** of a vanilla `.gui` or `.gfx` file | Only the files in section 2.3 | A ZIN-written file of the same name, built from a ZIN template that keeps every element name the engine binds |
-| `D` | **Derived override** | Only `interface/core.gfx` text colours and font aliases, if the additive route fails (section 3.4) | The installed file read at build time with a declared patch applied |
+| `D` | **Derived override** | Reserved. Not used unless the owner approves it, because it would ship a patched Paradox file (section 3.4) | Nothing today |
 | `E` | **Engine-generic** | Developer and engine logos, the multiplayer and account screens' links, debug and console art, map shaders, font glyphs | Nothing |
 | `H` | **Hidden** by an `O` override | DLC banners, store and subscription widgets, achievements, the tutorial button | Nothing; the element stays in the file, moved to a zero-size position with an empty sprite |
 | `U` | **Unreachable** | Vanilla content sprites no ZIN script or window references | Nothing; the reachability check proves it (section 7) |
@@ -68,7 +79,7 @@ All shipped pixels come from accepted generations ([01_art_pipeline.md](../08_ar
 | Frame assembly: place generated cells side by side | Multi-frame strips |
 | Repeat a generated seamless tile horizontally or vertically | Very wide bands (the top bar, 2346 × 87) that exceed the generator's 3:1 aspect limit |
 | Flip or rotate by 90° | Arrow and scroll button pairs (left from right, down from up) |
-| Alpha from the key colour, key despill | Every keyed cell |
+| Alpha from the magenta key with despill (`keyMatte` in `modules/presentation.mjs`), or from the item's outline on a black ground (the A3 medallion method) | Single objects with transparent parts (the emblem and the thumbnail frame are made this way today); shaped cells on black sheets |
 | Constant alpha scale | Translucent tiles whose vanilla alpha is uniform (for example `tiled_window_transparent.dds`) |
 | Format conversion: DDS A8R8G8B8, TGA 32-bit, PNG 32-bit, CUR and ANI | Output |
 
@@ -76,17 +87,16 @@ No tinting, hue shift, gradient, drawn line or text is ever applied by code. Eac
 
 #### 2.3 The closed list of overrides
 
-| File | Code | Why | Owner spec |
-| --- | --- | --- | --- |
-| `interface/frontendmainview.gui` | `O` | Hide DLC banners, subscription widget, achievements and tutorial buttons; add the ZIN title, subtitle and version text | [03_main_menu_and_frontend.md](03_main_menu_and_frontend.md) |
-| `interface/frontendmainviewbg.gfx`, `interface/frontendmainviewbg_basic.gfx` | `O` | Point the menu background sprites at ZIN's backgrounds (vanilla points at `load_5.dds`) | 03 |
-| `interface/frontendcreditview.gui` | `O` | Add the ZIN credits block above the engine credits | 03 |
-| `interface/core.gfx` (only if needed) | `D` | Text colours and the typewriter font aliases (section 3.4, 3.7) | this spec |
-| `music/_songs.txt`, `music/music.asset` | `O` | Main menu music hook (only when an approved music source exists) | 03 |
-| `common/frontend/backgrounds/` (folder) | `replace_path` | Only ZIN menu backgrounds rotate | 03 |
-| `interface/countrytechtreeview.gui` | `O` | ZIN technology folders replace the vanilla folder windows; the folder layout belongs to the warfare spec, the skin to this spec | [01_warfare.md](../03_gameplay/01_warfare.md) |
+| File (installed 1.19.3) | Windows or sprites | Code | Why | Owner spec | Writer | State |
+| --- | --- | --- | --- | --- | --- | --- |
+| `interface/frontendmainview.gui` | `frontend_background`, `mainmenu_panel_upperleft`, `mainmenu_single_player`, `mainmenu_panel_bottom`, `mainmenu_dlc_ownership`, `mainmenu_achievement_button` and the rest of the file | `O` | Hide DLC banners, subscription widget, achievements and tutorial buttons; add the ZIN title, subtitle and version text | [03_main_menu_and_frontend.md](03_main_menu_and_frontend.md) | `modules/ui_overrides.mjs` | to do |
+| `interface/frontendmainviewbg.gfx`, `interface/frontendmainviewbg_basic.gfx` | `GFX_frontend_bg`, `GFX_frontend_bg_basic`, `GFX_frontend_bg_basic_small` | `O` | Point the menu background sprites at ZIN's backgrounds (vanilla points at `load_5.dds`) | 03 | `modules/presentation.mjs` | in game |
+| `interface/frontendcreditview.gui` | `frontendcreditsview` | `O` | Add the ZIN credits block above the engine credits | 03 | `modules/ui_overrides.mjs` | to do |
+| `interface/small_background.gfx` | `GFX_<background>_small`, `GFX_frontend_loading_screen_border_small` | `O` | Background picker thumbnails point at ZIN files outside the loading folder | [02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md) | `modules/presentation.mjs` | in game |
+| `common/frontend/backgrounds/` (folder) | background keys | `replace_path` | Only ZIN menu backgrounds rotate | 03 | `modules/presentation.mjs`; the descriptor line from `modules/vanilla_removal.mjs` | in game |
+| `interface/countrytechtreeview.gui` | `countrytechtreeview` and the `techtree_*_folder_item` windows | `O` | ZIN technology folders replace the vanilla folder windows; the folder layout belongs to the warfare spec, the skin to this spec | [01_warfare.md](../03_gameplay/01_warfare.md) | `modules/ui_overrides.mjs`, from the folder list the warfare module supplies | to do (stage 2) |
 
-Any further override needs a new row here with its reason. ZIN never overrides `interface/topbar.gui` ([01_interface.md](01_interface.md) principle 7).
+Any further override needs a new row here with its reason. ZIN never overrides `interface/topbar.gui` ([01_interface.md](01_interface.md) principle 7). Music is not an override: its folders are replaced with `replace_path` in stage 4 ([04_music_and_sound.md](../08_art_and_assets/04_music_and_sound.md)).
 
 ### 3. Visual language: the Erdae chancery
 
@@ -158,7 +168,7 @@ Vanilla text colour codes (`§G`, `§R` …) are defined in the `textcolors` blo
 | `b` | 0 0 0 | 42 31 23 | Black on parchment |
 | `0`–`9`, `t` | gradient | unchanged | Engine heat gradients stay engine-generic |
 
-**Route.** First an additive file `interface/zz_zin_textcolors.gfx` with only a `bitmapfonts = { textcolors = { … } }` block. If the Linux run shows the vanilla colours unchanged, the builder uses the derived override `D` of `interface/core.gfx`: it reads the installed file, replaces only the values of the `textcolors` block (and the font aliases of section 3.7), checks that nothing else differs, and records the game version. Either way, every colour pair (text colour against its background class) must reach a contrast ratio of at least 4.5:1, checked on renders (Acceptance 6).
+**Route (proposed).** An additive file `interface/zz_zin_textcolors.gfx` with only a `bitmapfonts = { textcolors = { … } }` block (the vanilla block sits in `interface/core.gfx`). If the Linux run shows the vanilla colours unchanged, the vanilla text colours stay as an accepted engine-generic item and `reskin.json` records the reason. No derived override of `core.gfx` is made: the owner declined a patched Paradox file (19 October 2026). Either way, every colour pair (text colour against its background class) must reach a contrast ratio of at least 4.5:1, checked on renders (Acceptance 6).
 
 #### 3.5 Ideologies
 
@@ -184,11 +194,11 @@ The emblems are engine sprites with vanilla paths (`gfx/interface/ideologies/<ke
 
 #### 3.7 Fonts
 
-Glyph textures are engine-generic: ZIN uses the vanilla fonts ([01_interface.md](01_interface.md) principle 6). One exception is proposed: the typewriter faces (`hoi4_typewriter16`, `hoi4_typewriter22` and their `_inverted` forms) read as twentieth-century documents and appear in 25 vanilla `.gui` files. In the same `D` patch of `core.gfx` as the text colours, their `fontfiles` aliases point to the vanilla Garamond glyph files of the nearest size (`gfx/fonts/garamond_16`, `garamond_24`). No `.gui` changes. The long-text renders (Acceptance 5) catch any overflow from the different metrics. If the owner rejects the derived override, the typewriter faces stay as an accepted engine-generic item.
+Glyph textures are engine-generic: ZIN uses the vanilla fonts ([01_interface.md](01_interface.md) principle 6). One exception is proposed: the typewriter faces (`hoi4_typewriter16`, `hoi4_typewriter22` and their `_inverted` forms) read as twentieth-century documents and appear in 25 vanilla `.gui` files (their `bitmapfont` definitions are in `interface/core.gfx`). The additive file `interface/zz_zin_textcolors.gfx` redefines those four `bitmapfont` names with `fontfiles` pointing at the installed Garamond glyph files of the nearest size (`gfx/fonts/garamond_16`, `garamond_24`). No `.gui` changes. The long-text renders (Acceptance 5) catch any overflow from the different metrics. If the Linux run shows the alias ignored or a duplicate-definition error in `error.log`, the redefinitions are dropped and the typewriter faces stay as an accepted engine-generic item.
 
 ### 4. Surface inventory
 
-Sizes are vanilla measurements (width × height of the whole texture; frames are horizontal). "R" means replace at the same path. Every texture of a family not named here follows its family's default treatment; the complete per-sprite list is the generated `docs/design/ui/vanilla_inventory.json` (section 8).
+Sizes are vanilla measurements (width × height of the whole texture; frames are horizontal). "R" means replace at the same path. Every texture of a family not named here follows its family's default treatment; the complete per-sprite list is the generated `tools/content/data/ui/vanilla_inventory.json` (Implementation).
 
 #### 4.1 Frontend and loading screen
 
@@ -198,7 +208,7 @@ Sizes are vanilla measurements (width × height of the whole texture; frames are
 | Game setup, bookmark, country selection, lobby, load and save | `frontendgamesetupview.gui` (`gamesetup_scenario_window`, `gamesetup_interesting_countries_window`, `gamesetup_country_details`, `gamesetup_gameplay_settings_window`, `gamesetup_load`) | `country_selection_bg.tga` 1225 × 728, `country_selection_entry.tga` 300 × 274 ×2, `country_selection_minor_entry.dds` 276 × 97 ×2, `minor_portrait_overlay.dds` 126 × 166, `bookmark_entry_bg.dds` 464 × 211 ×2, `select_date_bg.dds` 579 × 512, `play_button.dds` 723 × 60 ×3, `tiles/tiled_frontend_upper_bar.dds` and `_lower_bar.dds` 484 × 128 (border 70), `load_save_entry*.dds`, `difficulty_button_*.dds` 232 × 35 ×2 | R for all; the bookmark names its own ZIN picture sprite, and `select_date_1936.dds` and `select_date_1939.dds` (180 × 104, the `.gui` default) are R with the same ZIN picture so no 1936 art can ever show | — | `enabled_achievement_icons.dds` is H (shown only for achievements) |
 | Game rules | `frontendgamesetupview.gui` (`game_rule_window`, `game_rule_group_window`) | `gfx/game_rules/*.dds` 29 × 30 (17), `game_settings_bg.dds` 484 × 97 | R for the 17 vanilla rule icons; ZIN rule icons `GFX_zin_rule_<name>` (Z) | — | — |
 | Credits | `frontendcreditview.gui` | `tiles/tiled_bg.dds`, `diplo_popup_bottom.dds` 494 × 72 | R through shared chrome | `frontendcreditview.gui` | `pdx_logo_credits.dds` 244 × 240, `interface/credits.txt` |
-| Loading screen frame | `load_screen.gui` (`load_screen`) | `Loadingscreen_loadingstatus.dds` 1400 × 92, `Loadingscreen_loadingtip.dds` 1400 × 148, `LoadingScreen_Progress_1.dds`, `LoadingScreen_Progress_2.dds` 934 × 40, `loadingscreens/loading_screen_border_small.dds` 192 × 144 | R: a walnut-and-bronze status band, a parchment-edged tip plate (dark centre, because tip text is light), a bronze progress groove and a gilt fill | — | `pdx_dev_logo_s.dds`, `clausewitz_logo.dds`, `thisisdog.dds` (engine fallback) |
+| Loading screen frame | `load_screen.gui` (`load_screen`) | `Loadingscreen_loadingstatus.dds` 1400 × 92, `Loadingscreen_loadingtip.dds` 1400 × 148, `LoadingScreen_Progress_1.dds`, `LoadingScreen_Progress_2.dds` 934 × 40, `loadingscreens/loading_screen_border_small.dds` 192 × 144 | R, **in game**: a dark leather band with a gilt filigree edge (status and tip; dark centre, because tip text is light), an iron progress groove and a molten-gold fill ([02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md) §6) | — | `pdx_dev_logo_s.dds`, `clausewitz_logo.dds`, `thisisdog.dds` (engine fallback) |
 
 The pictures themselves (`load_<n>.dds`, `_small`), the quotes and the tips belong to [02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md).
 
@@ -231,7 +241,7 @@ These textures carry most of the interface. Reskinning them themes every window 
 
 | Surface | Vanilla `.gui` (windows) | Key textures | ZIN treatment | Engine-generic |
 | --- | --- | --- | --- | --- |
-| Top bar | `topbar.gui` (`topbar`) | `topbar/background.dds`, `background_extended.dds` 2346 × 87; toolbar buttons 110 × 41 ×2: `topbar/toolbar/diplomacy_button`, `production_button`, `science_button`, `construction_button`, `trade_button`, `deployment_button`, `ledger_button`, `intelligence_button`, `staff_office_button`, `topbar_decisionview_button`, `international_market_button`; `topbar/army-`, `navy-`, `airoverview_button.dds` 76 × 38 ×2; `topbar_date_overlay.dds` 366 × 93; `date_pause_button.dds` 412 × 28 ×2, `date_pause_button_bg.dds`; `speed_step.dds` 84 × 10 ×3; `button_speedup.tga`, `button_speeddown.tga` 31 × 26; `topbar/toolbar/topbar_alert_bg.dds` 68 × 17 ×4; `armyoverview_buttons_bg.dds` 403 × 101; `decisionview/decisions_glow*.dds`; `observer_flag_overlay.dds` | R. The band is a seamless walnut-and-gilt tile repeated to 2346. Each toolbar button carries a lettering-free emblem: diplomacy = sealed letter and ribbon; production = anvil; research = open book and astrolabe; construction = mason's square and trowel; trade = balance scales; recruitment = banner on a spear; ledger = bound ledger; intelligence = hooded dark-lantern; staff office = map table pins; decisions = wax seal; market = coin purse. Army, navy and air overview: sword, galley prow, griffin wing feather | — |
+| Top bar | `topbar.gui` (`topbar`) | `topbar/background.dds`, `background_extended.dds` 2346 × 87; toolbar buttons 110 × 41 ×2: `topbar/toolbar/diplomacy_button`, `production_button`, `science_button`, `construction_button`, `trade_button`, `deployment_button`, `ledger_button`, `intelligence_button`, `staff_office_button`, `topbar_decisionview_button`, `international_market_button`; `topbar/army-`, `navy-`, `airoverview_button.dds` 76 × 38 ×2; `topbar_date_overlay.dds` 366 × 93; `date_pause_button.dds` 412 × 28 ×2, `date_pause_button_bg.dds`; `speed_step.dds` 84 × 10 ×3; `button_speedup.tga`, `button_speeddown.tga` 31 × 26; `topbar/toolbar/topbar_alert_bg.dds` 68 × 17 ×4; `armyoverview_buttons_bg.dds` 403 × 101; `decisionview/decisions_glow*.dds`; `observer_flag_overlay.dds` | R. The band is a seamless walnut-and-gilt tile repeated to 2346. Each toolbar button carries a lettering-free emblem: diplomacy = sealed letter and ribbon; production = anvil; research = open book and astrolabe; construction = mason's square and trowel; trade = balance scales; recruitment = banner on a spear; ledger = bound ledger; intelligence = hooded dark-lantern; staff office = map table pins; decisions = wax seal; market = coin purse. Army, navy and air overview: sword, galley prow, a great wing feather (no griffin until the owner adopts griffins) | — |
 | Top bar values | same | `pol_power_icon.dds`, `stability_icon.dds`, `war_support_icon.dds`, `manpower_icon.dds`, `unity_icon.dds` 27², `command_power_icon.dds`, `industrial_capacity_icon.dds` 70 × 29 ×2, `topbar/topbar_convoys.dds` 28 × 18, `ships_icon.dds`, `equipment_icon.dds` 22 × 18, `topbar/fuel_icon.dds`, `fuel_bar.dds` 45 × 24, `fuel_state_icon.dds`, `topbar/nuke_icon.dds` | R: political power = quill and seal; stability = keystone; war support = war horn; manpower = three spear heads; workshops (factories) = hammer on anvil and a crossed armoury hammer (two frames); merchant fleets = cog under sail; equipment = shield and sword; stored Essence (fuel, economy spec) = a vial of pale light. The nuke icon is unreachable (`U`) | — |
 | Gathering Dark (world tension) | `topbar.gui`, `worldtensionwindowpopup.gui` | `world_tension_icon.dds` 29 × 25, `world_tension_icon_big_strip.dds` 490 × 49 ×10, `WT_anim_strip.dds` 2574 × 78 ×33 | R: a storm lantern whose flame dims and whose glass clouds over across 10 frames; the 33-frame flicker is cut from one 6 × 6 sheet of the same lantern (fallback: all frames one cell, a static icon). Text "The Gathering Dark" comes from [01_interface.md](01_interface.md) | — |
 | Music player | `musicplayer.gui`, `topbar.gui` | `topbar/musicplayer/*.dds` (playlist bg 228 × 42, buttons 33², pause 66 × 33 ×2) | R in gilded iron; the player button is a small lute | DLC music station art |
@@ -244,7 +254,7 @@ These textures carry most of the interface. Reskinning them themes every window 
 
 | Surface | Vanilla `.gui` | Key textures | ZIN treatment |
 | --- | --- | --- | --- |
-| Alerts | `alerts.gui` (`global_alerticon_window`, `global_diplorequesticon_window`) | `alerts/global_alert_icons.dds` 3290 × 42 ×70 (47 × 42 each), `global_alert_icons_no_backgrounds.dds` same, `global_diplorequest_icons.dds` 893 × 42 ×19, `red_alert_glow.dds`, `yellow_alert_glow.dds`, `green_alert_glow.dds` 94 × 42 ×2 | R. The meaning of each frame is recorded once in `docs/design/ui/alert_frames.json` by an agent reading the alert tooltip keys (vanilla pixels are viewed only to label the order, never used as references). Two 6 × 6 sheets of plate-and-emblem alerts (72 cells, 70 used) and one 4 × 5 sheet for diplomatic requests. The "no backgrounds" strip is cut from the same cells' emblem layer generated on key without the plate |
+| Alerts | `alerts.gui` (`global_alerticon_window`, `global_diplorequesticon_window`) | `alerts/global_alert_icons.dds` 3290 × 42 ×70 (47 × 42 each), `global_alert_icons_no_backgrounds.dds` same, `global_diplorequest_icons.dds` 893 × 42 ×19, `red_alert_glow.dds`, `yellow_alert_glow.dds`, `green_alert_glow.dds` 94 × 42 ×2 | R. The meaning of each frame is recorded once in `tools/content/data/ui/alert_frames.json` by an agent reading the alert tooltip keys (vanilla pixels are viewed only to label the order, never used as references). Two 6 × 6 sheets of plate-and-emblem alerts (72 cells, 70 used) and one 4 × 5 sheet for diplomatic requests. The "no backgrounds" strip is cut from the same cells' emblem layer generated on key without the plate |
 | Message log and settings | `menubar.gui` (`messagelog_window`, `menu_message_settings`), `messagesettings.gui`, `msg_filters.gui` | `save_load_entry_bg.dds` 280 × 40, the message filter checkboxes, `messageicon` art in `menubar.gfx` | R through shared chrome and a small icon sheet |
 | Popups | `popupwindow.gui` | `popup_window/*.dds` | R |
 
@@ -308,7 +318,7 @@ Event and news pictures themselves are content sprites ([02_icon_catalog.md](../
 
 | Surface | Files | ZIN treatment |
 | --- | --- | --- |
-| On-map icons | `mapicons.gui` (`unit_counter`, `victory_point_mapicon`, `capital_mapicon`, `resource_mapicon`), `interface/mapicons.gfx` (145 sprites): `onmap_unit_counter.dds` 198 × 27 ×3, `onmap_unit_counter_empty.dds`, `_ideology.dds` 112 × 27 ×4, `_selected.dds`, `_half*.dds`, `_overlay*.dds`, `mapicons/mapicon_*.dds` (orders, bars 3 × 17), `mapicons/supply/supply_hub_interaction_icons.dds` 770 × 70 ×11, `mapitems/capital.tga`, `mapitems/flag_frame.tga`, `gfx/mapitems/movearrow_*.dds` | R: counter plates are bronze and walnut bars; the ideology frame strip carries four neutral enamel colours (it is tinted by ideology elsewhere); the capital marker is a gilt tower; move arrows keep vanilla's shape and alpha with generated textures (bronze for move, cinnabar for attack, verdigris for support). Unit icons on counters are Z (warfare) |
+| On-map icons | `mapicons.gui` (`unit_counter`, `victory_point_mapicon`, `capital_mapicon`, `resource_mapicon`), `interface/mapicons.gfx` (145 sprites): `onmap_unit_counter.dds` 198 × 27 ×3, `onmap_unit_counter_empty.dds`, `_ideology.dds` 112 × 27 ×4, `_selected.dds`, `_half*.dds`, `_overlay*.dds`, `mapicons/mapicon_*.dds` (orders, bars 3 × 17), `mapicons/supply/supply_hub_interaction_icons.dds` 770 × 70 ×11, `mapitems/capital.tga`, `mapitems/flag_frame.tga`, `gfx/mapitems/movearrow_*.dds` | R: counter plates are generated in the vanilla green counter palette with a thin bronze rim, because the warfare spec matches its counter icons to that palette ([01_warfare.md](../03_gameplay/01_warfare.md) §14.2); the ideology frame strip carries four neutral enamel colours (it is tinted by ideology elsewhere); the capital marker is a gilt tower; move arrows keep vanilla's shape and alpha with generated textures (bronze for move, cinnabar for attack, verdigris for support). Unit icons on counters are Z (warfare) |
 | Text icons | `interface/texticons.gfx` (473 sprites), `gfx/texticons/*.dds` (331 files, for example `victory_point_texticon.dds` 18²) | R for the generic set used by tooltips (political power, stability, war support, manpower, resources, workshops, days, victory points, tick and cross); the builder lists the keys used by any loaded ZIN or engine localisation; the rest are `U` |
 | Cursors | `gfx/cursors/` (126 files: `.cur`, `.ani`, `.png`, `.ico` for 60 cursor names such as `normal`, `selected`, `attack_move`, `busy`, `cant_move`, `build_*`, `operatives_*`, `brush*`) | R: one 6 × 6 sheet per 36 cursors of gilded-iron pointer and tool glyphs (pointer, gauntlet, sword for attack, boot print for move, hourglass for busy, trowel for build, quill for diplomacy). The builder converts each cell to `.cur` (32 × 32, hotspot taken from the vanilla file's header) and `.png`, and to `.ani` for the four animated cursors by assembling 4 cells of the same glyph. If the Linux run shows cursor artefacts, cursors become engine-generic and the spec records it |
 
@@ -327,7 +337,7 @@ Event and news pictures themselves are content sprites ([02_icon_catalog.md](../
 
 A family is a set of surfaces that must look like one object. Each family has one **primary theme sheet** that defines its materials in uniform cells, plus icon sheets where it has emblems. All sheets of a family share one prompt preamble (materials, palette tokens, lighting), so they match.
 
-Sheets follow the art pipeline layouts ([01_art_pipeline.md](../08_art_and_assets/01_art_pipeline.md) §4): 1536 × 1024 or 1024 × 1024, flat `#FF00FF` key (`#00FF00` when the subject is purple), cells of one size per sheet so the region detector can refuse a bad sheet. The cell map of each sheet is data (`docs/design/ui/sheets/<id>.json`).
+Sheets follow the art pipeline layouts ([01_art_pipeline.md](../08_art_and_assets/01_art_pipeline.md) §4) and decisions A1 and A2. The job states the aspect (3:2 or 1:1) and the model returns about 1.57 megapixels in that aspect. The ground is **flat black**. Cells are of one size per sheet, so the region detector (`findRegionsAdaptive` in `tools/content/lib/sheets.mjs`) can refuse a bad sheet. Long bands and strips are generated **one per job** on a black canvas with ends darkening to black and are cut by rows, as the loading chrome is today. A cell that needs a transparent interior (a picture frame, a bezel, a flag window) is a single job on flat magenta, keyed like the emblem. The cell map of each sheet is data (`tools/content/data/ui/sheets/<id>.json`).
 
 | Family | Primary sheet (cells) | Extra sheets | Targets (approx.) |
 | --- | --- | --- | ---: |
@@ -367,7 +377,7 @@ Each step runs the full loop: generate, review, slice, stage, `hoi4.gui_inspect`
 | Step | Scope | Why this order | Depends on |
 | ---: | --- | --- | --- |
 | 1 | Inventory, `reskin.json` with every sprite classified, builder fit and check code, `GFX_zin_empty` | Nothing can be accepted without it | — |
-| 2 | Frontend (03 spec) and loading frame | The first screens every player sees; they still say 1936 today | calendar spec bookmark |
+| 2 | Frontend (03 spec) and loading frame | The first screens every player sees. The loading frame, the emblem, the menu backgrounds and the bookmark picture are done (Current state); the menu layout, country selection and rules screens remain | calendar spec bookmark |
 | 3 | `chrome_panels`, `chrome_controls`, `chrome_bars`, tooltips | Themes every window at once | 1 |
 | 4 | Text colours and font aliases | Must be judged on the new chrome | 3 |
 | 5 | `topbar`, `map_interface`, minimap, clock, Gathering Dark icon | Always on screen; the Erdae bar sits under the top bar | 3, [01_interface.md](01_interface.md) bar |
@@ -409,37 +419,40 @@ The builder's word scan (economy acceptance 1 extended) also forbids, in any pla
 
 ### Files
 
-All files are generated by the ZIN content builder (`tools/content/`, [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) S10) and written through the shared rewrite engine.
+All files are generated by the ZIN content builder (`tools/content/build.mjs`, [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) S10) and written to the mod through `tools/content/apply.mts`, the shared atomic rewrite engine. Builder data lives in `tools/content/data/ui/`; the builder publishes a copy under `docs/design/ui/` for review, as it does for `data/vanilla/`.
 
 | Path | Content |
 | --- | --- |
-| `docs/design/ui/vanilla_inventory.json` | Generated from the installed game: per sprite name, kind, texture path, extension, width, height, frames, `borderSize`, DDS format, mean luminance class, alpha kind (`opaque`, `keyed`, `uniform:<a>`, `shaped`), the `.gui` files and windows that reference it; header: game version, file hashes of the inventoried vanilla files. Metadata only, no vanilla text or pixels |
-| `docs/design/ui/reskin.json` | One row per inventory sprite: `disposition` (`R`, `Z`, `O`, `D`, `E`, `H`, `U`), `family`, `sheet`, `cells`, `fit`, `frames`, `reason` (required for `E`, `H`, `U`) |
-| `docs/design/ui/sheets/<id>.json` | Sheet jobs: size, grid, key colour, `cellBorder`, keys in cell order, prompt subjects; feeds `docs/design/art/jobs/` |
-| `docs/design/ui/alert_frames.json` | Meaning of each alert and diplomatic request frame |
-| `docs/design/ui/textcolors.json` | Section 3.4 table |
-| `docs/design/ui/overrides/<file>.json` | For each `O` and `D` file: the template id, the element names it keeps, the hidden elements, the added elements |
+| `tools/content/data/ui/vanilla_inventory.json` | Generated from the installed game: per sprite name, kind, texture path, extension, width, height, frames, `borderSize`, DDS format, mean luminance class, alpha kind (`opaque`, `keyed`, `uniform:<a>`, `shaped`), the `.gui` files and windows that reference it; header: game version, file hashes of the inventoried vanilla files. Metadata only, no vanilla text or pixels |
+| `tools/content/data/ui/reskin.json` | One row per inventory sprite: `disposition` (`R`, `Z`, `O`, `D`, `E`, `H`, `U`), `family`, `sheet`, `cells`, `fit`, `frames`, `reason` (required for `E`, `H`, `U`) |
+| `tools/content/data/ui/sheets/<id>.json` | Sheet jobs: aspect, grid, ground (black, or magenta for keyed singles), `cellBorder`, keys in cell order, prompt subjects |
+| `tools/content/data/ui/alert_frames.json` | Meaning of each alert and diplomatic request frame |
+| `tools/content/data/ui/textcolors.json` | Section 3.4 table |
+| `tools/content/data/ui/titles.json` | Section 8 window titles |
+| `tools/content/data/ui/overrides/<file>.json` | For each `O` file: the template id, the element names it keeps, the hidden elements, the added elements |
+| `tools/content/templates/ui/<file>.tmpl` | ZIN-written templates of the `O` files |
 | `gfx/interface/**`, `gfx/cursors/**`, `gfx/minimap/**`, `gfx/mapitems/**`, `gfx/texticons/**`, `gfx/game_rules/**` | `R` replacements at vanilla paths |
 | `interface/zin_reskin.gfx` | `GFX_zin_empty` (1 × 1 transparent, `gfx/interface/zin/empty.dds`) and any ZIN sprite the overrides need |
-| `interface/zz_zin_textcolors.gfx` | The additive text colour block (section 3.4) |
-| `interface/core.gfx` | Only if the additive route fails: derived override |
+| `interface/zz_zin_textcolors.gfx` | The additive text colour block and the typewriter aliases (sections 3.4, 3.7) |
 | The `O` files of section 2.3 | Re-authored overrides |
 | `localisation/replace/zin_interface_l_english.yml` | Window titles and labels of section 8 not owned by other specs |
-| `art/source/provenance.jsonl`, `art/source/manifest.json` | As the art pipeline defines; every `R` file has a manifest line |
+| `art/source/provenance.jsonl`, `art/source/reskin_manifest.json` | Provenance as the art pipeline defines; the manifest has one line per `R` file (output, source, cell, operations, hashes), in the format of today's `art/source/presentation_manifest.json` |
 
-### Builder modules (proposed)
+### Builder modules
 
-| Module | Does |
-| --- | --- |
-| `tools/content/modules/ui_inventory.mjs` | Reads the installed game's `interface/*.gfx` and `*.gui` (read-only path from the builder config), parses sprite blocks and element references, reads image headers (DDS, TGA, PNG, CUR), computes luminance class and alpha kind, writes `vanilla_inventory.json`. Pure function of the input files |
-| `tools/content/modules/ui_reskin.mjs` | Validates `reskin.json` against the inventory (every sprite has one row; every `R` row has cells and a fit; sizes and frames come only from the inventory), runs the fits, writes the `R` files |
-| `tools/content/modules/ui_overrides.mjs` | Builds each `O` file from its template in `tools/content/templates/ui/`; checks the installed vanilla file's bound element names against the template's list and fails on any name the template lacks (catches game patches); builds the `D` patch when enabled |
-| `tools/content/modules/ui_cursors.mjs` | Cursor cells to `.cur`, `.ani`, `.png`, `.ico` with vanilla hotspots |
-| `tools/content/modules/ui_minimap.mjs` | Resizes the ZIN colormap to `gfx/minimap/minimap.dds` |
-| `tools/content/lib/fit.mjs` | `nine_slice`, `exact`, `cover`, `contain`, `repeat_x`, `repeat_y`, `strip`, `same_shape` |
-| `tools/content/lib/raster.mjs` (extended) | Writers for TGA (top-left and bottom-left origin as the vanilla file), PNG, CUR, ANI; DDS A8R8G8B8 as today |
-
-The existing `modules/ui.mjs` `strip()` helper moves into `lib/fit.mjs`.
+| Module | State | Does |
+| --- | --- | --- |
+| `tools/content/modules/presentation.mjs` | existing | Writes the surfaces already in game (Current state); keeps owning them |
+| `tools/content/lib/sheets.mjs`, `tools/content/lib/raster.mjs` | existing | `findRegionsAdaptive`, `cropRegion`, `dds()`, `tga()` |
+| `tools/content/modules/ui_inventory.mjs` | new | Reads the installed game's `interface/*.gfx` and `*.gui` (read-only, `HOI4_GAME` in `lib/paths.mjs`), parses sprite blocks and element references, reads image headers (DDS, TGA, PNG, CUR), computes luminance class and alpha kind, writes `vanilla_inventory.json`. Pure function of the input files |
+| `tools/content/modules/ui_reskin.mjs` | new | Validates `reskin.json` against the inventory (every sprite has one row; every `R` row has cells and a fit; sizes and frames come only from the inventory), runs the fits on accepted sources, writes the `R` files and their manifest lines |
+| `tools/content/modules/ui_overrides.mjs` | new | Builds each `O` file of section 2.3 that `presentation.mjs` does not already write, from its template; checks the installed vanilla file's element names against the template's list and fails on any name the template lacks (catches game patches) |
+| `tools/content/modules/ui_cursors.mjs` | new | Cursor cells to `.cur`, `.ani`, `.png`, `.ico` with vanilla hotspots |
+| `tools/content/modules/ui_minimap.mjs` | new | Resizes the ZIN colormap to `gfx/minimap/minimap.dds` |
+| `tools/content/lib/fit.mjs` | new | `nine_slice`, `exact`, `cover`, `contain`, `repeat_x`, `repeat_y`, `strip`, `same_shape`; takes over `strip()` from `modules/ui.mjs` and `keyMatte`, `boxDownscale` and the strip matte from `modules/presentation.mjs` |
+| `tools/content/lib/raster.mjs` | extended | Writers for TGA (top-left and bottom-left origin as the vanilla file), PNG, CUR, ANI; DDS A8R8G8B8 as today |
+| `tools/content/art/ui-reskin-jobs.mjs` | new | Writes the image jobs of section 5 (`$ZIN_ART/jobs/ui-reskin-jobs.json`) for `tools/content/imagegen.mjs` |
+| `tools/content/ui_reskin.test.mjs` | new | Builder checks below, each with a negative test |
 
 ### Builder checks
 
@@ -447,8 +460,8 @@ The existing `modules/ui.mjs` `strip()` helper moves into `lib/fit.mjs`.
 2. **Coverage.** Every inventory sprite has exactly one `reskin.json` row; every `E`, `H` and `U` row has a reason.
 3. **Shape.** Every `R` output has the vanilla path and extension, the exact width and height, and a width divisible by the frame count; DDS headers are valid; TGA origin matches the vanilla file.
 4. **Reachability.** No `U` sprite is referenced from a reachable window, a loaded script, a localisation text icon or the engine default list (section 7).
-5. **No vanilla pixels.** No shipped file's bytes equal the vanilla file at the same path; a perceptual hash of every `R` output differs from its vanilla counterpart by more than a set distance (the threshold is tuned on the first accepted sheet). A failure means a copy slipped in.
-6. **Provenance.** Every `R` file has a manifest line whose source sheet has an `accepted: true` provenance line.
+5. **No vanilla pixels.** No shipped file's bytes equal the vanilla file at the same path (the check `presentation.test.mjs` already runs); a perceptual hash of every `R` output differs from its vanilla counterpart by more than a set distance (the threshold is tuned on the first accepted sheet and recorded here). A failure means a copy slipped in.
+6. **Provenance.** Every `R` file has a manifest line whose source has an accepted review line in `provenance.jsonl` (the rule `acceptance()` in `modules/presentation.mjs` applies today).
 7. **Luminance.** Every `R` output's luminance class equals the inventory's class for that sprite.
 8. **Overrides.** Only the files of section 2.3 override vanilla `.gui` or `.gfx` names; each keeps every bound element name.
 9. **Determinism.** A rebuild produces byte-identical outputs.
@@ -463,22 +476,24 @@ None.
 
 ## Acceptance
 
-1. **Coverage.** `reskin.json` classifies 100% of the sprites in `vanilla_inventory.json`; every `R` row has an accepted output; builder checks 1 to 9 pass.
-2. **Inspect.** `hoi4.gui_inspect` with the ZIN workspace reports no missing sprite, texture, font or localisation key for these windows: `topbar`, `countrypoliticsview`, `countrydiplomacyview`, `countrytechnologyview`, `countrytechtreeview`, `countryproductionlineview`, `countryconstructionsview`, `countrytradeview`, `countrydeploymentview`, `countrylogisticsview`, `countryintelligenceagencyview`, `countrydecisionview`, `nationalfocusview`, `naviesview_window`, `strategicairview`, `theatre_selection_window`, `countrystateview`, `landcombatview`, `navalcombatview`, `peaceconference_full_window`, `world_tension_popup`, `EventWindow`, `EventWindow_News`, `mini_map_interface`, `clock_window`, `ingamemenu`, `load_screen`, plus the frontend windows of [03_main_menu_and_frontend.md](03_main_menu_and_frontend.md).
+1. **Coverage.** `reskin.json` classifies 100% of the sprites in `vanilla_inventory.json`; every `R` row has an accepted output; builder checks 1 to 9 pass, each with a negative test (a planted vanilla file, a wrong size, a missing row, an unreachable sprite marked reachable, a dropped element name).
+2. **Inspect.** `hoi4.gui_inspect` with the ZIN workspace reports no missing sprite, texture, font or localisation key for these windows (file in brackets): `topbar` (`topbar.gui`), `countrypoliticsview`, `countrydiplomacyview`, `countrytechnologyview`, `countrytechtreeview`, `countrydoctrineview` (`countrydoctrinetreeview.gui`), `countryproductionlineview`, `countryconstructionsview`, `countrytradeview`, `countrydeploymentview`, `countrylogisticsview`, `countryintelligenceagencyview`, `countrydecisionview` (each in the `.gui` of the same name), `nationalfocusview` (`nationalfocusview.gui`), `naviesview_window` (`naviesview.gui`), `strategicairview`, `theatre_selection_window` (`theatreselector.gui`), `countrystateview`, `landcombatview` (`landcombat.gui`), `navalcombatview` (`navalcombat.gui`), `peaceconference_full_window` (`peaceconferencewindow.gui`), `world_tension_popup` (`worldtensionwindowpopup.gui`), `EventWindow`, `EventWindow_News` (`eventwindow.gui`), `mini_map_interface` (`minimap.gui`), `clock_window` (`ingameclock.gui`), `ingamemenu` (`ingamemenu.gui`), `menu_settings` (`settings.gui`), `musicplayer_window` (`musicplayer.gui`), `load_screen` (`load_screen.gui`), plus the frontend windows of [03_main_menu_and_frontend.md](03_main_menu_and_frontend.md).
 3. **Render.** `hoi4.gui_render` of each window above at 1280×720, 1600×900, 1920×1080 and 2560×1440 at UI scale 1, and 1920×1080 at UI scale 1.25, states `normal`, `hover`, `selected`, `disabled`, `long-text`, with a start scenario (`date: "1748.3.1"`, `closedFlags: true`, the viewer Aenor). No layout problem is reported that the same render of vanilla does not also report (the vanilla baseline is rendered once from a workspace without ZIN's `R` files and stored as the comparison).
 4. **Review sheet.** For every family, a contact sheet of the renders (labelled "offline render, tool-generated") passes the art review checklist ([01_art_pipeline.md](../08_art_and_assets/01_art_pipeline.md) §6) and section 3.6: no forbidden motif, no lettering, no figure.
 5. **No overflow.** In `long-text` renders no text element leaves its plate or window (`containedBy` expectations), including the typewriter-to-Garamond aliases.
 6. **Contrast.** For every text element in the renders, the contrast ratio between its text colour and the mean of its background box is at least 4.5:1 (3:1 for text 20 px and larger). Computed by the builder from the render images and the layout reports.
 7. **Secrecy.** No interface localisation reachable by a non-Worshipdom viewer before `zin_afrit_revealed` names Afrit or the Hidden Council (compiler secrecy scan covers `zin_interface_l_english.yml` and every replaced vanilla key).
 8. **Words.** The word scan of section 8 finds no forbidden word in any player-visible interface text.
-9. **Linux run.** In the isolated run at 1600×900 (as Aenor, then the Magical Forest): every top bar button opens its window; captures of the main menu, the top bar, an event, the focus tree, research, production, construction, diplomacy, decisions, the pause menu, the options and a tooltip show no vanilla chrome; the minimap shows Erdae; the error log has no texture, sprite or font error caused by ZIN files; no crash. Captures are Linux acceptance evidence, never Windows game screenshots.
+9. **Linux run.** In the isolated run (G4) at 1600×900, as Aenor, then the Magical Forest: every top bar button opens its window; captures of the main menu, the top bar, an event, the focus tree, research, production, construction, diplomacy, decisions, the pause menu, the options and a tooltip show no vanilla chrome; the minimap shows Erdae; `error.log` has no texture, sprite or font line caused by ZIN files; no crash. Captures are Linux acceptance evidence, never Windows game screenshots.
 10. **Rollback.** Removing all `R` files from a staged copy (a builder flag) gives a working vanilla-skinned ZIN, proving the reskin carries no logic.
 
 ## Open questions
 
-1. Are nine-slice resize, seamless repeat, flips, constant alpha scale and the `same_shape` mask within "code only slices, resizes and converts" (extends art pipeline open question 1)?
-2. May ZIN ship a derived override of `interface/core.gfx` (Paradox text, patched) if the additive text colour file is ignored by the engine? The alternative is keeping vanilla text colours.
-3. Should the typewriter fonts be aliased to Garamond (section 3.7), or stay as they are?
-4. Are custom cursors wanted, given the conversion risk of `.ani` files?
-5. Does the owner want the window titles of section 8, or plainer ones (for example "Production" kept)?
-6. Should region or faction accents ever appear in shared chrome (for example a gold top bar for Aenor), or stay only in ZIN's own panels as proposed?
+Each proceeds on the proposal below; the owner may overrule.
+
+1. Nine-slice resize, seamless repeat, flips, constant alpha scale and the `same_shape` mask count as "slice, resize and convert" (proposed; the same question as gauge compositing, OPEN_QUESTIONS interface 7).
+2. No derived override of `interface/core.gfx`: if the additive text colour file is ignored, vanilla text colours stay (owner answer, 19 October 2026: no patched `core.gfx`).
+3. The typewriter faces are aliased to Garamond through the additive file; if that fails they stay (proposed).
+4. Custom cursors ship; if the Linux run shows `.ani` artefacts, cursors become engine-generic (proposed).
+5. The window titles of section 8 are used (proposed).
+6. Region or faction accents stay out of shared chrome and appear only in ZIN's own panels (proposed).

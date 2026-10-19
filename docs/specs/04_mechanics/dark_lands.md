@@ -1,6 +1,6 @@
 # The Dark Lands
 
-**Status:** Draft. **Priority:** 3. **Phase:** 3.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3.
 
 ## Purpose
 
@@ -45,17 +45,30 @@ The mechanic serves the major tree of [Goldoroth](../05_focus_trees/major/goldor
 
 ### Rules this spec keeps
 
-- At the start nobody in the Dark Lands is at war. No Dark Lands war can begin before 1 Deepwinter 4A 1749 (`1749.1.1`). Goldoroth and Dondor cannot go to war before the War of the Last Crowns, Volgan's march, or a casus belli earned through raids while the Gathering Dark is at least 25.
+- At the start nobody in the Dark Lands is at war. No Dark Lands war can begin before 1 Deepwinter 4A 1749 (`zin_dark_date_war_floor`). Goldoroth and Dondor cannot go to war before the War of the Last Crowns, Volgan's march, or a casus belli earned through raids while the Gathering Dark is at least 25.
 - Raids are decisions and events, never declared wars. Border clashes are engine border wars, which are not wars (`has_war` stays false).
 - Nothing names Afrit. Afrit's footholds in orc, goblin and troll realms start at 0 ([afrit_hidden_council.md](afrit_hidden_council.md)); this spec never raises them.
 - Volgan's envoys are named as envoys from Nafeher. No Dark Lands text tells the size of Volgan's hosts while his veil holds.
 - Fire does not end Zol's dead. Dark Lands texts may say fire "breaks their shapes"; only potent magic ends them (established).
 
+### Decisions applied
+
+| Decision | How this spec applies it |
+| --- | --- |
+| D3 | No `zin_dark` text names Afrit; footholds in the holds start at 0 and this spec never raises them. |
+| V4 | Every date gate here (the war floor, the yoke, the defiance cause, the historical clash) is written at the standard pace and scaled by `zin_story_pace` (Implementation, "Dates"). |
+| N11 | Every shared name here is registered once in [00_contract_additions.md](00_contract_additions.md) with this spec, or the spec named there, as owner. |
+| E1 | Effects listed with arguments compile to temporary variables `zin_arg_<name>` set before the call (Implementation, "Scripted effects"). |
+| E2 | Every `zin_dark` event sets `timeout_days = 30`; a timed-out event takes its first option. None decides a historical checkpoint, so option orders stay as written. |
+| E4 | The Dark Lands pulse refreshes the Dark Lands trees' layouts (`mark_focus_tree_layout_dirty`). |
+| E7 | Site rows go to the key sites table and `zin_sites.txt`; this spec writes no site file. |
+| R1 | `zin_rule_ai_goldoroth` sits in `RULE_GROUP_ZIN` with `DEFAULT` first. |
+
 ## Design
 
 ### The region at the start
 
-24 countries, 47 states (roster). Values are start targets.
+24 countries, 47 states (`tools/content/data/countries.json`, `"scan": "Dark Lands"`). Values are start targets.
 
 | Country | States | People | Stance | Role at the start | Sway | Volgan pact | Leren lean |
 | --- | ---: | --- | --- | --- | ---: | ---: | ---: |
@@ -83,7 +96,7 @@ The builder adds +10 sway to every hold that borders Goldoroth at the start (not
 
 ### 1. The map: seats, sites, the sea and the straits
 
-Scripts find places through site triggers generated from the key sites table ([01_map/02_key_sites.md](../01_map/02_key_sites.md)), never through state numbers. New sites (all proposed):
+Scripts find places through site triggers generated in `common/scripted_triggers/zin_sites.txt` from the key sites table ([01_map/02_key_sites.md](../01_map/02_key_sites.md), which owns them), never through state numbers. This spec supplies these new rows (all proposed):
 
 | Site trigger | Scope | What | Map requirement |
 | --- | --- | --- | --- |
@@ -93,10 +106,16 @@ Scripts find places through site triggers generated from the key sites table ([0
 | `zin_is_site_sea_of_darkness_coast` | state | Every state with a coastal province on the Sea of Darkness sea region(s) | The sea region named "Sea of Darkness" (map accuracy N1) |
 | `zin_is_site_dark_strait_north` | state | Both shores of the strait(s) between the Dark Lands and the North Lands | Owner confirms the place (Open question 1) |
 | `zin_is_site_dark_strait_south` | state | Both shores of the strait(s) between the Dark Lands and the Middle Lands | as above |
-| `zin_is_site_dark_strait_shore` | state | The Dark Lands side of either strait (subsets `_north_shore`, `_south_shore`) | Generated |
-| `zin_is_site_dark_strait_far_shore` | state | The far side of either strait (subsets `_north_far`, `_south_far`) | Generated |
+| `zin_is_site_dark_strait_shore` | state | The Dark Lands side of either strait: `zin_is_site_dark_strait_north_shore` or `zin_is_site_dark_strait_south_shore` | Generated |
+| `zin_is_site_dark_strait_north_shore` | state | The Dark Lands states of `zin_is_site_dark_strait_north` (the shore facing the North Lands; read by the Zol hook `zin_dark_shore_barred` and `zin_dark.80`) | Generated: `zin_is_site_dark_strait_north` and `zin_is_region_dark_lands` |
+| `zin_is_site_dark_strait_south_shore` | state | The Dark Lands states of `zin_is_site_dark_strait_south` | Generated: `zin_is_site_dark_strait_south` and `zin_is_region_dark_lands` |
+| `zin_is_site_dark_strait_far_shore` | state | The far side of either strait: `zin_is_site_dark_strait_north_far` or `zin_is_site_dark_strait_south_far` | Generated |
+| `zin_is_site_dark_strait_north_far` | state | The North Lands states of `zin_is_site_dark_strait_north` | Generated: the strait's states that are not Dark Lands states |
+| `zin_is_site_dark_strait_south_far` | state | The Middle Lands states of `zin_is_site_dark_strait_south` | as above |
 | `zin_is_site_troll_forest` | state | The Troll Forest's state | exists |
-| `zin_is_dark_lands_state` | state | Every state whose owner had `zin_region_dark_lands` at the start (frozen collection, 47 states) | Diplomacy spec's region collections |
+| `zin_is_region_dark_lands` | state | Every state whose owner had the roster region Dark Lands at the start (47 states today); this spec reads only this name | Generated from `countries.json` |
+
+Read from the key sites table, not supplied here: `zin_is_site_ocean_of_zol_coast` (every state with a coastal province on the Ocean of Zol; its row belongs to the key sites table).
 
 The **Fire-Mountain** above Cocanoor (proposed) is not a state. It is a Cocanoor flavour site for events and icons.
 
@@ -123,8 +142,8 @@ If the map defines a land crossing (adjacency) over a strait, armies may walk it
 | --- | --- | --- | --- | --- |
 | Raid the Dondor Marches | Not at war with Dondor; no border war with Dondor | 25 PP | Goldoroth: 150 `zin_arms_equipment`, 10 army experience, temper −8, War-Clans favour +5. Tension +8. Dondor gets `zin_dark.11`. Gathering Dark +0.25 (raids add at most +3 in a game, counted in `zin_dark_raid_dark_added`) | 90 days (60 with `zin_goldoroth_swift_raids`) |
 | Raid a Free Hold [target] | Target: an independent Dark Lands country bordering Goldoroth, not its tributary, not at war | 15 PP | 100 `zin_arms_equipment`; temper −5; target sway +5 if Goldoroth has at least three times the target's divisions, else −5; target gets opinion `zin_dark_raided` (−15) and `zin_dark.12`; tension +2 | 90 days per target |
-| Corsair Raid [target] | Flag `zin_goldoroth_corsairs`; target owns a `zin_is_site_sea_of_darkness_coast` state and is an Accord member, Blackton or a free hold | 25 PP | 100 `zin_arms_equipment` and 25 PP; temper −5; tension +6 if the target is in the Accord; if the target is Blackton, Lerendor's opinion of Goldoroth −10; target gets `zin_dark.13` | 120 days |
-| Clash on the March | Flag `zin_goldoroth_clash_open`; tension ≥ 60; date ≥ 1749.1.1; not at war with Dondor; no border war | 50 PP, 10 command power | `zin_dark_start_border_clash` (target Dondor) | 365 days |
+| Corsair Raid [target] | Flag `zin_goldoroth_corsairs`; target owns a `zin_is_site_sea_of_darkness_coast` state and is an Accord member, Blackton or a free hold. Goldoroth's AI weight against Blackton ×0.25 while Blackton has the timed flag `zin_regional_blackton_paid_corsairs` (Blackton tree) | 25 PP | 100 `zin_arms_equipment` and 25 PP; temper −5; tension +6 if the target is in the Accord; if the target is Blackton, Lerendor's opinion of Goldoroth −10; target gets `zin_dark.13` | 120 days |
+| Clash on the March | Flag `zin_goldoroth_clash_open`; tension ≥ 60; `zin_dark_date_war_floor`; not at war with Dondor; no border war | 50 PP, 10 command power | `zin_dark_start_border_clash` (target Dondor) | 365 days |
 
 Every raid sets country flag `zin_goldoroth_fed` for 90 days (it stops temper growth, section 4) and target flag `zin_dark_raided_recently` for 365 days.
 
@@ -151,7 +170,7 @@ Each clash adds +1 to the Gathering Dark and fires the regional news `zin_dark.1
 **When war can begin.** Scripted trigger `zin_goldoroth_war_open` is true when any of these holds:
 
 - global flag `zin_war_of_last_crowns` or `zin_volgan_marches`;
-- Goldoroth holds a live `zin_cb_hold_defiance` or `zin_cb_orc_raids`, and the date is at least 1750.1.1;
+- Goldoroth holds a live `zin_cb_hold_defiance` or `zin_cb_orc_raids`, and `zin_dark_date_defiance_cb` has passed (1 Deepwinter 4A 1750);
 - Goldoroth is already at war.
 
 `zin_goldoroth_may_war_dondor` is true when `zin_war_of_last_crowns` or `zin_volgan_marches` is set, or Goldoroth holds `zin_cb_orc_raids` against Dondor; and Goldoroth has no truce against the dead with Dondor (`zin_dark_truce_against_dead`, section 9).
@@ -193,10 +212,10 @@ The Accord is one of the seven working factions (Dondor leads, Belonton is a mem
 
 | Decision | Requires | Cost | Effect | Cooldown |
 | --- | --- | --- | --- | --- |
-| Light the Sea Beacons | — | 25 PP | Resolve +5 | 180 days |
+| Light the Sea Beacons | — | 25 PP | Resolve +5 | 180 days (120 with the Dondor tree's flag `zin_regional_dondor_beacon_chain`) |
 | Pay the Blood-Price | Tension ≥ 40 | 40 PP | As the victim's option above | 365 days |
 | Invite [hold] into the Accord | Target: Dark Lands country, in no faction, not a subject, not Shadow, sway < 40, Volgan pact ≤ 1 | 25 PP | `zin_dark.20` to the target | 180 days per target |
-| Muster the Brutes | Tension ≥ 60, or at war with Goldoroth | 50 PP | Timed idea `zin_dark_brutes_mustered` (180 days) | 365 days |
+| Muster the Brutes | Tension ≥ 60, or at war with Goldoroth | 50 PP | Timed idea `zin_dark_brutes_mustered` (180 days) | 365 days (240 with the Dondor tree's flag `zin_regional_dondor_muster_drill`) |
 | Petition Parim | Once per game | 25 PP | `zin_dark.30` to Aenor | — |
 | Call on the North | Lerendor exists and is not at war with Dondor | 25 PP | `zin_dark.31` to Lerendor | 365 days |
 
@@ -208,7 +227,7 @@ The Accord is one of the seven working factions (Dondor leads, Belonton is a mem
 | --- | --- | --- |
 | "The Golden King sends his blessing." | Dondor +10 PP | 100 × (1 + `zin_court_corruption` ÷ 50) |
 | "Aenor guarantees Dondor." | `give_guarantee` Dondor; resolve +10 | 10 + tension ÷ 2 |
-| "Invite Dondor into the Lost Cause." | Fires the diplomacy spec's invitation `zin_diplo.23` for Dondor | 20 + `zin_lost_cause_strength` ÷ 2 |
+| "Invite Dondor into the Lost Cause." | Fires the diplomacy spec's honorary-crown invitation `zin_diplo.23` for Dondor | 20 + `zin_aenor_lost_cause` ÷ 2 |
 
 On the historical path the Golden Court sends its blessing.
 
@@ -249,7 +268,7 @@ A crossing re-arms when temper falls 10 below its threshold (flags `zin_goldorot
 
 - The Warrens lose 0.3 favour a month unless Goldoroth has spirit `zin_goldoroth_warrens_heard`.
 - Favour ≥ 75 gives the bloc's boon spirit (`zin_dark_boon_<bloc>`); favour ≤ 25 gives its sulk spirit (`zin_dark_sulk_<bloc>`). Both are added and removed by the monthly pulse.
-- Favour ≤ 10, date ≥ 1749.1.1, Goldoroth at peace, and no flag `zin_goldoroth_master_of_clans`: event `zin_dark.44` "A Challenge at the Moot". The bloc's chief challenges the Warking.
+- Favour ≤ 10, `zin_dark_date_war_floor` passed, Goldoroth at peace, and no flag `zin_goldoroth_master_of_clans`: event `zin_dark.44` "A Challenge at the Moot". The bloc's chief challenges the Warking.
 
 | Option | Effect | AI weight |
 | --- | --- | --- |
@@ -281,7 +300,7 @@ A crossing re-arms when temper falls 10 below its threshold (flags `zin_goldorot
 | Send Gifts of Black Iron [target] | Target not at war with Goldoroth | 25 PP (15 with `zin_goldoroth_tallymen`); removes 200 `zin_arms_equipment` | Sway +10; target opinion `zin_dark_gifts` (+10) | 120 days per target |
 | Bind by Marriage of Chiefs [target] | Target is an orc, goblin or troll realm | 50 PP | Sway +15 | once per target |
 | Show the Host [target] | Goldoroth has at least three times the target's divisions | 25 PP | Sway +8; target opinion −5; temper −3; tension +2 if the target borders Dondor | 180 days per target |
-| Offer the Iron Yoke [target] | Sway ≥ 50 (≥ 40 with `zin_goldoroth_yoke_cheap`); target in no faction; not at war; date ≥ 1748.9.1 | 50 PP | `zin_dark.50` to the target | 365 days per target |
+| Offer the Iron Yoke [target] | Sway ≥ 50 (≥ 40 with `zin_goldoroth_yoke_cheap`); target in no faction; not at war; `zin_dark_date_yoke` (1 Fallowing 4A 1748) | 50 PP | `zin_dark.50` to the target | 365 days per target |
 | One Fire Under Cocanoor [tributary] | Tributary for 365 days and sway ≥ 80 (180 days and 70 with `zin_goldoroth_hard_yoke`) | 100 PP | `annex_country`; news `zin_dark.52` for the Dark Lands | — |
 | Hunt the Southern Envoys [target] | Flag `zin_goldoroth_hunt_open`; target's Volgan pact ≥ 1 and (sway ≥ 30 or tributary) | 50 PP | See section 7 | 180 days |
 
@@ -290,11 +309,11 @@ A crossing re-arms when temper falls 10 below its threshold (flags `zin_goldorot
 | Option | Effect | AI chance |
 | --- | --- | --- |
 | "Bend the knee to Cocanoor." | `zin_goldoroth_take_tributary`: Goldoroth `puppet`s the hold, `set_autonomy` to `zin_autonomy_tributary_hold`; the hold gets spirit `zin_dark_tributary_hold` and starts counting `zin_dark_tribute_days`; Goldoroth gets `zin_dark.51` | sway − 20 + unity × 0.3; +10 with `zin_goldoroth_light_yoke`; −20 if a Free Moot member; ×0.5 at Volgan pact 2; ×0 at pact 3 or in the Accord |
-| "Our hall answers to no one." | Sway −10; the hold gets country flag `zin_dark_refused_yoke`; Goldoroth's opinion modifier `zin_dark_yoke_refused` (−20); if date ≥ 1750.1.1, `zin_diplo_grant_cb` gives Goldoroth `zin_cb_hold_defiance` against the hold for 365 days | the rest |
+| "Our hall answers to no one." | Sway −10; the hold gets country flag `zin_dark_refused_yoke`; Goldoroth's opinion modifier `zin_dark_yoke_refused` (−20); if `zin_dark_date_defiance_cb` has passed, `zin_diplo_grant_cb` gives Goldoroth `zin_cb_hold_defiance` against the hold for 365 days | the rest |
 
-**Tributary holds.** Autonomy state `zin_autonomy_tributary_hold` "Tributary Hold": `min_freedom_level = 0.4`, `can_not_declare_war = yes`, `can_decline_call_to_war = no`, `autonomy_manpower_share = 0.2`, `extra_trade_to_overlord_factor = 0.2`. A tributary that reaches full freedom leaves the yoke; its sway falls by 30.
+**Tributary holds.** Autonomy state `zin_autonomy_tributary_hold` "Tributary Hold" (this spec owns it; it joins the diplomacy spec's list of ZIN autonomy states): `min_freedom_level = 0.4`, `can_not_declare_war = yes`, `can_decline_call_to_war = no`, `autonomy_manpower_share = 0.2`, `extra_trade_to_overlord_factor = 0.2`. A tributary that reaches full freedom leaves the yoke; its sway falls by 30.
 
-**Unity.** `zin_goldoroth_unity` (Goldoroth, 0 to 100): 100 × Dark Lands states (`zin_is_dark_lands_state`) owned by Goldoroth or its subjects ÷ 47. Recomputed monthly. Start about 13.
+**Unity.** `zin_goldoroth_unity` (Goldoroth, 0 to 100): 100 × Dark Lands states (`zin_is_region_dark_lands`) owned by Goldoroth or its subjects ÷ `zin_dark_states_total` (47 today). Recomputed monthly. Start about 13.
 
 | Unity | Effect |
 | ---: | --- |
@@ -314,8 +333,9 @@ The holds are free (established). The mechanic gives them three tools of their o
 - **Cost:** 50 PP. Sets global flag `zin_dark_free_moot`, the founder's flag `zin_dark_moot_member`, and sends `zin_dark.70` "The Free Moot Is Called" to every eligible hold. Accept: member flag, spirit `zin_dark_free_moot`, opinion `zin_dark_moot_kin` (+15) with every member. AI chance: 30 + (unity − 30) + 20 if `zin_dark_raided_recently` − sway ÷ 2; ×0 for a tributary.
 - **The call:** when a country that is not a member declares war on a member, every other member gets `zin_dark.71` "The Moot Rides": "The Moot rides." (`add_to_war` on the defender's side) / "Not this time." (counter `zin_dark_moot_refusals` +1; at 2 the member leaves). AI: ride 60 if bordering the attacker, else 30.
 - **Ending:** a member may leave by decision "Leave the Free Moot". When fewer than two members remain, `zin_dark.72` "The Moot Breaks" clears `zin_dark_free_moot`. It can be called again.
+- **Tree hooks.** `zin_dark_found_free_moot` (scope: the founder) is the decision's effect without its cost: it does nothing if `zin_dark_free_moot` is set or the founder is not eligible; otherwise it sets the flags and sends `zin_dark.70` as above (Dulundur's *The Moot Stone* uses it). `zin_dark_join_free_moot` (scope: the joiner) is the accept option of `zin_dark.70`: member flag, spirit and opinions; it does nothing if no Moot exists or the joiner is not eligible. The hold trees call these two and nothing else to found or join the Moot.
 
-**The Troll Forest.** Troy the Old's realm (proposed ruler). Spirit `zin_dark_forest_nobody_enters` (Troll Forest, permanent): `army_core_defence_factor` 0.15, `attrition` −0.1. Static state modifier `zin_dark_troll_woods` on its state: `local_supplies` −2. Decision "Hire the Troll-Kin" (category `zin_dark_free_holds`, every Dark Lands country except the Troll Forest): Troll Forest's opinion of the buyer ≥ 25, or the buyer has flag `zin_dark_trolls_for_pay`; 75 PP and 300 `zin_arms_equipment`; buyer gets timed idea `zin_dark_troll_hirelings` (365 days); Troll Forest gets 50 PP and 300 arms through `zin_dark.75`. Cooldown 365 days.
+**The Troll Forest.** Troy the Old's realm (proposed ruler). Spirit `zin_dark_forest_nobody_enters` (Troll Forest, permanent): `army_core_defence_factor` 0.15, `attrition` −0.1. State dynamic modifier `zin_dark_troll_woods` on its state: `local_supplies` −2. Decision "Hire the Troll-Kin" (category `zin_dark_free_holds`, every Dark Lands country except the Troll Forest): Troll Forest's opinion of the buyer ≥ 25, or the buyer has flag `zin_dark_trolls_for_pay`; 75 PP and 300 `zin_arms_equipment`; buyer gets timed idea `zin_dark_troll_hirelings` (365 days); Troll Forest gets 50 PP and 300 arms through `zin_dark.75`. Cooldown 365 days.
 
 **Blackton.** The free human towns (roster: 5 states, Freeholds). Sway is capped at 40, so Goldoroth cannot yoke Blackton; only war takes it. Lerendor may protect it ([lerendor_narrow_strait.md](lerendor_narrow_strait.md), section 9). Blackton may join the Accord.
 
@@ -367,11 +387,11 @@ The Dark Lands lie between the North Lands and the Middle Lands across narrow st
 
 **Closing a strait** (decision "Close a Dark Strait", flag `zin_goldoroth_strait_wardens`): at war, holds the shore; target is at war with Goldoroth; 50 PP; the target gets `zin_dark_strait_closed` for 180 days. Cooldown 180 days.
 
-**The southern strait and Volgan's march.** When Volgan marches, Dark Lands countries sworn to him (pact 3) attack Dondor or a bordering Concord dominion (Volgan spec, northern front). Goldoroth on the Southern Bargain route crosses the southern strait (`zin_goldoroth_wargoal_strait_south`: `take_state` on one `_south_far` state owned by Aenor or a Concord dominion).
+**The southern strait and Volgan's march.** When Volgan marches, Dark Lands countries sworn to him (pact 3) attack Dondor or a bordering Concord dominion (Volgan spec, northern front). Goldoroth on the Southern Bargain route crosses the southern strait (`zin_goldoroth_wargoal_strait_south`: a `take_state` war goal on one `zin_is_site_dark_strait_south_far` state owned by Aenor or a Concord dominion).
 
-**The northern strait and Zol's dead.** On `zin_zol_rising` every Dark Lands country with a `_north_shore` state or an Ocean of Zol coast gets `zin_dark.80` "Dead on the Dark Shore": "Watch the shore." (timed idea `zin_dark_watch_the_shore`, 365 days; AI 70) / "The dead are the North's trouble." (+25 PP; AI 30).
+**The northern strait and Zol's dead.** On `zin_zol_rising` every Dark Lands country with a `zin_is_site_dark_strait_north_shore` state or an Ocean of Zol coast (`zin_is_site_ocean_of_zol_coast`) gets `zin_dark.80` "Dead on the Dark Shore": "Watch the shore." (timed idea `zin_dark_watch_the_shore`, 365 days; AI 70) / "The dead are the North's trouble." (+25 PP; AI 30).
 
-Scripted trigger `zin_dark_shore_barred` (proposed hook for the Zol's Mistake spec): every `_north_shore` state is controlled by a country at war with Zol and has `coastal_bunker` ≥ 2. The Zol spec decides whether it slows or redirects a crossing; this spec only provides the trigger.
+Scripted trigger `zin_dark_shore_barred` (a hook the Zol's Mistake spec may read): every `zin_is_site_dark_strait_north_shore` state is controlled by a country at war with Zol and has a coastal fort of level 2 or more (`any_province_building_level` with `building = coastal_bunker` and `level > 1`). The Zol spec decides whether it slows or redirects a crossing; this spec only provides the trigger.
 
 **Truce against the dead.** If Goldoroth and Dondor are both at war with Zol, Goldoroth's focus "The Living Together" offers `zin_goldoroth.18` to Dondor. Accept: white peace between them if at war, `diplomatic_relation` non-aggression, global flag `zin_dark_truce_against_dead` while both are at war with Zol, tension −30, Gathering Dark −1. AI accepts at 80.
 
@@ -427,6 +447,12 @@ All changes go through `zin_world_add_gathering_dark`.
 
 ## Implementation
 
+### Builder
+
+A new content builder module, `tools/content/modules/mech_dark_lands.mjs`, writes every file below from the data file `tools/content/data/mechanics/dark_lands.json` (the region table by country name, start values of every variable, the blocs, the decision and event tables, dates and text keys) and is called from `tools/content/build.mjs`. It resolves names to tags with `tools/content/data/countries.json`, computes the bordering bonus from the map adjacency and `zin_dark_states_total` from the start owners, and fails the build if a named country is missing or is not a Dark Lands country there. Everything goes through the one transaction of `tools/content/apply.mts`; no game file is hand-edited.
+
+Rows supplied to shared files: the site rows of section 1, which the key sites table already carries (`tools/content/data/sites.json`, written by `tools/content/modules/sites.mjs`); the rule `zin_rule_ai_goldoroth` in the foundation's `common/game_rules/zin_game_rules.txt` and its triggers `zin_rules_ai_branch_goldoroth_independent` and `zin_rules_ai_branch_goldoroth_sworn_to_volgan` in `common/scripted_triggers/zin_rules.txt` ([00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md)).
+
 ### Files
 
 | Path | Content |
@@ -434,8 +460,7 @@ All changes go through `zin_world_add_gathering_dark`.
 | `common/scripted_effects/zin_dark.txt` | Effects below |
 | `common/scripted_triggers/zin_dark.txt` | Triggers below |
 | `common/decisions/zin_dark.txt`, `common/decisions/categories/zin_dark.txt` | Categories `zin_dark_raids`, `zin_dark_horde`, `zin_dark_sway`, `zin_dark_accord`, `zin_dark_free_holds`, `zin_dark_straits` |
-| `common/dynamic_modifiers/zin_dark.txt` | `zin_dark_accord_shield` |
-| `common/modifiers/zin_dark.txt` | Static state modifier `zin_dark_troll_woods` |
+| `common/dynamic_modifiers/zin_dark.txt` | `zin_dark_accord_shield`; state modifier `zin_dark_troll_woods` |
 | `common/ideas/zin_dark.txt` | Mechanic spirits below |
 | `common/opinion_modifiers/zin_dark.txt` | Opinion modifiers below |
 | `common/autonomous_states/zin_tributary_hold.txt` | `zin_autonomy_tributary_hold` |
@@ -445,9 +470,20 @@ All changes go through `zin_world_add_gathering_dark`.
 | `common/ai_strategy/zin_dark.txt` | Strategies in the AI section |
 | `events/zin_dark.txt` | Namespace `zin_dark` |
 | `localisation/english/zin_dark_l_english.yml` | All text |
-| `docs/design/start_situation.json` | Start values of every variable below |
+
 
 The Goldoroth tree's files come from the focus compiler; its events use namespace `zin_goldoroth`. The two namespaces never collide.
+
+### Dates
+
+Standard-pace engine dates; the module writes each as a scripted trigger with the three pace-shifted date sets of `zin_rule_story_pace`, as the historical path spec does.
+
+| Trigger | Standard date | Gate |
+| --- | --- | --- |
+| `zin_dark_date_yoke` | 1748.9.1 | The Iron Yoke may be offered |
+| `zin_dark_date_war_floor` | 1749.1.1 | No Dark Lands war, clash or challenge before |
+| `zin_dark_date_defiance_cb` | 1750.1.1 | The defiance cause and war on it |
+| `zin_dark_date_clash_historical` | 1754.1.1 | Historical AI never clashes before |
 
 ### Variables
 
@@ -463,7 +499,7 @@ The Goldoroth tree's files come from the focus compiler; its events use namespac
 | `zin_dark_raid_dark_added` | global | 0–3 | 0 | Gathering Dark already added by raids |
 | `zin_dark_sea_bases` | each coastal country (temporary) | 0+ | — | Pulse working value |
 | `zin_dark_moot_refusals` | each Moot member | 0–2 | 0 | Calls refused |
-| `zin_dark_states_total` | global | 47 | 47 | Frozen Dark Lands state count |
+| `zin_dark_states_total` | global | — | 47 today | Dark Lands state count at the start, written by the builder |
 
 All are clamped by the effects that change them.
 
@@ -483,7 +519,7 @@ Country, other Dark Lands countries: `zin_dark_refused_yoke`, `zin_dark_raided_r
 | `zin_goldoroth_may_war_dondor` | Section 2 |
 | `zin_goldoroth_refuses_masters`, `zin_goldoroth_seeks_the_south` | Section 7 |
 | `zin_dark_hold_under_cocanoor`, `zin_dark_hold_in_moot`, `zin_dark_hold_fears_cocanoor`, `zin_dark_took_southern_gifts`, `zin_dark_hold_at_war_with_goldoroth` | Section 7 |
-| `zin_dark_is_hold` | Dark Lands country, not Goldoroth, not Dondor, primary people orcs, goblins or trolls (`zin_people_orcs`, `zin_people_goblins` once added, `zin_people_trolls`) |
+| `zin_dark_is_hold` | Dark Lands country, not Goldoroth, not Dondor, primary people orcs or trolls (`zin_people_orcs`, `zin_people_trolls`), or goblins once the owner assigns them (`zin_people_minor_goblins`, foundation; owner's short list 12) |
 | `zin_dark_is_free_hold` | `zin_dark_is_hold`, not a subject |
 | `zin_dark_is_tributary` | Subject of Goldoroth with `zin_autonomy_tributary_hold` |
 | `zin_dark_is_accord_member` | In the faction led by the Dark Sea Accord's leader |
@@ -493,7 +529,9 @@ Country, other Dark Lands countries: `zin_dark_refused_yoke`, `zin_dark_raided_r
 | `zin_dark_tension_band_<quiet / uneasy / bloody / brink>` | Tension bands |
 | `zin_goldoroth_unity_at_least` | Arg `value` |
 | `zin_rules_ai_branch_goldoroth_independent`, `zin_rules_ai_branch_goldoroth_sworn_to_volgan` | Rule pattern of the defines spec |
-| Site triggers | Section 1, generated in `zin_sites.txt` |
+| `zin_dark_rule_independent`, `zin_dark_rule_sworn` | AI Goldoroth and (the matching `zin_rules_ai_branch_goldoroth_*` trigger, or `RANDOM` with `zin_dark_rule_roll` 1 / 2) |
+| `zin_dark_date_*` | Dates |
+| Site triggers | Section 1, generated in `zin_sites.txt` (owner: key sites) |
 
 ### Scripted effects
 
@@ -511,7 +549,7 @@ Country, other Dark Lands countries: `zin_dark_refused_yoke`, `zin_dark_raided_r
 | `zin_goldoroth_crown_heir` | — | Section 4 |
 | `zin_goldoroth_kneel` | — | Section 10 |
 | `zin_goldoroth_proclaim_one_kingdom` | — | Sets `zin_goldoroth_one_kingdom`; `set_cosmetic_tag` to Great Goldoroth (proposed name); stability +0.1; political power +100; Gathering Dark +3; news `zin_dark.61` |
-| `zin_goldoroth_core_dark_lands` | — | `add_core_of` on every owned `zin_is_dark_lands_state` |
+| `zin_goldoroth_core_dark_lands` | — | `add_core_of` on every owned `zin_is_region_dark_lands` |
 | `zin_goldoroth_claim_strait_shores` | — | `add_state_claim` on every `zin_is_site_dark_strait_far_shore` state |
 | `zin_goldoroth_wargoal_defiant` | — | `create_wargoal` `annex_everything` on every hold with `zin_dark_refused_yoke` that borders Goldoroth or a tributary, if Goldoroth holds `zin_cb_hold_defiance` against it, or `zin_war_of_last_crowns` or `zin_volgan_marches` is set (the old refusal is enough once the great war has begun) |
 | `zin_goldoroth_wargoal_sworn` | — | `annex_everything` war goal on every Dark Lands country at pact 3 that borders Goldoroth or a tributary |
@@ -522,7 +560,11 @@ Country, other Dark Lands countries: `zin_dark_refused_yoke`, `zin_dark_raided_r
 | `zin_dark_add_volgan_pact` | `target`, `value` | Section 7 |
 | `zin_dark_start_border_clash` | `target` | Section 2 |
 | `zin_dark_resolve_raid` | `target`, `kind` (`march`, `hold`, `corsair`) | The raid results in section 2 |
+| `zin_dark_found_free_moot` | — | Section 6 (tree hook) |
+| `zin_dark_join_free_moot` | — | Section 6 (tree hook) |
 | Shared, called | — | `zin_world_add_gathering_dark`, `zin_diplo_grant_cb`, `zin_politics_set_stance`, `zin_volgan_add_dominion_strength`, `zin_volgan_add_veil`, `zin_leren_add_lean` |
+
+**Arguments** (decision E1). Scripted effects take no parameters in 1.19.3: each argument above compiles to a temporary variable `zin_arg_<name>` set just before the call. Keyword arguments are number codes: `bloc` volcano 1, iron 2, war 3, warrens 4; `kind` march 1, hold 2, corsair 3; `strait` north 1, south 2; `target` = `bordering` −1, `holds` −2, otherwise the country itself.
 
 ### Decisions
 
@@ -554,7 +596,7 @@ Listed in sections 2 to 9. All have `ai_will_do` blocks from the AI section. Dec
 ### Dynamic and static modifiers
 
 - `zin_dark_accord_shield` (each Accord member): values from variables `zin_dark_shield_def`, `zin_dark_shield_core`, `zin_dark_shield_ws`, set by `zin_dark_add_accord_resolve` and the pulse.
-- `zin_dark_troll_woods` (state, Troll Forest's state, permanent): `local_supplies` −2.
+- `zin_dark_troll_woods` (state dynamic modifier, Troll Forest's state, added on startup, permanent): `local_supplies` −2.
 
 ### Opinion modifiers
 
@@ -571,11 +613,11 @@ Listed in sections 2 to 9. All have `ai_will_do` blocks from the AI section. Dec
 | `zin_dark_shore_tolls` | −10 | 1 a month | Lerendor or Aenor toward Goldoroth |
 | `zin_dark_against_the_dead` | +25 | none | Truce against the dead, both ways |
 
-The start opinion modifier `zin_opinion_orc_wars` (Goldoroth and Dondor, −40) belongs to the diplomacy spec.
+The start opinion modifier `zin_opinion_border_raids` (Goldoroth and Dondor both ways, −40) belongs to the start-situation spec ([02_lore/01_start_situation.md](../02_lore/01_start_situation.md)).
 
 ### Casus belli
 
-New: `zin_cb_hold_defiance` (Goldoroth → a hold that refused the yoke; 365 days; granted only from 1750.1.1) through `zin_diplo_grant_cb`, in the same form as the diplomacy spec's causes. Used: `zin_cb_orc_raids` (diplomacy spec), with the extra tension condition of section 2.
+New: `zin_cb_hold_defiance` (Goldoroth → a hold that refused the yoke; 365 days; granted only after `zin_dark_date_defiance_cb`) through `zin_diplo_grant_cb`, in the same form as the diplomacy spec's causes. Used: `zin_cb_orc_raids` (diplomacy spec), with the extra tension condition of section 2.
 
 ### Characters
 
@@ -595,7 +637,7 @@ New (all proposed; portraits image-generated):
 
 | Id | Title | For | Trigger | Options |
 | --- | --- | --- | --- | --- |
-| 1 | (hidden) Dark Lands pulse | Goldoroth (or the Accord leader if Goldoroth is gone) | `on_startup`, then every 30 days | Temper, favours, sway drift, tributary days, unity, tension and resolve drift, sea mastery, Moot health, envoy flag |
+| 1 | (hidden) Dark Lands pulse | Goldoroth (or the Accord leader if Goldoroth is gone) | `on_startup`, then every 30 days | On startup only: start values, Goldoroth's start spirit `zin_goldoroth_quarrelsome_clans` (Goldoroth tree; country histories come from the politics step), the `RANDOM` rule roll. Every pulse: temper, favours, sway drift, tributary days, unity, tension and resolve drift, sea mastery, Moot health, envoy flag; then `mark_focus_tree_layout_dirty` for every Dark Lands country (E4) |
 | 10 | The Raiders Return | Goldoroth | Raid decision completes | "Share the spoils." |
 | 11 | Raiders on the Marches | Dondor | Raid on Dondor | Beacons / blood-price / in kind (section 2) |
 | 12 | Raiders from Cocanoor | the hold | Raid on a hold | As 11 |
@@ -633,11 +675,11 @@ News events 15, 52, 60, 61 and 62 name no hidden power. No `zin_dark` text names
 
 | Rule | Options (default first) | Effect |
 | --- | --- | --- |
-| `zin_rule_ai_goldoroth` | `DEFAULT`, `INDEPENDENT`, `SWORN_TO_VOLGAN`, `RANDOM` | AI Goldoroth's choice between The Black Iron Crown and The Southern Bargain. `DEFAULT` follows `zin_rule_historical_path` (Black Iron Crown). Added to the rules table of [00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md). |
+| `zin_rule_ai_goldoroth` | `DEFAULT`, `INDEPENDENT`, `SWORN_TO_VOLGAN`, `RANDOM` | AI Goldoroth's choice between The Black Iron Crown and The Southern Bargain. `DEFAULT` follows `zin_rule_historical_path` (Black Iron Crown). `RANDOM`: on startup `zin_dark.1` rolls once and stores global `zin_dark_rule_roll` (1 independent, 2 sworn), which `zin_dark_rule_independent` and `zin_dark_rule_sworn` read beside the foundation's `zin_rules_ai_branch_goldoroth_*` triggers. Group `RULE_GROUP_ZIN` (R1); added to the rules table of [00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md). |
 
 ### Interface
 
-A Horde panel for Goldoroth (temper, the four blocs, unity, sway per hold, tributaries) and an Accord panel for the Accord's leader (resolve, tension band, members). Other Dark Lands countries see only their own sway as a band: Free (0–24), Courted (25–49), Pressed (50–79), Under the Yoke (tributary). Layout belongs to [07_interface](../07_interface/).
+A Horde panel for Goldoroth (temper, the four blocs, unity, sway per hold, tributaries) and an Accord panel for the Accord's leader (resolve, tension band, members). Other Dark Lands countries see only their own sway as a band: Free (0–24), Courted (25–49), Pressed (50–79), Under the Yoke (tributary). The panels are built by the interface module with the other mechanic panels ([07_interface/01_interface.md](../07_interface/01_interface.md)); visibility flags `zin_ui_horde_open` and `zin_ui_accord_open` follow that spec's `zin_ui_<panel>_open` pattern. Until they exist, the values show as tooltips on the mechanic spirits.
 
 ### Hooks for the regional and shared trees
 
@@ -654,7 +696,7 @@ None.
 
 ## AI
 
-**Goldoroth before the war.** Raids when temper ≥ 65 and the raid is off cooldown (Dondor first if tension < 70, else a free hold; never two raids in 60 days). Holds a Blood Contest when temper ≥ 75 and PP ≥ 50. Feasts when any favour ≤ 30. Holds the Great Moot for the lowest-favour bloc when that bloc is ≤ 25. Sends gifts to the two holds with the highest sway below the yoke threshold; offers the yoke as soon as it can. Shows the host only when temper ≥ 60. Never takes Clash on the March under `zin_rule_historical_path` = `HISTORICAL` before 1 Deepwinter 1754. AI strategies: `antagonize` Dondor 20; `befriend` the three free holds with the highest sway; `influence` every free hold.
+**Goldoroth before the war.** Raids when temper ≥ 65 and the raid is off cooldown (Dondor first if tension < 70, else a free hold; never two raids in 60 days). Holds a Blood Contest when temper ≥ 75 and PP ≥ 50. Feasts when any favour ≤ 30. Holds the Great Moot for the lowest-favour bloc when that bloc is ≤ 25. Sends gifts to the two holds with the highest sway below the yoke threshold; offers the yoke as soon as it can. Shows the host only when temper ≥ 60. Never takes Clash on the March under `zin_rule_historical_path` = `HISTORICAL` before `zin_dark_date_clash_historical` (1 Deepwinter 1754). AI strategies: `antagonize` Dondor 20; `befriend` the three free holds with the highest sway; `influence` every free hold.
 
 **Goldoroth at war.** On `zin_goldoroth_war_open`: wars on defiant holds first. Takes The Accord Must Break only when `zin_goldoroth_may_war_dondor` is true and either no great power outside the Accord guarantees Dondor, or that guarantor is at war elsewhere and Goldoroth's divisions are at least 1.5 times the Accord's; never while `zin_dark_accord_holds` and the ratio is below 2. On the Black Iron route after Volgan marches: `conquer` the sworn holds. Accepts the truce against the dead.
 
@@ -669,29 +711,36 @@ None.
 ## Acceptance
 
 1. A new game on 1 Thaw 1748: no Dark Lands country is at war or in a border war; tension 35, resolve 40, temper 55, favours 55/50/60/35, unity 12 to 14; sway values as the region table (with the bordering bonus); Dondor and Belonton in the Dark Sea Accord.
-2. No Dark Lands war or border clash can begin before 1 Deepwinter 1749 (scenario test with the console attempts: decisions unavailable, focus unavailable).
+2. No Dark Lands war or border clash can begin before 1 Deepwinter 1749 at the standard pace (scenario test: the decisions and war focuses are unavailable before `zin_dark_date_war_floor`).
 3. A raid resolves without `has_war` becoming true; tension rises by 8; the raid Gathering Dark total never exceeds 3.
 4. With `zin_gathering_dark` ≥ 25 and tension ≥ 60, a raid on Dondor gives `zin_cb_orc_raids` both ways for 365 days.
 5. A border clash with `change_state_after_war = no` leaves the state owners unchanged; its callbacks apply their effects once.
 6. Temper crossing 70 and 90 fires `zin_dark.43` and `zin_dark.42` once per crossing, and again only after falling 10 below.
 7. A clan favour at 10 with all conditions fires `zin_dark.44`; a lost challenge replaces the Warking with the named heir's chief.
-8. An accepted Iron Yoke makes the hold Goldoroth's subject under `zin_autonomy_tributary_hold`; a refusal after 1750.1.1 gives Goldoroth `zin_cb_hold_defiance`.
+8. An accepted Iron Yoke makes the hold Goldoroth's subject under `zin_autonomy_tributary_hold`; a refusal after `zin_dark_date_defiance_cb` gives Goldoroth `zin_cb_hold_defiance`.
 9. Unity equals 100 × (Goldoroth's and its subjects' Dark Lands states) ÷ 47 within one pulse of any change.
 10. `zin_dark_add_volgan_pact` never sets a country to 3; `zin_goldoroth_refuses_masters` makes Goldoroth's acceptance of `zin_dominion.8` zero.
 11. In a 12-year historical AI run: Goldoroth takes The Black Iron Crown before 1753, declares no war before `zin_war_of_last_crowns` or a casus belli, gains at least one tributary, and Dondor exists in 4A 1760.
 12. With `zin_rule_ai_goldoroth` = `SWORN_TO_VOLGAN`, the AI takes The Southern Bargain and, after Volgan's march, The Northern Front.
 13. The localisation check finds no "Afrit", no named size of Volgan's hosts, no claim that fire ends Zol's dead, and no named goblin hold in `zin_dark` texts.
-14. The HOI4 Agent Tools script validator reports no unknown effects, triggers or modifiers in the `zin_dark` files.
+14. The HOI4 Agent Tools script validator reports no unknown effects, triggers or modifiers in the `zin_dark` files; every modifier, effect and trigger named here exists in the 1.19.3 documentation.
+15. A build test fails if a country named in the data file is missing from `countries.json` or is not a Dark Lands country there; `zin_dark_states_total` equals the number of Dark Lands states in the start owners.
+16. With `zin_rule_story_pace` = `SLOW`, the war floor moves to 1.5 × its standard distance from the start (Highsun 4A 1749).
+17. On day 1 Goldoroth has `zin_goldoroth_quarrelsome_clans`; the pulse calls `mark_focus_tree_layout_dirty`; `zin_dark_found_free_moot` founds the Moot once and does nothing the second time; with `zin_regional_dondor_beacon_chain` Light the Sea Beacons cools down in 120 days; under `RANDOM` the roll is set once and never changes (scenario test).
+18. The four strait subset triggers and `zin_is_site_dark_strait_north_shore` are rows of the key sites table and appear once in `zin_sites.txt` (builder test).
 
 ## Open questions
 
-1. **The straits.** Where exactly are the strait between the Dark Lands and the North Lands and the strait between the Dark Lands and the Middle Lands? Is either one Lerendor's Narrow Strait? Can armies cross either on foot (a map crossing), or only by sea?
-2. **The Sea of Darkness.** Is it an inland sea of the Dark Lands, or does it open to the Ocean of Zol or the central sea?
-3. **Dondor's size.** Dondor holds one state but is a great power in the working table (also asked in the countries spec). A one-state Dondor cannot stand against Goldoroth without its friends. Should it grow?
-4. **Belonton.** The roster makes Belonton an orc confederacy allied with human Dondor. Is that right? This spec treats it as a sign that the Dark Lands do not split by people.
-5. **Goblins and ogres.** Which holds are goblin or ogre holds?
-6. **Goldoroth and Volgan.** This spec makes independence Goldoroth's default ("Goldoroth bows to no spirit"). Do you want that, or should Goldoroth lean south?
-7. **The Free Moot.** Is a league of free holds acceptable, or does it go against "they belong to nobody"?
-8. **The great war.** On the historical path Goldoroth fights the defiant holds but not Dondor, and Dondor survives to 4A 1760. Do you want a bigger Dark Lands war in 4A 1755?
-9. **Names.** Do you approve the four clan blocs, the Fire-Mountain, the Iron Yoke, Tributary Hold, the Free Moot, Forge-Mistress Ulgra, Snikkit Many-Knives, Rask Black-Sail, Great Goldoroth and the Dark Straits?
-10. **Zol on the Dark shore.** Should Zol's dead ever land in the Dark Lands, or only pass through the straits toward the Middle Lands and the North?
+All proceed on the labelled proposal; the owner's questions are listed in [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md) under "dark lands".
+
+1. **The straits.** Where are the strait to the North Lands and the strait to the Middle Lands, is either Lerendor's Narrow Strait, and can armies walk them? Proposal: both are sea crossings; the Narrow Strait is the North Lands–Middle Lands strait (owner's short list 3); the map phase records any land crossing (dark lands 1).
+2. **The Sea of Darkness.** Inland, or open to the Ocean of Zol or the central sea? Proposal: inland; Zol's black ships reach only countries with an Ocean of Zol coast (dark lands 2).
+3. **Dondor's size.** Proposal: the map grows it to hold its own against Goldoroth (owner's short list 8; dark lands 3).
+4. **Belonton.** Proposal: an orc confederacy in a human-led Accord, as the roster says (dark lands 4).
+5. **Goblins and ogres.** Proposal: minor peoples of some orc holds, assigned by the owner; until then no text names a goblin hold (owner's short list 12; dark lands 5).
+6. **Goldoroth and Volgan.** Proposal: independence by default ("Goldoroth bows to no spirit") (dark lands 6).
+7. **The Free Moot.** Proposal: allowed, as a league of free holds that stays free (dark lands 7).
+8. **The great war.** Proposal: on the historical path Goldoroth fights only the defiant holds and Dondor survives to 4A 1760 (dark lands 8).
+9. **Names.** Proposal: the four clan blocs, the Fire-Mountain, the Iron Yoke, Tributary Hold, the Free Moot, Ulgra, Snikkit, Rask Black-Sail, Great Goldoroth and the Dark Straits as written (dark lands 9).
+10. **Zol on the Dark shore.** Proposal: Zol's dead pass through the straits and never land in the Dark Lands on the historical path (dark lands 10).
+11. **A navy for Goldoroth.** Proposal: yes, the corsairs (two galleys at the start and *The Black-Sail Corsairs*) (dark lands 11).

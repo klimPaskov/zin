@@ -52,8 +52,9 @@ Nothing a player sees is vanilla unless it is engine-generic (for example, the m
 
 | Area | State | Notes |
 | --- | --- | --- |
+| Planning package | done | 19 October: all 88 specs Ready (CONVENTIONS "Status"), 33 new integration decisions, 828 registered names, 28 owner questions with working proposals |
 | Stable start for every country | in progress | The crash of every start since 17 October was the flag sheet overflowing (744 tags; integer divide by zero). Fixed 19 October by defining only ZIN tags and the dynamic tags (380); verified in Linux with the clock running. Every-country start test not yet run |
-| Error-free log | in progress | 1,900 → 669 lines on 19 October (vanilla tags removed, 349 single-country vanilla files silenced, stage 1 replacements). The rest comes from generic vanilla files that stage 2 replaces |
+| Error-free log | in progress | 1,900 → 641 lines on 19 October (vanilla tags removed, 349 single-country vanilla files silenced, stage 1 replacements). The rest comes from generic vanilla files that stage 2 replaces |
 | Map accuracy | specified | [01_map](01_map/) |
 | Calendar 4A 1748 | specified | [00_foundation/01_start_and_calendar.md](00_foundation/01_start_and_calendar.md) |
 | Peoples, ideologies | partial | ten peoples, four ideologies in game |

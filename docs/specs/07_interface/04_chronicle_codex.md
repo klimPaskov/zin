@@ -1,8 +1,10 @@
 # The Chronicle of Erdae
 
-**Status:** Draft. **Priority:** 5. **Phase:** 7.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 5. **Phase:** 7.
 
 Text authoring and the builder module may start in phase 2 (the open entries are base lore); the story entries are finished in phase 5 with the events they record; the window, sprites and plates land in phase 7.
+
+**Current state (19 October 2026, commit ca01fa3).** Nothing of the Chronicle is in the game yet. What it builds on is: the lore vault copy in `docs/lore/vault/` (staged by `tools/content/modules/lore.mjs`), the Realm button at x 8, y 86 (`modules/ui.mjs`), the 43 catalog event pictures whose raw generations the plates may reuse (`modules/presentation.mjs`), and the loading tips that already quote "The Chronicle of Erdae" as a source.
 
 ## Purpose
 
@@ -102,15 +104,15 @@ Coordinates are relative to the window (targets; the GUI renderer check settles 
 | Entry list | inset at (228, 76), 268 × 468 | Category name at (240, 84) in `hoi_18mbs`; thirteen slot buttons `zin_chr_slot_<n>` (240 × 28, `GFX_zin_chr_row`) at (236, 112 + 30 × (n − 1)); per slot a selected overlay and an unread marker `GFX_zin_chr_new` (12 × 12) at the slot's right edge; list paging at y = 510: `zin_chr_list_prev` (240, 510), text "1 / 2" centred in (268–436), `zin_chr_list_next` (464, 510) |
 | Page | page ground `GFX_zin_chr_page` at (504, 76), 460 × 468 | Plate `zin_chr_plate` (432 × 162) at (518, 88) with `GFX_zin_chr_plate_frame` over it at (514, 84); title (518, 256), 432 × 28, `hoi_24header`; subtitle (518, 286), 432 × 18, `hoi_16mbs`, muted colour; body `zin_chr_body` (518, 310), 432 × 160, `hoi_16mbs`, `format = left`, `fixedsize = yes`; "See also" label (518, 474); text paging `zin_chr_page_prev` (870, 472), "2 / 3" (894–926), `zin_chr_page_next` (930, 472); four link buttons `zin_chr_link_<k>` (212 × 24, `GFX_zin_chr_link`) at (518, 492), (736, 492), (518, 518), (736, 518) |
 
-Engine constructs, chosen for stability (every one is used by vanilla scripted GUIs):
+Engine constructs, chosen for stability. Each is documented in the installed `common/scripted_guis/_documentation.md` (game 1.19.3); the first four are also used by vanilla scripted GUIs, and `player_context` already runs in game in ZIN's Realm panel:
 
 - Visibility by `<element>_visible` triggers; clicks by `<element>_click` effects.
 - Text through scripted localisation keys in `text` and `buttonText`.
 - The plate through `properties = { zin_chr_plate = { image = "[zin_chr_plate]" } }` (the vanilla `image = "[scripted_loc]"` pattern of `AST_cabinet_trust_scripted_gui.txt`).
 - Frames by `frame = <variable>` for the marker sprites.
-- `dirty = zin_ui_tick` (the interface spec's global dirty counter).
+- `context_type = player_context` and `dirty = zin_ui_tick` (the interface spec's global dirty counter).
 
-Not used, because no vanilla scripted GUI uses them: `dynamic_lists`, `gridboxType` filled from arrays, element positions driven by variables, `parent_window_window`. The list therefore uses thirteen fixed slots filled by an effect (section 5).
+Not used (proposed): `dynamic_lists`, `gridboxType` filled from arrays, element positions driven by variables, `parent_window_window`. They are documented, but no vanilla scripted GUI exercises them and fixed slots are simpler to render and test. The list therefore uses thirteen fixed slots filled by an effect (section 5), as the interface spec's panels do.
 
 The window is hidden (`visible` false) when closed, so it costs nothing while closed. `ai_enabled = { always = no }`.
 
@@ -133,7 +135,7 @@ Effects (generated, `common/scripted_effects/zin_chronicle.txt`):
 
 | Effect | Does |
 | --- | --- |
-| `zin_chr_open` | Calls `zin_ui_close_panels` (once the interface spec's effect exists), sets `zin_chr_open`; if `zin_chr_entry` is unset, shows the Foreword and selects category 1; calls `zin_chr_fill_slots`, `zin_chr_count_unread`; adds 1 to `global.zin_ui_tick` |
+| `zin_chr_open` | Calls `zin_ui_close_panels` (until the interface spec's effect is built, clears `zin_realm_open` instead), sets `zin_chr_open`; if `zin_chr_entry` is unset, shows the Foreword and selects category 1; calls `zin_chr_fill_slots`, `zin_chr_count_unread`; adds 1 to `global.zin_ui_tick` |
 | `zin_chr_close` | Clears `zin_chr_open`; adds 1 to `global.zin_ui_tick` |
 | `zin_chr_select_category` (`cat`) | Sets `zin_chr_cat`, `zin_chr_lpage = 0`; calls `zin_chr_fill_slots` |
 | `zin_chr_fill_slots` | Walks the current category's entries in order and counts the unlocked ones with a temp variable; the entries whose running count falls on the current list page go into slots 1–13; empty slots get 0; sets `zin_chr_lpages`. One generated `if` per entry of the category (at most 30) |
@@ -221,8 +223,8 @@ Measurement uses the glyph advances and kerning of the installed `gfx/fonts/hoi_
 
 | Item | Value |
 | --- | --- |
-| Generation | Single, `quality: high`, 1536 × 576 (aspect 2.67:1; multiples of 16) |
-| Reuse | Where the icon catalog already has an accepted event-picture generation of the same subject at ≥ 1536 px wide (column "Plate" says `reuse <key>`), the plate is a 1536 × 576 crop of that raw generation; the manifest records the crop box. The reviewer may refuse a crop that loses the subject; then a new single is generated |
+| Generation | Single, `quality: high`, aspect 8:3. The model returns about 1.57 megapixels in that aspect, about 2048 × 768 (decision A1) |
+| Reuse | Where the icon catalog already has an accepted event-picture generation of the same subject (column "Plate" says `reuse <key>`; 43 catalog pictures are in game), the plate is an 8:3 crop of that raw generation at its full width; the manifest records the crop box. The reviewer may refuse a crop that loses the subject; then a new single is generated |
 | Output | 432 × 162, Lanczos 3, DDS A8R8G8B8, no mipmaps, `gfx/interface/zin/chronicle/plates/<plate>.dds` |
 | Sprite | `GFX_zin_chr_plate_<plate>`; category plates `GFX_zin_chr_plate_cat_<category>` |
 | Prompt | The house style line, then "wide panoramic painted illustration for a chronicle", then the subject, then "no text, no letters, no frames, no labels" |
@@ -232,7 +234,7 @@ Plate rules (the icon catalog's rules apply in full):
 1. No plate shows Zol in any form, a servant of Zol, a New God's figure, the Holy Seven, or any symbol of He Who Was, Is and Will Be (those entries use the category plate).
 2. No plate shows the face or figure of Afrit or Aurevan. Afrit's demonic form appears in no plate (the Chronicle needs none).
 3. Eindil appears only in plates of gated entries, always seen from far away or from behind, cloaked so that neither arm can be judged.
-4. Horos follows the owner's three drawings (private references, recorded as `private:<file>`).
+4. Horos is drawn from the established text only (yellow-green armour, blue eyes, thorn-like helm, large blue sword, green crystal at his breast), not from the owner's private drawings, until the owner says otherwise (decision A6).
 5. Golbran is small, purple and humanoid, nothing more. Sunhot elves are over three metres tall; Gala elves are never drawn beside Sunhot elves in a way that settles their kinship.
 6. No plate places Dardan, the palace cliff or Yeldenne on a recognisable map. No lettered maps.
 
@@ -251,7 +253,7 @@ Plate rules (the icon catalog's rules apply in full):
 | `GFX_zin_chr_arrow_prev`, `GFX_zin_chr_arrow_next` | `spriteType`, `buttonstate.lua` | 20 × 20 | 3 | `arrow_prev.dds`, `arrow_next.dds` |
 | `GFX_zin_chr_plate_frame` | `spriteType`, transparent centre | 440 × 170 | 1 | `plate_frame.dds` |
 | `GFX_zin_chr_new` | `spriteType` | 12 × 12 | 1 | `new.dds` |
-| `GFX_zin_chr_sigil_<category>` (11) | `spriteType` | 24 × 24 | 1 | `sigils/<category>.dds` (one 6 × 6 keyed sheet, 1024 × 1024) |
+| `GFX_zin_chr_sigil_<category>` (11) | `spriteType` | 24 × 24 | 1 | `sigils/<category>.dds` (one 6 × 6 sheet on black, 1:1) |
 | `GFX_zin_chr_book_button` | `spriteType`, `buttonstate.lua` | 30 × 30 | 3 | `book_button.dds` (from the same sigil sheet) |
 | `GFX_zin_chr_age_button` | `spriteType`, `buttonstate.lua` | 96 × 28 | 3 | `age_button.dds` |
 
@@ -267,21 +269,21 @@ Budget: 138 plates, of which 30 are crops of catalog event generations; 108 new 
 
 | Access | What | When |
 | --- | --- | --- |
-| **Top bar, now** | Scripted GUI `zin_chr_button`, window `zin_chr_button_window` at x = 144, y = 86 (`upper_left`), 30 × 30, `parent_window_token = top_bar`, button `zin_chr_book_button` beside the existing Realm button; tooltip "The Chronicle of Erdae" plus "New pages: [?zin_chr_unread]" when there are any; the unread marker `GFX_zin_chr_new` sits on its corner | Ships with the Chronicle, before the Erdae bar exists |
-| **Erdae bar, later** | The bar's age label ("4A 1748", slot width 96) becomes the button `zin_chr_age_button`; clicking the age opens the Chronicle; the unread marker sits at its top right. `zin_chr_button_window` is then removed | When [01_interface.md](01_interface.md)'s Erdae bar lands; that spec's age-label slot changes accordingly (integration item) |
-| **Realm panel** | A button "The Chronicle of Erdae" in the panel footer | With the Realm panel's extension |
+| **Top bar, now** | Scripted GUI `zin_chr_button`, window `zin_chr_button_window` at x = 144, y = 86 (`upper_left`), 30 × 30, attached like today's Realm button (main window, no parent token) so the two stay aligned, button `zin_chr_book_button` beside the existing Realm button; tooltip "The Chronicle of Erdae" plus "New pages: [?zin_chr_unread]" when there are any; the unread marker `GFX_zin_chr_new` sits on its corner | Ships with the Chronicle, before the Erdae bar exists |
+| **Erdae bar, later** | The bar's age label ("4A 1748", slot width 96) becomes the button `zin_chr_age_button`; clicking the age opens the Chronicle; the unread marker sits at its top right. `zin_chr_button_window` is then removed | When [01_interface.md](01_interface.md)'s Erdae bar lands (its section 2 already names the age button) |
+| **Realm panel** | Button `zin_realm_chronicle_button` "The Chronicle of Erdae" ([01_interface.md](01_interface.md) §3) | With the Realm panel's extension |
 | **Story news** | Story events that unlock an entry may add the tooltip line `zin_chr_new_page_tt` ("A new page is written in the Chronicle of Erdae.") to an option. They never open the window by themselves | Phase 5, optional per event spec |
 | **End screen** | The *Chronicle of the Age* (`zin_world.110`) mentions the Chronicle; ending entries 627–630 reuse its `zin_loc_chronicle_*` lines as their last page | Phase 5 |
 
-Opening any mechanic panel closes the Chronicle and opening the Chronicle closes them: `zin_ui_close_panels` must also clear `zin_chr_open` (integration item for the interface spec). Escape closes it. No keyboard shortcut opens it (vanilla hotkeys are dense; see Open questions).
+Opening any mechanic panel closes the Chronicle and opening the Chronicle closes them: `zin_ui_close_panels` also clears `zin_chr_open` ([01_interface.md](01_interface.md), scripted effects). Escape closes it. No keyboard shortcut opens it (proposed: vanilla hotkeys are dense).
 
-**Main menu: not possible.** The main menu runs without a game state; scripted GUIs, flags and scripted localisation exist only inside a running game, and front-end `.gui` buttons cannot call script. A button added to `interface/frontendmainview.gui` would do nothing. Re-using the credits screen (`interface/credits.txt`) would remove Paradox's credits and is refused. Instead (proposed): the bookmark description ([01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)) ends with "The histories of Erdae are kept in the Chronicle: open it from the age of the world at the top of the screen", and the loading tips ([02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md)) may quote the first sentence of open Chronicle entries, so the history is already present before the game starts. The escape menu (`interface/ingamemenu.gui`) has no scripted GUI token and is not used.
+**Main menu: not possible.** The main menu runs without a game state; scripted GUIs, flags and scripted localisation exist only inside a running game, and front-end `.gui` buttons cannot call script. A button added to `interface/frontendmainview.gui` would do nothing. Re-using the credits screen (`interface/credits.txt`) would remove Paradox's credits and is refused. Instead (proposed): the bookmark description ([03_main_menu_and_frontend.md](03_main_menu_and_frontend.md) §3) ends with "The histories of Erdae are kept in the Chronicle: open it from the age of the world at the top of the screen", and the loading tips ([02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md)) may quote the first sentence of open Chronicle entries, so the history is already present before the game starts. The escape menu (`interface/ingamemenu.gui`) has no scripted GUI token and is not used.
 
 Observers see the Chronicle of the country they observe through, with the same unlocks.
 
 ### 10. The entry data
 
-Source of truth: `docs/design/chronicle/` in the ZIN repository.
+Source of truth: `tools/content/data/chronicle/` (builder data). The builder publishes the generated review files under `docs/design/chronicle/`.
 
 | File | Content |
 | --- | --- |
@@ -289,10 +291,10 @@ Source of truth: `docs/design/chronicle/` in the ZIN repository.
 | `entries/<category>.json` | The entries of one category, in order |
 | `coverage.json` | Every vault note and section in scope → the entries citing it, or an exclusion with a reason |
 | `foreword.json` | The Foreword's two paragraphs |
-| `source_index.json` | **Generated.** The staged vault parsed into notes and sections with hashes |
-| `canon_status.json` | **Generated.** Every paragraph with its status and sources, for the owner's review |
+| `docs/design/chronicle/source_index.json` | **Generated** (published, not builder input). The staged vault parsed into notes and sections with hashes |
+| `docs/design/chronicle/canon_status.json` | **Generated** (published). Every paragraph with its status and sources, for the owner's review |
 
-Entry schema (JSON Schema `docs/design/chronicle/entry.schema.json`):
+Entry schema (JSON Schema `tools/content/data/chronicle/entry.schema.json`):
 
 ```json
 {
@@ -325,13 +327,13 @@ Entry schema (JSON Schema `docs/design/chronicle/entry.schema.json`):
 
 ### 11. From the vault to the game (content builder)
 
-Module `tools/content/modules/chronicle.mjs` (new), helpers `tools/content/lib/fontmetrics.mjs` (new; reads `.fnt` metrics from the installed game for measurement only) and `tools/content/lib/condlang.mjs` (new; the unlock language). Commands of the builder:
+Module `tools/content/modules/chronicle.mjs` (new; `buildChronicle(staged)`, called from `tools/content/build.mjs` after `stageLore`), helpers `tools/content/lib/fontmetrics.mjs` (new; reads `.fnt` metrics from the installed game at `HOI4_GAME` for measurement only) and `tools/content/lib/condlang.mjs` (new; the unlock language). Author commands run as `node tools/content/chronicle.mjs <command>` (new CLI); `check` and `emit` also run inside every build:
 
-1. **`chronicle:index`.** Parses the staged vault `docs/lore/vault/**/*.md`, excluding `Sources/`, `Maps/` and `ZIN Lore Master Compendium.md` (a concatenation of the other notes). For each note: path, front-matter `status`, title, and each section (heading path, normalised text, sha256, and the status markers it contains: "Established", "Proposed", "Open", "Unknown", "Undecided"). Writes `source_index.json`.
-2. **`chronicle:draft <note>`.** Prints a note's sections with their markers as a starting sheet for an author. It never writes entry text. Entry text is written by an author (agent or person) following the voice rules.
-3. **`chronicle:check`.** Runs every check of section 12. Any failure stops the build.
-4. **`chronicle:emit`.** Writes the game files of the Implementation section, deterministic and sorted by id, through the shared atomic rewrite engine with the rest of the build.
-5. **`chronicle:status`.** Writes `canon_status.json`: per entry and paragraph, status and sources, with totals (established, proposed, mixed paragraphs).
+1. **`index`.** Parses the staged vault `docs/lore/vault/**/*.md` (copied by `modules/lore.mjs`), excluding `Sources/`, `Maps/` and `ZIN Lore Master Compendium.md` (a concatenation of the other notes). For each note: path, front-matter `status`, title, and each section (heading path, normalised text, sha256, and the status markers it contains: "Established", "Proposed", "Open", "Unknown", "Undecided"). Writes `source_index.json`.
+2. **`draft <note>`.** Prints a note's sections with their markers as a starting sheet for an author. It never writes entry text. Entry text is written by an author (agent or person) following the voice rules.
+3. **`check`.** Runs every check of section 12. Any failure stops the build.
+4. **`emit`.** Stages the game files of the Implementation section, deterministic and sorted by id; `tools/content/apply.mts` writes them through the shared atomic rewrite engine with the rest of the build.
+5. **`status`.** Writes `canon_status.json`: per entry and paragraph, status and sources, with totals (established, proposed, mixed paragraphs).
 
 **Staleness.** When a vault section's hash differs from a paragraph's recorded `sha256`, the paragraph is stale. A stale paragraph is a build warning in development and a failure for a release build. The author rereads the section, updates the text and the hash.
 
@@ -353,7 +355,7 @@ Canon Policy in practice:
 2. **Conditions.** Every flag in `unlock` and `when` exists in the shared contract or the additions register; every later part's condition implies its entry's unlock condition.
 3. **Links.** No link from an entry to a target whose unlock is not implied by the source's unlock is shown before the target unlocks (checked by construction: the link's visibility trigger includes the target's unlock).
 4. **Secrecy by implication.** For each text variant the builder computes the conjunction of flags its conditions guarantee. Text whose conditions do not imply `rev | hub` must not match the Afrit list: "Afrit", "Hidden Council", "Kingdom Behind the Throne", "Sevrin", "Ring of Doors", "Crown of Witnesses", "Bracelet of the First Seal", "demon" within one sentence of "Deliverer" or "Aurevan", "false god" within one paragraph of "Deliverer" or "Aurevan", "murder" within one sentence of "Deliverer", "Aurevan" or "Council". Text that does not imply `heir` must not contain "Eindil" or "son of Ein". Text that does not imply `F:zin_horos_dead, S>=8` must not call Glo a heart. The compiler's own secrecy scan (validation spec, G2 check 3) also covers the generated localisation.
-5. **No future at the start.** Text whose condition is `start` must not contain any phrase of `docs/design/chronicle/future_terms.json` (the Man from the Ice, Eindil, War of the Last Crowns, Western Crossing, King of the East, Thirty Days, the Four Camps, Black Compact, the names of late-age battles and deaths).
+5. **No future at the start.** Text whose condition is `start` must not contain any phrase of `tools/content/data/chronicle/future_terms.json` (the Man from the Ice, Eindil, War of the Last Crowns, Western Crossing, King of the East, Thirty Days, the Four Camps, Black Compact, the names of late-age battles and deaths).
 6. **Forbidden claims.** No text matches `docs/design/validation/forbidden_claims.json`.
 7. **Spellings and words.** No superseded name; no modern word from the shared word list; no meta word (voice rule 1).
 8. **Encoding and fit.** Section 7.
@@ -503,7 +505,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 706 | golden_king | The Golden King | start | F:zin_golden_king_dead: his death; rev: his murderer; F:zin_golden_king_survives: he lives | a heavy crowned man under too much gold leaf | E | *Golden King* |
 | 707 | edran | King Edran | start | — | a weary king before many banners | M | *King Edran* |
 | 708 | lorien | Lorien, King of the Gala | start | heir: he named the stranger; F:zin_lorien_dead: his death | reuse `gala_court` | E | *Lorien* |
-| 709 | horos | Horos of Yeldenne | start | F:zin_horos_dead, S≥8: his death and his heart; F:zin_horos_endures: he held his hall | Horos standing with the blue sword (owner's drawings as reference) | E | *Horos*, *Horos Visual References* |
+| 709 | horos | Horos of Yeldenne | start | F:zin_horos_dead, S≥8: his death and his heart; F:zin_horos_endures: he held his hall | Horos standing with the blue sword, from the established description (A6) | E | *Horos*, *Horos Visual References* |
 | 710 | varner | Varner | start | F:zin_varner_dead | an old wizard with a lantern among standing stones | E | *Varner* |
 | 711 | golbran | Golbran | start | F:zin_golbran_dead | a small purple humanoid figure at a wizard's side | E | *Golbran* |
 | 712 | alleria | Alleria of Selen | start | S≥8: she shelters the stranger; F:zin_afrit_dead: her arrow in the palace | a ranger drawing a bow at a forest edge | M | *Alleria of Selen* |
@@ -594,7 +596,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 
 | Id | Key | Title | Unlock | Later parts | Plate | St. | Sources |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| 1101 | glo | Glo | start | F:zin_horos_dead, S≥8: Horos's heart, given away; F:zin_glo_with_eindil; F:zin_eindil_restored: the bridge of the gods; F:zin_horos_sword_broken; divergences: F:zin_glo_sealed, F:zin_glo_dimmed, F:zin_glo_with_afrit with rev | a green crystal glowing before a dark throne | E | *Castle of Yeldenne and Glo*, *Glernaen*, *Horos* |
+| 1101 | glo | Glo | start | F:zin_horos_dead, S≥8: Horos's heart, given away; F:zin_glo_with_eindil; F:zin_eindil_restored: the bridge of the gods; F:zin_horos_sword_broken; divergences: F:zin_glo_sealed, F:zin_glo_dimmed (Glo never passes to Afrit, O3) | a green crystal glowing before a dark throne | E | *Castle of Yeldenne and Glo*, *Glernaen*, *Horos* |
 | 1102 | blue_sword | The Blue Sword of Horos (The Blue Sword) | start | F:zin_eindil_returned: struck into the earth; F:zin_volgan_body_destroyed; F:zin_horos_sword_broken: the shards | a huge blue blade across a stone table | E | *Horos Sword* |
 | 1103 | necklace | The Necklace of the Abyss | start | rev \| hub: Afrit's greatest relic; F:zin_afrit_lost_necklace, rev: torn from him; F:zin_eindil_wears_necklace: worn by the new king, its price unknown | a heavy dark necklace on black stone | M | *Necklace of the Abyss* |
 | 1104 | ring_of_doors | The Ring of Doors | rev \| hub | F:zin_afrit_lost_ring | cat | P | *Afrits Collected Artifacts* |
@@ -623,16 +625,18 @@ These entries carry the most risk; their texts follow these outlines.
 
 ### Files (all generated by the content builder; written through the shared atomic rewrite engine)
 
-No vanilla file is overridden.
+No vanilla file is overridden. Every game file below is staged by `tools/content/modules/chronicle.mjs` and written to the mod by `tools/content/apply.mts`.
 
 | Path | Content |
 | --- | --- |
-| `docs/design/chronicle/categories.json`, `entries/*.json`, `coverage.json`, `foreword.json`, `future_terms.json`, `entry.schema.json` | Source data (section 10) |
-| `docs/design/chronicle/source_index.json`, `canon_status.json` | Generated by `chronicle:index` and `chronicle:status` |
-| `docs/design/art/jobs/chronicle.json` | One job per plate (id `chronicle-<plate>`, size 1536 × 576, subject, or `reuse` with the catalog key and crop box); the theme sheet and the sigil sheet |
-| `tools/content/modules/chronicle.mjs` | Index, draft, check, emit, status |
+| `tools/content/data/chronicle/categories.json`, `entries/*.json`, `coverage.json`, `foreword.json`, `future_terms.json`, `entry.schema.json` | Source data (section 10) |
+| `docs/design/chronicle/source_index.json`, `canon_status.json` | Published by `node tools/content/chronicle.mjs index` and `status` |
+| `tools/content/art/chronicle-jobs.mjs` (new) | Writes `$ZIN_ART/jobs/chronicle-jobs.json`: one job per plate (id `chronicle-<plate>`, aspect 8:3, subject, or `reuse` with the catalog key and crop box), the theme sheet and the sigil sheet, for `tools/content/imagegen.mjs` |
+| `tools/content/modules/chronicle.mjs` | Check, emit; stages the plates and theme art from accepted sources with manifest lines in `art/source/chronicle_manifest.json` |
+| `tools/content/chronicle.mjs` | Author CLI: index, draft, check, status |
 | `tools/content/lib/fontmetrics.mjs`, `tools/content/lib/condlang.mjs` | Text measurement; unlock language |
-| `common/scripted_guis/zin_chronicle.txt` | `zin_chronicle` (window) and `zin_chr_button` (top-bar book button); `context_type = player_context`, `dirty = zin_ui_tick`, `ai_enabled = { always = no }` |
+| `tools/content/chronicle.test.mjs` | The builder checks of section 12 and their negative tests |
+| `common/scripted_guis/zin_chronicle.txt` | `zin_chronicle` (window) and `zin_chr_button` (interim book button); `context_type = player_context`, `dirty = zin_ui_tick`, `ai_enabled = { always = no }` |
 | `interface/zin_chronicle.gui` | `zin_chronicle_window`, `zin_chr_button_window` |
 | `interface/zin_chronicle.gfx` | Theme sprites, sigils, 138 plate sprites |
 | `common/scripted_triggers/zin_chronicle.txt` | `zin_chr_unlocked_<id>`, `zin_chr_part_<id>_<n>`, `zin_chr_heir_known`, `zin_chr_viewer_is_hub`, `zin_chr_cat_<n>_has_open` |
@@ -640,8 +644,10 @@ No vanilla file is overridden.
 | `common/scripted_localisation/zin_chronicle.txt` | `zin_chr_title`, `zin_chr_subtitle`, `zin_chr_body`, `zin_chr_plate`, `zin_chr_slot_<n>_title`, `zin_chr_link_<k>_label`, `zin_chr_cat_name`, `zin_chr_page_label`, `zin_chr_list_page_label` |
 | `localisation/english/zin_chronicle_l_english.yml` | All Chronicle text and UI strings |
 | `gfx/interface/zin/chronicle/` | Theme DDS files, `sigils/`, `plates/` |
-| `tests/ui/chronicle_*.json` | GUI scenarios (Acceptance) |
-| `tests/packages/chronicle.json` | `hoi4.package_check` manifest |
+| `tools/content/tests/ui/chronicle_*.json` | GUI scenarios (Acceptance) |
+| `tools/content/tests/packages/chronicle.json` | `hoi4.package_check` manifest |
+
+Until a flag's owning system is built, an entry or part behind that flag is still emitted: its trigger reads a global flag that is simply never set, so the entry stays hidden and no undefined name loads.
 
 ### Shared names this spec adds (to be registered in the contract additions)
 
@@ -657,10 +663,11 @@ Read, not owned: every story flag in the entry list, `global.zin_eindil_stage`, 
 
 ### Integration items for other specs
 
-1. [01_interface.md](01_interface.md): the Erdae bar's age label becomes `zin_chr_age_button`; `zin_ui_close_panels` also clears `zin_chr_open`; the Realm panel footer gets the Chronicle button; the bar's acceptance list adds the button.
-2. The world tick ([05_world_tension_and_endings.md](../03_gameplay/05_world_tension_and_endings.md)) calls `zin_chr_count_unread` once a month for every human player.
-3. [01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md): the bookmark description's last sentence points to the Chronicle.
+1. [01_interface.md](01_interface.md): done in that spec (age button, `zin_ui_close_panels` clears `zin_chr_open`, the Realm panel's Chronicle button, the stranger's name through `zin_chr_heir_known`).
+2. The world tick ([05_world_tension_and_endings.md](../03_gameplay/05_world_tension_and_endings.md)) calls `zin_chr_count_unread` once a month for every human player, with `zin_ui_refresh`.
+3. [03_main_menu_and_frontend.md](03_main_menu_and_frontend.md): done (the bookmark description's last sentence).
 4. [09_validation/01_acceptance.md](../09_validation/01_acceptance.md): add the Chronicle scenarios to G3 and the Linux case below to G4.
+5. `zin_loc_eindil` (contract additions, lore digest) switches on `zin_eindil_named`; this spec and the journey spec make the name public only at stage 8 or to the host. The Chronicle uses `zin_chr_heir_known`; the lore digest's key should use the same condition.
 
 ### Variables, events, game rules, defines
 
@@ -673,27 +680,29 @@ None. The AI never opens the Chronicle; `ai_enabled = { always = no }` on both s
 ## Acceptance
 
 1. **Count.** The data holds between 120 and 180 entries (180 at this spec), every category at least 5; the builder's schema, id and link checks pass.
-2. **Coverage.** `chronicle:check` reports every in-scope vault section cited or excluded with a reason, and no stale paragraph in a release build.
+2. **Coverage.** `node tools/content/chronicle.mjs check` reports every in-scope vault section cited or excluded with a reason, and no stale paragraph in a release build.
 3. **Open at the start.** In the scenario `chronicle_start_aenor` (Aenor viewer, 1 Thaw 1748, no story flags), exactly the 138 entries marked `start` are reachable through categories, slots and links; the End of the Age category button is hidden; no visible string in any reachable title, subtitle, page or link contains "Afrit", "Hidden Council", "Kingdom Behind the Throne", "Eindil", "the Man from the Ice", "Sevrin", "Ring of Doors" or "Glo" with "heart".
 4. **Hub.** In `chronicle_start_hub` (Worshipdom viewer, no flags) the 10 `rev | hub` entries are also reachable, and still nothing names Eindil.
 5. **Story unlocks.** For each flag in the entry list, a scenario setting the historical flags up to that point unlocks exactly the listed entries and parts, and no other. `chronicle_heir_hidden` (`zin_eindil_named` set, stage 5, viewer not the host) shows "The Man from the Ice" and no "Eindil"; the same with stage 8 shows "Eindil, Son of Ein".
 6. **Divergence.** `chronicle_king_survives` (`zin_golden_king_plot_exposed`, `zin_golden_king_survives`, no `zin_golden_king_dead`) shows entry 604 with the survival part and never entry 603; `chronicle_glo_sealed` shows the sealed part of Glo and no "carried by" text.
 7. **Secrecy scans.** The builder's implication check and the compiler's secrecy scan both pass; each negative test of section 12 makes the build fail.
 8. **Fit.** Every page measures at most 10 lines; every title and list title fits its box; `hoi4.gui_render` of `zin_chronicle_window` in the `long-text` state (the longest page, the longest title, the longest list title) shows no overflow at 1280 × 720, 1600 × 900, 1920 × 1080 and 2560 × 1440 at UI scale 1, and at 1920 × 1080 at UI scale 1.25.
-9. **Window.** `hoi4.gui_inspect` reports no missing sprite, font or localisation key for `zin_chronicle_window` and `zin_chr_button_window`; the window lies inside 1280 × 720 below y = 118; the overlay collision check with the vanilla `topbar` passes; Escape closes it; opening a mechanic panel closes it and opening it closes the panels.
+9. **Window.** `hoi4.gui_inspect` reports no missing sprite, font or localisation key for `zin_chronicle_window` and `zin_chr_button_window`; the window lies inside 1280 × 720 below y = 118; the overlay collision check with the vanilla `topbar` window passes; Escape closes it; opening a mechanic panel closes it and opening it closes the panels.
 10. **Encoding.** The localisation file has a BOM and only Windows-1252 characters; "Šodolôro" appears and "Šodolôrō" does not.
 11. **Art.** All 138 plates and the theme sprites resolve to DDS files of the declared sizes with accepted provenance; the art review checklist is recorded for each; no plate breaks the plate rules of section 8.
-12. **Validators.** `hoi4.script_validate` on the four generated `common/` files reports no syntax, scope or command error; `hoi4.package_check` with `tests/packages/chronicle.json` reports zero `absent` and `shadowed`.
+12. **Validators.** `hoi4.script_validate` on the four generated `common/` files reports no syntax, scope or command error; `hoi4.package_check` with `tools/content/tests/packages/chronicle.json` reports zero `absent` and `shadowed`.
 13. **Determinism.** Two builds are byte-identical.
-14. **Linux run.** As Aenor on 1 Thaw 1748: open the Chronicle from the book button, select every visible category, page through three multi-page entries, follow two links, close with Escape; run 60 days; open it again (the unread marker clears when the entries are read); save, reload, open it on the same page. No crash; no error-log line from a Chronicle file. Repeat the open-and-browse step as the Worshipdom.
+14. **Linux run** (G4). As Aenor on 1 Thaw 1748: open the Chronicle from the book button, select every visible category, page through three multi-page entries, follow two links, close with Escape; run 60 days; open it again (the unread marker clears when the entries are read); save, reload, open it on the same page. No crash; no `error.log` line from a Chronicle file. Repeat the open-and-browse step as the Worshipdom.
 
 ## Open questions
 
-1. **Hub exception.** The contract lets the Worshipdom read Afrit's name before the reveal, and this spec gives the hub its private record (10 entries). The assignment's wording is stricter ("no text may name Afrit before `zin_afrit_revealed`"). Keep the hub exception (proposed) or hide those entries from the hub too until the reveal?
-2. **When the heir's name is public.** The names spec switches the label at `zin_eindil_named`; the journey spec says courts learn the name only at stage 8. This spec uses stage 8 (or the host). The interface spec's `zin_loc_eindil` should use the same trigger, `zin_chr_heir_known`. Adopt it there?
-3. **Framing.** Is "the histories kept by the scholars of Parim and Selen" the right in-world voice, or should the Chronicle have no narrator?
-4. **Proposed figures.** The First and Second Age proposed characters (entries 721–725) appear as history. Keep them, or leave them out of the game until the owner adopts them?
-5. **Main menu.** A real main-menu codex is impossible; is the bookmark sentence and the loading-tip quotations an acceptable substitute?
-6. **Shortcut.** Should a key open the Chronicle (for example a free function key), given the density of vanilla hotkeys?
-7. **Spoiler rule.** Some players know the story already. A game rule that opens every entry would break the secret for everyone in a multiplayer game, so this spec has none. Confirm.
-8. **Gauge of completeness.** The footer shows "x of y read" over open entries only, so it never hints how much is still hidden. Should it show nothing instead?
+Each proceeds on the proposal; the owner may overrule.
+
+1. **Hub exception.** The hub reads its private record (10 entries) from the start, as the contract's secret rule allows for text shown only to Afrit's own country (proposed).
+2. **When the heir's name is public.** Stage 8 or the host (`zin_chr_heir_known`), as the journey spec says (proposed; integration item 5).
+3. **Framing.** "The histories kept by the scholars of Parim and Selen" is the in-world voice (proposed).
+4. **Proposed figures.** The First and Second Age proposed characters (entries 721–725) appear as history, labelled proposed in the data (proposed; PROGRAM §5).
+5. **Main menu.** A main-menu codex is impossible; the bookmark sentence and the loading-tip quotations are the substitute (proposed).
+6. **Shortcut.** No key opens the Chronicle (proposed).
+7. **Spoiler rule.** No game rule opens every entry, because it would break the secret for everyone in a multiplayer game (proposed).
+8. **Gauge of completeness.** The footer shows "x of y read" over open entries only, so it never hints how much is still hidden (proposed).

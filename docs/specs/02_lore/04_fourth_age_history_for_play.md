@@ -1,6 +1,6 @@
 # The Fourth Age as its peoples remember it
 
-**Status:** Draft. **Priority:** 2 (lore), 5 (events). **Phase:** 2 (text), 5 (events).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 2 (lore), 5 (events). **Phase:** 2 (text), 5 (events).
 
 ## Purpose
 
@@ -12,7 +12,7 @@ Memory is not truth. Most people never saw the hidden government; they remember 
 
 ### Sources
 
-Vault: *Fourth Age Chronology* (proposed dates), *The Campaign of 4A 1748*, *The Fourth Age of Erdae*, *Fourth Age Canon Register*, *Afrits Hidden Council*, *Houses of the First Light*, *The Lost Cause*, *Lantern Chain*, *The Third Age of Erdae*, *The Last Tithe*, *The First Age of Erdae*, *Grand Alliance*, *The Elven Refusal*, *Harion the Restorer (proposed)*, the figure notes and *Open Questions*.
+Vault: *Fourth Age Chronology* (proposed dates), *The Campaign of 4A 1748*, *The Fourth Age of Erdae*, *Fourth Age Canon Register*, *Afrits Hidden Council*, *Houses of the First Light*, *The Lost Cause*, *Lantern Chain*, *The Third Age of Erdae*, *The Last Tithe*, *The First Age of Erdae*, *Grand Alliance*, *The Elven Refusal*, *Harion the Restorer (proposed)*, the figure notes and *Open Questions*. Specs: [01_start_situation.md](01_start_situation.md), [03_names_and_terms.md](03_names_and_terms.md), [05_flavour_and_world.md](../06_events/05_flavour_and_world.md) (rules F1 and F2, scheduling), [01_golden_king_and_succession.md](../06_events/01_golden_king_and_succession.md) (event conventions C1–C12).
 
 ### Labels
 
@@ -26,7 +26,7 @@ Vault: *Fourth Age Chronology* (proposed dates), *The Campaign of 4A 1748*, *The
 - The Golden King is a famously poor late king who sells offices and founded the Lost Cause (E).
 - The West remembers Aenor's First Age conquests (E). The elves refused to fight for Aenor after Edran's folly (E). Volgan was banished at Dardan and later restored (E).
 
-Everything dated below comes from the proposed chronology and is **P** unless marked.
+Everything dated below comes from the proposed chronology and is **P** unless marked. "Seventeen centuries of peace" is the vault's proposed public phrase (*The Campaign of 4A 1748*); only "more than a thousand years" is established.
 
 ## Design
 
@@ -130,7 +130,7 @@ Each region lists what its people remember of the three eras, how they say it, a
 
 **How it is told:** hard winters and harder neighbours. The castle is a legend told at fires; nobody has visited it in living memory (P).
 
-**Never say:** anything about a sleeper in the ice (see open questions); that Glo is Horos's heart.
+**Never say:** anything about a sleeper in the ice (start spec, open question 1); that Glo is Horos's heart (before `zin_horos_dead`).
 
 #### West Lands
 
@@ -142,7 +142,7 @@ Each region lists what its people remember of the three eras, how they say it, a
 | Blessed Centuries to Golden King | The Gunwaith–Girdon wars from about 4A 1702; both sides court and resent Aenoran gold | P |
 | Golden King | The Truce of the Grey Ford (4A 1745), the first quiet in a generation | P |
 
-**How it is told:** freedom kept against Aenor; a weary peace at home. Kradlon's workers and Corogon's traders complain of Aenoran tariffs.
+**How it is told:** freedom kept against Aenor; a weary peace at home. Kradlon's guildsmen and Corogon's traders complain of Aenoran tariffs.
 
 **Never say:** that the West will cross the sea; which western rulers will make a stranger their war-king (O).
 
@@ -177,7 +177,7 @@ Each region lists what its people remember of the three eras, how they say it, a
 
 **How it is told:** in Mirolon, watchfulness and bitterness at the north's deafness. In Volgan's realm, patience: the kingdoms of men always divide (P voice).
 
-**Never say:** what becomes of Volgan (O); who rules the Nether.
+**Never say:** what becomes of Volgan (O); who the King of Demons is.
 
 #### Zol's Mistake and its shores
 
@@ -232,7 +232,7 @@ Shown **only** to the Worshipdom. This is the one place where the Kingdom Behind
 | --- | --- |
 | End of the Third Age | Afrit shields the people at Elzon's fall and is hailed the Deliverer (E) |
 | 4A 1 | The Deliverer is acclaimed publicly under the name Aurevan (P name) |
-| About 4A 1100 | The Hidden Council takes its four seats: administration, worship, foreign agents, artifacts (P) |
+| About 4A 1100 | The Hidden Council takes its four seats: Seals (administration), Censers (worship), Whispers (foreign agents), Relics (artifacts) (P) |
 | 4A 1140 to 1400 | Priests teach princes; councillors rise by the god's favour; kings reign, the Council governs (E direction) |
 | About 4A 1300 | The eastern branch begins its courtship of East Lands and South Lands courts (E direction, P date) |
 | About 4A 1520 | The Zilin hermitage becomes the Worshipdom (P) |
@@ -242,48 +242,51 @@ Shown **only** to the Worshipdom. This is the one place where the Kingdom Behind
 
 ### Flavour events
 
-Namespace `zin_lore` (opening events use 1 to 20; see [01_start_situation.md](01_start_situation.md)). Every event is short: a title, one to three sentences, two options with small effects. All fire once per country. Dates are windows within 4A 1748 and early 4A 1749 unless marked.
+Namespace `zin_lore` (ids 1–20 belong to [01_start_situation.md](01_start_situation.md); 300–499 to [05_flavour_and_world.md](../06_events/05_flavour_and_world.md)). Every event is short: a title, one to three sentences, two options with small effects. All fire once per country. Dates are windows within 4A 1748 and early 4A 1749 unless marked. The flavour spec's rules hold here: **F1** (flavour never sets a story flag, starts a war or war goal, changes `zin_gathering_dark`, or moves a mechanic's main variable by more than 2 points) and **F2** (omens are not prophecies). Mechanic variables change only through their owners' scripted effects (C12); the amounts below are within F1.
 
-| Id | Title (P) | Who | Window | Content | Options (design targets) |
-| --- | --- | --- | --- | --- | --- |
-| `zin_lore.101` | The Jubilee Remembered | Aenor | Highsun 1748 | A feast for the peace of seventeen centuries | Spend (−50 political power, +5% stability for 180 days) / A modest feast (+25 political power) |
-| `zin_lore.102` | The Price of a Seat | Aenor | any | A merchant offers gold for a judgeship | Sell (+50 political power; Aenor mechanic: court corruption up) / Refuse (−25 political power) |
-| `zin_lore.103` | The Lost Cause Parades | Aenor | Sowing 1748 | The league marches through Parim behind the King | Pay for it (−75 political power, +5% war support) / Let the frontier keep the money (Lost Cause frontier strength up through the Aenor mechanic) |
-| `zin_lore.104` | A Joke at Court | Aenor | any | A courtier mocks the Mirolonese warning of 1736 | Laugh with him (nothing) / Ask the Marshal to read the old report (+5% army intel for 180 days) |
-| `zin_lore.105` | The Restorer's Day | Selen | Thaw 1748 | Selen honours Harion as its son | Honour Selen first (Selen's Concord loyalty down a little; +5% stability) / Honour the crown (+loyalty) |
-| `zin_lore.106` | Songs of the Unbinding | any Middle Lands country | any | Ploughmen sing of the wizard who lifted the curse | Flavour; +2% stability |
-| `zin_lore.107` | Customs at the Wall | Kingson | any | Elven traders refuse a new toll | Waive it (+opinion from the Magical Forest) / Keep it (+25 political power) |
-| `zin_lore.110` | Edran's Folly | Magical Forest | any | Elders recall the Dead Lands campaign | Reaffirm the old refusal / Remember that Erdae is shared (small stability either way) |
-| `zin_lore.111` | Wings over Dragon Mountain | Magical Forest, Herrodon, Andos Enda, Nolorim | any | Dragons fly at dusk | Flavour; +5 army experience |
-| `zin_lore.112` | Pilgrims at Zilin | Worshipdom | monthly chance, first year | A caravan of pilgrims from a far court | Bless them (+opinion from their country) / Keep the gifts (+political power) |
-| `zin_lore.120` | The Toll of 1716 | Lerendor | Rainwake 1748 | The anniversary of the insult | Remember it (+war support, strait standing down) / Let it rest (+stability) |
-| `zin_lore.121` | Two Crowns, One Kingdom | Lerendor | Goldfield 1748 | The festival of the union | Flavour; +2% stability |
-| `zin_lore.122` | The Treaty Read Aloud | Lerendor | Harvest 1748 | The treaty is read in Sonargur as custom demands | Read it with honour (strait standing up) / Read it with a smirk (strait standing down, +war support) |
-| `zin_lore.130` | The Winter Crown | Coldor | Deepwinter 1749 | The anniversary of 4A 850; Isengard sneers | Feast (+stability) / Parade on the border (+war support, Isengard opinion down) |
-| `zin_lore.131` | The Silent Castle | Coldor, Horidor, Fearno, Yeti Lands, Titanos | any | A trader saw a green light in the north and turned back | Flavour; nothing |
-| `zin_lore.140` | Truce Day | Gunwaith, Girdon | Thaw 1748 | Third anniversary of the Grey Ford | Keep the feast together (opinion up) / Feast alone (opinion down) |
-| `zin_lore.141` | Aenoran Tariffs | any West Lands country | any | Parim raises a duty on western grain | Grumble (opinion of Aenor down) / Pay (−political power) |
-| `zin_lore.142` | Taryn's Song | Gunwaith | any | A bard sings of Gunwaith's banner at Dardan | Flavour; +2% war support |
-| `zin_lore.150` | Charts for Sale | Adel, Pollos, Raerby, Nondondor | any | A crown buys the new Pupor charts | Sell (+political power) / Keep them (+5 navy experience) |
-| `zin_lore.160` | Raids on the Border | Goldoroth, Dondor | any | A border raid, no war | Retaliate quietly (+war support, opinion down) / Pay blood-price (−political power) |
-| `zin_lore.161` | Gifts from the South | Bordon, Dreson, Dulundur, Troll Forest, Blackton | any | A stranger from the Dead Lands offers gifts | Refuse (+stability) / Accept (Volgan mechanic hook) |
-| `zin_lore.170` | What the Scouts Saw | Mirolon | any | Dust columns on the southern road | Send word to Parim (+opinion of Aenor; nothing else) / Fortify (+fort in a border state) |
-| `zin_lore.171` | Behind the Storms | Volgan | Thaw 1748 | The hosts drill where no ship can see | Flavour; Volgan mechanic: dominion strength up |
-| `zin_lore.180` | Black Ships | Lerendor, Coldor, Eekedor and every North Lands, Dark Lands and Cold Lands country with a coast on the Ocean of Zol | any | Fishermen tell of black ships | Disbelieve (nothing) / Send a boat (it does not return; −1 small ship if available, else flavour) |
-| `zin_lore.190` | The Caravan Price War | Noris, Stabilo | any | The other side undercuts the salt road | Undercut back (+trade opinion, rival opinion down) / Hold the price (+political power) |
-| `zin_lore.191` | The Deliverer's Generous Friends | any East Lands or South Lands country with `zin_footholds` ≥ 2 | any | Friends of the temples offer a loan for a hospital | Accept (+stability; Afrit mechanic: footholds up) / Decline (nothing) |
-| `zin_lore.200` | The Reef of Voices | Islands of the South countries | any | The fisherfolk will not cross the reef at night | Flavour |
-| `zin_lore.201` | The Name in the Shrine | the country holding the shrine site | any | Priests chant a name none understands: Aen | Flavour; +2% stability |
-| `zin_lore.210` | Lorien's Audience | Gala Elves | any | The King speaks of Dardan to young elves | Flavour; +5 army experience |
-| `zin_lore.211` | Carry It to Gala | Lands of the Sun and Islands of the South countries | any | An old tale too strange to explain is sent south | Flavour |
-| `zin_lore.220` | The Ledger of Kings | Worshipdom only | Thaw 1748 | The Council's record, as above; names Afrit | Flavour; no effect |
-| `zin_lore.221` | The Decision of 4A 1746 | Worshipdom only | Rainwake 1748 | The Council confirms its judgement of the Golden King | Hands off to the Aenor and Afrit mechanics; no history is closed |
+| Id | Title (P) | Who | Window | Content | Options (design targets) | Picture |
+| --- | --- | --- | --- | --- | --- | --- |
+| `zin_lore.101` | The Jubilee Remembered | Aenor | Highsun 1748 | A feast for the peace of seventeen centuries | Spend (−50 political power; timed idea `zin_lore_jubilee_feast`, `stability_factor = 0.05`, 180 days) / A modest feast (+25 political power) | `court_feast` |
+| `zin_lore.102` | The Price of a Seat | Aenor | Thaw 1748 to Ironfrost 1749 | A merchant offers gold for a judgeship | Sell (+50 political power; `zin_aenor_add_court_corruption` +2) / Refuse (−25 political power) | `golden_court` |
+| `zin_lore.103` | The Lost Cause Parades | Aenor | Sowing 1748 | The league marches through Parim behind the King | Pay for it (−75 political power; `war_support` +0.05) / Let the frontier keep the money (`zin_aenor_add_lost_cause` +2) | `lost_cause_triumph` |
+| `zin_lore.104` | A Joke at Court | Aenor | Thaw 1748 to Ironfrost 1749 | A courtier mocks the Mirolonese warning of 1736 | Laugh with him (nothing) / Ask the Marshal to read the old report (timed idea `zin_lore_old_report`, `army_intel_factor = 0.05`, 180 days) | `generic_court` |
+| `zin_lore.105` | The Restorer's Day | Selen | Thaw 1748 | Selen honours Harion as its son | Honour Selen first (`zin_aenor_add_concord_loyalty` −2 on Selen; stability +0.05) / Honour the crown (`zin_aenor_add_concord_loyalty` +2 on Selen) | `generic_peace` |
+| `zin_lore.106` | Songs of the Unbinding | Every Middle Lands country | Thaw 1748 to Ironfrost 1749, random share 30% | Ploughmen sing of the wizard who lifted the curse | One option; stability +0.02 | `generic_peace` |
+| `zin_lore.107` | Customs at the Wall | Kingson | Thaw 1748 to Ironfrost 1749 | Elven traders refuse a new toll | Waive it (+10 opinion from the Magical Forest; `zin_elves_add_wall_grievance` −10) / Keep it (+25 political power; `zin_elves_add_wall_grievance` +10) (the elves spec's grievance effect, called in each option) | `generic_court` |
+| `zin_lore.110` | Edran's Folly | Magical Forest | Thaw 1748 to Ironfrost 1749 | Elders recall the Dead Lands campaign | Reaffirm the old refusal (stability +0.02) / Remember that Erdae is shared (stability +0.01, +10 political power) | `generic_wilds` |
+| `zin_lore.111` | Wings over Dragon Mountain | Magical Forest, Herrodon, Andos Enda, Nolorim | Thaw 1748 to Ironfrost 1749 | Dragons fly at dusk | One option; army experience +5 | `generic_wilds` |
+| `zin_lore.112` | Pilgrims at Zilin | Worshipdom | first 365 days, up to six times | A caravan of pilgrims from a far court | Bless them (+10 opinion from a random country with `zin_footholds` ≥ 1) / Keep the gifts (+15 political power) | `hermitage` |
+| `zin_lore.120` | The Toll of 1716 | Lerendor | Rainwake 1748 | The anniversary of the insult | Remember it (`war_support` +0.03; `zin_leren_add_strait_standing` −2) / Let it rest (stability +0.02) | `strait_toll` |
+| `zin_lore.121` | Two Crowns, One Kingdom | Lerendor | Goldfield 1748 | The festival of the union | One option; stability +0.02 | `leren_envoys` |
+| `zin_lore.122` | The Treaty Read Aloud | Lerendor | Harvest 1748 | The treaty is read in Sonargur as custom demands | Read it with honour (`zin_leren_add_strait_standing` +2) / Read it with a smirk (`zin_leren_add_strait_standing` −2; `war_support` +0.02) | `leren_envoys` |
+| `zin_lore.130` | The Winter Crown | Coldor | Deepwinter 1749 | The anniversary of 4A 850; Isengard sneers | Feast (stability +0.02) / Parade on the border (`war_support` +0.03; Isengard's opinion of Coldor −10) | `generic_court` |
+| `zin_lore.131` | The Silent Castle | Coldor, Horidor, Fearno, Yeti Lands, Titanos | Thaw 1748 to Ironfrost 1749 | A trader saw a green light in the north and turned back | One option; nothing | `generic_wilds` |
+| `zin_lore.140` | Truce Day | Gunwaith, Girdon | Thaw 1748 | Third anniversary of the Grey Ford | Keep the feast together (+10 opinion both ways) / Feast alone (−10 opinion both ways) | `grey_ford_truce` |
+| `zin_lore.141` | Aenoran Tariffs | Every West Lands country | Thaw 1748 to Ironfrost 1749, random share 50% | Parim raises a duty on western grain | Grumble (−10 opinion of Aenor; `zin_west_add_grudge` +3) / Pay (−25 political power; `zin_west_add_grudge` +1) (the Western Crossing spec's grudge effect, called in each option) | `generic_sea` |
+| `zin_lore.142` | Taryn's Song | Gunwaith | Thaw 1748 to Ironfrost 1749 | A bard sings of Gunwaith's banner at Dardan | One option; `war_support` +0.02 | `generic_court` |
+| `zin_lore.150` | Charts for Sale | Adel, Pollos, Raerby, Nondondor | Thaw 1748 to Ironfrost 1749 | A crown buys the new Pupor charts | Sell (+25 political power) / Keep them (navy experience +5) | `generic_sea` |
+| `zin_lore.160` | Raids on the Border | Goldoroth, Dondor | Thaw 1748 to Ironfrost 1749 | A border raid, no war | Retaliate quietly (`war_support` +0.03; −10 opinion both ways) / Pay blood-price (−25 political power) | `generic_war` |
+| `zin_lore.161` | Gifts from the South | Bordon, Dreson, Dulundur, Troll Forest, Blackton | Thaw 1748 to Ironfrost 1749 | A stranger from the Dead Lands offers gifts | Refuse (stability +0.02) / Accept (+25 political power; country flag `zin_dark_took_southern_gifts`, read by the Dark Lands and Volgan specs) | `southern_warning` |
+| `zin_lore.170` | What the Scouts Saw | Mirolon | Thaw 1748 to Ironfrost 1749 | Dust columns on the southern road | Send word to Parim (+10 opinion of Aenor; nothing else) / Fortify (one stone fort level in a border province of its capital state: `add_building_construction = { type = bunker level = 1 province = { all_provinces = yes limit_to_border = yes } instant_build = yes }`) | `mirolon_passes` |
+| `zin_lore.171` | Behind the Storms | Volgan | Thaw 1748 | The hosts drill where no ship can see | One option; `zin_volgan_add_dominion_strength` +1 | `dead_lands_storm` |
+| `zin_lore.180` | Black Ships | Every country with a coast on the Ocean of Zol (`zin_is_zol_coast_country`, the flavour spec's generated trigger) | Thaw 1748 to Ironfrost 1749, random share 50% | Fishermen tell of black ships | Disbelieve (nothing) / Send a boat (it does not return: −1 convoy if the country has one, else nothing) | `black_ships_tale` |
+| `zin_lore.190` | The Caravan Price War | Noris, Stabilo | Thaw 1748 to Ironfrost 1749 | The other side undercuts the salt road | Undercut back (+15 political power; −10 opinion both ways) / Hold the price (+25 political power) | `generic_peace` |
+| `zin_lore.200` | The Reef of Voices | Every Islands of the South country | Thaw 1748 to Ironfrost 1749, random share 50% | The fisherfolk will not cross the reef at night | One option; nothing | `generic_sea` |
+| `zin_lore.201` | The Name in the Shrine | Enhis Is Rond (the proposed keeper of the shrine; the regional tree's site key `the_shrine_beneath_the_tide`) | Thaw 1748 to Ironfrost 1749 | Priests chant a name none understands: Aen | One option; stability +0.02 | `generic_peace` |
+| `zin_lore.210` | Lorien's Audience | Gala Elves | Thaw 1748 to Ironfrost 1749 | The King speaks of Dardan to young elves | One option; army experience +5 | `gala_court` |
+| `zin_lore.211` | Carry It to Gala | Every Lands of the Sun and Islands of the South country except the Gala Elves, random share 30% | Thaw 1748 to Ironfrost 1749 | An old tale too strange to explain is sent south | One option; nothing | `generic_sea` |
+| `zin_lore.220` | The Ledger of Kings | Worshipdom only | 1 Thaw 1748 (day 2) | The Council's record, as above; names Afrit | One option; no effect | `council_chamber` |
+| `zin_lore.221` | The Decision of 4A 1746 | Worshipdom only | Rainwake 1748 | The Council confirms its judgement of the Golden King | One option; hands over to the Afrit spec's `zin_afrit.10`; no history is closed | `council_chamber` |
 
-Effects named as "mechanic" call the scripted effects that the owning mechanic spec defines; this spec does not name them.
+"Random share" means the event is scheduled for that share of the eligible countries (`random_list` in the scheduler), as in the flavour spec. Picture keys are the event pictures already in the game (`GFX_zin_evt_<key>`, presentation module). None of them is gated except `council_chamber` (hub-only events), which only the Worshipdom's `.220` and `.221` use; the gated `cold_shore`, `eastern_court` and `storm_wreck` are not used before their flags (icon catalog rule 4, decision E5).
+
+The id `zin_lore.191` (a temple loan outside the East Lands) is retired by decision O4: temple loans are the eastern kings spec's `zin_east.30` alone. The id is not reused.
+
+Every event sets `timeout_days = 30` and a timed-out event takes its first option (decision E2); these flavour events decide no checkpoint, so their option order stays as tabled. Owner effects called with an argument (for example `zin_west_add_grudge` +3) compile to the temporary variable `zin_arg_value` set before the call (decision E1).
 
 ### Focus and spirit text hooks
 
-Memories each major tree should draw on for focus names and descriptions. Names are proposals.
+Memories each major tree should draw on for focus names and descriptions. Names are proposals; the focus tree specs choose.
 
 | Tree | Memories to use | Example focus names (P) |
 | --- | --- | --- |
@@ -302,38 +305,42 @@ Memories each major tree should draw on for focus names and descriptions. Names 
 
 ## Implementation
 
-| Path | What |
-| --- | --- |
-| `docs/design/lore_events.json` (new) | The flavour events above as data for the content builder (title, desc, picture, options, who, window) |
-| `events/zin_lore.txt` | Generated; namespace `zin_lore` |
-| `localisation/english/zin_lore_l_english.yml` | All text |
-| `common/scripted_effects/zin_lore.txt` | `zin_lore_schedule_flavour`: schedules each country's flavour events |
+### Builder module and data
 
-**Scheduling.** The compiler allows trigger-and-MTTH events only in mechanics-owned files, so flavour events are fired by effects. A hidden event `zin_lore.100` runs from `on_startup` for every country. It calls `zin_lore_schedule_flavour`, which, for each event in the table that matches the country, fires `country_event` with `days` set inside the event's window and `random_days` to spread them. `zin_lore.112` (pilgrims) reschedules itself up to six times in the first year. Each event sets a country flag `zin_lore_seen_<n>` so it fires once.
+All `zin_lore` events are written by one new content-builder module, `tools/content/modules/events_zin_lore.mjs`, which serves this spec, the start spec (ids 1–20) and the flavour spec (300–499).
 
-**Pictures.** Each event names a picture key from the event picture catalogue (art phase). Until the art exists, the builder falls back to a generic Erdae picture with a warning.
+| Path | Kind | What |
+| --- | --- | --- |
+| `tools/content/data/lore_events.json` (new) | builder data | Every `zin_lore` event as data: id, title, description, options with their effects (owner effects by name and argument), recipients (country names, roster groups or a trigger), window (engine dates at the standard pace), random share, picture key, AI weights |
+| `events/zin_lore.txt` | generated | Namespace `zin_lore` |
+| `localisation/english/zin_lore_l_english.yml` | generated | All text |
+| `common/scripted_effects/zin_lore.txt` | generated | `zin_lore_schedule_flavour` |
+| `common/ideas/zin_lore.txt` | generated | The timed ideas `zin_lore_jubilee_feast` and `zin_lore_old_report` |
 
-**Text rules.** Every text is checked by the secret scan ([03_names_and_terms.md](03_names_and_terms.md)). Events `zin_lore.220` and `zin_lore.221` carry `is_triggered_only` and fire only for the Worshipdom; the compiler whitelists them for the name Afrit by their scope.
+**Scheduling.** Events in `zin_lore` are fired by effects, never by `trigger` and `mean_time_to_happen` (convention C5). The hidden event `zin_lore.100` runs from `on_startup` for every country (`common/on_actions/zin_lore.txt`). It fires the opening event for human players and calls `zin_lore_schedule_flavour`, which, for each event whose recipient test matches ROOT (and whose random share draws it), fires `country_event = { id = zin_lore.<n> days = <window start − start date> random_days = <window length in days> }`. `zin_lore.112` reschedules itself 40 to 80 days later, up to six times in the first year (country variable `zin_lore_pilgrims`). Each event sets the country flag `zin_lore_seen_<n>` and does nothing if it is already set. Story pace: the builder writes the windows for each `zin_story_pace` value (V4) and the scheduler reads the one in force.
 
-**Dates in text.** Years are written "4A 1716"; months by Erdae names.
+**Text rules.** Every text passes the names spec's checks T1–T5. `zin_lore.220` and `zin_lore.221` fire only for the Worshipdom; `secret_terms.json` lists them, so the name Afrit passes check T2 there. Years are written "4A 1716"; months by Erdae names.
 
 ## AI
 
-- AI options follow the cautious, in-character choice: Aenor's AI sells the office (`ai_chance` 70) and pays for the parade (60); Lerendor's AI remembers the toll (60); Coldor's AI parades on the border (50); Mirolon's AI fortifies (80); Dark Lands holds refuse Volgan's gifts (70) unless the Volgan mechanic raises the chance.
-- No AI option starts a war or a war goal.
+- AI options follow the cautious, in-character choice (`ai_chance` weights): Aenor's AI sells the office (70) and pays for the parade (60); Lerendor's AI remembers the toll (60); Coldor's AI parades on the border (50); Mirolon's AI fortifies (80); Dark Lands holds refuse Volgan's gifts (70) unless the Volgan mechanic's `zin_volgan_court_dark_lands` has raised the chance; every other two-option event weights its first option 60.
+- No AI option starts a war or a war goal (F1).
 
 ## Acceptance
 
-1. Every event in the table exists, has localisation, fires only for the listed countries, and fires once.
-2. A 400-day observer run with all AI shows each scheduled event firing in its window, and no war.
-3. The secret scan passes: only `zin_lore.220` and `zin_lore.221` mention Afrit or the Council, and only in the Worshipdom's scope.
-4. No event text names Eindil, a sleeper in the ice, Zol's administrator, the King of Demons, Dardan's location, or the Gala–Sunhot relationship.
-5. Every date in event text matches the proposed chronology.
+1. Every event in the table exists, has localisation and a picture, fires only for the listed countries, and fires at most once per country (builder test over `lore_events.json` and the staged events).
+2. A 400-day observer run in the Linux run shows each scheduled event firing in its window, and no war starts.
+3. Check T2 passes: only `zin_lore.2`, `.220` and `.221` mention Afrit or the Council, and only in the Worshipdom's scope.
+4. No event text names Eindil, a sleeper in the ice, Zol's administrator, the King of Demons, Dardan's location, or the Gala–Sunhot relationship (phrase scan).
+5. Every year in event text matches the proposed chronology (builder test against a year list from *Fourth Age Chronology*).
+6. No `zin_lore` event in this table changes `zin_gathering_dark`, sets a contract flag, or moves a mechanic variable by more than 2 (builder test over the option effects).
+7. No staged file defines or fires `zin_lore.191`; `zin_lore.107` calls `zin_elves_add_wall_grievance` and `zin_lore.141` calls `zin_west_add_grudge` in both options; every `zin_lore` event sets `timeout_days = 30`; no event uses a gated picture before its gate (builder test).
 
 ## Open questions
 
-1. May the Cold Lands carry a legend of "a man in the ice" from the start, as foreshadowing? This spec leaves it out.
-2. Is "the Blessed Centuries" a good public name for the Kingdom Behind the Throne era?
-3. Should the Worshipdom's private record also be available to Aenor's player after the reveal, as a "what really happened" chronicle?
-4. Are the First Age proposals Taryn of Gunwaith and Senra of Triton's Islands welcome as remembered heroes in flavour text?
-5. Is "seventeen centuries of peace" acceptable in feasts and focus text, given that only "more than a thousand years" is established?
+All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md).
+
+1. Is "the Blessed Centuries" a good public name for the Kingdom Behind the Throne era? **Proposal, in use:** yes (lore digest question 16 covers the public labels).
+2. Are Taryn of Gunwaith and Senra of Triton's Islands welcome as remembered heroes? **Proposal, in use:** yes (lore digest question 17).
+
+Settled elsewhere: no foreshadowing of a sleeper in the ice (start spec, open question 1); "seventeen centuries" is the public phrase (start spec, open question 3); the Worshipdom's private record opens to Aenor's player after `zin_afrit_revealed` through the Chronicle of Erdae codex ([07_interface/04_chronicle_codex.md](../07_interface/04_chronicle_codex.md); owner answer: yes); `zin_lore.191` is retired (O4).

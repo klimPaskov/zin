@@ -41,3 +41,14 @@ These rules apply to every spec and every implementation in ZIN. Where a spec ne
 - One topic per file. Start with a status line, then purpose, lore basis, design, implementation, acceptance and open questions.
 - Numbers in a spec are design targets. Implementation may tune them and records the final values in the spec.
 - Cross-link related specs with relative links.
+
+### Status
+
+A spec's status line is one of **Draft**, **Ready**, **In progress** (being implemented), **Done** (implemented and verified) or **Superseded** (with a link to what replaced it). A spec is **Ready** when an implementer can build it without asking anyone:
+
+1. **Consistent.** It agrees with [INTEGRATION_DECISIONS.md](INTEGRATION_DECISIONS.md), the shared contract and its additions, these conventions, and every spec it links to. Where it disagreed, it now says what the decision says.
+2. **Canon-safe.** Every fact matches the lore vault. Every new name, date or mechanism is labelled *proposed*. Nothing closes a question the vault leaves open.
+3. **Closed.** No TODO, TBD or "to decide". Each open question either proceeds on a labelled proposal or, if only the owner can answer it, is listed in [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) with the proposal the work proceeds on.
+4. **Buildable.** The implementation section names the builder module or politics step that writes each file, the data it reads, and the identifiers it creates, matching how `tools/content` works today. Engine keys, modifiers, triggers and effects it names exist in game version 1.19.3.
+5. **Testable.** The acceptance section lists checks a build test or the isolated Linux run can decide.
+6. **Current.** It reflects what is already in the game (for example, the stage-1 vanilla removal of 19 October 2026: only ZIN and dynamic tags exist, single-country vanilla files are silenced).

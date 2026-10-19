@@ -1,6 +1,6 @@
 # East Lands Regional Trees
 
-**Status:** Draft. **Priority:** 6. **Phase:** 6 (tier B).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 6. **Phase:** 6 (tier B).
 
 ## Purpose
 
@@ -26,15 +26,16 @@ This spec defines the nine tier B focus trees of the East Lands: **Alerhia, Miae
 
 - **The peaceful start.** On 1 Thaw 4A 1748 every available focus is about the court, roads, wells, temples, envoys, mines, ships or drill. No focus available at start creates a war, a war goal or a claim. War content waits for story flags (`zin_war_of_last_crowns`, `zin_eastern_invasion`, `zin_east_turns_west`, `zin_afrit_king_of_east`, `zin_afrit_returned`, `zin_afrit_dead`, `zin_eindil_returned`, `zin_zol_rising`, `zin_volgan_marches`) or for the mechanic's junction `zin_east_question_open`.
 - **The secret.** Before `zin_afrit_revealed`, no text names Afrit, the Hidden Council or the eastern branch. The Deliverer is `[zin_loc_deliverer]`; his people are "the temples" or "the Deliverer's generous friends".
-- **Shorthands** are those of the shared tree: **Lean ±n**, **Footholds ±n**, **Debt ±n**, **Drift X +n**, **Inf +n road on Noris/Stabilo** (= `for_country Noris: call zin_east_add_road_influence(road = road, value = n)`), `@rift_east`, `@north_coast`; days are 70 unless a focus is marked 35d.
+- **Shorthands** are those of the shared tree: **Lean ±n**, **Footholds ±n**, **Debt ±n**, **Drift X +n**, **Inf +n road on Noris/Stabilo** (= `for_country Noris: call zin_east_add_road_influence(road = road, value = n)`), `@rift_east`, `@zol_coast` (site key `ocean_of_zol_coast`: a random owned state with `zin_is_site_ocean_of_zol_coast`, decision F5); days are 70 unless a focus is marked 35d.
 - **Copied modules.** A tree that "copies E4" takes that module of `shared_east_lands` whole: the same keys (ids become `zin_regional_<name>_<key>`), the same effects, prerequisites inside the module unchanged, `allow_branch` dropped unless stated. The module's root sits where this spec says; every other focus keeps its offset from the root as in the shared tree. The root's outside prerequisite is replaced as stated. The module's spirits are re-declared in the tree's idea file under the tree's prefix (`zin_regional_<name>_<key>`) with the shared tree's modifiers. Events of a module are referenced by full id (`zin_east.35`, `zin_shared_east_lands.n`).
 - **E9 in every tree.** Every tree except Alerhia's places E9 (The Question of the East, 11 focuses) with its root at (14,6). Alerhia also places it at (14,6). Rows 6 to 9 of columns 9 to 18 belong to E9 alone.
+- **Spirit keys** never repeat a focus key of the same tree (focus and idea localisation keys would collide); where a spirit shares its focus's name the key ends in `_spirit`. A spirit takes the icon of the focus that adds it.
 - **Rulers** keep the character id `<TAG>_zin_ruler`; names come from the characters spec ([../../02_lore/02_characters.md](../../02_lore/02_characters.md)); traits reuse existing ones. New proper names in text come from `zin_name_<key>` keys.
 - **Events** use the namespace `zin_regional_<name>`; all are effect-triggered.
 
 ### Notation of the branch lists
 
-Each focus is one line: `key` **Name** (x,y; ← prerequisites; ✕ exclusive with): effects. AI: weight. `a / b` is "a or b"; `a + b` is "a and b". Key focuses are repeated in each tree's key table with fuller detail.
+Each focus is one line: `key` **Name** (x,y; ← prerequisites; ✕ exclusive with; days) `icon`: effects. AI: weight. `a / b` is "a or b"; `a + b` is "a and b". Prerequisites and exclusives name exact focus keys of the same tree, and every exclusive is written on both focuses. The icon is a catalog key ([../02_icon_catalog.md](../02_icon_catalog.md), sprite `GFX_focus_zin_<key>`); copied modules keep the shared tree's icons. A line that says "key focus" takes its effects and AI from the tree's key-focus table; days, icon and position stay on the line.
 
 ### Overview
 
@@ -83,48 +84,48 @@ King Alerhan III (`<Alerhia>_zin_ruler`, characters spec), Wild stance `zin_wild
 
 **A. The Rift Crown.** The court, the desert lords and the mountain marches.
 
-- `the_rift_crown` **The Rift Crown** (2,0): political_power 50; stability 0.03; event regional_alerhia.1. AI 100.
-- `court_of_alerhan` **The Court of King Alerhan** (1,1; ← the_rift_crown): add_spirit court_of_alerhan. AI 40.
-- `lords_of_the_desert_half` **Lords of the Desert Half** (3,1; ← the_rift_crown): manpower 2000; stability 0.02. AI 30.
-- `the_kings_road_tax` **The King's Road Tax** (0,2; ← court_of_alerhan): political_power 75; building industrial_complex 1 @capital. AI 25.
-- `the_mountain_marches` **The Mountain Marches** (2,2; ← court_of_alerhan / lords_of_the_desert_half): building bunker 1 @capital; building bunker 1 @random_owned. AI 15.
-- `the_greatest_court_of_the_east` **The Greatest Court of the East** (1,3; ← the_kings_road_tax / the_mountain_marches): swap_spirit court_of_alerhan → greatest_court; political_power 50. AI 25.
+- `the_rift_crown` **The Rift Crown** (2,0) `crown_iron`: political_power 50; stability 0.03; event regional_alerhia.1. AI 100.
+- `court_of_alerhan` **The Court of King Alerhan** (1,1; ← the_rift_crown) `throne_gold`: add_spirit court_of_alerhan_spirit. AI 40.
+- `lords_of_the_desert_half` **Lords of the Desert Half** (3,1; ← the_rift_crown) `camel_rider`: manpower 2000; stability 0.02. AI 30.
+- `the_kings_road_tax` **The King's Road Tax** (0,2; ← court_of_alerhan) `toll_house`: political_power 75; building industrial_complex 1 @capital. AI 25.
+- `the_mountain_marches` **The Mountain Marches** (2,2; ← court_of_alerhan / lords_of_the_desert_half) `pass_fort`: building bunker 1 @capital; building bunker 1 @random_owned. AI 15.
+- `the_greatest_court_of_the_east` **The Greatest Court of the East** (1,3; ← the_kings_road_tax / the_mountain_marches) `crown_gold`: swap_spirit court_of_alerhan_spirit → greatest_court; political_power 50. AI 25.
 
 **B. The Pilgrim Ports.** The rift harbours, the pilgrim ferries to the Zilin Hills, the rift fleet and trade with the elven shore.
 
-- `the_pilgrim_ports` **The Pilgrim Ports** (6,1; ← the_rift_crown): building naval_base 1 @rift_east; political_power 25. AI 30.
-- `ferries_to_zilin` **Ferries to Zilin** (5,2; ← the_pilgrim_ports): key focus. AI see table.
-- `the_rift_fleet` **The Rift Fleet** (7,2; ← the_pilgrim_ports): building dockyard 1 @rift_east; research [zin_cat_galleys] 50% ×1. AI 20.
-- `traders_of_the_elder_groves` **Traders of the Elder Groves** (5,3; ← ferries_to_zilin / the_rift_fleet): call zin_shared_east_lands_rift_goodwill; research [industry] 50% ×1. AI 15; ×0 while `zin_east_coalition_member`.
-- `harbour_forts_of_the_rift` **Harbour Forts of the Rift** (7,3; ← the_rift_fleet): building coastal_bunker 1 @rift_east; building coastal_bunker 1 @rift_east. AI 10; ×3 after `zin_eastern_invasion`.
-- `master_of_the_rift_sea` **Master of the Rift Sea** (6,4; ← traders_of_the_elder_groves / harbour_forts_of_the_rift): add_spirit rift_sea_masters. AI 15.
+- `the_pilgrim_ports` **The Pilgrim Ports** (6,1; ← the_rift_crown) `harbour_lake`: building naval_base 1 @rift_east; political_power 25. AI 30.
+- `ferries_to_zilin` **Ferries to Zilin** (5,2; ← the_pilgrim_ports) `courier_pilgrim`: key focus. AI see table.
+- `the_rift_fleet` **The Rift Fleet** (7,2; ← the_pilgrim_ports) `galley_oars`: building dockyard 1 @rift_east; research [zin_cat_galleys] 50% ×1. AI 20.
+- `traders_of_the_elder_groves` **Traders of the Elder Groves** (5,3; ← ferries_to_zilin / the_rift_fleet) `traders_road`: call zin_shared_east_lands_rift_goodwill; research [industry] 50% ×1. AI 15; ×0 while `zin_east_coalition_member`.
+- `harbour_forts_of_the_rift` **Harbour Forts of the Rift** (7,3; ← the_rift_fleet) `fort_wall`: building coastal_bunker 1 @rift_east; building coastal_bunker 1 @rift_east. AI 10; ×3 after `zin_eastern_invasion`.
+- `master_of_the_rift_sea` **Master of the Rift Sea** (6,4; ← traders_of_the_elder_groves / harbour_forts_of_the_rift) `warship_sail`: add_spirit rift_sea_masters. AI 15.
 
 **C. Where Two Roads End.** Alerhia chooses between the riders, the bankers, or an auction of its favour.
 
-- `where_two_roads_end` **Where Two Roads End** (11,1; ← the_rift_crown; 35d): political_power 25; tooltip "Both great roads of the south end at our gates." AI 40.
-- `the_riders_offer` **The Riders' Offer** (9,2; ← where_two_roads_end; ✕ let_the_roads_bid, the_bankers_offer): Lean +20; Inf +5 rift on Noris. AI 10 + lean ÷ 2.
-- `let_the_roads_bid` **Let the Roads Bid** (11,2; ✕ the other two): key focus.
-- `the_bankers_offer` **The Bankers' Offer** (13,2; ← where_two_roads_end; ✕ the other two): Lean −20; Inf +5 gold on Stabilo; if Stabilo has `zin_stabilo_ledger_open`: Debt +20 and political_power 100. AI 10 − lean ÷ 2.
-- `the_gold_road_gate` **The Gold Road Gate** (11,3; ← any of the three): call zin_shared_east_lands_road_infra; political_power 50. AI 25.
-- `customs_of_alerhia` **The Customs of Alerhia** (11,4; ← the_gold_road_gate): add_spirit customs_of_alerhia. AI 25.
+- `where_two_roads_end` **Where Two Roads End** (11,1; ← the_rift_crown; 35d) `traders_road`: political_power 25; tooltip "Both great roads of the south end at our gates." AI 40.
+- `the_riders_offer` **The Riders' Offer** (9,2; ← where_two_roads_end; ✕ let_the_roads_bid, the_bankers_offer) `camel_rider`: Lean +20; Inf +5 rift on Noris. AI 10 + lean ÷ 2.
+- `let_the_roads_bid` **Let the Roads Bid** (11,2; ← where_two_roads_end; ✕ the_riders_offer, the_bankers_offer) `coin_chest`: key focus.
+- `the_bankers_offer` **The Bankers' Offer** (13,2; ← where_two_roads_end; ✕ the_riders_offer, let_the_roads_bid) `ledger_coins`: Lean −20; Inf +5 gold on Stabilo; if Stabilo has `zin_stabilo_ledger_open`: Debt +20 and political_power 100. AI 10 − lean ÷ 2.
+- `the_gold_road_gate` **The Gold Road Gate** (11,3; ← the_riders_offer / let_the_roads_bid / the_bankers_offer) `caravan`: call zin_shared_east_lands_road_infra; political_power 50. AI 25.
+- `customs_of_alerhia` **The Customs of Alerhia** (11,4; ← the_gold_road_gate) `toll_house`: add_spirit customs_of_alerhia_spirit. AI 25.
 
-**D. Copy of E2** (Wells of the South Lands): root `the_dry_roads` at (15,2), prerequisite `lords_of_the_desert_half`.
+**D. Wells of the South Lands.** Copy of E2, root `the_dry_roads` at (15,2), prerequisite `lords_of_the_desert_half`.
 
-**E. Copy of E4** (The Generous Friends): root `temples_of_the_deliverer` at (18,1), prerequisite `the_rift_crown`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (18,1), prerequisite `the_rift_crown`.
 
 **F. The Rift Question.** What Alerhia does when the envoys speak of the rich, weak lands across the water: lead the crossing, guard the elven shore, or wait. **Mutual exclusions:** the three route focuses.
 
-- `the_question_of_the_rift` **The Question of the Rift** (24,1; ← the_rift_crown; 35d): Avail: flag zin_east_rift_talk, or check zin_east_question_open. political_power 50. AI 200 when available.
-- `lord_of_the_crossing` **Lord of the Crossing** (21,2; ✕ warden_of_the_rift, the_rift_crown_waits): key focus.
-- `warden_of_the_rift` **Warden of the Rift** (24,2; ✕ lord_of_the_crossing, the_rift_crown_waits): key focus.
-- `the_rift_crown_waits` **The Rift Crown Waits** (27,2; ✕ the other two): stability 0.05; political_power 50. AI 30.
-- `muster_for_the_crossing` **Muster for the Crossing** (20,3; ← lord_of_the_crossing): Avail: `zin_war_of_last_crowns`. army_experience 15; manpower 5000. AI 100 when available.
-- `the_crossing_of_the_rift` **The Crossing of the Rift** (22,3; ← lord_of_the_crossing): key focus.
-- `lord_of_the_rift_shores` **Lord of the Rift Shores** (21,4; ← muster_for_the_crossing / the_crossing_of_the_rift): Avail: check zin_regional_alerhia_holds_far_shore. add_spirit lord_of_far_shore; political_power 100. AI 100 when available.
-- `aid_the_elder_groves` **Aid the Elder Groves** (24,3; ← warden_of_the_rift): key focus.
-- `keep_the_ports_open` **Keep the Ports Open** (27,3; ← the_rift_crown_waits): add_spirit open_ports. AI 40.
+- `the_question_of_the_rift` **The Question of the Rift** (24,1; ← the_rift_crown; 35d) `map_unrolled`: Avail: flag zin_east_rift_talk, or check zin_east_question_open. political_power 50. AI 200 when available.
+- `lord_of_the_crossing` **Lord of the Crossing** (21,2; ← the_question_of_the_rift; ✕ warden_of_the_rift, the_rift_crown_waits) `war_council_map`: key focus.
+- `warden_of_the_rift` **Warden of the Rift** (24,2; ← the_question_of_the_rift; ✕ lord_of_the_crossing, the_rift_crown_waits) `tree_silver`: key focus.
+- `the_rift_crown_waits` **The Rift Crown Waits** (27,2; ← the_question_of_the_rift; ✕ lord_of_the_crossing, warden_of_the_rift) `scroll_sealed`: stability 0.05; political_power 50. AI 30.
+- `muster_for_the_crossing` **Muster for the Crossing** (20,3; ← lord_of_the_crossing) `levy_muster`: Avail: `zin_war_of_last_crowns`. army_experience 15; manpower 5000. AI 100 when available.
+- `the_crossing_of_the_rift` **The Crossing of the Rift** (22,3; ← lord_of_the_crossing) `ship_voyage`: key focus.
+- `lord_of_the_rift_shores` **Lord of the Rift Shores** (21,4; ← muster_for_the_crossing / the_crossing_of_the_rift) `banner_plain`: Avail: check zin_regional_alerhia_holds_far_shore. add_spirit lord_of_far_shore; political_power 100. AI 100 when available.
+- `aid_the_elder_groves` **Aid the Elder Groves** (24,3; ← warden_of_the_rift) `forest_ancient`: key focus.
+- `keep_the_ports_open` **Keep the Ports Open** (27,3; ← the_rift_crown_waits) `anchor_rope`: add_spirit open_ports. AI 40.
 
-**G. Copy of E9** (The Question of the East): root `question_of_the_east` at (14,6), prerequisites `the_greatest_court_of_the_east` / `customs_of_alerhia` / `temples_of_the_deliverer`.
+**G. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `the_greatest_court_of_the_east` / `customs_of_alerhia` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -143,11 +144,11 @@ King Alerhan III (`<Alerhia>_zin_ruler`, characters spec), Wild stance `zin_wild
 
 | Key | Name | Modifiers | Source |
 | --- | --- | --- | --- |
-| `court_of_alerhan` | The Court of King Alerhan | political_power_gain 0.10, stability_factor 0.02 | court_of_alerhan; replaced by greatest_court |
+| `court_of_alerhan_spirit` | The Court of King Alerhan | political_power_gain 0.10, stability_factor 0.02 | court_of_alerhan; replaced by greatest_court |
 | `greatest_court` | The Greatest Court of the East | political_power_gain 0.15, stability_factor 0.05, opinion_gain_monthly_factor 0.10 | the_greatest_court_of_the_east |
 | `pilgrim_tolls` | The Pilgrim Tolls | political_power_gain 0.05, trade_opinion_factor 0.05 | ferries_to_zilin; removed by E4's close_the_houses |
 | `rift_sea_masters` | Masters of the Rift Sea | naval_damage_factor 0.05, navy_org_factor 0.05, naval_detection 0.10 | master_of_the_rift_sea |
-| `customs_of_alerhia` | The Customs of Alerhia | trade_opinion_factor 0.10, consumer_goods_factor −0.02, political_power_gain 0.05 | customs_of_alerhia |
+| `customs_of_alerhia_spirit` | The Customs of Alerhia | trade_opinion_factor 0.10, consumer_goods_factor −0.02, political_power_gain 0.05 | customs_of_alerhia |
 | `rift_ambition` | The Rift Calls | war_support_factor 0.05, army_attack_factor 0.03 | lord_of_the_crossing; removed at peace with every Magical Lands realm after `zin_eastern_invasion` |
 | `lord_of_far_shore` | Lord of the Far Shore | stability_factor 0.05, political_power_gain 0.10 | lord_of_the_rift_shores; removed if Alerhia controls fewer than 3 `zin_is_site_rift_west` states |
 | `open_ports` | The Open Ports | trade_opinion_factor 0.10, stability_factor 0.02 | keep_the_ports_open |
@@ -155,10 +156,10 @@ King Alerhan III (`<Alerhia>_zin_ruler`, characters spec), Wild stance `zin_wild
 
 ### Events (namespace `zin_regional_alerhia`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | The Rift Crown | Alerhia | the_rift_crown | Riders and bankers wait in the same antechamber. "Furvior's riders first" (Lean +5) / "Postondoroth's bankers first" (Lean −5) / "Let them both wait" (political_power 25). AI 30/30/40 |
-| .2 | The Roads Bid for Alerhia | Alerhia | let_the_roads_bid | "Take Furvior's gold" (political_power 100; Lean +10; Inf +5 rift on Noris) / "Take Postondoroth's gold" (political_power 100; Lean −10; Inf +5 gold on Stabilo) / "Take both and promise nothing" (political_power 150; Noris and Stabilo each lose 5 opinion of Alerhia). AI 25/25/50 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | The Rift Crown | Alerhia | the_rift_crown | `generic_court` | Riders and bankers wait in the same antechamber. "Furvior's riders first" (Lean +5) / "Postondoroth's bankers first" (Lean −5) / "Let them both wait" (political_power 25). AI 30/30/40 |
+| .2 | The Roads Bid for Alerhia | Alerhia | let_the_roads_bid | `generic_court` | "Take Furvior's gold" (political_power 100; Lean +10; Inf +5 rift on Noris) / "Take Postondoroth's gold" (political_power 100; Lean −10; Inf +5 gold on Stabilo) / "Take both and promise nothing" (political_power 150; Noris and Stabilo each lose 5 opinion of Alerhia). AI 25/25/50 |
 
 ### Tree-declared scripts
 
@@ -197,37 +198,37 @@ Lord Furanow of the Passes (`<Miaed>_zin_ruler`), Wild stance `zin_wild_freehold
 
 **A. Lord of the Passes.**
 
-- `lord_of_the_passes` **Lord of the Passes** (2,0): political_power 50; event regional_miaed.1. AI 100.
-- `the_pass_lords` **The Pass Lords** (1,1; ← lord_of_the_passes): add_spirit pass_lords. AI 40.
-- `the_desert_court` **The Desert Court** (3,1; ← lord_of_the_passes): stability 0.03; political_power 25. AI 30.
-- `wardens_of_the_high_road` **Wardens of the High Road** (0,2; ← the_pass_lords): army_experience 10; building bunker 1 @capital. AI 25.
-- `the_lords_justice` **The Lord's Justice** (2,2; ← the_pass_lords / the_desert_court): political_power 50; stability 0.03. AI 25.
-- `gatekeeper_of_the_south` **Gatekeeper of the South** (1,3; ← wardens_of_the_high_road / the_lords_justice): swap_spirit pass_lords → gatekeepers. AI 25.
+- `lord_of_the_passes` **Lord of the Passes** (2,0) `mountain_pass`: political_power 50; event regional_miaed.1. AI 100.
+- `the_pass_lords` **The Pass Lords** (1,1; ← lord_of_the_passes) `council_table`: add_spirit pass_lords. AI 40.
+- `the_desert_court` **The Desert Court** (3,1; ← lord_of_the_passes) `ember_desert`: stability 0.03; political_power 25. AI 30.
+- `wardens_of_the_high_road` **Wardens of the High Road** (0,2; ← the_pass_lords) `scout_lantern`: army_experience 10; building bunker 1 @capital. AI 25.
+- `the_lords_justice` **The Lord's Justice** (2,2; ← the_pass_lords / the_desert_court) `seal_royal`: political_power 50; stability 0.03. AI 25.
+- `gatekeeper_of_the_south` **Gatekeeper of the South** (1,3; ← wardens_of_the_high_road / the_lords_justice) `pass_fort`: swap_spirit pass_lords → gatekeepers. AI 25.
 
 **B. The Gate of the Sands.** Who may use the passes. **Mutual exclusions:** `passage_for_furvior` / `tolls_for_all` / `passage_for_postondoroth`.
 
-- `the_gate_of_the_sands` **The Gate of the Sands** (6,1; ← lord_of_the_passes; 35d): political_power 25. AI 40.
-- `passage_for_furvior` **Passage for Furvior** (4,2): Lean +15; Inf +5 sand on Noris. AI 10 + lean ÷ 2.
-- `tolls_for_all` **Tolls for All** (6,2): key focus.
-- `passage_for_postondoroth` **Passage for Postondoroth** (8,2): Lean −15; Inf +5 sand on Stabilo. AI 10 − lean ÷ 2.
-- `pass_forts` **Forts in the Passes** (5,3; ← any of the three): building bunker 2 @capital; building bunker 1 @random_owned. AI 20; ×3 after `zin_war_of_last_crowns`.
-- `caravan_guards_of_the_passes` **Caravan Guards of the Passes** (7,3; ← any of the three): add_spirit caravan_guards. AI 20.
-- `the_sand_road_branch` **The Sand Road Branch** (6,4; ← pass_forts / caravan_guards_of_the_passes): call zin_shared_east_lands_road_infra; political_power 50. AI 20.
+- `the_gate_of_the_sands` **The Gate of the Sands** (6,1; ← lord_of_the_passes; 35d) `toll_house`: political_power 25. AI 40.
+- `passage_for_furvior` **Passage for Furvior** (4,2; ← the_gate_of_the_sands; ✕ tolls_for_all, passage_for_postondoroth) `camel_rider`: Lean +15; Inf +5 sand on Noris. AI 10 + lean ÷ 2.
+- `tolls_for_all` **Tolls for All** (6,2; ← the_gate_of_the_sands; ✕ passage_for_furvior, passage_for_postondoroth) `coin_chest`: key focus.
+- `passage_for_postondoroth` **Passage for Postondoroth** (8,2; ← the_gate_of_the_sands; ✕ passage_for_furvior, tolls_for_all) `ledger_coins`: Lean −15; Inf +5 sand on Stabilo. AI 10 − lean ÷ 2.
+- `pass_forts` **Forts in the Passes** (5,3; ← passage_for_furvior / tolls_for_all / passage_for_postondoroth) `pass_fort`: building bunker 2 @capital; building bunker 1 @random_owned. AI 20; ×3 after `zin_war_of_last_crowns`.
+- `caravan_guards_of_the_passes` **Caravan Guards of the Passes** (7,3; ← passage_for_furvior / tolls_for_all / passage_for_postondoroth) `caravan`: add_spirit caravan_guards. AI 20.
+- `the_sand_road_branch` **The Sand Road Branch** (6,4; ← pass_forts / caravan_guards_of_the_passes) `traders_road`: call zin_shared_east_lands_road_infra; political_power 50. AI 20.
 
 **C. Watch on the Far Marches.** Miaed watches its south-west: the Lands of Light, and beyond the desert the Dead Lands.
 
-- `watch_on_the_far_marches` **Watch on the Far Marches** (21,1; ← lord_of_the_passes; 35d): political_power 25. AI 25.
-- `scouts_of_the_waste` **Scouts of the Waste** (20,2; ← watch_on_the_far_marches): event regional_miaed.2. AI 20.
-- `envoys_to_the_lands_of_light` **Envoys to the Lands of Light** (22,2; ← watch_on_the_far_marches): Avail: exists The Lands of Light. call zin_elves_goodwill(target = The Lands of Light); stability 0.02. AI 20.
-- `heed_the_south` **Heed the South** (20,3; ← scouts_of_the_waste): key focus.
-- `the_long_watch_of_miaed` **The Long Watch of Miaed** (22,3; ← scouts_of_the_waste / envoys_to_the_lands_of_light): add_spirit long_watch. AI 15.
-- `hold_the_southern_passes` **Hold the Southern Passes** (21,4; ← heed_the_south / the_long_watch_of_miaed): Avail: `zin_volgan_marches` or `zin_war_of_last_crowns`. building bunker 2 @capital; war_support 0.05. AI 100 when available.
+- `watch_on_the_far_marches` **Watch on the Far Marches** (21,1; ← lord_of_the_passes; 35d) `eye_watchful`: political_power 25. AI 25.
+- `scouts_of_the_waste` **Scouts of the Waste** (20,2; ← watch_on_the_far_marches) `footprints_snow`: event regional_miaed.2. AI 20.
+- `envoys_to_the_lands_of_light` **Envoys to the Lands of Light** (22,2; ← watch_on_the_far_marches) `envoy`: Avail: exists The Lands of Light. call zin_elves_goodwill(target = The Lands of Light); stability 0.02. AI 20.
+- `heed_the_south` **Heed the South** (20,3; ← scouts_of_the_waste) `beacon`: key focus.
+- `the_long_watch_of_miaed` **The Long Watch of Miaed** (22,3; ← scouts_of_the_waste / envoys_to_the_lands_of_light) `fort_wall`: add_spirit long_watch. AI 15.
+- `hold_the_southern_passes` **Hold the Southern Passes** (21,4; ← heed_the_south / the_long_watch_of_miaed) `mountain_pass`: Avail: `zin_volgan_marches` or `zin_war_of_last_crowns`. building bunker 2 @capital; war_support 0.05. AI 100 when available.
 
-**D. Copy of E2:** root `the_dry_roads` at (10,1), prerequisite `lord_of_the_passes`.
+**D. Wells of the South Lands.** Copy of E2, root `the_dry_roads` at (10,1), prerequisite `lord_of_the_passes`.
 
-**E. Copy of E4:** root `temples_of_the_deliverer` at (14,1), prerequisite `lord_of_the_passes`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (14,1), prerequisite `lord_of_the_passes`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `gatekeeper_of_the_south` / `the_sand_road_branch` / `temples_of_the_deliverer`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `gatekeeper_of_the_south` / `the_sand_road_branch` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -254,10 +255,10 @@ Lord Furanow of the Passes (`<Miaed>_zin_ruler`), Wild stance `zin_wild_freehold
 
 ### Events (namespace `zin_regional_miaed`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | Lord of the Passes | Miaed | lord_of_the_passes | Caravans queue at the high gate. "Raise the toll" (political_power 50; Lean moves 5 toward 0) / "Wave the riders through" (Lean +5) / "Wave the bankers through" (Lean −5). AI 50/25/25 |
-| .2 | Scouts of the Waste | Miaed | scouts_of_the_waste | Scouts come back from the far desert with tales of heat-haze, dust columns and empty forts. Before `zin_volgan_marches` the text says nobody knows what raised the dust. "Write to Furvior and Postondoroth" (Noris and Stabilo opinion of Miaed +5) / "Keep the report in the gatehouse" (political_power 25). AI 50/50 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | Lord of the Passes | Miaed | lord_of_the_passes | `generic_peace` | Caravans queue at the high gate. "Raise the toll" (political_power 50; Lean moves 5 toward 0) / "Wave the riders through" (Lean +5) / "Wave the bankers through" (Lean −5). AI 50/25/25 |
+| .2 | Scouts of the Waste | Miaed | scouts_of_the_waste | `generic_wilds` | Scouts come back from the far desert with tales of heat-haze, dust columns and empty forts. Before `zin_volgan_marches` the text says nobody knows what raised the dust. "Write to Furvior and Postondoroth" (Noris and Stabilo opinion of Miaed +5) / "Keep the report in the gatehouse" (political_power 25). AI 50/50 |
 
 ---
 
@@ -289,43 +290,43 @@ Queen Obmia of Erco (`<Erco>_zin_ruler`), Wild stance `zin_wild_freeholds`, trai
 
 **A. The Mountain Throne.**
 
-- `the_mountain_throne` **The Mountain Throne** (2,0): political_power 50; stability 0.02. AI 100.
-- `queen_obmias_council` **Queen Obmia's Council** (1,1; ← the_mountain_throne): add_spirit mine_lords_council. AI 40.
-- `the_mountain_clans` **The Mountain Clans** (3,1; ← the_mountain_throne): manpower 1500; stability 0.02. AI 30.
-- `a_queens_consort` **A Queen's Consort** (0,2; ← queen_obmias_council; 35d): event regional_erco.1. AI 20.
-- `the_high_halls` **The High Halls** (2,2; ← queen_obmias_council / the_mountain_clans): political_power 75. AI 25.
-- `crown_of_the_peaks` **Crown of the Peaks** (1,3; ← a_queens_consort / the_high_halls): swap_spirit mine_lords_council → crown_of_the_peaks. AI 25.
+- `the_mountain_throne` **The Mountain Throne** (2,0) `crown_iron`: political_power 50; stability 0.02. AI 100.
+- `queen_obmias_council` **Queen Obmia's Council** (1,1; ← the_mountain_throne) `council_table`: add_spirit mine_lords_council. AI 40.
+- `the_mountain_clans` **The Mountain Clans** (3,1; ← the_mountain_throne) `banner_plain`: manpower 1500; stability 0.02. AI 30.
+- `a_queens_consort` **A Queen's Consort** (0,2; ← queen_obmias_council; 35d) `seal_wax`: event regional_erco.1. AI 20.
+- `the_high_halls` **The High Halls** (2,2; ← queen_obmias_council / the_mountain_clans) `throne_gold`: political_power 75. AI 25.
+- `crown_of_the_peaks` **Crown of the Peaks** (1,3; ← a_queens_consort / the_high_halls) `snow_peak`: swap_spirit mine_lords_council → crown_of_the_peaks_spirit. AI 25.
 
 **B. The Mines of Erco.** **Mutual exclusions:** `ore_for_the_pact` / `ore_for_any_buyer`.
 
-- `the_mines_of_erco` **The Mines of Erco** (6,1; ← the_mountain_throne): building arms_factory 1 @capital; political_power 25. AI 40.
-- `deep_shafts` **Deep Shafts** (5,2; ← the_mines_of_erco): research [industry] 50% ×1; political_power 25. AI 25.
-- `foundries_of_erco` **Foundries of Erco** (7,2; ← the_mines_of_erco): building arms_factory 1 @random_owned. AI 25.
-- `ore_for_the_pact` **Ore for the Pact** (4,3; ← deep_shafts / foundries_of_erco; ✕ ore_for_any_buyer): key focus.
-- `ore_for_any_buyer` **Ore for Any Buyer** (6,3; ← deep_shafts / foundries_of_erco; ✕ ore_for_the_pact): key focus.
-- `smiths_of_the_heights` **Smiths of the Heights** (8,3; ← foundries_of_erco): research [zin_cat_armour] 50% ×1; research [zin_cat_arms] 50% ×1. AI 20.
-- `masters_of_iron` **Masters of Iron** (6,4; ← ore_for_the_pact / ore_for_any_buyer / smiths_of_the_heights): add_spirit masters_of_iron. AI 20.
+- `the_mines_of_erco` **The Mines of Erco** (6,1; ← the_mountain_throne) `mine_cart`: building arms_factory 1 @capital; political_power 25. AI 40.
+- `deep_shafts` **Deep Shafts** (5,2; ← the_mines_of_erco) `mine_cart`: research [industry] 50% ×1; political_power 25. AI 25.
+- `foundries_of_erco` **Foundries of Erco** (7,2; ← the_mines_of_erco) `foundry_fire`: building arms_factory 1 @random_owned. AI 25.
+- `ore_for_the_pact` **Ore for the Pact** (4,3; ← deep_shafts / foundries_of_erco; ✕ ore_for_any_buyer) `handshake_oath`: key focus.
+- `ore_for_any_buyer` **Ore for Any Buyer** (6,3; ← deep_shafts / foundries_of_erco; ✕ ore_for_the_pact) `coin_chest`: key focus.
+- `smiths_of_the_heights` **Smiths of the Heights** (8,3; ← foundries_of_erco) `forge_anvil`: research [zin_cat_armour] 50% ×1; research [zin_cat_arms] 50% ×1. AI 20.
+- `masters_of_iron` **Masters of Iron** (6,4; ← ore_for_the_pact / ore_for_any_buyer / smiths_of_the_heights) `forge_anvil`: add_spirit masters_of_iron_spirit. AI 20.
 
 **C. Mountain Forts.**
 
-- `mountain_forts` **Mountain Forts** (21,1; ← the_mountain_throne): building bunker 1 @capital; building bunker 1 @random_owned. AI 25.
-- `hill_companies` **Hill Companies** (20,2; ← mountain_forts): army_experience 10; research [zin_cat_arms] 50% ×1. AI 20.
-- `the_high_passes_guarded` **The High Passes Guarded** (22,2; ← mountain_forts): building bunker 2 @random_owned. AI 15; ×3 after `zin_war_of_last_crowns`.
-- `siege_engineers_of_erco` **Siege Engineers of Erco** (20,3; ← hill_companies): research [zin_cat_siege] 50% ×1. AI 15.
-- `walls_of_erco` **Walls of Erco** (22,3; ← the_high_passes_guarded): research [zin_cat_walls] 50% ×1. AI 15.
-- `the_mountains_keep_their_own` **The Mountains Keep Their Own** (21,4; ← siege_engineers_of_erco / walls_of_erco): key focus.
+- `mountain_forts` **Mountain Forts** (21,1; ← the_mountain_throne) `pass_fort`: building bunker 1 @capital; building bunker 1 @random_owned. AI 25.
+- `hill_companies` **Hill Companies** (20,2; ← mountain_forts) `spear_levy`: army_experience 10; research [zin_cat_arms] 50% ×1. AI 20.
+- `the_high_passes_guarded` **The High Passes Guarded** (22,2; ← mountain_forts) `mountain_pass`: building bunker 2 @random_owned. AI 15; ×3 after `zin_war_of_last_crowns`.
+- `siege_engineers_of_erco` **Siege Engineers of Erco** (20,3; ← hill_companies) `siege_trebuchet`: research [zin_cat_siege] 50% ×1. AI 15.
+- `walls_of_erco` **Walls of Erco** (22,3; ← the_high_passes_guarded) `fort_wall`: research [zin_cat_walls] 50% ×1. AI 15.
+- `the_mountains_keep_their_own` **The Mountains Keep Their Own** (21,4; ← siege_engineers_of_erco / walls_of_erco) `banner_plain`: key focus.
 
 **D. The Sand Road's End.**
 
-- `end_of_the_sand_road` **The End of the Sand Road** (10,1; ← the_mountain_throne): call zin_shared_east_lands_road_infra; political_power 25. AI 30.
-- `caravans_from_obmi` **Caravans From Obmi** (9,2; ← end_of_the_sand_road): Lean −5; add_spirit sand_road_markets. AI 20.
-- `the_mountain_road` **The Mountain Road** (11,2; ← end_of_the_sand_road): building infrastructure 1 @capital; political_power 25. AI 20.
-- `markets_of_the_heights` **Markets of the Heights** (10,3; ← caravans_from_obmi / the_mountain_road): building industrial_complex 1 @capital. AI 20.
-- `the_last_well` **The Last Well** (10,4; ← markets_of_the_heights): political_power 50; stability 0.03. AI 15.
+- `end_of_the_sand_road` **The End of the Sand Road** (10,1; ← the_mountain_throne) `traders_road`: call zin_shared_east_lands_road_infra; political_power 25. AI 30.
+- `caravans_from_obmi` **Caravans From Obmi** (9,2; ← end_of_the_sand_road) `caravan`: Lean −5; add_spirit sand_road_markets. AI 20.
+- `the_mountain_road` **The Mountain Road** (11,2; ← end_of_the_sand_road) `roads_paved`: building infrastructure 1 @capital; political_power 25. AI 20.
+- `markets_of_the_heights` **Markets of the Heights** (10,3; ← caravans_from_obmi / the_mountain_road) `market_stalls`: building industrial_complex 1 @capital. AI 20.
+- `the_last_well` **The Last Well** (10,4; ← markets_of_the_heights) `granary`: political_power 50; stability 0.03. AI 15.
 
-**E. Copy of E4:** root at (14,1), prerequisite `the_mountain_throne`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (14,1), prerequisite `the_mountain_throne`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `crown_of_the_peaks` / `masters_of_iron` / `temples_of_the_deliverer`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `crown_of_the_peaks` / `masters_of_iron` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -342,18 +343,18 @@ Queen Obmia of Erco (`<Erco>_zin_ruler`), Wild stance `zin_wild_freeholds`, trai
 | Key | Name | Modifiers | Source |
 | --- | --- | --- | --- |
 | `mine_lords_council` | The Council of Mine-Lords | political_power_gain 0.05, production_speed_buildings_factor 0.05 | queen_obmias_council; replaced by crown_of_the_peaks |
-| `crown_of_the_peaks` | Crown of the Peaks | political_power_gain 0.10, production_speed_buildings_factor 0.05, stability_factor 0.03 | crown_of_the_peaks |
+| `crown_of_the_peaks_spirit` | Crown of the Peaks | political_power_gain 0.10, production_speed_buildings_factor 0.05, stability_factor 0.03 | crown_of_the_peaks |
 | `open_ore_market` | The Open Ore Market | trade_opinion_factor 0.15, consumer_goods_factor −0.02 | ore_for_any_buyer |
-| `masters_of_iron` | Masters of Iron | production_factory_efficiency_gain_factor 0.05, production_factory_max_efficiency_factor 0.05 | masters_of_iron |
+| `masters_of_iron_spirit` | Masters of Iron | production_factory_efficiency_gain_factor 0.05, production_factory_max_efficiency_factor 0.05 | masters_of_iron |
 | `mountain_realm` | The Mountains Keep Their Own | army_core_defence_factor 0.10, drift_defence_factor 0.15 | the_mountains_keep_their_own |
 | `sand_road_markets` | Markets of the Sand Road | trade_opinion_factor 0.05, consumer_goods_factor −0.02 | caravans_from_obmi |
 | copies | E4, E9 spirits | as the shared tree | copied modules |
 
 ### Events (namespace `zin_regional_erco`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | A Queen's Consort | Erco | a_queens_consort | "A prince of Plutondo" (Lean −5; Plutondo opinion of Erco +15) / "A lord of Ostoroth" (Lean +5; Ostoroth opinion +15) / "A mine-lord of our own mountains" (stability 0.03). AI 35/25/40 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | A Queen's Consort | Erco | a_queens_consort | `generic_court` | "A prince of Plutondo" (Lean −5; Plutondo opinion of Erco +15) / "A lord of Ostoroth" (Lean +5; Ostoroth opinion +15) / "A mine-lord of our own mountains" (stability 0.03). AI 35/25/40 |
 
 ---
 
@@ -385,43 +386,43 @@ Prince Blozan (`<Plutondo>_zin_ruler`), Wild stance `zin_wild_freeholds`, trait 
 
 **A. The Prince's Court.**
 
-- `the_princes_court` **The Prince's Court** (2,0): political_power 50; stability 0.02. AI 100.
-- `blozans_household` **Blozan's Household** (1,1; ← the_princes_court): add_spirit blozans_household. AI 40.
-- `lords_of_the_desert_hills` **Lords of the Desert Hills** (3,1; ← the_princes_court): manpower 2000; stability 0.02. AI 30.
-- `the_princes_treasury` **The Prince's Treasury** (0,2; ← blozans_household): political_power 75. AI 25.
-- `between_drak_and_erco` **Between Drak and Erco** (2,2; ← blozans_household / lords_of_the_desert_hills; 35d): event regional_plutondo.1. AI 25.
-- `the_prince_of_plutondo` **The Prince of Plutondo** (1,3; ← the_princes_treasury / between_drak_and_erco): swap_spirit blozans_household → prince_of_plutondo. AI 25.
+- `the_princes_court` **The Prince's Court** (2,0) `throne_gold`: political_power 50; stability 0.02. AI 100.
+- `blozans_household` **Blozan's Household** (1,1; ← the_princes_court) `seal_royal`: add_spirit blozans_household_spirit. AI 40.
+- `lords_of_the_desert_hills` **Lords of the Desert Hills** (3,1; ← the_princes_court) `camel_rider`: manpower 2000; stability 0.02. AI 30.
+- `the_princes_treasury` **The Prince's Treasury** (0,2; ← blozans_household) `ledger_coins`: political_power 75. AI 25.
+- `between_drak_and_erco` **Between Drak and Erco** (2,2; ← blozans_household / lords_of_the_desert_hills; 35d) `two_crowns`: event regional_plutondo.1. AI 25.
+- `the_prince_of_plutondo` **The Prince of Plutondo** (1,3; ← the_princes_treasury / between_drak_and_erco) `crown_iron`: swap_spirit blozans_household_spirit → prince_of_plutondo. AI 25.
 
 **B. The Many of Plutondo.**
 
-- `the_many_of_plutondo` **The Many of Plutondo** (6,1; ← the_princes_court): manpower 5000. AI 40.
-- `granaries_of_the_hills` **Granaries of the Hills** (5,2; ← the_many_of_plutondo): add_spirit hill_granaries. AI 25.
-- `levy_rolls` **The Levy Rolls** (7,2; ← the_many_of_plutondo): add_spirit levy_rolls. AI 25.
-- `workshops_of_the_many` **Workshops of the Many** (5,3; ← granaries_of_the_hills): building industrial_complex 1 @capital; building industrial_complex 1 @random_owned. AI 25.
-- `fields_of_plutondo` **Fields of Plutondo** (7,3; ← granaries_of_the_hills / levy_rolls): building infrastructure 1 @capital; stability 0.03. AI 20.
-- `the_great_levy` **The Great Levy** (6,4; ← workshops_of_the_many / fields_of_plutondo): key focus.
+- `the_many_of_plutondo` **The Many of Plutondo** (6,1; ← the_princes_court) `spear_levy`: manpower 5000. AI 40.
+- `granaries_of_the_hills` **Granaries of the Hills** (5,2; ← the_many_of_plutondo) `granary`: add_spirit hill_granaries. AI 25.
+- `levy_rolls` **The Levy Rolls** (7,2; ← the_many_of_plutondo) `birth_rolls`: add_spirit levy_rolls_spirit. AI 25.
+- `workshops_of_the_many` **Workshops of the Many** (5,3; ← granaries_of_the_hills) `workshop_tools`: building industrial_complex 1 @capital; building industrial_complex 1 @random_owned. AI 25.
+- `fields_of_plutondo` **Fields of Plutondo** (7,3; ← granaries_of_the_hills / levy_rolls) `farm_sowing`: building infrastructure 1 @capital; stability 0.03. AI 20.
+- `the_great_levy` **The Great Levy** (6,4; ← workshops_of_the_many / fields_of_plutondo) `levy_muster`: key focus.
 
 **C. Eastern Gate of the Gold Road.** **Mutual exclusions:** `the_pacts_right_hand` / `no_mans_debtor`.
 
-- `eastern_gate_of_the_gold_road` **Eastern Gate of the Gold Road** (11,1; ← the_princes_court): call zin_shared_east_lands_road_infra; political_power 25. AI 35.
-- `a_seat_in_the_pact` **A Seat in the Pact** (10,2; ← eastern_gate_of_the_gold_road; 35d): key focus.
-- `pay_down_the_ledger` **Pay Down the Ledger** (12,2; ← eastern_gate_of_the_gold_road): Debt −15; political_power −25. AI 15; ×2 if debt ≥ 30.
-- `the_pacts_right_hand` **The Pact's Right Hand** (10,3; ← a_seat_in_the_pact; ✕ no_mans_debtor): Avail: in a faction with Stabilo. army_experience 10; add_spirit pacts_right_hand. AI 40.
-- `no_mans_debtor` **No Man's Debtor** (12,3; ← pay_down_the_ledger; ✕ the_pacts_right_hand): Avail: in no faction. Lean +15; stability 0.05. AI 15.
-- `the_gold_roads_end` **The Gold Road's End** (11,4; ← the_pacts_right_hand / no_mans_debtor): building industrial_complex 1 @capital; political_power 50. AI 20.
-- `caravan_porters` **Caravan Porters** (13,2; ← eastern_gate_of_the_gold_road): Inf +3 gold on Stabilo; political_power 25. AI 20.
+- `eastern_gate_of_the_gold_road` **Eastern Gate of the Gold Road** (11,1; ← the_princes_court) `traders_road`: call zin_shared_east_lands_road_infra; political_power 25. AI 35.
+- `a_seat_in_the_pact` **A Seat in the Pact** (10,2; ← eastern_gate_of_the_gold_road; 35d) `scroll_treaty`: key focus.
+- `pay_down_the_ledger` **Pay Down the Ledger** (12,2; ← eastern_gate_of_the_gold_road) `ledger_coins`: Debt −15; political_power −25. AI 15; ×2 if debt ≥ 30.
+- `the_pacts_right_hand` **The Pact's Right Hand** (10,3; ← a_seat_in_the_pact; ✕ no_mans_debtor) `handshake_oath`: Avail: in a faction with Stabilo. army_experience 10; add_spirit pacts_right_hand. AI 40.
+- `no_mans_debtor` **No Man's Debtor** (12,3; ← pay_down_the_ledger; ✕ the_pacts_right_hand) `chain_broken`: Avail: in no faction. Lean +15; stability 0.05. AI 15.
+- `the_gold_roads_end` **The Gold Road's End** (11,4; ← the_pacts_right_hand / no_mans_debtor) `caravan`: building industrial_complex 1 @capital; political_power 50. AI 20.
+- `caravan_porters` **Caravan Porters** (13,2; ← eastern_gate_of_the_gold_road) `caravan`: Inf +3 gold on Stabilo; political_power 25. AI 20.
 
 **D. The Hill Coast.** `allow_branch` on `the_hill_coast`: Plutondo owns a coastal state.
 
-- `the_hill_coast` **The Hill Coast** (20,1; ← the_princes_court): building dockyard 1 @random_coastal. AI 20.
-- `galleys_of_the_hill_coast` **Galleys of the Hill Coast** (19,2; ← the_hill_coast): research [zin_cat_galleys] 50% ×1. AI 15.
-- `harbour_of_plutondo` **Harbour of Plutondo** (21,2; ← the_hill_coast): building naval_base 1 @random_coastal. AI 15.
-- `coastal_watch` **The Coastal Watch** (20,3; ← galleys_of_the_hill_coast / harbour_of_plutondo): building coastal_bunker 1 @random_coastal. AI 10.
-- `sailors_of_plutondo` **Sailors of Plutondo** (20,4; ← coastal_watch): navy_experience 10. AI 10.
+- `the_hill_coast` **The Hill Coast** (20,1; ← the_princes_court) `harbour_lake`: building dockyard 1 @random_coastal. AI 20.
+- `galleys_of_the_hill_coast` **Galleys of the Hill Coast** (19,2; ← the_hill_coast) `galley_oars`: research [zin_cat_galleys] 50% ×1. AI 15.
+- `harbour_of_plutondo` **Harbour of Plutondo** (21,2; ← the_hill_coast) `anchor_rope`: building naval_base 1 @random_coastal. AI 15.
+- `coastal_watch` **The Coastal Watch** (20,3; ← galleys_of_the_hill_coast / harbour_of_plutondo) `lighthouse`: building coastal_bunker 1 @random_coastal. AI 10.
+- `sailors_of_plutondo` **Sailors of Plutondo** (20,4; ← coastal_watch) `warship_sail`: navy_experience 10. AI 10.
 
-**E. Copy of E4:** root at (15,1), prerequisite `the_princes_court`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (15,1), prerequisite `the_princes_court`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `the_prince_of_plutondo` / `the_gold_roads_end` / `temples_of_the_deliverer`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `the_prince_of_plutondo` / `the_gold_roads_end` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -437,18 +438,18 @@ Prince Blozan (`<Plutondo>_zin_ruler`), Wild stance `zin_wild_freeholds`, trait 
 
 | Key | Name | Modifiers | Source |
 | --- | --- | --- | --- |
-| `blozans_household` | Blozan's Household | political_power_gain 0.05, stability_factor 0.02 | blozans_household; replaced by prince_of_plutondo |
+| `blozans_household_spirit` | Blozan's Household | political_power_gain 0.05, stability_factor 0.02 | blozans_household; replaced by prince_of_plutondo |
 | `prince_of_plutondo` | The Prince of Plutondo | political_power_gain 0.10, stability_factor 0.03, opinion_gain_monthly_factor 0.10 | the_prince_of_plutondo |
 | `hill_granaries` | Granaries of the Hills | monthly_population 0.10, stability_factor 0.02 | granaries_of_the_hills |
-| `levy_rolls` | The Levy Rolls | conscription_factor 0.05, recruitable_population_factor 0.05 | levy_rolls |
+| `levy_rolls_spirit` | The Levy Rolls | conscription_factor 0.05, recruitable_population_factor 0.05 | levy_rolls |
 | `pacts_right_hand` | The Pact's Right Hand | army_org_factor 0.05, experience_gain_army_factor 0.05 | the_pacts_right_hand; removed if Plutondo leaves Stabilo's faction |
 | copies | E4, E9 spirits | as the shared tree | copied modules |
 
 ### Events (namespace `zin_regional_plutondo`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | Between Drak and Erco | Plutondo | between_drak_and_erco | Boundary stones between the three crowns have moved again. "Settle it with Drak" (Drak opinion +15; Lean −5) / "Settle it with Erco" (Erco opinion +15) / "Let the stones lie" (political_power 25). No claims either way. AI 40/30/30 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | Between Drak and Erco | Plutondo | between_drak_and_erco | `generic_court` | Boundary stones between the three crowns have moved again. "Settle it with Drak" (Drak opinion +15; Lean −5) / "Settle it with Erco" (Erco opinion +15) / "Let the stones lie" (political_power 25). No claims either way. AI 40/30/30 |
 
 ---
 
@@ -480,42 +481,42 @@ King Morod of Drak (`<Drak>_zin_ruler`), Wild stance `zin_wild_freeholds`, trait
 
 **A. The Martial Crown.**
 
-- `the_martial_crown` **The Martial Crown** (2,0): political_power 50; army_experience 5. AI 100.
-- `morods_marshals` **Morod's Marshals** (1,1; ← the_martial_crown): add_spirit morods_marshals. AI 40.
-- `the_war_halls` **The War-Halls** (3,1; ← the_martial_crown): building bunker 1 @capital; army_experience 5. AI 30.
-- `the_kings_champions` **The King's Champions** (0,2; ← morods_marshals): army_experience 10. AI 25.
-- `the_iron_tithe` **The Iron Tithe** (2,2; ← morods_marshals / the_war_halls): political_power 75. AI 25.
-- `the_kings_hunt` **The King's Hunt** (4,2; ← the_war_halls; 35d): stability 0.03; war_support 0.03. AI 15.
-- `the_sword_kingdom` **The Sword Kingdom** (2,3; ← the_kings_champions / the_iron_tithe / the_kings_hunt): swap_spirit morods_marshals → sword_kingdom. AI 25.
+- `the_martial_crown` **The Martial Crown** (2,0) `crown_iron`: political_power 50; army_experience 5. AI 100.
+- `morods_marshals` **Morod's Marshals** (1,1; ← the_martial_crown) `war_council_map`: add_spirit morods_marshals_spirit. AI 40.
+- `the_war_halls` **The War-Halls** (3,1; ← the_martial_crown) `war_drums`: building bunker 1 @capital; army_experience 5. AI 30.
+- `the_kings_champions` **The King's Champions** (0,2; ← morods_marshals) `knight_lance`: army_experience 10. AI 25.
+- `the_iron_tithe` **The Iron Tithe** (2,2; ← morods_marshals / the_war_halls) `tribute_chest`: political_power 75. AI 25.
+- `the_kings_hunt` **The King's Hunt** (4,2; ← the_war_halls; 35d) `horse_cavalry`: stability 0.03; war_support 0.03. AI 15.
+- `the_sword_kingdom` **The Sword Kingdom** (2,3; ← the_kings_champions / the_iron_tithe / the_kings_hunt) `sword_shield`: swap_spirit morods_marshals_spirit → sword_kingdom. AI 25.
 
 **B. Sword of the Pact.**
 
-- `sword_of_the_pact` **Sword of the Pact** (7,1; ← the_martial_crown): Avail: in a faction with Stabilo, or lean ≤ −50. Lean −10; army_experience 10. AI 50.
-- `drill_with_the_shield_companies` **Drill With the Shield-Companies** (6,2; ← sword_of_the_pact): add_spirit pact_drill. AI 30.
-- `forts_toward_furvior` **Forts Toward Furvior** (8,2; ← sword_of_the_pact): call zin_regional_drak_fortify_march. AI 15; ×3 if rivalry ≥ 75.
-- `the_pacts_cavalry` **The Pact's Cavalry** (5,3; ← drill_with_the_shield_companies): research [zin_cat_mounts] 50% ×1; army_experience 5. AI 20.
-- `war_chest_of_the_pact` **War Chest of the Pact** (7,3; ← drill_with_the_shield_companies / forts_toward_furvior): Debt +10; political_power 100. AI 15.
-- `pact_riders_on_the_gold_road` **Pact Riders on the Gold Road** (9,3; ← forts_toward_furvior): Inf +3 gold on Stabilo; army_experience 5. AI 15.
-- `ready_for_the_caravan_war` **Ready for the Caravan War** (6,4; ← the_pacts_cavalry / war_chest_of_the_pact): key focus.
-- `the_shield_of_postondoroth` **The Shield of Postondoroth** (8,4; ← war_chest_of_the_pact / pact_riders_on_the_gold_road): add_spirit shield_of_postondoroth. AI 20.
+- `sword_of_the_pact` **Sword of the Pact** (7,1; ← the_martial_crown) `handshake_oath`: Avail: in a faction with Stabilo, or lean ≤ −50. Lean −10; army_experience 10. AI 50.
+- `drill_with_the_shield_companies` **Drill With the Shield-Companies** (6,2; ← sword_of_the_pact) `sword_shield`: add_spirit pact_drill. AI 30.
+- `forts_toward_furvior` **Forts Toward Furvior** (8,2; ← sword_of_the_pact) `fort_wall`: call zin_regional_drak_fortify_march. AI 15; ×3 if rivalry ≥ 75.
+- `the_pacts_cavalry` **The Pact's Cavalry** (5,3; ← drill_with_the_shield_companies) `horse_cavalry`: research [zin_cat_mounts] 50% ×1; army_experience 5. AI 20.
+- `war_chest_of_the_pact` **War Chest of the Pact** (7,3; ← drill_with_the_shield_companies / forts_toward_furvior) `coin_chest`: Debt +10; political_power 100. AI 15.
+- `pact_riders_on_the_gold_road` **Pact Riders on the Gold Road** (9,3; ← forts_toward_furvior) `camel_rider`: Inf +3 gold on Stabilo; army_experience 5. AI 15.
+- `ready_for_the_caravan_war` **Ready for the Caravan War** (6,4; ← the_pacts_cavalry / war_chest_of_the_pact) `war_council_map`: key focus.
+- `the_shield_of_postondoroth` **The Shield of Postondoroth** (8,4; ← war_chest_of_the_pact / pact_riders_on_the_gold_road) `fort_wall`: add_spirit shield_of_postondoroth. AI 20.
 
 **C. The Old Seat.** Shown only while Drak owns the Postondoroth site (map spec S5 unresolved). **Mutual exclusions:** `yield_the_old_seat` / `keep_the_old_seat`.
 
-- `the_old_seat` **The Old Seat** (20,1; ← the_martial_crown; 35d): allow_branch: owns a state with `zin_is_site_postondoroth`. political_power 25; tooltip "Postondoroth's old halls stand in our land." AI 40.
-- `yield_the_old_seat` **Yield the Old Seat** (19,2): key focus.
-- `keep_the_old_seat` **Keep the Old Seat** (21,2): key focus.
-- `the_seat_of_drak` **The Seat of Drak** (21,3; ← keep_the_old_seat): building industrial_complex 1 @capital; stability 0.03. AI 30.
+- `the_old_seat` **The Old Seat** (20,1; ← the_martial_crown; 35d) `empty_throne`: allow_branch: owns a state with `zin_is_site_postondoroth`. political_power 25; tooltip "Postondoroth's old halls stand in our land." AI 40.
+- `yield_the_old_seat` **Yield the Old Seat** (19,2; ← the_old_seat; ✕ keep_the_old_seat) `banner_laid_down`: key focus.
+- `keep_the_old_seat` **Keep the Old Seat** (21,2; ← the_old_seat; ✕ yield_the_old_seat) `throne_gold`: key focus.
+- `the_seat_of_drak` **The Seat of Drak** (21,3; ← keep_the_old_seat) `palace_wards`: building industrial_complex 1 @capital; stability 0.03. AI 30.
 
 **D. Debts and Due.** **Mutual exclusions:** `pay_in_iron` / `borrow_for_the_army`.
 
-- `the_debt_to_postondoroth` **The Debt to Postondoroth** (11,1; ← the_martial_crown; 35d): political_power 25; tooltip shows the debt. AI 30.
-- `pay_in_iron` **Pay in Iron** (10,2; ✕ borrow_for_the_army): Debt −15; political_power −25. AI 15; ×2 if debt ≥ 40.
-- `borrow_for_the_army` **Borrow for the Army** (12,2; ✕ pay_in_iron): Debt +15; army_experience 10; equipment infantry_equipment 500. AI 20.
-- `free_of_the_ledger` **Free of the Ledger** (11,3; ← pay_in_iron / borrow_for_the_army): Avail: debt below 10. stability 0.05; political_power 50. AI 100 when available.
+- `the_debt_to_postondoroth` **The Debt to Postondoroth** (11,1; ← the_martial_crown; 35d) `ledger_coins`: political_power 25; tooltip shows the debt. AI 30.
+- `pay_in_iron` **Pay in Iron** (10,2; ← the_debt_to_postondoroth; ✕ borrow_for_the_army) `forge_anvil`: Debt −15; political_power −25. AI 15; ×2 if debt ≥ 40.
+- `borrow_for_the_army` **Borrow for the Army** (12,2; ← the_debt_to_postondoroth; ✕ pay_in_iron) `coin_chest`: Debt +15; army_experience 10; equipment infantry_equipment 500. AI 20.
+- `free_of_the_ledger` **Free of the Ledger** (11,3; ← pay_in_iron / borrow_for_the_army) `chain_broken`: Avail: debt below 10. stability 0.05; political_power 50. AI 100 when available.
 
-**E. Copy of E4:** root at (14,1), prerequisite `the_martial_crown`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (14,1), prerequisite `the_martial_crown`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `the_sword_kingdom` / `the_shield_of_postondoroth` / `temples_of_the_deliverer`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `the_sword_kingdom` / `the_shield_of_postondoroth` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -531,7 +532,7 @@ King Morod of Drak (`<Drak>_zin_ruler`), Wild stance `zin_wild_freeholds`, trait
 
 | Key | Name | Modifiers | Source |
 | --- | --- | --- | --- |
-| `morods_marshals` | Morod's Marshals | army_org_factor 0.05, experience_gain_army_factor 0.05 | morods_marshals; replaced by sword_kingdom |
+| `morods_marshals_spirit` | Morod's Marshals | army_org_factor 0.05, experience_gain_army_factor 0.05 | morods_marshals; replaced by sword_kingdom |
 | `sword_kingdom` | The Sword Kingdom | army_org_factor 0.05, army_attack_factor 0.05, war_support_factor 0.05 | the_sword_kingdom |
 | `pact_drill` | Drilled With the Shield-Companies | army_defence_factor 0.05, experience_gain_army_factor 0.05 | drill_with_the_shield_companies |
 | `shield_of_postondoroth` | The Shield of Postondoroth | army_core_defence_factor 0.10, political_power_gain 0.05 | the_shield_of_postondoroth; removed if Drak leaves Stabilo's faction |
@@ -577,42 +578,42 @@ King Ocellio of Ostoroth (`<Ostoroth>_zin_ruler`), Wild stance `zin_wild_freehol
 
 **A. The Highland Crown.** **Mutual exclusions:** `the_clan_moot` / `the_kings_word`.
 
-- `the_highland_crown` **The Highland Crown** (2,0): political_power 50; stability 0.02. AI 100.
-- `ocellios_court` **Ocellio's Court** (1,1; ← the_highland_crown): political_power 50. AI 40.
-- `the_highland_clans` **The Highland Clans** (3,1; ← the_highland_crown): manpower 1500; stability 0.02. AI 30.
-- `the_clan_moot` **The Clan Moot** (0,2; ← ocellios_court / the_highland_clans; ✕ the_kings_word): Drift wild +5; add_spirit clan_moot. AI 25; hist ×2.
-- `the_kings_word` **The King's Word** (2,2; ← ocellios_court / the_highland_clans; ✕ the_clan_moot): Drift dominion +5; add_spirit kings_word. AI 15.
-- `crown_of_the_highlands` **Crown of the Highlands** (1,3; ← the_clan_moot / the_kings_word): political_power 75; stability 0.03. AI 25.
+- `the_highland_crown` **The Highland Crown** (2,0) `crown_iron`: political_power 50; stability 0.02. AI 100.
+- `ocellios_court` **Ocellio's Court** (1,1; ← the_highland_crown) `throne_gold`: political_power 50. AI 40.
+- `the_highland_clans` **The Highland Clans** (3,1; ← the_highland_crown) `banner_plain`: manpower 1500; stability 0.02. AI 30.
+- `the_clan_moot` **The Clan Moot** (0,2; ← ocellios_court / the_highland_clans; ✕ the_kings_word) `council_table`: Drift wild +5; add_spirit clan_moot. AI 25; hist ×2.
+- `the_kings_word` **The King's Word** (2,2; ← ocellios_court / the_highland_clans; ✕ the_clan_moot) `seal_royal`: Drift dominion +5; add_spirit kings_word. AI 15.
+- `crown_of_the_highlands` **Crown of the Highlands** (1,3; ← the_clan_moot / the_kings_word) `snow_peak`: political_power 75; stability 0.03. AI 25.
 
 **B. The Lake Road.** **Mutual exclusions:** `friends_at_furvior` / `the_road_is_ours`.
 
-- `the_lake_road` **The Lake Road** (6,1; ← the_highland_crown): call zin_shared_east_lands_road_infra; political_power 25. AI 35.
-- `friends_at_furvior` **Friends at Furvior** (5,2; ✕ the_road_is_ours): Lean +15; Inf +5 lake on Noris. AI 15 + lean ÷ 2.
-- `the_road_is_ours` **The Road Is Ours** (7,2; ✕ friends_at_furvior): call zin_shared_east_lands_halve_lean; add_spirit lake_tolls. AI 20.
-- `markets_of_ostoroth` **Markets of Ostoroth** (4,3; ← friends_at_furvior / the_road_is_ours): building industrial_complex 1 @capital. AI 20.
-- `mora_our_neighbour` **Mora, Our Neighbour** (6,3; ← friends_at_furvior / the_road_is_ours; 35d): Avail: exists Mora. event_for Mora regional_ostoroth.1. AI 20.
-- `the_high_road_rich` **The High Road Grows Rich** (5,4; ← markets_of_ostoroth / mora_our_neighbour): political_power 50; building infrastructure 1 @capital. AI 15.
+- `the_lake_road` **The Lake Road** (6,1; ← the_highland_crown) `traders_road`: call zin_shared_east_lands_road_infra; political_power 25. AI 35.
+- `friends_at_furvior` **Friends at Furvior** (5,2; ← the_lake_road; ✕ the_road_is_ours) `camel_rider`: Lean +15; Inf +5 lake on Noris. AI 15 + lean ÷ 2.
+- `the_road_is_ours` **The Road Is Ours** (7,2; ← the_lake_road; ✕ friends_at_furvior) `toll_house`: call zin_shared_east_lands_halve_lean; add_spirit lake_tolls. AI 20.
+- `markets_of_ostoroth` **Markets of Ostoroth** (4,3; ← friends_at_furvior / the_road_is_ours) `market_stalls`: building industrial_complex 1 @capital. AI 20.
+- `mora_our_neighbour` **Mora, Our Neighbour** (6,3; ← friends_at_furvior / the_road_is_ours; 35d) `lake_town`: Avail: exists Mora. event_for Mora regional_ostoroth.1. AI 20.
+- `the_high_road_rich` **The High Road Grows Rich** (5,4; ← markets_of_ostoroth / mora_our_neighbour) `coin_chest`: political_power 50; building infrastructure 1 @capital. AI 15.
 
 **C. Highland Companies.**
 
-- `highland_companies` **Highland Companies** (21,1; ← the_highland_crown): army_experience 10; manpower 1000. AI 25.
-- `crag_forts` **Crag Forts** (20,2; ← highland_companies): building bunker 1 @capital; building bunker 1 @random_owned. AI 15; ×3 after `zin_war_of_last_crowns`.
-- `highland_archers` **Highland Archers** (22,2; ← highland_companies): research [zin_cat_bows] 50% ×1. AI 20.
-- `hill_ponies` **Hill Ponies** (20,3; ← crag_forts): research [zin_cat_mounts] 50% ×1. AI 15.
-- `the_passes_held` **The Passes Held** (22,3; ← crag_forts / highland_archers): add_spirit passes_held. AI 20.
-- `masters_of_the_heights` **Masters of the Heights** (21,4; ← hill_ponies / the_passes_held): army_experience 10; research [zin_cat_arms] 50% ×1. AI 15.
+- `highland_companies` **Highland Companies** (21,1; ← the_highland_crown) `spear_levy`: army_experience 10; manpower 1000. AI 25.
+- `crag_forts` **Crag Forts** (20,2; ← highland_companies) `pass_fort`: building bunker 1 @capital; building bunker 1 @random_owned. AI 15; ×3 after `zin_war_of_last_crowns`.
+- `highland_archers` **Highland Archers** (22,2; ← highland_companies) `bow_archers`: research [zin_cat_bows] 50% ×1. AI 20.
+- `hill_ponies` **Hill Ponies** (20,3; ← crag_forts) `horse_cavalry`: research [zin_cat_mounts] 50% ×1. AI 15.
+- `the_passes_held` **The Passes Held** (22,3; ← crag_forts / highland_archers) `mountain_pass`: add_spirit passes_held. AI 20.
+- `masters_of_the_heights` **Masters of the Heights** (21,4; ← hill_ponies / the_passes_held) `war_council_map`: army_experience 10; research [zin_cat_arms] 50% ×1. AI 15.
 
 **D. Herds and Lakes.**
 
-- `herds_of_the_high_pastures` **Herds of the High Pastures** (10,1; ← the_highland_crown): add_spirit high_pastures. AI 30.
-- `wool_and_hides` **Wool and Hides** (9,2; ← herds_of_the_high_pastures): building industrial_complex 1 @random_owned. AI 20.
-- `lake_fisheries` **Lake Fisheries** (11,2; ← herds_of_the_high_pastures): stability 0.03; political_power 25. AI 20.
-- `mines_of_the_crags` **Mines of the Crags** (9,3; ← wool_and_hides): building arms_factory 1 @capital. AI 20.
-- `the_highland_granaries` **The Highland Granaries** (11,3; ← lake_fisheries): stability 0.03; manpower 1000. AI 15.
+- `herds_of_the_high_pastures` **Herds of the High Pastures** (10,1; ← the_highland_crown) `herds`: add_spirit high_pastures. AI 30.
+- `wool_and_hides` **Wool and Hides** (9,2; ← herds_of_the_high_pastures) `market_stalls`: building industrial_complex 1 @random_owned. AI 20.
+- `lake_fisheries` **Lake Fisheries** (11,2; ← herds_of_the_high_pastures) `fishing_boats`: stability 0.03; political_power 25. AI 20.
+- `mines_of_the_crags` **Mines of the Crags** (9,3; ← wool_and_hides) `mine_cart`: building arms_factory 1 @capital. AI 20.
+- `the_highland_granaries` **The Highland Granaries** (11,3; ← lake_fisheries) `granary`: stability 0.03; manpower 1000. AI 15.
 
-**E. Copy of E4:** root at (14,1), prerequisite `the_highland_crown`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (14,1), prerequisite `the_highland_crown`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `crown_of_the_highlands` / `the_high_road_rich` / `temples_of_the_deliverer`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `crown_of_the_highlands` / `the_high_road_rich` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -638,9 +639,9 @@ King Ocellio of Ostoroth (`<Ostoroth>_zin_ruler`), Wild stance `zin_wild_freehol
 
 ### Events (namespace `zin_regional_ostoroth`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | A Letter From the Highlands | Mora | mora_our_neighbour | Ostoroth proposes that the lake and the highlands keep the Lake Road free together. "Sign a pact of neighbours" (`non_aggression` with Ostoroth; both opinion +15) / "Thank them politely" (nothing). AI 70/30 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | A Letter From the Highlands | Mora | mora_our_neighbour | `generic_court` | Ostoroth proposes that the lake and the highlands keep the Lake Road free together. "Sign a pact of neighbours" (`non_aggression` with Ostoroth; both opinion +15) / "Thank them politely" (nothing). AI 70/30 |
 
 ---
 
@@ -674,43 +675,43 @@ The Noris spec notes that the map may give Gondolin no coastal state. Then branc
 
 **A. The Sea Crown.**
 
-- `the_sea_crown` **The Sea Crown** (2,0): political_power 50; navy_experience 5. AI 100.
-- `lorvenas_court` **Lorvena's Court** (1,1; ← the_sea_crown): add_spirit lorvenas_court. AI 40.
-- `the_northern_houses` **The Northern Houses** (3,1; ← the_sea_crown): manpower 1000; stability 0.02. AI 30.
-- `the_royal_house_of_gondolin` **The Royal House of Gondolin** (0,2; ← lorvenas_court; 35d): event regional_gondolin.2. AI 20.
-- `the_queens_council` **The Queen's Council** (2,2; ← lorvenas_court / the_northern_houses): political_power 75. AI 25.
-- `crown_of_the_northern_shore` **Crown of the Northern Shore** (1,3; ← the_royal_house_of_gondolin / the_queens_council): swap_spirit lorvenas_court → northern_shore_crown. AI 25.
+- `the_sea_crown` **The Sea Crown** (2,0) `crown_iron`: political_power 50; navy_experience 5. AI 100.
+- `lorvenas_court` **Lorvena's Court** (1,1; ← the_sea_crown) `throne_gold`: add_spirit lorvenas_court_spirit. AI 40.
+- `the_northern_houses` **The Northern Houses** (3,1; ← the_sea_crown) `council_table`: manpower 1000; stability 0.02. AI 30.
+- `the_royal_house_of_gondolin` **The Royal House of Gondolin** (0,2; ← lorvenas_court; 35d) `seal_royal`: event regional_gondolin.2. AI 20.
+- `the_queens_council` **The Queen's Council** (2,2; ← lorvenas_court / the_northern_houses) `council_table`: political_power 75. AI 25.
+- `crown_of_the_northern_shore` **Crown of the Northern Shore** (1,3; ← the_royal_house_of_gondolin / the_queens_council) `sceptre`: swap_spirit lorvenas_court_spirit → northern_shore_crown. AI 25.
 
 **B. Harbours of Gondolin.** `allow_branch` on `harbours_of_gondolin`: Gondolin owns a coastal state.
 
-- `harbours_of_gondolin` **Harbours of Gondolin** (6,1; ← the_sea_crown): building dockyard 1 @random_coastal; navy_experience 5. AI 35.
-- `the_salt_quays` **The Salt Quays** (5,2; ← harbours_of_gondolin): building naval_base 1 @random_coastal; Inf +5 salt on Noris. AI 25.
-- `galleys_of_gondolin` **Galleys of Gondolin** (7,2; ← harbours_of_gondolin): research [zin_cat_galleys] 50% ×1. AI 25.
-- `the_fishing_fleets` **The Fishing Fleets** (4,3; ← the_salt_quays): stability 0.03; political_power 25. AI 20.
-- `sea_charts_of_the_north` **Sea Charts of the North** (6,3; ← the_salt_quays / galleys_of_gondolin): navy_experience 10; research [zin_cat_galleys] 50% ×1. AI 15.
-- `warships_of_the_north` **Warships of the North** (8,3; ← galleys_of_gondolin): research [zin_cat_warships] 50% ×1. AI 15.
-- `masters_of_the_northern_sea` **Masters of the Northern Sea** (6,4; ← sea_charts_of_the_north / warships_of_the_north): add_spirit northern_sea_masters. AI 20.
+- `harbours_of_gondolin` **Harbours of Gondolin** (6,1; ← the_sea_crown) `harbour_lake`: building dockyard 1 @random_coastal; navy_experience 5. AI 35.
+- `the_salt_quays` **The Salt Quays** (5,2; ← harbours_of_gondolin) `toll_house`: building naval_base 1 @random_coastal; Inf +5 salt on Noris. AI 25.
+- `galleys_of_gondolin` **Galleys of Gondolin** (7,2; ← harbours_of_gondolin) `galley_oars`: research [zin_cat_galleys] 50% ×1. AI 25.
+- `the_fishing_fleets` **The Fishing Fleets** (4,3; ← the_salt_quays) `fishing_boats`: stability 0.03; political_power 25. AI 20.
+- `sea_charts_of_the_north` **Sea Charts of the North** (6,3; ← the_salt_quays / galleys_of_gondolin) `sea_charts`: navy_experience 10; research [zin_cat_galleys] 50% ×1. AI 15.
+- `warships_of_the_north` **Warships of the North** (8,3; ← galleys_of_gondolin) `warship_sail`: research [zin_cat_warships] 50% ×1. AI 15.
+- `masters_of_the_northern_sea` **Masters of the Northern Sea** (6,4; ← sea_charts_of_the_north / warships_of_the_north) `great_warship`: add_spirit northern_sea_masters. AI 20.
 
 **C. Watch on the Northern Sea.**
 
-- `watch_on_the_northern_sea` **Watch on the Northern Sea** (21,1; ← the_sea_crown; 35d): event regional_gondolin.1. AI 30.
-- `the_watchers_of_gondolin` **The Watchers of Gondolin** (20,2; ← watch_on_the_northern_sea): add_spirit watchers_of_gondolin. AI 25.
-- `beacons_of_the_shore` **Beacons of the Shore** (22,2; ← watch_on_the_northern_sea): building coastal_bunker 1 @north_coast (capital if none); flag zin_regional_gondolin_beacons. AI 20.
-- `word_to_furvior` **Word to Furvior** (21,3; ← the_watchers_of_gondolin / beacons_of_the_shore; 35d): for_country Noris: political_power 25; Lean +5. AI 20.
-- `the_dead_on_the_shore` **The Dead on the Shore** (20,4; ← word_to_furvior): key focus.
-- `ships_against_the_black_sails` **Ships Against the Black Sails** (22,4; ← word_to_furvior): Avail: `zin_zol_rising`. research [zin_cat_warships] 50% ×1; navy_experience 15. AI 100 when available.
+- `watch_on_the_northern_sea` **Watch on the Northern Sea** (21,1; ← the_sea_crown; 35d) `lighthouse`: event regional_gondolin.1. AI 30.
+- `the_watchers_of_gondolin` **The Watchers of Gondolin** (20,2; ← watch_on_the_northern_sea) `eye_watchful`: add_spirit watchers_of_gondolin. AI 25.
+- `beacons_of_the_shore` **Beacons of the Shore** (22,2; ← watch_on_the_northern_sea) `beacon`: building coastal_bunker 1 @zol_coast (capital if none); flag zin_regional_gondolin_beacons. AI 20.
+- `word_to_furvior` **Word to Furvior** (21,3; ← the_watchers_of_gondolin / beacons_of_the_shore; 35d) `envoy`: for_country Noris: political_power 25; Lean +5. AI 20.
+- `the_dead_on_the_shore` **The Dead on the Shore** (20,4; ← word_to_furvior) `black_hulls`: key focus.
+- `ships_against_the_black_sails` **Ships Against the Black Sails** (22,4; ← word_to_furvior) `warship_sail`: Avail: `zin_zol_rising`. research [zin_cat_warships] 50% ×1; navy_experience 15. AI 100 when available.
 
 **D. Northern Anchor of the Treaty.** **Mutual exclusions:** `a_voice_in_the_treaty_council` / `ask_more_of_furvior`.
 
-- `northern_anchor_of_the_treaty` **Northern Anchor of the Treaty** (10,1; ← the_sea_crown): Lean +10; political_power 25. AI 40.
-- `the_salt_roads_end` **The Salt Road's End** (9,2; ← northern_anchor_of_the_treaty): call zin_shared_east_lands_road_infra; Inf +5 salt on Noris. AI 25.
-- `treaty_levies_of_gondolin` **Treaty Levies of Gondolin** (11,2; ← northern_anchor_of_the_treaty): Avail: in a faction with Noris. army_experience 10; manpower 1000. AI 25.
-- `a_voice_in_the_treaty_council` **A Voice in the Treaty Council** (9,3; ← the_salt_roads_end / treaty_levies_of_gondolin; ✕ ask_more_of_furvior): Avail: in a faction with Noris. political_power 50; for_country Noris: Gondolin opinion +10. AI 30.
-- `ask_more_of_furvior` **Ask More of Furvior** (11,3; ← the_salt_roads_end / treaty_levies_of_gondolin; ✕ a_voice_in_the_treaty_council): political_power 75; Lean −5. AI 15.
+- `northern_anchor_of_the_treaty` **Northern Anchor of the Treaty** (10,1; ← the_sea_crown) `anchor_rope`: Lean +10; political_power 25. AI 40.
+- `the_salt_roads_end` **The Salt Road's End** (9,2; ← northern_anchor_of_the_treaty) `traders_road`: call zin_shared_east_lands_road_infra; Inf +5 salt on Noris. AI 25.
+- `treaty_levies_of_gondolin` **Treaty Levies of Gondolin** (11,2; ← northern_anchor_of_the_treaty) `levy_muster`: Avail: in a faction with Noris. army_experience 10; manpower 1000. AI 25.
+- `a_voice_in_the_treaty_council` **A Voice in the Treaty Council** (9,3; ← the_salt_roads_end / treaty_levies_of_gondolin; ✕ ask_more_of_furvior) `scroll_treaty`: Avail: in a faction with Noris. political_power 50; for_country Noris: Gondolin opinion +10. AI 30.
+- `ask_more_of_furvior` **Ask More of Furvior** (11,3; ← the_salt_roads_end / treaty_levies_of_gondolin; ✕ a_voice_in_the_treaty_council) `coin_chest`: political_power 75; Lean −5. AI 15.
 
-**E. Copy of E4:** root at (14,1), prerequisite `the_sea_crown`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (14,1), prerequisite `the_sea_crown`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `crown_of_the_northern_shore` / `a_voice_in_the_treaty_council` / `ask_more_of_furvior` / `temples_of_the_deliverer`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `crown_of_the_northern_shore` / `a_voice_in_the_treaty_council` / `ask_more_of_furvior` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -727,7 +728,7 @@ The Noris spec notes that the map may give Gondolin no coastal state. Then branc
 
 | Key | Name | Modifiers | Source |
 | --- | --- | --- | --- |
-| `lorvenas_court` | Lorvena's Court | political_power_gain 0.05, naval_speed_factor 0.05 | lorvenas_court; replaced by northern_shore_crown |
+| `lorvenas_court_spirit` | Lorvena's Court | political_power_gain 0.05, naval_speed_factor 0.05 | lorvenas_court; replaced by northern_shore_crown |
 | `northern_shore_crown` | Crown of the Northern Shore | political_power_gain 0.10, navy_org_factor 0.05, stability_factor 0.03 | crown_of_the_northern_shore |
 | `northern_sea_masters` | Masters of the Northern Sea | naval_damage_factor 0.05, naval_detection 0.10, convoy_escort_efficiency 0.10 | masters_of_the_northern_sea |
 | `watchers_of_gondolin` | The Watchers of Gondolin | naval_detection 0.10, coastal_bunker_effectiveness_factor 0.10 | the_watchers_of_gondolin |
@@ -736,10 +737,10 @@ The Noris spec notes that the map may give Gondolin no coastal state. Then branc
 
 ### Events (namespace `zin_regional_gondolin`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | Lights Beyond the Islands | Gondolin | watch_on_the_northern_sea | Lookouts see lights where no harbour stands. Before `zin_zol_rising`: "Fishermen's lamps" (political_power 15) / "Double the watch" (navy_experience 5). After it the text speaks of the dead on far shores and has one option "Double the watch". AI 50/50 |
-| .2 | The Royal House of Gondolin | Gondolin | the_royal_house_of_gondolin | "A match in Furvior" (Lean +10; Noris opinion +15) / "A match among our captains" (navy_experience 10) / "No match this year" (political_power 25). AI 40/30/30 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | Lights Beyond the Islands | Gondolin | watch_on_the_northern_sea | `black_isles_lights` | Lookouts see lights where no harbour stands. Before `zin_zol_rising`: "Fishermen's lamps" (political_power 15) / "Double the watch" (navy_experience 5). After it the text speaks of the dead on far shores and has one option "Double the watch". AI 50/50 |
+| .2 | The Royal House of Gondolin | Gondolin | the_royal_house_of_gondolin | `generic_court` | "A match in Furvior" (Lean +10; Noris opinion +15) / "A match among our captains" (navy_experience 10) / "No match this year" (political_power 25). AI 40/30/30 |
 
 ---
 
@@ -773,42 +774,42 @@ Mora does not copy E4: branch D is its own answer to the temples.
 
 **A. The Lake Republic.** **Mutual exclusions:** `free_elections_of_mora` / `the_first_citizens`.
 
-- `the_lake_republic` **The Lake Republic** (2,0): political_power 50; stability 0.03. AI 100.
-- `the_speakers_hall` **The Speaker's Hall** (1,1; ← the_lake_republic): add_spirit speakers_hall. AI 40.
-- `the_guilds_of_the_lake` **The Guilds of the Lake** (3,1; ← the_lake_republic): political_power 50. AI 30.
-- `free_elections_of_mora` **Free Elections of Mora** (0,2; ← the_speakers_hall; ✕ the_first_citizens): Drift light +5; stability 0.03. AI 30; ×2 if ruling ideology Light.
-- `the_first_citizens` **The First Citizens** (2,2; ← the_speakers_hall / the_guilds_of_the_lake; ✕ free_elections_of_mora): Drift wild +5; political_power 50. AI 10.
-- `the_charter_of_mora` **The Charter of Mora** (1,3; ← free_elections_of_mora / the_first_citizens): add_spirit charter_of_mora. AI 25.
+- `the_lake_republic` **The Lake Republic** (2,0) `lake_town`: political_power 50; stability 0.03. AI 100.
+- `the_speakers_hall` **The Speaker's Hall** (1,1; ← the_lake_republic) `council_table`: add_spirit speakers_hall. AI 40.
+- `the_guilds_of_the_lake` **The Guilds of the Lake** (3,1; ← the_lake_republic) `guild_hall`: political_power 50. AI 30.
+- `free_elections_of_mora` **Free Elections of Mora** (0,2; ← the_speakers_hall; ✕ the_first_citizens) `charter_free`: Drift light +5; stability 0.03. AI 30; ×2 if ruling ideology Light.
+- `the_first_citizens` **The First Citizens** (2,2; ← the_speakers_hall / the_guilds_of_the_lake; ✕ free_elections_of_mora) `seal_wax`: Drift wild +5; political_power 50. AI 10.
+- `the_charter_of_mora` **The Charter of Mora** (1,3; ← free_elections_of_mora / the_first_citizens) `charter_old`: add_spirit charter_of_mora. AI 25.
 
 **B. Lake Towns.**
 
-- `lake_towns` **The Lake Towns** (6,1; ← the_lake_republic): building industrial_complex 1 @capital. AI 35.
-- `fisheries_of_the_lake` **Fisheries of the Lake** (5,2; ← lake_towns): add_spirit lake_fisheries. AI 25.
-- `the_lake_road_wharves` **The Lake Road Wharves** (7,2; ← lake_towns): call zin_shared_east_lands_road_infra; Lean +5; political_power 25. AI 25.
-- `boatwrights_of_mora` **Boatwrights of Mora** (5,3; ← fisheries_of_the_lake): building industrial_complex 1 @random_owned. AI 20.
-- `the_lake_schools` **The Lake Schools** (7,3; ← the_lake_road_wharves): research [industry] 50% ×1; political_power 25. AI 20.
-- `the_richest_lake_in_the_east` **The Richest Lake in the East** (6,4; ← boatwrights_of_mora / the_lake_schools): political_power 50; stability 0.03. AI 20.
+- `lake_towns` **The Lake Towns** (6,1; ← the_lake_republic) `lake_town`: building industrial_complex 1 @capital. AI 35.
+- `fisheries_of_the_lake` **Fisheries of the Lake** (5,2; ← lake_towns) `fishing_boats`: add_spirit lake_fisheries. AI 25.
+- `the_lake_road_wharves` **The Lake Road Wharves** (7,2; ← lake_towns) `harbour_lake`: call zin_shared_east_lands_road_infra; Lean +5; political_power 25. AI 25.
+- `boatwrights_of_mora` **Boatwrights of Mora** (5,3; ← fisheries_of_the_lake) `shipwright_yard`: building industrial_complex 1 @random_owned. AI 20.
+- `the_lake_schools` **The Lake Schools** (7,3; ← the_lake_road_wharves) `university_hall`: research [industry] 50% ×1; political_power 25. AI 20.
+- `the_richest_lake_in_the_east` **The Richest Lake in the East** (6,4; ← boatwrights_of_mora / the_lake_schools) `coin_chest`: political_power 50; stability 0.03. AI 20.
 
 **C. A Republic Among Kings.** **Mutual exclusions:** `the_noris_embassy` / `neutral_waters`.
 
-- `a_republic_among_kings` **A Republic Among Kings** (21,1; ← the_lake_republic; 35d): political_power 25. AI 30.
-- `friendship_with_ostoroth` **Friendship With Ostoroth** (20,2; ← a_republic_among_kings): Avail: exists Ostoroth; not at war with Ostoroth. non_aggression Ostoroth; stability 0.02. AI 25.
-- `the_noris_embassy` **The Noris Embassy** (22,2; ← a_republic_among_kings; ✕ neutral_waters): Lean +10; Noris opinion of Mora +10. AI 20 + lean ÷ 2.
-- `neutral_waters` **Neutral Waters** (22,3; ← a_republic_among_kings; ✕ the_noris_embassy): call zin_shared_east_lands_halve_lean; stability 0.05. AI 20.
-- `a_shield_for_the_lake` **A Shield for the Lake** (20,3; ← friendship_with_ostoroth / the_noris_embassy): Avail: `zin_war_of_last_crowns` or at war. event_for Noris regional_mora.1. AI 100 when available.
-- `the_free_lake` **The Free Lake** (21,4; ← a_shield_for_the_lake / neutral_waters): add_spirit free_lake. AI 20.
+- `a_republic_among_kings` **A Republic Among Kings** (21,1; ← the_lake_republic; 35d) `banner_league`: political_power 25. AI 30.
+- `friendship_with_ostoroth` **Friendship With Ostoroth** (20,2; ← a_republic_among_kings) `handshake_oath`: Avail: exists Ostoroth; not at war with Ostoroth. non_aggression Ostoroth; stability 0.02. AI 25.
+- `the_noris_embassy` **The Noris Embassy** (22,2; ← a_republic_among_kings; ✕ neutral_waters) `envoy`: Lean +10; Noris opinion of Mora +10. AI 20 + lean ÷ 2.
+- `neutral_waters` **Neutral Waters** (22,3; ← a_republic_among_kings; ✕ the_noris_embassy) `olive_branch`: call zin_shared_east_lands_halve_lean; stability 0.05. AI 20.
+- `a_shield_for_the_lake` **A Shield for the Lake** (20,3; ← friendship_with_ostoroth / the_noris_embassy) `fort_wall`: Avail: `zin_war_of_last_crowns` or at war. event_for Noris regional_mora.1. AI 100 when available.
+- `the_free_lake` **The Free Lake** (21,4; ← a_shield_for_the_lake / neutral_waters) `charter_free`: add_spirit free_lake. AI 20.
 
 **D. The Watchful Council.** **Mutual exclusions:** `ledgers_of_the_temples` / `the_temples_charity`.
 
-- `the_councils_question` **The Council's Question** (10,1; ← the_lake_republic; 35d): political_power 25; tooltip "The council asks why the temples lend so freely." AI 35.
-- `ledgers_of_the_temples` **Ledgers of the Temples** (9,2; ✕ the_temples_charity): flag zin_east_court_audit; Footholds −1; add_spirit open_ledgers. AI 30; ×2 Light.
-- `the_temples_charity` **The Temples' Charity** (11,2; ✕ ledgers_of_the_temples): Footholds +1; stability 0.03. AI 15.
-- `an_honest_inquiry` **An Honest Inquiry** (9,3; ← ledgers_of_the_temples): key focus.
-- `close_the_houses_of_mora` **Close the Houses of Mora** (10,4; ← an_honest_inquiry / the_temples_charity): Avail: `zin_afrit_revealed` or flag zin_afrit_suspicious. call zin_afrit_purge_houses. AI 60 when available; ×0 client.
+- `the_councils_question` **The Council's Question** (10,1; ← the_lake_republic; 35d) `scroll_sealed`: political_power 25; tooltip "The council asks why the temples lend so freely." AI 35.
+- `ledgers_of_the_temples` **Ledgers of the Temples** (9,2; ← the_councils_question; ✕ the_temples_charity) `ledger_coins`: flag zin_east_court_audit; Footholds −1; add_spirit open_ledgers. AI 30; ×2 Light.
+- `the_temples_charity` **The Temples' Charity** (11,2; ← the_councils_question; ✕ ledgers_of_the_temples) `alms_bread`: Footholds +1; stability 0.03. AI 15.
+- `an_honest_inquiry` **An Honest Inquiry** (9,3; ← ledgers_of_the_temples) `eye_watchful`: key focus.
+- `close_the_houses_of_mora` **Close the Houses of Mora** (10,4; ← an_honest_inquiry / the_temples_charity) `chain_broken`: Avail: `zin_afrit_revealed` or flag zin_afrit_suspicious. call zin_afrit_purge_houses. AI 60 when available; ×0 client.
 
-**E. Copy of E5** (Levies of the East): root `the_court_guard` at (14,1), prerequisite `the_lake_republic`.
+**E. Levies of the East.** Copy of E5, root `the_court_guard` at (14,1), prerequisite `the_lake_republic`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `the_charter_of_mora` / `the_free_lake` / `the_councils_question`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `the_charter_of_mora` / `the_free_lake` / `the_councils_question`.
 
 ### Key focuses
 
@@ -834,10 +835,10 @@ Mora does not copy E4: branch D is its own answer to the temples.
 
 ### Events (namespace `zin_regional_mora`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | The Lake Republic Asks for a Shield | Noris | a_shield_for_the_lake | "Furvior guards the lake" (`give_guarantee` Mora) / "We cannot spare the riders" (Mora: Lean −10). AI 60 if Mora's lean ≥ 20, else 30 |
-| .2 | An Honest Inquiry | Mora | an_honest_inquiry | The council's clerks find that the temples' loans are too generous and their lenders too well informed; nobody can say why. Before `zin_afrit_revealed` the text names no one and makes no charge. "Publish the findings" (flag zin_afrit_suspicious for 730 days; call zin_afrit_add_veil(value = −2); stability −0.02) / "Keep the findings in the council's chest" (political_power 25). AI 40/60; hist 20/80 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | The Lake Republic Asks for a Shield | Noris | a_shield_for_the_lake | `generic_court` | "Furvior guards the lake" (`give_guarantee` Mora) / "We cannot spare the riders" (Mora: Lean −10). AI 60 if Mora's lean ≥ 20, else 30 |
+| .2 | An Honest Inquiry | Mora | an_honest_inquiry | `houses` | The council's clerks find that the temples' loans are too generous and their lenders too well informed; nobody can say why. Before `zin_afrit_revealed` the text names no one and makes no charge. "Publish the findings" (flag zin_afrit_suspicious for 730 days; call zin_afrit_add_veil(value = −2); stability −0.02) / "Keep the findings in the council's chest" (political_power 25). AI 40/60; hist 20/80 |
 
 The "Publish" option is a proposed dependency on the Afrit spec: a court's own inquiry may make it suspicious (opening *Close the Houses* early) and costs the veil 2.
 
@@ -871,42 +872,42 @@ Tribune Arcon Vel (`<Avalon>_zin_ruler`), Wild stance `zin_wild_freeholds` (rost
 
 **A. The Tribunes' Republic.** **Mutual exclusions:** `the_citizens_assembly` / `the_free_charter` / `the_first_tribune`.
 
-- `the_tribunes_republic` **The Tribunes' Republic** (2,0): political_power 50; event regional_avalon.1. AI 100.
-- `the_tribunes_charter` **The Tribunes' Charter** (2,1; ← the_tribunes_republic): add_spirit tribunes_charter. AI 40.
-- `the_citizens_assembly` **The Citizens' Assembly** (0,2; ← the_tribunes_charter): Drift light +5; stability 0.03. AI 20.
-- `the_free_charter` **The Free Charter** (2,2; ← the_tribunes_charter): Drift wild +3; stability 0.05. AI 25; hist ×2.
-- `the_first_tribune` **The First Tribune** (4,2; ← the_tribunes_charter): Drift dominion +5; political_power 75. AI 5.
-- `the_red_banners_endure` **The Red Banners Endure** (2,3; ← any of the three): swap_spirit tribunes_charter → red_banners. AI 25.
+- `the_tribunes_republic` **The Tribunes' Republic** (2,0) `banner_plain`: political_power 50; event regional_avalon.1. AI 100.
+- `the_tribunes_charter` **The Tribunes' Charter** (2,1; ← the_tribunes_republic) `charter_free`: add_spirit tribunes_charter. AI 40.
+- `the_citizens_assembly` **The Citizens' Assembly** (0,2; ← the_tribunes_charter; ✕ the_free_charter, the_first_tribune) `council_table`: Drift light +5; stability 0.03. AI 20.
+- `the_free_charter` **The Free Charter** (2,2; ← the_tribunes_charter; ✕ the_citizens_assembly, the_first_tribune) `charter_old`: Drift wild +3; stability 0.05. AI 25; hist ×2.
+- `the_first_tribune` **The First Tribune** (4,2; ← the_tribunes_charter; ✕ the_citizens_assembly, the_free_charter) `sceptre`: Drift dominion +5; political_power 75. AI 5.
+- `the_red_banners_endure` **The Red Banners Endure** (2,3; ← the_citizens_assembly / the_free_charter / the_first_tribune) `banner_league`: swap_spirit tribunes_charter → red_banners. AI 25.
 
 **B. The Red Lands.**
 
-- `the_red_lands` **The Red Lands** (6,1; ← the_tribunes_republic): stability 0.02; political_power 25. AI 35.
-- `red_earth_farms` **Red Earth Farms** (5,2; ← the_red_lands): add_spirit red_earth. AI 25.
-- `quarries_of_red_stone` **Quarries of Red Stone** (7,2; ← the_red_lands): building industrial_complex 1 @capital. AI 25.
-- `the_dye_works` **The Dye Works** (5,3; ← red_earth_farms): political_power 50; building infrastructure 1 @capital. AI 20.
-- `salt_of_the_red_lands` **Salt of the Red Lands** (7,3; ← quarries_of_red_stone): political_power 50. AI 20.
-- `the_red_road` **The Red Road** (6,4; ← the_dye_works / salt_of_the_red_lands): building infrastructure 1 @random_owned; stability 0.03. AI 20.
+- `the_red_lands` **The Red Lands** (6,1; ← the_tribunes_republic) `ember_desert`: stability 0.02; political_power 25. AI 35.
+- `red_earth_farms` **Red Earth Farms** (5,2; ← the_red_lands) `farm_sowing`: add_spirit red_earth. AI 25.
+- `quarries_of_red_stone` **Quarries of Red Stone** (7,2; ← the_red_lands) `quarry_stone`: building industrial_complex 1 @capital. AI 25.
+- `the_dye_works` **The Dye Works** (5,3; ← red_earth_farms) `workshop_tools`: political_power 50; building infrastructure 1 @capital. AI 20.
+- `salt_of_the_red_lands` **Salt of the Red Lands** (7,3; ← quarries_of_red_stone) `granary`: political_power 50. AI 20.
+- `the_red_road` **The Red Road** (6,4; ← the_dye_works / salt_of_the_red_lands) `roads_paved`: building infrastructure 1 @random_owned; stability 0.03. AI 20.
 
 **C. Free Among Kings.** **Mutual exclusions:** `the_bankers_at_the_door` / `owe_no_prince`.
 
-- `free_among_kings` **Free Among Kings** (21,1; ← the_tribunes_republic; 35d): political_power 25. AI 30.
-- `neighbours_in_oreton` **Neighbours in Oreton** (20,2; ← free_among_kings): Avail: exists Oreton; not at war with Oreton. non_aggression Oreton. AI 25.
-- `the_bankers_at_the_door` **The Bankers at the Door** (22,2; ← free_among_kings; ✕ owe_no_prince): Lean −10; if Stabilo has `zin_stabilo_ledger_open`: Debt +10 and political_power 75. AI 20.
-- `owe_no_prince` **Owe No Prince** (22,3; ← free_among_kings; ✕ the_bankers_at_the_door): call zin_shared_east_lands_halve_lean; stability 0.05. AI 20; hist ×1.5.
-- `an_example_to_the_east` **An Example to the East** (20,3; ← neighbours_in_oreton; 35d): event regional_avalon.2. AI 15.
-- `the_republic_stands` **The Republic Stands** (21,4; ← an_example_to_the_east / owe_no_prince / the_bankers_at_the_door): add_spirit republic_stands. AI 20.
+- `free_among_kings` **Free Among Kings** (21,1; ← the_tribunes_republic; 35d) `chain_broken`: political_power 25. AI 30.
+- `neighbours_in_oreton` **Neighbours in Oreton** (20,2; ← free_among_kings) `envoy`: Avail: exists Oreton; not at war with Oreton. non_aggression Oreton. AI 25.
+- `the_bankers_at_the_door` **The Bankers at the Door** (22,2; ← free_among_kings; ✕ owe_no_prince) `ledger_coins`: Lean −10; if Stabilo has `zin_stabilo_ledger_open`: Debt +10 and political_power 75. AI 20.
+- `owe_no_prince` **Owe No Prince** (22,3; ← free_among_kings; ✕ the_bankers_at_the_door) `coin_chest`: call zin_shared_east_lands_halve_lean; stability 0.05. AI 20; hist ×1.5.
+- `an_example_to_the_east` **An Example to the East** (20,3; ← neighbours_in_oreton; 35d) `beacon`: event regional_avalon.2. AI 15.
+- `the_republic_stands` **The Republic Stands** (21,4; ← an_example_to_the_east / owe_no_prince / the_bankers_at_the_door) `fort_wall`: add_spirit republic_stands. AI 20.
 
 **D. Citizen Levies.**
 
-- `citizen_levies` **Citizen Levies** (10,1; ← the_tribunes_republic): manpower 1500; army_experience 5. AI 30.
-- `the_militia_of_the_red_lands` **The Militia of the Red Lands** (9,2; ← citizen_levies): add_spirit red_militia. AI 25.
-- `forts_of_the_republic` **Forts of the Republic** (11,2; ← citizen_levies): building bunker 2 @capital. AI 15; ×3 after `zin_war_of_last_crowns`.
-- `pikes_and_bows` **Pikes and Bows** (9,3; ← the_militia_of_the_red_lands): research [zin_cat_bows] 50% ×1; research [zin_cat_arms] 50% ×1. AI 20.
-- `the_republics_captains` **The Republic's Captains** (10,4; ← pikes_and_bows / forts_of_the_republic): army_experience 10. AI 15.
+- `citizen_levies` **Citizen Levies** (10,1; ← the_tribunes_republic) `spear_levy`: manpower 1500; army_experience 5. AI 30.
+- `the_militia_of_the_red_lands` **The Militia of the Red Lands** (9,2; ← citizen_levies) `levy_muster`: add_spirit red_militia. AI 25.
+- `forts_of_the_republic` **Forts of the Republic** (11,2; ← citizen_levies) `fort_wall`: building bunker 2 @capital. AI 15; ×3 after `zin_war_of_last_crowns`.
+- `pikes_and_bows` **Pikes and Bows** (9,3; ← the_militia_of_the_red_lands) `bow_archers`: research [zin_cat_bows] 50% ×1; research [zin_cat_arms] 50% ×1. AI 20.
+- `the_republics_captains` **The Republic's Captains** (10,4; ← pikes_and_bows / forts_of_the_republic) `war_council_map`: army_experience 10. AI 15.
 
-**E. Copy of E4:** root at (14,1), prerequisite `the_tribunes_republic`.
+**E. The Generous Friends.** Copy of E4, root `temples_of_the_deliverer` at (14,1), prerequisite `the_tribunes_republic`.
 
-**F. Copy of E9:** root at (14,6), prerequisites `the_red_banners_endure` / `the_republic_stands` / `temples_of_the_deliverer`.
+**F. The Question of the East.** Copy of E9, root `question_of_the_east` at (14,6), prerequisites `the_red_banners_endure` / `the_republic_stands` / `temples_of_the_deliverer`.
 
 ### Key focuses
 
@@ -932,31 +933,38 @@ Tribune Arcon Vel (`<Avalon>_zin_ruler`), Wild stance `zin_wild_freeholds` (rost
 
 ### Events (namespace `zin_regional_avalon`)
 
-| Id | Title | For | Fired by | Options (AI) |
-| --- | --- | --- | --- | --- |
-| .1 | The Day of the Red Banners | Avalon | the_tribunes_republic | The towns keep the day they set up the republic (proposed 4A 1719). "A feast for every street" (stability 0.03) / "A march of the militia" (war_support 0.03). AI 60/40 |
-| .2 | An Example to the East | Avalon | an_example_to_the_east | Envoys from a neighbouring court ask how a republic keeps its wells. "Teach them" (political_power 25; Oreton opinion +10) / "Teach them nothing" (political_power 50). AI 60/40 |
+| Id | Title | For | Fired by | Picture | Options (AI) |
+| --- | --- | --- | --- | --- | --- |
+| .1 | The Day of the Red Banners | Avalon | the_tribunes_republic | `generic_peace` | The towns keep the day they set up the republic (proposed 4A 1719). "A feast for every street" (stability 0.03) / "A march of the militia" (war_support 0.03). AI 60/40 |
+| .2 | An Example to the East | Avalon | an_example_to_the_east | `generic_court` | Envoys from a neighbouring court ask how a republic keeps its wells. "Teach them" (political_power 25; Oreton opinion +10) / "Teach them nothing" (political_power 50). AI 60/40 |
 
 ---
 
 ## Implementation
 
-### Files (per tree)
+### Builder and files (per tree)
+
+The content builder's focus compiler, `tools/content/modules/focus_compiler.mjs` ([00_format_and_compiler.md](../00_format_and_compiler.md)), reads each tree's data file and writes these files in the builder's one transaction through the shared rewrite engine (`tools/content/apply.mts`). The builder resolves country names to tags at build time. Nothing is hand-edited.
 
 | Path | Content |
 | --- | --- |
 | `docs/design/focus/regional_<name>.json` | Tree data, `"tier": "regional"`, `"countries": ["<Name>"]` |
-| `common/national_focus/zin_regional_<name>.txt` | Compiled tree |
+| `common/national_focus/zin_regional_<name>.txt` | Compiled tree; its `country` block selects the owner, so the interim Long Peace tree no longer applies to it |
 | `common/ideas/zin_focus_regional_<name>.txt` | The tree's spirits and the re-declared spirits of copied modules |
 | `events/zin_regional_<name>.txt` | Namespace `zin_regional_<name>` (Drak has none) |
-| `common/scripted_effects/zin_regional_<name>.txt`, `common/scripted_triggers/zin_regional_<name>.txt` | Alerhia and Drak only |
+| `common/scripted_effects/zin_regional_<name>.txt`, `common/scripted_triggers/zin_regional_<name>.txt` | Alerhia and Drak only (tables above) |
+| `common/ai_strategy/zin_regional_<name>.txt` | The startup strategies under AI, from the tree data's `ai_strategies` block |
 | `localisation/english/zin_focus_regional_<name>_l_english.yml` | All text |
 
-Names: `alerhia`, `miaed`, `erco`, `plutondo`, `drak`, `ostoroth`, `gondolin`, `mora`, `avalon`.
+Names: `alerhia`, `miaed`, `erco`, `plutondo`, `drak`, `ostoroth`, `gondolin`, `mora`, `avalon`. Rulers are the characters spec's `<TAG>_zin_ruler` with the traits named in each Ruler section; these trees add no other characters.
 
 ### Copying modules
 
-The builder copies a module from `docs/design/focus/shared_east_lands.json` into the tier B file at build time when the tree data names it: `"copy": [ { "from": "shared_east_lands", "module": "E4", "root_at": [14,1], "root_prerequisite": [["the_mountain_throne"]] } ]`. The compiler then treats the copied focuses as the tree's own. This needs a small compiler extension (`copy` with `module` tags on shared focuses); until it exists, implementers paste the module by hand. Either way the compiled ids are the tier B tree's.
+The tree data names each copied module: `"copy": [ { "from": "shared_east_lands", "module": "E4", "root_at": [14,1], "root_prerequisite": [["the_mountain_throne"]] } ]`. At build time the focus compiler reads `docs/design/focus/shared_east_lands.json`, takes every focus tagged with that module, gives it the tier B id, moves it by the root's offset, replaces the root's prerequisite and re-declares the module's spirits under the tree's prefix. The compiler then checks the whole tree as one (positions, prerequisites, icons). This is the regional `copy` extension of the compiler, shared with the Islands of the South trees; it needs the shared tree's focuses to carry their module tag (`"module": "E4"`).
+
+### Current game state
+
+All nine courts run the interim Long Peace tree today; their rulers carry generated names until the characters spec ships, and the game still starts in 1936 until the calendar spec ships. The trees call the eastern kings, Afrit, Stabilo and politics systems and copy the shared East Lands tree, so they are built in phase 6 after those mechanics (phase 3) and with the shared tree.
 
 ### Mechanic names used
 
@@ -992,25 +1000,27 @@ The tier B trees never decide alone who kneels. The Afrit spec's candidate rule 
 
 - No AI tier B court of this spec declares a war on its own before `zin_war_of_last_crowns`. Their war focuses need story flags.
 - Under `zin_rule_ai_east` REFUSE_AFRIT or UNITE_WITHOUT_AFRIT, E9's pledge is weighted 0 and its resist route ×5; Alerhia's Lord of the Crossing is unchanged, because the coalition still forms.
-- AI strategies at startup (added by this spec's on-startup data, proposed): Alerhia `befriend` Noris and Stabilo 5; Plutondo and Drak `befriend` Stabilo 15; Gondolin and Ostoroth `befriend` Noris 15; Mora `befriend` Ostoroth 10.
+- AI strategies at startup (tree data `ai_strategies`, proposed): Alerhia `befriend` Noris and Stabilo 5; Plutondo and Drak `befriend` Stabilo 15; Gondolin and Ostoroth `befriend` Noris 15; Mora `befriend` Ostoroth 10.
 
 ## Acceptance
 
-1. Each of the nine trees compiles with 30 to 50 focuses (Gondolin 34 without a coast), unique positions and every focus below its prerequisites; the compiler and the HOI4 Agent Tools focus inspector pass.
-2. Each tree contains its copied modules with the tree's own ids and re-declared spirits; no focus id is shared with `shared_east_lands` or another tree.
-3. On 1 Thaw 4A 1748 no focus available to any of the nine countries contains or calls a war, war goal, claim or cause (scan).
-4. Lean, footholds and debt change only through `zin_east_add_lean`, `zin_afrit_add_footholds` and `zin_stabilo_add_debt` (scan of compiled effects).
-5. Drak's Old Seat branch is visible only while Drak owns a `zin_is_site_postondoroth` state; `yield_the_old_seat` transfers it to Stabilo.
-6. On a historical observer run, Alerhia takes Lord of the Crossing in at least three of five runs and leads the coalition in at least two; Plutondo joins Stabilo's faction in at least two of five runs; no tree in this spec starts a war before `zin_war_of_last_crowns`.
-7. No text names Afrit before `zin_afrit_revealed`; Mora's inquiry event and Miaed's scouts event make no charge and name no one (compiler secret scan; review).
-8. Every modifier in the spirits tables exists in the game's modifier documentation; every effect and trigger exists in the documentation or in a spec's scripted file.
+1. The compiler builds the nine trees with 49, 41, 41, 41, 40, 40, 41, 40 and 40 focuses (copies expanded), unique positions, every focus below its prerequisites, every exclusive written on both focuses, days multiples of 7 and every icon and event picture in the catalog; Gondolin's coastal branches hide with `allow_branch` while it has no coast, and the tree still compiles. The HOI4 Agent Tools focus inspector and script validator pass on the staged files.
+2. Each tree contains its copied modules with the tree's own ids and re-declared spirits; no focus id is shared with `shared_east_lands` or another tree; no localisation key is shared by a focus and an idea of the same tree.
+3. Scan: on 1 Thaw 4A 1748 no focus available to any of the nine countries contains or calls a war, war goal, claim or cause.
+4. Scan: lean, footholds and debt change only through `zin_east_add_lean`, `zin_afrit_add_footholds` and `zin_stabilo_add_debt`.
+5. Scripted test: Drak's Old Seat branch is visible only while Drak owns a `zin_is_site_postondoroth` state; `yield_the_old_seat` transfers it to Stabilo.
+6. No text names Afrit before `zin_afrit_revealed`; Mora's inquiry event and Miaed's scouts event make no charge and name no one (compiler secret scan; review).
+7. Every modifier in the spirits tables exists in the 1.19.3 modifier documentation; every effect and trigger exists in the documentation or in a spec's scripted file.
+8. One in-game year in the isolated Linux run from 1 Thaw 4A 1748 (historical rule): the nine trees load without errors in the log, no East Lands war starts, and Alerhia takes *The Rift Crown* and Plutondo *The Prince's Court* in 4A 1748.
 
 ## Open questions
 
-1. **Who kneels.** The trees keep the vault's open question open: kneeling is decided per game. Do you want any of these nine courts fixed for the historical path?
-2. **Alerhia as coalition leader.** The mechanic's weights make Alerhia the likeliest leader of the eastern invasion. Is that the court you picture leading the crossing, and do you accept its proposed title, the Rift Crown, and its pilgrim ferries to the Zilin Hills?
-3. **Gondolin's coast.** The Noris spec found no coastal state for Gondolin in the province data, though the roster calls it a maritime crown. Should the map give Gondolin a coast on the northern sea?
-4. **Postondoroth.** If the map moves Postondoroth into Stabilo (map spec S5), Drak's Old Seat branch never shows. Keep the branch as a fallback, or drop it?
-5. **Avalon's revolution.** Avalon's roster role is "revolutionary republic of the Red Lands". This spec proposes a revolt of 4A 1719 against a king who sold the wells. Do you want a different story, and should Avalon start as a Light republic rather than a Wild freehold?
-6. **Mora's inquiry.** May a small Light republic's own inquiry make it suspicious of the temples and cost the Deliverer's secret a little (veil −2), before any reveal?
-7. **Ostoroth's place.** The roster calls Ostoroth a "western highland kingdom"; the eastern kings spec places it in the north-east on the Lake Road. Which is right on the final map?
+All are owner questions already listed in [OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md) (regions: east, south isles, sun, 1 to 8); the work proceeds on the proposal given.
+
+1. **Who kneels.** Works on: kneeling is decided per game by the Afrit spec's candidate rule; no court is fixed.
+2. **Alerhia as coalition leader.** Works on: Alerhia, the Rift Crown, is the likeliest leader, with pilgrim ferries to the Zilin Hills.
+3. **Gondolin's coast.** Works on: the coastal branches hide until the map gives Gondolin a coast.
+4. **Postondoroth.** Works on: Drak's Old Seat branch stays as a fallback while Postondoroth lies in Drak.
+5. **Avalon's revolution.** Works on: a revolt of 4A 1719 against a king who sold the wells (proposed); Avalon starts as a Wild freehold, as the roster has it.
+6. **Mora's inquiry.** Works on: a small Light republic's own inquiry may make it suspicious of the temples and cost the veil 2 before the reveal.
+7. **Ostoroth's place.** Works on: the eastern kings spec's north-east Lake Road.
