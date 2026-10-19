@@ -127,8 +127,8 @@ The owner reviewed the game and added these criteria. They apply to everything, 
 
 | Id | Criterion | Check |
 | --- | --- | --- |
-| F1 | No bureaucratic names: factions, institutions, laws and mechanics carry names a people would really use; no modern administrative words | the names audit () and the banned list |
-| F2 | Every country has a real three-letter tag from its name (NOR, AEN...), never a debug-looking tag; the total stays below 439 | the tag check and  |
+| F1 | No bureaucratic names: factions, institutions, laws and mechanics carry names a people would really use; no modern administrative words | the names audit (`docs/design/names_audit.md`) and the banned list |
+| F2 | Every country has a real three-letter tag from its name (NOR, AEN...), never a debug-looking tag; the total stays below 439 | the tag check and `tools/content/data/tag_map.json` |
 | F3 | No country is named after its leader (Zol's Mistake, not Zol; the Southern Dominion or the lore's own name, not Volgan) | the names audit |
 | F4 | Every flag has culture and purpose: no regional cliches (no palm trees across a region), distinct heraldry, family resemblance within a culture | the flag design check and the accepted flag sheets |
 | F5 | The geography reads as real fantasy geography: coherent seas and regions with no contradictory names, plausible rivers and ranges, the Nether below the Dead Lands | the geography model checker |
