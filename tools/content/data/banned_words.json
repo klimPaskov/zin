@@ -1,0 +1,1323 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/07_interface/05_text_sweep.md",
+  "game": "1.19.3.0",
+  "note": "Data for tools/content/checks/text_scan.mjs. A rule is a regular expression without delimiters. Matching is on the text a player reads: the value after glossary expansion, with colour codes, icon codes, $VARIABLE$ placeholders, [calls] and \\n removed, split on whole words. Rules are case-insensitive unless caseSensitive is true. Severity error fails the build. Severity review is reported and must be reworded or carry an allowance before the stage-4 gate.",
+  "matching": {
+    "normalise": "NFKC; remove colour codes (a section sign and one character); remove icon codes (a pound sign, the name and an optional frame); remove $...$ and [...]; replace \\n with a space; keep apostrophes inside words; a hyphen separates words",
+    "wordBoundary": "A word is a run of letters, digits and apostrophes; a hyphen separates words. The scanner wraps every pattern so that it matches whole words only, which a hyphen does not prevent (anti-tank still hits tank).",
+    "nested": "A $KEY$ whose KEY is a localisation key is expanded recursively (depth 6) before matching, so a nested vanilla key cannot hide a banned word",
+    "keysAreNotText": "Localisation keys, engine ids and file names are never matched; only displayed values"
+  },
+  "classes": {
+    "modern_industry": "Industry, energy, materials, devices, weapons and vehicles that Erdae does not have",
+    "units_of_measure": "Metric and modern units; the world measures in miles, days of march, paces, pounds and loads",
+    "modern_society": "Modern states, offices, ideologies and blocs",
+    "military_modern": "Modern ranks and formations, and the words the glossary renames",
+    "real_world": "Real countries, places, people, forces, months, weekdays and years",
+    "third_party_ip": "Fiction that is not the owner's",
+    "game_and_platform": "The base game, its publisher and its platforms",
+    "superseded_names": "Retired Erdae names (02_lore/03_names_and_terms.md)",
+    "us_spelling": "American spellings; ZIN text is British English"
+  },
+  "rules": [
+    {
+      "id": "bw_modern_industry_001",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "factor(?:y|ies)",
+      "caseSensitive": false,
+      "replace": "workshop, armoury or shipwright",
+      "why": "Economy acceptance 1: no Civilian or Military Factory"
+    },
+    {
+      "id": "bw_modern_industry_002",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "industrial(?:is|iz)(?:e|ed|ing|ation)",
+      "caseSensitive": false,
+      "replace": "craft",
+      "why": "Master plan: provisions and craft, not industry"
+    },
+    {
+      "id": "bw_modern_industry_003",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "industrial",
+      "caseSensitive": false,
+      "replace": "craft, guild",
+      "why": "Master plan: provisions and craft, not industry"
+    },
+    {
+      "id": "bw_modern_industry_004",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "industr(?:y|ies)",
+      "caseSensitive": false,
+      "replace": "craft",
+      "why": "Master plan: provisions and craft, not industry"
+    },
+    {
+      "id": "bw_modern_industry_005",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "refiner(?:y|ies)",
+      "caseSensitive": false,
+      "replace": "forge",
+      "why": "Economy: the refinery is never unlocked"
+    },
+    {
+      "id": "bw_modern_industry_006",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "assembly[ -]lines?",
+      "caseSensitive": false,
+      "replace": "work line",
+      "why": "UI inventory forbidden list"
+    },
+    {
+      "id": "bw_modern_industry_007",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "synthetic",
+      "caseSensitive": false,
+      "replace": "alchemical",
+      "why": "Economy: no synthetic refinery"
+    },
+    {
+      "id": "bw_modern_industry_008",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "oil",
+      "caseSensitive": false,
+      "replace": "essence (lamp oil only by allowance)",
+      "why": "Economy acceptance 1: no Oil resource"
+    },
+    {
+      "id": "bw_modern_industry_009",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "petrol|gasoline|diesel|kerosene",
+      "caseSensitive": false,
+      "replace": "essence",
+      "why": "Modern fuels"
+    },
+    {
+      "id": "bw_modern_industry_010",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "fuels?|fuelled|fuelling|refuel(?:s|led|ling)?",
+      "caseSensitive": false,
+      "replace": "stored essence",
+      "why": "Economy: fuel is renamed Stored Essence"
+    },
+    {
+      "id": "bw_modern_industry_011",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "coal",
+      "caseSensitive": false,
+      "replace": "grain, charcoal",
+      "why": "Economy acceptance 1: coal is Grain"
+    },
+    {
+      "id": "bw_modern_industry_012",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "steel",
+      "caseSensitive": false,
+      "replace": "iron",
+      "why": "Economy acceptance 1: steel is Iron"
+    },
+    {
+      "id": "bw_modern_industry_013",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "alumin(?:i|)um",
+      "caseSensitive": false,
+      "replace": "timber",
+      "why": "Economy acceptance 1"
+    },
+    {
+      "id": "bw_modern_industry_014",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "rubber",
+      "caseSensitive": false,
+      "replace": "horses",
+      "why": "Economy acceptance 1"
+    },
+    {
+      "id": "bw_modern_industry_015",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "tungsten",
+      "caseSensitive": false,
+      "replace": "stone",
+      "why": "Economy acceptance 1"
+    },
+    {
+      "id": "bw_modern_industry_016",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "chromium|nickel|uranium|plutonium|titanium|manganese",
+      "caseSensitive": false,
+      "replace": "gold, stone",
+      "why": "Modern materials"
+    },
+    {
+      "id": "bw_modern_industry_017",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "electric(?:al|ity|ally)?|electrified|electronics?|electro[a-z]*",
+      "caseSensitive": false,
+      "replace": "craft, lore",
+      "why": "Modern power and devices"
+    },
+    {
+      "id": "bw_modern_industry_018",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "power (?:plants?|grids?|stations?)|energy",
+      "caseSensitive": false,
+      "replace": "provisions",
+      "why": "Energy is Provisions (economy spec)"
+    },
+    {
+      "id": "bw_modern_industry_019",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "radios?|radar|sonar|telegraph(?:s|ed)?|telephones?|televisions?|computers?|computing|microchips?",
+      "caseSensitive": false,
+      "replace": "heralds, beacons, lore",
+      "why": "Modern devices (inventory forbidden list: radar)"
+    },
+    {
+      "id": "bw_modern_industry_020",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "cryptograph\\w*|cryptolog\\w*|encrypt\\w*|decrypt\\w*|code-?break\\w*",
+      "caseSensitive": false,
+      "replace": "seals and codes",
+      "why": "Inventory WE-178: cryptography is Seals and Codes"
+    },
+    {
+      "id": "bw_modern_industry_021",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "nuclear|atomic|atom bombs?|reactors?|fission|nukes?|icbm",
+      "caseSensitive": false,
+      "replace": "ritual",
+      "why": "Master plan P6: rare rituals only"
+    },
+    {
+      "id": "bw_modern_industry_022",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "rockets?|missiles?|jets?|turbojets?|helicopters?",
+      "caseSensitive": false,
+      "replace": "ritual, flier",
+      "why": "Warfare spec: no rockets"
+    },
+    {
+      "id": "bw_modern_industry_023",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "aircraft|airplanes?|aeroplanes?|airships?|zeppelins?|planes?",
+      "caseSensitive": false,
+      "replace": "flier, wing, dragon",
+      "why": "Inventory forbidden list: aircraft, plane"
+    },
+    {
+      "id": "bw_modern_industry_024",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "airfields?|air ?bases?|airbases?",
+      "caseSensitive": false,
+      "replace": "eyrie",
+      "why": "Economy: the air base is the Eyrie"
+    },
+    {
+      "id": "bw_modern_industry_025",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "air ?forces?|airforces?",
+      "caseSensitive": false,
+      "replace": "wings",
+      "why": "UI spec: the air overview is Wings"
+    },
+    {
+      "id": "bw_modern_industry_026",
+      "class": "modern_industry",
+      "severity": "review",
+      "pattern": "air wings?",
+      "caseSensitive": false,
+      "replace": "wing, flight",
+      "why": "Wing is kept; check the sentence"
+    },
+    {
+      "id": "bw_modern_industry_027",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "airborne|paratroop\\w*|parachut\\w*|paradrops?",
+      "caseSensitive": false,
+      "replace": "wing-borne landing",
+      "why": "Warfare: no paratroopers"
+    },
+    {
+      "id": "bw_modern_industry_028",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "bomb(?:s|ed|er|ers|ing|ings|ardment)?",
+      "caseSensitive": false,
+      "replace": "fire-raid, strike",
+      "why": "No bombs or bombers"
+    },
+    {
+      "id": "bw_modern_industry_029",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "machine[ -]?guns?|submachine[ -]?guns?|sub-machine[ -]?guns?",
+      "caseSensitive": false,
+      "replace": "bolt-thrower, bow",
+      "why": "Warfare spec: no guns"
+    },
+    {
+      "id": "bw_modern_industry_030",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "guns?|gunners?|gunships?|gunfire|gunpowder|firearms?|firepower",
+      "caseSensitive": false,
+      "replace": "missile fire, volley",
+      "why": "Warfare spec: no guns"
+    },
+    {
+      "id": "bw_modern_industry_031",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "cannons?|howitzers?|mortars?",
+      "caseSensitive": false,
+      "replace": "catapult, trebuchet",
+      "why": "Warfare spec: artillery is catapults and trebuchets"
+    },
+    {
+      "id": "bw_modern_industry_032",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "muskets?|musketeers?|pistols?|rifles?|riflemen|carbines?|grenades?|bazookas?|flamethrowers?|bayonets?",
+      "caseSensitive": false,
+      "replace": "spear, bow, sword",
+      "why": "Warfare spec; inventory forbidden list: rifle"
+    },
+    {
+      "id": "bw_modern_industry_033",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "tanks?",
+      "caseSensitive": false,
+      "replace": "heavy foot, knights, great kin",
+      "why": "Inventory forbidden list: tank"
+    },
+    {
+      "id": "bw_modern_industry_034",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "armou?red (?:cars?|vehicles?|trains?)|apcs?|half-?tracks?|jeeps?|trucks?|lorr(?:y|ies)|tractors?",
+      "caseSensitive": false,
+      "replace": "wagon, pack train",
+      "why": "Warfare spec: pack trains"
+    },
+    {
+      "id": "bw_modern_industry_035",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "motori[sz]ed|motori[sz]ation|motor\\w*|mechani[sz]ed|mechani[sz]ation",
+      "caseSensitive": false,
+      "replace": "mounted",
+      "why": "Warfare spec: no motor units"
+    },
+    {
+      "id": "bw_modern_industry_036",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "locomotives?|railways?|railroads?|rail ways?|railguns?",
+      "caseSensitive": false,
+      "replace": "high road, wagon train",
+      "why": "Warfare spec: the high roads"
+    },
+    {
+      "id": "bw_modern_industry_037",
+      "class": "modern_industry",
+      "severity": "review",
+      "pattern": "(?<!wagon |pack )trains?",
+      "caseSensitive": false,
+      "replace": "wagon train (noun), drill (verb)",
+      "why": "A noun use is modern; the verb is fine"
+    },
+    {
+      "id": "bw_modern_industry_038",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "artillery|field guns?",
+      "caseSensitive": false,
+      "replace": "siege engines",
+      "why": "Warfare spec section 2"
+    },
+    {
+      "id": "bw_modern_industry_039",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "anti-?air(?:craft)?|anti-?tank|flak|sp artillery|spgs?",
+      "caseSensitive": false,
+      "replace": "scorpion, ballista",
+      "why": "Warfare spec section 2"
+    },
+    {
+      "id": "bw_modern_industry_040",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "AA",
+      "caseSensitive": true,
+      "replace": "scorpion",
+      "why": "Anti-air abbreviation"
+    },
+    {
+      "id": "bw_modern_industry_041",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "submarines?|u-boats?",
+      "caseSensitive": false,
+      "replace": "corsair",
+      "why": "Warfare spec section 2"
+    },
+    {
+      "id": "bw_modern_industry_042",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "destroyers?|cruisers?|battleships?|battlecruisers?|dreadnoughts?",
+      "caseSensitive": false,
+      "replace": "war galley, warship, great warship",
+      "why": "Warfare spec section 2"
+    },
+    {
+      "id": "bw_modern_industry_043",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "aircraft carriers?|flat-?tops?",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Warfare spec: carriers are removed"
+    },
+    {
+      "id": "bw_modern_industry_044",
+      "class": "modern_industry",
+      "severity": "review",
+      "pattern": "carriers?",
+      "caseSensitive": false,
+      "replace": "removed or messenger",
+      "why": "Check the sentence"
+    },
+    {
+      "id": "bw_modern_industry_045",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "torpedo(?:es)?|depth charges?|minesweep\\w*",
+      "caseSensitive": false,
+      "replace": "boarding, ram",
+      "why": "Modern naval weapons"
+    },
+    {
+      "id": "bw_modern_industry_046",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "convoys?",
+      "caseSensitive": false,
+      "replace": "merchant fleet",
+      "why": "Economy spec: Merchant Fleets"
+    },
+    {
+      "id": "bw_modern_industry_047",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "napalm|dynamite|tnt",
+      "caseSensitive": false,
+      "replace": "fire pot",
+      "why": "Modern explosives"
+    },
+    {
+      "id": "bw_modern_industry_048",
+      "class": "modern_industry",
+      "severity": "error",
+      "pattern": "mass production|production lines?",
+      "caseSensitive": false,
+      "replace": "craft line, work line",
+      "why": "The production line is a work line"
+    },
+    {
+      "id": "bw_modern_industry_049",
+      "class": "modern_industry",
+      "severity": "review",
+      "pattern": "vehicles?",
+      "caseSensitive": false,
+      "replace": "wagon, beast",
+      "why": "Check the sentence"
+    },
+    {
+      "id": "bw_modern_industry_050",
+      "class": "modern_industry",
+      "severity": "review",
+      "pattern": "batter(?:y|ies)",
+      "caseSensitive": false,
+      "replace": "siege line or removed",
+      "why": "Gun batteries"
+    },
+    {
+      "id": "bw_units_of_measure_001",
+      "class": "units_of_measure",
+      "severity": "error",
+      "pattern": "km(?:/h)?|kph|mph|kilomet(?:re|er)s?",
+      "caseSensitive": false,
+      "replace": "miles a day, miles",
+      "why": "Inventory UI-160: in-world units"
+    },
+    {
+      "id": "bw_units_of_measure_002",
+      "class": "units_of_measure",
+      "severity": "error",
+      "pattern": "kg|kilograms?|kilogrammes?",
+      "caseSensitive": false,
+      "replace": "pounds",
+      "why": "Inventory UI-160"
+    },
+    {
+      "id": "bw_units_of_measure_003",
+      "class": "units_of_measure",
+      "severity": "error",
+      "pattern": "mm|cm|centimet(?:re|er)s?|millimet(?:re|er)s?",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Calibre and lengths belong to removed equipment"
+    },
+    {
+      "id": "bw_units_of_measure_004",
+      "class": "units_of_measure",
+      "severity": "error",
+      "pattern": "hp|horsepower",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Engines"
+    },
+    {
+      "id": "bw_units_of_measure_005",
+      "class": "units_of_measure",
+      "severity": "review",
+      "pattern": "tons?|tonnes?|tonnage",
+      "caseSensitive": false,
+      "replace": "loads",
+      "why": "Inventory UI-160: loads"
+    },
+    {
+      "id": "bw_units_of_measure_006",
+      "class": "units_of_measure",
+      "severity": "review",
+      "pattern": "inch(?:es)?|feet|knots?",
+      "caseSensitive": false,
+      "replace": "miles, paces",
+      "why": "Check the sentence"
+    },
+    {
+      "id": "bw_modern_society_001",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "democra(?:cy|cies|t|ts|tic|tically)",
+      "caseSensitive": false,
+      "replace": "Light (the ideology), council, moot",
+      "why": "Inventory forbidden list: democracy"
+    },
+    {
+      "id": "bw_modern_society_002",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "fascis(?:m|ts?|tic)",
+      "caseSensitive": false,
+      "replace": "Dominion",
+      "why": "Inventory forbidden list: fascism"
+    },
+    {
+      "id": "bw_modern_society_003",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "communis(?:m|ts?|tic)",
+      "caseSensitive": false,
+      "replace": "Shadow",
+      "why": "Inventory forbidden list: communism"
+    },
+    {
+      "id": "bw_modern_society_004",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "nazi(?:s|sm|fied)?|national[ -]socialis\\w*|third reich|reich\\w*",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world regime"
+    },
+    {
+      "id": "bw_modern_society_005",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "socialis(?:m|ts?|tic)|capitalis(?:m|ts?|tic)|bolshevi(?:k|ks|sm)|marxis\\w*|leninis\\w*|stalinis\\w*|trotskyis\\w*",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Modern ideologies"
+    },
+    {
+      "id": "bw_modern_society_006",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "totalitarian\\w*|imperialis(?:m|ts?|tic)|colonialis\\w*|colonial",
+      "caseSensitive": false,
+      "replace": "rule, dominion",
+      "why": "Modern political terms"
+    },
+    {
+      "id": "bw_modern_society_007",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "authoritarian\\w*|republic(?:an|s)?|liberali(?:sm|st|sts)|conservati(?:sm|ve)|populis\\w*",
+      "caseSensitive": false,
+      "replace": "check",
+      "why": "Stance words (stances are renamed): read the sentence"
+    },
+    {
+      "id": "bw_modern_society_008",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "colon(?:y|ies)|satellites?|puppets?|puppeteers?",
+      "caseSensitive": false,
+      "replace": "vassal, client, dominion",
+      "why": "Diplomacy spec: autonomy_puppet is Vassal"
+    },
+    {
+      "id": "bw_modern_society_009",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "protectorates?|mandates?",
+      "caseSensitive": false,
+      "replace": "check",
+      "why": "Check the sentence"
+    },
+    {
+      "id": "bw_modern_society_010",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "governments?",
+      "caseSensitive": false,
+      "replace": "rule, throne, court",
+      "why": "The window title is The Throne (UI spec section 8)"
+    },
+    {
+      "id": "bw_modern_society_011",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "nations?|national|nationalis\\w*|international",
+      "caseSensitive": false,
+      "replace": "realm, realm-wide",
+      "why": "Country is realm"
+    },
+    {
+      "id": "bw_modern_society_012",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "prime ministers?|presidents?|chancellors?|senat(?:e|es|ors?)|parliaments?|congress(?:es)?|cabinets?|ministr(?:y|ies)|ministers?|bureaucra\\w*|civil service|politburo",
+      "caseSensitive": false,
+      "replace": "council, court, councillor",
+      "why": "Modern offices"
+    },
+    {
+      "id": "bw_modern_society_013",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "civilians?|citizens?|propaganda|referendums?|plebiscites?",
+      "caseSensitive": false,
+      "replace": "folk, common folk, proclamation",
+      "why": "Check the sentence"
+    },
+    {
+      "id": "bw_modern_society_014",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "comintern|anti-comintern|axis|entente|nato|united nations|league of nations|warsaw pact|tripartite",
+      "caseSensitive": false,
+      "replace": "league",
+      "why": "Real-world blocs"
+    },
+    {
+      "id": "bw_modern_society_015",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "Allies|Allied",
+      "caseSensitive": true,
+      "replace": "league; allied as a plain adjective only by allowance",
+      "why": "The Allies are a real-world bloc"
+    },
+    {
+      "id": "bw_modern_society_016",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "lend-?lease|lend lease",
+      "caseSensitive": false,
+      "replace": "loan of arms",
+      "why": "Master plan P6: tribute and loans"
+    },
+    {
+      "id": "bw_modern_society_017",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "(?<!guild )licen[cs]es?|licen[cs]ed|licen[cs]ing",
+      "caseSensitive": false,
+      "replace": "guild licence",
+      "why": "Master plan P6 and the institutions spec: licences are guild licences; the bare noun needs a look"
+    },
+    {
+      "id": "bw_modern_society_018",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "embargo(?:es|ed)?|sanctions?",
+      "caseSensitive": false,
+      "replace": "close the roads",
+      "why": "Economy: Close the Roads"
+    },
+    {
+      "id": "bw_modern_society_019",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "attach(?:e|é)s?",
+      "caseSensitive": false,
+      "replace": "envoy of war, lent captains",
+      "why": "Vanilla opinion text is re-themed to Lent Captains"
+    },
+    {
+      "id": "bw_modern_society_020",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "government[ -]in[ -]exile",
+      "caseSensitive": false,
+      "replace": "court in exile",
+      "why": "Inventory PS-014"
+    },
+    {
+      "id": "bw_modern_society_021",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "collaborat(?:ion|ors?|ionist)\\w*",
+      "caseSensitive": false,
+      "replace": "sworn regency",
+      "why": "Real-world occupation term"
+    },
+    {
+      "id": "bw_modern_society_022",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "world wars?|wwii?|ww[12]|second world war|first world war|cold war",
+      "caseSensitive": false,
+      "replace": "the War of the Last Crowns",
+      "why": "Real-world wars"
+    },
+    {
+      "id": "bw_modern_society_023",
+      "class": "modern_society",
+      "severity": "review",
+      "pattern": "great war",
+      "caseSensitive": false,
+      "replace": "check",
+      "why": "Erdae may have its own Great War; read the sentence"
+    },
+    {
+      "id": "bw_modern_society_024",
+      "class": "modern_society",
+      "severity": "error",
+      "pattern": "holocaust|genocide|concentration camps?|gulags?|blitzkrieg|d-day|barbarossa|pearl harbou?r|stalingrad|dunkirk|normandy|auschwitz",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world events"
+    },
+    {
+      "id": "bw_military_modern_001",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "divisions?",
+      "caseSensitive": false,
+      "replace": "host",
+      "why": "Master plan section 6: division to host"
+    },
+    {
+      "id": "bw_military_modern_002",
+      "class": "military_modern",
+      "severity": "review",
+      "pattern": "battalions?|brigades?|platoons?|regiments?|corps",
+      "caseSensitive": false,
+      "replace": "company, banner, host",
+      "why": "Glossary: battalion is company"
+    },
+    {
+      "id": "bw_military_modern_003",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "field marshals?|commodores?|rear admirals?|vice admirals?|brigadiers?|maj\\. general|lt\\. general|maj\\.|lt\\.",
+      "caseSensitive": false,
+      "replace": "marshal, sea-warden, captain, warden",
+      "why": "Rank titles of ranks_l_english are renamed"
+    },
+    {
+      "id": "bw_military_modern_004",
+      "class": "military_modern",
+      "severity": "review",
+      "pattern": "(?<!-)generals?",
+      "caseSensitive": false,
+      "replace": "captain-general, commander",
+      "why": "General is a rank (renamed) and a plain noun; read the sentence"
+    },
+    {
+      "id": "bw_military_modern_005",
+      "class": "military_modern",
+      "severity": "review",
+      "pattern": "colonels?|majors?|lieutenants?|sergeants?|privates?|corporals?",
+      "caseSensitive": false,
+      "replace": "captain, warden, serjeant",
+      "why": "Modern ranks"
+    },
+    {
+      "id": "bw_military_modern_006",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "blitz\\w*|commandos?|marines?|special forces|spetsnaz|partisans?",
+      "caseSensitive": false,
+      "replace": "rangers, free companies",
+      "why": "Modern special forces"
+    },
+    {
+      "id": "bw_military_modern_007",
+      "class": "military_modern",
+      "severity": "review",
+      "pattern": "operations?|operatives?",
+      "caseSensitive": false,
+      "replace": "scheme, agent",
+      "why": "Operations are schemes (intrigue)"
+    },
+    {
+      "id": "bw_military_modern_008",
+      "class": "military_modern",
+      "severity": "review",
+      "pattern": "tactical|strategic|logistics?",
+      "caseSensitive": false,
+      "replace": "check",
+      "why": "Read the sentence"
+    },
+    {
+      "id": "bw_military_modern_009",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "compliance",
+      "caseSensitive": false,
+      "replace": "obedience",
+      "why": "Glossary: compliance is obedience"
+    },
+    {
+      "id": "bw_military_modern_010",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "political power",
+      "caseSensitive": false,
+      "replace": "authority",
+      "why": "Glossary: political power is Authority"
+    },
+    {
+      "id": "bw_military_modern_011",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "war support",
+      "caseSensitive": false,
+      "replace": "will to war",
+      "why": "Glossary: war support is Will to War"
+    },
+    {
+      "id": "bw_military_modern_012",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "national unity|manpower|command power|stability",
+      "caseSensitive": false,
+      "replace": "unity, levies, orders, calm",
+      "why": "Glossary: renamed core statistics"
+    },
+    {
+      "id": "bw_military_modern_013",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "national spirits?|national focus(?:es)?|focus trees?",
+      "caseSensitive": false,
+      "replace": "realm spirit, path of the realm",
+      "why": "Glossary"
+    },
+    {
+      "id": "bw_military_modern_014",
+      "class": "military_modern",
+      "severity": "error",
+      "pattern": "victory points?",
+      "caseSensitive": false,
+      "replace": "worth",
+      "why": "Glossary: victory points are Worth"
+    },
+    {
+      "id": "bw_real_world_001",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "germany|germans?|germanic",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world nation"
+    },
+    {
+      "id": "bw_real_world_002",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "france|french|britain|british|england|italy|italians?|japan|japanese|soviets?|ussr|russians?|russia|americans?|america|united states|u\\.s\\.a?\\.?|usa|canada|canadians?|australians?|australia|new zealand",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world nations"
+    },
+    {
+      "id": "bw_real_world_003",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "poland|polish|china|chinese|indians?|india|spain|spanish|portugal|portuguese|norway|norwegians?|sweden|swedish|finland|finnish|denmark|danish|netherlands|dutch|belgium|belgians?|switzerland|swiss|austrians?|austria|hungary|hungarians?|romanians?|romania|bulgarians?|bulgaria|greece|greeks?|turkey|turkish|yugoslavia|czechoslovakia|ethiopians?|ethiopia|egyptians?|egypt|iran|iraq|mexico|mexican|brazilian|brazil|argentina|chile|mongolia|manchuria|korean?|tibet|thailand|siam|vietnam|indonesia|philippines|israel|palestine",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world nations"
+    },
+    {
+      "id": "bw_real_world_004",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "europeans?|europe|asians?|asia|africans?|africa|north america|south america|antarctica|siberia|sahara|pacific|atlantic|mediterranean|baltic|himalayas?",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world places"
+    },
+    {
+      "id": "bw_real_world_005",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "berlin|paris|london|moscow|washington|tokyo|rome|warsaw|vienna|madrid|lisbon|stockholm|oslo|helsinki|budapest|prague|athens|istanbul|cairo|beijing|nanjing|shanghai|delhi|ottawa|canberra|singapore|hong kong|stalingrad|leningrad|danzig|gdansk",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world cities"
+    },
+    {
+      "id": "bw_real_world_006",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "hitler|stalin|churchill|roosevelt|mussolini|franco|tojo|hirohito|mao|lenin|trotsky|de gaulle|p(?:e|é)tain|eisenhower|montgomery|rommel|patton|zhukov|guderian|himmler|goebbels|g(?:o|ö)ring|ribbentrop|molotov|beria|chiang|truman|attlee|chamberlain|mannerheim|tito|horthy|salazar|antonescu|quisling|napoleon|kaiser|tsar|czar|fuhrer|f(?:u|ü)hrer|duce|caudillo",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world people and titles"
+    },
+    {
+      "id": "bw_real_world_007",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "wehrmacht|luftwaffe|kriegsmarine|waffen|gestapo|nkvd|kgb|cia|red army|royal navy|royal air force|raf|foreign legion|home guard|panzer\\w*|stuka|spitfire|messerschmitt|sherman|t-34|bismarck|yamato",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world forces and machines"
+    },
+    {
+      "id": "bw_real_world_008",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "SS",
+      "caseSensitive": true,
+      "replace": "removed",
+      "why": "Real-world formation"
+    },
+    {
+      "id": "bw_real_world_009",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "january|february|april|june|july|august|september|october|november|december",
+      "caseSensitive": false,
+      "replace": "Erdae months",
+      "why": "Calendar spec: months are Deepwinter to Longnight"
+    },
+    {
+      "id": "bw_real_world_010",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "monday|tuesday|wednesday|thursday|friday|saturday|sunday",
+      "caseSensitive": false,
+      "replace": "Erdae weekdays",
+      "why": "06_career_honours.md, weekday names"
+    },
+    {
+      "id": "bw_real_world_011",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "18(?:0[1-9]|[1-9][0-9])|19[0-9]{2}|20[0-9]{2}",
+      "caseSensitive": false,
+      "replace": "an Erdae year (4A 1748 to 4A 1800)",
+      "why": "Inventory forbidden list: 1936, 1939; any real-world year"
+    },
+    {
+      "id": "bw_real_world_012",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "a\\.d\\.|b\\.c\\.|bce|anno domini",
+      "caseSensitive": false,
+      "replace": "4A",
+      "why": "Real-world era"
+    },
+    {
+      "id": "bw_real_world_013",
+      "class": "real_world",
+      "severity": "error",
+      "pattern": "christmas|easter|halloween|thanksgiving|olympic\\w*|hollywood|disney|coca-?cola",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "Real-world culture"
+    },
+    {
+      "id": "bw_third_party_ip_001",
+      "class": "third_party_ip",
+      "severity": "error",
+      "pattern": "middle[ -]earth|mordor|sauron|gandalf|frodo|bilbo|saruman|aragorn|legolas|gimli|hobbits?|nazg(?:u|û)l|balrogs?|gollum|westeros|hogwarts|skyrim|tamriel|narnia",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "CONVENTIONS: nothing is taken from other works; names in the vault are canon and are not listed here"
+    },
+    {
+      "id": "bw_game_and_platform_001",
+      "class": "game_and_platform",
+      "severity": "error",
+      "pattern": "hearts of iron|hoi ?4|hoi4",
+      "caseSensitive": false,
+      "replace": "ZIN",
+      "why": "The player reads ZIN, not the base game title"
+    },
+    {
+      "id": "bw_game_and_platform_002",
+      "class": "game_and_platform",
+      "severity": "error",
+      "pattern": "paradox",
+      "caseSensitive": false,
+      "replace": "allowance only",
+      "why": "Credits and legal keys only"
+    },
+    {
+      "id": "bw_game_and_platform_003",
+      "class": "game_and_platform",
+      "severity": "error",
+      "pattern": "dlcs?|expansion pass",
+      "caseSensitive": false,
+      "replace": "removed",
+      "why": "No DLC wording"
+    },
+    {
+      "id": "bw_game_and_platform_004",
+      "class": "game_and_platform",
+      "severity": "error",
+      "pattern": "wiki|wikipedia",
+      "caseSensitive": false,
+      "replace": "Chronicle",
+      "why": "Inventory UI-144: the wiki button is hidden"
+    },
+    {
+      "id": "bw_game_and_platform_005",
+      "class": "game_and_platform",
+      "severity": "review",
+      "pattern": "steam|discord|facebook|instagram|youtube|bluesky|twitter|forum",
+      "caseSensitive": false,
+      "replace": "allowance only",
+      "why": "Platform keys of engine-generic screens"
+    },
+    {
+      "id": "bw_game_and_platform_006",
+      "class": "game_and_platform",
+      "severity": "review",
+      "pattern": "ironman|iron man",
+      "caseSensitive": false,
+      "replace": "iron oath (proposal)",
+      "why": "Glossary: ironman"
+    },
+    {
+      "id": "bw_game_and_platform_007",
+      "class": "game_and_platform",
+      "severity": "review",
+      "pattern": "playthroughs?|career profile",
+      "caseSensitive": false,
+      "replace": "chronicle, reign",
+      "why": "The career profile is hidden (06_career_honours.md)"
+    },
+    {
+      "id": "bw_superseded_names_001",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "einendil",
+      "caseSensitive": false,
+      "replace": "Eindil",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_002",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "edvoid(?:'s)?",
+      "caseSensitive": false,
+      "replace": "Zol",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_003",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "Rush (?:Kingdom|Lands?|Islands?|Ocean|Forest|Mountains?)|(?:the|of|in) Rush",
+      "caseSensitive": true,
+      "replace": "Aenor, Middle Lands, Aenor Isle, Crown Ocean, Crown Forest, Crown Mountains",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_004",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "klinti",
+      "caseSensitive": false,
+      "replace": "Kilinti",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_005",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "gorbat",
+      "caseSensitive": false,
+      "replace": "Golbran",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_006",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "huhun",
+      "caseSensitive": false,
+      "replace": "Hunhun",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_007",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "hierarchs?|aubren",
+      "caseSensitive": false,
+      "replace": "High Confessor, Ilvane",
+      "why": "Names spec N10, N16"
+    },
+    {
+      "id": "bw_superseded_names_008",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "sovereign spirit",
+      "caseSensitive": false,
+      "replace": "Great Spirit",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_009",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "sunhot (?:desert|gate|grasslands|lands?)",
+      "caseSensitive": false,
+      "replace": "Sun Desert, Sun Gate, Sun Grasslands, Lands of the Sun",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_010",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "dragon's mountain",
+      "caseSensitive": false,
+      "replace": "Dragon Mountain",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_011",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "north earth|tornado islands|aenorian",
+      "caseSensitive": false,
+      "replace": "North Lands, Triton's Islands, Aenoran",
+      "why": "Names spec"
+    },
+    {
+      "id": "bw_superseded_names_012",
+      "class": "superseded_names",
+      "severity": "error",
+      "pattern": "\\u0161odol\\u00f4r\\u014d",
+      "caseSensitive": false,
+      "replace": "Sodolôro (S with caron, o with circumflex, plain o)",
+      "why": "Names spec S11: the game font cannot draw the long o"
+    },
+    {
+      "id": "bw_us_spelling_001",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "armor(?:s|ed|ies|y)?",
+      "caseSensitive": false,
+      "replace": "armour",
+      "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_us_spelling_002",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "defense(?:s)?|offense(?:s)?",
+      "caseSensitive": false,
+      "replace": "defence, offence",
+      "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_us_spelling_003",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "colou?r(?:s|ed)?",
+      "caseSensitive": false,
+      "replace": "colour",
+      "why": "Style: British spelling; the engine codes are not words"
+    },
+    {
+      "id": "bw_us_spelling_004",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "honor(?:s|ed|able|ably)?",
+      "caseSensitive": false,
+      "replace": "honour",
+      "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_us_spelling_005",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "favor(?:s|ed|able|ite|ites)?",
+      "caseSensitive": false,
+      "replace": "favour",
+      "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_us_spelling_006",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "organi[z]ation(?:s)?|organi[z]e(?:s|d)?",
+      "caseSensitive": false,
+      "replace": "organisation",
+      "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_us_spelling_007",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "center(?:s|ed)?",
+      "caseSensitive": false,
+      "replace": "centre",
+      "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_us_spelling_008",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "harbor(?:s)?|neighbor(?:s|ing)?|labor(?:s)?|plow(?:s|ed|ing)?|gray",
+      "caseSensitive": false,
+      "replace": "harbour, neighbour, labour, plough, grey",
+      "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_us_spelling_009",
+      "class": "us_spelling",
+      "severity": "review",
+      "pattern": "mobili[z]ation|mobili[z]e(?:s|d)?|recogni[z]e(?:s|d)?|criticiz\\w*|realiz\\w*|fulfill(?:s|ed)?|catalog(?:s)?",
+      "caseSensitive": false,
+      "replace": "mobilisation, recognise, and so on",
+      "why": "Style: British spelling"
+    }
+  ],
+  "allowances": [
+    {
+      "id": "al_languages",
+      "rules": [
+        "bw_real_world_*"
+      ],
+      "keys": [
+        "l_english",
+        "l_braz_por",
+        "l_french",
+        "l_german",
+        "l_polish",
+        "l_russian",
+        "l_spanish",
+        "l_japanese",
+        "l_simp_chinese",
+        "l_korean"
+      ],
+      "files": [
+        "languages.yml"
+      ],
+      "reason": "The language registry names the ten languages; engine-generic"
+    },
+    {
+      "id": "al_credits",
+      "rules": [
+        "bw_game_and_platform_*"
+      ],
+      "keys": [
+        "ZIN_CREDITS_BODY"
+      ],
+      "files": [],
+      "reason": "The credits must thank the publisher and say the mod is unaffiliated (03_main_menu_and_frontend.md section 6)"
+    },
+    {
+      "id": "al_pause_links",
+      "rules": [
+        "bw_game_and_platform_*"
+      ],
+      "keys": [
+        "MENU_HOMEPAGE",
+        "MENU_FORUM",
+        "MENU_DISCORD",
+        "MENU_PRIVACY_POLICY",
+        "MENU_BLUESKY",
+        "MENU_X",
+        "MENU_FACEBOOK",
+        "MENU_INSTAGRAM",
+        "MENU_YOUTUBE"
+      ],
+      "files": [],
+      "reason": "The link icons of the pause menu are engine-generic (02_full_ui_reskin.md section 4.11); the tooltips name the service, not the base game"
+    },
+    {
+      "id": "al_platform_files",
+      "rules": [
+        "bw_game_and_platform_*",
+        "bw_real_world_*",
+        "bw_modern_society_*"
+      ],
+      "keys": [],
+      "files": [
+        "pdxonline_l_english.yml",
+        "popserror_l_english.yml",
+        "chat_l_english.yml",
+        "social_gui_l_english.yml",
+        "multiplayer_l_english.yml",
+        "nudge_l_english.yml",
+        "no_translation_required_l_english.yml"
+      ],
+      "reason": "Account, lobby and error text of engine-generic screens (05_text_sweep.md, mode engine); the scan still checks them against the other classes"
+    }
+  ],
+  "allowanceRules": "An allowance names rules by id or by the pattern bw_<class>_*, and keys or files. Every entry needs a reason. The scan prints the allowances it used and fails on one it did not use."
+}

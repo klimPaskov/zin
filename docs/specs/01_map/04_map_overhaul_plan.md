@@ -56,7 +56,7 @@ The map track starts with steps 1 and 2 in wave 1 (they need only tool phase 0 a
 1. **M1:** every map layer is written by the tool; `hoi4_map_inspect` and every validator pass; the layer manifest is current.
 2. **M2:** the 12 lakes exist as lake provinces with the right height, texture and names; the Great Lake is an inland sea at least 150 x 150 pixels with ports; screenshots show water.
 3. **M3:** zero land in the edge bands; no seam adjacency; screenshots at both edges show open sea, not a cut coast.
-4. **M4:** the border-naturalness check reports at least 85% of state-border length and 70% of country-border length on natural lines, and enrichment of at least 1.3 for provinces, states and countries.
+4. **M4:** the border-quality metric (default radii) reports enrichment of at least 1.3 for provinces, states and countries and a natural share of at least 0.70 for states and 0.73 for countries (vanilla parity: 1.35 / 1.40 / 1.46 and 0.69 / 0.70 / 0.73; the old ZIN map 0.94 / 0.70 / 0.50 and 0.08 / 0.07 / 0.09).
 5. **M5:** the Great Wall is a continuous elevation-5 barrier with its gates; Kingson sits inside a closed ring of elevation 4 or 5; the East Lands carry the Hellfire Range with its volcanoes; Aenor's provinces are fertile plains (terrain share check per region against the model's targets within 10 points).
 6. **M6:** 25 named rivers from source to mouth feed lakes and seas; every strait of the model is a named crossing in `adjacencies.csv`; every sea and strait is named.
 7. **M7:** no state, region, lake, river or victory-point name matches `District`, `Region \d`, `Settlement` or a generated placeholder.
