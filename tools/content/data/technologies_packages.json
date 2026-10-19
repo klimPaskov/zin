@@ -10,12 +10,12 @@
     {"key":"tribal","name":"Tribal","profile":{"people":"men"},"rules":[{"folders":["industry_folder","electronics_folder","zin_arms_folder","zin_mounts_folder","zin_engines_folder","zin_camp_folder","zin_naval_folder"],"maxYear":1650},{"keys":["oared_galleys"]}]},
     {"key":"elves","name":"Elves","profile":{"people":"elves"},"rules":[{"keys":["elven_arms","forest_rangers","elven_steeds","wardsong","elven_hulls","dragon_lore","torsion_engines"]},{"folders":["zin_camp_folder"],"maxYear":1700},{"folders":["industry_folder","electronics_folder"],"maxYear":1700},{"lines":["scholarship","essence_craft","beacon_craft","peoples_crafts"],"maxYear":1745}]},
     {"key":"sunhot","name":"Sunhot","profile":{"people":"sun_elves"},"rules":[{"keys":["elven_arms","sun_guard","torsion_engines"]},{"folders":["zin_camp_folder"],"maxYear":1700},{"folders":["industry_folder","electronics_folder"],"maxYear":1700},{"lines":["scholarship","essence_craft","beacon_craft","peoples_crafts"],"maxYear":1745}]},
-    {"key":"orcs","name":"Orcs","profile":{"people":"orcs"},"rules":[{"keys":["warband_iron","raider_mounts","catapults","forged_steel","forge_pits"]},{"lines":["masonry","mining","guild_methods"],"maxYear":1650},{"keys":["scriptoria"]}]},
+    {"key":"orcs","name":"Orcs","profile":{"people":"orcs"},"rules":[{"keys":["warband_iron","raider_mounts","hunting_bows","catapults","forged_steel","forge_pits"]},{"lines":["masonry","mining","guild_methods"],"maxYear":1650},{"keys":["scriptoria"]}]},
     {"key":"kin_trolls","name":"Kin (trolls)","profile":{"people":"trolls"},"rules":[{"keys":["troll_brood","scouts","dressed_stone","scriptoria"]}]},
     {"key":"kin_giants","name":"Kin (giants)","profile":{"people":"giants"},"rules":[{"keys":["giant_kin","scouts","mail","catapults","dressed_stone","scriptoria","quarry_songs"]}]},
-    {"key":"kin_ents","name":"Kin (ents)","profile":{"people":"ents"},"rules":[{"keys":["ent_moots","scouts","dressed_stone","scriptoria"]}]},
+    {"key":"kin_ents","name":"Kin (ents)","profile":{"people":"ents"},"rules":[{"keys":["ent_moots","iron_arms","ranger_craft","scouts","dressed_stone","scriptoria"]}]},
     {"key":"kin_yeti","name":"Kin (yeti)","profile":{"people":"yeti"},"rules":[{"keys":["yeti_hunts","scouts","dressed_stone","scriptoria"]}]},
-    {"key":"dominion","name":"Dominion","profile":{"country":"Volgan"},"rules":[{"keys":["grave_binding","necromantic_orders","nether_pacts","ogre_pacts","warband_iron","forged_steel","plate_and_mail","torsion_engines","riding_horses","vent_forges","wellspring_tapping","ley_stone_channels"]},{"folders":["zin_camp_folder"],"maxYear":1720},{"folders":["industry_folder","electronics_folder"],"maxYear":1730}]},
+    {"key":"dominion","name":"Dominion","profile":{"country":"Volgan"},"rules":[{"keys":["grave_binding","necromantic_orders","nether_pacts","ogre_pacts","warband_iron","forged_steel","plate_and_mail","torsion_engines","riding_horses","hunting_bows","oared_galleys","war_galleys","vent_forges","wellspring_tapping","ley_stone_channels"]},{"folders":["zin_camp_folder"],"maxYear":1720},{"folders":["industry_folder","electronics_folder"],"maxYear":1730}]},
     {"key":"nether","name":"Nether","profile":{"people":"demons"},"rules":[{"keys":["nether_pacts","catapults","scouts","sappers","vent_forges"]},{"lines":["masonry","mining"],"maxYear":1650}]},
     {"key":"mistake","name":"Mistake","profile":{"country":"Zol"},"rules":[{"keys":["deathless_tide_1","oared_galleys","corsair_craft"]}]}
   ],
@@ -24,7 +24,7 @@
     "byPeople": {"elves":"elves","sun_elves":"sunhot","orcs":"orcs","trolls":"kin_trolls","giants":"kin_giants","ents":"kin_ents","yeti":"kin_yeti","demons":"nether"},
     "men": [{"scan":["Rush Land"],"package":"concord"},{"scan":["Tritons Islands"],"maxStates":2,"package":"tribal"},{"scan":["Tritons Islands"],"package":"island_and_sea"},{"scan":["Islands of The South"],"package":"tribal"},{"scan":["Cold Lands"],"maxStates":7,"package":"tribal"},{"minStates":6,"package":"great_crowns"},{"package":"common_men"}],
     "theDeadOther": "common_men",
-    "extras": {"Goldoroth":["ogre_pacts"],"Noris":["camel_corps"],"Selen":["ranger_craft"],"Worshipdom":["valley_wardens"]}
+    "extras": {"Goldoroth":["ogre_pacts","oared_galleys","war_galleys"],"Noris":["camel_corps"],"Selen":["ranger_craft"],"Worshipdom":["valley_wardens"]}
   },
   "startDoctrines": {
     "landNamed": {"Aenor":"zin_gd_shield_wall","Asgard":"zin_gd_shield_wall","Lerendor":"zin_gd_shield_wall","Dondor":"zin_gd_shield_wall","Mirolon":"zin_gd_shield_wall","Isengard":"zin_gd_shield_wall","Hunhun":"zin_gd_horse_and_lance","Noris":"zin_gd_horse_and_lance","Stabilo":"zin_gd_horse_and_lance","Coldor":"zin_gd_horse_and_lance","Goldoroth":"zin_gd_warband","Troll Forest":"zin_gd_warband","Volgan":"zin_gd_grave_muster","Zol":"zin_gd_deathless_tide"},

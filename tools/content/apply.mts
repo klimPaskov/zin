@@ -24,6 +24,8 @@ const { TransactionManager } = await core('transactions');
 const { sha256Bytes } = await core('canonical') as { sha256Bytes: (bytes: Uint8Array) => string };
 
 const SHARED_WORLD_FILES = new Set(['descriptor.mod', 'common/bookmarks/world.txt', 'common/on_actions/world.txt']);
+// The orders of battle are the forces module's; the map generator's manifest still owns the files of the same names until apply rewrites its hash.
+const SHARED_WORLD_PATTERNS = [/^history\/units\/[A-Z0-9]{3}_world(_naval)?\.txt$/];
 const CONTENT_MANIFEST = '.zin-content.json', WORLD_MANIFEST = '.hoi4-agent-world.json';
 const MODES = new Set(['plan', 'apply']);
 const args = process.argv.slice(2), [dirArg, mode = 'plan'] = MODES.has(args[0] ?? '') ? [undefined, args[0]] : args;
@@ -63,7 +65,7 @@ for (const rel of await walk(staged)) {
   assert(!rel.startsWith('../') && !rel.includes('/../') && !path.isAbsolute(rel), `Unsafe path ${rel}`);
   assert(rel !== CONTENT_MANIFEST && rel !== WORLD_MANIFEST, `Manifests are written by this tool: ${rel}`);
   assert(!rel.startsWith('.git/') && !rel.startsWith('.tmp/') && !rel.startsWith('docs/reference/originals/'), `Protected path ${rel}`);
-  if (worldPaths.has(rel)) assert(SHARED_WORLD_FILES.has(rel), `Staged file belongs to the map generator: ${rel}`);
+  if (worldPaths.has(rel)) assert(SHARED_WORLD_FILES.has(rel) || SHARED_WORLD_PATTERNS.some(re => re.test(rel)), `Staged file belongs to the map generator: ${rel}`);
   stagedFiles.set(rel, await readFile(path.join(staged, rel)));
 }
 

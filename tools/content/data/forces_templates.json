@@ -1,0 +1,227 @@
+{
+ "schema": 1,
+ "owner": "docs/specs/03_gameplay/01_warfare.md sections 4, 13 (start forces, templates) and docs/specs/09_validation/02_ai_defaults.md (roles); read by tools/content/modules/forces.mjs",
+ "note": "Division templates of the starting orders of battle. A template lists options in order of preference; the first option whose sub-units a country has unlocked (by its start technologies) is used, and `needs` names the sub-units that must be unlocked for the template to be used at all. Support companies a country lacks are dropped. `role` is the AI template role the template belongs to (spec AIC1: every history template matches some role-level entry). Names are the displayed names of the templates.",
+ "roles": ["infantry", "garrison", "mobile", "armor", "siege_role", "marines", "rangers_role"],
+ "templates": {
+  "men_line_host": { "name": "Line Host", "role": "infantry", "people": ["men"], "needs": ["zin_men_infantry"], "options": [
+   { "regiments": [["zin_men_infantry", 6], ["zin_men_archers", 2]], "support": ["zin_support_scouts", "zin_support_sappers"] },
+   { "regiments": [["zin_men_infantry", 8]], "support": ["zin_support_scouts", "zin_support_sappers"] } ] },
+  "men_levy_garrison": { "name": "Levy Garrison", "role": "garrison", "people": ["men"], "needs": ["zin_men_levy"], "reserve": true, "options": [
+   { "regiments": [["zin_men_levy", 4]], "support": [] } ] },
+  "men_wall_garrison": { "name": "Wall Garrison", "role": "infantry", "people": ["men"], "needs": ["zin_men_infantry"], "options": [
+   { "regiments": [["zin_men_infantry", 4], ["zin_men_archers", 2]], "support": ["zin_support_ballistae", "zin_support_sappers"] },
+   { "regiments": [["zin_men_infantry", 6]], "support": ["zin_support_sappers"] } ] },
+  "men_riders": { "name": "Riders", "role": "mobile", "people": ["men"], "needs": ["zin_men_cavalry"], "options": [
+   { "regiments": [["zin_men_cavalry", 4], ["zin_men_horse_archers", 2]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_men_cavalry", 6]], "support": ["zin_support_scouts"] } ] },
+  "men_knights": { "name": "Knight Host", "role": "armor", "people": ["men"], "needs": ["zin_men_knights"], "options": [
+   { "regiments": [["zin_men_knights", 2], ["zin_men_cavalry", 2], ["zin_men_heavy_infantry", 2]], "support": ["zin_support_ballistae"] },
+   { "regiments": [["zin_men_knights", 2], ["zin_men_cavalry", 2], ["zin_men_infantry", 2]], "support": ["zin_support_ballistae"] } ] },
+  "men_siege_train": { "name": "Siege Park", "role": "siege_role", "people": ["men"], "needs": ["zin_siege_catapult"], "options": [
+   { "regiments": [["zin_siege_trebuchet", 2], ["zin_siege_catapult", 2], ["zin_men_infantry", 2]], "support": ["zin_support_sappers"] },
+   { "regiments": [["zin_siege_catapult", 3], ["zin_men_infantry", 3]], "support": ["zin_support_sappers", "zin_support_catapults"] } ] },
+  "men_sea_soldiers": { "name": "Sea Soldiers", "role": "marines", "people": ["men"], "needs": ["zin_men_sea_soldiers"], "options": [
+   { "regiments": [["zin_men_sea_soldiers", 6]], "support": ["zin_support_scouts"] } ] },
+  "men_rangers": { "name": "Ranger Companies", "role": "rangers_role", "people": ["men"], "needs": ["zin_men_rangers"], "options": [
+   { "regiments": [["zin_men_rangers", 4]], "support": ["zin_support_scouts"] } ] },
+  "men_hill_companies": { "name": "Hill Companies", "role": "rangers_role", "people": ["men"], "needs": ["zin_men_hill_companies"], "options": [
+   { "regiments": [["zin_men_hill_companies", 6]], "support": ["zin_support_scouts"] } ] },
+  "men_heavy_host": { "name": "Heavy Host", "role": "infantry", "people": ["men"], "needs": ["zin_men_heavy_infantry"], "options": [
+   { "regiments": [["zin_men_heavy_infantry", 4], ["zin_men_archers", 2], ["zin_siege_catapult", 1]], "support": ["zin_support_sappers", "zin_support_catapults"] },
+   { "regiments": [["zin_men_heavy_infantry", 4], ["zin_men_infantry", 2]], "support": ["zin_support_sappers"] } ] },
+  "men_camel_riders": { "name": "Camel Riders", "role": "mobile", "people": ["men"], "needs": ["zin_men_camel_riders"], "options": [
+   { "regiments": [["zin_men_camel_riders", 4], ["zin_men_infantry", 2]], "support": ["zin_support_scouts"] } ] },
+  "men_valley_wardens": { "name": "Valley Wardens", "role": "infantry", "people": ["country:Worshipdom"], "needs": ["zin_men_temple_wardens"], "options": [
+   { "regiments": [["zin_men_temple_wardens", 4]], "support": ["zin_support_healers"] } ] },
+
+  "elves_host": { "name": "Warden Host", "role": "infantry", "people": ["elves"], "needs": ["zin_elves_warden"], "options": [
+   { "regiments": [["zin_elves_warden", 4], ["zin_elves_archers", 3]], "support": ["zin_elves_wardsingers", "zin_support_scouts"] },
+   { "regiments": [["zin_elves_warden", 7]], "support": ["zin_support_scouts"] } ] },
+  "elves_riders": { "name": "Elven Riders", "role": "mobile", "people": ["elves"], "needs": ["zin_elves_riders"], "options": [
+   { "regiments": [["zin_elves_riders", 4], ["zin_elves_archers", 2]], "support": ["zin_support_scouts"] } ] },
+  "elves_rangers": { "name": "Forest Rangers", "role": "rangers_role", "people": ["elves"], "needs": ["zin_elves_rangers"], "options": [
+   { "regiments": [["zin_elves_rangers", 4]], "support": ["zin_support_scouts"] } ] },
+  "elves_garrison": { "name": "Wall Wardens", "role": "garrison", "people": ["elves"], "needs": ["zin_elves_warden"], "reserve": true, "options": [
+   { "regiments": [["zin_elves_warden", 3]], "support": [] } ] },
+  "elves_siege": { "name": "Siege Band", "role": "siege_role", "people": ["elves"], "needs": ["zin_siege_catapult"], "options": [
+   { "regiments": [["zin_siege_catapult", 2], ["zin_elves_warden", 4]], "support": ["zin_support_ballistae", "zin_support_scouts"] } ] },
+
+  "sun_elves_guard": { "name": "Sun Guard", "role": "infantry", "people": ["sun_elves"], "needs": ["zin_sun_elves_guard"], "options": [
+   { "regiments": [["zin_sun_elves_guard", 4], ["zin_sun_elves_bowmen", 2]], "support": ["zin_support_scorpions", "zin_support_ballistae", "zin_support_scouts"] },
+   { "regiments": [["zin_sun_elves_guard", 6]], "support": ["zin_support_scouts"] } ] },
+  "sun_elves_watch": { "name": "Sun Watch", "role": "garrison", "people": ["sun_elves"], "needs": ["zin_sun_elves_guard"], "reserve": true, "options": [
+   { "regiments": [["zin_sun_elves_guard", 3]], "support": [] } ] },
+
+  "orcs_warband": { "name": "Warband", "role": "infantry", "people": ["orcs"], "needs": ["zin_orcs_warrior"], "options": [
+   { "regiments": [["zin_orcs_warrior", 7], ["zin_orcs_goblins", 2]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_orcs_warrior", 9]], "support": ["zin_support_scouts"] } ] },
+  "orcs_brute_host": { "name": "Brute Host", "role": "armor", "people": ["orcs"], "needs": ["zin_ogres_brutes"], "options": [
+   { "regiments": [["zin_ogres_brutes", 2], ["zin_orcs_warrior", 5]], "support": ["zin_support_scouts"] } ] },
+  "orcs_raiders": { "name": "Raiders", "role": "mobile", "people": ["orcs"], "needs": ["zin_orcs_raiders"], "options": [
+   { "regiments": [["zin_orcs_raiders", 4], ["zin_orcs_warrior", 2]], "support": ["zin_support_scouts"] } ] },
+  "orcs_siege": { "name": "Siege Band", "role": "siege_role", "people": ["orcs"], "needs": ["zin_siege_catapult"], "options": [
+   { "regiments": [["zin_siege_catapult", 2], ["zin_orcs_warrior", 4]], "support": ["zin_support_catapults", "zin_support_scouts"] } ] },
+  "orcs_garrison": { "name": "Goblin Watch", "role": "garrison", "people": ["orcs"], "needs": ["zin_orcs_goblins"], "reserve": true, "options": [
+   { "regiments": [["zin_orcs_goblins", 4]], "support": [] } ] },
+
+  "trolls_host": { "name": "Troll Host", "role": "armor", "people": ["trolls"], "needs": ["zin_trolls_brute"], "options": [
+   { "regiments": [["zin_trolls_brute", 3], ["zin_orcs_goblins", 2]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_trolls_brute", 3]], "support": ["zin_support_scouts"] } ] },
+  "trolls_pack": { "name": "Troll Pack", "role": "infantry", "people": ["trolls"], "needs": ["zin_trolls_brute"], "options": [
+   { "regiments": [["zin_trolls_brute", 2], ["zin_orcs_goblins", 3]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_trolls_brute", 2]], "support": ["zin_support_scouts"] } ] },
+  "trolls_garrison": { "name": "Troll Watch", "role": "garrison", "people": ["trolls"], "needs": ["zin_trolls_brute"], "reserve": true, "options": [
+   { "regiments": [["zin_trolls_brute", 2]], "support": [] } ] },
+
+  "giants_host": { "name": "Giant Host", "role": "armor", "people": ["giants"], "needs": ["zin_giants_host"], "options": [
+   { "regiments": [["zin_giants_host", 3], ["zin_giants_hurlers", 1]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_giants_host", 3]], "support": ["zin_support_scouts"] } ] },
+  "giants_foot": { "name": "Hill Foot", "role": "infantry", "people": ["giants"], "needs": ["zin_men_infantry"], "options": [
+   { "regiments": [["zin_men_infantry", 4], ["zin_men_archers", 2]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_men_infantry", 6]], "support": ["zin_support_scouts"] } ] },
+  "giants_garrison": { "name": "Levy Garrison", "role": "garrison", "people": ["giants"], "needs": ["zin_men_levy"], "reserve": true, "options": [
+   { "regiments": [["zin_men_levy", 4]], "support": [] } ] },
+  "giants_hurlers": { "name": "Hurler Band", "role": "siege_role", "people": ["giants"], "needs": ["zin_giants_hurlers"], "options": [
+   { "regiments": [["zin_giants_hurlers", 2], ["zin_men_infantry", 2]], "support": ["zin_support_scouts"] } ] },
+
+  "ents_grove": { "name": "Grove Host", "role": "armor", "people": ["ents"], "needs": ["zin_ents_grove"], "options": [
+   { "regiments": [["zin_ents_grove", 3], ["zin_men_archers", 2]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_ents_grove", 3]], "support": ["zin_support_scouts"] } ] },
+  "ents_foot": { "name": "Forest Archers", "role": "infantry", "people": ["ents"], "needs": ["zin_men_levy"], "options": [
+   { "regiments": [["zin_men_levy", 2], ["zin_men_archers", 3]], "support": ["zin_support_scouts"] },
+   { "regiments": [["zin_men_levy", 4]], "support": ["zin_support_scouts"] } ] },
+  "ents_garrison": { "name": "Levy Garrison", "role": "garrison", "people": ["ents"], "needs": ["zin_men_levy"], "reserve": true, "options": [
+   { "regiments": [["zin_men_levy", 3]], "support": [] } ] },
+
+  "yeti_bands": { "name": "Yeti Bands", "role": "infantry", "people": ["yeti"], "needs": ["zin_yeti_band"], "options": [
+   { "regiments": [["zin_yeti_band", 4]], "support": ["zin_support_scouts"] } ] },
+  "yeti_garrison": { "name": "Winter Watch", "role": "garrison", "people": ["yeti"], "needs": ["zin_yeti_band"], "reserve": true, "options": [
+   { "regiments": [["zin_yeti_band", 3]], "support": [] } ] },
+
+  "nether_host": { "name": "Netherborn Host", "role": "infantry", "people": ["demons", "country:Volgan"], "needs": ["zin_demons_netherborn"], "options": [
+   { "regiments": [["zin_demons_netherborn", 5]], "support": ["zin_support_sappers", "zin_support_scouts"] } ] },
+  "nether_garrison": { "name": "Nether Watch", "role": "garrison", "people": ["demons"], "needs": ["zin_demons_netherborn"], "reserve": true, "options": [
+   { "regiments": [["zin_demons_netherborn", 3]], "support": [] } ] },
+
+  "volgan_grave_host": { "name": "Grave Host", "role": "infantry", "people": ["country:Volgan"], "needs": ["zin_the_dead_revenant"], "options": [
+   { "regiments": [["zin_the_dead_revenant", 8], ["zin_ogres_brutes", 1]], "support": ["zin_dead_necromancers"] },
+   { "regiments": [["zin_the_dead_revenant", 9]], "support": ["zin_dead_necromancers"] } ] },
+  "volgan_vanguard": { "name": "Dominion Vanguard", "role": "armor", "people": ["country:Volgan"], "needs": ["zin_demons_netherborn", "zin_ogres_brutes"], "options": [
+   { "regiments": [["zin_demons_netherborn", 4], ["zin_ogres_brutes", 2], ["zin_orcs_warrior", 2]], "support": ["zin_support_ballistae"] } ] },
+  "volgan_monster_clan": { "name": "Monster Clan", "role": "infantry", "people": ["country:Volgan"], "needs": ["zin_ogres_brutes", "zin_orcs_warrior"], "options": [
+   { "regiments": [["zin_ogres_brutes", 3], ["zin_orcs_warrior", 4], ["zin_orcs_goblins", 2]], "support": ["zin_support_scouts"] } ] },
+  "volgan_riders": { "name": "Grave Riders", "role": "mobile", "people": ["country:Volgan"], "needs": ["zin_dead_grave_riders"], "options": [
+   { "regiments": [["zin_dead_grave_riders", 4], ["zin_the_dead_revenant", 2]], "support": ["zin_support_scouts"] } ] },
+  "volgan_garrison": { "name": "Grave Watch", "role": "garrison", "people": ["country:Volgan"], "needs": ["zin_the_dead_revenant"], "reserve": true, "options": [
+   { "regiments": [["zin_the_dead_revenant", 4]], "support": [] } ] },
+  "volgan_siege": { "name": "Siege Park", "role": "siege_role", "people": ["country:Volgan"], "needs": ["zin_siege_catapult"], "options": [
+   { "regiments": [["zin_siege_catapult", 3], ["zin_the_dead_revenant", 3]], "support": ["zin_support_ballistae", "zin_support_sappers"] } ] },
+
+  "zol_deathless_host": { "name": "Deathless Host", "role": "infantry", "people": ["country:Zol"], "needs": ["zin_zol_deathless"], "options": [
+   { "regiments": [["zin_zol_deathless", 10]], "support": [] } ] },
+  "zol_crews": { "name": "Black Ship Crews", "role": "marines", "people": ["country:Zol"], "needs": ["zin_zol_deathless_crews"], "options": [
+   { "regiments": [["zin_zol_deathless_crews", 6]], "support": [] } ] },
+  "zol_garrison": { "name": "Mistake Watch", "role": "garrison", "people": ["country:Zol"], "needs": ["zin_zol_deathless"], "reserve": true, "options": [
+   { "regiments": [["zin_zol_deathless", 3]], "support": [] } ] }
+ },
+ "profiles": {
+  "men": { "arms": "zin_arms_equipment", "xp": 0.1, "garrison": "men_levy_garrison", "garrisonShare": 0.3, "mix": [
+   { "t": "men_line_host", "w": 55 }, { "t": "men_riders", "w": 15, "mult": "riders" }, { "t": "men_knights", "w": 10, "mult": "knights" }, { "t": "men_siege_train", "w": 10, "mult": "siege" },
+   { "t": "men_sea_soldiers", "w": 5, "mult": "sea", "port": true }, { "t": "men_rangers", "w": 5, "mult": "rangers" }, { "t": "men_hill_companies", "w": 0, "mult": "hill", "base": 4 }, { "t": "men_heavy_host", "w": 0, "mult": "heavy", "base": 6 }, { "t": "men_camel_riders", "w": 0, "mult": "camel", "base": 8 } ] },
+  "elves": { "arms": "zin_elven_arms_equipment", "xp": 0.15, "garrison": "elves_garrison", "garrisonShare": 0.15, "mix": [
+   { "t": "elves_host", "w": 60 }, { "t": "elves_riders", "w": 25, "mult": "riders" }, { "t": "elves_siege", "w": 15, "mult": "siege" }, { "t": "elves_rangers", "w": 5, "mult": "rangers" } ] },
+  "sun_elves": { "arms": "zin_elven_arms_equipment", "xp": 0.1, "garrison": "sun_elves_watch", "garrisonShare": 0.1, "mix": [ { "t": "sun_elves_guard", "w": 100 } ] },
+  "orcs": { "arms": "zin_arms_equipment", "xp": 0.2, "garrison": "orcs_garrison", "garrisonShare": 0.15, "mix": [
+   { "t": "orcs_warband", "w": 70 }, { "t": "orcs_raiders", "w": 15, "mult": "riders" }, { "t": "orcs_brute_host", "w": 10 }, { "t": "orcs_siege", "w": 5, "mult": "siege" } ] },
+  "trolls": { "arms": "zin_troll_gear_equipment", "xp": 0.15, "garrison": "trolls_garrison", "garrisonShare": 0.1, "mix": [ { "t": "trolls_host", "w": 70 }, { "t": "trolls_pack", "w": 30 } ] },
+  "giants": { "arms": "zin_giant_gear_equipment", "xp": 0.1, "garrison": "giants_garrison", "garrisonShare": 0.15, "mix": [
+   { "t": "giants_host", "w": 45 }, { "t": "giants_foot", "w": 40 }, { "t": "giants_hurlers", "w": 15, "mult": "siege" } ] },
+  "ents": { "arms": "zin_ent_grove_equipment", "xp": 0.05, "garrison": "ents_garrison", "garrisonShare": 0.15, "mix": [ { "t": "ents_grove", "w": 60 }, { "t": "ents_foot", "w": 40 } ] },
+  "yeti": { "arms": "zin_yeti_gear_equipment", "xp": 0.15, "garrison": "yeti_garrison", "garrisonShare": 0.2, "mix": [ { "t": "yeti_bands", "w": 100 } ] },
+  "demons": { "arms": "zin_nether_arms_equipment", "xp": 0.3, "garrison": "nether_garrison", "garrisonShare": 0.15, "mix": [ { "t": "nether_host", "w": 100 } ] },
+  "country:Volgan": { "arms": "zin_grave_arms_equipment", "xp": 0.4, "garrison": "volgan_garrison", "garrisonShare": 0.1, "stockFactor": 1.5, "mix": [
+   { "t": "volgan_grave_host", "w": 50 }, { "t": "volgan_vanguard", "w": 25 }, { "t": "volgan_monster_clan", "w": 10 }, { "t": "volgan_riders", "w": 10 }, { "t": "volgan_siege", "w": 5 } ] },
+  "country:Zol": { "arms": null, "xp": 0.1, "garrison": "zol_garrison", "garrisonShare": 0, "mix": [] }
+ },
+ "cultureCharacter": {
+  "default": { "martial": 1.0 },
+  "selen_ranger": { "martial": 1.1, "mult": { "rangers": 4, "riders": 0.5 } },
+  "steppe_rider": { "martial": 1.1, "mult": { "riders": 3, "knights": 0.5 } },
+  "wall_folk": { "martial": 1.2, "mult": { "hill": 2, "heavy": 1.5 } },
+  "march_folk": { "martial": 1.0, "mult": { "hill": 1.5 } },
+  "isle_houses": { "martial": 1.0, "mult": { "sea": 1.5, "knights": 0.6 } },
+  "veiled_folk": { "martial": 0.8, "mult": { "rangers": 2, "riders": 0.5 } },
+  "redbark_tribes": { "martial": 1.1, "mult": { "rangers": 2.5, "hill": 1.5 } },
+  "leren_sea_kings": { "martial": 1.1, "sea": 1.6, "mult": { "sea": 3, "riders": 0.6 } },
+  "free_crowns_north": { "martial": 1.0, "mult": { "sea": 1.2 } },
+  "dondor_brutes": { "martial": 1.2, "mult": { "heavy": 3, "knights": 1.5 } },
+  "mirolon_wardens": { "martial": 1.2, "mult": { "hill": 3, "heavy": 1.5 } },
+  "dead_lands_freeholds": { "martial": 1.0, "mult": { "hill": 1.5, "rangers": 1.5 } },
+  "winter_crown": { "martial": 1.1, "mult": { "riders": 1.5, "hill": 1.5 } },
+  "ice_clans": { "martial": 0.9, "mult": { "hill": 2 } },
+  "isengard_warlords": { "martial": 1.2, "mult": { "heavy": 3, "knights": 1.5 } },
+  "windwaith_seafarers": { "martial": 0.9, "sea": 1.5, "mult": { "sea": 3 } },
+  "gunwaith_clans": { "martial": 1.2, "mult": { "hill": 2.5, "rangers": 1.5 } },
+  "girdon_wardens": { "martial": 1.1, "mult": { "rangers": 2, "hill": 1.5 } },
+  "western_guilds": { "martial": 0.8, "mult": { "siege": 1.5, "heavy": 1.5 } },
+  "buldor_companies": { "martial": 1.2, "mult": { "heavy": 2, "siege": 1.5 } },
+  "chart_islanders": { "martial": 0.7, "sea": 1.5, "mult": { "sea": 3 } },
+  "corsair_lords": { "martial": 0.9, "sea": 1.6, "mult": { "sea": 3 } },
+  "noris_riders": { "martial": 1.1, "mult": { "riders": 2, "camel": 3 } },
+  "caravan_princes": { "martial": 0.9, "mult": { "riders": 1.5, "camel": 2 } },
+  "river_kings": { "martial": 1.0, "mult": { "siege": 1.2 } },
+  "lake_road_cities": { "martial": 0.8, "mult": { "siege": 1.2 } },
+  "red_lands_tribunes": { "martial": 1.0, "mult": { "heavy": 1.5, "camel": 1.5 } },
+  "southern_islanders": { "martial": 0.8, "sea": 1.0, "mult": { "sea": 2 } },
+  "zilin_pilgrims": { "martial": 0.4 },
+  "goodin_sunfolk": { "martial": 0.7 },
+  "hill_kingdom_elves": { "martial": 1.0, "mult": { "rangers": 3 } },
+  "lake_elves": { "martial": 0.9 },
+  "pass_wardens": { "martial": 1.1, "mult": { "rangers": 2 } },
+  "rift_coast_elves": { "martial": 0.9, "sea": 1.0 },
+  "gala_court": { "martial": 1.0, "sea": 1.2 },
+  "sunhot_light": { "martial": 0.9 },
+  "sunhot_western": { "martial": 0.8 },
+  "sunhot_isles": { "martial": 0.8 },
+  "volcano_clans": { "martial": 1.3, "mult": { "siege": 1.5 } },
+  "iron_clans": { "martial": 1.2 },
+  "wild_holds": { "martial": 1.0 },
+  "sea_orcs": { "martial": 1.0 },
+  "troll_tribes": { "martial": 1.0 },
+  "hill_giants": { "martial": 1.0 },
+  "ice_giants": { "martial": 1.0 },
+  "yeti_clans": { "martial": 1.0 },
+  "kilinti_ents": { "martial": 1.0 },
+  "netherborn": { "martial": 1.0 }
+ },
+ "formula": { "base": 1, "perState": 0.6, "min": 1, "max": 18, "tierB": 1.25, "tierAB": 1.0, "villagePeople": 60000, "villageStates": 1, "popPerDivision": 5000, "stockFactor": 1.2, "trainsPerDivision": 10, "trainsMin": 20, "trainsMax": 300, "convoysPerGalley": 5, "convoysBase": 10, "convoysMax": 120, "fieldMinStates": 3, "galleysMax": 10, "seaDriveBase": 0.5, "factories": 1, "efficiency": 50, "progress": 0.5, "experienceJitter": 0.03 },
+ "wall": { "source": "docs/specs/03_gameplay/01_warfare.md section 13.1 and the key-sites table: the Great Wall forts (tools/content/data/geography/erdae.json, sites site_great_wall_*), normalised on the 5120 x 2560 game layout (x west to east, y north to south)", "frame": [5120, 2560], "forts": [ { "name": "North Wall Fort", "x": 0.648, "y": 0.44 }, { "name": "Kingson Gate Fortress", "x": 0.674, "y": 0.578 }, { "name": "South Gate Fortress", "x": 0.652, "y": 0.688 } ], "maxDistance": 420 },
+ "named": {
+  "Aenor": { "divisions": 36, "xp": 0.05, "wall": { "template": "men_wall_garrison", "n": 6, "xp": 0.2 }, "mix": { "men_line_host": 12, "men_knights": 6, "men_siege_train": 4, "men_riders": 3, "men_levy_garrison": 5 }, "navy": { "zin_ship_galley": 8, "zin_ship_warship": 4 } },
+  "Lerendor": { "divisions": 16, "xp": 0.1, "mix": { "men_line_host": 7, "men_sea_soldiers": 4, "men_riders": 1, "men_levy_garrison": 2, "men_siege_train": 2 }, "navy": { "zin_ship_galley": 12, "zin_ship_warship": 8 } },
+  "Coldor": { "divisions": 16, "xp": 0.1, "mix": { "men_line_host": 8, "men_riders": 4, "men_levy_garrison": 2, "men_hill_companies": 2 }, "navy": { "zin_ship_galley": 6, "zin_ship_warship": 3 } },
+  "Isengard": { "divisions": 10, "xp": 0.2, "mix": { "men_heavy_host": 5, "men_line_host": 3, "men_levy_garrison": 2 }, "navy": { "zin_ship_galley": 2 } },
+  "Noris": { "divisions": 14, "xp": 0.1, "mix": { "men_camel_riders": 6, "men_line_host": 5, "men_levy_garrison": 2, "men_riders": 1 }, "navy": { "zin_ship_galley": 4 } },
+  "Stabilo": { "divisions": 12, "xp": 0.1, "mix": { "men_line_host": 6, "men_riders": 3, "men_levy_garrison": 2, "men_siege_train": 1 }, "navy": { "zin_ship_galley": 4 } },
+  "Gunwaith": { "divisions": 8, "xp": 0.3, "mix": { "men_line_host": 4, "men_hill_companies": 2, "men_levy_garrison": 2 }, "navy": { "zin_ship_galley": 4 } },
+  "Girdon": { "divisions": 8, "xp": 0.3, "mix": { "men_line_host": 4, "men_rangers": 2, "men_levy_garrison": 2 }, "navy": { "zin_ship_galley": 4 } },
+  "Goldoroth": { "divisions": 14, "xp": 0.3, "mix": { "orcs_warband": 6, "orcs_brute_host": 4, "orcs_raiders": 1, "orcs_siege": 1, "orcs_garrison": 2 }, "navy": { "zin_ship_galley": 2 } },
+  "Dondor": { "divisions": 10, "xp": 0.3, "mix": { "men_heavy_host": 5, "men_line_host": 3, "men_levy_garrison": 2 }, "navy": { "zin_ship_galley": 3 } },
+  "Mirolon": { "divisions": 10, "xp": 0.3, "mix": { "men_hill_companies": 4, "men_line_host": 4, "men_levy_garrison": 2 }, "navy": { "zin_ship_galley": 3 } },
+  "Volgan": { "divisions": 40, "xp": 0.4, "mix": { "volgan_grave_host": 20, "volgan_vanguard": 10, "volgan_monster_clan": 10 }, "navy": { "zin_ship_galley": 4 } },
+  "Demon": { "divisions": 4, "xp": 0.3, "mix": { "nether_host": 3, "nether_garrison": 1 } },
+  "Dolon": { "divisions": 4, "xp": 0.3, "mix": { "nether_host": 3, "nether_garrison": 1 } },
+  "Nezer": { "divisions": 4, "xp": 0.3, "mix": { "nether_host": 3, "nether_garrison": 1 } },
+  "Zol": { "divisions": 0, "xp": 0, "mix": {}, "navy": { "zin_ship_raider": 3 } },
+  "Magical Forest": { "divisions": 12, "xp": 0.1, "mix": { "elves_host": 8, "elves_riders": 3, "elves_garrison": 1 } },
+  "Gala Elves": { "divisions": 4, "xp": 0.2, "mix": { "elves_host": 3, "elves_garrison": 1 }, "navy": { "zin_ship_galley": 3 } },
+  "Worshipdom": { "divisions": 1, "xp": 0.05, "mix": { "men_valley_wardens": 1 } },
+  "Yeldenne": { "divisions": 0, "xp": 0, "mix": {} },
+  "Selen": { "divisions": 3, "xp": 0.3, "mix": { "men_rangers": 2, "men_line_host": 1 } },
+  "Kingson": { "divisions": 4, "xp": 0.2, "wall": { "template": "men_wall_garrison", "n": 4, "xp": 0.2 }, "mix": {} },
+  "Hiloron": { "divisions": 3, "xp": 0.05, "mix": { "giants_host": 2, "giants_foot": 1 } },
+  "Kilinti": { "divisions": 3, "xp": 0.05, "mix": { "ents_grove": 2, "ents_foot": 1 } },
+  "Hunhun": { "divisions": 4, "xp": 0.1, "mix": { "men_riders": 4 } }
+ }
+}

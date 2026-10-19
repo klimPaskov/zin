@@ -32,6 +32,7 @@ import { buildCultures } from './modules/cultures.mjs';
 import { buildDiplomacy } from './modules/diplomacy.mjs';
 import { buildTechnologies } from './modules/technologies.mjs';
 import { buildWarfare } from './modules/warfare.mjs';
+import { buildForces } from './modules/forces.mjs';
 import { buildEconomy } from './modules/economy.mjs';
 import { buildInstitutions, requiredEnumEntries } from './modules/institutions.mjs';
 import { buildTextSweep } from './modules/text_sweep.mjs';
@@ -81,6 +82,8 @@ const diplomacy = await buildDiplomacy(staged, { countries });
 const externalSharing = diplomacy.definitions.sharing.map(id => ({ id, template: `zin_faction_${id.replace(/^zin_research_/, '')}` }));
 const technologies = await buildTechnologies(staged, { countries, assignment, externalSharing });
 const warfare = await buildWarfare(staged, { countries, pools });
+// Starting forces, AI templates and designs, generic AI strategies, designer pieces (docs/design/stage2/forces.md): after warfare (names) and technologies (start packages).
+const forces = await buildForces(staged, { countries, assignment, table });
 // script_enums.txt and the tokens file list the archetypes and types warfare staged; every equipment type the workshops of the
 // institutions slice name must be among them (otherwise a workshop bonus is silently ignored).
 const economy = await buildEconomy(staged, { countries });
@@ -151,4 +154,4 @@ if (uiEnforced.length) throw new Error(uiEnforced.map(c => `ui check ${c.id} ${c
 const assets = await buildAssets(staged);
 await staged.write(out);
 const counts = {}; for (const rel of staged.files.keys()) { const top = rel.split('/').slice(0, 2).join('/'); counts[top] = (counts[top] ?? 0) + 1; }
-console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, assets: assets.summary, calendar, defines, cultures: cultures.counts, warfare, diplomacy: diplomacy.counts, technologies, economy, institutions, textSweep, textScan: textScan.counts, ui: { ...ui.counts, checks: uiReport.checks.map(c => `${c.id}:${c.status}`) }, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));
+console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, assets: assets.summary, calendar, defines, cultures: cultures.counts, warfare, forces, diplomacy: diplomacy.counts, technologies, economy, institutions, textSweep, textScan: textScan.counts, ui: { ...ui.counts, checks: uiReport.checks.map(c => `${c.id}:${c.status}`) }, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));

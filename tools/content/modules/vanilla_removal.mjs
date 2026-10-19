@@ -284,7 +284,6 @@ function buildCollections(staged, loc) {
   loc.text.ZIN_COLLECTION_FACTION_MEMBERS = 'The League';
   staged.text('common/collections/zin_generic_collections.txt', `${HEADER}\n# Generic collections the engine names.\ncountry_and_all_subjects = {\n\tinput = game:scope\n\toperators = { country_and_all_subjects }\n\tname = ZIN_COLLECTION_COUNTRY_AND_ALL_SUBJECTS\n}\nfaction_members = {\n\tinput = game:scope\n\toperators = { faction_members }\n\tname = ZIN_COLLECTION_FACTION_MEMBERS\n}\n`);
   staged.text('common/mtth/zin_mtth.txt', `${HEADER}\n# Story mean times (historical-path spec). Read as mtth:<name>.\nzin_story_mean_time = {\n\tbase = 365\n}\n`);
-  staged.text('common/ai_strategy_plans/zin_interim_plan.txt', `${HEADER}\n# Interim stub: keeps the replaced folder non-empty until the historical-path spec ships its plans.\nzin_interim_plan = {\n\tname = "zin_interim_plan"\n\tdesc = ""\n\tallowed = { always = no }\n\tenable = { always = no }\n\tabort = { always = yes }\n\tai_national_focuses = {\n\t\tzin_long_peace_keep_the_peace\n\t}\n\tweight = {\n\t\tfactor = 0\n\t}\n}\n`);
 }
 
 // One theater per Erdae region: a strategic region joins the region (country table scan) that owns most of its
@@ -401,11 +400,8 @@ function buildInterimRules(staged) {
 
 function buildOverrides(staged, loc) {
   // common/defines/zin_defines.lua (the hands-off tag included) is written by modules/defines.mjs.
-  // Vanilla 1.19.3 names three unit models it never defines: the equipment designer's tank icons name
-  // GER_super_heavy_armor_entity and SOV_super_heavy_armor_entity, and a By Blood Alone motorised unit attaches
-  // ITA_mechanized_vehicle_1_entity (B11, also logged with no mod). Clones of the nearest defined models close them
-  // until the warfare replacements remove the vanilla equipment (stage 2).
-  staged.text('gfx/entities/zin_vanilla_model_gaps.asset', `${HEADER}\n# bridge: remove in stage 2\nentity = { name = "GER_super_heavy_armor_entity" clone = "GER_heavy_armor_entity" }\nentity = { name = "SOV_super_heavy_armor_entity" clone = "SOV_heavy_armor_entity" }\nentity = { name = "ITA_mechanized_vehicle_1_entity" clone = "GER_mechanized_vehicle_0_entity" }\n`);
+  // B11 (three vanilla vehicle entities the installed game never defines) is gone for good: the vanilla equipment and the equipment
+  // designer icon database are replaced (stage 2), so the clone bridge gfx/entities/zin_vanilla_model_gaps.asset is no longer written.
   staged.text('tutorial/tutorial.txt', `${HEADER}\n# Overrides the vanilla tutorial, which names vanilla state 550 (a different state in Erdae).\ntutorial = { }\n`);
   loc.text.zin_unwritten_page = 'The Unwritten Page'; loc.text.zin_unwritten_page_desc = 'ZIN keeps no achievements yet.';
   staged.text('common/achievements.txt', `${HEADER}\n# Overrides the vanilla achievements: ZIN has no Steam achievements. One entry that can never be earned.\nzin_unwritten_page = {\n\tid = 0\n\tpossible = { always = no }\n\thappened = { always = no }\n}\n`);

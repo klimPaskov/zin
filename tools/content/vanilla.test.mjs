@@ -56,7 +56,7 @@ test('C2: descriptor.mod carries the stage-1 replace_path lines and every replac
   assert.equal(paths.length, V.replacedFolders(disp).length); assert(paths.length >= 34, 'the 34 lines of stage 1 plus the stage 2 slices wired so far');
   // Pulled forward: the menu art, and the tag list with its name lists (the flag-sheet divide-by-zero crash).
   for (const p of ['gfx/loadingscreens', 'common/frontend/backgrounds', 'common/country_tags', 'common/names']) assert(paths.includes(p), p);
-  for (const p of ['common/ai_templates', 'common/ai_equipment', 'common/ai_navy/goals', 'gfx/interface/equipmentdesigner/graphic_db', 'music']) assert(!paths.includes(p), `${p} is a later stage`);
+  for (const p of ['common/scorers/country', 'music']) assert(!paths.includes(p), `${p} is a later stage`);
   // The launcher descriptor as the sync step will write it (mod/zin.mod; other lines kept).
   const launcherPath = path.join(path.dirname(ZIN), 'zin.mod');
   const launcher = existsSync(launcherPath) ? syncLauncherText(await readFile(launcherPath, 'utf8'), descriptor) : descriptor;
@@ -217,7 +217,7 @@ test('Bridges carry identifiers only and never become visible', async () => {
 // ------------------------------------------------------------------------------------------------- silenced
 test('Vanilla files written for one vanilla country are silenced by comment-only ZIN files; generic files stay', async () => {
   const files = await silencedFiles();
-  assert(files.length > 40, `${files.length} silenced`);
+  assert(files.length === 2, `${files.length} silenced`);
   for (const f of files) {
     const b = stagedFiles.get(f.rel); assert(b, f.rel);
     assert.equal(parse(b.toString('utf8')).filter(e => e.k).length, 0, `${f.rel} defines nothing`);
@@ -225,7 +225,7 @@ test('Vanilla files written for one vanilla country are silenced by comment-only
   const rels = new Set(files.map(f => f.rel));
   for (const kept of ['common/autonomous_states/puppet.txt', 'common/ai_navy/goals/goals_generic.txt', 'common/ai_templates/generic.txt', 'common/units/names_railway_guns/common_railway_gun_names.txt', 'common/military_industrial_organization/organizations/00_generic_organization.txt'])
     assert(!rels.has(kept), `${kept} stays loaded`);
-  for (const gone of ['common/ai_navy/goals/goals_ENG.txt', 'common/ai_templates/templates_ENG.txt'])
+  for (const gone of ['common/country_tag_aliases/tag_aliases.txt', 'common/difficulty_settings/00_difficulty.txt'])
     assert(rels.has(gone), `${gone} is silenced`);
 });
 test('Negative: the file-name rule only matches a vanilla tag standing alone', async () => {

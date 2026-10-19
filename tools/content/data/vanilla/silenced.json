@@ -3,18 +3,6 @@
  "spec": "docs/specs/00_foundation/06_vanilla_removal_and_zero_errors.md",
  "note": "Interim, from 19 October 2026: the vanilla tags left in stage 1, so vanilla files written for one vanilla country (their file name carries the tag) name tags that no longer exist and fill error.log. In each folder below, every base-game or DLC file whose name carries a vanilla tag, and every file listed under extra, is overridden by a comment-only ZIN file of the same name. Generic files stay loaded until the stage that replaces the folder. A folder's stage-2 or stage-3 replacement supersedes its entry here.",
  "folders": {
-  "common/ai_equipment": {
-   "reason": "AI equipment designs for single vanilla countries"
-  },
-  "common/ai_navy/goals": {
-   "reason": "Naval AI goals available_for single vanilla countries; with the tags gone every goal applied to every country and the AI logged about 19,500 duplicate goal lines"
-  },
-  "common/ai_navy/taskforce": {
-   "reason": "Naval task force templates for single vanilla countries"
-  },
-  "common/ai_templates": {
-   "reason": "AI division templates for single vanilla countries"
-  },
   "common/country_tag_aliases": {
    "reason": "Aliases of vanilla tags",
    "extra": [

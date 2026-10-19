@@ -1,0 +1,178 @@
+{
+ "schema": 1,
+ "owner": "docs/specs/09_validation/02_ai_defaults.md sections 3, 4.1 to 4.5 and 5 (roles, ratios, production, doctrines, research, crash safety); docs/specs/03_gameplay/01_warfare.md section AI; 09_naval_air_doctrines.md section 10; read by tools/content/modules/forces.mjs",
+ "note": "AI data. `entries` are the role-level AI template entries; a target's `regiments` and `support` are sub-unit counts, `enable` a list of condition tokens (not_tier_c, tech:<sub-unit> meaning the technology that unlocks the sub-unit, flag:<global flag>). `people` keys are the profile keys of forces_templates.json (men, elves, sun_elves, orcs, trolls, giants, ents, yeti, demons, country:Volgan, country:Zol). Ratios are weights; the first Linux run calibrates their scale (spec probe AI-P1).",
+ "roles": ["infantry", "garrison", "mobile", "armor", "siege_role", "marines", "rangers_role"],
+ "ratios": {
+  "men": { "infantry": 55, "garrison": 10, "mobile": 15, "armor": 10, "siege_role": 10, "marines": 5, "rangers_role": 5 },
+  "elves": { "infantry": 60, "garrison": 0, "mobile": 25, "armor": 0, "siege_role": 15, "marines": 0, "rangers_role": 5 },
+  "sun_elves": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 },
+  "orcs": { "infantry": 70, "garrison": 0, "mobile": 15, "armor": 10, "siege_role": 5, "marines": 0, "rangers_role": 0 },
+  "trolls": { "infantry": 30, "garrison": 0, "mobile": 0, "armor": 70, "siege_role": 0, "marines": 0, "rangers_role": 0 },
+  "giants": { "infantry": 40, "garrison": 0, "mobile": 0, "armor": 45, "siege_role": 15, "marines": 0, "rangers_role": 0 },
+  "ents": { "infantry": 40, "garrison": 0, "mobile": 0, "armor": 60, "siege_role": 0, "marines": 0, "rangers_role": 0 },
+  "yeti": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 },
+  "demons": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 },
+  "country:Volgan": { "infantry": 50, "garrison": 0, "mobile": 10, "armor": 25, "siege_role": 15, "marines": 0, "rangers_role": 0 },
+  "country:Zol": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 }
+ },
+ "tierGarrison": { "a": 0, "b": 5, "c": 10 },
+ "entries": [
+  { "people": "men", "role": "infantry", "targets": [
+   { "id": "line_host", "regiments": { "zin_men_infantry": 6, "zin_men_archers": 2 }, "support": { "zin_support_scouts": 1, "zin_support_sappers": 1 }, "prio": 1, "replace": "heavy_host", "at": 0.9, "min": 0.5 },
+   { "id": "heavy_host", "regiments": { "zin_men_heavy_infantry": 4, "zin_men_archers": 2, "zin_siege_catapult": 1 }, "support": { "zin_support_sappers": 1, "zin_support_catapults": 1, "zin_support_healers": 1 }, "prio": 1, "enable": ["not_tier_c", "tech:zin_men_heavy_infantry"], "replace": "warded_host", "at": 0.9, "min": 0.5 },
+   { "id": "warded_host", "regiments": { "zin_men_heavy_infantry": 6, "zin_men_archers": 2 }, "support": { "zin_support_wardens": 1, "zin_support_sappers": 1 }, "prio": 1, "enable": ["not_tier_c", "flag:zin_zol_rising"] } ] },
+  { "people": "men", "role": "garrison", "targets": [ { "id": "levy_garrison", "regiments": { "zin_men_levy": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "men", "role": "mobile", "targets": [ { "id": "riders", "regiments": { "zin_men_cavalry": 4, "zin_men_horse_archers": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "men", "role": "armor", "targets": [ { "id": "knights", "regiments": { "zin_men_knights": 2, "zin_men_cavalry": 2, "zin_men_heavy_infantry": 2 }, "support": { "zin_support_ballistae": 1 }, "prio": 1, "reinforce": 2, "enable": ["not_tier_c"] } ] },
+  { "people": "men", "role": "siege_role", "targets": [ { "id": "siege_train", "regiments": { "zin_siege_trebuchet": 2, "zin_siege_catapult": 2, "zin_men_infantry": 2 }, "support": { "zin_support_sappers": 1 }, "prio": 1, "enable": ["not_tier_c"] } ] },
+  { "people": "men", "role": "marines", "targets": [ { "id": "sea_soldiers", "regiments": { "zin_men_sea_soldiers": 6 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "men", "role": "rangers_role", "targets": [ { "id": "rangers", "regiments": { "zin_men_rangers": 4 }, "support": { "zin_support_scouts": 1 }, "prio": 1, "reinforce": 2 } ] },
+
+  { "people": "elves", "role": "infantry", "targets": [ { "id": "host", "regiments": { "zin_elves_warden": 4, "zin_elves_archers": 3 }, "support": { "zin_elves_wardsingers": 1, "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "elves", "role": "garrison", "targets": [ { "id": "wall_wardens", "regiments": { "zin_elves_warden": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "elves", "role": "mobile", "targets": [ { "id": "riders", "regiments": { "zin_elves_riders": 4, "zin_elves_archers": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "elves", "role": "siege_role", "targets": [ { "id": "siege_band", "regiments": { "zin_siege_catapult": 2, "zin_elves_warden": 4 }, "support": { "zin_support_ballistae": 1, "zin_support_scouts": 1 }, "prio": 1, "enable": ["not_tier_c"] } ] },
+  { "people": "elves", "role": "rangers_role", "targets": [ { "id": "rangers", "regiments": { "zin_elves_rangers": 4 }, "support": { "zin_support_scouts": 1 }, "prio": 1, "reinforce": 2 } ] },
+
+  { "people": "sun_elves", "role": "infantry", "targets": [ { "id": "guard", "regiments": { "zin_sun_elves_guard": 4, "zin_sun_elves_bowmen": 2 }, "support": { "zin_support_scorpions": 1, "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "sun_elves", "role": "garrison", "targets": [ { "id": "watch", "regiments": { "zin_sun_elves_guard": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+
+  { "people": "orcs", "role": "infantry", "targets": [ { "id": "warband", "regiments": { "zin_orcs_warrior": 7, "zin_orcs_goblins": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "orcs", "role": "garrison", "targets": [ { "id": "goblin_watch", "regiments": { "zin_orcs_goblins": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "orcs", "role": "mobile", "targets": [ { "id": "raiders", "regiments": { "zin_orcs_raiders": 4, "zin_orcs_warrior": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "orcs", "role": "armor", "targets": [ { "id": "brute_host", "regiments": { "zin_ogres_brutes": 2, "zin_orcs_warrior": 5 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "orcs", "role": "siege_role", "targets": [ { "id": "siege_band", "regiments": { "zin_siege_catapult": 2, "zin_orcs_warrior": 4 }, "support": { "zin_support_catapults": 1 }, "prio": 1, "enable": ["not_tier_c"] } ] },
+
+  { "people": "trolls", "role": "infantry", "targets": [ { "id": "pack", "regiments": { "zin_trolls_brute": 2, "zin_orcs_goblins": 3 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "trolls", "role": "garrison", "targets": [ { "id": "watch", "regiments": { "zin_trolls_brute": 2 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "trolls", "role": "armor", "targets": [ { "id": "host", "regiments": { "zin_trolls_brute": 3, "zin_orcs_goblins": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+
+  { "people": "giants", "role": "infantry", "targets": [ { "id": "foot", "regiments": { "zin_men_infantry": 4, "zin_men_archers": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "giants", "role": "garrison", "targets": [ { "id": "levy_garrison", "regiments": { "zin_men_levy": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "giants", "role": "armor", "targets": [ { "id": "host", "regiments": { "zin_giants_host": 3, "zin_giants_hurlers": 1 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "giants", "role": "siege_role", "targets": [ { "id": "hurlers", "regiments": { "zin_giants_hurlers": 2, "zin_men_infantry": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+
+  { "people": "ents", "role": "infantry", "targets": [ { "id": "forest_archers", "regiments": { "zin_men_levy": 2, "zin_men_archers": 3 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "ents", "role": "garrison", "targets": [ { "id": "levy_garrison", "regiments": { "zin_men_levy": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "ents", "role": "armor", "targets": [ { "id": "grove", "regiments": { "zin_ents_grove": 3, "zin_men_archers": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+
+  { "people": "yeti", "role": "infantry", "targets": [ { "id": "bands", "regiments": { "zin_yeti_band": 4 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "yeti", "role": "garrison", "targets": [ { "id": "watch", "regiments": { "zin_yeti_band": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+
+  { "people": "demons", "role": "infantry", "targets": [ { "id": "host", "regiments": { "zin_demons_netherborn": 5 }, "support": { "zin_support_sappers": 1 }, "prio": 1 } ] },
+  { "people": "demons", "role": "garrison", "targets": [ { "id": "watch", "regiments": { "zin_demons_netherborn": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+
+  { "people": "country:Volgan", "role": "infantry", "targets": [
+   { "id": "grave_host", "regiments": { "zin_the_dead_revenant": 8, "zin_ogres_brutes": 1 }, "support": { "zin_dead_necromancers": 1 }, "prio": 2 },
+   { "id": "monster_clan", "regiments": { "zin_ogres_brutes": 3, "zin_orcs_warrior": 4, "zin_orcs_goblins": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "country:Volgan", "role": "garrison", "targets": [ { "id": "grave_watch", "regiments": { "zin_the_dead_revenant": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "country:Volgan", "role": "mobile", "targets": [ { "id": "grave_riders", "regiments": { "zin_dead_grave_riders": 4, "zin_the_dead_revenant": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "country:Volgan", "role": "armor", "targets": [ { "id": "vanguard", "regiments": { "zin_demons_netherborn": 4, "zin_ogres_brutes": 2, "zin_orcs_warrior": 2 }, "support": { "zin_support_ballistae": 1 }, "prio": 1, "reinforce": 2 } ] },
+  { "people": "country:Volgan", "role": "siege_role", "targets": [ { "id": "siege_park", "regiments": { "zin_siege_catapult": 3, "zin_the_dead_revenant": 3 }, "support": { "zin_support_ballistae": 1, "zin_support_sappers": 1 }, "prio": 1 } ] },
+
+  { "people": "country:Zol", "role": "infantry", "upgradeZero": true, "targets": [ { "id": "deathless", "regiments": { "zin_zol_deathless": 10 }, "support": {}, "prio": 1 } ] },
+  { "people": "country:Zol", "role": "garrison", "upgradeZero": true, "targets": [ { "id": "watch", "regiments": { "zin_zol_deathless": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "country:Zol", "role": "marines", "upgradeZero": true, "targets": [ { "id": "crews", "regiments": { "zin_zol_deathless_crews": 6 }, "support": {}, "prio": 1 } ] }
+ ],
+ "production": {
+  "militaryToCivilian": { "men": 50, "elves": 30, "sun_elves": 20, "orcs": 150, "trolls": 20, "giants": 20, "ents": 20, "yeti": 20, "demons": 80, "country:Volgan": 100, "country:Zol": 100 },
+  "warBoost": 50,
+  "dockyards": { "seaPower": 30, "coastal": 20 },
+  "variants": {
+   "men": { "zin_arms_equipment": 100, "zin_bows_equipment": 40, "zin_armour_equipment": 25, "zin_mounts_equipment": 30, "zin_catapult_equipment": 15, "zin_trebuchet_equipment": 5, "zin_ballista_equipment": 20, "zin_camp_equipment": 50, "zin_ward_equipment": 0 },
+   "elves": { "zin_elven_arms_equipment": 100, "zin_mounts_equipment": 30, "zin_ward_equipment": 10, "zin_catapult_equipment": 10, "zin_ballista_equipment": 20, "zin_camp_equipment": 40 },
+   "sun_elves": { "zin_elven_arms_equipment": 100, "zin_ward_equipment": 10, "zin_catapult_equipment": 10, "zin_ballista_equipment": 20, "zin_camp_equipment": 40 },
+   "orcs": { "zin_arms_equipment": 100, "zin_bows_equipment": 30, "zin_mounts_equipment": 20, "zin_ogre_gear_equipment": 30, "zin_catapult_equipment": 10, "zin_camp_equipment": 40 },
+   "trolls": { "zin_troll_gear_equipment": 100, "zin_bows_equipment": 20, "zin_camp_equipment": 30 },
+   "giants": { "zin_giant_gear_equipment": 100, "zin_arms_equipment": 40, "zin_bows_equipment": 20, "zin_catapult_equipment": 10, "zin_camp_equipment": 40 },
+   "ents": { "zin_ent_grove_equipment": 100, "zin_arms_equipment": 30, "zin_bows_equipment": 30, "zin_camp_equipment": 30 },
+   "yeti": { "zin_yeti_gear_equipment": 100, "zin_camp_equipment": 30 },
+   "demons": { "zin_nether_arms_equipment": 100, "zin_catapult_equipment": 10, "zin_camp_equipment": 40 },
+   "country:Volgan": { "zin_grave_arms_equipment": 100, "zin_nether_arms_equipment": 40, "zin_ogre_gear_equipment": 40, "zin_arms_equipment": 60, "zin_armour_equipment": 25, "zin_mounts_equipment": 30, "zin_catapult_equipment": 15, "zin_trebuchet_equipment": 10, "zin_ballista_equipment": 20, "zin_camp_equipment": 50 },
+   "country:Zol": {}
+  },
+  "types": { "infantry": 100, "support": 80, "artillery": 60, "anti_tank": 60, "anti_air": 50 },
+  "surplus": { "zin_arms_equipment": 10, "zin_elven_arms_equipment": 10, "zin_bows_equipment": 8, "zin_camp_equipment": 8, "zin_catapult_equipment": 2, "zin_ballista_equipment": 2 },
+  "minFactories": { "train_equipment": 1, "convoy": 1, "motorized_equipment": 1 },
+  "minArmouries": 12,
+  "never": ["zin_deathless_equipment", "zin_dragon_equipment", "zin_glo_blade_equipment", "zin_great_spirit_equipment", "zin_shachihata_equipment", "zin_volgan_presence_equipment", "zin_zol_manifestation_equipment", "zin_griffin_equipment", "zin_scorpion_equipment"]
+ },
+ "navy": {
+  "seaPower": { "names": ["Lerendor", "Gala Elves"], "scans": ["Tritons Islands"], "ratios": { "screen_ship": 40, "capital_ship": 30, "submarine": 10, "convoy": 20 } },
+  "coastal": { "ratios": { "screen_ship": 70, "capital_ship": 0, "submarine": 0, "convoy": 30 } },
+  "zol": { "ratios": { "screen_ship": 0, "capital_ship": 0, "submarine": 0, "convoy": 0 } },
+  "roleRatios": { "seaPower": { "naval_screen": 40, "naval_capital": 30, "naval_raider": 10 }, "coastal": { "naval_screen": 70, "naval_capital": 0, "naval_raider": 0 } },
+  "taskforces": [
+   { "id": "zin_strike_force", "mission": "naval_strike", "ai": 1, "keepUpdated": true, "min": { "zin_ship_warship": 2 }, "optimal": { "zin_ship_great_warship": 2, "zin_ship_warship": 4, "zin_ship_galley": 6 } },
+   { "id": "zin_patrol_squadron", "mission": "naval_patrol", "ai": 5, "min": { "zin_ship_galley": 2 }, "optimal": { "zin_ship_galley": 6 } },
+   { "id": "zin_coast_guard", "mission": "naval_patrol", "ai": 3, "min": { "zin_ship_galley": 1 }, "optimal": { "zin_ship_galley": 3 } },
+   { "id": "zin_convoy_escort", "mission": "convoy_escort", "ai": 5, "min": { "zin_ship_galley": 2 }, "optimal": { "zin_ship_galley": 4 } },
+   { "id": "zin_raider_pack", "mission": "convoy_raiding", "ai": 5, "min": { "zin_ship_raider": 2 }, "optimal": { "zin_ship_raider": 6 } },
+   { "id": "zin_landing_cover", "mission": "naval_invasion_support", "ai": 3, "min": { "zin_ship_galley": 2, "zin_ship_warship": 1 }, "optimal": { "zin_ship_galley": 4, "zin_ship_warship": 2 } }
+  ],
+  "fleets": [
+   { "id": "zin_dominance_fleet", "required": { "zin_strike_force": 1, "zin_patrol_squadron": 2 }, "optional": { "zin_strike_force": 1, "zin_patrol_squadron": 1 } },
+   { "id": "zin_raiding_fleet", "required": { "zin_raider_pack": 2 }, "optional": { "zin_raider_pack": 2 } },
+   { "id": "zin_escort_fleet", "required": { "zin_convoy_escort": 2 }, "optional": { "zin_convoy_escort": 1 } },
+   { "id": "zin_landing_fleet", "required": { "zin_landing_cover": 1 }, "optional": { "zin_patrol_squadron": 1 } },
+   { "id": "zin_coastal_fleet", "required": { "zin_coast_guard": 2 }, "optional": { "zin_coast_guard": 1 } }
+  ],
+  "goals": [
+   { "id": "zin_naval_invasion_support", "type": "naval_invasion_support", "min": 4, "max": 14 },
+   { "id": "zin_invasion_defense", "type": "naval_invasion_defense", "min": 15, "max": 25 },
+   { "id": "zin_coast_defense", "type": "coast_defense", "min": 1, "max": 16 },
+   { "id": "zin_convoy_protection", "type": "convoy_protection", "min": 1, "max": 5 },
+   { "id": "zin_convoy_raiding", "type": "convoy_raiding", "min": 3, "max": 7 },
+   { "id": "zin_naval_dominance", "type": "naval_dominance", "min": 1, "max": 13 },
+   { "id": "zin_training", "type": "training", "min": 10, "max": 20 },
+   { "id": "zin_naval_blockade", "type": "naval_blockade", "min": 10, "max": 20 }
+  ]
+ },
+ "designs": {
+  "groups": [
+   { "id": "zin_ai_ships_men", "people": ["men"], "defaultGroup": true },
+   { "id": "zin_ai_ships_elves", "people": ["elves"] },
+   { "id": "zin_ai_ships_dominion", "people": ["orcs", "demons", "country:Volgan"] },
+   { "id": "zin_ai_ships_mistake", "people": ["country:Zol"] }
+  ],
+  "propulsion": { "men": { "galley": "zin_mod_oars_and_sail", "warship": "zin_mod_sails", "raider": "zin_mod_oars" }, "elves": { "galley": "zin_mod_elven_sails", "warship": "zin_mod_elven_sails", "raider": "zin_mod_elven_sails" }, "dominion": { "galley": "zin_mod_oars", "warship": "zin_mod_sails", "raider": "zin_mod_oars" }, "mistake": { "galley": "zin_mod_oars", "warship": "zin_mod_sails", "raider": "zin_mod_black_sails" } },
+  "armament": { "men": { "galley": ["zin_mod_ballista_battery"], "warship": ["zin_mod_ballista_battery", "zin_mod_ballista_battery"], "great": ["zin_mod_ballista_battery", "zin_mod_catapult_deck", "zin_mod_ballista_battery"], "raider": ["zin_mod_ram"] }, "elves": { "galley": ["zin_mod_archers_deck"], "warship": ["zin_mod_archers_deck", "zin_mod_ballista_battery"], "great": ["zin_mod_archers_deck", "zin_mod_ballista_battery", "zin_mod_archers_deck"], "raider": ["zin_mod_archers_deck"] }, "dominion": { "galley": ["zin_mod_ram"], "warship": ["zin_mod_fire_pots", "zin_mod_ballista_battery"], "great": ["zin_mod_fire_pots", "zin_mod_catapult_deck", "zin_mod_ballista_battery"], "raider": ["zin_mod_ram"] }, "mistake": { "galley": ["zin_mod_ram"], "warship": ["zin_mod_ballista_battery", "zin_mod_ballista_battery"], "great": ["zin_mod_ballista_battery", "zin_mod_ballista_battery", "zin_mod_ballista_battery"], "raider": ["zin_mod_ram"] } },
+  "crew": { "galley": "zin_mod_rowers_benches", "warship": "zin_mod_lookouts", "great": "zin_mod_lookouts", "raider": "zin_mod_lookouts" }
+ },
+ "doctrines": {
+  "land": {
+   "zin_gd_shield_wall": { "infantry": 20, "garrison": 10, "armor": -10 },
+   "zin_gd_horse_and_lance": { "mobile": 15, "armor": 10, "infantry": -10 },
+   "zin_gd_great_muster": { "infantry": 20, "garrison": 10, "armor": -10 },
+   "zin_gd_old_ways": { "infantry": 10, "siege_role": 10, "rangers_role": 10 },
+   "zin_gd_sun_guard": { "infantry": 15, "garrison": 5 },
+   "zin_gd_warband": { "armor": 15, "infantry": 10, "garrison": -10 },
+   "zin_gd_strength_of_the_wild": { "armor": 10, "infantry": 5 },
+   "zin_gd_nether_fury": { "infantry": 15, "armor": 5 },
+   "zin_gd_grave_muster": { "infantry": 20, "armor": 5, "mobile": 5 },
+   "zin_gd_deathless_tide": { "infantry": 20 }
+  },
+  "naval": { "zin_gd_command_of_the_sea": { "capital_ship": 20, "screen_ship": 10 }, "zin_gd_oar_and_ram": { "screen_ship": 20, "convoy": 10 }, "zin_gd_corsair_fleets": { "submarine": 30, "screen_ship": 10 } },
+  "air": { "zin_gd_wings_of_the_mountain": {}, "zin_gd_griffin_eyries": {} },
+  "tracks": { "zin_track_foot": { "infantry": 10 }, "zin_track_siege": { "siege_role": 10 }, "zin_track_mounted": { "mobile": 10, "armor": 5 }, "zin_track_command": {} },
+  "forceConcentration": { "zin_track_command": 20, "zin_gd_horse_and_lance": 15, "zin_gd_warband": 10, "zin_gd_great_muster": 5 }
+ },
+ "research": {
+  "base": {
+   "men": { "zin_cat_arms": 1.5, "zin_cat_bows": 1.2, "zin_cat_armour": 1.1, "zin_cat_mounts": 1.2, "zin_cat_camp": 1.1, "zin_cat_galleys": 1.0, "zin_cat_warships": 1.0, "zin_cat_scholarship": 1.1 },
+   "elves": { "zin_cat_wards": 1.5, "zin_cat_scholarship": 1.5, "zin_cat_essence_craft": 1.3, "zin_cat_beacons": 1.2, "zin_cat_siege": 1.1, "zin_cat_skies": 1.0 },
+   "sun_elves": { "zin_cat_scholarship": 1.3, "zin_cat_granaries": 1.2, "zin_cat_wards": 1.2, "zin_cat_beacons": 1.1 },
+   "orcs": { "zin_cat_arms": 1.5, "zin_cat_kin": 1.4, "zin_cat_siege": 1.2, "zin_cat_mounts": 1.2, "zin_cat_dark_rites": 1.0 },
+   "trolls": { "zin_cat_kin": 1.8, "zin_cat_arms": 1.0 },
+   "giants": { "zin_cat_kin": 1.5, "zin_cat_walls": 1.3, "zin_cat_siege": 1.2 },
+   "ents": { "zin_cat_kin": 1.8, "zin_cat_walls": 1.2 },
+   "yeti": { "zin_cat_kin": 1.6, "zin_cat_camp": 1.2 },
+   "demons": { "zin_cat_dark_rites": 1.5, "zin_cat_kin": 1.2, "zin_cat_arms": 1.0 },
+   "country:Volgan": { "zin_cat_dark_rites": 1.8, "zin_cat_arms": 1.3, "zin_cat_siege": 1.3, "zin_cat_kin": 1.2, "zin_cat_mounts": 1.1 },
+   "country:Zol": { "zin_cat_dark_rites": 1.5 }
+  },
+  "tierC": { "zin_cat_arms": 1.3 },
+  "tierB": { "zin_cat_scholarship": 1.1 }
+ }
+}
