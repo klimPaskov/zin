@@ -22,7 +22,7 @@
       ],
       "writer": "text_sweep",
       "scope": false,
-      "gate": "report",
+      "gate": "banned",
       "wave": 1,
       "reachOther": {
         "default": "all"
@@ -57,7 +57,7 @@
       ],
       "writer": "text_sweep",
       "scope": false,
-      "gate": "report",
+      "gate": "banned",
       "wave": 2,
       "reachOther": {
         "modifiers": "modifiers",
@@ -70,7 +70,7 @@
       ],
       "writer": "text_sweep",
       "scope": false,
-      "gate": "report",
+      "gate": "strict",
       "wave": 2,
       "reachOther": {
         "alerts": "alerts",
@@ -178,7 +178,7 @@
       ],
       "writer": "text_sweep",
       "scope": false,
-      "gate": "report",
+      "gate": "banned",
       "wave": 2
     },
     "intelligence": {
@@ -283,7 +283,7 @@
       ],
       "writer": "text_sweep",
       "scope": false,
-      "gate": "report",
+      "gate": "banned",
       "wave": 2,
       "reachLabels": {
         "game_rules": "referenced"
@@ -298,7 +298,7 @@
       ],
       "writer": "frontend.mjs; text_sweep checks",
       "scope": false,
-      "gate": "report",
+      "gate": "strict",
       "wave": 1,
       "claims": [
         "^diff_[a-z_]+_player$"

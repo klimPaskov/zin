@@ -232,7 +232,7 @@
       "id": 22, "adjective": "Chart-Islander", "icon": "compass_chart", "magic": "respected",
       "spirit": "The Chartmakers' Gift",
       "spirit_desc": "To chart a reef is a gift to every sailor to come. The chart-houses trade pearls and knowledge.",
-      "text": "Pilots and chart-houses of Triton's Islands. They sell their charts and keep their reefs.",
+      "text": "Wayfinders and chart-houses of Triton's Islands. They sell their charts and keep their reefs.",
       "modifier": { "navy_max_range_factor": 0.15, "trade_opinion_factor": 0.12, "research_speed_factor": 0.03, "naval_speed_factor": 0.04 },
       "flag": { "motif": "compass_rose", "alt": [] }, "building": "stilt_harbour", "music": "sea_horns", "unit_group": "island_marines"
     },
@@ -600,9 +600,9 @@
       "holy_sites": []
     },
     "tide_charts": {
-      "id": 15, "icon": "pilot_chart", "clergy": "Master-pilots",
-      "spirit_desc": "To chart a reef is a gift to every sailor to come. A chart-house honours its first pilot and the reefs that spared him.",
-      "text": "The pilots' faith of Triton's Islands.",
+      "id": 15, "icon": "wayfinder_chart", "clergy": "Master-wayfinders",
+      "spirit_desc": "To chart a reef is a gift to every sailor to come. A chart-house honours its first wayfinder and the reefs that spared him.",
+      "text": "The wayfinders' faith of Triton's Islands.",
       "modifier": { "research_speed_factor": 0.03, "navy_max_range_factor": 0.08 },
       "festivals": [{ "id": "charting_day", "name": "The Charting Day", "month": "Rainwake" }, { "id": "drowned_names", "name": "The Drowned Names", "month": null }],
       "holy_sites": ["region_tritons_islands"]

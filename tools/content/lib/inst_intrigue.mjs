@@ -303,7 +303,7 @@ export function tokenText(env) {
   for (const t of data.intrigue.tokens) {
     const key = `OPERATION_TOKEN_INFILTRATED_${t.id === 'token_civilian' ? 'CIVILIAN' : t.id === 'token_army' ? 'ARMY' : t.id === 'token_navy' ? 'NAVY' : t.id === 'token_airforce' ? 'AIRFORCE' : 'RESISTANCE_CONTACTS'}`;
     eloc.set(key, t.name); eloc.set(`${key}_DESC`, t.desc);
-    sprites.use(t.bg, t.art); sprites.use(t.icon, t.art);
+    sprites.suggest(t.bg, t.art); sprites.suggest(t.icon, t.art);
   }
   for (const [m, [title, action]] of Object.entries(data.intrigue.missions)) { eloc.set(`OPERATIVE_MISSION_${m}_TITLE`, title); eloc.set(`OPERATIVE_MISSION_${m}_ACTION`, action); }
   data.intrigue.operativeSkills.forEach((s, i) => eloc.set(`operative_skill_${i + 1}`, s));
@@ -337,7 +337,7 @@ export function writeRaids(staged, env) {
         block('target_type', block('building', `type = ${t.building}`)), block('starting_point', 'building_types = { supply_node }\nallow_faction_buildings = yes'), factors(), block('success_levels', levels(victims))), 1));
     }
   }
-  staged.text('common/raids/zin_raids.txt', `${HEADER}\n# Night raids by land (section 15.2 of the warfare spec): ransom a captured captain, burn a depot, fire a granary. No air,\n# nuclear, paratrooper or naval commando raid exists in Erdae.\ntypes = {\n${out.join('\n')}\n}\n`);
+  staged.text('common/raids/zin_raids.txt', `${HEADER}\n# Night raids by land (section 15.2 of the warfare spec): ransom a captured captain, burn a depot, fire a granary.\n# Nothing else is raided in Erdae.\ntypes = {\n${out.join('\n')}\n}\n`);
   const T = data.intrigue.timedActivity;
   staged.text('common/timed_activities/zin_timed_activities.txt', `${HEADER}\n# The usurpation activity of the diplomacy screen needs arms from the warfare spec.\n${T.id} = {\n\tequipment_need = {\n${Object.entries(T.equipment).map(([k, v]) => `\t\t${k} = ${v}`).join('\n')}\n\t}\n}\n`);
   return { raids: R.types.length };

@@ -18,7 +18,7 @@ import { runFit, makeImg, crop, resize, applyAlpha, outlineOf, FitError, boxDown
 import { boxDownscale as presBox, keyMatte as presKey } from './modules/presentation.mjs';
 import { Staged } from './lib/core.mjs';
 import { buildInventory, serializeInventory, verifyInventory, parseGfx, parseGuiRefs, loadInventory, INVENTORY_FILE, readText, gameRoots } from './modules/ui_inventory.mjs';
-import { planReskin, validateReskin, buildReskin, readSheetCells, loadReskin, loadSheets, vanillaOutline, summarize, RESKIN_FILE, SHEETS_DIR, MANIFEST_FILE } from './modules/ui_reskin.mjs';
+import { planReskin, validateReskin, buildReskin, readSheetCells, loadReskin, loadSheets, vanillaOutline, summarize, publishUiData, RESKIN_FILE, SHEETS_DIR, MANIFEST_FILE } from './modules/ui_reskin.mjs';
 import { windowState, guiState, framesOf, alphaPolicy, DISPOSITIONS, OVERRIDE_FILES } from './lib/ui_plan.mjs';
 import { FIXED_SHEETS, validateSheet, layoutCheck, PREAMBLES } from './lib/ui_sheets.mjs';
 import { sheetPrompt, sheetJob, reskinJobs } from './art/ui-reskin-jobs.mjs';
@@ -92,7 +92,7 @@ before(async () => {
   write('gfx/interface/dup_second.dds', dds(fill(9, 9, SIX)));
   write('gfx/interface/cafe.dds', dds(fill(10, 10, SIX)));
   write('gfx/interface/ger_content.dds', dds(fill(10, 10, MID)));
-  write('gfx/interface/flag_overlay_test.dds', dds(shapedIcon(24, 16, MID)));
+  write('gfx/interface/flag_overlay_test.dds', dds(shapedIcon(24, 16, SIX)));
   write('gfx/interface/grad_test.dds', dds(gradient(32, 32)));
   write('gfx/interface/orphan_test.dds', dds(fill(10, 10, SIX)));
   write('gfx/loadingscreens/load_5.dds', dds(fill(32, 24, SIX)));
@@ -396,7 +396,8 @@ async function fakeSheet(sheet, { dropOne = false } = {}) {
     if (dropOne && i === 0) return;
     const col = i % cols, row = Math.floor(i / cols), x0 = Math.round(col * cw + cw * 0.1), x1 = Math.round((col + 1) * cw - cw * 0.1), y0 = Math.round(row * ch + ch * 0.12), y1 = Math.round((row + 1) * ch - ch * 0.12);
     const t = TONE[cell.lum];
-    for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) { const o = (y * W + x) * 3, edge = x - x0 < 3 || y - y0 < 3 ? 20 : 0; data[o] = t[0] + edge; data[o + 1] = t[1] + edge; data[o + 2] = t[2] + edge; }
+    const round = sheet.matte === 'outline', ccx = (x0 + x1) / 2, ccy = (y0 + y1) / 2, rx = (x1 - x0) / 2, ry = (y1 - y0) / 2;
+    for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) { if (round && ((x - ccx) / rx) ** 2 + ((y - ccy) / ry) ** 2 > 1) continue; const o = (y * W + x) * 3, edge = x - x0 < 3 || y - y0 < 3 ? 20 : 0; data[o] = t[0] + edge; data[o + 1] = t[1] + edge; data[o + 2] = t[2] + edge; }
   });
   return sharp(data, { raw: { width: W, height: H, channels: 3 } }).png().toBuffer();
 }
@@ -629,6 +630,15 @@ test('jobs: one imagegen job per sheet, with the layout check and the family pre
   assert.equal(reskinJobs({ sheets: waiting, dataPresent: () => true }).jobs.length, 1);
 });
 
+test('the review copy under docs/design/ui holds the table, the sheets and a report', () => {
+  const staged = new Staged(); publishUiData(staged, plan);
+  assert.ok(staged.files.has('docs/design/ui/reskin.json') && staged.files.has('docs/design/ui/report.json'));
+  assert.ok([...plan.sheets.keys()].every(id => staged.files.has(`docs/design/ui/sheets/${id}.json`)));
+  const report = JSON.parse(staged.files.get('docs/design/ui/report.json'));
+  assert.equal(report.dispositions.R, plan.reskin.rows.filter(r => r.disposition === 'R').length); assert.ok(report.decisions.length > 5);
+  assert.equal(JSON.parse(staged.files.get('docs/design/ui/reskin.json')).rows.length, inventory.sprites.length);
+});
+
 // ---------------------------------------------------------------------------------------------------- the committed tables
 test('the committed reskin table, sheets and inventory agree with each other', () => {
   const inv = loadInventory(INVENTORY_FILE), table = loadReskin(RESKIN_FILE), sheets = loadSheets(SHEETS_DIR);
@@ -653,6 +663,16 @@ test('the committed sheets give a complete job list; only the alert sheets wait 
   assert.ok(jobs.length >= 40 && jobs.length <= 60, `${jobs.length} jobs`);
   assert.deepEqual([...new Set(blocked.map(b => b.sheet.replace(/-\d+$/, '')))].sort(), ['icons-alerts', 'icons-alerts-bare', 'icons-diplorequests']);
   assert.ok(jobs.every(j => j.out.endsWith(`/ui/reskin/${j.sheet}.png`) && j.check.expected > 0 && j.prompt.length > 400));
+});
+
+test('alert_frames.json names the meaning of every alert cell; its twin layer without a plate reuses it', () => {
+  const frames = { alert_01: 'a bell for a new letter', alert_02: 'a locked gate', request_01: 'a raised hand' };
+  const { sheets } = planReskin(loadInventory(INVENTORY_FILE), { alertFrames: frames });
+  const cell = (sheet, key) => sheets.get(sheet).cells.find(c => c.key === key).subject;
+  assert.match(cell('icons-alerts-1', 'alert_01'), /a bell for a new letter$/);
+  assert.match(cell('icons-alerts-bare-1', 'alert_01_bare'), /a bell for a new letter$/);
+  assert.match(cell('icons-diplorequests', 'request_01'), /a raised hand$/);
+  assert.match(cell('icons-alerts-1', 'alert_03'), /meaning per alert_frames\.json$/, 'frames with no entry keep the pending note');
 });
 
 test('alpha policy and frame helpers follow the inventory', () => {

@@ -1317,6 +1317,29 @@
         "no_translation_required_l_english.yml"
       ],
       "reason": "Account, lobby and error text of engine-generic screens (05_text_sweep.md, mode engine); the scan still checks them against the other classes"
+    },
+    {
+      "id": "al_strategic_regions",
+      "rules": [
+        "bw_military_modern_008"
+      ],
+      "keys": [
+        "alert_enemy_air_superiority_delayed",
+        "alert_naval_combat_delayed",
+        "ALWAYS_SHOW_REGIONS_DESC",
+        "MAPMODE_STRATEGIC_AIR",
+        "MAPMODE_STRATEGIC_AIR_NAME",
+        "MAPMODE_STRATEGIC_AIR_DESCRIPTION",
+        "MAPMODE_STRATEGIC_NAVY",
+        "MAPMODE_STRATEGIC_NAVY_NAME",
+        "MAPMODE_STRATEGIC_NAVY_DESCRIPTION",
+        "TRIGGER_FIGHTING_IN_STRATEGIC_REGION",
+        "TRIGGER_NOT_FIGHTING_IN_STRATEGIC_REGION",
+        "TRIGGER_STRAT_REGION_ID",
+        "TRIGGER_STRAT_REGION_ID_NOT"
+      ],
+      "files": [],
+      "reason": "Strategic region is the name of a map division ZIN keeps (map/strategicregions); the review rule aims at modern staff vocabulary, not at this engine concept"
     }
   ],
   "allowanceRules": "An allowance names rules by id or by the pattern bw_<class>_*, and keys or files. Every entry needs a reason. The scan prints the allowances it used and fails on one it did not use."

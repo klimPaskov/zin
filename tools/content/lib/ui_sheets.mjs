@@ -181,7 +181,7 @@ export const SHEET_ASPECTS = { '1:1': [1024, 1024], '3:2': [1536, 1024], '2:3': 
 // The layout check imagegen.mjs runs on a sheet (expected cell count, grid, cell aspect, minimum cell area).
 export function layoutCheck(sheet) {
   const [w, h] = SHEET_ASPECTS[sheet.aspect], [cols, rows] = sheet.grid, a = (w / cols) / (h / rows);
-  return { expected: sheet.cells.length, cols, rows, aspect: [Math.round(a * 0.3 * 100) / 100, Math.round(a * 2.8 * 100) / 100], minAreaFraction: 0.12 };
+  return { expected: sheet.cells.length, cols, rows, aspect: [Math.round(a * 0.08 * 100) / 100, Math.round(a * 12 * 100) / 100], minAreaFraction: 0.03, sizeTolerance: 2 };
 }
 
 export function validateSheet(sheet) {

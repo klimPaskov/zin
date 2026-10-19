@@ -52,7 +52,14 @@ export class Loc {
 // catalog's (data/presentation-cells.json): ideas use gfx/interface/ideas/zin/<key>.dds, so no texture is invented
 // here and no vanilla picture can show. A later art pass swaps a sprite's `art` key for its own file.
 export class Sprites {
-  constructor(catalogKeys) { this.keys = new Set(catalogKeys); this.map = new Map(); }
+  constructor(catalogKeys) { this.keys = new Set(catalogKeys); this.map = new Map(); this.shadows = new Map(); }
+  // A vanilla sprite name the engine keeps asking for (the trait and token icons of engine keys). It is not redefined here
+  // (a second definition of a vanilla name logs a duplicate); the art pass replaces the texture file under the same name.
+  suggest(name, art) {
+    if (!this.keys.has(art)) throw new Error(`Sprite ${name}: art key ${art} is not in the icon catalog`);
+    this.shadows.set(name, art);
+    return name;
+  }
   use(name, art) {
     if (!this.keys.has(art)) throw new Error(`Sprite ${name}: art key ${art} is not in the icon catalog`);
     if (this.map.has(name) && this.map.get(name) !== art) throw new Error(`Sprite ${name} bound to two pictures (${this.map.get(name)}, ${art})`);

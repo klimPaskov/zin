@@ -38,6 +38,8 @@ export async function loadFrames(file = FRAMES_FILE) {
 }
 
 const lowerFirst = s => s ? s[0].toLowerCase() + s.slice(1) : s;
+// A multi-word common noun in running text: every word lower-case except acronyms.
+const lowerTerm = s => String(s).split(' ').map(w => (w.length > 1 && w === w.toUpperCase() && /[A-Z]/.test(w) ? w : w.toLowerCase())).join(' ');
 const upperFirst = s => s ? s[0].toUpperCase() + s.slice(1) : s;
 // A label in running text: every word lower-case except acronyms (AI).
 const lowerLabel = s => String(s).split(' ').map(w => (w.length > 1 && w === w.toUpperCase() && /[A-Z]/.test(w) ? w : w.toLowerCase())).join(' ');
@@ -50,8 +52,8 @@ export function termForm(entry, form = 's', people = null) {
   const v = people && entry.people?.[people] ? entry.people[people] : null;
   const s = v?.s ?? base.s, p = v?.p ?? base.p ?? s;
   const proper = entry.case === 'proper';
-  const lc = v ? (proper ? s : lowerFirst(s)) : (base.lc ?? (proper ? base.s : lowerFirst(base.s)));
-  const lcp = v ? (proper ? p : lowerFirst(p)) : (base.lcp ?? (proper ? base.p : lowerFirst(base.p ?? base.s)));
+  const lc = v ? (proper ? s : lowerTerm(s)) : (base.lc ?? (proper ? base.s : lowerTerm(base.s)));
+  const lcp = v ? (proper ? p : lowerTerm(p)) : (base.lcp ?? (proper ? base.p : lowerTerm(base.p ?? base.s)));
   const out = { s, p, lc, lcp }[form];
   if (out === undefined || out === null) throw new TextError(`Glossary entry ${entry.id} has no ${form} form`);
   return out;
@@ -108,10 +110,14 @@ export function expandSlots(template, engine, opts = {}) {
     let text = termForm(entry, formName);
     if (article && !plural) {
       const rule = entry.article ?? 'auto';
-      const art = rule === 'none' ? '' : article === 'the' || rule === 'the' ? 'the' : rule === 'a' ? 'a' : rule === 'an' ? 'an' : autoArticle(text);
-      // A proper noun keeps its capitals even in running text.
-      if (entry.case === 'proper') text = termForm(entry, 's');
-      text = art ? `${art} ${text}` : text;
+      const proper = entry.case === 'proper';
+      // A proper noun keeps its capitals even in running text; a name that already starts with The loses it for a/the.
+      if (proper) text = termForm(entry, 's');
+      if (proper && /^The /.test(text)) text = `the ${text.slice(4)}`;
+      else {
+        const art = rule === 'none' ? '' : article === 'the' || rule === 'the' ? 'the' : rule === 'a' ? 'a' : rule === 'an' ? 'an' : autoArticle(text);
+        text = art ? `${art} ${text}` : text;
+      }
     } else if (article === 'the' && plural && entry.article !== 'none') {
       text = `the ${text}`;
     }

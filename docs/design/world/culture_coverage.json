@@ -1,0 +1,3089 @@
+{
+  "cultures": {
+    "buldor_companies": {
+      "building_style": "barracks",
+      "countries": [
+        "Buldor"
+      ],
+      "faith": "company_banner",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_buldor_companies",
+        "zin_culture2_buldor_companies"
+      ],
+      "language": "gunwaithic",
+      "modifiers": [
+        "army_leader_cost_factor",
+        "conscription_factor",
+        "experience_gain_army_factor",
+        "training_time_army_factor"
+      ],
+      "music_mood": "western_pipes",
+      "name": "Buldor Companies",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "buldor_companies",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "western_clan",
+      "unused": null
+    },
+    "caravan_princes": {
+      "building_style": "bronze_colonnade",
+      "countries": [
+        "Arcon",
+        "Azano",
+        "Drak",
+        "Furro",
+        "Mostok",
+        "Obmi",
+        "Olor",
+        "Oreton",
+        "Pornivior",
+        "Stabilo"
+      ],
+      "faith": "scale_creed",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_caravan_princes",
+        "zin_culture2_caravan_princes"
+      ],
+      "language": "stabilic",
+      "modifiers": [
+        "conscription_factor",
+        "political_power_gain",
+        "production_speed_buildings_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "lyre_bronze",
+      "name": "Caravan Princes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "caravan_princes",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [
+        "Erco"
+      ],
+      "tier": 1,
+      "unit_group": "bronze_merchants",
+      "unused": null
+    },
+    "chart_islanders": {
+      "building_style": "stilt_harbour",
+      "countries": [
+        "Adel",
+        "Anbei",
+        "Beemste",
+        "Fineger",
+        "Halenor",
+        "Hesos",
+        "Hiohon",
+        "Kile Islands",
+        "Mondeluz",
+        "Pollos",
+        "Raerby",
+        "Seite Islands",
+        "The Lens",
+        "Tses - The Vestes",
+        "Urbolon",
+        "Ziza"
+      ],
+      "faith": "tide_charts",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_chart_islanders",
+        "zin_culture2_chart_islanders"
+      ],
+      "language": "tritonic",
+      "modifiers": [
+        "naval_speed_factor",
+        "navy_max_range_factor",
+        "research_speed_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "sea_horns",
+      "name": "Chart-Islanders",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "chart_islanders",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "island_marines",
+      "unused": null
+    },
+    "corsair_lords": {
+      "building_style": "cliff_harbour",
+      "countries": [
+        "Aatah",
+        "Amarelo",
+        "Arpos",
+        "Benan",
+        "Bono",
+        "Cheko",
+        "Dani",
+        "Kim",
+        "Kusu",
+        "Lemo",
+        "Li",
+        "Nondondor",
+        "Previous Dark",
+        "Santon",
+        "Sondor",
+        "The Cursed Square",
+        "Tined",
+        "Windy Lands"
+      ],
+      "faith": "ransom_tide",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_corsair_lords",
+        "zin_culture2_corsair_lords"
+      ],
+      "language": "tritonic",
+      "modifiers": [
+        "equipment_capture_factor",
+        "naval_speed_factor",
+        "stability_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "sea_horns",
+      "name": "Corsair Lords",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "corsair_lords",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "island_marines",
+      "unused": null
+    },
+    "dead_lands_freeholds": {
+      "building_style": "mud_brick_sea",
+      "countries": [
+        "Bennen",
+        "Dra",
+        "Gelon",
+        "Luminor",
+        "Mencnon",
+        "Mirodor",
+        "Nan",
+        "Olen"
+      ],
+      "faith": "mourning_dust",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_dead_lands_freeholds",
+        "zin_culture2_dead_lands_freeholds"
+      ],
+      "language": "mirolic",
+      "modifiers": [
+        "army_org_factor",
+        "heat_attrition_factor",
+        "trade_opinion_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "warden_horns",
+      "name": "Dead Lands Freeholders",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "dead_lands_freeholds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "warden_blue",
+      "unused": null
+    },
+    "dondor_brutes": {
+      "building_style": "iron_hall",
+      "countries": [
+        "Blackton",
+        "Dondor"
+      ],
+      "faith": "hearth_iron",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_dondor_brutes",
+        "zin_culture2_dondor_brutes"
+      ],
+      "language": "dondric",
+      "modifiers": [
+        "army_defence_factor",
+        "army_infantry_attack_factor",
+        "research_speed_factor",
+        "special_project_speed_factor"
+      ],
+      "music_mood": "iron_drums",
+      "name": "Dondor Brutes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "dondor_brutes",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "iron_brute",
+      "unused": null
+    },
+    "forest_council_elves": {
+      "building_style": "living_tree",
+      "countries": [
+        "Dulo-Dulo",
+        "Greenland",
+        "Heron",
+        "Kingdom",
+        "Magical Forest"
+      ],
+      "faith": "kindred_song",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_forest_council_elves",
+        "zin_culture2_forest_council_elves"
+      ],
+      "language": "sylvan",
+      "modifiers": [
+        "army_org_factor",
+        "research_speed_factor",
+        "special_project_speed_factor",
+        "stability_factor"
+      ],
+      "music_mood": "elven_voices",
+      "name": "Council Elves of the Magical Forest",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 6,
+        "pool": "forest_council_elves",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "elven",
+      "unused": null
+    },
+    "free_crowns_north": {
+      "building_style": "hill_fort",
+      "countries": [
+        "Ashorn",
+        "Belg",
+        "Cinargo",
+        "Ferlinon",
+        "Filit",
+        "Gil'dul",
+        "Goran",
+        "Gul'dur",
+        "Heodwa Lands",
+        "Mina",
+        "Mine Din",
+        "Molot",
+        "Mustnom",
+        "Nuatax",
+        "Oirt",
+        "Pertawn",
+        "Sensai",
+        "Solenkovi",
+        "Stork",
+        "The Hold",
+        "Thowson"
+      ],
+      "faith": "strait_litany",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_free_crowns_north",
+        "zin_culture2_free_crowns_north"
+      ],
+      "language": "leren",
+      "modifiers": [
+        "army_core_defence_factor",
+        "conscription_factor",
+        "justify_war_goal_time",
+        "opinion_gain_monthly_factor"
+      ],
+      "music_mood": "sea_horns",
+      "name": "Free Crowns of the North",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "free_crowns_north",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [
+        "Allegro"
+      ],
+      "tier": 3,
+      "unit_group": "north_sea",
+      "unused": null
+    },
+    "gala_court": {
+      "building_style": "white_gold_hall",
+      "countries": [
+        "Gala",
+        "Gala Elves",
+        "North Gala"
+      ],
+      "faith": "rain_mirror",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_gala_court",
+        "zin_culture2_gala_court"
+      ],
+      "language": "galic",
+      "modifiers": [
+        "army_leader_start_level",
+        "special_project_speed_factor",
+        "stability_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "elven_voices",
+      "name": "Gala Elves",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 6,
+        "pool": "gala_court",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "sun_elven",
+      "unused": null
+    },
+    "girdon_wardens": {
+      "building_style": "bridge_town",
+      "countries": [
+        "Argo",
+        "Girdon",
+        "Pernogon"
+      ],
+      "faith": "river_wardens",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_girdon_wardens",
+        "zin_culture2_girdon_wardens"
+      ],
+      "language": "gunwaithic",
+      "modifiers": [
+        "army_core_defence_factor",
+        "army_speed_factor",
+        "dig_in_speed_factor",
+        "production_speed_buildings_factor"
+      ],
+      "music_mood": "western_pipes",
+      "name": "Girdon Wardens",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "girdon_wardens",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "western_clan",
+      "unused": null
+    },
+    "goblin_warrens": {
+      "building_style": "warren",
+      "countries": [],
+      "faith": "warren_luck",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_goblin_warrens",
+        "zin_culture2_goblin_warrens"
+      ],
+      "language": "goblin",
+      "modifiers": [
+        "army_attack_factor",
+        "conscription_factor",
+        "dig_in_speed_factor",
+        "enemy_attrition"
+      ],
+      "music_mood": "iron_drums",
+      "name": "Goblin Warrens",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 1,
+        "pool": "goblin_warrens",
+        "tier": 3,
+        "total": 2,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "orc_horde",
+      "unused": "No country has the warrens as its dominant or second culture: goblins are a minor people inside orc holds (demography.json, minor_peoples). The culture is kept for the state function (state_cultures.json) and for a future country."
+    },
+    "goodin_sunfolk": {
+      "building_style": "sun_brick",
+      "countries": [
+        "Goodin",
+        "Goodton",
+        "Guuden"
+      ],
+      "faith": "noon_pilgrimage",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_goodin_sunfolk",
+        "zin_culture2_goodin_sunfolk"
+      ],
+      "language": "sunhot",
+      "modifiers": [
+        "army_speed_factor",
+        "heat_attrition_factor",
+        "monthly_population",
+        "stability_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "gong_flute",
+      "name": "Goodin Sunfolk",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "goodin_sunfolk",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "sun_elven",
+      "unused": null
+    },
+    "grave_hosts": {
+      "building_style": "black_fortress",
+      "countries": [
+        "Volgan"
+      ],
+      "faith": "grave_cult",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_grave_hosts",
+        "zin_culture2_grave_hosts"
+      ],
+      "language": "grave_rite",
+      "modifiers": [
+        "army_org_factor",
+        "opinion_gain_monthly_factor",
+        "research_speed_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "dread",
+      "name": "Grave Hosts of Volgan",
+      "people": "the_dead",
+      "portrait_pool": {
+        "kit": "the_dead",
+        "per_sex": 6,
+        "pool": "grave_hosts",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "dead",
+      "unused": null
+    },
+    "gunwaith_clans": {
+      "building_style": "hill_ring_fort",
+      "countries": [
+        "Gunwaith",
+        "Hky",
+        "Lambin",
+        "Lothoro",
+        "Thenon",
+        "Varnondor",
+        "Werlendor"
+      ],
+      "faith": "clan_stones",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_gunwaith_clans",
+        "zin_culture2_gunwaith_clans"
+      ],
+      "language": "gunwaithic",
+      "modifiers": [
+        "army_attack_factor",
+        "cavalry_attack_factor",
+        "conscription_factor",
+        "stability_factor"
+      ],
+      "music_mood": "western_pipes",
+      "name": "Gunwaith Clans",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "gunwaith_clans",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "western_clan",
+      "unused": null
+    },
+    "hill_giants": {
+      "building_style": "giant_hall",
+      "countries": [
+        "Hiloron"
+      ],
+      "faith": "giant_cairn",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_hill_giants",
+        "zin_culture2_hill_giants"
+      ],
+      "language": "gigantic",
+      "modifiers": [
+        "conscription_factor",
+        "max_dig_in_factor",
+        "production_speed_buildings_factor",
+        "stability_factor"
+      ],
+      "music_mood": "slow_bass",
+      "name": "Hill Giants of Hiloron",
+      "people": "giants",
+      "portrait_pool": {
+        "kit": "giants",
+        "per_sex": 4,
+        "pool": "hill_giants",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [
+        "Hilofrim"
+      ],
+      "tier": 2,
+      "unit_group": "giant",
+      "unused": null
+    },
+    "hill_kingdom_elves": {
+      "building_style": "hillside_hall",
+      "countries": [
+        "Filion",
+        "Herrodon",
+        "Sacomananos",
+        "Teste",
+        "Velakton"
+      ],
+      "faith": "kindred_song",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_hill_kingdom_elves",
+        "zin_culture2_hill_kingdom_elves"
+      ],
+      "language": "sylvan",
+      "modifiers": [
+        "army_core_defence_factor",
+        "experience_gain_army_factor",
+        "org_loss_when_moving",
+        "special_project_speed_factor"
+      ],
+      "music_mood": "elven_voices",
+      "name": "Hill-Kingdom Elves",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "hill_kingdom_elves",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "elven",
+      "unused": null
+    },
+    "ice_clans": {
+      "building_style": "turf_hall",
+      "countries": [
+        "Agoron",
+        "Belor",
+        "Celen",
+        "Fearno",
+        "Felkond",
+        "Gaadon",
+        "Hendair",
+        "Holdon",
+        "Horidor",
+        "Hozoson",
+        "Londor",
+        "Naepu",
+        "Neridor",
+        "Omar",
+        "Orewele",
+        "Pertolor",
+        "Poloto",
+        "Portogalor",
+        "Radeon",
+        "Rion",
+        "Wonderland",
+        "Worlond",
+        "Xison",
+        "Yeldenne",
+        "Yeneldmore"
+      ],
+      "faith": "winter_hearth",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_ice_clans",
+        "zin_culture2_ice_clans"
+      ],
+      "language": "coldic",
+      "modifiers": [
+        "conscription_factor",
+        "org_loss_when_moving",
+        "production_speed_buildings_factor",
+        "winter_attrition_factor"
+      ],
+      "music_mood": "northern_throat",
+      "name": "Ice Clans",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "ice_clans",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "winter_crown",
+      "unused": null
+    },
+    "ice_giants": {
+      "building_style": "ice_hall",
+      "countries": [
+        "Titanos"
+      ],
+      "faith": "giant_cairn",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_ice_giants",
+        "zin_culture2_ice_giants"
+      ],
+      "language": "gigantic",
+      "modifiers": [
+        "acclimatization_cold_climate_gain_factor",
+        "army_defence_factor",
+        "production_speed_buildings_factor",
+        "winter_attrition_factor"
+      ],
+      "music_mood": "slow_bass",
+      "name": "Ice Giants of Titanos",
+      "people": "giants",
+      "portrait_pool": {
+        "kit": "giants",
+        "per_sex": 2,
+        "pool": "ice_giants",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "giant",
+      "unused": null
+    },
+    "iron_clans": {
+      "building_style": "hold_town",
+      "countries": [
+        "Beriath",
+        "Bordon",
+        "Britadon",
+        "Colost",
+        "Dreson",
+        "Dulundur",
+        "Dunbulinor",
+        "Fondor",
+        "The Darks"
+      ],
+      "faith": "skull_fire",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_iron_clans",
+        "zin_culture2_iron_clans"
+      ],
+      "language": "orcish",
+      "modifiers": [
+        "army_infantry_defence_factor",
+        "army_org_factor",
+        "production_factory_efficiency_gain_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "iron_drums",
+      "name": "Iron Clans",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 4,
+        "pool": "iron_clans",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "orc_horde",
+      "unused": null
+    },
+    "isengard_warlords": {
+      "building_style": "black_fort",
+      "countries": [
+        "Isengard"
+      ],
+      "faith": "storm_court",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_isengard_warlords",
+        "zin_culture2_isengard_warlords"
+      ],
+      "language": "coldic",
+      "modifiers": [
+        "army_infantry_defence_factor",
+        "army_leader_cost_factor",
+        "army_org_factor",
+        "stability_factor"
+      ],
+      "music_mood": "iron_drums",
+      "name": "Isengard Warlords",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "isengard_warlords",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "iron_brute",
+      "unused": null
+    },
+    "isle_houses": {
+      "building_style": "harbour_stone",
+      "countries": [
+        "Asgard"
+      ],
+      "faith": "isle_tide",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_isle_houses",
+        "zin_culture2_isle_houses"
+      ],
+      "language": "aenoran",
+      "modifiers": [
+        "experience_gain_navy_factor",
+        "female_random_admiral_chance",
+        "naval_speed_factor",
+        "navy_org_factor"
+      ],
+      "music_mood": "sea_horns",
+      "name": "Isle Houses of Asgard",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "isle_houses",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "aenoran_blue",
+      "unused": null
+    },
+    "kilinti_ents": {
+      "building_style": "grove",
+      "countries": [
+        "Kilinti"
+      ],
+      "faith": "ent_slow",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_kilinti_ents",
+        "zin_culture2_kilinti_ents"
+      ],
+      "language": "longspeech",
+      "modifiers": [
+        "army_core_defence_factor",
+        "army_speed_factor",
+        "justify_war_goal_time",
+        "stability_factor"
+      ],
+      "music_mood": "slow_bass",
+      "name": "Ents of Kilinti",
+      "people": "ents",
+      "portrait_pool": {
+        "kit": "ents",
+        "per_sex": 4,
+        "pool": "kilinti_ents",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "ent",
+      "unused": null
+    },
+    "lake_aenoran": {
+      "building_style": "lake_stone",
+      "countries": [
+        "Aenor",
+        "Dariap",
+        "Fotan",
+        "Freshon",
+        "Mondon",
+        "Novez",
+        "Pazoma",
+        "Safeton",
+        "Stendorler",
+        "Tieri",
+        "Ulgus"
+      ],
+      "faith": "deliverer",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_lake_aenoran",
+        "zin_culture2_lake_aenoran"
+      ],
+      "language": "aenoran",
+      "modifiers": [
+        "army_org_factor",
+        "justify_war_goal_time",
+        "production_speed_buildings_factor",
+        "research_speed_factor"
+      ],
+      "music_mood": "choral_bells",
+      "name": "Lake Aenorans",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "lake_aenoran",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "aenoran_blue",
+      "unused": null
+    },
+    "lake_elves": {
+      "building_style": "water_garden",
+      "countries": [
+        "Andos Enda",
+        "Ossa",
+        "Perloia"
+      ],
+      "faith": "kindred_song",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_lake_elves",
+        "zin_culture2_lake_elves"
+      ],
+      "language": "sylvan",
+      "modifiers": [
+        "land_reinforce_rate",
+        "naval_speed_factor",
+        "special_project_speed_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "elven_voices",
+      "name": "Lake Elves",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "lake_elves",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "elven",
+      "unused": null
+    },
+    "lake_road_cities": {
+      "building_style": "stilt_lantern",
+      "countries": [
+        "Cream",
+        "Eraver",
+        "Ernois",
+        "Grova",
+        "Kersian",
+        "Lorvens",
+        "Mora",
+        "Nethnu",
+        "Ostoroth"
+      ],
+      "faith": "lake_litany",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_lake_road_cities",
+        "zin_culture2_lake_road_cities"
+      ],
+      "language": "alerhic",
+      "modifiers": [
+        "army_defence_factor",
+        "monthly_population",
+        "production_speed_buildings_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "lyre_bronze",
+      "name": "Lake Road Cities",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "lake_road_cities",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "bronze_merchants",
+      "unused": null
+    },
+    "leren_sea_kings": {
+      "building_style": "quay_timber",
+      "countries": [
+        "Allegro",
+        "Eekedor",
+        "Keredor-Hellekton",
+        "Lerendor",
+        "Low-ness Islands",
+        "R'en",
+        "Tolhon"
+      ],
+      "faith": "strait_litany",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_leren_sea_kings",
+        "zin_culture2_leren_sea_kings"
+      ],
+      "language": "leren",
+      "modifiers": [
+        "experience_gain_navy_factor",
+        "navy_org_factor",
+        "political_power_gain",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "sea_horns",
+      "name": "Leren of the Strait",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "leren_sea_kings",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [
+        "Blackton",
+        "Molot"
+      ],
+      "tier": 1,
+      "unit_group": "north_sea",
+      "unused": null
+    },
+    "march_folk": {
+      "building_style": "march_palisade",
+      "countries": [
+        "Belurithon",
+        "Herez",
+        "Noleksun"
+      ],
+      "faith": "lamp_furrow",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_march_folk",
+        "zin_culture2_march_folk"
+      ],
+      "language": "aenoran",
+      "modifiers": [
+        "army_org_factor",
+        "conscription_factor",
+        "monthly_population",
+        "planning_speed"
+      ],
+      "music_mood": "woodland",
+      "name": "March-Folk",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "march_folk",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [
+        "Noloreh"
+      ],
+      "tier": 3,
+      "unit_group": "aenoran_blue",
+      "unused": null
+    },
+    "mirolon_wardens": {
+      "building_style": "stilt_beacon",
+      "countries": [
+        "Mirolon"
+      ],
+      "faith": "warden_vigil",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_mirolon_wardens",
+        "zin_culture2_mirolon_wardens"
+      ],
+      "language": "mirolic",
+      "modifiers": [
+        "max_dig_in_factor",
+        "planning_speed",
+        "recon_factor",
+        "special_project_speed_factor"
+      ],
+      "music_mood": "warden_horns",
+      "name": "Wardens of Mirolon",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "mirolon_wardens",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "warden_blue",
+      "unused": null
+    },
+    "netherborn": {
+      "building_style": "obsidian_hall",
+      "countries": [
+        "Demon",
+        "Dolon",
+        "Nezer"
+      ],
+      "faith": "pact_rite",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_netherborn",
+        "zin_culture2_netherborn"
+      ],
+      "language": "infernal",
+      "modifiers": [
+        "army_attack_factor",
+        "army_morale_factor",
+        "justify_war_goal_time",
+        "opinion_gain_monthly_factor"
+      ],
+      "music_mood": "dread",
+      "name": "Netherborn",
+      "people": "demons",
+      "portrait_pool": {
+        "kit": "demons",
+        "per_sex": 4,
+        "pool": "netherborn",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [
+        "Volgan"
+      ],
+      "tier": 2,
+      "unit_group": "demon",
+      "unused": null
+    },
+    "noris_riders": {
+      "building_style": "mud_wind_tower",
+      "countries": [
+        "Fladev",
+        "Gondolin",
+        "Hacsen",
+        "Mylunur",
+        "Noris",
+        "Orato",
+        "The Moco",
+        "Vigodor",
+        "Woqood"
+      ],
+      "faith": "well_oath",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_noris_riders",
+        "zin_culture2_noris_riders"
+      ],
+      "language": "noric",
+      "modifiers": [
+        "army_speed_factor",
+        "cavalry_attack_factor",
+        "heat_attrition_factor",
+        "supply_consumption_factor"
+      ],
+      "music_mood": "desert_reeds",
+      "name": "Noris Camel Warriors",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "noris_riders",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "desert_riders",
+      "unused": null
+    },
+    "pass_wardens": {
+      "building_style": "pass_fort_elf",
+      "countries": [
+        "Nolivorak",
+        "Nolorim"
+      ],
+      "faith": "kindred_song",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_pass_wardens",
+        "zin_culture2_pass_wardens"
+      ],
+      "language": "sylvan",
+      "modifiers": [
+        "army_core_defence_factor",
+        "dig_in_speed_factor",
+        "recon_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "elven_voices",
+      "name": "Pass-Warden Elves",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "pass_wardens",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "elven",
+      "unused": null
+    },
+    "red_lands_tribunes": {
+      "building_style": "kiln_brick",
+      "countries": [
+        "Avalon"
+      ],
+      "faith": "red_hearth",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_red_lands_tribunes",
+        "zin_culture2_red_lands_tribunes"
+      ],
+      "language": "alerhic",
+      "modifiers": [
+        "army_attack_factor",
+        "conscription_factor",
+        "drift_defence_factor",
+        "production_speed_buildings_factor"
+      ],
+      "music_mood": "lyre_bronze",
+      "name": "Red Lands Tribunes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "red_lands_tribunes",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "bronze_merchants",
+      "unused": null
+    },
+    "redbark_tribes": {
+      "building_style": "tree_halls",
+      "countries": [
+        "Bloody Forest"
+      ],
+      "faith": "old_knots",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_redbark_tribes",
+        "zin_culture2_redbark_tribes"
+      ],
+      "language": "orran",
+      "modifiers": [
+        "army_defence_factor",
+        "army_speed_factor",
+        "equipment_capture_factor",
+        "resistance_damage_to_garrison"
+      ],
+      "music_mood": "woodland",
+      "name": "Redbark Tribes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "redbark_tribes",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "forest_tribes",
+      "unused": null
+    },
+    "rift_coast_elves": {
+      "building_style": "shore_tower",
+      "countries": [
+        "Endelond",
+        "Lccimio",
+        "Lengoli",
+        "Lusteli",
+        "Luv-zhise",
+        "The End"
+      ],
+      "faith": "kindred_song",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_rift_coast_elves",
+        "zin_culture2_rift_coast_elves"
+      ],
+      "language": "sylvan",
+      "modifiers": [
+        "experience_gain_navy_factor",
+        "navy_org_factor",
+        "planning_speed",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "elven_voices",
+      "name": "Rift-Coast Elves",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "rift_coast_elves",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "elven",
+      "unused": null
+    },
+    "river_kings": {
+      "building_style": "stair_temple",
+      "countries": [
+        "Alerhia",
+        "Delbiz Grasslands",
+        "Erco",
+        "Fosoco",
+        "Miaed",
+        "Plutondo"
+      ],
+      "faith": "river_temples",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_river_kings",
+        "zin_culture2_river_kings"
+      ],
+      "language": "alerhic",
+      "modifiers": [
+        "army_speed_factor",
+        "monthly_population",
+        "research_speed_factor",
+        "special_project_speed_factor"
+      ],
+      "music_mood": "lyre_bronze",
+      "name": "River-Kings of the East",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "river_kings",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [
+        "Ostoroth"
+      ],
+      "tier": 2,
+      "unit_group": "bronze_merchants",
+      "unused": null
+    },
+    "sea_orcs": {
+      "building_style": "cliff_harbour_orc",
+      "countries": [
+        "Belonton",
+        "Gull Kingdom",
+        "Lestern Isles"
+      ],
+      "faith": "tide_skull",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_sea_orcs",
+        "zin_culture2_sea_orcs"
+      ],
+      "language": "orcish",
+      "modifiers": [
+        "equipment_capture_factor",
+        "experience_gain_navy_factor",
+        "navy_org_factor",
+        "stability_factor"
+      ],
+      "music_mood": "iron_drums",
+      "name": "Sea Orcs",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 2,
+        "pool": "sea_orcs",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "orc_horde",
+      "unused": null
+    },
+    "selen_ranger": {
+      "building_style": "forest_timber",
+      "countries": [
+        "Selen",
+        "Svenlor",
+        "Vothrim"
+      ],
+      "faith": "green_lords",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_selen_ranger",
+        "zin_culture2_selen_ranger"
+      ],
+      "language": "aenoran",
+      "modifiers": [
+        "army_core_defence_factor",
+        "army_org_factor",
+        "dig_in_speed_factor",
+        "recon_factor"
+      ],
+      "music_mood": "woodland",
+      "name": "Selen Rangers",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "selen_ranger",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [
+        "Kilinti"
+      ],
+      "tier": 2,
+      "unit_group": "ranger_green",
+      "unused": null
+    },
+    "southern_islanders": {
+      "building_style": "stilt_reef",
+      "countries": [
+        "Agla",
+        "Angsutz",
+        "Dunn",
+        "Enhis Is Rond",
+        "Finn",
+        "Howan",
+        "Jingar",
+        "Kea",
+        "Lua",
+        "Meng",
+        "Nara",
+        "Pon",
+        "Sidea Islands",
+        "Torsor",
+        "Verde",
+        "Yongrost",
+        "Yongyong",
+        "Yowi-yoor",
+        "Yumbo"
+      ],
+      "faith": "wave_tally",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_southern_islanders",
+        "zin_culture2_southern_islanders"
+      ],
+      "language": "yonic",
+      "modifiers": [
+        "monthly_population",
+        "naval_speed_factor",
+        "stability_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "sea_horns",
+      "name": "Southern Islanders",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "southern_islanders",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "island_marines",
+      "unused": null
+    },
+    "steppe_rider": {
+      "building_style": "felt_tents",
+      "countries": [
+        "Hunhun",
+        "Konori",
+        "Kunhrim",
+        "Noloreh"
+      ],
+      "faith": "horse_oath",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_steppe_rider",
+        "zin_culture2_steppe_rider"
+      ],
+      "language": "aenoran",
+      "modifiers": [
+        "army_speed_factor",
+        "cavalry_attack_factor",
+        "production_speed_buildings_factor",
+        "supply_consumption_factor"
+      ],
+      "music_mood": "steppe_drums",
+      "name": "Steppe Riders",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "steppe_rider",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "steppe_riders",
+      "unused": null
+    },
+    "sunhot_isles": {
+      "building_style": "shore_sanctuary",
+      "countries": [
+        "Armic",
+        "Biggen",
+        "Heilmon",
+        "Hel",
+        "Hengyang",
+        "Hol",
+        "Loyol",
+        "Ofos",
+        "Pinion",
+        "Poyang",
+        "Rana",
+        "Soyano",
+        "Sus",
+        "Tangsie",
+        "Tei",
+        "Wenyene",
+        "Yungin"
+      ],
+      "faith": "noon_pilgrimage",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_sunhot_isles",
+        "zin_culture2_sunhot_isles"
+      ],
+      "language": "sunhot",
+      "modifiers": [
+        "justify_war_goal_time",
+        "land_reinforce_rate",
+        "naval_speed_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "gong_flute",
+      "name": "Isle Sunhot",
+      "people": "sun_elves",
+      "portrait_pool": {
+        "kit": "sun_elves",
+        "per_sex": 2,
+        "pool": "sunhot_isles",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "sun_elven",
+      "unused": null
+    },
+    "sunhot_light": {
+      "building_style": "sun_sanctuary",
+      "countries": [
+        "The Lands of Light"
+      ],
+      "faith": "noon_pilgrimage",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_sunhot_light",
+        "zin_culture2_sunhot_light"
+      ],
+      "language": "sunhot",
+      "modifiers": [
+        "army_defence_factor",
+        "land_reinforce_rate",
+        "special_project_speed_factor",
+        "stability_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "gong_flute",
+      "name": "Sunhot Elves of the Light",
+      "people": "sun_elves",
+      "portrait_pool": {
+        "kit": "sun_elves",
+        "per_sex": 4,
+        "pool": "sunhot_light",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "sun_elven",
+      "unused": null
+    },
+    "sunhot_western": {
+      "building_style": "sun_sanctuary",
+      "countries": [
+        "Beforelands of Gulia",
+        "Dein Lands",
+        "Dreamland",
+        "Elvana",
+        "Flame",
+        "Godland",
+        "Godrela",
+        "Godson",
+        "Godton",
+        "Heaven",
+        "Helen",
+        "Him",
+        "Igara",
+        "Land of the Sun",
+        "Lovis",
+        "Menga",
+        "Sali",
+        "Sensun",
+        "Sono",
+        "Sun God Land",
+        "Sunny",
+        "Sunweli",
+        "Via"
+      ],
+      "faith": "noon_pilgrimage",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_sunhot_western",
+        "zin_culture2_sunhot_western"
+      ],
+      "language": "sunhot",
+      "modifiers": [
+        "opinion_gain_monthly_factor",
+        "stability_factor",
+        "trade_opinion_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "gong_flute",
+      "name": "Western Sanctuary Sunhot",
+      "people": "sun_elves",
+      "portrait_pool": {
+        "kit": "sun_elves",
+        "per_sex": 2,
+        "pool": "sunhot_western",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "sun_elven",
+      "unused": null
+    },
+    "troll_tribes": {
+      "building_style": "cave_heap",
+      "countries": [
+        "Troll Forest"
+      ],
+      "faith": "stone_hunger",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_troll_tribes",
+        "zin_culture2_troll_tribes"
+      ],
+      "language": "trollish",
+      "modifiers": [
+        "army_infantry_attack_factor",
+        "research_speed_factor",
+        "stability_factor",
+        "supply_consumption_factor"
+      ],
+      "music_mood": "slow_bass",
+      "name": "Troll Tribes",
+      "people": "trolls",
+      "portrait_pool": {
+        "kit": "trolls",
+        "per_sex": 4,
+        "pool": "troll_tribes",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "troll",
+      "unused": null
+    },
+    "veiled_folk": {
+      "building_style": "turf_halls",
+      "countries": [
+        "Cursed Lands"
+      ],
+      "faith": "old_knots",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_veiled_folk",
+        "zin_culture2_veiled_folk"
+      ],
+      "language": "orran",
+      "modifiers": [
+        "army_core_defence_factor",
+        "enemy_attrition",
+        "resistance_damage_to_garrison",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "woodland",
+      "name": "The Veiled",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "veiled_folk",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "forest_tribes",
+      "unused": null
+    },
+    "volcano_clans": {
+      "building_style": "black_cliff_city",
+      "countries": [
+        "Bold",
+        "Dark Gate",
+        "Goldoroth",
+        "Gord",
+        "Sungodor",
+        "Zuriath"
+      ],
+      "faith": "skull_fire",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_volcano_clans",
+        "zin_culture2_volcano_clans"
+      ],
+      "language": "orcish",
+      "modifiers": [
+        "army_attack_factor",
+        "army_org_factor",
+        "conscription_factor",
+        "equipment_capture_factor"
+      ],
+      "music_mood": "iron_drums",
+      "name": "Volcano Clans",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 6,
+        "pool": "volcano_clans",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "orc_horde",
+      "unused": null
+    },
+    "wall_folk": {
+      "building_style": "wall_grey",
+      "countries": [
+        "Hilofrim",
+        "Kingson",
+        "Klungori Guard",
+        "Olvinc-un"
+      ],
+      "faith": "stone_vigil",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_wall_folk",
+        "zin_culture2_wall_folk"
+      ],
+      "language": "aenoran",
+      "modifiers": [
+        "army_defence_factor",
+        "army_speed_factor",
+        "max_dig_in_factor",
+        "required_garrison_factor"
+      ],
+      "music_mood": "choral_bells",
+      "name": "Wall-Folk",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "wall_folk",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "aenoran_blue",
+      "unused": null
+    },
+    "western_guilds": {
+      "building_style": "guild_canal",
+      "countries": [
+        "Canako",
+        "Corogon",
+        "Forbo",
+        "Kradlon",
+        "Oslinod",
+        "Saopon",
+        "Sarudon",
+        "Sobre",
+        "Toples",
+        "Trilino"
+      ],
+      "faith": "guild_hall",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_western_guilds",
+        "zin_culture2_western_guilds"
+      ],
+      "language": "gunwaithic",
+      "modifiers": [
+        "conscription_factor",
+        "production_factory_efficiency_gain_factor",
+        "special_project_speed_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "western_pipes",
+      "name": "Western Guildmen",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "western_guilds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "western_clan",
+      "unused": null
+    },
+    "wild_holds": {
+      "building_style": "burrow",
+      "countries": [
+        "Dun",
+        "The Doltu",
+        "Wild Lands"
+      ],
+      "faith": "hold_luck",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_wild_holds",
+        "zin_culture2_wild_holds"
+      ],
+      "language": "orcish",
+      "modifiers": [
+        "army_defence_factor",
+        "army_speed_factor",
+        "conscription_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "iron_drums",
+      "name": "Wild Holds",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 2,
+        "pool": "wild_holds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "orc_horde",
+      "unused": null
+    },
+    "windwaith_seafarers": {
+      "building_style": "harbour_wood",
+      "countries": [
+        "Greenle",
+        "Windwaith"
+      ],
+      "faith": "storm_court",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_windwaith_seafarers",
+        "zin_culture2_windwaith_seafarers"
+      ],
+      "language": "coldic",
+      "modifiers": [
+        "experience_gain_navy_factor",
+        "naval_speed_factor",
+        "navy_max_range_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "sea_horns",
+      "name": "Windwaith Seafarers",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "windwaith_seafarers",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [
+        "Wonderland"
+      ],
+      "tier": 3,
+      "unit_group": "winter_crown",
+      "unused": null
+    },
+    "winter_crown": {
+      "building_style": "frost_stone",
+      "countries": [
+        "Coldor"
+      ],
+      "faith": "winter_hearth",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_winter_crown",
+        "zin_culture2_winter_crown"
+      ],
+      "language": "coldic",
+      "modifiers": [
+        "acclimatization_cold_climate_gain_factor",
+        "army_org_factor",
+        "stability_factor",
+        "winter_attrition_factor"
+      ],
+      "music_mood": "northern_throat",
+      "name": "Winter-Crown Folk",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "winter_crown",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [
+        "Horidor"
+      ],
+      "tier": 1,
+      "unit_group": "winter_crown",
+      "unused": null
+    },
+    "yeti_clans": {
+      "building_style": "cave_home",
+      "countries": [
+        "Yeti Lands"
+      ],
+      "faith": "yeti_hum",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_yeti_clans",
+        "zin_culture2_yeti_clans"
+      ],
+      "language": "yetic",
+      "modifiers": [
+        "army_morale_factor",
+        "army_org_factor",
+        "heat_attrition_factor",
+        "recon_factor"
+      ],
+      "music_mood": "northern_throat",
+      "name": "Yeti Clans",
+      "people": "yeti",
+      "portrait_pool": {
+        "kit": "yeti",
+        "per_sex": 4,
+        "pool": "yeti_clans",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 2,
+      "unit_group": "yeti",
+      "unused": null
+    },
+    "zilin_pilgrims": {
+      "building_style": "lake_stone",
+      "countries": [
+        "Worshipdom"
+      ],
+      "faith": "deliverer",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_zilin_pilgrims",
+        "zin_culture2_zilin_pilgrims"
+      ],
+      "language": "aenoran",
+      "modifiers": [
+        "army_attack_factor",
+        "land_reinforce_rate",
+        "stability_factor",
+        "trade_opinion_factor"
+      ],
+      "music_mood": "choral_bells",
+      "name": "Zilin Pilgrim-Folk",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "zilin_pilgrims",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "aenoran_blue",
+      "unused": null
+    },
+    "zols_dead": {
+      "building_style": "black_ruin",
+      "countries": [
+        "Zol"
+      ],
+      "faith": "none",
+      "idea_category": "country",
+      "ideas": [
+        "zin_culture_zols_dead",
+        "zin_culture2_zols_dead"
+      ],
+      "language": null,
+      "modifiers": [
+        "army_defence_factor",
+        "army_org_factor",
+        "production_speed_buildings_factor",
+        "research_speed_factor"
+      ],
+      "music_mood": "dread",
+      "name": "Zol's Dead",
+      "people": "the_dead",
+      "portrait_pool": {
+        "kit": "the_dead",
+        "per_sex": 6,
+        "pool": "zols_dead",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "second_countries": [],
+      "tier": 1,
+      "unit_group": "dead",
+      "unused": null
+    }
+  },
+  "faiths": {
+    "clan_stones": {
+      "countries": [
+        "Gunwaith",
+        "Hky",
+        "Lambin",
+        "Lothoro",
+        "Thenon",
+        "Varnondor",
+        "Werlendor"
+      ],
+      "festivals": 2,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "buldor_companies",
+        "girdon_wardens",
+        "gunwaith_clans"
+      ],
+      "name": "The Standing Stones",
+      "spirit": "zin_faith_clan_stones"
+    },
+    "company_banner": {
+      "countries": [
+        "Buldor"
+      ],
+      "festivals": 2,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "buldor_companies"
+      ],
+      "name": "The Banner-Oath",
+      "spirit": "zin_faith_company_banner"
+    },
+    "deliverer": {
+      "countries": [
+        "Aenor",
+        "Dariap",
+        "Fotan",
+        "Freshon",
+        "Mondon",
+        "Novez",
+        "Pazoma",
+        "Safeton",
+        "Stendorler",
+        "Tieri",
+        "Ulgus",
+        "Worshipdom"
+      ],
+      "festivals": 3,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "lake_aenoran",
+        "zilin_pilgrims"
+      ],
+      "name": "The Faith of the Deliverer",
+      "spirit": "zin_faith_deliverer"
+    },
+    "ent_slow": {
+      "countries": [
+        "Kilinti"
+      ],
+      "festivals": 1,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "kilinti_ents"
+      ],
+      "name": "The Slow Rite",
+      "spirit": "zin_faith_ent_slow"
+    },
+    "giant_cairn": {
+      "countries": [
+        "Hiloron",
+        "Titanos"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "hill_giants",
+        "ice_giants"
+      ],
+      "name": "The Cairn-Faith",
+      "spirit": "zin_faith_giant_cairn"
+    },
+    "grave_cult": {
+      "countries": [
+        "Volgan"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "grave_hosts"
+      ],
+      "name": "The Children of Volgan's Dread",
+      "spirit": "zin_faith_grave_cult"
+    },
+    "green_lords": {
+      "countries": [
+        "Selen",
+        "Svenlor",
+        "Vothrim"
+      ],
+      "festivals": 3,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "selen_ranger"
+      ],
+      "name": "The Green Lords",
+      "spirit": "zin_faith_green_lords"
+    },
+    "guild_hall": {
+      "countries": [
+        "Canako",
+        "Corogon",
+        "Forbo",
+        "Kradlon",
+        "Oslinod",
+        "Saopon",
+        "Sarudon",
+        "Sobre",
+        "Toples",
+        "Trilino"
+      ],
+      "festivals": 1,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "western_guilds"
+      ],
+      "name": "The Guild Halls",
+      "spirit": "zin_faith_guild_hall"
+    },
+    "hearth_iron": {
+      "countries": [
+        "Blackton",
+        "Dondor"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "dondor_brutes"
+      ],
+      "name": "Hearth-Iron",
+      "spirit": "zin_faith_hearth_iron"
+    },
+    "hold_luck": {
+      "countries": [
+        "Dun",
+        "The Doltu",
+        "Wild Lands"
+      ],
+      "festivals": 2,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "iron_clans",
+        "wild_holds"
+      ],
+      "name": "The Luck of the Hold",
+      "spirit": "zin_faith_hold_luck"
+    },
+    "horse_oath": {
+      "countries": [
+        "Hunhun",
+        "Konori",
+        "Kunhrim",
+        "Noloreh"
+      ],
+      "festivals": 3,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "steppe_rider"
+      ],
+      "name": "The Horse-Oath",
+      "spirit": "zin_faith_horse_oath"
+    },
+    "isle_tide": {
+      "countries": [
+        "Asgard"
+      ],
+      "festivals": 3,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "isle_houses"
+      ],
+      "name": "The Tide-Houses",
+      "spirit": "zin_faith_isle_tide"
+    },
+    "kindred_song": {
+      "countries": [
+        "Andos Enda",
+        "Dulo-Dulo",
+        "Endelond",
+        "Filion",
+        "Greenland",
+        "Heron",
+        "Herrodon",
+        "Kingdom",
+        "Lccimio",
+        "Lengoli",
+        "Lusteli",
+        "Luv-zhise",
+        "Magical Forest",
+        "Nolivorak",
+        "Nolorim",
+        "Ossa",
+        "Perloia",
+        "Sacomananos",
+        "Teste",
+        "The End",
+        "Velakton"
+      ],
+      "festivals": 3,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "forest_council_elves",
+        "hill_kingdom_elves",
+        "lake_elves",
+        "pass_wardens",
+        "rift_coast_elves"
+      ],
+      "name": "The Kindred Song",
+      "spirit": "zin_faith_kindred_song"
+    },
+    "lake_litany": {
+      "countries": [
+        "Cream",
+        "Eraver",
+        "Ernois",
+        "Grova",
+        "Kersian",
+        "Lorvens",
+        "Mora",
+        "Nethnu",
+        "Ostoroth"
+      ],
+      "festivals": 2,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "lake_road_cities"
+      ],
+      "name": "The Lake Litany",
+      "spirit": "zin_faith_lake_litany"
+    },
+    "lamp_furrow": {
+      "countries": [
+        "Belurithon",
+        "Herez",
+        "Noleksun"
+      ],
+      "festivals": 4,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "chart_islanders",
+        "dead_lands_freeholds",
+        "free_crowns_north",
+        "goodin_sunfolk",
+        "isle_houses",
+        "lake_aenoran",
+        "leren_sea_kings",
+        "march_folk",
+        "mirolon_wardens",
+        "selen_ranger",
+        "steppe_rider",
+        "wall_folk",
+        "western_guilds"
+      ],
+      "name": "The Lamp and the Furrow",
+      "spirit": "zin_faith_lamp_furrow"
+    },
+    "mourning_dust": {
+      "countries": [
+        "Bennen",
+        "Dra",
+        "Gelon",
+        "Luminor",
+        "Mencnon",
+        "Mirodor",
+        "Nan",
+        "Olen"
+      ],
+      "festivals": 1,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "dead_lands_freeholds"
+      ],
+      "name": "The Mourning Customs of the Dead Lands",
+      "spirit": "zin_faith_mourning_dust"
+    },
+    "none": {
+      "countries": [
+        "Yeldenne",
+        "Zol"
+      ],
+      "festivals": 0,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "zols_dead"
+      ],
+      "name": "No Faith Recorded",
+      "spirit": null
+    },
+    "noon_pilgrimage": {
+      "countries": [
+        "Armic",
+        "Beforelands of Gulia",
+        "Biggen",
+        "Dein Lands",
+        "Dreamland",
+        "Elvana",
+        "Flame",
+        "Godland",
+        "Godrela",
+        "Godson",
+        "Godton",
+        "Goodin",
+        "Goodton",
+        "Guuden",
+        "Heaven",
+        "Heilmon",
+        "Hel",
+        "Helen",
+        "Hengyang",
+        "Him",
+        "Hol",
+        "Igara",
+        "Land of the Sun",
+        "Lovis",
+        "Loyol",
+        "Menga",
+        "Ofos",
+        "Pinion",
+        "Poyang",
+        "Rana",
+        "Sali",
+        "Sensun",
+        "Sono",
+        "Soyano",
+        "Sun God Land",
+        "Sunny",
+        "Sunweli",
+        "Sus",
+        "Tangsie",
+        "Tei",
+        "The Lands of Light",
+        "Via",
+        "Wenyene",
+        "Yungin"
+      ],
+      "festivals": 3,
+      "holy_sites": 4,
+      "kept_by_cultures": [
+        "goodin_sunfolk",
+        "sunhot_isles",
+        "sunhot_light",
+        "sunhot_western"
+      ],
+      "name": "The Noon Pilgrimage",
+      "spirit": "zin_faith_noon_pilgrimage"
+    },
+    "old_knots": {
+      "countries": [
+        "Bloody Forest",
+        "Cursed Lands"
+      ],
+      "festivals": 2,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "redbark_tribes",
+        "veiled_folk"
+      ],
+      "name": "The Old Knots",
+      "spirit": "zin_faith_old_knots"
+    },
+    "pact_rite": {
+      "countries": [
+        "Demon",
+        "Dolon",
+        "Nezer"
+      ],
+      "festivals": 1,
+      "holy_sites": 3,
+      "kept_by_cultures": [
+        "netherborn"
+      ],
+      "name": "The Pact-Rite of the Nether",
+      "spirit": "zin_faith_pact_rite"
+    },
+    "rain_mirror": {
+      "countries": [
+        "Gala",
+        "Gala Elves",
+        "North Gala"
+      ],
+      "festivals": 2,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "gala_court"
+      ],
+      "name": "The Mirror Vigil",
+      "spirit": "zin_faith_rain_mirror"
+    },
+    "ransom_tide": {
+      "countries": [
+        "Aatah",
+        "Amarelo",
+        "Arpos",
+        "Benan",
+        "Bono",
+        "Cheko",
+        "Dani",
+        "Kim",
+        "Kusu",
+        "Lemo",
+        "Li",
+        "Nondondor",
+        "Previous Dark",
+        "Santon",
+        "Sondor",
+        "The Cursed Square",
+        "Tined",
+        "Windy Lands"
+      ],
+      "festivals": 2,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "corsair_lords"
+      ],
+      "name": "The Ransom Tide",
+      "spirit": "zin_faith_ransom_tide"
+    },
+    "red_hearth": {
+      "countries": [
+        "Avalon"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "red_lands_tribunes"
+      ],
+      "name": "The Red Hearth",
+      "spirit": "zin_faith_red_hearth"
+    },
+    "river_temples": {
+      "countries": [
+        "Alerhia",
+        "Delbiz Grasslands",
+        "Erco",
+        "Fosoco",
+        "Miaed",
+        "Plutondo"
+      ],
+      "festivals": 3,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "lake_road_cities",
+        "river_kings"
+      ],
+      "name": "The River Temples",
+      "spirit": "zin_faith_river_temples"
+    },
+    "river_wardens": {
+      "countries": [
+        "Argo",
+        "Girdon",
+        "Pernogon"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "girdon_wardens"
+      ],
+      "name": "The River Wardens' Rite",
+      "spirit": "zin_faith_river_wardens"
+    },
+    "scale_creed": {
+      "countries": [
+        "Arcon",
+        "Azano",
+        "Drak",
+        "Furro",
+        "Mostok",
+        "Obmi",
+        "Olor",
+        "Oreton",
+        "Pornivior",
+        "Stabilo"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "caravan_princes",
+        "river_kings"
+      ],
+      "name": "The Creed of the Honest Scale",
+      "spirit": "zin_faith_scale_creed"
+    },
+    "skull_fire": {
+      "countries": [
+        "Beriath",
+        "Bold",
+        "Bordon",
+        "Britadon",
+        "Colost",
+        "Dark Gate",
+        "Dreson",
+        "Dulundur",
+        "Dunbulinor",
+        "Fondor",
+        "Goldoroth",
+        "Gord",
+        "Sungodor",
+        "The Darks",
+        "Zuriath"
+      ],
+      "festivals": 2,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "dondor_brutes",
+        "iron_clans",
+        "sea_orcs",
+        "volcano_clans"
+      ],
+      "name": "The Skull and the Fire",
+      "spirit": "zin_faith_skull_fire"
+    },
+    "stone_hunger": {
+      "countries": [
+        "Troll Forest"
+      ],
+      "festivals": 1,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "troll_tribes"
+      ],
+      "name": "The Hunger and the Stone",
+      "spirit": "zin_faith_stone_hunger"
+    },
+    "stone_vigil": {
+      "countries": [
+        "Hilofrim",
+        "Kingson",
+        "Klungori Guard",
+        "Olvinc-un"
+      ],
+      "festivals": 3,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "march_folk",
+        "pass_wardens",
+        "wall_folk"
+      ],
+      "name": "The Stone Vigil",
+      "spirit": "zin_faith_stone_vigil"
+    },
+    "storm_court": {
+      "countries": [
+        "Greenle",
+        "Isengard",
+        "Windwaith"
+      ],
+      "festivals": 2,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "ice_clans",
+        "isengard_warlords",
+        "windwaith_seafarers"
+      ],
+      "name": "The Storm Court",
+      "spirit": "zin_faith_storm_court"
+    },
+    "strait_litany": {
+      "countries": [
+        "Allegro",
+        "Ashorn",
+        "Belg",
+        "Cinargo",
+        "Eekedor",
+        "Ferlinon",
+        "Filit",
+        "Gil'dul",
+        "Goran",
+        "Gul'dur",
+        "Heodwa Lands",
+        "Keredor-Hellekton",
+        "Lerendor",
+        "Low-ness Islands",
+        "Mina",
+        "Mine Din",
+        "Molot",
+        "Mustnom",
+        "Nuatax",
+        "Oirt",
+        "Pertawn",
+        "R'en",
+        "Sensai",
+        "Solenkovi",
+        "Stork",
+        "The Hold",
+        "Thowson",
+        "Tolhon"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "free_crowns_north",
+        "leren_sea_kings"
+      ],
+      "name": "The Strait Litany",
+      "spirit": "zin_faith_strait_litany"
+    },
+    "tide_charts": {
+      "countries": [
+        "Adel",
+        "Anbei",
+        "Beemste",
+        "Fineger",
+        "Halenor",
+        "Hesos",
+        "Hiohon",
+        "Kile Islands",
+        "Mondeluz",
+        "Pollos",
+        "Raerby",
+        "Seite Islands",
+        "The Lens",
+        "Tses - The Vestes",
+        "Urbolon",
+        "Ziza"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "chart_islanders",
+        "corsair_lords"
+      ],
+      "name": "The Chart-Faith",
+      "spirit": "zin_faith_tide_charts"
+    },
+    "tide_skull": {
+      "countries": [
+        "Belonton",
+        "Gull Kingdom",
+        "Lestern Isles"
+      ],
+      "festivals": 2,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "sea_orcs"
+      ],
+      "name": "The Salt Tithe",
+      "spirit": "zin_faith_tide_skull"
+    },
+    "warden_vigil": {
+      "countries": [
+        "Mirolon"
+      ],
+      "festivals": 2,
+      "holy_sites": 2,
+      "kept_by_cultures": [
+        "mirolon_wardens"
+      ],
+      "name": "The Warden's Vigil",
+      "spirit": "zin_faith_warden_vigil"
+    },
+    "warren_luck": {
+      "countries": [],
+      "festivals": 1,
+      "holy_sites": 0,
+      "kept_by_cultures": [
+        "goblin_warrens"
+      ],
+      "name": "The Warren Luck",
+      "spirit": "zin_faith_warren_luck"
+    },
+    "wave_tally": {
+      "countries": [
+        "Agla",
+        "Angsutz",
+        "Dunn",
+        "Enhis Is Rond",
+        "Finn",
+        "Howan",
+        "Jingar",
+        "Kea",
+        "Lua",
+        "Meng",
+        "Nara",
+        "Pon",
+        "Sidea Islands",
+        "Torsor",
+        "Verde",
+        "Yongrost",
+        "Yongyong",
+        "Yowi-yoor",
+        "Yumbo"
+      ],
+      "festivals": 2,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "southern_islanders",
+        "sunhot_isles"
+      ],
+      "name": "The Wave-Tally",
+      "spirit": "zin_faith_wave_tally"
+    },
+    "well_oath": {
+      "countries": [
+        "Fladev",
+        "Gondolin",
+        "Hacsen",
+        "Mylunur",
+        "Noris",
+        "Orato",
+        "The Moco",
+        "Vigodor",
+        "Woqood"
+      ],
+      "festivals": 3,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "noris_riders"
+      ],
+      "name": "The Well-Oath",
+      "spirit": "zin_faith_well_oath"
+    },
+    "winter_hearth": {
+      "countries": [
+        "Agoron",
+        "Belor",
+        "Celen",
+        "Coldor",
+        "Fearno",
+        "Felkond",
+        "Gaadon",
+        "Hendair",
+        "Holdon",
+        "Horidor",
+        "Hozoson",
+        "Londor",
+        "Naepu",
+        "Neridor",
+        "Omar",
+        "Orewele",
+        "Pertolor",
+        "Poloto",
+        "Portogalor",
+        "Radeon",
+        "Rion",
+        "Wonderland",
+        "Worlond",
+        "Xison",
+        "Yeneldmore"
+      ],
+      "festivals": 3,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "ice_clans",
+        "ice_giants",
+        "isengard_warlords",
+        "windwaith_seafarers",
+        "winter_crown"
+      ],
+      "name": "The Winter Hearth",
+      "spirit": "zin_faith_winter_hearth"
+    },
+    "yeti_hum": {
+      "countries": [
+        "Yeti Lands"
+      ],
+      "festivals": 1,
+      "holy_sites": 1,
+      "kept_by_cultures": [
+        "yeti_clans"
+      ],
+      "name": "The Hum",
+      "spirit": "zin_faith_yeti_hum"
+    }
+  },
+  "gaps": {
+    "countries_with_second_culture": [
+      "Allegro",
+      "Blackton",
+      "Erco",
+      "Hilofrim",
+      "Horidor",
+      "Kilinti",
+      "Molot",
+      "Noloreh",
+      "Ostoroth",
+      "Volgan",
+      "Wonderland"
+    ],
+    "countries_without_language": [
+      "Zol"
+    ],
+    "cultures_only_second": [],
+    "cultures_without_country": [
+      "goblin_warrens"
+    ],
+    "faiths_without_country": [
+      "warren_luck"
+    ]
+  },
+  "languages": {
+    "aenoran": {
+      "countries": 27,
+      "cultures": [
+        "isle_houses",
+        "lake_aenoran",
+        "march_folk",
+        "selen_ranger",
+        "steppe_rider",
+        "wall_folk",
+        "zilin_pilgrims"
+      ],
+      "name": "Aenoran"
+    },
+    "ainic": {
+      "countries": 0,
+      "cultures": [],
+      "name": "Old Ainic"
+    },
+    "alerhic": {
+      "countries": 16,
+      "cultures": [
+        "lake_road_cities",
+        "red_lands_tribunes",
+        "river_kings"
+      ],
+      "name": "Alerhic"
+    },
+    "coldic": {
+      "countries": 29,
+      "cultures": [
+        "ice_clans",
+        "isengard_warlords",
+        "windwaith_seafarers",
+        "winter_crown"
+      ],
+      "name": "Coldic"
+    },
+    "dondric": {
+      "countries": 2,
+      "cultures": [
+        "dondor_brutes"
+      ],
+      "name": "Dondric"
+    },
+    "galic": {
+      "countries": 3,
+      "cultures": [
+        "gala_court"
+      ],
+      "name": "Galic"
+    },
+    "gigantic": {
+      "countries": 2,
+      "cultures": [
+        "hill_giants",
+        "ice_giants"
+      ],
+      "name": "Giants' Speech"
+    },
+    "goblin": {
+      "countries": 0,
+      "cultures": [
+        "goblin_warrens"
+      ],
+      "name": "Goblin Cant"
+    },
+    "grave_rite": {
+      "countries": 1,
+      "cultures": [
+        "grave_hosts"
+      ],
+      "name": "Rite-Tongue"
+    },
+    "gunwaithic": {
+      "countries": 21,
+      "cultures": [
+        "buldor_companies",
+        "girdon_wardens",
+        "gunwaith_clans",
+        "western_guilds"
+      ],
+      "name": "Gunwaithic"
+    },
+    "infernal": {
+      "countries": 3,
+      "cultures": [
+        "netherborn"
+      ],
+      "name": "Infernal"
+    },
+    "leren": {
+      "countries": 28,
+      "cultures": [
+        "free_crowns_north",
+        "leren_sea_kings"
+      ],
+      "name": "Leren"
+    },
+    "longspeech": {
+      "countries": 1,
+      "cultures": [
+        "kilinti_ents"
+      ],
+      "name": "the Long Speech"
+    },
+    "mirolic": {
+      "countries": 9,
+      "cultures": [
+        "dead_lands_freeholds",
+        "mirolon_wardens"
+      ],
+      "name": "Mirolic"
+    },
+    "noric": {
+      "countries": 9,
+      "cultures": [
+        "noris_riders"
+      ],
+      "name": "Noric"
+    },
+    "orcish": {
+      "countries": 21,
+      "cultures": [
+        "iron_clans",
+        "sea_orcs",
+        "volcano_clans",
+        "wild_holds"
+      ],
+      "name": "Orcish"
+    },
+    "orran": {
+      "countries": 2,
+      "cultures": [
+        "redbark_tribes",
+        "veiled_folk"
+      ],
+      "name": "Orran"
+    },
+    "stabilic": {
+      "countries": 10,
+      "cultures": [
+        "caravan_princes"
+      ],
+      "name": "Stabilic"
+    },
+    "sunhot": {
+      "countries": 44,
+      "cultures": [
+        "goodin_sunfolk",
+        "sunhot_isles",
+        "sunhot_light",
+        "sunhot_western"
+      ],
+      "name": "Sunhot"
+    },
+    "sylvan": {
+      "countries": 21,
+      "cultures": [
+        "forest_council_elves",
+        "hill_kingdom_elves",
+        "lake_elves",
+        "pass_wardens",
+        "rift_coast_elves"
+      ],
+      "name": "Sylvan"
+    },
+    "tritonic": {
+      "countries": 34,
+      "cultures": [
+        "chart_islanders",
+        "corsair_lords"
+      ],
+      "name": "Tritonic"
+    },
+    "trollish": {
+      "countries": 1,
+      "cultures": [
+        "troll_tribes"
+      ],
+      "name": "Trollish"
+    },
+    "yetic": {
+      "countries": 1,
+      "cultures": [
+        "yeti_clans"
+      ],
+      "name": "Yeti Speech"
+    },
+    "yonic": {
+      "countries": 19,
+      "cultures": [
+        "southern_islanders"
+      ],
+      "name": "Yonic"
+    }
+  },
+  "schema": "zin-culture-coverage/1",
+  "status": "Generated by tools/content/modules/cultures.mjs; do not edit",
+  "totals": {
+    "countries": 305,
+    "culture_ideas": 53,
+    "cultures": 53,
+    "faith_spirits": 38,
+    "faiths": 39,
+    "languages": 24,
+    "secondary_culture_ideas": 53
+  }
+}

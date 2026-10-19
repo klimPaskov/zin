@@ -29,14 +29,15 @@ export async function findRegions(file, expected, { minAreaFraction = 1 / 3, asp
 // thresholds and accept the first that yields exactly the expected items with consistent sizes (each within 12%
 // of the median width and height), so a dark item can never be split or merged silently.
 export async function findRegionsAdaptive(file, expected, opts = {}) {
+  const { sizeTolerance = 0.12, ...regionOpts } = opts;
   let last;
   for (const threshold of [34, 20, 12, 6]) {
-    const r = await findRegions(file, expected, { ...opts, threshold });
+    const r = await findRegions(file, expected, { ...regionOpts, threshold });
     last = r;
     if (!r.ok) continue;
     if (expected > 1) {
       const med = a => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)], ws = r.regions.map(b => b.x1 - b.x0), hs = r.regions.map(b => b.y1 - b.y0), mw = med(ws), mh = med(hs);
-      if (!ws.every(w => Math.abs(w - mw) <= mw * 0.12) || !hs.every(h => Math.abs(h - mh) <= mh * 0.12)) { last = { ok: false, found: r.regions.length, inconsistent: true }; continue; }
+      if (!ws.every(w => Math.abs(w - mw) <= mw * sizeTolerance) || !hs.every(h => Math.abs(h - mh) <= mh * sizeTolerance)) { last = { ok: false, found: r.regions.length, inconsistent: true }; continue; }
     }
     return { ...r, threshold };
   }

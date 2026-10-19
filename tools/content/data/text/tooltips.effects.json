@@ -20,7 +20,7 @@
     "EFFECT_ADD_NATIONAL_UNITY": "Gain base {national_unity}: $VAL|+=%$.",
     "EFFECT_ADD_NUKE": "Add a great ritual: $VAL|=+0$.",
     "EFFECT_ADD_STABILITY": "Gain base {stability}: $VAL|+=%$.",
-    "EFFECT_ADD_STATE_COMPLIANCE_MODIFIER": "$STATE|H$ will get $MODIFIERNAME|H$ which at $THRESHOLD|.0H$ {compliance:lc} will grant:\n$MODIFIERDESC$.",
+    "EFFECT_ADD_STATE_COMPLIANCE_MODIFIER": "From $THRESHOLD|.0H$ {compliance:lc} on, $STATE|H$ takes $MODIFIERNAME|H$, which grants:\n$MODIFIERDESC$.",
     "EFFECT_ADD_TO_FACTION": "$COUNTRY|UY$ joins the {faction:lc}.",
     "EFFECT_ADD_WAR_SUPPORT": "Gain base {war_support}: $VAL|+=%$.",
     "EFFECT_BECOME_EXILED_IN": "Becomes a §H{government_in_exile}§! in $HOSTNAMEDEF|H$.",
@@ -62,7 +62,7 @@
     "EFFECT_REMOVE_FROM_FACTION": "$COUNTRY|UY$ leaves the {faction:lc}.",
     "EFFECT_REMOVE_FROM_FACTION_END_PUPPET": "{puppet} $PUPPET|Y$ becomes independent of $MASTER|Y$.",
     "EFFECT_REMOVE_IDEA_NATIONAL_SPIRIT": "Remove the {national_spirit:lc} $NAME|Y$.",
-    "EFFECT_REMOVE_STATE_COMPLIANCE_MODIFIER": "$STATE|H$ will lose $MODIFIERNAME|H$ which at $THRESHOLD|.0H$ {compliance:lc} granted:\n$MODIFIERDESC$.",
+    "EFFECT_REMOVE_STATE_COMPLIANCE_MODIFIER": "From $THRESHOLD|.0H$ {compliance:lc} on, $STATE|H$ no longer takes $MODIFIERNAME|H$, which granted:\n$MODIFIERDESC$.",
     "EFFECT_REMOVE_TECHNOLOGY": "Remove {technology:lc}: $NAME|Y$.",
     "EFFECT_SET_COLLABORATION": "Set sworn loyalty in $TARGET|H$: $VALUE|+%0$",
     "EFFECT_SET_COMPLIANCE": "Set {compliance:lc}: $VALUE|H$.",
@@ -83,6 +83,16 @@
     "POLITICS_SET_POLITICAL_POWER": "Sets {political_power} to $VAL|0Y$.",
     "STABILITY_TRIGGER": "{stability}",
     "TRIGGER_COLLABORATION_RATIO": "Sworn loyalty in $COUNTRY|H$",
-    "WAR_SUPPORT_TRIGGER": "{war_support}"
-  }
+    "WAR_SUPPORT_TRIGGER": "{war_support}",
+    "TEST_HISTORY_ENTRY_KEY": "Carried off the $SUBJECT$ from the steward's hall in $PROVINCE$.",
+    "military_industrial_organization_funds_gain_tt": "{military_industrial_organization} $MODIFIER_MIO_FUNDS_GAIN$: $RIGHT|+=%1$"
+  },
+  "engine": [
+    {
+      "keys": [
+        "cannot_retreat_while_attacking_tt"
+      ],
+      "reason": "The installed line holds two entries (it also defines local_resource_gain_efficiency_per_infrastructure_tt) and its banned word is only the second key name; both read their labels through nested keys that ZIN rewrites. Reported to the integrator as a defect of the installed file"
+    }
+  ]
 }

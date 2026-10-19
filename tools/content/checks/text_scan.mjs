@@ -17,6 +17,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GAME } from '../lib/paths.mjs';
+import { Staged } from '../lib/core.mjs';
 import { LANGUAGES, parseLocText, headerOf, signature, sigText, signatureDiff, displayText, isStructural, isLabelKey, expandNested, nonCp1252 } from '../lib/loc_parse.mjs';
 import { loadRuleSet, compileBanned, findBanned, allowanceCovers } from '../lib/banned.mjs';
 import { loadGlossary } from '../lib/text_engine.mjs';
@@ -41,11 +42,11 @@ async function walk(dir, ext, base = dir) {
   return out.sort();
 }
 
-// A directory of a staged tree (for the command line): { files: Map<rel, Buffer> }.
+// A directory of a staged tree (for the command line and for trial runs): a Staged with its files loaded.
 export async function stagedFromDir(dir) {
-  const files = new Map();
-  for (const rel of await walk(dir, null)) files.set(rel, await readFile(path.join(dir, rel)));
-  return { files };
+  const staged = new Staged();
+  for (const rel of await walk(dir, null)) staged.files.set(rel, await readFile(path.join(dir, rel)));
+  return staged;
 }
 
 // Every English key of the installed game: Map<key, { value, file }> plus the file list.
@@ -186,6 +187,9 @@ export async function runTextScan(staged, ctx = {}) {
   // ---- per ZIN key checks (X4 X5 X7 X8 X9 X10 X6 X14) -------------------------------------------------------
   const allowanceUse = new Map((compiled.allowances ?? []).map(a => [a.id, 0]));
   const zinBanned = { error: 0, review: 0 };
+  let inheritedHits = 0;
+  const iconsUsed = new Set();
+  const zinValues = new Map([...zin].map(([k, v]) => [k, v.value]));
   const bannedByFamily = {};
   for (const [key, z] of zin) {
     const fam = z.family ?? famOf(key, vanilla.keys.get(key)?.file) ?? 'other';
@@ -193,10 +197,15 @@ export async function runTextScan(staged, ctx = {}) {
     const base = path.posix.basename(z.file);
     // X5
     const rendered = expandNested(z.value, eff, MAX_NEST);
+    // A hit that only appears through a nested key still showing the installed text belongs to that key's family: a warning here.
+    const own = new Set(findBanned(displayText(expandNested(z.value, zinValues, MAX_NEST)), compiled).map(h => `${h.id}:${h.word.toLowerCase()}`));
     for (const h of findBanned(displayText(rendered), compiled)) {
+      const inherited = !own.has(`${h.id}:${h.word.toLowerCase()}`);
       const a = (compiled.allowances ?? []).find(al => allowanceCovers(al, h.id, key, base));
       if (a) { allowanceUse.set(a.id, allowanceUse.get(a.id) + 1); continue; }
-      add('X5', h.severity === 'error' ? 'error' : 'warning', fam, key, z.file, `"${h.word}" in ${z.value}`, h.id);
+      const severity = h.severity === 'error' && !inherited ? 'error' : 'warning';
+      add('X5', severity, fam, key, z.file, `"${h.word}"${inherited ? ' (through a nested key that still shows the installed text)' : ''} in ${z.value}`, h.id);
+      if (inherited) { inheritedHits++; continue; }
       zinBanned[h.severity === 'error' ? 'error' : 'review']++;
       (bannedByFamily[fam] ??= { error: 0, review: 0 })[h.severity === 'error' ? 'error' : 'review']++;
     }
@@ -211,7 +220,8 @@ export async function runTextScan(staged, ctx = {}) {
       if (!COLOUR_CODES.has(c)) add('X7', 'error', fam, key, z.file, `unknown colour code §${c} in ${z.value}`);
       i++;
     }
-    // X8 icon codes
+    // X8 icon codes (every name used is listed in the report for the reskin's reachability check)
+    for (const m of z.value.matchAll(/£([A-Za-z0-9_]+)/g)) iconsUsed.add(m[1]);
     if (reach.sprites.size) for (const m of z.value.matchAll(/£([A-Za-z0-9_]+)/g)) { const sprite = m[1].startsWith('GFX_') ? m[1] : `GFX_${m[1]}`; if (!reach.sprites.has(sprite)) add('X8', 'error', fam, key, z.file, `the icon £${m[1]} names no sprite ${sprite}`); }
     // X10 nesting of ZIN keys
     for (const m of z.value.matchAll(/\$([A-Za-z0-9_.\-]+)\$/g)) {
@@ -280,9 +290,9 @@ export async function runTextScan(staged, ctx = {}) {
 
   // ---- reach, replaced and still-vanilla keys (X2 X3) ---------------------------------------------------------
   const perFamily = {};
-  const fam0 = () => ({ files: 0, keys: 0, exempt: 0, unreached: 0, structural: 0, reachable: 0, zin: 0, neutral: 0, engine: 0, vanillaBanned: 0, vanillaReview: 0, vanillaClean: 0, zinBannedError: 0, zinBannedReview: 0, errors: 0, warnings: 0 });
+  const fam0 = () => ({ files: 0, keys: 0, exempt: 0, unreached: 0, structural: 0, reachable: 0, zin: 0, neutral: 0, engine: 0, vanillaBanned: 0, vanillaNested: 0, vanillaReview: 0, vanillaClean: 0, zinBannedError: 0, zinBannedReview: 0, errors: 0, warnings: 0 });
   for (const [name, def] of Object.entries(table.families)) { perFamily[name] = { ...fam0(), gate: def.gate, data: !!defs[name], files: def.files.length }; }
-  const unreplaced = {};
+  const unreplaced = {}, nestedOnly = {};
   const exemptRes = (table.exempt ?? []).map(e => ({ re: new RegExp(e.match), reason: e.reason }));
   const engineKeys = new Set(ctx.engineKeys ?? []);
   const effValuesForNest = eff;
@@ -309,7 +319,10 @@ export async function runTextScan(staged, ctx = {}) {
       if (isStructural(rendered)) { f.structural++; continue; }
       const hits = findBanned(displayText(rendered), compiled);
       const errorHits = hits.filter(h => h.severity === 'error');
-      if (errorHits.length) { f.vanillaBanned++; (unreplaced[name] ??= []).push(key); }
+      // A hit that comes only from a nested key of another family still showing the installed text is that family's.
+      const ownErrors = errorHits.length ? findBanned(displayText(expandNested(v.value, zinValues, MAX_NEST)), compiled, ['error']) : [];
+      if (errorHits.length && !ownErrors.length) { f.vanillaNested++; (nestedOnly[name] ??= []).push(key); }
+      else if (errorHits.length) { f.vanillaBanned++; (unreplaced[name] ??= []).push(key); }
       else if (hits.length) { f.vanillaReview++; if (ctx.listAll) (unreplaced[name] ??= []).push(key); }
       else { f.vanillaClean++; if (ctx.listAll) (unreplaced[name] ??= []).push(key); }
     }
@@ -340,7 +353,7 @@ export async function runTextScan(staged, ctx = {}) {
   const order = { error: 0, warning: 1 };
   findings.sort((a, b) => a.check.localeCompare(b.check, 'en', { numeric: true }) || order[a.severity] - order[b.severity] || a.family.localeCompare(b.family, 'en') || a.key.localeCompare(b.key, 'en') || a.file.localeCompare(b.file, 'en') || (a.rule ?? '').localeCompare(b.rule ?? '', 'en'));
   const sum = k => Object.values(perFamily).reduce((n, f) => n + f[k], 0);
-  const totals = Object.fromEntries(['keys', 'exempt', 'unreached', 'reachable', 'zin', 'neutral', 'engine', 'structural', 'vanillaBanned', 'vanillaReview', 'vanillaClean', 'zinBannedError', 'zinBannedReview'].map(k => [k, sum(k)]));
+  const totals = Object.fromEntries(['keys', 'exempt', 'unreached', 'reachable', 'zin', 'neutral', 'engine', 'structural', 'vanillaBanned', 'vanillaNested', 'vanillaReview', 'vanillaClean', 'zinBannedError', 'zinBannedReview'].map(k => [k, sum(k)]));
   const errors = findings.filter(f => f.severity === 'error');
   const failing = errors.filter(f => {
     if (['X1', 'X11', 'X12', 'X14'].includes(f.check)) return true;
@@ -356,7 +369,9 @@ export async function runTextScan(staged, ctx = {}) {
     totals,
     families: perFamily,
     allowances,
+    iconsUsed: [...iconsUsed].sort(),
     unreplaced: Object.fromEntries(Object.entries(unreplaced).map(([k, v]) => [k, v.sort()])),
+    nestedOnly: Object.fromEntries(Object.entries(nestedOnly).map(([k, v]) => [k, v.sort()])),
     counts: { errors: errors.length, warnings: findings.length - errors.length, failing: failing.length, byCheck: Object.fromEntries([...new Set(findings.map(f => f.check))].sort().map(c => [c, findings.filter(f => f.check === c).length])) },
     findings,
     failing,
@@ -413,7 +428,7 @@ export function summariseScan(scan) {
   const lines = [`text scan: ${scan.ok ? 'ok' : 'FAILED'}; ${scan.counts.errors} errors, ${scan.counts.warnings} warnings (${scan.counts.failing} failing)`];
   for (const [name, f] of Object.entries(scan.families)) {
     if (!f.keys && !f.data) continue;
-    lines.push(`${name.padEnd(13)} gate ${String(f.gate).padEnd(7)} keys ${String(f.keys).padStart(5)} reach ${String(f.reachable).padStart(5)} zin ${String(f.zin).padStart(5)} structural ${String(f.structural).padStart(4)} vanilla banned ${String(f.vanillaBanned).padStart(5)} review ${String(f.vanillaReview).padStart(4)} clean ${String(f.vanillaClean).padStart(5)} zin banned ${f.zinBannedError}`);
+    lines.push(`${name.padEnd(13)} gate ${String(f.gate).padEnd(7)} keys ${String(f.keys).padStart(5)} reach ${String(f.reachable).padStart(5)} zin ${String(f.zin).padStart(5)} structural ${String(f.structural).padStart(4)} vanilla banned ${String(f.vanillaBanned).padStart(5)} nested ${String(f.vanillaNested).padStart(3)} review ${String(f.vanillaReview).padStart(4)} clean ${String(f.vanillaClean).padStart(5)} zin banned ${f.zinBannedError}`);
   }
   return lines.join('\n');
 }

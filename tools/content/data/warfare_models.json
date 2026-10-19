@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/03_gameplay/01_warfare.md section 14 (decision P13: the five Meshy models are reused until credits allow more)",
+  "note": "Which of the five existing Meshy unit models each land sub-unit shows on the map. units3d.mjs defines the meshes (`<asset id>_mesh`); warfare.mjs writes one entity `<sub-unit id>_entity` per land sub-unit that points at the mesh, with the scale that gives `height` (times the height of the vanilla infantry, 1.0) from the mesh's own `native` height. A sub-unit with no entry here has no model (its counter shows alone): ships, dragons, griffins, convoys, trains and the dead of Zol (they never reuse the grave host, spec 14.1). Every borrowed model is listed in docs/design/warfare/units3d_report.json.",
+  "baseScale": 0.8,
+  "native": {
+    "zin_men_infantry": 1,
+    "zin_elves_warden": 1,
+    "zin_orcs_warrior": 1,
+    "zin_the_dead_revenant": 1,
+    "zin_trolls_brute": 1.6
+  },
+  "units": {
+    "zin_men_levy": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_men_infantry": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": true
+    },
+    "zin_men_archers": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_men_heavy_infantry": {
+      "asset": "zin_men_infantry",
+      "height": 1.05,
+      "own": false
+    },
+    "zin_men_hill_companies": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_men_sea_soldiers": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_men_rangers": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_men_cavalry": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false,
+      "note": "the rider's mount model is missing"
+    },
+    "zin_men_horse_archers": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false,
+      "note": "the rider's mount model is missing"
+    },
+    "zin_men_knights": {
+      "asset": "zin_men_infantry",
+      "height": 1.1,
+      "own": false,
+      "note": "the rider's mount model is missing"
+    },
+    "zin_men_camel_riders": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false,
+      "note": "the rider's mount model is missing"
+    },
+    "zin_men_temple_wardens": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_elves_warden": {
+      "asset": "zin_elves_warden",
+      "height": 1,
+      "own": true
+    },
+    "zin_elves_archers": {
+      "asset": "zin_elves_warden",
+      "height": 1,
+      "own": false
+    },
+    "zin_elves_riders": {
+      "asset": "zin_elves_warden",
+      "height": 1,
+      "own": false,
+      "note": "the rider's mount model is missing"
+    },
+    "zin_elves_rangers": {
+      "asset": "zin_elves_warden",
+      "height": 1,
+      "own": false
+    },
+    "zin_sun_elves_guard": {
+      "asset": "zin_elves_warden",
+      "height": 1.5,
+      "own": false
+    },
+    "zin_sun_elves_bowmen": {
+      "asset": "zin_elves_warden",
+      "height": 1.5,
+      "own": false
+    },
+    "zin_orcs_warrior": {
+      "asset": "zin_orcs_warrior",
+      "height": 1,
+      "own": true
+    },
+    "zin_orcs_goblins": {
+      "asset": "zin_orcs_warrior",
+      "height": 0.75,
+      "own": false
+    },
+    "zin_orcs_raiders": {
+      "asset": "zin_orcs_warrior",
+      "height": 1,
+      "own": false,
+      "note": "the rider's mount model is missing"
+    },
+    "zin_ogres_brutes": {
+      "asset": "zin_trolls_brute",
+      "height": 1.8,
+      "own": false
+    },
+    "zin_abyss_folk": {
+      "asset": "zin_trolls_brute",
+      "height": 1.8,
+      "own": false
+    },
+    "zin_trolls_brute": {
+      "asset": "zin_trolls_brute",
+      "height": 1.6,
+      "own": true
+    },
+    "zin_giants_host": {
+      "asset": "zin_trolls_brute",
+      "height": 2.2,
+      "own": false
+    },
+    "zin_giants_hurlers": {
+      "asset": "zin_trolls_brute",
+      "height": 2.2,
+      "own": false
+    },
+    "zin_ents_grove": {
+      "asset": "zin_trolls_brute",
+      "height": 2.5,
+      "own": false
+    },
+    "zin_yeti_band": {
+      "asset": "zin_trolls_brute",
+      "height": 1.4,
+      "own": false
+    },
+    "zin_demons_netherborn": {
+      "asset": "zin_the_dead_revenant",
+      "height": 1.2,
+      "own": false
+    },
+    "zin_demons_shachihata": {
+      "asset": "zin_the_dead_revenant",
+      "height": 2.2,
+      "own": false
+    },
+    "zin_demons_bound": {
+      "asset": "zin_the_dead_revenant",
+      "height": 1.2,
+      "own": false
+    },
+    "zin_the_dead_revenant": {
+      "asset": "zin_the_dead_revenant",
+      "height": 1,
+      "own": true
+    },
+    "zin_dead_grave_riders": {
+      "asset": "zin_the_dead_revenant",
+      "height": 1,
+      "own": false,
+      "note": "the rider's mount model is missing"
+    },
+    "zin_dead_necromancers": {
+      "asset": "zin_the_dead_revenant",
+      "height": 1,
+      "own": false
+    },
+    "zin_siege_catapult": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false,
+      "note": "the engine model is missing; the crew shows"
+    },
+    "zin_siege_trebuchet": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false,
+      "note": "the engine model is missing; the crew shows"
+    },
+    "zin_support_catapults": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_ballistae": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_scorpions": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_scouts": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_sappers": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_healers": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_heralds": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_quartermasters": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_provosts": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_armourers": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_wardens": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_elves_wardsingers": {
+      "asset": "zin_elves_warden",
+      "height": 1,
+      "own": false
+    },
+    "zin_support_pack_train": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_glo_bearer": {
+      "asset": "zin_men_infantry",
+      "height": 1,
+      "own": false
+    },
+    "zin_volgan_presence": {
+      "asset": "zin_the_dead_revenant",
+      "height": 1,
+      "own": false
+    },
+    "zin_great_spirit": {
+      "asset": "zin_the_dead_revenant",
+      "height": 1,
+      "own": false
+    }
+  },
+  "noModel": {
+    "zin_zol_deathless": "Zol's dead get their own model; they never reuse the grave host (spec 14.1).",
+    "zin_zol_deathless_crews": "Zol's dead get their own model; they never reuse the grave host (spec 14.1).",
+    "zin_ship_galley": "No ship model exists (7 ship models are planned, WE-075).",
+    "zin_ship_warship": "No ship model exists.",
+    "zin_ship_great_warship": "No ship model exists.",
+    "zin_ship_raider": "No ship model exists.",
+    "zin_air_griffin_riders": "No griffin model exists (WE-076).",
+    "zin_air_dragon_flight": "No dragon model exists (WE-076).",
+    "zin_zol_manifestation": "Zol's own; it never reuses the grave host (spec 14.1)."
+  }
+}

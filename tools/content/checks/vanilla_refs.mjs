@@ -151,6 +151,8 @@ export function definitions(files) {
     });
     if (dir === 'common/characters') for (const top of blocksOf(ents)) if (top.k === 'characters') for (const e of blocksOf(top.v)) add('character', e.k, f.rel);
     if (dir === 'common/country_leader' || dir === 'common/unit_leader') for (const top of blocksOf(ents)) if (top.k === 'leader_traits') for (const e of blocksOf(top.v)) add('trait', e.k, f.rel);
+    // Scholar traits sit at the file root; `has_trait` on a scientist names them (the installed special projects do the same).
+    if (dir === 'common/scientist_traits') for (const e of blocksOf(ents)) add('trait', e.k, f.rel);
     if (dir === 'common/dynamic_modifiers') for (const e of ents) if (e.k) add('dynamic_modifier', e.k, f.rel);
     if (dir === 'common/opinion_modifiers') for (const top of blocksOf(ents)) for (const e of top.v) if (e.k) add('opinion_modifier', e.k, f.rel);
     if (dir === 'common/script_constants') for (const top of blocksOf(ents)) { add('constant_group', top.k, f.rel); for (const e of top.v) if (e.k && e.k !== 'schema') add('constant', `${top.k}.${e.k}`, f.rel); }

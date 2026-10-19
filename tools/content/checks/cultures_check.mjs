@@ -81,8 +81,11 @@ const boundsOf = (game, key) => game.bounds.modifiers[key] ?? game.bounds.defaul
 // -------------------------------------------------------------------------------------------------- the checks
 // opts: { countries: [{ tag, name }], table: Map (owner overrides), geography: Set of ids | null, files: { game: text, state: text } }
 export async function runCultureChecks(model, opts = {}) {
-  const { countries = [], table = new Map(), geography = null, banned = compileBanned(await loadBanned()), files = {}, modifierDocs = true } = opts;
+  const { countries = [], table = new Map(), geography = null, banned = compileBanned(await loadBanned()), modifierDocs = true } = opts;
+  const files = opts.files ?? { 'cultures_game.json': model.gameText ?? '{}', 'state_cultures.json': model.stateText ?? '{}' };
   const { game, world, state } = model, errors = [], warnings = [];
+  // The keys both data sets know: a half-planted model still gets its other checks.
+  const live = { ...model, cultureKeys: model.cultureKeys.filter(k => game.cultures[k] && world.cultures[k]), faithKeys: model.faithKeys.filter(k => game.faiths[k] && world.faiths[k]) };
   const err = (code, detail) => errors.push({ code, detail }), warn = (code, detail) => warnings.push({ code, detail });
 
   // ---- duplicate keys in the raw data files
@@ -214,7 +217,7 @@ export async function runCultureChecks(model, opts = {}) {
   }
 
   // ---- text
-  const entries = cultureLocEntries(model);
+  const entries = cultureLocEntries(live);
   for (const [key, value] of Object.entries(entries)) {
     for (const ch of new Set(nonCp1252(value))) err('text', `${key}: the character ${ch} is outside Windows-1252`);
     for (const h of findBanned(value, banned)) (h.severity === 'error' ? err : warn)('text', `${key}: the word "${h.word}" is banned (${h.id}) in "${value.slice(0, 60)}"`);
@@ -261,7 +264,7 @@ export async function runCultureChecks(model, opts = {}) {
     if (rule.faith && !world.faiths[rule.faith]) err('state-rule', `${rule.id}: faith ${rule.faith} does not exist`);
   }
 
-  return { errors, warnings, resolved, coverage: buildCoverage(model, resolved.rows, { dominant, second, faithCountries }) };
+  return { errors, warnings, resolved, coverage: buildCoverage(live, resolved.rows, { dominant, second, faithCountries }) };
 }
 
 // ------------------------------------------------------------------------------------------------------ coverage
@@ -308,8 +311,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const args = process.argv.slice(2), reportAt = args.includes('--report') ? args[args.indexOf('--report') + 1] : null;
   const model = await loadCultureModel();
   const { countries } = JSON.parse(await readFile(path.join(DATA, 'countries.json'), 'utf8'));
-  const files = { 'cultures_game.json': await readFile(path.join(DATA, 'cultures_game.json'), 'utf8') };
-  const result = await runCultureChecks(model, { countries, geography: await loadGeographyIds(), files });
+  const result = await runCultureChecks(model, { countries, geography: await loadGeographyIds() });
   console.log(JSON.stringify({ errors: result.errors.length, warnings: result.warnings.length, totals: result.coverage.totals, gaps: { cultures_without_country: result.coverage.gaps.cultures_without_country, faiths_without_country: result.coverage.gaps.faiths_without_country } }, null, 2));
   if (result.warnings.length) console.error(formatFindings(result.warnings));
   if (result.errors.length) { console.error(formatFindings(result.errors)); process.exitCode = 1; }

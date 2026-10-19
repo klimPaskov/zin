@@ -20,7 +20,7 @@ import { GAME, rawFile, provenanceFile } from '../lib/paths.mjs';
 import { findRegionsAdaptive } from '../lib/sheets.mjs';
 import { runFit, FITS, FRAME_FITS, TRANSFORMS, FitError, makeImg, toCanvas, medallionMask, alphaBox, outlineOf, crop } from '../lib/fit.mjs';
 import { dds, tga, png } from '../lib/raster.mjs';
-import { decodeRgba, readHeader, extOf } from '../lib/image_codec.mjs';
+import { decodeRgba, extOf } from '../lib/image_codec.mjs';
 import { acceptance } from './presentation.mjs';
 import { layoutCheck, validateSheet } from '../lib/ui_sheets.mjs';
 import { buildPlan, serializeReskin, sheetJson, framesOf, DISPOSITIONS, REASON_REQUIRED, OVERRIDE_FILES, WRITERS } from '../lib/ui_plan.mjs';
@@ -150,7 +150,7 @@ export function validateReskin({ inventory, reskin, sheets }) {
 // not yield exactly the expected cells is refused); outline sheets take each cell's own outline as alpha (A3).
 export async function readSheetCells(sheet, file) {
   const check = layoutCheck(sheet);
-  const r = await findRegionsAdaptive(file, check.expected, { cols: check.cols, rows: check.rows, aspect: check.aspect, minAreaFraction: check.minAreaFraction });
+  const r = await findRegionsAdaptive(file, check.expected, { cols: check.cols, rows: check.rows, aspect: check.aspect, minAreaFraction: check.minAreaFraction, sizeTolerance: check.sizeTolerance });
   if (!r.ok) throw new FitError('layout', `${sheet.id}: found ${r.found ?? 0} cells, expected ${check.expected}`);
   const cells = new Map(), inset = 4;
   if (sheet.matte === 'outline') {
@@ -203,7 +203,7 @@ export async function buildReskin(staged, { inventory, reskin, sheets, provenanc
   }
   const lines = provenance ?? (existsSync(provenanceFile()) ? readFileSync(provenanceFile(), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)) : []);
   const invByName = new Map(inventory.sprites.map(s => [s.name, s])), tex = textureIndex(inventory);
-  const sheetState = new Map(), sources = new Map(), cache = new Map();
+  const sheetState = new Map(), sources = new Map();
   const state = async id => {
     if (sheetState.has(id)) return sheetState.get(id);
     const sheet = sheets.get(id), rel = `${SHEET_RAW_DIR}/${id}.png`, file = rawPath(rel);
@@ -259,13 +259,23 @@ export async function buildReskin(staged, { inventory, reskin, sheets, provenanc
     const first = picked[0];
     built.push({ out: s.texture, names: g.names });
     manifest.push({ out: s.texture, source: `art/source/${first.rel}`, sourceSha256: first.sha, cells: [...new Set(row.cells)].sort(ord), sheets: [...new Set(picked.map(p => p.sheet))].sort(ord), ops: [...result.ops, `${s.ext} ${s.ext === 'dds' ? 'a8r8g8b8' : s.ext === 'tga' ? `32-bit ${s.origin ?? 'bottom'}-left` : '32-bit'}`], sha256: sha256(bytes) });
-    void cache;
   }
   for (const [rel, src] of [...sources].sort(([a], [b]) => ord(a, b))) staged.add(`art/source/${rel}`, src.bytes);
   staged.add(MANIFEST_FILE, Buffer.from(JSON.stringify({ generator: 'tools/content/modules/ui_reskin.mjs', files: manifest.sort((a, b) => ord(a.out, b.out)) }, null, 1) + '\n'));
   for (const p of pending) warn(`pending ${p.texture}: ${p.why}`);
   const counts = { r: [...groups.values()].length, built: built.length, pending: pending.length, delegated: delegated.length };
   return { built, pending, delegated, sources, manifest, counts };
+}
+
+// The review copy of the plan (spec "Files": the builder publishes data/ui under docs/design/ui/, as it does for
+// data/vanilla/): the table, the sheet maps and a report by family, tranche and sheet. The inventory is not copied;
+// it is a 12 MB data file of its own and is already tracked.
+export function publishUiData(staged, { reskin, sheets }) {
+  staged.add('docs/design/ui/reskin.json', Buffer.from(serializeReskin({ rows: reskin.rows, header: reskin.header })));
+  for (const [id, sheet] of [...sheets].sort(([a], [b]) => ord(a, b))) staged.add(`docs/design/ui/sheets/${id}.json`, Buffer.from(sheetJson(sheet)));
+  const usage = {};
+  for (const r of reskin.rows) if (r.disposition === 'R') for (const id of [].concat(r.sheet ?? [])) usage[id] = (usage[id] ?? 0) + 1;
+  staged.add('docs/design/ui/report.json', Buffer.from(JSON.stringify({ ...summarize(reskin), sheets: Object.fromEntries(Object.entries(usage).sort(([a], [b]) => ord(a, b))), decisions: reskin.header.decisions }, null, 1) + '\n'));
 }
 
 // A readable summary of the table and the build: dispositions, families and tranches.

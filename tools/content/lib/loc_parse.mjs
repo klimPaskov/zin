@@ -53,7 +53,8 @@ const TAG = /@[A-Z][A-Z0-9]{2}\b/g;
 export function signature(value) {
   const v = String(value);
   const vars = (v.match(VAR) ?? []).slice().sort();
-  const calls = (v.replace(VAR, ' ').match(CALL) ?? []).slice().sort();
+  // A scripted localisation call ZIN adds ([zin_term_...], [zin_loc_...]) stands for words; it is not an engine call.
+  const calls = (v.replace(VAR, ' ').match(CALL) ?? []).filter(c => !/^\[zin_(term|loc)_/.test(c)).sort();
   const colours = (v.match(COLOUR) ?? []).slice().sort();
   const icons = [...v.matchAll(ICON)].map(m => m[1] + (m[2] ? `|${m[2]}` : '')).sort();
   const tags = (v.replace(VAR, ' ').match(TAG) ?? []).slice().sort();

@@ -243,6 +243,14 @@ export const GROUPS = {
   texticons: { family: 'texticons', base: 'icons-text', grid: [6, 6], aspect: '1:1' },
 };
 
+// alert_frames.json (data/ui, written by an agent reading the alert tooltip keys) maps a cell key (alert_07,
+// request_03) to the meaning of that frame; the bare layer reuses the meaning of its plated twin.
+function alertSubject(frames, group, cell) {
+  if (!frames || !['alerts', 'alerts_bare', 'diplo_requests'].includes(group)) return cell.subject;
+  const meaning = frames[cell.key] ?? frames[cell.key.replace(/_bare$/, '')];
+  return meaning ? cell.subject.replace(/: meaning per alert_frames\.json$/, `: ${meaning}`) : cell.subject;
+}
+
 class Emblems {
   constructor() { this.cells = Object.fromEntries(Object.keys(GROUPS).map(g => [g, new Map()])); }
   // Register a key (idempotent); the first subject wins. Returns the key.
@@ -265,7 +273,7 @@ class Emblems {
         const id = n === 1 ? spec.base : `${spec.base}-${i + 1}`;
         sheets.push({
           id, family: spec.family, kind: 'grid', aspect: grid === spec.grid ? spec.aspect : '1:1', grid, ground: spec.ground ?? 'black', matte: 'outline', group,
-          needs: spec.needs ?? [], cells: part.map(c2 => ({ ...c2, subject: alertFrames && group.startsWith('alerts') && alertFrames[c2.key] ? alertFrames[c2.key] : c2.subject })),
+          needs: spec.needs ?? [], cells: part.map(c2 => ({ ...c2, subject: alertSubject(alertFrames, group, c2) })),
         });
         for (const cell of part) where.set(`${group}:${cell.key}`, id);
       }
@@ -375,6 +383,12 @@ function chrome(s) {
   const tag = `${stem} ${name}`;
   const strip = (sheet, cellsPerFrame, frameFit, extra = {}) => ({ sheet, cells: cellsPerFrame, fit: f > 1 ? 'strip' : frameFit, ...(f > 1 ? { frames: frameLabels(f), frameFit } : {}), alpha: extra.alpha ?? alpha });
   const repeatFrames = (cell, n = f) => Array.from({ length: n }, () => cell);
+  const iconSocket = () => {
+    const shape = ar > 1.6 ? 'wide' : ar < 0.62 ? 'tall' : Math.abs(ar - 1) < 0.2 ? 'round' : 'square';
+    const sock = lum === 'dark' ? `socket_${shape}` : `socket_${shape}_${lum}`;
+    const cell = CHROME_CELLS.has(`ui-sockets:${sock}`) ? sock : pick('ui-sockets', [`socket_${shape}`, 'socket_square'], lum);
+    return { family: surfaceFamily(p, 'chrome_controls'), ...strip('ui-sockets', repeatFrames(cell), 'contain', { alpha: 'cell' }) };
+  };
   // Bands: one role per frame, each resolved to a cell of the sprite's luminance class (the cells may sit in two sheets).
   const bars = (roles, fit, extra) => { const r = roles.map(x => barCell(x, lum)), sheets = [...new Set(r.map(x => x.sheet))].sort(); return strip(sheets.length === 1 ? sheets[0] : sheets, r.map(x => x.key), fit, extra); };
 
@@ -419,15 +433,15 @@ function chrome(s) {
     return { family: 'chrome_panels', ...strip('ui-chrome-small', repeatFrames('selection_line'), 'same_shape', { alpha: 'shape' }) };
   }
   // Checkboxes and radios.
-  if (/check(box)?|radio|tick/.test(stem) && Math.max(fw, h) <= 110) {
+  if (lum === 'dark' && /check(box)?|radio|tick/.test(stem) && Math.max(fw, h) <= 110) {
     const cells = f === 1 ? ['check_off'] : f === 2 ? ['check_off', 'check_on'] : f === 3 ? ['check_off', 'check_on', 'check_off'] : Array.from({ length: f }, (_, i) => (i % 2 ? 'check_on' : 'check_off'));
     return { family: 'chrome_controls', ...strip('ui-controls-small', cells, 'contain', { alpha: 'cell' }), ...(f > 1 ? { frames: f === 2 ? ['off', 'on'] : frameLabels(f) } : {}) };
   }
   // Close, scroll, plus, minus, expand, arrows and other small controls.
-  if (Math.max(fw, h) <= 64 && /close|cross|cancel|exit/.test(stem)) return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames('close_stud'), 'contain', { alpha: 'cell' }) };
-  if (Math.max(fw, h) <= 80 && /(^|_)(add|plus|increase|zoom_in|expand)(_|$)/.test(stem)) return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames('plus_stud'), 'contain', { alpha: 'cell' }) };
-  if (Math.max(fw, h) <= 80 && /(^|_)(subtract|minus|remove|decrease|zoom_out|collapse)(_|$)/.test(stem)) return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames('minus_stud'), 'contain', { alpha: 'cell' }) };
-  if (Math.max(fw, h) <= 80 && /scroll|arrow|slider|drag|knob/.test(stem)) {
+  if (lum === 'dark' && Math.max(fw, h) <= 64 && /close|cross|cancel|exit/.test(stem)) return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames('close_stud'), 'contain', { alpha: 'cell' }) };
+  if (lum === 'dark' && Math.max(fw, h) <= 80 && /(^|_)(add|plus|increase|zoom_in|expand)(_|$)/.test(stem)) return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames('plus_stud'), 'contain', { alpha: 'cell' }) };
+  if (lum === 'dark' && Math.max(fw, h) <= 80 && /(^|_)(subtract|minus|remove|decrease|zoom_out|collapse)(_|$)/.test(stem)) return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames('minus_stud'), 'contain', { alpha: 'cell' }) };
+  if (lum === 'dark' && Math.max(fw, h) <= 80 && /scroll|arrow|slider|drag|knob/.test(stem)) {
     const cell = /track/.test(stem) ? 'scroll_track' : /drager|knob|slider/.test(stem) ? 'slider_knob' : 'scroll_arrow';
     const transform = /down/.test(stem) ? 'flipy' : /left/.test(stem) ? 'rot270' : /right/.test(stem) ? 'rot90' : 'none';
     return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames(cell), 'contain', { alpha: 'cell' }), ...(transform !== 'none' ? { transform } : {}) };
@@ -436,7 +450,7 @@ function chrome(s) {
   if (/button|btn|_sort|sort_|(^|_)tabs?(_|$)|toggle|dropdown/.test(stem) || /button|btn/.test(name)) {
     const isTab = /(^|_)tabs?(_|\d|$)/.test(stem);
     if (isTab) return { family: 'chrome_controls', ...bars(f === 1 ? ['tab_body'] : Array.from({ length: f }, (_, i) => (i === 0 ? 'tab_body' : 'tab_selected')), 'cover') };
-    if (ar < 2.4 && Math.max(fw, h) <= 80) return { family: 'chrome_controls', ...strip('ui-controls-small', repeatFrames(f > 1 ? 'stud_round' : 'stud_square'), 'contain', { alpha: 'cell' }) };
+    if (ar < 2.4 && Math.max(fw, h) <= 80) return iconSocket();   // a small square button is a socket of its shape and class
     const row = lum === 'mid' ? 'grey' : /alt|2$/.test(stem) ? 'alternate' : /light/.test(stem) ? 'light' : /gray|grey|disabled/.test(stem) ? 'grey' : 'standard';
     const state = i => ['normal', 'hover', 'pressed'][Math.min(i, 2)];
     const cells = f === 1 ? [`${row}_normal`] : Array.from({ length: f }, (_, i) => `${row}_${state(i)}`);
@@ -455,10 +469,7 @@ function chrome(s) {
     return { family: surfaceFamily(p, 'chrome_panels'), ...strip(sheet, repeatFrames(pick(sheet, prefer, lum)), 'cover', { alpha: alpha === 'shape' ? 'shape' : alpha }) };
   }
   // Everything small that is left is an icon: a neutral socket of the sprite's shape and class.
-  const shape = ar > 1.6 ? 'wide' : ar < 0.62 ? 'tall' : Math.abs(ar - 1) < 0.2 ? 'round' : 'square';
-  const sock = lum === 'dark' ? `socket_${shape}` : `socket_${shape}_${lum}`;
-  const cell = CHROME_CELLS.has(`ui-sockets:${sock}`) ? sock : pick('ui-sockets', [`socket_${shape}`, 'socket_square'], lum);
-  return { family: surfaceFamily(p, 'chrome_controls'), ...strip('ui-sockets', repeatFrames(cell), 'contain', { alpha: 'cell' }) };
+  return iconSocket();
 }
 
 // ---------------------------------------------------------------------------------------------------- specific emblem rules
@@ -699,11 +710,6 @@ export function buildPlan(inventory, { alertFrames } = {}) {
     decisions: DECISIONS,
   };
   return { rows: out, sheets: live, header };
-}
-
-// Aces use the shared pick of the chrome sockets (five generic riders).
-function chromeEmblemFallback(s) {
-  return chrome({ ...s, kind: 'sprite', alpha: s.alpha });
 }
 
 // Serialise: the header pretty-printed, one row per line so a game patch gives a readable diff.

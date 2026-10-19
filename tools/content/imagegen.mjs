@@ -26,7 +26,11 @@ const passes = async job => !job.check || (await findRegionsAdaptive(job.out, jo
 async function reject(job, attempt) {
   const dir = path.join(path.dirname(job.out), '..', 'rejected'); await mkdir(dir, { recursive: true });
   let n = attempt; while (await exists(path.join(dir, `${path.basename(job.out, '.png')}-try${n}.png`))) n++;
-  await rename(job.out, path.join(dir, `${path.basename(job.out, '.png')}-try${n}.png`));
+  const target = path.join(dir, `${path.basename(job.out, '.png')}-try${n}.png`);
+  // Windows keeps a just-read file locked for a moment (scanners, the image reader): retry the move.
+  for (let i = 0; ; i++) {
+    try { await rename(job.out, target); return; } catch (e) { if (!/EBUSY|EPERM|EACCES/.test(String(e.code ?? e.message)) || i >= 8) throw e; await sleep(1500 * (i + 1)); }
+  }
 }
 
 let done = 0, skipped = 0, rejected = 0;

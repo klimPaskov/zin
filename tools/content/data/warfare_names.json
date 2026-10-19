@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/03_gameplay/01_warfare.md sections 15.2 and 02_lore/06_languages.md (decision P14)",
+  "note": "How host, ship and agent names are built. Place words come from the language generator (modules/names.mjs placeNames) by culture, so every culture names its hosts and ships in its own language. English supplies only the noun and the ordinal. Counts are per culture; a culture with a great power or a big army gets more names.",
+  "nouns": {
+    "men": "Host", "elves": "Wardens", "sun_elves": "Guard", "orcs": "Warband", "trolls": "Brood", "giants": "Stride",
+    "ents": "Grove", "yeti": "Pack", "demons": "Throng", "the_dead": "Grave Host"
+  },
+  "cultureNouns": {
+    "leren_sea_kings": "Shield-Host", "free_crowns_north": "Levy", "steppe_rider": "Banner", "noris_riders": "Camel-Host",
+    "selen_ranger": "Rangers", "wall_folk": "Wall-Guard", "isle_houses": "Oar-Host", "chart_islanders": "Oar-Host",
+    "corsair_lords": "Crew", "gunwaith_clans": "Clan-Host", "girdon_wardens": "Wardens", "buldor_companies": "Company",
+    "mirolon_wardens": "Pass-Wardens", "dead_lands_freeholds": "Freehold Levy", "ice_clans": "Spear-Band", "winter_crown": "Spear-Host",
+    "isengard_warlords": "Iron Host", "dondor_brutes": "Axe-Host", "zilin_pilgrims": "Wardens", "caravan_princes": "Caravan Guard",
+    "volcano_clans": "Warband", "iron_clans": "Iron Warband", "wild_holds": "Raiders", "sea_orcs": "Boarders", "goblin_warrens": "Swarm"
+  },
+  "ordinalCount": { "default": 24, "lake_aenoran": 40, "leren_sea_kings": 32, "grave_hosts": 44, "winter_crown": 28 },
+  "shipCount": { "galley": 24, "warship": 16, "great_warship": 8, "raider": 12 },
+  "shipKinds": { "galley": ["river", "lake"], "warship": ["settlement", "city"], "great_warship": ["mountain", "sea", "strait"], "raider": ["forest", "site"] },
+  "shipFallback": { "galley": "Galley %d", "warship": "Warship %d", "great_warship": "Great Warship %d", "raider": "Corsair %d" },
+  "shipThemes": { "galley": "NAME_THEME_ZIN_GALLEYS", "warship": "NAME_THEME_ZIN_WARSHIPS", "great_warship": "NAME_THEME_ZIN_GREAT_WARSHIPS", "raider": "NAME_THEME_ZIN_RAIDERS" },
+  "shipThemeNames": { "galley": "Galleys", "warship": "Warships", "great_warship": "Great Warships", "raider": "Corsairs" },
+  "zol": {
+    "hosts": ["The First Host", "The Second Host", "The Third Host", "The Fourth Host", "The Fifth Host", "The Sixth Host", "The Seventh Host", "The Eighth Host", "The Ninth Host", "The Tenth Host", "The Eleventh Host", "The Twelfth Host"],
+    "fallbackHost": "Host %d",
+    "fallbackShip": "Black Ship %d"
+  },
+  "generic": {
+    "men": "Host of the Realm", "elves": "Wardens of the Realm", "sun_elves": "Guard of the Realm", "orcs": "Warband of the Hold", "trolls": "Brood of the Forest",
+    "giants": "Stride of the Hills", "ents": "Grove of the Moot", "yeti": "Pack of the Snows", "demons": "Throng of the Deep", "the_dead": "Grave Host of the Dominion"
+  },
+  "dragonFlights": { "count": 6, "generic": "Flight", "peoples": ["elves", "sun_elves"] },
+  "operatives": { "count": 36, "fallback": "Agent %d" }
+}

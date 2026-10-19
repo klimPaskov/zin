@@ -18,7 +18,7 @@ import { HEADER, Loc, Sprites, loadAllData, loadCatalogKeys, bannedIn, notCp1252
 import { writeHq, writeAbilities, writeCustoms, writeChiefs, writeUnitLeaderTraits, writeValour, warTriggers, leaderOnActions } from '../lib/inst_war.mjs';
 import { tradeStrategies, equipmentRights as rights } from '../lib/inst_trade.mjs';
 import { writeUpgrades, writeAgencies, writeOperations, writePhases, tokenText, writeRaids, intrigueEvent, fakeHostUnit, intrigueStrategies } from '../lib/inst_intrigue.mjs';
-import { writeWorkshops, writePolicies, writeAiWeights, writeSpells, writeScholarTraits, craftEffects, circleStrategies, scholarPlan } from '../lib/inst_craft.mjs';
+import { writeWorkshops, writePolicies, writeAiWeights, writeSpells, writeScholarTraits, writeSpecialProjectConstants, craftEffects, circleStrategies, scholarPlan } from '../lib/inst_craft.mjs';
 
 export const loadInstitutions = loadAllData;
 export async function equipmentRights() { return rights(await loadAllData()); }
@@ -107,6 +107,7 @@ export async function buildInstitutions(staged, ctx) {
   Object.assign(summary, writeAiWeights(staged, env));
   Object.assign(summary, await writeSpells(staged, env));
   Object.assign(summary, await writeScholarTraits(staged, env));
+  await writeSpecialProjectConstants(staged);
 
   // hooks, event, on_actions, AI strategy
   const scholars = scholarPlan(env), valour = startValour(data, countries, table);
@@ -131,6 +132,8 @@ export async function buildInstitutions(staged, ctx) {
   staged.add('localisation/english/zin_inst_l_english.yml', loc.bytes());
   staged.add('localisation/replace/zin_inst_engine_l_english.yml', eloc.bytes());
   staged.text('interface/zz_zin_institutions.gfx', sprites.text());
+  staged.text('docs/design/institutions_sprites.json', `${JSON.stringify({ note: 'Sprites of interface/zz_zin_institutions.gfx and the catalog picture each shows until the art pass draws its own (spec 08_institutions).', sprites: Object.fromEntries([...sprites.map].sort(([x], [y]) => x.localeCompare(y, 'en'))), vanillaNames: Object.fromEntries([...sprites.shadows].sort(([x], [y]) => x.localeCompare(y, 'en'))), vanillaNamesNote: 'Vanilla sprite names the engine still asks for (trait and token icons of engine keys). They are not redefined: the art pass replaces their texture files under the same names, and this is the suggested catalog picture for each.' }, null, 1)}
+`);
   Object.assign(summary, { keys: loc.size, engineKeys: eloc.size, sprites: sprites.size });
   return summary;
 }

@@ -1,0 +1,2486 @@
+{
+  "chronicle": {
+    "cultures": {
+      "buldor_companies": {
+        "adjective": "Buldor",
+        "name": "Buldor Companies",
+        "spirit": "The Company Contract",
+        "summary": "Hired companies of Buldor, who recruit from every clan. A fallen banner ends a company."
+      },
+      "caravan_princes": {
+        "adjective": "Caravan",
+        "name": "Caravan Princes",
+        "spirit": "The Bench of Houses",
+        "summary": "Merchant houses of Stabilo who rule the caravan roads. Their law is contract and their weights are honest."
+      },
+      "chart_islanders": {
+        "adjective": "Chart-Islander",
+        "name": "Chart-Islanders",
+        "spirit": "The Chartmakers' Gift",
+        "summary": "Wayfinders and chart-houses of Triton's Islands. They sell their charts and keep their reefs."
+      },
+      "corsair_lords": {
+        "adjective": "Corsair",
+        "name": "Corsair Lords",
+        "spirit": "The Ransom Law",
+        "summary": "Sword-lords of the cliff harbours. The isle's best captain wears its crown."
+      },
+      "dead_lands_freeholds": {
+        "adjective": "Dead Lands",
+        "name": "Dead Lands Freeholders",
+        "spirit": "Salt and Silence",
+        "summary": "Salt-pan and fishing freeholds of the Dead Lands coast. They do not speak of what lies to the south."
+      },
+      "dondor_brutes": {
+        "adjective": "Dondor",
+        "name": "Dondor Brutes",
+        "spirit": "The Blood-Price",
+        "summary": "Clan-moot kings and iron-halls of Dondor. They tax the iron road and leave magic to the Fire-speakers."
+      },
+      "forest_council_elves": {
+        "adjective": "Council Elven",
+        "name": "Council Elves of the Magical Forest",
+        "spirit": "The Council of Houses",
+        "summary": "The great elven houses of the Magical Forest. They hold no crown and keep a book of precedents."
+      },
+      "free_crowns_north": {
+        "adjective": "Free Crown",
+        "name": "Free Crowns of the North",
+        "spirit": "The Crown-Sharing Marriages",
+        "summary": "Small kingdoms of the inland North, each ruled by a king with a council of landowners."
+      },
+      "gala_court": {
+        "adjective": "Gala",
+        "name": "Gala Elves",
+        "spirit": "The King's Memory",
+        "summary": "The ageless court of Gala under King Lorien. They keep their dead in memory and their counsel quiet."
+      },
+      "girdon_wardens": {
+        "adjective": "Girdon",
+        "name": "Girdon Wardens",
+        "spirit": "The River Court",
+        "summary": "Ford-wardens and bridge-towns of the Girdon rivers."
+      },
+      "goblin_warrens": {
+        "adjective": "Goblin",
+        "name": "Goblin Warrens",
+        "spirit": "The Loud and the Clever",
+        "summary": "Tunnel-dwelling goblins under the orc holds. They sell lamps and traps to those above."
+      },
+      "goodin_sunfolk": {
+        "adjective": "Sunfolk",
+        "name": "Goodin Sunfolk",
+        "spirit": "The Guest-Town Peace",
+        "summary": "Farmers of the sunlit guest-towns who live among the Sunhot elves."
+      },
+      "grave_hosts": {
+        "adjective": "Grave-Host",
+        "name": "Grave Hosts of Volgan",
+        "spirit": "The Dirge-Drum",
+        "summary": "The dead and the living of Volgan's Dominion, led by his chosen captains. Mass hosts follow the dirge-drum."
+      },
+      "gunwaith_clans": {
+        "adjective": "Gunwaith",
+        "name": "Gunwaith Clans",
+        "spirit": "The Lawspeaker's Memory",
+        "summary": "Hill clans of Gunwaith, whose kings are acclaimed at a standing stone. The chiefs hold the real power."
+      },
+      "hill_giants": {
+        "adjective": "Hiloron Giant",
+        "name": "Hill Giants of Hiloron",
+        "spirit": "The Cairn-Count",
+        "summary": "Giants of Hiloron who count years by stones, led by a High Chief of the cairn-keepers."
+      },
+      "hill_kingdom_elves": {
+        "adjective": "Hill-Kingdom Elven",
+        "name": "Hill-Kingdom Elves",
+        "spirit": "The Hall of Judgments",
+        "summary": "Elves of the hill halls, ruled by queens and kings whom the hall-keepers accept. They know dragon-craft best."
+      },
+      "ice_clans": {
+        "adjective": "Ice Clan",
+        "name": "Ice Clans",
+        "spirit": "The Winter Moot",
+        "summary": "Reindeer clans and sled-bands of the Cold Lands, ruled by chieftains of the moot."
+      },
+      "ice_giants": {
+        "adjective": "Titanos Giant",
+        "name": "Ice Giants of Titanos",
+        "spirit": "The Frost-Throne",
+        "summary": "Giants of Titanos who carve ice and ivory. They honour the cold as an elder spirit."
+      },
+      "iron_clans": {
+        "adjective": "Iron Clan",
+        "name": "Iron Clans",
+        "spirit": "The Free Moot of the Holds",
+        "summary": "Orc holds of the iron hills. A shared battle-horn calls their levies."
+      },
+      "isengard_warlords": {
+        "adjective": "Isengard",
+        "name": "Isengard Warlords",
+        "spirit": "The Oath-Companies",
+        "summary": "Warlords of the iron forts, bound by oath-companies. They suspect every hedge-wise."
+      },
+      "isle_houses": {
+        "adjective": "Isle-House",
+        "name": "Isle Houses of Asgard",
+        "spirit": "The Tide-Mother's Law",
+        "summary": "Seafaring houses of Asgard, led by their eldest women. They know the central sea as a neighbour."
+      },
+      "kilinti_ents": {
+        "adjective": "Ent",
+        "name": "Ents of Kilinti",
+        "spirit": "The Last-Speaking Moot",
+        "summary": "The ents of Kilinti Forest. A few men live at its edge and keep its accounts."
+      },
+      "lake_aenoran": {
+        "adjective": "Lake Aenoran",
+        "name": "Lake Aenorans",
+        "spirit": "Peace of the One Crown",
+        "summary": "Farmers, bargemen and scribes of the Great Lake, the best-fed folk of Erdae. They keep written law and ring a bell for every order."
+      },
+      "lake_elves": {
+        "adjective": "Lake-Elven",
+        "name": "Lake Elves",
+        "spirit": "The Water-Court",
+        "summary": "Boat-archers and healers of the elven lakes, led by the Speaker of the water-houses."
+      },
+      "lake_road_cities": {
+        "adjective": "Lake Road",
+        "name": "Lake Road Cities",
+        "spirit": "The Road of Lanterns",
+        "summary": "Lake towns on the road from the East to the Great Wall. They have kings in Ostoroth and speakers in Mora."
+      },
+      "leren_sea_kings": {
+        "adjective": "Leren",
+        "name": "Leren of the Strait",
+        "spirit": "The Speakers' Tolls",
+        "summary": "Sea-lords of the Narrow Strait. One High Crown rules two realms, and a Speakers' Hall counts the ships."
+      },
+      "march_folk": {
+        "adjective": "March-Folk",
+        "name": "March-Folk",
+        "spirit": "Beacon and Plough",
+        "summary": "Free farmers of the southern marches, led by elected speakers. They plough with a sling at the belt."
+      },
+      "mirolon_wardens": {
+        "adjective": "Mirolon",
+        "name": "Wardens of Mirolon",
+        "spirit": "The Beacon Roll",
+        "summary": "Wardens of the lake and the northern passes, chosen for life by their captains."
+      },
+      "netherborn": {
+        "adjective": "Netherborn",
+        "name": "Netherborn",
+        "spirit": "The Pact-Name",
+        "summary": "The demon realms of the Nether, each ruled by a Lord or Queen bound to a pact."
+      },
+      "noris_riders": {
+        "adjective": "Noric",
+        "name": "Noris Camel Warriors",
+        "spirit": "The Well-Law",
+        "summary": "Camel warriors of the Noris desert, led by the well-lords. They count their seasons by caravans."
+      },
+      "pass_wardens": {
+        "adjective": "Pass-Warden",
+        "name": "Pass-Warden Elves",
+        "spirit": "The Watch-Roll",
+        "summary": "Mountain archers and ropemen who have held the Nolorim passes for centuries."
+      },
+      "red_lands_tribunes": {
+        "adjective": "Red Lands",
+        "name": "Red Lands Tribunes",
+        "spirit": "The Tribune's Year",
+        "summary": "Clay-working villages of the Red Lands, led by tribunes chosen by the village heads."
+      },
+      "redbark_tribes": {
+        "adjective": "Redbark",
+        "name": "Redbark Tribes",
+        "spirit": "The Red Raid",
+        "summary": "Clans of the Bloody Forest, led by cord-mothers. They paint themselves red and bow to no crown."
+      },
+      "rift_coast_elves": {
+        "adjective": "Rift-Coast",
+        "name": "Rift-Coast Elves",
+        "spirit": "The Lantern Towers",
+        "summary": "Sea-archers and lantern-keepers of the Rift coast, led by the wardens of each shore."
+      },
+      "river_kings": {
+        "adjective": "River-King",
+        "name": "River-Kings of the East",
+        "spirit": "The Scribe-Council",
+        "summary": "Kings of the river lands, named for their rivers and advised by temple scribes."
+      },
+      "sea_orcs": {
+        "adjective": "Sea-Orc",
+        "name": "Sea Orcs",
+        "spirit": "The Tide-Ring",
+        "summary": "Orc boarders of the skerries and the cliff harbours."
+      },
+      "selen_ranger": {
+        "adjective": "Selen",
+        "name": "Selen Rangers",
+        "spirit": "The Quiet Law",
+        "summary": "Rangers of the Selen woods, ruled by moots. They ask the wood before they loose an arrow."
+      },
+      "southern_islanders": {
+        "adjective": "Southern Islander",
+        "name": "Southern Islanders",
+        "spirit": "The Feast and the Elder",
+        "summary": "Reef and lagoon islanders of the south. They count their dead as waves on the reef."
+      },
+      "steppe_rider": {
+        "adjective": "Steppe Rider",
+        "name": "Steppe Riders",
+        "spirit": "The Rider's Oath-Law",
+        "summary": "Horse-lords of Konori and Hunhun. Their land belongs to the herds, and their word to the horse they swear on."
+      },
+      "sunhot_isles": {
+        "adjective": "Isle Sunhot",
+        "name": "Isle Sunhot",
+        "spirit": "The Council of the Chain",
+        "summary": "Sunhot elves of the eastern isles, who sit at the Council of the Chain."
+      },
+      "sunhot_light": {
+        "adjective": "Sunhot",
+        "name": "Sunhot Elves of the Light",
+        "spirit": "The Keepers of Noon",
+        "summary": "Sunhot elves of the Lands of Light, led by a Radiant Speaker whom the sanctuaries choose."
+      },
+      "sunhot_western": {
+        "adjective": "Sanctuary",
+        "name": "Western Sanctuary Sunhot",
+        "spirit": "The Open Door",
+        "summary": "Sunhot realms of the western sanctuaries, each led by a Speaker its sanctuary chooses."
+      },
+      "troll_tribes": {
+        "adjective": "Troll",
+        "name": "Troll Tribes",
+        "spirit": "The Eldest Unbeaten",
+        "summary": "Bog-dwelling trolls of the Troll Forest, who heap stones at their borders."
+      },
+      "veiled_folk": {
+        "adjective": "Veiled",
+        "name": "The Veiled",
+        "spirit": "The Cord-Mothers' Hush",
+        "summary": "A veiled people of the Cursed Lands. They trade little and forgive nothing."
+      },
+      "volcano_clans": {
+        "adjective": "Volcano Clan",
+        "name": "Volcano Clans",
+        "spirit": "The Warking's Ring",
+        "summary": "Orc clans of the fire-mountain, led by a warking whom the chiefs acclaim."
+      },
+      "wall_folk": {
+        "adjective": "Wall-Folk",
+        "name": "Wall-Folk",
+        "spirit": "The Watch-Family Posts",
+        "summary": "Watch-families of the Great Wall. They keep its gates in the king's name."
+      },
+      "western_guilds": {
+        "adjective": "Guildman",
+        "name": "Western Guildmen",
+        "spirit": "The Guild Book",
+        "summary": "Guild towns of the western coast. They trade across the central sea and hire others to fight."
+      },
+      "wild_holds": {
+        "adjective": "Wild Hold",
+        "name": "Wild Holds",
+        "spirit": "The Hold's Own Way",
+        "summary": "Orc holds of the wild hills, with no council and no priest."
+      },
+      "windwaith_seafarers": {
+        "adjective": "Windwaith",
+        "name": "Windwaith Seafarers",
+        "spirit": "The Ship-Share",
+        "summary": "Captains of the Windwaith headlands. They read the wind the way others read letters."
+      },
+      "winter_crown": {
+        "adjective": "Winter-Crown",
+        "name": "Winter-Crown Folk",
+        "spirit": "The Hearth-Law",
+        "summary": "The Winter Crown of the Cold Lands and its clan-fire keepers. They count the year in dark and light."
+      },
+      "yeti_clans": {
+        "adjective": "Yeti",
+        "name": "Yeti Clans",
+        "spirit": "The Far-Carrying Song",
+        "summary": "Furred clans of the Yeti Lands. Their names are sung at the winter gathering."
+      },
+      "zilin_pilgrims": {
+        "adjective": "Zilin",
+        "name": "Zilin Pilgrim-Folk",
+        "spirit": "The Hostel Rule",
+        "summary": "Keepers of the pilgrim hostels in the Zilin Hills. They copy books, make salves and welcome all."
+      },
+      "zols_dead": {
+        "adjective": "Zol's",
+        "name": "Zol's Dead",
+        "spirit": "Hosts Without Number",
+        "summary": "The numbered hosts of Zol's Mistake. No tongue is recorded for them, and no rite."
+      }
+    },
+    "faiths": {
+      "clan_stones": {
+        "clergy": "Lawspeakers",
+        "name": "The Standing Stones",
+        "short": "Standing Stones",
+        "summary": "The law-faith of the western hills, spoken by lawspeakers who are judges and priests together."
+      },
+      "company_banner": {
+        "clergy": "Banner-chaplains",
+        "name": "The Banner-Oath",
+        "short": "Banner-Oath",
+        "summary": "The soldiers' faith of Buldor, led by banner-chaplains."
+      },
+      "deliverer": {
+        "clergy": "Confessors",
+        "name": "The Faith of the Deliverer",
+        "short": "Faith of the Deliverer",
+        "summary": "A New God of deliverance, protection and renewal, honoured in the Houses of the First Light. Its confessors teach and heal."
+      },
+      "ent_slow": {
+        "clergy": null,
+        "name": "The Slow Rite",
+        "short": "Slow Rite",
+        "summary": "The faith of Kilinti, which has no priests. The Eldest speaks last."
+      },
+      "giant_cairn": {
+        "clergy": "Stone-keepers",
+        "name": "The Cairn-Faith",
+        "short": "Cairn-Faith",
+        "summary": "The cairn-faith of Hiloron and Titanos, kept by stone-keepers."
+      },
+      "grave_cult": {
+        "clergy": "Necromantic orders",
+        "name": "The Children of Volgan's Dread",
+        "short": "Dread Cult",
+        "summary": "The dark rite of the Dominion, kept by necromantic orders and the wardens of the Gates."
+      },
+      "green_lords": {
+        "clergy": "Tree-wardens",
+        "name": "The Green Lords",
+        "short": "Green Lords",
+        "summary": "A faith of woods and rangers, led by tree-wardens whom the moot chooses."
+      },
+      "guild_hall": {
+        "clergy": "Guild-chaplains",
+        "name": "The Guild Halls",
+        "short": "Guild Halls",
+        "summary": "A faith of crafts, kept in the great halls of Kradlon and Corogon."
+      },
+      "hearth_iron": {
+        "clergy": "Iron-keepers",
+        "name": "Hearth-Iron",
+        "short": "Hearth-Iron",
+        "summary": "The iron-faith of Dondor, kept by smiths called iron-keepers."
+      },
+      "hold_luck": {
+        "clergy": "Charm-wives",
+        "name": "The Luck of the Hold",
+        "short": "Hold-Luck",
+        "summary": "The luck-faith of the wild holds, kept by charm-wives."
+      },
+      "horse_oath": {
+        "clergy": "Oath-riders",
+        "name": "The Horse-Oath",
+        "short": "Horse-Oath",
+        "summary": "The faith of the steppe riders, witnessed by old riders called oath-riders."
+      },
+      "isle_tide": {
+        "clergy": "Tide-mothers",
+        "name": "The Tide-Houses",
+        "short": "Tide-Houses",
+        "summary": "The ancestor-faith of Asgard, kept by the tide-mothers."
+      },
+      "kindred_song": {
+        "clergy": "Loremasters and song-wardens",
+        "name": "The Kindred Song",
+        "short": "Kindred Song",
+        "summary": "The reverence of the elves, kept by loremasters and song-wardens."
+      },
+      "lake_litany": {
+        "clergy": "Lake-readers",
+        "name": "The Lake Litany",
+        "short": "Lake Litany",
+        "summary": "The lake-shrine faith of the Lake Road cities, read by lake-readers."
+      },
+      "lamp_furrow": {
+        "clergy": null,
+        "name": "The Lamp and the Furrow",
+        "short": "Lamp and Furrow",
+        "summary": "The folk faith of most households in the Middle Lands and beyond. It has no priests."
+      },
+      "mourning_dust": {
+        "clergy": "Grave-wives",
+        "name": "The Mourning Customs of the Dead Lands",
+        "short": "Mourning Customs",
+        "summary": "The mourning customs of the Dead Lands coast, kept by grave-wives."
+      },
+      "none": {
+        "clergy": null,
+        "name": "No Faith Recorded",
+        "short": "No Faith Recorded",
+        "summary": "No faith is recorded."
+      },
+      "noon_pilgrimage": {
+        "clergy": "Keepers of the Noon",
+        "name": "The Noon Pilgrimage",
+        "short": "Noon Pilgrimage",
+        "summary": "The faith of the Sunhot sanctuaries, kept by sanctuary-wardens and Keepers of the Noon."
+      },
+      "old_knots": {
+        "clergy": "Cord-mothers",
+        "name": "The Old Knots",
+        "short": "Old Knots",
+        "summary": "The oldest faith of the Orran folk, kept by cord-mothers."
+      },
+      "pact_rite": {
+        "clergy": "Pact-heralds",
+        "name": "The Pact-Rite of the Nether",
+        "short": "Pact-Rite",
+        "summary": "The dark rite of the Nether, kept by pact-heralds."
+      },
+      "rain_mirror": {
+        "clergy": "Keepers of the Mirror",
+        "name": "The Mirror Vigil",
+        "short": "Mirror Vigil",
+        "summary": "The vigil of Gala, kept by the keepers of the Mirror."
+      },
+      "ransom_tide": {
+        "clergy": "Tide-judges",
+        "name": "The Ransom Tide",
+        "short": "Ransom Tide",
+        "summary": "The law-faith of the corsair isles, kept by tide-judges."
+      },
+      "red_hearth": {
+        "clergy": "Kiln-mothers",
+        "name": "The Red Hearth",
+        "short": "Red Hearth",
+        "summary": "The clay-faith of the Red Lands, kept by kiln-mothers."
+      },
+      "river_temples": {
+        "clergy": "Temple scribes and flood-priests",
+        "name": "The River Temples",
+        "short": "River Temples",
+        "summary": "The faith of the river kings, served by temple scribes and flood-priests."
+      },
+      "river_wardens": {
+        "clergy": "Ford-wardens",
+        "name": "The River Wardens' Rite",
+        "short": "Warden's Rite",
+        "summary": "A faith of ford-wardens, who are also magistrates."
+      },
+      "scale_creed": {
+        "clergy": "Weighers",
+        "name": "The Creed of the Honest Scale",
+        "short": "Honest Scale",
+        "summary": "The trade-faith of Stabilo, kept by weighers who also judge contracts."
+      },
+      "skull_fire": {
+        "clergy": "Fire-Speakers",
+        "name": "The Skull and the Fire",
+        "short": "Skull and Fire",
+        "summary": "The ancestor-faith of the orc clans, led by Fire-Speakers."
+      },
+      "stone_hunger": {
+        "clergy": null,
+        "name": "The Hunger and the Stone",
+        "short": "Stone-Hunger",
+        "summary": "The faith of the troll tribes. It has no priests."
+      },
+      "stone_vigil": {
+        "clergy": "Watch-chaplains",
+        "name": "The Stone Vigil",
+        "short": "Stone Vigil",
+        "summary": "A faith of duty on the Great Wall and the marches."
+      },
+      "storm_court": {
+        "clergy": "Wind-readers",
+        "name": "The Storm Court",
+        "short": "Storm Court",
+        "summary": "A faith of wind-readers and storm-speakers."
+      },
+      "strait_litany": {
+        "clergy": "Litany-singers",
+        "name": "The Strait Litany",
+        "short": "Strait Litany",
+        "summary": "The sea-faith of the Narrow Strait, with a litany-singer in each fleet."
+      },
+      "tide_charts": {
+        "clergy": "Master-wayfinders",
+        "name": "The Chart-Faith",
+        "short": "Chart-Faith",
+        "summary": "The wayfinders' faith of Triton's Islands."
+      },
+      "tide_skull": {
+        "clergy": "Salt-priests",
+        "name": "The Salt Tithe",
+        "short": "Salt Tithe",
+        "summary": "The sea-faith of the orc skerries, kept by salt-priests."
+      },
+      "warden_vigil": {
+        "clergy": "Vigil-captains",
+        "name": "The Warden's Vigil",
+        "short": "Warden's Vigil",
+        "summary": "The watch-faith of Mirolon, led by vigil-captains."
+      },
+      "warren_luck": {
+        "clergy": null,
+        "name": "The Warren Luck",
+        "short": "Warren Luck",
+        "summary": "The lamp-faith of the goblin warrens. The loudest goblin keeps the lamp."
+      },
+      "wave_tally": {
+        "clergy": "Tally-keepers",
+        "name": "The Wave-Tally",
+        "short": "Wave-Tally",
+        "summary": "The ancestor-faith of the southern reefs, kept by tally-keepers."
+      },
+      "well_oath": {
+        "clergy": "Well-lords and well-wives",
+        "name": "The Well-Oath",
+        "short": "Well-Oath",
+        "summary": "The desert law-faith of Noris, kept by well-lords and well-wives."
+      },
+      "winter_hearth": {
+        "clergy": "Fire-keepers",
+        "name": "The Winter Hearth",
+        "short": "Winter Hearth",
+        "summary": "The ancestor-faith of the cold north, kept by fire-keepers."
+      },
+      "yeti_hum": {
+        "clergy": "Hum-keepers",
+        "name": "The Hum",
+        "short": "The Hum",
+        "summary": "The faith of the yeti, kept by hum-keepers in the caves."
+      }
+    },
+    "languages": {
+      "aenoran": {
+        "name": "Aenoran"
+      },
+      "ainic": {
+        "name": "Old Ainic"
+      },
+      "alerhic": {
+        "name": "Alerhic"
+      },
+      "coldic": {
+        "name": "Coldic"
+      },
+      "dondric": {
+        "name": "Dondric"
+      },
+      "galic": {
+        "name": "Galic"
+      },
+      "gigantic": {
+        "name": "Giants' Speech"
+      },
+      "goblin": {
+        "name": "Goblin Cant"
+      },
+      "grave_rite": {
+        "name": "Rite-Tongue"
+      },
+      "gunwaithic": {
+        "name": "Gunwaithic"
+      },
+      "infernal": {
+        "name": "Infernal"
+      },
+      "leren": {
+        "name": "Leren"
+      },
+      "longspeech": {
+        "name": "the Long Speech"
+      },
+      "mirolic": {
+        "name": "Mirolic"
+      },
+      "noric": {
+        "name": "Noric"
+      },
+      "orcish": {
+        "name": "Orcish"
+      },
+      "orran": {
+        "name": "Orran"
+      },
+      "stabilic": {
+        "name": "Stabilic"
+      },
+      "sunhot": {
+        "name": "Sunhot"
+      },
+      "sylvan": {
+        "name": "Sylvan"
+      },
+      "tritonic": {
+        "name": "Tritonic"
+      },
+      "trollish": {
+        "name": "Trollish"
+      },
+      "yetic": {
+        "name": "Yeti Speech"
+      },
+      "yonic": {
+        "name": "Yonic"
+      }
+    }
+  },
+  "cultures": {
+    "buldor_companies": {
+      "building_style": "barracks",
+      "faith": "company_banner",
+      "flag": {
+        "alt": [],
+        "motif": "company_banner",
+        "palette": [
+          "#5a3f2f",
+          "#a8a36a",
+          "#2f3f5a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_western_clan_gfx",
+        "key": "zin_western_clan_gfx"
+      },
+      "icon": "banner_company",
+      "language": "gunwaithic",
+      "magic": "neutral",
+      "music_mood": "western_pipes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "buldor_companies",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "western_clan"
+    },
+    "caravan_princes": {
+      "building_style": "bronze_colonnade",
+      "faith": "scale_creed",
+      "flag": {
+        "alt": [
+          "coin"
+        ],
+        "motif": "scale",
+        "palette": [
+          "#a8742a",
+          "#8a2f2a",
+          "#3f6b4a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_bronze_merchants_gfx",
+        "key": "zin_bronze_merchants_gfx"
+      },
+      "icon": "scale_coin",
+      "language": "stabilic",
+      "magic": "regulated",
+      "music_mood": "lyre_bronze",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "caravan_princes",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "bronze_merchants"
+    },
+    "chart_islanders": {
+      "building_style": "stilt_harbour",
+      "faith": "tide_charts",
+      "flag": {
+        "alt": [],
+        "motif": "compass_rose",
+        "palette": [
+          "#2f6f78",
+          "#e0d8be",
+          "#a8513a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_island_marines_gfx",
+        "key": "zin_island_marines_gfx"
+      },
+      "icon": "compass_chart",
+      "language": "tritonic",
+      "magic": "respected",
+      "music_mood": "sea_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "chart_islanders",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "island_marines"
+    },
+    "corsair_lords": {
+      "building_style": "cliff_harbour",
+      "faith": "ransom_tide",
+      "flag": {
+        "alt": [],
+        "motif": "blade",
+        "palette": [
+          "#2a2a2e",
+          "#a83a2a",
+          "#c8a85a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_island_marines_gfx",
+        "key": "zin_island_marines_gfx"
+      },
+      "icon": "black_blade",
+      "language": "tritonic",
+      "magic": "wary",
+      "music_mood": "sea_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "corsair_lords",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "island_marines"
+    },
+    "dead_lands_freeholds": {
+      "building_style": "mud_brick_sea",
+      "faith": "mourning_dust",
+      "flag": {
+        "alt": [
+          "salt_pan"
+        ],
+        "motif": "boat",
+        "palette": [
+          "#c9b58a",
+          "#3e6b78",
+          "#8a5a3a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_warden_blue_gfx",
+        "key": "zin_warden_blue_gfx"
+      },
+      "icon": "salt_boat",
+      "language": "mirolic",
+      "magic": "wary",
+      "music_mood": "warden_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "dead_lands_freeholds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "warden_blue"
+    },
+    "dondor_brutes": {
+      "building_style": "iron_hall",
+      "faith": "hearth_iron",
+      "flag": {
+        "alt": [
+          "chain"
+        ],
+        "motif": "axe",
+        "palette": [
+          "#3a3a3e",
+          "#7a4a2a",
+          "#a8a8a0"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_iron_brute_gfx",
+        "key": "zin_iron_brute_gfx"
+      },
+      "icon": "axe_chain",
+      "language": "dondric",
+      "magic": "distrusted",
+      "music_mood": "iron_drums",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "dondor_brutes",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "iron_brute"
+    },
+    "forest_council_elves": {
+      "building_style": "living_tree",
+      "faith": "kindred_song",
+      "flag": {
+        "alt": [
+          "tree",
+          "harp"
+        ],
+        "motif": "leaf",
+        "palette": [
+          "#4f9a5a",
+          "#d8e0d2",
+          "#9aa6b0"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_elves_gfx",
+        "group": "zin_elven_gfx",
+        "key": "zin_elven_gfx"
+      },
+      "icon": "leaf_harp",
+      "language": "sylvan",
+      "magic": "natural",
+      "music_mood": "elven_voices",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 6,
+        "pool": "forest_council_elves",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "elven"
+    },
+    "free_crowns_north": {
+      "building_style": "hill_fort",
+      "faith": "strait_litany",
+      "flag": {
+        "alt": [
+          "tree"
+        ],
+        "motif": "beast",
+        "palette": [
+          "#7a6a54",
+          "#4e5e4a",
+          "#c8bfa4"
+        ],
+        "shape": "swallowtail"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_north_sea_gfx",
+        "key": "zin_north_sea_gfx"
+      },
+      "icon": "beast_crown",
+      "language": "leren",
+      "magic": "wary",
+      "music_mood": "sea_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "free_crowns_north",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "north_sea"
+    },
+    "gala_court": {
+      "building_style": "white_gold_hall",
+      "faith": "rain_mirror",
+      "flag": {
+        "alt": [],
+        "motif": "sun_over_water",
+        "palette": [
+          "#e0c36a",
+          "#f2eedc",
+          "#8aa8c9"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_elves_gfx",
+        "group": "zin_sun_elven_gfx",
+        "key": "zin_sun_elven_gfx"
+      },
+      "icon": "sun_water",
+      "language": "galic",
+      "magic": "natural",
+      "music_mood": "elven_voices",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 6,
+        "pool": "gala_court",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "sun_elven"
+    },
+    "girdon_wardens": {
+      "building_style": "bridge_town",
+      "faith": "river_wardens",
+      "flag": {
+        "alt": [],
+        "motif": "bridge",
+        "palette": [
+          "#4a6b52",
+          "#8a6f4a",
+          "#d8d0b8"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_western_clan_gfx",
+        "key": "zin_western_clan_gfx"
+      },
+      "icon": "bridge_river",
+      "language": "gunwaithic",
+      "magic": "respected",
+      "music_mood": "western_pipes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "girdon_wardens",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "western_clan"
+    },
+    "goblin_warrens": {
+      "building_style": "warren",
+      "faith": "warren_luck",
+      "flag": {
+        "alt": [],
+        "motif": "lamp",
+        "palette": [
+          "#5a6a3a",
+          "#3a3a2a",
+          "#c8b868"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_orcs_gfx",
+        "group": "zin_orc_horde_gfx",
+        "key": "zin_orc_horde_gfx"
+      },
+      "icon": "lamp_hole",
+      "language": "goblin",
+      "magic": "neutral",
+      "music_mood": "iron_drums",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 1,
+        "pool": "goblin_warrens",
+        "tier": 3,
+        "total": 2,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "orc_horde"
+    },
+    "goodin_sunfolk": {
+      "building_style": "sun_brick",
+      "faith": "noon_pilgrimage",
+      "flag": {
+        "alt": [],
+        "motif": "sun",
+        "palette": [
+          "#e0b23a",
+          "#5a8a4a",
+          "#f2e6b8"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_sun_elven_gfx",
+        "key": "zin_sun_elven_gfx"
+      },
+      "icon": "sun_town",
+      "language": "sunhot",
+      "magic": "respected",
+      "music_mood": "gong_flute",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "goodin_sunfolk",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "sun_elven"
+    },
+    "grave_hosts": {
+      "building_style": "black_fortress",
+      "faith": "grave_cult",
+      "flag": {
+        "alt": [],
+        "motif": "eye_gate",
+        "palette": [
+          "#2a2530",
+          "#5b5566",
+          "#a83a2a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_the_dead_gfx",
+        "group": "zin_dead_gfx",
+        "key": "zin_dead_gfx"
+      },
+      "icon": "drum_skull",
+      "language": "grave_rite",
+      "magic": "core",
+      "music_mood": "dread",
+      "people": "the_dead",
+      "portrait_pool": {
+        "kit": "the_dead",
+        "per_sex": 6,
+        "pool": "grave_hosts",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "dead"
+    },
+    "gunwaith_clans": {
+      "building_style": "hill_ring_fort",
+      "faith": "clan_stones",
+      "flag": {
+        "alt": [
+          "plaid"
+        ],
+        "motif": "stag_stone_ring",
+        "palette": [
+          "#6b2f2a",
+          "#2f5a4a",
+          "#d4c07a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_western_clan_gfx",
+        "key": "zin_western_clan_gfx"
+      },
+      "icon": "stag_stone",
+      "language": "gunwaithic",
+      "magic": "respected",
+      "music_mood": "western_pipes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "gunwaith_clans",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "western_clan"
+    },
+    "hill_giants": {
+      "building_style": "giant_hall",
+      "faith": "giant_cairn",
+      "flag": {
+        "alt": [],
+        "motif": "stone",
+        "palette": [
+          "#7c6a58",
+          "#4a4a40",
+          "#b0a888"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_giants_gfx",
+        "group": "zin_giant_gfx",
+        "key": "zin_giant_gfx"
+      },
+      "icon": "cairn_giant",
+      "language": "gigantic",
+      "magic": "none",
+      "music_mood": "slow_bass",
+      "people": "giants",
+      "portrait_pool": {
+        "kit": "giants",
+        "per_sex": 4,
+        "pool": "hill_giants",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "giant"
+    },
+    "hill_kingdom_elves": {
+      "building_style": "hillside_hall",
+      "faith": "kindred_song",
+      "flag": {
+        "alt": [],
+        "motif": "roost",
+        "palette": [
+          "#3f6f4a",
+          "#c9c9d2",
+          "#a8402f"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_elves_gfx",
+        "group": "zin_elven_gfx",
+        "key": "zin_elven_gfx"
+      },
+      "icon": "dragon_roost",
+      "language": "sylvan",
+      "magic": "natural",
+      "music_mood": "elven_voices",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "hill_kingdom_elves",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "elven"
+    },
+    "ice_clans": {
+      "building_style": "turf_hall",
+      "faith": "winter_hearth",
+      "flag": {
+        "alt": [],
+        "motif": "clan_beast",
+        "palette": [
+          "#bcc6cf",
+          "#6b5a48",
+          "#3f5870"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_winter_crown_gfx",
+        "key": "zin_winter_crown_gfx"
+      },
+      "icon": "sled_beast",
+      "language": "coldic",
+      "magic": "respected",
+      "music_mood": "northern_throat",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "ice_clans",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "winter_crown"
+    },
+    "ice_giants": {
+      "building_style": "ice_hall",
+      "faith": "giant_cairn",
+      "flag": {
+        "alt": [],
+        "motif": "throne",
+        "palette": [
+          "#9fc4d8",
+          "#e8eef2",
+          "#506a7a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_giants_gfx",
+        "group": "zin_giant_gfx",
+        "key": "zin_giant_gfx"
+      },
+      "icon": "ice_throne",
+      "language": "gigantic",
+      "magic": "natural",
+      "music_mood": "slow_bass",
+      "people": "giants",
+      "portrait_pool": {
+        "kit": "giants",
+        "per_sex": 2,
+        "pool": "ice_giants",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "giant"
+    },
+    "iron_clans": {
+      "building_style": "hold_town",
+      "faith": "skull_fire",
+      "flag": {
+        "alt": [],
+        "motif": "anvil",
+        "palette": [
+          "#5a5a60",
+          "#8a4a2a",
+          "#a8a8a0"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_orcs_gfx",
+        "group": "zin_orc_horde_gfx",
+        "key": "zin_orc_horde_gfx"
+      },
+      "icon": "anvil_horn",
+      "language": "orcish",
+      "magic": "respected",
+      "music_mood": "iron_drums",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 4,
+        "pool": "iron_clans",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "orc_horde"
+    },
+    "isengard_warlords": {
+      "building_style": "black_fort",
+      "faith": "storm_court",
+      "flag": {
+        "alt": [
+          "chain"
+        ],
+        "motif": "tower",
+        "palette": [
+          "#2f2f33",
+          "#8a2a2a",
+          "#9a9aa0"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_iron_brute_gfx",
+        "key": "zin_iron_brute_gfx"
+      },
+      "icon": "tower_chain",
+      "language": "coldic",
+      "magic": "distrusted",
+      "music_mood": "iron_drums",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "isengard_warlords",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "iron_brute"
+    },
+    "isle_houses": {
+      "building_style": "harbour_stone",
+      "faith": "isle_tide",
+      "flag": {
+        "alt": [
+          "oar",
+          "lighthouse"
+        ],
+        "motif": "wave",
+        "palette": [
+          "#4a6f7c",
+          "#ece4d0",
+          "#8a7a52"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_aenoran_blue_gfx",
+        "key": "zin_aenoran_blue_gfx"
+      },
+      "icon": "lighthouse_wave",
+      "language": "aenoran",
+      "magic": "respected",
+      "music_mood": "sea_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "isle_houses",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "aenoran_blue"
+    },
+    "kilinti_ents": {
+      "building_style": "grove",
+      "faith": "ent_slow",
+      "flag": {
+        "alt": [],
+        "motif": "tree",
+        "palette": [
+          "#3f6b2e",
+          "#6a5a3a",
+          "#a8b890"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_ents_gfx",
+        "group": "zin_ent_gfx",
+        "key": "zin_ent_gfx"
+      },
+      "icon": "moot_tree",
+      "language": "longspeech",
+      "magic": "natural",
+      "music_mood": "slow_bass",
+      "people": "ents",
+      "portrait_pool": {
+        "kit": "ents",
+        "per_sex": 4,
+        "pool": "kilinti_ents",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "ent"
+    },
+    "lake_aenoran": {
+      "building_style": "lake_stone",
+      "faith": "deliverer",
+      "flag": {
+        "alt": [
+          "bell",
+          "crown"
+        ],
+        "motif": "lamp",
+        "palette": [
+          "#2f5d8a",
+          "#e8d9a0",
+          "#f2f0e6"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_aenoran_blue_gfx",
+        "key": "zin_aenoran_blue_gfx"
+      },
+      "icon": "crown_bell",
+      "language": "aenoran",
+      "magic": "regulated",
+      "music_mood": "choral_bells",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "lake_aenoran",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "aenoran_blue"
+    },
+    "lake_elves": {
+      "building_style": "water_garden",
+      "faith": "kindred_song",
+      "flag": {
+        "alt": [],
+        "motif": "wave",
+        "palette": [
+          "#4a8a8a",
+          "#d8e0e0",
+          "#8a9ab0"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_elves_gfx",
+        "group": "zin_elven_gfx",
+        "key": "zin_elven_gfx"
+      },
+      "icon": "lake_wave",
+      "language": "sylvan",
+      "magic": "natural",
+      "music_mood": "elven_voices",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "lake_elves",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "elven"
+    },
+    "lake_road_cities": {
+      "building_style": "stilt_lantern",
+      "faith": "lake_litany",
+      "flag": {
+        "alt": [
+          "lantern"
+        ],
+        "motif": "fish",
+        "palette": [
+          "#5a8aa8",
+          "#d8d4c4",
+          "#3f5f4a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_bronze_merchants_gfx",
+        "key": "zin_bronze_merchants_gfx"
+      },
+      "icon": "lantern_fish",
+      "language": "alerhic",
+      "magic": "neutral",
+      "music_mood": "lyre_bronze",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "lake_road_cities",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "bronze_merchants"
+    },
+    "leren_sea_kings": {
+      "building_style": "quay_timber",
+      "faith": "strait_litany",
+      "flag": {
+        "alt": [
+          "crown",
+          "waves"
+        ],
+        "motif": "ship",
+        "palette": [
+          "#2a5a82",
+          "#e8e6dc",
+          "#9fb4c4"
+        ],
+        "shape": "swallowtail"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_north_sea_gfx",
+        "key": "zin_north_sea_gfx"
+      },
+      "icon": "ship_crown",
+      "language": "leren",
+      "magic": "wary",
+      "music_mood": "sea_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "leren_sea_kings",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "north_sea"
+    },
+    "march_folk": {
+      "building_style": "march_palisade",
+      "faith": "lamp_furrow",
+      "flag": {
+        "alt": [],
+        "motif": "beacon",
+        "palette": [
+          "#b38a3a",
+          "#4e6b3a",
+          "#d8cba0"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_aenoran_blue_gfx",
+        "key": "zin_aenoran_blue_gfx"
+      },
+      "icon": "beacon_plough",
+      "language": "aenoran",
+      "magic": "wary",
+      "music_mood": "woodland",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "march_folk",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "aenoran_blue"
+    },
+    "mirolon_wardens": {
+      "building_style": "stilt_beacon",
+      "faith": "warden_vigil",
+      "flag": {
+        "alt": [
+          "lamp"
+        ],
+        "motif": "beacon",
+        "palette": [
+          "#3c5f78",
+          "#9fa7ae",
+          "#cbbd8e"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_warden_blue_gfx",
+        "key": "zin_warden_blue_gfx"
+      },
+      "icon": "beacon_lake",
+      "language": "mirolic",
+      "magic": "respected",
+      "music_mood": "warden_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "mirolon_wardens",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "warden_blue"
+    },
+    "netherborn": {
+      "building_style": "obsidian_hall",
+      "faith": "pact_rite",
+      "flag": {
+        "alt": [],
+        "motif": "horn",
+        "palette": [
+          "#9b2a2a",
+          "#2a1a1a",
+          "#d8a060"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_demons_gfx",
+        "group": "zin_demon_gfx",
+        "key": "zin_demon_gfx"
+      },
+      "icon": "horn_pact",
+      "language": "infernal",
+      "magic": "core",
+      "music_mood": "dread",
+      "people": "demons",
+      "portrait_pool": {
+        "kit": "demons",
+        "per_sex": 4,
+        "pool": "netherborn",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "demon"
+    },
+    "noris_riders": {
+      "building_style": "mud_wind_tower",
+      "faith": "well_oath",
+      "flag": {
+        "alt": [
+          "camel",
+          "stars"
+        ],
+        "motif": "well",
+        "palette": [
+          "#2b3f7a",
+          "#c9964a",
+          "#efe3c4"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_desert_riders_gfx",
+        "key": "zin_desert_riders_gfx"
+      },
+      "icon": "well_camel",
+      "language": "noric",
+      "magic": "respected",
+      "music_mood": "desert_reeds",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "noris_riders",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "desert_riders"
+    },
+    "pass_wardens": {
+      "building_style": "pass_fort_elf",
+      "faith": "kindred_song",
+      "flag": {
+        "alt": [],
+        "motif": "pass",
+        "palette": [
+          "#5f7a6a",
+          "#c9ceca",
+          "#6a6f78"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_elves_gfx",
+        "group": "zin_elven_gfx",
+        "key": "zin_elven_gfx"
+      },
+      "icon": "pass_lamp",
+      "language": "sylvan",
+      "magic": "natural",
+      "music_mood": "elven_voices",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "pass_wardens",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "elven"
+    },
+    "red_lands_tribunes": {
+      "building_style": "kiln_brick",
+      "faith": "red_hearth",
+      "flag": {
+        "alt": [],
+        "motif": "kiln",
+        "palette": [
+          "#a8452f",
+          "#d4a46a",
+          "#6b4a3a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_bronze_merchants_gfx",
+        "key": "zin_bronze_merchants_gfx"
+      },
+      "icon": "kiln_red",
+      "language": "alerhic",
+      "magic": "neutral",
+      "music_mood": "lyre_bronze",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "red_lands_tribunes",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "bronze_merchants"
+    },
+    "redbark_tribes": {
+      "building_style": "tree_halls",
+      "faith": "old_knots",
+      "flag": {
+        "alt": [
+          "knot"
+        ],
+        "motif": "antlers",
+        "palette": [
+          "#8a2f26",
+          "#3b2a1c",
+          "#c9a28a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_forest_tribes_gfx",
+        "key": "zin_forest_tribes_gfx"
+      },
+      "icon": "red_antlers",
+      "language": "orran",
+      "magic": "wary",
+      "music_mood": "woodland",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "redbark_tribes",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "forest_tribes"
+    },
+    "rift_coast_elves": {
+      "building_style": "shore_tower",
+      "faith": "kindred_song",
+      "flag": {
+        "alt": [],
+        "motif": "lantern",
+        "palette": [
+          "#3f8a8a",
+          "#d6dce0",
+          "#8a96aa"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_elves_gfx",
+        "group": "zin_elven_gfx",
+        "key": "zin_elven_gfx"
+      },
+      "icon": "lantern_tower",
+      "language": "sylvan",
+      "magic": "natural",
+      "music_mood": "elven_voices",
+      "people": "elves",
+      "portrait_pool": {
+        "kit": "elves",
+        "per_sex": 2,
+        "pool": "rift_coast_elves",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "elven"
+    },
+    "river_kings": {
+      "building_style": "stair_temple",
+      "faith": "river_temples",
+      "flag": {
+        "alt": [
+          "stair"
+        ],
+        "motif": "river",
+        "palette": [
+          "#c9a24a",
+          "#2f5f8a",
+          "#4a7a4a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_bronze_merchants_gfx",
+        "key": "zin_bronze_merchants_gfx"
+      },
+      "icon": "river_stair",
+      "language": "alerhic",
+      "magic": "respected",
+      "music_mood": "lyre_bronze",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "river_kings",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "bronze_merchants"
+    },
+    "sea_orcs": {
+      "building_style": "cliff_harbour_orc",
+      "faith": "tide_skull",
+      "flag": {
+        "alt": [],
+        "motif": "skull",
+        "palette": [
+          "#3a5a62",
+          "#8a8a82",
+          "#a8a090"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_orcs_gfx",
+        "group": "zin_orc_horde_gfx",
+        "key": "zin_orc_horde_gfx"
+      },
+      "icon": "hook_skull",
+      "language": "orcish",
+      "magic": "wary",
+      "music_mood": "iron_drums",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 2,
+        "pool": "sea_orcs",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "orc_horde"
+    },
+    "selen_ranger": {
+      "building_style": "forest_timber",
+      "faith": "green_lords",
+      "flag": {
+        "alt": [
+          "oak"
+        ],
+        "motif": "arrows",
+        "palette": [
+          "#3f6b2e",
+          "#8a6a3c",
+          "#c9d6c0"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_ranger_green_gfx",
+        "key": "zin_ranger_green_gfx"
+      },
+      "icon": "oak_arrows",
+      "language": "aenoran",
+      "magic": "wary",
+      "music_mood": "woodland",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "selen_ranger",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "ranger_green"
+    },
+    "southern_islanders": {
+      "building_style": "stilt_reef",
+      "faith": "wave_tally",
+      "flag": {
+        "alt": [],
+        "motif": "shell",
+        "palette": [
+          "#3f9aa8",
+          "#efe6c8",
+          "#c9644a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_island_marines_gfx",
+        "key": "zin_island_marines_gfx"
+      },
+      "icon": "shell_canoe",
+      "language": "yonic",
+      "magic": "respected",
+      "music_mood": "sea_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "southern_islanders",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "island_marines"
+    },
+    "steppe_rider": {
+      "building_style": "felt_tents",
+      "faith": "horse_oath",
+      "flag": {
+        "alt": [
+          "horse_hair_standard"
+        ],
+        "motif": "horse_head",
+        "palette": [
+          "#b04a30",
+          "#e6e0cc",
+          "#c9a45a"
+        ],
+        "shape": "pennant"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_steppe_riders_gfx",
+        "key": "zin_steppe_riders_gfx"
+      },
+      "icon": "horse_head",
+      "language": "aenoran",
+      "magic": "wary",
+      "music_mood": "steppe_drums",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "steppe_rider",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "steppe_riders"
+    },
+    "sunhot_isles": {
+      "building_style": "shore_sanctuary",
+      "faith": "noon_pilgrimage",
+      "flag": {
+        "alt": [],
+        "motif": "sun_over_waves",
+        "palette": [
+          "#2f8a8a",
+          "#e0b23a",
+          "#f0e8cc"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_sun_elves_gfx",
+        "group": "zin_sun_elven_gfx",
+        "key": "zin_sun_elven_gfx"
+      },
+      "icon": "chain_sun",
+      "language": "sunhot",
+      "magic": "natural",
+      "music_mood": "gong_flute",
+      "people": "sun_elves",
+      "portrait_pool": {
+        "kit": "sun_elves",
+        "per_sex": 2,
+        "pool": "sunhot_isles",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "sun_elven"
+    },
+    "sunhot_light": {
+      "building_style": "sun_sanctuary",
+      "faith": "noon_pilgrimage",
+      "flag": {
+        "alt": [],
+        "motif": "rising_sun",
+        "palette": [
+          "#e0a02a",
+          "#f2e6c4",
+          "#b04a2a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_sun_elves_gfx",
+        "group": "zin_sun_elven_gfx",
+        "key": "zin_sun_elven_gfx"
+      },
+      "icon": "sun_door",
+      "language": "sunhot",
+      "magic": "natural",
+      "music_mood": "gong_flute",
+      "people": "sun_elves",
+      "portrait_pool": {
+        "kit": "sun_elves",
+        "per_sex": 4,
+        "pool": "sunhot_light",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "sun_elven"
+    },
+    "sunhot_western": {
+      "building_style": "sun_sanctuary",
+      "faith": "noon_pilgrimage",
+      "flag": {
+        "alt": [],
+        "motif": "sun",
+        "palette": [
+          "#d89a2a",
+          "#f2e6c4",
+          "#a8452a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_sun_elves_gfx",
+        "group": "zin_sun_elven_gfx",
+        "key": "zin_sun_elven_gfx"
+      },
+      "icon": "door_sun",
+      "language": "sunhot",
+      "magic": "natural",
+      "music_mood": "gong_flute",
+      "people": "sun_elves",
+      "portrait_pool": {
+        "kit": "sun_elves",
+        "per_sex": 2,
+        "pool": "sunhot_western",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "sun_elven"
+    },
+    "troll_tribes": {
+      "building_style": "cave_heap",
+      "faith": "stone_hunger",
+      "flag": {
+        "alt": [],
+        "motif": "boulder",
+        "palette": [
+          "#6d7a5a",
+          "#4a4030",
+          "#a09878"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_trolls_gfx",
+        "group": "zin_troll_gfx",
+        "key": "zin_troll_gfx"
+      },
+      "icon": "boulder_heap",
+      "language": "trollish",
+      "magic": "none",
+      "music_mood": "slow_bass",
+      "people": "trolls",
+      "portrait_pool": {
+        "kit": "trolls",
+        "per_sex": 4,
+        "pool": "troll_tribes",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "troll"
+    },
+    "veiled_folk": {
+      "building_style": "turf_halls",
+      "faith": "old_knots",
+      "flag": {
+        "alt": [],
+        "motif": "knot",
+        "palette": [
+          "#5a5560",
+          "#2b2830",
+          "#9d98a3"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_forest_tribes_gfx",
+        "key": "zin_forest_tribes_gfx"
+      },
+      "icon": "knot_veil",
+      "language": "orran",
+      "magic": "wary",
+      "music_mood": "woodland",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "veiled_folk",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "forest_tribes"
+    },
+    "volcano_clans": {
+      "building_style": "black_cliff_city",
+      "faith": "skull_fire",
+      "flag": {
+        "alt": [],
+        "motif": "flame_mountain",
+        "palette": [
+          "#2a2a2e",
+          "#a83a26",
+          "#7a7a74"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_orcs_gfx",
+        "group": "zin_orc_horde_gfx",
+        "key": "zin_orc_horde_gfx"
+      },
+      "icon": "ring_flame",
+      "language": "orcish",
+      "magic": "respected",
+      "music_mood": "iron_drums",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 6,
+        "pool": "volcano_clans",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "orc_horde"
+    },
+    "wall_folk": {
+      "building_style": "wall_grey",
+      "faith": "stone_vigil",
+      "flag": {
+        "alt": [
+          "key"
+        ],
+        "motif": "tower",
+        "palette": [
+          "#6b6f76",
+          "#a98d54",
+          "#d8d4c4"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_aenoran_blue_gfx",
+        "key": "zin_aenoran_blue_gfx"
+      },
+      "icon": "tower_key",
+      "language": "aenoran",
+      "magic": "neutral",
+      "music_mood": "choral_bells",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 4,
+        "pool": "wall_folk",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "aenoran_blue"
+    },
+    "western_guilds": {
+      "building_style": "guild_canal",
+      "faith": "guild_hall",
+      "flag": {
+        "alt": [],
+        "motif": "craft_symbol",
+        "palette": [
+          "#7a3b4e",
+          "#c9a24a",
+          "#3f5f7a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_western_clan_gfx",
+        "key": "zin_western_clan_gfx"
+      },
+      "icon": "guild_chain",
+      "language": "gunwaithic",
+      "magic": "regulated",
+      "music_mood": "western_pipes",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "western_guilds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "western_clan"
+    },
+    "wild_holds": {
+      "building_style": "burrow",
+      "faith": "hold_luck",
+      "flag": {
+        "alt": [],
+        "motif": "charm",
+        "palette": [
+          "#6a5a40",
+          "#3a3a30",
+          "#a8a070"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_orcs_gfx",
+        "group": "zin_orc_horde_gfx",
+        "key": "zin_orc_horde_gfx"
+      },
+      "icon": "bone_charm",
+      "language": "orcish",
+      "magic": "wary",
+      "music_mood": "iron_drums",
+      "people": "orcs",
+      "portrait_pool": {
+        "kit": "orcs",
+        "per_sex": 2,
+        "pool": "wild_holds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "orc_horde"
+    },
+    "windwaith_seafarers": {
+      "building_style": "harbour_wood",
+      "faith": "storm_court",
+      "flag": {
+        "alt": [
+          "wind_rose"
+        ],
+        "motif": "ship",
+        "palette": [
+          "#3f6f74",
+          "#d6d2c4",
+          "#8a6a4a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_winter_crown_gfx",
+        "key": "zin_winter_crown_gfx"
+      },
+      "icon": "ship_windrose",
+      "language": "coldic",
+      "magic": "respected",
+      "music_mood": "sea_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "windwaith_seafarers",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "winter_crown"
+    },
+    "winter_crown": {
+      "building_style": "frost_stone",
+      "faith": "winter_hearth",
+      "flag": {
+        "alt": [
+          "wolf",
+          "crown"
+        ],
+        "motif": "snowflake",
+        "palette": [
+          "#cfd9e2",
+          "#4a5f78",
+          "#8a8f96"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_winter_crown_gfx",
+        "key": "zin_winter_crown_gfx"
+      },
+      "icon": "fire_crown",
+      "language": "coldic",
+      "magic": "wary",
+      "music_mood": "northern_throat",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "winter_crown",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "winter_crown"
+    },
+    "yeti_clans": {
+      "building_style": "cave_home",
+      "faith": "yeti_hum",
+      "flag": {
+        "alt": [],
+        "motif": "mountain",
+        "palette": [
+          "#c9d6e3",
+          "#8a96a8",
+          "#4a5a6a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_yeti_gfx",
+        "group": "zin_yeti_gfx",
+        "key": "zin_yeti_gfx"
+      },
+      "icon": "song_mountain",
+      "language": "yetic",
+      "magic": "natural",
+      "music_mood": "northern_throat",
+      "people": "yeti",
+      "portrait_pool": {
+        "kit": "yeti",
+        "per_sex": 4,
+        "pool": "yeti_clans",
+        "tier": 2,
+        "total": 8,
+        "unique": true
+      },
+      "tier": 2,
+      "unit_group": "yeti"
+    },
+    "zilin_pilgrims": {
+      "building_style": "lake_stone",
+      "faith": "deliverer",
+      "flag": {
+        "alt": [],
+        "motif": "lamp",
+        "palette": [
+          "#efe9d0",
+          "#c9a24a",
+          "#8aa8c9"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_aenoran_blue_gfx",
+        "key": "zin_aenoran_blue_gfx"
+      },
+      "icon": "lamp_gate",
+      "language": "aenoran",
+      "magic": "respected",
+      "music_mood": "choral_bells",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 6,
+        "pool": "zilin_pilgrims",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "aenoran_blue"
+    },
+    "zols_dead": {
+      "building_style": "black_ruin",
+      "faith": "none",
+      "flag": {
+        "alt": [],
+        "motif": "black_sigil",
+        "palette": [
+          "#0a0a0c",
+          "#2a2a30",
+          "#6a6a72"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_the_dead_gfx",
+        "group": "zin_dead_gfx",
+        "key": "zin_dead_gfx"
+      },
+      "icon": "black_sigil",
+      "language": null,
+      "magic": "core",
+      "music_mood": "dread",
+      "people": "the_dead",
+      "portrait_pool": {
+        "kit": "the_dead",
+        "per_sex": 6,
+        "pool": "zols_dead",
+        "tier": 1,
+        "total": 12,
+        "unique": true
+      },
+      "tier": 1,
+      "unit_group": "dead"
+    }
+  },
+  "schema": "zin-culture-mappings/1",
+  "status": "Generated by tools/content/modules/cultures.mjs; do not edit"
+}

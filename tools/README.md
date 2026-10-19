@@ -32,6 +32,9 @@ by hand, and do not point the builder at the repository.
 | `content/art/slice-flags.mjs` | Cuts flag sheets into one 492x312 PNG per country. The builder runs it by itself when the flag slices are missing (see below). |
 | `content/art/unit-ref-jobs.mjs`, `content/art/stage-unit-jobs.mjs` | Write the image jobs for the 3D unit reference images, then stage the approved references into the 3D job roots under `docs/assets/hoi4_3d_model_jobs/`. |
 | `content/preview.mjs` | Builds a contact sheet PNG from staged DDS sprites, for review. |
+| `content/modules/ui_inventory.mjs`, `content/modules/ui_reskin.mjs`, `content/art/ui-reskin-jobs.mjs`, `content/checks/ui_checks.mjs` | The interface reskin infrastructure (spec `docs/specs/07_interface/02_full_ui_reskin.md`): the inventory of the installed game's interface sprites, the disposition table and the sheet maps, the image jobs, the reskin builder and the nine builder checks. See "Interface reskin" below. |
+| `content/lib/image_codec.mjs`, `content/lib/fit.mjs`, `content/lib/ui_plan.mjs`, `content/lib/ui_sheets.mjs`, `content/lib/ui_vocab.mjs` | Image headers and decoders (DDS, TGA, PNG, CUR, ANI), the fits from a generated cell to a vanilla-shaped target (and the mattes shared with `presentation.mjs`), the rules that derive `reskin.json`, the sheet definitions and the prompt vocabulary. `lib/raster.mjs` also writes TGA (either origin), PNG, CUR, ICO and ANI. |
+| `content/ui_reskin.test.mjs` | Tests all of the above on a synthetic game folder generated into a temporary directory, with a negative test for every check. |
 | `content/lib/paths.mjs` | Holds every path the tools use (see the next section). |
 | `content/modules/names.mjs` | Names from the languages of Erdae (spec `docs/specs/02_lore/06_languages.md`). `buildNames` stages `common/names/zin_names.txt` (male, female, surnames and callsigns for every tag and the `default` pool, all from the country's culture and language) and `docs/design/names_report.json`, runs the name checks and fails the build on a violation. `placeNames(target, kind, n)` and `resolveName(request)` are the entry points of the map and politics steps. See "Languages and names" below. |
 | `content/lib/language_generator.mjs`, `content/lib/sound_laws.mjs` | The deterministic name generator (patterns, junction rules, banned-name filter, Windows-1252 and length limits, leak markers, the world registry that refuses duplicates and near-duplicates across languages) and the sound-law engine that derives a daughter language from its family's proto lexicon. |
@@ -39,6 +42,9 @@ by hand, and do not point the builder at the repository.
 | `content/names.test.mjs` | Tests the generator, the pools, `placeNames`, the checks and their negative cases (a banned name, a duplicate, a character outside Windows-1252, a leak, an unknown language, a reserved vault name). It needs no staged tree. |
 | `content/data/world/` | The world data the names read: `languages.json` (24 languages), `cultures.json`, `country_cultures.json` (culture and language of each of the 305 countries), `reserved_names.json` (established vault names that no language may produce), `demography.json`. |
 | `content/data/assets/` | Data of the asset manifest and check: `families.json` (path rules to family, key, kind, group and source), `formats.json` (sizes, formats and mip counts), `bound.json` (files the engine loads by path), `kept.json` (vanilla files ZIN may point at), `implicit_names.json` (names the engine builds, fallback sprites), `uniqueness.json` (thresholds, caps, aliases). |
+| `content/modules/text_sweep.mjs`, `content/lib/text_engine.mjs`, `content/lib/loc_parse.mjs`, `content/lib/banned.mjs` | The vanilla text sweep (spec `docs/specs/07_interface/05_text_sweep.md`): the glossary and template engine, the family writer that stages `localisation/replace/zin_<family>_l_<language>.yml` in ten languages and the people-variant scripted localisation, and the helpers they share. See "Text sweep" below. |
+| `content/checks/text_scan.mjs` | The text scan: finds every installed interface key the game can still show, reports which are replaced, and checks every ZIN value for banned words, colour, icon and placeholder integrity, Windows-1252, copies, duplicates, language copies and people terms. `node content/checks/text_scan.mjs <stagedDir>` is also a CLI. |
+| `content/text_sweep.test.mjs` | Tests the sweep and the scan on a synthetic installed tree generated in a temporary directory, with a negative test for every check; two blocks use the installed game when `HOI4_GAME` is set. |
 | `content/data/` | Inputs: `countries.json` (countries from the map build), `labels.json` (reviewed drawing labels, used for names), `flags-cells.json` (the cell map the flag sheets were generated and sliced with). |
 
 ## Focus trees
@@ -90,6 +96,40 @@ ZIN_ASSETS_UPDATE_BASELINE=1 node tools/content/build.mjs
 ```
 
 `--phase N` (or `ZIN_ASSET_PHASE`) is the roadmap phase: from phase 7 the catalog fallback keys become errors. Perceptual hashes are cached by sha256 in `$ZIN_ART/cache/assets-check.json` (optional; outside the repository). Not yet checked, and listed in the report's `notChecked`: AC2 (no `inventory.json`), AC15 (gates for portraits and event pictures), AC17 (no `meshy_budget.json`) and AC18 (no `hidden` records); planned, accepted-but-unshipped and `kept` records need `inventory.json` and are not in the manifest yet.
+
+## Interface reskin
+
+The full interface reskin keeps every vanilla layout and replaces textures at their vanilla paths (spec section 2). The data lives in `content/data/ui/`; the integration note with the calls for `build.mjs` and the decisions is `docs/design/stage2/ui_infrastructure.md`.
+
+```sh
+cd tools
+node content/modules/ui_inventory.mjs      # read the installed game (HOI4_GAME, plus dlc/ and integrated_dlc/) and write data/ui/vanilla_inventory.json
+node content/modules/ui_reskin.mjs plan    # derive data/ui/reskin.json (one row per inventory entry) and data/ui/sheets/*.json by rules
+node content/modules/ui_reskin.mjs validate   # builder check 2 on the committed tables (exit code 1 on a problem)
+node content/modules/ui_reskin.mjs report  # counts by disposition, family and production step
+node content/art/ui-reskin-jobs.mjs        # write $ZIN_ART/jobs/ui-reskin-jobs.json for imagegen.mjs (does not call the generator)
+GPTIMAGE_MODEL=gpt-6-astra node content/imagegen.mjs "$ZIN_ART/jobs/ui-reskin-jobs.json"   # when the art tranche starts
+```
+
+- **Inventory** (`ui_inventory.mjs`): parses `spriteType`, `corneredTileSpriteType`, `frameAnimatedSpriteType`, `textSpriteType`, `progressbartype` (both textures), `maskedShieldType`, `arrowType` and the chart types in every `interface/**/*.gfx`, resolves each texture case-insensitively (`gfx//x//y.dds` and a `.tga` name that ships as `.dds` both resolve), reads the DDS, TGA, PNG, CUR and ANI headers, decodes the pixels once for the luminance class (`dark` below a mean luma of 96, `light` from 160, alpha weighted) and the alpha kind (`opaque`, `keyed`, `uniform:<a>`, `shaped`), and records which `.gui` file and top-level window names each sprite. Textures a sprite names besides its own (a progress bar's second texture, a shine overlay) become `linked` entries; image files in the engine folders that no sprite names become `file` entries (cursors, the minimap, move arrows, unreferenced art). The output is a pure function of the installed files and holds metadata only.
+- **Table** (`reskin.json`): each row has a disposition `R` replace, `Z` ZIN sprite, `O` override, `D` derived override (reserved), `E` engine-generic, `H` hidden or `U` unreachable, with a reason for `E`, `H` and `U`. An `R` row names the family, sheet, cells, fit (`nine_slice`, `exact`, `cover`, `contain`, `repeat_x`, `repeat_y`, `strip`, `same_shape`), per-frame labels, alpha policy and production step. Sizes, frames and borders are never written into a row; they come from the inventory.
+- **Builder** (`ui_reskin.mjs`): `buildReskin` cuts the cells of every accepted sheet (grid sheets are found on their black ground with `findRegionsAdaptive` and refused if the count is wrong), runs the fit, and stages the file at the vanilla path, the accepted sources and `art/source/reskin_manifest.json`. A row without an accepted source is reported as pending, never as a failure. Cursors, the minimap and the loading chrome belong to `ui_cursors`, `ui_minimap` and `presentation.mjs` and are reported as delegated.
+- **Checks** (`checks/ui_checks.mjs`): freshness of the inventory, coverage, shape of every output, reachability of the `U` rows, no vanilla pixels, provenance, luminance, overrides and determinism, as functions that return `pass`, `fail` or `pending`.
+- **Rollback** (acceptance 10): leave the `R` files out of the staged tree (do not call `buildReskin`); the reskin carries no logic.
+
+## Text sweep
+
+The sweep replaces the installed interface text with Erdae text from the master glossary (`content/data/glossary.json`) without copying a sentence. `buildTextSweep(staged, ctx)` reads the installed key set and each key's placeholder signature (variables, scope calls, colour codes, icon codes), never its words, and applies the family files in `content/data/text/`. Integration note and the exact `build.mjs` calls: `docs/design/stage2/text_sweep.md`.
+
+| File | Content |
+| --- | --- |
+| `data/text/families.json` | The 23 families and the 95 swept files, each family's scope (may its text call a people term), gate (`off`, `report`, `banned`, `strict`), key claims, reach rules, exemptions with reasons, ownership by other modules, and the rows for the installed files outside the families |
+| `data/text/<family>.json`, `<family>.<part>.json` | One family's text: `lit` (key to template), `rows` (`stem` composes a modifier label from its id; a frame call; `same`), `neutral` and `engine` lists (a reason each), `tokenMap`, `phrases` |
+| `data/text/frames.json` | ZIN-written sentence shapes with named holes (`{$label}`) |
+| `data/text/banned_extra.json` | Banned rules the floor of `data/banned_words.json` missed; the glossary's forbid words load as rules too |
+
+A template writes a glossary term as `{id}` or `{id:modifier}` (`s`, `p`, `lc`, `lcp`, `a`, `the`, `uc1`, `people`). The engine colour codes (`§Y`), icon codes (`£civ_factory`) and variables (`$VAL|H$`) are written literally and must equal those of the installed key, or the build stops. A `people` term is allowed only in families whose text is drawn with a country in scope and becomes a call of `common/scripted_localisation/zin_terms.txt`. Keys another module already staged (the months, the stage 1 re-themed keys) are left alone.
+The scan writes `docs/design/validation/text_scan_report.json`: per family the keys, the reachable ones, the replaced, structural and neutral ones, the keys still showing installed text with and without a banned word, and every finding (ZIN text quoted to 80 characters, never an installed value). A family at gate `banned` or `strict` fails the build on a reachable key that still shows an installed banned word; a ZIN text with a banned word fails any family that is not `off`. The whole-file conversion of stage 4 is not written yet.
 
 ## Paths
 

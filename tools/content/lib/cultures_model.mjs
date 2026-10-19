@@ -32,14 +32,17 @@ export const keepOrderJson = v => JSON.stringify(v, null, 2) + '\n';
 
 // `over` replaces a part of the model (tests use it to plant mistakes): game, world, assignments, languages, state.
 export async function loadCultureModel(over = {}) {
-  const game = over.game ?? await readJson(path.join(DATA, 'cultures_game.json'));
+  const gameText = over.game ? JSON.stringify(over.game) : await readFile(path.join(DATA, 'cultures_game.json'), 'utf8');
+  const game = over.game ?? JSON.parse(gameText);
   const world = over.world ?? await readJson(path.join(DATA, 'world/cultures.json'));
   const assignments = over.assignments ?? (await readJson(path.join(DATA, 'world/country_cultures.json'))).countries;
   const languageList = over.languages ?? (await readJson(path.join(DATA, 'world/languages.json'))).languages;
-  const state = over.state ?? await readJson(`${ZIN}/${STATE_CULTURES_FILE}`);
+  // The state table is owner-editable: its bytes are staged as they are, so a build that changes nothing changes nothing.
+  const stateText = over.state ? keepOrderJson(over.state) : await readFile(`${ZIN}/${STATE_CULTURES_FILE}`, 'utf8');
+  const state = over.state ?? JSON.parse(stateText);
   const languageRows = Array.isArray(languageList) ? languageList : Object.values(languageList);
   const languages = Object.fromEntries(languageRows.map(l => [l.id, { id: l.id, name: l.name, family: l.family }]));
-  return { game, world, assignments, languages, state, cultureKeys: Object.keys(game.cultures), faithKeys: Object.keys(game.faiths), languageKeys: Object.keys(game.language_ids) };
+  return { game, gameText, world, assignments, languages, state, stateText, cultureKeys: Object.keys(game.cultures), faithKeys: Object.keys(game.faiths), languageKeys: Object.keys(game.language_ids) };
 }
 
 // ---------------------------------------------------------------------------------------------------- identifiers
@@ -192,8 +195,9 @@ export function resolveStateCulture(model, input) {
       for (const m of rule.minorities) minority.set(m.culture, Math.max(minority.get(m.culture) ?? 0, m.share));
     } else continue;
     applied.push(rule.id);
+    // A named level is the resistance of the area against this owner. An enclave ruled by its own kin does not resist it.
     const level = rule.owner_resistance?.[owner.culture] ?? rule.owner_resistance?.['*'];
-    if (level) explicit.push(level);
+    if (level && !(rule.kind === 'enclave' && sameKin(model, rule.culture, owner.culture))) explicit.push(level);
   }
   if (owner.culture2 && input.include_owner_second !== false && owner.culture2 !== culture) minority.set(owner.culture2, Math.max(minority.get(owner.culture2) ?? 0, game.limits.owner_second_share));
   minority.delete(culture);

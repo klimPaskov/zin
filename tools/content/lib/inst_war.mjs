@@ -2,7 +2,6 @@
 // abilities of the standard, the nine customs of the Council of Captains, the chiefs and their traits, the commander
 // traits of common/unit_leader, the Valour decisions and the leader on_actions the replaced on_actions folder lost.
 import { rng, keyOf } from './core.mjs';
-import { spriteName, VARIANTS } from '../modules/portraits.mjs';
 import { checkMods, HEADER, block, lines, modLines, num, tab, pickFrom, tierOf, countryKey } from './inst_util.mjs';
 
 const Q = s => JSON.stringify(s);
@@ -121,7 +120,7 @@ export async function writeCustoms(staged, env) {
 
 // ============================================================================================ 2.2 chiefs
 // Generated chiefs, marshals and masters for tier A and B realms (the characters spec's named figures replace them
-// by id when they land). Names come from the country's own name pool, portraits from its people's set.
+// by id when they land). Names come from the country's own name pool; the portrait database serves the face by sex and country.
 export function planChiefs(env) {
   const { data, countries, table } = env, { a, b } = tierOf(data.core, countries), skip = new Set(data.core.tiers.noChairs);
   const plan = [];
@@ -165,10 +164,10 @@ export async function writeChiefs(staged, env) {
     const tiers = fam.tiers.length === 1 ? [1] : core.chiefTierFor[p.tier];
     const tier = fam.tiers.length === 1 ? 1 : pickFrom(tiers, r);
     p.trait = `zin_chief_${fam.id}_${tier}`;
-    const token = `${p.id}_adv`, portrait = spriteName(p.people, female, 1 + Math.floor(r() * VARIANTS));
+    const token = `${p.id}_adv`;
     const visible = p.chair === 'navy' ? 'visible = { any_owned_state = { is_coastal = yes } }' : p.chair === 'air' ? 'visible = { zin_rules_skies_present = yes }' : '';
     const adv = lines(`slot = ${chair.slot}`, `idea_token = ${token}`, `ledger = ${chair.ledger}`, `cost = ${core.chairCost}`, `traits = { ${p.trait} }`, visible, block('ai_will_do', 'factor = 1'));
-    chars.push(block(p.id, lines(`name = ${p.id}`, `gender = ${female ? 'female' : 'male'}`, block('portraits', block('civilian', `large = ${portrait}`)), block('advisor', adv)), 1));
+    chars.push(block(p.id, lines(`name = ${p.id}`, `gender = ${female ? 'female' : 'male'}`, block('advisor', adv)), 1));
     loc.set(p.id, `${given} ${surname}`);
     loc.set(token, `${given} ${surname}`);
     startup.push(p);
@@ -225,7 +224,7 @@ export async function writeUnitLeaderTraits(staged, env) {
     else if (t.weight !== undefined) l.push(block('new_commander_weight', t.exclusive ? lines(`factor = ${t.weight}`, block('modifier', `has_trait = ${t.exclusive}\nfactor = 0`)) : `factor = ${t.weight}`));
     out.push(block(t.id, l.join('\n'), 1));
     eloc.set(t.id, t.name); eloc.set(`${t.id}_desc`, t.desc);
-    sprites.use(`GFX_trait_${t.id}`, t.art);
+    sprites.suggest(`GFX_trait_${t.id}`, t.art);
   }
   for (const [k, v] of Object.entries(T.tooltips)) loc.set(k, v);
   // Every ability a trait enables, every chief family a trait converts to, every parent and exclusion must exist.
@@ -290,7 +289,7 @@ export function valourDecisions(env) {
 
 export function writeValour(staged, env) {
   const V = env.data.core.valour, decisions = valourDecisions(env);
-  staged.text('common/decisions/categories/zin_inst.txt', `${HEADER}\n${V.category} = {\n\ticon = zin_valour\n\tpicture = GFX_decision_cat_picture_${V.category}\n\tpriority = 20\n\tallowed = { always = yes }\n\tvisible = { always = yes }\n}\n`);
+  staged.text('common/decisions/categories/zin_inst.txt', `${HEADER}\n${V.category} = {\n\ticon = ${V.category}\n\tpicture = GFX_decision_cat_picture_${V.category}\n\tpriority = 20\n\tallowed = { always = yes }\n\tvisible = { always = yes }\n}\n`);
   staged.text('common/decisions/zin_inst.txt', `${HEADER}\n# The three drills that pay Valour in the long peace (section 3.1): a floor on top of the engine's training.\n${V.category} = {\n${decisions.join('\n')}\n}\n`);
   return { decisions: V.decisions.length };
 }

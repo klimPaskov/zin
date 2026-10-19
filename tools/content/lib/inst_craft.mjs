@@ -1,6 +1,9 @@
 // Institutions, craft group (spec 03_gameplay/08_institutions.md sections 9 and 10): the nine workshops as
 // military-industrial organisations with one tree shape, their policies and AI weights; the four rites as special
 // project specialisations, the nine spells, their prototype rewards, the scholars' traits and the scars.
+import { readFile } from 'node:fs/promises';
+import { GAME } from './paths.mjs';
+import { scriptText } from './clausewitz.mjs';
 import { checkMods, HEADER, block, lines, modLines, num, countryKey } from './inst_util.mjs';
 
 const POS = { m: 1, p: 3, s: 5 };
@@ -43,7 +46,7 @@ export async function writeWorkshops(staged, env) {
       sprites.use(`GFX_zin_mio_${iconKind}`, TRAIT_ICON[iconKind]);
       traits.push(block('trait', lines(`token = ${b.token}`, `name = ${w.id}_${b.token}`, `icon = GFX_zin_mio_${iconKind}`,
         b.parent ? `any_parent = { ${b.parent.join(' ')} }` : '', b.eq ? block('equipment_bonus', modLines(b.eq)) : '', b.prod ? block('production_bonus', modLines(b.prod)) : '', b.org ? block('organization_modifier', modLines(b.org)) : '',
-        gate ? block('available', `FROM = {\n\thas_tech = ${gate}\n}`) : '', block('position', `x = ${POS[b.col]} y = ${b.row}`), block('ai_will_do', 'factor = 1')), 1));
+        gate ? block('available', `FROM = {\n\thas_tech = ${gate}\n}`) : '', block('position', `x = ${POS[b.col]} y = ${b.row}`), block('ai_will_do', 'factor = 1'))));
       loc.set(`${w.id}_${b.token}`, b.name); loc.set(`${w.id}_${b.token}_desc`, b.desc);
     }
     // the capstone
@@ -51,9 +54,9 @@ export async function writeWorkshops(staged, env) {
     sprites.use('GFX_zin_mio_capstone', TRAIT_ICON.capstone);
     traits.push(block('trait', lines('token = cap', `name = ${w.id}_cap`, 'icon = GFX_zin_mio_capstone', 'special_trait_background = yes', `all_parents = { m3 p3 s3 }`,
       block('equipment_bonus', modLines(w.cap.eq)), Object.keys(w.cap.prod).length ? block('production_bonus', modLines(w.cap.prod)) : '',
-      block('available', `FROM = {\n\thas_tech = ${C.tree.capstoneTech}\n}`), 'position = { x = 3 y = 3 }', block('ai_will_do', 'factor = 1')), 1));
+      block('available', `FROM = {\n\thas_tech = ${C.tree.capstoneTech}\n}`), 'position = { x = 3 y = 3 }', block('ai_will_do', 'factor = 1'))));
     loc.set(`${w.id}_cap`, w.cap.name); loc.set(`${w.id}_cap_desc`, w.cap.desc);
-    const initial = block('initial_trait', lines(`name = ${w.id}_initial`, block('equipment_bonus', modLines(w.initial.eq))), 1);
+    const initial = block('initial_trait', lines(`name = ${w.id}_initial`, block('equipment_bonus', modLines(w.initial.eq))));
     loc.set(`${w.id}_initial`, w.initial.name); loc.set(`${w.id}_initial_desc`, `Every ${w.name.replace(/^The /, '')} item starts with this.`);
     out.push(block(w.id, lines(`name = ${w.id}`, `icon = GFX_${w.id}`, block('allowed', allowedTrigger(w, env)),
       block('equipment_type', w.eq.join('\n')), block('research_categories', w.cats.join('\n')), 'task_capacity = 3', block('ai_will_do', `factor = ${w.ai ?? 1}`),
@@ -61,7 +64,7 @@ export async function writeWorkshops(staged, env) {
       initial, ...traits), 0));
   }
   staged.text('common/military_industrial_organization/organizations/zin_workshops.txt', `${HEADER}\n# The nine Erdae workshops (guilds, a lodge, a stud and orders). One tree shape: Methods, Patterns, Standing, then the capstone.\n# \`allowed\` lists the realms of the peoples that may found each (tags, because the check runs before the people flags exist).\n${out.join('\n\n')}\n`);
-  return { workshops: ids.size, traits: ids.size * 10 };
+  return { workshops: ids.size, workshopTraits: ids.size * 10 };
 }
 // Names that are equipment stats or production stats of the MIO scripts, not country modifiers.
 const EQUIP_STATS = new Set(['reliability', 'build_cost_ic', 'soft_attack', 'hard_attack', 'defense', 'breakthrough', 'armor_value', 'maximum_speed', 'naval_speed', 'naval_range', 'max_strength', 'ap_attack', 'production_cost_factor', 'production_efficiency_gain_factor', 'production_efficiency_cap_factor', 'production_capacity_factor', 'production_resource_need_factor', 'military_industrial_organization_research_bonus', 'military_industrial_organization_task_capacity', 'military_industrial_organization_funds_gain']);
@@ -107,7 +110,7 @@ export async function writeSpells(staged, env) {
   // specialisations and tags
   staged.text('common/special_projects/specialization/zin_spells.txt', `${HEADER}\n# The four rites. The keys are the engine's: the facility buildings name them.\n${R.map(r => {
     sprites.use(`GFX_zin_sp_rite_${r.id}`, r.art); sprites.use(`GFX_zin_sp_rite_${r.id}_blueprint`, r.art);
-    eloc.set(r.spec, r.name); eloc.set(r.building, r.circle);
+    eloc.set(r.spec, r.name);
     return block(r.spec, lines(`icon = GFX_zin_sp_rite_${r.id}`, `blueprint_image = GFX_zin_sp_rite_${r.id}_blueprint`, 'program_background = "GFX_sp_facility_card_bg"', `color = { ${r.color.join(' ')} }`));
   }).join('\n')}\n`);
   staged.text('common/special_projects/project_tags/zin_spells.txt', `${HEADER}\nproject_tags = {\n${R.map(r => `\t${r.tag}`).join('\n')}\n}\n`);
@@ -191,7 +194,15 @@ export async function writeSpells(staged, env) {
   return { spells: sp_ids.size, rewards: rewards.length, scars: C.scars.length };
 }
 const SCAR_ANY = 'OR = { ' + ['hollow', 'wrecked', 'scorched', 'blighted'].map(k => `has_dynamic_modifier = { modifier = zin_inst_scar_${k} }`).join(' ') + ' }';
-const SCAR_FREE = `NOT = { ${['hollow', 'wrecked', 'scorched', 'blighted'].map(k => `has_dynamic_modifier = { modifier = zin_inst_scar_${k} }`).join(' ')} }`;
+const SCAR_FREE = `NOT = { ${SCAR_ANY} }`;
+
+// The engine constants of special projects (sp_time, sp_complexity, sp_scientist_xp_gain, sp_progress, ...). Stage 1 bridged
+// them in zin_constants.txt; from stage 2 the spells are their only user, so they live here, generated from the installed
+// file (removal rule 5: engine data that holds only identifiers and numbers).
+export async function writeSpecialProjectConstants(staged) {
+  const raw = scriptText(await readFile(`${GAME}/common/script_constants/special_project_constants.txt`)).replace(/\r\n/g, '\n').trim();
+  staged.text('common/script_constants/zin_special_projects.txt', `${HEADER}\n# Engine constants of the special projects, generated from the installed file. They replace the stage-1 bridge of the same groups.\n${raw}\n`);
+}
 
 export async function writeScholarTraits(staged, env) {
   const { data, loc, sprites } = env, C = data.craft, out = [];
