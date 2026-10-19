@@ -299,6 +299,7 @@ export const aiStrategyFile = () => `${HEADER}\n# A realm whose workshops, forge
 // ------------------------------------------------------------------------------------------- localisation
 // Keys the installed game defines go to localisation/replace; new ZIN keys go to localisation/english. Text is kept in
 // named groups so that a module that writes the same keys can switch one off (ctx.skipLoc).
+const NESTED_NAME_MODIFIERS = new Set(['energy_infrastructure', 'industrial_infrastructure']);
 export function generatedGroups(data) {
   const g = { resources: {}, buildings: {}, facilities: {}, building_modifiers: {}, state_categories: {}, landmark: {} };
   const put = (group, k, v) => { if (k in g[group]) throw new Error(`Generated text key ${k} twice`); g[group][k] = v; };
@@ -316,7 +317,8 @@ export function generatedGroups(data) {
     put(group, b.key, b.name); put(group, `${b.key}_plural`, b.plural); put(group, `${b.key}_desc`, b.desc);
   }
   for (const b of data.buildings) {
-    put('building_modifiers', `modifier_production_speed_${b.key}_factor`, `§Y${b.name}§! building speed`);
+    // The installed text of these two keys nests the building's own name key ($energy_infrastructure$); the placeholder stays (check X9).
+    put('building_modifiers', `modifier_production_speed_${b.key}_factor`, NESTED_NAME_MODIFIERS.has(b.key) ? `§Y$${b.key}$§! building speed` : `§Y${b.name}§! building speed`);
     put('building_modifiers', `modifier_production_speed_${b.key}_factor_desc`, `Changes the speed at which ${b.plural} are built.`);
   }
   for (const k of ['infrastructure', 'industrial_complex', 'arms_factory', 'rail_way', 'bunker']) {

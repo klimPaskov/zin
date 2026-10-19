@@ -374,7 +374,7 @@ test('scan: the clean fixture passes and reports the families', async () => {
   assert.deepEqual(checks(scan), []);
   assert.deepEqual(scan.iconsUsed, ['civ_factory'], 'the icons used in ZIN text are listed for the reskin');
   assert.equal(scan.families.core.keys, 12);
-  assert.equal(scan.families.core.zin, 4 + 2 + 1, 'four literals, two composed labels and the calendar's January');
+  assert.equal(scan.families.core.zin, 4 + 2 + 1, 'four literals, two composed labels and the calendar January');
 });
 
 test('scan: counts replaced, neutral, structural, exempt and unreached keys', async () => {

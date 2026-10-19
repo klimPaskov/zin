@@ -40,7 +40,7 @@ const readYml = rel => {
   for (const line of body.split('\n').slice(1)) { if (!line.trim()) continue; const m = line.match(/^ ([A-Za-z0-9_.\-']+):0 "(.*)"$/); assert(m, `localisation line shape: ${line.slice(0, 80)}`); out.set(m[1], m[2].replace(/\\n/g, '\n').replace(/\\"/g, '"')); }
   return out;
 };
-const replaceLoc = readYml('localisation/replace/zin_diplomacy_l_english.yml'), englishLoc = readYml('localisation/english/zin_diplomacy_l_english.yml');
+const replaceLoc = readYml('localisation/replace/zin_leagues_l_english.yml'), englishLoc = readYml('localisation/english/zin_leagues_l_english.yml');
 const allLoc = k => replaceLoc.has(k) || englishLoc.has(k);
 
 // ----------------------------------------------------------------------------------------------- shape of the output
@@ -50,7 +50,7 @@ test('The module writes every file of the stage-2 rows it owns, and nothing is e
     'common/autonomous_states/zin_autonomy.txt', 'common/occupation_laws/occupation_laws.txt', 'common/resistance_compliance_modifiers/resistance_modifiers.txt',
     'common/peace_conference/ai_peace/zin_peace.txt', 'common/peace_conference/categories/zin_peace.txt', 'common/peace_conference/cost_modifiers/zin_peace.txt',
     'common/technology_sharing/zin_tech_sharing.txt', 'common/bop/zin_bop.txt', 'common/modifiers/AAT_power_balance_modifiers.txt', 'common/modifiers/BBA_power_balance_modifiers.txt', 'common/modifiers/MUN_power_balance_modifiers.txt',
-    'common/collections/zin_regions.txt', 'localisation/replace/zin_diplomacy_l_english.yml', 'localisation/english/zin_diplomacy_l_english.yml'];
+    'common/collections/zin_regions.txt', 'localisation/replace/zin_leagues_l_english.yml', 'localisation/english/zin_leagues_l_english.yml'];
   for (const f of need) assert(staged.files.has(f), `missing ${f}`);
   for (const f of ['common/factions/upgrades/zin_factions.txt', 'common/factions/upgrades/groups/zin_factions.txt']) {
     assert(staged.files.has(f));
@@ -377,9 +377,9 @@ test('Research sharing: one group per league, open to its members at 0.10', () =
 
 test('The interim balance of power is never started and uses real modifiers', () => {
   const bop = text('common/bop/zin_bop.txt');
-  assert(bop.includes('zin_interim_bop = {') && /^# .*never started/m.test(bop));
+  assert(bop.includes('zin_court_balance = {') && /^# .*never started/m.test(bop));
   assert.equal(defined('common/bop/zin_bop.txt').length, 1);
-  for (const [f, n] of [['AAT', 1], ['BBA', 2], ['MUN', 3]]) assert(text(`common/modifiers/${f}_power_balance_modifiers.txt`).includes(`zin_interim_power_balance_${n} = {`));
+  for (const [f, n] of [['AAT', 1], ['BBA', 2], ['MUN', 3]]) assert(text(`common/modifiers/${f}_power_balance_modifiers.txt`).includes(`zin_court_power_balance_${n} = {`));
   assert(![...staged.files.keys()].some(k => /on_actions/.test(k) && text(k).includes('set_power_balance')));
 });
 
@@ -432,7 +432,7 @@ test('Dependencies on other modules are listed, and none of them is something th
 
 // -------------------------------------------------------------------------------------------------------- localisation
 test('Localisation files are UTF-8 with BOM and l_english, one key per line', () => {
-  for (const rel of ['localisation/replace/zin_diplomacy_l_english.yml', 'localisation/english/zin_diplomacy_l_english.yml']) {
+  for (const rel of ['localisation/replace/zin_leagues_l_english.yml', 'localisation/english/zin_leagues_l_english.yml']) {
     const bytes = staged.files.get(rel);
     assert.deepEqual([...bytes.subarray(0, 3)], [0xef, 0xbb, 0xbf], `${rel}: BOM`);
     assert(bytes.toString('utf8').replace(/^﻿/, '').startsWith('l_english:\n'));

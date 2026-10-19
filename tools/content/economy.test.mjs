@@ -163,10 +163,10 @@ test('Energy defines are written for the economy stage and exist in the installe
   assert.equal(byKey.BASE_COUNTRY_ENERGY_PRODUCTION.value, 12);
   assert.equal(byKey.NUM_FACTORIES_IN_STATE_TO_WANT_ENERGY_REDUCTION.value, 3);
   assert.equal(byKey.TOTAL_STATE_EXTRACTED_RESOURCES_FOR_BUILDING_RESOURCE_CAP_BUILDING.value, 12);
-  assert(rows.every(r => r.fromStage === 2 && r.why.length > 20));
+  assert(rows.every(r => r.fromStage <= 2 && r.why.length > 20), "pulled forward to stage 1 when the economy slice was wired");
   const inEffect = rowsInEffect(defs.rows, 2).map(r => r.key);
   assert(inEffect.includes('BASE_COUNTRY_ENERGY_PRODUCTION'));
-  assert(!rowsInEffect(defs.rows, 1).some(r => r.key === 'BASE_COUNTRY_ENERGY_PRODUCTION'), 'not before stage 2');
+  assert(rowsInEffect(defs.rows, 1).some(r => r.key === 'BASE_COUNTRY_ENERGY_PRODUCTION'), 'in effect from stage 1 (pulled forward when the slice was wired)');
   assert(!defs.rows.some(r => r.key === 'ENERGY_RESOURCE' || r.key === 'RESOURCE_TO_ENERGY_COEFFICIENT'), 'Grain stays the energy resource at 9 per unit');
   assert.equal(data.energy.engineResource, 'coal');
   assert.equal(data.energy.fuelResource, 'oil');
@@ -434,7 +434,7 @@ test('The sprite list names the strips and the frame counts the art track draws'
 
 test('The disposition rows this module satisfies are staged, and the kept folders are not touched', async () => {
   const disp = await loadJson('dispositions.json');
-  const mine = disp.rows.filter(r => r.owner === 'docs/specs/03_gameplay/02_economy.md' && r.stage === 2 && ['common/resources/00_resources.txt', 'common/buildings/01_landmark_buildings.txt'].includes(r.path));
+  const mine = disp.rows.filter(r => r.owner === 'docs/specs/03_gameplay/02_economy.md' && r.stage <= 2 && ['common/resources/00_resources.txt', 'common/buildings/01_landmark_buildings.txt'].includes(r.path));
   assert.equal(mine.length, 2);
   for (const r of mine) for (const z of r.zin) assert(staged.files.has(z), z);
   for (const keep of ['common/state_category', 'common/buildings', 'common/terrain']) assert.equal(disp.rows.find(r => r.path === keep).action, 'keep');

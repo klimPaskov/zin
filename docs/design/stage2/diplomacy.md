@@ -28,12 +28,12 @@ The builder writes 27 files and 18 templates, 17 joining rules, 39 engine rules,
 | `common/autonomous_states` | `zin_autonomy.txt` |
 | `common/peace_conference/{ai_peace,categories,cost_modifiers}` | `zin_peace.txt` each |
 | `common/technology_sharing` | `zin_tech_sharing.txt` (diplomacy owns this row; if the technology slice also writes this path the build stops on the duplicate staged file) |
-| `common/bop` | `zin_bop.txt` (interim stub `zin_interim_bop`, never started) |
+| `common/bop` | `zin_bop.txt` (interim stub `zin_court_balance`, never started) |
 | overrides by name | `common/occupation_laws/occupation_laws.txt`, `common/resistance_compliance_modifiers/resistance_modifiers.txt`, `common/modifiers/{AAT,BBA,MUN}_power_balance_modifiers.txt` |
 
 Not written here (other slices of the same spec row): intelligence agencies and upgrades, operations, phases, timed activities, operative code names, scorers.
 
-Extra files the leagues need (all in already replaced folders, no new row): `common/collections/zin_regions.txt` (12 `zin_region_<key>` collections, the held collections and `zin_faction_cores_lost`), `common/scripted_triggers/zin_diplomacy.txt` (`zin_diplo_refusal_binds`, `zin_diplo_is_dark_power`), `common/scripted_effects/zin_diplomacy_leagues.txt`, `common/on_actions/zin_diplomacy_leagues.txt` (one `on_monthly`), `interface/zin_diplomacy.gfx` (interim sprites), and the two text files `localisation/replace|english/zin_diplomacy_l_english.yml`.
+Extra files the leagues need (all in already replaced folders, no new row): `common/collections/zin_regions.txt` (12 `zin_region_<key>` collections, the held collections and `zin_faction_cores_lost`), `common/scripted_triggers/zin_diplomacy.txt` (`zin_diplo_refusal_binds`, `zin_diplo_is_dark_power`), `common/scripted_effects/zin_diplomacy_leagues.txt`, `common/on_actions/zin_diplomacy_leagues.txt` (one `on_monthly`), `interface/zin_diplomacy.gfx` (interim sprites), and the two text files `localisation/replace|english/zin_leagues_l_english.yml`.
 
 ## 3. Engine keys kept (the game or kept vanilla files name them)
 

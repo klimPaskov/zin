@@ -203,31 +203,8 @@ function buildFocus(staged, loc) {
   return CONT.map(c => c[3]);
 }
 
-// Engine AI research focuses keep their engine keys; weights name the technology categories still loaded.
-const AI_FOCUSES = {
-  ai_focus_defense: { cat_fortification: 5, construction_tech: 2, artillery: 2 },
-  ai_focus_aggressive: { armor: 5, motorized_equipment: 2 },
-  ai_focus_war_production: { industry: 10, construction_tech: 2 },
-  ai_focus_military_equipment: { infantry_weapons: 50, infantry_tech: 15, artillery: 8, support_tech: 6.5 },
-  ai_focus_military_advancements: { land_doctrine: 100, armor: 10, train_tech: 5 },
-  ai_focus_peaceful: { industry: 15, construction_tech: 5 },
-  ai_focus_naval: { naval_equipment: 5, naval_doctrine: 100, marine_tech: 10 },
-  ai_focus_naval_air: { naval_air: 4 },
-  ai_focus_aviation: { air_doctrine: 50, light_air: 20 },
-};
-async function buildAiFocuses(staged) {
-  const cats = await technologyCategories();
-  const body = Object.entries(AI_FOCUSES).map(([k, research]) => {
-    for (const c of Object.keys(research)) if (!cats.has(c)) throw new Error(`AI focus ${k} names unknown technology category ${c}`);
-    return `${k} = {\n\tresearch = {\n${cw(research, 2)}\t}\n}`;
-  });
-  staged.text('common/ai_focuses/zin_ai_focuses.txt', `${HEADER}\n# The engine's AI research focuses (keys read by the engine and by continuous focuses), with ZIN weights.\n${body.join('\n')}\n`);
-}
-async function technologyCategories() {
-  const dir = `${GAME}/common/technology_tags`, out = new Set();
-  for (const f of await readdir(dir)) for (const e of parse(scriptText(await readFile(`${dir}/${f}`)))) if (e.k === 'technology_categories' && Array.isArray(e.v)) for (const x of e.v) if (x.k === null) out.add(x.v);
-  return out;
-}
+// The engine's AI research focuses (common/ai_focuses) are written by modules/technologies.mjs since stage 2: their
+// weights name the ZIN technology categories, which that module owns.
 
 // ---------------------------------------------------------------------------------------------- engine hooks
 // Triggers the engine calls by name (spec 3.6), and the triggers and effects kept vanilla files call for good.
@@ -308,7 +285,6 @@ function buildCollections(staged, loc) {
   staged.text('common/collections/zin_generic_collections.txt', `${HEADER}\n# Generic collections the engine names.\ncountry_and_all_subjects = {\n\tinput = game:scope\n\toperators = { country_and_all_subjects }\n\tname = ZIN_COLLECTION_COUNTRY_AND_ALL_SUBJECTS\n}\nfaction_members = {\n\tinput = game:scope\n\toperators = { faction_members }\n\tname = ZIN_COLLECTION_FACTION_MEMBERS\n}\n`);
   staged.text('common/mtth/zin_mtth.txt', `${HEADER}\n# Story mean times (historical-path spec). Read as mtth:<name>.\nzin_story_mean_time = {\n\tbase = 365\n}\n`);
   staged.text('common/ai_strategy_plans/zin_interim_plan.txt', `${HEADER}\n# Interim stub: keeps the replaced folder non-empty until the historical-path spec ships its plans.\nzin_interim_plan = {\n\tname = "zin_interim_plan"\n\tdesc = ""\n\tallowed = { always = no }\n\tenable = { always = no }\n\tabort = { always = yes }\n\tai_national_focuses = {\n\t\tzin_long_peace_keep_the_peace\n\t}\n\tweight = {\n\t\tfactor = 0\n\t}\n}\n`);
-  staged.text('common/ai_strategy/zin_interim_ai_strategy.txt', `${HEADER}\n# Interim stub: keeps the replaced folder non-empty until the historical-path spec ships its strategies.\nzin_interim_ai_strategy = {\n\tallowed = { always = no }\n\tenable = { always = no }\n\tabort = { always = yes }\n\tai_strategy = {\n\t\ttype = role_ratio\n\t\tid = infantry\n\t\tvalue = 0\n\t}\n}\n`);
 }
 
 // One theater per Erdae region: a strategic region joins the region (country table scan) that owns most of its
@@ -343,15 +319,10 @@ async function buildTheaters(staged, loc, zin, countries) {
 
 // --------------------------------------------------------------------------------------------- interim stubs
 function buildStubs(staged, loc) {
-  loc.text.zin_interim_category = 'Matters of State'; loc.text.zin_interim_noop = 'An Unwritten Matter'; loc.text.zin_interim_noop_desc = 'Nothing to decide yet.';
-  staged.text('common/decisions/categories/zin_interim_categories.txt', `${HEADER}\n# Interim stub until the mechanic specs ship their categories.\nzin_interim_category = {\n\tallowed = { always = no }\n\tvisible = { always = no }\n}\n`);
-  staged.text('common/decisions/zin_decisions_interim.txt', `${HEADER}\n# Interim stub until the mechanic specs ship their decisions.\nzin_interim_category = {\n\tzin_interim_noop = {\n\t\tallowed = { always = no }\n\t\tvisible = { always = no }\n\t\tavailable = { always = no }\n\t\tcost = 0\n\t\tai_will_do = { factor = 0 }\n\t}\n}\n`);
-  loc.text['zin_world.1.t'] = 'The Long Peace'; loc.text['zin_world.1.d'] = 'The crowns of Erdae keep their old oaths.'; loc.text['zin_world.1.a'] = 'So it has always been.';
-  staged.text('events/zin_world.txt', `${HEADER}\n# Interim stub until the events specs ship (namespace zin_world). Hidden, triggered only, no effect.\nadd_namespace = zin_world\ncountry_event = {\n\tid = zin_world.1\n\ttitle = zin_world.1.t\n\tdesc = zin_world.1.d\n\thidden = yes\n\tis_triggered_only = yes\n\toption = {\n\t\tname = zin_world.1.a\n\t}\n}\n`);
   // The kept compliance_modifiers.txt fires occupied_countries.1 when an occupied state's compliance allows a
   // collaboration government. ZIN owns the event; until the diplomacy spec writes that choice it does nothing.
   loc.text.zin_occupied_countries_continue = 'Let it be.';
-  staged.text('events/zin_engine_events.txt', `${HEADER}\n# Events kept vanilla files fire by id (permanent; the diplomacy spec gives them content).\nadd_namespace = occupied_countries\ncountry_event = {\n\tid = occupied_countries.1\n\thidden = yes\n\tis_triggered_only = yes\n\toption = {\n\t\tname = zin_occupied_countries_continue\n\t}\n}\n`);
+  staged.text('events/zin_engine_events.txt', `${HEADER}\n# Events kept vanilla files fire by id (permanent; the diplomacy spec gives them content).\nadd_namespace = occupied_countries\ncountry_event = {\n\tid = occupied_countries.1\n\thidden = yes\n\tis_triggered_only = yes\n\toption = {\n\t\tname = zin_occupied_countries_continue\n\t}\n}\n# The 90 per cent resistance level (resistance_modifiers.txt of the diplomacy slice) fires occupied_countries.2. Inert until the\n# occupation and war slice gives the uprising its content.\ncountry_event = {\n\tid = occupied_countries.2\n\thidden = yes\n\tis_triggered_only = yes\n\toption = {\n\t\tname = zin_occupied_countries_continue\n\t}\n}\n`);
   staged.text('common/focus_inlay_windows/zin_inlays.txt', `${HEADER}\n# Interim stub until the Aenor tree ships its inlay.\nzin_interim_inlay = {\n\twindow_name = zin_interim_inlay_window\n\tinternal = yes\n\tvisible = { always = no }\n}\n`);
   staged.text('interface/zin_interim_inlay.gui', `guiTypes = {\n\tcontainerWindowType = {\n\t\tname = "zin_interim_inlay_window"\n\t\tposition = { x = 0 y = 0 }\n\t\tsize = { width = 1 height = 1 }\n\t}\n}\n`);
 }
@@ -408,6 +379,26 @@ async function buildGameRules(staged, loc) {
   staged.text('common/game_rules/00_game_rules.txt', `${HEADER}\n# Overrides the vanilla file: the engine's generic and peace-score rules with ZIN text. ZIN rules live in\n# zin_game_rules.txt (defines and rules spec). The vanilla country rules are dropped.\n${out.join('\n')}\n`);
 }
 
+// The warfare spec's rule zin_rule_skies (01_warfare.md section 8) is read by the technology slice's triggers
+// (zin_rules_skies_present, zin_rules_skies_beasts), which are wired before the warfare module. Written here in the final form
+// of common/game_rules/zin_war_rules.txt and localisation/english/zin_rules_l_english.yml; the warfare module takes both files
+// over and must then stop this writer (the builder stops on the duplicate staged path). No icon: no GFX_zin_rule_* sprite exists yet.
+function buildInterimRules(staged) {
+  const opt = (name, def) => `\t${def ? 'default' : 'option'} = {\n\t\tname = ${name}\n\t\ttext = ZIN_RULE_SKIES_${name.toUpperCase()}\n\t\tdesc = ZIN_RULE_SKIES_${name.toUpperCase()}_DESC\n\t}`;
+  staged.text('common/game_rules/zin_war_rules.txt', `${HEADER}\n# Interim writer in vanilla_removal.mjs until the warfare module is wired (it owns this file).\nzin_rule_skies = {\n\tname = ZIN_RULE_SKIES\n\tdesc = ZIN_RULE_SKIES_DESC\n\tgroup = RULE_GROUP_ZIN\n${opt('dragons_only', true)}\n${opt('beasts', false)}\n${opt('none', false)}\n}\n`);
+  staged.loc('zin_rules', {
+    RULE_GROUP_ZIN: 'Erdae',
+    ZIN_RULE_SKIES: 'The Skies',
+    ZIN_RULE_SKIES_DESC: 'Whether beasts fly over the war. The air layer holds only the beasts of Erdae, never machines.',
+    ZIN_RULE_SKIES_DRAGONS_ONLY: 'Dragons Only',
+    ZIN_RULE_SKIES_DRAGONS_ONLY_DESC: 'Dragon flights take the field only when a power grants them; the Eyries folder shows dragon lore alone.',
+    ZIN_RULE_SKIES_BEASTS: 'Beasts of the Mountains',
+    ZIN_RULE_SKIES_BEASTS_DESC: 'Griffin riders join the dragons, and any realm that knows the Eyries may raise them.',
+    ZIN_RULE_SKIES_NONE: 'Empty Skies',
+    ZIN_RULE_SKIES_NONE_DESC: 'No wing takes the air. The Eyries folder and the scorpions are hidden, and dragons become a timed boon.',
+  });
+}
+
 function buildOverrides(staged, loc) {
   // common/defines/zin_defines.lua (the hands-off tag included) is written by modules/defines.mjs.
   // Vanilla 1.19.3 names three unit models it never defines: the equipment designer's tank icons name
@@ -433,12 +424,12 @@ export async function buildVanillaRemoval(staged, { zin, countries }) {
   // scripted" without it). The sprites are the engine's own focus frames.
   staged.text('common/national_focus/00_zin_titlebar_styles.txt', `${HEADER}\nstyle = {\n\tname = zin_default_style\n\tdefault = yes\n\tunavailable = GFX_focus_unavailable\n\tcompleted = GFX_focus_completed\n\tavailable = GFX_focus_can_start\n\tcurrent = GFX_focus_current\n}\n`);
   for (const m of contModifiers) await assertModifiers('continuous focus', m);
-  await buildAiFocuses(staged);
   buildOpinion(staged, loc);
   buildCollections(staged, loc);
   const theaters = await buildTheaters(staged, loc, zin, countries);
   buildStubs(staged, loc);
   await buildGameRules(staged, loc);
+  buildInterimRules(staged);
   buildOverrides(staged, loc);
   // Engine hook and permanent definitions; bridges are appended by vanilla_bridges.mjs.
   const engine = { triggers: { ...PERMANENT_TRIGGERS }, effects: await permanentEffects(), dynamicModifiers: await permanentDynamicModifiers(loc) };

@@ -46,7 +46,7 @@ test('The defines file opens the game in 4A 1748 and makes the nuclear defines i
   assert.match(lua, /NDefines\.NGame\.END_DATE = "1800\.1\.1\.1"/);
   assert.match(lua, /NDefines\.NDiplomacy\.TENSION_TIME_SCALE_START_DATE = "1748\.3\.1\.12"/);
   assert.match(lua, /NDefines\.NRaids\.NUCLEAR_BOMB_PRODUCTION_SCALE = 1000000/);
-  assert.match(lua, /NDefines\.NTechnology\.BASE_YEAR_AHEAD_PENALTY_FACTOR = 0 /, 'no ahead-of-time penalty until the warfare stage');
+  assert.match(lua, /NDefines\.NTechnology\.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2 /, 'the ahead-of-time penalty returns with the Erdae technology years');
   assert.match(lua, /NDefines\.NGame\.HANDS_OFF_START_TAG = "Y60"/);
   assert(!/=s*"19dd/.test(lua), 'no vanilla date is assigned');
 });

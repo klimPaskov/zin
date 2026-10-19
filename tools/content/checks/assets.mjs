@@ -243,7 +243,8 @@ export function runChecks(ctx, A, manifest = null) {
     else if (locDefined.has(u.key) && g.locDefs.get(u.key).value === '') F.add('LOC_EMPTY', 'error', u.file, `The key ${u.key} (line ${u.line}) has an empty value.`, u.key);
   }
   for (const t of g.texticons) {
-    const ok = spriteKnown(`GFX_${t.name}`); R.ref('texticon', ok || !vanillaOk);
+    // The installed text writes both forms: £name and £GFX_name (the engine finds the sprite GFX_name either way).
+    const ok = spriteKnown(`GFX_${t.name}`) || (t.name.startsWith('GFX_') && spriteKnown(t.name)); R.ref('texticon', ok || !vanillaOk);
     if (!ok && vanillaOk) F.add('TEXTICON_MISSING', 'error', t.file, `The text icon £${t.name} (key ${t.key}) has no GFX_${t.name} sprite.`, t.name);
   }
   for (const lf of g.locFiles) {

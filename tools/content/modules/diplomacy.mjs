@@ -478,9 +478,9 @@ export async function buildDiplomacy(staged, ctx = {}) {
     }
   }
   for (const [k, v] of Object.entries(text.english)) loc(english, k, v);
-  staged.add('localisation/replace/zin_diplomacy_l_english.yml', yml(replace));
-  staged.loc('zin_diplomacy', english);
-  files.push('localisation/replace/zin_diplomacy_l_english.yml', 'localisation/english/zin_diplomacy_l_english.yml');
+  staged.add('localisation/replace/zin_leagues_l_english.yml', yml(replace));
+  staged.loc('zin_leagues', english);
+  files.push('localisation/replace/zin_leagues_l_english.yml', 'localisation/english/zin_leagues_l_english.yml');
 
   const counts = {
     templates: defs.templates.length, joiningRules: base.joiningRules.length, engineRules: base.engineRules.length, groups: defs.groups.length, goals: defs.goals.length, manifests: defs.manifests.length,

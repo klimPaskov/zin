@@ -49,7 +49,5 @@ export async function silencedFiles({ game = GAME, data } = {}) {
 export async function buildSilenced(staged) {
   const files = await silencedFiles();
   for (const f of files) staged.text(f.rel, `${HEADER}\n# Silenced: this vanilla file names vanilla countries, which do not exist in ZIN (${f.reason}).\n`);
-  // Division names: the vanilla groups left with the vanilla countries. One generic group for every ZIN realm.
-  staged.text('common/units/names_divisions/zin_division_names.txt', `${HEADER}\n# Generic host names for every realm until the warfare spec names each people's hosts.\nZIN_HOSTS = {\n\tname = "Hosts of the Realm"\n\tcan_use = { always = yes }\n\tdivision_types = { "infantry" "cavalry" "motorized" "mechanized" "light_armor" "medium_armor" "heavy_armor" "artillery_brigade" "mountaineers" "marine" "paratrooper" }\n\tfallback_name = "%d. Host"\n}\n`);
   return { silenced: files.length };
 }

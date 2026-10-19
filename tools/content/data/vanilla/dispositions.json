@@ -10,7 +10,7 @@
    "path": "common/abilities",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/abilities/zin_abilities.txt"
@@ -157,10 +157,10 @@
    "stage": 0,
    "owner": "docs/specs/03_gameplay/06_historical_path_and_ai.md",
    "zin": [
-    "common/ai_strategy/zin_interim_ai_strategy.txt"
+    "common/ai_strategy/zin_economy.txt",
+    "common/ai_strategy/zin_institutions.txt"
    ],
-   "reason": "Vanilla AI strategies name vanilla tags and states; an interim stub keeps the folder non-empty until the historical-path spec ships",
-   "stub": "common/ai_strategy/zin_interim_ai_strategy.txt"
+   "reason": "Vanilla AI strategies name vanilla tags and states; the interim stub left in stage 2 because the economy and institutions slices ship strategies."
   },
   {
    "path": "common/ai_strategy_plans",
@@ -199,7 +199,7 @@
    "path": "common/autonomous_states",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/autonomous_states/zin_autonomy.txt"
@@ -221,7 +221,7 @@
    "path": "common/bop",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/04_mechanics/",
    "zin": [
     "common/bop/zin_bop.txt"
@@ -241,7 +241,7 @@
    "path": "common/buildings/01_landmark_buildings.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
     "common/buildings/01_landmark_buildings.txt"
@@ -274,7 +274,7 @@
    "path": "common/combat_tactics.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/combat_tactics.txt"
@@ -327,10 +327,11 @@
    "path": "common/country_leader",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/02_lore/02_characters.md",
    "zin": [
-    "common/country_leader/00_zin_leader_traits.txt"
+    "common/country_leader/00_zin_leader_traits.txt",
+    "common/country_leader/zin_military_traits.txt"
    ],
    "reason": "ZIN ruler and councillor traits ship in stage 1 beside the vanilla files. The folder is replaced in stage 2 with the unit-leader trait overrides: the kept common/unit_leader/00_traits.txt names the vanilla advisor traits (specialist_advisor_trait = army_chief_offensive_1 and the rest), and the stage-1 Linux run logged about 100 malformed tokens without them."
   },
@@ -373,10 +374,9 @@
    "stage": 0,
    "owner": "docs/specs/04_mechanics/",
    "zin": [
-    "common/decisions/zin_decisions_interim.txt"
+    "common/decisions/zin_inst.txt"
    ],
-   "reason": "Vanilla decisions are removed; one hidden interim decision until the mechanic specs ship",
-   "stub": "common/decisions/zin_decisions_interim.txt"
+   "reason": "Vanilla decisions are removed; the interim stub left in stage 2 because the institutions slice ships decisions (zin_inst.txt)."
   },
   {
    "path": "common/decisions/categories",
@@ -385,10 +385,9 @@
    "stage": 1,
    "owner": "docs/specs/04_mechanics/",
    "zin": [
-    "common/decisions/categories/zin_interim_categories.txt"
+    "common/decisions/categories/zin_inst.txt"
    ],
-   "reason": "replace_path does not reach subfolders; the 57 vanilla category files produced B7 lines",
-   "stub": "common/decisions/categories/zin_interim_categories.txt"
+   "reason": "replace_path does not reach subfolders; the 57 vanilla category files produced B7 lines. The interim stub left in stage 2 because the institutions slice ships categories."
   },
   {
    "path": "common/defines",
@@ -432,7 +431,7 @@
    "path": "common/doctrines/folders",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/doctrines/folders/zin_doctrines.txt"
@@ -443,7 +442,7 @@
    "path": "common/doctrines/grand_doctrines",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/doctrines/grand_doctrines/zin_doctrines.txt"
@@ -463,7 +462,7 @@
    "path": "common/doctrines/subdoctrines/air",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/doctrines/subdoctrines/air/zin_doctrines.txt"
@@ -474,7 +473,7 @@
    "path": "common/doctrines/subdoctrines/land",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/doctrines/subdoctrines/land/zin_doctrines.txt"
@@ -485,7 +484,7 @@
    "path": "common/doctrines/subdoctrines/sea",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/doctrines/subdoctrines/sea/zin_doctrines.txt"
@@ -496,7 +495,7 @@
    "path": "common/doctrines/subdoctrines/special_forces",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/doctrines/subdoctrines/special_forces/zin_doctrines.txt"
@@ -507,7 +506,7 @@
    "path": "common/doctrines/tracks",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/doctrines/tracks/zin_doctrines.txt"
@@ -529,7 +528,7 @@
    "path": "common/equipment_groups",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/equipment_groups/zin_equipment_groups.txt"
@@ -558,7 +557,7 @@
    "path": "common/factions/goals",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/goals/zin_factions.txt"
@@ -569,7 +568,7 @@
    "path": "common/factions/icons",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/icons/zin_factions.txt"
@@ -580,7 +579,7 @@
    "path": "common/factions/member_upgrades",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/member_upgrades/zin_factions.txt"
@@ -591,7 +590,7 @@
    "path": "common/factions/member_upgrades/member_groups",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/member_upgrades/member_groups/zin_factions.txt"
@@ -602,7 +601,7 @@
    "path": "common/factions/rules",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/rules/zin_factions.txt"
@@ -613,7 +612,7 @@
    "path": "common/factions/rules/groups",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/rules/groups/zin_factions.txt"
@@ -624,7 +623,7 @@
    "path": "common/factions/templates",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/templates/zin_factions.txt"
@@ -635,23 +634,25 @@
    "path": "common/factions/upgrades",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/upgrades/zin_factions.txt"
    ],
-   "reason": "The ZIN leagues, goals and rules"
+   "reason": "The ZIN leagues, goals and rules",
+   "emptyAllowed": "The installed game ships upgrades/upgrades.txt as a 0-byte file: the research, intelligence and doctrine sharing levels are built into the engine and there is no format to write. ZIN ships a comment-only file; the member upgrades carry the re-themed upgrade kinds."
   },
   {
    "path": "common/factions/upgrades/groups",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/factions/upgrades/groups/zin_factions.txt"
    ],
-   "reason": "The ZIN leagues, goals and rules"
+   "reason": "The ZIN leagues, goals and rules",
+   "emptyAllowed": "The installed game ships upgrades/groups/upgrade_groups.txt as a 0-byte file: the upgrade groups are built into the engine and there is no format to write. ZIN ships a comment-only file."
   },
   {
    "path": "common/focus_inlay_windows",
@@ -771,7 +772,7 @@
    "path": "common/intelligence_agencies",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/intelligence_agencies/zin_agencies.txt"
@@ -791,7 +792,7 @@
    "path": "common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt"
@@ -829,7 +830,7 @@
    "path": "common/military_industrial_organization/ai_bonus_weights",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
     "common/military_industrial_organization/ai_bonus_weights/zin_ai_bonus_weights.txt"
@@ -840,7 +841,7 @@
    "path": "common/military_industrial_organization/organizations",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
     "common/military_industrial_organization/organizations/zin_workshops.txt"
@@ -851,7 +852,7 @@
    "path": "common/military_industrial_organization/policies",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
     "common/military_industrial_organization/policies/zin_workshop_policies.txt"
@@ -880,7 +881,7 @@
    "path": "common/modifiers/AAT_power_balance_modifiers.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/modifiers/AAT_power_balance_modifiers.txt"
@@ -891,7 +892,7 @@
    "path": "common/modifiers/BBA_power_balance_modifiers.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/modifiers/BBA_power_balance_modifiers.txt"
@@ -902,7 +903,7 @@
    "path": "common/modifiers/MUN_power_balance_modifiers.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/modifiers/MUN_power_balance_modifiers.txt"
@@ -964,7 +965,7 @@
    "path": "common/occupation_laws/occupation_laws.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/occupation_laws/occupation_laws.txt"
@@ -987,7 +988,7 @@
    "path": "common/operation_phases",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/operation_phases/zin_operation_phases.txt"
@@ -1007,7 +1008,7 @@
    "path": "common/operations",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/operations/zin_operations.txt"
@@ -1038,7 +1039,7 @@
    "path": "common/peace_conference/ai_peace",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/peace_conference/ai_peace/zin_peace.txt"
@@ -1049,7 +1050,7 @@
    "path": "common/peace_conference/categories",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/peace_conference/categories/zin_peace.txt"
@@ -1060,7 +1061,7 @@
    "path": "common/peace_conference/cost_modifiers",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/peace_conference/cost_modifiers/zin_peace.txt"
@@ -1111,7 +1112,7 @@
    "path": "common/raids",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/raids/zin_raids.txt"
@@ -1122,7 +1123,7 @@
    "path": "common/raids/categories",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/raids/categories/zin_raid_categories.txt"
@@ -1160,7 +1161,7 @@
    "path": "common/resistance_compliance_modifiers/resistance_modifiers.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/resistance_compliance_modifiers/resistance_modifiers.txt"
@@ -1180,7 +1181,7 @@
    "path": "common/resources/00_resources.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
     "common/resources/00_resources.txt"
@@ -1211,7 +1212,7 @@
    "path": "common/scientist_traits",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/scientist_traits/zin_scholar_traits.txt"
@@ -1295,7 +1296,7 @@
    "path": "common/script_enums.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/script_enums.txt"
@@ -1368,10 +1369,10 @@
    "path": "common/special_projects/project_tags",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
-    "common/special_projects/project_tags/zin_great_works.txt"
+    "common/special_projects/project_tags/zin_spells.txt"
    ],
    "reason": "Great works; one hidden project until the economy spec fills the folder"
   },
@@ -1379,10 +1380,10 @@
    "path": "common/special_projects/projects",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
-    "common/special_projects/projects/zin_great_works.txt"
+    "common/special_projects/projects/zin_spells.txt"
    ],
    "reason": "Great works; one hidden project until the economy spec fills the folder"
   },
@@ -1390,10 +1391,10 @@
    "path": "common/special_projects/prototype_rewards",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
-    "common/special_projects/prototype_rewards/zin_great_works.txt"
+    "common/special_projects/prototype_rewards/zin_spells.txt"
    ],
    "reason": "Great works; one hidden project until the economy spec fills the folder"
   },
@@ -1401,10 +1402,10 @@
    "path": "common/special_projects/specialization",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/02_economy.md",
    "zin": [
-    "common/special_projects/specialization/zin_great_works.txt"
+    "common/special_projects/specialization/zin_spells.txt"
    ],
    "reason": "Great works; one hidden project until the economy spec fills the folder"
   },
@@ -1430,21 +1431,31 @@
    "path": "common/synchronized_dynamic_tokens",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/synchronized_dynamic_tokens/zin_tokens.txt"
    ],
-   "reason": "ZIN equipment and unit tokens"
+   "reason": "ZIN equipment and unit tokens",
+   "emptyAllowed": "The folder holds one bare word list (like the vanilla file), not keyed blocks: zin_tokens.txt names the resources, buildings, alignments and ZIN equipment tokens, so check C2 cannot count a keyed definition."
   },
   {
    "path": "common/technologies",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
-    "common/technologies/zin_technologies.txt"
+    "common/technologies/zin_arms.txt",
+    "common/technologies/zin_camp.txt",
+    "common/technologies/zin_engines.txt",
+    "common/technologies/zin_gates.txt",
+    "common/technologies/zin_industry.txt",
+    "common/technologies/zin_lore.txt",
+    "common/technologies/zin_mounts.txt",
+    "common/technologies/zin_naval.txt",
+    "common/technologies/zin_scholarship.txt",
+    "common/technologies/zin_skies.txt"
    ],
    "reason": "ZIN technology tree"
   },
@@ -1452,7 +1463,7 @@
    "path": "common/technology_sharing",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/technology_sharing/zin_tech_sharing.txt"
@@ -1463,7 +1474,7 @@
    "path": "common/technology_tags",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/technology_tags/zin_technology_tags.txt"
@@ -1483,7 +1494,7 @@
    "path": "common/timed_activities",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/timed_activities/zin_timed_activities.txt"
@@ -1512,7 +1523,7 @@
    "path": "common/unit_leader/00_traits.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/unit_leader/00_traits.txt"
@@ -1523,7 +1534,7 @@
    "path": "common/unit_leader/ETH_traits.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/unit_leader/ETH_traits.txt"
@@ -1534,7 +1545,7 @@
    "path": "common/unit_leader/JAP_traits.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/unit_leader/JAP_traits.txt"
@@ -1545,7 +1556,7 @@
    "path": "common/unit_leader/NSB_traits.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/unit_leader/NSB_traits.txt"
@@ -1556,7 +1567,7 @@
    "path": "common/unit_leader/SWE_traits.txt",
    "kind": "file",
    "action": "override",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/unit_leader/SWE_traits.txt"
@@ -1587,7 +1598,7 @@
    "path": "common/unit_tags",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/unit_tags/zin_unit_tags.txt"
@@ -1598,10 +1609,22 @@
    "path": "common/units",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
-    "common/units/zin_units.txt"
+    "common/units/zin_air.txt",
+    "common/units/zin_camp.txt",
+    "common/units/zin_dead.txt",
+    "common/units/zin_demons.txt",
+    "common/units/zin_elves.txt",
+    "common/units/zin_great_beings.txt",
+    "common/units/zin_hq.txt",
+    "common/units/zin_kin.txt",
+    "common/units/zin_men.txt",
+    "common/units/zin_orcs.txt",
+    "common/units/zin_ships.txt",
+    "common/units/zin_siege.txt",
+    "common/units/zin_sun_elves.txt"
    ],
    "reason": "ZIN sub-units; every equipment needs a sub-unit"
   },
@@ -1609,7 +1632,7 @@
    "path": "common/units/codenames_operatives",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
    "zin": [
     "common/units/codenames_operatives/zin_operative_codenames.txt"
@@ -1629,10 +1652,13 @@
    "path": "common/units/equipment",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
-    "common/units/equipment/zin_equipment.txt"
+    "common/units/equipment/zin_equipment_air.txt",
+    "common/units/equipment/zin_equipment_granted.txt",
+    "common/units/equipment/zin_equipment_land.txt",
+    "common/units/equipment/zin_equipment_naval.txt"
    ],
    "reason": "ZIN equipment archetypes; keeps convoy, train_equipment and motorized_equipment"
   },
@@ -1640,10 +1666,10 @@
    "path": "common/units/equipment/modules",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
-    "common/units/equipment/modules/zin_modules.txt"
+    "common/units/equipment/modules/zin_ship_modules.txt"
    ],
    "reason": "ZIN replacement (warfare section 15)"
   },
@@ -1651,7 +1677,7 @@
    "path": "common/units/equipment/upgrades",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/units/equipment/upgrades/zin_upgrades.txt"
@@ -1662,7 +1688,7 @@
    "path": "common/units/names",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/units/names/zin_names.txt"
@@ -1673,7 +1699,7 @@
    "path": "common/units/names_divisions",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/units/names_divisions/zin_names_divisions.txt"
@@ -1684,7 +1710,7 @@
    "path": "common/units/names_railway_guns",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/units/names_railway_guns/zin_names_railway_guns.txt"
@@ -1695,7 +1721,7 @@
    "path": "common/units/names_ships",
    "kind": "folder",
    "action": "replace",
-   "stage": 2,
+   "stage": 1,
    "owner": "docs/specs/03_gameplay/01_warfare.md",
    "zin": [
     "common/units/names_ships/zin_names_ships.txt"
@@ -1747,10 +1773,10 @@
    "stage": 0,
    "owner": "docs/specs/06_events/",
    "zin": [
-    "events/zin_world.txt"
+    "events/zin_engine_events.txt",
+    "events/zin_inst.txt"
    ],
-   "reason": "ZIN events per namespace; one hidden event until the events specs ship",
-   "stub": "events/zin_world.txt"
+   "reason": "ZIN events per namespace; the interim stub zin_world.txt left in stage 2 because the institutions slice ships events/zin_inst.txt. zin_engine_events.txt holds the events kept vanilla files fire by id."
   },
   {
    "path": "gfx/interface/equipmentdesigner/graphic_db",

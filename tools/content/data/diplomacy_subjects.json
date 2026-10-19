@@ -334,30 +334,30 @@
   "powerBalance": [
     {
       "file": "AAT_power_balance_modifiers.txt",
-      "id": "zin_interim_power_balance_1",
+      "id": "zin_court_power_balance_1",
       "modifier": {
         "power_balance_weekly": 0.01
       }
     },
     {
       "file": "BBA_power_balance_modifiers.txt",
-      "id": "zin_interim_power_balance_2",
+      "id": "zin_court_power_balance_2",
       "modifier": {
         "power_balance_weekly": 0.01
       }
     },
     {
       "file": "MUN_power_balance_modifiers.txt",
-      "id": "zin_interim_power_balance_3",
+      "id": "zin_court_power_balance_3",
       "modifier": {
         "power_balance_weekly": 0.01
       }
     }
   ],
   "bop": {
-    "id": "zin_interim_bop",
-    "left": "zin_interim_bop_left",
-    "right": "zin_interim_bop_right",
+    "id": "zin_court_balance",
+    "left": "zin_court_balance_left",
+    "right": "zin_court_balance_right",
     "leftIcon": "GFX_idea_zin_crown_gold",
     "rightIcon": "GFX_idea_zin_crown_iron"
   }

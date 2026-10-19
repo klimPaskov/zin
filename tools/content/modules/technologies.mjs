@@ -4,9 +4,12 @@
 // (naval and air doctrines, the hidden special-forces doctrine), 03_diplomacy_and_factions.md (research sharing).
 // Data: tools/content/data/technologies*.json. Integration note: docs/design/stage2/technologies.md.
 //
-//   await buildTechnologies(staged, { countries, assignment? })
+//   await buildTechnologies(staged, { countries, assignment?, externalSharing? })
 //     countries   the roster of data/countries.json (names resolve to tags here)
 //     assignment  optional Map tag -> people; the default is the owner table's default (peoples.mjs defaultPeople)
+//     externalSharing  optional [{ id, template }]: research sharing groups that another module writes (the diplomacy module
+//                 owns common/technology_sharing). The sync effect then adds a member of faction template `template` to group
+//                 `id`, and no group file and no group text is written here.
 //
 // Everything is deterministic: rows are sorted, numbers are rounded to three places, and no clock or random source is read.
 import { readFile, readdir } from 'node:fs/promises';
@@ -167,7 +170,7 @@ export async function loadRaw() {
   return { civil, warfare, doctrines, packages, ids };
 }
 
-export async function prepareModel({ countries, assignment }, raw0) {
+export async function prepareModel({ countries, assignment, externalSharing }, raw0) {
   const raw = raw0 ?? await loadRaw();
   const docs = await gameDocs();
   const problems = [];
@@ -347,7 +350,7 @@ export async function prepareModel({ countries, assignment }, raw0) {
   for (const k of docs.aiFocusKeys) if (!aiFocuses[k]) P(`engine AI focus ${k} has no ZIN entry`);
   for (const c of categories.keys()) if (!Object.values(aiFocuses).some(f => c in f)) P(`category ${c} appears in no AI focus (the AI would never research it)`);
 
-  const model = { vanilla, raw, docs, ids, tags, countries, assignment, peopleOfName, folders, categories, lines, techs, byKey, gates, layout, aiFocuses, bands: raw.civil.bands, costRule: raw.civil.costRule, bandCaptions: raw.civil.bandCaptions, problems };
+  const model = { vanilla, raw, docs, ids, tags, countries, assignment, peopleOfName, folders, categories, lines, techs, byKey, gates, layout, aiFocuses, externalSharing: externalSharing ?? null, bands: raw.civil.bands, costRule: raw.civil.costRule, bandCaptions: raw.civil.bandCaptions, problems };
   prepareDoctrines(model, raw, P);
   prepareSharing(model, raw, P);
   if (problems.length) throw new Error(`Technology data is invalid (${problems.length} problems):\n  ${problems.slice(0, 60).join('\n  ')}`);
@@ -677,10 +680,20 @@ function scriptedTriggers(model) {
 }
 
 function scriptedEffectsSharing(model) {
+  if (model.externalSharing) return scriptedEffectsExternalSharing(model.externalSharing);
   const s = model.sharing, tag = n => model.tags.get(n);
   const L = [HEADER, '# Adds a country to the research sharing group of its league; the groups drop it when it leaves (their available block).', 'zin_tech_sharing_sync = {'];
   for (const g of s.groups) L.push('\tif = {', '\t\tlimit = {', `\t\t\tis_in_faction_with = ${tag(g.leader)}`, `\t\t\tNOT = { is_in_tech_sharing_group = ${g.id} }`, '\t\t}', `\t\tadd_to_tech_sharing_group = ${g.id}`, '\t}');
   L.push('\tif = {', '\t\tlimit = {', '\t\t\tis_in_faction = yes', `\t\t\tNOT = { is_in_tech_sharing_group = ${s.league.id} }`, '\t\t\tNOT = {', '\t\t\t\tOR = {', ...s.groups.map(g => `\t\t\t\t\tis_in_faction_with = ${tag(g.leader)}`), '\t\t\t\t}', '\t\t\t}', '\t\t}', `\t\tadd_to_tech_sharing_group = ${s.league.id}`, '\t}', '}');
+  return L.join('\n');
+}
+
+// The groups are written by another module (the diplomacy module owns common/technology_sharing: one group per league
+// template, available to the template's members). This effect only adds a country to the group of its league.
+function scriptedEffectsExternalSharing(groups) {
+  const L = [HEADER, '# Adds a country to the research sharing group of its league; the groups drop it when it leaves (their available block).', 'zin_tech_sharing_sync = {'];
+  for (const g of groups) L.push('\tif = {', '\t\tlimit = {', `\t\t\thas_faction_template = ${g.template}`, `\t\t\tNOT = { is_in_tech_sharing_group = ${g.id} }`, '\t\t}', `\t\tadd_to_tech_sharing_group = ${g.id}`, '\t}');
+  L.push('}');
   return L.join('\n');
 }
 
@@ -812,8 +825,10 @@ async function localisation(staged, model) {
   for (const t of d.tracks) { set(t.key, t.name); }
   for (const g of d.grand) { set(g.key, g.name); set(`${g.key}_desc`, g.desc); }
   for (const s of [...d.subs, d.hidden]) { set(s.key, s.name); set(`${s.key}_desc`, s.desc); for (const r of s.rewards) { set(`${s.key}_${r.key}`, r.name); set(`${s.key}_${r.key}_desc`, r.desc); } }
-  for (const g of model.sharing.groups) { set(`${g.id}_name`, g.name); set(`${g.id}_desc`, g.desc); }
-  set(`${model.sharing.league.id}_name`, model.sharing.league.name); set(`${model.sharing.league.id}_desc`, model.sharing.league.desc);
+  if (!model.externalSharing) {
+    for (const g of model.sharing.groups) { set(`${g.id}_name`, g.name); set(`${g.id}_desc`, g.desc); }
+    set(`${model.sharing.league.id}_name`, model.sharing.league.name); set(`${model.sharing.league.id}_desc`, model.sharing.league.desc);
+  }
   const vanilla = await vanillaLocKeys();
   const own = {}, replace = {};
   for (const [k, v] of Object.entries(e)) (vanilla.has(k) ? replace : own)[k] = v;
@@ -838,9 +853,9 @@ export async function buildTechnologies(staged, ctx) {
   }
   staged.text('common/technologies/zin_gates.txt', [HEADER, '# Seven grant-only technologies keep unused vanilla buildings locked. None is researched, granted or shown.', 'technologies = {', ...model.gates.map(gateBlock), '}'].join('\n'));
   staged.text('common/technology_tags/zin_technology_tags.txt', tagsFile(model));
-  // the stage-1 file of vanilla_removal.mjs names vanilla categories; this one replaces it
-  staged.files.set('common/ai_focuses/zin_ai_focuses.txt', Buffer.from(aiFocusFile(model) + '\n'));
-  staged.text('common/technology_sharing/zin_tech_sharing.txt', sharingFile(model));
+  staged.text('common/ai_focuses/zin_ai_focuses.txt', aiFocusFile(model));
+  // With ctx.externalSharing the diplomacy module owns common/technology_sharing and the groups' text; this module keeps the sync effect.
+  if (!model.externalSharing) staged.text('common/technology_sharing/zin_tech_sharing.txt', sharingFile(model));
   staged.text('common/scripted_triggers/zin_technologies.txt', scriptedTriggers(model));
   staged.text('common/scripted_effects/zin_technologies.txt', scriptedEffectsSharing(model));
   staged.text('common/scripted_effects/zin_naval_air.txt', scriptedEffectsAir());
@@ -869,6 +884,6 @@ export async function buildTechnologies(staged, ctx) {
   staged.text('docs/design/technology/start_packages.json', canonicalJson({ packages, countries: starts }));
   return {
     technologies: model.techs.length, gates: model.gates.length, folders: model.folders.size, categories: model.categories.size,
-    grandDoctrines: d.grand.length, subdoctrines: d.subs.length + 1, tracks: d.tracks.length, sharingGroups: model.sharing.groups.length + 1, packages: Object.keys(packages).length, localisationKeys: loc.keys,
+    grandDoctrines: d.grand.length, subdoctrines: d.subs.length + 1, tracks: d.tracks.length, sharingGroups: model.externalSharing ? model.externalSharing.length : model.sharing.groups.length + 1, packages: Object.keys(packages).length, localisationKeys: loc.keys,
   };
 }

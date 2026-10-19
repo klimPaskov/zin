@@ -82,7 +82,9 @@ export function checkShape({ inventory, reskin, files }) {
   // A shipped file at the vanilla path of a texture that is not R would hide a missing or wrong row.
   const nonR = new Map();
   for (const row of reskin.rows) { const s = byName.get(row.name); if (s?.texture && row.disposition !== 'R') nonR.set(s.texture.toLowerCase(), row); }
-  for (const [key, row] of [...nonR].sort(([a], [b]) => ord(a, b))) if (!rTextures.has(key) && idx.has(key)) add('shape.unexpected_output', idx.get(key).path, `a file ships at the vanilla path of ${row.name}, which is ${row.disposition}`);
+  // gfx/loadingscreens/ is a replaced folder that modules/presentation.mjs fills (the 24 ZIN screens and every file that kept sprites name there), so
+  // the main-menu `O` sprites that point at load_N.dds legitimately find a shipped file at that path.
+  for (const [key, row] of [...nonR].sort(([a], [b]) => ord(a, b))) if (!rTextures.has(key) && idx.has(key) && !key.startsWith('gfx/loadingscreens/')) add('shape.unexpected_output', idx.get(key).path, `a file ships at the vanilla path of ${row.name}, which is ${row.disposition}`);
   return result(3, 'shape', problems, pending.sort(ord), { checked: seen.size });
 }
 

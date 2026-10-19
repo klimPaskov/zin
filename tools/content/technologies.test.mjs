@@ -336,6 +336,19 @@ test('Research sharing: one group per faction at 0.10 per member, tied to the fa
   assert(/on_monthly = \{\s+effect = \{\s+zin_tech_sharing_sync = yes/.test(file('common/on_actions/zin_technologies.txt')));
 });
 
+test('With externalSharing the diplomacy groups own the group file and text; the sync effect only adds members by league template', async () => {
+  const s2 = new Staged();
+  const external = [{ id: 'zin_research_concord', template: 'zin_faction_concord' }, { id: 'zin_research_free_crowns', template: 'zin_faction_free_crowns' }];
+  const r = await buildTechnologies(s2, { countries, externalSharing: external });
+  assert.equal(r.sharingGroups, 2);
+  assert(!s2.files.has('common/technology_sharing/zin_tech_sharing.txt'), 'no group file');
+  const fx = s2.files.get('common/scripted_effects/zin_technologies.txt').toString('utf8');
+  for (const g of external) assert(fx.includes(`has_faction_template = ${g.template}`) && fx.includes(`add_to_tech_sharing_group = ${g.id}`), g.id);
+  assert.equal([...fx.matchAll(/add_to_tech_sharing_group = /g)].length, 2);
+  assert(!/zin_research_/.test(s2.files.get('localisation/english/zin_technologies_l_english.yml').toString('utf8')), 'no group text');
+  assert(/zin_tech_sharing_sync = \{/.test(fx));
+});
+
 // ---------- text ----------
 test('Every key has text: technologies, gates, folders, categories, doctrines, rewards, tracks, sharing groups; the file is UTF-8 with BOM', () => {
   const loc = allLoc();

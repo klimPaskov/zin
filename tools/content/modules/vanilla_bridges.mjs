@@ -128,6 +128,6 @@ async function writeConstants(staged, constants) {
     const schema = vanillaSchemas.get(g);
     parts.push(`${g} = {\n${schema ? serialize([schema], 1) : ''}${keys.sort((a, b) => a.k.localeCompare(b.k)).map(x => `\t${x.k} = { } # bridge: remove in stage ${x.stage}`).join('\n')}\n}`);
   }
-  for (const e of sp) parts.push(`# bridge: remove in stage 2 (special projects)\n${serialize([e])}`.trimEnd());
+  // The special-project constant groups are ZIN definitions since the institutions slice (common/script_constants/zin_special_projects.txt); no bridge.
   staged.text('common/script_constants/zin_constants.txt', `${HEADER.replace('Identifiers only; never shown, never fire.', 'ZIN groups and bridged groups.')}\n# The ZIN state and country groups of the mechanic specs join this file when they ship.\n${parts.join('\n')}\n`);
 }
