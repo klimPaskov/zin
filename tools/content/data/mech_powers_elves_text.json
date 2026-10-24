@@ -1,0 +1,175 @@
+{
+  "note": "All text of the elves mechanic (docs/specs/04_mechanics/elves_wall_and_dragons.md). Keys: events by id (t title, d description, o option names in order, v description variants), decisions, categories, ideas, dynamic modifiers, opinion modifiers. No line names Afrit or calls the Deliverer or the Worshipdom dark before the reveal, says where Varner is, or says the elves will march.",
+  "categories": {
+    "zin_elves_kin": { "n": "The Kin and the Wall", "d": "The business of the elven houses: the moot, the Kindred, the Wall, the passes and the pilgrim roads." },
+    "zin_elves_wanderers": { "n": "The Wanderers", "d": "Healers, loremasters and wardens who walk among other peoples as individuals. They are no host and no league." },
+    "zin_elves_roosts": { "n": "The Roosts of the Mountain", "d": "The Keeper's care of the dragon roosts on the mountain." }
+  },
+  "decisions": {
+    "zin_elves_call_elder_moot": { "n": "Call the Elder Moot", "d": "Summon the speakers of the houses to the council ring and ask what the moot should speak of first." },
+    "zin_elves_raise_the_kindred": { "n": "Raise the Kindred of the Woods", "d": "Bind the elven houses into a league for the defence of the woods. It takes in only elves and never marches for men." },
+    "zin_elves_mediate_rivals": { "n": "Mediate Between Herrodon and Andos Enda", "d": "Send speakers with open hands between the two old rivals, so that the quarrel of the groves cools before it burns." },
+    "zin_elves_settle_the_feud": { "n": "Settle the Feud of the Groves", "d": "The old quarrel has run past mediation. Claim the boundary groves and take up the cause of war against the rival house." },
+    "zin_elves_wardens_for_the_passes": { "n": "Wardens for the Passes", "d": "Send wardens up to Nolorim's high passes to raise stone and watch fires against whatever comes over the snow." },
+    "zin_elves_call_wall_moot": { "n": "Call a Wall Moot at the Gate", "d": "Ask the crown's customs men to hear the elves in open moot at the Wall gate, on the tolls and the cold roads." },
+    "zin_elves_close_the_wall_roads": { "n": "Close the Wall Roads", "d": "Shut the elven gates along the Great Wall. The Accord is not broken, but no caravan will pass either way." },
+    "zin_elves_reopen_the_wall_roads": { "n": "Reopen the Wall Roads", "d": "Unbar the elven gates and let the caravans walk the Wall road again." },
+    "zin_elves_open_wall_gates": { "n": "Open the Wall Gates to Aenoran Companies", "d": "Give Aenor, its vassals and Kingson right of passage through the Wall gates. Men may come to stand beside the woods; this does not set the Refusal aside." },
+    "zin_elves_bar_wall_gates": { "n": "Bar the Wall Gates", "d": "End the right of passage given at the Wall gates. The woods settle behind their own bars." },
+    "zin_elves_pilgrim_roads_open_decision": { "n": "Open the Roads to Pilgrims", "d": "Let pilgrims cross the woods freely, with hostels and fire along the way. Their gifts fill the roadside towns." },
+    "zin_elves_pilgrim_roads_toll_decision": { "n": "Toll the Pilgrims", "d": "Take a toll at the pilgrim gates. The treasury is fuller, and the hermitage in the hills remembers it." },
+    "zin_elves_pilgrim_roads_close_decision": { "n": "Close the Pilgrim Roads", "d": "Turn every pilgrim back at the edge of the woods. The roads stay empty and the hermitage takes it ill." },
+    "zin_elves_seek_the_wizard": { "n": "Seek the Wizard", "d": "Send quiet word through the old ways to the wizard of the Unbinding. Nobody can say who will answer, or how." },
+    "zin_elves_send_healers": { "n": "Send Healers and Loremasters", "d": "Send healers and loremasters to sit in another realm's halls for a year. They bring no banner and take no side." },
+    "zin_elves_send_wardens": { "n": "Send Wardens to a Friend in Need", "d": "Let wardens of the woods walk to a realm at war with the dark. They go as individuals, not as a host, and return when the season turns." },
+    "zin_elves_tend_the_roosts": { "n": "Tend the Roosts", "d": "Send the roost-singers to the mountain with salt, song and green boughs, so that the dragons keep their trust in the Keeper." }
+  },
+  "ideas": {
+    "zin_elves_refusal_set_aside": { "n": "The Refusal Set Aside", "d": "The woods have set the Refusal aside for this war. They will take it up again when the war is over." },
+    "zin_elves_wanderers_lore": { "n": "Elven Wanderers", "d": "Healers and loremasters of the woods sit in our halls, mending the sick and copying old books." },
+    "zin_elves_wanderers_lore_gala": { "n": "Healers of Gala", "d": "Healers of the Gala elves walk our towns, and the lore they bring has been kept by the water for ages." },
+    "zin_elves_wanderers_wardens": { "n": "Elven Wardens Among Us", "d": "Grey-cloaked wardens of the woods hold our border villages. They answer to no one in our court." },
+    "zin_elves_wall_roads_shut": { "n": "Roads Shut at the Wall", "d": "The elven gates along the Wall stand barred. Goods pile at the barriers, and the woods keep close to their own." },
+    "zin_elves_pilgrim_roads_open": { "n": "Pilgrims on Our Roads", "d": "Pilgrims cross our woods in their hundreds, and the hostels along the road have never been busier." },
+    "zin_elves_pilgrim_tolls": { "n": "Tolls on the Pilgrim Roads", "d": "Every pilgrim pays at the gate. The coffers are heavier, and the pilgrims grumble." },
+    "zin_elves_varners_counsel": { "n": "Varner's Counsel", "d": "An unsigned letter in an old hand answered what we asked. Scholars and wardens work to its plain advice." },
+    "zin_elves_wizard_gone": { "n": "The Wizard Is Gone", "d": "Word has come that the wizard of the Unbinding is no more. The woods are uneasy, and their resolve is hard." },
+    "zin_elves_woods_defended": { "n": "Every Tree a Wall", "d": "Every grove is a rampart and every elder a sentry. The woods fight on ground they have loved for ages." },
+    "zin_elves_gates_barred": { "n": "The Gates Are Barred", "d": "The Wall gates are closed again, and the woods feel safer behind their own bars." }
+  },
+  "dynamic": {
+    "zin_elves_high_passes": { "n": "The High Passes", "icon": "mountain_pass" },
+    "zin_elves_high_passes_2": { "n": "The High Passes, Held", "icon": "pass_fort" },
+    "zin_elves_wandering_paths": { "n": "Paths That Wander", "icon": "forest_ancient" }
+  },
+  "opinions": {
+    "zin_opinion_elven_goodwill": "Elven goodwill",
+    "zin_opinion_kindred": "Sworn kin of the woods",
+    "zin_opinion_cold_roads": "Cold roads at the Wall",
+    "zin_opinion_wall_roads_closed": "The Wall roads are shut",
+    "zin_opinion_feud_of_groves": "The Feud of the Groves",
+    "zin_opinion_pilgrim_tolls": "Tolls on the pilgrim roads",
+    "zin_opinion_pilgrim_roads_closed": "The pilgrim roads are closed"
+  },
+  "misc": {},
+  "events": {
+    "zin_elves.5": {
+      "t": "A Wall Moot at the Gate",
+      "d": "Elven speakers have come down to the great gate and asked that the crown's customs men hear them in open moot. They say the tolls on the Wall road have grown heavier than the Accord of 4A 96 allows, and that the road has gone cold with it.",
+      "o": ["Hear the elves", "The crown's tolls stand"]
+    },
+    "zin_elves.6": {
+      "t": "The Crown Answers",
+      "d": "The speakers have come back from the gate with the crown's answer. The tolls stand as they were, and the road will stay cold.",
+      "v": { "heard": "The speakers have come back from the gate with the crown's answer. The customs men heard them out, the tolls will be eased, and the elven gates will open again." },
+      "o": ["So it is at the Wall"]
+    },
+    "zin_elves.7": {
+      "t": "Dragon Over the Wall",
+      "d": "A wild wyrm of the mountain crossed the Wall in the night and took herds on the Aenor side. The herdsmen are at the gate with what is left of the carcasses, and the king's men are watching to see what the woods will say.",
+      "o": ["Pay the herdsmen", "The dragons are free"]
+    },
+    "zin_elves.8": {
+      "t": "Herds Lost Below the Wall",
+      "d": "No silver has come for the herds the dragon took. The elves say the wyrms of the mountain are no one's to keep, and the herdsmen are bitter.",
+      "v": { "paid": "Elven factors came to the Wall villages with silver for every beast the dragon took. The herdsmen could hardly believe it, and the customs men are puzzled." },
+      "o": ["So it is at the Wall"]
+    },
+    "zin_elves.10": {
+      "t": "The Wall Roads Are Closed",
+      "d": "The elven gates along the Great Wall are shut. No caravan from the Magical Lands will cross to Aenor, and none from Aenor will pass in. The elves say the Accord is unbroken; they have only stopped walking on it.",
+      "o": ["The Wall is cold"]
+    },
+    "zin_elves.20": {
+      "t": "The Boundary Groves",
+      "d": "The old marker-trees between Herrodon and Andos Enda have been blazed afresh, and nobody will say whose axe it was. The elders of the border groves ask what Herrodon will do.",
+      "o": ["Set our markers", "Leave the groves to the trees"]
+    },
+    "zin_elves.21": {
+      "t": "A Slight Remembered",
+      "d": "At the last midsummer feast the speaker of Herrodon sat down at the high table before Andos Enda's envoy had been greeted. It was a small thing. It has been remembered for a hundred years.",
+      "o": ["Answer it in kind", "Let it pass"]
+    },
+    "zin_elves.22": {
+      "t": "The Roost Claim",
+      "d": "Both Herrodon and Andos Enda claim the eastern roosts, because their grandmothers once sang there to the wyrms. The Keeper of the mountain must say whose song the dragons will hear.",
+      "o": ["Favour Herrodon", "Favour Andos Enda", "The roost belongs to the dragons"]
+    },
+    "zin_elves.23": {
+      "t": "The Rivals Hear Mediation",
+      "d": "Speakers of the Magical Forest have walked between Herrodon and Andos Enda with open hands. Neither house has forgotten the quarrel, but both have agreed to let the old words cool.",
+      "o": ["We will listen"]
+    },
+    "zin_elves.24": {
+      "t": "The Feud of the Groves",
+      "d": "Herrodon and Andos Enda have taken up the old quarrel in earnest. Bows are strung in the boundary groves, and the kin of both houses are choosing which hand to hold.",
+      "o": ["Sorrow in the woods"]
+    },
+    "zin_elves.25": {
+      "t": "An End to the Feud?",
+      "d": "A year of strife has cost both houses more trees than they cost each other. Envoys of the Magical Forest offer a peace without spoils.",
+      "o": ["Accept a peace without spoils", "Fight on"]
+    },
+    "zin_elves.30": {
+      "t": "The Elder Moot",
+      "d": "The houses of the Magical Lands have come to the council ring beneath the silver trees. The old speakers ask what the moot should speak of first.",
+      "o": ["Speak of the old peace", "Speak of the Wall", "Speak of the rivals"]
+    },
+    "zin_elves.31": {
+      "t": "The Kindred of the Woods",
+      "d": "The Magical Forest has raised the Kindred of the Woods, a league of elves for the defence of elven lands. It takes in no one who is not of the woods. Every house is asked to stand with the kin.",
+      "o": ["Stand with the kin", "We keep our own counsel"]
+    },
+    "zin_elves.32": {
+      "t": "The Kindred Is Raised",
+      "d": "The elven houses of the Magical Lands have bound themselves in the Kindred of the Woods. It is a league of defence for the woods alone, and its heralds say it will not march for men.",
+      "o": ["The woods stand together"]
+    },
+    "zin_elves.40": {
+      "t": "Wardens for the Passes",
+      "d": "Wardens from the kin have come up to Nolorim's high passes and asked only for fire and bread. They will stay as long as the snow lets them.",
+      "o": ["Our thanks"]
+    },
+    "zin_elves.41": {
+      "t": "The Passes Are Lost",
+      "d": "Every high pass of Nolorim is under foreign banners. The kin in the lowlands have watched the signal fires go dark, one after another.",
+      "o": ["The woods remember"]
+    },
+    "zin_elves.45": {
+      "t": "A Dragon Flies East",
+      "d": "In the night a dragon rose from the mountain and flew east without a backward look. The roost-singers say something called it. They will not say what it sounded like. The roosts are restless.",
+      "v": { "revealed": "In the night a dragon rose from the mountain and flew east without a backward look. The roost-singers found the Deliverer's priests on the mountain roads, and no one will say how long they had been there. The roosts are restless." },
+      "o": ["Guard the roosts", "The dragons are free"]
+    },
+    "zin_elves.50": {
+      "t": "Word From the Wizard",
+      "d": "A letter lay on the table this morning, in an old hand, unsigned. Nobody saw it come in. It answers the question we asked, and a few we did not.",
+      "o": ["We will heed it"]
+    },
+    "zin_elves.55": {
+      "t": "Elven Wanderers Arrive",
+      "d": "Healers and loremasters of the elven woods have come to our towns and asked leave to sit in our halls and tend our sick. They are no host and bear no banner but their own.",
+      "o": ["Welcome them"]
+    },
+    "zin_elves.56": {
+      "t": "Elven Wardens Arrive",
+      "d": "Wardens of the elven woods stand in our border villages, tall and quiet, in grey cloaks with long bows. Their king did not send them, they say. They have simply come.",
+      "o": ["Welcome them"]
+    },
+    "zin_elves.60": {
+      "t": "The Temple in the Hills",
+      "d": "The pilgrims' hermitage in the Zilin Hills was never what its priests said. Our wardens have seen what it is, and every road that leads there runs through our woods.",
+      "o": ["Close every road", "Watch and wait"]
+    },
+    "zin_elves.72": {
+      "t": "Aenor Offers Companies",
+      "d": "Aenor's envoys ask leave to send companies through the Wall gates, to stand beside the woods against the sails on the rift sea. They ask no more than a road.",
+      "o": ["Accept the companies", "We defend our own"]
+    },
+    "zin_elves.73": {
+      "t": "The Rift Is Quiet",
+      "d": "No foreign banner now stands in the woods of the rift coast. The wardens ask whether the war should end here, or follow the sails home.",
+      "o": ["Make a peace without spoils", "Fight on"]
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "note": "All text of the Lerendor mechanic (docs/specs/04_mechanics/lerendor_narrow_strait.md). No line names Afrit or Eindil; Aenor's new king is named only by the events of the events slice.",
+  "categories": {
+    "zin_leren_strait": { "n": "The Narrow Strait", "d": "The dues of the strait, the old treaty with Aenor and the chain that can close the water." },
+    "zin_leren_compact": { "n": "The Leren Compact", "d": "Envoys, charters, marriages and banners: the courting of the smaller crowns of the North and of the Dark Shore." }
+  },
+  "decisions": {
+    "zin_leren_toll_lower": { "n": "Lower the Strait Dues", "d": "Ease the dues at Sonargur by one step. The shipmasters bless the king, and the treaty breathes easier." },
+    "zin_leren_toll_raise": { "n": "Raise the Strait Dues", "d": "Lift the dues at Sonargur by one step. The treasury fills, the merchants grumble, and Parim notices." },
+    "zin_leren_appeal_to_the_treaty": { "n": "Appeal to the Treaty", "d": "Send a clerk to Parim with the sealed text of 4A 512 and ask the court to keep what it swore." },
+    "zin_leren_close_the_strait": { "n": "Close the Strait", "d": "Draw the chain of Sonargur across the water against one realm's ships. Its fleets will wait for the weather and for us." },
+    "zin_leren_send_envoys": { "n": "Send Envoys", "d": "Send an envoy with gifts and a letter in the king's hand to the court of a smaller crown." },
+    "zin_leren_trade_charter": { "n": "Grant a Compact Trade Charter", "d": "Open Sonargur's quays to the ships of a crown on easy terms. Our merchants pay a little, and the crown remembers it." },
+    "zin_leren_marriage_pact": { "n": "Seal a Marriage Pact", "d": "Wed a daughter or a cousin of the royal house into a smaller crown. Such ties outlast many treaties." },
+    "zin_leren_invite_to_compact": { "n": "Invite to the Leren Compact", "d": "Offer a crown a seat among the Compact's members, with the shield of Sonargur over it in return for its oath." },
+    "zin_leren_offer_protection": { "n": "Offer the Protection of Sonargur", "d": "Offer a crown the king's protection. It will give up its own banner for it, as many have before." }
+  },
+  "ideas": {
+    "zin_leren_grievance_1716": { "n": "The Grievance of 1716", "d": "In 4A 1716 the envoys of Sonargur were laughed out of Parim. The court of Sonargur has not forgotten it." },
+    "zin_leren_grievance_unanswered": { "n": "An Insult Unanswered", "d": "Parim laughed again. The North remembers every laugh, and the shipmasters curse the Golden Court by name." },
+    "zin_leren_treaty_trusted": { "n": "The Treaty Trusted", "d": "Both courts keep the Treaty of the Narrow Strait in good faith, and the North counts on its old friend." },
+    "zin_leren_treaty_broken_faith": { "n": "Broken Faith", "d": "The North no longer trusts the treaty. It binds us to Parim and gives us nothing, the captains say." },
+    "zin_leren_treaty_torn": { "n": "The Treaty Torn", "d": "The oath of 4A 512 lies in pieces. The court is angry, proud and hungry, and the year is not one for gentle counsel." },
+    "zin_leren_strait_closed": { "n": "The Strait Is Closed", "d": "The chain of Sonargur is across the water. Our ships find the sea shorter and the harbours dearer." },
+    "zin_leren_keepers_of_the_strait": { "n": "Keepers of the Strait", "d": "Our galleys hold both shores of the water and know every reef of it. No raider crosses unseen." },
+    "zin_leren_charter_trade": { "n": "Compact Trade Charters", "d": "Charters of easy passage bind the small crowns' merchants to the quays of Sonargur." }
+  },
+  "dynamic": {
+    "zin_leren_strait_dues": "The Strait Dues",
+    "zin_leren_union": "The Union of the Two Crowns",
+    "zin_leren_hegemony_mod": "The Lead of Sonargur"
+  },
+  "opinions": {
+    "zin_leren_treaty_partner": "Partner in the Treaty of the Narrow Strait",
+    "zin_leren_envoys_mocked": "Our envoys were laughed out of the court",
+    "zin_leren_treaty_broken": "The Treaty of the Narrow Strait torn",
+    "zin_leren_compact_kin": "Sworn to the Leren Compact",
+    "zin_leren_strait_closed_on_us": "The strait was closed against us",
+    "zin_leren_appeal_heard": "Our appeal to the treaty was heard",
+    "zin_leren_marriage_ties": "Joined by a marriage of the houses"
+  },
+  "rule": {
+    "name": "Lerendor's Course (AI)",
+    "desc": "Decides which road Lerendor's AI follows through the Treaty of the Narrow Strait. A player's Lerendor is never steered.",
+    "options": {
+      "DEFAULT": { "n": "Follow the Path", "d": "Follows the rule for the path of the story: the historical path breaks the treaty at the war; the others weigh the three roads." },
+      "historical": { "n": "The North Stands Apart", "d": "Lerendor's AI breaks the treaty when the war comes and keeps out of Aenor's wars." },
+      "honour": { "n": "Honour the Treaty", "d": "Lerendor's AI keeps the old alliance and comes to Aenor's defence." },
+      "supremacy": { "n": "Mastery of the Strait", "d": "Lerendor's AI tears up the treaty and uses the war to make the North master of the strait." },
+      "free": { "n": "Free Course", "d": "Lerendor's AI weighs its standing, its court and its lead over the North, and takes the road that suits it." }
+    }
+  },
+  "misc": {},
+  "events": {
+    "zin_leren.10": {
+      "t": "The Toll Rolls of 1716",
+      "d": "The clerks of Sonargur have carried the toll rolls up from the cellar and laid them before the king. In a hand grown brown with age, they show what Aenoran ships should have paid in 4A 1716, and what Parim's court said when the envoys asked for it.",
+      "o": ["The debt is still owed", "Let old ledgers lie"]
+    },
+    "zin_leren.11": {
+      "t": "Leren Envoys Demand Redress",
+      "d": "Envoys from Sonargur stand in the Golden Court with the toll rolls under their arms. They ask for the dues that Aenoran ships have never paid in full at the strait, and for an apology for the laughter of 4A 1716. The courtiers are watching to see what the crown will do.",
+      "o": ["Pay redress", "Send the case to Eekedor for judgement", "Laugh them out of the Golden Court"]
+    },
+    "zin_leren.12": {
+      "t": "Parim's Answer",
+      "d": "The envoys have come home from Parim, and the king has asked them to say nothing until they stand before him. The court of Sonargur waits to hear what the Golden Court has replied.",
+      "v": {
+        "redressed": "The envoys have come home from Parim with silver in their chests and an apology under the seal of the crown. The Grievance of 1716 is answered at last, and the court of Sonargur is quietly astonished.",
+        "mocked": "The envoys have come home from Parim without silver and without an answer. They were laughed at in the great hall, as their grandfathers were, and they have told the whole story to the harbour taverns."
+      },
+      "o": ["Parim has paid the old debt", "Parim has laughed again", "Eekedor will judge between us"]
+    },
+    "zin_leren.13": {
+      "t": "The Arbitration of Eekedor",
+      "d": "The bench of Eekedor has heard both courts and gives its ruling at last. It finds that Aenor's ships owe the strait no more than the treaty fixed, and the grievance of 4A 1716 is not a debt the bench can enforce.",
+      "v": { "won": "The bench of Eekedor has heard both courts and gives its ruling at last. It finds for Sonargur: Aenor's ships have paid less than the treaty asks, and the laughter of 4A 1716 was an insult to the king's envoys." },
+      "o": ["The bench rules for Sonargur", "The bench rules for Parim"]
+    },
+    "zin_leren.15": {
+      "t": "A Merchantman Refuses the Toll",
+      "d": "An Aenoran merchantman has sailed past the chain at Sonargur without paying. Her master says the dues are against the treaty, and the harbour watch is waiting for the king's word.",
+      "o": ["Seize the cargo", "Waive the toll", "Refer it to Parim"]
+    },
+    "zin_leren.20": {
+      "t": "Aenor Calls on the Treaty",
+      "d": "A rider from Parim stands in the hall of Sonargur. Aenor is at war, and the crown asks the North to keep the oath of 4A 512 and come to its defence. The king looks at the rider, then at his captains, and asks them for counsel.",
+      "o": ["Ask for time", "Refuse", "Honour the oath"]
+    },
+    "zin_leren.21": {
+      "t": "The North Answers",
+      "d": "Sonargur has answered Aenor's call to the treaty. The riders who carried it are back at the gate of the Golden Court, and the council waits for them.",
+      "o": ["So the North has spoken"]
+    },
+    "zin_leren.50": {
+      "t": "Black Ships Among the Islands",
+      "d": "The fishermen of the northern coast tell the same tale in a dozen harbours. Black hulls with no lamp aboard, moving among the islands by night against the wind. The captains of Sonargur laugh at them, but they do not laugh as loudly as they did last year.",
+      "o": ["The fishermen should be heard"]
+    },
+    "zin_leren.55": {
+      "t": "The Strait Barred",
+      "d": "The chain of Sonargur and the forts of the far shore are held by one hand, and no ship passes the Narrow Strait without the king's leave. The hall of Sonargur calls it the Barred Strait.",
+      "o": ["The strait is barred"]
+    },
+    "zin_leren.60": {
+      "t": "Sovereign of the Narrow Sea",
+      "d": "The king of Lerendor has been crowned on the harbour chain of Sonargur. He holds both shores of the strait, and he calls himself Sovereign of the Narrow Sea. The old treaty is a scrap in the archive.",
+      "o": ["Long live the Sovereign"]
+    },
+    "zin_leren.70": {
+      "t": "An Invitation from Sonargur",
+      "d": "A herald of the king of Lerendor has come with a banner and a scroll. Sonargur offers a seat in the Leren Compact, with the shield of the North over us in return for our oath. The scroll says nothing of the price.",
+      "o": ["Join the Compact", "Decline the invitation"]
+    },
+    "zin_leren.71": {
+      "t": "Sonargur Offers Protection",
+      "d": "The king of Lerendor offers to take our crown under his shield. Our banner would stand beside his, and his captains would answer for our borders. He asks only that we do as his court advises.",
+      "o": ["Accept the protection of Sonargur", "Refuse the offer"]
+    },
+    "zin_leren.72": {
+      "t": "Answer from the North",
+      "d": "The envoys have returned to Sonargur from the court of the smaller crown. The king's council gathers to hear what they were told.",
+      "o": ["The answer is noted"]
+    },
+    "zin_leren.80": {
+      "t": "The Lerenwaith Question",
+      "d": "The inland lords of Lerenwaith have come to the hall of Sonargur. They pay for the strait captains' quarrels and are heard in no council, and they want the old charters read aloud and a seat for every river-town. The king has not seen them so angry in many years.",
+      "o": ["Grant the estates' petition", "Hold firm"]
+    },
+    "zin_leren.81": {
+      "t": "One Throne Again",
+      "d": "At the midsummer feast the lords of Lerenwaith and the captains of the strait drank from one cup. Old men say the two crowns have not sat so easily on one head since the wedding that joined them.",
+      "o": ["One throne, one table"]
+    },
+    "zin_leren.90": {
+      "t": "The Strait Is Closed",
+      "d": "The chain of Sonargur has been drawn across the water against our ships. Our captains will wait out the season in other harbours, and our merchants are already counting the cost.",
+      "o": ["The chain holds"]
+    }
+  }
+}

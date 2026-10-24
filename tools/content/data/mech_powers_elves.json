@@ -1,0 +1,273 @@
+{
+  "note": "Numbers, names and external references of the elves mechanic (docs/specs/04_mechanics/elves_wall_and_dragons.md). Text is in mech_powers_elves_text.json. Every number of the spec is here so tuning never touches code.",
+  "realms": {
+    "magical_forest": "Magical Forest",
+    "herrodon": "Herrodon",
+    "andos_enda": "Andos Enda",
+    "nolorim": "Nolorim",
+    "aenor": "Aenor",
+    "kingson": "Kingson",
+    "worshipdom": "Worshipdom",
+    "gala": "Gala Elves",
+    "magical_scan": "Magical Lands",
+    "elf_peoples": [
+      "elves"
+    ],
+    "sun_peoples": [
+      "sun_elves"
+    ]
+  },
+  "numbers": {
+    "kinship": {
+      "start": 35,
+      "scattered": 25,
+      "moot": 40,
+      "ready": 60,
+      "rivalry_drain_at": 60,
+      "rivalry_drain": -0.5,
+      "kindred_drift": 0.3,
+      "war_drift": 0.5,
+      "elder_moot": 10,
+      "elder_moot_wall": 5,
+      "elder_moot_rivals": 5,
+      "invasion": 15,
+      "feud": -20,
+      "passes_lost": 10,
+      "wardens_for_passes": 2,
+      "mediation": 5
+    },
+    "rivalry": {
+      "start": 45,
+      "drift": 0.3,
+      "kindred_drift": -0.5,
+      "mediation": -15,
+      "moot_rivals": -10,
+      "mediation_floor": 30,
+      "feud_at": 90,
+      "feud_ai_at": 95,
+      "mediate_ai_hist": 70,
+      "mediate_ai_other": 80,
+      "rival_events": {
+        "groves_set": 10,
+        "groves_leave": -5,
+        "slight_kind": 8,
+        "slight_pass": -3,
+        "claim_favour": 10,
+        "claim_roost": -5
+      },
+      "mediation_cooldown": 365,
+      "mediation_cooldown_flag": 180
+    },
+    "grievance": {
+      "start": 25,
+      "cold_roads_on": 50,
+      "cold_roads_off": 40,
+      "close_at": 75,
+      "close_at_focus": 60,
+      "reopen_below": 40,
+      "moot_at": 30,
+      "monthly_high": 1,
+      "high_at": 60,
+      "monthly_low": -0.5,
+      "low_at": 30,
+      "after_crown": -1,
+      "moot_heard": -20,
+      "moot_stand": 10,
+      "dragon_paid": -5,
+      "dragon_refused": 5,
+      "customs_accepted": -15,
+      "customs_refused": 5,
+      "elder_moot_wall": -10
+    },
+    "bond": {
+      "start": 50,
+      "monthly_good": 0.5,
+      "monthly_sick": -0.5,
+      "tend": 5,
+      "pact": -10,
+      "corruption": -20,
+      "eindil": -5,
+      "roost_claim": 5,
+      "guard": 5,
+      "never_pact_below": 40,
+      "cheap_pact_at": 70,
+      "restless_below": 30
+    },
+    "watch": {
+      "start": 30,
+      "per_level": 20,
+      "max_level": 5,
+      "second_modifier_at": 60,
+      "wardens": 5,
+      "invasion": 20
+    },
+    "cost": {
+      "elder_moot": 50,
+      "kindred": 75,
+      "mediate": 50,
+      "feud": 50,
+      "passes": 30,
+      "wall_moot": 50,
+      "wall_moot_focus": 25,
+      "close_roads": 50,
+      "reopen_roads": 25,
+      "open_gates": 25,
+      "pilgrim_toll": 25,
+      "pilgrim_close": 25,
+      "wizard": 50,
+      "healers": 35,
+      "wardens": 50,
+      "wardens_manpower": 1000,
+      "tend_roosts": 25,
+      "pay_herdsmen": 25,
+      "guard_roosts": 50,
+      "aenor_moot_hear": 25,
+      "aenor_moot_gold": 10
+    },
+    "cooldown": {
+      "elder_moot": 365,
+      "wall_moot": 730,
+      "passes": 180,
+      "pilgrim": 180,
+      "wizard": 1825,
+      "tend": 90,
+      "healers": 365,
+      "wardens": 180,
+      "kindred_ask_again": 365,
+      "dragon_event": 730,
+      "feud_peace_after": 365
+    },
+    "wanderers": {
+      "slots": 3,
+      "base_missions": 2,
+      "lore_days": 365,
+      "wardens_days": 180,
+      "healers_not_hosts": 15,
+      "extra": 10,
+      "gala_friends": 10,
+      "lore_gala_days": 365
+    },
+    "kindred": {
+      "dissolve_days": 730,
+      "join_ai_base": 30,
+      "join_ai_war": 40,
+      "rival_ai_penalty": -30,
+      "opinion": 20,
+      "ask_again": 365
+    },
+    "pilgrim": {
+      "open": 2,
+      "toll": 1,
+      "closed": 0,
+      "months_for_foothold": 12,
+      "close_footholds": -1,
+      "reveal_footholds": -2,
+      "toll_opinion": -10,
+      "close_opinion": -25
+    },
+    "varner": {
+      "min_kinship": 30,
+      "gathering_at": 25,
+      "delay_days": 60,
+      "counsel_days": 365,
+      "gone_days": 365,
+      "tech_bonus": 0.5
+    },
+    "eastern": {
+      "woods_days": 45,
+      "kinship": 15,
+      "watch": 20,
+      "envoys_ai_shut": 70,
+      "accept_ai": 20
+    },
+    "dates": {
+      "refusal_question": "1751.3.1",
+      "feud_after": "1750.3.1",
+      "march_after": "1751.3.1"
+    },
+    "gates": {
+      "barred_days": 180
+    },
+    "ai": {
+      "befriend": 30,
+      "antagonize": 15,
+      "protect": 50
+    }
+  },
+  "externals": {
+    "triggers": [
+      "zin_is_site_great_wall",
+      "zin_is_site_rift_west",
+      "zin_is_site_nolorim_passes",
+      "zin_is_site_boundary_groves",
+      "zin_is_region_east_lands",
+      "zin_is_region_magical_lands",
+      "zin_world_is_dragon_keeper",
+      "zin_diplo_is_dark_power",
+      "zin_rules_is_historical",
+      "zin_rules_is_free",
+      "zin_rules_ai_random_elves",
+      "zin_rules_ai_branch_elves_march"
+    ],
+    "effects": [
+      "zin_world_add_gathering_dark",
+      "zin_world_give_dragon",
+      "zin_afrit_add_footholds",
+      "zin_economy_add_gold"
+    ],
+    "events": [
+      "zin_elves.9",
+      "zin_elves.51",
+      "zin_elves.70",
+      "zin_elves.71"
+    ],
+    "variables": [
+      "zin_gathering_dark",
+      "zin_dragons_free",
+      "zin_court_corruption",
+      "zin_world_dragon_pacts",
+      "zin_world_corrupted_dragons",
+      "zin_story_pace"
+    ],
+    "flags": [
+      "zin_eastern_invasion",
+      "zin_war_of_last_crowns",
+      "zin_golden_king_dead",
+      "zin_aurevan_crowned",
+      "zin_afrit_revealed",
+      "zin_eindil_named",
+      "zin_zol_rising",
+      "zin_zol_manifested",
+      "zin_eindil_crowned",
+      "zin_varner_dead",
+      "zin_wall_accord_broken",
+      "zin_eindil_dragon_pact",
+      "zin_elven_refusal",
+      "zin_refusal_lifted",
+      "zin_east_coalition_leader",
+      "zin_magical_forest_healers",
+      "zin_magical_forest_wall_gates",
+      "zin_magical_forest_mediator",
+      "zin_magical_forest_wyrm_guard",
+      "zin_magical_forest_free_wanderers",
+      "zin_gala_healers",
+      "zin_gala_friends_not_allies",
+      "zin_magical_forest_wall_moot",
+      "zin_magical_forest_carry_war",
+      "zin_magical_forest_perlan",
+      "zin_magical_forest_wyrm_songs",
+      "zin_shared_magical_lands_wyrm_songs"
+    ],
+    "opinions": [
+      "zin_opinion_pilgrim_road"
+    ],
+    "ideas": [
+      "zin_elves_the_old_refusal",
+      "zin_magical_forest_wyrm_songs",
+      "zin_shared_magical_lands_wyrm_songs"
+    ],
+    "characters": [
+      "zin_magical_forest_perlan"
+    ]
+  }
+}

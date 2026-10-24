@@ -1,0 +1,157 @@
+{
+  "note": "All text of the Volgan and Mirolon mechanic (docs/specs/04_mechanics/volgan_southern_dominion.md). No line names Afrit, says what the court of the Nether owes Volgan, says what became of Roka, says where Dardan lies, names Eindil, or says whether Volgan's spirit endures.",
+  "categories": {
+    "zin_dominion_grave_musters": { "n": "The Grave Musters", "d": "Wake the dead of the Dead Lands in secret and raise them into the hosts of the Dominion." },
+    "zin_dominion_court": { "n": "The Court of Nafeher", "d": "The oaths of the sworn realms, the Nether, the Abyss, the envoys to the free holds and the clients of the march." },
+    "zin_dominion_mirolon_watch": { "n": "The Watch on the Passes", "d": "Scouts, word to Parim and stone in the passes: how Mirolon watches the south." }
+  },
+  "decisions": {
+    "zin_dominion_wake_old_barrows": { "n": "Wake the Old Barrows", "d": "Send the barrow-priests into the old tombs of the south. The dead who rise there are many and quiet. The storms that cover the work burn a little thinner." },
+    "zin_dominion_muster_beneath_the_storms": { "n": "Muster Beneath the Storms", "d": "Gather the hosts under the weather that hides them. Nothing is seen from the passes, and the Dominion grows stronger for it." },
+    "zin_dominion_raise_a_grave_host": { "n": "Raise a Grave Host", "d": "Call two hosts of grave-risen to stand at Nafeher. The graves of the south give them up, and the veil thins a little each time.", "cost": "40 Authority, 10 Orders", "cost_tt": "Costs 40 Authority and 10 Orders." },
+    "zin_dominion_bind_the_restless": { "n": "Bind the Restless", "d": "Bind the dead who fell in this war to the banners of the Dominion, so that none rises against its own side." },
+    "zin_dominion_wake_old_battlefields": { "n": "Wake the Old Battlefields", "d": "Call the dead of the old battlefields of the Middle Lands. Three hosts rise where the First Age fell, and they remember whom to hate.", "cost": "100 Authority, 20 Orders", "cost_tt": "Costs 100 Authority and 20 Orders. Needs four Middle Lands states under Volgan's hand." },
+    "zin_dominion_summon_the_dominion": { "n": "Summon the Dominion", "d": "The sworn realms are called to Nafeher and reminded whom they serve. Their oaths hold the firmer for it, and they drift no more for half a year." },
+    "zin_dominion_demand_tribute": { "n": "Demand Tribute", "d": "Take grain, iron and levies from a sworn realm. The Dominion is stronger, and the realm is not pleased." },
+    "zin_dominion_grant_spoils": { "n": "Grant Spoils", "d": "Give a sworn realm a state that Volgan holds. Its oath grows deep." },
+    "zin_dominion_nether_gate": { "n": "Open the Nether Gate", "d": "The court of the Nether opens a gate under an enemy-held state next to our lines. Fire and Netherborn come through it for a night, and the roads and fields of that land do not recover for a season." },
+    "zin_dominion_descend_again": { "n": "Descend Again", "d": "Send a new embassy down the stair of the Abyss. The depths are not asked twice in one year." },
+    "zin_dominion_silence_the_watchers": { "n": "Silence the Watchers", "d": "Some of the scouts that Mirolon sends south do not come home. What they saw is buried with them, and the veil closes again." },
+    "zin_dominion_make_a_client_crown": { "n": "Make a Client Crown", "d": "Set a conquered or fallen realm back on its throne as a vassal of Nafeher. It keeps its crown and pays its tithe." },
+    "zin_dominion_send_envoys": { "n": "Send Envoys", "d": "Send a herald of Nafeher with gifts and an offer to a free hold of the Dark Lands. The road is long, and most holds answer only to themselves." },
+    "zin_dominion_send_scouts_south": { "n": "Send Scouts South", "d": "Send scouts down the passes to look at what the south is doing. Every report is one more thing a court cannot laugh away." },
+    "zin_dominion_send_word_to_parim": { "n": "Send Word to Parim", "d": "Send the Ledger of Warnings to the court of Aenor and ask it to look south. The Golden Court has laughed before." },
+    "zin_dominion_raise_the_pass_forts": { "n": "Raise the Pass Forts", "d": "Put masons and levies to work on the forts of the passes. Every course of stone is a day bought." }
+  },
+  "ideas": {
+    "zin_dominion_out_of_the_storms": { "n": "Out of the Storms", "d": "The host came out of weather that hid it for a hundred years. The enemy has not yet understood what it faces." },
+    "zin_dominion_caught_unready": { "n": "Caught Unready", "d": "The forts were not finished, and the host came from nowhere. Mirolon's wardens are fighting before they have stood to." },
+    "zin_dominion_forewarned": { "n": "Forewarned", "d": "The scouts had told us. The passes were manned and the signal-fires laid, and the south found its road barred." },
+    "zin_dominion_hold_the_passes": { "n": "Hold the Passes", "d": "The forts are ready, the warnings believed, and every pass has its warden. The south must pay for each mile." },
+    "zin_dominion_heeded_warning": { "n": "A Warning Heeded", "d": "Parim listened at last, and the frontier companies of the Lost Cause are on the way. Mirolon is no longer alone." },
+    "zin_dominion_march_stalls": { "n": "The March Stalls", "d": "A year at the passes has cost the south dear. The hosts are tired and doubtful, and no one at Nafeher speaks of the march." },
+    "zin_dominion_champion_falls": { "n": "The Champion Falls", "d": "The champion of men has fallen before the whole army. The hosts of the south take heart and the war moves faster." },
+    "zin_dominion_broken_host": { "n": "The Broken Host", "d": "The Master's body is broken, and with it the order of the hosts. They stand where they stood, and do not know why." },
+    "zin_dominion_silent_throne": { "n": "The Silent Throne", "d": "The throne of Nafeher answers no one. The Steward rules in a name that does not reply, and the court has learned to be careful of its words." },
+    "zin_dominion_seeking_own_road": { "n": "Its Own Road", "d": "The sworn realm no longer asks Nafeher what to do. It looks for its own road, and it will find one." }
+  },
+  "dynamic": {
+    "zin_dominion_hosts": "The Hosts of the Dominion",
+    "zin_dominion_gate_scars": "Scars of the Gate"
+  },
+  "opinions": {
+    "zin_volgan_envoys_received": "Received the envoys of Nafeher",
+    "zin_volgan_envoys_refused": "Refused the envoys of Nafeher",
+    "zin_mirolon_parim_laughed_opinion": "Laughed at in Parim",
+    "zin_dominion_mirolon_friendship": "Friends of Mirolon",
+    "zin_dominion_watch_with_mirolon": "Watching beside Mirolon"
+  },
+  "trait": { "n": "Great Spirit in Arms", "d": "A Great Spirit leads the host in person. His army fights as one mind, and the enemy is lost before the battle is." },
+  "characters": {
+    "zin_volgan": { "name": "Volgan", "people": "the_dead", "female": false, "n": 1 },
+    "zin_volgan_ember_herald": { "name": "The Ember Herald", "people": "the_dead", "female": false, "n": 2, "traits": ["brilliant_strategist"], "skill": 5, "attack": 5, "defence": 3, "planning": 4, "logistics": 3 },
+    "zin_volgan_grave_warden": { "name": "The Grave-Warden", "people": "the_dead", "female": true, "n": 1, "traits": ["inflexible_strategist"], "skill": 4, "attack": 3, "defence": 4, "planning": 4, "logistics": 3 },
+    "zin_volgan_ghorvak": { "name": "Ghorvak of the Hundred Clubs", "people": "orcs", "female": false, "n": 1, "traits": ["brave"], "skill": 4, "attack": 6, "defence": 3, "planning": 1, "logistics": 2 },
+    "zin_mirolon_maeric": { "name": "High Warden Maeric", "people": "men", "female": false, "n": 2 },
+    "zin_mirolon_selda": { "name": "Captain Selda Varrow", "people": "men", "female": true, "n": 1, "traits": ["inflexible_strategist"], "skill": 4, "attack": 3, "defence": 6, "planning": 3, "logistics": 4 },
+    "zin_mirolon_hadric": { "name": "Scout-Master Hadric Thorne", "people": "men", "female": false, "n": 1, "desc": "Hadric Thorne has walked the southern passes for thirty years and counts every stone of them. He believes what he has seen, and he has seen enough to be afraid." }
+  },
+  "rules": {
+    "zin_rule_volgan_spirit": {
+      "name": "What Remains of Volgan",
+      "desc": "Decides whether anything returns to Nafeher when the Master's body is broken. The chronicle itself never says.",
+      "options": {
+        "UNRESOLVED": { "n": "Unresolved", "d": "Nothing returns. No text says whether the Master's spirit endured." },
+        "STIRRING": { "n": "A Stirring (sandbox)", "d": "From 4A 1765, once a year there is one chance in ten that the throne of Nafeher answers again. The tale is told as a telling of the age, not as history." }
+      }
+    },
+    "zin_rule_volgan_early_war": {
+      "name": "Volgan's Patience (AI)",
+      "desc": "Decides whether Volgan's AI may break the Veil of Storms before the War of the Last Crowns. A player's Volgan is never steered.",
+      "options": {
+        "DEFAULT": { "n": "Follow the Path", "d": "Follows the rule for the path of the story: the historical and plausible paths wait for the war; the free path may break the veil." },
+        "AI_HISTORICAL": { "n": "Wait for the War", "d": "Volgan's AI never breaks the veil before the War of the Last Crowns." },
+        "AI_FREE": { "n": "May Break the Veil", "d": "Volgan's AI may break the veil early once its hosts are very strong." }
+      }
+    }
+  },
+  "misc": {},
+  "events": {
+    "zin_dominion.2": {
+      "t": "Rumours from the South",
+      "d": "Travellers coming up from the Dead Lands tell of a stranger weather there: storms that stand still for weeks over the same valleys, and lights in the old barrows. Nobody can say what is under them, and the old men say it is only weather.",
+      "o": ["We have heard such talk before"]
+    },
+    "zin_dominion.3": {
+      "t": "Mirolon's Fears",
+      "d": "A rider from Mirolon has come to our court with a ledger of small things: ash on the winds, tracks in the passes where nothing should walk. The wardens of Mirolon do not claim to know what they mean. They only ask that someone else should look too.",
+      "o": ["Watch with them", "Mirolon frets"]
+    },
+    "zin_dominion.4": {
+      "t": "The Dead Lands Are Arming",
+      "d": "The storms over the Dead Lands have thinned, and what they hid can be seen from the passes. Hosts are mustered in the valleys of the south, more than any watcher has seen since the First Age. The tales are not tales.",
+      "o": ["So the legends wake"]
+    },
+    "zin_dominion.5": {
+      "t": "Mirolon's Warning",
+      "d": "The High Warden of Mirolon has sent a sealed ledger to the Golden Court: scouts' reports, tallies of the southern fords, the names of three barrow-priests seen in the foothills. The envoy waits in the antechamber. The seal-bearer reads a line aloud and the courtiers smile.",
+      "o": ["Volgan is a nursery tale", "Let the Lost Cause send its frontier companies", "Aenor will guarantee Mirolon"]
+    },
+    "zin_dominion.6": {
+      "t": "Scouts Lost",
+      "d": "A party of scouts went south into the foothills and has not come back. The pass-watch found their fire-pit cold and their pony standing in the road, with nothing else of them. Hadric Thorne keeps their names in the ledger.",
+      "o": ["Their names go on the wall"]
+    },
+    "zin_dominion.7": {
+      "t": "Scouts Found Dead",
+      "d": "Two of the scouts sent south were found at the foot of the pass in a ditch, laid side by side with their hands folded. Somebody wished it known that the south has eyes of its own.",
+      "o": ["Double the watch", "Keep it quiet"]
+    },
+    "zin_dominion.8": {
+      "t": "Envoys from Nafeher",
+      "d": "A herald in black and ember has come to our hall with gifts of iron and a sealed offer. Nafeher asks nothing yet but an open ear. The herald does not say what the Dominion will want later, and nobody in the hall asks.",
+      "o": ["Hear them", "Send them back south"]
+    },
+    "zin_dominion.9": {
+      "t": "The Envoys Return",
+      "d": "The envoys have come back from the hold they were sent to. The offer was heard and closed again, and the scribe has set down the answer exactly.",
+      "v": { "accepted": "The envoys have come back from the hold they were sent to. The offer was heard and taken up, and the scribe has set down the terms exactly." },
+      "o": ["As expected"]
+    },
+    "zin_dominion.20": {
+      "t": "The Passes Held",
+      "d": "For a year the hosts of the south have beaten on the passes of Mirolon and have not passed. The Dominion is weary and the wardens are proud, and no one at Nafeher will say how long the march can wait.",
+      "o": ["The march waits"]
+    },
+    "zin_dominion.21": {
+      "t": "Fire from the Gate",
+      "d": "The gate under the enemy's land has opened and closed. By morning the fields were burnt and the roads broken, and the Netherborn had gone back to where they came from. The court of the Nether sends no word, only a bill.",
+      "o": ["Again, when the gate allows"]
+    },
+    "zin_dominion.22": {
+      "t": "The Oath Falters",
+      "d": "The council of this realm has begun to ask what the oath to Nafeher gives it. The levies are heavy, the tribute is old, and the road to the master is a long one. A party of the captains whispers of another way.",
+      "o": ["Renew the oath", "Seek our own road"]
+    },
+    "zin_dominion.25": {
+      "t": "A Stirring in Nafeher",
+      "d": "In this telling of the age, something stirs in the throne room of Nafeher. The braziers are lit, the court rises, and a voice that no one has heard in many years says the names of the sworn realms. The scribes write only what they saw.",
+      "o": ["In this telling, the throne answers"]
+    },
+    "zin_dominion.26": {
+      "t": "The Steward Asks for Peace",
+      "d": "A herald in ember and black has come to our court from Nafeher with a white banner. The Steward of Nafeher offers peace without spoils and without conditions, and asks only that the hosts of the south be allowed to go home.",
+      "o": ["Peace, then", "Finish what the sword began"]
+    },
+    "zin_dominion.27": {
+      "t": "Mirolon's Proof",
+      "d": "Mirolon has laid its proof before the courts of Erdae, and no one can laugh at it any more: the hosts, the barrows, the oaths of the sworn realms, all set down plainly. It is now certain that Mirolon told the truth.",
+      "o": ["Mirolon was right"]
+    },
+    "zin_dominion.28": {
+      "t": "Terms from Nafeher",
+      "d": "The march has begun, and a herald of Nafeher stands at our gate with new terms. We have paid for quiet in the past, and the herald reminds us of it. He offers a crown of our own, as a client of the Dominion, if we kneel before the army reaches us.",
+      "o": ["Kneel as a client crown", "We paid for quiet, not chains"]
+    }
+  }
+}

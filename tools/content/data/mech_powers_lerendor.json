@@ -1,0 +1,237 @@
+{
+  "note": "Numbers, names and external references of the Lerendor mechanic (docs/specs/04_mechanics/lerendor_narrow_strait.md). Text is in mech_powers_lerendor_text.json.",
+  "realms": {
+    "lerendor": "Lerendor",
+    "aenor": "Aenor",
+    "eekedor": "Eekedor",
+    "ren": "R'en",
+    "andos_enda": "Andos Enda",
+    "goldoroth": "Goldoroth",
+    "dondor": "Dondor",
+    "blackton": "Blackton",
+    "zol": "Zol",
+    "north_scan": "East-Earth",
+    "dark_scan": "Dark Lands",
+    "befriend": [
+      "Eekedor",
+      "Mina",
+      "The Hold"
+    ]
+  },
+  "leans": {
+    "north": {
+      "Eekedor": 60,
+      "Mina": 15,
+      "The Hold": 15,
+      "Tolhon": 10,
+      "Belg": 10,
+      "Sensai": -5,
+      "Molot": -20,
+      "R'en": -25
+    },
+    "northDefault": 5,
+    "dark": {
+      "Blackton": 10,
+      "Dondor": 10,
+      "Goldoroth": -20
+    },
+    "darkDefault": 0,
+    "other": {
+      "Andos Enda": 10
+    }
+  },
+  "numbers": {
+    "standing": {
+      "start": -15,
+      "trusted": 40,
+      "broken": -40,
+      "drift": {
+        "0": 0.3,
+        "1": 0,
+        "2": -0.2,
+        "3": -0.4,
+        "4": -0.6
+      },
+      "corruption_at": 70,
+      "corruption_drift": -0.1,
+      "route_honour": 0.5,
+      "route_break": -0.2,
+      "route_supremacy": -0.4,
+      "redress": 20,
+      "arbitration": 5,
+      "arbitration_won": 10,
+      "arbitration_lost": -5,
+      "mocked_again": -10,
+      "appeal": 5,
+      "defence_sent": 15,
+      "defence_words": -10,
+      "incident_seize": -5,
+      "incident_waive": 3,
+      "oaths_renew": 15,
+      "oaths_delay": -5,
+      "oaths_refuse": -15,
+      "call_honour": 20,
+      "call_time": -10,
+      "call_refuse": -25,
+      "toll_lower": 3,
+      "toll_raise": -3,
+      "mourners": 3,
+      "cold_letter": -3,
+      "impostor": 2,
+      "wait": -5,
+      "question_gate": 60,
+      "withdraw_at": -40,
+      "withdraw_gate": -60
+    },
+    "toll": {
+      "start": 1,
+      "max": 2,
+      "pp": {
+        "0": 0,
+        "1": 0.05,
+        "2": 0.1,
+        "3": 0.15,
+        "4": 0.25
+      },
+      "cg": {
+        "0": 0,
+        "1": -0.01,
+        "2": -0.02,
+        "3": -0.03,
+        "4": -0.04
+      },
+      "lean_drain": -0.5,
+      "lean_drain_from": 3,
+      "iron_lean_drain": -0.5
+    },
+    "cohesion": {
+      "start": 55,
+      "per_stab": 500,
+      "per_pp": 1000,
+      "toll_drain": -0.2,
+      "estates_gain": 0.2,
+      "question_at": 25,
+      "one_throne": 80,
+      "grant": 15,
+      "hold": 5
+    },
+    "hegemony": {
+      "states": 54,
+      "pp_div": 400,
+      "trade_div": 500,
+      "supremacy_at": 40,
+      "protection_at": 60,
+      "full_at": 80,
+      "levies_at": 20,
+      "protect_lean": 80,
+      "protect_lean_supremacy": 60,
+      "protect_lean_seeks": 60
+    },
+    "lean": {
+      "invite_at": 50,
+      "invite_ai_at": 60,
+      "envoys": 10,
+      "charter": 15,
+      "marriage": 25,
+      "marriage_opinion": 20,
+      "decline": -10,
+      "refuse_protection": -20,
+      "gathering_for_invites": 25
+    },
+    "cost": {
+      "toll": 25,
+      "appeal": 50,
+      "close_strait": 50,
+      "envoys": 25,
+      "charter": 50,
+      "marriage": 75,
+      "invite": 25,
+      "protection": 100,
+      "redress": 75,
+      "mourners": 25,
+      "seize": 30,
+      "refer": 25,
+      "tales_navy": 5,
+      "estates": 50
+    },
+    "cooldown": {
+      "toll": 90,
+      "appeal": 180,
+      "envoys": 120,
+      "invite": 180,
+      "protection": 365,
+      "close_days": 180,
+      "charter_days": 365,
+      "torn_days": 365,
+      "arbitration_days": 60,
+      "ask_time_days": 90,
+      "ai_fallback_days": 30,
+      "prompt_days": 14,
+      "wait_days": 60,
+      "mtth_incident": 720,
+      "mtth_tales": 540,
+      "mtth_estates": 180
+    },
+    "gates": {
+      "tales_from": "1749.3.1",
+      "tales_until": "1755.12.31",
+      "question_from": "1751.3.1"
+    },
+    "route": {
+      "honour_standing": -30,
+      "break_standing": 30,
+      "hegemony_supremacy": 40,
+      "ai_mock_corruption": 60
+    },
+    "ai": {
+      "befriend": 50,
+      "prepare_zol": 100,
+      "garrison": 50,
+      "ai_closes_pp": 100,
+      "close_ships": 9
+    },
+    "gd": {
+      "withdrawal": 4
+    }
+  },
+  "externals": {
+    "triggers": [
+      "zin_is_site_sonargur",
+      "zin_is_site_strait_north",
+      "zin_is_site_strait_south",
+      "zin_is_site_strait_gateway",
+      "zin_is_region_north_lands",
+      "zin_is_region_dark_lands",
+      "zin_rules_is_historical",
+      "zin_rules_is_free",
+      "zin_rules_ai_branch_leren_historical",
+      "zin_rules_ai_branch_leren_honour",
+      "zin_aenor_is_realm"
+    ],
+    "effects": [
+      "zin_world_add_gathering_dark",
+      "zin_afrit_add_footholds"
+    ],
+    "events": [
+      "zin_leren.30",
+      "zin_leren.31",
+      "zin_leren.32",
+      "zin_leren.33",
+      "zin_leren.35",
+      "zin_leren.36",
+      "zin_lerendor.14"
+    ],
+    "variables": [
+      "zin_court_corruption",
+      "zin_story_pace"
+    ],
+    "flags": [],
+    "opinions": [
+      "zin_opinion_toll_of_1716"
+    ],
+    "ideas": [
+      "zin_lerendor_estates_in_council",
+      "zin_lerendor_estates_ascendant_spirit"
+    ]
+  }
+}
