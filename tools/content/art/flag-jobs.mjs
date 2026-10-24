@@ -17,6 +17,8 @@ const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve
 const outDir = path.resolve(isMain && process.argv[2] ? process.argv[2] : `${ART}/jobs`);
 export const HERALDRY_FILE = path.join(here, '../data/world/heraldry.json');
 const DARK = new Set(['the_dead', 'demons']);
+// Flags of the dark stream per sheet: its seven realms are cut into a sheet of 4 and a sheet of 3 (one row each), so no sheet has an empty cell.
+const DARK_PER_SHEET = 4;
 export const REALM_CELLS_FILE = path.join(here, '../data/realm-flags-cells.json');
 
 // The layout reference of every sheet: the first ACCEPTED sheet of data/realm-flags-cells.json (never a rejected file), so the grid is
@@ -53,26 +55,31 @@ export async function flagJobs({ heraldry = null, countries = countryTable() } =
   const order = (a, b) => (a.family < b.family ? -1 : a.family > b.family ? 1 : a.culture < b.culture ? -1 : a.culture > b.culture ? 1 : a.region < b.region ? -1 : a.region > b.region ? 1 : a.tag < b.tag ? -1 : 1);
   const all = countries.map(c => designs.get(c.tag));
   const streams = [all.filter(d => !DARK.has(d.people)).sort(order), all.filter(d => DARK.has(d.people)).sort(order)];
-  const groups = streams.flatMap(list => Array.from({ length: Math.ceil(list.length / S.per_sheet) }, (_, i) => list.slice(i * S.per_sheet, (i + 1) * S.per_sheet)));
+  // The dark stream is cut into sheets of DARK_PER_SHEET flags (seven dark realms: a sheet of 4 and a sheet of 3), each sheet one row.
+  const chunk = (list, size) => Array.from({ length: Math.ceil(list.length / size) }, (_, i) => list.slice(i * size, (i + 1) * size));
+  const groups = [...chunk(streams[0], S.per_sheet), ...chunk(streams[1], DARK_PER_SHEET)];
   const jobs = [], cells = [];
   const layoutRef = await acceptedLayoutRef(path.join(outDir, '../raw/flags'));
   groups.forEach((group, s) => {
     const id = `realm-flags-sheet-${String(s + 1).padStart(2, '0')}`;
-    const rows = Math.ceil(group.length / S.columns);
+    // A dark sheet is one row with as many columns as flags (no empty cell); the living sheets keep the reference grid.
+    const darkSheet = DARK.has(group[0].people), cols = darkSheet ? (group.length % 2 === 0 ? group.length / 2 : group.length) : S.columns;
+    const rows = Math.ceil(group.length / cols);
     const families = [...new Set(group.map(d => d.family))];
     const palette = [...new Set(group.flatMap(tinctureNames))];
     const dark = group.map((d, i) => (isNearBlackField(d) ? i + 1 : 0)).filter(Boolean);
     const keyline = dark.length ? ` Keyline: flags ${dark.join(', ')} have a near-black field; each of them is edged all round by a thin light-grey keyline (#a6a6a6), about two percent of the flag's width, drawn just inside the flag's own edge so it stands clear of the black ground. The keyline is the only addition; every tincture stays exactly as named.` : '';
-    const familyStyle = `${families.map(f => `Family style: ${H.families[f]?.mark_text ?? 'no family mark'}.`).join(' ')} Shared palette of this sheet: ${palette.join(', ')}.${keyline}`;
-    const rowsText = Array.from({ length: rows }, (_, r) => `Row ${r + 1}, left to right: ${group.slice(r * S.columns, (r + 1) * S.columns).map((d, i) => `${r * S.columns + i + 1}. ${d.blazon}`).join(' ')}`).join('\n');
-    const prompt = P.prompt_frame.replace('{n}', String(group.length)).replace('{cols}', String(S.columns)).replace('{rows}', String(rows)).replace('{family_style}', familyStyle).replace('{rows_text}', rowsText);
+    const shape = darkSheet ? ` Shape: every flag is a wide horizontal rectangle in the exact 41:26 proportion of the reference sheet's flags, about 1.58 times as wide as it is tall, never square. ${rows === 1 ? "Each flag measures about 300 by 190 pixels on the 1536 by 1024 canvas, so the row is wide and short." : "Each flag measures about 600 by 380 pixels on the 1536 by 1024 canvas, so the flags are large, wide and short."} Layout: ${rows} row${rows > 1 ? "s" : ""} of ${cols} flags, all the same size, evenly spaced, left to right, each flag fully inside the frame.` : '';
+    const familyStyle = `${families.map(f => `Family style: ${H.families[f]?.mark_text ?? 'no family mark'}.`).join(' ')} Shared palette of this sheet: ${palette.join(', ')}.${shape}${keyline}`;
+    const rowsText = Array.from({ length: rows }, (_, r) => `Row ${r + 1}, left to right: ${group.slice(r * cols, (r + 1) * cols).map((d, i) => `${r * cols + i + 1}. ${d.blazon}`).join(' ')}`).join('\n');
+    const prompt = P.prompt_frame.replace('{n}', String(group.length)).replace('{cols}', String(cols)).replace('{rows}', String(rows)).replace('{family_style}', familyStyle).replace('{rows_text}', rowsText);
     jobs.push({
-      id, prompt: layoutRef ? `Image 1 is ONLY a layout reference: copy its solid pure black background, its ${S.columns}-column grid, its flag size and its spacing exactly, but paint completely new flags as described below and copy none of its designs.\n${prompt}` : prompt,
+      id, prompt: layoutRef ? `Image 1 is ONLY a layout reference: copy its solid pure black background, ${darkSheet ? `its ${cols}-column grid of ${group.length} flags` : `its ${cols}-column grid`}, its flag size and its spacing exactly, but paint completely new flags as described below and copy none of its designs.\n${prompt}` : prompt,
       references: layoutRef ? [layoutRef] : [], out: path.join(outDir, '../raw/flags', `${id}.png`).split(path.sep).join('/'), size: S.canvas, quality: 'high',
-      check: { expected: group.length, cols: S.columns, rows, aspect: [1.4, 1.75], minAreaFraction: 1 / 3 },
+      check: { expected: group.length, cols: cols, rows, aspect: [1.4, 1.75], minAreaFraction: 1 / 3 },
       designs: group.map(d => ({ tag: d.tag, hash: d.design_hash })),
     });
-    group.forEach((d, i) => cells.push({ sheet: id, index: i, row: Math.floor(i / S.columns), col: i % S.columns, rows, tag: d.tag, name: d.name, design: d.design_hash }));
+    group.forEach((d, i) => cells.push({ sheet: id, index: i, row: Math.floor(i / cols), col: i % cols, rows, tag: d.tag, name: d.name, design: d.design_hash }));
   });
   return { jobs, cells };
 }
