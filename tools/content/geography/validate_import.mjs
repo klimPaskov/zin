@@ -32,11 +32,18 @@ export function toolSchema(tool, ref, file) {
   return JSON.parse(readFileSync(p, 'utf8'));
 }
 
-/** Ajv (draft 2020-12) from the tool's node_modules. */
+// The installed release of the tool (the worker keeps it current); its Ajv stands in while the checkout has no node_modules.
+export const RELEASED_TOOL = process.env.HOI4_AGENT_TOOLS_RUNTIME || 'C:/Users/klimp/AppData/Local/hoi4-agent-tools/runtime-v440/node_modules/hoi4-agent-tools';
+
+/** Ajv (draft 2020-12) from the tool checkout's node_modules, else from the installed release's. */
 export function toolAjv(tool) {
-  const require = createRequire(path.join(tool, 'package.json'));
-  const Ajv2020 = require('ajv/dist/2020').default;
-  return new Ajv2020({ allErrors: true, strict: false });
+  for (const base of [tool, RELEASED_TOOL]) {
+    try {
+      const Ajv2020 = createRequire(path.join(base, 'package.json'))('ajv/dist/2020').default;
+      return new Ajv2020({ allErrors: true, strict: false });
+    } catch (e) { if (e.code !== 'MODULE_NOT_FOUND') throw e; }
+  }
+  throw new Error(`Ajv is in neither ${tool} nor ${RELEASED_TOOL}`);
 }
 
 /** Schema errors of a document (empty when valid), at most `limit`. */
