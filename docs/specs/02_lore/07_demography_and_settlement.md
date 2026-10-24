@@ -72,7 +72,7 @@ People live where there is water, flat ground, a harbour or a pass ([geography m
 | pasture | 6 | Steppe, moor and upland pasture | Hunhun and Konori downs, Cold Lands moors |
 | jungle | 6 | Warm jungle | Obmi Jungle |
 | marsh | 4 | Marsh and fen | Great Swamp of Mirolon, Papz Swamp, Saeton Swamp |
-| mountain | 3 | Mountains and high passes | Magic Mountains, Isengar Mountains, Crown Mountains |
+| mountain | 3 | Mountains and high passes | Magic Mountains, Ormolak Mountains, Crown Mountains |
 | tundra | 0.8 | Tundra and taiga | Far Cold Lands |
 | desert_oasis | 35 | Oasis strip and wadi | Noris Wadi, Hot Lake, the Sand Road wells |
 | desert | 0.3 | Open desert and dune sea | Noris Desert, Alodale Desert, Sun Desert, Plutondo Dunes |
@@ -405,7 +405,7 @@ Placement uses countries, capital states and named features of the geography mod
 | 26 | Agtosai | Sensai | Men | Free Crowns of the North | Seat of the largest free crown | 16 | In Sensai's capital state, in the long vale. |
 | 27 | Gilvian | Mina | Men | Free Crowns of the North | Mining crown's town | 9 | In Mina's capital state, below the ore hills. |
 | 28 | Fandanar | Coldor | Men | Winter-Crown Folk | Seat of the Winter Crown; the Frost-Hall | 85 | In Coldor's capital state, in the interior valley between the Frozen Mountains and the Cold Mountains. |
-| 29 | Minnolomak | Isengard | Men | Isengard Warlords | Warlord's fort-city | 30 | In Isengard's capital state, at the mouth of the main pass of the Isengar Mountains. |
+| 29 | Minnolomak | Isengard | Men | Isengard Warlords | Warlord's fort-city | 30 | In Isengard's capital state, at the mouth of the main pass of the Ormolak Mountains. |
 | 30 | Ollondo | Horidor | Men | Ice Clans | Clan-realm seat allied to Coldor | 14 | In Horidor's capital state, on the valley road to Fandanar. |
 | 31 | Porideon | Windwaith | Men | Windwaith Seafarers | Council port of the wind-coast | 24 | In Windwaith's capital state, on the westward headland. |
 | 32 | Alorio | Greenle | Men | Windwaith Seafarers | Western port; the Harbour-Master's seat | 22 | In Greenle's capital state, in the best harbour of the western coast. |

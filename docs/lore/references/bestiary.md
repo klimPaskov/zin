@@ -291,7 +291,7 @@ Thirty-one cards, each with the drawings that belong to it. Every claim of the c
 
 ### 1.22 Devils
 
-**Kind:** spirit: corrupted Lesser Spirits who once served an Old God and escaped to Aoaz; not every devil served Zol (E, K15, Canon Policy). **Size:** eleven to seventeen men tall (card 20 to 30 m, drawn 25 m). **Habitat:** the **Kherith Isles** in the Sea of Lava (the card's "Death Islands"), the Demonic Mountains of Volgan's island, the Burning Shore of the Nether, the peaks of the Goldoroth Mountains in the Dark Lands, and Mount Ergo and Mount Argon above Pornivior in the East Lands (the card's "Pornyior" and "Ergos"). **Rarity:** very few.
+**Kind:** spirit: corrupted Lesser Spirits who once served an Old God and escaped to Aoaz; not every devil served Zol (E, K15, Canon Policy). **Size:** eleven to seventeen men tall (card 20 to 30 m, drawn 25 m). **Habitat:** the **Kherith Isles** in the Sea of Lava (the card's "Death Islands"), the Demonic Mountains of Volgan's island, the Burning Shore of the Nether, the peaks of the Goldoroth Mountains in the Dark Lands, and Mount Ergo and Mount Argul above Pornivior in the East Lands (the card's "Pornyior" and "Ergos"). **Rarity:** very few.
 
 **Behaviour.** The drawn devil is gaunt and black, skull-faced and ram-horned, with tattered red bat wings on grey bone, a clawed tail and hooves, and a glow of yellow-green fire in its belly. Devils fight with strength, claws, teeth, horns, wings and fire and kill everyone in front of them, and many of them serve Volgan. A devil is bound to its body and can be killed, and a slain devil comes back only through the lava rite, in which its skull is thrown into lava (E, K15).
 
@@ -565,7 +565,7 @@ The entries below are new unless marked; most come from the dossiers' section 9,
 | The Kusmeel and the Still Sea | Zol's Mistake, the north | Seals and cold-water fish off the outer isles; the sea birds avoid the black isles, and the fishermen say the fish of the still water taste of nothing |
 | The Rift Sea and the Gorlab Sea | Magical and East Lands | Shoal fish of the rift coast |
 | The Reeto Sea | Magical and East Lands, south | **Spore-lights** where the Mushroom Forest's spores fall on the water |
-| The Hellfire Gulf | East Lands | **Steam-crabs** by the hot vents |
+| The Gulf of the Teeth | East Lands | **Steam-crabs** by the hot vents |
 | The Hot Lake | East Lands | **Steam eels** in the hottest water; lake buffalo on the shore |
 | The Sun sea of the South Lands | South and East Lands | Tunny and flying fish off the coast road |
 | The Long Sea | Islands of the South | **Sharks** in their season; the **boat-breakers** of the whale-road at Yowi-yoor; reef fish, crabs and **sea turtles** |
@@ -591,7 +591,7 @@ The entries below are new unless marked; most come from the dossiers' section 9,
 
 **Dolphins** (P). The warm seas from the Peace water to the Sea of Gods; Sunhot and island sailors alike say a dolphin under the bow means the ship will make harbour, and neither will harm one.
 
-**Steam-crabs** (P). Red crabs of the hot vents of the Hellfire Gulf under the volcanoes of the East Lands, taken by the shore villages and sold boiled, which saves the cooking.
+**Steam-crabs** (P). Red crabs of the hot vents of the Gulf of the Teeth under the volcanoes of the East Lands, taken by the shore villages and sold boiled, which saves the cooking.
 
 **Spore-lights** (P). Small glowing jellies of the Reeto Sea that bloom on summer nights where the spores of the Mushroom Forest fall on the water; the Luv-zhise ferrymen steer by them across the Rift Narrows.
 
@@ -613,7 +613,7 @@ The entries below are new unless marked; most come from the dossiers' section 9,
 
 **The Mushroom Forest: giant fungi** (P). A belt of giant fungi along the rift shore, some as tall as towers, whose spores thicken the summer air until strangers can hardly breathe; the mycids live there (E), and nothing is said of them here beyond that (O). The fungi give dyes and spore-cloth, traded through Luv-zhise, and the **spore-lights** of the Reeto Sea are their gift to the water.
 
-**The Hot Lake and the Hellfire coast.** The **steam eels** and the **lake buffalo**, the **steam-crabs**, and on the Flaming Forests east of the Noris Desert the **flame-silk moth** (P): a red moth whose caterpillars strip the forest's red leaves in the dry season and spin cocoons of a red silk that does not fade, which the merchant princes of Stabilo sell at the price of gold. In the season the moths fly, the swarms are thick enough to blind a caravan, and the caravans wait.
+**The Hot Lake and the Smoking Teeth coast.** The **steam eels** and the **lake buffalo**, the **steam-crabs**, and on the Flaming Forests east of the Noris Desert the **flame-silk moth** (P): a red moth whose caterpillars strip the forest's red leaves in the dry season and spin cocoons of a red silk that does not fade, which the merchant princes of Stabilo sell at the price of gold. In the season the moths fly, the swarms are thick enough to blind a caravan, and the caravans wait.
 
 **Hol's Great Volcano: fire-lizards** (P). Basking lizards of the warm slopes of the Great Volcano on Hol in the Ihuy isles, whose shed skins the isle folk weave into a cloth that does not catch fire, which the smiths of the mainland prize.
 
@@ -641,7 +641,7 @@ The entries below are new unless marked; most come from the dossiers' section 9,
 | West Lands | **dwarves** (Brundahrim, Gromkerm), **small folk** (Dobbum), **Gektor**, **men**; Ronbo horses, pack-goats, red deer, wild boar, wolves, brown bears, ford-pike, herons, fen-midges, small spirits |
 | Dark Lands | **orcs**, **ogres**, **forest trolls**, **Smash**, **wurghs**, **goblins** and **hobgoblins** (Burnikit), **devils** (Goldoroth peaks), **demons** (Veshazel), **men**; wild boar, ravens, ash-moths, eels, fen-midges, sharks of Gaelmael |
 | Ember Lands (with the Nether and the Abyss) | **King of Demons**, **Roka**, the **people of the Abyss**, **devils**, **demons**, **Elzon** (history), **orcs**, **ogres**, **goblins**, **wurghs**; dead horses, cinder-hounds, glass-beetles, ash-crows, herons, the dead |
-| East Lands | **devils** (Mount Ergo, Mount Argon), **ogres** (Reeto Heights), **sand golems** (the desert's edge), **men**; camels, Noric horses, lake buffalo, lions, ice bears and white seals of Woqood, steam eels, steam-crabs, flame-silk moths, dune locusts, spore-lights |
+| East Lands | **devils** (Mount Ergo, Mount Argul), **ogres** (Reeto Heights), **sand golems** (the desert's edge), **men**; camels, Noric horses, lake buffalo, lions, ice bears and white seals of Woqood, steam eels, steam-crabs, flame-silk moths, dune locusts, spore-lights |
 | South Lands | **sand golems**, **angels**, **men**; camels, salt-hawks, glass-vipers, dune locusts |
 | Magical Lands | **krors**, **Golbran**, **mukroms** (Cursed Mountains), **men**; dragons, elven greys, dragon-tithe goats, silver harts, mist-wolves, giant fungi, spore-lights, small spirits |
 | Lands of the Sun | **angels**, **men**; sun-cranes, pearl oysters, jungle apes, fire-lizards, dolphins |
@@ -693,7 +693,7 @@ Every number below is a proposal for the systems that own it (warfare, economy, 
 | `zin_hab_sand_golem` (golem tracts of the Noris Desert) | sand golems | attrition +0.05 where roads are below level 2, the "marked tracks" | caravan realms with roads built |
 | `zin_hab_fen` (the fens of section 2.3), in summer | fen-midges | attrition +0.05 | realms with field healers: halved |
 | `zin_hab_glacier` (Frozen Lands of Coldor, Cold Mountains), in the thaw months Lumae to Vaelei | ice-borers | attrition +0.05 | Cold Lands realms (the Long Winters spirit) |
-| `zin_hab_devil_lair` (Kherith Isles, Demonic Mountains, Goldoroth peaks, Mount Ergo, Mount Argon) | devils | attrition +0.10 | realms that keep the lava rite |
+| `zin_hab_devil_lair` (Kherith Isles, Demonic Mountains, Goldoroth peaks, Mount Ergo, Mount Argul) | devils | attrition +0.10 | realms that keep the lava rite |
 | `zin_hab_dead_wood` (Fallen Forest) | mist-wolves | attrition +0.05 | the elves of the Magical Forest |
 | `zin_hab_flame_silk` (Flaming Forests), in the dry season | flame-silk moths | speed -0.10 | nobody; caravans wait |
 | Lunhrim Notch states | dwarves' pack-goats | `local_supplies` +0.20 for a realm that has hired Kunhrim carriers | |
@@ -705,7 +705,7 @@ Every number below is a proposal for the systems that own it (warfare, economy, 
 | --- | --- | --- |
 | Krors | Lustras Hills | Category Barren Waste; no buildings; never settled |
 | Baelim | Aenor Forest | No Timber is drawn; the forest is never cut; the realm's states keep their trees |
-| Devils | the lair states | `local_building_slots_factor` -0.5: "the Hellfire uplands are emptied by ash and devils" (East Lands dossier) |
+| Devils | the lair states | `local_building_slots_factor` -0.5: "the Smoking Teeth uplands are emptied by ash and devils" (East Lands dossier) |
 | Ash-moths | Goldoroth slopes | After an ash-fall, `local_resources_factor` -0.25 (Grain) for 180 days |
 | Dune locusts | wadi farms of the South and East | In a dry year, `local_resources_factor` -0.30 (Grain) for 120 days |
 | Wurghs | the southern Vale and Herez roads, the Dark Lands moors | In a raid, `local_resources_factor` -0.10 (Horses) for 120 days |
@@ -779,7 +779,7 @@ The economy has seven resources (Essence, Timber, Horses, Stone, Iron, Gold, Gra
 | The bear-skin mantle | Cold Lands clans | ice bear | a chief who takes a bear in his own hand: +25 authority, once per ruler |
 | The wardens' loaf at the flood | West Lands river wardens | ford-pike | Maelwen festival: calm +3% in river states |
 | Troll silver | realms beside the Troll Forest | trolls | yearly decision: -30 authority, no night raids |
-| The fire-tithe | Pornivior and the Hellfire villages | devils | yearly decision: -15 authority, calm +5% (the people sleep sound; the devils are not bound) |
+| The fire-tithe | Pornivior and the Smoking Teeth villages | devils | yearly decision: -15 authority, calm +5% (the people sleep sound; the devils are not bound) |
 | The dragon-tithe | Yavieth and its friends | dragons | dragon herd raids stop for its keepers |
 | Gold for luck | Olodor's neighbours | gnomes | "Bring Gold to Olodor" |
 | The silver hart's peace | the elves of the Magical Forest | silver harts | a realm that hunts one loses 50 opinion with every elven realm |

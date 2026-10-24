@@ -9,20 +9,20 @@
   "owner decision of 24 October 2026: the sea is the Kusmeel"
  ],
  "counts": {
-  "coasts": 3,
+  "coasts": 4,
   "forests": 7,
   "ice": 3,
   "lakes": 1,
   "lands": 80,
-  "passes": 2,
+  "passes": 3,
   "plains": 3,
-  "ranges": 7,
+  "ranges": 10,
   "regions": 5,
   "rivers": 3,
   "seas": 28,
   "sites": 60,
   "straits": 2,
-  "volcanoes": 2
+  "volcanoes": 3
  },
  "entries": [
   {
@@ -54,6 +54,16 @@
    "meaning": "east cliff",
    "reason": "Wonderland is a name from other fiction",
    "source": "cold_lands.md renamed labels"
+  },
+  {
+   "id": "gulf_hellfire",
+   "array": "coasts",
+   "oldName": "Hellfire Gulf",
+   "newName": "The Gulf of the Teeth",
+   "language": null,
+   "meaning": null,
+   "reason": "the gulf under the Smoking Teeth (K48)",
+   "source": "owner (K48); east_lands.md water table"
   },
   {
    "id": "forest_crown",
@@ -967,6 +977,16 @@
    "source": "nether.md"
   },
   {
+   "id": "pass_isengar",
+   "array": "passes",
+   "oldName": "Isengar Pass",
+   "newName": "Ormolak Pass",
+   "language": "coldic",
+   "meaning": null,
+   "reason": "the pass takes the range's new name (K48)",
+   "source": "owner (K48); cold_lands.md relief"
+  },
+  {
    "id": "pass_kingson_gate",
    "array": "passes",
    "oldName": "Kingson Gate",
@@ -1027,6 +1047,26 @@
    "source": "geography; middle_lands.md relief table"
   },
   {
+   "id": "range_hellfire",
+   "array": "ranges",
+   "oldName": "Hellfire Range",
+   "newName": "The Smoking Teeth",
+   "language": null,
+   "meaning": null,
+   "reason": "\"Hellfire\" is a real-world word; the owner chose the Smoking Teeth, a folk name for the burning cones (K48)",
+   "source": "owner (K48); east_lands.md relief"
+  },
+  {
+   "id": "range_isengar_mountains",
+   "array": "ranges",
+   "oldName": "Isengar Mountains",
+   "newName": "Ormolak Mountains",
+   "language": "coldic",
+   "meaning": null,
+   "reason": "\"Isengar\" echoes Isengard, a name from other fiction; the owner chose Ormolak (K48)",
+   "source": "owner (K48); cold_lands.md relief"
+  },
+  {
    "id": "range_magic_1",
    "array": "ranges",
    "oldName": "Magic Mountains (west ridge)",
@@ -1064,7 +1104,7 @@
    "newName": "Kingson Wall",
    "language": null,
    "meaning": null,
-   "reason": "no brackets; the ridge that is the east side of the Kingson ring",
+   "reason": "no brackets; the ridge that is the east side of the Kingson ring; the owner keeps the name for natural mountains (K47)",
    "source": "geography; middle_lands.md section 2.7"
   },
   {
@@ -1086,6 +1126,16 @@
    "meaning": null,
    "reason": "the Titans are a name of real myth",
    "source": "cold_lands.md section 2"
+  },
+  {
+   "id": "range_woqood_alps",
+   "array": "ranges",
+   "oldName": "Woqood Alps",
+   "newName": "Woqood Spires",
+   "language": null,
+   "meaning": null,
+   "reason": "the Alps are a real-world range; the owner chose the Woqood Spires (K48)",
+   "source": "owner (K48); east_lands.md relief"
   },
   {
    "id": "region_ember_lands",
@@ -2066,6 +2116,16 @@
    "meaning": null,
    "reason": "no water is an Ocean (owner)",
    "source": "north_lands.md straits"
+  },
+  {
+   "id": "volcano_argon",
+   "array": "volcanoes",
+   "oldName": "Mount Argon",
+   "newName": "Mount Argul",
+   "language": null,
+   "meaning": null,
+   "reason": "argon is a chemical element; the owner chose Mount Argul (K48)",
+   "source": "owner (K48); east_lands.md relief"
   },
   {
    "id": "volcano_avalon",

@@ -141,7 +141,7 @@ Positions are in the drawing frame (0 to 1 of 3,200 by 2,323) and good to about 
 - Every feature has `id`, `name`, `established`, `kind`, `elevation` and `geometry`; ids are unique.
 - Every point, line vertex and polygon of land features is on land of the layout (within 3 pixels), after the final adjustment. Automatic snaps moved about 60 features by less than 0.03 units.
 - The Great Lake and the Hot Lake lie wholly inland.
-- A synthetic raster of the JSON (ocean, plains, deserts, marshes, forests, hills, mountains with foothills, lakes, rivers, volcanoes) shows the Great Wall as a continuous barrier, Kingson ringed, the Vale of Aenor green, and the East Lands carrying the Hellfire Range with its volcanoes.
+- A synthetic raster of the JSON (ocean, plains, deserts, marshes, forests, hills, mountains with foothills, lakes, rivers, volcanoes) shows the Great Wall as a continuous barrier, Kingson ringed, the Vale of Aenor green, and the East Lands carrying the Smoking Teeth with its volcanoes.
 - No feature is named Dardan.
 
 ## 8. Open questions

@@ -109,18 +109,18 @@ Northwest, the largest landmass, running off the west and north edges. It is one
 | --- | --- |
 | Climate | Arctic and subarctic; long dark winters, short cool summers; blizzards on the coasts. |
 | Seasons | Frozen from Deepwinter to Thaw; rivers open only two months. |
-| Elevation profile | Flat ice plain 1, broken by three great ranges (Icy, Isengar, Cold Mountains) at 4 to 5. |
+| Elevation profile | Flat ice plain 1, broken by three great ranges (Icy, Ormolak, Cold Mountains) at 4 to 5. |
 | Terrain targets | plains 74%, forest 4%, hills 9%, mountain 12%, marsh 1% |
 | Provinces per state | 5 / 8 / 12 (min / typical / max), province area about 2400 pixels |
 | Peoples | Tribes, giants of Titanos, yeti, free coastal towns; Coldor in the west, Isengard in the north, Horidor in the south-east. |
-| Fertile areas | Almost none inland. People live on the south and west coasts (Narnia, Andgas, Poloto), in the sheltered Isengar valley (Mp'E) and along the Fandan River; herding and sealing. |
-| Major ranges | Icy Mountains, Isengar Mountains, Yeldenne Heights, Coldor Mountains, Cold Mountains, Neridor Mountains |
-| Natural borders | Coldor and Isengard: the Fandan River and the Isengar Mountains. Coldor and Horidor: the Naepu ridge and the Naepu River. Cold Lands and West Lands: the Neridor Mountains and the Worlond Forest belt; the Neck Road is the only road. |
+| Fertile areas | Almost none inland. People live on the south and west coasts (Narnia, Andgas, Poloto), in the sheltered Ormolak valley (Mp'E) and along the Fandan River; herding and sealing. |
+| Major ranges | Icy Mountains, Ormolak Mountains, Yeldenne Heights, Coldor Mountains, Cold Mountains, Neridor Mountains |
+| Natural borders | Coldor and Isengard: the Fandan River and the Ormolak Mountains. Coldor and Horidor: the Naepu ridge and the Naepu River. Cold Lands and West Lands: the Neridor Mountains and the Worlond Forest belt; the Neck Road is the only road. |
 
 - **Rivers.** Fandan River (*proposed*, long) from the Yeldenne Heights through the Neridor gap to Poloto. Naepu River and Orewell Water (*proposed*, short). Rivers are frozen four months a year.
 - **Lakes.** Cold Tarn (*proposed*, small). The reference shows only a thin streak.
 - **Coast.** Cape Tinton, Poloto Head, Wonderland Point; the Gulf of Minnolomak (*proposed*) in the north-east; the Pandar sea on the west coast.
-- **Passes.** The Neck Road and the Neridor Gap; the Isengar Pass into the Yeldenne valley.
+- **Passes.** The Neck Road and the Neridor Gap; the Ormolak Pass into the Yeldenne valley.
 - **Sites.** Fandanar; the Castle of Yeldenne at Mp'E; Eindil's Ice in the far north-west (*proposed*); the Landing below Mp'E (*proposed*).
 
 ### Windwaith arm
@@ -304,7 +304,7 @@ A vast black wasteland at the north edge and every black island of the Kusmeel. 
 
 ### East Lands
 
-East of the rift, running off the east and south edges. A snow coast in the north (Woqood), the Hot Lake basin in the middle, the Noris Desert south of it, the Melty Mountains on the east edge, and the Hellfire Range with its volcanoes in the south-east.
+East of the rift, running off the east and south edges. A snow coast in the north (Woqood), the Hot Lake basin in the middle, the Noris Desert south of it, the Melty Mountains on the east edge, and the Smoking Teeth with its volcanoes in the south-east.
 
 | Item | Value |
 | --- | --- |
@@ -315,11 +315,11 @@ East of the rift, running off the east and south edges. A snow coast in the nort
 | Provinces per state | 3 / 5 / 8 (min / typical / max), province area about 1300 pixels |
 | Peoples | Noris, Stabilo, Gondolin, Drak, Alerhia, Miaed, Avalon, Mora, Ostoroth. |
 | Fertile areas | The Hot Lake shore, Mora, Ernois, Delbiz Grasslands, the Gondolin coast and the caravan oases. |
-| Major ranges | Melty Mountains, Woqood Alps, Hardtmuth Mountains, Hellfire Range, Pego Mountains, Drak Mountains, Ernois Mountains, Reeto Heights |
-| Natural borders | Noris and Stabilo: the Noris Rise and the Flaming Forests. Noris and Gondolin: the Fosoco River and the Woqood Alps. Stabilo and Drak: the Drak Mountains. East Lands and the Magical Lands: the Rift Sea. |
+| Major ranges | Melty Mountains, Woqood Spires, Hardtmuth Mountains, Smoking Teeth, Pego Mountains, Drak Mountains, Ernois Mountains, Reeto Heights |
+| Natural borders | Noris and Stabilo: the Noris Rise and the Flaming Forests. Noris and Gondolin: the Fosoco River and the Woqood Spires. Stabilo and Drak: the Drak Mountains. East Lands and the Magical Lands: the Rift Sea. |
 
-- **Mountains.** Melty, Woqood Alps, Hardtmuth, Hellfire, Pego, Drak, Ernois, Reeto Heights, Noris Rise.
-- **Volcanoes.** Mount Ergo, Mount Argon, Avalon Fires, Plutondo Vents, Drak Furnace, Pego Cones, Hardtmuth Fire, Fire Mountain, Reeto Fire.
+- **Mountains.** Melty, Woqood Spires, Hardtmuth, Hellfire, Pego, Drak, Ernois, Reeto Heights, Noris Rise.
+- **Volcanoes.** Mount Ergo, Mount Argul, Avalon Fires, Plutondo Vents, Drak Furnace, Pego Cones, Hardtmuth Fire, Fire Mountain, Reeto Fire.
 - **Lake.** Hot Lake, about 330 by 315 pixels. **Rivers.** Gondolin, Fosoco, Mora, Meltwater (all *proposed*) and the dry Noris Wadi.
 - **Roads.** The five caravan roads (*proposed*): Salt, Gold, Rift, Lake, Sand.
 - **Rift.** The Rift Narrows (about 200 pixels) is the one crossing for the eastern coalition.
@@ -409,7 +409,7 @@ The politics step may rebalance these. They follow the rock and climate.
 | Steel and coal | Goldoroth Mountains and the Darkness (Dark Lands); Cold Mountains (Cold Lands); Herlitz range (West Lands) | Old iron-bearing ridges |
 | Chromium | Hardtmuth Mountains; Herrodon Mountains | Volcanic and ultramafic rock |
 | Tungsten | Giant and Gigantic Mountains (the Wall belt) | Granite spine; Aenor holds the Aenor side |
-| Aluminium | Hellfire Range and Pego Mountains | Weathered volcanic slopes |
+| Aluminium | Smoking Teeth and Pego Mountains | Weathered volcanic slopes |
 | Oil | Noris Desert and the Ember Lands plateau | Sunken basins |
 | Rubber | Obmi Jungle, Hot Forest (Lands of the Sun), the Ihuy islands | The only jungles |
 | Food and manpower | Vale of Aenor, Hunhun Downs, Novez Fields, Mora, Sun Grasslands | See section 5 |
@@ -437,9 +437,9 @@ Each row gives the placement rule and what the map must hold. Coordinates are in
 | Narrow Strait | established; place *proposed* | line from 2995, 1070 to 3302, 1096 | Between R'en's south cape and the Organ cape of the Middle Lands. 40 to 60 pixels at its narrowest. Sea crossing only. Naval bases at Sonargur and on the Aenor side. The owner has not confirmed the place; the proposal stands (short list 3). |
 | Bloody Forest | established | 0.630, 0.436 | Dense dark wood on the north-east coast beside the Organ Mountains. Resists Aenor. Forest with a hill under it. |
 | Sun Desert | established; renamed | 0.700, 0.890 (3584, 2278) | A dune sea in the south-west lobe of the East Lands, running off the south edge. Desert terrain; oases on the Sand Road. The coast faces the Ocean of the Sun. |
-| Castle of Yeldenne at Mp'E | established; place *proposed* | 0.188, 0.093 (963, 238) | Frozen north of the Cold Lands, in a high valley between the Yeldenne Heights and the Isengar Mountains. State named Mp'E. |
+| Castle of Yeldenne at Mp'E | established; place *proposed* | 0.188, 0.093 (963, 238) | Frozen north of the Cold Lands, in a high valley between the Yeldenne Heights and the Ormolak Mountains. State named Mp'E. |
 | Dardan | established; place open | not placed | **Do not place.** No feature, label or victory point may be named Dardan. See `unplaced` in the JSON. |
-| East Lands volcanoes and ranges | drawn and *proposed* | Hellfire Range spine from 4378, 2342 to 5059, 2202 | The greatest mountain mass of Aoaz: elevation 5, core about 110 pixels wide with foothills to 280. Nine volcanoes (Ergo, Argon, Avalon, Plutondo, Drak, Pego, Hardtmuth, Fire Mountain, Reeto). Melty Mountains run along the east edge; the Hardtmuth chain on the south-west. |
+| East Lands volcanoes and ranges | drawn and *proposed* | Smoking Teeth spine from 4378, 2342 to 5059, 2202 | The greatest mountain mass of Aoaz: elevation 5, core about 110 pixels wide with foothills to 280. Nine volcanoes (Ergo, Argul, Avalon, Plutondo, Drak, Pego, Hardtmuth, Fire Mountain, Reeto). Melty Mountains run along the east edge; the Hardtmuth chain on the south-west. |
 | Ember Lands storm coast | established | polygon `sea_tempest_reach` | A storm belt round the Ember Lands islands, `kind: storm_belt` (about 600 pixels across). Port capacity and attrition modifiers come from the magic spec; fleets need a storm-hardened port. |
 | Pupor Ocean | established | 0.068, 0.610 | The sea inside the Triton arcs. Sheltered, shallow, ringed by islands. |
 | Sea of Darkness | established; reading open | 0.500, 0.466 | The inner sea of the Dark Lands between the Dondor arm and the Goldoroth arm. The drawn grey island of that name is a separate land (the model calls the whole body the Gulf of Darkness). The owner has not said whether it opens to other seas; it opens to the Crown Ocean through the Dark Channel. |
@@ -463,7 +463,7 @@ Everything in this table is *proposed* unless marked, and links geography to the
 | Zol's Mistake | A black wasteland that existed before Aen; the reason is not explained | *Zol's Mistake* (open) |
 | The rift sea | A long sea between the Magical Lands and the East Lands | *Aoaz and Its Regions* |
 | Dardan | Not placed; the First Age note proposes a plain in the southern approaches of the Middle Lands | *First Age* (proposal only) |
-| The Hellfire Range | A great volcanic mass at the south-east edge; the drawn lava ocean | owner's drawing |
+| The Smoking Teeth | A great volcanic mass at the south-east edge; the drawn lava ocean | owner's drawing |
 
 ## 5. Fertility and population logic
 
@@ -484,7 +484,7 @@ Country and state borders follow these lines. A border may leave a line only to 
 
 | Border | Natural line |
 | --- | --- |
-| Cold Lands | Coldor and Isengard: the Fandan River and the Isengar Mountains. |
+| Cold Lands | Coldor and Isengard: the Fandan River and the Ormolak Mountains. |
 | Cold Lands | Coldor and Horidor: the Naepu ridge and the Naepu River. |
 | Cold Lands | Cold Lands and West Lands: the Neridor Mountains and the Worlond Forest belt; the Neck Road is the only road. |
 | Windwaith arm (Cold Lands) | The arm is bounded by the Pandar sea and the Triton's Ocean; it joins the Cold Lands over the sea only by the ice in winter. |
@@ -513,7 +513,7 @@ Country and state borders follow these lines. A border may leave a line only to 
 | Magical Lands | Magical Lands and the East Lands: the Rift. |
 | Zol's Mistake | The Kusmeel is the only border; every black island belongs to the Mistake. |
 | East Lands | Noris and Stabilo: the Noris Rise and the Flaming Forests. |
-| East Lands | Noris and Gondolin: the Fosoco River and the Woqood Alps. |
+| East Lands | Noris and Gondolin: the Fosoco River and the Woqood Spires. |
 | East Lands | Stabilo and Drak: the Drak Mountains. |
 | East Lands | East Lands and the Magical Lands: the Rift Sea. |
 | South Lands | The Ocean of the Sun on the west; the Hardtmuth chain on the east. |
@@ -534,8 +534,8 @@ Country and state borders follow these lines. A border may leave a line only to 
 | Kind | Names |
 | --- | --- |
 | Seas and oceans | Amarelo Seas, Cold Ocean, Demonic Sea, Dun Sea, Gold Wides, Gorlab Sea, Great Sea of the Leviathan, Ihuy Seas, Kradlon Ocean, Leren Ocean, Mushroom Seas, Ocean of Peace, Kusmeel, Ocean of the Sun, Onp Ocean, Pandar, the Frozen Seas, Pupor Ocean, Rim Ocean, Santon Ocean, Sea of Darkness, Sea of Death, Sea of Deaths, Sea of Gods, Sea of Lava, Sea of Mernon, Sea of Monsters, Sea of Nazerch, Seas of Lemo, Seas of Lusain, Sharp Seas, Siroler Seas, The Blue Sea, The Dark Sea, The Dead's Sea, The Frozen Ocean, The Left Sea of Dolon, The Long Sea, The Magical Ocean, The Seas of Light, Triton's Ocean, Windy Seas |
-| Mountain ranges | Adel Mountains, Benan Mountains, Black Hills, Bolpor and Boldor Mountains, Cold Mountains, Coldor Mountains, Corogon Highlands, Crown Mountains (north), Crown Mountains (south arc), Cursed Mountains, Demonic Mountains, Deodolor Hills, Dragon Mountain, Drak Mountains, Dusty Mountains, Erg Mountains, Etonia and Renann Mountains, Fog and Eye Mountains, Giant Mountains, Gigantic Mountains, Goldoroth Mountains, Grano Mountains, Great Wall of Aenor, Hardtmuth Mountains, Hendair Hills, Herlitz Mountains, Herrodon Mountains, Hiloff Rim, Icy Mountains, Isengar Mountains, Loron Mountains, Lunhrim, Lustras Hills, Magic Mountains (middle ridge), Magic Mountains (south ridge), Magic Mountains (wall section), Magic Mountains (west ridge), Melty Mountains, Mirolon Mountains, Nan Mountains, Neridor Mountains, Nether Mountains, Olsuaon Massif, Organ Mountains, Pego Mountains, Raerby and Hapos Mountains, Solondor Mountains, Sukro Mountains, Sun Mountains, The Darkness, The Grey Hills, Tinta Hills, Wely and Fair Mountains, Wide Mountains |
-| Volcanoes | Avalon Fires, Goldoroth Volcano, Good Volcanoes, Good Volcanoes (second cone), Great Volcano, Hardtmuth Fire, Mount Argon, Mount Ergo, Plutondo Vents |
+| Mountain ranges | Adel Mountains, Benan Mountains, Black Hills, Bolpor and Boldor Mountains, Cold Mountains, Coldor Mountains, Corogon Highlands, Crown Mountains (north), Crown Mountains (south arc), Cursed Mountains, Demonic Mountains, Deodolor Hills, Dragon Mountain, Drak Mountains, Dusty Mountains, Erg Mountains, Etonia and Renann Mountains, Fog and Eye Mountains, Giant Mountains, Gigantic Mountains, Goldoroth Mountains, Grano Mountains, Great Wall of Aenor, Hardtmuth Mountains, Hendair Hills, Herlitz Mountains, Herrodon Mountains, Hiloff Rim, Icy Mountains, Ormolak Mountains, Loron Mountains, Lunhrim, Lustras Hills, Magic Mountains (middle ridge), Magic Mountains (south ridge), Magic Mountains (wall section), Magic Mountains (west ridge), Melty Mountains, Mirolon Mountains, Nan Mountains, Neridor Mountains, Nether Mountains, Olsuaon Massif, Organ Mountains, Pego Mountains, Raerby and Hapos Mountains, Solondor Mountains, Sukro Mountains, Sun Mountains, The Darkness, The Grey Hills, Tinta Hills, Wely and Fair Mountains, Wide Mountains |
+| Volcanoes | Avalon Fires, Goldoroth Volcano, Good Volcanoes, Good Volcanoes (second cone), Great Volcano, Hardtmuth Fire, Mount Argul, Mount Ergo, Plutondo Vents |
 | Rivers | Kulolo River, River Tich, The Giant River, The Great River |
 | Lakes | Ergo Sea, Evian Sea, Hot Lake, Ilurdor Sea, Lake Lozo, Lake of Mirolon, Sea of R'en, Semi Sea, Soun Lake, Sun Lake, The Great Lake |
 | Forests | Alerhia Woods, Bloody Forest, Cologon Forest, Dark Forests, Death Forest, Dwarc and Swy Forests, Eagle Forest, Enhis Forest, Fallen Forest, Flaming Forests, Fonoor and Giant Forests, Forests of Darkhere, God Forest, Hell Forest, Hiloron Woods, Hot Forest, Kilinti Forests, Kingdom Forests, Light Forests of Yang, Living Forest, Magical Forest, Mirolon Forests, Mora Woods, Mushroom Forest, Obmi Jungle, Oreton Woods, Safeton Wood, Stone Forest, Swamp Forests, Taith Forests, Troll Forest, Worlond Forest, Zilin Forests |
@@ -554,7 +554,7 @@ Country and state borders follow these lines. A border may leave a line only to 
 | Kind | Names |
 | --- | --- |
 | Seas and oceans | Crown Ocean, The Tempest Reach, Western Dark Strait |
-| Mountain ranges | Ernois Mountains, Hellfire Range, Nolorim Heights, Noris Rise, Reeto Heights, The Barren Crown, Titanos Heights, Woqood Alps, Yeldenne Heights |
+| Mountain ranges | Ernois Mountains, Smoking Teeth, Nolorim Heights, Noris Rise, Reeto Heights, The Barren Crown, Titanos Heights, Woqood Spires, Yeldenne Heights |
 | Volcanoes | Demonic Fire, Drak Furnace, Fire Mountain, Mount Nether, Nether Maw, Pego Cones, Reeto Fire |
 | Rivers | Adel Burn, Andos Water, Ashwater, Dondor Water, Elwen River, Fandan River, Fosoco River, Furvi Run, Gil'dul Water, Gondolin River, Grey River, Konorar, Leren River, Lozo Water, Meltwater River, Naepu River, Noris Wadi, Orewell Water, R'en Water, River Aenar, River Hilorn, River Mirolon, River Mora, River Safen, River Selenar, Ronbo Water, Sunwater, Teste Brook |
 | Lakes | Cold Tarn |
@@ -564,8 +564,8 @@ Country and state borders follow these lines. A border may leave a line only to 
 | Snowfields and edges | Snowfields of the Cold Lands, The Ashen Cliffs, The Hoarfrost Barrier, The Roof Cliffs |
 | Plains | Eekedor Vale, Gondolin Coast, Gunwaith Downs, Kingson Vale, The Vale of Aenor |
 | Straits | Asgard Sound, Coldor Channel, Corogon Narrows, Dark Channel, Mirolon Neck, Mirolon Sound, Mouth of the Leren Ocean, North Mouth of the Rift, Pollos Passage |
-| Passes | Dondor Pass, Fog Gap, Great River Gorge, Hardtmuth Pass, Isengar Pass, Kingson Gate, Lunhrim Notch, Melty Pass, Mirolon Passes, Neridor Gap, Nolorim East Pass, Nolorim West Pass, Noris Gap, Organ Coast Road, South Gate, The Boundary Groves, The Grey Ford, The Neck Road |
-| Capes, gulfs, bays, peninsulas | Abyss Point, Bay of Kradlon, Bay of Safeton, Cape of Elvana, Delbiz Bay, Dondor Head, Furviatlon Cape, Gondolin Cape, Gulf of Darkness, Gulf of Minnolomak, Hellfire Gulf, Herrodon Head, Hiloron Head, Mushroom Head, Nothingness Peninsula, Novez Bay, Organ Cape, R'en Cape, Selen Point, Sonargur Point, The Night Reef |
+| Passes | Dondor Pass, Fog Gap, Great River Gorge, Hardtmuth Pass, Ormolak Pass, Kingson Gate, Lunhrim Notch, Melty Pass, Mirolon Passes, Neridor Gap, Nolorim East Pass, Nolorim West Pass, Noris Gap, Organ Coast Road, South Gate, The Boundary Groves, The Grey Ford, The Neck Road |
+| Capes, gulfs, bays, peninsulas | Abyss Point, Bay of Kradlon, Bay of Safeton, Cape of Elvana, Delbiz Bay, Dondor Head, Furviatlon Cape, Gondolin Cape, Gulf of Darkness, Gulf of Minnolomak, Gulf of the Teeth, Herrodon Head, Hiloron Head, Mushroom Head, Nothingness Peninsula, Novez Bay, Organ Cape, R'en Cape, Selen Point, Sonargur Point, The Night Reef |
 | Roads | The Gold Road, The Lake Road, The Rift Road, The Salt Road, The Sand Road |
 | Sites and places | Bridge of the Three Oaths, Eindil's Ice, Girdon's Winter Ford, Great Lake port (east shore), Great Lake port (north shore), Great Lake port (south shore), Great Lake port (west shore), Kingson Gate Fortress, Lunhrim Fortress, Mirror of First Rain, North Wall Fort (Organ), South Gate Fortress, The Landing below Mp'E, The Palace Cliff, The Three Valleys, The shrine beneath the tide, Varnondor staging port |
 
@@ -593,7 +593,7 @@ Key ranges (spine ends in world coordinates):
 | Nether Mountains | 5 | 31 | 0.600, 0.880 to 0.622, 0.893 |
 | Melty Mountains | 5 | 34 | 0.975, 0.520 to 0.990, 0.720 |
 | Hardtmuth Mountains | 5 | 40 | 0.752, 0.805 to 0.780, 0.935 |
-| Hellfire Range | 5 | 55 | 0.855, 0.915 to 0.988, 0.860 |
+| Smoking Teeth | 5 | 55 | 0.855, 0.915 to 0.988, 0.860 |
 
 ## 9. Mapping onto HOI4
 
@@ -644,7 +644,7 @@ Seas: open ocean provinces of about 12,000 to 20,000 pixels; narrow straits, the
 2. The Vale of Aenor is plains and farmland, not beige desert: the dry yellow patches of the reference inside the Middle Lands are re-typed fertile plains.
 3. The Great Wall of Aenor is a continuous mountain barrier of elevation 5 from the Organ cape to the south coast, with Lunhrim, the Kingson ring and four gates; Kingson sits in a valley ringed by mountains.
 4. Rivers: 25 named rivers drawn from source to mouth, used as borders (Grey River, Fandan, Selenar, Aenar, Great River, Kulolo, Andos Water and others); lakes of every size are named.
-5. Mountains and volcanoes are massive and named: the Hellfire Range with seven East Lands volcanoes, the Melty and Hardtmuth ranges, Herrodon Mountains, and the volcanoes of the Ember Lands; the map no longer wraps and has four impassable edges.
+5. Mountains and volcanoes are massive and named: the Smoking Teeth with seven East Lands volcanoes, the Melty and Hardtmuth ranges, Herrodon Mountains, and the volcanoes of the Ember Lands; the map no longer wraps and has four impassable edges.
 
 ## 11. Implementation
 

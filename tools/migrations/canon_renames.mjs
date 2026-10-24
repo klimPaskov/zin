@@ -25,6 +25,16 @@ export const RENAMES = [
   // Identifiers carry the region inside longer names (zin_is_region_dead_lands, shared_dead_lands), so no word boundary.
   { from: /dead_lands/g, to: 'ember_lands' },
   { from: /DEAD_LANDS/g, to: 'EMBER_LANDS' },
+  // K48: map names after the import conversion, in text only: the geography model's feature ids (range_isengar_mountains,
+  // range_hellfire, volcano_argon) are stable keys and keep their spelling. Isengard, the former realm label, stays a record.
+  { from: /Isengar(?!d)/g, to: 'Ormolak' },
+  { from: /\b([Tt])he Hellfire Range\b/g, to: (m, t) => `${t}he Smoking Teeth` },
+  { from: /\bHellfire Range\b/g, to: 'Smoking Teeth' },
+  { from: /\b([Tt])he Hellfire Gulf\b/g, to: (m, t) => `${t}he Gulf of the Teeth` },
+  { from: /\bHellfire Gulf\b/g, to: 'Gulf of the Teeth' },
+  { from: /\bthe Hellfire\b/g, to: 'the Smoking Teeth' },
+  { from: /Woqood Alps/g, to: 'Woqood Spires' },
+  { from: /\bArgon\b/g, to: 'Argul' },
 ];
 
 export const PATH_RENAMES = [
@@ -42,16 +52,19 @@ const RECORDS = [
   'docs/name_table.csv', 'docs/name_table.md', 'docs/name_alignment.json', 'docs/plans/zin-lead/',
 ];
 // The focus tree designs are builder input, so they belong to the content scope.
+// The geography model is renamed by its own rename table (tools/content/geography/name_table.mjs, applied by
+// repair_model.mjs), and its code names the drawn labels on purpose, so neither is edited here.
+const GEOGRAPHY = ['tools/content/geography/', 'tools/content/data/geography/'];
 const SCOPES = { docs: ['docs/', 'README.md'], content: ['tools/content/', 'docs/design/focus/'], all: ['docs/', 'README.md', 'tools/content/'] };
-const EXCLUDE = { docs: ['docs/design/focus/'], content: [], all: [] };
-const KEEP_LINE = /\bformer\b|\bformerly\b|placeholder|superseded|\bold name\b|\bold label\b/i;
+const EXCLUDE = { docs: ['docs/design/focus/'], content: GEOGRAPHY, all: GEOGRAPHY };
+const KEEP_LINE = /\bdrawn\b|\bformer\b|\bformerly\b|placeholder|superseded|\bold name\b|\bold label\b/i;
 
 export function renameText(text) {
   let count = 0;
   const out = text.split('\n').map(line => {
     if (KEEP_LINE.test(line)) return line;
     let l = line;
-    for (const r of RENAMES) l = l.replace(r.from, m => { count++; return typeof r.to === 'function' ? r.to(m) : r.to; });
+    for (const r of RENAMES) l = l.replace(r.from, (...m) => { count++; return typeof r.to === 'function' ? r.to(...m) : r.to; });
     return l;
   }).join('\n');
   return { text: out, count };

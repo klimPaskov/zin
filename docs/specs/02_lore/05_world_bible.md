@@ -498,7 +498,7 @@ The iron-forted warlord realm of Isengard, Coldor's proud rival, with fortified 
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | They refused the Winter Crown in 4A 850 [P] and built forts along the Isengar Mountains. The name Isengard is on the owner's map [E label]. |
+| Homeland, origin and settlement | They refused the Winter Crown in 4A 850 [P] and built forts along the Ormolak Mountains. The name Isengard is on the owner's map [E label]. |
 | Language | Coldic in its march dialect: blunt, with many forge-words. |
 | Faith, holy sites, clergy, festivals | The Storm Court, kept in the Black Gallery of the forts; they bargain with the wind. The Winter Hearth remains the house religion. **Holy sites:** Wind-towers on the Windwaith headlands; the Black Gallery in Isengard's forts. **Clergy:** Wind-readers and storm-speakers. **Festivals:** The Calm (Highsun), the First Gale (Fallowing). |
 | Rule, inheritance, law | A warlord holds the realm by oath-companies; the heir is the best sworn man, not the eldest. Law is the warlord's word and the march-law. |
@@ -1376,7 +1376,7 @@ The king is war-leader of the tribes, chosen by the well-lords from one line. Th
 
 The merchant houses of the southern cities grew on the Gold Road. They hold their power by a bench of houses, and the Prince of Stabilo is only first among them. Their seat is Postondoroth [W]. They lead the Stabilo Pact with Drak [W]. Their law is the ledger, and their crime is the false weight.
 
-Stabilo trusts Drak and every contract it has a copy of. It fears Noris, whose camel riders can cut the roads in a week. Its borders are the roads themselves: the Gold Road to the north and the Sand Road to the west, with the Hellfire Range at its back.
+Stabilo trusts Drak and every contract it has a copy of. It fears Noris, whose camel riders can cut the roads in a week. Its borders are the roads themselves: the Gold Road to the north and the Sand Road to the west, with the Smoking Teeth at its back.
 
 ### Gunwaith
 
@@ -1485,7 +1485,7 @@ Every country has exactly one dominant culture and, where it truly is mixed, a s
 | Country | People | Culture | Language | Religion | Founding story | Trusts | Fears | Why the borders lie there |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Coldor | Men | Winter-Crown Folk | Coldic (crown) | Winter Hearth | Coldor's kings united the frozen interior in 4A 850 [P]; Isengard refused. Seat Fandanar [W]. | Horidor, the Northern Accord | Isengard, the Long Dark | The Frozen and Cold Mountains hem it; the western ports give it the sea. |
-| Isengard | Men | Isengard Warlords | Coldic (march) | Storm Court | Warlords who refused the Winter Crown in 4A 850 [P] and built forts in the Isengar Mountains [E label]. | Its oath-companies | Coldor's grain-power | The mountain passes it forted. |
+| Isengard | Men | Isengard Warlords | Coldic (march) | Storm Court | Warlords who refused the Winter Crown in 4A 850 [P] and built forts in the Ormolak Mountains [E label]. | Its oath-companies | Coldor's grain-power | The mountain passes it forted. |
 | Horidor | Men | Ice Clans (also Winter-Crown Folk) | Coldic (clan) | Winter Hearth | A clan realm allied to Coldor in the Northern Accord [W]. | Coldor | Isengard | The valley that links it to Fandanar. |
 | Windwaith | Men | Windwaith Seafarers | Coldic (coast) | Storm Court | A maritime council on the Windwaith arm [E]. | Its own ships | A western fleet | The headland. |
 | Holdon | Men | Ice Clans | Coldic (clan) | Winter Hearth | A small clan realm of herders. | Coldor | Isengard raiders | The lake valley. |
