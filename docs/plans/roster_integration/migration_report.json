@@ -1,0 +1,634 @@
+{
+ "schema": 1,
+ "written": "tools/migrations/roster_migration.mjs",
+ "world": {},
+ "renames": [],
+ "tags": [],
+ "names": [],
+ "keys": [],
+ "deduped": [],
+ "dropped": [],
+ "unresolved": [],
+ "focusCountries": [],
+ "special": [
+  {
+   "file": "tools/content/data/mech_regions_east.json",
+   "what": "Rows merged into Noris or Stabilo leave the courts' lean and friendship tables.",
+   "removed": [
+    "leans.Noris",
+    "leans.Stabilo",
+    "befriendNoris.Noris"
+   ]
+  }
+ ],
+ "code": {
+  "tags": [
+   {
+    "where": "tools/content/modules/countries.mjs:4",
+    "tag": "Y01"
+   }
+  ],
+  "names": [],
+  "tests": [
+   {
+    "where": "tools/content/assets.test.mjs:85",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:86",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:152",
+    "tag": "Y0A"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:152",
+    "tag": "Y0A"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:324",
+    "tag": "Y02"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:325",
+    "tag": "Y02"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:330",
+    "tag": "Y09"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:331",
+    "tag": "Y09"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:335",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:336",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:340",
+    "tag": "Y02"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:340",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:342",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:346",
+    "tag": "Y02"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:346",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/assets.test.mjs:352",
+    "tag": "Y02"
+   },
+   {
+    "where": "tools/content/calendar.test.mjs:264",
+    "tag": "Y60"
+   },
+   {
+    "where": "tools/content/cultures.test.mjs:99",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/cultures.test.mjs:191",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/diplomacy.test.mjs:164",
+    "name": "Demon"
+   },
+   {
+    "where": "tools/content/diplomacy.test.mjs:362",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/diplomacy.test.mjs:363",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/diplomacy.test.mjs:589",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/economy.test.mjs:276",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/economy.test.mjs:303",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/events_crown.test.mjs:347",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/events_crown.test.mjs:744",
+    "tag": "Y0M"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:341",
+    "tag": "Y8D"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:367",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:367",
+    "name": "Hiloron"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:479",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:479",
+    "name": "Gunwaith"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:479",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:479",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/events_world.test.mjs:495",
+    "tag": "Y0M"
+   },
+   {
+    "where": "tools/content/focus_major_a.test.mjs:80",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/focus_major_b.test.mjs:175",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/focus_regional_a.test.mjs:19",
+    "name": "Isengard"
+   },
+   {
+    "where": "tools/content/focus_regional_a.test.mjs:21",
+    "name": "Windwaith"
+   },
+   {
+    "where": "tools/content/focus_regional_a.test.mjs:23",
+    "name": "Titanos"
+   },
+   {
+    "where": "tools/content/focus_regional_a.test.mjs:32",
+    "name": "Demon"
+   },
+   {
+    "where": "tools/content/focus_regional_a.test.mjs:242",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/focus_regional_a.test.mjs:430",
+    "name": "Demon"
+   },
+   {
+    "where": "tools/content/focus_regional_b.test.mjs:51",
+    "name": "Gondolin"
+   },
+   {
+    "where": "tools/content/focus_regional_b.test.mjs:51",
+    "name": "Avalon"
+   },
+   {
+    "where": "tools/content/focus_regional_b.test.mjs:52",
+    "name": "Godland"
+   },
+   {
+    "where": "tools/content/focus_regional_b.test.mjs:52",
+    "name": "Poyang"
+   },
+   {
+    "where": "tools/content/focus_regional_b.test.mjs:53",
+    "name": "Hengyang"
+   },
+   {
+    "where": "tools/content/focus_regional_b.test.mjs:53",
+    "name": "Heaven"
+   },
+   {
+    "where": "tools/content/focus_regional_b.test.mjs:369",
+    "tag": "Y16"
+   },
+   {
+    "where": "tools/content/focus_regional_c.test.mjs:29",
+    "name": "The End"
+   },
+   {
+    "where": "tools/content/focus_regional_c.test.mjs:40",
+    "name": "Hiloron"
+   },
+   {
+    "where": "tools/content/focus_regional_c.test.mjs:43",
+    "name": "Asgard"
+   },
+   {
+    "where": "tools/content/focus_shared_a.test.mjs:356",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/focus_shared_a.test.mjs:442",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/focus_shared_a.test.mjs:442",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/focus_shared_a.test.mjs:680",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/focus_shared_b.test.mjs:263",
+    "name": "Poyang"
+   },
+   {
+    "where": "tools/content/focus_shared_b.test.mjs:376",
+    "name": "Poyang"
+   },
+   {
+    "where": "tools/content/focus_shared_b.test.mjs:382",
+    "name": "Belg"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:157",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:167",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:171",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:179",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:179",
+    "name": "Isengard"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:179",
+    "name": "Gunwaith"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:181",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:213",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:238",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:485",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/forces.test.mjs:517",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/geography/geography_steps.test.mjs:242",
+    "name": "Asgard"
+   },
+   {
+    "where": "tools/content/geography/geography_steps.test.mjs:248",
+    "name": "Asgard"
+   },
+   {
+    "where": "tools/content/geography/geography_steps.test.mjs:284",
+    "name": "Isengard"
+   },
+   {
+    "where": "tools/content/heraldry/build_heraldry.test.mjs:98",
+    "tag": "Y6A"
+   },
+   {
+    "where": "tools/content/heraldry/build_heraldry.test.mjs:297",
+    "tag": "Y0L"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:114",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:145",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:145",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:147",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:148",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:244",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:244",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/institutions.test.mjs:268",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/mech_cold.test.mjs:27",
+    "name": "Windwaith"
+   },
+   {
+    "where": "tools/content/mech_cold.test.mjs:27",
+    "name": "Isengard"
+   },
+   {
+    "where": "tools/content/mech_cold.test.mjs:27",
+    "name": "Gunwaith"
+   },
+   {
+    "where": "tools/content/mech_cold.test.mjs:659",
+    "name": "Titanos"
+   },
+   {
+    "where": "tools/content/mech_cold.test.mjs:689",
+    "name": "Gunwaith"
+   },
+   {
+    "where": "tools/content/mech_court.test.mjs:293",
+    "name": "Hiloron"
+   },
+   {
+    "where": "tools/content/mech_court.test.mjs:301",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/mech_court.test.mjs:301",
+    "name": "Demon"
+   },
+   {
+    "where": "tools/content/mech_court.test.mjs:301",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/mech_court.test.mjs:302",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/mech_dark.test.mjs:357",
+    "name": "Gord"
+   },
+   {
+    "where": "tools/content/mech_east.test.mjs:433",
+    "tag": "Y14"
+   },
+   {
+    "where": "tools/content/mech_east.test.mjs:501",
+    "name": "Delbiz Grasslands"
+   },
+   {
+    "where": "tools/content/mech_east.test.mjs:501",
+    "name": "The Moco"
+   },
+   {
+    "where": "tools/content/mech_east.test.mjs:505",
+    "name": "Gondolin"
+   },
+   {
+    "where": "tools/content/mech_east.test.mjs:512",
+    "name": "Gondolin"
+   },
+   {
+    "where": "tools/content/mech_east.test.mjs:512",
+    "name": "Mylunur"
+   },
+   {
+    "where": "tools/content/mech_east.test.mjs:603",
+    "tag": "Y16"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:255",
+    "tag": "Y0U"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:255",
+    "tag": "Y8D"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:304",
+    "tag": "Y8G"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:304",
+    "tag": "Y8D"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:308",
+    "tag": "Y0U"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:308",
+    "tag": "Y0U"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:319",
+    "tag": "Y8H"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:327",
+    "tag": "Y09"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:327",
+    "tag": "Y07"
+   },
+   {
+    "where": "tools/content/mech_journey.test.mjs:329",
+    "tag": "Y07"
+   },
+   {
+    "where": "tools/content/mech_powers.test.mjs:185",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/mech_powers.test.mjs:254",
+    "name": "Demon"
+   },
+   {
+    "where": "tools/content/mech_sun.test.mjs:36",
+    "name": "Gala Elves"
+   },
+   {
+    "where": "tools/content/mech_sun.test.mjs:36",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/mech_sun.test.mjs:36",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/mech_sun.test.mjs:149",
+    "name": "North Gala"
+   },
+   {
+    "where": "tools/content/mech_sun.test.mjs:149",
+    "name": "Goodton"
+   },
+   {
+    "where": "tools/content/mech_sun.test.mjs:149",
+    "name": "Guuden"
+   },
+   {
+    "where": "tools/content/mech_sun.test.mjs:488",
+    "name": "Hiloron"
+   },
+   {
+    "where": "tools/content/names.test.mjs:82",
+    "name": "Titanos"
+   },
+   {
+    "where": "tools/content/names.test.mjs:83",
+    "name": "Titanos"
+   },
+   {
+    "where": "tools/content/names.test.mjs:150",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/names.test.mjs:150",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/names.test.mjs:311",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/names.test.mjs:312",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/names.test.mjs:314",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/names.test.mjs:327",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/names.test.mjs:415",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/tags.test.mjs:42",
+    "tag": "Y01"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:100",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:179",
+    "tag": "Y8D"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:180",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:254",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:311",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:312",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:313",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:317",
+    "tag": "Y0U"
+   },
+   {
+    "where": "tools/content/technologies.test.mjs:331",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/warfare.test.mjs:403",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/warfare.test.mjs:403",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/warfare.test.mjs:415",
+    "name": "Volgan"
+   },
+   {
+    "where": "tools/content/warfare.test.mjs:474",
+    "name": "Zol"
+   },
+   {
+    "where": "tools/content/warfare.test.mjs:631",
+    "name": "Volgan"
+   }
+  ]
+ },
+ "retired": [],
+ "summary": {
+  "files": 1,
+  "world": {},
+  "idRenames": 0,
+  "tagsMigrated": 0,
+  "namesMigrated": 0,
+  "keysMigrated": 0,
+  "deduped": 0,
+  "dropped": 0,
+  "unresolved": 0,
+  "focusTrees": 0,
+  "special": 1,
+  "codeTags": 1,
+  "codeNames": 0,
+  "testRefs": 145,
+  "retired": [],
+  "byFate": {}
+ }
+}

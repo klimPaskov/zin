@@ -15,7 +15,7 @@
 //             @trait <trait> [days=N]  Eindil unit leader trait        @opinion <modifier> <recipient>
 //   recipients  self | host | aenor | all | tag:Country_Name | group:key | random:group | var:<global country variable> | scope:<raw scope token>
 //   triggers  an array of one-liners and objects { or: [...] }, { and: [...] }, { not: [...] }, { names: ["A", "B"] }, plus the string
-//             "tag:Country_Name" (original_tag). Country names resolve to tags through data/countries.json.
+//             "tag:Country_Name" (original_tag). Country names resolve to tags through the roster (lib/roster.mjs).
 //
 // Internal bookkeeping (flags, variables, events, log) is wrapped in hidden_effect so the option tooltip shows only what a
 // player should read. Output is a list of lines without indentation; block() nests them with tabs.

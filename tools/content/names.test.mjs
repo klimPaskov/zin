@@ -2,6 +2,7 @@
 // (modules/names.mjs) and the name checks (checks/names_check.mjs). They need no staged tree: buildNames runs on an
 // in-memory Staged, so `node --test tools/content/names.test.mjs` works on its own.
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -18,10 +19,15 @@ import { assertNoViolations, checkLanguageBatches, checkRelatedness, checkSample
 const here = path.dirname(fileURLToPath(import.meta.url));
 const data = loadNamingData();
 const ctx = buildContext(data);
-const { countries } = JSON.parse(readFileSync(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const { labels } = JSON.parse(readFileSync(path.join(here, 'data/labels.json'), 'utf8'));
 const tagOf = name => countries.find(c => c.name === name).tag;
-const freshGenerator = () => createNameGenerator(data, { context: ctx });
+// The counts of the language data: every language of languages.json with data, its samples, and the languages no realm speaks.
+const LANGUAGE_COUNT = Object.keys(data.languages.languages).length;
+const SAMPLE_COUNT = Object.values(data.languages.languages).reduce((n, l) => n + l.samples.places.length + l.samples.persons.length, 0);
+const SPOKEN = new Set(data.countryCultures.countries.map(c => c.language).filter(Boolean));
+const WITHOUT_LANGUAGE = countries.filter(c => !data.countryCultures.countries.find(r => r.tag === c.tag)?.language).map(c => c.tag);
+const freshGenerator =() => createNameGenerator(data, { context: ctx });
 const codes = problems => problems.map(p => p.code);
 const build = () => { resetNaming(); const staged = new Staged(); const pools = buildNames(staged, countries, labels); return { staged, pools, text: staged.files.get('common/names/zin_names.txt').toString('utf8') }; };
 let built; // one shared build for the tests that only read it
@@ -31,13 +37,15 @@ const getBuilt = () => (built ??= build());
 // that a new defect fails the test; a fixed defect is simply no longer reported.
 const KNOWN_SAMPLE_DEFECTS = new Set(['dondric Edddun', 'alerhic Beria', 'trollish Torrrokk', 'trollish Glooo', 'trollish Wooo']);
 
-test('The language data parses: 24 languages, each with at least 40 elements including the 27 core ones', () => {
-  assert.equal(ctx.languages.size, 24);
+test('The language data parses: 29 languages, each with at least 40 elements including the 27 core ones', () => {
+  assert.equal(ctx.languages.size, LANGUAGE_COUNT);
+  assert.equal(LANGUAGE_COUNT, 29, 'the 24 languages of the vault and the five of the roster (dwarvish, gnomish, hearthspeech, pack_tongue, lowspeech)');
   for (const [id, info] of ctx.languages) {
     assert(info.elements.length >= 40, `${id} has ${info.elements.length} elements`);
     assert(info.elements.slice(0, 27).every(e => e.core), `${id} core elements`);
   }
-  assert.equal(data.languages.reserved_languages.length, 5, 'the five reserved languages carry no data');
+  assert.equal(data.languages.reserved_languages.length, 4, 'the four reserved languages carry no data');
+  for (const r of data.languages.reserved_languages) assert(!ctx.languages.has(r.id), `${r.id} is reserved and has no data`);
 });
 
 test('Every sample recipe of languages.json builds its sample again with the generator\'s own rules', () => {
@@ -47,13 +55,14 @@ test('Every sample recipe of languages.json builds its sample again with the gen
     const built = composeRecipe(info, s.recipe, kind);
     if (built.text !== s.name) mismatches.push(`${id} ${s.name} [${s.recipe}] -> ${built.text ?? built.reason}`);
   }
-  assert.equal(total, 1440);
+  assert.equal(total, SAMPLE_COUNT);
+  for (const [id, info] of ctx.languages) assert(info.data.samples.places.length + info.data.samples.persons.length >= 40, `${id} has at least 40 samples`);
   assert.deepEqual(mismatches, []);
 });
 
 test('Every sample name obeys the rules the generator enforces, except the defects reported here', t => {
   const rows = checkSamples(data, ctx), bad = rows.filter(r => r.problems.length);
-  assert.equal(rows.length, 1440);
+  assert.equal(rows.length, SAMPLE_COUNT);
   for (const r of bad) t.diagnostic(`sample ${r.language} ${r.name}: ${r.problems.join('; ')}`);
   const unexpected = bad.filter(r => !KNOWN_SAMPLE_DEFECTS.has(`${r.language} ${r.name}`));
   assert.deepEqual(unexpected.map(r => `${r.language} ${r.name} ${r.problems}`), [], 'a sample name breaks a rule that is not listed as a known defect');
@@ -63,7 +72,7 @@ test('Every sample name obeys the rules the generator enforces, except the defec
 test('The declared sound tables are wider than the data: the generator enforces the letters each language really uses', t => {
   let outside = 0;
   for (const info of ctx.languages.values()) for (const s of [...info.data.samples.places, ...info.data.samples.persons]) if ([...keyOf(s.name)].some(ch => !info.declaredLetters.has(ch))) outside++;
-  t.diagnostic(`${outside} of 1440 sample names use a letter that the language's sound table does not list`);
+  t.diagnostic(`${outside} of ${SAMPLE_COUNT} sample names use a letter that the language's sound table does not list`);
   assert(outside > 0, 'the discrepancy this test documents has disappeared: tighten checkName to the declared letters');
   for (const info of ctx.languages.values()) for (const ch of info.declaredLetters) assert(info.letters.has(ch), `${info.id} ${ch}`);
 });
@@ -112,7 +121,7 @@ test('Negative: a letter the language never uses, and a leak marker of another l
 
 test('Negative: an unknown language is refused', () => {
   const gen = freshGenerator();
-  assert.throws(() => gen.place({ language: 'dwarvish', kind: 'city', entityId: 'x' }), /Unknown language "dwarvish"/);
+  assert.throws(() => gen.place({ language: 'mycid', kind: 'city', entityId: 'x' }), /Unknown language "mycid"/);
   assert.throws(() => gen.pool('choral', 'male', 10, 'x'), /Unknown language/);
   assert.deepEqual(codes(checkName(ctx, 'roka_people', 'Abcdef', { kind: 'place' })), ['language']);
   assert.throws(() => gen.place({ language: 'aenoran', kind: 'volcano', entityId: 'x' }), /Unknown place kind/);
@@ -180,14 +189,14 @@ test('Every kind of name in every language passes every rule, with its parts and
   }
 });
 
-test('Places are unique across the whole world: 4,800 names over all 24 languages share one registry', () => {
+test('Places are unique across the whole world: 200 names in each of the 29 languages share one registry', () => {
   const gen = freshGenerator(), keys = new Set(), owner = new Map();
   for (const language of gen.languages()) for (let i = 0; i < 200; i++) {
     const name = gen.place({ language, kind: PLACE_KINDS[i % PLACE_KINDS.length], entityId: `u:${language}:${i}` });
     assert(!keys.has(name.key), `duplicate ${name.text}`);
     keys.add(name.key); owner.set(name.key, language);
   }
-  assert.equal(keys.size, 4800);
+  assert.equal(keys.size, 200 * LANGUAGE_COUNT);
   for (const key of keys) assert.equal(gen.registry.owner(key).language, owner.get(key));
 });
 
@@ -281,15 +290,21 @@ test('Signatures: the data\'s plain-word signatures become tests', () => {
 
 test('The neutral blend of the Middle Lands languages, and its shares', () => {
   const blend = neutralBlend(data);
-  assert.deepEqual(blend.map(b => b.language), ['aenoran', 'gigantic', 'longspeech', 'orran']);
-  assert(blend[0].weight > blend[3].weight && blend[3].weight > blend[1].weight);
+  const middle = data.countryCultures.countries.filter(c => c.region === 'Middle Lands' && c.language);
+  assert.deepEqual(blend.map(b => b.language), [...new Set(middle.map(c => c.language))].sort());
+  assert.deepEqual(blend.map(b => b.language), ['aenoran', 'dwarvish', 'gigantic', 'gnomish', 'goblin', 'hearthspeech', 'longspeech', 'lowspeech', 'orran', 'sylvan']);
+  for (const b of blend) assert.equal(b.weight, Math.sqrt(middle.filter(c => c.language === b.language).length), b.language);
+  // The Common Speech leads; Orran, the second tongue of the Middle Lands, comes next and every other tongue after it.
+  const byWeight = [...blend].sort((a, b) => b.weight - a.weight);
+  assert.deepEqual(byWeight.slice(0, 2).map(b => b.language), ['aenoran', 'orran']);
+  assert(byWeight[0].weight > byWeight[1].weight && byWeight[1].weight > byWeight[2].weight);
   for (const n of [1, 12, 50, 60, 90]) assert.equal(blendShares(blend, n).reduce((a, b) => a + b.n, 0), n);
 });
 
 test('buildNames: every country has a pool from its culture\'s language, at the engine floors, in the format of the game', () => {
   const { pools, text } = getBuilt();
   const blocks = parseNamesFile(text);
-  assert.equal(blocks.size, 306, '305 countries and the default pool');
+  assert.equal(blocks.size, countries.length + 1, 'every realm and the default pool');
   assert(text.startsWith('# Generated by the ZIN content builder'));
   for (const c of countries) {
     const b = blocks.get(c.tag);
@@ -308,10 +323,11 @@ test('buildNames: countries speak the language of their culture, Zol\'s Mistake 
   const { pools } = getBuilt();
   const language = name => pools.get(tagOf(name)).language;
   assert.equal(language('Aenor'), 'aenoran'); assert.equal(language('Coldor'), 'coldic'); assert.equal(language('Noris'), 'noric');
-  assert.equal(language('Volgan'), 'grave_rite'); assert.equal(language('Kilinti'), 'longspeech'); assert.equal(language('Goldoroth'), 'orcish');
-  assert.equal(language('Zol'), null);
+  assert.equal(language('Puvulan'), 'grave_rite'); assert.equal(language('Kunhrim'), 'dwarvish'); assert.equal(language('Kilinti'), 'longspeech'); assert.equal(language('Goldoroth'), 'orcish');
+  assert.equal(language("Zol's Mistake"), null);
+  assert.equal(language('Mushroom Forest'), null, 'the mycids have no language data yet');
   const blend = neutralBlend(data).map(b => b.language), g = freshGenerator();
-  const names = [...pools.get(tagOf('Zol')).male, ...pools.get('zin:all-aoaz').male];
+  const names = [...pools.get(tagOf("Zol's Mistake")).male, ...pools.get(tagOf('Mushroom Forest')).male, ...pools.get('zin:all-aoaz').male];
   g.nameSpace('aenoran');
   for (const n of names) assert(blend.includes(g.registry.owner(n).language), `${n} is not a name of the Middle Lands`);
 });
@@ -321,10 +337,12 @@ test('buildNames is deterministic and its report counts the names', () => {
   assert.equal(again.text, getBuilt().text);
   assert.equal(again.staged.files.get('docs/design/names_report.json').toString(), getBuilt().staged.files.get('docs/design/names_report.json').toString());
   const report = JSON.parse(getBuilt().staged.files.get('docs/design/names_report.json'));
-  assert.equal(report.pools.blocks, 306);
-  assert(report.pools.entries.male > 10000 && report.pools.distinct.surnames > 1000);
-  assert.equal(Object.keys(report.languages).length, 24 - 2, 'ainic and goblin speak for no country');
-  assert.deepEqual(report.countriesWithoutLanguage, [tagOf('Zol')]);
+  assert.equal(report.pools.blocks, countries.length + 1);
+  assert(report.pools.entries.male > 50 * countries.length && report.pools.distinct.surnames > 1000);
+  assert.equal(Object.keys(report.languages).length, SPOKEN.size);
+  assert.deepEqual([...ctx.languages.keys()].filter(l => !SPOKEN.has(l)), ['ainic'], 'only Ainic, the old tongue, speaks for no realm');
+  assert.deepEqual([...report.countriesWithoutLanguage].sort(), [...WITHOUT_LANGUAGE].sort());
+  assert.deepEqual([...WITHOUT_LANGUAGE].sort(), [tagOf("Zol's Mistake"), tagOf('Mushroom Forest')].sort());
   assert.equal(Object.values(report.collisions).reduce((a, b) => a + b, 0), 0);
 });
 
@@ -371,7 +389,7 @@ test('Negative: a planted banned name, a glyph outside Windows-1252, a short poo
 
 test('Negative: buildNames refuses a country with no culture', () => {
   resetNaming();
-  assert.throws(() => buildNames(new Staged(), [{ tag: 'Q99', name: 'Nowhere', scan: 'Cold Lands', capital: 'Nowhere City', regions: [] }], labels), /no culture in country_cultures.json/);
+  assert.throws(() => buildNames(new Staged(), [{ tag: 'Q99', name: 'Nowhere', scan: 'Cold Lands', capital: 'Nowhere City', regions: [] }], labels), /no culture in the roster/);
   resetNaming();
 });
 
@@ -412,8 +430,8 @@ test('Negative: placeNames refuses an unknown target, an unknown kind, a bad cou
   assert.throws(() => placeNames('Aenor', 'volcano', 3), /Unknown place kind "volcano"/);
   assert.throws(() => placeNames('Aenor', 'city', -1), /whole number/);
   assert.throws(() => placeNames('Aenor', 'city', 2.5), /whole number/);
-  assert.throws(() => placeNames('Zol', 'city', 3), /has no language/);
-  assert.throws(() => placeNames({ language: 'dwarvish' }, 'city', 3), /Unknown language/);
+  assert.throws(() => placeNames("Zol's Mistake", 'city', 3), /has no language/);
+  assert.throws(() => placeNames({ language: 'mycid' }, 'city', 3), /Unknown language/);
   assert.throws(() => placeNames(42, 'city', 3), /needs a country/);
   assert.deepEqual(placeNames('Aenor', 'city', 0), []);
   resetNaming();
@@ -441,8 +459,8 @@ test('The name file keeps the format the game reads: blocks of male, female, sur
   assert.match(text, /\n\tfemale = \{\n\t\tnames = \{ /);
   assert.match(text, /\n\tsurnames = \{ /);
   const lines = text.split('\n');
-  assert.equal(lines.filter(l => /^\S+ = \{$/.test(l)).length, 306);
-  assert.equal(lines.filter(l => l === '}').length, 306);
+  assert.equal(lines.filter(l => /^\S+ = \{$/.test(l)).length, countries.length + 1);
+  assert.equal(lines.filter(l => l === '}').length, countries.length + 1);
   const sample = parseNamesFile('x = {\n\tmale = {\n\t\tnames = { A "B C" }\n\t}\n\tfemale = {\n\t\tnames = { D }\n\t}\n\tsurnames = { "of E" F }\n\tcallsigns = { "G" }\n}\n').get('x');
   assert.deepEqual(sample, { male: ['A', 'B C'], female: ['D'], surnames: ['of E', 'F'], callsigns: ['G'] });
 });

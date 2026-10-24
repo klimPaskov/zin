@@ -1,10 +1,11 @@
 // Tests of the Cold Lands mechanic (docs/specs/04_mechanics/cold_lands.md; note docs/design/stage2/mech_cold.md). They call the
-// builder directly with the roster of data/countries.json and assert on the staged files; nothing needs a prior build. The values
+// builder directly with the roster (lib/roster.mjs) and assert on the staged files; nothing needs a prior build. The values
 // the spec gives are written here, apart from the data file, so a wrong number in the data is caught. Each rule is a check
 // function that returns its problems: it must find none in the real output and at least one in a mutated input or build.
 // The installed game is read for engine vocabulary (effects, triggers, modifiers).
 // Run: cd tools && node --test content/mech_cold.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -20,11 +21,12 @@ import { buildMechCold, loadColdData, COLD_DEPENDENCIES, coldExternals, numberWo
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const json = async f => JSON.parse(await readFile(path.join(here, 'data', f), 'utf8'));
-const { countries } = await json('countries.json');
+const countries = countryTable();
 const DATA = await loadColdData();
 const clone = v => JSON.parse(JSON.stringify(v));
 const tagOf = n => countries.find(c => c.name === n).tag;
-const COL = tagOf('Coldor'), ISE = tagOf('Isengard'), YEL = tagOf('Yeldenne'), HOR = tagOf('Horidor'), WIN = tagOf('Windwaith'), GUN = tagOf('Gunwaith');
+// Melkgard holds Isengard's role, Vindael Windwaith's, Gunwyn Gunwaith's and Nivaros the Titanos giants' (roster of 24 October 2026).
+const COL = tagOf('Coldor'), ISE = tagOf('Melkgard'), YEL = tagOf('Yeldenne'), HOR = tagOf('Horidor'), WIN = tagOf('Vindael'), GUN = tagOf('Gunwyn');
 const COLD = countries.filter(c => c.scan === 'Cold Lands');
 
 async function build(mutate) {
@@ -67,12 +69,13 @@ const events = text => parse(text).filter(e => /^(country|news)_event$/.test(e.k
 
 // ------------------------------------------------------------------------------------------------ the spec's values (cold_lands.md)
 const SPEC = {
-  coldCountries: 31, clanRealms: 28,
+  // The roster of 24 October 2026 counts 20 Cold Lands realms (the data's expected count); all but Coldor, Melkgard and Yeldenne hold a lean.
+  coldCountries: DATA.roster.expectedCountries, clanRealms: DATA.roster.expectedCountries - 3,
   defiance: 70, swear: 30, court: 80, marchDark: 15, marchDefiance: 80, reachDefiance: 40,
   reach: { crown: 1.5, member: 1, divisor: 150, pp: 400, winter: 500 },
   drift: { reach: 0.3, war: 0.3, bread: 0.5, court: 0.5 },
   march: { width: 80, days: 45, provinces: 4, coldorWin: -25, isengardWin: 15, warSupport: 0.05, stability: 0.05 },
-  leans: { Horidor: 60, Holdon: 10, Wonderland: 5, Fearno: 0, Windwaith: -5, 'Yeti Lands': 0, Titanos: 0 }, borderLean: -20, otherLean: 5,
+  leans: { Horidor: 60, Holdon: 10, Austklev: 5, Fearno: 0, Vindael: -5, 'Yeti Lands': 0, Nivaros: 0 }, borderLean: -20, otherLean: 5,
   dates: { march_open: [1751, 3, 1], march_historical: [1752, 3, 1], timber_1: [1753, 3, 1], timber_2: [1754, 3, 1] },
   winters: { 1748: 1, 1749: 0, 1750: 1, 1751: 2, 1752: 1, 1753: 0, 1754: 1, 1755: 2, 1756: 1, 1757: 0, 1758: 1, 1759: 0 },
   odds: [40, 40, 20], hard: [0.1, -0.02, -0.05], bitter: [0.25, -0.05, -0.1],
@@ -656,7 +659,7 @@ test('Old pacts: level one by answer, AI 60 + lean / 2, doubled when open, nil w
     assert(eventBlock(EV, id).includes('factor = 2') && eventBlock(EV, id).includes('factor = 0'));
   }
   const renew = block(DEC, 'zin_cold_renew_old_pact');
-  assert(renew.includes(`targets = { ${tagOf('Yeti Lands')} ${tagOf('Titanos')} }`) && renew.includes('NOT = { has_country_flag = zin_regional_titanos_apart }') && renew.includes('has_country_flag = zin_cold_giant_waiting'), 'renewal');
+  assert(renew.includes(`targets = { ${tagOf('Yeti Lands')} ${tagOf('Nivaros')} }`) && renew.includes('NOT = { has_country_flag = zin_regional_titanos_apart }') && renew.includes('has_country_flag = zin_cold_giant_waiting'), 'renewal');
   const hearth = block(EF, 'zin_cold_on_declare_war');
   assert(hearth.includes('zin_cold_yeti_pact > 2.99') && hearth.includes('zin_cold_giant_pact > 2.99') && hearth.includes('FROM = { original_tag = ' + COL + ' }') && hearth.includes('zin_cold_is_cold = no'), 'Hearth and Height answers an outsider\'s attack on Coldor');
 });
@@ -685,8 +688,8 @@ test('Warfare: the White Company uses sub-units, equipment and a names group the
 
 test('Roster: the builder refuses a data file that names a missing or misplaced country or miscounts the region (acceptance 12)', async () => {
   await assert.rejects(() => build(d => { d.roster.expectedCountries = 30; }), /expects 30/);
-  await assert.rejects(() => build(d => { d.roster.leans.Narnia = 10; }), /not in countries.json/);
-  await assert.rejects(() => build(d => { d.roster.core.push('Gunwaith'); }), /Cold Lands country/);
+  await assert.rejects(() => build(d => { d.roster.leans.Narnia = 10; }), /not in the roster/);
+  await assert.rejects(() => build(d => { d.roster.core.push('Gunwyn'); }), /Cold Lands country/);
   await assert.rejects(() => build(d => { d.roster.leans.Coldor = 10; }), /lean-holding/);
 });
 

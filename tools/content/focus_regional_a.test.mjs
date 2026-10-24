@@ -12,7 +12,10 @@ import { absolutePositions } from './lib/focus_model.mjs';
 import { analyseTrees, compileTree } from './modules/focus_compiler.mjs';
 import { collectTexts, exclusiveClosure, loadRegistry } from './checks/focus_checks.mjs';
 import { compileBanned, findBanned, loadRuleSet } from './lib/banned.mjs';
+import { countryTable, successor } from './lib/roster.mjs';
 
+// The realm of the roster that took an old row's role (Volgan's roles went to Puvulan, the first realm of its split).
+const realm = old => countryTable().find(c => c.key === successor(old).primary).name;
 const DIR = `${ZIN}/docs/design/focus`;
 // tree id -> [country, focuses, spirits, events, max x, max y] (the spec tables)
 const TREES = {
@@ -71,7 +74,7 @@ test('The 17 tree files exist, are regional trees of their country and compile w
   for (const [id, [country]] of Object.entries(TREES)) {
     assert.equal(RAW[id].id, id);
     assert.equal(RAW[id].tier, 'regional');
-    assert.deepEqual(RAW[id].countries, [country]);
+    assert.deepEqual(RAW[id].countries, [realm(country)], `${id} serves the realm that continues ${country}`);
   }
 });
 
@@ -239,7 +242,7 @@ test('The sworn realms: own-road heads need oath below 40 or the own-road flag, 
     assert.equal(after.length, 1, `${id} aftermath head`);
     const steward = focus(id, 'stand_with_the_steward');
     assert.equal(steward.mutually_exclusive.length, 1);
-    assert(steward.available.some(c => c.subject_of === 'Volgan'));
+    assert(steward.available.some(c => c.subject_of === realm('Volgan')));
     assert(RAW[id].focuses.some(f => (f.effects ?? []).some(e => e.call === `zin_${id}_crown_free` || e.call === `zin_regional_${id.slice(9)}_crown_free`)) || RAW[id].scripted_effects[`zin_${id}_crown_free`], `${id} crown_free`);
   }
   assert(focus('regional_nezer', 'the_dominions_vanguard').available.some(c => c.variable?.name === 'zin_dominion_oath'));
@@ -427,7 +430,7 @@ test('Fails: Afrit named in a text reachable before the reveal', () => failsWith
 test('Fails: a superseded name in a text', () => failsWith(r => { focus2(r, 'regional_blackton', 'the_five_towns').desc = 'Einendil walks the quay.'; }, 'text_superseded'));
 test('Fails: an argument keyword without a code', () => failsWith(r => { focus2(r, 'regional_isengard', 'the_iron_hall').effects.push({ call: 'zin_aenor_add_camp_support', args: { camp: 'no_such_camp', value: 1 } }); }, 'call_keyword_nocode'));
 test('Fails: a tree with fewer than 30 focuses (tier B range)', () => failsWith(r => { r.regional_nan.focuses = r.regional_nan.focuses.slice(0, 20); r.regional_nan.focuses.forEach(f => { f.prerequisite = (f.prerequisite ?? []).map(g => g.filter(k => r.regional_nan.focuses.some(x => x.key === k))).filter(g => g.length); f.mutually_exclusive = (f.mutually_exclusive ?? []).filter(k => r.regional_nan.focuses.some(x => x.key === k)); }); }, 'tier_range'));
-test('Fails: a country that has two trees', () => failsWith(r => { r.regional_nezer.countries = ['Demon']; }, 'coverage_many'));
+test('Fails: a country that has two trees', () => failsWith(r => { r.regional_nezer.countries = [realm('Demon')]; }, 'coverage_many'));
 test('Fails: an unknown field in a tree file', async () => {
   const a = await analyse(r => { r.regional_olen.focuses[0].surprise = true; });
   assert(a.problems.some(p => p.code === 'schema' && /surprise/.test(p.message)));

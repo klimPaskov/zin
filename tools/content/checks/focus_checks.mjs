@@ -122,7 +122,7 @@ export class Registry {
   // Is the name written by a module that exists (a staged file, or a name list that is not marked pending)?
   writtenByModule(kind, name) { return this.sets[kind].has(name) && !this.pending[kind].has(name); }
   // Every id that shares a localisation or definition space with a tree's focus, spirit and opinion-modifier ids.
-  hasMechanicId(id) { return ['ideas', 'decisions', 'opinion_modifiers', 'sub_units', 'characters'].some(k => this.sets[k].has(id)); }
+  hasMechanicId(id, { characters = true } = {}) { return ['ideas', 'decisions', 'opinion_modifiers', 'sub_units', ...(characters ? ['characters'] : [])].some(k => this.sets[k].has(id)); }
 }
 // Merges registry data objects: lists of names, the patterns of each kind and the allow_branch lists of E4.
 export function mergeRegistryData(list) {
@@ -674,7 +674,9 @@ export function checkCollisions(trees, ctx) {
   for (const tree of trees) {
     if (ids.has(tree.id)) out.push(problem('collision_tree', tree.id, `F3: tree id ${tree.id} is used twice`));
     ids.add(tree.id);
-    for (const id of [tree.id, `zin_${tree.id}`]) if (reg.hasMechanicId(id)) out.push(problem('collision_mechanic', tree.id, `F3: tree id ${tree.id} equals the id ${id} written by a module`));
+    // A tree id is a focus_tree id, which shares no database and no localisation key with a character: the contract id zin_volgan
+    // (characters spec) and the tree volgan stand side by side. Focus, spirit and opinion ids below are checked against characters too.
+    for (const id of [tree.id, `zin_${tree.id}`]) if (reg.hasMechanicId(id, { characters: false })) out.push(problem('collision_mechanic', tree.id, `F3: tree id ${tree.id} equals the id ${id} written by a module`));
     const loc = [];
     for (const f of tree.focuses) loc.push([focusId(tree, f.key), 'focus']);
     for (const k of Object.keys(tree.spirits ?? {})) loc.push([spiritId(tree, k), 'spirit']);

@@ -15,6 +15,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rng } from './core.mjs';
+import { countryTable, cultureRows } from './roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_DIR = path.join(here, '../data');
@@ -144,8 +145,8 @@ const readJson = file => JSON.parse(readFileSync(file, 'utf8'));
 // Everything the generator, the builder module and the checks read, loaded once from tools/content/data.
 export function loadNamingData(dataDir = DATA_DIR) {
   const world = name => readJson(path.join(dataDir, 'world', name));
-  const languages = world('languages.json'), cultures = world('cultures.json'), countryCultures = world('country_cultures.json'), reserved = world('reserved_names.json');
-  const { countries } = readJson(path.join(dataDir, 'countries.json'));
+  const languages = world('languages.json'), cultures = world('cultures.json'), countryCultures = { countries: cultureRows() }, reserved = world('reserved_names.json');
+  const countries = countryTable();
   const { labels } = readJson(path.join(dataDir, 'labels.json'));
   let geography = [];
   try { const g = readJson(path.join(dataDir, 'geography', 'aoaz.json')); geography = [...(g.namedEstablished ?? []), ...(g.namedProposed ?? [])]; } catch (error) { if (error.code !== 'ENOENT') throw error; }
@@ -159,7 +160,7 @@ export function loadNamingData(dataDir = DATA_DIR) {
 export function collectReservedNames(data) {
   const out = new Map();
   const add = (name, source) => { if (name && keyOf(name) && !out.has(keyOf(name))) out.set(keyOf(name), { name: String(name), source }); };
-  for (const c of data.countries) { add(c.name, 'country'); add(c.capital, 'capital'); for (const r of c.regions ?? []) add(r, 'region'); }
+  for (const c of data.countries) { add(c.name, 'country'); add(c.capital, 'capital'); for (const r of c.regions ?? []) add(r, 'region'); for (const n of c.formerNames ?? []) add(n, 'former'); if (c.endonym) add(c.endonym, 'endonym'); }
   for (const l of data.labels) add(l.name, 'label');
   for (const n of data.geography) add(typeof n === 'string' ? n : n.name, 'geography');
   for (const lang of Object.values(data.languages.languages)) for (const e of lang.established_names ?? []) add(e.name, 'established');

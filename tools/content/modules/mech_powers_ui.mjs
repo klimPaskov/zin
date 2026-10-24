@@ -25,8 +25,8 @@ export async function buildPowersUi(staged, ctx) {
   const words = (name, cases) => scriptedLoc.push(definedText(name, cases, loc));
 
   // ============================================================================================ the Southern Dominion
-  const VOL = tag('Volgan'), MIR = tag('Mirolon'), LER = tag('Lerendor');
-  const members = [['Demon', 'demon'], ['Dolon', 'dolon'], ['Nezer', 'nezer']].map(([n, k]) => [tag(n), n, k]);
+  const VOL = tag('Puvulan'), MIR = tag('Mirolon'), LER = tag('Lerendor');
+  const members = [['Khorvrath', 'demon'], ['Dolon', 'dolon'], ['Nezer', 'nezer']].map(([n, k]) => [tag(n), n, k]);
   words('zin_dominion_hosts_word', [
     [ge('zin_dominion_strength', 85), 'ZIN_DOM_HOSTS_85', 'A host greater than the First Age saw.'],
     [ge('zin_dominion_strength', 70), 'ZIN_DOM_HOSTS_70', 'The Great Host: the march north may begin.'],
@@ -105,7 +105,7 @@ export async function buildPowersUi(staged, ctx) {
     [null, 'ZIN_STRAIT_ROUTE_NONE', 'No road chosen yet.']], loc);
   const dues = [['Free Passage', 'standing +0.3 a month'], ['The Treaty Toll', 'standing steady'], ['Leren Dues', 'standing -0.2 a month'], ['Full Strait Dues', 'standing -0.4 a month'], ['The Iron Toll', 'standing -0.6 a month; every northern crown loses lean']];
   dues.forEach(([n, d], i) => words(`zin_strait_due_${i}`, [[`check_variable = { zin_leren_toll_level = ${i} }`, `ZIN_STRAIT_DUE_${i}_ON`, `§Y> ${i}  ${n}§! (${d})`], [null, `ZIN_STRAIT_DUE_${i}_OFF`, `${i}  ${n} (${d})`]], loc));
-  const leans = [['Eekedor', 'eekedor'], ['Sensai', 'sensai'], ['Molot', 'molot'], ["R'en", 'ren'], ['Mina', 'mina'], ['The Hold', 'hold']];
+  const leans = [['Eekedor', 'eekedor'], ['Sensai', 'sensai'], ['Molot', 'molot'], ["R'en", 'ren'], ['Mina', 'mina'], ['Dolpar', 'hold']];
   leans.forEach(([n, k]) => { const t = tag(n); words(`zin_strait_lean_${k}`, [
     [`${t} = { ${ge('zin_leren_lean', 50)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_1`, '§Gwith Sonargur§!'], [`${t} = { ${ge('zin_leren_lean', 15)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_2`, 'leaning to Sonargur'],
     [`${t} = { ${gt('zin_leren_lean', -15)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_3`, 'neither'], [`${t} = { ${gt('zin_leren_lean', -50)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_4`, '§Oleaning to Parim§!'], [null, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_5`, '§Rwith Parim§!']], loc); });

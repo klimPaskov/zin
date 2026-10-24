@@ -3,6 +3,7 @@
 // Staged and check the output against the installed game's documentation, the specs' numbers and the specs' secrecy rules.
 // Run: node --test tools/content/mech_court.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
@@ -19,7 +20,8 @@ import { Panel } from './lib/mech_court_gui.mjs';
 import { stanceCode, STANCES } from './lib/mech_aenor_script.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
+const ZOL_TAG = countries.find(c => c.key === 'zols_mistake').tag;
 const build = async () => {
   const staged = new Staged();
   const aenor = await buildAenor(staged, { countries });
@@ -203,23 +205,25 @@ test('The two-face texts: 62 focuses, public faces mask-safe, each description p
 });
 
 // ------------------------------------------------------------------------------------------------ Aenor: the numbers
-test('Aenor: 26 dominions resolve to subjects of Aenor, with the loyalty and charter of the spec, and the start values', () => {
-  assert.equal(aenor.tags.dominions.length, 26);
+test('Aenor: the 13 chartered dominions (26 seats, K35/K36) resolve to subjects of Aenor, with the loyalty and charter of the spec, and the start values', () => {
+  assert.equal(aenor.tags.dominions.length, 13);
+  assert.equal(A.dominions.reduce((n, d) => n + d.seats, 0), 26);
+  assert.deepEqual(aenor.tags.dominions.map(d => d.tag).sort(), countries.filter(c => c.overlordKey === 'aenor' && c.subjectType === 'chartered dominion').map(c => c.tag).sort());
   const setup = text('events/zin_aenor_mechanic.txt');
   for (const d of aenor.tags.dominions) assert(new RegExp(`${d.tag} = \\{\\s*set_variable = \\{ zin_concord_loyalty = ${d.loyalty} \\}\\s*add_ideas = zin_concord_charter_${d.charter}`).test(setup), d.name);
   assert.deepEqual(A.dominions.filter(d => d.charter === 'golden').map(d => d.name), ['Freshon', 'Pazoma']);
   assert.deepEqual(A.dominions.filter(d => d.charter === 'wall').map(d => d.name), ['Kingson']);
-  assert.equal(A.dominions.reduce((n, d) => n + d.states, 0), 73);
+  for (const d of A.dominions) assert(countries.find(c => c.name === d.name)?.states > 0, `${d.name} holds land`);
   for (const [v, n] of [['zin_court_corruption', 70], ['zin_council_influence', 65], ['zin_aenor_lost_cause', 20]]) assert(setup.includes(`set_variable = { ${v} = ${n} }`), v);
   assert(!/zin_lost_cause_member/.test(setup), 'no honorary member at the start (O8)');
   assert(setup.includes('zin_aenor_first_province'), 'first provinces of the Aenor states are stored');
-  assert.equal(aenor.provinces, 18);
+  assert.equal(aenor.provinces, countries.find(c => c.key === 'aenor').states, 'one first province per state of Aenor');
 });
 
 test('Aenor: negative - a dominion missing from the roster, or not a subject of Aenor, fails the build', () => {
   const D = structuredClone(A);
   D.dominions.push({ name: 'Nowhere', states: 1, people: 'men', ideology: 'Wild', loyalty: 50, charter: 'old' });
-  assert.throws(() => resolveTags(D, countries), /Nowhere is not in data\/countries.json/);
+  assert.throws(() => resolveTags(D, countries), /Nowhere is not in the roster/);
   const roster = countries.map(c => c.name === 'Selen' ? { ...c, overlord: null } : c);
   assert.throws(() => resolveTags(A, roster), /Selen is not a subject of Aenor/);
 });
@@ -290,7 +294,7 @@ test('Afrit: footholds at the start (R4)', async () => {
   assert.equal(f('Selen'), 1);
   assert.equal(f('Konori'), 2);
   assert.equal(f('Kilinti'), 1);
-  assert.equal(f('Hiloron'), 1);
+  assert.equal(f('Hirolon'), 0, 'Hirolon is sovereign (K35), so the row of the non-human dominions does not reach it');
   assert.equal(f('Fotan'), 1);
   assert.equal(f('Cursed Lands'), 0);
   assert.equal(f('Bloody Forest'), 0);
@@ -298,8 +302,9 @@ test('Afrit: footholds at the start (R4)', async () => {
   assert.equal(f('Lerendor'), 2);
   assert.equal(f('Dondor'), 2);
   assert.equal(f('Mirolon'), 1);
-  for (const n of ['Volgan', 'Demon', 'Dolon', 'Nezer', 'Zol', 'Yeldenne']) assert.equal(f(n), 0, n);
-  assert.equal(f('Gala Elves'), 1);
+  // Puvulan holds Volgan's seat, Khorvrath the Demon realm's, Zol's Mistake Zol's, Gala the Gala Elves' (roster of 24 October 2026).
+  for (const n of ['Puvulan', 'Khorvrath', 'Dolon', 'Nezer', "Zol's Mistake", 'Yeldenne']) assert.equal(f(n), 0, n);
+  assert.equal(f('Gala'), 1);
   assert.equal(f('Goldoroth'), 0, 'orc realms of the Dark Lands start at 0');
   assert(afrit.footholds > 100, 'the start table gives many countries a House');
 });
@@ -399,7 +404,7 @@ test('Zol: the rising, the manifestation and the withdrawal', () => {
   for (const n of ['appointed_hour', 'hastened_hour', 'forced_rising', 'forced_rising_early', 'late_manifest', 'greater_hour', 'second_stirring']) assert(trig.includes(`zin_zol_after_${n} = {`), n);
   assert(trig.includes('date > 1755.4.30'), 'the appointed hour at the standard pace');
   const oa = text('common/on_actions/zin_mistake.txt');
-  assert(/on_monthly_Y0U/.test(oa) && /on_weekly_Y0U/.test(oa) && oa.includes('on_capitulation_immediate'));
+  assert(new RegExp(`on_monthly_${ZOL_TAG}`).test(oa) && new RegExp(`on_weekly_${ZOL_TAG}`).test(oa) && oa.includes('on_capitulation_immediate'));
   assert(/zin_mistake_presence = \{[\s\S]*zin_zol_the_form_endures = \{[\s\S]*days_mission_timeout = 63/.test(text('common/decisions/zin_mistake.txt')));
 });
 

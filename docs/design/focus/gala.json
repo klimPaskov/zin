@@ -1,7 +1,7 @@
 {
   "id": "gala",
   "tier": "major",
-  "countries": ["Gala Elves"],
+  "countries": ["Gala"],
   "summary": "King Lorien's court in the Lands of the Sun: memory, the Mirror of First Rain, the King's Ships, the Sunhot realms and the Noon Council, the watch on foreign agents, the Sunward Guard, the Long Estrangement, the stranger at Gala, the old lords' ride and Gala after its king (82 focuses, ten branches).",
   "spirits": {
     "songs_of_dardan_spirit": {"name":"The Songs of Dardan","desc":"The guard sings the old songs at dusk, and the young learn what the singers hold back.","modifier":{"army_morale_factor":0.05,"experience_gain_army_factor":0.05}},
@@ -430,7 +430,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -454,7 +454,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -465,7 +465,7 @@
         },
         {
           "for_country": {
-            "country": "Dunn",
+            "country": "Kamu Lamo",
             "effects": [
               {
                 "if": {
@@ -478,7 +478,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -489,7 +489,7 @@
         },
         {
           "for_country": {
-            "country": "Finn",
+            "country": "Kamu Lamo",
             "effects": [
               {
                 "if": {
@@ -502,79 +502,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "for_country": {
-            "country": "Lua",
-            "effects": [
-              {
-                "if": {
-                  "limit": [
-                    {
-                      "check": "zin_shared_has_coast"
-                    }
-                  ],
-                  "then": [
-                    {
-                      "call": "zin_elves_goodwill",
-                      "args": {
-                        "target": "Gala Elves"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "for_country": {
-            "country": "Verde",
-            "effects": [
-              {
-                "if": {
-                  "limit": [
-                    {
-                      "check": "zin_shared_has_coast"
-                    }
-                  ],
-                  "then": [
-                    {
-                      "call": "zin_elves_goodwill",
-                      "args": {
-                        "target": "Gala Elves"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "for_country": {
-            "country": "Angsutz",
-            "effects": [
-              {
-                "if": {
-                  "limit": [
-                    {
-                      "check": "zin_shared_has_coast"
-                    }
-                  ],
-                  "then": [
-                    {
-                      "call": "zin_elves_goodwill",
-                      "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -598,7 +526,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -609,7 +537,7 @@
         },
         {
           "for_country": {
-            "country": "Yowi-yoor",
+            "country": "Verde",
             "effects": [
               {
                 "if": {
@@ -622,7 +550,79 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Enhis Is Rond",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Enhis Is Rond",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Howan",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -646,7 +646,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -657,7 +657,7 @@
         },
         {
           "for_country": {
-            "country": "Jingar",
+            "country": "Yongyong",
             "effects": [
               {
                 "if": {
@@ -670,7 +670,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -681,7 +681,7 @@
         },
         {
           "for_country": {
-            "country": "Torsor",
+            "country": "Yongyong",
             "effects": [
               {
                 "if": {
@@ -694,7 +694,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -705,7 +705,7 @@
         },
         {
           "for_country": {
-            "country": "Yongrost",
+            "country": "Yongyong",
             "effects": [
               {
                 "if": {
@@ -718,7 +718,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -729,7 +729,7 @@
         },
         {
           "for_country": {
-            "country": "Meng",
+            "country": "Yongyong",
             "effects": [
               {
                 "if": {
@@ -742,7 +742,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -753,7 +753,7 @@
         },
         {
           "for_country": {
-            "country": "Sidea Islands",
+            "country": "Sidea",
             "effects": [
               {
                 "if": {
@@ -766,7 +766,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -790,7 +790,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -801,7 +801,7 @@
         },
         {
           "for_country": {
-            "country": "Agla",
+            "country": "Kea",
             "effects": [
               {
                 "if": {
@@ -814,7 +814,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -825,7 +825,7 @@
         },
         {
           "for_country": {
-            "country": "Yumbo",
+            "country": "Sidea",
             "effects": [
               {
                 "if": {
@@ -838,7 +838,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -849,7 +849,7 @@
         },
         {
           "for_country": {
-            "country": "Pon",
+            "country": "Sidea",
             "effects": [
               {
                 "if": {
@@ -862,7 +862,7 @@
                     {
                       "call": "zin_elves_goodwill",
                       "args": {
-                        "target": "Gala Elves"
+                        "target": "Gala"
                       }
                     }
                   ]
@@ -878,7 +878,7 @@
         {
           "call": "zin_elves_goodwill",
           "args": {
-            "target": "Gala Elves"
+            "target": "Gala"
           }
         }
       ]
@@ -901,19 +901,19 @@
         {
           "call": "zin_elves_goodwill",
           "args": {
-            "target": "Poyang"
+            "target": "Soyano"
           }
         },
         {
           "call": "zin_elves_goodwill",
           "args": {
-            "target": "Godland"
+            "target": "Tor Luni"
           }
         },
         {
           "call": "zin_elves_goodwill",
           "args": {
-            "target": "Hengyang"
+            "target": "Soyano"
           }
         },
         {
@@ -925,7 +925,7 @@
         {
           "call": "zin_elves_goodwill",
           "args": {
-            "target": "Heaven"
+            "target": "Yeni Alang"
           }
         }
       ]
@@ -936,7 +936,7 @@
       },
       "effects": [
         {
-          "raw": "add_equipment_production = {\n\tequipment = {\n\t\ttype = zin_hull_galley_1\n\t\tcreator = \"Y6X\"\n\t}\n\trequested_factories = 1\n\tprogress = 0.5\n\tamount = zin_arg_count\n}"
+          "raw": "add_equipment_production = {\n\tequipment = {\n\t\ttype = zin_hull_galley_1\n\t\tcreator = \"GAA\"\n\t}\n\trequested_factories = 1\n\tprogress = 0.5\n\tamount = zin_arg_count\n}"
         }
       ]
     }

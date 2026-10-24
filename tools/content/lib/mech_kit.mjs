@@ -61,8 +61,8 @@ export function resolveCountries(countries, names, scan) {
   const out = new Map();
   for (const n of names) {
     const c = byName.get(n);
-    if (!c) throw new Error(`The data names ${n}, which is not in countries.json`);
-    if (scan && c.scan !== scan) throw new Error(`The data names ${n} as a ${scan} country, but countries.json puts it in ${c.scan}`);
+    if (!c) throw new Error(`The data names ${n}, which is not in the roster`);
+    if (scan && c.scan !== scan) throw new Error(`The data names ${n} as a ${scan} country, but the roster puts it in ${c.scan}`);
     out.set(n, c);
   }
   return out;

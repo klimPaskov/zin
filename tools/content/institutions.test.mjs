@@ -1,7 +1,8 @@
 // Tests of the institutions module (docs/specs/03_gameplay/08_institutions.md). They call the builder directly with the
-// roster of data/countries.json and assert on the staged files; nothing needs a prior build. The installed game is read
+// roster (lib/roster.mjs) and assert on the staged files; nothing needs a prior build. The installed game is read
 // for the engine's own ids (upgrades, operations, tokens, defines) and documentation (effects, triggers, modifiers).
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -10,14 +11,14 @@ import { Staged } from './lib/core.mjs';
 import { GAME } from './lib/paths.mjs';
 import { parse, tokenize, scriptText } from './lib/clausewitz.mjs';
 import { buildInstitutions, equipmentRights, requiredEnumEntries, defineRows, startValour, loadInstitutions } from './modules/institutions.mjs';
-import { Loc, Sprites, loadCatalogKeys, bannedIn, notCp1252, checkMods, tierOf } from './lib/inst_util.mjs';
+import { Loc, Sprites, loadCatalogKeys, bannedIn, notCp1252, checkMods, tierOf, countryKey } from './lib/inst_util.mjs';
 import { writeAbilities, writeUnitLeaderTraits, hqUnitText } from './lib/inst_war.mjs';
 import { writeOperations, writeAgencies } from './lib/inst_intrigue.mjs';
 import { writeWorkshops } from './lib/inst_craft.mjs';
 import { assertDefinesExist } from './modules/defines.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const staged = new Staged();
 const summary = await buildInstitutions(staged, { countries });
 const text = rel => { const b = staged.files.get(rel); assert(b, `missing staged file ${rel}`); return b.toString('utf8'); };
@@ -30,6 +31,10 @@ const locKeys = new Set([...locAll.matchAll(/^ ([A-Za-z0-9_.@-]+):0 /gm)].map(m 
 const child = (entries, k) => entries.find(e => e.k === k)?.v;
 const blocks = entries => entries.filter(e => e.k && Array.isArray(e.v));
 const gameFile = async rel => parse(scriptText(await readFile(`${GAME}/${rel}`)));
+// Section 2.2: six chiefs for each tier-A realm with chairs, two for each tier-B realm (the spec named 71 tier-B realms; Poyang and
+// Hengyang are one realm of the roster, Soyano, so the list in data/institutions.json holds 70).
+const chairedA = D.core.tiers.a.filter(n => !D.core.tiers.noChairs.includes(n)).length, tierB = D.core.tiers.b.length, chiefs = chairedA * 6 + tierB * 2;
+const ZOL = "Zol's Mistake", DEAD = 'Puvulan';
 
 test('Counts: what the module writes matches the spec tables', () => {
   assert.equal(summary.subUnits, 20, 'fifteen camp roles, with three household variants and three kin variants');
@@ -46,7 +51,8 @@ test('Counts: what the module writes matches the spec tables', () => {
   assert.equal(summary.traits, 102, 'commander traits: 14 land, 10 marshal, 28 corps, 30 sea, 12 agent, 8 status');
   assert.equal(summary.workshopTraits, 90);
   assert.equal(summary.rewards, 26);
-  assert.equal(summary.chiefs, 12 * 6 + 71 * 2, 'tier A (Zol has none) six each, tier B two each');
+  assert.equal(chairedA, 12, 'tier A without Zol\'s Mistake');
+  assert.equal(summary.chiefs, chiefs, 'tier A (Zol\'s Mistake has none) six each, tier B two each');
 });
 
 test('Determinism: a second build yields the same bytes', async () => {
@@ -107,12 +113,12 @@ test('Council of Captains: 27 customs in nine categories, 14 chief families, ran
 
 test('Chiefs: unique ids and tokens, Zol has none, traits exist, tier values hold', () => {
   const chars = blocks(child(tree('common/characters/zin_chiefs.txt'), 'characters')), traitIds = new Set(blocks(child(tree('common/country_leader/zin_military_traits.txt'), 'leader_traits')).map(t => t.k));
-  assert.equal(chars.length, 214);
-  assert.equal(new Set(chars.map(c => c.k)).size, 214);
+  assert.equal(chars.length, chiefs);
+  assert.equal(new Set(chars.map(c => c.k)).size, chiefs);
   const tokens = chars.map(c => child(child(c.v, 'advisor'), 'idea_token'));
-  assert.equal(new Set(tokens).size, 214, 'idea tokens are unique');
-  const zol = countries.find(c => c.name === 'Zol');
-  assert(!chars.some(c => c.k.endsWith('_zol')), 'Zol is led by an emblem and has no named chief (S4)');
+  assert.equal(new Set(tokens).size, chiefs, 'idea tokens are unique');
+  const zol = countries.find(c => c.name === ZOL);
+  assert(zol && !chars.some(c => c.k.endsWith(`_${countryKey(zol)}`)), 'Zol\'s Mistake is led by an emblem and has no named chief (S4)');
   const slots = new Set(['army_chief', 'navy_chief', 'air_chief', 'high_command', 'theorist']);
   for (const c of chars) {
     const adv = child(c.v, 'advisor'); assert(slots.has(child(adv, 'slot')), c.k);
@@ -122,7 +128,7 @@ test('Chiefs: unique ids and tokens, Zol has none, traits exist, tier values hol
   assert.equal(traitIds.size, 43, '15 families with tiers 1 to 3, the old-guard family with one');
   assert(text('common/country_leader/zin_military_traits.txt').includes('army_defence_factor = 0.15'));
   assert(!text('common/country_leader/zin_military_traits.txt').includes('zin_trait_'), 'the ruler traits of 00_zin_leader_traits.txt are not repeated');
-  assert(zol, 'the roster holds Zol');
+  assert(zol, 'the roster holds Zol\'s Mistake');
 });
 
 test('Commander traits: the characters spec keys stay, no modern trait remains, the ladder resolves', () => {
@@ -142,10 +148,10 @@ test('Valour: three decisions with costs in Orders, stores and wear, and the sta
   const dec = blocks(child(tree('common/decisions/zin_inst.txt'), 'zin_inst_valour'));
   assert.deepEqual(dec.map(d => d.k), ['zin_inst_great_manoeuvres', 'zin_inst_sea_trials', 'zin_inst_wing_trials']);
   for (const d of dec) { assert(child(d.v, 'days_re_enable') >= 180); assert(child(d.v, 'custom_cost_trigger')); assert(JSON.stringify(child(d.v, 'complete_effect')).includes('damage_units')); }
-  const v = startValour(D, countries, new Map(countries.map(c => [c.tag, { people: c.name === 'Volgan' || c.name === 'Zol' ? 'the_dead' : 'men' }])));
+  const v = startValour(D, countries, new Map(countries.map(c => [c.tag, { people: c.name === DEAD || c.name === ZOL ? 'the_dead' : 'men' }])));
   const by = n => v.find(x => x.name === n);
-  assert.equal(by('Zol').army, 0); assert.equal(by('Yeldenne').army, 0);
-  assert.equal(by('Volgan').army, 200); assert.equal(by('Aenor').army, 150); assert.equal(by('Aenor').navy, 100);
+  assert.equal(by(ZOL).army, 0); assert.equal(by('Yeldenne').army, 0);
+  assert.equal(by(DEAD).army, 200); assert.equal(by('Aenor').army, 150); assert.equal(by('Aenor').navy, 100);
   assert.equal(v.find(x => x.name === 'Selen').army, 100);
   assert.equal(v.find(x => x.name === 'Freshon').army, 50);
   assert(v.every(x => x.air === 0), 'no dragon is granted at the start');
@@ -241,10 +247,10 @@ test('Spells: four rites, nine spells, rewards resolve, none is potent magic', (
   for (const bad of ['zin_has_potent_magic', 'zin_potent_magic', 'zin_war_grant_dragons', 'ap_attack', 'create_unit']) assert(!s.includes(bad), `spells name ${bad}`);
   const good = D.craft.rewards.filter(r => !r.bad).reduce((a, r) => a + r.weight, 0), bad = D.craft.rewards.filter(r => r.bad).reduce((a, r) => a + r.weight, 0);
   assert(Math.abs(good - 5.5) < 0.01 && Math.abs(bad - 1.9) < 0.01, `weights ${good} and ${bad}`);
-  const zol = countries.find(c => c.name === 'Zol'), vol = countries.find(c => c.name === 'Volgan');
-  assert(JSON.stringify(projects.find(p => p.k === 'zin_sp_wellspring_rite').v).includes(zol.tag), 'Zol has no Wellspring Rite');
-  assert(JSON.stringify(projects.find(p => p.k === 'zin_sp_lifting_the_curse').v).includes(vol.tag), 'Volgan cannot lift the curse');
-  assert(JSON.stringify(projects.find(p => p.k === 'zin_sp_grave_binding_rite').v).includes(vol.tag), 'only Volgan binds the grave');
+  const zol = countries.find(c => c.name === ZOL), vol = countries.find(c => c.name === DEAD);
+  assert(JSON.stringify(projects.find(p => p.k === 'zin_sp_wellspring_rite').v).includes(zol.tag), 'Zol\'s Mistake has no Wellspring Rite');
+  assert(JSON.stringify(projects.find(p => p.k === 'zin_sp_lifting_the_curse').v).includes(vol.tag), 'Puvulan (the Volgan host) cannot lift the curse');
+  assert(JSON.stringify(projects.find(p => p.k === 'zin_sp_grave_binding_rite').v).includes(vol.tag), 'only Puvulan binds the grave');
   assert.equal(blocks(tree('common/scientist_traits/zin_scholar_traits.txt')).length, 9);
 });
 
@@ -262,11 +268,11 @@ test('Hooks: lend trigger, camp trigger, scholar and scar effects, start effects
   for (const k of ['zin_inst_grant_scholar', 'zin_inst_add_scar']) assert(eff.includes(`${k} = {`));
   const oa = text('common/on_actions/zin_inst.txt');
   for (const k of ['on_startup', 'on_army_leader_daily', 'on_army_leader_won_combat', 'on_army_leader_lost_combat', 'on_army_leader_promoted', 'on_deployed_leader_defeated']) assert(oa.includes(`${k} = {`), k);
-  assert.equal([...oa.matchAll(/recruit_character = /g)].length, 214);
+  assert.equal([...oa.matchAll(/recruit_character = /g)].length, chiefs);
   const grants = [...oa.matchAll(/zin_inst_grant_scholar = yes/g)].length;
-  assert(grants >= 12 * 3 + 71 && grants <= 12 * 4 + 71, `scholars: tier A three or four, tier B one (${grants})`);
-  const volgan = countries.find(c => c.name === 'Volgan'), vb = oa.slice(oa.indexOf(`\t\t\t${volgan.tag} = {`));
-  assert.equal([...vb.slice(0, vb.indexOf('\n\t\t\t}')).matchAll(/zin_inst_grant_scholar = yes/g)].length, 4, 'Volgan holds four scholars, three of them Deep');
+  assert(grants >= chairedA * 3 + tierB && grants <= chairedA * 4 + tierB, `scholars: tier A three or four, tier B one (${grants})`);
+  const volgan = countries.find(c => c.name === DEAD), vb = oa.slice(oa.indexOf(`\t\t\t${volgan.tag} = {`));
+  assert.equal([...vb.slice(0, vb.indexOf('\n\t\t\t}')).matchAll(/zin_inst_grant_scholar = yes/g)].length, 4, 'Puvulan holds four scholars, three of them Deep');
   assert(!/create_intelligence_agency|start_special_project|add_to_variable = \{ var = zin_inst_camp/.test(oa), 'no agency, spell or camp at the start');
   assert(text('events/zin_inst.txt').includes('zin_inst.1'));
 });

@@ -5,7 +5,7 @@
 // tools/content/data/forces_geography.json (regenerate with node tools/content/write_forces_geography.mjs).
 //
 //   buildForces(staged, ctx)   ctx = { countries, assignment?, table?, startPackages?, raw? }. `countries` is the roster of
-//                              data/countries.json; `assignment` the Map tag -> people (or `table` from loadCountryTable);
+//                              the roster (lib/roster.mjs); `assignment` the Map tag -> people (or `table` from loadCountryTable);
 //                              `startPackages` the parsed docs/design/technology/start_packages.json (else the staged copy
 //                              of the technologies module, else it is computed). The warfare module must have staged its
 //                              files first (the name lists are read from them). Returns the counts; ctx.model holds the model.
@@ -23,6 +23,7 @@ import { parse } from '../lib/clausewitz.mjs';
 import { compileBanned, findBanned } from '../lib/banned.mjs';
 import { loadCountryTable } from './countries.mjs';
 import { prepareModel as prepareTech, technologyPackages, startFor } from './technologies.mjs';
+import { cultureRows } from '../lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data');
@@ -43,7 +44,7 @@ const readJson = async f => JSON.parse(await readFile(path.join(DATA, f), 'utf8'
 export async function loadRaw() {
   const [templates, ai, geography, ids, units, techs, institutions, cultures, demography, naval, banned, doctrines, civil] = await Promise.all([
     readJson('forces_templates.json'), readJson('forces_ai.json'), readJson('forces_geography.json'), readJson('warfare_ids.json'), readJson('warfare_units.json'),
-    readJson('technologies_warfare.json'), readJson('institutions.json'), readJson('world/country_cultures.json'), readJson('world/demography.json'), readJson('warfare_naval.json'), readJson('banned_words.json'), readJson('technologies_doctrines.json'), readJson('technologies.json'),
+    readJson('technologies_warfare.json'), readJson('institutions.json'), Promise.resolve({ countries: cultureRows() }), readJson('world/demography.json'), readJson('warfare_naval.json'), readJson('banned_words.json'), readJson('technologies_doctrines.json'), readJson('technologies.json'),
   ]);
   return { templates, ai, geography, ids, units, techs, institutions, cultures, demography, naval, banned, doctrines, civil };
 }
@@ -57,7 +58,8 @@ const byEn = (a, b) => a.localeCompare(b, 'en');
 const num = v => { const r = Math.round(v * 1000) / 1000; return String(r); };
 const sortDeep = v => Array.isArray(v) ? v.map(sortDeep) : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort(byEn).map(k => [k, sortDeep(v[k])])) : v;
 const canonicalJson = v => JSON.stringify(sortDeep(v), null, 1) + '\n';
-const slugOf = key => key.startsWith('country:') ? key.slice(8).toLowerCase().replace(/[^a-z0-9]+/g, '_') : key;
+// A named realm's id stem: lower case, apostrophes dropped, other runs of non-letters one underscore (Zol's Mistake -> zols_mistake).
+const slugOf = key => key.startsWith('country:') ? key.slice(8).toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '_') : key;
 const tagLines = (tags, depth) => { const out = []; for (let i = 0; i < tags.length; i += 12) out.push(`${T(depth)}${tags.slice(i, i + 12).join(' ')}`); return out.join('\n'); };
 const listBlock = (name, tags, depth) => `${T(depth)}${name} = {\n${tagLines(tags, depth + 1)}\n${T(depth)}}`;
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
@@ -120,11 +122,12 @@ export async function prepareModel(ctx, raw0 = null, staged = null) {
   }
 
   // profile keys, tiers, cultures, populations
-  const profileKey = c => (c.name === 'Volgan' || c.name === 'Zol') ? `country:${c.name}` : (assignment.get(c.tag) ?? err(`No people for ${c.tag}`));
+  const profileKey = c => (c.name === 'Puvulan' || c.name === 'Zol\'s Mistake') ? `country:${c.name}` : (assignment.get(c.tag) ?? err(`No people for ${c.tag}`));
   const tierA = new Set(institutions.tiers.a.map(n => { const t = tagOfName.get(n); if (!t) P(`tier A names ${n}, which is not in the roster`); return t; }).filter(Boolean)), tierB = new Set(institutions.tiers.b.map(n => tagOfName.get(n)).filter(Boolean));
   const tierOf = tag => tierA.has(tag) ? 'a' : tierB.has(tag) ? 'b' : 'c';
   const cultureOf = new Map(cultures.countries.map(c => [c.tag, c.culture]));
-  const popOf = new Map(demography.countries.map(c => [c.tag, c.population]));
+  // Populations come from the roster (the living, by realm; data/world/roster.json).
+  const popOf = new Map(countries.map(c => [c.tag, c.population]));
   const share = demography.game_numbers.manpower_share_by_people;
 
   // start technologies
@@ -663,7 +666,7 @@ function productionStrategies(model) {
 
 function navyStrategies(model) {
   const N = model.raw.ai.navy, seaTags = [...new Set([...N.seaPower.names.map(n => model.tagOfName.get(n)), ...model.countries.filter(c => N.seaPower.scans.includes(c.scan)).map(c => c.tag)])].filter(Boolean).sort(byEn);
-  const zol = model.tagOfName.get('Zol');
+  const zol = model.tagOfName.get('Zol\'s Mistake');
   const out = [HEADER, '# Generic navy strategies (L1): ratios of galleys, warships, raiders and cogs by sea drive; no dragons are ever produced, and under the griffin rule men with war keep a few griffin riders.'];
   const ratios = r => Object.entries(r).map(([id, v]) => strat('unit_ratio', id, v));
   out.push(stratBlock('zin_default_navy_sea_power', [`OR = {\n${seaTags.map(t => `${T(3)}original_tag = ${t}`).join('\n')}\n${T(2)}}`], [...ratios(N.seaPower.ratios), ...Object.entries(N.roleRatios.seaPower).map(([id, v]) => strat('role_ratio', id, v)), strat('dockyard_to_military_factory_ratio', null, model.raw.ai.production.dockyards.seaPower)], 'Sea powers'));

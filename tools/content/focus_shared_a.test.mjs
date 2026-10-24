@@ -8,7 +8,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir, mkdtemp, writeFile, rm } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
+import { countryTable, successor, loadRoster } from './lib/roster.mjs';
 import os from 'node:os';
 import path from 'node:path';
 import { Staged } from './lib/core.mjs';
@@ -26,13 +27,34 @@ const json = async f => JSON.parse(await readFile(f, 'utf8'));
 const SPEC_FILE_RENAMED = {};
 const IDS = ['shared_cold_lands', 'shared_concord_dominions', 'shared_dark_lands', 'shared_ember_lands', 'shared_east_lands', 'shared_islands_of_the_south'];
 const EXPECT = {
-  shared_cold_lands: { focuses: 70, spirits: 18, events: 5, countries: 23, opinions: 1, ns: 'zin_shared_cold_lands' },
-  shared_concord_dominions: { focuses: 66, spirits: 22, events: 8, countries: 18, opinions: 0, ns: 'zin_shared_concord_dominions' },
-  shared_dark_lands: { focuses: 57, spirits: 23, events: 2, countries: 17, opinions: 5, ns: 'zin_shared_dark_lands' },
-  shared_ember_lands: { focuses: 47, spirits: 15, events: 6, countries: 6, opinions: 2, ns: 'zin_shared_ember_lands' },
-  shared_east_lands: { focuses: 68, spirits: 17, events: 4, countries: 24, opinions: 0, ns: 'zin_shared_east_lands' },
-  shared_islands_of_the_south: { focuses: 46, spirits: 13, events: 2, countries: 15, opinions: 0, ns: 'zin_shared_islands_of_the_south' },
+  shared_cold_lands: { focuses: 70, spirits: 18, events: 5, opinions: 1, ns: 'zin_shared_cold_lands' },
+  shared_concord_dominions: { focuses: 66, spirits: 22, events: 8, opinions: 0, ns: 'zin_shared_concord_dominions' },
+  shared_dark_lands: { focuses: 57, spirits: 23, events: 2, opinions: 5, ns: 'zin_shared_dark_lands' },
+  shared_ember_lands: { focuses: 47, spirits: 15, events: 6, opinions: 2, ns: 'zin_shared_ember_lands' },
+  shared_east_lands: { focuses: 68, spirits: 17, events: 4, opinions: 0, ns: 'zin_shared_east_lands' },
+  shared_islands_of_the_south: { focuses: 46, spirits: 13, events: 2, opinions: 0, ns: 'zin_shared_islands_of_the_south' },
 };
+// The roster decides which realms a shared tree serves (roster.json focusTree); the tiers spec lists the countries of the
+// retired roster. Each spec country is continued by a realm of the tree or by a realm with a tree of its own (or one the roster
+// assigns to a tree not written yet), and each realm of the tree continues a spec country or is new (a split's second realm).
+const ROSTER = countryTable();
+const treeCountries = id => ROSTER.filter(c => c.focusTree === id).map(c => c.name);
+const realmOf = old => { const s = successor(old); return s?.primary ? ROSTER.find(c => c.key === s.primary) : null; };
+const CONTINUES = new Set(loadRoster().migration.map(m => successor(m.oldTag)?.primary).filter(Boolean));
+const TREE_FILES = new Set(readdirSync(`${ZIN}/docs/design/focus`).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5)));
+// The trees the roster names that are not written yet (docs/plans/roster_integration).
+const UNWRITTEN = ['new', 'shared_delving_holds', 'shared_middle_free'];
+function checkSpecList(id, countries, specNames) {
+  for (const old of specNames) {
+    const r = realmOf(old);
+    assert(r, `${id}: ${old} of the tiers spec is continued by a realm`);
+    assert(r.focusTree === id ? countries.includes(r.name) : TREE_FILES.has(r.focusTree) || UNWRITTEN.includes(r.focusTree), `${id}: ${old} is continued by ${r.name}, which is in ${id} or has a tree of its own`);
+  }
+  for (const name of countries) {
+    const r = ROSTER.find(c => c.name === name);
+    assert(specNames.some(o => realmOf(o)?.key === r.key) || !CONTINUES.has(r.key), `${id}: ${name} continues a country of the spec or is a new realm`);
+  }
+}
 const DATA = `${ZIN}/tools/content/data`;
 const TREE_DIR = `${ZIN}/docs/design/focus`;
 const SPEC_DIR = `${ZIN}/docs/specs/05_focus_trees`;
@@ -130,7 +152,8 @@ test('Counts of focuses, spirits, events, opinion modifiers and countries match 
     assert.equal(Object.keys(t.spirits ?? {}).length, e.spirits, `${id} spirits`);
     assert.equal(Object.keys(t.events ?? {}).length, e.events, `${id} events`);
     assert.equal(Object.keys(t.opinion_modifiers ?? {}).length, e.opinions, `${id} opinion modifiers`);
-    assert.equal(t.countries.length, e.countries, `${id} countries`);
+    assert.deepEqual([...t.countries].sort(), treeCountries(id).sort(), `${id} countries are the roster's realms of the tree`);
+    assert(t.countries.length >= 1, `${id} serves a realm`);
   }
   assert.equal(IDS.reduce((n, id) => n + BASE[id].focuses.length, 0), 354);
 });
@@ -153,12 +176,13 @@ test('Each tree serves exactly the countries the tiers spec lists, once, and no 
   for (const id of IDS) {
     const spec = listed.get(id);
     assert(spec, `${id} is listed in the tiers spec`);
-    assert.equal(BASE[id].countries.length, spec.n, id);
-    assert.deepEqual([...BASE[id].countries].sort(), [...spec.names].sort(), id);
+    assert.equal(spec.names.length, spec.n, `${id}: the tiers spec counts its list`);
+    assert.deepEqual([...BASE[id].countries].sort(), treeCountries(id).sort(), id);
+    checkSpecList(id, BASE[id].countries, spec.names);
     total += BASE[id].countries.length;
   }
-  assert.equal(total, 103);
-  assert.equal(new Set(IDS.flatMap(id => BASE[id].countries)).size, 103);
+  assert.equal(new Set(IDS.flatMap(id => BASE[id].countries)).size, total, 'no realm is in two of the six trees');
+  assert.deepEqual([...new Set(ROSTER.map(c => c.focusTree).filter(t => !TREE_FILES.has(t)))].sort(), UNWRITTEN, 'the roster names no other tree without a file');
   assert.deepEqual(checkCoverage(clean.list, roster, { requireAll: false }), []);
 });
 
@@ -353,7 +377,7 @@ test('Branch checks of the specs: Light Holdon-style trees, subjects, coasts and
   assert.match(cond('shared_cold_lands', 'under_a_greater_crown', 'allow_branch'), /"is_subject":true/);
   assert.match(cond('shared_concord_dominions', 'a_free_land', 'allow_branch'), /"is_subject":false/);
   assert.match(cond('shared_concord_dominions', 'the_lords_moot', 'allow_branch'), /"ideology":"wild"/);
-  assert.match(cond('shared_ember_lands', 'a_client_crown', 'allow_branch'), /"subject_of":"Volgan"/);
+  assert.match(cond('shared_ember_lands', 'a_client_crown', 'allow_branch'), new RegExp(`"subject_of":"${realmOf('Volgan').name}"`));
   assert.match(cond('shared_ember_lands', 'the_wardens_banner', 'allow_branch'), /"subject_of":"Mirolon"/);
   assert.match(cond('shared_east_lands', 'riders_of_the_dunes', 'allow_branch'), /"people":"men"/);
   assert.match(cond('shared_islands_of_the_south', 'island_navigators', 'allow_branch'), /"people":"men"/);
@@ -439,7 +463,7 @@ test('Country tags written into raw scripts are roster tags of the countries the
   const found = new Set([...text.matchAll(/(?:country_exists|has_war_with|is_in_faction_with|tag|original_tag) = ([A-Z][A-Z0-9]{2})\b/g)].map(m => m[1]));
   for (const m of text.matchAll(/(?:\\n|\\t|^|"|\{ )([A-Z][A-Z0-9]{2}) = \{/g)) if (!['NOT', 'AND'].includes(m[1])) found.add(m[1]);
   for (const t of found) assert(tags.has(t), `${t} is a roster tag`);
-  for (const name of ['Coldor', 'Fearno', 'Goldoroth', 'Volgan', 'Dulundur', 'Zol', 'Mirolon']) assert(text.includes(tagOf.get(name)), `${name} tag appears in a declared script`);
+  for (const old of ['Coldor', 'Fearno', 'Goldoroth', 'Volgan', 'Dulundur', 'Zol', 'Mirolon']) assert(text.includes(tagOf.get(realmOf(old).name)), `${old} (${realmOf(old).name}) tag appears in a declared script`);
 });
 
 test('Registry file: every entry is used by one of the six trees and the branch lists name only declared or external checks', () => {
@@ -677,7 +701,8 @@ test('Fails: allow_branch conditions that change in play, a refreshed condition 
 });
 
 test('Fails: a country in two trees, a tree id the tiers do not allow, and a secret gate that cannot be proved', async () => {
-  await failsWith(raw => { raw.shared_ember_lands.countries.push('Volgan'); raw.shared_dark_lands.countries.push('Volgan'); }, 'coverage_many', /Volgan/);
+  const twice = realmOf('Volgan').name;
+  await failsWith(raw => { raw.shared_ember_lands.countries.push(twice); raw.shared_dark_lands.countries.push(twice); }, 'coverage_many', new RegExp(twice));
   await failsWith(raw => { raw.shared_ember_lands.id = 'ember_lands'; }, 'schema');
   await failsWith(raw => { raw.shared_ember_lands.countries.push('Nowhere Land'); }, 'schema', /Nowhere Land/);
 });

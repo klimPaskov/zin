@@ -4,6 +4,7 @@
 // leaves no former month name in any staged text, converts the shared year count into the local reckonings, and sets only
 // defines the installed game has.
 import test from 'node:test';
+import { countryTable, successor } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -24,7 +25,7 @@ const read = p => readFile(path.join(STAGED, p), 'utf8');
 const json = async rel => JSON.parse(await readFile(path.join(here, rel), 'utf8'));
 const vanillaDefines = await readFile(`${GAME}/common/defines/00_defines.lua`, 'utf8');
 const ROSTER = await json('data/world/roster.json');
-const COUNTRIES = (await json('data/countries.json')).countries;
+const COUNTRIES = countryTable();
 const locOf = async p => new Map(parseLocText(await read(p)).map(e => [e.key, e.value]));
 
 // The owner's order (decision K28, 24 October 2026).
@@ -261,7 +262,9 @@ test('The defines file opens the game in 4A 1748 and makes the nuclear defines i
   assert.match(lua, /NDefines\.NDiplomacy\.TENSION_TIME_SCALE_START_DATE = "1748\.3\.1\.12"/);
   assert.match(lua, /NDefines\.NRaids\.NUCLEAR_BOMB_PRODUCTION_SCALE = 1000000/);
   assert.match(lua, /NDefines\.NTechnology\.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2 /, 'the ahead-of-time penalty returns with the Aoaz technology years');
-  assert.match(lua, /NDefines\.NGame\.HANDS_OFF_START_TAG = "Y60"/);
+  // The hands-off start tag is Verde, the old row Y60, which the roster keeps.
+  const verde = countryTable().find(c => c.key === successor('Y60').primary).tag;
+  assert.ok(lua.includes(`NDefines.NGame.HANDS_OFF_START_TAG = "${verde}"`), verde);
   assert(!/=s*"19dd/.test(lua), 'no vanilla date is assigned');
 });
 

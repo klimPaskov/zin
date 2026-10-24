@@ -258,9 +258,9 @@
    "stage": 1,
    "owner": "docs/specs/02_lore/02_characters.md",
    "zin": [
-    "common/characters/zin_rulers.txt"
+    "common/characters/zin_realm_characters.txt"
    ],
-   "reason": "ZIN rulers now; court, generals and hidden figures from the characters spec"
+   "reason": "The courts of the roster from the characters spec: rulers, heirs, advisors, commanders and figures"
   },
   {
    "path": "common/collections",
@@ -1823,7 +1823,8 @@
    "zin": [
     "history/general/zin_general.txt"
    ],
-   "reason": "Vanilla generic_advisors.txt gave modern advisors to every ZIN country"
+   "reason": "Vanilla generic_advisors.txt gave modern advisors to every ZIN country",
+   "emptyAllowed": "zin_general.txt generates councillors only for a court without named advisors (modules/characters.mjs); every court of the roster has named advisors or keeps none on purpose, so the file is comment-only and the folder still hides the vanilla generic advisors."
   },
   {
    "path": "history/states",

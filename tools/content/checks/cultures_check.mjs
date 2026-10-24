@@ -30,10 +30,13 @@ import { loadBanned, compileBanned, findBanned } from '../lib/banned.mjs';
 import { nonCp1252 } from '../lib/loc_parse.mjs';
 import { monthIndex } from '../lib/calendar.mjs';
 import { cultureLocEntries, loadCultureModel, resolveCountryCultures, portraitPoolFor, canonicalJson, DATA } from '../lib/cultures_model.mjs';
+import { countryTable } from '../lib/roster.mjs';
 
-// Counts the specs fix: 53 cultures (bible), 24 languages, 51 building kits, 14 music palettes, 21 unit groups
+// Counts of the world data: 53 cultures, 24 languages, 51 building kits, 14 music palettes and 21 unit groups in the specs
+// (08_world_in_game.md sections 7 and 12), extended by the roster of 24 October 2026 (cultures_new.json, merged by
+// tools/migrations/roster_migration.mjs): 82 cultures, 29 languages, 80 building kits, 16 music palettes, 24 unit groups
 // (08_world_in_game.md sections 7 and 12), 39 faith rows (35 faiths plus the open one and the later additions).
-export const SPEC_COUNTS = Object.freeze({ cultures: 53, languages: 24, building_styles: 51, music_moods: 14, unit_groups: 21 });
+export const SPEC_COUNTS = Object.freeze({ cultures: 82, languages: 29, building_styles: 80, music_moods: 16, unit_groups: 24 });
 const SECRET_TERMS = /Afrit|Eindil|Einendil|Hidden Council|Kusven|birth rolls?|hearth-names?/i;
 const BIBLE_TAG = /\[(?:E|P|O|W|secret)[\s,\]]/;
 
@@ -309,7 +312,7 @@ export function assertCultureChecks(result) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2), reportAt = args.includes('--report') ? args[args.indexOf('--report') + 1] : null;
   const model = await loadCultureModel();
-  const { countries } = JSON.parse(await readFile(path.join(DATA, 'countries.json'), 'utf8'));
+  const countries = countryTable();
   const result = await runCultureChecks(model, { countries, geography: await loadGeographyIds() });
   console.log(JSON.stringify({ errors: result.errors.length, warnings: result.warnings.length, totals: result.coverage.totals, gaps: { cultures_without_country: result.coverage.gaps.cultures_without_country, faiths_without_country: result.coverage.gaps.faiths_without_country } }, null, 2));
   if (result.warnings.length) console.error(formatFindings(result.warnings));

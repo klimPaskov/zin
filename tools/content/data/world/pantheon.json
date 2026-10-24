@@ -75,7 +75,7 @@
       "monthIndex": 3, "monthName": "Lumae", "monthShort": "Lumae", "monthAbbr": "Lum", "engineKey": "March", "engineShortKey": "Mar", "season": "spring",
       "regionalNames": { "aenoran": "Lumae", "leren": "Lum", "mirolic": "Lumia", "dondric": "Lum", "coldic": "Huzlykt", "gunwaithic": "Lykta-Chus", "noric": "Ner-Bet", "stabilic": "Nerobeto", "alerhic": "Betianeria", "sylvan": "Lumi", "galic": "Lumien Ame", "sunhot": "Lumi Hami" },
       "holySites": [{ "siteId": "site_parim", "name": "the third bay of the Hall of the Twelve" }, { "siteId": null, "name": "the hearth of every house" }],
-      "favouredBy": ["lake_aenoran", "march_folk", "wall_folk", "free_crowns_north", "winter_crown"], "shunnedBy": ["grave_hosts"]
+      "favouredBy": ["lake_aenoran", "march_folk", "vale_folk", "free_crowns_north", "winter_crown"], "shunnedBy": ["grave_hosts"]
     },
     {
       "id": "maelwen", "name": "Maelwen", "liturgicalName": "Maelwen Dolmael", "liturgicalGloss": "Maelwen of the Deep Sea", "commonSpeechName": "Maelven", "sex": "male", "rank": null,
@@ -88,7 +88,7 @@
       "monthIndex": 4, "monthName": "Maelwen", "monthShort": "Mael", "monthAbbr": "Mael", "engineKey": "April", "engineShortKey": "Apr", "season": "spring",
       "regionalNames": { "aenoran": "Maelven", "leren": "Meelven", "mirolic": "Mialven", "dondric": "Moalwen", "coldic": "Margvind", "gunwaithic": "Wind-Marg", "noric": "Ruuh-Naam", "stabilic": "Ruhonamo", "alerhic": "Chariamoi", "sylvan": "Thalavael", "galic": "Weal Talo", "sunhot": "Yail Sala" },
       "holySites": [{ "siteId": "site_sonargur", "name": "the Singing Quay" }, { "siteId": "site_alerhia", "name": "the Flood-Court" }, { "siteId": "site_noris", "name": "the Seven Wells, where he is honoured as rain" }],
-      "favouredBy": ["leren_sea_kings", "chart_islanders", "isle_houses", "river_kings", "noris_riders", "windwaith_seafarers"], "shunnedBy": []
+      "favouredBy": ["leren_sea_kings", "chart_islanders", "isle_houses", "river_kings", "noris_riders", "vindael_seafarers"], "shunnedBy": []
     },
     {
       "id": "vaelei", "name": "Vaelei", "liturgicalName": "Vaelei Naivael", "liturgicalGloss": "Vaelei of the New Green", "commonSpeechName": "Vaelei", "sex": "female", "rank": null,
@@ -127,7 +127,7 @@
       "monthIndex": 7, "monthName": "Kerun", "monthShort": "Kerun", "monthAbbr": "Ker", "engineKey": "July", "engineShortKey": "Jul", "season": "summer",
       "regionalNames": { "aenoran": "Kerun", "leren": "Kerun", "mirolic": "Gerun", "dondric": "Gerun", "coldic": "Isenbraenn", "gunwaithic": "Brenn-Isen", "noric": "Khadar-Barz", "stabilic": "Cadarbarzo", "alerhic": "Barzischadar", "sylvan": "Angielorniel", "galic": "Orne Ange", "sunhot": "Orni Angi" },
       "holySites": [{ "siteId": "site_kingson", "name": "the Gate at Kingson" }, { "siteId": "site_mirolon", "name": "the beacon towers" }],
-      "favouredBy": ["wall_folk", "march_folk", "mirolon_wardens", "pass_wardens", "buldor_companies"], "shunnedBy": []
+      "favouredBy": ["vale_folk", "march_folk", "mirolon_wardens", "pass_wardens", "buldor_companies"], "shunnedBy": []
     },
     {
       "id": "aurlan", "name": "Aurlan", "liturgicalName": "Aurlan Waelan", "liturgicalGloss": "Aurlan of the Watered Field", "commonSpeechName": "Aurlan", "sex": "female", "rank": null,
@@ -153,7 +153,7 @@
       "monthIndex": 9, "monthName": "Ailtal", "monthShort": "Ailtal", "monthAbbr": "Ail", "engineKey": "September", "engineShortKey": "Sep", "season": "autumn",
       "regionalNames": { "aenoran": "Ailtal", "leren": "Eiltal", "mirolic": "Ailtal", "dondric": "Ualdal", "coldic": "Kvitstaenn", "gunwaithic": "Stenn-Gwit", "noric": "Kaar-Leb", "stabilic": "Cairolebo", "alerhic": "Lebiakaris", "sylvan": "Aeltor", "galic": "Tor Lunien", "sunhot": "Tor Luni" },
       "holySites": [{ "siteId": "site_postondoroth", "name": "the Hall of Scales" }, { "siteId": "site_gunwaith", "name": "the Oath-Ring" }, { "siteId": "site_bridge_three_oaths", "name": "the Bridge of the Three Oaths" }],
-      "favouredBy": ["gunwaith_clans", "girdon_wardens", "caravan_princes", "buldor_companies", "leren_sea_kings"], "shunnedBy": ["netherborn"]
+      "favouredBy": ["gunwyn_clans", "girdon_wardens", "caravan_princes", "buldor_companies", "leren_sea_kings"], "shunnedBy": ["netherborn"]
     },
     {
       "id": "irumas", "name": "Irumas", "liturgicalName": "Irumas Kerard", "liturgicalGloss": "Irumas of the Forge", "commonSpeechName": "Irumas", "sex": "male", "rank": null,
@@ -179,7 +179,7 @@
       "monthIndex": 11, "monthName": "Gaelor", "monthShort": "Gaelor", "monthAbbr": "Gael", "engineKey": "November", "engineShortKey": "Nov", "season": "autumn",
       "regionalNames": { "aenoran": "Gaelor", "leren": "Geelor", "mirolic": "Gialor", "dondric": "Goalor", "coldic": "Graearyarl", "gunwaithic": "Yarl-Grei", "noric": "Beq-Rem", "stabilic": "Becoremo", "alerhic": "Rhemiabekia", "sylvan": "Gaeliel", "galic": "Eal Geale", "sunhot": "Hailu Gaili" },
       "holySites": [{ "siteId": null, "name": "the Names Wall of the Pale March" }, { "siteId": null, "name": "the ebb-shores where the Leren burn their dead" }],
-      "favouredBy": ["leren_sea_kings", "wall_folk", "ember_lands_freeholds", "isle_houses", "gala_court"], "shunnedBy": ["grave_hosts", "netherborn"]
+      "favouredBy": ["leren_sea_kings", "vale_folk", "ember_freeholds", "isle_houses", "gala_court"], "shunnedBy": ["grave_hosts", "netherborn"]
     },
     {
       "id": "naisa", "name": "Naisa", "liturgicalName": "Naisa Dumlor", "liturgicalGloss": "Naisa the Bright-in-Dark", "commonSpeechName": "Naize", "sex": "female", "rank": null,
@@ -201,8 +201,8 @@
     { "id": "biir_shiin", "name": "Biir-Shiin", "language": "noric", "gloss": "the bright well", "domain": "wells, oases and the salt road", "following": ["noris_riders", "caravan_princes"], "underGod": "maelwen", "feast": { "name": "The First Water", "month": 4, "day": 1 }, "servesZol": false, "publicName": true },
     { "id": "tidai", "name": "Tidai", "language": "tritonic", "gloss": "the tide", "domain": "tides, harbours and the ransoming of captives", "following": ["corsair_lords", "chart_islanders", "isle_houses"], "underGod": "maelwen", "feast": { "name": "The Ransoming", "month": 10, "day": 20 }, "servesZol": false, "publicName": true },
     { "id": "parethe", "name": "Parethe", "language": "ainic", "gloss": "she of the lake", "domain": "the Great Lake of Parim, its fishers and ferries", "following": ["lake_aenoran"], "underGod": "maelwen", "feast": { "name": "The Lake-Blessing", "month": 5, "day": 1 }, "servesZol": false, "publicName": true },
-    { "id": "lunvat", "name": "Lunvat", "language": "coldic", "gloss": "moon-water", "domain": "calm seas and windless nights, as sailors pray for them", "following": ["windwaith_seafarers", "ice_clans", "isengard_warlords"], "underGod": "maelwen", "feast": { "name": "The Calm", "month": 6, "day": 10 }, "servesZol": true, "servesZolLayer": "sealed (C9, C10; proposed answer to C10 for the authorial record only)", "publicName": true },
-    { "id": "gaelkuth", "name": "Gaelkuth", "language": "ainic", "gloss": "grey grave", "regionalNames": { "aenoran": "Gaelkut", "leren": "Geelkus" }, "domain": "an easy death, the sleep of the old and the sick, the quiet of graves", "following": ["ember_lands_freeholds", "lake_aenoran", "leren_sea_kings"], "underGod": "gaelor", "feast": { "name": "The Quiet Night", "month": 11, "day": 15 }, "servesZol": true, "servesZolLayer": "sealed (C9, C10; proposed answer to C10 for the authorial record only)", "publicName": true },
+    { "id": "lunvat", "name": "Lunvat", "language": "coldic", "gloss": "moon-water", "domain": "calm seas and windless nights, as sailors pray for them", "following": ["vindael_seafarers", "ice_clans", "melkgard_warlords"], "underGod": "maelwen", "feast": { "name": "The Calm", "month": 6, "day": 10 }, "servesZol": true, "servesZolLayer": "sealed (C9, C10; proposed answer to C10 for the authorial record only)", "publicName": true },
+    { "id": "gaelkuth", "name": "Gaelkuth", "language": "ainic", "gloss": "grey grave", "regionalNames": { "aenoran": "Gaelkut", "leren": "Geelkus" }, "domain": "an easy death, the sleep of the old and the sick, the quiet of graves", "following": ["ember_freeholds", "lake_aenoran", "leren_sea_kings"], "underGod": "gaelor", "feast": { "name": "The Quiet Night", "month": 11, "day": 15 }, "servesZol": true, "servesZolLayer": "sealed (C9, C10; proposed answer to C10 for the authorial record only)", "publicName": true },
     { "id": "herdsman_of_the_south", "name": null, "workingLabel": "the Herdsman of the South", "language": null, "domain": "the southern wilds and their beasts", "following": [], "formerFollowing": "peoples of the south before the numbered ages (unknown)", "underGod": null, "feast": null, "servesZol": false, "overthrownBy": "volgan", "overthrownLayer": "sealed (C11); its fate stays mystery-open (C12)", "publicName": false }
   ],
   "afritFeast": {
@@ -251,7 +251,7 @@
     "lamp_furrow": { "favours": ["lumae", "aurlan"], "note": "honours all twelve; the lamp and the furrow are Lumae and Aurlan" },
     "green_lords": { "favours": [], "note": "spirit faith; the twelve only through the household rites" },
     "horse_oath": { "favours": [], "lesser": ["hunvael"] },
-    "stone_vigil": { "favours": ["kerun", "gaelor"] },
+    "pass_vigil": { "favours": ["kerun", "gaelor"] },
     "isle_tide": { "favours": ["gaelor", "maelwen"], "lesser": ["tidai"] },
     "old_knots": { "favours": [], "note": "keeps birth and death in its own cords and refuses the temple forms" },
     "strait_litany": { "favours": ["maelwen", "gaelor"] },
@@ -265,7 +265,7 @@
     "ransom_tide": { "favours": ["maelwen"], "lesser": ["tidai"] },
     "well_oath": { "favours": ["maelwen", "naisa"], "lesser": ["biir_shiin"] },
     "scale_creed": { "favours": ["ailtal", "rasthel"] },
-    "river_temples": { "favours": ["maelwen", "aurlan", "glernaen"] },
+    "flood_stair": { "favours": ["maelwen", "aurlan", "glernaen"] },
     "lake_litany": { "favours": ["rasthel", "maelwen"] },
     "red_hearth": { "favours": ["vaelei", "irumas"] },
     "wave_tally": { "favours": ["gaelor"] },

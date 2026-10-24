@@ -8,6 +8,7 @@ import { readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ZIN } from './lib/paths.mjs';
+import { stateOwners } from './lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(here, 'data/forces_geography.json');
@@ -21,15 +22,18 @@ function pixelReader(buf) {
   return { width, height, at: (x, z) => { const xi = Math.min(width - 1, Math.max(0, Math.floor(x))), r = Math.min(height - 1, Math.max(0, Math.floor(z))), o = offset + r * stride + xi * 3; return (buf[o + 2] << 16) | (buf[o + 1] << 8) | buf[o]; } };
 }
 
+// The owner is the realm of the roster that holds the state (data/world/state_assignment.json); the map file's own owner, an old tag, is
+// kept as `mapOwner`.
 export async function readStates(dir = path.join(ZIN, 'history/states')) {
-  const states = [];
+  const states = [], owners = stateOwners();
   for (const f of (await readdir(dir)).filter(n => n.endsWith('.txt')).sort((a, b) => a.localeCompare(b, 'en'))) {
     const t = await readFile(path.join(dir, f), 'utf8');
     const id = Number(/\bid\s*=\s*(\d+)/.exec(t)?.[1]), owner = /\bowner\s*=\s*([A-Za-z0-9]+)/.exec(t)?.[1];
     const provinces = (/\bprovinces\s*=\s*\{([^}]*)\}/.exec(t)?.[1] ?? '').trim().split(/\s+/).filter(Boolean).map(Number);
     const vps = [...t.matchAll(/victory_points\s*=\s*\{\s*(\d+)\s+(\d+)\s*\}/g)].map(m => ({ province: Number(m[1]), value: Number(m[2]) }));
     if (!Number.isInteger(id) || !owner || !provinces.length) throw new Error(`State file ${f} has no id, owner or provinces`);
-    states.push({ id, owner, provinces, vps });
+    if (!owners.has(id)) throw new Error(`State ${id} has no owner in data/world/state_assignment.json`);
+    states.push({ id, owner: owners.get(id), mapOwner: owner, provinces, vps });
   }
   return states.sort((a, b) => a.id - b.id);
 }
@@ -67,7 +71,7 @@ export async function buildGeography() {
     if (port !== null) ports++;
     (out[s.owner] ??= []).push({ id: s.id, province: best ? best.province : s.provinces[0], vp: best ? best.value : 0, port, centre });
   }
-  return { geography: { schema: 1, owner: 'tools/content/write_forces_geography.mjs; regenerate with node tools/content/write_forces_geography.mjs, never by hand', note: 'Per country tag: its states with the province that carries the victory point (province), that point\'s value (vp), the port province when a naval base point of the state lies in one of its land provinces (port), and the centre of the state\'s building points on the map (centre). Source: history/states, map/buildings.txt, map/provinces.bmp, map/definition.csv.', anomalies, countries: Object.fromEntries(Object.keys(out).sort((a, b) => a.localeCompare(b, 'en')).map(k => [k, out[k]])) }, ports, states: states.length };
+  return { geography: { schema: 1, owner: 'tools/content/write_forces_geography.mjs; regenerate with node tools/content/write_forces_geography.mjs, never by hand', note: 'Per country tag: its states with the province that carries the victory point (province), that point\'s value (vp), the port province when a naval base point of the state lies in one of its land provinces (port), and the centre of the state\'s building points on the map (centre). Owners: data/world/state_assignment.json. Source: history/states, map/buildings.txt, map/provinces.bmp, map/definition.csv.', anomalies, countries: Object.fromEntries(Object.keys(out).sort((a, b) => a.localeCompare(b, 'en')).map(k => [k, out[k]])) }, ports, states: states.length };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

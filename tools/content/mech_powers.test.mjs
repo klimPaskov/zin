@@ -1,8 +1,9 @@
 // Tests of the power mechanics (docs/design/stage2/mech_powers.md): the elves and the Wall, Lerendor and the Narrow Strait, Volgan and
-// the Southern Dominion, with the three windows. They call the builders directly with the roster of data/countries.json and assert on
+// the Southern Dominion, with the three windows. They call the builders directly with the roster (lib/roster.mjs) and assert on
 // the staged files; nothing needs a prior build. The installed game is read for engine vocabulary (effects, triggers, modifiers).
 // Run: node --test tools/content/mech_powers.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -21,7 +22,14 @@ import { loadGlossary } from './lib/text_engine.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const json = async f => JSON.parse(await readFile(path.join(here, 'data', f), 'utf8'));
-const { countries } = await json('countries.json');
+const countries = countryTable();
+// The Magical Lands elven realms of the roster (the module's own rule: Magical Lands sheet, an elf people of the country table); the roster of
+// 24 October 2026 has nine of them, where the debug-tag roster had 21.
+const { loadCountryTable } = await import('./modules/countries.mjs');
+const { ZIN: ZIN_ROOT } = await import('./lib/paths.mjs');
+const peopleTable = await loadCountryTable(countries, `${ZIN_ROOT}/docs/design/countries.csv`);
+const E0 = await json('mech_powers_elves.json');
+const MAGICAL = countries.filter(c => c.scan === E0.realms.magical_scan && E0.realms.elf_peoples.includes(peopleTable.get(c.tag).people)).map(c => c.tag).sort();
 const E = await json('mech_powers_elves.json'), L = await json('mech_powers_lerendor.json'), V = await json('mech_powers_volgan.json');
 const staged = new Staged();
 const elves = await buildElves(staged, { countries, wards: true });
@@ -43,11 +51,13 @@ const scriptFilesIncludeWord = w => Object.values(locEntries).some(v => v.includ
 const modFilesOf = prefix => [...txtFiles].filter(([k]) => k.includes(prefix));
 
 test('Counts: what the modules write matches the specs', () => {
-  assert.equal(elves.counts.realms, 21, 'the Magical Lands elven realms');
+  assert.equal(elves.counts.realms, MAGICAL.length, 'the Magical Lands elven realms'); assert(MAGICAL.length > 5);
   assert.equal(elves.counts.decisions, 17); assert.equal(elves.counts.categories, 3); assert.equal(elves.counts.ideas, 11); assert.equal(elves.counts.dynamic, 3); assert.equal(elves.counts.opinions, 7);
   assert.equal(elves.counts.events, 24, 'twenty-three visible events and the hidden start; .9, .51, .70 and .71 are the events slice\'s');
   assert.equal(leren.counts.decisions, 9); assert.equal(leren.counts.categories, 2); assert.equal(leren.counts.ideas, 8); assert.equal(leren.counts.dynamic, 3); assert.equal(leren.counts.opinions, 7); assert.equal(leren.counts.events, 17);
-  assert.equal(leren.counts.leans, 27 + 24 + 1, 'every North Lands crown but Lerendor, every Dark Lands country and Andos Enda');
+  const northCrowns = countries.filter(c => c.scan === L.realms.north_scan && c.name !== L.realms.lerendor), darkLands = countries.filter(c => c.scan === L.realms.dark_scan);
+  assert.equal(leren.counts.leans, northCrowns.length + darkLands.length + 1, 'every North Lands crown but Lerendor, every Dark Lands country and Andos Enda');
+  assert.deepEqual([...leren.north].sort(), northCrowns.map(c => c.tag).sort()); assert.deepEqual([...leren.dark].sort(), darkLands.map(c => c.tag).sort());
   assert.equal(volgan.counts.decisions, 16); assert.equal(volgan.counts.categories, 3); assert.equal(volgan.counts.ideas, 10); assert.equal(volgan.counts.characters, 6); assert.equal(volgan.counts.rules, 2); assert.equal(volgan.counts.events, 16);
   assert.equal(ui.windows, 3);
 });
@@ -181,8 +191,8 @@ test('Events: every visible event takes 30 days, a news event is a news event, e
 test('Elves: generated lists, the Refusal swap, the monthly runner, the Kindred, the passes, the Wall', () => {
   const tr = text('common/scripted_triggers/zin_elves.txt'), ef = text('common/scripted_effects/zin_elves.txt');
   const realm = parse(tr).find(e => e.k === 'zin_elves_is_magical_realm').v[0].v;
-  assert.equal(realm.length, 21);
-  const worship = countries.find(c => c.name === 'Worshipdom').tag, gala = countries.find(c => c.name === 'Gala Elves').tag;
+  assert.equal(realm.length, MAGICAL.length);
+  const worship = countries.find(c => c.name === 'Worshipdom').tag, gala = countries.find(c => c.name === 'Gala').tag;
   assert(!tr.slice(tr.indexOf('zin_elves_is_magical_realm'), tr.indexOf('zin_elves_is_elven_country')).includes(worship), 'the Worshipdom is not an elven realm');
   assert(tr.slice(tr.indexOf('zin_elves_is_elven_country')).includes(gala), 'the Gala Elves are an elven country');
   assert(ef.includes('swap_ideas = { remove_idea = zin_elves_the_old_refusal add_idea = zin_elves_refusal_set_aside }'));
@@ -251,7 +261,8 @@ test('Volgan: start values, the veil band and its once-only crossings, strength 
   const ef = text('common/scripted_effects/zin_dominion_pulse.txt'), core = text('common/scripted_effects/zin_dominion.txt');
   const tagOf = n => countries.find(c => c.name === n).tag;
   for (const s of ['set_variable = { zin_dominion_strength = 45 }', 'set_variable = { zin_volgan_veil = 85 }', 'set_variable = { zin_nether_pact = 20 }', 'set_variable = { zin_mirolon_proof = 15 }', 'set_variable = { zin_mirolon_passes = 30 }']) assert(ef.includes(s), s);
-  assert(ef.includes(`${tagOf('Demon')} = { set_variable = { zin_dominion_oath = 60 } }`) && ef.includes(`${tagOf('Dolon')} = { set_variable = { zin_dominion_oath = 55 } }`) && ef.includes(`${tagOf('Nezer')} = { set_variable = { zin_dominion_oath = 50 } }`));
+  // Khorvrath is the demon realm of the old row Demon (roster of 24 October 2026).
+  assert(ef.includes(`${tagOf('Khorvrath')} = { set_variable = { zin_dominion_oath = 60 } }`) && ef.includes(`${tagOf('Dolon')} = { set_variable = { zin_dominion_oath = 55 } }`) && ef.includes(`${tagOf('Nezer')} = { set_variable = { zin_dominion_oath = 50 } }`));
   const veil = core.slice(core.indexOf('zin_volgan_add_veil = {'), core.indexOf('zin_volgan_add_nether_pact = {'));
   for (const f of ['zin_volgan_veil_70', 'zin_volgan_veil_50', 'zin_volgan_veil_30']) assert(veil.includes(`NOT = { has_country_flag = ${f} }`) && veil.includes(`set_country_flag = ${f}`), f);
   assert(veil.includes('zin_dominion.2') && veil.includes('zin_dominion.4') && veil.includes('global.zin_volgan_veil_band'));

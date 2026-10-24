@@ -778,7 +778,7 @@
               "if": {
                 "limit": [
                   {
-                    "subject_of": "Volgan"
+                    "subject_of": "Puvulan"
                   }
                 ],
                 "then": [
@@ -1108,7 +1108,7 @@
     "zin_goldoroth_break_from_nafeher": {
       "effects": [
         {
-          "raw": "if = {\n\tlimit = { is_subject_of = Y8D }\n\tY8D = { end_puppet = ROOT }\n}\nzin_politics_set_stance = { STANCE = zin_dom_conquest }"
+          "raw": "if = {\n\tlimit = { is_subject_of = PUV }\n\tPUV = { end_puppet = ROOT }\n}\nzin_politics_set_stance = { STANCE = zin_dom_conquest }"
         }
       ]
     },
@@ -1260,7 +1260,7 @@
         },
         {
           "for_country": {
-            "country": "The Doltu",
+            "country": "Wild Lands",
             "effects": [
               {
                 "if": {
@@ -1308,7 +1308,7 @@
         },
         {
           "for_country": {
-            "country": "Sungodor",
+            "country": "Goldoroth",
             "effects": [
               {
                 "if": {
@@ -1356,7 +1356,7 @@
         },
         {
           "for_country": {
-            "country": "Zuriath",
+            "country": "Goldoroth",
             "effects": [
               {
                 "if": {
@@ -1380,7 +1380,7 @@
         },
         {
           "for_country": {
-            "country": "Bold",
+            "country": "Dark Gate",
             "effects": [
               {
                 "if": {
@@ -1404,55 +1404,7 @@
         },
         {
           "for_country": {
-            "country": "Gord",
-            "effects": [
-              {
-                "if": {
-                  "limit": [
-                    {
-                      "subject_of": "Goldoroth"
-                    }
-                  ],
-                  "then": [
-                    {
-                      "opinion": {
-                        "target": "Goldoroth",
-                        "modifier": "zin_dark_gifts"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "for_country": {
-            "country": "Beriath",
-            "effects": [
-              {
-                "if": {
-                  "limit": [
-                    {
-                      "subject_of": "Goldoroth"
-                    }
-                  ],
-                  "then": [
-                    {
-                      "opinion": {
-                        "target": "Goldoroth",
-                        "modifier": "zin_dark_gifts"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "for_country": {
-            "country": "Gull Kingdom",
+            "country": "Goldoroth",
             "effects": [
               {
                 "if": {
@@ -1500,7 +1452,55 @@
         },
         {
           "for_country": {
-            "country": "Lestern Isles",
+            "country": "Belonton",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "subject_of": "Goldoroth"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "opinion": {
+                        "target": "Goldoroth",
+                        "modifier": "zin_dark_gifts"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Britadon",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "subject_of": "Goldoroth"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "opinion": {
+                        "target": "Goldoroth",
+                        "modifier": "zin_dark_gifts"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Belonton",
             "effects": [
               {
                 "if": {
@@ -1572,7 +1572,7 @@
         },
         {
           "for_country": {
-            "country": "Colost",
+            "country": "Skragdurg",
             "effects": [
               {
                 "if": {
@@ -1620,7 +1620,7 @@
         },
         {
           "for_country": {
-            "country": "Dunbulinor",
+            "country": "Dun",
             "effects": [
               {
                 "if": {
@@ -1644,7 +1644,7 @@
         },
         {
           "for_country": {
-            "country": "Fondor",
+            "country": "Skragdurg",
             "effects": [
               {
                 "if": {
@@ -1936,7 +1936,7 @@
         },
         {
           "for_country": {
-            "country": "The Doltu",
+            "country": "Wild Lands",
             "effects": [
               {
                 "if": {
@@ -2024,7 +2024,7 @@
         },
         {
           "for_country": {
-            "country": "Sungodor",
+            "country": "Goldoroth",
             "effects": [
               {
                 "if": {
@@ -2112,7 +2112,7 @@
         },
         {
           "for_country": {
-            "country": "Zuriath",
+            "country": "Goldoroth",
             "effects": [
               {
                 "if": {
@@ -2156,7 +2156,7 @@
         },
         {
           "for_country": {
-            "country": "Bold",
+            "country": "Dark Gate",
             "effects": [
               {
                 "if": {
@@ -2200,95 +2200,7 @@
         },
         {
           "for_country": {
-            "country": "Gord",
-            "effects": [
-              {
-                "if": {
-                  "limit": [
-                    {
-                      "not": [
-                        {
-                          "subject_of": "Goldoroth"
-                        }
-                      ]
-                    },
-                    {
-                      "is_subject": false
-                    },
-                    {
-                      "or": [
-                        {
-                          "people": "orcs"
-                        },
-                        {
-                          "people": "trolls"
-                        }
-                      ]
-                    },
-                    {
-                      "variable": {
-                        "name": "zin_volgan_pact",
-                        "below": 2
-                      }
-                    }
-                  ],
-                  "then": [
-                    {
-                      "event": "against_the_south"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "for_country": {
-            "country": "Beriath",
-            "effects": [
-              {
-                "if": {
-                  "limit": [
-                    {
-                      "not": [
-                        {
-                          "subject_of": "Goldoroth"
-                        }
-                      ]
-                    },
-                    {
-                      "is_subject": false
-                    },
-                    {
-                      "or": [
-                        {
-                          "people": "orcs"
-                        },
-                        {
-                          "people": "trolls"
-                        }
-                      ]
-                    },
-                    {
-                      "variable": {
-                        "name": "zin_volgan_pact",
-                        "below": 2
-                      }
-                    }
-                  ],
-                  "then": [
-                    {
-                      "event": "against_the_south"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "for_country": {
-            "country": "Gull Kingdom",
+            "country": "Goldoroth",
             "effects": [
               {
                 "if": {
@@ -2376,7 +2288,95 @@
         },
         {
           "for_country": {
-            "country": "Lestern Isles",
+            "country": "Belonton",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "not": [
+                        {
+                          "subject_of": "Goldoroth"
+                        }
+                      ]
+                    },
+                    {
+                      "is_subject": false
+                    },
+                    {
+                      "or": [
+                        {
+                          "people": "orcs"
+                        },
+                        {
+                          "people": "trolls"
+                        }
+                      ]
+                    },
+                    {
+                      "variable": {
+                        "name": "zin_volgan_pact",
+                        "below": 2
+                      }
+                    }
+                  ],
+                  "then": [
+                    {
+                      "event": "against_the_south"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Britadon",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "not": [
+                        {
+                          "subject_of": "Goldoroth"
+                        }
+                      ]
+                    },
+                    {
+                      "is_subject": false
+                    },
+                    {
+                      "or": [
+                        {
+                          "people": "orcs"
+                        },
+                        {
+                          "people": "trolls"
+                        }
+                      ]
+                    },
+                    {
+                      "variable": {
+                        "name": "zin_volgan_pact",
+                        "below": 2
+                      }
+                    }
+                  ],
+                  "then": [
+                    {
+                      "event": "against_the_south"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Belonton",
             "effects": [
               {
                 "if": {
@@ -2508,7 +2508,7 @@
         },
         {
           "for_country": {
-            "country": "Colost",
+            "country": "Skragdurg",
             "effects": [
               {
                 "if": {
@@ -2596,7 +2596,7 @@
         },
         {
           "for_country": {
-            "country": "Dunbulinor",
+            "country": "Dun",
             "effects": [
               {
                 "if": {
@@ -2640,7 +2640,7 @@
         },
         {
           "for_country": {
-            "country": "Fondor",
+            "country": "Skragdurg",
             "effects": [
               {
                 "if": {
@@ -2695,7 +2695,7 @@
       },
       "effects": [
         {
-          "raw": "if = {\n\tlimit = {\n\t\tcheck_variable = { zin_arg_act = 1 }\n\t\thas_war_with = Y1A\n\t}\n\tY1A = { white_peace = { tag = ROOT } }\n}\nif = {\n\tlimit = { check_variable = { zin_arg_act = 2 } }\n\tY19 = { remove_from_faction = ROOT }\n\tif = {\n\t\tlimit = { has_war_with = Y1A }\n\t\tY1A = { white_peace = { tag = ROOT } }\n\t}\n}"
+          "raw": "if = {\n\tlimit = {\n\t\tcheck_variable = { zin_arg_act = 1 }\n\t\thas_war_with = GOL\n\t}\n\tGOL = { white_peace = { tag = ROOT } }\n}\nif = {\n\tlimit = { check_variable = { zin_arg_act = 2 } }\n\tDND = { remove_from_faction = ROOT }\n\tif = {\n\t\tlimit = { has_war_with = GOL }\n\t\tGOL = { white_peace = { tag = ROOT } }\n\t}\n}"
         }
       ]
     }
@@ -2704,7 +2704,7 @@
     "zin_goldoroth_kneel_possible": {
       "conditions": [
         {
-          "raw": "OR = {\n\thas_global_flag = zin_volgan_marches\n\tY8D = { has_country_flag = zin_volgan_veil_30 }\n}"
+          "raw": "OR = {\n\thas_global_flag = zin_volgan_marches\n\tPUV = { has_country_flag = zin_volgan_veil_30 }\n}"
         }
       ]
     },
@@ -2728,7 +2728,7 @@
               "at_war_with": "Kingson"
             },
             {
-              "at_war_with": "Hiloron"
+              "at_war_with": "Hirolon"
             },
             {
               "at_war_with": "Safeton"
@@ -2740,25 +2740,25 @@
               "at_war_with": "Fotan"
             },
             {
-              "at_war_with": "Ulgus"
+              "at_war_with": "Selen"
             },
             {
-              "at_war_with": "Vothrim"
+              "at_war_with": "Selen"
             },
             {
-              "at_war_with": "Stendorler"
+              "at_war_with": "Aenor"
             },
             {
-              "at_war_with": "Olvinc-un"
+              "at_war_with": "Kingson"
             },
             {
-              "at_war_with": "Svenlor"
+              "at_war_with": "Selen"
             },
             {
-              "at_war_with": "Tieri"
+              "at_war_with": "Aenor"
             },
             {
-              "at_war_with": "Hilofrim"
+              "at_war_with": "Hirolon"
             },
             {
               "at_war_with": "Klungori Guard"
@@ -2770,22 +2770,22 @@
               "at_war_with": "Hunhun"
             },
             {
-              "at_war_with": "Dariap"
+              "at_war_with": "Aenor"
             },
             {
-              "at_war_with": "Novez"
+              "at_war_with": "Safeton"
             },
             {
-              "at_war_with": "Noloreh"
+              "at_war_with": "Hunhun"
             },
             {
-              "at_war_with": "Mondon"
+              "at_war_with": "Aenor"
             },
             {
               "at_war_with": "Freshon"
             },
             {
-              "at_war_with": "Belurithon"
+              "at_war_with": "Herez"
             },
             {
               "at_war_with": "Pazoma"
@@ -2800,7 +2800,7 @@
               "at_war_with": "Bloody Forest"
             },
             {
-              "at_war_with": "Asgard"
+              "at_war_with": "Orohaf"
             }
           ]
         }
@@ -2833,37 +2833,37 @@
               "at_war_with": "Troll Forest"
             },
             {
-              "at_war_with": "The Doltu"
+              "at_war_with": "Wild Lands"
             },
             {
               "at_war_with": "Wild Lands"
             },
             {
-              "at_war_with": "Sungodor"
+              "at_war_with": "Goldoroth"
             },
             {
               "at_war_with": "Dark Gate"
             },
             {
-              "at_war_with": "Zuriath"
+              "at_war_with": "Goldoroth"
             },
             {
-              "at_war_with": "Bold"
+              "at_war_with": "Dark Gate"
             },
             {
-              "at_war_with": "Gord"
-            },
-            {
-              "at_war_with": "Beriath"
-            },
-            {
-              "at_war_with": "Gull Kingdom"
+              "at_war_with": "Goldoroth"
             },
             {
               "at_war_with": "Britadon"
             },
             {
-              "at_war_with": "Lestern Isles"
+              "at_war_with": "Belonton"
+            },
+            {
+              "at_war_with": "Britadon"
+            },
+            {
+              "at_war_with": "Belonton"
             },
             {
               "at_war_with": "Dulundur"
@@ -2872,16 +2872,16 @@
               "at_war_with": "Blackton"
             },
             {
-              "at_war_with": "Colost"
+              "at_war_with": "Skragdurg"
             },
             {
               "at_war_with": "The Darks"
             },
             {
-              "at_war_with": "Dunbulinor"
+              "at_war_with": "Dun"
             },
             {
-              "at_war_with": "Fondor"
+              "at_war_with": "Skragdurg"
             }
           ]
         }
@@ -2897,7 +2897,7 @@
     "zin_goldoroth_dark_sea_won": {
       "conditions": [
         {
-          "raw": "OR = {\n\tY19 = { has_capitulated = yes }\n\tany_controlled_state = { zin_is_site_notbuton = yes }\n}"
+          "raw": "OR = {\n\tDND = { has_capitulated = yes }\n\tany_controlled_state = { zin_is_site_notbuton = yes }\n}"
         }
       ]
     },
@@ -2976,22 +2976,22 @@
     {"key":"clashes_on_the_march","name":"Clashes on the March","desc":"The tension on the border is a rope pulled tight. A war-band crosses the line, a patrol answers and the dead lie on the frontier before anyone has sent a letter.","icon":"orc_axe","x":16,"y":5,"days":35,"prerequisite":[["the_long_grudge"]],"available":[{"or":[{"check":"zin_dark_tension_band_bloody"},{"check":"zin_dark_tension_band_brink"}]},{"not":[{"at_war_with":"Dondor"}]}],"ai":{"base":8,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}},{"before":"1754.1.1"}]}]},"effects":[{"flag":"zin_goldoroth_clash_open"}],"filters":["political"]},
     {"key":"strangers_from_the_south","name":"Strangers from the South","desc":"Travellers from the far south arrive in Cocanoor with gifts and a polite request to meet the Warking. They do not say who sent them.","icon":"envoy","x":19,"y":0,"days":35,"ai":{"base":10},"effects":[{"event":"strangers_from_the_south"},{"flag":"zin_goldoroth_southern_question"},{"political_power":25}],"filters":["political"]},
     {"key":"weigh_the_south","name":"Weigh the South","desc":"The Warking's council sits to weigh what the strangers want. The war-clans are curious, the fire-speakers wary and the goblins counting what the gifts cost.","icon":"council_table","x":19,"y":1,"days":35,"prerequisite":[["strangers_from_the_south"]],"available":[{"or":[{"flag":"zin_goldoroth_envoy_heard"},{"after":"1751.1.1"}]}],"ai":{"base":10},"effects":[{"event":"warkings_council"}],"filters":["political"]},
-    {"key":"black_iron_crown","name":"The Black Iron Crown","desc":"Cocanoor answers the south in a single sentence: no spirit rules the Dark. Goldoroth will be a crown of its own, or none.","icon":"crown_iron","x":17,"y":2,"days":70,"prerequisite":[["weigh_the_south"]],"mutually_exclusive":["southern_bargain"],"ai":{"base":10,"modifiers":[{"factor":1.5,"if":[{"flag":"zin_goldoroth_omens_south"}]},{"factor":5,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":10,"if":[{"check":"zin_rules_ai_branch_goldoroth_independent"}]},{"factor":0,"if":[{"check":"zin_rules_ai_branch_goldoroth_sworn_to_volgan"}]}]},"effects":[{"flag":"zin_goldoroth_no_masters"},{"for_country":{"country":"Volgan","effects":[{"opinion":{"target":"Goldoroth","modifier":"zin_dark_refused_nafeher"}}]}},{"stability":0.05},{"political_power":50},{"call":"zin_goldoroth_add_favour","args":{"bloc":"volcano","value":5}},{"call":"zin_goldoroth_add_favour","args":{"bloc":"war","value":5}}],"filters":["political"]},
-    {"key":"hunt_the_envoys","name":"Hunt the Southern Envoys","desc":"Hunters are sent into the hills to find southern envoys who have been seen speaking to the holds. When found, they are escorted to the border, politely and at spear-point.","icon":"scout_lantern","x":17,"y":3,"days":35,"prerequisite":[["black_iron_crown"]],"ai":{"base":10},"effects":[{"flag":"zin_goldoroth_hunt_open"},{"for_country":{"country":"Dondor","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dondor","value":-1}}]}}]}},{"for_country":{"country":"Belonton","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Belonton","value":-1}}]}}]}},{"for_country":{"country":"Dun","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dun","value":-1}}]}}]}},{"for_country":{"country":"Bordon","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Bordon","value":-1}}]}}]}},{"for_country":{"country":"Dreson","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dreson","value":-1}}]}}]}},{"for_country":{"country":"Troll Forest","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Troll Forest","value":-1}}]}}]}},{"for_country":{"country":"The Doltu","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"The Doltu","value":-1}}]}}]}},{"for_country":{"country":"Wild Lands","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Wild Lands","value":-1}}]}}]}},{"for_country":{"country":"Sungodor","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Sungodor","value":-1}}]}}]}},{"for_country":{"country":"Dark Gate","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dark Gate","value":-1}}]}}]}},{"for_country":{"country":"Zuriath","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Zuriath","value":-1}}]}}]}},{"for_country":{"country":"Bold","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Bold","value":-1}}]}}]}},{"for_country":{"country":"Gord","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Gord","value":-1}}]}}]}},{"for_country":{"country":"Beriath","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Beriath","value":-1}}]}}]}},{"for_country":{"country":"Gull Kingdom","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Gull Kingdom","value":-1}}]}}]}},{"for_country":{"country":"Britadon","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Britadon","value":-1}}]}}]}},{"for_country":{"country":"Lestern Isles","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Lestern Isles","value":-1}}]}}]}},{"for_country":{"country":"Dulundur","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dulundur","value":-1}}]}}]}},{"for_country":{"country":"Blackton","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Blackton","value":-1}}]}}]}},{"for_country":{"country":"Colost","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Colost","value":-1}}]}}]}},{"for_country":{"country":"The Darks","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"The Darks","value":-1}}]}}]}},{"for_country":{"country":"Dunbulinor","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dunbulinor","value":-1}}]}}]}},{"for_country":{"country":"Fondor","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Fondor","value":-1}}]}}]}}],"filters":["political"]},
+    {"key":"black_iron_crown","name":"The Black Iron Crown","desc":"Cocanoor answers the south in a single sentence: no spirit rules the Dark. Goldoroth will be a crown of its own, or none.","icon":"crown_iron","x":17,"y":2,"days":70,"prerequisite":[["weigh_the_south"]],"mutually_exclusive":["southern_bargain"],"ai":{"base":10,"modifiers":[{"factor":1.5,"if":[{"flag":"zin_goldoroth_omens_south"}]},{"factor":5,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":10,"if":[{"check":"zin_rules_ai_branch_goldoroth_independent"}]},{"factor":0,"if":[{"check":"zin_rules_ai_branch_goldoroth_sworn_to_volgan"}]}]},"effects":[{"flag":"zin_goldoroth_no_masters"},{"for_country":{"country":"Puvulan","effects":[{"opinion":{"target":"Goldoroth","modifier":"zin_dark_refused_nafeher"}}]}},{"stability":0.05},{"political_power":50},{"call":"zin_goldoroth_add_favour","args":{"bloc":"volcano","value":5}},{"call":"zin_goldoroth_add_favour","args":{"bloc":"war","value":5}}],"filters":["political"]},
+    {"key":"hunt_the_envoys","name":"Hunt the Southern Envoys","desc":"Hunters are sent into the hills to find southern envoys who have been seen speaking to the holds. When found, they are escorted to the border, politely and at spear-point.","icon":"scout_lantern","x":17,"y":3,"days":35,"prerequisite":[["black_iron_crown"]],"ai":{"base":10},"effects":[{"flag":"zin_goldoroth_hunt_open"},{"for_country":{"country":"Dondor","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dondor","value":-1}}]}}]}},{"for_country":{"country":"Belonton","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Belonton","value":-1}}]}}]}},{"for_country":{"country":"Dun","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dun","value":-1}}]}}]}},{"for_country":{"country":"Bordon","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Bordon","value":-1}}]}}]}},{"for_country":{"country":"Dreson","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dreson","value":-1}}]}}]}},{"for_country":{"country":"Troll Forest","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Troll Forest","value":-1}}]}}]}},{"for_country":{"country":"Wild Lands","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Wild Lands","value":-1}}]}}]}},{"for_country":{"country":"Wild Lands","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Wild Lands","value":-1}}]}}]}},{"for_country":{"country":"Goldoroth","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Goldoroth","value":-1}}]}}]}},{"for_country":{"country":"Dark Gate","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dark Gate","value":-1}}]}}]}},{"for_country":{"country":"Goldoroth","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Goldoroth","value":-1}}]}}]}},{"for_country":{"country":"Dark Gate","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dark Gate","value":-1}}]}}]}},{"for_country":{"country":"Goldoroth","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Goldoroth","value":-1}}]}}]}},{"for_country":{"country":"Britadon","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Britadon","value":-1}}]}}]}},{"for_country":{"country":"Belonton","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Belonton","value":-1}}]}}]}},{"for_country":{"country":"Britadon","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Britadon","value":-1}}]}}]}},{"for_country":{"country":"Belonton","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Belonton","value":-1}}]}}]}},{"for_country":{"country":"Dulundur","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dulundur","value":-1}}]}}]}},{"for_country":{"country":"Blackton","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Blackton","value":-1}}]}}]}},{"for_country":{"country":"Skragdurg","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Skragdurg","value":-1}}]}}]}},{"for_country":{"country":"The Darks","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"The Darks","value":-1}}]}}]}},{"for_country":{"country":"Dun","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Dun","value":-1}}]}}]}},{"for_country":{"country":"Skragdurg","effects":[{"if":{"limit":[{"subject_of":"Goldoroth"}],"then":[{"call":"zin_dark_add_volgan_pact","args":{"target":"Skragdurg","value":-1}}]}}]}}],"filters":["political"]},
     {"key":"no_spirit_rules_the_dark","name":"No Spirit Rules the Dark","desc":"The words are carved over the gate of Cocanoor in letters a man's height. No whisper from the south has a place in the moot.","icon":"banner_plain","x":18,"y":3,"days":35,"prerequisite":[["black_iron_crown"]],"ai":{"base":10},"effects":[{"add_spirit":"no_masters"},{"flag":"zin_goldoroth_no_shadow_drift"}],"filters":["political"]},
     {"key":"shield_of_the_free_dark","name":"The Shield of the Free Dark","desc":"Cocanoor calls on every free hold to stand together against any master who comes out of the south. Some will answer; some will be afraid of both Warking and master.","icon":"alliance_rings","x":17,"y":4,"days":70,"prerequisite":[["hunt_the_envoys"]],"ai":{"base":8},"effects":[{"call":"zin_goldoroth_call_free_dark"}],"filters":["political"]},
     {"key":"eyes_on_the_south","name":"Eyes on the South","desc":"Scouts are posted in the southern hills to watch the roads that lead out of the Ember Lands. They bring back what they see, and what they see is troubling.","icon":"eye_watchful","x":18,"y":4,"days":35,"prerequisite":[["no_spirit_rules_the_dark"]],"ai":{"base":8},"effects":[{"add_spirit":"eyes_on_the_south_spirit"},{"flag":"zin_goldoroth_watching_south"}],"filters":["political"]},
     {"key":"dark_lands_stand_alone","name":"The Dark Lands Stand Alone","desc":"A host marches from the south. The free holds of the Dark Lands, orc and troll alike, raise their banners beside Cocanoor's. It is a short list of friends, and the Warking is glad of every name on it.","icon":"banner_league","x":17,"y":5,"days":35,"prerequisite":[["shield_of_the_free_dark"]],"available":[{"global_flag":"zin_volgan_marches"}],"ai":{"base":100},"effects":[{"call":"zin_goldoroth_rally_free_dark"},{"war_support":0.1}],"filters":["political"]},
     {"key":"against_the_southern_host","name":"Against the Southern Host","desc":"Holds that have knelt to the south are named enemies of the Dark, and the black iron host marches against them.","icon":"sword_shield","x":18,"y":6,"days":35,"prerequisite":[["eyes_on_the_south","dark_lands_stand_alone"]],"available":[{"global_flag":"zin_volgan_marches"},{"check":"zin_goldoroth_sworn_hold_at_war"}],"ai":{"base":100},"effects":[{"call":"zin_goldoroth_wargoal_sworn"}],"filters":["political"]},
     {"key":"black_iron_endures","name":"The Black Iron Endures","desc":"The south has fallen silent. Cocanoor stands, its crown unbroken, and the free holds, who stood with it, remember.","icon":"forge_anvil","x":17,"y":7,"days":35,"prerequisite":[["dark_lands_stand_alone","against_the_southern_host"]],"available":[{"or":[{"global_flag":"zin_volgan_body_destroyed"},{"after":"1758.1.1"}]}],"ai":{"base":50},"effects":[{"add_spirit":"black_iron_endures_spirit"},{"stability":0.05}],"filters":["political"]},
-    {"key":"southern_bargain","name":"The Southern Bargain","desc":"Cocanoor decides that the strangers' offer is too good to refuse: gold from the south, ogres from the south and a promise of Dondor's lands to follow.","icon":"handshake_oath","x":21,"y":2,"days":70,"prerequisite":[["weigh_the_south"]],"mutually_exclusive":["black_iron_crown"],"ai":{"base":4,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":10,"if":[{"check":"zin_rules_ai_branch_goldoroth_sworn_to_volgan"}]},{"factor":0,"if":[{"check":"zin_rules_ai_branch_goldoroth_independent"}]}]},"effects":[{"flag":"zin_goldoroth_southern_bargain"},{"for_country":{"country":"Volgan","effects":[{"opinion":{"target":"Goldoroth","modifier":"zin_dark_bargain_struck"}}]}},{"political_power":50},{"call":"zin_goldoroth_add_favour","args":{"bloc":"warrens","value":5}},{"call":"zin_goldoroth_add_favour","args":{"bloc":"volcano","value":-10}}],"filters":["political"]},
+    {"key":"southern_bargain","name":"The Southern Bargain","desc":"Cocanoor decides that the strangers' offer is too good to refuse: gold from the south, ogres from the south and a promise of Dondor's lands to follow.","icon":"handshake_oath","x":21,"y":2,"days":70,"prerequisite":[["weigh_the_south"]],"mutually_exclusive":["black_iron_crown"],"ai":{"base":4,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":10,"if":[{"check":"zin_rules_ai_branch_goldoroth_sworn_to_volgan"}]},{"factor":0,"if":[{"check":"zin_rules_ai_branch_goldoroth_independent"}]}]},"effects":[{"flag":"zin_goldoroth_southern_bargain"},{"for_country":{"country":"Puvulan","effects":[{"opinion":{"target":"Goldoroth","modifier":"zin_dark_bargain_struck"}}]}},{"political_power":50},{"call":"zin_goldoroth_add_favour","args":{"bloc":"warrens","value":5}},{"call":"zin_goldoroth_add_favour","args":{"bloc":"volcano","value":-10}}],"filters":["political"]},
     {"key":"ogres_from_the_south","name":"Ogres from the South","desc":"Companies of ogres arrive in the hills, hired with southern gold. They eat enormously, break everything they touch and cannot be talked out of a charge.","icon":"giant_hammer","x":20,"y":3,"days":35,"prerequisite":[["southern_bargain"]],"ai":{"base":10},"effects":[{"add_spirit":"southern_ogres"},{"equipment":{"type":"zin_ogre_gear_equipment","amount":100}}],"filters":["political"]},
-    {"key":"envoys_to_nafeher","name":"Envoys to Nafeher","desc":"Cocanoor sends its own envoys to the grey city where Volgan sits. They return with fewer men than they left with and a promise they cannot read.","icon":"ember_desert","x":21,"y":3,"days":35,"prerequisite":[["southern_bargain"]],"ai":{"base":10},"effects":[{"event_for":{"country":"Volgan","key":"cocanoor_envoys"}}],"filters":["political"]},
+    {"key":"envoys_to_nafeher","name":"Envoys to Nafeher","desc":"Cocanoor sends its own envoys to the grey city where Volgan sits. They return with fewer men than they left with and a promise they cannot read.","icon":"ember_desert","x":21,"y":3,"days":35,"prerequisite":[["southern_bargain"]],"ai":{"base":10},"effects":[{"event_for":{"country":"Puvulan","key":"cocanoor_envoys"}}],"filters":["political"]},
     {"key":"spoils_of_dondor","name":"The Spoils of Dondor","desc":"The south has named Dondor's lands as Goldoroth's reward. The war-clans take the promise as a debt already half paid.","icon":"coin_chest","x":20,"y":4,"days":35,"prerequisite":[["ogres_from_the_south","envoys_to_nafeher"]],"ai":{"base":8},"effects":[{"claims_on":"Dondor"},{"call":"zin_dark_add_border_tension","args":{"value":10}},{"flag":"zin_goldoroth_spoils_promised"}],"filters":["political"]},
-    {"key":"a_price_in_iron","name":"A Price in Iron","desc":"A thousand weapons are shipped south in sealed wagons. The south sends back its thanks, in a voice nobody in Cocanoor wants to hear again.","icon":"tribute_chest","x":21,"y":4,"days":35,"prerequisite":[["envoys_to_nafeher"]],"ai":{"base":8},"effects":[{"raw":"add_equipment_to_stockpile = {\n\ttype = zin_arms_equipment\n\tamount = -1000\n}"},{"for_country":{"country":"Volgan","effects":[{"equipment":{"type":"zin_arms_equipment","amount":1000}},{"call":"zin_volgan_add_dominion_strength","args":{"value":1}}]}},{"for_country":{"country":"Volgan","effects":[{"opinion":{"target":"Goldoroth","modifier":"zin_dark_bargain_struck"}}]}}],"filters":["political"]},
+    {"key":"a_price_in_iron","name":"A Price in Iron","desc":"A thousand weapons are shipped south in sealed wagons. The south sends back its thanks, in a voice nobody in Cocanoor wants to hear again.","icon":"tribute_chest","x":21,"y":4,"days":35,"prerequisite":[["envoys_to_nafeher"]],"ai":{"base":8},"effects":[{"raw":"add_equipment_to_stockpile = {\n\ttype = zin_arms_equipment\n\tamount = -1000\n}"},{"for_country":{"country":"Puvulan","effects":[{"equipment":{"type":"zin_arms_equipment","amount":1000}},{"call":"zin_volgan_add_dominion_strength","args":{"value":1}}]}},{"for_country":{"country":"Puvulan","effects":[{"opinion":{"target":"Goldoroth","modifier":"zin_dark_bargain_struck"}}]}}],"filters":["political"]},
     {"key":"ally_of_the_south","name":"Ally of the South","desc":"A pact is sworn in the grey city, between a crown that bows to no one and a master who asks for little. Gold flows north, and the favour is not forgotten.","icon":"alliance_rings","x":20,"y":5,"days":70,"prerequisite":[["spoils_of_dondor","a_price_in_iron"]],"mutually_exclusive":["kneel_to_nafeher"],"available":[{"variable":{"name":"zin_volgan_pact","above":1}}],"ai":{"base":10},"effects":[{"flag":"zin_goldoroth_ally_south"},{"add_spirit":"southern_gold"}],"filters":["political"]},
-    {"key":"kneel_to_nafeher","name":"Kneel to Nafeher","desc":"The Warking goes south and bends his knee to Volgan. It is a small gesture, and it changes what Goldoroth is.","icon":"dead_crown","x":21,"y":5,"days":70,"prerequisite":[["spoils_of_dondor","a_price_in_iron"]],"mutually_exclusive":["ally_of_the_south"],"available":[{"variable":{"name":"zin_volgan_pact","above":1}},{"check":"zin_goldoroth_kneel_possible"}],"ai":{"base":2,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"event_for":{"country":"Volgan","key":"cocanoor_kneels"}}],"filters":["political"]},
-    {"key":"the_northern_front","name":"The Northern Front","desc":"The south has marched, and Goldoroth marches with it. Dondor's seat is the first target, and the black host goes down the coast road at dawn.","icon":"war_council_map","x":20,"y":6,"days":21,"prerequisite":[["ally_of_the_south","kneel_to_nafeher"]],"available":[{"global_flag":"zin_volgan_marches"},{"or":[{"variable":{"name":"zin_volgan_pact","above":2}},{"subject_of":"Volgan"}]}],"ai":{"base":300},"filters":["army"],"effects":[{"wargoal":{"target":"Dondor","type":"annex_everything"}},{"call":"zin_goldoroth_wargoal_strait_south"},{"call":"zin_world_add_gathering_dark","args":{"value":2}}]},
+    {"key":"kneel_to_nafeher","name":"Kneel to Nafeher","desc":"The Warking goes south and bends his knee to Volgan. It is a small gesture, and it changes what Goldoroth is.","icon":"dead_crown","x":21,"y":5,"days":70,"prerequisite":[["spoils_of_dondor","a_price_in_iron"]],"mutually_exclusive":["ally_of_the_south"],"available":[{"variable":{"name":"zin_volgan_pact","above":1}},{"check":"zin_goldoroth_kneel_possible"}],"ai":{"base":2,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"event_for":{"country":"Puvulan","key":"cocanoor_kneels"}}],"filters":["political"]},
+    {"key":"the_northern_front","name":"The Northern Front","desc":"The south has marched, and Goldoroth marches with it. Dondor's seat is the first target, and the black host goes down the coast road at dawn.","icon":"war_council_map","x":20,"y":6,"days":21,"prerequisite":[["ally_of_the_south","kneel_to_nafeher"]],"available":[{"global_flag":"zin_volgan_marches"},{"or":[{"variable":{"name":"zin_volgan_pact","above":2}},{"subject_of":"Puvulan"}]}],"ai":{"base":300},"filters":["army"],"effects":[{"wargoal":{"target":"Dondor","type":"annex_everything"}},{"call":"zin_goldoroth_wargoal_strait_south"},{"call":"zin_world_add_gathering_dark","args":{"value":2}}]},
     {"key":"across_the_southern_strait","name":"Across the Southern Strait","desc":"Black-sailed ships cross the narrow water in a single night. The Middle Lands have not seen orc banners on their shore in living memory.","icon":"galley_oars","x":21,"y":7,"days":35,"prerequisite":[["the_northern_front"]],"available":[{"check":"zin_goldoroth_at_war_middle_lands"}],"ai":{"base":100},"filters":["army"],"effects":[{"add_spirit":"strait_crossing"},{"army_experience":20}]},
     {"key":"when_the_south_falls_silent","name":"When the South Falls Silent","desc":"The voice from the grey city stops. Goldoroth's chiefs wait for orders that do not come, and slowly, one by one, they begin to give their own.","icon":"silent_throne","x":20,"y":8,"days":14,"prerequisite":[["the_northern_front"]],"available":[{"global_flag":"zin_volgan_body_destroyed"}],"ai":{"base":500},"effects":[{"event":"south_falls_silent"}],"filters":["political"]},
     {"key":"the_sea_of_darkness","name":"The Sea of Darkness","desc":"Goldoroth is a land power with a long, dark coast. The Warking decides that he will not leave the sea to Dondor.","icon":"storm_sea","x":23,"y":0,"days":70,"ai":{"base":10},"effects":[{"building":{"type":"naval_base","level":1,"where":"random_coastal"}},{"navy_experience":10}],"filters":["navy"]},
@@ -3024,10 +3024,10 @@
     {"key":"break_the_belonton_oath","name":"Break the Belonton Oath","desc":"Belonton's oath to Dondor is old, but not as old as the fear of Cocanoor. A messenger carries the Warking's offer: leave the Accord, or burn.","icon":"scroll_treaty","x":16,"y":10,"days":21,"prerequisite":[["the_accord_must_break"]],"available":[{"check":"zin_goldoroth_war_open"}],"ai":{"base":60},"effects":[{"event_for":{"country":"Belonton","key":"leave_the_accord"}}],"filters":["annexation"]},
     {"key":"the_holds_are_one","name":"The Holds Are One","desc":"No free hold remains on Goldoroth's borders. The inner Dark is one realm, and its Warking sits on its one throne.","icon":"banner_league","x":11,"y":11,"days":35,"prerequisite":[["fire_through_the_holds","mercy_for_the_kneeling"]],"available":[{"check":"zin_goldoroth_no_free_neighbour"}],"ai":{"base":100},"effects":[{"political_power":75},{"stability":0.05}],"filters":["annexation"]},
     {"key":"the_dark_sea_is_ours","name":"The Dark Sea Is Ours","desc":"Dondor's fleet is sunk, its harbours taken, its watchfires out. The Sea of Darkness is Goldoroth's, and so are the straits.","icon":"warship_sail","x":15,"y":11,"days":35,"prerequisite":[["storm_notbuton","break_the_belonton_oath"]],"available":[{"check":"zin_goldoroth_dark_sea_won"}],"ai":{"base":100},"effects":[{"add_spirit":"dark_sea_won"},{"political_power":100},{"call":"zin_world_add_gathering_dark","args":{"value":2}}],"filters":["annexation"]},
-    {"key":"dead_on_the_dark_shore","name":"The Dead on the Dark Shore","desc":"Black ships come out of the northern fog with decks full of silent shapes. The orcs of the shore watch them land and learn that the dead do not stay down.","icon":"black_hulls","x":23,"y":8,"days":35,"available":[{"global_flag":"zin_zol_rising"}],"ai":{"base":20,"modifiers":[{"add":180,"if":[{"at_war_with":"Zol"}]}]},"effects":[{"add_spirit":"hold_the_shore"},{"war_support":0.1},{"event":"they_do_not_stay_down"}],"filters":["army"]},
+    {"key":"dead_on_the_dark_shore","name":"The Dead on the Dark Shore","desc":"Black ships come out of the northern fog with decks full of silent shapes. The orcs of the shore watch them land and learn that the dead do not stay down.","icon":"black_hulls","x":23,"y":8,"days":35,"available":[{"global_flag":"zin_zol_rising"}],"ai":{"base":20,"modifiers":[{"add":180,"if":[{"at_war_with":"Zol's Mistake"}]}]},"effects":[{"add_spirit":"hold_the_shore"},{"war_support":0.1},{"event":"they_do_not_stay_down"}],"filters":["army"]},
     {"key":"fire_breaks_their_shapes","name":"Fire Breaks Their Shapes","desc":"Orc smiths pour burning pitch over the fallen, and the shapes break apart in the flames. They gather again; but it buys time.","icon":"beacon","x":22,"y":9,"days":35,"prerequisite":[["dead_on_the_dark_shore"]],"ai":{"base":100},"effects":[{"add_spirit":"fire_against_the_dead"},{"research":{"categories":["zin_cat_siege"],"bonus":0.5,"uses":1}}],"filters":["army"]},
     {"key":"burn_the_landings","name":"Burn the Landings","desc":"Every landing-place on the Dark Shore is ringed with forts, fire-pits and watchtowers. If the dead want the shore, they will have to cross the flame.","icon":"fort_wall","x":24,"y":9,"days":35,"prerequisite":[["dead_on_the_dark_shore"]],"ai":{"base":100},"effects":[{"building":{"type":"coastal_bunker","level":1,"where":"dark_strait_shore"}},{"building":{"type":"coastal_bunker","level":1,"where":"dark_strait_shore"}},{"flag":"zin_goldoroth_shore_barred"}],"filters":["army"]},
-    {"key":"the_living_together","name":"The Living Together","desc":"Old enemies find that the dead have no preferences. Goldoroth offers Dondor a truce for as long as the black ships last.","icon":"handshake_oath","x":23,"y":10,"days":35,"prerequisite":[["fire_breaks_their_shapes","burn_the_landings"]],"available":[{"at_war_with":"Zol"}],"ai":{"base":100},"effects":[{"event_for":{"country":"Dondor","key":"truce_against_the_dead"}},{"call":"zin_goldoroth_offer_access_against_dead"}],"filters":["army"]},
+    {"key":"the_living_together","name":"The Living Together","desc":"Old enemies find that the dead have no preferences. Goldoroth offers Dondor a truce for as long as the black ships last.","icon":"handshake_oath","x":23,"y":10,"days":35,"prerequisite":[["fire_breaks_their_shapes","burn_the_landings"]],"available":[{"at_war_with":"Zol's Mistake"}],"ai":{"base":100},"effects":[{"event_for":{"country":"Dondor","key":"truce_against_the_dead"}},{"call":"zin_goldoroth_offer_access_against_dead"}],"filters":["army"]},
     {"key":"the_dark_lands_are_one","name":"The Dark Lands Are One","desc":"Every hall from the Sea of Darkness to the southern straits sends its banner to Cocanoor. The Warking is crowned in black iron, and the kingdom is called Great Goldoroth.","icon":"crown_iron","x":13,"y":12,"days":70,"prerequisite":[["overlord_of_the_holds"],["the_holds_are_one","the_dark_sea_is_ours"]],"available":[{"variable":{"name":"zin_goldoroth_unity","above":74}},{"check":"zin_goldoroth_dondor_bowed"}],"ai":{"base":500},"effects":[{"call":"zin_goldoroth_proclaim_one_kingdom"}],"filters":["annexation"]},
     {"key":"every_hold_a_hearth","name":"Every Hold a Hearth","desc":"The old holds are made provinces of the one kingdom, their chiefs wardens, their halls forts. The Warking promises a fire in every hall and keeps the promise in his own way.","icon":"feast_table","x":12,"y":13,"days":70,"prerequisite":[["the_dark_lands_are_one"]],"ai":{"base":100},"effects":[{"call":"zin_goldoroth_core_dark_lands"}],"filters":["annexation"]},
     {"key":"the_black_iron_throne","name":"The Black Iron Throne","desc":"A throne of black iron is raised in Cocanoor, high enough to be seen from the sea. The Warking sits on it, and the Dark Lands, for the first time in memory, have one ruler.","icon":"empty_throne","x":14,"y":13,"days":35,"prerequisite":[["the_dark_lands_are_one"]],"ai":{"base":100},"effects":[{"swap_spirit":["overlord_of_the_holds_spirit","black_iron_throne"]},{"political_power":100},{"stability":0.1}],"filters":["annexation"]},

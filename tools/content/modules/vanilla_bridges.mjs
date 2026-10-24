@@ -8,6 +8,7 @@
 // A name used by a file that is never removed is not a bridge: it must have a permanent ZIN definition, so the
 // build stops and names it. A ZIN file that names something undefined also stops the build.
 import { readFile } from 'node:fs/promises';
+import { supersededWorldFile } from '../lib/roster.mjs';
 import path from 'node:path';
 import { parse, scriptText } from '../lib/clausewitz.mjs';
 import { GAME, ZIN } from '../lib/paths.mjs';
@@ -26,7 +27,8 @@ export function removalStage(disp, rel) {
 export async function modFilesAfterBuild(staged, zin = ZIN) {
   const world = JSON.parse(await readFile(`${zin}/.hoi4-agent-world.json`, 'utf8'));
   const files = new Map();
-  for (const f of world.files) if (/^(common|events|history|music)\//.test(f.relativePath) && f.relativePath.endsWith('.txt')) files.set(f.relativePath, await readFile(`${zin}/${f.relativePath}`));
+  // The map generator's files of the retired debug-tag roster are left out: the builder's country package replaces them (lib/roster.mjs).
+  for (const f of world.files) if (/^(common|events|history|music)\//.test(f.relativePath) && f.relativePath.endsWith('.txt') && !supersededWorldFile(f.relativePath)) files.set(f.relativePath, await readFile(`${zin}/${f.relativePath}`));
   for (const [rel, bytes] of staged.files) files.set(rel, bytes);
   return files;
 }

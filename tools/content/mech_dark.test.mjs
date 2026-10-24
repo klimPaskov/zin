@@ -1,9 +1,10 @@
 // Tests of the Dark Lands mechanic (docs/specs/04_mechanics/dark_lands.md; integration note docs/design/stage2/mech_dark.md). They build
-// tools/content/modules/mech_dark.mjs into a fresh Staged with the roster of data/countries.json and the people assignment of the country
+// tools/content/modules/mech_dark.mjs into a fresh Staged with the roster (lib/roster.mjs) and the people assignment of the country
 // table, and assert on the staged files; nothing needs a prior build. The installed game is read for engine vocabulary (effects,
 // triggers, modifiers). Every rule has at least one negative test: mutated data or mutated output that the module or the check refuses.
 // Run: cd tools && node --test content/mech_dark.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -21,7 +22,7 @@ import { buildMechDark, loadDarkData, BLOCS, DARK_DEPENDENCIES, FORBIDDEN_TEXT, 
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const json = async f => JSON.parse(await readFile(path.join(here, 'data', f), 'utf8'));
-const { countries } = await json('countries.json');
+const countries = countryTable();
 const cells = await json('presentation-cells.json');
 const table = await loadCountryTable(countries, `${ZIN}/docs/design/countries.csv`);
 const assignment = new Map([...table].map(([tag, t]) => [tag, t.people]));
@@ -29,6 +30,10 @@ const D = await loadDarkData();
 const staged = new Staged();
 const dark = await buildMechDark(staged, { countries, assignment });
 const tagOf = n => countries.find(c => c.name === n).tag;
+// The holds are the orc and troll realms of the Dark Lands but Goldoroth (and Dondor); the sway table adds the other Dark Lands realms (Blackton).
+const DARK = countries.filter(c => c.scan === 'Dark Lands');
+const HOLDS = DARK.filter(c => !['Goldoroth', 'Dondor'].includes(c.name) && ['orcs', 'trolls'].includes(assignment.get(c.tag)));
+const SWAY = DARK.filter(c => !['Goldoroth', 'Dondor'].includes(c.name));
 const { GOL, DON, BLK, LER, AEN, VOL, ZOL, TRF } = dark.tags;
 
 const text = (rel, s = staged) => { const b = s.files.get(rel); assert(b, `missing staged file ${rel}`); return b.toString('utf8'); };
@@ -212,7 +217,7 @@ test('Counts: a data change that adds a date or a hold shows in the counts (nega
   assert.notEqual(more.r.counts.dateTriggers, dark.counts.dateTriggers);
   const fewer = new Map(assignment); fewer.set(tagOf('Dun'), 'men');
   const s = new Staged(), r = await buildMechDark(s, { countries, assignment: fewer });
-  assert.notEqual(r.holdTags.length, 21);
+  assert.notEqual(r.holdTags.length, HOLDS.length);
 });
 
 test('Counts: what the module writes matches the spec', () => {
@@ -221,7 +226,8 @@ test('Counts: what the module writes matches the spec', () => {
   assert.equal(dark.counts.categories, 6); assert.equal(dark.counts.ideas, 18); assert.equal(dark.counts.opinions, 14);
   assert.equal(dark.counts.dynamicModifiers, 3, 'the shield, the troll woods and the defiance cause');
   assert.equal(dark.counts.characters, 6); assert.equal(dark.counts.traits, 2); assert.equal(dark.counts.dateTriggers, 4); assert.equal(dark.counts.windows, 2);
-  assert.equal(dark.holdTags.length, 21, 'every orc and troll realm but Goldoroth'); assert.equal(dark.swayTags.length, 22, 'the holds and Blackton');
+  assert.deepEqual([...dark.holdTags].sort(), HOLDS.map(c => c.tag).sort(), 'every orc and troll realm but Goldoroth'); assert(HOLDS.length > 5);
+  assert.deepEqual([...dark.swayTags].sort(), SWAY.map(c => c.tag).sort(), 'the holds and Blackton'); assert(SWAY.includes(countries.find(c => c.name === 'Blackton')));
   for (const c of ['zin_dark_raids', 'zin_dark_horde', 'zin_dark_sway', 'zin_dark_accord', 'zin_dark_free_holds', 'zin_dark_straits']) assert(dark.definitions.categories.includes(c), c);
   for (const e of ['zin_dark_add_border_tension', 'zin_dark_add_accord_resolve', 'zin_goldoroth_add_temper', 'zin_goldoroth_add_favour', 'zin_goldoroth_add_sway', 'zin_goldoroth_yoke_check', 'zin_goldoroth_take_tributary', 'zin_goldoroth_tribute_on_capitulation', 'zin_goldoroth_refresh_unity', 'zin_goldoroth_crown_heir', 'zin_goldoroth_kneel', 'zin_goldoroth_proclaim_one_kingdom', 'zin_goldoroth_core_dark_lands', 'zin_goldoroth_claim_strait_shores', 'zin_goldoroth_wargoal_defiant', 'zin_goldoroth_wargoal_sworn', 'zin_goldoroth_wargoal_strait_south', 'zin_goldoroth_rally_free_dark', 'zin_goldoroth_offer_access_against_dead', 'zin_goldoroth_warking_takes_field', 'zin_dark_add_volgan_pact', 'zin_dark_start_border_clash', 'zin_dark_resolve_raid', 'zin_dark_found_free_moot', 'zin_dark_join_free_moot']) assert(dark.definitions.effects.includes(e), `the spec's effect ${e}`);
   for (const t of ['zin_goldoroth_war_open', 'zin_goldoroth_may_war_dondor', 'zin_goldoroth_refuses_masters', 'zin_goldoroth_seeks_the_south', 'zin_dark_hold_under_cocanoor', 'zin_dark_hold_in_moot', 'zin_dark_hold_fears_cocanoor', 'zin_dark_took_southern_gifts', 'zin_dark_hold_at_war_with_goldoroth', 'zin_dark_is_hold', 'zin_dark_is_free_hold', 'zin_dark_is_tributary', 'zin_dark_is_accord_member', 'zin_dark_is_sea_master', 'zin_dark_holds_strait_shore', 'zin_dark_shore_barred', 'zin_dark_tension_band_quiet', 'zin_dark_tension_band_uneasy', 'zin_dark_tension_band_bloody', 'zin_dark_tension_band_brink', 'zin_goldoroth_unity_at_least', 'zin_dark_rule_independent', 'zin_dark_rule_sworn', 'zin_dark_date_yoke', 'zin_dark_date_war_floor', 'zin_dark_date_defiance_cb', 'zin_dark_date_clash_historical']) assert(dark.definitions.triggers.includes(t), `the spec's trigger ${t}`);
@@ -351,10 +357,10 @@ test('Start values: tension, resolve, temper, favours, sway with the border bonu
 });
 
 test('Roster: the module refuses a missing or misplaced country and a wrong state count (Acceptance 15)', async () => {
-  await assert.rejects(buildWith(d => { d.roster.other_holds.push('Nowhere Hold'); }), /not in countries\.json/);
-  await assert.rejects(buildWith(d => { d.roster.other_holds.push('Lerendor'); }), /countries\.json puts it in/);
+  await assert.rejects(buildWith(d => { d.roster.other_holds.push('Nowhere Hold'); }), /not in the roster/);
+  await assert.rejects(buildWith(d => { d.roster.other_holds.push('Lerendor'); }), /the roster puts it in/);
   await assert.rejects(buildWith(d => { d.roster.expectedStates = 48; }), /hold 47 states, the data expects 48/);
-  await assert.rejects(buildWith(d => { d.roster.other_holds = d.roster.other_holds.filter(n => n !== 'Gord'); }), /missing from the data: Gord/);
+  await assert.rejects(buildWith(d => { d.roster.other_holds = d.roster.other_holds.filter(n => n !== 'Skragdurg'); }), /missing from the data: Skragdurg/);
   await assert.rejects(buildWith(d => { d.text.zin_dark_unused_line = 'A line nobody reads.'; }), /holds text nothing uses/);
 });
 

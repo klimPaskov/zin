@@ -1,7 +1,7 @@
 {
   "id": "regional_gondolin",
   "tier": "regional",
-  "countries": ["Gondolin"],
+  "countries": ["Naamis"],
   "summary": "The Sea Crown: the northern maritime crown of the East, anchor of the Noris Treaty, watching a northern sea where lights have begun to appear.",
   "spirits": {
     "lorvenas_court_spirit": {"name":"Lorvena's Court","desc":"The queen's court stands above the quays, and its windows face the northern sea. Captains are welcome at her table; courtiers who have never smelled tar are not.","modifier":{"political_power_gain":0.05,"naval_speed_factor":0.05}},
@@ -12,7 +12,7 @@
   },
   "events": {
     "lights_beyond_the_islands": {"n":1,"title":"Lights Beyond the Islands","desc":"Lookouts on the northern headland report lights where no harbour stands, small and pale and far from any known shore. The old fishers say they are lamps, and the young lookouts are not so sure.","picture":"black_isles_lights","options":[{"name":"Fishermen's lamps","effects":[{"political_power":15}],"ai_chance":{"base":50}},{"name":"Double the watch","effects":[{"navy_experience":5}],"ai_chance":{"base":50}}]},
-    "royal_house_of_gondolin": {"n":2,"title":"The Royal House of Gondolin","desc":"Queen Lorvena has no heir, and her council has begun to speak of a match. Furvior has sent letters, her captains have sent poems, and the old houses of the northern shore have sent their sons.","picture":"generic_court","options":[{"name":"No match this year","effects":[{"political_power":25}],"ai_chance":{"base":30}},{"name":"A match in Furvior","effects":[{"call":"zin_east_add_lean","args":{"value":10}},{"for_country":{"country":"Noris","effects":[{"opinion":{"target":"Gondolin","modifier":"a_match_in_furvior"}}]}}],"ai_chance":{"base":40}},{"name":"A match among our captains","effects":[{"navy_experience":10}],"ai_chance":{"base":30}}]},
+    "royal_house_of_gondolin": {"n":2,"title":"The Royal House of Gondolin","desc":"Queen Lorvena has no heir, and her council has begun to speak of a match. Furvior has sent letters, her captains have sent poems, and the old houses of the northern shore have sent their sons.","picture":"generic_court","options":[{"name":"No match this year","effects":[{"political_power":25}],"ai_chance":{"base":30}},{"name":"A match in Furvior","effects":[{"call":"zin_east_add_lean","args":{"value":10}},{"for_country":{"country":"Noris","effects":[{"opinion":{"target":"Naamis","modifier":"a_match_in_furvior"}}]}}],"ai_chance":{"base":40}},{"name":"A match among our captains","effects":[{"navy_experience":10}],"ai_chance":{"base":30}}]},
     "lights_on_far_shores": {"n":3,"title":"Lights Beyond the Islands","desc":"The lights beyond the islands are no longer a story. Fishers tell of dead men on far shores, of black hulls under dark sails and of a cold that comes before them. The queen's council sits all night and speaks of nothing else.","picture":"black_isles_lights","options":[{"name":"Double the watch","effects":[{"navy_experience":5}],"ai_chance":{"base":100}}]}
   },
   "opinion_modifiers": {
@@ -20,7 +20,7 @@
     "a_voice_at_the_table": {"value":10,"decay":0.5,"name":"A Voice at the Table"}
   },
   "ai_strategies": [
-    {"country":"Gondolin","type":"befriend","target":"Noris","value":15}
+    {"country":"Naamis","type":"befriend","target":"Noris","value":15}
   ],
   "copy": [
     {"from":"shared_east_lands","module":"E4","root_at":[14,1],"root_prerequisite":[["the_sea_crown"]]},
@@ -49,7 +49,7 @@
     {"key":"northern_anchor_of_the_treaty","name":"Northern Anchor of the Treaty","desc":"Gondolin has been Furvior's partner in the Noris Treaty for generations, and its quays carry the Treaty's salt. The queen takes the title of anchor with pride.","icon":"anchor_rope","x":10,"y":1,"days":70,"prerequisite":[["the_sea_crown"]],"ai":{"base":40},"filters":["political"],"effects":[{"call":"zin_east_add_lean","args":{"value":10}},{"political_power":25}]},
     {"key":"the_salt_roads_end","name":"The Salt Road's End","desc":"The Salt Road ends at the sea, and its last miles are paved and lit. Everything that comes down it is weighed, marked and shipped within a day.","icon":"traders_road","x":9,"y":2,"days":70,"prerequisite":[["northern_anchor_of_the_treaty"]],"ai":{"base":25},"effects":[{"call":"zin_shared_east_lands_road_infra"},{"for_country":{"country":"Noris","effects":[{"call":"zin_east_add_road_influence","args":{"road":"salt","value":5}}]}}]},
     {"key":"treaty_levies_of_gondolin","name":"Treaty Levies of Gondolin","desc":"Spearmen of the northern shore are sent to Furvior to drill beside the Treaty's riders. They return seasick and wiser.","icon":"levy_muster","x":11,"y":2,"days":70,"prerequisite":[["northern_anchor_of_the_treaty"]],"available":[{"check":"zin_shared_east_lands_in_treaty"}],"ai":{"base":25},"filters":["army","manpower"],"effects":[{"army_experience":10},{"manpower":1000}]},
-    {"key":"a_voice_in_the_treaty_council","name":"A Voice in the Treaty Council","desc":"Gondolin asks for a seat at the Treaty's table and a vote on its roads. Noris's riders are not used to being asked, and listen.","icon":"scroll_treaty","x":9,"y":3,"days":70,"prerequisite":[["the_salt_roads_end","treaty_levies_of_gondolin"]],"mutually_exclusive":["ask_more_of_furvior"],"available":[{"check":"zin_shared_east_lands_in_treaty"}],"ai":{"base":30},"filters":["political"],"effects":[{"political_power":50},{"for_country":{"country":"Noris","effects":[{"opinion":{"target":"Gondolin","modifier":"a_voice_at_the_table"}}]}}]},
+    {"key":"a_voice_in_the_treaty_council","name":"A Voice in the Treaty Council","desc":"Gondolin asks for a seat at the Treaty's table and a vote on its roads. Noris's riders are not used to being asked, and listen.","icon":"scroll_treaty","x":9,"y":3,"days":70,"prerequisite":[["the_salt_roads_end","treaty_levies_of_gondolin"]],"mutually_exclusive":["ask_more_of_furvior"],"available":[{"check":"zin_shared_east_lands_in_treaty"}],"ai":{"base":30},"filters":["political"],"effects":[{"political_power":50},{"for_country":{"country":"Noris","effects":[{"opinion":{"target":"Naamis","modifier":"a_voice_at_the_table"}}]}}]},
     {"key":"ask_more_of_furvior","name":"Ask More of Furvior","desc":"Gondolin asks for a larger share of the salt trade and a subsidy for its yards. Furvior's court sighs, haggles and pays a little.","icon":"coin_chest","x":11,"y":3,"days":70,"prerequisite":[["the_salt_roads_end","treaty_levies_of_gondolin"]],"mutually_exclusive":["a_voice_in_the_treaty_council"],"ai":{"base":15},"filters":["political"],"effects":[{"political_power":75},{"call":"zin_east_add_lean","args":{"value":-5}}]}
   ]
 }

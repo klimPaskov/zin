@@ -2,7 +2,7 @@
 //
 // Signature:  await buildEconomy(staged, ctx)
 //   staged  a Staged set (lib/core.mjs); nothing is written outside it.
-//   ctx     { countries }               the roster of data/countries.json (required: regional flags and spirits)
+//   ctx     { countries }               the roster (lib/roster.mjs) (required: regional flags and spirits)
 //           { equipmentKeys?: string[] }  extra equipment archetype and type keys for script_enums.txt and the tokens
 //                                         file; the equipment keys already staged under common/units/equipment are
 //                                         found by the builder itself, so the warfare module must run first

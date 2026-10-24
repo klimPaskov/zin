@@ -3,6 +3,7 @@
 // and the Aoaz text. They run on the module's own output (a Staged built from the roster) and check it against the
 // installed game's documentation and localisation. Run: node --test tools/content/diplomacy.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -13,7 +14,7 @@ import { parse } from './lib/clausewitz.mjs';
 import { buildDiplomacy, loadDiplomacyData, validateDiplomacy, makeRoster, loadBannedRules, wordHits, playerText, indentLines, KEPT_ENGINE_IDS, VANILLA_ID } from './modules/diplomacy.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const roster = makeRoster(countries);
 const data = await loadDiplomacyData();
 const banned = await loadBannedRules();
@@ -79,13 +80,13 @@ test('The output is deterministic: two builds give the same bytes', async () => 
   for (const [k, v] of staged.files) assert(v.equals(again.staged.files.get(k)), k);
 });
 
-test('Counts: eighteen templates, seventeen joining rules, six goals, nine oaths, five autonomy states, six laws', () => {
+test('Counts: eighteen templates, seventeen joining rules, six goals, nine oaths, six autonomy states, six laws', () => {
   const c = result.counts;
   assert.equal(c.templates, 18, '17 leagues and the engine fallback');
   assert.equal(c.joiningRules, 17);
   assert.equal(c.goals, 6);
   assert.equal(c.manifests, 9);
-  assert.equal(c.autonomyStates, 5);
+  assert.equal(c.autonomyStates, 6, 'the puppet default, the chartered dominion, the sworn realm, the eastern client, the tributary hold and the protectorate (K35)');
   assert.equal(c.occupationLaws, 6);
   assert.equal(c.resistanceModifiers, 4);
   assert.equal(c.peaceCategories, 11);
@@ -154,14 +155,20 @@ test('The seven working leagues follow the spec table', () => {
   assert(!byId.get('zin_faction_lost_cause').some(x => x.k === 'manifest'), 'the Lost Cause has no oath');
 });
 
-test('The start leagues resolve to roster tags: the Concord has 26 chartered dominions, Andos Enda is not in the Leren Compact', () => {
+test('The start leagues resolve to roster tags: the Concord has 13 chartered dominions, Andos Enda is not in the Leren Compact', () => {
   const start = new Map(result.factions.map(f => [f.id, f]));
   assert.equal(start.size, 7);
-  assert.equal(start.get('zin_faction_concord').members.length, 26);
+  // K36: the Concord of Aen holds the thirteen chartered dominions of the roster (26 seats), all of them in the league at the start.
+  const dominions = countries.filter(c => c.overlordKey === 'aenor' && c.subjectType === 'chartered dominion').map(c => c.name);
+  assert.equal(dominions.length, 13);
+  assert.deepEqual([...start.get('zin_faction_concord').members].sort(), [...dominions].sort());
   assert.equal(start.get('zin_faction_concord').leaderTag, roster.tag('Aenor'));
   assert.deepEqual(start.get('zin_faction_leren_compact').members, ['Eekedor']);
   assert(!start.get('zin_faction_leren_compact').members.includes('Andos Enda'));
-  assert.deepEqual(start.get('zin_faction_southern_dominion').members, ['Demon', 'Dolon', 'Nezer']);
+  // The sworn realms of Puvulan, Volgan's successor as the leader of the Southern Dominion; Khorvrath took the Demon row.
+  assert.equal(start.get('zin_faction_southern_dominion').leaderTag, roster.tag('Puvulan'));
+  assert.deepEqual(start.get('zin_faction_southern_dominion').members, ['Khorvrath', 'Dolon', 'Nezer']);
+  assert.deepEqual(countries.filter(c => c.overlordKey === 'puvulan').map(c => c.name).sort(), ['Dolon', 'Khorvrath', 'Nezer']);
   assert.deepEqual(start.get('zin_faction_dark_sea_accord').members, ['Belonton']);
 });
 
@@ -256,11 +263,11 @@ test('Member upgrades keep the engine ids the contribution rules set', () => {
 // ------------------------------------------------------------------------------------------------------------ subjects
 test('Autonomy: autonomy_puppet is the one default, always allowed, and no vanilla state is defined', () => {
   const states = parse(text('common/autonomous_states/zin_autonomy.txt')).map(s => Object.fromEntries(s.v.map(x => [x.k, x.v])));
-  assert.deepEqual(states.map(s => s.id), ['autonomy_puppet', 'zin_autonomy_chartered_dominion', 'zin_autonomy_sworn_realm', 'zin_autonomy_eastern_client', 'zin_autonomy_tributary_hold']);
+  assert.deepEqual(states.map(s => s.id), ['autonomy_puppet', 'zin_autonomy_chartered_dominion', 'zin_autonomy_sworn_realm', 'zin_autonomy_eastern_client', 'zin_autonomy_tributary_hold', 'zin_autonomy_protectorate']);
   assert.equal(states.filter(s => s.default === 'yes').length, 1);
   assert.equal(states[0].default, 'yes');
   assert.equal(states[0].allowed[0].k, 'always', 'the puppet effect needs a default state that can always apply');
-  assert.equal(new Set(states.map(s => s.min_freedom_level)).size, 5, 'no two states share a level');
+  assert.equal(new Set(states.map(s => s.min_freedom_level)).size, states.length, 'no two states share a level');
   for (const s of states) { assert.equal(s.is_puppet, 'yes', `${s.id}: end_puppet must work`); assert(allLoc(s.id), s.id); assert(englishLoc.has(`${s.id}_desc`)); }
   for (const [rel, bytes] of staged.files) if (rel.endsWith('.txt') && !rel.startsWith('localisation')) assert(!/autonomy_(dominion|satellite|colony|integrated_puppet|reichs\w+|supervised_state|collaboration_government|personal_union|free_state)\b/.test(bytes.toString('utf8')), `${rel} names a vanilla autonomy state`);
 });
@@ -283,7 +290,13 @@ test('Autonomy values follow the spec (levels tuned so that no two states share 
   assert.equal(mod('zin_autonomy_tributary_hold', 'extra_trade_to_overlord_factor'), '0.2');
   assert.equal(rule('zin_autonomy_tributary_hold', 'can_not_declare_war'), 'yes');
   assert(Number(by.get('zin_autonomy_sworn_realm').find(x => x.k === 'min_freedom_level').v) > 0, 'a level of 0 is the annexed level');
-  for (const id of ['zin_autonomy_chartered_dominion', 'zin_autonomy_sworn_realm', 'zin_autonomy_eastern_client', 'zin_autonomy_tributary_hold']) {
+  // The protectorate (Tirlan under Hirolon, Teste under Herrodon): the freest state, no war of its own, free to decline a call.
+  assert.equal(by.get('zin_autonomy_protectorate').find(x => x.k === 'min_freedom_level').v, '0.6');
+  assert.equal(rule('zin_autonomy_protectorate', 'can_not_declare_war'), 'yes');
+  assert.equal(rule('zin_autonomy_protectorate', 'can_decline_call_to_war'), 'yes');
+  assert.equal(mod('zin_autonomy_protectorate', 'autonomy_manpower_share'), '0.05');
+  assert(Number(by.get('zin_autonomy_protectorate').find(x => x.k === 'min_freedom_level').v) > Number(by.get('zin_autonomy_chartered_dominion').find(x => x.k === 'min_freedom_level').v), 'a protectorate is freer than a chartered dominion');
+  for (const id of ['zin_autonomy_chartered_dominion', 'zin_autonomy_sworn_realm', 'zin_autonomy_eastern_client', 'zin_autonomy_tributary_hold', 'zin_autonomy_protectorate']) {
     const filter = by.get(id).find(x => x.k === 'allowed_levels_filter').v.map(x => x.v);
     assert.deepEqual(filter, [id], `${id} stays in its own level`);
   }
@@ -359,8 +372,8 @@ test('Peace categories keep the engine keys and the default; prices and desires 
   }
   assert.equal(costs.filter(c => c.v.some(x => x.k === 'faction_modifier')).length, 9, 'the nine faction rule modifiers');
   const desires = text('common/peace_conference/ai_peace/zin_peace.txt');
-  assert(desires.includes(`tag = ${roster.tag('Zol')}`) && /zin_peace_zol_takes_no_land[\s\S]*ai_desire = -1000/.test(desires), 'Zol takes no land');
-  assert(desires.includes(`tag = ${roster.tag('Volgan')}`), 'Volgan has its own block');
+  assert(desires.includes(`tag = ${roster.tag("Zol's Mistake")}`) && /zin_peace_zol_takes_no_land[\s\S]*ai_desire = -1000/.test(desires), 'Zol takes no land');
+  assert(desires.includes(`tag = ${roster.tag('Puvulan')}`), 'Puvulan, the Southern Dominion of the Volgan row, has its own block');
   for (const m of desires.matchAll(/peace_action_type = \{ ([^}]*) \}/g)) for (const a of m[1].split(' ')) assert(['take_states', 'puppet', 'force_government', 'liberate'].includes(a), a);
 });
 
@@ -582,11 +595,11 @@ test('Externals: a rule, template or state another module writes is listed but n
   assert.equal(group.length, 17, 'the group still lists all seventeen');
   assert(!r.definitions.templates.includes('zin_faction_kindred'));
   assert(!r.definitions.autonomy.includes('zin_autonomy_tributary_hold'));
-  assert.equal(r.counts.autonomyStates, 4);
+  assert.equal(r.counts.autonomyStates, result.counts.autonomyStates - 1);
 });
 
 test('The result names the roster of start leagues for the politics step', () => {
-  assert.deepEqual(result.factions.map(f => f.leaderTag).sort(), ['Aenor', 'Lerendor', 'Coldor', 'Noris', 'Stabilo', 'Dondor', 'Volgan'].map(n => roster.tag(n)).sort());
+  assert.deepEqual(result.factions.map(f => f.leaderTag).sort(), ['Aenor', 'Lerendor', 'Coldor', 'Noris', 'Stabilo', 'Dondor', 'Puvulan'].map(n => roster.tag(n)).sort());
 });
 
 test('Collections: twelve regions, the held collections the oaths read, and the lost cores of a league', () => {

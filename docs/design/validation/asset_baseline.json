@@ -3646,14 +3646,6 @@
   {
    "code": "UNIQ_ICON_PREREQUISITE",
    "severity": "error",
-   "path": "common/national_focus/zin_regional_poyang.txt",
-   "message": "Focus zin_regional_poyang_the_old_strength shares an icon with its prerequisite zin_regional_poyang_when_shadows_reach_the_sun.",
-   "key": "UNIQ_ICON_PREREQUISITE|common/national_focus/zin_regional_poyang.txt|zin_regional_poyang/zin_regional_poyang_the_old_strength",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0422."
-  },
-  {
-   "code": "UNIQ_ICON_PREREQUISITE",
-   "severity": "error",
    "path": "common/national_focus/zin_regional_selen.txt",
    "message": "Focus zin_regional_selen_alleria_s_company shares an icon with its prerequisite zin_regional_selen_rangers_of_selen.",
    "key": "UNIQ_ICON_PREREQUISITE|common/national_focus/zin_regional_selen.txt|zin_regional_selen/zin_regional_selen_alleria_s_company",
@@ -6500,38 +6492,6 @@
    "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0778."
   },
   {
-   "code": "UNIQ_PORTRAIT_POOL",
-   "severity": "error",
-   "path": "common/characters/zin_aenor_court.txt",
-   "message": "Generic portrait GFX_zin_portrait_men_male_1 serves 100 characters; the pool men.male (2 portraits, 172 characters) allows 87.",
-   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_aenor_court.txt|GFX_zin_portrait_men_male_1",
-   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0779."
-  },
-  {
-   "code": "UNIQ_PORTRAIT_POOL",
-   "severity": "error",
-   "path": "common/characters/zin_rulers.txt",
-   "message": "Generic portrait GFX_zin_portrait_elves_male_2 serves 11 characters; the pool elves.male (2 portraits, 17 characters) allows 10.",
-   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_elves_male_2",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "UNIQ_PORTRAIT_POOL",
-   "severity": "error",
-   "path": "common/characters/zin_rulers.txt",
-   "message": "Generic portrait GFX_zin_portrait_men_female_2 serves 32 characters; the pool men.female (2 portraits, 54 characters) allows 28.",
-   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_men_female_2",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
-   "code": "UNIQ_PORTRAIT_POOL",
-   "severity": "error",
-   "path": "common/characters/zin_rulers.txt",
-   "message": "Generic portrait GFX_zin_portrait_sun_elves_male_2 serves 20 characters; the pool sun_elves.male (2 portraits, 30 characters) allows 16.",
-   "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_sun_elves_male_2",
-   "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
-  },
-  {
    "code": "PROV_REF_OUTSIDE",
    "severity": "error",
    "path": "art/source/branding/branding_emblem_v1.png",
@@ -6562,6 +6522,366 @@
    "message": "branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/ (affects 2 shipped files, for example gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds).",
    "key": "PROV_REF_OUTSIDE|art/source/branding/branding_menu_backdrop_v1.png|branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/",
    "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/BRR.tga",
+   "message": "Tag BRR has no gfx/flags/BRR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/BRR.tga|gfx/flags/BRR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0780."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/BRR.tga",
+   "message": "Tag BRR has no gfx/flags/medium/BRR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/BRR.tga|gfx/flags/medium/BRR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0780."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/BRR.tga",
+   "message": "Tag BRR has no gfx/flags/small/BRR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/BRR.tga|gfx/flags/small/BRR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0780."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/OLO.tga",
+   "message": "Tag OLO has no gfx/flags/OLO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/OLO.tga|gfx/flags/OLO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0781."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/OLO.tga",
+   "message": "Tag OLO has no gfx/flags/medium/OLO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/OLO.tga|gfx/flags/medium/OLO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0781."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/OLO.tga",
+   "message": "Tag OLO has no gfx/flags/small/OLO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/OLO.tga|gfx/flags/small/OLO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0781."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/ANR.tga",
+   "message": "Tag ANR has no gfx/flags/ANR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/ANR.tga|gfx/flags/ANR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0782."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/ANR.tga",
+   "message": "Tag ANR has no gfx/flags/medium/ANR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/ANR.tga|gfx/flags/medium/ANR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0782."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/ANR.tga",
+   "message": "Tag ANR has no gfx/flags/small/ANR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/ANR.tga|gfx/flags/small/ANR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0782."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/HRA.tga",
+   "message": "Tag HRA has no gfx/flags/HRA.tga.",
+   "key": "FLAG_MISSING|gfx/flags/HRA.tga|gfx/flags/HRA.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0783."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/HRA.tga",
+   "message": "Tag HRA has no gfx/flags/medium/HRA.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/HRA.tga|gfx/flags/medium/HRA.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0783."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/HRA.tga",
+   "message": "Tag HRA has no gfx/flags/small/HRA.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/HRA.tga|gfx/flags/small/HRA.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0783."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/GHH.tga",
+   "message": "Tag GHH has no gfx/flags/GHH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/GHH.tga|gfx/flags/GHH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0784."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/GHH.tga",
+   "message": "Tag GHH has no gfx/flags/medium/GHH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/GHH.tga|gfx/flags/medium/GHH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0784."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/GHH.tga",
+   "message": "Tag GHH has no gfx/flags/small/GHH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/GHH.tga|gfx/flags/small/GHH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0784."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/BRU.tga",
+   "message": "Tag BRU has no gfx/flags/BRU.tga.",
+   "key": "FLAG_MISSING|gfx/flags/BRU.tga|gfx/flags/BRU.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0785."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/BRU.tga",
+   "message": "Tag BRU has no gfx/flags/medium/BRU.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/BRU.tga|gfx/flags/medium/BRU.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0785."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/BRU.tga",
+   "message": "Tag BRU has no gfx/flags/small/BRU.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/BRU.tga|gfx/flags/small/BRU.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0785."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/GRO.tga",
+   "message": "Tag GRO has no gfx/flags/GRO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/GRO.tga|gfx/flags/GRO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0786."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/GRO.tga",
+   "message": "Tag GRO has no gfx/flags/medium/GRO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/GRO.tga|gfx/flags/medium/GRO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0786."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/GRO.tga",
+   "message": "Tag GRO has no gfx/flags/small/GRO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/GRO.tga|gfx/flags/small/GRO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0786."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/BUN.tga",
+   "message": "Tag BUN has no gfx/flags/BUN.tga.",
+   "key": "FLAG_MISSING|gfx/flags/BUN.tga|gfx/flags/BUN.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0787."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/BUN.tga",
+   "message": "Tag BUN has no gfx/flags/medium/BUN.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/BUN.tga|gfx/flags/medium/BUN.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0787."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/BUN.tga",
+   "message": "Tag BUN has no gfx/flags/small/BUN.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/BUN.tga|gfx/flags/small/BUN.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0787."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/VES.tga",
+   "message": "Tag VES has no gfx/flags/VES.tga.",
+   "key": "FLAG_MISSING|gfx/flags/VES.tga|gfx/flags/VES.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0788."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/VES.tga",
+   "message": "Tag VES has no gfx/flags/medium/VES.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/VES.tga|gfx/flags/medium/VES.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0788."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/VES.tga",
+   "message": "Tag VES has no gfx/flags/small/VES.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/VES.tga|gfx/flags/small/VES.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0788."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/HOO.tga",
+   "message": "Tag HOO has no gfx/flags/HOO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/HOO.tga|gfx/flags/HOO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0789."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/HOO.tga",
+   "message": "Tag HOO has no gfx/flags/medium/HOO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/HOO.tga|gfx/flags/medium/HOO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0789."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/HOO.tga",
+   "message": "Tag HOO has no gfx/flags/small/HOO.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/HOO.tga|gfx/flags/small/HOO.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0789."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/NET.tga",
+   "message": "Tag NET has no gfx/flags/NET.tga.",
+   "key": "FLAG_MISSING|gfx/flags/NET.tga|gfx/flags/NET.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0790."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/NET.tga",
+   "message": "Tag NET has no gfx/flags/medium/NET.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/NET.tga|gfx/flags/medium/NET.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0790."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/NET.tga",
+   "message": "Tag NET has no gfx/flags/small/NET.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/NET.tga|gfx/flags/small/NET.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0790."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/WAH.tga",
+   "message": "Tag WAH has no gfx/flags/WAH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/WAH.tga|gfx/flags/WAH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0791."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/WAH.tga",
+   "message": "Tag WAH has no gfx/flags/medium/WAH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/WAH.tga|gfx/flags/medium/WAH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0791."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/WAH.tga",
+   "message": "Tag WAH has no gfx/flags/small/WAH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/WAH.tga|gfx/flags/small/WAH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0791."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/GOF.tga",
+   "message": "Tag GOF has no gfx/flags/GOF.tga.",
+   "key": "FLAG_MISSING|gfx/flags/GOF.tga|gfx/flags/GOF.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0792."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/GOF.tga",
+   "message": "Tag GOF has no gfx/flags/medium/GOF.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/GOF.tga|gfx/flags/medium/GOF.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0792."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/GOF.tga",
+   "message": "Tag GOF has no gfx/flags/small/GOF.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/GOF.tga|gfx/flags/small/GOF.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0792."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/MSH.tga",
+   "message": "Tag MSH has no gfx/flags/MSH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/MSH.tga|gfx/flags/MSH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0793."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/MSH.tga",
+   "message": "Tag MSH has no gfx/flags/medium/MSH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/MSH.tga|gfx/flags/medium/MSH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0793."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/MSH.tga",
+   "message": "Tag MSH has no gfx/flags/small/MSH.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/MSH.tga|gfx/flags/small/MSH.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0793."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/TIR.tga",
+   "message": "Tag TIR has no gfx/flags/TIR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/TIR.tga|gfx/flags/TIR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0794."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/medium/TIR.tga",
+   "message": "Tag TIR has no gfx/flags/medium/TIR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/medium/TIR.tga|gfx/flags/medium/TIR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0794."
+  },
+  {
+   "code": "FLAG_MISSING",
+   "severity": "error",
+   "path": "gfx/flags/small/TIR.tga",
+   "message": "Tag TIR has no gfx/flags/small/TIR.tga.",
+   "key": "FLAG_MISSING|gfx/flags/small/TIR.tga|gfx/flags/small/TIR.tga",
+   "reason": "Needs new image-generated art: docs/plans/zin-art/pending_from_integration.md, row P0794."
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "regional_the_end",
   "tier": "regional",
-  "countries": ["The End"],
+  "countries": ["Eldafaen"],
   "summary": "The End, the realm at the end of the old roads: a Warden and his houses, the Archive, a watch on the last shore and a north that is best not looked at too long.",
   "spirits": {
     "endarils_watch_spirit": {"name":"Endaril's Watch","desc":"A Warden who listens to everything that passes the last road misses little of what is coming.","modifier":{"army_intel_factor":0.1,"stability_factor":0.02}},
@@ -67,7 +67,7 @@
     {"key":"the_last_shore_quiet","name":"The Last Shore Is Quiet","desc":"The war is over and the sea is empty. The watchers climb back to their towers, and the Warden writes one line in the long rolls.","icon":"olive_branch","x":11,"y":9,"days":35,"prerequisite":[["throw_them_back"]],"available":[{"not":[{"at_war":true}]}],"ai":{"base":100},"filters":["stability"],"effects":[{"stability":0.1},{"call":"zin_elves_add_kinship","args":{"value":5}},{"remove_spirit":"the_end_holds"}]}
   ],
   "ai_strategies": [
-    {"country":"The End","type":"prepare_for_war","target":"Noris","value":40,"if":[{"global_flag":"zin_eastern_invasion"}]},
-    {"country":"The End","type":"prepare_for_war","target":"Stabilo","value":30,"if":[{"global_flag":"zin_eastern_invasion"}]}
+    {"country":"Eldafaen","type":"prepare_for_war","target":"Noris","value":40,"if":[{"global_flag":"zin_eastern_invasion"}]},
+    {"country":"Eldafaen","type":"prepare_for_war","target":"Stabilo","value":30,"if":[{"global_flag":"zin_eastern_invasion"}]}
   ]
 }

@@ -5,7 +5,7 @@
 //
 //   const result = await buildDiplomacy(staged, ctx);
 //
-// ctx.countries            the roster (tools/content/data/countries.json, `countries`); countries are named in the data and
+// ctx.countries            the roster (lib/roster.mjs); countries are named in the data and
 //                          resolved to tags here, so a map rebuild changes nothing in the data
 // ctx.diplomacy            optional switches, arrays of ids that another module writes itself and this module then lists
 //                          without defining: externalTemplates, externalRules, externalManifests, externalAutonomy,
@@ -357,7 +357,7 @@ export async function buildDiplomacy(staged, ctx = {}) {
 
   // ----------------------------------------------------------------------------------- scripted triggers and effects
   const refusal = ['OR = {', 'has_country_flag = zin_people_elves', 'has_country_flag = zin_people_sun_elves', '}', 'NOT = { has_country_flag = zin_refusal_lifted }'];
-  const darkPower = ['OR = {', `tag = ${roster.tag('Volgan')}`, 'has_faction_template = zin_faction_southern_dominion', `tag = ${roster.tag('Zol')}`, 'AND = {', 'has_global_flag = zin_afrit_revealed', 'OR = {', 'zin_afrit_rules_here = yes', 'zin_afrit_is_hub = yes', '}', '}', '}'];
+  const darkPower = ['OR = {', `tag = ${roster.tag('Puvulan')}`, 'has_faction_template = zin_faction_southern_dominion', `tag = ${roster.tag('Zol\'s Mistake')}`, 'AND = {', 'has_global_flag = zin_afrit_revealed', 'OR = {', 'zin_afrit_rules_here = yes', 'zin_afrit_is_hub = yes', '}', '}', '}'];
   scripts.push({ where: 'scripted trigger zin_diplo_refusal_binds', kind: 'trigger', text: render(refusal) }, { where: 'scripted trigger zin_diplo_is_dark_power', kind: 'trigger', text: render(darkPower) });
   put('common/scripted_triggers/zin_diplomacy.txt', fileText(comment('Scope: a country. True for an elven realm that the Elven Refusal binds: it cannot join the human leagues or send volunteers.'), render(L('zin_diplo_refusal_binds', refusal)), comment('Scope: a country. The dark powers: Volgan, the Southern Dominion, Zol and, once the secret is out, the realm Afrit rules and the Worshipdom.'), render(L('zin_diplo_is_dark_power', darkPower))));
   defs.triggers.push('zin_diplo_refusal_binds', 'zin_diplo_is_dark_power');

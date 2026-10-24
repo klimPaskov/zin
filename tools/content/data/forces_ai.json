@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "owner": "docs/specs/09_validation/02_ai_defaults.md sections 3, 4.1 to 4.5 and 5 (roles, ratios, production, doctrines, research, crash safety); docs/specs/03_gameplay/01_warfare.md section AI; 09_naval_air_doctrines.md section 10; read by tools/content/modules/forces.mjs",
- "note": "AI data. `entries` are the role-level AI template entries; a target's `regiments` and `support` are sub-unit counts, `enable` a list of condition tokens (not_tier_c, tech:<sub-unit> meaning the technology that unlocks the sub-unit, flag:<global flag>). `people` keys are the profile keys of forces_templates.json (men, elves, sun_elves, orcs, trolls, giants, ents, yeti, demons, country:Volgan, country:Zol). Ratios are weights; the first Linux run calibrates their scale (spec probe AI-P1).",
+ "note": "AI data. `entries` are the role-level AI template entries; a target's `regiments` and `support` are sub-unit counts, `enable` a list of condition tokens (not_tier_c, tech:<sub-unit> meaning the technology that unlocks the sub-unit, flag:<global flag>). `people` keys are the profile keys of forces_templates.json (men, elves, sun_elves, orcs, trolls, giants, ents, yeti, demons, country:Puvulan, country:Zol's Mistake). Ratios are weights; the first Linux run calibrates their scale (spec probe AI-P1).",
  "roles": ["infantry", "garrison", "mobile", "armor", "siege_role", "marines", "rangers_role"],
  "ratios": {
   "men": { "infantry": 55, "garrison": 10, "mobile": 15, "armor": 10, "siege_role": 10, "marines": 5, "rangers_role": 5 },
@@ -13,8 +13,8 @@
   "ents": { "infantry": 40, "garrison": 0, "mobile": 0, "armor": 60, "siege_role": 0, "marines": 0, "rangers_role": 0 },
   "yeti": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 },
   "demons": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 },
-  "country:Volgan": { "infantry": 50, "garrison": 0, "mobile": 10, "armor": 25, "siege_role": 15, "marines": 0, "rangers_role": 0 },
-  "country:Zol": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 }
+  "country:Puvulan": { "infantry": 50, "garrison": 0, "mobile": 10, "armor": 25, "siege_role": 15, "marines": 0, "rangers_role": 0 },
+  "country:Zol's Mistake": { "infantry": 100, "garrison": 0, "mobile": 0, "armor": 0, "siege_role": 0, "marines": 0, "rangers_role": 0 }
  },
  "tierGarrison": { "a": 0, "b": 5, "c": 10 },
  "entries": [
@@ -63,20 +63,20 @@
   { "people": "demons", "role": "infantry", "targets": [ { "id": "host", "regiments": { "zin_demons_netherborn": 5 }, "support": { "zin_support_sappers": 1 }, "prio": 1 } ] },
   { "people": "demons", "role": "garrison", "targets": [ { "id": "watch", "regiments": { "zin_demons_netherborn": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
 
-  { "people": "country:Volgan", "role": "infantry", "targets": [
+  { "people": "country:Puvulan", "role": "infantry", "targets": [
    { "id": "grave_host", "regiments": { "zin_the_dead_revenant": 8, "zin_ogres_brutes": 1 }, "support": { "zin_dead_necromancers": 1 }, "prio": 2 },
    { "id": "monster_clan", "regiments": { "zin_ogres_brutes": 3, "zin_orcs_warrior": 4, "zin_orcs_goblins": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
-  { "people": "country:Volgan", "role": "garrison", "targets": [ { "id": "grave_watch", "regiments": { "zin_the_dead_revenant": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
-  { "people": "country:Volgan", "role": "mobile", "targets": [ { "id": "grave_riders", "regiments": { "zin_dead_grave_riders": 4, "zin_the_dead_revenant": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
-  { "people": "country:Volgan", "role": "armor", "targets": [ { "id": "vanguard", "regiments": { "zin_demons_netherborn": 4, "zin_ogres_brutes": 2, "zin_orcs_warrior": 2 }, "support": { "zin_support_ballistae": 1 }, "prio": 1, "reinforce": 2 } ] },
-  { "people": "country:Volgan", "role": "siege_role", "targets": [ { "id": "siege_park", "regiments": { "zin_siege_catapult": 3, "zin_the_dead_revenant": 3 }, "support": { "zin_support_ballistae": 1, "zin_support_sappers": 1 }, "prio": 1 } ] },
+  { "people": "country:Puvulan", "role": "garrison", "targets": [ { "id": "grave_watch", "regiments": { "zin_the_dead_revenant": 4 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "country:Puvulan", "role": "mobile", "targets": [ { "id": "grave_riders", "regiments": { "zin_dead_grave_riders": 4, "zin_the_dead_revenant": 2 }, "support": { "zin_support_scouts": 1 }, "prio": 1 } ] },
+  { "people": "country:Puvulan", "role": "armor", "targets": [ { "id": "vanguard", "regiments": { "zin_demons_netherborn": 4, "zin_ogres_brutes": 2, "zin_orcs_warrior": 2 }, "support": { "zin_support_ballistae": 1 }, "prio": 1, "reinforce": 2 } ] },
+  { "people": "country:Puvulan", "role": "siege_role", "targets": [ { "id": "siege_park", "regiments": { "zin_siege_catapult": 3, "zin_the_dead_revenant": 3 }, "support": { "zin_support_ballistae": 1, "zin_support_sappers": 1 }, "prio": 1 } ] },
 
-  { "people": "country:Zol", "role": "infantry", "upgradeZero": true, "targets": [ { "id": "deathless", "regiments": { "zin_zol_deathless": 10 }, "support": {}, "prio": 1 } ] },
-  { "people": "country:Zol", "role": "garrison", "upgradeZero": true, "targets": [ { "id": "watch", "regiments": { "zin_zol_deathless": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
-  { "people": "country:Zol", "role": "marines", "upgradeZero": true, "targets": [ { "id": "crews", "regiments": { "zin_zol_deathless_crews": 6 }, "support": {}, "prio": 1 } ] }
+  { "people": "country:Zol's Mistake", "role": "infantry", "upgradeZero": true, "targets": [ { "id": "deathless", "regiments": { "zin_zol_deathless": 10 }, "support": {}, "prio": 1 } ] },
+  { "people": "country:Zol's Mistake", "role": "garrison", "upgradeZero": true, "targets": [ { "id": "watch", "regiments": { "zin_zol_deathless": 3 }, "support": {}, "prio": 1, "reinforce": 0 } ] },
+  { "people": "country:Zol's Mistake", "role": "marines", "upgradeZero": true, "targets": [ { "id": "crews", "regiments": { "zin_zol_deathless_crews": 6 }, "support": {}, "prio": 1 } ] }
  ],
  "production": {
-  "militaryToCivilian": { "men": 50, "elves": 30, "sun_elves": 20, "orcs": 150, "trolls": 20, "giants": 20, "ents": 20, "yeti": 20, "demons": 80, "country:Volgan": 100, "country:Zol": 100 },
+  "militaryToCivilian": { "men": 50, "elves": 30, "sun_elves": 20, "orcs": 150, "trolls": 20, "giants": 20, "ents": 20, "yeti": 20, "demons": 80, "country:Puvulan": 100, "country:Zol's Mistake": 100 },
   "warBoost": 50,
   "dockyards": { "seaPower": 30, "coastal": 20 },
   "variants": {
@@ -89,8 +89,8 @@
    "ents": { "zin_ent_grove_equipment": 100, "zin_arms_equipment": 30, "zin_bows_equipment": 30, "zin_camp_equipment": 30 },
    "yeti": { "zin_yeti_gear_equipment": 100, "zin_camp_equipment": 30 },
    "demons": { "zin_nether_arms_equipment": 100, "zin_catapult_equipment": 10, "zin_camp_equipment": 40 },
-   "country:Volgan": { "zin_grave_arms_equipment": 100, "zin_nether_arms_equipment": 40, "zin_ogre_gear_equipment": 40, "zin_arms_equipment": 60, "zin_armour_equipment": 25, "zin_mounts_equipment": 30, "zin_catapult_equipment": 15, "zin_trebuchet_equipment": 10, "zin_ballista_equipment": 20, "zin_camp_equipment": 50 },
-   "country:Zol": {}
+   "country:Puvulan": { "zin_grave_arms_equipment": 100, "zin_nether_arms_equipment": 40, "zin_ogre_gear_equipment": 40, "zin_arms_equipment": 60, "zin_armour_equipment": 25, "zin_mounts_equipment": 30, "zin_catapult_equipment": 15, "zin_trebuchet_equipment": 10, "zin_ballista_equipment": 20, "zin_camp_equipment": 50 },
+   "country:Zol's Mistake": {}
   },
   "types": { "infantry": 100, "support": 80, "artillery": 60, "anti_tank": 60, "anti_air": 50 },
   "surplus": { "zin_arms_equipment": 10, "zin_elven_arms_equipment": 10, "zin_bows_equipment": 8, "zin_camp_equipment": 8, "zin_catapult_equipment": 2, "zin_ballista_equipment": 2 },
@@ -99,7 +99,7 @@
   "never": ["zin_deathless_equipment", "zin_dragon_equipment", "zin_glo_blade_equipment", "zin_great_spirit_equipment", "zin_shachihata_equipment", "zin_volgan_presence_equipment", "zin_zol_manifestation_equipment", "zin_griffin_equipment", "zin_scorpion_equipment"]
  },
  "navy": {
-  "seaPower": { "names": ["Lerendor", "Gala Elves"], "scans": ["Tritons Islands"], "ratios": { "screen_ship": 40, "capital_ship": 30, "submarine": 10, "convoy": 20 } },
+  "seaPower": { "names": ["Lerendor", "Gala"], "scans": ["Tritons Islands"], "ratios": { "screen_ship": 40, "capital_ship": 30, "submarine": 10, "convoy": 20 } },
   "coastal": { "ratios": { "screen_ship": 70, "capital_ship": 0, "submarine": 0, "convoy": 30 } },
   "zol": { "ratios": { "screen_ship": 0, "capital_ship": 0, "submarine": 0, "convoy": 0 } },
   "roleRatios": { "seaPower": { "naval_screen": 40, "naval_capital": 30, "naval_raider": 10 }, "coastal": { "naval_screen": 70, "naval_capital": 0, "naval_raider": 0 } },
@@ -133,8 +133,8 @@
   "groups": [
    { "id": "zin_ai_ships_men", "people": ["men"], "defaultGroup": true },
    { "id": "zin_ai_ships_elves", "people": ["elves"] },
-   { "id": "zin_ai_ships_dominion", "people": ["orcs", "demons", "country:Volgan"] },
-   { "id": "zin_ai_ships_mistake", "people": ["country:Zol"] }
+   { "id": "zin_ai_ships_dominion", "people": ["orcs", "demons", "country:Puvulan"] },
+   { "id": "zin_ai_ships_mistake", "people": ["country:Zol's Mistake"] }
   ],
   "propulsion": { "men": { "galley": "zin_mod_oars_and_sail", "warship": "zin_mod_sails", "raider": "zin_mod_oars" }, "elves": { "galley": "zin_mod_elven_sails", "warship": "zin_mod_elven_sails", "raider": "zin_mod_elven_sails" }, "dominion": { "galley": "zin_mod_oars", "warship": "zin_mod_sails", "raider": "zin_mod_oars" }, "mistake": { "galley": "zin_mod_oars", "warship": "zin_mod_sails", "raider": "zin_mod_black_sails" } },
   "armament": { "men": { "galley": ["zin_mod_ballista_battery"], "warship": ["zin_mod_ballista_battery", "zin_mod_ballista_battery"], "great": ["zin_mod_ballista_battery", "zin_mod_catapult_deck", "zin_mod_ballista_battery"], "raider": ["zin_mod_ram"] }, "elves": { "galley": ["zin_mod_archers_deck"], "warship": ["zin_mod_archers_deck", "zin_mod_ballista_battery"], "great": ["zin_mod_archers_deck", "zin_mod_ballista_battery", "zin_mod_archers_deck"], "raider": ["zin_mod_archers_deck"] }, "dominion": { "galley": ["zin_mod_ram"], "warship": ["zin_mod_fire_pots", "zin_mod_ballista_battery"], "great": ["zin_mod_fire_pots", "zin_mod_catapult_deck", "zin_mod_ballista_battery"], "raider": ["zin_mod_ram"] }, "mistake": { "galley": ["zin_mod_ram"], "warship": ["zin_mod_ballista_battery", "zin_mod_ballista_battery"], "great": ["zin_mod_ballista_battery", "zin_mod_ballista_battery", "zin_mod_ballista_battery"], "raider": ["zin_mod_ram"] } },
@@ -169,8 +169,8 @@
    "ents": { "zin_cat_kin": 1.8, "zin_cat_walls": 1.2 },
    "yeti": { "zin_cat_kin": 1.6, "zin_cat_camp": 1.2 },
    "demons": { "zin_cat_dark_rites": 1.5, "zin_cat_kin": 1.2, "zin_cat_arms": 1.0 },
-   "country:Volgan": { "zin_cat_dark_rites": 1.8, "zin_cat_arms": 1.3, "zin_cat_siege": 1.3, "zin_cat_kin": 1.2, "zin_cat_mounts": 1.1 },
-   "country:Zol": { "zin_cat_dark_rites": 1.5 }
+   "country:Puvulan": { "zin_cat_dark_rites": 1.8, "zin_cat_arms": 1.3, "zin_cat_siege": 1.3, "zin_cat_kin": 1.2, "zin_cat_mounts": 1.1 },
+   "country:Zol's Mistake": { "zin_cat_dark_rites": 1.5 }
   },
   "tierC": { "zin_cat_arms": 1.3 },
   "tierB": { "zin_cat_scholarship": 1.1 }

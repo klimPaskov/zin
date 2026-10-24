@@ -34,7 +34,7 @@ export function ideasFile(model, pictureOf = defaultPicture) {
   const body = (mods, picture) => ({ ...(picture ? { picture } : {}), allowed: raw('{ always = no }'), allowed_civil_war: raw('{ always = yes }'), removal_cost: -1, modifier: mods });
   const put = (cat, id, idea) => { if (!buckets[cat]) throw new Error(`Unknown idea category ${cat} for ${id}`); buckets[cat][id] = idea; };
   for (const k of model.cultureKeys) {
-    const cat = M.ideaCategory(model, k), people = M.peopleOf(model, k);
+    const cat = M.ideaCategory(model, k), people = M.kitPeopleOf(model, k);
     put(cat, M.cultureIdea(k), body(model.game.cultures[k].modifier, cat === 'country' ? pictureOf(M.cultureIdea(k), `zin_people_${people}`) : null));
     put(M.ideaCategory(model, k, true), M.cultureIdea2(k), body(M.secondaryModifiers(model, k), null));
   }
@@ -43,7 +43,7 @@ export function ideasFile(model, pictureOf = defaultPicture) {
     if (!f.spirit_desc) continue;
     const firstCulture = model.cultureKeys.find(c => M.faithOfCulture(model, c) === k || model.world.cultures[c].faith_secondary === k);
     const cat = model.game.idea_category.faith;
-    put(cat, M.faithIdea(k), body(f.modifier, cat === 'country' ? pictureOf(M.faithIdea(k), `zin_people_${firstCulture ? M.peopleOf(model, firstCulture) : 'men'}`) : null));
+    put(cat, M.faithIdea(k), body(f.modifier, cat === 'country' ? pictureOf(M.faithIdea(k), `zin_people_${firstCulture ? M.kitPeopleOf(model, firstCulture) : 'men'}`) : null));
   }
   const section = (name, ideas) => (Object.keys(ideas).length ? `\t${name} = {\n${cw(ideas, 2)}\t}\n` : '');
   return `${HEADER}\n# Culture ideas (zin_culture_<key>, second culture zin_culture2_<key> at half strength) and faith spirits (zin_faith_<key>).\nideas = {\n${section('country', buckets.country)}${section('hidden_ideas', buckets.hidden_ideas)}}\n`;

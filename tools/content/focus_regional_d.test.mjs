@@ -4,6 +4,7 @@
 // their specs; negative cases plant one failure each and expect the matching check to fail.
 //   node --test tools/content/focus_regional_d.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -38,7 +39,7 @@ const START_SPIRIT = {
 
 const BASE = {};
 for (const id of IDS) BASE[id] = await json(`${FOCUS_DIR}/${id}.json`);
-const roster = (await json(new URL('./data/countries.json', import.meta.url))).countries;
+const roster = countryTable();
 const registry = await loadRegistry();
 const codes = await loadArgCodes();
 const catalog = await loadCatalog();

@@ -253,7 +253,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     ...pickByOwner('zin_is_site_three_oaths', 'zin_eindil_bridge_host', setIfExists(T_.gunwaith, 'zin_eindil_bridge_host')),
     ...pickByOwner('zin_is_site_winter_ford', 'zin_eindil_ford_host', setIfExists(T_.girdon, 'zin_eindil_ford_host')),
     'clear_variable = global.zin_eindil_trial_host',
-    L(`${roster.capitalState('Gunwaith')}`, L('owner', 'set_variable = { global.zin_eindil_trial_host = THIS }')),
+    L(`${roster.capitalState('Gunwyn')}`, L('owner', 'set_variable = { global.zin_eindil_trial_host = THIS }')),
     fireVar('zin_eindil_bridge_host', 20));
   E('zin_eindil_form_confederation',
     '# The Grey Ford Confederation (proposed): the western country other than Gunwaith and Girdon with the highest regard (ties to the most states) leads; members have regard 0 or more.',
@@ -291,7 +291,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     'clear_variable = global.zin_eindil_gala_host',
     setIfExists(T_.galaElves, 'zin_eindil_gala_host'),
     L('if', 'limit = { NOT = { has_variable = global.zin_eindil_gala_host } }', L('random_country', `limit = { has_character = ${ch.lorien} exists = yes }`, 'set_variable = { global.zin_eindil_gala_host = THIS }')),
-    L('if', 'limit = { NOT = { has_variable = global.zin_eindil_gala_host } }', L(`${roster.capitalState('Gala Elves')}`, L('owner', 'set_variable = { global.zin_eindil_gala_host = THIS }'))));
+    L('if', 'limit = { NOT = { has_variable = global.zin_eindil_gala_host } }', L(`${roster.capitalState('Gala')}`, L('owner', 'set_variable = { global.zin_eindil_gala_host = THIS }'))));
   E('zin_eindil_enter_5', 'zin_eindil_clear_host = yes', 'zin_eindil_pick_gala_host = yes', fireVar('zin_eindil_gala_host', 50));
   E('zin_eindil_enter_6',
     '# The voyage north: he is at sea; four regions refresh their layouts; the first port of call.',

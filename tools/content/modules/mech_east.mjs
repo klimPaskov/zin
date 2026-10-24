@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url';
 import { fmt, ind, call, num, HEADER, Texts, resolveCountries, dateTrigger, assertCleanText } from '../lib/mech_kit.mjs';
 import { buildEastContent } from './mech_east_content.mjs';
 import { ZIN } from '../lib/paths.mjs';
+import { countryTable } from '../lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const EAST_DATA_FILE = path.join(here, '../data/mech_regions_east.json');
@@ -71,7 +72,7 @@ export function eastSiteRows(data, countries) {
   for (const r of ROADS) if (!keys.has(`road_${r.key}`)) throw new Error(`mech_east: the site rows have no road_${r.key}`);
   return rows.map(r => ({ ...r, trigger: `zin_is_${r.kind === 'region' ? 'region' : 'site'}_${r.key}`, module: 'mech_east' }));
 }
-export const SITE_ROWS = eastSiteRows(await loadEastData(), JSON.parse(await readFile(path.join(here, '../data/countries.json'), 'utf8')).countries);
+export const SITE_ROWS = eastSiteRows(await loadEastData(), countryTable());
 /** Every external name of one kind, across owners. */
 export const eastExternals = kind => [...new Set(EAST_DEPENDENCIES.flatMap(d => d[kind] ?? []))];
 /** The tree-declared effects the mechanic calls, with the design file that must declare each (no stub is ever written for them). */

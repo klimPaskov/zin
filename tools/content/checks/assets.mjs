@@ -21,6 +21,7 @@ import {
 } from '../lib/loaded_assets.mjs';
 import { loadProvenance, loadModuleManifests, compileRules, classify, createSourceResolver } from '../lib/asset_sources.mjs';
 import { validateManifest } from '../lib/asset_schema.mjs';
+import { countryTable, supersededWorldFile } from '../lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_DIR = path.join(here, '../data');
@@ -56,6 +57,8 @@ export function loadAssetContext({ root = ZIN, staged = null, game = GAME, dataD
   if (staged) {
     let drop = new Set();
     try { drop = new Set(readJson(`${root}/.zin-content.json`).files.map(f => f.relativePath)); } catch { /* none tracked yet */ }
+    // The map generator's files of the retired debug-tag roster: the builder's country package replaces them (lib/roster.mjs).
+    try { for (const f of readJson(`${root}/.hoi4-agent-world.json`).files) if (supersededWorldFile(f.relativePath)) drop.add(f.relativePath); } catch { /* no world manifest */ }
     view = overlayView(root, staged, { drop });
   } else view = diskView(root);
   let descriptorText = descriptor;
@@ -68,7 +71,7 @@ export function loadAssetContext({ root = ZIN, staged = null, game = GAME, dataD
   let t = tables;
   if (!t) {
     t = { countries: [], flagCells: [] };
-    try { t.countries = readJson(`${dataDir}/countries.json`).countries; } catch { /* optional */ }
+    try { t.countries = dataDir === DATA_DIR ? countryTable() : readJson(`${dataDir}/countries.json`).countries; } catch { /* optional */ }
     try { t.flagCells = readJson(`${dataDir}/flags-cells.json`); } catch { /* optional */ }
   }
   return { root, view, vanilla, ...data, tables: t, phase, cache: perceptualCache(cachePath), descriptor: descriptorText };

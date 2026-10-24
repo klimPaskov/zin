@@ -1,10 +1,11 @@
 // Tests of the eastern kings mechanic (docs/design/stage2/mech_east.md, spec docs/specs/04_mechanics/eastern_kings.md): the caravan
 // roads and charters, the rivalry, the courts' lean, the kneel bias, the coalition and the invasion, the King of the East as the East
-// lives it, the unified East and the South Lands desert. They call the builder directly with the roster of data/countries.json and
+// lives it, the unified East and the South Lands desert. They call the builder directly with the roster (lib/roster.mjs) and
 // assert on the staged files; nothing needs a prior build. The installed game is read for engine vocabulary (effects, triggers, modifiers).
 // Every rule has at least one negative test: a mutated input or output that the check or the module refuses.
 // Run: cd tools && node --test content/mech_east.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, mkdtemp, writeFile, rm } from 'node:fs/promises';
 import os from 'node:os';
@@ -22,7 +23,7 @@ import { ZIN } from './lib/paths.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const json = async f => JSON.parse(await readFile(path.join(here, 'data', f), 'utf8'));
-const { countries } = await json('countries.json');
+const countries = countryTable();
 const DATA_RAW = await readFile(path.join(here, 'data/mech_regions_east.json'), 'utf8');
 const D = await loadEastData();
 const fresh = () => JSON.parse(DATA_RAW);
@@ -36,6 +37,9 @@ const locOf = t => Object.fromEntries([...t.matchAll(/^ ([A-Za-z0-9_.@-]+):0 "(.
 const loc = locOf(text(LOC));
 const tagOf = n => countries.find(c => c.name === n).tag;
 const NOR = tagOf('Noris'), STA = tagOf('Stabilo'), AEN = tagOf('Aenor'), WOR = tagOf('Worshipdom');
+// The Magical Lands realms the coalition may cross to (the roster's Magical Lands countries without the Worshipdom): 11 in the roster of
+// 24 October 2026, where the debug-tag roster had 21; the East Lands sheet has 20 realms (35 before the merges).
+const MAGICAL = countries.filter(c => c.scan === D.roster.magicalScan && c.tag !== WOR);
 const EFF = 'common/scripted_effects/zin_east.txt', TRG = 'common/scripted_triggers/zin_east.txt', EVT = 'events/zin_east.txt', DEC = 'common/decisions/zin_east.txt';
 /** The body of a top-level definition of a script file. */
 const body = (rel, name) => {
@@ -105,10 +109,10 @@ test('Counts: the staged content matches the spec tables', () => {
   assert.equal(c.opinions, 10);
   assert.equal(c.dynamicModifiers, 5, 'caravan wealth, dry land, wells and the two causes');
   assert.equal(c.events, 26, 'twenty-one visible events and five hidden runners');
-  assert.equal(c.aiStrategies, 2 + 2 * 21, 'free crowns, Aenor, and conquest plus front request toward each of the 21 Magical Lands realms');
+  assert.equal(c.aiStrategies, 2 + 2 * MAGICAL.length, 'free crowns, Aenor, and conquest plus front request toward each Magical Lands realm'); assert(MAGICAL.length > 5);
   assert.equal(c.scriptedLocs, 6);
   assert.equal(east.statesTotal, 337, 'the East Lands hold 337 states at start');
-  assert.equal(countries.filter(x => x.scan === 'South-Earth').length, 35);
+  assert.equal(countries.filter(x => x.scan === 'South-Earth').length, D.roster.expectedCountries);
 });
 
 test('Determinism: a second build yields the same bytes', async () => {
@@ -430,7 +434,7 @@ test('Roads: the monthly rules of the charters, the drift, conquest, the gone po
   assert(salt.includes('check_variable = { zin_e_n < 40 }') && salt.includes('check_variable = { zin_e_s > 59.99 }'), 'a held road passes under 40 against 60');
   assert(salt.includes('multiply_temp_variable = { zin_e_total3 = 2 }') && salt.includes('multiply_temp_variable = { zin_e_n3 = 3 }') && salt.includes('set_variable = { zin_east_inf_salt = 100 }'), 'two thirds by conquest');
   assert(salt.includes('add_to_variable = { zin_east_inf_salt = 0.5 }') && salt.includes('add_to_variable = { zin_east_inf_salt = 0.3 }') && salt.includes('add_to_variable = { zin_east_inf_salt = zin_east_caravan_bonus }') && salt.includes('add_to_variable = { zin_east_inf_salt = -0.2 }'), 'the drift table');
-  assert(/NOT = \{ country_exists = Y14 \}\n\t\t\tcheck_variable = \{ global\.zin_east_road_salt = 1 \}\n\t\t\}\n\t\tset_variable = \{ global\.zin_east_road_salt = 0 \}/.test(salt), 'a gone power frees only its own charters');
+  assert(new RegExp(`NOT = \\{ country_exists = ${NOR} \\}\\n\\t\\t\\tcheck_variable = \\{ global\\.zin_east_road_salt = 1 \\}\\n\\t\\t\\}\\n\\t\\tset_variable = \\{ global\\.zin_east_road_salt = 0 \\}`).test(salt), 'a gone power frees only its own charters');
   assert(salt.indexOf('NOT = { has_global_flag = zin_east_roads_concord }') < salt.indexOf('zin_e_total3') && salt.indexOf('add_to_variable = { zin_east_inf_salt = 0.5 }') < salt.indexOf('NOT = { has_global_flag = zin_east_roads_concord }'), 'the Concord freezes the charters, not the drift');
   assert(salt.includes('check_variable = { zin_e_moved = 0 }') && salt.includes('zin_east_charter_changed = yes') && salt.includes('set_temp_variable = { zin_arg_value = 5 }'), 'one change a month, +5 rivalry');
   assert(salt.includes('set_temp_variable = { zin_arg_value = 0.1 }') && salt.includes('set_temp_variable = { zin_arg_value = -0.1 }'), 'courts drift 0.1 toward the holder');
@@ -442,13 +446,15 @@ test('Roads: the monthly rules of the charters, the drift, conquest, the gone po
 test('Site rows (E7): the five roads follow the spec\'s waypoints; every eastern site and region the script reads has a row; none is written here', () => {
   const rows = new Map(east.siteRows.map(r => [r.key, r]));
   const path = k => rows.get(`road_${k}`).rule.path.map(w => (typeof w === 'string' ? w : 'nearest'));
-  assert.deepEqual(path('salt'), ['site:furvior', 'capital:Mylunur', 'capital:Gondolin']);
+  // Mylunur joined Noris and Gondolin is Naamis (roster of 24 October 2026): the salt road runs through their capitals.
+  assert.deepEqual(path('salt'), ['site:furvior', 'capital:Noris', 'capital:Naamis']);
   assert.deepEqual(path('gold'), ['capital:Plutondo', 'site:postondoroth', 'capital:Stabilo', 'capital:Mostok', 'capital:Kersian', 'capital:Azano', 'capital:Alerhia']);
-  assert.deepEqual(path('rift'), ['site:furvior', 'capital:Delbiz Grasslands', 'nearest']);
+  assert.deepEqual(path('rift'), ['site:furvior', 'capital:Delbiz', 'nearest']);
   assert.deepEqual(rows.get('road_rift').rule.path[2].nearest.filter, { owned: 'Alerhia', naval_base: true, site: 'rift_east' });
-  assert.deepEqual(path('lake'), ['site:furvior', 'capital:Mora', 'capital:Ernois', 'capital:Ostoroth']);
-  assert.deepEqual(path('sand'), ['capital:Stabilo', 'capital:Obmi', 'capital:Olor', 'capital:Erco']);
-  assert.deepEqual(rows.get('road_sand').rule.branches, [['capital:Obmi', 'capital:Arcon', 'capital:Pornivior', 'capital:Miaed']]);
+  // Ernois joined Ostoroth, Olor and Arcon joined Stabilo (roster of 24 October 2026): their waypoints fall to the realms that hold them.
+  assert.deepEqual(path('lake'), ['site:furvior', 'capital:Mora', 'capital:Ostoroth']);
+  assert.deepEqual(path('sand'), ['capital:Stabilo', 'capital:Obmi', 'capital:Erco']);
+  assert.deepEqual(rows.get('road_sand').rule.branches, [['capital:Obmi', 'capital:Stabilo', 'capital:Pornivior', 'capital:Miaed']]);
   assert.equal(rows.get('south_lands').rule.min_row, 1550);
   assert.equal(rows.get('furvior').rule.capital, 'Noris'); assert.equal(rows.get('postondoroth').rule.vp, 'Postondoroth');
   const triggers = new Set(east.siteRows.map(r => r.trigger));
@@ -498,18 +504,20 @@ test('Rivalry: start 40, the sources and the drift of section 2, the Concord and
 });
 
 // ------------------------------------------------------------------------------------------------ the courts
-const LEANS = { Gondolin: 70, Mylunur: 30, 'Delbiz Grasslands': 20, Ostoroth: 15, Mora: 10, Alerhia: 0, Kersian: 0, 'The Moco': 0, Miaed: -10, Avalon: -10, Mostok: -15, Erco: -20, Obmi: -20, Oreton: -20, Plutondo: -30, Drak: -70 };
+// The spec's lean table on the roster of 24 October 2026: Gondolin is Naamis, Delbiz Grasslands Delbiz and Avalon Rhachia; Mylunur and The Moco
+// joined Noris and Oreton joined Stabilo, so their rows went with them (the powers themselves hold no lean).
+const LEANS = { Naamis: 70, Delbiz: 20, Ostoroth: 15, Mora: 10, Alerhia: 0, Kersian: 0, Miaed: -10, Rhachia: -10, Mostok: -15, Erco: -20, Obmi: -20, Plutondo: -30, Drak: -70 };
 test('Courts: the start leans of section 3, every other court at 0, the clamp, dominance and the startup AI', () => {
   const st = body(EFF, 'zin_east_startup');
   for (const [n, v] of Object.entries(LEANS)) assert(st.includes(`${tagOf(n)} = { set_variable = { zin_east_lean = ${v} } }`), `${n} leans ${v}`);
-  assert(st.indexOf('set_variable = { zin_east_lean = 0 }') < st.indexOf(`${tagOf('Gondolin')} = { set_variable = { zin_east_lean = 70 } }`), 'every court starts at 0, then the table');
+  assert(st.indexOf('set_variable = { zin_east_lean = 0 }') < st.indexOf(`${tagOf('Naamis')} = { set_variable = { zin_east_lean = 70 } }`), 'every court starts at 0, then the table');
   assert(!st.includes(`${NOR} = { set_variable = { zin_east_lean`) && !st.includes(`${STA} = { set_variable = { zin_east_lean`));
   assert(body(EFF, 'zin_east_add_lean').includes('clamp_variable = { var = zin_east_lean min = -100 max = 100 }'));
   assert.equal([...allScript.matchAll(/(?:set_variable|add_to_variable) = \{ zin_east_lean = (?!0 \}|-?\d+ \} \})/g)].length, 1, 'zin_east_add_lean is the only way to change the lean after the start');
   const dom = body(EFF, 'zin_east_update_dominance');
   assert(dom.includes('multiply_temp_variable = { zin_east_allies = 0.5 }') && dom.includes('divide_temp_variable = { zin_east_mine = global.zin_east_states_total }'), 'dominance: own and subjects, half for faction members, over the frozen count');
   assert(st.includes(`add_ai_strategy = { type = antagonize id = "${STA}" value = 20 }`) && st.includes(`add_ai_strategy = { type = befriend id = "${tagOf('Alerhia')}" value = 10 }`));
-  for (const n of ['Gondolin', 'Mylunur', 'Mora']) assert(st.slice(st.indexOf('zin_east_noris'), st.indexOf('zin_east_stabilo')).includes(`befriend id = "${tagOf(n)}"`), n);
+  for (const n of ['Naamis', 'Mora']) assert(st.slice(st.indexOf('zin_east_noris'), st.indexOf('zin_east_stabilo')).includes(`befriend id = "${tagOf(n)}"`), n);
   for (const n of ['Drak', 'Plutondo', 'Obmi']) assert(st.slice(st.indexOf('zin_east_stabilo')).includes(`befriend id = "${tagOf(n)}"`), n);
   const inv = decisionBlock('zin_east_invite_to_league');
   assert(inv.includes('zin_east_lean > 49.99') && inv.includes('zin_east_lean < -49.99') && inv.includes('has_country_flag = zin_noris_open_treaty') && inv.includes('has_country_flag = zin_stabilo_open_pact'));
@@ -562,8 +570,8 @@ test('Coalition: the weight factors, the leader, the asks, the historical floor'
   const hist = body(EFF, 'zin_east_enforce_coalition');
   assert.equal((hist.match(/zin_east_join_coalition = yes/g) ?? []).length, 2) ;
   assert(hist.includes('is_ai = yes') && hist.includes('zin_e_joined < 1.99'));
-  const ranks = [...body(EFF, 'zin_east_startup').matchAll(/^\t\t(Y[0-9A-Z]{2}) = \{ set_variable = \{ zin_east_rank = (\d+) \} \}/gm)].map(m => [m[1], +m[2]]);
-  assert.equal(ranks.length, 35 + 21);
+  const ranks = [...body(EFF, 'zin_east_startup').matchAll(/^\t\t([A-Z][0-9A-Z]{2}) = \{ set_variable = \{ zin_east_rank = (\d+) \} \}/gm)].map(m => [m[1], +m[2]]);
+  assert.equal(ranks.length, D.roster.expectedCountries + MAGICAL.length, 'every East Lands realm and every Magical Lands realm');
   assert.deepEqual(ranks.map(r => r[0]), [...ranks.map(r => r[0])].sort(), 'tag order');
   assert(!ranks.some(r => r[0] === WOR), 'the Worshipdom is no realm of the crossing');
 });
@@ -587,8 +595,8 @@ test('Invasion: the gather, the crossing and the turn west of section 5, with th
   assert(w.indexOf('flag = zin_story_war days = 1') < w.indexOf(`declare_war_on = { target = ${AEN}`) && w.includes('set_global_flag = zin_east_turns_west') && w.includes('id = zin_east.44'));
   assert(story.includes('zin_e_held > 2.99') && story.includes('NOT = { has_global_flag = zin_east_invasion_young }') && story.includes('zin_east_after_turn_west = yes') && story.includes('zin_rules_is_historical = yes'));
   const ai = text('common/ai_strategy/zin_east.txt');
-  const realms = countries.filter(c => c.scan === 'Magical Lands' && c.tag !== WOR);
-  assert.equal(realms.length, 21);
+  const realms = MAGICAL;
+  assert(realms.length > 5);
   for (const r of realms) assert(ai.includes(`zin_east_coalition_toward_${r.tag.toLowerCase()} = {`) && ai.includes(`type = front_unit_request\n\t\ttag = ${r.tag}\n\t\tvalue = 60`), r.tag);
   assert(ai.includes('type = conquer\n\t\tid = "' + realms[0].tag + '"\n\t\tvalue = 80') && ai.includes(`id = "${AEN}"\n\t\tvalue = 100`) && !ai.includes(`toward_${WOR.toLowerCase()}`));
 });
@@ -600,7 +608,7 @@ test('Peace gates: every claim and declaration of war sits behind its gate; noth
 });
 
 test('Negative: the peace-gate check flags a declaration in the startup and a claim outside its gate', () => {
-  const bad = new Map([[EFF, text(EFF).replace('set_global_flag = zin_east_started', 'set_global_flag = zin_east_started\n\t\tdeclare_war_on = { target = Y16 type = annex_everything }')]]);
+  const bad = new Map([[EFF, text(EFF).replace('set_global_flag = zin_east_started', `set_global_flag = zin_east_started\n\t\tdeclare_war_on = { target = ${STA} type = annex_everything }`)]]);
   assert.equal(ungatedWar(bad).length, 1);
   const bad2 = new Map([[EVT, text(EVT).replace('limit = { zin_east_claims_open = yes }', 'limit = { always = yes }')]]);
   assert(ungatedWar(bad2).length >= 1);
@@ -713,7 +721,7 @@ test('Negative: the raw-date check flags a date test outside the story-pace trig
 test('Negative: the module refuses a roster that does not match its data', async () => {
   let d = fresh(); d.roster.expectedCountries = 34; await assert.rejects(() => build(d), /expects 34/);
   d = fresh(); d.roster.expectedStates = 300; await assert.rejects(() => build(d), /expects 300/);
-  d = fresh(); d.roster.leans['Nowhere Land'] = 5; await assert.rejects(() => build(d), /not in countries\.json/);
+  d = fresh(); d.roster.leans['Nowhere Land'] = 5; await assert.rejects(() => build(d), /not in the roster/);
   d = fresh(); d.roster.great = ['Aenor']; await assert.rejects(() => build(d), /as a South-Earth country/);
   d = fresh(); delete d.report; await assert.rejects(() => build(d), /report needs a head/);
 });

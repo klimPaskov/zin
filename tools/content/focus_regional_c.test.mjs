@@ -4,6 +4,7 @@
 // text rules, and plant one failure for each check that guards these trees.
 //   node --test tools/content/focus_regional_c.test.mjs
 import test from 'node:test';
+import { countryTable, successor } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir, mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -43,13 +44,15 @@ const TREES = {
   regional_asgard: ['Asgard', 33, 11, 2],
 };
 const IDS = Object.keys(TREES);
+// The realm of the roster that continues a spec's country (The End is Eldafaen).
+const realm = old => countryTable().find(c => c.key === successor(old).primary).name;
 const MAGICAL = IDS.slice(0, 5), MIDDLE = IDS.slice(5);
 
 const BASE = {};
 for (const id of IDS) BASE[id] = await json(path.join(TREE_DIR, `${id}.json`));
 const registryData = mergeRegistryData([await json(path.join(DATA, 'focus_registry.json')), await json(path.join(DATA, 'focus_registry_regional_c.json'))]);
 const registry = () => new Registry(structuredClone(registryData), { pending: true });
-const ROSTER = (await json(path.join(DATA, 'countries.json'))).countries;
+const ROSTER = countryTable();
 const CODES = await loadArgCodes();
 
 async function analyse(mutate) {
@@ -85,7 +88,7 @@ test('Every tree has the specs\' focus, spirit and event counts', () => {
     const t = BASE[id];
     assert.equal(t.id, id);
     assert.equal(t.tier, 'regional');
-    assert.deepEqual(t.countries, [country]);
+    assert.deepEqual(t.countries, [realm(country)], `${id} serves the realm that continues ${country}`);
     assert.equal(t.focuses.length, focuses, `${id} focuses`);
     assert.equal(Object.keys(t.spirits ?? {}).length, spirits, `${id} spirits`);
     assert.equal(Object.keys(t.events ?? {}).length, events, `${id} events`);

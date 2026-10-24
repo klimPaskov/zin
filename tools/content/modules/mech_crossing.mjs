@@ -30,7 +30,7 @@ export async function buildWesternCrossing(staged, ctx = {}) {
   const gflag = f => `has_global_flag = ${f}`;
   const notFlag = f => `NOT = { has_global_flag = ${f} }`;
   const westCountries = roster.countries.filter(c => economy.regionByRoster[c.scan] === 'west_lands');
-  const anchors = [...westCountries].sort((a, b) => (b.name === 'Gunwaith') - (a.name === 'Gunwaith') || b.states - a.states || a.name.localeCompare(b.name)).map(c => c.tag);
+  const anchors = [...westCountries].sort((a, b) => (b.name === 'Gunwyn') - (a.name === 'Gunwyn') || b.states - a.states || a.name.localeCompare(b.name)).map(c => c.tag);
   const T_ = TAG;
   const FOE = 'event_target:zin_west_foe';
   const LEADER = 'var:global.zin_west_convener';

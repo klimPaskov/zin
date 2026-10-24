@@ -71,7 +71,7 @@
   },
   {
    "id": 312, "title": "Furs for the South", "picture": "generic_sea", "window": "Emberleaf 1748", "hist": "Emberleaf 1748",
-   "who": [{ "names": ["Coldor", "Windwaith"] }, { "all": ["group:cold_lands", "any_owned_state = { is_coastal = yes }"], "not_names": ["Coldor", "Windwaith"], "share": 50 }],
+   "who": [{ "names": ["Coldor", "Vindael"] }, { "all": ["group:cold_lands", "any_owned_state = { is_coastal = yes }"], "not_names": ["Coldor", "Vindael"], "share": 50 }],
    "desc": "The fur ships sail south before the ice closes the harbours. The West Lands pay well this year, the factors say, and the best pelts are already reserved for the ones who paid in advance. The holds are being loaded by lantern-light, and the dockmen sing as they stack.",
    "options": [{ "name": "Send the best furs.", "ai": 100, "effects": ["add_political_power = 20"] }]
   },
@@ -91,7 +91,7 @@
    ]
   },
   {
-   "id": 315, "title": "Timber Rafts on the River", "picture": "generic_peace", "window": "Sowing 1748", "who": ["Gunwaith", "Girdon", "Lambin"], "hist": "Sowing 1748",
+   "id": 315, "title": "Timber Rafts on the River", "picture": "generic_peace", "window": "Sowing 1748", "who": ["Gunwyn", "Girdon", "Lambin"], "hist": "Sowing 1748",
    "desc": "Log rafts come down the rivers from the northern forests, twelve to a tow, bound for the shipyards. The raftsmen are paid by the log and by the day, and the foreman has taken to sleeping on the rearmost raft with a cudgel in his arms.",
    "options": [
     { "name": "Build boats.", "ai": 50, "effects": ["navy_experience = 3"] },

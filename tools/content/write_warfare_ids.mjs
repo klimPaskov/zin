@@ -7,9 +7,10 @@ import { fileURLToPath } from 'node:url';
 import { Staged } from './lib/core.mjs';
 import { buildNames } from './modules/names.mjs';
 import { buildWarfare } from './modules/warfare.mjs';
+import { countryTable } from './lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const { labels } = JSON.parse(await readFile(path.join(here, 'data/labels.json'), 'utf8'));
 const pools = buildNames(new Staged(), countries, labels);
 const ctx = { countries, pools };

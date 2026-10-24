@@ -47,8 +47,8 @@ export async function buildAfrit(staged, ctx) {
   const table = ctx.table ?? await loadTable(roster);
   const economy = await loadJson('economy.json'), W = await loadJson('warfare_ids.json');
   const byName = new Map(roster.map(c => [c.name, c]));
-  const need = n => { const c = byName.get(n); if (!c) throw new Error(`mech_afrit: ${n} is not in data/countries.json`); return c; };
-  const T = { hub: need(D.hub).tag, aenor: need(D.realm).tag, selen: need(D.selen).tag, mirolon: need(D.mirolon).tag, volgan: need('Volgan').tag };
+  const need = n => { const c = byName.get(n); if (!c) throw new Error(`mech_afrit: ${n} is not in the roster`); return c; };
+  const T = { hub: need(D.hub).tag, aenor: need(D.realm).tag, selen: need(D.selen).tag, mirolon: need(D.mirolon).tag, volgan: need('Puvulan').tag };
   T.hostGroup = W.hostGroupByCountry[D.hub];
   D.capZeroTags = D.caps.zero.map(n => need(n).tag);
   D.rivalCodes = D.rivals.map(([a, b]) => [need(a).tag, need(b).tag]);

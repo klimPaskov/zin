@@ -9,13 +9,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ZIN } from './lib/paths.mjs';
 import { readStates } from './write_forces_geography.mjs';
+import { countryTable } from './lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(here, 'data/mech_journey_geography.json');
 const readJson = async rel => JSON.parse(await readFile(path.join(here, rel), 'utf8'));
 
 export async function buildJourneyGeography() {
-  const { countries } = await readJson('data/countries.json');
+  const countries = countryTable();
   const economy = await readJson('data/economy.json');
   const geo = (await readJson('data/forces_geography.json')).countries;
   const states = await readStates();
@@ -41,7 +42,7 @@ export async function buildJourneyGeography() {
   return {
     schema: 1,
     owner: 'tools/content/write_journey_geography.mjs; regenerate with node tools/content/write_journey_geography.mjs, never by hand',
-    note: 'Middle Lands states (economy region middle_lands): mainland and Aenor Isle, their port provinces, the five westernmost mainland ports (the Western Crossing\'s shore, proposed rule of the key-sites table), and the strategic regions that hold them. Source: history/states, map/strategicregions, forces_geography.json, countries.json.',
+    note: 'Middle Lands states (economy region middle_lands): mainland and Aenor Isle, their port provinces, the five westernmost mainland ports (the Western Crossing\'s shore, proposed rule of the key-sites table), and the strategic regions that hold them. Source: history/states, map/strategicregions, forces_geography.json, the roster (lib/roster.mjs).',
     mainland: mainland.map(r => r.id),
     isle: isle.map(({ id, tag, port }) => ({ id, tag, port })),
     ports: ports.map(({ id, tag, port }) => ({ id, tag, port })),
