@@ -1,0 +1,914 @@
+{
+ "kind": "events",
+ "namespace": "zin_reign",
+ "source": "docs/specs/06_events/01_golden_king_and_succession.md, Acts V to VII (zin_reign.50 to .87).",
+ "events": [
+  {
+   "id": "zin_reign.50",
+   "title": "The Regency of the Golden Court",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor.210 fires it when the Court takes the seals",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "immediate": [
+    {
+     "fire": "zin_reign.51",
+     "days": 60
+    },
+    {
+     "fire": "zin_reign.52",
+     "days": 180
+    }
+   ],
+   "desc": "No king is named. The Regency rules in the crown's name, and the crown's name has never been better for trade.",
+   "options": [
+    {
+     "text": "Gold keeps the peace.",
+     "free": 70,
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 5
+      },
+      {
+       "pp": 100
+      }
+     ]
+    },
+    {
+     "text": "The Regency will be honest.",
+     "free": 30,
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": -5
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": -5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.51",
+   "title": "The Temples Are Displeased",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "var:zin_council_influence>=50"
+   ],
+   "desc": "The High Confessor preaches that a crown without a king offends the god, and the temples of Parim are full of people who agree with him.",
+   "options": [
+    {
+     "text": "Endow the temples.",
+     "free": 60,
+     "do": [
+      {
+       "pp": -75
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 5
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "faithful",
+       "value": -5
+      }
+     ]
+    },
+    {
+     "text": "The Regency answers to the Concord, not the temples.",
+     "free": 40,
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "faithful",
+       "value": 5
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": -5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.52",
+   "title": "Prince Eronel Asks for the Crown",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_ruled_by_court",
+    "!flag:zin_reign_eronel_crowned"
+   ],
+   "desc": "Prince Eronel of Arcedor asks the Regency to crown him. He has the rooms, the friends and the gold leaf, and lacks only the anointing.",
+   "options": [
+    {
+     "text": "Crown the prince.",
+     "free": 50,
+     "do": [
+      {
+       "recruit": "zin_eronel"
+      },
+      {
+       "promote": "zin_eronel"
+      },
+      {
+       "leader_trait": "zin_trait_gilded_heir"
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": 10
+      },
+      {
+       "flag": "zin_reign_eronel_crowned"
+      }
+     ]
+    },
+    {
+     "text": "The Regency is enough.",
+     "free": 50,
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": -5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.53",
+   "title": "A Regency Without End",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "runner",
+   "date": "1754.3.1",
+   "to": "the Aenor realm, while the Court still rules",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_ruled_by_court"
+   ],
+   "desc": "Three years on, the Regency still rules for a crown nobody wears. The feasts are as long as the late King's, and the toasts are shorter.",
+   "options": [
+    {
+     "text": "So be it.",
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.55",
+   "title": "The Speaker of the Concord",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor.210 fires it when the Dominions take the seals",
+   "to": "the Aenor realm and every Concord dominion",
+   "guard": [
+    {
+     "or": [
+      "zin_aenor_is_realm",
+      "zin_aenor_is_concord_dominion"
+     ]
+    }
+   ],
+   "immediate": [
+    {
+     "if": [
+      "zin_aenor_is_realm"
+     ],
+     "then": [
+      {
+       "fire": "zin_reign.56",
+       "days": 30
+      },
+      {
+       "fire": "zin_reign.57",
+       "days": 365
+      }
+     ]
+    }
+   ],
+   "desc": "The dominion lords elect a Speaker to hold the seals, and every charter is rewritten as a Free Charter. The Speaker's first act is to read the Charters of Parim aloud from the first word.",
+   "variants": [
+    {
+     "suffix": "dominion",
+     "if": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "text": "The lords of the Concord have chosen a Speaker, and our charter is rewritten as a Free Charter. The seals of Parim now rest with the Concord and not with a crown."
+    }
+   ],
+   "options": [
+    {
+     "text": "The crown is first among equals.",
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": [
+      {
+       "stability": -0.03
+      }
+     ]
+    },
+    {
+     "text": "A charter that is ours.",
+     "show": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.56",
+   "title": "The Temples Ask Their Place",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The High Confessor asks what the Concord wants of the god's temples. The Speaker has twenty-six charters on the table and not one of them mentions a pulpit.",
+   "options": [
+    {
+     "text": "Keep the temples as they are.",
+     "free": 60,
+     "do": [
+      {
+       "stability": 0.02
+      }
+     ]
+    },
+    {
+     "text": "The temples answer to each dominion.",
+     "free": 40,
+     "do": [
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": -10
+      },
+      {
+       "call": "zin_afrit_add_veil",
+       "value": -3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.57",
+   "title": "A Concord Council Every Year",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The Concord Council meets again, as it did in 4A 212, and the Speaker means to see that it meets every year after.",
+   "options": [
+    {
+     "text": "Let the lords meet.",
+     "do": [
+      {
+       "call": "zin_aenor_convene_concord_council"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.60",
+   "title": "The People's King",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor.210 fires it when the Host takes the seals",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "[zin_loc_eindil] is hailed, not crowned, by the captains and scholars of the realm. He asks for the Lost Cause and not for a throne.",
+   "immediate": [
+    {
+     "fire": "zin_reign.61",
+     "days": 30
+    }
+   ],
+   "options": [
+    {
+     "text": "Hail him.",
+     "do": [
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 10
+      },
+      {
+       "gflag": "zin_lost_cause_with_eindil"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.61",
+   "title": "The Temples Do Not Kneel",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The temples will not bless a king without a house. Their doors stand open to the people and shut to the stranger who would lead them.",
+   "options": [
+    {
+     "text": "Let them pray as they like.",
+     "free": 60,
+     "do": [
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": -5
+      }
+     ]
+    },
+    {
+     "text": "The temples serve the realm.",
+     "free": 40,
+     "do": [
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": -15
+      },
+      {
+       "stability": -0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.65",
+   "title": "King Eronel",
+   "picture": "coronation",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "owner",
+   "external": "zin_afrit.23 fires it two days after the heir is crowned",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "immediate": [
+    {
+     "fire": "zin_reign.66",
+     "days": 180
+    }
+   ],
+   "desc": "Prince Eronel is crowned with the temples' blessing. The Chancellor stands at his right hand, and the crowd cheers a face it hardly knows.",
+   "options": [
+    {
+     "text": "Long live the King.",
+     "do": [
+      {
+       "stability": 0.03
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.66",
+   "title": "A King Who Signs",
+   "picture": "generic_court",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The new king signs everything the Chancellor brings him. The court calls it a gift for the work of the seals, and the Chancellor does not correct it.",
+   "options": [
+    {
+     "text": "The realm runs smoothly.",
+     "do": [
+      {
+       "pp": 50
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.70",
+   "title": "The King Afraid",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor.250 fires it three days after the proof is laid before the King",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The Golden King has not slept since the proof was laid before him. He eats nothing his own tasters have not touched, and for the first time in twenty years he asks the Lost Cause for guards.",
+   "options": [
+    {
+     "text": "Give him the frontier companies.",
+     "do": [
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 10
+      },
+      {
+       "idea": "zin_aenor_kings_tasters",
+       "days": 365
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.71",
+   "title": "The Temples Close Their Doors",
+   "picture": "generic_war",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor.260 fires it when the Faithful rise against the King",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "Half the temples of Parim bar their doors to the King's men. The other half open them to the frightened.",
+   "options": [
+    {
+     "text": "The King is still the King.",
+     "do": [
+      {
+       "war_support": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.72",
+   "title": "The Golden King Rides Out",
+   "kind": "news",
+   "picture": "generic_war",
+   "requires": [],
+   "source": "runner",
+   "date": "monthly",
+   "to": "every country",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_king_alive",
+    {
+     "any": "any_enemy_country",
+     "limit": [
+      "zin_aenor_is_realm",
+      "zin_aenor_ruled_by_faithful"
+     ]
+    },
+    {
+     "any": "any_controlled_state",
+     "limit": [
+      "zin_is_site_parim"
+     ]
+    }
+   ],
+   "desc": "In this telling of the age, the Golden King rides at the head of his league for the first time in his life. Behind him the gilt on the banners is new, and the men beneath them are not.",
+   "options": [
+    {
+     "text": "Let him ride.",
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.73",
+   "title": "A King Who Lived",
+   "picture": "generic_war",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor.261 fires it when the King endures",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The King lives. In this telling of the age, the Golden Court goes on, and so does its gold.",
+   "options": [
+    {
+     "text": "Long live the Golden King.",
+     "do": [
+      {
+       "stability": 0.05
+      },
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.80",
+   "title": "The God-King's City",
+   "picture": "houses",
+   "requires": [],
+   "source": "runner",
+   "date": [
+    "1752.3.1",
+    "1753.3.1"
+   ],
+   "to": "the Aenor realm while the Deliverer rules it, and the Worshipdom",
+   "guard": [
+    {
+     "or": [
+      {
+       "and": [
+        "zin_aenor_is_realm",
+        "zin_afrit_rules_here"
+       ]
+      },
+      "zin_afrit_is_hub"
+     ]
+    }
+   ],
+   "desc": "Parim has never been cleaner or quieter. The granaries are full, the beggars are fed, and fewer people ask questions in the taverns.",
+   "variants": [
+    {
+     "suffix": "hub",
+     "if": [
+      "zin_afrit_is_hub"
+     ],
+     "text": "Parim is quiet because the Couriers' Chapter has made it so. The granaries are full, the taverns are listened to, and the Council reads the week's whispers every dawn."
+    }
+   ],
+   "options": [
+    {
+     "text": "Peace and order.",
+     "hist": true,
+     "free": 100,
+     "do": [
+      {
+       "stability": 0.02
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.81",
+   "title": "The King Withdraws to Pray",
+   "picture": "hermitage",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_afrit.32 fires it when the Deliverer leaves Parim and rules Aenor",
+   "to": "the Aenor realm and every Concord dominion",
+   "guard": [
+    {
+     "or": [
+      "zin_aenor_is_realm",
+      "zin_aenor_is_concord_dominion"
+     ]
+    }
+   ],
+   "desc": "King [zin_loc_deliverer] has withdrawn into retreat to pray for the realm. Chancellor Merovan holds the seals until he returns.",
+   "variants": [
+    {
+     "suffix": "dominion",
+     "if": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "text": "Riders from Parim: King [zin_loc_deliverer] has withdrawn into retreat to pray for the realm, and Chancellor Merovan holds the seals until he returns. Our lord is asked to pray as well."
+    }
+   ],
+   "options": [
+    {
+     "text": "The Chancellor governs.",
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": []
+    },
+    {
+     "text": "We pray for the realm.",
+     "show": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.82",
+   "title": "The King Returns Pale",
+   "picture": "hermitage",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_afrit.34 fires it when the Deliverer is back in Parim and the secret holds",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_afrit_rules_here",
+    "zin_afrit_secret_kept"
+   ],
+   "desc": "The King is back in Parim. He walks slowly and receives no one for a month. The temples say the god bears the realm's sorrows.",
+   "options": [
+    {
+     "text": "Pray for the King.",
+     "do": [
+      {
+       "stability": -0.02
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.83",
+   "title": "Talk of an Impostor",
+   "picture": "generic_court",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_afrit.40 (Denounce him) and the historical option of zin_eindil.82 fire it",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "!gflag:zin_story_done_reign_83"
+   ],
+   "immediate": [
+    {
+     "gflag": "zin_story_done_reign_83"
+    },
+    {
+     "loop": "every_country",
+     "limit": [
+      "zin_aenor_is_concord_dominion",
+      "!tag:Selen"
+     ],
+     "do": [
+      {
+       "fire": "zin_reign.84",
+       "days": 30
+      }
+     ]
+    }
+   ],
+   "desc": "The chancery warns every dominion: a foreign impostor claims the blood of Aen and speaks against the King.",
+   "options": [
+    {
+     "text": "Spread the warning.",
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty_all",
+       "value": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.84",
+   "title": "The Dominions and the Impostor",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "chain",
+   "to": "every Concord dominion except Selen",
+   "guard": [
+    "zin_aenor_is_concord_dominion"
+   ],
+   "desc": "Parim says the stranger is a liar. Our own captains, who have heard him, say he talks sense.",
+   "options": [
+    {
+     "text": "Parim knows best.",
+     "hist": true,
+     "free": 70,
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": 3
+      }
+     ]
+    },
+    {
+     "text": "Let him speak in our halls.",
+     "free": 30,
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": -5
+      },
+      {
+       "call": "zin_eindil_add_regard",
+       "value": 10
+      },
+      {
+       "call": "zin_afrit_add_veil",
+       "value": -2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.85",
+   "title": "What Is Owed to a False God?",
+   "picture": "unmasking",
+   "requires": [
+    "zin_afrit_revealed"
+   ],
+   "source": "owner",
+   "external": "zin_afrit_reveal fires it three days after the name is spoken, to every Aenor realm",
+   "to": "every Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "A name has been spoken in Parim, and the court is deciding what it owes.",
+   "variants": [
+    {
+     "suffix": "revealed_ruled",
+     "if": [
+      "zin_afrit_rules_here"
+     ],
+     "text": "The court knows what its king is. Some lords leave Parim by night. Most stay, from faith or from fear."
+    },
+    {
+     "suffix": "revealed_temples",
+     "if": [
+      "gflag:zin_afrit_revealed"
+     ],
+     "text": "The temples of Aenor stand accused. The Houses of the First Light served the false god, and those who work in them are asking whether they served a lie."
+    }
+   ],
+   "options": [
+    {
+     "text": "The King is the King.",
+     "hist": {
+      "when": [
+       "zin_afrit_rules_here"
+      ]
+     },
+     "free": 100,
+     "show": [
+      "zin_afrit_rules_here"
+     ],
+     "do": [
+      {
+       "stability": -0.05
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 5
+      }
+     ]
+    },
+    {
+     "text": "Let the lords who flee go.",
+     "free": 0,
+     "show": [
+      "zin_afrit_rules_here"
+     ],
+     "do": [
+      {
+       "macro": "all_non_ruling",
+       "value": 10
+      }
+     ]
+    },
+    {
+     "text": "Close the Houses.",
+     "hist": {
+      "unless": [
+       "zin_afrit_rules_here"
+      ]
+     },
+     "free": 80,
+     "show": [
+      "!zin_afrit_rules_here"
+     ],
+     "do": [
+      {
+       "call": "zin_afrit_purge_houses"
+      }
+     ]
+    },
+    {
+     "text": "Watch them.",
+     "free": 20,
+     "show": [
+      "!zin_afrit_rules_here"
+     ],
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.86",
+   "title": "The Captains' Regency",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor.300 fires it one day after the throne is abandoned, when the Captains' Regency takes the seals",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "immediate": [
+    {
+     "fire": "zin_reign.87",
+     "days": 14
+    }
+   ],
+   "desc": "Lord-Commander Tarec and the frontier captains have taken the seals until a king returns. Nobody asks which king.",
+   "options": [
+    {
+     "text": "Hold the walls.",
+     "free": 100,
+     "do": [
+      {
+       "war_support": 0.05
+      },
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.87",
+   "title": "Empty Temples in Parim",
+   "picture": "houses",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "Half the priests have gone east with their god. The other half pray for forgiveness. The poor still come for bread.",
+   "options": [
+    {
+     "text": "Feed them from the crown's stores.",
+     "hist": true,
+     "free": 70,
+     "do": [
+      {
+       "pp": -50
+      },
+      {
+       "stability": 0.03
+      }
+     ]
+    },
+    {
+     "text": "Close the temples.",
+     "free": 30,
+     "do": [
+      {
+       "call": "zin_afrit_purge_houses"
+      },
+      {
+       "stability": -0.03
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

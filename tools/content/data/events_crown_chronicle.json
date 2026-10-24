@@ -1,0 +1,92 @@
+{
+ "kind": "chronicle",
+ "source": "docs/specs/06_events/04_endings.md (the end screen) and 01_golden_king_and_succession.md (the two-face camp names). One scripted localisation per checkpoint line (zin_loc_chronicle_cpNN), per paragraph (zin_loc_chronicle_pN), the heading, the meter, the closing line, the player's part, the lists of the lead-up events and the Lost Cause cost. A line is a string, or { text, variants: [{ if, text }], needs } where needs are the conditions under which the historical state may be shown (otherwise the diverged line stands in).",
+ "camps": {
+  "zin_loc_camp_faithful": { "secret": "The Deliverer's Faithful", "true": "Afrit's Supporters", "hub_sees_true": true },
+  "zin_loc_camp_host": { "secret": "The Stranger's Host", "true": "Eindil's Host", "hub_sees_true": false }
+ },
+ "endings": {
+  "1": { "flag": "zin_ending_lost_cause", "heading": "The Fourth Age ended on [GetDateText]: the Lost Cause prevailed.", "name": "The Lost Cause" },
+  "2": { "flag": "zin_ending_children_of_volgan", "heading": "The Fourth Age ended on [GetDateText]: the children of Volgan inherited a ruined world.", "name": "Children of Volgan" },
+  "3": { "flag": "zin_ending_ashen_throne", "heading": "The Fourth Age ended on [GetDateText]: the Ashen Throne was raised.", "name": "The Ashen Throne" },
+  "4": { "flag": "zin_ending_golden_court", "heading": "The Fourth Age ended on [GetDateText]: the Golden Court endured.", "name": "The Golden Court Endures" },
+  "5": { "flag": "zin_ending_western_crown", "heading": "The Fourth Age ended on [GetDateText]: a western crown held Parim.", "name": "A Western Crown in Parim" },
+  "6": { "flag": "zin_ending_strait_master", "heading": "The Fourth Age ended on [GetDateText]: Lerendor became master of the strait.", "name": "Master of the Strait" },
+  "7": { "flag": "zin_ending_eastern_king", "heading": "The Fourth Age ended on [GetDateText]: the East was gathered under one crown.", "name": "One King in the East" },
+  "8": { "flag": "zin_ending_unfinished", "heading": "On [GetDateText] the chroniclers closed the Fourth Age unfinished: no crown had ended it.", "name": "The Age Unfinished" }
+ },
+ "paragraphs": { "p1": ["01", "02", "03", "04", "05"], "p2": ["06", "07", "08", "09", "10"], "p3": ["11", "12", "13", "14", "15", "16"], "p4": ["17", "18", "19", "20", "21", "22"], "p5": ["23", "24", "25", "26"] },
+ "lines": {
+  "01": { "1": "The age began in peace, in the gilded years of a king who sold his offices." },
+  "02": { "1": "A man woke in the ice of the Cold Lands.",
+          "2": { "text": "The man in the ice woke at an hour no one had foretold.", "variants": [ { "if": ["rule:zin_rule_eindil_waking=EARLY"], "suffix": "early", "text": "The man in the ice woke early, before the world was ready for him." }, { "if": ["rule:zin_rule_eindil_waking=LATE"], "suffix": "late", "text": "The man in the ice woke late, when the world had stopped looking north." } ] } },
+  "03": { "1": "The Truce of the Grey Ford broke, and the western clans remembered their old quarrels.", "2": "The Grey Ford truce held, and the clans kept their bows strung but quiet." },
+  "04": { "1": "In the West he made a peace and laid a crown down.", "2": "Another hand made the western peace.", "3": "The West never knew him." },
+  "05": { "1": "In Mistfall the Golden King died in his sleep, and Parim rang its bells for a day.",
+          "2": { "text": "The Golden King did not die in the year the age foretold.", "variants": [ { "if": ["gflag:zin_afrit_revealed"], "suffix": "revealed", "text": "The Golden King did not die as the Council planned." } ] } },
+  "06": { "1": "The temples laid the crown before [zin_loc_deliverer].", "2": "Another camp took the seals of Parim.", "3": "No god took Aenor's crown." },
+  "07": { "1": "Storms carried the stranger to the Islands of the South." },
+  "08": { "1": "At Gala, Lorien named him Eindil, son of Ein.", "2": "He learned his name by another road.", "3": "Nobody named him." },
+  "09": { "1": "At Yeldenne the guardian fell and gave Glo to [zin_loc_eindil].", "2": "The hall of Yeldenne ended another way.", "3": "Glo never left the north." },
+  "10": { "1": "He warned Aenor, and Aenor called him an impostor.", "2": "Aenor listened to him." },
+  "11": { "1": "The War of the Last Crowns began.",
+          "2": { "text": "The war of the crowns began on a day the chroniclers had not foretold.", "variants": [ { "if": ["gflag:zin_ending_cp11_early"], "suffix": "early", "text": "The war of the crowns began early, before the chroniclers had finished their warnings." }, { "if": ["gflag:zin_ending_cp11_late"], "suffix": "late", "text": "The war of the crowns began late, after the chroniclers had grown tired of warning." } ] } },
+  "12": { "1": "The North abandoned the old alliance.", "2": "The North kept, or broke, its oath in its own way." },
+  "13": { "1": "The West crossed the wide sea.", "2": "The West did not cross as conquerors." },
+  "14": { "1": "Eastern banners crossed the rift.", "2": "No eastern coalition crossed the rift." },
+  "15": { "1": "Volgan retook Mirolon and marched north.", "2": "Mirolon held the passes." },
+  "16": { "1": "The dead rose out of the north.", "2": "The dead rose at another hour, or not at all.", "3": "The north stayed silent." },
+  "17": { "1": { "text": "The god-king fled east and was named King of the East; the world learned his name.", "needs": ["gflag:zin_afrit_revealed"] }, "2": "[zin_loc_deliverer] stood in Parim instead." },
+  "18": { "1": "Western armies took Parim.", "2": "Parim did not fall to the West." },
+  "19": { "1": "On a dragon, with Varner and Golbran, came [zin_loc_eindil] back to the war.", "2": "In the quiet after, [zin_loc_eindil] came back to no battle.", "3": "The stranger did not come back." },
+  "20": { "1": "Varner died shielding the living." },
+  "21": { "1": "Volgan cast [zin_loc_eindil] down, and the New Gods raised him." },
+  "22": { "1": "Volgan's body was broken by [zin_loc_eindil].", "2": "Volgan's body was not broken." },
+  "23": { "1": "The Old God came forth, and Lorien died forcing him back.", "2": "The Old God came forth and withdrew without the death of the King of Gala." },
+  "24": { "1": { "text": "Afrit came back from the East and cast his brother from a cliff.", "needs": ["gflag:zin_afrit_revealed"] },
+          "2": { "text": "The stranger's trial came in another shape.", "variants": [ { "if": ["gflag:zin_afrit_revealed"], "suffix": "revealed", "text": "The second betrayal went another way." } ] } },
+  "25": { "1": { "text": "In the palace the false god was stripped and killed; Golbran died saving [zin_loc_eindil].", "needs": ["gflag:zin_afrit_revealed"] }, "2": "The palace held against [zin_loc_eindil]." },
+  "26": { "1": "Eindil, son of Ein, was crowned King of Aenor.", "3": "No king of Aen's line was crowned." }
+ },
+ "meter": "The Gathering Dark stood at [?global.zin_gathering_dark|0] of a hundred.",
+ "unknown": {
+  "volgan": "What remains of Volgan",
+  "zol": "what the Old God keeps in the dark",
+  "tail": "what the Fifth Age will be, no chronicle of this age can say."
+ },
+ "your_part": [
+  { "key": "holder_lost_cause", "if": ["idea:zin_world_no_crown_over_crowns"], "text": "The age ended in your hands. You crowned the king the league fought for, and asked no crown to kneel." },
+  { "key": "holder_children", "if": ["idea:zin_world_lord_of_a_ruined_world"], "text": "The age ended in your hands. The grave hosts hold the plains, and the clients kneel in your name." },
+  { "key": "holder_ashen", "if": ["idea:zin_world_the_worshipped_king"], "text": "The age ended in your hands. The temples are full, the council sits in every court, and your name is spoken as a god's." },
+  { "key": "holder_golden", "if": ["idea:zin_world_outcome_golden_court"], "text": "The age ended in your hands. The feasts go on in Parim, and the gold has not run out." },
+  { "key": "holder_western", "if": ["idea:zin_world_outcome_western_crown"], "text": "The age ended in your hands. Your banners hold the oldest city of men." },
+  { "key": "holder_strait", "if": ["idea:zin_world_outcome_strait_master"], "text": "The age ended in your hands. No ship crosses the Narrow Sea without passing your chain." },
+  { "key": "holder_eastern", "if": ["idea:zin_world_outcome_eastern_king"], "text": "The age ended in your hands. One crown rules the caravan roads, and it is yours." },
+  { "key": "coalition", "if": ["gflag:zin_ending_lost_cause", { "any": "any_other_country", "limit": ["zin_aenor_eindil_rules", { "faction_with": "ROOT" }] }], "text": "Your banners stood with the heir when it mattered." },
+  { "key": "friend", "if": ["var:zin_eindil_regard>=50"], "text": "The king will remember what you did for a stranger." },
+  { "key": "knelt", "if": [ { "or": [ "subject_of:Volgan", "flag:zin_afrit_eastern_client" ] } ], "text": "You knelt. History will remember to whom." },
+  { "key": "fallen", "if": ["has_capitulated"], "text": "Your realm did not see the end of the war as a free crown." },
+  { "key": "zol", "if": ["zin_is_zol"], "text": "The north keeps its counsel. The dead are patient." },
+  { "key": "hermitage", "if": ["zin_afrit_is_hub", "gflag:zin_afrit_dead", "gflag:zin_afrit_revealed"], "text": "The hermitage outlived its god." },
+  { "key": "other", "if": [], "text": "Your realm lived through the end of an age." }
+ ],
+ "possible": [
+  { "key": "lost_cause", "if": ["!gflag:zin_eindil_lost", "!gflag:zin_eindil_crowned"], "text": "\n§YThe Lost Cause§!: the heir of Aen crowned in Parim." },
+  { "key": "children", "if": [ { "any": "any_country", "limit": ["zin_is_volgan"] }, "!gflag:zin_volgan_body_destroyed"], "text": "\n§YChildren of Volgan§!: the Great Spirit's hosts holding Parim." },
+  { "key": "ashen", "if": ["!gflag:zin_afrit_dead", "gflag:zin_afrit_revealed"], "text": "\n§YThe Ashen Throne§!: Afrit's temples ruling from Parim." }
+ ],
+ "outcomes": [
+  { "key": "golden", "if": ["!gflag:zin_golden_king_dead"], "text": "\n§YThe Golden Court endures§!: the Golden King still reigns." },
+  { "key": "western", "if": ["gflag:zin_west_holds_parim"], "text": "\n§YA western crown in Parim§!: western banners hold the city." },
+  { "key": "strait", "if": ["gflag:zin_leren_strait_supremacy", { "any": "any_country", "limit": ["zin_leren_holds_strait"] }], "text": "\n§YMaster of the Strait§!: Lerendor holds both shores." },
+  { "key": "eastern", "if": ["gflag:zin_east_united"], "text": "\n§YOne king in the East§!: the caravan roads answer to one crown." }
+ ],
+ "outcomes_none": "\nNo outcome holds yet.",
+ "cost": {
+  "dead_names": [ { "flag": "zin_lorien_dead", "name": "Lorien" }, { "flag": "zin_varner_dead", "name": "Varner" }, { "flag": "zin_horos_dead", "name": "Horos" }, { "flag": "zin_golbran_dead", "name": "Golbran" } ],
+  "dead_tail": "did not live to see it.",
+  "zol": " The Old God was driven back, not slain.",
+  "volgan": " Volgan's body was broken; what remains of him, no one can say.",
+  "necklace": " The king wears the Necklace of the Abyss, and its price is not yet known."
+ }
+}

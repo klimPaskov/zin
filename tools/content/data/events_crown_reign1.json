@@ -1,0 +1,1786 @@
+{
+ "kind": "events",
+ "namespace": "zin_reign",
+ "source": "docs/specs/06_events/01_golden_king_and_succession.md, Acts I to IV (zin_reign.10 to .46). Notation: tools/content/lib/crown_script.mjs. Fields: source (runner | hook | chain | owner), hist is the historical option of C8, free the FREE weight, ai the situational modifiers, show the option's own trigger, guard the event's trigger block.",
+ "events": [
+  {
+   "id": "zin_reign.10",
+   "title": "The King's Nineteenth Year",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "runner",
+   "date": "1748.4.1",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_king_alive",
+    "!gflag:zin_golden_king_plot_exposed"
+   ],
+   "desc": "Nineteen years ago the Golden King took the crown, and Parim means to say so. The Hall of Kings is hung with new gilt, the heralds are rehearsing, and the court asks how the anniversary should be kept.",
+   "options": [
+    {
+     "text": "A day of gold for Parim.",
+     "hist": true,
+     "free": 70,
+     "do": [
+      {
+       "pp": -50
+      },
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 3
+      },
+      {
+       "idea": "zin_reign_anniversary",
+       "days": 180
+      }
+     ]
+    },
+    {
+     "text": "A day of prayer at the temples.",
+     "free": 30,
+     "do": [
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 2
+      },
+      {
+       "stability": 0.02
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.11",
+   "title": "The Gilded Progress",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "runner",
+   "date": "1748.7.1",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_king_alive",
+    "!gflag:zin_golden_king_plot_exposed"
+   ],
+   "desc": "The King will tour his dominions in a procession of gilded carriages, and his treasurers ask which road the progress takes. Every lord along it will be asked to feed a thousand courtiers.",
+   "options": [
+    {
+     "text": "Through the rich lake cities.",
+     "hist": true,
+     "free": 60,
+     "do": [
+      {
+       "pp": -25
+      },
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 2
+      },
+      {
+       "loop": "every_country",
+       "limit": [
+        "zin_aenor_is_concord_dominion",
+        {
+         "not": [
+          {
+           "any": "any_owned_state",
+           "limit": [
+            "zin_is_site_great_lake_ports"
+           ]
+          }
+         ]
+        }
+       ],
+       "do": [
+        {
+         "call": "zin_aenor_add_concord_loyalty",
+         "value": -2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "To Selen first, as the Restorer did.",
+     "free": 30,
+     "do": [
+      {
+       "pp": -50
+      },
+      {
+       "fire": "zin_reign.12",
+       "days": 3,
+       "to": "tag:Selen"
+      }
+     ]
+    },
+    {
+     "text": "Send his portrait instead.",
+     "free": 10,
+     "do": [
+      {
+       "pp": 25
+      },
+      {
+       "call": "zin_aenor_add_concord_loyalty_all",
+       "value": -1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.12",
+   "title": "The Progress Comes to Selen",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "chain",
+   "to": "Selen",
+   "guard": [
+    "zin_aenor_is_concord_dominion"
+   ],
+   "desc": "The King's gilded carriages are on the road to Selen, and the rangers' hall has not been swept for company in a generation. The First Warden must decide what welcome the progress deserves.",
+   "options": [
+    {
+     "text": "Honour the King, as the Charters ask.",
+     "free": 60,
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": 8
+      },
+      {
+       "pp": -25
+      }
+     ]
+    },
+    {
+     "text": "Honour the Restorer's memory, not this king.",
+     "free": 40,
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": -3
+      },
+      {
+       "stability": 0.03
+      },
+      {
+       "in": "parim",
+       "do": [
+        {
+         "opinion": "zin_reign_selen_slight",
+         "target": "ROOT",
+         "reverse": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.13",
+   "title": "A Portrait for the Hall of Kings",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "runner",
+   "date": "1749.3.1",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_king_alive",
+    "!gflag:zin_golden_king_plot_exposed"
+   ],
+   "desc": "The court painter has finished the King's face and asks one thing only: how much gold leaf the portrait may carry. The King, he is careful to add, has opinions.",
+   "options": [
+    {
+     "text": "All of it.",
+     "hist": true,
+     "free": 80,
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 2
+      },
+      {
+       "pp": 25
+      }
+     ]
+    },
+    {
+     "text": "Paint him as he is.",
+     "free": 20,
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": -1
+      },
+      {
+       "stability": -0.01
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.14",
+   "title": "Muster Day of the Lost Cause",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "runner",
+   "date": "1749.5.1",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_king_alive",
+    "!gflag:zin_golden_king_plot_exposed"
+   ],
+   "desc": "The league against the powers of the dark musters on the Field of Banners. Its frontier captains ask for pay, and the court asks for a parade. The league's strength stands at [?ROOT.zin_aenor_lost_cause|0] of a hundred.",
+   "options": [
+    {
+     "text": "A parade for the King's league.",
+     "hist": true,
+     "free": 70,
+     "do": [
+      {
+       "pp": -50
+      },
+      {
+       "war_support": 0.02
+      },
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": -2
+      }
+     ]
+    },
+    {
+     "text": "Pay the frontier companies.",
+     "free": 30,
+     "do": [
+      {
+       "pp": -75
+      },
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 6
+      },
+      {
+       "fire": "zin_reign.15",
+       "days": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.15",
+   "title": "Lord-Commander Tarec's Thanks",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "chain",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "Lord-Commander Tarec Belurith thanks the crown. His companies on the frontier had not been paid in a year, and some had begun to sell their own arrows.",
+   "options": [
+    {
+     "text": "See that it does not happen again.",
+     "do": [
+      {
+       "stability": 0.01
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.16",
+   "title": "The Chancellor's Accounts",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "runner",
+   "date": [
+    "1748.12.1",
+    "1749.12.1"
+   ],
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_king_alive",
+    "!gflag:zin_golden_king_plot_exposed"
+   ],
+   "desc": "Chancellor Merovan presents the year's accounts to the council. They balance, as they always do, in a hand so even that no auditor has ever found a blot.",
+   "options": [
+    {
+     "text": "Thank the Chancellor.",
+     "hist": true,
+     "free": 80,
+     "do": [
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 2
+      },
+      {
+       "pp": 25
+      }
+     ]
+    },
+    {
+     "text": "Ask for the ledgers of the temple houses.",
+     "free": 20,
+     "do": [
+      {
+       "pp": -25
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": -2
+      },
+      {
+       "flag": "zin_reign_asked_ledgers",
+       "tip": "While the King lives, the inquiry into the temple ledgers is likelier to find what it seeks."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.17",
+   "title": "The Dominions Count Their Taxes",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "runner",
+   "date": "monthly",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_king_alive",
+    "var:zin_aenor_concord_avg<50",
+    "!flag:zin_story_seen_reign_17"
+   ],
+   "immediate": [
+    {
+     "flag": "zin_story_seen_reign_17",
+     "days": 365
+    }
+   ],
+   "desc": "Envoys of the dominions bring a petition about the King's new taxes. The lake cities pay in gold, the marches in grain, and the marches have begun to count what they pay.",
+   "options": [
+    {
+     "text": "The crown's needs come first.",
+     "hist": true,
+     "free": 70,
+     "do": [
+      {
+       "pp": 50
+      },
+      {
+       "call": "zin_aenor_add_concord_loyalty_all",
+       "value": -2
+      }
+     ]
+    },
+    {
+     "text": "Remit a year's tax.",
+     "free": 30,
+     "do": [
+      {
+       "pp": -75
+      },
+      {
+       "call": "zin_aenor_add_concord_loyalty_all",
+       "value": 4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.19",
+   "title": "The Mistfall Feast",
+   "picture": "court_feast",
+   "requires": [],
+   "source": "owner",
+   "external": "The Aenor mechanic (zin_aenor_tick_death_clock) fires it with days = clock - 1, one day before zin_aenor.200",
+   "to": "the Aenor realm and every Concord dominion",
+   "guard": [
+    {
+     "or": [
+      "zin_aenor_is_realm",
+      "zin_aenor_is_concord_dominion"
+     ]
+    },
+    "!gflag:zin_golden_king_plot_exposed"
+   ],
+   "desc": "The Mistfall feast runs past midnight. The King laughs louder than anyone and leaves the hall last, and the candles of the Golden Court burn until dawn.",
+   "variants": [
+    {
+     "suffix": "dominion",
+     "if": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "text": "In Parim the Mistfall feast runs past midnight, and the couriers who carry its toasts to the dominions will ride all night. The King, they say, laughed louder than anyone."
+    }
+   ],
+   "options": [
+    {
+     "text": "Another feast, another year.",
+     "hist": true,
+     "free": 100,
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": [
+      {
+       "pp": 10
+      }
+     ]
+    },
+    {
+     "text": "The King feasts; we pay.",
+     "free": 1,
+     "show": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.20",
+   "title": "The Bells of Parim",
+   "picture": "king_is_dead",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "Every bell in Parim tolls for a day. Chancellor Merovan seals the palace and sends riders to every dominion, and the four voices of the realm have already begun to count one another.",
+   "options": [
+    {
+     "text": "Let the court mourn.",
+     "do": [
+      {
+       "stability": 0.02
+      },
+      {
+       "tip": "Starting support: the Golden Court [?ROOT.zin_aenor_camp_court|0], the Free Dominions [?ROOT.zin_aenor_camp_dominions|0], [zin_loc_camp_faithful] [?ROOT.zin_aenor_camp_faithful|0], [zin_loc_camp_host] [?ROOT.zin_aenor_camp_host|0]."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.21",
+   "title": "Mourners to Parim",
+   "picture": "king_is_dead",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "great powers, friends of Aenor and East Lands courts with footholds; never Lerendor, Volgan, his subjects, Zol, Yeldenne or a dominion",
+   "guard": [
+    "!zin_aenor_is_realm"
+   ],
+   "desc": "Parim's envoys bring word that the Golden King is dead. Our court must decide how to mourn a king it did not love.",
+   "options": [
+    {
+     "text": "A letter of condolence.",
+     "hist": true,
+     "free": 50,
+     "do": []
+    },
+    {
+     "text": "Send a great embassy.",
+     "free": 40,
+     "ai": [
+      {
+       "if": [
+        "zin_east_is_court"
+       ],
+       "set": 80
+      }
+     ],
+     "do": [
+      {
+       "pp": -25
+      },
+      {
+       "in": "parim",
+       "do": [
+        {
+         "opinion": "zin_reign_mourned_king",
+         "target": "ROOT",
+         "reverse": false
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "Say nothing.",
+     "free": 10,
+     "do": [
+      {
+       "in": "parim",
+       "do": [
+        {
+         "opinion": "zin_reign_mourning_snub",
+         "target": "ROOT",
+         "reverse": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.22",
+   "title": "Talk in the Taverns",
+   "picture": "king_is_dead",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "In the lake quarters people say the King was strong at supper and cold by dawn. Some say the gods took him for his greed. Some say worse, and lower their voices.",
+   "options": [
+    {
+     "text": "Hang the loudest tongues.",
+     "hist": true,
+     "free": 60,
+     "do": [
+      {
+       "stability": 0.02
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 2
+      },
+      {
+       "call": "zin_world_add_gathering_dark",
+       "value": 0.5
+      }
+     ]
+    },
+    {
+     "text": "Let them talk; they always do.",
+     "free": 30,
+     "do": [
+      {
+       "stability": -0.01
+      }
+     ]
+    },
+    {
+     "text": "Ask the royal physicians what they saw.",
+     "free": 10,
+     "show": [
+      "flag:zin_aenor_royal_physicians"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.23",
+   "title": "The King's Funeral",
+   "picture": "king_is_dead",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The Golden King goes to the vault of kings in a coffin of gilded oak. The court asks how great a funeral the treasury can bear, and the temples ask who will lead the rites.",
+   "options": [
+    {
+     "text": "The temples will lead the rites.",
+     "hist": true,
+     "free": 50,
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "faithful",
+       "value": 5
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 2
+      }
+     ]
+    },
+    {
+     "text": "Gold, as he would have wished.",
+     "free": 50,
+     "do": [
+      {
+       "pp": -75
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": 5
+      }
+     ]
+    },
+    {
+     "text": "A soldier's burial; the Lost Cause carries him.",
+     "free": 0,
+     "do": [
+      {
+       "macro": "host_or_dominions",
+       "host": 5,
+       "dominions": 3
+      },
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.24",
+   "title": "Word Reaches the Dominions",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "hook",
+   "to": "every Concord dominion",
+   "guard": [
+    "zin_aenor_is_concord_dominion"
+   ],
+   "desc": "Riders from Parim: the King is dead. Our lord must choose words for the Concord Council and words for our own hall.",
+   "options": [
+    {
+     "text": "Grief for the crown.",
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        "var:zin_concord_loyalty>=50"
+       ],
+       "set": 70
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": 3
+      }
+     ]
+    },
+    {
+     "text": "The Charters of Parim bind us to the crown, not to the court.",
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        "var:zin_concord_loyalty<50"
+       ],
+       "set": 70
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": -3
+      },
+      {
+       "in": "parim",
+       "do": [
+        {
+         "call": "zin_aenor_add_camp_support",
+         "camp": "dominions",
+         "value": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.25",
+   "title": "Selen Asks Who Rules",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm and every Concord dominion",
+   "guard": [
+    {
+     "or": [
+      "zin_aenor_is_realm",
+      "zin_aenor_is_concord_dominion"
+     ]
+    }
+   ],
+   "desc": "The First Warden of Selen asks the council a plain question: who holds the seals, and by what right? The envoys of the dominions wait in the gallery for the answer.",
+   "variants": [
+    {
+     "suffix": "dominion",
+     "if": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "text": "The First Warden of Selen has put a plain question to the council in Parim: who holds the seals, and by what right? The lords of the other dominions wait to hear the answer."
+    }
+   ],
+   "options": [
+    {
+     "text": "The council holds them until the crown is given.",
+     "hist": true,
+     "free": 70,
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 3
+      },
+      {
+       "in": "tag:Selen",
+       "do": [
+        {
+         "call": "zin_aenor_add_concord_loyalty",
+         "value": -5
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "The Concord shall be heard.",
+     "free": 30,
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "dominions",
+       "value": 5
+      },
+      {
+       "in": "tag:Selen",
+       "do": [
+        {
+         "call": "zin_aenor_add_concord_loyalty",
+         "value": 5
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "We wait on Parim's answer.",
+     "free": 1,
+     "show": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.26",
+   "title": "A Rival in the Gilded Halls",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "var:zin_aenor_camp_court>=25"
+   ],
+   "desc": "Prince Eronel of Arcedor, of an old collateral line of the house of Aen, is seen everywhere in the Golden Court. Office-buyers fill his rooms and sit at his table.",
+   "options": [
+    {
+     "text": "Watch the prince.",
+     "hist": true,
+     "free": 70,
+     "do": []
+    },
+    {
+     "text": "Invite him to the council.",
+     "free": 30,
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": 5
+      },
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.30",
+   "title": "The Golden Court Opens Its Purses",
+   "picture": "thirty_days",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    "var:zin_aenor_camp_court>=15"
+   ],
+   "desc": "The office-buyers will not lose what they paid for. Gold flows to every captain in Parim, and every captain knows the price of a seal.",
+   "options": [
+    {
+     "text": "Refuse it.",
+     "hist": {
+      "when": [
+       "zin_aenor_ruled_by_faithful"
+      ]
+     },
+     "free": 70,
+     "ai": [
+      {
+       "if": [
+        "zin_aenor_ruled_by_court"
+       ],
+       "set": 0
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": -5
+      }
+     ]
+    },
+    {
+     "text": "Take their gold.",
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        "zin_aenor_ruled_by_court"
+       ],
+       "set": 100
+      }
+     ],
+     "do": [
+      {
+       "pp": 50
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": 5
+      },
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.31",
+   "title": "The Temples Speak",
+   "picture": "hermitage",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm, every Concord dominion and the Worshipdom",
+   "guard": [
+    {
+     "or": [
+      "zin_aenor_is_realm",
+      "zin_aenor_is_concord_dominion",
+      "zin_afrit_is_hub"
+     ]
+    }
+   ],
+   "desc": "From every temple of Parim the priests preach the same sermon: the Deliverer has guarded Aenor since Elzon's fall, and let him guard it now. The sermons are well made, and there are a great many of them.",
+   "variants": [
+    {
+     "suffix": "hub",
+     "if": [
+      "zin_afrit_is_hub"
+     ],
+     "text": "The sermons of Parim are the Council's own, written by the High Confessor and carried to every pulpit by the Couriers' Chapter. In a week the whole city will be asking for the same thing in the same words."
+    }
+   ],
+   "options": [
+    {
+     "text": "Let the people hear them.",
+     "hist": true,
+     "free": 60,
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "faithful",
+       "value": 8
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 3
+      }
+     ]
+    },
+    {
+     "text": "Order the sermons cut short.",
+     "free": 40,
+     "show": [
+      "zin_aenor_is_realm",
+      "!zin_aenor_ruled_by_faithful"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "faithful",
+       "value": -5
+      },
+      {
+       "stability": -0.02
+      }
+     ]
+    },
+    {
+     "text": "The temples are loud this season.",
+     "free": 1,
+     "show": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "do": []
+    },
+    {
+     "text": "Let the pulpits carry the word.",
+     "free": 1,
+     "show": [
+      "zin_afrit_is_hub"
+     ],
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.32",
+   "title": "The Charters Remembered",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm and every Concord dominion with loyalty below 50",
+   "guard": [
+    {
+     "or": [
+      "zin_aenor_is_realm",
+      {
+       "and": [
+        "zin_aenor_is_concord_dominion",
+        "var:zin_concord_loyalty<50"
+       ]
+      }
+     ]
+    }
+   ],
+   "desc": "Lords of the dominions read the Charters of Parim aloud in their halls. The crown, they say, is a partner and not a master.",
+   "variants": [
+    {
+     "suffix": "dominion",
+     "if": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "text": "In our hall the Charters of Parim were read aloud this week, and nobody asked the crown's leave. The crown, our lords say, is a partner and not a master."
+    }
+   ],
+   "options": [
+    {
+     "text": "The Charters are paper.",
+     "hist": true,
+     "free": 50,
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "dominions",
+       "value": 6
+      },
+      {
+       "call": "zin_aenor_add_concord_loyalty_all",
+       "value": -3
+      }
+     ]
+    },
+    {
+     "text": "The Charters are honoured.",
+     "free": 50,
+     "show": [
+      "zin_aenor_is_realm"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "dominions",
+       "value": 3
+      },
+      {
+       "call": "zin_aenor_add_concord_loyalty_all",
+       "value": 2
+      }
+     ]
+    },
+    {
+     "text": "Stand with the other lords.",
+     "free": 60,
+     "show": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": -3
+      }
+     ]
+    },
+    {
+     "text": "Wait for the crown.",
+     "free": 40,
+     "show": [
+      "zin_aenor_is_concord_dominion"
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.33",
+   "title": "The Stranger's Name in the Streets",
+   "picture": "thirty_days",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm, only when the Host is available",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_aenor_host_available"
+   ],
+   "desc": "Frontier men and scholars talk of [zin_loc_eindil], a man of the First Men who warned of the dark. They want him crowned, and they say so in the squares.",
+   "options": [
+    {
+     "text": "Let the Host be heard.",
+     "free": 40,
+     "ai": [
+      {
+       "if": [
+        "zin_aenor_ruled_by_host"
+       ],
+       "set": 60
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "host",
+       "value": 8
+      }
+     ]
+    },
+    {
+     "text": "Disperse the gatherings.",
+     "free": 60,
+     "ai": [
+      {
+       "if": [
+        "zin_aenor_ruled_by_host"
+       ],
+       "set": 40
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "host",
+       "value": -8
+      },
+      {
+       "stability": 0.02
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.34",
+   "title": "Riot at the Gilded Gate",
+   "picture": "thirty_days",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm",
+    {
+     "or": [
+      {
+       "and": [
+        "var:zin_aenor_camp_court>=30",
+        "var:zin_aenor_camp_faithful>=30"
+       ]
+      },
+      {
+       "and": [
+        "var:zin_aenor_camp_court>=30",
+        "var:zin_aenor_camp_dominions>=30"
+       ]
+      },
+      {
+       "and": [
+        "var:zin_aenor_camp_court>=30",
+        "var:zin_aenor_camp_host>=30"
+       ]
+      },
+      {
+       "and": [
+        "var:zin_aenor_camp_faithful>=30",
+        "var:zin_aenor_camp_dominions>=30"
+       ]
+      },
+      {
+       "and": [
+        "var:zin_aenor_camp_faithful>=30",
+        "var:zin_aenor_camp_host>=30"
+       ]
+      },
+      {
+       "and": [
+        "var:zin_aenor_camp_dominions>=30",
+        "var:zin_aenor_camp_host>=30"
+       ]
+      }
+     ]
+    }
+   ],
+   "desc": "Liveried servants of the office-buyers and pilgrims from the temples fight at the Gilded Gate. Three are dead, and each side swears the other struck first.",
+   "options": [
+    {
+     "text": "Call out the guard.",
+     "hist": true,
+     "free": 70,
+     "do": [
+      {
+       "stability": 0.02
+      },
+      {
+       "macro": "strongest_two_non_ruling",
+       "value": -3
+      }
+     ]
+    },
+    {
+     "text": "Let the camps settle it.",
+     "free": 30,
+     "do": [
+      {
+       "stability": -0.03
+      },
+      {
+       "macro": "strongest_non_ruling",
+       "value": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.35",
+   "title": "Captains Choose a Side",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The captains of the Parim garrison ask the council a question no captain should ask: whose orders will they follow next month?",
+   "options": [
+    {
+     "text": "The crown's, whoever wears it.",
+     "hist": true,
+     "free": 100,
+     "do": [
+      {
+       "macro": "ruling_camp",
+       "value": 5
+      }
+     ]
+    },
+    {
+     "text": "The Lost Cause's.",
+     "free": 0,
+     "show": [
+      "!zin_aenor_ruled_by_faithful"
+     ],
+     "do": [
+      {
+       "macro": "host_or_dominions",
+       "host": 5,
+       "dominions": 5
+      },
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.36",
+   "title": "The Seals Are Counted",
+   "picture": "thirty_days",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "Five days remain. The council counts who stands where, and a camp with thirty or more will not take the seals quietly.",
+   "options": [
+    {
+     "text": "Let the thirtieth day come.",
+     "do": [
+      {
+       "tip": "Support now: the Golden Court [?ROOT.zin_aenor_camp_court|0], the Free Dominions [?ROOT.zin_aenor_camp_dominions|0], [zin_loc_camp_faithful] [?ROOT.zin_aenor_camp_faithful|0], [zin_loc_camp_host] [?ROOT.zin_aenor_camp_host|0]. A camp at thirty or more rises when the seals pass."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.37",
+   "title": "A Dominion Chooses Freedom",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_aenor_secede_dominion fires it to the seceding dominion together with zin_aenor.220",
+   "to": "each dominion that secedes",
+   "guard": [],
+   "desc": "Our lord has torn up the charter. The Concord's banner comes down in our hall, and the hall is quieter than anyone expected.",
+   "options": [
+    {
+     "text": "Free, and afraid.",
+     "do": [
+      {
+       "stability": -0.02
+      },
+      {
+       "war_support": 0.03
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.40",
+   "title": "The Crown Laid Before the Deliverer",
+   "picture": "coronation",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "In the great temple of Parim the High Confessor lifts the crown. The people outside sing. Some commanders swear because they believe, some because they fear another war, and some say nothing at all.",
+   "options": [
+    {
+     "text": "Let all Parim celebrate.",
+     "hist": true,
+     "free": 60,
+     "do": [
+      {
+       "pp": -50
+      },
+      {
+       "stability": 0.05
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 3
+      }
+     ]
+    },
+    {
+     "text": "A solemn rite, no feast.",
+     "free": 40,
+     "do": [
+      {
+       "stability": 0.02
+      },
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": -2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.41",
+   "title": "Envoys to the Coronation",
+   "picture": "coronation",
+   "requires": [
+    "zin_golden_king_dead"
+   ],
+   "source": "hook",
+   "to": "great powers and friends of Aenor; never a dominion, Volgan, his subjects, Zol, Yeldenne, Lerendor, the West Lands or the wall realms",
+   "guard": [
+    "!zin_aenor_is_realm"
+   ],
+   "desc": "Parim invites every crown to honour King [zin_loc_deliverer], the god who guards Aenor. Our envoys can come to the temple with empty hands or with full ones, and Parim will count which.",
+   "options": [
+    {
+     "text": "Send an envoy, no more.",
+     "hist": true,
+     "free": 40,
+     "do": []
+    },
+    {
+     "text": "Send gifts to the god-king.",
+     "free": 50,
+     "ai": [
+      {
+       "if": [
+        "gov:dominion"
+       ],
+       "mult": 1.5
+      },
+      {
+       "if": [
+        "zin_east_is_court"
+       ],
+       "mult": 1.5
+      }
+     ],
+     "do": [
+      {
+       "pp": -25
+      },
+      {
+       "in": "parim",
+       "do": [
+        {
+         "opinion": "zin_reign_gifts_to_god_king",
+         "target": "ROOT",
+         "reverse": false
+        }
+       ]
+      },
+      {
+       "call": "zin_afrit_add_footholds",
+       "value": 1
+      }
+     ]
+    },
+    {
+     "text": "Our temples honour him; our court does not.",
+     "free": 10,
+     "ai": [
+      {
+       "if": [
+        "gov:light"
+       ],
+       "mult": 2
+      }
+     ],
+     "do": [
+      {
+       "in": "parim",
+       "do": [
+        {
+         "opinion": "zin_reign_honour_withheld",
+         "target": "ROOT",
+         "reverse": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.42",
+   "title": "The Oath to the New King",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "hook",
+   "to": "every Concord dominion",
+   "guard": [
+    "zin_aenor_is_concord_dominion"
+   ],
+   "desc": "The new king asks every dominion to swear to him as it swore to the crown. The temples of our land are full of people who already have.",
+   "options": [
+    {
+     "text": "Swear gladly.",
+     "hist": {
+      "unless": [
+       "tag:Selen"
+      ]
+     },
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        "var:zin_concord_loyalty>=50"
+       ],
+       "set": 70
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": 5
+      },
+      {
+       "call": "zin_afrit_add_footholds",
+       "value": 1
+      }
+     ]
+    },
+    {
+     "text": "Swear by the Charters, not by the god.",
+     "hist": {
+      "when": [
+       "tag:Selen"
+      ]
+     },
+     "free": 25,
+     "do": []
+    },
+    {
+     "text": "Refuse the oath.",
+     "free": 5,
+     "show": [
+      {
+       "or": [
+        "zin_aenor_dominion_restless",
+        "zin_aenor_dominion_defiant"
+       ]
+      }
+     ],
+     "ai": [
+      {
+       "if": [
+        "var:zin_concord_loyalty<30"
+       ],
+       "set": 50
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_aenor_add_concord_loyalty",
+       "value": -15
+      },
+      {
+       "if": [
+        "var:zin_concord_loyalty<25"
+       ],
+       "then": [
+        {
+         "call": "zin_aenor_secede_dominion"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.43",
+   "title": "The First Edict",
+   "picture": "generic_court",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm, only while the Deliverer rules it",
+   "guard": [
+    "zin_aenor_is_realm",
+    "zin_afrit_rules_here"
+   ],
+   "desc": "King [zin_loc_deliverer]'s first edict will set the tone of the reign. The chancery has drafted three, and the god-king's seal waits beside each.",
+   "options": [
+    {
+     "text": "An Edict of Mercy: the debts of the poor quarters are remitted.",
+     "hist": true,
+     "free": 60,
+     "do": [
+      {
+       "pp": -50
+      },
+      {
+       "stability": 0.05
+      },
+      {
+       "call": "zin_afrit_add_veil",
+       "value": 3
+      }
+     ]
+    },
+    {
+     "text": "An Edict of the Temples: the Houses of the First Light take the birth rolls of every dominion.",
+     "free": 30,
+     "do": [
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 5
+      },
+      {
+       "loop": "every_country",
+       "limit": [
+        "zin_aenor_is_concord_dominion"
+       ],
+       "do": [
+        {
+         "call": "zin_afrit_add_footholds",
+         "value": 1
+        }
+       ]
+      },
+      {
+       "call": "zin_aenor_add_concord_loyalty_all",
+       "value": -2
+      }
+     ]
+    },
+    {
+     "text": "An Edict of Accounts: the offices sold by the late King are audited.",
+     "free": 10,
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": -8
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": -10
+      },
+      {
+       "pp": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.44",
+   "title": "Scholars Question the Genealogy",
+   "picture": "generic_court",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm, while Master Ilsabet is still in it",
+   "guard": [
+    "zin_aenor_is_realm",
+    "char:zin_ilsabet"
+   ],
+   "desc": "Masters at the University of Parim ask an old question aloud: which line of Aen does the new king descend from? The rolls are silent.",
+   "options": [
+    {
+     "text": "Buy their silence with chairs and pensions.",
+     "hist": true,
+     "free": 60,
+     "do": [
+      {
+       "pp": -50
+      },
+      {
+       "gflag": "zin_afrit_scholars_bought"
+      },
+      {
+       "call": "zin_afrit_add_veil",
+       "value": 2
+      }
+     ]
+    },
+    {
+     "text": "Close the university for a season.",
+     "free": 30,
+     "do": [
+      {
+       "stability": -0.02
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 3
+      },
+      {
+       "call": "zin_world_add_gathering_dark",
+       "value": 1
+      }
+     ]
+    },
+    {
+     "text": "Let them debate; the god does not fear rolls.",
+     "free": 10,
+     "show": [
+      {
+       "or": [
+        "ai",
+        "zin_afrit_rules_here"
+       ]
+      }
+     ],
+     "do": [
+      {
+       "call": "zin_afrit_add_veil",
+       "value": -3
+      },
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 5
+      },
+      {
+       "flag": "zin_reign_scholars_free",
+       "tip": "The scholars keep their rolls, and Master Ilsabet may yet put them to use."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.45",
+   "title": "What Is the Lost Cause For?",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The league the Golden King founded has lost its founder. Its frontier captains ask whom they serve, and its court branch asks for new banners.",
+   "options": [
+    {
+     "text": "Keep it as the crown's ornament.",
+     "hist": true,
+     "free": 70,
+     "do": [
+      {
+       "tip": "The league stays an ornament."
+      }
+     ]
+    },
+    {
+     "text": "Fold it into the temple guard.",
+     "free": 20,
+     "do": [
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": -10
+      },
+      {
+       "call": "zin_aenor_add_council_influence",
+       "value": 5
+      }
+     ]
+    },
+    {
+     "text": "Let the frontier keep it.",
+     "free": 10,
+     "do": [
+      {
+       "call": "zin_aenor_add_lost_cause",
+       "value": 5
+      },
+      {
+       "flag": "zin_reign_league_to_frontier",
+       "tip": "The Shield of the Concord grows likelier to be raised."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_reign.46",
+   "title": "The Golden Court Changes Its Robes",
+   "picture": "golden_court",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The office-buyers who backed the late King now buy candles for the temples. Some keep their seats, and some do not.",
+   "options": [
+    {
+     "text": "Strip the worst of them.",
+     "hist": true,
+     "free": 60,
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": -6
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": -10
+      },
+      {
+       "stability": -0.02
+      }
+     ]
+    },
+    {
+     "text": "Let them keep what they bought.",
+     "free": 40,
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 3
+      },
+      {
+       "call": "zin_aenor_add_camp_support",
+       "camp": "court",
+       "value": 5
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

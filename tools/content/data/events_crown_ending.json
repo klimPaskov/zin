@@ -1,0 +1,1027 @@
+{
+ "kind": "events",
+ "namespace": "zin_ending",
+ "source": "docs/specs/06_events/04_endings.md: the lead-up (zin_ending.1 to .4) and the aftermath of each ending (zin_ending.10 to .80). Notation: tools/content/lib/crown_script.mjs.",
+ "events": [
+  {
+   "id": "zin_ending.1",
+   "title": "The Age Draws to Its Close",
+   "picture": "generic_court",
+   "requires": [],
+   "source": "runner",
+   "date": "1760.1.1",
+   "to": "every human player",
+   "guard": [
+    "human",
+    "!gflag:zin_ending_reached"
+   ],
+   "desc": "Chroniclers say the Fourth Age is ending. They do not agree how, and they have begun to quarrel in the margins of one another's pages.",
+   "options": [
+    {
+     "text": "Then let us write its last page.",
+     "do": [
+      {
+       "tip": "The ends still open to the age:[zin_loc_endings_possible]"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.2",
+   "title": "The Last Year of Judgement",
+   "picture": "generic_court",
+   "requires": [],
+   "source": "runner",
+   "date": "1761.1.1",
+   "to": "every human player",
+   "guard": [
+    "human",
+    "!gflag:zin_ending_reached"
+   ],
+   "desc": "If no crown has ended the age by the first day of 4A 1762, the chroniclers will judge it by what each crown holds. They have already begun to count.",
+   "options": [
+    {
+     "text": "A year remains.",
+     "do": [
+      {
+       "tip": "What the chroniclers will weigh:[zin_loc_outcomes_possible]"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.3",
+   "title": "Shadows Over Parim",
+   "picture": "grave_muster",
+   "requires": [],
+   "source": "runner",
+   "date": "monthly",
+   "to": "every human player at war with Volgan",
+   "guard": [
+    "human",
+    "!gflag:zin_ending_reached",
+    "war:Volgan"
+   ],
+   "desc": "Volgan's hosts hold Parim, and his client crowns are many. If nothing changes, the world will be his.",
+   "options": [
+    {
+     "text": "Not while we stand.",
+     "do": [
+      {
+       "war_support": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.4",
+   "title": "The Ash Gathers",
+   "picture": "unmasking",
+   "requires": [
+    "zin_afrit_revealed"
+   ],
+   "source": "runner",
+   "date": "monthly",
+   "to": "every human player at war with the realm Afrit leads",
+   "guard": [
+    "human",
+    "!gflag:zin_ending_reached",
+    {
+     "any": "any_enemy_country",
+     "limit": [
+      "zin_afrit_rules_here"
+     ]
+    }
+   ],
+   "desc": "Afrit holds Parim, and too many crowns owe him their councils. If the palace is not taken, the age will end in ash.",
+   "options": [
+    {
+     "text": "Not while we stand.",
+     "do": [
+      {
+       "war_support": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.10",
+   "title": "No Crown Over Crowns",
+   "picture": "crown_of_aen",
+   "requires": [
+    "zin_eindil_crowned"
+   ],
+   "source": "chain",
+   "to": "Eindil's Aenor",
+   "guard": [
+    "zin_aenor_eindil_rules"
+   ],
+   "desc": "The king's council asks what Aenor shall ask of the crowns that fought beside it. He answers: nothing they did not offer.",
+   "options": [
+    {
+     "text": "Treaties, not conquest.",
+     "hist": true,
+     "free": 100,
+     "do": [
+      {
+       "save": "zin_ending_t_eindil_aenor"
+      },
+      {
+       "loop": "every_country",
+       "limit": [
+        {
+         "or": [
+          {
+           "faction_with": "ROOT"
+          },
+          "flag:zin_aenor_free_dominion"
+         ]
+        }
+       ],
+       "do": [
+        {
+         "fire": "zin_ending.11",
+         "days": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "Let them come to us.",
+     "free": 0,
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.11",
+   "title": "A Treaty Among Equals",
+   "picture": "concord_council",
+   "requires": [],
+   "source": "chain",
+   "to": "every coalition member and Free Dominion of Eindil's Aenor",
+   "guard": [],
+   "desc": "Parim offers a treaty of mutual defence between equals. It claims no land and no oath of service. In this telling of the age, the crowns may sign or not.",
+   "options": [
+    {
+     "text": "Sign as equals.",
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        {
+         "or": [
+          "zin_eindil_friend",
+          {
+           "opinion_modifier": "zin_west_fought_beside",
+           "target": "target:zin_ending_t_eindil_aenor"
+          }
+         ]
+        }
+       ],
+       "set": 70
+      }
+     ],
+     "do": [
+      {
+       "pact": "target:zin_ending_t_eindil_aenor"
+      },
+      {
+       "opinion": "zin_ending_treaty_of_equals",
+       "target": "target:zin_ending_t_eindil_aenor"
+      },
+      {
+       "opinion": "zin_ending_treaty_of_equals",
+       "target": "target:zin_ending_t_eindil_aenor",
+       "reverse": true
+      }
+     ]
+    },
+    {
+     "text": "We keep our own counsel.",
+     "free": 70,
+     "ai": [
+      {
+       "if": [
+        {
+         "or": [
+          "zin_eindil_friend",
+          {
+           "opinion_modifier": "zin_west_fought_beside",
+           "target": "target:zin_ending_t_eindil_aenor"
+          }
+         ]
+        }
+       ],
+       "set": 30
+      }
+     ],
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.12",
+   "title": "Grievances Remain",
+   "picture": "generic_war",
+   "requires": [],
+   "source": "hook",
+   "to": "western, northern and eastern crowns outside the coalition that do not love the heir",
+   "guard": [],
+   "desc": "The war is over. The old claims are not. Our court remembers what Aenor was before the heir, and what it may be after him.",
+   "options": [
+    {
+     "text": "Remember.",
+     "free": 50,
+     "do": [
+      {
+       "war_support": 0.03
+      },
+      {
+       "opinion": "zin_ending_old_claims",
+       "target": "target:zin_ending_t_eindil_aenor"
+      }
+     ]
+    },
+    {
+     "text": "Let the next age judge.",
+     "free": 50,
+     "do": [
+      {
+       "stability": 0.03
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.13",
+   "title": "First Friends of the King",
+   "picture": "crown_of_aen",
+   "requires": [
+    "zin_eindil_crowned"
+   ],
+   "source": "hook",
+   "to": "every country that keeps the king's regard",
+   "guard": [],
+   "desc": "The king remembers who nursed a stranger from the ice, who made peace beside him, who sheltered him when he was hunted.",
+   "options": [
+    {
+     "text": "We remember too.",
+     "do": [
+      {
+       "tip": "The crown has already named your court among the First Friends of the King."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.14",
+   "title": "The Necklace at His Throat",
+   "picture": "crown_of_aen",
+   "requires": [
+    "zin_eindil_crowned"
+   ],
+   "source": "hook",
+   "to": "Eindil's Aenor, if the king wears the necklace",
+   "guard": [
+    "zin_aenor_eindil_rules",
+    "gflag:zin_eindil_wears_necklace"
+   ],
+   "desc": "The king still wears the necklace he took from his brother. He does not speak of it, and nobody asks him to.",
+   "options": [
+    {
+     "text": "Nobody asks.",
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.15",
+   "title": "The Houses Without a God",
+   "picture": "houses",
+   "requires": [],
+   "source": "hook",
+   "to": "every country the Houses of the First Light still reach",
+   "guard": [
+    "var:zin_footholds>=2"
+   ],
+   "desc": "The Houses of the First Light still keep grain and hospitals. Their god is dead. In this telling of the age, each crown must decide what they are now.",
+   "options": [
+    {
+     "text": "Keep them as the crown's hospitals.",
+     "free": 60,
+     "do": [
+      {
+       "stability": 0.02
+      },
+      {
+       "call": "zin_afrit_add_footholds",
+       "value": -5
+      }
+     ]
+    },
+    {
+     "text": "Close them.",
+     "free": 30,
+     "do": [
+      {
+       "stability": -0.03
+      },
+      {
+       "call": "zin_afrit_purge_houses"
+      }
+     ]
+    },
+    {
+     "text": "Let them go on as they are.",
+     "free": 10,
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.20",
+   "title": "The Court of Nafeher",
+   "picture": "dead_lands_storm",
+   "requires": [],
+   "source": "hook",
+   "to": "Volgan",
+   "guard": [
+    "zin_is_volgan"
+   ],
+   "desc": "The lords of the Dominion kneel in the hall of Nafeher. The world is his, as he always said it would be once men divided.",
+   "options": [
+    {
+     "text": "Let the clients rule in my name.",
+     "free": 60,
+     "do": [
+      {
+       "call": "zin_volgan_add_oath",
+       "target": "all",
+       "value": 10
+      },
+      {
+       "stability": 0.05
+      }
+     ]
+    },
+    {
+     "text": "Let them fear.",
+     "free": 40,
+     "do": [
+      {
+       "war_support": 0.1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.21",
+   "title": "A Client Crown",
+   "picture": "grave_muster",
+   "requires": [],
+   "source": "hook",
+   "to": "every subject of Volgan",
+   "guard": [
+    "subject_of:Volgan"
+   ],
+   "desc": "Our crown is a gift of Nafeher now. Our people have stopped asking whose.",
+   "options": [
+    {
+     "text": "Serve.",
+     "do": [
+      {
+       "stability": -0.05
+      },
+      {
+       "war_support": 0.05
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.22",
+   "title": "The Dark Over Parim",
+   "picture": "generic_war",
+   "requires": [],
+   "source": "hook",
+   "to": "every Aenor realm and the Host of Eindil",
+   "guard": [],
+   "desc": "Parim belongs to the south. Those of Aen's kingdom who still fight do so from the hills and the lakes.",
+   "options": [
+    {
+     "text": "Fight on from the hills.",
+     "free": 70,
+     "do": [
+      {
+       "war_support": 0.1
+      },
+      {
+       "stability": -0.05
+      }
+     ]
+    },
+    {
+     "text": "Seek terms with Nafeher.",
+     "free": 30,
+     "do": [
+      {
+       "if": [
+        "war:Volgan"
+       ],
+       "then": [
+        {
+         "white_peace_by": "tag:Volgan"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.23",
+   "title": "A Ruined World",
+   "picture": "dead_lands_storm",
+   "requires": [],
+   "source": "hook",
+   "to": "every country that is not Volgan, his subject or Zol",
+   "guard": [],
+   "desc": "The trade roads are empty and the harbours are full of people who have nowhere to go. Every court is learning how little a crown is worth without a market.",
+   "options": [
+    {
+     "text": "Endure.",
+     "free": 70,
+     "do": [
+      {
+       "stability": -0.03
+      },
+      {
+       "war_support": 0.05
+      }
+     ]
+    },
+    {
+     "text": "Send envoys south.",
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        "gov:light"
+       ],
+       "set": 0
+      }
+     ],
+     "do": [
+      {
+       "in": "tag:Volgan",
+       "do": [
+        {
+         "opinion": "zin_ending_envoys_south",
+         "target": "ROOT"
+        }
+       ]
+      },
+      {
+       "if": [
+        "zin_dominion_is_dark_lands_country"
+       ],
+       "then": [
+        {
+         "call": "zin_dark_add_volgan_pact",
+         "target": "ROOT",
+         "value": 1
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.30",
+   "title": "The Worshipped King",
+   "picture": "unmasking",
+   "requires": [
+    "zin_afrit_revealed"
+   ],
+   "source": "hook",
+   "to": "the realm Afrit leads",
+   "guard": [
+    "zin_afrit_rules_here"
+   ],
+   "desc": "The council asks how the King of All Erdae will rule a world that knows his name.",
+   "options": [
+    {
+     "text": "As a god.",
+     "free": 70,
+     "do": [
+      {
+       "stability": 0.05
+      },
+      {
+       "save": "zin_ending_t_afrit_realm"
+      },
+      {
+       "loop": "every_country",
+       "limit": [
+        "var:zin_footholds>=4",
+        "!zin_afrit_rules_here"
+       ],
+       "do": [
+        {
+         "fire": "zin_ending.31",
+         "days": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "As a king; let them forget the rest.",
+     "free": 30,
+     "do": [
+      {
+       "pp": 100
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.31",
+   "title": "The Temple Asks Its Due",
+   "picture": "unmasking",
+   "requires": [
+    "zin_afrit_revealed"
+   ],
+   "source": "chain",
+   "to": "every country with deep footholds, except the realm Afrit leads",
+   "guard": [],
+   "desc": "Our councillors owe the temples of Afrit favours older than our grandfathers. Now the temples ask openly.",
+   "options": [
+    {
+     "text": "Pay it.",
+     "free": 70,
+     "do": [
+      {
+       "in": "target:zin_ending_t_afrit_realm",
+       "do": [
+        {
+         "opinion": "zin_ending_temple_paid",
+         "target": "ROOT"
+        }
+       ]
+      },
+      {
+       "call": "zin_afrit_add_footholds",
+       "value": 1
+      }
+     ]
+    },
+    {
+     "text": "Refuse it.",
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        "gov:light"
+       ],
+       "mult": 2
+      }
+     ],
+     "do": [
+      {
+       "in": "target:zin_ending_t_afrit_realm",
+       "do": [
+        {
+         "opinion": "zin_ending_temple_refused",
+         "target": "ROOT"
+        }
+       ]
+      },
+      {
+       "stability": -0.03
+      },
+      {
+       "call": "zin_afrit_purge_houses"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.32",
+   "title": "The Ash Settles",
+   "picture": "unmasking",
+   "requires": [
+    "zin_afrit_revealed"
+   ],
+   "source": "hook",
+   "to": "every country with shallow footholds, except the realm Afrit leads and its subjects",
+   "guard": [],
+   "desc": "A false god rules the old kingdom of Aen. Our court must decide whether to bow, or to wait.",
+   "options": [
+    {
+     "text": "Close our borders to his priests.",
+     "free": 60,
+     "do": [
+      {
+       "call": "zin_afrit_purge_houses"
+      },
+      {
+       "war_support": 0.03
+      }
+     ]
+    },
+    {
+     "text": "Send gifts and keep our counsel.",
+     "free": 40,
+     "do": [
+      {
+       "in": "target:zin_ending_t_afrit_realm",
+       "do": [
+        {
+         "opinion": "zin_ending_gifts_to_parim",
+         "target": "ROOT"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.40",
+   "title": "The King's Long Feast",
+   "picture": "court_feast",
+   "requires": [],
+   "source": "hook",
+   "to": "the Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The old King holds a feast for the end of the war. He laughs louder than anyone, and the candles of the Golden Court burn until dawn.",
+   "variants": [
+    {
+     "suffix": "exposed",
+     "if": [
+      "gflag:zin_golden_king_plot_exposed"
+     ],
+     "text": "The old King holds a feast for the end of the war, and he laughs louder than anyone. He eats nothing his tasters have not touched."
+    }
+   ],
+   "options": [
+    {
+     "text": "Another feast, another year.",
+     "do": [
+      {
+       "call": "zin_aenor_add_court_corruption",
+       "value": 5
+      },
+      {
+       "pp": 50
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.41",
+   "title": "The Temples and the King",
+   "picture": "council_chamber",
+   "requires": [
+    "hub"
+   ],
+   "source": "hook",
+   "to": "the Worshipdom, if the Council rules through the King",
+   "guard": [
+    "zin_afrit_is_hub",
+    "gflag:zin_afrit_kingdom_behind_throne"
+   ],
+   "desc": "The King reigns. The Council governs. Nobody outside this room knows the difference.",
+   "options": [
+    {
+     "text": "So it has been, and so it will be.",
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.50",
+   "title": "Governors of the Old Kingdom",
+   "picture": "generic_war",
+   "requires": [],
+   "source": "hook",
+   "to": "the crown that holds Parim",
+   "guard": [
+    {
+     "any": "any_controlled_state",
+     "limit": [
+      "zin_is_site_parim"
+     ]
+    }
+   ],
+   "desc": "Our captains govern the oldest city of men. They do not know the language of its prayers.",
+   "options": [
+    {
+     "text": "Rule it as conquerors.",
+     "free": 40,
+     "do": [
+      {
+       "war_support": 0.05
+      },
+      {
+       "state": "resistance",
+       "value": 10
+      }
+     ]
+    },
+    {
+     "text": "Rule it as guests.",
+     "free": 60,
+     "do": [
+      {
+       "state": "compliance",
+       "value": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.51",
+   "title": "Aenor Beyond Parim",
+   "picture": "generic_war",
+   "requires": [],
+   "source": "hook",
+   "to": "every Aenor realm",
+   "guard": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "The kingdom has lost its capital to the West. The Concord meets in exile, and the empty chair of the Speaker is turned to face the lake.",
+   "options": [
+    {
+     "text": "We will take it back.",
+     "do": [
+      {
+       "war_support": 0.1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.60",
+   "title": "The Chain at Sonargur",
+   "picture": "strait_toll",
+   "requires": [],
+   "source": "hook",
+   "to": "Lerendor",
+   "guard": [
+    "tag:Lerendor"
+   ],
+   "desc": "The harbour chain of Sonargur is raised for every ship. The toll of 4A 1716 is paid a thousand times over.",
+   "options": [
+    {
+     "text": "Long live the Sovereign.",
+     "do": [
+      {
+       "pp": 100
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.61",
+   "title": "Northern Dues",
+   "picture": "strait_toll",
+   "requires": [],
+   "source": "hook",
+   "to": "the crowns of the North Lands and every Aenor realm",
+   "guard": [],
+   "desc": "Our ships pay Lerendor's dues now, in the same coin and at the same quay that once humbled its envoys.",
+   "options": [
+    {
+     "text": "Pay.",
+     "free": 70,
+     "do": [
+      {
+       "in": "tag:Lerendor",
+       "do": [
+        {
+         "opinion": "zin_ending_dues_paid",
+         "target": "ROOT"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "Resent it.",
+     "free": 30,
+     "do": [
+      {
+       "opinion": "zin_ending_dues_resented",
+       "target": "tag:Lerendor"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.70",
+   "title": "Master of All Roads",
+   "picture": "generic_peace",
+   "requires": [],
+   "source": "hook",
+   "to": "the united crown of the East",
+   "guard": [
+    "idea:zin_east_united_crown"
+   ],
+   "desc": "Every caravan from the rift to the deep sand pays one treasury.",
+   "options": [
+    {
+     "text": "Lower the tolls.",
+     "free": 60,
+     "do": [
+      {
+       "stability": 0.05
+      },
+      {
+       "loop": "every_other_country",
+       "limit": [
+        "zin_east_is_court"
+       ],
+       "do": [
+        {
+         "opinion": "zin_ending_open_roads",
+         "target": "ROOT"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "Raise them.",
+     "free": 40,
+     "do": [
+      {
+       "pp": 150
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.71",
+   "title": "Homage to the High King",
+   "picture": "generic_court",
+   "requires": [],
+   "source": "hook",
+   "to": "every East Lands court except the united crown",
+   "guard": [],
+   "desc": "The High King's envoys ask for homage. They have brought the old words, and a very large chair.",
+   "options": [
+    {
+     "text": "Pay homage.",
+     "free": 30,
+     "ai": [
+      {
+       "if": [
+        {
+         "or": [
+          {
+           "and": [
+            "var:zin_east_lean>0",
+            {
+             "target": "event_target:zin_ending_t_united_crown",
+             "is": [
+              "tag:Noris"
+             ]
+            }
+           ]
+          },
+          {
+           "and": [
+            "var:zin_east_lean<0",
+            {
+             "target": "event_target:zin_ending_t_united_crown",
+             "is": [
+              "tag:Stabilo"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "set": 70
+      }
+     ],
+     "do": [
+      {
+       "in": "target:zin_ending_t_united_crown",
+       "do": [
+        {
+         "opinion": "zin_ending_homage_paid",
+         "target": "ROOT"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "text": "Refuse.",
+     "free": 70,
+     "ai": [
+      {
+       "if": [
+        {
+         "or": [
+          {
+           "and": [
+            "var:zin_east_lean>0",
+            {
+             "target": "event_target:zin_ending_t_united_crown",
+             "is": [
+              "tag:Noris"
+             ]
+            }
+           ]
+          },
+          {
+           "and": [
+            "var:zin_east_lean<0",
+            {
+             "target": "event_target:zin_ending_t_united_crown",
+             "is": [
+              "tag:Stabilo"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "set": 30
+      }
+     ],
+     "do": [
+      {
+       "in": "target:zin_ending_t_united_crown",
+       "do": [
+        {
+         "opinion": "zin_ending_homage_refused",
+         "target": "ROOT"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zin_ending.80",
+   "title": "The League Without the Heir",
+   "picture": "lost_cause_triumph",
+   "requires": [],
+   "source": "owner",
+   "external": "zin_eindil.140 reaches it fourteen days after the heir is lost, through zin_ending_heir_lost",
+   "to": "the Host of Eindil, else the Aenor realm holding Parim, else the original Aenor country",
+   "guard": [],
+   "desc": "The heir is gone. The league he gathered is still in the field, and the dark has not gone home.",
+   "options": [
+    {
+     "text": "Fight on.",
+     "free": 100,
+     "do": [
+      {
+       "war_support": 0.05
+      },
+      {
+       "if": [
+        "!gflag:zin_glo_dimmed"
+       ],
+       "then": [
+        {
+         "tip": "A worthy crown may seek Glo as its bearer."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

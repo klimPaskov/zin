@@ -1,0 +1,132 @@
+{
+ "kind": "hooks",
+ "source": "docs/specs/06_events/01_golden_king_and_succession.md (hooks, runner) and 04_endings.md (epilogue, lead-ups). Effects use the notation of tools/content/lib/crown_script.mjs.",
+ "hooks": {
+  "zin_reign_on_king_dead": {
+   "doc": "Called at the end of zin_aenor_open_succession (Aenor spec). Fires the world's reaction to the King's death.",
+   "effects": [
+    { "fire": "zin_reign.20", "days": 1, "to": "parim" },
+    { "fire": "zin_reign.22", "days": 14, "to": "parim" },
+    { "fire": "zin_reign.23", "days": 10, "to": "parim" },
+    { "fire": "zin_reign.26", "days": 15, "to": "parim" },
+    { "fire": "zin_reign.25", "days": 12, "to": "parim" },
+    { "loop": "every_country", "limit": ["zin_aenor_is_concord_dominion"], "do": [ { "fire": "zin_reign.24", "days": 5 }, { "fire": "zin_reign.25", "days": 12 } ] },
+    { "in": "parim", "do": [ { "loop": "every_country", "limit": [
+        { "or": [ "is_major", { "opinion": "target:zin_aenor_parim_realm", "op": ">", "value": 24 }, { "and": ["zin_east_is_court", "var:zin_footholds>=2"] } ] },
+        "!zin_aenor_is_realm", "!tag:Lerendor", "!zin_is_volgan", "!subject_of:Volgan", "!zin_is_zol", "!tag:Yeldenne", "!zin_aenor_is_concord_dominion" ],
+      "do": [ { "fire": "zin_reign.21", "days": 7 } ] } ] }
+   ]
+  },
+  "zin_reign_on_thirty_days": {
+   "doc": "Called from the immediate block of zin_aenor.201. Day N counts from that event.",
+   "effects": [
+    { "fire": "zin_reign.30", "days": 3, "to": "parim" },
+    { "fire": "zin_reign.31", "days": 5, "to": "parim" },
+    { "loop": "every_country", "limit": [ { "or": ["zin_aenor_is_concord_dominion", "zin_afrit_is_hub"] } ], "do": [ { "fire": "zin_reign.31", "days": 5 } ] },
+    { "fire": "zin_reign.32", "days": 7, "to": "parim" },
+    { "loop": "every_country", "limit": ["zin_aenor_is_concord_dominion", "var:zin_concord_loyalty<50"], "do": [ { "fire": "zin_reign.32", "days": 7 } ] },
+    { "if": ["zin_aenor_host_available"], "then": [ { "fire": "zin_reign.33", "days": 7, "to": "parim" } ] },
+    { "fire": "zin_reign.34", "days": 10, "random_days": 11, "to": "parim" },
+    { "fire": "zin_reign.35", "days": 20, "to": "parim" },
+    { "fire": "zin_reign.36", "days": 25, "to": "parim" }
+   ]
+  },
+  "zin_reign_on_crowning": {
+   "doc": "Called at the end of zin_afrit_crown_aurevan (Afrit spec). Fires the first year of the new reign.",
+   "effects": [
+    { "fire": "zin_reign.40", "days": 2, "to": "parim" },
+    { "in": "parim", "do": [ { "loop": "every_country", "limit": [
+        { "or": [ "is_major", { "opinion": "target:zin_aenor_parim_realm", "op": ">", "value": -1 } ] },
+        "!zin_aenor_is_realm", "!zin_aenor_is_concord_dominion", "!zin_is_volgan", "!subject_of:Volgan", "!zin_is_zol", "!tag:Yeldenne", "!tag:Lerendor", "!flag:zin_region_west_lands", "!zin_elves_is_wall_realm" ],
+      "do": [ { "fire": "zin_reign.41", "days": 7 } ] } ] },
+    { "loop": "every_country", "limit": ["zin_aenor_is_concord_dominion"], "do": [ { "fire": "zin_reign.42", "days": 10 } ] },
+    { "fire": "zin_reign.43", "days": 60, "to": "parim" },
+    { "fire": "zin_reign.44", "days": 120, "to": "parim" },
+    { "fire": "zin_reign.45", "days": 180, "to": "parim" },
+    { "fire": "zin_reign.46", "days": 240, "to": "parim" }
+   ]
+  },
+  "zin_ending_heir_lost": {
+   "doc": "For the journey's zin_eindil.140: fires zin_ending.80 fourteen days later to the Host of Eindil if it exists, else the Aenor realm holding Parim, else the original Aenor country.",
+   "effects": [
+    { "if": [ { "any": "any_country", "limit": ["zin_eindil_is_host"] } ],
+      "then": [ { "loop": "every_country", "limit": ["zin_eindil_is_host"], "do": [ { "fire": "zin_ending.80", "days": 14 } ] } ],
+      "else": [ { "fire": "zin_ending.80", "days": 14, "to": "parim" } ] }
+   ]
+  }
+ },
+ "epilogue": {
+  "doc": "zin_ending_start_epilogue: the keys of the world spec's ending numbers (zin_world_ending). The Chronicle (zin_world.110) is added after these for every human player.",
+  "1": [
+   { "loop": "every_country", "limit": ["zin_aenor_eindil_rules"], "do": [ { "save": "zin_ending_t_eindil_aenor" }, { "fire": "zin_ending.10", "days": 7 }, { "if": ["gflag:zin_eindil_wears_necklace"], "then": [ { "fire": "zin_ending.14", "days": 60 } ] } ] },
+   { "loop": "every_country", "limit": [ { "or": ["flag:zin_region_west_lands", "flag:zin_region_north_lands", "flag:zin_region_east_lands"] }, "!zin_aenor_eindil_rules", { "not": [ { "faction_with": "target:zin_ending_t_eindil_aenor" } ] }, "var:zin_eindil_regard<25" ], "do": [ { "fire": "zin_ending.12", "days": 30 } ] },
+   { "loop": "every_country", "limit": ["var:zin_eindil_regard>=50"], "do": [ { "fire": "zin_ending.13", "days": 7 } ] },
+   { "loop": "every_country", "limit": ["var:zin_footholds>=2"], "do": [ { "fire": "zin_ending.15", "days": 90 } ] }
+  ],
+  "2": [
+   { "loop": "every_country", "limit": ["zin_is_volgan"], "do": [ { "fire": "zin_ending.20", "days": 7 } ] },
+   { "loop": "every_country", "limit": ["subject_of:Volgan"], "do": [ { "fire": "zin_ending.21", "days": 14 } ] },
+   { "loop": "every_country", "limit": [ { "or": ["zin_aenor_is_realm", "zin_eindil_is_host"] } ], "do": [ { "fire": "zin_ending.22", "days": 7 } ] },
+   { "loop": "every_country", "limit": ["!zin_is_volgan", "!subject_of:Volgan", "!zin_is_zol", "!zin_aenor_is_realm", "!zin_eindil_is_host"], "do": [ { "fire": "zin_ending.23", "days": 30 } ] }
+  ],
+  "3": [
+   { "loop": "every_country", "limit": ["zin_afrit_rules_here"], "do": [ { "save": "zin_ending_t_afrit_realm" }, { "fire": "zin_ending.30", "days": 7 } ] },
+   { "loop": "every_country", "limit": ["var:zin_footholds<=3", "!zin_afrit_rules_here", "!subject_of:target:zin_ending_t_afrit_realm" ], "do": [ { "fire": "zin_ending.32", "days": 30 } ] }
+  ],
+  "4": [
+   { "fire": "zin_ending.40", "days": 7, "to": "parim" },
+   { "loop": "every_country", "limit": ["zin_afrit_is_hub", "gflag:zin_afrit_kingdom_behind_throne"], "do": [ { "fire": "zin_ending.41", "days": 7 } ] }
+  ],
+  "5": [
+   { "loop": "every_country", "limit": [ { "any": "any_controlled_state", "limit": ["zin_is_site_parim"] } ], "do": [ { "fire": "zin_ending.50", "days": 7 } ] },
+   { "loop": "every_country", "limit": ["zin_aenor_is_realm"], "do": [ { "fire": "zin_ending.51", "days": 7 } ] }
+  ],
+  "6": [
+   { "loop": "every_country", "limit": ["tag:Lerendor"], "do": [ { "fire": "zin_ending.60", "days": 7 } ] },
+   { "loop": "every_country", "limit": [ { "or": ["flag:zin_region_north_lands", "zin_aenor_is_realm"] }, "!tag:Lerendor", "!subject_of:Lerendor" ], "do": [ { "fire": "zin_ending.61", "days": 14 } ] }
+  ],
+  "7": [
+   { "loop": "every_country", "limit": ["idea:zin_east_united_crown"], "do": [ { "save": "zin_ending_t_united_crown" }, { "fire": "zin_ending.70", "days": 7 } ] },
+   { "loop": "every_country", "limit": ["zin_east_is_court", "!idea:zin_east_united_crown"], "do": [ { "fire": "zin_ending.71", "days": 14 } ] }
+  ],
+  "8": []
+ },
+ "runner": {
+  "doc": "Dated and conditional story events, checked once a month by zin_story_tick. Each item: done flag set when the date is reached (a failed condition skips the event, it is not delayed); when = global conditions; fire = effects run when the conditions hold. Dates are scaled by zin_story_pace.",
+  "reign": [
+   { "key": "e10", "event": "zin_reign.10", "date": "1748.4.1", "done": "zin_story_done_reign_10", "when": ["zin_aenor_king_alive", "!gflag:zin_golden_king_plot_exposed"], "fire": [ { "fire": "zin_reign.10", "to": "parim" } ] },
+   { "key": "e11", "event": "zin_reign.11", "date": "1748.7.1", "done": "zin_story_done_reign_11", "when": ["zin_aenor_king_alive", "!gflag:zin_golden_king_plot_exposed"], "fire": [ { "fire": "zin_reign.11", "to": "parim" } ] },
+   { "key": "e16_1748", "event": "zin_reign.16", "date": "1748.12.1", "done": "zin_story_done_reign_16_1748", "when": ["zin_aenor_king_alive", "!gflag:zin_golden_king_plot_exposed"], "fire": [ { "fire": "zin_reign.16", "to": "parim" } ] },
+   { "key": "e13", "event": "zin_reign.13", "date": "1749.3.1", "done": "zin_story_done_reign_13", "when": ["zin_aenor_king_alive", "!gflag:zin_golden_king_plot_exposed"], "fire": [ { "fire": "zin_reign.13", "to": "parim" } ] },
+   { "key": "e14", "event": "zin_reign.14", "date": "1749.5.1", "done": "zin_story_done_reign_14", "when": ["zin_aenor_king_alive", "!gflag:zin_golden_king_plot_exposed"], "fire": [ { "fire": "zin_reign.14", "to": "parim" } ] },
+   { "key": "e16_1749", "event": "zin_reign.16", "date": "1749.12.1", "done": "zin_story_done_reign_16_1749", "when": ["zin_aenor_king_alive", "!gflag:zin_golden_king_plot_exposed"], "fire": [ { "fire": "zin_reign.16", "to": "parim" } ] },
+   { "key": "e80_1752", "event": "zin_reign.80", "date": "1752.3.1", "done": "zin_story_done_reign_80_1752", "when": [], "fire": [ { "fire": "zin_reign.80", "to": "parim" }, { "loop": "every_country", "limit": ["zin_afrit_is_hub"], "do": [ { "fire": "zin_reign.80" } ] } ] },
+   { "key": "e80_1753", "event": "zin_reign.80", "date": "1753.3.1", "done": "zin_story_done_reign_80_1753", "when": [], "fire": [ { "fire": "zin_reign.80", "to": "parim" }, { "loop": "every_country", "limit": ["zin_afrit_is_hub"], "do": [ { "fire": "zin_reign.80" } ] } ] },
+   { "key": "e53", "event": "zin_reign.53", "date": "1754.3.1", "done": "zin_story_done_reign_53", "when": [], "fire": [ { "fire": "zin_reign.53", "to": "parim" } ] },
+   { "key": "e17", "event": "zin_reign.17", "monthly": true, "when": ["zin_aenor_king_alive", "!gflag:zin_golden_king_plot_exposed", "!gflag:zin_golden_king_dead"], "fire": [ { "fire": "zin_reign.17", "to": "parim" } ] },
+   { "key": "e72", "event": "zin_reign.72", "monthly": true, "done": "zin_story_done_reign_72", "when": ["gflag:zin_reign_councils_war", "zin_aenor_king_alive"], "fire": [ { "fire": "zin_reign.72", "days": 60, "to": "parim" } ] }
+  ]
+ },
+ "ending_dates": { "lead_1": "1760.1.1", "lead_2": "1761.1.1" },
+ "opinion_modifiers": {
+  "zin_reign_mourned_king": { "value": 10, "years": 3, "decay": 1, "name": "Mourned Our King" },
+  "zin_reign_mourning_snub": { "value": -5, "years": 3, "decay": 1, "name": "Silent at the Bier" },
+  "zin_reign_selen_slight": { "value": -5, "years": 2, "decay": 1, "name": "Slighted at Selen" },
+  "zin_reign_gifts_to_god_king": { "value": 15, "years": 5, "decay": 1, "name": "Gifts to the God-King" },
+  "zin_reign_honour_withheld": { "value": -10, "years": 5, "decay": 1, "name": "Honour Withheld" },
+  "zin_ending_treaty_of_equals": { "value": 25, "years": 10, "decay": 1, "name": "Treaty Among Equals" },
+  "zin_ending_old_claims": { "value": -10, "years": 10, "decay": 1, "name": "Old Claims Remembered" },
+  "zin_ending_envoys_south": { "value": 20, "years": 10, "decay": 1, "name": "Envoys in Nafeher" },
+  "zin_ending_temple_paid": { "value": 25, "years": 10, "decay": 1, "name": "The Temples Were Paid" },
+  "zin_ending_temple_refused": { "value": -25, "years": 10, "decay": 1, "name": "The Temples Were Refused" },
+  "zin_ending_gifts_to_parim": { "value": 15, "years": 10, "decay": 1, "name": "Gifts to Parim" },
+  "zin_ending_dues_paid": { "value": 10, "years": 10, "decay": 1, "name": "Dues Paid at the Chain" },
+  "zin_ending_dues_resented": { "value": -20, "years": 10, "decay": 1, "name": "Dues Resented" },
+  "zin_ending_open_roads": { "value": 10, "years": 10, "decay": 1, "name": "Open Roads" },
+  "zin_ending_homage_paid": { "value": 20, "years": 10, "decay": 1, "name": "Homage Paid" },
+  "zin_ending_homage_refused": { "value": -20, "years": 10, "decay": 1, "name": "Homage Refused" }
+ },
+ "ideas": {
+  "zin_reign_anniversary": { "name": "The Nineteenth Year", "desc": "Parim keeps the King's anniversary with gilt and bells, and for a season every merchant in the lake cities has a reason to be glad of it.", "picture": "feast_table", "modifier": { "stability_factor": 0.03, "consumer_goods_factor": 0.02 } }
+ }
+}

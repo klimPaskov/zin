@@ -1,0 +1,229 @@
+{
+ "kind": "events",
+ "namespace": "zin_world",
+ "source": "docs/specs/06_events/04_endings.md: the eight ending news events (zin_world.100 to .107) and the end screen (zin_world.110 to .112). They live in events/zin_world_endings.txt; events/zin_world.txt belongs to the world module. The news options carry the holder's ending spirit (spirit, holder).",
+ "events": [
+  {
+   "id": "zin_world.100",
+   "kind": "news",
+   "title": "The Lost Cause",
+   "picture": "ending_lost_cause",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country (major news event) when the Lost Cause ending is reached",
+   "to": "every country",
+   "spirit": "zin_world_no_crown_over_crowns",
+   "holder": [
+    "zin_aenor_eindil_rules"
+   ],
+   "desc": "The Fourth Age ends with a king of Aen's line on the throne of Aenor. The Lost Cause that a vain king founded for his own glory has become something else: the league of the living, who stood together against the dark and asked no crown to kneel. The Middle Lands lie in ruins. [zin_loc_ending_lost_cause_cost]"
+  },
+  {
+   "id": "zin_world.101",
+   "kind": "news",
+   "title": "Children of Volgan",
+   "picture": "ending_children_of_volgan",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country when Children of Volgan is reached",
+   "to": "every country",
+   "spirit": "zin_world_lord_of_a_ruined_world",
+   "holder": [
+    "zin_is_volgan"
+   ],
+   "desc": "In this telling of the age, the Great Spirit of the Dead Lands rules a ruined world. His grave hosts stand on the plains of the Middle Lands, his client crowns kneel in their halls, and the monsters of the south walk where the kingdoms of men were."
+  },
+  {
+   "id": "zin_world.102",
+   "kind": "news",
+   "title": "The Ashen Throne",
+   "picture": "ending_ashen_throne",
+   "requires": [
+    "zin_ending_reached",
+    "zin_afrit_revealed"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country when the Ashen Throne is reached, after zin_afrit_reveal",
+   "to": "every country",
+   "spirit": "zin_world_the_worshipped_king",
+   "holder": [
+    "zin_afrit_rules_here"
+   ],
+   "desc": "In this telling of the age, Afrit, son of Ein, who was worshipped as the Deliverer, rules from Parim. His temples are full. His council sits in every court that owes it favours. Those who know what he is keep silent, or are silenced."
+  },
+  {
+   "id": "zin_world.103",
+   "kind": "news",
+   "title": "The Golden Court Endures",
+   "picture": "ending_golden_court",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country on the judgement date when the Golden King lives",
+   "to": "every country",
+   "spirit": "zin_world_outcome_golden_court",
+   "holder": [
+    "zin_aenor_is_realm"
+   ],
+   "desc": "In this telling of the age, the Golden King still reigns in Parim. The feasts go on. Whatever the war took from the world, the Golden Court kept its gold."
+  },
+  {
+   "id": "zin_world.104",
+   "kind": "news",
+   "title": "A Western Crown in Parim",
+   "picture": "ending_western_crown",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country on the judgement date when a western crown holds Parim",
+   "to": "every country",
+   "spirit": "zin_world_outcome_western_crown",
+   "holder": [
+    {
+     "any": "any_controlled_state",
+     "limit": [
+      "zin_is_site_parim"
+     ]
+    }
+   ],
+   "desc": "In this telling of the age, western banners still fly over Parim. The old quarrel of the West and Aenor has ended the other way round."
+  },
+  {
+   "id": "zin_world.105",
+   "kind": "news",
+   "title": "Master of the Strait",
+   "picture": "ending_strait_master",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country on the judgement date when Lerendor masters the strait",
+   "to": "every country",
+   "spirit": "zin_world_outcome_strait_master",
+   "holder": [
+    "tag:Lerendor"
+   ],
+   "desc": "In this telling of the age, Lerendor is Sovereign of the Narrow Sea. Every ship that crosses between the North and the Middle Lands pays Sonargur's dues."
+  },
+  {
+   "id": "zin_world.106",
+   "kind": "news",
+   "title": "One King in the East",
+   "picture": "ending_eastern_king",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country on the judgement date when the East is united",
+   "to": "every country",
+   "spirit": "zin_world_outcome_eastern_king",
+   "holder": [
+    "idea:zin_east_united_crown"
+   ],
+   "desc": "In this telling of the age, the East has one king, and no temple raised him. The caravan roads answer to one crown.",
+   "variants": [
+    {
+     "suffix": "revealed",
+     "if": [
+      "gflag:zin_afrit_revealed"
+     ],
+     "text": "In this telling of the age, the East has one king, and he is not the false god. The caravan roads answer to one crown."
+    }
+   ]
+  },
+  {
+   "id": "zin_world.107",
+   "kind": "news",
+   "title": "The Age Unfinished",
+   "picture": "ending_unfinished",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "owner",
+   "external": "zin_world_reach_ending fires it to every country on the fallback date",
+   "to": "every country",
+   "spirit": null,
+   "holder": [],
+   "desc": "No crown ended the Fourth Age. The chroniclers leave the last pages blank, for someone else to write.",
+   "ok": "So it continues."
+  },
+  {
+   "id": "zin_world.110",
+   "title": "The Chronicle of the Age",
+   "picture": "chronicle",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "hook",
+   "to": "every human player",
+   "guard": [
+    "human"
+   ],
+   "immediate": [
+    {
+     "fire": "zin_world.111",
+     "days": 1
+    }
+   ],
+   "desc": "[zin_loc_chronicle_heading]\n\n[zin_loc_chronicle_p1]\n[zin_loc_chronicle_p2]\n[zin_loc_chronicle_p3]\n[zin_loc_chronicle_p4]\n[zin_loc_chronicle_p5]\n\n[zin_loc_chronicle_meter]\n\n[zin_loc_chronicle_unknown]",
+   "options": [
+    {
+     "text": "Let the chronicle stand.",
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_world.111",
+   "title": "Your Part in the Age",
+   "picture": "chronicle",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "chain",
+   "to": "every human player",
+   "guard": [
+    "human"
+   ],
+   "immediate": [
+    {
+     "fire": "zin_world.112",
+     "days": 7
+    }
+   ],
+   "desc": "The chroniclers have set down what became of your crown.\n\n[zin_loc_your_part]",
+   "options": [
+    {
+     "text": "So ends my part.",
+     "do": []
+    }
+   ]
+  },
+  {
+   "id": "zin_world.112",
+   "title": "The Age Has Turned",
+   "picture": "chronicle",
+   "requires": [
+    "zin_ending_reached"
+   ],
+   "source": "chain",
+   "to": "every human player",
+   "guard": [
+    "human"
+   ],
+   "desc": "The Fourth Age is over, but the world is not. The chroniclers will keep their pens until 4A 1800, and no other ending will be judged.",
+   "options": [
+    {
+     "text": "Let the world go on.",
+     "do": []
+    }
+   ]
+  }
+ ]
+}
