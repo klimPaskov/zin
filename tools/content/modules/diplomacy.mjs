@@ -88,6 +88,8 @@ export const KEPT_ENGINE_IDS = new Set(['faction_template_generic', 'faction_goa
 // Vanilla families of ids that the stage-2 files must not define or name (check C3 and the removal rules).
 export const VANILLA_ID = /^(joining_rule_|faction_template_(?!generic$)|faction_goal_(?!unlock_research$|unlock_military$)|faction_manifest_|autonomy_(?!puppet$)|dismissal_rule_(?!ideology_|offensive_war$|world_tension$))/;
 const SPARE_COUNT = 10;
+// The targeted wargoal tension of a cause (spec: +1.0, the installed precedent is imperial_sanction's 0.75 toward one target).
+const CB_TENSION = 1;
 const INTERIM_LOGOS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19];
 const joinId = k => `zin_faction_rule_join_${k}`;
 
@@ -468,6 +470,19 @@ export async function buildDiplomacy(staged, ctx = {}) {
   loc(english, bop.id, 'Balance of the Court'); loc(english, bop.left, 'The Crown'); loc(english, bop.right, 'The Council');
   loc(english, `${bop.id}_mid`, 'Even Scales'); loc(english, `${bop.id}_left_range`, 'The Crown Ascendant'); loc(english, `${bop.id}_right_range`, 'The Council Ascendant');
   for (const p of subjects.powerBalance) { put(`common/modifiers/${p.file}`, fileText(comment('Interim modifier; override of the vanilla file by name. Unused until a mechanic spec uses common/bop.'), render(M(p.id, p.modifier)))); loc(english, p.id, 'Interim Balance'); }
+
+  // ----------------------------------------------------------------------------------------------------- casus belli
+  // Section "Casus belli" of 03_diplomacy_and_factions.md: each cause is a dynamic modifier on the holder whose targeted
+  // generate_wargoal_tension_against lets it justify against the scope it is added with (add_dynamic_modifier = { modifier = <cause> scope = <target> days = N }).
+  // The mechanics that grant them (the crossing, the eastern kings, the Dark Lands) pass the target and the length. The names and texts are in diplomacy_text_subjects.json;
+  // zin_cb_hold_defiance, zin_cb_free_east and zin_cb_high_king are their mechanics' own.
+  {
+    const causes = ['zin_cb_broken_truce', 'zin_cb_old_grudge', 'zin_cb_caravan_roads', 'zin_cb_orc_raids', 'zin_cb_crown_defied', 'zin_cb_against_the_dark', 'zin_cb_eastern_ambition'];
+    await assertModifiers('casus belli', { generate_wargoal_tension_against: CB_TENSION });
+    for (const id of causes) if (!(id in text.english)) throw new Error(`Casus belli ${id} has no name in diplomacy_text_subjects.json`);
+    put('common/dynamic_modifiers/zin_causes.txt', fileText(comment('Causes of war (03_diplomacy_and_factions.md, "Casus belli"). Added with scope = <target>; the holder may justify against that target.'), causes.map(id => render(L(id, 'enable = { always = yes }', `generate_wargoal_tension_against = ${CB_TENSION}`))).join('\n')));
+    defs.causes = causes;
+  }
 
   // ------------------------------------------------------------------------------------------------------------ text
   for (const [file, map] of Object.entries(text.replace)) {

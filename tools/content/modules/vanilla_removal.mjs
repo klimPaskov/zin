@@ -116,8 +116,7 @@ const TRAITS = {
   zin_trait_keeper_of_rolls: ['Keeper of Rolls', { civilian_intel_factor: 0.1, monthly_population: 0.05 }],
   zin_trait_free_dominion: ['Free Dominion', { autonomy_gain_global_factor: 0.1, stability_factor: 0.05 }],
   zin_trait_pilgrim_steward: ['Pilgrim Steward', { opinion_gain_monthly_factor: 0.15 }],
-  zin_trait_envoy_of_many_courts: ['Envoy of Many Courts', { intel_network_gain_factor: 0.2, improve_relations_maintain_cost_factor: -0.15 }],
-  zin_trait_seeker_of_relics: ['Seeker of Relics', { research_speed_factor: 0.03, civilian_intel_factor: 0.1 }],
+  // zin_trait_envoy_of_many_courts and zin_trait_seeker_of_relics (Kessarion's and Ossar's) are the Afrit module's (N13), with the values of 02_characters.md.
   zin_trait_strait_pride: ['Pride of the Strait', { navy_org_factor: 0.05, naval_damage_factor: 0.05, improve_relations_maintain_cost_factor: 0.1 }],
   zin_trait_treaty_keeper: ['Treaty Keeper', { trade_opinion_factor: 0.1, stability_factor: 0.05 }],
   zin_trait_ancient_great_spirit: ['Ancient Great Spirit', { army_morale_factor: 0.1, army_org_factor: 0.1, conscription: 0.02 }],
@@ -395,19 +394,8 @@ function buildInterimRules(staged) {
     ZIN_RULE_SKIES_BEASTS_DESC: 'Griffin riders join the dragons, and any realm that knows the Eyries may raise them.',
     ZIN_RULE_SKIES_NONE: 'Empty Skies',
     ZIN_RULE_SKIES_NONE_DESC: 'No wing takes the air. The Eyries folder and the scorpions are hidden, and dragons become a timed boon.',
-    ZIN_RULE_EINDIL_WAKING: 'The Waking of Eindil',
-    ZIN_RULE_EINDIL_WAKING_DESC: 'When the heir wakes. He never wakes at the start of the campaign.',
-    ZIN_RULE_EINDIL_WAKING_HISTORICAL: 'In Highsun',
-    ZIN_RULE_EINDIL_WAKING_HISTORICAL_DESC: 'The heir wakes in Highsun of 4A 1748, as the Chronicle has it.',
-    ZIN_RULE_EINDIL_WAKING_EARLY: 'Early',
-    ZIN_RULE_EINDIL_WAKING_EARLY_DESC: 'The heir wakes early in 4A 1749.',
-    ZIN_RULE_EINDIL_WAKING_LATE: 'Late',
-    ZIN_RULE_EINDIL_WAKING_LATE_DESC: 'The heir wakes only in 4A 1751.',
   });
-  // The foundation rule zin_rule_eindil_waking (05_defines_and_rules.md) is read by the crown events (the Chronicle); the foundation rules module that
-  // owns common/game_rules/zin_game_rules.txt does not exist yet. Written here in its final form; that module takes the file over.
-  const o = (name, def) => `\t${def ? 'default' : 'option'} = {\n\t\tname = ${name}\n\t\ttext = ZIN_RULE_EINDIL_WAKING_${name}\n\t\tdesc = ZIN_RULE_EINDIL_WAKING_${name}_DESC\n\t}`;
-  staged.text('common/game_rules/zin_rules_eindil.txt', `${HEADER}\n# Interim writer in vanilla_removal.mjs until the foundation rules module exists.\nzin_rule_eindil_waking = {\n\tname = ZIN_RULE_EINDIL_WAKING\n\tdesc = ZIN_RULE_EINDIL_WAKING_DESC\n\tgroup = RULE_GROUP_ZIN\n${o('HISTORICAL', true)}\n${o('EARLY', false)}\n${o('LATE', false)}\n}\n`);
+  // zin_rule_eindil_waking and the other foundation rules are written by modules/rules.mjs (common/game_rules/zin_game_rules.txt).
 }
 
 function buildOverrides(staged, loc) {

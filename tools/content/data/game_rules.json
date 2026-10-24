@@ -1,0 +1,145 @@
+{
+  "source": "The foundation's game rules (docs/specs/00_foundation/05_defines_and_rules.md section 2) and the rows the Aenor, Afrit, Cold Lands, Dark Lands and start-situation specs supply to the same file. Read by tools/content/modules/rules.mjs. Option keys and order follow the spec; the texts never name Afrit or Eindil (the rules screen is seen before any campaign). zin_rule_gathering_dark and zin_rule_elections are not written: nothing reads zin_gathering_dark_rate or an election switch yet (their owners are the world tension and politics modules).",
+  "group": "RULE_GROUP_ZIN",
+  "path_rule": "zin_rule_historical_path",
+  "rules": [
+    {
+      "id": "zin_rule_historical_path", "owner": "05_defines_and_rules.md",
+      "name": "The Course of the Age",
+      "desc": "How closely the realms that no player leads keep to the road the chronicle remembers. A player's realm always chooses for itself.",
+      "options": [
+        { "key": "HISTORICAL", "name": "As the Chronicle Tells", "desc": "Each realm makes the choice the chronicle remembers, in its season." },
+        { "key": "PLAUSIBLE", "name": "As It Might Have Been", "desc": "The realms lean toward the remembered choices, but a court may still take another road." },
+        { "key": "FREE", "name": "As Each Court Wills", "desc": "Every realm weighs its own interests and chooses for itself." }
+      ]
+    },
+    {
+      "id": "zin_rule_story_pace", "owner": "05_defines_and_rules.md",
+      "name": "The Pace of the Age",
+      "desc": "How quickly the great events of the age arrive. Every remembered date moves with this rule.",
+      "options": [
+        { "key": "STANDARD", "name": "Steady", "desc": "The great events come in their remembered seasons.", "pace": 1 },
+        { "key": "SLOW", "name": "Slow", "desc": "The great events come later: every remembered date lies half as far again from the start.", "pace": 1.5 },
+        { "key": "FAST", "name": "Swift", "desc": "The great events come sooner: every remembered date lies a quarter nearer the start.", "pace": 0.75 }
+      ]
+    },
+    {
+      "id": "zin_rule_eindil_waking", "owner": "05_defines_and_rules.md",
+      "name": "The Man from the Ice",
+      "desc": "When the man asleep in the northern ice wakes. He never wakes at the start of a campaign.",
+      "options": [
+        { "key": "HISTORICAL", "name": "Wakes as the Chronicle Says", "desc": "He wakes in Ironfrost of 4A 1749." },
+        { "key": "EARLY", "name": "Wakes Early", "desc": "He wakes in Highsun of 4A 1748." },
+        { "key": "LATE", "name": "Wakes Late", "desc": "He wakes only in Ironfrost of 4A 1751." }
+      ]
+    },
+    {
+      "id": "zin_rule_dark_powers", "owner": "05_defines_and_rules.md",
+      "name": "The Powers of the Dark",
+      "desc": "How boldly the dead of the south and the Mistake of the north move when no player leads them.",
+      "options": [
+        { "key": "HISTORICAL", "name": "As the Chronicle Tells", "desc": "They keep their remembered seasons." },
+        { "key": "AGGRESSIVE", "name": "Bold", "desc": "They move a year early, with stronger hosts." },
+        { "key": "RESTRAINED", "name": "Restrained", "desc": "They never strike first, and fight only when attacked." }
+      ]
+    },
+    {
+      "id": "zin_rule_ai_aenor_succession", "owner": "aenor_court_and_succession.md", "power": "aenor", "perPower": true,
+      "name": "The Middle Kingdom's Succession",
+      "desc": "Which camp the Middle Kingdom follows after the Golden King, when no player leads it.",
+      "branch": {},
+      "options": [
+        { "key": "DEFAULT", "name": "Follow the Course of the Age", "desc": "The court chooses as the Course of the Age rule leads." },
+        { "key": "GOLDEN_COURT", "name": "The Golden Court", "desc": "The court of offices keeps the throne." },
+        { "key": "FREE_DOMINIONS", "name": "The Free Dominions", "desc": "The chartered dominions take the crown's place." },
+        { "key": "RANDOM", "name": "Chance", "desc": "The camp is drawn once, when the campaign begins." }
+      ]
+    },
+    {
+      "id": "zin_rule_ai_east", "owner": "eastern_kings.md", "power": "east", "perPower": true,
+      "name": "The Eastern Kings",
+      "desc": "How the courts of the east answer a claimant to the crown of the east, when no player leads them.",
+      "branch": {},
+      "options": [
+        { "key": "DEFAULT", "name": "Follow the Course of the Age", "desc": "Each court chooses as the Course of the Age rule leads." },
+        { "key": "REFUSE_AFRIT", "name": "Refuse the Deliverer", "desc": "No eastern court kneels, and the courts stand together." },
+        { "key": "UNITE_WITHOUT_AFRIT", "name": "Unite without the Deliverer", "desc": "The strongest eastern power unites the east under its own crown." },
+        { "key": "RANDOM", "name": "Chance", "desc": "The east's course is drawn once, when the campaign begins." }
+      ]
+    },
+    {
+      "id": "zin_rule_ai_elves", "owner": "elves_wall_and_dragons.md", "power": "elves", "perPower": true,
+      "name": "The Elven Refusal",
+      "desc": "Whether the elves keep their old refusal to march in the wars of men, when no player leads them.",
+      "branch": {},
+      "options": [
+        { "key": "DEFAULT", "name": "Follow the Course of the Age", "desc": "The elves stay apart and send only wanderers, as the Course of the Age rule leads." },
+        { "key": "MARCH", "name": "The Kindred March", "desc": "When the dark grows great and an elven realm is at war with it, the elves set the refusal aside and march." },
+        { "key": "RANDOM", "name": "Chance", "desc": "Each elven realm decides once, when the campaign begins." }
+      ]
+    },
+    {
+      "id": "zin_rule_ai_goldoroth", "owner": "dark_lands.md", "power": "goldoroth", "perPower": true,
+      "name": "The Black Iron Crown",
+      "desc": "Whether the orc kingdom of Goldoroth stays its own master or swears to the south, when no player leads it.",
+      "branch": { "HISTORICAL": "INDEPENDENT", "PLAUSIBLE": "INDEPENDENT" },
+      "options": [
+        { "key": "DEFAULT", "name": "Follow the Course of the Age", "desc": "Goldoroth chooses as the Course of the Age rule leads." },
+        { "key": "INDEPENDENT", "name": "Bows to No One", "desc": "Goldoroth keeps its own crown." },
+        { "key": "SWORN_TO_VOLGAN", "name": "Sworn to the South", "desc": "Goldoroth takes the southern bargain and swears to Volgan." },
+        { "key": "RANDOM", "name": "Chance", "desc": "Goldoroth's course is drawn once, when the campaign begins." }
+      ]
+    },
+    {
+      "id": "zin_rule_golden_king_death", "owner": "aenor_court_and_succession.md",
+      "name": "The Golden King's Years",
+      "desc": "How long the Golden King reigns over the Middle Kingdom.",
+      "options": [
+        { "key": "DYNAMIC", "name": "As Events Decide", "desc": "His years rise and fall with the health of his court." },
+        { "key": "HISTORICAL", "name": "As the Chronicle Tells", "desc": "His reign ends in its remembered season, whatever the court does." },
+        { "key": "DELAYED", "name": "A Long Reign", "desc": "His reign lasts some years longer." },
+        { "key": "NO_AI_PLOT", "name": "Players Only", "desc": "Among the realms no player leads, none acts to end his reign early." }
+      ]
+    },
+    {
+      "id": "zin_rule_afrit", "owner": "afrit_hidden_council.md", "power": "afrit", "perPower": true,
+      "name": "The Deliverer's Path",
+      "desc": "How the court of the Worshipdom acts when no player leads it.",
+      "branch": { "HISTORICAL": "HISTORICAL", "PLAUSIBLE": "FREE", "FREE": "FREE" },
+      "options": [
+        { "key": "DEFAULT", "name": "Follow the Course of the Age", "desc": "The court chooses as the Course of the Age rule leads." },
+        { "key": "HISTORICAL", "name": "As the Chronicle Tells", "desc": "The Worshipdom keeps its remembered course." },
+        { "key": "FREE", "name": "As Its Court Wills", "desc": "The Worshipdom weighs every choice by its own interest." },
+        { "key": "ASHEN", "name": "Ambitious", "desc": "The Worshipdom reaches as far as it can." },
+        { "key": "DORMANT", "name": "Patient", "desc": "The Worshipdom never reaches beyond its own temples." }
+      ]
+    },
+    {
+      "id": "zin_rule_cold_isengard", "owner": "cold_lands.md", "power": "cold", "perPower": true,
+      "name": "Isengard and the Accord",
+      "desc": "How Coldor answers Isengard's defiance of the Northern Accord, when no player leads it.",
+      "branch": { "HISTORICAL": "HISTORICAL", "PLAUSIBLE": "FREE", "FREE": "FREE" },
+      "options": [
+        { "key": "DEFAULT", "name": "Follow the Course of the Age", "desc": "Coldor chooses as the Course of the Age rule leads." },
+        { "key": "HISTORICAL", "name": "The Iron Hand", "desc": "Coldor raises the March Forts against Isengard, and no full war follows." },
+        { "key": "OPEN_HAND", "name": "The Open Hand", "desc": "Coldor courts Isengard back into the Accord." },
+        { "key": "CONQUEST", "name": "Conquest", "desc": "Coldor brings Isengard to heel by war." },
+        { "key": "FREE", "name": "As Coldor Wills", "desc": "Coldor weighs its course by Isengard's defiance." }
+      ]
+    },
+    {
+      "id": "zin_rule_debug_checks", "owner": "01_start_situation.md",
+      "name": "Start Checks",
+      "desc": "Checks the opening world when a campaign begins and writes what it finds to the game log. For testing.",
+      "options": [
+        { "key": "OFF", "name": "Off", "desc": "No start checks run." },
+        { "key": "ON", "name": "On", "desc": "The start checks run and write to the game log." }
+      ]
+    }
+  ],
+  "ownerRules": [
+    { "id": "zin_rule_leren_route", "power": "leren", "owner": "lerendor_narrow_strait.md", "branch": { "HISTORICAL": "historical" } },
+    { "id": "zin_rule_west_route", "power": "west", "owner": "western_crossing.md", "branch": { "HISTORICAL": "historical" } },
+    { "id": "zin_rule_eindil_journey", "power": "eindil", "owner": "eindil_journey.md", "branch": { "HISTORICAL": "HISTORICAL" } }
+  ]
+}
