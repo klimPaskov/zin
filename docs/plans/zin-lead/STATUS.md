@@ -11,10 +11,10 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Work | Who | Writes | Done when |
 | --- | --- | --- | --- |
 | MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)", `claude-opus-5-5` | tool repository; record `docs/plans/zin-requests.md` on `claude/zin-integration` | ongoing; ADR 0067 approved; ZR-4 campaign on 144 Wikimedia maps |
-| Integration round 3 | subagent (resumed) | `tools/content/`, `docs/design/stage2/`, `docs/design/validation/`, `docs/plans/zin-art/` | build and suite green |
-| Design previews (13 figures, 12 gods, 6 redesigns) | subagent (resumed) | `$ZIN_ART/raw/previews/`, `$ZIN_ART/review/previews/` | sheets sent to the owner to choose |
-| Voice guide and quote rewrite | subagent (resumed) | `docs/specs/02_lore/09_voice_and_style.md`, `docs/design/text/loading_quotes_v2.json` | lead reviews, swaps in after integration |
-| Regional histories (three groups) | subagents | `tools/content/data/world/history/<region>.json` | `validateHistory` passes for every region |
+| Roster migration | subagent, worktree `%TEMP%\zrw`, branch `roster-int` | `tools/content/` builder, data and tests | 156 realms in the build, suite green; lead reviews and merges |
+| Map-import conversion (ADR 0067 section 7) | subagent | `tools/content/geography/`, `tools/content/data/geography/`, `docs/plans/map-import/` | schema-valid model and sheets; preview call ready for 4.4.0 |
+| Portraits (named figures from the design picks, generic pools) | subagent `hoi4-portrait-creator` | `$ZIN_ART/raw/portraits/`, `art/source/portraits/`, `docs/plans/zin-art/portraits_handoff.md` | handoff ready; lead wires through the builder |
+| MCP worker | see above | tool repository | PRs 36 to 40 merged; PR 41 then release 4.4.0 |
 
 ## Done today (see PROGRAM.md and the git log)
 
