@@ -240,9 +240,9 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 4. Should the Leren king and his heir have lore names? The generated ruler name stands until then.
 5. Do the smaller North Lands crowns also withdraw from Aenoran alliances on their own in 4A 1755, or only through Lerendor?
 6. Should a peaceful form of supremacy (buying R'en, a toll empire) exist beside the war form?
-7. Are the Lerenwaith estates and the Admiralty acceptable as the court's parties, or does the owner have other Leren factions in mind?
+7. Are the Lerendor's North estates and the Admiralty acceptable as the court's parties, or does the owner have other Leren factions in mind?
 8. Should Faithful to the Crown be able to follow the king east to Afrit's eastern cause, or should the North never follow him?
-9. Should Sensai, the most populous North Lands crown, get its own rival route against Lerendor in its tier B tree?
+9. Should Tolvael, the most populous North Lands crown, get its own rival route against Lerendor in its tier B tree?
 
 ## lore digest
 
@@ -320,7 +320,7 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 5. Hiloron: did the giants carry the allied hosts over the crossings in the First Age war, or only witness them?
 6. Kingson: is the pilgrim road to the Zilin Hills through Kingson's gate acceptable as proposed geography?
 7. Is the split between Konori (steppe kingdom of horse fairs and Hundreds) and Hunhun (brotherhood of riders) right?
-8. North Lands: does the owner want Sensai's optional third league, the Free Crowns of the North?
+8. North Lands: does the owner want Tolvael's optional third league, the Free Crowns of the North?
 9. Should every small North Lands crown stand apart with Sonargur on the historical path, or choose by lean as proposed? R'en's historical pick here is Parim's friend.
 10. Which North Lands crowns face the Kusmeel? Should the shore branches open only for the Zol rumour list? Does Molot face that sea? Are Tolhon and Low-ness Islands islands?
 11. Compiler: may allow_branch take ideology, flag, check and 'not is_subject'? May for_country, event_for and invite take ROOT, FROM and OVERLORD? Timed country flags are also needed. The shared trees rely on all of these.

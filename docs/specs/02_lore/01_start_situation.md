@@ -142,10 +142,10 @@ Each entry gives the situation, the countries that matter, the live tensions and
 
 #### North Lands
 
-- **Lerendor**, the united crown of Lerendor and Lerenwaith since 4A 411 (P date), leads the **Leren Compact** (W) with Eekedor. Andos Enda is not a member at the start (S5); Lerendor can court it.
+- **Lerendor**, the united crown of Lerendor and Lerendor's North since 4A 411 (P date), leads the **Leren Compact** (W) with Eekedor. Andos Enda is not a member at the start (S5); Lerendor can court it.
 - The **Treaty of the Narrow Strait** (P name for the established "old alliance", P date 4A 512) binds the North Lands to defend Aenor in war.
 - Lerendor's envoys were humiliated in Parim over a disputed toll in 4A 1716 (P). The Leren court has doubted the treaty since.
-- **Molot** is a marcher state balancing Lerendor; **R'en** is the gateway between the Leren and Aenor seas; **Sensai**, **Mina** and twenty smaller crowns look to Lerendor or Parim as it suits them (roster).
+- **Molot** is a marcher state balancing Lerendor; **R'en** is the gateway between the Leren and Aenor seas; **Tolvael**, **Mina** and twenty smaller crowns look to Lerendor or Parim as it suits them (roster).
 - **Tensions:** strait tolls, fleet pride, Molot's independence.
 - **Hooks:** toll quarrels, fleet reviews, a treaty debate at court.
 

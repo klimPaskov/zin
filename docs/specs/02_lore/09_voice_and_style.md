@@ -302,7 +302,7 @@ Words given to the long dead are framed as remembered: "Words the heralds give t
 | the Kusmeel | the Kusmeel, the Kusmeel | The sea north of Zol's Mistake |
 | the Pupor Isles | Triton's Islands | |
 | Gunwyn | Gunwaith | No "-waith" name anywhere |
-| Lerendor and Veskel | Lerendor and Lerenwaith | One crown |
+| Lerendor and Veskel | Lerendor and Lerendor's North | One crown |
 | Vindael | Windwaith | The Cold Lands' ice arm |
 | Orohaf | Asgard | Aenor Isle's harbour |
 | Melkgard | Isengard | |

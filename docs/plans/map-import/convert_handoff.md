@@ -22,7 +22,7 @@ Changes to existing files, all inside `tools/content/geography/` and `tools/cont
 
 - `name_table.mjs`: the reconciled roster names every capital site after its capital city (`rosterCapitalEntries`), ahead of a curated entry that named the site after its realm; renamed islands keep their drawn label as `drawnLabel`; `--roster` option. `name_table.json` regenerated (206 entries, 161 before).
 - `repair_model.mjs`: (1) a feature an earlier table renamed is renamed again from its former label; (2) every sheet's `clip` keeps only the cells within `CLIP_COAST_MARGIN_PX` (48) of the model's land, so pencil frame lines, a neighbouring sheet's paper and lettering in open water are never read. `aoaz.repaired.json` regenerated: only site names (54), one forest name and the twelve clips changed.
-- `sheet_registration.mjs`: `SCAN_SHEETS` maps the owner's own scan titles of `docs/name_table.md` ("Dead Lands", "Ocean of Edvoid") again. The canon text migration of `2b5f1de` had renamed the keys but not the label table, so the Ember Lands and Kusmeel labels were silently ignored by the rename table and the registration checks. With the aliases the registration and the name table are again fixed points.
+- `sheet_registration.mjs`: `SCAN_SHEETS` maps the owner's own scan titles of `docs/name_table.md` ("Ember Lands", "Kusmeel") again. The canon text migration of `2b5f1de` had renamed the keys but not the label table, so the Ember Lands and Kusmeel labels were silently ignored by the rename table and the registration checks. With the aliases the registration and the name table are again fixed points.
 - `check_model.mjs`: `NETHER_SITE` accepts the seat `site_nether` by id (it is now named Zarath-Nazur after its roster capital).
 - `geography_steps.test.mjs`: four new tests (roster capitals, re-rename, scan aliases, the clip coast margin).
 
@@ -101,11 +101,11 @@ The rename table now has 206 entries (161 before). New: every roster capital sit
 **Names not resolved from canon (owner question candidates):**
 
 1. `site_yeldenne_landing`: the roster's capital of Yeldenne is "Simoto", a working name; the roster itself says the drawn town reads "Hul..." under a seam and its name is the owner's to give.
-2. The Isengar Mountains and the Isengar Pass: the Cold Lands dossier keeps "Isengar", which echoes Isengard (K14 replaces names from other fiction); Melkgard replaced Isengard for the realm only.
+2. The Ormolak Mountains and the Ormolak Pass: the Cold Lands dossier keeps "Ormolak", which echoes Isengard (K14 replaces names from other fiction); Melkgard replaced Isengard for the realm only.
 3. "Kingson Wall" (`range_magic_wall`, the east side of the Kingson ring): K2 says there is no wall and the dossiers renamed the "Wall-Folk"; the range name stayed.
-4. Real-world words the vault or dossiers keep: Nara (a Japanese city), Verde, the Light Forests of Yang, the Woqood Alps (proposed name), Mount Argon, and "Hellfire" in the Hellfire Range and the Hellfire Gulf (the Nether dossier retired "The Hell" as a real-world word).
+4. Real-world words the vault or dossiers keep: Nara (a Japanese city), Verde, the Light Forests of Yang, the Woqood Spires (proposed name), Mount Argul, and "Hellfire" in the Smoking Teeth and the Gulf of the Teeth (the Nether dossier retired "The Hell" as a real-world word).
 5. Every K46 name is a proposal: the 10 new bay and gulf names (after a shore town: Bay of Varlibo, Bay of Bulligon, Bay of Borrak, Bay of Arligon, Bay of Sonargur, Bay of Enliras, Gulf of Googavis; after the region where no town is near: Bay of the West Lands, Bay of the Cold Lands, Gulf of the West Lands) and the 20 narrow-gap straits ("The <island> Sound").
-6. The model's coast points Novez Bay, Bay of Safeton (open water), Delbiz Bay and Hellfire Gulf (on land) have no enclosed water within 120 px; they stay named places, not bays. Their placement or the bay they name needs the owner's eye.
+6. The model's coast points Novez Bay, Bay of Safeton (open water), Delbiz Bay and Gulf of the Teeth (on land) have no enclosed water within 120 px; they stay named places, not bays. Their placement or the bay they name needs the owner's eye.
 7. Pollos Passage: its `joins` (Pollos, Benan) are one island in the model; its crossing follows its course between Adel and Kitodolwai.
 
 ## 6. Edge bands
@@ -234,7 +234,7 @@ Run it with release 4.4.0 installed, as `hoi4_map_rewrite` with the arguments of
 
 ## 9. Known issues and limits
 
-- `aoaz.json` is stale against the migrated repair code: it still has `dead_lands` identifiers and the names "Ocean of Zol" and "Black Islands of the Ocean of Zol", so `repair_model.mjs` run from it reports `NETHER_EMBER_LANDS_MISSING` and seven unresolved renames, and the full-model test (`ZIN_GEO_FULL=1 node --test tools/content/geography/repair_model.test.mjs`) fails at `HEAD` already. The canon migration (`tools/migrations/canon_renames.mjs`, the lead's item) should rewrite `aoaz.json`; until then rebuild from the repaired model as in section 1.
+- `aoaz.json` is stale against the migrated repair code: it still has `ember_lands` identifiers and the names "Kusmeel" and "Black Islands of the Kusmeel", so `repair_model.mjs` run from it reports `NETHER_EMBER_LANDS_MISSING` and seven unresolved renames, and the full-model test (`ZIN_GEO_FULL=1 node --test tools/content/geography/repair_model.test.mjs`) fails at `HEAD` already. The canon migration (`tools/migrations/canon_renames.mjs`, the lead's item) should rewrite `aoaz.json`; until then rebuild from the repaired model as in section 1.
 - `docs/specs/01_map/05_geography_model.md` section 11.1 does not yet describe the coast-margin clips, the roster capitals, K46 or the converter; it is outside my paths.
 - The tool's geography preview does not plan a map, so it will not show adjacencies, and it will not test the straits as crossings.
 - `import_measures.mjs` mirrors the import's warp and classifier for measurement only; the tool's text masking, water cleaning and component cleaning are not simulated, so its numbers are estimates.

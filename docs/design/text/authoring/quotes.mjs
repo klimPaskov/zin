@@ -114,7 +114,7 @@ const Q = [
 [99, EL, 'Magical Lands', 'elf', 0, "Walk softly in the Mushroom Forest, because the mycids feel every footstep through the floor of it, and they are slow to forget a heavy one.", "Saying of the rift shore", "Mycids of the Mushroom Forest (E)"],
 [100, NO, 'North Lands', 'proverb', 0, "When Lerendor and Veskel were joined under one crown the old wives of Sonargur called it a good match, since the bride brought snow and the groom brought harbours and each had what the other lacked.", "Saying of Sonargur", "Union of the Leren crowns (E one crown, P date); Veskel, the snow country of the west (P name)"],
 [101, NO, 'North Lands', 'court', 0, "We thank our good cousin of Lerendor for his letter on the strait dues, and we have read it twice with great attention, once for its courtesy and once to see whether the figures improved.", "From a letter of the Golden Court to Sonargur", "The toll quarrel over the strait dues (P); the Treaty of the Narrow Strait (P)"],
-[102, NO, 'North Lands', 'woodsfolk', 0, "Sensai bows to no crown and sells its timber to all of them, and its foresters will tell you that no tree has ever once asked who was buying it.", "Saying of Sensai", "Sensai's timber (P)"],
+[102, NO, 'North Lands', 'woodsfolk', 0, "Tolvael bows to no crown and sells its timber to all of them, and its foresters will tell you that no tree has ever once asked who was buying it.", "Saying of Tolvael", "Tolvael's timber (P)"],
 [103, NO, 'North Lands', 'proverb', 0, "Molot and R'en sit between the two masters of the strait, and like all small crowns they have learned to smile in both directions at once without straining their necks.", "Saying of the Free Crowns", "Molot and R'en (E names)"],
 [104, NO, 'North Lands', 'proverb', 0, "The dwarf goblins of the Leren hills are neither dwarves nor goblins, as they will tell you at length, and the quickest way out of one of their halls is to ask which of the two they are nearer.", "Saying of the Leren uplands", "Dwarf goblins, a people of their own in the hills near Lerendor (E, owner 24 October 2026)"],
 [105, CO, 'Cold Lands', 'proverb', 0, "In the Cold Lands a stranger at the door is given a seat by the fire and a bowl before anyone asks his name, and the questions can wait until the thaw.", "Hospitality law of the Cold Lands clans", "Cold Lands clans (E); custom (P)"],
@@ -179,7 +179,7 @@ const TIP_FIX = {
 
 const banned = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/content/data/banned_words.json'), 'utf8'));
 const rx = banned.rules.map(r => ({ id: r.id, sev: r.severity, re: new RegExp(`(?<![A-Za-z0-9'])(?:${r.pattern})(?![A-Za-z0-9'])`, r.caseSensitive ? 'u' : 'iu') }));
-const extra = /\b(Ocean|Erdae|Kusven|Kusven|Triton|Ember Lands|Gunwaith|Lerenwaith|Asgard|Isengard|Titanos|Hengyang|Gondolin|Hiloron|Thaw|Highsun|Deepwinter|Harvest|metres?|Einendil|-waith|arguably|in many ways|perhaps)\b/i;
+const extra = /\b(Ocean|Erdae|Edvoid|Kusven|Triton|Dead Lands|Gunwaith|Lerenwaith|Asgard|Isengard|Titanos|Hengyang|Gondolin|Hiloron|Thaw|Highsun|Deepwinter|Harvest|metres?|Einendil|-waith|arguably|in many ways|perhaps)\b/i;
 
 const out = [];
 const problems = [];

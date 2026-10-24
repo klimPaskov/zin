@@ -622,7 +622,7 @@ All fourteen are **proposed (P)**. Names follow the person-name stems, endings a
 
 - The Wardens unit description in `warfare_units.json` says that ordinary iron cannot end the dead and that the wardens' wards can. For Zol's dead the vault says only potent magic such as Glo's can end them (E). The description should say that the wards hold or turn the dead, or speak of Elzon's kind of dead, unless the owner rules otherwise (question 6 below).
 - The month names in older specs (for example "Thaw" in `zin_lore.106`) are superseded; months are by number until the twelve gods' names are written.
-- This file names Gunwaith, Windwaith and Lerenwaith under their current map names only. The owner's rule against *-waith* names forbids new ones here; if the existing names are replaced, these references follow the renaming.
+- This file names Gunwaith, Windwaith and Lerendor's North under their current map names only. The owner's rule against *-waith* names forbids new ones here; if the existing names are replaced, these references follow the renaming.
 - Older specs that give ages in years for Eindil, Afrit, Horos, Golbran, Gektor or Elzon, or quote the cards' figures, conflict with the owner's rule that no being's exact age is stated.
 
 ## Questions for the owner

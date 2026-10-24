@@ -258,7 +258,7 @@ The East is deliberately not one kind of state (P):
 | Shachihata (drawn region; also a demon kind in the vault, [PA]) | a real-world company name | **Ashkarith** for the demon kind; the region label becomes an off-map reference name | Infernal *ashkar* "fire" + *-ith* |
 | Morodor (drawn region) | echoes Tolkien's Mordor | **Kalioth**, a dry upland of Erco | Alerhic *kalia* "dark" + *-oth* "high place" |
 | Khadon Ocean, The Magical Ocean | two names for one sea | **the Rift Sea** | Common Speech |
-| Flaming Ocean, Ocean of the Hellfire | two names for one gulf | **the Gulf of the Teeth** | Common Speech |
+| Flaming Ocean, Ocean of the Smoking Teeth | two names for one gulf | **the Gulf of the Teeth** | Common Speech |
 | Mushroom Seas, Reeto Seas | two names, plural | **the Reeto Sea** | drawn |
 | Delbiz Grasslands (country) | a landscape as a realm name | **Delbiz** | drawn |
 

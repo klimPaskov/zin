@@ -219,7 +219,7 @@ The sea-speech of the North Lands: clipped, with long vowels and hard endings. I
 | Patronymic | son, dot. Given name + father's name + son (male) or dot (female). |
 | Epithets | aar "the king"; gael "the grey"; kaur "the black"; mas "the great"; rus "the red"; tir "the small" |
 | Titles | ruler_m: King; ruler_f: Queen; lord: Jarl; admiral: Sea-Lord; speaker: Speaker |
-| Notes | A king takes a number: Ferlin III. A ruler of the union adds both crowns: of Lerendor and Lerenwaith. |
+| Notes | A king takes a number: Ferlin III. A ruler of the union adds both crowns: of Lerendor and Lerendor's North. |
 
 **Dictionary** (81 elements): river *sir*, mountain *karun*, lake *par*, valley *deel*, forest *sel*, ford *vas*, hill *hil*, coast *lis*, island *or*, bridge *tum*, wall *mur*, fort *dun*, hall *oul* ir, high *os*, low *nim*, old *dran*, new *nei*, red *rus*, white *eil*, dark *dum*, bright *lor*, holy *seel*, king *aar* ir, queen *aarna* ir, stone *tal*, iron *ker*, gold *gour* ir, sea *meel*, harbour *hav*, city *keer*, town *bur*, field *lan*, road *ras*, gate *peel* ir, tower *sur*, spring *sul*, marsh *mos*, ice *kel*, fire *ire* ir, tree *beel*, wind *ven*, sun *ulan* ir, moon *neel* ir, star *is*, grave *kus*, north *bor*, south *nes*, east *eis* ir, west *ves*, great *mas*, small *tir*, black *kour*, green *veel*, grey *geel*, deep *dol*, wolf *vul*, bear *bar*, eagle *kir*, horse *hun*, fish *ish*, raven *kor*, water *vee*, cliff *krak*, pass *sol* ir, house *ham*, lord *ferl* ir, warden *ger* ir, silver *sil*, salt *sal*, ash *esh*, blood *rut*, bone *bein* ir, bell *bel*, lamp *lum*, oak *dar*, hearth *art*, bay *vik* +, shore *vaith* +, skerry *skar* +, ship *knor* +, tide *flood* +.
 
@@ -1373,7 +1373,7 @@ The vault's names are used exactly as given. This table says which language each
 | Kilinti | Place | Long Speech | |
 | Hiloron | Place | Aenoran with a Giants' Speech word | "the giants' hill" [P] |
 | Coldor, Isengard, Windwaith | Places | Coldic | *Coldor* "ice-land", *Isengard* "iron stronghold", *Windwaith* "wind-shore" (chart spelling) [P] |
-| Lerendor, Lerenwaith, Sonargur, Eekedor, R'en | Places | Leren | |
+| Lerendor, Lerendor's North, Sonargur, Eekedor, R'en | Places | Leren | |
 | Gunwaith, Girdon, Kradlon, Corogon | Places | Gunwaithic | |
 | Goldoroth | Place | Orcish, chart form | The orcs' own form is Gruzgoroth [P] |
 | Dondor | Place | Dondric | |

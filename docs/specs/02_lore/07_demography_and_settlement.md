@@ -312,7 +312,7 @@ Region development (share of building slots filled): Middle Lands 0.60, East Lan
 | Safeton | Middle Lands | Lake Aenorans | 2 | 0.76 M | 0.18 M |
 | Isengard | Cold Lands | Isengard Warlords | 12 | 0.74 M | 0.06 M |
 | Windwaith | Cold Lands | Windwaith Seafarers | 12 | 0.74 M | 0.06 M |
-| Sensai | North Lands | Free Crowns of the North | 7 | 0.72 M | 0.12 M |
+| Tolvael | North Lands | Free Crowns of the North | 7 | 0.72 M | 0.12 M |
 | Tieri | Middle Lands | Lake Aenorans | 2 | 0.71 M | 0.17 M |
 | Mondon | Middle Lands | Lake Aenorans | 2 | 0.71 M | 0.17 M |
 
@@ -402,7 +402,7 @@ Placement uses countries, capital states and named features of the geography mod
 | 23 | Perhy | Eekedor | Men | Leren of the Strait | Arbitration town of the North | 14 | In Eekedor's capital state, on the inlet that is its harbour. |
 | 24 | Farnardur | R'en | Men | Leren of the Strait | Gateway of the strait | 18 | In R'en's capital state, at the narrowest point of the strait. |
 | 25 | Altovian | Molot | Men | Free Crowns of the North | Marcher fortress | 12 | In Molot's capital state, behind the marsh line. |
-| 26 | Agtosai | Sensai | Men | Free Crowns of the North | Seat of the largest free crown | 16 | In Sensai's capital state, in the long vale. |
+| 26 | Agtosai | Tolvael | Men | Free Crowns of the North | Seat of the largest free crown | 16 | In Tolvael's capital state, in the long vale. |
 | 27 | Gilvian | Mina | Men | Free Crowns of the North | Mining crown's town | 9 | In Mina's capital state, below the ore hills. |
 | 28 | Fandanar | Coldor | Men | Winter-Crown Folk | Seat of the Winter Crown; the Frost-Hall | 85 | In Coldor's capital state, in the interior valley between the Frozen Mountains and the Cold Mountains. |
 | 29 | Minnolomak | Isengard | Men | Isengard Warlords | Warlord's fort-city | 30 | In Isengard's capital state, at the mouth of the main pass of the Ormolak Mountains. |

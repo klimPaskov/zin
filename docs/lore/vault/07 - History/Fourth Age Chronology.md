@@ -53,7 +53,7 @@ See [[The Campaign of 4A 1748]] for the world at the start and how the age can u
 | --- | --- |
 | 4A 212 | **First Concord Council** in Parim. The dominions and the crown agree on a common army in war and free roads in peace. |
 | 4A 340 | The universities of Parim and Selen are founded. Physicians of the Houses of the First Light teach in both. |
-| 4A 411 | **The Leren crowns unite.** Lerendor and Lerenwaith marry their royal houses and become one kingdom, the strongest power of the North Lands. |
+| 4A 411 | **The Leren crowns unite.** Lerendor and Lerendor's North marry their royal houses and become one kingdom, the strongest power of the North Lands. |
 | 4A 512 | **The Treaty of the Narrow Strait.** The North Lands and Aenor promise mutual defence across the strait. This is the "old alliance" the North later abandons. |
 | 4A 600 to 780 | The great caravan roads of the East Lands open. **Noris** and **Stabilo** grow rich on them and begin a rivalry that never fully ends. |
 | 4A 702 | The Triton islanders chart the Pupor Ocean and sell their charts to every crown. |

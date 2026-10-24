@@ -41,7 +41,7 @@ In the **Zilin Hills** stands the **Worshipdom**, a temple-state of the Delivere
 
 ### The North Lands
 
-**Lerendor**, the united crown of Lerendor and Lerenwaith, leads the **Leren Compact** with Eekedor (established working table). Its kings are proud, its fleets guard the strait, and its court has resented Aenor since the toll quarrel of 4A 1716 (proposed). Under the **Treaty of the Narrow Strait** (proposed name for the established "old alliance") the North Lands must defend Aenor in war. Lerendor's question is whether to honour the treaty, break it, or turn it into Leren supremacy over the strait. The smaller North Lands crowns, among them Sensai, Molot, R'en and Mina, look to Lerendor or to Parim as it suits them.
+**Lerendor**, the united crown of Lerendor and Lerendor's North, leads the **Leren Compact** with Eekedor (established working table). Its kings are proud, its fleets guard the strait, and its court has resented Aenor since the toll quarrel of 4A 1716 (proposed). Under the **Treaty of the Narrow Strait** (proposed name for the established "old alliance") the North Lands must defend Aenor in war. Lerendor's question is whether to honour the treaty, break it, or turn it into Leren supremacy over the strait. The smaller North Lands crowns, among them Tolvael, Molot, R'en and Mina, look to Lerendor or to Parim as it suits them.
 
 ### The Cold Lands
 

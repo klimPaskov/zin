@@ -637,7 +637,7 @@ These are story candidates, not fixed canon. Established figures such as Elzon, 
 | **King Edran** | Established Grand Alliance king, rebuilding ruler who dies of disease in the Second Age | A great war leader must learn that reconstruction demands different skills than victory at Dardan |
 | **Lorien of Gala** | Established king of the Gala elves | His people aid the afflicted, but he refuses to hand his host over for another reckless campaign |
 | **Ithren of the Threshold** | Earlier proposed Great Spirit associated with Dardan's binding | He senses the imprisonment weakening yet cannot compel the divided kings to act |
-| **Avarin of Lerenwaith** | Proposed North Lands envoy and later commander | Attempts to preserve a northern alliance while her own country faces raids |
+| **Avarin of Lerendor's North** | Proposed North Lands envoy and later commander | Attempts to preserve a northern alliance while her own country faces raids |
 | **Seron of Selen** | Proposed human commander of reconstruction armies | Saves several provinces but finally loses the ability to keep the king's forces together |
 | **Tavriel of the Magical Forest** | Proposed elven healer and ward-keeper | Helps people of several races survive supernatural outbreaks, opposed by her own isolationist faction |
 | **Arelon, Keeper of the Last Seal** | Proposed royal archivist | Carries part of the Aenoran inheritance through the fall, with consequences for the Fourth Age |
@@ -1914,7 +1914,7 @@ Roka's own fate, whether he personally guarded the necklace, and why it possesse
 
 These supporting characters were invented for [[The Second Age of Aoaz]] on 17 October 2026. They are **not established canon**.
 
-- **Avarin of Lerenwaith:** North Lands envoy and eventual commander trying to coordinate aid for Aenor while defending her own kingdom. Her impossible diplomatic position shows why the Grand Alliance cannot simply be restored.
+- **Avarin of Lerendor's North:** North Lands envoy and eventual commander trying to coordinate aid for Aenor while defending her own kingdom. Her impossible diplomatic position shows why the Grand Alliance cannot simply be restored.
 - **Seron of Selen:** Human commander assigned to guard rebuilding efforts and provincial supply routes. His campaigns briefly stabilize whole districts, but he loses troops faster than they can be replaced. He could become a tragic revenant, die defending refugees, or survive as a resistance leader.
 - **Tavriel of the Magical Forest:** Elven healer and guardian of wards who continues to help men despite widespread resentment of Aenor. Her opponents among the elves argue for closing borders. She gives concrete form to disagreements inside elven society.
 - **Arelon, Keeper of the Last Seal:** Royal archivist who escapes Elzon's conquest with fragments of Aen's lineages and the ancient law of succession. The archive may survive to complicate the politics around [[Eindil]] in the Fourth Age.
@@ -2352,7 +2352,7 @@ The occupation lasts many generations and cannot be maintained solely by a singl
 | **Aenor (Middle Kingdom)** | Parim, Middle Lands | Central mainland power, surrounding regions as satellites, Cursed Lands and Bloody Forest resisting. | 26 satellites including Selen, Kilinti, Kingson, Konori, Hunhun, Asgard, Herez; **Middle Kingdom Concord**. | Lerendor, Zol |
 | **Zol** | Furviatlon, Zol's Mistake | Black northern wastes, Šodolôrō, Kusmeel islands. **No active physical form** (newer lore). | None listed in older table, but newly established to have **Great Spirit, Lesser Spirit and New God servants** whose identities and political status remain unspecified. | Aenor |
 | **Volgan** | Nafeher, Ember Lands | Ancient Great Spirit, principal dark lord. | Demon, Dolon, Nezer; **Southern Dominion**. | Mirolon |
-| **Lerendor** | Sonargur, North Lands | United crown of Lerendor and Lerenwaith, northern counterweight to Aenor. | Eekedor, Andos Enda; **Leren Compact**. | Aenor |
+| **Lerendor** | Sonargur, North Lands | United crown of Lerendor and Lerendor's North, northern counterweight to Aenor. | Eekedor, Andos Enda; **Leren Compact**. | Aenor |
 | **Coldor** | Fandanar, Cold Lands | Northern great power of the frozen interior and western ports. | Horidor; **Northern Accord**. | Isengard |
 | **Noris** | Furvior, East Lands | Eastern great power, includes Noris desert. | Gondolin; **Noris Treaty**. | Stabilo |
 | **Stabilo** | Postondoroth, East Lands | Competitor in southern trade routes. | Drak; **Stabilo Pact**. | Noris |
@@ -2363,7 +2363,7 @@ The occupation lasts many generations and cannot be maintained solely by a singl
 
 **Hirolon (owner, 24 October 2026):** the older working table listed Hiloron among Aenor's satellites. Hirolon, the current spelling, is a sovereign giant kingdom that treats with Aenor, not a satellite.
 
-Additional polities which must remain separate on the map: **Bordon, Dreson, Dulundur, Troll Forest, Nolorim, Herez**. **Kilinti + Kilinti Forests** count as a single country, as do **Lerendor + Lerenwaith**.
+Additional polities which must remain separate on the map: **Bordon, Dreson, Dulundur, Troll Forest, Nolorim, Herez**. **Kilinti + Kilinti Forests** count as a single country, as do **Lerendor + Lerendor's North**.
 
 Seat names not drawn on the original maps were constructed in local naming styles and can be replaced. No capital is named after an antagonist or an entire region.
 

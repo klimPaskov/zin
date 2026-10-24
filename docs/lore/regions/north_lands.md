@@ -45,12 +45,12 @@ Winter storms in the strait; fog on the Rim; avalanches in the Loron highland; s
 | People | Culture | Language | Where | Status |
 | --- | --- | --- | --- | --- |
 | Men | Leren of the Strait | Leren, court dialect | Lerendor, Veskel, Eekedor, R'en, Keredor-Hellekton, the coasts | proposed culture [WB §3.1]; "North Earth" ally of Aenor established [V: The First Age of Aoaz §2] |
-| Men | Free Crowns of the North | Leren, inland dialect (Orran loan-words in river names) | Sensai, Molot, Tolhon, Heodwa, Mina, the lake towns | proposed [WB §3.1] |
+| Men | Free Crowns of the North | Leren, inland dialect (Orran loan-words in river names) | Tolvael, Molot, Tolhon, Heodwa, Mina, the lake towns | proposed [WB §3.1] |
 | Dwarves | the High Mountain hold (own name unwritten) | Dwarvish (reserved, unwritten [LG §2]); Leren with men | the High Mountains and the Loso heights | owner decision [OD]; card [BC 44] names a "High Mountain" among dwarf homes |
 | Dwarf goblins | a people of their own (own name unwritten) | unwritten; a traders' Leren | the southern hills near Lerendor (the drawn Mustnom) and on the roads | owner decision [OD]; card [BC 42] |
 | Men | Dondor folk | Dondric | a few Blackton traders in Sonargur | proposed minority [DM minorities] |
 
-**Leren** is a daughter of Old Ainic, the speech of Aenor's First Men, clipped and northern: long vowels written double, hard endings, names in *-ur*, *-vik*, *-sk* (proposed [LG §1, §3.3]). Its kinship with Aenoran (*sira/sir* "river", *par* "lake", *tal* "stone") is ancestry: the Leren descend from the northern kingdoms that allied with Aen's realm [WB §3.1]. Its Orran loan-words in inland river names come from the beaten kingdoms of the War of Men (proposed [LG §5]). **No "waith" names.** The Leren word *vaith* "shore" listed among the language's extras [LG §3.3] is not used in any place name, and Lerenwaith becomes **Veskel**, Leren *ves* "west" + *kel* "ice": the western ice country of the crown [OD].
+**Leren** is a daughter of Old Ainic, the speech of Aenor's First Men, clipped and northern: long vowels written double, hard endings, names in *-ur*, *-vik*, *-sk* (proposed [LG §1, §3.3]). Its kinship with Aenoran (*sira/sir* "river", *par* "lake", *tal* "stone") is ancestry: the Leren descend from the northern kingdoms that allied with Aen's realm [WB §3.1]. Its Orran loan-words in inland river names come from the beaten kingdoms of the War of Men (proposed [LG §5]). **No "waith" names.** The Leren word *vaith* "shore" listed among the language's extras [LG §3.3] is not used in any place name, and Lerendor's North becomes **Veskel**, Leren *ves* "west" + *kel* "ice": the western ice country of the crown [OD].
 
 **Dwarves.** The owner places dwarves in the great ranges of the North Lands [OD], and the dwarf card lists a "High Mountain" among their homes [BC 44]; the drawn High Mountains [NT] are proposed as their hold. **Dwarf goblins** are a people of their own in the hills of the North Lands near Lerendor [OD]: small but strong and tough, cave-dwellers who love to travel for food and goods, rarely at home; in their caves bound labourers work under a boss; travellers bring the boss food and goods, and the boss gives iron to the smiths; they trade on the road and turn to beating and theft when a customer is cheeky, but run if resisted [BC 42]. The card's "[?Lerendor?]" reading is confirmed by the owner's placement.
 
@@ -58,7 +58,7 @@ Winter storms in the strait; fog on the Rim; avalanches in the Loron highland; s
 
 The model gives **6.8 million** in 28 countries and 60 states (43 per pixel, denser than the temperate West Lands at 30), with Lerendor at 1.24 million and the largest city Sonargur at 120,000 [DM regions; DM countries; DM settlements].
 
-**Revision proposed: about 3.9 million.** The model's own density note gives the North 15 to 30 per square kilometre, below the West Lands' 20 to 35 [DM §4], yet its total makes the North denser per pixel than the West; a quarter of the island lies under snow [GM region_north_lands]. Applying the North's own density to its land gives about 3.8 to 4.0 million. Proposed distribution: Lerendor with Veskel 1.20 M; Eekedor 0.60 M; Sensai 0.40 M; R'en 0.30 M; Keredor-Hellekton 0.25 M; Heodwa Lands 0.25 M; Molot 0.20 M; Tolhon 0.20 M; Mina 0.20 M; the Hold 0.20 M; the High Mountain dwarves about 50,000; Mustnom's dwarf goblins about 30,000 at home, with as many again on the roads.
+**Revision proposed: about 3.9 million.** The model's own density note gives the North 15 to 30 per square kilometre, below the West Lands' 20 to 35 [DM §4], yet its total makes the North denser per pixel than the West; a quarter of the island lies under snow [GM region_north_lands]. Applying the North's own density to its land gives about 3.8 to 4.0 million. Proposed distribution: Lerendor with Veskel 1.20 M; Eekedor 0.60 M; Tolvael 0.40 M; R'en 0.30 M; Keredor-Hellekton 0.25 M; Heodwa Lands 0.25 M; Molot 0.20 M; Tolhon 0.20 M; Mina 0.20 M; the Hold 0.20 M; the High Mountain dwarves about 50,000; Mustnom's dwarf goblins about 30,000 at home, with as many again on the roads.
 
 ### Where they live and why
 
@@ -70,7 +70,7 @@ The economy spec weights the North Lands at iron 2, timber 3, horses 1, stone 1,
 
 | Resource | Where and why (proposed unless marked) |
 | --- | --- |
-| Timber | The Dwarc and Swy Forests of the north coast and the Eagle Forest above the Leren Ocean (`forest_dwarc`, `forest_eagle` [GM]): the North's ships, tar and pitch; Sensai's "timber and tar" [FT regional_sensai]. |
+| Timber | The Dwarc and Swy Forests of the north coast and the Eagle Forest above the Leren Ocean (`forest_dwarc`, `forest_eagle` [GM]): the North's ships, tar and pitch; Tolvael's "timber and tar" [FT regional_tolvael]. |
 | Iron | Mina's mines in the Etonia hills [FT regional_mina]; the dwarves' deep iron of the High Mountains; the dwarf goblins' forges. |
 | Grain | The Eekedor Vale and the Leren River valley. |
 | Horses | Few; hill ponies of Heodwa. |
@@ -115,7 +115,7 @@ Other livelihoods: the **strait dues** at Sonargur, the crown's great wealth [MS
 | 1A, about 200 | proposed | **The Ship-Bond.** Leren and Aenoran ships chart the strait together; Sonargur is founded at the best harbour of the Leren shore. |
 | 1A, late | established | The Grand Alliance draws on the North Lands; Edran accepts that they remain allies rather than subjects (proposed detail) [V: The First Age of Aoaz §5]. |
 | 2A, middle | proposed | **The Raiding Years.** Orc and goblin bands from the Dark Lands cross the Northern Dark Strait; the coast crowns build the hill-forts of the free crowns. |
-| 2A, late | proposed (vault narrative) | **Avarin of Veskel** (the vault's proposed "Avarin of Lerenwaith"), envoy and commander, tries to keep the northern alliance while her own country faces raids [V: The Second Age of Aoaz, figures table]. |
+| 2A, late | proposed (vault narrative) | **Avarin of Veskel** (the vault's proposed "Avarin of Lerendor's North"), envoy and commander, tries to keep the northern alliance while her own country faces raids [V: The Second Age of Aoaz, figures table]. |
 | 2A 2133 | established event, proposed detail | Elzon takes Aenor [V: The Third Age of Aoaz]. Proposed (vault narrative): the North Lands send help, but it cannot arrive in time [V: The Second Age of Aoaz, third turning point]. |
 | 3A, 1 to 1260 (proposed length) | proposed | The Narrow Strait is the border of Elzon's Order; Leren fleets carry refugees north and raid the occupied coast; the North stays free. |
 | 3A, about 800 | proposed | **The Hill Pact.** The dwarves of the High Mountains and the crowns of Heodwa swear a pact against Elzon's raiders; the Heodwa council is born of it. |
@@ -166,7 +166,7 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 | **Perhy** | Eekedor | about 8,000 | The Arbitration Court's town [DM settlements]. |
 | **Farnardur** | R'en | about 12,000 | At the strait's narrowest point; the gateway forts [DM settlements]. |
 | **Altovian** | Molot | about 8,000 | The marcher fortress behind the marsh line [DM settlements]. |
-| **Agtosai** | Sensai | about 10,000 | In the long vale; timber and tar [DM settlements]. |
+| **Agtosai** | Tolvael | about 10,000 | In the long vale; timber and tar [DM settlements]. |
 | **Gilvian** | Mina | about 6,000 | Below the ore hills [DM settlements]. |
 | **Pand** | Heodwa Lands | about 5,000 | Drawn city [NT]; the council's meeting-town. |
 | **Parur** (proposed) | the Hold | about 6,000 | Leren "lake-town": the lake league's market on Dolpar. |
@@ -179,7 +179,7 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 
 ### Veskel (former label Lerenwaith)
 
-**Land.** The white snow country of the west, beyond the Loron highland (`ice_lerenwaith` [GM]). **People.** Leren herders, trappers and fishers, prouder of their old western crown than the strait captains like (proposed). **Politics.** Veskel's lords sit in the Speakers' Hall; when the strait captains raise the dues, Veskel's inland lords pay for the quarrel and the union's cohesion falls [MS lerendor_narrow_strait §3]. **Name.** The owner's rule against "waith" names in the north [OD]; Veskel means "west-ice" in Leren.
+**Land.** The white snow country of the west, beyond the Loron highland (`ice_lerendors_north` [GM]). **People.** Leren herders, trappers and fishers, prouder of their old western crown than the strait captains like (proposed). **Politics.** Veskel's lords sit in the Speakers' Hall; when the strait captains raise the dues, Veskel's inland lords pay for the quarrel and the union's cohesion falls [MS lerendor_narrow_strait §3]. **Name.** The owner's rule against "waith" names in the north [OD]; Veskel means "west-ice" in Leren.
 
 ### The High Mountains and Karundun
 
@@ -222,8 +222,8 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 | Y2M Allegro | merged into Molot, renamed Knorvik | "A coast crown that sells its harbour to whoever pays" [WB §6.2] is Molot's port. |
 | Y2N Keredor-Hellekton | kept, enlarged | |
 | Y2O Belg | merged into Keredor-Hellekton | A pass crown beside it [NT positions]. |
-| Y2Q Sensai | kept, enlarged | |
-| Y2R Gil'dul, Y2P Goran | merged into Sensai | Gil'dul renamed Kerhil. |
+| Y2Q Tolvael | kept, enlarged | |
+| Y2R Gil'dul, Y2P Goran | merged into Tolvael | Gil'dul renamed Kerhil. |
 | Y0K Tolhon | kept, enlarged | |
 | Y2S Ashorn, Y2T Gul'dur | merged into Tolhon | Gul'dur renamed Sirtum. |
 | Y2V Heodwa Lands | kept, enlarged | |
@@ -246,7 +246,7 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 - **The lake league** as an arbitration rival to Eekedor.
 - **Northern coasts against the dead:** the Dwarc and Swy coast and the north-eastern isles as landing sites for Zol's dead, giving the "stand apart" route a war of its own.
 
-**Focus-tree themes.** Lerendor: two crowns, the strait dues, the Compact, the Long Watch, the Question of the Strait [FT lerendor]. Eekedor: counting houses and the Arbitration Court [FT regional_eekedor]. Molot: the margravate's fortress line [FT regional_molot]. R'en: the gateway and its two masters [FT regional_r_en]. Sensai: pride, timber and tar [FT regional_sensai]. Mina: the Delvings [FT regional_mina]. The shared northern tree for the small crowns [FT shared_north_lands]. New, proposed: Karundun (the deep halls, the guns, the pact) and Mustnom (bosses, roads, the cave-markets).
+**Focus-tree themes.** Lerendor: two crowns, the strait dues, the Compact, the Long Watch, the Question of the Strait [FT lerendor]. Eekedor: counting houses and the Arbitration Court [FT regional_eekedor]. Molot: the margravate's fortress line [FT regional_molot]. R'en: the gateway and its two masters [FT regional_r_en]. Tolvael: pride, timber and tar [FT regional_tolvael]. Mina: the Delvings [FT regional_mina]. The shared northern tree for the small crowns [FT shared_north_lands]. New, proposed: Karundun (the deep halls, the guns, the pact) and Mustnom (bosses, roads, the cave-markets).
 
 **AI behaviour (proposed).** Lerendor follows the historical break on the historical rule [MS lerendor_narrow_strait §5]; Molot and R'en lean to Parim; Eekedor stays in the Compact; Karundun never sends armies off its mountains except under the Hill Pact; Mustnom never declares war.
 
@@ -269,6 +269,6 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 - **[SS]** `docs/specs/02_lore/01_start_situation.md` (North Lands; Relations at the start).
 - **[EC]** `docs/specs/03_gameplay/02_economy.md`.
 - **[MS lerendor_narrow_strait §n]** `docs/specs/04_mechanics/lerendor_narrow_strait.md`.
-- **[FT file]** `docs/design/focus/lerendor.json`, `regional_eekedor.json`, `regional_molot.json`, `regional_r_en.json`, `regional_sensai.json`, `regional_mina.json`, `shared_north_lands.json`.
+- **[FT file]** `docs/design/focus/lerendor.json`, `regional_eekedor.json`, `regional_molot.json`, `regional_r_en.json`, `regional_tolvael.json`, `regional_mina.json`, `shared_north_lands.json`.
 - **[BC n]** `docs/lore/sources/bestiary_cards_part2.md` (42 dwarf goblin, 44 dwarf).
 - **[Characters spec]** `docs/specs/02_lore/02_characters.md`.

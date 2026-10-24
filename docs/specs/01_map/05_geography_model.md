@@ -184,19 +184,19 @@ Two arcs of islands that curl round the Pupor Ocean, with a western arc (Pollos,
 
 ### North Lands
 
-A compact isle north of the Middle Lands across the Narrow Strait. Lerenwaith's snow country in the north-west, Lerendor's highland ring in the centre, Eekedor's vale in the east, R'en on the southern cape.
+A compact isle north of the Middle Lands across the Narrow Strait. Lerendor's North's snow country in the north-west, Lerendor's highland ring in the centre, Eekedor's vale in the east, R'en on the southern cape.
 
 | Item | Value |
 | --- | --- |
-| Climate | Cool temperate maritime; snow in Lerenwaith. |
+| Climate | Cool temperate maritime; snow in Lerendor's North. |
 | Seasons | Cold winters, mild summers. |
 | Elevation profile | Lowland 1 with a highland ring 3 to 4 round the Evian lake. |
 | Terrain targets | plains 42%, forest 20%, hills 18%, mountain 15%, marsh 2%, urban 3% |
 | Provinces per state | 3 / 5 / 7 (min / typical / max), province area about 1000 pixels |
-| Peoples | Lerendor and Lerenwaith (one crown), Eekedor, Molot, R'en, Sensai, Mina. |
+| Peoples | Lerendor and Lerendor's North (one crown), Eekedor, Molot, R'en, Tolvael, Mina. |
 | Fertile areas | Eekedor Vale and the Leren shore; the Leren River valley; strait ports (Sonargur, R'en). |
 | Major ranges | Loron Mountains, Wely and Fair Mountains, Solondor Mountains, Etonia and Renann Mountains |
-| Natural borders | North Lands and Middle Lands: the Narrow Strait. North Lands and Dark Lands: the Northern Dark Strait. Lerenwaith and Lerendor: the Loron highland. |
+| Natural borders | North Lands and Middle Lands: the Narrow Strait. North Lands and Dark Lands: the Northern Dark Strait. Lerendor's North and Lerendor: the Loron highland. |
 
 - **Lakes.** Evian Sea and Sea of R'en (drawn as seas, inland lakes). **River.** Leren River (*proposed*) from the Evian lake to Sonargur.
 - **Straits.** The Narrow Strait (south, to the Middle Lands) and the Northern Dark Strait (south-west, to the Dark Lands).
@@ -495,7 +495,7 @@ Country and state borders follow these lines. A border may leave a line only to 
 | Triton's Islands | Every island is its own border; the arcs enclose the Pupor Ocean. |
 | North Lands | North Lands and Middle Lands: the Narrow Strait. |
 | North Lands | North Lands and Dark Lands: the Northern Dark Strait. |
-| North Lands | Lerenwaith and Lerendor: the Loron highland. |
+| North Lands | Lerendor's North and Lerendor: the Loron highland. |
 | Dark Lands | Dondor and Goldoroth: the Darkness ridge and the inner sea. |
 | Dark Lands | Goldoroth and Bordon: the Goldoroth Mountains. |
 | Dark Lands | Dark Lands and its neighbours: the two straits. |
@@ -541,7 +541,7 @@ Country and state borders follow these lines. A border may leave a line only to 
 | Forests | Alerhia Woods, Bloody Forest, Cologon Forest, Dark Forests, Death Forest, Dwarc and Swy Forests, Eagle Forest, Enhis Forest, Fallen Forest, Flaming Forests, Fonoor and Giant Forests, Forests of Darkhere, God Forest, Hell Forest, Hiloron Woods, Hot Forest, Kilinti Forests, Kingdom Forests, Light Forests of Yang, Living Forest, Magical Forest, Mirolon Forests, Mora Woods, Mushroom Forest, Obmi Jungle, Oreton Woods, Safeton Wood, Stone Forest, Swamp Forests, Taith Forests, Troll Forest, Worlond Forest, Zilin Forests |
 | Deserts and wastes | Alodale Desert, Black Islands of the Kusmeel, Cursed Lands, Isle of Šodolôrō, Noris Desert, Sun Desert, The Deadlands, Zol's Mistake |
 | Marshes | Papz Swamp, Saeton Swamp, The Great Swamp of Mirolon, Verde Mangroves |
-| Snowfields | Frozen Lands of Coldor, Lerenwaith, North Yeti Lands, Windwaith, Woqood |
+| Snowfields | Frozen Lands of Coldor, Lerendor's North, North Yeti Lands, Windwaith, Woqood |
 | Plains | Delbiz Grasslands, Greenland, Hunhun Downs, Konori Downs, Mora and Ernois Coast, Novez Fields, Poloto, Rish, Ronbo Grasslands, Safeton Coast, Sun Grasslands, Teste Vale, Thenon, Ulgus Glades, Zuman Uplands |
 | Hills | The Abyss, Yeti Lands, Zilin Hills |
 | Straits | Northern Dark Strait, Southern Dark Strait, The Narrow Strait, The Rift Narrows |

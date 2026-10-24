@@ -35,12 +35,20 @@ export const RENAMES = [
   { from: /\bthe Hellfire\b/g, to: 'the Smoking Teeth' },
   { from: /Woqood Alps/g, to: 'Woqood Spires' },
   { from: /\bArgon\b/g, to: 'Argul' },
+  // K49: Sensai is Tolvael (people Tolvaeli); Lerenwaith, the snow country of Lerendor's crown, is Lerendor's North.
+  { from: /\bSensaian\b/g, to: 'Tolvaeli' },
+  { from: /\bSensai\b/g, to: 'Tolvael' },
+  { from: /sensai/g, to: 'tolvael' },
+  { from: /\bLerenwaith\b/g, to: "Lerendor's North" },
+  { from: /lerenwaith/g, to: 'lerendors_north' },
 ];
 
 export const PATH_RENAMES = [
   [/Edvoid/g, 'Kusven'],
   [/Dead Lands/g, 'Ember Lands'],
   [/dead_lands/g, 'ember_lands'],
+  [/sensai/g, 'tolvael'],
+  [/lerenwaith/g, 'lerendors_north'],
 ];
 
 const RECORDS = [

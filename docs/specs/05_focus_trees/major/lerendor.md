@@ -4,17 +4,17 @@
 
 ## Purpose
 
-The major focus tree for **Lerendor**, the united crown of Lerendor and Lerenwaith (tree id `lerendor`, focus ids `zin_lerendor_<key>`, data file `docs/design/focus/lerendor.json`). It plays the Treaty of the Narrow Strait mechanic ([../../04_mechanics/lerendor_narrow_strait.md](../../04_mechanics/lerendor_narrow_strait.md)): the politics of two crowns under one throne, the fleets and tolls of the strait, the Leren Compact's lead over the North Lands, the Dark Lands across the straits, the watch against Zol's dead, and the one great choice: **honour Aenor, stand apart, or seize the strait**.
+The major focus tree for **Lerendor**, the united crown of Lerendor and Lerendor's North (tree id `lerendor`, focus ids `zin_lerendor_<key>`, data file `docs/design/focus/lerendor.json`). It plays the Treaty of the Narrow Strait mechanic ([../../04_mechanics/lerendor_narrow_strait.md](../../04_mechanics/lerendor_narrow_strait.md)): the politics of two crowns under one throne, the fleets and tolls of the strait, the Leren Compact's lead over the North Lands, the Dark Lands across the straits, the watch against Zol's dead, and the one great choice: **honour Aenor, stand apart, or seize the strait**.
 
 The tree has 127 focuses in nine branches, 30 columns wide (x 0–29) and 16 rows deep (y 0–15). In the game today Lerendor runs the interim Long Peace tree; this tree replaces it when it is compiled.
 
 ## Lore basis
 
-**Established** (vault): Lerendor and Lerenwaith are one crown; Sonargur is the working seat; Lerendor leads the Leren Compact and is Aenor's rival (working table); the North Lands lie across a narrow strait from the Middle Lands, and the Dark Lands lie between Lerendor and the Middle Lands across narrow straits; in the final war the northern lands withdraw from the old alliance with Aenor, and the North Lands are not one unanimous enemy; Zol's dead come from the black north through islands and straits and cannot be ended by ordinary weapons; northern companies join Eindil's temporary coalition without giving up their independence; competing northern interests remain after the war.
+**Established** (vault): Lerendor and Lerendor's North are one crown; Sonargur is the working seat; Lerendor leads the Leren Compact and is Aenor's rival (working table); the North Lands lie across a narrow strait from the Middle Lands, and the Dark Lands lie between Lerendor and the Middle Lands across narrow straits; in the final war the northern lands withdraw from the old alliance with Aenor, and the North Lands are not one unanimous enemy; Zol's dead come from the black north through islands and straits and cannot be ended by ordinary weapons; northern companies join Eindil's temporary coalition without giving up their independence; competing northern interests remain after the war.
 
 **Proposed** (vault proposals this tree builds on): the name Treaty of the Narrow Strait and its date 4A 512; the union of the crowns in 4A 411; the toll quarrel of 4A 1716; the start on 1 Thaw 4A 1748; the withdrawal in 4A 1755; the three routes and the outcome "Lerendor becomes master of the strait".
 
-**Proposed here:** every focus, spirit, event, character and number; the Lerenwaith estates and the Admiralty as court parties; the Chain of Sonargur; the arbitration of Eekedor; the scholars of the dead and the old wards. The tree never states the outcome of the war or the post-war order as history. Before `zin_afrit_revealed` no text names Afrit; Aenor's new king is "King Aurevan".
+**Proposed here:** every focus, spirit, event, character and number; the Lerendor's North estates and the Admiralty as court parties; the Chain of Sonargur; the arbitration of Eekedor; the scholars of the dead and the old wards. The tree never states the outcome of the war or the post-war order as history. Before `zin_afrit_revealed` no text names Afrit; Aenor's new king is "King Aurevan".
 
 ## Design
 
@@ -63,13 +63,13 @@ The Question of the Strait (column 13, row 7) sits at the foot of the Two Crowns
 | `sonargur_wharves` | The Wharves of Sonargur | strait_treasury | – | 3,1 | 70 | building dockyard 1 @sonargur; building naval_base 1 @sonargur | 15 |
 | `reopen_toll_quarrel` | Reopen the Toll Quarrel | toll_rolls | – | 0,2 | 70 | Avail: treaty in force (`zin_leren_treaty_in_force`); event_for Aenor zin_leren.11; tooltip "Parim will answer within weeks." | 20; hist ×3; hon ×0.3 |
 | `merchant_guilds` | The Merchant Guilds of the Strait | toll_rolls / sonargur_wharves | – | 2,2 | 70 | add_spirit strait_merchants | 15 |
-| `timber_of_lerenwaith` | Timber of Lerenwaith | sonargur_wharves | – | 4,2 | 70 | building dockyard 1 @random_coastal; cohesion +5 | 10 |
+| `timber_of_lerendors_north` | Timber of Lerendor's North | sonargur_wharves | – | 4,2 | 70 | building dockyard 1 @random_coastal; cohesion +5 | 10 |
 | `treaty_toll` | Keep the Treaty Toll | reopen_toll_quarrel | full_strait_dues | 0,3 | 35 | call zin_leren_set_toll_level(1); standing +10; stability 0.03 | 10; hon ×5; brk, sup ×0 |
 | `full_strait_dues` | Full Strait Dues | reopen_toll_quarrel | treaty_toll | 1,3 | 35 | flag zin_lerendor_full_dues (permits toll level 3); call zin_leren_set_toll_level(2); political_power 50; standing -5 | 10; hist ×5; sup ×5; hon ×0 |
 | `northern_fairs` | The Northern Fairs | merchant_guilds | – | 3,3 | 70 | building industrial_complex 1 @random_owned; call zin_lerendor_compact_lean(5) | 10 |
 | `toll_houses` | Toll Houses on Both Shores | treaty_toll / full_strait_dues | – | 0,4 | 70 | add_spirit toll_houses_spirit; call zin_lerendor_recruit(zin_lerendor_brannoc) | 10 |
 | `eekedor_bankers` | The Eekedor Bankers | northern_fairs | – | 2,4 | 70 | building industrial_complex 1 @capital; lean +10 on Eekedor | 10 |
-| `forges_of_sonargur` | The Forges of Sonargur | timber_of_lerenwaith | – | 4,4 | 70 | building arms_factory 2 @capital; research [zin_cat_arms] 50% ×1 | 10; ×2 after `zin_zol_rising` |
+| `forges_of_sonargur` | The Forges of Sonargur | timber_of_lerendors_north | – | 4,4 | 70 | building arms_factory 2 @capital; research [zin_cat_arms] 50% ×1 | 10; ×2 after `zin_zol_rising` |
 | `colleges_of_sonargur` | The Colleges of Sonargur | toll_houses / eekedor_bankers | – | 1,5 | 70 | research [industry] 50% ×2 | 8 |
 | `strait_war_chest` | The Strait War Chest | eekedor_bankers / forges_of_sonargur | – | 3,5 | 70 | political_power 75; equipment zin_arms_equipment 1000; war_support 0.03 | 8; ×3 after `zin_war_of_last_crowns` |
 | `northern_industry` | A Northern Industry | colleges_of_sonargur + strait_war_chest | – | 2,6 | 70 | building industrial_complex 2 @random_owned; building arms_factory 1 @random_owned; add_spirit northern_industry_spirit | 8 |
@@ -97,24 +97,24 @@ The Question of the Strait (column 13, row 7) sits at the foot of the Two Crowns
 
 ### Branch 3: The Two Crowns
 
-**Purpose:** crown-union politics. Lerendor and Lerenwaith share one throne but keep two laws, two sets of lords and two memories. The king must hold the union together and decide which party leads the court: the **Crown** (Sonargur's household, proud and resentful of Parim), the **Estates** (Lerenwaith's lords and free towns, who trade with Aenor and favour the treaty) or the **Admiralty** (the strait captains, who want the strait for Lerendor). The party is a leaning, not the final choice: it adjusts standing and AI route weights. The branch ends in **The Question of the Strait**. **Opens:** at start. **Mutual exclusions:** Endow the Temples / The Crown Over the Altar; Crown / Estates / Admiralty Ascendant. **Mechanic:** `zin_leren_union_cohesion`, standing, `zin_footholds` (through `zin_afrit_add_footholds`).
+**Purpose:** crown-union politics. Lerendor and Lerendor's North share one throne but keep two laws, two sets of lords and two memories. The king must hold the union together and decide which party leads the court: the **Crown** (Sonargur's household, proud and resentful of Parim), the **Estates** (Lerendor's North's lords and free towns, who trade with Aenor and favour the treaty) or the **Admiralty** (the strait captains, who want the strait for Lerendor). The party is a leaning, not the final choice: it adjusts standing and AI route weights. The branch ends in **The Question of the Strait**. **Opens:** at start. **Mutual exclusions:** Endow the Temples / The Crown Over the Altar; Crown / Estates / Admiralty Ascendant. **Mechanic:** `zin_leren_union_cohesion`, standing, `zin_footholds` (through `zin_afrit_add_footholds`).
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `two_crowns` | The Two Crowns of Leren | – | – | 13,0 | 70 | event zin_lerendor.1; political_power 50; cohesion +5 | 50 |
 | `sonargur_household` | The Sonargur Household | two_crowns | – | 12,1 | 70 | add_spirit royal_household | 20 |
-| `lerenwaith_estates` | Summon the Lerenwaith Estates | two_crowns | – | 14,1 | 70 | cohesion +10; stability 0.03 | 15; hon ×2 |
+| `lerendors_north_estates` | Summon the Lerendor's North Estates | two_crowns | – | 14,1 | 70 | cohesion +10; stability 0.03 | 15; hon ×2 |
 | `royal_progress` | The Royal Progress | sonargur_household | – | 11,2 | 35 | event zin_lerendor.2 | 15 |
-| `crown_marriage` | A Marriage for the Heir | sonargur_household / lerenwaith_estates | – | 13,2 | 70 | event zin_lerendor.3 | 15 |
-| `estates_council` | Seat the Estates in Council | lerenwaith_estates | – | 15,2 | 70 | add_spirit estates_in_council; cohesion +5 | 10; hon ×2 |
+| `crown_marriage` | A Marriage for the Heir | sonargur_household / lerendors_north_estates | – | 13,2 | 70 | event zin_lerendor.3 | 15 |
+| `estates_council` | Seat the Estates in Council | lerendors_north_estates | – | 15,2 | 70 | add_spirit estates_in_council; cohesion +5 | 10; hon ×2 |
 | `endow_the_temples` | Endow the Temples of the Deliverer | royal_progress | crown_over_altar | 10,3 | 35 | event zin_lerendor.4; stability 0.05; call zin_afrit_add_footholds(1); standing +5 | 10; hon ×2 |
 | `crown_over_altar` | The Crown Over the Altar | royal_progress | endow_the_temples | 11,3 | 35 | political_power 75; stability -0.03; call zin_afrit_add_footholds(-1) | 10; hist ×1.5; sup ×2 |
 | `one_throne` | One Throne, Two Laws | royal_progress + crown_marriage | – | 12,3 | 70 | cohesion +10; political_power 25 | 15 |
-| `chancellor_of_lerenwaith` | The Chancellor of Lerenwaith | crown_marriage / estates_council | – | 14,3 | 35 | call zin_lerendor_recruit(zin_lerendor_maelis); cohesion +5 | 10 |
+| `chancellor_of_lerendors_north` | The Chancellor of Lerendor's North | crown_marriage / estates_council | – | 14,3 | 35 | call zin_lerendor_recruit(zin_lerendor_maelis); cohesion +5 | 10 |
 | `estates_purse` | The Estates' Purse | estates_council | – | 16,3 | 70 | building industrial_complex 1 @random_owned; political_power 25 | 8 |
 | `crown_ascendant` | The Crown Ascendant | one_throne | estates_ascendant, admiralty_ascendant | 11,4 | 70 | swap_spirit royal_household→crown_ascendant_spirit (add if missing); standing -5; cohesion -5 | 10; hist ×5; brk ×3 |
-| `estates_ascendant` | The Estates Ascendant | one_throne / chancellor_of_lerenwaith | crown_ascendant, admiralty_ascendant | 13,4 | 70 | swap_spirit estates_in_council→estates_ascendant_spirit (add if missing); standing +10; cohesion +10 | 10; hon ×5 |
-| `admiralty_ascendant` | The Admiralty Ascendant | chancellor_of_lerenwaith / estates_purse | crown_ascendant, estates_ascendant | 15,4 | 70 | add_spirit admiralty_ascendant_spirit; standing -5 | 10; sup ×5 |
+| `estates_ascendant` | The Estates Ascendant | one_throne / chancellor_of_lerendors_north | crown_ascendant, admiralty_ascendant | 13,4 | 70 | swap_spirit estates_in_council→estates_ascendant_spirit (add if missing); standing +10; cohesion +10 | 10; hon ×5 |
+| `admiralty_ascendant` | The Admiralty Ascendant | chancellor_of_lerendors_north / estates_purse | crown_ascendant, estates_ascendant | 15,4 | 70 | add_spirit admiralty_ascendant_spirit; standing -5 | 10; sup ×5 |
 | `kings_peace` | The King's Peace | crown_ascendant | – | 11,5 | 70 | stability 0.05; war_support 0.05; popularity dominion 0.10 | 15 |
 | `estates_charters` | Charters for the Free Towns | estates_ascendant | – | 13,5 | 70 | building industrial_complex 1 @random_owned; popularity light 0.10; cohesion +10 | 15 |
 | `prize_courts` | The Prize Courts | admiralty_ascendant | – | 15,5 | 70 | navy_experience 20; political_power 50 | 15 |
@@ -125,7 +125,7 @@ The Question of the Strait (column 13, row 7) sits at the foot of the Two Crowns
 
 ### Branch 4: The Leren Compact
 
-**Purpose:** North Lands hegemony by diplomacy. Lerendor courts the 26 smaller crowns (Sensai, Molot, R'en, Mina, The Hold and the rest), draws them into the Compact and, on the hard road, offers them protection. **Opens:** at start; the Compact decision category appears with the first focus. **Mutual exclusions:** First Among Equals / One Banner for the North. **Mechanic:** `zin_leren_lean`, `zin_leren_hegemony`, the decisions `zin_leren_send_envoys`, `zin_leren_trade_charter`, `zin_leren_marriage_pact`, `zin_leren_invite_to_compact`, `zin_leren_offer_protection`.
+**Purpose:** North Lands hegemony by diplomacy. Lerendor courts the 26 smaller crowns (Tolvael, Molot, R'en, Mina, The Hold and the rest), draws them into the Compact and, on the hard road, offers them protection. **Opens:** at start; the Compact decision category appears with the first focus. **Mutual exclusions:** First Among Equals / One Banner for the North. **Mechanic:** `zin_leren_lean`, `zin_leren_hegemony`, the decisions `zin_leren_send_envoys`, `zin_leren_trade_charter`, `zin_leren_marriage_pact`, `zin_leren_invite_to_compact`, `zin_leren_offer_protection`.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
@@ -134,10 +134,10 @@ The Question of the Strait (column 13, row 7) sits at the foot of the Two Crowns
 | `envoys_to_the_north` | Envoys to the Northern Crowns | the_leren_compact | – | 20,1 | 35 | flag zin_lerendor_envoys (unlocks `zin_leren_send_envoys`); political_power 25 | 20 |
 | `eekedor_partnership` | The Eekedor Partnership | compact_council | – | 17,2 | 70 | lean +15 on Eekedor; political_power 25; for_country Eekedor: political_power 25 | 10 |
 | `compact_tariff` | The Compact Tariff | compact_council / envoys_to_the_north | – | 19,2 | 70 | flag zin_lerendor_tariff (unlocks `zin_leren_trade_charter`); building industrial_complex 1 @capital | 15 |
-| `sensai_question` | The Sensai Question | envoys_to_the_north | – | 21,2 | 70 | event_for Sensai zin_lerendor.7 | 15 |
+| `tolvael_question` | The Tolvael Question | envoys_to_the_north | – | 21,2 | 70 | event_for Tolvael zin_lerendor.7 | 15 |
 | `marriages_across_the_north` | Marriages Across the North | eekedor_partnership / compact_tariff | – | 18,3 | 70 | flag zin_lerendor_marriages (unlocks `zin_leren_marriage_pact`); stability 0.02 | 12 |
-| `molot_marches` | The Molot Marches | compact_tariff / sensai_question | – | 20,3 | 70 | event_for Molot zin_lerendor.8 | 12 |
-| `mina_and_the_hold` | Mina and The Hold | sensai_question | – | 22,3 | 70 | lean +15 on Mina; lean +15 on The Hold | 15 |
+| `molot_marches` | The Molot Marches | compact_tariff / tolvael_question | – | 20,3 | 70 | event_for Molot zin_lerendor.8 | 12 |
+| `mina_and_the_hold` | Mina and The Hold | tolvael_question | – | 22,3 | 70 | lean +15 on Mina; lean +15 on The Hold | 15 |
 | `open_the_compact` | Open the Compact to the Small Crowns | marriages_across_the_north / molot_marches | – | 19,4 | 70 | flag zin_lerendor_open_compact (unlocks `zin_leren_invite_to_compact`); political_power 50 | 20 |
 | `gateway_talks` | Talks at the Gateway | molot_marches / mina_and_the_hold | – | 21,4 | 70 | lean +20 on R'en; standing -3 | 10; sup ×3 |
 | `compact_fleet` | The Compact Fleet | open_the_compact | – | 18,5 | 70 | navy_experience 15; equipment convoy_1 25; for every Compact member: navy_experience 5 (via call zin_lerendor_compact_gift) | 10 |
@@ -286,7 +286,7 @@ Mechanic effects, triggers, variables, decisions and events (`zin_leren_*`, name
 
 | Id | Name | Role | Traits (the game's own unit-leader traits) | Recruited by |
 | --- | --- | --- | --- | --- |
-| `zin_lerendor_maelis` | Maelis of Lerenwaith | political advisor, "Chancellor of Lerenwaith": stability_factor 0.05 | – | The Chancellor of Lerenwaith |
+| `zin_lerendor_maelis` | Maelis of Lerendor's North | political advisor, "Chancellor of Lerendor's North": stability_factor 0.05 | – | The Chancellor of Lerendor's North |
 | `zin_lerendor_brannoc` | Brannoc the Toll-Master | political advisor, "Master of the Strait Dues": political_power_gain 0.10 | – | Toll Houses on Both Shores |
 | `zin_lerendor_ostvar` | Ostvar Greysail | navy leader, skill 4; a second admiral beside the characters spec's Lord Admiral Hellek Fargur | `blockade_runner`, `bold` | A Lord Admiral of the Strait |
 | `zin_lerendor_hesk` | Torvald Hesk | field marshal, skill 3, "Marshal of the Long Watch" | `defensive_doctrine` | The Long Watch |
@@ -299,10 +299,10 @@ Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.m
 
 | Branch | Focus → icon |
 | --- | --- |
-| 1 | strait_treasury `coin_chest`; toll_rolls `ledger_coins`; sonargur_wharves `harbour_lake`; reopen_toll_quarrel `toll_house`; merchant_guilds `guild_hall`; timber_of_lerenwaith `timber_mill`; treaty_toll `scroll_treaty`; full_strait_dues `toll_house`; northern_fairs `market_stalls`; toll_houses `toll_house`; eekedor_bankers `coin_chest`; forges_of_sonargur `forge_anvil`; colleges_of_sonargur `university_hall`; strait_war_chest `tribute_chest`; northern_industry `foundry_fire` |
+| 1 | strait_treasury `coin_chest`; toll_rolls `ledger_coins`; sonargur_wharves `harbour_lake`; reopen_toll_quarrel `toll_house`; merchant_guilds `guild_hall`; timber_of_lerendors_north `timber_mill`; treaty_toll `scroll_treaty`; full_strait_dues `toll_house`; northern_fairs `market_stalls`; toll_houses `toll_house`; eekedor_bankers `coin_chest`; forges_of_sonargur `forge_anvil`; colleges_of_sonargur `university_hall`; strait_war_chest `tribute_chest`; northern_industry `foundry_fire` |
 | 2 | fleets_of_the_strait `warship_sail`; sea_lords `handshake_oath`; royal_dockyards `shipwright_yard`; strait_pilots `sea_charts`; galley_squadrons `galley_oars`; great_ships `great_warship`; strait_watch `strait_chain`; beyond_the_strait `ship_voyage`; chain_of_sonargur `strait_chain`; leren_marines `anchor_rope`; lord_admiral `war_council_map`; fleet_in_being `warship_sail`; convoy_lanes `lighthouse`; masters_of_the_strait_waters `great_warship` |
-| 3 | two_crowns `two_crowns`; sonargur_household `crown_iron`; lerenwaith_estates `council_table`; royal_progress `roads_paved`; crown_marriage `alliance_rings`; estates_council `council_table`; endow_the_temples `temple_parim`; crown_over_altar `sceptre`; one_throne `throne_gold`; chancellor_of_lerenwaith `seal_chancellor`; estates_purse `coin_chest`; crown_ascendant `crown_iron`; estates_ascendant `charter_free`; admiralty_ascendant `anchor_rope`; kings_peace `olive_branch`; estates_charters `charter_old`; prize_courts `scroll_sealed`; union_reforms `seal_royal`; common_law_of_leren `book_lore`; question_of_the_strait `strait_chain`; hall_of_two_crowns `banner_league` |
-| 4 | the_leren_compact `banner_league`; compact_council `council_table`; envoys_to_the_north `envoy`; eekedor_partnership `handshake_oath`; compact_tariff `toll_house`; sensai_question `scroll_treaty`; marriages_across_the_north `alliance_rings`; molot_marches `pass_fort`; mina_and_the_hold `envoy`; open_the_compact `banner_league`; gateway_talks `mountain_pass`; compact_fleet `galley_oars`; compact_levies `levy_muster`; first_among_equals `concord_circle`; one_banner_for_the_north `banner_plain` |
+| 3 | two_crowns `two_crowns`; sonargur_household `crown_iron`; lerendors_north_estates `council_table`; royal_progress `roads_paved`; crown_marriage `alliance_rings`; estates_council `council_table`; endow_the_temples `temple_parim`; crown_over_altar `sceptre`; one_throne `throne_gold`; chancellor_of_lerendors_north `seal_chancellor`; estates_purse `coin_chest`; crown_ascendant `crown_iron`; estates_ascendant `charter_free`; admiralty_ascendant `anchor_rope`; kings_peace `olive_branch`; estates_charters `charter_old`; prize_courts `scroll_sealed`; union_reforms `seal_royal`; common_law_of_leren `book_lore`; question_of_the_strait `strait_chain`; hall_of_two_crowns `banner_league` |
+| 4 | the_leren_compact `banner_league`; compact_council `council_table`; envoys_to_the_north `envoy`; eekedor_partnership `handshake_oath`; compact_tariff `toll_house`; tolvael_question `scroll_treaty`; marriages_across_the_north `alliance_rings`; molot_marches `pass_fort`; mina_and_the_hold `envoy`; open_the_compact `banner_league`; gateway_talks `mountain_pass`; compact_fleet `galley_oars`; compact_levies `levy_muster`; first_among_equals `concord_circle`; one_banner_for_the_north `banner_plain` |
 | 5 | across_the_dark_straits `map_unrolled`; sea_of_darkness_charts `sea_charts`; friends_of_the_dark_sea_accord `handshake_oath`; blackton_free_towns `market_stalls`; watch_on_goldoroth `eye_watchful`; shield_of_dondor `sword_shield`; bargain_with_goldoroth `orc_axe`; whispers_in_the_dark_holds `scout_lantern`; dark_shore_protectorate `charter_shield`; close_the_dark_straits `strait_chain`; wardens_of_the_dark_straits `lighthouse` |
 | 6 | the_long_watch `beacon`; hear_the_fishermen `fishing_boats`; the_kings_army `sword_shield`; watchfires_on_the_capes `beacon`; muster_rolls `levy_muster`; keeps_on_the_northern_shore `fort_wall`; scholars_of_the_dead `book_lore`; leren_shieldwall `spear_levy`; patrol_the_black_islands `black_isles`; the_dead_walk `dead_ranks_far`; fire_and_salt `foundry_fire`; levy_of_the_north `levy_muster`; seek_the_old_wards `ward_circle`; hold_the_capes `lighthouse`; the_watch_holds `fort_wall` |
 | 7 | honour_the_treaty `scroll_treaty`; renew_the_oaths `handshake_oath`; envoys_to_parim `envoy`; joint_squadron `warship_sail`; answer_the_lost_cause `banner_league`; faithful_to_the_crown `crown_gold`; shield_the_northern_coast `lighthouse`; faithful_to_the_realm `banner_plain`; when_aenor_calls `war_drums`; the_crowns_fleet `great_warship`; relief_of_parim `palace_parim`; northern_companies `banner_league`; the_old_alliance_restored `alliance_rings` |
@@ -354,13 +354,13 @@ All are fired by focus or option effects (`.14` by the mechanic's monthly check)
 | Id | Title | For | Fired by | Picture | Options (effects; AI) |
 | --- | --- | --- | --- | --- | --- |
 | .1 | The Two Crowns | Lerendor | The Two Crowns of Leren | `generic_court` | "Two crowns, one throne" (cohesion +5) / "Sonargur leads" (political_power 50, cohesion -5); AI 70/30 |
-| .2 | The Royal Progress | Lerendor | The Royal Progress | `generic_peace` | "To the towns of Lerenwaith" (cohesion +10) / "To the strait ports" (navy_experience 15); AI 60/40, sup 20/80 |
-| .3 | A Marriage for the Heir | Lerendor | A Marriage for the Heir | `generic_court` | "A daughter of a Lerenwaith house" (cohesion +10) / "A daughter of Eekedor's merchant houses" (lean +20 on Eekedor, political_power 25) / "A cousin of the Aenoran court" (standing +10; cohesion -5); AI 50/30/20, hon ×3 on the third |
+| .2 | The Royal Progress | Lerendor | The Royal Progress | `generic_peace` | "To the towns of Lerendor's North" (cohesion +10) / "To the strait ports" (navy_experience 15); AI 60/40, sup 20/80 |
+| .3 | A Marriage for the Heir | Lerendor | A Marriage for the Heir | `generic_court` | "A daughter of a Lerendor's North house" (cohesion +10) / "A daughter of Eekedor's merchant houses" (lean +20 on Eekedor, political_power 25) / "A cousin of the Aenoran court" (standing +10; cohesion -5); AI 50/30/20, hon ×3 on the third |
 | .4 | The Priests of the Deliverer | Lerendor | Endow the Temples | `hermitage` | Flavour: the priests bless the union and preach loyalty to the old friendship with Parim. "So be it" |
 | .5 | The Sea Lords Swear | Lerendor | Bind the Sea Lords | `generic_sea` | "Oaths to the crown" (political_power 25) / "Charters to the captains" (navy_experience 15, cohesion -3) |
 | .6 | The Compact Council Meets | Lerendor | Convene the Compact Council | `leren_envoys` | "Sonargur presides" (political_power 25) / "Eekedor presides this year" (lean +10 on Eekedor) |
-| .7 | Sonargur Asks Sensai | Sensai | The Sensai Question | `leren_envoys` | "Friendship with Sonargur" (lean +20; `zin_lerendor_opinion_friendship` both ways) / "Sensai answers to no crown" (lean -10); AI chance = 50 + lean |
-| .21 | Sensai's Answer | Lerendor | option of .7 | `generic_court` | Result text |
+| .7 | Sonargur Asks Tolvael | Tolvael | The Tolvael Question | `leren_envoys` | "Friendship with Sonargur" (lean +20; `zin_lerendor_opinion_friendship` both ways) / "Tolvael answers to no crown" (lean -10); AI chance = 50 + lean |
+| .21 | Tolvael's Answer | Lerendor | option of .7 | `generic_court` | Result text |
 | .8 | The Molot March | Molot | The Molot Marches | `leren_envoys` | "Settle the march" (lean +15; non-aggression pact with Lerendor) / "Keep the balance" (lean -5); AI chance = 40 + lean |
 | .22 | Molot's Answer | Lerendor | option of .8 | `generic_court` | Result text |
 | .9 | A Leren Envoy | Goldoroth | Bargain with Goldoroth | `leren_envoys` | "Trade and no raids" (non-aggression pact with Lerendor; lean +10) / "Orcs bargain with no one" (lean -10); AI 60/40 |
@@ -376,7 +376,7 @@ All are fired by focus or option effects (`.14` by the mechanic's monthly check)
 | .16 | The Crown of the Strait | Lerendor | Crown of the Strait | `strait_toll` | The king is crowned on the harbour chain of Sonargur. "Long live the Sovereign" (war_support 0.05) |
 | .17 | Refugees at Sonargur | Lerendor | Shelter the Refugees | `generic_sea` | "Open the gates" (manpower 15000; stability -0.03) / "Feed them and send them on" (stability 0.02; political_power -25) |
 | .18 | The Free Companies Sail | Lerendor | Free Companies for the Coalition | `generic_sea` | Northern volunteers sail to the stranger who breaks the dead. "Go as free men" (army_experience 10) |
-| .19 | The Union Reforms | Lerendor | The Union Reforms | `generic_court` | "More seats for Lerenwaith" (cohesion +10; political_power -25) / "One law from Sonargur" (political_power 50; cohesion -5) |
+| .19 | The Union Reforms | Lerendor | The Union Reforms | `generic_court` | "More seats for Lerendor's North" (cohesion +10; political_power -25) / "One law from Sonargur" (political_power 50; cohesion -5) |
 | .20 | The Question of the Strait | Lerendor | The Question of the Strait | `strait_toll` | Council debate; shows standing, hegemony and toll. "Let the king decide" |
 | .26 | Letters from Sonargur | Andos Enda | Convene the Compact Council | `leren_envoys` | "Answer as friends" (`zin_lerendor_opinion_friendship` both ways) / "The Refusal stands" (nothing); AI 60/40. The letters offer friendship, never membership: the Elven Refusal keeps Andos Enda out of human factions |
 
@@ -401,10 +401,10 @@ With `zin_rule_leren_route = historical` or `zin_rule_historical_path`, factors 
 | Thaw 1748 – Harvest 1748 | The Two Crowns of Leren, The Strait Treasury, Fleets of the Strait | Peace |
 | Fallowing 1748 – Ironfrost 1749 | Read the Toll Rolls, Reopen the Toll Quarrel, Full Strait Dues | Aenor mocks the envoys; toll to Leren Dues (2) |
 | Rainwake 1749 – Deepwinter 1750 | The Leren Compact, The Sonargur Household, The Royal Dockyards, Convene the Compact Council, Envoys to the Northern Crowns | Envoys to Mina, The Hold, Tolhon |
-| Ironfrost 1750 – Mistfall 1750 | Summon the Lerenwaith Estates, The Royal Progress, A Marriage for the Heir, One Throne Two Laws, Bind the Sea Lords | Mistfall: the Golden King dies (`zin_leren.40`); King Aurevan's envoys (`zin_leren.41`, AI delays) |
+| Ironfrost 1750 – Mistfall 1750 | Summon the Lerendor's North Estates, The Royal Progress, A Marriage for the Heir, One Throne Two Laws, Bind the Sea Lords | Mistfall: the Golden King dies (`zin_leren.40`); King Aurevan's envoys (`zin_leren.41`, AI delays) |
 | Longnight 1750 – Fallowing 1751 | The Galley Squadrons, The Crown Ascendant, The King's Peace, The Union Reforms, The Question of the Strait | Standing about -40 |
 | Mistfall 1751 – Highsun 1752 | The North Stands Apart, Count the Grievances, The Neutral North, The Compact Tariff | Route fixed: break |
-| Goldfield 1752 – Thaw 1753 | The Sensai Question, Mina and The Hold, Open the Compact, The Molot Marches | Two to four crowns join the Compact; hegemony 20–30 |
+| Goldfield 1752 – Thaw 1753 | The Tolvael Question, Mina and The Hold, Open the Compact, The Molot Marches | Two to four crowns join the Compact; hegemony 20–30 |
 | Rainwake 1753 – Mistfall 1754 | The Long Watch, Hear the Fishermen, The Merchant Guilds, Pilots of the Narrow Strait, The Strait Watch, Watch-Fires on the Capes, The King's Army, Muster Rolls, Keeps on the Northern Shore | Fishermen's tales (`zin_leren.50`); Eindil's warning heard and dismissed (`zin_leren.45`) |
 | Longnight 1754 – Thaw 1755 | The Compact Levies, Across the Dark Straits | Standing -60 to -75 |
 | 1755, within 60 days of `zin_war_of_last_crowns` | Withdraw from the Treaty | `zin_leren_withdrawal`; Lerendor does not attack Aenor |
@@ -443,7 +443,7 @@ With `zin_rule_leren_route = historical` or `zin_rule_historical_path`, factors 
 Owner questions already listed in [OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md) (lerendor 4, 7, 9); the work proceeds on each proposal:
 
 1. Should the Leren king and his heir have lore names? Proposal: the characters spec's proposed King Ferlin III stands as the ruler; the tree's events say only "the king" and "the heir".
-2. Are the Lerenwaith estates and the Admiralty acceptable as the court's parties? Proposal: yes, labelled proposed.
-3. Should Sensai get its own rival route against Lerendor in its tier B tree? Proposal: that belongs to the regional tree; this tree treats Sensai as a crown to court.
+2. Are the Lerendor's North estates and the Admiralty acceptable as the court's parties? Proposal: yes, labelled proposed.
+3. Should Tolvael get its own rival route against Lerendor in its tier B tree? Proposal: that belongs to the regional tree; this tree treats Tolvael as a crown to court.
 
 Settled here (proposed): *Faithful to the Crown* never follows the king east; `zin_lerendor.14` turns it to Aenor's people, and the North never joins an eastern cause. A Leren crown of the strait stays a proposed outcome of play ("An outcome of this game, not history").
