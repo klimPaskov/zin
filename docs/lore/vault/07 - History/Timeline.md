@@ -4,13 +4,13 @@ status: mixed
 updated: 2026-10-18
 ---
 
-# Erdae Timeline
+# Aoaz Timeline
 
 | Date | Status | Event |
 | --- | --- | --- |
 | Before 1A | Established, undated | Men have existed many generations. Aen is born of magic without an ordinary father. His centuries-long War of Men unites their kingdoms. |
 | 1A 1 | Established | Aen's victory inaugurates the First Age and the kingdom of Aenor. |
-| First Age | Established | Aenor grows, explores Erdae, fights western settlers' wars, and enters decline. |
+| First Age | Established | Aenor grows, explores Aoaz, fights western settlers' wars, and enters decline. |
 | Late First Age | Established | Volgan attacks Mirolon, captures Aenor's capital, loses at Dardan to Edran's Grand Alliance and is banished. Edran's invasion of the Dead Lands fails against Elzon. |
 | 1A 1675 | Established | First Age ends. |
 | Second Age | Established | Edran dies of disease. Famines, plagues and conflict accompany progress in medicine, farming and warfare. Elzon restores Volgan's presence from the Void. Afrit grows through hidden influence. |
@@ -31,4 +31,4 @@ updated: 2026-10-18
 - **Eindil and Afrit are brothers, the sons of Ein**, born at approximately the same time. Their exact age is **not fixed**, and the former 5,000-year upper limit is revoked. Their birth and Eindil's imprisonment must fit the ages that follow.
 - The older account of a 100,000-year imprisonment is also superseded.
 
-[[Ages of Erdae]] · [[War of the Last Crowns]]
+[[Ages of Aoaz]] · [[War of the Last Crowns]]

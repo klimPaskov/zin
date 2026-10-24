@@ -32,6 +32,6 @@ Largest owned work: 2,440 party-name keys, about 700 events, flag variants, 95 f
 
 1. Hide career profile, achievements, ribbons and medals with the online buttons?
 2. Hide the officer corps view?
-3. Keep Lend-Lease style actions with Erdae names?
+3. Keep Lend-Lease style actions with Aoaz names?
 4. Rename the seven weekdays?
 5. English only, copied into the other language folders?

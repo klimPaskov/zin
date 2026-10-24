@@ -8,7 +8,7 @@ Zol's Mistake is the black north: a near-empty realm of the dead held by Zol, th
 
 Related specs: [00_shared_contract.md](00_shared_contract.md), [00_contract_additions.md](00_contract_additions.md), [../INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) (N1, N2, S4, S8, S11, V1, V4, and from the review to Ready E1, E2, F3, O4, O6, R1, R2, R3), [../05_focus_trees/major/zol.md](../05_focus_trees/major/zol.md), [../01_map/01_map_accuracy.md](../01_map/01_map_accuracy.md), [../01_map/02_key_sites.md](../01_map/02_key_sites.md), [../01_map/03_known_issues.md](../01_map/03_known_issues.md), [../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md), [../00_foundation/02_ideologies_and_politics.md](../00_foundation/02_ideologies_and_politics.md) (Zol's emblem leader), [../00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md) (game rules), [../03_gameplay/01_warfare.md](../03_gameplay/01_warfare.md) (the deathless units), [../03_gameplay/04_magic_and_world_systems.md](../03_gameplay/04_magic_and_world_systems.md) (potent magic, the Fading's invariants), [../03_gameplay/05_world_tension_and_endings.md](../03_gameplay/05_world_tension_and_endings.md), [../03_gameplay/06_historical_path_and_ai.md](../03_gameplay/06_historical_path_and_ai.md) (checkpoints 16 and 23), and in this folder [volgan_southern_dominion.md](volgan_southern_dominion.md), [eindil_journey.md](eindil_journey.md), [yeldenne_and_glo.md](yeldenne_and_glo.md), [lands_of_the_sun.md](lands_of_the_sun.md) (Lorien's ride), [elves_wall_and_dragons.md](elves_wall_and_dragons.md), [lerendor_narrow_strait.md](lerendor_narrow_strait.md), [dark_lands.md](dark_lands.md) and [aenor_court_and_succession.md](aenor_court_and_succession.md).
 
-**Depends on:** the calendar spec (today the game still starts on 1936.1.1.12; every date below is an Erdae engine date such as `1755.5.1`, valid once the game starts on `1748.3.1.12`); the phase 1 fix of Zol's population, industry and resources (today Zol holds 37 million manpower, 82 factories and almost half the world's steel: [../01_map/03_known_issues.md](../01_map/03_known_issues.md)); the magic spec's `zin_has_potent_magic`; the warfare spec's deathless units (until they ship, the fallbacks named below).
+**Depends on:** the calendar spec (today the game still starts on 1936.1.1.12; every date below is an Aoaz engine date such as `1755.5.1`, valid once the game starts on `1748.3.1.12`); the phase 1 fix of Zol's population, industry and resources (today Zol holds 37 million manpower, 82 factories and almost half the world's steel: [../01_map/03_known_issues.md](../01_map/03_known_issues.md)); the magic spec's `zin_has_potent_magic`; the warfare spec's deathless units (until they ship, the fallbacks named below).
 
 ## Lore basis
 
@@ -16,17 +16,17 @@ Related specs: [00_shared_contract.md](00_shared_contract.md), [00_contract_addi
 
 | Fact | Source |
 | --- | --- |
-| Zol is the only Old God in Erdae, the God of Death. He arrived before Aen and Volgan. | *Zol*, *Old Gods* |
+| Zol is the only Old God in Aoaz, the God of Death. He arrived before Aen and Volgan. | *Zol*, *Old Gods* |
 | Zol's Mistake is the whole black north and every black island of the Ocean of Zol: a barren wasteland, sparsely populated, roamed by the dead. Šodolôrō lies in it. | *Zols Mistake* |
 | The working seat is Furviatlon. Who administers it for Zol (Great Spirit, Lesser Spirit, New God, undead order or other) is **unknown**. | *Zols Mistake*, *Idea Bank* |
 | The dead wandering the land have no established classification or allegiance. Do not assume they all belong to Zol. | *Zols Mistake* |
-| The Fading and Erdae's incompatible magic stop Zol from using his power freely or holding an ordinary body. His underlying power is immense and grows very slowly every day. Stored power and expressed power are separate matters. | *Zol*, *The Fading* |
-| Servants (Great Spirits, Lesser Spirits and even New Gods) feed or sustain his presence. Without them he could fade out of Erdae (not be destroyed). What they collect or transfer, and why the New Gods serve, is **unknown**. | *Magic and Sustenance in Erdae*, *New Gods* |
+| The Fading and Aoaz's incompatible magic stop Zol from using his power freely or holding an ordinary body. His underlying power is immense and grows very slowly every day. Stored power and expressed power are separate matters. | *Zol*, *The Fading* |
+| Servants (Great Spirits, Lesser Spirits and even New Gods) feed or sustain his presence. Without them he could fade out of Aoaz (not be destroyed). What they collect or transfer, and why the New Gods serve, is **unknown**. | *Magic and Sustenance in Aoaz*, *New Gods* |
 | The identities of his servants are unknown. No canon names may be generated for them. | *New Gods*, *Great Powers and Relations* |
 | His dead stir in the islands of the Ocean of Zol at the start, and ordinary weapons cannot end them. | *The Campaign of 4A 1748* (marks this established) |
-| Late in the Fourth Age his forces emerge from the black north, through islands and straits toward the settled kingdoms. His dead are sustained by his own death-magic. Ordinary weapons break their shapes but cannot end them. Only potent magic, such as Glo's and Horos's sword, can. | *Zol*, *The Fourth Age of Erdae*, *War of the Last Crowns* |
+| Late in the Fourth Age his forces emerge from the black north, through islands and straits toward the settled kingdoms. His dead are sustained by his own death-magic. Ordinary weapons break their shapes but cannot end them. Only potent magic, such as Glo's and Horos's sword, can. | *Zol*, *The Fourth Age of Aoaz*, *War of the Last Crowns* |
 | Zol's dead and Volgan's forces first clash, then briefly join against Eindil. Their relationship is otherwise not established. | *War of the Last Crowns*, *Kingdoms Factions and Conflicts* |
-| Zol manifests bodily once, rarely, temporarily and at great cost. He stops Eindil, crushes Horos's sword and drains New God power from him. Eindil wounds the form with a shard. Lorien and ancient spirits die or exhaust themselves forcing him to withdraw. He is wounded and constrained, not killed; his remaining hosts lose coherence or withdraw from the field. | *Zol*, *Fourth Age Canon Register*, *Lorien*, *The Fourth Age of Erdae* |
+| Zol manifests bodily once, rarely, temporarily and at great cost. He stops Eindil, crushes Horos's sword and drains New God power from him. Eindil wounds the form with a shard. Lorien and ancient spirits die or exhaust themselves forcing him to withdraw. He is wounded and constrained, not killed; his remaining hosts lose coherence or withdraw from the field. | *Zol*, *Fourth Age Canon Register*, *Lorien*, *The Fourth Age of Aoaz* |
 | Varner dies shielding the living from Zol's death-magic. | *Varner*, *Fourth Age Canon Register* |
 | What remains of Zol after the battle, and the mechanism of the manifestation, are **open**. | *Open Questions*, *Fourth Age Canon Register* |
 | Aenor is Zol's rival in the working political table. Zol has no named political satellites. | *Great Powers and Relations* |
@@ -39,7 +39,7 @@ Related specs: [00_shared_contract.md](00_shared_contract.md), [00_contract_addi
 | Fishermen's tales of black ships in 4A 1744; at the start only island fishermen see the stirring, and no court believes them | proposed (*Fourth Age Chronology*, *The Campaign of 4A 1748*) |
 | Furviatlon as the seat | working table (*Great Powers and Relations*) |
 | The leader shown as the emblem "The Will of Zol"; armies as numbered hosts | decided (S4); the emblem's name is proposed (foundation spec) |
-| Manifestation explanation: immense death, ancient routes of power prepared by servants, and the breaking of Volgan's forces aligned enough magic | proposed (*The Fourth Age of Erdae*) |
+| Manifestation explanation: immense death, ancient routes of power prepared by servants, and the breaking of Volgan's forces aligned enough magic | proposed (*The Fourth Age of Aoaz*) |
 | Every number, variable, decision, event and the gameplay names below (the Presence, servant bonds, the Convergence, Black Hulls, hosts, the Deathfield) | proposed, this spec |
 
 ### Rules this spec must never break
@@ -47,7 +47,7 @@ Related specs: [00_shared_contract.md](00_shared_contract.md), [00_contract_addi
 1. Nothing names, describes or ranks a servant of Zol. Servants appear only as the three established orders, never as persons.
 2. Nothing says who administers Furviatlon. The seat is shown as a seat, with no keeper.
 3. Nothing says what feeding is (worship, souls, death, sacrifice or anything else). Text uses only "feed" and "sustain".
-4. Nothing says Zol's magic differs by place in Erdae.
+4. Nothing says Zol's magic differs by place in Aoaz.
 5. The wandering dead of the Mistake are not Zol's soldiers and are never recruited.
 6. Nothing says Zol is destroyed, or states what remains of him after he withdraws.
 7. Nothing at the start reveals Afrit, shows Eindil or begins a great war. Zol is at peace until he rises.
@@ -73,11 +73,11 @@ Related specs: [00_shared_contract.md](00_shared_contract.md), [00_contract_addi
 | Start variables | `zin_mistake_power` 35 (V1); bonds great 1, lesser 2, divine 1; `zin_zol_convergence` 0; no stirring islands; `zin_zol_hosts` 0. |
 | Start forces | No land divisions: this spec owns Zol's land forces. Until the warfare spec's start forces replace the politics step's generic order of battle, `zin_mistake.1` deletes the six generic "Infantry Division" divisions of `history/units/<Zol tag>_world.txt` (`delete_unit = { division_template = "Infantry Division" }`) and removes its 9,000 `infantry_equipment_1`. The warfare spec's three black-ship corsairs stay. |
 
-The realm is meant to feel silent. Zol's panel (the interface spec's Presence panel and Erdae bar, [../07_interface/01_interface.md](../07_interface/01_interface.md) section 8, which reads this spec's variables) shows four things: his power, the strength of service of the three orders, the islands that stir, and (after the rising) the Convergence.
+The realm is meant to feel silent. Zol's panel (the interface spec's Presence panel and Aoaz bar, [../07_interface/01_interface.md](../07_interface/01_interface.md) section 8, which reads this spec's variables) shows four things: his power, the strength of service of the three orders, the islands that stir, and (after the rising) the Convergence.
 
 ### 2. Zol's power under the Fading (`zin_mistake_power`)
 
-`zin_mistake_power` (0–100, Zol scope, shared contract) is how much of Zol's presence can act in Erdae. It is not his total power, which is immense and unmeasured. The tooltip says so.
+`zin_mistake_power` (0–100, Zol scope, shared contract) is how much of Zol's presence can act in Aoaz. It is not his total power, which is immense and unmeasured. The tooltip says so.
 
 **Monthly change** (on Zol's monthly tick):
 
@@ -103,7 +103,7 @@ If the three bonds total 1 or less, the Fading pressure counts double that month
 | Waking | 50–74 | The rising is possible (55+). Manifestation is possible at 60+. |
 | Gathered | 75–100 | Full host cap; every expression of the Presence is open. |
 
-**The Presence lapses.** If power reaches 0, Zol's presence fades out of Erdae for now. Event `zin_mistake.6` (lapse): country flag `zin_zol_presence_lapsed` is set; every host is removed (`delete_unit = { division_template = "The Deathless Host" }`); Zol makes `white_peace` with every enemy and gets `set_rule = { can_not_declare_war = yes }`; only "Tend the Presence" and the servant calls stay open. The bonds keep sustaining him, so power can return. At 10 the flag clears with `zin_mistake.6` (return), and the war rule returns to what it was before the lapse. Text: "Whether he returns is not for us to know. The servants keep faith." This is a gameplay state, not history.
+**The Presence lapses.** If power reaches 0, Zol's presence fades out of Aoaz for now. Event `zin_mistake.6` (lapse): country flag `zin_zol_presence_lapsed` is set; every host is removed (`delete_unit = { division_template = "The Deathless Host" }`); Zol makes `white_peace` with every enemy and gets `set_rule = { can_not_declare_war = yes }`; only "Tend the Presence" and the servant calls stay open. The bonds keep sustaining him, so power can return. At 10 the flag clears with `zin_mistake.6` (return), and the war rule returns to what it was before the lapse. Text: "Whether he returns is not for us to know. The servants keep faith." This is a gameplay state, not history.
 
 ### 3. The servants (`zin_zol_bond_great`, `_lesser`, `_divine`)
 
@@ -115,7 +115,7 @@ The three established orders serve Zol: Great Spirits, Lesser Spirits and New Go
 | Lesser Spirits | 2 | +0.02 | Focuses; "Call Upon the Lesser" (50 PP, every 180 days) | Falter events |
 | New Gods | 1 | +0.06 | Focuses; "Call Upon the Divine" (100 PP, once a year): 75% +1, 25% event `zin_mistake.3` "Silence Among the Divine" (no gain, PP refunded by half) | Falter events |
 
-**Falter events.** Event `zin_mistake.4` "A Service Falters" has a mean time of 18 months while any bond is 2 or more: one random bond with 2+ loses 1. The focus "When Servants Falter" halves the chance and restores the lost point after 180 days. The text never gives a reason: "For reasons no one in Erdae can name, one order of his servants gives less."
+**Falter events.** Event `zin_mistake.4` "A Service Falters" has a mean time of 18 months while any bond is 2 or more: one random bond with 2+ loses 1. The focus "When Servants Falter" halves the chance and restores the lost point after 180 days. The text never gives a reason: "For reasons no one in Aoaz can name, one order of his servants gives less."
 
 **Tend the Presence.** Decision, 50 PP (25 PP after the focus "The Tending"), cooldown 120 days (90 after the focus): +1.5 power. It is the basic way a player feeds the Presence. Its text says only that the servants sustain him.
 

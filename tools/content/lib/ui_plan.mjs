@@ -27,7 +27,7 @@ export const DECISIONS = [
   'A file with several frames is one row; its frame order and count come from the inventory only. A row with more than one frame uses fit strip, one cell per frame.',
   'Alpha policy per R row: opaque when the vanilla texture is opaque, or shaped with 97% or more solid pixels; uniform:<a> for a uniform vanilla alpha; shape (the vanilla outline as a binary mask) for other keyed or shaped panels and frames; soft (the vanilla alpha channel itself) for a shaped file whose alpha stays below 128 almost everywhere (coverage under 5%: glows, veils, dim plates), which a binary outline would empty; cell (the cell\'s own outline) for emblems and sockets.',
   'exact falls back to cover when the cell and target aspect differ by more than 15%, as the spec says.',
-  'MIO (Erdae workshops), raids (night raids) and the international market (Great Fairs) are kept by the economy, warfare and institutions specs, so their windows are reachable and skinned; their per-organisation, per-policy and per-raid icons are U content. This overrides the "unreachable" rows of spec 02 section 4.9.',
+  'MIO (Aoaz workshops), raids (night raids) and the international market (Great Fairs) are kept by the economy, warfare and institutions specs, so their windows are reachable and skinned; their per-organisation, per-policy and per-raid icons are U content. This overrides the "unreachable" rows of spec 02 section 4.9.',
   'Special projects (one interim great work), equipment designers, carriers, vanilla country scripted GUIs and country-mechanic art are unreachable (U).',
   'Balance-of-power art is reachable (the foundation spec keeps common/bop for the Golden Court); country-specific BoP art is U.',
   'Sprites in an overridden .gfx (frontendmainviewbg, frontendmainviewbg_basic, small_background and the DLC small_background files) are O; the DLC small_background rows are U because replace_path removes their pictures.',
@@ -62,7 +62,7 @@ export const REASONS = {
   hidden_tutorial: 'The vanilla tutorial is Germany 1936; its button is hidden.',
   hidden_career: 'The career profile is a record across campaigns; its windows are hidden and inert (spec 06).',
   hidden_social_links: 'Community and marketing links are hidden; the homepage and privacy links stay.',
-  hidden_wiki: 'The Wiki buttons are hidden; the Chronicle of Erdae is the encyclopedia.',
+  hidden_wiki: 'The Wiki buttons are hidden; the Chronicle of Aoaz is the encyclopedia.',
   content_focus_icon: 'Vanilla focus icons; ZIN focus trees use GFX_focus_zin_* sprites.',
   content_idea_picture: 'Vanilla idea pictures; ZIN ideas use GFX_idea_zin_* sprites.',
   content_technology_picture: 'Vanilla technology and equipment pictures; the warfare spec supplies ZIN pictures.',
@@ -79,7 +79,7 @@ export const REASONS = {
   content_unit_icon: 'Vanilla unit and ship counters; the warfare spec supplies ZIN unit icons.',
   content_faction_logo: 'Vanilla faction logos; the diplomacy spec supplies ZIN faction icons.',
   content_agency_logo: 'Vanilla intelligence agency logos; ZIN offers its own neutral seals.',
-  content_organisation: 'Vanilla organisation, policy and trait icons; the economy spec supplies the Erdae workshops.',
+  content_organisation: 'Vanilla organisation, policy and trait icons; the economy spec supplies the Aoaz workshops.',
   content_raid_icon: 'Vanilla raid art; the warfare spec supplies night raids.',
   content_country: 'Vanilla country content (the name carries a vanilla country tag); ZIN has no vanilla country tags.',
   content_filter: 'Focus filter for a vanilla mechanic or country.',
@@ -91,7 +91,7 @@ export const REASONS = {
   content_landmark: 'Vanilla landmark and famous-building pictures of the real world.',
   country_mechanic: 'Art of a vanilla country mechanic; ZIN has no vanilla country tags.',
   special_project: 'Special projects: ZIN has one interim great work and no project window.',
-  carrier: 'Carriers do not exist in Erdae.',
+  carrier: 'Carriers do not exist in Aoaz.',
   country_scripted_gui: 'A vanilla country scripted GUI; it never loads because ZIN has no vanilla country tags.',
   unreachable_window: 'Referenced only from windows ZIN cannot show.',
   orphan: 'No sprite and no window names this texture.',
@@ -576,7 +576,7 @@ function emblemRule(s, em, reachable = false) {
   // Technology folders and resources.
   if (stem === 'research_folder_strip') return { ...base, family: 'research_production', group: 'folders', keys: each('folders', i => [`folder_${pad2(i + 1)}`, `a technology folder tab emblem: ${FOLDER_EMBLEMS[i] ?? `folder ${i + 1}`} (provisional until the warfare spec fixes the folder order)`]) };
   if (stem === 'resources_strip') return { ...base, family: 'research_production', group: 'resources', keys: each('resources', i => [`res_${pad2(i + 1)}`, `a resource icon, ${RESOURCE_EMBLEMS[i] ?? `resource ${i + 1}`}`]) };
-  if (stem === 'building_icon_strip') return { ...base, family: 'research_production', group: 'buildings', keys: each('buildings', i => [`building_${pad2(i + 1)}`, `building emblem ${i + 1} of ${f} in the engine building order: the economy spec's Erdae building for this slot (provisional); a capped plain socket when the slot is unused`]) };
+  if (stem === 'building_icon_strip') return { ...base, family: 'research_production', group: 'buildings', keys: each('buildings', i => [`building_${pad2(i + 1)}`, `building emblem ${i + 1} of ${f} in the engine building order: the economy spec's Aoaz building for this slot (provisional); a capped plain socket when the slot is unused`]) };
   // Army badges and roles: heraldic charges on bronze shields.
   if (/^gfx\/army_icons\/army_(selected_)?icons\.dds$/.test(p)) return { ...base, family: 'military', group: 'army_badges', keys: each('army_badges', i => [`badge_${pad2(i + 1)}`, `a heraldic badge on a bronze shield: ${CHARGES[i % CHARGES.length]}, no letters`]) };
   if (/^gfx\/army_icons\/(air|navy|army_group)_(selected_)?icons\.dds$/.test(p) || /^gfx\/army_icons\/naval_equipment_role_icons(_selected)?\.dds$/.test(p)) {

@@ -4,15 +4,15 @@ status: mixed
 updated: 2026-10-17
 ---
 
-# The Third Age of Erdae
+# The Third Age of Aoaz
 
 > **Duration:** At least 1,200 years, established. A detailed working calendar of **1,260 years** is proposed. It begins when [[Elzon]] conquers Aenor in Second Age year 2133 and ends when he dies permanently, allowing human monarchy to return.
 
-The Third Age lasts for many human generations. [[Volgan]] remains in the [[Volgans Dead Lands|Dead Lands]], too weak to travel beyond them, but instructs his servant Elzon, a Great Spirit and the Great Necromancer. Elzon rules Aenor effectively, although he must use living collaborators and cannot conquer the [[Erdae and Its Regions|Magical Lands]]. [[Varner]], a Lesser Spirit wizard, and his small purple servant [[Golbran]] resist the curses of the dead, while men throughout Aenor refuse to surrender entirely.
+The Third Age lasts for many human generations. [[Volgan]] remains in the [[Volgans Dead Lands|Dead Lands]], too weak to travel beyond them, but instructs his servant Elzon, a Great Spirit and the Great Necromancer. Elzon rules Aenor effectively, although he must use living collaborators and cannot conquer the [[Aoaz and Its Regions|Magical Lands]]. [[Varner]], a Lesser Spirit wizard, and his small purple servant [[Golbran]] resist the curses of the dead, while men throughout Aenor refuse to surrender entirely.
 
 Elzon's undead become harder to maintain as his reserves dwindle. The magical conditions in Aenor prevent him from replenishing power as freely as he can in the Dead Lands. He tries to alter the environment of occupied territory, which might eventually make Aenor another Dead Lands. The elves, Varner, and stubborn mortal resistance obstruct this goal. His decline is prolonged rather than immediate. He maintains dominion for centuries with changing armies and governments.
 
-[[Afrit]] accumulates worship, allies and institutions throughout the occupation. At the end of the age he genuinely helps save people from the catastrophe accompanying Elzon's death. The Deliverer, publicly called **Aurevan** in the new proposed naming scheme, is proclaimed and worshipped as a New God. He does not take the human throne yet. A restored good human king begins the [[The Fourth Age of Erdae|Fourth Age]].
+[[Afrit]] accumulates worship, allies and institutions throughout the occupation. At the end of the age he genuinely helps save people from the catastrophe accompanying Elzon's death. The Deliverer, publicly called **Aurevan** in the new proposed naming scheme, is proclaimed and worshipped as a New God. He does not take the human throne yet. A restored good human king begins the [[The Fourth Age of Aoaz|Fourth Age]].
 
 ## Proposed 1,260-year chronology
 
@@ -33,6 +33,6 @@ The above year bands, institutional names and techniques are **proposals**, not 
 
 An army of fading corpses could not simply remain at full size for twelve centuries. Elzon therefore rotates hosts through regions near his sources of power, raises new dead from campaigns, appoints living provincial rulers and relies on orc and goblin garrisons. Some lands even achieve ordinary commerce under oppressive taxes. Rebel communities can be defeated without being completely eradicated, enabling repeated wars across generations. Institutions and defensive strategies evolve on both sides.
 
-Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Erdae|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol, Volgan, and Afrit.
+Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Aoaz|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol, Volgan, and Afrit.
 
 [[Third Age Canon Register]] · [[Elzon]] · [[Varner]] · [[Golbran]] · [[The Last Tithe]] · [[Afrit]]

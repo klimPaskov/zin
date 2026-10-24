@@ -4,13 +4,13 @@
 
 ## Purpose
 
-Zol's tree is the strangest in ZIN. Zol has no body, no court and no people. His tree is not about ruling: it is about keeping a bodiless Old God present in Erdae under the Fading, deepening the service of servants nobody can name, waking the black islands, readying the deathless dead, and, if the hour comes, rising, taking a brief form and withdrawing. It has 97 focuses in eight branches. It drives the mechanic in [../../04_mechanics/zols_mistake.md](../../04_mechanics/zols_mistake.md) and uses the data format of [../00_format_and_compiler.md](../00_format_and_compiler.md).
+Zol's tree is the strangest in ZIN. Zol has no body, no court and no people. His tree is not about ruling: it is about keeping a bodiless Old God present in Aoaz under the Fading, deepening the service of servants nobody can name, waking the black islands, readying the deathless dead, and, if the hour comes, rising, taking a brief form and withdrawing. It has 97 focuses in eight branches. It drives the mechanic in [../../04_mechanics/zols_mistake.md](../../04_mechanics/zols_mistake.md) and uses the data format of [../00_format_and_compiler.md](../00_format_and_compiler.md).
 
 Tree id `zol`; tier `major`; countries: Zol. Focus ids compile to `zin_zol_<key>`; spirits to `zin_zol_<key>`; events to namespace `zin_zol`.
 
 ## Lore basis
 
-**Established** (see the mechanic spec for sources): Zol is the only Old God in Erdae; the Fading and Erdae's magic deny him a body and free use of his power; his power grows very slowly; Great Spirits, Lesser Spirits and New Gods serve and sustain him, identities unknown; without them he could fade out of Erdae; who administers Furviatlon is unknown; the wandering dead have no settled allegiance; his dead stir in the islands at the start, unseen by courts; late in the age they emerge through islands and straits; ordinary weapons cannot end them, potent magic can; his dead clash with Volgan's and later briefly join them against Eindil; he manifests once at great cost, breaks Horos's sword, is wounded by a shard and is forced back by Lorien and ancient spirits; he is not slain.
+**Established** (see the mechanic spec for sources): Zol is the only Old God in Aoaz; the Fading and Aoaz's magic deny him a body and free use of his power; his power grows very slowly; Great Spirits, Lesser Spirits and New Gods serve and sustain him, identities unknown; without them he could fade out of Aoaz; who administers Furviatlon is unknown; the wandering dead have no settled allegiance; his dead stir in the islands at the start, unseen by courts; late in the age they emerge through islands and straits; ordinary weapons cannot end them, potent magic can; his dead clash with Volgan's and later briefly join them against Eindil; he manifests once at great cost, breaks Horos's sword, is wounded by a shard and is forced back by Lorien and ancient spirits; he is not slain.
 
 **Proposed:** every focus, spirit, event, number and name in this tree; the dates of the historical route (rising 4A 1755, manifestation and withdrawal 4A 1757); the "routes of power" of the Convergence branch (from the proposed chronicle explanation).
 

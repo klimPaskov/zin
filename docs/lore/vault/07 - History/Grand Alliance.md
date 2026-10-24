@@ -16,5 +16,5 @@ The Alliance is not a single kingdom. Its rulers retain their crowns or independ
 
 An alliance council could include a North Lands envoy, the West Lands commanders, the islands, elected elven representatives of the Magical Forest, Lorien of Gala, independent Dark Lands peoples, and the allied Great Spirits. The actual members and charter are not fixed canon.
 
-[[The First Age of Erdae]] · [[King Edran]] · [[Lorien]] · [[First Age Proposed Characters]]
+[[The First Age of Aoaz]] · [[King Edran]] · [[Lorien]] · [[First Age Proposed Characters]]
 

@@ -29,7 +29,7 @@
 ## Owner questions (proceeding on proposals)
 
 1. Keep the ship designer with fixed modules and rename the market "Great Fairs"? Proposal: yes.
-2. Erdae rank titles and "Orders" for command power? Proposal: yes.
+2. Aoaz rank titles and "Orders" for command power? Proposal: yes.
 3. Unit voices? Proposal: none.
 4. Army HQ as a War Camp? Proposal: yes.
 5. Cryptography as Seals and Codes? Proposal: yes.

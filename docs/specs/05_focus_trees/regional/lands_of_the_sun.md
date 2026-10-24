@@ -8,7 +8,7 @@ This spec defines the seven tier B focus trees of the Lands of the Sun: **The La
 
 ## Lore basis
 
-**Established** (vault): the Lands of the Sun lie far in the south-west and run beyond the southern map edge; Elvana, Igara, Hengyang, the Sea of Gods, Heaven, Flame and Godland are named there; the Sunhot elves are over three metres tall and among the strongest and most peaceful peoples of Erdae; the Goodin Sunfolk are a people of men; Lorien, king of the Gala elves, fought at Dardan, cares for all Erdae and distrusts kings who turn victories into dominion; Afrit's agents operate even in the Lands of the Sun; Lorien dies opposing Zol.
+**Established** (vault): the Lands of the Sun lie far in the south-west and run beyond the southern map edge; Elvana, Igara, Hengyang, the Sea of Gods, Heaven, Flame and Godland are named there; the Sunhot elves are over three metres tall and among the strongest and most peaceful peoples of Aoaz; the Goodin Sunfolk are a people of men; Lorien, king of the Gala elves, fought at Dardan, cares for all Aoaz and distrusts kings who turn victories into dominion; Afrit's agents operate even in the Lands of the Sun; Lorien dies opposing Zol.
 
 **Roster facts:** The Lands of Light holds 15 states; Poyang 5; Godland 4; Hengyang 3 (a northern sun-sea archipelago republic); Elvana 1 (Elvana and Elvini united; commercial rival of Igara); Goodin 1 (men, Wild freeholds); Heaven 1. Every Sunhot realm is Light, stance `zin_light_sanctuary`. The Lands of Light borders the East Lands' Alerhia and Miaed (eastern kings spec).
 

@@ -18,12 +18,12 @@ The text half (quotes, tips, status lines) has no art dependency and may ship as
 
 ## Purpose
 
-The loading screen is the first and the most frequent thing a ZIN player sees. Today it shows vanilla Second World War photographs, Paradox's 1930s quotes and English status lines about shaders. This spec replaces all of it with Erdae:
+The loading screen is the first and the most frequent thing a ZIN player sees. Today it shows vanilla Second World War photographs, Paradox's 1930s quotes and English status lines about shaders. This spec replaces all of it with Aoaz:
 
 1. **24 image-generated loading screens**, each tied to a region, people or scene of the Fourth Age, all spoiler-free for the whole game.
 2. **The loading screen chrome**: the tip band, the status band and the progress bar, re-textured with generated art.
 3. **150 in-world quotes and 40 gameplay tips**, given here in full, which replace every vanilla loading tip.
-4. **The loading status lines** ("Loading Map (Creating Terrain)...") in Erdae words.
+4. **The loading status lines** ("Loading Map (Creating Terrain)...") in Aoaz words.
 5. The **main-menu background list**, so that the background picker offers only ZIN pictures.
 
 It also fixes the file names, sizes and formats, the builder modules that produce them, and how the result is checked.
@@ -34,7 +34,7 @@ This spec owns the loading screens for the whole mod ([07_interface/01_interface
 
 | Fact or rule | Status | Source |
 | --- | --- | --- |
-| The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748*, CONVENTIONS |
+| The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748*, CONVENTIONS |
 | No text a player can read names Afrit or calls the Deliverer a demon before `zin_afrit_revealed`, except text shown only to the Worshipdom | contract rule | [00_shared_contract.md](../04_mechanics/00_shared_contract.md), "The secret" |
 | "Eindil" never appears in text reachable before `zin_eindil_named`; before that he is "the Man from the Ice" | integration D4 | [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md), [03_names_and_terms.md](../02_lore/03_names_and_terms.md) |
 | No text names a sleeper in the ice, Ein's sons, Zol's administrator, the King of Demons, Dardan's place, the Gala–Sunhot relationship or Varner's whereabouts | lore rules | [04_fourth_age_history_for_play.md](../02_lore/04_fourth_age_history_for_play.md), [03_names_and_terms.md](../02_lore/03_names_and_terms.md) |
@@ -46,7 +46,7 @@ This spec owns the loading screens for the whole mod ([07_interface/01_interface
 
 **Why everything must be spoiler-free.** The engine picks a loading picture and a loading tip at random and shows them before any save is loaded, so no flag can gate them. A quote that is safe in 4A 1760 but not in 4A 1748 is therefore not safe at all. For that reason this spec does not use the phrase "the Man from the Ice" at all, even though the assignment allowed it: a loading tip cannot know whether he has woken, and the history-for-play spec already rules out any legend of a sleeper in the ice (open question 1).
 
-**What the quotes may say.** Only what the peoples of Erdae know or believe on 1 Thaw 4A 1748, in the voices the history-for-play spec gives them: pride in the long peace, quiet shame at the Golden King, love of the Deliverer, the West's grudge, the North's treaty, Mirolon's unheeded warnings, fishermen's tales of the black north, the elves' long memory. Dramatic irony is allowed (a sincere hymn to the Deliverer); revelation is not.
+**What the quotes may say.** Only what the peoples of Aoaz know or believe on 1 Thaw 4A 1748, in the voices the history-for-play spec gives them: pride in the long peace, quiet shame at the Golden King, love of the Deliverer, the West's grudge, the North's treaty, Mirolon's unheeded warnings, fishermen's tales of the black north, the elves' long memory. Dramatic irony is allowed (a sincere hymn to the Deliverer); revelation is not.
 
 ## Design
 
@@ -177,13 +177,13 @@ Example lines:
 ```
 l_english:
  LOADING_TIP_0:0 "A crown is gold on the outside and work on the inside. Most kings only look at the outside.\n- Saying of the Middle Lands"
- LOADING_TIP_150:0 "§YCounsel:§! The Erdae bar under your flag shows the year of the Fourth Age, the Gathering Dark and up to three meters of your own realm. Hover any of them to learn what it means."
+ LOADING_TIP_150:0 "§YCounsel:§! The Aoaz bar under your flag shows the year of the Fourth Age, the Gathering Dark and up to three meters of your own realm. Hover any of them to learn what it means."
 ```
 
 #### Attribution style
 
 - **Sayings of peoples** name the people or place: "Saying of the Gunwaith clans", "Fishermen's saying, Ocean of Zol".
-- **Lines from chronicles** name a source (all titles proposed): *The Chronicle of Erdae* with its age (the same name as the in-game codex, [04_chronicle_codex.md](../07_interface/04_chronicle_codex.md)), *The Annals of Parim*, *The Annals of Gunwaith*, *The Harbour Rolls of Sonargur*, *The Litany of the Deliverer*, *A western reading of the Chronicle*, *A commentary on the Chronicle*.
+- **Lines from chronicles** name a source (all titles proposed): *The Chronicle of Aoaz* with its age (the same name as the in-game codex, [04_chronicle_codex.md](../07_interface/04_chronicle_codex.md)), *The Annals of Parim*, *The Annals of Gunwaith*, *The Harbour Rolls of Sonargur*, *The Litany of the Deliverer*, *A western reading of the Chronicle*, *A commentary on the Chronicle*.
 - **Words of figures** name the figure with a title. Every attributed line is **proposed**, including those given to established figures (Aen, King Edran, Lorien, Varner, the Golden King, Alleria). Lines for Aen and Varner are framed as remembered ("Words the heralds give to Aen", "as the elves remember him"), because nobody alive heard them. Proposed characters come from [02_characters.md](../02_lore/02_characters.md) and the vault's proposed First and Second Age characters; the High Confessor is **Ilvane** (integration N10).
 - **Volgan** speaks only through Mirolon's songs. Zol, the Deliverer himself, Horos and Eindil are never quoted.
 
@@ -216,23 +216,23 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 
 | Key | Text | Attribution | Basis |
 | --- | --- | --- | --- |
-| `LOADING_TIP_16` | Men lived for thousands of years before Aen. He was not the first of men. He was the first of his name. | The Chronicle of Erdae: the First Age | Aen, First of His Name (E) |
-| `LOADING_TIP_17` | For centuries the kingdoms of men fought over whether there should be one crown. Aen answered the question. | The Chronicle of Erdae: the First Age | The War of Men (E) |
+| `LOADING_TIP_16` | Men lived for thousands of years before Aen. He was not the first of men. He was the first of his name. | The Chronicle of Aoaz: the First Age | Aen, First of His Name (E) |
+| `LOADING_TIP_17` | For centuries the kingdoms of men fought over whether there should be one crown. Aen answered the question. | The Chronicle of Aoaz: the First Age | The War of Men (E) |
 | `LOADING_TIP_18` | The western shores were not empty when Aenor's ships arrived. That is the whole quarrel, and it has lasted four ages. | A western reading of the Chronicle | Aenor's wars in the West (E) |
-| `LOADING_TIP_19` | The Dead Lands guarded themselves. Storms turned back the ships, and the heat turned back the men who landed. | The Chronicle of Erdae: the First Age | Dead Lands storms and heat (E) |
-| `LOADING_TIP_20` | When the capital fell to Volgan, its archives burned with it. The kingdom lost its memory before it lost its walls. | The Chronicle of Erdae: the First Age | The capital fell (E); archives (P) |
-| `LOADING_TIP_21` | Men, elves, dwarves, giants and spirits stood in one alliance. It happened once. The chroniclers still argue about why it worked. | The Chronicle of Erdae: the Grand Alliance | The Grand Alliance (E) |
-| `LOADING_TIP_22` | Dardan cost millions of lives and left a wasteland. The victory was real. So was the price. | The Chronicle of Erdae: the First Age | Battle of Dardan (E) |
+| `LOADING_TIP_19` | The Dead Lands guarded themselves. Storms turned back the ships, and the heat turned back the men who landed. | The Chronicle of Aoaz: the First Age | Dead Lands storms and heat (E) |
+| `LOADING_TIP_20` | When the capital fell to Volgan, its archives burned with it. The kingdom lost its memory before it lost its walls. | The Chronicle of Aoaz: the First Age | The capital fell (E); archives (P) |
+| `LOADING_TIP_21` | Men, elves, dwarves, giants and spirits stood in one alliance. It happened once. The chroniclers still argue about why it worked. | The Chronicle of Aoaz: the Grand Alliance | The Grand Alliance (E) |
+| `LOADING_TIP_22` | Dardan cost millions of lives and left a wasteland. The victory was real. So was the price. | The Chronicle of Aoaz: the First Age | Battle of Dardan (E) |
 | `LOADING_TIP_23` | The spirits did not destroy Volgan. They stripped his strength and cast him into the Void. A banishment is a door, and doors open. | A commentary on the Chronicle | Banishment to the Void, later return (E) |
-| `LOADING_TIP_24` | King Edran won the war and lost the peace. He would not stop at Dardan, and the elves paid for it in the Dead Lands. | The Chronicle of Erdae: the First Age | Edran's failed Dead Lands campaign (E) |
-| `LOADING_TIP_25` | They called the Second Age the Long Grief. Yet its farmers learned to keep seed, its healers to end plagues, its builders to raise walls that held. | The Chronicle of Erdae: the Second Age | Second Age advances (E) |
-| `LOADING_TIP_26` | King Edran, greatest of kings since Aen, died of a sickness no sword could reach. | The Chronicle of Erdae: the Second Age | Edran died of disease (E) |
-| `LOADING_TIP_27` | When the Necromancer came, the elves did not. Men called it betrayal. The elves called it memory. | The Chronicle of Erdae: the Second Age | The Elven Refusal (E) |
-| `LOADING_TIP_28` | Elzon raised the dead who fell fighting him. Every lost battle cost Aenor twice. | The Chronicle of Erdae: the Second Age | Elzon raised Aenor's fallen (E) |
-| `LOADING_TIP_29` | In the two thousand one hundred and thirty-third year of the Second Age, Elzon took Aenor. So began the Third Age. | The Chronicle of Erdae: the Second Age | 2A 2133 (E) |
-| `LOADING_TIP_30` | The Necromancer's dead faded, and Aenor's earth would not feed his magic. He ruled for twelve centuries on borrowed strength. | The Chronicle of Erdae: the Third Age | Fading undead; at least 1,200 years (E) |
-| `LOADING_TIP_31` | Elzon did not fade, and he did not sleep. He died, wholly and for good. | The Chronicle of Erdae: the Third Age | Elzon's permanent death (E) |
-| `LOADING_TIP_32` | When the Necromancer fell, the Deliverer stood between the people and the ruin. That day the temples were full, and they have been full since. | The Chronicle of Erdae: the Fourth Age | The Deliverer acclaimed at Elzon's fall (E, public) |
+| `LOADING_TIP_24` | King Edran won the war and lost the peace. He would not stop at Dardan, and the elves paid for it in the Dead Lands. | The Chronicle of Aoaz: the First Age | Edran's failed Dead Lands campaign (E) |
+| `LOADING_TIP_25` | They called the Second Age the Long Grief. Yet its farmers learned to keep seed, its healers to end plagues, its builders to raise walls that held. | The Chronicle of Aoaz: the Second Age | Second Age advances (E) |
+| `LOADING_TIP_26` | King Edran, greatest of kings since Aen, died of a sickness no sword could reach. | The Chronicle of Aoaz: the Second Age | Edran died of disease (E) |
+| `LOADING_TIP_27` | When the Necromancer came, the elves did not. Men called it betrayal. The elves called it memory. | The Chronicle of Aoaz: the Second Age | The Elven Refusal (E) |
+| `LOADING_TIP_28` | Elzon raised the dead who fell fighting him. Every lost battle cost Aenor twice. | The Chronicle of Aoaz: the Second Age | Elzon raised Aenor's fallen (E) |
+| `LOADING_TIP_29` | In the two thousand one hundred and thirty-third year of the Second Age, Elzon took Aenor. So began the Third Age. | The Chronicle of Aoaz: the Second Age | 2A 2133 (E) |
+| `LOADING_TIP_30` | The Necromancer's dead faded, and Aenor's earth would not feed his magic. He ruled for twelve centuries on borrowed strength. | The Chronicle of Aoaz: the Third Age | Fading undead; at least 1,200 years (E) |
+| `LOADING_TIP_31` | Elzon did not fade, and he did not sleep. He died, wholly and for good. | The Chronicle of Aoaz: the Third Age | Elzon's permanent death (E) |
+| `LOADING_TIP_32` | When the Necromancer fell, the Deliverer stood between the people and the ruin. That day the temples were full, and they have been full since. | The Chronicle of Aoaz: the Fourth Age | The Deliverer acclaimed at Elzon's fall (E, public) |
 | `LOADING_TIP_33` | Harion of Selen took up a crown that had waited twelve hundred years, and found that it still fitted a good man. | The Annals of Parim | A good king restores Aenor (E); Harion (P) |
 | `LOADING_TIP_34` | 4A 96. The elves and the crown agreed to keep the Necromancer's wall. The elves wanted their old distance. The kings wanted the tolls. | The Annals of Parim | The Wall Accord (P) |
 | `LOADING_TIP_35` | 4A 1000. Parim feasted a thousand years of peace. Envoys came from every coast, and nobody brought a sword. | The Annals of Parim | The Thousand-Year Jubilee (P) |
@@ -255,7 +255,7 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 | `LOADING_TIP_47` | I remember the War of Men. I remember Dardan. Forgive me if I do not hurry to remember your war. | King Lorien of Gala | Lorien remembers the War of Men and Dardan (E); speech (P) |
 | `LOADING_TIP_48` | Do not frighten your people with prophecy. Frightened people make prophecies come true. | King Lorien of Gala | Lorien's warning about prophecy (P, vault) |
 | `LOADING_TIP_49` | Gold does not rust. Neither, I am pleased to say, do I. | The Golden King | His love of gold (E); speech (P) |
-| `LOADING_TIP_50` | The Lost Cause shall guard Erdae against the powers of the dark. See that the triumph is painted in gold. | The Golden King, founding the Lost Cause, 4A 1741 | Founding of the Lost Cause (E); date (P) |
+| `LOADING_TIP_50` | The Lost Cause shall guard Aoaz against the powers of the dark. See that the triumph is painted in gold. | The Golden King, founding the Lost Cause, 4A 1741 | Founding of the Lost Cause (E); date (P) |
 | `LOADING_TIP_51` | The seals of the kingdom are heavy. I carry them so that the King need not. | Chancellor Merovan | Merovan holds the seals (P) |
 | `LOADING_TIP_52` | Everything at court has a price. I am only the one man honest enough to write it down. | Lord Treasurer Halmor Infous | Golden Court office-sellers (P) |
 | `LOADING_TIP_53` | An army is not a parade that happens to carry swords. | Marshal Corwen Hornan of Aenor | Aenor's honest marshal (P) |
@@ -265,7 +265,7 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 | `LOADING_TIP_57` | Selen loves the crown the way the forest loves the road. It lets it through. | First Warden Daeric Svenlor of Selen | Selen's pride (P) |
 | `LOADING_TIP_58` | Hurry is a thing that happens to men. | Eldest Gronnar of Kilinti | Ents of Kilinti (E); ruler (P) |
 | `LOADING_TIP_59` | The temples ask for nothing but your trust. Trust is the only tithe that grows. | Ilvane, High Confessor of the Deliverer | Public worship (E); Ilvane (P) |
-| `LOADING_TIP_60` | Zilin has three valleys, no army and the busiest roads in Erdae. | Abbot-Steward Lozan Heron of the Worshipdom | The Worshipdom's valleys and pilgrims (P) |
+| `LOADING_TIP_60` | Zilin has three valleys, no army and the busiest roads in Aoaz. | Abbot-Steward Lozan Heron of the Worshipdom | The Worshipdom's valleys and pilgrims (P) |
 | `LOADING_TIP_61` | The houses have debated the matter for forty years. We are nearly ready to begin. | First Speaker Lusiel Velakorin of the Magical Forest | Elected houses of the Magical Forest (P constitution) |
 | `LOADING_TIP_62` | A dragon is not a weapon. It is a neighbour who has agreed, for now, to be polite. | Perlan, Warden of the Dragon Roosts | Elves command dragons (E); office (P) |
 | `LOADING_TIP_63` | We did not refuse Aenor. We refused King Edran, a little late and for a very long time. | Loremaster Aenwe Lozari of the Magical Forest | The Elven Refusal (E); speaker (P) |
@@ -291,7 +291,7 @@ Public faith only. These lines are sincere, and they stay true to what believers
 | `LOADING_TIP_76` | Deliverance for the fallen, protection for the faithful, renewal for the land. | The threefold blessing of the temples | New God of Deliverance, Protection and Renewal (P) |
 | `LOADING_TIP_77` | The Houses of the First Light keep three books: the grain, the sick and the born. A kingdom written down is a kingdom cared for. | Rule of the Houses of the First Light | Grain stores, hospitals and birth rolls (P) |
 | `LOADING_TIP_78` | Come to Zilin with empty hands. You will leave with a blessing and a letter for a friend in your own city. | Pilgrims' saying of the Zilin Hills | Pilgrims and couriers of the Worshipdom (P) |
-| `LOADING_TIP_79` | Every court in Erdae has a friend of the temples. That is why the roads are so safe. | Merchants' saying of the East Lands | The Deliverer's friends in eastern courts (E direction, public view P) |
+| `LOADING_TIP_79` | Every court in Aoaz has a friend of the temples. That is why the roads are so safe. | Merchants' saying of the East Lands | The Deliverer's friends in eastern courts (E direction, public view P) |
 | `LOADING_TIP_80` | Pray to the Deliverer for rain and he sends rain. Pray to him for wisdom and he sends a priest. | Peasants' jest of the Middle Lands | Public worship (E) |
 | `LOADING_TIP_81` | A god who heals the sick asks only gratitude. Gratitude is cheap. Pay it gladly. | Teaching of the Faithful, as preached in Parim | Real blessings of the Deliverer (E) |
 | `LOADING_TIP_82` | Old scrolls speak of Seven who made the gods. Old scrolls also speak of fish that sing to sailors. | Lecture-room jest, University of Parim | Almost nobody believes in the Holy Seven (E) |
@@ -301,7 +301,7 @@ Public faith only. These lines are sincere, and they stay true to what believers
 | Key | Text | Attribution | Basis |
 | --- | --- | --- | --- |
 | `LOADING_TIP_83` | The Old Gods are dead, says one priest. Asleep, says another. The fishermen of the north say nothing, and do not sail at night. | Saying of the North Lands coasts | Conflicting accounts of the Old Gods (E) |
-| `LOADING_TIP_84` | Only one Old God dwells in Erdae, and he cannot walk in it. That is the best news the north has ever had. | Saying of the northern shores | Zol is the only Old God in Erdae and cannot take a body (E) |
+| `LOADING_TIP_84` | Only one Old God dwells in Aoaz, and he cannot walk in it. That is the best news the north has ever had. | Saying of the northern shores | Zol is the only Old God in Aoaz and cannot take a body (E) |
 | `LOADING_TIP_85` | Great Spirit or god, what does it matter to the village it burns? The priests can argue over the ashes. | Saying of the Mirolon passes | Mortals confuse spirits with gods (E) |
 | `LOADING_TIP_86` | The New Gods are young, the proverb says. Young as the mountains are young. | Saying of the Magical Lands | New Gods are younger than the Old (E) |
 | `LOADING_TIP_87` | There are spirits under the mountains that have never seen the sun. Miners who dig too deep come back quiet, or not at all. | Miners' saying of the Dark Lands | Damned Spirits deep underground (E) |
@@ -371,7 +371,7 @@ Public faith only. These lines are sincere, and they stay true to what believers
 | Key | Text | Attribution | Basis |
 | --- | --- | --- | --- |
 | `LOADING_TIP_123` | The Sunhot elves stand over three metres tall and have never once needed to raise their voices. | Saying of the Goodin Sunfolk | Sunhot elves' height and peace (E) |
-| `LOADING_TIP_124` | The strongest people in Erdae are also the most peaceful. The philosophers find this inconvenient. | Lecture-room jest, University of Selen | Sunhot elves (E) |
+| `LOADING_TIP_124` | The strongest people in Aoaz are also the most peaceful. The philosophers find this inconvenient. | Lecture-room jest, University of Selen | Sunhot elves (E) |
 | `LOADING_TIP_125` | The Gala host marched to Dardan for a king it barely knew. Gala does not regret Dardan. It regrets what came after. | Saying of the court of Gala | Gala at Dardan; Edran's folly (E) |
 | `LOADING_TIP_126` | The Lands of Light lead the Sunhot realms by never once giving an order. | Saying of the Sea of Gods | Lands of Light (P role) |
 | `LOADING_TIP_127` | The white ships of Hengyang have long memories and short patience with pirates. | Saying of Hengyang's Tide-Speakers | Hengyang's fleets (P) |
@@ -414,35 +414,35 @@ Public faith only. These lines are sincere, and they stay true to what believers
 | `LOADING_TIP_144` | Noris and Stabilo fight over every road east. The camels have not noticed. | Saying of the salt road | Noris and Stabilo rivalry (W) |
 | `LOADING_TIP_145` | A Noris camel rider can cross the desert on one skin of water and one insult to Stabilo. | Saying of Furvior | Noris camel warriors (E) |
 | `LOADING_TIP_146` | In Postondoroth they weigh gold, salt and promises on the same scale. Only the gold never comes up short. | Saying of the Stabilo Pact | Stabilo's trade (P) |
-| `LOADING_TIP_147` | The East is the richest land in Erdae and the most divided. Every merchant says the two are related. Every king blames the other king. | Saying of the caravan masters | East Lands rich and divided (E) |
+| `LOADING_TIP_147` | The East is the richest land in Aoaz and the most divided. Every merchant says the two are related. Every king blames the other king. | Saying of the caravan masters | East Lands rich and divided (E) |
 | `LOADING_TIP_148` | Gondolin, Drak, Alerhia, Miaed: four courts, forty quarrels and one road for all of them. | Caravan saying of the East Lands | East Lands courts (W, map) |
 | `LOADING_TIP_149` | Easterlings, the old charts call us. We were here before the charts. | Saying of the East Lands | Easterlings in First Age usage (E) |
 
 ### Gameplay tips (complete text)
 
-Each tip names only systems that the specs define and stays true if their numbers are tuned. The tips describe the target game: today several describe systems not yet built (the Erdae bar in 150 and 152, the calendar in 154, warfare, economy and mechanic tips from 155 on). They ship now because they spoil nothing; the phase 7 review (Acceptance 7) checks each against the built game and rewrites any that is still untrue. The "Refs" field in the data file (Implementation) lists the spec each tip depends on, so a rename shows up in review. No tip mentions a story flag, a hidden figure or a later-game unit (no bearer of Glo, no Host of Eindil, no manifestation).
+Each tip names only systems that the specs define and stays true if their numbers are tuned. The tips describe the target game: today several describe systems not yet built (the Aoaz bar in 150 and 152, the calendar in 154, warfare, economy and mechanic tips from 155 on). They ship now because they spoil nothing; the phase 7 review (Acceptance 7) checks each against the built game and rewrites any that is still untrue. The "Refs" field in the data file (Implementation) lists the spec each tip depends on, so a rename shows up in review. No tip mentions a story flag, a hidden figure or a later-game unit (no bearer of Glo, no Host of Eindil, no manifestation).
 
 | Key | Topic | Text | Refs |
 | --- | --- | --- | --- |
-| `LOADING_TIP_150` | Interface | The Erdae bar under your flag shows the year of the Fourth Age, the Gathering Dark and up to three meters of your own realm. Hover any of them to learn what it means. | interface §2 |
-| `LOADING_TIP_151` | Interface | The Realm button opens the Realm panel: your people, your alignment and stance, and your standing among the crowns of Erdae. | interface §3 |
-| `LOADING_TIP_152` | Interface | Great powers have their own panel. Open it from the small sigil at the end of the Erdae bar. Panels show; decisions act. | interface §1–2, §4 |
-| `LOADING_TIP_153` | World | The Gathering Dark measures how near Erdae is to catastrophe. It starts low, because the world seems at peace, and rises as hidden pressures build. | world tension |
-| `LOADING_TIP_154` | World | Erdae counts twelve months from Deepwinter to Longnight. The campaign opens on 1 Thaw, 4A 1748, the first day of spring. | calendar |
+| `LOADING_TIP_150` | Interface | The Aoaz bar under your flag shows the year of the Fourth Age, the Gathering Dark and up to three meters of your own realm. Hover any of them to learn what it means. | interface §2 |
+| `LOADING_TIP_151` | Interface | The Realm button opens the Realm panel: your people, your alignment and stance, and your standing among the crowns of Aoaz. | interface §3 |
+| `LOADING_TIP_152` | Interface | Great powers have their own panel. Open it from the small sigil at the end of the Aoaz bar. Panels show; decisions act. | interface §1–2, §4 |
+| `LOADING_TIP_153` | World | The Gathering Dark measures how near Aoaz is to catastrophe. It starts low, because the world seems at peace, and rises as hidden pressures build. | world tension |
+| `LOADING_TIP_154` | World | Aoaz counts twelve months from Deepwinter to Longnight. The campaign opens on 1 Thaw, 4A 1748, the first day of spring. | calendar |
 | `LOADING_TIP_155` | World | Every realm belongs to one of ten peoples. Your people decides which hosts you can raise and which arms your armouries can make. | peoples, warfare §1 |
-| `LOADING_TIP_156` | Politics | Four alignments divide Erdae: Light, Dominion, Shadow and the Wild. Each has its own stances, and each treats war and alliances differently. | ideologies |
+| `LOADING_TIP_156` | Politics | Four alignments divide Aoaz: Light, Dominion, Shadow and the Wild. Each has its own stances, and each treats war and alliances differently. | ideologies |
 | `LOADING_TIP_157` | Diplomacy | At the start nobody can simply justify a war. A cause, such as a broken truce or an old grudge, lets one realm press a claim on one rival. | diplomacy, war justification |
 | `LOADING_TIP_158` | Diplomacy | Declare war while the long peace holds and you are branded a breaker of the peace: stability and war support fall, and the Gathering Dark rises. | diplomacy, `zin_diplo_peace_breaker` |
 | `LOADING_TIP_159` | Diplomacy | Seven leagues stand at the start: the Middle Kingdom Concord, the Leren Compact, the Northern Accord, the Noris Treaty, the Stabilo Pact, the Dark Sea Accord and the Southern Dominion. | diplomacy, factions |
 | `LOADING_TIP_160` | Diplomacy | The elves keep the Elven Refusal. They defend their own lands, but they will not send armies to fight for Aenor. | diplomacy, Elven Refusal |
-| `LOADING_TIP_161` | Economy | Erdae runs on Iron, Timber, Horses, Stone, Gold, Essence and Grain. Timber builds hulls, Horses mount riders, Essence feeds magical arms. | integration V2 |
+| `LOADING_TIP_161` | Economy | Aoaz runs on Iron, Timber, Horses, Stone, Gold, Essence and Grain. Timber builds hulls, Horses mount riders, Essence feeds magical arms. | integration V2 |
 | `LOADING_TIP_162` | Economy | Guild Workshops build for the realm, Armouries forge arms for the hosts, and Shipwrights lay down hulls. Balance them to your needs. | economy, buildings |
 | `LOADING_TIP_163` | Economy | Roads, High Roads and Depots carry supply. A host far from any road starves faster than any enemy can kill it. | economy, buildings |
 | `LOADING_TIP_164` | Warfare | Ballista companies pierce the hides of trolls, giants and the other great kin. A host without them barely scratches such foes. | warfare §5 |
 | `LOADING_TIP_165` | Warfare | Ordinary arms hardly harm Zol's deathless. Wards and hallowed arms help a little; only potent magic truly ends them. | warfare §5, magic |
 | `LOADING_TIP_166` | Warfare | Knights and heavy foot are the hammer of the hosts of men. They hit hard and cost dearly, so keep them where the battle is decided. | warfare §2 |
 | `LOADING_TIP_167` | Warfare | Support companies matter: scouts find the enemy, sappers break walls, healers return the wounded, and wardens stand against the dead. | warfare §2, §4.8 |
-| `LOADING_TIP_168` | Warfare | Rangers, hill companies, sea soldiers and temple wardens are the special forces of Erdae. Few realms can field many of them. | warfare §2 |
+| `LOADING_TIP_168` | Warfare | Rangers, hill companies, sea soldiers and temple wardens are the special forces of Aoaz. Few realms can field many of them. | warfare §2 |
 | `LOADING_TIP_169` | Warfare | Dragons cannot be bred or built. Only pacts with Dragon Mountain bring them, and a dragon lost in battle is never replaced. | warfare §6.3, magic |
 | `LOADING_TIP_170` | Warfare | The Great Wall of Aenor is a line of stone forts from the Organ Mountains past Lunhrim to Kingson. It needs upkeep, and every breach matters. | magic, Great Wall |
 | `LOADING_TIP_171` | Navy | Galleys cannot cross the wide central sea. A fleet bound from the West Lands to the Middle Lands needs deep-water hulls. | warfare §7.3 |
@@ -460,7 +460,7 @@ Each tip names only systems that the specs define and stays true if their number
 | `LOADING_TIP_183` | West Lands | The West Lands are many crowns in an uneasy calm. The Truce of the Grey Ford holds at the start, and whether it lasts shapes the West. | Western Crossing |
 | `LOADING_TIP_184` | East Lands | The caravan roads make Noris and Stabilo rich, and keep them rivals. A price war on the salt road can turn into a real one. | economy, `zin_cb_caravan_roads` |
 | `LOADING_TIP_185` | Dark powers | Playing Volgan? Your grave hosts fray far from the Dead Lands. Necromancers slow the decay; patience serves you better than haste. | warfare §6.5 |
-| `LOADING_TIP_186` | Dark powers | Playing Zol? Your presence in Erdae grows slowly and can thin away. Tend it, and let the dead do the walking. | Zol's Mistake |
+| `LOADING_TIP_186` | Dark powers | Playing Zol? Your presence in Aoaz grows slowly and can thin away. Tend it, and let the dead do the walking. | Zol's Mistake |
 | `LOADING_TIP_187` | Worshipdom | Playing the Worshipdom? Your three valleys hold almost no army. Your strength lies in pilgrims, temples and friends in other courts. | Worshipdom (public face) |
 | `LOADING_TIP_188` | Events | Read your events. Many options open or close whole roads of history, and the age can end in more than one way. | events, endings |
 | `LOADING_TIP_189` | Focus | Every realm has its own focus tree. Some branches open only as the age moves, so look again when the world changes. | focus trees |
@@ -475,7 +475,7 @@ To do. Shown in the status band (font `loadscreen_header`, max width 800, so at 
 | `LOADING_HISTORY` | Loading History | Reading the chronicles |
 | `LOADING_SAVEGAME` | Loading savegame: $NAME$ | Opening the chronicle: $NAME$ |
 | `LOADING_SAVEGAME_NO_NAME` | Loading savegame | Opening the chronicle |
-| `LOADING_DATABASES` | Loading databases | Gathering the records of Erdae |
+| `LOADING_DATABASES` | Loading databases | Gathering the records of Aoaz |
 | `LOADING_MAP_SPRITES` | Loading sprites | Painting the banners |
 | `LOAD_GFX_PDXMAP_SHADERS` | Loading Map(Creating Shaders)... | Mixing the inks... |
 | `LOAD_GFX_PDXMAP_TERRAIN` | Loading Map(Creating Terrain)... | Raising the mountains... |
@@ -484,7 +484,7 @@ To do. Shown in the status band (font `loadscreen_header`, max width 800, so at 
 | `LOAD_GFX_PDXMAP_TREES` | Loading Map(Creating Trees)... | Planting the forests... |
 | `LOAD_GFX_PDXMAP_RIVERS` | Loading Map(Creating Rivers)... | Filling the rivers... |
 | `LOAD_GFX_PDXMAP_STATIC_OBJECTS` | Loading Map(Creating objects)... | Building the cities... |
-| `LOAD_INIT` | Initializing Game... | Setting Erdae in motion... |
+| `LOAD_INIT` | Initializing Game... | Setting Aoaz in motion... |
 | `LOAD_EVENTS` | Loading Events | Gathering the tales |
 | `LOAD_GFX` | Loading Graphics | Preparing the paints |
 | `LOAD_FLAGS` | Creating Flags | Sewing the banners |
@@ -582,7 +582,7 @@ Each proceeds on the proposal; the owner may overrule.
 3. **The first launch screen.** Naming the first nine screens `load_1` … `load_9` covers vanilla. If the Linux run shows DLC pictures before `replace_path` takes effect, the builder also ships ZIN copies under the DLC names listed in the installed `common/frontend/backgrounds/base_backgrounds.txt` (`load_lar`, `load_nsb`, `load_nsb2`, `load_bba`, `load_aat`, `load_aat2`, `load_ww`, `load_ncns_chi`, `load_ncns_jap` and the older ones), about 15 files (proposed fallback).
 4. **Size.** Keep the vanilla format; BC1 only if a limit requires it (proposed).
 5. **Attributed lines.** The proposed lines given to Aen, King Edran, Lorien, Varner, the Golden King and Alleria, and the remembered First and Second Age names (Taryn, Senra, Tavriel, Arelon), ship as written (proposed; in game).
-6. **Source titles.** "The Chronicle of Erdae: the First Age" (and the other ages), "The Annals of Parim", "The Annals of Gunwaith", "The Harbour Rolls of Sonargur" and "The Litany of the Deliverer" ship as written (proposed; in game).
+6. **Source titles.** "The Chronicle of Aoaz: the First Age" (and the other ages), "The Annals of Parim", "The Annals of Gunwaith", "The Harbour Rolls of Sonargur" and "The Litany of the Deliverer" ship as written (proposed; in game).
 7. **Other languages.** The English text is copied to every language folder (owner answer, 19 October 2026: yes; §7).
 8. **Menu backgrounds.** Settled by A5: only the three menu pictures are offered.
 9. **Calendar phrases.** "Twelve centuries" and "twelve hundred years" for the Third Age stay: the vault establishes at least 1,200 years (proposed reading).

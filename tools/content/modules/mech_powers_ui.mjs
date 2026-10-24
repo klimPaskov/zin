@@ -6,7 +6,7 @@
 // Each window is one containerWindowType in interface/zin_mech_powers.gui with a scripted GUI in
 // common/scripted_guis/zin_mech_powers.txt (names, flags and windows as the interface spec lists them: zin_panel_dominion /
 // zin_dominion_window / zin_ui_dominion_open, zin_watch / zin_watch_window / zin_ui_watch_open, zin_strait / zin_strait_window /
-// zin_ui_strait_open). A launcher button sits beside the Realm button until the interface module's Erdae bar takes its place. The
+// zin_ui_strait_open). A launcher button sits beside the Realm button until the interface module's Aoaz bar takes its place. The
 // windows show; they decide nothing. Gauge positions are country variables that the mechanics' pulses compute
 // (zin_dominion_ui_refresh_volgan, zin_dominion_ui_refresh_mirolon, zin_leren_ui_refresh). Every picture is an existing ZIN sprite or
 // a catalog icon registered as a sprite in interface/zz_zin_mech_powers.gfx.

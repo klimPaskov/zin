@@ -148,7 +148,7 @@ export function loadNamingData(dataDir = DATA_DIR) {
   const { countries } = readJson(path.join(dataDir, 'countries.json'));
   const { labels } = readJson(path.join(dataDir, 'labels.json'));
   let geography = [];
-  try { const g = readJson(path.join(dataDir, 'geography', 'erdae.json')); geography = [...(g.namedEstablished ?? []), ...(g.namedProposed ?? [])]; } catch (error) { if (error.code !== 'ENOENT') throw error; }
+  try { const g = readJson(path.join(dataDir, 'geography', 'aoaz.json')); geography = [...(g.namedEstablished ?? []), ...(g.namedProposed ?? [])]; } catch (error) { if (error.code !== 'ENOENT') throw error; }
   let bannedRules = [];
   try { bannedRules = readJson(path.join(dataDir, 'banned_words.json')).rules ?? []; } catch (error) { if (error.code !== 'ENOENT') throw error; }
   return { languages, cultures, countryCultures, reserved, countries, labels, geography, bannedRules };

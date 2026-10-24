@@ -14,4 +14,4 @@ After a long occupation of **at least 1,200 years**, the exhausted Great Necroma
 
 **Proposed exact year:** Third Age 1260. The name *Last Tithe*, mechanics and exact date remain suggestions, while Elzon's permanent death and Afrit's public divine recognition are established.
 
-[[The Third Age of Erdae]] · [[Afrits Ascension]]
+[[The Third Age of Aoaz]] · [[Afrits Ascension]]

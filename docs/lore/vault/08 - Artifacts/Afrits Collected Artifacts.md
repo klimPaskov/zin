@@ -6,7 +6,7 @@ updated: 2026-10-18
 
 # Afrit's Collected Artifacts
 
-**Established:** [[Afrit]] spends the Fourth Age collecting magical objects across Erdae. These contribute substantially to his strength, spiritual transformation, control over men, and supernatural defenses. The most important known object is Roka's [[Necklace of the Abyss]]. Other artifacts, including a ring forcibly removed by Eindil, also matter to the final defeat.
+**Established:** [[Afrit]] spends the Fourth Age collecting magical objects across Aoaz. These contribute substantially to his strength, spiritual transformation, control over men, and supernatural defenses. The most important known object is Roka's [[Necklace of the Abyss]]. Other artifacts, including a ring forcibly removed by Eindil, also matter to the final defeat.
 
 | Artifact | Status | Proposed function |
 | --- | --- | --- |

@@ -8,7 +8,7 @@ updated: 2026-10-17
 
 ## Established
 
-People in Erdae are generally familiar with the existence or stories of **New Gods** and **Old Gods**. Almost nobody knows the [[Holy Seven]] as credible historical beings. The supreme Creator, [[He Who Was, Is and Will Be]], is even further beyond ordinary religious knowledge.
+People in Aoaz are generally familiar with the existence or stories of **New Gods** and **Old Gods**. Almost nobody knows the [[Holy Seven]] as credible historical beings. The supreme Creator, [[He Who Was, Is and Will Be]], is even further beyond ordinary religious knowledge.
 
 **Mortals often confuse powerful Lesser Spirits with gods.** Belief about a being's rank is not reliable proof of its true cosmic order. Great Spirits can likewise be worshipped.
 
@@ -26,6 +26,6 @@ No specific faiths, priesthoods, schisms, or doctrines have yet been established
 
 ## Afrit and public recognition
 
-Afrit becomes the central example of this distinction. At the end of the Third Age, many people praise him as the **New God who saved Erdae**. Some see undeniable miracles. Nevertheless, the true order of Afrit's being has not yet been defined. A powerful religious cult's belief that he is a New God can be sincere and historically important without serving as objective proof of his origin.
+Afrit becomes the central example of this distinction. At the end of the Third Age, many people praise him as the **New God who saved Aoaz**. Some see undeniable miracles. Nevertheless, the true order of Afrit's being has not yet been defined. A powerful religious cult's belief that he is a New God can be sincere and historically important without serving as objective proof of his origin.
 
 [[Afrit the Deliverer]]

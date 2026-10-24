@@ -1,4 +1,4 @@
-# The start situation: Erdae on 1 Thaw 4A 1748
+# The start situation: Aoaz on 1 Thaw 4A 1748
 
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 2. **Phase:** 2.
 
@@ -12,7 +12,7 @@ It is a digest of the lore vault for implementers. It never replaces the vault. 
 
 ### Sources
 
-- Vault: *Canon Policy*, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Erdae*, *Fourth Age Canon Register*, *Great Powers and Relations*, *Kingdoms Factions and Conflicts*, *Afrits Hidden Council*, *The Lost Cause*, *Houses of the First Light*, the figure notes, *Erdae and Its Regions*, *Volgans Dead Lands*, *Zols Mistake*, *Open Questions*.
+- Vault: *Canon Policy*, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Aoaz*, *Fourth Age Canon Register*, *Great Powers and Relations*, *Kingdoms Factions and Conflicts*, *Afrits Hidden Council*, *The Lost Cause*, *Houses of the First Light*, the figure notes, *Aoaz and Its Regions*, *Volgans Dead Lands*, *Zols Mistake*, *Open Questions*.
 - Specs: [README](../README.md), [CONVENTIONS](../CONVENTIONS.md), [INTEGRATION_DECISIONS](../INTEGRATION_DECISIONS.md), [shared contract](../04_mechanics/00_shared_contract.md), [start and calendar](../00_foundation/01_start_and_calendar.md), [map accuracy](../01_map/01_map_accuracy.md), [key sites](../01_map/02_key_sites.md), [known issues](../01_map/03_known_issues.md), [tiers and coverage](../05_focus_trees/01_tiers_and_coverage.md), [flavour and world events](../06_events/05_flavour_and_world.md).
 - Country roster: 305 countries (name, region, states, people, ideology, stance, overlord, role), from `docs/design/countries.csv` and the politics step.
 
@@ -29,7 +29,7 @@ It is a digest of the lore vault for implementers. It never replaces the vault. 
 
 | Fact | Label |
 | --- | --- |
-| The Golden King reigns. Eindil has not appeared. Afrit is unrevealed. Erdae seems at peace; no great war at the start. | E (owner, 18 October 2026) |
+| The Golden King reigns. Eindil has not appeared. Afrit is unrevealed. Aoaz seems at peace; no great war at the start. | E (owner, 18 October 2026) |
 | The start date 1 Thaw, 4A 1748; the Golden King in his nineteenth year since his coronation in 4A 1729 | P (vault chronology) |
 | More than a thousand years of genuine peace and prosperity after Elzon's fall | E |
 | "Seventeen centuries of peace" as the public phrase | P (*The Campaign of 4A 1748*; only "more than a thousand years" is established) |
@@ -56,7 +56,7 @@ The start must also *feel* ordinary. Courts quarrel, prices rise, envoys take of
 
 ### The shape of the world
 
-Erdae has known peace for more than seventeen centuries (E for "more than a thousand years"; P for the exact count). Some 300 crowns, dominions, clans and island lordships divide the continent: the vault's working figure is about 280 polities (W); the map holds 305.
+Aoaz has known peace for more than seventeen centuries (E for "more than a thousand years"; P for the exact count). Some 300 crowns, dominions, clans and island lordships divide the continent: the vault's working figure is about 280 polities (W); the map holds 305.
 
 Beneath the peace, five pressures build. Each is hidden, dismissed or seen by only a few. No single power sees them all.
 
@@ -104,7 +104,7 @@ Thirteen tier A powers, plus Dondor and Yeldenne for their story weight. "Believ
 | **Volgan** | Nafeher (W) | An ancient, quiet dark realm behind storms and heat | The kingdoms of men always divide; his time is coming | To retake Mirolon, march north, and possess Glo | His strength has returned (E). Demon, Dolon and Nezer are sworn to him (W). |
 | **Zol** | Furviatlon (W) | A black, almost empty wasteland | (No court; no beliefs are written for it.) | To grow, very slowly; to extend his dead beyond the Mistake when conditions allow | Who administers the Mistake for Zol is unknown (O). Never invent it. |
 | **Magical Forest** | not named (W) | The oldest and most peaceful elven realm, an elected council of houses (P) | Men break alliances; the Elven Refusal still stands; the Great Wall keeps the peace | To stay apart, keep the dragons safe, and keep the Wall a customs line, not a border of war | It does not know the Deliverer's nature. Varner lives somewhere in the Magical Lands (E that he is of the Magical Lands; P that he is present in 1748). |
-| **Gala Elves** | not named (W) | An ancient court under King Lorien, far in the south-west | Human kings turn common victories into dominion; still, Erdae's fate matters | To keep its memory and its distance | Lorien remembers Dardan and the First Men (E). |
+| **Gala Elves** | not named (W) | An ancient court under King Lorien, far in the south-west | Human kings turn common victories into dominion; still, Aoaz's fate matters | To keep its memory and its distance | Lorien remembers Dardan and the First Men (E). |
 | **Coldor** | Fandanar (W) | The great crown of the frozen interior and the western ports | Isengard is the enemy; the Cold Lands are their own world | To bring Isengard to heel and keep the Northern Accord with Horidor | Eindil sleeps in the ice of the far north-west, beyond any court's knowledge (E that he wakes in the Cold Lands). |
 | **Noris** | Furvior (W) | Eastern great power of camel riders, deserts and caravan roads | Stabilo is the rival that matters; Aenor is a distant market | To own the caravan roads and keep the Noris Treaty with Gondolin | Some eastern courts are the Council's clients (E direction). Which kings follow Afrit willingly is open (O). |
 | **Stabilo** | Postondoroth (W) | Central eastern trade power | Noris is the rival that matters | To win the southern trade routes and keep the Stabilo Pact with Drak | As Noris. |
@@ -215,7 +215,7 @@ Each entry gives the situation, the countries that matter, the live tensions and
 
 #### Lands of the Sun
 
-- The **Sunhot elves**, over three metres tall and among the strongest and most peaceful peoples of Erdae (E), live in many small realms. **The Lands of Light** is the largest (roster; P that it leads).
+- The **Sunhot elves**, over three metres tall and among the strongest and most peaceful peoples of Aoaz (E), live in many small realms. **The Lands of Light** is the largest (roster; P that it leads).
 - The **Gala Elves** keep their ancient court under **King Lorien**, who fought at Dardan (E).
 - The relationship between the Gala elves and the Sunhot elves is **open** (O). The vault carries a proposal (*The Campaign of 4A 1748*); game text must stay neutral and never state it.
 - The roster also has separate countries named **Gala** and **North Gala** (tier C). Their link to the Gala Elves is not established; text must not imply one.
@@ -368,7 +368,7 @@ The Worshipdom's opening event (`zin_lore.2`) is the only text at the start that
 
 ### Bookmark
 
-The bookmark "The Fourth Age" ([start and calendar](../00_foundation/01_start_and_calendar.md)) describes the start in two sentences, for example: "For seventeen centuries Erdae has known peace. In Parim the Golden King counts his gold, and the temples of the Deliverer are full." It names no hidden danger.
+The bookmark "The Fourth Age" ([start and calendar](../00_foundation/01_start_and_calendar.md)) describes the start in two sentences, for example: "For seventeen centuries Aoaz has known peace. In Parim the Golden King counts his gold, and the temples of the Deliverer are full." It names no hidden danger.
 
 ## AI
 

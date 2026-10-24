@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Vanilla world tension measures how close the world is to a world war. ZIN replaces it, as the meter players watch, with **the Gathering Dark** (`zin_gathering_dark`): how near Erdae is to catastrophe. It starts low because the world seems at peace. It rises through pressures nobody sees whole, jumps at the great moments of the story, and falls when the dark powers are beaten. Engine tension stays underneath and follows it, so the engine's diplomacy keeps working.
+Vanilla world tension measures how close the world is to a world war. ZIN replaces it, as the meter players watch, with **the Gathering Dark** (`zin_gathering_dark`): how near Aoaz is to catastrophe. It starts low because the world seems at peace. It rises through pressures nobody sees whole, jumps at the great moments of the story, and falls when the dark powers are beaten. Engine tension stays underneath and follows it, so the engine's diplomacy keeps working.
 
 This spec also owns the **War of the Last Crowns** flag, the **world tick** that runs ZIN's global logic, and the **endings**: the three canon endings (the Lost Cause, Children of Volgan, the Ashen Throne), the proposed alternative outcomes, how each is detected and how it is shown.
 
@@ -14,7 +14,7 @@ This spec also owns the **War of the Last Crowns** flag, the **world tick** that
 
 - The world seems at peace at the start; the dangers exist but few see them (owner, 18 October 2026).
 - Hidden pressures build at once: the rot at the centre (Aenor ruled by the Hidden Council), the dark in the south (Volgan), the dead in the north (Zol), old grudges in the west and north, ambition in the east (*The Campaign of 4A 1748* frames them; each pressure is established in its own note).
-- The War of the Last Crowns is several overlapping wars, not one attack on one day (*The Fourth Age of Erdae*, IX). The name is proposed (*War of the Last Crowns*).
+- The War of the Last Crowns is several overlapping wars, not one attack on one day (*The Fourth Age of Aoaz*, IX). The name is proposed (*War of the Last Crowns*).
 - The original compendium defines three **alternative** endings, not three events that all happen (*Possible Endings*):
   - **The Lost Cause:** the alliance under Eindil prevails and refuses imperial domination.
   - **Children of Volgan:** Volgan dominates a ruined world through monsters, grave hosts and client states.
@@ -53,7 +53,7 @@ The effect clamps to 0–100, stores the change in `zin_gd_last_change`, and fir
 
 ### Replacing world tension
 
-- **Display.** The Erdae bar shows the Gathering Dark; the native world tension widget is relabelled and keeps working ([07_interface/01_interface.md](../07_interface/01_interface.md)). The tooltip lists the active monthly sources by label with their values, last month's change and the tier.
+- **Display.** The Aoaz bar shows the Gathering Dark; the native world tension widget is relabelled and keeps working ([07_interface/01_interface.md](../07_interface/01_interface.md)). The tooltip lists the active monthly sources by label with their values, last month's change and the tier.
 - **Engine tension follows the meter.** Engine world tension still drives justification, guarantees, faction joining and war support. Its target is (`zin_gathering_dark` − 10) ÷ 100, never below 0, so it is 0 at the start as the foundation's defines require. Each month the world tick:
   1. if `threat` is below the target by more than 0.02, adds named threat (`add_named_threat = { threat = <2, 5 or 10> name = zin_world_threat_gathering_dark }`, shown as "The Gathering Dark") to the country behind the largest active source (Volgan for the south, Zol for the north, Aenor for the court, council and envoys, the largest aggressor for wars), repeating up to three steps;
   2. if `threat` rose by more than 0.02 since last month (engine wars, annexations), adds half of that rise to the meter as "Wars of the Living";

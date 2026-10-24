@@ -10,6 +10,6 @@ updated: 2026-10-17
 
 He stands beyond [[Holy Seven]], [[Old Gods]], [[New Gods]], and all other beings in [[Hierarchy of Being]]. There is no described rival, peer, personality, physical manifestation, clergy, or cult.
 
-The Creator is deliberately too remote to have a practical role in Erdae's wars or politics. The precise account of how He created the Seven and existence remains unwritten.
+The Creator is deliberately too remote to have a practical role in Aoaz's wars or politics. The precise account of how He created the Seven and existence remains unwritten.
 
 **Do not invent:** a personal name, symbol, appearance, motives, miracles, direct dialogue, or specific doctrine without a later lore decision.

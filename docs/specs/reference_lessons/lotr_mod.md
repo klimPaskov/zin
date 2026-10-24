@@ -1,6 +1,6 @@
 # Reference study: a Middle-earth total conversion (Workshop 1314446921)
 
-Read-only design research for ZIN (HOI4 1.19.3, Erdae). Nothing here is copied from the reference mod; ideas are described in my own words and its content is referred to generically. Counts were taken on 19 October 2026 from the installed Workshop folder.
+Read-only design research for ZIN (HOI4 1.19.3, Aoaz). Nothing here is copied from the reference mod; ideas are described in my own words and its content is referred to generically. Counts were taken on 19 October 2026 from the installed Workshop folder.
 
 ## Summary: what makes it feel different
 
@@ -29,7 +29,7 @@ ZIN: **adopt** the dump state and the underground-as-terrain idea; **adapt** by 
 Lesson: no single race feature carries the difference; it is the stack. Layer one: a hidden idea per race with small numbers (organisation, speed, width, food use, leader-gender odds, population growth). Layer two: a race roster of sub-units. Layer three: a race tech file. Layer four: a generic advisor set per race. Layer five: a portrait pool per race.
 Evidence: `common/ideas/lotr_races_modifiers.txt` 196 lines, six race ideas; six race tech files 461 to 923 lines each; 14 generic advisor files in `history/general`; `gfx/leaders` 1,683 portraits (493 men, 210 elves, 170 orcs, 168 dwarves, 50 small folk, 42 spiders plus per-country sets); a race map mode (`common/map_modes`).
 Weakness: race is decided by lists of original tags plus a conversion flag, so any new or spawned country needs manual editing, and the tooltips for those modifiers are hard-coded text that drifts from the numbers.
-ZIN: **adapt**. Store race as a variable on country and per state (mixed populations are a real Erdae feature), generate the tooltip from the variable, and use bigger asymmetries than plus or minus 10 percent (different supply, recruitment, labour and leader rules).
+ZIN: **adapt**. Store race as a variable on country and per state (mixed populations are a real Aoaz feature), generate the tooltip from the variable, and use bigger asymmetries than plus or minus 10 percent (different supply, recruitment, labour and leader rules).
 
 **5. Depth for a dozen powers, archetypes for the rest.**
 Lesson: ~26 full trees for 47 static tags (about 55 percent), 4 small diplomatic trees, shared trees for tribe-like and valley-like groups, one generic tree for the rest, plus 51 dynamic tags for civil-war spawns.
@@ -55,7 +55,7 @@ ZIN: **adopt** the cap and the designer-as-creativity-engine; **adapt** dragons 
 **9. A global quest token with intercept mechanics is the spine.**
 Lesson: one shared object moves through a fixed sequence of states; every nation gets decisions, raids or forms to try to seize it, and holders are corrupted. It makes unrelated countries care about one geography, and it gives the player reasons to look at the map.
 Evidence: `events/ring_events.txt` plus a start event with a different intro text per major; `decisions/ring_decisions.txt`; 20 files in `common/raids` including several landmark-bombing and token-destruction raids; 5 interface files in `interface/ring_related`; separate scripted GUIs for corruption and interception.
-ZIN: **adapt**. Erdae has three planted seeds in the brief (Golden King, Eindil, Afrit). Make each a different kind of global object (a person, a hidden place, a weapon) with different intercept rules, so no two feel alike.
+ZIN: **adapt**. Aoaz has three planted seeds in the brief (Golden King, Eindil, Afrit). Make each a different kind of global object (a person, a hidden place, a weapon) with different intercept rules, so no two feel alike.
 
 **10. Event density and consequence.**
 Lesson: about 1,240 country events, 136 news events and 5 other event types across 58 files and 51,407 lines, with the largest 10 files holding about 60 percent. Chains are long (one story is over 1,800 lines, one is over 2,200 lines) and use delays from hours to a year, random jitter, flags and variables for consequence. News events announce capitulation, war and other big beats to everyone.
@@ -100,7 +100,7 @@ Cost reading: the focus trees and events (about 150k lines) and the 8,000 gfx fi
 
 - **Leaked vanilla labels.** Mixed names remain (self-propelled variants still tagged as vanilla, a "fake horses" label, tank-destroyer suffixes). ZIN should grep every vanilla key it has replaced and test every UI screen.
 - **Vanilla leftovers kept for stability.** Nuclear raids, nuke events, plane frames and national infantry meshes from vanilla countries remain. Keep only what a crash guard needs and mark it clearly.
-- **Calendar.** Months and weekday strings stay vanilla; a Third-Age-style number sits in the year. ZIN's Erdae calendar needs month localisation and any hard-coded date text reviewed.
+- **Calendar.** Months and weekday strings stay vanilla; a Third-Age-style number sits in the year. ZIN's Aoaz calendar needs month localisation and any hard-coded date text reviewed.
 - **Replace-path hygiene.** 7 listed paths have no top-level files or do not exist (harmless but sloppy). Check each against the package.
 - **Hard-coded modifier tooltips** drift from real values; generate them.
 - **Tag-list logic** (race, AI plans) breaks as soon as a tag is added.
@@ -119,5 +119,5 @@ Cost reading: the focus trees and events (about 150k lines) and the 8,000 gfx fi
 4. **Artifacts and heroes as a shared system.** Heroes carry artifacts, die, are resurrected as the dead, and corrupt ground where they fall.
 5. **Provisioning as the central constraint.** One resource (provisions, with magic-fed variants) replaces fuel, oil and rubber and decides what each people can field and where.
 6. **Audio and loading as identity.** Commission a full soundscape per people and a loading screen set tied to the calendar, since the reference left both empty.
-7. **Calendar-driven pacing.** Use the Erdae months and seasons for real mechanics (thaw, harvest, long night) via scripted localisation, dynamic modifiers and weather.
+7. **Calendar-driven pacing.** Use the Aoaz months and seasons for real mechanics (thaw, harvest, long night) via scripted localisation, dynamic modifiers and weather.
 8. **Test harness.** Run ZIN's own package check, mechanic tests and scenario tests on every build, which the reference lacks except for a near-empty scenario-test folder.

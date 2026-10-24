@@ -10,13 +10,13 @@ updated: 2026-10-17
 
 **The Fading** is a phenomenon that limits the ancient [[Old Gods]]. Across extremely long periods, their ability to exercise power and sustain an active physical manifestation has diminished, even though they retain vast underlying power.
 
-The Fading helps explain why [[Zol]] cannot simply take a body, conquer Erdae, or use his enormous power freely. Erdae's unusual magic also resists or fails to support his form of divine power. See [[Magic and Sustenance in Erdae]].
+The Fading helps explain why [[Zol]] cannot simply take a body, conquer Aoaz, or use his enormous power freely. Aoaz's unusual magic also resists or fails to support his form of divine power. See [[Magic and Sustenance in Aoaz]].
 
 ## Important qualification: Zol's power is growing
 
-Zol currently **gains power every day, very slowly**. This is compatible with the Fading as a lasting constraint. The amount of power he possesses and the amount he can express or direct in Erdae are separate matters.
+Zol currently **gains power every day, very slowly**. This is compatible with the Fading as a lasting constraint. The amount of power he possesses and the amount he can express or direct in Aoaz are separate matters.
 
-Without servants who sustain him, his influence could fade **out of Erdae**. The lore does not say that a lapse in feeding would destroy him throughout the universe.
+Without servants who sustain him, his influence could fade **out of Aoaz**. The lore does not say that a lapse in feeding would destroy him throughout the universe.
 
 ## Unknown mechanism
 

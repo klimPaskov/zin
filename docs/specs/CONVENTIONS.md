@@ -6,7 +6,7 @@ These rules apply to every spec and every implementation in ZIN. Where a spec ne
 
 - The lore vault is canon. Follow its Canon Policy: **established** facts are fixed; **proposed** ones are drafts until the owner adopts them.
 - Label every new name, date or mechanism a spec introduces as *proposed*.
-- The start situation is fixed: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, and Erdae seems at peace.
+- The start situation is fixed: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, and Aoaz seems at peace.
 - Never invent facts the vault explicitly leaves open where they would close a question for good (for example, who governs Zol's Mistake for Zol, or whether Volgan's spirit survives). Gameplay may offer outcomes, but the text must not state them as history.
 - Use the canonical spellings: Eindil, Zol's Mistake, Aenor, Šodolôrō. Avoid superseded names (Einendil, Edvoid, Rush) in anything players see.
 

@@ -12,4 +12,4 @@ Late in the Fourth Age Varner accompanies [[Eindil]] and Golbran to Aenor, arriv
 
 The exact ritual he uses, whether any writings survive and the nature of his death are opportunities for further development. His order remains Lesser Spirit despite his importance.
 
-[[The Third Age of Erdae]] · [[Golbran]] · [[War of the Last Crowns]]
+[[The Third Age of Aoaz]] · [[Golbran]] · [[War of the Last Crowns]]

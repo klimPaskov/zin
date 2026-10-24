@@ -23,5 +23,5 @@ Aen fought in the [[War of Men]] for hundreds of years, uniting the rival kingdo
 - What exactly does the name *Ainu* denote relative to Aen, the First Men, and earlier humans?
 - Was Aenor explicitly named in his honor? The connection is strong, but the etymology has not been declared canon.
 
-[[The Ainu]] · [[The First Age of Erdae]] · [[War of Men]] · [[Ages of Erdae]]
+[[The Ainu]] · [[The First Age of Aoaz]] · [[War of Men]] · [[Ages of Aoaz]]
 

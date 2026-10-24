@@ -19,7 +19,7 @@ The slot syntax, the six row kinds and the files follow the spec, with these dif
 
 - The data folder is `data/text/` (the task's name), not `data/ui_text/`. `families.json` replaces the spec's `files.json`, and its `ownership`, `claims`, `exempt`, `otherFiles` and `reachOther` fields replace the spec's `ownership.json`, `exempt.json`, `reach_rules.json` and `engine_keys.json`.
 - A family may be split into parts, `data/text/<family>.<part>.json`, which merge (a key written twice is an error). `alerts.energy.json` is the economy engineer's part.
-- Row kinds in a family file: `lit` (a map key to text), `rows` with `stem` (a label composed from the key's own id), a frame call (`key` or `match`, `frame`, `slots`) or `same`, `neutral` and `engine` lists with a reason each. `tokenMap`, `phrases` and `drop` give a family's stem rows their stand-ins for ids that name things Erdae lacks.
+- Row kinds in a family file: `lit` (a map key to text), `rows` with `stem` (a label composed from the key's own id), a frame call (`key` or `match`, `frame`, `slots`) or `same`, `neutral` and `engine` lists with a reason each. `tokenMap`, `phrases` and `drop` give a family's stem rows their stand-ins for ids that name things Aoaz lacks.
 - Gates are `off`, `report`, `banned`, `strict` (see the note of `families.json`). The spec's `warn` and `fail` map to `report` and `strict`; `banned` is new and fails only on a reachable key that still shows installed text holding an error-class banned word.
 
 ## Build calls
@@ -69,7 +69,7 @@ Measured by `runTextScan` on the sweep plus the calendar, with the banned list, 
 | **These seven** | **8,229** | **6,195** | **2,240** | | | **1,307** | **12** | |
 
 The sweep writes 2,240 keys in 81 files (8 families, the people terms and ten languages). Over all 23 families the installed-banned count falls from 3,851 to 2,556 keys and the rest belong to the families with gate `off`.
-What the installed text of the seven families still shows: 1,741 core and 1,615 tooltip keys with no banned word and no glossary concept that were not rewritten (plain labels such as Ready or Close, and modifier labels whose ids name nothing modern), plus 160 tooltip and 10 core keys with a review-class word or an Erdae concept the glossary renames. They are listed per family by `--list`; a stem row rewrites a modifier label only where its id names a banned concept, so the plain ones keep the game's text and the X4 copy check stays honest. They are the remaining authoring for the stage-4 gate, where gate `strict` requires them to be rewritten or put on a `neutral` list with a reason.
+What the installed text of the seven families still shows: 1,741 core and 1,615 tooltip keys with no banned word and no glossary concept that were not rewritten (plain labels such as Ready or Close, and modifier labels whose ids name nothing modern), plus 160 tooltip and 10 core keys with a review-class word or an Aoaz concept the glossary renames. They are listed per family by `--list`; a stem row rewrites a modifier label only where its id names a banned concept, so the plain ones keep the game's text and the X4 copy check stays honest. They are the remaining authoring for the stage-4 gate, where gate `strict` requires them to be rewritten or put on a `neutral` list with a reason.
 Banned words in ZIN text of the seven families: 0 errors. Review-class words in them: the strategic-region keys (allowance `al_strategic_regions`) and 12 nested modifier warnings that disappear when the equipment family lands.
 
 ## Decisions and deviations

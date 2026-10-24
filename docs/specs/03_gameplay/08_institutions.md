@@ -4,9 +4,9 @@
 
 ## Purpose
 
-Vanilla's military and economic layer is full of institutions that have a finished interface and no Erdae meaning: the army headquarters, the officer corps, command power, the international market, production licences, lend-lease, the cryptology department, the intelligence agency with its upgrades and operations, the military-industrial organisations and the special projects. Stage 1 left them loaded or empty, and the inventory found no decision for them. The master plan (P6, P8) says what to do in outline: keep the machinery, change the rules and the reading, never only the label ("the reference mods keep modern rules under new names and read false").
+Vanilla's military and economic layer is full of institutions that have a finished interface and no Aoaz meaning: the army headquarters, the officer corps, command power, the international market, production licences, lend-lease, the cryptology department, the intelligence agency with its upgrades and operations, the military-industrial organisations and the special projects. Stage 1 left them loaded or empty, and the inventory found no decision for them. The master plan (P6, P8) says what to do in outline: keep the machinery, change the rules and the reading, never only the label ("the reference mods keep modern rules under new names and read false").
 
-This spec gives each institution an Erdae answer: what it becomes, its rules and numbers, what the player sees, how the AI uses it, and which vanilla folders and keys it replaces. The ten answers are: **the War Camp** (army headquarters), **the Council of Captains** (officer corps, ranks, staff slots), **Orders and Valour** (command power and the experience pools), **the Great Fairs** and **Folk Wares** (the international market and consumer goods), **Guild Licences** and **Sending Arms** (licences and lend-lease), **Seals and Codes** (cryptography and the agency upgrades), **the Courts of Whispers** (intelligence agencies), **Court Intrigue** (operations and operatives), **Guilds and Orders** (military-industrial organisations) and **Spells** (special projects).
+This spec gives each institution an Aoaz answer: what it becomes, its rules and numbers, what the player sees, how the AI uses it, and which vanilla folders and keys it replaces. The ten answers are: **the War Camp** (army headquarters), **the Council of Captains** (officer corps, ranks, staff slots), **Orders and Valour** (command power and the experience pools), **the Great Fairs** and **Folk Wares** (the international market and consumer goods), **Guild Licences** and **Sending Arms** (licences and lend-lease), **Seals and Codes** (cryptography and the agency upgrades), **the Courts of Whispers** (intelligence agencies), **Court Intrigue** (operations and operatives), **Guilds and Orders** (military-industrial organisations) and **Spells** (special projects).
 
 ## Lore basis
 
@@ -18,8 +18,8 @@ This spec gives each institution an Erdae answer: what it becomes, its rules and
 | Afrit's Hidden Council works through religious institutions, relief networks, foreign envoys and commercial connections; its seats are royal administration, worship, foreign agents and the recovery of artifacts. | *Afrit's Hidden Council* |
 | Elzon's dead faded and needed magic that was hard to replenish outside the Dead Lands; potent magic (Glo, Horos's sword) ends Zol's dead and nothing ordinary does. | *Elzon's Order*, *Zol* |
 | The Fourth Age had a thousand years of peace, education, science and medicine; farming, medicine and military practice came from engineers, healers and soldiers. | *Fourth Age Canon Register*, *Second Age Progress and Recovery* |
-| Aenor traded with the North Lands, the West Lands, the islands, the Magical Lands and the eastern states; ports and caravan roads made kingdoms rich. | *The Fourth Age of Erdae* |
-| Dragons come from Dragon Mountain; elven powers command them; Afrit can through corruption. | *Peoples of Erdae* |
+| Aenor traded with the North Lands, the West Lands, the islands, the Magical Lands and the eastern states; ports and caravan roads made kingdoms rich. | *The Fourth Age of Aoaz* |
+| Dragons come from Dragon Mountain; elven powers command them; Afrit can through corruption. | *Peoples of Aoaz* |
 
 ### Proposed elsewhere in the vault (used, still proposals)
 
@@ -31,7 +31,7 @@ Every institution name below, every rule and number, every identifier. The word 
 
 ### Decisions applied
 
-[INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md): V2 (resources), S6 and R1 (the sky rule `zin_rule_skies`), E1 (scripted-effect arguments compile to `zin_arg_<name>`), E2 (events time out to their first option), E4, F3, N16 (retired names are replaced everywhere), A9 (sound is synthesised). Master plan P5 (fuel and energy are re-themed, not deleted), P6 (modern systems are reshaped; lend-lease and licences become tribute and loans; the intelligence layer becomes court intrigue; the headquarters and the officer corps stay as Erdae institutions), P7 (grant-only technologies carry restricted content), P8 (magic is special projects; guilds and orders are military-industrial organisations), P9 (race is a variable on country and state; every tooltip reads the variable).
+[INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md): V2 (resources), S6 and R1 (the sky rule `zin_rule_skies`), E1 (scripted-effect arguments compile to `zin_arg_<name>`), E2 (events time out to their first option), E4, F3, N16 (retired names are replaced everywhere), A9 (sound is synthesised). Master plan P5 (fuel and energy are re-themed, not deleted), P6 (modern systems are reshaped; lend-lease and licences become tribute and loans; the intelligence layer becomes court intrigue; the headquarters and the officer corps stay as Aoaz institutions), P7 (grant-only technologies carry restricted content), P8 (magic is special projects; guilds and orders are military-industrial organisations), P9 (race is a variable on country and state; every tooltip reads the variable).
 
 ### Start constraints
 
@@ -43,7 +43,7 @@ Every institution name below, every rule and number, every identifier. The word 
 
 ### 0. Overview
 
-| § | Erdae institution | Vanilla surface | Inventory rows | Writer |
+| § | Aoaz institution | Vanilla surface | Inventory rows | Writer |
 | --- | --- | --- | --- | --- |
 | 1 | The War Camp | Army HQ sub-units, HQ division, deploy button | WE-048 | `institutions.mjs` |
 | 2 | The Council of Captains | Officer Corps window, ranks, chiefs, high command, theorists, manufacturer slots | WE-141, 143, 144 | `institutions.mjs` |
@@ -60,7 +60,7 @@ A single new module writes all ten (internal writers, one test each). §11 lists
 
 ### 1. The War Camp (army headquarters)
 
-**What it becomes.** A Captain-General or a Marshal of the Crown raises a **standard** near the front: tents, a banner, a household guard, quartermasters, sappers and healers. The engine's Army HQ is the same object: a real division, built from the sub-units whose `allow_in_army_hq = yes`, with a deployed leader who gives his modifiers and abilities to the army group in reach. In Erdae the camp is the army's will made visible and also its weakness. It can be attacked, it must stay within reach of the front, and a host without its standard plans slowly.
+**What it becomes.** A Captain-General or a Marshal of the Crown raises a **standard** near the front: tents, a banner, a household guard, quartermasters, sappers and healers. The engine's Army HQ is the same object: a real division, built from the sub-units whose `allow_in_army_hq = yes`, with a deployed leader who gives his modifiers and abilities to the army group in reach. In Aoaz the camp is the army's will made visible and also its weakness. It can be attacked, it must stay within reach of the front, and a host without its standard plans slowly.
 
 **Rules (all engine, nothing scripted).**
 
@@ -90,7 +90,7 @@ A single new module writes all ten (internal writers, one test each). §11 lists
 | `zin_hq_household_knights` | `hq_light_armor`, `hq_medium_armor`, `hq_heavy_armor` | Household Knights | arms 40, armour 30, mounts 30 | none (armor group, `zin_monsters` excluded) | none | men |
 | `zin_hq_household_kin` | (the armoured-car and paratrooper slots) | Great-Kin Guard | the kin gear of the people, 40 | none (`category_zin_monsters`) | none | trolls, giants, ents, yeti |
 
-The armoured-car and paratrooper HQ battalions have no Erdae counterpart and are dropped. Stats beyond those named copy the vanilla HQ values (org 30 for companies, 120 training days, weight 0.1).
+The armoured-car and paratrooper HQ battalions have no Aoaz counterpart and are dropped. Stats beyond those named copy the vanilla HQ values (org 30 for companies, 120 training days, weight 0.1).
 
 **Abilities.** Five of the fourteen generic commander abilities are unlocked by a camp company; §3 lists all of them. The ability ids here are the ZIN ids of that list.
 
@@ -100,13 +100,13 @@ The armoured-car and paratrooper HQ battalions have no Erdae counterpart and are
 
 ### 2. The Council of Captains (officer corps)
 
-**What it becomes.** The Officer Corps window is Erdae's council of the host: who commands, which customs the army keeps, which master teaches the theory of war. It is not a bureaucracy. It is the six chairs, nine customs and three schools of one court. Master plan P11 says the officer-corps view is "hidden or replaced" and P6 says it is "kept as an Erdae institution"; this spec follows both by replacing its content, name and art and keeping the screen, because it is the only window that holds the chiefs, the customs and the camp ribbon. Window title and top-bar button read **Council of Captains**; the three command headers read **The Host**, **The Fleet** and **The Winged**; the special-forces header is hidden with its folder.
+**What it becomes.** The Officer Corps window is Aoaz's council of the host: who commands, which customs the army keeps, which master teaches the theory of war. It is not a bureaucracy. It is the six chairs, nine customs and three schools of one court. Master plan P11 says the officer-corps view is "hidden or replaced" and P6 says it is "kept as an Aoaz institution"; this spec follows both by replacing its content, name and art and keeping the screen, because it is the only window that holds the chiefs, the customs and the camp ribbon. Window title and top-bar button read **Council of Captains**; the three command headers read **The Host**, **The Fleet** and **The Winged**; the special-forces header is hidden with its folder.
 
 #### 2.1 Ranks (WE-141)
 
 The engine has four land ranks, four naval ranks, two role names and a five-step ladder for field officers (`DIVISION_EXPERIENCE_TITLE_ARMY_EXPERIENCE_0..4`, thresholds 0, 100, 200, 400, 800 XP, unchanged). Titles are working labels; the text sweep's banned list governs the final wording.
 
-| Engine key | Vanilla reading | Erdae title | Notes |
+| Engine key | Vanilla reading | Aoaz title | Notes |
 | --- | --- | --- | --- |
 | `cc_leader` | General (corps commander role) | Host-Captain | The role shown under a commander's portrait |
 | `fm_leader` | Field Marshal | Marshal | The army-group role |
@@ -128,7 +128,7 @@ The tag-prefixed variants (`<TAG>_DIVISION_EXPERIENCE_TITLE_…`) are not writte
 
 #### 2.2 Chairs (WE-143, 144)
 
-| Engine slot | Idea category | Erdae chair (working label) | Filled by |
+| Engine slot | Idea category | Aoaz chair (working label) | Filled by |
 | --- | --- | --- | --- |
 | `army_chief` | `military_staff` | Master of the Host | Generated or named character; tier A and B realms |
 | `navy_chief` | `military_staff` | Lord of the Fleet | The same, only for realms with a fleet or a coast |
@@ -182,13 +182,13 @@ The six air customs have `visible = { zin_rules_skies_present }`. **AI:** the AI
 
 **Preferred tactic and the plot.** The window's preferred-tactic picker (20 Orders to change) lists warfare's tactics ([01_warfare.md](01_warfare.md) §15.2, `common/combat_tactics.txt`); nothing is added here. Its conspiracy bar belongs to the stage-coup activity of the diplomacy spec; its text reads as a plot among the captains.
 
-**Interface surface.** One window (`countryofficercorpview.gui`, kept, re-skinned by the interface spec), 27 custom icons (a shared family per command), 8 rank badges, the politics-screen chair strip, the alert `alert_officer_corps` ("a chair is empty" in Erdae words). Text direction: customs read like the habits of an old army (what the shield wall does when the horn sounds), never like policy. Chairs read as offices of a court.
+**Interface surface.** One window (`countryofficercorpview.gui`, kept, re-skinned by the interface spec), 27 custom icons (a shared family per command), 8 rank badges, the politics-screen chair strip, the alert `alert_officer_corps` ("a chair is empty" in Aoaz words). Text direction: customs read like the habits of an old army (what the shield wall does when the horn sounds), never like policy. Chairs read as offices of a court.
 
 ### 3. Orders and Valour (command power and experience)
 
 **What it becomes.** Command power is **Orders**: the daily trickle of a marshal's attention that pays for the standard's abilities, for promoting a captain and for the mechanics that cost "10 command power" in other specs. The three experience pools are **Army Valour**, **Fleet Valour** and **Sky Valour**: what the host, the fleet and the winged learn from fighting, drilling and sailing, spent on doctrines and designs. The inventory suggested "Renown"; that word is Eindil's gauge (`zin_eindil_renown`, [01_interface.md](../07_interface/01_interface.md)), so the pools take "Valour" (a change the owner can undo, open question 1). The economy spec's workshop policy "Royal Orders" would now clash with "Orders", so it becomes **Royal Warrants** (§9; change request).
 
-| Engine thing | Erdae name | Engine text key family | Icon |
+| Engine thing | Aoaz name | Engine text key family | Icon |
 | --- | --- | --- | --- |
 | `command_power` (top bar, text icon `£command_power`) | Orders | `COMMAND_POWER`, `ABILITY_TOOLTIP_*` | a banner on a staff (2 icons: bar and text) |
 | `army_experience` | Army Valour | `army_experience` | a shield boss |
@@ -236,7 +236,7 @@ The grand doctrines are set in history (warfare §13.3), so the 100 beyond pays 
 
 #### 3.2 The abilities of the standard
 
-`common/abilities/zin_abilities.txt` (written here; warfare §15.2 hands it over) holds the engine's generic commander abilities with ZIN ids and no tag, focus or DLC test. The glider-plane ability has no Erdae counterpart and is dropped. Costs are per day while active; durations are in hours. The effects keep the vanilla modifiers (valid, checked); only the names change.
+`common/abilities/zin_abilities.txt` (written here; warfare §15.2 hands it over) holds the engine's generic commander abilities with ZIN ids and no tag, focus or DLC test. The glider-plane ability has no Aoaz counterpart and is dropped. Costs are per day while active; durations are in hours. The effects keep the vanilla modifiers (valid, checked); only the names change.
 
 | ZIN id | Vanilla | Name (working label) | Cost/day | Duration | Effect in one line |
 | --- | --- | --- | ---: | ---: | --- |
@@ -256,13 +256,13 @@ The grand doctrines are set in history (warfare §13.3), so the 100 beyond pays 
 
 #### 3.3 Interface surface and AI
 
-The top bar shows Orders and the three Valour pools (the Erdae bar of the interface spec is separate and holds the mechanic meters). The alert `alert_doctrine_unlock` reads "a doctrine can be taken" in Erdae words. **AI:** the engine's AI spends Orders on abilities; ZIN's strategy `zin_inst_valour_ai` has the AI use Great Manoeuvres, Sea Trials and Wing Trials only when no war is on, Valour is below 100 and Orders are at least 40 (about once a year). Nothing else is added.
+The top bar shows Orders and the three Valour pools (the Aoaz bar of the interface spec is separate and holds the mechanic meters). The alert `alert_doctrine_unlock` reads "a doctrine can be taken" in Aoaz words. **AI:** the engine's AI spends Orders on abilities; ZIN's strategy `zin_inst_valour_ai` has the AI use Great Manoeuvres, Sea Trials and Wing Trials only when no war is on, Valour is below 100 and Orders are at least 40 (about once a year). Nothing else is added.
 
 ### 4. The Great Fairs and Folk Wares (the International Market and consumer goods)
 
-**What the Fairs become.** The international market is where realms put surplus arms on a stall, set a price level, and let strangers buy in return for the work of their workshops, carried by merchant ships. In Erdae it is **the Great Fairs**: the stalls at the Great Lake ports, the caravan towns of the East Lands, the Pupor Ocean harbours. The machinery is unchanged because the production screen depends on its buttons; the reading and the limits are Erdae's.
+**What the Fairs become.** The international market is where realms put surplus arms on a stall, set a price level, and let strangers buy in return for the work of their workshops, carried by merchant ships. In Aoaz it is **the Great Fairs**: the stalls at the Great Lake ports, the caravan towns of the East Lands, the Pupor Ocean harbours. The machinery is unchanged because the production screen depends on its buttons; the reading and the limits are Aoaz's.
 
-| Engine part | Erdae reading |
+| Engine part | Aoaz reading |
 | --- | --- |
 | Market access (`give_market_access`, "give access") | A **Fair Charter**: leave to set up stalls in a realm's markets. Two-way by default (`REQUEST_AUTOMATION_AUTO_ACCEPT_MARKET_ACCESS_DEFAULT` true) |
 | Add equipment to the market | **Set out stalls**: surplus kit offered at a price |
@@ -288,7 +288,7 @@ The top bar shows Orders and the three Valour pools (the Erdae bar of the interf
 
 ### 5. Guild Licences and Sending Arms (licences and lend-lease)
 
-**Guild Licences.** In vanilla a licence lets a country produce another's equipment design at a speed penalty, for a cost in factories. In Erdae it is a **guild licence**: a smiths' guild lends its pattern to a friendly crown for a fee in workshops. The engine's rules hold: the licensee needs the licensor's equipment tech difference to be worth it, pays `BASE_LICENSE_IC_COST`, builds at `LICENSE_EQUIPMENT_BASE_SPEED` −0.25 plus a tech-difference term (−0.05 a year of difference, to 4 years), −0.10 outside a faction, and loses −0.50 if it builds an unlicensed copy. Acceptance by the AI follows `LICENSE_ACCEPTANCE_*` (opinion factor 0.4; a subject asks with a base of 15; a year of tech difference adds 2 on a base of 10; the same faction adds 20). **Subjects therefore take their overlord's patterns easily: that is the Concord's tribute in arms.**
+**Guild Licences.** In vanilla a licence lets a country produce another's equipment design at a speed penalty, for a cost in factories. In Aoaz it is a **guild licence**: a smiths' guild lends its pattern to a friendly crown for a fee in workshops. The engine's rules hold: the licensee needs the licensor's equipment tech difference to be worth it, pays `BASE_LICENSE_IC_COST`, builds at `LICENSE_EQUIPMENT_BASE_SPEED` −0.25 plus a tech-difference term (−0.05 a year of difference, to 4 years), −0.10 outside a faction, and loses −0.50 if it builds an unlicensed copy. Acceptance by the AI follows `LICENSE_ACCEPTANCE_*` (opinion factor 0.4; a subject asks with a base of 15; a year of tech difference adds 2 on a base of 10; the same faction adds 20). **Subjects therefore take their overlord's patterns easily: that is the Concord's tribute in arms.**
 
 | Archetype group | `can_license` | Why |
 | --- | --- | --- |
@@ -305,7 +305,7 @@ The licence window, the diplomacy action and the production screen's licence pic
 
 **One define must change.** `NProduction.LICENSE_IC_COST_YEAR_INCREASE` counts "for every year of equipment after 1936". ZIN equipment years run 1600 to 1790, so the term would be negative or huge. ZIN sets it to **0** (a flat licence cost) and keeps `BASE_LICENSE_IC_COST` at 1 until the Linux run shows the fee in workshops (target: 2 to 6 for a men's arms pattern; acceptance 8). The other licence defines count differences between equipment years and need no change.
 
-**Sending Arms (lend-lease).** The engine lets a country loan stockpiled equipment to another, delivered monthly (`LEND_LEASE_DELIVERY_TOTAL_DAYS` 30), weighted by `lend_lease_cost`, with war-score and tension effects and with the law ladder's `lend_lease_tension` (the economy laws already carry it). In Erdae it is **sending arms**: a lord lends the host of a friend. Rules (proposed):
+**Sending Arms (lend-lease).** The engine lets a country loan stockpiled equipment to another, delivered monthly (`LEND_LEASE_DELIVERY_TOTAL_DAYS` 30), weighted by `lend_lease_cost`, with war-score and tension effects and with the law ladder's `lend_lease_tension` (the economy laws already carry it). In Aoaz it is **sending arms**: a lord lends the host of a friend. Rules (proposed):
 
 - `can_be_lend_leased` on every lendable archetype is `{ zin_inst_lend_ok = yes }` (FROM is the receiver): true when the two are in one faction, or overlord and subject, or the sender has opinion 50 or more of the receiver, **and** the sender is not under the Elven Refusal toward a human receiver (`zin_diplo_refusal_binds`, diplomacy), **and** neither is a dark power unless both are in the Southern Dominion.
 - Weights (`lend_lease_cost`): arms 1, bows 1, armour 2, mounts 2, camp gear 0.5, wards 3, catapults 4, ballistae and scorpions 3, trebuchets 8, convoys 0 (a fleet is not a gift). Hulls and every granted archetype are not lendable.
@@ -316,9 +316,9 @@ The licence window, the diplomacy action and the production screen's licence pic
 
 ### 6. Seals and Codes (cryptography and the agency upgrades)
 
-**What it becomes.** The cryptology system is a contest of secrets between courts: each realm has a **cipher strength** and each reader a **decryption power**; a realm that reads another's letters gets foreknowledge of its movements and a battlefield edge, and the letters of a realm that is read are shown to the reader as intelligence. In Erdae the cipher is **the seal** (wax, thread, pattern and the courier's word) and the reading is **the cipher wheel** and the letter-count. The engine's numbers stay: base cipher level 12,000, 4,250 per upgrade, active bonuses for 30 days.
+**What it becomes.** The cryptology system is a contest of secrets between courts: each realm has a **cipher strength** and each reader a **decryption power**; a realm that reads another's letters gets foreknowledge of its movements and a battlefield edge, and the letters of a realm that is read are shown to the reader as intelligence. In Aoaz the cipher is **the seal** (wax, thread, pattern and the courier's word) and the reading is **the cipher wheel** and the letter-count. The engine's numbers stay: base cipher level 12,000, 4,250 per upgrade, active bonuses for 30 days.
 
-| Engine thing | Erdae name |
+| Engine thing | Aoaz name |
 | --- | --- |
 | Cryptology department (agency branch `branch_crypto`) | The Reading Room |
 | Cipher strength (`crypto_strength`, modifier `encryption`) | Seal strength |
@@ -336,7 +336,7 @@ The technologies Seals and Codes ([07_industry_and_electronics_techs.md](07_indu
 
 `common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt` is **overridden** by a file generated from the installed one (vanilla removal rule 5). The upgrade ids, levels and modifiers stay (the engine and AI read them). The builder changes only: the one `original_tag = ENG` AI condition is dropped; `has_tech = radio` becomes `has_tech = zin_tech_heralds` (warfare §11.5); the two `has_tech = mechanical_computing` tests become `has_tech = zin_tech_universities`; every `picture` and `frame` moves to ZIN sprites (`GFX_zin_agency_<upgrade>`); the text moves to ZIN keys. Names are working labels.
 
-| Branch (name) | Upgrade id | Erdae name | Levels | Reads as |
+| Branch (name) | Upgrade id | Aoaz name | Levels | Reads as |
 | --- | --- | --- | ---: | --- |
 | `branch_intelligence` (Informants) | `upgrade_economy_civilian` | Market Informants | 1 | Civilian intelligence from stalls and counting-houses |
 | | `upgrade_army_department` | Barracks Informants | 1 | Army intelligence |
@@ -360,7 +360,7 @@ The technologies Seals and Codes ([07_industry_and_electronics_techs.md](07_indu
 | | `upgrade_crypto_strength` | The School of Seals | 2 | Seal strength |
 | | `upgrade_crypto_strength_2` | Learned Seals | 3 | Seal strength (needs `zin_tech_universities`) |
 
-The engine's cost to upgrade is five workshops over 30 days (`AGENCY_UPGRADE_DAYS`, civilian factories used by `modifiers_during_progress`), and every fifth upgrade adds one operative slot to a maximum of one (`AGENCY_UPGRADE_PER_OPERATIVE_SLOT`, `MAX_OPERATIVE_SLOT_FROM_AGENCY_UPGRADES`). These are unchanged. The upgrades sprites (21 icons) are drawn from Erdae things: a scale, a lantern, a quill, a seal, a thread, a coin, a key (the 12 neutral seals of the interface spec are the agency logos, §7).
+The engine's cost to upgrade is five workshops over 30 days (`AGENCY_UPGRADE_DAYS`, civilian factories used by `modifiers_during_progress`), and every fifth upgrade adds one operative slot to a maximum of one (`AGENCY_UPGRADE_PER_OPERATIVE_SLOT`, `MAX_OPERATIVE_SLOT_FROM_AGENCY_UPGRADES`). These are unchanged. The upgrades sprites (21 icons) are drawn from Aoaz things: a scale, a lantern, a quill, a seal, a thread, a coin, a key (the 12 neutral seals of the interface spec are the agency logos, §7).
 
 **AI** (`ai_strategy`): `intelligence_agency_branch_desire_factor` `branch_crypto` 2000, `branch_defense` 1000, `branch_intelligence` 1000, `branch_operation` 500, `branch_operative` 100 for a peaceful AI (the engine's default pattern, with ZIN ids); `intelligence_agency_usable_factories` 5 (10 for the great powers); `become_head_of_crypto` and `become_spymaster` for the faction leader. **Interface surface:** the agency window, the cryptology window and the intel ledger's decryption lines. **Acceptance** 9.
 
@@ -388,17 +388,17 @@ The Worshipdom's name is its public face and says nothing of the Council. The Co
 
 ### 8. Court Intrigue (operations and operatives)
 
-**What it becomes.** Operations are the long deeds of agents: taking service in a rival's household, copying a guild's secrets, burning a granary, raising the captains against a king. Operatives are the agents, with a codename, a nation, traits and a record. The engine's machinery (network strength in a state, operatives on a mission, operations of several phases with a risk roll, tokens earned by infiltration) is a ready-made court-intrigue game, and it stays whole. What changes is what the deeds are, what they cost in Erdae's goods, how they read, and which of them exist.
+**What it becomes.** Operations are the long deeds of agents: taking service in a rival's household, copying a guild's secrets, burning a granary, raising the captains against a king. Operatives are the agents, with a codename, a nation, traits and a record. The engine's machinery (network strength in a state, operatives on a mission, operations of several phases with a risk roll, tokens earned by infiltration) is a ready-made court-intrigue game, and it stays whole. What changes is what the deeds are, what they cost in Aoaz's goods, how they read, and which of them exist.
 
 **Rules kept.** An operation needs an agency, a minimum network strength in the target state, a number of free operatives, and spends days; it chains random phases chosen by weight; it ends in an outcome with a risk roll for each agent (captured, killed, exposed). Tokens (placed by infiltration) unlock steals and sabotage. The network is grown by operatives on missions. All engine defines (`NIntel`, `NOperatives`) stay.
 
-**What the Erdae court adds.** Nothing in the engine; two rules in text only: (a) **no gunpowder, no wire, no radio** (the phases are rewritten); (b) **a rescue is a ransom** when the captive is a captain (§1).
+**What the Aoaz court adds.** Nothing in the engine; two rules in text only: (a) **no gunpowder, no wire, no radio** (the phases are rewritten); (b) **a rescue is a ransom** when the captive is a captain (§1).
 
 #### 8.1 The twenty operations
 
-All 20 files-level operations of the installed `00_operations.txt` are kept under their engine ids in `common/operations/zin_operations.txt` (the diplomacy spec listed 19; `operation_rescue_general` was missed and is added). The historical and national ones leave with the folder. Days, network strength, operatives, risk and experience keep the vanilla values; equipment moves to Erdae goods (workshop-hands are `civilian_factories` as the engine defines them).
+All 20 files-level operations of the installed `00_operations.txt` are kept under their engine ids in `common/operations/zin_operations.txt` (the diplomacy spec listed 19; `operation_rescue_general` was missed and is added). The historical and national ones leave with the folder. Days, network strength, operatives, risk and experience keep the vanilla values; equipment moves to Aoaz goods (workshop-hands are `civilian_factories` as the engine defines them).
 
-| Engine id | Erdae name (working label) | Court reading | Days | Net | Agents | Risk | Cost in Erdae goods | Token needed → given |
+| Engine id | Aoaz name (working label) | Court reading | Days | Net | Agents | Risk | Cost in Aoaz goods | Token needed → given |
 | --- | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
 | `operation_infiltrate_civilian` | Take Service at Court | An agent takes a place in a rival household | 90 | 35 | 2 | 0.1 | none | → Seat in the Household |
 | `operation_infiltrate_armed_forces_army` | Enlist on the Roll | A name on a rival's muster rolls | 75 | 50 | 2 | 0.1 | none | → Name on the Roll |
@@ -445,7 +445,7 @@ Phases are the random scenes inside an operation. `common/operation_phases/zin_o
 
 #### 8.3 Operatives
 
-- **Traits.** The twelve operative traits keep their modifiers (`type = operative` in the unit-leader file the warfare spec overrides, [01_warfare.md](01_warfare.md) §15.2) and take Erdae names: commando → Knife-Hand; seducer → Honeyed Tongue; infiltrator → Gate-Walker; master interrogator → Questioner; linguist → Many Tongues; double agent → Turncoat; tough → Hard to Break; safe cracker → Lock-Wise; well groomed → Courtier's Polish; natural orator → Pulpit Voice; escape artist → Slips the Chains; demolition expert → Fire-Setter. No trait names a firearm or a drug.
+- **Traits.** The twelve operative traits keep their modifiers (`type = operative` in the unit-leader file the warfare spec overrides, [01_warfare.md](01_warfare.md) §15.2) and take Aoaz names: commando → Knife-Hand; seducer → Honeyed Tongue; infiltrator → Gate-Walker; master interrogator → Questioner; linguist → Many Tongues; double agent → Turncoat; tough → Hard to Break; safe cracker → Lock-Wise; well groomed → Courtier's Polish; natural orator → Pulpit Voice; escape artist → Slips the Chains; demolition expert → Fire-Setter. No trait names a firearm or a drug.
 - **Skill ladder** (`operative_skill_1` … `_5`): Runner, Courier, Whisperer, Shadow, Master of Whispers.
 - **Missions** (the engine's operative missions): Build Intel Network → Weave a Web of Informants; Quiet Intel Network → Let the Web Sleep; Counter Intelligence → Guard the Court; Root Out Resistance → Root Out the Hidden; Boost Ideology → Raise a Faction; Propaganda → Spread a Tale; Control Trade → Hold the Purse; Diplomatic Pressure → Press the Envoys. Text keys `OPERATIVE_MISSION_*`.
 - **Code names.** Lists by people from the names module's syllable pools (`common/units/codenames_operatives`, the diplomacy spec).
@@ -460,7 +460,7 @@ Phases are the random scenes inside an operation. `common/operation_phases/zin_o
 
 ### 9. Guilds and Orders (military-industrial organisations)
 
-**What it becomes.** The economy spec names nine Erdae workshops, one per equipment group, and turns the organisations on ([02_economy.md](02_economy.md), "Erdae workshops"). This section gives them rules, trees and policies. The engine object is a **military-industrial organisation**: it has funds that grow as its manufacturer lines produce and its design teams research, a size that steps up, a tree of traits unlocked with funds, one attached policy, and a task capacity (how many lines and technologies it serves, default 3). In Erdae it is a **guild** (a craft that sells to any crown), a **lodge** or **stud** (a royal or learned body), or an **order** (a craft bound by vow to a house or a creed).
+**What it becomes.** The economy spec names nine Aoaz workshops, one per equipment group, and turns the organisations on ([02_economy.md](02_economy.md), "Aoaz workshops"). This section gives them rules, trees and policies. The engine object is a **military-industrial organisation**: it has funds that grow as its manufacturer lines produce and its design teams research, a size that steps up, a tree of traits unlocked with funds, one attached policy, and a task capacity (how many lines and technologies it serves, default 3). In Aoaz it is a **guild** (a craft that sells to any crown), a **lodge** or **stud** (a royal or learned body), or an **order** (a craft bound by vow to a house or a creed).
 
 | Workshop (economy id) | Kind | Equipment (warfare group) | Research categories (07) | Who |
 | --- | --- | --- | --- | --- |
@@ -518,17 +518,17 @@ Every `s2` needs `zin_tech_libraries` and every `s3` `zin_tech_universities` ([0
 
 The economy spec calls the third generic policy **Royal Orders**; with Orders now the command-power name (§3) it is **Royal Warrants** (change request).
 
-**AI.** `common/military_industrial_organization/ai_bonus_weights/zin_ai_bonus_weights.txt` replaces the aircraft-and-tank stat weights with Erdae's: a `default` block (`reliability` 4, `build_cost_ic` 3.85, `soft_attack` 5, `hard_attack` 3, `defense` 4, `breakthrough` 3, `armor_value` 4, `maximum_speed` 2, `naval_speed` 3, `naval_range` 1, `max_strength` 3, `ap_attack` 5, every air stat 1) and one block per equipment type (arms: `soft_attack` 8, `defense` 6; bows: `soft_attack` 9; armour: `armor_value` 8; mounts: `maximum_speed` 6, `breakthrough` 5; hulls: `max_strength` 6, `naval_speed` 5). Each organisation carries `ai_will_do` 1 (2 for the people's main arms workshop, the economy spec). The AI funds a workshop's tree in the order `m1`, `p1`, `s1`, then the rest, buying the capstone last.
+**AI.** `common/military_industrial_organization/ai_bonus_weights/zin_ai_bonus_weights.txt` replaces the aircraft-and-tank stat weights with Aoaz's: a `default` block (`reliability` 4, `build_cost_ic` 3.85, `soft_attack` 5, `hard_attack` 3, `defense` 4, `breakthrough` 3, `armor_value` 4, `maximum_speed` 2, `naval_speed` 3, `naval_range` 1, `max_strength` 3, `ap_attack` 5, every air stat 1) and one block per equipment type (arms: `soft_attack` 8, `defense` 6; bows: `soft_attack` 9; armour: `armor_value` 8; mounts: `maximum_speed` 6, `breakthrough` 5; hulls: `max_strength` 6, `naval_speed` 5). Each organisation carries `ai_will_do` 1 (2 for the people's main arms workshop, the economy spec). The AI funds a workshop's tree in the order `m1`, `p1`, `s1`, then the rest, buying the capstone last.
 
 **Interface surface.** The six organisation windows and the policy picker (kept, re-skinned); trait icons are a shared family (reliability, speed, cost, breakthrough, size, funds, research, defence; about 20 icons, asset inventory WE-152) plus three policy icons and nine signature icons; departments use the workshop's emblem. Text direction: a guild's voice (ledgers, marks, apprentices); orders speak in oaths. **Replaces:** the three MIO folders (replace); **Inventory:** WE-151, 152, 199.
 
 ### 10. Spells (special projects)
 
-**What it becomes.** A special project in vanilla is a long, risky piece of research done in a facility by a named scientist, with prototype iterations that either help or go wrong, ending in a permanent reward. In Erdae it is a **spell**: a rite worked by a scholar in a circle of stones, built piece by piece, with a risk that the working leaves a mark. This is master plan P8: magic is research with a cost, and the cost is a scar. The economy spec's one hidden "interim great work" is removed; the four specialisation keys stay because the kept facility buildings name them.
+**What it becomes.** A special project in vanilla is a long, risky piece of research done in a facility by a named scientist, with prototype iterations that either help or go wrong, ending in a permanent reward. In Aoaz it is a **spell**: a rite worked by a scholar in a circle of stones, built piece by piece, with a risk that the working leaves a mark. This is master plan P8: magic is research with a cost, and the cost is a scar. The economy spec's one hidden "interim great work" is removed; the four specialisation keys stay because the kept facility buildings name them.
 
 **The four rites.**
 
-| Engine specialisation | Rite (working label) | Facility building | Erdae name | Notes |
+| Engine specialisation | Rite (working label) | Facility building | Aoaz name | Notes |
 | --- | --- | --- | --- | --- |
 | `specialization_land` | War Rites | `land_facility` | Warding Circle | Wards, hallowing |
 | `specialization_naval` | Tide Rites | `naval_facility` | Tide Circle | Coastal states only (`only_costal`) |

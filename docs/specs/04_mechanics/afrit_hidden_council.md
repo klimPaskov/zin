@@ -15,7 +15,7 @@ The Worshipdom's focus tree is specified in [05_focus_trees/major/worshipdom.md]
 | Fact | Status | Source |
 | --- | --- | --- |
 | Afrit governs Aenor indirectly through priests, schools, relief houses, councillors and royal puppets; ordinary people do not know the name Afrit | established | Fourth Age Canon Register, *Afrit* |
-| He keeps a council of followers, spies, sorcerers, foreign agents and creatures who know his true nature | established | *The Fourth Age of Erdae*, *Afrit's Hidden Council* |
+| He keeps a council of followers, spies, sorcerers, foreign agents and creatures who know his true nature | established | *The Fourth Age of Aoaz*, *Afrit's Hidden Council* |
 | The council uses religious institutions, relief networks, envoys, intelligence and trade, and builds ties in the East Lands and South Lands as a reserve seat | established | *Afrit's Hidden Council* |
 | A council member is left in charge of Aenor while Afrit goes to Yeldenne | established | *Afrit's Hidden Council* |
 | The name **Chancellor Merovan** for that member | proposed | *Chancellor Merovan (proposed)* |
@@ -29,7 +29,7 @@ The Worshipdom's focus tree is specified in [05_focus_trees/major/worshipdom.md]
 | The thief's name **Sevrin** | proposed | *Sevrin the Unending (proposed)* |
 | The Council concludes in 4A 1746 that the Golden King is a liability | proposed date | *Fourth Age Chronology* |
 | Afrit arranges the Golden King's death, hides his part, and is proclaimed King of Aenor, First of His Name | established | Canon Register |
-| Afrit's agents operate in the Lands of the Sun; one reports Eindil's departure from Lorien | chronicle | *The Fourth Age of Erdae*, VI |
+| Afrit's agents operate in the Lands of the Sun; one reports Eindil's departure from Lorien | chronicle | *The Fourth Age of Aoaz*, VI |
 | Afrit reaches Yeldenne first, has Eindil's crew killed, fights Horos, is wounded by Eindil and escapes | established | Canon Register |
 | Afrit abandons Aenor and takes power over an eastern host; not every eastern state submits | established | Canon Register, *War of the Last Crowns* |
 | Afrit returns, casts Eindil from a cliff, retakes Aenor and claims universal kingship | established | Canon Register |
@@ -95,7 +95,7 @@ The established path, with proposed dates from the *Fourth Age Chronology*. "Own
 | King of the East | `zin_afrit_king_of_east` | 1756 | Afrit | Event `zin_afrit.52` | — |
 | The return | `zin_afrit_returned` | early 1758 | Afrit | `zin_afrit_return` | Time it |
 | Eindil cast from the cliff | `zin_eindil_cast_down` | 1758 | Eindil's journey (stage 10) | `zin_afrit.61` fires the journey's `zin_eindil.110` | — |
-| Lord of all Erdae | `zin_afrit_claims_erdae` | 1758 | Afrit | Event `zin_afrit.62` | — |
+| Lord of all Aoaz | `zin_afrit_claims_aoaz` | 1758 | Afrit | Event `zin_afrit.62` | — |
 | The palace battle | `zin_afrit_lost_*` | 1759 | Afrit (started by the journey's *Enter the Palace*) | Chain `zin_afrit.70`–`.76` | Resist each stage |
 | Afrit dies | `zin_afrit_dead` | 1759 | Afrit | `zin_afrit_die` | — |
 | The Ashen Throne | `zin_ending_ashen_throne` | never on the historical path | world systems | `zin_afrit_ashen_throne_ready` is true | Reach it |
@@ -109,7 +109,7 @@ The established path, with proposed dates from the *Fourth Age Chronology*. "Own
 | Start | Worshipdom | — |
 | Crowned (`zin_aurevan_crowned`) | Aenor | `zin_ilvane`, High Confessor, as Keeper of the Hermitage |
 | Flight east (`zin_afrit_abandoned_aenor`) | Worshipdom (cosmetic name *The Dominion of the East*) | — |
-| Lord of all Erdae (`zin_afrit_claims_erdae`) | Aenor again | `zin_ilvane` |
+| Lord of all Aoaz (`zin_afrit_claims_aoaz`) | Aenor again | `zin_ilvane` |
 | Death | — | `zin_ilvane` |
 
 The move uses `remove_country_leader_role` on the old realm, then `recruit_character` and `add_country_leader_role` on the new one. The Linux run checks that `recruit_character` moves an existing character between countries. If it does not, the builder writes a second character `zin_aurevan_king` with the same name, portrait and traits, and the effects swap the two (the id is reserved in the register for that case).
@@ -412,13 +412,13 @@ Under the historical rule the two AI candidates with the highest footholds kneel
 
 **Brother against brother** (`zin_afrit.61`, hub, private): fires when `zin_afrit_returned` is set, the hub is at war with the country that has `zin_eindil`, and the hub's side controls at least one Middle Lands state; or through the focus. It fires the journey's `zin_eindil.110` *The Cliff* (stage 10), which sets `zin_eindil_cast_down` (N3) and owns the cliff, Eindil's wounds and his survival. This spec sets no flag of its own for the cliff.
 
-**Lord of all Erdae** (`zin_afrit.62`): fires when `zin_eindil_cast_down` is set and `zin_afrit_holds_parim` is true. `zin_afrit_retake_aenor`: if Aenor exists, it makes white peace with the hub, `zin_aurevan` becomes its leader again, and it gives and receives military access with the hub; if Aenor no longer exists, the hub annexes the Middle Lands states its side controls. Sets `zin_afrit_claims_erdae`. Public news: the proclamation of kingship over all Erdae, "larger than the lands he holds". Under the historical rule, if the hub's side does not hold Parim by 1 Fallowing 4A 1758 (`zin_afrit_date_parim`), `set_state_controller` gives Parim to the hub's side and the event fires.
+**Lord of all Aoaz** (`zin_afrit.62`): fires when `zin_eindil_cast_down` is set and `zin_afrit_holds_parim` is true. `zin_afrit_retake_aenor`: if Aenor exists, it makes white peace with the hub, `zin_aurevan` becomes its leader again, and it gives and receives military access with the hub; if Aenor no longer exists, the hub annexes the Middle Lands states its side controls. Sets `zin_afrit_claims_aoaz`. Public news: the proclamation of kingship over all Aoaz, "larger than the lands he holds". Under the historical rule, if the hub's side does not hold Parim by 1 Fallowing 4A 1758 (`zin_afrit_date_parim`), `set_state_controller` gives Parim to the hub's side and the event fires.
 
 ### The palace and Afrit's death
 
 The journey owns the heir's side of the palace (stage 11: the decisions `zin_eindil_palace` and the story events `zin_eindil.120`–`.127`). This spec owns Afrit's side: the chain `zin_afrit.70`–`.76`, the artifacts, the hub's defences and the rolls.
 
-The journey's decision *Enter the Palace* calls `zin_afrit_begin_palace_battle`. It needs `zin_afrit_claims_erdae` or `zin_afrit_stand_in_parim`, and not `zin_afrit_dead`; it fires the hub's private `zin_afrit.70` (The Palace Wards), which starts stage 1. The four stages run in established order. In each, the hub picks a defence and the event rolls Eindil's side's success. Each success calls `zin_afrit_lose_artifact` and fires the journey's matching event to the Host; the next stage follows.
+The journey's decision *Enter the Palace* calls `zin_afrit_begin_palace_battle`. It needs `zin_afrit_claims_aoaz` or `zin_afrit_stand_in_parim`, and not `zin_afrit_dead`; it fires the hub's private `zin_afrit.70` (The Palace Wards), which starts stage 1. The four stages run in established order. In each, the hub picks a defence and the event rolls Eindil's side's success. Each success calls `zin_afrit_lose_artifact` and fires the journey's matching event to the Host; the next stage follows.
 
 | Stage | Event | Artifact | Base | Modifiers for Eindil's side | On success, the journey's |
 | --- | --- | --- | ---: | --- | --- |
@@ -443,7 +443,7 @@ Hub defences (one per stage, each once): "Burn the reserves" (150 PP, -10), "Dra
 - not `zin_afrit_dead`, not `zin_eindil_crowned`, not `zin_afrit_lost_necklace`;
 - `zin_afrit_holds_parim`;
 - at least 12 countries (Aenor counted) have footholds 4 or more;
-- and one of: (a) `zin_afrit_palace_held` and on or after 1 Deepwinter 4A 1759; (b) `zin_afrit_claims_erdae` and on or after 1 Deepwinter 4A 1760; (c) `zin_afrit_stand_in_parim`, `zin_war_of_last_crowns` and on or after 1 Deepwinter 4A 1760 (`zin_afrit_date_ashen_a`, `zin_afrit_date_ashen_b`).
+- and one of: (a) `zin_afrit_palace_held` and on or after 1 Deepwinter 4A 1759; (b) `zin_afrit_claims_aoaz` and on or after 1 Deepwinter 4A 1760; (c) `zin_afrit_stand_in_parim`, `zin_war_of_last_crowns` and on or after 1 Deepwinter 4A 1760 (`zin_afrit_date_ashen_a`, `zin_afrit_date_ashen_b`).
 
 `zin_afrit_holds_parim` is true when Parim's state (`zin_is_site_parim`) is controlled by the realm `zin_aurevan` leads, by the Worshipdom, or by a subject of the Worshipdom.
 
@@ -494,7 +494,7 @@ The hub player plays a long game with a budget: the veil.
 | System | Reads from this spec | Calls or sets for this spec |
 | --- | --- | --- |
 | Aenor | `zin_afrit_regicide_ready`, `zin_aurevan_crowned`, `zin_afrit_kingdom_behind_throne`, `zin_afrit_lost_cause_watched`, `zin_afrit_abandoned_aenor`, `zin_afrit_king_of_east` | `zin_golden_king_dead`, `zin_golden_king_plot_exposed`; calls `zin_afrit_ready_regicide`, `zin_afrit_crown_aurevan` (through `zin_afrit.20`), `zin_afrit_plot_exposed`, `zin_afrit_add_veil`; owns `zin_council_influence`, `zin_court_corruption`, `zin_concord_loyalty` |
-| Eindil's journey | `zin_afrit_knows_brother`, `zin_aurevan_went_north`, `zin_afrit_at_yeldenne`, `zin_afrit_sent_others`, the ambush terms, `zin_afrit_scholars_bought`, `zin_afrit_impostor_denounced`, `zin_afrit_returned`, `zin_afrit_claims_erdae`, `zin_afrit_stand_in_parim`, `zin_afrit_palace_held`, `zin_afrit_lost_*` | `zin_eindil_cast_down` (its `zin_eindil.110`, fired by `zin_afrit.61`); calls `zin_afrit_add_veil` on each warning and `zin_afrit_begin_palace_battle`; its *The Impostor* sets `zin_afrit_impostor_denounced`; its landfall fires `zin_afrit.33`; its `zin_eindil_start_hunt` is called by `zin_afrit.40` |
+| Eindil's journey | `zin_afrit_knows_brother`, `zin_aurevan_went_north`, `zin_afrit_at_yeldenne`, `zin_afrit_sent_others`, the ambush terms, `zin_afrit_scholars_bought`, `zin_afrit_impostor_denounced`, `zin_afrit_returned`, `zin_afrit_claims_aoaz`, `zin_afrit_stand_in_parim`, `zin_afrit_palace_held`, `zin_afrit_lost_*` | `zin_eindil_cast_down` (its `zin_eindil.110`, fired by `zin_afrit.61`); calls `zin_afrit_add_veil` on each warning and `zin_afrit_begin_palace_battle`; its *The Impostor* sets `zin_afrit_impostor_denounced`; its landfall fires `zin_afrit.33`; its `zin_eindil_start_hunt` is called by `zin_afrit.40` |
 | Events ([06_events/01](../06_events/01_golden_king_and_succession.md)) | `zin_aurevan_crowned`, `zin_afrit_rules_here`, `zin_afrit_secret_kept` | `zin_reign_on_crowning` (called at the end of the crowning); this spec fires `zin_reign.65` (from `.23`), `.81` (from `.32`), `.82` (from `.34`), `.83` (from `.40` *Denounce him*) and `.85` (from the reveal); `zin_reign.44` sets `zin_afrit_scholars_bought` |
 | Yeldenne and Glo | `zin_afrit_at_yeldenne`, `zin_afrit_hall_at_once`, `zin_afrit_sent_others`, `zin_afrit_artifacts`, `zin_afrit_is_hub`, `zin_afrit_rules_here` | sets `zin_horos_dead`, `zin_glo_with_eindil` or `zin_glo_sealed` (never a Glo flag for Afrit, O3); calls `zin_afrit_wound` |
 | World systems | `zin_afrit_ashen_throne_ready`, all story flags | `zin_war_of_last_crowns`, endings; `zin_world_add_gathering_dark`; `zin_world_reach_ending` calls `zin_afrit_reveal` |
@@ -580,7 +580,7 @@ Global flags (set once unless noted):
 | `zin_afrit_abandoned_aenor` | Afrit has left Aenor |
 | `zin_afrit_stand_in_parim` | Afrit chose to hold Parim instead of fleeing |
 | `zin_afrit_returned` | Afrit has returned from the East |
-| `zin_afrit_claims_erdae` | Afrit has retaken Parim and claims all Erdae |
+| `zin_afrit_claims_aoaz` | Afrit has retaken Parim and claims all Aoaz |
 | `zin_afrit_lost_ring`, `zin_afrit_lost_crown`, `zin_afrit_lost_bracelet`, `zin_afrit_lost_necklace` | Artifact lost |
 | `zin_afrit_attuned_ring`, `zin_afrit_attuned_crown`, `zin_afrit_attuned_bracelet`, `zin_afrit_attuned_necklace` | Artifact attuned |
 | `zin_afrit_palace_held` | A palace stage failed; Afrit holds the palace |
@@ -637,7 +637,7 @@ Country flags: `zin_afrit_suspicious` (730 days), `zin_afrit_houses_purged` (365
 | `zin_afrit_raise_eastern_host` | hub | `divisions` | The host (above) |
 | `zin_afrit_wargoal_refuser` | hub | — | War goal on the refuser with the most states |
 | `zin_afrit_return` | hub | — | The return (above) |
-| `zin_afrit_retake_aenor` | hub | — | Lord of all Erdae (above) |
+| `zin_afrit_retake_aenor` | hub | — | Lord of all Aoaz (above) |
 | `zin_afrit_claim_middle_lands` | hub | — | Claims on every Middle Lands state its side does not control |
 | `zin_afrit_begin_palace_battle` | any | — | Starts the chain `zin_afrit.70` (above) |
 | `zin_afrit_lose_artifact` | any | `artifact` | Lost flag, artifacts -1, refresh |
@@ -713,7 +713,7 @@ The eastern spec adds three hub decisions to `zin_afrit_council` from its own fi
 | .54 | The War Council of the East | hub, private | *The Eastern War Council* | One option; field-marshal role |
 | .60 | The Return from the East | hub, private | `zin_afrit_return` | One option |
 | .61 | Brother Against Brother | hub, private | Conditions above | One option; fires `zin_eindil.110` |
-| .62 | Lord of All Erdae | all, public | Conditions above | One option |
+| .62 | Lord of All Aoaz | all, public | Conditions above | One option |
 | .70 | The Palace Wards | hub, private | `zin_afrit_begin_palace_battle` | One option; starts stage 1 |
 | .71–.74 | The four stages | hub, private | Chain | Defences above |
 | .75 | The False God Falls | all, public | Stage 4 succeeds | One option; immediate: `zin_afrit_die`, then fires `zin_eindil.124` |
@@ -762,7 +762,7 @@ None.
 4. With `zin_rule_afrit` = `HISTORICAL` and no player, a test run reaches: `zin_afrit_regicide_ready` on 15 Emberleaf 4A 1750; `zin_aurevan_crowned` by Longnight 4A 1750; `zin_afrit_knows_brother` in 4A 1752; `zin_afrit_at_yeldenne` before the journey's landfall; `zin_afrit_revealed` on the same day as `zin_afrit_abandoned_aenor` in 4A 1756 (never earlier); `zin_afrit_king_of_east` in 4A 1756 with at least 2 East Lands subjects under `zin_autonomy_eastern_client`; `zin_afrit_returned` in 4A 1758; `zin_afrit_dead` in 4A 1759; `zin_afrit_artifacts` = 0 at death.
 5. `zin_afrit_reveal` runs at most once; `zin_afrit_revealed` is set exactly once in every test run that sets it.
 6. Under `HISTORICAL`, deleting the Worshipdom by console on day 1 still yields `zin_golden_king_dead` in Mistfall 4A 1750.
-7. A scenario test sets `zin_afrit_claims_erdae`, holds Parim and 12 countries at footholds 4+, sets `zin_afrit_palace_held` and the date to 1759.1.2: `zin_afrit_ashen_throne_ready` is true and world systems set `zin_ending_ashen_throne`.
+7. A scenario test sets `zin_afrit_claims_aoaz`, holds Parim and 12 countries at footholds 4+, sets `zin_afrit_palace_held` and the date to 1759.1.2: `zin_afrit_ashen_throne_ready` is true and world systems set `zin_ending_ashen_throne`.
 8. A scenario test with a human Worshipdom drives the veil to 0 before the crowning: `zin_afrit_unmasked_early` and `zin_golden_king_plot_exposed` are set, and footholds drop as specified. The same losses from AI actions stop the veil at 1.
 9. Footholds never exceed a country's cap through any effect except the start table; Volgan, Zol and Yeldenne stay at 0 for a whole test run.
 10. With `zin_rule_story_pace` = `SLOW`, the fallback dates move to start + 1.5 × their standard distance.

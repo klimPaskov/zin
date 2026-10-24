@@ -6,7 +6,7 @@ updated: 2026-10-17
 
 # Great Powers and Relations
 
-> **Working political and map design, not fully fixed narrative canon.** The source snapshot says Erdae contains approximately **280 regional polities**, of which the following are leading powers.
+> **Working political and map design, not fully fixed narrative canon.** The source snapshot says Aoaz contains approximately **280 regional polities**, of which the following are leading powers.
 
 | Power | Map-design seat | Role | Satellites / alliance | Rival |
 | --- | --- | --- | --- | --- |
@@ -26,4 +26,4 @@ Additional polities which must remain separate on the map: **Bordon, Dreson, Dul
 
 Seat names not drawn on the original maps were constructed in local naming styles and can be replaced. No capital is named after an antagonist or an entire region.
 
-[[Erdae and Its Regions]] · [[Middle Lands and Aenor]] · [[Zol]] · [[Volgan]] · [[Kingdoms Factions and Conflicts]]
+[[Aoaz and Its Regions]] · [[Middle Lands and Aenor]] · [[Zol]] · [[Volgan]] · [[Kingdoms Factions and Conflicts]]

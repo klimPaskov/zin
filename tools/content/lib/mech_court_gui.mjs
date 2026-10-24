@@ -2,7 +2,7 @@
 // reads "The Hermitage") and the Presence (Zol). See docs/specs/07_interface/01_interface.md sections 5, 6 and 8.
 // Every picture is an existing ZIN sprite (GFX_zin_frame, GFX_zin_button, GFX_zin_rule) or a catalog icon registered through the sprite
 // registry; no texture is made here. A gauge is a catalog icon that slides along GFX_zin_rule (scripted GUI property x, a variable).
-// The panels open from a launcher button beside the Realm button until the Erdae bar of the interface module takes that place.
+// The panels open from a launcher button beside the Realm button until the Aoaz bar of the interface module takes that place.
 import { list, blk, format } from './mech_court_lib.mjs';
 
 const FONT = { small: 'hoi_16mbs', mid: 'hoi_18mbs', head: 'hoi_24header' };
@@ -216,7 +216,7 @@ function presencePanel() {
   const p = new Panel({ prefix: 'zin_mistake', gui: 'zin_panel_mistake', window: 'zin_mistake_window', flag: 'zin_ui_mistake_open', title: 'The Presence', titleKey: 'ZIN_MISTAKE_TITLE', launcher: 'The Presence', launcherKey: 'ZIN_MISTAKE_BUTTON', launcherTip: 'Open the account of the Presence.',
     visible: 'zin_is_zol = yes', launcherVisible: 'zin_is_zol = yes', refresh: 'zin_zol_ui_refresh', w: 620, h: 500, tabs: [{ key: 'ZIN_MISTAKE_TAB1', label: 'The Presence' }] });
   p.markerSprite = p.sprite('GFX_zin_mistake_marker', 'zol_sigil');
-  p.text('power', 1, 40, 118, 540, 24, 'ZIN_MISTAKE_POWER', 'How much of his presence can act in Erdae: [ROOT.zin_mistake_band_word] (§Y[?ROOT.zin_mistake_power|0]§!).', { when: 'NOT = { has_country_flag = zin_zol_presence_lapsed }' });
+  p.text('power', 1, 40, 118, 540, 24, 'ZIN_MISTAKE_POWER', 'How much of his presence can act in Aoaz: [ROOT.zin_mistake_band_word] (§Y[?ROOT.zin_mistake_power|0]§!).', { when: 'NOT = { has_country_flag = zin_zol_presence_lapsed }' });
   p.text('lapsed', 1, 40, 118, 540, 48, 'ZIN_MISTAKE_LAPSED', 'Whether he returns is not for us to know. The servants keep faith.', { when: 'has_country_flag = zin_zol_presence_lapsed' });
   p.gauge('power', 1, 156, 'zin_ui_power_x', { when: 'NOT = { has_country_flag = zin_zol_presence_lapsed }' });
   p.text('power_note', 1, 40, 172, 540, 24, 'ZIN_MISTAKE_POWER_NOTE', 'Not his whole power, which no one has measured.', { font: 'small' });

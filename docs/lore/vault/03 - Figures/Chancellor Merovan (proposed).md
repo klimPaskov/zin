@@ -10,4 +10,4 @@ updated: 2026-10-18
 
 The existence of a council member left in charge is **established**, but his name and precise identity are not. He may secretly advise both the Golden King and Aurevan, which would allow a long-serving courtier to embody how decades of compromised government led to the open seizure of power. His fate after the fall of Afrit is open.
 
-[[Aurevan the Deliverer]] · [[The Fourth Age of Erdae]]
+[[Aurevan the Deliverer]] · [[The Fourth Age of Aoaz]]

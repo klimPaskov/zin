@@ -202,7 +202,7 @@ Research categories are the warfare spec's `zin_cat_*` with the vanilla category
 | `promised_spoils` | Promised Spoils Beyond the Rift | kneel_to_the_king | – | 3,11 | 70 | Avail: client; `zin_eastern_invasion`; call zin_east_claim_rift; war_support 0.05 | 40 |
 | `tribute_of_the_free_crowns` | Tribute of the Free Crowns | kneel_to_the_king | – | 5,11 | 70 | Avail: client; at war with a country with `zin_east_free_crown`; call zin_noris_claim_free_crown | 60 when available |
 | `march_west_with_the_king` | March West with the King | riders_for_the_host / promised_spoils | – | 2,12 | 70 | Avail: `zin_afrit_returned`; add_spirit marching_west | 200 when available |
-| `satrap_of_the_sands` | Satrap of the Sands | promised_spoils / tribute_of_the_free_crowns | – | 4,12 | 70 | Avail: `zin_afrit_claims_erdae`; political_power 100; stability 0.05 | 100 when available |
+| `satrap_of_the_sands` | Satrap of the Sands | promised_spoils / tribute_of_the_free_crowns | – | 4,12 | 70 | Avail: `zin_afrit_claims_aoaz`; political_power 100; stability 0.05 | 100 when available |
 | `when_the_king_falls` | When the King Falls | march_west_with_the_king / satrap_of_the_sands | – | 3,13 | 35 | Avail: `zin_afrit_dead`; remove_spirit sword_of_the_east; remove_spirit marching_west; political_power 50; accord +10; tooltip "Furvior must answer for its oaths." | 500 when available |
 
 ### Branch 8: The Shield of the East

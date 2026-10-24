@@ -1,11 +1,11 @@
-// Names for every ZIN country, drawn from the languages of Erdae (docs/specs/02_lore/06_languages.md). Each country's
+// Names for every ZIN country, drawn from the languages of Aoaz (docs/specs/02_lore/06_languages.md). Each country's
 // culture has a language; its male, female, surname and callsign pools come from that language's own name space, so a
 // Cold Lands town and a Sunhot town can never share a name. Without these pools the game cannot name the characters it
 // generates for ZIN countries (and the 75 dynamic tags of civil wars need the `default` pool).
 //
 // buildNames(staged, countries, labels)   stages common/names/zin_names.txt and docs/design/names_report.json, runs the name
 //                                         checks (checks/names_check.mjs) and returns the pools by tag, by drawn sheet and as
-//                                         'zin:all-erdae' (the default pool), as before.
+//                                         'zin:all-aoaz' (the default pool), as before.
 // placeNames(target, kind, n, options)    n place names for a country, culture, language or region, from the generator's
 //                                         registry shared with the persons (for the map and politics steps).
 // resolveName(request)                    the NameRequest of the spec for one entity.
@@ -18,7 +18,7 @@ import { assertNoViolations, checkLanguageBatches, checkRelatedness, checkStaged
 // The substring list this module has always applied; the generator merges it with languages.json and banned_words.json.
 export const BANNED = [...BANNED_SUBSTRINGS];
 export const POOL_SIZES = Object.freeze({ male: 60, female: 50, surnames: 90, callsigns: 12 });
-const DEFAULT_SCAN = 'zin:all-erdae';
+const DEFAULT_SCAN = 'zin:all-aoaz';
 
 // ------------------------------------------------------------------------------------------------ shared state
 // One generator (and one registry) serves the persons of buildNames and the places of placeNames in a run.

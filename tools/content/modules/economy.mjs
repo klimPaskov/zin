@@ -125,7 +125,7 @@ export function landmarksFile(data) {
   const l = data.interimLandmark, b = {
     [l.key]: { base_cost: 20000, damage_factor: 0, icon_frame: 22, value: 1, is_buildable: false, disable_grow_animation: true, only_display_if_exists: true, level_cap: { province_max: 1 } },
   };
-  return `${HEADER}\n# Stage 2 (vanilla removal): no vanilla landmark loads. ${l.key} has no modifiers, no model and no controllers, and no state\n# places it. Erdae's own landmarks (the Golden Court, the gate at Kingson) replace it when their models exist.\nbuildings = {\n${cw(b, 1)}}\n\nspawn_points = {\n\tlandmark_spawn = {\n\t\ttype = province\n\t\tmax = 1\n\t\tdisable_auto_nudging = yes\n\t}\n}\n`;
+  return `${HEADER}\n# Stage 2 (vanilla removal): no vanilla landmark loads. ${l.key} has no modifiers, no model and no controllers, and no state\n# places it. Aoaz's own landmarks (the Golden Court, the gate at Kingson) replace it when their models exist.\nbuildings = {\n${cw(b, 1)}}\n\nspawn_points = {\n\tlandmark_spawn = {\n\t\ttype = province\n\t\tmax = 1\n\t\tdisable_auto_nudging = yes\n\t}\n}\n`;
 }
 
 // Block of a top-level Clausewitz key in raw text: [start of the key, index after its closing brace]. Comments are skipped.

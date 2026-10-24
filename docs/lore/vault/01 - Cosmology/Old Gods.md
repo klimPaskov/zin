@@ -12,9 +12,9 @@ The **Old Gods** are the original, almost unimaginably ancient generation of god
 
 Their strength and ability to exercise power have faded across immense spans of time. They are generally unable to take active physical form and rarely influence the world openly. Yet even diminished Old Gods remain enormously powerful.
 
-**[[Zol]] is an Old God and the only Old God in Erdae.** This does not prove that no other Old Gods exist elsewhere in ZIN.
+**[[Zol]] is an Old God and the only Old God in Aoaz.** This does not prove that no other Old Gods exist elsewhere in ZIN.
 
-[[The Fading]] describes the process restricting them. [[Zol]] is an important exception to any simplistic assumption of continued decline: he **gains** power slowly every day, but Erdae's magic makes it difficult for him to channel and manifest that power.
+[[The Fading]] describes the process restricting them. [[Zol]] is an important exception to any simplistic assumption of continued decline: he **gains** power slowly every day, but Aoaz's magic makes it difficult for him to channel and manifest that power.
 
 ## Ideas explored but not fixed
 

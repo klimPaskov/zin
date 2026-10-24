@@ -1,12 +1,12 @@
-# Erdae warfare
+# Aoaz warfare
 
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. This spec is **stage 2 of the vanilla removal** ([06_vanilla_removal_and_zero_errors.md](../00_foundation/06_vanilla_removal_and_zero_errors.md) §5): §15 names every vanilla folder the stage replaces and how it clears category B14.
 
 ## Purpose
 
-ZIN still fights with vanilla rifles, tanks, battleships and aircraft. This spec replaces all of it with the warfare of Erdae in the Fourth Age: hosts of men, elves, orcs, the dead and the great kin; siege engines and walls; galleys and warships; a small sky of dragons (griffins only under a game rule). It also defines the special units the story needs (Zol's deathless dead, the bearer of Glo, Volgan's own presence, dragons), the Great Wall forts, the technology tree with Fourth Age years, doctrines per people, AI templates, the 3D unit pipeline, and the migration from vanilla.
+ZIN still fights with vanilla rifles, tanks, battleships and aircraft. This spec replaces all of it with the warfare of Aoaz in the Fourth Age: hosts of men, elves, orcs, the dead and the great kin; siege engines and walls; galleys and warships; a small sky of dragons (griffins only under a game rule). It also defines the special units the story needs (Zol's deathless dead, the bearer of Glo, Volgan's own presence, dragons), the Great Wall forts, the technology tree with Fourth Age years, doctrines per people, AI templates, the 3D unit pipeline, and the migration from vanilla.
 
-The combat engine stays HOI4's. Every Erdae unit is built from HOI4 sub-units, equipment, technologies and doctrines, so the AI, the division designer and the production screen keep working.
+The combat engine stays HOI4's. Every Aoaz unit is built from HOI4 sub-units, equipment, technologies and doctrines, so the AI, the division designer and the production screen keep working.
 
 ## Lore basis
 
@@ -14,18 +14,18 @@ The combat engine stays HOI4's. Every Erdae unit is built from HOI4 sub-units, e
 
 | Fact | Source |
 | --- | --- |
-| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace. | Owner, 18 Oct 2026 |
-| The Second Age made real progress in warfare and military technology, medicine and farming; the Fourth Age rebuilt on it. | *Second Age Progress and Recovery*, *The Fourth Age of Erdae* |
+| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace. | Owner, 18 Oct 2026 |
+| The Second Age made real progress in warfare and military technology, medicine and farming; the Fourth Age rebuilt on it. | *Second Age Progress and Recovery*, *The Fourth Age of Aoaz* |
 | The Golden King built a strong army (and misgoverns the realm). | *Middle Lands and Aenor* |
 | Dominions with military identities: Selen's rangers, Kilinti's ents and forest peoples, Hiloron's giants, the riders of Hunhun. | *Middle Lands and Aenor* |
-| Peoples of men include Dondor Brutes, Noris camel warriors, Gunwaith clans, Girdon wardens, Buldor companies, Aenor Isle houses, Goodin Sunfolk. Other peoples: elves (Magical Forest, Sunhot, Gala, God Forest Keepers), giants (Hiloron, Titanos ice giants), ents, yeti, orcs, goblins, trolls, ogres, grave hosts, undead, demons (Shachihata, Netherborn, Afrit's demons). Dwarves exist; their homeland is not designated. | *Peoples of Erdae* |
-| Sunhot elves are over three metres tall, among the strongest and most peaceful peoples. | *Peoples of Erdae* |
+| Peoples of men include Dondor Brutes, Noris camel warriors, Gunwaith clans, Girdon wardens, Buldor companies, Aenor Isle houses, Goodin Sunfolk. Other peoples: elves (Magical Forest, Sunhot, Gala, God Forest Keepers), giants (Hiloron, Titanos ice giants), ents, yeti, orcs, goblins, trolls, ogres, grave hosts, undead, demons (Shachihata, Netherborn, Afrit's demons). Dwarves exist; their homeland is not designated. | *Peoples of Aoaz* |
+| Sunhot elves are over three metres tall, among the strongest and most peaceful peoples. | *Peoples of Aoaz* |
 | Volgan's realm has the largest dark army: grave hosts, Netherborn demons, orcs, ogres, monster clans, necromantic orders. His authority does not extend to independent Dark Lands factions. | *Volgans Dead Lands*, *Kingdoms Factions and Conflicts* |
 | The Dead Lands are hot, storm-girt and hard to reach by sea. | *Volgans Dead Lands* |
-| Zol's dead are sustained by the Old God's own magic. Ordinary weapons may break their shapes but cannot end them. Only potent magic, such as Glo and Horos's sword, destroys them. | *Zol*, *The Fourth Age of Erdae*, *War of the Last Crowns* |
+| Zol's dead are sustained by the Old God's own magic. Ordinary weapons may break their shapes but cannot end them. Only potent magic, such as Glo and Horos's sword, destroys them. | *Zol*, *The Fourth Age of Aoaz*, *War of the Last Crowns* |
 | The dead of the Dead Lands and the dead of Zol's Mistake have no settled taxonomy or relationship. | *Zols Mistake*, *Volgans Dead Lands* |
-| Elzon's animated corpses faded and needed continuing magic that was hard to replenish outside the Dead Lands. | *Elzons Order*, *The Third Age of Erdae* |
-| Dragons come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can, through corruption. | *Peoples of Erdae* |
+| Elzon's animated corpses faded and needed continuing magic that was hard to replenish outside the Dead Lands. | *Elzons Order*, *The Third Age of Aoaz* |
+| Dragons come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can, through corruption. | *Peoples of Aoaz* |
 | Eindil returns on a dragon; with Glo and Horos's blue sword he destroys Zol's dead; Zol later crushes the sword; a shard still wounds Zol's manifestation. | *Fourth Age Canon Register*, *Castle Yeldenne and Glo* |
 | Volgan's manifested body is destroyed; whether his spirit survives is open. | *Canon Policy* |
 | Western fleets cross the much wider central sea and take the capital. | *War of the Last Crowns*, *Middle Lands and Aenor* |
@@ -66,9 +66,9 @@ Who administers Zol's Mistake (Zol's armies are numbered hosts, S4); whether Vol
 4. **No modern remnants.** No tanks, guns, planes, submarines, radar, rockets, nuclear weapons or motorised units remain loadable.
 5. **The engine keeps its hooks.** Supply trucks, trains and convoys keep their engine archetype keys, re-themed as pack trains, wagon trains and merchant cogs.
 
-### 2. Vanilla to Erdae
+### 2. Vanilla to Aoaz
 
-| Vanilla concept | Erdae concept | Notes |
+| Vanilla concept | Aoaz concept | Notes |
 | --- | --- | --- |
 | Infantry | Foot hosts: levies, line infantry, archers, heavy infantry | Per people |
 | Cavalry, motorised, mechanised | Cavalry, horse archers, knights, camel riders, raiders | No motor units |
@@ -668,7 +668,7 @@ Zol uses `zin_gd_corsair_fleets` only.
 
 ### 13. Starting forces and knowledge, 1 Thaw 4A 1748
 
-All forces are at home and at peace. Most armies have little experience: Erdae has known peace for seventeen centuries.
+All forces are at home and at peace. Most armies have little experience: Aoaz has known peace for seventeen centuries.
 
 #### 13.1 Great powers and lore realms
 
@@ -822,7 +822,7 @@ Each row is one disposition of `tools/content/data/vanilla/dispositions.json`; t
 | `common/country_leader` | replace | [Characters](../02_lore/02_characters.md), `characters.mjs`: `00_zin_leader_traits.txt` |
 | `portraits/00_portraits.txt` | override | Characters, `portraits.mjs` |
 | `common/resources/00_resources.txt`, `common/buildings/01_landmark_buildings.txt` | override | [Economy](02_economy.md), `economy.mjs` |
-| `common/military_industrial_organization/organizations`, `/policies`, `/ai_bonus_weights` | replace | Economy, `economy.mjs` (Erdae workshops) |
+| `common/military_industrial_organization/organizations`, `/policies`, `/ai_bonus_weights` | replace | Economy, `economy.mjs` (Aoaz workshops) |
 | `common/special_projects/projects`, `/project_tags`, `/prototype_rewards`, `/specialization` | replace | Economy, `economy.mjs` (the interim great work) |
 | `common/autonomous_states`; `common/factions/goals`, `/icons`, `/member_upgrades`, `/member_upgrades/member_groups`, `/rules`, `/rules/groups`, `/templates`, `/upgrades`, `/upgrades/groups` | replace | [Diplomacy](03_diplomacy_and_factions.md), `diplomacy.mjs` |
 | `common/intelligence_agencies`, `common/operations`, `common/operation_phases`, `common/timed_activities`, `common/technology_sharing`, `common/units/codenames_operatives`, `common/peace_conference/ai_peace`, `/categories`, `/cost_modifiers` | replace | Diplomacy, `diplomacy.mjs` (the coup activity needs this spec's arms) |

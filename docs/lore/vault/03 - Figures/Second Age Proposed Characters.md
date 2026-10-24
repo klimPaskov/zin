@@ -6,7 +6,7 @@ updated: 2026-10-18
 
 # Second Age Proposed Characters
 
-These supporting characters were invented for [[The Second Age of Erdae]] on 17 October 2026. They are **not established canon**.
+These supporting characters were invented for [[The Second Age of Aoaz]] on 17 October 2026. They are **not established canon**.
 
 - **Avarin of Lerenwaith:** North Lands envoy and eventual commander trying to coordinate aid for Aenor while defending her own kingdom. Her impossible diplomatic position shows why the Grand Alliance cannot simply be restored.
 - **Seron of Selen:** Human commander assigned to guard rebuilding efforts and provincial supply routes. His campaigns briefly stabilize whole districts, but he loses troops faster than they can be replaced. He could become a tragic revenant, die defending refugees, or survive as a resistance leader.
@@ -17,4 +17,4 @@ These supporting characters were invented for [[The Second Age of Erdae]] on 17 
 
 Potential story conflicts: Avarin and Seron disagree on whether the kingdom can be saved by military force. Tavriel helps the human refugees whom her own people fear. Arelon believes that saving the memory of Aenor may matter even if its walls cannot be saved. These are candidate character arcs.
 
-[[Elzon]] · [[Afrit]] · [[Ages of Erdae]] · [[The Fall of Aenor]]
+[[Elzon]] · [[Afrit]] · [[Ages of Aoaz]] · [[The Fall of Aenor]]

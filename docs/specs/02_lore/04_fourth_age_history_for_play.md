@@ -12,7 +12,7 @@ Memory is not truth. Most people never saw the hidden government; they remember 
 
 ### Sources
 
-Vault: *Fourth Age Chronology* (proposed dates), *The Campaign of 4A 1748*, *The Fourth Age of Erdae*, *Fourth Age Canon Register*, *Afrits Hidden Council*, *Houses of the First Light*, *The Lost Cause*, *Lantern Chain*, *The Third Age of Erdae*, *The Last Tithe*, *The First Age of Erdae*, *Grand Alliance*, *The Elven Refusal*, *Harion the Restorer (proposed)*, the figure notes and *Open Questions*. Specs: [01_start_situation.md](01_start_situation.md), [03_names_and_terms.md](03_names_and_terms.md), [05_flavour_and_world.md](../06_events/05_flavour_and_world.md) (rules F1 and F2, scheduling), [01_golden_king_and_succession.md](../06_events/01_golden_king_and_succession.md) (event conventions C1–C12).
+Vault: *Fourth Age Chronology* (proposed dates), *The Campaign of 4A 1748*, *The Fourth Age of Aoaz*, *Fourth Age Canon Register*, *Afrits Hidden Council*, *Houses of the First Light*, *The Lost Cause*, *Lantern Chain*, *The Third Age of Aoaz*, *The Last Tithe*, *The First Age of Aoaz*, *Grand Alliance*, *The Elven Refusal*, *Harion the Restorer (proposed)*, the figure notes and *Open Questions*. Specs: [01_start_situation.md](01_start_situation.md), [03_names_and_terms.md](03_names_and_terms.md), [05_flavour_and_world.md](../06_events/05_flavour_and_world.md) (rules F1 and F2, scheduling), [01_golden_king_and_succession.md](../06_events/01_golden_king_and_succession.md) (event conventions C1–C12).
 
 ### Labels
 
@@ -35,7 +35,7 @@ Everything dated below comes from the proposed chronology and is **P** unless ma
 | Era | Years (P) | What most people call it (P) | What it really was |
 | --- | --- | --- | --- |
 | The Restoration and the Long Peace | 4A 1 to 1000 | "The Long Peace", "the Restorer's Peace" | Real peace and rebuilding; the Deliverer's institutions grew as sincere charities (E direction) |
-| The Kingdom Behind the Throne | 4A 1000 to 1729 | "The Blessed Centuries" | The Hidden Council governed through kings (E). The vault's name for the era is a historian's name; nobody in Erdae uses it before the reveal |
+| The Kingdom Behind the Throne | 4A 1000 to 1729 | "The Blessed Centuries" | The Hidden Council governed through kings (E). The vault's name for the era is a historian's name; nobody in Aoaz uses it before the reveal |
 | The Golden King's years | 4A 1729 to 1748 | "The gilded years", "the King's long feast" | A puppet king; the Council decides in 4A 1746 to remove him (P) |
 
 **Rule:** the label "the Kingdom Behind the Throne" and any statement that the Deliverer or his priests governed Aenor appear only in text shown to the Worshipdom, or after `zin_afrit_revealed`.
@@ -44,7 +44,7 @@ Everything dated below comes from the proposed chronology and is **P** unless ma
 
 These are safe in any text, for any country, from the first day.
 
-- The Deliverer saved the people when Elzon fell, and was hailed a New God (E). Most of Erdae worships him or respects his temples.
+- The Deliverer saved the people when Elzon fell, and was hailed a New God (E). Most of Aoaz worships him or respects his temples.
 - A good king of the old line restored Aenor; Selen remembers him as its own son (P name Harion of Selen).
 - Varner, a wizard of the Magical Lands, lifted the curse from the old grave-fields (E that he could undo the curse; P that it happened 4A 4 to 60). People remember him as a legend, with his small purple servant (E).
 - Aenor held a Thousand-Year Jubilee in 4A 1000 (P).
@@ -253,7 +253,7 @@ Namespace `zin_lore` (ids 1–20 belong to [01_start_situation.md](01_start_situ
 | `zin_lore.105` | The Restorer's Day | Selen | Thaw 1748 | Selen honours Harion as its son | Honour Selen first (`zin_aenor_add_concord_loyalty` −2 on Selen; stability +0.05) / Honour the crown (`zin_aenor_add_concord_loyalty` +2 on Selen) | `generic_peace` |
 | `zin_lore.106` | Songs of the Unbinding | Every Middle Lands country | Thaw 1748 to Ironfrost 1749, random share 30% | Ploughmen sing of the wizard who lifted the curse | One option; stability +0.02 | `generic_peace` |
 | `zin_lore.107` | Customs at the Wall | Kingson | Thaw 1748 to Ironfrost 1749 | Elven traders refuse a new toll | Waive it (+10 opinion from the Magical Forest; `zin_elves_add_wall_grievance` −10) / Keep it (+25 political power; `zin_elves_add_wall_grievance` +10) (the elves spec's grievance effect, called in each option) | `generic_court` |
-| `zin_lore.110` | Edran's Folly | Magical Forest | Thaw 1748 to Ironfrost 1749 | Elders recall the Dead Lands campaign | Reaffirm the old refusal (stability +0.02) / Remember that Erdae is shared (stability +0.01, +10 political power) | `generic_wilds` |
+| `zin_lore.110` | Edran's Folly | Magical Forest | Thaw 1748 to Ironfrost 1749 | Elders recall the Dead Lands campaign | Reaffirm the old refusal (stability +0.02) / Remember that Aoaz is shared (stability +0.01, +10 political power) | `generic_wilds` |
 | `zin_lore.111` | Wings over Dragon Mountain | Magical Forest, Herrodon, Andos Enda, Nolorim | Thaw 1748 to Ironfrost 1749 | Dragons fly at dusk | One option; army experience +5 | `generic_wilds` |
 | `zin_lore.112` | Pilgrims at Zilin | Worshipdom | first 365 days, up to six times | A caravan of pilgrims from a far court | Bless them (+10 opinion from a random country with `zin_footholds` ≥ 1) / Keep the gifts (+15 political power) | `hermitage` |
 | `zin_lore.120` | The Toll of 1716 | Lerendor | Rainwake 1748 | The anniversary of the insult | Remember it (`war_support` +0.03; `zin_leren_add_strait_standing` −2) / Let it rest (stability +0.02) | `strait_toll` |
@@ -319,7 +319,7 @@ All `zin_lore` events are written by one new content-builder module, `tools/cont
 
 **Scheduling.** Events in `zin_lore` are fired by effects, never by `trigger` and `mean_time_to_happen` (convention C5). The hidden event `zin_lore.100` runs from `on_startup` for every country (`common/on_actions/zin_lore.txt`). It fires the opening event for human players and calls `zin_lore_schedule_flavour`, which, for each event whose recipient test matches ROOT (and whose random share draws it), fires `country_event = { id = zin_lore.<n> days = <window start − start date> random_days = <window length in days> }`. `zin_lore.112` reschedules itself 40 to 80 days later, up to six times in the first year (country variable `zin_lore_pilgrims`). Each event sets the country flag `zin_lore_seen_<n>` and does nothing if it is already set. Story pace: the builder writes the windows for each `zin_story_pace` value (V4) and the scheduler reads the one in force.
 
-**Text rules.** Every text passes the names spec's checks T1–T5. `zin_lore.220` and `zin_lore.221` fire only for the Worshipdom; `secret_terms.json` lists them, so the name Afrit passes check T2 there. Years are written "4A 1716"; months by Erdae names.
+**Text rules.** Every text passes the names spec's checks T1–T5. `zin_lore.220` and `zin_lore.221` fire only for the Worshipdom; `secret_terms.json` lists them, so the name Afrit passes check T2 there. Years are written "4A 1716"; months by Aoaz names.
 
 ## AI
 
@@ -343,4 +343,4 @@ All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.
 1. Is "the Blessed Centuries" a good public name for the Kingdom Behind the Throne era? **Proposal, in use:** yes (lore digest question 16 covers the public labels).
 2. Are Taryn of Gunwaith and Senra of Triton's Islands welcome as remembered heroes? **Proposal, in use:** yes (lore digest question 17).
 
-Settled elsewhere: no foreshadowing of a sleeper in the ice (start spec, open question 1); "seventeen centuries" is the public phrase (start spec, open question 3); the Worshipdom's private record opens to Aenor's player after `zin_afrit_revealed` through the Chronicle of Erdae codex ([07_interface/04_chronicle_codex.md](../07_interface/04_chronicle_codex.md); owner answer: yes); `zin_lore.191` is retired (O4).
+Settled elsewhere: no foreshadowing of a sleeper in the ice (start spec, open question 1); "seventeen centuries" is the public phrase (start spec, open question 3); the Worshipdom's private record opens to Aenor's player after `zin_afrit_revealed` through the Chronicle of Aoaz codex ([07_interface/04_chronicle_codex.md](../07_interface/04_chronicle_codex.md); owner answer: yes); `zin_lore.191` is retired (O4).

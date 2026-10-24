@@ -12,4 +12,4 @@ Afrit can leave a member of his council in charge of Aenor while he travels to C
 
 The proposed structure divides council duties among royal administration, worship, foreign agents, and artifact recovery. The membership, titles and internal disagreements are not yet established.
 
-[[Afrit]] · [[Golden King]] · [[Aurevan the Deliverer]] · [[The Fourth Age of Erdae]]
+[[Afrit]] · [[Golden King]] · [[Aurevan the Deliverer]] · [[The Fourth Age of Aoaz]]

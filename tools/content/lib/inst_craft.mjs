@@ -63,7 +63,7 @@ export async function writeWorkshops(staged, env) {
       ...C.tree.columns.map(([col, x]) => block('tree_header_text', `text = zin_mio_head_${col}\nx = ${x}`)), block('tree_header_text', 'text = zin_mio_head_capstone\nx = 3'),
       initial, ...traits), 0));
   }
-  staged.text('common/military_industrial_organization/organizations/zin_workshops.txt', `${HEADER}\n# The nine Erdae workshops (guilds, a lodge, a stud and orders). One tree shape: Methods, Patterns, Standing, then the capstone.\n# \`allowed\` lists the realms of the peoples that may found each (tags, because the check runs before the people flags exist).\n${out.join('\n\n')}\n`);
+  staged.text('common/military_industrial_organization/organizations/zin_workshops.txt', `${HEADER}\n# The nine Aoaz workshops (guilds, a lodge, a stud and orders). One tree shape: Methods, Patterns, Standing, then the capstone.\n# \`allowed\` lists the realms of the peoples that may found each (tags, because the check runs before the people flags exist).\n${out.join('\n\n')}\n`);
   return { workshops: ids.size, workshopTraits: ids.size * 10 };
 }
 // Names that are equipment stats or production stats of the MIO scripts, not country modifiers.

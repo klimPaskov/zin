@@ -180,7 +180,7 @@ const LONG_PEACE = [
   ['zin_long_peace_mend_the_roads', 'Mend the Roads', 'Good roads carry grain in peace and hosts in war.', -1, 1, ['zin_long_peace_keep_the_peace'], 'capital_scope = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }', 'giants'],
   ['zin_long_peace_temple_gifts', 'Gifts to the Temples', 'The temples bless the crown, and the people see it.', 1, 1, ['zin_long_peace_keep_the_peace'], 'add_stability = 0.03\nadd_political_power = 25', 'elves'],
   ['zin_long_peace_muster_rolls', 'Count the Muster Rolls', 'The clerks count every spear the lords still owe.', 3, 1, ['zin_long_peace_keep_the_peace'], 'add_manpower = 2000', 'orcs'],
-  ['zin_long_peace_old_leagues', 'Remember the Old Leagues', 'Old treaties bind the crowns of Erdae. The envoys read them again.', 0, 2, ['zin_long_peace_open_markets', 'zin_long_peace_temple_gifts'], 'add_political_power = 50', 'sun_elves'],
+  ['zin_long_peace_old_leagues', 'Remember the Old Leagues', 'Old treaties bind the crowns of Aoaz. The envoys read them again.', 0, 2, ['zin_long_peace_open_markets', 'zin_long_peace_temple_gifts'], 'add_political_power = 50', 'sun_elves'],
 ];
 function buildFocus(staged, loc) {
   const focuses = LONG_PEACE.map(([id, name, desc, x, y, pre, effect, people]) => {
@@ -286,7 +286,7 @@ function buildCollections(staged, loc) {
   staged.text('common/mtth/zin_mtth.txt', `${HEADER}\n# Story mean times (historical-path spec). Read as mtth:<name>.\nzin_story_mean_time = {\n\tbase = 365\n}\n`);
 }
 
-// One theater per Erdae region: a strategic region joins the region (country table scan) that owns most of its
+// One theater per Aoaz region: a strategic region joins the region (country table scan) that owns most of its
 // land provinces. Regions are listed by id.
 const REGION_NAMES = { 'Cold Lands': 'Cold Lands', 'West-Earth': 'West Lands', 'East-Earth': 'North Lands', 'Tritons Islands': "Triton's Islands", 'Rush Land': 'Middle Lands', 'Rush Islands': 'Aenor Isle', 'Ocean of Edvoid': 'Ocean of Zol', 'Magical Lands': 'Magical Lands', 'Dead Lands': 'Dead Lands', 'South-Earth': 'East Lands', Sunhot: 'Lands of the Sun', 'Dark Lands': 'Dark Lands', 'Islands of The South': 'Islands of the South' };
 async function buildTheaters(staged, loc, zin, countries) {
@@ -312,7 +312,7 @@ async function buildTheaters(staged, loc, zin, countries) {
     loc.text[key.toUpperCase()] = REGION_NAMES[scan];
     return `${key} = {\n\tname = ${key.toUpperCase()}\n\tregions = { ${ids.sort((a, b) => a - b).join(' ')} }\n\tai_will_do = {\n\t\tbase = 1\n\t}\n}`;
   });
-  staged.text('common/ai_faction_theaters/zin_theaters.txt', `${HEADER}\n# One AI faction theater per Erdae region, built from the strategic regions (fixes B10).\n${body.join('\n')}\n`);
+  staged.text('common/ai_faction_theaters/zin_theaters.txt', `${HEADER}\n# One AI faction theater per Aoaz region, built from the strategic regions (fixes B10).\n${body.join('\n')}\n`);
   return byScan.size;
 }
 
@@ -386,9 +386,9 @@ function buildInterimRules(staged) {
   const opt = (name, def) => `\t${def ? 'default' : 'option'} = {\n\t\tname = ${name}\n\t\ttext = ZIN_RULE_SKIES_${name.toUpperCase()}\n\t\tdesc = ZIN_RULE_SKIES_${name.toUpperCase()}_DESC\n\t}`;
   staged.text('common/game_rules/zin_war_rules.txt', `${HEADER}\n# Interim writer in vanilla_removal.mjs until the warfare module is wired (it owns this file).\nzin_rule_skies = {\n\tname = ZIN_RULE_SKIES\n\tdesc = ZIN_RULE_SKIES_DESC\n\tgroup = RULE_GROUP_ZIN\n${opt('dragons_only', true)}\n${opt('beasts', false)}\n${opt('none', false)}\n}\n`);
   staged.loc('zin_rules', {
-    RULE_GROUP_ZIN: 'Erdae',
+    RULE_GROUP_ZIN: 'Aoaz',
     ZIN_RULE_SKIES: 'The Skies',
-    ZIN_RULE_SKIES_DESC: 'Whether beasts fly over the war. The air layer holds only the beasts of Erdae, never machines.',
+    ZIN_RULE_SKIES_DESC: 'Whether beasts fly over the war. The air layer holds only the beasts of Aoaz, never machines.',
     ZIN_RULE_SKIES_DRAGONS_ONLY: 'Dragons Only',
     ZIN_RULE_SKIES_DRAGONS_ONLY_DESC: 'Dragon flights take the field only when a power grants them; the Eyries folder shows dragon lore alone.',
     ZIN_RULE_SKIES_BEASTS: 'Beasts of the Mountains',
@@ -414,7 +414,7 @@ function buildOverrides(staged, loc) {
   // common/defines/zin_defines.lua (the hands-off tag included) is written by modules/defines.mjs.
   // B11 (three vanilla vehicle entities the installed game never defines) is gone for good: the vanilla equipment and the equipment
   // designer icon database are replaced (stage 2), so the clone bridge gfx/entities/zin_vanilla_model_gaps.asset is no longer written.
-  staged.text('tutorial/tutorial.txt', `${HEADER}\n# Overrides the vanilla tutorial, which names vanilla state 550 (a different state in Erdae).\ntutorial = { }\n`);
+  staged.text('tutorial/tutorial.txt', `${HEADER}\n# Overrides the vanilla tutorial, which names vanilla state 550 (a different state in Aoaz).\ntutorial = { }\n`);
   loc.text.zin_unwritten_page = 'The Unwritten Page'; loc.text.zin_unwritten_page_desc = 'ZIN keeps no achievements yet.';
   staged.text('common/achievements.txt', `${HEADER}\n# Overrides the vanilla achievements: ZIN has no Steam achievements. One entry that can never be earned.\nzin_unwritten_page = {\n\tid = 0\n\tpossible = { always = no }\n\thappened = { always = no }\n}\n`);
 }

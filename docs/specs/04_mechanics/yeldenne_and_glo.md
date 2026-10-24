@@ -1,10 +1,10 @@
 # Yeldenne and Glo
 
-**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. **Depends on** the calendar ([00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)): the game still starts on 1936.1.1 until that spec is built. Dates below are Erdae engine dates (`1753.3.1` is 1 Thaw 4A 1753).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. **Depends on** the calendar ([00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)): the game still starts on 1936.1.1 until that spec is built. Dates below are Aoaz engine dates (`1753.3.1` is 1 Thaw 4A 1753).
 
 ## Purpose
 
-Glo is the one power in Erdae that can end Zol's dead, and the bridge through which the New Gods restore Eindil. This system covers:
+Glo is the one power in Aoaz that can end Zol's dead, and the bridge through which the New Gods restore Eindil. This system covers:
 
 - **Horos** and the **Castle of Yeldenne**, his one-state realm in Mp'E, the frozen north of the Cold Lands;
 - **Glo**, the green crystal that is Horos's heart and holds part of the power of the New God **Glernaen**;
@@ -19,11 +19,11 @@ It hands Glo to [Eindil's journey](eindil_journey.md) on the historical path and
 | --- | --- | --- |
 | Horos is a Great Spirit, an enormous knight in yellow-green armour with branching helm points, glowing blue eyes and a blue sword; lord of Castle Yeldenne in the Cold Lands | established | *Horos*, *Horos Visual References* |
 | Glo is a green crystal and Horos's literal heart; it holds part of the power of Glernaen, a true New God of Power and Wisdom | established | *Castle of Yeldenne and Glo*, *Glernaen* |
-| Horos guarded Glo through the ages and rejected every claimant who sought it for conquest; Eindil is the first he willingly entrusts | established | *The Fourth Age of Erdae* VII |
-| The guardian's willing transfer matters; Glo cannot be seized merely by occupying the castle; possession of the castle no longer guarantees ownership | established | *Horos*, *The Fourth Age of Erdae* VII |
-| Horos resists the artifact-amplified Afrit far better inside the castle; Glernaen's old protections disrupt Afrit's artifacts there | established | *Horos*, *The Fourth Age of Erdae* VII |
+| Horos guarded Glo through the ages and rejected every claimant who sought it for conquest; Eindil is the first he willingly entrusts | established | *The Fourth Age of Aoaz* VII |
+| The guardian's willing transfer matters; Glo cannot be seized merely by occupying the castle; possession of the castle no longer guarantees ownership | established | *Horos*, *The Fourth Age of Aoaz* VII |
+| Horos resists the artifact-amplified Afrit far better inside the castle; Glernaen's old protections disrupt Afrit's artifacts there | established | *Horos*, *The Fourth Age of Aoaz* VII |
 | Afrit comes first and names himself Aenor's king and god; Horos names him Afrit, son of Ein, Eindil's brother, and orders him out; they fight; Horos seizes him; Afrit passes behind him and stabs the back of his neck; Eindil arrives and wounds Afrit; Afrit flees to his private refuge | established | *Castle of Yeldenne and Glo*, *Horos*, *Fourth Age Canon Register* |
-| The escape artifact in that moment is the Ring of Doors | proposed | *The Fourth Age of Erdae* VII |
+| The escape artifact in that moment is the Ring of Doors | proposed | *The Fourth Age of Aoaz* VII |
 | Horos reveals the family truth, takes Glo from his chest, gives Glo and his blue sword to Eindil, and turns to dust; the castle is left empty | established | *Castle of Yeldenne and Glo* |
 | The sword driven into the earth sends Glo's power through a front of Zol's dead; Glo and the sword end Zol's directly sustained dead; Zol crushes the sword; a shard still wounds Zol's manifestation | established | *Horos's Blue Sword*, *Glernaen* |
 | Glo is the bridge for the New Gods' restoration of Eindil | proposed channel | *Glernaen*, *Castle of Yeldenne and Glo* |
@@ -368,7 +368,7 @@ No new rule. The journey's `zin_eindil_historical` (its rule, or the path rule H
 - **The Worshipdom:** historical: lies in wait, enters the hall only after the ambush (case A). Free: the race weights above; strikes after 365 days of waiting.
 - **Volgan:** never hunts on the historical path. Free: 10 % per year from 1753 while Glo is in state 0 or 2, `zin_volgan_seeks_glo` is set and Volgan is not at war; 30 % if Glo is sealed.
 - **Defilement:** free rule only; the Worshipdom, a realm Afrit rules, or Volgan, if it already controls Mp'E.
-- **The Lost Cause leader:** free rule only: guards the hall with 30 % per year while the Golden King lives and Erdae is at peace.
+- **The Lost Cause leader:** free rule only: guards the hall with 30 % per year while the Golden King lives and Aoaz is at peace.
 - **Petitions:** AI petitions only as flavour, 5 % per year for Coldor and Isengard.
 - **Bearer's host:** uses Glo's Wave whenever possible against Zol's largest stack near its armies.
 

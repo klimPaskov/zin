@@ -68,7 +68,7 @@ Framing that matters: the reference is an **expansion**, not a total conversion.
 ## Ideas for ZIN: how to go beyond it
 
 - **Replace more than words.** The reference keeps vehicle and aircraft rules under new names. ZIN should model monsters, mages and artifact bearers as real combat roles (support companies, leader traits, terrain and magic-tide bonuses) and remove the modern branches from sight, not just from text.
-- **Own the front end.** The reference leaves menu, loading, UI skin, fonts and music to its base. ZIN must supply an Erdae menu scene, loading tips, a hand-drawn top bar, event frames per people, fonts and a score. This alone changes the first minute.
+- **Own the front end.** The reference leaves menu, loading, UI skin, fonts and music to its base. ZIN must supply an Aoaz menu scene, loading tips, a hand-drawn top bar, event frames per people, fonts and a score. This alone changes the first minute.
 - **Race as a first-class system:** one trigger set used by every file, per-people laws, recruitment and research, and conversion events (to the dead, to troll rule) that carry units, portraits and names along.
 - **Variable-driven meters with a real panel** (scripted GUI) for the Golden King's favour, the Afrit's hidden influence and Eindil sightings, instead of spirit ladders. Keep spirits for art-heavy milestones.
 - **Several moving actors** rather than one: a waking dragon, an elven embassy, the hidden power's agents, all writing into an in-world chronicle the player can open.

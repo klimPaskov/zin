@@ -150,7 +150,7 @@
 
 | Name | Kind | Scope | Meaning | Owner | Also used by |
 | --- | --- | --- | --- | --- | --- |
-| `RULE_GROUP_ZIN` | game rule group | game rules | The one group for every ZIN rule, shown as "Erdae"; every per-power rule has a first option `DEFAULT` (R1) | [05_defines_and_rules](../00_foundation/05_defines_and_rules.md) | 01_warfare, eastern_kings, eindil_journey, lerendor_narrow_strait, volgan_southern_dominion, western_crossing, +1 more |
+| `RULE_GROUP_ZIN` | game rule group | game rules | The one group for every ZIN rule, shown as "Aoaz"; every per-power rule has a first option `DEFAULT` (R1) | [05_defines_and_rules](../00_foundation/05_defines_and_rules.md) | 01_warfare, eastern_kings, eindil_journey, lerendor_narrow_strait, volgan_southern_dominion, western_crossing, +1 more |
 | `zin_abyss_folk` | sub-unit | Volgan | The Abyss folk of the *Abyss Host* (stats of `zin_ogres_brutes` until drawn) | [01_warfare](../03_gameplay/01_warfare.md) | volgan_southern_dominion |
 | `zin_accord` | scripted GUI | Dark Sea Accord leader | The Dark Sea Accord panel: window `zin_accord_window`, visible for `zin_ui_has_accord_panel` with `zin_ui_accord_open`; shows only the Dark Lands mechanic's values | [01_interface](../07_interface/01_interface.md) | dark_lands |
 | `zin_aenor` (event ids) | event namespace | events | `zin_aenor`: 1–499 mechanic (`events/zin_aenor_court.txt`), 500–699 tree (`events/zin_aenor.txt`, event id base 500, S9) | [aenor_court_and_succession](aenor_court_and_succession.md) | — |
@@ -215,7 +215,7 @@
 | `zin_afrit_ashen_throne_ready` | scripted trigger | any | Conditions for the Ashen Throne ending are met; world systems read it | [afrit_hidden_council](afrit_hidden_council.md) | 05_world_tension_and_endings, tree worshipdom, 04_endings |
 | `zin_afrit_at_yeldenne` | global flag | global | Afrit's expedition reached Yeldenne | [afrit_hidden_council](afrit_hidden_council.md) | cold_lands, eindil_journey, yeldenne_and_glo, tree worshipdom, 02_eindil_journey |
 | `zin_afrit_begin_palace_battle` | scripted effect | any | Starts the palace chain `zin_afrit.70`–`.76`; called by the journey's *Enter the Palace* | [afrit_hidden_council](afrit_hidden_council.md) | eindil_journey, 03_war_of_the_last_crowns |
-| `zin_afrit_claims_erdae` | global flag | global | Afrit has retaken Parim and claims kingship over all Erdae | [afrit_hidden_council](afrit_hidden_council.md) | 06_historical_path_and_ai, eindil_journey, tree noris, tree stabilo, tree worshipdom, 03_war_of_the_last_crowns, +1 more |
+| `zin_afrit_claims_aoaz` | global flag | global | Afrit has retaken Parim and claims kingship over all Aoaz | [afrit_hidden_council](afrit_hidden_council.md) | 06_historical_path_and_ai, eindil_journey, tree noris, tree stabilo, tree worshipdom, 03_war_of_the_last_crowns, +1 more |
 | `zin_afrit_council` | decision category | Worshipdom | The Hermitage Chapter / The Hidden Council; hub only | [afrit_hidden_council](afrit_hidden_council.md) | 02_characters, eastern_kings, 03_full_asset_inventory |
 | `zin_afrit_crown_aurevan` | scripted effect | any | Crowns Aurevan in Aenor; sets `zin_aurevan_crowned`; ends with `zin_reign_on_crowning` | [afrit_hidden_council](afrit_hidden_council.md) | aenor_court_and_succession, 01_golden_king_and_succession |
 | `zin_afrit_deliverer_rests` | idea | the realm Afrit leads | The Deliverer Rests: the Yeldenne wound | [afrit_hidden_council](afrit_hidden_council.md) | yeldenne_and_glo, tree worshipdom |

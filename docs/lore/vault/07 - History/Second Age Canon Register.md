@@ -6,7 +6,7 @@ updated: 2026-10-18
 
 # Second Age Canon Register
 
-This note separates decisions supplied by the owner on 17 October 2026 from narrative additions created for [[The Second Age of Erdae]]. It supersedes the previous unanswered Second Age outline. See [[Canon Policy]].
+This note separates decisions supplied by the owner on 17 October 2026 from narrative additions created for [[The Second Age of Aoaz]]. It supersedes the previous unanswered Second Age outline. See [[Canon Policy]].
 
 ## Established facts
 
@@ -48,7 +48,7 @@ This note separates decisions supplied by the owner on 17 October 2026 from narr
 - There is no established claim that the three are identical or linked by ordinary gates.
 - The old source's Ainu and Eindil 100,000-year figures are **superseded**, including the claim that the Ainu line had vanished 100,000 years before the Fourth Age.
 
-[[The Second Age of Erdae]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Ages of Erdae]]
+[[The Second Age of Aoaz]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Ages of Aoaz]]
 
 ## Established addendum on 17 October 2026
 

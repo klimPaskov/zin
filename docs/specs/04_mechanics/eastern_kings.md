@@ -2,11 +2,11 @@
 
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3.
 
-**Depends on** (built first; see "Build order" under Implementation): the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md); the game still starts 1936.1.1.12 until it is built, and every engine date here is an Erdae year), the rules ([../00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md)), diplomacy, world tension, the historical path, and the Afrit mechanic.
+**Depends on** (built first; see "Build order" under Implementation): the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md); the game still starts 1936.1.1.12 until it is built, and every engine date here is an Aoaz year), the rules ([../00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md)), diplomacy, world tension, the historical path, and the Afrit mechanic.
 
 ## Purpose
 
-The East Lands are the richest and most divided region of Erdae. This spec defines the mechanic that plays them from the peaceful start to the end of the age:
+The East Lands are the richest and most divided region of Aoaz. This spec defines the mechanic that plays them from the peaceful start to the end of the age:
 
 - **The caravan roads** and the **charters** that Noris and Stabilo compete for, peacefully at first (`zin_east_road_<key>`, `zin_east_inf_<key>`).
 - **The caravan rivalry** (`zin_east_rivalry`): how close the two powers are to open war, and how they can make peace instead (the Concord of the Roads).
@@ -24,16 +24,16 @@ The flight east, the proclamation, Afrit's person and the host's divisions belon
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| The East Lands lie across a long rift sea east of the Magical Lands and run off the eastern map; Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak and Mora are named there | established | *Erdae and Its Regions* |
-| The South Lands are the great desert of the East Lands and run off the southern map; they include the Noris Desert and the former Sunhot Desert | established | *Erdae and Its Regions* |
-| What lies beyond the eastern and southern edges is not fixed | established | *Erdae and Its Regions* |
+| The East Lands lie across a long rift sea east of the Magical Lands and run off the eastern map; Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak and Mora are named there | established | *Aoaz and Its Regions* |
+| The South Lands are the great desert of the East Lands and run off the southern map; they include the Noris Desert and the former Sunhot Desert | established | *Aoaz and Its Regions* |
+| What lies beyond the eastern and southern edges is not fixed | established | *Aoaz and Its Regions* |
 | Noris (seat Furvior; includes the Noris desert) leads the **Noris Treaty** with Gondolin; Stabilo (seat Postondoroth) competes for the southern trade routes and leads the **Stabilo Pact** with Drak; they are rivals and compete for the caravan roads | established working table | *Great Powers and Relations*, *Kingdoms Factions and Conflicts* (constitutions and origins of the blocs are not detailed), *The Campaign of 4A 1748* |
-| Noris camel warriors are a tradition of men | established | *Peoples of Erdae* |
-| The Hidden Council builds ties in the East Lands and South Lands as a precaution against losing Aenor; the East's rulers know its people only as the Deliverer's generous friends | established (direction) | *Afrit's Hidden Council*, *The Fourth Age of Erdae*, *The Campaign of 4A 1748* |
-| In the final war an eastern coalition crosses seas and mountain approaches to threaten the Magical Lands and the Middle Kingdom; its commanders want wealth, territory, revenge, or deliverance from their own rulers' crises; some are secretly tied to Aurevan's networks; the invasion was neither wholly spontaneous nor wholly his | established | *The Fourth Age of Erdae*, *War of the Last Crowns*, Canon Register |
-| Afrit abandons Aenor, exploits his influence over several rulers and takes command of an eastern dominion; he and his allies proclaim him **King of the East**, though states of the East still resist him; the title does not mean every eastern kingdom submits | established | Canon Register, *The Fourth Age of Erdae* |
-| Some eastern formations fight Zol's dead and Volgan's troops, suffer terribly and retreat east; abandoned eastern troops join Eindil's temporary coalition | established | *The Fourth Age of Erdae* IX–X |
-| Afrit returns with a new eastern host and claims kingship over the East and Middle Lands | established | *The Fourth Age of Erdae* XIV |
+| Noris camel warriors are a tradition of men | established | *Peoples of Aoaz* |
+| The Hidden Council builds ties in the East Lands and South Lands as a precaution against losing Aenor; the East's rulers know its people only as the Deliverer's generous friends | established (direction) | *Afrit's Hidden Council*, *The Fourth Age of Aoaz*, *The Campaign of 4A 1748* |
+| In the final war an eastern coalition crosses seas and mountain approaches to threaten the Magical Lands and the Middle Kingdom; its commanders want wealth, territory, revenge, or deliverance from their own rulers' crises; some are secretly tied to Aurevan's networks; the invasion was neither wholly spontaneous nor wholly his | established | *The Fourth Age of Aoaz*, *War of the Last Crowns*, Canon Register |
+| Afrit abandons Aenor, exploits his influence over several rulers and takes command of an eastern dominion; he and his allies proclaim him **King of the East**, though states of the East still resist him; the title does not mean every eastern kingdom submits | established | Canon Register, *The Fourth Age of Aoaz* |
+| Some eastern formations fight Zol's dead and Volgan's troops, suffer terribly and retreat east; abandoned eastern troops join Eindil's temporary coalition | established | *The Fourth Age of Aoaz* IX–X |
+| Afrit returns with a new eastern host and claims kingship over the East and Middle Lands | established | *The Fourth Age of Aoaz* XIV |
 | East Lands states keep claims and grievances after the war | established | *Fifth Age Seeds* |
 | The caravan roads open 4A 600 to 780 and make Noris and Stabilo rich; the rivalry "never fully ends" | proposed | *Fourth Age Chronology* |
 | The eastern branch begins its courtship of East and South Lands courts about 4A 1300 | proposed date | *Fourth Age Chronology* |

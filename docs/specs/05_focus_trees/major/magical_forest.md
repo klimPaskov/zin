@@ -59,7 +59,7 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 
 ### Branch 1: The Council of Houses
 
-**Purpose:** the elected council of houses (proposed constitution) and its leaning. The Magical Forest holds elections every 60 months (ideologies spec; next due Thaw 4A 1749). The branch ends at *Counsel of the Ancients*, one of the two ways to the Question of the Refusal. **Opens:** at start. **Mutual exclusions:** The Old Houses Speak / The Open Houses Speak; Remember Edran's Folly / Erdae Is Shared. **Mechanic:** stability, political power, Wall grievance, route weights.
+**Purpose:** the elected council of houses (proposed constitution) and its leaning. The Magical Forest holds elections every 60 months (ideologies spec; next due Thaw 4A 1749). The branch ends at *Counsel of the Ancients*, one of the two ways to the Question of the Refusal. **Opens:** at start. **Mutual exclusions:** The Old Houses Speak / The Open Houses Speak; Remember Edran's Folly / Aoaz Is Shared. **Mechanic:** stability, political power, Wall grievance, route weights.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
@@ -70,9 +70,9 @@ The three route roots (row 9) are mutually exclusive. The Rift Sea's war half (r
 | `old_houses` | The Old Houses Speak | long_election | open_houses | 0,3 | 35 | add_spirit old_houses_spirit; grievance +5 | 10; hid ×4; mar ×0.2 |
 | `open_houses` | The Open Houses Speak | long_election | old_houses | 2,3 | 35 | add_spirit open_houses_spirit; grievance -5 | 10; hist ×2; mar ×2 |
 | `speakers_of_peace` | Speakers of Peace | old_houses / open_houses | – | 1,4 | 70 | swap_spirit speakers_chair_spirit→speakers_of_peace_spirit; political_power 50 | 15 |
-| `remember_edrans_folly` | Remember Edran's Folly | speakers_of_peace | erdae_is_shared | 0,5 | 35 | political_power 50; flag zin_magical_forest_folly_remembered (route weights) | 10; hist ×2; hid ×3 |
-| `erdae_is_shared` | Erdae Is Shared | speakers_of_peace | remember_edrans_folly | 2,5 | 35 | goodwill Aenor; goodwill Kingson; flag zin_magical_forest_erdae_shared (route weights) | 10; mar ×5 |
-| `houses_in_harmony` | Houses in Harmony | remember_edrans_folly / erdae_is_shared | – | 1,6 | 70 | stability 0.05; political_power 50 | 15 |
+| `remember_edrans_folly` | Remember Edran's Folly | speakers_of_peace | aoaz_is_shared | 0,5 | 35 | political_power 50; flag zin_magical_forest_folly_remembered (route weights) | 10; hist ×2; hid ×3 |
+| `aoaz_is_shared` | Aoaz Is Shared | speakers_of_peace | remember_edrans_folly | 2,5 | 35 | goodwill Aenor; goodwill Kingson; flag zin_magical_forest_aoaz_shared (route weights) | 10; mar ×5 |
+| `houses_in_harmony` | Houses in Harmony | remember_edrans_folly / aoaz_is_shared | – | 1,6 | 70 | stability 0.05; political_power 50 | 15 |
 | `counsel_of_ancients` | Counsel of the Ancients | houses_in_harmony | – | 1,7 | 70 | add_spirit counsel_of_ancients_spirit | 15 |
 
 ### Branch 2: The Old Groves
@@ -386,7 +386,7 @@ Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.m
 
 | Branch | Focus → icon |
 | --- | --- |
-| 1 | council_of_houses `elven_council`; speakers_chair `council_table`; roll_of_houses `scroll_sealed`; long_election `elven_council`; old_houses `forest_ancient`; open_houses `tree_silver`; speakers_of_peace `olive_branch`; remember_edrans_folly `banner_laid_down`; erdae_is_shared `handshake_oath`; houses_in_harmony `concord_circle`; counsel_of_ancients `book_lore` |
+| 1 | council_of_houses `elven_council`; speakers_chair `council_table`; roll_of_houses `scroll_sealed`; long_election `elven_council`; old_houses `forest_ancient`; open_houses `tree_silver`; speakers_of_peace `olive_branch`; remember_edrans_folly `banner_laid_down`; aoaz_is_shared `handshake_oath`; houses_in_harmony `concord_circle`; counsel_of_ancients `book_lore` |
 | 2 | old_groves `forest_ancient`; elder_archive `book_lore`; wellsprings `staff_arcane`; loremasters `university_hall`; deep_timber `timber_mill`; songs_of_making `workshop_tools`; grove_workshops `forge_anvil`; mushroom_trade `mushroom_grove`; harvest_moots `granary`; living_halls `tree_silver`; forest_provides `foundry_fire` |
 | 3 | wall_accord `charter_wall`; customs_at_the_gate `toll_house`; wall_traders `traders_road`; friends_at_kingson `envoy`; watch_from_our_side `fort_wall`; wall_moot `council_table`; guard_against_wyrms `dragon_wing`; fair_tolls `ledger_coins`; close_the_wall_roads `fort_wall`; renew_accord `scroll_treaty`; gates_in_war `levy_muster` |
 | 4 | elder_kinship `elven_council`; envoys_to_kin `envoy`; old_rivalry `two_crowns`; gifts_to_great_realms `tribute_chest`; mediate_rivals `olive_branch`; wardens_for_passes `mountain_pass`; boundary_groves `map_unrolled`; elder_moot `concord_circle`; stone_in_passes `pass_fort`; shared_songs `hymn_choir`; bind_the_rivals `handshake_oath`; kindred_of_the_woods `alliance_rings`; first_among_kin `tree_silver` |
@@ -434,7 +434,7 @@ With `zin_rule_historical_path = HISTORICAL` (and `zin_rule_ai_elves = DEFAULT`)
 
 | Route | How the AI gets there | Key choices |
 | --- | --- | --- |
-| **The Kindred Marches** (`zin_rule_ai_elves = MARCH`, or `FREE` with Erdae Is Shared and `zin_elves_march_allowed`) | The Open Houses Speak, Erdae Is Shared, the Question once `zin_elves_march_allowed` holds (else the AI waits up to 365 days, then takes The Refusal Stands) | Kin Beside Us, Against the Dark, Over the Wall as Friends, Dragons of the March, No Crown From Victory, Home to the Woods at peace |
+| **The Kindred Marches** (`zin_rule_ai_elves = MARCH`, or `FREE` with Aoaz Is Shared and `zin_elves_march_allowed`) | The Open Houses Speak, Aoaz Is Shared, the Question once `zin_elves_march_allowed` holds (else the AI waits up to 365 days, then takes The Refusal Stands) | Kin Beside Us, Against the Dark, Over the Wall as Friends, Dragons of the March, No Crown From Victory, Home to the Woods at peace |
 | **The Hidden Woods** (`FREE` with The Old Houses Speak and Remember Edran's Folly) | Close the Wall Roads when grievance ≥ 60; Tolls on the Pilgrim Roads | Paths That Wander, No Men in the Woods, The Secret Roosts; still defends the rift through the Rift Sea branch |
 | **Player** | Any order | The Question opens after the King's death, the naming, the invasion, or 4A 1751; war focuses still wait for their flags |
 

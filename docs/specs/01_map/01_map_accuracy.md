@@ -8,7 +8,7 @@ The map is the stage for every mechanic. Each lore fact that has a place on the 
 
 ## Sources
 
-- Lore vault: *Erdae and Its Regions*, *Middle Lands and Aenor*, *Great Powers and Relations*, *Fourth Age Map of Erdae*, *Volgans Dead Lands*, *Zols Mistake*, *Castle of Yeldenne and Glo* and the owner's corrections of 17–18 October 2026.
+- Lore vault: *Aoaz and Its Regions*, *Middle Lands and Aenor*, *Great Powers and Relations*, *Fourth Age Map of Aoaz*, *Volgans Dead Lands*, *Zols Mistake*, *Castle of Yeldenne and Glo* and the owner's corrections of 17–18 October 2026.
 - Map today: `docs/generation/assumptions.md`, the politics output and `localisation/replace/world_l_english.yml`.
 
 ## How to change the map

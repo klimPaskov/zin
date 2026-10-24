@@ -43,7 +43,7 @@ Shipped art: 305 flags in three sizes, 10 people emblems, 40 generic portraits, 
 | No assets, text or scripts from other mods, including the Lord of the Rings mods | owner rule | CONVENTIONS |
 | 3D unit models come from Meshy through the app-owned launcher route | owner decision | CONVENTIONS, [01_warfare.md](../03_gameplay/01_warfare.md) §14 |
 | The owner's original drawings stay private and out of the repository | owner decision | *Horos Visual References*, `.gitignore` |
-| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748* |
+| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
 | Established looks: Horos (yellow-green armour, blue eyes, thorn-like helm, large blue sword, green crystal Glo in his breast); Golbran small, purple, humanoid; Sunhot elves over three metres tall | established | vault figures and peoples |
 | Every style rule, size choice, count, file name and process step below not covered by a decision | **proposed** | this spec |
 

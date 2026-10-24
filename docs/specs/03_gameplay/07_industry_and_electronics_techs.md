@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Vanilla's industry and electronics tabs hold about 49 technologies that Erdae cannot keep: machine tools, assembly lines, synthetic oil, radio, radar, computing, encryption, rocketry. The economy spec ([02_economy.md](02_economy.md)) says the two folders stay and are "re-themed", and the warfare spec names the folders in its §11, but no spec says which technologies Erdae has there, what they do, when they appear, what they unlock, or who may research them. This spec does.
+Vanilla's industry and electronics tabs hold about 49 technologies that Aoaz cannot keep: machine tools, assembly lines, synthetic oil, radio, radar, computing, encryption, rocketry. The economy spec ([02_economy.md](02_economy.md)) says the two folders stay and are "re-themed", and the warfare spec names the folders in its §11, but no spec says which technologies Aoaz has there, what they do, when they appear, what they unlock, or who may research them. This spec does.
 
 It designs 54 researchable technologies in the two civilian folders (`industry_folder`, `electronics_folder`): masonry, mining, guild methods, granaries and fields, the Great Halls and Village Forges (a choice), shipwrights, essence-craft, peoples' crafts, scholarship, seals and codes, and beacon craft. It adds seven hidden technologies that keep unused vanilla buildings locked. It also fixes the rules the whole tree obeys (folders, categories, years, costs, layout, start knowledge, the research slot economy) and cross-checks the warfare spec's technology section against them, because both specs are written to the same builder module and the same files.
 
@@ -16,9 +16,9 @@ It designs 54 researchable technologies in the two civilian folders (`industry_f
 | --- | --- |
 | The Second Age made real progress in warfare and military technology, disease treatment and cures, and farming and famine prevention. These came from engineers, farmers, healers and soldiers, not from a god. | *Second Age Progress and Recovery* |
 | The Fourth Age had more than a thousand years of peace, prosperity, education, science, medicine and strong institutions. | *Fourth Age Canon Register* |
-| Cities grew around the Great Lake, ports expanded, and Aenor traded with the North Lands, West Lands, the islands, the Magical Lands and the eastern states. | *The Fourth Age of Erdae* (prologue) |
-| Dragons come from Dragon Mountain; the Dead Lands are hot and storm-girt; the Great Wall of Aenor divides the Middle Lands from the Magical Lands. | *Peoples of Erdae*, *Volgan's Dead Lands* |
-| Magic in Erdae is constrained. Ordinary craft magic is not potent magic. | *Magic and Sustenance in Erdae*, [04_magic_and_world_systems.md](04_magic_and_world_systems.md) rule 1 |
+| Cities grew around the Great Lake, ports expanded, and Aenor traded with the North Lands, West Lands, the islands, the Magical Lands and the eastern states. | *The Fourth Age of Aoaz* (prologue) |
+| Dragons come from Dragon Mountain; the Dead Lands are hot and storm-girt; the Great Wall of Aenor divides the Middle Lands from the Magical Lands. | *Peoples of Aoaz*, *Volgan's Dead Lands* |
+| Magic in Aoaz is constrained. Ordinary craft magic is not potent magic. | *Magic and Sustenance in Aoaz*, [04_magic_and_world_systems.md](04_magic_and_world_systems.md) rule 1 |
 
 ### Proposed elsewhere in the vault (used, still proposals)
 
@@ -44,7 +44,7 @@ Every technology name, year, cost, effect and identifier below, the six new `zin
 
 Vanilla keys are not kept. A search of the installed game found no loaded file outside the replaced folders that reads a vanilla technology key, apart from sprite names in `interface/Technologies.gfx` (harmless), `intelligence_agency_upgrades.txt` (the override rewrites its two `has_tech` tests, see [08_institutions.md](08_institutions.md)) and the faction goals (replaced). Every key is therefore a ZIN key, `zin_tech_<name>`. The tables below show keys without the prefix.
 
-| Vanilla group | Inventory | Count | Erdae line | Count | What changes |
+| Vanilla group | Inventory | Count | Aoaz line | Count | What changes |
 | --- | --- | ---: | --- | ---: | --- |
 | Machine tools, assembly lines, flexible and streamlined line | WE-013 | 6 | **Guild Methods** | 6 | Same effects and the same choice at the end: Pattern Books (flexible) or Masters' Benches (streamlined) |
 | Improved and advanced equipment conversion (energy gain) | WE-013 | 2 | **Granaries and Fields** | 2 | Provisions gain (`energy_gain_factor`) from seed reserves and irrigation; irrigation also raises population growth |
@@ -97,7 +97,7 @@ Categories drive research bonuses (focus and idea `research` blocks), the AI's r
 | Kept engine categories | `industry`, `construction_tech`, `excavation_tech` | Trees, the compiler and the economy spec name them; they are never renamed (the trees' note "kept until the economy spec renames it" is closed: they stay) |
 | Doctrine categories | `land_doctrine`, `naval_doctrine`, `air_doctrine`, `special_forces_doctrine` | The compiler writes `add_doctrine_cost_reduction` for them (E6) |
 
-Every other vanilla category (`nuclear`, `rocketry`, `radar_tech`, `electronics`, `encryption_tech`, the 40 `mio_cat_*`) is dropped. The workshops ([08_institutions.md](08_institutions.md) §9) therefore name `zin_cat_*` categories in `research_categories`. Category text (`<category>` and `<category>_research`) reads in Erdae terms, for example the research bonus of `zin_cat_seals` reads as a bonus for seals, never for encryption.
+Every other vanilla category (`nuclear`, `rocketry`, `radar_tech`, `electronics`, `encryption_tech`, the 40 `mio_cat_*`) is dropped. The workshops ([08_institutions.md](08_institutions.md) §9) therefore name `zin_cat_*` categories in `research_categories`. Category text (`<category>` and `<category>_research`) reads in Aoaz terms, for example the research bonus of `zin_cat_seals` reads as a bonus for seals, never for encryption.
 
 **Check C3 finds the rest.** A replaced tag file must still define every category that a kept file names. The reference scan (vanilla removal check C3) runs over `interface/*.gui`, `common/alerts.txt` and the other kept files; a category it finds that is not above is added here or the kept file is overridden.
 
@@ -157,7 +157,7 @@ A technology a package knows is granted with `set_technology` in country history
 
 In vanilla a building that **no technology lists** in `enable_building` is unlocked from the start; a building that some technology lists stays locked until one is researched. Stage 2 removes every vanilla technology, so every building that vanilla gates by technology would become buildable on day one unless a ZIN technology still lists it. Seven grant-only technologies do that job. Each lists its building at level 1; none is researched, granted or shown.
 
-| Gate (`zin_tech_gate_<key>`) | Building it keeps locked | Used by Erdae? |
+| Gate (`zin_tech_gate_<key>`) | Building it keeps locked | Used by Aoaz? |
 | --- | --- | --- |
 | `rocket_site` | `rocket_site` | no |
 | `mega_gun` | `mega_gun_emplacement` | no |

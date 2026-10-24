@@ -10,7 +10,7 @@ updated: 2026-10-17
 
 The **Holy Seven** are the seven overwhelmingly powerful cosmic creators of the ZIN universe and the creators of both the [[Old Gods]] and the [[New Gods]]. They exist below [[He Who Was, Is and Will Be]] and above the ordinary divine orders.
 
-They are intentionally unimportant to day-to-day ZIN history because they are too vast and removed from it. Most inhabitants of [[Erdae and Its Regions|Erdae]] do **not** even believe they existed. Trace references may remain in the most distant myths. By contrast, ordinary people generally know of Old and New Gods.
+They are intentionally unimportant to day-to-day ZIN history because they are too vast and removed from it. Most inhabitants of [[Aoaz and Its Regions|Aoaz]] do **not** even believe they existed. Trace references may remain in the most distant myths. By contrast, ordinary people generally know of Old and New Gods.
 
 Their individual names, fields of power, number of interventions, and appearances are **not established**. Avoid turning them into active patron gods or major antagonists.
 

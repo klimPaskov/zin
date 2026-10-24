@@ -229,7 +229,7 @@ test('Worshipdom: two faces, secrecy of the public face and the faces table', ()
   // Two-face icons switch on the reveal flag only.
   for (const f of tree.focuses) if (typeof f.icon === 'object') assert.deepEqual(f.icon.after.map(a => a.global_flag), ['zin_afrit_revealed']);
   // Every focus of the late branches is closed once the Deliverer is dead.
-  for (const k of ['first_of_his_name', 'king_of_the_east', 'lord_of_all_erdae', 'the_quiet_court', 'cast_off_the_mask']) assert(JSON.stringify(focusOf(DATA, 'worshipdom', k).available).includes('zin_afrit_dead'), k);
+  for (const k of ['first_of_his_name', 'king_of_the_east', 'lord_of_all_aoaz', 'the_quiet_court', 'cast_off_the_mask']) assert(JSON.stringify(focusOf(DATA, 'worshipdom', k).available).includes('zin_afrit_dead'), k);
   // The compiler's own secret scan found nothing.
   assert(!base.problems.some(p => /secret_/.test(p.code)));
 });

@@ -49,7 +49,7 @@ export function call(effect, args = {}) {
 export const takeArgs = (...names) => names.map(n => `set_temp_variable = { zin_${n} = zin_arg_${n} }\nclear_variable = zin_arg_${n}`).join('\n');
 
 // ------------------------------------------------------------------------------------------------- story dates
-// Erdae has no leap days (Paradox wiki, Event modding). Date d moves to start + (d - start) * pace for pace 1.0, 1.5, 0.75.
+// Aoaz has no leap days (Paradox wiki, Event modding). Date d moves to start + (d - start) * pace for pace 1.0, 1.5, 0.75.
 const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const serial = ([y, m, d]) => y * 365 + MONTH_DAYS.slice(0, m - 1).reduce((a, b) => a + b, 0) + d - 1;
 const unserial = n => {

@@ -1,6 +1,6 @@
 // Tests for the diplomacy module (docs/specs/03_gameplay/03_diplomacy_and_factions.md, vanilla removal stage 2):
 // the leagues and their rules, the autonomy states, the Peace Council, occupation and resistance, research sharing,
-// and the Erdae text. They run on the module's own output (a Staged built from the roster) and check it against the
+// and the Aoaz text. They run on the module's own output (a Staged built from the roster) and check it against the
 // installed game's documentation and localisation. Run: node --test tools/content/diplomacy.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -191,12 +191,12 @@ test('Every rule belongs to a group and every group lists defined rules', () => 
   assert.equal(groups.filter(g => g.k !== 'zin_rule_group_joining').filter(g => g.v[0].v.some(x => /^zin_faction_rule_join_/.test(x.v))).length, 0, 'no other group lists a ZIN joining rule');
 });
 
-test('The engine rule keys the templates and defines name are all kept, with Erdae text', () => {
+test('The engine rule keys the templates and defines name are all kept, with Aoaz text', () => {
   for (const id of ['war_declaration_rule_any_country', 'war_declaration_rule_independent_countries_only', 'war_declaration_rule_faction_leader_only', 'war_declaration_rule_major_only', 'call_to_war_rule_faction_leader_only', 'call_to_war_rule_major_only', 'call_to_war_rule_independent_only',
     'change_leader_rule_never', 'change_leader_rule_manpower', 'change_leader_rule_industry', 'change_leader_rule_influence', 'change_leader_rule_manifest_below_35', 'faction_peace_rule_puppeting_focus', 'faction_peace_rule_no_puppeting', 'faction_peace_rule_liberation_focus', 'faction_peace_rule_ideology_focus', 'faction_peace_rule_conquest_focus', 'faction_peace_take_claimed_focus',
     'goals_only_faction_leader', 'government_in_exile_allowed', 'manpower_contribution_small', 'manpower_contribution_medium', 'manpower_contribution_high', 'dismissal_rule_world_tension', 'dismissal_rule_offensive_war']) {
     assert(defined('common/factions/rules/zin_factions.txt').includes(id), id);
-    assert(replaceLoc.has(id), `${id} has Erdae text that replaces the vanilla line`);
+    assert(replaceLoc.has(id), `${id} has Aoaz text that replaces the vanilla line`);
   }
   assert(defined('common/factions/templates/zin_factions.txt').includes('faction_template_generic'), 'the define FACTION_DEFAULT_TEMPLATE names this key');
 });
@@ -349,7 +349,7 @@ test('Peace categories keep the engine keys and the default; prices and desires 
   const cats = parse(text('common/peace_conference/categories/zin_peace.txt'))[0].v;
   assert.deepEqual(cats.map(c => c.k), ['other', 'occupation', 'ideology', 'is_core', 'core_of_ally', 'has_claim', 'defensive_war', 'treaties_or_conferences', 'belonged_to_someone_else', 'events_or_focuses', 'continuous_political_action']);
   assert.equal(cats.filter(c => c.v.some(x => x.k === 'default')).length, 1);
-  for (const c of cats) assert(replaceLoc.has(c.v.find(x => x.k === 'name').v), `${c.k}: Erdae name`);
+  for (const c of cats) assert(replaceLoc.has(c.v.find(x => x.k === 'name').v), `${c.k}: Aoaz name`);
   const costs = parse(text('common/peace_conference/cost_modifiers/zin_peace.txt'))[0].v;
   for (const c of costs) {
     const mult = Number(c.v.find(x => x.k === 'cost_multiplier').v);

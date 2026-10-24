@@ -24,7 +24,7 @@ The owner set the order on 18 October 2026: what matters most comes first.
 
 ## The starting situation
 
-The campaign starts on **1 Thaw, 4A 1748** (owner-fixed situation, proposed date). The Golden King reigns. Eindil has not appeared. Afrit is unrevealed: the world knows only the Deliverer it worships. Erdae seems at peace, and nobody who matters is at war. The dangers are hidden or dismissed. Every system must respect this: nothing at game start may reveal Afrit, show Eindil or begin a great war.
+The campaign starts on **1 Thaw, 4A 1748** (owner-fixed situation, proposed date). The Golden King reigns. Eindil has not appeared. Afrit is unrevealed: the world knows only the Deliverer it worships. Aoaz seems at peace, and nobody who matters is at war. The dangers are hidden or dismissed. Every system must respect this: nothing at game start may reveal Afrit, show Eindil or begin a great war.
 
 ## Folders
 

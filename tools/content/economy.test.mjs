@@ -48,7 +48,7 @@ test('The resource file keeps the seven engine keys and frames of the installed 
   assert(braces(text('common/resources/00_resources.txt')));
 });
 
-test('Every resource carries its Erdae name in all the key families the engine reads', () => {
+test('Every resource carries its Aoaz name in all the key families the engine reads', () => {
   const names = { oil: 'Essence', aluminium: 'Timber', rubber: 'Horses', tungsten: 'Stone', steel: 'Iron', chromium: 'Gold', coal: 'Grain' };
   for (const [k, n] of Object.entries(names)) {
     assert.equal(replaceLoc.get(`PRODUCTION_MATERIALS_${k.toUpperCase()}`), n);
@@ -94,7 +94,7 @@ test('No ZIN state or map file places the landmark or a vanilla landmark', async
   }
 });
 
-test('Every building key keeps its engine definition and gets an Erdae name, plural and description', async () => {
+test('Every building key keeps its engine definition and gets an Aoaz name, plural and description', async () => {
   const types = new Set(await E.buildingTypes());
   const used = data.buildings.filter(b => b.status === 'used');
   assert.equal(used.length, 17);
@@ -123,7 +123,7 @@ test('The hidden buildings (refinery, silo, rocket site, reactors, dams, canals)
   assert.equal(replaceLoc.get('fuel_silo'), 'Essence Vault');
 });
 
-test('The state categories keep their slots and read in Erdae terms in both key families', async () => {
+test('The state categories keep their slots and read in Aoaz terms in both key families', async () => {
   assert.equal(data.stateCategories.length, 13);
   await E.assertEngineKeys(data);
   for (const c of data.stateCategories) { assert.equal(replaceLoc.get(`STATE_CATEGORY_${c.key}`), c.name); assert.equal(replaceLoc.get(c.key), c.name); }

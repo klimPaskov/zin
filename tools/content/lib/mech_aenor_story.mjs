@@ -230,7 +230,7 @@ export function aenorStory(D, T, tt) {
 		immediate: list('if = {', 'limit = { check_variable = { zin_aenor_camp_host < 35 } }', 'set_variable = { zin_aenor_camp_host = 35 }', '}', 'set_temp_variable = { zin_arg_camp = 4 }', 'zin_aenor_raise_camp = yes'),
 		options: [{ key: 'a', text: 'Let the banners be raised.' }] });
 	E.push({ id: 400, kind: 'country', title: 'The Crown of Aen', picture: 'coronation', requires: ['zin_golden_king_dead'],
-		desc: 'The captains, the lords of the dominions and the stranded soldiers of half of Erdae stand in the ruins of Parim and ask Eindil, son of Ein and grandson of Aen, to take the crown. Around his neck he wears the Necklace of the Abyss. Its price is not yet known.',
+		desc: 'The captains, the lords of the dominions and the stranded soldiers of half of Aoaz stand in the ruins of Parim and ask Eindil, son of Ein and grandson of Aen, to take the crown. Around his neck he wears the Necklace of the Abyss. Its price is not yet known.',
 		options: [{ key: 'a', text: 'Long live the King.', effect: list('if = {', 'limit = { zin_aenor_eindil_can_be_crowned = yes }', 'zin_aenor_crown_eindil = yes', '}', 'else = {', 'country_event = { id = zin_aenor.400 days = 30 }', '}') }] });
 	E.push({ id: 401, kind: 'news', title: 'Eindil Is Crowned', picture: 'crown_of_aen', requires: ['zin_eindil_crowned'],
 		desc: 'The Fourth Age has a king of Aen\'s line again. His coronation did not erase the grievances of those who watched it.',

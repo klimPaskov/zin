@@ -75,7 +75,7 @@
     "fuelResource": "oil",
     "provisions": "Provisions",
     "storedEssence": "Stored Essence",
-    "meaning": "The engine's energy system is the Provisions of Erdae: bread, fodder and firewood that keep the hands of every workshop, forge and yard at work. Grain extracted in a realm is eaten as Provisions (RESOURCE_TO_ENERGY_COEFFICIENT per unit) on top of a small base the hearths always supply (BASE_COUNTRY_ENERGY_PRODUCTION). The engine's fuel bar is Stored Essence: present, never spent, because every equipment burns 0 fuel (warfare spec).",
+    "meaning": "The engine's energy system is the Provisions of Aoaz: bread, fodder and firewood that keep the hands of every workshop, forge and yard at work. Grain extracted in a realm is eaten as Provisions (RESOURCE_TO_ENERGY_COEFFICIENT per unit) on top of a small base the hearths always supply (BASE_COUNTRY_ENERGY_PRODUCTION). The engine's fuel bar is Stored Essence: present, never spent, because every equipment burns 0 fuel (warfare spec).",
     "buildings": {
       "energy_infrastructure": "Granaries",
       "industrial_infrastructure": "Mine and Quarry Roads"
@@ -241,28 +241,28 @@
       "status": "hidden",
       "name": "Essence Still",
       "plural": "Essence Stills",
-      "desc": "A still draws Stored Essence from the raw essence of the state. No art of Erdae raises one."
+      "desc": "A still draws Stored Essence from the raw essence of the state. No art of Aoaz raises one."
     },
     {
       "key": "fuel_silo",
       "status": "hidden",
       "name": "Essence Vault",
       "plural": "Essence Vaults",
-      "desc": "A warded vault with room for more Stored Essence. No art of Erdae raises one."
+      "desc": "A warded vault with room for more Stored Essence. No art of Aoaz raises one."
     },
     {
       "key": "rocket_site",
       "status": "hidden",
       "name": "Ritual Ground",
       "plural": "Ritual Grounds",
-      "desc": "A ring of stones kept for the rarest rites. None stand in Erdae."
+      "desc": "A ring of stones kept for the rarest rites. None stand in Aoaz."
     },
     {
       "key": "mega_gun_emplacement",
       "status": "hidden",
       "name": "Great Engine",
       "plural": "Great Engines",
-      "desc": "A siege engine of a size no wright of Erdae has built."
+      "desc": "A siege engine of a size no wright of Aoaz has built."
     },
     {
       "key": "nuclear_reactor",
@@ -356,7 +356,7 @@
   "interimLandmark": {
     "key": "zin_interim_landmark",
     "name": "Standing Monument",
-    "desc": "A monument that stands in no state until Erdae's own landmarks, such as the Golden Court and the gate at Kingson, are raised."
+    "desc": "A monument that stands in no state until Aoaz's own landmarks, such as the Golden Court and the gate at Kingson, are raised."
   },
   "stateCategories": [
     {
@@ -1019,7 +1019,7 @@
         "path": "gfx/interface/buildings/building_icon_strip.dds",
         "frames": 31,
         "size": "46x46",
-        "order": "icon_frame of each building; the 17 used buildings get Erdae icons and the rest a plain plate"
+        "order": "icon_frame of each building; the 17 used buildings get Aoaz icons and the rest a plain plate"
       }
     ],
     "texticons": [

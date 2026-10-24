@@ -21,7 +21,7 @@ All six are realms of men with very small populations: manpower effects are hund
 
 ## Lore basis
 
-**Established** (vault: *Erdae and Its Regions*, *The First Age of Erdae*, *The Fourth Age of Erdae*): Triton's Islands lie west of the West Lands and arc around the Pupor Ocean; Adel, Pollos, Raerby and Nondondor are there. In the First Age island peoples carried the Grand Alliance's supplies and escorts across Erdae's stormy seas. Lorien's crew for Eindil's voyage north included island navigators (which islands is not stated).
+**Established** (vault: *Aoaz and Its Regions*, *The First Age of Aoaz*, *The Fourth Age of Aoaz*): Triton's Islands lie west of the West Lands and arc around the Pupor Ocean; Adel, Pollos, Raerby and Nondondor are there. In the First Age island peoples carried the Grand Alliance's supplies and escorts across Aoaz's stormy seas. Lorien's crew for Eindil's voyage north included island navigators (which islands is not stated).
 
 **Proposed (vault and earlier specs):** the Pupor charts of 4A 702; Senra of Triton's Islands; that the islands live by fishing, piracy and charting, with tensions of piracy, fishing rights and naval frontiers (start situation); the rulers Speaker Sanderz, Guild-Master Hesos Pol, Captain-Speaker Lemo Raer and King Benan of Nondondor ([characters](../../02_lore/02_characters.md)); Gunwaith's *Charts of the Pupor Ocean* and its charter event to Adel; the journey's ports of call in Triton's Islands.
 
@@ -56,7 +56,7 @@ All six are realms of men with very small populations: manpower effects are hund
 
 ### Situation in 4A 1748
 
-Adel is the federation of the northern isles (roster), two states of harbours and chart rooms. Its Chart Hall (proposed) keeps the Pupor charts that the islanders drew in 4A 702 and sold to every crown, and its chart-masters are still the best in Erdae. An island assembly elects the Speaker; Sanderz holds the seat. Adel trades charts and soundings with the West Lands and with Aenor and has no quarrel with anyone.
+Adel is the federation of the northern isles (roster), two states of harbours and chart rooms. Its Chart Hall (proposed) keeps the Pupor charts that the islanders drew in 4A 702 and sold to every crown, and its chart-masters are still the best in Aoaz. An island assembly elects the Speaker; Sanderz holds the seat. Adel trades charts and soundings with the West Lands and with Aenor and has no quarrel with anyone.
 
 ### Role
 

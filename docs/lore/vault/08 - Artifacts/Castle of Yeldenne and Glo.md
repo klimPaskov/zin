@@ -6,7 +6,7 @@ updated: 2026-10-18
 
 # Castle Yeldenne and Glo
 
-**Established:** [[Horos]], a Great Spirit and enormous armored knight, is lord of **Castle Yeldenne** in the [[Erdae and Its Regions|Cold Lands]]. He has guarded **Glo**, an extraordinary **green crystal**, through the ages. It contains the power of [[Glernaen]], a true New God of Power and Wisdom. Glo is also Horos's **literal crystalline heart**. His throne-hall drawing depicts the green crystal below Horos's figure.
+**Established:** [[Horos]], a Great Spirit and enormous armored knight, is lord of **Castle Yeldenne** in the [[Aoaz and Its Regions|Cold Lands]]. He has guarded **Glo**, an extraordinary **green crystal**, through the ages. It contains the power of [[Glernaen]], a true New God of Power and Wisdom. Glo is also Horos's **literal crystalline heart**. His throne-hall drawing depicts the green crystal below Horos's figure.
 
 In the late Fourth Age, [[Afrit]] arrives first to claim Glo and introduces himself as Aenor's king and god. Horos recognizes the intruder as Afrit, brother of [[Eindil]], and warns him that the crystal belongs to a worthy claimant. The two fight. Horos's strength and the power of the castle withstand Afrit's accumulated artifacts until Afrit teleports behind him and wounds him fatally at the neck. Eindil arrives and wounds Afrit, forcing him to retreat to his private dimension.
 

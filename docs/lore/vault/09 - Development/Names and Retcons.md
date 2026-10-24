@@ -9,7 +9,7 @@ updated: 2026-10-18
 | Subject | Current authority | Superseded or proposed |
 | --- | --- | --- |
 | Aenor | Middle Kingdom of men in Middle Lands | Earlier kingdom name Rush |
-| Zol | God of Death and sole Old God in Erdae | Edvoid was the former placeholder |
+| Zol | God of Death and sole Old God in Aoaz | Edvoid was the former placeholder |
 | Volgan | Great Spirit, former servant of a New God | Not one of the Old Gods |
 | Elzon | Great Spirit and Great Necromancer | Earlier open question about rank resolved |
 | Varner | Lesser Spirit and wizard | Not a Great Spirit |
@@ -30,7 +30,7 @@ updated: 2026-10-18
 
 The world creator's full Fourth Age map is the primary overview. The ocean between **West Lands** and **Middle Lands** must eventually be enlarged beyond its drawn gap. The Cold Lands, North Lands, Magical Lands, Dark Lands, Dead Lands, South Lands, East Lands, Triton's Islands, Islands of the South, Lands of the Sun and Zol's Mistake retain their established names.
 
-[[Canon Policy]] · [[Ages of Erdae]] · [[Horos Visual References]]
+[[Canon Policy]] · [[Ages of Aoaz]] · [[Horos Visual References]]
 
 ## Current name of Aen’s grandson
 

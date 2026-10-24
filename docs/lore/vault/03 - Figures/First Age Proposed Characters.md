@@ -28,5 +28,5 @@ The following characters were created as candidate additions on 17 October 2026.
 - Allied Great Spirits may be bound or shattered, but the established cosmology calls them immortal.
 - Do not turn Ithren's proposed ritual into an act of the Old Gods or Holy Seven.
 
-[[The First Age of Erdae]] · [[Grand Alliance]] · [[Battle of Dardan]]
+[[The First Age of Aoaz]] · [[Grand Alliance]] · [[Battle of Dardan]]
 

@@ -4,7 +4,7 @@ status: mixed
 updated: 2026-10-18
 ---
 
-# The Fourth Age of Erdae
+# The Fourth Age of Aoaz
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
@@ -24,7 +24,7 @@ The change was difficult to see from one reign to the next. By the middle centur
 
 ## I. The hidden birthright of Afrit
 
-The truth later revealed in Castle Yeldenne changes the interpretation of several ages of Erdae's history. **Afrit and Eindil were brothers, both sons of Ein and grandsons of Aen**. They belonged to the ancient royal line of the First Men, who were more naturally capable of magic and lived far longer than later men. Their exact birth dates are not established, but they are approximately the same age. Eindil's many years in supernatural sleep and Afrit's long magical survival explain why one awakens ignorant of history while the other has spent ages engineering it.
+The truth later revealed in Castle Yeldenne changes the interpretation of several ages of Aoaz's history. **Afrit and Eindil were brothers, both sons of Ein and grandsons of Aen**. They belonged to the ancient royal line of the First Men, who were more naturally capable of magic and lived far longer than later men. Their exact birth dates are not established, but they are approximately the same age. Eindil's many years in supernatural sleep and Afrit's long magical survival explain why one awakens ignorant of history while the other has spent ages engineering it.
 
 The brothers were not born as unequal orders of being. Afrit had once been a man of Aen's line. He desired the throne of men, and Ein refused to grant it to him. The full meaning of Ein's refusal, the precise law of inheritance, and the circumstances of the betrayal remain to be written. **Proposed explanation:** Ein named Eindil his heir because he trusted the younger brother's character, despite Afrit believing himself more deserving. Afrit betrayed Eindil and helped put him into the enchanted sleep that eventually ended in the Cold Lands. Ein repudiated Afrit, and Afrit turned to corruption, demonic pacts, worship, and artifacts to obtain by power what his father had denied him.
 
@@ -34,11 +34,11 @@ Afrit's demonic form is genuine, but it is an acquired state, not proof that he 
 
 ## II. Roka's necklace and the gathering of powers
 
-At some point in the Fourth Age, Afrit sought the greatest surviving artifacts of Erdae. Above all he coveted the **Necklace of the Abyss**, held in the depths of the Dead Lands by **Roka**, a huge being of the rhinoceros-headed people of the Abyss. The true history of that people and the necklace's creation remain unknown.
+At some point in the Fourth Age, Afrit sought the greatest surviving artifacts of Aoaz. Above all he coveted the **Necklace of the Abyss**, held in the depths of the Dead Lands by **Roka**, a huge being of the rhinoceros-headed people of the Abyss. The true history of that people and the necklace's creation remain unknown.
 
 Rather than enter the Abyss himself, Afrit sent a master thief. **Sevrin the Unending** is a proposed name. Afrit promised the thief eternal life if he returned with the necklace. The thief crossed hostile lands, reached Roka's domain, obtained the artifact by means not yet established, and brought it back. Afrit fulfilled the bargain by using the necklace's magic to grant him unending life. **Proposed constraint:** the thief ceased to age, but remained capable of pain, capture, and injury. Afrit gave him a gift that also left him dependent upon Afrit's continuing control of the artifact.
 
-The necklace greatly increased the amount of power Afrit could draw and direct. It also strengthened him outside Aenor, though it was at its greatest potency where centuries of worship and magical preparation had made the Middle Kingdom his principal seat. He amassed additional objects collected through trade, theft, excavation, and bargains with servants across Erdae. Proposed artifacts include the **Ring of Doors**, which helps him cross between places and reach his private refuge, the **Crown of Witnesses**, which magnifies his public authority through prepared oaths and institutions, and the **Bracelet of the First Seal**, which preserves part of his personal shield. The names and exact effects of these lesser artifacts remain proposals.
+The necklace greatly increased the amount of power Afrit could draw and direct. It also strengthened him outside Aenor, though it was at its greatest potency where centuries of worship and magical preparation had made the Middle Kingdom his principal seat. He amassed additional objects collected through trade, theft, excavation, and bargains with servants across Aoaz. Proposed artifacts include the **Ring of Doors**, which helps him cross between places and reach his private refuge, the **Crown of Witnesses**, which magnifies his public authority through prepared oaths and institutions, and the **Bracelet of the First Seal**, which preserves part of his personal shield. The names and exact effects of these lesser artifacts remain proposals.
 
 Afrit's court developed two faces. Publicly he was the benevolent Aurevan. Privately he maintained a council of selected followers, spies, sorcerers, agents in foreign courts, and creatures who knew his true nature. Through that council he built ties in the East Lands and South Lands as a precaution against losing Aenor. The future invasion of the eastern host was therefore neither entirely spontaneous nor entirely under his control.
 
@@ -170,7 +170,7 @@ Varner stood against the darkness rolling down from Zol's armies. He lifted curs
 
 ## XI. The gathering of the New Gods
 
-Eindil's spirit reached a divine realm, understood by him as Heaven. The New Gods gathered around him. **Glernaen's crystal Glo was the bridge that allowed this encounter.** The gods knew that a descendant of Aen had tried to unite the divided peoples of Erdae without claiming dominion over them.
+Eindil's spirit reached a divine realm, understood by him as Heaven. The New Gods gathered around him. **Glernaen's crystal Glo was the bridge that allowed this encounter.** The gods knew that a descendant of Aen had tried to unite the divided peoples of Aoaz without claiming dominion over them.
 
 In this proposed version of the encounter, Eindil could not see every god clearly. One appeared as a figure bearing a lamp that had never gone out, and spoke of the common people Eindil had protected on his travels. Another wore the likeness of rain over ploughed fields and remembered Aenor's long centuries of hunger. Others spoke of promises kept, wars prevented, and those whom kings had forgotten. Their individual names and domains remain unwritten. Last came **Glernaen**, the New God of Power and Wisdom, whose voice Eindil recognized in the living crystal.
 
@@ -180,7 +180,7 @@ In this proposed version of the encounter, Eindil could not see every god clearl
 >
 > **Glernaen:** "Then carry what we can give. You may yet fall, and we cannot promise to raise you again."
 
-The New Gods could not remain in Erdae to fight the war themselves. Its magic and the limits between divine realms constrained their direct manifestation. Instead, each offered a measured part of their power through Glo. They restored Eindil to life, renewed his armor, and gave him the strength to face Volgan again. His eyes shone with lightning and the sword of Horos blazed with an intensity it had never held in the old guardian's hand.
+The New Gods could not remain in Aoaz to fight the war themselves. Its magic and the limits between divine realms constrained their direct manifestation. Instead, each offered a measured part of their power through Glo. They restored Eindil to life, renewed his armor, and gave him the strength to face Volgan again. His eyes shone with lightning and the sword of Horos blazed with an intensity it had never held in the old guardian's hand.
 
 The New Gods' intervention was extraordinary and costly. **Proposed rule:** they could make this one collective offering only because Glo already carried Glernaen's power and because Eindil freely accepted the burden. It was not a spell they could simply repeat whenever a favorite champion died. Their gift made him mighty, but not invulnerable or equal to an Old God.
 
@@ -194,13 +194,13 @@ The victory did not end the battle. Zol himself came forth.
 
 ## XIII. The Old God beneath the black sky
 
-Zol had been present in Erdae long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Erdae's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise.
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise.
 
-**Proposed explanation for this exceptional manifestation:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces temporarily aligned enough of Erdae's magic for Zol to embody a fraction of himself. This cost him strength and could not last indefinitely. He appeared in a form that the mortal witnesses could perceive, not in the fullness of his unfaded cosmic existence.
+**Proposed explanation for this exceptional manifestation:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces temporarily aligned enough of Aoaz's magic for Zol to embody a fraction of himself. This cost him strength and could not last indefinitely. He appeared in a form that the mortal witnesses could perceive, not in the fullness of his unfaded cosmic existence.
 
 Eindil charged. Zol stopped him with one finger, took Horos's sword, and crushed it into glittering shards. He seized Eindil by the throat and began drawing out the combined gifts of the New Gods. The power in Eindil's armor dimmed. With his remaining strength he caught a shard of the shattered blade and drove it into the body Zol had made.
 
-The fragment still carried Glernaen's power through Glo. The wound did not kill Zol, but destabilized the form he had struggled to create. A storm swept across Erdae and the sky darkened. Zol struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
+The fragment still carried Glernaen's power through Glo. The wound did not kill Zol, but destabilized the form he had struggled to create. A storm swept across Aoaz and the sky darkened. Zol struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
 
 At last **Lorien** arrived with Gala elves and some of the great lords and spirits who had survived the long history since Dardan. They had not come to restore Aenoran empire. They came because an Old God's victory would destroy the freedom of the living, elves and men alike. The oldest warriors spent the remnants of their own power holding the black presence back. Several great spirits were destroyed or broken. Lorien challenged Zol directly and died in the struggle.
 
@@ -210,9 +210,9 @@ Their sacrifice forced the embodied Old God to expend more power than he could s
 
 But the fourth age had not ended. Afrit returned from the East Lands with a new eastern host. He had watched the destruction of Volgan and Zol's withdrawal, and he believed Eindil's wounds had finally created the opportunity he needed. He demanded that the exhausted kingdoms recognize him as ruler of both East and Middle Lands.
 
-A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Erdae. Afrit found Eindil weakened by the struggle against Zol. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
+A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Aoaz. Afrit found Eindil weakened by the struggle against Zol. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
 
-With Eindil gone, Afrit seized the capital once more. He proclaimed himself king over Aenor, the East Lands, and ultimately every people of Erdae. That proclamation was larger than the territory he actually controlled, but his surviving army and his court treated it as a universal claim. His old council resumed its work, and opposition was punished.
+With Eindil gone, Afrit seized the capital once more. He proclaimed himself king over Aenor, the East Lands, and ultimately every people of Aoaz. That proclamation was larger than the territory he actually controlled, but his surviving army and his court treated it as a universal claim. His old council resumed its work, and opposition was punished.
 
 **Proposed explanation for Eindil's survival:** he fell into water below the cliff and was caught among rocks. Glo's remaining life-preserving magic slowed his death without healing his severed arm or terrible wounds. Alleria of Selen and surviving scouts found him and carried him into hiding. He survived through exceptional care, time, and the limited remaining strength of the crystal. Afrit had not searched the ravine because he had seen a mortal body fall from a height no man could ordinarily survive.
 
@@ -232,11 +232,11 @@ Afrit struck first with overwhelming force. Eindil survived by changing the batt
 
 Golbran had followed through the passage by holding the same momentary magical opening. He climbed behind Afrit and used the final remnant of Varner's teachings to sever the necklace's binding, tearing it from the false god's neck. Without it, Afrit's accumulated demonic power and supernatural protection collapsed. The ancient brother of Eindil stood exposed as a mortal man. Eindil cut his throat.
 
-Afrit bled and struggled for breath. The man who had served as the god of men, killed their king, and demanded dominion over all Erdae died without his miracles. There was no final teleportation and no sustaining artifact left to save him.
+Afrit bled and struggled for breath. The man who had served as the god of men, killed their king, and demanded dominion over all Aoaz died without his miracles. There was no final teleportation and no sustaining artifact left to save him.
 
 Eindil himself was dying. Golbran gave the last of his life and magic to close Eindil's most dangerous wounds. The small creature died beside the two brothers. Its true origin remained unknown. Eindil was alone.
 
-He took the Necklace of the Abyss and put it around his own neck. The act was necessary, in this proposed version, to reopen the passage from Afrit's private refuge to Erdae. It did not mean that the necklace was harmless or that he had accepted Afrit's methods. He returned to the palace carrying evidence of the false king's fall and an artifact of unresolved danger.
+He took the Necklace of the Abyss and put it around his own neck. The act was necessary, in this proposed version, to reopen the passage from Afrit's private refuge to Aoaz. It did not mean that the necklace was harmless or that he had accepted Afrit's methods. He returned to the palace carrying evidence of the false king's fall and an artifact of unresolved danger.
 
 ## XVI. The king of men
 

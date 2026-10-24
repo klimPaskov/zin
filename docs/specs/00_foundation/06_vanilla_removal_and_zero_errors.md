@@ -20,9 +20,9 @@ Music and sound folders are covered in [08_art_and_assets/04_music_and_sound.md]
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| On 1 Thaw 4A 1748 the Golden King reigns, Eindil has not appeared, Afrit is unrevealed and Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748* |
+| On 1 Thaw 4A 1748 the Golden King reigns, Eindil has not appeared, Afrit is unrevealed and Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
 | Nothing a player sees is vanilla unless it is engine-generic; no modern words where players read | owner goal, 18 October 2026 | [PROGRAM.md](../PROGRAM.md) |
-| About 300 crowns, dominions, clans and island lordships divide Erdae; the mod has 305 countries | established working table | *The Campaign of 4A 1748*, roster |
+| About 300 crowns, dominions, clans and island lordships divide Aoaz; the mod has 305 countries | established working table | *The Campaign of 4A 1748*, roster |
 | No firearms, aircraft or atomic weapons in the setting | design (absence in the vault) | [05_defines_and_rules.md](05_defines_and_rules.md) |
 | Every disposition, stage, budget and file name below | **proposed** | this spec |
 
@@ -85,13 +85,13 @@ Section 3 follows `tools/content/data/vanilla/dispositions.json` (210 rows, `cur
 
 | Folder | ZIN content today | Remaining work |
 | --- | --- | --- |
-| `history/states` | 1,332 Erdae states | none |
+| `history/states` | 1,332 Aoaz states | none |
 | `history/countries` | 305 country histories; the 739 inactive files were deleted in stage 1 | none |
 | `history/units` | `<TAG>_world.txt` OOBs | Warfare replaces the vanilla units in them |
-| `map/strategicregions`, `map/supplyareas` | Erdae regions; no supply areas (`emptyAllowed`) | map specs |
+| `map/strategicregions`, `map/supplyareas` | Aoaz regions; no supply areas (`emptyAllowed`) | map specs |
 | `common/bookmarks` | `world.txt` (dated 1936) | [01_start_and_calendar.md](01_start_and_calendar.md) |
 | `common/on_actions` | `world.txt` (empty block), `zin_startup.txt` | mechanic specs add `zin_*.txt` |
-| `common/ai_areas` | Erdae areas | [06_historical_path_and_ai.md](../03_gameplay/06_historical_path_and_ai.md) |
+| `common/ai_areas` | Aoaz areas | [06_historical_path_and_ai.md](../03_gameplay/06_historical_path_and_ai.md) |
 | `common/ai_strategy`, `common/ai_strategy_plans` | interim stubs `zin_interim_ai_strategy.txt`, `zin_interim_plan.txt` (stage 1) | historical-path spec; the foundation's `zin_peace.txt` ([04_countries_and_states.md](04_countries_and_states.md)) |
 | `common/decisions` | interim stub `zin_decisions_interim.txt`: one hidden decision `zin_interim_noop` (stage 1) | Mechanic specs replace it |
 | `events` | interim stub `zin_world.txt` (namespace `zin_world`, one hidden event); `zin_engine_events.txt` (permanent, section 3.6); `zz_zin_bridge_events.txt` (bridges) | [06_events](../06_events/) |
@@ -109,7 +109,7 @@ Section 3 follows `tools/content/data/vanilla/dispositions.json` (210 rows, `cur
 | `common/country_leader` | 4 | 1,046 | replace | `00_zin_leader_traits.txt` ships beside the vanilla files since stage 1. The folder is replaced together with the unit-leader trait overrides, because the kept `common/unit_leader/00_traits.txt` names the vanilla advisor traits (`specialist_advisor_trait = army_chief_offensive_1` and the rest; about 100 malformed-token lines in the first stage-1 Linux run). | 2 | characters |
 | `common/unit_leader` | 13 | 135 | override 5 files, keep 8 | Never `replace_path`: it crashes at `map/rocketsites.txt` (wiki). Override `00_traits.txt`, `ETH_traits.txt`, `JAP_traits.txt`, `NSB_traits.txt` and `SWE_traits.txt` with ZIN files of the same names that hold ZIN commander traits and no vanilla tag or DLC country condition. Keep the eight `00_*_skills.txt` and `SIA_traits.txt` (engine skill tables, no tag refs). | 2 | warfare |
 | `common/scientist_traits` | 1 | 0 | replace | `zin_scholar_traits.txt` (scholars and artificers) | 2 | warfare |
-| `common/names` | 1 | 364 | replace | `zin_names.txt` (Erdae name pools per ZIN tag, with a default pool for the dynamic tags). Replaced together with the vanilla tags in stage 1. | 1 (done) | peoples |
+| `common/names` | 1 | 364 | replace | `zin_names.txt` (Aoaz name pools per ZIN tag, with a default pool for the dynamic tags). Replaced together with the vanilla tags in stage 1. | 1 (done) | peoples |
 | `common/dynamic_modifiers` | 11 | 4,635 | replace | `zin_dynamic_modifiers.txt`: the permanent `sabotaged_resources` (section 3.6) and bridges. The diplomacy and mechanic specs add theirs. | 1 (done) | diplomacy, mechanics |
 | `common/modifiers` | 5 | 58 | override 3, keep 2 | Keep `00_static_modifiers.txt` and `01_event_modifiers.txt`: the engine applies static modifiers by name. Override `AAT_`, `BBA_` and `MUN_power_balance_modifiers.txt` with files of the same names that hold one unused ZIN modifier each, together with `common/bop`. | 2 | diplomacy |
 | `common/bop` | 10 | 707 | replace | `zin_bop.txt`, for balance-of-power mechanics the mechanic specs choose (for example the Golden Court's camps). Until then, one balance gated to no country. | 2 | mechanics |
@@ -145,14 +145,14 @@ All replacements in this group belong to [01_warfare.md](../03_gameplay/01_warfa
 | `common/units` | 45 | 10 | replace | ZIN sub-units. Every equipment needs a sub-unit, or the AI crashes (wiki). |
 | `common/units/equipment`, `/modules`, `/upgrades` | 45, 3, 3 | 52 | replace | ZIN equipment archetypes and modules. Keep the keys `convoy`, `train_equipment` and `motorized_equipment` defined in ZIN files. |
 | `common/units/critical_parts`, `common/units/unit_modifiers` | 1, 1 | 0 | keep | Engine parts and modifiers, re-localised (warfare §15.3) |
-| `common/units/names`, `/names_divisions`, `/names_ships`, `/names_railway_guns` | 8, 100, 65, 11 | 5,197 | replace | Erdae host and ship names per people. Railway gun names get one ZIN file with an empty generic list. Since stage 1, `zin_division_names.txt` gives every realm one generic host list. |
+| `common/units/names`, `/names_divisions`, `/names_ships`, `/names_railway_guns` | 8, 100, 65, 11 | 5,197 | replace | Aoaz host and ship names per people. Railway gun names get one ZIN file with an empty generic list. Since stage 1, `zin_division_names.txt` gives every realm one generic host list. |
 | `common/units/codenames_operatives` | 14 | 60 | replace | `zin_operative_codenames.txt` (agents of courts) — diplomacy |
 | `common/technologies`, `common/technology_tags` | 13, 1 | 678 | replace | ZIN tree, folders and categories |
 | `common/technology_sharing` | 11 | 400 | replace | `zin_tech_sharing.txt`: groups for the ZIN leagues (diplomacy) |
 | `common/doctrines/folders`, `/grand_doctrines`, `/tracks`, `/subdoctrines/land`, `/sea`, `/air`, `/special_forces` | 2, 5, 5, 4, 4, 4, 1 | 142 | replace | ZIN doctrines. The special forces subfolder gets one hidden ZIN subdoctrine, so that it is not empty. |
 | `common/unit_tags` | 1 | 0 | replace | Vanilla categories plus the ZIN categories (warfare §15.1) |
 | `common/equipment_groups` | 1 | 0 | replace | ZIN groups for workshop organisations |
-| `common/military_industrial_organization/organizations` | 55 | 4,771 | replace | `zin_workshops.txt`: the economy spec's Erdae workshops, or one generic workshop per equipment group |
+| `common/military_industrial_organization/organizations` | 55 | 4,771 | replace | `zin_workshops.txt`: the economy spec's Aoaz workshops, or one generic workshop per equipment group |
 | `common/military_industrial_organization/policies`, `/ai_bonus_weights` | 4, 1 | 3 | replace | `zin_workshop_policies.txt`, `zin_ai_bonus_weights.txt` |
 | `common/special_projects/projects`, `/project_tags`, `/prototype_rewards`, `/specialization` | 6, 1, 5, 1 | 37 | replace | `zin_great_works.txt`: one project per tag (for example the wall works, warded hulls). An empty set crashes or errors, so one hidden project stays until the economy spec fills the folder. |
 | `common/raids`, `common/raids/categories` | 8, 1 | 378 | replace | No nuclear or paratrooper raids. `zin_raids.txt` holds land infiltration raids re-themed as night raids, and one category file. |
@@ -160,10 +160,10 @@ All replacements in this group belong to [01_warfare.md](../03_gameplay/01_warfa
 | `common/combat_tactics.txt` | 1 | 6 | override | Same file name. Vanilla content minus the three `JAP` and `SOV` tactics, generated by the warfare module (rule 5) |
 | `common/ai_templates`, `common/ai_equipment`, `common/ai_navy/fleet`, `/goals`, `/taskforce` | 15, 22, 8, 8, 8 | 1,395 | replace | ZIN AI templates for every ZIN template role. A missing template crashes the AI (wiki). |
 | `common/ai_focuses` | 8 | 0 | replace | `zin_ai_focuses.txt`: the engine's AI research focuses under their engine keys with ZIN weights. Stage 1 (done). |
-| `common/ai_faction_theaters` | 1 | 108 | replace | `zin_theaters.txt`: one theater per Erdae region, built from the 275 strategic regions. This fixed B10. Stage 1 (done). |
+| `common/ai_faction_theaters` | 1 | 108 | replace | `zin_theaters.txt`: one theater per Aoaz region, built from the 275 strategic regions. This fixed B10. Stage 1 (done). |
 | `common/operations`, `common/operation_phases` | 6, 16 | 163 | replace | `zin_operations.txt`, `zin_operation_phases.txt`: the court intrigue operations of the diplomacy and Afrit specs |
 | `common/operation_tokens` | 1 | 0 | keep | Generic engine tokens |
-| `common/intelligence_agencies` | 1 | 136 | replace | `zin_agencies.txt`: the agency names and emblems of Erdae courts (art pipeline) |
+| `common/intelligence_agencies` | 1 | 136 | replace | `zin_agencies.txt`: the agency names and emblems of Aoaz courts (art pipeline) |
 | `common/intelligence_agency_upgrades` | 1 | 1 | override | Same file name, with the one vanilla tag condition removed (rule 5) |
 | `common/scorers/country` | 4 | 34 | override | Same four file names, ZIN targets with no vanilla tag weights |
 | `common/factions/goals`, `/rules`, `/rules/groups`, `/templates`, `/upgrades`, `/upgrades/groups`, `/member_upgrades`, `/member_upgrades/member_groups`, `/icons` | 4, 9, 1, 10, 1, 1, 1, 1, 1 | 605 | replace | The ZIN leagues (Middle Kingdom Concord and the others), goals and the `zin_faction_rule_*` rules, keeping the vanilla rule keys the diplomacy spec reuses |

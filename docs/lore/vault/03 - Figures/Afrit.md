@@ -20,4 +20,4 @@ Eindil, helped by Alleria and Golbran, stripped away Afrit's rings, wards, and o
 
 **Proposed names and mechanisms:** [[Aurevan the Deliverer|Aurevan]], the Ring of Doors, a prepared Crown of Witnesses and Bracelet of First Seal, the thief Sevrin, councilor Merovan, and details of Afrit's private realm. The original betrayal's exact manner is unwritten. His brotherly status and final mortal vulnerability are established.
 
-[[The Fourth Age of Erdae]] · [[The Last Battle in the Palace]] · [[Necklace of the Abyss]]
+[[The Fourth Age of Aoaz]] · [[The Last Battle in the Palace]] · [[Necklace of the Abyss]]

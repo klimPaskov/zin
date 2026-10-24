@@ -8,7 +8,7 @@ updated: 2026-10-18
 
 ## 17 October 2026: Cosmology and First Age
 
-- Established the Supreme Creator, Holy Seven, Old and New Gods, Great and Lesser Spirits, and Erdae's peoples.
+- Established the Supreme Creator, Holy Seven, Old and New Gods, Great and Lesser Spirits, and Aoaz's peoples.
 - Zol is an Old God limited by the Fading and the local magic. Volgan is a Great Spirit; Damned Spirits live deep underground.
 - Replaced an older thematic age scheme with the numbered Ages. First Age fixed at 1,675 years, beginning when Aen wins the War of Men.
 - Expanded Aenor's founding, western expansion, Volgan's invasion, Dardan, Edran's Grand Alliance, and Elzon's defense of the Dead Lands.

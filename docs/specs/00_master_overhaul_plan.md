@@ -4,9 +4,9 @@
 
 ## 1. Identity: what ZIN is
 
-ZIN is **a chronicle of the last peaceful years of Erdae**. Nobody at the start knows a great war is coming. The Golden King reigns in Parim, the old leagues hold, caravans cross the Great Wall's gates, and the player feels, in small signs, that something is wrong. The campaign is a long dusk. A player should be able to say, one minute in: *this is not Hearts of Iron IV*.
+ZIN is **a chronicle of the last peaceful years of Aoaz**. Nobody at the start knows a great war is coming. The Golden King reigns in Parim, the old leagues hold, caravans cross the Great Wall's gates, and the player feels, in small signs, that something is wrong. The campaign is a long dusk. A player should be able to say, one minute in: *this is not Hearts of Iron IV*.
 
-**The first minute.** A menu with a painted Erdae scene and an original frame. A loading screen with a quote and a tip written for Erdae. A country-selection screen of crowns, banners and peoples, not of modern leaders. A map that reads as a continent of valleys, ranges and lakes, with names in a dozen languages. A date that reads "1 Thaw, 4A 1748" (done). A top bar of provisions, levies, forges, favour and the Gathering Dark. No modern word, icon or sound anywhere.
+**The first minute.** A menu with a painted Aoaz scene and an original frame. A loading screen with a quote and a tip written for Aoaz. A country-selection screen of crowns, banners and peoples, not of modern leaders. A map that reads as a continent of valleys, ranges and lakes, with names in a dozen languages. A date that reads "1 Thaw, 4A 1748" (done). A top bar of provisions, levies, forges, favour and the Gathering Dark. No modern word, icon or sound anywhere.
 
 ### Design pillars
 
@@ -28,16 +28,16 @@ Every system answers to these. A feature that serves none is cut.
 | P1 | The map is rebuilt from a geography model with the improved HOI4 Agent Tools pipeline ([01_map/04_map_overhaul_plan.md](01_map/04_map_overhaul_plan.md), the tool plan in the tool repository). The 5,120 x 2,560 size stays; provinces rise to 9,000 to 11,000. | The owner's review; the tool audit shows the causes. |
 | P2 | The world edge uses an open-sea band plus correct frame borders (rim wall as fallback). The probe maps are verified in the isolated Linux run, never on Windows. | The engine wraps the map and no setting removes it. |
 | P3 | The Great Lake is an inland sea with a fresh-water look (sea provinces, a strategic region, ports on its shore); every other lake is a true lake province. | Lore puts ports on the Great Lake; a lake province cannot host fleets. |
-| P4 | The Great Wall of Aenor is an impassable range with four to six named gates carrying level-5 forts. | "A hard border" in the vault; gameplay through the gates. |
+| P4 | **Void (owner correction K2, 24 October 2026).** The Great Wall of Aenor is a natural mountain range modelled with passes, valleys, snowlines, impassable sections and named passes with history (requirement R-02); it is not a line of gates. | Owner decision. |
 | P5 | The vanilla energy system is re-themed, not deleted: fuel for the forges, its alert and texts rewritten, defines retuned for a pre-modern economy. | It has a finished interface; removing it risks crashes. |
-| P6 | Modern systems are reshaped, not just renamed: air is dragons and the winged; rockets and nukes are rare rituals; lend-lease and licences become tribute and loans; the intelligence layer becomes court intrigue; the army headquarters and officer corps are kept as Erdae institutions. | The reference mods keep modern rules under new names and read false (lessons: LOTR Expanded, LOTR Mod). |
+| P6 | Modern systems are reshaped, not just renamed: air is dragons and the winged; rockets and nukes are rare rituals; lend-lease and licences become tribute and loans; the intelligence layer becomes court intrigue; the army headquarters and officer corps are kept as Aoaz institutions. | The reference mods keep modern rules under new names and read false (lessons: LOTR Expanded, LOTR Mod). |
 | P7 | Hidden grant-only technologies and sub-units carry monsters, heroes and people-restricted units. | Lesson: grant-only gates (LOTR Expanded, Old World Blues). |
 | P8 | Magic uses special projects (research with failure and scars); guilds and orders use military-industrial organisations. | Both have finished interfaces (LOTR Mod). |
 | P9 | Race is a variable on country and state; every tooltip reads the variable. | Lesson: tag lists break for spawned countries (LOTR Mod). |
 | P10 | Vanilla interface text is replaced from one master glossary (text sweep, section 6); English is written, the other nine languages copy it. | About 12,000 core and 4,100 tooltip keys have no author. |
 | P11 | The career profile, ribbons, medals, achievements, the wiki button and the officer-corps view are hidden or replaced; the weekday names are renamed. | Inventory owner questions, proposals adopted. |
-| P12 | Music and sound are synthesised in code from ZIN-written scores and recipes; vanilla audio stays until each ZIN track is accepted. | INTEGRATION_DECISIONS A9. |
-| P13 | The 40 available Meshy credits buy one 30-credit model, the Great Wall segment. Units of the other peoples reuse the five existing models with new image-generated textures; building houses reuse the vanilla mesh geometry with new image-generated textures (the mesh is referenced, not copied) until credits exist. These are the recorded fallbacks. | Credits are limited. |
+| P12 | **Open (owner question Q-08, 24 October 2026).** Synthesised music and sound conflict with the kit rule that forbids generated or synthesised unit audio; the owner chooses between original synthesised audio and sourced, licensed recordings. Until then this row is not a decision. | INTEGRATION_DECISIONS A9; Q-08. |
+| P13 | **Void (owner correction K2, 24 October 2026):** no Great Wall segment model exists, because the Great Wall is a mountain range. Meshy credits go to unit models. The rest of this row stands: the 40 available Meshy credits (19 October; unverified since) buy one 30-credit model. Units of the other peoples reuse the five existing models with new image-generated textures; building houses reuse the vanilla mesh geometry with new image-generated textures (the mesh is referenced, not copied) until credits exist. These are the recorded fallbacks. | Credits are limited. |
 | P14 | Languages are generated: every culture has a language, and names come from it. | W2. |
 
 ## 3. Tracks
@@ -63,7 +63,7 @@ The ROADMAP orders waves; each wave is complete when its criteria are checked.
 | **1. Foundations** | Tool phase 0 (lakes, colour map, validators, edge) and C5 (geography input); geography model; focus compiler; stage 2 vanilla removal begins (technologies, units, equipment); world bible and languages; UI frame and glossary; art pipeline and asset manifest checks. | M2, M3 (probe), partial S1, W1, W2 |
 | **2. The new world** | Relief, hydrology, climate and look (C6 to C8); partition and borders (C9 to C11); the map is generated; the politics step reruns on it with the demography model and language names; key sites; straits and passes (C12, C13). | M1 to M9, W3, W5 |
 | **3. The ruleset** | Warfare, economy, energy, diplomacy, rules and ideologies complete; the vanilla text sweep; the error budget reaches stage 3. | S1, S2, S4, T2 to T4 |
-| **4. The interface** | The full UI reskin, main menu, panels, alerts, fonts, cursors, loading, the Erdae bar; sprites; the Chronicle. | U1 to U3, T5, C4 |
+| **4. The interface** | The full UI reskin, main menu, panels, alerts, fonts, cursors, loading, the Aoaz bar; sprites; the Chronicle. | U1 to U3, T5, C4 |
 | **5. The story** | Trees for all 305 countries, events and endings, mechanics, characters, portraits, AI. | C1 to C3, C5, S3, S5, AI1, AI2, W4 |
 | **6. Polish and proof** | Audio, assets complete and unique, the every-country sweep, observer runs to 4A 1800, save and load, zero error budget, the final report. | A1 to A4, V1 to V6, P4 |
 
@@ -84,7 +84,7 @@ The GAP rows (114 in all) become specs in wave 0: see section 7. The CSV files a
 
 The largest unowned job. About 12,000 interface keys, 4,100 tooltip keys, the unit and equipment names, the tech descriptions, the rank and weekday names and the alert texts all say modern things. The sweep works like this:
 
-1. A **master glossary** (`tools/content/data/glossary.json`): every engine concept mapped to its Erdae term (factory to workshop, division to host, general to captain-general, and so on), by people where a people differs. It is the single source; all builders read it.
+1. A **master glossary** (`tools/content/data/glossary.json`): every engine concept mapped to its Aoaz term (factory to workshop, division to host, general to captain-general, and so on), by people where a people differs. It is the single source; all builders read it.
 2. **Key families.** The inventory lists each family (core, tooltips, alerts, tech, unit, equipment, ledger, diplomacy). For each, a builder module writes `localisation/replace/zin_<family>_l_english.yml` from templates and the glossary, never a copy of vanilla text.
 3. **Scan.** A build check collects every vanilla key the game can still display (from loaded GUI and scripts), checks it is replaced, and scans all shown text for the banned list (modern words, "1936", real-world names). Unreplaced keys fail the build.
 4. Nine other languages copy the English text.

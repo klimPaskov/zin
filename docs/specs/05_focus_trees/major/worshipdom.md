@@ -10,7 +10,7 @@ Every focus is visible to other players who open the Worshipdom's tree. Until `z
 
 ## Lore basis
 
-- **Established:** Afrit is worshipped as the Deliverer; ordinary people do not know the name Afrit. He rules Aenor through priests, relief houses and councillors; murders the Golden King and is crowned; reaches Yeldenne first and is wounded; abandons Aenor for an eastern kingship that not every eastern state accepts; returns, casts Eindil from a cliff, retakes Aenor and claims all Erdae; and dies in the palace after his artifacts are stripped. The Necklace of the Abyss is his. The Ashen Throne is one of the three endings.
+- **Established:** Afrit is worshipped as the Deliverer; ordinary people do not know the name Afrit. He rules Aenor through priests, relief houses and councillors; murders the Golden King and is crowned; reaches Yeldenne first and is wounded; abandons Aenor for an eastern kingship that not every eastern state accepts; returns, casts Eindil from a cliff, retakes Aenor and claims all Aoaz; and dies in the palace after his artifacts are stripped. The Necklace of the Abyss is his. The Ashen Throne is one of the three endings.
 - **Proposed (vault):** the public name Aurevan; the Worshipdom as a temple-state in the Zilin Hills and the visible hub; the four council duties; the Houses of the First Light; Chancellor Merovan; Sevrin; the Ring of Doors, Crown of Witnesses and Bracelet of the First Seal; the Thousand-Year Jubilee of 4A 1000; the *Night of a Thousand Oaths* (as an idea for Afrit's old ascension).
 - **Proposed (this spec):** every focus name, the public chapter names, Ilvane and Corvel, the attunement of artifacts, the branch name "The Dominion of the East" (the realm's cosmetic name, decision S1), and all numbers.
 
@@ -30,7 +30,7 @@ The tree never states as history which eastern kings join Afrit, Merovan's fate,
 | Spirit | `temple_state` |
 | Army | 2 divisions of the Hermitage Guard; no navy |
 | Wars, wargoals, claims | none |
-| Bookmark text | "A temple-state of the Deliverer in the Zilin Hills. Its pilgrims and confessors walk every road in Erdae. Play the patient game." |
+| Bookmark text | "A temple-state of the Deliverer in the Zilin Hills. Its pilgrims and confessors walk every road in Aoaz. Play the patient game." |
 
 **Today's game (decision D2).** The current mod names the ruler Afrit and its description names the Hidden Council. That is a phase 1 defect ([../../01_map/03_known_issues.md](../../01_map/03_known_issues.md)), fixed by the politics step and the content builder before this tree lands; the Afrit mechanic records the fix (its "Decisions applied", D2). This tree assumes the fixed start above.
 
@@ -91,7 +91,7 @@ Every focus in branches G, H, I, K and U also requires not `zin_afrit_dead` (add
 
 ### B. The Houses of the First Light
 
-**Purpose:** spread the Deliverer's charity, and with it the network, across Erdae.
+**Purpose:** spread the Deliverer's charity, and with it the network, across Aoaz.
 **Opens:** at the start (root). The root unlocks the decision *Open a House* (`zin_afrit_open_house`).
 **Drives:** `zin_footholds` in every region; the foothold caps (`zin_worshipdom_cap4`, `zin_worshipdom_cap5`); the debt and famine decisions. *Houses Under the Sun* matters for the story: footholds among the Gala Elves let Afrit learn of Eindil in time.
 
@@ -275,15 +275,15 @@ The public faces of this branch read as an ordinary flowering of worship. Its tr
 
 ### I. The Ashen Throne
 
-**Purpose:** the endgame. Afrit claims all Erdae, fortifies the palace, restores the old council everywhere, and reaches the Ashen Throne if he survives.
-**Opens:** after *Brother Against Brother* (the return path) or *Parim Shall Not Fall* (the stand path). *Lord of All Erdae* needs `zin_afrit_claims_erdae`, or `zin_afrit_stand_in_parim` with Parim held after 1 Deepwinter 4A 1757.
+**Purpose:** the endgame. Afrit claims all Aoaz, fortifies the palace, restores the old council everywhere, and reaches the Ashen Throne if he survives.
+**Opens:** after *Brother Against Brother* (the return path) or *Parim Shall Not Fall* (the stand path). *Lord of All Aoaz* needs `zin_afrit_claims_aoaz`, or `zin_afrit_stand_in_parim` with Parim held after 1 Deepwinter 4A 1757.
 **Drives:** palace wards (fewer successful palace stages for Eindil's side); footholds; the ending through `zin_afrit_ashen_throne_ready`.
 
 | key | name (public / *after reveal*) | prerequisites | exclusive with | x, y | days | effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
-| `lord_of_all_erdae` | Light Over All Erdae / *Lord of All Erdae* | (brother_against_brother OR parim_shall_not_fall) | - | 14, 14 | 35 | available: zin_afrit_claims_erdae or (zin_afrit_stand_in_parim, check zin_afrit_holds_parim, after 1757.1.1); call zin_afrit_claim_middle_lands; political_power 100 | base 60 when available |
-| `the_gods_palace` | The God's Palace | lord_of_all_erdae | - | 13, 15 | 35 | if not spirit palace_wards: add_spirit palace_wards; else flag zin_worshipdom_palace_wards_2 (a further -5% per stage) | base 40 |
-| `the_old_council_resumes` | The Houses Restored / *The Old Council Resumes* | lord_of_all_erdae | - | 15, 15 | 70 | call zin_afrit_spread_footholds {region: any, value: 1, count: 8, min: 2, below: 5}; add_spirit gods_court | base 40 |
+| `lord_of_all_aoaz` | Light Over All Aoaz / *Lord of All Aoaz* | (brother_against_brother OR parim_shall_not_fall) | - | 14, 14 | 35 | available: zin_afrit_claims_aoaz or (zin_afrit_stand_in_parim, check zin_afrit_holds_parim, after 1757.1.1); call zin_afrit_claim_middle_lands; political_power 100 | base 60 when available |
+| `the_gods_palace` | The God's Palace | lord_of_all_aoaz | - | 13, 15 | 35 | if not spirit palace_wards: add_spirit palace_wards; else flag zin_worshipdom_palace_wards_2 (a further -5% per stage) | base 40 |
+| `the_old_council_resumes` | The Houses Restored / *The Old Council Resumes* | lord_of_all_aoaz | - | 15, 15 | 70 | call zin_afrit_spread_footholds {region: any, value: 1, count: 8, min: 2, below: 5}; add_spirit gods_court | base 40 |
 | `the_ashen_throne` | The Radiant Throne / *The Ashen Throne* | the_gods_palace AND the_old_council_resumes | - | 14, 16 | 70 | available: check zin_afrit_ashen_throne_ready; call zin_world_reach_ending {ending: ashen_throne} | base 100 when available |
 
 ### Bypass rules
@@ -389,7 +389,7 @@ Under `zin_rule_afrit` HISTORICAL the AI follows this order (dates are approxima
 | 53–57 | `a_court_in_the_east`, `king_of_the_east`, `levies_of_the_caravan_kings`, `the_eastern_war_council`, `ships_of_the_eastern_seas` | 1756 |
 | 58 | `the_host_of_the_east` | 1757 |
 | 59–60 | `the_return`, `brother_against_brother` | early 1758 |
-| 61–63 | `lord_of_all_erdae`, `wards_of_the_palace`, `the_gods_palace` | 1758 |
+| 61–63 | `lord_of_all_aoaz`, `wards_of_the_palace`, `the_gods_palace` | 1758 |
 | — | *The palace battle; Afrit dies (1759)* | |
 
 Filler (any order, historical AI): the rest of branches A, B, C and E. Never under HISTORICAL: `pray_for_patience`, `long_live_the_golden_king`, `a_pliant_heir`, branch K, `parim_shall_not_fall`, `through_the_elven_woods`, `cast_off_the_mask` before the reveal, `the_ashen_throne`.
@@ -399,7 +399,7 @@ Filler (any order, historical AI): the rest of branches A, B, C and E. Never und
 | Route | Path | Mechanic result |
 | --- | --- | --- |
 | The Kingdom Behind the Throne | `the_councils_verdict` → `pray_for_patience` → `long_live_the_golden_king` → K branch; or `a_pliant_heir` → K branch | No crowning; the Council rules through a living King or a puppet heir |
-| Stand in Parim (Ashen gamble) | G branch → `parim_shall_not_fall` → `lord_of_all_erdae` → I branch | Afrit never flees; Ashen Throne path (c) |
+| Stand in Parim (Ashen gamble) | G branch → `parim_shall_not_fall` → `lord_of_all_aoaz` → I branch | Afrit never flees; Ashen Throne path (c) |
 | The Unmasked God | B branch → `cast_off_the_mask` (voluntary) → U branch → `parim_shall_not_fall` | Early open rule with fear, civil wars of the faithful, servants |
 | The Eastern Conqueror | H branch with `those_who_refused` and `through_the_elven_woods` | War on refusers and the Magical Forest |
 | The Return | H branch → `brother_against_brother` → I branch | Historical path, but the palace may hold |
@@ -445,7 +445,7 @@ Every effect that fires a private event wraps it in `hidden_effect` and shows on
 
 **Global flags set by the tree:** `zin_afrit_lost_cause_watched`, `zin_afrit_kingdom_behind_throne`, `zin_afrit_scholars_bought`, `zin_afrit_impostor_denounced`, `zin_afrit_stand_in_parim` (all defined in the Afrit mechanic).
 
-**Read, owned elsewhere:** `zin_afrit_revealed`, `zin_aurevan_crowned`, `zin_golden_king_dead`, `zin_war_of_last_crowns`, `zin_afrit_king_of_east`, `zin_eindil_named` (contract); `zin_golden_king_plot_exposed`, `zin_aenor_council_dominant` (Aenor); `zin_afrit_abandoned_aenor`, `zin_afrit_returned`, `zin_afrit_claims_erdae`, `zin_afrit_at_yeldenne`, `zin_afrit_wounded`, `zin_afrit_knows_brother`, `zin_afrit_holds_parim`, `zin_afrit_ashen_throne_ready`, `zin_afrit_regicide_plot`, `zin_afrit_artifacts`, `zin_afrit_seat_censers`, `zin_afrit_veil` (Afrit); `zin_world_reach_ending`, `zin_world_add_gathering_dark` (world systems).
+**Read, owned elsewhere:** `zin_afrit_revealed`, `zin_aurevan_crowned`, `zin_golden_king_dead`, `zin_war_of_last_crowns`, `zin_afrit_king_of_east`, `zin_eindil_named` (contract); `zin_golden_king_plot_exposed`, `zin_aenor_council_dominant` (Aenor); `zin_afrit_abandoned_aenor`, `zin_afrit_returned`, `zin_afrit_claims_aoaz`, `zin_afrit_at_yeldenne`, `zin_afrit_wounded`, `zin_afrit_knows_brother`, `zin_afrit_holds_parim`, `zin_afrit_ashen_throne_ready`, `zin_afrit_regicide_plot`, `zin_afrit_artifacts`, `zin_afrit_seat_censers`, `zin_afrit_veil` (Afrit); `zin_world_reach_ending`, `zin_world_add_gathering_dark` (world systems).
 
 ### Compiler notes
 
@@ -474,7 +474,7 @@ Every key is from the icon catalog ([02_icon_catalog.md](../02_icon_catalog.md))
 | K | the_quiet_court `throne_gold`; keepers_of_the_crown `crown_gold`; the_endless_regency `regency_seals`; a_kingdom_without_war `olive_branch` |
 | H | roads_to_the_dawn `traders_road`; a_court_in_the_east `envoy` → `eastern_throne`; king_of_the_east `eastern_throne`; those_who_refused `envoy`; levies_of_the_caravan_kings `camel_rider`; the_eastern_war_council `war_council_map`; ships_of_the_eastern_seas `warship_sail`; the_host_of_the_east `levy_muster`; through_the_elven_woods `forest_ancient`; the_return `banner_league` → `war_drums`; brother_against_brother `lone_sword` |
 | U | cast_off_the_mask `mask_veiled`; the_faithful_rise `banner_plain`; fear_and_worship `miracle_light`; servants_beyond_the_veil `ward_circle`; every_house_a_fortress `house_first_light` → `fort_wall` |
-| I | lord_of_all_erdae `crown_radiant`; the_gods_palace `palace_wards`; the_old_council_resumes `council_table`; the_ashen_throne `crown_radiant` → `throne_ashen` |
+| I | lord_of_all_aoaz `crown_radiant`; the_gods_palace `palace_wards`; the_old_council_resumes `council_table`; the_ashen_throne `crown_radiant` → `throne_ashen` |
 
 ## AI
 

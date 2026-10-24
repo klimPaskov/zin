@@ -6,15 +6,15 @@ updated: 2026-10-18
 
 # ZIN Lore Vault
 
-This vault documents the world of **ZIN** and the history, peoples, magic, and politics of its continent **Erdae**. The newest owner-supplied lore develops the First through Fourth Ages and ends with [[Eindil]]'s coronation. It also includes the Fourth Age reference map and the world creator's original drawings of [[Horos]].
+This vault documents the world of **ZIN** and the history, peoples, magic, and politics of its continent **Aoaz**. The newest owner-supplied lore develops the First through Fourth Ages and ends with [[Eindil]]'s coronation. It also includes the Fourth Age reference map and the world creator's original drawings of [[Horos]].
 
 ## Read the historical narrative
 
-1. [[Ages of Erdae]] and [[Timeline]] give the active calendar.
-2. [[The First Age of Erdae]] covers [[Aen]], the [[War of Men]], the first Aenoran kingdom, the [[Grand Alliance]], and [[Battle of Dardan|Dardan]].
-3. [[The Second Age of Erdae]] follows the grief, recovery, scientific and farming advances, plagues, and [[Elzon]]'s conquest in 2A 2133.
-4. [[The Third Age of Erdae]] describes a **1,200-plus-year** occupation and prolonged decline of the Great Necromancer. His death allows [[Afrit]] to rise as a publicly acclaimed New God. A precise **1,260 years** is proposed.
-5. **[[The Fourth Age of Erdae]]** is the full chronicle of prosperity, Afrit's hidden and then open rule, [[The Journey of Eindil]], [[Castle of Yeldenne and Glo|Yeldenne]], [[War of the Last Crowns]], and [[The Last Battle in the Palace]]. A precise **1,760 years** is proposed.
+1. [[Ages of Aoaz]] and [[Timeline]] give the active calendar.
+2. [[The First Age of Aoaz]] covers [[Aen]], the [[War of Men]], the first Aenoran kingdom, the [[Grand Alliance]], and [[Battle of Dardan|Dardan]].
+3. [[The Second Age of Aoaz]] follows the grief, recovery, scientific and farming advances, plagues, and [[Elzon]]'s conquest in 2A 2133.
+4. [[The Third Age of Aoaz]] describes a **1,200-plus-year** occupation and prolonged decline of the Great Necromancer. His death allows [[Afrit]] to rise as a publicly acclaimed New God. A precise **1,260 years** is proposed.
+5. **[[The Fourth Age of Aoaz]]** is the full chronicle of prosperity, Afrit's hidden and then open rule, [[The Journey of Eindil]], [[Castle of Yeldenne and Glo|Yeldenne]], [[War of the Last Crowns]], and [[The Last Battle in the Palace]]. A precise **1,760 years** is proposed.
 6. [[Fifth Age Seeds]] records the consequences and open future after Eindil's coronation.
 
 ## Start with characters and relations
@@ -29,7 +29,7 @@ This vault documents the world of **ZIN** and the history, peoples, magic, and p
 
 ## Political and geographical references
 
-[[Fourth Age Map of Erdae]] · [[Erdae and Its Regions]] · [[Middle Lands and Aenor]] · [[Volgans Dead Lands]] · [[Zols Mistake]] · [[Nether]] · [[Abyss]] · [[Afrits Hidden Council]] · [[The Lost Cause]]
+[[Fourth Age Map of Aoaz]] · [[Aoaz and Its Regions]] · [[Middle Lands and Aenor]] · [[Volgans Dead Lands]] · [[Zols Mistake]] · [[Nether]] · [[Abyss]] · [[Afrits Hidden Council]] · [[The Lost Cause]]
 
 ## Visual references
 

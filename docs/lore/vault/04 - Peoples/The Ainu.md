@@ -18,4 +18,4 @@ An older compendium placed the disappearance of the Ainu and Eindil's suspension
 
 **Open:** Whether the name *Ainu* refers to all powerful early humans, only Aen's dynasty, or an earlier culture remains unknown.
 
-[[Royal Line of Aen]] · [[War of Men]] · [[Ages of Erdae]]
+[[Royal Line of Aen]] · [[War of Men]] · [[Ages of Aoaz]]

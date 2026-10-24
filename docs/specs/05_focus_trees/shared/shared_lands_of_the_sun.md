@@ -24,7 +24,7 @@ The tree is also the **module library** for the seven tier B trees of the region
 
 ## Lore basis
 
-**Established** (vault): the Lands of the Sun lie in the far south-west and run beyond the southern map edge; Elvana, Igara, Hengyang, the Sea of Gods, Heaven, Flame and Godland are named there; the Sunhot elves live there, over three metres tall and among the strongest and most peaceful peoples of Erdae; the Gala elves keep their court there under King Lorien, who fought at Dardan; Lorien distrusts human rulers who turn common victories into dominion but still cares for all Erdae; Afrit's agents operate even in the Lands of the Sun; Lorien dies opposing Zol (4A 1757, proposed date).
+**Established** (vault): the Lands of the Sun lie in the far south-west and run beyond the southern map edge; Elvana, Igara, Hengyang, the Sea of Gods, Heaven, Flame and Godland are named there; the Sunhot elves live there, over three metres tall and among the strongest and most peaceful peoples of Aoaz; the Gala elves keep their court there under King Lorien, who fought at Dardan; Lorien distrusts human rulers who turn common victories into dominion but still cares for all Aoaz; Afrit's agents operate even in the Lands of the Sun; Lorien dies opposing Zol (4A 1757, proposed date).
 
 **Proposed in the vault:** the Lands of Light as the leading Sunhot realm; the Sunhot realms honouring Lorien's memory; the Mirror of First Rain; the islanders' saying "carry it to Gala"; the Houses of the First Light as the public face of the Deliverer's network.
 

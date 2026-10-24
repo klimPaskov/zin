@@ -8,15 +8,15 @@ Two points follow the Ready specs where the master plan's wording is older. The 
 
 About 130,000 English localisation keys ship with the game. Roughly 39,000 of them sit in files a player reads while playing: window labels, tooltips, alerts, technology and unit text, the diplomacy window, the rule screens. They speak of factories, rifles, tanks, aircraft, democracy and 1936. None of them has an author yet. [PROGRAM.md](../PROGRAM.md) T3 requires that no modern word is shown anywhere, and the scan that proves it has to know every key the game can still display.
 
-This spec defines the whole job: one master glossary that fixes every Erdae term once; the key families with their files, counts, writer modules and wording owners; the template mechanism that turns the glossary into text without copying a vanilla sentence; the scan that proves completeness and reports what is left; the banned-word list; and the order of work against vanilla removal stage 2. The glossary (`tools/content/data/glossary.json`) and the banned list (`tools/content/data/banned_words.json`) are written with this spec and are the first data the builder reads.
+This spec defines the whole job: one master glossary that fixes every Aoaz term once; the key families with their files, counts, writer modules and wording owners; the template mechanism that turns the glossary into text without copying a vanilla sentence; the scan that proves completeness and reports what is left; the banned-word list; and the order of work against vanilla removal stage 2. The glossary (`tools/content/data/glossary.json`) and the banned list (`tools/content/data/banned_words.json`) are written with this spec and are the first data the builder reads.
 
-Out of scope here, and owned elsewhere: the wording of Erdae objects (technology, equipment, unit, focus, event and idea text belongs to the modules that define the objects), the month names ([01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)), the main menu, bookmark and difficulty wording ([03_main_menu_and_frontend.md](03_main_menu_and_frontend.md)), loading tips ([02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md)), music titles ([04_music_and_sound.md](../08_art_and_assets/04_music_and_sound.md)) and the decisions about rank names, weekday names, honours and the career screens ([06_career_honours.md](06_career_honours.md)). This spec supplies their keys to the scan and their glossary entries.
+Out of scope here, and owned elsewhere: the wording of Aoaz objects (technology, equipment, unit, focus, event and idea text belongs to the modules that define the objects), the month names ([01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)), the main menu, bookmark and difficulty wording ([03_main_menu_and_frontend.md](03_main_menu_and_frontend.md)), loading tips ([02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md)), music titles ([04_music_and_sound.md](../08_art_and_assets/04_music_and_sound.md)) and the decisions about rank names, weekday names, honours and the career screens ([06_career_honours.md](06_career_honours.md)). This spec supplies their keys to the scan and their glossary entries.
 
 ## Lore basis
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| Erdae has known more than seventeen centuries of peace; its realms are crowns, dominions, clans and island lordships, not modern states | proposed (campaign note) | *The Campaign of 4A 1748*, [02_full_ui_reskin.md](02_full_ui_reskin.md) |
+| Aoaz has known more than seventeen centuries of peace; its realms are crowns, dominions, clans and island lordships, not modern states | proposed (campaign note) | *The Campaign of 4A 1748*, [02_full_ui_reskin.md](02_full_ui_reskin.md) |
 | The Fourth Age is counted from the first restored king; the start is 1 Thaw, 4A 1748 | proposed | *Fourth Age Chronology*, [01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md) |
 | Ordinary people do not know the name Afrit before the reveal; Eindil is "the Man from the Ice" before he is named | established; labels proposed | [03_names_and_terms.md](../02_lore/03_names_and_terms.md), decisions D3, D4 |
 | Proper names, spellings and the retired names (Einendil, Edvoid, Rush, Klinti, Gorbat, Huhun, Hierarch, Sovereign Spirit) | established | [03_names_and_terms.md](../02_lore/03_names_and_terms.md) |
@@ -68,7 +68,7 @@ The measurements also show three things the design depends on. First, 11,365 key
 
 ### 2. The master glossary
 
-`tools/content/data/glossary.json` is the single source of Erdae terms. Every builder, every family data file and the characters, focus and event modules read it through `tools/content/lib/text_engine.mjs`. The first set has **253 entries** (written with this spec).
+`tools/content/data/glossary.json` is the single source of Aoaz terms. Every builder, every family data file and the characters, focus and event modules read it through `tools/content/lib/text_engine.mjs`. The first set has **253 entries** (written with this spec).
 
 **Entry.** One engine concept.
 
@@ -94,7 +94,7 @@ The measurements also show three things the design depends on. First, 11,365 key
 | Concept | Term | Why this one |
 | --- | --- | --- |
 | Political power | Authority | The master plan's sketch says favour; Aenor's meter is already Temple Favour, so a second Favour would collide on one screen |
-| Stability, war support, national unity | Calm, Will to War, Unity | The inventory asks for the three statistics in Erdae words (PS-180); each names what it measures |
+| Stability, war support, national unity | Calm, Will to War, Unity | The inventory asks for the three statistics in Aoaz words (PS-180); each names what it measures |
 | Manpower | Levies | Master plan section 1 (the top bar names levies). Variants: Horde (orcs), Risen (the dead), Oathbound (demons), after the plan's people rules |
 | Command power; the three experience pools | Orders; Army Valour, Fleet Valour, Sky Valour | The institutions spec. The inventory suggested Renown; Renown is Eindil's gauge, so the pools take Valour |
 | Officer corps window, its chairs, ranks and role names | Council of Captains; Master of the Host, Lord of the Fleet, Master of the Eyries, Marshal of the Council, Master of Lore; Banneret, Warden of Hosts, Captain-General, Marshal of the Crown; Host-Captain, Marshal, Sea-Lord | The institutions spec. [02_full_ui_reskin.md](02_full_ui_reskin.md) section 8 still says War Council for the window; one of the two changes ("Changes this spec asks of other specs") |
@@ -106,7 +106,7 @@ The measurements also show three things the design depends on. First, 11,365 key
 | Special project, military-industrial organisation, intelligence agency | Spell, Guild, Court of Whispers | The institutions spec |
 | Victory points | Worth | Short, and the score of a seat stays a number |
 | Kilometre, kilogram, ton | mile, pound, load | Inventory owner question 4: days of march and loads |
-| Wiki | Chronicle of Erdae | The in-game encyclopedia ([04_chronicle_codex.md](04_chronicle_codex.md)) |
+| Wiki | Chronicle of Aoaz | The in-game encyclopedia ([04_chronicle_codex.md](04_chronicle_codex.md)) |
 
 **Slots.** A template writes a concept as `{id}` or `{id:modifier}`. Modifiers combine left to right: `s` (default), `p`, `lc`, `lcp`, `a`, `the`, `uc1`, `people`. `{name:key}` inlines the in-game spelling of a proper name from the names spec's data at build time. `{loc:concept}` writes the scripted localisation call of the two-face labels (`[zin_loc_deliverer]` and its kind), so a secret term never enters the glossary.
 
@@ -114,7 +114,7 @@ The measurements also show three things the design depends on. First, 11,365 key
 
 **Forbidden and keep entries.** A `forbidden` entry has no term. It lists the words and tells the writer how to rewrite the sentence (for example, the armour role is said with heavy foot, knights or the great kin). A `keep` entry records that a plain word stays (war, peace, treaty, fort, state, province, decision, focus, trait), so no writer renames it and no reviewer asks.
 
-**Stems.** `glossary.json` also holds `stems`, a map of 70 key-name tokens to Erdae tokens. A modifier is named by its own id (`army_attack_factor`); the stem rule composes the label from the id's tokens through this map, so every modifier that mentions a workshop, a host or a pool reads the same everywhere.
+**Stems.** `glossary.json` also holds `stems`, a map of 70 key-name tokens to Aoaz tokens. A modifier is named by its own id (`army_attack_factor`); the stem rule composes the label from the id's tokens through this map, so every modifier that mentions a workshop, a host or a pool reads the same everywhere.
 
 **Style block.** British spelling; title case for labels (short articles, conjunctions and prepositions stay lower-case); sentence case for descriptions; the realm speaks as "we" in alerts and prompts; digits in tooltips; Windows-1252 only; and the secret rule (anything gated by a reveal goes through `{loc:concept}`).
 
@@ -272,10 +272,10 @@ Seven files are marked `engine` with a reason: `pdxonline` (account sign-in, 93 
 | real_world | 13 | real countries and nationalities, continents, cities, people and titles, forces and machines, English month and weekday names, any year from 1801 on, A.D. and B.C., Christmas and the like |
 | third_party_ip | 1 | Middle-earth, Mordor, Sauron, Gandalf, Frodo, Hogwarts, Westeros and similar names that are not in the owner's vault |
 | game_and_platform | 7 | Hearts of Iron, Paradox, DLC, wiki (error); Steam, Discord, forum, ironman, playthrough, career profile (review) |
-| superseded_names | 12 | the retired Erdae names of the names spec, including the long o of Šodolôrō |
+| superseded_names | 12 | the retired Aoaz names of the names spec, including the long o of Šodolôrō |
 | us_spelling | 9 | armor, defense, color, honor, favor, organization, center, harbor, plow, mobilization (review) |
 
-The glossary words "division", "manpower", "stability" and the rest of the renamed statistics are in the list as errors because their Erdae terms are decided; a writer who needs the plain word in a sentence rewrites it. The list is a floor. The glossary's per-concept `forbid` lists add the words of each concept.
+The glossary words "division", "manpower", "stability" and the rest of the renamed statistics are in the list as errors because their Aoaz terms are decided; a writer who needs the plain word in a sentence rewrites it. The list is a floor. The glossary's per-concept `forbid` lists add the words of each concept.
 
 **Matching.** The scan matches the text a player reads: the value after glossary expansion and nesting, with colour codes, icon codes, `$…$` placeholders, `[calls]` and `\n` removed. Rules match whole words (letters, digits and apostrophes make a word; a hyphen separates words, so "anti-tank" still hits "tank"), case-insensitively unless the rule says otherwise. Keys, engine ids and file names are never matched.
 
@@ -364,7 +364,7 @@ None.
 8. **Ownership.** X14 reports zero; every key of the 22 families has exactly one writer.
 9. **People.** The scripted localisation compiles in the Linux run; a console test gives an orc realm the orc variant of a term and a human realm the default; no `people` modifier appears in a no-scope family.
 10. **Linux run (stage 4 and after each family).** `loc_check`, `loc_check_modifiers`, `loc_check_national_spirits` and `dump_equipment_loc` list no missing key outside `engine_keys.json`; `text.log` has no duplicate key beyond the declared `replace` files; `error.log` has no "Could not find coloring" line. Probes: P1 a `replace` key wins over the vanilla key; P2 a same-name whole-file override (and a header-only stub) replaces the vanilla file; P3 optional: `replace_path` on a localisation folder; P4 a missing key in a non-English language falls back to English; P5 a scripted localisation called from a tooltip with a country in scope returns the people variant; P6 a nested `$KEY$` inside a `pdx_tooltip` shows raw dollar signs (confirms the wiki, so X10 stays).
-11. **Captures.** Linux screenshots of the main menu, the top bar, the pause menu, the diplomacy window, research, production, the ledger and ten tooltips read as Erdae to a reviewer with the banned list in hand. These are acceptance evidence, never Windows game screenshots.
+11. **Captures.** Linux screenshots of the main menu, the top bar, the pause menu, the diplomacy window, research, production, the ledger and ten tooltips read as Aoaz to a reviewer with the banned list in hand. These are acceptance evidence, never Windows game screenshots.
 
 **Inventory rows this spec supplies text for** (closed when the family's scan passes): UI-019, UI-073, UI-129, UI-130, UI-131, UI-132, UI-134, UI-135 (platform part), UI-136, UI-137, UI-160, UI-161, UI-162, UI-165; PS-013, PS-014, PS-045, PS-095, PS-098, PS-100 (text), PS-101, PS-174, PS-180, PS-182, PS-184, PS-191; WE-027, WE-037, WE-058, WE-066, WE-103, WE-111, WE-113, WE-127, WE-140, WE-141, WE-196, WE-197, WE-198, WE-199, WE-200, WE-201, WE-202, WE-203; MA-047, MA-048, MA-122, MA-137 to MA-151. That is 14 rows of the UI inventory, 12 of the politics inventory, 18 of the warfare inventory and 18 of the map inventory: **62 rows**. The rank rows (PS-045, WE-141, UI-134, WE-202) are closed jointly with [06_career_honours.md](06_career_honours.md) and [08_institutions.md](../03_gameplay/08_institutions.md); the weekday row PS-166 is closed by 06 alone.
 

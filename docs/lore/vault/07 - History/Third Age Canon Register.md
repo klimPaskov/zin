@@ -24,4 +24,4 @@ updated: 2026-10-17
 - **Harion the Restorer** is proposed for the first good king of the Fourth Age.
 - **Aurevan** is proposed as Afrit's public name. Public worship as a New God is established, but cosmic godhood remains undetermined.
 
-[[The Third Age of Erdae]] · [[The Fourth Age of Erdae]] · [[Canon Policy]]
+[[The Third Age of Aoaz]] · [[The Fourth Age of Aoaz]] · [[Canon Policy]]

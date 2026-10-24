@@ -144,10 +144,10 @@ test('loc_parse: displayed text, structural values, nesting and Windows-1252', (
 });
 
 // ------------------------------------------------------------------------------------------------ banned words
-test('banned list: 136 rules compile, matching is whole word, possessive and hyphen aware', async () => {
+test('banned list: 138 rules compile, matching is whole word, possessive and hyphen aware', async () => {
   const data = await loadBanned();
-  assert.equal(data.rules.length, 136);
-  assert(compiled.rules.length >= 136 + 8, 'the extra rules and the glossary forbid rules load too');
+  assert.equal(data.rules.length, 138);
+  assert(compiled.rules.length >= 138 + 8, 'the extra rules and the glossary forbid rules load too');
   const hit = t => findBanned(t, compiled).map(h => h.id);
   assert.deepEqual(hit('The division marches'), ['bw_military_modern_001', 'gl_division']);
   assert.deepEqual(hit('division'), ['bw_military_modern_001', 'gl_division']);
@@ -157,6 +157,9 @@ test('banned list: 136 rules compile, matching is whole word, possessive and hyp
   assert.equal(hit('Captain-General of the Crown').length, 0, 'the lookbehind rule spares Captain-General');
   assert.equal(hit('A divisional banner').length, 0, 'only whole words match');
   assert.equal(hit('Zol\'s Mistake').length, 0);
+  assert(hit('The kingdoms of Erdae').includes('bw_setting_names_001'), 'the former name of the main setting fails (R-01)');
+  assert(hit('all of Arda').includes('bw_setting_names_002'), 'the cards\' spelling of the main setting fails (R-01)');
+  assert.equal(hit('The kingdoms of Aoaz').length, 0);
   assert.equal(findBanned('colour of the banner', compiled).length, 0, 'British colour is not a US spelling');
   assert(findBanned('color of the banner', compiled).some(h => h.id === 'bw_us_spelling_003'));
   assert(hit('Aenorian lords').includes('bw_superseded_names_011'));

@@ -12,4 +12,4 @@ At the royal palace she shoots Afrit in the eye, creating the opportunity for Ei
 
 **Proposed earlier role:** Alleria investigates the rumors about Eindil when most of Aenor denounces him. She leads an underground group loyal to the old royal line and helps recover him from the ravine after Afrit throws him from a cliff. Her training, family, age and eventual fate remain open.
 
-[[Selen]] · [[The Last Battle in the Palace]] · [[The Fourth Age of Erdae]]
+[[Selen]] · [[The Last Battle in the Palace]] · [[The Fourth Age of Aoaz]]

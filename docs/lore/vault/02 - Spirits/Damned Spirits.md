@@ -28,4 +28,4 @@ Deep fissures, sunless caverns, sealed ruins, forgotten roots of mountains, and 
 
 ## Persistence into the Second Age
 
-Volgan released Damned Spirits from very deep underground during the First Age war. The user's later Second Age account leaves Erdae in a state of disorder, and some of these older threats may remain within subterranean places. Their precise allegiances and participation in [[Elzon]]'s second conquest are **proposed** in [[The Second Age of Erdae]] and should not automatically be assigned to every Damned Spirit.
+Volgan released Damned Spirits from very deep underground during the First Age war. The user's later Second Age account leaves Aoaz in a state of disorder, and some of these older threats may remain within subterranean places. Their precise allegiances and participation in [[Elzon]]'s second conquest are **proposed** in [[The Second Age of Aoaz]] and should not automatically be assigned to every Damned Spirit.

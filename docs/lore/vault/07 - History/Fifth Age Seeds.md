@@ -28,4 +28,4 @@ The Fourth Age ends with **[[Eindil]] being crowned king of Aenor**. Any Fifth A
 
 Do not treat any proposal above as a settled Fifth Age outcome.
 
-[[The Fourth Age of Erdae]] · [[Ages of Erdae]]
+[[The Fourth Age of Aoaz]] · [[Ages of Aoaz]]

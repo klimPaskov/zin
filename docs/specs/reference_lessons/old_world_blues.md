@@ -119,7 +119,7 @@ The changelog says "fixed" 213 times, "AI" 104, rebalance words 116, "missing" 8
 
 ## Ideas for ZIN (going beyond it)
 
-1. **A living calendar.** The reference keeps ordinary dates. ZIN can let named Erdae months drive harvest, thaw, flood and long-night effects through seasons, supply defines and dynamic modifiers.
+1. **A living calendar.** The reference keeps ordinary dates. ZIN can let named Aoaz months drive harvest, thaw, flood and long-night effects through seasons, supply defines and dynamic modifiers.
 2. **Peoples that change rules, not only skins.** Elves with leaders that never age out; orcs with a horde meter in place of manpower; the dead with no population but upkeep; ents moving by season; giants with few, huge units; demons bound by oaths. Use modifiers, dynamic modifiers and bespoke laws.
 3. **Artifacts as map objects.** The reference uses inventory screens. ZIN can place artifacts on the map, bound to states or characters, with bearers, corruption and a global race to seize them.
 4. **Magic as research.** A spell track in the special-projects slot, tied to leaders and artifacts, with failure risk.

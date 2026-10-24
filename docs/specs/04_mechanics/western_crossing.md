@@ -1,6 +1,6 @@
 # The West Lands and the Western Crossing
 
-**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Built by `tools/content/modules/mech_western_crossing.mjs`; depends on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)) being built, because every date below is an Erdae engine date (the game still starts 1936.1.1.12 today).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Built by `tools/content/modules/mech_western_crossing.mjs`; depends on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)) being built, because every date below is an Aoaz engine date (the game still starts 1936.1.1.12 today).
 
 ## Purpose
 
@@ -22,24 +22,24 @@ The Crossing meets the Treaty of the Narrow Strait ([lerendor_narrow_strait.md](
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| The West Lands lie south of the Cold Lands, joined by a broad neck; Gunwaith, Girdon, Kradlon, Corogon, Varnondor | established | *Erdae and Its Regions* |
-| The central sea between the West Lands and the Middle Lands is much wider than drawn; this is why Aenor's conflicts with the West persist | established (owner) | *Fourth Age Map of Erdae* |
-| In the First Age Aenoran settlers, colonies and claims reached the West Lands, which already had their own kingdoms, and caused repeated wars; the grievance survives. Every western court remembers that Aenor once tried to rule it; the chronicle speaks of "ancient Aenoran conquests" | established | *The First Age of Erdae*, *The Campaign of 4A 1748*, *The Fourth Age of Erdae* §IX |
-| Aenor Isle lies off the Middle Lands' west coast, is part of the Middle Lands and includes Asgard | established | *Erdae and Its Regions* |
+| The West Lands lie south of the Cold Lands, joined by a broad neck; Gunwaith, Girdon, Kradlon, Corogon, Varnondor | established | *Aoaz and Its Regions* |
+| The central sea between the West Lands and the Middle Lands is much wider than drawn; this is why Aenor's conflicts with the West persist | established (owner) | *Fourth Age Map of Aoaz* |
+| In the First Age Aenoran settlers, colonies and claims reached the West Lands, which already had their own kingdoms, and caused repeated wars; the grievance survives. Every western court remembers that Aenor once tried to rule it; the chronicle speaks of "ancient Aenoran conquests" | established | *The First Age of Aoaz*, *The Campaign of 4A 1748*, *The Fourth Age of Aoaz* §IX |
+| Aenor Isle lies off the Middle Lands' west coast, is part of the Middle Lands and includes Asgard | established | *Aoaz and Its Regions* |
 | Gunwaith and Girdon are rivals | established | *The Campaign of 4A 1748* |
-| Gunwaith clans, Girdon wardens and Buldor companies are peoples of men | established | *Peoples of Erdae* |
-| Eindil is taken south by West Lands travellers, makes peace between rivals and is chosen temporary war-king by several rulers of one western confederation; he lays the title down once the peace is secured | established | *The Fourth Age of Erdae* §IV, *Fourth Age Canon Register* |
-| Western kingdoms plan a great crossing to end their ancient rivalry with Aenor; Eindil warns of it | established | *The Fourth Age of Erdae* §VIII |
-| Western fleets cross the enlarged central ocean; some kings seek revenge, others want the capital before a weakened kingdom can threaten them again; the army lands, seizes ports, occupies the capital and claims the human throne | established | *The Fourth Age of Erdae* §IX, *War of the Last Crowns* |
-| Aenor's defenders retreat toward the western-held capital; western commanders accept surrenders; Zol's dead and Volgan make the occupation impossible; the western fleet prepares to evacuate; some soldiers escape, others are stranded beside the Aenorians they conquered | established | *The Fourth Age of Erdae* §IX |
-| Stranded western soldiers join Eindil's temporary coalition; he does not demand that the western kingdoms give up their independence; competing western interests remain | established | *The Fourth Age of Erdae* §X, *War of the Last Crowns* |
+| Gunwaith clans, Girdon wardens and Buldor companies are peoples of men | established | *Peoples of Aoaz* |
+| Eindil is taken south by West Lands travellers, makes peace between rivals and is chosen temporary war-king by several rulers of one western confederation; he lays the title down once the peace is secured | established | *The Fourth Age of Aoaz* §IV, *Fourth Age Canon Register* |
+| Western kingdoms plan a great crossing to end their ancient rivalry with Aenor; Eindil warns of it | established | *The Fourth Age of Aoaz* §VIII |
+| Western fleets cross the enlarged central ocean; some kings seek revenge, others want the capital before a weakened kingdom can threaten them again; the army lands, seizes ports, occupies the capital and claims the human throne | established | *The Fourth Age of Aoaz* §IX, *War of the Last Crowns* |
+| Aenor's defenders retreat toward the western-held capital; western commanders accept surrenders; Zol's dead and Volgan make the occupation impossible; the western fleet prepares to evacuate; some soldiers escape, others are stranded beside the Aenorians they conquered | established | *The Fourth Age of Aoaz* §IX |
+| Stranded western soldiers join Eindil's temporary coalition; he does not demand that the western kingdoms give up their independence; competing western interests remain | established | *The Fourth Age of Aoaz* §X, *War of the Last Crowns* |
 | The Gunwaith–Girdon wars from about 4A 1702; the Truce of the Grey Ford in 4A 1745; the Western Crossing in 4A 1755; Parim taken in 4A 1756 | proposed dates | *Fourth Age Chronology* |
-| The names Truce of the Grey Ford, Grey Ford, Bridge of the Three Oaths, Girdon's Winter Ford, the Gunwaith trial; the epithets "the Man from the Ice" and "the King Without a House" | proposed | *Fourth Age Chronology*, *The Fourth Age of Erdae* §IV ([02_lore/03_names_and_terms.md](../02_lore/03_names_and_terms.md)) |
+| The names Truce of the Grey Ford, Grey Ford, Bridge of the Three Oaths, Girdon's Winter Ford, the Gunwaith trial; the epithets "the Man from the Ice" and "the King Without a House" | proposed | *Fourth Age Chronology*, *The Fourth Age of Aoaz* §IV ([02_lore/03_names_and_terms.md](../02_lore/03_names_and_terms.md)) |
 | The West can stay divided, cross for revenge, or join the defence; "a western crown holds Parim" as a play outcome | proposed (play choices, not history) | *The Campaign of 4A 1748* |
 
 **Proposed by this spec:** the grudge, truce, unity, resolve, fleet and strain measures; the Grey Ford Feud as a border war; the Ford Council; the pledges and sailings; the landing on Aenor Isle; the evacuation ports; every number, event and decision.
 
-**Kept open** (text never answers): where exactly the fleets crossed and landed (the vault lists it as open; the landing sites below are gameplay sites, labelled proposed); which western ruler claimed the human throne; which rulers made Eindil war-king (the journey spec builds the Grey Ford Confederation from regard); what becomes of the exiled westerners after the war (*The Fourth Age of Erdae*, follow-up 9); the scope of Aenor's early rule in the West and what Aenor still claims there (*The First Age of Erdae*, open question 10). Before `zin_afrit_revealed` no text names Afrit; Aenor's god-king is "King Aurevan" or "the Deliverer" (decisions D1, D3).
+**Kept open** (text never answers): where exactly the fleets crossed and landed (the vault lists it as open; the landing sites below are gameplay sites, labelled proposed); which western ruler claimed the human throne; which rulers made Eindil war-king (the journey spec builds the Grey Ford Confederation from regard); what becomes of the exiled westerners after the war (*The Fourth Age of Aoaz*, follow-up 9); the scope of Aenor's early rule in the West and what Aenor still claims there (*The First Age of Aoaz*, open question 10). Before `zin_afrit_revealed` no text names Afrit; Aenor's god-king is "King Aurevan" or "the Deliverer" (decisions D1, D3).
 
 ## Design
 

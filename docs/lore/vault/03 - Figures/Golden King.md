@@ -12,4 +12,4 @@ By his reign, the publicly worshipped Deliverer, secretly [[Afrit]], has spent c
 
 The Golden King's personal name, exact years, relatives and political dealings with Afrit have yet to be established. The Lost Cause survives in altered form and can support the struggle led by [[Eindil]].
 
-[[The Fourth Age of Erdae]] · [[Afrit]] · [[Possible Endings]]
+[[The Fourth Age of Aoaz]] · [[Afrit]] · [[Possible Endings]]

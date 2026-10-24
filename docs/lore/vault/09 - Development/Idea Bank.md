@@ -51,7 +51,7 @@ All these hooks are optional and should not be interpreted as events that alread
 ## Second Age optional development (17 October 2026)
 
 - [[Second Age Proposed Timeline]] now reflects the **established 2,133-year length**. Only internal phase dates and sample lifespan calculations remain proposals.
-- [[The Second Age of Erdae]] contains possible named events including the *Council of Empty Chairs*, *War of the Black Roads*, *Burning Gate of Nezer*, *War of the Hollow Crown*, and optional plague names.
+- [[The Second Age of Aoaz]] contains possible named events including the *Council of Empty Chairs*, *War of the Black Roads*, *Burning Gate of Nezer*, *War of the Hollow Crown*, and optional plague names.
 - Possible mechanisms for the [[The Return of Volgan|return from the Void]] include weakening the Dardan boundary and using magic Elzon drew from [[Zol]]. The mechanism is not established even though the return itself is.
 - *Night of a Thousand Oaths* is a proposed explanation for [[Afrits Ascension|Afrit's ascension]].
 - *Pale Regency* is a suggested later name for [[Elzons Order|Elzon's Order]].

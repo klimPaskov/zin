@@ -20,4 +20,4 @@ Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss 
 
 **Open:** birth order of the brothers, date and cause of Eindil's imprisonment, exact appearance, which arm he loses, the future effects of the necklace, and the permanent status of powers passed to him by the gods.
 
-[[The Journey of Eindil]] · [[The Fourth Age of Erdae]] · [[War of the Last Crowns]] · [[The Last Battle in the Palace]]
+[[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[War of the Last Crowns]] · [[The Last Battle in the Palace]]

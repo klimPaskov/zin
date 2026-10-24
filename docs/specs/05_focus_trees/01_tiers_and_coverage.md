@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Every one of the 305 countries gets an Erdae focus tree. No country falls back to a vanilla tree. This spec assigns each country its tier and tree. The table is generated from the country roster; regenerate it when the roster changes.
+Every one of the 305 countries gets an Aoaz focus tree. No country falls back to a vanilla tree. This spec assigns each country its tier and tree. The table is generated from the country roster; regenerate it when the roster changes.
 
 ## Tiers
 

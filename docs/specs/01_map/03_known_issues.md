@@ -32,6 +32,6 @@ These break the lore or the starting situation and are fixed in phase 1 or 2. De
 | 941 of 1,332 states are named "<Country> District N" | Name states from the drawn labels ([00_foundation/04_countries_and_states.md](../00_foundation/04_countries_and_states.md)) | open |
 | Aenor starts with 10% Shadow popularity | 0% (D5) | fixed (19 October) |
 | Stale role texts with modern words, and Selen described as a counterweight to Aenor | Rewrite from the specs | open |
-| Every country uses the western European graphical culture | Erdae cultures `zin_<people>_gfx` | fixed (19 October) |
+| Every country uses the western European graphical culture | Aoaz cultures `zin_<people>_gfx` | fixed (19 October) |
 | Election dates are 1932 (88 countries) | Fourth Age dates with the calendar | open (phase 2) |
 | States carry air base levels (for example 2) | Remove air bases until dragons and the air layer exist (S6) | open |

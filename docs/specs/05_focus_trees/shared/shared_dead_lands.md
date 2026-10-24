@@ -20,7 +20,7 @@ The tree is the **module library** for the Dead Lands tier B trees ([../regional
 
 ## Lore basis
 
-**Established** (vault): the Dead Lands lie south of the Middle Lands; Volgan's authority does not extend automatically to independent realms; the region is storm-girt at sea and hot farther south; Volgan retakes Mirolon in the Fourth Age and marches north; his manifested body is destroyed and whether his spirit survives is open; Mirolon is his rival (working table). The start: Erdae seems at peace; nobody outside Mirolon watches Volgan.
+**Established** (vault): the Dead Lands lie south of the Middle Lands; Volgan's authority does not extend automatically to independent realms; the region is storm-girt at sea and hot farther south; Volgan retakes Mirolon in the Fourth Age and marches north; his manifested body is destroyed and whether his spirit survives is open; Mirolon is his rival (working table). The start: Aoaz seems at peace; nobody outside Mirolon watches Volgan.
 
 **Proposed elsewhere and used here:** Volgan's strength, veil, client crowns and the Steward; Mirolon's proof, passes, the Warden League and `zin_mirolon_league_friend` (Mirolon tree event `zin_mirolon.4` already invites all six of these realms); the storm pulse and heat of the magic spec ([../../03_gameplay/04_magic_and_world_systems.md](../../03_gameplay/04_magic_and_world_systems.md)); the Houses of the First Light and footholds ([../../04_mechanics/afrit_hidden_council.md](../../04_mechanics/afrit_hidden_council.md): cap 3 for these realms of men; the Afrit start table does not name them yet, and this tree proposes a start of 1); the roster note that Luminor and Gelon stayed independent when Mirolon united with the Mirolon Forests.
 

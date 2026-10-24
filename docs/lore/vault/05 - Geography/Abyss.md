@@ -18,4 +18,4 @@ The Abyss is **not the Void** that imprisoned Volgan. It is also distinct from t
 
 These are **alternatives for later selection**, not simultaneous facts.
 
-[[Roka]] · [[Necklace of the Abyss]] · [[Afrits Ascension]] · [[Fourth Age Map of Erdae]]
+[[Roka]] · [[Necklace of the Abyss]] · [[Afrits Ascension]] · [[Fourth Age Map of Aoaz]]

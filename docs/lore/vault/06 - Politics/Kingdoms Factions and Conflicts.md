@@ -39,4 +39,4 @@ Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, o
 
 **Middle Kingdom Concord**, **Southern Dominion**, **Leren Compact**, **Northern Accord**, **Noris Treaty**, **Stabilo Pact**, and **Dark Sea Accord** appear in the working map arrangements. Their constitutions and origins are not detailed.
 
-[[Possible Endings]] · [[Great Powers and Relations]] · [[Ages of Erdae]]
+[[Possible Endings]] · [[Great Powers and Relations]] · [[Ages of Aoaz]]

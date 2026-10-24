@@ -14,4 +14,4 @@ Golbran gives his own remaining life and magic to save Eindil. Eindil puts the n
 
 **Proposals:** Alleria's rescue below the cliff, the Ring of Doors and other secondary artifact names, the necklace as means of exiting the private realm, and Golbran surviving his earlier apparent sacrifice during Varner's death.
 
-[[The Fourth Age of Erdae]] · [[Fourth Age Canon Register]]
+[[The Fourth Age of Aoaz]] · [[Fourth Age Canon Register]]

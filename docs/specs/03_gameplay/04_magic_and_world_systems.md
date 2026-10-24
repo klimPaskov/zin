@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Magic in Erdae is rare, named and specific. There is no general mana bar. A handful of real powers exist: Glo and Horos's blue sword, Afrit's artifacts, the dragons of Dragon Mountain, Zol's deathless dead held back by the Fading, the storms and heat of the Dead Lands, the Great Wall, and two one-time interventions near the end of the age (Varner's wards and the New Gods' restoration of Eindil).
+Magic in Aoaz is rare, named and specific. There is no general mana bar. A handful of real powers exist: Glo and Horos's blue sword, Afrit's artifacts, the dragons of Dragon Mountain, Zol's deathless dead held back by the Fading, the storms and heat of the Dead Lands, the Great Wall, and two one-time interventions near the end of the age (Varner's wards and the New Gods' restoration of Eindil).
 
 Several mechanic specs already own parts of these. This spec is the world layer that binds them: it fixes the rules every system must obey, defines **potent magic**, and owns the pieces nobody else owns: the dragon pool, the Wall's upkeep and breaches, the Dead Lands' storms and heat, and the exact effects of the two interventions.
 
@@ -26,9 +26,9 @@ Several mechanic specs already own parts of these. This spec is the world layer 
 - **Glo** is a green crystal holding part of the power of **Glernaen**, a true New God of Power and Wisdom; it is Horos's own heart. Horos gives it and his blue sword to Eindil and turns to dust. The guardian's willing transfer matters; holding the castle does not give Glo (*Castle of Yeldenne and Glo*, *Horos*).
 - **Horos's sword** destroys Zol's directly sustained dead; Zol crushes it; a shard still wounds Zol's manifestation (*Horos's Blue Sword*).
 - **The Necklace of the Abyss** amplifies Afrit, most of all in Aenor. Afrit holds other artifacts, including a ring Eindil tears away. Stripped of them, Afrit is mortal. Golbran removes the necklace; Eindil later wears it (*Necklace of the Abyss*, *Afrit's Collected Artifacts*).
-- **Dragons** come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can through corruption. Eindil returns riding a dragon (*Peoples of Erdae*, *War of the Last Crowns*).
+- **Dragons** come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can through corruption. Eindil returns riding a dragon (*Peoples of Aoaz*, *War of the Last Crowns*).
 - **Zol's dead** are sustained by an Old God's own death-magic. Ordinary weapons cannot end them; only potent magic, such as Glo's and the sword's, can (*Zol*).
-- **The Fading** limits the Old Gods. Zol cannot take an ordinary body; servants sustain his presence; his power grows very slowly. He manifests once, briefly and at great cost, and is forced back, not killed (*The Fading*, *Magic and Sustenance in Erdae*, *Zol*). The causes of the Fading and the meaning of "feeding" are **unknown** and must not be resolved.
+- **The Fading** limits the Old Gods. Zol cannot take an ordinary body; servants sustain his presence; his power grows very slowly. He manifests once, briefly and at great cost, and is forced back, not killed (*The Fading*, *Magic and Sustenance in Aoaz*, *Zol*). The causes of the Fading and the meaning of "feeding" are **unknown** and must not be resolved.
 - **The Dead Lands** are hard to reach by sea because of fierce storms, and oppressively hot farther south (*Volgan's Dead Lands*).
 - **Varner**, a Lesser Spirit, shields the living armies from Zol's death-magic, lifts curses, opens escape routes and dies doing it; Golbran spends nearly all his magic on Varner's wards (*Varner*, *Golbran*).
 - **The New Gods** restore Eindil through Glo after Volgan casts him down (*Fourth Age Canon Register*).

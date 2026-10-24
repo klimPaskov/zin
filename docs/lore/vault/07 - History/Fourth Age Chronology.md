@@ -6,13 +6,13 @@ updated: 2026-10-18
 
 # Fourth Age Chronology
 
-> **Status: proposed.** The owner asked on 18 October 2026 for a deep Fourth Age history, the campaign's start year and how the age plays out. Every date below is a proposal built on the established outline in [[The Fourth Age of Erdae]] and the [[Fourth Age Canon Register]]. Established events keep their established order. The dates assume the proposed **1,760-year** Fourth Age, so Eindil's coronation falls in **4A 1760**.
+> **Status: proposed.** The owner asked on 18 October 2026 for a deep Fourth Age history, the campaign's start year and how the age plays out. Every date below is a proposal built on the established outline in [[The Fourth Age of Aoaz]] and the [[Fourth Age Canon Register]]. Established events keep their established order. The dates assume the proposed **1,760-year** Fourth Age, so Eindil's coronation falls in **4A 1760**.
 
 ## How years are counted
 
 Years are reckoned from the death of [[Elzon]] and the crowning of the first restored king, written **4A** (Fourth Age). 4A 1 is the first year of the restored monarchy. The age ends with Eindil's coronation.
 
-**Proposed calendar.** Erdae keeps twelve months whose lengths match the old reckoning of Aen's astronomers. Their names come from the farming year of the Middle Lands:
+**Proposed calendar.** Aoaz keeps twelve months whose lengths match the old reckoning of Aen's astronomers. Their names come from the farming year of the Middle Lands:
 
 | No. | Month | Season |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ Years are reckoned from the death of [[Elzon]] and the crowning of the first res
 
 ## The campaign begins in 4A 1748
 
-**Start: 1 Thaw, 4A 1748** (the owner fixed the situation on 18 October 2026; the date itself is proposed). The Golden King reigns in his nineteenth year. Eindil has not appeared. Afrit is unrevealed: the world knows only the Deliverer it worships. Erdae seems at peace, as it has been for seventeen centuries. The dangers exist, but only a few people see them: Mirolon's scouts, island fishermen, the Hidden Council itself. Twelve years later, in 4A 1760, the age can end with Eindil's coronation. Eindil's whole journey, the Golden King's murder, Afrit's open kingship and the War of the Last Crowns therefore fit inside one campaign, and the player meets every established event as something that can still go another way.
+**Start: 1 Thaw, 4A 1748** (the owner fixed the situation on 18 October 2026; the date itself is proposed). The Golden King reigns in his nineteenth year. Eindil has not appeared. Afrit is unrevealed: the world knows only the Deliverer it worships. Aoaz seems at peace, as it has been for seventeen centuries. The dangers exist, but only a few people see them: Mirolon's scouts, island fishermen, the Hidden Council itself. Twelve years later, in 4A 1760, the age can end with Eindil's coronation. Eindil's whole journey, the Golden King's murder, Afrit's open kingship and the War of the Last Crowns therefore fit inside one campaign, and the player meets every established event as something that can still go another way.
 
 See [[The Campaign of 4A 1748]] for the world at the start and how the age can unfold.
 
@@ -82,11 +82,11 @@ See [[The Campaign of 4A 1748]] for the world at the start and how the age can u
 | 4A 1729 | The [[Golden King]] is crowned. He sells offices within the year. |
 | 4A 1733 | The Golden Court is completed in Parim: a palace district of gilded halls where offices, titles and charters are bought. |
 | 4A 1736 | A Mirolonese envoy warns Parim that the Dead Lands are arming. The court laughs: Volgan has been quiet for longer than Aenor has had kings. |
-| 4A 1741 | **The founding of [[The Lost Cause]].** The Golden King proclaims a league of the Concord and willing foreign crowns against "the powers of the dark", names himself its first lord, and spends its first treasury on a triumph. Most of Erdae treats it as royal vanity against old legends. Its frontier companies and scholars take it seriously. |
+| 4A 1741 | **The founding of [[The Lost Cause]].** The Golden King proclaims a league of the Concord and willing foreign crowns against "the powers of the dark", names himself its first lord, and spends its first treasury on a triumph. Most of Aoaz treats it as royal vanity against old legends. Its frontier companies and scholars take it seriously. |
 | 4A 1744 | Island fishermen tell of black ships among the islands of the Ocean of Zol. Nobody in a royal court believes them. |
 | 4A 1745 | Gunwaith and Girdon sign the **Truce of the Grey Ford** after half a century of border war. The West Lands are quiet for the first time in a generation. |
 | 4A 1746 | In secret, Afrit's Council concludes that the Golden King is a liability: the dominions grumble at his taxes and the Lost Cause could become a rival centre of power. Preparations for his death begin, known only to the Council. |
-| **4A 1748** | **Campaign start.** Erdae seems at peace. |
+| **4A 1748** | **Campaign start.** Aoaz seems at peace. |
 
 ## V. The end of the age, 4A 1748 to 4A 1760
 
@@ -104,8 +104,8 @@ The established events below are the **historical path**. In play they are what 
 | 4A 1755 | **The War of the Last Crowns begins.** The Western Crossing, the Leren withdrawal from the Treaty of the Narrow Strait, the eastern invasion of the Magical Lands, Volgan's reconquest of Mirolon and the rising of Zol's dead. |
 | 4A 1756 | Afrit abandons Aenor and is proclaimed King of the East. Western armies take Parim. |
 | 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol manifests and is forced back; Lorien dies. |
-| 4A 1758 | Afrit returns with an eastern host, casts Eindil from the cliff and claims kingship over all Erdae. |
+| 4A 1758 | Afrit returns with an eastern host, casts Eindil from the cliff and claims kingship over all Aoaz. |
 | 4A 1759 | The battle in the palace. Afrit dies. Golbran dies saving Eindil. |
 | 4A 1760 | **Eindil is crowned King of Aenor.** The Fourth Age ends. |
 
-[[The Campaign of 4A 1748]] · [[The Fourth Age of Erdae]] · [[Timeline]] · [[Canon Policy]]
+[[The Campaign of 4A 1748]] · [[The Fourth Age of Aoaz]] · [[Timeline]] · [[Canon Policy]]

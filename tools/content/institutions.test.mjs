@@ -93,7 +93,7 @@ test('Abilities: ids, trait enablers and no vanilla condition', () => {
   assert(!text('common/abilities/zin_abilities.txt').includes('glider'), 'no glider ability');
 });
 
-test('Council of Captains: 27 customs in nine categories, 14 chief families, rank keys in Erdae words', () => {
+test('Council of Captains: 27 customs in nine categories, 14 chief families, rank keys in Aoaz words', () => {
   const ideas = child(tree('common/ideas/zin_officer_corps.txt'), 'ideas');
   const per = Object.fromEntries(blocks(ideas).map(c => [c.k, blocks(c.v).length]));
   assert.deepEqual(per, { academy_spirit: 4, army_spirit: 4, division_command_spirit: 4, naval_academy_spirit: 3, navy_spirit: 3, naval_command_spirit: 3, air_force_academy_spirit: 2, air_force_spirit: 2, air_force_command_spirit: 2 });
@@ -128,7 +128,7 @@ test('Chiefs: unique ids and tokens, Zol has none, traits exist, tier values hol
 test('Commander traits: the characters spec keys stay, no modern trait remains, the ladder resolves', () => {
   const lt = blocks(child(tree('common/unit_leader/00_traits.txt'), 'leader_traits')), ids = new Set(lt.map(t => t.k));
   for (const k of ['ranger', 'ambusher', 'winter_specialist', 'desert_fox', 'cavalry_leader', 'hill_fighter', 'trait_mountaineer', 'organizer', 'inspirational_leader', 'old_guard', 'career_officer', 'trickster', 'defensive_doctrine', 'offensive_doctrine', 'harsh_leader', 'trait_reckless', 'unyielding_defender', 'naval_invader', 'blue_water_expert', 'green_water_expert', 'bold']) assert(ids.has(k), `trait key ${k} stays`);
-  for (const k of ['panzer_leader', 'armor_officer', 'seawolf', 'silent_hunter', 'torpedo_expert', 'paratrooper', 'flight_deck_manager', 'dive_bomber', 'carrier_officer', 'submarine_officer', 'substance_abuser', 'jaeger']) assert(!ids.has(k), `${k} has no Erdae counterpart`);
+  for (const k of ['panzer_leader', 'armor_officer', 'seawolf', 'silent_hunter', 'torpedo_expert', 'paratrooper', 'flight_deck_manager', 'dive_bomber', 'carrier_officer', 'submarine_officer', 'substance_abuser', 'jaeger']) assert(!ids.has(k), `${k} has no Aoaz counterpart`);
   for (const t of lt) { const parents = (text('common/unit_leader/00_traits.txt').match(new RegExp(`\\t${t.k} = \\{[\\s\\S]*?\\n\\t\\}`)) ?? [''])[0]; for (const m of parents.matchAll(/any_parent = \{ ([^}]*) \}/g)) for (const p of m[1].trim().split(/\s+/)) assert(ids.has(p), `${t.k} names unknown parent ${p}`); }
   for (const f of ['ETH_traits.txt', 'JAP_traits.txt', 'NSB_traits.txt', 'SWE_traits.txt']) assert.equal(blocks(child(tree(`common/unit_leader/${f}`), 'leader_traits')).length, 0, `${f} is comment-only`);
   const names = ['operative_commando', 'operative_seducer', 'operative_infiltrator', 'operative_master_interrogator', 'operative_linguist', 'operative_double_agent', 'operative_tough', 'operative_safe_cracker', 'operative_well_groomed', 'operative_natural_orator', 'operative_escape_artist', 'operative_demolition_expert'];
@@ -294,7 +294,7 @@ test('AI strategies: only types the installed game documents; market never offer
   assert.equal([...s.matchAll(/type = send_lend_lease_desire/g)].length, countries.filter(c => c.overlord).length);
 });
 
-test('Text: Erdae words only, British spelling, Windows-1252, and no vanilla name', async () => {
+test('Text: Aoaz words only, British spelling, Windows-1252, and no vanilla name', async () => {
   const entries = {};
   for (const m of locAll.matchAll(/^ ([A-Za-z0-9_.@-]+):0 "(.*)"$/gm)) entries[m[1]] = m[2];
   assert(Object.keys(entries).length > 1500);

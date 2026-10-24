@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "owner": "docs/specs/03_gameplay/01_warfare.md section 3 (and 09_naval_air_doctrines.md section 2)",
- "note": "Equipment archetypes of Erdae. `base` holds the per-piece stats of the baseline variant `b` (soft attack sa, hard attack ha, defence def, breakthrough brk, piercing ap, armour arm, hardness hard, air attack air). Variant n has stats base x (1 + g.x (n - b)) (x = sa, ha, def, brk), piercing + apStep (n - b), armour + armStep (n - b) and build cost x (1 + 0.08 (n - b)); a variant row may override any stat with `set`. `res` uses engine resource keys (steel Iron, aluminium Timber, rubber Horses, tungsten Stone, chromium Gold, oil Essence; docs/specs/03_gameplay/02_economy.md); `resLate` adds resources from variant `from`. `prod` lists who can produce it: a people key, or `country:<name>`; an empty list means nobody (granted). Every equipment burns no fuel.",
+ "note": "Equipment archetypes of Aoaz. `base` holds the per-piece stats of the baseline variant `b` (soft attack sa, hard attack ha, defence def, breakthrough brk, piercing ap, armour arm, hardness hard, air attack air). Variant n has stats base x (1 + g.x (n - b)) (x = sa, ha, def, brk), piercing + apStep (n - b), armour + armStep (n - b) and build cost x (1 + 0.08 (n - b)); a variant row may override any stat with `set`. `res` uses engine resource keys (steel Iron, aluminium Timber, rubber Horses, tungsten Stone, chromium Gold, oil Essence; docs/specs/03_gameplay/02_economy.md); `resLate` adds resources from variant `from`. `prod` lists who can produce it: a people key, or `country:<name>`; an empty list means nobody (granted). Every equipment burns no fuel.",
  "peoples": [
   "men",
   "elves",

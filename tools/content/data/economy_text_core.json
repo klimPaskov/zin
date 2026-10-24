@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "note": "Erdae text for keys the installed game defines (written to localisation/replace). One group per surface; a module that writes the same keys can switch a group off with ctx.skipLoc. Placeholders ($NAME|fmt$), colour codes and texticons follow the key they replace, so the engine can still fill them. Every value is ZIN's own wording from the glossary (data/glossary.json).",
+  "note": "Aoaz text for keys the installed game defines (written to localisation/replace). One group per surface; a module that writes the same keys can switch a group off with ctx.skipLoc. Placeholders ($NAME|fmt$), colour codes and texticons follow the key they replace, so the engine can still fill them. Every value is ZIN's own wording from the glossary (data/glossary.json).",
   "groups": {
     "energy": {
       "TOPBAR_ENERGY_DEMAND": "£energy_texticon Provisions Needed: $DEMAND_VAL|H1$ ($ENERGY_RATIO|H1%$)",
@@ -79,7 +79,7 @@
       "alert_naval_convoy_raiding_results_delayed_click": "§GClick to centre on the next report.\nClick the £topbar_convoys icon in the region to read it.\n§!"
     },
     "topbar": {
-      "TOPBAR_TRADE_DESC": "Trade for stores with every shore of Erdae.",
+      "TOPBAR_TRADE_DESC": "Trade for stores with every shore of Aoaz.",
       "TOPBAR_PRODUCTION_DESC": "Make arms, gear and ships for the host, the fleet and the wings.",
       "TOPBAR_LOGISTICS_DESC": "See how gear is used by our hosts and made for them.",
       "TOPBAR_CONSTRUCTION_DESC": "Raise buildings and watch the works in hand.",

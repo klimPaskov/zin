@@ -425,7 +425,7 @@ test('The tactics file drops the single-country tactics and names only traits an
   for (const r of t.matchAll(/has_trait = (\w+)/g)) assert(raw0.text.traitsProvided.includes(r[1]), `trait ${r[1]} is not one the characters slice defines`);
   assert.doesNotMatch(t, /panzer|has_unit_type = (engineer|pioneer|light_flame)/);
   assert.match(t, /^phases = \{/m);
-  for (const id of ids) assert(raw0.text.tactics[id], `${id} needs an Erdae name`);
+  for (const id of ids) assert(raw0.text.tactics[id], `${id} needs an Aoaz name`);
   assert.equal(model.tactics.dropped.length, 5);
 });
 test('transformTactics refuses to keep a tactic that names a dropped one', () => {

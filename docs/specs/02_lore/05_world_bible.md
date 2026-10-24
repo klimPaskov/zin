@@ -1,4 +1,4 @@
-# World bible: the peoples, cultures and countries of Erdae
+# World bible: the peoples, cultures and countries of Aoaz
 
 **Status:** Draft. **Date:** 19 October 2026. **Priority:** 2. **Phase:** 2 (names and cultures feed phase 1 map names and every later system).
 **Data:** [tools/content/data/world/cultures.json](../../../tools/content/data/world/cultures.json), [country_cultures.json](../../../tools/content/data/world/country_cultures.json), [languages.json](../../../tools/content/data/world/languages.json), [demography.json](../../../tools/content/data/world/demography.json).
@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Erdae should read as one real world where everything is accounted for. This bible says who lives where and why, what they believe, how they rule, marry, bury, eat, build and fight, what their neighbours think of them, and how all that looks in the game. It covers the ten peoples, the 53 cultures inside them, the 24 languages they speak, and all 305 countries. The lore vault stays canon. The bible only adds, and says so.
+Aoaz should read as one real world where everything is accounted for. This bible says who lives where and why, what they believe, how they rule, marry, bury, eat, build and fight, what their neighbours think of them, and how all that looks in the game. It covers the ten peoples, the 53 cultures inside them, the 24 languages they speak, and all 305 countries. The lore vault stays canon. The bible only adds, and says so.
 
 ## How to read the labels
 
@@ -90,7 +90,7 @@ Each country has one primary people ([03_peoples.md](../00_foundation/03_peoples
 
 ### Men
 
-The mortal common folk are the great majority of Erdae. The ancient First Men were stronger, longer-lived and more magical than those of today [E]. Aen, their last great king, was fatherless and born of magic [E]. Today's men descend from several stocks: the **Ainic** peoples who share Aen's language family (Aenorans, the Leren, Dondor, Mirolon), the **Boreal** peoples of the north-west who were there when the charts came (the Cold Lands, the West Lands and Triton's Islands), the **Eastern** peoples of the river, desert and road kingdoms, the **islanders** of the south, and the **Orran** survivors of the beaten kingdoms. The bible gives them 31 cultures.
+The mortal common folk are the great majority of Aoaz. The ancient First Men were stronger, longer-lived and more magical than those of today [E]. Aen, their last great king, was fatherless and born of magic [E]. Today's men descend from several stocks: the **Ainic** peoples who share Aen's language family (Aenorans, the Leren, Dondor, Mirolon), the **Boreal** peoples of the north-west who were there when the charts came (the Cold Lands, the West Lands and Triton's Islands), the **Eastern** peoples of the river, desert and road kingdoms, the **islanders** of the south, and the **Orran** survivors of the beaten kingdoms. The bible gives them 31 cultures.
 
 ### Elves
 
@@ -194,7 +194,7 @@ Fifty-three cultures, grouped by people. Each card answers the same questions: h
 
 *People:* Men. *Language:* Aenoran (lake). *Faith:* The Faith of the Deliverer and The Lamp and the Furrow. *Tier:* 1. *Countries (11):* Aenor, Safeton, Fotan, Ulgus, Stendorler, Tieri, Dariap, Novez, Mondon, Freshon, Pazoma.
 
-The heirs of Aen's kingdom: farmers, bargemen, scribes and guildsmen of the Great Lake basin, the most populous and best fed people of Erdae.
+The heirs of Aen's kingdom: farmers, bargemen, scribes and guildsmen of the Great Lake basin, the most populous and best fed people of Aoaz.
 
 | Topic | Description |
 | --- | --- |
@@ -1274,7 +1274,7 @@ The Faith of the Deliverer is real and widely held [E public worship]. Every oth
 
 | Faith | Kind | What believers hold | Holy sites | Clergy | Festivals | Kept by |
 | --- | --- | --- | --- | --- | --- | --- |
-| The Faith of the Deliverer [secret hub] | devotion | The Deliverer, a New God of deliverance, protection and renewal, saved Erdae when the Great Necromancer fell and still keeps the peace. [E public worship; P doctrine] Believers keep a lamp and a loaf for the stranger and give a tenth of the first harvest to the Houses of the First Light. | The House of the First Light at Parim; the pilgrim hostels of the Zilin Hills; a house in every town of Aenor. | Confessors who hear, teach and write the birth rolls; healers of the Houses; the High Confessor at the head, seated in the Zilin Hills. | The Lamp-Lighting (1 Thaw), the Day of Deliverance (the Third Age's end, in Mistfall), the Thousand-Year Jubilee every hundred years (last in 4A 1000). | Lake Aenorans, Zilin Pilgrim-Folk |
+| The Faith of the Deliverer [secret hub] | devotion | The Deliverer, a New God of deliverance, protection and renewal, saved Aoaz when the Great Necromancer fell and still keeps the peace. [E public worship; P doctrine] Believers keep a lamp and a loaf for the stranger and give a tenth of the first harvest to the Houses of the First Light. | The House of the First Light at Parim; the pilgrim hostels of the Zilin Hills; a house in every town of Aenor. | Confessors who hear, teach and write the birth rolls; healers of the Houses; the High Confessor at the head, seated in the Zilin Hills. | The Lamp-Lighting (1 Thaw), the Day of Deliverance (the Third Age's end, in Mistfall), the Thousand-Year Jubilee every hundred years (last in 4A 1000). | Lake Aenorans, Zilin Pilgrim-Folk |
 | The Lamp and the Furrow | devotion | Households honour the New Gods in two folk images: a lamp that never goes out, and rain over a ploughed field. These are the pictures people carry; the gods are more than the pictures. [Images taken from Eindil's vision in the chronicle; P as folk images] | Hearth shrines; lamp-posts at crossroads; rain-stones in the fields. | None. Mothers and eldest sons keep the lamp; the village keeps the rain-stone. | Thaw Lamp (1 Thaw), Rain-Feast (Rainwake), Harvest Home (Harvest), the Vigil of Longnight. | Lake Aenorans, Selen Rangers, Steppe Riders, Wall-Folk, March-Folk, Isle Houses of Asgard, Leren of the Strait, Free Crowns of the North, Wardens of Mirolon, Dead Lands Freeholders, Western Guildmen, Chart-Islanders, Goodin Sunfolk |
 | The Green Lords | spirit | Every old wood has a Wild Spirit, a Lord of the Green, who must be asked before an arrow is loosed. Rangers keep the Quiet Law: no bow is drawn in the forest during the Hallow Month. [Wild Spirits are a proposed nature in the vault] | Hollow oaks; the Moot Tree of Selen; the shrine glades along the Wall's western edge. | Tree-wardens, one for each wood, chosen by the woodland moot. | Hallow Month (Fallowing), Green-Waking (Thaw, when the first leaves are counted), the Three Arrows (midsummer shooting). | Selen Rangers |
 | The Horse-Oath | spirit | The herd and the sky are one thing. A rider swears on a horse, and the horse carries the oath to the sky, where the spirits of the wind listen. An oath broken is a horse lost. | Felt-tents of the oath at the great summer gatherings; horse-barrows facing east. | Oath-riders, old riders who witness oaths and judge their breaking. | The Gathering (Highsun), the Foaling (Thaw), the Last Ride (Mistfall). | Steppe Riders |
@@ -1320,7 +1320,7 @@ Fifteen realms carry the story: the nine of the working table [W] and six more w
 
 ### Aenor, the Middle Kingdom
 
-The kingdom lies where the Great Lake meets the Vale of Aenor, the best-fed ground in Erdae. Aen's victory in 1A 1 joined the plain kingdoms here [E]. The roads of Aen ran out from the lake in every direction, and the lake has fed the capital ever since. The kingdom has fallen once, in 2A 2133 [E], and was rebuilt from the forests of Selen and the isle of Asgard after Elzon died. Harion's Charters of Parim made the surviving dominions into a Concord of twenty-six, each with its own lord and law. Parim, on the lake bluff where the River Aenar enters, is the Fourth Age seat; the older capital's name is open [O].
+The kingdom lies where the Great Lake meets the Vale of Aenor, the best-fed ground in Aoaz. Aen's victory in 1A 1 joined the plain kingdoms here [E]. The roads of Aen ran out from the lake in every direction, and the lake has fed the capital ever since. The kingdom has fallen once, in 2A 2133 [E], and was rebuilt from the forests of Selen and the isle of Asgard after Elzon died. Harion's Charters of Parim made the surviving dominions into a Concord of twenty-six, each with its own lord and law. Parim, on the lake bluff where the River Aenar enters, is the Fourth Age seat; the older capital's name is open [O].
 
 Now it is the richest and fattest realm of the world, under a king who sells offices. Its strengths are institutions older than any king: the Concord courts, the universities, the Houses of the First Light that keep the grain, the hospitals and the birth rolls. [secret: the rolls hold every hearth-name, and the Houses answer to a master that no king has ever seen] It trusts its dominions, which it has bought with charters, and the Deliverer, who has never failed it. It fears Lerendor's pride, the West's old claims and, in legend, a Volgan that no one has seen in a hundred years. Its borders follow water and the Wall: the Great Lake and the Aenar make the core, the Wall Accord of 4A 96 fixes the east, the Narrow Strait the north, the Crown Ocean the west.
 
@@ -1344,7 +1344,7 @@ His Dominion is a mixed host: grave hosts, Netherborn demons, orcs, ogres, monst
 
 ### Zol's Mistake
 
-The black north was already desolate before Aen [E]. Zol, the Old God of Death and the only Old God in Erdae, cannot take a body; his servants sustain his presence [E]. His power grows slowly [E]. The realm is nearly empty of the living and roamed by the dead, who are sustained by his own magic and cannot be ended by ordinary arms [E]. The seat is Furviatlon [W].
+The black north was already desolate before Aen [E]. Zol, the Old God of Death and the only Old God in Aoaz, cannot take a body; his servants sustain his presence [E]. His power grows slowly [E]. The realm is nearly empty of the living and roamed by the dead, who are sustained by his own magic and cannot be ended by ordinary arms [E]. The seat is Furviatlon [W].
 
 Who administers the realm for Zol is unknown [O], and this bible does not say. It has no court, no declared faith and no named leader: its leader is an emblem [S4]. Its border is the black sea and the black earth. Fishermen of the Ocean of Zol tell of black ships, and nobody at court believes them.
 

@@ -12,15 +12,15 @@ updated: 2026-10-17
 
 ## Proposed fuller account
 
-The battlefield is placed in the southern approaches of the Middle Lands, close to the old route from the southern coast to the crownlands. Volgan concentrates an army of corrupted elves, orcs, goblins, allied eastern and southern men, demons and devils, dragons, dark Great Spirits, and Damned Spirits released from beneath the mountains. The Grand Alliance brings its armies from multiple regions across Erdae.
+The battlefield is placed in the southern approaches of the Middle Lands, close to the old route from the southern coast to the crownlands. Volgan concentrates an army of corrupted elves, orcs, goblins, allied eastern and southern men, demons and devils, dragons, dark Great Spirits, and Damned Spirits released from beneath the mountains. The Grand Alliance brings its armies from multiple regions across Aoaz.
 
-The suggested *Thirteen Days of Dardan* include the collapse of its first lines, fighting at river and road crossings, the eruption of Damned Spirits from beneath the hills, the commitment of [[Lorien]]'s Gala elves, and a joint rite by allied Great Spirits. The rite can only succeed after mortal and immortal allies break the defenses around Volgan. It strips the strength he can project into Erdae and banishes him to the Void, at significant cost to the participating spirits. Volgan is not annihilated.
+The suggested *Thirteen Days of Dardan* include the collapse of its first lines, fighting at river and road crossings, the eruption of Damned Spirits from beneath the hills, the commitment of [[Lorien]]'s Gala elves, and a joint rite by allied Great Spirits. The rite can only succeed after mortal and immortal allies break the defenses around Volgan. It strips the strength he can project into Aoaz and banishes him to the Void, at significant cost to the participating spirits. Volgan is not annihilated.
 
-The fuller scene, phase-by-phase course of battle, and consequences are in [[The First Age of Erdae]]. These phases, names, location, and mechanism are proposed rather than established.
+The fuller scene, phase-by-phase course of battle, and consequences are in [[The First Age of Aoaz]]. These phases, names, location, and mechanism are proposed rather than established.
 
 ## Aftermath
 
 The military host breaks, but the Dead Lands remain unconquered. **Elzon** organizes the remnant defense and defeats the Alliance's attempted follow-up invasion. Elven casualties in that failure create longstanding resentment toward Aenor's king.
 
-[[The First Age of Erdae]] · [[Elzon]] · [[Grand Alliance]] · [[Volgan]]
+[[The First Age of Aoaz]] · [[Elzon]] · [[Grand Alliance]] · [[Volgan]]
 

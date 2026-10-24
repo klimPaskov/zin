@@ -4,7 +4,7 @@ status: mixed
 updated: 2026-10-17
 ---
 
-# Peoples of Erdae
+# Peoples of Aoaz
 
 The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** and mortal **Common Folk**, while other creature types have not all been assigned to a clear formal order.
 
@@ -29,7 +29,7 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 
 **Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, but does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
 
-See also [[Spirits and Their Ranks]], [[Erdae and Its Regions]], [[Volgans Dead Lands]].
+See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Dead Lands]].
 
 ## First Age ethnic and political history
 
@@ -39,4 +39,4 @@ Volgan's army contained **corrupted elves**, allied men from eastern and souther
 
 **Open:** Gala elves and Sunhot elves both appear in the source lore. Their exact relationship is not yet specified. Dwarven homelands also remain unassigned.
 
-[[The First Age of Erdae]] · [[Grand Alliance]]
+[[The First Age of Aoaz]] · [[Grand Alliance]]

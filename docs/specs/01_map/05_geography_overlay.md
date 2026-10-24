@@ -102,7 +102,7 @@ The rasteriser should use the model, not the drawings. If it reads the cleaned r
 
 - Every label is ink on the land and on the sea. Do not read terrain from pixels under a label. The name table lists 711 positions; mask a disc of 0.006 units round each.
 - Some labels run across seams or the edge of a sheet and are cut. Thirty-two label positions lie outside the mosaic. Never clamp them in.
-- Route notes (for example the Path to Aoaz) are not places.
+- Route notes (for example the Path to Erdae) are not places.
 - Pencil sketch lines (the faint grey outlines of the Cold Lands regions) are not coasts.
 
 ### Sheet joins and frames

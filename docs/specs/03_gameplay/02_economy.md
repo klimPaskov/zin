@@ -4,23 +4,23 @@
 
 ## Purpose
 
-Replace the 1936 industrial economy with an Erdae economy that a player reads at a glance: iron, timber, horses, stone, gold, essence and grain; workshops, armouries and shipwrights; roads, harbours and forts. Give every region a recognisable economic identity, and give Aenor's Golden Court a treasury that its foolish king can waste. The engine's production, trade and supply systems stay; only their names, inputs, distribution and a few scripted layers change.
+Replace the 1936 industrial economy with an Aoaz economy that a player reads at a glance: iron, timber, horses, stone, gold, essence and grain; workshops, armouries and shipwrights; roads, harbours and forts. Give every region a recognisable economic identity, and give Aenor's Golden Court a treasury that its foolish king can waste. The engine's production, trade and supply systems stay; only their names, inputs, distribution and a few scripted layers change.
 
-**This spec owns:** resource and building names, the resource columns of the region profiles, state category names, trade, economy and trade law names, the regional economic spirits, the great powers' starting industry targets, the Golden Court's gold (`zin_aenor_gold`), and the stage-2 replacements of the vanilla economic folders: resources, landmarks, military-industrial organisations (Erdae workshops) and special projects ([06_vanilla_removal_and_zero_errors.md](../00_foundation/06_vanilla_removal_and_zero_errors.md) §3.3, §3.4).
+**This spec owns:** resource and building names, the resource columns of the region profiles, state category names, trade, economy and trade law names, the regional economic spirits, the great powers' starting industry targets, the Golden Court's gold (`zin_aenor_gold`), and the stage-2 replacements of the vanilla economic folders: resources, landmarks, military-industrial organisations (Aoaz workshops) and special projects ([06_vanilla_removal_and_zero_errors.md](../00_foundation/06_vanilla_removal_and_zero_errors.md) §3.3, §3.4).
 
-**Others own:** equipment costs and fuel use ([01_warfare.md](01_warfare.md)); state categories, manpower, infrastructure and the region profile file ([00_foundation/04_countries_and_states.md](../00_foundation/04_countries_and_states.md)); the strait dues ([Lerendor](../04_mechanics/lerendor_narrow_strait.md)); corruption, loyalty and the Lost Cause ([Aenor](../04_mechanics/aenor_court_and_succession.md)); the Erdae bar and Aenor's panel ([07_interface/01_interface.md](../07_interface/01_interface.md)).
+**Others own:** equipment costs and fuel use ([01_warfare.md](01_warfare.md)); state categories, manpower, infrastructure and the region profile file ([00_foundation/04_countries_and_states.md](../00_foundation/04_countries_and_states.md)); the strait dues ([Lerendor](../04_mechanics/lerendor_narrow_strait.md)); corruption, loyalty and the Lost Cause ([Aenor](../04_mechanics/aenor_court_and_succession.md)); the Aoaz bar and Aenor's panel ([07_interface/01_interface.md](../07_interface/01_interface.md)).
 
 ## Lore basis
 
 **Established** (vault):
 
 - The Fourth Age had more than a thousand years of genuine peace, prosperity, education, science, medicine and strong institutions (*Fourth Age Canon Register*).
-- Cities grew around the Great Lake, ports expanded, and Aenor traded with the North Lands, West Lands, the islands, the Magical Lands and the eastern states (*The Fourth Age of Erdae*, prologue).
+- Cities grew around the Great Lake, ports expanded, and Aenor traded with the North Lands, West Lands, the islands, the Magical Lands and the eastern states (*The Fourth Age of Aoaz*, prologue).
 - The Golden King hoards treasure, sells offices, rewards flatterers and spends on his own grandeur. Strong institutions keep the kingdom running (*Golden King*).
 - Afrit's Hidden Council uses religious institutions, relief networks, foreign envoys and commercial connections (*Afrit's Hidden Council*).
-- The Dead Lands are hot and storm-girt; Zol's Mistake is a barren, sparsely peopled wasteland; dragons come from Dragon Mountain (*Volgan's Dead Lands*, *Zol's Mistake*, *Peoples of Erdae*).
+- The Dead Lands are hot and storm-girt; Zol's Mistake is a barren, sparsely peopled wasteland; dragons come from Dragon Mountain (*Volgan's Dead Lands*, *Zol's Mistake*, *Peoples of Aoaz*).
 
-**Proposed in the vault** (*Fourth Age Chronology*, *The Campaign of 4A 1748*): the Great Lake ports rebuilt 4A 40–120; the East Lands caravan roads that made Noris and Stabilo rich (4A 600–780); the Triton islanders' charts of the Pupor Ocean (4A 702); Gunwaith and Girdon courting Aenoran gold (4A 1702); the Golden Court as a palace district where offices are bought (4A 1733); the Houses of the First Light keeping grain stores; the East Lands as Erdae's richest and most divided region.
+**Proposed in the vault** (*Fourth Age Chronology*, *The Campaign of 4A 1748*): the Great Lake ports rebuilt 4A 40–120; the East Lands caravan roads that made Noris and Stabilo rich (4A 600–780); the Triton islanders' charts of the Pupor Ocean (4A 702); Gunwaith and Girdon courting Aenoran gold (4A 1702); the Golden Court as a palace district where offices are bought (4A 1733); the Houses of the First Light keeping grain stores; the East Lands as Aoaz's richest and most divided region.
 
 **Proposed in this spec:** every resource, building, law, state-category and workshop name; the regional identities; all numbers; the treasury and its decisions. None of these are lore.
 
@@ -77,7 +77,7 @@ Keys stay; names change through localisation. Names match the warfare spec where
 | `industrial_infrastructure` | Mine and Quarry Roads | |
 | `synthetic_refinery`, `fuel_silo`, `rocket_site`, `mega_gun_emplacement`, all `nuclear_*`, `*_facility`, `dam*`, `canal_*`, vanilla landmarks | not used | Never unlocked; no ZIN state starts with them |
 
-**Landmarks.** `common/buildings/01_landmark_buildings.txt` is overridden in stage 2 with one inert landmark, `zin_interim_landmark` (`enable_for_controllers = { }`, placed in no state), so no vanilla landmark loads. Erdae landmarks (the Golden Court, the gate at Kingson) replace it in phase 7; they need generated art and 3D models.
+**Landmarks.** `common/buildings/01_landmark_buildings.txt` is overridden in stage 2 with one inert landmark, `zin_interim_landmark` (`enable_for_controllers = { }`, placed in no state), so no vanilla landmark loads. Aoaz landmarks (the Golden Court, the gate at Kingson) replace it in phase 7; they need generated art and 3D models.
 
 ### State category names
 
@@ -165,9 +165,9 @@ Design targets for the state pass. The countries and states spec requires Aenor 
 | Worshipdom | 3 | 0 | 0 | none | Its wealth is its footholds |
 | Zol | 1 | 0 | 0 | none | One workshop at Furviatlon at most (Zol spec); the Zol mechanic supplies its hosts |
 
-### Erdae workshops (military-industrial organisations)
+### Aoaz workshops (military-industrial organisations)
 
-Stage 2 replaces the vanilla organisations, which name vanilla tags and equipment, with generic Erdae workshops: one per warfare equipment group (`common/equipment_groups`, [01_warfare.md](01_warfare.md) §15), available to every country that can produce that group. They use the engine's generic research and policy trees with ZIN names. Names are proposed.
+Stage 2 replaces the vanilla organisations, which name vanilla tags and equipment, with generic Aoaz workshops: one per warfare equipment group (`common/equipment_groups`, [01_warfare.md](01_warfare.md) §15), available to every country that can produce that group. They use the engine's generic research and policy trees with ZIN names. Names are proposed.
 
 | Workshop | Equipment group (warfare) | Who may found it |
 | --- | --- | --- |
@@ -185,7 +185,7 @@ Policies (`common/military_industrial_organization/policies`) are three ZIN poli
 
 ### Special projects (great works)
 
-Erdae has no modern special projects. Stage 2 replaces the four vanilla folders with one project tag `zin_great_works`, one specialisation `zin_spec_great_works`, one project `zin_interim_great_work` (`available = { always = no }`, `visible = { always = no }`) and its prototype reward file, because an empty set errors (vanilla removal §3.3). Real great works (the Wall works, warded hulls) are a phase 7 option; until then check C4 lists the interim project as intended.
+Aoaz has no modern special projects. Stage 2 replaces the four vanilla folders with one project tag `zin_great_works`, one specialisation `zin_spec_great_works`, one project `zin_interim_great_work` (`available = { always = no }`, `visible = { always = no }`) and its prototype reward file, because an empty set errors (vanilla removal §3.3). Real great works (the Wall works, warded hulls) are a phase 7 option; until then check C4 lists the interim project as intended.
 
 ### Trade
 
@@ -222,7 +222,7 @@ Start laws: `export_focus` for everyone, `closed_economy` for Zol, `isolation` f
 
 ### The Golden Court's gold
 
-Aenor alone keeps a scripted treasury, `zin_aenor_gold` (0–2,000, proposed). It stands for the royal coffers the Golden King fills by selling offices and empties on his own grandeur. It is not a currency for other countries, and only Aenor's player sees it (decision S7: in Aenor's panel and its line of the Erdae bar). The Aenor mechanic may spend it; every change goes through `zin_economy_add_gold`.
+Aenor alone keeps a scripted treasury, `zin_aenor_gold` (0–2,000, proposed). It stands for the royal coffers the Golden King fills by selling offices and empties on his own grandeur. It is not a currency for other countries, and only Aenor's player sees it (decision S7: in Aenor's panel and its line of the Aoaz bar). The Aenor mechanic may spend it; every change goes through `zin_economy_add_gold`.
 
 **Start:** 400.
 

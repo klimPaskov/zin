@@ -190,7 +190,7 @@ test('Every ZIN country gets the interim tree and three ZIN councillors; no vani
   assert(![...stagedFiles.keys()].some(f => f === 'history/general/generic_advisors.txt'));
   for (const t of general.matchAll(/traits = \{ (\w+) \}/g)) assert.match(await read('common/country_leader/00_zin_leader_traits.txt'), new RegExp(`\\t${t[1]} = \\{`), t[1]);
 });
-test('AI faction theaters name only Erdae strategic regions, each once (B10)', async () => {
+test('AI faction theaters name only Aoaz strategic regions, each once (B10)', async () => {
   const regions = new Set((await readdir(path.join(ZIN, 'map/strategicregions'))).filter(f => f.endsWith('.txt')).map(f => Number(f.split('-')[0])));
   const seen = [];
   for (const t of parse(await read('common/ai_faction_theaters/zin_theaters.txt'))) if (t.k) seen.push(...t.v.find(e => e.k === 'regions').v.map(e => Number(e.v)));

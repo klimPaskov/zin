@@ -1,6 +1,6 @@
 # Eindil's journey
 
-**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3 (system and AI); event text in Phase 5 ([06_events/02_eindil_journey.md](../06_events/02_eindil_journey.md), [06_events/03_war_of_the_last_crowns.md](../06_events/03_war_of_the_last_crowns.md)). **Depends on** the calendar ([00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)): the game still starts on 1936.1.1 until that spec is built. Every date below is an Erdae engine date (`1749.2.1` is 1 Ironfrost 4A 1749).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3 (system and AI); event text in Phase 5 ([06_events/02_eindil_journey.md](../06_events/02_eindil_journey.md), [06_events/03_war_of_the_last_crowns.md](../06_events/03_war_of_the_last_crowns.md)). **Depends on** the calendar ([00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)): the game still starts on 1936.1.1 until that spec is built. Every date below is an Aoaz engine date (`1749.2.1` is 1 Ironfrost 4A 1749).
 
 ## Purpose
 
@@ -24,13 +24,13 @@ The Castle of Yeldenne, Horos and Glo are a separate system with their own spec,
 | He travels to the Gala elves; Lorien names him son of Ein after weeks of talk and a vision; gives ship, armour, sword and a crew of western friends, southern islanders and Gala elves; sends him to Horos | established | *Lorien*, *The Journey of Eindil* |
 | Afrit travels after him and sets an ambush; every one of Eindil's crew dies; Eindil reaches the castle alone through snow | established | *Fourth Age Canon Register*, *The Journey of Eindil* |
 | Horos gives Glo and the blue sword; Eindil learns the god-king is his brother | established | *Castle of Yeldenne and Glo*, *Eindil* |
-| He warns Aenor; most of the court denounces him; frontier troops, scholars and branches of the Lost Cause believe him | established | *The Fourth Age of Erdae* VIII |
+| He warns Aenor; most of the court denounces him; frontier troops, scholars and branches of the Lost Cause believe him | established | *The Fourth Age of Aoaz* VIII |
 | He returns on a dragon with Varner and Golbran; the sword driven into the earth breaks a front of Zol's dead; the peoples unite; Volgan casts him down; Varner dies defending the living against Zol's dead; the New Gods restore him; he destroys Volgan's manifested body; Zol manifests, crushes the sword, is wounded by a shard; Lorien dies; Zol withdraws | established | *Fourth Age Canon Register*, *Horos's Blue Sword*, *War of the Last Crowns* |
-| Glo is the channel of the New Gods' restoration | proposed | *Glernaen*, *The Fourth Age of Erdae* XI |
+| Glo is the channel of the New Gods' restoration | proposed | *Glernaen*, *The Fourth Age of Aoaz* XI |
 | Afrit returns, cuts off his arm, casts him from a cliff and retakes the capital; Eindil survives; at the palace Alleria helps strip Afrit's artifacts; Golbran removes the Necklace; Eindil kills Afrit; Golbran gives his last magic to save him and dies; Eindil puts on the Necklace and is crowned King of Aenor | established | *Fourth Age Canon Register*, *The Last Battle in the Palace* |
-| Golbran spends nearly all his strength at Varner's last stand and survives it until the palace | proposed | *Fourth Age Canon Register* (proposed list), *The Fourth Age of Erdae* X |
+| Golbran spends nearly all his strength at Varner's last stand and survives it until the palace | proposed | *Fourth Age Canon Register* (proposed list), *The Fourth Age of Aoaz* X |
 | Dates: wakes 4A 1749, war-king 1750, storm 1751, Gala 1752, Yeldenne 1753, warnings 1754, return 1757, cliff 1758, palace 1759, coronation 1760 | proposed | *Fourth Age Chronology* |
-| The Truce of the Grey Ford; the Bridge of the Three Oaths, Girdon's Winter Ford, the Gunwaith trial, the reef of drowned voices, the shrine beneath the tide; the epithets "the Man from the Ice" and "the King Without a House" | proposed | *Fourth Age Chronology*, *The Fourth Age of Erdae* IV |
+| The Truce of the Grey Ford; the Bridge of the Three Oaths, Girdon's Winter Ford, the Gunwaith trial, the reef of drowned voices, the shrine beneath the tide; the epithets "the Man from the Ice" and "the King Without a House" | proposed | *Fourth Age Chronology*, *The Fourth Age of Aoaz* IV |
 | Mirror of First Rain; Alleria investigates and shelters him; Alleria finds him below the cliff; the dragon entrusted by Magical Lands elves; the Ring of Doors and the other lesser artifacts' names | proposed | vault notes as named |
 | Chancellor Merovan left in Parim; Aurevan as Afrit's public name | proposed | *Chancellor Merovan (proposed)*, *Aurevan the Deliverer* |
 
@@ -184,7 +184,7 @@ Eindil sails for Aenor from the leader's coast (or the nearest West Lands port).
 | Event | Choice | Effect |
 | --- | --- | --- |
 | A Stranger at Gala (CP 08, so "Turn him away for a season" is written first) | **Receive him** (hist) | Eindil recruited (advisor role "Guest of Lorien", no cost); regard +25 |
-| | Turn him away for a season | Lorien relents after 180 days: delay +180; regard −10. The Gala Elves cannot refuse him for good (Lorien's established care for Erdae) |
+| | Turn him away for a season | Lorien relents after 180 days: delay +180; regard −10. The Gala Elves cannot refuse him for good (Lorien's established care for Aoaz) |
 | Weeks of Memory (60 days later) | flavour | renown +5 |
 | **The Mirror of First Rain** (proposed device) | one option | Sets `zin_eindil_named`; `set_character_name`; trait `zin_eindil_heir_of_aen`; portrait E3; calls `zin_sun_spend_clarity` 30 ([lands_of_the_sun.md](lands_of_the_sun.md)). Gala reads the vision (burning capital, armies from west and east, death from the north, a shard of blue metal). If the Mirror is stilled (`zin_mirror_stilled`), Lorien names him 60 days later from memory and the records of the First Men, without the vision. The Worshipdom's report is the Afrit spec's `zin_afrit.31`, after that spec's delay (N8) |
 | Lorien's Gift (30 days later) | **Equip him generously** (hist) | Gala pays what it has, up to 1,000 manpower and 500 infantry equipment, never below 0; the crew includes Gala elves: `zin_eindil_elven_crew` (ambush strength −1); regard +15 |
@@ -307,7 +307,7 @@ Afrit returns from the east with a new host (the Afrit spec sets `zin_afrit_retu
 
 Afrit holds Parim again (Afrit spec, `zin_afrit.62`). Eindil cannot storm the palace with armies; he goes in.
 
-**Decision chain** (category `zin_eindil_palace`, the Host only; needs `zin_eindil_recovered`, `zin_afrit_holds_parim`, and the Afrit spec's preconditions for `zin_afrit_begin_palace_battle`: `zin_afrit_claims_erdae` or `zin_afrit_stand_in_parim`, not `zin_afrit_dead`):
+**Decision chain** (category `zin_eindil_palace`, the Host only; needs `zin_eindil_recovered`, `zin_afrit_holds_parim`, and the Afrit spec's preconditions for `zin_afrit_begin_palace_battle`: `zin_afrit_claims_aoaz` or `zin_afrit_stand_in_parim`, not `zin_afrit_dead`):
 
 | Decision | Days | Cost | Needs | Effect |
 | --- | ---: | --- | --- | --- |
@@ -421,7 +421,7 @@ Shared names this spec owns (in the contract additions register):
 | `zin_eindil_lost` | global flag | — | divergence: the heir is out of the story |
 | `zin_lost_cause_with_eindil` | global flag | — | the Lost Cause follows Eindil (same meaning in the Aenor spec, N11) |
 
-Read from the Afrit spec: `zin_aurevan_went_north` (set by `zin_afrit.32`), `zin_afrit_at_yeldenne`, `zin_afrit_returned`, `zin_afrit_impostor_denounced`, `zin_afrit_claims_erdae`, `zin_afrit_stand_in_parim`, `zin_afrit_palace_held`, the Worshipdom's flags `zin_worshipdom_ships_ready`, `zin_worshipdom_hunters` and the variable `zin_afrit_seat_whispers`. The cliff flag is this spec's `zin_eindil_cast_down` (N3); the return is the Afrit spec's `zin_afrit_returned`.
+Read from the Afrit spec: `zin_aurevan_went_north` (set by `zin_afrit.32`), `zin_afrit_at_yeldenne`, `zin_afrit_returned`, `zin_afrit_impostor_denounced`, `zin_afrit_claims_aoaz`, `zin_afrit_stand_in_parim`, `zin_afrit_palace_held`, the Worshipdom's flags `zin_worshipdom_ships_ready`, `zin_worshipdom_hunters` and the variable `zin_afrit_seat_whispers`. The cliff flag is this spec's `zin_eindil_cast_down` (N3); the return is the Afrit spec's `zin_afrit_returned`.
 
 Read from other specs: `zin_cold_far_ice_charted`, `zin_cold_neck_road` (Cold Lands); `zin_eindil_safe_harbour` (regional and shared tree hook); `zin_magical_forest_wizard_found`, `zin_magical_forest_bearer_dragon_ready` (Magical Forest tree).
 
@@ -602,7 +602,7 @@ News events use `GFX_zin_news_<key>`: 90 `dragon_return`, 99/112/140 `king_is_de
 
 ### Game rules
 
-`zin_rule_eindil_journey` (group `RULE_GROUP_ZIN`, "Erdae"):
+`zin_rule_eindil_journey` (group `RULE_GROUP_ZIN`, "Aoaz"):
 
 | Option | Effect |
 | --- | --- |
@@ -614,7 +614,7 @@ Players always choose freely. `zin_rule_eindil_waking` (foundation, owned here) 
 
 ### Interface
 
-The interface spec owns the windows ([07_interface/01_interface.md](../07_interface/01_interface.md)): the rumour line in the Realm panel from `zin_eindil_awake`, the host's Erdae bar meters, and the tracker *The Road of the Stranger* (section 10). This spec supplies the variables and the stage names. Nothing shows at stage 0.
+The interface spec owns the windows ([07_interface/01_interface.md](../07_interface/01_interface.md)): the rumour line in the Realm panel from `zin_eindil_awake`, the host's Aoaz bar meters, and the tracker *The Road of the Stranger* (section 10). This spec supplies the variables and the stage names. Nothing shows at stage 0.
 
 ## AI
 

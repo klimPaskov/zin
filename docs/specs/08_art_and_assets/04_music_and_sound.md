@@ -11,7 +11,7 @@ ZIN still plays the vanilla Second World War soundtrack, marching boots, rifles,
 - how ZIN's music and sound are produced, since they cannot be image-generated;
 - what stays engine-generic, and why;
 - the music: a main theme, plus peace, war, ideology, region and story playlists;
-- unit sounds for the Erdae hosts, fleets and beasts;
+- unit sounds for the Aoaz hosts, fleets and beasts;
 - interface and notification sounds;
 - how the vanilla and DLC playlists are switched off.
 
@@ -23,13 +23,13 @@ No ZIN audio exists. The vanilla base-game music, DLC music stations, unit sound
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace after seventeen centuries | owner-fixed | *The Campaign of 4A 1748* |
+| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace after seventeen centuries | owner-fixed | *The Campaign of 4A 1748* |
 | Until `zin_afrit_revealed`, no text a player can read names Afrit or calls the Deliverer a demon | contract rule | [00_shared_contract.md](../04_mechanics/00_shared_contract.md) |
 | Before Lorien names him, Eindil is only "the Man from the Ice" | integration decision D4 | [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) |
-| The regions of Erdae: Middle Lands with Aenor Isle, West Lands, Triton's Islands, North Lands, Cold Lands, Dark Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Dead Lands, Islands of the South, Lands of the Sun | established | vault, *Erdae and Its Regions* |
+| The regions of Aoaz: Middle Lands with Aenor Isle, West Lands, Triton's Islands, North Lands, Cold Lands, Dark Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Dead Lands, Islands of the South, Lands of the Sun | established | vault, *Aoaz and Its Regions* |
 | The Deliverer is publicly worshipped in temples; the Golden Court feasts in Parim; the elves keep apart; Zol's dead stir in the north; Volgan's Southern Dominion arms in the south | established | vault, *The Campaign of 4A 1748*, *Canon Policy* |
 | The three endings: The Lost Cause, Children of Volgan, The Ashen Throne | established | *The Campaign of 4A 1748* |
-| No firearms, engines or aircraft in Erdae | design | [05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md) |
+| No firearms, engines or aircraft in Aoaz | design | [05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md) |
 | All art is image-generated; nothing is copied from other mods or games. That authorisation covers pictures, not audio | owner decision, 17 October 2026 | CONVENTIONS |
 | Every production route, track role, title, condition, sound name and synthesis choice below | **proposed** | this spec |
 
@@ -42,7 +42,7 @@ The vault describes no music. The musical identity below is proposed. It follows
 1. **Nothing copied.** No audio file, sample, loop, soundfont, impulse response or recording from any other source enters ZIN: not from another mod (including music mods installed beside ZIN), not from a game, film or trailer, not from a stock or free library. This keeps audio under the same rule as art: everything is made for ZIN.
 2. **Two lawful routes** (proposed, section 2): audio **synthesised by the builder** from ZIN-written scores and sound recipes (the default), or audio **made by or for the owner** under a written licence (only when the owner chooses it).
 3. **Not used unless the owner approves it:** third-party library audio, even under CC0 or CC BY (it would be a copied file); AI music or sound generators (outside the owner's image-only authorisation; rights depend on each service's terms).
-4. **Original music only.** Scores are composed for ZIN. They quote no melody of a known work, public domain included, so Erdae's music is its own; the review rejects anything that sounds borrowed.
+4. **Original music only.** Scores are composed for ZIN. They quote no melody of a known work, public domain included, so Aoaz's music is its own; the review rejects anything that sounds borrowed.
 5. **No modern sound.** Nothing a player hears contains gunfire, engines, aircraft, radio, telephones, typewriters, sirens or modern voices. Synthesised choir is wordless.
 6. **No spoilers.** The music player lists every track of a station from the first day, so every track title is spoiler-free for the whole game. No title names Afrit, Eindil, the Hidden Council or a later event. Tracks tied to the story are gated by contract flags in their `chance` blocks.
 7. **Engine-generic until replaced.** Until a ZIN cue or track is accepted, the vanilla one plays from the player's own installation; ZIN ships nothing in its place and copies nothing. The one exception is modern unit sound (rule 5): a ZIN entity never names a vanilla gunfire, engine or aircraft effect, and plays no sound for that state until its ZIN sound exists.
@@ -78,7 +78,7 @@ The owner may record or compose tracks, or commission a composer, under a writte
 
 ### 3. Music
 
-#### 3.1 The sound of Erdae
+#### 3.1 The sound of Aoaz
 
 One palette ties the score together: low strings, horns, harp, frame drums, wooden flutes and wordless choir. No modern percussion or synthesiser lead sound. Regions add one colour each.
 
@@ -98,7 +98,7 @@ One palette ties the score together: low strings, horns, harp, frame drums, wood
 
 #### 3.2 Station and track list
 
-ZIN keeps the engine station name `base_music`, so the vanilla music player (`interface/musicplayer.gui`, window `musicplayer_window`) and its faceplate work unchanged. Its title `base_music_TITLE` (vanilla "Default Soundtrack", `musicplayer_l_english.yml`) reads **"Songs of Erdae"**.
+ZIN keeps the engine station name `base_music`, so the vanilla music player (`interface/musicplayer.gui`, window `musicplayer_window`) and its faceplate work unchanged. Its title `base_music_TITLE` (vanilla "Default Soundtrack", `musicplayer_l_english.yml`) reads **"Songs of Aoaz"**.
 
 Song ids are `zin_song_<key>`. The song named `maintheme` is ZIN's main theme (3.3). Factors follow the vanilla pattern of `music/_songs.txt`: `music = { song = "<id>" chance = { modifier = { factor = F <conditions> } } }`, checked in the player's country scope.
 
@@ -269,7 +269,7 @@ Each rendered track or cue gets a listening review before acceptance, recorded a
 7. Report: the vanilla interface sound effects not yet re-pointed, with counts.
 8. Stage 4's `replace_path` lines for `music` are written only when every first-release track is accepted.
 
-**Linux acceptance** (sound is off in the run, so audio is checked indirectly): `error.log` has no sound or music line, such as a missing file or an unknown sound effect. The music player lists only "Songs of Erdae" with ZIN titles. The main menu's playing track is `maintheme`. A capture of the music player goes into the phase report.
+**Linux acceptance** (sound is off in the run, so audio is checked indirectly): `error.log` has no sound or music line, such as a missing file or an unknown sound effect. The music player lists only "Songs of Aoaz" with ZIN titles. The main menu's playing track is `maintheme`. A capture of the music player goes into the phase report.
 
 **Tests to run first** (Linux run, then record the result in this spec):
 
@@ -284,7 +284,7 @@ None. Music and sound do not affect the AI.
 
 ## Acceptance
 
-1. With the first-release set (12 tracks) accepted and stage 4 applied, the music player shows only ZIN titles under "Songs of Erdae". No vanilla or DLC song is listed, in base music or in the classic station.
+1. With the first-release set (12 tracks) accepted and stage 4 applied, the music player shows only ZIN titles under "Songs of Aoaz". No vanilla or DLC song is listed, in base music or in the classic station.
 2. `error.log` in the Linux run has no line about music or sound.
 3. Every shipped audio file traces to an accepted review line and a render line (route S) or a licence file (route C). `docs/credits/AUDIO.md` lists every file's credit.
 4. No ZIN unit entity plays a vanilla unit sound. The pilot entities play their group's `zin_sfx_<group>_move`.
@@ -300,5 +300,5 @@ Each proceeds on the proposal; the owner may overrule.
 1. **Main theme.** Synthesised by route S; no theme is commissioned (owner answer, 19 October 2026; A9).
 2. **The audio route itself.** Decided by A9 and the owner's answer of 19 October 2026: audio is synthesised from ZIN-written scores and recipes, and no third-party library or AI audio is used, although the kit's default is licensed external audio with provenance (this also answers OPEN_QUESTIONS, warfare 10).
 3. **AI audio.** Excluded unless the owner names a service whose terms grant the needed rights (proposed).
-4. **Vocals.** Wordless synthesised choir only; an invented Erdae tongue would be proposed lore and waits for the owner (proposed).
+4. **Vocals.** Wordless synthesised choir only; an invented Aoaz tongue would be proposed lore and waits for the owner (proposed).
 5. **Track count.** 38 tracks, 12 in the first release (proposed).

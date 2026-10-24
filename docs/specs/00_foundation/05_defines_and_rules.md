@@ -8,9 +8,9 @@ List every engine define ZIN changes, with its vanilla and ZIN value and the rea
 
 ## Lore basis
 
-**Established:** Erdae has known peace for more than a thousand years; the Fourth Age lasts more than a thousand years (vault, *Canon Policy*, *Fourth Age Canon Register*). The vault describes no firearms, aircraft or atomic weapons (the absence is design, not a canon statement); dragons come from Dragon Mountain and serve elven powers or Afrit through corruption.
+**Established:** Aoaz has known peace for more than a thousand years; the Fourth Age lasts more than a thousand years (vault, *Canon Policy*, *Fourth Age Canon Register*). The vault describes no firearms, aircraft or atomic weapons (the absence is design, not a canon statement); dragons come from Dragon Mountain and serve elven powers or Afrit through corruption.
 
-**Owner-fixed start (18 October 2026):** the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace.
+**Owner-fixed start (18 October 2026):** the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
 
 **Decided (INTEGRATION_DECISIONS):** N4 (`zin_rule_golden_king_death` replaces `zin_rule_golden_king`), N15 (its options `DYNAMIC`, `HISTORICAL`, `DELAYED`, `NO_AI_PLOT`), V3 (the sandbox runs to 4A 1800), V4 and R2 (every story date reads `zin_story_pace`), S6 (dragons use the air layer), R1 (one rule group `RULE_GROUP_ZIN`; every per-power rule opens with `DEFAULT`; `zin_rule_ai_lerendor`, `zin_rule_ai_west` and `zin_rule_zol_behaviour` retired; `zin_rule_skies` defaults to `dragons_only`).
 
@@ -50,7 +50,7 @@ All values are design targets. Every define below exists in the installed 1.19.3
 | Define | Vanilla | ZIN | Why |
 | --- | --- | --- | --- |
 | `NDiplomacy.BASE_TRUCE_PERIOD` | 180 | 360 | Slower, older diplomacy |
-| `NDiplomacy.IDEOLOGY_JOIN_FACTION_MIN_LEVEL` | 0.3 | 0.1 | Erdae's leagues mix Light, Dominion and Wild members (the Concord does today) |
+| `NDiplomacy.IDEOLOGY_JOIN_FACTION_MIN_LEVEL` | 0.3 | 0.1 | Aoaz's leagues mix Light, Dominion and Wild members (the Concord does today) |
 | `NDiplomacy.BASE_PEACE_FORCE_GOVERNMENT_COST` | 100 | 150 | Overturning a realm's rule costs more than taking land |
 | `NDiplomacy.PEACE_SCORE_SCALE_FACTOR` | 1.35 | unchanged | The diplomacy spec re-themes peace actions in text only |
 | `NDiplomacy.PEACE_SCORE_DISTRIBUTION` | `{ 0.2, 0.2, 0.2, 0.2, 0.2 }` | unchanged | |
@@ -100,7 +100,7 @@ Other specs add their own define blocks to the same file: the economy block ([02
 
 ### 2. Game rules
 
-**Format.** Every ZIN rule is a `zin_rule_<name>` block in a `common/game_rules/zin_*.txt` file, in one group: `group = "RULE_GROUP_ZIN"`, shown as "Erdae". Text keys are `ZIN_RULE_<NAME>` and `ZIN_RULE_<NAME>_DESC` for the rule, and `ZIN_RULE_<NAME>_<OPTION>` and `_DESC` for each option, where `<NAME>` is the rule key without `zin_rule_`, upper-cased. The default option is the first option or the one written as `default = { }`. Every rule carries `icon = "GFX_zin_rule_<name>"` ([03_main_menu_and_frontend.md](../07_interface/03_main_menu_and_frontend.md)). ZIN has no achievements, so `allow_achievements` is not used.
+**Format.** Every ZIN rule is a `zin_rule_<name>` block in a `common/game_rules/zin_*.txt` file, in one group: `group = "RULE_GROUP_ZIN"`, shown as "Aoaz". Text keys are `ZIN_RULE_<NAME>` and `ZIN_RULE_<NAME>_DESC` for the rule, and `ZIN_RULE_<NAME>_<OPTION>` and `_DESC` for each option, where `<NAME>` is the rule key without `zin_rule_`, upper-cased. The default option is the first option or the one written as `default = { }`. Every rule carries `icon = "GFX_zin_rule_<name>"` ([03_main_menu_and_frontend.md](../07_interface/03_main_menu_and_frontend.md)). ZIN has no achievements, so `allow_achievements` is not used.
 
 ```
 zin_rule_historical_path = {
@@ -172,7 +172,7 @@ The vanilla `common/game_rules/00_game_rules.txt` is **overridden since stage 1 
 | --- | --- | --- |
 | `common/defines/zin_defines.lua` | `NDefines.<Category>.<KEY> = value` for every changed row of this spec, the calendar spec, the economy block and the warfare block | `tools/content/modules/defines.mjs` (new), from one table `tools/content/data/defines.json` (new: category, key, value, owner spec, from-stage). Today `modules/vanilla_removal.mjs` writes the file with only `HANDS_OFF_START_TAG`; `defines.mjs` takes it over. |
 | `common/game_rules/zin_game_rules.txt` | The nine foundation rules and the five supplied rows | `tools/content/modules/rules.mjs` (new), from `tools/content/data/game_rules.json` (new) |
-| `localisation/english/zin_rules_l_english.yml` | `RULE_GROUP_ZIN` "Erdae"; every rule and option text of that file | `rules.mjs` |
+| `localisation/english/zin_rules_l_english.yml` | `RULE_GROUP_ZIN` "Aoaz"; every rule and option text of that file | `rules.mjs` |
 | `common/scripted_triggers/zin_rules.txt` | `zin_rules_is_historical` (path rule HISTORICAL), `zin_rules_is_free` (path rule FREE), `zin_rules_ai_branch_<power>_<option>` for every per-power rule in the register, `zin_rules_ai_random_<power>` for the four rules with `RANDOM` | `rules.mjs` |
 | `common/on_actions/zin_rules.txt` | `on_startup`: set the global variables `zin_story_pace` and `zin_gathering_dark_rate` from the rules | `rules.mjs` |
 | `common/game_rules/00_game_rules.txt` | The vanilla override (section 3) | `modules/vanilla_removal.mjs` (exists) |
@@ -198,7 +198,7 @@ The vanilla `common/game_rules/00_game_rules.txt` is **overridden since stage 1 
 1. **Build:** the build checks above pass, each with a negative test (an unknown define, a misplaced category, a rule outside the group, a text naming Afrit, a `has_game_rule` on a dropped vanilla rule, a per-power rule whose first option is not `DEFAULT`, a planted `zin_rule_zol_behaviour`).
 2. **Build:** `zin_defines.lua` holds exactly the changed rows of `defines.json` in effect for the current stage, and `HANDS_OFF_START_TAG` is Verde's tag.
 3. **Linux run (from phase 2):** the game opens on 1 Thaw 1748 (calendar spec) and `error.log` has no line naming `zin_defines.lua`.
-4. **Linux run:** the rules screen shows the Erdae group with every rule of the register and its default selected (capture `p<phase>_rules`).
+4. **Linux run:** the rules screen shows the Aoaz group with every rule of the register and its default selected (capture `p<phase>_rules`).
 5. **Linux observer run (phase 3, one in-game year on defaults):** engine world tension stays below 10% and no war starts before `zin_golden_king_dead`.
 6. **Linux observer run to 4A 1761 (L5 of the acceptance spec):** no country gains a nuclear bomb, a rocket site, a radar station or a reactor.
 7. **Offline scenario test:** with `zin_rule_eindil_waking = EARLY`, `zin_eindil_awake` is set in Highsun 4A 1748 and not before; with `HISTORICAL`, not before Ironfrost 4A 1749.

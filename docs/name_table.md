@@ -1,4 +1,4 @@
-# Erdae reviewed name table
+# Aoaz reviewed name table
 
 Reviewed visually against thirteen regional scans on 2026-10-11. 711 label anchors: Counter({'confirmed': 483, 'uncertain': 228}). Readable transcription does not prove that a region is a sovereign country or that a locality is a city.
 
@@ -20,10 +20,10 @@ Uncertain spellings remain flagged. Ellipses and uncertain readings must not sil
 | Name | Scan | Type | Full-map x, y | Reading | Notes |
 | --- | --- | --- | --- | --- | --- |
 | Cold Lands | Cold Lands | map_heading | Outside mosaic crop | confirmed | Drawing title |
-| Cold Lands of Erdae | Cold Lands | land_region | Outside mosaic crop | confirmed |  |
+| Cold Lands of Aoaz | Cold Lands | land_region | Outside mosaic crop | confirmed |  |
 | Sea of Odor | Cold Lands | sea | Outside mosaic crop | confirmed |  |
 | Odor | Cold Lands | island | Outside mosaic crop | confirmed | Very small island at left edge |
-| The Path to Aoaz | Cold Lands | route_annotation | Outside mosaic crop | confirmed | Route annotation rather than a settlement |
+| The Path to Erdae | Cold Lands | route_annotation | Outside mosaic crop | confirmed | Route annotation rather than a settlement |
 | The Frozen Ocean | Cold Lands | ocean | Outside mosaic crop | confirmed |  |
 | Odeur Islands | Cold Lands | island_group | Outside mosaic crop | confirmed |  |
 | Parbralt | Cold Lands | island | Outside mosaic crop | uncertain | Middle letters may be PARBRALT or PARBRAAT |
@@ -590,7 +590,7 @@ Uncertain spellings remain flagged. Ellipses and uncertain readings must not sil
 | Land of the Sun | Sunhot | island | 0.55521, 0.94934 | confirmed | Thin yellow island under Goodin |
 | Gala | Sunhot | island | 0.56481, 0.95955 | confirmed | Small eastern island |
 | Godson | Sunhot | island | 0.56621, 0.98415 | confirmed | Southeastern island |
-| The Sky of Erdae | Sunhot | sea | 0.56321, 0.99695 | confirmed | Southeast ocean subtitle |
+| The Sky of Aoaz | Sunhot | sea | 0.56321, 0.99695 | confirmed | Southeast ocean subtitle |
 | Heveneya | Sunhot | island | 0.47441, 0.95774 | uncertain | Thin northern isle above Hot Forest |
 | Beforelands of Gulia | Sunhot | region | 0.47381, 0.96534 | confirmed | Northern coast of Hot Forest |
 | Hot Forest | Sunhot | forest | 0.46621, 0.97354 | confirmed | Dark green western woodland |

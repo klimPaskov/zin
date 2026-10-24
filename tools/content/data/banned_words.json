@@ -10,15 +10,16 @@
     "keysAreNotText": "Localisation keys, engine ids and file names are never matched; only displayed values"
   },
   "classes": {
-    "modern_industry": "Industry, energy, materials, devices, weapons and vehicles that Erdae does not have",
+    "modern_industry": "Industry, energy, materials, devices, weapons and vehicles that Aoaz does not have",
     "units_of_measure": "Metric and modern units; the world measures in miles, days of march, paces, pounds and loads",
     "modern_society": "Modern states, offices, ideologies and blocs",
     "military_modern": "Modern ranks and formations, and the words the glossary renames",
     "real_world": "Real countries, places, people, forces, months, weekdays and years",
     "third_party_ip": "Fiction that is not the owner's",
     "game_and_platform": "The base game, its publisher and its platforms",
-    "superseded_names": "Retired Erdae names (02_lore/03_names_and_terms.md)",
-    "us_spelling": "American spellings; ZIN text is British English"
+    "superseded_names": "Retired Aoaz names (02_lore/03_names_and_terms.md)",
+    "us_spelling": "American spellings; ZIN text is British English",
+    "setting_names": "Former names of the main setting (owner decision of 24 October 2026, R-01): the main setting is Aoaz; Erdae is the small neighbouring continent and needs an allowance where a text really means it"
   },
   "rules": [
     {
@@ -730,7 +731,7 @@
       "pattern": "great war",
       "caseSensitive": false,
       "replace": "check",
-      "why": "Erdae may have its own Great War; read the sentence"
+      "why": "Aoaz may have its own Great War; read the sentence"
     },
     {
       "id": "bw_modern_society_024",
@@ -945,7 +946,7 @@
       "severity": "error",
       "pattern": "january|february|april|june|july|august|september|october|november|december",
       "caseSensitive": false,
-      "replace": "Erdae months",
+      "replace": "Aoaz months",
       "why": "Calendar spec: months are Deepwinter to Longnight"
     },
     {
@@ -954,7 +955,7 @@
       "severity": "error",
       "pattern": "monday|tuesday|wednesday|thursday|friday|saturday|sunday",
       "caseSensitive": false,
-      "replace": "Erdae weekdays",
+      "replace": "Aoaz weekdays",
       "why": "06_career_honours.md, weekday names"
     },
     {
@@ -963,7 +964,7 @@
       "severity": "error",
       "pattern": "18(?:0[1-9]|[1-9][0-9])|19[0-9]{2}|20[0-9]{2}",
       "caseSensitive": false,
-      "replace": "an Erdae year (4A 1748 to 4A 1800)",
+      "replace": "an Aoaz year (4A 1748 to 4A 1800)",
       "why": "Inventory forbidden list: 1936, 1939; any real-world year"
     },
     {
@@ -1244,6 +1245,24 @@
       "caseSensitive": false,
       "replace": "mobilisation, recognise, and so on",
       "why": "Style: British spelling"
+    },
+    {
+      "id": "bw_setting_names_001",
+      "class": "setting_names",
+      "severity": "error",
+      "pattern": "Erdae",
+      "caseSensitive": true,
+      "replace": "Aoaz (the main setting); Erdae only for the neighbouring continent, with an allowance",
+      "why": "R-01: the name exchange of 24 October 2026"
+    },
+    {
+      "id": "bw_setting_names_002",
+      "class": "setting_names",
+      "severity": "error",
+      "pattern": "Arda",
+      "caseSensitive": true,
+      "replace": "Aoaz",
+      "why": "R-01: Arda is the bestiary cards' spelling of the main setting"
     }
   ],
   "allowances": [

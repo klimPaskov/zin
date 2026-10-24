@@ -23,14 +23,14 @@ The conventions C1 to C12 of [01_golden_king_and_succession.md](01_golden_king_a
 | Fact | Status | Source |
 | --- | --- | --- |
 | Eindil wakes in the Cold Lands without memory; local tribes find and nurse him; West Lands travellers take him south | established | *Eindil*, *Fourth Age Canon Register* |
-| He aids communities, brings peace between rivals, briefly serves as king in western territory and lays the title down | established | *Fourth Age Canon Register*, *The Fourth Age of Erdae* IV |
+| He aids communities, brings peace between rivals, briefly serves as king in western territory and lays the title down | established | *Fourth Age Canon Register*, *The Fourth Age of Aoaz* IV |
 | A failed crossing toward Aenor leads him to the Islands of the South; he lives among islanders; their saying sends him to Gala | established (saying proposed) | *Fourth Age Canon Register* |
 | Lorien speaks with him for weeks, names him son of Ein, grandson of Aen, shows a vision of coming events, gives a ship, armour, a sword and a crew of western friends, southern islanders and Gala elves, and sends him to Horos | established | *Lorien*, *The Journey of Eindil* |
 | Afrit's agents report him; the crew is killed in an ambush; Eindil continues alone through snow | established | *Fourth Age Canon Register* |
 | At Yeldenne he learns that the public god-king is his brother; Horos gives Glo and the blue sword | established | *Eindil*, *Horos* |
-| He warns Aenor; most of the court denounces him as an impostor; frontier troops, scholars and branches of the Lost Cause believe him | established | *The Fourth Age of Erdae* VIII |
+| He warns Aenor; most of the court denounces him as an impostor; frontier troops, scholars and branches of the Lost Cause believe him | established | *The Fourth Age of Aoaz* VIII |
 | He returns on a dragon with Varner and Golbran | established | *Fourth Age Canon Register* |
-| The names "the Man from the Ice" and "the King Without a House"; the Bridge of the Three Oaths, Girdon's Winter Ford, the Gunwaith trial; the reef of drowned voices and the shrine beneath the tide; the Mirror of First Rain; Alleria investigating and sheltering him; the dragon entrusted by Magical Lands elves | proposed | *The Fourth Age of Erdae* IV–X, vault proposal notes |
+| The names "the Man from the Ice" and "the King Without a House"; the Bridge of the Three Oaths, Girdon's Winter Ford, the Gunwaith trial; the reef of drowned voices and the shrine beneath the tide; the Mirror of First Rain; Alleria investigating and sheltering him; the dragon entrusted by Magical Lands elves | proposed | *The Fourth Age of Aoaz* IV–X, vault proposal notes |
 | Old Siula (the elder who finds him), Lawspeaker Ilurda (`zin_gunwaith_ilurda`), Master Ilsabet Vothrim (`zin_ilsabet`) | proposed | [02_characters.md](../02_lore/02_characters.md) |
 | Dates 4A 1749 to 1754 for stages 1 to 8 | proposed | *Fourth Age Chronology* |
 | Every host assignment, event, title, text, option and number below | **proposed** | journey spec and this spec |

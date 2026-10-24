@@ -1,6 +1,6 @@
 // ZIN diplomacy module (vanilla removal, stage 2): the leagues, their rules, goals, oaths and upgrades; the autonomy
 // states; the Peace Council (categories, prices, AI desires); occupation laws and resistance; research sharing; the
-// interim balance of power; and the Erdae text of the diplomacy windows.
+// interim balance of power; and the Aoaz text of the diplomacy windows.
 // Spec: docs/specs/03_gameplay/03_diplomacy_and_factions.md. Integration note: docs/design/stage2/diplomacy.md.
 //
 //   const result = await buildDiplomacy(staged, ctx);
@@ -350,7 +350,7 @@ export async function buildDiplomacy(staged, ctx = {}) {
   }
   for (const m of base.manifests.filter(x => x.free_of)) coll(`${regionColl(m.region)}_free`, `collection:${regionColl(m.region)}`, [`NOT = { controller = { tag = ${roster.tag(m.free_of)} } }`], `Lands of the ${regionName(m.region)} Not Held by ${m.free_of}`);
   coll('zin_faction_cores_lost', 'game:all_states', ['any_country_with_core = { OR = { tag = ROOT is_in_faction_with = ROOT } }', 'NOT = { controller = { OR = { tag = ROOT is_subject_of = ROOT is_in_faction_with = ROOT } } }'], 'Old Lands of the League Held by Others');
-  put('common/collections/zin_regions.txt', fileText(comment('State collections of the Erdae regions (the roster region of the start owner, frozen by zin_is_region_<key> in zin_sites.txt),\nand the collections that the leagues\' oaths and goals read. ROOT is the faction leader.'), ...collBlocks));
+  put('common/collections/zin_regions.txt', fileText(comment('State collections of the Aoaz regions (the roster region of the start owner, frozen by zin_is_region_<key> in zin_sites.txt),\nand the collections that the leagues\' oaths and goals read. ROOT is the faction leader.'), ...collBlocks));
   for (const k of base.regions) depend(`zin_is_region_${k}`, 'state trigger', 'sites.mjs (E7)');
 
   // ----------------------------------------------------------------------------------- scripted triggers and effects
@@ -432,7 +432,7 @@ export async function buildDiplomacy(staged, ctx = {}) {
   put('common/resistance_compliance_modifiers/resistance_modifiers.txt', fileText(comment('Resistance modifiers (override of the vanilla file by name). compliance_modifiers.txt stays vanilla and calls is_available_to_collaboration_government and occupied_countries.1.'), ...resBlocks));
 
   // ---------------------------------------------------------------------------------------------------- Peace Council
-  put('common/peace_conference/categories/zin_peace.txt', fileText(comment('Peace action categories: the engine keys, with Erdae names in localisation (PEACE_ACTION_CATEGORY_*).'), render(L('peace_action_categories', peace.categories.map(c => L(c.id, ...(c.default ? ['default = yes'] : []), `name = ${c.name}`))))));
+  put('common/peace_conference/categories/zin_peace.txt', fileText(comment('Peace action categories: the engine keys, with Aoaz names in localisation (PEACE_ACTION_CATEGORY_*).'), render(L('peace_action_categories', peace.categories.map(c => L(c.id, ...(c.default ? ['default = yes'] : []), `name = ${c.name}`))))));
   const typeList = types => `{ ${types.join(' ')} }`;
   const costBlocks = peace.costs.map(c => {
     const body = [];

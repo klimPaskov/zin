@@ -1,4 +1,4 @@
-# Languages of Erdae and the name generator
+# Languages of Aoaz and the name generator
 
 **Status:** Draft. **Date:** 19 October 2026. **Priority:** 2. **Phase:** 2 (replaces the syllable generator of `tools/content/modules/names.mjs`).
 **Data:** [tools/content/data/world/languages.json](../../../tools/content/data/world/languages.json) (24 languages, 1,609 word-forms, 1,440 hand-built sample names). **Companions:** [05_world_bible.md](05_world_bible.md), [07_demography_and_settlement.md](07_demography_and_settlement.md), [08_world_in_game.md](08_world_in_game.md).
@@ -137,7 +137,7 @@ The speech of the First Men. Nobody speaks it now. It is kept for royal names, l
 
 *Family:* ainic, daughter of ainic. *Status:* living. *Spoken by:* Lake Aenorans; Selen rangers; Steppe riders; Wall-folk; March-folk; Isle houses; Zilin pilgrims. *Script:* Common hand, a running script of joined letters, written with a reed pen on paper; the Houses of the First Light teach it to every child.
 
-The Common Speech of Erdae: the language of Parim, of the Concord, of the charts and of trade from the North Lands to the East. Every other tongue of men borrows its titles and its road-words.
+The Common Speech of Aoaz: the language of Parim, of the Concord, of the charts and of trade from the North Lands to the East. Every other tongue of men borrows its titles and its road-words.
 
 | Sound | |
 | --- | --- |

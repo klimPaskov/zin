@@ -5,7 +5,7 @@
 **Counts.** Disposition: replace 72, override 31, keep-hidden 26, engine 18, reskin 12, remove 9. Status: todo 83, partial 46, done 39. GAP: 49.
 
 **Top 10 gaps**
-1. Textures: vanilla `fow_rgb_waterspec_a` is stretched over Erdae, the tile atlas is Earth's, the colour map is a flat tint (MA-026 to 029).
+1. Textures: vanilla `fow_rgb_waterspec_a` is stretched over Aoaz, the tile atlas is Earth's, the colour map is a flat tint (MA-026 to 029).
 2. Relief: ZIN land spans grey 96 to 142; vanilla reaches 239 (MA-005).
 3. Terrain: 8 palette indices, 100 disjoint rivers, thin trees (MA-004, 006, 007, 035).
 4. Land touches both edges; borders ignore nature (MA-130, 133).

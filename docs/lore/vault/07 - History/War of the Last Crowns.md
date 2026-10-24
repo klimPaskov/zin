@@ -25,4 +25,4 @@ updated: 2026-10-18
 - Zol's manifestation is temporary and costly in the presence of the Fading. He is forced to withdraw, not killed.
 - Afrit's final death is literal.
 
-[[The Fourth Age of Erdae]] · [[Eindil]] · [[Afrit]] · [[Zol]] · [[Volgan]]
+[[The Fourth Age of Aoaz]] · [[Eindil]] · [[Afrit]] · [[Zol]] · [[Volgan]]

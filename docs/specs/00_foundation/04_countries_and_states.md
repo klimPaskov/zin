@@ -10,7 +10,7 @@ Set the data standard for all 305 countries and 1,332 states: what every record 
 
 **Established (vault):**
 
-- Erdae holds about 280 polities (working figure); the map holds 305 (*Great Powers and Relations*, *The Campaign of 4A 1748*).
+- Aoaz holds about 280 polities (working figure); the map holds 305 (*Great Powers and Relations*, *The Campaign of 4A 1748*).
 - The working table of great powers, seats, alliances and rivals: Aenor (Parim, Middle Kingdom Concord, 26 satellites), Zol (Furviatlon), Volgan (Nafeher, Southern Dominion: Demon, Dolon, Nezer), Lerendor (Sonargur, Leren Compact), Coldor (Fandanar, Northern Accord), Noris (Furvior, Noris Treaty), Stabilo (Postondoroth, Stabilo Pact), Goldoroth (Cocanoor), Dondor (Notbuton, Dark Sea Accord). It is working map design, not fixed narrative canon.
 - Bordon, Dreson, Dulundur, Troll Forest, Nolorim and Herez stay separate. Kilinti with the Kilinti Forests is one country; Lerendor with Lerenwaith is one country.
 - Cursed Lands and Bloody Forest resist Aenor. Seat names not drawn on the maps are constructed and replaceable; no capital carries an antagonist's or a region's name.
@@ -84,8 +84,8 @@ Columns added in this order (*proposed*; empty means "use default"). Fields are 
 | People | Primary people idea and flag | done |
 | Stance spirit | `zin_stance_<stance>` | missing |
 | Start values | Section 5 | uniform: stability 0.6, war support 0.4 (great powers) or 0.2, research slots 4 or 3 |
-| Order of battle | `history/units/<TAG>_world.txt`; Erdae units from the warfare spec, written by its module from stage 2 (the politics step stops writing `history/units` then); none for Zol and Yeldenne (R3) | vanilla infantry, 392 divisions; Yeldenne holds one |
-| Technology | Erdae technologies from the warfare spec | vanilla `infantry_weapons` and similar |
+| Order of battle | `history/units/<TAG>_world.txt`; Aoaz units from the warfare spec, written by its module from stage 2 (the politics step stops writing `history/units` then); none for Zol and Yeldenne (R3) | vanilla infantry, 392 divisions; Yeldenne holds one |
+| Technology | Aoaz technologies from the warfare spec | vanilla `infantry_weapons` and similar |
 | Economy laws | Laws from the economy spec | ZIN laws under the vanilla keys (`common/ideas/00_zin_laws.txt`); histories add `limited_conscription civilian_economy export_focus` |
 | Subjects and factions | As the working table (section 6) | done: 26 Aenor subjects, 3 Volgan subjects, 7 factions |
 | AI strategy | The peaceful-start strategy (AI section) | interim stub only |

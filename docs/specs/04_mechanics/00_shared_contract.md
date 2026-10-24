@@ -41,7 +41,7 @@ Set once, never cleared. "Historical" is the year on the established path (propo
 
 | Variable | Scope | Range | Meaning | Owner |
 | --- | --- | --- | --- | --- |
-| `zin_gathering_dark` | global | 0–100 | How near Erdae is to catastrophe; replaces world tension as the story meter | world systems |
+| `zin_gathering_dark` | global | 0–100 | How near Aoaz is to catastrophe; replaces world tension as the story meter | world systems |
 | `zin_council_influence` | Aenor | 0–100 | How much of Aenor's government the Hidden Council controls | Aenor |
 | `zin_court_corruption` | Aenor | 0–100 | Rot of the Golden Court | Aenor |
 | `zin_concord_loyalty` | each Concord dominion | 0–100 | Loyalty to the crown | Aenor |
@@ -49,7 +49,7 @@ Set once, never cleared. "Historical" is the year on the established path (propo
 | `zin_afrit_artifacts` | global | 0–4 | Artifacts Afrit holds: the Necklace and three lesser ones | Afrit |
 | `zin_eindil_stage` | global | 0–12 | Step of Eindil's journey | Eindil's journey |
 | `zin_dominion_strength` | Volgan | 0–100 | Readiness of the Southern Dominion's hosts | Volgan |
-| `zin_mistake_power` | Zol | 0–100 | Zol's slowly growing hold on Erdae under the Fading | Zol's Mistake |
+| `zin_mistake_power` | Zol | 0–100 | Zol's slowly growing hold on Aoaz under the Fading | Zol's Mistake |
 | `zin_strait_standing` | Lerendor | -100–100 | Lerendor's standing under the Treaty of the Narrow Strait | Lerendor |
 
 ## Characters

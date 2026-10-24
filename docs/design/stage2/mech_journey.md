@@ -90,7 +90,7 @@ For Afrit and others: `zin_glo_hall_historical`, `zin_glo_heir_arrives`, `zin_gl
 The full list is in each module's `dependencies`. The ones that matter:
 
 - Afrit (`afrit_hidden_council`): `zin_afrit_artifacts`, `_at_yeldenne`, `_hall_at_once`, `_is_hub`, `_rules_here`, `_wound`, `_begin_palace_battle`,
-  `_claims_erdae`, `_dead`, `_holds_parim`, `_returned`, `_revealed`, `_seat_whispers`, `_sent_others`, `_stand_in_parim`, `zin_worshipdom_*`.
+  `_claims_aoaz`, `_dead`, `_holds_parim`, `_returned`, `_revealed`, `_seat_whispers`, `_sent_others`, `_stand_in_parim`, `zin_worshipdom_*`.
 - Aenor: `zin_aenor_is_realm`, `zin_aenor_people_choose` (called by `.130`), `zin_aenor_ruled_by_captains`, `zin_lost_cause_member`.
 - Key sites (`sites.mjs`, E7): `zin_is_site_{eindil_ice,parim,south_shrine,three_oaths,winter_ford,yeldenne_landing}`, `zin_aenor_fallback_seat`,
   `zin_controls_sea_central`, globals `zin_site_{parim,three_oaths,winter_ford}`. Until then the stand-in file fakes them.

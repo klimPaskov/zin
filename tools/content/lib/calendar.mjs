@@ -1,4 +1,4 @@
-// The Fourth Age calendar of Erdae (docs/specs/00_foundation/01_start_and_calendar.md). One source for the start date
+// The Fourth Age calendar of Aoaz (docs/specs/00_foundation/01_start_and_calendar.md). One source for the start date
 // and the month names: the content builder, the politics step and the story-date helper all read it.
 export const START_DATE = '1748.3.1.12';       // 1 Thaw, 4A 1748
 export const END_DATE = '1800.1.1.1';          // the sandbox runs to 4A 1800 (V3)

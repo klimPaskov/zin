@@ -73,7 +73,7 @@ export function afritScripts(D, T) {
     		zin_afrit_date_ashen_a = yes
     	}
     	AND = {
-    		has_global_flag = zin_afrit_claims_erdae
+    		has_global_flag = zin_afrit_claims_aoaz
     		zin_afrit_date_ashen_b = yes
     	}
     	AND = {
@@ -562,15 +562,15 @@ export function afritScripts(D, T) {
     ${tt('zin_afrit_tt_return', 'The pilgrims turn homeward.')}`);
 
   effects.zin_afrit_retake_aenor = dedent(`
-    # Lord of all Erdae (zin_afrit.62): Aurevan leads Aenor again, or the hub annexes what its side holds.
+    # Lord of all Aoaz (zin_afrit.62): Aurevan leads Aenor again, or the hub annexes what its side holds.
     ${hidden(
-      'set_global_flag = zin_afrit_claims_erdae',
+      'set_global_flag = zin_afrit_claims_aoaz',
       'if = {', `limit = { country_exists = ${AEN} }`, `${HUB} = { white_peace = ${AEN} }`,
       `${AEN} = {`, 'recruit_character = zin_aurevan', 'add_country_leader_role = { character = zin_aurevan promote_leader = yes country_leader = { ideology = zin_shadow_worship expire = "2000.1.1.1" traits = { zin_trait_deliverer zin_trait_unmasked } } }', setStance('zin_shadow_worship'), `give_military_access = ${HUB}`, '}',
       `${HUB} = { give_military_access = ${AEN} recruit_character = zin_ilvane }`, '}',
       'else = {', 'every_state = {', `limit = { is_controlled_by = ${HUB} NOT = { is_owned_by = ${HUB} } zin_is_region_middle_lands = yes }`, `transfer_state_to = ${HUB}`, '}', '}',
       'zin_afrit_refresh_graces = yes')}
-    ${tt('zin_afrit_tt_erdae', 'The Deliverer takes the crown of Parim again.')}`);
+    ${tt('zin_afrit_tt_aoaz', 'The Deliverer takes the crown of Parim again.')}`);
   effects.zin_afrit_claim_middle_lands = dedent(`
     ${hidden(`every_state = {`, `limit = { zin_is_region_middle_lands = yes NOT = { is_owned_by = ${HUB} } NOT = { is_claimed_by = ${HUB} } }`, `add_claim_by = ${HUB}`, '}')}
     ${tt('zin_afrit_tt_claims', 'Old claims are read out in every hall.')}`);

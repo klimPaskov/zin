@@ -4,9 +4,9 @@ status: mixed
 updated: 2026-10-18
 ---
 
-# Ages of Erdae
+# Ages of Aoaz
 
-Erdae's numbered ages are reckoned from the victory of [[Aen]] in the War of Men. Earlier periods extend thousands of years before Aen's unification and remain incompletely dated.
+Aoaz's numbered ages are reckoned from the victory of [[Aen]] in the War of Men. Earlier periods extend thousands of years before Aen's unification and remain incompletely dated.
 
 | Age | Status and length | Central history |
 | --- | --- | --- |
@@ -18,4 +18,4 @@ Erdae's numbered ages are reckoned from the victory of [[Aen]] in the War of Men
 
 The **Second Age is the longest of the first four ages**. The draft model of 1,675 + 2,133 + 1,260 + 1,760 years satisfies that requirement. Only dates explicitly given by the owner are canonical. The Fourth Age map remains a reference and requires a wider central sea than drawn.
 
-[[Timeline]] · [[The First Age of Erdae]] · [[The Second Age of Erdae]] · [[The Third Age of Erdae]] · [[The Fourth Age of Erdae]]
+[[Timeline]] · [[The First Age of Aoaz]] · [[The Second Age of Aoaz]] · [[The Third Age of Aoaz]] · [[The Fourth Age of Aoaz]]

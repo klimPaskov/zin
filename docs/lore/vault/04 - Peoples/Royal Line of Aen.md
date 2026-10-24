@@ -25,4 +25,4 @@ The many other sons and descendants of Aen create competing royal lineages. Thei
 - The exact enchantment that put Eindil into long sleep
 - Why the original royal line was regarded as lost
 
-[[The Journey of Eindil]] · [[Golden King]] · [[The Fourth Age of Erdae]]
+[[The Journey of Eindil]] · [[Golden King]] · [[The Fourth Age of Aoaz]]

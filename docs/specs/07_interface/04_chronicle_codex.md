@@ -1,14 +1,14 @@
-# The Chronicle of Erdae
+# The Chronicle of Aoaz
 
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 5. **Phase:** 7.
 
 Text authoring and the builder module may start in phase 2 (the open entries are base lore); the story entries are finished in phase 5 with the events they record; the window, sprites and plates land in phase 7.
 
-**Current state (19 October 2026, commit ca01fa3).** Nothing of the Chronicle is in the game yet. What it builds on is: the lore vault copy in `docs/lore/vault/` (staged by `tools/content/modules/lore.mjs`), the Realm button at x 8, y 86 (`modules/ui.mjs`), the 43 catalog event pictures whose raw generations the plates may reuse (`modules/presentation.mjs`), and the loading tips that already quote "The Chronicle of Erdae" as a source.
+**Current state (19 October 2026, commit ca01fa3).** Nothing of the Chronicle is in the game yet. What it builds on is: the lore vault copy in `docs/lore/vault/` (staged by `tools/content/modules/lore.mjs`), the Realm button at x 8, y 86 (`modules/ui.mjs`), the 43 catalog event pictures whose raw generations the plates may reuse (`modules/presentation.mjs`), and the loading tips that already quote "The Chronicle of Aoaz" as a source.
 
 ## Purpose
 
-The Chronicle of Erdae is an in-game codex: one scripted window, opened from the top of the screen, in which a player can read the whole history of Erdae. It covers the cosmology, the Holy Seven, the Old and New Gods, the spirits, every age and its major events, and every figure, people, region, institution and relic in the owner's lore vault. It is the main way ZIN meets goal 5 of [PROGRAM.md](../PROGRAM.md) ("the whole history of Erdae is readable in game").
+The Chronicle of Aoaz is an in-game codex: one scripted window, opened from the top of the screen, in which a player can read the whole history of Aoaz. It covers the cosmology, the Holy Seven, the Old and New Gods, the spirits, every age and its major events, and every figure, people, region, institution and relic in the owner's lore vault. It is the main way ZIN meets goal 5 of [PROGRAM.md](../PROGRAM.md) ("the whole history of Aoaz is readable in game").
 
 The Chronicle keeps the story's secrets. Most entries are open on 1 Thaw 4A 1748. Entries about Afrit, Eindil's identity, Glo's fate and the events of the War of the Last Crowns stay hidden until the shared story flags are set. Hidden entries are absent, not greyed out. So the Chronicle tells each game's history as it happens, never ahead of it.
 
@@ -21,7 +21,7 @@ The Chronicle shows; it never decides. Its buttons only select categories, entri
 | Fact | Status | Source |
 | --- | --- | --- |
 | The vault is canon. Established facts are fixed. Proposals stay proposals until the owner adopts them. Open questions stay open | owner rule | *Canon Policy*, [CONVENTIONS.md](../CONVENTIONS.md) |
-| Start on 1 Thaw 4A 1748: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748* |
+| Start on 1 Thaw 4A 1748: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
 | Ordinary people know the Deliverer, not the name Afrit | established | *Fourth Age Canon Register* |
 | No text may name Afrit or call the Deliverer a demon before `zin_afrit_revealed`, except text shown only to Afrit's own country | contract rule | [00_shared_contract.md](../04_mechanics/00_shared_contract.md), "The secret" |
 | Public and true labels (the Deliverer / Afrit, the Man from the Ice / Eindil, "a crystal of old and holy power" / Horos's heart) | spec rule | [03_names_and_terms.md](../02_lore/03_names_and_terms.md), "Labels before and after a reveal" |
@@ -93,13 +93,13 @@ When the window opens for the first time, it shows the **Foreword** (not counted
 
 ### 4. The window
 
-**Window** `zin_chronicle_window`, scripted GUI `zin_chronicle`, 980 × 560, `orientation = center_up`, position x = −490, y = 124 (below the Erdae bar, which ends at y = 118). At 1280 × 720 the window spans y 124 to 684. Moveable. Frame `GFX_zin_frame_chronicle` (nine-slice). Close button `GFX_closebutton` at (936, 12) with `shortcut = "ESCAPE"`.
+**Window** `zin_chronicle_window`, scripted GUI `zin_chronicle`, 980 × 560, `orientation = center_up`, position x = −490, y = 124 (below the Aoaz bar, which ends at y = 118). At 1280 × 720 the window spans y 124 to 684. Moveable. Frame `GFX_zin_frame_chronicle` (nine-slice). Close button `GFX_closebutton` at (936, 12) with `shortcut = "ESCAPE"`.
 
 Coordinates are relative to the window (targets; the GUI renderer check settles them):
 
 | Block | Position, size | Elements |
 | --- | --- | --- |
-| Header | (24, 14), 880 × 32 | Title "The Chronicle of Erdae" (`hoi_24header`); a rule `GFX_zin_rule` at y = 62 |
+| Header | (24, 14), 880 × 32 | Title "The Chronicle of Aoaz" (`hoi_24header`); a rule `GFX_zin_rule` at y = 62 |
 | Categories | inset `GFX_zin_chr_inset` at (16, 76), 204 × 468 | Eleven buttons `zin_chr_cat_<n>` (190 × 30, `GFX_zin_chr_category`, sigil at left) at (23, 84 + 36 × (n − 1)); selected overlay `GFX_zin_chr_category_selected`; below them the line "[?zin_chr_read_count] of [?zin_chr_open_count] read" at (24, 500) |
 | Entry list | inset at (228, 76), 268 × 468 | Category name at (240, 84) in `hoi_18mbs`; thirteen slot buttons `zin_chr_slot_<n>` (240 × 28, `GFX_zin_chr_row`) at (236, 112 + 30 × (n − 1)); per slot a selected overlay and an unread marker `GFX_zin_chr_new` (12 × 12) at the slot's right edge; list paging at y = 510: `zin_chr_list_prev` (240, 510), text "1 / 2" centred in (268–436), `zin_chr_list_next` (464, 510) |
 | Page | page ground `GFX_zin_chr_page` at (504, 76), 460 × 468 | Plate `zin_chr_plate` (432 × 162) at (518, 88) with `GFX_zin_chr_plate_frame` over it at (514, 84); title (518, 256), 432 × 28, `hoi_24header`; subtitle (518, 286), 432 × 18, `hoi_16mbs`, muted colour; body `zin_chr_body` (518, 310), 432 × 160, `hoi_16mbs`, `format = left`, `fixedsize = yes`; "See also" label (518, 474); text paging `zin_chr_page_prev` (870, 472), "2 / 3" (894–926), `zin_chr_page_next` (930, 472); four link buttons `zin_chr_link_<k>` (212 × 24, `GFX_zin_chr_link`) at (518, 492), (736, 492), (518, 518), (736, 518) |
@@ -269,15 +269,15 @@ Budget: 138 plates, of which 30 are crops of catalog event generations; 108 new 
 
 | Access | What | When |
 | --- | --- | --- |
-| **Top bar, now** | Scripted GUI `zin_chr_button`, window `zin_chr_button_window` at x = 144, y = 86 (`upper_left`), 30 × 30, attached like today's Realm button (main window, no parent token) so the two stay aligned, button `zin_chr_book_button` beside the existing Realm button; tooltip "The Chronicle of Erdae" plus "New pages: [?zin_chr_unread]" when there are any; the unread marker `GFX_zin_chr_new` sits on its corner | Ships with the Chronicle, before the Erdae bar exists |
-| **Erdae bar, later** | The bar's age label ("4A 1748", slot width 96) becomes the button `zin_chr_age_button`; clicking the age opens the Chronicle; the unread marker sits at its top right. `zin_chr_button_window` is then removed | When [01_interface.md](01_interface.md)'s Erdae bar lands (its section 2 already names the age button) |
-| **Realm panel** | Button `zin_realm_chronicle_button` "The Chronicle of Erdae" ([01_interface.md](01_interface.md) §3) | With the Realm panel's extension |
-| **Story news** | Story events that unlock an entry may add the tooltip line `zin_chr_new_page_tt` ("A new page is written in the Chronicle of Erdae.") to an option. They never open the window by themselves | Phase 5, optional per event spec |
+| **Top bar, now** | Scripted GUI `zin_chr_button`, window `zin_chr_button_window` at x = 144, y = 86 (`upper_left`), 30 × 30, attached like today's Realm button (main window, no parent token) so the two stay aligned, button `zin_chr_book_button` beside the existing Realm button; tooltip "The Chronicle of Aoaz" plus "New pages: [?zin_chr_unread]" when there are any; the unread marker `GFX_zin_chr_new` sits on its corner | Ships with the Chronicle, before the Aoaz bar exists |
+| **Aoaz bar, later** | The bar's age label ("4A 1748", slot width 96) becomes the button `zin_chr_age_button`; clicking the age opens the Chronicle; the unread marker sits at its top right. `zin_chr_button_window` is then removed | When [01_interface.md](01_interface.md)'s Aoaz bar lands (its section 2 already names the age button) |
+| **Realm panel** | Button `zin_realm_chronicle_button` "The Chronicle of Aoaz" ([01_interface.md](01_interface.md) §3) | With the Realm panel's extension |
+| **Story news** | Story events that unlock an entry may add the tooltip line `zin_chr_new_page_tt` ("A new page is written in the Chronicle of Aoaz.") to an option. They never open the window by themselves | Phase 5, optional per event spec |
 | **End screen** | The *Chronicle of the Age* (`zin_world.110`) mentions the Chronicle; ending entries 627–630 reuse its `zin_loc_chronicle_*` lines as their last page | Phase 5 |
 
 Opening any mechanic panel closes the Chronicle and opening the Chronicle closes them: `zin_ui_close_panels` also clears `zin_chr_open` ([01_interface.md](01_interface.md), scripted effects). Escape closes it. No keyboard shortcut opens it (proposed: vanilla hotkeys are dense).
 
-**Main menu: not possible.** The main menu runs without a game state; scripted GUIs, flags and scripted localisation exist only inside a running game, and front-end `.gui` buttons cannot call script. A button added to `interface/frontendmainview.gui` would do nothing. Re-using the credits screen (`interface/credits.txt`) would remove Paradox's credits and is refused. Instead (proposed): the bookmark description ([03_main_menu_and_frontend.md](03_main_menu_and_frontend.md) §3) ends with "The histories of Erdae are kept in the Chronicle: open it from the age of the world at the top of the screen", and the loading tips ([02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md)) may quote the first sentence of open Chronicle entries, so the history is already present before the game starts. The escape menu (`interface/ingamemenu.gui`) has no scripted GUI token and is not used.
+**Main menu: not possible.** The main menu runs without a game state; scripted GUIs, flags and scripted localisation exist only inside a running game, and front-end `.gui` buttons cannot call script. A button added to `interface/frontendmainview.gui` would do nothing. Re-using the credits screen (`interface/credits.txt`) would remove Paradox's credits and is refused. Instead (proposed): the bookmark description ([03_main_menu_and_frontend.md](03_main_menu_and_frontend.md) §3) ends with "The histories of Aoaz are kept in the Chronicle: open it from the age of the world at the top of the screen", and the loading tips ([02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md)) may quote the first sentence of open Chronicle entries, so the history is already present before the game starts. The escape menu (`interface/ingamemenu.gui`) has no scripted GUI token and is not used.
 
 Observers see the Chronicle of the country they observe through, with the same unlocks.
 
@@ -367,7 +367,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 
 ### 13. The entry list
 
-180 entries. Columns: **Id**, **Key**, **Title** (list title in brackets when shorter), **Unlock**, **Later parts**, **Plate** (subject, `reuse <catalog key>`, or "cat" for the category plate), **St.** (status of the entry's content: E established, P proposed, M mixed, W working table), **Sources** (vault notes; § marks a section of *The Fourth Age of Erdae* unless another note is named).
+180 entries. Columns: **Id**, **Key**, **Title** (list title in brackets when shorter), **Unlock**, **Later parts**, **Plate** (subject, `reuse <catalog key>`, or "cat" for the category plate), **St.** (status of the entry's content: E established, P proposed, M mixed, W working table), **Sources** (vault notes; § marks a section of *The Fourth Age of Aoaz* unless another note is named).
 
 #### 1. The Order of Being (`order`)
 
@@ -379,10 +379,10 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 104 | old_gods | The Old Gods | start | — | colossal faceless ruins half sunk in a grey sea | M | *Old Gods*, *The Fading* |
 | 105 | new_gods | The New Gods | start | rev: whether Afrit was ever of their order is not known | a temple of many empty niches lit by lamps | M | *New Gods*, *Afrit the Deliverer* |
 | 106 | the_fading | The Fading | start | — | stars dimming over a dark horizon | E | *The Fading* |
-| 107 | magic_of_erdae | The Magic of Erdae | start | — | threads of pale light rising from forest and stone | M | *Magic and Sustenance in Erdae* |
+| 107 | magic_of_aoaz | The Magic of Aoaz | start | — | threads of pale light rising from forest and stone | M | *Magic and Sustenance in Aoaz* |
 | 108 | worship_and_rank | Worship and Rank | start | rev: the Deliverer as the great example of worship that proves nothing | cat | M | *Religious Knowledge and False Gods*, *Hierarchy of Being* |
 | 109 | zol | Zol, Old God of Death | start | F:zin_zol_rising: his dead walk beyond the Mistake; F:zin_zol_manifested: the rare body; F:zin_zol_withdrawn: withdrawn, not slain | black islands under a starless sky, no figure | E | *Zol*, *Zols Mistake*, *The Fading* |
-| 110 | servants_of_zol | Those Who Sustain Zol | start | — | cat | E | *Magic and Sustenance in Erdae*, *Zol*, *Spirits and Their Ranks* |
+| 110 | servants_of_zol | Those Who Sustain Zol | start | — | cat | E | *Magic and Sustenance in Aoaz*, *Zol*, *Spirits and Their Ranks* |
 | 111 | glernaen | Glernaen | start | F:zin_eindil_restored: his voice in the crystal | green light filling a vast dark hall, no figure | E | *Glernaen* |
 | 112 | spirits | Great and Lesser Spirits | start | — | storm and mountain shapes suggesting vast presences, no faces | M | *Spirits and Their Ranks* |
 | 113 | natures_of_spirits | The Natures of Spirits | start | — | cat | P | *Spirit Natures*, *Spirit Origins*, *Spirit Manifestation States* |
@@ -393,47 +393,47 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 
 | Id | Key | Title | Unlock | Later parts | Plate | St. | Sources |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| 201 | first_age | The First Age | start | — | ancient banners over a newly united realm at dawn | M | *The First Age of Erdae*, *Ages of Erdae*, *Timeline* |
+| 201 | first_age | The First Age | start | — | ancient banners over a newly united realm at dawn | M | *The First Age of Aoaz*, *Ages of Aoaz*, *Timeline* |
 | 202 | war_of_men | The War of Men | start | — | hosts of ancient men under many kings' banners | M | *War of Men* |
-| 203 | founding_of_aenor | The Founding of Aenor | start | — | lords kneeling around an oath-stone | M | *The First Age of Erdae* §1, *Aen*, *Middle Lands and Aenor* |
-| 204 | roads_of_aen | The Roads of Aen | start | — | ships leaving a harbour for a far western shore | M | *The First Age of Erdae* §2, *Middle Lands and Aenor* |
-| 205 | long_weakening | The Long Weakening | start | — | cat | M | *The First Age of Erdae* §3 |
-| 206 | volgan_comes | Volgan Comes North | start | — | a royal city burning under a southern storm | M | *The First Age of Erdae* §4, *Volgans Dead Lands* |
-| 207 | grand_alliance | The Grand Alliance | start | — | banners of men, elves, dwarves and giants in one camp | M | *Grand Alliance*, *King Edran*, *The First Age of Erdae* §5 (the Charter of Free Banners, proposed) |
-| 208 | dardan | The Battle of Dardan | start | — | an immense battlefield turning to wasteland, no landmarks | M | *Battle of Dardan*, *The First Age of Erdae* §6 (the Thirteen Days, proposed) |
-| 209 | edrans_folly | Edran's Folly | start | — | an army retreating through heat-haze and ash | M | *The First Age of Erdae* §7, *The Elven Refusal* |
-| 210 | hidden_hand_dardan | The Hidden Hand at Dardan | rev \| hub | — | cat | E | *Afrits Ascension*, *Second Age Canon Register*, *The First Age of Erdae* (retrospective revelation) |
+| 203 | founding_of_aenor | The Founding of Aenor | start | — | lords kneeling around an oath-stone | M | *The First Age of Aoaz* §1, *Aen*, *Middle Lands and Aenor* |
+| 204 | roads_of_aen | The Roads of Aen | start | — | ships leaving a harbour for a far western shore | M | *The First Age of Aoaz* §2, *Middle Lands and Aenor* |
+| 205 | long_weakening | The Long Weakening | start | — | cat | M | *The First Age of Aoaz* §3 |
+| 206 | volgan_comes | Volgan Comes North | start | — | a royal city burning under a southern storm | M | *The First Age of Aoaz* §4, *Volgans Dead Lands* |
+| 207 | grand_alliance | The Grand Alliance | start | — | banners of men, elves, dwarves and giants in one camp | M | *Grand Alliance*, *King Edran*, *The First Age of Aoaz* §5 (the Charter of Free Banners, proposed) |
+| 208 | dardan | The Battle of Dardan | start | — | an immense battlefield turning to wasteland, no landmarks | M | *Battle of Dardan*, *The First Age of Aoaz* §6 (the Thirteen Days, proposed) |
+| 209 | edrans_folly | Edran's Folly | start | — | an army retreating through heat-haze and ash | M | *The First Age of Aoaz* §7, *The Elven Refusal* |
+| 210 | hidden_hand_dardan | The Hidden Hand at Dardan | rev \| hub | — | cat | E | *Afrits Ascension*, *Second Age Canon Register*, *The First Age of Aoaz* (retrospective revelation) |
 
 #### 3. The Second Age (`second_age`)
 
 | Id | Key | Title | Unlock | Later parts | Plate | St. | Sources |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| 301 | second_age | The Second Age | start | — | masons and mourners at a rebuilt wall | M | *The Second Age of Erdae*, *Second Age Canon Register*, *Second Age Proposed Timeline* |
-| 302 | long_mourning | The Long Mourning | start | — | a king's bier in a half-rebuilt hall, empty chairs at a council table | M | *Second Age Progress and Recovery*, *The Second Age of Erdae* §II (the Council of the Empty Chairs, proposed), *King Edran* |
-| 303 | wars_of_remnants | The Wars of the Remnants | start | — | cat | M | *The Second Age of Erdae* §I, §III (the Ash Networks, proposed), *Elzon* |
-| 304 | hard_centuries | The Hard Centuries | start | — | healers and granaries in a plague-year town | M | *Second Age Progress and Recovery*, *The Second Age of Erdae* §IV (plague names, proposed) |
-| 305 | open_gates | The Open Gates | start | — | a burning portal inside a border fort | M | *The Second Age of Erdae* §IV (the Burning Gate of Nezer, proposed), *Nether*, *Agon* |
-| 306 | prophecies | Prophecies of the Return | start | — | cat | M | *The Second Age of Erdae* §V (the Watchers of Dardan, proposed) |
+| 301 | second_age | The Second Age | start | — | masons and mourners at a rebuilt wall | M | *The Second Age of Aoaz*, *Second Age Canon Register*, *Second Age Proposed Timeline* |
+| 302 | long_mourning | The Long Mourning | start | — | a king's bier in a half-rebuilt hall, empty chairs at a council table | M | *Second Age Progress and Recovery*, *The Second Age of Aoaz* §II (the Council of the Empty Chairs, proposed), *King Edran* |
+| 303 | wars_of_remnants | The Wars of the Remnants | start | — | cat | M | *The Second Age of Aoaz* §I, §III (the Ash Networks, proposed), *Elzon* |
+| 304 | hard_centuries | The Hard Centuries | start | — | healers and granaries in a plague-year town | M | *Second Age Progress and Recovery*, *The Second Age of Aoaz* §IV (plague names, proposed) |
+| 305 | open_gates | The Open Gates | start | — | a burning portal inside a border fort | M | *The Second Age of Aoaz* §IV (the Burning Gate of Nezer, proposed), *Nether*, *Agon* |
+| 306 | prophecies | Prophecies of the Return | start | — | cat | M | *The Second Age of Aoaz* §V (the Watchers of Dardan, proposed) |
 | 307 | return_of_volgan | The Return of Volgan | start | — | a storm gathering into a shape over red desert | M | *The Return of Volgan*, *Elzon* |
-| 308 | stirring_of_zol | The First Stirring of Zol | start | — | a still black sea and silent graves at night | M | *The Second Age of Erdae* §VII, *Zol* |
+| 308 | stirring_of_zol | The First Stirring of Zol | start | — | a still black sea and silent graves at night | M | *The Second Age of Aoaz* §VII, *Zol* |
 | 309 | elven_refusal | The Elven Refusal | start | — | an elven gate closed against smoke on the horizon | E | *The Elven Refusal* |
-| 310 | hollow_crown | The War of the Hollow Crown | start | — | a royal host facing the risen dead before a capital | P | *The Second Age of Erdae* §IX–X, *The Fall of Aenor* |
+| 310 | hollow_crown | The War of the Hollow Crown | start | — | a royal host facing the risen dead before a capital | P | *The Second Age of Aoaz* §IX–X, *The Fall of Aenor* |
 | 311 | fall_of_aenor | The Fall of Aenor | start | — | pale banners raised over a fallen capital | M | *The Fall of Aenor*, *Elzons Order*, *Middle Lands and Aenor* |
-| 312 | thousand_oaths | The Night of a Thousand Oaths (Thousand Oaths) | rev \| hub | — | cat | M | *Afrits Ascension*, *The Second Age of Erdae* §VIII |
+| 312 | thousand_oaths | The Night of a Thousand Oaths (Thousand Oaths) | rev \| hub | — | cat | M | *Afrits Ascension*, *The Second Age of Aoaz* §VIII |
 
 #### 4. The Third Age (`third_age`)
 
 | Id | Key | Title | Unlock | Later parts | Plate | St. | Sources |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| 401 | third_age | The Third Age | start | — | a grey occupied city under pale lanterns | M | *The Third Age of Erdae*, *Third Age Canon Register* |
+| 401 | third_age | The Third Age | start | — | a grey occupied city under pale lanterns | M | *The Third Age of Aoaz*, *Third Age Canon Register* |
 | 402 | elzons_order | Elzon's Order | start | — | a pale fortress above tribute roads | M | *Elzons Order* (the Pale Regency, proposed) |
-| 403 | long_occupation | The Long Occupation | start | — | cat | P | *The Third Age of Erdae* (proposed 1,260-year chronology) |
+| 403 | long_occupation | The Long Occupation | start | — | cat | P | *The Third Age of Aoaz* (proposed 1,260-year chronology) |
 | 404 | unconquered_forest | The Unconquered Forest | start | — | elven wardens at a forest edge, the dead halted at the trees | E | *Third Age Canon Register*, *Varner*, *The Elven Refusal* |
 | 405 | black_roots | The Black Roots | start | — | black veins spreading beneath a burial field | P | *Black Roots* |
 | 406 | lantern_chain | The Lantern Chain | start | — | cat | P | *Lantern Chain* |
 | 407 | war_of_unbinding | The War of Unbinding | start | — | rebels breaking a carved anchor-stone | P | *War of Unbinding* |
 | 408 | last_tithe | The Last Tithe | start | — | a black light collapsing over a capital | M | *The Last Tithe*, *Elzon*, *The Necromancy of Elzon* |
-| 409 | deliverers_rescue | The Deliverer's Rescue | start | rev: the rescuer was Afrit, and what the rescue won him | a radiant shield over a fleeing crowd, no face | M | *The Last Tithe*, *Afrit the Deliverer*, *The Third Age of Erdae* |
+| 409 | deliverers_rescue | The Deliverer's Rescue | start | rev: the rescuer was Afrit, and what the rescue won him | a radiant shield over a fleeing crowd, no face | M | *The Last Tithe*, *Afrit the Deliverer*, *The Third Age of Aoaz* |
 
 #### 5. The Fourth Age (`fourth_age`)
 
@@ -456,7 +456,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 515 | gilded_years | The Gilded Years | start | — | gilded halls, office-buyers queuing at a door | M | *Fourth Age Chronology* IV, *Golden King* |
 | 516 | voices_at_edges | Voices at the Edges | start | — | reuse `black_ships_tale` | P | *Fourth Age Chronology* IV (the Mirolonese envoy, the black ships), *The Campaign of 4A 1748* |
 | 517 | council_decides | The Council's Decision | rev \| hub | — | cat | P | *Fourth Age Chronology* IV |
-| 518 | erdae_1748 | Erdae in 4A 1748 | start | — | Parim at dawn over the Great Lake | P | *The Campaign of 4A 1748* (the public face only: no Council, no hidden pressures named) |
+| 518 | aoaz_1748 | Aoaz in 4A 1748 | start | — | Parim at dawn over the Great Lake | P | *The Campaign of 4A 1748* (the public face only: no Council, no hidden pressures named) |
 
 #### 6. The End of the Age (`last_crowns`)
 
@@ -527,45 +527,45 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 
 | Id | Key | Title | Unlock | Later parts | Plate | St. | Sources |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| 801 | men | The Peoples of Men | start | — | a crowded crossroads market of many kinds of men | M | *Peoples of Erdae* |
+| 801 | men | The Peoples of Men | start | — | a crowded crossroads market of many kinds of men | M | *Peoples of Aoaz* |
 | 802 | first_men | The First Men | start | — | tall ancient men in a ruined hall of giant stones | M | *The Ainu*, *Aen* |
 | 803 | line_of_aen | The Line of Aen | start | heir: Ein's line returns; heir, rev: the two sons of Ein | cat | M | *Royal Line of Aen* |
-| 804 | forest_elves | Elves of the Magical Forest | start | — | an elven council under great trees | M | *Peoples of Erdae*, *The Campaign of 4A 1748* |
-| 805 | sunhot_elves | The Sunhot Elves | start | — | very tall elves on white-gold terraces | E | *Peoples of Erdae* |
-| 806 | gala_elves | The Gala Elves | start | F:zin_lorien_dead: after Lorien | an ancient white court in southern light | E | *Peoples of Erdae*, *Lorien* |
-| 807 | god_forest_keepers | The God Forest Keepers | start | — | cat | E | *Peoples of Erdae* |
-| 808 | angels_demons | Angels and Demons | start | rev: Afrit's demons | Netherborn on a volcanic pass, seen far off | M | *Peoples of Erdae*, *Hierarchy of Being* |
-| 809 | dwarves | The Dwarves | start | — | cat | E | *Peoples of Erdae* |
-| 810 | giants | The Giants | start | — | giants beside a mountain road | E | *Peoples of Erdae* |
-| 811 | ents | The Ents of Kilinti | start | — | tree-folk walking through a misty forest | E | *Peoples of Erdae* |
-| 812 | yeti | The Yeti | start | — | cat | E | *Peoples of Erdae*, *Erdae and Its Regions* |
-| 813 | mycids_arcanists | Mycids and Arcanists | start | — | cat | E | *Peoples of Erdae* |
-| 814 | orcs_goblins | Orcs and Goblins | start | — | orc and goblin warbands at a hold gate | M | *Peoples of Erdae*, *Kingdoms Factions and Conflicts* |
-| 815 | trolls_ogres | Trolls and Ogres | start | — | cat | E | *Peoples of Erdae* |
-| 816 | the_dead | The Restless Dead | start | F:zin_zol_rising: the dead that ordinary weapons cannot end | mist over barrows, figures far away | M | *Peoples of Erdae*, *The Necromancy of Elzon*, *Zols Mistake*, *War of the Last Crowns* |
-| 817 | dragons | The Dragons | start | F:zin_eindil_dragon_pact: a dragon given as an ally | dragons circling a high mountain | E | *Peoples of Erdae* |
+| 804 | forest_elves | Elves of the Magical Forest | start | — | an elven council under great trees | M | *Peoples of Aoaz*, *The Campaign of 4A 1748* |
+| 805 | sunhot_elves | The Sunhot Elves | start | — | very tall elves on white-gold terraces | E | *Peoples of Aoaz* |
+| 806 | gala_elves | The Gala Elves | start | F:zin_lorien_dead: after Lorien | an ancient white court in southern light | E | *Peoples of Aoaz*, *Lorien* |
+| 807 | god_forest_keepers | The God Forest Keepers | start | — | cat | E | *Peoples of Aoaz* |
+| 808 | angels_demons | Angels and Demons | start | rev: Afrit's demons | Netherborn on a volcanic pass, seen far off | M | *Peoples of Aoaz*, *Hierarchy of Being* |
+| 809 | dwarves | The Dwarves | start | — | cat | E | *Peoples of Aoaz* |
+| 810 | giants | The Giants | start | — | giants beside a mountain road | E | *Peoples of Aoaz* |
+| 811 | ents | The Ents of Kilinti | start | — | tree-folk walking through a misty forest | E | *Peoples of Aoaz* |
+| 812 | yeti | The Yeti | start | — | cat | E | *Peoples of Aoaz*, *Aoaz and Its Regions* |
+| 813 | mycids_arcanists | Mycids and Arcanists | start | — | cat | E | *Peoples of Aoaz* |
+| 814 | orcs_goblins | Orcs and Goblins | start | — | orc and goblin warbands at a hold gate | M | *Peoples of Aoaz*, *Kingdoms Factions and Conflicts* |
+| 815 | trolls_ogres | Trolls and Ogres | start | — | cat | E | *Peoples of Aoaz* |
+| 816 | the_dead | The Restless Dead | start | F:zin_zol_rising: the dead that ordinary weapons cannot end | mist over barrows, figures far away | M | *Peoples of Aoaz*, *The Necromancy of Elzon*, *Zols Mistake*, *War of the Last Crowns* |
+| 817 | dragons | The Dragons | start | F:zin_eindil_dragon_pact: a dragon given as an ally | dragons circling a high mountain | E | *Peoples of Aoaz* |
 | 818 | abyss_folk | The People of the Abyss | start | — | cat | E | *Roka*, *Necklace of the Abyss* |
 
 #### 9. Lands and Places (`lands`)
 
 | Id | Key | Title | Unlock | Later parts | Plate | St. | Sources |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| 901 | erdae | Erdae | start | — | cat | E | *Erdae and Its Regions*, *Fourth Age Map of Erdae* |
-| 902 | middle_lands | The Middle Lands | start | — | fields and forests around a great lake | M | *Middle Lands and Aenor*, *Erdae and Its Regions* |
-| 903 | aenor_isle | Aenor Isle | start | — | cat | E | *Erdae and Its Regions* |
-| 904 | cold_lands | The Cold Lands | start | — | a caravan on an ice road under a pale sky | E | *Erdae and Its Regions*, *The Campaign of 4A 1748* |
-| 905 | west_lands | The West Lands | start | — | green hills crowded with small castles | E | *Erdae and Its Regions* |
-| 906 | tritons_islands | Triton's Islands | start | — | cat | E | *Erdae and Its Regions* |
-| 907 | north_lands | The North Lands | start | — | sea-green fleets in a narrow strait | E | *Erdae and Its Regions* |
-| 908 | dark_lands | The Dark Lands | start | — | holds on a dark shore by a black-green sea | E | *Erdae and Its Regions*, *Kingdoms Factions and Conflicts* |
-| 909 | magical_lands | The Magical Lands | start | — | a forest of silver and leaf-green light | E | *Erdae and Its Regions* |
+| 901 | aoaz | Aoaz | start | — | cat | E | *Aoaz and Its Regions*, *Fourth Age Map of Aoaz* |
+| 902 | middle_lands | The Middle Lands | start | — | fields and forests around a great lake | M | *Middle Lands and Aenor*, *Aoaz and Its Regions* |
+| 903 | aenor_isle | Aenor Isle | start | — | cat | E | *Aoaz and Its Regions* |
+| 904 | cold_lands | The Cold Lands | start | — | a caravan on an ice road under a pale sky | E | *Aoaz and Its Regions*, *The Campaign of 4A 1748* |
+| 905 | west_lands | The West Lands | start | — | green hills crowded with small castles | E | *Aoaz and Its Regions* |
+| 906 | tritons_islands | Triton's Islands | start | — | cat | E | *Aoaz and Its Regions* |
+| 907 | north_lands | The North Lands | start | — | sea-green fleets in a narrow strait | E | *Aoaz and Its Regions* |
+| 908 | dark_lands | The Dark Lands | start | — | holds on a dark shore by a black-green sea | E | *Aoaz and Its Regions*, *Kingdoms Factions and Conflicts* |
+| 909 | magical_lands | The Magical Lands | start | — | a forest of silver and leaf-green light | E | *Aoaz and Its Regions* |
 | 910 | zols_mistake | Zol's Mistake | start | F:zin_zol_rising | reuse `black_isles_lights` | E | *Zols Mistake* |
-| 911 | east_lands | The East Lands | start | — | domed cities by a rift sea | E | *Erdae and Its Regions* |
-| 912 | south_lands | The South Lands | start | — | cat | E | *Erdae and Its Regions* |
+| 911 | east_lands | The East Lands | start | — | domed cities by a rift sea | E | *Aoaz and Its Regions* |
+| 912 | south_lands | The South Lands | start | — | cat | E | *Aoaz and Its Regions* |
 | 913 | dead_lands | The Dead Lands | start | — | reuse `dead_lands_storm` | E | *Volgans Dead Lands* |
-| 914 | islands_of_south | The Islands of the South | start | — | cat | E | *Erdae and Its Regions* |
-| 915 | lands_of_sun | The Lands of the Sun | start | — | white-gold towers in hard southern light | E | *Erdae and Its Regions*, *Peoples of Erdae* |
-| 916 | parim | Parim and the Great Lake | start | F:zin_west_parim_taken; F:zin_afrit_claims_erdae, rev | a lake harbour with merchant ships below the palace towers | M | *Middle Lands and Aenor*, § Prologue |
+| 914 | islands_of_south | The Islands of the South | start | — | cat | E | *Aoaz and Its Regions* |
+| 915 | lands_of_sun | The Lands of the Sun | start | — | white-gold towers in hard southern light | E | *Aoaz and Its Regions*, *Peoples of Aoaz* |
+| 916 | parim | Parim and the Great Lake | start | F:zin_west_parim_taken; F:zin_afrit_claims_aoaz, rev | a lake harbour with merchant ships below the palace towers | M | *Middle Lands and Aenor*, § Prologue |
 | 917 | selen | Selen | start | — | rangers at a forest road | E | *Selen* |
 | 918 | great_wall | The Great Wall of Aenor | start | F:zin_wall_accord_broken | a stone wall running over hills toward mountains | M | *Fourth Age Chronology* I, *The Campaign of 4A 1748* |
 | 919 | refuse_crown | Lands That Refuse the Crown | start | — | cat | E | *Middle Lands and Aenor*, *Great Powers and Relations* (the Cursed Lands and the Bloody Forest) |
@@ -573,7 +573,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 921 | nether | The Nether | start | — | a red sky over volcanic passes | E | *Nether* |
 | 922 | abyss | The Abyss | start | — | cat | E | *Abyss* |
 | 923 | furviatlon | Furviatlon and Šodolôro | start | — | cat | M | *Zols Mistake*, *Great Powers and Relations* |
-| 924 | dragon_mountain | Dragon Mountain | start | — | a lone peak with dragons above it | E | *Peoples of Erdae* |
+| 924 | dragon_mountain | Dragon Mountain | start | — | a lone peak with dragons above it | E | *Peoples of Aoaz* |
 | 925 | dardan | The Field of Dardan | start | — | cat | M | *Battle of Dardan* (its place is never named) |
 | 926 | castle_yeldenne | The Castle of Yeldenne | start | F:zin_horos_dead, S≥8: the empty hall (plate `castle_yeldenne_empty`) | a dark castle in deep snow | E | *Castle of Yeldenne and Glo* |
 
@@ -581,11 +581,11 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 
 | Id | Key | Title | Unlock | Later parts | Plate | St. | Sources |
 | ---: | --- | --- | --- | --- | --- | --- | --- |
-| 1001 | great_powers | The Crowns of Erdae | start | — | cat | W | *Great Powers and Relations*, *Kingdoms Factions and Conflicts* (Leren Compact, Northern Accord, Noris Treaty, Stabilo Pact, Dark Sea Accord), *The Campaign of 4A 1748* |
+| 1001 | great_powers | The Crowns of Aoaz | start | — | cat | W | *Great Powers and Relations*, *Kingdoms Factions and Conflicts* (Leren Compact, Northern Accord, Noris Treaty, Stabilo Pact, Dark Sea Accord), *The Campaign of 4A 1748* |
 | 1002 | aenor_concord | Aenor and the Concord | start | — | dominion banners around a throne hall | M | *Middle Lands and Aenor*, *Great Powers and Relations*, *Fourth Age Chronology* |
 | 1003 | golden_court | The Golden Court | start | — | cat | P | *The Campaign of 4A 1748*, *Fourth Age Chronology* IV |
 | 1004 | lost_cause | The Lost Cause | start | F:zin_lost_cause_shield: shield of the Concord; F:zin_lost_cause_with_eindil: the heir's army | companies of the Lost Cause under a plain banner | M | *The Lost Cause*, *Kingdoms Factions and Conflicts*, *Golden King*, *Fourth Age Chronology* IV |
-| 1005 | houses_first_light | The Houses of the First Light (Houses of the First Light) | start | rev \| hub: what the Houses became | reuse `houses` | P | *Houses of the First Light*, *The Second Age of Erdae* §VIII (the Houses of Refuge, proposed) |
+| 1005 | houses_first_light | The Houses of the First Light (Houses of the First Light) | start | rev \| hub: what the Houses became | reuse `houses` | P | *Houses of the First Light*, *The Second Age of Aoaz* §VIII (the Houses of Refuge, proposed) |
 | 1006 | worshipdom | The Worshipdom | start | rev \| hub: the hub of the Deliverer's network | reuse `hermitage` | P | *Fourth Age Chronology* III, *The Campaign of 4A 1748* |
 | 1007 | hidden_council | The Hidden Council | rev \| hub | F:zin_afrit_dead: what became of it is not told | cat | M | *Afrits Hidden Council* |
 | 1008 | southern_dominion | The Southern Dominion | start | F:zin_volgan_body_destroyed | demon banners at a desert fortress | W | *Great Powers and Relations*, *Volgans Dead Lands*, *Fourth Age Chronology* III |
@@ -610,7 +610,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 
 These entries carry the most risk; their texts follow these outlines.
 
-- **104 The Old Gods, 109 Zol.** Zol is the only Old God in Erdae, the God of Death; the Fading and Erdae's magic keep him from a body; his power grows slowly; servants sustain him and without them he could fade from Erdae. Never: what feeding is, who his servants are, who keeps Furviatlon, that he wants or will do anything.
+- **104 The Old Gods, 109 Zol.** Zol is the only Old God in Aoaz, the God of Death; the Fading and Aoaz's magic keep him from a body; his power grows slowly; servants sustain him and without them he could fade from Aoaz. Never: what feeding is, who his servants are, who keeps Furviatlon, that he wants or will do anything.
 - **108 Worship and Rank.** Before `rev` it uses only generic examples (a town's temple to a local spirit; Volgan called a god yet a Great Spirit). The Deliverer is not mentioned. The `rev` part adds Afrit as the great example and leaves his true order open.
 - **409 The Deliverer's Rescue, 704 The Deliverer.** The public story as the temples tell it: the Deliverer shielded the people when Elzon fell and was hailed a New God of Deliverance, Protection and Renewal; his Houses keep grain, hospitals and birth rolls. Nothing doubts him before `rev`. The `rev` parts say the Deliverer was Afrit, son of Ein, and that whether he was ever a true New God is not known.
 - **510 The Blessed Centuries.** The open text tells the centuries as the people remember them: kings reigned in peace; priests taught princes; the Houses kept the rolls. The `rev | hub` part and title tell the truth.

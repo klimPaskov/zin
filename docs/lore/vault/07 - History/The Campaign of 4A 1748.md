@@ -6,11 +6,11 @@ updated: 2026-10-18
 
 # The Campaign of 4A 1748
 
-> **Status: proposed.** This note describes Erdae on **1 Thaw, 4A 1748**, the start of play, and how the end of the Fourth Age can unfold from there. The owner fixed the starting situation on 18 October 2026: **the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, and everything seems peaceful.** Established history is marked as such; everything else is a proposal commissioned by the owner on 18 October 2026. Realm-by-realm gameplay detail lives in the ZIN specifications (docs/specs).
+> **Status: proposed.** This note describes Aoaz on **1 Thaw, 4A 1748**, the start of play, and how the end of the Fourth Age can unfold from there. The owner fixed the starting situation on 18 October 2026: **the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, and everything seems peaceful.** Established history is marked as such; everything else is a proposal commissioned by the owner on 18 October 2026. Realm-by-realm gameplay detail lives in the ZIN specifications (docs/specs).
 
 ## The shape of the world
 
-Erdae has known peace for more than seventeen centuries, and almost nobody alive remembers a war that threatened everyone at once. On the first day of play nobody is at war with anybody who matters. Borders are quiet, trade flows, temples are full, and the Golden King's worst crime is his taste in gold leaf. Some 300 crowns, dominions, clans and island lordships divide the continent (established working figure: about 280 polities; the map holds 305). The great powers are Aenor and its Concord in the Middle Lands, Lerendor in the North Lands, Coldor in the Cold Lands, Noris and Stabilo in the East Lands, Goldoroth and Dondor in the Dark Lands, Volgan in the Dead Lands, and Zol's Mistake in the black north (established, working table).
+Aoaz has known peace for more than seventeen centuries, and almost nobody alive remembers a war that threatened everyone at once. On the first day of play nobody is at war with anybody who matters. Borders are quiet, trade flows, temples are full, and the Golden King's worst crime is his taste in gold leaf. Some 300 crowns, dominions, clans and island lordships divide the continent (established working figure: about 280 polities; the map holds 305). The great powers are Aenor and its Concord in the Middle Lands, Lerendor in the North Lands, Coldor in the Cold Lands, Noris and Stabilo in the East Lands, Goldoroth and Dondor in the Dark Lands, Volgan in the Dead Lands, and Zol's Mistake in the black north (established, working table).
 
 Beneath the peace, five pressures are building at once. Each is hidden, dismissed or seen by only a few, and none of the powers can see them all:
 
@@ -36,7 +36,7 @@ Beneath the peace, five pressures are building at once. Each is hidden, dismisse
 
 The elves of the Magical Lands were never conquered, not even by Elzon (established). The **Magical Forest** is the oldest and most peaceful of their realms, ruled by an elected council of houses (proposed constitution for "friendly, democratic and very old"). Around it lie twenty smaller elven realms; **Herrodon** and **Andos Enda** are old rivals (established working rivalry). **Nolorim** guards the high passes (established name). The elven powers alone can command the dragons of Dragon Mountain (established).
 
-In the **Zilin Hills** stands the **Worshipdom**, a temple-state of the Deliverer. It holds three valleys and almost no army. Its strength is the pilgrims, couriers, confessors and agents who pass through it to every court in Erdae (established that Afrit has no clear dominion and networks everywhere; proposed that the Worshipdom is the visible hub).
+In the **Zilin Hills** stands the **Worshipdom**, a temple-state of the Deliverer. It holds three valleys and almost no army. Its strength is the pilgrims, couriers, confessors and agents who pass through it to every court in Aoaz (established that Afrit has no clear dominion and networks everywhere; proposed that the Worshipdom is the visible hub).
 
 ### The North Lands
 
@@ -44,7 +44,7 @@ In the **Zilin Hills** stands the **Worshipdom**, a temple-state of the Delivere
 
 ### The Cold Lands
 
-**Coldor** rules the frozen interior and the western ports and leads the **Northern Accord** with Horidor; **Isengard** is its rival (established working table). The Cold Lands are the largest landmass of Erdae and the least known. Their tribes, the **Yeti Lands**, the giants of **Titanos** and the free towns of the coast live by trade, herding and hunting. Somewhere in the far north-west, in ice older than Aenor, Eindil still sleeps. He wakes about a year into play (established that he wakes in the Cold Lands; the timing is proposed). In **Mp'E**, the frozen north, Horos sits in the **Castle of Yeldenne** with Glo in his breast (established).
+**Coldor** rules the frozen interior and the western ports and leads the **Northern Accord** with Horidor; **Isengard** is its rival (established working table). The Cold Lands are the largest landmass of Aoaz and the least known. Their tribes, the **Yeti Lands**, the giants of **Titanos** and the free towns of the coast live by trade, herding and hunting. Somewhere in the far north-west, in ice older than Aenor, Eindil still sleeps. He wakes about a year into play (established that he wakes in the Cold Lands; the timing is proposed). In **Mp'E**, the frozen north, Horos sits in the **Castle of Yeldenne** with Glo in his breast (established).
 
 ### The West Lands
 
@@ -68,11 +68,11 @@ The whole black north and every black island of the Ocean of Zol belong to **Zol
 
 ### The East Lands and the South Lands
 
-The East Lands are the richest region of Erdae and the most divided. **Noris**, with Gondolin in the **Noris Treaty**, and **Stabilo**, with Drak in the **Stabilo Pact**, compete for the caravan roads (established working table). Alerhia, Miaed, Erco and Plutondo are great kingdoms in their own right (map). The Hidden Council's eastern branch has courted these courts for four centuries (established direction). When Afrit flees Aenor, enough of them follow him to proclaim him **King of the East**, though many still resist (established). The **South Lands** desert stretches south off the map.
+The East Lands are the richest region of Aoaz and the most divided. **Noris**, with Gondolin in the **Noris Treaty**, and **Stabilo**, with Drak in the **Stabilo Pact**, compete for the caravan roads (established working table). Alerhia, Miaed, Erco and Plutondo are great kingdoms in their own right (map). The Hidden Council's eastern branch has courted these courts for four centuries (established direction). When Afrit flees Aenor, enough of them follow him to proclaim him **King of the East**, though many still resist (established). The **South Lands** desert stretches south off the map.
 
 ### The Lands of the Sun
 
-In the far south-west the **Sunhot elves**, over three metres tall and among the strongest and most peaceful peoples of Erdae, live in a land of many small realms led by **the Lands of Light** (established people; proposed political role). Among them the **Gala elves** keep their ancient court under **King Lorien**, who fought at Dardan (established). Gala's relationship to the Sunhot elves is open in canon. **Proposed:** the Gala elves are an elder people of ordinary elven stature who settled among the Sunhot realms before the First Age. The Sunhot elves defer to Lorien's memory, not his crown.
+In the far south-west the **Sunhot elves**, over three metres tall and among the strongest and most peaceful peoples of Aoaz, live in a land of many small realms led by **the Lands of Light** (established people; proposed political role). Among them the **Gala elves** keep their ancient court under **King Lorien**, who fought at Dardan (established). Gala's relationship to the Sunhot elves is open in canon. **Proposed:** the Gala elves are an elder people of ordinary elven stature who settled among the Sunhot realms before the First Age. The Sunhot elves defer to Lorien's memory, not his crown.
 
 ## How the age can unfold
 

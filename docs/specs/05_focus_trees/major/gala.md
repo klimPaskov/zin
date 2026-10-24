@@ -10,7 +10,7 @@ Gala holds one state and almost no levy. Its tree is about memory, ships and cou
 
 ## Lore basis
 
-**Established** (vault; sources in the mechanic spec): Lorien, king of the Gala elves, led them in the Grand Alliance and fought at Dardan; he remembers the ages since; Edran's folly estranged the elves from Aenor and they refused to fight Elzon's war; Lorien still cares for all Erdae; late in the Fourth Age he receives a stranger from the Islands of the South, speaks with him for weeks, names him Eindil, son of Ein, warns him with a vision, sends him to Horos, and gives him a ship, armour, a sword and a crew of western friends, islanders and Gala elves; Afrit's agents work even in the Lands of the Sun; Lorien returns with ancient lords and spirits against Zol, challenges him and dies; the Sunhot elves are very tall, strong and peaceful.
+**Established** (vault; sources in the mechanic spec): Lorien, king of the Gala elves, led them in the Grand Alliance and fought at Dardan; he remembers the ages since; Edran's folly estranged the elves from Aenor and they refused to fight Elzon's war; Lorien still cares for all Aoaz; late in the Fourth Age he receives a stranger from the Islands of the South, speaks with him for weeks, names him Eindil, son of Ein, warns him with a vision, sends him to Horos, and gives him a ship, armour, a sword and a crew of western friends, islanders and Gala elves; Afrit's agents work even in the Lands of the Sun; Lorien returns with ancient lords and spirits against Zol, challenges him and dies; the Sunhot elves are very tall, strong and peaceful.
 
 **Proposed in the vault:** the Mirror of First Rain, a spring that shows true traces and uncertain futures; Lorien's warning that prophecy can frighten people into the deeds it predicts; the saying "carry it to Gala"; the Lands of Light as leading Sunhot realm.
 
@@ -56,7 +56,7 @@ On 1 Thaw 4A 1748 every available focus concerns the court, the Mirror, ships, e
 
 ### Branch 1: What Lorien Remembers
 
-**Purpose:** the oldest court in Erdae and the king who remembers Dardan. Audiences, songs, records of the First Men, and the court's temper: patience or warning. **Opens:** at start. **Mutual exclusions:** The King's Patience / The King's Warning. **Mechanic:** stability, political power, `zin_gala_counsel`, the Lorien's Audience decision.
+**Purpose:** the oldest court in Aoaz and the king who remembers Dardan. Audiences, songs, records of the First Men, and the court's temper: patience or warning. **Opens:** at start. **Mutual exclusions:** The King's Patience / The King's Warning. **Mechanic:** stability, political power, `zin_gala_counsel`, the Lorien's Audience decision.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
@@ -162,7 +162,7 @@ On 1 Thaw 4A 1748 every available focus concerns the court, the Mirror, ships, e
 | `refusal_holds` | The Refusal Holds | long_estrangement | letters_to_parim | 25,1 | 35 | stability 0.03; political_power 25 | 15; hist ×3 |
 | `friends_not_allies` | Friends, Not Allies | letters_to_parim / refusal_holds | – | 24,2 | 70 | flag zin_gala_friends_not_allies (Wanderer decisions cost 10 less); counsel +5 | 10 |
 | `healers_of_gala` | Healers of Gala | friends_not_allies | – | 23,3 | 70 | flag zin_gala_healers (Wanderers from Gala give research 0.05 instead of 0.03) | 10 |
-| `care_for_erdae` | Care for All Erdae | friends_not_allies | – | 25,3 | 35 | Avail: gathering dark ≥ 40 or zin_eindil_named; war_support 0.03; counsel +5 | 10 |
+| `care_for_aoaz` | Care for All Aoaz | friends_not_allies | – | 25,3 | 35 | Avail: gathering dark ≥ 40 or zin_eindil_named; war_support 0.03; counsel +5 | 10 |
 
 ### Branch 8: The Stranger at Gala
 
@@ -288,7 +288,7 @@ All are fired by focus or option effects. Text never names Afrit before `zin_afr
 | .7 | The Noon Council Arms | The Lands of Light | The Noon Council Arms | "Raise the Noon League" (concord +10; then `zin_sun_form_noon_league` if concord ≥ 60) / "Not yet" (nothing); AI 70/30 if concord ≥ 50, else 30/70 |
 | .8 | Strangers at the Quays | Gala Elves | Strangers at the Quays | Foreign priests and traders ask many questions. "Watch them" (flag `zin_gala_watching_quays`: Courteous Distance AI ×2) / "Gala is open to all" (stability 0.02); AI 40/60 hist |
 | .9 | The Pilgrim Priests | Gala Elves | The Pilgrim Priests | Priests of the Deliverer ask to open a house of healing by the harbour. "We will consider it" (the next focus decides) |
-| .10 | The Long Estrangement | Gala Elves | The Long Estrangement | Lorien recalls Edran's folly. "The estrangement stands" (stability 0.02) / "Erdae's fate still matters to us" (counsel +5); AI 60/40 |
+| .10 | The Long Estrangement | Gala Elves | The Long Estrangement | Lorien recalls Edran's folly. "The estrangement stands" (stability 0.02) / "Aoaz's fate still matters to us" (counsel +5); AI 60/40 |
 | .11 | The Name in the Water | Gala Elves | The Name in the Water | The court hears the name the water gave: Eindil, son of Ein (text allowed: the focus needs `zin_eindil_named`). "Gala will help him" (war_support 0.03) |
 | .12 | Word From the North | Gala Elves | Word From the North | Sailors say the stranger lives and carries a light out of the north. "Then the voyage was not in vain" (counsel +5) |
 | .13 | The Old Lords | Gala Elves | The Old Lords | Lorien sends word to lords and spirits who have lived since Dardan. "Let them remember" |
@@ -305,7 +305,7 @@ Every key is from the icon catalog ([../02_icon_catalog.md](../02_icon_catalog.m
 | 4 | sun_realms `sun_flowers`; envoys_lands_of_light `envoy`; sun_festivals `sun_flowers`; guest_at_noon `council_table`; sea_of_gods `compass_rose`; sun_guard_friends `sunhot_spear`; honour_sunhot `sunhot_spear`; mediator_of_south `olive_branch`; carry_it_to_gala `book_lore`; voice_of_memory `gala_sun`; noon_council_arms `alliance_rings` |
 | 5 | strangers_at_quays `harbour_lake`; harbour_wardens `eye_watchful`; pilgrim_priests `courier_pilgrim`; courteous_distance `seal_wax`; welcome_priests `healer_herbs`; quiet_questions `scout_lantern`; no_word_leaves `scroll_sealed` |
 | 6 | sunward_guard `sword_shield`; tangsiel_command `war_council_map`; arms_of_gala `forge_anvil`; walls_of_gala `fort_wall`; court_archers `elven_bow`; guard_courtyard `mirror_rain`; veterans_of_dardan `banner_league`; wardsong_of_gala `ward_circle` |
-| 7 | long_estrangement `chain_broken`; letters_to_parim `scroll_treaty`; refusal_holds `banner_plain`; friends_not_allies `handshake_oath`; healers_of_gala `healer_herbs`; care_for_erdae `map_unrolled` |
+| 7 | long_estrangement `chain_broken`; letters_to_parim `scroll_treaty`; refusal_holds `banner_plain`; friends_not_allies `handshake_oath`; healers_of_gala `healer_herbs`; care_for_aoaz `map_unrolled` |
 | 8 | stranger_from_islands `shipwreck`; weeks_of_memory `book_lore`; mirror_shows_a_name `mirror_rain`; armour_and_sword `lone_sword`; crew_of_many_peoples `ship_voyage`; name_in_the_water `mirror_rain`; ship_sails_north `great_warship`; bearer_of_glo `compass_rose` |
 | 9 | old_lords `banner_league`; summon_ancient_lords `war_drums`; spirits_who_remember `rune_stone`; kings_last_armour `sword_shield`; ships_north_for_king `ship_voyage`; what_death_cannot_end `ward_circle`; for_all_the_living `banner_league` |
 | 10 | king_has_fallen `empty_throne`; keep_his_memory `book_lore`; mirror_without_king `mirror_rain`; gala_endures `gala_sun`; new_voice_at_noon `sun_flowers`; home_from_last_war `olive_branch` |
@@ -333,7 +333,7 @@ With `zin_rule_historical_path = HISTORICAL`, factors marked "hist" apply. Dates
 | 1751 | Still Water, Visions of the South, Visions of the North, Sulestien's Shipwrights, Elven Hulls, Records of the First Men, Tales From Every Shore | First warnings sent to Mirolon, Selen and the Magical Forest |
 | Deepwinter – Goldfield 1752 (stage 5) | A Stranger From the Islands, Weeks of Memory, The Mirror Shows a Name, Armour and Sword, A Crew of Many Peoples, The Name in the Water, The Ship Sails North | `zin_eindil_named`; Lorien's gift; the ship sails |
 | 1752 – 1753 | The Sun Harbour, Charts of the Southern Seas, Ships Calling at the Islands, A Ship Beyond Compare, Memory Before Aen, The King's Patience, A King Beyond the Ages, Word From the North | `zin_glo_with_eindil` (1753) |
-| 1754 – 1756 | Honour the Sunhot Elves, Mediator of the South, Carry It to Gala, The Voice of Memory, Friends, Not Allies, Healers of Gala, Care for All Erdae, The Old Lords, Summon the Ancient Lords, Spirits Who Remember Dardan, The Walls of Gala, Veterans of Dardan | Old lords 3–4 by 1756 |
+| 1754 – 1756 | Honour the Sunhot Elves, Mediator of the South, Carry It to Gala, The Voice of Memory, Friends, Not Allies, Healers of Gala, Care for All Aoaz, The Old Lords, Summon the Ancient Lords, Spirits Who Remember Dardan, The Walls of Gala, Veterans of Dardan | Old lords 3–4 by 1756 |
 | 1755 – 1757 (after `zin_zol_rising`) | The Wardsong of Gala, The King's Last Armour, What Death Cannot End, For All the Living, Ships North for the King | Old lords 4–5 |
 | 1757 | (the Zol spec's event) Lorien rides; Lorien falls | `zin_lorien_dead`; After the King: the AI picks a steward by weight |
 | 1757 – 1760 | The King Has Fallen, Keep His Memory, The Mirror Without Its King, Gala Endures, A New Voice at Noon, Home From the Last War | Gala at peace, the Refusal restored |

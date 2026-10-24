@@ -60,7 +60,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
   T('zin_eindil_floor_reached', L('OR',
     L('AND', stage(0), 'check_variable = { global.zin_eindil_age > global.zin_eindil_wake_age }'),
     ...floors.filter(f => f.n > 1).map(f => L('AND', f.n === 12 ? L('OR', stage(9), stage(10), stage(11)) : f.n === 11 ? L('OR', stage(9), stage(10)) : stage(f.n - 1), floorTest(f)))));
-  const palaceReady = [notFlag('zin_afrit_dead'), L('OR', gflag('zin_afrit_claims_erdae'), gflag('zin_afrit_stand_in_parim'))];
+  const palaceReady = [notFlag('zin_afrit_dead'), L('OR', gflag('zin_afrit_claims_aoaz'), gflag('zin_afrit_stand_in_parim'))];
   // ready_n: stage n may start now.
   const ready = {
     1: [stage(0), 'zin_eindil_floor_reached = yes'],
@@ -634,7 +634,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
   dep('zin_east_companies_with_eindil', 'country flag', 'eastern_kings'); dep('zin_west_stranded', 'country flag', 'western_crossing (mech_crossing.mjs)');
   const palaceVisible = ['zin_eindil_is_host = yes', stage(11)];
   const palaceAvail = (...extra) => L('available', 'zin_eindil_is_host = yes', `custom_trigger_tooltip = { tooltip = zin_eindil_tt_recovered ${gflag('zin_eindil_recovered')} }`,
-    `custom_trigger_tooltip = { tooltip = zin_eindil_tt_parim OR = { ${gflag('zin_afrit_claims_erdae')} ${gflag('zin_afrit_stand_in_parim')} } NOT = { ${gflag('zin_afrit_dead')} } }`, ...extra);
+    `custom_trigger_tooltip = { tooltip = zin_eindil_tt_parim OR = { ${gflag('zin_afrit_claims_aoaz')} ${gflag('zin_afrit_stand_in_parim')} } NOT = { ${gflag('zin_afrit_dead')} } }`, ...extra);
   const allyAlleria = `any_country = { zin_eindil_coalition_ally = yes has_character = ${ch.alleria} }`;
   D('zin_eindil_find_passages', 'allowed = { always = yes }', L('visible', ...palaceVisible, notFlag('zin_palace_passages')), palaceAvail(),
     'cost = 50', 'days_remove = 30', L('remove_effect', 'set_global_flag = zin_palace_passages'), L('ai_will_do', 'base = 100'));
@@ -648,7 +648,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     palaceAvail(`custom_trigger_tooltip = { tooltip = zin_eindil_tt_passages ${gflag('zin_palace_passages')} }`, `custom_trigger_tooltip = { tooltip = zin_eindil_tt_rebels ${gflag('zin_palace_rebels')} }`, `custom_trigger_tooltip = { tooltip = zin_eindil_tt_floor ${dateT('1759.3.1')} }`),
     'days_remove = 7', L('remove_effect', 'zin_afrit_begin_palace_battle = yes'), L('ai_will_do', 'base = 100'));
   dep('zin_afrit_begin_palace_battle', 'scripted effect', 'afrit_hidden_council');
-  for (const f of ['zin_afrit_holds_parim', 'zin_afrit_claims_erdae', 'zin_afrit_stand_in_parim', 'zin_afrit_dead', 'zin_afrit_returned', 'zin_afrit_revealed']) dep(f, 'global flag', 'afrit_hidden_council');
+  for (const f of ['zin_afrit_holds_parim', 'zin_afrit_claims_aoaz', 'zin_afrit_stand_in_parim', 'zin_afrit_dead', 'zin_afrit_returned', 'zin_afrit_revealed']) dep(f, 'global flag', 'afrit_hidden_council');
   for (const f of ['zin_gala_great_ship']) dep(f, 'global flag', 'lands_of_the_sun');
   for (const f of ['zin_war_of_last_crowns', 'zin_zol_rising', 'zin_zol_manifested', 'zin_zol_withdrawn']) dep(f, 'global flag', 'world systems / zols_mistake');
   dep('zin_volgan_body_destroyed', 'global flag', 'volgan_southern_dominion');
@@ -663,7 +663,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
       L('ai_strategy', 'type = protect', `id = "${T_.aenor}"`, 'value = 50'),
       L('ai_strategy', 'type = conquer', `id = "${T_.zol}"`, 'value = 50'),
       L('ai_strategy', 'type = conquer', `id = "${T_.volgan}"`, 'value = 30')),
-    L('zin_eindil_host_fights_the_false_god', 'allowed = { always = yes }', L('enable', 'zin_eindil_is_host = yes', gflag('zin_afrit_claims_erdae')), 'abort_when_not_enabled = yes',
+    L('zin_eindil_host_fights_the_false_god', 'allowed = { always = yes }', L('enable', 'zin_eindil_is_host = yes', gflag('zin_afrit_claims_aoaz')), 'abort_when_not_enabled = yes',
       L('ai_strategy', 'type = front_unit_request', `tag = ${T_.worshipdom}`, 'value = 100'),
       L('ai_strategy', 'type = invade', `id = "${T_.worshipdom}"`, 'value = 40')),
   ];

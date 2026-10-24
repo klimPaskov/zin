@@ -21,7 +21,7 @@ All six are realms of men.
 
 ## Lore basis
 
-**Established** (vault: *Erdae and Its Regions*, *Peoples of Erdae*, *The First Age of Erdae*, *The Fourth Age of Erdae*, *War of the Last Crowns*, *Fourth Age Canon Register*):
+**Established** (vault: *Aoaz and Its Regions*, *Peoples of Aoaz*, *The First Age of Aoaz*, *The Fourth Age of Aoaz*, *War of the Last Crowns*, *Fourth Age Canon Register*):
 
 - The West Lands lie south of the Cold Lands, joined by a broad neck. Gunwaith, Girdon, Kradlon, Corogon and Varnondor are there. The central sea between the West and the Middle Lands is much wider than the old maps drew.
 - Gunwaith clans, Girdon wardens and Buldor companies are peoples of men.

@@ -22,7 +22,7 @@ The tree is also the **module library** for the four tier B island trees ([../re
 
 ## Lore basis
 
-**Established** (vault): the Islands of the South form two arcs south of the West Lands (*Erdae and Its Regions*; Howan, Nara, Verde and Enhis Is Rond named); Eindil sails for Aenor, storms carry him to the Islands of the South, he lives among the islanders, helps them settle disputes and survive dangers, and hears of the long-lived elves farther south-west; Lorien's crew includes island navigators; the islanders' saying sends tales too old for any man to explain to Gala (*The Fourth Age of Erdae* IV; the saying is in the established chronicle text).
+**Established** (vault): the Islands of the South form two arcs south of the West Lands (*Aoaz and Its Regions*; Howan, Nara, Verde and Enhis Is Rond named); Eindil sails for Aenor, storms carry him to the Islands of the South, he lives among the islanders, helps them settle disputes and survive dangers, and hears of the long-lived elves farther south-west; Lorien's crew includes island navigators; the islanders' saying sends tales too old for any man to explain to Gala (*The Fourth Age of Aoaz* IV; the saying is in the established chronicle text).
 
 **Proposed in the vault:** the reef of drowned voices and the shrine beneath the tide that repeats Aen's name (proposed island legends); the characterisation "small, poor and hospitable" (*The Campaign of 4A 1748*); the Houses of the First Light as the public face of the Deliverer's network.
 

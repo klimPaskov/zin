@@ -18,4 +18,4 @@ The King of Demons may command some or all of the Netherborn, but that relations
 
 The Nether could have fortified volcanic passes, ancient portal sites, competing demonic houses, and borderlands claimed by both the king and Volgan's servants. Its heat and dangerous southern approaches made it difficult for men of the First Age to explore. This landscape and its internal politics remain proposed.
 
-[[The Second Age of Erdae]] · [[Agon]] · [[King of Demons]] · [[Abyss]]
+[[The Second Age of Aoaz]] · [[Agon]] · [[King of Demons]] · [[Abyss]]

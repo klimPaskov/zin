@@ -1,4 +1,4 @@
-# Geography model of Erdae
+# Geography model of Aoaz
 
 **Status:** Draft. **Date:** 19 October 2026. **Priority:** 1. **Phase:** 1 (map rebuild).
 
@@ -6,7 +6,7 @@
 
 This is the single source from which every layer of the rebuilt map is generated: coast, height, terrain, rivers, lakes, forests, provinces, states and strategic regions. The owner reviewed the current in-game map on 19 October 2026 and found it wrong. The lakes are specks. Aenor looks like a beige desert. Borders are straight lines. The mountains are weak. The map wraps like a globe. Strait crossings, rivers and sea names are missing. Everything feels random.
 
-The model replaces guessing with named, placed, lore-checked features. The structured data is [tools/content/data/geography/erdae.json](../../../tools/content/data/geography/erdae.json). How the placements were checked is in [05_geography_overlay.md](05_geography_overlay.md).
+The model replaces guessing with named, placed, lore-checked features. The structured data is [tools/content/data/geography/aoaz.json](../../../tools/content/data/geography/aoaz.json). How the placements were checked is in [05_geography_overlay.md](05_geography_overlay.md).
 
 ## How to read this spec
 
@@ -46,7 +46,7 @@ The model replaces guessing with named, placed, lore-checked features. The struc
 | Item | Value |
 | --- | --- |
 | Map size | 5,120 by 2,560 pixels, ratio 2 to 1 (the engine limit at this height) |
-| Orientation | North is up, east is right. Erdae is **flat**: no globe, no poles, no wrap |
+| Orientation | North is up, east is right. Aoaz is **flat**: no globe, no poles, no wrap |
 | Layout | The game layout of 18 October 2026: the cleaned reference with the central sea widened |
 | Central sea | The **Crown Ocean** (*proposed*; drawn Rush Ocean is superseded): x 0.30 to 0.52, y 0.40 to 0.80, about 1,150 pixels west to east |
 | Landmasses | Western Mainland (Cold Lands and West Lands), Central Mainland (Middle Lands, Magical Lands, Mirolon), Eastern Mainland (East Lands and South Lands), Northern Wastes (Zol's Mistake), the North Lands isle, the Dark Lands arms, the Dead Lands island, the Lands of the Sun, and the island groups |
@@ -60,7 +60,7 @@ The vault says the far west and north of the Cold Lands, and the far east and so
 | West | The Hoarfrost Barrier (*proposed*) | Vault: the far west and north of the Cold Lands extend beyond the known map, what lies beyond is not fixed. The model leaves it unfixed: a cliff. | impassable ice cliff along x=0 where the Cold Lands run off the map; open sea columns where the Pandar and Santon seas touch the edge become impassable "edge sea". Nothing crosses to x=1. |
 | North | The Roof Cliffs and the Ashen Cliffs (*proposed*) | The Cold Lands and Zol's Mistake both run off the north edge. | impassable cliffs: ice over the Cold Lands, black basalt over Zol's Mistake; open sea on the north edge becomes impassable edge sea. |
 | East | The Burning Rim (*proposed*) | Vault: the East Lands and the South Lands run off the east and south edges. | impassable lava cliffs and dune walls on the East Lands' east edge; one column of impassable edge sea where water meets the edge. The east edge never touches the west edge. |
-| South | The Line of Sun | Drawn names at the bottom of the Sunhot sheet. | impassable cliffs on the South Lands and the Lands of the Sun; edge sea elsewhere. The drawn labels The Line of Sun and The Sky of Erdae name this edge. |
+| South | The Line of Sun | Drawn names at the bottom of the Sunhot sheet. | impassable cliffs on the South Lands and the Lands of the Sun; edge sea elsewhere. The drawn labels The Line of Sun and The Sky of Aoaz name this edge. |
 
 Wrap rule: Provinces on x<0.004 and x>0.996 must be impassable edge provinces; no adjacency joins the west edge to the east edge. The Cold Lands west edge and the East Lands east edge are 5,000 pixels apart in the world and must stay that way.
 
@@ -235,7 +235,7 @@ The centre of the world. A rounded land facing the Crown Ocean on the west. The 
 | Terrain targets | plains 50%, forest 20%, hills 12%, mountain 12%, marsh 2%, urban 4% |
 | Provinces per state | 3 / 4 / 6 (min / typical / max), province area about 650 pixels |
 | Peoples | Aenor and the Concord: Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Herez; Cursed Lands and Bloody Forest apart. |
-| Fertile areas | Erdae's richest land: the Vale of Aenor, the Great Lake shore, Novez Fields, Safeton, Hunhun Downs. |
+| Fertile areas | Aoaz's richest land: the Vale of Aenor, the Great Lake shore, Novez Fields, Safeton, Hunhun Downs. |
 | Major ranges | Great Wall of Aenor, Organ Mountains, Lunhrim, Gigantic Mountains, Crown Mountains, Hiloff Rim |
 | Natural borders | Aenor and the Magical Lands: the Great Wall. Aenor and Selen: the River Selenar. Aenor and Hiloron: the Grano hills and River Hilorn. Aenor and Kingson: the Gigantic Mountains and the Great River gorge. Aenor and Bloody Forest: the Crown Mountains (north). Aenor and Herez and the Cursed Lands: the Grey Hills. |
 
@@ -439,7 +439,7 @@ Each row gives the placement rule and what the map must hold. Coordinates are in
 | Sun Desert | established; renamed | 0.700, 0.890 (3584, 2278) | A dune sea in the south-west lobe of the East Lands, running off the south edge. Desert terrain; oases on the Sand Road. The coast faces the Ocean of the Sun. |
 | Castle of Yeldenne at Mp'E | established; place *proposed* | 0.188, 0.093 (963, 238) | Frozen north of the Cold Lands, in a high valley between the Yeldenne Heights and the Isengar Mountains. State named Mp'E. |
 | Dardan | established; place open | not placed | **Do not place.** No feature, label or victory point may be named Dardan. See `unplaced` in the JSON. |
-| East Lands volcanoes and ranges | drawn and *proposed* | Hellfire Range spine from 4378, 2342 to 5059, 2202 | The greatest mountain mass of Erdae: elevation 5, core about 110 pixels wide with foothills to 280. Nine volcanoes (Ergo, Argon, Avalon, Plutondo, Drak, Pego, Hardtmuth, Fire Mountain, Reeto). Melty Mountains run along the east edge; the Hardtmuth chain on the south-west. |
+| East Lands volcanoes and ranges | drawn and *proposed* | Hellfire Range spine from 4378, 2342 to 5059, 2202 | The greatest mountain mass of Aoaz: elevation 5, core about 110 pixels wide with foothills to 280. Nine volcanoes (Ergo, Argon, Avalon, Plutondo, Drak, Pego, Hardtmuth, Fire Mountain, Reeto). Melty Mountains run along the east edge; the Hardtmuth chain on the south-west. |
 | Dead Lands storm coast | established | polygon `sea_tempest_reach` | A storm belt round the Dead Lands islands, `kind: storm_belt` (about 600 pixels across). Port capacity and attrition modifiers come from the magic spec; fleets need a storm-hardened port. |
 | Pupor Ocean | established | 0.068, 0.610 | The sea inside the Triton arcs. Sheltered, shallow, ringed by islands. |
 | Sea of Darkness | established; reading open | 0.500, 0.466 | The inner sea of the Dark Lands between the Dondor arm and the Goldoroth arm. The drawn grey island of that name is a separate land (the model calls the whole body the Gulf of Darkness). The owner has not said whether it opens to other seas; it opens to the Crown Ocean through the Dark Channel. |
@@ -457,11 +457,11 @@ Everything in this table is *proposed* unless marked, and links geography to the
 | Feature | Proposed reason | Vault link |
 | --- | --- | --- |
 | The Great Wall | Elzon's Order raised a fortified line (the Pale March) against the Magical Lands; the Wall Accord of 4A 96 kept it and rebuilt it in stone | *The Campaign of 4A 1748*, *Fourth Age Chronology* (proposed in the vault) |
-| The Vale of Aenor | Second Age irrigation, crop rotation and soil cures made the plain the richest farmland in Erdae; Varner cleansed the Third Age grave-fields | *Fourth Age of Erdae* prologue |
+| The Vale of Aenor | Second Age irrigation, crop rotation and soil cures made the plain the richest farmland in Aoaz; Varner cleansed the Third Age grave-fields | *Fourth Age of Aoaz* prologue |
 | The wide central sea | Aenor's rule over the West Lands always depended on ships and ports | *First Age*, *Fourth Age Map* |
 | The Dead Lands storm belt | Fierce storms at sea and heat to the south kept First Age explorers out | *Volgan's Dead Lands* |
 | Zol's Mistake | A black wasteland that existed before Aen; the reason is not explained | *Zol's Mistake* (open) |
-| The rift sea | A long sea between the Magical Lands and the East Lands | *Erdae and Its Regions* |
+| The rift sea | A long sea between the Magical Lands and the East Lands | *Aoaz and Its Regions* |
 | Dardan | Not placed; the First Age note proposes a plain in the southern approaches of the Middle Lands | *First Age* (proposal only) |
 | The Hellfire Range | A great volcanic mass at the south-east edge; the drawn lava ocean | owner's drawing |
 
@@ -650,7 +650,7 @@ Seas: open ocean provinces of about 12,000 to 20,000 pixels; narrow straits, the
 
 | File | Content | Written by |
 | --- | --- | --- |
-| `tools/content/data/geography/erdae.json` | The machine-readable model | design data (this spec) |
+| `tools/content/data/geography/aoaz.json` | The machine-readable model | design data (this spec) |
 | `docs/specs/01_map/05_geography_overlay.md` | How placement was checked; drawing artefacts | this spec |
 
 A map rasteriser (not part of this spec) reads the JSON and writes the height, terrain, river and province inputs for the map rewrite. It never reads the owner's drawings. Site rules in [02_key_sites.md](02_key_sites.md) and the map accuracy table [01_map_accuracy.md](01_map_accuracy.md) resolve against the names here.

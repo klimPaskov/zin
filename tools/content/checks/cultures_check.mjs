@@ -68,8 +68,8 @@ export function findDuplicateJsonKeys(text) {
   return dups;
 }
 
-// Every geography feature id (region, forest, pass, site and so on) of tools/content/data/geography/erdae.json.
-export async function loadGeographyIds(file = path.join(DATA, 'geography/erdae.json')) {
+// Every geography feature id (region, forest, pass, site and so on) of tools/content/data/geography/aoaz.json.
+export async function loadGeographyIds(file = path.join(DATA, 'geography/aoaz.json')) {
   const g = JSON.parse(await readFile(file, 'utf8')), ids = new Set();
   for (const v of Object.values(g)) if (Array.isArray(v)) for (const x of v) if (x && typeof x === 'object' && typeof x.id === 'string') ids.add(x.id);
   return ids;

@@ -1,6 +1,6 @@
 # Lerendor and the Treaty of the Narrow Strait
 
-**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Built by `tools/content/modules/mech_lerendor_strait.mjs`; depends on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)) being built, because every date below is an Erdae engine date (the game still starts 1936.1.1.12 today).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Built by `tools/content/modules/mech_lerendor_strait.mjs`; depends on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)) being built, because every date below is an Aoaz engine date (the game still starts 1936.1.1.12 today).
 
 ## Purpose
 
@@ -21,15 +21,15 @@ The treaty meets the Western Crossing ([western_crossing.md](western_crossing.md
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| Lerendor and Lerenwaith are one crown and one country | established (owner merge) | *Great Powers and Relations*, *Erdae and Its Regions* |
+| Lerendor and Lerenwaith are one crown and one country | established (owner merge) | *Great Powers and Relations*, *Aoaz and Its Regions* |
 | Seat at Sonargur | established working seat (constructed name, replaceable) | *Great Powers and Relations* |
 | Lerendor leads the **Leren Compact**; its rival is Aenor | established working table | *Great Powers and Relations*, *Kingdoms Factions and Conflicts* |
 | The working table lists Eekedor and Andos Enda in the Compact; the map starts it with Eekedor only. Decided (S5): Andos Enda, an elven realm bound by the Elven Refusal, is **not** in the Compact at the start; Lerendor can court it | working table vs map; decision S5 | *Great Powers and Relations*; [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) |
-| The North Lands lie north of the Middle Lands across a narrow strait; the Dark Lands lie between Lerendor and the Middle Lands across narrow straits | established geography | *Erdae and Its Regions* |
+| The North Lands lie north of the Middle Lands across a narrow strait; the Dark Lands lie between Lerendor and the Middle Lands across narrow straits | established geography | *Aoaz and Its Regions* |
 | The Narrow Strait of the treaty is the strait between the North Lands and the Middle Lands; the straits between the Dark Lands and its neighbours are the Dark Lands spec's northern and southern Dark Straits | proposed (owner short list 3, working proposal) | [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md); [dark_lands.md](dark_lands.md) |
-| In the final war the northern lands **withdraw from the old alliance** with Aenor; this is political separation, and the North Lands are not one unanimous enemy | established | *Fourth Age Canon Register*, *War of the Last Crowns*, *The Fourth Age of Erdae* §VIII–IX |
-| Zol's forces move from the black north **through islands and straits** toward the settled kingdoms; ordinary weapons cannot permanently kill Zol's dead; Glo's magic and Horos's sword can destroy them | established | *The Fourth Age of Erdae* §IX, *Zol* |
-| Northern companies join Eindil's temporary coalition without surrendering their independence; competing northern interests remain after the war | established (chronicle and *War of the Last Crowns*) | *The Fourth Age of Erdae* §X, *Fifth Age Seeds* |
+| In the final war the northern lands **withdraw from the old alliance** with Aenor; this is political separation, and the North Lands are not one unanimous enemy | established | *Fourth Age Canon Register*, *War of the Last Crowns*, *The Fourth Age of Aoaz* §VIII–IX |
+| Zol's forces move from the black north **through islands and straits** toward the settled kingdoms; ordinary weapons cannot permanently kill Zol's dead; Glo's magic and Horos's sword can destroy them | established | *The Fourth Age of Aoaz* §IX, *Zol* |
+| Northern companies join Eindil's temporary coalition without surrendering their independence; competing northern interests remain after the war | established (chronicle and *War of the Last Crowns*) | *The Fourth Age of Aoaz* §X, *Fifth Age Seeds* |
 | The name **Treaty of the Narrow Strait** for the old alliance; its date 4A 512 | proposed | *Fourth Age Chronology* |
 | The union of the Leren crowns by marriage in 4A 411 | proposed | *Fourth Age Chronology* |
 | The **toll quarrel** of 4A 1716, when Leren envoys were humiliated in Parim | proposed | *Fourth Age Chronology* |

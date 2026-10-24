@@ -1,4 +1,4 @@
-// The Fourth Age calendar: Erdae month names in every language folder (docs/specs/00_foundation/01_start_and_calendar.md,
+// The Fourth Age calendar: Aoaz month names in every language folder (docs/specs/00_foundation/01_start_and_calendar.md,
 // implementation step 4). The start date itself is a define (modules/defines.mjs) and the bookmark date comes from the
 // same constant (lib/calendar.mjs), so nothing shows 1936.
 import { readFile } from 'node:fs/promises';

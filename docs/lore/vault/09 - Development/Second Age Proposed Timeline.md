@@ -20,4 +20,4 @@ updated: 2026-10-17
 
 Only the last date and full duration have been established. The exact year of Edran's death, Volgan's return and Afrit's Second Age ascension are open. The long age includes considerable cultural, agricultural, medical, and military development, not just uninterrupted suffering.
 
-[[The Second Age of Erdae]] · [[Second Age Canon Register]] · [[Ages of Erdae]]
+[[The Second Age of Aoaz]] · [[Second Age Canon Register]] · [[Ages of Aoaz]]

@@ -1,6 +1,6 @@
 # Volgan and the Southern Dominion
 
-**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Depends on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)): every date below is an Erdae engine date (`1755.4.1` = 1 Rainwake 4A 1755) and is only meaningful once the game starts on `1748.3.1.12`; today it still starts in 1936.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Depends on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)): every date below is an Aoaz engine date (`1755.4.1` = 1 Rainwake 4A 1755) and is only meaningful once the game starts on `1748.3.1.12`; today it still starts in 1936.
 
 ## Purpose
 
@@ -18,8 +18,8 @@ The mechanic is shared by two major trees: [Volgan](../05_focus_trees/major/volg
 | His armies include demons, orcs, goblins, ogres, monster clans, grave hosts, necromantic orders and other spirits. | *Volgan*, *Volgans Dead Lands* |
 | The independent Dark Lands are not automatically his subjects; Dark Lands monsters do not all serve him. | *Volgan*, *Kingdoms Factions and Conflicts* |
 | In the First Age he invaded Mirolon, took Aenor's capital, lost at Dardan and was banished to the Void. Elzon brought him back in the Second Age; in the Third Age he was too weak to leave the Dead Lands. | *Volgan*, *The Return of Volgan*, *Volgans Dead Lands* |
-| In the Fourth Age he has recovered enough to retake Mirolon and march north with an army greater than any since the First Age. | *The Fourth Age of Erdae*, *War of the Last Crowns* |
-| His hosts fight Zol's dead before the two powers briefly align against Eindil and the surviving kingdoms. | *War of the Last Crowns*, *The Fourth Age of Erdae* |
+| In the Fourth Age he has recovered enough to retake Mirolon and march north with an army greater than any since the First Age. | *The Fourth Age of Aoaz*, *War of the Last Crowns* |
+| His hosts fight Zol's dead before the two powers briefly align against Eindil and the surviving kingdoms. | *War of the Last Crowns*, *The Fourth Age of Aoaz* |
 | Volgan strikes Eindil down once. Restored by the New Gods, Eindil pierces him with Horos's sword; his manifested body breaks and his army loses much of its supernatural organisation. | *Volgan*, *Fourth Age Canon Register* |
 | Whether Volgan's spirit survives is **open**. | *Volgan*, *Canon Policy*, *Open Questions* |
 | Seat Nafeher; Southern Dominion of Demon, Dolon and Nezer; rival Mirolon (working table). | *Great Powers and Relations* |
@@ -30,7 +30,7 @@ The mechanic is shared by two major trees: [Volgan](../05_focus_trees/major/volg
 | "Children of Volgan" is one of three alternative endings: Volgan dominates a ruined world through monsters, grave hosts and client states. | *Possible Endings* |
 | At the start Volgan has rebuilt his armies for a century and means to take Mirolon and march north; only Mirolon's scouts take the signs seriously. Mirolon, the human kingdom Volgan conquered in the First Age, is free again and stands in his way. | *The Campaign of 4A 1748*, *Volgans Dead Lands* |
 | Mirolon lies in the Dead Lands region; its political status differs between ages. | *Volgans Dead Lands* |
-| The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace. | owner, 18 October 2026 |
+| The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace. | owner, 18 October 2026 |
 
 ### Proposed (this spec or the vault's proposed notes)
 
@@ -589,7 +589,7 @@ The foundation's rules also act on Volgan's AI ([../00_foundation/05_defines_and
 
 ### Interface
 
-Layout belongs to the Ready interface spec ([../07_interface/01_interface.md](../07_interface/01_interface.md), section 7): the Southern Dominion panel and the Erdae bar row for Volgan (`zin_is_volgan`), and the Watch on the Passes panel for Mirolon (`zin_is_mirolon`), which reads only `global.zin_volgan_veil_band`, never Volgan's numbers. This spec provides those triggers and variables; the panels are built by the interface module.
+Layout belongs to the Ready interface spec ([../07_interface/01_interface.md](../07_interface/01_interface.md), section 7): the Southern Dominion panel and the Aoaz bar row for Volgan (`zin_is_volgan`), and the Watch on the Passes panel for Mirolon (`zin_is_mirolon`), which reads only `global.zin_volgan_veil_band`, never Volgan's numbers. This spec provides those triggers and variables; the panels are built by the interface module.
 
 ### Defines
 

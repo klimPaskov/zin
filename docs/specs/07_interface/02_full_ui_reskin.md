@@ -1,12 +1,12 @@
 # Full interface reskin
 
-**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 5. **Phase:** 7 (the inventory, tooling, frontend and shared chrome may start in phase 2 so the first screen a player sees is Erdae's).
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 5. **Phase:** 7 (the inventory, tooling, frontend and shared chrome may start in phase 2 so the first screen a player sees is Aoaz's).
 
 ## Purpose
 
-[PROGRAM.md](../PROGRAM.md) requires that nothing a player sees is vanilla unless it is engine-generic. [01_interface.md](01_interface.md) defines ZIN's own windows (the Erdae bar, the Realm panel, the mechanic panels). This spec covers everything else: every player-facing vanilla interface surface, from the main menu to the tooltips, and how ZIN reskins it.
+[PROGRAM.md](../PROGRAM.md) requires that nothing a player sees is vanilla unless it is engine-generic. [01_interface.md](01_interface.md) defines ZIN's own windows (the Aoaz bar, the Realm panel, the mechanic panels). This spec covers everything else: every player-facing vanilla interface surface, from the main menu to the tooltips, and how ZIN reskins it.
 
-For each surface it says which textures are replaced with image-generated Erdae art (path, size, frame count, format), which `.gui` or `.gfx` files are overridden and why, and what stays engine-generic. It fixes the visual language (materials, palette, text colours, ideology colours), the generator design (one theme sheet per family, sliced by code), the production order, and the offline and Linux acceptance checks.
+For each surface it says which textures are replaced with image-generated Aoaz art (path, size, frame count, format), which `.gui` or `.gfx` files are overridden and why, and what stays engine-generic. It fixes the visual language (materials, palette, text colours, ideology colours), the generator design (one theme sheet per family, sliced by code), the production order, and the offline and Linux acceptance checks.
 
 The main menu, bookmark, country selection, credits and game rules screens are specified in detail in [03_main_menu_and_frontend.md](03_main_menu_and_frontend.md). The loading screen pictures, quotes and tips are in [02_loading_screens_and_quotes.md](../08_art_and_assets/02_loading_screens_and_quotes.md); this spec covers only the loading screen's frame.
 
@@ -25,8 +25,8 @@ The main menu, bookmark, country selection, credits and game rules screens are s
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| Start on 1 Thaw 4A 1748: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748* |
-| Erdae has known peace for more than seventeen centuries; the realms are crowns, dominions, clans and island lordships, not modern states | proposed (campaign note) | *The Campaign of 4A 1748* |
+| Start on 1 Thaw 4A 1748: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
+| Aoaz has known peace for more than seventeen centuries; the realms are crowns, dominions, clans and island lordships, not modern states | proposed (campaign note) | *The Campaign of 4A 1748* |
 | People revere the Deliverer and do not know the name Afrit; the veiled sun is the Deliverer's public sign | established; sign proposed | *Fourth Age Canon Register*, [02_icon_catalog.md](../05_focus_trees/02_icon_catalog.md) |
 | Zol has no body; nothing may show Zol or his servants | established | *Zol*, [zols_mistake.md](../04_mechanics/zols_mistake.md) |
 | All art is image-generated; code only slices, resizes and converts; nothing from other mods | owner rule | [CONVENTIONS.md](../CONVENTIONS.md), [01_art_pipeline.md](../08_art_and_assets/01_art_pipeline.md) |
@@ -40,10 +40,10 @@ The chrome is shared by every country, so it must be neutral: no faith, no realm
 
 ### 1. Principles
 
-1. **Replace textures, not layouts.** The default method is a texture of the same path, extension, size and frame count as the vanilla file. The engine then draws Erdae art in the vanilla layout, and no vanilla `.gui` or `.gfx` text ships in ZIN. A layout is overridden only where the vanilla layout itself shows something un-Erdae (a DLC banner, a 1936 date picture, a tutorial for Germany), and the list of overrides is short and closed (section 2.3).
+1. **Replace textures, not layouts.** The default method is a texture of the same path, extension, size and frame count as the vanilla file. The engine then draws Aoaz art in the vanilla layout, and no vanilla `.gui` or `.gfx` text ships in ZIN. A layout is overridden only where the vanilla layout itself shows something un-Aoaz (a DLC banner, a 1936 date picture, a tutorial for Germany), and the list of overrides is short and closed (section 2.3).
 2. **Keep the luminance class.** Vanilla text colours are bound to their backgrounds. A replacement keeps the vanilla texture's luminance class (dark, mid or light, measured from the vanilla file's mean luminance), so engine text stays readable without editing a single `.gui`. Parchment is used only where vanilla already sets dark text on a light ground.
 3. **Keep the shape.** Alpha outlines, frame order and the meaning of each frame (normal, hover, pressed, selected, disabled) follow the vanilla sprite. Click areas come from `.gui` sizes and do not change.
-4. **Neutral chrome.** Window chrome uses one shared Erdae material set (section 3). Faction and mechanic colour appears only in ZIN's own panels ([01_interface.md](01_interface.md) §12) and in content (flags, icons, portraits).
+4. **Neutral chrome.** Window chrome uses one shared Aoaz material set (section 3). Faction and mechanic colour appears only in ZIN's own panels ([01_interface.md](01_interface.md) §12) and in content (flags, icons, portraits).
 5. **Spoiler-free at every date.** Chrome is visible from the first frame of the main menu, so it never shows the veiled sun, a demon, a sigil of Zol, Eindil, a battle or a later-state picture. Ornament comes from the neutral vocabulary in section 3.6.
 6. **No lettering in art.** Every word on screen is localisation drawn by a game font.
 7. **Measured from the installed game.** Sizes, frames, border sizes and luminance come from the installed game files (game version 1.19.3.0, the `rawVersion` of the installed `launcher-settings.json`), read by the builder as data. Vanilla pixels are measured, never copied, never passed to the image generator and never shipped.
@@ -98,7 +98,7 @@ No tinting, hue shift, gradient, drawn line or text is ever applied by code. Eac
 
 Any further override needs a new row here with its reason. ZIN never overrides `interface/topbar.gui` ([01_interface.md](01_interface.md) principle 7). Music is not an override: its folders are replaced with `replace_path` in stage 4 ([04_music_and_sound.md](../08_art_and_assets/04_music_and_sound.md)).
 
-### 3. Visual language: the Erdae chancery
+### 3. Visual language: the Aoaz chancery
 
 The interface reads as the furniture of a Fourth Age chancery: dark walnut cabinets bound in bronze, gilded iron fittings, and parchment ledgers where reports are read. It is old, well kept and calm, matching a world that has been at peace for seventeen centuries. Danger appears only in content and in the Gathering Dark.
 
@@ -380,7 +380,7 @@ Each step runs the full loop: generate, review, slice, stage, `hoi4.gui_inspect`
 | 2 | Frontend (03 spec) and loading frame | The first screens every player sees. The loading frame, the emblem, the menu backgrounds and the bookmark picture are done (Current state); the menu layout, country selection and rules screens remain | calendar spec bookmark |
 | 3 | `chrome_panels`, `chrome_controls`, `chrome_bars`, tooltips | Themes every window at once | 1 |
 | 4 | Text colours and font aliases | Must be judged on the new chrome | 3 |
-| 5 | `topbar`, `map_interface`, minimap, clock, Gathering Dark icon | Always on screen; the Erdae bar sits under the top bar | 3, [01_interface.md](01_interface.md) bar |
+| 5 | `topbar`, `map_interface`, minimap, clock, Gathering Dark icon | Always on screen; the Aoaz bar sits under the top bar | 3, [01_interface.md](01_interface.md) bar |
 | 6 | `events` and news | Every story beat uses them | 3 |
 | 7 | `politics_diplomacy`, decisions, `focus` | Read every session; ideology emblems needed by politics | 3 |
 | 8 | `research_production`, construction, trade, logistics, recruitment | Needs the warfare folder list and economy building order | 3, warfare, economy |
@@ -401,7 +401,7 @@ A `U` sprite that turns out reachable fails the build. Vanilla `.gfx` files that
 
 ### 8. Interface wording
 
-Window titles, button labels and tooltips of vanilla surfaces use Erdae terms through `localisation/replace/`. Terms belong to the spec that owns the system: resources, buildings, laws and merchant fleets to [02_economy.md](../03_gameplay/02_economy.md); units, equipment and air as beasts to [01_warfare.md](../03_gameplay/01_warfare.md); ideologies and parties to [02_ideologies_and_politics.md](../00_foundation/02_ideologies_and_politics.md); the Gathering Dark and month names to [01_interface.md](01_interface.md) and the calendar spec. This spec owns only the names of the windows themselves (proposed):
+Window titles, button labels and tooltips of vanilla surfaces use Aoaz terms through `localisation/replace/`. Terms belong to the spec that owns the system: resources, buildings, laws and merchant fleets to [02_economy.md](../03_gameplay/02_economy.md); units, equipment and air as beasts to [01_warfare.md](../03_gameplay/01_warfare.md); ideologies and parties to [02_ideologies_and_politics.md](../00_foundation/02_ideologies_and_politics.md); the Gathering Dark and month names to [01_interface.md](01_interface.md) and the calendar spec. This spec owns only the names of the windows themselves (proposed):
 
 | Vanilla | ZIN title | Vanilla | ZIN title |
 | --- | --- | --- | --- |
@@ -484,7 +484,7 @@ None.
 6. **Contrast.** For every text element in the renders, the contrast ratio between its text colour and the mean of its background box is at least 4.5:1 (3:1 for text 20 px and larger). Computed by the builder from the render images and the layout reports.
 7. **Secrecy.** No interface localisation reachable by a non-Worshipdom viewer before `zin_afrit_revealed` names Afrit or the Hidden Council (compiler secrecy scan covers `zin_interface_l_english.yml` and every replaced vanilla key).
 8. **Words.** The word scan of section 8 finds no forbidden word in any player-visible interface text.
-9. **Linux run.** In the isolated run (G4) at 1600×900, as Aenor, then the Magical Forest: every top bar button opens its window; captures of the main menu, the top bar, an event, the focus tree, research, production, construction, diplomacy, decisions, the pause menu, the options and a tooltip show no vanilla chrome; the minimap shows Erdae; `error.log` has no texture, sprite or font line caused by ZIN files; no crash. Captures are Linux acceptance evidence, never Windows game screenshots.
+9. **Linux run.** In the isolated run (G4) at 1600×900, as Aenor, then the Magical Forest: every top bar button opens its window; captures of the main menu, the top bar, an event, the focus tree, research, production, construction, diplomacy, decisions, the pause menu, the options and a tooltip show no vanilla chrome; the minimap shows Aoaz; `error.log` has no texture, sprite or font line caused by ZIN files; no crash. Captures are Linux acceptance evidence, never Windows game screenshots.
 10. **Rollback.** Removing all `R` files from a staged copy (a builder flag) gives a working vanilla-skinned ZIN, proving the reskin carries no logic.
 
 ## Open questions

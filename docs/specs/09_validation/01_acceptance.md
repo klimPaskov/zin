@@ -12,7 +12,7 @@ The Windows game is never launched, automated or captured. The HOI4 Agent Tools 
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| On 1 Thaw 4A 1748 the Golden King reigns, Eindil has not appeared, Afrit is unrevealed and Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748* |
+| On 1 Thaw 4A 1748 the Golden King reigns, Eindil has not appeared, Afrit is unrevealed and Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
 | People know only the Deliverer; the name Afrit is secret | established | *Fourth Age Canon Register* |
 | Canonical spellings: Eindil, Zol's Mistake, Aenor, Šodolôrō (game text Šodolôro, S11); never Einendil, Edvoid or Rush for places | owner rule | *Canon Policy*, CONVENTIONS |
 | Established facts are fixed; additions are proposed; open questions stay open | owner rule | *Canon Policy* |
@@ -133,7 +133,7 @@ The case passes only if the date the game reports at the end (console `time`, th
 | --- | --- | --- |
 | L1 | Start as each of Aenor, Volgan, Zol, Lerendor, the Magical Forest, the Worshipdom, Mirolon and a tier C country; run under the clock rule | Map reached; the clock rule's time passes; no crash; no war started |
 | L2 | Save at the end of L1 (as Aenor), return to the menu, load, unpause for 30 in-game days | Loads; date and meters unchanged at load; no crash |
-| L3 | Start screen and day-1 checks as Aenor (from phase 2) | Date "1 Thaw 1748"; bookmark "The Fourth Age"; no war in the diplomacy view; once the world systems ship, `zin_gathering_dark` is 10 (V1; console) and the Erdae bar shows it with "4A 1748"; no "Afrit" on any screen opened (Realm, Court, decisions, focus tree, politics) |
+| L3 | Start screen and day-1 checks as Aenor (from phase 2) | Date "1 Thaw 1748"; bookmark "The Fourth Age"; no war in the diplomacy view; once the world systems ship, `zin_gathering_dark` is 10 (V1; console) and the Aoaz bar shows it with "4A 1748"; no "Afrit" on any screen opened (Realm, Court, decisions, focus tree, politics) |
 | L4 | Open every ZIN panel and tab for the case's country, with the clock running | Opens, closes, no crash |
 | L5 | Observer run (`observe` from day 1) under `zin_rule_historical_path = HISTORICAL` to 1 Deepwinter 4A 1761 | The historical path's acceptance ([06_historical_path_and_ai.md](../03_gameplay/06_historical_path_and_ai.md)): checkpoints resolve; `zin_ending_lost_cause` set; no stall |
 | L6 | Observer runs under `FREE`, three seeds, to 4A 1770 | An ending or `zin_ending_unfinished`; no stall |
@@ -185,7 +185,7 @@ Each row adds to the previous rows; earlier criteria must keep passing.
 | 3 Base gameplay and mechanics | Each great power plays differently; the AI uses each mechanic; the historical path runs 4A 1748 to 4A 1760 without a player | Package checks and mechanic suites for every system green; decisions and events inspected; L1 for all eight start cases under the one-year clock rule; L4 for every mechanic panel that exists; L5 once and L6 three seeds; R5, R6; L8 within the stage-2 or stage-3 budget |
 | 4 Focus trees for the main countries | Each major tree passes the compiler and the focus inspector, renders cleanly, and its historical route is taken by the AI | Compiler green; `hoi4.focus_inspect` clean and `hoi4.focus_render` review image per tier A tree; L5 shows each tree's historical focuses taken in order (focus log from the save); L1 one-year runs |
 | 5 Events and endings | Every ending is reachable in test runs; the historical path reaches Eindil's coronation | Event reachability renders; L5 reaches `zin_eindil_crowned`; one forced test per ending (console flags or rules) reaches its news event; Chronicle event shown |
-| 6 Every other country | All 305 countries have an Erdae focus tree | Coverage check; every tier B and C tree inspected; L1 one-year runs for one country of each shared tree (13 runs, may share one session via tag switching); L9 |
+| 6 Every other country | All 305 countries have an Aoaz focus tree | Coverage check; every tier B and C tree inspected; L1 one-year runs for one country of each shared tree (13 runs, may share one session via tag switching); L9 |
 | 7 Interface, art and polish | Themed top bar and panels, loading screens, focus and event art, 3D units | Interface acceptance ([01_interface.md](../07_interface/01_interface.md)); art pipeline acceptance; no placeholder art used; L7; L8 at zero lines outside the allowlist (stage 4); 3D units pass the warfare spec's evidence list |
 | 8 Depth and history | More events, characters and regional history | All earlier gates green; new content passes the same checks; L5, L6 and L10 rerun |
 

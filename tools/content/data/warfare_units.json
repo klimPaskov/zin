@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "owner": "docs/specs/03_gameplay/01_warfare.md sections 4, 6, 8 (and 09_naval_air_doctrines.md section 4)",
-  "note": "Every sub-unit of Erdae. Stats in `s` follow the spec columns: [org, hp, soft attack, hard attack, defence, breakthrough, armour, piercing, speed, width, manpower, days]. They are targets for a battalion with the 1748 baseline equipment variant; the module turns them into equipment stats plus sub-unit factors (see warfare.mjs, solveFactors). `needs` names equipment archetypes. `unlock` is `tech` (a technology enables it), `grant` (granted equipment gates it; the sub-unit is active) or `script` (a mechanic calls unlock_subunit). `hard` is hardness, `sup` supply use, `t` terrain blocks, `x` extra sub-unit fields written as given.",
+  "note": "Every sub-unit of Aoaz. Stats in `s` follow the spec columns: [org, hp, soft attack, hard attack, defence, breakthrough, armour, piercing, speed, width, manpower, days]. They are targets for a battalion with the 1748 baseline equipment variant; the module turns them into equipment stats plus sub-unit factors (see warfare.mjs, solveFactors). `needs` names equipment archetypes. `unlock` is `tech` (a technology enables it), `grant` (granted equipment gates it; the sub-unit is active) or `script` (a mechanic calls unlock_subunit). `hard` is hardness, `sup` supply use, `t` terrain blocks, `x` extra sub-unit fields written as given.",
   "groups": {
     "infantry": { "weight": 0.5, "sup": 0.06, "ai": 200, "morale": 0.3 },
     "mobile": { "weight": 0.6, "sup": 0.08, "ai": 150, "morale": 0.3 },

@@ -4,9 +4,9 @@ status: established
 updated: 2026-10-18
 ---
 
-# Fourth Age Map of Erdae
+# Fourth Age Map of Aoaz
 
-The supplied regional map represents **Erdae in the Fourth Age**, the age in which [[Eindil]] awakens, comes to Aenor, and becomes its king after participating in a war. The map is an approximate overview of the regions rather than a fully accurate distance or historical boundary chart.
+The supplied regional map represents **Aoaz in the Fourth Age**, the age in which [[Eindil]] awakens, comes to Aenor, and becomes its king after participating in a war. The map is an approximate overview of the regions rather than a fully accurate distance or historical boundary chart.
 
 ![[Fourth Age - Erdae (reference).png]]
 
@@ -18,5 +18,5 @@ The supplied regional map represents **Erdae in the Fourth Age**, the age in whi
 - Older reference to **North Earth** in the First Age story means the current **North Lands**. Do not revive the former name as a separate place.
 - Zol's Mistake existed as a black wasteland before Aen and was largely dormant during the First Age.
 
-The source image was supplied by the owner on 17 October 2026. [[Erdae and Its Regions]] provides the regional name register, while [[The First Age of Erdae]] distinguishes earlier historical settings.
+The source image was supplied by the owner on 17 October 2026. [[Aoaz and Its Regions]] provides the regional name register, while [[The First Age of Aoaz]] distinguishes earlier historical settings.
 

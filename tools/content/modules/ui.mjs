@@ -130,7 +130,7 @@ ${text('zin_realm_footer', 44, 382, 520, 50, 'ZIN_REALM_FOOTER', 'hoi_16mbs', 'c
     ZIN_REALM_TITLE: 'The Realm of [ROOT.GetName]',
     ZIN_REALM_PEOPLE: 'People: §Y[ROOT.zin_people_name]§!', ZIN_REALM_PEOPLE_DESC: '[ROOT.zin_people_text]',
     ZIN_REALM_ALIGNMENT: 'Alignment: §Y[ROOT.zin_alignment_name]§!', ZIN_REALM_STANCE: 'Rule: §Y[ROOT.zin_stance_name]§! under [ROOT.GetLeader]', ZIN_REALM_STANCE_DESC: '[ROOT.zin_stance_text]',
-    ZIN_REALM_FOOTER: 'Fourth Age of Erdae, in the reign of the Golden King.', ZIN_UNKNOWN: 'Unknown',
+    ZIN_REALM_FOOTER: 'Fourth Age of Aoaz, in the reign of the Golden King.', ZIN_UNKNOWN: 'Unknown',
   };
   for (const [id, d] of Object.entries(IDEOLOGIES)) loc[`ZIN_ALIGNMENT_${id}`] = d.name;
   staged.loc('zin_ui', loc);

@@ -14,4 +14,4 @@ The title implies a ruler within demonic society. It does not establish that all
 
 He could be an ancient ruler whose court predates Volgan's conquest of Mirolon, a rival overlord who grudgingly tolerates Volgan, or an ally whose own ambitions worsen the Second Age's conflicts. This choice should be made alongside Agon's identity and the political geography of the Nether.
 
-[[Nether]] · [[Agon]] · [[The Second Age of Erdae]]
+[[Nether]] · [[Agon]] · [[The Second Age of Aoaz]]

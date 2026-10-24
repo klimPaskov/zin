@@ -24,7 +24,7 @@ All 28 are clan realms of men (`zin_wild_clans`), almost all with one state and 
 
 ## Lore basis
 
-- **Established:** Triton's Islands lie west of the West Lands and arc around the Pupor Ocean (drawn sheet "Tornado Islands"); Adel, Pollos, Raerby and Nondondor are there. In the First Age island peoples carried the Grand Alliance's supplies across Erdae's stormy seas. Lorien's crew for Eindil's voyage north included island navigators (which islands is not stated).
+- **Established:** Triton's Islands lie west of the West Lands and arc around the Pupor Ocean (drawn sheet "Tornado Islands"); Adel, Pollos, Raerby and Nondondor are there. In the First Age island peoples carried the Grand Alliance's supplies across Aoaz's stormy seas. Lorien's crew for Eindil's voyage north included island navigators (which islands is not stated).
 - **Proposed (vault):** the islanders charted the Pupor Ocean in 4A 702 and sold the charts to every crown; Senra of Triton's Islands, fleet captain of the Grand Alliance.
 - **Proposed (start situation):** the islands live by fishing, piracy and charting; their tensions are piracy, fishing rights and naval frontiers (Nondondor).
 - **Proposed (this spec):** the Pupor Ocean system (piracy, chart houses, corsair havens), the Pupor Charter, the Southern Banks, every focus, spirit, event and number.

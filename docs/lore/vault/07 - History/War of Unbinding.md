@@ -12,4 +12,4 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 
 [[Afrit]] and his networks assist the overthrow while positioning themselves to become the leading religious and political institutions of the restored Aenor. Elzon's dependence on Zol's ancient magic sets the conditions for his permanent destruction, although exactly how Zol consumes the Great Spirit remains an open magical detail.
 
-[[The Third Age of Erdae]] · [[The Elven Refusal]] · [[The Last Tithe]]
+[[The Third Age of Aoaz]] · [[The Elven Refusal]] · [[The Last Tithe]]

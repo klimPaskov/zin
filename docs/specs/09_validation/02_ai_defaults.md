@@ -6,7 +6,7 @@
 
 The vanilla AI is more than the focus weights a mod writes. It is a layer of generic strategies, templates, designs, areas and research postures that every country relies on. ZIN replaced the folders that hold that layer (`common/ai_strategy`, `ai_strategy_plans`, `ai_areas`, `ai_focuses`, `ai_faction_theaters`, and at stage 2 `ai_templates`, `ai_equipment`, `ai_navy`, `scorers`). What ships today is an inert stub in each. A country with no generic layer still moves, but it builds the wrong things in the wrong ratios, researches by chance, ignores its neighbours and, in some folders, can crash the game.
 
-This spec writes the generic layer for Erdae. It defines:
+This spec writes the generic layer for Aoaz. It defines:
 
 - what the AI needs for **every** country, as a list of behaviours with a home file;
 - how the behaviours are **generated per people and per tier** from one profile table, not written per country;
@@ -22,7 +22,7 @@ It does not write story strategies (the [historical path](../03_gameplay/06_hist
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| Erdae seems at peace on 1 Thaw 4A 1748; no AI country declares war early | owner-fixed | *The Campaign of 4A 1748*, [01_start_situation.md](../02_lore/01_start_situation.md) |
+| Aoaz seems at peace on 1 Thaw 4A 1748; no AI country declares war early | owner-fixed | *The Campaign of 4A 1748*, [01_start_situation.md](../02_lore/01_start_situation.md) |
 | The ten peoples differ in war and politics: elves few, patient and long-lived; orcs quarrelsome mass infantry; trolls brutal and poorly led; giants, ents and yeti defensive; the dead raised by mechanics; demons shock troops | established (roles), proposed (temperaments below) | [03_peoples.md](../00_foundation/03_peoples.md) |
 | The story ends with Eindil's coronation; the sandbox runs on to 4A 1800 | established, V3 | [06_historical_path_and_ai.md](../03_gameplay/06_historical_path_and_ai.md), [05_world_tension_and_endings.md](../03_gameplay/05_world_tension_and_endings.md) |
 | Zol has no body and acts only through its mechanic; no AI rule here targets or names it | established | *Zol*, [zols_mistake.md](../04_mechanics/zols_mistake.md) |
@@ -174,7 +174,7 @@ The men, elves, orcs, Volgan and Zol rows are warfare's ([01_warfare.md](../03_g
 
 #### 4.2 Production and equipment
 
-The Erdae economy keeps the engine's building and equipment keys (economy §Buildings): workshops are `industrial_complex`, armouries `arms_factory`, shipwrights `dockyard`.
+The Aoaz economy keeps the engine's building and equipment keys (economy §Buildings): workshops are `industrial_complex`, armouries `arms_factory`, shipwrights `dockyard`.
 
 | Behaviour | Strategy tokens | Rule |
 | --- | --- | --- |
@@ -201,7 +201,7 @@ The files `zin_fleet.txt`, `zin_goals.txt` and `zin_taskforce.txt` follow warfar
 - **Unit ratios** by sea drive: sea power (Lerendor, the Triton's Islands realms, Gala): screen 40, capital 30, raider 10, convoy 20; coastal land power: screen 70, capital 0, raider 0, convoy 30; Zol builds none (its three corsairs are scripted); landlocked: none.
 - **Designs** (`ai_equipment`): one default design per hull and people that may build it: galley (oars and rowers' benches, ram), warship (sails, ballista battery, planking), great warship (flagship fittings), raider. Elves take elven sails; Zol's black sails are granted, never designed. `allowed_modules` list only the modules of warfare §7.2.
 - **Task forces** (`zin_taskforce.txt`): patrol compositions for screens (min 2, optimum 6 galleys), a battle line (optimum 4 warships), a raider pack (3 corsairs), a convoy escort. `ai_will_do` of 0 disables a template. Fleets (`zin_fleet.txt`) require the task forces above.
-- **Goals** (`zin_goals.txt`): one goal per objective type that Erdae uses: `convoy_protection`, `convoy_raiding` (raiders), `coast_defense`, `naval_invasion_support`, `naval_invasion_defense`. A West Lands naval invasion of Aenor stays invalid without the deep-water hull technology (warfare acceptance 10).
+- **Goals** (`zin_goals.txt`): one goal per objective type that Aoaz uses: `convoy_protection`, `convoy_raiding` (raiders), `coast_defense`, `naval_invasion_support`, `naval_invasion_defense`. A West Lands naval invasion of Aenor stays invalid without the deep-water hull technology (warfare acceptance 10).
 - **Strategies**: `naval_avoid_region` for the storm seas is the world spec's; this module adds `strike_force_home_base` to each sea power's chief harbour region and `coast_defense` for coastal tier C.
 - **Dragons.** They cannot be produced, so L1 sets `unit_ratio cas` to 0 and the research posture `ai_focus_aviation` and `ai_focus_naval_air` to their disabled values. Their use is the engine's air AI over granted wings (close support in owned and bordering states), and the magic spec's pact decisions. Eyries: a realm with a dragon wing builds one `air_base` in its capital or a border state (`building_target` 1); no other `air_base` is wanted. Under `zin_rule_skies = beasts`, men with eyries keep griffins at 10% of military production in war, 0 in peace (warfare AI).
 

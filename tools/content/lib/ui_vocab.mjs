@@ -23,7 +23,7 @@ export const GROUND = {
   magenta: 'on a solid flat pure magenta (#FF00FF) background: no glow, no shadow on the ground',
 };
 
-// Glyphs whose plain meaning drifts into a real-world emblem or an unreadable shape: a fixed Erdae image replaces the generic subject.
+// Glyphs whose plain meaning drifts into a real-world emblem or an unreadable shape: a fixed Aoaz image replaces the generic subject.
 export const TEXTICON_SUBJECTS = {
   refitting: 'a small iron anvil with a mended bronze plate resting on its face, a row of gilt rivets along the plate seam; nothing else, no hammer, no curved blade, no arrow',
   repairing: 'a cracked bronze plate with a gilt patch riveted over the crack; nothing else, no hammer, no curved blade',

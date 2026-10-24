@@ -298,7 +298,7 @@ test('buildNames: every country has a pool from its culture\'s language, at the 
   }
   const d = blocks.get('default');
   assert(d.male.length >= 20 && d.female.length >= 20 && d.surnames.length >= 40);
-  assert(pools.get('zin:all-erdae').male.length === d.male.length, 'the default pool is kept under its old key');
+  assert(pools.get('zin:all-aoaz').male.length === d.male.length, 'the default pool is kept under its old key');
   assert(pools.get(tagOf('Aenor')).male.includes(blocks.get(tagOf('Aenor')).male[0]));
   assert(pools.get(countries[0].scan), 'pools are still reachable by drawn sheet');
   assert.match(text, /\tcallsigns = \{ "[A-Za-z' -]+"/);
@@ -311,7 +311,7 @@ test('buildNames: countries speak the language of their culture, Zol\'s Mistake 
   assert.equal(language('Volgan'), 'grave_rite'); assert.equal(language('Kilinti'), 'longspeech'); assert.equal(language('Goldoroth'), 'orcish');
   assert.equal(language('Zol'), null);
   const blend = neutralBlend(data).map(b => b.language), g = freshGenerator();
-  const names = [...pools.get(tagOf('Zol')).male, ...pools.get('zin:all-erdae').male];
+  const names = [...pools.get(tagOf('Zol')).male, ...pools.get('zin:all-aoaz').male];
   g.nameSpace('aenoran');
   for (const n of names) assert(blend.includes(g.registry.owner(n).language), `${n} is not a name of the Middle Lands`);
 });

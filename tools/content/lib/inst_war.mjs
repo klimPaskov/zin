@@ -234,8 +234,8 @@ export async function writeUnitLeaderTraits(staged, env) {
     for (const p of [...(t.parents ?? []), ...(t.mutex ?? [])]) if (!ids.has(p)) throw new Error(`Trait ${t.id} names unknown trait ${p}`);
   }
   for (const [tid, [slot, fam]] of Object.entries(T.adviserMap).filter(([k]) => k !== '_note')) { if (!ids.has(tid)) throw new Error(`Adviser map names unknown trait ${tid}`); if (!familyIds.has(fam)) throw new Error(`Adviser map names unknown family ${fam}`); }
-  staged.text('common/unit_leader/00_traits.txt', `${HEADER}\n# Commander traits of Erdae. Overrides the vanilla file of the same name (never replace_path this folder). The engine keys\n# stay; names, text and values are Erdae's. No trait names a tank, an aeroplane or a submarine.\nleader_traits = {\n${out.join('\n')}\n}\n`);
-  for (const f of T.tags) staged.text(`common/unit_leader/${f}`, `${HEADER}\n# Comment-only override: the vanilla file of this name held traits for vanilla countries that do not exist in Erdae.\nleader_traits = {\n}\n`);
+  staged.text('common/unit_leader/00_traits.txt', `${HEADER}\n# Commander traits of Aoaz. Overrides the vanilla file of the same name (never replace_path this folder). The engine keys\n# stay; names, text and values are Aoaz's. No trait names a tank, an aeroplane or a submarine.\nleader_traits = {\n${out.join('\n')}\n}\n`);
+  for (const f of T.tags) staged.text(`common/unit_leader/${f}`, `${HEADER}\n# Comment-only override: the vanilla file of this name held traits for vanilla countries that do not exist in Aoaz.\nleader_traits = {\n}\n`);
   return { traits: ids.size };
 }
 

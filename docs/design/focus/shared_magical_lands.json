@@ -7,7 +7,7 @@
     "old_houses": {"name":"The Old Houses","desc":"The oldest houses keep the high seats of [ROOT.GetName], and little that matters is done without them.","modifier":{"drift_defence_factor":0.15,"stability_factor":0.05},"module":"M1"},
     "open_houses": {"name":"The Open Houses","desc":"Every house of [ROOT.GetName] may speak at the council fire. The realm decides slowly and learns quickly.","modifier":{"research_speed_factor":0.05,"opinion_gain_monthly_factor":0.1},"module":"M1"},
     "wellspring_keepers_spirit": {"name":"Wellspring Keepers","desc":"The keepers of the springs tell each workshop when its grove must rest, and the work goes steadier for it.","modifier":{"production_factory_efficiency_gain_factor":0.05},"module":"M2"},
-    "old_woods_timber": {"name":"Timber of the Old Woods","desc":"Century-seasoned timber from [ROOT.GetName] is sought on every coast of Erdae.","modifier":{"trade_opinion_factor":0.1},"module":"M2"},
+    "old_woods_timber": {"name":"Timber of the Old Woods","desc":"Century-seasoned timber from [ROOT.GetName] is sought on every coast of Aoaz.","modifier":{"trade_opinion_factor":0.1},"module":"M2"},
     "groves_provide": {"name":"The Groves Provide","desc":"Timber, fruit, herbs and shade come in their seasons, and [ROOT.GetName] builds on the surplus.","modifier":{"production_speed_buildings_factor":0.05,"consumer_goods_factor":-0.02},"module":"M2"},
     "wall_traders": {"name":"Traders at Kingson","desc":"Carts of timber and herbs go through the Wall gate to Kingson, and carts of grain come back.","modifier":{"trade_opinion_factor":0.05},"cancel":[{"global_flag":"zin_elves_wall_roads_closed"}],"module":"M5"},
     "wall_roads": {"name":"The Wall Roads Open","desc":"The toll at each gate is posted in plain sight, and both sides of the Wall trade more and quarrel less.","modifier":{"consumer_goods_factor":-0.02,"trade_opinion_factor":0.05},"cancel":[{"global_flag":"zin_elves_wall_roads_closed"}],"module":"M5"},
@@ -171,7 +171,7 @@
     {
       "key": "essence_workshops",
       "name": "Essence Workshops",
-      "desc": "Distillers draw the essence of the groves into small clear flasks for healers and warders. Theirs is the quietest workshop in Erdae and among the most profitable.",
+      "desc": "Distillers draw the essence of the groves into small clear flasks for healers and warders. Theirs is the quietest workshop in Aoaz and among the most profitable.",
       "icon": "workshop_tools",
       "module": "M2",
       "x": 5,
@@ -185,7 +185,7 @@
     {
       "key": "timber_of_the_old_woods",
       "name": "Timber of the Old Woods",
-      "desc": "Fallen timber of the old woods, seasoned for a century, is the finest in Erdae, and the merchants of the coast know it. [ROOT.GetName] sells it by the measured stack and never by the tree.",
+      "desc": "Fallen timber of the old woods, seasoned for a century, is the finest in Aoaz, and the merchants of the coast know it. [ROOT.GetName] sells it by the measured stack and never by the tree.",
       "icon": "timber_mill",
       "module": "M2",
       "x": 7,
@@ -789,7 +789,7 @@
     {
       "key": "longbows_of_the_house",
       "name": "[ROOT.GetAdjective] Longbows",
-      "desc": "The bowyers of [ROOT.GetName] cut yew in winter and season it for ten years. The bows they make are taller than a man and shoot further than any other in Erdae.",
+      "desc": "The bowyers of [ROOT.GetName] cut yew in winter and season it for ten years. The bows they make are taller than a man and shoot further than any other in Aoaz.",
       "icon": "elven_bow",
       "module": "M13",
       "x": 29,

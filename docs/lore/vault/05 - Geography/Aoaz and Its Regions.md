@@ -4,9 +4,9 @@ status: established
 updated: 2026-10-17
 ---
 
-# Erdae and Its Regions
+# Aoaz and Its Regions
 
-**Erdae** is a continent in the larger fictional ZIN universe and the setting of the ZIN map mod. The map was assembled from **13 hand-drawn regional sheets** and rearranged in October 2026. **Aenor Isle** is treated as a part of the Middle Lands, though it appears separately in the region list below.
+**Aoaz** is a continent in the larger fictional ZIN universe and the setting of the ZIN map mod. The map was assembled from **13 hand-drawn regional sheets** and rearranged in October 2026. **Aenor Isle** is treated as a part of the Middle Lands, though it appears separately in the region list below.
 
 The **far west and north** of the Cold Lands, and **far east and south** beyond the East Lands and South Lands desert, extend outside the known map. What lies beyond is not fixed.
 
@@ -29,7 +29,7 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 
 The full **711-label** map transcription is described in the source snapshot but was not separately available when this vault was built. This note includes every regional name and example locality actually reported in that snapshot, not the missing 711-label data.
 
-[[Names and Retcons]] · [[Great Powers and Relations]] · [[Peoples of Erdae]]
+[[Names and Retcons]] · [[Great Powers and Relations]] · [[Peoples of Aoaz]]
 
 ## Newly confirmed places within the Dead Lands
 

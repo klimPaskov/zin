@@ -27,15 +27,15 @@ The section headings below give the vault filenames. Wiki links work after impor
 
 # ZIN Lore Vault
 
-This vault documents the world of **ZIN** and the history, peoples, magic, and politics of its continent **Erdae**. The newest owner-supplied lore develops the First through Fourth Ages and ends with [[Eindil]]'s coronation. It also includes the Fourth Age reference map and the world creator's original drawings of [[Horos]].
+This vault documents the world of **ZIN** and the history, peoples, magic, and politics of its continent **Aoaz**. The newest owner-supplied lore develops the First through Fourth Ages and ends with [[Eindil]]'s coronation. It also includes the Fourth Age reference map and the world creator's original drawings of [[Horos]].
 
 ## Read the historical narrative
 
-1. [[Ages of Erdae]] and [[Timeline]] give the active calendar.
-2. [[The First Age of Erdae]] covers [[Aen]], the [[War of Men]], the first Aenoran kingdom, the [[Grand Alliance]], and [[Battle of Dardan|Dardan]].
-3. [[The Second Age of Erdae]] follows the grief, recovery, scientific and farming advances, plagues, and [[Elzon]]'s conquest in 2A 2133.
-4. [[The Third Age of Erdae]] describes a **1,200-plus-year** occupation and prolonged decline of the Great Necromancer. His death allows [[Afrit]] to rise as a publicly acclaimed New God. A precise **1,260 years** is proposed.
-5. **[[The Fourth Age of Erdae]]** is the full chronicle of prosperity, Afrit's hidden and then open rule, [[The Journey of Eindil]], [[Castle of Yeldenne and Glo|Yeldenne]], [[War of the Last Crowns]], and [[The Last Battle in the Palace]]. A precise **1,760 years** is proposed.
+1. [[Ages of Aoaz]] and [[Timeline]] give the active calendar.
+2. [[The First Age of Aoaz]] covers [[Aen]], the [[War of Men]], the first Aenoran kingdom, the [[Grand Alliance]], and [[Battle of Dardan|Dardan]].
+3. [[The Second Age of Aoaz]] follows the grief, recovery, scientific and farming advances, plagues, and [[Elzon]]'s conquest in 2A 2133.
+4. [[The Third Age of Aoaz]] describes a **1,200-plus-year** occupation and prolonged decline of the Great Necromancer. His death allows [[Afrit]] to rise as a publicly acclaimed New God. A precise **1,260 years** is proposed.
+5. **[[The Fourth Age of Aoaz]]** is the full chronicle of prosperity, Afrit's hidden and then open rule, [[The Journey of Eindil]], [[Castle of Yeldenne and Glo|Yeldenne]], [[War of the Last Crowns]], and [[The Last Battle in the Palace]]. A precise **1,760 years** is proposed.
 6. [[Fifth Age Seeds]] records the consequences and open future after Eindil's coronation.
 
 ## Start with characters and relations
@@ -50,7 +50,7 @@ This vault documents the world of **ZIN** and the history, peoples, magic, and p
 
 ## Political and geographical references
 
-[[Fourth Age Map of Erdae]] · [[Erdae and Its Regions]] · [[Middle Lands and Aenor]] · [[Volgans Dead Lands]] · [[Zols Mistake]] · [[Nether]] · [[Abyss]] · [[Afrits Hidden Council]] · [[The Lost Cause]]
+[[Fourth Age Map of Aoaz]] · [[Aoaz and Its Regions]] · [[Middle Lands and Aenor]] · [[Volgans Dead Lands]] · [[Zols Mistake]] · [[Nether]] · [[Abyss]] · [[Afrits Hidden Council]] · [[The Lost Cause]]
 
 ## Visual references
 
@@ -99,7 +99,7 @@ The original [[ZIN Lore Compendium - original snapshot]] remains preserved uncha
 
 ## Metaphysical distinctions
 
-- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Erdae's local magic constrain manifestation. His late Fourth Age body is exceptional, temporary and costly.
+- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. His late Fourth Age body is exceptional, temporary and costly.
 - Great Spirit, Lesser Spirit, New God, Old God and Great Folk are distinct ranks or orders. Sovereign Spirit is not a separate rank.
 - [[Afrit]] is publicly worshipped as a New God and effectively attains godlike power. Whether he belongs to the original divinity created by the Holy Seven remains undetermined.
 - [[Elzon]] is a Great Spirit and Great Necromancer. He permanently dies after the Third Age. [[Volgan]] loses his manifested body in the Fourth Age, but the complete destruction of his essence has not yet been established.
@@ -117,11 +117,11 @@ The original compendium is unchanged in the Sources folder, and the Fourth Age m
 
 ---
 
-## 07 - History/Ages of Erdae.md
+## 07 - History/Ages of Aoaz.md
 
-# Ages of Erdae
+# Ages of Aoaz
 
-Erdae's numbered ages are reckoned from the victory of [[Aen]] in the War of Men. Earlier periods extend thousands of years before Aen's unification and remain incompletely dated.
+Aoaz's numbered ages are reckoned from the victory of [[Aen]] in the War of Men. Earlier periods extend thousands of years before Aen's unification and remain incompletely dated.
 
 | Age | Status and length | Central history |
 | --- | --- | --- |
@@ -133,19 +133,19 @@ Erdae's numbered ages are reckoned from the victory of [[Aen]] in the War of Men
 
 The **Second Age is the longest of the first four ages**. The draft model of 1,675 + 2,133 + 1,260 + 1,760 years satisfies that requirement. Only dates explicitly given by the owner are canonical. The Fourth Age map remains a reference and requires a wider central sea than drawn.
 
-[[Timeline]] · [[The First Age of Erdae]] · [[The Second Age of Erdae]] · [[The Third Age of Erdae]] · [[The Fourth Age of Erdae]]
+[[Timeline]] · [[The First Age of Aoaz]] · [[The Second Age of Aoaz]] · [[The Third Age of Aoaz]] · [[The Fourth Age of Aoaz]]
 
 ---
 
 ## 07 - History/Timeline.md
 
-# Erdae Timeline
+# Aoaz Timeline
 
 | Date | Status | Event |
 | --- | --- | --- |
 | Before 1A | Established, undated | Men have existed many generations. Aen is born of magic without an ordinary father. His centuries-long War of Men unites their kingdoms. |
 | 1A 1 | Established | Aen's victory inaugurates the First Age and the kingdom of Aenor. |
-| First Age | Established | Aenor grows, explores Erdae, fights western settlers' wars, and enters decline. |
+| First Age | Established | Aenor grows, explores Aoaz, fights western settlers' wars, and enters decline. |
 | Late First Age | Established | Volgan attacks Mirolon, captures Aenor's capital, loses at Dardan to Edran's Grand Alliance and is banished. Edran's invasion of the Dead Lands fails against Elzon. |
 | 1A 1675 | Established | First Age ends. |
 | Second Age | Established | Edran dies of disease. Famines, plagues and conflict accompany progress in medicine, farming and warfare. Elzon restores Volgan's presence from the Void. Afrit grows through hidden influence. |
@@ -166,15 +166,15 @@ The **Second Age is the longest of the first four ages**. The draft model of 1,6
 - **Eindil and Afrit are brothers, the sons of Ein**, born at approximately the same time. Their exact age is **not fixed**, and the former 5,000-year upper limit is revoked. Their birth and Eindil's imprisonment must fit the ages that follow.
 - The older account of a 100,000-year imprisonment is also superseded.
 
-[[Ages of Erdae]] · [[War of the Last Crowns]]
+[[Ages of Aoaz]] · [[War of the Last Crowns]]
 
 ---
 
-## 07 - History/The First Age of Erdae.md
+## 07 - History/The First Age of Aoaz.md
 
-# The First Age of Erdae
+# The First Age of Aoaz
 
-**Length: 1,675 years.** The First Age begins with [[Aen]]'s victory in the centuries-long War of Men and ends with the conclusion of the first great war against [[Volgan]], after the [[Battle of Dardan]] and the failure of the attempted invasion of the [[Volgans Dead Lands|Dead Lands]]. The following [[Ages of Erdae|Second Age]] is the Age of Rebuilding.
+**Length: 1,675 years.** The First Age begins with [[Aen]]'s victory in the centuries-long War of Men and ends with the conclusion of the first great war against [[Volgan]], after the [[Battle of Dardan]] and the failure of the attempted invasion of the [[Volgans Dead Lands|Dead Lands]]. The following [[Ages of Aoaz|Second Age]] is the Age of Rebuilding.
 
 > **Canon distinction:** The broad sequence and the events, figures, places, relationships, and durations explicitly supplied by the owner on 17 October 2026 are **established**. Names invented below, specific military tactics, council decisions, rituals, battlefield phases, dates other than the length of the age, and the motives of newly described participants are **proposed narrative development**, not fixed canon.
 
@@ -198,9 +198,9 @@ The War of Men lasted **hundreds of years** and killed **many thousands**. Aen u
 
 Aenor's victory brought **centuries of peace** to the central realm. The first half of the age is broadly remembered as prosperous. Farming, trade, roads, shipbuilding, and exploration spread beyond the Middle Lands. Such prosperity was real inside much of Aenor, but frontier settlement was often violent.
 
-Aenoran explorers and settlers reached the [[Erdae and Its Regions|West Lands]]. **The West Lands already had inhabitants and kingdoms.** Their lands were not empty. Aenoran colonies, trade stations, and claims produced repeated wars with existing peoples, and the resulting hostility survives into the Fourth Age. The large sea separating West Lands and Middle Lands means that direct rule has always depended on ships, ports, local allies, and intermittent contact.
+Aenoran explorers and settlers reached the [[Aoaz and Its Regions|West Lands]]. **The West Lands already had inhabitants and kingdoms.** Their lands were not empty. Aenoran colonies, trade stations, and claims produced repeated wars with existing peoples, and the resulting hostility survives into the Fourth Age. The large sea separating West Lands and Middle Lands means that direct rule has always depended on ships, ports, local allies, and intermittent contact.
 
-The kingdom made an alliance with what older accounts call *North Earth*, now the **North Lands**. Traders established contact with the peoples of the [[Erdae and Its Regions|East Lands]], sometimes called Easterlings, as well as routes to more distant peoples. Voyages also reached the Cold Lands, southern islands, and other eastern and southern shores. Much of the current map ultimately derives from the exploration begun in this period.
+The kingdom made an alliance with what older accounts call *North Earth*, now the **North Lands**. Traders established contact with the peoples of the [[Aoaz and Its Regions|East Lands]], sometimes called Easterlings, as well as routes to more distant peoples. Voyages also reached the Cold Lands, southern islands, and other eastern and southern shores. Much of the current map ultimately derives from the exploration begun in this period.
 
 The **Dead Lands were exceptionally difficult to reach**. Their southern heat and dangerous surrounding seas obstructed ordinary expeditions. Men could chart distant coasts without knowing or controlling the lands beyond them. [[Zols Mistake|Zol's Mistake]] in the north was already a desolate and nearly unusable wasteland. Zol had arrived there long before Aen, and his local influence was comparatively dormant during the First Age.
 
@@ -228,9 +228,9 @@ Aenor's defenses failed. **The reigning king died, and Volgan's armies captured 
 
 ## 5. The new king and the Grand Alliance
 
-A new king emerged during the catastrophe. He became recognized as the **greatest king of men after Aen**. His defining achievement was the creation of the **Grand Alliance** against Volgan. He rallied men, elves, dwarves, giants, spirits, and other beings from across Erdae.
+A new king emerged during the catastrophe. He became recognized as the **greatest king of men after Aen**. His defining achievement was the creation of the **Grand Alliance** against Volgan. He rallied men, elves, dwarves, giants, spirits, and other beings from across Aoaz.
 
-The alliance drew from the **West Lands, North Lands, islands, Magical Lands, and even portions of the Dark Lands**. It also received forces from distant elf peoples. **Lorien**, the great king of the **Gala elves** from the [[Erdae and Its Regions|Lands of the Sun]], personally led a formidable army to join the war. The Aenoran king knew little of the Gala elves before contact was made. This was one of the first significant encounters between their courts. Elves from the Magical Lands and elsewhere also gathered.
+The alliance drew from the **West Lands, North Lands, islands, Magical Lands, and even portions of the Dark Lands**. It also received forces from distant elf peoples. **Lorien**, the great king of the **Gala elves** from the [[Aoaz and Its Regions|Lands of the Sun]], personally led a formidable army to join the war. The Aenoran king knew little of the Gala elves before contact was made. This was one of the first significant encounters between their courts. Elves from the Magical Lands and elsewhere also gathered.
 
 ### King Edran, with proposed details of his early reign
 
@@ -266,7 +266,7 @@ These concessions cost Edran support among hard-line Aenoran nobles. They make t
 
 **Rovek** prevents the Dark Lands from becoming a single evil faction. His soldiers know the terrain and the behavior of Volgan's allies, and they have a direct interest in defending their independence.
 
-**Senra** and the island peoples provide maritime supply and transport. Their effort is essential to bringing distant forces together across Erdae's stormy and separated seas.
+**Senra** and the island peoples provide maritime supply and transport. Their effort is essential to bringing distant forces together across Aoaz's stormy and separated seas.
 
 **Lorien** adds one of the most powerful armies in the war. He arrives as an ally, not an Aenoran subordinate. His relationship with Edran begins in respect and ends in serious disagreement.
 
@@ -292,7 +292,7 @@ Dardan was formerly fertile, with settlements and roads that could supply a huge
 
 **Day 12: The binding.** Ithren and other allied Great Spirits begin a dangerous rite beneath the battlefield. Volgan cannot simply be banished by a single spell. He has spent an immense portion of his active strength holding together his armies, summoning the deep beings, and forcing his will into the contested territory. The allied spirits exploit that concentration of power. To weaken him further, the Alliance must break the formations and bonds protecting him while the rite is prepared. Volgan's allied Great Spirits attempt to stop it.
 
-**Day 13: The fall of Volgan.** Edran launches the final attack to hold open the way for the allied spirits. Lorien, Sirael, Brunek, and the surviving commanders take heavy losses. Volgan's guard is separated from him, and Ithren's rite takes hold. Several Great Spirits combine their power to **strip Volgan of the strength he can exercise in Erdae and cast him into the Void**. His essential existence is not destroyed. The effort also damages those who perform it. Ithren is proposed to become bound to the sealed threshold at Dardan, while Maerul loses much of the ability to manifest. This preserves the established immortality of Great Spirits while giving their victory a serious cost.
+**Day 13: The fall of Volgan.** Edran launches the final attack to hold open the way for the allied spirits. Lorien, Sirael, Brunek, and the surviving commanders take heavy losses. Volgan's guard is separated from him, and Ithren's rite takes hold. Several Great Spirits combine their power to **strip Volgan of the strength he can exercise in Aoaz and cast him into the Void**. His essential existence is not destroyed. The effort also damages those who perform it. Ithren is proposed to become bound to the sealed threshold at Dardan, while Maerul loses much of the ability to manifest. This preserves the established immortality of Great Spirits while giving their victory a serious cost.
 
 Volgan's army disintegrates as a unified force. Some units flee, surrender, or fight to the end. Other forces remain organized under surviving commanders. **The battle kills millions** when the full armies, support hosts, supernatural destruction, and subsequent collapse are considered, though no precise casualty figure is canon. Cities and fields around Dardan are ruined and the area becomes a wasteland. The names of individual days and the described military sequence are proposals.
 
@@ -304,7 +304,7 @@ The [[Holy Seven]] and the supreme Creator do not intervene. [[Zol]] does not in
 
 ## 7. The failed conquest of the Dead Lands
 
-Volgan's banishment was an immense victory, but **the Dead Lands were not destroyed or conquered**. The king of Aenor wanted to enter and secure them so that Volgan's dominion could never threaten Erdae again. The elven leaders opposed the idea. The Alliance pressed forward anyway.
+Volgan's banishment was an immense victory, but **the Dead Lands were not destroyed or conquered**. The king of Aenor wanted to enter and secure them so that Volgan's dominion could never threaten Aoaz again. The elven leaders opposed the idea. The Alliance pressed forward anyway.
 
 **Elzon** had gathered and prepared the surviving forces of Volgan. The invasion met fierce resistance and was **driven back with heavy losses**. The conditions of the Dead Lands and the exhaustion of the Alliance made further conquest too costly. The attack was abandoned. Many elves died in the campaign, and the king's decision badly damaged relations between men and elves, particularly given how much their forces had already sacrificed at Dardan.
 
@@ -365,23 +365,23 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 
 ## Linked articles
 
-[[Aen]] · [[Battle of Dardan]] · [[Grand Alliance]] · [[Lorien]] · [[Elzon]] · [[Ages of Erdae]] · [[Timeline]] · [[The Ainu]] · [[Eindil]] · [[Middle Lands and Aenor]] · [[Volgan]] · [[Damned Spirits]] · [[Fourth Age Map of Erdae]]
+[[Aen]] · [[Battle of Dardan]] · [[Grand Alliance]] · [[Lorien]] · [[Elzon]] · [[Ages of Aoaz]] · [[Timeline]] · [[The Ainu]] · [[Eindil]] · [[Middle Lands and Aenor]] · [[Volgan]] · [[Damned Spirits]] · [[Fourth Age Map of Aoaz]]
 
 ## Retrospective revelation: Afrit's hidden role
 
 **Established later in the owner's Second Age account:** [[Afrit]] played a significant but unrecognized part in Volgan's First Age defeat by assembling demons, spirits, men, and elves against him. His motive was to weaken both Volgan and the survivors so that he could rise in the Second Age. This adds a covert layer to the Grand Alliance's victory without replacing its established military and spiritual achievements. How he concealed his alliances and how much the principal commanders suspected are undecided.
 
-[[The Second Age of Erdae]] · [[Afrits Ascension]]
+[[The Second Age of Aoaz]] · [[Afrits Ascension]]
 
 ---
 
-## 07 - History/The Second Age of Erdae.md
+## 07 - History/The Second Age of Aoaz.md
 
-# The Second Age of Erdae
+# The Second Age of Aoaz
 
 *The Age of Long Grief, the Return of Volgan, and the Rise of the Order of Elzon*
 
-**Length:** **2,133 years, established**, and the longest of Erdae's numbered ages. The Second Age follows the [[The First Age of Erdae|First Age]], which lasted 1,675 years. It begins after the defeat of [[Volgan]] at [[Battle of Dardan|Dardan]] and [[Elzon]]'s repulse of the [[Grand Alliance]] from the [[Volgans Dead Lands|Dead Lands]]. It ends in **Second Age year 2133**, when **Elzon takes Aenor and establishes his order**, beginning the [[Ages of Erdae|Third Age]]. The Fourth Age follows later, when [[Eindil]] awakens. Eindil's **total age is at most approximately 5,000 years**. The old 100,000-year estimate is superseded.
+**Length:** **2,133 years, established**, and the longest of Aoaz's numbered ages. The Second Age follows the [[The First Age of Aoaz|First Age]], which lasted 1,675 years. It begins after the defeat of [[Volgan]] at [[Battle of Dardan|Dardan]] and [[Elzon]]'s repulse of the [[Grand Alliance]] from the [[Volgans Dead Lands|Dead Lands]]. It ends in **Second Age year 2133**, when **Elzon takes Aenor and establishes his order**, beginning the [[Ages of Aoaz|Third Age]]. The Fourth Age follows later, when [[Eindil]] awakens. Eindil's **total age is at most approximately 5,000 years**. The old 100,000-year estimate is superseded.
 
 > **Read before treating new detail as canon.** The owner's Second Age account on 17 October 2026 establishes the major figures, alliances, supernatural developments, general sequence, final outcome, and relative length of the age. The specific battles, town names, plague names, ceremonies, characters created for this account, technical rules of necromancy, and motivations developed below are **proposed expansions**. In the story passages, invented details are presented as a cohesive draft, not as separately confirmed canon. See [[Canon Policy]] and [[Second Age Canon Register]].
 
@@ -389,10 +389,10 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 
 - The Second Age is remembered for **long grief and rebuilding**, yet it is also called the **Dark Age** because wars, plagues, predation, corruption, and supernatural disasters persist for generations. It is the longest age.
 - Aenor retains a **great king**, even while the kingdom is exhausted after Dardan. This king is **Edran**, who formed the Grand Alliance. He **dies from disease** during the Second Age. His earlier costly attack on the Dead Lands causes the elves to refuse military aid when Elzon later invades Aenor.
-- Many **orcs and goblins continue fighting for Volgan** even after his banishment. The independent [[Erdae and Its Regions|Dark Lands]] return to turmoil.
+- Many **orcs and goblins continue fighting for Volgan** even after his banishment. The independent [[Aoaz and Its Regions|Dark Lands]] return to turmoil.
 - [[Elzon]] is an **immortal Great Spirit, Volgan's servant, and the Great Necromancer**. He survives the First Age and deliberately impedes the recovery of Aenor with raids, alliances, and increasingly extensive networks.
-- [[Volgan]] is genuinely freed from the Void by Elzon. His **soul or spiritual presence is returned to Erdae**, but his previously stripped power needs to be recovered. Volgan grants Elzon greater autonomy.
-- [[Zol]], an Old God whose presence in Erdae is constrained by the [[The Fading|Fading]] and local magic, is first **perceptibly active** in this historical account when Elzon borrows some of his **ancient magic**. This does not establish Zol as Elzon's willing patron or an ally in the war.
+- [[Volgan]] is genuinely freed from the Void by Elzon. His **soul or spiritual presence is returned to Aoaz**, but his previously stripped power needs to be recovered. Volgan grants Elzon greater autonomy.
+- [[Zol]], an Old God whose presence in Aoaz is constrained by the [[The Fading|Fading]] and local magic, is first **perceptibly active** in this historical account when Elzon borrows some of his **ancient magic**. This does not establish Zol as Elzon's willing patron or an ally in the war.
 - [[Agon]] and other demons are active in the [[Nether]]. More demons emerge through portals and raid men and Aenor. The **King of Demons** resides in the Nether, which lies in the southern Dead Lands. Agon's relationship to that king is not settled.
 - [[Afrit]] is a separate power. In the First Age he **secretly organized demons and other forces against Volgan**, contributing significantly to Volgan's defeat, but his involvement went unrecognized. During the Second Age, he exploits the devastation to gain worship, influence, and power. **His ascension is a defining development near the end of the age**, but he does not take Aenor from Elzon, nor does this settle his later Fourth Age story.
 - Elzon eventually instigates a new **war coming from within and from many directions**, turning men, elves, and dwarves against each other and corrupting survivors. He personally rises in power and animates the dead, so Aenor's battlefield losses also enlarge his forces.
@@ -401,11 +401,11 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 
 ## New canonical refinements: the long but creative Second Age
 
-The Second Age **ended in year 2133**, making it longer than the First Age. Its duration is explained by the slow recovery from centuries of war, repeated famines and plagues, and the painstaking growth of Elzon's threat. Yet it was not an uninterrupted collapse. Human communities developed better agriculture, famine prevention, plague treatment, military organization, fortifications, and other useful techniques. These innovations become crucial in the [[The Third Age of Erdae|Third Age]] and the long peace of the Fourth.
+The Second Age **ended in year 2133**, making it longer than the First Age. Its duration is explained by the slow recovery from centuries of war, repeated famines and plagues, and the painstaking growth of Elzon's threat. Yet it was not an uninterrupted collapse. Human communities developed better agriculture, famine prevention, plague treatment, military organization, fortifications, and other useful techniques. These innovations become crucial in the [[The Third Age of Aoaz|Third Age]] and the long peace of the Fourth.
 
 **[[King Edran]]** rules the early rebuilding years and eventually **dies of disease**. Because Edran ordered the disastrous post-Dardan invasion of the Dead Lands against elven advice, **the elven kingdoms decline to assist Aenor when Elzon later invades**. Independent elven communities defend their own Magical Lands, a different action from renewing an alliance to save the human crown. This supersedes earlier draft passages suggesting elven fighting companies joined Aenor's last defense.
 
-Elzon conquers Aenor at the **end of 2A 2133**. His rule, loss of sustaining power, and eventual permanent death belong to the [[The Third Age of Erdae|Third Age]], with [[Afrit]] publicly recognized as a New God after its great liberation.
+Elzon conquers Aenor at the **end of 2A 2133**. His rule, loss of sustaining power, and eventual permanent death belong to the [[The Third Age of Aoaz|Third Age]], with [[Afrit]] publicly recognized as a New God after its great liberation.
 
 ## II. The age that followed victory
 
@@ -415,7 +415,7 @@ The king of Aenor inherited a kingdom that was still worth saving. He began rest
 
 **Proposed detail: the Registers of the Lost.** The court sent scribes into ruined provinces to record deaths, recover the names of missing people, and settle inheritance disputes. The effort gave surviving families proof that their loved ones had existed. Centuries later, those lists would carry a second, terrible significance, because the necromancers of Elzon learned to use the names and places of the dead as a means of finding remains and graves. The registers did not themselves create necromancy. They became valuable intelligence in the hands of those who already possessed it.
 
-The Grand Alliance did not immediately vanish. Its veterans maintained friendships and some rulers honored their wartime promises. But the failed invasion of the Dead Lands had soured the partnership. The [[Lorien|Gala elves]] mourned their heavy losses. Elves in the [[Erdae and Its Regions|Magical Lands]] no longer trusted every Aenoran request for soldiers. The West Lands still remembered Aenor's attempted conquests and the eastern and northern rulers had their own frontiers to defend. There was no longer a single army that the king could summon by decree.
+The Grand Alliance did not immediately vanish. Its veterans maintained friendships and some rulers honored their wartime promises. But the failed invasion of the Dead Lands had soured the partnership. The [[Lorien|Gala elves]] mourned their heavy losses. Elves in the [[Aoaz and Its Regions|Magical Lands]] no longer trusted every Aenoran request for soldiers. The West Lands still remembered Aenor's attempted conquests and the eastern and northern rulers had their own frontiers to defend. There was no longer a single army that the king could summon by decree.
 
 This loss of unity was the first gift left to Elzon by the Alliance's victory.
 
@@ -427,7 +427,7 @@ The council's failure should be a political event, not a declaration that every 
 
 ## III. Elzon, the enemy who remained
 
-[[Elzon]] had defended the Dead Lands when Volgan himself was gone. As a [[Spirits and Their Ranks|Great Spirit]], he could think in centuries, cultivate allies across the lifetime of whole dynasties, and rebuild after defeats that would destroy a mortal commander's career. As the **Great Necromancer**, his ability to command the dead would eventually change the character of warfare on Erdae.
+[[Elzon]] had defended the Dead Lands when Volgan himself was gone. As a [[Spirits and Their Ranks|Great Spirit]], he could think in centuries, cultivate allies across the lifetime of whole dynasties, and rebuild after defeats that would destroy a mortal commander's career. As the **Great Necromancer**, his ability to command the dead would eventually change the character of warfare on Aoaz.
 
 At first, he does not march openly on Aenor. He is too strong to be an ordinary raider, but his forces are too scattered to repeat Volgan's first invasion. Instead, he builds what later historians might call a second kingdom without clear borders. Its roads are smugglers' routes, its forts are concealed shrines and cavern strongholds, and its servants work inside foreign courts.
 
@@ -461,7 +461,7 @@ The suffering leaves fertile ground for new religious movements, desperate barga
 
 The [[Nether]] lies in the southern [[Volgans Dead Lands|Dead Lands]]. It is a demonic domain containing the seat of the **King of Demons**, whose personal name and relationship to Volgan are not yet defined. [[Agon]] is one of the known demons active during the Second Age. His rank and allegiance are open.
 
-Portals open across parts of Erdae. Some are established deliberately by cults or powerful demons. Others can be proposed as the result of damaged magical boundaries remaining after earlier wars. Demons strike settlements, steal resources or captives, bargain with frightened rulers, and contest one another's influence.
+Portals open across parts of Aoaz. Some are established deliberately by cults or powerful demons. Others can be proposed as the result of damaged magical boundaries remaining after earlier wars. Demons strike settlements, steal resources or captives, bargain with frightened rulers, and contest one another's influence.
 
 It is important that these attacks are not all directed by Elzon. Nether demons have interests of their own. Some cooperate with him, some may fight against him, and others treat Aenor's weakness as an opportunity unrelated to Volgan's return. Agon can be developed as a major figure within these conflicts, without prematurely making him the King of Demons.
 
@@ -487,9 +487,9 @@ This proposal can link with [[First Age Proposed Characters|Ithren of the Thresh
 
 ## VI. Elzon reaches the Void
 
-**Established outcome:** Elzon truly frees Volgan from the Void and brings his soul or spiritual presence back to Erdae. Volgan's former power has not simply returned in full, and Elzon receives wider autonomy as a result.
+**Established outcome:** Elzon truly frees Volgan from the Void and brings his soul or spiritual presence back to Aoaz. Volgan's former power has not simply returned in full, and Elzon receives wider autonomy as a result.
 
-**Proposed method:** Elzon cannot force the Void open through raw power. The alliance at Dardan sealed the path between Volgan and Erdae. Over many generations he studies the scar left by that banishment. He searches for survivors who witnessed it, corrupted relics touched by the binding, and dormant passages beneath the Dead Lands. He destroys several incomplete attempts before finding a means of reaching his master.
+**Proposed method:** Elzon cannot force the Void open through raw power. The alliance at Dardan sealed the path between Volgan and Aoaz. Over many generations he studies the scar left by that banishment. He searches for survivors who witnessed it, corrupted relics touched by the binding, and dormant passages beneath the Dead Lands. He destroys several incomplete attempts before finding a means of reaching his master.
 
 The return requires three distinct elements:
 
@@ -499,15 +499,15 @@ The return requires three distinct elements:
 
 Elzon accomplishes the return at enormous cost. In the proposed telling, several of his oldest necromantic strongholds are consumed, allied commanders are sacrificed or destroyed, and Elzon loses the power to repeat the same ritual easily. The rite is performed in secrecy because every rival power, including some demons, would seek to control its result.
 
-The result is a **return of presence, not immediate recovery of strength**. Volgan is no longer imprisoned in the Void. His mind and will can act in Erdae again, and he can slowly recover influence, but the damage caused at Dardan remains meaningful. He cannot immediately rebuild the host he lost.
+The result is a **return of presence, not immediate recovery of strength**. Volgan is no longer imprisoned in the Void. His mind and will can act in Aoaz again, and he can slowly recover influence, but the damage caused at Dardan remains meaningful. He cannot immediately rebuild the host he lost.
 
 Volgan grants Elzon greater autonomy. In practical terms, Elzon is no longer merely the keeper of the Dead Lands during his master's absence. He may create his own networks, command campaigns, negotiate with spirits, and hold conquered realms under his own order while remaining loyal to Volgan. The Great Necromancer becomes the principal architect of the next war.
 
 ## VII. The first stirring of Zol
 
-[[Zol]] arrived in Erdae long before Aen or Volgan. He is the only known [[Old Gods|Old God]] present there and the God of Death. He is still immensely powerful, grows stronger very slowly each day, and is hampered by both the [[The Fading|Fading]] and the special nature of magic in Erdae. He cannot simply take a body and conquer a kingdom. His servants, including Great Spirits, Lesser Spirits, and some New Gods, help sustain his presence.
+[[Zol]] arrived in Aoaz long before Aen or Volgan. He is the only known [[Old Gods|Old God]] present there and the God of Death. He is still immensely powerful, grows stronger very slowly each day, and is hampered by both the [[The Fading|Fading]] and the special nature of magic in Aoaz. He cannot simply take a body and conquer a kingdom. His servants, including Great Spirits, Lesser Spirits, and some New Gods, help sustain his presence.
 
-The Second Age is when his presence becomes noticeably active to others through Elzon's use of **old magic**. This does not require Zol to have awakened from unconsciousness or to have lost all power earlier. It refers to Erdae's inhabitants encountering a sign of his influence on a new scale.
+The Second Age is when his presence becomes noticeably active to others through Elzon's use of **old magic**. This does not require Zol to have awakened from unconsciousness or to have lost all power earlier. It refers to Aoaz's inhabitants encountering a sign of his influence on a new scale.
 
 **Proposed manifestation:** In the far north, there are nights when sounds stop around ancient graves and the sea surrounding Zol's Mistake lies unnaturally still. In distant lands, necromancers sense a presence behind their ordinary rites, and a few dreamers describe a face-like absence watching from beyond the living world. No army sees Zol standing upon a battlefield.
 
@@ -593,7 +593,7 @@ Not every subject is killed. Elzon benefits from retaining farms, roads, craftsm
 
 ## XI. The end of the Second Age
 
-The old capital is lost, Elzon's Order replaces the crown, and the spirit of Volgan has returned to Erdae. Afrit has risen as an independent power, even though the throne he coveted has passed into the Great Necromancer's hands. The Nether remains a source of raids and rival demonic interests. Zol's presence is now known to have been felt, but the nature of his involvement remains uncertain.
+The old capital is lost, Elzon's Order replaces the crown, and the spirit of Volgan has returned to Aoaz. Afrit has risen as an independent power, even though the throne he coveted has passed into the Great Necromancer's hands. The Nether remains a source of raids and rival demonic interests. Zol's presence is now known to have been felt, but the nature of his involvement remains uncertain.
 
 Aenor's collapse marks the end of the **Second Age** and the start of the **Third Age**.
 
@@ -627,7 +627,7 @@ The owner established the **order** of major events and the total **2,133-year d
 | Opening generations | Grief and rebuilding, lingering orc and goblin wars, Elzon's consolidation in the Dead Lands, collapse of the Grand Alliance's unity |
 | Long middle period | Persistent raids, rival Dark Lands powers, plagues, Nether portals, growth of Elzon's agents, Afrit's secret worship networks |
 | Middle or later centuries | Warnings of Volgan's return, Elzon's search for the Void, increasingly visible death-magic |
-| After the great rite | Volgan's presence returns to Erdae, grants Elzon autonomy, and slowly recovers strength |
+| After the great rite | Volgan's presence returns to Aoaz, grants Elzon autonomy, and slowly recovers strength |
 | Final centuries or generations | Uprisings and corruption throughout Aenor, Elzon's open necromantic campaign, Afrit's ascension |
 | End of the Second Age | Conquest of Aenor, foundation of Elzon's Order, start of the Third Age |
 
@@ -648,7 +648,7 @@ The owner established the **order** of major events and the total **2,133-year d
 11. What is the Second Age capital's historical name? Did Aenor continue to use Parim throughout its history?
 12. What parts of Aenor does Elzon directly occupy, and which survive as independent enclaves when the Third Age begins?
 
-[[Ages of Erdae]] · [[Timeline]] · [[Elzon]] · [[Volgan]] · [[Afrit]] · [[Agon]] · [[Nether]] · [[Abyss]] · [[The Fading]] · [[Zol]] · [[Second Age Canon Register]]
+[[Ages of Aoaz]] · [[Timeline]] · [[Elzon]] · [[Volgan]] · [[Afrit]] · [[Agon]] · [[Nether]] · [[Abyss]] · [[The Fading]] · [[Zol]] · [[Second Age Canon Register]]
 
 ## XV. Canonical 2,133-year calendar and proposed internal periods
 
@@ -658,17 +658,17 @@ The previous 2,300-year draft is superseded. The Second Age ends in **2A 2133**.
 
 ---
 
-## 07 - History/The Third Age of Erdae.md
+## 07 - History/The Third Age of Aoaz.md
 
-# The Third Age of Erdae
+# The Third Age of Aoaz
 
 > **Duration:** At least 1,200 years, established. A detailed working calendar of **1,260 years** is proposed. It begins when [[Elzon]] conquers Aenor in Second Age year 2133 and ends when he dies permanently, allowing human monarchy to return.
 
-The Third Age lasts for many human generations. [[Volgan]] remains in the [[Volgans Dead Lands|Dead Lands]], too weak to travel beyond them, but instructs his servant Elzon, a Great Spirit and the Great Necromancer. Elzon rules Aenor effectively, although he must use living collaborators and cannot conquer the [[Erdae and Its Regions|Magical Lands]]. [[Varner]], a Lesser Spirit wizard, and his small purple servant [[Golbran]] resist the curses of the dead, while men throughout Aenor refuse to surrender entirely.
+The Third Age lasts for many human generations. [[Volgan]] remains in the [[Volgans Dead Lands|Dead Lands]], too weak to travel beyond them, but instructs his servant Elzon, a Great Spirit and the Great Necromancer. Elzon rules Aenor effectively, although he must use living collaborators and cannot conquer the [[Aoaz and Its Regions|Magical Lands]]. [[Varner]], a Lesser Spirit wizard, and his small purple servant [[Golbran]] resist the curses of the dead, while men throughout Aenor refuse to surrender entirely.
 
 Elzon's undead become harder to maintain as his reserves dwindle. The magical conditions in Aenor prevent him from replenishing power as freely as he can in the Dead Lands. He tries to alter the environment of occupied territory, which might eventually make Aenor another Dead Lands. The elves, Varner, and stubborn mortal resistance obstruct this goal. His decline is prolonged rather than immediate. He maintains dominion for centuries with changing armies and governments.
 
-[[Afrit]] accumulates worship, allies and institutions throughout the occupation. At the end of the age he genuinely helps save people from the catastrophe accompanying Elzon's death. The Deliverer, publicly called **Aurevan** in the new proposed naming scheme, is proclaimed and worshipped as a New God. He does not take the human throne yet. A restored good human king begins the [[The Fourth Age of Erdae|Fourth Age]].
+[[Afrit]] accumulates worship, allies and institutions throughout the occupation. At the end of the age he genuinely helps save people from the catastrophe accompanying Elzon's death. The Deliverer, publicly called **Aurevan** in the new proposed naming scheme, is proclaimed and worshipped as a New God. He does not take the human throne yet. A restored good human king begins the [[The Fourth Age of Aoaz|Fourth Age]].
 
 ## Proposed 1,260-year chronology
 
@@ -689,15 +689,15 @@ The above year bands, institutional names and techniques are **proposals**, not 
 
 An army of fading corpses could not simply remain at full size for twelve centuries. Elzon therefore rotates hosts through regions near his sources of power, raises new dead from campaigns, appoints living provincial rulers and relies on orc and goblin garrisons. Some lands even achieve ordinary commerce under oppressive taxes. Rebel communities can be defeated without being completely eradicated, enabling repeated wars across generations. Institutions and defensive strategies evolve on both sides.
 
-Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Erdae|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol, Volgan, and Afrit.
+Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Aoaz|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol, Volgan, and Afrit.
 
 [[Third Age Canon Register]] · [[Elzon]] · [[Varner]] · [[Golbran]] · [[The Last Tithe]] · [[Afrit]]
 
 ---
 
-## 07 - History/The Fourth Age of Erdae.md
+## 07 - History/The Fourth Age of Aoaz.md
 
-# The Fourth Age of Erdae
+# The Fourth Age of Aoaz
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
@@ -717,7 +717,7 @@ The change was difficult to see from one reign to the next. By the middle centur
 
 ## I. The hidden birthright of Afrit
 
-The truth later revealed in Castle Yeldenne changes the interpretation of several ages of Erdae's history. **Afrit and Eindil were brothers, both sons of Ein and grandsons of Aen**. They belonged to the ancient royal line of the First Men, who were more naturally capable of magic and lived far longer than later men. Their exact birth dates are not established, but they are approximately the same age. Eindil's many years in supernatural sleep and Afrit's long magical survival explain why one awakens ignorant of history while the other has spent ages engineering it.
+The truth later revealed in Castle Yeldenne changes the interpretation of several ages of Aoaz's history. **Afrit and Eindil were brothers, both sons of Ein and grandsons of Aen**. They belonged to the ancient royal line of the First Men, who were more naturally capable of magic and lived far longer than later men. Their exact birth dates are not established, but they are approximately the same age. Eindil's many years in supernatural sleep and Afrit's long magical survival explain why one awakens ignorant of history while the other has spent ages engineering it.
 
 The brothers were not born as unequal orders of being. Afrit had once been a man of Aen's line. He desired the throne of men, and Ein refused to grant it to him. The full meaning of Ein's refusal, the precise law of inheritance, and the circumstances of the betrayal remain to be written. **Proposed explanation:** Ein named Eindil his heir because he trusted the younger brother's character, despite Afrit believing himself more deserving. Afrit betrayed Eindil and helped put him into the enchanted sleep that eventually ended in the Cold Lands. Ein repudiated Afrit, and Afrit turned to corruption, demonic pacts, worship, and artifacts to obtain by power what his father had denied him.
 
@@ -727,11 +727,11 @@ Afrit's demonic form is genuine, but it is an acquired state, not proof that he 
 
 ## II. Roka's necklace and the gathering of powers
 
-At some point in the Fourth Age, Afrit sought the greatest surviving artifacts of Erdae. Above all he coveted the **Necklace of the Abyss**, held in the depths of the Dead Lands by **Roka**, a huge being of the rhinoceros-headed people of the Abyss. The true history of that people and the necklace's creation remain unknown.
+At some point in the Fourth Age, Afrit sought the greatest surviving artifacts of Aoaz. Above all he coveted the **Necklace of the Abyss**, held in the depths of the Dead Lands by **Roka**, a huge being of the rhinoceros-headed people of the Abyss. The true history of that people and the necklace's creation remain unknown.
 
 Rather than enter the Abyss himself, Afrit sent a master thief. **Sevrin the Unending** is a proposed name. Afrit promised the thief eternal life if he returned with the necklace. The thief crossed hostile lands, reached Roka's domain, obtained the artifact by means not yet established, and brought it back. Afrit fulfilled the bargain by using the necklace's magic to grant him unending life. **Proposed constraint:** the thief ceased to age, but remained capable of pain, capture, and injury. Afrit gave him a gift that also left him dependent upon Afrit's continuing control of the artifact.
 
-The necklace greatly increased the amount of power Afrit could draw and direct. It also strengthened him outside Aenor, though it was at its greatest potency where centuries of worship and magical preparation had made the Middle Kingdom his principal seat. He amassed additional objects collected through trade, theft, excavation, and bargains with servants across Erdae. Proposed artifacts include the **Ring of Doors**, which helps him cross between places and reach his private refuge, the **Crown of Witnesses**, which magnifies his public authority through prepared oaths and institutions, and the **Bracelet of the First Seal**, which preserves part of his personal shield. The names and exact effects of these lesser artifacts remain proposals.
+The necklace greatly increased the amount of power Afrit could draw and direct. It also strengthened him outside Aenor, though it was at its greatest potency where centuries of worship and magical preparation had made the Middle Kingdom his principal seat. He amassed additional objects collected through trade, theft, excavation, and bargains with servants across Aoaz. Proposed artifacts include the **Ring of Doors**, which helps him cross between places and reach his private refuge, the **Crown of Witnesses**, which magnifies his public authority through prepared oaths and institutions, and the **Bracelet of the First Seal**, which preserves part of his personal shield. The names and exact effects of these lesser artifacts remain proposals.
 
 Afrit's court developed two faces. Publicly he was the benevolent Aurevan. Privately he maintained a council of selected followers, spies, sorcerers, agents in foreign courts, and creatures who knew his true nature. Through that council he built ties in the East Lands and South Lands as a precaution against losing Aenor. The future invasion of the eastern host was therefore neither entirely spontaneous nor entirely under his control.
 
@@ -863,7 +863,7 @@ Varner stood against the darkness rolling down from Zol's armies. He lifted curs
 
 ## XI. The gathering of the New Gods
 
-Eindil's spirit reached a divine realm, understood by him as Heaven. The New Gods gathered around him. **Glernaen's crystal Glo was the bridge that allowed this encounter.** The gods knew that a descendant of Aen had tried to unite the divided peoples of Erdae without claiming dominion over them.
+Eindil's spirit reached a divine realm, understood by him as Heaven. The New Gods gathered around him. **Glernaen's crystal Glo was the bridge that allowed this encounter.** The gods knew that a descendant of Aen had tried to unite the divided peoples of Aoaz without claiming dominion over them.
 
 In this proposed version of the encounter, Eindil could not see every god clearly. One appeared as a figure bearing a lamp that had never gone out, and spoke of the common people Eindil had protected on his travels. Another wore the likeness of rain over ploughed fields and remembered Aenor's long centuries of hunger. Others spoke of promises kept, wars prevented, and those whom kings had forgotten. Their individual names and domains remain unwritten. Last came **Glernaen**, the New God of Power and Wisdom, whose voice Eindil recognized in the living crystal.
 
@@ -873,7 +873,7 @@ In this proposed version of the encounter, Eindil could not see every god clearl
 >
 > **Glernaen:** "Then carry what we can give. You may yet fall, and we cannot promise to raise you again."
 
-The New Gods could not remain in Erdae to fight the war themselves. Its magic and the limits between divine realms constrained their direct manifestation. Instead, each offered a measured part of their power through Glo. They restored Eindil to life, renewed his armor, and gave him the strength to face Volgan again. His eyes shone with lightning and the sword of Horos blazed with an intensity it had never held in the old guardian's hand.
+The New Gods could not remain in Aoaz to fight the war themselves. Its magic and the limits between divine realms constrained their direct manifestation. Instead, each offered a measured part of their power through Glo. They restored Eindil to life, renewed his armor, and gave him the strength to face Volgan again. His eyes shone with lightning and the sword of Horos blazed with an intensity it had never held in the old guardian's hand.
 
 The New Gods' intervention was extraordinary and costly. **Proposed rule:** they could make this one collective offering only because Glo already carried Glernaen's power and because Eindil freely accepted the burden. It was not a spell they could simply repeat whenever a favorite champion died. Their gift made him mighty, but not invulnerable or equal to an Old God.
 
@@ -887,13 +887,13 @@ The victory did not end the battle. Zol himself came forth.
 
 ## XIII. The Old God beneath the black sky
 
-Zol had been present in Erdae long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Erdae's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise.
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise.
 
-**Proposed explanation for this exceptional manifestation:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces temporarily aligned enough of Erdae's magic for Zol to embody a fraction of himself. This cost him strength and could not last indefinitely. He appeared in a form that the mortal witnesses could perceive, not in the fullness of his unfaded cosmic existence.
+**Proposed explanation for this exceptional manifestation:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces temporarily aligned enough of Aoaz's magic for Zol to embody a fraction of himself. This cost him strength and could not last indefinitely. He appeared in a form that the mortal witnesses could perceive, not in the fullness of his unfaded cosmic existence.
 
 Eindil charged. Zol stopped him with one finger, took Horos's sword, and crushed it into glittering shards. He seized Eindil by the throat and began drawing out the combined gifts of the New Gods. The power in Eindil's armor dimmed. With his remaining strength he caught a shard of the shattered blade and drove it into the body Zol had made.
 
-The fragment still carried Glernaen's power through Glo. The wound did not kill Zol, but destabilized the form he had struggled to create. A storm swept across Erdae and the sky darkened. Zol struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
+The fragment still carried Glernaen's power through Glo. The wound did not kill Zol, but destabilized the form he had struggled to create. A storm swept across Aoaz and the sky darkened. Zol struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
 
 At last **Lorien** arrived with Gala elves and some of the great lords and spirits who had survived the long history since Dardan. They had not come to restore Aenoran empire. They came because an Old God's victory would destroy the freedom of the living, elves and men alike. The oldest warriors spent the remnants of their own power holding the black presence back. Several great spirits were destroyed or broken. Lorien challenged Zol directly and died in the struggle.
 
@@ -903,9 +903,9 @@ Their sacrifice forced the embodied Old God to expend more power than he could s
 
 But the fourth age had not ended. Afrit returned from the East Lands with a new eastern host. He had watched the destruction of Volgan and Zol's withdrawal, and he believed Eindil's wounds had finally created the opportunity he needed. He demanded that the exhausted kingdoms recognize him as ruler of both East and Middle Lands.
 
-A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Erdae. Afrit found Eindil weakened by the struggle against Zol. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
+A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Aoaz. Afrit found Eindil weakened by the struggle against Zol. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
 
-With Eindil gone, Afrit seized the capital once more. He proclaimed himself king over Aenor, the East Lands, and ultimately every people of Erdae. That proclamation was larger than the territory he actually controlled, but his surviving army and his court treated it as a universal claim. His old council resumed its work, and opposition was punished.
+With Eindil gone, Afrit seized the capital once more. He proclaimed himself king over Aenor, the East Lands, and ultimately every people of Aoaz. That proclamation was larger than the territory he actually controlled, but his surviving army and his court treated it as a universal claim. His old council resumed its work, and opposition was punished.
 
 **Proposed explanation for Eindil's survival:** he fell into water below the cliff and was caught among rocks. Glo's remaining life-preserving magic slowed his death without healing his severed arm or terrible wounds. Alleria of Selen and surviving scouts found him and carried him into hiding. He survived through exceptional care, time, and the limited remaining strength of the crystal. Afrit had not searched the ravine because he had seen a mortal body fall from a height no man could ordinarily survive.
 
@@ -925,11 +925,11 @@ Afrit struck first with overwhelming force. Eindil survived by changing the batt
 
 Golbran had followed through the passage by holding the same momentary magical opening. He climbed behind Afrit and used the final remnant of Varner's teachings to sever the necklace's binding, tearing it from the false god's neck. Without it, Afrit's accumulated demonic power and supernatural protection collapsed. The ancient brother of Eindil stood exposed as a mortal man. Eindil cut his throat.
 
-Afrit bled and struggled for breath. The man who had served as the god of men, killed their king, and demanded dominion over all Erdae died without his miracles. There was no final teleportation and no sustaining artifact left to save him.
+Afrit bled and struggled for breath. The man who had served as the god of men, killed their king, and demanded dominion over all Aoaz died without his miracles. There was no final teleportation and no sustaining artifact left to save him.
 
 Eindil himself was dying. Golbran gave the last of his life and magic to close Eindil's most dangerous wounds. The small creature died beside the two brothers. Its true origin remained unknown. Eindil was alone.
 
-He took the Necklace of the Abyss and put it around his own neck. The act was necessary, in this proposed version, to reopen the passage from Afrit's private refuge to Erdae. It did not mean that the necklace was harmless or that he had accepted Afrit's methods. He returned to the palace carrying evidence of the false king's fall and an artifact of unresolved danger.
+He took the Necklace of the Abyss and put it around his own neck. The act was necessary, in this proposed version, to reopen the passage from Afrit's private refuge to Aoaz. It did not mean that the necklace was harmless or that he had accepted Afrit's methods. He returned to the palace carrying evidence of the false king's fall and an artifact of unresolved danger.
 
 ## XVI. The king of men
 
@@ -994,7 +994,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 
 ## Settled by the world creator
 
-- Erdae enjoys over a thousand years of genuine peace, prosperity, education, science, medicine and strong institutions after Elzon's fall.
+- Aoaz enjoys over a thousand years of genuine peace, prosperity, education, science, medicine and strong institutions after Elzon's fall.
 - Afrit gains effective political control of Aenor through kings, temples, agents, council and servants during the middle period. Ordinary people revere him as a New God and do not know the name Afrit.
 - Afrit hires a master thief to acquire Roka's Necklace of the Abyss and grants that thief eternal life as promised. Afrit gathers additional artifacts and becomes immensely powerful, later showing more of his demonic identity.
 - The Golden King is an exceptionally bad monarch. Afrit murders him and takes Aenor's throne openly. Many people worship him, and opponents are silenced.
@@ -1019,7 +1019,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Mechanics of Eindil's survival below the cliff, return through Afrit's private dimension, and how the necklace may affect his future.
 - Whether the shattered manifested body marks Volgan's final spiritual death. Elzon's permanent death remains settled.
 
-[[The Fourth Age of Erdae]] · [[War of the Last Crowns]] · [[Canon Policy]]
+[[The Fourth Age of Aoaz]] · [[War of the Last Crowns]] · [[Canon Policy]]
 
 ---
 
@@ -1045,7 +1045,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - **Harion the Restorer** is proposed for the first good king of the Fourth Age.
 - **Aurevan** is proposed as Afrit's public name. Public worship as a New God is established, but cosmic godhood remains undetermined.
 
-[[The Third Age of Erdae]] · [[The Fourth Age of Erdae]] · [[Canon Policy]]
+[[The Third Age of Aoaz]] · [[The Fourth Age of Aoaz]] · [[Canon Policy]]
 
 ---
 
@@ -1053,7 +1053,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 
 # Second Age Canon Register
 
-This note separates decisions supplied by the owner on 17 October 2026 from narrative additions created for [[The Second Age of Erdae]]. It supersedes the previous unanswered Second Age outline. See [[Canon Policy]].
+This note separates decisions supplied by the owner on 17 October 2026 from narrative additions created for [[The Second Age of Aoaz]]. It supersedes the previous unanswered Second Age outline. See [[Canon Policy]].
 
 ## Established facts
 
@@ -1095,7 +1095,7 @@ This note separates decisions supplied by the owner on 17 October 2026 from narr
 - There is no established claim that the three are identical or linked by ordinary gates.
 - The old source's Ainu and Eindil 100,000-year figures are **superseded**, including the claim that the Ainu line had vanished 100,000 years before the Fourth Age.
 
-[[The Second Age of Erdae]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Ages of Erdae]]
+[[The Second Age of Aoaz]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Ages of Aoaz]]
 
 ## Established addendum on 17 October 2026
 
@@ -1111,7 +1111,7 @@ The Second Age lasts **2,133 years**. Edran dies of disease. The elves refuse to
 
 He stands beyond [[Holy Seven]], [[Old Gods]], [[New Gods]], and all other beings in [[Hierarchy of Being]]. There is no described rival, peer, personality, physical manifestation, clergy, or cult.
 
-The Creator is deliberately too remote to have a practical role in Erdae's wars or politics. The precise account of how He created the Seven and existence remains unwritten.
+The Creator is deliberately too remote to have a practical role in Aoaz's wars or politics. The precise account of how He created the Seven and existence remains unwritten.
 
 **Do not invent:** a personal name, symbol, appearance, motives, miracles, direct dialogue, or specific doctrine without a later lore decision.
 
@@ -1121,7 +1121,7 @@ The Creator is deliberately too remote to have a practical role in Erdae's wars 
 
 # Hierarchy of Being
 
-The ZIN universe contains an extraordinarily remote divine level above the ordinary gods and spirits. The ordinary five orders remain useful for describing the beings inhabitants of Erdae might encounter.
+The ZIN universe contains an extraordinarily remote divine level above the ordinary gods and spirits. The ordinary five orders remain useful for describing the beings inhabitants of Aoaz might encounter.
 
 ## Cosmic level
 
@@ -1142,7 +1142,7 @@ The ZIN universe contains an extraordinarily remote divine level above the ordin
 
 ## Gods are not equivalent to worshipped beings
 
-Ordinary Erdae people can mistake powerful Lesser Spirits for Gods, and powerful spirits can receive worship. This does not establish that they belong to the divine order. The idea that worship alone cannot *create* godhood remains a sensible **working rule**, not a formal universal law yet.
+Ordinary Aoaz people can mistake powerful Lesser Spirits for Gods, and powerful spirits can receive worship. This does not establish that they belong to the divine order. The idea that worship alone cannot *create* godhood remains a sensible **working rule**, not a formal universal law yet.
 
 ## Power is not the same as practical control
 
@@ -1151,7 +1151,7 @@ Ordinary Erdae people can mistake powerful Lesser Spirits for Gods, and powerful
 ## Unknowns
 
 - Whether the Holy Seven were directly created by the supreme Creator, and how that act occurred.
-- How many Old and New Gods exist beyond Erdae.
+- How many Old and New Gods exist beyond Aoaz.
 - How the immortal Great Folk originally came into being.
 - What order, if any, should contain the restless dead.
 
@@ -1165,7 +1165,7 @@ Ordinary Erdae people can mistake powerful Lesser Spirits for Gods, and powerful
 
 The **Holy Seven** are the seven overwhelmingly powerful cosmic creators of the ZIN universe and the creators of both the [[Old Gods]] and the [[New Gods]]. They exist below [[He Who Was, Is and Will Be]] and above the ordinary divine orders.
 
-They are intentionally unimportant to day-to-day ZIN history because they are too vast and removed from it. Most inhabitants of [[Erdae and Its Regions|Erdae]] do **not** even believe they existed. Trace references may remain in the most distant myths. By contrast, ordinary people generally know of Old and New Gods.
+They are intentionally unimportant to day-to-day ZIN history because they are too vast and removed from it. Most inhabitants of [[Aoaz and Its Regions|Aoaz]] do **not** even believe they existed. Trace references may remain in the most distant myths. By contrast, ordinary people generally know of Old and New Gods.
 
 Their individual names, fields of power, number of interventions, and appearances are **not established**. Avoid turning them into active patron gods or major antagonists.
 
@@ -1191,17 +1191,17 @@ A previously suggested **working combination**, not fixed lore, was to retain *H
 
 ---
 
-## 01 - Cosmology/Magic and Sustenance in Erdae.md
+## 01 - Cosmology/Magic and Sustenance in Aoaz.md
 
-# Magic and Sustenance in Erdae
+# Magic and Sustenance in Aoaz
 
 ## Confirmed relationship
 
-Erdae has a form or condition of magic that is unusually difficult for [[Zol]] to draw upon or operate through. This local incompatibility, combined with [[The Fading]], substantially limits how freely he can act even though he remains immensely powerful.
+Aoaz has a form or condition of magic that is unusually difficult for [[Zol]] to draw upon or operate through. This local incompatibility, combined with [[The Fading]], substantially limits how freely he can act even though he remains immensely powerful.
 
-Zol needs help from his servants to **feed** or otherwise **sustain his presence** in Erdae. The servants include **Great Spirits, Lesser Spirits, and even New Gods**. They are not all members of one cosmic order.
+Zol needs help from his servants to **feed** or otherwise **sustain his presence** in Aoaz. The servants include **Great Spirits, Lesser Spirits, and even New Gods**. They are not all members of one cosmic order.
 
-**Without this support, Zol could fade away from Erdae.** With it, his power grows very slowly, day by day. He has no active physical form and cannot readily conquer the continent directly.
+**Without this support, Zol could fade away from Aoaz.** With it, his power grows very slowly, day by day. He has no active physical form and cannot readily conquer the continent directly.
 
 ## What is not established
 
@@ -1210,15 +1210,15 @@ The word **feed** is retained because the actual supernatural mechanism is not d
 - What a servant collects or transfers to Zol is unknown.
 - Whether feeding entails worship, souls, death, ritual, magic, sacrifice, artifacts, or something else is unknown.
 - Whether the New Gods obey willingly, under compulsion, or for their own reasons is unknown.
-- Whether Erdae's special magic differs by geography or by realm is unknown.
-- Whether Zol has more compatible magic outside Erdae is unknown.
+- Whether Aoaz's special magic differs by geography or by realm is unknown.
+- Whether Zol has more compatible magic outside Aoaz is unknown.
 - Whether this process can ever restore his physical form is unknown.
 
 Do not quietly resolve these points into a specific magic system.
 
 ## Useful conceptual separation
 
-**Stored power**, **ability to channel power**, **presence in Erdae**, and **physical manifestation** are different aspects. This is an editorial model to help make the confirmed rules consistent, not an extra canon formula.
+**Stored power**, **ability to channel power**, **presence in Aoaz**, and **physical manifestation** are different aspects. This is an editorial model to help make the confirmed rules consistent, not an extra canon formula.
 
 [[Zol]] · [[Old Gods]] · [[New Gods]] · [[Spirits and Their Ranks]]
 
@@ -1230,7 +1230,7 @@ Do not quietly resolve these points into a specific magic system.
 
 ## Established
 
-The **New Gods** are a later divine generation created by the [[Holy Seven]]. They are younger than the [[Old Gods]] and less powerful in fundamental terms. They are widely known in Erdae, though their number, identities, and domains are still unwritten.
+The **New Gods** are a later divine generation created by the [[Holy Seven]]. They are younger than the [[Old Gods]] and less powerful in fundamental terms. They are widely known in Aoaz, though their number, identities, and domains are still unwritten.
 
 **At least some New Gods serve [[Zol]].** Being a god does not prevent one from becoming a servant of an older deity.
 
@@ -1238,7 +1238,7 @@ The **New Gods** are a later divine generation created by the [[Holy Seven]]. Th
 
 ## Working ideas, not yet canon
 
-- New Gods may generally be more able than Old Gods to appear physically or act directly in Erdae.
+- New Gods may generally be more able than Old Gods to appear physically or act directly in Aoaz.
 - New Gods might govern narrower domains or represent powers that younger religions can understand.
 - Many would be openly worshipped, have temples, clergy, and followers, although no specific institutions have yet been named.
 
@@ -1248,7 +1248,7 @@ The total number of New Gods, the identity and fate of Volgan's former patron, a
 
 ## Afrit in Third and Fourth Age religion
 
-At the end of the [[The Third Age of Erdae|Third Age]], [[Afrit]] is **publicly recognized as a New God**, widely praised for saving the world from [[Elzon]]. **Afrit the Deliverer** is a proposed religious title. Public worship is established. His real metaphysical classification is **not yet established** and may differ from what priests or ordinary people believe. The creation of real New Gods by the Holy Seven remains intact unless a future lore decision changes it.
+At the end of the [[The Third Age of Aoaz|Third Age]], [[Afrit]] is **publicly recognized as a New God**, widely praised for saving the world from [[Elzon]]. **Afrit the Deliverer** is a proposed religious title. Public worship is established. His real metaphysical classification is **not yet established** and may differ from what priests or ordinary people believe. The creation of real New Gods by the Holy Seven remains intact unless a future lore decision changes it.
 
 [[Afrit the Deliverer]]
 
@@ -1264,9 +1264,9 @@ The **Old Gods** are the original, almost unimaginably ancient generation of god
 
 Their strength and ability to exercise power have faded across immense spans of time. They are generally unable to take active physical form and rarely influence the world openly. Yet even diminished Old Gods remain enormously powerful.
 
-**[[Zol]] is an Old God and the only Old God in Erdae.** This does not prove that no other Old Gods exist elsewhere in ZIN.
+**[[Zol]] is an Old God and the only Old God in Aoaz.** This does not prove that no other Old Gods exist elsewhere in ZIN.
 
-[[The Fading]] describes the process restricting them. [[Zol]] is an important exception to any simplistic assumption of continued decline: he **gains** power slowly every day, but Erdae's magic makes it difficult for him to channel and manifest that power.
+[[The Fading]] describes the process restricting them. [[Zol]] is an important exception to any simplistic assumption of continued decline: he **gains** power slowly every day, but Aoaz's magic makes it difficult for him to channel and manifest that power.
 
 ## Ideas explored but not fixed
 
@@ -1288,7 +1288,7 @@ The Old Gods are known in myth and religious tradition, despite being old and of
 
 ## Established
 
-People in Erdae are generally familiar with the existence or stories of **New Gods** and **Old Gods**. Almost nobody knows the [[Holy Seven]] as credible historical beings. The supreme Creator, [[He Who Was, Is and Will Be]], is even further beyond ordinary religious knowledge.
+People in Aoaz are generally familiar with the existence or stories of **New Gods** and **Old Gods**. Almost nobody knows the [[Holy Seven]] as credible historical beings. The supreme Creator, [[He Who Was, Is and Will Be]], is even further beyond ordinary religious knowledge.
 
 **Mortals often confuse powerful Lesser Spirits with gods.** Belief about a being's rank is not reliable proof of its true cosmic order. Great Spirits can likewise be worshipped.
 
@@ -1306,7 +1306,7 @@ No specific faiths, priesthoods, schisms, or doctrines have yet been established
 
 ## Afrit and public recognition
 
-Afrit becomes the central example of this distinction. At the end of the Third Age, many people praise him as the **New God who saved Erdae**. Some see undeniable miracles. Nevertheless, the true order of Afrit's being has not yet been defined. A powerful religious cult's belief that he is a New God can be sincere and historically important without serving as objective proof of his origin.
+Afrit becomes the central example of this distinction. At the end of the Third Age, many people praise him as the **New God who saved Aoaz**. Some see undeniable miracles. Nevertheless, the true order of Afrit's being has not yet been defined. A powerful religious cult's belief that he is a New God can be sincere and historically important without serving as objective proof of his origin.
 
 [[Afrit the Deliverer]]
 
@@ -1320,13 +1320,13 @@ Afrit becomes the central example of this distinction. At the end of the Third A
 
 **The Fading** is a phenomenon that limits the ancient [[Old Gods]]. Across extremely long periods, their ability to exercise power and sustain an active physical manifestation has diminished, even though they retain vast underlying power.
 
-The Fading helps explain why [[Zol]] cannot simply take a body, conquer Erdae, or use his enormous power freely. Erdae's unusual magic also resists or fails to support his form of divine power. See [[Magic and Sustenance in Erdae]].
+The Fading helps explain why [[Zol]] cannot simply take a body, conquer Aoaz, or use his enormous power freely. Aoaz's unusual magic also resists or fails to support his form of divine power. See [[Magic and Sustenance in Aoaz]].
 
 ## Important qualification: Zol's power is growing
 
-Zol currently **gains power every day, very slowly**. This is compatible with the Fading as a lasting constraint. The amount of power he possesses and the amount he can express or direct in Erdae are separate matters.
+Zol currently **gains power every day, very slowly**. This is compatible with the Fading as a lasting constraint. The amount of power he possesses and the amount he can express or direct in Aoaz are separate matters.
 
-Without servants who sustain him, his influence could fade **out of Erdae**. The lore does not say that a lapse in feeding would destroy him throughout the universe.
+Without servants who sustain him, his influence could fade **out of Aoaz**. The lore does not say that a lapse in feeding would destroy him throughout the universe.
 
 ## Unknown mechanism
 
@@ -1362,7 +1362,7 @@ Deep fissures, sunless caverns, sealed ruins, forgotten roots of mountains, and 
 
 ## Persistence into the Second Age
 
-Volgan released Damned Spirits from very deep underground during the First Age war. The user's later Second Age account leaves Erdae in a state of disorder, and some of these older threats may remain within subterranean places. Their precise allegiances and participation in [[Elzon]]'s second conquest are **proposed** in [[The Second Age of Erdae]] and should not automatically be assigned to every Damned Spirit.
+Volgan released Damned Spirits from very deep underground during the First Age war. The user's later Second Age account leaves Aoaz in a state of disorder, and some of these older threats may remain within subterranean places. Their precise allegiances and participation in [[Elzon]]'s second conquest are **proposed** in [[The Second Age of Aoaz]] and should not automatically be assigned to every Damned Spirit.
 
 ---
 
@@ -1480,7 +1480,7 @@ Aen fought in the [[War of Men]] for hundreds of years, uniting the rival kingdo
 - What exactly does the name *Ainu* denote relative to Aen, the First Men, and earlier humans?
 - Was Aenor explicitly named in his honor? The connection is strong, but the etymology has not been declared canon.
 
-[[The Ainu]] · [[The First Age of Erdae]] · [[War of Men]] · [[Ages of Erdae]]
+[[The Ainu]] · [[The First Age of Aoaz]] · [[War of Men]] · [[Ages of Aoaz]]
 
 ---
 
@@ -1488,7 +1488,7 @@ Aen fought in the [[War of Men]] for hundreds of years, uniting the rival kingdo
 
 # Afrit the Deliverer
 
-**The Deliverer** is the public religious identity of [[Afrit]], who was acclaimed as a New God after helping bring down [[Elzon]] at the end of the [[The Third Age of Erdae|Third Age]]. His human-style public name in the expanded [[The Fourth Age of Erdae|Fourth Age]] is proposed as **[[Aurevan the Deliverer|Aurevan]]**. The name **Afrit** was known chiefly to the secret council, his enemies and certain supernatural beings.
+**The Deliverer** is the public religious identity of [[Afrit]], who was acclaimed as a New God after helping bring down [[Elzon]] at the end of the [[The Third Age of Aoaz|Third Age]]. His human-style public name in the expanded [[The Fourth Age of Aoaz|Fourth Age]] is proposed as **[[Aurevan the Deliverer|Aurevan]]**. The name **Afrit** was known chiefly to the secret council, his enemies and certain supernatural beings.
 
 Afrit's popular worship and supernatural powers were real. His actual classification as a god of the order created by the Holy Seven is not confirmed. Later he manipulated Aenor's kings, arranged the Golden King's death and took the crown himself. He was killed by his brother [[Eindil]] at the end of the Fourth Age.
 
@@ -1514,7 +1514,7 @@ Eindil, helped by Alleria and Golbran, stripped away Afrit's rings, wards, and o
 
 **Proposed names and mechanisms:** [[Aurevan the Deliverer|Aurevan]], the Ring of Doors, a prepared Crown of Witnesses and Bracelet of First Seal, the thief Sevrin, councilor Merovan, and details of Afrit's private realm. The original betrayal's exact manner is unwritten. His brotherly status and final mortal vulnerability are established.
 
-[[The Fourth Age of Erdae]] · [[The Last Battle in the Palace]] · [[Necklace of the Abyss]]
+[[The Fourth Age of Aoaz]] · [[The Last Battle in the Palace]] · [[Necklace of the Abyss]]
 
 ---
 
@@ -1522,7 +1522,7 @@ Eindil, helped by Alleria and Golbran, stripped away Afrit's rings, wards, and o
 
 # Agon
 
-**Established:** [[Agon]] is a demon active during the [[The Second Age of Erdae|Second Age]], associated with the [[Nether]] in the south of the Dead Lands. Other demons become increasingly active, and portals and raids threaten Aenor and other peoples.
+**Established:** [[Agon]] is a demon active during the [[The Second Age of Aoaz|Second Age]], associated with the [[Nether]] in the south of the Dead Lands. Other demons become increasingly active, and portals and raids threaten Aenor and other peoples.
 
 Agon's exact cosmic order under the classification of folk and spirits, military rank, allegiance, personal history, and relation to the **[[King of Demons]]** have not been established. The King of Demons resides in the Nether, but **Agon is not automatically that king**.
 
@@ -1549,7 +1549,7 @@ At the royal palace she shoots Afrit in the eye, creating the opportunity for Ei
 
 **Proposed earlier role:** Alleria investigates the rumors about Eindil when most of Aenor denounces him. She leads an underground group loyal to the old royal line and helps recover him from the ravine after Afrit throws him from a cliff. Her training, family, age and eventual fate remain open.
 
-[[Selen]] · [[The Last Battle in the Palace]] · [[The Fourth Age of Erdae]]
+[[Selen]] · [[The Last Battle in the Palace]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -1563,7 +1563,7 @@ Aurevan begins as the name of the celebrated Deliverer credited with ending Elzo
 
 Alternative public names worth considering later: **Aurevan**, **Aelorin**, **Arvedan**, **Vaelorian**, **Elarion**. These are naming options, not simultaneous aliases.
 
-[[Afrit]] · [[Golden King]] · [[The Fourth Age of Erdae]]
+[[Afrit]] · [[Golden King]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -1575,7 +1575,7 @@ Alternative public names worth considering later: **Aurevan**, **Aelorin**, **Ar
 
 The existence of a council member left in charge is **established**, but his name and precise identity are not. He may secretly advise both the Golden King and Aurevan, which would allow a long-serving courtier to embody how decades of compromised government led to the open seizure of power. His fate after the fall of Afrit is open.
 
-[[Aurevan the Deliverer]] · [[The Fourth Age of Erdae]]
+[[Aurevan the Deliverer]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -1611,7 +1611,7 @@ Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss 
 
 **Open:** birth order of the brothers, date and cause of Eindil's imprisonment, exact appearance, which arm he loses, the future effects of the necklace, and the permanent status of powers passed to him by the gods.
 
-[[The Journey of Eindil]] · [[The Fourth Age of Erdae]] · [[War of the Last Crowns]] · [[The Last Battle in the Palace]]
+[[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[War of the Last Crowns]] · [[The Last Battle in the Palace]]
 
 ---
 
@@ -1633,9 +1633,9 @@ After [[Volgan]] was defeated at the [[Battle of Dardan]] and banished to the Vo
 
 Elzon is a Great Spirit, a powerful and patient necromancer, and a servant of Volgan. He directs raids and constructs networks intended to prevent Aenor's reconstruction. He develops alliances with orcs, goblins, corrupt rulers, monsters, and other dark actors, without automatically ruling all such peoples.
 
-Elzon eventually **frees Volgan from the Void and returns his soul or spiritual presence to Erdae**. Volgan is not immediately restored to full power and grants Elzon greater autonomy.
+Elzon eventually **frees Volgan from the Void and returns his soul or spiritual presence to Aoaz**. Volgan is not immediately restored to full power and grants Elzon greater autonomy.
 
-Elzon also **borrows old magic associated with [[Zol]]**, a development linked to the first perceptible stirring of that Old God in Erdae's known human history. **How Elzon obtains the magic and whether Zol wills it remain unknown**. This does not establish that he is a servant of Zol.
+Elzon also **borrows old magic associated with [[Zol]]**, a development linked to the first perceptible stirring of that Old God in Aoaz's known human history. **How Elzon obtains the magic and whether Zol wills it remain unknown**. This does not establish that he is a servant of Zol.
 
 Elzon later openly takes the field, **raises the dead**, and turns some of the men killed while resisting him into soldiers of his own. As wars spread from within and from all directions, Aenor's allies become divided, corrupted, or unable to offer adequate support. At last Elzon **conquers Aenor and institutes his order**, which begins the **Third Age**. Elzon and Volgan are the victors of the Second Age.
 
@@ -1647,7 +1647,7 @@ His early spy and raid organization might be called the **Ash Networks**. His re
 
 Where did Elzon learn necromancy, what was his existence like before serving Volgan, how does he keep a growing undead army under control, how did he obtain Zol's magic, and what independent goals does his new autonomy permit?
 
-[[The Second Age of Erdae]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Elzons Order]] · [[The Necromancy of Elzon]] · [[Nether]]
+[[The Second Age of Aoaz]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Elzons Order]] · [[The Necromancy of Elzon]] · [[Nether]]
 
 ## Third Age rule and final death
 
@@ -1655,7 +1655,7 @@ Where did Elzon learn necromancy, what was his existence like before serving Vol
 
 **Proposed cause and sequence:** the [[Black Roots]] would be his effort to change Aenor's magic. During [[The Last Tithe]] the human resistance and Varner break his supporting spells. Elzon overdraws the death-magic he earlier borrowed from [[Zol]], allowing his spirit to be consumed entirely. Afrit then helps contain the disaster and is hailed as a New God. Zol himself remains dormant and gains strength through the involuntary absorption, without intervening openly in the Third Age.
 
-[[The Third Age of Erdae]] · [[Third Age Canon Register]]
+[[The Third Age of Aoaz]] · [[Third Age Canon Register]]
 
 ---
 
@@ -1685,7 +1685,7 @@ The following characters were created as candidate additions on 17 October 2026.
 - Allied Great Spirits may be bound or shattered, but the established cosmology calls them immortal.
 - Do not turn Ithren's proposed ritual into an act of the Old Gods or Holy Seven.
 
-[[The First Age of Erdae]] · [[Grand Alliance]] · [[Battle of Dardan]]
+[[The First Age of Aoaz]] · [[Grand Alliance]] · [[Battle of Dardan]]
 
 ---
 
@@ -1697,7 +1697,7 @@ The following characters were created as candidate additions on 17 October 2026.
 
 The blue sword associated with Horos and the divine power in Glo allow Eindil to destroy Zol's directly empowered undead, which cannot be permanently killed by ordinary weapons. When the New Gods revive Eindil after his initial defeat by Volgan, Glo is the proposed channel through which their combined power can reach him. Zol later breaks the sword, but a shard still bears divine magic and can wound the Old God's temporary physical manifestation.
 
-**Unknown:** Glernaen's individual character, symbols, relation to other New Gods, origin of Glo, extent of independent intervention and any cult in Erdae. Avoid assigning Glernaen a full doctrine before it is developed.
+**Unknown:** Glernaen's individual character, symbols, relation to other New Gods, origin of Glo, extent of independent intervention and any cult in Aoaz. Avoid assigning Glernaen a full doctrine before it is developed.
 
 [[New Gods]] · [[Castle of Yeldenne and Glo]] · [[Horos]] · [[Eindil]]
 
@@ -1729,7 +1729,7 @@ By his reign, the publicly worshipped Deliverer, secretly [[Afrit]], has spent c
 
 The Golden King's personal name, exact years, relatives and political dealings with Afrit have yet to be established. The Lost Cause survives in altered form and can support the struggle led by [[Eindil]].
 
-[[The Fourth Age of Erdae]] · [[Afrit]] · [[Possible Endings]]
+[[The Fourth Age of Aoaz]] · [[Afrit]] · [[Possible Endings]]
 
 ---
 
@@ -1737,7 +1737,7 @@ The Golden King's personal name, exact years, relatives and political dealings w
 
 # Harion the Restorer (proposed)
 
-**Proposed** first monarch of the restored Aenor, crowned after the permanent death of [[Elzon]] at the end of the [[The Third Age of Erdae|Third Age]]. The user established the existence of a **good king** who restores a strong Aenor, but has not chosen a name.
+**Proposed** first monarch of the restored Aenor, crowned after the permanent death of [[Elzon]] at the end of the [[The Third Age of Aoaz|Third Age]]. The user established the existence of a **good king** who restores a strong Aenor, but has not chosen a name.
 
 Harion of Selen would be of a collateral branch of [[Aen]]'s royal line and would have earned his position through many years of resistance and organizing. His legitimacy rests on both descent and service. He is not secretly controlled by [[Afrit]]. He brings peace through reconstruction, law, fair grain storage, sensible defense, and diplomacy.
 
@@ -1745,7 +1745,7 @@ Harion accepts Afrit's religious relief institutions because they demonstrably h
 
 **Chronology:** a Fourth Age of more than a thousand years is ruled by successive kings and royal generations. Harion himself does not live or reign for the entire period.
 
-[[The Last Tithe]] · [[Afrit the Deliverer]] · [[The Fourth Age of Erdae]]
+[[The Last Tithe]] · [[Afrit the Deliverer]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -1769,9 +1769,9 @@ In the late Fourth Age, Afrit arrives to seize Glo. Horos challenges him, expose
 
 # King Edran
 
-**Established identity:** the great king of Aenor who gathered the [[Grand Alliance]] and helped defeat [[Volgan]] during the late [[The First Age of Erdae|First Age]]. He is remembered as the greatest king since [[Aen]]. The owner now uses **Edran** as his name.
+**Established identity:** the great king of Aenor who gathered the [[Grand Alliance]] and helped defeat [[Volgan]] during the late [[The First Age of Aoaz|First Age]]. He is remembered as the greatest king since [[Aen]]. The owner now uses **Edran** as his name.
 
-Edran held Aenor together after [[Battle of Dardan|Dardan]] and continued to guide its recovery in the early [[The Second Age of Erdae|Second Age]]. He **died from disease** during the long period of grief and rebuilding. The particular illness and year are undecided.
+Edran held Aenor together after [[Battle of Dardan|Dardan]] and continued to guide its recovery in the early [[The Second Age of Aoaz|Second Age]]. He **died from disease** during the long period of grief and rebuilding. The particular illness and year are undecided.
 
 His greatest mistake was ordering the Grand Alliance's attempted conquest of the [[Volgans Dead Lands|Dead Lands]] after Volgan's banishment, against strong elven objections. [[Elzon]]'s defenders inflicted enormous casualties and forced the invaders to retreat. The resulting distrust endured for generations. **The elves refused to send armies to help the men of Aenor when Elzon later invaded.**
 
@@ -1779,7 +1779,7 @@ His greatest mistake was ordering the Grand Alliance's attempted conquest of the
 
 Edran might have descended from a relatively distant line of Aen. A proposed *Charter of Free Banners* may have secured the independence of his allies, including independent western and elven polities. Possible epithets include *the Gatherer*, *the Oath-King*, and *the King of the Broken Crown*. His name, alliance leadership, ill-fated invasion, and death from disease are established, while the charter and epithets remain proposals.
 
-[[Aen]] · [[Lorien]] · [[Grand Alliance]] · [[The Second Age of Erdae]] · [[The Third Age of Erdae]]
+[[Aen]] · [[Lorien]] · [[Grand Alliance]] · [[The Second Age of Aoaz]] · [[The Third Age of Aoaz]]
 
 ---
 
@@ -1795,7 +1795,7 @@ The title implies a ruler within demonic society. It does not establish that all
 
 He could be an ancient ruler whose court predates Volgan's conquest of Mirolon, a rival overlord who grudgingly tolerates Volgan, or an ally whose own ambitions worsen the Second Age's conflicts. This choice should be made alongside Agon's identity and the political geography of the Nether.
 
-[[Nether]] · [[Agon]] · [[The Second Age of Erdae]]
+[[Nether]] · [[Agon]] · [[The Second Age of Aoaz]]
 
 ---
 
@@ -1803,15 +1803,15 @@ He could be an ancient ruler whose court predates Volgan's conquest of Mirolon, 
 
 # Lorien
 
-**Established:** Lorien is the king of the **Gala elves** of the [[Erdae and Its Regions|Lands of the Sun]], a figure of extraordinary age and power who led the Gala elves in [[Grand Alliance|King Edran's Grand Alliance]] during the First Age. He survives through the following ages and remembers the War of Men, the defeat of Volgan at Dardan, the collapse of Aenor and the reign of Elzon.
+**Established:** Lorien is the king of the **Gala elves** of the [[Aoaz and Its Regions|Lands of the Sun]], a figure of extraordinary age and power who led the Gala elves in [[Grand Alliance|King Edran's Grand Alliance]] during the First Age. He survives through the following ages and remembers the War of Men, the defeat of Volgan at Dardan, the collapse of Aenor and the reign of Elzon.
 
-Edran's disastrous decision to attack the Dead Lands after Dardan brought unnecessary elven deaths and long estrangement between elves and men. The elves refuse to join another war on Aenor's behalf against Elzon during the Second Age. Lorien nevertheless remains concerned for the fate of all Erdae.
+Edran's disastrous decision to attack the Dead Lands after Dardan brought unnecessary elven deaths and long estrangement between elves and men. The elves refuse to join another war on Aenor's behalf against Elzon during the Second Age. Lorien nevertheless remains concerned for the fate of all Aoaz.
 
-Late in the Fourth Age Lorien welcomes a stranger from the Islands of the South and speaks with him over many weeks. He identifies the man as **[[Eindil]], son of Ein, grandson of Aen**, and shares accounts of Erdae long before Aen. He uses a vision, potentially the proposed **Mirror of First Rain**, to warn of approaching catastrophe and directs Eindil to Horos at Yeldenne to obtain Glo. He equips Eindil with a remarkable ship, armor, sword and companions from different peoples.
+Late in the Fourth Age Lorien welcomes a stranger from the Islands of the South and speaks with him over many weeks. He identifies the man as **[[Eindil]], son of Ein, grandson of Aen**, and shares accounts of Aoaz long before Aen. He uses a vision, potentially the proposed **Mirror of First Rain**, to warn of approaching catastrophe and directs Eindil to Horos at Yeldenne to obtain Glo. He equips Eindil with a remarkable ship, armor, sword and companions from different peoples.
 
-During Zol's temporary embodiment at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Erdae. He **dies in direct battle with Zol**, helping force the Old God to withdraw. He is therefore alive long after Dardan but does not survive the Fourth Age.
+During Zol's temporary embodiment at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with Zol**, helping force the Old God to withdraw. He is therefore alive long after Dardan but does not survive the Fourth Age.
 
-[[The Journey of Eindil]] · [[The Fourth Age of Erdae]] · [[Zol]]
+[[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[Zol]]
 
 ---
 
@@ -1833,7 +1833,7 @@ Roka's own fate, whether he personally guarded the necklace, and why it possesse
 
 # Second Age Proposed Characters
 
-These supporting characters were invented for [[The Second Age of Erdae]] on 17 October 2026. They are **not established canon**.
+These supporting characters were invented for [[The Second Age of Aoaz]] on 17 October 2026. They are **not established canon**.
 
 - **Avarin of Lerenwaith:** North Lands envoy and eventual commander trying to coordinate aid for Aenor while defending her own kingdom. Her impossible diplomatic position shows why the Grand Alliance cannot simply be restored.
 - **Seron of Selen:** Human commander assigned to guard rebuilding efforts and provincial supply routes. His campaigns briefly stabilize whole districts, but he loses troops faster than they can be replaced. He could become a tragic revenant, die defending refugees, or survive as a resistance leader.
@@ -1844,7 +1844,7 @@ These supporting characters were invented for [[The Second Age of Erdae]] on 17 
 
 Potential story conflicts: Avarin and Seron disagree on whether the kingdom can be saved by military force. Tavriel helps the human refugees whom her own people fear. Arelon believes that saving the memory of Aenor may matter even if its walls cannot be saved. These are candidate character arcs.
 
-[[Elzon]] · [[Afrit]] · [[Ages of Erdae]] · [[The Fall of Aenor]]
+[[Elzon]] · [[Afrit]] · [[Ages of Aoaz]] · [[The Fall of Aenor]]
 
 ---
 
@@ -1856,7 +1856,7 @@ Potential story conflicts: Avarin and Seron disagree on whether the kingdom can 
 
 The existence of the thief, the mission and the granting of eternal life are **established**, but his name and the rules of that immortality are not. Proposed limitation: Sevrin does not age but can be trapped or injured, and the bargain may bind his continued life to Afrit's power. This creates a possible later character who understands the necklace better than any court sorcerer. His survival after Afrit's death remains to be written.
 
-[[Roka]] · [[Necklace of the Abyss]] · [[The Fourth Age of Erdae]]
+[[Roka]] · [[Necklace of the Abyss]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -1870,7 +1870,7 @@ Late in the Fourth Age Varner accompanies [[Eindil]] and Golbran to Aenor, arriv
 
 The exact ritual he uses, whether any writings survive and the nature of his death are opportunities for further development. His order remains Lesser Spirit despite his importance.
 
-[[The Third Age of Erdae]] · [[Golbran]] · [[War of the Last Crowns]]
+[[The Third Age of Aoaz]] · [[Golbran]] · [[War of the Last Crowns]]
 
 ---
 
@@ -1878,7 +1878,7 @@ The exact ritual he uses, whether any writings survive and the nature of his dea
 
 # Volgan
 
-**Order:** Great Spirit. **Domain:** Dead Lands. **Established:** He is the principal dark lord of Erdae and has existed for immense ages. Once servant to a New God, he overcame that being and founded his own dominion by means still unknown. His armies include demons, orcs, goblins, monsters, necromantic hosts and other spirits. The independent Dark Lands are not automatically his subjects.
+**Order:** Great Spirit. **Domain:** Dead Lands. **Established:** He is the principal dark lord of Aoaz and has existed for immense ages. Once servant to a New God, he overcame that being and founded his own dominion by means still unknown. His armies include demons, orcs, goblins, monsters, necromantic hosts and other spirits. The independent Dark Lands are not automatically his subjects.
 
 During the First Age, Volgan invades Mirolon and advances to Aenor's capital. [[King Edran]]'s Grand Alliance defeats him at [[Battle of Dardan|Dardan]], where other spirits strip his active power and banish him to the Void. [[Elzon]] prevents the alliance from conquering the remaining Dead Lands. In the Second Age Elzon restores Volgan's soul or presence from the Void. During the long Third Age Volgan remains too weak to leave the Dead Lands but gives instructions to Elzon, who rules Aenor in practice.
 
@@ -1886,7 +1886,7 @@ In the Fourth Age Volgan has recovered enough to retake Mirolon and march north 
 
 **Unsettled:** Volgan's spirit may or may not survive the destruction of his manifestation. Unlike Elzon, whose permanent death is explicit, Volgan's ultimate ontological fate has not been confirmed. The name and fate of the New God he once served remain unknown.
 
-[[The Fourth Age of Erdae]] · [[Elzon]] · [[War of the Last Crowns]]
+[[The Fourth Age of Aoaz]] · [[Elzon]] · [[War of the Last Crowns]]
 
 ---
 
@@ -1894,21 +1894,21 @@ In the Fourth Age Volgan has recovered enough to retake Mirolon and march north 
 
 # Zol
 
-**Established:** [[Old Gods|Zol is the sole Old God present in Erdae]], the God of Death. He first arrived before Aen and before Volgan. His northern domain is [[Zols Mistake|Zol's Mistake]]. The Fading and incompatibility of Erdae's magic prevent him from exercising his cosmic power freely. He cannot sustain an ordinary active physical form, although his underlying power is immense and grows very slowly every day. Great Spirits, Lesser Spirits and even New Gods among his servants help feed or sustain his influence. Without these sources he risks fading from Erdae.
+**Established:** [[Old Gods|Zol is the sole Old God present in Aoaz]], the God of Death. He first arrived before Aen and before Volgan. His northern domain is [[Zols Mistake|Zol's Mistake]]. The Fading and incompatibility of Aoaz's magic prevent him from exercising his cosmic power freely. He cannot sustain an ordinary active physical form, although his underlying power is immense and grows very slowly every day. Great Spirits, Lesser Spirits and even New Gods among his servants help feed or sustain his influence. Without these sources he risks fading from Aoaz.
 
 He remains mostly dormant during the early numbered ages. Elzon borrows ancient magic associated with Zol to raise and bind the dead. A favored Third Age explanation has Zol passively consuming the Great Spirit Elzon when he overdraws on that magic. Zol grows stronger, but does not take the field or openly rule the war.
 
 **Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. A convergence of immense death and prepared magic permits Zol to **manifest physically for a rare and limited period** in the War of the Last Crowns. He stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the manifestation with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing Zol to withdraw.
 
-**Zol is not permanently killed.** His manifestation is a strained projection of a fraction of an Old God's might. Its temporary existence does not remove the Fading and its dependence on Erdae's special conditions. His servants, realm and further intentions remain important unresolved matters for future ages.
+**Zol is not permanently killed.** His manifestation is a strained projection of a fraction of an Old God's might. Its temporary existence does not remove the Fading and its dependence on Aoaz's special conditions. His servants, realm and further intentions remain important unresolved matters for future ages.
 
-[[The Fading]] · [[Magic and Sustenance in Erdae]] · [[War of the Last Crowns]] · [[Lorien]]
+[[The Fading]] · [[Magic and Sustenance in Aoaz]] · [[War of the Last Crowns]] · [[Lorien]]
 
 ---
 
-## 04 - Peoples/Peoples of Erdae.md
+## 04 - Peoples/Peoples of Aoaz.md
 
-# Peoples of Erdae
+# Peoples of Aoaz
 
 The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** and mortal **Common Folk**, while other creature types have not all been assigned to a clear formal order.
 
@@ -1933,7 +1933,7 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 
 **Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, but does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
 
-See also [[Spirits and Their Ranks]], [[Erdae and Its Regions]], [[Volgans Dead Lands]].
+See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Dead Lands]].
 
 ## First Age ethnic and political history
 
@@ -1943,7 +1943,7 @@ Volgan's army contained **corrupted elves**, allied men from eastern and souther
 
 **Open:** Gala elves and Sunhot elves both appear in the source lore. Their exact relationship is not yet specified. Dwarven homelands also remain unassigned.
 
-[[The First Age of Erdae]] · [[Grand Alliance]]
+[[The First Age of Aoaz]] · [[Grand Alliance]]
 
 ---
 
@@ -1970,7 +1970,7 @@ The many other sons and descendants of Aen create competing royal lineages. Thei
 - The exact enchantment that put Eindil into long sleep
 - Why the original royal line was regarded as lost
 
-[[The Journey of Eindil]] · [[Golden King]] · [[The Fourth Age of Erdae]]
+[[The Journey of Eindil]] · [[Golden King]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -1990,7 +1990,7 @@ An older compendium placed the disappearance of the Ainu and Eindil's suspension
 
 **Open:** Whether the name *Ainu* refers to all powerful early humans, only Aen's dynasty, or an earlier culture remains unknown.
 
-[[Royal Line of Aen]] · [[War of Men]] · [[Ages of Erdae]]
+[[Royal Line of Aen]] · [[War of Men]] · [[Ages of Aoaz]]
 
 ---
 
@@ -2010,15 +2010,15 @@ The Abyss is **not the Void** that imprisoned Volgan. It is also distinct from t
 
 These are **alternatives for later selection**, not simultaneous facts.
 
-[[Roka]] · [[Necklace of the Abyss]] · [[Afrits Ascension]] · [[Fourth Age Map of Erdae]]
+[[Roka]] · [[Necklace of the Abyss]] · [[Afrits Ascension]] · [[Fourth Age Map of Aoaz]]
 
 ---
 
-## 05 - Geography/Erdae and Its Regions.md
+## 05 - Geography/Aoaz and Its Regions.md
 
-# Erdae and Its Regions
+# Aoaz and Its Regions
 
-**Erdae** is a continent in the larger fictional ZIN universe and the setting of the ZIN map mod. The map was assembled from **13 hand-drawn regional sheets** and rearranged in October 2026. **Aenor Isle** is treated as a part of the Middle Lands, though it appears separately in the region list below.
+**Aoaz** is a continent in the larger fictional ZIN universe and the setting of the ZIN map mod. The map was assembled from **13 hand-drawn regional sheets** and rearranged in October 2026. **Aenor Isle** is treated as a part of the Middle Lands, though it appears separately in the region list below.
 
 The **far west and north** of the Cold Lands, and **far east and south** beyond the East Lands and South Lands desert, extend outside the known map. What lies beyond is not fixed.
 
@@ -2041,7 +2041,7 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 
 The full **711-label** map transcription is described in the source snapshot but was not separately available when this vault was built. This note includes every regional name and example locality actually reported in that snapshot, not the missing 711-label data.
 
-[[Names and Retcons]] · [[Great Powers and Relations]] · [[Peoples of Erdae]]
+[[Names and Retcons]] · [[Great Powers and Relations]] · [[Peoples of Aoaz]]
 
 ## Newly confirmed places within the Dead Lands
 
@@ -2049,11 +2049,11 @@ The [[Nether]], in the **south of the Dead Lands**, is the seat of the [[King of
 
 ---
 
-## 05 - Geography/Fourth Age Map of Erdae.md
+## 05 - Geography/Fourth Age Map of Aoaz.md
 
-# Fourth Age Map of Erdae
+# Fourth Age Map of Aoaz
 
-The supplied regional map represents **Erdae in the Fourth Age**, the age in which [[Eindil]] awakens, comes to Aenor, and becomes its king after participating in a war. The map is an approximate overview of the regions rather than a fully accurate distance or historical boundary chart.
+The supplied regional map represents **Aoaz in the Fourth Age**, the age in which [[Eindil]] awakens, comes to Aenor, and becomes its king after participating in a war. The map is an approximate overview of the regions rather than a fully accurate distance or historical boundary chart.
 
 ![[Fourth Age - Erdae (reference).png]]
 
@@ -2065,7 +2065,7 @@ The supplied regional map represents **Erdae in the Fourth Age**, the age in whi
 - Older reference to **North Earth** in the First Age story means the current **North Lands**. Do not revive the former name as a separate place.
 - Zol's Mistake existed as a black wasteland before Aen and was largely dormant during the First Age.
 
-The source image was supplied by the owner on 17 October 2026. [[Erdae and Its Regions]] provides the regional name register, while [[The First Age of Erdae]] distinguishes earlier historical settings.
+The source image was supplied by the owner on 17 October 2026. [[Aoaz and Its Regions]] provides the regional name register, while [[The First Age of Aoaz]] distinguishes earlier historical settings.
 
 ---
 
@@ -2073,7 +2073,7 @@ The source image was supplied by the owner on 17 October 2026. [[Erdae and Its R
 
 # Middle Lands and Aenor
 
-**Aenor, the Middle Kingdom**, was previously called **Rush, the Rush Kingdom**. It is the central great power of Erdae. Its current map-design capital is **Parim**.
+**Aenor, the Middle Kingdom**, was previously called **Rush, the Rush Kingdom**. It is the central great power of Aoaz. Its current map-design capital is **Parim**.
 
 The **Middle Lands**, previously Rush Land, contain the Middle Kingdom's central plains, forests, mountains, and Great Lake. Associated named regions include **Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun**, and **Herez**. **Aenor Isle** (previously Rush Islands) lies off the west coast and contains **Asgard**.
 
@@ -2087,7 +2087,7 @@ Its ruling [[Golden King]] founded **The Lost Cause**, built a strong army, and 
 
 **Open:** Is Aenor named for **Aen the Ainu**?
 
-[[Erdae and Its Regions]] · [[Great Powers and Relations]] · [[Kingdoms Factions and Conflicts]]
+[[Aoaz and Its Regions]] · [[Great Powers and Relations]] · [[Kingdoms Factions and Conflicts]]
 
 ## Aenor in ancient history
 
@@ -2097,11 +2097,11 @@ Aenor's first settlement and expansion into the West Lands provoked **wars with 
 
 **Fourth Age lineage:** [[Eindil]], directly descended as Aen's grandson through Ein, awakens in the Cold Lands and is eventually crowned king in Aenor.
 
-[[The First Age of Erdae]] · [[Fourth Age Map of Erdae]]
+[[The First Age of Aoaz]] · [[Fourth Age Map of Aoaz]]
 
 ## Second Age defeat
 
-After the First Age, Aenor survives under a great king and tries to rebuild. Generations of raids, plagues, demonic portals, division among its former allies, and the Great Spirit [[Elzon]]'s necromancy reverse this recovery. **At the end of the [[The Second Age of Erdae|Second Age]], Elzon takes Aenor and establishes his order**, inaugurating the Third Age.
+After the First Age, Aenor survives under a great king and tries to rebuild. Generations of raids, plagues, demonic portals, division among its former allies, and the Great Spirit [[Elzon]]'s necromancy reverse this recovery. **At the end of the [[The Second Age of Aoaz|Second Age]], Elzon takes Aenor and establishes his order**, inaugurating the Third Age.
 
 The historical name of the capital during this period is **not yet confirmed**, even though the Fourth Age map-design seat is Parim. The later restoration of an Aenoran monarchy and the continuity of Aen's heirs before [[Eindil]]'s coronation remain to be written.
 
@@ -2109,7 +2109,7 @@ The historical name of the capital during this period is **not yet confirmed**, 
 
 [[Elzon]] conquers Aenor in **Second Age year 2133**. Through the Third Age, men resist while he rules in [[Volgan]]'s name. He lacks a natural source of sustaining magic in Aenor and cannot permanently support his undead army without changing the land itself. The elven kingdoms do not send rescue armies to Aenor because of [[King Edran]]'s failed Dead Lands campaign. Elzon's eventual permanent death ends the occupation.
 
-In the Fourth Age a genuinely good human king restores the monarchy, followed by a long peace under successive rulers. [[Afrit]] is praised and worshipped as a New God and secretly grows influential in the kingdom. See [[The Third Age of Erdae]] and [[The Fourth Age of Erdae]].
+In the Fourth Age a genuinely good human king restores the monarchy, followed by a long peace under successive rulers. [[Afrit]] is praised and worshipped as a New God and secretly grows influential in the kingdom. See [[The Third Age of Aoaz]] and [[The Fourth Age of Aoaz]].
 
 ---
 
@@ -2129,7 +2129,7 @@ The King of Demons may command some or all of the Netherborn, but that relations
 
 The Nether could have fortified volcanic passes, ancient portal sites, competing demonic houses, and borderlands claimed by both the king and Volgan's servants. Its heat and dangerous southern approaches made it difficult for men of the First Age to explore. This landscape and its internal politics remain proposed.
 
-[[The Second Age of Erdae]] · [[Agon]] · [[King of Demons]] · [[Abyss]]
+[[The Second Age of Aoaz]] · [[Agon]] · [[King of Demons]] · [[Abyss]]
 
 ---
 
@@ -2139,7 +2139,7 @@ The Nether could have fortified volcanic passes, ancient portal sites, competing
 
 Selen is a region and political entity of the [[Middle Lands and Aenor|Middle Lands]] within the sphere of Aenor. Selen has long been associated with rangers, and the proposed ranger [[Alleria of Selen]] is from here. Historical arrangements with the central crown changed across the ages. The exact borders, ruler and city names should be checked against the original geographic maps.
 
-[[Erdae and Its Regions]] · [[The Fourth Age of Erdae]]
+[[Aoaz and Its Regions]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -2157,7 +2157,7 @@ Volgan's realm includes grave hosts, Netherborn demons, orcs, ogres, monster cla
 
 The dead here and the dead in [[Zols Mistake|Zol's Mistake]] have no settled taxonomy or relationship. Volgan is not an Old God, and his necromancy should not automatically be taken as authority over Death itself.
 
-[[Erdae and Its Regions]] · [[Great Powers and Relations]] · [[Peoples of Erdae]]
+[[Aoaz and Its Regions]] · [[Great Powers and Relations]] · [[Peoples of Aoaz]]
 
 ## First Age campaign
 
@@ -2165,11 +2165,11 @@ The dead here and the dead in [[Zols Mistake|Zol's Mistake]] have no settled tax
 
 **Important distinction:** Mirolon is Volgan's First Age conquest target and his rival in the *working* Fourth Age political table. Its political status must not be treated as identical across all ages.
 
-[[The First Age of Erdae]] · [[Battle of Dardan]]
+[[The First Age of Aoaz]] · [[Battle of Dardan]]
 
 ## Second Age additions
 
-The [[Nether]] is established in the **south of the Dead Lands** as the domain or residence of the **King of Demons**. [[Agon]] and other demons are active there during the Second Age, and portals permit attacks across Erdae. The [[Abyss]] is also in the Dead Lands and is associated with [[Roka]] and the [[Necklace of the Abyss]], which Afrit takes and uses during the **Fourth Age**.
+The [[Nether]] is established in the **south of the Dead Lands** as the domain or residence of the **King of Demons**. [[Agon]] and other demons are active there during the Second Age, and portals permit attacks across Aoaz. The [[Abyss]] is also in the Dead Lands and is associated with [[Roka]] and the [[Necklace of the Abyss]], which Afrit takes and uses during the **Fourth Age**.
 
 The [[Nether]], [[Abyss]], and the **Void** that imprisoned Volgan are distinct named places or realms, with any deeper connections still undecided.
 
@@ -2189,7 +2189,7 @@ During the Third Age, Volgan cannot leave the Dead Lands, while [[Elzon]] rules 
 
 A vast **black northern region** comprising a barren wasteland and **all the black islands of the Ocean of Zol**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region.
 
-Its name derives from [[Zol]], the Old God of Death and the only Old God present in Erdae. The exact event or transgression that makes this land a **"Mistake"** has not been explained.
+Its name derives from [[Zol]], the Old God of Death and the only Old God present in Aoaz. The exact event or transgression that makes this land a **"Mistake"** has not been explained.
 
 The working political table places the capital or seat at **Furviatlon** and treats Zol as a polity opposed by [[Middle Lands and Aenor|Aenor]]. Zol cannot directly appear in a physical body, and his servants maintain his presence. Whether Furviatlon is administered by a Great Spirit, Lesser Spirit, New God, undead order, or another representative is **unknown**.
 
@@ -2197,15 +2197,15 @@ The dead wandering the land have no established classification or allegiance. Do
 
 **Former terms:** Edvoid's Mistake, Ocean of Edvoid. These names are **superseded**.
 
-[[Magic and Sustenance in Erdae]] · [[Erdae and Its Regions]] · [[Names and Retcons]]
+[[Magic and Sustenance in Aoaz]] · [[Aoaz and Its Regions]] · [[Names and Retcons]]
 
 ## Position during the First Age
 
-**Newly established:** [[Zol]] arrived in Erdae **long before Aen and Volgan**. His northern domain was already desolate when the Grand Alliance assembled in the First Age, and his local power was then relatively dormant. Its lands could not contribute meaningful armies or support, and no faction could use them effectively. **Zol was not a participant in the Battle of Dardan**.
+**Newly established:** [[Zol]] arrived in Aoaz **long before Aen and Volgan**. His northern domain was already desolate when the Grand Alliance assembled in the First Age, and his local power was then relatively dormant. Its lands could not contribute meaningful armies or support, and no faction could use them effectively. **Zol was not a participant in the Battle of Dardan**.
 
-This does not mean Zol was inherently weak. Under [[The Fading]] and Erdae's difficult local magic, he could not project his immense fundamental power freely. His power later increases slowly through the support of servants.
+This does not mean Zol was inherently weak. Under [[The Fading]] and Aoaz's difficult local magic, he could not project his immense fundamental power freely. His power later increases slowly through the support of servants.
 
-[[The First Age of Erdae]] · [[Fourth Age Map of Erdae]]
+[[The First Age of Aoaz]] · [[Fourth Age Map of Aoaz]]
 
 ---
 
@@ -2219,7 +2219,7 @@ Afrit can leave a member of his council in charge of Aenor while he travels to C
 
 The proposed structure divides council duties among royal administration, worship, foreign agents, and artifact recovery. The membership, titles and internal disagreements are not yet established.
 
-[[Afrit]] · [[Golden King]] · [[Aurevan the Deliverer]] · [[The Fourth Age of Erdae]]
+[[Afrit]] · [[Golden King]] · [[Aurevan the Deliverer]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -2227,7 +2227,7 @@ The proposed structure divides council duties among royal administration, worshi
 
 # Elzon's Order
 
-**Established:** [[Elzon]], a Great Spirit and Great Necromancer serving [[Volgan]], seizes Aenor in **Second Age year 2133** and founds his own order. This begins a [[The Third Age of Erdae|Third Age]] lasting **at least 1,200 years**. Volgan is too weak to leave the Dead Lands and issues commands from there. Elzon holds effective authority within Aenor.
+**Established:** [[Elzon]], a Great Spirit and Great Necromancer serving [[Volgan]], seizes Aenor in **Second Age year 2133** and founds his own order. This begins a [[The Third Age of Aoaz|Third Age]] lasting **at least 1,200 years**. Volgan is too weak to leave the Dead Lands and issues commands from there. Elzon holds effective authority within Aenor.
 
 The occupation lasts many generations and cannot be maintained solely by a single generation of animated corpses. Those dead fade, and their reanimation consumes magic that is difficult to replenish in Aenor. Elzon therefore relies on living administrators, orc and goblin forces, renewed raising of the dead, raids, subordinate lords, and changing arrangements across the provinces. The Magical Lands remain unconquered, and human revolts repeatedly break out. Elzon attempts to make Aenor capable of sustaining him as the Dead Lands do, but never completes the task.
 
@@ -2241,7 +2241,7 @@ The occupation lasts many generations and cannot be maintained solely by a singl
 
 # Great Powers and Relations
 
-> **Working political and map design, not fully fixed narrative canon.** The source snapshot says Erdae contains approximately **280 regional polities**, of which the following are leading powers.
+> **Working political and map design, not fully fixed narrative canon.** The source snapshot says Aoaz contains approximately **280 regional polities**, of which the following are leading powers.
 
 | Power | Map-design seat | Role | Satellites / alliance | Rival |
 | --- | --- | --- | --- | --- |
@@ -2261,7 +2261,7 @@ Additional polities which must remain separate on the map: **Bordon, Dreson, Dul
 
 Seat names not drawn on the original maps were constructed in local naming styles and can be replaced. No capital is named after an antagonist or an entire region.
 
-[[Erdae and Its Regions]] · [[Middle Lands and Aenor]] · [[Zol]] · [[Volgan]] · [[Kingdoms Factions and Conflicts]]
+[[Aoaz and Its Regions]] · [[Middle Lands and Aenor]] · [[Zol]] · [[Volgan]] · [[Kingdoms Factions and Conflicts]]
 
 ---
 
@@ -2269,7 +2269,7 @@ Seat names not drawn on the original maps were constructed in local naming style
 
 # Houses of the First Light (proposed)
 
-Proposed network of refuges, hospitals, grain stores, healers, scribes, and later temples connected to [[Afrit]], spreading during the [[The Third Age of Erdae|Third Age]]. Many participants are sincere aid workers. They build on medical and agricultural knowledge developed in the Second Age.
+Proposed network of refuges, hospitals, grain stores, healers, scribes, and later temples connected to [[Afrit]], spreading during the [[The Third Age of Aoaz|Third Age]]. Many participants are sincere aid workers. They build on medical and agricultural knowledge developed in the Second Age.
 
 After Afrit's public elevation as the [[Afrit the Deliverer|New God of Deliverance]], the houses become trusted institutions of the restored kingdom. Over centuries they could influence appointments, royal marriages, charity, public records, education, and taxation. Such influence would remain largely invisible to ordinary believers.
 
@@ -2314,7 +2314,7 @@ Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, o
 
 **Middle Kingdom Concord**, **Southern Dominion**, **Leren Compact**, **Northern Accord**, **Noris Treaty**, **Stabilo Pact**, and **Dark Sea Accord** appear in the working map arrangements. Their constitutions and origins are not detailed.
 
-[[Possible Endings]] · [[Great Powers and Relations]] · [[Ages of Erdae]]
+[[Possible Endings]] · [[Great Powers and Relations]] · [[Ages of Aoaz]]
 
 ---
 
@@ -2322,9 +2322,9 @@ Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, o
 
 # Lantern Chain (proposed)
 
-The provisional name of a network of resistance couriers, hidden refuges, and warding specialists organized with help from [[Varner]] and [[Golbran]] in the [[The Third Age of Erdae|Third Age]]. Its purpose is to share ways of lifting the curse of the dead while protecting local communities from [[Elzon]].
+The provisional name of a network of resistance couriers, hidden refuges, and warding specialists organized with help from [[Varner]] and [[Golbran]] in the [[The Third Age of Aoaz|Third Age]]. Its purpose is to share ways of lifting the curse of the dead while protecting local communities from [[Elzon]].
 
-It works beside human rebel groups. It does **not** make the Magical Lands' elven armies into Aenor's official rescuers. Its members carry practical medical and farming knowledge developed during the [[The Second Age of Erdae|Second Age]] as well as rare magical wards.
+It works beside human rebel groups. It does **not** make the Magical Lands' elven armies into Aenor's official rescuers. Its members carry practical medical and farming knowledge developed during the [[The Second Age of Aoaz|Second Age]] as well as rare magical wards.
 
 [[War of Unbinding]] · [[Black Roots]]
 
@@ -2336,7 +2336,7 @@ It works beside human rebel groups. It does **not** make the Magical Lands' elve
 
 **Established:** The [[Golden King]] founds and first leads a major human faction called **the Lost Cause**, publicly formed in response to the threat of powerful dark forces such as Volgan and Afrit and partly motivated by royal prestige. This organization originated in earlier ZIN source material and remains relevant to the Fourth Age.
 
-By the Fourth Age, the Golden King is under Afrit's hidden influence, and the Lost Cause's leadership, public objectives and actual effectiveness require careful distinction. Some members may sincerely protect Erdae. Others may be clients of the god-king, while fragments may support Eindil after hearing his warnings.
+By the Fourth Age, the Golden King is under Afrit's hidden influence, and the Lost Cause's leadership, public objectives and actual effectiveness require careful distinction. Some members may sincerely protect Aoaz. Others may be clients of the god-king, while fragments may support Eindil after hearing his warnings.
 
 **Proposed:** A divided Lost Cause refuses a single response to Eindil. Loyal court branches suppress him, while frontier or scholarly branches gather proof of his ancestry and help Alleria. Whether it formally survives the final war remains open.
 
@@ -2348,7 +2348,7 @@ By the Fourth Age, the Golden King is under Afrit's hidden influence, and the Lo
 
 # Afrit's Ascension
 
-**Established:** [[Afrit]] becomes considerably more influential through the Second Age and his **ascension near its end** is one of the age's defining events. In the earlier [[The First Age of Erdae|First Age]], Afrit secretly rallied demons, spirits, men, and elves against [[Volgan]], materially helping bring about the dark lord's defeat. People did not recognize Afrit's role.
+**Established:** [[Afrit]] becomes considerably more influential through the Second Age and his **ascension near its end** is one of the age's defining events. In the earlier [[The First Age of Aoaz|First Age]], Afrit secretly rallied demons, spirits, men, and elves against [[Volgan]], materially helping bring about the dark lord's defeat. People did not recognize Afrit's role.
 
 Afrit aided the struggle to remove a rival and weaken Aenor, not because he was a trustworthy ally of the [[Grand Alliance]]. During the Second Age he uses worship, cults, bargains, favors, and corruption to gain power. He remains independent of [[Elzon]] and Volgan.
 
@@ -2365,11 +2365,11 @@ The [[Afrit|Worshipdom]] may grow from aid organizations and local cults that be
 - Afrit only takes [[Necklace of the Abyss|Roka's Necklace of the Abyss]] in the **Fourth Age**, so it is not the cause of the Second Age ascension unless future lore explicitly revises chronology.
 - Afrit's exact powers and relations with the [[Nether]]'s King of Demons are not established.
 
-[[The Second Age of Erdae]] · [[The Fall of Aenor]] · [[Abyss]] · [[Roka]]
+[[The Second Age of Aoaz]] · [[The Fall of Aenor]] · [[Abyss]] · [[Roka]]
 
 ## His later recognition as a New God
 
-The user's latest direction adds an important distinction: Afrit's **late Second Age ascension** increases his power, but he becomes **publicly recognized and praised as a New God** for saving the world from Elzon **near the end of the Third Age**. People worship him as their Deliverer. Whether he truly belongs to the divine order created by the Holy Seven is undecided. He does not rule Aenor openly and his concealed influence expands through the long peace of the Fourth Age. See [[Afrit the Deliverer]] and [[The Third Age of Erdae]].
+The user's latest direction adds an important distinction: Afrit's **late Second Age ascension** increases his power, but he becomes **publicly recognized and praised as a New God** for saving the world from Elzon **near the end of the Third Age**. People worship him as their Deliverer. Whether he truly belongs to the divine order created by the Holy Seven is undecided. He does not rule Aenor openly and his concealed influence expands through the long peace of the Fourth Age. See [[Afrit the Deliverer]] and [[The Third Age of Aoaz]].
 
 ---
 
@@ -2383,17 +2383,17 @@ The user's latest direction adds an important distinction: Afrit's **late Second
 
 ## Proposed fuller account
 
-The battlefield is placed in the southern approaches of the Middle Lands, close to the old route from the southern coast to the crownlands. Volgan concentrates an army of corrupted elves, orcs, goblins, allied eastern and southern men, demons and devils, dragons, dark Great Spirits, and Damned Spirits released from beneath the mountains. The Grand Alliance brings its armies from multiple regions across Erdae.
+The battlefield is placed in the southern approaches of the Middle Lands, close to the old route from the southern coast to the crownlands. Volgan concentrates an army of corrupted elves, orcs, goblins, allied eastern and southern men, demons and devils, dragons, dark Great Spirits, and Damned Spirits released from beneath the mountains. The Grand Alliance brings its armies from multiple regions across Aoaz.
 
-The suggested *Thirteen Days of Dardan* include the collapse of its first lines, fighting at river and road crossings, the eruption of Damned Spirits from beneath the hills, the commitment of [[Lorien]]'s Gala elves, and a joint rite by allied Great Spirits. The rite can only succeed after mortal and immortal allies break the defenses around Volgan. It strips the strength he can project into Erdae and banishes him to the Void, at significant cost to the participating spirits. Volgan is not annihilated.
+The suggested *Thirteen Days of Dardan* include the collapse of its first lines, fighting at river and road crossings, the eruption of Damned Spirits from beneath the hills, the commitment of [[Lorien]]'s Gala elves, and a joint rite by allied Great Spirits. The rite can only succeed after mortal and immortal allies break the defenses around Volgan. It strips the strength he can project into Aoaz and banishes him to the Void, at significant cost to the participating spirits. Volgan is not annihilated.
 
-The fuller scene, phase-by-phase course of battle, and consequences are in [[The First Age of Erdae]]. These phases, names, location, and mechanism are proposed rather than established.
+The fuller scene, phase-by-phase course of battle, and consequences are in [[The First Age of Aoaz]]. These phases, names, location, and mechanism are proposed rather than established.
 
 ## Aftermath
 
 The military host breaks, but the Dead Lands remain unconquered. **Elzon** organizes the remnant defense and defeats the Alliance's attempted follow-up invasion. Elven casualties in that failure create longstanding resentment toward Aenor's king.
 
-[[The First Age of Erdae]] · [[Elzon]] · [[Grand Alliance]] · [[Volgan]]
+[[The First Age of Aoaz]] · [[Elzon]] · [[Grand Alliance]] · [[Volgan]]
 
 ---
 
@@ -2403,9 +2403,9 @@ The military host breaks, but the Dead Lands remain unconquered. **Elzon** organ
 
 The proposed name of [[Elzon]]'s unfinished attempt to turn Aenor into a land that sustains his necromancy as the [[Volgans Dead Lands|Dead Lands]] once did. These are a network of buried anchors, corrupted burial fields, and places where life-magic is artificially inverted. They are not literal tree roots in every location.
 
-Elzon needs the [[Erdae and Its Regions|Magical Lands]] because its independent living magic prevents his work from becoming complete. [[Varner]] and [[Golbran]] help undo or sever these links. The destruction of the network contributes to [[The Last Tithe|Elzon's final collapse]].
+Elzon needs the [[Aoaz and Its Regions|Magical Lands]] because its independent living magic prevents his work from becoming complete. [[Varner]] and [[Golbran]] help undo or sever these links. The destruction of the network contributes to [[The Last Tithe|Elzon's final collapse]].
 
-The mechanism, name, and geographic placement are inventions for the [[The Third Age of Erdae|Third Age]] narrative and remain open for approval.
+The mechanism, name, and geographic placement are inventions for the [[The Third Age of Aoaz|Third Age]] narrative and remain open for approval.
 
 ---
 
@@ -2435,7 +2435,7 @@ The Fourth Age ends with **[[Eindil]] being crowned king of Aenor**. Any Fifth A
 
 Do not treat any proposal above as a settled Fifth Age outcome.
 
-[[The Fourth Age of Erdae]] · [[Ages of Erdae]]
+[[The Fourth Age of Aoaz]] · [[Ages of Aoaz]]
 
 ---
 
@@ -2453,7 +2453,7 @@ The Alliance is not a single kingdom. Its rulers retain their crowns or independ
 
 An alliance council could include a North Lands envoy, the West Lands commanders, the islands, elected elven representatives of the Magical Forest, Lorien of Gala, independent Dark Lands peoples, and the allied Great Spirits. The actual members and charter are not fixed canon.
 
-[[The First Age of Erdae]] · [[King Edran]] · [[Lorien]] · [[First Age Proposed Characters]]
+[[The First Age of Aoaz]] · [[King Edran]] · [[Lorien]] · [[First Age Proposed Characters]]
 
 ---
 
@@ -2477,7 +2477,7 @@ The Lost Cause prevails. Under [[Eindil]], it becomes a settlement seeking peace
 
 **Open:** the precise military, political, or supernatural mechanics leading to each ending. The supporting 18-document spec package was identified in the original snapshot as proposed, not automatically canonical.
 
-[[Kingdoms Factions and Conflicts]] · [[Ages of Erdae]]
+[[Kingdoms Factions and Conflicts]] · [[Ages of Aoaz]]
 
 ---
 
@@ -2485,7 +2485,7 @@ The Lost Cause prevails. Under [[Eindil]], it becomes a settlement seeking peace
 
 # Second Age Progress and Recovery
 
-The [[The Second Age of Erdae|Second Age]] lasted **2,133 years**, making it longer than the First Age's 1,675 years. It is remembered as the Dark Age and Age of Long Grief because repeated wars, famine, diseases, raids, and corruption prevented long, uninterrupted recovery after Dardan. Yet it was **not entirely a period of suffering**.
+The [[The Second Age of Aoaz|Second Age]] lasted **2,133 years**, making it longer than the First Age's 1,675 years. It is remembered as the Dark Age and Age of Long Grief because repeated wars, famine, diseases, raids, and corruption prevented long, uninterrupted recovery after Dardan. Yet it was **not entirely a period of suffering**.
 
 **Established achievements:** Aenor and other regions made substantial progress in **warfare and military technology, disease treatment and cures, farming and famine prevention**. These discoveries and methods improved the survival of later generations and contributed to Aenor's ability to recover in the Fourth Age.
 
@@ -2502,7 +2502,7 @@ These techniques are inventions of people living during the Second Age. Although
 
 [[King Edran]], the great king of the [[Grand Alliance]], guides rebuilding in the early Second Age but eventually **dies of disease**. His exact age, year of death, and the particular illness remain undecided. His death is one episode in a long series of human successions and renewals, not proof that Aenor collapses immediately.
 
-[[The Second Age of Erdae]] · [[Third Age Canon Register]] · [[The Fourth Age of Erdae]]
+[[The Second Age of Aoaz]] · [[Third Age Canon Register]] · [[The Fourth Age of Aoaz]]
 
 ---
 
@@ -2510,13 +2510,13 @@ These techniques are inventions of people living during the Second Age. Although
 
 # The Elven Refusal
 
-During the late [[The First Age of Erdae|First Age]], the elves, including [[Lorien]] and his Gala host, helped the Grand Alliance defeat [[Volgan]] at Dardan. Afterward, [[King Edran]] insisted upon an attempt to conquer the [[Volgans Dead Lands|Dead Lands]], despite elven opposition. [[Elzon]]'s defenders repelled the expedition and inflicted enormous casualties, including upon the elves.
+During the late [[The First Age of Aoaz|First Age]], the elves, including [[Lorien]] and his Gala host, helped the Grand Alliance defeat [[Volgan]] at Dardan. Afterward, [[King Edran]] insisted upon an attempt to conquer the [[Volgans Dead Lands|Dead Lands]], despite elven opposition. [[Elzon]]'s defenders repelled the expedition and inflicted enormous casualties, including upon the elves.
 
-That mistake destroyed the political confidence required for another Grand Alliance. During the [[The Second Age of Erdae|Second Age]], when Elzon invaded Aenor, **the elven kingdoms did not send armies to help men**. The refusal was a lasting consequence of Edran's decision. It should not be rewritten as a new alliance in the final invasion.
+That mistake destroyed the political confidence required for another Grand Alliance. During the [[The Second Age of Aoaz|Second Age]], when Elzon invaded Aenor, **the elven kingdoms did not send armies to help men**. The refusal was a lasting consequence of Edran's decision. It should not be rewritten as a new alliance in the final invasion.
 
-During the [[The Third Age of Erdae|Third Age]], elves in the [[Erdae and Its Regions|Magical Lands]] resisted Elzon to defend their own unconquered territories. This is compatible with their earlier refusal. Individual travelers, healers, or independent figures may cooperate across races, but there is no official elven campaign to free the human crown.
+During the [[The Third Age of Aoaz|Third Age]], elves in the [[Aoaz and Its Regions|Magical Lands]] resisted Elzon to defend their own unconquered territories. This is compatible with their earlier refusal. Individual travelers, healers, or independent figures may cooperate across races, but there is no official elven campaign to free the human crown.
 
-[[King Edran]] · [[Lorien]] · [[Varner]] · [[The Third Age of Erdae]]
+[[King Edran]] · [[Lorien]] · [[Varner]] · [[The Third Age of Aoaz]]
 
 ---
 
@@ -2536,7 +2536,7 @@ The political result need not be a realm populated only by undead. Elzon can use
 
 Possible survival of an archivist with Aen's genealogies and of scattered royal heirs would allow believable continuity into the Fourth Age and [[Eindil]]'s later claim. Neither has been confirmed.
 
-[[The Second Age of Erdae]] · [[The Necromancy of Elzon]] · [[Ages of Erdae]] · [[Elzon]]
+[[The Second Age of Aoaz]] · [[The Necromancy of Elzon]] · [[Ages of Aoaz]] · [[Elzon]]
 
 ---
 
@@ -2544,7 +2544,7 @@ Possible survival of an archivist with Aen's genealogies and of scattered royal 
 
 # The Journey of Eindil
 
-**Established route:** Awakening in [[Erdae and Its Regions|Cold Lands]] by local tribes, travel south through [[Erdae and Its Regions|West Lands]], a brief western kingship and peace-making, a storm-driven voyage to the [[Erdae and Its Regions|Islands of the South]], residence among islanders, then travel to [[Erdae and Its Regions|Lands of the Sun]] to seek [[Lorien]], followed by a ship journey north toward [[Castle of Yeldenne and Glo|Yeldenne]] in the Cold Lands. The crew is killed by an ambush arranged by [[Afrit]]. Eindil continues alone through snow and reaches the castle.
+**Established route:** Awakening in [[Aoaz and Its Regions|Cold Lands]] by local tribes, travel south through [[Aoaz and Its Regions|West Lands]], a brief western kingship and peace-making, a storm-driven voyage to the [[Aoaz and Its Regions|Islands of the South]], residence among islanders, then travel to [[Aoaz and Its Regions|Lands of the Sun]] to seek [[Lorien]], followed by a ship journey north toward [[Castle of Yeldenne and Glo|Yeldenne]] in the Cold Lands. The crew is killed by an ambush arranged by [[Afrit]]. Eindil continues alone through snow and reaches the castle.
 
 **Lorien's revelation:** Eindil learns he is the son of [[Aen|Aen's son Ein]], heir of the First Men, from Lorien and a prophetic vision. Lorien tells him to obtain [[Castle of Yeldenne and Glo|Glo]], which carries part of the strength of [[Glernaen]]. **The Mirror of First Rain** is proposed as the fountain that shows ancestral traces and uncertain futures. Lorien gifts a remarkable ship, armor, a sword and an accompanying crew of western friends, southern islanders, and Gala elves.
 
@@ -2566,7 +2566,7 @@ Golbran gives his own remaining life and magic to save Eindil. Eindil puts the n
 
 **Proposals:** Alleria's rescue below the cliff, the Ring of Doors and other secondary artifact names, the necklace as means of exiting the private realm, and Golbran surviving his earlier apparent sacrifice during Varner's death.
 
-[[The Fourth Age of Erdae]] · [[Fourth Age Canon Register]]
+[[The Fourth Age of Aoaz]] · [[Fourth Age Canon Register]]
 
 ---
 
@@ -2582,7 +2582,7 @@ After a long occupation of **at least 1,200 years**, the exhausted Great Necroma
 
 **Proposed exact year:** Third Age 1260. The name *Last Tithe*, mechanics and exact date remain suggestions, while Elzon's permanent death and Afrit's public divine recognition are established.
 
-[[The Third Age of Erdae]] · [[Afrits Ascension]]
+[[The Third Age of Aoaz]] · [[Afrits Ascension]]
 
 ---
 
@@ -2604,9 +2604,9 @@ To prevent necromancy from becoming an automatic victory in every battle, the fo
 
 ## A dangerous distinction
 
-Zol, as God of Death and the only [[Old Gods|Old God]] in Erdae, possesses a vastly greater kind of divine authority. His [[The Fading|Fading]] and the unusual magic of Erdae limit what he can manifest directly. Elzon's immense applied necromancy does not give him Zol's rank or a right to rule death in the cosmic sense.
+Zol, as God of Death and the only [[Old Gods|Old God]] in Aoaz, possesses a vastly greater kind of divine authority. His [[The Fading|Fading]] and the unusual magic of Aoaz limit what he can manifest directly. Elzon's immense applied necromancy does not give him Zol's rank or a right to rule death in the cosmic sense.
 
-[[The Second Age of Erdae]] · [[The Return of Volgan]] · [[Spirits and Their Ranks]] · [[Zol]]
+[[The Second Age of Aoaz]] · [[The Return of Volgan]] · [[Spirits and Their Ranks]] · [[Zol]]
 
 ## Third Age limitations and permanent death
 
@@ -2620,7 +2620,7 @@ The proposed [[Black Roots]] and the [[The Last Tithe|Last Tithe]] explain his f
 
 # The Return of Volgan
 
-**Established:** The Great Necromancer [[Elzon]], a Great Spirit and servant of [[Volgan]], eventually frees his master from the **Void** during the Second Age. Volgan's soul or spiritual presence returns to Erdae, and he grants Elzon greater autonomy. Volgan needs time to recover the power stripped from him at the [[Battle of Dardan]]. The return is real, not merely a misleading prophecy.
+**Established:** The Great Necromancer [[Elzon]], a Great Spirit and servant of [[Volgan]], eventually frees his master from the **Void** during the Second Age. Volgan's soul or spiritual presence returns to Aoaz, and he grants Elzon greater autonomy. Volgan needs time to recover the power stripped from him at the [[Battle of Dardan]]. The return is real, not merely a misleading prophecy.
 
 ## Historical significance
 
@@ -2632,7 +2632,7 @@ With Volgan restored in presence but not in full strength, the campaign against 
 
 A powerful binding at Dardan originally closed the path to the Void. Elzon seeks three things: a surviving spiritual trace of Volgan, weak points in the binding, and ancient magic potent enough to reach across the boundary. In this telling Elzon draws on [[Zol]]'s old death-magic. The rite consumes hidden strongholds or enormous stores of power.
 
-Zol is no ordinary patron. His nature as an [[Old Gods|Old God]], his immense residual power, his slow increase in strength, and [[The Fading|the Fading]] make his place in Erdae unlike that of Elzon or Volgan. Elzon's borrowing does **not** confirm Zol's permission or establish an alliance between them.
+Zol is no ordinary patron. His nature as an [[Old Gods|Old God]], his immense residual power, his slow increase in strength, and [[The Fading|the Fading]] make his place in Aoaz unlike that of Elzon or Volgan. Elzon's borrowing does **not** confirm Zol's permission or establish an alliance between them.
 
 This event crosses a boundary into the **Void**. It does not require passage through the [[Nether]] or the [[Abyss]]. Those are distinct settings until further lore says otherwise.
 
@@ -2640,7 +2640,7 @@ This event crosses a boundary into the **Void**. It does not require passage thr
 
 How Elzon accessed Zol's magic, the costs paid, where the rite occurred, how Volgan manifested afterward, and why the Allied Great Spirits could not reseal the prison are all open.
 
-[[The Second Age of Erdae]] · [[Elzon]] · [[Volgan]] · [[Zol]] · [[Second Age Canon Register]]
+[[The Second Age of Aoaz]] · [[Elzon]] · [[Volgan]] · [[Zol]] · [[Second Age Canon Register]]
 
 ---
 
@@ -2658,7 +2658,7 @@ After the war, the central crown restricted private warfare between lords. This 
 
 **The war's beginning, battles, factions, actual casualty total, and Aen's method of victory are unwritten.** The details above are suggestions, not established events.
 
-[[Aen]] · [[The First Age of Erdae]] · [[Middle Lands and Aenor]]
+[[Aen]] · [[The First Age of Aoaz]] · [[Middle Lands and Aenor]]
 
 ---
 
@@ -2672,7 +2672,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 
 [[Afrit]] and his networks assist the overthrow while positioning themselves to become the leading religious and political institutions of the restored Aenor. Elzon's dependence on Zol's ancient magic sets the conditions for his permanent destruction, although exactly how Zol consumes the Great Spirit remains an open magical detail.
 
-[[The Third Age of Erdae]] · [[The Elven Refusal]] · [[The Last Tithe]]
+[[The Third Age of Aoaz]] · [[The Elven Refusal]] · [[The Last Tithe]]
 
 ---
 
@@ -2699,7 +2699,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 - Zol's manifestation is temporary and costly in the presence of the Fading. He is forced to withdraw, not killed.
 - Afrit's final death is literal.
 
-[[The Fourth Age of Erdae]] · [[Eindil]] · [[Afrit]] · [[Zol]] · [[Volgan]]
+[[The Fourth Age of Aoaz]] · [[Eindil]] · [[Afrit]] · [[Zol]] · [[Volgan]]
 
 ---
 
@@ -2707,7 +2707,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 
 # Afrit's Collected Artifacts
 
-**Established:** [[Afrit]] spends the Fourth Age collecting magical objects across Erdae. These contribute substantially to his strength, spiritual transformation, control over men, and supernatural defenses. The most important known object is Roka's [[Necklace of the Abyss]]. Other artifacts, including a ring forcibly removed by Eindil, also matter to the final defeat.
+**Established:** [[Afrit]] spends the Fourth Age collecting magical objects across Aoaz. These contribute substantially to his strength, spiritual transformation, control over men, and supernatural defenses. The most important known object is Roka's [[Necklace of the Abyss]]. Other artifacts, including a ring forcibly removed by Eindil, also matter to the final defeat.
 
 | Artifact | Status | Proposed function |
 | --- | --- | --- |
@@ -2728,7 +2728,7 @@ The number, exact names and abilities of his other artifacts remain open.
 
 # Castle Yeldenne and Glo
 
-**Established:** [[Horos]], a Great Spirit and enormous armored knight, is lord of **Castle Yeldenne** in the [[Erdae and Its Regions|Cold Lands]]. He has guarded **Glo**, an extraordinary **green crystal**, through the ages. It contains the power of [[Glernaen]], a true New God of Power and Wisdom. Glo is also Horos's **literal crystalline heart**. His throne-hall drawing depicts the green crystal below Horos's figure.
+**Established:** [[Horos]], a Great Spirit and enormous armored knight, is lord of **Castle Yeldenne** in the [[Aoaz and Its Regions|Cold Lands]]. He has guarded **Glo**, an extraordinary **green crystal**, through the ages. It contains the power of [[Glernaen]], a true New God of Power and Wisdom. Glo is also Horos's **literal crystalline heart**. His throne-hall drawing depicts the green crystal below Horos's figure.
 
 In the late Fourth Age, [[Afrit]] arrives first to claim Glo and introduces himself as Aenor's king and god. Horos recognizes the intruder as Afrit, brother of [[Eindil]], and warns him that the crystal belongs to a worthy claimant. The two fight. Horos's strength and the power of the castle withstand Afrit's accumulated artifacts until Afrit teleports behind him and wounds him fatally at the neck. Eindil arrives and wounds Afrit, forcing him to retreat to his private dimension.
 
@@ -2814,7 +2814,7 @@ In the final Fourth Age palace confrontation, Afrit tries to flee to his own dim
 
 ## 17 October 2026: Cosmology and First Age
 
-- Established the Supreme Creator, Holy Seven, Old and New Gods, Great and Lesser Spirits, and Erdae's peoples.
+- Established the Supreme Creator, Holy Seven, Old and New Gods, Great and Lesser Spirits, and Aoaz's peoples.
 - Zol is an Old God limited by the Fading and the local magic. Volgan is a Great Spirit; Damned Spirits live deep underground.
 - Replaced an older thematic age scheme with the numbered Ages. First Age fixed at 1,675 years, beginning when Aen wins the War of Men.
 - Expanded Aenor's founding, western expansion, Volgan's invasion, Dardan, Edran's Grand Alliance, and Elzon's defense of the Dead Lands.
@@ -2896,7 +2896,7 @@ All these hooks are optional and should not be interpreted as events that alread
 ## Second Age optional development (17 October 2026)
 
 - [[Second Age Proposed Timeline]] now reflects the **established 2,133-year length**. Only internal phase dates and sample lifespan calculations remain proposals.
-- [[The Second Age of Erdae]] contains possible named events including the *Council of Empty Chairs*, *War of the Black Roads*, *Burning Gate of Nezer*, *War of the Hollow Crown*, and optional plague names.
+- [[The Second Age of Aoaz]] contains possible named events including the *Council of Empty Chairs*, *War of the Black Roads*, *Burning Gate of Nezer*, *War of the Hollow Crown*, and optional plague names.
 - Possible mechanisms for the [[The Return of Volgan|return from the Void]] include weakening the Dardan boundary and using magic Elzon drew from [[Zol]]. The mechanism is not established even though the return itself is.
 - *Night of a Thousand Oaths* is a proposed explanation for [[Afrits Ascension|Afrit's ascension]].
 - *Pale Regency* is a suggested later name for [[Elzons Order|Elzon's Order]].
@@ -2915,7 +2915,7 @@ The detailed Third Age includes suggested **Black Roots** as Elzon's attempt to 
 | Subject | Current authority | Superseded or proposed |
 | --- | --- | --- |
 | Aenor | Middle Kingdom of men in Middle Lands | Earlier kingdom name Rush |
-| Zol | God of Death and sole Old God in Erdae | Edvoid was the former placeholder |
+| Zol | God of Death and sole Old God in Aoaz | Edvoid was the former placeholder |
 | Volgan | Great Spirit, former servant of a New God | Not one of the Old Gods |
 | Elzon | Great Spirit and Great Necromancer | Earlier open question about rank resolved |
 | Varner | Lesser Spirit and wizard | Not a Great Spirit |
@@ -2936,7 +2936,7 @@ The detailed Third Age includes suggested **Black Roots** as Elzon's attempt to 
 
 The world creator's full Fourth Age map is the primary overview. The ocean between **West Lands** and **Middle Lands** must eventually be enlarged beyond its drawn gap. The Cold Lands, North Lands, Magical Lands, Dark Lands, Dead Lands, South Lands, East Lands, Triton's Islands, Islands of the South, Lands of the Sun and Zol's Mistake retain their established names.
 
-[[Canon Policy]] · [[Ages of Erdae]] · [[Horos Visual References]]
+[[Canon Policy]] · [[Ages of Aoaz]] · [[Horos Visual References]]
 
 ## Current name of Aen’s grandson
 
@@ -3006,7 +3006,7 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 Only the last date and full duration have been established. The exact year of Edran's death, Volgan's return and Afrit's Second Age ascension are open. The long age includes considerable cultural, agricultural, medical, and military development, not just uninterrupted suffering.
 
-[[The Second Age of Erdae]] · [[Second Age Canon Register]] · [[Ages of Erdae]]
+[[The Second Age of Aoaz]] · [[Second Age Canon Register]] · [[Ages of Aoaz]]
 
 ---
 
@@ -3017,13 +3017,13 @@ Only the last date and full duration have been established. The exact year of Ed
 ## Sources physically included in this vault
 
 - **[[ZIN Lore Compendium - original snapshot]]**, the original owner-supplied text. Preserved without changes. Its older names and chronology do not take priority over later instructions.
-- **[[Fourth Age Map of Erdae]]**, derived directly from the supplied region map. Its central sea between West Lands and Middle Lands is acknowledged as too narrow in the current drawing.
+- **[[Fourth Age Map of Aoaz]]**, derived directly from the supplied region map. Its central sea between West Lands and Middle Lands is acknowledged as too narrow in the current drawing.
 - **[[Horos Visual References]]**, using the owner's three original uploaded images of Horos's face, seated figure and full armor with blue sword.
 - Conversation-supplied accounts on 17 October 2026, providing the expanded cosmology, the First through Fourth Ages, Elzon, Volgan, Zol, Afrit, Eindil, and characters and events. These are consolidated in the notes because there is no separate source text for each chat message.
 
 ## Referenced sources not supplied in full
 
-The original compendium refers to Chaos Redux event 68 ZIN brief, Chaos Redux event 10 Death, 13 original Erdae geographical drawings and a 711-label names table, and an 18-document speculative Chaos Redux specification package. Only material represented in the compendium is included from those sources. They were not independently inspected for this vault update.
+The original compendium refers to Chaos Redux event 68 ZIN brief, Chaos Redux event 10 Death, 13 original Aoaz geographical drawings and a 711-label names table, and an 18-document speculative Chaos Redux specification package. Only material represented in the compendium is included from those sources. They were not independently inspected for this vault update.
 
 ## Editorial priority
 

@@ -4,11 +4,11 @@
 
 ## Purpose
 
-Each country belongs to a people of Erdae. The people sets the country's national character (manpower, attrition, combat strengths), its portraits and names, which units it can raise, and which focus branches and events it sees. This spec fixes the people list, what each people does in war, economy and politics, which vault peoples are still missing and when to add them, and the hooks other systems use.
+Each country belongs to a people of Aoaz. The people sets the country's national character (manpower, attrition, combat strengths), its portraits and names, which units it can raise, and which focus branches and events it sees. This spec fixes the people list, what each people does in war, economy and politics, which vault peoples are still missing and when to add them, and the hooks other systems use.
 
 ## Lore basis
 
-**Established (vault, *Peoples of Erdae*, *Hierarchy of Being*):**
+**Established (vault, *Peoples of Aoaz*, *Hierarchy of Being*):**
 
 - Beings below the spirits are **Great Folk** (immortal: elves, angels, demons) and **Common Folk** (mortal: men, dwarves). Only Common Folk are mortal.
 - The vault does **not** settle the rank, mortality or origin of giants, ents, yeti, mycids, arcanists, orcs, goblins, trolls, ogres, grave hosts or undead. Do not infer it from their names.

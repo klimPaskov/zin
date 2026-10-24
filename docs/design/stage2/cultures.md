@@ -12,7 +12,7 @@ const cultures = await buildCultures(staged, { countries /*, table: Map(tag|name
 //   ${peopleStartup}\n${cultures.startup}\n${uiStartup}
 ```
 
-`ctx` is `{ countries }` as every module receives it. Optional: `table` (owner overrides by tag or country name, for the `culture`, `culture2` and `faith` columns `countries.csv` will gain), `geography` (a `Set` of geography ids; default reads `data/geography/erdae.json`), `pictureOf` (idea picture resolver, tests), `quiet`. The module runs its own checks first and throws, listing every finding, when one fails. It returns `{ startup, model, mappings, coverage, warnings, counts }`; with today's data `counts` is 305 countries, 53 cultures, 106 culture ideas (53 first and 53 second culture), 38 faith spirits, 81 festivals, 469 triggers, 40 scripted effects.
+`ctx` is `{ countries }` as every module receives it. Optional: `table` (owner overrides by tag or country name, for the `culture`, `culture2` and `faith` columns `countries.csv` will gain), `geography` (a `Set` of geography ids; default reads `data/geography/aoaz.json`), `pictureOf` (idea picture resolver, tests), `quiet`. The module runs its own checks first and throws, listing every finding, when one fails. It returns `{ startup, model, mappings, coverage, warnings, counts }`; with today's data `counts` is 305 countries, 53 cultures, 106 culture ideas (53 first and 53 second culture), 38 faith spirits, 81 festivals, 469 triggers, 40 scripted effects.
 
 Dynamic tags (the 75 civil-war tags) have no row: a story effect gives them a culture with `zin_culture_set` (section 4).
 

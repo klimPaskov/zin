@@ -22,4 +22,4 @@ The Lost Cause prevails. Under [[Eindil]], it becomes a settlement seeking peace
 
 **Open:** the precise military, political, or supernatural mechanics leading to each ending. The supporting 18-document spec package was identified in the original snapshot as proposed, not automatically canonical.
 
-[[Kingdoms Factions and Conflicts]] · [[Ages of Erdae]]
+[[Kingdoms Factions and Conflicts]] · [[Ages of Aoaz]]

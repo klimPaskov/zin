@@ -7,9 +7,9 @@ start_year: 1
 end_year: 1675
 ---
 
-# The First Age of Erdae
+# The First Age of Aoaz
 
-**Length: 1,675 years.** The First Age begins with [[Aen]]'s victory in the centuries-long War of Men and ends with the conclusion of the first great war against [[Volgan]], after the [[Battle of Dardan]] and the failure of the attempted invasion of the [[Volgans Dead Lands|Dead Lands]]. The following [[Ages of Erdae|Second Age]] is the Age of Rebuilding.
+**Length: 1,675 years.** The First Age begins with [[Aen]]'s victory in the centuries-long War of Men and ends with the conclusion of the first great war against [[Volgan]], after the [[Battle of Dardan]] and the failure of the attempted invasion of the [[Volgans Dead Lands|Dead Lands]]. The following [[Ages of Aoaz|Second Age]] is the Age of Rebuilding.
 
 > **Canon distinction:** The broad sequence and the events, figures, places, relationships, and durations explicitly supplied by the owner on 17 October 2026 are **established**. Names invented below, specific military tactics, council decisions, rituals, battlefield phases, dates other than the length of the age, and the motives of newly described participants are **proposed narrative development**, not fixed canon.
 
@@ -33,9 +33,9 @@ The War of Men lasted **hundreds of years** and killed **many thousands**. Aen u
 
 Aenor's victory brought **centuries of peace** to the central realm. The first half of the age is broadly remembered as prosperous. Farming, trade, roads, shipbuilding, and exploration spread beyond the Middle Lands. Such prosperity was real inside much of Aenor, but frontier settlement was often violent.
 
-Aenoran explorers and settlers reached the [[Erdae and Its Regions|West Lands]]. **The West Lands already had inhabitants and kingdoms.** Their lands were not empty. Aenoran colonies, trade stations, and claims produced repeated wars with existing peoples, and the resulting hostility survives into the Fourth Age. The large sea separating West Lands and Middle Lands means that direct rule has always depended on ships, ports, local allies, and intermittent contact.
+Aenoran explorers and settlers reached the [[Aoaz and Its Regions|West Lands]]. **The West Lands already had inhabitants and kingdoms.** Their lands were not empty. Aenoran colonies, trade stations, and claims produced repeated wars with existing peoples, and the resulting hostility survives into the Fourth Age. The large sea separating West Lands and Middle Lands means that direct rule has always depended on ships, ports, local allies, and intermittent contact.
 
-The kingdom made an alliance with what older accounts call *North Earth*, now the **North Lands**. Traders established contact with the peoples of the [[Erdae and Its Regions|East Lands]], sometimes called Easterlings, as well as routes to more distant peoples. Voyages also reached the Cold Lands, southern islands, and other eastern and southern shores. Much of the current map ultimately derives from the exploration begun in this period.
+The kingdom made an alliance with what older accounts call *North Earth*, now the **North Lands**. Traders established contact with the peoples of the [[Aoaz and Its Regions|East Lands]], sometimes called Easterlings, as well as routes to more distant peoples. Voyages also reached the Cold Lands, southern islands, and other eastern and southern shores. Much of the current map ultimately derives from the exploration begun in this period.
 
 The **Dead Lands were exceptionally difficult to reach**. Their southern heat and dangerous surrounding seas obstructed ordinary expeditions. Men could chart distant coasts without knowing or controlling the lands beyond them. [[Zols Mistake|Zol's Mistake]] in the north was already a desolate and nearly unusable wasteland. Zol had arrived there long before Aen, and his local influence was comparatively dormant during the First Age.
 
@@ -63,9 +63,9 @@ Aenor's defenses failed. **The reigning king died, and Volgan's armies captured 
 
 ## 5. The new king and the Grand Alliance
 
-A new king emerged during the catastrophe. He became recognized as the **greatest king of men after Aen**. His defining achievement was the creation of the **Grand Alliance** against Volgan. He rallied men, elves, dwarves, giants, spirits, and other beings from across Erdae.
+A new king emerged during the catastrophe. He became recognized as the **greatest king of men after Aen**. His defining achievement was the creation of the **Grand Alliance** against Volgan. He rallied men, elves, dwarves, giants, spirits, and other beings from across Aoaz.
 
-The alliance drew from the **West Lands, North Lands, islands, Magical Lands, and even portions of the Dark Lands**. It also received forces from distant elf peoples. **Lorien**, the great king of the **Gala elves** from the [[Erdae and Its Regions|Lands of the Sun]], personally led a formidable army to join the war. The Aenoran king knew little of the Gala elves before contact was made. This was one of the first significant encounters between their courts. Elves from the Magical Lands and elsewhere also gathered.
+The alliance drew from the **West Lands, North Lands, islands, Magical Lands, and even portions of the Dark Lands**. It also received forces from distant elf peoples. **Lorien**, the great king of the **Gala elves** from the [[Aoaz and Its Regions|Lands of the Sun]], personally led a formidable army to join the war. The Aenoran king knew little of the Gala elves before contact was made. This was one of the first significant encounters between their courts. Elves from the Magical Lands and elsewhere also gathered.
 
 ### King Edran, with proposed details of his early reign
 
@@ -101,7 +101,7 @@ These concessions cost Edran support among hard-line Aenoran nobles. They make t
 
 **Rovek** prevents the Dark Lands from becoming a single evil faction. His soldiers know the terrain and the behavior of Volgan's allies, and they have a direct interest in defending their independence.
 
-**Senra** and the island peoples provide maritime supply and transport. Their effort is essential to bringing distant forces together across Erdae's stormy and separated seas.
+**Senra** and the island peoples provide maritime supply and transport. Their effort is essential to bringing distant forces together across Aoaz's stormy and separated seas.
 
 **Lorien** adds one of the most powerful armies in the war. He arrives as an ally, not an Aenoran subordinate. His relationship with Edran begins in respect and ends in serious disagreement.
 
@@ -127,7 +127,7 @@ Dardan was formerly fertile, with settlements and roads that could supply a huge
 
 **Day 12: The binding.** Ithren and other allied Great Spirits begin a dangerous rite beneath the battlefield. Volgan cannot simply be banished by a single spell. He has spent an immense portion of his active strength holding together his armies, summoning the deep beings, and forcing his will into the contested territory. The allied spirits exploit that concentration of power. To weaken him further, the Alliance must break the formations and bonds protecting him while the rite is prepared. Volgan's allied Great Spirits attempt to stop it.
 
-**Day 13: The fall of Volgan.** Edran launches the final attack to hold open the way for the allied spirits. Lorien, Sirael, Brunek, and the surviving commanders take heavy losses. Volgan's guard is separated from him, and Ithren's rite takes hold. Several Great Spirits combine their power to **strip Volgan of the strength he can exercise in Erdae and cast him into the Void**. His essential existence is not destroyed. The effort also damages those who perform it. Ithren is proposed to become bound to the sealed threshold at Dardan, while Maerul loses much of the ability to manifest. This preserves the established immortality of Great Spirits while giving their victory a serious cost.
+**Day 13: The fall of Volgan.** Edran launches the final attack to hold open the way for the allied spirits. Lorien, Sirael, Brunek, and the surviving commanders take heavy losses. Volgan's guard is separated from him, and Ithren's rite takes hold. Several Great Spirits combine their power to **strip Volgan of the strength he can exercise in Aoaz and cast him into the Void**. His essential existence is not destroyed. The effort also damages those who perform it. Ithren is proposed to become bound to the sealed threshold at Dardan, while Maerul loses much of the ability to manifest. This preserves the established immortality of Great Spirits while giving their victory a serious cost.
 
 Volgan's army disintegrates as a unified force. Some units flee, surrender, or fight to the end. Other forces remain organized under surviving commanders. **The battle kills millions** when the full armies, support hosts, supernatural destruction, and subsequent collapse are considered, though no precise casualty figure is canon. Cities and fields around Dardan are ruined and the area becomes a wasteland. The names of individual days and the described military sequence are proposals.
 
@@ -139,7 +139,7 @@ The [[Holy Seven]] and the supreme Creator do not intervene. [[Zol]] does not in
 
 ## 7. The failed conquest of the Dead Lands
 
-Volgan's banishment was an immense victory, but **the Dead Lands were not destroyed or conquered**. The king of Aenor wanted to enter and secure them so that Volgan's dominion could never threaten Erdae again. The elven leaders opposed the idea. The Alliance pressed forward anyway.
+Volgan's banishment was an immense victory, but **the Dead Lands were not destroyed or conquered**. The king of Aenor wanted to enter and secure them so that Volgan's dominion could never threaten Aoaz again. The elven leaders opposed the idea. The Alliance pressed forward anyway.
 
 **Elzon** had gathered and prepared the surviving forces of Volgan. The invasion met fierce resistance and was **driven back with heavy losses**. The conditions of the Dead Lands and the exhaustion of the Alliance made further conquest too costly. The attack was abandoned. Many elves died in the campaign, and the king's decision badly damaged relations between men and elves, particularly given how much their forces had already sacrificed at Dardan.
 
@@ -200,10 +200,10 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 
 ## Linked articles
 
-[[Aen]] · [[Battle of Dardan]] · [[Grand Alliance]] · [[Lorien]] · [[Elzon]] · [[Ages of Erdae]] · [[Timeline]] · [[The Ainu]] · [[Eindil]] · [[Middle Lands and Aenor]] · [[Volgan]] · [[Damned Spirits]] · [[Fourth Age Map of Erdae]]
+[[Aen]] · [[Battle of Dardan]] · [[Grand Alliance]] · [[Lorien]] · [[Elzon]] · [[Ages of Aoaz]] · [[Timeline]] · [[The Ainu]] · [[Eindil]] · [[Middle Lands and Aenor]] · [[Volgan]] · [[Damned Spirits]] · [[Fourth Age Map of Aoaz]]
 
 ## Retrospective revelation: Afrit's hidden role
 
 **Established later in the owner's Second Age account:** [[Afrit]] played a significant but unrecognized part in Volgan's First Age defeat by assembling demons, spirits, men, and elves against him. His motive was to weaken both Volgan and the survivors so that he could rise in the Second Age. This adds a covert layer to the Grand Alliance's victory without replacing its established military and spiritual achievements. How he concealed his alliances and how much the principal commanders suspected are undecided.
 
-[[The Second Age of Erdae]] · [[Afrits Ascension]]
+[[The Second Age of Aoaz]] · [[Afrits Ascension]]

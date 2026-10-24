@@ -25,14 +25,14 @@ The focus tree that drives these systems is [../05_focus_trees/major/aenor.md](.
 | The Golden King founds and first leads the Lost Cause, against dark powers and for prestige | established | *The Lost Cause* |
 | The Golden King is Afrit's puppet; Afrit secretly engineers his death; the killer stays hidden until uncovered | established | *Golden King*, compendium |
 | After his death a succession war involves the Golden Court, the Free Dominions, Afrit's supporters and Eindil's popular host; the victor is a possible ending, not settled history | established | *Kingdoms Factions and Conflicts* |
-| Afrit is proclaimed King of Aenor under his public name; most obey; dissenters are silenced | established (public name Aurevan proposed) | *The Fourth Age of Erdae* |
+| Afrit is proclaimed King of Aenor under his public name; most obey; dissenters are silenced | established (public name Aurevan proposed) | *The Fourth Age of Aoaz* |
 | Afrit leaves a council member in charge of Aenor while he goes north | established (name Merovan proposed) | *Afrits Hidden Council* |
 | The Lost Cause survives in altered form; court branches suppress Eindil, frontier and scholarly branches help him | established direction; branch detail proposed | *The Lost Cause* |
 | Westerners take the capital; Afrit abandons Aenor for an eastern host | established | *Fourth Age Canon Register* |
-| Survivors hail Eindil; he is crowned King of Aenor after Afrit's death, ending the Fourth Age | established | *The Fourth Age of Erdae* |
+| Survivors hail Eindil; he is crowned King of Aenor after Afrit's death, ending the Fourth Age | established | *The Fourth Age of Aoaz* |
 | Aenor leads the Middle Kingdom Concord of 26 satellites; Cursed Lands and Bloody Forest resist | established working table | *Great Powers and Relations* |
 | The Charters of Parim (4A 3), the Lost Cause founded 4A 1741, the Golden Court completed 4A 1733, the King's death in Mistfall 4A 1750 | proposed dates | *Fourth Age Chronology* |
-| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748* |
+| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
 | Prince Eronel of Arcedor, a collateral cousin, is the Golden Court's candidate | proposed | [02_lore/02_characters.md](../02_lore/02_characters.md); owner's short list 2 |
 | Every number, variable, threshold, charter type, camp mechanic, collective leader and event below | **proposed** | this spec |
 

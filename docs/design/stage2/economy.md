@@ -1,6 +1,6 @@
 # Stage 2 integration note: economy, resources, buildings and the energy system
 
-Module `tools/content/modules/economy.mjs`, data `tools/content/data/economy.json` (resources, energy, buildings, state categories, regions, spirits, treasury, start industry, sprite list) and `economy_text_core.json`, `economy_text_ui.json`, `economy_text_supply.json`, `economy_text_modifiers.json` (Erdae text by group), test `tools/content/economy.test.mjs` (43 tests, in the `test` script). Spec: `docs/specs/03_gameplay/02_economy.md`; defines rows are in `tools/content/data/defines.json`.
+Module `tools/content/modules/economy.mjs`, data `tools/content/data/economy.json` (resources, energy, buildings, state categories, regions, spirits, treasury, start industry, sprite list) and `economy_text_core.json`, `economy_text_ui.json`, `economy_text_supply.json`, `economy_text_modifiers.json` (Aoaz text by group), test `tools/content/economy.test.mjs` (43 tests, in the `test` script). Spec: `docs/specs/03_gameplay/02_economy.md`; defines rows are in `tools/content/data/defines.json`.
 
 ## 1. The call to add to `build.mjs`
 
@@ -33,9 +33,9 @@ Kept vanilla (disposition keep, no file written): `common/buildings/00_buildings
 
 ## 3. The energy system (master plan P5)
 
-P5 says "fuel for the forges (charcoal and coal)". The Ready economy spec, the glossary (entries `energy`, `fuel`) and the text sweep spec (line 408: P5 "reads Provisions and Stored Essence") settle it, and the banned list forbids `coal`, `fuel` and `energy`. The Erdae version:
+P5 says "fuel for the forges (charcoal and coal)". The Ready economy spec, the glossary (entries `energy`, `fuel`) and the text sweep spec (line 408: P5 "reads Provisions and Stored Essence") settle it, and the banned list forbids `coal`, `fuel` and `energy`. The Aoaz version:
 
-| Engine | Erdae | Detail |
+| Engine | Aoaz | Detail |
 | --- | --- | --- |
 | energy (`NGame.ENERGY_RESOURCE = "coal"`) | **Provisions**, fed by **Grain** (the `coal` key) | 9 Provisions per Grain extracted (`RESOURCE_TO_ENERGY_COEFFICIENT`, unchanged) on top of a base |
 | `BASE_COUNTRY_ENERGY_PRODUCTION` 10 | **12** | a realm of ten buildings is fed by the base alone; the base alone feeds about 18 (assumed demand model below) |
@@ -43,7 +43,7 @@ P5 says "fuel for the forges (charcoal and coal)". The Ready economy spec, the g
 | `energy_infrastructure` | **Granaries** | unchanged engine effect: -0.075 Provisions needed per Road level in the state |
 | `industrial_infrastructure` | **Mine and Quarry Roads** | +10 per cent store yield per Road level |
 | `NAI.NUM_FACTORIES_IN_STATE_TO_WANT_ENERGY_REDUCTION` 6 | **3** | armouries are a third of the workshops, so six in one state is rare |
-| `NAI.TOTAL_STATE_EXTRACTED_RESOURCES_FOR_BUILDING_RESOURCE_CAP_BUILDING` 30 | **12** | Erdae deposits are small |
+| `NAI.TOTAL_STATE_EXTRACTED_RESOURCES_FOR_BUILDING_RESOURCE_CAP_BUILDING` 30 | **12** | Aoaz deposits are small |
 
 **Effect of a shortfall** (the engine's, worded in the alert): each Guild Workshop yields less and the Works speed falls; each Armoury yields less and the Forge Output falls; each Shipwright yields less and the Yard Output falls. The gap between powered and unpowered output stays the game's (5 against 4 for workshops, 4.5 against 3.5 for armouries, 2.5 against 2 for yards): hunger slows the realm, it does not stop it.
 
@@ -53,13 +53,13 @@ P5 says "fuel for the forges (charcoal and coal)". The Ready economy spec, the g
 
 ## 4. Sprite keys the art track needs
 
-Strips: `GFX_resources_strip` (7 frames 27x27 in the key order above, `gfx/interface/resources_strip.dds`) and `GFX_missing_resources_strip`; `GFX_buildings_strip` (31 frames 46x46, `gfx/interface/buildings/building_icon_strip.dds`; the 17 used buildings get Erdae icons by their `icon_frame`, the rest a plain plate). Text icons: `energy_texticon` (Provisions), `energy_consumption_texticon` (Grain eaten), `out_of_power_texticon` (empty sack), `power_balance_texticon`, `fuel_texticon` (vial), `civ_factory`, `civ_factory_output`, `mil_factory`, `nav_dockyard_texticon`, `production_cost`, `navprod_cost`, `consumer_goods_texticon` (Folk Wares), `convoy_texticon` (Merchant Fleet), `supply_texticon`, `supply_hub_texticon`, `naval_supply_hub_texticon`, `infrastructure_texticon`, `railways_texticon`, `train_texticon`, `resources_to_market_icon`, `market_subsidy_small_texticon`. Top bar: `fuel_icon`, `topbar_convoys`, `industrial_capacity_icon`, `consumer_goods_icon`. Alert frames of `GFX_global_alert_icons`: `alert_lack_of_power`, `alert_lack_of_resources`, `alert_out_of_fuel`, `alert_free_civilian_factories`, `alert_free_military_factories`, `alert_free_naval_dockyards`, `alert_low_supply`, `alert_very_low_supply`, `alert_base_low_supply`, `alert_base_very_low_supply`, `alert_trade_import_unfullfilled`. Idea pictures: none new (catalog icons `GFX_idea_zin_<picture>`). The same list is in `economy.json` under `sprites`.
+Strips: `GFX_resources_strip` (7 frames 27x27 in the key order above, `gfx/interface/resources_strip.dds`) and `GFX_missing_resources_strip`; `GFX_buildings_strip` (31 frames 46x46, `gfx/interface/buildings/building_icon_strip.dds`; the 17 used buildings get Aoaz icons by their `icon_frame`, the rest a plain plate). Text icons: `energy_texticon` (Provisions), `energy_consumption_texticon` (Grain eaten), `out_of_power_texticon` (empty sack), `power_balance_texticon`, `fuel_texticon` (vial), `civ_factory`, `civ_factory_output`, `mil_factory`, `nav_dockyard_texticon`, `production_cost`, `navprod_cost`, `consumer_goods_texticon` (Folk Wares), `convoy_texticon` (Merchant Fleet), `supply_texticon`, `supply_hub_texticon`, `naval_supply_hub_texticon`, `infrastructure_texticon`, `railways_texticon`, `train_texticon`, `resources_to_market_icon`, `market_subsidy_small_texticon`. Top bar: `fuel_icon`, `topbar_convoys`, `industrial_capacity_icon`, `consumer_goods_icon`. Alert frames of `GFX_global_alert_icons`: `alert_lack_of_power`, `alert_lack_of_resources`, `alert_out_of_fuel`, `alert_free_civilian_factories`, `alert_free_military_factories`, `alert_free_naval_dockyards`, `alert_low_supply`, `alert_very_low_supply`, `alert_base_low_supply`, `alert_base_very_low_supply`, `alert_trade_import_unfullfilled`. Idea pictures: none new (catalog icons `GFX_idea_zin_<picture>`). The same list is in `economy.json` under `sprites`.
 
 ## 5. Text
 
 857 replaced keys (the installed game defines them; `localisation/replace`) and 38 new keys. Placeholders, colour codes and text icons follow the vanilla key (tested); no value equals the vanilla value (C5); no banned error or review word appears. **English only**; the nine other languages copy it at stage 4.
 
-**Overlap with the text sweep.** `data/text/*.json` already writes 115 of these keys (the energy and fuel alerts, the free-building and resource alerts, the supply, railway and fuel keys of `core`, four map mode keys). By default the module yields every key the sweep's `lit`, `neutral` and `engine` lists hold, so no key is defined twice. The sweep's `alerts.energy.json` says the energy section is the economy engineer's: the Erdae wording, glossary-driven, is already there and agrees with this note (Provisions, Grain, Stored Essence); the reference wording of this slice stays in `economy_text_core.json`. The institutions slice may also write the Great Fairs (group `market`) and the four circle names (`facilities`): switch the group off with `skipLoc` if it does.
+**Overlap with the text sweep.** `data/text/*.json` already writes 115 of these keys (the energy and fuel alerts, the free-building and resource alerts, the supply, railway and fuel keys of `core`, four map mode keys). By default the module yields every key the sweep's `lit`, `neutral` and `engine` lists hold, so no key is defined twice. The sweep's `alerts.energy.json` says the energy section is the economy engineer's: the Aoaz wording, glossary-driven, is already there and agrees with this note (Provisions, Grain, Stored Essence); the reference wording of this slice stays in `economy_text_core.json`. The institutions slice may also write the Great Fairs (group `market`) and the four circle names (`facilities`): switch the group off with `skipLoc` if it does.
 
 Not written here (other modules): window titles (`PRODUCTION_PRODUCTION_LABEL`, `CONSTRUCTION_VIEW_LABLE`, `LOGISTICS_LOGISTICS_LABEL`, `TRADE_TRADE`: the interface spec), railway-gun, carrier, rocket and missile keys, licences, agents, ranks, and the 22 vanilla landmark texts (unreachable: no landmark loads).
 
@@ -83,7 +83,7 @@ Not written here (other modules): window titles (`PRODUCTION_PRODUCTION_LABEL`, 
 - Technologies slice: `technologies.md` expects the seven gate buildings and `radar_station`, `anti_air_building`, `stronghold_network`, `air_base` to stay defined; they do (kept file). No ZIN technology may enable `synthetic_refinery`, `fuel_silo`, `rocket_site`, the reactors, dams or canals.
 - Warfare: stage `common/units/equipment` before this call so `script_enums.txt` and the tokens file list the ZIN archetypes. If the warfare module also writes those two files the builder stops with a duplicate; one of the two must give them up.
 - State pass (politics step): resources from the region weights in `economy.json` (`regions`, `worldTotals`, `specialSites`, `startIndustry`); Grain (`coal`) in particular.
-- Interface: the Erdae bar and Aenor's panel read `zin_aenor_gold` and `constant:zin_economy.gold_max`.
+- Interface: the Aoaz bar and Aenor's panel read `zin_aenor_gold` and `constant:zin_economy.gold_max`.
 
 ## 8. Known limits
 

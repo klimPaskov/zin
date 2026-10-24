@@ -1,6 +1,6 @@
 # The Lands of the Sun: Gala, Lorien and the Sunhot Realms
 
-**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Dates are Erdae engine dates and depend on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)); today the game still starts in 1936.
+**Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 3. **Phase:** 3. Dates are Aoaz engine dates and depend on the calendar ([../00_foundation/01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md)); today the game still starts in 1936.
 
 ## Purpose
 
@@ -36,16 +36,16 @@ The Gala Elves' focus tree is [../05_focus_trees/major/gala.md](../05_focus_tree
 **Established** (vault):
 
 - Lorien is the king of the **Gala elves** of the Lands of the Sun, of extraordinary age and power. He led the Gala elves in Edran's Grand Alliance in the First Age and fought at Dardan. He remembers the War of Men, Dardan, the collapse of Aenor and Elzon's reign (*Lorien*, *Grand Alliance*).
-- Edran's attack on the Dead Lands brought needless elven deaths and a long estrangement; the elves refused to fight Elzon's war for Aenor. Lorien still cares for the fate of all Erdae and distrusts human rulers who turn a common victory into lasting dominion (*Lorien*, *The Elven Refusal*, *The Fourth Age of Erdae* V).
-- Late in the Fourth Age Lorien receives a stranger from the Islands of the South, speaks with him for weeks, names him **Eindil, son of Ein, grandson of Aen**, uses a vision to warn of the catastrophe, sends him to Horos at Yeldenne for Glo, and gives him a remarkable ship, armour, a sword and a crew of western friends, island navigators and Gala elves (*Lorien*, *Fourth Age Canon Register*, *The Journey of Eindil*, *The Fourth Age of Erdae* V).
-- Afrit's hidden agents operated even in the Lands of the Sun; one reported that the stranger had left Lorien with a ship (*The Fourth Age of Erdae* VI).
-- During Zol's brief embodiment Lorien returns with ancient lords and spirits to defend all the living peoples, challenges Zol directly and **dies** in the struggle, helping force the Old God to withdraw. He came not to restore an Aenoran empire but because an Old God's victory would destroy the freedom of elves and men alike (*Lorien*, *The Fourth Age of Erdae* XIII).
-- The **Sunhot elves** live in the Lands of the Sun; they are over three metres tall and among the strongest and most peaceful peoples of Erdae (*Peoples of Erdae*). God Forest Keepers are also elves (*Peoples of Erdae*).
-- The Lands of the Sun lie in the far south-west and run beyond the southern map edge; named places include Elvana, Igara, Hengyang, the Sea of Gods, Heaven, Flame and Godland (*Erdae and Its Regions*).
+- Edran's attack on the Dead Lands brought needless elven deaths and a long estrangement; the elves refused to fight Elzon's war for Aenor. Lorien still cares for the fate of all Aoaz and distrusts human rulers who turn a common victory into lasting dominion (*Lorien*, *The Elven Refusal*, *The Fourth Age of Aoaz* V).
+- Late in the Fourth Age Lorien receives a stranger from the Islands of the South, speaks with him for weeks, names him **Eindil, son of Ein, grandson of Aen**, uses a vision to warn of the catastrophe, sends him to Horos at Yeldenne for Glo, and gives him a remarkable ship, armour, a sword and a crew of western friends, island navigators and Gala elves (*Lorien*, *Fourth Age Canon Register*, *The Journey of Eindil*, *The Fourth Age of Aoaz* V).
+- Afrit's hidden agents operated even in the Lands of the Sun; one reported that the stranger had left Lorien with a ship (*The Fourth Age of Aoaz* VI).
+- During Zol's brief embodiment Lorien returns with ancient lords and spirits to defend all the living peoples, challenges Zol directly and **dies** in the struggle, helping force the Old God to withdraw. He came not to restore an Aenoran empire but because an Old God's victory would destroy the freedom of elves and men alike (*Lorien*, *The Fourth Age of Aoaz* XIII).
+- The **Sunhot elves** live in the Lands of the Sun; they are over three metres tall and among the strongest and most peaceful peoples of Aoaz (*Peoples of Aoaz*). God Forest Keepers are also elves (*Peoples of Aoaz*).
+- The Lands of the Sun lie in the far south-west and run beyond the southern map edge; named places include Elvana, Igara, Hengyang, the Sea of Gods, Heaven, Flame and Godland (*Aoaz and Its Regions*).
 
-**Proposed in the vault** (stay proposed): the **Mirror of First Rain** as Lorien's spring in an old elven courtyard, showing true traces of the past and possible futures, never an infallible future; Lorien's warning that prophecies can frighten people into the deeds they predict; the islanders' saying "when the tales of men grow too old for any man to explain, carry them to Gala"; the Lands of Light as the leading Sunhot realm; the Sunhot realms honouring Lorien's memory (*Mirror of First Rain (proposed)*, *The Fourth Age of Erdae* IV–V, *The Campaign of 4A 1748*).
+**Proposed in the vault** (stay proposed): the **Mirror of First Rain** as Lorien's spring in an old elven courtyard, showing true traces of the past and possible futures, never an infallible future; Lorien's warning that prophecies can frighten people into the deeds they predict; the islanders' saying "when the tales of men grow too old for any man to explain, carry them to Gala"; the Lands of Light as the leading Sunhot realm; the Sunhot realms honouring Lorien's memory (*Mirror of First Rain (proposed)*, *The Fourth Age of Aoaz* IV–V, *The Campaign of 4A 1748*).
 
-**Open, and kept open:** the relationship between the Gala elves and the Sunhot elves. The vault carries a proposal; this spec neither uses nor states it. No text calls the Sunhot elves Gala's kin, subjects or lords, or the reverse. The roster's separate countries **Gala** and **North Gala** have no stated link to the Gala Elves. Who succeeds Lorien and what Gala becomes after him is open (*The Fourth Age of Erdae*, follow-up 6; *Fifth Age Seeds*, seed 5); play may offer choices, text never states one as history. Who the "ancient lords and spirits" are is not named.
+**Open, and kept open:** the relationship between the Gala elves and the Sunhot elves. The vault carries a proposal; this spec neither uses nor states it. No text calls the Sunhot elves Gala's kin, subjects or lords, or the reverse. The roster's separate countries **Gala** and **North Gala** have no stated link to the Gala Elves. Who succeeds Lorien and what Gala becomes after him is open (*The Fourth Age of Aoaz*, follow-up 6; *Fifth Age Seeds*, seed 5); play may offer choices, text never states one as history. Who the "ancient lords and spirits" are is not named.
 
 **Proposed in this spec:** Lorien's counsel, the Noon Council and the Noon League, the Mirror's clarity and visions, the warnings and their fear, the old lords as a count, the Old Powers Stand, the steward choice, every name of a decision, spirit and event, every date and every number.
 
@@ -67,7 +67,7 @@ The roster's Lands of the Sun (`countries.json` scan "Sunhot") hold 47 countries
 | **The Lands of Light** | `sun_elves` | Largest Sunhot realm (15 states); presides over the Noon Council (proposed); tier B tree `regional_the_lands_of_light` |
 | Poyang, Godland, Hengyang, Elvana, Heaven | `sun_elves` | Tier B Sunhot realms. Elvana and Igara are commercial rivals (roster) |
 | 35 other Sunhot realms (Igara among them) | `sun_elves` | Shared tree `shared_lands_of_the_sun` |
-| Goodin | `men` | Goodin Sunfolk (*Peoples of Erdae*); tier B tree; not a Council member (it may win a guest's seat through its tree) |
+| Goodin | `men` | Goodin Sunfolk (*Peoples of Aoaz*); tier B tree; not a Council member (it may win a guest's seat through its tree) |
 | Goodton, Guuden | `men` | Shared tree; not Council members |
 | Gala, North Gala | `elves` | Shared tree (tier C); no stated link to the Gala Elves |
 
@@ -347,7 +347,7 @@ Counsel costs are a `custom_cost_trigger` on `zin_gala_counsel`, with the spend 
 
 ### Game rules, defines, interface
 
-No new rule. `zin_rule_ai_elves` and `zin_rule_historical_path` (through `zin_rules_is_historical`) govern the AI ([../00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md)). No defines. The interface spec gives the Gala Elves a row in the Erdae bar (*proposed*, emitted once this mechanic is built; visible for this spec's `zin_sun_is_gala`): Counsel (`zin_gala_counsel`), Clarity (`global.zin_mirror_clarity`) and Old Lords (`zin_gala_old_lords` of 5), opening the Realm panel ([../07_interface/01_interface.md](../07_interface/01_interface.md)). There is no Gala panel; the decisions' tooltips also show counsel and clarity (`[?zin_gala_counsel]`, `[?global.zin_mirror_clarity]`). The row only reads these variables.
+No new rule. `zin_rule_ai_elves` and `zin_rule_historical_path` (through `zin_rules_is_historical`) govern the AI ([../00_foundation/05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md)). No defines. The interface spec gives the Gala Elves a row in the Aoaz bar (*proposed*, emitted once this mechanic is built; visible for this spec's `zin_sun_is_gala`): Counsel (`zin_gala_counsel`), Clarity (`global.zin_mirror_clarity`) and Old Lords (`zin_gala_old_lords` of 5), opening the Realm panel ([../07_interface/01_interface.md](../07_interface/01_interface.md)). There is no Gala panel; the decisions' tooltips also show counsel and clarity (`[?zin_gala_counsel]`, `[?global.zin_mirror_clarity]`). The row only reads these variables.
 
 ## AI
 

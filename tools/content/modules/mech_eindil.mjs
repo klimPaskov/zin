@@ -81,7 +81,7 @@ export async function buildEindilJourney(staged, ctx = {}) {
   // ---------------------------------------------------------------------------------------------- stage floors and the scripts
   const floors = data.stages.filter(s => s.floor).map(s => ({ n: s.n, key: s.key, date: s.floor, sets: Object.fromEntries(PACES.map(p => [p.key, shiftedDays(s.floor, p.value)])) }));
   for (const s of data.stages) { loc.add(`zin_eindil_stage_${s.n}`, s.name); loc.add(`zin_eindil_stage_${s.n}_desc`, s.desc); }
-  loc.add('zin_eindil_stage_0', 'Asleep'); loc.add('zin_eindil_stage_0_desc', 'Nothing in Erdae stirs that the chronicles know of.');
+  loc.add('zin_eindil_stage_0', 'Asleep'); loc.add('zin_eindil_stage_0_desc', 'Nothing in Aoaz stirs that the chronicles know of.');
   const S = eindilScripts({ data, TAG, C, floors, roster, dep: (n, k, o) => scripts.depend(n, k, o) });
   for (const t of S.triggers) { scripts.add(t.name, 'trigger', t.body); defs.triggers.push(t.name); }
   for (const e of S.effects) { scripts.add(e.name, 'effect', e.body); defs.effects.push(e.name); }

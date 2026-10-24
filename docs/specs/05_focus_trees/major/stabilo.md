@@ -219,7 +219,7 @@ AI acceptance of `zin_stabilo.30`: 40, +30 with `zin_east_in_crisis`, +20 if sta
 | `kneel_with_open_ledgers` | Kneel with Open Ledgers | gold_for_the_deliverer / contracts_with_the_temple | – | 3,10 | 35 | Avail: `zin_afrit_king_of_east`; not `zin_afrit_dead`; not refuser; if not client: call zin_stabilo_tree_kneel_offer (fires the Afrit spec's offer `zin_afrit.51`; its kneel option calls `zin_east_prepare_kneel` and makes Stabilo a subject with `zin_autonomy_eastern_client`); add_spirit treasury_of_the_east | 500 when available |
 | `paymaster_of_the_host` | Paymaster of the Eastern Host | kneel_with_open_ledgers | – | 2,11 | 70 | Avail: client; flag zin_stabilo_pays_host; equipment zin_arms_equipment 2000 | 60 |
 | `debts_of_the_refusers` | The Debts of the Refusers | kneel_with_open_ledgers | – | 4,11 | 70 | Avail: client; at war with a country with `zin_east_free_crown`; call zin_stabilo_seize_refuser_debts | 60 when available |
-| `the_kings_mint` | The King's Mint | paymaster_of_the_host / debts_of_the_refusers | – | 3,12 | 70 | Avail: `zin_afrit_returned` or `zin_afrit_claims_erdae`; political_power 100; add_spirit kings_mint | 100 when available |
+| `the_kings_mint` | The King's Mint | paymaster_of_the_host / debts_of_the_refusers | – | 3,12 | 70 | Avail: `zin_afrit_returned` or `zin_afrit_claims_aoaz`; political_power 100; add_spirit kings_mint | 100 when available |
 | `close_the_kings_books` | Close the King's Books | the_kings_mint | – | 3,13 | 35 | Avail: `zin_afrit_dead`; remove_spirit treasury_of_the_east; remove_spirit kings_mint; political_power 50; tooltip "Postondoroth must answer for its loans." | 500 when available |
 
 ### Branch 8: Paymaster of the Free Crowns

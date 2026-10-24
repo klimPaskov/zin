@@ -10,12 +10,12 @@ Every focus, national spirit and event in ZIN names its art by a short key from 
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace | owner-fixed | *The Campaign of 4A 1748* |
+| Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
 | People know the Deliverer, not Afrit; his true form is not shown to the world before the reveal | established | *Fourth Age Canon Register* |
 | Zol has no body; nothing may name, rank or show his servants; the three orders are Great Spirits, Lesser Spirits and New Gods | established | *Zol*, *Spirits and Their Ranks*, [zols_mistake.md](../04_mechanics/zols_mistake.md) |
 | Horos: yellow-green armour, blue eyes, thorn-like helm, large blue sword, green crystal (Glo) in his breast. The owner's drawings are not used as generation references until the owner agrees (decision A6; owner question 14); pictures follow the established text | established | *Horos Visual References* |
 | Golbran is small, purple and humanoid; no other feature is established | established | *Golbran* |
-| Dragons come from Dragon Mountain and form no country | established | *Peoples of Erdae* |
+| Dragons come from Dragon Mountain and form no country | established | *Peoples of Aoaz* |
 | The Necklace of the Abyss is established; the Ring of Doors, Crown of Witnesses and Bracelet of the First Seal are proposed names | mixed | *Afrit's Collected Artifacts* |
 | The Mirror of First Rain, the Houses of the First Light, the Lantern Chain, the Bridge of the Three Oaths, griffins | proposed | vault notes and specs |
 | Every key, every description and every picture subject below | **proposed** | this spec |
@@ -294,7 +294,7 @@ No icon shows Eindil.
 | Key | Shows |
 | --- | --- |
 | `compass_rose` | A compass rose on parchment |
-| `map_unrolled` | An unrolled map of Erdae's coasts (no readable names) |
+| `map_unrolled` | An unrolled map of Aoaz's coasts (no readable names) |
 | `ship_voyage` | A ship far out at sea |
 | `footprints_snow` | One line of footprints across snow |
 | `ice_cavern` | An empty blue ice cave |
@@ -307,7 +307,7 @@ No icon shows Eindil.
 | `lone_sword` | A sword standing in snow |
 | `cliff_edge` | A cliff edge above mist |
 | `exile_court` | A court gathered in tents |
-| `generic` | A blank shield with an Erdae knot: fallback |
+| `generic` | A blank shield with an Aoaz knot: fallback |
 
 **Total: 175 keys** (including the fallback).
 

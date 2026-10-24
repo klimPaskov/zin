@@ -52,7 +52,7 @@ The specs were written in parallel, so some of them use different names or value
 | S4 | **Zol** is led by an emblem, "The Will of Zol", which says nothing about who administers the Mistake. His armies have numbered hosts, not named commanders. |
 | S5 | **Andos Enda** is not in the Leren Compact at the start (the Elven Refusal); Lerendor can court it. |
 | S6 | **Dragons** use the air layer. |
-| S7 | **Interface:** the meters sit in a new Erdae bar under the flag. Only Aenor sees the Golden Court's gold. |
+| S7 | **Interface:** the meters sit in a new Aoaz bar under the flag. Only Aenor sees the Golden Court's gold. |
 | S8 | **Validation:** 60 days in the Linux run for phases 1 and 2; one full year at the end of every later phase. |
 | S9 | **Compiler extensions** requested by the specs are accepted: any condition in `allow_branch`; `ROOT`, `FROM` and `OVERLORD` as targets of `for_country`, `event_for` and `invite`; timed country flags; full mechanic idea ids in spirit effects; an event id base so a tree and its mechanic can share a namespace. |
 | S10 | **The content builder moves into the ZIN repository** (`tools/content/`), so the public mod can be rebuilt from itself. Done in phase 1. |
@@ -172,3 +172,18 @@ The stage-2 slices (technologies, economy, diplomacy, institutions, warfare, cul
 | L1 | The owner authorises expanding the lore: new history, dynasties, cities, cultures, faiths, wars, treaties and figures that the vault never mentions are wanted. Expansions are labelled ZIN-proposed in the specs; the vault's established facts are never contradicted and its open questions stay open. |
 | L2 | A place the lore names is not automatically central. Castle Yeldenne is a castle in the far north of the Cold Lands, and the settlement around it is an ordinary northern town; nothing makes it a capital or a hub of a country. Capitals, hubs and key sites are chosen from geography, history and each country's own story. |
 | L3 | The vault's storyline is the main historical direction, as the Second World War is in the base game: it is what happens when nobody diverges. The player and the AI can diverge at every beat, and every system (events, decisions, focus trees, mechanics, AI, endings) stays coherent, dynamic and replayable when they do. The story rule (historical, plausible, free) and the beat-by-beat divergence table in `04_mechanics/10_alternate_history.md` govern this. |
+
+### Owner corrections of 24 October 2026
+
+These are the owner's canonical corrections (record: `docs/zin-handoff/01-CONTEXT-AND-CANON.md` section 2). They override the vault and every older spec, including the rows above. Traceability of the renames: `docs/lore/names_traceability.md`.
+
+| Id | Decision |
+| --- | --- |
+| K1 | The main setting is named **Aoaz** (formerly Erdae; Arda on the bestiary cards); the small neighbouring continent formerly called Aoaz is named **Erdae**. A name change only: no land, people or history moves. Applied on 24 October 2026 by `tools/migrations/aoaz_name_exchange.mjs`; the text scan fails on Erdae and Arda in staged text unless an allowance says a text means the neighbour. |
+| K2 | The Great Wall of Aenor is an enormous **natural mountain range** between the Middle Lands and the Magical Lands, with passes, valleys, snowlines and the routes they allow. Fortified passes and watchtowers may exist where history explains them; the barrier itself is mountains. Master plan decisions P4 (named gates with level-5 forts) and P13 (the Great Wall segment model) are void. |
+| K3 | Aoaz has **twelve New Gods**, and the twelve months are named after them, one god per month. **Glernaen**, god of power and wisdom, is the mightiest New God. The purpose of the number twelve and Afrit's place relative to the twelve are owner questions Q-01 and Q-02; the god-month calendar waits for them. |
+| K4 | **Zol does not appear** in the War of the Last Crowns. The being who appears is Zol's most loyal servant, a **Great Spirit**, whose identity is owner question Q-03. Everything else in the war stays. `zin_zol_manifested` and its dependents are re-designed once Q-03 is answered. |
+| K5 | **Bastian** is another well-known wizard of the realm of men; Varner is one practitioner among many traditions. Bastian's nature and era are owner question Q-09. |
+| K6 | **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz; not every devil served Zol. Their immortality and revival and the demon king's name are owner question Q-07. |
+| K7 | **Vez'nan** (any spelling) is an old name of **Volgan**; every reference means Volgan and the text says Volgan. **Edvoid** gets a new name (owner question Q-10), with the "Ocean of Edvoid" label renamed with it. |
+| K8 | The wider world (Erdu, Dunda, Haven, Cerio, Lao, and Erdae the neighbour) is a layered mystery: authorial truth, local belief and rumour are kept apart, and nothing hidden reaches public text (requirement R-33). |

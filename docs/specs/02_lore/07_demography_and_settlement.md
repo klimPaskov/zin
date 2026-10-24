@@ -5,7 +5,7 @@
 
 ## Purpose
 
-The map holds 624 million people today: Zol alone holds 37 million, the Cold Lands 200 million and the East Lands 185 million, while Aenor, the richest realm, holds 12.7 million [foundation spec 04, section 7]. That is a generator artefact. This spec says where Erdae's people actually live, how many there are, how they sit in terrain and on rivers, which settlements stand where, and how the numbers become states, manpower, resources, infrastructure and factories. A country's strength follows its land, its rivers and its trade, not a table.
+The map holds 624 million people today: Zol alone holds 37 million, the Cold Lands 200 million and the East Lands 185 million, while Aenor, the richest realm, holds 12.7 million [foundation spec 04, section 7]. That is a generator artefact. This spec says where Aoaz's people actually live, how many there are, how they sit in terrain and on rivers, which settlements stand where, and how the numbers become states, manpower, resources, infrastructure and factories. A country's strength follows its land, its rivers and its trade, not a table.
 
 All numbers are **proposed (P)** design targets. They count the living. The dead of Volgan and Zol are raised by mechanics and are not part of the population.
 
@@ -155,7 +155,7 @@ Only cities and above are named in this spec (the 100 settlements of section 8).
 ### Middle Lands
 
 - **People:** 24.50 M (28.3% of the world) in 30 countries and 96 states; 255 thousand per state. Urban share 24%; largest city 380 thousand.
-- **Density:** Great Lake basin and plains: the best fed land of Erdae; about 40 to 55 people per square kilometre on the plains and up to 110 beside the Aenar, the Great River and the Great Lake shore.
+- **Density:** Great Lake basin and plains: the best fed land of Aoaz; about 40 to 55 people per square kilometre on the plains and up to 110 beside the Aenar, the Great River and the Great Lake shore.
 - **Dominant cultures:** Lake Aenorans 68%, Selen Rangers 9%, March-Folk 8%.
 - **Minorities and mixed lands:** Aenor holds many dominions of its own culture; the Selen, Kilinti and Hiloron border has men, ents and giants living side by side; the south marches mix march-folk with refugees from the Dead Lands coast; the Veiled and Redbark are enclaves inside Aenor's roads.
 

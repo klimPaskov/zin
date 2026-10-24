@@ -4,7 +4,7 @@
 
 ## Purpose
 
-The Cold Lands are the largest landmass of Erdae and the least known. Coldor rules the frozen interior and the western ports from Fandanar and leads the Northern Accord with Horidor; Isengard refuses it. Around them live two dozen clan realms, the yeti of the Yeti Lands, the ice giants of Titanos, the maritime republic of Windwaith and the free towns of the coast. In the far north-west, beyond any court's knowledge, Eindil sleeps in the ice. In Mp'E, the frozen north, Horos keeps the Castle of Yeldenne.
+The Cold Lands are the largest landmass of Aoaz and the least known. Coldor rules the frozen interior and the western ports from Fandanar and leads the Northern Accord with Horidor; Isengard refuses it. Around them live two dozen clan realms, the yeti of the Yeti Lands, the ice giants of Titanos, the maritime republic of Windwaith and the free towns of the coast. In the far north-west, beyond any court's knowledge, Eindil sleeps in the ice. In Mp'E, the frozen north, Horos keeps the Castle of Yeldenne.
 
 This spec defines the mechanic that makes the Cold Lands their own world:
 
@@ -23,12 +23,12 @@ The focus tree [../05_focus_trees/major/coldor.md](../05_focus_trees/major/coldo
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| The Cold Lands lie in the north-west, reach off the west and north edges of the map, and are the largest landmass | established | *Erdae and Its Regions* |
-| Coldor, Isengard, Horidor, the Yeti Lands and the Windwaith arm are in the Cold Lands | established | *Erdae and Its Regions* |
+| The Cold Lands lie in the north-west, reach off the west and north edges of the map, and are the largest landmass | established | *Aoaz and Its Regions* |
+| Coldor, Isengard, Horidor, the Yeti Lands and the Windwaith arm are in the Cold Lands | established | *Aoaz and Its Regions* |
 | Coldor is the northern great power of the frozen interior and the western ports; seat Fandanar; Northern Accord with Horidor; rival Isengard | established working table (constructed seat name) | *Great Powers and Relations* |
-| Titanos ice giants and yeti are peoples of Erdae; their rank, mortality and origin are not settled | established (taxonomy open) | *Peoples of Erdae* |
+| Titanos ice giants and yeti are peoples of Aoaz; their rank, mortality and origin are not settled | established (taxonomy open) | *Peoples of Aoaz* |
 | Eindil wakes in the Cold Lands without memory; local tribes find and nurse him; West Lands travellers take him south | established | *Eindil*, *Fourth Age Canon Register* |
-| The far north-west, ancient ice, beyond most of Aenor's knowledge | established wording | *The Fourth Age of Erdae* §IV |
+| The far north-west, ancient ice, beyond most of Aenor's knowledge | established wording | *The Fourth Age of Aoaz* §IV |
 | Horos keeps the Castle of Yeldenne in the Cold Lands; Afrit's party and Eindil reach it in the late Fourth Age; Eindil goes on through snow after an ambush | established | *Castle of Yeldenne and Glo*, *The Journey of Eindil* |
 | Aenoran voyages reached the Cold Lands in the First Age | established | history spec digest |
 | Coldor's kings unite the frozen interior in 4A 850; Isengard refuses | proposed | *Fourth Age Chronology* |

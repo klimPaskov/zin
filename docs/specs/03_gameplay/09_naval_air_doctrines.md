@@ -16,8 +16,8 @@ It does three things. It states what the naval and air layers become (hulls, por
 | --- | --- |
 | Western fleets cross the much wider central sea and take the capital. The Fourth Age map is read with a wider central sea. | *War of the Last Crowns*, *Canon Policy* |
 | The Dead Lands are hot, storm-girt and hard to reach by sea. | *Volgan's Dead Lands* |
-| Cities grew around the Great Lake, ports expanded, and Aenor traded with the islands and the North and West Lands. | *The Fourth Age of Erdae* |
-| Dragons come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can, through corruption. Eindil returns on a dragon. | *Peoples of Erdae*, *Fourth Age Canon Register* |
+| Cities grew around the Great Lake, ports expanded, and Aenor traded with the islands and the North and West Lands. | *The Fourth Age of Aoaz* |
+| Dragons come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can, through corruption. Eindil returns on a dragon. | *Peoples of Aoaz*, *Fourth Age Canon Register* |
 | Lerendor and the North Lands sit at the Narrow Strait; the old alliance is the Treaty of the Narrow Strait. | *Great Powers and Relations*, *War of the Last Crowns* |
 
 ### Proposed elsewhere in the vault (used, still proposals)
@@ -43,7 +43,7 @@ S6 (dragons use the air layer), R1 (the sky rule `zin_rule_skies` sits in `RULE_
 
 ### 1. What the naval and air layers become
 
-| Vanilla concept | Erdae | Keys and notes |
+| Vanilla concept | Aoaz | Keys and notes |
 | --- | --- | --- |
 | Destroyers and light cruisers (screen ships) | **War Galleys** | Hull `zin_hull_galley`, sub-unit `zin_ship_galley`, type `screen_ship` |
 | Heavy cruisers, battle cruisers, battleships (capital ships) | **Warships** and **Great Warships** | `zin_hull_warship`, `zin_hull_great_warship`; `zin_ship_warship`, `zin_ship_great_warship`; type `capital_ship` |
@@ -134,8 +134,8 @@ Black Sails need no crew: the module is hidden until the Zol mechanic grants the
 ### 3. Ports, supply and fleets
 
 - **Harbours** (`naval_base`) are the home of fleets: ships are supplied by the harbour's level, repair there, and a fleet needs a harbour within its range to rest. Rules unchanged (base cost 5,000, +1,000 per level). Names: a quay, a harbour, a mole, by size; coastal forts are Sea Forts.
-- **Victualling Yards** (`naval_supply_hub`) extend range and cut at-sea supply use; **the Admiralty** (`naval_headquarters`) gives commanders a share of the experience of fleets in their region (`NAVAL_HEADQUARTERS_EXPERIENCE_SCALE`). Both stay with their engine rules; their text is Erdae's.
-- **Task forces** keep the engine's missions, with Erdae names: Patrol, Strike, Raid the Lanes, Escort the Cogs, Support a Landing, Hold in Harbour. Naval training stays the engine's training mission (paying Fleet Valour at no fuel cost); Sea Trials ([08_institutions.md](08_institutions.md) §3.1) add a floor.
+- **Victualling Yards** (`naval_supply_hub`) extend range and cut at-sea supply use; **the Admiralty** (`naval_headquarters`) gives commanders a share of the experience of fleets in their region (`NAVAL_HEADQUARTERS_EXPERIENCE_SCALE`). Both stay with their engine rules; their text is Aoaz's.
+- **Task forces** keep the engine's missions, with Aoaz names: Patrol, Strike, Raid the Lanes, Escort the Cogs, Support a Landing, Hold in Harbour. Naval training stays the engine's training mission (paying Fleet Valour at no fuel cost); Sea Trials ([08_institutions.md](08_institutions.md) §3.1) add a floor.
 - **Merchant Fleets** (`convoy`). Cogs (`convoy_0`, Timber 1) carry trade, supply and landings. Ocean cogs (`convoy_1`) need `zin_tech_deep_water_hulls` and cross the central sea. A wide-sea trade or invasion needs many; raiding them is the Corsairs' trade. The Dead Lands' storm belt pulses damage on any fleet not of the Dead Lands (world systems spec), which `zin_tech_storm_rigging` halves.
 - **Landings.** A naval invasion needs sea soldiers, cogs, a harbour in range and, for a crossing of the wide sea, `zin_tech_deep_water_hulls`. Boarding Party hulls and `naval_invasion_capacity` (techs and Landfall rewards) raise the cap. The western crossing of the Western Crossing mechanic uses exactly this path.
 - **Lerendor's strait.** A closed-strait rule is the Lerendor mechanic's; this spec adds no sea-zone rule.
@@ -170,9 +170,9 @@ The categories are this spec's addition to warfare §8 (the sub-units name them 
 
 #### 4.4 Air missions
 
-The engine offers a mission only to wings whose equipment can do it (stats and types). The intended sets, with Erdae names:
+The engine offers a mission only to wings whose equipment can do it (stats and types). The intended sets, with Aoaz names:
 
-| Engine mission | Erdae name | Dragon flight | Griffin riders |
+| Engine mission | Aoaz name | Dragon flight | Griffin riders |
 | --- | --- | :---: | :---: |
 | Air Superiority | Hold the Sky | yes (weak) | yes |
 | Interception | Turn Back the Wings | yes | yes |
@@ -342,7 +342,7 @@ Each row is a disposition row of `tools/content/data/vanilla/dispositions.json`;
 
 ### 10. The naval AI
 
-The engine's AI navy uses fleet templates (made of task force templates), goals (objective types with priority ranges) and task force templates (missions and compositions of **sub-unit names**). All three folders are replaced, so ZIN writes them in the engine's format with the Erdae sub-unit names (`zin_ship_galley`, `zin_ship_warship`, `zin_ship_great_warship`, `zin_ship_raider`).
+The engine's AI navy uses fleet templates (made of task force templates), goals (objective types with priority ranges) and task force templates (missions and compositions of **sub-unit names**). All three folders are replaced, so ZIN writes them in the engine's format with the Aoaz sub-unit names (`zin_ship_galley`, `zin_ship_warship`, `zin_ship_great_warship`, `zin_ship_raider`).
 
 **Task forces** (`zin_taskforce.txt`; `allowed` always, `ai_will_do` factor 1, `keep_updated` yes where noted):
 
@@ -448,7 +448,7 @@ All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.
 3. **Dragon mastery multiplier.** 25 is a start value. **Proposal, in use:** tune in the Linux run (acceptance 7).
 4. **Warded hulls and dark ships.** Dark powers use the same hull list; Black Sails are Zol's alone. **Proposal, in use:** as written; no text links Zol's black ships to Volgan's raiders.
 5. **Griffin doctrines under `dragons_only`.** Hidden entirely (as written) or shown but locked? **Proposal, in use:** hidden.
-6. **Mine warfare.** Absent. If the owner wants it later, it needs an Erdae form (chains, fire-rafts) and a mine technology. **Proposal, in use:** none.
+6. **Mine warfare.** Absent. If the owner wants it later, it needs an Aoaz form (chains, fire-rafts) and a mine technology. **Proposal, in use:** none.
 
 ## Names this spec registers
 

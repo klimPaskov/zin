@@ -10,7 +10,7 @@ The vault stays canon. This file only indexes it. Where a mechanic spec owns the
 
 ## Lore basis
 
-Vault: *Canon Policy*, *Names and Retcons*, *Erdae and Its Regions*, *Fourth Age Map of Erdae*, *Middle Lands and Aenor*, *Zols Mistake*, *Volgans Dead Lands*, *Nether*, *Abyss*, *Selen*, *Peoples of Erdae*, *Spirits and Their Ranks*, *Old Gods*, *New Gods*, *Holy Seven*, the politics notes, the artifact notes, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Erdae*, *Open Questions*. Map: `docs/name_table.csv` (711 drawn labels) and `localisation/replace/world_l_english.yml`. Decisions: [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) D3, D4, N10, N16, O5, O7, S4, S11.
+Vault: *Canon Policy*, *Names and Retcons*, *Aoaz and Its Regions*, *Fourth Age Map of Aoaz*, *Middle Lands and Aenor*, *Zols Mistake*, *Volgans Dead Lands*, *Nether*, *Abyss*, *Selen*, *Peoples of Aoaz*, *Spirits and Their Ranks*, *Old Gods*, *New Gods*, *Holy Seven*, the politics notes, the artifact notes, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Aoaz*, *Open Questions*. Map: `docs/name_table.csv` (711 drawn labels) and `localisation/replace/world_l_english.yml`. Decisions: [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) D3, D4, N10, N16, O5, O7, S4, S11.
 
 Labels: **E** established; **W** working map-design table; **P** proposed; **O** open; **S** superseded (never in player text).
 
@@ -22,7 +22,7 @@ Labels: **E** established; **W** working map-design table; **P** proposed; **O**
 2. Never use **Einendil**, **Edvoid**, **Rush**, **Gorbat**, **Klinti** or **Huhun** in player text.
 3. The game font draws only Windows-1252. **Šodolôrō** contains ō, which it cannot draw. Game text writes **Šodolôro** (S11). Š and ô are in Windows-1252 and in every font ZIN uses (checked 19 October 2026 in the installed `gfx/fonts`). Specs and design files keep the canonical spelling.
 4. Possessives keep the apostrophe: Zol's Mistake, Triton's Islands, Afrit's (after the reveal only).
-5. Regions are capitalised as names: the Cold Lands, the Middle Lands. "Erdae" is the continent; "ZIN" is the wider universe and never appears in player text as a place.
+5. Regions are capitalised as names: the Cold Lands, the Middle Lands. "Aoaz" is the continent; "ZIN" is the wider universe and never appears in player text as a place.
 6. Ages: "the Fourth Age"; dates as "1 Thaw, 4A 1748" in prose. Numbered ages are 1A, 2A, 3A, 4A.
 7. Proposed names are written as names in game text (players do not see labels), but every proposed name has one localisation key so the owner can replace it.
 
@@ -30,7 +30,7 @@ Labels: **E** established; **W** working map-design table; **P** proposed; **O**
 
 | Name | St. | Notes |
 | --- | --- | --- |
-| Erdae | E | The continent |
+| Aoaz | E | The continent |
 | Cold Lands | E | North-west; largest landmass; reaches off the west and north edges |
 | West Lands | E | South of the Cold Lands; drawn sheet headed "North Earth" (S as a name) |
 | Triton's Islands | E | West of the West Lands, around the Pupor Ocean; drawn as "Tornado Islands" (S) |
@@ -127,7 +127,7 @@ Drawn labels that carry a superseded word get new names in game text: **Crown Oc
 | --- | --- | --- |
 | He Who Was, Is and Will Be | E | The supreme Creator; almost unknown to mortals |
 | The Holy Seven | E | Creators of the Old and New Gods; few believe they existed. Mythic names (Seven Before Names, Seven Who Never Were…) are P and unselected |
-| Old Gods | E | Zol is the only one in Erdae |
+| Old Gods | E | Zol is the only one in Aoaz |
 | New Gods | E | Younger gods; Glernaen is one. Names and number mostly O |
 | Great Spirit, Lesser Spirit | E | The two spirit ranks. "Sovereign Spirit" is rejected: never use it |
 | Great Folk, Common Folk | E | Immortal and mortal peoples |

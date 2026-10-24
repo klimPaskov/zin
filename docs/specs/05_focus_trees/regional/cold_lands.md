@@ -20,11 +20,11 @@ Each tree makes its country play differently inside the [Cold Lands mechanic](..
 
 ## Lore basis
 
-**Established** (vault: *Erdae and Its Regions*, *Peoples of Erdae*, *Great Powers and Relations*, *The Fourth Age of Erdae*, *Fourth Age Canon Register*):
+**Established** (vault: *Aoaz and Its Regions*, *Peoples of Aoaz*, *Great Powers and Relations*, *The Fourth Age of Aoaz*, *Fourth Age Canon Register*):
 
 - The Cold Lands lie in the north-west, reach off the west and north edges of the map and are the largest landmass. Coldor, Isengard, Horidor, the Yeti Lands and the Windwaith arm are there.
 - Coldor leads the Northern Accord with Horidor; Isengard is Coldor's rival (working table).
-- Titanos ice giants and the yeti are peoples of Erdae. Their rank, mortality and origin are open.
+- Titanos ice giants and the yeti are peoples of Aoaz. Their rank, mortality and origin are open.
 - Eindil wakes in the Cold Lands without memory; local tribes find and nurse him; West Lands travellers take him south.
 - Horos keeps the Castle of Yeldenne in the Cold Lands.
 - Aenoran voyages reached the Cold Lands in the First Age.

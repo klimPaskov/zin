@@ -7,7 +7,7 @@ period: Second Age
 
 # Second Age Progress and Recovery
 
-The [[The Second Age of Erdae|Second Age]] lasted **2,133 years**, making it longer than the First Age's 1,675 years. It is remembered as the Dark Age and Age of Long Grief because repeated wars, famine, diseases, raids, and corruption prevented long, uninterrupted recovery after Dardan. Yet it was **not entirely a period of suffering**.
+The [[The Second Age of Aoaz|Second Age]] lasted **2,133 years**, making it longer than the First Age's 1,675 years. It is remembered as the Dark Age and Age of Long Grief because repeated wars, famine, diseases, raids, and corruption prevented long, uninterrupted recovery after Dardan. Yet it was **not entirely a period of suffering**.
 
 **Established achievements:** Aenor and other regions made substantial progress in **warfare and military technology, disease treatment and cures, farming and famine prevention**. These discoveries and methods improved the survival of later generations and contributed to Aenor's ability to recover in the Fourth Age.
 
@@ -24,4 +24,4 @@ These techniques are inventions of people living during the Second Age. Although
 
 [[King Edran]], the great king of the [[Grand Alliance]], guides rebuilding in the early Second Age but eventually **dies of disease**. His exact age, year of death, and the particular illness remain undecided. His death is one episode in a long series of human successions and renewals, not proof that Aenor collapses immediately.
 
-[[The Second Age of Erdae]] · [[Third Age Canon Register]] · [[The Fourth Age of Erdae]]
+[[The Second Age of Aoaz]] · [[Third Age Canon Register]] · [[The Fourth Age of Aoaz]]

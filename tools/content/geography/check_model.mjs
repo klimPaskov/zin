@@ -1,4 +1,4 @@
-// Converter-independent checker of the geography model of Erdae (tools/content/data/geography/erdae.json).
+// Converter-independent checker of the geography model of Aoaz (tools/content/data/geography/aoaz.json).
 //
 // It reads the model in its own dialect (GeoJSON-like features with `geometry`) and asserts the physical and naming
 // rules of docs/specs/01_map/05_geography_model.md and docs/design/world/geography_review.md without going through
@@ -15,7 +15,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-export const DEFAULT_MODEL_PATH = path.join(here, '../data/geography/erdae.json');
+export const DEFAULT_MODEL_PATH = path.join(here, '../data/geography/aoaz.json');
 
 export const FRAME = Object.freeze({ widthPx: 5120, heightPx: 2560 });
 /** The open-sea band that no land feature of the model may enter (map pipeline decision P2): 4% east and west, 64 px north and south. */

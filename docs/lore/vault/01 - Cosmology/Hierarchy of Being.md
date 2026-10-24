@@ -6,7 +6,7 @@ updated: 2026-10-17
 
 # Hierarchy of Being
 
-The ZIN universe contains an extraordinarily remote divine level above the ordinary gods and spirits. The ordinary five orders remain useful for describing the beings inhabitants of Erdae might encounter.
+The ZIN universe contains an extraordinarily remote divine level above the ordinary gods and spirits. The ordinary five orders remain useful for describing the beings inhabitants of Aoaz might encounter.
 
 ## Cosmic level
 
@@ -27,7 +27,7 @@ The ZIN universe contains an extraordinarily remote divine level above the ordin
 
 ## Gods are not equivalent to worshipped beings
 
-Ordinary Erdae people can mistake powerful Lesser Spirits for Gods, and powerful spirits can receive worship. This does not establish that they belong to the divine order. The idea that worship alone cannot *create* godhood remains a sensible **working rule**, not a formal universal law yet.
+Ordinary Aoaz people can mistake powerful Lesser Spirits for Gods, and powerful spirits can receive worship. This does not establish that they belong to the divine order. The idea that worship alone cannot *create* godhood remains a sensible **working rule**, not a formal universal law yet.
 
 ## Power is not the same as practical control
 
@@ -36,6 +36,6 @@ Ordinary Erdae people can mistake powerful Lesser Spirits for Gods, and powerful
 ## Unknowns
 
 - Whether the Holy Seven were directly created by the supreme Creator, and how that act occurred.
-- How many Old and New Gods exist beyond Erdae.
+- How many Old and New Gods exist beyond Aoaz.
 - How the immortal Great Folk originally came into being.
 - What order, if any, should contain the restless dead.

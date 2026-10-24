@@ -12,4 +12,4 @@ Aurevan begins as the name of the celebrated Deliverer credited with ending Elzo
 
 Alternative public names worth considering later: **Aurevan**, **Aelorin**, **Arvedan**, **Vaelorian**, **Elarion**. These are naming options, not simultaneous aliases.
 
-[[Afrit]] · [[Golden King]] · [[The Fourth Age of Erdae]]
+[[Afrit]] · [[Golden King]] · [[The Fourth Age of Aoaz]]

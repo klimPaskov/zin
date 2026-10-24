@@ -16,7 +16,7 @@ Volgan's realm includes grave hosts, Netherborn demons, orcs, ogres, monster cla
 
 The dead here and the dead in [[Zols Mistake|Zol's Mistake]] have no settled taxonomy or relationship. Volgan is not an Old God, and his necromancy should not automatically be taken as authority over Death itself.
 
-[[Erdae and Its Regions]] · [[Great Powers and Relations]] · [[Peoples of Erdae]]
+[[Aoaz and Its Regions]] · [[Great Powers and Relations]] · [[Peoples of Aoaz]]
 
 ## First Age campaign
 
@@ -24,11 +24,11 @@ The dead here and the dead in [[Zols Mistake|Zol's Mistake]] have no settled tax
 
 **Important distinction:** Mirolon is Volgan's First Age conquest target and his rival in the *working* Fourth Age political table. Its political status must not be treated as identical across all ages.
 
-[[The First Age of Erdae]] · [[Battle of Dardan]]
+[[The First Age of Aoaz]] · [[Battle of Dardan]]
 
 ## Second Age additions
 
-The [[Nether]] is established in the **south of the Dead Lands** as the domain or residence of the **King of Demons**. [[Agon]] and other demons are active there during the Second Age, and portals permit attacks across Erdae. The [[Abyss]] is also in the Dead Lands and is associated with [[Roka]] and the [[Necklace of the Abyss]], which Afrit takes and uses during the **Fourth Age**.
+The [[Nether]] is established in the **south of the Dead Lands** as the domain or residence of the **King of Demons**. [[Agon]] and other demons are active there during the Second Age, and portals permit attacks across Aoaz. The [[Abyss]] is also in the Dead Lands and is associated with [[Roka]] and the [[Necklace of the Abyss]], which Afrit takes and uses during the **Fourth Age**.
 
 The [[Nether]], [[Abyss]], and the **Void** that imprisoned Volgan are distinct named places or realms, with any deeper connections still undecided.
 

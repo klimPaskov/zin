@@ -30,7 +30,7 @@ updated: 2026-10-18
 
 ## Metaphysical distinctions
 
-- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Erdae's local magic constrain manifestation. His late Fourth Age body is exceptional, temporary and costly.
+- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. His late Fourth Age body is exceptional, temporary and costly.
 - Great Spirit, Lesser Spirit, New God, Old God and Great Folk are distinct ranks or orders. Sovereign Spirit is not a separate rank.
 - [[Afrit]] is publicly worshipped as a New God and effectively attains godlike power. Whether he belongs to the original divinity created by the Holy Seven remains undetermined.
 - [[Elzon]] is a Great Spirit and Great Necromancer. He permanently dies after the Third Age. [[Volgan]] loses his manifested body in the Fourth Age, but the complete destruction of his essence has not yet been established.

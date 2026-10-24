@@ -41,7 +41,7 @@ export const UNIT_STATS = new Set(['max_organisation', 'max_strength', 'default_
 export const TERRAINS = new Set(['desert', 'forest', 'hills', 'jungle', 'marsh', 'mountain', 'plains', 'snow', 'urban', 'river', 'fort', 'amphibious']);
 export const TERRAIN_STATS = new Set(['attack', 'defence', 'movement']);
 const LOGIC = new Set(['AND', 'OR', 'NOT', 'if', 'else', 'else_if', 'limit', 'hidden_trigger', 'custom_trigger_tooltip']);
-// Modifiers of systems Erdae does not have (fuel, nuclear weapons, rockets, jets, tanks, paratroopers): never written by a technology or a doctrine.
+// Modifiers of systems Aoaz does not have (fuel, nuclear weapons, rockets, jets, tanks, paratroopers): never written by a technology or a doctrine.
 const MODERN_MODIFIER = /fuel|nuclear|nuke|rocket|jet_|paratroop|helicopter|synthetic|armored_car|tank/;
 const WINDOWS_1252 = /^[\x20-\x7E -ÿ]*$/;
 
@@ -302,7 +302,7 @@ export async function prepareModel({ countries, assignment, externalSharing }, r
       for (const [terr, st] of Object.entries(b.terrain ?? {})) { if (!TERRAINS.has(terr)) P(`${where}: unknown terrain ${terr}`); for (const k of Object.keys(st)) if (!TERRAIN_STATS.has(k)) P(`${where}: ${terr} stat ${k} is not attack, defence or movement`); }
     }
   };
-  const checkModifiers = (mods, where) => { for (const [k, v] of Object.entries(mods ?? {})) { if (!docs.modifiers.has(k)) P(`${where}: unknown modifier ${k}`); else if (MODERN_MODIFIER.test(k)) P(`${where}: modifier ${k} belongs to a system Erdae does not have`); if (k === 'ap_attack') P(`${where}: piercing is closed to technologies (the deathless invariant)`); if (typeof v !== 'number') P(`${where}: modifier ${k} must be a number`); } };
+  const checkModifiers = (mods, where) => { for (const [k, v] of Object.entries(mods ?? {})) { if (!docs.modifiers.has(k)) P(`${where}: unknown modifier ${k}`); else if (MODERN_MODIFIER.test(k)) P(`${where}: modifier ${k} belongs to a system Aoaz does not have`); if (k === 'ap_attack') P(`${where}: piercing is closed to technologies (the deathless invariant)`); if (typeof v !== 'number') P(`${where}: modifier ${k} must be a number`); } };
   const checkEquipment = (id, where) => {
     const m = id.match(/^(.+)_(\d)$/);
     if (!m || !ids.archetypes.includes(m[1])) { P(`${where}: equipment ${id} is not a variant of a known archetype`); return; }
@@ -364,7 +364,7 @@ function prepareDoctrines(model, raw, P) {
   const xpOf = { land: 'army', naval: 'navy', air: 'air', special_forces: 'army' };
   const resolveTrigger = (name, where) => { if (name && !['always', 'never'].includes(name) && !/^zin_rules_skies_(present|beasts)$/.test(name)) P(`${where}: unknown trigger ${name}`); };
   const checkEffects = (o, where) => {
-    for (const k of Object.keys(o?.modifiers ?? {})) { if (!docs.modifiers.has(k)) P(`${where}: unknown modifier ${k}`); else if (MODERN_MODIFIER.test(k)) P(`${where}: modifier ${k} belongs to a system Erdae does not have`); if (k === 'ap_attack') P(`${where}: piercing is closed to doctrines (the deathless invariant)`); }
+    for (const k of Object.keys(o?.modifiers ?? {})) { if (!docs.modifiers.has(k)) P(`${where}: unknown modifier ${k}`); else if (MODERN_MODIFIER.test(k)) P(`${where}: modifier ${k} belongs to a system Aoaz does not have`); if (k === 'ap_attack') P(`${where}: piercing is closed to doctrines (the deathless invariant)`); }
     for (const [k, v] of Object.entries(o?.modifiers ?? {})) if (typeof v !== 'number') P(`${where}: modifier ${k} must be a number`);
     for (const b of o?.blocks ?? []) {
       const ok = ids.subUnits.includes(b.target) || ids.zinCategories.includes(b.target) || docs.unitTags.has(b.target);

@@ -414,8 +414,8 @@ test('The build is deterministic: a second build yields the same bytes', async (
 // ---------- negative tests ----------
 test('Negative: a modifier the game does not define fails the build', async () => {
   await rejects(r => { r.civil.technologies.find(t => t.key === 'water_wheels').modifiers = { zin_not_a_modifier: 0.1 }; }, /unknown modifier zin_not_a_modifier/);
-  await rejects(r => { r.civil.technologies.find(t => t.key === 'water_wheels').modifiers = { fuel_gain_factor: 0.1 }; }, /fuel_gain_factor belongs to a system Erdae does not have/);
-  await rejects(r => { r.doctrines.grand[0].act.modifiers = { army_fuel_consumption_factor: -0.1 }; }, /army_fuel_consumption_factor belongs to a system Erdae does not have/);
+  await rejects(r => { r.civil.technologies.find(t => t.key === 'water_wheels').modifiers = { fuel_gain_factor: 0.1 }; }, /fuel_gain_factor belongs to a system Aoaz does not have/);
+  await rejects(r => { r.doctrines.grand[0].act.modifiers = { army_fuel_consumption_factor: -0.1 }; }, /army_fuel_consumption_factor belongs to a system Aoaz does not have/);
 });
 test('Negative: a duplicate technology key fails the build', async () => {
   await rejects(r => { r.civil.technologies.push({ ...r.civil.technologies[0] }); }, /duplicate technology zin_tech_dressed_stone/);

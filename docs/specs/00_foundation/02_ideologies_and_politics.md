@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Define how Erdae is governed in play: the four ideologies, their stances, the parties every country shows, elections, rulers and advisors, how popularity moves, and how the story changes governments. Every other system reads politics through the names in this file and in the [shared contract](../04_mechanics/00_shared_contract.md).
+Define how Aoaz is governed in play: the four ideologies, their stances, the parties every country shows, elections, rulers and advisors, how popularity moves, and how the story changes governments. Every other system reads politics through the names in this file and in the [shared contract](../04_mechanics/00_shared_contract.md).
 
 ## Lore basis
 
@@ -18,7 +18,7 @@ Define how Erdae is governed in play: the four ideologies, their stances, the pa
 - Not every orc, troll or demon serves Volgan. Dark Lands peoples have their own rulers.
 - The three endings: the Lost Cause, Children of Volgan, the Ashen Throne.
 
-**Owner-fixed start (18 October 2026):** the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace.
+**Owner-fixed start (18 October 2026):** the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
 
 **Decided (INTEGRATION_DECISIONS):** D1 (the Worshipdom starts Light, Sanctuary, party "The Faithful of the Deliverer", ruler shown as Aurevan the Deliverer), D5 (Aenor 0% Shadow), D6 (Dominion and Shadow `generate_wargoal_tension = 0.25`), S4 (Zol's emblem leader "The Will of Zol"), N7 (trait ids), S11 (game text writes Šodolôro), N14 (the Deliverer's Faithful are Light, `zin_light_sanctuary`, until `zin_afrit_revealed` and Shadow after; the crowned Aenor of the Faithful is never `zin_dom_divine` before the reveal).
 
@@ -30,7 +30,7 @@ Define how Erdae is governed in play: the four ideologies, their stances, the pa
 
 The engine keys stay so the AI and defines keep working. They are renamed and re-themed (see [CONVENTIONS](../CONVENTIONS.md)).
 
-| Key | Name | Means in Erdae | Countries at start (in game, 19 October 2026) | Map colour |
+| Key | Name | Means in Aoaz | Countries at start (in game, 19 October 2026) | Map colour |
 | --- | --- | --- | ---: | --- |
 | `democratic` | Light | Rule by consent, kinship or guardianship: councils, elder houses, wardens, sanctuaries | 83 (with the Worshipdom) | today (214, 196, 120); target (196, 214, 236) pale sky, *proposed*, so it no longer looks like Dominion |
 | `fascism` | Dominion | Rule by right of crown, court, captain or conquest | 10 | (178, 132, 46) bronze |

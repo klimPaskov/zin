@@ -6,7 +6,7 @@ Live, editable version: https://claude.ai/code/artifact/abded304-8e43-4ef2-8121-
 
 ## Overview
 
-ZIN is a larger fictional universe; Erdae is one of its continents and the setting of the ZIN map mod. This compendium gathers everything established so far about ZIN and Erdae in one place, using the current region names, so it can be extended into a full history.
+ZIN is a larger fictional universe; Aoaz is one of its continents and the setting of the ZIN map mod. This compendium gathers everything established so far about ZIN and Aoaz in one place, using the current region names, so it can be extended into a full history.
 
 - **What is settled** is written as plain statements. Anything inferred from the hand-drawn maps, or from older names, is marked as such.
 - **Where to write**: add or rewrite freely. The History timeline and Open questions sections are deliberately left for you to fill.
@@ -30,10 +30,10 @@ Your Chaos Redux brief for event 68, "ZIN", is the canon. The 18-document Chaos 
 
 | Source | Status | What it holds |
 | --- | --- | --- |
-| Chaos Redux Vault, Event Specs, "068 - ZIN.md" (a copy also sits in the chaos_redux mod, docs/specs/068_zin_specs/sources) | Canon | Ages of Erdae, the Ainu line, Volgan and Afrit, Rush and the Golden King, Einendil, Horos and Glo, peoples and monsters, the three factions and endings |
+| Chaos Redux Vault, Event Specs, "068 - ZIN.md" (a copy also sits in the chaos_redux mod, docs/specs/068_zin_specs/sources) | Canon | Ages of Aoaz, the Ainu line, Volgan and Afrit, Rush and the Golden King, Einendil, Horos and Glo, peoples and monsters, the three factions and endings |
 | Chaos Redux spec package, 068_zin_specs (18 documents and registries) | Proposed design | Rush institutions, dominion charters, succession camps, country packages, troop and artifact figures |
 | Chaos Redux event 10, "Death" | Canon for Zol | Zol, the God of Death, "a face-like absence" |
-| Erdae drawings (13 colored sheets) and the 711-label name table | Canon geography | Every place name; uncertain readings are flagged |
+| Aoaz drawings (13 colored sheets) and the 711-label name table | Canon geography | Every place name; uncertain readings are flagged |
 | Drawings of Horos (standing, face, on his throne) | Canon imagery | Horos in yellow-green armor with a blue sword, seated before a green gem |
 | Owner instructions in this project (October 2026) | Canon, newest wins | New layout and region names, Rush renamed Aenor, Edvoid renamed Zol, Zol's Mistake, Volgan's Dead Lands, the orders of beings |
 | Old Chaos Redux event 68 ("Alien colony") | Superseded placeholder | ZIN as one medieval alien country whose gods strike back when attacked |
@@ -52,9 +52,9 @@ Your Chaos Redux brief for event 68, "ZIN", is the canon. The 18-document Chaos 
 | Klinti | Kilinti | Kilinti Forests is part of Kilinti. |
 | Bredo, Troy's Forest | Dreson, Troll Forest | Owner spellings for hard-to-read labels |
 
-## Geography of Erdae
+## Geography of Aoaz
 
-Erdae is a continent-scale world of thirteen drawn regions (Aenor Isle counts as part of the Middle Lands), drawn by hand and rearranged for the mod in October 2026. The far west and north (Cold Lands) and the far east and south (East Lands and the South Lands desert) run off the known map: what lies beyond is unknown.
+Aoaz is a continent-scale world of thirteen drawn regions (Aenor Isle counts as part of the Middle Lands), drawn by hand and rearranged for the mod in October 2026. The far west and north (Cold Lands) and the far east and south (East Lands and the South Lands desert) run off the known map: what lies beyond is unknown.
 
 | Current name | Drawn sheet name | Where it lies | Notes |
 | --- | --- | --- | --- |
@@ -77,11 +77,11 @@ Place names come from the reviewed transcription of the drawings (711 labels). S
 
 ## Powers and peoples
 
-Erdae is divided among about 280 regional polities. A few great powers stand above them, each with satellites and rivals. These are the current working roles, open to rewriting from the lore.
+Aoaz is divided among about 280 regional polities. A few great powers stand above them, each with satellites and rivals. These are the current working roles, open to rewriting from the lore.
 
 | Power | Seat | Role now | Satellites and allies | Rivals |
 | --- | --- | --- | --- | --- |
-| Aenor, the Middle Kingdom (formerly Rush) | Parim, Middle Lands | Rules its central homeland and governs the other Middle Lands regions as satellites; the central power of Erdae. Cursed Lands and Bloody Forest resist its control. | 26 satellites, among them Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard (Aenor Isle) and Herez. Middle Kingdom Concord. | Lerendor, Zol |
+| Aenor, the Middle Kingdom (formerly Rush) | Parim, Middle Lands | Rules its central homeland and governs the other Middle Lands regions as satellites; the central power of Aoaz. Cursed Lands and Bloody Forest resist its control. | 26 satellites, among them Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard (Aenor Isle) and Herez. Middle Kingdom Concord. | Lerendor, Zol |
 | Zol | Furviatlon, Zol's Mistake | Rules Šodolôrō, the black northern wasteland and the Ocean of Zol islands. The land is barely peopled and roamed by the dead. | None yet | Aenor |
 | Volgan | Nafeher, Dead Lands | The main dark lord. Dominates the southern Dead Lands. | Demon, Dolon, Nezer. Southern Dominion. | Mirolon |
 | Lerendor | Sonargur, North Lands | United crown of Lerendor and Lerenwaith; counterweight to Aenor. | Eekedor, Andos Enda. Leren Compact. | Aenor |
@@ -118,14 +118,14 @@ Smaller named polities the owner asked to keep as their own countries: Bordon, D
 
 Where dwarves live, and which peoples each smaller polity belongs to, is not yet written.
 
-## History of Erdae
+## History of Aoaz
 
-The canon gives Erdae three ages, ending in the Crossing to Earth. Names below use the current forms. The ages carry no dates yet beyond the Ainu's 100,000 years.
+The canon gives Aoaz three ages, ending in the Crossing to Earth. Names below use the current forms. The ages carry no dates yet beyond the Ainu's 100,000 years.
 
 1. **The Age of the Ainu.** The Ainu were the First Men. They vanished more than 100,000 years ago and survive only in myth, religious language, old name fragments and disputed relics.
     - Their last line is **Aen the Ainu**, his son **Ein**, and Ein's son **Einendil**. Scholars and priests hold that no Ainu can still live.
     - Einendil survived by being frozen for more than 100,000 years. Where and why he was frozen is deliberately left open.
-2. **The Divided Ages.** Regional societies rose across Erdae, each with its own rulers and old rivalries.
+2. **The Divided Ages.** Regional societies rose across Aoaz, each with its own rulers and old rivalries.
     - **The Middle Lands** (the brief's Rush) gathered around the central plains, forests, mountains and the Great Lake, with recognised dominions: Selen's rangers, the giants of Hiloron, the ents and old forest peoples of the Kilinti Forest, and the riders of Huhun.
     - Orcs, goblins, trolls and ogres live in and around the Middle Lands but are not its subjects. They are independent, hostile, isolationist, mercenary or open to dark influence.
     - **The Dark Lands** (Dondor, the Dark Forests, Blackton, the Giant Forest, Goldoroth, the Dark Gate) hold orcs, goblins, trolls, ogres, giants, demons and men under separate rulers.
@@ -139,7 +139,7 @@ The canon gives Erdae three ages, ending in the Crossing to Earth. Names below u
     - His death is certain. Afrit secretly causes it, and the killer stays hidden until uncovered. A succession war follows between the Golden Court, the Free Dominions, Afrit's supporters and Einendil's popular host.
     - Einendil appears as an unknown soldier who survives impossible battles and names himself "Einendil, son of Ein, son of Aen, the Ainu". He warns of a coming darkness and offers service, not rule. If accepted, the people choose him to lead after the war.
 5. **Horos and Glo.** Horos rules the **Castle of Yeldenne** and guards **Glo**, a unique artifact bound to the castle; the drawings show it as a green gem before his throne. Whoever holds the castle holds Glo's power. The Lost Cause wants it kept safe, Volgan wants it taken, and Afrit wants it seized or corrupted.
-6. **The Age of Crossings.** Colonies from Erdae cross to Earth and declare themselves sovereign. Earth first hears the name ZIN when colonies prove a common origin, or when the Reckoning begins.
+6. **The Age of Crossings.** Colonies from Aoaz cross to Earth and declare themselves sovereign. Earth first hears the name ZIN when colonies prove a common origin, or when the Reckoning begins.
 
 ### Endings the canon allows
 
@@ -166,6 +166,6 @@ These decide how the lore becomes game data; answer any of them in place.
 - [ ] **Are the dead of Zol's Mistake Volgan's servants or Zol's?**
 - [ ] **Where are the Castle of Yeldenne and the Worshipdom** on the new map?
 - [ ] **Where do dwarves live?** The canon names none yet.
-- [ ] **Where does Erdae sit in ZIN**, and what are the other continents called?
+- [ ] **Where does Aoaz sit in ZIN**, and what are the other continents called?
 - [ ] **Which era does the game start in?** Before the Golden King's death, during the succession war, or at the Crossing?
 - [ ] **Edvoid and Zol:** confirm that Edvoid in the brief and spec package is now Zol everywhere.

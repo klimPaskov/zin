@@ -8,7 +8,7 @@ updated: 2026-10-18
 
 ## Settled by the world creator
 
-- Erdae enjoys over a thousand years of genuine peace, prosperity, education, science, medicine and strong institutions after Elzon's fall.
+- Aoaz enjoys over a thousand years of genuine peace, prosperity, education, science, medicine and strong institutions after Elzon's fall.
 - Afrit gains effective political control of Aenor through kings, temples, agents, council and servants during the middle period. Ordinary people revere him as a New God and do not know the name Afrit.
 - Afrit hires a master thief to acquire Roka's Necklace of the Abyss and grants that thief eternal life as promised. Afrit gathers additional artifacts and becomes immensely powerful, later showing more of his demonic identity.
 - The Golden King is an exceptionally bad monarch. Afrit murders him and takes Aenor's throne openly. Many people worship him, and opponents are silenced.
@@ -33,4 +33,4 @@ updated: 2026-10-18
 - Mechanics of Eindil's survival below the cliff, return through Afrit's private dimension, and how the necklace may affect his future.
 - Whether the shattered manifested body marks Volgan's final spiritual death. Elzon's permanent death remains settled.
 
-[[The Fourth Age of Erdae]] · [[War of the Last Crowns]] · [[Canon Policy]]
+[[The Fourth Age of Aoaz]] · [[War of the Last Crowns]] · [[Canon Policy]]

@@ -20,9 +20,9 @@ To prevent necromancy from becoming an automatic victory in every battle, the fo
 
 ## A dangerous distinction
 
-Zol, as God of Death and the only [[Old Gods|Old God]] in Erdae, possesses a vastly greater kind of divine authority. His [[The Fading|Fading]] and the unusual magic of Erdae limit what he can manifest directly. Elzon's immense applied necromancy does not give him Zol's rank or a right to rule death in the cosmic sense.
+Zol, as God of Death and the only [[Old Gods|Old God]] in Aoaz, possesses a vastly greater kind of divine authority. His [[The Fading|Fading]] and the unusual magic of Aoaz limit what he can manifest directly. Elzon's immense applied necromancy does not give him Zol's rank or a right to rule death in the cosmic sense.
 
-[[The Second Age of Erdae]] · [[The Return of Volgan]] · [[Spirits and Their Ranks]] · [[Zol]]
+[[The Second Age of Aoaz]] · [[The Return of Volgan]] · [[Spirits and Their Ranks]] · [[Zol]]
 
 ## Third Age limitations and permanent death
 

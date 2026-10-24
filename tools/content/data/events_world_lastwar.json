@@ -198,9 +198,9 @@
    ]
   },
   {
-   "id": 91, "title": "The Claim of All Erdae", "picture": "eastern_court", "requires": ["zin_afrit_abandoned_aenor"], "to": "every great power that is not the Worshipdom or its subject", "hist": "1758",
-   "runner": { "if": ["has_global_flag = zin_afrit_claims_erdae"], "to": [{ "who": ["is_major = yes", "NOT = { zin_afrit_is_hub = yes }", "NOT = { zin_afrit_rules_here = yes }", "NOT = { AND = { is_subject = yes OVERLORD = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } }"] }], "days": 14 },
-   "desc": "Envoys from Parim demand that our court recognise [zin_loc_deliverer] as king over all Erdae. They stand in the hall in the grey cloaks of the Houses, and they ask for the answer in writing, so that it may be read out in the east.",
+   "id": 91, "title": "The Claim of All Aoaz", "picture": "eastern_court", "requires": ["zin_afrit_abandoned_aenor"], "to": "every great power that is not the Worshipdom or its subject", "hist": "1758",
+   "runner": { "if": ["has_global_flag = zin_afrit_claims_aoaz"], "to": [{ "who": ["is_major = yes", "NOT = { zin_afrit_is_hub = yes }", "NOT = { zin_afrit_rules_here = yes }", "NOT = { AND = { is_subject = yes OVERLORD = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } }"] }], "days": 14 },
+   "desc": "Envoys from Parim demand that our court recognise [zin_loc_deliverer] as king over all Aoaz. They stand in the hall in the grey cloaks of the Houses, and they ask for the answer in writing, so that it may be read out in the east.",
    "options": [
     { "name": "Never.", "ai": 90, "tip": "He will not forget it, and neither will we.", "effects": ["every_country = { limit = { zin_afrit_rules_here = yes } ROOT = { add_opinion_modifier = { target = PREV modifier = zin_lastwar_refused_the_claim } } }", "add_war_support = 0.05"] },
     { "name": "Send no answer.", "ai": 10, "effects": [] },
@@ -210,7 +210,7 @@
   },
   {
    "id": 92, "title": "Opposition Is Punished", "picture": "generic_war", "to": "every Concord dominion; every Middle Lands country that holds a state under Afrit's side", "hist": "1758",
-   "runner": { "if": ["has_global_flag = zin_afrit_claims_erdae"], "to": [{ "who": [{ "or": ["zin_aenor_is_concord_dominion = yes", { "and": ["has_country_flag = zin_region_middle_lands", "any_owned_state = { controller = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } }"] }] }] }], "days": 30 },
+   "runner": { "if": ["has_global_flag = zin_afrit_claims_aoaz"], "to": [{ "who": [{ "or": ["zin_aenor_is_concord_dominion = yes", { "and": ["has_country_flag = zin_region_middle_lands", "any_owned_state = { controller = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } }"] }] }] }], "days": 30 },
    "desc": "In Parim the old council has resumed its work. Those who spoke against the false god have been taken from their houses at night, and the lists are posted on the doors of the Houses so that no one may say that they were not told.",
    "options": [{ "name": "Endure.", "ai": 100, "tip": "Resistance rises in the states the King of the East holds.", "effects": ["add_stability = -0.03", "every_owned_state = { limit = { controller = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } add_resistance = 5 }"] }]
   },

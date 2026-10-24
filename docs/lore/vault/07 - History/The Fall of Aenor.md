@@ -19,4 +19,4 @@ The political result need not be a realm populated only by undead. Elzon can use
 
 Possible survival of an archivist with Aen's genealogies and of scattered royal heirs would allow believable continuity into the Fourth Age and [[Eindil]]'s later claim. Neither has been confirmed.
 
-[[The Second Age of Erdae]] · [[The Necromancy of Elzon]] · [[Ages of Erdae]] · [[Elzon]]
+[[The Second Age of Aoaz]] · [[The Necromancy of Elzon]] · [[Ages of Aoaz]] · [[Elzon]]

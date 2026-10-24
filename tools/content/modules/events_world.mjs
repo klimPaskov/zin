@@ -1,4 +1,4 @@
-// Story events of Erdae (docs/specs/06_events/02_eindil_journey.md, 03_war_of_the_last_crowns.md, 05_flavour_and_world.md and
+// Story events of Aoaz (docs/specs/06_events/02_eindil_journey.md, 03_war_of_the_last_crowns.md, 05_flavour_and_world.md and
 // 02_lore/04_fourth_age_history_for_play.md): the namespaces zin_eindil, zin_lastwar and zin_lore, their story runners, their
 // scheduler and their text. One module writes all three because one namespace is one event file (decision R5) and the three
 // share the notation, the pictures and the checks. It does not use the focus compiler's event writer: the compiler writes only

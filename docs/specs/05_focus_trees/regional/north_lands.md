@@ -17,7 +17,7 @@ The North Lands' one question is what the North owes Aenor. These trees play the
 
 ## Lore basis
 
-**Established** (vault): the North Lands lie north of the Middle Lands across a narrow strait; Lerendor and Lerenwaith are one crown and lead the Leren Compact with Eekedor (working table); Eekedor, Molot and R'en are named North Lands polities; in the final war rulers in the North Lands withdraw from Aenoran alliances, and the North Lands are not one unanimous enemy; Zol's dead come from the black north through islands and straits and ordinary weapons cannot end them; northern companies join Eindil's temporary coalition without surrendering their independence; competing northern interests remain after the war. The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace.
+**Established** (vault): the North Lands lie north of the Middle Lands across a narrow strait; Lerendor and Lerenwaith are one crown and lead the Leren Compact with Eekedor (working table); Eekedor, Molot and R'en are named North Lands polities; in the final war rulers in the North Lands withdraw from Aenoran alliances, and the North Lands are not one unanimous enemy; Zol's dead come from the black north through islands and straits and ordinary weapons cannot end them; northern companies join Eindil's temporary coalition without surrendering their independence; competing northern interests remain after the war. The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
 
 **Proposed in the vault, used here:** the Treaty of the Narrow Strait (4A 512); the union of the Leren crowns (4A 411); the toll quarrel of 4A 1716; island fishermen's tales of black ships (4A 1744); the withdrawal in 4A 1755.
 

@@ -16,22 +16,22 @@ The mechanic serves the major tree of [Goldoroth](../05_focus_trees/major/goldor
 
 | Fact | Source |
 | --- | --- |
-| The Dark Lands lie between Lerendor and the Middle Lands across narrow straits. They contain Bordon, Dreson, Dulundur, the Troll Forest, Dondor, Goldoroth and the Sea of Darkness. | *Erdae and Its Regions* |
+| The Dark Lands lie between Lerendor and the Middle Lands across narrow straits. They contain Bordon, Dreson, Dulundur, the Troll Forest, Dondor, Goldoroth and the Sea of Darkness. | *Aoaz and Its Regions* |
 | Goldoroth is an expansionist Dark Lands power, seat Cocanoor (working), no listed alliance, rival Dondor. | *Great Powers and Relations* (working table) |
 | Dondor is the northern Dark Lands kingdom, seat Notbuton (working); with Belonton it forms the **Dark Sea Accord**; rival Goldoroth. | *Great Powers and Relations* (working table) |
 | Bordon, Dreson, Dulundur and the Troll Forest must stay separate polities on the map. | *Great Powers and Relations* |
-| Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, orcs, goblins, trolls, ogres, giants and demons under separate rulers. | *Kingdoms Factions and Conflicts*, *Peoples of Erdae* |
+| Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, orcs, goblins, trolls, ogres, giants and demons under separate rulers. | *Kingdoms Factions and Conflicts*, *Peoples of Aoaz* |
 | The independent Dark Lands are not automatically Volgan's subjects. His authority does not extend to independent Dark Lands factions. | *Volgan*, *Volgans Dead Lands* |
-| Dondor Brutes are a people of men. Orcs, goblins, trolls and ogres are distinct peoples; monster societies are independent and diverse. | *Peoples of Erdae* |
-| In the First Age Volgan opened contacts with powers in the Dark Lands; parts of the Dark Lands joined the Grand Alliance against him. | *The First Age of Erdae*, *Grand Alliance* |
-| In the Second Age the Dark Lands were never one nation; orcs and goblins do not serve one master by nature; some supported Elzon and others resisted him. | *The Second Age of Erdae* |
-| In the Fourth Age the great invasions of orcs and goblins had ceased. | *The Fourth Age of Erdae* |
-| Late in the Fourth Age Zol's forces move from the black north "through islands and straits" toward the settled kingdoms. | *The Fourth Age of Erdae*, *War of the Last Crowns* |
-| The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Erdae seems at peace. | owner, 18 October 2026 |
+| Dondor Brutes are a people of men. Orcs, goblins, trolls and ogres are distinct peoples; monster societies are independent and diverse. | *Peoples of Aoaz* |
+| In the First Age Volgan opened contacts with powers in the Dark Lands; parts of the Dark Lands joined the Grand Alliance against him. | *The First Age of Aoaz*, *Grand Alliance* |
+| In the Second Age the Dark Lands were never one nation; orcs and goblins do not serve one master by nature; some supported Elzon and others resisted him. | *The Second Age of Aoaz* |
+| In the Fourth Age the great invasions of orcs and goblins had ceased. | *The Fourth Age of Aoaz* |
+| Late in the Fourth Age Zol's forces move from the black north "through islands and straits" toward the settled kingdoms. | *The Fourth Age of Aoaz*, *War of the Last Crowns* |
+| The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace. | owner, 18 October 2026 |
 
 ### Proposed
 
-- **Vault proposals** (*Fourth Age Chronology*): orc warlords unite the inner Dark Lands as Goldoroth about 4A 1450, and its wars with Dondor begin then. *The First Age of Erdae* proposes Rovek of Dondor, a Dark Lands leader of the Grand Alliance.
+- **Vault proposals** (*Fourth Age Chronology*): orc warlords unite the inner Dark Lands as Goldoroth about 4A 1450, and its wars with Dondor begin then. *The First Age of Aoaz* proposes Rovek of Dondor, a Dark Lands leader of the Grand Alliance.
 - **Earlier specs** (proposed): Goldoroth and Dondor in an armed peace with border raids ([02_lore/01_start_situation.md](../02_lore/01_start_situation.md)); the rulers Warking Gorduth of Cocanoor, Bredo the Fire-Speaker, Sungor of the Volcano Clans, Warchief Britag, King Dunmar of Dondor, Chief Belon, Troy the Old, Chiefs Bordag, Dresk and Dulgash, Lord Haclton of Blackton ([02_lore/02_characters.md](../02_lore/02_characters.md)); the Dark Sea Accord's faction rules and `zin_cb_orc_raids` ([03_gameplay/03_diplomacy_and_factions.md](../03_gameplay/03_diplomacy_and_factions.md)); `zin_volgan_pact` and the envoys ([volgan_southern_dominion.md](volgan_southern_dominion.md)); Lerendor's lean on the Dark Shore ([lerendor_narrow_strait.md](lerendor_narrow_strait.md)).
 - **This spec** (all proposed): border tension, the Accord's resolve, the horde's temper and the four clan blocs (the Volcano Clans, the Iron Clans, the War-Clans and the Goblin Warrens), sway and the Iron Yoke, tributary holds, Goldoroth's unity, the Free Moot of the holds, the Fire-Mountain above Cocanoor, sea mastery, shore tolls, the Dark Straits as named sites, the new characters Forge-Mistress Ulgra, Snikkit Many-Knives and Rask Black-Sail, and every number and date.
 

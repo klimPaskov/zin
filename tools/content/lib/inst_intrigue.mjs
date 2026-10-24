@@ -1,6 +1,6 @@
 // Institutions, intrigue group (spec 03_gameplay/08_institutions.md sections 6 to 8): Seals and Codes (the 21 agency
 // upgrades), the Courts of Whispers (agencies), Court Intrigue (20 operations, about 60 phases, 5 tokens), the night
-// raids and the coup activity. Engine ids stay; names, effects, text and pictures are Erdae's.
+// raids and the coup activity. Engine ids stay; names, effects, text and pictures are Aoaz's.
 import { checkMods, HEADER, block, lines, modLines, num, tab, countryKey } from './inst_util.mjs';
 
 const Q = s => JSON.stringify(s);
@@ -27,7 +27,7 @@ export async function writeUpgrades(staged, env) {
     sprites.use(`GFX_zin_agency_${u.id}`, u.art);
   }
   for (const [b, name] of Object.entries(I.branches)) eloc.set(b, name);
-  staged.text('common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt', `${HEADER}\n# Overrides the vanilla file of the same name (rule 5 of the removal spec): the engine's 5 branches, 21 upgrades and level\n# counts, with Erdae names, pictures and conditions. No vanilla tag, technology or decision is named.\n${Object.keys(I.branches).map(b => `${b} = {\n${(byBranch.get(b) ?? []).join('\n')}\n}`).join('\n')}\n`);
+  staged.text('common/intelligence_agency_upgrades/intelligence_agency_upgrades.txt', `${HEADER}\n# Overrides the vanilla file of the same name (rule 5 of the removal spec): the engine's 5 branches, 21 upgrades and level\n# counts, with Aoaz names, pictures and conditions. No vanilla tag, technology or decision is named.\n${Object.keys(I.branches).map(b => `${b} = {\n${(byBranch.get(b) ?? []).join('\n')}\n}`).join('\n')}\n`);
   return { upgrades: seen.size };
 }
 
@@ -263,7 +263,7 @@ export function writeOperations(staged, env) {
   for (const pid of phaseIds) if (!used.has(pid)) throw new Error(`Phase ${pid} is used by no operation`);
   for (const t of ['zin_op_consumes_token_tt', 'zin_op_fake_intel_tt', 'zin_op_fake_intel_result_tt', 'zin_op_coordinated_strike_tt', 'zin_op_resistance_boost_tt']) loc.set(t, OP_TIPS[t]);
   for (const k of ['industry', 'infrastructure', 'resources']) { loc.set(`zin_op_sabotage_${k}_tt`, OP_TIPS[`sabotage_${k}`]); loc.set(`zin_op_sabotage_${k}_once_tt`, OP_TIPS[`sabotage_${k}_once`]); loc.set(`zin_op_sabotage_${k}_more_tt`, OP_TIPS[`sabotage_${k}_more`]); }
-  staged.text('common/operations/zin_operations.txt', `${HEADER}\n# The 20 operations of the engine, kept under their ids, as the deeds of court intrigue. Cost in Erdae goods; no vanilla tag,\n# decision or technology is named. Outcome effects use the engine's own effects.\n${ops.join('\n')}\n`);
+  staged.text('common/operations/zin_operations.txt', `${HEADER}\n# The 20 operations of the engine, kept under their ids, as the deeds of court intrigue. Cost in Aoaz goods; no vanilla tag,\n# decision or technology is named. Outcome effects use the engine's own effects.\n${ops.join('\n')}\n`);
   return { operations: ids.size };
 }
 const OP_TIPS = {
@@ -337,7 +337,7 @@ export function writeRaids(staged, env) {
         block('target_type', block('building', `type = ${t.building}`)), block('starting_point', 'building_types = { supply_node }\nallow_faction_buildings = yes'), factors(), block('success_levels', levels(victims))), 1));
     }
   }
-  staged.text('common/raids/zin_raids.txt', `${HEADER}\n# Night raids by land (section 15.2 of the warfare spec): ransom a captured captain, burn a depot, fire a granary.\n# Nothing else is raided in Erdae.\ntypes = {\n${out.join('\n')}\n}\n`);
+  staged.text('common/raids/zin_raids.txt', `${HEADER}\n# Night raids by land (section 15.2 of the warfare spec): ransom a captured captain, burn a depot, fire a granary.\n# Nothing else is raided in Aoaz.\ntypes = {\n${out.join('\n')}\n}\n`);
   const T = data.intrigue.timedActivity;
   staged.text('common/timed_activities/zin_timed_activities.txt', `${HEADER}\n# The usurpation activity of the diplomacy screen needs arms from the warfare spec.\n${T.id} = {\n\tequipment_need = {\n${Object.entries(T.equipment).map(([k, v]) => `\t\t${k} = ${v}`).join('\n')}\n\t}\n}\n`);
   return { raids: R.types.length };

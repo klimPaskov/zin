@@ -182,7 +182,7 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 9. In his warnings, should Eindil say plainly that the king in Parim is his brother before the world knows the name, or only that 'the king is not what the temples say'?
 10. Should Alleria's rescue below the cliff be the historical text? Should Golbran be believed dead between Varner's death and the palace?
 11. Afrit's cliff words ('hated him since their father's refusal'): may players read them, given that the reason for the refusal is open?
-12. May foreign crowns recognise Afrit's claim to all Erdae (zin_lastwar.91), or only refuse or ignore it?
+12. May foreign crowns recognise Afrit's claim to all Aoaz (zin_lastwar.91), or only refuse or ignore it?
 13. Lost Cause ending: is the coronation enough, or must Aenor also hold no subjects outside the Middle Lands? Can the ending be reached at all without Eindil?
 14. Should the post-reveal chronicle say the Golden King was murdered, or keep 'died in his sleep'?
 15. zin_ending.15 lets crowns decide what the Houses of the First Light become after the war, and the vault lists this as an open Fifth Age question. Keep the choice or remove it?
@@ -215,12 +215,12 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 
 ## interface art validation
 
-1. Interface: should the meters sit in a new strip under the flag (the Erdae bar, my proposal), or inside the vanilla top bar? The second needs an override of interface/topbar.gui.
+1. Interface: should the meters sit in a new strip under the flag (the Aoaz bar, my proposal), or inside the vanilla top bar? The second needs an override of interface/topbar.gui.
 2. Interface: should other players see the Golden Court's gold, or only Aenor? (This is the economy spec's open question 3; my spec shows it to Aenor only.)
 3. Interface: should countries other than the Worshipdom get a public 'Houses of the First Light' map mode, or should the map mode exist for the Worshipdom only?
 4. Interface: are these panel names right: The Golden Court, The Hidden Council, The Southern Dominion, The Watch on the Passes, The Presence, The Narrow Strait, The Road of the Stranger?
 5. Interface: should the journey tracker also show to every friend of Eindil (regard 25 or more), not only his current host?
-6. Interface: one themed frame per mechanic, or one Erdae frame everywhere?
+6. Interface: one themed frame per mechanic, or one Aoaz frame everywhere?
 7. Art: is building the 21 gauge frames by pasting part of a generated full bar onto a generated empty bar within the rule that code only slices, resizes and converts?
 8. Art: may the private Horos drawings be used as generation references when the generated results are published?
 9. Art: should the content builder move from the tools repository's .tmp folder into the ZIN repository, so the pipeline can be reproduced from ZIN alone?
