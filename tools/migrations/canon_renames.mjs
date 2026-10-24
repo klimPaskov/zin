@@ -37,6 +37,8 @@ const RECORDS = [
   'docs/lore/vault/09 - Development/Names and Retcons.md', 'docs/lore/vault/09 - Development/Change Log.md',
   'docs/lore/vault/09 - Development/Open Questions.md', 'docs/specs/INTEGRATION_DECISIONS.md',
   'docs/lore/names_traceability.md', 'docs/lore/references/edvoid_name.md', 'tools/migrations/',
+  // Transcriptions of the labels written on the owner's drawing, and the lead's own working notes.
+  'docs/name_table.csv', 'docs/name_table.md', 'docs/name_alignment.json', 'docs/plans/zin-lead/',
 ];
 // The focus tree designs are builder input, so they belong to the content scope.
 const SCOPES = { docs: ['docs/', 'README.md'], content: ['tools/content/', 'docs/design/focus/'], all: ['docs/', 'README.md', 'tools/content/'] };

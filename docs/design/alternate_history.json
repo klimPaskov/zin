@@ -1,0 +1,4145 @@
+{
+ "schema": "zin.alternate_history/1",
+ "requirement": "R-46 (decision L3); acceptance A-46",
+ "status": "proposed design, 24 October 2026",
+ "doc": "docs/design/alternate_history.md",
+ "canon": "Beats follow the vault (docs/lore/vault/07 - History) with the owner corrections K1 to K27 and the owner decisions of 24 October 2026 (Ember Lands, Kusven, Kusmeel, the god-month calendar). Every divergence is ZIN-proposed gameplay, not canon.",
+ "evidence": {
+  "data": "tools/content/data, tools/content/modules, tools/content/lib (working tree of 24 October 2026)",
+  "staged": "%TEMP%/zin-int-r3 (round-3 staged tree, 24 October 2026 12:31; prefix \"staged:\" in file fields)",
+  "buildLog": "%TEMP%/zin-build0.err (11:43: C3, 50 names dangle)",
+  "limits": "Integration was in progress; no game run; MCP routes not used for this design-only document."
+ },
+ "calendar": {
+  "start": "1 Lumae 4A 1748 (engine 1748.3.1)",
+  "months": [
+   {
+    "n": 1,
+    "god": "Glernaen",
+    "former": "Deepwinter"
+   },
+   {
+    "n": 2,
+    "god": "Sulethe",
+    "former": "Ironfrost"
+   },
+   {
+    "n": 3,
+    "god": "Lumae",
+    "former": "Thaw"
+   },
+   {
+    "n": 4,
+    "god": "Maelwen",
+    "former": "Rainwake"
+   },
+   {
+    "n": 5,
+    "god": "Vaelei",
+    "former": "Sowing"
+   },
+   {
+    "n": 6,
+    "god": "Rasthel",
+    "former": "Highsun"
+   },
+   {
+    "n": 7,
+    "god": "Kerun",
+    "former": "Goldfield"
+   },
+   {
+    "n": 8,
+    "god": "Aurlan",
+    "former": "Harvest"
+   },
+   {
+    "n": 9,
+    "god": "Ailtal",
+    "former": "Fallowing"
+   },
+   {
+    "n": 10,
+    "god": "Irumas",
+    "former": "Emberleaf"
+   },
+   {
+    "n": 11,
+    "god": "Gaelor",
+    "former": "Mistfall"
+   },
+   {
+    "n": 12,
+    "god": "Naisa",
+    "former": "Longnight"
+   }
+  ],
+  "note": "Month order inferred from the owner's list order; East and South Lands keep their own calendars. Dates in fields are engine dates at the standard pace."
+ },
+ "pace": "A date d becomes start + (d - start) x zin_story_pace (1, 1.5 or 0.75), V4 and R2.",
+ "states": {
+  "0": "pending",
+  "1": "historical",
+  "2": "diverged",
+  "3": "skipped"
+ },
+ "magnitudes": {
+  "historical": 0,
+  "shifted": 0.25,
+  "other_way": 0.5,
+  "successor": 0.75,
+  "never_or_opposite": 1,
+  "skipped": 0.5
+ },
+ "checkpoints": [
+  {
+   "cp": "CP01",
+   "weight": 0,
+   "beats": [
+    "B01"
+   ]
+  },
+  {
+   "cp": "CP02",
+   "weight": 2,
+   "beats": [
+    "B03"
+   ]
+  },
+  {
+   "cp": "CP03",
+   "weight": 1,
+   "beats": [
+    "B05"
+   ]
+  },
+  {
+   "cp": "CP04",
+   "weight": 2,
+   "beats": [
+    "B04",
+    "B06"
+   ]
+  },
+  {
+   "cp": "CP05",
+   "weight": 5,
+   "beats": [
+    "B02",
+    "B07"
+   ]
+  },
+  {
+   "cp": "CP06",
+   "weight": 5,
+   "beats": [
+    "B08",
+    "B09",
+    "B10"
+   ]
+  },
+  {
+   "cp": "CP07",
+   "weight": 1,
+   "beats": [
+    "B11"
+   ]
+  },
+  {
+   "cp": "CP08",
+   "weight": 3,
+   "beats": [
+    "B12"
+   ]
+  },
+  {
+   "cp": "CP09",
+   "weight": 5,
+   "beats": [
+    "B13",
+    "B14",
+    "B15"
+   ]
+  },
+  {
+   "cp": "CP10",
+   "weight": 3,
+   "beats": [
+    "B16"
+   ]
+  },
+  {
+   "cp": "CP11",
+   "weight": 5,
+   "beats": [
+    "B18"
+   ]
+  },
+  {
+   "cp": "CP12",
+   "weight": 3,
+   "beats": [
+    "B19"
+   ]
+  },
+  {
+   "cp": "CP13",
+   "weight": 4,
+   "beats": [
+    "B20"
+   ]
+  },
+  {
+   "cp": "CP14",
+   "weight": 3,
+   "beats": [
+    "B21"
+   ]
+  },
+  {
+   "cp": "CP15",
+   "weight": 5,
+   "beats": [
+    "B22",
+    "B23"
+   ]
+  },
+  {
+   "cp": "CP16",
+   "weight": 4,
+   "beats": [
+    "B24"
+   ]
+  },
+  {
+   "cp": "CP17",
+   "weight": 4,
+   "beats": [
+    "B25",
+    "B26"
+   ]
+  },
+  {
+   "cp": "CP18",
+   "weight": 2,
+   "beats": [
+    "B27",
+    "B28"
+   ]
+  },
+  {
+   "cp": "CP19",
+   "weight": 5,
+   "beats": [
+    "B17",
+    "B29",
+    "B30"
+   ]
+  },
+  {
+   "cp": "CP20",
+   "weight": 3,
+   "beats": [
+    "B31",
+    "B32"
+   ]
+  },
+  {
+   "cp": "CP21",
+   "weight": 4,
+   "beats": [
+    "B33"
+   ]
+  },
+  {
+   "cp": "CP22",
+   "weight": 5,
+   "beats": [
+    "B34"
+   ]
+  },
+  {
+   "cp": "CP23",
+   "weight": 5,
+   "beats": [
+    "B35",
+    "B36"
+   ]
+  },
+  {
+   "cp": "CP24",
+   "weight": 4,
+   "beats": [
+    "B38",
+    "B39",
+    "B40"
+   ]
+  },
+  {
+   "cp": "CP25",
+   "weight": 5,
+   "beats": [
+    "B41"
+   ]
+  },
+  {
+   "cp": "CP26",
+   "weight": 5,
+   "beats": [
+    "B37",
+    "B42"
+   ]
+  }
+ ],
+ "beats": [
+  {
+   "id": "B01",
+   "cp": "CP01",
+   "act": "I. The seeming peace",
+   "name": "The peaceful start",
+   "canon": "established (owner, 18 October 2026)",
+   "owner": "world systems; historical path (06_historical_path_and_ai.md)",
+   "historical": "On 1 Lumae 4A 1748 the Golden King reigns, Eindil has not appeared, Afrit is unrevealed and no country is at war with anybody who matters.",
+   "trigger": "Game start (`1748.3.1`). Start check `zin_path.1` (hidden, path module): no war, no contract story flag, `zin_eindil` recruited by nobody, no reachable text naming Afrit (D1, D3 of INTEGRATION_DECISIONS). Dominion and Shadow carry `generate_wargoal_tension = 0.25` (D6).",
+   "flags": [],
+   "dates": {
+    "target": "1748.3.1",
+    "latest": null
+   },
+   "divergers": "The start-variety rule (`zin_rule_start_variety`); any player from the first day (only causes allow war while the Gathering Dark is below 25).",
+   "divergences": [
+    {
+     "id": "B01.D1",
+     "kind": "different",
+     "who": "game rule",
+     "what": "Start variety LIGHT or FULL draws the start values listed under game-start variety.",
+     "magnitude": 0,
+     "consequence": "Start values move inside the lore; every beat reads them as variables, so no beat changes owner.",
+     "successor": "None needed. `zin_start_variety_drawn` records the draw and the Chronicle names it; variety never counts as divergence."
+    },
+    {
+     "id": "B01.D2",
+     "kind": "early",
+     "who": "player",
+     "what": "A player declares a cause war in 1748 or 1749.",
+     "magnitude": 0.25,
+     "consequence": "Peace-breaker spirit `zin_diplo_peace_breaker` for 180 days and +2 Gathering Dark (diplomacy spec); the Grey Ford may break earlier (B05 D2).",
+     "successor": "CP01 stays historical (it judges the opening day only); the way code `early_war` is stored for the Chronicle."
+    },
+    {
+     "id": "B01.D3",
+     "kind": "different",
+     "who": "game rule (FULL only)",
+     "what": "A border feud between two minor realms runs at the start (variety V6).",
+     "magnitude": 0,
+     "consequence": "A `start_border_war` between tier C realms only; never a great power, never a war.",
+     "successor": "Start check accepts border conflicts; the feud ends within 90 days or by `zin_realm.40` terms."
+    }
+   ],
+   "weight": 0
+  },
+  {
+   "id": "B02",
+   "cp": "CP05",
+   "act": "I. The seeming peace",
+   "name": "The Council's verdict and the regicide plot",
+   "canon": "established (Afrit engineers the death); dates and instruments proposed",
+   "owner": "Afrit (afrit_hidden_council.md), Aenor death clock (aenor_court_and_succession.md section 5)",
+   "historical": "The Council judges the King a liability (`zin_afrit.10`), chooses the physician (`zin_afrit.11`), and the plot reaches 100 (`zin_afrit.14` The Plot Is Ready), setting `zin_afrit_regicide_ready`.",
+   "trigger": "`global.zin_afrit_regicide_plot` grows through `zin_afrit_add_plot` (Worshipdom focuses). Fallback `zin_afrit_historical_fallbacks` readies the plot by 15 Irumas 4A 1750 (`zin_afrit_date_regicide_fallback`, `mech_afrit.json` dates.regicideFallback `1750.10.15`, paced) under the historical branch unless `zin_rule_golden_king_death = NO_AI_PLOT`.",
+   "flags": [
+    "zin_afrit_regicide_ready",
+    "zin_afrit_plot_ready_seen"
+   ],
+   "dates": {
+    "target": "1750.10.15",
+    "latest": "1753.1.1"
+   },
+   "divergers": "Worshipdom (player or AI); Aenor (player: physicians, Lost Cause focuses that delay the clock); Selen and Mirolon watchers (`watch` terms); rules `zin_rule_golden_king_death`, `zin_rule_afrit`.",
+   "divergences": [
+    {
+     "id": "B02.D1",
+     "kind": "early",
+     "who": "Worshipdom, start variety V2",
+     "what": "The plot is hastened (Choose the Night, up to 180 days through `zin_aenor_hasten_death_clock`) or starts more advanced.",
+     "magnitude": 0.25,
+     "consequence": "The King dies before the war-king beat; the journey reads flags, not order, so stage 3 still runs.",
+     "successor": "None; CP05 way `early`."
+    },
+    {
+     "id": "B02.D2",
+     "kind": "late",
+     "who": "Aenor, rule DELAYED",
+     "what": "The clock is delayed (`zin_aenor_delay_death_clock`, Council faltering x0.6).",
+     "magnitude": 0.25,
+     "consequence": "The King may outlive the latest date (1 Glernaen 4A 1753) and CP05 resolves diverged.",
+     "successor": "B07 D2."
+    },
+    {
+     "id": "B02.D3",
+     "kind": "different",
+     "who": "Aenor, any watcher, veil below 15",
+     "what": "The plot is exposed (`zin_aenor_expose_plot` sets `zin_golden_king_plot_exposed`).",
+     "magnitude": 1,
+     "consequence": "Council veil -30; the Council's War (`zin_aenor.260`) or the Council scatters; the name may be known early (D3).",
+     "successor": "B07 D3 or D4; B25 D3 (early reveal)."
+    },
+    {
+     "id": "B02.D4",
+     "kind": "never",
+     "who": "Worshipdom (player), rule NO_AI_PLOT or zin_rule_afrit DORMANT",
+     "what": "The Council never strikes.",
+     "magnitude": 1,
+     "consequence": "The Golden King lives; B09, B10 and the god-king's flight cannot happen in their canon form.",
+     "successor": "The Golden Court Endures becomes reachable; Afrit's open bid comes from the Worshipdom later (B25 D4, B38 D5); stage 12 uses the reduced-Afrit gate (SL-09)."
+    },
+    {
+     "id": "B02.D5",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "The Worshipdom ceases to exist before the plot is ready.",
+     "magnitude": 0.5,
+     "consequence": "The Aenor clock sets `zin_afrit_regicide_ready` itself (Aenor spec section 5); Merovan acts in Parim.",
+     "successor": "Afrit's seat moves by role R02 (SL-11); the regicide goes ahead without the hub."
+    },
+    {
+     "id": "B02.D6",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Aenor (Y0L) is annexed or capitulates with the King alive.",
+     "magnitude": 0.75,
+     "consequence": "The clock stops; today the King simply never dies (SL-25).",
+     "successor": "New `zin_golden_king_exiled` and `zin_realm.50` A Court in Exile to the realm that shelters him; CP05 skipped; the Golden Court ending is closed."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B03",
+   "cp": "CP02",
+   "act": "II. The man from the ice",
+   "name": "Eindil wakes",
+   "canon": "established (wakes in the Cold Lands, helped by tribes); timing proposed",
+   "owner": "Eindil's journey (mech_eindil.mjs, mech_eindil_scripts.mjs)",
+   "historical": "Hunters find a man in the ice; stage 1 starts and `zin_eindil.10` The Man in the Ice goes to the owner of `zin_is_site_eindil_ice`.",
+   "trigger": "Stage floor 1 `1749.2.1` plus 0 to 20 days of jitter (`wake_jitter` 21), compared with `global.zin_eindil_age` (paced); rule `zin_rule_eindil_waking` (EARLY Rasthel 1748, LATE Sulethe 1751). Sets `zin_eindil_awake`.",
+   "flags": [
+    "zin_eindil_awake"
+   ],
+   "dates": {
+    "target": "1749.2.1",
+    "latest": "1752.1.1"
+   },
+   "divergers": "The waking rule; the ice host (`.10` Bind him); Coldor and Isengard (`.11` Summon him).",
+   "divergences": [
+    {
+     "id": "B03.D1",
+     "kind": "early",
+     "who": "rule EARLY",
+     "what": "He wakes in Rasthel 4A 1748.",
+     "magnitude": 0.25,
+     "consequence": "Every later floor still holds; the journey waits at the floors.",
+     "successor": "None; CP02 way `early` (Chronicle line 02 reads the rule)."
+    },
+    {
+     "id": "B03.D2",
+     "kind": "late",
+     "who": "rule LATE",
+     "what": "He wakes in Sulethe 4A 1751.",
+     "magnitude": 0.25,
+     "consequence": "Stage floors 2 to 4 are already past, so stages run at their minimum gaps; CP04, CP07 and CP08 can pass their latest dates.",
+     "successor": "Later checkpoints resolve diverged by date (never stall); the war of the West can start without a war-king (B05 D1 logic)."
+    },
+    {
+     "id": "B03.D3",
+     "kind": "late",
+     "who": "ice host, Coldor, Isengard",
+     "what": "He is bound (+120 days) or summoned (+30 days).",
+     "magnitude": 0.25,
+     "consequence": "Delay and regard changes; the binder is resented and gets no invitation.",
+     "successor": "None; the delay is bounded by `delay_max` 900."
+    },
+    {
+     "id": "B03.D4",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "The ice site's state changes owner, or a dark power holds it.",
+     "magnitude": 0,
+     "consequence": "The owner of the state is the host.",
+     "successor": "Role R16 (ice host): if a dark power holds the site, the nearest Cold Lands realm that is not a dark power hosts him."
+    }
+   ],
+   "weight": 2
+  },
+  {
+   "id": "B04",
+   "cp": "CP04",
+   "act": "II. The man from the ice",
+   "name": "The road south (Three Oaths, Winter Ford, Gunwaith)",
+   "canon": "established direction; episodes proposed",
+   "owner": "Eindil's journey; Western Crossing",
+   "historical": "`zin_eindil.20` The Bridge of the Three Oaths, `.21` Girdon's Winter Ford, `.22` Judgment in Gunwaith, `.23` The King Without a House; renown rises.",
+   "trigger": "Stage 2 floor `1749.10.1`, at least `stage2_after` 150 days after stage 1; hosts are the owners of `zin_is_site_three_oaths` and `zin_is_site_winter_ford` and Gunwaith (or the owner of its former capital).",
+   "flags": [],
+   "dates": {
+    "target": "1749.10.1",
+    "latest": "1751.3.1"
+   },
+   "divergers": "The bridge host, Girdon, Gunwaith (player or AI).",
+   "divergences": [
+    {
+     "id": "B04.D1",
+     "kind": "different",
+     "who": "bridge host",
+     "what": "Burn the grain (`.20` B).",
+     "magnitude": 0,
+     "consequence": "Resented; burned granaries.",
+     "successor": "None."
+    },
+    {
+     "id": "B04.D2",
+     "kind": "late",
+     "who": "Girdon",
+     "what": "Close the ford (`.21` B).",
+     "magnitude": 0.25,
+     "consequence": "+60 days; resented.",
+     "successor": "None."
+    },
+    {
+     "id": "B04.D3",
+     "kind": "late",
+     "who": "Gunwaith",
+     "what": "Make an example (`.22` B).",
+     "magnitude": 0.25,
+     "consequence": "+180 days; Gunwaith less likely to pledge later.",
+     "successor": "Stage 3 falls back after `stage4_fallback` 270 days if the feud has not called him."
+    },
+    {
+     "id": "B04.D4",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Gunwaith or Girdon is gone.",
+     "magnitude": 0,
+     "consequence": "The event goes to the owner of the site or of the former capital (journey data).",
+     "successor": "Role R05."
+    }
+   ],
+   "weight": 2
+  },
+  {
+   "id": "B05",
+   "cp": "CP03",
+   "act": "II. The man from the ice",
+   "name": "The Grey Ford truce breaks",
+   "canon": "established rivalry; truce and dates proposed",
+   "owner": "Western Crossing (mech_crossing.mjs)",
+   "historical": "Raids wear down the Truce of the Grey Ford until it breaks into a border war between Gunwaith and Girdon (`start_border_war`, `zin_west.23` on win).",
+   "trigger": "`global.zin_west_truce` falls from `truce_start` 40 below `truce_raid_below` 50 with raids (`raid_chance_percent` 12); sets `zin_west_truce_broken`, `zin_west_grey_ford_war`; target `1750.4.1`, latest `1750.10.1`.",
+   "flags": [
+    "zin_west_truce_broken",
+    "zin_west_grey_ford_war"
+   ],
+   "dates": {
+    "target": "1750.4.1",
+    "latest": "1750.10.1"
+   },
+   "divergers": "Gunwaith, Girdon (player or AI); Girdon's ford commission; the Gunwaith tree (`zin_west_truce_permanent`).",
+   "divergences": [
+    {
+     "id": "B05.D1",
+     "kind": "never",
+     "who": "Gunwaith tree, Girdon commission",
+     "what": "The truce is made permanent.",
+     "magnitude": 1,
+     "consequence": "No feud, so no confederation and no war-king.",
+     "successor": "B06 D3: stage 4 starts by its fallback; CP03 and CP04 diverged; the West's unity starts higher, so the Crossing is likelier (B20)."
+    },
+    {
+     "id": "B05.D2",
+     "kind": "early",
+     "who": "start variety V7, a raid player",
+     "what": "The truce breaks before Eindil arrives.",
+     "magnitude": 0.25,
+     "consequence": "The confederation forms early and waits.",
+     "successor": "The confederation offers the crown when he arrives (`.32`)."
+    },
+    {
+     "id": "B05.D3",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Gunwaith or Girdon no longer exists.",
+     "magnitude": 0.5,
+     "consequence": "CP03 skipped.",
+     "successor": "Role R05 picks the next feud: the two bordering West Lands realms with the lowest mutual opinion; failing that the stage 4 fallback."
+    },
+    {
+     "id": "B05.D4",
+     "kind": "different",
+     "who": "player",
+     "what": "A belligerent declares a full war instead of the border war.",
+     "magnitude": 0.5,
+     "consequence": "Peace-breaker penalty; the war-king can only end it by white peace; western unity falls.",
+     "successor": "The war-king's terms become a white peace (`zin_west_end_ford_war` how 2); B20 leans toward D1."
+    }
+   ],
+   "weight": 1
+  },
+  {
+   "id": "B06",
+   "cp": "CP04",
+   "act": "II. The man from the ice",
+   "name": "Eindil, war-king of the West, makes peace",
+   "canon": "established",
+   "owner": "Eindil's journey; Western Crossing",
+   "historical": "`zin_eindil.32` A Crown Offered (checkpoint, non-committal option first, E2), `.33` The War-King's Terms, `.34` The Crown Laid Down, `.35` news; sets `zin_eindil_war_king`.",
+   "trigger": "Stage 3 floor `1750.4.1`; stage 4 starts on `zin_eindil_stage_3_done`, `zin_eindil_war_king` or `stage4_fallback` 270 days.",
+   "flags": [
+    "zin_eindil_war_king",
+    "zin_eindil_stage_3_done"
+   ],
+   "dates": {
+    "target": "1750.8.1",
+    "latest": "1751.3.1"
+   },
+   "divergers": "The confederation leader (player or AI); Gunwaith and Girdon (terms).",
+   "divergences": [
+    {
+     "id": "B06.D1",
+     "kind": "never",
+     "who": "confederation, belligerents",
+     "what": "The crown is refused (`.32` B) or the belligerents fight on (`.33` B).",
+     "magnitude": 1,
+     "consequence": "A lasting western war; unity falls; no war-king.",
+     "successor": "Stage 4 by fallback; the Crossing leans divided (B20 D1)."
+    },
+    {
+     "id": "B06.D2",
+     "kind": "different",
+     "who": "confederation leader",
+     "what": "Keep the war-king (`.34` B).",
+     "magnitude": 0.5,
+     "consequence": "The confederation dissolves when he leaves; he still leaves at the floor (guest rules).",
+     "successor": "None."
+    },
+    {
+     "id": "B06.D3",
+     "kind": "different",
+     "who": "B05 D1",
+     "what": "No feud exists to end.",
+     "magnitude": 0.75,
+     "consequence": "Only `.23` The King Without a House runs.",
+     "successor": "Stage 4 fallback; CP04 way `fallback`."
+    }
+   ],
+   "weight": 2
+  },
+  {
+   "id": "B07",
+   "cp": "CP05",
+   "act": "III. The god-king",
+   "name": "The Golden King dies",
+   "canon": "established (Afrit murders him); date proposed",
+   "owner": "Aenor (zin_aenor.200, zin_aenor_open_succession) with the crown events (zin_reign.19 to .26)",
+   "historical": "At the feast of Gaelor the King dies (`zin_reign.19` one day before `zin_aenor.200`); `zin_reign_on_king_dead` fires the bells, mourners, funeral and the dominions' word.",
+   "trigger": "N15: `zin_afrit_regicide_ready` and `zin_aenor_king_clock` below 30 after the floor; HISTORICAL death rule fixes the clock at (975 + 0 to 20) x pace days. Sets `zin_golden_king_dead`. Target `1750.11.10`, latest `1753.1.1`.",
+   "flags": [
+    "zin_golden_king_dead"
+   ],
+   "dates": {
+    "target": "1750.11.10",
+    "latest": "1753.1.1"
+   },
+   "divergers": "Aenor (player), the Worshipdom, rules `zin_rule_golden_king_death` and `zin_rule_afrit`.",
+   "divergences": [
+    {
+     "id": "B07.D1",
+     "kind": "early",
+     "who": "Worshipdom",
+     "what": "Hastened death.",
+     "magnitude": 0.25,
+     "consequence": "The Thirty Days fall before the war-king.",
+     "successor": "None."
+    },
+    {
+     "id": "B07.D2",
+     "kind": "late",
+     "who": "Aenor, rule DELAYED",
+     "what": "Delayed death past the target.",
+     "magnitude": 0.25,
+     "consequence": "Calibration of the Gathering Dark lags.",
+     "successor": "If alive at the latest date, D3 logic: CP05 diverged."
+    },
+    {
+     "id": "B07.D3",
+     "kind": "never",
+     "who": "Aenor (exposure, Council's War won)",
+     "what": "The King survives (`zin_golden_king_survives`).",
+     "magnitude": 1,
+     "consequence": "The Council is broken; the name may be known early; `zin_aenor.460` The King and the Stranger lets the King name Eindil heir or refuse him.",
+     "successor": "Coronation variant: Eindil crowned as the King's heir after the Afrit chain (B42 D4); the Golden Court Endures is reachable; SL-31 blocks a second plot."
+    },
+    {
+     "id": "B07.D4",
+     "kind": "different",
+     "who": "Faithful in the Council's War",
+     "what": "The plot is exposed and the Faithful win the civil war.",
+     "magnitude": 1,
+     "consequence": "Merovan rules as Lord Protector \"in the Deliverer's name\"; the god-king's crowning comes after the war.",
+     "successor": "B09 D4 (crowned openly); B25 D3."
+    },
+    {
+     "id": "B07.D5",
+     "kind": "different",
+     "who": "clock without the Worshipdom",
+     "what": "The King dies without the Council's hand (clock reaches 0 with the hub gone).",
+     "magnitude": 0.5,
+     "consequence": "The Faithful camp is weaker in the Thirty Days.",
+     "successor": "New flag `zin_golden_king_natural`; the Chronicle line 05 uses its diverged text."
+    },
+    {
+     "id": "B07.D6",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Aenor is annexed with the King alive.",
+     "magnitude": 0.75,
+     "consequence": "See B02 D6.",
+     "successor": "`zin_golden_king_exiled`; CP05 skipped."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B08",
+   "cp": "CP06",
+   "act": "III. The god-king",
+   "name": "The Thirty Days: four camps contend",
+   "canon": "established camps; victor open",
+   "owner": "Aenor (zin_aenor.201, zin_aenor.210 The Seals of Parim, zin_aenor_give_seals); crown events zin_reign.30 to .37",
+   "historical": "The Faithful camp wins; `zin_aenor_give_seals` fires `zin_afrit.20` The Seals Pass to the Deliverer to the Worshipdom.",
+   "trigger": "Camp support `zin_aenor_camp_court`, `_faithful`, `_dominions`, `_host` after 30 days; rule `zin_rule_ai_aenor_succession` (DEFAULT follows the path; GOLDEN_COURT, FREE_DOMINIONS, RANDOM).",
+   "flags": [
+    "zin_aenor_faithful_rule (country)"
+   ],
+   "dates": {
+    "target": "1750.12.10",
+    "latest": "1751.2.8"
+   },
+   "divergers": "Aenor (player), every Concord dominion (secession `zin_reign.37`), Selen (`zin_reign.25`), the Worshipdom, the rule.",
+   "divergences": [
+    {
+     "id": "B08.D1",
+     "kind": "different",
+     "who": "Aenor, rule GOLDEN_COURT",
+     "what": "The Court wins: the Regency of Gold (`zin_reign.50` to `.53`).",
+     "magnitude": 1,
+     "consequence": "Prince Eronel asks for the crown (`.52`); Afrit stays behind the throne or waits.",
+     "successor": "CP06 diverged; `zin_aenor_regency_endures` counts for the Golden Court Endures (endings fix E-04)."
+    },
+    {
+     "id": "B08.D2",
+     "kind": "different",
+     "who": "Aenor, rule FREE_DOMINIONS",
+     "what": "The Dominions win: the Concord of Equals (`zin_reign.55` to `.57`).",
+     "magnitude": 1,
+     "consequence": "Charters freed; the Free Dominions league may form; Afrit's grip loosens.",
+     "successor": "CP06 diverged; the god-king's flight becomes the Council's withdrawal (B25 D4)."
+    },
+    {
+     "id": "B08.D3",
+     "kind": "different",
+     "who": "Aenor",
+     "what": "The Host wins: the Hailed King before his time (`zin_reign.60`).",
+     "magnitude": 1,
+     "consequence": "Only when `zin_aenor_host_available`; O1 still keeps Eindil out of Aenor's leader slot until the coronation.",
+     "successor": "CP06 diverged; the crown waits for B42."
+    },
+    {
+     "id": "B08.D4",
+     "kind": "different",
+     "who": "dominions",
+     "what": "Dominions secede during the Thirty Days (`zin_aenor_secede_dominion`).",
+     "magnitude": 0.5,
+     "consequence": "The Concord shrinks; seceded realms join the Free Dominions.",
+     "successor": "None."
+    },
+    {
+     "id": "B08.D5",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "The Worshipdom no longer exists when the Faithful win.",
+     "magnitude": 0.75,
+     "consequence": "`zin_aenor_give_seals` already recruits Merovan and sets the Faithful stance without a god-king.",
+     "successor": "CP06 diverged; Afrit's seat by role R02."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B09",
+   "cp": "CP06",
+   "act": "III. The god-king",
+   "name": "Aurevan is crowned",
+   "canon": "established (Afrit takes the throne openly under his public name)",
+   "owner": "Afrit (zin_afrit.20 to .21, zin_afrit_crown_aurevan, zin_reign_on_crowning)",
+   "historical": "`zin_afrit.20` hist option calls `zin_afrit_crown_aurevan` (sets `zin_aurevan_crowned`); `zin_afrit.21` news; `zin_reign.40` to `.43`, `zin_elves.9`, `zin_leren.41`, `zin_west.15` answer the crowning.",
+   "trigger": "Target CP05 + 14 days, latest CP05 + 90 days.",
+   "flags": [
+    "zin_aurevan_crowned"
+   ],
+   "dates": {
+    "target": "1750.11.24",
+    "latest": "1751.2.8"
+   },
+   "divergers": "The Worshipdom (player or AI).",
+   "divergences": [
+    {
+     "id": "B09.D1",
+     "kind": "different",
+     "who": "Worshipdom",
+     "what": "The Council raises a pliant heir (`zin_afrit_raise_pliant_heir`, Eronel; `zin_afrit_kingdom_behind_throne`, `zin_reign.65`, `.66`).",
+     "magnitude": 1,
+     "consequence": "Afrit stays hidden; no god-king to flee.",
+     "successor": "B25 D4; the Golden Court Endures only if the King lived."
+    },
+    {
+     "id": "B09.D2",
+     "kind": "never",
+     "who": "B08 D1 to D3",
+     "what": "Another camp rules.",
+     "magnitude": 1,
+     "consequence": "No crowning within 90 days.",
+     "successor": "CP06 diverged; the Ashen Throne needs Parim later (B44)."
+    },
+    {
+     "id": "B09.D3",
+     "kind": "late",
+     "who": "Worshipdom (player)",
+     "what": "The player waits on `zin_afrit.20`.",
+     "magnitude": 0.25,
+     "consequence": "E2: a timeout takes the first, non-committal option; the AI fallback crowns him (SL-04 fix).",
+     "successor": "Timeout successor: if neither crowning nor pliant heir 30 days after `zin_aenor_faithful_rule`, the AI Worshipdom crowns Aurevan; a human Worshipdom keeps the choice and CP06 resolves at its latest date."
+    },
+    {
+     "id": "B09.D4",
+     "kind": "different",
+     "who": "Faithful after the Council's War",
+     "what": "Crowned openly after an early exposure.",
+     "magnitude": 0.5,
+     "consequence": "The name is already known; Aurevan reigns unmasked (`zin_afrit_unmasked`).",
+     "successor": "None."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B10",
+   "cp": "CP06",
+   "act": "III. The god-king",
+   "name": "The god-king's first year",
+   "canon": "established (opponents are silenced); events proposed",
+   "owner": "Afrit, crown events",
+   "historical": "`zin_afrit.22` Dissenters at Court (30 days after `.21`), `zin_reign.43` The First Edict, `.44` Scholars Question the Genealogy, `.45` What Is the Lost Cause For?, `.46` The Golden Court Changes Its Robes.",
+   "trigger": "`zin_reign_on_crowning` chain.",
+   "flags": [],
+   "dates": {
+    "target": "1751.1.1",
+    "latest": "1752.1.1"
+   },
+   "divergers": "The Worshipdom, Aenor's court (player when Aenor is played under Aurevan), Master Ilsabet.",
+   "divergences": [
+    {
+     "id": "B10.D1",
+     "kind": "different",
+     "who": "Worshipdom",
+     "what": "Dissenters are spared.",
+     "magnitude": 0,
+     "consequence": "The veil thins; watchers gain.",
+     "successor": "None."
+    },
+    {
+     "id": "B10.D2",
+     "kind": "different",
+     "who": "Aenor court",
+     "what": "Ilsabet's genealogy spreads (`zin_reign.44`).",
+     "magnitude": 0.25,
+     "consequence": "Veil -; Lost Cause +; early suspicion of an impostor god.",
+     "successor": "None; may hasten B25 D3."
+    },
+    {
+     "id": "B10.D3",
+     "kind": "different",
+     "who": "Lost Cause captains",
+     "what": "The Lost Cause turns from the crown (`zin_aenor_lost_cause` at 60 or more).",
+     "magnitude": 0.25,
+     "consequence": "It becomes Eindil's army earlier.",
+     "successor": "B29 D5."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B11",
+   "cp": "CP07",
+   "act": "IV. The heir of Aen",
+   "name": "The storm and the Islands of the South",
+   "canon": "established",
+   "owner": "Eindil's journey",
+   "historical": "`zin_eindil.40` West Over the Sea, `.41` Wreck on the Southern Isles (wreck host, proposed Howan), `.42` to `.46`, `.158`, `.159`.",
+   "trigger": "Stage 4 floor `1751.3.1`.",
+   "flags": [],
+   "dates": {
+    "target": "1751.3.1",
+    "latest": "1752.3.1"
+   },
+   "divergers": "The departure host, the wreck host, the islands.",
+   "divergences": [
+    {
+     "id": "B11.D1",
+     "kind": "late",
+     "who": "departure host",
+     "what": "Let him find passage himself (`.40` B).",
+     "magnitude": 0.25,
+     "consequence": "+30 days.",
+     "successor": "None."
+    },
+    {
+     "id": "B11.D2",
+     "kind": "different",
+     "who": "wreck host",
+     "what": "Sell the news (`.41` B, fires `zin_glo.5`).",
+     "magnitude": 0.25,
+     "consequence": "+60 days; hunters in the isles (`.46`); ambush strength +1 (N9).",
+     "successor": "None; feeds B14."
+    },
+    {
+     "id": "B11.D3",
+     "kind": "late",
+     "who": "islands",
+     "what": "Hold him to the offer (`.44` B).",
+     "magnitude": 0.25,
+     "consequence": "+60 days; resented.",
+     "successor": "None."
+    },
+    {
+     "id": "B11.D4",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "The wreck host is gone or under a dark power.",
+     "magnitude": 0,
+     "consequence": "The journey picks Nara or Verde.",
+     "successor": "Role R17 (wreck host)."
+    }
+   ],
+   "weight": 1
+  },
+  {
+   "id": "B12",
+   "cp": "CP08",
+   "act": "IV. The heir of Aen",
+   "name": "Lorien names the Man from the Ice",
+   "canon": "established; Mirror of First Rain proposed",
+   "owner": "Eindil's journey; Lands of the Sun",
+   "historical": "`zin_eindil.50` A Stranger at Gala (checkpoint), `.51`, `.160`, `.52` The Mirror of First Rain, `.54` Lorien's Gift, `.161`; `zin_eindil_name_him` sets `zin_eindil_named` (D4: before this he is only \"the Man from the Ice\").",
+   "trigger": "Stage 5 floor `1752.1.15`; host `zin_eindil_pick_gala_host` (Gala Elves, else Lorien's employer, else the owner of Gala's capital); naming fallback after `naming_fallback` 400 days.",
+   "flags": [
+    "zin_eindil_named"
+   ],
+   "dates": {
+    "target": "1752.1.15",
+    "latest": "1753.1.1"
+   },
+   "divergers": "Gala (player or AI); whoever holds Gala; Lorien's survival.",
+   "divergences": [
+    {
+     "id": "B12.D1",
+     "kind": "late",
+     "who": "Gala",
+     "what": "Turn him away (`.50` B).",
+     "magnitude": 0.25,
+     "consequence": "+180 days; the naming and Afrit's report move later.",
+     "successor": "Naming fallback still names him."
+    },
+    {
+     "id": "B12.D2",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Gala is annexed or Lorien is dead or held by another realm.",
+     "magnitude": 0.75,
+     "consequence": "The host falls back to Lorien's employer or Gala's capital owner; without Lorien there is no gift (ship, armour, crew).",
+     "successor": "New `zin_eindil.170` The Mirror Without Its King (reserved 170 to 199): the Mirror names him; voyage takes `voyage_days` 150; ambush crew weaker; CP08 skipped."
+    },
+    {
+     "id": "B12.D3",
+     "kind": "different",
+     "who": "Gala (player)",
+     "what": "Gala builds the great ship (focus, `zin_gala_great_ship`).",
+     "magnitude": 0,
+     "consequence": "The voyage takes 120 days, not 150 (once SL-20 is fixed).",
+     "successor": "None."
+    }
+   ],
+   "weight": 3
+  },
+  {
+   "id": "B13",
+   "cp": "CP09",
+   "act": "IV. The heir of Aen",
+   "name": "The voyage north; Afrit learns and sails",
+   "canon": "established (Afrit travels after him); Merovan left in Parim proposed",
+   "owner": "Eindil's journey (stage 6); Afrit (zin_afrit.31, .32, zin_afrit_northern_voyage, zin_afrit.8)",
+   "historical": "Lorien's ship sails (`zin_eindil.60`), calls at ports (`.61`, `.162`); Afrit hears of the stranger leaving Gala (`zin_afrit.31`, N8), chooses Go north and lie in wait (`zin_afrit.32` hist), sails (60 days, 30 with `zin_worshipdom_cold_maps`) and `zin_afrit.8` sets `zin_afrit_at_yeldenne`.",
+   "trigger": "Stage 6 floor `1753.1.1` and `stage6_after_named` 70 days after the naming.",
+   "flags": [
+    "zin_afrit_at_yeldenne"
+   ],
+   "dates": {
+    "target": "1753.1.1",
+    "latest": "1753.7.1"
+   },
+   "divergers": "The Worshipdom; the ports of call; Gala.",
+   "divergences": [
+    {
+     "id": "B13.D1",
+     "kind": "different",
+     "who": "Worshipdom",
+     "what": "Take Glo at once (`zin_afrit_hall_at_once`).",
+     "magnitude": 1,
+     "consequence": "Hall case C (Afrit alone): Horos repels him (C1) or is slain and seals Glo (C2).",
+     "successor": "B15 D3 or D4."
+    },
+    {
+     "id": "B13.D2",
+     "kind": "different",
+     "who": "Worshipdom",
+     "what": "Send others (`zin_afrit_sent_others`).",
+     "magnitude": 0.5,
+     "consequence": "Council agents ambush; ambush -1; no Afrit in the hall.",
+     "successor": "Hall case B2."
+    },
+    {
+     "id": "B13.D3",
+     "kind": "never",
+     "who": "Worshipdom",
+     "what": "Stay in Parim.",
+     "magnitude": 0.5,
+     "consequence": "No ambush by Afrit; Afrit unwounded.",
+     "successor": "Hall case B2; B39 more dangerous."
+    },
+    {
+     "id": "B13.D4",
+     "kind": "different",
+     "who": "ports",
+     "what": "A port reports the ship (`.61` C).",
+     "magnitude": 0,
+     "consequence": "Ambush +1.",
+     "successor": "None."
+    },
+    {
+     "id": "B13.D5",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Afrit has no realm (Worshipdom gone and no Aurevan realm).",
+     "magnitude": 0.5,
+     "consequence": "Only the Council's hunters act.",
+     "successor": "Role R02; hall case B2."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B14",
+   "cp": "CP09",
+   "act": "IV. The heir of Aen",
+   "name": "The ambush on the shore",
+   "canon": "established (all the crew is killed)",
+   "owner": "Eindil's journey (zin_eindil.70 to .72); Afrit (zin_afrit.33)",
+   "historical": "`zin_eindil.70` Landfall, `zin_afrit.33` The Ambush on the Shore, `zin_eindil.71` The Ambush (`zin_eindil_compute_ambush`, N9: base 5 plus terms; result 1 strong, 2 few, 3 failed), `.72` Alone in the Snow.",
+   "trigger": "`.71` fires when `zin_afrit_at_yeldenne` or `zin_afrit_sent_others`, and not `zin_eindil_let_land`.",
+   "flags": [
+    "global.zin_eindil_ambush_result"
+   ],
+   "dates": {
+    "target": "1753.5.1",
+    "latest": "1753.9.1"
+   },
+   "divergers": "The Worshipdom; the landing owner; the ports.",
+   "divergences": [
+    {
+     "id": "B14.D1",
+     "kind": "different",
+     "who": "dice, landing owner",
+     "what": "The ambush fails (result 3) or few die (2).",
+     "magnitude": 0.5,
+     "consequence": "Companions `zin_eindil_companion_1/_2` survive and serve the Host later.",
+     "successor": "Hall case still A if Afrit was first."
+    },
+    {
+     "id": "B14.D2",
+     "kind": "different",
+     "who": "Worshipdom",
+     "what": "Let them land (`zin_afrit.33` B, `zin_eindil_let_land`).",
+     "magnitude": 0.5,
+     "consequence": "No ambush; the crew reaches the hall.",
+     "successor": "Hall case A or B1."
+    },
+    {
+     "id": "B14.D3",
+     "kind": "different",
+     "who": "landing owner",
+     "what": "Guides inland (`.70` B).",
+     "magnitude": 0.25,
+     "consequence": "Ambush -1.",
+     "successor": "None."
+    },
+    {
+     "id": "B14.D4",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "The landing site changes owner.",
+     "magnitude": 0,
+     "consequence": "The landing owner is the state owner.",
+     "successor": "Role R09 (owner of Mp'E)."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B15",
+   "cp": "CP09",
+   "act": "IV. The heir of Aen",
+   "name": "The hall of Horos: Horos dies, Glo and the blue sword pass to Eindil",
+   "canon": "established",
+   "owner": "Yeldenne and Glo (mech_yeldenne.mjs, zin_glo_resolve_hall)",
+   "historical": "Case A: 14 days after `.71` resolves with 2 or more, `zin_glo.21` The Heart of Horos: `zin_horos_dead`, `zin_glo_with_eindil` (Glo state 1, power 100), `zin_afrit_wounded`; Horos gives the blue sword and turns to dust.",
+   "trigger": "Hall pulse to the owner of Mp'E (state 1063); cases A, B1, B2, C, D; score test for C and D (wards + 30 + 10 + 10 + random(-10..10) - attacker).",
+   "flags": [
+    "zin_horos_dead",
+    "zin_glo_with_eindil",
+    "zin_afrit_wounded"
+   ],
+   "dates": {
+    "target": "1753.7.1",
+    "latest": "1754.6.1"
+   },
+   "divergers": "Yeldenne (wards decisions, the Warden), the Worshipdom, Volgan (grave hunt), whoever annexes Mp'E.",
+   "divergences": [
+    {
+     "id": "B15.D1",
+     "kind": "different",
+     "who": "Worshipdom",
+     "what": "Case B1 Two Against One (`zin_glo.23`).",
+     "magnitude": 0.5,
+     "consequence": "Afrit badly wounded; Glo passes.",
+     "successor": "None."
+    },
+    {
+     "id": "B15.D2",
+     "kind": "different",
+     "who": "Worshipdom absent",
+     "what": "Case B2 The Willing Gift (`zin_glo.22`).",
+     "magnitude": 0.5,
+     "consequence": "Afrit unwounded and stronger later.",
+     "successor": "None."
+    },
+    {
+     "id": "B15.D3",
+     "kind": "different",
+     "who": "Yeldenne wards",
+     "what": "Case C1 The Hall Holds (`zin_glo.24`, `zin_horos_endures`, Gathering Dark -3).",
+     "magnitude": 0.5,
+     "consequence": "Horos lives; Eindil arrives later.",
+     "successor": "Case B2 when he arrives; CP09 diverged."
+    },
+    {
+     "id": "B15.D4",
+     "kind": "actor_dead",
+     "who": "Worshipdom or Volgan",
+     "what": "Case C2 or D2: Horos slain, Glo sealed (state 2, `zin_glo_sealed`).",
+     "magnitude": 1,
+     "consequence": "Eindil can open the seal after `seal_open_days` 30; a dark power can defile it in 365 days (545 warded) to Glo dimmed (state 3).",
+     "successor": "If dimmed: no wave and no restoration (`zin_eindil.99`, `zin_eindil_lost`); a second bearer (state 4) only after the heir is lost; the Lost Cause closes."
+    },
+    {
+     "id": "B15.D5",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Mp'E is annexed before the hall resolves (`zin_glo.63`).",
+     "magnitude": 0.75,
+     "consequence": "The hall rules follow the state; the Warden leads.",
+     "successor": "CP09 diverged or skipped by the hall rules (path acceptance 6)."
+    },
+    {
+     "id": "B15.D6",
+     "kind": "late",
+     "who": "journey delays",
+     "what": "Eindil arrives after the latest date with Horos alive.",
+     "magnitude": 0.25,
+     "consequence": "CP09 diverged by date.",
+     "successor": "Case B2 when he arrives."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B16",
+   "cp": "CP10",
+   "act": "IV. The heir of Aen",
+   "name": "The warnings; Aenor denounces the impostor; Alleria protects him",
+   "canon": "established (warned, not believed); Alleria's earlier role proposed",
+   "owner": "Eindil's journey (stage 8), Aenor, Selen",
+   "historical": "`zin_eindil.80` A Stranger on Selen's Shore, `.81` Alleria's Watch, `.164`, `.165` Ilsabet's Rolls, `.82` The Impostor (checkpoint; denounce is historical), `.83` Warnings of the Heir (never names Afrit, D3), `.84` to `.85`, `.166`, `.167`.",
+   "trigger": "Stage 8 floor `1754.1.1`; host Selen. Denouncing sets `zin_aenor_eindil_denounced` (today a country flag, SL-18) and `zin_afrit_impostor_denounced`.",
+   "flags": [
+    "zin_aenor_eindil_denounced",
+    "zin_afrit_impostor_denounced"
+   ],
+   "dates": {
+    "target": "1754.5.1",
+    "latest": "1755.3.1"
+   },
+   "divergers": "The Aenor realm (player), Selen, every great power (heeding), the Worshipdom.",
+   "divergences": [
+    {
+     "id": "B16.D1",
+     "kind": "opposite",
+     "who": "Aenor",
+     "what": "Aenor heeds him.",
+     "magnitude": 1,
+     "consequence": "Prepared defences (`zin_lastwar.10`); if Aurevan rules Aenor, a heeding court turns on its god and the veil falls.",
+     "successor": "CP10 diverged; B25 D3 possible."
+    },
+    {
+     "id": "B16.D2",
+     "kind": "actor_captured",
+     "who": "Selen, Aenor",
+     "what": "He is handed over or seized (`.81` B, `.82` C).",
+     "magnitude": 0.25,
+     "consequence": "In chains (`.85`), then An Empty Cell (`.166`), +60 days.",
+     "successor": "None; he cannot die before stage 9."
+    },
+    {
+     "id": "B16.D3",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Selen no longer exists or stands on Afrit's side.",
+     "magnitude": 0.5,
+     "consequence": "The substitute host takes the stage.",
+     "successor": "Role R10 (stage 8 host)."
+    },
+    {
+     "id": "B16.D4",
+     "kind": "actor_absent",
+     "who": "any",
+     "what": "Alleria is not available (character retired or her employer gone).",
+     "magnitude": 0.5,
+     "consequence": "Her rescue and her arrow are missing later.",
+     "successor": "Role R11; palace stage 1 without her (B41 D3)."
+    },
+    {
+     "id": "B16.D5",
+     "kind": "different",
+     "who": "great powers",
+     "what": "Many crowns heed him (`zin_eindil_heeded`).",
+     "magnitude": 0.25,
+     "consequence": "Prepared defenders; western grudge drifts down.",
+     "successor": "None."
+    }
+   ],
+   "weight": 3
+  },
+  {
+   "id": "B17",
+   "cp": "CP19",
+   "act": "IV. The heir of Aen",
+   "name": "The forest, Varner and Golbran, the dragon",
+   "canon": "established (returns on a dragon with Varner and Golbran); the forest stay proposed",
+   "owner": "Eindil's journey; elves and dragons",
+   "historical": "`zin_eindil.86` The Bearer in the Forest, `.87` Varner and Golbran, `.168`, `.88` A Dragon's Pact (checkpoint), `.169`; `zin_eindil_dragon_pact`.",
+   "trigger": "Stage 8 after the warnings; `zin_eindil_to_the_forest` once the war runs.",
+   "flags": [
+    "zin_eindil_dragon_pact"
+   ],
+   "dates": {
+    "target": "1756.6.1",
+    "latest": "1757.8.1"
+   },
+   "divergers": "The Magical Forest, the Keeper of Dragon Mountain.",
+   "divergences": [
+    {
+     "id": "B17.D1",
+     "kind": "late",
+     "who": "Keeper",
+     "what": "Refuse the dragon (`.88` B).",
+     "magnitude": 0.25,
+     "consequence": "The return waits, at most to 1 Kerun 4A 1757, and stage 9 opens on `zin_eindil_date_1758_03` at the latest.",
+     "successor": "None."
+    },
+    {
+     "id": "B17.D2",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "The Magical Forest is gone or hostile.",
+     "magnitude": 0.5,
+     "consequence": "Varner and Golbran come to the host directly.",
+     "successor": "Role R12."
+    },
+    {
+     "id": "B17.D3",
+     "kind": "never",
+     "who": "dragon corrupted (magic spec)",
+     "what": "No dragon can carry him.",
+     "magnitude": 0.5,
+     "consequence": "He returns by land.",
+     "successor": "Stage 9 by date with the land-return text of `zin_eindil.90`."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B18",
+   "cp": "CP11",
+   "act": "V. The War of the Last Crowns",
+   "name": "The War of the Last Crowns begins",
+   "canon": "established (several overlapping wars); the name proposed",
+   "owner": "world systems (world_tension.mjs, zin_world.20)",
+   "historical": "`zin_world.20` sets `zin_war_of_last_crowns`; news to everyone; no war is forced, each front is its owner's.",
+   "trigger": "HISTORICAL: `1755.4.1` paced. PLAUSIBLE: the first of the Gathering Dark at 65 after `1754.3.1`, a dark power at war with a non-dark major, or `1756.3.1`. FREE: the first two only.",
+   "flags": [
+    "zin_war_of_last_crowns"
+   ],
+   "dates": {
+    "target": "1755.4.1",
+    "latest": "1756.3.1"
+   },
+   "divergers": "The rules; any player whose war makes a dark power fight a major.",
+   "divergences": [
+    {
+     "id": "B18.D1",
+     "kind": "early",
+     "who": "PLAUSIBLE or FREE triggers, Volgan AGGRESSIVE",
+     "what": "The war begins early (`zin_ending_cp11_early`).",
+     "magnitude": 0.25,
+     "consequence": "Fronts open before the warnings land.",
+     "successor": "None."
+    },
+    {
+     "id": "B18.D2",
+     "kind": "late",
+     "who": "PLAUSIBLE",
+     "what": "The war begins late (`zin_ending_cp11_late`).",
+     "magnitude": 0.25,
+     "consequence": "The journey waits (stage 9 needs the war or 1758.3.1).",
+     "successor": "None."
+    },
+    {
+     "id": "B18.D3",
+     "kind": "never",
+     "who": "FREE",
+     "what": "No dark power fights a major.",
+     "magnitude": 1,
+     "consequence": "Nothing starts the Last Crowns as one war.",
+     "successor": "New rule: the first front that becomes historical (CP12 to CP16) sets the flag with `zin_war_piecemeal`; with no front at all, stage 9 is the quiet return and the age goes to judgement."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B19",
+   "cp": "CP12",
+   "act": "V. The War of the Last Crowns",
+   "name": "Lerendor leaves the Treaty of the Narrow Strait",
+   "canon": "established (North withdraws); treaty name proposed",
+   "owner": "Lerendor (mech_lerendor.mjs)",
+   "historical": "`zin_leren.35` (AI) or `.36` (human) decide 30 or 14 days after the war; `zin_leren_withdraw` sets `zin_leren_withdrawal`; `zin_leren.30` to `.32` news.",
+   "trigger": "Target CP11 + 30, latest CP11 + 180; rule `zin_rule_leren_route` (DEFAULT follows the path).",
+   "flags": [
+    "zin_leren_withdrawal"
+   ],
+   "dates": {
+    "target": "1755.5.1",
+    "latest": "1755.10.1"
+   },
+   "divergers": "Lerendor (player or AI), Aenor (appeals), R'en (strait shore).",
+   "divergences": [
+    {
+     "id": "B19.D1",
+     "kind": "opposite",
+     "who": "Lerendor",
+     "what": "Honour the treaty (`zin_leren_treaty_honoured`, `zin_leren.33`).",
+     "magnitude": 1,
+     "consequence": "Lerendor fights for Aenor; the strait can be barred (O9); `zin_lastwar.14` does not fire.",
+     "successor": "CP12 diverged; Master of the Strait closes."
+    },
+    {
+     "id": "B19.D2",
+     "kind": "different",
+     "who": "Lerendor",
+     "what": "Seek supremacy over the strait (`zin_leren_strait_supremacy`).",
+     "magnitude": 1,
+     "consequence": "Wars on R'en; claims on the strait shore.",
+     "successor": "Master of the Strait reachable (needs R'en's coast, O9)."
+    },
+    {
+     "id": "B19.D3",
+     "kind": "early",
+     "who": "start variety V14",
+     "what": "Withdraws before the war.",
+     "magnitude": 0.25,
+     "consequence": "The North is out when the war starts.",
+     "successor": "None."
+    },
+    {
+     "id": "B19.D4",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Lerendor or Aenor is gone.",
+     "magnitude": 0.5,
+     "consequence": "CP12 skipped.",
+     "successor": "Role R07 (Leren crown)."
+    }
+   ],
+   "weight": 3
+  },
+  {
+   "id": "B20",
+   "cp": "CP13",
+   "act": "V. The War of the Last Crowns",
+   "name": "The Western Crossing",
+   "canon": "established (the West sails and seizes the capital)",
+   "owner": "Western Crossing (mech_crossing.mjs)",
+   "historical": "The Ford Council chooses the crossing (`zin_west_route_crossing`); `zin_west_launch_crossing` (leader Gunwaith on the historical path) sets `zin_western_crossing`; landings across the central sea.",
+   "trigger": "Resolve `zin_west_resolve` (grudge 50%, unity 30%, fleet 20%) at `resolve_cross_at` 60; target CP11 + 45, latest CP11 + 365; early crossing at resolve 80 after `1754.3.1` with Aenor in civil war; rule `zin_rule_west_route`.",
+   "flags": [
+    "zin_western_crossing",
+    "zin_west_route_crossing"
+   ],
+   "dates": {
+    "target": "1755.5.15",
+    "latest": "1756.4.1"
+   },
+   "divergers": "The West Lands crowns (player or AI), Asgard, Lerendor, Aenor's fleet.",
+   "divergences": [
+    {
+     "id": "B20.D1",
+     "kind": "never",
+     "who": "West, rule",
+     "what": "The West stays divided (`zin_west_route_divided`).",
+     "magnitude": 1,
+     "consequence": "No capture of Parim.",
+     "successor": "B27 skipped; A Western Crown in Parim closes."
+    },
+    {
+     "id": "B20.D2",
+     "kind": "opposite",
+     "who": "West",
+     "what": "The West sails as Aenor's relief (`zin_west_route_relief`, `zin_western_relief_sailed`, -3 Gathering Dark).",
+     "magnitude": 1,
+     "consequence": "Westerners defend Parim.",
+     "successor": "B27 skipped; the coalition of the living is larger."
+    },
+    {
+     "id": "B20.D3",
+     "kind": "never",
+     "who": "West",
+     "what": "The West holds at home (`zin_west_route_hold`).",
+     "magnitude": 1,
+     "consequence": "No crossing.",
+     "successor": "B27 skipped."
+    },
+    {
+     "id": "B20.D4",
+     "kind": "early",
+     "who": "West",
+     "what": "Early crossing.",
+     "magnitude": 0.25,
+     "consequence": "+10 Gathering Dark.",
+     "successor": "None."
+    },
+    {
+     "id": "B20.D5",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Gunwaith is gone.",
+     "magnitude": 0,
+     "consequence": "Another member leads.",
+     "successor": "Role R06."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B21",
+   "cp": "CP14",
+   "act": "V. The War of the Last Crowns",
+   "name": "The eastern invasion of the Magical Lands",
+   "canon": "established (eastern coalitions threaten the Magical Lands)",
+   "owner": "eastern kings (mech_east.mjs); elves",
+   "historical": "`zin_east.41` to `.43`: the coalition gathers and crosses the rift; `zin_eastern_invasion`; `zin_elves.70`, `.71`; `zin_east.44` The Host Turns West after 120 days or 1 Glernaen 4A 1756.",
+   "trigger": "Within 90 days of the war (target CP11 + 60, latest CP11 + 365); rule `zin_rule_ai_east`.",
+   "flags": [
+    "zin_eastern_invasion",
+    "zin_east_coalition_formed"
+   ],
+   "dates": {
+    "target": "1755.6.1",
+    "latest": "1756.4.1"
+   },
+   "divergers": "Eastern courts (player or AI), the elves, the Worshipdom's footholds.",
+   "divergences": [
+    {
+     "id": "B21.D1",
+     "kind": "never",
+     "who": "eastern courts, REFUSE_AFRIT",
+     "what": "No coalition forms (caravan war `zin_east_caravan_war`, low footholds).",
+     "magnitude": 1,
+     "consequence": "The Magical Lands are spared.",
+     "successor": "CP14 diverged; the King of the East is weaker."
+    },
+    {
+     "id": "B21.D2",
+     "kind": "different",
+     "who": "UNITE_WITHOUT_AFRIT",
+     "what": "The East unites under its own crown (`zin_east_united`).",
+     "magnitude": 1,
+     "consequence": "One King in the East becomes reachable.",
+     "successor": "B26 D4."
+    },
+    {
+     "id": "B21.D3",
+     "kind": "different",
+     "who": "elves, rule MARCH",
+     "what": "The Kindred march (`zin_elves_march`).",
+     "magnitude": 0.5,
+     "consequence": "The Refusal is laid down for this war only.",
+     "successor": "Allowed only in a far-diverged game: AI gate `zin_path_divergence` 50 or more, because the vault forbids the Refusal becoming a new alliance (OPEN_QUESTIONS elves 3)."
+    },
+    {
+     "id": "B21.D4",
+     "kind": "early",
+     "who": "eastern host",
+     "what": "The host breaks through the passes of the Great Wall range into the Middle Lands early.",
+     "magnitude": 0.25,
+     "consequence": "The Wall is a natural range (K2): only its passes fall.",
+     "successor": "None."
+    }
+   ],
+   "weight": 3
+  },
+  {
+   "id": "B22",
+   "cp": "CP15",
+   "act": "V. The War of the Last Crowns",
+   "name": "Volgan retakes Mirolon",
+   "canon": "established",
+   "owner": "Volgan (mech_volgan.mjs, mp_volgan_*.mjs)",
+   "historical": "Volgan declares war on Mirolon (`zin_dominion_war_started`, `zin_dominion.10` Out of the Storms); Mirolon falls (`zin_dominion_mirolon_falls`, `zin_dominion.11`, `.24` A Court in Exile) and `zin_mirolon_fallen` is set.",
+   "trigger": "Strength `zin_dominion_strength` (start 45) to the great host (70, or 60 for a historical AI after `zin_dominion_after_1755_04`); target `1755.11.1`, latest `1756.9.1`; rules `zin_rule_dark_powers`, `zin_rule_volgan_spirit`.",
+   "flags": [
+    "zin_mirolon_fallen"
+   ],
+   "dates": {
+    "target": "1755.11.1",
+    "latest": "1756.9.1"
+   },
+   "divergers": "Mirolon (player: passes, proof, Aenor's guarantee), Volgan (player), Herez, the rules.",
+   "divergences": [
+    {
+     "id": "B22.D1",
+     "kind": "opposite",
+     "who": "Mirolon",
+     "what": "Mirolon holds the passes (`zin_mirolon_passes_held`).",
+     "magnitude": 1,
+     "consequence": "The march north is delayed or broken.",
+     "successor": "CP15 diverged; Children of Volgan less likely."
+    },
+    {
+     "id": "B22.D2",
+     "kind": "early",
+     "who": "rule AGGRESSIVE",
+     "what": "Volgan strikes a year early.",
+     "magnitude": 0.25,
+     "consequence": "Stronger hosts.",
+     "successor": "None."
+    },
+    {
+     "id": "B22.D3",
+     "kind": "different",
+     "who": "Volgan",
+     "what": "Volgan lets Mirolon go (`zin_dominion_let_mirolon_go`).",
+     "magnitude": 1,
+     "consequence": "Peace in the south.",
+     "successor": "CP15 diverged."
+    },
+    {
+     "id": "B22.D4",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Mirolon no longer exists.",
+     "magnitude": 0.5,
+     "consequence": "Volgan's target is the holder of the passes.",
+     "successor": "Role R08: \"Mirolon falls\" means Volgan controls `zin_is_site_mirolon_passes`."
+    },
+    {
+     "id": "B22.D5",
+     "kind": "never",
+     "who": "rule RESTRAINED",
+     "what": "Volgan never strikes first.",
+     "magnitude": 1,
+     "consequence": "Only an attack on him starts the southern front.",
+     "successor": "CP15 diverged by date."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B23",
+   "cp": "CP15",
+   "act": "V. The War of the Last Crowns",
+   "name": "Volgan marches north",
+   "canon": "established",
+   "owner": "Volgan",
+   "historical": "`zin_volgan_begin_march` (Volgan focus) sets `zin_volgan_marches`; `zin_dominion.12` The March North; AI conquers the Parim holder and Herez (06 table).",
+   "trigger": "After `zin_mirolon_fallen`; today only the focus starts it (SL-34).",
+   "flags": [
+    "zin_volgan_marches"
+   ],
+   "dates": {
+    "target": "1755.12.1",
+    "latest": "1756.9.1"
+   },
+   "divergers": "Volgan (player or AI), Herez (`zin_lastwar.41` Herez Holds the Marches), Goldoroth.",
+   "divergences": [
+    {
+     "id": "B23.D1",
+     "kind": "never",
+     "who": "Volgan (player), FREE",
+     "what": "The march never begins.",
+     "magnitude": 1,
+     "consequence": "The Middle Lands face only the West, the East and the dead.",
+     "successor": "CP15 diverged; B33 and B34 need Volgan in the field (SL-33 deadline)."
+    },
+    {
+     "id": "B23.D2",
+     "kind": "different",
+     "who": "Volgan",
+     "what": "He turns on the Dark Lands first (Goldoroth sworn, `zin_rule_ai_goldoroth`).",
+     "magnitude": 0.5,
+     "consequence": "Children of Volgan grows by subjects.",
+     "successor": "None."
+    },
+    {
+     "id": "B23.D3",
+     "kind": "different",
+     "who": "Herez",
+     "what": "The march is broken at the marches.",
+     "magnitude": 0.5,
+     "consequence": "Volgan's strength falls.",
+     "successor": "None."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B24",
+   "cp": "CP16",
+   "act": "V. The War of the Last Crowns",
+   "name": "Zol's dead rise",
+   "canon": "established",
+   "owner": "Zol's Mistake (mech_zol.mjs, lib/mech_zol_script.mjs)",
+   "historical": "`zin_zol_rise` sets `zin_zol_rising`; `zin_mistake.10` Whither the Dead (Aenor is historical), `.11` news, `zin_leren.51`.",
+   "trigger": "Appointed hour `1755.5.1`, forced rising `1755.7.1` (hastened `1753.3.1`, early `1754.7.1` under AGGRESSIVE), power 55; skip `zin_zol_presence_lapsed`.",
+   "flags": [
+    "zin_zol_rising"
+   ],
+   "dates": {
+    "target": "1755.7.1",
+    "latest": "1756.3.1"
+   },
+   "divergers": "Rule `zin_rule_dark_powers`; a Zol player; forewarned crowns.",
+   "divergences": [
+    {
+     "id": "B24.D1",
+     "kind": "early",
+     "who": "hastened hour, AGGRESSIVE",
+     "what": "The dead rise early.",
+     "magnitude": 0.25,
+     "consequence": "The north burns before the West sails.",
+     "successor": "None."
+    },
+    {
+     "id": "B24.D2",
+     "kind": "different",
+     "who": "Zol",
+     "what": "The dead strike Lerendor or the North first (`zin_mistake.10` option).",
+     "magnitude": 0.25,
+     "consequence": "The northern front shifts.",
+     "successor": "None."
+    },
+    {
+     "id": "B24.D3",
+     "kind": "never",
+     "who": "RESTRAINED, presence lapsed",
+     "what": "The dead never rise.",
+     "magnitude": 1,
+     "consequence": "No dead front.",
+     "successor": "CP16, CP20 and CP23 skipped; Lorien lives; the Zol battle is skipped and the heir is hailed on 1 Naisa 4A 1757."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B25",
+   "cp": "CP17",
+   "act": "VI. The god-king flees",
+   "name": "Afrit abandons Aenor; the name is known",
+   "canon": "established (abandons his subjects); the reveal at the flight is decision D3",
+   "owner": "Afrit (zin_afrit.50, zin_afrit_flee_east, zin_afrit_reveal, zin_afrit.43, .45, .53)",
+   "historical": "`zin_afrit.50` Aenor Cannot Hold (checkpoint: Hold for now / Go east (hist) / Flee), `zin_afrit_flee_east` calls `zin_afrit_reveal` (`zin_afrit.43` The Name Behind the Deliverer, `.45`) and sets `zin_afrit_abandoned_aenor`; `zin_aenor.300` to every Aenor realm; `zin_afrit.53` Merovan's choice.",
+   "trigger": "Pressure or `1756.3.1` (`zin_afrit_date_flight`); fallback in `zin_afrit_historical_fallbacks` (SL-08).",
+   "flags": [
+    "zin_afrit_abandoned_aenor",
+    "zin_afrit_revealed"
+   ],
+   "dates": {
+    "target": "1756.3.1",
+    "latest": "1757.3.1"
+   },
+   "divergers": "The Worshipdom (player or AI).",
+   "divergences": [
+    {
+     "id": "B25.D1",
+     "kind": "opposite",
+     "who": "Worshipdom",
+     "what": "Afrit stands in Parim (`zin_afrit_stand_in_parim`).",
+     "magnitude": 1,
+     "consequence": "No flight, no King of the East; the West must storm Parim; the palace happens with Afrit already there.",
+     "successor": "CP17 diverged; `zin_west.55` and `zin_afrit.62` do not fire."
+    },
+    {
+     "id": "B25.D2",
+     "kind": "different",
+     "who": "eastern courts",
+     "what": "Afrit flees only to the hermitage (fewer than two courts kneel).",
+     "magnitude": 0.5,
+     "consequence": "No Dominion of the East; a weak return.",
+     "successor": "B26 D1."
+    },
+    {
+     "id": "B25.D3",
+     "kind": "early",
+     "who": "exposure, veil below 15",
+     "what": "The name is known early (`zin_afrit_unmasked_early`).",
+     "magnitude": 0.5,
+     "consequence": "+10 Gathering Dark; `zin_afrit_unmasked`.",
+     "successor": "Flight by pressure."
+    },
+    {
+     "id": "B25.D4",
+     "kind": "different",
+     "who": "B09 D1, B08 D1 to D3",
+     "what": "Afrit is not on Aenor's throne.",
+     "magnitude": 0.5,
+     "consequence": "The Council withdraws east from the Worshipdom; the name is still spoken at the flight.",
+     "successor": "CP17 historical if the King of the East follows."
+    },
+    {
+     "id": "B25.D5",
+     "kind": "never",
+     "who": "rule DORMANT",
+     "what": "The Worshipdom never leaves its hills.",
+     "magnitude": 1,
+     "consequence": "The name stays secret; the Ashen Throne cannot be reached without the reveal (`zin_world_reach_ending` calls it).",
+     "successor": "CP17 skipped; the stage 12 gate uses the reduced-Afrit test (SL-09)."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B26",
+   "cp": "CP17",
+   "act": "VI. The god-king flees",
+   "name": "Afrit is proclaimed King of the East",
+   "canon": "established",
+   "owner": "Afrit, eastern kings (S1, O5)",
+   "historical": "`zin_afrit.51` to each eastern candidate (`zin_afrit_kneel_chance`; under the historical branch the two AI candidates with the most footholds kneel), kneeling courts become subjects with `zin_autonomy_eastern_client`; `zin_afrit.52` news; `zin_afrit.9` sets `zin_afrit_king_of_east`; cosmetic \"the Dominion of the East\"; `zin_east.50`, `.51`, `.45`.",
+   "trigger": "30 days after the flight.",
+   "flags": [
+    "zin_afrit_king_of_east"
+   ],
+   "dates": {
+    "target": "1756.4.1",
+    "latest": "1757.3.1"
+   },
+   "divergers": "Every eastern candidate (player or AI); rule `zin_rule_ai_east`.",
+   "divergences": [
+    {
+     "id": "B26.D1",
+     "kind": "never",
+     "who": "eastern courts",
+     "what": "No court kneels.",
+     "magnitude": 1,
+     "consequence": "No eastern throne.",
+     "successor": "CP17 diverged; B38 is a raid from the hermitage, not a host."
+    },
+    {
+     "id": "B26.D2",
+     "kind": "different",
+     "who": "deep footholds",
+     "what": "Many courts kneel.",
+     "magnitude": 0.25,
+     "consequence": "A strong Dominion of the East; Ashen paths open.",
+     "successor": "None."
+    },
+    {
+     "id": "B26.D3",
+     "kind": "different",
+     "who": "clients",
+     "what": "Kneelers break free later (`zin_east.45`).",
+     "magnitude": 0.25,
+     "consequence": "The return is weaker.",
+     "successor": "None."
+    },
+    {
+     "id": "B26.D4",
+     "kind": "different",
+     "who": "B21 D2",
+     "what": "A united eastern crown refuses him.",
+     "magnitude": 0.5,
+     "consequence": "War in the east between the claimant and the god-king.",
+     "successor": "One King in the East needs Afrit dead or never King of the East."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B27",
+   "cp": "CP18",
+   "act": "VI. The god-king flees",
+   "name": "Western armies take Parim",
+   "canon": "established",
+   "owner": "Western Crossing (zin_west_take_parim); battle result, never forced",
+   "historical": "`zin_west_parim_taken`; `zin_lastwar.60` Parim Under Western Banners; the Aenor realm moves to its fallback seat (`zin_aenor_fallback_seat`).",
+   "trigger": "Control of `zin_is_site_parim` by a Crossing member.",
+   "flags": [
+    "zin_west_parim_taken"
+   ],
+   "dates": {
+    "target": "1756.6.1",
+    "latest": "1757.3.1"
+   },
+   "divergers": "Battles; the defenders.",
+   "divergences": [
+    {
+     "id": "B27.D1",
+     "kind": "never",
+     "who": "battle",
+     "what": "Parim is not taken.",
+     "magnitude": 1,
+     "consequence": "Aenor holds its capital.",
+     "successor": "CP18 diverged."
+    },
+    {
+     "id": "B27.D2",
+     "kind": "different",
+     "who": "battle",
+     "what": "Another power takes Parim (the eastern host, Volgan, the dead).",
+     "magnitude": 0.75,
+     "consequence": "The Parim holder changes.",
+     "successor": "Role R15 (`zin_aenor_find_parim_realm`); endings follow the holder."
+    },
+    {
+     "id": "B27.D3",
+     "kind": "different",
+     "who": "western claimant",
+     "what": "A western claimant takes Parim's throne (`zin_west_throne_claimed`, +3).",
+     "magnitude": 0.5,
+     "consequence": "A Western Crown in Parim reachable (SL-19 fix).",
+     "successor": "None."
+    }
+   ],
+   "weight": 2
+  },
+  {
+   "id": "B28",
+   "cp": "CP18",
+   "act": "VI. The god-king flees",
+   "name": "Crushed between two darks; the West evacuates",
+   "canon": "established",
+   "owner": "Volgan (zin_volgan_zol_clash, zin_dominion.13), Western Crossing (evacuation), events (zin_lastwar.61, .62)",
+   "historical": "The dead and the Dominion clash (`zin_dominion.13`); Westerners find the conquest untenable and evacuate (`zin_west_evacuation`, `zin_west_evacuated`); stranded companies remain (`zin_lastwar.62`, `zin_east.46`).",
+   "trigger": "Volgan's clash condition (O4); western strain (`strain_*`).",
+   "flags": [
+    "zin_volgan_zol_clash",
+    "zin_west_evacuated"
+   ],
+   "dates": {
+    "target": "1756.9.1",
+    "latest": "1757.6.1"
+   },
+   "divergers": "Volgan, Zol, the western leader.",
+   "divergences": [
+    {
+     "id": "B28.D1",
+     "kind": "never",
+     "who": "Zol never rose",
+     "what": "No clash.",
+     "magnitude": 0.5,
+     "consequence": "Volgan alone presses Parim.",
+     "successor": "None."
+    },
+    {
+     "id": "B28.D2",
+     "kind": "different",
+     "who": "West",
+     "what": "The West holds Parim and does not evacuate.",
+     "magnitude": 0.5,
+     "consequence": "A Western Crown in Parim at judgement.",
+     "successor": "None."
+    },
+    {
+     "id": "B28.D3",
+     "kind": "different",
+     "who": "stranded companies",
+     "what": "Stranded armies join the Host.",
+     "magnitude": 0.25,
+     "consequence": "Coalition of the living larger.",
+     "successor": "None."
+    }
+   ],
+   "weight": 2
+  },
+  {
+   "id": "B29",
+   "cp": "CP19",
+   "act": "VII. The return of the king without a kingdom",
+   "name": "Eindil returns on a dragon; the Host of Eindil",
+   "canon": "established",
+   "owner": "Eindil's journey (stage 9)",
+   "historical": "`zin_eindil.90` On Dragon's Wings, `.92` Raise the Host of Eindil (Selen; S2), `.93`, `.94` The Coalition of the Living, `.95` Give the Lost Cause to the Heir; `zin_eindil_returned`.",
+   "trigger": "Stage 9 floor `1757.3.1`; ready when the war runs and the dragon pact exists, or on `1758.3.1`.",
+   "flags": [
+    "zin_eindil_returned"
+   ],
+   "dates": {
+    "target": "1757.3.1",
+    "latest": "1758.6.1"
+   },
+   "divergers": "Selen, sworn countries, the Lost Cause leader.",
+   "divergences": [
+    {
+     "id": "B29.D1",
+     "kind": "different",
+     "who": "no war",
+     "what": "The quiet return (`zin_eindil_quiet_return`).",
+     "magnitude": 0.5,
+     "consequence": "No battles; a crown in the wrong hands.",
+     "successor": "CP19 diverged; the palace and coronation still follow."
+    },
+    {
+     "id": "B29.D2",
+     "kind": "late",
+     "who": "Keeper",
+     "what": "A late return.",
+     "magnitude": 0.25,
+     "consequence": "Fewer friends.",
+     "successor": "None."
+    },
+    {
+     "id": "B29.D3",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Selen no longer exists.",
+     "magnitude": 0.5,
+     "consequence": "A dynamic Host of Eindil (`zin_eindil_create_dynamic_host`; tag budget S12).",
+     "successor": "Role R03."
+    },
+    {
+     "id": "B29.D4",
+     "kind": "different",
+     "who": "Lost Cause leader",
+     "what": "The Lost Cause stays Aenor's shield (`zin_lost_cause_shield`) or passes to the heir.",
+     "magnitude": 0.25,
+     "consequence": "Who leads the faction.",
+     "successor": "None."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B30",
+   "cp": "CP19",
+   "act": "VII. The return of the king without a kingdom",
+   "name": "The wave of Glo; the coalition of the living",
+   "canon": "established (his sword destroys Zol's dead; the people unite)",
+   "owner": "Eindil's journey; Glo",
+   "historical": "`zin_eindil.91` The Wave of Glo unmakes a front of the dead (`zin_glo_wave_battlefield`); `.94` coalition.",
+   "trigger": "Glo state 1 and Zol's dead in the field.",
+   "flags": [],
+   "dates": {
+    "target": "1757.4.1",
+    "latest": "1758.6.1"
+   },
+   "divergers": "Glo's state; Zol.",
+   "divergences": [
+    {
+     "id": "B30.D1",
+     "kind": "never",
+     "who": "Glo sealed or dimmed",
+     "what": "No wave.",
+     "magnitude": 0.5,
+     "consequence": "The dead are not unmade.",
+     "successor": "None."
+    },
+    {
+     "id": "B30.D2",
+     "kind": "never",
+     "who": "Zol never rose",
+     "what": "No dead to unmake.",
+     "magnitude": 0.5,
+     "consequence": "The wave is unused.",
+     "successor": "None."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B31",
+   "cp": "CP20",
+   "act": "VII. The return of the king without a kingdom",
+   "name": "The Black Compact",
+   "canon": "established (the darks briefly join against Eindil)",
+   "owner": "Volgan (zin_dominion.14 offers once, O4), Zol (zin_mistake.16 answer), zin_dominion.15",
+   "historical": "Volgan offers the Black Compact after `zin_eindil_returned`; `zin_black_compact` is set; `zin_lastwar.71` Two Darks, One Field.",
+   "trigger": "Volgan's focus after the return; today `zin_dominion.14` is not written (SL-15).",
+   "flags": [
+    "zin_black_compact"
+   ],
+   "dates": {
+    "target": "1757.4.1",
+    "latest": "1757.9.1"
+   },
+   "divergers": "Volgan, Zol.",
+   "divergences": [
+    {
+     "id": "B31.D1",
+     "kind": "never",
+     "who": "Zol",
+     "what": "Zol refuses; the darks fight each other (`zin_volgan_strike_zol`).",
+     "magnitude": 0.5,
+     "consequence": "Easier field for the Host.",
+     "successor": "None."
+    },
+    {
+     "id": "B31.D2",
+     "kind": "never",
+     "who": "Zol never rose",
+     "what": "Nothing to offer.",
+     "magnitude": 0.5,
+     "consequence": "None.",
+     "successor": "None."
+    }
+   ],
+   "weight": 3
+  },
+  {
+   "id": "B32",
+   "cp": "CP20",
+   "act": "VII. The return of the king without a kingdom",
+   "name": "Varner dies shielding the living",
+   "canon": "established",
+   "owner": "Eindil's journey (zin_eindil.96, .97), elves (zin_elves.51)",
+   "historical": "`.96` Volgan at the Southern Front starts `.97` Varner's Last Wards when Zol's dead are in the field; `zin_varner_dead`; `zin_lastwar.72` Where Is Golbran? (his apparent sacrifice, proposed).",
+   "trigger": "Battle 1 (`1757.6.1` historical; free: the Host near Volgan's ground).",
+   "flags": [
+    "zin_varner_dead"
+   ],
+   "dates": {
+    "target": "1757.6.1",
+    "latest": "1758.3.1"
+   },
+   "divergers": "Zol's presence; the Host's fronts.",
+   "divergences": [
+    {
+     "id": "B32.D1",
+     "kind": "never",
+     "who": "Zol not at war with the Host",
+     "what": "Varner lives.",
+     "magnitude": 1,
+     "consequence": "CP20 skipped; Golbran's apparent sacrifice does not happen.",
+     "successor": "Golbran keeps his full reserve for the palace (stage 4 base +10)."
+    }
+   ],
+   "weight": 3
+  },
+  {
+   "id": "B33",
+   "cp": "CP21",
+   "act": "VII. The return of the king without a kingdom",
+   "name": "Volgan casts Eindil down; the New Gods restore him",
+   "canon": "established",
+   "owner": "Eindil's journey (battles 1 and 2), Volgan (zin_dominion.16)",
+   "historical": "Volgan beats Eindil (`zin_dominion.16` Then I Will Bury Them Together; `zin_volgan_struck_down_eindil`); `zin_eindil.98` The Gathering of the New Gods restores him through Glo; `zin_eindil_restored`.",
+   "trigger": "Battle 2 after `battle_gap_days` 30, on `1757.7.1` (historical) or when the Host meets Volgan (free).",
+   "flags": [
+    "zin_eindil_restored"
+   ],
+   "dates": {
+    "target": "1757.7.1",
+    "latest": "1758.3.1"
+   },
+   "divergers": "Volgan, Glo's state.",
+   "divergences": [
+    {
+     "id": "B33.D1",
+     "kind": "actor_dead",
+     "who": "Glo not carried",
+     "what": "Without Glo the heir does not rise (`zin_eindil.99`, `zin_eindil_lost`).",
+     "magnitude": 1,
+     "consequence": "Lost Cause closes.",
+     "successor": "`zin_ending_heir_lost` (today never called, SL-37) fires `zin_ending.80` The League Without the Heir."
+    },
+    {
+     "id": "B33.D2",
+     "kind": "never",
+     "who": "Volgan gone or body already destroyed",
+     "what": "No fall, so no restoration.",
+     "magnitude": 0.5,
+     "consequence": "The heir lacks `zin_eindil_blessed_of_the_new_gods`.",
+     "successor": "CP21 skipped; battles 1 to 3 skipped."
+    },
+    {
+     "id": "B33.D3",
+     "kind": "never",
+     "who": "FREE: the Host never meets Volgan",
+     "what": "Battle 1 never fires.",
+     "magnitude": 0.5,
+     "consequence": "Today stage 9 hangs (SL-33).",
+     "successor": "Deadline: CP21 latest date skips battles 1 to 3."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B34",
+   "cp": "CP22",
+   "act": "VII. The return of the king without a kingdom",
+   "name": "Volgan's manifested body is destroyed",
+   "canon": "established (spiritual fate unresolved)",
+   "owner": "Volgan (zin_volgan_destroy_body, zin_dominion.17 to .19, .23)",
+   "historical": "`zin_eindil.100` The Blue Sword Through Volgan calls `zin_volgan_destroy_body`; `zin_volgan_body_destroyed`; `zin_dominion.17` The Body Breaks, `.18` Old Allegiances, `.23` The Compact Ends, `.19` The Steward's Choice.",
+   "trigger": "Battle 3 on `1757.8.1` (historical) or near Volgan's ground (free).",
+   "flags": [
+    "zin_volgan_body_destroyed"
+   ],
+   "dates": {
+    "target": "1757.8.1",
+    "latest": "1758.6.1"
+   },
+   "divergers": "Battles; Volgan.",
+   "divergences": [
+    {
+     "id": "B34.D1",
+     "kind": "never",
+     "who": "battle",
+     "what": "The body survives.",
+     "magnitude": 1,
+     "consequence": "Children of Volgan stays open.",
+     "successor": "CP22 diverged."
+    },
+    {
+     "id": "B34.D2",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "Volgan's realm is annexed with the body intact.",
+     "magnitude": 0.75,
+     "consequence": "His spirit's fate stays open (canon).",
+     "successor": "New `zin_volgan_withdrawn_south` (proposed): Children of Volgan closes; the Steward's Choice (`zin_dominion.19`) runs for the remnant; CP22 skipped."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B35",
+   "cp": "CP23",
+   "act": "VIII. Kusven",
+   "name": "Kusven, Zol's most loyal servant, comes forth and breaks the blue sword",
+   "canon": "established (owner corrections K4 and K11 and the owner decision of 24 October 2026): Kusven (formerly Edvoid), a Great Spirit and Zol's most loyal servant; Zol himself does not appear",
+   "owner": "Zol's Mistake, re-designed (today zin_zol_manifest and zin_mistake.20, .21)",
+   "historical": "Kusven takes the field (re-designed `zin_mistake.20`), overpowers the renewed champion and shatters Horos's blue sword (`zin_mistake.21` sets `zin_horos_sword_broken`; Glo power cap 50); Eindil wounds Kusven with a shard (`zin_kusven_wounded`); `zin_eindil.101` The Heir Struck Down (retitled).",
+   "trigger": "CP22 + 7 days; servant power 60 and convergence 100 (`mech_zol.json` manifestPower, manifestConvergence); late hour `1758.1.1`; latest `1758.9.1`.",
+   "flags": [
+    "zin_kusven_forth (replaces zin_zol_manifested)",
+    "zin_horos_sword_broken",
+    "zin_kusven_wounded"
+   ],
+   "dates": {
+    "target": "1757.8.8",
+    "latest": "1758.9.1"
+   },
+   "divergers": "Zol (AI, rule), the Host's fronts, Glo.",
+   "divergences": [
+    {
+     "id": "B35.D1",
+     "kind": "never",
+     "who": "Zol never rose, RESTRAINED, power too low",
+     "what": "Kusven never comes forth.",
+     "magnitude": 1,
+     "consequence": "Lorien lives; no sword-break.",
+     "successor": "CP23 skipped; battle 5 on 1 Naisa 4A 1757."
+    },
+    {
+     "id": "B35.D2",
+     "kind": "different",
+     "who": "Host not at war with Zol",
+     "what": "Kusven ravages elsewhere.",
+     "magnitude": 0.5,
+     "consequence": "No sword-break; withdrawal only by cost (deathfield).",
+     "successor": "CP23 diverged."
+    },
+    {
+     "id": "B35.D3",
+     "kind": "early",
+     "who": "power reached early",
+     "what": "He comes forth before Volgan's body breaks.",
+     "magnitude": 0.25,
+     "consequence": "Battle order changes.",
+     "successor": "Battle 4 is noticed on his coming."
+    },
+    {
+     "id": "B35.D4",
+     "kind": "different",
+     "who": "Glo not with Eindil",
+     "what": "Without Glo the sword-break has no bearer to wound him.",
+     "magnitude": 0.5,
+     "consequence": "`zin_eindil.101` fires from the coming forth itself; Kusven is not wounded.",
+     "successor": "None."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B36",
+   "cp": "CP23",
+   "act": "VIII. Kusven",
+   "name": "Lorien and the ancient spirits die; Kusven withdraws",
+   "canon": "established",
+   "owner": "Lands of the Sun (zin_sun_lorien_rides, zin_sun_lorien_falls), Zol (re-designed zin_mistake.22 to .25)",
+   "historical": "`zin_mistake.22` The Old Lords Ride (Gala, checkpoint) calls `zin_sun_lorien_rides` (`zin_sun.40` news); 14 days later `zin_mistake.23` Lorien's Stand calls `zin_sun_lorien_falls` (`zin_lorien_dead`, `zin_sun.42` After the King) and Kusven withdraws wounded, not destroyed (re-designed `zin_mistake.24`).",
+   "trigger": "Gala alive with Lorien after Kusven comes forth.",
+   "flags": [
+    "zin_lorien_dead",
+    "zin_kusven_withdrawn (replaces zin_zol_withdrawn)"
+   ],
+   "dates": {
+    "target": "1757.9.1",
+    "latest": "1758.9.1"
+   },
+   "divergers": "Gala (player or AI), whoever holds Lorien.",
+   "divergences": [
+    {
+     "id": "B36.D1",
+     "kind": "different",
+     "who": "Gala",
+     "what": "Gala does not ride, or Lorien is already dead or held.",
+     "magnitude": 0.5,
+     "consequence": "Kusven withdraws by cost (`zin_mistake.25` The Form Is Spent, re-designed): longer ravage, wider deathfield.",
+     "successor": "CP23 diverged \"without the death of the King of Gala\"; Lorien lives into the sandbox."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B37",
+   "cp": "CP26",
+   "act": "VIII. Kusven",
+   "name": "Hailed as king on the field",
+   "canon": "established (the surviving peoples unite); the hailing proposed",
+   "owner": "Eindil's journey (battle 5, zin_eindil.102)",
+   "historical": "After the servant withdraws, or on 1 Naisa 4A 1757 if he never came, `zin_eindil_hail_the_king` fires `.102` to the Host and the coalition; `zin_eindil_stage_9_done`.",
+   "trigger": "Battle 3 or 4 done and `zin_zol_withdrawn` (renamed) or the date.",
+   "flags": [
+    "zin_eindil_stage_9_done"
+   ],
+   "dates": {
+    "target": "1757.10.1",
+    "latest": "1758.9.1"
+   },
+   "divergers": "The coalition.",
+   "divergences": [
+    {
+     "id": "B37.D1",
+     "kind": "different",
+     "who": "few friends",
+     "what": "Only the Host hails him.",
+     "magnitude": 0,
+     "consequence": "Smaller coalition opinion gains.",
+     "successor": "None."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B38",
+   "cp": "CP24",
+   "act": "IX. The second betrayal",
+   "name": "Afrit returns from the East",
+   "canon": "established",
+   "owner": "Afrit (zin_afrit.60, zin_afrit_return), eastern kings (zin_east.52)",
+   "historical": "`zin_afrit.60` The Return from the East; `zin_afrit_return` declares war on the holder of Parim and on the country employing Eindil; `zin_afrit_returned`; `zin_lastwar.90` news.",
+   "trigger": "Dates `zin_afrit_date_return_open` `1758.1.1` and `zin_afrit_date_return` `1758.2.1` (defined, unused: SL-09); today only a Worshipdom focus calls `zin_afrit_return`.",
+   "flags": [
+    "zin_afrit_returned"
+   ],
+   "dates": {
+    "target": "1758.2.1",
+    "latest": "1759.3.1"
+   },
+   "divergers": "The Worshipdom (player or AI).",
+   "divergences": [
+    {
+     "id": "B38.D1",
+     "kind": "never",
+     "who": "Worshipdom",
+     "what": "Afrit never returns.",
+     "magnitude": 1,
+     "consequence": "He stays King of the East.",
+     "successor": "Stage 12 reduced-Afrit gate (SL-09): coronation possible with `zin_afrit_beyond_the_rift` (owner question Q1)."
+    },
+    {
+     "id": "B38.D2",
+     "kind": "early",
+     "who": "Worshipdom",
+     "what": "He returns early (the darks broken early).",
+     "magnitude": 0.25,
+     "consequence": "None.",
+     "successor": "None."
+    },
+    {
+     "id": "B38.D3",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "His realm is destroyed before he returns.",
+     "magnitude": 0.75,
+     "consequence": "Today nothing happens (SL-10).",
+     "successor": "New `zin_afrit_hidden` successor: The Hunt for the False God (`zin_afrit.77`, proposed) with a 365-day hunt."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B39",
+   "cp": "CP24",
+   "act": "IX. The second betrayal",
+   "name": "The cliff: Eindil cast down; Afrit claims all Aoaz",
+   "canon": "established (arm severed, thrown from a cliff)",
+   "owner": "Afrit (zin_afrit.61, .62), journey (zin_eindil.110, .112)",
+   "historical": "`zin_afrit.61` Brother Against Brother; `zin_eindil.110` The Cliff (`zin_eindil_cliff_effects`, `zin_eindil_cast_down`), `.112` Word of the King's Death; `zin_afrit.62` Lord of All Aoaz sets `zin_afrit_claims_aoaz` (forced under the historical rule by 1 Ailtal 4A 1758, `zin_afrit_date_parim` `1758.9.1`).",
+   "trigger": "The hub at war with Eindil's employer and its side controlling a Middle Lands state.",
+   "flags": [
+    "zin_eindil_cast_down",
+    "zin_afrit_claims_aoaz"
+   ],
+   "dates": {
+    "target": "1758.3.1",
+    "latest": "1759.3.1"
+   },
+   "divergers": "The Worshipdom; the Host's guard.",
+   "divergences": [
+    {
+     "id": "B39.D1",
+     "kind": "never",
+     "who": "no war between the brothers",
+     "what": "No cliff.",
+     "magnitude": 0.5,
+     "consequence": "Stage 10 skipped.",
+     "successor": "Stage 11 from stage 9 (already allowed)."
+    },
+    {
+     "id": "B39.D2",
+     "kind": "never",
+     "who": "battle",
+     "what": "Afrit cannot hold Parim.",
+     "magnitude": 0.5,
+     "consequence": "No claim of all Aoaz.",
+     "successor": "Stage 11 needs `zin_afrit_holds_parim` or the stand-in; otherwise the reduced-Afrit gate (SL-09)."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B40",
+   "cp": "CP24",
+   "act": "IX. The second betrayal",
+   "name": "Below the cliff: Alleria's rescue",
+   "canon": "established (he survives); rescue by Alleria proposed",
+   "owner": "Eindil's journey (zin_eindil.111, .113, zin_eindil_recover)",
+   "historical": "`.111` Below the Cliff to Alleria's employer; `.113` The King Returns from the Dead; `zin_eindil_recovered`.",
+   "trigger": "After the cliff; `recovery_fallback` 400 days.",
+   "flags": [
+    "zin_eindil_recovered"
+   ],
+   "dates": {
+    "target": "1758.6.1",
+    "latest": "1759.6.1"
+   },
+   "divergers": "Alleria's employer.",
+   "divergences": [
+    {
+     "id": "B40.D1",
+     "kind": "actor_absent",
+     "who": "any",
+     "what": "Alleria is not available.",
+     "magnitude": 0.25,
+     "consequence": "The rangers of Selen find him (variant text).",
+     "successor": "Recovery fallback 400 days."
+    }
+   ],
+   "weight": 4
+  },
+  {
+   "id": "B41",
+   "cp": "CP25",
+   "act": "X. The palace",
+   "name": "The palace: the artifacts stripped; Afrit and Golbran die",
+   "canon": "established",
+   "owner": "Afrit (O2: zin_afrit_begin_palace_battle, zin_afrit.70 to .76, zin_afrit_die), journey (zin_eindil.120 to .127)",
+   "historical": "`zin_afrit.70` The Palace Wards, `.71` the Ring (Alleria's arrow, `zin_eindil.120`), `.72`, `.73` the Crown and the Bracelet (`.121`), `.74` the Necklace (Golbran, `.123`), `.75` The False God Falls (news; `zin_afrit_die` sets `zin_afrit_dead`; `.124`), `.125` Golbran's Gift (`zin_golbran_dead`), `.126` The Necklace (`zin_eindil_wears_necklace`).",
+   "trigger": "`zin_eindil_ready_11`: stage 10 (or 9 done without a cliff), `zin_eindil_recovered`, Afrit holds Parim or stands in Parim, Afrit alive. Stage chances from `mech_afrit.json` palace rows (60, 55, 55, 50).",
+   "flags": [
+    "zin_afrit_dead",
+    "zin_golbran_dead",
+    "global.zin_afrit_artifacts = 0"
+   ],
+   "dates": {
+    "target": "1759.3.1",
+    "latest": "1760.3.1"
+   },
+   "divergers": "The Host, the Worshipdom (defences), the dice.",
+   "divergences": [
+    {
+     "id": "B41.D1",
+     "kind": "late",
+     "who": "dice",
+     "what": "The palace holds once (`zin_afrit.76`, `zin_eindil.127`).",
+     "magnitude": 0.25,
+     "consequence": "Host stability -25% for 180 days; Afrit restarts after 180 days (R6).",
+     "successor": "A second attempt."
+    },
+    {
+     "id": "B41.D2",
+     "kind": "opposite",
+     "who": "dice",
+     "what": "The palace holds twice.",
+     "magnitude": 1,
+     "consequence": "`zin_eindil_lost`.",
+     "successor": "Ashen Throne path (a) if its conditions hold; otherwise judgement."
+    },
+    {
+     "id": "B41.D3",
+     "kind": "actor_absent",
+     "who": "any",
+     "what": "Alleria or Golbran is not available.",
+     "magnitude": 0.5,
+     "consequence": "Their stage loses its journey bonus.",
+     "successor": "Stage 1 without Alleria at base 60; stage 4 without Golbran: Eindil grips the necklace alone (base 30, proposed) and Golbran's death is not set."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B42",
+   "cp": "CP26",
+   "act": "X. The palace",
+   "name": "Eindil is crowned King of Aenor",
+   "canon": "established",
+   "owner": "Aenor (zin_aenor.400, zin_aenor_crown_eindil), journey (zin_eindil.130 to .132, zin_eindil_go_to_parim)",
+   "historical": "`zin_eindil.130` The Crown Is Offered; `zin_aenor_crown_eindil` sets `zin_eindil_crowned` and calls `zin_world_check_endings`: the Lost Cause.",
+   "trigger": "`zin_aenor_eindil_can_be_crowned`: Afrit dead, named, returned, not lost, crowning realm of Aenor, Parim controlled with no enemy divisions, `zin_aenor_date_coronation` under HISTORICAL (target `1760.3.1`).",
+   "flags": [
+    "zin_eindil_crowned",
+    "zin_ending_lost_cause"
+   ],
+   "dates": {
+    "target": "1760.3.1",
+    "latest": "1761.3.1"
+   },
+   "divergers": "The Aenor realm (accept), the Parim holder, the coalition.",
+   "divergences": [
+    {
+     "id": "B42.D1",
+     "kind": "late",
+     "who": "Parim held by an enemy",
+     "what": "The Crown Withheld (`.132`), retried every 30 days.",
+     "magnitude": 0.25,
+     "consequence": "None.",
+     "successor": "Judgement on 1 Glernaen 4A 1762 (deferred to 1764 while the heir is at stage 12, see endings)."
+    },
+    {
+     "id": "B42.D2",
+     "kind": "actor_annexed",
+     "who": "any conqueror",
+     "what": "No Aenor realm exists.",
+     "magnitude": 0.5,
+     "consequence": "`zin_eindil_found_parim_realm` creates one when a coalition member owns Parim.",
+     "successor": "Otherwise The Crown Withheld until Parim is retaken."
+    },
+    {
+     "id": "B42.D3",
+     "kind": "early",
+     "who": "FREE",
+     "what": "No coronation date gate.",
+     "magnitude": 0.25,
+     "consequence": "Crowned as soon as Afrit is dead.",
+     "successor": "None."
+    },
+    {
+     "id": "B42.D4",
+     "kind": "different",
+     "who": "B07 D3",
+     "what": "Crowned as the Golden King's chosen heir.",
+     "magnitude": 0.5,
+     "consequence": "Lost Cause variant: the King abdicates or dies and names him.",
+     "successor": "None."
+    }
+   ],
+   "weight": 5
+  },
+  {
+   "id": "B43",
+   "cp": "ENDING",
+   "act": "XI. Endings",
+   "name": "Children of Volgan",
+   "canon": "established ending (one of three alternatives)",
+   "owner": "world systems; Volgan (zin_volgan_children_ready)",
+   "historical": "Not on the historical path.",
+   "trigger": "From `1756.3.1` (`zin_world_date_children`): Volgan's body intact, Parim held by Volgan or a subject, at least four subjects, strength 60, Eindil not crowned.",
+   "flags": [
+    "zin_ending_children_of_volgan"
+   ],
+   "dates": {
+    "target": null,
+    "latest": null
+   },
+   "divergers": "Volgan, every defender of Parim.",
+   "divergences": [
+    {
+     "id": "B43.D1",
+     "kind": "different",
+     "who": "Volgan",
+     "what": "Volgan reaches the ending.",
+     "magnitude": 1,
+     "consequence": "`zin_world.101`; Lord of a Ruined World.",
+     "successor": "Sandbox to 4A 1800."
+    }
+   ],
+   "weight": null
+  },
+  {
+   "id": "B44",
+   "cp": "ENDING",
+   "act": "XI. Endings",
+   "name": "The Ashen Throne",
+   "canon": "established ending",
+   "owner": "world systems; Afrit (zin_afrit_ashen_throne_ready)",
+   "historical": "Not on the historical path.",
+   "trigger": "Afrit alive with the Necklace, holding Parim, 12 countries at footholds 4 or more (`global.zin_afrit_deep_count`), and the palace held (from `1759.1.1`), all Aoaz claimed (from `1760.1.1`), or the stand-in with the war (from `1760.1.1`).",
+   "flags": [
+    "zin_ending_ashen_throne"
+   ],
+   "dates": {
+    "target": null,
+    "latest": null
+   },
+   "divergers": "The Worshipdom, every realm with deep footholds.",
+   "divergences": [
+    {
+     "id": "B44.D1",
+     "kind": "different",
+     "who": "Afrit",
+     "what": "Afrit reaches the ending; `zin_world_reach_ending` calls `zin_afrit_reveal` first if needed.",
+     "magnitude": 1,
+     "consequence": "`zin_world.102`; The Worshipped King.",
+     "successor": "Sandbox to 4A 1800."
+    }
+   ],
+   "weight": null
+  },
+  {
+   "id": "B45",
+   "cp": "ENDING",
+   "act": "XI. Endings",
+   "name": "Judgement of the proposed outcomes; the Age Unfinished; the sandbox",
+   "canon": "proposed outcomes (vault, outside canon) and ZIN fallback",
+   "owner": "world systems",
+   "historical": "Not needed on the historical path (the Lost Cause comes first).",
+   "trigger": "`zin_world_date_judgement` `1762.1.1` (paced): Golden Court Endures, A Western Crown in Parim, Master of the Strait, One King in the East in that order; `zin_world_date_unfinished` `1770.1.1`: The Age Unfinished. The sandbox runs to 4A 1800 (`calendar.mjs` END_DATE `1800.1.1.1`).",
+   "flags": [
+    "zin_ending_golden_court",
+    "zin_ending_western_crown",
+    "zin_ending_strait_master",
+    "zin_ending_eastern_king",
+    "zin_ending_unfinished"
+   ],
+   "dates": {
+    "target": "1762.1.1",
+    "latest": "1770.1.1"
+   },
+   "divergers": "Every realm that holds the outcome's condition.",
+   "divergences": [
+    {
+     "id": "B45.D1",
+     "kind": "different",
+     "who": "any",
+     "what": "A proposed outcome is reached.",
+     "magnitude": 1,
+     "consequence": "Its news (`zin_world.103` to `.106`) and a small spirit.",
+     "successor": "Sandbox."
+    },
+    {
+     "id": "B45.D2",
+     "kind": "never",
+     "who": "any",
+     "what": "No outcome holds by 1770.",
+     "magnitude": 1,
+     "consequence": "`zin_world.107` The Age Unfinished.",
+     "successor": "Sandbox."
+    }
+   ],
+   "weight": null
+  }
+ ],
+ "softlocks": [
+  {
+   "id": "SL-01",
+   "title": "The War of the Last Crowns never begins",
+   "severity": "critical",
+   "beats": [
+    "B18",
+    "B19",
+    "B20",
+    "B21",
+    "B25",
+    "B29"
+   ],
+   "kind": "flag never set",
+   "file": "tools/content/modules/events_world.mjs (lastwar runner, line 253); tools/content/modules/mech_lerendor.mjs (lines 396, 408); tools/content/modules/mech_eindil_scripts.mjs (zin_eindil_ready_9, line 74); tools/content/lib/mech_afrit_script.mjs (flight fallback); tools/content/modules/mech_crossing.mjs (line 320); staged:events/*, common/* (82 readers)",
+   "ids": [
+    "zin_war_of_last_crowns",
+    "zin_world.20"
+   ],
+   "problem": "Nothing sets `zin_war_of_last_crowns`: its owner, `tools/content/modules/world_tension.mjs` with `zin_world.20` (05_world_tension_and_endings.md), does not exist. Every front gated on it never opens: the lastwar runner, Lerendor's withdrawal prompt and AI fallback, the AI Western launch, the eastern coalition, the Afrit flight fallback and stage 9 (which then waits for 1 Lumae 4A 1758).",
+   "fix": "Write `world_tension.mjs` with `zin_world.20` and the dated, paced trigger `zin_world_date_last_crowns` (three pace sets). Until it ships, the path module (`historical_path.mjs`) sets the flag at the CP11 latest date as its watchdog, and the piecemeal rule (B18 D3) lets the first historical front set it.",
+   "owner": "world systems"
+  },
+  {
+   "id": "SL-02",
+   "title": "No checkpoint ever resolves",
+   "severity": "critical",
+   "beats": [
+    "all"
+   ],
+   "kind": "variable never written",
+   "file": "tools/content/modules/events_crown.mjs (lines 380 to 396, Chronicle); tools/content/modules/forces.mjs (lines 525 to 527, zin_ai_era_peace, zin_ai_era_stirring); tools/content/lib/crown_script.mjs (lines 237 to 266); staged:common/scripted_triggers/zin_events_world.txt",
+   "ids": [
+    "zin_path_cp01 .. zin_path_cp26",
+    "zin_path_divergence",
+    "zin_path_tick",
+    "zin_path.1"
+   ],
+   "problem": "The historical path module of 06_historical_path_and_ai.md was never written, so no checkpoint resolves, `zin_path_divergence` stays 0, the Chronicle shows no checkpoint line, the PLAUSIBLE weights never drop, there is no watchdog, and the AI eras of forces.mjs stay at peace (`zin_ai_era_peace` needs `zin_path_cp05 = 0`, so `zin_ai_era_stirring` is never true).",
+   "fix": "Write `tools/content/modules/historical_path.mjs` with `data/path_checkpoints.json` generated from this file's JSON (beats, weights, latest dates), the tick, the watchdog, the role resolvers and the divergence measure below.",
+   "owner": "historical path"
+  },
+  {
+   "id": "SL-03",
+   "title": "No ending can be reached",
+   "severity": "critical",
+   "beats": [
+    "B42",
+    "B43",
+    "B44",
+    "B45"
+   ],
+   "kind": "effect and trigger undefined",
+   "file": "staged:common/scripted_effects/zin_aenor_court.txt (coronation calls zin_world_check_endings); staged:common/national_focus/zin_worshipdom.txt (focus calls zin_world_reach_ending); staged:common/scripted_effects/zin_ending_story.txt (reads zin_world_date_last_crowns, zin_world_date_children); tools/content/data/events_crown_world.json",
+   "ids": [
+    "zin_world_check_endings",
+    "zin_world_reach_ending",
+    "zin_world_date_judgement",
+    "zin_world_date_unfinished",
+    "zin_world_date_children",
+    "zin_ending_start_epilogue",
+    "zin_world.100 .. zin_world.107"
+   ],
+   "problem": "No ending can ever be reached: `zin_world_reach_ending` and `zin_world_check_endings` are undefined, so `zin_ending_*` flags, `zin_ending_reached`, the news `zin_world.100` to `.107` and `zin_ending_start_epilogue` never run; the judgement and unfinished dates do not exist, so a diverged game never ends and never declares the sandbox.",
+   "fix": "Part of `world_tension.mjs`: define the two effects, the ending checks, the dated triggers, and call `zin_ending_start_epilogue` with `zin_arg_ending`.",
+   "owner": "world systems"
+  },
+  {
+   "id": "SL-04",
+   "title": "The Deliverer is never crowned",
+   "severity": "critical",
+   "beats": [
+    "B09",
+    "B10",
+    "B25",
+    "B26"
+   ],
+   "kind": "event undefined; effect never called",
+   "file": "staged:common/scripted_effects/zin_aenor_court.txt (zin_aenor_give_seals fires zin_afrit.20); staged:common/scripted_effects/zin_afrit.txt (zin_afrit_crown_aurevan, zin_afrit_raise_pliant_heir: no caller)",
+   "ids": [
+    "zin_afrit.20",
+    "zin_afrit.21",
+    "zin_afrit.22",
+    "zin_afrit.23",
+    "zin_afrit_crown_aurevan",
+    "zin_afrit_raise_pliant_heir"
+   ],
+   "problem": "When the Faithful win the Thirty Days, `zin_aenor_give_seals` fires `zin_afrit.20`, which no module defines. `zin_afrit_crown_aurevan` and `zin_afrit_raise_pliant_heir` are never called, so `zin_aurevan_crowned` and `zin_afrit_kingdom_behind_throne` never set; the god-king arc, the flight fallback (which needs `zin_aurevan_crowned`) and the King of the East all fail silently.",
+   "fix": "Write the Afrit narrative events (06_events/01, Act IV) in the new mechanic events module (`events_mech.mjs`, data `events_mech_afrit.json`). Timeout successor: 30 days after `zin_aenor_faithful_rule` with neither flag set, an AI Worshipdom crowns Aurevan under the historical branch (pliant heir under FREE by its weights).",
+   "owner": "Afrit; mechanic events"
+  },
+  {
+   "id": "SL-05",
+   "title": "Afrit can never die",
+   "severity": "critical",
+   "beats": [
+    "B41",
+    "B42"
+   ],
+   "kind": "event undefined; effect never called",
+   "file": "tools/content/lib/mech_afrit_script.mjs (lines 608, 632); staged:common/scripted_effects/zin_afrit.txt (zin_afrit_die)",
+   "ids": [
+    "zin_afrit.70",
+    "zin_afrit.72",
+    "zin_afrit.73",
+    "zin_afrit.74",
+    "zin_afrit.75",
+    "zin_afrit.76",
+    "zin_afrit_die"
+   ],
+   "problem": "The palace stages fire `zin_afrit.70` and `.72` to `.76`, none of which exist; `zin_afrit_die` is \"called once by the immediate block of zin_afrit.75\" and so never runs. `zin_afrit_dead` is never set, `zin_aenor_eindil_can_be_crowned` is never true, stage 12 never opens, and the Lost Cause cannot be reached.",
+   "fix": "Write `zin_afrit.70` to `.76` (06_events/03 Act VIII). Build check: a fired event id must be defined (SL-28).",
+   "owner": "Afrit; mechanic events"
+  },
+  {
+   "id": "SL-06",
+   "title": "The palace never opens on the historical path",
+   "severity": "critical",
+   "beats": [
+    "B41"
+   ],
+   "kind": "trigger used as a flag",
+   "file": "tools/content/modules/mech_eindil_scripts.mjs (zin_eindil_ready_11, line 72: gflag('zin_afrit_holds_parim')); staged:common/scripted_triggers/zin_eindil.txt (line 670); staged:common/scripted_triggers/zin_afrit.txt (line 71)",
+   "ids": [
+    "zin_eindil_ready_11",
+    "zin_afrit_holds_parim"
+   ],
+   "problem": "`zin_afrit_holds_parim` is a scripted trigger in the Afrit slice, but stage 11 tests `has_global_flag = zin_afrit_holds_parim`, a flag nothing sets. The palace starts only when Afrit stands in Parim, never on the historical path where he returns and claims all Aoaz.",
+   "fix": "Use `zin_afrit_holds_parim = yes` in `zin_eindil_ready_11`. Build check: a name defined as a scripted trigger may not appear in `has_global_flag` (SL-29).",
+   "owner": "Eindil's journey"
+  },
+  {
+   "id": "SL-07",
+   "title": "Afrit never sails north",
+   "severity": "high",
+   "beats": [
+    "B13",
+    "B14",
+    "B15"
+   ],
+   "kind": "event undefined; effect never called",
+   "file": "staged:common/scripted_effects/zin_afrit.txt (zin_afrit_northern_voyage, line 600: no caller); staged:events/zin_eindil.txt (zin_eindil.71 guard); staged:common/scripted_effects/zin_eindil.txt (lines 1073, 1086)",
+   "ids": [
+    "zin_afrit.30",
+    "zin_afrit.31",
+    "zin_afrit.32",
+    "zin_afrit.33",
+    "zin_afrit.34",
+    "zin_afrit_northern_voyage",
+    "zin_afrit_hall_at_once",
+    "zin_afrit_sent_others",
+    "zin_eindil_let_land"
+   ],
+   "problem": "Afrit never sails north: the report (`zin_afrit.31`, N8) and the choice (`.32`) are unwritten and `zin_afrit_northern_voyage` has no caller. `zin_afrit_at_yeldenne` is never set, the ambush `.71` never fires, case A is impossible, Afrit is never wounded, and CP09 always diverges. `zin_afrit_hall_at_once`, `zin_afrit_sent_others` and `zin_eindil_let_land` are never set.",
+   "fix": "Write `zin_afrit.30` to `.34`. Fallback: the Afrit month calls `zin_afrit_northern_voyage` when `global.zin_eindil_stage = 6` and the hub is AI under `zin_rules_ai_branch_afrit_historical`.",
+   "owner": "Afrit; mechanic events"
+  },
+  {
+   "id": "SL-08",
+   "title": "The flight fallback ignores the default rule",
+   "severity": "high",
+   "beats": [
+    "B25",
+    "B26"
+   ],
+   "kind": "game rule tested directly",
+   "file": "staged:common/scripted_effects/zin_afrit.txt (zin_afrit_historical_fallbacks second block, line 408; zin_afrit_flee_east kneel); tools/content/lib/mech_afrit_script.mjs (lines 713 to 728)",
+   "ids": [
+    "zin_afrit_historical_fallbacks",
+    "zin_afrit_historical_kneel",
+    "zin_rules_ai_branch_afrit_historical"
+   ],
+   "problem": "The flight fallback and the historical kneel test `has_game_rule = { rule = zin_rule_afrit option = HISTORICAL }`. The rule's first option is DEFAULT (R1), so with default rules an AI Worshipdom that skips its flight focus never flees and the two kneeling courts are never chosen. The generated wrapper `zin_rules_ai_branch_afrit_historical` exists and is unused (as are the `_ashen`, `_dormant` and `_free` wrappers).",
+   "fix": "Replace every direct `zin_rule_afrit` option test with the branch wrappers. Build check: per-power rule options are tested only through `zin_rules_ai_branch_*` (SL-30).",
+   "owner": "Afrit"
+  },
+  {
+   "id": "SL-09",
+   "title": "A living Afrit who never returns holds the heir for ever",
+   "severity": "critical",
+   "beats": [
+    "B38",
+    "B39",
+    "B41",
+    "B42"
+   ],
+   "kind": "no dated fallback; gate can never open",
+   "file": "staged:common/scripted_effects/zin_afrit.txt (zin_afrit_return: one caller, a Worshipdom focus); staged:common/scripted_triggers/zin_afrit.txt (zin_afrit_date_return_open, zin_afrit_date_return, zin_afrit_date_parim: defined, unused); tools/content/modules/mech_eindil_scripts.mjs (zin_eindil_ready_12, line 73)",
+   "ids": [
+    "zin_afrit.60",
+    "zin_afrit.61",
+    "zin_afrit.62",
+    "zin_afrit_return",
+    "zin_eindil_ready_12",
+    "zin_eindil_afrit_foes_exist"
+   ],
+   "problem": "Afrit returns only if the Worshipdom takes its focus; the paced return and Parim dates are written and never read. Stage 12 needs `zin_afrit_dead` or no Afrit realm at all, so a living Afrit who never returns (focus skipped, DORMANT, hermitage, a strong King of the East) holds Eindil at stage 9 for ever, and no canon ending can follow.",
+   "fix": "Write `zin_afrit.60` to `.62` and read the dates: under the historical branch the AI returns on `zin_afrit_date_return`; `zin_afrit.62` is forced on `zin_afrit_date_parim`. Replace the stage 12 gate with \"Afrit dead, or Afrit reduced\": no Afrit realm controls a Middle Lands state, the Host and its coalition hold Parim, and CP24 has resolved (diverged or skipped). The coronation then sets `zin_afrit_beyond_the_rift` (owner question Q1).",
+   "owner": "Afrit; Eindil's journey"
+  },
+  {
+   "id": "SL-10",
+   "title": "Afrit outlives the destruction of his realm",
+   "severity": "critical",
+   "beats": [
+    "B38",
+    "B41",
+    "B42"
+   ],
+   "kind": "actor removed without a successor",
+   "file": "staged:common/on_actions/zin_afrit.txt (only on_state_control_changed); staged:common/scripted_triggers/zin_aenor_court.txt (zin_aenor_eindil_can_be_crowned needs zin_afrit_dead)",
+   "ids": [
+    "zin_aurevan",
+    "zin_afrit_dead",
+    "on_annex",
+    "on_capitulation"
+   ],
+   "problem": "If the realm Afrit leads is annexed or capitulates, nothing happens to him: `zin_aurevan` stays, `zin_afrit_dead` is never set, and the coronation is closed for ever.",
+   "fix": "New hook in the Afrit slice: on the annexation or capitulation of the realm employing `zin_aurevan`, Afrit flees (the eastern client with the most footholds receives him) or, with no refuge, goes into hiding (`zin_afrit_hidden`, `zin_afrit.77` The Hunt for the False God, proposed). After 365 days of hunting, or his death if found, the reduced-Afrit gate of SL-09 opens.",
+   "owner": "Afrit"
+  },
+  {
+   "id": "SL-11",
+   "title": "The Worshipdom tag is hard-coded",
+   "severity": "high",
+   "beats": [
+    "B02",
+    "B13",
+    "B25",
+    "B26",
+    "B38"
+   ],
+   "kind": "hard-coded tag",
+   "file": "staged:common/scripted_effects/zin_afrit.txt (Y8G in zin_afrit_kneel, zin_afrit_flee_east, zin_afrit_return, zin_afrit_plot_exposed); staged:common/scripted_effects/zin_aenor_court.txt (zin_aenor_give_seals)",
+   "ids": [
+    "Y8G",
+    "zin_afrit_is_hub"
+   ],
+   "problem": "Every Afrit beat acts on the Worshipdom's tag Y8G. When the Worshipdom no longer exists those blocks do nothing: the flight recruits Aurevan to no country, no court can kneel, the return declares no war.",
+   "fix": "Role R02 (Afrit's seat): `zin_afrit_seat` global event target resolved from Y8G, else the country employing `zin_aurevan`, else the strongest eastern client; before the flight, the holder of the Worshipdom's capital releases Y8G (its cores) when Afrit needs a hub. Every `Y8G = { ... }` becomes `event_target:zin_afrit_seat = { ... }`.",
+   "owner": "Afrit"
+  },
+  {
+   "id": "SL-12",
+   "title": "Lorien never rides",
+   "severity": "high",
+   "beats": [
+    "B36"
+   ],
+   "kind": "event undefined; effect never called",
+   "file": "staged:common/scripted_effects/zin_sun.txt (zin_sun_lorien_rides, zin_sun_lorien_falls: no caller); staged:common/scripted_effects/zin_mistake.txt (zin_zol_withdraw cause 0)",
+   "ids": [
+    "zin_mistake.22",
+    "zin_mistake.23",
+    "zin_sun_lorien_rides",
+    "zin_sun_lorien_falls",
+    "zin_sun.40",
+    "zin_sun.42"
+   ],
+   "problem": "Lorien never rides and never dies: the two Zol events that call the Sun effects are unwritten. `zin_lorien_dead` is never set, CP23 can never be historical, and the withdrawal always takes its \"form spent\" cause.",
+   "fix": "Write `zin_mistake.22` and `.23` as Kusven's events (SL-14).",
+   "owner": "Zol's Mistake; mechanic events"
+  },
+  {
+   "id": "SL-13",
+   "title": "The blue sword never breaks",
+   "severity": "high",
+   "beats": [
+    "B35"
+   ],
+   "kind": "flag never set",
+   "file": "staged:common/scripted_effects/zin_eindil.txt, staged:common/scripted_effects/zin_glo.txt (readers); tools/content/lib/mech_zol_script.mjs (zin_zol_manifest)",
+   "ids": [
+    "zin_mistake.21",
+    "zin_horos_sword_broken",
+    "zin_eindil.101"
+   ],
+   "problem": "The sword-break (O4: `zin_mistake.21` sets `zin_horos_sword_broken`) is unwritten. Glo's cap never drops to 50, the shard wound never happens, and with Glo the heir's wound (`zin_eindil.101`) is never fired.",
+   "fix": "Write `zin_mistake.21` as Kusven breaking the blue sword; it sets `zin_horos_sword_broken` and `zin_kusven_wounded` and fires `zin_eindil.101`.",
+   "owner": "Zol's Mistake; mechanic events"
+  },
+  {
+   "id": "SL-14",
+   "title": "Zol in person, against the owner corrections",
+   "severity": "high",
+   "beats": [
+    "B35",
+    "B36"
+   ],
+   "kind": "Zol-in-person content void (K4, K11)",
+   "file": "tools/content/data/mech_zol.json (ideas zin_zol_form_taken, zin_zol_wounded; decision zin_zol_come_forth); tools/content/lib/mech_zol_script.mjs (zin_zol_manifest, zin_zol_withdraw, template \"The Presence\"); tools/content/data/events_world_eindil_3.json (zin_eindil.101 \"The Old God Comes Forth\"); tools/content/data/events_world_lastwar.json (zin_lastwar.73 \"an Old God's victory\"); tools/content/data/events_crown_chronicle.json (cp23 lines); docs/specs/04_mechanics/00_shared_contract.md (zin_zol_manifested \"Zol has manifested bodily\"); docs/specs/06_events/03_war_of_the_last_crowns.md (zin_mistake.20 to .25); docs/specs/03_gameplay/05_world_tension_and_endings.md (Zol manifests, Zol withdraws)",
+   "ids": [
+    "zin_zol_manifested",
+    "zin_zol_withdrawn",
+    "zin_zol_manifest",
+    "zin_zol_withdraw",
+    "zin_zol_can_manifest",
+    "zin_zol_form_taken",
+    "zin_zol_wounded",
+    "zin_zol_come_forth",
+    "zin_eindil.101",
+    "zin_lastwar.73",
+    "zin_chronicle_cp23_1",
+    "zin_chronicle_cp23_2"
+   ],
+   "problem": "The owner corrected the canon on 24 October 2026: Zol does not appear in the war; Kusven (formerly Edvoid), his most loyal servant and a Great Spirit, breaks the blue sword, is wounded by Eindil with a shard and withdraws when Lorien and ancient spirits die. The data still has the Old God taking a shape, a \"Wounded, Not Slain\" Zol, a decision that sends Zol himself, a news title \"The Old God Comes Forth\", Chronicle lines \"The Old God came forth\", and a contract flag that says Zol manifested bodily.",
+   "fix": "Re-design as Kusven (section 9): flags `zin_kusven_forth`, `zin_kusven_withdrawn`, `zin_kusven_wounded`; character `zin_kusven` (Zol's field marshal, unit leader only; no country leader role, S4 stands); effects `zin_zol_send_kusven`, `zin_kusven_withdraw`; trigger `zin_kusven_can_come_forth`; ideas `zin_zol_kusven_in_field`, `zin_zol_kusven_wounded`; template \"Kusven's Host\"; retire the old names in the N16 retired list so `checks/names.mjs` fails on them. Text: \"Kusven, Zol's most loyal servant\"; \"Zol's victory\" where the stake is named.",
+   "owner": "Zol's Mistake; events; contract"
+  },
+  {
+   "id": "SL-15",
+   "title": "The Black Compact is never offered",
+   "severity": "medium",
+   "beats": [
+    "B31"
+   ],
+   "kind": "event undefined; flag never set",
+   "file": "staged:common/scripted_effects/zin_dominion.txt (fires zin_dominion.14); staged:common/national_focus/zin_volgan.txt, zin_zol.txt, staged:common/scripted_effects/zin_lastwar_story.txt (read zin_black_compact)",
+   "ids": [
+    "zin_dominion.14",
+    "zin_mistake.16",
+    "zin_dominion.15",
+    "zin_black_compact"
+   ],
+   "problem": "The Black Compact is offered by an unwritten event, so `zin_black_compact` is never set; the focuses and lastwar entries that read it never run.",
+   "fix": "Write `zin_dominion.14`, `zin_mistake.16` (Zol's answer, by the Will of Zol emblem), `zin_dominion.15`.",
+   "owner": "Volgan; mechanic events"
+  },
+  {
+   "id": "SL-16",
+   "title": "Volgan's narrative and its option effects are missing",
+   "severity": "high",
+   "beats": [
+    "B22",
+    "B23",
+    "B33",
+    "B34"
+   ],
+   "kind": "events undefined; effects never called",
+   "file": "staged:common/scripted_effects/zin_dominion.txt, zin_dominion_pulse.txt; docs/design/stage2/mech_powers.md (section \"Hooks for the events slice\")",
+   "ids": [
+    "zin_dominion.10",
+    "zin_dominion.11",
+    "zin_dominion.12",
+    "zin_dominion.13",
+    "zin_dominion.16",
+    "zin_dominion.17",
+    "zin_dominion.18",
+    "zin_dominion.19",
+    "zin_dominion.23",
+    "zin_dominion.24",
+    "zin_dominion_champion_falls"
+   ],
+   "problem": "Volgan's narrative is unwritten. Flags are set by effects, so the chain advances, but the options that should call `zin_dominion_champion_falls`, `zin_dominion_member_breaks_free`, `zin_dominion_hold_mirolon` and the Steward's Choice never run: no successor is chosen after the body breaks and Mirolon's court in exile never forms.",
+   "fix": "Write the Volgan events listed in mech_powers.md with the option effects named there.",
+   "owner": "Volgan; mechanic events"
+  },
+  {
+   "id": "SL-17",
+   "title": "Lerendor waits on a flag that never comes",
+   "severity": "high",
+   "beats": [
+    "B19",
+    "B20"
+   ],
+   "kind": "gate on an unset flag; flag name mismatch",
+   "file": "tools/content/modules/mech_lerendor.mjs (lines 396, 408: has_global_flag = { flag = zin_war_of_last_crowns days > N }); staged:common/scripted_effects/zin_west.txt (reads zin_leren_treaty_in_force, zin_leren_honours_treaty); staged:common/scripted_effects/zin_leren.txt (sets zin_leren_treaty_honoured)",
+   "ids": [
+    "zin_leren.30",
+    "zin_leren.31",
+    "zin_leren.32",
+    "zin_leren.33",
+    "zin_leren.35",
+    "zin_leren.36",
+    "zin_leren_treaty_in_force",
+    "zin_leren_honours_treaty",
+    "zin_leren_treaty_honoured"
+   ],
+   "problem": "Lerendor's decision prompts and AI fallback wait a number of days after a flag that is never set (SL-01) and the decision events are unwritten; the West reads two treaty flags that Lerendor never sets (it sets `zin_leren_treaty_honoured`), so the West never sees an honoured treaty.",
+   "fix": "Write the Lerendor events; the West reads `zin_leren_treaty_honoured` and a new trigger `zin_leren_treaty_in_force` (treaty neither withdrawn nor ended).",
+   "owner": "Lerendor; Western Crossing"
+  },
+  {
+   "id": "SL-18",
+   "title": "The denunciation sets the wrong kind of flag",
+   "severity": "medium",
+   "beats": [
+    "B16"
+   ],
+   "kind": "flag scope mismatch",
+   "file": "staged:events/zin_eindil.txt (line 2769); staged:common/national_focus/zin_aenor.txt (line 2663); docs/specs/03_gameplay/06_historical_path_and_ai.md (CP10)",
+   "ids": [
+    "zin_aenor_eindil_denounced"
+   ],
+   "problem": "CP10 resolves on the global flag `zin_aenor_eindil_denounced`; the journey and the Aenor tree set a country flag of that name.",
+   "fix": "Set the global flag as well (keep the country flag for the realm's own triggers); the path reads the global one.",
+   "owner": "Eindil's journey; Aenor tree"
+  },
+  {
+   "id": "SL-19",
+   "title": "A Western Crown in Parim can never hold",
+   "severity": "medium",
+   "beats": [
+    "B27",
+    "B45"
+   ],
+   "kind": "flag never set",
+   "file": "staged:common/scripted_localisation/zin_ending.txt; docs/specs/03_gameplay/05_world_tension_and_endings.md (outcome 5)",
+   "ids": [
+    "zin_west_holds_parim"
+   ],
+   "problem": "A Western Crown in Parim holds on `zin_west_holds_parim`, which nothing sets (the West sets `zin_west_parim_taken` and `zin_west_throne_claimed`).",
+   "fix": "Make it a scripted trigger in the Western Crossing slice: a West Lands country (or its subject) controls `zin_is_site_parim` and `zin_west_throne_claimed` is set or no Aenor realm exists.",
+   "owner": "Western Crossing"
+  },
+  {
+   "id": "SL-20",
+   "title": "Focus flags read in the wrong scope",
+   "severity": "low",
+   "beats": [
+    "B12",
+    "B14"
+   ],
+   "kind": "flag scope mismatch",
+   "file": "staged:common/national_focus/zin_gala.txt (line 569), staged:common/scripted_triggers/zin_eindil.txt (line 623); staged:common/national_focus/zin_worshipdom.txt (lines 2410, 2473), staged:common/scripted_effects/zin_eindil.txt (lines 1041, 1045)",
+   "ids": [
+    "zin_gala_great_ship",
+    "zin_worshipdom_ships_ready",
+    "zin_worshipdom_hunters"
+   ],
+   "problem": "Set as country flags by focuses, read as global flags by the journey: the great ship never shortens the voyage and the two ambush terms never count (N9).",
+   "fix": "Read them as `any_country = { has_country_flag = ... }` (or set global flags in the focuses).",
+   "owner": "Eindil's journey"
+  },
+  {
+   "id": "SL-21",
+   "title": "Afrit never learns he has a brother",
+   "severity": "medium",
+   "beats": [
+    "B15",
+    "B39"
+   ],
+   "kind": "flag never set",
+   "file": "staged:common/national_focus/zin_worshipdom.txt (lines 2399, 2430, 2462, 2720)",
+   "ids": [
+    "zin_afrit_knows_brother"
+   ],
+   "problem": "Four Worshipdom focus blocks test `zin_afrit_knows_brother`, which nothing sets; Horos exposing Afrit's origin in the hall (established) never reaches the tree.",
+   "fix": "Set it in `zin_glo_afrit_strikes` (cases A, B1, C) and in `zin_afrit.61`.",
+   "owner": "Yeldenne and Glo; Afrit"
+  },
+  {
+   "id": "SL-22",
+   "title": "The pass accord flags are never set",
+   "severity": "low",
+   "beats": [
+    "B21"
+   ],
+   "kind": "flag never set",
+   "file": "staged:common/national_focus/zin_regional_kingson.txt, zin_magical_forest.txt; staged:common/scripted_effects/zin_economy.txt, zin_elves.txt; staged:events/zin_elves.txt",
+   "ids": [
+    "zin_wall_accord",
+    "zin_wall_accord_broken"
+   ],
+   "problem": "The Wall Accord flags are read and never set. Under K2 the Wall is a natural range, so the accord is the pass accord (the Accord of the Passes of 4A 96, proposed).",
+   "fix": "The diplomacy slice sets `zin_wall_accord` at start (pass accord in force) and `zin_wall_accord_broken` when a pass is taken by force.",
+   "owner": "diplomacy; elves"
+  },
+  {
+   "id": "SL-23",
+   "title": "Story roles are fixed to tags",
+   "severity": "medium",
+   "beats": [
+    "B05",
+    "B19",
+    "B20",
+    "B21",
+    "B22",
+    "B26",
+    "B28"
+   ],
+   "kind": "role holder hard-coded",
+   "file": "tools/content/data/mech_afrit.json, mech_journey_west.json, mech_powers_*.json (country names resolved to fixed tags)",
+   "ids": [
+    "Gunwaith",
+    "Girdon",
+    "Lerendor",
+    "Mirolon",
+    "Selen",
+    "Gala Elves",
+    "Yeldenne"
+   ],
+   "problem": "Story roles are fixed to tags; most slices skip a beat when the tag is gone, some silently (no successor realm takes the role).",
+   "fix": "The role registry of section 8 (R01 to R17) resolves every role at fire time and fires `zin_realm.80` when a role passes.",
+   "owner": "historical path"
+  },
+  {
+   "id": "SL-24",
+   "title": "Hirolon starts as a dominion",
+   "severity": "medium",
+   "beats": [
+    "B01",
+    "B08"
+   ],
+   "kind": "start state contradicts canon (K13)",
+   "file": "tools/content/data/countries.json (row Y0Q \"Hiloron\", overlord \"Aenor\"); tools/content/data/mech_afrit.json (footholdRows: overlord Aenor, not men, start 1)",
+   "ids": [
+    "Y0Q",
+    "zin_aenor_is_concord_dominion"
+   ],
+   "problem": "Hirolon is a sovereign giant kingdom (K13), but the country table makes it Aenor's subject, so every Concord loop (`zin_reign.24`, `.42`, secession) treats it as a chartered dominion.",
+   "fix": "The politics step writes Hirolon without an overlord (spelling Hirolon, former label Hiloron) and the foothold row follows; the Concord tests exclude it.",
+   "owner": "politics step; Aenor"
+  },
+  {
+   "id": "SL-25",
+   "title": "A conquered Golden King never dies and still endures",
+   "severity": "high",
+   "beats": [
+    "B02",
+    "B07",
+    "B45"
+   ],
+   "kind": "actor removed without a successor",
+   "file": "staged:common/scripted_triggers/zin_aenor_court.txt (zin_aenor_king_alive = not zin_golden_king_dead); docs/specs/03_gameplay/05_world_tension_and_endings.md (outcome 4)",
+   "ids": [
+    "zin_golden_king_dead",
+    "zin_ending_golden_court"
+   ],
+   "problem": "The King dies only through Aenor's clock. If Aenor is annexed with him alive he never dies, and the Golden Court Endures (which holds when `zin_golden_king_dead` is not set) would crown a conquered court.",
+   "fix": "On annexation or capitulation of Y0L before the death: `zin_golden_king_exiled`, `zin_realm.50` to his host; outcome 4 requires an Aenor realm controlling Parim with the King or the Regency of Gold ruling.",
+   "owner": "Aenor; world systems"
+  },
+  {
+   "id": "SL-26",
+   "title": "The crown can be withheld for ever",
+   "severity": "medium",
+   "beats": [
+    "B42"
+   ],
+   "kind": "wait without deadline",
+   "file": "staged:common/scripted_effects/zin_eindil.txt (zin_eindil_go_to_parim, zin_eindil_found_parim_realm)",
+   "ids": [
+    "zin_eindil.132",
+    "zin_eindil_crowning_realm"
+   ],
+   "problem": "With no Aenor realm and Parim held by an enemy, The Crown Withheld retries every 30 days without end; nothing judges the age.",
+   "fix": "The judgement date (SL-03) ends the wait; while the heir is at stage 12 the judgement is deferred two years (endings).",
+   "owner": "Eindil's journey; world systems"
+  },
+  {
+   "id": "SL-27",
+   "title": "Zol's identity uses tag, not original_tag",
+   "severity": "medium",
+   "beats": [
+    "B33",
+    "B34",
+    "B35",
+    "B42"
+   ],
+   "kind": "semantic mismatch",
+   "file": "staged:common/scripted_triggers/zin_mistake.txt (zin_is_zol = tag Y0U); other identity triggers use original_tag",
+   "ids": [
+    "zin_is_zol"
+   ],
+   "problem": "Zol's identity uses `tag`, every other power `original_tag`; a civil-war copy of Zol's realm is not Zol to the war and ending checks.",
+   "fix": "`original_tag = Y0U`.",
+   "owner": "Zol's Mistake"
+  },
+  {
+   "id": "SL-28",
+   "title": "Sixty-one fired events are undefined",
+   "severity": "high",
+   "beats": [
+    "many"
+   ],
+   "kind": "events fired but undefined",
+   "file": "staged:common/scripted_effects/* and staged:events/* (61 ids)",
+   "ids": [
+    "zin_afrit.11",
+    ".14",
+    ".15",
+    ".16",
+    ".17",
+    ".20",
+    ".21",
+    ".22",
+    ".23",
+    ".32",
+    ".33",
+    ".34",
+    ".43",
+    ".45",
+    ".51",
+    ".52",
+    ".53",
+    ".70",
+    ".72",
+    ".73",
+    ".74",
+    ".75",
+    ".76",
+    "zin_mistake.2",
+    ".10",
+    ".11",
+    ".20",
+    ".24",
+    ".25",
+    "zin_dominion.10",
+    ".11",
+    ".12",
+    ".13",
+    ".14",
+    ".16",
+    ".17",
+    ".18",
+    ".19",
+    ".23",
+    ".24",
+    "zin_leren.30",
+    ".31",
+    ".32",
+    ".33",
+    ".35",
+    ".36",
+    ".45",
+    "zin_east.42",
+    ".45",
+    ".51",
+    ".60",
+    "zin_elves.9",
+    ".51",
+    ".70",
+    ".71",
+    "zin_sun.40",
+    ".42",
+    "zin_dark.80",
+    "zin_diplo.23",
+    ".31",
+    "zin_world.45"
+   ],
+   "problem": "The mechanic slices fire the narrative events of 06_events and expect \"the events slice\" to write them; no module owns them. Each firing logs an error and does nothing; where the option or immediate block carries the beat's effect (SL-04, SL-05, SL-07, SL-12, SL-13, SL-15, SL-16) the chain hangs or silently diverges. The build stopped on 50 dangling names on 24 October 2026 at 11:43 (`%TEMP%/zin-build0.err`).",
+   "fix": "New module `tools/content/modules/events_mech.mjs` with one data file per namespace; build check `checks/story_wiring.mjs`: every fired id is defined.",
+   "owner": "mechanic events (new)"
+  },
+  {
+   "id": "SL-29",
+   "title": "No build check for story wiring",
+   "severity": "medium",
+   "beats": [
+    "all"
+   ],
+   "kind": "no wiring check",
+   "file": "tools/content/checks/ (no story wiring check)",
+   "ids": [
+    "has_global_flag",
+    "scripted trigger names"
+   ],
+   "problem": "Nothing fails the build on a global flag read and never set, a scripted trigger tested as a flag (SL-06), or a country flag read as global (SL-18, SL-20). 25 global flags are read and never set in the staged tree.",
+   "fix": "`checks/story_wiring.mjs`: read-never-set flags fail unless listed in an allowance with the owner that will set them; trigger-as-flag and scope mismatches always fail.",
+   "owner": "builder checks"
+  },
+  {
+   "id": "SL-30",
+   "title": "Per-power rules bypass their wrappers",
+   "severity": "medium",
+   "beats": [
+    "B08",
+    "B21",
+    "B25"
+   ],
+   "kind": "rule wrappers unused",
+   "file": "staged:common/scripted_triggers/zin_rules.txt (zin_rules_ai_branch_aenor_golden_court, _free_dominions, zin_rules_ai_random_aenor, zin_rules_ai_branch_cold_conquest: unused)",
+   "ids": [
+    "zin_rule_ai_aenor_succession",
+    "zin_rule_cold_isengard",
+    "zin_rule_afrit"
+   ],
+   "problem": "Owners test per-power options directly, so DEFAULT does not follow the path rule everywhere (R1).",
+   "fix": "Same build check as SL-08.",
+   "owner": "Aenor; Cold Lands; Afrit"
+  },
+  {
+   "id": "SL-31",
+   "title": "The King can both survive and die",
+   "severity": "medium",
+   "beats": [
+    "B07"
+   ],
+   "kind": "mutually exclusive outcomes both reachable",
+   "file": "staged:common/scripted_effects/zin_afrit.txt (zin_afrit_plot_exposed resets the plot to 0; zin_afrit_add_plot can raise it again)",
+   "ids": [
+    "zin_golden_king_survives",
+    "zin_golden_king_dead"
+   ],
+   "problem": "After the King survives the Council's War the plot can grow again, so `zin_golden_king_survives` and `zin_golden_king_dead` can both be set (contract flags are never cleared) and the Chronicle and outcome 4 disagree.",
+   "fix": "After `zin_golden_king_survives`, `zin_afrit_add_plot` does nothing; the King dies only of the generic mortality of section 8 (with `zin_golden_king_natural`).",
+   "owner": "Afrit; Aenor"
+  },
+  {
+   "id": "SL-32",
+   "title": "Afrit can both stand in Parim and flee",
+   "severity": "medium",
+   "beats": [
+    "B25"
+   ],
+   "kind": "mutually exclusive outcomes both reachable",
+   "file": "staged:common/national_focus/zin_worshipdom.txt (sets zin_afrit_stand_in_parim); staged:common/scripted_effects/zin_afrit.txt (zin_afrit_flee_east)",
+   "ids": [
+    "zin_afrit_stand_in_parim",
+    "zin_afrit_abandoned_aenor"
+   ],
+   "problem": "Nothing stops the stand-in focus after the flight or the flight after the stand-in, so the palace gate (stand-in) and the eastern return (flight) can both be live.",
+   "fix": "The stand-in focus requires `NOT = { has_global_flag = zin_afrit_abandoned_aenor }`; the flight requires the stand-in unset (the fallback already does).",
+   "owner": "Worshipdom tree; Afrit"
+  },
+  {
+   "id": "SL-33",
+   "title": "The return battles wait without a deadline",
+   "severity": "critical",
+   "beats": [
+    "B32",
+    "B33",
+    "B34",
+    "B37"
+   ],
+   "kind": "wait without deadline",
+   "file": "tools/content/modules/mech_eindil_scripts.mjs (zin_eindil_battles, battle 1 under the free rule needs the Host near a Volgan-held state)",
+   "ids": [
+    "zin_eindil_battles",
+    "zin_eindil_stage_9_done"
+   ],
+   "problem": "Under PLAUSIBLE and FREE, battle 1 waits for the Host to stand near Volgan's ground and has no deadline. If Volgan stays in the Ember Lands, stage 9 never finishes and stages 10 to 12 never open.",
+   "fix": "When CP21's latest date passes (or 365 days after the return), battles 1 to 3 are skipped (`global.zin_eindil_battle = 3`), CP21 and CP22 resolve diverged, and battle 4 and 5 follow.",
+   "owner": "Eindil's journey"
+  },
+  {
+   "id": "SL-34",
+   "title": "Volgan's march has no catch-up",
+   "severity": "medium",
+   "beats": [
+    "B23"
+   ],
+   "kind": "no dated fallback",
+   "file": "staged:common/national_focus/zin_volgan.txt (only caller of zin_volgan_begin_march)",
+   "ids": [
+    "zin_volgan_begin_march",
+    "zin_volgan_marches"
+   ],
+   "problem": "The march north starts only from Volgan's focus; an AI that misses it under HISTORICAL never marches.",
+   "fix": "Under the historical branch the Dominion pulse calls `zin_volgan_begin_march` 30 days after `zin_mirolon_fallen` if it has not run.",
+   "owner": "Volgan"
+  },
+  {
+   "id": "SL-35",
+   "title": "The naming without Lorien is silent",
+   "severity": "low",
+   "beats": [
+    "B12"
+   ],
+   "kind": "missing successor text",
+   "file": "tools/content/modules/mech_eindil_scripts.mjs (naming fallback, line 577)",
+   "ids": [
+    "zin_eindil_name_him",
+    "zin_eindil.170"
+   ],
+   "problem": "When Lorien is dead or Gala is gone the fallback names Eindil silently; no event tells the world who named him.",
+   "fix": "New `zin_eindil.170` The Mirror Without Its King (reserved range 170 to 199).",
+   "owner": "Eindil's journey"
+  },
+  {
+   "id": "SL-36",
+   "title": "Old names and an Old God's victory remain",
+   "severity": "low",
+   "beats": [
+    "B35"
+   ],
+   "kind": "text contradicts canon",
+   "file": "staged:localisation/english/zin_sun_l_english.yml (zin_sun_old_powers_stand_3_desc); tools/content/data/countries.json (Zol row scan \"Ocean of Edvoid\", regions \"Edvoid's Mistake\")",
+   "ids": [
+    "zin_sun_old_powers_stand_3",
+    "Ocean of Edvoid"
+   ],
+   "problem": "Remaining Edvoid labels and \"an Old God's victory\" phrasing; the sea north of Zol's Mistake is Kusmeel and the region name Edvoid's Mistake is superseded.",
+   "fix": "Rename with the K7/K11 migration; text says \"Zol's victory\".",
+   "owner": "names migration"
+  },
+  {
+   "id": "SL-37",
+   "title": "The league without the heir is never told",
+   "severity": "medium",
+   "beats": [
+    "B33",
+    "B41"
+   ],
+   "kind": "effect never called",
+   "file": "staged:common/scripted_effects/zin_ending.txt (zin_ending_heir_lost: no caller); docs/design/stage2/events_crown.md section 4",
+   "ids": [
+    "zin_ending_heir_lost",
+    "zin_ending.80",
+    "zin_eindil.140"
+   ],
+   "problem": "`zin_eindil_lose_heir` fires the news `.140` but never calls `zin_ending_heir_lost`, so The League Without the Heir (`zin_ending.80`) never reaches the right realm.",
+   "fix": "`zin_eindil_lose_heir` calls `zin_ending_heir_lost`.",
+   "owner": "Eindil's journey"
+  }
+ ],
+ "measure": {
+  "variables": [
+   {
+    "name": "zin_path_cpNN",
+    "scope": "global",
+    "range": "0 to 3",
+    "meaning": "checkpoint state: 0 pending, 1 historical, 2 diverged, 3 skipped (06 spec)"
+   },
+   {
+    "name": "zin_path_cpNN_way",
+    "scope": "global",
+    "range": "code",
+    "meaning": "which divergence resolved the checkpoint (the divergence index of the beat, for the Chronicle and the endings)"
+   },
+   {
+    "name": "zin_path_cpNN_m",
+    "scope": "global",
+    "range": "0 to 1",
+    "meaning": "magnitude of the resolution (largest magnitude among the checkpoint's beats)"
+   },
+   {
+    "name": "zin_path_points",
+    "scope": "global",
+    "range": "0 to 93",
+    "meaning": "sum of weight x magnitude over resolved checkpoints"
+   },
+   {
+    "name": "zin_path_resolved_weight",
+    "scope": "global",
+    "range": "0 to 93",
+    "meaning": "sum of the weights of resolved checkpoints"
+   },
+   {
+    "name": "zin_path_divergence",
+    "scope": "global",
+    "range": "0 to 100",
+    "meaning": "how far the resolved story has left history (contract name; read by the AI weights and events_world.mjs)"
+   },
+   {
+    "name": "zin_path_departure",
+    "scope": "global",
+    "range": "0 to 100",
+    "meaning": "how much of the whole age has been rewritten (fixed denominator; only rises)"
+   },
+   {
+    "name": "zin_path_band",
+    "scope": "global",
+    "range": "0 to 3",
+    "meaning": "band of zin_path_divergence for text and AI"
+   }
+  ],
+  "magnitudes": {
+   "historical": 0,
+   "shifted": 0.25,
+   "other_way": 0.5,
+   "successor": 0.75,
+   "never_or_opposite": 1,
+   "skipped": 0.5
+  },
+  "formula": [
+   "On each resolution: m = the resolving divergence's magnitude (0 when historical; 0.5 when skipped, because the cause was counted where it happened).",
+   "zin_path_points += w x m; zin_path_resolved_weight += w (w from the checkpoint weight table).",
+   "zin_path_divergence = 100 x zin_path_points / max(zin_path_resolved_weight, constant:zin_path.floor_weight) with floor_weight 30, clamped 0 to 100: early divergences do not swing the meter to 100.",
+   "zin_path_departure = 100 x zin_path_points / constant:zin_path.total_weight (93).",
+   "Bands: 0 to 9 As the Chronicle Tells (0), 10 to 29 Another Telling (1), 30 to 59 A Different Age (2), 60 to 100 An Age Unwritten (3)."
+  ],
+  "uses": [
+   "Chronicle: `zin_world.110` gains the line `zin_loc_chronicle_divergence` (\"Of the age the chroniclers foretold, [?global.zin_path_departure|0] parts in a hundred were written otherwise.\") and the band name; the Aoaz bar tooltip shows the band once CP05 has resolved.",
+   "AI under PLAUSIBLE: the historical favour (x3, or 75/25 in events) drops to x1.5 (60/40) when `zin_path_divergence` is 50 or more (06 spec; `zin_story_rules_plausible_diverged` already reads it).",
+   "AI eras (forces.mjs): `zin_ai_era_stirring` reads CP05 resolved, not the value 0; a band of 2 or more lets tier B AI justify freely from Gathering Dark 35.",
+   "Catch-ups: owners' historical fallbacks run only while `zin_path_band` is 0 or 1 under PLAUSIBLE (under HISTORICAL always, under FREE never).",
+   "Elves: the Kindred March AI gate needs `zin_path_divergence` 50 or more (B21 D3).",
+   "Endings: the proposed outcomes are judged on 1 Glernaen 4A 1762 only when `zin_path_departure` is 15 or more or no canon ending is in reach; otherwise judgement is deferred to 1764 (endings section)."
+  ],
+  "weights": {
+   "CP01": 0,
+   "CP02": 2,
+   "CP03": 1,
+   "CP04": 2,
+   "CP05": 5,
+   "CP06": 5,
+   "CP07": 1,
+   "CP08": 3,
+   "CP09": 5,
+   "CP10": 3,
+   "CP11": 5,
+   "CP12": 3,
+   "CP13": 4,
+   "CP14": 3,
+   "CP15": 5,
+   "CP16": 4,
+   "CP17": 4,
+   "CP18": 2,
+   "CP19": 5,
+   "CP20": 3,
+   "CP21": 4,
+   "CP22": 5,
+   "CP23": 5,
+   "CP24": 4,
+   "CP25": 5,
+   "CP26": 5
+  },
+  "total_weight": 93,
+  "floor_weight": 30,
+  "bands": [
+   {
+    "band": 0,
+    "from": 0,
+    "to": 9,
+    "name": "As the Chronicle Tells"
+   },
+   {
+    "band": 1,
+    "from": 10,
+    "to": 29,
+    "name": "Another Telling"
+   },
+   {
+    "band": 2,
+    "from": 30,
+    "to": 59,
+    "name": "A Different Age"
+   },
+   {
+    "band": 3,
+    "from": 60,
+    "to": 100,
+    "name": "An Age Unwritten"
+   }
+  ]
+ },
+ "variety": {
+  "rule": {
+   "id": "zin_rule_start_variety",
+   "name": "The Shape of the Age",
+   "group": "RULE_GROUP_ZIN",
+   "owner": "tools/content/data/game_rules.json (rules.mjs); draws by start_variety.mjs",
+   "options": [
+    {
+     "key": "DEFAULT",
+     "name": "Follow the Course of the Age",
+     "desc": "Off under As the Chronicle Tells, light under As It Might Have Been, full under As Each Court Wills."
+    },
+    {
+     "key": "OFF",
+     "name": "As the Chronicle Tells",
+     "desc": "Every realm begins exactly as the chronicle remembers it."
+    },
+    {
+     "key": "LIGHT",
+     "name": "Small Differences",
+     "desc": "Rulers' tempers, the readiness of old plots and the strength of hosts differ a little."
+    },
+    {
+     "key": "FULL",
+     "name": "Another Spring",
+     "desc": "Disputed lands, small feuds and loose bonds between crowns may also differ."
+    }
+   ],
+   "branch": {
+    "HISTORICAL": "OFF",
+    "PLAUSIBLE": "LIGHT",
+    "FREE": "FULL"
+   },
+   "invariants": [
+    "The Golden King reigns on 1 Lumae 4A 1748.",
+    "Eindil has not appeared and `zin_eindil` is recruited by nobody.",
+    "Afrit is unrevealed; no variety text names him.",
+    "No war between realms that matter: no great power at war, no faction changes, the seven start factions stand.",
+    "No canon figure changes: Lorien, Horos, Volgan, the Will of Zol, the Golden King's vices, Alleria, Varner and Golbran.",
+    "Every drawn value stays inside the owner's documented range and the owning mechanic's start value (V1) is the midpoint."
+   ]
+  },
+  "options": [
+   {
+    "id": "V1",
+    "level": "LIGHT",
+    "name": "The Golden King's health",
+    "what": "Aenor death clock offset -180 to +180 days (never past the floor); one of three court tempers as a hidden country flag (`zin_gk_temper_gilded`, `_restless`, `_fearful`) that weights `zin_reign` options.",
+    "beats": [
+     "B07"
+    ],
+    "owner": "Aenor"
+   },
+   {
+    "id": "V2",
+    "level": "LIGHT",
+    "name": "The Council's readiness",
+    "what": "Regicide plot start 10 to 35 (start 20), veil 70 to 90 (start 80).",
+    "beats": [
+     "B02",
+     "B07",
+     "B25"
+    ],
+    "owner": "Afrit"
+   },
+   {
+    "id": "V3",
+    "level": "LIGHT",
+    "name": "The succession field",
+    "what": "Camp support at the King's death shifted -10 to +10 per camp; Prince Eronel's standing (`zin_aenor_eronel_favour` 0 to 2).",
+    "beats": [
+     "B08",
+     "B09"
+    ],
+    "owner": "Aenor"
+   },
+   {
+    "id": "V4",
+    "level": "LIGHT",
+    "name": "Rulers' tempers",
+    "what": "Tier A and B rulers that are not canon figures draw 0 or 1 temper trait from `zin_trait_temper_*` (eight proposed traits: bold, cautious, pious, grasping, scholarly, vengeful, generous, weary).",
+    "beats": [
+     "B05",
+     "B19",
+     "B20",
+     "B21"
+    ],
+    "owner": "characters"
+   },
+   {
+    "id": "V5",
+    "level": "LIGHT",
+    "name": "The strength of the dark",
+    "what": "Volgan's strength 40 to 50 (45), Zol's power 30 to 40 (35), the Gathering Dark start 8 to 12 (10).",
+    "beats": [
+     "B22",
+     "B23",
+     "B24",
+     "B35"
+    ],
+    "owner": "Volgan; Zol; world"
+   },
+   {
+    "id": "V6",
+    "level": "FULL",
+    "name": "Small feuds",
+    "what": "At most two border feuds (`start_border_war`, ended by 90 days) between tier C realms with a documented grudge: orc holds of the Dark Lands, Triton island lordships, the Troll Forest and its neighbours.",
+    "beats": [
+     "B01"
+    ],
+    "owner": "start_variety.mjs"
+   },
+   {
+    "id": "V7",
+    "level": "LIGHT",
+    "name": "The Grey Ford truce",
+    "what": "Truce start 30 to 50 (40); western unity 10 to 20 (15).",
+    "beats": [
+     "B05",
+     "B06",
+     "B20"
+    ],
+    "owner": "Western Crossing"
+   },
+   {
+    "id": "V8",
+    "level": "FULL",
+    "name": "Disputed lands",
+    "what": "For each pair one contested state may start with the other claimant (both keep cores or claims): Gunwaith and Girdon (the ford lands), Coldor and Isengard (a March Fort), Noris and Stabilo (a caravan town), Goldoroth and Dondor (a border hold), Herrodon and Andos Enda (a grove), Lerendor and R'en (a strait cape).",
+    "beats": [
+     "B04",
+     "B05",
+     "B19",
+     "B21"
+    ],
+    "owner": "start_variety.mjs (state transfers on startup)"
+   },
+   {
+    "id": "V9",
+    "level": "FULL",
+    "name": "Loose bonds",
+    "what": "At most one of: a Leren marriage courting Andos Enda (opinion +25; S5 still keeps it outside the Compact), a Stabilo guarantee of Alerhia, a Coldor pact with Titanos.",
+    "beats": [
+     "B19",
+     "B21"
+    ],
+    "owner": "realm life (marriages)"
+   },
+   {
+    "id": "V10",
+    "level": "LIGHT",
+    "name": "The Deliverer's network",
+    "what": "Footholds +1 in two random eastern candidates and -1 in two others, within each country's cap (zero caps stay zero).",
+    "beats": [
+     "B21",
+     "B26",
+     "B44"
+    ],
+    "owner": "Afrit"
+   },
+   {
+    "id": "V11",
+    "level": "LIGHT",
+    "name": "Mirolon's watch",
+    "what": "Mirolon passes readiness and proof -10 to +10.",
+    "beats": [
+     "B22"
+    ],
+    "owner": "Volgan"
+   },
+   {
+    "id": "V12",
+    "level": "LIGHT",
+    "name": "Lerendor's grievance",
+    "what": "`zin_strait_standing` start -15 to +15.",
+    "beats": [
+     "B19"
+    ],
+    "owner": "Lerendor"
+   },
+   {
+    "id": "V13",
+    "level": "LIGHT",
+    "name": "The waking",
+    "what": "Under `zin_rule_eindil_waking = HISTORICAL` only: wake jitter widened from 0 to 20 days to 0 to 60 days.",
+    "beats": [
+     "B03"
+    ],
+    "owner": "Eindil's journey"
+   }
+  ]
+ },
+ "systems": [
+  {
+   "id": "G1",
+   "name": "Rulers' years",
+   "what": "Each country's ruler has a hidden `zin_ruler_vigour` (0 to 100) that falls each pulse by a people rate (men 1, orcs and goblins 1.3, dwarves 0.6, giants 0.5, elves 0.05) and by war losses; at 0, or by a small chance below 20, the ruler dies (`kill_country_leader`) and G2 runs.",
+   "exempt": "Canon figures and story rulers (`zin_realm_is_story_ruler`): the Golden King while the clock runs, Aurevan, Lorien, Volgan, Horos, the Will of Zol, the Warden of Yeldenne, the King of Demons, every `zin_trait_ancient_king`.",
+   "historical": "Tier A rulers never die of age; tier B and C do.",
+   "free": "All but the exempt."
+  },
+  {
+   "id": "G2",
+   "name": "Heirs and regencies",
+   "what": "Tier A and B countries start with a designated heir (pre-built characters `<TAG>_zin_heir`, names from the country's language, flag `zin_char_heir`); tier C heirs are made with `generate_character` (token base `zin_heir`, verify in the Linux run). Adult heir: `zin_realm.10` The Crown Passes. Child heir: `zin_realm.11` A Child on the Throne, timed idea `zin_realm_regency` (two to five years), a regent advisor. No heir: `zin_realm.12` No Heir of the Body (G3).",
+   "exempt": "As G1.",
+   "historical": "Heirs succeed quietly; no crisis in tier A.",
+   "free": "Crises allowed everywhere."
+  },
+  {
+   "id": "G3",
+   "name": "Succession crises",
+   "what": "`zin_realm.12` and `.13` The Claimants: candidates from the ruling party, a strong general or advisor, and a married foreign house (G7). Outcomes: a council election (elves, democratic realms), a contested crown (`start_civil_war` when the realm has at least `constant:zin_realm.crisis_min_states` states and the tag budget S12 allows), or a neighbour's candidate (puppet). `zin_realm.15` The Crisis Settled.",
+   "exempt": "Story realms while their beat is pending (Aenor before CP06, the Worshipdom, Volgan, Zol, Gala before CP23, Selen while it hosts Eindil).",
+   "historical": "Off for tier A; tier B by election only.",
+   "free": "All outcomes by situation."
+  },
+  {
+   "id": "G4",
+   "name": "Usurpation",
+   "what": "Stability below 25 and a general or advisor with `zin_char_ambitious`: `zin_realm.20` A Captain's Ambition; the coup uses the institutions' Raise the Captains operation (`operation_coup_government`) for foreign plots; `zin_realm.21` The Usurper Crowned, `.22` The Usurper Fails.",
+   "exempt": "Story realms while their beat is pending.",
+   "historical": "Off.",
+   "free": "On."
+  },
+  {
+   "id": "G5",
+   "name": "Rebellions and secessions",
+   "what": "A subject with overlord opinion below -25 while the overlord is at war: `zin_realm.30` The Subject Stirs (break free, demand autonomy, stay); occupied cores with resistance above 50: `zin_realm.31` A Rising in Occupied Lands, ended by `.32`. The Concord's own secession (`zin_aenor_secede_dominion`) and the Dominion's `zin_dominion_member_breaks_free` are the model.",
+   "exempt": "Eastern clients of the Dominion of the East before `zin_afrit_dead` (their autonomy rule decides).",
+   "historical": "Risings only in occupied cores.",
+   "free": "On."
+  },
+  {
+   "id": "G6",
+   "name": "Peace deals",
+   "what": "After 12 months without a war goal moving: `zin_realm.40` Terms Offered (white peace, a claimed state, tribute); a war whose target or cause is gone: `zin_realm.42` War Without Purpose (white peace). After `zin_afrit_dead` every AI still at war only because of Afrit's realm accepts white peace (06 spec).",
+   "exempt": "Wars started by a story owner keep their own peace (Terms on the Shore, the Steward's peace, Kusven's withdrawal).",
+   "historical": "AI accepts terms that match the chronicle.",
+   "free": "AI accepts by war score."
+  },
+  {
+   "id": "G7",
+   "name": "Marriages and alliances",
+   "what": "Decision `zin_realm_seek_match` between monarchies of compatible peoples (men with men, elves with elves; giants, orcs and dwarves among themselves): `zin_realm.60` A Royal Match Proposed, `.61` accepted (opinion +25, a G3 claim, a guarantee option), `.62` refused (opinion -15); `zin_realm.63` The Kinship Called asks the kin to join a defensive war.",
+   "exempt": "Story realms whose alliances are owned by a mechanic (the Leren Compact, the Concord, the Dominion, the Kindred).",
+   "historical": "Only the start bonds and V9.",
+   "free": "AI seeks matches by threat and opinion."
+  },
+  {
+   "id": "G8",
+   "name": "Raids",
+   "what": "Native raids (`common/raids`, hoi4-native-raids) for raiding peoples: orc and goblin holds of the Dark Lands, Triton island lordships, Ember Lands freeholds, Cold Lands clans; `zin_realm.70` Raiders on the March, `.71` The Raid Answered (punish, pay, ignore). The diplomacy cause `zin_cb_orc_raids` is the model.",
+   "exempt": "None.",
+   "historical": "Raids at their documented rate; never against a great power before CP11.",
+   "free": "By situation."
+  },
+  {
+   "id": "G9",
+   "name": "Courts in exile",
+   "what": "A capitulated or annexed realm whose ruler lives keeps a court in exile (`zin_realm.50`; Mirolon's `zin_dominion.24` is the model) with the realm that shelters it; restoration by `release` of its cores (`zin_realm.51` The Exiles Return).",
+   "exempt": "None.",
+   "historical": "Exiled story courts only.",
+   "free": "All."
+  },
+  {
+   "id": "G10",
+   "name": "Story roles",
+   "what": "The role registry below re-targets every story role at fire time; `zin_realm.80` A Duty Passes tells the world when a role moves.",
+   "exempt": "None.",
+   "historical": "Roles move only when their holder is gone.",
+   "free": "Same."
+  }
+ ],
+ "roles": [
+  {
+   "id": "R01",
+   "role": "Aenor realm and crowning realm",
+   "holder": "Y0L",
+   "resolver": "`zin_aenor_find_parim_realm`; `zin_eindil_found_parim_realm` (a coalition member owning Parim creates a dynamic Aenor)",
+   "beats": "B07, B08, B42"
+  },
+  {
+   "id": "R02",
+   "role": "Afrit's seat",
+   "holder": "Y8G (Worshipdom)",
+   "resolver": "the country employing `zin_aurevan`, else the eastern client with the most footholds, else `zin_afrit_hidden`",
+   "beats": "B02, B09, B13, B25, B26, B38, B41"
+  },
+  {
+   "id": "R03",
+   "role": "Host of Eindil",
+   "holder": "Selen (S2)",
+   "resolver": "`zin_eindil_create_dynamic_host`, else the sworn country (regard 25, renown 40)",
+   "beats": "B29 to B42"
+  },
+  {
+   "id": "R04",
+   "role": "Gala host (the naming)",
+   "holder": "Gala Elves",
+   "resolver": "`zin_eindil_pick_gala_host`: Lorien's employer, the owner of Gala's capital; else the Mirror alone (`zin_eindil.170`)",
+   "beats": "B12"
+  },
+  {
+   "id": "R05",
+   "role": "The Grey Ford pair",
+   "holder": "Gunwaith, Girdon",
+   "resolver": "two bordering West Lands realms with the lowest mutual opinion",
+   "beats": "B04, B05, B06"
+  },
+  {
+   "id": "R06",
+   "role": "Leader of the Western Crossing",
+   "holder": "Gunwaith",
+   "resolver": "the Ford Council member with the most states, then the largest fleet",
+   "beats": "B20, B27"
+  },
+  {
+   "id": "R07",
+   "role": "The Leren crown",
+   "holder": "Lerendor",
+   "resolver": "the North Lands realm controlling Sonargur, else the strait shore",
+   "beats": "B19"
+  },
+  {
+   "id": "R08",
+   "role": "Volgan's first target",
+   "holder": "Mirolon",
+   "resolver": "the holder of `zin_is_site_mirolon_passes`",
+   "beats": "B22"
+  },
+  {
+   "id": "R09",
+   "role": "Mp'E holder (the hall)",
+   "holder": "Yeldenne",
+   "resolver": "the owner of state 1063 (already in the Glo slice)",
+   "beats": "B14, B15"
+  },
+  {
+   "id": "R10",
+   "role": "Stage 8 host",
+   "holder": "Selen",
+   "resolver": "the Middle Lands realm with the highest regard that Afrit does not rule",
+   "beats": "B16"
+  },
+  {
+   "id": "R11",
+   "role": "Alleria's employer",
+   "holder": "Selen",
+   "resolver": "the Host of Eindil",
+   "beats": "B16, B40, B41"
+  },
+  {
+   "id": "R12",
+   "role": "Keeper of Dragon Mountain",
+   "holder": "the dragon keeper (`zin_world_is_dragon_keeper`)",
+   "resolver": "none: return by land",
+   "beats": "B17"
+  },
+  {
+   "id": "R13",
+   "role": "Eastern candidates",
+   "holder": "by footholds",
+   "resolver": "`zin_afrit_eastern_candidate` at fire time",
+   "beats": "B26"
+  },
+  {
+   "id": "R14",
+   "role": "Volgan's steward",
+   "holder": "the Dominion's lieutenants (the Ember Herald, the Grave-Warden, Ghorvak)",
+   "resolver": "`zin_dominion.19` The Steward's Choice",
+   "beats": "B34"
+  },
+  {
+   "id": "R15",
+   "role": "The Parim holder",
+   "holder": "Aenor",
+   "resolver": "`zin_aenor_find_parim_realm` (`zin_aenor_parim_realm`)",
+   "beats": "B27, B38, B42"
+  },
+  {
+   "id": "R16",
+   "role": "The ice host",
+   "holder": "owner of `zin_is_site_eindil_ice`",
+   "resolver": "the nearest Cold Lands realm that is not a dark power",
+   "beats": "B03"
+  },
+  {
+   "id": "R17",
+   "role": "The wreck host",
+   "holder": "Howan (proposed)",
+   "resolver": "Nara, then Verde, then any Islands of the South realm",
+   "beats": "B11"
+  }
+ ],
+ "endings": [
+  {
+   "n": 1,
+   "key": "lost_cause",
+   "name": "The Lost Cause",
+   "canon": "established",
+   "condition": "`zin_eindil_crowned` (B42).",
+   "reachable": "Historical path; any game where the heir lives, Glo is carried (state 1), Parim is held by the Host's side and Afrit is dead (or reduced, after Q1). Variants: crowned as the Golden King's heir (B07 D3), crowned with Lorien alive (B36 D1), crowned without the cliff (B39 D1).",
+   "fixes": "SL-05, SL-06, SL-09, SL-10, SL-33."
+  },
+  {
+   "n": 2,
+   "key": "children_of_volgan",
+   "name": "Children of Volgan",
+   "canon": "established",
+   "condition": "`zin_volgan_children_ready` from 1 Lumae 4A 1756: body intact, Parim held by Volgan or a subject, four subjects, strength 60, Eindil not crowned.",
+   "reachable": "Mirolon falls early, the march is not broken, the body survives (B34 D1), the West and the East exhaust Aenor; also after the heir is lost.",
+   "fixes": "SL-03 (the date trigger and the check)."
+  },
+  {
+   "n": 3,
+   "key": "ashen_throne",
+   "name": "The Ashen Throne",
+   "canon": "established",
+   "condition": "`zin_afrit_ashen_throne_ready`: Afrit alive with the Necklace, Parim held, 12 deep footholds, and the palace held (from 4A 1759), all Aoaz claimed (from 4A 1760) or the stand-in with the war (from 4A 1760).",
+   "reachable": "The palace holds twice (B41 D2), the stand-in (B25 D1), a strong King of the East (B26 D2); `zin_world_reach_ending` reveals him first.",
+   "fixes": "SL-03, SL-11."
+  },
+  {
+   "n": 4,
+   "key": "golden_court",
+   "name": "The Golden Court Endures",
+   "canon": "proposed outcome (vault, outside canon)",
+   "condition": "Judged in 4A 1762: an Aenor realm controls Parim and the Golden King rules it (`zin_golden_king_survives`, or the Kingdom Behind the Throne with the King alive) or the Regency of Gold rules it (`zin_aenor_regency_endures`).",
+   "reachable": "B02 D3 and D4, B07 D3, B08 D1.",
+   "fixes": "SL-25, SL-31 (endings fix E-04 adds the Regency)."
+  },
+  {
+   "n": 5,
+   "key": "western_crown",
+   "name": "A Western Crown in Parim",
+   "canon": "proposed outcome",
+   "condition": "Judged in 4A 1762: `zin_west_holds_parim` as a trigger.",
+   "reachable": "B27 D3, B28 D2.",
+   "fixes": "SL-19."
+  },
+  {
+   "n": 6,
+   "key": "strait_master",
+   "name": "Master of the Strait",
+   "canon": "proposed outcome",
+   "condition": "Judged in 4A 1762: `zin_leren_strait_supremacy` and `zin_leren_holds_strait` (with R'en's coast, O9).",
+   "reachable": "B19 D2.",
+   "fixes": "SL-17."
+  },
+  {
+   "n": 7,
+   "key": "eastern_king",
+   "name": "One King in the East",
+   "canon": "proposed outcome",
+   "condition": "Judged in 4A 1762: `zin_east_united`, and Afrit dead or never King of the East.",
+   "reachable": "B21 D2, B26 D1 or D4.",
+   "fixes": "none beyond SL-03."
+  },
+  {
+   "n": 8,
+   "key": "unfinished",
+   "name": "The Age Unfinished",
+   "canon": "ZIN fallback",
+   "condition": "1 Glernaen 4A 1770 with no ending.",
+   "reachable": "Any game.",
+   "fixes": "SL-03."
+  }
+ ],
+ "plan": [
+  {
+   "kind": "Module",
+   "target": "`tools/content/modules/historical_path.mjs` (new)",
+   "content": "Checkpoints, tick, watchdog, roles R01 to R17, divergence measure, start check `zin_path.1`; writes `common/scripted_triggers/zin_path.txt`, `common/scripted_effects/zin_path.txt`, `events/zin_path.txt`, `common/script_constants/zin_path.txt`, `localisation/english/zin_path_l_english.yml`",
+   "fixes": "SL-02, SL-23"
+  },
+  {
+   "kind": "Data",
+   "target": "`tools/content/data/path_checkpoints.json` (new)",
+   "content": "Generated from `docs/design/alternate_history.json` by the module's loader; the test compares them",
+   "fixes": "SL-02"
+  },
+  {
+   "kind": "Library",
+   "target": "`tools/content/lib/story_dates.mjs` (new)",
+   "content": "`paceDate(date, pace)`; replaces the per-slice pace helpers (`mp_kit.mjs`, crown dates, `mech_journey_lib.mjs`) over time (V4, R2)",
+   "fixes": "SL-01"
+  },
+  {
+   "kind": "Module",
+   "target": "`tools/content/modules/world_tension.mjs` (new)",
+   "content": "The Gathering Dark, `zin_world.1` to `.29` (including `.20`), `zin_world_add_gathering_dark`, `zin_world_check_endings`, `zin_world_reach_ending`, the date triggers, the ending spirits, the monthly world tick (step 8 `zin_path_tick`, step 9 `zin_story_tick`); `zin_rule_gathering_dark` in `game_rules.json`",
+   "fixes": "SL-01, SL-03"
+  },
+  {
+   "kind": "Module",
+   "target": "`tools/content/modules/events_mech.mjs` (new) and `data/events_mech_{afrit,mistake,dominion,leren,misc}.json`",
+   "content": "The 61 narrative events of the mechanic namespaces (SL-28), Kusven's events, `zin_afrit.77`, `zin_eindil.170` stays with events_world",
+   "fixes": "SL-04, SL-05, SL-07, SL-12, SL-13, SL-15, SL-16, SL-17, SL-28"
+  },
+  {
+   "kind": "Module",
+   "target": "`tools/content/modules/realm_life.mjs` (new) and `data/realm_life.json`",
+   "content": "Namespace `zin_realm` (events `.10` to `.15`, `.20` to `.22`, `.30` to `.32`, `.40` to `.42`, `.50`, `.51`, `.60` to `.63`, `.70`, `.71`, `.80`); decisions category `zin_realm_court` (Name an Heir, Seek a Match, Offer Terms, Shelter the Exiles, Punish the Raiders); effects `zin_realm_pulse`, `zin_realm_succeed`, `zin_realm_open_crisis`, `zin_realm_settle_crisis`, `zin_realm_offer_terms`, `zin_realm_found_exile_court`; triggers `zin_realm_is_story_ruler`, `zin_realm_crisis_allowed`; constants `common/script_constants/zin_realm.txt`",
+   "fixes": "G1 to G10"
+  },
+  {
+   "kind": "Module",
+   "target": "`tools/content/modules/start_variety.mjs` (new) and `data/start_variety.json`",
+   "content": "On-startup draws V1 to V13 (inside `zin_rules.txt` order: after the pace is set); flag `zin_start_variety_drawn`; temper traits",
+   "fixes": "variety"
+  },
+  {
+   "kind": "Rule",
+   "target": "`zin_rule_start_variety` in `tools/content/data/game_rules.json`",
+   "content": "Options DEFAULT, OFF, LIGHT, FULL; branch HISTORICAL OFF, PLAUSIBLE LIGHT, FREE FULL (R1)",
+   "fixes": "variety"
+  },
+  {
+   "kind": "Fix",
+   "target": "`tools/content/modules/mech_eindil_scripts.mjs`",
+   "content": "`zin_eindil_ready_11` uses the trigger; `zin_eindil_ready_12` reduced-Afrit gate; battle deadline; `zin_eindil_lose_heir` calls `zin_ending_heir_lost`; global reads of the focus country flags; `zin_eindil.170`",
+   "fixes": "SL-06, SL-09, SL-20, SL-33, SL-35, SL-37"
+  },
+  {
+   "kind": "Fix",
+   "target": "`tools/content/lib/mech_afrit_script.mjs`, `modules/mech_afrit.mjs`",
+   "content": "Branch wrappers; return and Parim dates read; voyage fallback; seat target `zin_afrit_seat`; annex and capitulation hooks (`zin_afrit_hidden`, `zin_afrit.77`); crowning timeout; plot closed after survival; `zin_afrit_knows_brother`",
+   "fixes": "SL-04, SL-07, SL-08, SL-09, SL-10, SL-11, SL-21, SL-31"
+  },
+  {
+   "kind": "Fix",
+   "target": "`tools/content/lib/mech_zol_script.mjs`, `modules/mech_zol.mjs`, `data/mech_zol.json`",
+   "content": "Kusven re-design: `zin_zol_send_kusven`, `zin_kusven_withdraw`, `zin_kusven_can_come_forth`, flags `zin_kusven_forth`, `zin_kusven_withdrawn`, `zin_kusven_wounded`, character `zin_kusven`, ideas, template; `zin_is_zol` by original tag",
+   "fixes": "SL-13, SL-14, SL-27"
+  },
+  {
+   "kind": "Fix",
+   "target": "`tools/content/lib/mp_volgan_core.mjs`, `mp_volgan_pulse.mjs`",
+   "content": "March catch-up under the historical branch; annexation with the body intact (`zin_volgan_withdrawn_south`)",
+   "fixes": "SL-34, B34 D2"
+  },
+  {
+   "kind": "Fix",
+   "target": "`tools/content/modules/mech_lerendor.mjs`, `mech_crossing.mjs`",
+   "content": "Gates read the war flag once it exists; the West reads `zin_leren_treaty_honoured` and `zin_leren_treaty_in_force`; `zin_west_holds_parim` trigger",
+   "fixes": "SL-17, SL-19"
+  },
+  {
+   "kind": "Fix",
+   "target": "`tools/content/lib/mech_aenor_script.mjs`",
+   "content": "Exile of the living King (`zin_golden_king_exiled`); `zin_golden_king_natural`; the branch wrappers for the succession rule",
+   "fixes": "SL-25, SL-30"
+  },
+  {
+   "kind": "Fix",
+   "target": "`tools/content/data/events_world_eindil_3.json`, `events_world_lastwar.json`, `events_crown_chronicle.json`, `events_crown_reign1.json`",
+   "content": "`zin_eindil.101` \"The Heir Struck Down\"; `zin_lastwar.73` \"Zol's victory\"; cp23 lines name Kusven; denounce sets the global flag; `zin_reign.19` title follows the calendar (the feast of Gaelor)",
+   "fixes": "SL-14, SL-18"
+  },
+  {
+   "kind": "Fix",
+   "target": "politics step (country table)",
+   "content": "Hirolon without overlord; Zol row labels Kusmeel; Ember Lands region labels",
+   "fixes": "SL-24, SL-36"
+  },
+  {
+   "kind": "Check",
+   "target": "`tools/content/checks/story_wiring.mjs` (new)",
+   "content": "Fired events defined; read flags set (allowance list with owners); trigger-as-flag; flag scope; per-power rule options only through wrappers; every beat in the JSON has a latest date and a successor for every divergence",
+   "fixes": "SL-28, SL-29, SL-30"
+  },
+  {
+   "kind": "Test",
+   "target": "`tools/content/alternate_history.test.mjs` (new)",
+   "content": "Schema of `docs/design/alternate_history.json`; CP01 to CP26 covered; weights sum 93; every soft-lock's file path exists; `path_checkpoints.json` equals the JSON's checkpoints",
+   "fixes": "A-46"
+  },
+  {
+   "kind": "Contract",
+   "target": "`docs/specs/04_mechanics/00_shared_contract.md`, `00_contract_additions.md`",
+   "content": "Add `zin_kusven_forth`, `zin_kusven_withdrawn`, `zin_kusven_wounded`, `zin_kusven`, `zin_path_cpNN_way`, `zin_path_departure`, `zin_golden_king_exiled`, `zin_golden_king_natural`, `zin_afrit_hidden`, `zin_afrit_beyond_the_rift`, `zin_volgan_withdrawn_south`, `zin_war_piecemeal`, `zin_start_variety_drawn`; retire `zin_zol_manifested`, `zin_zol_withdrawn` (N16 list)",
+   "fixes": "SL-14"
+  }
+ ],
+ "counts": {
+  "beats": 45,
+  "divergences": 151,
+  "softlocks": 37,
+  "bySeverity": {
+   "critical": 9,
+   "high": 10,
+   "medium": 14,
+   "low": 4
+  }
+ }
+}
