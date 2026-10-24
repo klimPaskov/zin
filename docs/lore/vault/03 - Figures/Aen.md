@@ -1,7 +1,7 @@
 ---
 type: lore
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Aen, First of His Name
@@ -22,6 +22,11 @@ Aen fought in the [[War of Men]] for hundreds of years, uniting the rival kingdo
 - When did he die relative to Year 1, and who succeeded him?
 - What exactly does the name *Ainu* denote relative to Aen, the First Men, and earlier humans?
 - Was Aenor explicitly named in his honor? The connection is strong, but the etymology has not been declared canon.
+
+
+## Appearance
+
+**Established (owner, 24 October 2026; decision K37):** Aen is dark-haired and bearded, with a very powerful presence.
 
 [[The Ainu]] · [[The First Age of Aoaz]] · [[War of Men]] · [[Ages of Aoaz]]
 

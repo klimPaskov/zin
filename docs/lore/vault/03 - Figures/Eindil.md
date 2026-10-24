@@ -20,4 +20,9 @@ Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss 
 
 **Open:** birth order of the brothers, date and cause of Eindil's imprisonment, exact appearance, which arm he loses, the future effects of the necklace, and the permanent status of powers passed to him by the gods.
 
+
+## Appearance
+
+**Established (owner, 24 October 2026; decision K37):** Eindil has blue eyes and black hair, and he wears a helmet and silver armour.
+
 [[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[War of the Last Crowns]] · [[The Last Battle in the Palace]]
