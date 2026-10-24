@@ -1,0 +1,1841 @@
+{
+  "source": "tools/content/data/loading_tips.json",
+  "guide": "docs/specs/02_lore/09_voice_and_style.md",
+  "decision": "K33, owner, 24 October 2026: quotes rewritten in a natural period voice, fewer fishing and sea quotes, spread across all regions",
+  "note": "Proposed replacement for the quote and tip records of loading_tips.json, key for key and in key order. Quotes LOADING_TIP_0..149 ship as \"<text>\\n- <attribution>\"; tips LOADING_TIP_150..189 ship as \"§YCounsel:§! <text>\". Records with \"rewrite\" changed on that date; tips without it are copied unchanged. Every quote text and attribution is proposed.",
+  "format": {
+    "quote": "<text>\\n- <attribution>",
+    "tip": "§YCounsel:§! <text>"
+  },
+  "tips": [
+    {
+      "key": "LOADING_TIP_0",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "My grandmother used to say that a crown is gold only on the outside, and that a king who never looks inside his own will never find out how much it weighs.",
+      "attribution": "Saying of the Vale of Aenor",
+      "basis": "The Golden King's love of gold (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_1",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "The old folk say they built Parim beside the Great Lake so that a king looking out of his window would never forget where his bread was grown.",
+      "attribution": "Proverb of the lake-country",
+      "basis": "Parim and the Great Lake heartland (W, E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_2",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "Plough the old grave-fields deep and keep your grumbling to yourself, because the wizard lifted the Necromancer's curse from that ground long ago, and it has given good barley ever since.",
+      "attribution": "Ploughmen's saying, Middle Lands",
+      "basis": "Varner lifted the curse of the grave-fields (E deed, P dates)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_3",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "The Charters call every dominion a partner of the crown, which is a handsome word, though I notice it is still the crown that does the asking and the partners that do the paying.",
+      "attribution": "Grumble of the Concord dominions",
+      "basis": "Charters of Parim (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_4",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "You can buy a judgeship at the Golden Court in Rasthel and sell it again by Aurlan, and if you are clever you will turn a profit on the justice in between.",
+      "attribution": "Market jest of Parim",
+      "basis": "Sale of offices (E); months named for the twelve (P, calendar.md)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_5",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "The court gave us new banners for the jubilee and no new boots, so when the levy is called we shall march to the border looking very fine and limping.",
+      "attribution": "Saying of the Aenoran levies",
+      "basis": "The long peace (E); a court that neglects its hosts (P, Aenor spec)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_6",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "Aen had hundreds of sons, which is why every lord in the Middle Lands can show you a roll proving his royal blood, and why not one of them can show you a roll that makes him king.",
+      "attribution": "Saying of the heralds of Parim",
+      "basis": "Aen's hundreds of sons (E); competing branches (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_7",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "We hear the Baelim long before we see them, a low sound under the trees like a cart on a far road, and when we hear it we step off the path and wait, because they will not step off it for us.",
+      "attribution": "Saying of the Selen rangers, Aenor Forest",
+      "basis": "The walking tree people of Aenor Forest (E people, owner 24 October 2026; P name Baelim, Middle Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_8",
+      "kind": "quote",
+      "group": "Hirolon",
+      "text": "Men come up into our hills to ask what we remember, and we tell them, and then they hurry down again to write it on a skin that will rot long before the cairn does.",
+      "attribution": "Saying of the giants of Hirolon",
+      "basis": "Hirolon giants (E); cairn-faith (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_9",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "If you ask an ent of Kilinti the way through the forest he will tell you truly and in full, but bring a loaf and a blanket, because the telling takes a good deal longer than the walk.",
+      "attribution": "Saying of the Kilinti woodcutters",
+      "basis": "Ents of Kilinti (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_10",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "A rider of Hunhun will tell you that he owns three things in this world, his horse, his word and the sky over the steppe, and that he would sooner lose the first than the second.",
+      "attribution": "Horse-lords' saying, Hunhun",
+      "basis": "Riders of Hunhun (E); the Horse-Oath (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_11",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "On the first of Irumas every smith in the Vale lets his forge go cold at dawn and lights it again from the Anvil-Priest's fire, and anyone who wants a horseshoe before noon gets a blessing instead.",
+      "attribution": "Custom of the smiths of the Vale of Aenor",
+      "basis": "Irumas and the Kindling of the Forges (P, pantheon.md 3.10)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_12",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "Pass in peace, traveller, and open your packs to the toll-men, for this road runs through the mountains by leave of two peoples and belongs to neither of them.",
+      "attribution": "Inscription over the gate of Kingson",
+      "basis": "The Great Wall of Aenor, a natural range (E); the Kingson Pass and the Accord of the Passes, 4A 96 (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_13",
+      "kind": "quote",
+      "group": "The West Lands",
+      "text": "We cut the stone for every guild-hall in Kradlon and the guild masons lay it, and when a hall falls down the guilds blame the stone, which is how you know they have never cut any.",
+      "attribution": "Proverb of the dwarves of the Herlitz Mountains",
+      "basis": "Dwarves hold the great ranges of the West (E, owner 24 October 2026); dwarf-cut stone for the guild halls (P, West Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_14",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "We sell iron to the men of Kingson by the honest pound and to the elves by the elvish pound, which is the same weight at twice the price, and neither has ever complained to our faces.",
+      "attribution": "Proverb of the dwarves of Kunhrim",
+      "basis": "Dwarves hold the Great Wall range (E, owner 24 October 2026); dwarves dislike elves (E, dwarf card); Kunhrim iron sold at Kingson (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_15",
+      "kind": "quote",
+      "group": "Middle Lands and Aenor",
+      "text": "When the granary of the House of the First Light is full they ring the bell at dawn, and in a lean year the bell stays silent, so every street knows how the harvest went before the bailiff does.",
+      "attribution": "Custom of the Houses of the First Light",
+      "basis": "Houses keep the grain stores (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_16",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "A scribe of Parim writes Aen, First of His Name, and never First of Men, because men had kings for thousands of years before him and the University will not let anyone forget it.",
+      "attribution": "Rule of the scribes of Parim",
+      "basis": "Aen, First of His Name (E); scribes' rule (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_17",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "For centuries the kingdoms of men fought over whether there should be one crown or many, and it was Aen who settled the matter in the end, at the cost of most of the others.",
+      "attribution": "The Chronicle of Aoaz: the First Age",
+      "basis": "The War of Men (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_18",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "When Aenor's ships came to the western shores there were already people living there, and that, when you come down to it, is the whole of a quarrel that has lasted four ages.",
+      "attribution": "A western reading of the Chronicle",
+      "basis": "Aenor's wars in the West (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_19",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "In the First Age the south seemed to guard itself, for storms closed its coasts, and the few men who did get ashore found a heat that killed them faster than any army could.",
+      "attribution": "The Chronicle of Aoaz: the First Age",
+      "basis": "Ember Lands storms and heat (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_20",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "The Leren fought beside Aen as allies and never as his subjects, and the Annals of Sonargur have taken care to repeat the point in every reign since, in case a king of Aenor should forget it.",
+      "attribution": "The Annals of Sonargur",
+      "basis": "The Leren were Aenor's allies in the First Age, never subjects (E, North Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_21",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "Men, elves, dwarves, giants and spirits once stood together under King Edran's banners, and no age since has managed it again, though the scholars of Parim have spent many winters arguing how he did it.",
+      "attribution": "The Chronicle of Aoaz: the Grand Alliance",
+      "basis": "The Grand Alliance (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_22",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "The Grand Alliance won at Dardan, and the clerks who counted the dead afterwards gave up long before they reached the end, for the field was a wasteland and every kingdom of the Alliance had sons buried in it.",
+      "attribution": "The Chronicle of Aoaz: the First Age",
+      "basis": "Battle of Dardan (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_23",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "The spirits did not kill Volgan when they beat him; they stripped him of his strength and threw him into the Void, and any warden of Mirolon will tell you that what is thrown out can find its way back.",
+      "attribution": "A commentary on the Chronicle",
+      "basis": "Banishment to the Void, later return (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_24",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "King Edran won the war and could not leave well alone, for he would not stop at Dardan, and it was the elves who paid for his campaign in the Ember Lands with their dead.",
+      "attribution": "The Chronicle of Aoaz: the First Age",
+      "basis": "Edran's failed Ember Lands campaign (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_25",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "They called the Second Age the Long Grief, and so it was, yet in those years the farmers learned to keep seed through a bad winter, the healers to stop a plague and the builders to raise walls that held.",
+      "attribution": "The Chronicle of Aoaz: the Second Age",
+      "basis": "Second Age advances (E); the name Long Grief (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_26",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "King Edran, the greatest king since Aen, came home from all his wars and died in his bed of a sickness that no physician of his court could cure.",
+      "attribution": "The Chronicle of Aoaz: the Second Age",
+      "basis": "Edran died of disease (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_27",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "When the Necromancer came the elves did not, and the men of Aenor called it betrayal, though the elves, who had buried their own dead in King Edran's war, called it remembering.",
+      "attribution": "The Chronicle of Aoaz: the Second Age",
+      "basis": "The Elven Refusal (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_28",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "In the last centuries of the Second Age the Necromancer's war came from within, and orc and goblin hosts climbed out of the deep places in lands that had thought themselves safe.",
+      "attribution": "The Chronicle of Aoaz: the Second Age",
+      "basis": "Elzon's war from within; hosts rising from deep underground (E, Second Age Canon Register)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_29",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "The Second Age was the longest of the four, two thousand one hundred and thirty-three years, and it ended in the last days of its last year, when the Necromancer took Aenor.",
+      "attribution": "The Chronicle of Aoaz: the Second Age",
+      "basis": "The Second Age lasted 2,133 years and ended with Elzon's conquest (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_30",
+      "kind": "quote",
+      "group": "The South Lands",
+      "text": "The pass-lords of Miaed charge a toll at the top of the Hardtmuth road and another at the bottom, and they will tell you with a perfectly straight face that it is only fair, since the road goes both ways.",
+      "attribution": "Saying of the desert caravans",
+      "basis": "Miaed and its pass-lords on the Hardtmuth passes (P, South Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_31",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "Elzon did not fade like his dead and did not sleep as the Old Gods are said to; when his end came he died, wholly and for good, and the Chronicle has never had to correct the entry.",
+      "attribution": "The Chronicle of Aoaz: the Third Age",
+      "basis": "Elzon's permanent death (E); conflicting accounts of the Old Gods (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_32",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "When the Necromancer fell, the faithful say, the Deliverer stood between the people and the ruin, and the temples were full that day and have not been empty since.",
+      "attribution": "The Chronicle of Aoaz: the Fourth Age",
+      "basis": "The Deliverer acclaimed at Elzon's fall (E, public)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_33",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "Harion of Selen took up a crown that had waited twelve hundred years for a head, and the Annals note with some surprise that it still fitted a good man.",
+      "attribution": "The Annals of Parim",
+      "basis": "A good king restores Aenor (E); Harion (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_34",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "4A 96: the elves and the restored crown agreed at Kingson that the elves should keep the eastern forts of the passes and the crown the western, and that the crown should take the tolls, which pleased both.",
+      "attribution": "The Annals of Parim",
+      "basis": "The Accord of the Passes (P, replacing the Wall Accord)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_35",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "4A 1000: Parim kept the feast of a thousand years of peace, envoys came from every coast of Aoaz to drink the king's health, and the Annals record with pride that not one of them came armed.",
+      "attribution": "The Annals of Parim",
+      "basis": "The Thousand-Year Jubilee (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_36",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "In the First Age the kings of the East did not all choose the same side, for some marched for Volgan and some did not, and the courts of the East still remember very well which was which.",
+      "attribution": "The Chronicle of Aoaz: the First Age",
+      "basis": "Eastern kings divided in Volgan's war (E, First Age)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_37",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "4A 1744: the fishermen who came in this spring speak of black ships among the islands of the Kusmeel, and the harbour-master has had their tale written down, though he does not believe a word of it.",
+      "attribution": "The Harbour Rolls of Sonargur",
+      "basis": "Black ships rumour (P; disputed, V10)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_38",
+      "kind": "quote",
+      "group": "Chronicles of the ages",
+      "text": "4A 1745: King Herlic of Gunwyn and the wardens of Girdon swore the Truce of the Grey Ford at the stone, and the West has been quiet since, though the annalist notes that he has bought a new sword.",
+      "attribution": "The Annals of Gunwyn",
+      "basis": "Truce of the Grey Ford (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_39",
+      "kind": "quote",
+      "group": "The South Lands",
+      "text": "Caravan men of the Sun Desert say the dunes run south until the sand turns to ash, and that beyond lies a country of fire no chart shows, and there they stop the story and talk about the price of salt.",
+      "attribution": "Saying of the Sun Desert caravans",
+      "basis": "The lands south of the South Lands, home of devils and demons, known by name only (E, owner 24 October 2026)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_40",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "I mean to make one crown of all these crowns, so that the mothers of the Middle Lands may stop burying their sons for the sake of the rest.",
+      "attribution": "Words the heralds give to Aen, First of His Name",
+      "basis": "Aen's unification (E); speech (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_41",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "Let every banner keep its own colours, for we march together and not as one, and no lord shall be asked to fold his standard under another's in order to fight beside him.",
+      "attribution": "Preamble of the Charter of Free Banners",
+      "basis": "Charter of Free Banners (P); Edran's alliance (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_42",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "She asked that her name be written in the muster before she marched, and it was written, and she went to Dardan with the clans, and the banner of Gunwyn did not turn that day or any day after.",
+      "attribution": "Song of Taryn's banner, Gunwyn",
+      "basis": "Western banners at Dardan (E); Taryn (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_43",
+      "kind": "quote",
+      "group": "The Pupor Isles",
+      "text": "When no road could reach the host at Dardan the islands fed it, and the islanders will remind you of it at every table they set, usually while they are passing you the bread.",
+      "attribution": "Island saying of Senra's people",
+      "basis": "Island supply of the Alliance (E); Senra of the Pupor Isles (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_44",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "A healer does not ask which banner a wound was made under, and if you are too proud to be tended beside your enemy, you are welcome to bleed outside.",
+      "attribution": "Tavriel of the Magical Forest",
+      "basis": "Second Age proposed character (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_45",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "When we lay the raised dead down again we speak to them gently, because the poor things meant no harm and only wanted to sleep, and it was someone else who would not let them.",
+      "attribution": "Saying of the Lantern Chain's healers",
+      "basis": "Varner's work against the curse of the dead (E); the Lantern Chain (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_46",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "Our king was only a hobgoblin once, like any other, but he ate well and grew, and now he is very big and very wise, and anyone who thinks the second does not follow from the first can tell him so.",
+      "attribution": "Saying of the warrens of Glimik",
+      "basis": "The hobgoblin king, a hobgoblin who grew very big (E, card); he rules his own realm only (E, owner 24 October 2026); Glimik (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_47",
+      "kind": "quote",
+      "group": "The Lands of the Sun",
+      "text": "Our king led the host to Dardan and remembers it still, and yet the Keepers write down every word he says, because they reckon the roll will outlast even him.",
+      "attribution": "Keepers of the court of Gala",
+      "basis": "Lorien, king of the Gala elves, remembers Dardan (E); the Keepers (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_48",
+      "kind": "quote",
+      "group": "The Lands of the Sun",
+      "text": "Do not frighten your people with prophecy, for a frightened people will work very hard to make it come true.",
+      "attribution": "Proverb of the court of Gala",
+      "basis": "The Mirror Vigil and its distrust of prophecy (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_49",
+      "kind": "quote",
+      "group": "The South Lands",
+      "text": "The oasis keepers tell every traveller never to sleep in a cave mouth that is warmer than the rock around it, because the sand golems lie there, and they are very slow to forgive being woken.",
+      "attribution": "Saying of the oasis keepers, Sun Desert",
+      "basis": "Sand golems in the desert caves (E, card 7; P placement, South Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_50",
+      "kind": "quote",
+      "group": "Hirolon",
+      "text": "We treat with the king in Parim as one crown with another and have never taken a charter from him, because a promise that needs a scribe to hold it was never much of a promise.",
+      "attribution": "Saying of the High Chief's hall, Hirolon",
+      "basis": "Hirolon, a sovereign giant kingdom that treats with Aenor (E, owner 24 October 2026); the Cairn Treaty (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_51",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "The seals of the kingdom are heavy, Your Majesty, and I am glad to carry them for you, so that you need never trouble yourself with what they are pressed upon.",
+      "attribution": "Merovan, Keeper of the Seals",
+      "basis": "Merovan holds the seals (P name, E role)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_52",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "The sun makes a goblin sleepy, which is why the warrens of Glimkit leave the whole day to the big folk, since it is plainly all they are fit for.",
+      "attribution": "Saying of the warm valleys of Glimkit",
+      "basis": "Goblins hold sheltered valleys of the southern Cold Lands (E, owner 24 October 2026); the sun makes goblins drowsy (E, card); Glimkit (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_53",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "I have told the court every spring for ten years that a host which drills only for the king's birthday will fight like one, and every spring they thank me and order new plumes.",
+      "attribution": "Marshal Corwen Hornan of Aenor",
+      "basis": "Aenor's honest marshal (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_54",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "The court companies of the Lost Cause wear the badge on their best coats, and my frontier companies wear it on their old ones, because they had to earn it in the mud.",
+      "attribution": "Lord-Commander Tarec Belurith",
+      "basis": "Lost Cause frontier companies are real (E direction)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_55",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "The University has taught the learned art for centuries and has given the Middle Lands exactly one wizard whom everybody has heard of, which the masters find a good deal more awkward than Bastian does.",
+      "attribution": "Jest of the students of Parim",
+      "basis": "Bastian, a living wizard of men famous in the Middle Lands (E, owner 24 October 2026); the University (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_56",
+      "kind": "quote",
+      "group": "Hirolon",
+      "text": "We graze our sheep on the giants' eastern slopes for one fleece in ten, and in all the years my family has paid that rent, no giant has ever once miscounted.",
+      "attribution": "Saying of the herders of the Grano slopes",
+      "basis": "Hill-herders of men on Hirolon's eastern slopes (P, Hirolon dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_57",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "Selen loves the crown the way the forest loves the road, which is to say we let it through and keep an eye on it the whole way.",
+      "attribution": "First Warden Daeric Svenlor of Selen",
+      "basis": "Selen's pride (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_58",
+      "kind": "quote",
+      "group": "Hirolon",
+      "text": "The giants keep the passes and we keep the barley, and on a good evening we keep the giants as well, in ale, which is a fair bargain by anybody's reckoning.",
+      "attribution": "Saying of the small folk of Tirlan",
+      "basis": "The small folk under Hirolon's protection (E people, owner 24 October 2026; P Tirlan, Hirolon dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_59",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "A lamp in the window and a loaf on the table for whoever is on the road tonight: that is all the Deliverer has ever asked of a house, and it is not much to ask.",
+      "attribution": "Ilvane, High Confessor of the Deliverer",
+      "basis": "Public worship (E); Ilvane (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_60",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "Our three valleys have no army to speak of and the busiest roads in Aoaz, and I would not change either, since pilgrims eat a great deal more than soldiers and pay for what they eat.",
+      "attribution": "Abbot-Steward Lozan Heron of the Worshipdom",
+      "basis": "The Worshipdom's valleys and pilgrims (P, public face)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_61",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "A decision of the houses is judged as one judges a young tree, by what it shelters when those who planted it are long gone.",
+      "attribution": "First Speaker Lusiel Velakorin of the Magical Forest",
+      "basis": "Elected houses of the Magical Forest (P constitution)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_62",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "No keeper of the roosts ever says my dragon; we say the dragon who allows me to stand near, and those who forget the difference seldom get the chance to forget anything else.",
+      "attribution": "Perlan, Warden of the Dragon Roosts",
+      "basis": "Elves command dragons (E); office (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_63",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "Men often ask why we did not come when the Necromancer marched on Aenor, and we answer that we had come once already, for King Edran, and were still burying what that cost us.",
+      "attribution": "Loremaster Aenwe Lozari of the Magical Forest",
+      "basis": "The Elven Refusal (E); speaker (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_64",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "We were not humiliated in Parim in 4A 1716, whatever the Golden Court likes to say; we were taught the price of a toll, and we have been studying the lesson with great care ever since.",
+      "attribution": "King Ferlin III of Lerendor and Veskel",
+      "basis": "The toll quarrel (P); one crown of Lerendor and Veskel (E one crown, P name)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_65",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "A queen of the Cold Lands rules ice, wind and men, and she learns early that the men are the only ones of the three who ever listen to her.",
+      "attribution": "Queen Vaestia of Coldor",
+      "basis": "Coldor's crown (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_66",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "I signed the truce at the Grey Ford with my left hand, and my right stayed on my sword hilt the whole time, more out of habit than ill will, I assure you.",
+      "attribution": "King Herlic of Gunwyn",
+      "basis": "Truce of the Grey Ford (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_67",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "The law of Gunwyn binds the king just as it binds the shepherd, and I have noticed over the years that the shepherd finds this a good deal more comforting than the king does.",
+      "attribution": "Lawspeaker Ilurda of Gunwyn",
+      "basis": "Gunwyn's lawspeaker (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_68",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "Swear the truce at the stone if you must, but keep your blade greased, because the stone forgives nothing, and neither does the Lawspeaker, and the clans of Girdon know it as well as we do.",
+      "attribution": "Thane Datid Werlen of Gunwyn",
+      "basis": "Truce of the Grey Ford (P); Gunwyn oath-stones (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_69",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "A caravan is a kingdom that happens to be moving, and mine moves rather faster than the Prince of Postondoroth's, which is the whole of our quarrel in a sentence.",
+      "attribution": "King Esiurth II of Noris",
+      "basis": "Noris and the caravan roads (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_70",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "Noris owns the desert, and I grant him that freely, but we own the people who have to cross it, and they settle their bills on time.",
+      "attribution": "Prince Cereos of Postondoroth",
+      "basis": "Stabilo's rivalry with Noris (W, P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_71",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "A warking who cannot win a fight will not keep his crown for long, and a warking who must fight every day to keep it has lost it already and simply not noticed.",
+      "attribution": "Warking Gorduth of Cocanoor",
+      "basis": "Goldoroth (W); ruler (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_72",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "Mirolon has never asked the north to love us, only to look south once a year and see what we see every night from the beacon towers.",
+      "attribution": "High Warden Maeric of Mirolon",
+      "basis": "Mirolon watches the south (E rivalry; P ruler, Mirolon tree)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_73",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "I carried the warning to Parim in autumn with the dust of the southern road still on my cloak, and the court thanked me very kindly, fed me well and sent me home.",
+      "attribution": "Envoy Hessa Mencnor of Mirolon",
+      "basis": "The envoy of 4A 1736 (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_74",
+      "kind": "quote",
+      "group": "Figures of the ages",
+      "text": "Watch the dust on the southern road, lad, because a scout's eyes will lie to you about how many are coming and how fast, but the dust never does.",
+      "attribution": "Captain Bennar of the Passes",
+      "basis": "Mirolon's scouts (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_75",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "He stood between us and the ruin when the Necromancer fell, and so we keep a lamp lit in every window, that he may see we have not forgotten.",
+      "attribution": "The Litany of the Deliverer",
+      "basis": "Public worship of the Deliverer (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_76",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "Deliverance for those who have fallen, protection for those who keep faith, and renewal for the land that feeds us all.",
+      "attribution": "Blessing of the pilgrim-houses of the Zilin Hills",
+      "basis": "The Deliverer, New God of Deliverance, Protection and Renewal, as the faithful hold (P); the Worshipdom's pilgrims (P, public face)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_77",
+      "kind": "quote",
+      "group": "The Pupor Isles",
+      "text": "The islanders say their speech and the speech of Gunwyn were brothers once, and that Gunwyn went inland and grew fat on cattle while the islands stayed lean and kept the better words.",
+      "attribution": "Saying of the Pupor Isles",
+      "basis": "Tritonic, a Boreal tongue kin to Gunwyn (P, languages spec and West Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_78",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "Come to Zilin with empty hands, the pilgrims say, and you will go home with a blessing, a full belly and a letter to carry for some stranger in your own town.",
+      "attribution": "Pilgrims' saying of the Zilin Hills",
+      "basis": "Pilgrims and couriers of the Worshipdom (P, public face)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_79",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "In the Hall of Scales at Postondoroth a false weight is reckoned a worse crime than a broken head, because a head will mend in a month and a merchant's name never does.",
+      "attribution": "Saying of the Weighers of Stabilo",
+      "basis": "The Creed of the Honest Scale (P, world bible section 4)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_80",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "Rain for the barley, a priest for the fever and a lamp for the road, my mother used to say, and anyone who has all three and still grumbles about the tithe deserves to pay it twice.",
+      "attribution": "Peasants' saying of the Middle Lands",
+      "basis": "The Lamp and the Furrow, the folk faith of the twelve (P); public worship (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_81",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "In the Long Dark every house of the clan lets its own fire go out and comes to the clan fire to light it again, so that no family in the Cold Lands is ever left alone with its cold.",
+      "attribution": "Custom of the Winter Hearth",
+      "basis": "The Winter Hearth and the fire-keepers (P, world bible section 4)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_82",
+      "kind": "quote",
+      "group": "The Pupor Isles",
+      "text": "The wreck-right lords of the outer arc pray every autumn for gales, though they take care to pray quietly, and the chart-houses of Adel, who live by keeping ships off those rocks, do not speak to them.",
+      "attribution": "Saying of the Pupor Isles",
+      "basis": "Wreck-right lords and chart-houses of the Pupor Isles (P, Campaign of 4A 1748 and Pupor Isles dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_83",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "Half the priests in Sonargur will tell you the Old Gods are dead and the other half that they only sleep, and the market wives, who have heard both sermons, keep a lamp lit either way.",
+      "attribution": "Saying of the Leren coasts",
+      "basis": "Conflicting accounts of the Old Gods (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_84",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "The priests of the north say that of all the Old Gods only Zol dwells in Aoaz, and the old women of the strait add that this is one more than anybody would have chosen.",
+      "attribution": "Saying of the Leren strait",
+      "basis": "Zol is the only Old God in Aoaz (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_85",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "A king who prays to Kerun for conquest is wasting his breath, the Watch-Chaplains say, because Kerun keeps the walls of the weak and has never once helped anyone to take a wall that was not his.",
+      "attribution": "Saying of the Watch-Chaplains of Mirolon",
+      "basis": "Kerun, New God of protection, and no god of conquest (P, pantheon.md sections 1 and 3.7); Mirolon's beacons as his holy site (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_86",
+      "kind": "quote",
+      "group": "The South Lands",
+      "text": "A well shared makes kin and a well sealed makes enemies for seven generations, as the well-wives of the Noris desert teach every child old enough to carry a jar.",
+      "attribution": "Teaching of the Well-Oath",
+      "basis": "The Well-Oath of the Noris desert (P, world bible section 4)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_87",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "Miners in the Dark Lands say there are spirits so far down under the mountains that they have never seen the sun, and the foremen keep a rope tied to the youngest lad, just in case he finds one.",
+      "attribution": "Miners' saying of the Dark Lands",
+      "basis": "Damned Spirits deep underground (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_88",
+      "kind": "quote",
+      "group": "The Islands of the South",
+      "text": "When a fever leaves a house the Bowl-Bearers of Sulethe break a bowl on the threshold, and the children of the village come running for the pieces, because a shard of a fever-bowl is the best luck there is.",
+      "attribution": "Custom of the spring-houses of the southern islands",
+      "basis": "Sulethe's rites, strongest among the southern islanders (P, pantheon.md 3.2)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_89",
+      "kind": "quote",
+      "group": "Temples and faiths",
+      "text": "In the Free Crowns the Lamp-Mother puts out every fire in the village on the last night of Sulethe and lights them all again at dawn from the common hearth, so that no house begins the year alone.",
+      "attribution": "Custom of the Free Crowns of the North",
+      "basis": "Lumae's Lamp-Lighting, kept in the Free Crowns of the North (P, pantheon.md 3.3)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_90",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "On the Night of Names the Name-Readers of Dondor read out every name in the roll of the dead, and nobody leaves before the end, because nobody wants a grandmother read to an empty hall.",
+      "attribution": "Custom of the Name-Readers of Gaelor, Dondor",
+      "basis": "Gaelor and the Night of Names (P, pantheon.md 3.11)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_91",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "In the Magical Forest the houses vote and the First Speaker serves, and they reckon a precedent young until it has stood a hundred years and a habit young until it has stood a thousand.",
+      "attribution": "Saying of the houses of the Magical Forest",
+      "basis": "Elected houses of the Magical Forest (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_92",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "Men ask why we keep the passes, and we tell them that we kept our distance long before any fort was built in the mountains, and that the forts only made it easier for men to see.",
+      "attribution": "An elder of the Magical Forest",
+      "basis": "The Great Wall of Aenor, a natural range (E); the elves keep the eastern forts of the passes (P, Accord of the Passes)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_93",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "Herrodon and Andos Enda have been quarrelling for so long that their grudges have married and had grandchildren, and the grandchildren have quarrels of their own.",
+      "attribution": "Saying of Nolorim",
+      "basis": "Herrodon and Andos Enda rivalry (W)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_94",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "Nolorim keeps the high passes and sends no word to anyone about what it sees there, and the other houses have learned over the centuries to read a great deal into the silence.",
+      "attribution": "Saying of the Magical Lands",
+      "basis": "Nolorim guards the passes (E name, P role)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_95",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "Only the elves can call the dragons, but every few years some young lord rides up to our gate with a saddle made for one, and we let him through, and we keep the saddle when it comes back down without him.",
+      "attribution": "Saying of the gate-wardens of Kingson",
+      "basis": "Elven powers command dragons (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_96",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "The elves were never conquered, not even by the Necromancer, and they mention it seldom, though an envoy soon learns that they never mention it by accident.",
+      "attribution": "Saying of Aenoran envoys",
+      "basis": "The elves were never conquered (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_97",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "In the worst years of the Third Age the wizard and his small purple servant walked our roads, and wherever the wizard went the dead lay down again and stayed down.",
+      "attribution": "As the elves of the Magical Forest remember Varner",
+      "basis": "Varner and Golbran in the Third Age (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_98",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "Varner never once asked to be thanked, so the elves thank him every spring, at length and rather loudly, in case he happens to be listening.",
+      "attribution": "Custom of the Magical Forest",
+      "basis": "Varner's lasting influence (E); custom (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_99",
+      "kind": "quote",
+      "group": "The elves",
+      "text": "Walk softly in the Mushroom Forest, because the mycids feel every footstep through the floor of it, and they are slow to forget a heavy one.",
+      "attribution": "Saying of the rift shore",
+      "basis": "Mycids of the Mushroom Forest (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_100",
+      "kind": "quote",
+      "group": "The North Lands",
+      "text": "When Lerendor and Veskel were joined under one crown the old wives of Sonargur called it a good match, since the bride brought snow and the groom brought harbours and each had what the other lacked.",
+      "attribution": "Saying of Sonargur",
+      "basis": "Union of the Leren crowns (E one crown, P date); Veskel, the snow country of the west (P name)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_101",
+      "kind": "quote",
+      "group": "The North Lands",
+      "text": "We thank our good cousin of Lerendor for his letter on the strait dues, and we have read it twice with great attention, once for its courtesy and once to see whether the figures improved.",
+      "attribution": "From a letter of the Golden Court to Sonargur",
+      "basis": "The toll quarrel over the strait dues (P); the Treaty of the Narrow Strait (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_102",
+      "kind": "quote",
+      "group": "The North Lands",
+      "text": "Sensai bows to no crown and sells its timber to all of them, and its foresters will tell you that no tree has ever once asked who was buying it.",
+      "attribution": "Saying of Sensai",
+      "basis": "Sensai's timber (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_103",
+      "kind": "quote",
+      "group": "The North Lands",
+      "text": "Molot and R'en sit between the two masters of the strait, and like all small crowns they have learned to smile in both directions at once without straining their necks.",
+      "attribution": "Saying of the Free Crowns",
+      "basis": "Molot and R'en (E names)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_104",
+      "kind": "quote",
+      "group": "The North Lands",
+      "text": "The dwarf goblins of the Leren hills are neither dwarves nor goblins, as they will tell you at length, and the quickest way out of one of their halls is to ask which of the two they are nearer.",
+      "attribution": "Saying of the Leren uplands",
+      "basis": "Dwarf goblins, a people of their own in the hills near Lerendor (E, owner 24 October 2026)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_105",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "In the Cold Lands a stranger at the door is given a seat by the fire and a bowl before anyone asks his name, and the questions can wait until the thaw.",
+      "attribution": "Hospitality law of the Cold Lands clans",
+      "basis": "Cold Lands clans (E); custom (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_106",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "Coldor has one crown for the whole frozen interior, and the warlords of Melkgard have one answer to it, which they give from behind their black forts every time anyone asks.",
+      "attribution": "Saying of Fandanar",
+      "basis": "Coldor and Melkgard (W rivalry; P name Melkgard, Cold Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_107",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "Every clan of the Cold Lands has refused some king or other in its time, but I have yet to meet the clan that refused the winter.",
+      "attribution": "Saying of the Coldor clans",
+      "basis": "Cold Lands peoples (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_108",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "The traders of Mp'E will tell any newcomer about the silent castle above the town, where a green light burns on clear nights, and then they will sell him a sledge pointed the other way.",
+      "attribution": "Traders' tale of Mp'E",
+      "basis": "Castle of Yeldenne above Mp'E (E); travellers' tale (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_109",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "The yeti will trade you furs for salt and the way through the passes for your silence, and of the two bargains the second is much the better, so take it.",
+      "attribution": "Saying of the ice road",
+      "basis": "Yeti Lands (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_110",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "We lay a stone on the cairn for every winter, and the stones are cold and the winters were colder, and that is why the young men of the south think we never laugh.",
+      "attribution": "Saying of the ice giants of Nivaros",
+      "basis": "Nivaros ice giants (E people; P name, Cold Lands dossier); the Cairn-Faith (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_111",
+      "kind": "quote",
+      "group": "The Cold Lands",
+      "text": "The Cold Lands run off the edge of every chart in Aoaz, and the chart-makers of Fandanar are honest men, so where they stop knowing they simply stop drawing.",
+      "attribution": "Saying of Coldor's ports",
+      "basis": "The Cold Lands reach off the map (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_112",
+      "kind": "quote",
+      "group": "The West Lands",
+      "text": "Aenor calls it discovery and we call it what happened to our grandfathers' grandfathers, and both of us have been saying so for four ages without either one of us giving way.",
+      "attribution": "Saying of the Gunwyn clans",
+      "basis": "Aenor's wars in the West (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_113",
+      "kind": "quote",
+      "group": "The West Lands",
+      "text": "The guild-halls of Kradlon swear their contracts on the guild book and not on any god, because a god may forgive a man and the book never has.",
+      "attribution": "Saying of the Kradlon guilds",
+      "basis": "The Guild Halls (P, world bible section 4)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_114",
+      "kind": "quote",
+      "group": "The West Lands",
+      "text": "Fifty years of war and then one truce at the Grey Ford, and in the West we call that a short quarrel, so you may judge for yourself what we call a long one.",
+      "attribution": "Saying of the Girdon wardens",
+      "basis": "Gunwyn and Girdon wars (E rivalry, P dates)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_115",
+      "kind": "quote",
+      "group": "The West Lands",
+      "text": "A clan will forgive a debt, a feud and a bad harvest if you give it time, but no clan of the West has ever been known to forgive a toll.",
+      "attribution": "Saying of the Corogon traders",
+      "basis": "Western resentment of Aenoran tariffs (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_116",
+      "kind": "quote",
+      "group": "The West Lands",
+      "text": "The Buldor companies will fight for anyone who asks, and they fight well, but they have never once fought for nothing, and they would be insulted if you suggested it.",
+      "attribution": "Saying of the West Lands",
+      "basis": "Buldor companies (E people)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_117",
+      "kind": "quote",
+      "group": "The Pupor Isles",
+      "text": "On the Pupor Isles a man may own a whole island and still not have soil enough to bury his father in, which is why the islanders grew rich on knowledge instead of land.",
+      "attribution": "Saying of the Pupor Isles",
+      "basis": "The Pupor Isles, poor in land and rich in knowledge (P, Pupor Isles dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_118",
+      "kind": "quote",
+      "group": "The Pupor Isles",
+      "text": "We charted every reef in these waters and sold the charts to every crown in Aoaz, and each crown believes it bought the only good copy, which is why we are so polite to all of them.",
+      "attribution": "Chart-makers' saying of Adel",
+      "basis": "Pupor charts (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_119",
+      "kind": "quote",
+      "group": "The Islands of the South",
+      "text": "When the old tales of men grow too old for any man to explain, the islanders say, carry them to Gala, because the elves there will remember what we have forgotten.",
+      "attribution": "Saying of the Islands of the South",
+      "basis": "The islanders' saying (chronicle detail)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_120",
+      "kind": "quote",
+      "group": "The Islands of the South",
+      "text": "At the shrine beneath the tide the tally-keepers sing a name that none of them understands, and they sing it with great care, because the islanders say the name is needed.",
+      "attribution": "Saying of Enhis Is Rond",
+      "basis": "The shrine that repeats a forgotten name (P); the Wave-Tally (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_121",
+      "kind": "quote",
+      "group": "The Islands of the South",
+      "text": "Each island counts its dead as waves on the reef, so a child of the south learns to count on them, and the first sum most of us ever did was a sum of our grandmothers.",
+      "attribution": "Saying of the tally-caves of Kamu Lamo",
+      "basis": "The Wave-Tally (P, world bible section 4; Islands of the South dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_122",
+      "kind": "quote",
+      "group": "The Islands of the South",
+      "text": "A stranger the sea throws onto our beach is fed and given a mat, and if the sea throws him back to us a second time, the elders say he is plainly meant to be family.",
+      "attribution": "Hospitality saying of Howan",
+      "basis": "Island hospitality (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_123",
+      "kind": "quote",
+      "group": "The Lands of the Sun",
+      "text": "A Sunhot elf stands taller than a man on horseback and speaks more softly than a child, and the Sunfolk say a strong hand never had any need of a loud voice.",
+      "attribution": "Saying of the Goodin Sunfolk",
+      "basis": "Sunhot elves' height and peace (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_124",
+      "kind": "quote",
+      "group": "The Lands of the Sun",
+      "text": "Where the strong are gentle the weak can sleep sound, and the Sunfolk have never needed a wall to keep the Sunhot from them, nor the Sunhot one to keep out the Sunfolk.",
+      "attribution": "Saying of the Goodin Sunfolk",
+      "basis": "Sunhot elves (E); Goodin Sunfolk (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_125",
+      "kind": "quote",
+      "group": "The Lands of the Sun",
+      "text": "The host of Gala marched to Dardan for a king it hardly knew, and Gala has never regretted Dardan, though it has had a long time to regret what King Edran did afterwards.",
+      "attribution": "Saying of the court of Gala",
+      "basis": "Gala at Dardan; Edran's folly (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_126",
+      "kind": "quote",
+      "group": "The Lands of the Sun",
+      "text": "In the Lands of the Sun nothing is settled before noon, and the Lands of Light always speak last, so the other realms have learned to bring their dinners to the council.",
+      "attribution": "Saying of the noon court",
+      "basis": "The Lands of Light (W); the noon court (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_127",
+      "kind": "quote",
+      "group": "The Lands of the Sun",
+      "text": "Pilgrims who come to rest by the Sea of Gods are given a bed and a bowl and asked nothing, for the keepers say a traveller who has come so far has already answered every question worth asking.",
+      "attribution": "Saying of the sanctuaries of Tor Luni",
+      "basis": "The Noon Pilgrimage (P, belief); Tor Luni (P name, Lands of the Sun dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_128",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "Goldoroth was once many holds under many chiefs, and now it is one hold under one chief with a great many graves, which the warking's heralds like to call unity.",
+      "attribution": "Saying of the Dondor marches",
+      "basis": "Goldoroth's uniting (P date)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_129",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "Dondor has held the line against Goldoroth for three hundred years, and in Notbuton they talk about it the way other towns talk about the weather.",
+      "attribution": "Saying of Notbuton",
+      "basis": "Dondor and Goldoroth (W rivalry, P dates)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_130",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "Bordon, Dreson and Dulundur answer to nobody, and they have done it for so long that nobody has troubled to ask them anything in living memory.",
+      "attribution": "Saying of the Dark Lands",
+      "basis": "Independent Dark Lands holds (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_131",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "Smash is king of the Troll Forest and of nothing beyond it, and he says so himself, but anybody who wants to argue the point about the forest is welcome to walk in and try.",
+      "attribution": "Saying of the Bordon woodcutters",
+      "basis": "Troll Forest (E); Smash rules his own realm only (E, owner 24 October 2026)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_132",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "The fire-speakers of Cocanoor read the smoke above the Fire-Mountain every morning, and on the mornings when it drifts south they say nothing at all, which the clans have learned to take badly.",
+      "attribution": "Saying of the Volcano Clans",
+      "basis": "Goldoroth's fire-speakers (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_133",
+      "kind": "quote",
+      "group": "The Dark Lands",
+      "text": "Strangers from the south come up the coast with good iron and better promises, and the old men of the free holds tell their sons to take the iron and leave the promises on the beach.",
+      "attribution": "Saying of the free holds",
+      "basis": "Volgan's envoys court the Dark Lands (E, Campaign of 4A 1748)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_134",
+      "kind": "quote",
+      "group": "The Ember Lands and Mirolon",
+      "text": "Keep the beacon on the southern pass burning, my son, because Volgan was quiet once before, for a very long time, and the quiet did not last.",
+      "attribution": "Saying of the watch of Mirolon",
+      "basis": "Volgan's banishment and return (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_135",
+      "kind": "quote",
+      "group": "The Ember Lands and Mirolon",
+      "text": "Mirolon was the first kingdom Volgan ever took, and every warden of Mirolon means it to be the last he ever tries for.",
+      "attribution": "Saying of the passes",
+      "basis": "Volgan's First Age conquest of Mirolon (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_136",
+      "kind": "quote",
+      "group": "The Ember Lands and Mirolon",
+      "text": "The kingdoms of men always divide in the end, the old song has Volgan say, and I have only to wait for them to do it, which I have never minded.",
+      "attribution": "Words that Mirolon's old songs give to Volgan",
+      "basis": "Volgan's patience (P voice)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_137",
+      "kind": "quote",
+      "group": "The Ember Lands and Mirolon",
+      "text": "We bury our dead quickly down here, and deep, with salt in the grave, and we say nothing over them about Zol or about the master of the island, in case either of them is listening.",
+      "attribution": "Saying of the Ember Lands freeholders",
+      "basis": "The Mourning Customs of the Ember Lands (P, world bible section 4)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_138",
+      "kind": "quote",
+      "group": "The Ember Lands and Mirolon",
+      "text": "The lords of the Nether keep every bargain to the letter, and that, the old men of Herez say, is the very part that the men who bargain with them forget to fear.",
+      "attribution": "Saying of the Herez marches",
+      "basis": "The King of Demons' pacts bind the living (E, owner 24 October 2026); the Nether (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_139",
+      "kind": "quote",
+      "group": "Zol's Mistake",
+      "text": "My father sailed past the black shore once in his life, and all he would ever say of it was that nothing grows there and something walks there, and that he would thank me not to ask again.",
+      "attribution": "Saying of the Leren harbours",
+      "basis": "Roamed by the dead (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_140",
+      "kind": "quote",
+      "group": "Zol's Mistake",
+      "text": "From the brown hills of Herrodon you can see the black shore on a clear day, and the elves who live there have built every house in the hills with its door facing the other way.",
+      "attribution": "Saying of Herrodon",
+      "basis": "Herrodon's highland against the Kusmeel and the black north (P, Magical Lands dossier); Zol's Mistake (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_141",
+      "kind": "quote",
+      "group": "Zol's Mistake",
+      "text": "Ask a scholar of Parim why the black north is called Zol's Mistake and he will lecture you on everything but the answer, because nobody knows it, and no scholar has yet gone to look.",
+      "attribution": "Jest of the students of Parim",
+      "basis": "The name is unexplained (E; mystery V2)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_142",
+      "kind": "quote",
+      "group": "Zol's Mistake",
+      "text": "The old men of the north coast say a sword that kills a man will only annoy the dead of the Mistake, so every village there keeps a Name-Reader of Gaelor as well as a smith, and pays him better.",
+      "attribution": "Saying of the northern coasts",
+      "basis": "Ordinary weapons cannot end Zol's dead (E); Gaelor's Name-Readers (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_143",
+      "kind": "quote",
+      "group": "The East Lands",
+      "text": "The wells of Woqood face the black sea, and the well-wives there pour the first water of the year back into the sand facing south, so that nothing out on the water thinks it was meant for it.",
+      "attribution": "Custom of the well-wives of Woqood",
+      "basis": "Woqood, a north-coast kingdom whose wells face the Kusmeel (world bible); the Well-Oath (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_144",
+      "kind": "quote",
+      "group": "The East Lands",
+      "text": "Noris and Stabilo have fought over every road in the East for as long as anyone remembers, and the little courts along those roads have grown fat on selling water to both.",
+      "attribution": "Saying of the salt road",
+      "basis": "Noris and Stabilo rivalry (W)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_145",
+      "kind": "quote",
+      "group": "The South Lands",
+      "text": "In the Noris desert a stranger's map is a kind gift, but a rider's memory of the wells is a fortune, and no rider in his right mind has ever sold it.",
+      "attribution": "Saying of the camel riders of Noris",
+      "basis": "Noris camel warriors (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_146",
+      "kind": "quote",
+      "group": "The East Lands",
+      "text": "In Postondoroth they weigh gold, salt and promises on the same scale, and somehow it is only ever the promises that come up light.",
+      "attribution": "Market saying of Postondoroth",
+      "basis": "Stabilo's trade (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_147",
+      "kind": "quote",
+      "group": "The East Lands",
+      "text": "A caravan master carries three sets of scales, one for buying, one for selling and one for the customs house, and he trusts none of them as far as he trusts his camels.",
+      "attribution": "Saying of the caravan masters",
+      "basis": "East Lands rich and divided (E)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_148",
+      "kind": "quote",
+      "group": "The East Lands",
+      "text": "Naamis, Drak, Alerhia and Miaed are four courts with forty quarrels between them and one road to share, so a wise traveller learns four sets of manners before he sets out.",
+      "attribution": "Caravan saying of the East Lands",
+      "basis": "East Lands courts (W, map); Naamis, former label Gondolin (P name, East Lands dossier)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_149",
+      "kind": "quote",
+      "group": "The East Lands",
+      "text": "The old charts of Aenor call us Easterlings, as though we were something that happened to the east of them, but our kings were crowned beside the rift long before the first chart was drawn.",
+      "attribution": "Saying of the river kingdoms of the East",
+      "basis": "Easterlings in First Age usage (E); the river kingdoms (P)",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_150",
+      "kind": "tip",
+      "topic": "Interface",
+      "text": "The Aoaz bar under your flag shows the year of the Fourth Age, the Gathering Dark and up to three meters of your own realm. Hover any of them to learn what it means.",
+      "refs": "interface §2",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_151",
+      "kind": "tip",
+      "topic": "Interface",
+      "text": "The Realm button opens the Realm panel: your people, your alignment and stance, and your standing among the crowns of Aoaz.",
+      "refs": "interface §3",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_152",
+      "kind": "tip",
+      "topic": "Interface",
+      "text": "Great powers have their own panel, which opens from the small sigil at the end of the Aoaz bar. The panels show you the state of things; the decisions are where you act.",
+      "refs": "interface §1–2, §4",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_153",
+      "kind": "tip",
+      "topic": "World",
+      "text": "The Gathering Dark measures how near Aoaz is to catastrophe. It starts low, because the world seems at peace, and rises as hidden pressures build.",
+      "refs": "world tension",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_154",
+      "kind": "tip",
+      "topic": "World",
+      "text": "Aoaz counts twelve months, each named for one of the twelve main New Gods, from Glernaen to Naisa. The campaign opens on 1 Lumae, 4A 1748, the day of the Lamp-Lighting and the first day of spring.",
+      "refs": "calendar",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_155",
+      "kind": "tip",
+      "topic": "World",
+      "text": "Every realm belongs to one of ten peoples. Your people decides which hosts you can raise and which arms your armouries can make.",
+      "refs": "peoples, warfare §1",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_156",
+      "kind": "tip",
+      "topic": "Politics",
+      "text": "Four alignments divide Aoaz: Light, Dominion, Shadow and the Wild. Each has its own stances, and each treats war and alliances differently.",
+      "refs": "ideologies",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_157",
+      "kind": "tip",
+      "topic": "Diplomacy",
+      "text": "At the start nobody can simply justify a war. A cause, such as a broken truce or an old grudge, lets one realm press a claim on one rival.",
+      "refs": "diplomacy, war justification",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_158",
+      "kind": "tip",
+      "topic": "Diplomacy",
+      "text": "Declare war while the long peace holds and you are branded a breaker of the peace: calm and the will to war fall, and the Gathering Dark rises.",
+      "refs": "diplomacy, zin_diplo_peace_breaker",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_159",
+      "kind": "tip",
+      "topic": "Diplomacy",
+      "text": "Seven leagues stand at the start: the Middle Kingdom Concord, the Leren Compact, the Northern Accord, the Noris Treaty, the Stabilo Pact, the Dark Sea Accord and the Southern Dominion.",
+      "refs": "diplomacy, factions",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_160",
+      "kind": "tip",
+      "topic": "Diplomacy",
+      "text": "The elves keep the Elven Refusal. They defend their own lands, but they will not send armies to fight for Aenor.",
+      "refs": "diplomacy, Elven Refusal",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_161",
+      "kind": "tip",
+      "topic": "Economy",
+      "text": "Aoaz runs on Iron, Timber, Horses, Stone, Gold, Essence and Grain. Timber builds hulls, Horses mount riders, Essence feeds magical arms.",
+      "refs": "integration V2",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_162",
+      "kind": "tip",
+      "topic": "Economy",
+      "text": "Guild Workshops build for the realm, Armouries forge arms for the hosts, and Shipwrights lay down hulls. Balance them to your needs.",
+      "refs": "economy, buildings",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_163",
+      "kind": "tip",
+      "topic": "Economy",
+      "text": "Roads, High Roads and Depots carry supply. A host far from any road starves faster than any enemy can kill it.",
+      "refs": "economy, buildings",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_164",
+      "kind": "tip",
+      "topic": "Warfare",
+      "text": "Ballista companies pierce the hides of trolls, giants and the other great kin. A host without them barely scratches such foes.",
+      "refs": "warfare §5",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_165",
+      "kind": "tip",
+      "topic": "Warfare",
+      "text": "Ordinary arms hardly harm Zol's deathless. Wards and hallowed arms help a little; only potent magic truly ends them.",
+      "refs": "warfare §5, magic",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_166",
+      "kind": "tip",
+      "topic": "Warfare",
+      "text": "Knights and heavy foot are the hammer of the hosts of men. They hit hard and cost dearly, so keep them where the battle is decided.",
+      "refs": "warfare §2",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_167",
+      "kind": "tip",
+      "topic": "Warfare",
+      "text": "Support companies matter: scouts find the enemy, sappers break walls, healers return the wounded, and wardens stand against the dead.",
+      "refs": "warfare §2, §4.8",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_168",
+      "kind": "tip",
+      "topic": "Warfare",
+      "text": "Rangers, hill companies, sea soldiers and temple wardens are the picked troops of Aoaz, and few realms can field many of them.",
+      "refs": "warfare §2",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_169",
+      "kind": "tip",
+      "topic": "Warfare",
+      "text": "Dragons cannot be bred or built. Only pacts with Dragon Mountain bring them, and a dragon lost in battle is never replaced.",
+      "refs": "warfare §6.3, magic",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_170",
+      "kind": "tip",
+      "topic": "Warfare",
+      "text": "The Great Wall of Aenor is a range of mountains, and forts hold its passes from the Organ Mountains past Lunhrim to Kingson. The forts need upkeep, and every breach matters.",
+      "refs": "magic, Great Wall",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_171",
+      "kind": "tip",
+      "topic": "Navy",
+      "text": "Galleys cannot cross the wide central sea. A fleet bound from the West Lands to the Middle Lands needs deep-water hulls.",
+      "refs": "warfare §7.3",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_172",
+      "kind": "tip",
+      "topic": "Navy",
+      "text": "The seas around the Ember Lands are wracked by storms. Without storm rigging, a fleet loses ships there before it ever meets an enemy.",
+      "refs": "warfare §7.3",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_173",
+      "kind": "tip",
+      "topic": "Navy",
+      "text": "Merchant cogs carry your trade and your armies across the water. Guard them: corsairs hunt the sea lanes.",
+      "refs": "warfare §2, §7.1",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_174",
+      "kind": "tip",
+      "topic": "Navy",
+      "text": "A war galley's ram strikes hard at close quarters. Warships carry ballista decks and the reach to stay at sea for long.",
+      "refs": "warfare §7.1",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_175",
+      "kind": "tip",
+      "topic": "Rules",
+      "text": "The Historical Path rule decides whether the AI follows the chronicle of the age, leans toward it, or follows only its own interests.",
+      "refs": "zin_rule_historical_path",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_176",
+      "kind": "tip",
+      "topic": "Rules",
+      "text": "The Story Pace rule stretches or shortens the time between the great moments of the age. It never changes what can happen.",
+      "refs": "zin_rule_story_pace",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_177",
+      "kind": "tip",
+      "topic": "Rules",
+      "text": "With the skies rule off, there are no griffin riders in the air, and dragons fight beside armies instead of as wings.",
+      "refs": "zin_rule_skies, warfare §6.3",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_178",
+      "kind": "tip",
+      "topic": "Aenor",
+      "text": "Playing Aenor? The Golden Court meter shows how rotten your court is. A gilded court is rich, but rot weakens everything it touches.",
+      "refs": "interface §2, Aenor",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_179",
+      "kind": "tip",
+      "topic": "Aenor",
+      "text": "Concord dominions show their loyalty as Steadfast, Loyal, Restless or Defiant. Keep them content, or they will ask for freer charters.",
+      "refs": "interface §2, shared Concord tree",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_180",
+      "kind": "tip",
+      "topic": "Aenor",
+      "text": "The Lost Cause begins as the King's ornament inside Aenor. Its frontier companies are real soldiers, and what it becomes is up to you.",
+      "refs": "integration S3, Aenor",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_181",
+      "kind": "tip",
+      "topic": "Lerendor",
+      "text": "Playing Lerendor? Your standing under the Treaty of the Narrow Strait decides how far the crowns of the strait trust you.",
+      "refs": "Lerendor",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_182",
+      "kind": "tip",
+      "topic": "Mirolon",
+      "text": "Playing Mirolon? Parim will not listen to rumours. Send scouts south and gather proof that no court can laugh away.",
+      "refs": "Volgan spec, Mirolon's proof",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_183",
+      "kind": "tip",
+      "topic": "West Lands",
+      "text": "The West Lands are many crowns in an uneasy calm. The Truce of the Grey Ford holds at the start, and whether it lasts shapes the West.",
+      "refs": "Western Crossing",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_184",
+      "kind": "tip",
+      "topic": "East Lands",
+      "text": "The caravan roads make Noris and Stabilo rich, and keep them rivals. A price war on the salt road can turn into a real one.",
+      "refs": "economy, zin_cb_caravan_roads",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_185",
+      "kind": "tip",
+      "topic": "Dark powers",
+      "text": "Playing Volgan's Dominion? Your grave hosts fray far from the Ember Lands. Necromancers slow the decay, and patience serves you better than haste.",
+      "refs": "warfare §6.5",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_186",
+      "kind": "tip",
+      "topic": "Dark powers",
+      "text": "Playing Zol's Mistake? The black north gathers its strength slowly, and strength left untended can ebb away. Tend it with patience, and let the dead do the walking.",
+      "refs": "Zol's Mistake",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    },
+    {
+      "key": "LOADING_TIP_187",
+      "kind": "tip",
+      "topic": "Worshipdom",
+      "text": "Playing the Worshipdom? Your three valleys hold almost no army. Your strength lies in pilgrims, temples and friends in other courts.",
+      "refs": "Worshipdom (public face)",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_188",
+      "kind": "tip",
+      "topic": "Events",
+      "text": "Read your events. Many options open or close whole roads of history, and the age can end in more than one way.",
+      "refs": "events, endings",
+      "status": "proposed"
+    },
+    {
+      "key": "LOADING_TIP_189",
+      "kind": "tip",
+      "topic": "Focus",
+      "text": "Every realm has its own Path of the Realm, and some of its branches open only as the age moves on, so look again whenever the world changes.",
+      "refs": "focus trees",
+      "status": "proposed",
+      "rewrite": "2026-10-24"
+    }
+  ]
+}
