@@ -12,13 +12,23 @@ import { existsSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { GAME } from '../lib/paths.mjs';
 import { parse } from '../lib/clausewitz.mjs';
-import { readHeader, decodeRgba, measure, perceptualHash, hashDistance, extOf } from '../lib/image_codec.mjs';
+import { readHeader, decodeRgba, measure, perceptualHash, hashDistance, hashSupport, contentDifference, extOf } from '../lib/image_codec.mjs';
 import { acceptance } from '../modules/presentation.mjs';
 import { verifyInventory, readText, interfaceFiles } from '../modules/ui_inventory.mjs';
 import { validateReskin, textureIndex, vanillaFileOf } from '../modules/ui_reskin.mjs';
 import { windowState, framesOf, ENGINE_DEFAULTS, OVERRIDE_FILES } from '../lib/ui_plan.mjs';
 
-export const PHASH_THRESHOLD = 6;      // proposed; tune on the first accepted sheet and record the value in the spec
+// Check 5 thresholds, tuned on the first 48 accepted sheets (1,914 compared textures) and recorded in the spec and in
+// docs/design/stage2/ui_infrastructure.md, item 9. A picture is a suspected copy of its vanilla file only when all three hold:
+//   its difference hash lies within PHASH_THRESHOLD bits of the vanilla hash (of 64; the larger of dhash and ahash),
+//   the vanilla picture says enough to the hash (at least PHASH_MIN_SUPPORT of 64 decisive comparisons; a flat bar, a plain
+//     panel or a thin line has none and hashes alike for any two unrelated pictures, so the pair is inconclusive), and
+//   the two pictures are alike where they have content (mean colour difference at most CONTENT_LIMIT of 255; a re-encoded copy
+//     stays near 0, a frame or bar that merely shares the vanilla layout differs by 14 or more in every measured case).
+// Byte-identical files are always rejected, whatever the picture.
+export const PHASH_THRESHOLD = 6;
+export const PHASH_MIN_SUPPORT = 20;
+export const CONTENT_LIMIT = 12;
 const sha16 = bytes => createHash('sha256').update(bytes).digest('hex').slice(0, 16);
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const ord = (a, b) => a < b ? -1 : a > b ? 1 : 0;
@@ -130,7 +140,7 @@ function greyStd(rgba) {
   for (let i = 0; i < rgba.length; i += 4) if (rgba[i + 3] >= 128) { const g = 0.299 * rgba[i] + 0.587 * rgba[i + 1] + 0.114 * rgba[i + 2]; n++; sum += g; sq += g * g; }
   return n ? Math.sqrt(Math.max(0, sq / n - (sum / n) ** 2)) : 0;
 }
-export async function checkNoVanillaPixels({ inventory, reskin, files, game = GAME, threshold = PHASH_THRESHOLD }) {
+export async function checkNoVanillaPixels({ inventory, reskin, files, game = GAME, threshold = PHASH_THRESHOLD, minSupport = PHASH_MIN_SUPPORT, contentLimit = CONTENT_LIMIT }) {
   const problems = [], pending = [], notes = { compared: 0, inconclusive: 0 };
   const idx = lowerIndex(files), byName = new Map(inventory.sprites.map(s => [s.name, s])), done = new Set();
   for (const row of reskin.rows) {
@@ -149,10 +159,13 @@ export async function checkNoVanillaPixels({ inventory, reskin, files, game = GA
     if (!a || !b || a.width !== b.width || a.height !== b.height) { notes.inconclusive++; continue; }
     // A flat or empty picture hashes to nothing: its distance proves nothing either way.
     const flat = px => { const m = measure(px.data, px.width, px.height); return m.alpha === 'empty' || greyStd(px.data) < 3; };
-    if (flat(a) || flat(b)) { notes.inconclusive++; continue; }
+    if (flat(a) || flat(b) || hashSupport(a.data, a.width, a.height) < minSupport) { notes.inconclusive++; continue; }
     const d = hashDistance(perceptualHash(a.data, a.width, a.height), perceptualHash(b.data, b.width, b.height));
+    if (d > threshold) { notes.compared++; continue; }
+    const diff = contentDifference(a.data, b.data, a.width, a.height);
+    if (diff === null) { notes.inconclusive++; continue; }
     notes.compared++;
-    if (d <= threshold) problems.push({ code: 'pixels.perceptual', name: s.texture, message: `${s.texture} is within ${d} bits of the vanilla picture (threshold ${threshold}); a copy may have slipped in` });
+    if (diff <= contentLimit) problems.push({ code: 'pixels.perceptual', name: s.texture, message: `${s.texture} is within ${d} bits of the vanilla picture (threshold ${threshold}) and ${Math.round(diff * 10) / 10} levels from it in colour (limit ${contentLimit}); a copy may have slipped in` });
   }
   return result(5, 'no vanilla pixels', problems, pending.sort(ord), notes);
 }
@@ -186,6 +199,7 @@ export function checkProvenance({ manifest, files, provenance, inventory, reskin
 
 // ---------------------------------------------------------------------------------------------------- 7
 export async function checkLuminance({ inventory, reskin, files }) {
+  let free = 0;
   const problems = [], pending = [], idx = lowerIndex(files), byName = new Map(inventory.sprites.map(s => [s.name, s])), seen = new Set();
   for (const row of reskin.rows) {
     if (row.disposition !== 'R') continue;
@@ -195,6 +209,7 @@ export async function checkLuminance({ inventory, reskin, files }) {
     const hit = idx.get(s.texture.toLowerCase());
     if (!hit) { if ((row.writer ?? 'reskin') === 'reskin') pending.push(s.texture); continue; }
     if (!['dark', 'mid', 'light'].includes(s.luminance)) continue;
+    if (row.luma === 'free') { free++; continue; }   // an emblem: no text is drawn over it, so no text colour is bound to it
     const ext = extOf(s.texture);
     if (!['dds', 'tga', 'png'].includes(ext)) continue;
     const px = await decodeRgba(hit.bytes, ext);
@@ -202,7 +217,7 @@ export async function checkLuminance({ inventory, reskin, files }) {
     const m = measure(px.data, px.width, px.height);
     if (m.luminance !== s.luminance) problems.push({ code: 'luma.class', name: s.texture, message: `${s.texture} is ${m.luminance} (mean ${m.luma}), the vanilla class is ${s.luminance}; engine text colours are bound to it` });
   }
-  return result(7, 'luminance', problems, pending.sort(ord));
+  return result(7, 'luminance', problems, pending.sort(ord), { free });
 }
 
 // ---------------------------------------------------------------------------------------------------- 8

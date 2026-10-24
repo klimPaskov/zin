@@ -10,17 +10,19 @@
 // source stays pending and is reported; nothing fails for want of art. Rows owned by another writer (the loading
 // chrome by presentation.mjs, cursors by ui_cursors, the minimap by ui_minimap) are reported as delegated.
 //
-// CLI (from tools/):  node content/modules/ui_reskin.mjs plan | validate | report
+// CLI (from tools/):  node content/modules/ui_reskin.mjs measure | plan | validate | report
+//   measure  reads the accepted raw sheets and writes data/ui/cell_luma.json (the measured luminance of every cell); run it after a sheet is
+//            accepted or replaced and before plan, which picks cells and records the sheet classes by what was measured.
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import { GAME, rawFile, provenanceFile } from '../lib/paths.mjs';
-import { findRegionsAdaptive } from '../lib/sheets.mjs';
-import { runFit, FITS, FRAME_FITS, TRANSFORMS, FitError, makeImg, toCanvas, medallionMask, alphaBox, outlineOf, crop } from '../lib/fit.mjs';
+import { findRegionsAdaptive, onBlack } from '../lib/sheets.mjs';
+import { runFit, FITS, FRAME_FITS, TRANSFORMS, FitError, makeImg, toCanvas, medallionMask, alphaBox, outlineOf, alphaOf, crop } from '../lib/fit.mjs';
 import { dds, tga, png } from '../lib/raster.mjs';
-import { decodeRgba, extOf } from '../lib/image_codec.mjs';
+import { decodeRgba, extOf, measure, LUMA } from '../lib/image_codec.mjs';
 import { acceptance } from './presentation.mjs';
 import { layoutCheck, validateSheet } from '../lib/ui_sheets.mjs';
 import { buildPlan, serializeReskin, sheetJson, framesOf, DISPOSITIONS, REASON_REQUIRED, OVERRIDE_FILES, WRITERS } from '../lib/ui_plan.mjs';
@@ -29,10 +31,11 @@ import { loadInventory, INVENTORY_FILE } from './ui_inventory.mjs';
 export const RESKIN_FILE = fileURLToPath(new URL('../data/ui/reskin.json', import.meta.url));
 export const SHEETS_DIR = fileURLToPath(new URL('../data/ui/sheets/', import.meta.url));
 export const ALERT_FRAMES_FILE = fileURLToPath(new URL('../data/ui/alert_frames.json', import.meta.url));
+export const CELL_LUMA_FILE = fileURLToPath(new URL('../data/ui/cell_luma.json', import.meta.url));
 export const SHEET_RAW_DIR = 'ui/reskin';                      // raw sheets live in $ZIN_ART/raw/ui/reskin/<sheet id>.png
 export const MANIFEST_FILE = 'art/source/reskin_manifest.json';
 export const FAMILIES = ['chrome_panels', 'chrome_controls', 'chrome_bars', 'topbar', 'map_interface', 'alerts', 'events', 'politics_diplomacy', 'focus', 'research_production', 'military', 'frontend', 'loading_frame', 'cursors', 'texticons'];
-const ALPHA = /^(opaque|cell|shape|uniform:\d{1,3})$/;
+const ALPHA = /^(opaque|cell|shape|soft|uniform:\d{1,3})$/;
 const SIZE_FIELDS = ['width', 'height', 'size', 'borderSize', 'format', 'ext', 'texture'];
 const sha256 = b => createHash('sha256').update(b).digest('hex');
 const ord = (a, b) => a < b ? -1 : a > b ? 1 : 0;
@@ -49,10 +52,11 @@ export function loadSheets(dir = SHEETS_DIR) {
   return sheets;
 }
 export function loadAlertFrames(file = ALERT_FRAMES_FILE) { return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : undefined; }
+export function loadCellLuma(file = CELL_LUMA_FILE) { return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : undefined; }
 
 // Derive the table and the sheet maps from the inventory and write them (node content/modules/ui_reskin.mjs plan).
-export function planReskin(inventory, { alertFrames = loadAlertFrames() } = {}) {
-  const plan = buildPlan(inventory, { alertFrames });
+export function planReskin(inventory, { alertFrames = loadAlertFrames(), cellLuma = loadCellLuma() } = {}) {
+  const plan = buildPlan(inventory, { alertFrames, cellLuma });
   return { reskin: { format: 1, header: plan.header, rows: plan.rows }, sheets: new Map(plan.sheets.map(s => [s.id, s])), text: serializeReskin(plan) };
 }
 export function writePlan(inventory, { file = RESKIN_FILE, dir = SHEETS_DIR } = {}) {
@@ -101,6 +105,7 @@ export function validateReskin({ inventory, reskin, sheets }) {
     if (row.disposition === 'D') add('row.derived_override', where, 'D (derived override) is reserved and needs the owner\'s approval');
     if (REASON_REQUIRED.includes(row.disposition) && !reasonText(row.reason)) add('reason.missing', where, `${row.disposition} row without a reason (a key of header.reasons or a sentence)`);
     if (row.disposition === 'O' && !OVERRIDE_FILES.includes(row.override)) add('row.override', where, `O row names ${row.override ?? 'no file'}, which is not on the closed list of overrides`);
+    if (row.luma !== undefined && (row.luma !== 'free' || row.disposition !== 'R')) add('row.luma', where, `luma ${row.luma} is not allowed here; only an R row may say free (an emblem that carries no text)`);
     for (const f of SIZE_FIELDS) if (row[f] !== undefined) add('row.size_field', where, `row carries ${f}; sizes, frames and borders come only from the inventory`);
     if (row.disposition !== 'R') continue;
 
@@ -115,7 +120,7 @@ export function validateReskin({ inventory, reskin, sheets }) {
     if (!FITS.includes(row.fit)) { add('row.fit', where, `unknown fit ${row.fit}`); continue; }
     if (row.transform !== undefined && !TRANSFORMS.includes(row.transform)) add('row.transform', where, `unknown transform ${row.transform}`);
     if (!ALPHA.test(row.alpha ?? '')) add('row.alpha', where, `unknown alpha policy ${row.alpha}`);
-    if (row.fit === 'same_shape' && row.alpha !== 'shape') add('row.alpha', where, 'same_shape needs alpha shape');
+    if (row.fit === 'same_shape' && row.alpha !== 'shape' && row.alpha !== 'soft') add('row.alpha', where, 'same_shape needs alpha shape or soft');
     const sheetIds = [].concat(row.sheet ?? []);
     if (!sheetIds.length || sheetIds.some(id => !sheets.has(id))) add('row.sheet', where, `unknown sheet ${sheetIds.join(',') || '(none)'}`);
     else for (const key of row.cells) if (!sheetIds.some(id => sheets.get(id).cells.some(c => c.key === key))) add('row.cell', where, `cell ${key} is in none of ${sheetIds.join(', ')}`);
@@ -150,11 +155,11 @@ export function validateReskin({ inventory, reskin, sheets }) {
 // not yield exactly the expected cells is refused); outline sheets take each cell's own outline as alpha (A3).
 export async function readSheetCells(sheet, file) {
   const check = layoutCheck(sheet);
-  const r = await findRegionsAdaptive(file, check.expected, { cols: check.cols, rows: check.rows, aspect: check.aspect, minAreaFraction: check.minAreaFraction, sizeTolerance: check.sizeTolerance });
+  const r = await findRegionsAdaptive(file, check.expected, { cols: check.cols, rows: check.rows, aspect: check.aspect, minAreaFraction: check.minAreaFraction, sizeTolerance: check.sizeTolerance, mergeGrid: check.mergeGrid });
   if (!r.ok) throw new FitError('layout', `${sheet.id}: found ${r.found ?? 0} cells, expected ${check.expected}`);
   const cells = new Map(), inset = 4;
   if (sheet.matte === 'outline') {
-    const { data, info } = await sharp(file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+    const { data, info } = await onBlack(file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
     sheet.cells.forEach((c, i) => {
       const m = medallionMask(data, info.width, r.regions[i]), box = alphaBox(m.buf, m.w, m.h);
       if (box.width < 2 || box.height < 2) throw new FitError('layout', `${sheet.id}.${c.key}: empty cell`);
@@ -162,7 +167,7 @@ export async function readSheetCells(sheet, file) {
     });
     return cells;
   }
-  const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const { data, info } = await onBlack(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const full = makeImg(info.width, info.height, data);
   sheet.cells.forEach((c, i) => {
     const g = r.regions[i], left = g.x0 + inset, top = g.y0 + inset, w = g.x1 - g.x0 - 2 * inset, h = g.y1 - g.y0 - 2 * inset;
@@ -171,6 +176,24 @@ export async function readSheetCells(sheet, file) {
     cells.set(c.key, cell);
   });
   return cells;
+}
+
+// The measured luminance of every cell of every accepted raw sheet, for the plan (data/ui/cell_luma.json): the mean luma of the cell as
+// the builder sees it (flattened onto black, outline cells weighted by their own matte), per sheet and cell key. A sheet with no accepted
+// raw file, or one the layout check refuses, is left out; the plan then trusts its design classes. Stable order, one decimal.
+export async function measureSheets({ sheets, provenance, rawPath = rawFile, warn = () => {} }) {
+  const lines = provenance ?? (existsSync(provenanceFile()) ? readFileSync(provenanceFile(), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)) : []);
+  const out = {};
+  for (const [id, sheet] of [...sheets].sort(([a], [b]) => ord(a, b))) {
+    const rel = `${SHEET_RAW_DIR}/${id}.png`, file = rawPath(rel);
+    if (!file || !existsSync(file)) continue;
+    const bytes = readFileSync(file), acc = acceptance(lines, rel, bytes);
+    if (!acc.ok) { warn(`${id}: ${acc.why}`); continue; }
+    let cells;
+    try { cells = await readSheetCells(sheet, file); } catch (e) { warn(`${id}: ${e.message}`); continue; }
+    out[id] = { sha256: acc.sha.slice(0, 16), cells: Object.fromEntries([...cells].map(([key, img]) => [key, Math.round((measure(img.data, img.w, img.h).luma ?? 0) * 10) / 10]).sort(([a], [b]) => ord(a, b))) };
+  }
+  return { format: 1, limits: { dark: LUMA.dark, light: LUMA.light }, sheets: out };
 }
 
 const encode = (ext, img, row) => {
@@ -186,11 +209,11 @@ export function vanillaFileOf(row, game = GAME) {
   const rootDir = !row.root || row.root === 'base' ? game : `${game}/${row.root}`;
   return `${rootDir}/${row.texture}`;
 }
-export async function vanillaOutline(row, game = GAME) {
+export async function vanillaOutline(row, game = GAME) {   // row.soft: the alpha channel (0 to 255) instead of the binary outline
   const file = vanillaFileOf(row, game);
   if (!existsSync(file)) return null;
   const bytes = readFileSync(file), ext = extOf(row.texture), px = await decodeRgba(bytes, ext);
-  return px && px.width === row.width && px.height === row.height ? outlineOf(px.data, px.width, px.height) : null;
+  return px && px.width === row.width && px.height === row.height ? (row.soft ? alphaOf : outlineOf)(px.data, px.width, px.height) : null;
 }
 
 // ---------------------------------------------------------------------------------------------------- build
@@ -241,8 +264,8 @@ export async function buildReskin(staged, { inventory, reskin, sheets, provenanc
     const picked = row.cells.map(key => pool.get(key));
     if (picked.some(x => !x)) { pending.push({ texture: s.texture, names: g.names, why: `cell ${row.cells[picked.findIndex(x => !x)]} is not in an accepted sheet` }); continue; }
     let mask;
-    if (row.alpha === 'shape') {
-      mask = await shapeFor({ ...s, root: s.root });
+    if (row.alpha === 'shape' || row.alpha === 'soft') {
+      mask = await shapeFor({ ...s, root: s.root, soft: row.alpha === 'soft' });
       if (!mask) { pending.push({ texture: s.texture, names: g.names, why: 'the vanilla outline is not readable (installed game missing)' }); continue; }
     }
     const sheetOf = key => sheets.get(pool.get(key).sheet);
@@ -254,6 +277,12 @@ export async function buildReskin(staged, { inventory, reskin, sheets, provenanc
     let result;
     try { result = await runFit(row.fit, picked.map(p => p.img), target, { frameFit: row.frameFit, alpha: row.alpha === 'cell' ? 'cell' : row.alpha, mask, transform: row.transform, cellBorder, padding: 0.06 }); }
     catch (e) { if (e instanceof FitError) { pending.push({ texture: s.texture, names: g.names, why: `fit refused: ${e.message}` }); continue; } throw e; }
+    // Engine text colours are bound to the luminance class of a surface (spec 02, rule 2), and no tone is ever applied by code: an output that
+    // is not of its vanilla class is not shipped, it waits for a cell of the class (check 7 would fail it).
+    if (row.luma !== 'free' && ['dark', 'mid', 'light'].includes(s.luminance)) {
+      const m = measure(result.img.data, result.img.w, result.img.h);
+      if (m.luminance !== s.luminance) { pending.push({ texture: s.texture, names: g.names, why: `luminance: the output is ${m.luminance} (mean ${m.luma}), the vanilla class is ${s.luminance}; the accepted sheets have no better cell` }); continue; }
+    }
     const bytes = encode(s.ext, result.img, s);
     staged.add(s.texture, bytes);
     const first = picked[0];
@@ -292,11 +321,15 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   if (cmd === 'plan') {
     const { reskin, sheets } = writePlan(inventory);
     console.log(JSON.stringify({ wrote: RESKIN_FILE, sheets: sheets.size, ...summarize(reskin) }));
+  } else if (cmd === 'measure') {
+    const m = await measureSheets({ sheets: loadSheets(), warn: msg => console.error(`skipped ${msg}`) });
+    writeFileSync(CELL_LUMA_FILE, JSON.stringify(m, null, 1) + '\n');
+    console.log(JSON.stringify({ wrote: CELL_LUMA_FILE, sheets: Object.keys(m.sheets).length, cells: Object.values(m.sheets).reduce((n, s) => n + Object.keys(s.cells).length, 0) }));
   } else if (cmd === 'validate') {
     const reskin = loadReskin(), sheets = loadSheets(), problems = validateReskin({ inventory, reskin, sheets });
     console.log(JSON.stringify({ problems: problems.length, first: problems.slice(0, 10) }));
     process.exitCode = problems.length ? 1 : 0;
   } else if (cmd === 'report') {
     console.log(JSON.stringify(summarize(loadReskin()), null, 1));
-  } else throw new Error(`unknown command ${cmd}; use plan, validate or report`);
+  } else throw new Error(`unknown command ${cmd}; use plan, measure, validate or report`);
 }

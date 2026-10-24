@@ -2,10 +2,20 @@
 // Code here never paints: it only finds, crops, resizes and converts what the image model produced.
 import sharp from 'sharp';
 
+// A generated sheet is painted on black. Some come back as RGBA with colourful RGB under alpha 3 to 5 (the model's matte
+// residue); read as plain RGB it shows up as red and yellow specks on the ground. Every reader of a sheet therefore
+// composites it onto black first, so what is seen is what a viewer sees. An opaque sheet is unchanged.
+export const SHEET_GROUND = '#000000';
+const SPECK_FRACTION = 0.004;   // a piece smaller than this share of a cell is a speck, not part of an item (mergeGrid)
+export const onBlack = input => sharp(input).flatten({ background: SHEET_GROUND });
+
 // Connected regions brighter than the background, filtered by size and aspect, ordered by row then column.
 // Returns { ok, regions, found } — ok only when exactly `expected` regions qualify.
-export async function findRegions(file, expected, { minAreaFraction = 1 / 3, aspect = [0.3, 3.5], threshold = 34, cols = 4, rows } = {}) {
-  const { data, info } = await sharp(file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+// mergeGrid: an item painted on a transparent or black ground may be several separate pieces (three spearheads, a plate and its
+// loose seal). With mergeGrid every piece whose box is larger than a speck is merged into the box of its grid cell (by its
+// centre, cols x rows cells on the sheet), so one cell is one region however many pieces it holds.
+export async function findRegions(file, expected, { minAreaFraction = 1 / 3, aspect = [0.3, 3.5], threshold = 34, cols = 4, rows, mergeGrid = false } = {}) {
+  const { data, info } = await onBlack(file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width: W, height: H } = info, step = 2, w = Math.ceil(W / step), h = Math.ceil(H / step);
   const fg = new Uint8Array(w * h);
   for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { const i = ((y * step) * W + x * step) * 3; fg[y * w + x] = Math.max(data[i], data[i + 1], data[i + 2]) > threshold ? 1 : 0; }
@@ -18,6 +28,16 @@ export async function findRegions(file, expected, { minAreaFraction = 1 / 3, asp
     boxes.push({ x0: x0 * step, y0: y0 * step, x1: Math.min(W, (x1 + 1) * step), y1: Math.min(H, (y1 + 1) * step) });
   }
   const cellArea = (W / cols) * (H / (rows ?? Math.ceil(expected / cols)));
+  if (mergeGrid) {
+    const nrows = rows ?? Math.ceil(expected / cols), merged = new Map();
+    for (const b of boxes) {
+      if ((b.x1 - b.x0) * (b.y1 - b.y0) < cellArea * SPECK_FRACTION) continue;
+      const key = `${Math.min(cols - 1, Math.floor((b.x0 + b.x1) / 2 / (W / cols)))},${Math.min(nrows - 1, Math.floor((b.y0 + b.y1) / 2 / (H / nrows)))}`;
+      const m = merged.get(key);
+      if (!m) merged.set(key, { ...b }); else { m.x0 = Math.min(m.x0, b.x0); m.y0 = Math.min(m.y0, b.y0); m.x1 = Math.max(m.x1, b.x1); m.y1 = Math.max(m.y1, b.y1); }
+    }
+    boxes.length = 0; boxes.push(...merged.values());
+  }
   const regions = boxes.filter(b => { const bw = b.x1 - b.x0, bh = b.y1 - b.y0; return bw * bh > cellArea * minAreaFraction && bw / bh >= aspect[0] && bw / bh <= aspect[1]; });
   if (regions.length !== expected) return { ok: false, found: regions.length, W, H };
   regions.sort((a, b) => (a.y0 + a.y1) - (b.y0 + b.y1));
@@ -29,17 +49,19 @@ export async function findRegions(file, expected, { minAreaFraction = 1 / 3, asp
 // thresholds and accept the first that yields exactly the expected items with consistent sizes (each within 12%
 // of the median width and height), so a dark item can never be split or merged silently.
 export async function findRegionsAdaptive(file, expected, opts = {}) {
-  const { sizeTolerance = 0.12, ...regionOpts } = opts;
+  const { sizeTolerance = 0.12, mergeGrid = false, ...regionOpts } = opts;
   let last;
-  for (const threshold of [34, 20, 12, 6]) {
-    const r = await findRegions(file, expected, { ...regionOpts, threshold });
+  // Plain connected pieces first, at falling thresholds; only a sheet that no threshold resolves is tried again with the pieces
+  // of each grid cell merged (mergeGrid), so a sheet that resolved before keeps resolving exactly as it did.
+  for (const merge of mergeGrid ? [false, true] : [false]) for (const threshold of [34, 20, 12, 6]) {
+    const r = await findRegions(file, expected, { ...regionOpts, threshold, mergeGrid: merge });
     last = r;
     if (!r.ok) continue;
     if (expected > 1) {
       const med = a => [...a].sort((x, y) => x - y)[Math.floor(a.length / 2)], ws = r.regions.map(b => b.x1 - b.x0), hs = r.regions.map(b => b.y1 - b.y0), mw = med(ws), mh = med(hs);
       if (!ws.every(w => Math.abs(w - mw) <= mw * sizeTolerance) || !hs.every(h => Math.abs(h - mh) <= mh * sizeTolerance)) { last = { ok: false, found: r.regions.length, inconsistent: true }; continue; }
     }
-    return { ...r, threshold };
+    return { ...r, threshold, merged: merge };
   }
   return last;
 }

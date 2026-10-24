@@ -13,18 +13,18 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 import { Canvas, dds, tga, png, cur, ico, ani, fromRaw } from './lib/raster.mjs';
-import { readHeader, decodeRgba, measure, perceptualHash, hashDistance, luminanceClass, LUMA } from './lib/image_codec.mjs';
+import { readHeader, decodeRgba, measure, perceptualHash, hashDistance, hashSupport, contentDifference, luminanceClass, LUMA } from './lib/image_codec.mjs';
 import { runFit, makeImg, crop, resize, applyAlpha, outlineOf, FitError, boxDownscale as fitBox, keyMatte as fitKey, strip as fitStrip, transformImg } from './lib/fit.mjs';
 import { boxDownscale as presBox, keyMatte as presKey } from './modules/presentation.mjs';
 import { Staged } from './lib/core.mjs';
 import { buildInventory, serializeInventory, verifyInventory, parseGfx, parseGuiRefs, loadInventory, INVENTORY_FILE, readText, gameRoots } from './modules/ui_inventory.mjs';
-import { planReskin, validateReskin, buildReskin, readSheetCells, loadReskin, loadSheets, vanillaOutline, summarize, publishUiData, RESKIN_FILE, SHEETS_DIR, MANIFEST_FILE } from './modules/ui_reskin.mjs';
+import { planReskin, validateReskin, buildReskin, readSheetCells, measureSheets, loadReskin, loadSheets, vanillaOutline, summarize, publishUiData, RESKIN_FILE, SHEETS_DIR, MANIFEST_FILE } from './modules/ui_reskin.mjs';
 import { windowState, guiState, framesOf, alphaPolicy, DISPOSITIONS, OVERRIDE_FILES } from './lib/ui_plan.mjs';
 import { FIXED_SHEETS, validateSheet, layoutCheck, PREAMBLES } from './lib/ui_sheets.mjs';
 import { sheetPrompt, sheetJob, reskinJobs } from './art/ui-reskin-jobs.mjs';
 import {
   checkInventoryFreshness, checkCoverage, checkShape, checkReachability, checkNoVanillaPixels, checkProvenance, checkLuminance, checkOverrides,
-  checkDeterminism, runUiChecks, scriptReferences, elementNames, PHASH_THRESHOLD,
+  checkDeterminism, runUiChecks, scriptReferences, elementNames, PHASH_THRESHOLD, PHASH_MIN_SUPPORT, CONTENT_LIMIT,
 } from './checks/ui_checks.mjs';
 import { GAME } from './lib/paths.mjs';
 
@@ -103,7 +103,7 @@ before(async () => {
   write('dlc/dlc001_test/interface/dlc.gfx', 'spriteTypes = {\n\tspriteType = { name = "GFX_dlc_test" texturefile = "gfx/interface/dlc_pic.dds" }\n}\n');
   write('dlc/dlc001_test/gfx/interface/dlc_pic.dds', dds(fill(6, 6, MID)));
   inventory = JSON.parse(serializeInventory(await buildInventory({ game })));   // through the file format
-  plan = planReskin(inventory, { alertFrames: undefined });
+  plan = planReskin(inventory, { alertFrames: undefined, cellLuma: null });
 });
 after(() => { if (root) rmSync(root, { recursive: true, force: true }); });
 
@@ -333,7 +333,7 @@ test('the plan classifies every inventory entry once, with the dispositions the 
 });
 
 test('the plan is deterministic, and shared textures share one treatment', () => {
-  const again = planReskin(inventory, {});
+  const again = planReskin(inventory, { cellLuma: null });
   assert.equal(again.text, plan.text);
   const by = new Map(plan.reskin.rows.map(r => [r.name, r]));
   assert.deepEqual(by.get('GFX_button_test').cells, by.get('GFX_text_test').cells, 'two sprites, one texture, one treatment');
@@ -679,4 +679,176 @@ test('alpha policy and frame helpers follow the inventory', () => {
   assert.equal(alphaPolicy({ alpha: 'opaque' }), 'opaque'); assert.equal(alphaPolicy({ alpha: 'uniform:79' }), 'uniform:79');
   assert.equal(alphaPolicy({ alpha: 'shaped', coverage: 0.99 }), 'opaque'); assert.equal(alphaPolicy({ alpha: 'shaped', coverage: 0.5 }), 'shape'); assert.equal(alphaPolicy({ alpha: 'keyed', coverage: 0.4 }), 'shape');
   assert.equal(framesOf({ frames: 3, width: 90 }), 3); assert.equal(framesOf({ frames: 2, width: 71 }), 1); assert.equal(framesOf({ frames: 1, width: 71 }), 1);
+});
+
+// ---------------------------------------------------------------------------------------------------- finishing pass: flatten, merge, soft alpha, check 5 and 7, measured classes
+// A 2 x 2 sheet of 1024 px: four opaque brown cells on black; `paint` may paint more onto the raw RGBA buffer.
+async function rgbaSheet(paint) {
+  const W = 1024, data = Buffer.alloc(W * W * 4);
+  for (let i = 0; i < W * W; i++) data[i * 4 + 3] = 255;
+  for (let k = 0; k < 4; k++) {
+    const x0 = (k % 2) * 512 + 60, y0 = Math.floor(k / 2) * 512 + 60;
+    for (let y = y0; y < y0 + 392; y++) for (let x = x0; x < x0 + 392; x++) { const o = (y * W + x) * 4; data[o] = 120; data[o + 1] = 90; data[o + 2] = 50; }
+  }
+  paint?.(data, W);
+  return sharp(data, { raw: { width: W, height: W, channels: 4 } }).png().toBuffer();
+}
+const miniSheet = { id: 'mini', family: 'chrome_panels', kind: 'grid', aspect: '1:1', grid: [2, 2], ground: 'black', matte: 'none', cells: ['a', 'b', 'c', 'd'].map(key => ({ key, subject: key, lum: 'mid' })) };
+
+test('sheets are flattened onto black: colour hidden under alpha 3 never reaches a cell', async () => {
+  // A red patch with alpha 3 inside cell a (near its corner), and a coloured veil of alpha 4 across the gutter between the cells.
+  const bytes = await rgbaSheet((data, W) => {
+    for (let y = 64; y < 80; y++) for (let x = 64; x < 80; x++) { const o = (y * W + x) * 4; data[o] = 255; data[o + 1] = 10; data[o + 2] = 10; data[o + 3] = 3; }
+    for (let y = 0; y < W; y++) for (let x = 452; x < 572; x++) { const o = (y * W + x) * 4; if (data[o] === 0) { data[o] = 230; data[o + 1] = 200; data[o + 2] = 20; data[o + 3] = 4; } }
+  });
+  const f = path.join(root, 'rgba_sheet.png'); writeFileSync(f, bytes);
+  const cells = await readSheetCells(miniSheet, f), a = cells.get('a');
+  assert.equal(cells.size, 4);
+  // The crop starts 4 px inside the found region, which starts at the cell (60, 60): the patch (64..80) is at the crop corner.
+  const p = px(a, 2, 2);
+  assert.ok(p[0] <= 4 && p[1] <= 1 && p[3] === 255, `the patch reads as the black it composites to: ${p}`);
+  assert.deepEqual(px(a, 60, 60), [120, 90, 50, 255], 'the painted cell is untouched and opaque');
+  // The same bytes read as plain RGB (what the builder did before) show the patch plainly.
+  const raw = await sharp(f).removeAlpha().raw().toBuffer();
+  assert.ok(raw[(70 * 1024 + 70) * 3] > 200, 'unflattened, the speck is red');
+});
+
+test('a cell made of separate pieces is one cell: merged by grid cell only when the plain read cannot resolve the sheet', async () => {
+  const bytes = await rgbaSheet((data, W) => {
+    // Cell d is split by a black gap into two pieces.
+    for (let y = 512 + 60; y < 512 + 452; y++) for (let x = 512 + 240; x < 512 + 270; x++) { const o = (y * W + x) * 4; data[o] = 0; data[o + 1] = 0; data[o + 2] = 0; }
+  });
+  const f = path.join(root, 'split_sheet.png'); writeFileSync(f, bytes);
+  const { findRegionsAdaptive } = await import('./lib/sheets.mjs');
+  const opts = { cols: 2, rows: 2, aspect: [0.1, 10], minAreaFraction: 0.03, sizeTolerance: 2 };
+  assert.equal((await findRegionsAdaptive(f, 4, opts)).ok, false, 'five pieces are not four cells');
+  const merged = await findRegionsAdaptive(f, 4, { ...opts, mergeGrid: true });
+  assert.equal(merged.ok, true); assert.equal(merged.merged, true); assert.equal(merged.regions.length, 4);
+  assert.ok(merged.regions[3].x1 - merged.regions[3].x0 > 380, 'the merged cell spans both pieces');
+  // A sheet that resolves plainly is read plainly, with or without the option.
+  const plain = path.join(root, 'plain_sheet.png'); writeFileSync(plain, await rgbaSheet());
+  assert.equal((await findRegionsAdaptive(plain, 4, { ...opts, mergeGrid: true })).merged, false);
+  assert.equal(layoutCheck(FIXED_SHEETS[0]).mergeGrid, true);
+  // Negative: a wrong count is still refused after merging.
+  assert.equal((await findRegionsAdaptive(plain, 6, { ...opts, mergeGrid: true })).ok, false);
+});
+
+test('soft alpha keeps the vanilla alpha channel: translucent glows and plates are not emptied by a binary outline', async () => {
+  const half = makeImg(2, 1, Buffer.from([10, 10, 10, 90, 10, 10, 10, 20]));
+  const out = applyAlpha(solid(2, 1, MID), 'soft', new Uint8Array([90, 20])).img; assert.deepEqual([out.data[3], out.data[7]], [90, 20]);
+  assert.deepEqual([...outlineOf(half.data, 2, 1)], [0, 0], 'a binary outline of a translucent file is empty');
+  assert.throws(() => applyAlpha(solid(2, 1, MID), 'soft'), FitError);
+  assert.throws(() => applyAlpha(solid(2, 1, MID), 'soft', new Uint8Array(1)), /soft mask/);
+  assert.equal(alphaPolicy({ alpha: 'shaped', coverage: 0 }), 'soft'); assert.equal(alphaPolicy({ alpha: 'shaped', coverage: 0.04 }), 'soft');
+  assert.equal(alphaPolicy({ alpha: 'shaped', coverage: 0.05 }), 'shape'); assert.equal(alphaPolicy({ alpha: 'keyed', coverage: 0 }), 'shape');
+  // vanillaOutline reads the alpha channel for a soft row and the binary outline for a shape row.
+  const dir = mkdtempSync(path.join(os.tmpdir(), 'zin-soft-')), veil = new Canvas(4, 4, [200, 100, 50, 80]);
+  mkdirSync(path.join(dir, 'gfx'), { recursive: true }); writeFileSync(path.join(dir, 'gfx/veil.dds'), dds(veil));
+  const row = { texture: 'gfx/veil.dds', width: 4, height: 4 };
+  assert.equal((await vanillaOutline({ ...row, soft: true }, dir))[5], 80); assert.equal((await vanillaOutline(row, dir))[5], 0);
+  rmSync(dir, { recursive: true, force: true });
+  // The table accepts soft, also with same_shape, and refuses a made-up policy.
+  const rows = plan.reskin.rows, r0 = rows.find(r => r.name === 'GFX_flag_overlay_test');
+  const withAlpha = alpha => ({ ...plan.reskin, rows: rows.map(r => (r === r0 ? { ...r, alpha } : r)) });
+  assert.equal(validateReskin({ inventory, reskin: withAlpha('soft'), sheets: sheetsOf(plan) }).filter(p => p.code === 'row.alpha').length, 0);
+  assert.ok(validateReskin({ inventory, reskin: withAlpha('misty'), sheets: sheetsOf(plan) }).some(p => p.code === 'row.alpha'));
+});
+
+test('hash support and content difference: flat and thin pictures say little, a copy and a lookalike differ', () => {
+  const flat = fill(32, 32, MID), grad = gradient(32, 32), frame = new Canvas(32, 32, [0, 0, 0, 0]);
+  frame.rect(0, 0, 32, 2, [200, 180, 100, 255]); frame.rect(0, 30, 32, 32, [200, 180, 100, 255]); frame.rect(0, 0, 2, 32, [200, 180, 100, 255]); frame.rect(30, 0, 32, 32, [200, 180, 100, 255]);
+  assert.equal(hashSupport(flat.rgba(), 32, 32), 0);
+  assert.ok(hashSupport(grad.rgba(), 32, 32) >= PHASH_MIN_SUPPORT, 'a gradient decides every bit');
+  assert.ok(hashSupport(frame.rgba(), 32, 32) < 40);
+  assert.equal(contentDifference(grad.rgba(), grad.rgba(), 32, 32), 0);
+  const warm = new Canvas(32, 32); for (let y = 0; y < 32; y++) for (let x = 0; x < 32; x++) warm.rect(x, y, x + 1, y + 1, [200 - x * 4, 160, 40 + y, 255]);
+  assert.ok(contentDifference(grad.rgba(), warm.rgba(), 32, 32) > CONTENT_LIMIT, 'another material in the same layout is far from the original');
+  assert.equal(contentDifference(new Canvas(32, 32, [0, 0, 0, 0]).rgba(), new Canvas(32, 32, [0, 0, 0, 0]).rgba(), 32, 32), null);
+  assert.deepEqual([PHASH_THRESHOLD, CONTENT_LIMIT, PHASH_MIN_SUPPORT], [6, 12, 20], 'the recorded thresholds');
+});
+
+test('check 5: same layout in another material is not a copy; flat and thin pictures are inconclusive, never failures', async () => {
+  const gradFile = 'gfx/interface/grad_test.dds';
+  // A re-encoded copy still fails (and its message carries both distances).
+  const vpx = await decodeRgba(readFileSync(path.join(game, gradFile)), 'dds'), copyCanvas = fromRaw(vpx.data, 32, 32); copyCanvas.px[0] = 1;
+  const copy = await checkNoVanillaPixels({ inventory, reskin: reskin(), files: swap(stagedFiles, gradFile, dds(copyCanvas)), game });
+  assert.equal(copy.problems[0].code, 'pixels.perceptual'); assert.match(copy.problems[0].message, /levels from it in colour/);
+  // The same layout painted in other colours hashes alike but is far in colour: it passes.
+  const lookalike = new Canvas(32, 32); for (let y = 0; y < 32; y++) for (let x = 0; x < 32; x++) lookalike.rect(x, y, x + 1, y + 1, [220 - x * 5, 170, 40 + y * 3, 255]);
+  const ok = await checkNoVanillaPixels({ inventory, reskin: reskin(), files: swap(stagedFiles, gradFile, dds(lookalike)), game });
+  assert.equal(ok.problems.length, 0, JSON.stringify(ok.problems)); assert.ok(ok.notes.compared >= 1);
+  // A flat vanilla picture: whatever the output, nothing can be said.
+  const flatGame = path.join(root, 'flatgame').split(path.sep).join('/'); mkdirSync(path.join(flatGame, 'gfx/interface'), { recursive: true });
+  writeFileSync(path.join(flatGame, gradFile), dds(fill(32, 32, MID)));
+  const near = await checkNoVanillaPixels({ inventory, reskin: reskin(), files: swap(stagedFiles, gradFile, dds(fill(32, 32, [141, 100, 61, 255]))), game: flatGame });
+  assert.equal(near.problems.filter(p => p.name === gradFile).length, 0); assert.ok(near.notes.inconclusive >= 1);
+  // A thin-line vanilla frame (few decisive bits) and an output frame in another colour: inconclusive too.
+  const thin = new Canvas(32, 32, [0, 0, 0, 0]); thin.rect(0, 0, 32, 1, [90, 80, 40, 255]); thin.rect(0, 31, 32, 32, [90, 80, 40, 255]);
+  writeFileSync(path.join(flatGame, gradFile), dds(thin));
+  const thinOut = new Canvas(32, 32, [0, 0, 0, 0]); thinOut.rect(0, 0, 32, 1, [210, 190, 120, 255]); thinOut.rect(0, 31, 32, 32, [210, 190, 120, 255]);
+  const t = await checkNoVanillaPixels({ inventory, reskin: reskin(), files: swap(stagedFiles, gradFile, dds(thinOut)), game: flatGame });
+  assert.equal(t.problems.filter(p => p.name === gradFile).length, 0);
+  // A byte copy fails whatever the picture says.
+  const same = await checkNoVanillaPixels({ inventory, reskin: reskin(), files: swap(stagedFiles, gradFile, readFileSync(path.join(game, gradFile))), game: flatGame });
+  assert.ok(same.problems.some(p => p.code === 'pixels.byte_copy' && p.name === gradFile), JSON.stringify(same.problems));
+});
+
+test('check 7 skips an emblem row (no text is drawn over it) and holds every other row to the vanilla class', async () => {
+  const rows = reskin().rows, light = swap(stagedFiles, 'gfx/interface/button_test.dds', dds(fill(90, 30, LIGHT)));
+  const withLuma = luma => ({ ...plan.reskin, rows: rows.map(r => (r.name === 'GFX_button_test' ? { ...r, luma } : r)) });
+  assert.equal((await checkLuminance({ inventory, reskin: plan.reskin, files: light })).problems[0].code, 'luma.class');
+  const r = await checkLuminance({ inventory, reskin: withLuma('free'), files: light });
+  assert.equal(r.problems.length, 0); assert.ok(r.notes.free >= 1);
+  // The table refuses luma values other than free, and free on a row that is not R.
+  assert.ok(validateReskin({ inventory, reskin: withLuma('dark'), sheets: sheetsOf(plan) }).some(p => p.code === 'row.luma'));
+  const u = rows.find(x => x.disposition === 'U'); assert.ok(u);
+  assert.ok(validateReskin({ inventory, reskin: { ...plan.reskin, rows: rows.map(x => (x === u ? { ...x, luma: 'free' } : x)) }, sheets: sheetsOf(plan) }).some(p => p.code === 'row.luma'));
+});
+
+test('build: an output of the wrong luminance class is pending, never shipped; an emblem row is exempt', async () => {
+  // Replace the sheet that the mid-class button row cuts from by one whose cells are all light.
+  const button = plan.reskin.rows.find(r => r.name === 'GFX_button_test'), sheetId = [].concat(button.sheet)[0], sheet = sheetsOf(plan).get(sheetId);
+  const bytes = await fakeSheet({ ...sheet, cells: sheet.cells.map(c => ({ ...c, lum: 'light' })) });
+  const file = path.join(rawDir, 'ui/reskin', `${sheetId}.png`), keep = readFileSync(file);
+  writeFileSync(file, bytes);
+  const prov = provenance.map(l => (l.id === sheetId ? { ...l, sha256: sha256(bytes) } : l));
+  try {
+    const { staged, res } = await runBuild({ provenance: prov });
+    const p = res.pending.find(x => x.texture === 'gfx/interface/button_test.dds');
+    assert.ok(p && /^luminance: the output is light/.test(p.why) && /vanilla class is mid/.test(p.why), JSON.stringify(res.pending.slice(0, 2)));
+    assert.ok(!staged.files.has('gfx/interface/button_test.dds'));
+    // The same sheet with the row marked free ships it.
+    const rows = plan.reskin.rows.map(r => (r.name === 'GFX_button_test' ? { ...r, luma: 'free' } : r));
+    const free = await runBuild({ provenance: prov, reskin: { ...plan.reskin, rows } });
+    assert.ok(free.staged.files.has('gfx/interface/button_test.dds'));
+  } finally { writeFileSync(file, keep); }
+});
+
+test('measured cell luminance: the plan records the measured class and picks the cell that delivered the class', () => {
+  const none = planReskin(inventory, { cellLuma: null });
+  assert.ok(none.sheets.get('ui-sockets') === undefined || none.sheets.get('ui-sockets').cells.every(c => c.luma === undefined), 'no measurement, no luma written');
+  const measured = { sheets: { 'ui-sockets': { cells: { socket_round_mid: 40, socket_round: 120, socket_square: 30 } } } };
+  const live = planReskin(inventory, { cellLuma: measured });
+  const s2 = live.sheets.get('ui-sockets');
+  if (s2) {
+    const mid = s2.cells.find(c => c.key === 'socket_round_mid'); assert.deepEqual([mid.lum, mid.luma, mid.design], ['dark', 40, 'mid']);
+    assert.equal(s2.cells.find(c => c.key === 'socket_round').lum, 'mid');
+    assert.equal(s2.cells.find(c => c.key === 'socket_square').design, undefined, 'a cell that kept its class carries no design field');
+  }
+  // The plan restores its state: with no data afterwards it equals the plan without data before.
+  assert.equal(planReskin(inventory, { cellLuma: null }).text, none.text);
+  assert.equal(planReskin(inventory, { cellLuma: measured }).text, live.text, 'deterministic');
+});
+
+test('measureSheets reads accepted sheets only and records one mean luma per cell', async () => {
+  const dir = path.join(root, 'measure_raw'); mkdirSync(path.join(dir, 'ui/reskin'), { recursive: true });
+  const bytes = await rgbaSheet(), file = path.join(dir, 'ui/reskin/mini.png'); writeFileSync(file, bytes);
+  const sheets = new Map([['mini', miniSheet]]), skipped = [];
+  const lines = [{ id: 'x', out: 'ui/reskin/mini.png', sha256: sha256(bytes), accepted: true, reviewer: 'agent' }];
+  const m = await measureSheets({ sheets, provenance: lines, rawPath: rel => path.join(dir, rel), warn: s => skipped.push(s) });
+  assert.deepEqual(Object.keys(m.sheets.mini.cells), ['a', 'b', 'c', 'd']);
+  assert.ok(Math.abs(m.sheets.mini.cells.a - (0.299 * 120 + 0.587 * 90 + 0.114 * 50)) < 2);
+  assert.deepEqual(m.limits, { dark: LUMA.dark, light: LUMA.light });
+  const none = await measureSheets({ sheets, provenance: lines.map(l => ({ ...l, accepted: false })), rawPath: rel => path.join(dir, rel), warn: s => skipped.push(s) });
+  assert.deepEqual(none.sheets, {}); assert.match(skipped[0], /review rejected/);
 });

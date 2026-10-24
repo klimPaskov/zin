@@ -113,7 +113,8 @@ export async function nineSlice(cell, w, h, borderSize, cellBorder) {
 }
 
 // ---------------------------------------------------------------------------------------------------- alpha
-// Alpha policies (reskin.json `alpha`): opaque, uniform:<a>, cell (keep the cell's own matte), shape (the vanilla outline).
+// Alpha policies (reskin.json `alpha`): opaque, uniform:<a>, cell (keep the cell's own matte), shape (the vanilla outline, binary)
+// and soft (the vanilla alpha channel as it is, for translucent glows and plates whose alpha never reaches 128; only alpha is kept).
 export function applyAlpha(img, policy, mask) {
   if (policy === 'cell') return { img, ops: [] };
   const data = Buffer.from(img.data), n = img.w * img.h;
@@ -125,10 +126,17 @@ export function applyAlpha(img, policy, mask) {
     for (let i = 0; i < n; i++) data[i * 4 + 3] = mask[i] ? 255 : 0;
     return { img: makeImg(img.w, img.h, data), ops: ['alpha from the vanilla outline (binary)'] };
   }
+  if (policy === 'soft') {
+    if (!mask || mask.length !== n) throw new FitError('mask', `the soft mask has ${mask?.length ?? 0} pixels, expected ${n}`);
+    for (let i = 0; i < n; i++) data[i * 4 + 3] = mask[i];
+    return { img: makeImg(img.w, img.h, data), ops: ['alpha from the vanilla alpha channel (soft)'] };
+  }
   throw new FitError('alpha', `unknown alpha policy ${policy}`);
 }
 // A binary outline (1 where alpha >= 128) of decoded RGBA bytes: all that is kept of a vanilla file for `shape`.
 export function outlineOf(rgba, w, h) { const m = new Uint8Array(w * h); for (let i = 0; i < w * h; i++) m[i] = rgba[i * 4 + 3] >= 128 ? 1 : 0; return m; }
+// The alpha channel alone of decoded RGBA bytes (0 to 255): all that is kept of a vanilla file for `soft`.
+export function alphaOf(rgba, w, h) { const m = new Uint8Array(w * h); for (let i = 0; i < w * h; i++) m[i] = rgba[i * 4 + 3]; return m; }
 
 // ---------------------------------------------------------------------------------------------------- strip
 // Frames placed side by side. This copies generated pixels and paints nothing. (Canvas form: used by modules/ui.mjs.)

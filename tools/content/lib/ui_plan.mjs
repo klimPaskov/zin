@@ -11,7 +11,8 @@
 // inventory rows, so no vanilla row is Z); O re-authored override; D derived override (reserved, unused); E engine
 // generic; H hidden by an override; U unreachable.
 import { FIXED_SHEETS, FAMILY_TRANCHE, SHEET_ASPECTS, validateSheet } from './ui_sheets.mjs';
-import { CHARGES, FOLDER_EMBLEMS, RESOURCE_EMBLEMS, GATHERING_TIERS, TOOLBAR_EMBLEMS, VALUE_EMBLEMS, cursorGlyph, humanize } from './ui_vocab.mjs';
+import { LUMA } from './image_codec.mjs';
+import { TEXTICON_SUBJECTS, CHARGES, FOLDER_EMBLEMS, RESOURCE_EMBLEMS, GATHERING_TIERS, TOOLBAR_EMBLEMS, VALUE_EMBLEMS, cursorGlyph, humanize } from './ui_vocab.mjs';
 
 export const DISPOSITIONS = ['R', 'Z', 'O', 'D', 'E', 'H', 'U'];
 // Frames the fits may use: a sprite whose width the frame count does not divide is cut by the engine into uneven
@@ -24,7 +25,7 @@ export const DECISIONS = [
   'Z rows describe ZIN-owned sprites (GFX_zin_*), which are not inventory rows; no vanilla sprite is classified Z. Vanilla content slots whose art a content spec owns are U, with the owning spec in the reason.',
   'D (derived override) is reserved and unused, as the spec says.',
   'A file with several frames is one row; its frame order and count come from the inventory only. A row with more than one frame uses fit strip, one cell per frame.',
-  'Alpha policy per R row: opaque when the vanilla texture is opaque, or shaped with 97% or more solid pixels; uniform:<a> for a uniform vanilla alpha; shape (the vanilla outline as a binary mask) for other keyed or shaped panels and frames; cell (the cell\'s own outline) for emblems and sockets.',
+  'Alpha policy per R row: opaque when the vanilla texture is opaque, or shaped with 97% or more solid pixels; uniform:<a> for a uniform vanilla alpha; shape (the vanilla outline as a binary mask) for other keyed or shaped panels and frames; soft (the vanilla alpha channel itself) for a shaped file whose alpha stays below 128 almost everywhere (coverage under 5%: glows, veils, dim plates), which a binary outline would empty; cell (the cell\'s own outline) for emblems and sockets.',
   'exact falls back to cover when the cell and target aspect differ by more than 15%, as the spec says.',
   'MIO (Erdae workshops), raids (night raids) and the international market (Great Fairs) are kept by the economy, warfare and institutions specs, so their windows are reachable and skinned; their per-organisation, per-policy and per-raid icons are U content. This overrides the "unreachable" rows of spec 02 section 4.9.',
   'Special projects (one interim great work), equipment designers, carriers, vanilla country scripted GUIs and country-mechanic art are unreachable (U).',
@@ -38,7 +39,8 @@ export const DECISIONS = [
   'Texticons: the generic set (about 70 glyphs used by tooltips) is R; the rest are U until the localisation scan proves one reachable (check 4).',
   'Vanilla files that no sprite names (backups, bak folders, unreferenced art in gfx/interface) are U orphans; if a script names one the reachability check fails the build.',
   'The cursor, minimap and move-arrow files are R with their own writers (ui_cursors, ui_minimap); ui_reskin skips them and reports them as delegated.',
-  'Luminance is classed dark below 96, mid below 160 and light from 160 (mean luma, alpha weighted); each R row picks a cell of its sprite\'s class where the sheet has one.',
+  'Luminance is classed dark below 96, mid below 160 and light from 160 (mean luma, alpha weighted). The sheet maps record the class each accepted cell was measured at (data/ui/cell_luma.json, written by ui_reskin.mjs measure), with the designed class beside it as design when the generator delivered another; each R row picks the cell nearest its sprite\'s class by those measurements. Code never applies a tone (spec 02 section 5): a row whose best cell still misses the class stays pending (the builder does not ship it), until a cell of the class is generated.',
+  'Emblem rows (an isolated object cut by its own outline, and the map arrows) carry luma free: no text is drawn over them, so engine text colours are not bound to their luminance and check 7 does not hold them to the vanilla class. Plates, bars, bands, buttons, bezels, glows and backdrops are always held to it.',
 ];
 
 // ---------------------------------------------------------------------------------------------------- reasons
@@ -285,30 +287,56 @@ class Emblems {
 // ---------------------------------------------------------------------------------------------------- shape treatment
 const lumOf = s => (['dark', 'mid', 'light'].includes(s.luminance) ? s.luminance : 'dark');
 const CHROME_CELLS = new Map(); for (const sh of FIXED_SHEETS) for (const cell of sh.cells) CHROME_CELLS.set(`${sh.id}:${cell.key}`, cell);
-// The cell of a sheet whose design class is nearest the sprite's class; `prefer` lists keys in order of preference.
+// Measured luminance of the cells of accepted sheets (data/ui/cell_luma.json, written by `ui_reskin.mjs measure`): sheet id -> cell key -> mean luma.
+// The design class of a cell is what the prompt asked for; the generator does not always deliver it, so the plan picks by what was measured and
+// writes the measured class into the sheet map (the design class stays beside it as `design` when they differ). Set for the length of one plan.
+let MEASURED = new Map();
+const classOf = luma => (luma < LUMA.dark ? 'dark' : luma < LUMA.light ? 'mid' : 'light');
+const DESIGN_LUMA = { dark: 48, mid: 128, light: 200 };           // a cell with no measurement stands for its design class
+const TARGET_LUMA = { dark: 64, mid: 128, light: 200 };           // the middle of a class: of two cells inside it, the nearer wins
+const lumaOf = (sheet, cell) => MEASURED.get(`${sheet}:${cell.key}`) ?? DESIGN_LUMA[cell.lum];
+// How far a luma lies outside the band of a class (0 inside it), then how far from the middle of the class.
+const bandGap = (luma, cls) => (cls === 'dark' ? Math.max(0, luma - (LUMA.dark - 1)) : cls === 'light' ? Math.max(0, LUMA.light - luma) : Math.max(0, LUMA.dark - luma, luma - (LUMA.light - 1)));
+const fitness = (luma, cls) => [bandGap(luma, cls), Math.abs(luma - TARGET_LUMA[cls])];
+// The best of some candidates { sheet, cell } for a class: smallest gap to the class band, then nearest its middle, then the caller's order.
+function best(cands, lum) {
+  const scored = cands.map((c, i) => ({ c, i, f: fitness(lumaOf(c.sheet, c.cell), lum) }));
+  scored.sort((x, y) => x.f[0] - y.f[0] || x.f[1] - y.f[1] || x.i - y.i);
+  return scored[0].c;
+}
+// The cell of a sheet best in the sprite's class; `prefer` lists the keys that suit the surface, in order of preference.
 function pick(sheet, prefer, lum) {
-  const cells = prefer.map(k => CHROME_CELLS.get(`${sheet}:${k}`)).filter(Boolean);
-  if (!cells.length) throw new Error(`no cell for ${sheet}: ${prefer.join(', ')}`);
-  const rank = { dark: 0, mid: 1, light: 2 };
-  return [...cells].sort((a, b) => Math.abs(rank[a.lum] - rank[lum]) - Math.abs(rank[b.lum] - rank[lum]))[0].key;
+  const cands = prefer.map(k => CHROME_CELLS.get(`${sheet}:${k}`)).filter(Boolean).map(cell => ({ sheet, cell }));
+  if (!cands.length) throw new Error(`no cell for ${sheet}: ${prefer.join(', ')}`);
+  return best(cands, lum).cell.key;
 }
 // A band cell of a role (header_band, list_entry ...) in the luminance class of the sprite: the bar sheets carry
 // dark, mid and light variants of the roles that need them.
 function barCell(role, lum) {
-  const rank = { dark: 0, mid: 1, light: 2 };
   const found = ['ui-bars', 'ui-bars-2'].flatMap(sheet => ['', '_dark', '_mid', '_light'].map(suf => ({ sheet, cell: CHROME_CELLS.get(`${sheet}:${role}${suf}`) }))).filter(x => x.cell);
   if (!found.length) throw new Error(`no bar cell for ${role}`);
-  found.sort((a, b) => Math.abs(rank[a.cell.lum] - rank[lum]) - Math.abs(rank[b.cell.lum] - rank[lum]));
-  return { sheet: found[0].sheet, key: found[0].cell.key };
+  const c = best(found, lum);
+  return { sheet: c.sheet, key: c.cell.key };
 }
+// The neutral socket of a shape in the class: every variant of the shape competes.
+function socketCell(shape, lum) {
+  const keys = [`socket_${shape}`, `socket_${shape}_mid`, `socket_${shape}_light`, `socket_${shape}_lit`, `socket_${shape}_dull`];
+  const cands = keys.map(k => CHROME_CELLS.get(`ui-sockets:${k}`)).filter(Boolean).map(cell => ({ sheet: 'ui-sockets', cell }));
+  return cands.length ? best(cands, lum).cell.key : pick('ui-sockets', ['socket_square'], lum);
+}
+export const SOFT_COVERAGE = 0.05;   // below this share of pixels at alpha 128 or more a shaped picture is translucent, not outlined
 export function alphaPolicy(s) {
   const a = s.alpha ?? 'opaque';
   if (a === 'opaque' || a === 'unknown' || a === 'none') return 'opaque';
   if (a.startsWith('uniform:')) return a;
   if (a === 'empty') return 'opaque';
   if ((s.coverage ?? 0) >= 0.97) return 'opaque';
+  // A translucent picture whose alpha stays mostly below 128 (a glow, a veil, a dim plate) has no outline to keep: its alpha channel is the shape.
+  if (s.alpha === 'shaped' && (s.coverage ?? 0) < SOFT_COVERAGE) return 'soft';
   return 'shape';
 }
+// The alpha of a fit that keeps the vanilla shape (same_shape): the outline, or the alpha channel itself for a translucent file.
+const shapeOf = s => (alphaPolicy(s) === 'soft' ? 'soft' : 'shape');
 const FRAME_STATES = { 1: ['normal'], 2: ['normal', 'hover'], 3: ['normal', 'hover', 'pressed'], 4: ['normal', 'hover', 'pressed', 'disabled'] };
 const frameLabels = n => FRAME_STATES[n] ?? Array.from({ length: n }, (_, i) => `frame_${i + 1}`);
 
@@ -341,7 +369,7 @@ const SPECIFIC = [
   [/^gfx\/interface\/topbar\/armyoverview_buttons_bg\.dds$/, 'topbar', 'ui-topbar', 'overview_tray', 'cover'],
   [/^gfx\/interface\/ingameclock_bg\.dds$/, 'map_interface', 'ui-map', 'clock_plate', 'cover'],
   [/^gfx\/interface\/mapmode\/mapmode_(main|bottom)_bg\.dds$/, 'map_interface', 'ui-map', 'map_tray', 'cover'],
-  [/^gfx\/minimap\/border\.dds$/, 'map_interface', 'ui-map', 'minimap_frame', 'same_shape', 'shape'],
+  [/^gfx\/minimap\/border\.dds$/, 'map_interface', 'ui-map', 'minimap_frame', 'same_shape', 'shape'],   // 'shape' here means the vanilla outline; a translucent file takes 'soft' (shapeOf)
   [/^gfx\/minimap\/handle_(default|pinged)\.dds$/, 'map_interface', 'ui-map', 'handle', 'cover'],
   [/^gfx\/minimap\/(offensive|defensive)_ping_btn\.dds$/, 'map_interface', 'ui-map', 'ping_button', 'cover'],
   [/^gfx\/interface\/mapmode\/[a-z_]+_(toggle|button)\.dds$/, 'map_interface', 'ui-map', 'toggle', 'cover'],
@@ -385,8 +413,7 @@ function chrome(s) {
   const repeatFrames = (cell, n = f) => Array.from({ length: n }, () => cell);
   const iconSocket = () => {
     const shape = ar > 1.6 ? 'wide' : ar < 0.62 ? 'tall' : Math.abs(ar - 1) < 0.2 ? 'round' : 'square';
-    const sock = lum === 'dark' ? `socket_${shape}` : `socket_${shape}_${lum}`;
-    const cell = CHROME_CELLS.has(`ui-sockets:${sock}`) ? sock : pick('ui-sockets', [`socket_${shape}`, 'socket_square'], lum);
+    const cell = socketCell(shape, lum);
     return { family: surfaceFamily(p, 'chrome_controls'), ...strip('ui-sockets', repeatFrames(cell), 'contain', { alpha: 'cell' }) };
   };
   // Bands: one role per frame, each resolved to a cell of the sprite's luminance class (the cells may sit in two sheets).
@@ -399,7 +426,7 @@ function chrome(s) {
     const key = typeof cellSpec === 'function' ? cellSpec(m) : cellSpec;
     const cells = Array.isArray(key) ? key : repeatFrames(key);
     if (cells.length !== f) continue;   // the cells do not match this texture's frames: use the generic treatment
-    return { family: fam, ...strip(sheet, cells, fit, { alpha: a ?? (fit === 'same_shape' ? 'shape' : alpha) }) };
+    return { family: fam, ...strip(sheet, cells, fit, { alpha: a === 'shape' || (a === undefined && fit === 'same_shape') ? shapeOf(s) : a ?? alpha }) };
   }
   // Cornered tiles: nine-slice of a panel cell (a tile with no border in its definition cannot be sliced).
   if (s.kind === 'cornered_tile' && s.borderSize && !/(^|_)(exlusive|exclusive)_link|techline|focus_link/.test(stem)) {
@@ -416,21 +443,21 @@ function chrome(s) {
   }
   // Masked shields and flag frames: bezels whose window stays exactly the vanilla shape.
   if (s.kind === 'masked_shield' || /flag.*(overlay|frame)|(overlay|frame).*flag|shield_(thin|medium|small)|golden_frame/.test(tag)) {
-    return { family: 'chrome_panels', ...strip('ui-chrome-small', repeatFrames(/gold|gilt|golden/.test(tag) ? 'flag_bezel_gilt' : 'flag_bezel'), 'same_shape', { alpha: 'shape' }) };
+    return { family: 'chrome_panels', ...strip('ui-chrome-small', repeatFrames(/gold|gilt|golden/.test(tag) ? 'flag_bezel_gilt' : 'flag_bezel'), 'same_shape', { alpha: shapeOf(s) }) };
   }
   // Connector lines of the focus and technology trees: bronze wire, gilt when completed, red wax when exclusive; the vanilla outline keeps the shape.
   if (/(^|_)(techline|focus_link|focuslink|exlusive_link|exclusive_link|link_line)/.test(stem)) {
     const cell = /exclusive|exlusive/.test(tag) ? 'link_wax' : /researched|completed|done/.test(tag) ? 'link_gilt' : 'link_bronze';
-    return { family: 'focus', ...strip('ui-focus', repeatFrames(cell), 'same_shape', { alpha: 'shape' }) };
+    return { family: 'focus', ...strip('ui-focus', repeatFrames(cell), 'same_shape', { alpha: shapeOf(s) }) };
   }
   // Glows.
   if (/glow|highlight|flash|shine/.test(tag) && (s.alpha === 'shaped' || s.kind === 'frame_animated')) {
     const cell = /red/.test(tag) ? 'glow_red' : /green|good/.test(tag) ? 'glow_green' : /yellow|amber|warn/.test(tag) ? 'glow_amber' : 'glow_gold';
-    return { family: surfaceFamily(p, 'chrome_panels'), ...strip('ui-chrome-small', repeatFrames(cell), 'cover', { alpha: 'shape' }) };
+    return { family: surfaceFamily(p, 'chrome_panels'), ...strip('ui-chrome-small', repeatFrames(cell), 'cover', { alpha: s.alpha === 'shaped' ? 'soft' : alpha }) };   // a glow keeps the vanilla falloff
   }
   // Selection lines.
   if (/selection|selected_frame|circle_selected|marker/.test(stem) && Math.max(fw, h) <= 128) {
-    return { family: 'chrome_panels', ...strip('ui-chrome-small', repeatFrames('selection_line'), 'same_shape', { alpha: 'shape' }) };
+    return { family: 'chrome_panels', ...strip('ui-chrome-small', repeatFrames('selection_line'), 'same_shape', { alpha: shapeOf(s) }) };
   }
   // Checkboxes and radios.
   if (lum === 'dark' && /check(box)?|radio|tick/.test(stem) && Math.max(fw, h) <= 110) {
@@ -513,7 +540,7 @@ function emblemRule(s, em, reachable = false) {
   if (/^gfx\/mapitems\/movearrow_/.test(p)) {
     const kind = /attack/.test(stem) ? 'attack' : /support/.test(stem) ? 'support' : /retreat|withdraw/.test(stem) ? 'retreat' : /naval/.test(stem) ? 'naval' : /spec/.test(stem) ? 'special' : 'move';
     const subject = { attack: 'a broad cinnabar arrow texture', support: 'a broad verdigris arrow texture', retreat: 'a broad dull iron arrow texture', naval: 'a broad lapis arrow texture', special: 'a broad gilt arrow texture', move: 'a broad bronze arrow texture' }[kind];
-    return { fit: 'same_shape', alpha: 'shape', family: 'map_interface', group: 'map_arrows', keys: [reg('map_arrows', `arrow_${kind}`, `${subject}, flat with a darker edge, seamless along its length`, 'mid')] };
+    return { fit: 'same_shape', alpha: shapeOf(s), family: 'map_interface', group: 'map_arrows', keys: [reg('map_arrows', `arrow_${kind}`, `${subject}, flat with a darker edge, seamless along its length`, 'mid')] };
   }
   // Alerts.
   if (stem === 'global_alert_icons' || stem === 'global_alert_icons_no_backgrounds') {
@@ -579,14 +606,31 @@ function emblemRule(s, em, reachable = false) {
   if (/^gfx\/texticons\//.test(p)) {
     const key = stem.replace(/_icon_small$/, '');
     if (!TEXTICON_GENERIC.test(stem) && !reachable) return { unreachable: 'content_texticon' };
-    return { ...base, family: 'texticons', group: 'texticons', keys: each('texticons', i => [`tx_${stem}${f > 1 ? `_${i + 1}` : ''}`, `a small inline glyph meaning "${humanize(key)}"${f > 1 ? `, state ${i + 1} of ${f}` : ''}`]) };
+    return { ...base, family: 'texticons', group: 'texticons', keys: each('texticons', i => [`tx_${stem}${f > 1 ? `_${i + 1}` : ''}`, (TEXTICON_SUBJECTS[stem] ? `a small inline glyph meaning "${humanize(key)}": ${TEXTICON_SUBJECTS[stem]}` : `a small inline glyph meaning "${humanize(key)}"`) + `${f > 1 ? `, state ${i + 1} of ${f}` : ''}`]) };
   }
   return null;
 }
 const isCountryName = stem => TAG_RE.test(stem.replace(/\.[a-z0-9]+$/, '')) || /^(?:sea|gdc|gxc)_/.test(stem) || /(?:reichs|volks|austro|eu_member|imperial_|kemal|kurdis|spa_)/.test(stem);
 
+// The cell as the sheet map records it: the measured luma and class when the sheet has been accepted and measured (the design class
+// is kept as `design` when the generator delivered another one), otherwise the design class.
+function measuredCell(sheetId, cell) {
+  const luma = MEASURED.get(`${sheetId}:${cell.key}`);
+  if (luma === undefined) return cell;
+  const lum = classOf(luma), { lum: design, ...rest } = cell;
+  return { ...rest, lum, luma: Math.round(luma * 10) / 10, ...(design !== lum ? { design } : {}) };
+}
+// An emblem row (an isolated object on a transparent or black ground, a map arrow) carries no text, so engine text colours are not bound
+// to its luminance: check 7 does not hold it to the vanilla class. A plate, bar, band or backdrop is always held to it.
+const isLumaFree = e => e.alpha === 'cell' || e.fit === 'same_shape';
+
 // ---------------------------------------------------------------------------------------------------- the plan
-export function buildPlan(inventory, { alertFrames } = {}) {
+// cellLuma: { sheets: { <sheet id>: { cells: { <key>: mean luma } } } } measured from the accepted raw sheets (see MEASURED above).
+export function buildPlan(inventory, { alertFrames, cellLuma } = {}) {
+  MEASURED = new Map(Object.entries(cellLuma?.sheets ?? {}).flatMap(([id, sh]) => Object.entries(sh.cells ?? {}).map(([key, luma]) => [`${id}:${key}`, luma])));
+  try { return planRows(inventory, { alertFrames }); } finally { MEASURED = new Map(); }
+}
+function planRows(inventory, { alertFrames } = {}) {
   const em = new Emblems(), pending = [], rows = [];
   const defaults = new Set(ENGINE_DEFAULTS);
   const names = new Set(inventory.sprites.map(s => s.name));
@@ -600,6 +644,9 @@ export function buildPlan(inventory, { alertFrames } = {}) {
     return { reachable: false, state: first.state, reason: first.reason };
   };
 
+  // A loose file that a sprite's texture shares its stem with under another extension (vanilla ships bg_weather_*_night as .dds and .png) is the twin
+  // of a used texture, not a texture of its own: a stem must exist under one extension (asset check EXT_TWIN).
+  const spriteStems = new Set(inventory.sprites.filter(x => x.kind !== 'file' && x.texture).map(x => x.texture.toLowerCase().replace(/[.][a-z0-9]+$/, '')));
   for (const s of inventory.sprites) {
     const p = (s.texture ?? '').toLowerCase();
     const row = { name: s.name };
@@ -620,6 +667,7 @@ export function buildPlan(inventory, { alertFrames } = {}) {
     if (PRESENTATION_TEXTURES[p]) { done('R', { family: PRESENTATION_TEXTURES[p], writer: 'presentation', state: 'in_game', tranche: FAMILY_TRANCHE[PRESENTATION_TEXTURES[p]] }); continue; }
     // The minimap picture is the ZIN map itself (spec 4.10): ui_minimap resizes the generated colormap.
     if (MINIMAP_TEXTURES.has(p)) { done('R', { family: 'map_interface', writer: 'minimap', state: 'derived', tranche: FAMILY_TRANCHE.map_interface }); continue; }
+    if (s.kind === 'file' && spriteStems.has(p.replace(/[.][a-z0-9]+$/, ''))) { reason('U', 'orphan'); continue; }
     const isDefault = defaults.has(s.name);
     const rs = refState(s), reachable = rs.reachable === true;
     // The aces: five generic riders stay.
@@ -665,6 +713,7 @@ export function buildPlan(inventory, { alertFrames } = {}) {
       const strip = f > 1 && !e.writer;   // a delegated writer (cursors) assembles its own frames
       const row = { name: s.name, disposition: 'R', family: e.family, sheet: sheetsUsed.size === 1 ? sheet : [...sheetsUsed].sort(), cells: e.keys, fit: strip ? 'strip' : e.fit, ...(strip ? { frames: frameLabels(f), frameFit: e.fit } : {}), alpha: e.alpha };
       if (e.writer) row.writer = e.writer;
+      if (isLumaFree(e)) row.luma = 'free';
       if (/^gfx\/minimap\/minimap\.dds$/.test((s.texture ?? '').toLowerCase())) row.writer = 'minimap';
       row.tranche = Math.max(...[...sheetsUsed].map(id => FAMILY_TRANCHE[sheetFamily.get(id)] ?? 3));
       finished.set(s.name, row);
@@ -684,7 +733,7 @@ export function buildPlan(inventory, { alertFrames } = {}) {
   // ships, so the others that were U or H become R with the treatment of the sprite that cuts the file finest.
   const byTexture = new Map();
   inventory.sprites.forEach((s, i) => { if (s.texture) { const k = s.texture.toLowerCase(); if (!byTexture.has(k)) byTexture.set(k, []); byTexture.get(k).push(i); } });
-  const TREAT = ['family', 'sheet', 'cells', 'fit', 'frames', 'frameFit', 'alpha', 'transform', 'writer', 'state', 'tranche'];
+  const TREAT = ['family', 'sheet', 'cells', 'fit', 'frames', 'frameFit', 'alpha', 'transform', 'writer', 'state', 'tranche', 'luma'];
   for (const idxs of byTexture.values()) {
     if (idxs.length < 2) continue;
     const rRows = idxs.filter(i => out[i].disposition === 'R');
@@ -694,7 +743,7 @@ export function buildPlan(inventory, { alertFrames } = {}) {
     for (const i of idxs) if (['R', 'U', 'H'].includes(out[i].disposition)) out[i] = { name: out[i].name, disposition: 'R', ...treat };
   }
 
-  const sheets = [...FIXED_SHEETS, ...emblemSheets].map(sh => ({ ...sh, tranche: FAMILY_TRANCHE[sh.family] ?? 3 }));
+  const sheets = [...FIXED_SHEETS, ...emblemSheets].map(sh => ({ ...sh, tranche: FAMILY_TRANCHE[sh.family] ?? 3, cells: sh.cells.map(cell => measuredCell(sh.id, cell)) }));
   const used = new Set(out.filter(r => r.disposition === 'R').flatMap(r => [].concat(r.sheet)));
   const live = sheets.filter(sh => used.has(sh.id));
   const problems = live.flatMap(validateSheet);

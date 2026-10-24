@@ -17,12 +17,19 @@ export const PALETTE = 'palette: walnut #1E1610 #2E2219 #4A3626, bronze #7A5A30 
 export const LIGHTING = 'flat even lighting from the upper left, no cast shadows outside the object, no text, no letters, no numbers, no runes, no figures, no faces';
 // Integration decision A4 plus section 3.6.
 export const CLAUSE_A4 = 'no signature or maker\'s mark; corners and bottom edge hold only plain ground; no lettering; no real-world religious symbol';
-export const FORBIDDEN_MOTIFS = 'never draw a sun disc or veiled sun, a demon, horns, a skull, bones, a black island, a crown as ornament, a figure, a face, an animal head, a letter, a number or a rune, and never a modern object such as a gear, steel plating, a telephone, a rifle, a tank or a typewriter';
+export const FORBIDDEN_MOTIFS = 'never draw a hammer together with a sickle or with any curved blade ending in an arrow tip, a five-pointed red star, a sun disc or veiled sun, a demon, horns, a skull, bones, a black island, a crown as ornament, a figure, a face, an animal head, a letter, a number or a rune, and never a modern object such as a gear, steel plating, a telephone, a rifle, a tank or a typewriter';
 export const GROUND = {
   black: 'on a solid flat pure black (#000000) background with wide black gutters: no glow, no blur, no gradient in the background',
   magenta: 'on a solid flat pure magenta (#FF00FF) background: no glow, no shadow on the ground',
 };
 
+// Glyphs whose plain meaning drifts into a real-world emblem or an unreadable shape: a fixed Erdae image replaces the generic subject.
+export const TEXTICON_SUBJECTS = {
+  refitting: 'a small iron anvil with a mended bronze plate resting on its face, a row of gilt rivets along the plate seam; nothing else, no hammer, no curved blade, no arrow',
+  repairing: 'a cracked bronze plate with a gilt patch riveted over the crack; nothing else, no hammer, no curved blade',
+  going_to_refit: 'a small iron anvil with a mended bronze plate resting on its face and a short gilt arrow pointing right; no hammer, no curved blade',
+  going_to_repair: 'a cracked bronze plate with a gilt patch and a short gilt arrow pointing right; no hammer, no curved blade',
+};
 export const humanize = s => String(s).replace(/\.[a-z0-9]+$/i, '').replace(/^(gfx_|relation_|icon_|button_)/i, '').replace(/[_\-]+/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
 
 // Heraldic charges for badge and template emblems: beasts, tools, weapons, plants, heavens, ships and buildings.

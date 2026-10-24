@@ -31,7 +31,7 @@ export function sheetPrompt(sheet) {
     const items = sheet.cells.slice(r * cols, (r + 1) * cols).map((c, i) => `${r * cols + i + 1}. ${c.subject}`);
     if (items.length) bySet.push(`Row ${r + 1}, left to right: ${items.join('; ')}.`);
   }
-  return [preamble, layout, ...bySet, PROMPT_TAIL].join(' ');
+  return [preamble, layout, ...(sheet.note ? [sheet.note] : []), ...bySet, PROMPT_TAIL].join(' ');
 }
 
 export function sheetJob(sheet, rawDir = `${ART}/raw`) {

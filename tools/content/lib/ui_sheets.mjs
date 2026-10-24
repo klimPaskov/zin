@@ -115,17 +115,19 @@ export const FIXED_SHEETS = [
     c('wax_seal', 'a plain red wax seal without any imprint'), c('wax_seal_green', 'a plain verdigris wax seal without any imprint'),
     c('wax_seal_amber', 'a plain amber wax seal without any imprint'), c('wax_seal_grey', 'a plain grey wax seal without any imprint'),
   ] },
-  { id: 'ui-sockets', family: 'chrome_controls', kind: 'grid', aspect: '1:1', grid: [6, 6], ground: 'black', matte: 'outline', cells: [
+  { id: 'ui-sockets', family: 'chrome_controls', kind: 'grid', aspect: '1:1', grid: [6, 6], ground: 'black', matte: 'outline',
+    note: 'Cells 1 to 12 are the dark sockets and may keep a dark recess. Cells 13 to 16 are mid-tone and cells 17 to 20 are light: in those eight the whole recess of the socket, not only its rim, is painted in the lit tone named for the cell (cells 13 to 16 a light caramel-tan of about #B08050 with a bright bronze rim, never dark brown or walnut; cells 17 to 20 a pale cream-gold), so that the cell reads as mid-tone or as light from rim to centre, with an average brightness well above the dark sockets, and no black or dark brown shows inside the socket. The black of the sheet is only the ground between the cells.',
+    cells: [
     c('socket_round', 'an empty round bronze socket with a dark recess and a thin gilt ring'), c('socket_square', 'an empty square bronze socket with a dark recess'),
     c('socket_wide', 'an empty wide bronze socket, about twice as wide as tall'), c('socket_tall', 'an empty tall bronze socket, about twice as tall as wide'),
     c('chip_wide', 'a small wide bronze chip with a dark centre'), c('chip_tall', 'a small tall bronze chip with a dark centre'),
     c('badge_shield', 'an empty bronze heater shield with a dark field'), c('pip_round', 'a tiny round bronze stud'), c('pip_square', 'a tiny square bronze stud'),
     c('socket_round_lit', 'the round bronze socket with a gilt ring, brighter'), c('socket_square_lit', 'the square bronze socket with a gilt edge, brighter'),
     c('socket_round_dull', 'the round socket in dull iron, no gilt, matte'),
-    c('socket_square_mid', 'an empty square cast-bronze socket, mid-brown, darker in the recess', 'mid'), c('socket_round_mid', 'an empty round cast-bronze socket, mid-brown', 'mid'),
-    c('socket_wide_mid', 'an empty wide cast-bronze socket, mid-brown', 'mid'), c('socket_tall_mid', 'an empty tall cast-bronze socket, mid-brown', 'mid'),
-    c('socket_round_light', 'an empty round socket in polished pale bronze, bright', 'light'), c('socket_square_light', 'an empty square socket in polished pale bronze, bright', 'light'),
-    c('socket_wide_light', 'an empty wide socket in polished pale bronze, bright', 'light'), c('socket_tall_light', 'an empty tall socket in polished pale bronze, bright', 'light'),
+    c('socket_square_mid', 'an empty square socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'), c('socket_round_mid', 'an empty round socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'),
+    c('socket_wide_mid', 'an empty wide socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'), c('socket_tall_mid', 'an empty tall socket in bright polished bronze whose recess is filled with a lit caramel-tan tone (about #B08050), a light warm mid-tone that is clearly lighter than walnut and far from black', 'mid'),
+    c('socket_round_light', 'an empty round socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'), c('socket_square_light', 'an empty square socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'),
+    c('socket_wide_light', 'an empty wide socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'), c('socket_tall_light', 'an empty tall socket in polished pale bronze whose recess is filled with a bright pale cream-gold parchment tone, no dark centre', 'light'),
   ] },
   { id: 'ui-topbar', family: 'topbar', kind: 'grid', aspect: '3:1', grid: [1, 8], ground: 'black', matte: 'none', cells: [
     c('band', 'a long top bar band: walnut with a gilt line along the lower edge, seamless along its length', 'dark'),
@@ -150,11 +152,13 @@ export const FIXED_SHEETS = [
   { id: 'ui-news', family: 'events', kind: 'grid', aspect: '2:3', grid: [1, 2], ground: 'black', matte: 'none', cells: [
     c('broadsheet', 'a parchment broadsheet on a walnut board, no masthead, no lettering, plain', 'light', { border: 0.1 }), c('inner_frame', 'a thin bronze inner frame with a plain dark centre', 'mid', { border: 0.1 }),
   ] },
-  { id: 'ui-focus', family: 'focus', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
-    c('board_tile', 'a seamless walnut board tile with faint chart lines', 'dark'), c('title_unavailable', 'a title bar in dull iron, no gilt, matte', 'dark'),
+  { id: 'ui-focus', family: 'focus', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none',
+    note: 'The whole sheet background and every gutter between the tiles is flat pure black (#000000) with nothing painted on it: no backdrop, no lit or tinted panel behind a tile, no glow, no halo, no vignette, no gradient, no light spilling out of a tile. Each of the 9 tiles is a flat full-bleed swatch of its material that runs to its own edges with no margin of ground inside the tile and no frame drawn around it, so a crop of the tile holds only the material. The three wire cells are not thin lines: each is a thick bar of braided cord that fills the full width and most of the height of its cell.',
+    cells: [
+    c('board_tile', 'a seamless walnut board tile, plain even grain, edge to edge', 'dark'), c('title_unavailable', 'a title bar in dull iron, no gilt, matte', 'dark'),
     c('title_can_start', 'a title bar in bronze', 'mid'), c('title_completed', 'a title bar in gilt with a verdigris enamel inlay', 'mid'),
-    c('ongoing_plate', 'a wide ongoing-focus plate: walnut with a gilt edge, empty', 'dark'), c('link_bronze', 'a short bronze wire, horizontal', 'dark'),
-    c('link_gilt', 'a short gilt wire, horizontal', 'dark'), c('link_wax', 'a short red wax cord, horizontal', 'dark'), c('selection_plate', 'a walnut selection plate with a gold edge', 'dark'),
+    c('ongoing_plate', 'a wide ongoing-focus plate: walnut with a gilt edge, empty', 'dark'), c('link_bronze', 'a thick horizontal bar of braided bronze wire filling the whole cell edge to edge, no glow', 'dark'),
+    c('link_gilt', 'a thick horizontal bar of braided gilt wire filling the whole cell edge to edge, no glow', 'dark'), c('link_wax', 'a thick horizontal bar of twisted red wax cord filling the whole cell edge to edge, no glow', 'dark'), c('selection_plate', 'a walnut selection plate with a gold edge', 'dark'),
   ] },
   { id: 'ui-research', family: 'research_production', kind: 'grid', aspect: '1:1', grid: [3, 3], ground: 'black', matte: 'none', cells: [
     c('item_available', 'a technology item plate, available: walnut with a bronze rim, empty', 'dark'), c('item_researched', 'a technology item plate, researched: walnut with a gilt rim and a verdigris inlay', 'dark'),
@@ -181,7 +185,7 @@ export const SHEET_ASPECTS = { '1:1': [1024, 1024], '3:2': [1536, 1024], '2:3': 
 // The layout check imagegen.mjs runs on a sheet (expected cell count, grid, cell aspect, minimum cell area).
 export function layoutCheck(sheet) {
   const [w, h] = SHEET_ASPECTS[sheet.aspect], [cols, rows] = sheet.grid, a = (w / cols) / (h / rows);
-  return { expected: sheet.cells.length, cols, rows, aspect: [Math.round(a * 0.08 * 100) / 100, Math.round(a * 12 * 100) / 100], minAreaFraction: 0.03, sizeTolerance: 2 };
+  return { expected: sheet.cells.length, cols, rows, aspect: [Math.round(a * 0.08 * 100) / 100, Math.round(a * 12 * 100) / 100], minAreaFraction: 0.03, sizeTolerance: 2, mergeGrid: true };
 }
 
 export function validateSheet(sheet) {

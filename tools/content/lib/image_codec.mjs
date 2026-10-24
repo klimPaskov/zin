@@ -286,5 +286,35 @@ export function perceptualHash(rgba, w, h) {
   for (let y = 0; y < 8; y++) for (let x = 0; x < 8; x++) db.push(d[y * 9 + x] > d[y * 9 + x + 1]);
   return { dhash: bitsHex(db), ahash: bitsHex(Array.from(a, v => v > mean)) };
 }
+// How much a picture says to the difference hash: the number of its 64 comparisons (9 x 8 grey cells, each against its right
+// neighbour) that differ by at least `step` grey levels. A flat bar, a plain wooden panel or a thin line has almost none, so
+// its hash is decided by rounding noise and two unrelated flat pictures hash alike (check 5 calls such a pair inconclusive).
+export function hashSupport(rgba, w, h, step = 3) {
+  const d = reduce(greyPlane(rgba, w, h), w, h, 9, 8);
+  let n = 0;
+  for (let y = 0; y < 8; y++) for (let x = 0; x < 8; x++) if (Math.abs(d[y * 9 + x] - d[y * 9 + x + 1]) >= step) n++;
+  return n;
+}
+// The mean absolute colour difference (0 to 255) of two pictures of one size, on a 32 x 32 grid of alpha-weighted mean colours,
+// over the cells where either picture is at least 16% opaque. A copy of the vanilla file, re-encoded or lightly filtered, stays
+// near 0; a picture that merely shares its layout (a frame, a bar) differs by tens. null when neither picture has any content.
+export function contentDifference(a, b, w, h, grid = 32) {
+  const cells = (rgba) => {
+    const c = new Float64Array(grid * grid * 3), al = new Float64Array(grid * grid);
+    for (let ty = 0; ty < grid; ty++) for (let tx = 0; tx < grid; tx++) {
+      const y0 = Math.floor(ty * h / grid), y1 = Math.max(y0 + 1, Math.floor((ty + 1) * h / grid)), x0 = Math.floor(tx * w / grid), x1 = Math.max(x0 + 1, Math.floor((tx + 1) * w / grid));
+      let r = 0, g = 0, bl = 0, sa = 0, n = 0;
+      for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) { const o = (y * w + x) * 4, q = rgba[o + 3]; r += rgba[o] * q; g += rgba[o + 1] * q; bl += rgba[o + 2] * q; sa += q; n++; }
+      const i = ty * grid + tx;
+      if (sa) { c[i * 3] = r / sa; c[i * 3 + 1] = g / sa; c[i * 3 + 2] = bl / sa; }
+      al[i] = sa / n;
+    }
+    return { c, al };
+  };
+  const A = cells(a), B = cells(b);
+  let sum = 0, n = 0;
+  for (let i = 0; i < grid * grid; i++) if (Math.max(A.al[i], B.al[i]) >= 40) { for (let k = 0; k < 3; k++) sum += Math.abs(A.c[i * 3 + k] - B.c[i * 3 + k]); n += 3; }
+  return n ? sum / n : null;
+}
 export function hamming(x, y) { let v = BigInt(`0x${x}`) ^ BigInt(`0x${y}`), n = 0; while (v) { n += Number(v & 1n); v >>= 1n; } return n; }
 export const hashDistance = (p, q) => Math.max(hamming(p.dhash, q.dhash), hamming(p.ahash, q.ahash));
