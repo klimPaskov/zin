@@ -6,28 +6,41 @@ Working notes of the implementation lead. `docs/specs/PROGRAM.md` is the progres
 
 All 25 owner questions were answered on 24 October 2026 (`docs/zin-handoff/OWNER-QUESTIONS.md`, decisions K9 to K27 in `docs/specs/INTEGRATION_DECISIONS.md`). Highlights that drive work: twelve main New Gods for the twelve needs of mortals, lesser New Gods exist, Afrit gets a feast; Edvoid (to be renamed, name proposed by the lead for approval) is Zol's servant in the war; full drawing is the map source; Hirolon sovereign; licensed recordings for all audio; no exact ages of beings anywhere; gunpowder common in some realms; all borrowed and "-waith" names renamed without review; Coniferon and Vinocorne renamed.
 
-## Running (24 October 2026)
+## Running (24 October 2026, after the session restart)
 
 | Work | Who | Writes | Done when |
 | --- | --- | --- | --- |
-| MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)", `claude-opus-5-5` | tool repository; record `docs/plans/zin-requests.md` on its branch `claude/zin-integration` | ongoing; ADR 0067 (drawn-map import) approved by the lead; ZR-4 web-map reliability campaign (owner directive) |
-| Integration round 3 | subagent | `tools/content/`, `docs/design/stage2/`, `docs/design/validation/`, `docs/plans/zin-art/`; commits on `zin/integration-r3` | `node content/build.mjs` and `npm test` green |
-| Regional dossiers, north and west | subagent | `docs/lore/regions/` | lead reviews |
-| Regional dossiers, centre, east and south | subagent | `docs/lore/regions/` | lead reviews |
-| Magic, wizards and knowledge layers | subagent | `docs/lore/references/` | lead reviews |
-| Heraldry system | subagent | `docs/specs/08_art_and_assets/06_heraldry.md`, `tools/content/data/world/heraldry.json` | lead reviews |
-| Owner answers into the vault | subagent | `docs/lore/vault/` | lead reviews and commits |
+| MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)",  | tool repository; record  on  | ongoing; ADR 0067 approved; ZR-4 campaign on 144 Wikimedia maps |
+| Integration round 3 | subagent (resumed) | , , ,  | build and suite green |
+| Design previews (13 figures, 12 gods, 6 redesigns) | subagent (resumed) | ,  | sheets sent to the owner to choose |
+| Voice guide and quote rewrite | subagent (resumed) | ,  | lead reviews, swaps in after integration |
+| Regional histories (three groups) | subagents |  |  passes for every region |
+
+## Done today (see PROGRAM.md and the git log)
+
+Handoff reconciled; 19 October work preserved; Erdae and Aoaz exchanged; owner answers K9 to K36; vault corrected; bestiary transcribed; dossiers; magic and knowledge layers; heraldry; pantheon and calendar (accepted); Kusven, Kusmeel, the Ember Lands (documents only so far); alternate-history design and soft-lock audit; geography model repair script; roster of 156 realms with tags (231 with dynamic tags).
 
 ## Next, in order
 
-1. Review the integration result (build and suite myself), register `content/tags.test.mjs` in `tools/package.json`, apply to the mod, first Linux run; merge `zin/integration-r3` into `master` and push.
-2. Pantheon of the twelve main New Gods and the lesser New Gods (R-30), then the god-month calendar (R-31) replacing Deepwinter to Longnight in `tools/content/lib/calendar.mjs`.
-3. Propose Edvoid's new name (Q-10) to the owner.
-4. Roster redesign from the dossiers (peoples, realms, names, tags with `lib/tags.mjs`), then the geography model repair and the converter to the tool's schemas (ADR 0067 section 7), then the import when the worker releases steps 1 and 2.
-5. Specs and content files still carry the old calendar names, the Pale March and Zol's appearance in the war (`docs/specs/00_foundation/01_start_and_calendar.md`, `02_lore/01_start_situation.md`, `02_lore/04_fourth_age_history_for_play.md`, `01_map/05_geography_model.md`, `docs/design/focus/regional_kingson.json` and others): propagate after integration.
-6. Branding (R-90): three refinements generated and accepted (`$ZIN_ART/raw/branding/`); wire them into menu, loading and descriptor thumbnail after integration; record hashes of the owner's originals (sha256 in `docs/zin-handoff/STATE-DELTA.md` area).
-7. Art persistence: the 53 accepted reskin sheets and the branding refinements live only in `$ZIN_ART` (inside the tool repository's `.tmp`); move `ZIN_ART` to a lead-owned folder and copy accepted sources into `art/source/` with provenance synced.
-8. The politics step is rebuilt as `tools/politics/` on the new roster (the v4 prototype in the tool repository's `.tmp` uses an artificial wall barrier, now void).
+1. When integration is green: review it (build and suite myself), register ,  tests,  in ; run {
+ "mode": "dry-run",
+ "scope": "content",
+ "filesEdited": 72,
+ "occurrences": 400,
+ "linesKeptAsRecords": 12,
+ "renames": [
+  [
+   "docs/design/focus/shared_dead_lands.json",
+   "docs/design/focus/shared_ember_lands.json"
+  ]
+ ]
+}; apply the repaired geography model (open the Great River's gorge through Kingson's ring); merge to , push; first Linux run.
+2. Merge the new roster into the builder: , ,  into  and the world data; migrate every Y-tag reference with the roster's migration table; retarget focus trees (kept, renamed, folded, to write: Burrikkrit, the Nether, , , the small folk module); heraldry grammars for the 30 new cultures, the Baelim and the mycids.
+3. Calendar: the twelve god-months in  from  (1 Lumae 4A 1748).
+4. Story soft-locks of  (world-tension module, ending runner, Afrit's death, 61 missing spec events, Kusven replacing Zol-in-person content), then the generic realm systems (K34, monthly batches allowed) and start variety.
+5. Geography: sheet registrations for Aenor Isle, the Ember Lands and the West Lands (land IoU 0.24, 0.36, 0.50); renaming the 195 model names from the roster and dossiers (no Ocean names); the converter to the tool's schemas (ADR 0067 section 7); the import when the worker releases.
+6. Branding (R-90) wiring; art persistence (move  out of the tool repository, accepted sources into ); quotes v2 swap; the voice applied to events and focus text.
+7. The politics step rebuilt as  on the new roster and map.
 
 ## Decisions taken by the lead (not owner canon)
 
