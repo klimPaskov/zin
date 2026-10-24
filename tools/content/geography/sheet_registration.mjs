@@ -72,11 +72,14 @@ export const REGISTRATION = Object.freeze({
   frameLineShare: 0.6,      // ... as rows or columns at least this share land ...
   frameMarginPx: 3,         // ... and the clip edge is put this far past it
 });
-/** The scans of docs/name_table.md and the sheets of the model that show them. */
+/**
+ * The scans of docs/name_table.md and the sheets of the model that show them. The table keeps the owner's own scan
+ * titles ("Dead Lands", "Ocean of Edvoid"), so those titles map to their sheets beside the current region names.
+ */
 export const SCAN_SHEETS = Object.freeze({
   'Cold Lands': 'cold', 'West-Earth': 'west', 'Tritons Islands': 'tritons', 'East-Earth': 'north', 'Dark Lands': 'dark',
-  'Rush Land': 'rush', 'Rush Islands': 'risle', 'Magical Lands': 'mag', 'Kusmeel': 'edv', 'South-Earth': 'east',
-  'Ember Lands': 'dead', 'Sunhot': 'sun',
+  'Rush Land': 'rush', 'Rush Islands': 'risle', 'Magical Lands': 'mag', 'Kusmeel': 'edv', 'Ocean of Edvoid': 'edv',
+  'South-Earth': 'east', 'Ember Lands': 'dead', 'Dead Lands': 'dead', 'Sunhot': 'sun',
 });
 
 // ---------------------------------------------------------------------------------------------------- transforms

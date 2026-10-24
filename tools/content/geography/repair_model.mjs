@@ -1295,12 +1295,17 @@ export function sheetAuthority(m, grid = CG) {
 /**
  * Each sheet's `clip` (ADR 0067): the cells the import reads from it, as a polygon in drawing coordinates (the world
  * outline mapped back through the sheet's transform), and its `order` (smaller sheets first win where clips touch).
+ * A clip keeps only the cells within CLIP_COAST_MARGIN_PX of the model's land: the drawing gives the coast, and open
+ * sea farther out is sea whatever the paper shows there (pencil frame lines, a neighbouring sheet's paper inside the
+ * box, lettering in the water), since the import fills every cell outside the clips with open sea.
  */
+export const CLIP_COAST_MARGIN_PX = 48;
 export function sheetClips(m, authority = sheetAuthority(m)) {
   const { auth, sheets } = authority;
+  const near = G.dilate(landMask(m), CG, Math.round(CLIP_COAST_MARGIN_PX / CG.cell));
   sheets.forEach(({ id, s }, k) => {
     const mask = new Uint8Array(auth.length);
-    for (let c = 0; c < auth.length; c++) if (auth[c] === k) mask[c] = 1;
+    for (let c = 0; c < auth.length; c++) if (auth[c] === k && near[c]) mask[c] = 1;
     const g = G.vectorize(mask, CG, { tolerances: [1.5, 1.0, 0.6, 0], minPartPx: 256, minHolePx: 256 });
     const t = m.sheets[id];
     t.order = sheets.length - k;
@@ -1324,6 +1329,8 @@ export function applyNameTable(m, table, log) {
   for (const e of table.entries) {
     const f = byId.get(e.id);
     if (!f || f.name === e.newName) continue;
+    // a feature an earlier table renamed is renamed again from its own former label (the table changed its new name)
+    if (f.renamedBy === 'name_table' && f.formerLabel === e.oldName) { delete f.nameLanguage; delete f.nameMeaning; f.name = e.oldName; }
     if (f.name !== e.oldName) { log.push({ rule: 'names', id: e.id, action: `UNRESOLVED: the table renames "${e.oldName}" but the feature is called "${f.name}"`, unresolved: true }); continue; }
     f.formerLabel = e.oldName;
     f.name = e.newName;

@@ -10,8 +10,7 @@
  ],
  "counts": {
   "coasts": 3,
-  "deserts": 1,
-  "forests": 6,
+  "forests": 7,
   "ice": 3,
   "lakes": 1,
   "lands": 80,
@@ -20,8 +19,8 @@
   "ranges": 7,
   "regions": 5,
   "rivers": 3,
-  "seas": 29,
-  "sites": 14,
+  "seas": 28,
+  "sites": 60,
   "straits": 2,
   "volcanoes": 2
  },
@@ -55,16 +54,6 @@
    "meaning": "east cliff",
    "reason": "Wonderland is a name from other fiction",
    "source": "cold_lands.md renamed labels"
-  },
-  {
-   "id": "waste_black_islands",
-   "array": "deserts",
-   "oldName": "Black Islands of the Kusmeel",
-   "newName": "Black Islands of the Kusmeel",
-   "language": null,
-   "meaning": null,
-   "reason": "owner decision of 24 October 2026: the sea is the Kusmeel",
-   "source": "owner; zols_mistake.md section 2"
   },
   {
    "id": "forest_crown",
@@ -105,6 +94,16 @@
    "meaning": "fire forest",
    "reason": "repetitive death-names",
    "source": "ember_lands.md renamed labels"
+  },
+  {
+   "id": "forest_hiloron",
+   "array": "forests",
+   "oldName": "Hiloron Woods",
+   "newName": "Hirolon Woods",
+   "language": null,
+   "meaning": null,
+   "reason": "the giants' realm is spelled Hirolon (K13); the woods follow the realm's name as Hirolon Head does",
+   "source": "owner decision K13; hirolon.md"
   },
   {
    "id": "forest_kingdom",
@@ -504,7 +503,8 @@
    "language": "mirolic",
    "meaning": "ash isle",
    "reason": "Vez is the old name of Volgan and no land carries the name of its lord; the isle of Vez; the owner's drawn label \"Vez\" lies 8 px from the island",
-   "source": "ember_lands.md renamed labels; docs/name_table.md (Ember Lands, 0.91817, 0.84992)"
+   "source": "ember_lands.md renamed labels; docs/name_table.md (Dead Lands, 0.91817, 0.84992)",
+   "drawnLabel": "Vez"
   },
   {
    "id": "land_island_034",
@@ -774,7 +774,7 @@
    "language": null,
    "meaning": null,
    "reason": "the owner's drawn island label, 3 px from the island through the registered dead sheet",
-   "source": "docs/name_table.md (Ember Lands, 0.84063, 0.94552)"
+   "source": "docs/name_table.md (Dead Lands, 0.84063, 0.94552)"
   },
   {
    "id": "land_island_061",
@@ -884,7 +884,7 @@
    "language": null,
    "meaning": null,
    "reason": "the owner's drawn island label, 7 px from the island through the registered edv sheet",
-   "source": "docs/name_table.md (Kusmeel, 0.91716, 0.02866)"
+   "source": "docs/name_table.md (Ocean of Edvoid, 0.91716, 0.02866)"
   },
   {
    "id": "land_island_072",
@@ -1448,54 +1448,184 @@
    "source": "cold_lands.md, tritons_islands.md, west_lands.md (Norrai)"
   },
   {
-   "id": "sea_zol_ocean",
-   "array": "seas",
-   "oldName": "Kusmeel",
-   "newName": "Kusmeel",
-   "language": null,
+   "id": "site_adel",
+   "array": "sites",
+   "oldName": "Adel",
+   "newName": "Sanderz",
+   "language": "tritonic",
    "meaning": null,
-   "reason": "owner decision of 24 October 2026: the sea of Zol's black islands is the Kusmeel; no water is an Ocean",
-   "source": "owner; east_lands.md water table"
+   "reason": "the capital of Adel (ADE) in the reconciled roster",
+   "source": "roster ADE capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_alerhia",
+   "array": "sites",
+   "oldName": "Alerhia",
+   "newName": "Porrenva",
+   "language": "alerhic",
+   "meaning": null,
+   "reason": "the capital of Alerhia (ALR) in the reconciled roster",
+   "source": "roster ALR capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_andos_enda",
+   "array": "sites",
+   "oldName": "Andos Enda",
+   "newName": "Enliras",
+   "language": "sylvan",
+   "meaning": null,
+   "reason": "the capital of Andos Enda (ANE) in the reconciled roster",
+   "source": "roster ANE capital; magical_lands.md realms table"
   },
   {
    "id": "site_asgard",
    "array": "sites",
    "oldName": "Asgard",
-   "newName": "Orohaf",
+   "newName": "Borrak",
    "language": "aenoran",
-   "meaning": "island harbour",
-   "reason": "Asgard is a name of Norse myth",
-   "source": "middle_lands.md section 2.8; roster Orohaf"
+   "meaning": null,
+   "reason": "the capital of Orohaf (ORH) in the reconciled roster; Asgard is a name of Norse myth",
+   "source": "roster ORH capital; middle_lands.md realms table; middle_lands.md section 2.8; roster Orohaf"
   },
   {
    "id": "site_avalon",
    "array": "sites",
    "oldName": "Avalon",
-   "newName": "Rhachia",
+   "newName": "Pordoce",
    "language": "alerhic",
    "meaning": null,
-   "reason": "Avalon is a name of real myth",
-   "source": "east_lands.md renamed labels; roster Rhachia"
+   "reason": "the capital of Rhachia (RHA) in the reconciled roster; Avalon is a name of real myth",
+   "source": "roster RHA capital; east_lands.md realms table; east_lands.md renamed labels; roster Rhachia"
+  },
+  {
+   "id": "site_bordon",
+   "array": "sites",
+   "oldName": "Bordon",
+   "newName": "Zubudor",
+   "language": "orcish",
+   "meaning": null,
+   "reason": "the capital of Bordon (BOR) in the reconciled roster",
+   "source": "roster BOR capital; dark_lands.md realms table"
+  },
+  {
+   "id": "site_demon_dolon",
+   "array": "sites",
+   "oldName": "Demon and Dolon",
+   "newName": "Unzeky",
+   "language": "infernal",
+   "meaning": null,
+   "reason": "the capital of Dolon (DLN) in the reconciled roster",
+   "source": "roster DLN capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_dragon_mountain",
+   "array": "sites",
+   "oldName": "Dragon Mountain",
+   "newName": "Thoriveniel",
+   "language": "sylvan",
+   "meaning": null,
+   "reason": "the capital of Yavieth (YAV) in the reconciled roster",
+   "source": "roster YAV capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_drak",
+   "array": "sites",
+   "oldName": "Drak",
+   "newName": "Castronuro",
+   "language": "stabilic",
+   "meaning": null,
+   "reason": "the capital of Drak (DRA) in the reconciled roster",
+   "source": "roster DRA capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_dreson",
+   "array": "sites",
+   "oldName": "Dreson",
+   "newName": "Dolido",
+   "language": "orcish",
+   "meaning": null,
+   "reason": "the capital of Dreson (DRE) in the reconciled roster",
+   "source": "roster DRE capital; dark_lands.md realms table"
+  },
+  {
+   "id": "site_dulundur",
+   "array": "sites",
+   "oldName": "Dulundur",
+   "newName": "Lesderle",
+   "language": "orcish",
+   "meaning": null,
+   "reason": "the capital of Dulundur (DUL) in the reconciled roster",
+   "source": "roster DUL capital; dark_lands.md realms table"
+  },
+  {
+   "id": "site_eekedor",
+   "array": "sites",
+   "oldName": "Eekedor",
+   "newName": "Viktara",
+   "language": "leren",
+   "meaning": null,
+   "reason": "the capital of Eekedor (EEK) in the reconciled roster",
+   "source": "roster EEK capital; north_lands.md realms table"
+  },
+  {
+   "id": "site_elvana",
+   "array": "sites",
+   "oldName": "Elvana",
+   "newName": "Googavis",
+   "language": "sunhot",
+   "meaning": null,
+   "reason": "the capital of Elvana (ELV) in the reconciled roster",
+   "source": "roster ELV capital; lands_of_the_sun.md realms table"
+  },
+  {
+   "id": "site_enhis_is_rond",
+   "array": "sites",
+   "oldName": "Enhis Is Rond",
+   "newName": "Suyowan",
+   "language": "yonic",
+   "meaning": null,
+   "reason": "the capital of Enhis Is Rond (ENH) in the reconciled roster",
+   "source": "roster ENH capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_gala",
+   "array": "sites",
+   "oldName": "Gala",
+   "newName": "Sodoli",
+   "language": "galic",
+   "meaning": null,
+   "reason": "the capital of Gala (GAA) in the reconciled roster",
+   "source": "roster GAA capital; lands_of_the_sun.md realms table"
+  },
+  {
+   "id": "site_girdon",
+   "array": "sites",
+   "oldName": "Girdon",
+   "newName": "Arligon",
+   "language": "gunwaithic",
+   "meaning": null,
+   "reason": "the capital of Girdon (GIR) in the reconciled roster",
+   "source": "roster GIR capital; west_lands.md realms table"
   },
   {
    "id": "site_godland",
    "array": "sites",
    "oldName": "Godland",
-   "newName": "Tor Luni",
+   "newName": "Wefolen",
    "language": "sunhot",
    "meaning": null,
-   "reason": "a name of real religion",
-   "source": "lands_of_the_sun.md renamed labels; roster Tor Luni"
+   "reason": "the capital of Tor Luni (TOR) in the reconciled roster; a name of real religion",
+   "source": "roster TOR capital; lands_of_the_sun.md realms table; lands_of_the_sun.md renamed labels; roster Tor Luni"
   },
   {
    "id": "site_gondolin",
    "array": "sites",
    "oldName": "Gondolin",
-   "newName": "Naamis",
+   "newName": "Duum-Saah",
    "language": "noric",
    "meaning": null,
-   "reason": "Gondolin is a name from other fiction",
-   "source": "east_lands.md renamed labels; roster Naamis"
+   "reason": "the capital of Naamis (NAA) in the reconciled roster; Gondolin is a name from other fiction",
+   "source": "roster NAA capital; east_lands.md realms table; east_lands.md renamed labels; roster Naamis"
   },
   {
    "id": "site_great_lake_port_1",
@@ -1538,6 +1668,16 @@
    "source": "middle_lands.md settlements"
   },
   {
+   "id": "site_great_wall_lunhrim_fort",
+   "array": "sites",
+   "oldName": "Lunhrim Fortress",
+   "newName": "Hrakkerm",
+   "language": "dwarvish",
+   "meaning": null,
+   "reason": "the capital of Kunhrim (KUN) in the reconciled roster",
+   "source": "roster KUN capital; middle_lands.md realms table"
+  },
+  {
    "id": "site_great_wall_north_fort",
    "array": "sites",
    "oldName": "North Wall Fort (Organ)",
@@ -1551,21 +1691,21 @@
    "id": "site_gunwaith",
    "array": "sites",
    "oldName": "Gunwaith",
-   "newName": "Gunwyn",
+   "newName": "Bulligon",
    "language": "gunwaithic",
    "meaning": null,
-   "reason": "no \"-waith\" names (owner)",
-   "source": "west_lands.md realms; roster Gunwyn"
+   "reason": "the capital of Gunwyn (GNW) in the reconciled roster; no \"-waith\" names (owner)",
+   "source": "roster GNW capital; west_lands.md realms table; west_lands.md realms; roster Gunwyn"
   },
   {
    "id": "site_heaven",
    "array": "sites",
    "oldName": "Heaven",
-   "newName": "Yeni Alang",
+   "newName": "Sudoni",
    "language": "sunhot",
    "meaning": null,
-   "reason": "a name of real religion",
-   "source": "lands_of_the_sun.md renamed labels; roster Yeni Alang"
+   "reason": "the capital of Yeni Alang (YEN) in the reconciled roster; a name of real religion",
+   "source": "roster YEN capital; lands_of_the_sun.md realms table; lands_of_the_sun.md renamed labels; roster Yeni Alang"
   },
   {
    "id": "site_hengyang",
@@ -1578,24 +1718,334 @@
    "source": "lands_of_the_sun.md renamed labels"
   },
   {
+   "id": "site_herez",
+   "array": "sites",
+   "oldName": "Herez",
+   "newName": "Hugomon",
+   "language": "aenoran",
+   "meaning": null,
+   "reason": "the capital of Herez (HER) in the reconciled roster",
+   "source": "roster HER capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_herrodon",
+   "array": "sites",
+   "oldName": "Herrodon",
+   "newName": "Verozo",
+   "language": "sylvan",
+   "meaning": null,
+   "reason": "the capital of Herrodon (HRR) in the reconciled roster",
+   "source": "roster HRR capital; magical_lands.md realms table"
+  },
+  {
    "id": "site_hiloron",
    "array": "sites",
    "oldName": "Hiloron",
-   "newName": "Hirolon",
-   "language": null,
+   "newName": "Torunalos",
+   "language": "gigantic",
    "meaning": null,
-   "reason": "the giants' realm is Hirolon (R-22)",
-   "source": "hirolon.md; roster Hirolon"
+   "reason": "the capital of Hirolon (HIR) in the reconciled roster; the giants' realm is Hirolon (R-22)",
+   "source": "roster HIR capital; middle_lands.md realms table; hirolon.md; roster Hirolon"
+  },
+  {
+   "id": "site_horidor",
+   "array": "sites",
+   "oldName": "Horidor",
+   "newName": "Ollondo",
+   "language": "coldic",
+   "meaning": null,
+   "reason": "the capital of Horidor (HOR) in the reconciled roster",
+   "source": "roster HOR capital; cold_lands.md realms table"
+  },
+  {
+   "id": "site_howan",
+   "array": "sites",
+   "oldName": "Howan",
+   "newName": "Lamowan",
+   "language": "yonic",
+   "meaning": null,
+   "reason": "the capital of Howan (HWN) in the reconciled roster",
+   "source": "roster HWN capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_hunhun",
+   "array": "sites",
+   "oldName": "Hunhun",
+   "newName": "Ulrono",
+   "language": "aenoran",
+   "meaning": null,
+   "reason": "the capital of Hunhun (HNH) in the reconciled roster",
+   "source": "roster HNH capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_igara",
+   "array": "sites",
+   "oldName": "Igara",
+   "newName": "Repgin",
+   "language": "sunhot",
+   "meaning": null,
+   "reason": "the capital of Igara (IGA) in the reconciled roster",
+   "source": "roster IGA capital; lands_of_the_sun.md realms table"
   },
   {
    "id": "site_isengard",
    "array": "sites",
    "oldName": "Isengard",
-   "newName": "Melkgard",
+   "newName": "Minnolomak",
    "language": "coldic",
-   "meaning": "black stronghold",
-   "reason": "Isengard is a name from other fiction",
-   "source": "cold_lands.md realms; roster Melkgard"
+   "meaning": null,
+   "reason": "the capital of Melkgard (MLK) in the reconciled roster; Isengard is a name from other fiction",
+   "source": "roster MLK capital; cold_lands.md realms table; cold_lands.md realms; roster Melkgard"
+  },
+  {
+   "id": "site_kilinti",
+   "array": "sites",
+   "oldName": "Kilinti",
+   "newName": "Ollolor",
+   "language": "longspeech",
+   "meaning": null,
+   "reason": "the capital of Kilinti (KIL) in the reconciled roster",
+   "source": "roster KIL capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_kingson",
+   "array": "sites",
+   "oldName": "Kingson",
+   "newName": "Deolofson",
+   "language": "aenoran",
+   "meaning": null,
+   "reason": "the capital of Kingson (KIN) in the reconciled roster",
+   "source": "roster KIN capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_konori",
+   "array": "sites",
+   "oldName": "Konori",
+   "newName": "Arrovez",
+   "language": "aenoran",
+   "meaning": null,
+   "reason": "the capital of Konori (KON) in the reconciled roster",
+   "source": "roster KON capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_kradlon",
+   "array": "sites",
+   "oldName": "Kradlon",
+   "newName": "Bolbin",
+   "language": "gunwaithic",
+   "meaning": null,
+   "reason": "the capital of Kradlon (KRA) in the reconciled roster",
+   "source": "roster KRA capital; west_lands.md realms table"
+  },
+  {
+   "id": "site_magical_forest",
+   "array": "sites",
+   "oldName": "Magical Forest",
+   "newName": "Lyrion",
+   "language": "sylvan",
+   "meaning": null,
+   "reason": "the capital of Magical Forest (MAG) in the reconciled roster",
+   "source": "roster MAG capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_miaed",
+   "array": "sites",
+   "oldName": "Miaed",
+   "newName": "Erdozan",
+   "language": "alerhic",
+   "meaning": null,
+   "reason": "the capital of Miaed (MIE) in the reconciled roster",
+   "source": "roster MIE capital; south_lands.md realms table"
+  },
+  {
+   "id": "site_mirolon",
+   "array": "sites",
+   "oldName": "Mirolon",
+   "newName": "Miherta",
+   "language": "mirolic",
+   "meaning": null,
+   "reason": "the capital of Mirolon (MIR) in the reconciled roster",
+   "source": "roster MIR capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_mora",
+   "array": "sites",
+   "oldName": "Mora",
+   "newName": "Gonnois",
+   "language": "alerhic",
+   "meaning": null,
+   "reason": "the capital of Mora (MOA) in the reconciled roster",
+   "source": "roster MOA capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_nan",
+   "array": "sites",
+   "oldName": "Nan",
+   "newName": "Larorun",
+   "language": "mirolic",
+   "meaning": null,
+   "reason": "the capital of Nan (NAN) in the reconciled roster",
+   "source": "roster NAN capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_nara",
+   "array": "sites",
+   "oldName": "Nara",
+   "newName": "Riwang",
+   "language": "yonic",
+   "meaning": null,
+   "reason": "the capital of Nara (NAR) in the reconciled roster",
+   "source": "roster NAR capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_nether",
+   "array": "sites",
+   "oldName": "The Nether",
+   "newName": "Zarath-Nazur",
+   "language": "infernal",
+   "meaning": null,
+   "reason": "the capital of Nether (NET) in the reconciled roster",
+   "source": "roster NET capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_nezer",
+   "array": "sites",
+   "oldName": "Nezer",
+   "newName": "Gelroze",
+   "language": "infernal",
+   "meaning": null,
+   "reason": "the capital of Nezer (NEZ) in the reconciled roster",
+   "source": "roster NEZ capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_nolorim",
+   "array": "sites",
+   "oldName": "Nolorim",
+   "newName": "Ennaton",
+   "language": "sylvan",
+   "meaning": null,
+   "reason": "the capital of Nolorim (NLR) in the reconciled roster",
+   "source": "roster NLR capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_nondondor",
+   "array": "sites",
+   "oldName": "Nondondor",
+   "newName": "Kudaini",
+   "language": "tritonic",
+   "meaning": null,
+   "reason": "the capital of Nondondor (NND) in the reconciled roster",
+   "source": "roster NND capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_noris",
+   "array": "sites",
+   "oldName": "Noris",
+   "newName": "Furvior",
+   "language": "noric",
+   "meaning": null,
+   "reason": "the capital of Noris (NRS) in the reconciled roster",
+   "source": "roster NRS capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_ostoroth",
+   "array": "sites",
+   "oldName": "Ostoroth",
+   "newName": "Ohitus",
+   "language": "alerhic",
+   "meaning": null,
+   "reason": "the capital of Ostoroth (OST) in the reconciled roster",
+   "source": "roster OST capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_pollos",
+   "array": "sites",
+   "oldName": "Pollos",
+   "newName": "Havnai",
+   "language": "tritonic",
+   "meaning": null,
+   "reason": "the capital of Pollos (PLL) in the reconciled roster",
+   "source": "roster PLL capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_raerby",
+   "array": "sites",
+   "oldName": "Raerby",
+   "newName": "Ese",
+   "language": "tritonic",
+   "meaning": null,
+   "reason": "the capital of Raerby (RAE) in the reconciled roster",
+   "source": "roster RAE capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_ren",
+   "array": "sites",
+   "oldName": "R'en",
+   "newName": "Farnardur",
+   "language": "leren",
+   "meaning": null,
+   "reason": "the capital of R'en (REN) in the reconciled roster",
+   "source": "roster REN capital; north_lands.md realms table"
+  },
+  {
+   "id": "site_safeton",
+   "array": "sites",
+   "oldName": "Safeton",
+   "newName": "Lotrenri",
+   "language": "aenoran",
+   "meaning": null,
+   "reason": "the capital of Safeton (SFT) in the reconciled roster",
+   "source": "roster SFT capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_selen",
+   "array": "sites",
+   "oldName": "Selen",
+   "newName": "Hifeco",
+   "language": "aenoran",
+   "meaning": null,
+   "reason": "the capital of Selen (SEL) in the reconciled roster",
+   "source": "roster SEL capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_varnondor_staging",
+   "array": "sites",
+   "oldName": "Varnondor staging port",
+   "newName": "Varlibo",
+   "language": "gunwaithic",
+   "meaning": null,
+   "reason": "the capital of Varnondor (VRN) in the reconciled roster",
+   "source": "roster VRN capital; west_lands.md realms table"
+  },
+  {
+   "id": "site_verde",
+   "array": "sites",
+   "oldName": "Verde",
+   "newName": "Pelo Tamo",
+   "language": "yonic",
+   "meaning": null,
+   "reason": "the capital of Verde (VER) in the reconciled roster",
+   "source": "roster VER capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_worshipdom_valleys",
+   "array": "sites",
+   "oldName": "The Three Valleys",
+   "newName": "Lenlakron",
+   "language": "aenoran",
+   "meaning": null,
+   "reason": "the capital of Worshipdom (WOR) in the reconciled roster",
+   "source": "roster WOR capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_yeldenne_landing",
+   "array": "sites",
+   "oldName": "The Landing below Mp'E",
+   "newName": "Simoto",
+   "language": "coldic",
+   "meaning": null,
+   "reason": "the capital of Yeldenne (YEL) in the reconciled roster",
+   "source": "roster YEL capital; cold_lands.md realms table"
   },
   {
    "id": "strait_aenor_isle",
