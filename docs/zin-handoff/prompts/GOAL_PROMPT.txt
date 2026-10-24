@@ -1,0 +1,20 @@
+This is the ZIN implementation session. Goal: deliver the complete ZIN total overhaul for Hearts of Iron IV 1.19.3, set on Aoaz (formerly called Erdae), as one finished assignment. Planning, a demo, a first map import, a new main menu or a partly converted game do not count. Stages, workers, tests and questions are fine; dropped scope, generic content, placeholders or "later" work are not.
+
+Working directory: C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin
+MCP server repo: C:/Users/klimp/Documents/Projects/hoi4-agent-tools
+
+Read the handoff package first, in order: docs/zin-handoff/README.md, 01-CONTEXT-AND-CANON.md, 02-TOTAL-OVERHAUL-SPEC.md, 03-MCP-WORKER-SPEC.md, 04-EXECUTION-AND-ACCEPTANCE.md, then prompts/ZIN_IMPLEMENTATION_HANDOFF.md, which tells you how to operate.
+
+Before changing anything, inspect the recorded state: both repos' git status, branches, PR 36, the interrupted worktrees, the uncommitted mod work of 19 October (preserve and review it), npm test in tools/, and the source paths. Record differences in docs/zin-handoff/STATE-DELTA.md.
+
+Apply the owner's canonical corrections in 01 section 2: swap the names Erdae and Aoaz without moving land, people or history; the Great Wall of Aenor is a natural mountain range; twelve New Gods name the twelve months, Glernaen the mightiest; Zol does not appear in the War of the Last Crowns, his most loyal servant, a Great Spirit, does; Bastian is a famous wizard of men among many traditions; devils are corrupted Lesser Spirits who served an Old God; Vez'nan is Volgan; Edvoid gets a new name. Keep the wider world (Erdu, Dunda, Haven, Cerio, Lao) a layered mystery.
+
+Deliver everything in 02: the owner's drawn map imported through the MCP workflow into a map that loads and plays correctly, with real fantasy geography (natural borders, rivers, lakes, ranges, coherent seas, the Nether below the Dead Lands, Hirolon of the giants); a varied world of peoples, cultures, languages, faiths, creatures, cities and histories (fewer, smaller elven realms; dwarves, hobbits, goblins, giants on the map); real tags and natural names; the full ruleset, mechanics, events, endings, focus trees, characters and AI, with alternate history at every beat; a complete ZIN interface on every surface, states, resolution and scale; the owner's ZIN logo files adapted; unique image-generated art to the game's gfx standard; flags with culture and purpose; sound.
+
+Lore work never stops: after each substantial task, list new facts, check them against geography, chronology, characters and rules, update the canonical references, propagate consequences, and record decisions that need the owner. Expand within canon; keep intentional mysteries; ask the owner about consequential contradictions and the open questions in 01 section 7, and never settle them alone.
+
+Start one dedicated MCP worker on an Opus model the environment really offers (record its exact id; claude-opus-5-5 on 24 October) with prompts/MCP_WORKER_OPUS.md, following 03. It owns all server changes; you never edit the server. Whenever a tool lacks a capability, misbehaves, is slow or awkward, file a concrete request in its record (task, tool, inputs, current behaviour, wanted change, evidence, priority, acceptance) and keep working. Use a capability only once released and reconnected; verify it through the real ZIN workflow.
+
+Prove completion in the game, not on paper: builder checks, MCP validators and runs in the isolated Linux harness under /tmp/hoi4_wsl.lock with the clock running, an every-country sweep, observer runs to 4A 1760 and 4A 1800, save and load, and zero ZIN error-log lines, as listed in 04. Never launch, automate or capture the Windows game; keep private drawings private; keep the tag total below 439.
+
+Report honestly: name each blocker with what you tried and the evidence; never call untested work done. Finish only at the definition of done in 04 section 7, with the final report in PROGRAM.md and README.
