@@ -1036,7 +1036,7 @@ All proceed on the labelled proposal; the owner's answers go to [OPEN_QUESTIONS.
 1. **The sky.** Dragons only, griffins under a rule, or no air at all? **Proposal, in use:** dragons only by default; griffins under `beasts`.
 2. **Orc mounts.** What, if anything, do orc raiders ride? **Proposal, in use:** unnamed "mounts" (the raider line uses the generic mounts equipment).
 3. **Dragons and the dark.** May Volgan receive dragons in the Fourth Age? **Proposal, in use:** no route (magic spec).
-4. **Gunpowder.** **Proposal, in use:** none; crossbows and torsion engines are the peak.
+4. **Gunpowder.** **Owner decision K19 (24 October 2026):** gunpowder weapons are common in some realms, and the ruleset carries black-powder equipment for them (the realms are the roster's `gunpowder` list). **Not yet implemented:** crossbows and torsion engines are still the peak in the builder; black-powder equipment, its technologies and the realms' access are owed (lead status, next steps).
 5. **Glo after the sword.** **Proposal, in use:** a reduced bearer (piercing 120) after `zin_horos_sword_broken`, as gameplay only.
 6. **Two kinds of dead.** **Proposal, in use:** Volgan's grave hosts and Zol's deathless are separate unit families with separate models and equipment, and no stated relation.
 7. **Dwarves.** **Proposal, in use:** no dwarven units until the lore places them (owner short list 12).

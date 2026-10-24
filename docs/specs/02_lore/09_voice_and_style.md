@@ -75,7 +75,7 @@ The traps that matter most for prose are below; the data is the complete list.
 | kilometres, metres, kilograms, tons | miles, paces, pounds, loads, days of march |
 | real months, weekdays and years | the god-months, the Age and year |
 
-Gunpowder weapons are common in some realms by the owner's decision of 24 October 2026, but which realms is not decided, and the build still bans the words; until both are settled no text names a firearm.
+Gunpowder weapons are common in some realms by the owner's decision of 24 October 2026 (K19), and the roster names those realms (`gunpowder` in `tools/content/data/world/roster.json`: the four dwarf holds, Kingson, Aenor, Lerendor and the others it lists). Text for those realms names their bombards, hand-guns and black powder plainly; text for any other realm names no firearm.
 
 ### 2.6 No implementation talk
 
@@ -340,5 +340,5 @@ Before a line is accepted, read it aloud once.
 - The owner has not yet approved the names of the twelve gods and the god-months (Q-01 answers in [pantheon.md](../../lore/references/pantheon.md)); text that uses them stays proposed until he does.
 - The replacement names in the regional dossiers (Gunwyn, Veskel, Orohaf, Melkgard, Nivaros, Naamis, Rhachia, Baelim, Tirim and the others) are proposals; if the owner changes one, the quotes that use it change with it.
 - The sea names on the map still carry "Ocean" in several dossiers; this guide avoids them in text until they are renamed.
-- Which realms use gunpowder is undecided, and the banned-word data still forbids the words.
+- Gunpowder realms are named by the roster (K19); text for other realms names no firearm.
 - The banned-word rule for "Kusven" still offers "Zol" as its replacement, which predates the correction that Kusven, now Kusven, is Zol's servant; the data's owner should change the hint, and Kusven needs a sealed rule in `secret_terms.json` (knowledge layers C25).
