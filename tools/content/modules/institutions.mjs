@@ -4,7 +4,7 @@
 // tools/content/data/institutions*.json.
 //
 //   await buildInstitutions(staged, { countries, table?, pools?, labels? })
-//     countries  the roster of data/countries.json
+//     countries  the roster (lib/roster.mjs)
 //     table      Map tag -> { people, stance } (modules/countries.mjs loadCountryTable); derived from docs/design/countries.csv
 //     pools      Map scan -> { male, female, surnames } (modules/names.mjs buildNames); derived from data/labels.json
 //   returns a summary of what it wrote; throws on a text, id, picture or reference error.
@@ -51,7 +51,7 @@ export function startValour(data, countries, table) {
     if (none.has(c.name)) return { tag: c.tag, name: c.name, army: 0, navy: 0, air: 0 };
     const people = table.get(c.tag).people;
     let cls;
-    if (isA.has(c.tag)) cls = c.name === 'Volgan' ? S.classes.find(x => x.id === 'tier_a_dead') : S.classes.find(x => x.tier === 'a' && x.peoples.includes(people)) ?? S.classes.find(x => x.id === 'tier_a_free');
+    if (isA.has(c.tag)) cls = c.name === 'Puvulan' ? S.classes.find(x => x.id === 'tier_a_dead') : S.classes.find(x => x.tier === 'a' && x.peoples.includes(people)) ?? S.classes.find(x => x.id === 'tier_a_free');
     else if (isB.has(c.tag)) cls = S.classes.find(x => x.id === 'tier_b');
     else cls = S.classes.find(x => x.id === 'tier_c');
     return { tag: c.tag, name: c.name, army: cls.army, navy: cls.navy, air: cls.air };

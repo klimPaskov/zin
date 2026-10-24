@@ -4,7 +4,7 @@ import { rng, cw } from '../lib/core.mjs';
 import { spriteName, VARIANTS } from './portraits.mjs';
 
 // Rulers the canon names. Everyone else gets a generated regional name.
-const NAMED = { Aenor: ['The Golden King', false], Volgan: ['Volgan', false], Zol: ['The Will of Zol', false], Worshipdom: ['Aurevan the Deliverer', false], Yeldenne: ['Horos', false], 'Gala Elves': ['King Lorien', false] };
+const NAMED = { Aenor: ['The Golden King', false], Volgan: ['Puvulan', false], Zol: ['The Will of Zol', false], Worshipdom: ['Aurevan the Deliverer', false], Yeldenne: ['Horos', false], 'Gala': ['King Lorien', false] };
 
 export function rulerId(tag) { return `${tag}_zin_ruler`; }
 

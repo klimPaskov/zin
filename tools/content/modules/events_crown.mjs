@@ -4,7 +4,7 @@
 // zin_world (events/zin_world_endings.txt, ids 100 to 107 and 110 to 112; the world module keeps events/zin_world.txt).
 //
 //   const summary = await buildEventsCrown(staged, { countries, storyBlocks?, scheduler? })
-//     countries    the roster of data/countries.json (names resolve to tags here)
+//     countries    the roster (lib/roster.mjs) (names resolve to tags here)
 //     storyBlocks  the namespaces whose runner blocks zin_story_tick calls; default ['reign', 'ending']. The integrator adds
 //                  'lastwar' and 'lore' when the module that writes zin_story_tick_lastwar / zin_story_tick_lore is in the build (C6).
 //     scheduler    write common/on_actions/zin_crown_story.txt, which calls zin_story_tick once a month (default true). The world
@@ -27,6 +27,7 @@ import { loadGlossary } from '../lib/text_engine.mjs';
 import { loadRegister, loadSpecNames, isKnownName } from '../lib/crown_names.mjs';
 import { block, flat, num, makeEnv, effects, conds, condLines, effLines, eventsFile, HEADER, GOVERNMENTS } from '../lib/crown_script.mjs';
 import { PACES, paceDate } from './focus_compiler.mjs';
+import { countryTable } from '../lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA_DIR = path.join(here, '../data');
@@ -210,7 +211,7 @@ function runnerBlocks(items, env) {
 function endingRunner(env) {
   const humans = (id, extra = []) => block('every_country', [...block('limit', ['is_ai = no', ...extra]), `country_event = ${id}`]);
   const dated = (n, key) => block('if', [...block('limit', [`NOT = { has_global_flag = zin_story_done_ending_${n} }`, `zin_ending_date_${key} = yes`]), `set_global_flag = zin_story_done_ending_${n}`, ...block('if', [...block('limit', ['NOT = { has_global_flag = zin_ending_reached }']), ...humans(`zin_ending.${n}`)])]);
-  const volganTag = env.tags.get('Volgan');
+  const volganTag = env.tags.get('Puvulan');
   env.used.triggers.add('zin_volgan_children_ready'); env.used.triggers.add('zin_is_volgan'); env.used.triggers.add('zin_afrit_holds_parim'); env.used.triggers.add('zin_afrit_ashen_throne_ready'); env.used.triggers.add('zin_afrit_rules_here'); env.used.triggers.add('zin_world_date_children'); env.used.triggers.add('zin_world_date_last_crowns');
   env.used.variables.add('zin_footholds');
   return [
@@ -277,7 +278,7 @@ export async function checkEngine(files, register, own, spec) {
 // ------------------------------------------------------------------------------------------------ build
 export async function buildEventsCrown(staged, ctx = {}) {
   const data = ctx.data ?? await loadCrownData();
-  const roster = ctx.countries ?? JSON.parse(await readFile(path.join(DATA_DIR, 'countries.json'), 'utf8')).countries;
+  const roster = ctx.countries ?? countryTable();
   const tags = new Map(roster.map(c => [c.name, c.tag]));
   const pictures = ctx.pictures ?? await pictureCatalog();
   const register = ctx.register ?? await loadRegister(), spec = ctx.specNames ?? await loadSpecNames();

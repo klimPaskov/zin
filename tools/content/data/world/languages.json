@@ -566,10 +566,6 @@
  },
  "reserved_languages": [
   {
-   "id": "dwarvish",
-   "note": "Dwarves are Common Folk but their homeland is open [O]. No data and no generation until the owner names a homeland."
-  },
-  {
    "id": "choral",
    "note": "The speech of the angels. Their history is unwritten [O]. Infernal is proposed to descend from it; no data."
   },
@@ -968,8 +964,113 @@
     "gigantic",
     "yetic",
     "longspeech",
-    "infernal"
+    "infernal",
+    "gnomish",
+    "hearthspeech",
+    "pack_tongue",
+    "lowspeech"
    ]
+  },
+  "delving": {
+   "name": "Delving family",
+   "summary": "The speech of the dwarves, reconstructed from the hold names of the West Lands, the North Lands and the Great Wall range. One living daughter, Dwarvish, whose holds understand each other; the old forms ended in -a and kept sr where Dwarvish has hr. Whether the Pack-Tongue of the dwarf goblins belongs here is unknown. Proposed.",
+   "proto_language": "proto-delving (reconstructed)",
+   "members": [
+    "dwarvish"
+   ],
+   "proto": {
+    "river": "vorna",
+    "mountain": "brunta",
+    "lake": "loma",
+    "valley": "dalka",
+    "forest": "torma",
+    "ford": "boska",
+    "hill": "kulda",
+    "coast": "haska",
+    "island": "onta",
+    "bridge": "tampa",
+    "wall": "dolma",
+    "fort": "kerma",
+    "hall": "srima",
+    "high": "luna",
+    "low": "dova",
+    "old": "sruna",
+    "new": "naima",
+    "red": "krama",
+    "white": "ilma",
+    "dark": "durna",
+    "bright": "aunta",
+    "holy": "sraila",
+    "king": "drava",
+    "queen": "dravina",
+    "stone": "groma",
+    "iron": "sraka",
+    "gold": "olma",
+    "silver": "vesa",
+    "deep": "kuna",
+    "great": "troma",
+    "small": "niba",
+    "black": "kurma",
+    "grey": "daska",
+    "green": "laiska",
+    "gate": "beka",
+    "tower": "stompa",
+    "road": "traka",
+    "pass": "sroda",
+    "cave": "sroma",
+    "pit": "sruka",
+    "tunnel": "runta",
+    "forge": "kelma",
+    "hearth": "auda",
+    "fire": "srenna",
+    "ash": "oska",
+    "smoke": "vumma",
+    "salt": "salka",
+    "ice": "gelma",
+    "snow": "nuva",
+    "peak": "braika",
+    "cliff": "krega",
+    "rock": "skorra",
+    "root": "verma",
+    "tree": "olka",
+    "oak": "durba",
+    "water": "uma",
+    "spring": "gurla",
+    "marsh": "moska",
+    "field": "terka",
+    "house": "bula",
+    "town": "korda",
+    "city": "torunta",
+    "north": "horra",
+    "south": "dura",
+    "east": "auna",
+    "west": "lompa",
+    "wolf": "vurka",
+    "bear": "orska",
+    "eagle": "arva",
+    "raven": "kroma",
+    "boar": "gurra",
+    "war": "vorga",
+    "sword": "skroma",
+    "oath": "sruda",
+    "pact": "kenna",
+    "throne": "selda",
+    "lamp": "luka",
+    "folk": "srema",
+    "clan": "mauga",
+    "lord": "baura",
+    "warden": "holka",
+    "long": "raika",
+    "night": "mukka",
+    "sun": "srola",
+    "moon": "melma",
+    "star": "glana",
+    "grave": "durma",
+    "blood": "srauda",
+    "bone": "grenta",
+    "chain": "lenka",
+    "horn": "tuka"
+   }
   }
  },
  "languages": {
@@ -27651,6 +27752,14 @@
       "f"
      ],
      "origin": "native"
+    },
+    "ring": {
+     "form": "hir",
+     "bound": "hir",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
     }
    },
    "suffixes": {
@@ -34992,6 +35101,6540 @@
    "measured_capacity": {
     "places": 2181,
     "persons": 452
+   }
+  },
+  "dwarvish": {
+   "id": "dwarvish",
+   "name": "Dwarvish",
+   "endonym": "Hrimek",
+   "family": "delving",
+   "parent": "delving",
+   "status": "living",
+   "summary": "The speech of the dwarf holds: heavy closed syllables that end in a consonant, the breathed hr, and long compounds that take back an old a where three consonants would meet. Every hold speaks it, in the western ranges, the High Mountains and the Great Wall range, so the name of a western hold and the name of a northern one are built from the same words. Men learn a few words at the gates; dwarves rarely teach more.",
+   "speakers": [
+    "Delving-clans of Kunhrim",
+    "Western hold-folk",
+    "High hold-folk"
+   ],
+   "script": {
+    "name": "Hold-runes",
+    "feel": "straight cuts on stone and on bronze tallies, read from the bottom up like a shaft; the clans keep their reckonings, their contracts and their grudges in them",
+    "status": "P"
+   },
+   "sound": {
+    "consonants": "b d g k h m n r l s t v",
+    "vowels": "a e i o u",
+    "diphthongs": "au",
+    "syllable": "(C)(C)V(C)(C)",
+    "codas": "m n r k d l nd rn rm rk lm sk st mb",
+    "stress": "first syllable",
+    "orthography": "hr is one sound, a breathed r. Doubled consonants are held. There is no f, p, w, z, j or y.",
+    "rules": [
+     "no f, p, w, z",
+     "place names end in a consonant: -hrim -kerm -und -ost -ek",
+     "a lost a comes back as a link vowel where three consonants would meet"
+    ],
+    "signature": [
+     "hr",
+     "rm",
+     "nd",
+     "ends -rim -erm -und -ost -ek"
+    ]
+   },
+   "morphology": {
+    "order": "mod-head",
+    "join": "closed",
+    "junction": {
+     "vv": "elide-left",
+     "cc": "link-if:a",
+     "maxC": 3
+    },
+    "junction_person": {
+     "vv": "elide-left",
+     "cc": "link-if:a",
+     "maxC": 3
+    },
+    "bound_stem_strip": null,
+    "notes": "The old final -a is lost at the end of a word but comes back as a link vowel inside a compound when three consonants would meet (brund + hrim gives Brundahrim, \"mountain hall\"). Plural by -um. The holds differ little: the western holds clip -und to -un in speech, the High Mountain hold draws its vowels out, Kunhrim keeps the old forms; names are written the same in every hold."
+   },
+   "sound_laws": [
+    "sr > hr",
+    "nt > nd",
+    "mp > mb",
+    "ai > e",
+    "final -a lost in words of two or more syllables"
+   ],
+   "elements": {
+    "river": {
+     "form": "vorn",
+     "bound": "vorn",
+     "tags": [
+      "f",
+      "w"
+     ],
+     "origin": "regular"
+    },
+    "mountain": {
+     "form": "brund",
+     "bound": "brund",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "lake": {
+     "form": "lom",
+     "bound": "lom",
+     "tags": [
+      "f",
+      "w",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "valley": {
+     "form": "dalk",
+     "bound": "dalk",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "forest": {
+     "form": "torm",
+     "bound": "torm",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "ford": {
+     "form": "bosk",
+     "bound": "bosk",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "hill": {
+     "form": "kuld",
+     "bound": "kuld",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "coast": {
+     "form": "hask",
+     "bound": "hask",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "island": {
+     "form": "ond",
+     "bound": "ond",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "bridge": {
+     "form": "tamb",
+     "bound": "tamb",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "wall": {
+     "form": "dolm",
+     "bound": "dolm",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "fort": {
+     "form": "kerm",
+     "bound": "kerm",
+     "tags": [
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "hall": {
+     "form": "hrim",
+     "bound": "hrim",
+     "tags": [
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "high": {
+     "form": "lun",
+     "bound": "lun",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "low": {
+     "form": "dov",
+     "bound": "dov",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "old": {
+     "form": "hrun",
+     "bound": "hrun",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "new": {
+     "form": "nem",
+     "bound": "nem",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "red": {
+     "form": "kram",
+     "bound": "kram",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "white": {
+     "form": "ilm",
+     "bound": "ilm",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "dark": {
+     "form": "durn",
+     "bound": "durn",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "bright": {
+     "form": "aund",
+     "bound": "aund",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "holy": {
+     "form": "hrel",
+     "bound": "hrel",
+     "tags": [
+      "q",
+      "s"
+     ],
+     "origin": "regular"
+    },
+    "king": {
+     "form": "drav",
+     "bound": "drav",
+     "tags": [
+      "r"
+     ],
+     "origin": "regular"
+    },
+    "queen": {
+     "form": "dravin",
+     "bound": "dravin",
+     "tags": [
+      "r"
+     ],
+     "origin": "regular"
+    },
+    "stone": {
+     "form": "grom",
+     "bound": "grom",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "iron": {
+     "form": "hrak",
+     "bound": "hrak",
+     "tags": [
+      "m"
+     ],
+     "origin": "regular"
+    },
+    "gold": {
+     "form": "olm",
+     "bound": "olm",
+     "tags": [
+      "m"
+     ],
+     "origin": "regular"
+    },
+    "silver": {
+     "form": "ves",
+     "bound": "ves",
+     "tags": [
+      "m"
+     ],
+     "origin": "regular"
+    },
+    "deep": {
+     "form": "kun",
+     "bound": "kun",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "great": {
+     "form": "trom",
+     "bound": "trom",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "small": {
+     "form": "nib",
+     "bound": "nib",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "black": {
+     "form": "kurm",
+     "bound": "kurm",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "grey": {
+     "form": "dask",
+     "bound": "dask",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "green": {
+     "form": "lesk",
+     "bound": "lesk",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "gate": {
+     "form": "bek",
+     "bound": "bek",
+     "tags": [
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "tower": {
+     "form": "stomb",
+     "bound": "stomb",
+     "tags": [
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "road": {
+     "form": "trak",
+     "bound": "trak",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "pass": {
+     "form": "hrod",
+     "bound": "hrod",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "cave": {
+     "form": "hrom",
+     "bound": "hrom",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "pit": {
+     "form": "hruk",
+     "bound": "hruk",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "tunnel": {
+     "form": "rund",
+     "bound": "rund",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "forge": {
+     "form": "kelm",
+     "bound": "kelm",
+     "tags": [
+      "h",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "hearth": {
+     "form": "aud",
+     "bound": "aud",
+     "tags": [
+      "h",
+      "s"
+     ],
+     "origin": "regular"
+    },
+    "fire": {
+     "form": "hrenn",
+     "bound": "hrenn",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "ash": {
+     "form": "osk",
+     "bound": "osk",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "smoke": {
+     "form": "vumm",
+     "bound": "vumm",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "salt": {
+     "form": "salk",
+     "bound": "salk",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "ice": {
+     "form": "gelm",
+     "bound": "gelm",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "snow": {
+     "form": "nuv",
+     "bound": "nuv",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "peak": {
+     "form": "brek",
+     "bound": "brek",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "cliff": {
+     "form": "kreg",
+     "bound": "kreg",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "rock": {
+     "form": "skorr",
+     "bound": "skorr",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "root": {
+     "form": "verm",
+     "bound": "verm",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "tree": {
+     "form": "olk",
+     "bound": "olk",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "oak": {
+     "form": "durb",
+     "bound": "durb",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "water": {
+     "form": "um",
+     "bound": "um",
+     "tags": [
+      "w"
+     ],
+     "origin": "regular"
+    },
+    "spring": {
+     "form": "gurl",
+     "bound": "gurl",
+     "tags": [
+      "f",
+      "w",
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "marsh": {
+     "form": "mosk",
+     "bound": "mosk",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "field": {
+     "form": "terk",
+     "bound": "terk",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "regular"
+    },
+    "house": {
+     "form": "bul",
+     "bound": "bul",
+     "tags": [
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "town": {
+     "form": "kord",
+     "bound": "kord",
+     "tags": [
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "city": {
+     "form": "torund",
+     "bound": "torund",
+     "tags": [
+      "h"
+     ],
+     "origin": "regular"
+    },
+    "north": {
+     "form": "horr",
+     "bound": "horr",
+     "tags": [
+      "n"
+     ],
+     "origin": "regular"
+    },
+    "south": {
+     "form": "dur",
+     "bound": "dur",
+     "tags": [
+      "n"
+     ],
+     "origin": "regular"
+    },
+    "east": {
+     "form": "aun",
+     "bound": "aun",
+     "tags": [
+      "n"
+     ],
+     "origin": "regular"
+    },
+    "west": {
+     "form": "lomb",
+     "bound": "lomb",
+     "tags": [
+      "n"
+     ],
+     "origin": "regular"
+    },
+    "wolf": {
+     "form": "vurk",
+     "bound": "vurk",
+     "tags": [
+      "a"
+     ],
+     "origin": "regular"
+    },
+    "bear": {
+     "form": "orsk",
+     "bound": "orsk",
+     "tags": [
+      "a"
+     ],
+     "origin": "regular"
+    },
+    "eagle": {
+     "form": "arv",
+     "bound": "arv",
+     "tags": [
+      "a"
+     ],
+     "origin": "regular"
+    },
+    "raven": {
+     "form": "krom",
+     "bound": "krom",
+     "tags": [
+      "a"
+     ],
+     "origin": "regular"
+    },
+    "boar": {
+     "form": "gurr",
+     "bound": "gurr",
+     "tags": [
+      "a"
+     ],
+     "origin": "regular"
+    },
+    "war": {
+     "form": "vorg",
+     "bound": "vorg",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "sword": {
+     "form": "skrom",
+     "bound": "skrom",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "oath": {
+     "form": "hrud",
+     "bound": "hrud",
+     "tags": [
+      "s"
+     ],
+     "origin": "regular"
+    },
+    "pact": {
+     "form": "kenn",
+     "bound": "kenn",
+     "tags": [
+      "s"
+     ],
+     "origin": "regular"
+    },
+    "throne": {
+     "form": "seld",
+     "bound": "seld",
+     "tags": [
+      "h",
+      "s"
+     ],
+     "origin": "regular"
+    },
+    "lamp": {
+     "form": "luk",
+     "bound": "luk",
+     "tags": [
+      "s"
+     ],
+     "origin": "regular"
+    },
+    "folk": {
+     "form": "hrem",
+     "bound": "hrem",
+     "tags": [
+      "x"
+     ],
+     "origin": "regular"
+    },
+    "clan": {
+     "form": "maug",
+     "bound": "maug",
+     "tags": [
+      "x"
+     ],
+     "origin": "regular"
+    },
+    "lord": {
+     "form": "baur",
+     "bound": "baur",
+     "tags": [
+      "r"
+     ],
+     "origin": "regular"
+    },
+    "warden": {
+     "form": "holk",
+     "bound": "holk",
+     "tags": [
+      "r"
+     ],
+     "origin": "regular"
+    },
+    "long": {
+     "form": "rek",
+     "bound": "rek",
+     "tags": [
+      "q"
+     ],
+     "origin": "regular"
+    },
+    "night": {
+     "form": "mukk",
+     "bound": "mukk",
+     "tags": [
+      "q",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "sun": {
+     "form": "hrol",
+     "bound": "hrol",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "moon": {
+     "form": "melm",
+     "bound": "melm",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "star": {
+     "form": "glan",
+     "bound": "glan",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "grave": {
+     "form": "durm",
+     "bound": "durm",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "blood": {
+     "form": "hraud",
+     "bound": "hraud",
+     "tags": [
+      "m"
+     ],
+     "origin": "regular"
+    },
+    "bone": {
+     "form": "grend",
+     "bound": "grend",
+     "tags": [
+      "m"
+     ],
+     "origin": "regular"
+    },
+    "chain": {
+     "form": "lenk",
+     "bound": "lenk",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "horn": {
+     "form": "tuk",
+     "bound": "tuk",
+     "tags": [
+      "f"
+     ],
+     "origin": "regular"
+    },
+    "gem": {
+     "form": "tolm",
+     "bound": "tolm",
+     "tags": [
+      "m"
+     ],
+     "origin": "extra"
+    },
+    "beard": {
+     "form": "hurm",
+     "bound": "hurm",
+     "tags": [
+      "f"
+     ],
+     "origin": "extra"
+    },
+    "anvil": {
+     "form": "tund",
+     "bound": "tund",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "extra"
+    },
+    "axe": {
+     "form": "brok",
+     "bound": "brok",
+     "tags": [
+      "f"
+     ],
+     "origin": "extra"
+    },
+    "hammer": {
+     "form": "dund",
+     "bound": "dund",
+     "tags": [
+      "f"
+     ],
+     "origin": "extra"
+    }
+   },
+   "suffixes": {
+    "settlement": [
+     {
+      "form": "ost",
+      "weight": 4,
+      "gloss": "hold"
+     },
+     {
+      "form": "und",
+      "weight": 3,
+      "gloss": "delving"
+     },
+     {
+      "form": "ek",
+      "weight": 3,
+      "gloss": "place"
+     },
+     {
+      "form": "am",
+      "weight": 2,
+      "gloss": "home"
+     }
+    ],
+    "region": [
+     {
+      "form": "und",
+      "weight": 4,
+      "gloss": "delvings"
+     },
+     {
+      "form": "ek",
+      "weight": 2,
+      "gloss": "land"
+     }
+    ],
+    "river": [
+     {
+      "form": "ul",
+      "weight": 2,
+      "gloss": "water"
+     }
+    ],
+    "sea": [
+     {
+      "form": "ul",
+      "weight": 1,
+      "gloss": "water"
+     }
+    ],
+    "mountain": [
+     {
+      "form": "ek",
+      "weight": 3,
+      "gloss": "peak"
+     },
+     {
+      "form": "und",
+      "weight": 1,
+      "gloss": "delved mount"
+     }
+    ]
+   },
+   "place_patterns": {
+    "settlement": [
+     {
+      "pattern": "Q H",
+      "weight": 20
+     },
+     {
+      "pattern": "F H",
+      "weight": 16
+     },
+     {
+      "pattern": "A H",
+      "weight": 6
+     },
+     {
+      "pattern": "M H",
+      "weight": 5
+     },
+     {
+      "pattern": "N H",
+      "weight": 3
+     },
+     {
+      "pattern": "R H",
+      "weight": 3
+     },
+     {
+      "pattern": "E S",
+      "weight": 14
+     },
+     {
+      "pattern": "F S",
+      "weight": 22
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 6
+     },
+     {
+      "pattern": "F F S",
+      "weight": 5
+     }
+    ],
+    "region": [
+     {
+      "pattern": "F S",
+      "weight": 30
+     },
+     {
+      "pattern": "Q L",
+      "weight": 14
+     },
+     {
+      "pattern": "L S",
+      "weight": 14
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     },
+     {
+      "pattern": "N L",
+      "weight": 8
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 8
+     },
+     {
+      "pattern": "F L",
+      "weight": 12
+     }
+    ],
+    "river": [
+     {
+      "pattern": "Q W",
+      "weight": 24
+     },
+     {
+      "pattern": "F W",
+      "weight": 16
+     },
+     {
+      "pattern": "E S",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 8
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "M W",
+      "weight": 8
+     }
+    ],
+    "lake": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 16
+     },
+     {
+      "pattern": "F W",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "R W",
+      "weight": 8
+     }
+    ],
+    "sea": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 20
+     },
+     {
+      "pattern": "F W",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     }
+    ],
+    "mountain": [
+     {
+      "pattern": "Q L",
+      "weight": 30
+     },
+     {
+      "pattern": "A L",
+      "weight": 12
+     },
+     {
+      "pattern": "R L",
+      "weight": 10
+     },
+     {
+      "pattern": "F L",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "M L",
+      "weight": 10
+     }
+    ],
+    "site": [
+     {
+      "pattern": "S H",
+      "weight": 40
+     },
+     {
+      "pattern": "Q H",
+      "weight": 30
+     },
+     {
+      "pattern": "F H",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     }
+    ]
+   },
+   "suffix_kind_for": {
+    "settlement": "settlement",
+    "region": "region",
+    "river": "river",
+    "lake": "river",
+    "sea": "sea",
+    "mountain": "mountain",
+    "site": "settlement"
+   },
+   "person": {
+    "male": {
+     "stems": [
+      "brom",
+      "hrok",
+      "trosk",
+      "hulv",
+      "balk",
+      "ulk",
+      "hrad",
+      "grat",
+      "stulm",
+      "torv",
+      "hurd",
+      "stom",
+      "dekk",
+      "hekk"
+     ],
+     "endings": [
+      "ek",
+      "in",
+      "um",
+      "ar",
+      "ok",
+      "orn",
+      "as",
+      "rim"
+     ]
+    },
+    "female": {
+     "stems": [
+      "hraum",
+      "drunn",
+      "gerv",
+      "ulm",
+      "hrel",
+      "vesk",
+      "dolv",
+      "esk",
+      "kelm",
+      "malk",
+      "tild"
+     ],
+     "endings": [
+      "a",
+      "is",
+      "ild",
+      "una",
+      "ra",
+      "dis"
+     ]
+    },
+    "house": {
+     "style": "clan",
+     "stems": [
+      "grom",
+      "hrak",
+      "olm",
+      "kun",
+      "dolm",
+      "kerm",
+      "hrun",
+      "durn",
+      "ilm",
+      "kram",
+      "stomb",
+      "vorn"
+     ],
+     "suffixes": [
+      "ord",
+      "ast",
+      "erm"
+     ],
+     "notes": "A dwarf names his line by a stone, a metal or the work of its founder: -ord for a line, -ast for the line that opened a delving, -erm for a line of fort-wardens."
+    },
+    "patronymic": {
+     "forms": [],
+     "rule": "None; at the gate a dwarf gives his line and his hold, never his father."
+    },
+    "epithets": [
+     [
+      "hrun",
+      "the old"
+     ],
+     [
+      "kurm",
+      "the black"
+     ],
+     [
+      "trom",
+      "the great"
+     ],
+     [
+      "ilm",
+      "the white"
+     ],
+     [
+      "durn",
+      "the dark"
+     ],
+     [
+      "kram",
+      "the red"
+     ],
+     [
+      "nib",
+      "the small"
+     ]
+    ],
+    "titles": {
+     "ruler_m": "Lord of the Deep Hall",
+     "ruler_f": "Lady of the Deep Hall",
+     "elder": "Elder of the Clans",
+     "smith": "Master of the Forge"
+    },
+    "notes": "A given name is used inside the clan; men at the gate hear the line and the hold."
+   },
+   "samples": {
+    "places": [
+     {
+      "name": "Dalkost",
+      "recipe": "valley +ost",
+      "gloss": "valley -hold"
+     },
+     {
+      "name": "Tromkuld",
+      "recipe": "great hill",
+      "gloss": "great hill"
+     },
+     {
+      "name": "Lungurl",
+      "recipe": "high spring",
+      "gloss": "high spring"
+     },
+     {
+      "name": "Gurrtund",
+      "recipe": "boar anvil",
+      "gloss": "boar anvil"
+     },
+     {
+      "name": "Oskahrim",
+      "recipe": "ash hall",
+      "gloss": "ash hall"
+     },
+     {
+      "name": "Glankelm",
+      "recipe": "star forge",
+      "gloss": "star forge"
+     },
+     {
+      "name": "Durhrod",
+      "recipe": "south pass",
+      "gloss": "south pass"
+     },
+     {
+      "name": "Dovbrund",
+      "recipe": "low mountain",
+      "gloss": "low mountain"
+     },
+     {
+      "name": "Hrodund",
+      "recipe": "pass +und",
+      "gloss": "pass -delving"
+     },
+     {
+      "name": "Vummam",
+      "recipe": "smoke +am",
+      "gloss": "smoke -home"
+     },
+     {
+      "name": "Ilmbosk",
+      "recipe": "white ford",
+      "gloss": "white ford"
+     },
+     {
+      "name": "Kurmbek",
+      "recipe": "black gate",
+      "gloss": "black gate"
+     },
+     {
+      "name": "Arvaud",
+      "recipe": "eagle hearth",
+      "gloss": "eagle hearth"
+     },
+     {
+      "name": "Oskseld",
+      "recipe": "ash throne",
+      "gloss": "ash throne"
+     },
+     {
+      "name": "Tambkerm",
+      "recipe": "bridge fort",
+      "gloss": "bridge fort"
+     },
+     {
+      "name": "Horrkuld",
+      "recipe": "north hill",
+      "gloss": "north hill"
+     },
+     {
+      "name": "Daskakreg",
+      "recipe": "grey cliff",
+      "gloss": "grey cliff"
+     },
+     {
+      "name": "Gurlost",
+      "recipe": "spring +ost",
+      "gloss": "spring -hold"
+     },
+     {
+      "name": "Melmek",
+      "recipe": "moon +ek",
+      "gloss": "moon -place"
+     },
+     {
+      "name": "Luntorm",
+      "recipe": "high forest",
+      "gloss": "high forest"
+     },
+     {
+      "name": "Aundtund",
+      "recipe": "bright anvil",
+      "gloss": "bright anvil"
+     },
+     {
+      "name": "Vurkahrim",
+      "recipe": "wolf hall",
+      "gloss": "wolf hall"
+     },
+     {
+      "name": "Oskkelm",
+      "recipe": "ash forge",
+      "gloss": "ash forge"
+     },
+     {
+      "name": "Skorrtorund",
+      "recipe": "rock city",
+      "gloss": "rock city"
+     },
+     {
+      "name": "Lomblom",
+      "recipe": "west lake",
+      "gloss": "west lake"
+     },
+     {
+      "name": "Hrelond",
+      "recipe": "holy island",
+      "gloss": "holy island"
+     },
+     {
+      "name": "Brundam",
+      "recipe": "mountain +am",
+      "gloss": "mountain -home"
+     },
+     {
+      "name": "Ondund",
+      "recipe": "island +und",
+      "gloss": "island -delving"
+     },
+     {
+      "name": "Kurmdalk",
+      "recipe": "black valley",
+      "gloss": "black valley"
+     },
+     {
+      "name": "Hrunaud",
+      "recipe": "old hearth",
+      "gloss": "old hearth"
+     }
+    ],
+    "persons": [
+     {
+      "name": "Bromin Gromord",
+      "recipe": "G brom+in | H grom+ord",
+      "sex": "m"
+     },
+     {
+      "name": "Ulkok Durnast",
+      "recipe": "G ulk+ok | H durn+ast",
+      "sex": "m"
+     },
+     {
+      "name": "Hurdrim Olmerm",
+      "recipe": "G hurd+rim | H olm+erm",
+      "sex": "m"
+     },
+     {
+      "name": "Hrokum Kramord",
+      "recipe": "G hrok+um | H kram+ord",
+      "sex": "m"
+     },
+     {
+      "name": "Hradorn Dolmast",
+      "recipe": "G hrad+orn | H dolm+ast",
+      "sex": "m"
+     },
+     {
+      "name": "Stomek Vornerm",
+      "recipe": "G stom+ek | H vorn+erm",
+      "sex": "m"
+     },
+     {
+      "name": "Troskar Hrunord",
+      "recipe": "G trosk+ar | H hrun+ord",
+      "sex": "m"
+     },
+     {
+      "name": "Gratas Hrakast",
+      "recipe": "G grat+as | H hrak+ast",
+      "sex": "m"
+     },
+     {
+      "name": "Dekkin Ilmerm",
+      "recipe": "G dekk+in | H ilm+erm",
+      "sex": "m"
+     },
+     {
+      "name": "Hulvok Kunord",
+      "recipe": "G hulv+ok | H kun+ord",
+      "sex": "m"
+     },
+     {
+      "name": "Stulmrim Stombast",
+      "recipe": "G stulm+rim | H stomb+ast",
+      "sex": "m"
+     },
+     {
+      "name": "Hekkum Kermerm",
+      "recipe": "G hekk+um | H kerm+erm",
+      "sex": "m"
+     },
+     {
+      "name": "Balkorn Gromord",
+      "recipe": "G balk+orn | H grom+ord",
+      "sex": "m"
+     },
+     {
+      "name": "Torvek Durnast",
+      "recipe": "G torv+ek | H durn+ast",
+      "sex": "m"
+     },
+     {
+      "name": "Bromar Olmerm",
+      "recipe": "G brom+ar | H olm+erm",
+      "sex": "m"
+     },
+     {
+      "name": "Malkra Kramord",
+      "recipe": "F malk+ra | H kram+ord",
+      "sex": "f"
+     },
+     {
+      "name": "Ulmis Dolmast",
+      "recipe": "F ulm+is | H dolm+ast",
+      "sex": "f"
+     },
+     {
+      "name": "Kelmra Vornerm",
+      "recipe": "F kelm+ra | H vorn+erm",
+      "sex": "f"
+     },
+     {
+      "name": "Gervis Hrunord",
+      "recipe": "F gerv+is | H hrun+ord",
+      "sex": "f"
+     },
+     {
+      "name": "Eskra Hrakast",
+      "recipe": "F esk+ra | H hrak+ast",
+      "sex": "f"
+     },
+     {
+      "name": "Drunnis Ilmerm",
+      "recipe": "F drunn+is | H ilm+erm",
+      "sex": "f"
+     },
+     {
+      "name": "Dolvra Kunord",
+      "recipe": "F dolv+ra | H kun+ord",
+      "sex": "f"
+     },
+     {
+      "name": "Hraumis Stombast",
+      "recipe": "F hraum+is | H stomb+ast",
+      "sex": "f"
+     },
+     {
+      "name": "Veskra Kermerm",
+      "recipe": "F vesk+ra | H kerm+erm",
+      "sex": "f"
+     },
+     {
+      "name": "Tildis Gromord",
+      "recipe": "F tild+is | H grom+ord",
+      "sex": "f"
+     },
+     {
+      "name": "Hrelra Durnast",
+      "recipe": "F hrel+ra | H durn+ast",
+      "sex": "f"
+     },
+     {
+      "name": "Malkis Olmerm",
+      "recipe": "F malk+is | H olm+erm",
+      "sex": "f"
+     },
+     {
+      "name": "Ulmra Kramord",
+      "recipe": "F ulm+ra | H kram+ord",
+      "sex": "f"
+     },
+     {
+      "name": "Kelmis Dolmast",
+      "recipe": "F kelm+is | H dolm+ast",
+      "sex": "f"
+     },
+     {
+      "name": "Gervra Vornerm",
+      "recipe": "F gerv+ra | H vorn+erm",
+      "sex": "f"
+     }
+    ]
+   },
+   "established_names": [
+    {
+     "name": "Kunhrim",
+     "kind": "country",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish kun \"deep\" + hrim \"hall\": the deep hall. The drawn label of the Great Wall range read as the dwarves' own name (proposed)."
+    },
+    {
+     "name": "Lunhrim",
+     "kind": "range",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish lun \"high\" + hrim \"hall\": the high hall, the drawn massif (proposed reading)."
+    },
+    {
+     "name": "Brundahrim",
+     "kind": "country",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish brund \"mountain\" + hrim \"hall\", with the link a: the mountain hall. The Gunwyn exonym Chalwe-Brenn is a calque (proposed)."
+    },
+    {
+     "name": "Gromkerm",
+     "kind": "country",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish grom \"stone\" + kerm \"fort\": the stone fort. The Gunwyn exonym Garth-Stenn is a calque (proposed)."
+    },
+    {
+     "name": "Hrakkerm",
+     "kind": "seat",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish hrak \"iron\" + kerm \"fort\": the iron fort, seat of Kunhrim and of its Iron Charter (proposed; replaces the Aenoran-looking Kerdun)."
+    },
+    {
+     "name": "Hrennost",
+     "kind": "seat",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish hrenn \"fire\" + -ost \"hold\": the fire-hold, deep hall of Brundahrim, where the western powder was first made (proposed)."
+    },
+    {
+     "name": "Hrunost",
+     "kind": "seat",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish hrun \"old\" + -ost \"hold\": the old hold, deep hall of Gromkerm (proposed)."
+    },
+    {
+     "name": "Ilmahrim",
+     "kind": "seat",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish ilm \"white\" + hrim \"hall\", with the link a: the white hall under the snows of the High Mountains, deep hall of Hrakbrund (proposed)."
+    },
+    {
+     "name": "Hrakbrund",
+     "kind": "country",
+     "fit": "inventory-compatible",
+     "reading": "Dwarvish hrak \"iron\" + brund \"mountain\": the iron mountain. The Leren exonym is Karundun, \"mountain fort\" (proposed)."
+    }
+   ],
+   "measured_capacity": {
+    "places": 3000,
+    "persons": 328
+   }
+  },
+  "gnomish": {
+   "id": "gnomish",
+   "name": "Gnomish",
+   "endonym": "Olomet",
+   "family": "isolate",
+   "parent": null,
+   "status": "living",
+   "summary": "The quick, quiet speech of the gnome holts: short open words that end in o, i or et, held double consonants and almost no cluster at the start of a word. Gnomes speak it only among themselves; to outsiders they speak the Common Speech, and few outsiders ever hear either.",
+   "speakers": [
+    "Holt-folk of Olodor"
+   ],
+   "script": {
+    "name": "Pot-marks",
+    "feel": "tiny scratches on the rims of the gold pots, one mark for each coin; the village king reads the tally",
+    "status": "P"
+   },
+   "sound": {
+    "consonants": "b d g k l m n p r s t v",
+    "vowels": "a e i o u",
+    "diphthongs": "io",
+    "syllable": "CV(C), two or three syllables",
+    "codas": "t n l r m",
+    "stress": "first syllable",
+    "orthography": "Doubled consonants are held. A word almost never starts with two consonants. There is no h, w, z or f.",
+    "rules": [
+     "no h, w, z, f",
+     "names end in -o -i -et -em",
+     "no cluster at the start of a word"
+    ],
+    "signature": [
+     "olo",
+     "tt",
+     "ll",
+     "ends -o -i -et"
+    ]
+   },
+   "morphology": {
+    "order": "mod-head",
+    "join": "closed",
+    "junction": {
+     "vv": "elide-left",
+     "cc": "link-if:o",
+     "maxC": 2
+    },
+    "junction_person": {
+     "vv": "elide-left",
+     "cc": "link-if:o",
+     "maxC": 2
+    },
+    "bound_stem_strip": null,
+    "notes": "Compounds are closed; a final vowel is dropped before a vowel. Plural by -n. A crowned gnome adds -illo, \"golden\", to his name."
+   },
+   "sound_laws": null,
+   "elements": {
+    "river": {
+     "form": "nelo",
+     "bound": "nelo",
+     "tags": [
+      "f",
+      "w"
+     ],
+     "origin": "native"
+    },
+    "mountain": {
+     "form": "karrem",
+     "bound": "karrem",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "lake": {
+     "form": "pilli",
+     "bound": "pilli",
+     "tags": [
+      "f",
+      "w",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "valley": {
+     "form": "dollet",
+     "bound": "dollet",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "forest": {
+     "form": "veddi",
+     "bound": "veddi",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "ford": {
+     "form": "patto",
+     "bound": "patto",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hill": {
+     "form": "kummo",
+     "bound": "kummo",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "coast": {
+     "form": "sibbet",
+     "bound": "sibbet",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "island": {
+     "form": "ottel",
+     "bound": "ottel",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "bridge": {
+     "form": "lenno",
+     "bound": "lenno",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "wall": {
+     "form": "barret",
+     "bound": "barret",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "fort": {
+     "form": "tonnet",
+     "bound": "tonnet",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hall": {
+     "form": "tullo",
+     "bound": "tullo",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "high": {
+     "form": "sello",
+     "bound": "sello",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "low": {
+     "form": "nobbo",
+     "bound": "nobbo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "old": {
+     "form": "orri",
+     "bound": "orri",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "new": {
+     "form": "nitti",
+     "bound": "nitti",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "red": {
+     "form": "kerro",
+     "bound": "kerro",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "white": {
+     "form": "pilo",
+     "bound": "pilo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "dark": {
+     "form": "dommi",
+     "bound": "dommi",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "bright": {
+     "form": "tillo",
+     "bound": "tillo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "holy": {
+     "form": "ommi",
+     "bound": "ommi",
+     "tags": [
+      "q",
+      "s"
+     ],
+     "origin": "native"
+    },
+    "king": {
+     "form": "tovo",
+     "bound": "tovo",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "queen": {
+     "form": "tova",
+     "bound": "tova",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "stone": {
+     "form": "kollo",
+     "bound": "kollo",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "iron": {
+     "form": "tekki",
+     "bound": "tekki",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "gold": {
+     "form": "illo",
+     "bound": "illo",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "silver": {
+     "form": "minno",
+     "bound": "minno",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "deep": {
+     "form": "dubbo",
+     "bound": "dubbo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "small": {
+     "form": "lillo",
+     "bound": "lillo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "great": {
+     "form": "brollo",
+     "bound": "brollo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "black": {
+     "form": "norri",
+     "bound": "norri",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "grey": {
+     "form": "gebbi",
+     "bound": "gebbi",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "green": {
+     "form": "vello",
+     "bound": "vello",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "hidden": {
+     "form": "olo",
+     "bound": "olo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "holt": {
+     "form": "dor",
+     "bound": "dor",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "pot": {
+     "form": "pommi",
+     "bound": "pommi",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "luck": {
+     "form": "sorret",
+     "bound": "sorret",
+     "tags": [
+      "s"
+     ],
+     "origin": "native"
+    },
+    "tree": {
+     "form": "vinno",
+     "bound": "vinno",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "root": {
+     "form": "venni",
+     "bound": "venni",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "burrow": {
+     "form": "tano",
+     "bound": "tano",
+     "tags": [
+      "h",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "pit": {
+     "form": "dibbo",
+     "bound": "dibbo",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "bird": {
+     "form": "tirri",
+     "bound": "tirri",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "mushroom": {
+     "form": "muddi",
+     "bound": "muddi",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "moss": {
+     "form": "messel",
+     "bound": "messel",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "leaf": {
+     "form": "lebbo",
+     "bound": "lebbo",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "seed": {
+     "form": "nibbi",
+     "bound": "nibbi",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "lamp": {
+     "form": "tellet",
+     "bound": "tellet",
+     "tags": [
+      "s"
+     ],
+     "origin": "native"
+    },
+    "spring": {
+     "form": "simmi",
+     "bound": "simmi",
+     "tags": [
+      "f",
+      "w",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "water": {
+     "form": "uvvo",
+     "bound": "uvvo",
+     "tags": [
+      "w"
+     ],
+     "origin": "native"
+    },
+    "field": {
+     "form": "tarri",
+     "bound": "tarri",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "north": {
+     "form": "nilli",
+     "bound": "nilli",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "south": {
+     "form": "sullo",
+     "bound": "sullo",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "east": {
+     "form": "assi",
+     "bound": "assi",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "west": {
+     "form": "vemmo",
+     "bound": "vemmo",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "bell": {
+     "form": "dingel",
+     "bound": "dingel",
+     "tags": [
+      "s"
+     ],
+     "origin": "native"
+    },
+    "wolf": {
+     "form": "gurro",
+     "bound": "gurro",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "bear": {
+     "form": "bammo",
+     "bound": "bammo",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "raven": {
+     "form": "kroppi",
+     "bound": "kroppi",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "fish": {
+     "form": "sipo",
+     "bound": "sipo",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "cave": {
+     "form": "kovvo",
+     "bound": "kovvo",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "gate": {
+     "form": "porret",
+     "bound": "porret",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "house": {
+     "form": "kotti",
+     "bound": "kotti",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "town": {
+     "form": "kallet",
+     "bound": "kallet",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "star": {
+     "form": "tessi",
+     "bound": "tessi",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "moon": {
+     "form": "nummo",
+     "bound": "nummo",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "night": {
+     "form": "mibbet",
+     "bound": "mibbet",
+     "tags": [
+      "q",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "cap": {
+     "form": "berro",
+     "bound": "berro",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    }
+   },
+   "suffixes": {
+    "settlement": [
+     {
+      "form": "et",
+      "weight": 4,
+      "gloss": "little home"
+     },
+     {
+      "form": "o",
+      "weight": 3,
+      "gloss": "village"
+     },
+     {
+      "form": "illi",
+      "weight": 2,
+      "gloss": "holt"
+     },
+     {
+      "form": "dor",
+      "weight": 1,
+      "gloss": "hidden home"
+     }
+    ],
+    "region": [
+     {
+      "form": "et",
+      "weight": 3,
+      "gloss": "country"
+     },
+     {
+      "form": "ommo",
+      "weight": 2,
+      "gloss": "the holts"
+     }
+    ],
+    "river": [
+     {
+      "form": "i",
+      "weight": 2,
+      "gloss": "brook"
+     }
+    ],
+    "sea": [
+     {
+      "form": "i",
+      "weight": 1,
+      "gloss": "water"
+     }
+    ],
+    "mountain": [
+     {
+      "form": "em",
+      "weight": 2,
+      "gloss": "hump"
+     }
+    ]
+   },
+   "place_patterns": {
+    "settlement": [
+     {
+      "pattern": "Q H",
+      "weight": 20
+     },
+     {
+      "pattern": "F H",
+      "weight": 16
+     },
+     {
+      "pattern": "A H",
+      "weight": 6
+     },
+     {
+      "pattern": "M H",
+      "weight": 5
+     },
+     {
+      "pattern": "N H",
+      "weight": 3
+     },
+     {
+      "pattern": "R H",
+      "weight": 3
+     },
+     {
+      "pattern": "E S",
+      "weight": 14
+     },
+     {
+      "pattern": "F S",
+      "weight": 22
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 6
+     },
+     {
+      "pattern": "F F S",
+      "weight": 5
+     }
+    ],
+    "region": [
+     {
+      "pattern": "F S",
+      "weight": 30
+     },
+     {
+      "pattern": "Q L",
+      "weight": 14
+     },
+     {
+      "pattern": "L S",
+      "weight": 14
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     },
+     {
+      "pattern": "N L",
+      "weight": 8
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 8
+     },
+     {
+      "pattern": "F L",
+      "weight": 12
+     }
+    ],
+    "river": [
+     {
+      "pattern": "Q W",
+      "weight": 24
+     },
+     {
+      "pattern": "F W",
+      "weight": 16
+     },
+     {
+      "pattern": "E S",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 8
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "M W",
+      "weight": 8
+     }
+    ],
+    "lake": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 16
+     },
+     {
+      "pattern": "F W",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "R W",
+      "weight": 8
+     }
+    ],
+    "sea": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 20
+     },
+     {
+      "pattern": "F W",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     }
+    ],
+    "mountain": [
+     {
+      "pattern": "Q L",
+      "weight": 30
+     },
+     {
+      "pattern": "A L",
+      "weight": 12
+     },
+     {
+      "pattern": "R L",
+      "weight": 10
+     },
+     {
+      "pattern": "F L",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "M L",
+      "weight": 10
+     }
+    ],
+    "site": [
+     {
+      "pattern": "S H",
+      "weight": 40
+     },
+     {
+      "pattern": "Q H",
+      "weight": 30
+     },
+     {
+      "pattern": "F H",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     }
+    ]
+   },
+   "suffix_kind_for": {
+    "settlement": "settlement",
+    "region": "region",
+    "river": "river",
+    "lake": "river",
+    "sea": "sea",
+    "mountain": "mountain",
+    "site": "settlement"
+   },
+   "person": {
+    "male": {
+     "stems": [
+      "tov",
+      "lepp",
+      "kerr",
+      "tamm",
+      "sell",
+      "pebb",
+      "nett",
+      "midd",
+      "ubb",
+      "bimm",
+      "dett",
+      "vinn",
+      "kott"
+     ],
+     "endings": [
+      "o",
+      "et",
+      "in",
+      "olo",
+      "ip"
+     ]
+    },
+    "female": {
+     "stems": [
+      "vill",
+      "tirr",
+      "semm",
+      "bett",
+      "kell",
+      "dabb",
+      "pimm",
+      "nolli",
+      "mett"
+     ],
+     "endings": [
+      "i",
+      "enne",
+      "ossa",
+      "ille",
+      "e"
+     ]
+    },
+    "house": {
+     "style": "none",
+     "stems": [],
+     "suffixes": []
+    },
+    "patronymic": {
+     "forms": [],
+     "rule": "None; a gnome is known by his village and, if crowned, by his pot."
+    },
+    "epithets": [
+     [
+      "orri",
+      "the old"
+     ],
+     [
+      "illo",
+      "the golden"
+     ],
+     [
+      "lillo",
+      "the small"
+     ],
+     [
+      "dommi",
+      "the dark"
+     ]
+    ],
+    "titles": {
+     "ruler_m": "Village-King",
+     "ruler_f": "Village-Queen",
+     "crowned": "Gold-Crown"
+    },
+    "notes": "Every village has one king, who keeps the tally of the pots and crowns the gnome whose pot is full."
+   },
+   "samples": {
+    "places": [
+     {
+      "name": "Dolletet",
+      "recipe": "valley +et",
+      "gloss": "valley -little home"
+     },
+     {
+      "name": "Lillokummo",
+      "recipe": "small hill",
+      "gloss": "small hill"
+     },
+     {
+      "name": "Sellokotti",
+      "recipe": "high house",
+      "gloss": "high house"
+     },
+     {
+      "name": "Sipotonnet",
+      "recipe": "fish fort",
+      "gloss": "fish fort"
+     },
+     {
+      "name": "Minnosimmi",
+      "recipe": "silver spring",
+      "gloss": "silver spring"
+     },
+     {
+      "name": "Barretpatto",
+      "recipe": "wall ford",
+      "gloss": "wall ford"
+     },
+     {
+      "name": "Sullotarri",
+      "recipe": "south field",
+      "gloss": "south field"
+     },
+     {
+      "name": "Nobbokummo",
+      "recipe": "low hill",
+      "gloss": "low hill"
+     },
+     {
+      "name": "Dolleto",
+      "recipe": "valley +o",
+      "gloss": "valley -village"
+     },
+     {
+      "name": "Barretdor",
+      "recipe": "wall +dor",
+      "gloss": "wall -hidden home"
+     },
+     {
+      "name": "Pilokovvo",
+      "recipe": "white cave",
+      "gloss": "white cave"
+     },
+     {
+      "name": "Norritullo",
+      "recipe": "black hall",
+      "gloss": "black hall"
+     },
+     {
+      "name": "Bammokovvo",
+      "recipe": "bear cave",
+      "gloss": "bear cave"
+     },
+     {
+      "name": "Illolenno",
+      "recipe": "gold bridge",
+      "gloss": "gold bridge"
+     },
+     {
+      "name": "Mudditano",
+      "recipe": "mushroom burrow",
+      "gloss": "mushroom burrow"
+     },
+     {
+      "name": "Nillikummo",
+      "recipe": "north hill",
+      "gloss": "north hill"
+     },
+     {
+      "name": "Gebbipilli",
+      "recipe": "grey lake",
+      "gloss": "grey lake"
+     },
+     {
+      "name": "Barretet",
+      "recipe": "wall +et",
+      "gloss": "wall -little home"
+     },
+     {
+      "name": "Muddilli",
+      "recipe": "mushroom +illi",
+      "gloss": "mushroom -holt"
+     },
+     {
+      "name": "Sellopommi",
+      "recipe": "high pot",
+      "gloss": "high pot"
+     },
+     {
+      "name": "Tilloporret",
+      "recipe": "bright gate",
+      "gloss": "bright gate"
+     },
+     {
+      "name": "Tirribarret",
+      "recipe": "bird wall",
+      "gloss": "bird wall"
+     },
+     {
+      "name": "Tekkidibbo",
+      "recipe": "iron pit",
+      "gloss": "iron pit"
+     },
+     {
+      "name": "Tessikallet",
+      "recipe": "star town",
+      "gloss": "star town"
+     },
+     {
+      "name": "Vemmopilli",
+      "recipe": "west lake",
+      "gloss": "west lake"
+     },
+     {
+      "name": "Ommottel",
+      "recipe": "holy island",
+      "gloss": "holy island"
+     },
+     {
+      "name": "Muddidor",
+      "recipe": "mushroom +dor",
+      "gloss": "mushroom -hidden home"
+     },
+     {
+      "name": "Tesso",
+      "recipe": "star +o",
+      "gloss": "star -village"
+     },
+     {
+      "name": "Norrikarrem",
+      "recipe": "black mountain",
+      "gloss": "black mountain"
+     },
+     {
+      "name": "Orritonnet",
+      "recipe": "old fort",
+      "gloss": "old fort"
+     }
+    ],
+    "persons": [
+     {
+      "name": "Tovet",
+      "recipe": "G tov+et",
+      "sex": "m"
+     },
+     {
+      "name": "Pebbip",
+      "recipe": "G pebb+ip",
+      "sex": "m"
+     },
+     {
+      "name": "Dettin",
+      "recipe": "G dett+in",
+      "sex": "m"
+     },
+     {
+      "name": "Kerro",
+      "recipe": "G kerr+o",
+      "sex": "m"
+     },
+     {
+      "name": "Middolo",
+      "recipe": "G midd+olo",
+      "sex": "m"
+     },
+     {
+      "name": "Kottet",
+      "recipe": "G kott+et",
+      "sex": "m"
+     },
+     {
+      "name": "Sellip",
+      "recipe": "G sell+ip",
+      "sex": "m"
+     },
+     {
+      "name": "Bimmin",
+      "recipe": "G bimm+in",
+      "sex": "m"
+     },
+     {
+      "name": "Leppo",
+      "recipe": "G lepp+o",
+      "sex": "m"
+     },
+     {
+      "name": "Nettolo",
+      "recipe": "G nett+olo",
+      "sex": "m"
+     },
+     {
+      "name": "Vinnet",
+      "recipe": "G vinn+et",
+      "sex": "m"
+     },
+     {
+      "name": "Tammip",
+      "recipe": "G tamm+ip",
+      "sex": "m"
+     },
+     {
+      "name": "Ubbin",
+      "recipe": "G ubb+in",
+      "sex": "m"
+     },
+     {
+      "name": "Tovo",
+      "recipe": "G tov+o",
+      "sex": "m"
+     },
+     {
+      "name": "Pebbolo",
+      "recipe": "G pebb+olo",
+      "sex": "m"
+     },
+     {
+      "name": "Bettenne",
+      "recipe": "F bett+enne",
+      "sex": "f"
+     },
+     {
+      "name": "Mette",
+      "recipe": "F mett+e",
+      "sex": "f"
+     },
+     {
+      "name": "Kellossa",
+      "recipe": "F kell+ossa",
+      "sex": "f"
+     },
+     {
+      "name": "Villi",
+      "recipe": "F vill+i",
+      "sex": "f"
+     },
+     {
+      "name": "Dabbille",
+      "recipe": "F dabb+ille",
+      "sex": "f"
+     },
+     {
+      "name": "Tirrenne",
+      "recipe": "F tirr+enne",
+      "sex": "f"
+     },
+     {
+      "name": "Pimme",
+      "recipe": "F pimm+e",
+      "sex": "f"
+     },
+     {
+      "name": "Semmossa",
+      "recipe": "F semm+ossa",
+      "sex": "f"
+     },
+     {
+      "name": "Nolli",
+      "recipe": "F nolli+i",
+      "sex": "f"
+     },
+     {
+      "name": "Bettille",
+      "recipe": "F bett+ille",
+      "sex": "f"
+     },
+     {
+      "name": "Mettenne",
+      "recipe": "F mett+enne",
+      "sex": "f"
+     },
+     {
+      "name": "Kelle",
+      "recipe": "F kell+e",
+      "sex": "f"
+     },
+     {
+      "name": "Villossa",
+      "recipe": "F vill+ossa",
+      "sex": "f"
+     },
+     {
+      "name": "Dabbi",
+      "recipe": "F dabb+i",
+      "sex": "f"
+     },
+     {
+      "name": "Tirrille",
+      "recipe": "F tirr+ille",
+      "sex": "f"
+     }
+    ]
+   },
+   "established_names": [
+    {
+     "name": "Olodor",
+     "kind": "country",
+     "fit": "inventory-compatible",
+     "reading": "Gnomish olo \"hidden\" + dor \"holt\": the hidden holts. The gnome card's own name; the Aenoran chart form is Deodolor (proposed reading)."
+    },
+    {
+     "name": "Tovodor",
+     "kind": "seat",
+     "fit": "inventory-compatible",
+     "reading": "Gnomish tovo \"king\" + dor \"holt\": the holt of the eldest village-king (proposed)."
+    }
+   ],
+   "measured_capacity": {
+    "places": 3000,
+    "persons": 233
+   }
+  },
+  "hearthspeech": {
+   "id": "hearthspeech",
+   "name": "Hearth-Speech",
+   "endonym": "Hemmel",
+   "family": "isolate",
+   "parent": null,
+   "status": "living",
+   "summary": "The home tongue of the small folk: soft, voiced and round, with doubled b, d, m and p in the middle of a word and endings in -um, -el, -ip and -o. Among men the small folk use Gunwyn and the names men give them; the Hearth-Speech is for the table, the field and the hearth-names they keep among themselves.",
+   "speakers": [
+    "Hearth-folk of the Ronbo basin"
+   ],
+   "script": {
+    "name": "Door-marks",
+    "feel": "carved signs over round doors and on the lids of leaf-boxes: a household sign, a field sign and a tally of the harvest",
+    "status": "P"
+   },
+   "sound": {
+    "consonants": "b d g h l m n p r s t v w",
+    "vowels": "a e i o u",
+    "diphthongs": "ou",
+    "syllable": "CV(C), two or three syllables",
+    "codas": "m n l r p",
+    "stress": "first syllable",
+    "orthography": "Doubled b, d, m and p are held in the middle of a word; ou is said as in \"soup\". There is no k, z, x or f.",
+    "rules": [
+     "no k, z, x, f",
+     "names end in -um -el -ip -o -an",
+     "two or three syllables, never one"
+    ],
+    "signature": [
+     "bb",
+     "mm",
+     "pp",
+     "dd",
+     "ou",
+     "ends -um -ip -el"
+    ]
+   },
+   "morphology": {
+    "order": "mod-head",
+    "join": "closed",
+    "junction": {
+     "vv": "elide-left",
+     "cc": "link-if:e",
+     "maxC": 2
+    },
+    "junction_person": {
+     "vv": "elide-left",
+     "cc": "link-if:e",
+     "maxC": 2
+    },
+    "bound_stem_strip": null,
+    "notes": "Compounds are closed with a link e where consonants pile up. Plural by doubling the last syllable in speech (dobbum-bum), never in writing."
+   },
+   "sound_laws": null,
+   "elements": {
+    "river": {
+     "form": "wallo",
+     "bound": "wallo",
+     "tags": [
+      "f",
+      "w"
+     ],
+     "origin": "native"
+    },
+    "mountain": {
+     "form": "grumbel",
+     "bound": "grumbel",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "lake": {
+     "form": "pellim",
+     "bound": "pellim",
+     "tags": [
+      "f",
+      "w",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "valley": {
+     "form": "dobb",
+     "bound": "dobb",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "forest": {
+     "form": "brumel",
+     "bound": "brumel",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "ford": {
+     "form": "plodd",
+     "bound": "plodd",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hill": {
+     "form": "hummo",
+     "bound": "hummo",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "coast": {
+     "form": "lappel",
+     "bound": "lappel",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "island": {
+     "form": "obbel",
+     "bound": "obbel",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "bridge": {
+     "form": "tuppo",
+     "bound": "tuppo",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "wall": {
+     "form": "padd",
+     "bound": "padd",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "fort": {
+     "form": "stubb",
+     "bound": "stubb",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hall": {
+     "form": "ludd",
+     "bound": "ludd",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "high": {
+     "form": "huppe",
+     "bound": "huppe",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "low": {
+     "form": "lumb",
+     "bound": "lumb",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "old": {
+     "form": "oumo",
+     "bound": "oumo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "new": {
+     "form": "nibbe",
+     "bound": "nibbe",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "red": {
+     "form": "toumi",
+     "bound": "toumi",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "white": {
+     "form": "pillo",
+     "bound": "pillo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "dark": {
+     "form": "moumb",
+     "bound": "moumb",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "bright": {
+     "form": "lelli",
+     "bound": "lelli",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "holy": {
+     "form": "ommel",
+     "bound": "ommel",
+     "tags": [
+      "q",
+      "s"
+     ],
+     "origin": "native"
+    },
+    "king": {
+     "form": "bommo",
+     "bound": "bommo",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "queen": {
+     "form": "bomma",
+     "bound": "bomma",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "stone": {
+     "form": "tobbel",
+     "bound": "tobbel",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "iron": {
+     "form": "dangel",
+     "bound": "dangel",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "gold": {
+     "form": "loumi",
+     "bound": "loumi",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "green": {
+     "form": "vimmel",
+     "bound": "vimmel",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "small": {
+     "form": "tippe",
+     "bound": "tippe",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "great": {
+     "form": "mabbo",
+     "bound": "mabbo",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "deep": {
+     "form": "doumm",
+     "bound": "doumm",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "grey": {
+     "form": "gruppe",
+     "bound": "gruppe",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "black": {
+     "form": "mudde",
+     "bound": "mudde",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "home": {
+     "form": "pom",
+     "bound": "pom",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "field": {
+     "form": "tibb",
+     "bound": "tibb",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "grain": {
+     "form": "bupp",
+     "bound": "bupp",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "leaf": {
+     "form": "lebb",
+     "bound": "lebb",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "smoke": {
+     "form": "houm",
+     "bound": "houm",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "hearth": {
+     "form": "hemm",
+     "bound": "hemm",
+     "tags": [
+      "h",
+      "s"
+     ],
+     "origin": "native"
+    },
+    "house": {
+     "form": "woumel",
+     "bound": "woumel",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "door": {
+     "form": "doum",
+     "bound": "doum",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "town": {
+     "form": "tommel",
+     "bound": "tommel",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "gate": {
+     "form": "gappe",
+     "bound": "gappe",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "spring": {
+     "form": "sippel",
+     "bound": "sippel",
+     "tags": [
+      "f",
+      "w",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "water": {
+     "form": "wobbe",
+     "bound": "wobbe",
+     "tags": [
+      "w"
+     ],
+     "origin": "native"
+    },
+    "tree": {
+     "form": "treme",
+     "bound": "treme",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "oak": {
+     "form": "dummel",
+     "bound": "dummel",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "root": {
+     "form": "rubbe",
+     "bound": "rubbe",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "moss": {
+     "form": "mossim",
+     "bound": "mossim",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "marsh": {
+     "form": "muddel",
+     "bound": "muddel",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "rain": {
+     "form": "rimmel",
+     "bound": "rimmel",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "sun": {
+     "form": "summe",
+     "bound": "summe",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "moon": {
+     "form": "mounel",
+     "bound": "mounel",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "star": {
+     "form": "stippe",
+     "bound": "stippe",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "north": {
+     "form": "nommo",
+     "bound": "nommo",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "south": {
+     "form": "suddo",
+     "bound": "suddo",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "east": {
+     "form": "essel",
+     "bound": "essel",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "west": {
+     "form": "wessem",
+     "bound": "wessem",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "fish": {
+     "form": "lubbo",
+     "bound": "lubbo",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "boar": {
+     "form": "grummo",
+     "bound": "grummo",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "bear": {
+     "form": "brubbe",
+     "bound": "brubbe",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "raven": {
+     "form": "rabbe",
+     "bound": "rabbe",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "hawk": {
+     "form": "happel",
+     "bound": "happel",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "toad": {
+     "form": "tuddo",
+     "bound": "tuddo",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "seed": {
+     "form": "sebbe",
+     "bound": "sebbe",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "bell": {
+     "form": "bellem",
+     "bound": "bellem",
+     "tags": [
+      "s"
+     ],
+     "origin": "native"
+    },
+    "song": {
+     "form": "lillum",
+     "bound": "lillum",
+     "tags": [
+      "s"
+     ],
+     "origin": "native"
+    },
+    "road": {
+     "form": "roddel",
+     "bound": "roddel",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "pass": {
+     "form": "gappum",
+     "bound": "gappum",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "hedge": {
+     "form": "heggel",
+     "bound": "heggel",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    }
+   },
+   "suffixes": {
+    "settlement": [
+     {
+      "form": "um",
+      "weight": 4,
+      "gloss": "home"
+     },
+     {
+      "form": "el",
+      "weight": 3,
+      "gloss": "place"
+     },
+     {
+      "form": "ip",
+      "weight": 3,
+      "gloss": "hollow"
+     },
+     {
+      "form": "o",
+      "weight": 2,
+      "gloss": "little place"
+     }
+    ],
+    "region": [
+     {
+      "form": "um",
+      "weight": 3,
+      "gloss": "home-land"
+     },
+     {
+      "form": "an",
+      "weight": 2,
+      "gloss": "country"
+     }
+    ],
+    "river": [
+     {
+      "form": "ip",
+      "weight": 2,
+      "gloss": "brook"
+     }
+    ],
+    "sea": [
+     {
+      "form": "el",
+      "weight": 1,
+      "gloss": "water"
+     }
+    ],
+    "mountain": [
+     {
+      "form": "el",
+      "weight": 2,
+      "gloss": "hump"
+     }
+    ]
+   },
+   "place_patterns": {
+    "settlement": [
+     {
+      "pattern": "Q H",
+      "weight": 20
+     },
+     {
+      "pattern": "F H",
+      "weight": 16
+     },
+     {
+      "pattern": "A H",
+      "weight": 6
+     },
+     {
+      "pattern": "M H",
+      "weight": 5
+     },
+     {
+      "pattern": "N H",
+      "weight": 3
+     },
+     {
+      "pattern": "R H",
+      "weight": 3
+     },
+     {
+      "pattern": "E S",
+      "weight": 14
+     },
+     {
+      "pattern": "F S",
+      "weight": 22
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 6
+     },
+     {
+      "pattern": "F F S",
+      "weight": 5
+     }
+    ],
+    "region": [
+     {
+      "pattern": "F S",
+      "weight": 30
+     },
+     {
+      "pattern": "Q L",
+      "weight": 14
+     },
+     {
+      "pattern": "L S",
+      "weight": 14
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     },
+     {
+      "pattern": "N L",
+      "weight": 8
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 8
+     },
+     {
+      "pattern": "F L",
+      "weight": 12
+     }
+    ],
+    "river": [
+     {
+      "pattern": "Q W",
+      "weight": 24
+     },
+     {
+      "pattern": "F W",
+      "weight": 16
+     },
+     {
+      "pattern": "E S",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 8
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "M W",
+      "weight": 8
+     }
+    ],
+    "lake": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 16
+     },
+     {
+      "pattern": "F W",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "R W",
+      "weight": 8
+     }
+    ],
+    "sea": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 20
+     },
+     {
+      "pattern": "F W",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     }
+    ],
+    "mountain": [
+     {
+      "pattern": "Q L",
+      "weight": 30
+     },
+     {
+      "pattern": "A L",
+      "weight": 12
+     },
+     {
+      "pattern": "R L",
+      "weight": 10
+     },
+     {
+      "pattern": "F L",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "M L",
+      "weight": 10
+     }
+    ],
+    "site": [
+     {
+      "pattern": "S H",
+      "weight": 40
+     },
+     {
+      "pattern": "Q H",
+      "weight": 30
+     },
+     {
+      "pattern": "F H",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     }
+    ]
+   },
+   "suffix_kind_for": {
+    "settlement": "settlement",
+    "region": "region",
+    "river": "river",
+    "lake": "river",
+    "sea": "sea",
+    "mountain": "mountain",
+    "site": "settlement"
+   },
+   "person": {
+    "male": {
+     "stems": [
+      "pom",
+      "dobb",
+      "tibb",
+      "wib",
+      "hemm",
+      "lupp",
+      "hubb",
+      "bolm",
+      "merr",
+      "gubb",
+      "lodd",
+      "nopp",
+      "wobb"
+     ],
+     "endings": [
+      "o",
+      "el",
+      "um",
+      "ip",
+      "an",
+      "ard"
+     ]
+    },
+    "female": {
+     "stems": [
+      "lill",
+      "pabb",
+      "mimm",
+      "wenn",
+      "sipp",
+      "dobbi",
+      "hemmi",
+      "bossi",
+      "tobbi"
+     ],
+     "endings": [
+      "a",
+      "ie",
+      "il",
+      "elma",
+      "abel"
+     ]
+    },
+    "house": {
+     "style": "surname",
+     "stems": [
+      "dobb",
+      "tibb",
+      "hemm",
+      "lebb",
+      "bupp",
+      "wobb",
+      "brum",
+      "stubb",
+      "heggel",
+      "pom"
+     ],
+     "suffixes": [
+      "um",
+      "el",
+      "ip",
+      "ard"
+     ],
+     "notes": "A household name is the name of its door, its field or its hedge with -um or -el; families who keep the Watch's fords add -ip."
+    },
+    "patronymic": {
+     "forms": [],
+     "rule": "None; a household name says enough."
+    },
+    "epithets": [
+     [
+      "oumo",
+      "the old"
+     ],
+     [
+      "tippe",
+      "the small"
+     ],
+     [
+      "mabbo",
+      "the great"
+     ],
+     [
+      "lelli",
+      "the bright"
+     ]
+    ],
+    "titles": {
+     "ruler_m": "Warden of the Fields",
+     "ruler_f": "Warden of the Fields",
+     "moot": "Householder of the Moot"
+    },
+    "notes": "Every child has a hearth-name, used at home, and a field-name, used in Gunwyn with strangers."
+   },
+   "samples": {
+    "places": [
+     {
+      "name": "Tippehummo",
+      "recipe": "small hill",
+      "gloss": "small hill"
+     },
+     {
+      "name": "Oumosippel",
+      "recipe": "old spring",
+      "gloss": "old spring"
+     },
+     {
+      "name": "Lubbostubb",
+      "recipe": "fish fort",
+      "gloss": "fish fort"
+     },
+     {
+      "name": "Dangeldoum",
+      "recipe": "iron door",
+      "gloss": "iron door"
+     },
+     {
+      "name": "Obbeleplodd",
+      "recipe": "island ford",
+      "gloss": "island ford"
+     },
+     {
+      "name": "Suddopellim",
+      "recipe": "south lake",
+      "gloss": "south lake"
+     },
+     {
+      "name": "Lellobbel",
+      "recipe": "bright island",
+      "gloss": "bright island"
+     },
+     {
+      "name": "Heggelel",
+      "recipe": "hedge +el",
+      "gloss": "hedge -place"
+     },
+     {
+      "name": "Hummo",
+      "recipe": "hill +o",
+      "gloss": "hill -little place"
+     },
+     {
+      "name": "Gruppemuddel",
+      "recipe": "grey marsh",
+      "gloss": "grey marsh"
+     },
+     {
+      "name": "Pilloludd",
+      "recipe": "white hall",
+      "gloss": "white hall"
+     },
+     {
+      "name": "Rabbetommel",
+      "recipe": "raven town",
+      "gloss": "raven town"
+     },
+     {
+      "name": "Dangeltuppo",
+      "recipe": "iron bridge",
+      "gloss": "iron bridge"
+     },
+     {
+      "name": "Tobbelhemm",
+      "recipe": "stone hearth",
+      "gloss": "stone hearth"
+     },
+     {
+      "name": "Nommobbel",
+      "recipe": "north island",
+      "gloss": "north island"
+     },
+     {
+      "name": "Tippepellim",
+      "recipe": "small lake",
+      "gloss": "small lake"
+     },
+     {
+      "name": "Pellimum",
+      "recipe": "lake +um",
+      "gloss": "lake -home"
+     },
+     {
+      "name": "Tuppip",
+      "recipe": "bridge +ip",
+      "gloss": "bridge -hollow"
+     },
+     {
+      "name": "Lumbehummo",
+      "recipe": "low hill",
+      "gloss": "low hill"
+     },
+     {
+      "name": "Ommelgappe",
+      "recipe": "holy gate",
+      "gloss": "holy gate"
+     },
+     {
+      "name": "Lubbopadd",
+      "recipe": "fish wall",
+      "gloss": "fish wall"
+     },
+     {
+      "name": "Dangelwoumel",
+      "recipe": "iron house",
+      "gloss": "iron house"
+     },
+     {
+      "name": "Lebbeheggel",
+      "recipe": "leaf hedge",
+      "gloss": "leaf hedge"
+     },
+     {
+      "name": "Wessempellim",
+      "recipe": "west lake",
+      "gloss": "west lake"
+     },
+     {
+      "name": "Gruppobbel",
+      "recipe": "grey island",
+      "gloss": "grey island"
+     },
+     {
+      "name": "Ploddo",
+      "recipe": "ford +o",
+      "gloss": "ford -little place"
+     },
+     {
+      "name": "Tibbel",
+      "recipe": "field +el",
+      "gloss": "field -place"
+     },
+     {
+      "name": "Toumimuddel",
+      "recipe": "red marsh",
+      "gloss": "red marsh"
+     },
+     {
+      "name": "Mabbostubb",
+      "recipe": "great fort",
+      "gloss": "great fort"
+     },
+     {
+      "name": "Rabbedoum",
+      "recipe": "raven door",
+      "gloss": "raven door"
+     }
+    ],
+    "persons": [
+     {
+      "name": "Pomel Dobbum",
+      "recipe": "G pom+el | H dobb+um",
+      "sex": "m"
+     },
+     {
+      "name": "Luppan Stubbel",
+      "recipe": "G lupp+an | H stubb+el",
+      "sex": "m"
+     },
+     {
+      "name": "Loddel Buppip",
+      "recipe": "G lodd+el | H bupp+ip",
+      "sex": "m"
+     },
+     {
+      "name": "Tibban Tibbard",
+      "recipe": "G tibb+an | H tibb+ard",
+      "sex": "m"
+     },
+     {
+      "name": "Bolmel Heggelum",
+      "recipe": "G bolm+el | H heggel+um",
+      "sex": "m"
+     },
+     {
+      "name": "Wobban Wobbel",
+      "recipe": "G wobb+an | H wobb+el",
+      "sex": "m"
+     },
+     {
+      "name": "Hemmel Hemmip",
+      "recipe": "G hemm+el | H hemm+ip",
+      "sex": "m"
+     },
+     {
+      "name": "Gubban Pomard",
+      "recipe": "G gubb+an | H pom+ard",
+      "sex": "m"
+     },
+     {
+      "name": "Dobbel Brumum",
+      "recipe": "G dobb+el | H brum+um",
+      "sex": "m"
+     },
+     {
+      "name": "Hubban Lebbel",
+      "recipe": "G hubb+an | H lebb+el",
+      "sex": "m"
+     },
+     {
+      "name": "Noppel Dobbip",
+      "recipe": "G nopp+el | H dobb+ip",
+      "sex": "m"
+     },
+     {
+      "name": "Wiban Stubbard",
+      "recipe": "G wib+an | H stubb+ard",
+      "sex": "m"
+     },
+     {
+      "name": "Merrel Buppum",
+      "recipe": "G merr+el | H bupp+um",
+      "sex": "m"
+     },
+     {
+      "name": "Poman Tibbel",
+      "recipe": "G pom+an | H tibb+el",
+      "sex": "m"
+     },
+     {
+      "name": "Luppel Heggelip",
+      "recipe": "G lupp+el | H heggel+ip",
+      "sex": "m"
+     },
+     {
+      "name": "Wennie Wobbard",
+      "recipe": "F wenn+ie | H wobb+ard",
+      "sex": "f"
+     },
+     {
+      "name": "Tobbabel Hemmum",
+      "recipe": "F tobbi+abel | H hemm+um",
+      "sex": "f"
+     },
+     {
+      "name": "Sippil Pomel",
+      "recipe": "F sipp+il | H pom+el",
+      "sex": "f"
+     },
+     {
+      "name": "Lilla Brumip",
+      "recipe": "F lill+a | H brum+ip",
+      "sex": "f"
+     },
+     {
+      "name": "Dobbelma Lebbard",
+      "recipe": "F dobbi+elma | H lebb+ard",
+      "sex": "f"
+     },
+     {
+      "name": "Pabbie Dobbum",
+      "recipe": "F pabb+ie | H dobb+um",
+      "sex": "f"
+     },
+     {
+      "name": "Hemmabel Stubbel",
+      "recipe": "F hemmi+abel | H stubb+el",
+      "sex": "f"
+     },
+     {
+      "name": "Mimmil Buppip",
+      "recipe": "F mimm+il | H bupp+ip",
+      "sex": "f"
+     },
+     {
+      "name": "Bossa Tibbard",
+      "recipe": "F bossi+a | H tibb+ard",
+      "sex": "f"
+     },
+     {
+      "name": "Wennelma Heggelum",
+      "recipe": "F wenn+elma | H heggel+um",
+      "sex": "f"
+     },
+     {
+      "name": "Tobbie Wobbel",
+      "recipe": "F tobbi+ie | H wobb+el",
+      "sex": "f"
+     },
+     {
+      "name": "Sippabel Hemmip",
+      "recipe": "F sipp+abel | H hemm+ip",
+      "sex": "f"
+     },
+     {
+      "name": "Lillil Pomard",
+      "recipe": "F lill+il | H pom+ard",
+      "sex": "f"
+     },
+     {
+      "name": "Dobba Brumum",
+      "recipe": "F dobbi+a | H brum+um",
+      "sex": "f"
+     },
+     {
+      "name": "Pabbelma Lebbel",
+      "recipe": "F pabb+elma | H lebb+el",
+      "sex": "f"
+     }
+    ]
+   },
+   "established_names": [
+    {
+     "name": "Dobbum",
+     "kind": "country",
+     "fit": "inventory-compatible",
+     "reading": "Hearth-Speech dobb \"vale\" + -um \"home\": the home vale. Men of Gunwyn call it Dolw-Grewn, \"the Green Vale\" (former label Hky; proposed)."
+    },
+    {
+     "name": "Luddum",
+     "kind": "seat",
+     "fit": "inventory-compatible",
+     "reading": "Hearth-Speech ludd \"hall\" + -um \"home\": the moot-hall where the Warden of the Fields sits (proposed)."
+    }
+   ],
+   "measured_capacity": {
+    "places": 3000,
+    "persons": 227
+   }
+  },
+  "pack_tongue": {
+   "id": "pack_tongue",
+   "name": "Pack-Tongue",
+   "endonym": "Mustak",
+   "family": "isolate",
+   "parent": null,
+   "status": "living",
+   "summary": "The speech of the dwarf goblins: blunt, nasal words packed with st, sk and kn, endings in -om, -um, -ust and -ak, and many trade words taken from Leren on the road. Its kinship with Dwarvish or with Goblin Cant is unknown; the dwarf goblins do not say, and the words they share with both look like loans.",
+   "speakers": [
+    "Road-warrens of Mustnom"
+   ],
+   "script": {
+    "name": "Knot-tallies",
+    "feel": "knots on the pack-straps, one knot for each load carried and paid; a boss reads a strap like a ledger",
+    "status": "P"
+   },
+   "sound": {
+    "consonants": "b d g k m n r s t l v",
+    "vowels": "u o a i",
+    "diphthongs": "",
+    "syllable": "(C)(C)V(C)(C), one or two syllables",
+    "codas": "m n k r st sk",
+    "stress": "first syllable",
+    "orthography": "st, sk and kn stand at both ends of a word. There is no e, h or p: a Leren e becomes i in loans.",
+    "rules": [
+     "no e, h, p",
+     "names end in -om -um -ust -ak -ur",
+     "loans from Leren keep -ur"
+    ],
+    "signature": [
+     "st",
+     "kn",
+     "sk",
+     "ends -om -um -ust -ak"
+    ]
+   },
+   "morphology": {
+    "order": "mod-head",
+    "join": "closed",
+    "junction": {
+     "vv": "elide-left",
+     "cc": "keep",
+     "maxC": 3
+    },
+    "junction_person": {
+     "vv": "elide-left",
+     "cc": "link-if:u",
+     "maxC": 3
+    },
+    "bound_stem_strip": null,
+    "notes": "Compounds are closed and stress the first part. Plural by -ust. A loan from Leren keeps its ending -ur, which the dwarf goblins use for any boss's seat."
+   },
+   "sound_laws": null,
+   "elements": {
+    "river": {
+     "form": "suv",
+     "bound": "suv",
+     "tags": [
+      "f",
+      "w"
+     ],
+     "origin": "native"
+    },
+    "mountain": {
+     "form": "tumsk",
+     "bound": "tumsk",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "lake": {
+     "form": "lomm",
+     "bound": "lomm",
+     "tags": [
+      "f",
+      "w",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "valley": {
+     "form": "dulk",
+     "bound": "dulk",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "forest": {
+     "form": "knur",
+     "bound": "knur",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "ford": {
+     "form": "gurt",
+     "bound": "gurt",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hill": {
+     "form": "must",
+     "bound": "must",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "coast": {
+     "form": "skur",
+     "bound": "skur",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "island": {
+     "form": "ruk",
+     "bound": "ruk",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "bridge": {
+     "form": "sturk",
+     "bound": "sturk",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "wall": {
+     "form": "skam",
+     "bound": "skam",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "fort": {
+     "form": "kurst",
+     "bound": "kurst",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hall": {
+     "form": "nom",
+     "bound": "nom",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "high": {
+     "form": "stav",
+     "bound": "stav",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "low": {
+     "form": "dunn",
+     "bound": "dunn",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "old": {
+     "form": "maust",
+     "bound": "maust",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "new": {
+     "form": "nik",
+     "bound": "nik",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "red": {
+     "form": "kir",
+     "bound": "kir",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "white": {
+     "form": "sim",
+     "bound": "sim",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "dark": {
+     "form": "mok",
+     "bound": "mok",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "bright": {
+     "form": "glin",
+     "bound": "glin",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "holy": {
+     "form": "vist",
+     "bound": "vist",
+     "tags": [
+      "q",
+      "s"
+     ],
+     "origin": "native"
+    },
+    "king": {
+     "form": "knam",
+     "bound": "knam",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "queen": {
+     "form": "knama",
+     "bound": "knama",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "stone": {
+     "form": "skart",
+     "bound": "skart",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "iron": {
+     "form": "krak",
+     "bound": "krak",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "gold": {
+     "form": "ustak",
+     "bound": "ustak",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "silver": {
+     "form": "sirn",
+     "bound": "sirn",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "road": {
+     "form": "trusk",
+     "bound": "trusk",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "pack": {
+     "form": "snum",
+     "bound": "snum",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "cave": {
+     "form": "kut",
+     "bound": "kut",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "pit": {
+     "form": "dum",
+     "bound": "dum",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "tunnel": {
+     "form": "gromst",
+     "bound": "gromst",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "market": {
+     "form": "tuskur",
+     "bound": "tuskur",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "boss": {
+     "form": "gak",
+     "bound": "gak",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "seat": {
+     "form": "ur",
+     "bound": "ur",
+     "tags": [
+      "h"
+     ],
+     "origin": "loan"
+    },
+    "load": {
+     "form": "bask",
+     "bound": "bask",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "great": {
+     "form": "muk",
+     "bound": "muk",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "small": {
+     "form": "tik",
+     "bound": "tik",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "deep": {
+     "form": "dunsk",
+     "bound": "dunsk",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "black": {
+     "form": "murn",
+     "bound": "murn",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "grey": {
+     "form": "grisk",
+     "bound": "grisk",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "wolf": {
+     "form": "vurm",
+     "bound": "vurm",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "rat": {
+     "form": "rask",
+     "bound": "rask",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "raven": {
+     "form": "knak",
+     "bound": "knak",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "water": {
+     "form": "vot",
+     "bound": "vot",
+     "tags": [
+      "w"
+     ],
+     "origin": "native"
+    },
+    "spring": {
+     "form": "gulm",
+     "bound": "gulm",
+     "tags": [
+      "f",
+      "w",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "tree": {
+     "form": "struk",
+     "bound": "struk",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "fire": {
+     "form": "brast",
+     "bound": "brast",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "smoke": {
+     "form": "smurk",
+     "bound": "smurk",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "forge": {
+     "form": "knost",
+     "bound": "knost",
+     "tags": [
+      "h",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "north": {
+     "form": "nurk",
+     "bound": "nurk",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "south": {
+     "form": "dursk",
+     "bound": "dursk",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "east": {
+     "form": "vorsk",
+     "bound": "vorsk",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "west": {
+     "form": "vask",
+     "bound": "vask",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "gate": {
+     "form": "gattur",
+     "bound": "gattur",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "town": {
+     "form": "murt",
+     "bound": "murt",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "house": {
+     "form": "krub",
+     "bound": "krub",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "salt": {
+     "form": "skalt",
+     "bound": "skalt",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "knife": {
+     "form": "skniv",
+     "bound": "skniv",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "night": {
+     "form": "nokst",
+     "bound": "nokst",
+     "tags": [
+      "q",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "mud": {
+     "form": "mugg",
+     "bound": "mugg",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    }
+   },
+   "suffixes": {
+    "settlement": [
+     {
+      "form": "om",
+      "weight": 4,
+      "gloss": "warren"
+     },
+     {
+      "form": "um",
+      "weight": 3,
+      "gloss": "cave"
+     },
+     {
+      "form": "ust",
+      "weight": 2,
+      "gloss": "the many"
+     },
+     {
+      "form": "ak",
+      "weight": 3,
+      "gloss": "place"
+     }
+    ],
+    "region": [
+     {
+      "form": "om",
+      "weight": 3,
+      "gloss": "warrens"
+     },
+     {
+      "form": "ak",
+      "weight": 2,
+      "gloss": "land"
+     }
+    ],
+    "river": [
+     {
+      "form": "um",
+      "weight": 2,
+      "gloss": "water"
+     }
+    ],
+    "sea": [
+     {
+      "form": "um",
+      "weight": 1,
+      "gloss": "water"
+     }
+    ],
+    "mountain": [
+     {
+      "form": "ak",
+      "weight": 2,
+      "gloss": "top"
+     }
+    ]
+   },
+   "place_patterns": {
+    "settlement": [
+     {
+      "pattern": "Q H",
+      "weight": 20
+     },
+     {
+      "pattern": "F H",
+      "weight": 16
+     },
+     {
+      "pattern": "A H",
+      "weight": 6
+     },
+     {
+      "pattern": "M H",
+      "weight": 5
+     },
+     {
+      "pattern": "N H",
+      "weight": 3
+     },
+     {
+      "pattern": "R H",
+      "weight": 3
+     },
+     {
+      "pattern": "E S",
+      "weight": 14
+     },
+     {
+      "pattern": "F S",
+      "weight": 22
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 6
+     },
+     {
+      "pattern": "F F S",
+      "weight": 5
+     }
+    ],
+    "region": [
+     {
+      "pattern": "F S",
+      "weight": 30
+     },
+     {
+      "pattern": "Q L",
+      "weight": 14
+     },
+     {
+      "pattern": "L S",
+      "weight": 14
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     },
+     {
+      "pattern": "N L",
+      "weight": 8
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 8
+     },
+     {
+      "pattern": "F L",
+      "weight": 12
+     }
+    ],
+    "river": [
+     {
+      "pattern": "Q W",
+      "weight": 24
+     },
+     {
+      "pattern": "F W",
+      "weight": 16
+     },
+     {
+      "pattern": "E S",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 8
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "M W",
+      "weight": 8
+     }
+    ],
+    "lake": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 16
+     },
+     {
+      "pattern": "F W",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "R W",
+      "weight": 8
+     }
+    ],
+    "sea": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 20
+     },
+     {
+      "pattern": "F W",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     }
+    ],
+    "mountain": [
+     {
+      "pattern": "Q L",
+      "weight": 30
+     },
+     {
+      "pattern": "A L",
+      "weight": 12
+     },
+     {
+      "pattern": "R L",
+      "weight": 10
+     },
+     {
+      "pattern": "F L",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "M L",
+      "weight": 10
+     }
+    ],
+    "site": [
+     {
+      "pattern": "S H",
+      "weight": 40
+     },
+     {
+      "pattern": "Q H",
+      "weight": 30
+     },
+     {
+      "pattern": "F H",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     }
+    ]
+   },
+   "suffix_kind_for": {
+    "settlement": "settlement",
+    "region": "region",
+    "river": "river",
+    "lake": "river",
+    "sea": "sea",
+    "mountain": "mountain",
+    "site": "settlement"
+   },
+   "person": {
+    "male": {
+     "stems": [
+      "krak",
+      "gak",
+      "must",
+      "skorn",
+      "knur",
+      "dulk",
+      "snok",
+      "trusk",
+      "vurm",
+      "snum",
+      "gurt",
+      "mok",
+      "stav"
+     ],
+     "endings": [
+      "ak",
+      "om",
+      "ust",
+      "ik",
+      "un",
+      "ar"
+     ]
+    },
+    "female": {
+     "stems": [
+      "knuta",
+      "skrota",
+      "gumna",
+      "glina",
+      "simi",
+      "vota",
+      "rusk",
+      "lomm"
+     ],
+     "endings": [
+      "a",
+      "ka",
+      "ina",
+      "is"
+     ]
+    },
+    "house": {
+     "style": "none",
+     "stems": [],
+     "suffixes": []
+    },
+    "patronymic": {
+     "forms": [],
+     "rule": "None; a dwarf goblin is known by his boss and his road."
+    },
+    "epithets": [
+     [
+      "maust",
+      "the old"
+     ],
+     [
+      "muk",
+      "the great"
+     ],
+     [
+      "tik",
+      "the small"
+     ],
+     [
+      "mok",
+      "the dark"
+     ]
+    ],
+    "titles": {
+     "ruler_m": "Boss",
+     "ruler_f": "Boss",
+     "carrier": "Road-Carrier"
+    },
+    "notes": "A boss takes the name of his cave with -ur when he takes the cave."
+   },
+   "samples": {
+    "places": [
+     {
+      "name": "Dulkom",
+      "recipe": "valley +om",
+      "gloss": "valley -warren"
+     },
+     {
+      "name": "Tikmust",
+      "recipe": "small hill",
+      "gloss": "small hill"
+     },
+     {
+      "name": "Maustgattur",
+      "recipe": "old gate",
+      "gloss": "old gate"
+     },
+     {
+      "name": "Vurmskam",
+      "recipe": "wolf wall",
+      "gloss": "wolf wall"
+     },
+     {
+      "name": "Kraktuskur",
+      "recipe": "iron market",
+      "gloss": "iron market"
+     },
+     {
+      "name": "Skartmurt",
+      "recipe": "stone town",
+      "gloss": "stone town"
+     },
+     {
+      "name": "Glinlomm",
+      "recipe": "bright lake",
+      "gloss": "bright lake"
+     },
+     {
+      "name": "Gurtum",
+      "recipe": "ford +um",
+      "gloss": "ford -cave"
+     },
+     {
+      "name": "Truskak",
+      "recipe": "road +ak",
+      "gloss": "road -place"
+     },
+     {
+      "name": "Simgurt",
+      "recipe": "white ford",
+      "gloss": "white ford"
+     },
+     {
+      "name": "Vurmkut",
+      "recipe": "wolf cave",
+      "gloss": "wolf cave"
+     },
+     {
+      "name": "Skaltknost",
+      "recipe": "salt forge",
+      "gloss": "salt forge"
+     },
+     {
+      "name": "Braststurk",
+      "recipe": "fire bridge",
+      "gloss": "fire bridge"
+     },
+     {
+      "name": "Nurkruk",
+      "recipe": "north island",
+      "gloss": "north island"
+     },
+     {
+      "name": "Kutom",
+      "recipe": "cave +om",
+      "gloss": "cave -warren"
+     },
+     {
+      "name": "Smurkust",
+      "recipe": "smoke +ust",
+      "gloss": "smoke -the many"
+     },
+     {
+      "name": "Dunndum",
+      "recipe": "low pit",
+      "gloss": "low pit"
+     },
+     {
+      "name": "Vistkurst",
+      "recipe": "holy fort",
+      "gloss": "holy fort"
+     },
+     {
+      "name": "Vurmur",
+      "recipe": "wolf seat",
+      "gloss": "wolf seat"
+     },
+     {
+      "name": "Ustakkrub",
+      "recipe": "gold house",
+      "gloss": "gold house"
+     },
+     {
+      "name": "Lommnom",
+      "recipe": "lake hall",
+      "gloss": "lake hall"
+     },
+     {
+      "name": "Vaskdulk",
+      "recipe": "west valley",
+      "gloss": "west valley"
+     },
+     {
+      "name": "Grisktumsk",
+      "recipe": "grey mountain",
+      "gloss": "grey mountain"
+     },
+     {
+      "name": "Skaltak",
+      "recipe": "salt +ak",
+      "gloss": "salt -place"
+     },
+     {
+      "name": "Dulkum",
+      "recipe": "valley +um",
+      "gloss": "valley -cave"
+     },
+     {
+      "name": "Kirmust",
+      "recipe": "red hill",
+      "gloss": "red hill"
+     },
+     {
+      "name": "Dunskdum",
+      "recipe": "deep pit",
+      "gloss": "deep pit"
+     },
+     {
+      "name": "Vurmgattur",
+      "recipe": "wolf gate",
+      "gloss": "wolf gate"
+     },
+     {
+      "name": "Skartskam",
+      "recipe": "stone wall",
+      "gloss": "stone wall"
+     },
+     {
+      "name": "Skarttuskur",
+      "recipe": "stone market",
+      "gloss": "stone market"
+     }
+    ],
+    "persons": [
+     {
+      "name": "Krakom",
+      "recipe": "G krak+om",
+      "sex": "m"
+     },
+     {
+      "name": "Dulkun",
+      "recipe": "G dulk+un",
+      "sex": "m"
+     },
+     {
+      "name": "Gurtom",
+      "recipe": "G gurt+om",
+      "sex": "m"
+     },
+     {
+      "name": "Mustun",
+      "recipe": "G must+un",
+      "sex": "m"
+     },
+     {
+      "name": "Truskom",
+      "recipe": "G trusk+om",
+      "sex": "m"
+     },
+     {
+      "name": "Stavun",
+      "recipe": "G stav+un",
+      "sex": "m"
+     },
+     {
+      "name": "Knurom",
+      "recipe": "G knur+om",
+      "sex": "m"
+     },
+     {
+      "name": "Snumun",
+      "recipe": "G snum+un",
+      "sex": "m"
+     },
+     {
+      "name": "Gakom",
+      "recipe": "G gak+om",
+      "sex": "m"
+     },
+     {
+      "name": "Snokun",
+      "recipe": "G snok+un",
+      "sex": "m"
+     },
+     {
+      "name": "Mokom",
+      "recipe": "G mok+om",
+      "sex": "m"
+     },
+     {
+      "name": "Skornun",
+      "recipe": "G skorn+un",
+      "sex": "m"
+     },
+     {
+      "name": "Vurmom",
+      "recipe": "G vurm+om",
+      "sex": "m"
+     },
+     {
+      "name": "Krakun",
+      "recipe": "G krak+un",
+      "sex": "m"
+     },
+     {
+      "name": "Dulkom",
+      "recipe": "G dulk+om",
+      "sex": "m"
+     },
+     {
+      "name": "Glinina",
+      "recipe": "F glina+ina",
+      "sex": "f"
+     },
+     {
+      "name": "Knutaka",
+      "recipe": "F knuta+ka",
+      "sex": "f"
+     },
+     {
+      "name": "Vota",
+      "recipe": "F vota+a",
+      "sex": "f"
+     },
+     {
+      "name": "Gumnis",
+      "recipe": "F gumna+is",
+      "sex": "f"
+     },
+     {
+      "name": "Lommina",
+      "recipe": "F lomm+ina",
+      "sex": "f"
+     },
+     {
+      "name": "Simika",
+      "recipe": "F simi+ka",
+      "sex": "f"
+     },
+     {
+      "name": "Skrota",
+      "recipe": "F skrota+a",
+      "sex": "f"
+     },
+     {
+      "name": "Ruskis",
+      "recipe": "F rusk+is",
+      "sex": "f"
+     }
+    ]
+   },
+   "established_names": [
+    {
+     "name": "Mustnom",
+     "kind": "country",
+     "fit": "inventory-compatible",
+     "reading": "Pack-Tongue must \"hill\" + nom \"hall, warren\": the hill warrens. The drawn label, kept (proposed reading)."
+    },
+    {
+     "name": "Krakur",
+     "kind": "seat",
+     "fit": "inventory-compatible",
+     "reading": "Pack-Tongue krak \"iron\" + ur \"a boss's seat\" (a Leren loan): the iron seat, where the boss gives out the iron (proposed)."
+    }
+   ],
+   "measured_capacity": {
+    "places": 3000,
+    "persons": 173
+   }
+  },
+  "lowspeech": {
+   "id": "lowspeech",
+   "name": "the Low Speech",
+   "endonym": "Uarvoam",
+   "family": "isolate",
+   "parent": null,
+   "status": "living",
+   "summary": "The low voices that the rangers hear in the Aenor Forest: the speech of the Baelim, slow and creaking, built of long vowels said in two beats (oa, ua) and soft endings in -orv, -oam and -uar. It has no hiss and no click. No man speaks it; a few rangers know a handful of words, and the Baelim answer men in the Common Speech, slowly.",
+   "speakers": [
+    "Baelim of the Aenor Forest"
+   ],
+   "script": {
+    "name": "Bark-rings",
+    "feel": "no writing; a stand remembers by the rings it grows and the scars it keeps",
+    "status": "P"
+   },
+   "sound": {
+    "consonants": "b d g m n r l v h k",
+    "vowels": "a o u e",
+    "diphthongs": "oa ua au",
+    "syllable": "CVC, slow, one to three syllables",
+    "codas": "m n r l rv rm lb lm",
+    "stress": "first syllable",
+    "orthography": "oa and ua are said slowly in two beats. There is no s, t or p: the voice has no hiss and no click.",
+    "rules": [
+     "no s, t, p, i",
+     "names end in -orv -oam -uar -arm -ulm",
+     "never a cluster at the start of a word"
+    ],
+    "signature": [
+     "oa",
+     "ua",
+     "rv",
+     "ends -orv -oam -uar -ulm"
+    ]
+   },
+   "morphology": {
+    "order": "mod-head",
+    "join": "closed",
+    "junction": {
+     "vv": "elide-left",
+     "cc": "link-if:o",
+     "maxC": 2
+    },
+    "junction_person": {
+     "vv": "elide-left",
+     "cc": "link-if:o",
+     "maxC": 2
+    },
+    "bound_stem_strip": null,
+    "notes": "A name is said slowly and grows by adding roots: a young stand has one root, an old one three. No plural; a stand is one and many."
+   },
+   "sound_laws": null,
+   "elements": {
+    "river": {
+     "form": "goarv",
+     "bound": "goarv",
+     "tags": [
+      "f",
+      "w"
+     ],
+     "origin": "native"
+    },
+    "mountain": {
+     "form": "hulm",
+     "bound": "hulm",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "lake": {
+     "form": "boam",
+     "bound": "boam",
+     "tags": [
+      "f",
+      "w",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "valley": {
+     "form": "nuarl",
+     "bound": "nuarl",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "forest": {
+     "form": "boarv",
+     "bound": "boarv",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "ford": {
+     "form": "glum",
+     "bound": "glum",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hill": {
+     "form": "ruam",
+     "bound": "ruam",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "coast": {
+     "form": "lorm",
+     "bound": "lorm",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "island": {
+     "form": "moal",
+     "bound": "moal",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "bridge": {
+     "form": "vorl",
+     "bound": "vorl",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "wall": {
+     "form": "bualm",
+     "bound": "bualm",
+     "tags": [
+      "f",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "fort": {
+     "form": "korv",
+     "bound": "korv",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "hall": {
+     "form": "uarm",
+     "bound": "uarm",
+     "tags": [
+      "h"
+     ],
+     "origin": "native"
+    },
+    "high": {
+     "form": "hoal",
+     "bound": "hoal",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "low": {
+     "form": "nuam",
+     "bound": "nuam",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "old": {
+     "form": "graul",
+     "bound": "graul",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "new": {
+     "form": "nebb",
+     "bound": "nebb",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "red": {
+     "form": "ruar",
+     "bound": "ruar",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "white": {
+     "form": "lual",
+     "bound": "lual",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "dark": {
+     "form": "doam",
+     "bound": "doam",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "bright": {
+     "form": "vela",
+     "bound": "vela",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "holy": {
+     "form": "oalm",
+     "bound": "oalm",
+     "tags": [
+      "q",
+      "s"
+     ],
+     "origin": "native"
+    },
+    "king": {
+     "form": "uarv",
+     "bound": "uarv",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "queen": {
+     "form": "uarva",
+     "bound": "uarva",
+     "tags": [
+      "r"
+     ],
+     "origin": "native"
+    },
+    "stone": {
+     "form": "gorl",
+     "bound": "gorl",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "iron": {
+     "form": "kerv",
+     "bound": "kerv",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "gold": {
+     "form": "laum",
+     "bound": "laum",
+     "tags": [
+      "m"
+     ],
+     "origin": "native"
+    },
+    "tree": {
+     "form": "voa",
+     "bound": "voa",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "root": {
+     "form": "durv",
+     "bound": "durv",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "bark": {
+     "form": "rubb",
+     "bound": "rubb",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "leaf": {
+     "form": "luam",
+     "bound": "luam",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "sap": {
+     "form": "lerv",
+     "bound": "lerv",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "seed": {
+     "form": "nuab",
+     "bound": "nuab",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "moss": {
+     "form": "mol",
+     "bound": "mol",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "grove": {
+     "form": "uarb",
+     "bound": "uarb",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "rain": {
+     "form": "duar",
+     "bound": "duar",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "wind": {
+     "form": "hual",
+     "bound": "hual",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "sun": {
+     "form": "hauv",
+     "bound": "hauv",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "moon": {
+     "form": "noam",
+     "bound": "noam",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "star": {
+     "form": "lerm",
+     "bound": "lerm",
+     "tags": [
+      "s",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "night": {
+     "form": "morv",
+     "bound": "morv",
+     "tags": [
+      "q",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "mist": {
+     "form": "muarl",
+     "bound": "muarl",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "north": {
+     "form": "hoarn",
+     "bound": "hoarn",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "south": {
+     "form": "duam",
+     "bound": "duam",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "east": {
+     "form": "aurv",
+     "bound": "aurv",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "west": {
+     "form": "veml",
+     "bound": "veml",
+     "tags": [
+      "n"
+     ],
+     "origin": "native"
+    },
+    "water": {
+     "form": "ualm",
+     "bound": "ualm",
+     "tags": [
+      "w"
+     ],
+     "origin": "native"
+    },
+    "spring": {
+     "form": "gualb",
+     "bound": "gualb",
+     "tags": [
+      "f",
+      "w",
+      "h"
+     ],
+     "origin": "native"
+    },
+    "marsh": {
+     "form": "mauv",
+     "bound": "mauv",
+     "tags": [
+      "f",
+      "l"
+     ],
+     "origin": "native"
+    },
+    "deep": {
+     "form": "dolv",
+     "bound": "dolv",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "long": {
+     "form": "loarv",
+     "bound": "loarv",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "slow": {
+     "form": "oarm",
+     "bound": "oarm",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "great": {
+     "form": "goam",
+     "bound": "goam",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "small": {
+     "form": "nuel",
+     "bound": "nuel",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "green": {
+     "form": "vualm",
+     "bound": "vualm",
+     "tags": [
+      "q"
+     ],
+     "origin": "native"
+    },
+    "fire": {
+     "form": "kaum",
+     "bound": "kaum",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "ash": {
+     "form": "aulb",
+     "bound": "aulb",
+     "tags": [
+      "m",
+      "f"
+     ],
+     "origin": "native"
+    },
+    "bear": {
+     "form": "boal",
+     "bound": "boal",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "raven": {
+     "form": "kroam",
+     "bound": "kroam",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "eagle": {
+     "form": "hearn",
+     "bound": "hearn",
+     "tags": [
+      "a"
+     ],
+     "origin": "native"
+    },
+    "step": {
+     "form": "duarm",
+     "bound": "duarm",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    },
+    "sleep": {
+     "form": "nuarm",
+     "bound": "nuarm",
+     "tags": [
+      "f"
+     ],
+     "origin": "native"
+    }
+   },
+   "suffixes": {
+    "settlement": [
+     {
+      "form": "orv",
+      "weight": 4,
+      "gloss": "stand"
+     },
+     {
+      "form": "oam",
+      "weight": 3,
+      "gloss": "clearing"
+     },
+     {
+      "form": "uar",
+      "weight": 3,
+      "gloss": "old place"
+     }
+    ],
+    "region": [
+     {
+      "form": "orv",
+      "weight": 3,
+      "gloss": "the stands"
+     },
+     {
+      "form": "ulm",
+      "weight": 2,
+      "gloss": "wood"
+     }
+    ],
+    "river": [
+     {
+      "form": "uar",
+      "weight": 2,
+      "gloss": "water"
+     }
+    ],
+    "sea": [
+     {
+      "form": "uar",
+      "weight": 1,
+      "gloss": "water"
+     }
+    ],
+    "mountain": [
+     {
+      "form": "ulm",
+      "weight": 2,
+      "gloss": "height"
+     }
+    ]
+   },
+   "place_patterns": {
+    "settlement": [
+     {
+      "pattern": "Q H",
+      "weight": 20
+     },
+     {
+      "pattern": "F H",
+      "weight": 16
+     },
+     {
+      "pattern": "A H",
+      "weight": 6
+     },
+     {
+      "pattern": "M H",
+      "weight": 5
+     },
+     {
+      "pattern": "N H",
+      "weight": 3
+     },
+     {
+      "pattern": "R H",
+      "weight": 3
+     },
+     {
+      "pattern": "E S",
+      "weight": 14
+     },
+     {
+      "pattern": "F S",
+      "weight": 22
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 6
+     },
+     {
+      "pattern": "F F S",
+      "weight": 5
+     }
+    ],
+    "region": [
+     {
+      "pattern": "F S",
+      "weight": 30
+     },
+     {
+      "pattern": "Q L",
+      "weight": 14
+     },
+     {
+      "pattern": "L S",
+      "weight": 14
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     },
+     {
+      "pattern": "N L",
+      "weight": 8
+     },
+     {
+      "pattern": "Q F S",
+      "weight": 8
+     },
+     {
+      "pattern": "F L",
+      "weight": 12
+     }
+    ],
+    "river": [
+     {
+      "pattern": "Q W",
+      "weight": 24
+     },
+     {
+      "pattern": "F W",
+      "weight": 16
+     },
+     {
+      "pattern": "E S",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 8
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "M W",
+      "weight": 8
+     }
+    ],
+    "lake": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 16
+     },
+     {
+      "pattern": "F W",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "A W",
+      "weight": 8
+     },
+     {
+      "pattern": "R W",
+      "weight": 8
+     }
+    ],
+    "sea": [
+     {
+      "pattern": "Q W",
+      "weight": 30
+     },
+     {
+      "pattern": "N W",
+      "weight": 20
+     },
+     {
+      "pattern": "F W",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     }
+    ],
+    "mountain": [
+     {
+      "pattern": "Q L",
+      "weight": 30
+     },
+     {
+      "pattern": "A L",
+      "weight": 12
+     },
+     {
+      "pattern": "R L",
+      "weight": 10
+     },
+     {
+      "pattern": "F L",
+      "weight": 18
+     },
+     {
+      "pattern": "E S",
+      "weight": 20
+     },
+     {
+      "pattern": "M L",
+      "weight": 10
+     }
+    ],
+    "site": [
+     {
+      "pattern": "S H",
+      "weight": 40
+     },
+     {
+      "pattern": "Q H",
+      "weight": 30
+     },
+     {
+      "pattern": "F H",
+      "weight": 20
+     },
+     {
+      "pattern": "E S",
+      "weight": 10
+     }
+    ]
+   },
+   "suffix_kind_for": {
+    "settlement": "settlement",
+    "region": "region",
+    "river": "river",
+    "lake": "river",
+    "sea": "sea",
+    "mountain": "mountain",
+    "site": "settlement"
+   },
+   "person": {
+    "male": {
+     "stems": [
+      "goarv",
+      "hulm",
+      "durv",
+      "boar",
+      "uarl",
+      "gorl",
+      "morv",
+      "lerv",
+      "korv",
+      "vaul",
+      "graul",
+      "ruam"
+     ],
+     "endings": [
+      "om",
+      "ar",
+      "ev",
+      "ul",
+      "orm",
+      "oan"
+     ]
+    },
+    "female": {
+     "stems": [
+      "nualm",
+      "noam",
+      "boal",
+      "vuel",
+      "hual",
+      "muarl",
+      "loarl",
+      "nuab"
+     ],
+     "endings": [
+      "a",
+      "e",
+      "oa",
+      "oal",
+      "enn"
+     ]
+    },
+    "house": {
+     "style": "none",
+     "stems": [],
+     "suffixes": []
+    },
+    "patronymic": {
+     "forms": [],
+     "rule": "None; a Baelen is named for its stand, and the stand for its oldest tree."
+    },
+    "epithets": [
+     [
+      "graul",
+      "the old"
+     ],
+     [
+      "oarm",
+      "the slow"
+     ],
+     [
+      "goam",
+      "the great"
+     ],
+     [
+      "doam",
+      "the dark"
+     ]
+    ],
+    "titles": {
+     "ruler_m": "the Eldest",
+     "ruler_f": "the Eldest"
+    },
+    "notes": "The Eldest speaks for the stand at the moot; a moot can last a season."
+   },
+   "samples": {
+    "places": [
+     {
+      "name": "Nuarlorv",
+      "recipe": "valley +orv",
+      "gloss": "valley -stand"
+     },
+     {
+      "name": "Dolvoruam",
+      "recipe": "deep hill",
+      "gloss": "deep hill"
+     },
+     {
+      "name": "Nuamgualb",
+      "recipe": "low spring",
+      "gloss": "low spring"
+     },
+     {
+      "name": "Boaluarm",
+      "recipe": "bear hall",
+      "gloss": "bear hall"
+     },
+     {
+      "name": "Aulbokorv",
+      "recipe": "ash fort",
+      "gloss": "ash fort"
+     },
+     {
+      "name": "Glumbualm",
+      "recipe": "ford wall",
+      "gloss": "ford wall"
+     },
+     {
+      "name": "Duamruam",
+      "recipe": "south hill",
+      "gloss": "south hill"
+     },
+     {
+      "name": "Ruarhulm",
+      "recipe": "red mountain",
+      "gloss": "red mountain"
+     },
+     {
+      "name": "Muarloam",
+      "recipe": "mist +oam",
+      "gloss": "mist -clearing"
+     },
+     {
+      "name": "Goarvorv",
+      "recipe": "river +orv",
+      "gloss": "river -stand"
+     },
+     {
+      "name": "Morvomol",
+      "recipe": "night moss",
+      "gloss": "night moss"
+     },
+     {
+      "name": "Hoalbualm",
+      "recipe": "high wall",
+      "gloss": "high wall"
+     },
+     {
+      "name": "Boalvorl",
+      "recipe": "bear bridge",
+      "gloss": "bear bridge"
+     },
+     {
+      "name": "Laumoglum",
+      "recipe": "gold ford",
+      "gloss": "gold ford"
+     },
+     {
+      "name": "Boamgualb",
+      "recipe": "lake spring",
+      "gloss": "lake spring"
+     },
+     {
+      "name": "Hoarnoruam",
+      "recipe": "north hill",
+      "gloss": "north hill"
+     },
+     {
+      "name": "Nebbohulm",
+      "recipe": "new mountain",
+      "gloss": "new mountain"
+     },
+     {
+      "name": "Noamoam",
+      "recipe": "moon +oam",
+      "gloss": "moon -clearing"
+     },
+     {
+      "name": "Aulborv",
+      "recipe": "ash +orv",
+      "gloss": "ash -stand"
+     },
+     {
+      "name": "Oalmaulb",
+      "recipe": "holy ash",
+      "gloss": "holy ash"
+     },
+     {
+      "name": "Vualmogualb",
+      "recipe": "green spring",
+      "gloss": "green spring"
+     },
+     {
+      "name": "Kervokorv",
+      "recipe": "iron fort",
+      "gloss": "iron fort"
+     },
+     {
+      "name": "Nuarmobualm",
+      "recipe": "sleep wall",
+      "gloss": "sleep wall"
+     },
+     {
+      "name": "Vemloruam",
+      "recipe": "west hill",
+      "gloss": "west hill"
+     },
+     {
+      "name": "Graulhulm",
+      "recipe": "old mountain",
+      "gloss": "old mountain"
+     },
+     {
+      "name": "Duaroam",
+      "recipe": "rain +oam",
+      "gloss": "rain -clearing"
+     },
+     {
+      "name": "Gualborv",
+      "recipe": "spring +orv",
+      "gloss": "spring -stand"
+     },
+     {
+      "name": "Velavorl",
+      "recipe": "bright bridge",
+      "gloss": "bright bridge"
+     },
+     {
+      "name": "Nuelbualm",
+      "recipe": "small wall",
+      "gloss": "small wall"
+     },
+     {
+      "name": "Gorloglum",
+      "recipe": "stone ford",
+      "gloss": "stone ford"
+     }
+    ],
+    "persons": [
+     {
+      "name": "Goarvar",
+      "recipe": "G goarv+ar",
+      "sex": "m"
+     },
+     {
+      "name": "Gorlorm",
+      "recipe": "G gorl+orm",
+      "sex": "m"
+     },
+     {
+      "name": "Graular",
+      "recipe": "G graul+ar",
+      "sex": "m"
+     },
+     {
+      "name": "Boarorm",
+      "recipe": "G boar+orm",
+      "sex": "m"
+     },
+     {
+      "name": "Korvar",
+      "recipe": "G korv+ar",
+      "sex": "m"
+     },
+     {
+      "name": "Hulmorm",
+      "recipe": "G hulm+orm",
+      "sex": "m"
+     },
+     {
+      "name": "Morvar",
+      "recipe": "G morv+ar",
+      "sex": "m"
+     },
+     {
+      "name": "Ruamorm",
+      "recipe": "G ruam+orm",
+      "sex": "m"
+     },
+     {
+      "name": "Uarlar",
+      "recipe": "G uarl+ar",
+      "sex": "m"
+     },
+     {
+      "name": "Vaulorm",
+      "recipe": "G vaul+orm",
+      "sex": "m"
+     },
+     {
+      "name": "Durvar",
+      "recipe": "G durv+ar",
+      "sex": "m"
+     },
+     {
+      "name": "Lervorm",
+      "recipe": "G lerv+orm",
+      "sex": "m"
+     }
+    ]
+   },
+   "established_names": [
+    {
+     "name": "Goamboarv",
+     "kind": "endonym",
+     "fit": "inventory-compatible",
+     "reading": "Low Speech goam \"great\" + boarv \"forest\": the great forest, the own name of the Baelim for the Aenor Forest (proposed)."
+    },
+    {
+     "name": "Graulvoa",
+     "kind": "endonym",
+     "fit": "inventory-compatible",
+     "reading": "Low Speech graul \"old\" + voa \"tree\": the old tree, the oldest stand; Baeldran is the Aenoran calque (proposed)."
+    }
+   ],
+   "measured_capacity": {
+    "places": 3000,
+    "persons": 218
    }
   }
  }

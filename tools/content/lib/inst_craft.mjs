@@ -239,7 +239,7 @@ export function scholarPlan(env) {
     const people = table.get(c.tag).people, skills = S.scholarSkills[people] ?? ['war'];
     let n = tier === 'b' ? S.scholarCounts.b : (people === 'elves' || people === 'sun_elves') ? S.scholarCounts.aElves : S.scholarCounts.a;
     const rites = [];
-    if (c.name === 'Volgan') { for (let i = 0; i < S.scholarCounts.volganDeep; i++) rites.push('deep'); rites.push('war'); n = 4; }
+    if (c.name === 'Puvulan') { for (let i = 0; i < S.scholarCounts.volganDeep; i++) rites.push('deep'); rites.push('war'); n = 4; }
     else for (let i = 0; i < n; i++) rites.push(skills[i % skills.length]);
     plan.push({ tag: c.tag, name: c.name, tier, rites: rites.slice(0, n), codes: rites.slice(0, n).map(codeOf) });
   }

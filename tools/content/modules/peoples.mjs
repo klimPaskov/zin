@@ -17,10 +17,11 @@ export const PEOPLES = {
   demons: { name: 'Demons', desc: 'Corrupted angels: terrible in battle and few in number.', colour: '#9b2a2a', modifier: { army_attack_factor: 0.2, recruitable_population_factor: -0.4, stability_factor: -0.05 } },
 };
 
-// Defaults from the drawings and canon. Every other country is men; the owner's CSV overrides all of this.
-const BY_NAME = { Hiloron: 'giants', Titanos: 'giants', Kilinti: 'ents', 'Yeti Lands': 'yeti', 'Troll Forest': 'trolls', Zol: 'the_dead', Volgan: 'the_dead', Demon: 'demons', Dolon: 'demons', Nezer: 'demons', 'Gala Elves': 'elves', Gala: 'elves', 'North Gala': 'elves', Goodin: 'men', Goodton: 'men', Guuden: 'men', 'Cursed Lands': 'men', Dondor: 'men', Blackton: 'men', Worshipdom: 'men', Yeldenne: 'men' };
+// A realm of the roster carries its game people (lib/roster.mjs, gamePeople); these defaults serve a country row without one (a
+// synthetic test row), from the drawings and canon. Every other country is men; the owner's CSV overrides all of this.
+const BY_NAME = { Hirolon: 'giants', Nivaros: 'giants', Kilinti: 'ents', 'Yeti Lands': 'yeti', 'Troll Forest': 'trolls', "Zol's Mistake": 'the_dead', Puvulan: 'the_dead', Khorvrath: 'demons', Dolon: 'demons', Nezer: 'demons', Gala: 'elves', Goodin: 'men', 'Cursed Lands': 'men', Dondor: 'men', Blackton: 'men', Worshipdom: 'men', Yeldenne: 'men' };
 const BY_SCAN = { 'Magical Lands': 'elves', Sunhot: 'sun_elves', 'Dark Lands': 'orcs' };
-export const defaultPeople = c => BY_NAME[c.name] ?? BY_SCAN[c.scan] ?? 'men';
+export const defaultPeople = c => c.gamePeople ?? BY_NAME[c.name] ?? BY_SCAN[c.scan] ?? 'men';
 
 export async function buildPeoples(staged, countries, assignment, art) {
   const ideas = {}, loc = {}, sprites = [];

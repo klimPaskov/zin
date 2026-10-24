@@ -55,7 +55,7 @@
    "id": 4,
    "title": "The Year 1748",
    "picture": "ember_lands_storm",
-   "opening": "Volgan",
+   "opening": "Puvulan",
    "to": "Volgan (human player)",
    "hist": "1 Thaw 1748",
    "desc": "Behind the storms and the heat of the Ember Lands, the hosts drill where no ship can see. Demon, Dolon and Nezer are sworn to you, and the storm-wall that keeps strangers out has kept your people in for a hundred years.\n\nThe kingdoms of men always divide. Their time is passing, and they have not noticed. They have forgotten Dardan the way a man forgets a wound that has stopped hurting.\n\nYou mean to retake Mirolon, to march north, and to possess the green crystal of the north.",
@@ -71,7 +71,7 @@
    "id": 5,
    "title": "The Year 1748",
    "picture": "black_isles_lights",
-   "opening": "Zol",
+   "opening": "Zol's Mistake",
    "to": "Zol (human player)",
    "hist": "1 Thaw 1748",
    "desc": "The black north is silent. The dead walk the wastes, and the islands of the Kusmeel lie dark. The tide comes in and goes out. Nothing on the shore looks at it.\n\nNo one in Aoaz can say what the north believes.\n\nIt grows, very slowly.",
@@ -103,7 +103,7 @@
    "id": 7,
    "title": "The Year 1748",
    "picture": "gala_court",
-   "opening": "Gala Elves",
+   "opening": "Gala",
    "to": "the Gala Elves (human player)",
    "hist": "1 Thaw 1748",
    "desc": "King Lorien, who fought at Dardan, keeps his ancient court among the realms of the Lands of the Sun. The young ones come to hear him speak of it on feast days, and go away quieter than they came.\n\nHuman kings turn common victories into dominion, he has said. Still, Aoaz's fate is not a matter that a king may stop caring about because he is tired.\n\nGala means to keep its memory, and its distance.",
@@ -167,7 +167,7 @@
    "id": 11,
    "title": "The Year 1748",
    "picture": "grey_ford_truce",
-   "opening": "Gunwaith",
+   "opening": "Gunwyn",
    "to": "Gunwaith (human player)",
    "hist": "1 Thaw 1748",
    "desc": "After fifty years of war with Girdon, Gunwaith keeps the Truce of the Grey Ford, signed three years ago. The clans have put their swords on the rafters, and the lawspeakers are busy for the first time in a generation with disputes about cattle.\n\nThe truce is fragile. Aenor once tried to rule the West, and it still taxes the West through its tariffs, which is an older grievance than the feud with Girdon.\n\nYou want peace at home, lower tariffs, and the old claims of Parim buried for good.",
@@ -705,7 +705,7 @@
      "tip": "Isengard will not forgive the drums.",
      "effects": [
       "add_war_support = 0.03",
-      "@opinion_of zin_opinion_lore_provoked tag:Isengard"
+      "@opinion_of zin_opinion_lore_provoked tag:Melkgard"
      ]
     }
    ]
@@ -720,7 +720,7 @@
     "Horidor",
     "Fearno",
     "Yeti Lands",
-    "Titanos"
+    "Nivaros"
    ],
    "hist": "Thaw 1748 to Ironfrost 1749",
    "desc": "A trader came back from the far north with a green light in his story and a good reason for not having gone nearer: he saw it, and turned round. Nobody at the fire called him a coward. The silent castle has been there longer than anyone's grandmother, and has not yet sent for anyone.",
@@ -738,7 +738,7 @@
    "picture": "grey_ford_truce",
    "window": "Thaw 1748",
    "who": [
-    "Gunwaith",
+    "Gunwyn",
     "Girdon"
    ],
    "hist": "Thaw 1748",
@@ -821,7 +821,7 @@
    "picture": "generic_court",
    "window": "Thaw 1748 to Ironfrost 1749",
    "who": [
-    "Gunwaith"
+    "Gunwyn"
    ],
    "hist": "Thaw 1748 to Ironfrost 1749",
    "desc": "A bard sings in the hall of Gunwaith's banner at Dardan, and of Taryn who would not draw a sword until her people had been named on the roll beside Aenor's. The thanes bang their cups on the table at the verse where she wins the argument.",
@@ -972,7 +972,7 @@
    "picture": "ember_lands_storm",
    "window": "Thaw 1748",
    "who": [
-    "Volgan"
+    "Puvulan"
    ],
    "hist": "Thaw 1748",
    "desc": "The hosts drill where no ship can see. The drill-masters have been given the old rolls of the First Age and a year to teach the young how a great host marches in step. They find that it can be taught, if it is taught by the same voice for long enough.",
@@ -1105,7 +1105,7 @@
    "picture": "gala_court",
    "window": "Thaw 1748 to Ironfrost 1749",
    "who": [
-    "Gala Elves"
+    "Gala"
    ],
    "hist": "Thaw 1748 to Ironfrost 1749",
    "desc": "The King speaks of Dardan to a hall of young elves who were born a thousand years after it. He does not speak of the victory. He speaks of the smell of the field on the second morning, and of the order in which the names were read out, and the hall sits very still.",
@@ -1135,7 +1135,7 @@
       }
      ],
      "not_names": [
-      "Gala Elves"
+      "Gala"
      ],
      "share": 30
     }

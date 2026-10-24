@@ -1,7 +1,7 @@
 {
   "id": "regional_titanos",
   "tier": "regional",
-  "countries": ["Titanos"],
+  "countries": ["Nivaros"],
   "summary": "Titanos keeps the high snows: a Frost-King's hall, the toll roads of the passes, the old pacts with Coldor or a door of ice closed to every crown, and the giants' answer when the dark wakes.",
   "spirits": {
     "the_frost_kings_court": {"name":"The Frost-King's Court","desc":"The hall of Titanos is built of glacier-stone and lit by fires that never go out. Frost-King Huk sits in it, and the old mothers sit beside him, and between them nothing is forgotten.","icon":"giant_hammer","modifier":{"army_core_defence_factor":0.1,"trade_opinion_factor":-0.1}},
@@ -52,8 +52,8 @@
     "zin_regional_titanos_fair_toll": {"effects":[{"raw":"random_neighbor_country = {\n\tadd_opinion_modifier = { target = ROOT modifier = zin_regional_titanos_fair_toll }\n}"}]}
   },
   "scripted_triggers": {
-    "zin_regional_titanos_pact_two": {"conditions":[{"raw":"country_exists = Y01\nY01 = { check_variable = { var = zin_cold_giant_pact value = 2 compare = greater_than_or_equals } }"}]},
-    "zin_regional_titanos_pact_three": {"conditions":[{"raw":"country_exists = Y01\nY01 = { check_variable = { var = zin_cold_giant_pact value = 3 compare = greater_than_or_equals } }"}]}
+    "zin_regional_titanos_pact_two": {"conditions":[{"raw":"country_exists = CLD\nCLD = { check_variable = { var = zin_cold_giant_pact value = 2 compare = greater_than_or_equals } }"}]},
+    "zin_regional_titanos_pact_three": {"conditions":[{"raw":"country_exists = CLD\nCLD = { check_variable = { var = zin_cold_giant_pact value = 3 compare = greater_than_or_equals } }"}]}
   },
   "opinion_modifiers": {
     "fair_toll": {"value":10,"name":"A Fair Toll","decay":0.5}

@@ -3,7 +3,7 @@
 // the roost bond with Dragon Mountain, Varner, the pilgrim roads and the answer to the eastern invasion.
 //
 //   const r = await buildElves(staged, { countries, table?, wards? })
-//     countries  the roster of data/countries.json
+//     countries  the roster (lib/roster.mjs)
 //     table      Map tag -> { people, stance } (modules/countries.mjs loadCountryTable); derived from docs/design/countries.csv
 //     wards      true to write Varner's research bonus (default: the staged technology tags hold zin_cat_wards)
 //   returns { kit, counts }; throws on a text, id, picture or reference error.

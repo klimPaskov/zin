@@ -4,13 +4,14 @@
 //
 // Data:   data/cultures_game.json            what the game adds (spirits, modifiers, hooks, text, mappings)
 //         data/world/cultures.json           the bible's cultures, faiths, tiers and palettes
-//         data/world/country_cultures.json   the culture, second culture and faith of each of the 305 countries
+//         lib/roster.mjs (cultureRows)        the culture, second culture, language and faith of each realm of the roster
 //         data/world/languages.json          the 24 languages
 //         docs/design/world/state_cultures.json   minorities and mixed lands, keyed by geography feature id
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ZIN } from './paths.mjs';
+import { cultureRows } from './roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA = path.join(here, '../data');
@@ -35,7 +36,7 @@ export async function loadCultureModel(over = {}) {
   const gameText = over.game ? JSON.stringify(over.game) : await readFile(path.join(DATA, 'cultures_game.json'), 'utf8');
   const game = over.game ?? JSON.parse(gameText);
   const world = over.world ?? await readJson(path.join(DATA, 'world/cultures.json'));
-  const assignments = over.assignments ?? (await readJson(path.join(DATA, 'world/country_cultures.json'))).countries;
+  const assignments = over.assignments ?? cultureRows();
   const languageList = over.languages ?? (await readJson(path.join(DATA, 'world/languages.json'))).languages;
   // The state table is owner-editable: its bytes are staged as they are, so a build that changes nothing changes nothing.
   const stateText = over.state ? keepOrderJson(over.state) : await readFile(`${ZIN}/${STATE_CULTURES_FILE}`, 'utf8');
@@ -66,7 +67,7 @@ export const languageOf = (model, key) => model.world.cultures[key].language;
 export const faithOfCulture = (model, key) => model.world.cultures[key].faith;
 
 // ------------------------------------------------------------------------------------------- countries to cultures
-// Rows come from country_cultures.json by country name (tags follow the politics step and can change). `table` may
+// Rows come from the roster (lib/roster.mjs cultureRows) by country name (tags follow the politics step and can change). `table` may
 // override a tag or a name: { culture, culture2, faith, language }, as the owner's countries.csv will once it gains
 // the three columns. Returns { rows: Map(tag -> row), missing: [country names without a row], problems: [...] }.
 export function resolveCountryCultures(model, countries, table = new Map()) {

@@ -12,6 +12,7 @@ import { validateTree, FILTER_TOKENS, IDEOLOGY_KEYS, COUNTRY_TOKENS, PROVINCE_BU
 import {
   eventId, eventNumbers, expandCopies, focusId, helperId, namespaceOf, opinionId, prefixOf, readTreeFiles, spiritId, absolutePositions, titleCase,
 } from '../lib/focus_model.mjs';
+import { countryTable } from '../lib/roster.mjs';
 import {
   assertClean, checkCoverage, checkLayoutRefresh, checkTrees, codesFor, exclusiveClosure, gateWarnings,
   loadArgCodes, loadCatalog, loadRegistry, loadRetired, problem, scanStaged, spiritIcon, LAYOUT_ACTIONS,
@@ -395,7 +396,7 @@ export function prepareTrees(entries, roster) {
   return { trees, problems };
 }
 
-async function loadRoster() { return JSON.parse(await readFile(new URL('../data/countries.json', import.meta.url), 'utf8')).countries; }
+async function loadRoster() { return countryTable(); }
 
 // Validates, expands and checks the tree entries ({ name, data } or { name, error }). Returns the effective trees, the
 // shared context and every problem; nothing is staged. opts: countries, registry, catalog, codes, retired, tierRanges

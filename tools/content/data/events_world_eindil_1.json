@@ -99,7 +99,7 @@
      "effects": [
       "@call zin_eindil_add_renown 5",
       "@fire zin_eindil.11 days=15 to=tag:Coldor",
-      "@fire zin_eindil.11 days=15 to=tag:Isengard"
+      "@fire zin_eindil.11 days=15 to=tag:Melkgard"
      ]
     },
     {
@@ -108,7 +108,7 @@
      "effects": [
       "add_stability = 0.02",
       "@fire zin_eindil.11 days=30 to=tag:Coldor",
-      "@fire zin_eindil.11 days=30 to=tag:Isengard"
+      "@fire zin_eindil.11 days=30 to=tag:Melkgard"
      ]
     }
    ]
@@ -524,7 +524,7 @@
    "id": 155,
    "title": "The Lawspeaker's Ruling",
    "picture": "generic_peace",
-   "to": "Gunwaith",
+   "to": "Gunwyn",
    "hist": "Ironfrost 1750",
    "fired_by": "zin_eindil.22",
    "desc": [
@@ -569,7 +569,7 @@
        "if": [
         {
          "names": [
-          "Gunwaith",
+          "Gunwyn",
           "Girdon"
          ]
         }
@@ -655,7 +655,7 @@
            "not": [
             {
              "names": [
-              "Gunwaith",
+              "Gunwyn",
               "Girdon"
              ]
             }
@@ -821,7 +821,7 @@
    "trigger": [
     {
      "or": [
-      "tag:Gunwaith",
+      "tag:Gunwyn",
       "tag:Girdon"
      ]
     },

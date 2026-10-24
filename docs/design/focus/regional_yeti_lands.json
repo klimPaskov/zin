@@ -53,7 +53,7 @@
     "zin_regional_yeti_lands_recruit_oruk": {"effects":[{"raw":"recruit_character = zin_regional_yeti_lands_oruk"}]}
   },
   "scripted_triggers": {
-    "zin_regional_yeti_lands_pact_two": {"conditions":[{"raw":"country_exists = Y01\nY01 = { check_variable = { var = zin_cold_yeti_pact value = 2 compare = greater_than_or_equals } }"}]},
-    "zin_regional_yeti_lands_pact_three": {"conditions":[{"raw":"country_exists = Y01\nY01 = { check_variable = { var = zin_cold_yeti_pact value = 3 compare = greater_than_or_equals } }"}]}
+    "zin_regional_yeti_lands_pact_two": {"conditions":[{"raw":"country_exists = CLD\nCLD = { check_variable = { var = zin_cold_yeti_pact value = 2 compare = greater_than_or_equals } }"}]},
+    "zin_regional_yeti_lands_pact_three": {"conditions":[{"raw":"country_exists = CLD\nCLD = { check_variable = { var = zin_cold_yeti_pact value = 3 compare = greater_than_or_equals } }"}]}
   }
 }

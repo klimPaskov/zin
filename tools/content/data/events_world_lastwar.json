@@ -61,15 +61,15 @@
   },
   {
    "id": 20, "title": "Sails Off Aenor Isle", "picture": "western_crossing", "requires": ["zin_western_crossing"], "to": "Asgard and the ruling Aenor realm", "hist": "Goldfield 1755",
-   "runner": { "if": ["has_global_flag = zin_western_crossing", "any_state = { zin_is_site_west_landing_isle = yes NOT = { is_controlled_by = OWNER } }"], "to": ["tag:Asgard", "aenor"] },
+   "runner": { "if": ["has_global_flag = zin_western_crossing", "any_state = { zin_is_site_west_landing_isle = yes NOT = { is_controlled_by = OWNER } }"], "to": ["tag:Orohaf", "aenor"] },
    "desc": [
-    { "key": "asgard", "if": ["tag:Asgard"], "text": "Our harbours were the first the Aenoran ships reached, long ago. Now the western ships take them, one quay at a time, and the same stones that welcomed the first Aenorans are being walked on by men who have come to remind Parim of that day." },
+    { "key": "asgard", "if": ["tag:Orohaf"], "text": "Our harbours were the first the Aenoran ships reached, long ago. Now the western ships take them, one quay at a time, and the same stones that welcomed the first Aenorans are being walked on by men who have come to remind Parim of that day." },
     { "text": "The western host is ashore on Aenor Isle. Their ships lie off the harbour towns of Asgard in the same water where Aenor's first ships once anchored, and the lake fleet, which has never fought in salt water, is being asked to." }
    ],
    "options": [
-    { "name": "Fight from every quay.", "ai": 70, "if": ["tag:Asgard"], "effects": ["add_war_support = 0.05"] },
-    { "name": "Spare the harbour towns.", "ai": 30, "if": ["tag:Asgard"], "tip": "The towns the West holds will be easier to govern.", "effects": ["every_owned_state = { limit = { NOT = { is_controlled_by = ROOT } } add_compliance = 5 }"] },
-    { "name": "Send the lake fleet.", "ai": 100, "if": ["NOT = { original_tag = {{tag:Asgard}} }"], "tip": "The AI will weigh the western shore for half a year.", "effects": ["add_political_power = -25", "@flag zin_lastwar_hold_west days=180"] }
+    { "name": "Fight from every quay.", "ai": 70, "if": ["tag:Orohaf"], "effects": ["add_war_support = 0.05"] },
+    { "name": "Spare the harbour towns.", "ai": 30, "if": ["tag:Orohaf"], "tip": "The towns the West holds will be easier to govern.", "effects": ["every_owned_state = { limit = { NOT = { is_controlled_by = ROOT } } add_compliance = 5 }"] },
+    { "name": "Send the lake fleet.", "ai": 100, "if": ["NOT = { original_tag = {{tag:Orohaf}} }"], "tip": "The AI will weigh the western shore for half a year.", "effects": ["add_political_power = -25", "@flag zin_lastwar_hold_west days=180"] }
    ]
   },
   {
@@ -81,7 +81,7 @@
   {
    "id": 30, "title": "The Dead Do Not Stay Down", "picture": "zol_rising", "requires": ["zin_zol_rising"], "to": "the ruling Aenor realm and every country at war with Zol, once each", "hist": "Goldfield 1755",
    "seen": "zin_story_seen_lastwar_30",
-   "runner": { "if": ["has_global_flag = zin_zol_rising"], "to": [{ "who": [{ "or": ["zin_aenor_is_realm = yes", "has_war_with = {{tag:Zol}}"] }, "NOT = { zin_is_zol = yes }"], "once": true }] },
+   "runner": { "if": ["has_global_flag = zin_zol_rising"], "to": [{ "who": [{ "or": ["zin_aenor_is_realm = yes", "has_war_with = {{tag:Zol's Mistake}}"] }, "NOT = { zin_is_zol = yes }"], "once": true }] },
    "desc": "Our soldiers broke their ranks. In the morning the same ranks stood again, in the same order, with the same wounds. The captains of the watch say that it is not the dead who are afraid.",
    "options": [{ "name": "Burn them.", "ai": 100, "effects": ["add_war_support = 0.03"] }]
   },
@@ -100,7 +100,7 @@
   },
   {
    "id": 41, "title": "Herez Holds the Marches", "picture": "ember_lands_storm", "to": "Herez", "hist": "Mistfall 1755",
-   "runner": { "if": ["has_global_flag = zin_volgan_marches", "{{tag:Herez}} = { has_war_with = {{tag:Volgan}} }"], "to": "tag:Herez" },
+   "runner": { "if": ["has_global_flag = zin_volgan_marches", "{{tag:Herez}} = { has_war_with = {{tag:Puvulan}} }"], "to": "tag:Herez" },
    "desc": "The southern marches of the Concord face the whole Dominion. Herez's wardens count the fires on the horizon every night, and the arithmetic does not improve with repetition. The ford-keepers have asked for the old orders, the ones that were never rescinded.",
    "options": [
     { "name": "Hold every ford.", "ai": 80, "tip": "The marches will dig in for half a year.", "effects": ["add_war_support = 0.1", "add_timed_idea = { idea = zin_lastwar_marches_hold days = 180 }"] },
@@ -140,7 +140,7 @@
   },
   {
    "id": 61, "title": "Crushed Between Two Darks", "picture": "generic_war", "to": "every Middle Lands country at war with both Zol and Volgan", "hist": "1756",
-   "runner": { "if": ["has_global_flag = zin_volgan_zol_clash"], "to": [{ "who": ["has_country_flag = zin_region_middle_lands", "has_war_with = {{tag:Zol}}", "has_war_with = {{tag:Volgan}}"] }], "set": ["@call zin_world_add_gathering_dark 1"] },
+   "runner": { "if": ["has_global_flag = zin_volgan_zol_clash"], "to": [{ "who": ["has_country_flag = zin_region_middle_lands", "has_war_with = {{tag:Zol's Mistake}}", "has_war_with = {{tag:Puvulan}}"] }], "set": ["@call zin_world_add_gathering_dark 1"] },
    "desc": "Between the dead from the north and the hosts from the south there is nowhere left to stand. The two darks have fought each other and the field is theirs; the villages in the middle are not on anyone's map any longer.",
    "options": [{ "name": "Hold on.", "ai": 100, "effects": ["add_war_support = 0.05", "add_stability = -0.05"] }]
   },

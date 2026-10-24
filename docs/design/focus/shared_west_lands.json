@@ -1,7 +1,7 @@
 {
   "id": "shared_west_lands",
   "tier": "shared",
-  "countries": ["Werlendor","Hky","Thenon","Argo","Lothoro","Saopon","Sobre","Canako","Oslinod","Pernogon","Forbo","Sarudon","Toples","Trilino"],
+  "countries": ["Werlendor","Thenon","Dobbum","Saopon","Wennarith"],
   "summary": "The West Lands freeholds: the tier C tree of 14 small western courts, with the old grudge, the Grey Ford, the Western Crossing routes and the stranger on the road south.",
   "spirits": {
     "freehold_law_spirit": {"name":"Freehold Law","desc":"The law of [ROOT.GetName] is written down at last, and no lord can remember it differently from his neighbour.","modifier":{"drift_defence_factor":0.1,"stability_factor":0.02}},
@@ -34,7 +34,7 @@
     "zin_shared_west_lands_short_of_pp": {"conditions":[{"not":[{"raw":"has_political_power > 49"}]}]},
     "zin_shared_west_lands_light_partner_of_root": {"conditions":[{"flag":"zin_region_west_lands"},{"ideology":"light"},{"not":[{"raw":"has_war_with = ROOT"}]}]},
     "zin_shared_west_lands_has_light_partner": {"conditions":[{"raw":"any_other_country = { zin_shared_west_lands_light_partner_of_root = yes }"}]},
-    "zin_shared_west_lands_is_gunwaith": {"conditions":[{"country":"Gunwaith"}]},
+    "zin_shared_west_lands_is_gunwaith": {"conditions":[{"country":"Gunwyn"}]},
     "zin_shared_west_lands_is_girdon": {"conditions":[{"country":"Girdon"}]}
   },
   "scripted_effects": {

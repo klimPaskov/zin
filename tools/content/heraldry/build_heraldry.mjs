@@ -5,7 +5,7 @@
 //      redesign, the dynamic-tag rules and the build checks), roster.json, cultures_new.json and pantheon.json.
 //   2. Applies the grammar changes of this generator: the grammars of the 30 cultures of cultures_new.json, the four
 //      renamed culture ids (melkgard_warlords, vindael_seafarers, gunwyn_clans, ember_freeholds), the retirement of
-//      wall_folk (split into vale_folk and hilofrim_herders), the people grammars of the Baelim (tree_people) and the
+//      vale_folk (split into vale_folk and hilofrim_herders), the people grammars of the Baelim (tree_people) and the
 //      mycids, three new lines of partition and the new charges the realm designs need. Every step sets values, so
 //      running it twice gives the same file.
 //   3. Builds one design record per realm of the roster from the DESIGNS table (field, division, charges, tinctures,
@@ -209,19 +209,19 @@ const FAMILIES = {
 // Culture ids that the roster still writes under their old names (cultures_new.json renames; the culture data's owner
 // applies them). Both spellings resolve to the grammar under the new id.
 export const CULTURE_RENAMES = {
-  isengard_warlords: 'melkgard_warlords',
-  windwaith_seafarers: 'vindael_seafarers',
-  gunwaith_clans: 'gunwyn_clans',
-  ember_lands_freeholds: 'ember_freeholds',
+  melkgard_warlords: 'melkgard_warlords',
+  vindael_seafarers: 'vindael_seafarers',
+  gunwyn_clans: 'gunwyn_clans',
+  ember_freeholds: 'ember_freeholds',
 };
 const RETIRED_CULTURES = {
-  wall_folk: 'split into vale_folk (Kingson, Klungori Guard) and hilofrim_herders (the herders of Hirolon): there is no wall, the Great Wall of Aenor is a natural range',
-  isengard_warlords: 'renamed melkgard_warlords: Isengard is a name of other fiction; the realm is Melkgard',
-  windwaith_seafarers: 'renamed vindael_seafarers: "-waith" names are retired; the arm is Vindael',
-  gunwaith_clans: 'renamed gunwyn_clans: "-waith" names are retired; the kingdom is Gunwyn',
-  ember_lands_freeholds: 'renamed ember_freeholds: the region is the Ember Lands (owner, 24 October 2026)',
+  vale_folk: 'split into vale_folk (Kingson, Klungori Guard) and hilofrim_herders (the herders of Hirolon): there is no wall, the Great Wall of Aenor is a natural range',
+  melkgard_warlords: 'renamed melkgard_warlords: Isengard is a name of other fiction; the realm is Melkgard',
+  vindael_seafarers: 'renamed vindael_seafarers: "-waith" names are retired; the arm is Vindael',
+  gunwyn_clans: 'renamed gunwyn_clans: "-waith" names are retired; the kingdom is Gunwyn',
+  ember_freeholds: 'renamed ember_freeholds: the region is the Ember Lands (owner, 24 October 2026)',
 };
-const FAITH_RENAMES = { stone_vigil: 'pass_vigil', river_temples: 'flood_stair' };
+const FAITH_RENAMES = { pass_vigil: 'pass_vigil', flood_stair: 'flood_stair' };
 
 // ---------------------------------------------------------------------------------------------------------------
 // Grammar helpers
@@ -278,7 +278,7 @@ const NEW_GRAMMARS = [
     dissent: 'granite', breakaway: 'a border of granite', restoration: 'beacon_peak',
     note: 'A gate-tower between two peaks on grey; the dominion\'s charter-seal border.',
     refused: 'The source card\'s gate-tower is not drawn: a tower in the pass reads as masonry of the Great Wall, which is a natural range.',
-    supersedes: 'wall_folk',
+    supersedes: 'vale_folk',
   }),
   grammar({
     id: 'hilofrim_herders', name: 'Hill-Herders of Hilofrim', people: 'men', family: 'ainic_men', language: 'aenoran', faith: 'lamp_furrow', tier: 3, line: 'straight',
@@ -294,7 +294,7 @@ const NEW_GRAMMARS = [
     ornament: 'Low, broad charges of the open hill; no peaks of the range and no masonry of any wall.',
     forms: { tenant: 'No realm of its own: the herders are Hirolon\'s tenants, and Hirolon\'s arms borrow the Grano green from them.' },
     dissent: 'turf brown', breakaway: 'a border of turf brown', restoration: 'stone_fold',
-    note: 'A sheep and a cairn on green.', supersedes: 'wall_folk',
+    note: 'A sheep and a cairn on green.', supersedes: 'vale_folk',
   }),
   grammar({
     id: 'strait_folk', name: 'Strait-Folk of Fotan', people: 'men', family: 'ainic_men', language: 'aenoran', faith: 'strait_litany', faith_secondary: 'deliverer', tier: 3, line: 'straight',
@@ -748,7 +748,7 @@ const NEW_GRAMMARS = [
     ornament: 'No tower and no hand or gauntlet (another fiction\'s fortress and white hand); storm, iron and black stone only.',
     forms: { warlord: 'The march is held by oath-companies: the charge is a sheaf of their spears; no crown, because the heir is the best sworn man, not the eldest.' },
     dissent: 'gunmetal', breakaway: 'a border indented of gunmetal', restoration: 'storm_cloud',
-    note: 'Black or grey, a tower or chain.', aliases: ['isengard_warlords'],
+    note: 'Black or grey, a tower or chain.', aliases: ['melkgard_warlords'],
   }),
   grammar({
     id: 'vindael_seafarers', name: 'Vindael Seafarers', people: 'men', family: 'boreal_men', language: 'coldic', faith: 'storm_court', tier: 3, line: 'indented',
@@ -767,7 +767,7 @@ const NEW_GRAMMARS = [
       city_state: 'A free port: the trade charge on a divided field and no crown.',
     },
     dissent: 'storm grey', breakaway: 'a border indented of storm grey', restoration: 'wind_tower',
-    note: 'Teal, a ship or wind-rose.', aliases: ['windwaith_seafarers'],
+    note: 'Teal, a ship or wind-rose.', aliases: ['vindael_seafarers'],
   }),
   grammar({
     id: 'gunwyn_clans', name: 'Gunwyn Clans', people: 'men', family: 'boreal_men', language: 'gunwaithic', faith: 'clan_stones', tier: 1, line: 'indented',
@@ -793,7 +793,7 @@ const NEW_GRAMMARS = [
       lordship: 'A lord of the downs: no crown; the charge of his trust on the clan colours.',
     },
     dissent: 'moor brown', breakaway: 'a border indented of moor brown', restoration: 'standing_stone',
-    note: 'Plaid or a stag/stone ring on a clan colour.', aliases: ['gunwaith_clans'],
+    note: 'Plaid or a stag/stone ring on a clan colour.', aliases: ['gunwyn_clans'],
   }),
   grammar({
     id: 'ember_freeholds', name: 'Ember Coast Freeholders', people: 'men', family: 'ainic_men', language: 'mirolic', faith: 'mourning_dust', tier: 3, line: 'straight',
@@ -817,7 +817,7 @@ const NEW_GRAMMARS = [
       theocracy: "The lamp-keepers' isle: a metal field and the lamp alone, no label.",
     },
     dissent: 'tar black', breakaway: 'a border of tar black', restoration: 'salt_pan',
-    note: 'Sand with a boat or salt-pan.', aliases: ['ember_lands_freeholds'],
+    note: 'Sand with a boat or salt-pan.', aliases: ['ember_freeholds'],
   }),
 ];
 
@@ -1621,7 +1621,7 @@ function applyGrammarChanges(doc, src) {
   // Retirement and rename register.
   doc.renames = {
     cultures: Object.entries(CULTURE_RENAMES).map(([from, to]) => ({ from, to, reason: RETIRED_CULTURES[from] })),
-    retired: [{ id: 'wall_folk', into: ['vale_folk', 'hilofrim_herders'], reason: RETIRED_CULTURES.wall_folk }],
+    retired: [{ id: 'vale_folk', into: ['vale_folk', 'hilofrim_herders'], reason: RETIRED_CULTURES.vale_folk }],
     faiths: Object.entries(FAITH_RENAMES).map(([from, to]) => ({ from, to })),
   };
 }

@@ -1,7 +1,7 @@
 {
  "id": "zol",
  "tier": "major",
- "countries": ["Zol"],
+ "countries": ["Zol's Mistake"],
  "summary": "The bodiless Old God of the north: servants nobody names, the black islands, the deathless dead, the rising and the brief form.",
  "spirits": {
   "veiled_service": {"name":"Veiled Service","desc":"The service is given quietly. No banner is raised and no name is spoken, and the north goes on being quiet.","modifier":{"political_power_factor":0.1}},
@@ -42,7 +42,7 @@
   "another_age": {"n":10,"title":"Matters for Another Age","desc":"The age turns. The north is silent, and it waits.","picture":"black_isles_lights","options":[{"name":"Another age."}]}
  },
  "scripted_effects": {
-  "zin_zol_tree_clash": {"effects":[{"if":{"limit":[{"exists":"Volgan"},{"not":[{"at_war_with":"Volgan"}]},{"not":[{"global_flag":"zin_volgan_zol_clash"}]}],"then":[{"call":"zin_zol_strike_volgan"}]}}]}
+  "zin_zol_tree_clash": {"effects":[{"if":{"limit":[{"exists":"Puvulan"},{"not":[{"at_war_with":"Puvulan"}]},{"not":[{"global_flag":"zin_volgan_zol_clash"}]}],"then":[{"call":"zin_zol_strike_volgan"}]}}]}
  },
  "focuses": [
   {"key":"servants_unseen","name":"Servants Unseen","desc":"The service continues, as it always has, out of sight. It is neither asked nor told, and the north does not speak of it.","icon":"zol_sigil","x":3,"y":0,"days":70,"ai":{"base":10,"modifiers":[{"factor":3,"if":[{"before":"1749.1.1"}]}]},"filters":["political"],"effects":[{"political_power":25},{"flag":"zin_zol_calls_open"}]},

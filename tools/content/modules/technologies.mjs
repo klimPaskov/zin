@@ -5,7 +5,7 @@
 // Data: tools/content/data/technologies*.json. Integration note: docs/design/stage2/technologies.md.
 //
 //   await buildTechnologies(staged, { countries, assignment?, externalSharing? })
-//     countries   the roster of data/countries.json (names resolve to tags here)
+//     countries   the roster (lib/roster.mjs) (names resolve to tags here)
 //     assignment  optional Map tag -> people; the default is the owner table's default (peoples.mjs defaultPeople)
 //     externalSharing  optional [{ id, template }]: research sharing groups that another module writes (the diplomacy module
 //                 owns common/technology_sharing). The sync effect then adds a member of faction template `template` to group
@@ -591,7 +591,7 @@ const activationLines = (o, depth) => {
 };
 
 export function technologyBlock(t, model) {
-  const zol = [...t.who].some(c => c.country === 'Zol');
+  const zol = [...t.who].some(c => c.country === 'Zol\'s Mistake');
   const d = 2, L = [`${tab(d - 1)}${t.key} = {`];
   const push = (...l) => L.push(...l);
   for (const k of Object.keys(t.modifiers)) push(`${tab(d)}${k} = ${num(t.modifiers[k])}`);
@@ -671,7 +671,7 @@ function sharingFile(model) {
 }
 
 function scriptedTriggers(model) {
-  const zol = model.tags.get('Zol');
+  const zol = model.tags.get('Zol\'s Mistake');
   const L = [HEADER, '# Sky-rule tests, the Zol test and the people wrappers that technology and doctrine conditions read.',
     'zin_rules_skies_present = {', '\tOR = {', '\t\thas_game_rule = { rule = zin_rule_skies option = dragons_only }', '\t\thas_game_rule = { rule = zin_rule_skies option = beasts }', '\t}', '}', '',
     'zin_rules_skies_beasts = {', '\thas_game_rule = { rule = zin_rule_skies option = beasts }', '}', '',

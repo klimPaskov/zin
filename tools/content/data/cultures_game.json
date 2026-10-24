@@ -47,7 +47,7 @@
   "idea_category": { "tier1": "country", "tier2": "country", "tier3": "hidden_ideas", "secondary": "hidden_ideas", "faith": "country" },
   "portrait_pools": { "per_sex_by_tier": { "1": 6, "2": 4, "3": 2 }, "per_sex_overrides": { "goblin_warrens": 1 } },
   "flag_shapes": { "default": "rect", "leren_sea_kings": "swallowtail", "free_crowns_north": "swallowtail", "steppe_rider": "pennant" },
-  "kin": [["wall_folk", "lake_aenoran"]],
+  "kin": [["vale_folk", "lake_aenoran"]],
   "no_language_cultures": ["zols_dead"],
   "magic_attitudes": ["respected", "regulated", "wary", "distrusted", "neutral", "natural", "core", "none"],
   "resistance_levels": { "none": 0, "passive": 0, "low": 0.1, "medium": 0.25, "strong": 0.4, "total": 0.6 },
@@ -84,7 +84,7 @@
       "modifier": { "cavalry_attack_factor": 0.1, "army_speed_factor": 0.04, "supply_consumption_factor": -0.05, "production_speed_buildings_factor": -0.08 },
       "flag": { "motif": "horse_head", "alt": ["horse_hair_standard"] }, "building": "felt_tents", "music": "steppe_drums", "unit_group": "steppe_riders"
     },
-    "wall_folk": {
+    "vale_folk": {
       "id": 4, "adjective": "Wall-Folk", "icon": "tower_key", "magic": "neutral",
       "spirit": "The Watch-Family Posts",
       "spirit_desc": "A post passes to the eldest of a watch-family, and a breach of watch is a hanging matter. The Wall is held with patience and drill.",
@@ -156,7 +156,7 @@
       "modifier": { "recon_factor": 0.12, "planning_speed": 0.1, "max_dig_in_factor": 0.06, "special_project_speed_factor": 0.1 },
       "flag": { "motif": "beacon", "alt": ["lamp"] }, "building": "stilt_beacon", "music": "warden_horns", "unit_group": "warden_blue"
     },
-    "ember_lands_freeholds": {
+    "ember_freeholds": {
       "id": 13, "adjective": "Ember Lands", "icon": "salt_boat", "magic": "wary",
       "spirit": "Salt and Silence",
       "spirit_desc": "Freeholders bury quickly, tax lightly and avoid war. The sun and the salt have made them hard.",
@@ -180,7 +180,7 @@
       "modifier": { "winter_attrition_factor": -0.15, "org_loss_when_moving": -0.1, "conscription_factor": 0.04, "production_speed_buildings_factor": -0.05 },
       "flag": { "motif": "clan_beast", "alt": [] }, "building": "turf_hall", "music": "northern_throat", "unit_group": "winter_crown"
     },
-    "isengard_warlords": {
+    "melkgard_warlords": {
       "id": 16, "adjective": "Isengard", "icon": "tower_chain", "magic": "distrusted",
       "spirit": "The Oath-Companies",
       "spirit_desc": "The best sworn man inherits the hall, not the eldest son. Mailed foot hold the mountain forts.",
@@ -188,7 +188,7 @@
       "modifier": { "army_org_factor": 0.05, "army_infantry_defence_factor": 0.05, "stability_factor": -0.04, "army_leader_cost_factor": -0.15 },
       "flag": { "motif": "tower", "alt": ["chain"] }, "building": "black_fort", "music": "iron_drums", "unit_group": "iron_brute"
     },
-    "windwaith_seafarers": {
+    "vindael_seafarers": {
       "id": 17, "adjective": "Windwaith", "icon": "ship_windrose", "magic": "respected",
       "spirit": "The Ship-Share",
       "spirit_desc": "Land is held by share in a ship, and a Council of Captains elects its Speaker. Windwaith ships range far for timber and whalebone.",
@@ -196,7 +196,7 @@
       "modifier": { "naval_speed_factor": 0.05, "navy_max_range_factor": 0.1, "experience_gain_navy_factor": 0.08, "trade_opinion_factor": 0.1 },
       "flag": { "motif": "ship", "alt": ["wind_rose"] }, "building": "harbour_wood", "music": "sea_horns", "unit_group": "winter_crown"
     },
-    "gunwaith_clans": {
+    "gunwyn_clans": {
       "id": 18, "adjective": "Gunwaith", "icon": "stag_stone", "magic": "respected",
       "spirit": "The Lawspeaker's Memory",
       "spirit_desc": "Oaths are sworn at the stone and remembered by the Lawspeaker. Clan bands ride and fight for kin and for wergild.",
@@ -519,7 +519,7 @@
       "festivals": [{ "id": "gathering", "name": "The Gathering", "month": "Highsun" }, { "id": "foaling", "name": "The Foaling", "month": "Thaw" }, { "id": "last_ride", "name": "The Last Ride", "month": "Mistfall" }],
       "holy_sites": ["site_hunhun", "site_konori"]
     },
-    "stone_vigil": {
+    "pass_vigil": {
       "id": 5, "icon": "names_wall", "clergy": "Watch-chaplains",
       "spirit_desc": "The Wall is a promise to the dead of the Third Age, and every post is holy. Watch-chaplains keep the roll of the fallen.",
       "text": "A faith of duty on the Great Wall and the marches.",
@@ -631,7 +631,7 @@
       "festivals": [{ "id": "the_weighing", "name": "The Weighing", "month": "Harvest" }, { "id": "opening_of_the_roads", "name": "The Opening of the Roads", "month": "Thaw" }],
       "holy_sites": ["site_postondoroth"]
     },
-    "river_temples": {
+    "flood_stair": {
       "id": 19, "icon": "flood_temple", "clergy": "Temple scribes and flood-priests",
       "spirit_desc": "The river is the oldest god we can see. Tall temples honour the gods above the flood-line, and the river below it.",
       "text": "The faith of the river kings, served by temple scribes and flood-priests.",

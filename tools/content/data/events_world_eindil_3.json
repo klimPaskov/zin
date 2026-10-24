@@ -337,7 +337,7 @@
       {
        "names": [
         "Coldor",
-        "Isengard"
+        "Melkgard"
        ]
       }
      ],
@@ -406,9 +406,9 @@
         "Selen",
         "Mirolon",
         "Kingson",
-        "Hiloron",
+        "Hirolon",
         "Magical Forest",
-        "Gala Elves"
+        "Gala"
        ]
       }
      ],
@@ -466,9 +466,9 @@
           "Selen",
           "Mirolon",
           "Kingson",
-          "Hiloron",
+          "Hirolon",
           "Magical Forest",
-          "Gala Elves"
+          "Gala"
          ]
         },
         "zin_aenor_is_realm = yes"
@@ -894,7 +894,7 @@
      "then": [
       "@gflag zin_eindil_90_done",
       "@fire zin_eindil.91 days=1 to=host",
-      "@fire zin_eindil.91 days=1 to=tag:Zol",
+      "@fire zin_eindil.91 days=1 to=tag:Zol's Mistake",
       "zin_eindil_pick_host_candidate = yes",
       "@fire zin_eindil.92 days=1 to=var:zin_eindil_host_candidate"
      ]
@@ -1199,8 +1199,8 @@
       "@gflag zin_eindil_96_done",
       "@trait zin_eindil_struck_down days=60",
       "add_timed_idea = { idea = zin_eindil_heir_has_fallen days = 60 }",
-      "@fire zin_dominion.16 to=tag:Volgan",
-      "@fire zin_eindil.96 to=tag:Volgan",
+      "@fire zin_dominion.16 to=tag:Puvulan",
+      "@fire zin_eindil.96 to=tag:Puvulan",
       "@fire zin_eindil.96 to=group:friends",
       {
        "if": [
@@ -1321,7 +1321,7 @@
      "tip": "Volgan's manifested body is destroyed.",
      "effects": [
       {
-       "scope": "tag:Volgan",
+       "scope": "tag:Puvulan",
        "do": [
         "zin_volgan_destroy_body = yes"
        ]

@@ -217,7 +217,7 @@ test('Mappings: portrait pools, flag styles, building kits, music moods, unit gr
   assert.equal(C.buildingStyles(model).length, SPEC_COUNTS.building_styles);
   assert.equal(C.musicMoods(model).length, SPEC_COUNTS.music_moods);
   assert.equal(C.unitGroups(model).length, SPEC_COUNTS.unit_groups);
-  assert.equal(C.buildingStyleFor(model, 'wall_folk'), 'wall_grey');
+  assert.equal(C.buildingStyleFor(model, 'vale_folk'), 'wall_grey');
   assert.equal(C.musicMoodFor(model, 'caravan_princes'), 'lyre_bronze');
   assert.equal(C.unitGroupFor(model, 'noris_riders'), 'desert_riders');
   assert.deepEqual(C.graphicalCultureFor(model, 'noris_riders'), { key: 'zin_desert_riders_gfx', group: 'zin_desert_riders_gfx', fallback: 'zin_men_gfx' });
@@ -243,8 +243,8 @@ test('State cultures: the function resolves enclaves, mixed lands, minorities, h
   assert.equal(plain.culture, 'lake_aenoran'); assert.deepEqual(plain.minorities, []); assert.equal(plain.resistance.level, 'none'); assert.deepEqual(plain.holy_sites, []);
   const isle = C.resolveStateCulture(model, { owner: aenor, features: ['region_aenor_isle'] });
   assert.deepEqual(isle.minorities, [{ culture: 'isle_houses', faith: 'isle_tide', share: 0.3 }]);
-  const ford = C.resolveStateCulture(model, { owner: { culture: 'gunwaith_clans', faith: 'clan_stones' }, features: ['pass_grey_ford'] });
-  assert.equal(ford.culture, 'gunwaith_clans'); assert.deepEqual(ford.minorities.map(m => m.culture), ['girdon_wardens']); assert.deepEqual(ford.holy_sites, ['clan_stones']);
+  const ford = C.resolveStateCulture(model, { owner: { culture: 'gunwyn_clans', faith: 'clan_stones' }, features: ['pass_grey_ford'] });
+  assert.equal(ford.culture, 'gunwyn_clans'); assert.deepEqual(ford.minorities.map(m => m.culture), ['girdon_wardens']); assert.deepEqual(ford.holy_sites, ['clan_stones']);
   const kilinti = C.resolveStateCulture(model, { owner: { culture: 'kilinti_ents', culture2: 'selen_ranger' }, features: ['forest_kilinti'] });
   assert.deepEqual(kilinti.minorities.map(m => [m.culture, m.share]), [['selen_ranger', 0.35]], 'the larger of the rule and the owner share wins');
   assert.equal(kilinti.resistance.level, 'none', 'ents rule their own forest');
@@ -252,15 +252,15 @@ test('State cultures: the function resolves enclaves, mixed lands, minorities, h
   assert.deepEqual(second.minorities.map(m => [m.culture, m.share]), [['free_crowns_north', 0.25]], "the owner's own second culture adds its share");
   assert.deepEqual(C.resolveStateCulture(model, { owner: { culture: 'leren_sea_kings', culture2: 'free_crowns_north' }, features: [], include_owner_second: false }).minorities, []);
   const fog = C.resolveStateCulture(model, { owner: { culture: 'buldor_companies' }, features: ['pass_fog_gap'] });
-  assert.deepEqual(fog.minorities.map(m => [m.culture, m.share]), [['gunwaith_clans', 0.3], ['girdon_wardens', 0.2]]);
+  assert.deepEqual(fog.minorities.map(m => [m.culture, m.share]), [['gunwyn_clans', 0.3], ['girdon_wardens', 0.2]]);
   assert.deepEqual(C.resolveStateCulture(model, { owner: { culture: 'buldor_companies' }, features: ['pass_fog_gap'] }), fog, 'same input, same result');
   const deadlands = C.resolveStateCulture(model, { owner: { culture: 'grave_hosts' }, features: ['waste_deadlands'] });
   assert(deadlands.minorities.reduce((n, m) => n + m.share, 0) <= model.game.limits.max_minority_total + 1e-9);
   // Resistance rules of the demography spec.
-  assert.equal(C.resolveStateCulture(model, { owner: { culture: 'wall_folk' }, features: ['region_aenor_isle'] }).resistance.target, 0, 'no mixed rule for another owner');
-  const kin = C.resolveStateCulture(model, { owner: { culture: 'wall_folk', faith: 'stone_vigil' }, features: ['forest_selen'] });
-  assert.equal(kin.culture, 'wall_folk');
-  assert(C.culturesAreKin(model, 'wall_folk', 'lake_aenoran') && C.culturesAreKin(model, 'lake_aenoran', 'wall_folk') && !C.culturesAreKin(model, 'wall_folk', 'selen_ranger'));
+  assert.equal(C.resolveStateCulture(model, { owner: { culture: 'vale_folk' }, features: ['region_aenor_isle'] }).resistance.target, 0, 'no mixed rule for another owner');
+  const kin = C.resolveStateCulture(model, { owner: { culture: 'vale_folk', faith: 'pass_vigil' }, features: ['forest_selen'] });
+  assert.equal(kin.culture, 'vale_folk');
+  assert(C.culturesAreKin(model, 'vale_folk', 'lake_aenoran') && C.culturesAreKin(model, 'lake_aenoran', 'vale_folk') && !C.culturesAreKin(model, 'vale_folk', 'selen_ranger'));
   const zilin = C.resolveStateCulture(model, { owner: { culture: 'lake_aenoran', faith: 'deliverer' }, features: ['hills_zilin'] });
   assert.equal(zilin.culture, 'zilin_pilgrims');
   assert.deepEqual([zilin.resistance.target, zilin.resistance.level], [0.2, 'medium'], 'another culture adds 20 percent; the faith is the same');
@@ -327,17 +327,17 @@ test('Negative: duplicate keys, ids, spirits and countries', async () => {
   assert.deepEqual(findDuplicateJsonKeys('{"a":1,"b":{"c":1,"c":2},"a":3}'), ['$.b.c', '$.a']);
   assert.deepEqual(findDuplicateJsonKeys('{"a":[{"x":1},{"x":1}]}'), []);
   assert((await check(model, { files: { 'x.json': '{"cultures":{"a":{},"a":{}}}' } })).errors.some(e => e.code === 'file-duplicate' && /\$\.cultures\.a/.test(e.detail)));
-  const sameId = await check(mutated(m => { m.game.cultures.wall_folk.id = 1; }));
+  const sameId = await check(mutated(m => { m.game.cultures.vale_folk.id = 1; }));
   assert(codes(sameId).has('duplicate') && sameId.errors.some(e => /share the number 1/.test(e.detail)));
-  const sameSpirit = await check(mutated(m => { m.game.cultures.wall_folk.spirit = m.game.cultures.selen_ranger.spirit; }));
+  const sameSpirit = await check(mutated(m => { m.game.cultures.vale_folk.spirit = m.game.cultures.selen_ranger.spirit; }));
   assert(sameSpirit.errors.some(e => e.code === 'duplicate' && /culture spirit/.test(e.detail)));
-  const sameIcon = await check(mutated(m => { m.game.cultures.wall_folk.icon = m.game.cultures.selen_ranger.icon; }));
+  const sameIcon = await check(mutated(m => { m.game.cultures.vale_folk.icon = m.game.cultures.selen_ranger.icon; }));
   assert(sameIcon.errors.some(e => e.code === 'duplicate' && /culture icon/.test(e.detail)));
   const twoRows = await check(mutated(m => { m.assignments.push({ ...m.assignments[0] }); }));
   assert(twoRows.errors.some(e => e.code === 'duplicate' && /two culture rows/.test(e.detail)));
   const sameRule = await check(mutated(m => { m.state.rules.push({ ...m.state.rules[0] }); }));
   assert(sameRule.errors.some(e => e.code === 'duplicate' && /appears twice/.test(e.detail)));
-  const sameMods = await check(mutated(m => { m.game.cultures.wall_folk.modifier = { ...m.game.cultures.selen_ranger.modifier }; }));
+  const sameMods = await check(mutated(m => { m.game.cultures.vale_folk.modifier = { ...m.game.cultures.selen_ranger.modifier }; }));
   assert(sameMods.errors.some(e => /identical modifiers/.test(e.detail)));
 });
 
@@ -350,7 +350,7 @@ test('Negative: modifier values, counts and overlap', async () => {
   assert(many.errors.some(e => /has 6 modifiers, the limit is 3 to 5/.test(e.detail)));
   const few = await check(mutated(m => { m.game.cultures.noris_riders.modifier = { army_speed_factor: 0.03 }; }));
   assert(few.errors.some(e => /has 1 modifiers/.test(e.detail)));
-  const alike = await check(mutated(m => { m.game.cultures.wall_folk.modifier = { ...m.game.cultures.selen_ranger.modifier, army_org_factor: 0.01 }; }));
+  const alike = await check(mutated(m => { m.game.cultures.vale_folk.modifier = { ...m.game.cultures.selen_ranger.modifier, army_org_factor: 0.01 }; }));
   assert(codes(alike).has('similar'));
   const faith = await check(mutated(m => { m.game.faiths.green_lords.modifier.stability_factor = 0.9; }));
   assert(faith.errors.some(e => /faith green_lords: stability_factor = 0.9/.test(e.detail)));
@@ -390,11 +390,11 @@ test('Negative: text that leaks the secret, uses a banned word, breaks Windows-1
 });
 
 test('Negative: mappings, festivals and sites', async () => {
-  const kit = await check(mutated(m => { m.game.cultures.wall_folk.building = 'lake_stone'; }));
+  const kit = await check(mutated(m => { m.game.cultures.vale_folk.building = 'lake_stone'; }));
   assert(kit.errors.some(e => e.code === 'mapping' && /50 building styles, the spec has 51/.test(e.detail)));
-  const music = await check(mutated(m => { m.game.cultures.wall_folk.music = 'Bad Key'; }));
+  const music = await check(mutated(m => { m.game.cultures.vale_folk.music = 'Bad Key'; }));
   assert(music.errors.some(e => e.code === 'mapping' && /music "Bad Key"/.test(e.detail)));
-  const magic = await check(mutated(m => { m.game.cultures.wall_folk.magic = 'adored'; }));
+  const magic = await check(mutated(m => { m.game.cultures.vale_folk.magic = 'adored'; }));
   assert(magic.errors.some(e => e.code === 'mapping' && /magic attitude/.test(e.detail)));
   const month = await check(mutated(m => { m.game.faiths.horse_oath.festivals[0].month = 'Smarch'; }));
   assert(month.errors.some(e => e.code === 'festival' && /Smarch/.test(e.detail)));
@@ -413,13 +413,13 @@ test('Negative: state rules keyed by a state number, an unknown feature or cultu
   assert(culture.errors.some(e => e.code === 'state-rule' && /sky_pirates/.test(e.detail)));
   const share = await check(mutated(m => { m.state.rules.find(r => r.kind === 'mixed').minorities[0].share = 1.5; }));
   assert(share.errors.some(e => e.code === 'state-rule' && /the share of/.test(e.detail)));
-  const total = await check(mutated(m => { m.state.rules.find(r => r.kind === 'mixed').minorities.push({ culture: 'wall_folk', share: 0.9 }); }));
+  const total = await check(mutated(m => { m.state.rules.find(r => r.kind === 'mixed').minorities.push({ culture: 'vale_folk', share: 0.9 }); }));
   assert(total.errors.some(e => e.code === 'state-rule' && /minorities total/.test(e.detail)));
   const level = await check(mutated(m => { m.state.rules[0].owner_resistance = { '*': 'overwhelming' }; }));
   assert(level.errors.some(e => e.code === 'state-rule' && /overwhelming/.test(e.detail)));
   const kind = await check(mutated(m => { m.state.rules[0].kind = 'swamp'; }));
   assert(kind.errors.some(e => e.code === 'state-rule' && /neither enclave nor mixed/.test(e.detail)));
-  const both = await check(mutated(m => { m.state.rules[0].when_owner = ['wall_folk']; m.state.rules[0].unless_owner = ['selen_ranger']; }));
+  const both = await check(mutated(m => { m.state.rules[0].when_owner = ['vale_folk']; m.state.rules[0].unless_owner = ['selen_ranger']; }));
   assert(both.errors.some(e => /when_owner and unless_owner together/.test(e.detail)));
   assert.throws(() => C.resolveStateCulture(model, { owner: {}, features: [] }), /unknown owner culture/);
 });

@@ -43,9 +43,9 @@ export async function flagJobs() {
   const describe = (c, used) => {
     const t = table.get(c.tag), r = rng(`flagdesc:${c.tag}`), pal = TINCTURES[t.ideology];
     const a = pal[Math.floor(r() * pal.length)]; let b = pal[Math.floor(r() * pal.length)]; if (b === a) b = pal[(pal.indexOf(a) + 3) % pal.length];
-    const div = c.name === 'Zol' ? 'a pure black field' : DIVISIONS[Math.floor(r() * DIVISIONS.length)];
+    const div = c.name === 'Zol\'s Mistake' ? 'a pure black field' : DIVISIONS[Math.floor(r() * DIVISIONS.length)];
     const motifs = REGION[c.scan] ?? REGION['Rush Land'];
-    const charge = c.name === 'Aenor' ? 'a radiant golden crown above a golden sun, ringed by small stars' : c.name === 'Volgan' ? 'a horned black skull wreathed in red flame' : c.name === 'Worshipdom' ? 'an ashen eye inside a ring of chains' : c.name === 'Yeldenne' ? 'a castle keep holding a glowing green gem' : t.people !== 'men' && r() < 0.6 && !used.has(PEOPLE[t.people]) ? PEOPLE[t.people] : (() => { const start = Math.floor(r() * motifs.length); for (let k = 0; k < motifs.length; k++) { const m = motifs[(start + k) % motifs.length]; if (!used.has(m)) return m; } return motifs[start]; })();
+    const charge = c.name === 'Aenor' ? 'a radiant golden crown above a golden sun, ringed by small stars' : c.name === 'Puvulan' ? 'a horned black skull wreathed in red flame' : c.name === 'Worshipdom' ? 'an ashen eye inside a ring of chains' : c.name === 'Yeldenne' ? 'a castle keep holding a glowing green gem' : t.people !== 'men' && r() < 0.6 && !used.has(PEOPLE[t.people]) ? PEOPLE[t.people] : (() => { const start = Math.floor(r() * motifs.length); for (let k = 0; k < motifs.length; k++) { const m = motifs[(start + k) % motifs.length]; if (!used.has(m)) return m; } return motifs[start]; })();
     used.add(charge);
     return `${ALIGN[t.ideology]}: ${div} in ${a} and ${b} with ${charge}`;
   };

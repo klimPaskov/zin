@@ -3,10 +3,10 @@
   "spec": "docs/specs/03_gameplay/08_institutions.md",
   "note": "Data of tools/content/modules/institutions.mjs, sections 1 to 5: the War Camp, the Council of Captains, Orders and Valour, the Great Fairs and Folk Wares, Guild Licences and Sending Arms. Names are working labels of the spec (proposed). Every picture is a key of the icon catalog (data/presentation-cells.json). Numbers are design targets; the engine keys stay as the game defines them.",
   "tiers": {
-    "a": ["Aenor","Lerendor","Volgan","Zol","Worshipdom","Magical Forest","Gala Elves","Coldor","Noris","Stabilo","Gunwaith","Goldoroth","Mirolon"],
-    "b": ["Noleksun","Selen","Herez","Konori","Kilinti","Kingson","Bloody Forest","Hunhun","Hiloron","Cursed Lands","Asgard","Sensai","Mina","R'en","Molot","Eekedor","Fearno","Yeti Lands","Horidor","Isengard","Windwaith","Titanos","Yeldenne","Lambin","Buldor","Kradlon","Corogon","Varnondor","Girdon","Halenor","Seite Islands","Adel","Nondondor","Pollos","Raerby","Blackton","Dulundur","Bordon","Dondor","Dreson","Troll Forest","Lccimio","The End","Herrodon","Andos Enda","Nolorim","Olen","Nezer","Demon","Dolon","Nan","Alerhia","Miaed","Erco","Plutondo","Drak","Ostoroth","Gondolin","Mora","Avalon","Enhis Is Rond","Howan","Nara","Verde","The Lands of Light","Poyang","Godland","Hengyang","Elvana","Goodin","Heaven"],
-    "noChairs": ["Zol"],
-    "noValour": ["Zol","Yeldenne"]
+    "a": ["Aenor","Lerendor","Puvulan","Zol's Mistake","Worshipdom","Magical Forest","Gala","Coldor","Noris","Stabilo","Gunwyn","Goldoroth","Mirolon"],
+    "b": ["Noleksun","Selen","Herez","Konori","Kilinti","Kingson","Bloody Forest","Hunhun","Hirolon","Cursed Lands","Orohaf","Sensai","Mina","R'en","Molot","Eekedor","Fearno","Yeti Lands","Horidor","Melkgard","Vindael","Nivaros","Yeldenne","Lambin","Buldor","Kradlon","Corogon","Varnondor","Girdon","Halenor","Seite Islands","Adel","Nondondor","Pollos","Raerby","Blackton","Dulundur","Bordon","Dondor","Dreson","Troll Forest","Lccimio","Eldafaen","Herrodon","Andos Enda","Nolorim","Olen","Nezer","Khorvrath","Dolon","Nan","Alerhia","Miaed","Erco","Plutondo","Drak","Ostoroth","Naamis","Mora","Rhachia","Enhis Is Rond","Howan","Nara","Verde","The Lands of Light","Soyano","Tor Luni","Elvana","Goodin","Yeni Alang"],
+    "noChairs": ["Zol's Mistake"],
+    "noValour": ["Zol's Mistake","Yeldenne"]
   },
   "engineText": {
     "_note": "Text of engine-owned keys that ZIN re-themes (ranks, role names, advisor slots, command power and experience). Staged in localisation/replace/zin_inst_engine_l_english.yml.",

@@ -30,6 +30,7 @@ import { loadBanned, compileBanned, findBanned } from '../lib/banned.mjs';
 import { nonCp1252 } from '../lib/loc_parse.mjs';
 import { monthIndex } from '../lib/calendar.mjs';
 import { cultureLocEntries, loadCultureModel, resolveCountryCultures, portraitPoolFor, canonicalJson, DATA } from '../lib/cultures_model.mjs';
+import { countryTable } from '../lib/roster.mjs';
 
 // Counts the specs fix: 53 cultures (bible), 24 languages, 51 building kits, 14 music palettes, 21 unit groups
 // (08_world_in_game.md sections 7 and 12), 39 faith rows (35 faiths plus the open one and the later additions).
@@ -309,7 +310,7 @@ export function assertCultureChecks(result) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2), reportAt = args.includes('--report') ? args[args.indexOf('--report') + 1] : null;
   const model = await loadCultureModel();
-  const { countries } = JSON.parse(await readFile(path.join(DATA, 'countries.json'), 'utf8'));
+  const countries = countryTable();
   const result = await runCultureChecks(model, { countries, geography: await loadGeographyIds() });
   console.log(JSON.stringify({ errors: result.errors.length, warnings: result.warnings.length, totals: result.coverage.totals, gaps: { cultures_without_country: result.coverage.gaps.cultures_without_country, faiths_without_country: result.coverage.gaps.faiths_without_country } }, null, 2));
   if (result.warnings.length) console.error(formatFindings(result.warnings));

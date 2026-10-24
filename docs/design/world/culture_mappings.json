@@ -31,7 +31,7 @@
         "spirit": "The Blood-Price",
         "summary": "Clan-moot kings and iron-halls of Dondor. They tax the iron road and leave magic to the Fire-speakers."
       },
-      "ember_lands_freeholds": {
+      "ember_freeholds": {
         "adjective": "Ember Lands",
         "name": "Ember Lands Freeholders",
         "spirit": "Salt and Silence",
@@ -79,7 +79,7 @@
         "spirit": "The Dirge-Drum",
         "summary": "The dead and the living of Volgan's Dominion, led by his chosen captains. Mass hosts follow the dirge-drum."
       },
-      "gunwaith_clans": {
+      "gunwyn_clans": {
         "adjective": "Gunwaith",
         "name": "Gunwaith Clans",
         "spirit": "The Lawspeaker's Memory",
@@ -115,7 +115,7 @@
         "spirit": "The Free Moot of the Holds",
         "summary": "Orc holds of the iron hills. A shared battle-horn calls their levies."
       },
-      "isengard_warlords": {
+      "melkgard_warlords": {
         "adjective": "Isengard",
         "name": "Isengard Warlords",
         "spirit": "The Oath-Companies",
@@ -271,7 +271,7 @@
         "spirit": "The Warking's Ring",
         "summary": "Orc clans of the fire-mountain, led by a warking whom the chiefs acclaim."
       },
-      "wall_folk": {
+      "vale_folk": {
         "adjective": "Wall-Folk",
         "name": "Wall-Folk",
         "spirit": "The Watch-Family Posts",
@@ -289,7 +289,7 @@
         "spirit": "The Hold's Own Way",
         "summary": "Orc holds of the wild hills, with no council and no priest."
       },
-      "windwaith_seafarers": {
+      "vindael_seafarers": {
         "adjective": "Windwaith",
         "name": "Windwaith Seafarers",
         "spirit": "The Ship-Share",
@@ -459,7 +459,7 @@
         "short": "Red Hearth",
         "summary": "The clay-faith of the Red Lands, kept by kiln-mothers."
       },
-      "river_temples": {
+      "flood_stair": {
         "clergy": "Temple scribes and flood-priests",
         "name": "The River Temples",
         "short": "River Temples",
@@ -489,7 +489,7 @@
         "short": "Stone-Hunger",
         "summary": "The faith of the troll tribes. It has no priests."
       },
-      "stone_vigil": {
+      "pass_vigil": {
         "clergy": "Watch-chaplains",
         "name": "The Stone Vigil",
         "short": "Stone Vigil",
@@ -806,7 +806,7 @@
       "tier": 2,
       "unit_group": "iron_brute"
     },
-    "ember_lands_freeholds": {
+    "ember_freeholds": {
       "building_style": "mud_brick_sea",
       "faith": "mourning_dust",
       "flag": {
@@ -834,7 +834,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 2,
-        "pool": "ember_lands_freeholds",
+        "pool": "ember_freeholds",
         "tier": 3,
         "total": 4,
         "unique": false
@@ -1085,7 +1085,7 @@
       "tier": 1,
       "unit_group": "dead"
     },
-    "gunwaith_clans": {
+    "gunwyn_clans": {
       "building_style": "hill_ring_fort",
       "faith": "clan_stones",
       "flag": {
@@ -1113,7 +1113,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 6,
-        "pool": "gunwaith_clans",
+        "pool": "gunwyn_clans",
         "tier": 1,
         "total": 12,
         "unique": true
@@ -1291,7 +1291,7 @@
       "tier": 2,
       "unit_group": "orc_horde"
     },
-    "isengard_warlords": {
+    "melkgard_warlords": {
       "building_style": "black_fort",
       "faith": "storm_court",
       "flag": {
@@ -1319,7 +1319,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 4,
-        "pool": "isengard_warlords",
+        "pool": "melkgard_warlords",
         "tier": 2,
         "total": 8,
         "unique": true
@@ -1823,7 +1823,7 @@
     },
     "river_kings": {
       "building_style": "stair_temple",
-      "faith": "river_temples",
+      "faith": "flood_stair",
       "flag": {
         "alt": [
           "stair"
@@ -2201,9 +2201,9 @@
       "tier": 1,
       "unit_group": "orc_horde"
     },
-    "wall_folk": {
+    "vale_folk": {
       "building_style": "wall_grey",
-      "faith": "stone_vigil",
+      "faith": "pass_vigil",
       "flag": {
         "alt": [
           "key"
@@ -2229,7 +2229,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 4,
-        "pool": "wall_folk",
+        "pool": "vale_folk",
         "tier": 2,
         "total": 8,
         "unique": true
@@ -2305,7 +2305,7 @@
       "tier": 3,
       "unit_group": "orc_horde"
     },
-    "windwaith_seafarers": {
+    "vindael_seafarers": {
       "building_style": "harbour_wood",
       "faith": "storm_court",
       "flag": {
@@ -2333,7 +2333,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 2,
-        "pool": "windwaith_seafarers",
+        "pool": "vindael_seafarers",
         "tier": 3,
         "total": 4,
         "unique": false

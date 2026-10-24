@@ -56,7 +56,7 @@ export const coldExternals = () => new Set(COLD_DEPENDENCIES.flatMap(d => d.name
 
 const PACTS = [
   { key: 'yeti', country: 'Yeti Lands', pact: 'zin_cold_yeti_pact', event: 'zin_cold.51', openFlag: 'zin_regional_yeti_lands_open_to_truce', apartFlag: 'zin_regional_yeti_lands_apart' },
-  { key: 'giant', country: 'Titanos', pact: 'zin_cold_giant_pact', event: 'zin_cold.52', openFlag: 'zin_regional_titanos_open_to_pacts', apartFlag: 'zin_regional_titanos_apart' },
+  { key: 'giant', country: 'Nivaros', pact: 'zin_cold_giant_pact', event: 'zin_cold.52', openFlag: 'zin_regional_titanos_open_to_pacts', apartFlag: 'zin_regional_titanos_apart' },
 ];
 
 // ------------------------------------------------------------------------------------------------ text placeholders
@@ -90,7 +90,7 @@ export async function buildMechCold(staged, ctx) {
   const cold = ctx.countries.filter(c => c.scan === R.scan);
   if (cold.length !== R.expectedCountries) throw new Error(`The roster has ${cold.length} ${R.scan} countries, the data expects ${R.expectedCountries}`);
   const tag = n => { const c = found.get(n) ?? others.get(n); if (!c) throw new Error(`${n} is not resolved`); return c.tag; };
-  const COL = tag('Coldor'), ISE = tag('Isengard'), YEL = tag('Yeldenne'), HOR = tag('Horidor'), WIN = tag('Windwaith'), GUN = tag('Gunwaith'), AEN = tag('Aenor');
+  const COL = tag('Coldor'), ISE = tag('Melkgard'), YEL = tag('Yeldenne'), HOR = tag('Horidor'), WIN = tag('Vindael'), GUN = tag('Gunwyn'), AEN = tag('Aenor');
   const pactTag = p => tag(p.country);
   const clans = cold.filter(c => ![COL, ISE, YEL].includes(c.tag));
   for (const name of Object.keys(R.leans)) if (!clans.some(c => c.name === name)) throw new Error(`The lean table names ${name}, which is not a lean-holding Cold Lands country`);

@@ -64,7 +64,7 @@
   { "key": "holder_eastern", "if": ["idea:zin_world_outcome_eastern_king"], "text": "The age ended in your hands. One crown rules the caravan roads, and it is yours." },
   { "key": "coalition", "if": ["gflag:zin_ending_lost_cause", { "any": "any_other_country", "limit": ["zin_aenor_eindil_rules", { "faction_with": "ROOT" }] }], "text": "Your banners stood with the heir when it mattered." },
   { "key": "friend", "if": ["var:zin_eindil_regard>=50"], "text": "The king will remember what you did for a stranger." },
-  { "key": "knelt", "if": [ { "or": [ "subject_of:Volgan", "flag:zin_afrit_eastern_client" ] } ], "text": "You knelt. History will remember to whom." },
+  { "key": "knelt", "if": [ { "or": [ "subject_of:Puvulan", "flag:zin_afrit_eastern_client" ] } ], "text": "You knelt. History will remember to whom." },
   { "key": "fallen", "if": ["has_capitulated"], "text": "Your realm did not see the end of the war as a free crown." },
   { "key": "zol", "if": ["zin_is_zol"], "text": "The north keeps its counsel. The dead are patient." },
   { "key": "hermitage", "if": ["zin_afrit_is_hub", "gflag:zin_afrit_dead", "gflag:zin_afrit_revealed"], "text": "The hermitage outlived its god." },

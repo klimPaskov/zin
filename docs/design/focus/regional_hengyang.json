@@ -1,7 +1,7 @@
 {
   "id": "regional_hengyang",
   "tier": "regional",
-  "countries": ["Hengyang"],
+  "countries": ["Soyano"],
   "summary": "The Archipelago Council: three sun-sea islands under a Tide-Speaker, home of the best white ships of the Sunhot fleets and the sayings of the islands.",
   "spirits": {
     "tide_speaker": {"name":"The Tide-Speaker","desc":"Hengara speaks for the three isles in the council hall above the harbour, and her voice is heard over the sound of the surf. She is chosen by the isle-councils, who count their votes in shells.","modifier":{"stability_factor":0.03,"naval_speed_factor":0.05}},
@@ -9,7 +9,7 @@
     "sun_sea_masters": {"name":"Masters of the Sun-Sea","desc":"Hengyang's captains have sailed the sun-sea since before the charts, and their white ships are the pride of every Sunhot fleet. A captain of the isles is never lost in his own water.","modifier":{"naval_damage_factor":0.05,"navy_org_factor":0.05,"naval_detection":0.1}}
   },
   "events": {
-    "the_saying_of_the_isles": {"n":1,"title":"The Saying of the Isles","desc":"Island traders bring a tale nobody can explain and say it must go to Gala. Their saying is older than the harbour: when the tales of men grow too old for any man to explain, carry them to Gala.","picture":"generic_sea","options":[{"name":"Keep it in our archive","effects":[{"research":{"categories":["industry"],"bonus":0.3,"uses":1}}],"ai_chance":{"base":40}},{"name":"Carry it to Gala","effects":[{"if":{"limit":[{"exists":"Gala Elves"}],"then":[{"call":"zin_sun_add_gala_counsel","args":{"value":3}}]}}],"ai_chance":{"base":60}}]}
+    "the_saying_of_the_isles": {"n":1,"title":"The Saying of the Isles","desc":"Island traders bring a tale nobody can explain and say it must go to Gala. Their saying is older than the harbour: when the tales of men grow too old for any man to explain, carry them to Gala.","picture":"generic_sea","options":[{"name":"Keep it in our archive","effects":[{"research":{"categories":["industry"],"bonus":0.3,"uses":1}}],"ai_chance":{"base":40}},{"name":"Carry it to Gala","effects":[{"if":{"limit":[{"exists":"Gala"}],"then":[{"call":"zin_sun_add_gala_counsel","args":{"value":3}}]}}],"ai_chance":{"base":60}}]}
   },
   "copy": [
     {"from":"shared_lands_of_the_sun","module":"S2","root_at":[15,1],"root_prerequisite":[["the_archipelago_council"]]},

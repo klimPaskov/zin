@@ -16,7 +16,7 @@ export async function buildZol(staged, ctx) {
   const D = await loadJson('mech_zol.json'), roster = ctx.countries;
   const W = await loadJson('warfare_ids.json'), economy = await loadJson('economy.json');
   const byName = new Map(roster.map(c => [c.name, c]));
-  const need = n => { const c = byName.get(n); if (!c) throw new Error(`mech_zol: ${n} is not in data/countries.json`); return c; };
+  const need = n => { const c = byName.get(n); if (!c) throw new Error(`mech_zol: ${n} is not in the roster`); return c; };
   const T = { zol: need(D.realm).tag, aenor: need(D.aenor).tag, lerendor: need(D.lerendor).tag, volgan: need(D.volgan).tag, gala: need(D.gala).tag };
   T.hostGroup = W.hostGroupByCountry[D.realm];
   const loc = new Loc(), sprites = new Sprites(await loadCatalogKeys());

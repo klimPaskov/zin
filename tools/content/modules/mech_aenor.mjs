@@ -6,6 +6,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { assertModifiers } from '../lib/core.mjs';
 import { ZIN } from '../lib/paths.mjs';
+import { stateOwners } from '../lib/roster.mjs';
 import { parse } from '../lib/clausewitz.mjs';
 import { aenorScripts } from '../lib/mech_aenor_script.mjs';
 import { aenorGui } from '../lib/mech_court_gui.mjs';
@@ -17,13 +18,13 @@ const MOD = 'mech_aenor';
 
 // First province of every state a country owns at the start (history/states, the politics step's output), and the capital's victory-point province.
 let statesCache;
-// Every state of the politics step: id, start owner, first province (the victory-point province when there is one) and provinces.
+// Every state of the map: id, start owner (the realm of data/world/state_assignment.json), first province (the victory-point province when there is one) and provinces.
 export async function allStates() {
   if (statesCache) return statesCache;
-  const dir = `${ZIN}/history/states`, out = [];
+  const dir = `${ZIN}/history/states`, out = [], owners = stateOwners();
   for (const f of (await readdir(dir)).filter(n => n.endsWith('.txt'))) {
     const text = await readFile(`${dir}/${f}`, 'utf8');
-    const id = Number(text.match(/\bid = (\d+)/)?.[1]), owner = text.match(/owner = (\w+)/)?.[1];
+    const id = Number(text.match(/\bid = (\d+)/)?.[1]), owner = owners.get(id);
     const provinces = String(text.match(/provinces = \{([^}]*)\}/)?.[1] ?? '').trim().split(/\s+/).filter(Boolean).map(Number);
     const vp = Number(text.match(/victory_points = \{\s*(\d+)/)?.[1] ?? 0);
     out.push({ id, owner, first: vp || provinces[0], provinces });
@@ -34,12 +35,12 @@ export async function stateProvinces(tag) { return (await allStates()).filter(s 
 
 export function resolveTags(D, roster, wantRoster = true) {
   const byName = new Map(roster.map(c => [c.name, c]));
-  const need = n => { const c = byName.get(n); if (!c) throw new Error(`mech_aenor: ${n} is not in data/countries.json`); return c; };
+  const need = n => { const c = byName.get(n); if (!c) throw new Error(`mech_aenor: ${n} is not in the roster`); return c; };
   const T = { aenor: need(D.realm).tag, hub: need(D.hub).tag, selen: need(D.selen).tag };
   T.rulerId = `${T.aenor}_zin_ruler`;
   T.dominions = D.dominions.map(d => {
     const c = need(d.name);
-    if (c.overlord !== D.realm) throw new Error(`mech_aenor: ${d.name} is not a subject of ${D.realm} in data/countries.json`);
+    if (c.overlord !== D.realm) throw new Error(`mech_aenor: ${d.name} is not a subject of ${D.realm} in the roster`);
     return { ...d, tag: c.tag, states: c.states };
   });
   return T;

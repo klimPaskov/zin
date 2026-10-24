@@ -68,7 +68,7 @@ export function buildNames(staged, countries, labels) {
   const blocks = [block('default', defaultPool)];
   for (const c of countries) {
     const entry = state.byTag.get(c.tag) ?? state.byName.get(c.name);
-    if (!entry) throw new Error(`Country ${c.name} (${c.tag}) has no culture in country_cultures.json`);
+    if (!entry) throw new Error(`Country ${c.name} (${c.tag}) has no culture in the roster`);
     const language = entry.language ?? null; // Zol's Mistake has no language: the neutral blend names its hosts
     const pool = { ...makePool(state, c.tag, language), language, culture: entry.culture, tag: c.tag };
     pools.set(c.tag, pool); tagLanguage.set(c.tag, language); cultureOf.set(c.tag, entry.culture);

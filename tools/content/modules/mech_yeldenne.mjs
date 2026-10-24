@@ -4,7 +4,7 @@
 //
 //   const result = await buildYeldenneGlo(staged, { countries });
 //
-// ctx.countries    the roster (tools/content/data/countries.json, `countries`); countries are named in the data and resolved to tags
+// ctx.countries    the roster (lib/roster.mjs); countries are named in the data and resolved to tags
 // ctx.gloData      optional replacement of tools/content/data/mech_journey_glo.json (the tests use it for negative cases)
 // ctx.glo          optional switches: externalCharacters (ids another module defines; skipped here)
 //

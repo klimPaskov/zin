@@ -9,6 +9,7 @@ import { Staged } from './lib/core.mjs';
 import { ZIN, GAME, stagingDir, provenanceFile } from './lib/paths.mjs';
 import { buildPeoples } from './modules/peoples.mjs';
 import { loadCountryTable, writeCountryTable } from './modules/countries.mjs';
+import { countryTable } from './lib/roster.mjs';
 import { buildIdeologies } from './modules/ideologies.mjs';
 import { buildCharacters } from './modules/characters.mjs';
 import { buildUi } from './modules/ui.mjs';
@@ -66,7 +67,8 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 export { ZIN };
 const out = stagingDir(process.argv[2]);
 
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+// The country table is the roster of Aoaz (tools/content/data/world/roster.json, read through lib/roster.mjs).
+const countries = countryTable();
 const { labels } = JSON.parse(await readFile(path.join(here, 'data/labels.json'), 'utf8'));
 const staged = new Staged();
 

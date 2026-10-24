@@ -1,7 +1,7 @@
 {
   "id": "regional_windwaith",
   "tier": "regional",
-  "countries": ["Windwaith"],
+  "countries": ["Vindael"],
   "summary": "Windwaith lives by the carrying trade: a Harbour Compact with Fandanar or free harbours of its own, hulls for the West, a coast watch that hears the old fishermen, and neutral sails in the great war.",
   "spirits": {
     "sails_council": {"name":"The Council of Sails","desc":"The harbour guilds and the inland freeholders sit together under a roof of ship-timbers and argue about the price of everything. They almost always agree on the price of fish.","icon":"council_table","modifier":{"trade_opinion_factor":0.1,"consumer_goods_factor":-0.02}},
@@ -16,7 +16,7 @@
   },
   "events": {
     "speakers_vote": {"n":1,"title":"The Council of Sails Votes","desc":"The hands are counted twice in the long hall, once by the harbours and once by the steadings. This year the count is close, and both sides wait for the Speaker to say what the Council has decided.","picture":"generic_court","options":[{"name":"The harbours carry the vote.","effects":[{"political_power":50}],"ai_chance":{"base":60}},{"name":"The steadings carry the vote.","effects":[{"stability":0.03},{"call":"zin_cold_add_lean","args":{"value":5}}],"ai_chance":{"base":40}}]},
-    "compact_offer": {"n":2,"title":"Windwaith Asks for Terms","desc":"The Speaker of Windwaith writes to Fandanar in her own hand. The carrying trade of the western seas could be shared, she says, if the Winter Crown will meet the Council as a friend and not as a landlord.","picture":"generic_sea","options":[{"name":"Refuse the compact","effects":[{"for_country":{"country":"Windwaith","effects":[{"call":"zin_cold_add_lean","args":{"value":-10}}]}}],"ai_chance":{"base":20}},{"name":"Agree the compact","effects":[{"add_spirit":"zin_cold_harbour_compact"},{"for_country":{"country":"Windwaith","effects":[{"add_spirit":"zin_cold_harbour_compact"},{"call":"zin_cold_add_lean","args":{"value":20}}]}}],"ai_chance":{"base":80}}]}
+    "compact_offer": {"n":2,"title":"Windwaith Asks for Terms","desc":"The Speaker of Windwaith writes to Fandanar in her own hand. The carrying trade of the western seas could be shared, she says, if the Winter Crown will meet the Council as a friend and not as a landlord.","picture":"generic_sea","options":[{"name":"Refuse the compact","effects":[{"for_country":{"country":"Vindael","effects":[{"call":"zin_cold_add_lean","args":{"value":-10}}]}}],"ai_chance":{"base":20}},{"name":"Agree the compact","effects":[{"add_spirit":"zin_cold_harbour_compact"},{"for_country":{"country":"Vindael","effects":[{"add_spirit":"zin_cold_harbour_compact"},{"call":"zin_cold_add_lean","args":{"value":20}}]}}],"ai_chance":{"base":80}}]}
   },
   "focuses": [
     {"key":"council_of_sails","name":"The Council of Sails","desc":"Speaker Furla Hozen calls the Council of Sails to order in a long hall built from the ribs of old ships. Fishermen, shipwrights and freeholders sit together on benches of pegged oak.","icon":"council_table","x":1,"y":0,"days":35,"ai":{"base":100},"filters":["political"],"effects":[{"political_power":50}]},

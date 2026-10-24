@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "owner": "tools/content/write_journey_geography.mjs; regenerate with node tools/content/write_journey_geography.mjs, never by hand",
- "note": "Middle Lands states (economy region middle_lands): mainland and Aenor Isle, their port provinces, the five westernmost mainland ports (the Western Crossing's shore, proposed rule of the key-sites table), and the strategic regions that hold them. Source: history/states, map/strategicregions, forces_geography.json, countries.json.",
+ "note": "Middle Lands states (economy region middle_lands): mainland and Aenor Isle, their port provinces, the five westernmost mainland ports (the Western Crossing's shore, proposed rule of the key-sites table), and the strategic regions that hold them. Source: history/states, map/strategicregions, forces_geography.json, the roster (lib/roster.mjs).",
  "mainland": [
   16,
   17,
@@ -90,6 +90,7 @@
   1282,
   1283,
   1284,
+  1286,
   1287,
   1288,
   1289,
@@ -102,206 +103,206 @@
  "isle": [
   {
    "id": 192,
-   "tag": "Y0T",
+   "tag": "ORH",
    "port": 4175
   }
  ],
  "ports": [
   {
    "id": 1328,
-   "tag": "Y4S",
+   "tag": "AEN",
    "port": 3963
   },
   {
    "id": 1329,
-   "tag": "Y4S",
+   "tag": "AEN",
    "port": 4035
   },
   {
    "id": 725,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 3822
   },
   {
    "id": 727,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 4277
   },
   {
    "id": 968,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 4425
   },
   {
    "id": 241,
-   "tag": "Y0Q",
+   "tag": "HIR",
    "port": 4495
   },
   {
    "id": 724,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 3632
   },
   {
    "id": 749,
-   "tag": "Y0Q",
+   "tag": "TIR",
    "port": 4632
   },
   {
    "id": 668,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 3439
   },
   {
    "id": 1281,
-   "tag": "Y4O",
+   "tag": "SEL",
    "port": 3317
   },
   {
    "id": 748,
-   "tag": "Y4Y",
+   "tag": "SFT",
    "port": 4720
   },
   {
    "id": 751,
-   "tag": "Y50",
+   "tag": "AEN",
    "port": 4893
   },
   {
    "id": 1277,
-   "tag": "Y4O",
+   "tag": "SEL",
    "port": 3315
   },
   {
    "id": 750,
-   "tag": "Y4Z",
+   "tag": "HNH",
    "port": 4815
   },
   {
    "id": 17,
-   "tag": "Y50",
+   "tag": "AEN",
    "port": 4980
   },
   {
    "id": 1278,
-   "tag": "Y4N",
+   "tag": "SEL",
    "port": 3210
   },
   {
    "id": 753,
-   "tag": "Y0R",
+   "tag": "SFT",
    "port": 5006
   },
   {
    "id": 666,
-   "tag": "Y0M",
+   "tag": "SEL",
    "port": 3186
   },
   {
    "id": 755,
-   "tag": "Y0R",
+   "tag": "SFT",
    "port": 5009
   },
   {
    "id": 202,
-   "tag": "Y0M",
+   "tag": "SEL",
    "port": 3051
   },
   {
    "id": 744,
-   "tag": "Y4M",
+   "tag": "FOT",
    "port": 2725
   },
   {
    "id": 18,
-   "tag": "Y51",
+   "tag": "FRE",
    "port": 5080
   },
   {
    "id": 19,
-   "tag": "Y51",
+   "tag": "FRE",
    "port": 5057
   },
   {
    "id": 133,
-   "tag": "Y0M",
+   "tag": "ANR",
    "port": 3108
   },
   {
    "id": 756,
-   "tag": "Y52",
+   "tag": "HER",
    "port": 5190
   },
   {
    "id": 131,
-   "tag": "Y0M",
+   "tag": "ANR",
    "port": 3043
   },
   {
    "id": 675,
-   "tag": "Y52",
+   "tag": "HER",
    "port": 5191
   },
   {
    "id": 878,
-   "tag": "Y0M",
+   "tag": "SEL",
    "port": 2920
   },
   {
    "id": 1291,
-   "tag": "Y0S",
+   "tag": "NOL",
    "port": 5227
   },
   {
    "id": 130,
-   "tag": "Y8E",
+   "tag": "BLO",
    "port": 3000
   },
   {
    "id": 78,
-   "tag": "Y55",
+   "tag": "HER",
    "port": 5268
   },
   {
    "id": 324,
-   "tag": "Y8E",
+   "tag": "BLO",
    "port": 2679
   },
   {
    "id": 73,
-   "tag": "Y55",
+   "tag": "HER",
    "port": 5329
   },
   {
    "id": 812,
-   "tag": "Y55",
+   "tag": "HER",
    "port": 5348
   }
  ],
  "shore": [
   {
    "id": 1328,
-   "tag": "Y4S",
+   "tag": "AEN",
    "port": 3963
   },
   {
    "id": 1329,
-   "tag": "Y4S",
+   "tag": "AEN",
    "port": 4035
   },
   {
    "id": 725,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 3822
   },
   {
    "id": 727,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 4277
   },
   {
    "id": 968,
-   "tag": "Y0L",
+   "tag": "AEN",
    "port": 4425
   }
  ],

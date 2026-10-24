@@ -1,7 +1,7 @@
 {
   "id": "shared_lands_of_the_sun",
   "tier": "shared",
-  "countries": ["Dein Lands","Godson","Godton","Helen","Sun God Land","Dreamland","Flame","Hel","Hol","Lovis","Sono","Armic","Beforelands of Gulia","Biggen","Gala","Godrela","Goodton","Guuden","Heilmon","Him","Igara","Land of the Sun","Loyol","Menga","North Gala","Ofos","Pinion","Rana","Sali","Sensun","Soyano","Sunny","Sunweli","Sus","Tangsie","Tei","Via","Wenyene","Yungin"],
+  "countries": ["Igara","Ihuy","God Forest"],
   "summary": "Realms Under the Sun: the tier C tree of 39 Sunhot, elven and men's realms of the Lands of the Sun. Modules S1 to S10 (S6m, S11 split for the compiler's copy rule) are copied by the seven tier B trees of the region.",
   "spirits": {
     "orchards": {"name":"Orchards and Vines","desc":"Fruit from the high terraces feeds [ROOT.GetName] well and keeps its people content.","modifier":{"monthly_population":0.05,"stability_factor":0.02},"module":"S1"},
@@ -380,9 +380,9 @@
       "y": 1,
       "days": 35,
       "prerequisite": [["under_the_sun"]],
-      "available": [{"exists":"Gala Elves"}],
+      "available": [{"exists":"Gala"}],
       "ai": {"base":30},
-      "effects": [{"call":"zin_sun_add_gala_counsel","args":{"value":3}},{"call":"zin_elves_goodwill","args":{"target":"Gala Elves"}}]
+      "effects": [{"call":"zin_sun_add_gala_counsel","args":{"value":3}},{"call":"zin_elves_goodwill","args":{"target":"Gala"}}]
     },
     {
       "key": "heed_the_old_king",

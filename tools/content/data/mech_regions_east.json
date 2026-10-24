@@ -13,12 +13,12 @@
     "worshipdom": "Worshipdom",
     "magicalScan": "Magical Lands",
     "leans": {
-      "Gondolin": 70, "Mylunur": 30, "Delbiz Grasslands": 20, "Ostoroth": 15, "Mora": 10,
-      "Alerhia": 0, "Kersian": 0, "The Moco": 0,
-      "Miaed": -10, "Avalon": -10, "Mostok": -15, "Erco": -20, "Obmi": -20, "Oreton": -20,
+      "Naamis": 70, "Noris": 30, "Delbiz": 20, "Ostoroth": 15, "Mora": 10,
+      "Alerhia": 0, "Kersian": 0,
+      "Miaed": -10, "Rhachia": -10, "Mostok": -15, "Erco": -20, "Obmi": -20, "Stabilo": -20,
       "Plutondo": -30, "Drak": -70
     },
-    "befriendNoris": ["Gondolin", "Mylunur", "Mora"],
+    "befriendNoris": ["Naamis", "Noris", "Mora"],
     "befriendStabilo": ["Drak", "Plutondo", "Obmi"],
     "befriendBoth": ["Alerhia"]
   },
@@ -236,11 +236,11 @@
     "rows": [
       { "key": "furvior", "kind": "state", "rule": { "capital": "Noris" } },
       { "key": "postondoroth", "kind": "state", "rule": { "vp": "Postondoroth" } },
-      { "key": "road_salt", "kind": "list", "rule": { "path": ["site:furvior", "capital:Mylunur", "capital:Gondolin"] } },
+      { "key": "road_salt", "kind": "list", "rule": { "path": ["site:furvior", "capital:Noris", "capital:Naamis"] } },
       { "key": "road_gold", "kind": "list", "rule": { "path": ["capital:Plutondo", "site:postondoroth", "capital:Stabilo", "capital:Mostok", "capital:Kersian", "capital:Azano", "capital:Alerhia"] } },
-      { "key": "road_rift", "kind": "list", "rule": { "path": ["site:furvior", "capital:Delbiz Grasslands", { "nearest": { "target": "capital:Delbiz Grasslands", "filter": { "owned": "Alerhia", "naval_base": true, "site": "rift_east" } } }] } },
-      { "key": "road_lake", "kind": "list", "rule": { "path": ["site:furvior", "capital:Mora", "capital:Ernois", "capital:Ostoroth"] } },
-      { "key": "road_sand", "kind": "list", "rule": { "path": ["capital:Stabilo", "capital:Obmi", "capital:Olor", "capital:Erco"], "branches": [["capital:Obmi", "capital:Arcon", "capital:Pornivior", "capital:Miaed"]] } },
+      { "key": "road_rift", "kind": "list", "rule": { "path": ["site:furvior", "capital:Delbiz", { "nearest": { "target": "capital:Delbiz", "filter": { "owned": "Alerhia", "naval_base": true, "site": "rift_east" } } }] } },
+      { "key": "road_lake", "kind": "list", "rule": { "path": ["site:furvior", "capital:Mora", "capital:Ostoroth", "capital:Ostoroth"] } },
+      { "key": "road_sand", "kind": "list", "rule": { "path": ["capital:Stabilo", "capital:Obmi", "capital:Erco"], "branches": [["capital:Obmi", "capital:Stabilo", "capital:Pornivior", "capital:Miaed"]] } },
       { "key": "rift_east", "kind": "list", "rule": { "owned": "region:east_lands", "on_sea": "rift_sea" }, "pending": "the rift sea regions are not named yet" },
       { "key": "rift_west", "kind": "list", "rule": { "owned": "region:magical_lands", "on_sea": "rift_sea" }, "pending": "the rift sea regions are not named yet" },
       { "key": "east_lands", "kind": "region", "rule": { "roster": "South-Earth" } },

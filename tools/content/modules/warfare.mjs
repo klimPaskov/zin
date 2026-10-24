@@ -2,7 +2,7 @@
 // sub-units, equipment, ship modules, hull upgrades, equipment groups, unit categories, combat tactics and the unit,
 // division, ship and agent name lists, with their text and sprites. Data: tools/content/data/warfare_*.json.
 //
-//   buildWarfare(staged, ctx)   ctx = { countries, pools? }. `countries` is the roster of data/countries.json; `pools` is
+//   buildWarfare(staged, ctx)   ctx = { countries, pools? }. `countries` is the roster (lib/roster.mjs); `pools` is
 //                               the Map that buildNames returns (callsigns for the agents' code names; without it the
 //                               module builds the pools itself on a scratch set). Stages the files listed in
 //                               docs/design/stage2/warfare.md and returns the counts.
@@ -23,6 +23,7 @@ import { Staged, yml } from '../lib/core.mjs';
 import { GAME, ZIN } from '../lib/paths.mjs';
 import { placeNames, buildNames } from './names.mjs';
 import { compileBanned, findBanned } from '../lib/banned.mjs';
+import { cultureRows } from '../lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data');
@@ -44,7 +45,7 @@ const readJson = async f => JSON.parse(await readFile(path.join(DATA, f), 'utf8'
 export async function loadRaw() {
   const [units, equipment, naval, names, text, models, econ, cultures, cultureDefs, techs, techIds] = await Promise.all([
     readJson('warfare_units.json'), readJson('warfare_equipment.json'), readJson('warfare_naval.json'), readJson('warfare_names.json'),
-    readJson('warfare_text.json'), readJson('warfare_models.json'), readJson('economy.json'), readJson('world/country_cultures.json'),
+    readJson('warfare_text.json'), readJson('warfare_models.json'), readJson('economy.json'), Promise.resolve({ countries: cultureRows() }),
     readJson('world/cultures.json'), readJson('technologies_warfare.json'), readJson('technologies_ids.json'),
   ]);
   return { units, equipment, naval, names, text, models, econ, cultures, cultureDefs, techs, techIds };

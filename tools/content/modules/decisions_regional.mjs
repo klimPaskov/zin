@@ -6,10 +6,11 @@
 //
 //   const out = await buildDecisionsRegional(staged, { countries, known });   // build.mjs, any time before the text scan
 //
-// ctx.countries: roster rows { name, tag } (default data/countries.json); ctx.known: optional Set of the scripted effect
+// ctx.countries: roster rows { name, tag } (default: the roster, lib/roster.mjs); ctx.known: optional Set of the scripted effect
 // and trigger ids the fragments may name (the tree files' declarations); a zin_regional_ name outside it fails the build.
 import { readFile } from 'node:fs/promises';
 import { isCp1252 } from '../checks/focus_checks.mjs';
+import { countryTable } from '../lib/roster.mjs';
 
 export const DATA_FILE = new URL('../data/decisions_regional.json', import.meta.url);
 const ID = /^zin_regional_[a-z0-9_]+$/;
@@ -17,7 +18,7 @@ const GROUP = /^regional_[a-z0-9_]+$/;
 const SPRITE = /^GFX_[A-Za-z0-9_]+$/;
 const TEXT_FIELDS = ['name', 'desc'];
 
-async function loadRoster() { return JSON.parse(await readFile(new URL('../data/countries.json', import.meta.url), 'utf8')).countries; }
+async function loadRoster() { return countryTable(); }
 
 // Brace balance of a fragment, ignoring text inside quotes and after a comment mark.
 function balanced(fragment) {

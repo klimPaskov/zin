@@ -1,7 +1,7 @@
 {
   "id": "regional_isengard",
   "tier": "regional",
-  "countries": ["Isengard"],
+  "countries": ["Melkgard"],
   "summary": "Isengard refuses the Winter Crown: forts on the march, gifts to the steadings, and an answer to Fandanar that is either never to kneel or a seat at the Accord.",
   "spirits": {
     "refusal_of_850": {"name":"The Refusal of 850","desc":"When the kings of Coldor united the frozen interior, the hall of Isengard said no, and has said it at every midwinter since. The refusal is a pride, a burden and a wall.","icon":"crown_iron","modifier":{"war_support_factor":0.05,"army_core_defence_factor":0.05,"trade_opinion_factor":-0.1}},
@@ -14,7 +14,7 @@
     "the_north_held": {"name":"The North Held","desc":"When the south burned, the hall kept its forts and its fields, and the north did not break. Winter itself was on Isengard's side.","modifier":{"stability_factor":0.05,"army_core_defence_factor":0.1}}
   },
   "events": {
-    "marriage_offer": {"n":1,"title":"A Daughter of the Iron Hall","desc":"Envoys of Isengard stand in the great hall of Fandanar with a gift of black iron and a request in the warlord's own words. He offers one of his daughters to the Winter Crown's house, so that two halls that have glared across a border for three centuries might share a hearth.","picture":"generic_court","options":[{"name":"Decline politely","effects":[{"call":"zin_cold_add_defiance","args":{"value":5}}],"ai_chance":{"base":30}},{"name":"Accept the match","effects":[{"call":"zin_cold_add_defiance","args":{"value":-10}},{"opinion":{"target":"Isengard","modifier":"marriage","both_ways":true}}],"ai_chance":{"base":70}}]},
+    "marriage_offer": {"n":1,"title":"A Daughter of the Iron Hall","desc":"Envoys of Isengard stand in the great hall of Fandanar with a gift of black iron and a request in the warlord's own words. He offers one of his daughters to the Winter Crown's house, so that two halls that have glared across a border for three centuries might share a hearth.","picture":"generic_court","options":[{"name":"Decline politely","effects":[{"call":"zin_cold_add_defiance","args":{"value":5}}],"ai_chance":{"base":30}},{"name":"Accept the match","effects":[{"call":"zin_cold_add_defiance","args":{"value":-10}},{"opinion":{"target":"Melkgard","modifier":"marriage","both_ways":true}}],"ai_chance":{"base":70}}]},
     "iron_halls_promise": {"n":2,"title":"The Iron Hall Stands Behind Us","desc":"A rider in black mail reaches the steading at dusk with the warlord's word: no crown will take this hearth while Isengard holds iron. He swears it on the steading's own fire, before witnesses, and leaves before the meal is poured.","picture":"generic_court","options":[{"name":"We are not alone","effects":[{"call":"zin_cold_add_lean","args":{"value":-5}}]}]}
   },
   "focuses": [
@@ -68,11 +68,11 @@
     "zin_regional_isengard_recruit_brana": {"effects":[{"raw":"recruit_character = zin_regional_isengard_brana"}]},
     "zin_regional_isengard_recruit_veska": {"effects":[{"raw":"recruit_character = zin_regional_isengard_veska"}]},
     "zin_regional_isengard_guarantee_oath_brothers": {"effects":[{"raw":"every_neighbor_country = {\n\tlimit = {\n\t\tzin_cold_is_clan_realm = yes\n\t\tcheck_variable = { var = zin_cold_lean value = -40 compare = less_than_or_equals }\n\t}\n\tROOT = { give_guarantee = PREV }\n\tcountry_event = { id = zin_regional_isengard.2 }\n}"}]},
-    "zin_regional_isengard_wargoal_march": {"effects":[{"raw":"Y01 = {\n\tevery_owned_state = {\n\t\tlimit = { zin_is_site_isengard_march = yes }\n\t\tadd_claim_by = ROOT\n\t}\n}\ncreate_wargoal = {\n\ttype = take_claimed_state\n\ttarget = Y01\n\tgenerator = owned_states\n}"}]}
+    "zin_regional_isengard_wargoal_march": {"effects":[{"raw":"CLD = {\n\tevery_owned_state = {\n\t\tlimit = { zin_is_site_isengard_march = yes }\n\t\tadd_claim_by = ROOT\n\t}\n}\ncreate_wargoal = {\n\ttype = take_claimed_state\n\ttarget = CLD\n\tgenerator = owned_states\n}"}]}
   },
   "scripted_triggers": {
-    "zin_regional_isengard_march_war_running": {"conditions":[{"raw":"has_border_war_with = Y01"}]},
-    "zin_regional_isengard_march_fought": {"conditions":[{"or":[{"not":[{"exists":"Coldor"}]},{"raw":"Y01 = { has_country_flag = zin_cold_march_war_fought }"}]}]},
+    "zin_regional_isengard_march_war_running": {"conditions":[{"raw":"has_border_war_with = CLD"}]},
+    "zin_regional_isengard_march_fought": {"conditions":[{"or":[{"not":[{"exists":"Coldor"}]},{"raw":"CLD = { has_country_flag = zin_cold_march_war_fought }"}]}]},
     "zin_regional_isengard_has_oath_brothers": {"conditions":[{"raw":"any_neighbor_country = {\n\tzin_cold_is_clan_realm = yes\n\tcheck_variable = { var = zin_cold_lean value = -40 compare = less_than_or_equals }\n}"}]}
   },
   "opinion_modifiers": {

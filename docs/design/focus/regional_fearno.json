@@ -65,7 +65,7 @@
     "zin_regional_fearno_guarantee_members": {"effects":[{"raw":"every_other_country = {\n\tlimit = { is_in_faction_with = ROOT }\n\tROOT = { give_guarantee = PREV }\n}"}]}
   },
   "scripted_triggers": {
-    "zin_regional_fearno_in_accord": {"conditions":[{"raw":"country_exists = Y01\nis_in_faction_with = Y01"}]},
+    "zin_regional_fearno_in_accord": {"conditions":[{"raw":"country_exists = CLD\nis_in_faction_with = CLD"}]},
     "zin_regional_fearno_steadings_gathered": {"conditions":[{"raw":"is_faction_leader = yes\nnum_faction_members > 2"}]},
     "zin_regional_fearno_leads_faction": {"conditions":[{"raw":"is_faction_leader = yes"}]},
     "zin_regional_fearno_unbound": {"conditions":[{"raw":"is_in_faction = no"}]}

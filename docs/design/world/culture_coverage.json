@@ -214,7 +214,7 @@
       "unit_group": "iron_brute",
       "unused": null
     },
-    "ember_lands_freeholds": {
+    "ember_freeholds": {
       "building_style": "mud_brick_sea",
       "countries": [
         "Bennen",
@@ -229,8 +229,8 @@
       "faith": "mourning_dust",
       "idea_category": "hidden_ideas",
       "ideas": [
-        "zin_culture_ember_lands_freeholds",
-        "zin_culture2_ember_lands_freeholds"
+        "zin_culture_ember_freeholds",
+        "zin_culture2_ember_freeholds"
       ],
       "language": "mirolic",
       "modifiers": [
@@ -245,7 +245,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 2,
-        "pool": "ember_lands_freeholds",
+        "pool": "ember_freeholds",
         "tier": 3,
         "total": 4,
         "unique": false
@@ -524,7 +524,7 @@
       "unit_group": "dead",
       "unused": null
     },
-    "gunwaith_clans": {
+    "gunwyn_clans": {
       "building_style": "hill_ring_fort",
       "countries": [
         "Gunwaith",
@@ -538,8 +538,8 @@
       "faith": "clan_stones",
       "idea_category": "country",
       "ideas": [
-        "zin_culture_gunwaith_clans",
-        "zin_culture2_gunwaith_clans"
+        "zin_culture_gunwyn_clans",
+        "zin_culture2_gunwyn_clans"
       ],
       "language": "gunwaithic",
       "modifiers": [
@@ -554,7 +554,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 6,
-        "pool": "gunwaith_clans",
+        "pool": "gunwyn_clans",
         "tier": 1,
         "total": 12,
         "unique": true
@@ -772,7 +772,7 @@
       "unit_group": "orc_horde",
       "unused": null
     },
-    "isengard_warlords": {
+    "melkgard_warlords": {
       "building_style": "black_fort",
       "countries": [
         "Isengard"
@@ -780,8 +780,8 @@
       "faith": "storm_court",
       "idea_category": "country",
       "ideas": [
-        "zin_culture_isengard_warlords",
-        "zin_culture2_isengard_warlords"
+        "zin_culture_melkgard_warlords",
+        "zin_culture2_melkgard_warlords"
       ],
       "language": "coldic",
       "modifiers": [
@@ -796,7 +796,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 4,
-        "pool": "isengard_warlords",
+        "pool": "melkgard_warlords",
         "tier": 2,
         "total": 8,
         "unique": true
@@ -1343,7 +1343,7 @@
         "Miaed",
         "Plutondo"
       ],
-      "faith": "river_temples",
+      "faith": "flood_stair",
       "idea_category": "country",
       "ideas": [
         "zin_culture_river_kings",
@@ -1785,7 +1785,7 @@
       "unit_group": "orc_horde",
       "unused": null
     },
-    "wall_folk": {
+    "vale_folk": {
       "building_style": "wall_grey",
       "countries": [
         "Hilofrim",
@@ -1793,11 +1793,11 @@
         "Klungori Guard",
         "Olvinc-un"
       ],
-      "faith": "stone_vigil",
+      "faith": "pass_vigil",
       "idea_category": "country",
       "ideas": [
-        "zin_culture_wall_folk",
-        "zin_culture2_wall_folk"
+        "zin_culture_vale_folk",
+        "zin_culture2_vale_folk"
       ],
       "language": "aenoran",
       "modifiers": [
@@ -1812,7 +1812,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 4,
-        "pool": "wall_folk",
+        "pool": "vale_folk",
         "tier": 2,
         "total": 8,
         "unique": true
@@ -1901,7 +1901,7 @@
       "unit_group": "orc_horde",
       "unused": null
     },
-    "windwaith_seafarers": {
+    "vindael_seafarers": {
       "building_style": "harbour_wood",
       "countries": [
         "Greenle",
@@ -1910,8 +1910,8 @@
       "faith": "storm_court",
       "idea_category": "hidden_ideas",
       "ideas": [
-        "zin_culture_windwaith_seafarers",
-        "zin_culture2_windwaith_seafarers"
+        "zin_culture_vindael_seafarers",
+        "zin_culture2_vindael_seafarers"
       ],
       "language": "coldic",
       "modifiers": [
@@ -1926,7 +1926,7 @@
       "portrait_pool": {
         "kit": "men",
         "per_sex": 2,
-        "pool": "windwaith_seafarers",
+        "pool": "vindael_seafarers",
         "tier": 3,
         "total": 4,
         "unique": false
@@ -2093,7 +2093,7 @@
       "kept_by_cultures": [
         "buldor_companies",
         "girdon_wardens",
-        "gunwaith_clans"
+        "gunwyn_clans"
       ],
       "name": "The Standing Stones",
       "spirit": "zin_faith_clan_stones"
@@ -2328,7 +2328,7 @@
       "holy_sites": 0,
       "kept_by_cultures": [
         "chart_islanders",
-        "ember_lands_freeholds",
+        "ember_freeholds",
         "free_crowns_north",
         "goodin_sunfolk",
         "isle_houses",
@@ -2338,7 +2338,7 @@
         "mirolon_wardens",
         "selen_ranger",
         "steppe_rider",
-        "wall_folk",
+        "vale_folk",
         "western_guilds"
       ],
       "name": "The Lamp and the Furrow",
@@ -2358,7 +2358,7 @@
       "festivals": 1,
       "holy_sites": 0,
       "kept_by_cultures": [
-        "ember_lands_freeholds"
+        "ember_freeholds"
       ],
       "name": "The Mourning Customs of the Ember Lands",
       "spirit": "zin_faith_mourning_dust"
@@ -2517,7 +2517,7 @@
       "name": "The Red Hearth",
       "spirit": "zin_faith_red_hearth"
     },
-    "river_temples": {
+    "flood_stair": {
       "countries": [
         "Alerhia",
         "Delbiz Grasslands",
@@ -2533,7 +2533,7 @@
         "river_kings"
       ],
       "name": "The River Temples",
-      "spirit": "zin_faith_river_temples"
+      "spirit": "zin_faith_flood_stair"
     },
     "river_wardens": {
       "countries": [
@@ -2612,7 +2612,7 @@
       "name": "The Hunger and the Stone",
       "spirit": "zin_faith_stone_hunger"
     },
-    "stone_vigil": {
+    "pass_vigil": {
       "countries": [
         "Hilofrim",
         "Kingson",
@@ -2624,10 +2624,10 @@
       "kept_by_cultures": [
         "march_folk",
         "pass_wardens",
-        "wall_folk"
+        "vale_folk"
       ],
       "name": "The Stone Vigil",
-      "spirit": "zin_faith_stone_vigil"
+      "spirit": "zin_faith_pass_vigil"
     },
     "storm_court": {
       "countries": [
@@ -2639,8 +2639,8 @@
       "holy_sites": 2,
       "kept_by_cultures": [
         "ice_clans",
-        "isengard_warlords",
-        "windwaith_seafarers"
+        "melkgard_warlords",
+        "vindael_seafarers"
       ],
       "name": "The Storm Court",
       "spirit": "zin_faith_storm_court"
@@ -2833,8 +2833,8 @@
       "kept_by_cultures": [
         "ice_clans",
         "ice_giants",
-        "isengard_warlords",
-        "windwaith_seafarers",
+        "melkgard_warlords",
+        "vindael_seafarers",
         "winter_crown"
       ],
       "name": "The Winter Hearth",
@@ -2887,7 +2887,7 @@
         "march_folk",
         "selen_ranger",
         "steppe_rider",
-        "wall_folk",
+        "vale_folk",
         "zilin_pilgrims"
       ],
       "name": "Aenoran"
@@ -2910,8 +2910,8 @@
       "countries": 29,
       "cultures": [
         "ice_clans",
-        "isengard_warlords",
-        "windwaith_seafarers",
+        "melkgard_warlords",
+        "vindael_seafarers",
         "winter_crown"
       ],
       "name": "Coldic"
@@ -2957,7 +2957,7 @@
       "cultures": [
         "buldor_companies",
         "girdon_wardens",
-        "gunwaith_clans",
+        "gunwyn_clans",
         "western_guilds"
       ],
       "name": "Gunwaithic"
@@ -2987,7 +2987,7 @@
     "mirolic": {
       "countries": 9,
       "cultures": [
-        "ember_lands_freeholds",
+        "ember_freeholds",
         "mirolon_wardens"
       ],
       "name": "Mirolic"
