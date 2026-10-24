@@ -60,7 +60,7 @@ All mechanics, numbers, names of seats, seat holders other than Merovan and Sevr
 | O2 | This spec owns the palace rolls and `zin_afrit_die`, called once, by this chain; the journey and the war events narrate. |
 | O3 | Glo never passes to Afrit. No flag, event or modifier of this spec stands for Afrit holding Glo. |
 | O5, S1 | The King of the East rules from the Worshipdom under the cosmetic name "the Dominion of the East"; kneeling courts become its subjects with `zin_autonomy_eastern_client`, not faction members. |
-| R4 | Start footholds follow this spec's table (V1), including Fotan, the six Dead Lands freeholds and the Cold Lands. |
+| R4 | Start footholds follow this spec's table (V1), including Fotan, the six Ember Lands freeholds and the Cold Lands. |
 | R6 | Afrit's voyage north (60 days) and the restart after a failed palace attempt (180 days) are this spec's timings. |
 | E1 | Scripted effects take no parameters: every argument below compiles to the temporary variable `zin_arg_<name>` set just before the call (codes in "Scripted effects"). |
 | E2 | Every event sets `timeout_days = 30` and a timed-out event takes its first option. Events that decide a path checkpoint for a human list their non-committal option first and the historical option second (marked "CP" in the event table). |
@@ -174,7 +174,7 @@ The zero caps follow the vault: Afrit stays independent of Volgan and Zol, and H
 | Selen | 1 |
 | Fotan (Middle Lands, outside the Concord) | 1 |
 | Cursed Lands, Bloody Forest | 0 |
-| The six Dead Lands freeholds (the Dead Lands countries outside Volgan's Southern Dominion; their cap stays as below, the start sits above it) | 1 |
+| The six Ember Lands freeholds (the Ember Lands countries outside Volgan's Southern Dominion; their cap stays as below, the start sits above it) | 1 |
 | Every Cold Lands country except Yeldenne | 1 |
 | Alerhia, Erco, Plutondo, Miaed, Noris, Stabilo | 3 |
 | Other East Lands countries (including the South Lands desert band) | 2 |
@@ -644,7 +644,7 @@ Country flags: `zin_afrit_suspicious` (730 days), `zin_afrit_houses_purged` (365
 | `zin_afrit_die` | any | — | Death (above); called only by `zin_afrit.75` (O2) |
 | `zin_afrit_purge_houses` | target country | — | Purge (above); also called by shared trees and story events |
 
-**Arguments (E1).** Each argument is the temporary variable `zin_arg_<name>` (for example `zin_arg_value`, `zin_arg_days`, `zin_arg_divisions`), set by the caller just before the call; the effect reads it and clears it. Keyword arguments use number codes: `seat` seals 1, censers 2, whispers 3, relics 4; `artifact` ring 1, crown 2, bracelet 3, necklace 4; `region` 0 for any, else the economy spec's region keys in this order: middle_lands 1, north_lands 2, cold_lands 3, west_lands 4, tritons_islands 5, dark_lands 6, magical_lands 7, zols_mistake 8, dead_lands 9, east_lands 10, islands_of_the_south 11, lands_of_the_sun 12; `voluntary` 0 or 1. The focus compiler writes `call` blocks in this form.
+**Arguments (E1).** Each argument is the temporary variable `zin_arg_<name>` (for example `zin_arg_value`, `zin_arg_days`, `zin_arg_divisions`), set by the caller just before the call; the effect reads it and clears it. Keyword arguments use number codes: `seat` seals 1, censers 2, whispers 3, relics 4; `artifact` ring 1, crown 2, bracelet 3, necklace 4; `region` 0 for any, else the economy spec's region keys in this order: middle_lands 1, north_lands 2, cold_lands 3, west_lands 4, tritons_islands 5, dark_lands 6, magical_lands 7, zols_mistake 8, ember_lands 9, east_lands 10, islands_of_the_south 11, lands_of_the_sun 12; `voluntary` 0 or 1. The focus compiler writes `call` blocks in this form.
 
 Each effect shows one mask-safe custom tooltip and hides its work while `zin_afrit_secret_kept`. Effects owned elsewhere and called here: `zin_aenor_expose_plot`, `zin_aenor_hasten_death_clock`, `zin_aenor_add_council_influence`, `zin_aenor_add_concord_loyalty_all` (Aenor); `zin_east_prepare_kneel` (East); `zin_eindil_start_hunt` (journey); the journey's events `zin_eindil.110`, `.120`, `.121`, `.123`, `.124`, `.127` and the events spec's `zin_reign.65`, `.81`, `.82`, `.83`, `.85` (fired, not called); `zin_politics_set_stance` (foundation); `zin_world_add_gathering_dark` (world systems); `zin_reign_on_crowning` (events).
 

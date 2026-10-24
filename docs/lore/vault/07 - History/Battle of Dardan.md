@@ -6,7 +6,7 @@ updated: 2026-10-17
 
 # Battle of Dardan
 
-**Established:** The decisive battle of the First Age war against [[Volgan]]. It claimed **millions of lives** and left a wasteland behind. The [[Grand Alliance]] defeated Volgan, and other spirits stripped his power and banished him to the **Void**. The aftermath included an unsuccessful invasion of the Dead Lands and the end of the First Age in **Year 1675**.
+**Established:** The decisive battle of the First Age war against [[Volgan]]. It claimed **millions of lives** and left a wasteland behind. The [[Grand Alliance]] defeated Volgan, and other spirits stripped his power and banished him to the **Void**. The aftermath included an unsuccessful invasion of the Ember Lands and the end of the First Age in **Year 1675**.
 
 **The battlefield's precise position on the map, the battle duration, and the banishment process are not yet fixed.**
 
@@ -20,7 +20,7 @@ The fuller scene, phase-by-phase course of battle, and consequences are in [[The
 
 ## Aftermath
 
-The military host breaks, but the Dead Lands remain unconquered. **Elzon** organizes the remnant defense and defeats the Alliance's attempted follow-up invasion. Elven casualties in that failure create longstanding resentment toward Aenor's king.
+The military host breaks, but the Ember Lands remain unconquered. **Elzon** organizes the remnant defense and defeats the Alliance's attempted follow-up invasion. Elven casualties in that failure create longstanding resentment toward Aenor's king.
 
 [[The First Age of Aoaz]] · [[Elzon]] · [[Grand Alliance]] · [[Volgan]]
 

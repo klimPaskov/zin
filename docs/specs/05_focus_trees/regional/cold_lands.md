@@ -974,6 +974,6 @@ All six are owner questions already listed in [OPEN_QUESTIONS.md](../../OPEN_QUE
 1. **Isengard's seat.** Works on: the Iron Hall stays a hall without a city name.
 2. **Horidor's crown.** Works on: leaving the Accord and crowning the chieftain is a player alternative (AI ×0 on the historical path).
 3. **Fearno.** Works on: a proud third pole (the Free Steadings) as an alternative; historically a lord among lords.
-4. **Windwaith's fishermen.** Works on: the tale stays vague (black ships in the north), whether or not the arm reaches the Ocean of Zol.
+4. **Windwaith's fishermen.** Works on: the tale stays vague (black ships in the north), whether or not the arm reaches the Kusmeel.
 5. **Giants and yeti.** Works on: they may send help south only off the historical path (hist ×0), and no text states their nature.
 6. **The silent castle legend.** Works on: Fearno, Titanos and the Yeti Lands repeat the "green light in the north" as rumour (history-for-play spec).

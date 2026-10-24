@@ -26,7 +26,7 @@ The South Lands are the great desert of the East Lands, running south off the ed
 
 **Hazards.** Heat that kills a caravan that loses its wells; sandstorms; quicksand in the old wadi beds; sand golems disturbed in their caves (section 9); volcanic ash from the Hardtmuth; and the dread of the south.
 
-**The edge and beyond.** The map ends at the Line of Sun (`edge_south`, drawn "The Line of Sun", established as the south edge's name) in impassable cliffs ([GM]). **Owner decision ([OD]):** the lands south of the South Lands are the home of devils, demons and beings of fire and endless suffering; they are reference names only, off the map. The drawn East-sheet names that read as those lands (the Unforgivable Lands, the Lands of Burning Men, the Devil's Place, the Altering Lands of Death, the Upland of Lava, the Burning Lands of Ocellios) are used here only as what people say lies beyond the last well. Nothing in the game travels there. Whether the Nether below the Dead Lands has any link to these lands is not said ([nether.md](nether.md)).
+**The edge and beyond.** The map ends at the Line of Sun (`edge_south`, drawn "The Line of Sun", established as the south edge's name) in impassable cliffs ([GM]). **Owner decision ([OD]):** the lands south of the South Lands are the home of devils, demons and beings of fire and endless suffering; they are reference names only, off the map. The drawn East-sheet names that read as those lands (the Unforgivable Lands, the Lands of Burning Men, the Devil's Place, the Altering Lands of Death, the Upland of Lava, the Burning Lands of Ocellios) are used here only as what people say lies beyond the last well. Nothing in the game travels there. Whether the Nether below the Ember Lands has any link to these lands is not said ([nether.md](nether.md)).
 
 ## 3. Inhabitants
 
@@ -99,7 +99,7 @@ The South Lands are the great desert of the East Lands, running south off the ed
 | Noris | Rival and partner at the wells; the Salt and Sand Roads (P) |
 | Stabilo | Miaed's best customer on the Sand Road (P) |
 | Alerhia, Erco | Alerhic kin of the pass-lords (P) |
-| The Dead Lands and the Islands of the South across the Ocean of the Sun | Distant; storm-bound coasts (P) |
+| The Ember Lands and the Islands of the South across the Ocean of the Sun | Distant; storm-bound coasts (P) |
 | The burning lands beyond the south edge | Dread; no contact (reference names, [OD]) |
 
 ## 9. Wildlife and creatures

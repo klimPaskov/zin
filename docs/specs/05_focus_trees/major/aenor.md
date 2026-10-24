@@ -13,7 +13,7 @@ Aenor's tree is the deepest in ZIN: 140 focuses that carry the Middle Kingdom fr
 | The Golden King sells offices, rewards flatterers, keeps a strong army, founds the Lost Cause | established |
 | The temples of the Deliverer and the King's councillors govern behind the throne | established; Houses of the First Light, Chancellor Merovan proposed |
 | Aenor leads the Middle Kingdom Concord of 26 dominions; Selen's rangers, Kilinti's ents, Hiloron's giants, Hunhun's riders, Kingson behind the Great Wall, Asgard on Aenor Isle | established names; charters and Concord constitution proposed |
-| Mirolon warned of the Dead Lands (4A 1736), fishermen saw black ships (4A 1744) | proposed dates for established dangers |
+| Mirolon warned of the Ember Lands (4A 1736), fishermen saw black ships (4A 1744) | proposed dates for established dangers |
 | The Golden King's murder, Aurevan's crowning, Eindil denounced, Afrit's flight east, westerners in Parim, Eindil hailed and crowned | established outline; dates proposed |
 | The four succession camps | established; their mechanics proposed |
 | Every focus, name, number, spirit and event below | **proposed** |

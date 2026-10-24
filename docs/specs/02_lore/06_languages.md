@@ -58,7 +58,7 @@ A sample correspondence set, the Ainic family (Old Ainic / Aenoran / Leren / Don
 | Aenoran (`aenoran`) | Aenoran | ainic | living | Lake Aenorans; Selen rangers; Steppe riders; Wall-folk; March-folk; Isle houses; Zilin pilgrims | Common hand | mod-head, closed | 80 | 60 | 6000 / 6000 |
 | Leren (`leren`) | Leren | ainic | living | Leren of the Strait; Free Crowns of the North; Marchers of Molot | Leren strokes | mod-head, closed | 81 | 60 | 6000 / 6000 |
 | Dondric (`dondric`) | Dondric | ainic | living | Dondor Brutes; Blackton freeholders | Notched marks | mod-head, closed | 78 | 60 | 4010 / 4141 |
-| Mirolic (`mirolic`) | Mirolic | ainic | living | Mirolonese wardens; Dead Lands freeholds | Common hand with warden marks | mod-head, closed | 79 | 60 | 4664 / 6000 |
+| Mirolic (`mirolic`) | Mirolic | ainic | living | Mirolonese wardens; Ember Lands freeholds | Common hand with warden marks | mod-head, closed | 79 | 60 | 4664 / 6000 |
 | Rite-Tongue (`grave_rite`) | Rite-Tongue | ainic | liturgical | necromantic orders of Volgan; officers of the grave hosts (titles only) | Ash script | mod-head, closed | 85 | 60 | 3572 / 491 |
 | Coldic (`coldic`) | Koldic | boreal | living | Coldor Winter-Crown folk; Ice clans; Isengard warlords; Windwaith seafarers | Frost-runes | mod-head, closed | 79 | 60 | 5739 / 6000 |
 | Gunwaithic (`gunwaithic`) | Gunwaithic | boreal | living | Gunwaith clans; Girdon wardens; Western guildmen; Buldor companies | Clan-ogham | head-mod, hyphen | 81 | 60 | 4454 / 5902 |
@@ -279,9 +279,9 @@ The blunt tongue of the Dondor Brutes. It is Old Ainic worn down by centuries of
 
 ### 3.5 Mirolic (`mirolic`)
 
-*Family:* ainic, daughter of ainic. *Status:* living. *Spoken by:* Mirolonese wardens; Dead Lands freeholds. *Script:* Common hand with warden marks, the Common hand, with a signal alphabet of knotted cords used by the pass watch.
+*Family:* ainic, daughter of ainic. *Status:* living. *Spoken by:* Mirolonese wardens; Ember Lands freeholds. *Script:* Common hand with warden marks, the Common hand, with a signal alphabet of knotted cords used by the pass watch.
 
-The liquid speech of the lake-country of the Dead Lands: a southern daughter of Old Ainic that lost p-less roots, k and s. It sounds of l, m, n and r.
+The liquid speech of the lake-country of the Ember Lands: a southern daughter of Old Ainic that lost p-less roots, k and s. It sounds of l, m, n and r.
 
 | Sound | |
 | --- | --- |
@@ -1287,7 +1287,7 @@ Every draw uses `rng("zin-names:" + kind + ":" + entityId)` (the builder's seede
 
 ### The banned-name filter
 
-- Substrings from `names.mjs` `BANNED`: rush, klinti, sunhot, edvoid, zol, volgan, afrit, hell, dead, death, devil, demon, god, sex, ass, tit, cum, dick, cock, kill, rape, slut, piss, shit, fuck, nazi. This spec adds: cunt, twat, whore, bitch, fagg, nigg, spic, kike, chink, anus, arse, boob, porn, turd, crap, damn, hitler, satan, jesus, christ, allah, zeus, gandalf, frodo, sauron, mordor.
+- Substrings from `names.mjs` `BANNED`: rush, klinti, sunhot, kusven, zol, volgan, afrit, hell, dead, death, devil, demon, god, sex, ass, tit, cum, dick, cock, kill, rape, slut, piss, shit, fuck, nazi. This spec adds: cunt, twat, whore, bitch, fagg, nigg, spic, kike, chink, anus, arse, boob, porn, turd, crap, damn, hitler, satan, jesus, christ, allah, zeus, gandalf, frodo, sauron, mordor.
 - Whole words from `generator.modern_blocklist` (about 140 modern first names and everyday words such as Mark, Maria, Sara, taxi, pizza).
 - Established names are **exempt** from the substring filter (Titanos contains "tit"; Pornivior contains "porn"; Hellekton contains "hell"). The filter applies to generated names only.
 - The **do-not-generate list**: the Golden King, the King of Demons, the administrator of Zol's Mistake, the name of Roka's people, the dwarves, the angels, any New God other than Glernaen. These have no entry in any language.
@@ -1327,7 +1327,7 @@ Real maps carry layers of speech. The generator applies one when it names a plac
 | Magical Lands | Elder Elvish forms of Sylvan | The oldest settled land |
 | East Lands | Alerhic (rivers), Noric (wells) | River kingdoms and desert tribes |
 | Lands of the Sun | Galic (holy places) | Gala and the sanctuaries |
-| Dead Lands | Mirolic (coast), Infernal (the Nether), Rite-Tongue (gates) | The north coast, the south, the dead |
+| Ember Lands | Mirolic (coast), Infernal (the Nether), Rite-Tongue (gates) | The north coast, the south, the dead |
 | Islands of the South | Yonic archaic forms | Reef names |
 | Zol's Mistake | none | No people is recorded |
 

@@ -46,7 +46,7 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 
 **Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, and the owner has since classified devils as corrupted Lesser Spirits, but the lore does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
 
-See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Dead Lands]].
+See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Ember Lands]].
 
 ## First Age ethnic and political history
 

@@ -12,7 +12,7 @@ In the late Fourth Age, [[Afrit]] arrives first to claim Glo and introduces hims
 
 With death approaching, Horos tells Eindil the hidden truth of his family and of Glo's earlier rejected claimants. He removes Glo from his chest and places it in Eindil's hands. His form crumbles to dust. Eindil also inherits Horos's blue enchanted sword. The crystal carries Glernaen's power into the final war and later serves as a bridge for the combined New Gods to revive and empower Eindil.
 
-Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
+Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
 
 **The halls beneath the castle (owner, 24 October 2026):** Horos's bestiary card describes his underground castle. That place is the halls beneath Castle Yeldenne. The card's name for them, Tol Hithi, is a former label only; they receive an original name, not chosen yet.
 

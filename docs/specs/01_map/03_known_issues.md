@@ -16,7 +16,7 @@
 
 ## 2. Superseded names in internal files
 
-Two strategic region files still carry "Edvoid" in their file names. Players don't see file names. Rename them on the next map rebuild.
+Two strategic region files still carry "Kusven" in their file names. Players don't see file names. Rename them on the next map rebuild.
 
 ## 3. Data defects found while writing the specs (18 October 2026)
 

@@ -81,9 +81,9 @@ See [[The Campaign of 4A 1748]] for the world at the start and how the age can u
 | --- | --- |
 | 4A 1729 | The [[Golden King]] is crowned. He sells offices within the year. |
 | 4A 1733 | The Golden Court is completed in Parim: a palace district of gilded halls where offices, titles and charters are bought. |
-| 4A 1736 | A Mirolonese envoy warns Parim that the Dead Lands are arming. The court laughs: Volgan has been quiet for longer than Aenor has had kings. |
+| 4A 1736 | A Mirolonese envoy warns Parim that the Ember Lands are arming. The court laughs: Volgan has been quiet for longer than Aenor has had kings. |
 | 4A 1741 | **The founding of [[The Lost Cause]].** The Golden King proclaims a league of the Concord and willing foreign crowns against "the powers of the dark", names himself its first lord, and spends its first treasury on a triumph. Most of Aoaz treats it as royal vanity against old legends. Its frontier companies and scholars take it seriously. |
-| 4A 1744 | Island fishermen tell of black ships among the islands of the Ocean of Zol. Nobody in a royal court believes them. |
+| 4A 1744 | Island fishermen tell of black ships among the islands of the Kusmeel. Nobody in a royal court believes them. |
 | 4A 1745 | Gunwaith and Girdon sign the **Truce of the Grey Ford** after half a century of border war. The West Lands are quiet for the first time in a generation. |
 | 4A 1746 | In secret, Afrit's Council concludes that the Golden King is a liability: the dominions grumble at his taxes and the Lost Cause could become a rival centre of power. Preparations for his death begin, known only to the Council. |
 | **4A 1748** | **Campaign start.** Aoaz seems at peace. |
@@ -103,7 +103,7 @@ The established events below are the **historical path**. In play they are what 
 | 4A 1754 | Eindil warns Aenor and is denounced as an impostor. Alleria of Selen protects him. |
 | 4A 1755 | **The War of the Last Crowns begins.** The Western Crossing, the Leren withdrawal from the Treaty of the Narrow Strait, the eastern invasion of the Magical Lands, Volgan's reconquest of Mirolon and the rising of Zol's dead. |
 | 4A 1756 | Afrit abandons Aenor and is proclaimed King of the East. Western armies take Parim. |
-| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), takes the field and is forced back; Lorien dies. Zol himself does not appear (corrected 24 October 2026). |
+| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), takes the field and is forced back; Lorien dies. Zol himself does not appear (corrected 24 October 2026). |
 | 4A 1758 | Afrit returns with an eastern host, casts Eindil from the cliff and claims kingship over all Aoaz. |
 | 4A 1759 | The battle in the palace. Afrit dies. Golbran dies saving Eindil. |
 | 4A 1760 | **Eindil is crowned King of Aenor.** The Fourth Age ends. |

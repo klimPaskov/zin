@@ -4,11 +4,11 @@ status: established
 updated: 2026-10-24
 ---
 
-# Volgans Dead Lands
+# Volgans Ember Lands
 
-*Canonical regional name: **Dead Lands**. This note also refers to the area as Volgan's Dead Lands for clarity.*
+*Canonical regional name: **Ember Lands**. This note also refers to the area as Volgan's Ember Lands for clarity.*
 
-The Dead Lands lie **south of the Middle Lands** and are the principal dominion of [[Volgan]], the Great Spirit and main dark lord.
+The Ember Lands lie **south of the Middle Lands** and are the principal dominion of [[Volgan]], the Great Spirit and main dark lord.
 
 The region includes **Mirolon, Nan, Demon, Dolon, Nezer, and Nether**. In the working great-power table, Volgan's seat is **Nafeher** and his satellites or allies include **Demon, Dolon, and Nezer**, while **Mirolon** opposes him.
 
@@ -22,7 +22,7 @@ The dead here and the dead in [[Zols Mistake|Zol's Mistake]] have no settled tax
 
 ## First Age campaign
 
-**Newly established:** The Dead Lands were difficult for earlier human explorers to access because of fierce storms at sea and oppressive heat farther south. In the latter First Age, [[Volgan]] invaded **Mirolon** and made it the opening of a vast campaign against Aenor and its allies. After the [[Battle of Dardan]], Volgan was banished to the Void. The [[Grand Alliance]] attempted to conquer the Dead Lands, but **[[Elzon]] prepared and led the remaining defenders** and drove them back, causing heavy losses and lasting divisions between elves and men.
+**Newly established:** The Ember Lands were difficult for earlier human explorers to access because of fierce storms at sea and oppressive heat farther south. In the latter First Age, [[Volgan]] invaded **Mirolon** and made it the opening of a vast campaign against Aenor and its allies. After the [[Battle of Dardan]], Volgan was banished to the Void. The [[Grand Alliance]] attempted to conquer the Ember Lands, but **[[Elzon]] prepared and led the remaining defenders** and drove them back, causing heavy losses and lasting divisions between elves and men.
 
 **Important distinction:** Mirolon is Volgan's First Age conquest target and his rival in the *working* Fourth Age political table. Its political status must not be treated as identical across all ages.
 
@@ -30,7 +30,7 @@ The dead here and the dead in [[Zols Mistake|Zol's Mistake]] have no settled tax
 
 ## Second Age additions
 
-The [[Nether]] is established in the **south of the Dead Lands** as the domain or residence of the **King of Demons**. [[Agon]] and other demons are active there during the Second Age, and portals permit attacks across Aoaz. The [[Abyss]] is also in the Dead Lands and is associated with [[Roka]] and the [[Necklace of the Abyss]], which Afrit takes and uses during the **Fourth Age**.
+The [[Nether]] is established in the **south of the Ember Lands** as the domain or residence of the **King of Demons**. [[Agon]] and other demons are active there during the Second Age, and portals permit attacks across Aoaz. The [[Abyss]] is also in the Ember Lands and is associated with [[Roka]] and the [[Necklace of the Abyss]], which Afrit takes and uses during the **Fourth Age**.
 
 The [[Nether]], [[Abyss]], and the **Void** that imprisoned Volgan are distinct named places or realms, with any deeper connections still undecided.
 
@@ -38,4 +38,4 @@ During the Second Age Elzon retrieves Volgan's soul or presence from the Void an
 
 ## Third Age after the reconquest of Aenor
 
-During the Third Age, Volgan cannot leave the Dead Lands, while [[Elzon]] rules Aenor in his name. The Dead Lands' native magical conditions sustain Elzon, whereas Aenor's magic does not. Elzon eventually dies and Volgan remains alive. This does not change the location or independent identity of the [[Nether]] and [[Abyss]], or imply that [[Zol]] arrives physically in the Dead Lands.
+During the Third Age, Volgan cannot leave the Ember Lands, while [[Elzon]] rules Aenor in his name. The Ember Lands' native magical conditions sustain Elzon, whereas Aenor's magic does not. Elzon eventually dies and Volgan remains alive. This does not change the location or independent identity of the [[Nether]] and [[Abyss]], or imply that [[Zol]] arrives physically in the Ember Lands.

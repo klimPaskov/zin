@@ -4,9 +4,9 @@
 
 ## Purpose
 
-Magic in Aoaz is rare, named and specific. There is no general mana bar. A handful of real powers exist: Glo and Horos's blue sword, Afrit's artifacts, the dragons of Dragon Mountain, Zol's deathless dead held back by the Fading, the storms and heat of the Dead Lands, the Great Wall, and two one-time interventions near the end of the age (Varner's wards and the New Gods' restoration of Eindil).
+Magic in Aoaz is rare, named and specific. There is no general mana bar. A handful of real powers exist: Glo and Horos's blue sword, Afrit's artifacts, the dragons of Dragon Mountain, Zol's deathless dead held back by the Fading, the storms and heat of the Ember Lands, the Great Wall, and two one-time interventions near the end of the age (Varner's wards and the New Gods' restoration of Eindil).
 
-Several mechanic specs already own parts of these. This spec is the world layer that binds them: it fixes the rules every system must obey, defines **potent magic**, and owns the pieces nobody else owns: the dragon pool, the Wall's upkeep and breaches, the Dead Lands' storms and heat, and the exact effects of the two interventions.
+Several mechanic specs already own parts of these. This spec is the world layer that binds them: it fixes the rules every system must obey, defines **potent magic**, and owns the pieces nobody else owns: the dragon pool, the Wall's upkeep and breaches, the Ember Lands' storms and heat, and the exact effects of the two interventions.
 
 | Power | Owner of the mechanics | This spec |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ Several mechanic specs already own parts of these. This spec is the world layer 
 | Varner's wards, the New Gods' restoration | Eindil's journey (the moments) | The effects and the once-only rule |
 | Dragons | warfare (units), Eindil's journey (Eindil's dragon) | The pool, the pacts, corruption |
 | The Great Wall | map (line), warfare (forts and modifier) | Upkeep, breaches; the Wall Accord is in [03_diplomacy_and_factions.md](03_diplomacy_and_factions.md) |
-| Dead Lands storms and heat | map (weather) | The storm pulse, the coasts, the heat |
+| Ember Lands storms and heat | map (weather) | The storm pulse, the coasts, the heat |
 
 ## Lore basis
 
@@ -29,7 +29,7 @@ Several mechanic specs already own parts of these. This spec is the world layer 
 - **Dragons** come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can through corruption. Eindil returns riding a dragon (*Peoples of Aoaz*, *War of the Last Crowns*).
 - **Zol's dead** are sustained by an Old God's own death-magic. Ordinary weapons cannot end them; only potent magic, such as Glo's and the sword's, can (*Zol*).
 - **The Fading** limits the Old Gods. Zol cannot take an ordinary body; servants sustain his presence; his power grows very slowly. He manifests once, briefly and at great cost, and is forced back, not killed (*The Fading*, *Magic and Sustenance in Aoaz*, *Zol*). The causes of the Fading and the meaning of "feeding" are **unknown** and must not be resolved.
-- **The Dead Lands** are hard to reach by sea because of fierce storms, and oppressively hot farther south (*Volgan's Dead Lands*).
+- **The Ember Lands** are hard to reach by sea because of fierce storms, and oppressively hot farther south (*Volgan's Ember Lands*).
 - **Varner**, a Lesser Spirit, shields the living armies from Zol's death-magic, lifts curses, opens escape routes and dies doing it; Golbran spends nearly all his magic on Varner's wards (*Varner*, *Golbran*).
 - **The New Gods** restore Eindil through Glo after Volgan casts him down (*Fourth Age Canon Register*).
 
@@ -130,11 +130,11 @@ The line and its forts are map and warfare work: level-5 forts on the Aenor side
 - **The Wall Unmanned** (`zin_world.59`, warning to the wall owner): fires when the owner is at war with a country that borders a wall state and has fewer divisions in wall states than half the number of wall states. Text only; it repeats at most every 90 days.
 - **The Wall Is Breached** (`zin_world.60`): when an enemy of the wall owner controls two or more wall states. Effects: `zin_world_add_gathering_dark` +3; Aenor −5% stability for 180 days. Once per war.
 
-### The Dead Lands: storms and heat
+### The Ember Lands: storms and heat
 
-- **The storm belt.** The sea strategic regions that touch a Dead Lands coastal province form the storm belt. The builder computes the list from `map/strategicregions` at build time and compares it with the tracked snapshot `tools/content/data/storm_seas.json`, so a map change that moves the belt fails a test until the snapshot is reviewed. The map gives these regions permanent storm weather (map spec G7). Every 7 days the world tick runs, for each region in the list, `damage_units = { region = <id> navy = yes str_damage = 0.04 org_damage = 0.10 ratio = yes limit = { NOT = { capital_scope = { zin_is_region_dead_lands = yes } } NOT = { has_tech = zin_tech_storm_rigging } } }`, and a second pulse at half strength for fleets of countries with warfare's `zin_tech_storm_rigging`. Dead Lands realms know the waters and are spared. Volgan's Veil of Storms is a separate, hidden mechanic of the Volgan spec.
-- **The coasts.** Every country whose capital is in the Dead Lands has **Storm-Girt Coasts** (`zin_world_storm_coasts`): `amphibious_invasion_defence = 0.50`.
-- **The heat.** Dead Lands states carry the state modifier `zin_world_dead_lands_heat` (`enemy_attrition = 0.20`); the Nether and the Abyss carry 0.40. Dead Lands realms resist heat through their economic spirit (`heat_attrition_factor = -0.50`).
+- **The storm belt.** The sea strategic regions that touch a Ember Lands coastal province form the storm belt. The builder computes the list from `map/strategicregions` at build time and compares it with the tracked snapshot `tools/content/data/storm_seas.json`, so a map change that moves the belt fails a test until the snapshot is reviewed. The map gives these regions permanent storm weather (map spec G7). Every 7 days the world tick runs, for each region in the list, `damage_units = { region = <id> navy = yes str_damage = 0.04 org_damage = 0.10 ratio = yes limit = { NOT = { capital_scope = { zin_is_region_dead_lands = yes } } NOT = { has_tech = zin_tech_storm_rigging } } }`, and a second pulse at half strength for fleets of countries with warfare's `zin_tech_storm_rigging`. Ember Lands realms know the waters and are spared. Volgan's Veil of Storms is a separate, hidden mechanic of the Volgan spec.
+- **The coasts.** Every country whose capital is in the Ember Lands has **Storm-Girt Coasts** (`zin_world_storm_coasts`): `amphibious_invasion_defence = 0.50`.
+- **The heat.** Ember Lands states carry the state modifier `zin_world_dead_lands_heat` (`enemy_attrition = 0.20`); the Nether and the Abyss carry 0.40. Ember Lands realms resist heat through their economic spirit (`heat_attrition_factor = -0.50`).
 
 ### The Fading (invariants for the Zol spec)
 
@@ -196,21 +196,21 @@ A new content-builder module, `tools/content/modules/world_magic.mjs`, writes ev
 | `zin_world.56` | The Mountain wakes |
 | `zin_world.59` | The Wall unmanned |
 | `zin_world.60` | The Wall is breached |
-| `zin_world.65` | Storms in the south (first loss of a non-Dead Lands fleet; flavour) |
+| `zin_world.65` | Storms in the south (first loss of a non-Ember Lands fleet; flavour) |
 
 ## AI
 
 - **Dragon Pact:** elven AI takes it when at war with a dark power that holds one of its states, or when `zin_gathering_dark` ≥ 75. Under the historical rule the Magical Forest's one Pact of 4A 1755 is its tree's *Wings Over the Woods* when the eastern invasion strikes (elves spec); its AI does not also take the decision while that focus is available or within 365 days after it.
 - **Bound by corruption:** Afrit's realm takes it once after the reveal and once after `zin_afrit_king_of_east`.
 - **Wall Watch:** the wall owner takes it whenever at war with a country that borders a wall state.
-- **Storms:** `common/ai_strategy/zin_world_magic.txt` gives every non-Dead Lands country `naval_avoid_region` for the storm seas.
+- **Storms:** `common/ai_strategy/zin_world_magic.txt` gives every non-Ember Lands country `naval_avoid_region` for the storm seas.
 
 ## Acceptance
 
 1. `zin_has_potent_magic` is false for every country on 1 Thaw 4A 1748, and only the listed sources ever make it true (builder check that no file outside the "Set by" column sets `zin_potent_magic`, plus a 12-year HISTORICAL observer run in the Linux run that logs the trigger for every country each month).
 2. `zin_varner_wards_raised` and `zin_eindil_restored` are each set at most once; calling either effect twice by console in the Linux run changes nothing the second time.
 3. `zin_dragons_free` never rises and never goes below 0; no dragon decision is available at 0; a second bearer never gets the Gods' Gift (scenario test with `zin_glo_state` set to 4).
-4. A non-Dead Lands fleet parked 30 days in a storm sea loses strength; a Dead Lands fleet does not; a fleet with storm rigging loses half as much (Linux scenario run).
+4. A non-Ember Lands fleet parked 30 days in a storm sea loses strength; a Ember Lands fleet does not; a fleet with storm rigging loses half as much (Linux scenario run).
 5. An enemy controlling two wall states fires `zin_world.60` once per war (scenario test).
 6. `zin_eindil_wears_necklace` adds no modifier; no text before the coronation explains the necklace.
 7. No artifact name is visible to a player outside Afrit's realm before `zin_afrit_revealed` (names spec check T2).

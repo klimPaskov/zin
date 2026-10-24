@@ -30,7 +30,7 @@ Owner decisions (17 October 2026):
   - **Shadow:** Volgan, Afrit and the dead.
   - **Wild:** unaligned, tribal and isolationist peoples.
 - **Peoples.** Each country carries one people (men, elves, giants, ents, dwarves, yeti, orcs and goblins, trolls and ogres, the dead, demons, mycids). Its people decides recruitment, attrition, terrain skill, unit access and some focus branches.
-- **Countries and states.** Every country gets an image-generated flag, a leader, ministers, a people and an ideology. Every state gets a category, manpower, resources and buildings that fit its region, so the Cold Lands, the South Lands desert and the Dead Lands play differently.
+- **Countries and states.** Every country gets an image-generated flag, a leader, ministers, a people and an ideology. Every state gets a category, manpower, resources and buildings that fit its region, so the Cold Lands, the South Lands desert and the Ember Lands play differently.
 - **Interface.** A themed top bar shows each country's own meters. Mechanic panels open from it: Aenor's court, Afrit's footholds, Volgan's dominion. Custom frames, colours and a loading screen complete it.
 
 ## Engineering rules

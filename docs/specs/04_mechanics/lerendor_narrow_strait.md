@@ -262,7 +262,7 @@ Learning of Volgan's agents in the holds (tree event `zin_lerendor.10`) sets cou
 
 ### 10. Zol's dead from the north
 
-Zol's Mistake is the black north and the islands of the Ocean of Zol. When Zol's dead rise (`zin_zol_rising`, Zol's Mistake spec), they come "through islands and straits". Proposed reading: the Narrow Strait is one of their roads south to the Middle Lands, so Lerendor stands in their path whatever its route.
+Zol's Mistake is the black north and the islands of the Kusmeel. When Zol's dead rise (`zin_zol_rising`, Zol's Mistake spec), they come "through islands and straits". Proposed reading: the Narrow Strait is one of their roads south to the Middle Lands, so Lerendor stands in their path whatever its route.
 
 Before `zin_zol_rising`, Lerendor sees only hints: fishermen's tales of black ships (`zin_leren.50`, flavour; no gameplay advantage beyond a flag). After it:
 

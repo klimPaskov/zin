@@ -31,7 +31,7 @@ Open questions stay open in art: no picture shows Dardan's location, which arm E
 3. **Two-face and story icons.** A focus may name two icons: `"icon": { "default": "censer", "after": [ { "global_flag": "zin_afrit_revealed", "icon": "throne_ashen" } ] }`. The compiler writes a dynamic focus icon (`icon = { GFX_… = { has_global_flag = … } GFX_… = yes }`, `dynamic = yes`). Global flags only, so every viewer sees the same face.
 4. **Gated pictures.** An event picture with a gate flag may only be used by an event that cannot fire before that flag: the event's trigger requires the flag, every effect that fires it sits behind the flag, or the effect that fires it sets the flag first (decision E5). The compiler checks this; anything it cannot prove is a reviewed warning.
 5. **One style** (decisions A2–A4). Focus and idea icons are one painting per key: a single object or emblem on a dark enamel field inside a round bronze-rimmed medallion, warm key light from the upper left, readable at 50%. Sheets are generated on flat black. The focus icon is the whole medallion with its outline as alpha; the idea icon is a square crop of the enamel field. Event pictures are painted scenes in a muted palette. Every prompt carries the frame "no signature or maker's mark; corners and bottom edge hold only plain ground", "no lettering" and "no real-world religious symbol".
-6. **Peoples and regions by palette.** Middle Lands gold and red; North Lands sea-green and iron; Cold Lands white and pale blue; West Lands green and brown; East Lands ochre and turquoise; Dark Lands rust and black; Dead Lands ash and ember; Magical Lands silver and leaf-green; Lands of the Sun white gold; the Mistake black and cold grey.
+6. **Peoples and regions by palette.** Middle Lands gold and red; North Lands sea-green and iron; Cold Lands white and pale blue; West Lands green and brown; East Lands ochre and turquoise; Dark Lands rust and black; Ember Lands ash and ember; Magical Lands silver and leaf-green; Lands of the Sun white gold; the Mistake black and cold grey.
 
 ### Naming
 
@@ -262,7 +262,7 @@ Non-figurative where they touch Zol: sigils, islands, hulls, ranks of the dead s
 | `order_lesser` | A sigil of many small rings: the order of Lesser Spirits |
 | `order_divine` | A sigil of a ring with rays: the order of New Gods |
 | `ashen_waste` | Grey waste under a white sky: the Mistake |
-| `ember_desert` | Red dunes under a storm: the Dead Lands |
+| `ember_desert` | Red dunes under a storm: the Ember Lands |
 
 #### 9. Diplomacy and intrigue (18)
 

@@ -10,13 +10,13 @@ updated: 2026-10-24
 
 ## The shape of the world
 
-Aoaz has known peace for more than seventeen centuries, and almost nobody alive remembers a war that threatened everyone at once. On the first day of play nobody is at war with anybody who matters. Borders are quiet, trade flows, temples are full, and the Golden King's worst crime is his taste in gold leaf. Some 300 crowns, dominions, clans and island lordships divide the continent (established working figure: about 280 polities; the map holds 305). The great powers are Aenor and its Concord in the Middle Lands, Lerendor in the North Lands, Coldor in the Cold Lands, Noris and Stabilo in the East Lands, Goldoroth and Dondor in the Dark Lands, Volgan in the Dead Lands, and Zol's Mistake in the black north (established, working table).
+Aoaz has known peace for more than seventeen centuries, and almost nobody alive remembers a war that threatened everyone at once. On the first day of play nobody is at war with anybody who matters. Borders are quiet, trade flows, temples are full, and the Golden King's worst crime is his taste in gold leaf. Some 300 crowns, dominions, clans and island lordships divide the continent (established working figure: about 280 polities; the map holds 305). The great powers are Aenor and its Concord in the Middle Lands, Lerendor in the North Lands, Coldor in the Cold Lands, Noris and Stabilo in the East Lands, Goldoroth and Dondor in the Dark Lands, Volgan in the Ember Lands, and Zol's Mistake in the black north (established, working table).
 
 Beneath the peace, five pressures are building at once. Each is hidden, dismissed or seen by only a few, and none of the powers can see them all:
 
 1. **The rot at the centre.** Aenor is rich and strong, but its king is a fool and its true government is the Hidden Council of a god its people love (established). Nobody outside the Council knows; the Deliverer is simply the kingdom's beloved god.
 2. **The dark in the south.** Volgan has rebuilt his armies for a century and means to take Mirolon and march north (established). Only Mirolon's scouts take the signs seriously; the courts of the north think him a spent legend.
-3. **The dead in the north.** Zol's dead are stirring in the islands of the Ocean of Zol, and ordinary weapons cannot end them (established). The only witnesses are fishermen whom nobody believes.
+3. **The dead in the north.** Zol's dead are stirring in the islands of the Kusmeel, and ordinary weapons cannot end them (established). The only witnesses are fishermen whom nobody believes.
 4. **Old grudges in the west and north.** The West Lands still remember Aenor's First Age conquests; the North Lands chafe under the Treaty of the Narrow Strait (established direction, proposed details). For now these are grudges spoken over wine, not war plans.
 5. **Ambition in the east.** The East Lands are rich, divided and full of Afrit's clients (established direction), who know him only as the Deliverer's generous friends.
 
@@ -59,13 +59,13 @@ Triton's Islands arc around the Pupor Ocean: Adel, Pollos, Raerby, Nondondor and
 
 Between the North Lands and the Middle Lands lie the Dark Lands. **Goldoroth**, an orc kingdom, wants the whole region; **Dondor**, a human kingdom, leads the **Dark Sea Accord** against it (established working table). Bordon, Dreson, Dulundur, the **Troll Forest** and a dozen orc and goblin holds belong to nobody (established). Volgan's agents court them all; most still answer only to themselves (established that they are not automatically his).
 
-### The Dead Lands
+### The Ember Lands
 
-**Volgan** rules from Nafeher (established working seat). His **Southern Dominion** includes the demon realms of Demon, Dolon and Nezer (established working table). In the far south lie the **Nether**, seat of the King of Demons, and the **Abyss**, where Roka once held the Necklace of the Abyss (established). **Mirolon**, the human kingdom that Volgan conquered in the First Age, is free again and stands in his way (established rivalry). Volgan has rebuilt his strength for a century behind the Dead Lands' storms and heat, and nobody outside Mirolon watches him. He will retake Mirolon and march north (established).
+**Volgan** rules from Nafeher (established working seat). His **Southern Dominion** includes the demon realms of Demon, Dolon and Nezer (established working table). In the far south lie the **Nether**, seat of the King of Demons, and the **Abyss**, where Roka once held the Necklace of the Abyss (established). **Mirolon**, the human kingdom that Volgan conquered in the First Age, is free again and stands in his way (established rivalry). Volgan has rebuilt his strength for a century behind the Ember Lands' storms and heat, and nobody outside Mirolon watches him. He will retake Mirolon and march north (established).
 
 ### Zol's Mistake
 
-The whole black north and every black island of the Ocean of Zol belong to **Zol**, the Old God of Death (established). The land is almost empty of the living. Its seat is **Furviatlon** (established working seat), but who administers it for Zol is unknown and is **not** invented here. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), dwells in Šodolôrō (established, owner, 24 October 2026). Zol cannot take a body; his servants sustain his presence; his power grows slowly (established). His dead are sustained by his own magic. Only potent magic, such as Glo's, can end them (established).
+The whole black north and every black island of the Kusmeel belong to **Zol**, the Old God of Death (established). The land is almost empty of the living. Its seat is **Furviatlon** (established working seat), but who administers it for Zol is unknown and is **not** invented here. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), dwells in Šodolôrō (established, owner, 24 October 2026). Zol cannot take a body; his servants sustain his presence; his power grows slowly (established). His dead are sustained by his own magic. Only potent magic, such as Glo's, can end them (established).
 
 ### The East Lands and the South Lands
 

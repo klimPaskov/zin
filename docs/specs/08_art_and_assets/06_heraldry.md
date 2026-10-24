@@ -465,7 +465,7 @@ Charges marked as restoration are the culture's sign of a realm restored.
 
 *Breakaway difference:* a border of night blue (dissent tincture night blue).
 
-### Dead Lands Freeholders (`dead_lands_freeholds`)
+### Ember Lands Freeholders (`dead_lands_freeholds`)
 
 *People:* men. *Family:* Ainic men. *Language:* mirolic. *Faith:* mourning_dust. *Line:* straight. *Countries today:* 8.
 
@@ -1797,7 +1797,7 @@ The tables below give the design in short and its meaning; the blazon in the JSO
 | Middle Lands | 30 | tool 9, building 3, token 3 |
 | North Lands | 28 | beast 10, tree 6, bird 4 |
 | Dark Lands | 24 | token 9, tool 5, landform 3 |
-| Dead Lands | 13 | weapon 2, tool 2, building 2 |
+| Ember Lands | 13 | weapon 2, tool 2, building 2 |
 | Magical Lands | 22 | building 5, body_part 3, bird 3 |
 | Cold Lands | 31 | beast 8, bird 6, sea_creature 5 |
 | West Lands | 21 | tool 6, token 3, beast 3 |
@@ -1904,7 +1904,7 @@ The tables below give the design in short and its meaning; the blazon in the JSO
 | Y4G | Lestern Isles | sea_orcs | chief, kelp and salt teal; a cone of salt in salt white | The Lestern Isles bear the cone of salt their council of captains pays to the sea each season. |
 | Y45 | Troll Forest | troll_tribes | per fess, troll moss and bog black; a great boulder in stone grey; a heap of stones | The Troll Forest bears a great boulder over the border stone-heap: the stone that feeds the tribes, and the warning at their edge that the free holds heed. |
 
-### Dead Lands
+### Ember Lands
 
 | Tag | Name | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
@@ -1912,7 +1912,7 @@ The tables below give the design in short and its meaning; the blazon in the JSO
 | Y0Z | Nan | dead_lands_freeholds | per bend, tar black and sand; a gaff hook in salt white [label] | Nan's gaff hook is its warlord's toll on every boat that passes: the one freehold ruled by force. |
 | Y7M | Mirodor | dead_lands_freeholds | plain, sea teal; a flat-bottomed boat in sand [label] | Mirodor bears the flat boat of the Mirolonese who fled north and came back to the coast. |
 | Y7N | Mencnon | dead_lands_freeholds | per fess, sand and sea teal; a salt-pan with heaped salt in tar black [label] | Mencnon bears the salt-pan: its salt is traded along the coast and laid in every grave. |
-| Y7O | Luminor | dead_lands_freeholds | plain, tar black; a storm lantern in sand [label] | Luminor bears a storm lantern, canting on its name: a light kept burning against the Dead Lands storms. |
+| Y7O | Luminor | dead_lands_freeholds | plain, tar black; a storm lantern in sand [label] | Luminor bears a storm lantern, canting on its name: a light kept burning against the Ember Lands storms. |
 | Y7P | Bennen | dead_lands_freeholds | base, salt white and sea teal; a crab in mud brick [label] | Bennen's crab is its mud shore and the patience of a people that does not leave. |
 | Y7Q | Gelon | dead_lands_freeholds | plain, mud brick; a wide straw hat in sand [label] | Gelon bears the salt-worker's straw hat: a freehold of the open pans. |
 | Y7R | Olen | dead_lands_freeholds | chief, sand and storm grey; a low mud-brick house in mud brick [label] | Olen's low house under a storm-grey chief is the coast's way of building: low, thick and deep against the weather. |
@@ -2332,7 +2332,7 @@ None of these can be produced by the new records, and the checks of 8.5 reject t
 
 ## 10. Open questions for the owner
 
-1. **Aen's label.** The label marks every Ainic realm of men as a younger branch of the kingdoms Aen joined. Is it right for the Leren, the Free Crowns, Dondor, Mirolon and the Dead Lands freeholds, or only for the Aenoran-speaking realms of the Middle Lands? *Proceeds on:* all Ainic realms of men.
+1. **Aen's label.** The label marks every Ainic realm of men as a younger branch of the kingdoms Aen joined. Is it right for the Leren, the Free Crowns, Dondor, Mirolon and the Ember Lands freeholds, or only for the Aenoran-speaking realms of the Middle Lands? *Proceeds on:* all Ainic realms of men.
 2. **Glo and Horos's blue sword as charges.** They are reserved: no flag uses them. May a story flag (Eindil's crowned Aenor, the Host after `zin_eindil_bearer_of_glo`) show them, and in what form? *Proceeds on:* never; the crowned Aenor uses the ancient crown of Aen instead.
 3. **Zol's Mistake.** Its flag repeats the sigil of its emblem leader, The Will of Zol (broken concentric rings on void). Accept, or should the realm's arms differ from the leader's emblem? *Proceeds on:* the same sigil.
 4. **The Twelve.** May the faith of the New Gods ever be shown by a ring or a set of twelve (Q-01)? *Proceeds on:* no number-twelve device.

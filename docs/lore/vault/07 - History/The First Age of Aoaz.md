@@ -9,7 +9,7 @@ end_year: 1675
 
 # The First Age of Aoaz
 
-**Length: 1,675 years.** The First Age begins with [[Aen]]'s victory in the centuries-long War of Men and ends with the conclusion of the first great war against [[Volgan]], after the [[Battle of Dardan]] and the failure of the attempted invasion of the [[Volgans Dead Lands|Dead Lands]]. The following [[Ages of Aoaz|Second Age]] is the Age of Rebuilding.
+**Length: 1,675 years.** The First Age begins with [[Aen]]'s victory in the centuries-long War of Men and ends with the conclusion of the first great war against [[Volgan]], after the [[Battle of Dardan]] and the failure of the attempted invasion of the [[Volgans Ember Lands|Ember Lands]]. The following [[Ages of Aoaz|Second Age]] is the Age of Rebuilding.
 
 > **Canon distinction:** The broad sequence and the events, figures, places, relationships, and durations explicitly supplied by the owner on 17 October 2026 are **established**. Names invented below, specific military tactics, council decisions, rituals, battlefield phases, dates other than the length of the age, and the motives of newly described participants are **proposed narrative development**, not fixed canon.
 
@@ -37,7 +37,7 @@ Aenoran explorers and settlers reached the [[Aoaz and Its Regions|West Lands]]. 
 
 The kingdom made an alliance with what older accounts call *North Earth*, now the **North Lands**. Traders established contact with the peoples of the [[Aoaz and Its Regions|East Lands]], sometimes called Easterlings, as well as routes to more distant peoples. Voyages also reached the Cold Lands, southern islands, and other eastern and southern shores. Much of the current map ultimately derives from the exploration begun in this period.
 
-The **Dead Lands were exceptionally difficult to reach**. Their southern heat and dangerous surrounding seas obstructed ordinary expeditions. Men could chart distant coasts without knowing or controlling the lands beyond them. [[Zols Mistake|Zol's Mistake]] in the north was already a desolate and nearly unusable wasteland. Zol had arrived there long before Aen, and his local influence was comparatively dormant during the First Age.
+The **Ember Lands were exceptionally difficult to reach**. Their southern heat and dangerous surrounding seas obstructed ordinary expeditions. Men could chart distant coasts without knowing or controlling the lands beyond them. [[Zols Mistake|Zol's Mistake]] in the north was already a desolate and nearly unusable wasteland. Zol had arrived there long before Aen, and his local influence was comparatively dormant during the First Age.
 
 **Proposed depth:** The *Roads of Aen* and later maritime charts become a source of political prestige. Aenoran kings insist that early discovery grants them sovereignty, while West Lands peoples reject the claim because they inhabited the shores long before Aenoran ships arrived. Fourth Age conflicts can descend from these competing histories without implying one uninterrupted war across many millennia.
 
@@ -53,11 +53,11 @@ After the long prosperous period, **successive bad kings**, succession struggles
 
 [[Volgan]] is a [[Spirits and Their Ranks|Great Spirit]] of extraordinary antiquity. Before establishing his own realm, he served a [[New Gods|New God]], somehow overpowered that deity, and founded an independent dominion. This earlier history remains separate from the First Age war, and the name of the New God is not yet known.
 
-During the **second millennium of the First Age**, Volgan invaded **Mirolon** and began a major conquest. With Aenor weakened and scattered, his victories were rapid and exceptionally destructive. He gathered forces in the Dead Lands, formed alliances with rulers in the eastern and southern lands, and opened contacts with powers in the **Dark Lands**. These alliances were selective. Not all Easterlings, southerners, Dark Lands peoples, or monsters joined him.
+During the **second millennium of the First Age**, Volgan invaded **Mirolon** and began a major conquest. With Aenor weakened and scattered, his victories were rapid and exceptionally destructive. He gathered forces in the Ember Lands, formed alliances with rulers in the eastern and southern lands, and opened contacts with powers in the **Dark Lands**. These alliances were selective. Not all Easterlings, southerners, Dark Lands peoples, or monsters joined him.
 
 Volgan's armies included **corrupted elves, orcs, goblins, eastern and southern men, demons, devils associated with Shachihata and realms unknown to men, dragons, and many Great Spirits**. He released **Damned Spirits** from deep beneath mountains and the underground world. These beings brought additional forms of danger that most men had never encountered.
 
-**Proposed strategic account:** Volgan used his Dead Lands stronghold and allied fleets to cross waters that had hindered earlier human explorers. Eastern client rulers provided ships, landing sites, food, and access to routes through the Dark Lands. He struck several distant Aenoran dependencies to keep the defenders scattered before driving at the central crownlands. His commanders seized food stores and ports wherever possible, since even magical armies require routes by which soldiers and war material can move.
+**Proposed strategic account:** Volgan used his Ember Lands stronghold and allied fleets to cross waters that had hindered earlier human explorers. Eastern client rulers provided ships, landing sites, food, and access to routes through the Dark Lands. He struck several distant Aenoran dependencies to keep the defenders scattered before driving at the central crownlands. His commanders seized food stores and ports wherever possible, since even magical armies require routes by which soldiers and war material can move.
 
 Aenor's defenses failed. **The reigning king died, and Volgan's armies captured the capital.** In the working Fourth Age political geography the capital is **Parim**, though its precise historical status in the First Age has not been separately fixed. Aenor was on the verge of collapse. The loss of a royal city was also the loss of archives, succession records, sacred objects, and the administrative authority that held much of the human kingdom together.
 
@@ -83,7 +83,7 @@ These concessions cost Edran support among hard-line Aenoran nobles. They make t
 | **Ein** | Son of Aen and father of Eindil | Established |
 | **King Edran the Gatherer** | New king who assembles the Grand Alliance | **Name and role established**, detailed biography proposed |
 | **Lorien** | Great king of the Gala elves, brings his army from the Lands of the Sun | Established |
-| **Elzon** | Leader who later organizes the surviving Dead Lands defense against the Alliance | **Name and First Age role established**. Later confirmed a **Great Spirit** and Great Necromancer. |
+| **Elzon** | Leader who later organizes the surviving Ember Lands defense against the Alliance | **Name and First Age role established**. Later confirmed a **Great Spirit** and Great Necromancer. |
 | **Sirael** | Elected war-speaker of the elves of the Magical Forest, wary of human monarchy | Proposed |
 | **Taryn of Gunwaith** | Western commander who demands recognition of West Lands independence before joining | Proposed |
 | **Senra of Triton's Islands** | Fleet captain who coordinates the islands' supplies and overseas escorts | Proposed |
@@ -137,17 +137,17 @@ Dardan should not be a victory granted by a god, a single artifact, or one overp
 
 The [[Holy Seven]] and the supreme Creator do not intervene. [[Zol]] does not intervene either. Zol's northern realm was already desolate, and his local power was still too restricted to make him a practical participant in this war.
 
-## 7. The failed conquest of the Dead Lands
+## 7. The failed conquest of the Ember Lands
 
-Volgan's banishment was an immense victory, but **the Dead Lands were not destroyed or conquered**. The king of Aenor wanted to enter and secure them so that Volgan's dominion could never threaten Aoaz again. The elven leaders opposed the idea. The Alliance pressed forward anyway.
+Volgan's banishment was an immense victory, but **the Ember Lands were not destroyed or conquered**. The king of Aenor wanted to enter and secure them so that Volgan's dominion could never threaten Aoaz again. The elven leaders opposed the idea. The Alliance pressed forward anyway.
 
-**Elzon** had gathered and prepared the surviving forces of Volgan. The invasion met fierce resistance and was **driven back with heavy losses**. The conditions of the Dead Lands and the exhaustion of the Alliance made further conquest too costly. The attack was abandoned. Many elves died in the campaign, and the king's decision badly damaged relations between men and elves, particularly given how much their forces had already sacrificed at Dardan.
+**Elzon** had gathered and prepared the surviving forces of Volgan. The invasion met fierce resistance and was **driven back with heavy losses**. The conditions of the Ember Lands and the exhaustion of the Alliance made further conquest too costly. The attack was abandoned. Many elves died in the campaign, and the king's decision badly damaged relations between men and elves, particularly given how much their forces had already sacrificed at Dardan.
 
 ### Proposed account: Elzon's defense
 
 Elzon has survived Dardan by keeping a reserve outside the battle's central collapse or by escaping with surviving formations. His kind of being has since been established: he is a **Great Spirit**, the **Great Necromancer**, and a servant of Volgan. The story only requires him to be a capable commander who can lead the remnants without Volgan.
 
-Having expected the possibility of Volgan's defeat, Elzon had prepared strongholds and fallback positions along the approaches to the Dead Lands. He withdrew surviving troops to defensible coasts, passes, and fortresses. He destroyed usable supply stores near the frontier and exploited weather, heat, and difficult terrain. The Alliance advanced into territory it could not feed or occupy without extraordinary losses. The defending armies had fewer soldiers than before Dardan, but they no longer had to fight Volgan's enormous offensive campaign. They only had to hold their own ground.
+Having expected the possibility of Volgan's defeat, Elzon had prepared strongholds and fallback positions along the approaches to the Ember Lands. He withdrew surviving troops to defensible coasts, passes, and fortresses. He destroyed usable supply stores near the frontier and exploited weather, heat, and difficult terrain. The Alliance advanced into territory it could not feed or occupy without extraordinary losses. The defending armies had fewer soldiers than before Dardan, but they no longer had to fight Volgan's enormous offensive campaign. They only had to hold their own ground.
 
 Edran viewed the invasion as necessary to prevent a future return. Lorien judged it a mistake after the decisive threat had been removed. Sirael and other elven leaders warned that the remaining troops could not endure another major struggle. When Elzon's counterattack struck the overextended invasion force, those warnings were vindicated. Lorien's people paid for a decision they had opposed.
 
@@ -155,19 +155,19 @@ This becomes the **central stain on Edran's otherwise great reign**. His commitm
 
 ## 8. The end of the age and its legacy
 
-The war ends when the remaining members of the Grand Alliance abandon the invasion of the Dead Lands and return to their homes. **Year 1675** closes the First Age. The exact year of Dardan within the final period of the age remains undetermined. The following Second Age begins with rebuilding a kingdom, healing lands, restoring trade, and responding to the devastation of the war.
+The war ends when the remaining members of the Grand Alliance abandon the invasion of the Ember Lands and return to their homes. **Year 1675** closes the First Age. The exact year of Dardan within the final period of the age remains undetermined. The following Second Age begins with rebuilding a kingdom, healing lands, restoring trade, and responding to the devastation of the war.
 
 The victory has lasting consequences:
 
 - **Aenor survives**, but its capital, institutions, population, and foreign relationships have been severely damaged. The great kingdom must be rebuilt, and Edran's concessions to allies cannot simply be forgotten.
 - **Volgan survives in exile in the Void.** A later return is possible, but its date, means, and any conditions upon him remain unwritten. Do not have him continuously ruling on the battlefield during the Second Age without first establishing how he returned.
-- **Elzon and the remaining Dead Lands armies survive.** The Dead Lands remain an independent threat and a possible source of future rulers, cults, and restoration movements.
+- **Elzon and the remaining Ember Lands armies survive.** The Ember Lands remain an independent threat and a possible source of future rulers, cults, and restoration movements.
 - **Dardan remains devastated**, remembered as the place where the largest forces of the age destroyed one another and Great Spirits brought down Volgan. Its exact location and how long it stays a wasteland remain open.
-- **Relations between the races deteriorate after the victory.** The disastrous Dead Lands expedition weakens the trust of the Gala elves and other elven peoples in Aenor's kings.
+- **Relations between the races deteriorate after the victory.** The disastrous Ember Lands expedition weakens the trust of the Gala elves and other elven peoples in Aenor's kings.
 - **The West Lands grievance survives.** The older dispute over Aenoran settlement, claims, and independence remains unresolved. Cooperation against Volgan did not erase centuries of conflict.
 - **Eindil's extraordinary claim remains dormant.** When he emerges in the Fourth Age, his identity as son of Ein and grandson of Aen is a stronger blood claim than later descendants can make. He is also a living connection to a time most of the Fourth Age considers myth.
 
-The second greatest king after Aen can therefore be remembered as a heroic victor who also made one of the most costly political decisions of the era. Different peoples preserve different accounts of him. Aenoran records praise the savior of the crown. Gala and Magical Lands chronicles remember his unnecessary pursuit into the Dead Lands. Dark Lands and Western chronicles may emphasize the price Edran promised for their loyalty.
+The second greatest king after Aen can therefore be remembered as a heroic victor who also made one of the most costly political decisions of the era. Different peoples preserve different accounts of him. Aenoran records praise the savior of the crown. Gala and Magical Lands chronicles remember his unnecessary pursuit into the Ember Lands. Dark Lands and Western chronicles may emphasize the price Edran promised for their loyalty.
 
 ## 9. Suggested dates within the First Age
 
@@ -179,9 +179,9 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 | **1** | Aen wins and unites the kingdom of men. Aenor is founded. | **Established** |
 | ~1–800 | Main prosperous period, long peace in the core, voyages, settlements, alliances, and frontier wars | Working illustration |
 | ~800–1150 | Succession failures, revolts, declining royal control | Working illustration |
-| ~1150–1500 | Volgan invades Mirolon and expands through the Dead Lands and southern approaches | Working illustration |
+| ~1150–1500 | Volgan invades Mirolon and expands through the Ember Lands and southern approaches | Working illustration |
 | ~1500–1650 | Aenor's defeat and loss of its capital, emergence of a new king, formation of the Grand Alliance | Working illustration |
-| **By 1675** | Battle of Dardan, Volgan's banishment, unsuccessful invasion of the Dead Lands, end of the war and First Age | **Established events and end year**, exact battle date not fixed |
+| **By 1675** | Battle of Dardan, Volgan's banishment, unsuccessful invasion of the Ember Lands, end of the war and First Age | **Established events and end year**, exact battle date not fixed |
 
 ## 10. Matters intentionally left open
 

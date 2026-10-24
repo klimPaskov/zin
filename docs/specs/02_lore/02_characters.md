@@ -131,7 +131,7 @@ The earlier draft's separate priest of Parim is retired by N10: Ilvane is the on
 | `zin_volgan` (renamed from `<Volgan>_zin_ruler`) | Volgan | E | Start | Country leader, Dread Lordship; field marshal in person on the historical path | `zin_trait_dread_lord`, `zin_trait_ancient_great_spirit` | His appearance is not established (O; lore digest question 13). P: a vast armoured silhouette wreathed in heat-haze, face hidden. One state. On `zin_volgan_body_destroyed` the Volgan mechanic removes his country-leader and unit-leader roles only; the character is neither killed nor retired, because his spirit's fate is O. |
 | `zin_volgan_ember_herald` | The Ember Herald | P | Defined at start; recruited by the Volgan tree's "The Lieutenants Assemble" | General (a Great Spirit of Volgan's court); Steward of Nafeher and country leader after the body breaks | as the Volgan spec sets | Faceless figure of embers (P; until art exists, the people portrait `the_dead`). |
 | `zin_volgan_grave_warden` | The Grave-Warden | P | as above | General; heads the necromantic orders | as the Volgan spec sets | Hooded grave-lord (P; fallback `the_dead`). |
-| `zin_volgan_ghorvak` | Ghorvak of the Hundred Clubs | P | as above | General; ogre clan chief of the Dead Lands | as the Volgan spec sets | Ogre chief with a ring of clubs (P; fallback `orcs`). |
+| `zin_volgan_ghorvak` | Ghorvak of the Hundred Clubs | P | as above | General; ogre clan chief of the Ember Lands | as the Volgan spec sets | Ogre chief with a ring of clubs (P; fallback `orcs`). |
 | `<Demon>_zin_ruler` | Hazarel the Horned | P | Start | Ruler of Demon, Volgan's sworn realm | — | Horned demon lord (P). |
 | `<Dolon>_zin_ruler` | Morvath of the Dead Sea | P | Start | Ruler of Dolon | — | Demon lord in salt-crusted iron (P). |
 | `<Nezer>_zin_ruler` | Queen Nazara of Nezerun | P | Start | Ruler of Nezer | — | Demon queen in ember-red (P). |
@@ -217,7 +217,7 @@ No eastern character is marked as a future follower of Afrit. Which eastern king
 | `zin_mirolon_maeric` (replaces the generated `<Mirolon>_zin_ruler` on startup) | High Warden Maeric | P (Volgan mechanic, Mirolon tree) | Start | Country leader, stance `zin_light_wardens` (an elective warden-realm, owner short list 7, proposal) | `zin_trait_warden_of_the_passes` | Lake-country warden in blue-grey (P). |
 | `zin_mirolon_selda` | Captain Selda Varrow | P (Volgan mechanic) | Defined at start, not recruited | General of the Pass Watch | as the Volgan spec sets | Pass captain in dust-grey mail (P). |
 | `zin_mirolon_hadric` | Hadric Thorne, Scout-Master | P (Volgan mechanic) | Defined at start; recruited by the Mirolon tree's *The Scout-Master's School* | Intelligence advisor | as the Volgan spec sets | Lean scout-master with a spyglass (P). |
-| `zin_mirolon_bennar` | Captain Bennar of the Passes | P | Start | Corps commander of the scouts who watch the Dead Lands | skill 3; `hill_fighter`, `ranger` | Scout with a dust-scarf (P). |
+| `zin_mirolon_bennar` | Captain Bennar of the Passes | P | Start | Corps commander of the scouts who watch the Ember Lands | skill 3; `hill_fighter`, `ranger` | Scout with a dust-scarf (P). |
 | `zin_mirolon_hessa` | Envoy Hessa Mencnor | P | Start | Political advisor; the envoy laughed out of Parim in 4A 1736 (P) | `zin_trait_unheeded_warning` | Old envoy (P). |
 
 Maeric, Selda and Hadric are defined by the Volgan mechanic in `common/characters/zin_dominion.txt` (O7); the earlier draft's "First Warden Aldis Veleran" is dropped. Bennar and Hessa are this spec's.
@@ -257,8 +257,8 @@ All proposed (P). Country leaders only; their councils are written in the region
 | Pollos | Triton's Islands | Guild-Master Hesos Pol | Trading league |
 | Raerby | Triton's Islands | Captain-Speaker Lemo Raer | Seafaring republic |
 | Nondondor | Triton's Islands | King Benan of Nondondor | — |
-| Nan | Dead Lands | Warlord Dumar of Vez Nan | — |
-| Olen | Dead Lands | Olena of the Holy Breeze | — |
+| Nan | Ember Lands | Warlord Dumar of Vez Nan | — |
+| Olen | Ember Lands | Olena of the Holy Breeze | — |
 | Gondolin | East Lands | Queen Lorvena of Gondolin | Noris Treaty |
 | Drak | East Lands | King Morod of Drak | Stabilo Pact |
 | Alerhia | East Lands | King Alerhan III | — |
@@ -314,7 +314,7 @@ These never appear as characters. Status is the vault's.
 | --- | --- | --- |
 | Aen, First of His Name | E | Founder of Aenor; the greatest man who ever lived |
 | Ein, son of Aen | E | A king of the old line; little is told |
-| King Edran | E | Gatherer of the Grand Alliance; his Dead Lands folly |
+| King Edran | E | Gatherer of the Grand Alliance; his Ember Lands folly |
 | Elzon, the Great Necromancer | E | The conqueror who ruled Aenor through the Third Age; permanently dead |
 | Harion the Restorer | P | The first restored king, of Selen |
 | Taryn of Gunwaith | P | Western commander at Dardan (lore digest question 17: used as a remembered hero) |
@@ -350,7 +350,7 @@ These never appear as characters. Status is the vault's.
 
 `characters.json` also holds every character a tree spec lists, so each is defined once by `characters.mjs`:
 
-- **Regional trees** (pattern `zin_regional_<tree>_<who>`, contract additions): the courts of the tier B regional trees, recruited by their tree-declared `zin_regional_<tree>_recruit_<who>` effects or at the start as each tree says. The regional A trees add 52 entries (Cold Lands 12, Dark Lands 22, Dead Lands 18); the regional B trees add their own court tables.
+- **Regional trees** (pattern `zin_regional_<tree>_<who>`, contract additions): the courts of the tier B regional trees, recruited by their tree-declared `zin_regional_<tree>_recruit_<who>` effects or at the start as each tree says. The regional A trees add 52 entries (Cold Lands 12, Dark Lands 22, Ember Lands 18); the regional B trees add their own court tables.
 - **Major trees:** for example `zin_magical_forest_ithrandel` (above) and Lerendor's `zin_lerendor_maelis`, `zin_lerendor_brannoc`, `zin_lerendor_ostvar` and `zin_lerendor_hesk` ([Lerendor tree](../05_focus_trees/major/lerendor.md)), recruited by the tree's `zin_<tree>_recruit` calls.
 - **Proposed regional rulers** keep the id `<TAG>_zin_ruler`; their names sit in `zin_name_<realm>_ruler` keys (names spec pattern), so the owner can rename them in one place.
 

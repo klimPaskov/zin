@@ -23,7 +23,7 @@ The event is certain in the story as summarized in the original compendium. The 
 
 ## The dark powers
 
-- **[[Volgan]]:** Dead Lands dominion, largest dark army, grave hosts and subordinate monster societies. Possible victory: **Children of Volgan**.
+- **[[Volgan]]:** Ember Lands dominion, largest dark army, grave hosts and subordinate monster societies. Possible victory: **Children of Volgan**.
 - **[[Afrit]]:** Worshipdom, cults, corruption, bargains, desires Middle Kingdom crown. Possible victory: **Ashen Throne**.
 - **[[Zol]]:** distinct Old God of Death, based around Zol's Mistake. His relationship to the two dark leaders is not fully established and should not be invented. The current political table makes **Aenor** his rival.
 

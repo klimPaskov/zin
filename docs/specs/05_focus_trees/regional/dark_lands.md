@@ -32,7 +32,7 @@ Every tree here plays the region's mechanic, [The Dark Lands](../../04_mechanics
 
 **Proposed here:** every focus, spirit, event, advisor and number; the Five Towns of Blackton and their Town Moot; Dulundur's Four Fires; Bordon as the Road-Hold of the Black Road; Dreson as the Fen-Hold; Troll Silver; all character names below.
 
-**Kept open (no text closes them):** which holds are goblin or ogre holds (texts say "orc and goblin holds" for the region and never call a named hold goblin); where Dardan lies; the relation of Zol's dead to Volgan's; the exact place of the straits; whether the Sea of Darkness opens to the Ocean of Zol. No text names Afrit, tells the size of Volgan's hosts, or says fire ends Zol's dead.
+**Kept open (no text closes them):** which holds are goblin or ogre holds (texts say "orc and goblin holds" for the region and never call a named hold goblin); where Dardan lies; the relation of Zol's dead to Volgan's; the exact place of the straits; whether the Sea of Darkness opens to the Kusmeel. No text names Afrit, tells the size of Volgan's hosts, or says fire ends Zol's dead.
 
 ## Design
 

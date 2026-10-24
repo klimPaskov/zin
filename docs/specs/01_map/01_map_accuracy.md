@@ -8,7 +8,7 @@ The map is the stage for every mechanic. Each lore fact that has a place on the 
 
 ## Sources
 
-- Lore vault: *Aoaz and Its Regions*, *Middle Lands and Aenor*, *Great Powers and Relations*, *Fourth Age Map of Aoaz*, *Volgans Dead Lands*, *Zols Mistake*, *Castle of Yeldenne and Glo* and the owner's corrections of 17–18 October 2026.
+- Lore vault: *Aoaz and Its Regions*, *Middle Lands and Aenor*, *Great Powers and Relations*, *Fourth Age Map of Aoaz*, *Volgans Ember Lands*, *Zols Mistake*, *Castle of Yeldenne and Glo* and the owner's corrections of 17–18 October 2026.
 - Map today: `docs/generation/assumptions.md`, the politics output and `localisation/replace/world_l_english.yml`.
 
 ## How to change the map
@@ -19,13 +19,13 @@ Geography (land, sea, provinces, states, strategic regions) changes only through
 
 | # | Fact (lore) | Status of fact | Map today | Result | Action |
 | --- | --- | --- | --- | --- | --- |
-| G1 | 13 regions: Cold Lands, West Lands, Triton's Islands, North Lands, Dark Lands, Middle Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Dead Lands, Islands of the South, Lands of the Sun | established | All present as landmasses | matches | Name them in game (see N1) |
+| G1 | 13 regions: Cold Lands, West Lands, Triton's Islands, North Lands, Dark Lands, Middle Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Ember Lands, Islands of the South, Lands of the Sun | established | All present as landmasses | matches | Name them in game (see N1) |
 | G2 | Aenor Isle is part of the Middle Lands | owner, 17 Oct | Asgard is an Aenor satellite on the isle | matches | none |
 | G3 | The central sea between the West Lands and the Middle Lands is much wider than drawn | owner | 512-column sea inserted; lands scaled to 90% | matches | none |
-| G4 | Zol's Mistake is the whole black north and every black island of the Ocean of Zol | owner | Zol owns 104 states including the black lands of the Magical Lands sheet | matches | Confirm the Magical Lands black areas (Dlomntod, Medek, Lost Lands) belong to the Mistake; ask the owner if unsure |
+| G4 | Zol's Mistake is the whole black north and every black island of the Kusmeel | owner | Zol owns 104 states including the black lands of the Magical Lands sheet | matches | Confirm the Magical Lands black areas (Dlomntod, Medek, Lost Lands) belong to the Mistake; ask the owner if unsure |
 | G5 | The Great Wall of Aenor separates the Middle Lands from the Magical Lands; no Aenoran "horn" into the Magical Lands | owner, 17 Oct | Hard political border on the traced wall line | partly | The wall is only a border. Add a named fort line: a level-5 fort in every wall-side province on the Aenor side, and the wall as a map label |
 | G6 | The Cold Lands reach off the west and north edges; the East and South Lands off the east and south edges | established | Edge bands extruded | matches | none |
-| G7 | Dead Lands are hot, storm-girt and hard to reach by sea | established | Ordinary terrain | missing | Desert and hills terrain inland; a permanent storm or attrition modifier on Dead Lands coastal sea zones (mechanic in [03_gameplay/04_magic_and_world_systems.md](../03_gameplay/04_magic_and_world_systems.md)) |
+| G7 | Ember Lands are hot, storm-girt and hard to reach by sea | established | Ordinary terrain | missing | Desert and hills terrain inland; a permanent storm or attrition modifier on Ember Lands coastal sea zones (mechanic in [03_gameplay/04_magic_and_world_systems.md](../03_gameplay/04_magic_and_world_systems.md)) |
 | G8 | Zol's Mistake is a barren wasteland, sparsely populated, roamed by the dead | established | 104 states with generated population | check | Population and infrastructure near zero outside Furviatlon; wasteland terrain; no resources except what the mechanic adds |
 
 ## Seats of power
@@ -57,8 +57,8 @@ Sites that lore or mechanics need. Detail and requirements per site in [02_key_s
 | --- | --- | --- | --- | --- |
 | K1 | The Great Lake | established, Aenor's heartland | map label | Victory point cities around it in Aenor's states |
 | K2 | Dragon Mountain | established, home of dragons; not a country | map label | Make it a named state with no owner rights issue: owned by the nearest elven realm, with the dragon mechanic anchored there |
-| K3 | The Abyss | established, Dead Lands, Roka's domain | label; state 298 "Vez Nan / Abyss" in Volgan's realm | Split or rename so a state is called the Abyss; `zin_is_site_abyss` reads state 298 until then ([02_key_sites.md](02_key_sites.md)) |
-| K4 | The Nether | established, south of the Dead Lands, seat of the King of Demons | label inside Volgan's capital state 299 | A named state in the south of the Dead Lands owned by Volgan (owner short list 5 proposal; the Volgan spec). Until the map gives it a state, `zin_is_site_nether` is the same state as `zin_is_site_nafeher` (299) |
+| K3 | The Abyss | established, Ember Lands, Roka's domain | label; state 298 "Vez Nan / Abyss" in Volgan's realm | Split or rename so a state is called the Abyss; `zin_is_site_abyss` reads state 298 until then ([02_key_sites.md](02_key_sites.md)) |
+| K4 | The Nether | established, south of the Ember Lands, seat of the King of Demons | label inside Volgan's capital state 299 | A named state in the south of the Ember Lands owned by Volgan (owner short list 5 proposal; the Volgan spec). Until the map gives it a state, `zin_is_site_nether` is the same state as `zin_is_site_nafeher` (299) |
 | K5 | Dardan | established battle of the First Age; place open | missing | Do **not** place until the owner decides; the vault lists its location as open |
 | K6 | Organ Mountains and Lunhrim | owner, Great Wall description | missing | Map labels at the wall's ends |
 | K7 | Castle of Yeldenne | established, Cold Lands | state Mp'E | See S11 |
@@ -70,7 +70,7 @@ Sites that lore or mechanics need. Detail and requirements per site in [02_key_s
 
 | # | Item | Today | Action |
 | --- | --- | --- | --- |
-| N1 | Strategic regions | "Region 1" … "Region 275" | Name every strategic region from the drawn labels in its area; sea regions by drawn sea names (Pupor Ocean, Sea of Darkness, Ocean of Zol, Sea of Gods…) |
+| N1 | Strategic regions | "Region 1" … "Region 275" | Name every strategic region from the drawn labels in its area; sea regions by drawn sea names (Pupor Ocean, Sea of Darkness, Kusmeel, Sea of Gods…) |
 | N2 | Superseded names (Edvoid, Rush, Klinti, Sunhot as a place) | absent from localisation except the drawn Sunhot place labels ("Lands of the Sun Desert", "Lands of the Sun Grasslands" in strategic region, state and victory point names); present in internal file names | The politics step renames the drawn labels to **Sun Desert**, **Sun Gate** and **Sun Grasslands** (owner, 19 October 2026; [03_names_and_terms.md](../02_lore/03_names_and_terms.md)) and the internal strategic region files when they are regenerated |
 | N3 | Generated placeholder names | settlements and some capitals | Keep until the owner names them; never use an antagonist's or region's name |
 

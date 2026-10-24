@@ -21,7 +21,7 @@ The mechanic serves the major tree of [Goldoroth](../05_focus_trees/major/goldor
 | Dondor is the northern Dark Lands kingdom, seat Notbuton (working); with Belonton it forms the **Dark Sea Accord**; rival Goldoroth. | *Great Powers and Relations* (working table) |
 | Bordon, Dreson, Dulundur and the Troll Forest must stay separate polities on the map. | *Great Powers and Relations* |
 | Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, orcs, goblins, trolls, ogres, giants and demons under separate rulers. | *Kingdoms Factions and Conflicts*, *Peoples of Aoaz* |
-| The independent Dark Lands are not automatically Volgan's subjects. His authority does not extend to independent Dark Lands factions. | *Volgan*, *Volgans Dead Lands* |
+| The independent Dark Lands are not automatically Volgan's subjects. His authority does not extend to independent Dark Lands factions. | *Volgan*, *Volgans Ember Lands* |
 | Dondor Brutes are a people of men. Orcs, goblins, trolls and ogres are distinct peoples; monster societies are independent and diverse. | *Peoples of Aoaz* |
 | In the First Age Volgan opened contacts with powers in the Dark Lands; parts of the Dark Lands joined the Grand Alliance against him. | *The First Age of Aoaz*, *Grand Alliance* |
 | In the Second Age the Dark Lands were never one nation; orcs and goblins do not serve one master by nature; some supported Elzon and others resisted him. | *The Second Age of Aoaz* |
@@ -115,7 +115,7 @@ Scripts find places through site triggers generated in `common/scripted_triggers
 | `zin_is_site_troll_forest` | state | The Troll Forest's state | exists |
 | `zin_is_region_dark_lands` | state | Every state whose owner had the roster region Dark Lands at the start (47 states today); this spec reads only this name | Generated from `countries.json` |
 
-Read from the key sites table, not supplied here: `zin_is_site_ocean_of_zol_coast` (every state with a coastal province on the Ocean of Zol; its row belongs to the key sites table).
+Read from the key sites table, not supplied here: `zin_is_site_ocean_of_zol_coast` (every state with a coastal province on the Kusmeel; its row belongs to the key sites table).
 
 The **Fire-Mountain** above Cocanoor (proposed) is not a state. It is a Cocanoor flavour site for events and icons.
 
@@ -375,7 +375,7 @@ The Volgan spec owns the envoys, `zin_volgan_pact` and the Dark Lands acceptance
 
 **The Accord's sea.** The Dark Sea Accord's faction manifest (`zin_faction_manifest_hold_the_dark_sea`, diplomacy spec) measures Dark Lands states not controlled by Goldoroth. This spec does not change it.
 
-**Zol's black ships.** The flavour event `zin_lore.180` "Black Ships" already reaches Dark Lands countries with a coast on the Ocean of Zol. Whether the Sea of Darkness opens to that ocean is an open question.
+**Zol's black ships.** The flavour event `zin_lore.180` "Black Ships" already reaches Dark Lands countries with a coast on the Kusmeel. Whether the Sea of Darkness opens to that ocean is an open question.
 
 ### 9. The straits
 
@@ -389,7 +389,7 @@ The Dark Lands lie between the North Lands and the Middle Lands across narrow st
 
 **The southern strait and Volgan's march.** When Volgan marches, Dark Lands countries sworn to him (pact 3) attack Dondor or a bordering Concord dominion (Volgan spec, northern front). Goldoroth on the Southern Bargain route crosses the southern strait (`zin_goldoroth_wargoal_strait_south`: a `take_state` war goal on one `zin_is_site_dark_strait_south_far` state owned by Aenor or a Concord dominion).
 
-**The northern strait and Zol's dead.** On `zin_zol_rising` every Dark Lands country with a `zin_is_site_dark_strait_north_shore` state or an Ocean of Zol coast (`zin_is_site_ocean_of_zol_coast`) gets `zin_dark.80` "Dead on the Dark Shore": "Watch the shore." (timed idea `zin_dark_watch_the_shore`, 365 days; AI 70) / "The dead are the North's trouble." (+25 PP; AI 30).
+**The northern strait and Zol's dead.** On `zin_zol_rising` every Dark Lands country with a `zin_is_site_dark_strait_north_shore` state or an Kusmeel coast (`zin_is_site_ocean_of_zol_coast`) gets `zin_dark.80` "Dead on the Dark Shore": "Watch the shore." (timed idea `zin_dark_watch_the_shore`, 365 days; AI 70) / "The dead are the North's trouble." (+25 PP; AI 30).
 
 Scripted trigger `zin_dark_shore_barred` (a hook the Zol's Mistake spec may read): every `zin_is_site_dark_strait_north_shore` state is controlled by a country at war with Zol and has a coastal fort of level 2 or more (`any_province_building_level` with `building = coastal_bunker` and `level > 1`). The Zol spec decides whether it slows or redirects a crossing; this spec only provides the trigger.
 
@@ -734,7 +734,7 @@ None.
 All proceed on the labelled proposal; the owner's questions are listed in [OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md) under "dark lands".
 
 1. **The straits.** Where are the strait to the North Lands and the strait to the Middle Lands, is either Lerendor's Narrow Strait, and can armies walk them? Proposal: both are sea crossings; the Narrow Strait is the North Lands–Middle Lands strait (owner's short list 3); the map phase records any land crossing (dark lands 1).
-2. **The Sea of Darkness.** Inland, or open to the Ocean of Zol or the central sea? Proposal: inland; Zol's black ships reach only countries with an Ocean of Zol coast (dark lands 2).
+2. **The Sea of Darkness.** Inland, or open to the Kusmeel or the central sea? Proposal: inland; Zol's black ships reach only countries with an Kusmeel coast (dark lands 2).
 3. **Dondor's size.** Proposal: the map grows it to hold its own against Goldoroth (owner's short list 8; dark lands 3).
 4. **Belonton.** Proposal: an orc confederacy in a human-led Accord, as the roster says (dark lands 4).
 5. **Goblins and ogres.** Proposal: minor peoples of some orc holds, assigned by the owner; until then no text names a goblin hold (owner's short list 12; dark lands 5).

@@ -8,7 +8,7 @@ updated: 2026-10-24
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
-> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), takes the field instead.
+> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), takes the field instead.
 
 ## Prologue: the peace that followed Elzon
 
@@ -34,7 +34,7 @@ Afrit's demonic form is genuine, but it is an acquired state, not proof that he 
 
 ## II. Roka's necklace and the gathering of powers
 
-At some point in the Fourth Age, Afrit sought the greatest surviving artifacts of Aoaz. Above all he coveted the **Necklace of the Abyss**, held in the depths of the Dead Lands by **Roka**, a huge being of the rhinoceros-headed people of the Abyss. The true history of that people and the necklace's creation remain unknown.
+At some point in the Fourth Age, Afrit sought the greatest surviving artifacts of Aoaz. Above all he coveted the **Necklace of the Abyss**, held in the depths of the Ember Lands by **Roka**, a huge being of the rhinoceros-headed people of the Abyss. The true history of that people and the necklace's creation remain unknown.
 
 Rather than enter the Abyss himself, Afrit sent a master thief. **Sevrin the Unending** is a proposed name. Afrit promised the thief eternal life if he returned with the necklace. The thief crossed hostile lands, reached Roka's domain, obtained the artifact by means not yet established, and brought it back. Afrit fulfilled the bargain by using the necklace's magic to grant him unending life. **Proposed constraint:** the thief ceased to age, but remained capable of pain, capture, and injury. Afrit gave him a gift that also left him dependent upon Afrit's continuing control of the artifact.
 
@@ -70,7 +70,7 @@ Among the islanders circulated a saying that, when the tales of men grew too old
 
 ## V. Lorien and the Mirror of First Rain
 
-The **Gala elves** were among the few peoples whose rulers still remembered the time of Dardan. Their king **Lorien** had led them into the Grand Alliance against Volgan, and survived through the Second and Third Ages. His memories included the great victory, Edran's ruinous attack into the Dead Lands, the death of Edran's soldiers and elven allies, and the later refusal of the elven kingdoms to fight Elzon's war on behalf of Aenor. Lorien had not ceased caring about the world, but he distrusted the repeated desire of human rulers to turn a common victory into a permanent dominion.
+The **Gala elves** were among the few peoples whose rulers still remembered the time of Dardan. Their king **Lorien** had led them into the Grand Alliance against Volgan, and survived through the Second and Third Ages. His memories included the great victory, Edran's ruinous attack into the Ember Lands, the death of Edran's soldiers and elven allies, and the later refusal of the elven kingdoms to fight Elzon's war on behalf of Aenor. Lorien had not ceased caring about the world, but he distrusted the repeated desire of human rulers to turn a common victory into a permanent dominion.
 
 He received the stranger and spoke with him for weeks. He told him of the War of Men, Aen's unnatural birth, the founding of Aenor, the long peace, westward conquest and bitter resistance, the ancient peoples before Aen, Dardan, and the death of Elzon. The stranger learned how small his own memories were against the age of the world. Lorien recognized signs of the First Men, but refused to identify him on strength alone.
 
@@ -138,7 +138,7 @@ The danger unfolded through several wars that overlapped rather than a single at
 
 **From the north**, rulers in the North Lands withdrew from Aenoran alliances, while forces associated with Zol moved from the black northern wasteland, through islands and straits toward the settled kingdoms. Zol's dead were different from Elzon's resurrected corpses. They were death-bound beings sustained by the Old God's direct magic. Ordinary weapons might break their shapes, but could not end their existence. Only potent magic could truly destroy them.
 
-**From the south**, Volgan emerged from the Dead Lands, reconquered Mirolon, and marched north with an army greater than those seen since the first age. He commanded creatures, great spirits, demons, and vast war hosts. The forces had been accumulating for centuries while Volgan recovered from his earlier exile.
+**From the south**, Volgan emerged from the Ember Lands, reconquered Mirolon, and marched north with an army greater than those seen since the first age. He commanded creatures, great spirits, demons, and vast war hosts. The forces had been accumulating for centuries while Volgan recovered from his earlier exile.
 
 **From the east**, the eastern coalition crossed seas and mountain approaches to threaten the Magical Lands and the Middle Kingdom. Their commanders expected wealth, territory, revenge, or deliverance from their own rulers' crises. Some were secretly connected to Aurevan's long-established networks.
 
@@ -194,7 +194,7 @@ The victory did not end the battle. Zol's most loyal servant came forth.
 
 ## XIII. The servant beneath the black sky
 
-Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. That servant is the Great Spirit [[Edvoid]] (name to be replaced, Q-10), made by Zol and feared by all. **Proposed:** the Fading and Aoaz's hostile magic are why Zol sent his servant rather than coming himself; the reason is not established.
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. That servant is the Great Spirit [[Kusven]] (name to be replaced, Q-10), made by Zol and feared by all. **Proposed:** the Fading and Aoaz's hostile magic are why Zol sent his servant rather than coming himself; the reason is not established.
 
 **Proposed explanation for the servant's strength:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces let the servant carry an unusual measure of Zol's death-magic onto the field. This cost strength and could not last indefinitely.
 
@@ -254,7 +254,7 @@ Only the First Age's **1,675 years**, the Second Age's **2,133 years**, and the 
 
 | Age | Duration | Notes |
 | --- | ---: | --- |
-| First | 1,675 years | Ends with Dardan and the failed Dead Lands campaign |
+| First | 1,675 years | Ends with Dardan and the failed Ember Lands campaign |
 | Second | 2,133 years | Ends in 2A 2133 with Elzon's seizure of Aenor |
 | Third | **1,260 years proposed** | Several centuries of occupation, gradual necromantic decline, Varner's resistance and Elzon's final destruction |
 | Fourth | **1,760 years proposed** | Roughly a thousand years of broad peace, generations of Afrit's hidden rule, late Golden King, Eindil's journey and the final war |
@@ -271,7 +271,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Glernaen is a real New God of Power and Wisdom. Horos is a Great Spirit who safeguards Glo, the crystal at his heart.
 - The Castle Yeldenne encounter is in the Cold Lands. Afrit wounds Horos mortally, Eindil wounds Afrit, Afrit flees, and Horos gives Glo and his sword to Eindil before turning to dust.
 - Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol's most loyal servant. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
-- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10) (corrected 24 October 2026).
+- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10) (corrected 24 October 2026).
 - Volgan is defeated by Eindil with the aid of the New Gods. His incarnation collapses. His final spiritual fate is unresolved.
 - Varner dies in the final war. Golbran spends nearly all his magical strength defending Varner, survives that event, and finally dies giving Eindil his remaining life after Afrit's defeat.
 - Afrit briefly becomes king of an eastern coalition after abandoning Aenor. His title does not mean every eastern kingdom submits to him.

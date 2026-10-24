@@ -217,7 +217,7 @@ The vault says nothing about the Cold Lands in the final war. This spec offers t
 
 `zin_cold_sail_white_companies`: Coldor pays 30,000 manpower and 3,000 infantry equipment (the warfare spec's men's infantry equipment; vanilla `infantry_equipment` until that phase); three divisions of template "White Company" (`zin_cold_white_company`) are created in the coastal state controlled by the Host of Eindil (or the Aenor realm in the coalition) nearest the West; Coldor joins the coalition through `zin_eindil_join_coalition`; regard +15. Joining does not make Coldor a subject (established for the coalition). The effect defines the template with the `division_template` effect the first time it runs, with the warfare spec's composition (6 men's line infantry, 2 archers, 1 cavalry; scouts, healers, quartermasters; [03_gameplay/01_warfare.md](../03_gameplay/01_warfare.md) §4.9a); until the warfare phase, nine vanilla `infantry` battalions. The 3,000 equipment Coldor pays is the warfare spec's `zin_arms_equipment`.
 
-If the map gives any Cold Lands country a coast on the Ocean of Zol, it is on the Zol spec's rumour list; this spec adds nothing for Zol.
+If the map gives any Cold Lands country a coast on the Kusmeel, it is on the Zol spec's rumour list; this spec adds nothing for Zol.
 
 ### 9. The historical path
 

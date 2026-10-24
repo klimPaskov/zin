@@ -16,7 +16,7 @@ This spec gives each institution an Aoaz answer: what it becomes, its rules and 
 | --- | --- |
 | Aenor has a strong army; strong institutions kept the kingdom running under the Golden King. | *Golden King*, *Fourth Age Canon Register* |
 | Afrit's Hidden Council works through religious institutions, relief networks, foreign envoys and commercial connections; its seats are royal administration, worship, foreign agents and the recovery of artifacts. | *Afrit's Hidden Council* |
-| Elzon's dead faded and needed magic that was hard to replenish outside the Dead Lands; potent magic (Glo, Horos's sword) ends Zol's dead and nothing ordinary does. | *Elzon's Order*, *Zol* |
+| Elzon's dead faded and needed magic that was hard to replenish outside the Ember Lands; potent magic (Glo, Horos's sword) ends Zol's dead and nothing ordinary does. | *Elzon's Order*, *Zol* |
 | The Fourth Age had a thousand years of peace, education, science and medicine; farming, medicine and military practice came from engineers, healers and soldiers. | *Fourth Age Canon Register*, *Second Age Progress and Recovery* |
 | Aenor traded with the North Lands, the West Lands, the islands, the Magical Lands and the eastern states; ports and caravan roads made kingdoms rich. | *The Fourth Age of Aoaz* |
 | Dragons come from Dragon Mountain; elven powers command them; Afrit can through corruption. | *Peoples of Aoaz* |

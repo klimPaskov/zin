@@ -62,7 +62,7 @@ The East Lands are the 35 countries whose region in `tools/content/data/countrie
 | Area | Countries | Note |
 | --- | --- | --- |
 | The rift coast (west) | Alerhia, Delbiz Grasslands, Fosoco | Across the rift from The End, Lccimio, Luv-zhise, Lengoli and Lusteli in the Magical Lands; Alerhia lies nearest the Zilin Hills |
-| The north coast | Gondolin, Woqood, Orato, Fladev, Hacsen, Vigodor, Cream, Lorvens | Faces the Ocean of Zol; the Zol spec sends its rumours here. Gondolin itself has no coastal state on today's map (east lands owner question 11) |
+| The north coast | Gondolin, Woqood, Orato, Fladev, Hacsen, Vigodor, Cream, Lorvens | Faces the Kusmeel; the Zol spec sends its rumours here. Gondolin itself has no coastal state on today's map (east lands owner question 11) |
 | The centre | Noris (Furvior), Mylunur, Mora, The Moco, Kersian, Mostok | The road junction; Noris borders Stabilo, Alerhia and six more |
 | The north-east | Ostoroth, Ernois, Grova, Nethnu, Eraver | The Lake Road |
 | The south | Stabilo (Fudol today), Drak, Plutondo, Erco, Oreton, Obmi, Avalon, Olor, Furro, Arcon, Azano, Pornivior | The Gold and Sand Roads |
@@ -175,7 +175,7 @@ Lean moves through the court decisions, focuses, road drift and events. `zin_eas
 | Court | Ruler | States | Where | Roads | Lean | Footholds | Pressures in play (proposed; tendencies, not destiny) |
 | --- | --- | ---: | --- | --- | ---: | ---: | --- |
 | **Alerhia** | King Alerhan III | 26 | Westernmost; desert and mountains on the rift coast facing the southern Magical Lands and the Zilin Hills; borders the Lands of Light | Gold (west end), Rift (port) | 0 | 3 | Largest eastern court and the one that faces the rift: highest coalition weight at start. Both rivals want its roads. |
-| **Miaed** | Lord Furanow of the Passes | 19 | South-west; the desert passes of the South Lands; borders the Lands of Light; near the Dead Lands' eastern edge | Sand (pass branch) | -10 | 3 | A South Lands court; its passes make it a gate, not a road-builder. |
+| **Miaed** | Lord Furanow of the Passes | 19 | South-west; the desert passes of the South Lands; borders the Lands of Light; near the Ember Lands' eastern edge | Sand (pass branch) | -10 | 3 | A South Lands court; its passes make it a gate, not a road-builder. |
 | **Erco** | Queen Obmia of Erco | 16 | The southern mountains | Sand (east end) | -20 | 3 | Mines and mountain forts; far from the rift. |
 | **Plutondo** | Prince Blozan | 16 | South-east, between Drak and Erco; desert, hills and a coast | Gold (east end) | -30 | 3 | Populous; the Stabilo Pact's natural next member. |
 

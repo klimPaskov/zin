@@ -113,7 +113,7 @@ The clause about marks, corners and religious symbols is decision A4. It came af
 
 ### 5. The 24 loading screens (in game)
 
-Palettes follow the icon catalog: Middle Lands gold and red; North Lands sea-green and iron; Cold Lands white and pale blue; West Lands green and brown; East Lands ochre and turquoise; Dark Lands rust and black; Dead Lands ash and ember; Magical Lands silver and leaf-green; Lands of the Sun white gold; the Mistake black and cold grey. Region coverage: Middle Lands 8, Magical Lands 3, Cold Lands 3, Lands of the Sun 2, and one each for the North Lands, West Lands, Triton's Islands, Islands of the South, Dark Lands, Dead Lands border, East Lands and Zol's shores. Peoples shown: men, elves, Sunhot elves, giants, ents, yeti, orcs and goblins. Demons and the dead are left out on purpose.
+Palettes follow the icon catalog: Middle Lands gold and red; North Lands sea-green and iron; Cold Lands white and pale blue; West Lands green and brown; East Lands ochre and turquoise; Dark Lands rust and black; Ember Lands ash and ember; Magical Lands silver and leaf-green; Lands of the Sun white gold; the Mistake black and cold grey. Region coverage: Middle Lands 8, Magical Lands 3, Cold Lands 3, Lands of the Sun 2, and one each for the North Lands, West Lands, Triton's Islands, Islands of the South, Dark Lands, Ember Lands border, East Lands and Zol's shores. Peoples shown: men, elves, Sunhot elves, giants, ents, yeti, orcs and goblins. Demons and the dead are left out on purpose.
 
 | N | File | Title (internal, never shown) | Region, people | Brief: subject and composition | Light and palette | Lore basis |
 | ---: | --- | --- | --- | --- | --- | --- |
@@ -138,9 +138,9 @@ Palettes follow the icon catalog: Middle Lands gold and red; North Lands sea-gre
 | 19 | `load_19` | Under the sun | Lands of the Sun; Sunhot elves, men | A white-gold city of terraces beside a bright sea. Sunhot elves over three metres tall (bronze skin, white and gold robes, sun-disc diadems) walk among human merchants who reach only to their chests. Calm, generous, unhurried. | High sun; white gold | The Sunhot elves (E), the Sea of Gods (E) |
 | 20 | `load_20` | The court of Gala | Lands of the Sun; Gala elves | An ancient elven hall open to the sky: pale stone columns overgrown with flowering vines, elven courtiers in white and gold. At the far end a throne bathed in light, its occupant small and indistinct. No spring or basin at the centre, no ship, no stranger. No Sunhot elves. | Warm sunlight; white gold and green | Gala's court and King Lorien (E); interface list |
 | 21 | `load_21` | The forges of Cocanoor | Dark Lands; orcs, goblins | A city of black iron on the slopes of a smoking volcano at night. Orc and goblin smiths work at open forges; channels of molten light run between the buildings. Work, not war: no captives, no army. | Lava glow; rust and black | Goldoroth's seat Cocanoor (W), the Volcano Clans (P) |
-| 22 | `load_22` | The watch on the passes | Dead Lands border; men | A stone watchtower on a high mountain pass. A lone scout with a dust-scarf looks south, where a towering storm wall and heat haze cover the horizon and faint dust plumes rise far away. No army, no figure in the south. | Ash and ember sky | Mirolon watches the Dead Lands (E rivalry), the storms and heat (E); interface list |
+| 22 | `load_22` | The watch on the passes | Ember Lands border; men | A stone watchtower on a high mountain pass. A lone scout with a dust-scarf looks south, where a towering storm wall and heat haze cover the horizon and faint dust plumes rise far away. No army, no figure in the south. | Ash and ember sky | Mirolon watches the Ember Lands (E rivalry), the storms and heat (E); interface list |
 | 23 | `load_23` | The salt road | East Lands; men | A long camel caravan crosses ochre dunes at dusk toward a caravan city with turquoise domes. Camel riders ride escort along its flank. | Dusk; ochre and turquoise | The caravan roads (P), Noris camel warriors (E) |
-| 24 | `load_24` | The black island | Ocean of Zol; men | Small fishing boats with lanterns row away at dusk from a jagged black island under a cold grey sky, mist on the water. Nothing and nobody on the island. | Dusk; black and cold grey, lantern gold | Zol's Mistake and its black islands (E), the fishermen's rumours (P); interface list |
+| 24 | `load_24` | The black island | Kusmeel; men | Small fishing boats with lanterns row away at dusk from a jagged black island under a cold grey sky, mist on the water. Nothing and nobody on the island. | Dusk; black and cold grey, lantern gold | Zol's Mistake and its black islands (E), the fishermen's rumours (P); interface list |
 
 ### 6. The loading screen chrome (in game)
 
@@ -182,7 +182,7 @@ l_english:
 
 #### Attribution style
 
-- **Sayings of peoples** name the people or place: "Saying of the Gunwaith clans", "Fishermen's saying, Ocean of Zol".
+- **Sayings of peoples** name the people or place: "Saying of the Gunwaith clans", "Fishermen's saying, Kusmeel".
 - **Lines from chronicles** name a source (all titles proposed): *The Chronicle of Aoaz* with its age (the same name as the in-game codex, [04_chronicle_codex.md](../07_interface/04_chronicle_codex.md)), *The Annals of Parim*, *The Annals of Gunwaith*, *The Harbour Rolls of Sonargur*, *The Litany of the Deliverer*, *A western reading of the Chronicle*, *A commentary on the Chronicle*.
 - **Words of figures** name the figure with a title. Every attributed line is **proposed**, including those given to established figures (Aen, King Edran, Lorien, Varner, the Golden King, Alleria). Lines for Aen and Varner are framed as remembered ("Words the heralds give to Aen", "as the elves remember him"), because nobody alive heard them. Proposed characters come from [02_characters.md](../02_lore/02_characters.md) and the vault's proposed First and Second Age characters; the High Confessor is **Ilvane** (integration N10).
 - **Volgan** speaks only through Mirolon's songs. Zol, the Deliverer himself, Horos and Eindil are never quoted.
@@ -219,12 +219,12 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 | `LOADING_TIP_16` | Men lived for thousands of years before Aen. He was not the first of men. He was the first of his name. | The Chronicle of Aoaz: the First Age | Aen, First of His Name (E) |
 | `LOADING_TIP_17` | For centuries the kingdoms of men fought over whether there should be one crown. Aen answered the question. | The Chronicle of Aoaz: the First Age | The War of Men (E) |
 | `LOADING_TIP_18` | The western shores were not empty when Aenor's ships arrived. That is the whole quarrel, and it has lasted four ages. | A western reading of the Chronicle | Aenor's wars in the West (E) |
-| `LOADING_TIP_19` | The Dead Lands guarded themselves. Storms turned back the ships, and the heat turned back the men who landed. | The Chronicle of Aoaz: the First Age | Dead Lands storms and heat (E) |
+| `LOADING_TIP_19` | The Ember Lands guarded themselves. Storms turned back the ships, and the heat turned back the men who landed. | The Chronicle of Aoaz: the First Age | Ember Lands storms and heat (E) |
 | `LOADING_TIP_20` | When the capital fell to Volgan, its archives burned with it. The kingdom lost its memory before it lost its walls. | The Chronicle of Aoaz: the First Age | The capital fell (E); archives (P) |
 | `LOADING_TIP_21` | Men, elves, dwarves, giants and spirits stood in one alliance. It happened once. The chroniclers still argue about why it worked. | The Chronicle of Aoaz: the Grand Alliance | The Grand Alliance (E) |
 | `LOADING_TIP_22` | Dardan cost millions of lives and left a wasteland. The victory was real. So was the price. | The Chronicle of Aoaz: the First Age | Battle of Dardan (E) |
 | `LOADING_TIP_23` | The spirits did not destroy Volgan. They stripped his strength and cast him into the Void. A banishment is a door, and doors open. | A commentary on the Chronicle | Banishment to the Void, later return (E) |
-| `LOADING_TIP_24` | King Edran won the war and lost the peace. He would not stop at Dardan, and the elves paid for it in the Dead Lands. | The Chronicle of Aoaz: the First Age | Edran's failed Dead Lands campaign (E) |
+| `LOADING_TIP_24` | King Edran won the war and lost the peace. He would not stop at Dardan, and the elves paid for it in the Ember Lands. | The Chronicle of Aoaz: the First Age | Edran's failed Ember Lands campaign (E) |
 | `LOADING_TIP_25` | They called the Second Age the Long Grief. Yet its farmers learned to keep seed, its healers to end plagues, its builders to raise walls that held. | The Chronicle of Aoaz: the Second Age | Second Age advances (E) |
 | `LOADING_TIP_26` | King Edran, greatest of kings since Aen, died of a sickness no sword could reach. | The Chronicle of Aoaz: the Second Age | Edran died of disease (E) |
 | `LOADING_TIP_27` | When the Necromancer came, the elves did not. Men called it betrayal. The elves called it memory. | The Chronicle of Aoaz: the Second Age | The Elven Refusal (E) |
@@ -236,8 +236,8 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 | `LOADING_TIP_33` | Harion of Selen took up a crown that had waited twelve hundred years, and found that it still fitted a good man. | The Annals of Parim | A good king restores Aenor (E); Harion (P) |
 | `LOADING_TIP_34` | 4A 96. The elves and the crown agreed to keep the Necromancer's wall. The elves wanted their old distance. The kings wanted the tolls. | The Annals of Parim | The Wall Accord (P) |
 | `LOADING_TIP_35` | 4A 1000. Parim feasted a thousand years of peace. Envoys came from every coast, and nobody brought a sword. | The Annals of Parim | The Thousand-Year Jubilee (P) |
-| `LOADING_TIP_36` | 4A 1736. An envoy of Mirolon warned the court that the Dead Lands were arming. The court laughed. The annalist did not record the joke. | The Annals of Parim | The unheeded envoy (P) |
-| `LOADING_TIP_37` | 4A 1744. Fishermen speak of black ships among the islands of the Ocean of Zol. Entered here as a curiosity. | The Harbour Rolls of Sonargur | Black ships rumour (P) |
+| `LOADING_TIP_36` | 4A 1736. An envoy of Mirolon warned the court that the Ember Lands were arming. The court laughed. The annalist did not record the joke. | The Annals of Parim | The unheeded envoy (P) |
+| `LOADING_TIP_37` | 4A 1744. Fishermen speak of black ships among the islands of the Kusmeel. Entered here as a curiosity. | The Harbour Rolls of Sonargur | Black ships rumour (P) |
 | `LOADING_TIP_38` | 4A 1745. Gunwaith and Girdon sign the Truce of the Grey Ford. The West is quiet. The scribes do not trust it. | The Annals of Gunwaith | Truce of the Grey Ford (P) |
 | `LOADING_TIP_39` | If the walls cannot be saved, save the books. A kingdom can be rebuilt from its memory. | Arelon, Keeper of the Last Seal | Second Age proposed character (P) |
 
@@ -278,7 +278,7 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 | `LOADING_TIP_70` | Noris owns the desert. We own the people who must cross it. | Prince Cereos of Postondoroth | Stabilo's rivalry with Noris (W, P) |
 | `LOADING_TIP_71` | A warking who cannot win a fight cannot keep a crown. A warking who must fight every day has already lost it. | Warking Gorduth of Cocanoor | Goldoroth (W); ruler (P) |
 | `LOADING_TIP_72` | Mirolon does not ask the north to love us. Only to look south once a year. | High Warden Maeric of Mirolon | Mirolon watches the south (E rivalry, P ruler; the Mirolon tree's ruler wins over the characters spec's earlier "First Warden Aldis Veleran", O7; the in-game attribution in `loading_tips.json` changes in the next build) |
-| `LOADING_TIP_73` | I told the court in Parim that the Dead Lands were arming. They laughed so hard the King spilt his wine. I hope it stained. | Envoy Hessa Mencnor of Mirolon | The envoy of 4A 1736 (P) |
+| `LOADING_TIP_73` | I told the court in Parim that the Ember Lands were arming. They laughed so hard the King spilt his wine. I hope it stained. | Envoy Hessa Mencnor of Mirolon | The envoy of 4A 1736 (P) |
 | `LOADING_TIP_74` | Watch the dust on the southern road. Dust does not lie, and it does not laugh at you in Parim. | Captain Bennar of the Passes | Mirolon's scouts (P) |
 
 #### The Deliverer and the temples
@@ -387,21 +387,21 @@ Public faith only. These lines are sincere, and they stay true to what believers
 | `LOADING_TIP_132` | The fire-speakers read the smoke above Cocanoor. When the smoke drifts south, they stop talking. | Saying of the Volcano Clans | Goldoroth's fire-speakers (P) |
 | `LOADING_TIP_133` | Strangers from the south bring good iron and better promises. Take the iron. | Saying of the free holds | Gifts from the south (P) |
 
-#### The Dead Lands and Mirolon
+#### The Ember Lands and Mirolon
 
 | Key | Text | Attribution | Basis |
 | --- | --- | --- | --- |
 | `LOADING_TIP_134` | Volgan has been quiet longer than Aenor has had kings. Quiet is not the same as gone. | Saying of the watch of Mirolon | Volgan rebuilding (E); phrase (P) |
 | `LOADING_TIP_135` | Mirolon was the first kingdom Volgan took. It means to be the last he ever tries to take. | Saying of the passes | Volgan's First Age conquest of Mirolon (E) |
 | `LOADING_TIP_136` | The kingdoms of men always divide. I have only to wait. | Words that Mirolon's old songs give to Volgan | Volgan's patience (P voice) |
-| `LOADING_TIP_137` | No ship has seen what lies behind the storms of the Dead Lands. The ships that might have are on the sea floor. | Saying of the southern coasts | Dead Lands storms (E) |
+| `LOADING_TIP_137` | No ship has seen what lies behind the storms of the Ember Lands. The ships that might have are on the sea floor. | Saying of the southern coasts | Ember Lands storms (E) |
 | `LOADING_TIP_138` | The south is hot, the seas are wild, and the Nether lies farther south than both. Travellers' advice: go north. | Saying of the Herez marches | The Nether in the far south (E) |
 
 #### Zol's Mistake and the northern seas
 
 | Key | Text | Attribution | Basis |
 | --- | --- | --- | --- |
-| `LOADING_TIP_139` | Nothing lives in Zol's Mistake. Things walk there anyway. | Fishermen's saying, Ocean of Zol | Roamed by the dead (E) |
+| `LOADING_TIP_139` | Nothing lives in Zol's Mistake. Things walk there anyway. | Fishermen's saying, Kusmeel | Roamed by the dead (E) |
 | `LOADING_TIP_140` | Never put in at a black island. The islands are patient, and you are not. | Fishermen's saying of the north | The black islands (E) |
 | `LOADING_TIP_141` | Why is it called Zol's Mistake? Ask the scholars. Then ask why none of them has gone to look. | Saying of the Leren harbours | The name is unexplained (E) |
 | `LOADING_TIP_142` | A man killed in battle stays dead. The dead of the north were never told. | Saying of the northern coasts | Ordinary weapons cannot end Zol's dead (E) |
@@ -446,7 +446,7 @@ Each tip names only systems that the specs define and stays true if their number
 | `LOADING_TIP_169` | Warfare | Dragons cannot be bred or built. Only pacts with Dragon Mountain bring them, and a dragon lost in battle is never replaced. | warfare §6.3, magic |
 | `LOADING_TIP_170` | Warfare | The Great Wall of Aenor is a line of stone forts from the Organ Mountains past Lunhrim to Kingson. It needs upkeep, and every breach matters. | magic, Great Wall |
 | `LOADING_TIP_171` | Navy | Galleys cannot cross the wide central sea. A fleet bound from the West Lands to the Middle Lands needs deep-water hulls. | warfare §7.3 |
-| `LOADING_TIP_172` | Navy | The seas around the Dead Lands are wracked by storms. Without storm rigging, a fleet loses ships there before it meets an enemy. | warfare §7.3 |
+| `LOADING_TIP_172` | Navy | The seas around the Ember Lands are wracked by storms. Without storm rigging, a fleet loses ships there before it meets an enemy. | warfare §7.3 |
 | `LOADING_TIP_173` | Navy | Merchant cogs carry your trade and your armies across the water. Guard them: corsairs hunt the sea lanes. | warfare §2, §7.1 |
 | `LOADING_TIP_174` | Navy | A war galley's ram strikes hard at close quarters. Warships carry ballista decks and the reach to stay at sea for long. | warfare §7.1 |
 | `LOADING_TIP_175` | Rules | The Historical Path rule decides whether the AI follows the chronicle of the age, leans toward it, or follows only its own interests. | `zin_rule_historical_path` |
@@ -459,7 +459,7 @@ Each tip names only systems that the specs define and stays true if their number
 | `LOADING_TIP_182` | Mirolon | Playing Mirolon? Parim will not listen to rumours. Send scouts south and gather proof that no court can laugh away. | Volgan spec, Mirolon's proof |
 | `LOADING_TIP_183` | West Lands | The West Lands are many crowns in an uneasy calm. The Truce of the Grey Ford holds at the start, and whether it lasts shapes the West. | Western Crossing |
 | `LOADING_TIP_184` | East Lands | The caravan roads make Noris and Stabilo rich, and keep them rivals. A price war on the salt road can turn into a real one. | economy, `zin_cb_caravan_roads` |
-| `LOADING_TIP_185` | Dark powers | Playing Volgan? Your grave hosts fray far from the Dead Lands. Necromancers slow the decay; patience serves you better than haste. | warfare §6.5 |
+| `LOADING_TIP_185` | Dark powers | Playing Volgan? Your grave hosts fray far from the Ember Lands. Necromancers slow the decay; patience serves you better than haste. | warfare §6.5 |
 | `LOADING_TIP_186` | Dark powers | Playing Zol? Your presence in Aoaz grows slowly and can thin away. Tend it, and let the dead do the walking. | Zol's Mistake |
 | `LOADING_TIP_187` | Worshipdom | Playing the Worshipdom? Your three valleys hold almost no army. Your strength lies in pilgrims, temples and friends in other courts. | Worshipdom (public face) |
 | `LOADING_TIP_188` | Events | Read your events. Many options open or close whole roads of history, and the age can end in more than one way. | events, endings |

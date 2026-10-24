@@ -20,11 +20,11 @@ The combat engine stays HOI4's. Every Aoaz unit is built from HOI4 sub-units, eq
 | Dominions with military identities: Selen's rangers, Kilinti's ents and forest peoples, Hiloron's giants, the riders of Hunhun. | *Middle Lands and Aenor* |
 | Peoples of men include Dondor Brutes, Noris camel warriors, Gunwaith clans, Girdon wardens, Buldor companies, Aenor Isle houses, Goodin Sunfolk. Other peoples: elves (Magical Forest, Sunhot, Gala, God Forest Keepers), giants (Hiloron, Titanos ice giants), ents, yeti, orcs, goblins, trolls, ogres, grave hosts, undead, demons (Shachihata, Netherborn, Afrit's demons). Dwarves exist; their homeland is not designated. | *Peoples of Aoaz* |
 | Sunhot elves are over three metres tall, among the strongest and most peaceful peoples. | *Peoples of Aoaz* |
-| Volgan's realm has the largest dark army: grave hosts, Netherborn demons, orcs, ogres, monster clans, necromantic orders. His authority does not extend to independent Dark Lands factions. | *Volgans Dead Lands*, *Kingdoms Factions and Conflicts* |
-| The Dead Lands are hot, storm-girt and hard to reach by sea. | *Volgans Dead Lands* |
+| Volgan's realm has the largest dark army: grave hosts, Netherborn demons, orcs, ogres, monster clans, necromantic orders. His authority does not extend to independent Dark Lands factions. | *Volgans Ember Lands*, *Kingdoms Factions and Conflicts* |
+| The Ember Lands are hot, storm-girt and hard to reach by sea. | *Volgans Ember Lands* |
 | Zol's dead are sustained by the Old God's own magic. Ordinary weapons may break their shapes but cannot end them. Only potent magic, such as Glo and Horos's sword, destroys them. | *Zol*, *The Fourth Age of Aoaz*, *War of the Last Crowns* |
-| The dead of the Dead Lands and the dead of Zol's Mistake have no settled taxonomy or relationship. | *Zols Mistake*, *Volgans Dead Lands* |
-| Elzon's animated corpses faded and needed continuing magic that was hard to replenish outside the Dead Lands. | *Elzons Order*, *The Third Age of Aoaz* |
+| The dead of the Ember Lands and the dead of Zol's Mistake have no settled taxonomy or relationship. | *Zols Mistake*, *Volgans Ember Lands* |
+| Elzon's animated corpses faded and needed continuing magic that was hard to replenish outside the Ember Lands. | *Elzons Order*, *The Third Age of Aoaz* |
 | Dragons come chiefly from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can, through corruption. | *Peoples of Aoaz* |
 | Eindil returns on a dragon; with Glo and Horos's blue sword he destroys Zol's dead; Zol later crushes the sword; a shard still wounds Zol's manifestation. | *Fourth Age Canon Register*, *Castle Yeldenne and Glo* |
 | Volgan's manifested body is destroyed; whether his spirit survives is open. | *Canon Policy* |
@@ -34,7 +34,7 @@ The combat engine stays HOI4's. Every Aoaz unit is built from HOI4 sub-units, eq
 
 ### Proposed elsewhere in the vault (used, still proposals)
 
-The Great Wall's origin in Elzon's Pale March; Mirolon fortifying its passes (c. 4A 1650); black ships among the islands of the Ocean of Zol (4A 1744); the Triton charts of the Pupor Ocean (4A 702); the Lantern Chain's wardens; Lerendor's fleets guarding the strait; the Worshipdom holding almost no army.
+The Great Wall's origin in Elzon's Pale March; Mirolon fortifying its passes (c. 4A 1650); black ships among the islands of the Kusmeel (4A 1744); the Triton charts of the Pupor Ocean (4A 702); the Lantern Chain's wardens; Lerendor's fleets guarding the strait; the Worshipdom holding almost no army.
 
 ### Proposed by this spec
 
@@ -240,7 +240,7 @@ Netherborn ignore heat attrition and suffer +50% winter attrition (people idea).
 | `zin_zol_deathless` | The Deathless | Zol | infantry; front_line, all_infantry, zin_dead | deathless bonds 100 | 30 | 30 | 7 | 2 | 26 | 5 | 80 | 8 | 4 | 2 | 20 | 30 |
 | `zin_zol_deathless_crews` | Black Ship Crews | Zol | infantry; marines, zin_dead | deathless bonds 100 | 30 | 25 | 7 | 2 | 22 | 5 | 80 | 8 | 4 | 2 | 20 | 30 |
 
-- **Grave hosts** are cheap in manpower and slow. Necromantic orders add `casualty_trickleback` through the Grave Muster doctrine. **Grave-host strain (proposed):** monthly, Volgan's grave-host battalions standing outside the Dead Lands lose 2% strength (section 6.5). This extends the established fading of Elzon's corpses outside the Dead Lands; it says nothing about how Volgan's dead relate to Zol's.
+- **Grave hosts** are cheap in manpower and slow. Necromantic orders add `casualty_trickleback` through the Grave Muster doctrine. **Grave-host strain (proposed):** monthly, Volgan's grave-host battalions standing outside the Ember Lands lose 2% strength (section 6.5). This extends the established fading of Elzon's corpses outside the Ember Lands; it says nothing about how Volgan's dead relate to Zol's.
 - **The deathless** have very high armour and low organisation. Ordinary arms break their shapes (they lose organisation and retreat) but barely harm their strength. Zol refills them from his growing power, not from manpower (section 6.1).
 
 #### 4.7 Siege
@@ -372,7 +372,7 @@ The [Yeldenne and Glo](../04_mechanics/yeldenne_and_glo.md) spec owns Glo, its p
 
 #### 6.5 Grave-host strain
 
-Monthly (`zin_war.20`, hidden), for each state outside the Dead Lands (`NOT = { zin_is_region_dead_lands = yes }`) where Volgan has divisions (`divisions_in_state` with `unit = zin_the_dead_revenant`), `damage_units` deals `str_damage = 0.02` to Volgan's grave-host templates there. Necromantic orders halve it (two template families: with and without necromancers). The Volgan mechanic may lift it with `zin_dominion_strength` above 80.
+Monthly (`zin_war.20`, hidden), for each state outside the Ember Lands (`NOT = { zin_is_region_dead_lands = yes }`) where Volgan has divisions (`divisions_in_state` with `unit = zin_the_dead_revenant`), `damage_units` deals `str_damage = 0.02` to Volgan's grave-host templates there. Necromantic orders halve it (two template families: with and without necromancers). The Volgan mechanic may lift it with `zin_dominion_strength` above 80.
 
 ### 7. Navies
 
@@ -401,9 +401,9 @@ Each hull has default modules and the history creates named variants, so navies 
 #### 7.3 The sea and the story
 
 - **The wide central sea.** Galleys cannot cross it. A western invasion of Aenor needs `zin_tech_deep_water_hulls` (navy range +20%, ocean-going cogs). Acceptance checks that a West Lands naval invasion plan to Aenor's coast is valid after that technology and invalid without it.
-- **The Dead Lands storms.** The map and world systems specs put a permanent storm and attrition on Dead Lands sea zones. `zin_tech_storm_rigging` (`naval_attrition = -0.15`) eases it.
+- **The Ember Lands storms.** The map and world systems specs put a permanent storm and attrition on Ember Lands sea zones. `zin_tech_storm_rigging` (`naval_attrition = -0.15`) eases it.
 - **Lerendor guards the strait** (proposed detail): strong galley and warship fleet at start.
-- **Black ships** (proposed 4A 1744 rumour): Zol starts with three corsairs among the islands of the Ocean of Zol; they stay in Zol's waters until `zin_zol_rising`.
+- **Black ships** (proposed 4A 1744 rumour): Zol starts with three corsairs among the islands of the Kusmeel; they stay in Zol's waters until `zin_zol_rising`.
 
 ### 8. The skies
 
@@ -445,7 +445,7 @@ Wall states carry the dynamic modifier `zin_war_great_wall` (state scope): `land
 
 - Railways are **the high roads**; trains are **wagon trains** (`train_equipment` key kept); supply trucks are **pack trains** (`motorized_equipment` key kept, variants `_0` to `_2`). No combat unit needs them.
 - Supply hubs are **depots**. Their art and names change; their mechanics do not.
-- Winter and heat matter more: Cold Lands and Dead Lands attrition comes from the map (terrain, weather) and the people ideas; technologies `zin_tech_winter_quarters` and `zin_tech_water_caravans` reduce it.
+- Winter and heat matter more: Cold Lands and Ember Lands attrition comes from the map (terrain, weather) and the people ideas; technologies `zin_tech_winter_quarters` and `zin_tech_water_caravans` reduce it.
 
 ### 11. Technology tree
 
@@ -684,7 +684,7 @@ All forces are at home and at peace. Most armies have little experience: Aoaz ha
 | Goldoroth | 14 | Warbands, ogres | 0.3 | 2 galleys | Armed peace with Dondor |
 | Dondor | 10 | Brute hosts | 0.3 | 3 galleys | |
 | Mirolon | 10 | Hill and line hosts on the passes | 0.3 | 3 galleys | Watches the passes |
-| Volgan | 40 | 20 grave hosts, 10 dominion vanguards, 10 monster clans | 0.4 | 4 galleys | Low intel for others; all inside the Dead Lands |
+| Volgan | 40 | 20 grave hosts, 10 dominion vanguards, 10 monster clans | 0.4 | 4 galleys | Low intel for others; all inside the Ember Lands |
 | Demon, Dolon, Nezer | 4 each | Netherborn hosts | 0.3 | none | |
 | Zol | 0 | None at start: the Zol spec raises hosts (template `zin_zol_deathless_host`, 10 deathless battalions) at the rising | — | 3 corsairs (black ships, P) in Zol's waters | The realm is almost empty of the living; nothing stands near another realm's border |
 | Magical Forest | 12 | Warden hosts, riders | 0.1 | none | No dragons deployed |
@@ -901,7 +901,7 @@ All warfare content is generated by `tools/content/modules/warfare.mjs` from `to
 | Trigger | Scope | Meaning |
 | --- | --- | --- |
 | `zin_is_site_great_wall` | state | The state is a Great Wall state (generated from the map's wall list) |
-| `zin_is_region_dead_lands` | state | The state lies in the Dead Lands region (one of the generated `zin_is_region_<key>` triggers) |
+| `zin_is_region_dead_lands` | state | The state lies in the Ember Lands region (one of the generated `zin_is_region_<key>` triggers) |
 | `zin_war_has_deathless_in_state` | state | Zol has divisions with `zin_zol_deathless` in this state |
 
 ### Scripted effects
@@ -960,7 +960,7 @@ All five exist in the installed `common/defines/00_defines.lua` (checked 19 Octo
 
 ### Localisation
 
-Short, plain names as in the tables. Descriptions one or two sentences. Bound demons, their tech and equipment use keys whose text is filled only after `zin_afrit_revealed` (scripted localisation shows "Unknown" before). No Afrit, Einendil, Edvoid or Rush (names spec checks T1, T2).
+Short, plain names as in the tables. Descriptions one or two sentences. Bound demons, their tech and equipment use keys whose text is filled only after `zin_afrit_revealed` (scripted localisation shows "Unknown" before). No Afrit, Einendil, Kusven or Rush (names spec checks T1, T2).
 
 ## AI
 
@@ -993,14 +993,14 @@ Short, plain names as in the tables. Descriptions one or two sentences. Bound de
 | `zin_ai_zol_deathless` | Zol | infantry | 10 deathless (the Zol spec's template `zin_zol_deathless_host`) |
 | `zin_ai_zol_crews` | Zol | marines | 6 black ship crews |
 
-Countries next to Troll Forest, the Dark Lands or the Dead Lands add a ballista company to their line host.
+Countries next to Troll Forest, the Dark Lands or the Ember Lands add a ballista company to their line host.
 
 ### Strategy
 
 - **Peace first.** Until a contract story flag or 1 Thaw 4A 1749, the AI builds only to its starting army plus 10% (`ai_strategy = { type = ai_wanted_divisions_factor value = -50 }` in `common/ai_strategy/zin_war.txt`, enabled before 1 Thaw 4A 1749 and while no contract story flag is set). No AI declares war (the start spec's `zin_start_peace`).
 - **Role ratios** by people: men 55% infantry, 15% cavalry, 10% armor (knights), 10% artillery, 10% garrison; elves 60/25/0/15 (archers inside infantry); orcs 70/15/10/5; Volgan 50/10/25/15; Zol 100% deathless.
 - **Production.** Arms first, then bows or armour, then mounts and engines. Zol never orders deathless bonds (cannot). Elves never order dragons.
-- **Zol** keeps all divisions inside the Mistake until `zin_zol_rising` (historical path spec). **Volgan** keeps them inside the Dead Lands until `zin_volgan_marches`.
+- **Zol** keeps all divisions inside the Mistake until `zin_zol_rising` (historical path spec). **Volgan** keeps them inside the Ember Lands until `zin_volgan_marches`.
 - **Glo's Wave** is the Yeldenne spec's decision; its AI uses it whenever available and Zol's divisions in the target state total at least 4.
 - **Dragons.** Elven AI uses dragon flights only on close support in states it owns or borders, unless at war.
 - **Doctrines.** `ai_will_do` per grand doctrine: 10 for the people's starting doctrine, 1 for the others, 0 for unavailable ones.
@@ -1055,12 +1055,12 @@ Settled: Zol's commanders are numbered hosts (S4); dragons use the air layer (S6
 - [Start and calendar](../00_foundation/01_start_and_calendar.md): start date; this spec restores the ahead-of-time penalty.
 - [Vanilla removal](../00_foundation/06_vanilla_removal_and_zero_errors.md): this spec is its stage 2; dispositions, checks C1–C7 and the error budget.
 - Peoples and politics (00_foundation): people flags and ideas; combat modifiers moved out (15.5); the politics step's history changes (15.7).
-- [Map accuracy](../01_map/01_map_accuracy.md), [key sites](../01_map/02_key_sites.md): wall states, fort levels, Dead Lands storms, Mirolon's passes, Dragon Mountain.
+- [Map accuracy](../01_map/01_map_accuracy.md), [key sites](../01_map/02_key_sites.md): wall states, fort levels, Ember Lands storms, Mirolon's passes, Dragon Mountain.
 - [Start situation](../02_lore/01_start_situation.md): peaceful start, the secret, the Worshipdom's tiny army, the start peace strategy.
 - [Characters](../02_lore/02_characters.md): commanders and their traits; country-leader traits (stage 2).
 - [Economy](02_economy.md): resources, buildings (eyries, harbours, forts), the industry and electronics folders, workshops, special projects.
 - [Diplomacy](03_diplomacy_and_factions.md): factions, autonomy, intelligence, occupation, peace and scorer replacements in the same build.
-- [Magic and world systems](04_magic_and_world_systems.md): dragons, the Great Wall's life, the deathless rules, Dead Lands storms.
+- [Magic and world systems](04_magic_and_world_systems.md): dragons, the Great Wall's life, the deathless rules, Ember Lands storms.
 - [Historical path and AI](06_historical_path_and_ai.md): war timing, peace-first AI.
 - [Shared contract](../04_mechanics/00_shared_contract.md) and the mechanics specs: Zol (`zin_mistake_power`, hosts, manifestation), Volgan (`zin_dominion_strength`, presence), Afrit (bound demons, corrupted dragons), Eindil's journey (bearer of Glo, the dragon, `zin_eindil_bearer_of_glo`), [Yeldenne and Glo](../04_mechanics/yeldenne_and_glo.md) (Glo's Wave), Western Crossing.
 - [Focus tree format](../05_focus_trees/00_format_and_compiler.md): research bonuses use the new tech categories; equipment effects use ZIN archetypes.

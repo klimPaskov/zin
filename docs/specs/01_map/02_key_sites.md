@@ -8,7 +8,7 @@ Places that mechanics, events or focus trees refer to. Each needs a stable, name
 
 ## Lore basis
 
-- Established places (vault, *Aoaz and Its Regions*, *Middle Lands and Aenor*, *Zols Mistake*, *Volgans Dead Lands*, *Abyss*, *Nether*, *Castle of Yeldenne and Glo*, *The Campaign of 4A 1748*): Parim, the Great Lake, the Great Wall of Aenor (from the Organ Mountains past Lunhrim and around Kingson), Kingson, Selen, the Zilin Hills, Dragon Mountain, the Abyss, the Nether, Šodolôrō (game text: Šodolôro, S11), the black islands of the Ocean of Zol, Mp'E and the Castle of Yeldenne. Working seats (established working table, constructed names, replaceable): Sonargur, Fandanar, Furvior, Postondoroth, Cocanoor, Notbuton, Nafeher, Furviatlon.
+- Established places (vault, *Aoaz and Its Regions*, *Middle Lands and Aenor*, *Zols Mistake*, *Volgans Ember Lands*, *Abyss*, *Nether*, *Castle of Yeldenne and Glo*, *The Campaign of 4A 1748*): Parim, the Great Lake, the Great Wall of Aenor (from the Organ Mountains past Lunhrim and around Kingson), Kingson, Selen, the Zilin Hills, Dragon Mountain, the Abyss, the Nether, Šodolôrō (game text: Šodolôro, S11), the black islands of the Kusmeel, Mp'E and the Castle of Yeldenne. Working seats (established working table, constructed names, replaceable): Sonargur, Fandanar, Furvior, Postondoroth, Cocanoor, Notbuton, Nafeher, Furviatlon.
 - Established events with open places: Eindil wakes in the Cold Lands; Afrit casts Eindil off a cliff after the palace battle; the battle of Dardan (First Age).
 - Proposed in the vault: the Golden Court as the King's party, the Mirror of First Rain, the Bridge of the Three Oaths, the Winter Ford, the southern island episode.
 - **Proposed (this spec):** every trigger name not already in the contract additions, every resolving rule, the global site variables and the data format.
@@ -60,8 +60,8 @@ Every `state` site also gets a global variable `zin_site_<key>` (*proposed*) hol
 | `zin_is_region_tritons_islands` | Triton's Islands | diplomacy |
 | `zin_is_region_dark_lands` | Dark Lands (47 states today) | Lerendor, Dark Lands |
 | `zin_is_region_magical_lands` | Magical Lands | elves |
-| `zin_is_region_zols_mistake` | Zol's Mistake and the Ocean of Zol | Magical Lands trees |
-| `zin_is_region_dead_lands` | Dead Lands | warfare, world systems |
+| `zin_is_region_zols_mistake` | Zol's Mistake and the Kusmeel | Magical Lands trees |
+| `zin_is_region_dead_lands` | Ember Lands | warfare, world systems |
 | `zin_is_region_east_lands` | East Lands | eastern kings |
 | `zin_is_region_islands_of_the_south` | Islands of the South | diplomacy |
 | `zin_is_region_lands_of_the_sun` | Lands of the Sun | Lands of the Sun |
@@ -127,14 +127,14 @@ Sub-region lists (kind `list`):
 | `zin_is_site_boundary_groves` | The Boundary Groves | proposed | state, the Herrodon state with the longest border with Andos Enda | none | resolves | elves, Magical Lands |
 | `zin_is_site_dragon_mountain` (new) | Dragon Mountain | established; not a country | state, `state_name` Dragon Mountain | a named state in the Magical Lands, owned by the nearest elven realm (K2) | map label only | dragons, world systems |
 | `zin_is_site_mirolon_passes` | Mirolon's northern passes | proposed | list, `owned` Mirolon, filter `adjacent_to` Volgan (Mirolon core states that border a Volgan core state) | forts on the border (K9) | no forts | Volgan, Mirolon, Mirolon tree |
-| `zin_is_site_abyss` | The Abyss | established | state, `state_name` the Abyss (today the state whose name contains "Abyss": 298) | a state named the Abyss in the Dead Lands (K3) | state 298 "Vez Nan / Abyss" | Volgan, Volgan tree |
-| `zin_is_site_nether` | The Nether | established | state, `same_as` `zin_is_site_nafeher` until the map step gives the Nether its own state, then `state_name` the Nether | a named state in the south of the Dead Lands, owned by Volgan (K4, short-list 5 proposal) | part of state 299 (Volgan's capital state), so it shares that state today | Volgan, Volgan tree |
+| `zin_is_site_abyss` | The Abyss | established | state, `state_name` the Abyss (today the state whose name contains "Abyss": 298) | a state named the Abyss in the Ember Lands (K3) | state 298 "Vez Nan / Abyss" | Volgan, Volgan tree |
+| `zin_is_site_nether` | The Nether | established | state, `same_as` `zin_is_site_nafeher` until the map step gives the Nether its own state, then `state_name` the Nether | a named state in the south of the Ember Lands, owned by Volgan (K4, short-list 5 proposal) | part of state 299 (Volgan's capital state), so it shares that state today | Volgan, Volgan tree |
 | `zin_is_site_troll_forest` | The Troll Forest | established (stays separate) | state, `capital` Troll Forest | — | resolves | Dark Lands |
 | `zin_is_site_goldoroth_march` | Goldoroth's march | proposed | list, `owned` Goldoroth, filter `adjacent_to` Dondor or Belonton | none | resolves | Dark Lands, Goldoroth |
 | `zin_is_site_sea_of_darkness_coast` | The Sea of Darkness coast | drawn sea name | list, every state with a coastal province on the Sea of Darkness sea regions | the sea region named (map accuracy N1) | sea regions unnamed | Dark Lands |
 | `zin_is_site_sodoloro` | Šodolôrō | established | state, `vp` Šodolôro | a named victory point in Zol's Mistake (K8) | region label only | Zol |
 | `zin_is_site_ocean_of_zol_island` | The black islands | established | list, Zol's states with no land path to the Mistake's mainland | none | resolves | Zol |
-| `zin_is_site_ocean_of_zol_coast` | The Ocean of Zol coast | established sea | list, every state with a coastal province on an Ocean of Zol sea region | the sea regions named (N1) | sea regions unnamed | Zol, Magical Lands, Dark Lands, East Lands (with `zin_is_region_east_lands` for the East Lands' northern coast), flavour events |
+| `zin_is_site_ocean_of_zol_coast` | The Kusmeel coast | established sea | list, every state with a coastal province on an Kusmeel sea region | the sea regions named (N1) | sea regions unnamed | Zol, Magical Lands, Dark Lands, East Lands (with `zin_is_region_east_lands` for the East Lands' northern coast), flavour events |
 | `zin_is_site_rift_west` | The rift coast of the Magical Lands | established (the rift sea) | list, Magical Lands states with a coastal province on the rift sea regions | the rift sea regions named | unnamed | eastern kings, elves, trees |
 | `zin_is_site_rift_east` | The rift coast of the East Lands | established | list, East Lands states on the same sea regions | as above | unnamed | eastern kings, elves |
 | `zin_is_site_road_salt`, `_gold`, `_rift`, `_lake`, `_sand` | The five caravan roads | proposed | list, `path` through the waypoints of [eastern_kings.md](../04_mechanics/eastern_kings.md) ("Five roads") | none | resolves | eastern kings, Noris, Stabilo |
@@ -163,7 +163,7 @@ Sub-region lists (kind `list`):
 
 | File | Content | Written by |
 | --- | --- | --- |
-| `tools/content/data/sites.json` (new) | One row per site of section 3 (a `pending` flag on rows that wait for the map), plus the region keys, the named sea regions (`sea_central`, the Great Lake, the strait, the Dark Lands straits, the rift sea, the Ocean of Zol, the Sea of Darkness) by strategic region id | design data |
+| `tools/content/data/sites.json` (new) | One row per site of section 3 (a `pending` flag on rows that wait for the map), plus the region keys, the named sea regions (`sea_central`, the Great Lake, the strait, the Dark Lands straits, the rift sea, the Kusmeel, the Sea of Darkness) by strategic region id | design data |
 | `common/scripted_triggers/zin_sites.txt` (new) | Every `zin_is_site_*`, `zin_is_region_*` and list trigger, `zin_aenor_fallback_seat`, the alias `zin_is_dark_lands_state`, `zin_controls_sea_central`; one file for every module's rows (E7) | `tools/content/modules/sites.mjs` (new), from `sites.json` and the `SITE_ROWS` that `build.mjs` gathers from the other modules |
 | `common/scripted_effects/zin_sites.txt` (new) | `zin_sites_set_variables` (global `zin_site_<key>` for every `state` site), called from `on_startup` in `common/on_actions/zin_startup.txt` | `sites.mjs` |
 | `docs/design/map/sites_resolved.json` (new) | Every site with its resolved state ids and names, for review and for other modules (landing provinces, road lists) | `sites.mjs` |

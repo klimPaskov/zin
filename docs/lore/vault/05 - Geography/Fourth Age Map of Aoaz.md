@@ -14,7 +14,7 @@ The supplied regional map represents **Aoaz in the Fourth Age**, the age in whic
 
 - **The central sea separating the West Lands from the Middle Lands should be much larger**, with a substantially wider water gap than this draft depicts. This matters for ancient exploration, colonial supply, travel, and how Aenor's conflicts with West Lands kingdoms persist.
 - The display is for the **Fourth Age**. First Age settlements, kingdoms, frontiers, and military routes must not be assumed identical to what appears here.
-- The current region names are Cold Lands, West Lands, Triton's Islands, North Lands, Dark Lands, Middle Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Dead Lands, Islands of the South, and Lands of the Sun.
+- The current region names are Cold Lands, West Lands, Triton's Islands, North Lands, Dark Lands, Middle Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Ember Lands, Islands of the South, and Lands of the Sun.
 - Older reference to **North Earth** in the First Age story means the current **North Lands**. Do not revive the former name as a separate place.
 - Zol's Mistake existed as a black wasteland before Aen and was largely dormant during the First Age.
 

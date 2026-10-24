@@ -14,7 +14,7 @@ Set the data standard for all 305 countries and 1,332 states: what every record 
 - The working table of great powers, seats, alliances and rivals: Aenor (Parim, Middle Kingdom Concord, 26 satellites), Zol (Furviatlon), Volgan (Nafeher, Southern Dominion: Demon, Dolon, Nezer), Lerendor (Sonargur, Leren Compact), Coldor (Fandanar, Northern Accord), Noris (Furvior, Noris Treaty), Stabilo (Postondoroth, Stabilo Pact), Goldoroth (Cocanoor), Dondor (Notbuton, Dark Sea Accord). It is working map design, not fixed narrative canon.
 - Bordon, Dreson, Dulundur, Troll Forest, Nolorim and Herez stay separate. Kilinti with the Kilinti Forests is one country; Lerendor with Lerenwaith is one country.
 - Cursed Lands and Bloody Forest resist Aenor. Seat names not drawn on the maps are constructed and replaceable; no capital carries an antagonist's or a region's name.
-- Zol's Mistake is a barren wasteland, barely peopled, roamed by the dead. The Dead Lands are hot, storm-girt and hard to reach by sea. Aenor is rich and strong.
+- Zol's Mistake is a barren wasteland, barely peopled, roamed by the dead. The Ember Lands are hot, storm-girt and hard to reach by sea. Aenor is rich and strong.
 - Start situation (owner, 18 October 2026): the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, nobody who matters is at war.
 
 **Decided (INTEGRATION_DECISIONS):** D1 and D2 (the Worshipdom's public face), D5 (Aenor 0% Shadow), S4 (Zol's emblem leader), S5 (Andos Enda is not in the Leren Compact at the start), V2 (the seven resources), S6 (dragons use the air layer), S12 (the tag total stays below 439), R3 (a start force of a mechanic's own realm follows that mechanic: Zol and Yeldenne start with no divisions), E3 (factions are made from templates).
@@ -133,7 +133,7 @@ The build fails if any of these is false at the start date:
 
 | Key | Rule |
 | --- | --- |
-| `wasteland` | Zol's Mistake outside Furviatlon; the deep Dead Lands |
+| `wasteland` | Zol's Mistake outside Furviatlon; the deep Ember Lands |
 | `enclave` | single-province holds |
 | `tiny_island`, `small_island`, `large_island` | islands by land province count: 1, 2 to 4, 5 or more |
 | `pastoral` | steppe, tundra, uplands |
@@ -155,7 +155,7 @@ Today: 450 cities, 17 large cities, 7 metropolises, 1 megalopolis (state 299, in
 | small_island | 30,000 | | Sunhot elves | 0.3 | | Triton's, Islands of the South | 0.8 |
 | pastoral | 60,000 | | yeti, ogres | 0.3 | | Dark Lands, Lands of the Sun | 0.7 |
 | rural | 120,000 | | trolls | 0.4 | | Cold Lands, Magical Lands | 0.6 |
-| large_island | 150,000 | | demons | 0.2 | | Dead Lands | 0.4 |
+| large_island | 150,000 | | demons | 0.2 | | Ember Lands | 0.4 |
 | town | 220,000 | | giants | 0.15 | | Zol's Mistake | 0.02 |
 | large_town | 350,000 | | ents | 0.1 | | | |
 | city | 550,000 | | the dead (living population) | 0.05 | | | |
@@ -195,7 +195,7 @@ No state falls below 30,000 (the politics step's `STATE_MANPOWER_FLOOR`, which s
 | Dark Lands | 47, 9.7M, 88 | Hills, forest, marsh | rural, enclaves | 2 |
 | Magical Lands | 131, 61.6M, 192 | Forest, mountains (Magic Mountains, Dragon Mountain) | rural, towns | 2 to 3 |
 | Zol's Mistake | 104, 37.2M, 82 | Wasteland, black islands | wasteland; Furviatlon a town | 1 |
-| Dead Lands | 30, 4.1M, 57 | Desert and hills inland, hot; storms on the coast (map spec G7) | rural, enclaves; Nafeher a large city | 1 to 2 |
+| Ember Lands | 30, 4.1M, 57 | Desert and hills inland, hot; storms on the coast (map spec G7) | rural, enclaves; Nafeher a large city | 1 to 2 |
 | East Lands | 337, 185.1M, 419 | Plains, desert (Noris), caravan roads; warm | towns and cities on the roads | 3 to 4 on the roads, 2 off them |
 | Islands of the South | 24, 3.4M, 60 | Small islands; warm | islands, towns | 2 |
 | Lands of the Sun | 87, 18.2M, 142 | Forest (God Forest), plains; hot | rural, towns | 2 to 3 |
@@ -206,7 +206,7 @@ No state falls below 30,000 (the politics step's `STATE_MANPOWER_FLOOR`, which s
 | --- | --- | --- |
 | Roster | 305 countries, names, adjectives, colours, flags, capitals; only ZIN and dynamic tags (380) | role texts rewritten; Dondor holds 1 state while the working table makes it a great power |
 | Politics | Ideology, stance and people per country; rulers with safe Worshipdom and Zol names; 7 factions; subjects; Aenor 0% Shadow | party names, named advisors, stance spirits, ideology flags, cosmetic names; contract ruler ids and Zol's emblem portrait; Fourth Age dates (`last_election "1932.1.1"` today) |
-| States | 1,332 states with owners, cores, categories, manpower, resources, buildings, victory points | names (941), category fixes, manpower formula, resource redistribution, Zol and Dead Lands per lore, removal of air bases, wall and pass forts |
+| States | 1,332 states with owners, cores, categories, manpower, resources, buildings, victory points | names (941), category fixes, manpower formula, resource redistribution, Zol and Ember Lands per lore, removal of air bases, wall and pass forts |
 | Engine data | Strategic regions, supply, railways | strategic region names (map spec N1) |
 | Start | The start crash is fixed (flag sheet, 19 October) | the 1936 bookmark ([01_start_and_calendar.md](01_start_and_calendar.md)) |
 | Data (phase 1) | `countries.csv` and the game agree on every ruling ideology and stance | the roster `tools/content/data/countries.json` carries a stale `ideology` field for 76 countries: Demon, Dolon, Nezer and Zol read Wild (Shadow in `countries.csv`; `zin_shadow_dread` for the three demon realms), Coldor, Lerendor and Dondor Wild (Dominion; Coldor `zin_dom_crown`), Noris Light (Dominion), Hiloron and the Worshipdom Shadow (Light; Hiloron `zin_light_wardens`), Kradlon and Avalon Shadow (Wild), Volgan Dominion (Shadow), Bloody Forest Dominion (Wild), Belonton Light (Wild), and 61 Light realms Wild; `countries.mjs` rewrites the field from `countries.csv`. The `tradition` column does not exist yet; Fotan's row gets `middle_kingdom` when it is added. Yeldenne's one division is removed (R3) |

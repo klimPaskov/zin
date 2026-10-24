@@ -112,7 +112,7 @@ The player must believe this is a realm-management game. Nothing here reveals th
 | `zin_aenor.20` | The Chancellor's Counsel | Aenor | mechanic (council dominant) | any | "Chancellor Merovan has already drafted the King's answer. He asks only for the seal." | As the Aenor spec. Text never says whose will the draft serves |
 | `zin_aenor.21` | Gifts from the Houses | Aenor | mechanic | any | "The Houses of the First Light offer grain for the poor quarters of Parim." | As the Aenor spec |
 | `zin_aenor.22` | The Temples Lose Favour | Aenor | mechanic (council ≤ 35) | possible | "The temples' friends at court are fewer this year." | As the Aenor spec |
-| `zin_aenor.151` | Warnings from Mirolon | Aenor | mechanic, 1748–1750 | 1749 | "A Mirolonese envoy says the Dead Lands are arming. The court remembers 4A 1736 and laughs." | As the Aenor spec; historical: laugh |
+| `zin_aenor.151` | Warnings from Mirolon | Aenor | mechanic, 1748–1750 | 1749 | "A Mirolonese envoy says the Ember Lands are arming. The court remembers 4A 1736 and laughs." | As the Aenor spec; historical: laugh |
 | `zin_aenor.152` | Tales of Black Ships | Aenor | mechanic | any | "Fishermen tell of black hulls in the north. Nobody at court believes them." | As the Aenor spec |
 | `zin_aenor.240` | The King's Physicians | Aenor | decision | any | Health in words: "sound", "tired" or "failing". Never a cause, never a name | One option; sets `zin_aenor_king_health` |
 | `zin_lore.101`–`.104` | The Jubilee Remembered; The Price of a Seat; The Lost Cause Parades; A Joke at Court | Aenor | `zin_lore_schedule_flavour` | 1748 | As [04_fourth_age_history_for_play.md](../02_lore/04_fourth_age_history_for_play.md) | As there |

@@ -6,7 +6,7 @@
 
 ## 1. Overview
 
-East of the Great Wall of Aenor, on the same landmass as the Middle Lands, lie the Magical Lands: snow ridges, mist, the largest and oldest forest in Aoaz, a coast of giant fungi along a long rift sea, and Dragon Mountain, from which the dragons come ([AR], [PA]). The elves here were never conquered, not even by Elzon, and they did not send armies to save the men of Aenor after King Edran's folly in the Dead Lands ([ER], [A3]). In 4A 1748 they live in a handful of small realms scattered where their histories put them: the peaceful elected houses of the Magical Forest, a hill queen on the northern rim, a federation of lake groves, pass-wardens in the southern crags, a long shore of orchards on the rift, and a few hundred keepers of the dragon roosts (P). Much of the land belongs to nobody: living stones in the Lustras Hills, a fallen wood where something once tried to poison the forest's magic, an empty northern coast that faces the black sea, and the high snows where a wizard and his small purple servant are only a legend (P). Men live here too: the descendants of Third Age refugees in the Teste Vale, the traders of a mixed port on the rift, and the pilgrims of the Worshipdom in the Zilin Hills, a gentle temple-state whose true master nobody knows (hidden).
+East of the Great Wall of Aenor, on the same landmass as the Middle Lands, lie the Magical Lands: snow ridges, mist, the largest and oldest forest in Aoaz, a coast of giant fungi along a long rift sea, and Dragon Mountain, from which the dragons come ([AR], [PA]). The elves here were never conquered, not even by Elzon, and they did not send armies to save the men of Aenor after King Edran's folly in the Ember Lands ([ER], [A3]). In 4A 1748 they live in a handful of small realms scattered where their histories put them: the peaceful elected houses of the Magical Forest, a hill queen on the northern rim, a federation of lake groves, pass-wardens in the southern crags, a long shore of orchards on the rift, and a few hundred keepers of the dragon roosts (P). Much of the land belongs to nobody: living stones in the Lustras Hills, a fallen wood where something once tried to poison the forest's magic, an empty northern coast that faces the black sea, and the high snows where a wizard and his small purple servant are only a legend (P). Men live here too: the descendants of Third Age refugees in the Teste Vale, the traders of a mixed port on the rift, and the pilgrims of the Worshipdom in the Zilin Hills, a gentle temple-state whose true master nobody knows (hidden).
 
 ## 2. Physical character
 
@@ -25,7 +25,7 @@ East of the Great Wall of Aenor, on the same landmass as the Middle Lands, lie t
 
 - **The Great Wall of Aenor** (`range_great_wall`) on the west: a natural range (owner correction, [OC] §2.2), described in full in [middle_lands.md](middle_lands.md) §2.9. By owner decision the dwarves hold the range ([OD]); its eastern face looks down on the elves, and the dwarves' dislike of elves keeps their galleries opening westward (P). From the elven side its passes are the Kingson Pass (east end below Lunhrim), the Lunhrim Notch and the South Pass; the elves keep the eastern watch-forts of the two wheel passes under the Accord of the Passes of 4A 96 (P).
 - **The Magic Mountains**: three snow-capped parallel ridges east of the range (`range_magic_1`, `range_magic_2`, `range_magic_3`), mountain (4) with high peaks; the westernmost ridge forms the east side of the Kingson ring (`range_magic_wall`). The Gorbatik card puts Varner's helper "in the mountains of Magic Mountain" ([BC] card 34).
-- **The Herrodon Mountains** (`range_herrodon`): the massive northern rim, high peak (5), "the brown highland of Herrodon and Andos Enda against the Ocean of Zol" ([GM]); with Herrodon Head (`cape_herrodon`) and Isemkei Bay (`bay_isemkei`, drawn "Isemkei Sea", reading uncertain) cut into it.
+- **The Herrodon Mountains** (`range_herrodon`): the massive northern rim, high peak (5), "the brown highland of Herrodon and Andos Enda against the Kusmeel" ([GM]); with Herrodon Head (`cape_herrodon`) and Isemkei Bay (`bay_isemkei`, drawn "Isemkei Sea", reading uncertain) cut into it.
 - **The Lustras Hills** (`range_lustras`): hills (3) south of the Herrodon Mountains.
 - **Dragon Mountain** (`range_dragon_mountain`, `site_dragon_mountain`): the highest massif of the range belt, at the south-east corner of the Kingson ring, with roosts on three spurs; the green strip of Greenland (`plain_greenland`, drawn) lies beneath it on the elven side.
 - **The Cursed Mountains** (`range_cursed_mountains`): a narrow dark ridge at the south end of the Kingson ring, above the Forests of Darkhere (`forest_darkhere`); the goblin warrens of Glimik open under it (P, [middle_lands.md](middle_lands.md)).
@@ -54,7 +54,7 @@ Drawn islands without model ids: "Magic Islands", "Dlomntod" and "Medek" ([LBL] 
 
 ### 2.5 Hazards
 
-Mist that lasts for days in the forest; snow and avalanche on the Magic Mountains and the Herrodon rim; living stones in the Lustras Hills that throw boulders at anything that moves ([BC] card 30, "Salomonanos", P placement); the spore-air of the Mushroom Forest, which strangers find hard to breathe in summer (P); wild dragons that take cattle; and the stillness of the Ocean of Zol on the north coast, which sailors fear more than storms (E that nights of still seas are a sign of Zol's influence, [A2] §VII proposed manifestation; P that it reaches this coast).
+Mist that lasts for days in the forest; snow and avalanche on the Magic Mountains and the Herrodon rim; living stones in the Lustras Hills that throw boulders at anything that moves ([BC] card 30, "Salomonanos", P placement); the spore-air of the Mushroom Forest, which strangers find hard to breathe in summer (P); wild dragons that take cattle; and the stillness of the Kusmeel on the north coast, which sailors fear more than storms (E that nights of still seas are a sign of Zol's influence, [A2] §VII proposed manifestation; P that it reaches this coast).
 
 ## 3. Inhabitants
 
@@ -161,7 +161,7 @@ People live along the Elwen, in the forest clearings, the Teste Vale and the qua
 | 1A | Elves of the Magical Lands are courteous strangers to Aen's kingdom; the range is the border. | P |
 | Late 1A | Volgan's army includes corrupted elves and dragons. | E ([A1] §4); which elves is open |
 | Late 1A | Elves of the Magical Lands join Edran's Grand Alliance; their elected war-speaker (proposed Sirael) fights at Dardan beside Lorien. | E that they join ([A1] §5); P name |
-| By 1A 1675 | Edran's invasion of the Dead Lands, against elven advice, kills many elves; trust between elves and men breaks. | E ([A1] §7, [ER]) |
+| By 1A 1675 | Edran's invasion of the Ember Lands, against elven advice, kills many elves; trust between elves and men breaks. | E ([A1] §7, [ER]) |
 | 2A | The elves no longer trust every Aenoran request for soldiers; individual healers still help. | E ([A2] §II, [ER]) |
 | 2A, late | Elzon's war from within sets men, elves and dwarves against each other with forged messages and corrupted leaders. | E ([2R]); P details |
 | 2A, late | The elves of the north coast (the old realm of Filion, P) abandon the shore under the Herrodon rim when the stillness of the black sea creeps onto it; the Lost Lands are empty ever since. | P |
@@ -198,7 +198,7 @@ People live along the Elwen, in the forest clearings, the Teste Vale and the qua
 | The East Lands across the rift | Old trade, new fear | E the eastern coalition threatens the Magical Lands ([WLC]) |
 | Lerendor | Andos Enda's letters with Sonargur | E working table (Andos Enda in the Leren Compact, [GP]); P that it is not in the Compact at the start ([EWD] §6) |
 | Mirolon | Neighbour across the Lake of Mirolon and the Mirolon Neck | P |
-| Zol's Mistake | Feared across the Ocean of Zol | P |
+| Zol's Mistake | Feared across the Kusmeel | P |
 | The Gala elves | Memory of Dardan; distant kin in speech | E Lorien at Dardan ([LO]); O kinship |
 
 ## 9. Wildlife and creatures

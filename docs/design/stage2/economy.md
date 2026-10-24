@@ -72,7 +72,7 @@ Not written here (other modules): window titles (`PRODUCTION_PRODUCTION_LABEL`, 
 5. **Treasury.** Spec behaviour kept. `zin_economy_add_gold` does nothing in a realm without the flag `zin_economy_has_treasury` (set on Aenor at startup). Scripts use literal numbers; the same numbers are in `zin_economy_constants.txt` for the interface to read. `PREV = { add_to_variable ... }` inside `every_subject_country` counts the tribute.
 6. **Resource trade costs** stay `cic = 0.125`, `convoys = 0.1` for all seven (spec).
 7. **Facility names** (Warding, Tide, Roost and Deep Circle) are the institutions spec's, in group `facilities`.
-8. **Regional mapping.** Roster `scan` to region: Rush Land and Rush Islands to Middle Lands, East-Earth to North Lands, South-Earth to East Lands, Sunhot to Lands of the Sun, Ocean of Edvoid to Zol's Mistake (flag only, no spirit).
+8. **Regional mapping.** Roster `scan` to region: Rush Land and Rush Islands to Middle Lands, East-Earth to North Lands, South-Earth to East Lands, Sunhot to Lands of the Sun, Kusmeel to Zol's Mistake (flag only, no spirit).
 9. **Defines.** Three rows with `fromStage` 2 (section 3). `ENERGY_RESOURCE` and `RESOURCE_TO_ENERGY_COEFFICIENT` are unchanged and not written.
 
 ## 7. Dependencies on other slices (names from the contract; none is defined here)

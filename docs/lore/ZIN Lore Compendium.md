@@ -22,7 +22,7 @@ ZIN's beings fall into five orders: three of gods and spirits, then two of folk.
 4. **The Great Folk** (immortal): elves, angels, demons and other immortal beings who are not spirits. Demons are angels who were corrupted.
 5. **The Common Folk** (mortal): men, dwarves and the other mortal beings.
 
-Not yet settled: how the Gods relate to ZIN as a whole, what corrupted the angels, and whether the dead that roam Zol's Mistake and Volgan's Dead Lands form an order of their own.
+Not yet settled: how the Gods relate to ZIN as a whole, what corrupted the angels, and whether the dead that roam Zol's Mistake and Volgan's Ember Lands form an order of their own.
 
 ## Sources and name corrections
 
@@ -35,7 +35,7 @@ Your Chaos Redux brief for event 68, "ZIN", is the canon. The 18-document Chaos 
 | Chaos Redux event 10, "Death" | Canon for Zol | Zol, the God of Death, "a face-like absence" |
 | Aoaz drawings (13 colored sheets) and the 711-label name table | Canon geography | Every place name; uncertain readings are flagged |
 | Drawings of Horos (standing, face, on his throne) | Canon imagery | Horos in yellow-green armor with a blue sword, seated before a green gem |
-| Owner instructions in this project (October 2026) | Canon, newest wins | New layout and region names, Rush renamed Aenor, Edvoid renamed Zol, Zol's Mistake, Volgan's Dead Lands, the orders of beings |
+| Owner instructions in this project (October 2026) | Canon, newest wins | New layout and region names, Rush renamed Aenor, Kusven renamed Zol, Zol's Mistake, Volgan's Ember Lands, the orders of beings |
 | Old Chaos Redux event 68 ("Alien colony") | Superseded placeholder | ZIN as one medieval alien country whose gods strike back when attacked |
 
 ### Names that changed
@@ -43,7 +43,7 @@ Your Chaos Redux brief for event 68, "ZIN", is the canon. The 18-document Chaos 
 | In the brief or drawings | Use now | Note |
 | --- | --- | --- |
 | Rush, the Rush Kingdom | Aenor, the Middle Kingdom | Rush Land is now the Middle Lands; Rush Islands is now Aenor Isle. |
-| Edvoid, Edvoid's Mistake, Ocean of Edvoid | Zol, Zol's Mistake, Ocean of Zol | Zol is the God of Death of event 10. |
+| Kusven, Kusven's Mistake, Kusmeel | Zol, Zol's Mistake, Kusmeel | Zol is the God of Death of event 10. |
 | North Earth (sheet headed "North Earth") | West Lands | Gunwaith, Girdon, Kradlon, Buldor |
 | East Earth (sheet headed "West Earth") | North Lands | Lerenwaith, Lerendor |
 | South Earth | East Lands | Its great desert is the South Lands. |
@@ -66,10 +66,10 @@ Aoaz is a continent-scale world of thirteen drawn regions (Aenor Isle counts as 
 | Middle Lands | Rush Land | Centre of the world | The Middle Kingdom of Aenor (formerly Rush): Selen, Kilinti, Kingson, Hiloron, the Great Lake. |
 | Aenor Isle | Rush Islands | Off the Middle Lands' west coast; part of the Middle Lands | Asgard and its island. |
 | Magical Lands | Magical Lands | East of the Middle Lands, same landmass | Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. A long rift sea separates it from East Lands. |
-| Zol (Zol's Mistake) | Ocean of Edvoid | Far north | Zol's Mistake is the whole black north: the great wasteland and every black island of the Ocean of Zol. Very thinly peopled and roamed by the dead. Šodolôrō lies within it. |
+| Zol (Zol's Mistake) | Kusmeel | Far north | Zol's Mistake is the whole black north: the great wasteland and every black island of the Kusmeel. Very thinly peopled and roamed by the dead. Šodolôrō lies within it. |
 | East Lands | South-Earth | East, across the rift; runs off the east edge | Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Drawn mirrored for the mod. |
 | South Lands | (desert of South-Earth) | The great desert of East Lands, running off the south edge | Noris Desert and the old Sunhot Desert. |
-| Dead Lands | Dead Lands | South of the Middle Lands | Volgan's domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. |
+| Ember Lands | Ember Lands | South of the Middle Lands | Volgan's domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. |
 | Islands of the South | Islands of The South | South of West Lands, in two arcs | Howan, Nara, Verde, Enhis Is Rond. |
 | Lands of the Sun | Sunhot | Far south-west, running off the south edge | Elvana, Igara, Hengyang, the Sea of Gods, Heaven, Flame, Godland. |
 
@@ -82,8 +82,8 @@ Aoaz is divided among about 280 regional polities. A few great powers stand abov
 | Power | Seat | Role now | Satellites and allies | Rivals |
 | --- | --- | --- | --- | --- |
 | Aenor, the Middle Kingdom (formerly Rush) | Parim, Middle Lands | Rules its central homeland and governs the other Middle Lands regions as satellites; the central power of Aoaz. Cursed Lands and Bloody Forest resist its control. | 26 satellites, among them Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard (Aenor Isle) and Herez. Middle Kingdom Concord. | Lerendor, Zol |
-| Zol | Furviatlon, Zol's Mistake | Rules Šodolôrō, the black northern wasteland and the Ocean of Zol islands. The land is barely peopled and roamed by the dead. | None yet | Aenor |
-| Volgan | Nafeher, Dead Lands | The main dark lord. Dominates the southern Dead Lands. | Demon, Dolon, Nezer. Southern Dominion. | Mirolon |
+| Zol | Furviatlon, Zol's Mistake | Rules Šodolôrō, the black northern wasteland and the Kusmeel islands. The land is barely peopled and roamed by the dead. | None yet | Aenor |
+| Volgan | Nafeher, Ember Lands | The main dark lord. Dominates the southern Ember Lands. | Demon, Dolon, Nezer. Southern Dominion. | Mirolon |
 | Lerendor | Sonargur, North Lands | United crown of Lerendor and Lerenwaith; counterweight to Aenor. | Eekedor, Andos Enda. Leren Compact. | Aenor |
 | Coldor | Fandanar, Cold Lands | Northern great power of the frozen interior and western ports. | Horidor. Northern Accord. | Isengard |
 | Noris | Furvior, East Lands | Eastern great power; Noris and its desert. | Gondolin. Noris Treaty. | Stabilo |
@@ -99,7 +99,7 @@ Smaller named polities the owner asked to keep as their own countries: Bordon, D
 
 | Figure | Who they are | Seat or domain |
 | --- | --- | --- |
-| Volgan | Ancient evil, the main dark lord; largest dark army | The Dead Lands |
+| Volgan | Ancient evil, the main dark lord; largest dark army | The Ember Lands |
 | Afrit | Rising dark power working through worship, cults, bargains and corruption; wants the Middle Kingdom's crown | The Worshipdom |
 | Zol | God of Death | Zol's Mistake, the black north |
 | The Golden King | Wealth-obsessed king of the Middle Kingdom; founds The Lost Cause; dies by Afrit's secret hand | Aenor, the Middle Lands |
@@ -132,7 +132,7 @@ The canon gives Aoaz three ages, ending in the Crossing to Earth. Names below us
     - **The West Lands** (Gunwaith, Girdon, Buldor, Kradlon) and **the Cold Lands** (yeti, giant, troll, goblin and ogre peoples around Coldor, Titanos and the Yeti Lands) kept their own clans.
     - **The Magical Lands** sheltered elves, dragons, arcanists, mushroom peoples, forest spirits and cursed societies.
 3. **The dark powers.**
-    - **Volgan** is an ancient evil, existing for hundreds of thousands of years, with full power over the Dead Lands. Grave hosts, demons, orcs, ogres, monster clans and necromantic orders are parts of his realm, not free peoples. He has the largest dark army, but the independent Dark Lands and northern monsters are not his by right.
+    - **Volgan** is an ancient evil, existing for hundreds of thousands of years, with full power over the Ember Lands. Grave hosts, demons, orcs, ogres, monster clans and necromantic orders are parts of his realm, not free peoples. He has the largest dark army, but the independent Dark Lands and northern monsters are not his by right.
     - **Afrit** is far weaker at first. His power comes from the Worshipdom, human servants, demons, cults, bargains and corruption. He is no servant of Volgan and no friend of the good. Taking the Middle Kingdom's crown is his road to surpassing Volgan.
     - **Zol**, God of Death, gives his name to Zol's Mistake: a black northern wasteland, barely peopled and roamed by the dead.
 4. **The Golden King.** The Middle Kingdom's king is named for his obsession with wealth. He hoards treasure, sells offices and rewards favourites, and he keeps a strong army but rules badly. He founds and first leads **The Lost Cause**, out of fear of Volgan and Afrit and for prestige.
@@ -168,4 +168,4 @@ These decide how the lore becomes game data; answer any of them in place.
 - [ ] **Where do dwarves live?** The canon names none yet.
 - [ ] **Where does Aoaz sit in ZIN**, and what are the other continents called?
 - [ ] **Which era does the game start in?** Before the Golden King's death, during the succession war, or at the Crossing?
-- [ ] **Edvoid and Zol:** confirm that Edvoid in the brief and spec package is now Zol everywhere.
+- [ ] **Kusven and Zol:** confirm that Kusven in the brief and spec package is now Zol everywhere.

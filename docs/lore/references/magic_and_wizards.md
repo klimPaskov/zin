@@ -20,7 +20,7 @@ Rules this file keeps:
 1. The main setting is **Aoaz**; **Erdae** is only the small neighbouring continent (owner, 24 October 2026).
 2. The **Great Wall of Aenor** is a natural mountain range; no working of magic made it (E).
 3. Aoaz has **twelve main New Gods** who answer the twelve needs of mortals and name the twelve months; **Glernaen**, god of power and wisdom, is the mightiest (E). **Lesser New Gods** also exist, stronger than most Great Spirits (E). Afrit's cult keeps a feast, not a month (E). No New God other than Glernaen is named here, and months are given by number.
-4. **Zol does not appear in the War of the Last Crowns**; his most loyal servant, a Great Spirit, does (E). That servant is **Edvoid (name to be replaced)** (E, owner, 24 October 2026); the identity is hidden knowledge ([knowledge_layers.md](knowledge_layers.md), C25) and no player text gives it.
+4. **Zol does not appear in the War of the Last Crowns**; his most loyal servant, a Great Spirit, does (E). That servant is **Kusven** (E, owner, 24 October 2026); the identity is hidden knowledge ([knowledge_layers.md](knowledge_layers.md), C25) and no player text gives it.
 5. **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz (E); **demons** are corrupted angels (E).
 6. **Vez'nan** is an old name of Volgan; this file writes Volgan. **Edvoid (name to be replaced)** appears only under that label.
 7. **Eindil**, never the superseded spelling.
@@ -42,7 +42,7 @@ Rules this file keeps:
 | Stored power, the ability to channel it, presence in Aoaz and physical manifestation are four different things. | Editorial model of the vault, not a canon formula |
 | The earliest men were stronger, longer-lived and more naturally receptive to magic than later men; some had power resembling a god's without being gods. Aen was born of magic and power, without a father. | E, `The First Age of Aoaz.md`, `The Ainu.md` |
 | Elzon, a Great Spirit and the Great Necromancer, raised and bound the dead on a huge scale and borrowed old magic associated with Zol; how he obtained it is unknown. | E, `Elzon.md`; the means is O |
-| Elzon's undead fade with time, and his power ran down in Aenor because its magic did not replenish him as the Dead Lands did. | E, `The Necromancy of Elzon.md`, `Third Age Canon Register.md` |
+| Elzon's undead fade with time, and his power ran down in Aenor because its magic did not replenish him as the Ember Lands did. | E, `The Necromancy of Elzon.md`, `Third Age Canon Register.md` |
 | Elzon died permanently at the end of the Third Age; the owner favours the explanation that he overdrew Zol's borrowed magic and was consumed. | E death; owner-favoured working explanation, `The Last Tithe.md` |
 | Varner, a Lesser Spirit, can lift the curse binding Elzon's dead; in the last war he shields the living, opens a path of survival and dies spending his last strength. | E, `Varner.md` |
 | Zol's dead are sustained by his own magic; ordinary weapons may break their shapes but cannot end them; only potent magic, such as Glo's, can. | E, `The Campaign of 4A 1748.md`, `The Fourth Age of Aoaz.md` |
@@ -55,7 +55,7 @@ Rules this file keeps:
 | The elves of the Magical Lands were never conquered, not even by Elzon; elven powers command dragons, and Afrit can do so through corruption. | E, `Peoples of Aoaz.md`, `Third Age Canon Register.md` |
 | Demons opened portals and raided across Aoaz in the Second Age. | E, `Nether.md` |
 | The twelve main New Gods answer the twelve needs of mortals; lesser New Gods exist and are stronger than most Great Spirits. | E, owner, 24 October 2026; the gods' names and the twelve needs are not yet written |
-| Zol's most loyal servant, the Great Spirit who appears in the last war, is Edvoid (name to be replaced). | E, owner, 24 October 2026; hidden knowledge (A) |
+| Zol's most loyal servant, the Great Spirit who appears in the last war, is Kusven. | E, owner, 24 October 2026; hidden knowledge (A) |
 | Gektor is a sorcerer-chief who traps and bleeds lesser spirits; his claim to kill Great Spirits is a boast. | E, owner, 24 October 2026 |
 | Gunpowder weapons are common in some realms. | E, owner, 24 October 2026 |
 
@@ -64,7 +64,7 @@ Rules this file keeps:
 These stay open (O), and no tradition below may quietly answer them.
 
 - What a servant collects or transfers to Zol, and whether feeding involves worship, souls, death, ritual, artifacts or something else.
-- Whether Aoaz's special magic differs by geography or realm. Particular beings are known to be stronger or weaker in particular places (Elzon in the Dead Lands and in Aenor, Afrit in his prepared centre, Horos in his castle), but whether that is one magic that varies or several magics is not decided.
+- Whether Aoaz's special magic differs by geography or realm. Particular beings are known to be stronger or weaker in particular places (Elzon in the Ember Lands and in Aenor, Afrit in his prepared centre, Horos in his castle), but whether that is one magic that varies or several magics is not decided.
 - Whether Zol has more compatible magic outside Aoaz. The owner's world notes say that divine magic works more freely in Erdu (A, sealed: see [knowledge_layers.md](knowledge_layers.md), W6); that does not settle Zol's own case.
 - The cause of the Fading.
 - How Elzon obtained Zol's magic, and whether Zol willed it.
@@ -80,8 +80,8 @@ The principles below are a proposed reading that makes the established cases con
 
 | No. | Principle | The established cases it rests on |
 | --- | --- | --- |
-| M1 | **Every working is paid for from one of three purses:** the worker's own strength, a vessel that stores power (a crystal, a necklace, a shrine, a sustaining dominion), or the magic of the place. | Varner dies spending his last strength; Golbran exhausts his magic; Glo carries Glernaen's power; the necklace amplifies Afrit; the Dead Lands replenish Elzon and Aenor does not. |
-| M2 | **Place matters.** A worker is strong where the land supports the craft and weak where it does not; a land can be prepared over centuries. | Elzon in the Dead Lands and in Aenor; Afrit's prepared centre; Afrit's power working less well inside Yeldenne (the chronicle's account of Glernaen's protections there is P). |
+| M1 | **Every working is paid for from one of three purses:** the worker's own strength, a vessel that stores power (a crystal, a necklace, a shrine, a sustaining dominion), or the magic of the place. | Varner dies spending his last strength; Golbran exhausts his magic; Glo carries Glernaen's power; the necklace amplifies Afrit; the Ember Lands replenish Elzon and Aenor does not. |
+| M2 | **Place matters.** A worker is strong where the land supports the craft and weak where it does not; a land can be prepared over centuries. | Elzon in the Ember Lands and in Aenor; Afrit's prepared centre; Afrit's power working less well inside Yeldenne (the chronicle's account of Glernaen's protections there is P). |
 | M3 | **Aoaz resists power that comes from outside it.** Zol cannot channel freely, and the New Gods cannot stay in Aoaz to fight. | E for Zol; the chronicle says Aoaz's magic and the limits between divine realms constrained the New Gods (mechanism P). |
 | M4 | **Bindings need anchors, and anchors can be cut.** A great working is held by marks, names, remains, shrines or stones; destroy those and it fails. | The Dardan binding (P rite, E banishment by spirits); the Black Roots (P) and the anchors cut in the War of Unbinding (mixed); Golbran severing the necklace's binding (P detail); Elzon's fading dead (E). |
 | M5 | **Overdrawing is the gravest danger.** A worker who takes more than his purse holds is consumed by the source he drew on. | Elzon and Zol's borrowed magic (owner-favoured); the costly, temporary appearance of Zol's servant (E that it withdraws, P that it was costly). |
@@ -94,7 +94,7 @@ The principles below are a proposed reading that makes the established cases con
 | Being | What the sources allow | Limit |
 | --- | --- | --- |
 | Gods, Old and New | Vast power (E). The twelve main New Gods answer the twelve needs of mortals; lesser New Gods are stronger than most Great Spirits (E). | The Fading (Old Gods, E); Aoaz's resistance (M3). |
-| Great Spirits | Exceptional power; can rule, bind, banish and command (E). | Rank is not victory (E); Elzon ran down away from the Dead Lands (E). |
+| Great Spirits | Exceptional power; can rule, bind, banish and command (E). | Rank is not victory (E); Elzon ran down away from the Ember Lands (E). |
 | Lesser Spirits | Some are powerful enough to be mistaken for gods (E); Varner is a wizard among them (E). | P: their craft is part of their being; they can teach only the parts of it a mortal can carry. |
 | Devils | Corrupted Lesser Spirits who served an Old God and escaped to Aoaz (E); the card gives them fire, horns and wings (C). | Whether they are immortal or revivable is Q-07 (O). |
 | Elves and other Great Folk | Elves are immortal (E); the world bible calls their magic natural and gentle (P). | P: strongest in the living magic of their own lands. |
@@ -109,9 +109,9 @@ Each row gives the cause and the limit; the status column says how much of each 
 
 | Effect | Where | Cause | Limit | Status |
 | --- | --- | --- | --- | --- |
-| A black, desolate land roamed by the dead | Zol's Mistake and every black island of the Ocean of Zol | Zol's presence there since before Aen (E). | The land feeds no army and holds almost no living people (E). Why it is called a "Mistake" is open (O). | E, O |
-| Necromancy is sustained | The Dead Lands | The Dead Lands' native magical conditions sustain necromancy as Aenor's do not (E). | Outside them a necromancer's power runs down and his dead fade (E). | E |
-| Storms at sea and heat inland | The Dead Lands' coasts and interior | They hindered earlier explorers (E). Whether they are Volgan's working is open; the world bible's "Volgan's storms" is P. | The Salt Run behind the storm belt lets Mirolon's salt reach the north (P). | E, P, O |
+| A black, desolate land roamed by the dead | Zol's Mistake and every black island of the Kusmeel | Zol's presence there since before Aen (E). | The land feeds no army and holds almost no living people (E). Why it is called a "Mistake" is open (O). | E, O |
+| Necromancy is sustained | The Ember Lands | The Ember Lands' native magical conditions sustain necromancy as Aenor's do not (E). | Outside them a necromancer's power runs down and his dead fade (E). | E |
+| Storms at sea and heat inland | The Ember Lands' coasts and interior | They hindered earlier explorers (E). Whether they are Volgan's working is open; the world bible's "Volgan's storms" is P. | The Salt Run behind the storm belt lets Mirolon's salt reach the north (P). | E, P, O |
 | A land that could not be conquered | The Magical Lands | The elves, Varner and stubborn mortal resistance defeated Elzon there (E); its independent living magic kept the Black Roots from completing (P). | P: the elves' craft weakens beyond their own lands, which is one reason the Elven Refusal is also a matter of strength. | E, P |
 | Soured ground where men live under an old wound | The Cursed Lands (the Veiled) | The scar of the Black Roots, Elzon's buried anchors (P). | The anchors were cut in the War of Unbinding, so the scar does not spread; it is lifted only by long rites (P), the special project *Lifting the Curse*. | P |
 | Cursed grave-fields made farmland again | The Quiet Fields around the Vale of Aenor | Varner's Unbinding lifted the curse (E that he could; P that he did so in 4A 4 to 60). | Ploughmen still plough deep, and the earth "remembers" (P, loading tip). | E, P |
@@ -125,7 +125,7 @@ Each row gives the cause and the limit; the status column says how much of each 
 | Dead that iron cannot end | The northern front of the last war | Zol's dead are sustained by his own magic (E). | Only potent magic such as Glo's ends them (E). P: wards hold them back and shield the living; they do not end them. | E, P |
 | Dead that fade | Elzon's Order, Third Age | Elzon's dead were raised by sorcery and needed continuing support (E). | Elzon rotated hosts near his sources and leaned on living garrisons (P). | E, P |
 | A castle that resists intruders | Castle Yeldenne | Horos's strength and the castle's power (E); Glernaen's old protections disrupt foreign channels (P). | When Glo leaves the castle with its guardian's consent, the castle no longer guarantees ownership (E). | E, P |
-| Calmer harbours, longer sight at sea | Coasts with tide rites | Tide rites and bargains with Elemental Spirits (P; Elemental Spirits are a proposed nature). | A rite eases one harbour for one season (P); it cannot still the Dead Lands' storm belt (P). | P |
+| Calmer harbours, longer sight at sea | Coasts with tide rites | Tide rites and bargains with Elemental Spirits (P; Elemental Spirits are a proposed nature). | A rite eases one harbour for one season (P); it cannot still the Ember Lands' storm belt (P). | P |
 | Essence from the deep stones | Deep springs | The Wellspring Rite draws essence from slow stone (P). | Essence stays scarce (economy spec); a pressed spring sours into a Blighted Wellspring (P scar). | P |
 | A great mountain range between two lands | The Great Wall of Aenor | **Not magic.** It is a natural range (E, owner, 24 October 2026). | Its passes carry a few watch-posts under the proposed Accord of the Passes of 4A 96 (P). | E, P |
 
@@ -223,7 +223,7 @@ Fifteen traditions follow. Each has the same rows: who practises, where, what it
 
 | Aspect | Description |
 | --- | --- |
-| Who | The hedge-wise of Aenor, Selen, the West and the Free Crowns; the cord-mothers of the Orran peoples; the tide-mothers of Asgard; the kiln-wise of the Red Lands; the well-wives of Noris; the charm-wives of the Wild Holds; the fire-keepers of the Winter Hearth; the grave-wives of the Dead Lands freeholds (all P, world bible). The Lawspeakers of Gunwaith keep the oath-stones (P). |
+| Who | The hedge-wise of Aenor, Selen, the West and the Free Crowns; the cord-mothers of the Orran peoples; the tide-mothers of Asgard; the kiln-wise of the Red Lands; the well-wives of Noris; the charm-wives of the Wild Holds; the fire-keepers of the Winter Hearth; the grave-wives of the Ember Lands freeholds (all P, world bible). The Lawspeakers of Gunwaith keep the oath-stones (P). |
 | Where | Every village of men, and many holds. |
 | Can | Small healing, finding lost things, reading the weather of one valley, luck, binding a small oath to a stone, and burying the dead safely (P). The Old Knots keep a name in a cord where no register can reach it (P). |
 | Cannot | Anything at the scale of an army or a kingdom; anything far from home ground (P). |
@@ -256,7 +256,7 @@ Fifteen traditions follow. Each has the same rows: who practises, where, what it
 | Who | Storm-speakers and wind-readers of Windwaith and Isengard (the Storm Court, P); sea-wives and weather-readers of the Leren (P); master-pilots and the reef-wise of Triton's Islands (P); tide-readers of the rift-coast elves (P); the desert-wise of Noris, who read stars (P); the reef-wise of the southern islands (P). |
 | Where | The Cold Lands' wind-coasts, the Narrow Strait, the Pupor Ocean, the rift sea, the Noris desert, the Islands of the South. |
 | Can | Read the weather a day ahead (P, *Wind-Reading*). Ease one harbour's storms for a season (P, *Calm Waters*). Bargain with Elemental Spirits of wind and water and keep tokens of each bargain (P; the nature is proposed). See farther at sea through a ground glass (P, *Sea-Sight*). Find wells and roads by the stars (P). |
-| Cannot | Command a storm. A bargain can be refused, and a spirit that is owed can call the debt at sea (P). Cross the Dead Lands' storm belt with any certainty (P). Calm the open ocean (P). |
+| Cannot | Command a storm. A bargain can be refused, and a spirit that is owed can call the debt at sea (P). Cross the Ember Lands' storm belt with any certainty (P). Calm the open ocean (P). |
 | Cost | Every bargain owes something: a song, a token, a ship's first catch, now and then a life (P). |
 | Institution | The chart-houses of Triton's Islands (P), the Black Gallery in Isengard's forts and the wind-towers of Windwaith (P), the litany-singers of the Singing Quay (P). |
 | Reputation | Captains pay them; landsmen fear them; Coldor fears the Elemental Spirits of frost they bargain with (P). |
@@ -296,14 +296,14 @@ Fifteen traditions follow. Each has the same rows: who practises, where, what it
 | Aspect | Description |
 | --- | --- |
 | Who | Elzon, the Great Necromancer, dead permanently since the end of the Third Age (E). The necromantic orders of Volgan's Dominion (E that they exist) and their necromantic officers (P). The Grave-Warden who heads the orders (P, characters spec). Hidden remnants among men, outlawed in the Concord (P). |
-| Where | The Dead Lands, above all the Gate of Nafeher and the grave-fields behind the storms (P); hidden cells in old Third Age garrison towns (P). |
+| Where | The Ember Lands, above all the Gate of Nafeher and the grave-fields behind the storms (P); hidden cells in old Third Age garrison towns (P). |
 | Can | Raise and bind the dead where there are recoverable remains, a link (a name, a mark or a preserved fragment of will) and enough sustained power (P limits, `The Second Age of Aoaz.md`). Keep a grave host standing in war (P, unit *Necromantic Order*). |
 | Cannot | Hold the dead for ever: they fade (E). Work well outside a sustaining land (E). Claim authority over Death itself: Zol is the Old God of Death, and necromancy does not give his rank (E). Command Zol's dead: the relation between Volgan's grave hosts and Zol's dead is open (O), and in the last war they first fight each other (E). |
 | Cost | The necromancer's own power (E for Elzon). Remains, shrines and sustaining sites that defenders can attack (P). The overdraw that consumed Elzon (owner-favoured). |
 | Institution | The orders of Volgan's Dominion, whose offices, binding-names and gate-names are in the Rite-Tongue (P, languages spec); the rite of Names and Gates of the Children of Volgan's Dread (P, world bible); the Grave-Forges (P). |
 | Reputation | Dread everywhere outside the Dominion (P). |
 | Rivalries | Varner and every warden (E, P). Mirolon's beacon vigil (P). Between the orders and Zol's dead (E clash). |
-| History | Elzon's First Age defence of the Dead Lands (E); the Ash Networks (P) and the open raising of Aenor's dead in the Second Age (E); Elzon's Order (E) and the Black Roots (P); the War of Unbinding (mixed); the Last Tithe (P name, E death); Volgan's strength returns about 4A 1650 (P date). |
+| History | Elzon's First Age defence of the Ember Lands (E); the Ash Networks (P) and the open raising of Aenor's dead in the Second Age (E); Elzon's Order (E) and the Black Roots (P); the War of Unbinding (mixed); the Last Tithe (P name, E death); Volgan's strength returns about 4A 1650 (P date). |
 
 ### 3.13 Pact-craft: the bargains of the Nether
 
@@ -393,7 +393,7 @@ The owner's card adds that he collects books, magic stones and things for ritual
 | Name | Status | Tradition | What matters for magic |
 | --- | --- | --- | --- |
 | Aen | E | The gift of the First Men | Born of magic and power without a father; lived for centuries (E). |
-| Elzon | E | Necromancy | The greatest necromancer; ran down outside the Dead Lands; consumed by overdraw (owner-favoured). |
+| Elzon | E | Necromancy | The greatest necromancer; ran down outside the Ember Lands; consumed by overdraw (owner-favoured). |
 | Afrit | E, A | Pact-craft, artifacts | Built godlike power from demonic magic, bargains, worship and artifacts; mortal beneath them (E). Hidden before `zin_afrit_revealed`. |
 | Horos | E | Guardian of a divine vessel | A Great Spirit whose heart is Glo; strongest in his castle (E). |
 | Lorien | E | The Mirror Vigil (P) | Uses a vision to warn Eindil (E). |
@@ -423,7 +423,7 @@ All fourteen are **proposed (P)**. Names follow the person-name stems, endings a
 | Aspect | Description |
 | --- | --- |
 | Background | Daughter of a beacon-tower family on the Mirolon Passes; walked the Salt Run behind the storm belt as a girl; went with the envoy who was laughed at in Parim in 4A 1736. |
-| Discipline | Beacon wards, the warden's cords, reading the Dead Lands' storms from the passes. |
+| Discipline | Beacon wards, the warden's cords, reading the Ember Lands' storms from the passes. |
 | Limits | Mortal; her wards guard passes, not armies; she cannot see past the storm belt. |
 | Relationships | Serves High Warden Maeric (P, characters spec); writes to Ederine Kordalis; hated by the necromancer Palux, whose scouts she has burned. |
 | Influence | Trains Mirolon's hedge-wardens; her reports are the truest account of Volgan's arming outside the Dominion. |
@@ -552,7 +552,7 @@ All fourteen are **proposed (P)**. Names follow the person-name stems, endings a
 
 | Aspect | Description |
 | --- | --- |
-| Background | A man of the Dead Lands' coast who took the orders long ago; his life-name has shrunk to a binding-name, as the Rite-Tongue's custom is. |
+| Background | A man of the Ember Lands' coast who took the orders long ago; his life-name has shrunk to a binding-name, as the Rite-Tongue's custom is. |
 | Discipline | Binding; the Muster of Names; keeping the gate-names. |
 | Limits | His dead fade; his bindings thin outside the Dominion's sustaining ground; he cannot command Zol's dead. |
 | Relationships | Under the Grave-Warden (P, characters spec) and Volgan; the enemy of Venaelia's wardens. |
@@ -594,7 +594,7 @@ All fourteen are **proposed (P)**. Names follow the person-name stems, endings a
 1. **Magic is never a damage multiplier.** It shows as organisation, supply, attrition, weather, detection, recovery and the binding or freeing of the dead (M8). Only Glo and divine vessels destroy Zol's dead.
 2. **Every working can fail.** Special projects keep their failure chance, their scars on the state (*Hollow Ground*, *Wrecked Moorings*, *Scorched Roost*, *Blighted Wellspring*) and the *Marked* scholar (`institutions_craft.json`).
 3. **Only those who have the tradition can work it.** A project, order or unit lists the peoples or countries that may use it; nobody gets every tradition.
-4. **Place matters in the rules.** Elven song-craft is stronger in the Magical Lands; necromancy is stronger in the Dead Lands; the Deliverer's blessings are stronger in Aenor.
+4. **Place matters in the rules.** Elven song-craft is stronger in the Magical Lands; necromancy is stronger in the Ember Lands; the Deliverer's blessings are stronger in Aenor.
 5. **Named wizards are unique and few.** At most one named wizard advisor per country, and the great figures (Varner, Bastian, Elzon's heirs) are story characters, not hires.
 6. **AI weights stay low** for magical projects, so the AI does not turn every realm into a school of wizards.
 
@@ -637,7 +637,7 @@ Answered on 24 October 2026 and taken into this file: Bastian's nature and era (
 6. **Wardens and Zol's dead.** May human wards ever end Zol's dead, or only hold them back, as this file proposes?
 7. **The arcanists.** Where are the Zhen Hills, and what are the arcanists: a people, an order, or something else?
 8. **Pacts and devils.** Do devils bargain as demons do? What original name does the demon king bear, now that the card's real-world name is to be replaced (Q-07)?
-9. **Volgan's storms.** Are the storms and heat that guard the Dead Lands Volgan's working, or the land's own nature?
+9. **Volgan's storms.** Are the storms and heat that guard the Ember Lands Volgan's working, or the land's own nature?
 10. **Varner between 4A 60 and the last war.** Where was he, and why did he stay quiet for so long?
 11. **The New Gods and temple rites.** The twelve main New Gods answer the twelve needs of mortals: does that mean they answer ordinary rites in Aoaz despite its resistance to outside power, or that they answer through vessels and rare gifts only? What are the twelve needs?
 12. **Lesser New Gods.** Are any lesser New Gods present or worshipped in Aoaz, and are they among those who serve Zol?

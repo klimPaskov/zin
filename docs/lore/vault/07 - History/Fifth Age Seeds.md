@@ -22,7 +22,7 @@ The Fourth Age ends with **[[Eindil]] being crowned king of Aenor**. Any Fifth A
 1. A postwar settlement that recognizes the sovereignty of western and northern kingdoms in return for mutual defense.
 2. A succession of disputes over what to do with Afrit's former temples, innocent believers and surviving agents of his council.
 3. The dispute over Roka's necklace and the consequences of using an object that nearly made Afrit invincible.
-4. The search for survivors of Volgan's order and the continuing danger of the Dead Lands.
+4. The search for survivors of Volgan's order and the continuing danger of the Ember Lands.
 5. The surviving peoples of the Gala elves after the death of Lorien.
 6. A new theology in which some view Eindil as a god, even if he rejects the title.
 

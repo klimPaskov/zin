@@ -11,7 +11,7 @@ This note says how the placements in [05_geography_model.md](05_geography_model.
 The plan was to measure every feature against the working drawing (3,200 by 2,323 pixels). That drawing is the owner's mosaic of the thirteen sheets before the layout was changed in October 2026. In it:
 
 - the East Lands (the South-Earth sheet) lie in the south-west, not the east;
-- the Dead Lands sit under the Magical Lands, not south of the Middle Lands;
+- the Ember Lands sit under the Magical Lands, not south of the Middle Lands;
 - the central sea is a narrow gap;
 - the sheets have different scales.
 
@@ -30,9 +30,9 @@ All checks were by eye on crops of 1,500 pixels or smaller, with a coordinate gr
 | Rush Land | Four crops: north half, south half, the Kingson area (x 0.77 to 0.86, y 0.44 to 0.54 and y 0.52 to 0.67), the west rim (x 0.605 to 0.70) |
 | Rush Islands | One crop |
 | Magical Lands | Two crops (north: y 0.28 to 0.51; south: y 0.50 to 0.73) |
-| Ocean of Edvoid | One crop |
+| Kusmeel | One crop |
 | Dark Lands | One crop |
-| Dead Lands | One crop |
+| Ember Lands | One crop |
 | South-Earth (East Lands) | Five crops: north, middle, south, rift side, south-east |
 | Islands of the South, Sunhot | One crop each |
 | Vault map and cleaned reference | The vault reference map and the cleaned 5,120 by 2,560 reference, in full and as terrain-class crops of the whole world at 1,300 to 1,700 pixels |
@@ -52,12 +52,12 @@ Each sheet was fitted to the game layout in two steps: a shape fit (the sheet's 
 | East-Earth (North Lands) | good | The Evian lake lines up |
 | Dark Lands | good | The Darkness ridge, the Dark Forests and Goldoroth line up |
 | Triton's Islands | good | The Adel and Raerby arcs line up |
-| Ocean of Edvoid | good for the big island (Šodolôrō), poor for the small black islands | The small islands were redrawn when the layout was made |
+| Kusmeel | good for the big island (Šodolôrō), poor for the small black islands | The small islands were redrawn when the layout was made |
 | Cold Lands | good | Tinton, the Naepu ridge and the Neridor mountains line up |
 | West-Earth | good | Gunwaith, Girdon, Buldor and the peninsulas line up |
 | Magical Lands | fair | The sheet is stretched about 1.6 times wider than it is tall in the layout; features are good to 0.02 |
 | South-Earth (East Lands) | good | Mirrored; the Hot Lake, Woqood snow and Hellfire mass line up |
-| Dead Lands | good for the main island, none for the Mirolon block | Mirolon was moved onto the Magical Lands' south end; it uses the Magical transform |
+| Ember Lands | good for the main island, none for the Mirolon block | Mirolon was moved onto the Magical Lands' south end; it uses the Magical transform |
 | Sunhot | fair | Only the south-west corner of the sheet's south coast is on the layout |
 | Islands of the South | **not registered** | The layout scattered and rescaled the islands; names are assigned to islands by proposal |
 
@@ -72,8 +72,8 @@ Accuracy: about 0.015 units (80 pixels) for the good fits, 0.02 to 0.03 for the 
 | Meridor or Neridor | The name table reads Neridor; the crop reads Meridor | The model keeps the table spelling and notes the other |
 | Gorlab or Cololab Sea | Reading uncertain | Gorlab Sea, with the table reading in the notes |
 | Great River | A label "The Great River" is faint near Reshon | Kept as drawn, reading uncertain |
-| Mirolon's place | The reference puts Mirolon on the south tip of the central landmass and the Dead Lands island 400 pixels away | Mirolon is a peninsula; Mirolon Sound separates it |
-| The Nether | The drawing has a large red island named Nether south of the Dead Lands; the reference has no land there | The model adds an island |
+| Mirolon's place | The reference puts Mirolon on the south tip of the central landmass and the Ember Lands island 400 pixels away | Mirolon is a peninsula; Mirolon Sound separates it |
+| The Nether | The drawing has a large red island named Nether south of the Ember Lands; the reference has no land there | The model adds an island |
 | Sea of Darkness | A grey land named Sea of Darkness lies inside a sea | The sea is an inner sea; the grey land is a separate island |
 | Magical Forest | The reference makes it much larger than the Middle Lands | Kept |
 | Islands of the South names | The layout scattered the islands | Howan, Verde, Nara and Enhis Is Rond are assigned by proposal |
@@ -88,9 +88,9 @@ The vault wins. Each difference is handled as follows.
 | Gunwaith is drawn white | Snow only near the Cold Lands neck | Plains and forest; snow only at the neck |
 | The Rush interior is drawn khaki and was read as desert | Aenor is very fertile | Vale of Aenor, 85 percent plains |
 | A "Wall of Rush" is drawn on the north-west coast | The Great Wall is in the east, between the Middle Lands and the Magical Lands | The north-west rim is only a coastal ridge (Hiloff Rim) |
-| No storm belt is drawn | Fierce storms at sea around the Dead Lands | The Tempest Reach is added |
+| No storm belt is drawn | Fierce storms at sea around the Ember Lands | The Tempest Reach is added |
 | The Rush Ocean | Rush is superseded | Crown Ocean, proposed |
-| Edvoid names | Zol names | Ocean of Zol, Zol's Mistake |
+| Kusven names | Zol names | Kusmeel, Zol's Mistake |
 | The Sunhot place labels | Owner renamed on 19 October | Sun Desert, Sun Gate, Sun Grasslands |
 | South Earth sheet title | The East Lands | East Lands (the sheet is mirrored in the layout) |
 
@@ -122,8 +122,8 @@ Positions are in the drawing frame (0 to 1 of 3,200 by 2,323) and good to about 
 | White left edge of the Rush sheet | u about 0.607 |
 | Magical Lands sheet frame | left u about 0.848 to 0.853; top v about 0.29; right u about 0.992; a black bar near u 0.84 to 0.85, v 0.659 |
 | Dark Lands sheet frame | top v about 0.667, right u about 0.714, bottom v about 0.862 |
-| Dead Lands sheet frame | left u about 0.801, top v about 0.727 |
-| Edvoid sheet frame | top v about 0.018, left u about 0.803 |
+| Ember Lands sheet frame | left u about 0.801, top v about 0.727 |
+| Kusven sheet frame | top v about 0.018, left u about 0.803 |
 | South-Earth joins | horizontal v about 0.60 and 0.80, vertical u about 0.215 |
 | Sunhot sheet joins | vertical u about 0.376, horizontal v about 0.797 |
 
@@ -146,4 +146,4 @@ Positions are in the drawing frame (0 to 1 of 3,200 by 2,323) and good to about 
 
 ## 8. Open questions
 
-The model's open questions are in section 13 of the geography model. Two matter most for the rasteriser: the owner's choice of frame (section 1 here) and the size of the Dead Lands.
+The model's open questions are in section 13 of the geography model. Two matter most for the rasteriser: the owner's choice of frame (section 1 here) and the size of the Ember Lands.

@@ -64,7 +64,7 @@ Today every one of these countries runs the interim "Long Peace" tree (`zin_long
 - **Free lands** (not a subject: Fotan, or a dominion that seceded) get *The Free March*.
 - **Coastal countries** (`check zin_shared_has_coast`) get *Harbours*.
 - **By ideology:** Light realms get *The Free Council*; Wild realms *The Lords' Moot*; Dominion realms *A Governor's Hand*.
-- **By region:** countries bordering a Dead Lands country (`check zin_shared_borders_dead_lands`) get *Watch on the South*; countries bordering a Magical Lands country (`check zin_shared_borders_magical_lands`) get *The Wall Road*.
+- **By region:** countries bordering a Ember Lands country (`check zin_shared_borders_dead_lands`) get *Watch on the South*; countries bordering a Magical Lands country (`check zin_shared_borders_magical_lands`) get *The Wall Road*.
 - **By people:** countries with the Middle Kingdom tradition get *Children of the Restoration*; countries whose primary or minor people include giants or ents get *The Old Kin* (no tier C country at the start; it serves owner-assigned minor peoples and released countries).
 
 `allow_branch` sits on each branch's first focus, under the compiler's E4 rule: people and tradition are fixed at the start; subject status, ideology, coast and borders change only at the layout refresh points of `common/on_actions/zin_focus_layout.txt` (ruling-party change, puppet, release, subject freed, annex, peace conference), and each branch head repeats its condition in `available`. Text uses `[ROOT.GetName]` and `[ROOT.GetAdjective]`, never a country name.
@@ -255,7 +255,7 @@ Tree-declared scripts go to `common/scripted_effects/zin_shared_concord_dominion
 | `zin_concord_join_free_dominions` | scripted effect | — | The faction leader with flag `zin_aenor_free_dominion` (the Aenor spec's Free Dominions) runs `add_to_faction = ROOT` |
 | `zin_shared_has_coast` | scripted trigger | — | `any_owned_state = { is_coastal = yes }` |
 | `zin_shared_is_island_realm` | scripted trigger | — | `capital_scope = { is_island_state = yes }` |
-| `zin_shared_borders_<region>` | scripted trigger family | — | `any_neighbor_country = { has_country_flag = zin_region_<region> }`; generated for `dead_lands`, `magical_lands`, `dark_lands` and any other region a shared tree asks for |
+| `zin_shared_borders_<region>` | scripted trigger family | — | `any_neighbor_country = { has_country_flag = zin_region_<region> }`; generated for `ember_lands`, `magical_lands`, `dark_lands` and any other region a shared tree asks for |
 
 **Local to this tree** (proposed):
 

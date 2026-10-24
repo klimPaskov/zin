@@ -73,7 +73,7 @@ Applied by the world tick. Labels before `zin_afrit_revealed` must not hint at A
 | `envoys` | Restless Envoys / The Deliverer's Web | Sum of all `zin_footholds` ≥ 150 / ≥ 300 | +0.05 / +0.10 |
 | `wars` | Wars of the Living | Each active war with a major on either side | +0.10 each, at most +0.40 |
 | `dead_march` | The Dead March | Zol controls states outside Zol's Mistake | +0.02 per state, at most +0.30 |
-| `dominion_march` | The Dominion Marches | Volgan and its subjects control states outside the Dead Lands | +0.02 per state, at most +0.30 |
+| `dominion_march` | The Dominion Marches | Volgan and its subjects control states outside the Ember Lands | +0.02 per state, at most +0.30 |
 | `glo` | Glo Carried by the Worthy | `zin_glo_state` 1 or 4 | −0.10 |
 | `league` | The Lost Cause Stands | `zin_aenor_lost_cause` ≥ 60 | −0.10 |
 | `peace` | The Long Peace | `zin_world_peace_holds` (never below 5) | −0.05 |

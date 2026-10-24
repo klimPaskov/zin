@@ -191,7 +191,7 @@ Tabs:
 | The Dark Lands | Rows of every Dark Lands country with `zin_volgan_pact` ≥ 1: flag, name, pact pips 0–3 |
 | Musters | `zin_volgan_musters` and whether `zin_volgan_mustered` blocks veil recovery this month |
 
-After `zin_volgan_body_destroyed` the header art switches to the broken-host variant (`GFX_zin_header_dominion_broken`) and the Hosts gauge shows the cap of 40. The text never says what became of Volgan's spirit; under `zin_rule_volgan_spirit = UNRESOLVED` it reads "What remains of the Lord of the Dead Lands is not known."
+After `zin_volgan_body_destroyed` the header art switches to the broken-host variant (`GFX_zin_header_dominion_broken`) and the Hosts gauge shows the cap of 40. The text never says what became of Volgan's spirit; under `zin_rule_volgan_spirit = UNRESOLVED` it reads "What remains of the Lord of the Ember Lands is not known."
 
 **The Watch on the Passes** (`zin_watch_window`, `zin_watch`; visible for `zin_ui_has_watch_panel` with `zin_ui_watch_open`; theme `stone`): gauge `zin_mirolon_proof` (marks 25, 50, 75), gauge `zin_mirolon_passes` (marks every 20, with the current fort level), the band "The South: Hidden / Rumoured / Suspected / Seen" from the global mirror `zin_volgan_veil_band`, and the cooldowns of the three scouting decisions as text. Mirolon never sees Volgan's numbers.
 

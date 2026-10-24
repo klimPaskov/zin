@@ -6,7 +6,7 @@ updated: 2026-10-18
 
 # Necklace of the Abyss
 
-**Established:** A powerful artifact of the [[Abyss]] in the Dead Lands, originally associated with [[Roka]], a member of a huge rhinoceros-headed humanoid people. [[Afrit]] sends a master thief to obtain the necklace and promises him eternal life. The thief succeeds, and Afrit uses the necklace's power to honor that bargain.
+**Established:** A powerful artifact of the [[Abyss]] in the Ember Lands, originally associated with [[Roka]], a member of a huge rhinoceros-headed humanoid people. [[Afrit]] sends a master thief to obtain the necklace and promises him eternal life. The thief succeeds, and Afrit uses the necklace's power to honor that bargain.
 
 The necklace dramatically amplifies Afrit's abilities and helps maintain his supernatural power and demonic form. Along with other acquired artifacts, it allows him to wield strength comparable to that which ordinary people expect of a god. His power is especially strong in the prepared magical center of Aenor. His public recognition as a New God is established, but whether this artifact grants true divine order remains open.
 

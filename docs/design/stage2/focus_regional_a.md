@@ -1,6 +1,6 @@
-# Focus slice regional_a: Cold Lands, Dark Lands and Dead Lands tier B trees
+# Focus slice regional_a: Cold Lands, Dark Lands and Ember Lands tier B trees
 
-**Date:** 19 October 2026. **Specs:** [cold_lands.md](../../specs/05_focus_trees/regional/cold_lands.md), [dark_lands.md](../../specs/05_focus_trees/regional/dark_lands.md), [dead_lands.md](../../specs/05_focus_trees/regional/dead_lands.md).
+**Date:** 19 October 2026. **Specs:** [cold_lands.md](../../specs/05_focus_trees/regional/cold_lands.md), [dark_lands.md](../../specs/05_focus_trees/regional/dark_lands.md), [ember_lands.md](../../specs/05_focus_trees/regional/ember_lands.md).
 
 ## What this slice is
 
@@ -10,7 +10,7 @@
 | --- | --- |
 | Cold Lands | `regional_isengard` 45/8/2, `regional_horidor` 32/10/1, `regional_windwaith` 34/9/2, `regional_fearno` 37/9/3, `regional_titanos` 30/6/1, `regional_yeti_lands` 30/8/1 |
 | Dark Lands | `regional_dondor` 49/16/8, `regional_blackton` 39/14/6, `regional_dulundur` 36/10/4, `regional_bordon` 31/6/4, `regional_dreson` 31/10/2, `regional_troll_forest` 30/9/3 |
-| Dead Lands | `regional_nezer` 32/9/3, `regional_demon` 30/6/3, `regional_dolon` 30/7/2, `regional_olen` 32/10/6, `regional_nan` 30/10/7 |
+| Ember Lands | `regional_nezer` 32/9/3, `regional_demon` 30/6/3, `regional_dolon` 30/7/2, `regional_olen` 32/10/6, `regional_nan` 30/10/7 |
 
 Totals: 578 focuses, 157 spirits, 58 events (94 options), 42 tree-declared scripted effects, 34 scripted triggers, 24 opinion modifiers, 11 AI strategies, 0 new art keys. Every focus has full localisation text (name and description), every spirit, event and option has text. The compiler writes the usual files per tree (`common/national_focus/zin_<tree>.txt`, `common/ideas/zin_focus_<tree>.txt`, `events/zin_<tree>.txt`, scripted effects and triggers, opinion modifiers, AI strategies, `localisation/english/zin_focus_<tree>_l_english.yml`).
 

@@ -4,13 +4,13 @@
 
 ## Purpose
 
-Mirolon is the free human realm of lakes, forests and coast that stands between Volgan's Dead Lands and the Middle Lands. Volgan conquered it in the First Age; it is free again, and it is the only power in 4A 1748 that takes his return seriously. Its tree is about watching, proving and preparing: scouting the Dead Lands, building the forts on the passes, warning courts that laugh, and finding friends. When the storm comes, Mirolon chooses between a last stand and a court in exile, and after Volgan's body breaks it can rise again.
+Mirolon is the free human realm of lakes, forests and coast that stands between Volgan's Ember Lands and the Middle Lands. Volgan conquered it in the First Age; it is free again, and it is the only power in 4A 1748 that takes his return seriously. Its tree is about watching, proving and preparing: scouting the Ember Lands, building the forts on the passes, warning courts that laugh, and finding friends. When the storm comes, Mirolon chooses between a last stand and a court in exile, and after Volgan's body breaks it can rise again.
 
 Tree id `mirolon`; country Mirolon (tier A, [01_tiers_and_coverage.md](../01_tiers_and_coverage.md)). 83 focuses. Mechanic: [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md) (Mirolon's proof and passes). Data format: [00_format_and_compiler.md](../00_format_and_compiler.md).
 
 ## Lore basis
 
-**Established:** Mirolon lies in the Dead Lands and opposes Volgan (working table). Volgan invaded Mirolon in the latter First Age and made it the opening of his campaign against Aenor. In the Fourth Age he retakes Mirolon and marches north. Mirolon's political status differs between ages. The Grand Alliance of King Edran defeated Volgan at Dardan; its follow-up invasion of the Dead Lands failed against Elzon, and the elves blamed Aenor's king for their dead. The Elven Refusal still stands.
+**Established:** Mirolon lies in the Ember Lands and opposes Volgan (working table). Volgan invaded Mirolon in the latter First Age and made it the opening of his campaign against Aenor. In the Fourth Age he retakes Mirolon and marches north. Mirolon's political status differs between ages. The Grand Alliance of King Edran defeated Volgan at Dardan; its follow-up invasion of the Ember Lands failed against Elzon, and the elves blamed Aenor's king for their dead. The Elven Refusal still stands.
 
 **Proposed (vault, *Fourth Age Chronology*):** Mirolon fortified its passes about 4A 1650; its envoy was laughed out of Parim in 4A 1736; at the start only Mirolon's scouts take the signs seriously; "if Mirolon holds the passes, Volgan's march north is delayed or broken" is one of the places where history can turn.
 
@@ -127,14 +127,14 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 
 ### Branch 6: Voices to the North
 
-**Purpose:** find friends before the storm. **Opens:** at the start. **Mechanic:** events to Aenor, Herez, the free Dead Lands realms and the Gala Elves. "Ask the Lost Cause" and "The Warden League" are mutually exclusive: shelter under Aenor's league (if Parim will have Mirolon) or lead a league of the free south. A Wall of Realms needs either road.
+**Purpose:** find friends before the storm. **Opens:** at the start. **Mechanic:** events to Aenor, Herez, the free Ember Lands realms and the Gala Elves. "Ask the Lost Cause" and "The Warden League" are mutually exclusive: shelter under Aenor's league (if Parim will have Mirolon) or lead a league of the free south. A Wall of Realms needs either road.
 
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `voices_to_the_north` | Voices to the North | — | — | 23,0 | 35 | political_power 25 | 30 |
 | `envoy_to_parim` | An Envoy to Parim | voices_to_the_north | — | 21,1 | 35 | call zin_mirolon_tree_warn_parim | 30 |
 | `friendship_with_herez` | Friendship with Herez | voices_to_the_north | — | 23,1 | 35 | event_for Herez herez_friendship (zin_mirolon.3) | 20 |
-| `free_realms_of_the_dead_lands` | Free Realms of the Dead Lands | voices_to_the_north | — | 25,1 | 35 | event_for each of Olen, Luminor, Gelon, Mencnon, Bennen, Dra, Mirodor and Nan that exists: league_invite (zin_mirolon.4) | 20 |
+| `free_realms_of_the_dead_lands` | Free Realms of the Ember Lands | voices_to_the_north | — | 25,1 | 35 | event_for each of Olen, Luminor, Gelon, Mencnon, Bennen, Dra, Mirodor and Nan that exists: league_invite (zin_mirolon.4) | 20 |
 | `ask_the_lost_cause` | Ask the Lost Cause | envoy_to_parim | warden_league | 21,2 | 35 | event_for Aenor lost_cause_request (zin_mirolon.6) | 50, ×0.1 with flag zin_mirolon_parim_laughed |
 | `southern_marches_pact` | The Southern Marches Pact | friendship_with_herez | — | 23,2 | 35 | available: flag zin_mirolon_herez_friend; event_for Herez marches_pact (zin_mirolon.5) | 15 |
 | `warden_league` | The Warden League | free_realms_of_the_dead_lands | ask_the_lost_cause | 25,2 | 35 | faction `warden_league` (template `zin_faction_warden_league`, E3); call zin_mirolon_tree_invite_league (invites every country with flag zin_mirolon_league_friend) | 50 |
@@ -179,7 +179,7 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 
 ### Branch 9: Mirolon Rises Again
 
-**Purpose:** return home when Volgan's body is broken, and decide what Mirolon becomes. **Opens:** "Hope from the North" and `zin_volgan_body_destroyed`. **Mechanic:** `zin_mirolon_restore` (asks the Steward to let Mirolon go, or gives Mirolon a war goal for its cores); the exclusive choice between carrying the war into the Dead Lands, as Edran's host once did and failed, and keeping a watch for the ages.
+**Purpose:** return home when Volgan's body is broken, and decide what Mirolon becomes. **Opens:** "Hope from the North" and `zin_volgan_body_destroyed`. **Mechanic:** `zin_mirolon_restore` (asks the Steward to let Mirolon go, or gives Mirolon a war goal for its cores); the exclusive choice between carrying the war into the Ember Lands, as Edran's host once did and failed, and keeping a watch for the ages.
 
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
@@ -248,7 +248,7 @@ All are fired by focus or option effects (no trigger, no mean time). Pictures ar
 | 1 | `wardens_council` | The High Warden's Council | Focus | `generic_court` | "Hear the pass-lords." (passes +5; AI 60) / "Hear the lake towns." (+50 PP; AI 40) |
 | 2 | `grave_signs` | Signs at the Grave-Fields | Focus | `grave_muster` | "Send more scouts." (proof +5, Volgan veil −3; if veil ≥ 70, 20% chance of `zin_dominion.6` instead; AI 60) / "Write it down and wait." (proof +3; AI 40) |
 | 3 | `herez_friendship` | Friendship with Mirolon (to Herez) | Focus | `generic_court` | "Herez stands with Mirolon." (opinion +25 both ways through the opinion modifier `zin_dominion_mirolon_friendship` (requested from the mechanic's `common/opinion_modifiers/zin_dominion.txt`); Mirolon flag zin_mirolon_herez_friend; Herez flag `zin_herez_heard_mirolon`; AI 60, ×0.5 if Aenor's `zin_court_corruption` > 60) / "Herez answers to Parim." (AI 40) |
-| 4 | `league_invite` | An Invitation from Mirolon (to a free Dead Lands realm) | Focus | `generic_court` | "Stand with the wardens." (country flag zin_mirolon_league_friend; AI 40, ×2 if Light or Wild, ×0 if Shadow, a Volgan subject or flagged `zin_dominion_tributary_friend`) / "We keep our own counsel." (AI 60) |
+| 4 | `league_invite` | An Invitation from Mirolon (to a free Ember Lands realm) | Focus | `generic_court` | "Stand with the wardens." (country flag zin_mirolon_league_friend; AI 40, ×2 if Light or Wild, ×0 if Shadow, a Volgan subject or flagged `zin_dominion_tributary_friend`) / "We keep our own counsel." (AI 60) |
 | 5 | `marches_pact` | The Southern Marches Pact (to Herez) | Focus | `generic_peace` | "If the storm comes, Herez will send men." (Herez flag zin_herez_marches_pact: Herez AI sends volunteers to Mirolon at war; AI 50) / "Herez cannot promise." (AI 50) |
 | 6 | `lost_cause_request` | Mirolon Asks to Join the Lost Cause (to Aenor) | Focus | `concord_council` | "Admit Mirolon." (Mirolon flags zin_mirolon_lost_cause_friend and `zin_lost_cause_member`: an honorary member of the Lost Cause, which is an institution inside Aenor's mechanic, not a faction, decision S3; AI 20 + proof / 2, ×0.5 if `zin_court_corruption` > 60) / "A frontier realm's fears are not ours." (flag `zin_mirolon_parim_laughed`; AI 80) |
 | 7 | `appeal_to_gala` | Mirolon Remembers (to the Gala Elves) | Focus | `gala_court` | "Send rangers north." (Mirolon gets 500 `zin_arms_equipment` and flag zin_gala_rangers_mirolon; AI 15, ×2 with zin_mirolon_elves_remember; the Lands of the Sun spec may override) / "The elves made their choice long ago." (AI 85) |
@@ -256,7 +256,7 @@ All are fired by focus or option effects (no trigger, no mean time). Pictures ar
 | 9 | `passes_held` | The Passes Held (news) | Focus | `generic_war` (news) | "Mirolon stands." |
 | 10 | `storm_comes` | The Storm Comes | Focus | `dead_lands_storm` | "To the passes!" |
 | 11 | `mirolon_rises` | Mirolon Rises Again | Focus | `generic_peace` | "Home." (stability +0.05). Text: the master of Nafeher has fallen; what remains of him no one can say. |
-| 12 | `carry_war_south` | Into the Dead Lands? | Focus | `dead_lands_storm` | "Carry it south." (war goal `annex_everything` on Volgan if not at war; timed_spirit southern_war 180; AI 20) / "Remember Edran's host." (+100 PP; flag zin_mirolon_declined_south; AI 80). The text recalls that the First Age invasion of the Dead Lands failed. |
+| 12 | `carry_war_south` | Into the Ember Lands? | Focus | `dead_lands_storm` | "Carry it south." (war goal `annex_everything` on Volgan if not at war; timed_spirit southern_war 180; AI 20) / "Remember Edran's host." (+100 PP; flag zin_mirolon_declined_south; AI 80). The text recalls that the First Age invasion of the Ember Lands failed. |
 
 The mechanic's events that reach Mirolon (`zin_dominion.2`, `.3`, `.5`, `.6`, `.7`, `.10`, `.11`, `.20`, `.24`) are listed in the mechanic spec. The tree reaches `zin_dominion.5` (Mirolon's Warning, to Aenor) only through its own effect below.
 
@@ -289,7 +289,7 @@ On the historical path Mirolon never takes `proof_no_court_can_laugh_at`, `ask_t
 | Shelter in the Lost Cause | Ask the Lost Cause when Parim did not laugh (lower court corruption) | Aenor's league protects Mirolon; the war draws Aenor in early |
 | The Warden League | The Warden League with willing free realms | A small southern faction; better defence |
 | Elven rangers | What the Elves Remember, then An Appeal to Gala | A chance of Gala help, despite the Refusal |
-| The war carried south | Carry the War South after the body breaks | A non-canon invasion of the Dead Lands, with Edran's warning |
+| The war carried south | Carry the War South after the body breaks | A non-canon invasion of the Ember Lands, with Edran's warning |
 | The Golden Court's debt | Loans from Parim's Bankers | Faster industry, lasting consumer goods burden |
 
 ## Implementation

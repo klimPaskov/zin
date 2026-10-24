@@ -12,7 +12,7 @@ It is a digest of the lore vault for implementers. It never replaces the vault. 
 
 ### Sources
 
-- Vault: *Canon Policy*, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Aoaz*, *Fourth Age Canon Register*, *Great Powers and Relations*, *Kingdoms Factions and Conflicts*, *Afrits Hidden Council*, *The Lost Cause*, *Houses of the First Light*, the figure notes, *Aoaz and Its Regions*, *Volgans Dead Lands*, *Zols Mistake*, *Open Questions*.
+- Vault: *Canon Policy*, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Aoaz*, *Fourth Age Canon Register*, *Great Powers and Relations*, *Kingdoms Factions and Conflicts*, *Afrits Hidden Council*, *The Lost Cause*, *Houses of the First Light*, the figure notes, *Aoaz and Its Regions*, *Volgans Ember Lands*, *Zols Mistake*, *Open Questions*.
 - Specs: [README](../README.md), [CONVENTIONS](../CONVENTIONS.md), [INTEGRATION_DECISIONS](../INTEGRATION_DECISIONS.md), [shared contract](../04_mechanics/00_shared_contract.md), [start and calendar](../00_foundation/01_start_and_calendar.md), [map accuracy](../01_map/01_map_accuracy.md), [key sites](../01_map/02_key_sites.md), [known issues](../01_map/03_known_issues.md), [tiers and coverage](../05_focus_trees/01_tiers_and_coverage.md), [flavour and world events](../06_events/05_flavour_and_world.md).
 - Country roster: 305 countries (name, region, states, people, ideology, stance, overlord, role), from `docs/design/countries.csv` and the politics step.
 
@@ -63,8 +63,8 @@ Beneath the peace, five pressures build. Each is hidden, dismissed or seen by on
 | # | Pressure | Truth (E unless marked) | Who sees it at the start | How the player meets it |
 | --- | --- | --- | --- | --- |
 | 1 | The rot at the centre | The Golden King is a fool; Aenor's real government is the Hidden Council of the god its people love | The Council only. Courtiers see corruption, not the Council. | Aenor's court corruption, sold offices, an over-friendly temple; the Worshipdom player sees everything |
-| 2 | The dark in the south | Volgan has rebuilt his armies for a century and means to take Mirolon and march north | Mirolon's scouts and wardens. Northern courts think him a spent legend. | Mirolon's warnings; rumours in Aenor; low intel on the Dead Lands |
-| 3 | The dead in the north | Zol's dead stir in the islands of the Ocean of Zol; ordinary weapons cannot end them | Island fishermen nobody believes | Flavour events on northern coasts; nothing military |
+| 2 | The dark in the south | Volgan has rebuilt his armies for a century and means to take Mirolon and march north | Mirolon's scouts and wardens. Northern courts think him a spent legend. | Mirolon's warnings; rumours in Aenor; low intel on the Ember Lands |
+| 3 | The dead in the north | Zol's dead stir in the islands of the Kusmeel; ordinary weapons cannot end them | Island fishermen nobody believes | Flavour events on northern coasts; nothing military |
 | 4 | Old grudges in the west and north | The West remembers Aenor's First Age conquests; the North Lands chafe under the Treaty of the Narrow Strait (P name) | Everyone, but as grudges over wine, not war plans | Negative opinion, trade quarrels, tariff events |
 | 5 | Ambition in the east | The East Lands are rich, divided and full of the Council's clients, who know their patron only as the Deliverer's generous friends | The clients themselves, without knowing what they serve | Wealthy eastern courts, temple gifts, rivalries between Noris and Stabilo |
 
@@ -110,7 +110,7 @@ Thirteen tier A powers, plus Dondor and Yeldenne for their story weight. "Believ
 | **Stabilo** | Postondoroth (W) | Central eastern trade power | Noris is the rival that matters | To win the southern trade routes and keep the Stabilo Pact with Drak | As Noris. |
 | **Gunwaith** | not named (W) | Northern crown of the West Lands, tired after fifty years of war with Girdon | The Truce of the Grey Ford (P) is fragile; Aenor once tried to rule the West and still taxes it through tariffs | Peace at home, lower tariffs, and the old claims of Parim buried for good | The West will cross the sea together within seven years (E outcome, P timing). |
 | **Goldoroth** | Cocanoor (W) | Orc kingdom of the inner Dark Lands | The Dark Lands should be one kingdom: its kingdom | To subdue Dondor and the free holds | Volgan's agents court the Dark Lands holds (E that they court; not automatically his). |
-| **Mirolon** | not named (W) | Human realm on the lakes and coasts of the northern Dead Lands, free again after Volgan's First Age conquest | Volgan is arming; nobody in the north will listen | To hold the northern passes and win allies | Its warnings are true (E that Volgan retakes Mirolon on the historical path). |
+| **Mirolon** | not named (W) | Human realm on the lakes and coasts of the northern Ember Lands, free again after Volgan's First Age conquest | Volgan is arming; nobody in the north will listen | To hold the northern passes and win allies | Its warnings are true (E that Volgan retakes Mirolon on the historical path). |
 | **Dondor** | Notbuton (W) | Human kingdom of the northern Dark Lands, leader of the Dark Sea Accord | Goldoroth is the danger | To survive Goldoroth with Belonton's help | — |
 | **Yeldenne** | Castle of Yeldenne, Mp'E (E) | A remote castle and its silent lord | (Horos guards Glo against every claimant.) | To keep Glo from the unworthy | Horos knows who Afrit is and why Ein denied him (E). |
 
@@ -180,19 +180,19 @@ Each entry gives the situation, the countries that matter, the live tensions and
 - Goldoroth and Dondor are in an **armed peace**, not a war: border raids are flavour events, never a declared war at the start.
 - **Hooks:** raids, a volcano's omens, Volgan's envoys refused or received.
 
-#### Dead Lands
+#### Ember Lands
 
 - **Volgan** rules from Nafeher (W). His **Southern Dominion** (W) includes **Demon**, **Dolon** and **Nezer** as sworn realms.
 - In the far south lie the **Nether**, seat of the King of Demons, and the **Abyss**, where Roka once held the Necklace of the Abyss (E). On the map the Nether is Volgan's realm, with the King's court as a pact (owner short list 5, proposal).
-- **Mirolon**, the human realm Volgan conquered in the First Age, is free again and stands in his way (E rivalry). It fortified its northern passes about 4A 1650 (P). In 4A 1736 its envoy warned Parim that the Dead Lands were arming; the court laughed (P).
+- **Mirolon**, the human realm Volgan conquered in the First Age, is free again and stands in his way (E rivalry). It fortified its northern passes about 4A 1650 (P). In 4A 1736 its envoy warned Parim that the Ember Lands were arming; the court laughed (P).
 - **Nan**, **Olen** and the small human freeholds of the north coast are independent (roster).
-- The Dead Lands are hot, storm-girt and hard to reach by sea (E).
+- The Ember Lands are hot, storm-girt and hard to reach by sea (E).
 - **Tensions:** Mirolon against Volgan, in silence; Mirolon's lonely warnings.
 - **Hooks:** scouts' reports, storms that wreck curious ships, demon-bargains refused.
 
 #### Zol's Mistake
 
-- The whole black north and every black island of the Ocean of Zol belong to **Zol**, the Old God of Death (E). The land is almost empty of the living (E). Its seat is **Furviatlon** (W). Šodolôrō lies within it (E; game text writes Šodolôro, S11).
+- The whole black north and every black island of the Kusmeel belong to **Zol**, the Old God of Death (E). The land is almost empty of the living (E). Its seat is **Furviatlon** (W). Šodolôrō lies within it (E; game text writes Šodolôro, S11).
 - The realm's leader is an emblem, "The Will of Zol", which says nothing about who administers the Mistake (S4). Who administers it for Zol is unknown and is **not invented** (O).
 - Zol cannot take a body; his servants sustain his presence; his power grows very slowly (E).
 - Island fishermen told of black ships among the islands in 4A 1744 (P). Nobody at court believed them.
@@ -283,7 +283,7 @@ Each owning mechanic sets its own variable on startup. This table is the lore ta
 | `zin_court_corruption` | Aenor | 70 | Aenor (V1) | Nineteen years of sold offices |
 | `zin_concord_loyalty` | each dominion | As the Aenor spec's dominion table (for example Selen 45, Noleksun 40, Herez 50, Hunhun 55, Kilinti 60, Kingson 65) | Aenor | Taxes grumbled at; Selen acts on its own |
 | `zin_aenor_lost_cause` | Aenor | 20 | Aenor | Mostly ornament; real frontier companies |
-| `zin_footholds` | every country | As the Afrit spec's start table (R4; first matching row wins): Aenor 5; Middle Kingdom Concord dominions of men 2 (Selen 1; dominions of other peoples 1); Fotan 1; Cursed Lands and Bloody Forest 0; the six Dead Lands freeholds 1; every Cold Lands country except Yeldenne 1; Alerhia, Erco, Plutondo, Miaed, Noris, Stabilo 3; other East Lands courts 2; Lerendor and Dondor 2; other countries of men 1; elven realms 1; orc, goblin and troll holds 0; Volgan, his sworn realms, Zol and Yeldenne 0 | [Afrit](../04_mechanics/afrit_hidden_council.md) | Networks everywhere; strongest in Aenor (E); agents even in the Lands of the Sun (E). The values never say which kings will follow him. |
+| `zin_footholds` | every country | As the Afrit spec's start table (R4; first matching row wins): Aenor 5; Middle Kingdom Concord dominions of men 2 (Selen 1; dominions of other peoples 1); Fotan 1; Cursed Lands and Bloody Forest 0; the six Ember Lands freeholds 1; every Cold Lands country except Yeldenne 1; Alerhia, Erco, Plutondo, Miaed, Noris, Stabilo 3; other East Lands courts 2; Lerendor and Dondor 2; other countries of men 1; elven realms 1; orc, goblin and troll holds 0; Volgan, his sworn realms, Zol and Yeldenne 0 | [Afrit](../04_mechanics/afrit_hidden_council.md) | Networks everywhere; strongest in Aenor (E); agents even in the Lands of the Sun (E). The values never say which kings will follow him. |
 | `zin_afrit_artifacts` | global | 4 | Afrit | The Necklace and three lesser artifacts gathered 4A 1611 to 1700 (P) |
 | `zin_eindil_stage` | global | 0 | [Eindil's journey](../04_mechanics/eindil_journey.md) | He has not woken |
 | `zin_dominion_strength` | Volgan | 45 | [Volgan](../04_mechanics/volgan_southern_dominion.md) (V1) | A century of rebuilding; not yet ready (march historically 4A 1755) |
@@ -388,7 +388,7 @@ The bookmark "The Fourth Age" ([start and calendar](../00_foundation/01_start_an
 7. A human player of each of the fifteen countries receives its opening event on day 1; the Worshipdom's is the only one naming Afrit.
 8. 60 days run without any AI war declaration (Linux run).
 9. Every modifier, trigger and effect named in this spec exists in the 1.19.3 documentation (builder check through `assertModifiers`).
-10. On day 1 the 18 tree start spirits of the table above are present on their countries and defined once (builder test: each id appears in exactly one ideas file; Linux run, console check of Isengard, Adel and Girdon); no country has `zin_lost_cause_member`; Zol and Yeldenne own no division; footholds match the Afrit spec's table, Fotan and the six Dead Lands freeholds at 1 (Linux run, `list_vars` on four sample countries).
+10. On day 1 the 18 tree start spirits of the table above are present on their countries and defined once (builder test: each id appears in exactly one ideas file; Linux run, console check of Isengard, Adel and Girdon); no country has `zin_lost_cause_member`; Zol and Yeldenne own no division; footholds match the Afrit spec's table, Fotan and the six Ember Lands freeholds at 1 (Linux run, `list_vars` on four sample countries).
 
 ## Open questions
 

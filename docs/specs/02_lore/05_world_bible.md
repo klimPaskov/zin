@@ -46,7 +46,7 @@ Dates inside an age are proposals unless the vault fixes them. The four age leng
 | **1A 1 to about 800**, the Roads of Aen | Peace in the core [E]. Aenoran ships and settlers reach the Leren coast, the West Lands, the Cold Lands, the East Lands and the southern islands [E]. Settlers meet people already there, and fight in the West [E]. | The Naming of the Charts: *-dor* and *-waith* names on foreign shores; the western grievance; Leren and Aenoran kinship; Windwaith, Coldor and the Cold Lands ports. |
 | **About 800 to 1150** | Bad kings, revolts, a rising West [E]. Colonies fray. The North Lands stay allied; the West goes its own way. | Gunwaith and Girdon become kingdoms in their own right; the Free Crowns of the North settle in. |
 | **About 1150 to 1500** | Volgan invades Mirolon and conquers outward [E]. Refugees move north and east. Orc and goblin hosts rise in the Dark Lands. | Mirolon's lake-country becomes a refuge; Dondor holds its forest; the Dark Lands fragment into holds. |
-| **About 1500 to 1675** | The king dies and the capital falls [E]. Edran gathers the Grand Alliance [E]. Men, elves, giants, islanders and independent Dark Lands men fight under their own banners. Dardan kills millions [E]. Edran's Dead Lands campaign fails [E]. | The Elven Refusal; the Gala elves' long grief; the western commanders' memory of Edran's promises; the wasteland at Dardan (place open [O]). |
+| **About 1500 to 1675** | The king dies and the capital falls [E]. Edran gathers the Grand Alliance [E]. Men, elves, giants, islanders and independent Dark Lands men fight under their own banners. Dardan kills millions [E]. Edran's Ember Lands campaign fails [E]. | The Elven Refusal; the Gala elves' long grief; the western commanders' memory of Edran's promises; the wasteland at Dardan (place open [O]). |
 | **2A 1 to 2133**, the Age of Long Grief | Rebuilding and plague [E]. The Registers of the Lost are made. Elzon stirs the Dark Lands, returns Volgan's presence, raises the dead [E]. Refugees flee to the forests of Selen, the steppe of Hunhun and the isle of Asgard. Farming, medicine and fortification advance [E]. | The three refuge cultures of the Middle Lands; the marchers who resettle the south; the Houses of Refuge that become the Houses of the First Light. |
 | **3A 1 to 1260**, Elzon's Order [E] | Elzon holds Aenor, never the Magical Lands [E]. The Pale March goes up against the elves. The Black Roots sour the land. Varner and Golbran keep the Lantern Chain [P]. | The Cursed Lands and the Veiled; the Redbark tribes; the Great Wall's line; elven unity. |
 | **4A 1 to 212**, the Restoration | Harion crowns at Parim [P]. The Charters of Parim bind the dominions (4A 3 [P]). The Houses of the First Light get royal charters (4A 11 [P]). The Wall Accord keeps the Pale March as the Great Wall (4A 96 [P]). | The Concord and its 26 dominions; the Wall and Kingson's gate; the roads and Great Lake ports. |
@@ -61,7 +61,7 @@ Dates inside an age are proposals unless the vault fixes them. The four age leng
 | Aenoran settlers and sailors | The Great Lake | Leren coast, West coast, Cold Lands ports, Triton's harbours, East coast cities | 1A 1 to 800 | Charts, trade, land |
 | Westerners | Hills and rivers of the West Lands | Their own kingdoms, against the settlers | 1A 1 to 800 | Resistance |
 | Refugees of the Fall of Aenor | The Vale of Aenor | Selen wood, Hunhun steppe, Asgard, the Magical Lands border | 2A 2133 and after | Elzon's conquest |
-| Mirolonese | Lake of Mirolon | The north coast of the Dead Lands, then back | 1A 1150 to 1500, then 2A | Volgan's conquest and his storms |
+| Mirolonese | Lake of Mirolon | The north coast of the Ember Lands, then back | 1A 1150 to 1500, then 2A | Volgan's conquest and his storms |
 | Marchers | The Vale | The southern and south-eastern frontier | 2A | Famine, empty land |
 | Orc clans | The Dark Lands hills | The volcano country and the iron hills | 4A 1100 to 1450 | Warlords, iron |
 | Wall-folk | The Vale | The Great Wall | 4A 96 | Watch-posts for tax-free farms |
@@ -126,7 +126,7 @@ Two realms hold the dead: Volgan's Dominion (grave hosts, necromantic orders) an
 
 ### Demons
 
-Corrupted angels in the existing account [E]. The Nether, in the south of the Dead Lands, is the seat of the King of Demons [E]; his name is open [O]. Demon, Dolon and Nezer are sworn to Volgan [W].
+Corrupted angels in the existing account [E]. The Nether, in the south of the Ember Lands, is the seat of the King of Demons [E]; his name is open [O]. Demon, Dolon and Nezer are sworn to Volgan [W].
 
 ## 3. The cultures
 
@@ -146,7 +146,7 @@ Fifty-three cultures, grouped by people. Each card answers the same questions: h
 | Free Crowns of the North | Men | Leren (inland) | Strait Litany | 3 | 21 |
 | Dondor Brutes | Men | Dondric (hold) | Hearth-Iron | 2 | 2 |
 | Wardens of Mirolon | Men | Mirolic (warden) | Warden's Vigil | 2 | 1 |
-| Dead Lands Freeholders | Men | Mirolic (coast) | Mourning Customs | 3 | 8 |
+| Ember Lands Freeholders | Men | Mirolic (coast) | Mourning Customs | 3 | 8 |
 | Winter-Crown Folk | Men | Coldic (crown) | Winter Hearth | 1 | 1 |
 | Ice Clans | Men | Coldic (clan) | Winter Hearth | 3 | 25 |
 | Isengard Warlords | Men | Coldic (march) | Storm Court | 2 | 1 |
@@ -274,7 +274,7 @@ The families of Kingson and the dominions along the Great Wall of Aenor. They ho
 
 *People:* Men. *Language:* Aenoran (march). *Faith:* The Lamp and the Furrow and The Stone Vigil. *Tier:* 3. *Countries (3):* Noleksun, Belurithon, Herez.
 
-The frontier peoples of the southern and south-eastern marches: Herez, Noleksun and Belurithon. They face the Dead Lands and settle the empty land.
+The frontier peoples of the southern and south-eastern marches: Herez, Noleksun and Belurithon. They face the Ember Lands and settle the empty land.
 
 | Topic | Description |
 | --- | --- |
@@ -286,7 +286,7 @@ The frontier peoples of the southern and south-eastern marches: Herez, Noleksun 
 | Calendar, food, crafts, trade | Plain bread, beans, goat cheese, barley beer. Crafts: ploughs, hurdles, signal beacons. Trade: wool, grain, hides to Parim. |
 | Architecture, city shape, dress, colours, heraldry | Farm-towns with palisades and beacon towers; Herez has a stone fort on the pass. Dress is brown wool and leather. Colours are ochre and green; arms bear a beacon. |
 | War traditions, arms, music | Militia spears and slings; beacons give a day's warning. Music is fiddle and harvest songs. |
-| Magic, dragons, the Wall | Wary. The Dead Lands are bad luck. Dragons are far away. |
+| Magic, dragons, the Wall | Wary. The Ember Lands are bad luck. Dragons are far away. |
 | Neighbours: friendships, grudges, trade, kinship | Mirolon is a distant cousin; the southern freeholds trade salt. Parim collects taxes and sends little help. |
 | In the game | **Flags:** Ochre, a beacon. **Portraits:** Sunburnt farmers. **Buildings:** Palisades, beacons. **Units:** Spear militia, slings. **Music:** Fiddle, plain. **Palette:** #b38a3a, #4e6b3a, #d8cba0 |
 
@@ -430,11 +430,11 @@ The lake-folk of Mirolon, Volgan's First Age conquest and now a free elective wa
 | Neighbours: friendships, grudges, trade, kinship | Volgan is the enemy they cannot show anyone. The freeholds of the north coast are cousins. Aenor laughed at them. |
 | In the game | **Flags:** Lake blue, a beacon or lamp. **Portraits:** Lean, sun-browned, watchful. **Buildings:** Stilt towns, beacon towers. **Units:** Scouts, archers, couriers. **Music:** Horn calls, flute. **Palette:** #3c5f78, #9fa7ae, #cbbd8e |
 
-#### Dead Lands Freeholders (`dead_lands_freeholds`)
+#### Ember Lands Freeholders (`dead_lands_freeholds`)
 
-*People:* Men. *Language:* Mirolic (coast). *Faith:* The Mourning Customs of the Dead Lands and The Lamp and the Furrow. *Tier:* 3. *Countries (8):* Nan, Mirodor, Mencnon, Luminor, Bennen, Gelon, Olen, Dra.
+*People:* Men. *Language:* Mirolic (coast). *Faith:* The Mourning Customs of the Ember Lands and The Lamp and the Furrow. *Tier:* 3. *Countries (8):* Nan, Mirodor, Mencnon, Luminor, Bennen, Gelon, Olen, Dra.
 
-The small human freeholds of the north coast of the Dead Lands and the Nan hills: fishers, salt-makers and hill chieftains.
+The small human freeholds of the north coast of the Ember Lands and the Nan hills: fishers, salt-makers and hill chieftains.
 
 | Topic | Description |
 | --- | --- |
@@ -820,7 +820,7 @@ The friendly, democratic and very old elves of the Magical Forest and its neighb
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | They tell many tellings of how the Great Folk began, and none is held to be true. The Magical Lands were never conquered [E]. Their elected speaker Sirael was war-speaker at Dardan [P]. After King Edran's folly at the Dead Lands they refused to send armies to defend Aenor [E, the Elven Refusal]. They fought Elzon only to hold their own forest [E]. The Wall Accord of 4A 96 [P] kept Elzon's Pale March as the Great Wall. |
+| Homeland, origin and settlement | They tell many tellings of how the Great Folk began, and none is held to be true. The Magical Lands were never conquered [E]. Their elected speaker Sirael was war-speaker at Dardan [P]. After King Edran's folly at the Ember Lands they refused to send armies to defend Aenor [E, the Elven Refusal]. They fought Elzon only to hold their own forest [E]. The Wall Accord of 4A 96 [P] kept Elzon's Pale March as the Great Wall. |
 | Language | Sylvan, the high dialect: lenited consonants, endings in -iel -wen -ion, and a deep respect for sound. Written in leaf-script. |
 | Faith, holy sites, clergy, festivals | The Kindred Song: the world was sung; to listen is a duty. Loremasters and song-wardens keep the Singing Groves. **Holy sites:** The Singing Groves; the Living Forest; the Great Wall's elven gates. **Clergy:** Loremasters and song-wardens. **Festivals:** The First Leaf (Thaw), the Long Listening (Longnight), the Dragon-Watch. |
 | Rule, inheritance, law | An elected First Speaker chosen by the council of houses, who may serve for centuries. The houses vote; there is no crown. Inheritance goes to a house, not a person. Law is the council's book of precedents, renewed each century. |
@@ -920,7 +920,7 @@ The old court of King Lorien of the Gala elves in the Lands of the Sun. [E] The 
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | Lorien led the Gala elves to the Grand Alliance in the First Age and fought at Dardan [E]. The Gala were estranged by Edran's attack on the Dead Lands [E]. Their relation to the Sunhot elves is open [O]. Roster countries named Gala and North Gala share the speech but their relation to the Gala court is not stated. |
+| Homeland, origin and settlement | Lorien led the Gala elves to the Grand Alliance in the First Age and fought at Dardan [E]. The Gala were estranged by Edran's attack on the Ember Lands [E]. Their relation to the Sunhot elves is open [O]. Roster countries named Gala and North Gala share the speech but their relation to the Gala court is not stated. |
 | Language | Galic: the most conservative elven tongue, with ea and ien, written in tall gold letters. |
 | Faith, holy sites, clergy, festivals | The Mirror Vigil: the Mirror of First Rain shows true traces of the past and uncertain futures; its keepers distrust prophecy. [P] **Holy sites:** The Mirror of First Rain at Gala (P); the old courts of Dardan's dead. **Clergy:** Keepers of the Mirror. **Festivals:** The First Rain (Rainwake), the Reading of the Dead of Dardan (in Mistfall). |
 | Rule, inheritance, law | A king who reigns as long as he wills. Law is the king's memory and the keepers' rolls. |
@@ -1214,7 +1214,7 @@ The dead, demons, orcs, ogres and necromantic orders of Volgan's Dominion: raise
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | The Dead Lands hold grave hosts, Netherborn demons, orcs, ogres, monster clans and necromantic orders. [E] Volgan, a Great Spirit, rebuilt them for a century. The dead here and the dead of Zol's Mistake have no settled relation. [O] |
+| Homeland, origin and settlement | The Ember Lands hold grave hosts, Netherborn demons, orcs, ogres, monster clans and necromantic orders. [E] Volgan, a Great Spirit, rebuilt them for a century. The dead here and the dead of Zol's Mistake have no settled relation. [O] |
 | Language | The Rite-Tongue for offices and gates; the living speak their own tongues. |
 | Faith, holy sites, clergy, festivals | The Dread Cult: a rite of names and gates. **Holy sites:** The Gate of Nafeher; the grave-fields behind the storms. **Clergy:** Necromantic orders; wardens of the Gates. **Festivals:** The Muster of Names, the Opening of the Gates. |
 | Rule, inheritance, law | Volgan commands; the Ember Herald, the Grave-Warden and Ghorvak lead. [P] |
@@ -1256,7 +1256,7 @@ The demons of the Nether: Demon, Dolon and Nezer, sworn to Volgan. The King of D
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | The demons of the Nether are corrupted angels in the existing account [E]. The Nether lies in the south of the Dead Lands [E]. The King of Demons dwells there and his name is open [O]. Demon, Dolon and Nezer are sworn to Volgan [W]. Demons need not all serve Volgan [E]. |
+| Homeland, origin and settlement | The demons of the Nether are corrupted angels in the existing account [E]. The Nether lies in the south of the Ember Lands [E]. The King of Demons dwells there and his name is open [O]. Demon, Dolon and Nezer are sworn to Volgan [W]. Demons need not all serve Volgan [E]. |
 | Language | Infernal: harsh z, v, th, kh. |
 | Faith, holy sites, clergy, festivals | The Pact-Rite. **Holy sites:** The pact-halls of Demon, Dolon and Nezer. **Clergy:** Pact-heralds. **Festivals:** The Ash Night. |
 | Rule, inheritance, law | Each realm has a Lord or Queen who keeps a pact and a pact-name. Oaths are blood and ash. Law is the pact. |
@@ -1275,7 +1275,7 @@ The Faith of the Deliverer is real and widely held [E public worship]. Every oth
 | Faith | Kind | What believers hold | Holy sites | Clergy | Festivals | Kept by |
 | --- | --- | --- | --- | --- | --- | --- |
 | The Faith of the Deliverer [secret hub] | devotion | The Deliverer, a New God of deliverance, protection and renewal, saved Aoaz when the Great Necromancer fell and still keeps the peace. [E public worship; P doctrine] Believers keep a lamp and a loaf for the stranger and give a tenth of the first harvest to the Houses of the First Light. | The House of the First Light at Parim; the pilgrim hostels of the Zilin Hills; a house in every town of Aenor. | Confessors who hear, teach and write the birth rolls; healers of the Houses; the High Confessor at the head, seated in the Zilin Hills. | The Lamp-Lighting (1 Thaw), the Day of Deliverance (the Third Age's end, in Mistfall), the Thousand-Year Jubilee every hundred years (last in 4A 1000). | Lake Aenorans, Zilin Pilgrim-Folk |
-| The Lamp and the Furrow | devotion | Households honour the New Gods in two folk images: a lamp that never goes out, and rain over a ploughed field. These are the pictures people carry; the gods are more than the pictures. [Images taken from Eindil's vision in the chronicle; P as folk images] | Hearth shrines; lamp-posts at crossroads; rain-stones in the fields. | None. Mothers and eldest sons keep the lamp; the village keeps the rain-stone. | Thaw Lamp (1 Thaw), Rain-Feast (Rainwake), Harvest Home (Harvest), the Vigil of Longnight. | Lake Aenorans, Selen Rangers, Steppe Riders, Wall-Folk, March-Folk, Isle Houses of Asgard, Leren of the Strait, Free Crowns of the North, Wardens of Mirolon, Dead Lands Freeholders, Western Guildmen, Chart-Islanders, Goodin Sunfolk |
+| The Lamp and the Furrow | devotion | Households honour the New Gods in two folk images: a lamp that never goes out, and rain over a ploughed field. These are the pictures people carry; the gods are more than the pictures. [Images taken from Eindil's vision in the chronicle; P as folk images] | Hearth shrines; lamp-posts at crossroads; rain-stones in the fields. | None. Mothers and eldest sons keep the lamp; the village keeps the rain-stone. | Thaw Lamp (1 Thaw), Rain-Feast (Rainwake), Harvest Home (Harvest), the Vigil of Longnight. | Lake Aenorans, Selen Rangers, Steppe Riders, Wall-Folk, March-Folk, Isle Houses of Asgard, Leren of the Strait, Free Crowns of the North, Wardens of Mirolon, Ember Lands Freeholders, Western Guildmen, Chart-Islanders, Goodin Sunfolk |
 | The Green Lords | spirit | Every old wood has a Wild Spirit, a Lord of the Green, who must be asked before an arrow is loosed. Rangers keep the Quiet Law: no bow is drawn in the forest during the Hallow Month. [Wild Spirits are a proposed nature in the vault] | Hollow oaks; the Moot Tree of Selen; the shrine glades along the Wall's western edge. | Tree-wardens, one for each wood, chosen by the woodland moot. | Hallow Month (Fallowing), Green-Waking (Thaw, when the first leaves are counted), the Three Arrows (midsummer shooting). | Selen Rangers |
 | The Horse-Oath | spirit | The herd and the sky are one thing. A rider swears on a horse, and the horse carries the oath to the sky, where the spirits of the wind listen. An oath broken is a horse lost. | Felt-tents of the oath at the great summer gatherings; horse-barrows facing east. | Oath-riders, old riders who witness oaths and judge their breaking. | The Gathering (Highsun), the Foaling (Thaw), the Last Ride (Mistfall). | Steppe Riders |
 | The Stone Vigil | duty | The Wall is a promise. Those who keep it keep faith with the dead of the Third Age. A watch-family is born to its post, and the post is holy. | The watch-shrines in every tower of the Wall; the Gate at Kingson; the Names Wall of those who fell holding the Pale March. | Watch-chaplains, soldiers who also keep the rolls of the fallen. | The Accord-Day (the Wall Accord, 4A 96), the Night Watch of Longnight, the Reading of Names. | Wall-Folk, March-Folk, Pass-Warden Elves |
@@ -1309,7 +1309,7 @@ The Faith of the Deliverer is real and widely held [E public worship]. Every oth
 | The Slow Rite | spirit | The ents answer to the grove and the grove to the season. They hold no rites a man can see; a moot of ents may take three years to say one sentence. | The Moot-Grove of Kilinti. | None; the Eldest speaks last. | The Ent-Moot (every seventh Thaw). | Ents of Kilinti |
 | The Children of Volgan's Dread | dark | Volgan is worshipped as a god though he is a Great Spirit. The dead of his Dominion keep a rite of Names and Gates. [Volgan's rank is E Great Spirit; mortals' belief is not proof] | The Gate of Nafeher; the grave-fields behind the storms. | Necromantic orders; wardens of the Gates. | The Muster of Names, the Opening of the Gates. | Grave Hosts of Volgan |
 | The Pact-Rite of the Nether | dark | Every lord of the Nether keeps a pact and a pact-name known only to the pact. Oaths are blood and ash. | The pact-halls of Demon, Dolon and Nezer. | Pact-heralds. | The Ash Night. | Netherborn |
-| The Mourning Customs of the Dead Lands | ancestor | People of the Dead Lands bury quickly and bury deep, with salt, and say nothing of Zol or Volgan at the grave. Their gods are the New Gods of safe harbours. | Salt-graves along the north coast. | Grave-wives. | The Salt Day. | Dead Lands Freeholders |
+| The Mourning Customs of the Ember Lands | ancestor | People of the Ember Lands bury quickly and bury deep, with salt, and say nothing of Zol or Volgan at the grave. Their gods are the New Gods of safe harbours. | Salt-graves along the north coast. | Grave-wives. | The Salt Day. | Ember Lands Freeholders |
 | The Warden's Vigil | duty | Mirolon honours the New Gods as watchers. Every warden keeps a night vigil each month and every watch-tower keeps a lamp lit toward the south. | The beacon towers; the Lake of Mirolon. | Vigil-captains. | The Long Watch, the Beacon-Night. | Wardens of Mirolon |
 | Hearth-Iron | ancestor | A bar of iron is kept at every hearth and passed to the eldest son. The New Gods are honoured as the forges that make iron. Old feuds are settled over the bar. | The iron-halls of Dondor; the beacon forges. | Iron-keepers (smiths). | The Forging (Thaw), the Iron Night. | Dondor Brutes |
 | (none written) | open | The vault does not say what the dead of Zol's Mistake believe, if anything. Nothing is invented. [O] | (open) | (open) | (open) | Zol's Dead |
@@ -1338,7 +1338,7 @@ The crown is proud, quick to insult and strong at sea. Its Speakers' Hall of shi
 
 ### Volgan
 
-A Great Spirit of immense age and the main dark lord [E]. He once served a New God and overcame it [E]. His First Age conquest began at Mirolon; he fell at Dardan and was banished to the Void [E]. Elzon freed his presence in the Second Age [E]. Through the Third Age he stayed in the Dead Lands. In the Fourth Age he has rebuilt his strength behind the Dead Lands' storms for a century and means to take Mirolon and march north [E].
+A Great Spirit of immense age and the main dark lord [E]. He once served a New God and overcame it [E]. His First Age conquest began at Mirolon; he fell at Dardan and was banished to the Void [E]. Elzon freed his presence in the Second Age [E]. Through the Third Age he stayed in the Ember Lands. In the Fourth Age he has rebuilt his strength behind the Ember Lands' storms for a century and means to take Mirolon and march north [E].
 
 His Dominion is a mixed host: grave hosts, Netherborn demons, orcs, ogres, monster clans and necromantic orders [E]. It is not the Dark Lands, whose holds are independent [E]. He trusts Demon, Dolon and Nezer, who are sworn to him [W]. He fears nothing he admits to. His border is the storm belt on the coast and the heat in the interior; Mirolon's northern passes are the one gate he must take.
 
@@ -1346,11 +1346,11 @@ His Dominion is a mixed host: grave hosts, Netherborn demons, orcs, ogres, monst
 
 The black north was already desolate before Aen [E]. Zol, the Old God of Death and the only Old God in Aoaz, cannot take a body; his servants sustain his presence [E]. His power grows slowly [E]. The realm is nearly empty of the living and roamed by the dead, who are sustained by his own magic and cannot be ended by ordinary arms [E]. The seat is Furviatlon [W].
 
-Who administers the realm for Zol is unknown [O], and this bible does not say. It has no court, no declared faith and no named leader: its leader is an emblem [S4]. Its border is the black sea and the black earth. Fishermen of the Ocean of Zol tell of black ships, and nobody at court believes them.
+Who administers the realm for Zol is unknown [O], and this bible does not say. It has no court, no declared faith and no named leader: its leader is an emblem [S4]. Its border is the black sea and the black earth. Fishermen of the Kusmeel tell of black ships, and nobody at court believes them.
 
 ### The Magical Forest
 
-The oldest of the elven realms, never conquered [E]. It rules by an elected council of houses [P] and a First Speaker who may serve for centuries. In the First Age its war-speaker Sirael [P] fought at Dardan beside Lorien. After Edran's folly in the Dead Lands the elves refused to send armies for the humans of Aenor [E]. In the Third Age they held their own wood against Elzon and the Pale March [E]. The Wall Accord of 4A 96 kept the Pale March as the Great Wall [P], and the elves have lived beside it since.
+The oldest of the elven realms, never conquered [E]. It rules by an elected council of houses [P] and a First Speaker who may serve for centuries. In the First Age its war-speaker Sirael [P] fought at Dardan beside Lorien. After Edran's folly in the Ember Lands the elves refused to send armies for the humans of Aenor [E]. In the Third Age they held their own wood against Elzon and the Pale March [E]. The Wall Accord of 4A 96 kept the Pale March as the Great Wall [P], and the elves have lived beside it since.
 
 Now it is peaceful, learned and watchful. Its songs record every house and its loremasters remember Varner. It commands the dragons of Dragon Mountain, as elven powers can [E]. It trusts the other Kindred and Gala. It fears men who break alliances. Its borders are the Great Wall on the west and the high passes on the south; the rift sea is its east.
 
@@ -1392,7 +1392,7 @@ It trusts nobody. It fears Dondor, who holds the iron road, and the free holds, 
 
 ### Mirolon
 
-The lake-country of Mirolon was Volgan's first conquest in the First Age [E]. Freed after Dardan, it became an elective warden-realm [P] of lake towns and beacon towers. It fortified its northern passes about 4A 1650 [P]. In 4A 1736 [P] its envoy warned Parim that the Dead Lands were arming and was laughed at.
+The lake-country of Mirolon was Volgan's first conquest in the First Age [E]. Freed after Dardan, it became an elective warden-realm [P] of lake towns and beacon towers. It fortified its northern passes about 4A 1650 [P]. In 4A 1736 [P] its envoy warned Parim that the Ember Lands were arming and was laughed at.
 
 The wardens know what Parim does not. They trust their scouts and their cords. They fear Volgan in silence. Their border is the Mirolon Passes on the north; the Mirolon Sound and the coast to the south; behind them is the Lake of Mirolon and its Great Swamp.
 
@@ -1610,29 +1610,29 @@ Every country has exactly one dominant culture and, where it truly is mixed, a s
 | Dunbulinor | Orcs and goblins | Iron Clans | Orcish (iron) | Skull and Fire | A three-state hold of toll-gatherers. | Colost | Goldoroth | The hills. |
 | Fondor | Orcs and goblins | Iron Clans | Orcish (iron) | Skull and Fire | A hold at the Fonoor Forest [E label] that fells timber for the strait. | Dunbulinor | Goldoroth | The forest. |
 
-### 6.7 Dead Lands (13)
+### 6.7 Ember Lands (13)
 
 | Country | People | Culture | Language | Religion | Founding story | Trusts | Fears | Why the borders lie there |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Mirolon | Men | Wardens of Mirolon | Mirolic (warden) | Warden's Vigil | Volgan's First Age conquest, freed after Dardan; now an elective warden-realm facing his border [E rivalry; P]. | Its own scouts | Volgan, silently | The northern passes it fortified about 4A 1650 [P]. |
-| Nan | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A hill warlordship of Nan under Warlord Dumar [P]. | Itself | Volgan's road | The Nan Mountains [E label]. |
+| Nan | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A hill warlordship of Nan under Warlord Dumar [P]. | Itself | Volgan's road | The Nan Mountains [E label]. |
 | Nezer | Demons | Netherborn | Infernal (nether) | Pact-Rite | A sworn realm of the Southern Dominion [W]; its Queen Nazara [P]. | Volgan | Rival demons | The Nezerun hills. |
-| Mirodor | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A coast freehold on Mirolon's border, named with the chart ending. | Mirolon | Storms off the Mirolon Sound | The sound and the coast road. |
-| Mencnon | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A two-state freehold of salt-makers. | Mirolon | Salt-thieves | The pans. |
-| Luminor | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A freehold of lamp-makers on the coast. | Mirolon | Storms | The lamp-cliffs. |
-| Bennen | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A coast freehold of net-makers. | Mirolon | Storms | The coast. |
-| Gelon | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A coast freehold on a sheltered bay. | Mirolon | Storms | The bay. |
-| Olen | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A three-state freehold under Olena of the Holy Breeze [P]. | Mirolon | Storms | The coast [E label Holy Breeze]. |
-| Dra | Men | Dead Lands Freeholders | Mirolic (coast) | Mourning Customs | A one-state freehold of fishers. | Olen | Storms | The coast. |
+| Mirodor | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A coast freehold on Mirolon's border, named with the chart ending. | Mirolon | Storms off the Mirolon Sound | The sound and the coast road. |
+| Mencnon | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A two-state freehold of salt-makers. | Mirolon | Salt-thieves | The pans. |
+| Luminor | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A freehold of lamp-makers on the coast. | Mirolon | Storms | The lamp-cliffs. |
+| Bennen | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A coast freehold of net-makers. | Mirolon | Storms | The coast. |
+| Gelon | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A coast freehold on a sheltered bay. | Mirolon | Storms | The bay. |
+| Olen | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A three-state freehold under Olena of the Holy Breeze [P]. | Mirolon | Storms | The coast [E label Holy Breeze]. |
+| Dra | Men | Ember Lands Freeholders | Mirolic (coast) | Mourning Customs | A one-state freehold of fishers. | Olen | Storms | The coast. |
 | Demon | Demons | Netherborn | Infernal (nether) | Pact-Rite | A sworn realm of the Southern Dominion [W]; Hazarel the Horned [P]. | Volgan | Rival demons | The Nether foothills. |
 | Dolon | Demons | Netherborn | Infernal (nether) | Pact-Rite | A sworn realm of the Southern Dominion [W]; on the Dead Sea. | Volgan | Rival demons | The salt coast. |
-| Volgan | The dead | Grave Hosts of Volgan (also Netherborn) | Rite-Tongue (rite) | Dread Cult | Volgan, a Great Spirit [E], rebuilt his Dominion behind the Dead Lands' storms; seat Nafeher [W]. Minor peoples: demons, orcs, ogres. [W] | Demon, Dolon, Nezer | Nothing he admits | The storm-girt coast and the Dead Lands' mountains [E]. |
+| Volgan | The dead | Grave Hosts of Volgan (also Netherborn) | Rite-Tongue (rite) | Dread Cult | Volgan, a Great Spirit [E], rebuilt his Dominion behind the Ember Lands' storms; seat Nafeher [W]. Minor peoples: demons, orcs, ogres. [W] | Demon, Dolon, Nezer | Nothing he admits | The storm-girt coast and the Ember Lands' mountains [E]. |
 
 ### 6.8 Zol's Mistake (1)
 
 | Country | People | Culture | Language | Religion | Founding story | Trusts | Fears | Why the borders lie there |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Zol | The dead | Zol's Dead | none recorded | (none written) | The black north was already desolate when Aen's charts reached it [E]. Who governs it for Zol is open [O]. | (open) [O] | (open) [O] | The black wastes and every black island of the Ocean of Zol [E]. |
+| Zol | The dead | Zol's Dead | none recorded | (none written) | The black north was already desolate when Aen's charts reached it [E]. Who governs it for Zol is open [O]. | (open) [O] | (open) [O] | The black wastes and every black island of the Kusmeel [E]. |
 
 ### 6.9 Magical Lands (22)
 
@@ -1673,7 +1673,7 @@ Every country has exactly one dominant culture and, where it truly is mixed, a s
 | Stabilo | Men | Caravan Princes | Stabilic (trade) | Honest Scale | The merchant-princes of the southern roads, seat Postondoroth [W]; their capital is moved to match. | Drak, the Stabilo Pact | Noris | The Gold Road and the Sand Road. |
 | Avalon | Men | Red Lands Tribunes | Alerhic (clay) | Red Hearth | The Red Lands, a tribunate of village heads [E label Avalon / The Red Lands]. | Stabilo | Noris | The red clay. |
 | Miaed | Men | River-Kings of the East | Alerhic (court) | River Temples | A great desert-pass kingdom of 19 states; Lord Furanow [P]. | Alerhia | Noris, the Lands of Light | The desert passes. |
-| Woqood | Men | Noris Camel Warriors | Noric (desert) | Well-Oath | A north-coast desert kingdom whose wells face the Ocean of Zol. | Noris | Rumours from the sea | The coast road. |
+| Woqood | Men | Noris Camel Warriors | Noric (desert) | Well-Oath | A north-coast desert kingdom whose wells face the Kusmeel. | Noris | Rumours from the sea | The coast road. |
 | Hacsen | Men | Noris Camel Warriors | Noric (desert) | Well-Oath | A north-coast desert kingdom of date farmers. | Noris | Rumours from the sea | The coast road. |
 | Vigodor | Men | Noris Camel Warriors | Noric (desert) | Well-Oath | A north-coast kingdom with a chart-name ending. | Noris | Rumours from the sea | The coast road. |
 | Fladev | Men | Noris Camel Warriors | Noric (desert) | Well-Oath | A one-state island kingdom of the northern coast. | Noris | Storms | The island. |
@@ -1799,8 +1799,8 @@ Borders follow the first thing a person cannot cross with a cart. The geography 
 | The Iron Road | Dondor's hills to the straits | Iron meets the sea at Blackton | Iron bars, mail |
 | The Great River Gorge | Kingson Vale to the Great Lake | The Great River drains the vale through one gorge | Wall goods, wool |
 | The Wall Road | Kingson Gate to the Magical Lands | The one gate in the Wall | Silver, healing herbs, dragon-scale |
-| The Salt Run | North coast of the Dead Lands to Mirolon | Pans and a safe road behind the storm belt | Salt, fish |
-| The Ocean of Peace crossing | The Great Lake ports to the Lands of the Sun | A southern sea route past the Dead Lands' storms | Pilgrims, silk, glass |
+| The Salt Run | North coast of the Ember Lands to Mirolon | Pans and a safe road behind the storm belt | Salt, fish |
+| The Ocean of Peace crossing | The Great Lake ports to the Lands of the Sun | A southern sea route past the Ember Lands' storms | Pilgrims, silk, glass |
 
 ### Pilgrim roads
 

@@ -6,15 +6,15 @@
 
 ## 1. Overview
 
-The whole black north of Aoaz and every black island of the Ocean of Zol make up Zol's Mistake: a barren wasteland of black rock, ash and black frost, sparsely peopled and roamed by the dead [V: Zols Mistake]. It takes its name from Zol, the Old God of Death and the only Old God in Aoaz, who came here long before Aen and Volgan; what made the land a "Mistake" has never been told [V: Zols Mistake]. Zol cannot take a body under the Fading; servants sustain his presence, and his power grows very slowly [V: Zol; V: The Fading]. In 4A 1748 the Mistake is silent. Its seat, the town of Furviatlon, has a keeper nobody knows [V: Zols Mistake], and on the black isle of Šodolôrō dwells Edvoid (name to be replaced), Zol's most loyal servant [BC 63; OD]. Only island fishermen have seen black ships among the isles, and no court believes them [V: Fourth Age Chronology §IV]. Before the age ends, Zol's dead, which ordinary weapons cannot end, will come south through the islands and the straits [V: The Fourth Age of Aoaz §IX].
+The whole black north of Aoaz and every black island of the Kusmeel make up Zol's Mistake: a barren wasteland of black rock, ash and black frost, sparsely peopled and roamed by the dead [V: Zols Mistake]. It takes its name from Zol, the Old God of Death and the only Old God in Aoaz, who came here long before Aen and Volgan; what made the land a "Mistake" has never been told [V: Zols Mistake]. Zol cannot take a body under the Fading; servants sustain his presence, and his power grows very slowly [V: Zol; V: The Fading]. In 4A 1748 the Mistake is silent. Its seat, the town of Furviatlon, has a keeper nobody knows [V: Zols Mistake], and on the black isle of Šodolôrō dwells Kusven, Zol's most loyal servant [BC 63; OD]. Only island fishermen have seen black ships among the isles, and no court believes them [V: Fourth Age Chronology §IV]. Before the age ends, Zol's dead, which ordinary weapons cannot end, will come south through the islands and the straits [V: The Fourth Age of Aoaz §IX].
 
 ## 2. Physical character
 
 ### Terrain and relief
 
-A barren plateau at elevation 1 to 2 with a low black ridge, the proposed **Barren Crown** (`range_barren_crown`, elevation 3), across it [GM region_zols_mistake]. Terrain shares: plains 55%, black desert 20%, hills 15%, mountain 8%, marsh 2% [GM region_zols_mistake]. The mainland is the **Northern Wastes** (`land_northern_wastes`, about 567,000 pixels), running off the north edge of the map into the proposed **Ashen Cliffs** (`ice_ashen_cliffs`), an impassable black cliff-line [GM]. The black-waste features are the mainland **Zol's Mistake** (`waste_zols_mistake`), the great black oval **Isle of Šodolôrō** (`waste_sodoloro_isle`, `land_island_003`, about 22,800 pixels) and the **Black Islands of the Ocean of Zol** (`waste_black_islands`), some thirty islands from the North Lands' waters to the East Lands' (`land_island_013` to `_077`) [GM]. The proposed **Furviatlon Cape** (`cape_zol`) is the mainland's south cape [GM].
+A barren plateau at elevation 1 to 2 with a low black ridge, the proposed **Barren Crown** (`range_barren_crown`, elevation 3), across it [GM region_zols_mistake]. Terrain shares: plains 55%, black desert 20%, hills 15%, mountain 8%, marsh 2% [GM region_zols_mistake]. The mainland is the **Northern Wastes** (`land_northern_wastes`, about 567,000 pixels), running off the north edge of the map into the proposed **Ashen Cliffs** (`ice_ashen_cliffs`), an impassable black cliff-line [GM]. The black-waste features are the mainland **Zol's Mistake** (`waste_zols_mistake`), the great black oval **Isle of Šodolôrō** (`waste_sodoloro_isle`, `land_island_003`, about 22,800 pixels) and the **Black Islands of the Kusmeel** (`waste_black_islands`), some thirty islands from the North Lands' waters to the East Lands' (`land_island_013` to `_077`) [GM]. The proposed **Furviatlon Cape** (`cape_zol`) is the mainland's south cape [GM].
 
-Drawn island names: Peledor, Drolkot (or Brolkot), Erinlor, Dabvi, Aonuc, and several only partly legible (D…kth, Li…, B…ntōo, Ned…, Bl…) [NT]. On the Magical Lands sheet the drawing also marks an "Edvoid's Mistake" coast with the isles Dlomntod and Medek and a region "Lost Lands" [NT]; the current roster gives these to the Mistake [RO].
+Drawn island names: Peledor, Drolkot (or Brolkot), Erinlor, Dabvi, Aonuc, and several only partly legible (D…kth, Li…, B…ntōo, Ned…, Bl…) [NT]. On the Magical Lands sheet the drawing also marks an "Kusven's Mistake" coast with the isles Dlomntod and Medek and a region "Lost Lands" [NT]; the current roster gives these to the Mistake [RO].
 
 ### Climate and seasons
 
@@ -38,9 +38,9 @@ Black frost that splits rock and skin; reefs among the black isles; becalmed sea
 | --- | --- | --- |
 | **The dead** | established: roam the land; no classification or allegiance established; not all are Zol's [V: Zols Mistake] | everywhere; not counted among the living |
 | **Zol's dead (the hosts)** | established: sustained by Zol's own death-magic; ordinary weapons break their shapes but cannot end them; only potent magic can [V: The Fourth Age of Aoaz §IX; V: War of the Last Crowns] | raised from the Mistake and the islands (mechanic [MS zols_mistake §5]) |
-| **Edvoid (name to be replaced)** | owner decision: Zol's most loyal servant, a Great Spirit, who appears in the War of the Last Crowns [OD; HO §2.4]; card: lives in Šodolôrō, an evil spirit who wants all of Aoaz, feeds on the souls of others and grows stronger, feared by everyone, made by Zol [BC 63] | Šodolôrō |
+| **Kusven** | owner decision: Zol's most loyal servant, a Great Spirit, who appears in the War of the Last Crowns [OD; HO §2.4]; card: lives in Šodolôrō, an evil spirit who wants all of Aoaz, feeds on the souls of others and grows stronger, feared by everyone, made by Zol [BC 63] | Šodolôrō |
 | **Zol's other servants** | established: Great Spirits, Lesser Spirits and even New Gods serve him; identities unknown [V: New Gods; V: Great Powers and Relations] | unknown |
-| **The Beasts** | card: bear-like, faster and stronger, seen only at night, attack everyone, favour human flesh, "Edvoid's main minions" [BC 55] | the Mistake |
+| **The Beasts** | card: bear-like, faster and stronger, seen only at night, attack everyone, favour human flesh, "Kusven's main minions" [BC 55] | the Mistake |
 | **The living** | established: "sparsely populated" [V: Zols Mistake]; who keeps Furviatlon is open [V: Zols Mistake] | Furviatlon; a few fisher hamlets on the outer isles (proposed) |
 
 **Languages.** None is recorded for the Mistake [LG §2]; its places keep their drawn names [LG §8]. Proposed: the living fisher hamlets of the outer isles speak Leren, because they lie in the waters nearest the North Lands and trade their fish there; they are the "island fishermen" whose tales nobody believes [V: Fourth Age Chronology §IV].
@@ -57,7 +57,7 @@ The economy spec gives the Mistake nothing: "nothing grows" [EC]. Zol's armies d
 
 - **The realm** is one country, named **Zol's Mistake**, because no country is named after its leader (owner rule F1 [HO §5.1]). Its leader is shown as an emblem, **"The Will of Zol"**, which says nothing about who administers the Mistake (decided in earlier specs [SS Zol's Mistake]).
 - **The seat** is Furviatlon (working [V: Great Powers and Relations]). Who administers it for Zol (a Great Spirit, a Lesser Spirit, a New God, an undead order or another) is **open** [V: Zols Mistake] and is not invented here.
-- **Edvoid (name to be replaced)** dwells on Šodolôrō [BC 63]. The owner has made him Zol's most loyal servant [OD]; whether he also administers Furviatlon is open.
+- **Kusven** dwells on Šodolôrō [BC 63]. The owner has made him Zol's most loyal servant [OD]; whether he also administers Furviatlon is open.
 - **The hosts** are numbered formations with no named commanders [MS zols_mistake §1].
 - **The fisher hamlets** (proposed): each hamlet keeps its own eldest; they pay nothing to Furviatlon and have never seen its keeper.
 
@@ -69,7 +69,7 @@ The economy spec gives the Mistake nothing: "nothing grows" [EC]. Zol's armies d
 
 - The North Lands' sailors say the Mistake is "the land the god of death got wrong" and that it is ill luck to name it at sea; the Strait Litany's Reading of the Lost names those lost "beyond the Rim".
 - The outer-isle fishers believe the still nights are the god listening, and they keep silent on them; they leave the first fish of the season on the black shore.
-- In the Dead Lands people say nothing of Zol or Volgan at the grave [WB §4 Mourning Customs].
+- In the Ember Lands people say nothing of Zol or Volgan at the grave [WB §4 Mourning Customs].
 - Learned men in Aenor think the Old Gods are dead, or sleeping, or hostile, and argue over it [V: Religious Knowledge and False Gods] (proposed contradictions).
 
 **Truth kept apart from belief.** Zol is the Old God of Death, the only Old God in Aoaz; the Fading and Aoaz's hostile local magic stop him using his power freely; servants sustain him; without them he could fade out of Aoaz, not be destroyed [V: Zol; V: Magic and Sustenance in Aoaz]. Why the land is a "Mistake" is unknown [V: Zols Mistake]. What the servants collect for him is unknown [MS zols_mistake, Lore basis]. No text explains Zol's origin or the wider world [HO §3].
@@ -79,17 +79,17 @@ The economy spec gives the Mistake nothing: "nothing grows" [EC]. Zol's armies d
 | Date | Status | Event |
 | --- | --- | --- |
 | Before Aen | established | Zol arrives in Aoaz long before Aen and Volgan; the black north is already desolate [V: Zols Mistake §Position during the First Age]. |
-| Before Aen, undated | owner decision; card | Edvoid (name to be replaced) is made by Zol [BC 63]; no date or age is stated [OD]. |
+| Before Aen, undated | owner decision; card | Kusven is made by Zol [BC 63]; no date or age is stated [OD]. |
 | 1A | established | Zol's domain is desolate and his local power dormant; its lands contribute no armies; Zol is not at Dardan [V: Zols Mistake; V: The First Age of Aoaz §6]. |
 | 2A | established | Zol is first perceptibly active when Elzon borrows some of his ancient magic; this does not make Zol Elzon's patron [V: The Second Age of Aoaz §I]. Proposed: nights of stillness around ancient graves; the sea around the Mistake lies still [V: The Second Age of Aoaz]. |
 | 3A 1260 (proposed date) | established event; proposed mechanism | Elzon draws too deeply on Zol's borrowed magic and is consumed, dying permanently [V: The Third Age of Aoaz; V: The Last Tithe]. |
 | 4A, long peace | proposed | The fisher hamlets of the outer isles trade quietly with the North Lands; ships that sail beyond the Rim do not always come back. |
 | 4A, late | proposed reading of the card | "Every day he quietly demolishes cities and gains power" [BC 63] is read as a slow, hidden menace: drowned fishing villages on the farthest coasts and ships that do not return, the start situation's hooks [SS Zol's Mistake], never the destruction of a city a court would notice. |
-| 4A 1744 | proposed | Island fishermen tell of black ships among the islands of the Ocean of Zol; nobody in a royal court believes them [V: Fourth Age Chronology §IV]. |
+| 4A 1744 | proposed | Island fishermen tell of black ships among the islands of the Kusmeel; nobody in a royal court believes them [V: Fourth Age Chronology §IV]. |
 | 4A 1748 | established | Zol's dead stir in the islands; only fishermen see it [V: The Campaign of 4A 1748]. |
 | 4A 1755 (proposed date) | established event | Zol's forces emerge from the black north through islands and straits toward the settled kingdoms [V: The Fourth Age of Aoaz §IX]. |
 | 4A 1756 to 1757 | established | Zol's forces clash with Volgan's, then briefly join them against Eindil [V: War of the Last Crowns]. Eindil, with Glo and Horos's blue sword, destroys an entire front of Zol's dead [V: The Fourth Age of Aoaz §X]. Varner dies shielding the living from Zol's death-magic [V: Fourth Age Canon Register]. |
-| 4A 1757 (proposed date) | owner decision | **Edvoid (name to be replaced) appears** on the field in Zol's stead; Zol does not appear in person [OD; HO §2.4]. The vault's beats for that moment (the champion overpowered, the blue sword shattered, a shard wounding the manifested form, Lorien and ancient spirits dying to force the withdrawal [V: War of the Last Crowns §5]) are proposed to pass to Edvoid, so that every established outcome stays (section 13). |
+| 4A 1757 (proposed date) | owner decision | **Kusven appears** on the field in Zol's stead; Zol does not appear in person [OD; HO §2.4]. The vault's beats for that moment (the champion overpowered, the blue sword shattered, a shard wounding the manifested form, Lorien and ancient spirits dying to force the withdrawal [V: War of the Last Crowns §5]) are proposed to pass to Kusven, so that every established outcome stays (section 13). |
 | After the withdrawal | open | What remains of Zol's presence, and of his servant, is open [V: Open Questions]. |
 
 **Where the region can diverge** (play): the rising can come early, late or never; Zol's presence can lapse; Volgan and the dead can fight to exhaustion rather than join; a court that sends a ship to look at the black isles is forewarned [MS zols_mistake §2, §4, §8].
@@ -99,17 +99,17 @@ The economy spec gives the Mistake nothing: "nothing grows" [EC]. Zol's armies d
 | Neighbour | Relation (proposed unless marked) |
 | --- | --- |
 | North Lands | Across the Rim: the fisher hamlets sell fish in the northern harbours; the dead come "through islands and straits" toward the settled kingdoms [V: The Fourth Age of Aoaz §IX]. |
-| Magical Lands | The drawing's "Edvoid's Mistake" coast and the Lost Lands border the Magical Lands' north [NT]. |
+| Magical Lands | The drawing's "Kusven's Mistake" coast and the Lost Lands border the Magical Lands' north [NT]. |
 | East Lands | Black isles reach the East Lands' waters [GM land_island_017]. |
 | Aenor | The working table makes Aenor Zol's rival [V: Great Powers and Relations]. |
-| Dead Lands | Volgan: first clashes, then a brief alliance against Eindil; their relationship is otherwise not established [V: Kingdoms Factions and Conflicts]. |
+| Ember Lands | Volgan: first clashes, then a brief alliance against Eindil; their relationship is otherwise not established [V: Kingdoms Factions and Conflicts]. |
 | Cold Lands, Dark Lands | Rumour only before the rising; the Dark Lands' northern shores watch for the dead [MS dark_lands, Phases]. |
 
 ## 9. Wildlife and creatures
 
 | Creature | Habitat | Rarity | Effect |
 | --- | --- | --- | --- |
-| **The Beasts** | the Mistake | many at night | Bear-like, faster and stronger, seen only at night, attack everyone, prefer human flesh; Edvoid's main minions [BC 55]. They make any night march in the Mistake deadly and keep the living off the mainland. |
+| **The Beasts** | the Mistake | many at night | Bear-like, faster and stronger, seen only at night, attack everyone, prefer human flesh; Kusven's main minions [BC 55]. They make any night march in the Mistake deadly and keep the living off the mainland. |
 | **The dead** | everywhere | many | Not wildlife; the wandering dead are not Zol's soldiers and are never recruited [MS zols_mistake, Rules]. |
 | Black lichen (proposed) | the rock | common | The only growing thing; burns with a cold smoke. |
 | Seals and cold-water fish (proposed) | the outer isles' waters | common | The fishers' living. |
@@ -120,8 +120,8 @@ No beast of another region is copied here. Sea birds avoid the black isles (prop
 
 | Settlement | Size (proposed) | Why it stands there |
 | --- | --- | --- |
-| **Furviatlon** | at most a town, perhaps 5,000 (model 12,000) | Working seat [V: Great Powers and Relations]; on the southern coast facing the Ocean of Zol, at the Furvi Run's mouth [GM site_furviatlon]. Who lives there is open [DM §10]. |
-| **Šodolôrō** (game text Šodolôro) | "the island city of the black oval" [GM site_sodoloro] | Edvoid's dwelling [BC 63]. What the "city" is, and whether anything living dwells there, is not stated. |
+| **Furviatlon** | at most a town, perhaps 5,000 (model 12,000) | Working seat [V: Great Powers and Relations]; on the southern coast facing the Kusmeel, at the Furvi Run's mouth [GM site_furviatlon]. Who lives there is open [DM §10]. |
+| **Šodolôrō** (game text Šodolôro) | "the island city of the black oval" [GM site_sodoloro] | Kusven's dwelling [BC 63]. What the "city" is, and whether anything living dwells there, is not stated. |
 | Fisher hamlets of the outer isles (proposed) | a few hundred each | On the black isles nearest the North Lands, where fish run and the dead are fewest. |
 
 ## 11. Roster proposal
@@ -130,9 +130,9 @@ No beast of another region is copied here. Sea birds avoid the black isles (prop
 
 | Realm | People | Political form | Capital | Extent | Why it exists |
 | --- | --- | --- | --- | --- | --- |
-| **Zol's Mistake** | the dead (Zol's hosts); a few living fishers | the dominion of a bodiless Old God, led by the emblem "The Will of Zol" | Furviatlon | the Northern Wastes, Šodolôrō and every black island of the Ocean of Zol, including the Magical Lands sheet's "Edvoid's Mistake" coast and isles | Established region [V: Zols Mistake]; working polity [V: Great Powers and Relations]. |
+| **Zol's Mistake** | the dead (Zol's hosts); a few living fishers | the dominion of a bodiless Old God, led by the emblem "The Will of Zol" | Furviatlon | the Northern Wastes, Šodolôrō and every black island of the Kusmeel, including the Magical Lands sheet's "Kusven's Mistake" coast and isles | Established region [V: Zols Mistake]; working polity [V: Great Powers and Relations]. |
 
-**Comparison with the current roster.** Y0U "Zol" [RO] is kept and renamed **Zol's Mistake**, as owner rule F1 requires [HO §5.1]; its 104 states keep their extent; its region labels "Edvoid's Mistake" and "Ocean of Edvoid" are replaced by Zol's Mistake and the Ocean of Zol, and the drawn "Nordwind" by the Pale Strand and the Still Sea. No second realm is proposed: a separate domain of Šodolôrō would decide the servant's political status, which the owner has not done.
+**Comparison with the current roster.** Y0U "Zol" [RO] is kept and renamed **Zol's Mistake**, as owner rule F1 requires [HO §5.1]; its 104 states keep their extent; its region labels "Kusven's Mistake" and "Kusmeel" are replaced by Zol's Mistake and the Kusmeel, and the drawn "Nordwind" by the Pale Strand and the Still Sea. No second realm is proposed: a separate domain of Šodolôrō would decide the servant's political status, which the owner has not done.
 
 ## 12. Gameplay role
 
@@ -140,32 +140,32 @@ No beast of another region is copied here. Sea birds avoid the black isles (prop
 
 **Changes the owner's decisions require** (proposed, for the mechanic's owner):
 
-- The spec's **manifestation** (`zin_zol_manifested`, the bodily appearance of Zol) is void [HO §2.4]; it becomes **the servant's appearance**: Edvoid (name to be replaced) takes the field, with the event art and flags renamed.
+- The spec's **manifestation** (`zin_zol_manifested`, the bodily appearance of Zol) is void [HO §2.4]; it becomes **the servant's appearance**: Kusven takes the field, with the event art and flags renamed.
 - The spec's rule that "nothing names, describes or ranks a servant of Zol" is superseded for this one servant: the owner has named and ranked him [OD]. The other servants stay unnamed.
 - **The Beasts** become a unit or event family of their own: night raiders on any coast near the Mistake after the rising, and a reason why the Mistake's mainland cannot be crossed by night.
-- **Quiet losses** before the rising: drowned villages and lost ships on the coasts nearest the Mistake, read as Edvoid's slow work, feeding the rumours.
+- **Quiet losses** before the rising: drowned villages and lost ships on the coasts nearest the Mistake, read as Kusven's slow work, feeding the rumours.
 
 **AI behaviour (proposed).** Silent until the rising; after it, hosts push south through the islands toward the North Lands and the Dark Lands' northern shore; never makes peace with the living; withdraws when the servant is forced back [MS zols_mistake, AI].
 
 ## 13. Questions for the owner
 
-1. **The servant's scene.** In the vault, Zol himself overpowers the restored Eindil, shatters Horos's sword, is wounded by a shard and is forced back by Lorien and ancient spirits [V: War of the Last Crowns §5]. Does Edvoid (name to be replaced) take every one of these beats, so that Lorien dies forcing the servant back?
-2. **The servant's new name.** Edvoid needs a new name [HO §2.7]; whose language should it come from, given that the Mistake has none, or will you give it?
+1. **The servant's scene.** In the vault, Zol himself overpowers the restored Eindil, shatters Horos's sword, is wounded by a shard and is forced back by Lorien and ancient spirits [V: War of the Last Crowns §5]. Does Kusven take every one of these beats, so that Lorien dies forcing the servant back?
+2. **The servant's new name.** Kusven needs a new name [HO §2.7]; whose language should it come from, given that the Mistake has none, or will you give it?
 3. **The living.** May the outer black isles hold a few thousand living fishers who speak Leren and trade with the North Lands (proposed), and may the Mistake's living be revised from 140,000 to about 20,000?
 4. **The Magical Lands' "Edvoid's Mistake".** The Magical Lands sheet marks an "Edvoid's Mistake" coast with Dlomntod, Medek and the Lost Lands [NT], and the roster gives them to the Mistake [RO]. Are they part of the Mistake, or Magical Lands ground that carried the old name?
 
 ## 14. Sources
 
-- **[OD]** owner decisions of 24 October 2026, relayed by the coordinator (Edvoid, name to be replaced, is Zol's most loyal servant and appears in the War of the Last Crowns; renaming of ill-fitting labels; no exact ages).
+- **[OD]** owner decisions of 24 October 2026, relayed by the coordinator (Kusven, name to be replaced, is Zol's most loyal servant and appears in the War of the Last Crowns; renaming of ill-fitting labels; no exact ages).
 - **[V: note §heading]** lore vault `docs/lore/vault/`: `05 - Geography/Zols Mistake.md` (incl. §Position during the First Age); `03 - Figures/Zol.md`; `01 - Cosmology/The Fading.md`; `01 - Cosmology/Magic and Sustenance in Aoaz.md`; `01 - Cosmology/New Gods.md`; `01 - Cosmology/Religious Knowledge and False Gods.md`; `06 - Politics/Great Powers and Relations.md`; `06 - Politics/Kingdoms Factions and Conflicts.md`; `07 - History/The First Age of Aoaz.md` §6; `07 - History/The Second Age of Aoaz.md` §I; `07 - History/The Third Age of Aoaz.md`; `07 - History/The Last Tithe.md`; `07 - History/The Fourth Age of Aoaz.md` §IX, §X; `07 - History/War of the Last Crowns.md` §5; `07 - History/Fourth Age Chronology.md` §IV; `07 - History/Fourth Age Canon Register.md`; `07 - History/The Campaign of 4A 1748.md`; `09 - Development/Open Questions.md`.
-- **[HO §n]** `docs/zin-handoff/01-CONTEXT-AND-CANON.md` (§2.4 Zol does not appear; §2.7 Edvoid to be renamed; §3 the wider world; §5.1 rule F1).
+- **[HO §n]** `docs/zin-handoff/01-CONTEXT-AND-CANON.md` (§2.4 Zol does not appear; §2.7 Kusven to be renamed; §3 the wider world; §5.1 rule F1).
 - **[GM id]** `tools/content/data/geography/aoaz.json`; spec `docs/specs/01_map/05_geography_model.md`.
-- **[NT]** `docs/name_table.md` (sheets Ocean of Edvoid and Magical Lands).
-- **[RO]** `tools/content/data/countries.json` (scan Ocean of Edvoid).
+- **[NT]** `docs/name_table.md` (sheets Kusmeel and Magical Lands).
+- **[RO]** `tools/content/data/countries.json` (scan Kusmeel).
 - **[DM]** `docs/specs/02_lore/07_demography_and_settlement.md` §4, §10 and `tools/content/data/world/demography.json`.
 - **[WB §n]** `docs/specs/02_lore/05_world_bible.md` (§3.9 Zol's Dead, §4).
 - **[LG §n]** `docs/specs/02_lore/06_languages.md` (§2, §8).
 - **[SS]** `docs/specs/02_lore/01_start_situation.md` (Zol's Mistake).
 - **[EC]** `docs/specs/03_gameplay/02_economy.md`.
 - **[MS file]** `docs/specs/04_mechanics/zols_mistake.md`, `dark_lands.md`.
-- **[BC n]** `docs/lore/sources/bestiary_cards_part2.md` (55 Beast, 63 Edvoid).
+- **[BC n]** `docs/lore/sources/bestiary_cards_part2.md` (55 Beast, 63 Kusven).

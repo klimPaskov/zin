@@ -8,7 +8,7 @@ updated: 2026-10-24
 
 *Canonical displayed name: **Zol's Mistake**.*
 
-A vast **black northern region** comprising a barren wasteland and **all the black islands of the Ocean of Zol**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region; it is the dwelling of [[Edvoid]] (name to be replaced, Q-10), Zol's most loyal servant (owner, 24 October 2026).
+A vast **black northern region** comprising a barren wasteland and **all the black islands of the Kusmeel**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region; it is the dwelling of [[Kusven]] (name to be replaced, Q-10), Zol's most loyal servant (owner, 24 October 2026).
 
 Its name derives from [[Zol]], the Old God of Death and the only Old God present in Aoaz. The exact event or transgression that makes this land a **"Mistake"** has not been explained.
 
@@ -16,7 +16,7 @@ The working political table places the capital or seat at **Furviatlon** and tre
 
 The dead wandering the land have no established classification or allegiance. Do not assume they all belong to Zol, [[Volgan]], or any single category until decided.
 
-**Former terms:** Edvoid's Mistake and Ocean of Edvoid are **superseded** names; their naming history is kept in [[Names and Retcons]]. The Ocean of Edvoid is renamed together with [[Edvoid]] (name to be replaced, Q-10).
+**Former terms:** Edvoid's Mistake and Ocean of Edvoid are **superseded** names; their naming history is kept in [[Names and Retcons]]. The sea is now **Kusmeel** and Edvoid is now [[Kusven]] (owner, 24 October 2026).
 
 [[Magic and Sustenance in Aoaz]] · [[Aoaz and Its Regions]] · [[Names and Retcons]]
 

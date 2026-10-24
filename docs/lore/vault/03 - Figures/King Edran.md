@@ -10,7 +10,7 @@ updated: 2026-10-17
 
 Edran held Aenor together after [[Battle of Dardan|Dardan]] and continued to guide its recovery in the early [[The Second Age of Aoaz|Second Age]]. He **died from disease** during the long period of grief and rebuilding. The particular illness and year are undecided.
 
-His greatest mistake was ordering the Grand Alliance's attempted conquest of the [[Volgans Dead Lands|Dead Lands]] after Volgan's banishment, against strong elven objections. [[Elzon]]'s defenders inflicted enormous casualties and forced the invaders to retreat. The resulting distrust endured for generations. **The elves refused to send armies to help the men of Aenor when Elzon later invaded.**
+His greatest mistake was ordering the Grand Alliance's attempted conquest of the [[Volgans Ember Lands|Ember Lands]] after Volgan's banishment, against strong elven objections. [[Elzon]]'s defenders inflicted enormous casualties and forced the invaders to retreat. The resulting distrust endured for generations. **The elves refused to send armies to help the men of Aenor when Elzon later invaded.**
 
 ## Proposed additional details
 

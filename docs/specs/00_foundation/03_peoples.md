@@ -21,7 +21,7 @@ Each country belongs to a people of Aoaz. The people sets the country's national
 - Dragons come from Dragon Mountain and do not form a country. Elven powers can command them; Afrit can through corruption.
 - Volgan's realm holds grave hosts, Netherborn demons, orcs, ogres, monster clans and necromantic orders.
 - Zol's dead are sustained by his magic; only potent magic, such as Glo's, can end them. Elzon's dead in Aenor faded and cost magic to renew.
-- Elves and men have been estranged since Edran's attack on the Dead Lands; the Elven Refusal still stands.
+- Elves and men have been estranged since Edran's attack on the Ember Lands; the Elven Refusal still stands.
 - Roka belongs to a people of large rhinoceros-headed humanoids of the Abyss; **their name is open**.
 
 **Proposed (this spec):** every modifier, the split of orcs and goblins, the minor-people mechanism, the regional tradition flags, the reserved keys and all numbers.

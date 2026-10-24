@@ -19,7 +19,7 @@ This vault documents the world of **ZIN** and the history, peoples, magic, and p
 
 ## Start with characters and relations
 
-[[Royal Line of Aen]] · [[Ein]] · [[Eindil]] · [[Afrit]] · [[Aurevan the Deliverer]] (proposed public name) · [[Horos]] · [[Glernaen]] · [[Lorien]] · [[Varner]] · [[Golbran]] · [[Alleria of Selen]] · [[Volgan]] · [[Elzon]] · [[Zol]] · [[Edvoid]] · [[Roka]]
+[[Royal Line of Aen]] · [[Ein]] · [[Eindil]] · [[Afrit]] · [[Aurevan the Deliverer]] (proposed public name) · [[Horos]] · [[Glernaen]] · [[Lorien]] · [[Varner]] · [[Golbran]] · [[Alleria of Selen]] · [[Volgan]] · [[Elzon]] · [[Zol]] · [[Kusven]] · [[Roka]]
 
 ## Cosmology and artifacts
 
@@ -29,7 +29,7 @@ This vault documents the world of **ZIN** and the history, peoples, magic, and p
 
 ## Political and geographical references
 
-[[Fourth Age Map of Aoaz]] · [[Aoaz and Its Regions]] · [[Middle Lands and Aenor]] · [[Volgans Dead Lands]] · [[Zols Mistake]] · [[Nether]] · [[Abyss]] · [[Afrits Hidden Council]] · [[The Lost Cause]]
+[[Fourth Age Map of Aoaz]] · [[Aoaz and Its Regions]] · [[Middle Lands and Aenor]] · [[Volgans Ember Lands]] · [[Zols Mistake]] · [[Nether]] · [[Abyss]] · [[Afrits Hidden Council]] · [[The Lost Cause]]
 
 ## Visual references
 

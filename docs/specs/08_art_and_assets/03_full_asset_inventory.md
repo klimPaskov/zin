@@ -154,7 +154,7 @@ Standard 210×176 and news 397×153, DDS A8R8G8B8, `gfx/event_pictures/zin/zin_e
 | Id | Family | Subjects | Calls | Needed by | Pri / Ph | Wave |
 | --- | --- | ---: | ---: | --- | --- | --- |
 | E1 | Catalog picture keys: the 52 keys of the icon catalog (done) and the 18 requested keys of section 5.5 (among them `temple_parim_interior`, `mirror_courtyard`, `dragon_roosts`, `gods_gathering` (gate `zin_volgan_struck_down_eindil`), `rift_sails` (gate `zin_eastern_invasion`), `passes_burning` (gate `zin_war_of_last_crowns`)), plus the requested crops of existing generations (the `war_king` and `cliff` news crops, the eight `GFX_zin_evt_ending_<key>` standard crops) | 70 (+crops; 28 news crops done) | 70 (52 done) | [06_events](../06_events/), mechanics | 5 / 5 | 4 |
-| E2 | Regional sets (depth): for each of 11 regions (Middle Lands, North Lands, Cold Lands, West Lands, Triton's Islands, Dark Lands, Magical Lands, Dead Lands, East Lands, Islands of the South, Lands of the Sun) four keys `reg_<region>_court`, `_town`, `_muster`, `_land`. They replace `generic_*` in the about 700 events that now share five generic pictures. A muster shows banners and tents, never a battle | 44 | 44 | flavour and regional events | 5 / 8 | 6 |
+| E2 | Regional sets (depth): for each of 11 regions (Middle Lands, North Lands, Cold Lands, West Lands, Triton's Islands, Dark Lands, Magical Lands, Ember Lands, East Lands, Islands of the South, Lands of the Sun) four keys `reg_<region>_court`, `_town`, `_muster`, `_land`. They replace `generic_*` in the about 700 events that now share five generic pictures. A muster shows banners and tents, never a battle | 44 | 44 | flavour and regional events | 5 / 8 | 6 |
 | E3 | Mechanic sets (depth): 64 keys, section 5.3 | 64 | 64 | mechanics specs | 5 / 8 | 6 |
 
 The event specs name at least 547 distinct event ids; with ranges about 700 events exist. E1 alone gives every event a custom picture; E2 and E3 raise variety from 70 to 178 pictures.
@@ -341,7 +341,7 @@ Every asset another Ready spec asks for, in one table. Each requesting event or 
 | `elven_moot` | event picture (seats in a ring under silver trees) | — | elves, Magical Forest tree | E1 |
 | `king_fallen_gala` | event picture (a white banner lowered over an empty elven seat) | `zin_lorien_dead` | Lands of the Sun, Gala tree | E1 |
 | `desert_envoys` | event picture (envoys with camels and banners before a desert court's gate) | — | shared East Lands, Islands of the South and Lands of the Sun trees | E1 |
-| `orc_hall` | event picture (orc chiefs round a fire-pit in a long timber hall; no faces in close view) | — | shared Dark Lands tree (event 1), shared Dead Lands and Magical Lands trees | E1 |
+| `orc_hall` | event picture (orc chiefs round a fire-pit in a long timber hall; no faces in close view) | — | shared Dark Lands tree (event 1), shared Ember Lands and Magical Lands trees | E1 |
 | `cold_steading_moot` | event picture (a clan moot in a timber hall in the snow) | — | shared Cold Lands tree (events 1–4) | E1 |
 | `west_freehold_hall` | event picture (a freehold's timber hall with horses in the yard) | — | shared West Lands tree (events 1, 2) | E1 |
 | `tritons_pirate_trial` | event picture (a corsair crew in chains on an island quay) | — | shared Triton's Islands tree (events 1, 2) | E1 |

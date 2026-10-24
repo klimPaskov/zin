@@ -394,7 +394,7 @@ w()
 
 w('## 10. Open questions for the owner')
 w()
-w("1. **Aen's label.** The label marks every Ainic realm of men as a younger branch of the kingdoms Aen joined. Is it right for the Leren, the Free Crowns, Dondor, Mirolon and the Dead Lands freeholds, or only for the Aenoran-speaking realms of the Middle Lands? *Proceeds on:* all Ainic realms of men.")
+w("1. **Aen's label.** The label marks every Ainic realm of men as a younger branch of the kingdoms Aen joined. Is it right for the Leren, the Free Crowns, Dondor, Mirolon and the Ember Lands freeholds, or only for the Aenoran-speaking realms of the Middle Lands? *Proceeds on:* all Ainic realms of men.")
 w("2. **Glo and Horos's blue sword as charges.** They are reserved: no flag uses them. May a story flag (Eindil's crowned Aenor, the Host after `zin_eindil_bearer_of_glo`) show them, and in what form? *Proceeds on:* never; the crowned Aenor uses the ancient crown of Aen instead.")
 w("3. **Zol's Mistake.** Its flag repeats the sigil of its emblem leader, The Will of Zol (broken concentric rings on void). Accept, or should the realm's arms differ from the leader's emblem? *Proceeds on:* the same sigil.")
 w('4. **The Twelve.** May the faith of the New Gods ever be shown by a ring or a set of twelve (Q-01)? *Proceeds on:* no number-twelve device.')

@@ -17,7 +17,7 @@ It designs 54 researchable technologies in the two civilian folders (`industry_f
 | The Second Age made real progress in warfare and military technology, disease treatment and cures, and farming and famine prevention. These came from engineers, farmers, healers and soldiers, not from a god. | *Second Age Progress and Recovery* |
 | The Fourth Age had more than a thousand years of peace, prosperity, education, science, medicine and strong institutions. | *Fourth Age Canon Register* |
 | Cities grew around the Great Lake, ports expanded, and Aenor traded with the North Lands, West Lands, the islands, the Magical Lands and the eastern states. | *The Fourth Age of Aoaz* (prologue) |
-| Dragons come from Dragon Mountain; the Dead Lands are hot and storm-girt; the Great Wall of Aenor divides the Middle Lands from the Magical Lands. | *Peoples of Aoaz*, *Volgan's Dead Lands* |
+| Dragons come from Dragon Mountain; the Ember Lands are hot and storm-girt; the Great Wall of Aenor divides the Middle Lands from the Magical Lands. | *Peoples of Aoaz*, *Volgan's Ember Lands* |
 | Magic in Aoaz is constrained. Ordinary craft magic is not potent magic. | *Magic and Sustenance in Aoaz*, [04_magic_and_world_systems.md](04_magic_and_world_systems.md) rule 1 |
 
 ### Proposed elsewhere in the vault (used, still proposals)
@@ -325,7 +325,7 @@ Names, descriptions and tooltips are written by the implementer from this direct
 - **Seals and Codes** read as scribes' craft: wax, thread, sealed pouches, letter-counting. They never read as machines.
 - **Beacon Craft** reads as watch fires, horns and glass on towers. Nothing says radar or wireless.
 - **Essence-Craft** reads as careful, local, dangerous work at known wells. It never explains what Essence is or where it comes from (rule 6 of [04_magic_and_world_systems.md](04_magic_and_world_systems.md): the unknown stays unknown).
-- **Peoples' Crafts** each carry one line of their people's voice (the elves' living wood, the orcs' pit-fires, the giants' singing stones, the vents of the Dead Lands) and nothing about origins.
+- **Peoples' Crafts** each carry one line of their people's voice (the elves' living wood, the orcs' pit-fires, the giants' singing stones, the vents of the Ember Lands) and nothing about origins.
 - **Avoid** the words on the banned list of [05_world_tension_and_endings.md](05_world_tension_and_endings.md) and the master plan's text sweep: factory, assembly line, machine, radio, radar, computer, encryption, fuel, nuclear.
 - **Dynamic text.** The Great Library's description reads the live slot count; the exclusive roots' tooltips name the twin they shut out.
 

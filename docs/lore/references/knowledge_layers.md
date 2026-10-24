@@ -157,8 +157,8 @@ Ids are stable: the check data (section 4) refers to them.
 | V6 | Whether the Void, the Nether, the Abyss and Afrit's realm connect. | mystery-open | Nobody | Each by its own name. | Answer rule. |
 | V7 | How Elzon obtained Zol's magic, and whether Zol willed it. | mystery-open | Nobody | That the Necromancer used a terrible old magic, attributed. | Answer rule. |
 | V8 | That Zol consumed Elzon at his end. | disputed (owner-favoured working explanation) | Scholars may suspect | That the Necromancer fell; how is disputed and attributed. | Answer rule. |
-| V9 | Volgan's arming in the Dead Lands at the start. | disputed (outside Mirolon) | Insiders: Mirolon's wardens and scouts | Mirolon states it plainly; elsewhere it is a rumour the courts laugh at. | Viewer-dependent until `zin_volgan_marches`. |
-| V10 | Black ships among the islands of the Ocean of Zol (4A 1744). | disputed | Island fishermen | Fishermen's tales that no court believes. | Attribution required until `zin_zol_rising`. |
+| V9 | Volgan's arming in the Ember Lands at the start. | disputed (outside Mirolon) | Insiders: Mirolon's wardens and scouts | Mirolon states it plainly; elsewhere it is a rumour the courts laugh at. | Viewer-dependent until `zin_volgan_marches`. |
+| V10 | Black ships among the islands of the Kusmeel (4A 1744). | disputed | Island fishermen | Fishermen's tales that no court believes. | Attribution required until `zin_zol_rising`. |
 | V11 | The dwarves' homeland. | mystery-open | Nobody | Nothing; no dwarf appears. | Answer rule. |
 | V12 | What "Ainu" means. | mystery-open | Nobody | "The First Men". | Answer rule. |
 | V13 | Whether Aenor is named for Aen. | mystery-open | Nobody | Both readings as belief, or neither. | Answer rule. |
@@ -397,7 +397,7 @@ Each row is a test case for `tools/content/tests/` (a planted value run through 
 | `zin_lore_codex_seven_desc` (allowed) | "The oldest books speak of seven makers before all names, and scholars call them a tale." | pass | marker present, allowance present |
 | `zin_lore_codex_seven_desc` (allowed) | "One of the Seven was slain long ago, and its darkness lingers." | fail | `kl_sealed_010` (no allowance can cover it) |
 | `zin_world_event_ship_desc` | "The fishermen tell of black ships among the islands, and nobody at court believes them." | pass | `kl_dispute_003` has its marker |
-| `zin_world_event_ship_desc` | "Black ships sail among the islands of the Ocean of Zol." | fail before `zin_zol_rising` | `kl_dispute_003` |
+| `zin_world_event_ship_desc` | "Black ships sail among the islands of the Kusmeel." | fail before `zin_zol_rising` | `kl_dispute_003` |
 | `zin_zol_desc` | "The dead of the black north are sustained by an old and terrible magic." | pass | no rule |
 | `zin_zol_desc` | "Zol bows to a darker power than his own." | fail | `kl_sealed_008`, `kl_sealed_009` |
 | `zin_zol_desc` | "Far to the west lies Dunda, where a dead god's shadow still rests." | fail | `kl_sealed_002`, `kl_sealed_013` |

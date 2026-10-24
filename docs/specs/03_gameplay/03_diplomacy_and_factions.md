@@ -18,7 +18,7 @@ Aoaz opens in a long peace. Diplomacy must keep that peace believable at the sta
 - Cursed Lands and Bloody Forest resist Aenor (*Middle Lands and Aenor*).
 - The Golden King founds the **Lost Cause** against powers such as Volgan and Afrit, partly for prestige; its real strength is mixed; fragments may support Eindil (*The Lost Cause*).
 - In the War of the Last Crowns the North Lands **withdraw from the old alliance**; the West crosses the sea; an eastern coalition threatens the Magical Lands; Volgan retakes Mirolon (*War of the Last Crowns*).
-- **The Elven Refusal:** after Edran's failed Dead Lands campaign the elven kingdoms sent no armies to help men against Elzon. It must not be rewritten as a new alliance in the final invasion. Elves defend their own lands; individuals may help (*The Elven Refusal*). Lorien and the Gala elves fight Zol at the end because an Old God's victory threatens all the living (*The Fourth Age of Aoaz*, XIII).
+- **The Elven Refusal:** after Edran's failed Ember Lands campaign the elven kingdoms sent no armies to help men against Elzon. It must not be rewritten as a new alliance in the final invasion. Elves defend their own lands; individuals may help (*The Elven Refusal*). Lorien and the Gala elves fight Zol at the end because an Old God's victory threatens all the living (*The Fourth Age of Aoaz*, XIII).
 - The Great Wall of Aenor separates the Middle Lands from the Magical Lands (owner, 17 October).
 
 **Proposed in the vault** (*Fourth Age Chronology*, *The Campaign of 4A 1748*): the Charters of Parim (4A 3); the First Concord Council (4A 212: a common army in war, free roads in peace); the name Treaty of the Narrow Strait (4A 512); the **Wall Accord** (4A 96); the Truce of the Grey Ford (4A 1745).
@@ -47,7 +47,7 @@ Created in history by the politics step with ZIN faction templates (replacing `f
 | **Noris Treaty** | Noris | Gondolin | The northern caravan roads and the desert | `zin_faction_noris_treaty` |
 | **Stabilo Pact** | Stabilo | Drak | The southern caravan roads | `zin_faction_stabilo_pact` |
 | **Dark Sea Accord** | Dondor | Belonton | Defence against Goldoroth around the Sea of Darkness | `zin_faction_dark_sea_accord` |
-| **Southern Dominion** | Volgan | Demon, Dolon, Nezer (sworn realms) | Volgan's dominion of the Dead Lands | `zin_faction_southern_dominion` |
+| **Southern Dominion** | Volgan | Demon, Dolon, Nezer (sworn realms) | Volgan's dominion of the Ember Lands | `zin_faction_southern_dominion` |
 
 **Factions formed in play.** Ten more templates exist for factions that scripts found during play (all proposed; every one is made with `create_faction_from_template`, decision E3, and is script-only like the start templates):
 
@@ -89,7 +89,7 @@ New joining rules (`type = joining_rules`; scope = joining country, FROM = leade
 | `zin_faction_rule_join_<region>` (cold_lands, east_lands, dark_lands) | capital in that region, or `is_subject_of = FROM` |
 | `zin_faction_rule_join_no_refusal` | `NOT = { zin_diplo_refusal_binds = yes }` |
 | `zin_faction_rule_join_not_shadow` | `NOT = { has_government = communism }` (Shadow) |
-| `zin_faction_rule_join_sworn` | `is_subject_of = FROM`, or capital in the Dead Lands or the Dark Lands (Volgan's sworn Dark Lands realms; the Volgan spec controls who is invited) |
+| `zin_faction_rule_join_sworn` | `is_subject_of = FROM`, or capital in the Ember Lands or the Dark Lands (Volgan's sworn Dark Lands realms; the Volgan spec controls who is invited) |
 | `zin_faction_rule_join_crossing` | `has_country_flag = zin_region_west_lands` or `has_country_flag = zin_region_tritons_islands`, or a Cold Lands country with `zin_cold_joins_crossing` (Western Crossing spec) |
 | `zin_faction_rule_join_pupor_charter` | `has_country_flag = zin_region_tritons_islands` and `NOT = { has_country_flag = zin_tritons_corsair_haven }` (the Triton's Islands tree's corsair havens may not join) |
 | `zin_faction_rule_join_free_north` | capital state has `zin_is_region_north_lands`; not Lerendor; not in a faction with Lerendor; `NOT = { has_government = communism }`; `zin_leren_lean` between −40 and 40 (Lerendor spec) |
@@ -119,7 +119,7 @@ The ZIN rules file also defines the engine rule keys the vanilla templates and r
 | Noris Treaty | `zin_faction_manifest_northern_roads` | East Lands states controlled ÷ all | `trade_opinion_factor = 0.10` |
 | Stabilo Pact | `zin_faction_manifest_southern_roads` | as above | `trade_opinion_factor = 0.10` |
 | Dark Sea Accord | `zin_faction_manifest_hold_the_dark_sea` | Dark Lands states not controlled by Goldoroth ÷ all | `army_defence_factor = 0.05` |
-| Southern Dominion | `zin_faction_manifest_dominion_of_the_south` | Dead Lands states controlled ÷ all | `army_attack_factor = 0.05` |
+| Southern Dominion | `zin_faction_manifest_dominion_of_the_south` | Ember Lands states controlled ÷ all | `army_attack_factor = 0.05` |
 | Western Crossing | `zin_faction_manifest_cross_the_sea` | Middle Lands coastal states controlled ÷ Middle Lands coastal states | `naval_invasion_prep_speed = 0.10` |
 
 Denominators come from generated state collections named `zin_region_<key>` (`common/collections/zin_regions.txt`; the eastern kings spec reads `zin_region_east_lands`), frozen at build time so conquest does not change them. They share their names with the economy spec's country flags on purpose: one is the list of a region's states, the other marks a realm's region of origin.

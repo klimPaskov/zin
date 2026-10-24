@@ -9,14 +9,14 @@ updated: 2026-10-24
 **Cosmic order:** **[[Spirits and Their Ranks|Great Spirit]]** (established)  
 **Epithet:** **The Great Necromancer** (established)  
 **Allegiance:** Devoted servant of [[Volgan]]  
-**Principal domain:** [[Volgans Dead Lands|Dead Lands]], later the conquered realm of [[Middle Lands and Aenor|Aenor]]  
+**Principal domain:** [[Volgans Ember Lands|Ember Lands]], later the conquered realm of [[Middle Lands and Aenor|Aenor]]  
 **Historic role:** Defender after Dardan, architect of Volgan's return, victor at the end of the Second Age
 
-**Home on his bestiary card:** Nazerun, the old name of Nezer in the [[Volgans Dead Lands|Dead Lands]] (owner, 24 October 2026).
+**Home on his bestiary card:** Nazerun, the old name of Nezer in the [[Volgans Ember Lands|Ember Lands]] (owner, 24 October 2026).
 
 ## First Age
 
-After [[Volgan]] was defeated at the [[Battle of Dardan]] and banished to the Void, Elzon organized his remaining forces in the Dead Lands. He had prepared the defense and repelled the subsequent attempted invasion by the [[Grand Alliance]]. Many attackers, including elves, died and the invasion failed. The victorious king is [[King Edran]], whose name is now established.
+After [[Volgan]] was defeated at the [[Battle of Dardan]] and banished to the Void, Elzon organized his remaining forces in the Ember Lands. He had prepared the defense and repelled the subsequent attempted invasion by the [[Grand Alliance]]. Many attackers, including elves, died and the invasion failed. The victorious king is [[King Edran]], whose name is now established.
 
 ## Second Age
 
@@ -40,7 +40,7 @@ Where did Elzon learn necromancy, what was his existence like before serving Vol
 
 ## Third Age rule and final death
 
-**Established:** Elzon's victory occurs in **Second Age year 2133**. In the Third Age he is the effective ruler of Aenor while still obeying orders from [[Volgan]], who is too weak to leave the Dead Lands. Elzon's undead host weakens with time and his own power runs down in Aenor because the local magic does not replenish him as the Dead Lands do. He seeks the power necessary to transform Aenor into another sustaining dominion. Men continue resisting, and the independent Magical Lands defend themselves, aided by [[Varner]], a Lesser Spirit able to lift the curse of the dead, and his purple servant [[Golbran]]. Elzon's rule ends in his **literal and permanent death**.
+**Established:** Elzon's victory occurs in **Second Age year 2133**. In the Third Age he is the effective ruler of Aenor while still obeying orders from [[Volgan]], who is too weak to leave the Ember Lands. Elzon's undead host weakens with time and his own power runs down in Aenor because the local magic does not replenish him as the Ember Lands do. He seeks the power necessary to transform Aenor into another sustaining dominion. Men continue resisting, and the independent Magical Lands defend themselves, aided by [[Varner]], a Lesser Spirit able to lift the curse of the dead, and his purple servant [[Golbran]]. Elzon's rule ends in his **literal and permanent death**.
 
 **Proposed cause and sequence:** the [[Black Roots]] would be his effort to change Aenor's magic. During [[The Last Tithe]] the human resistance and Varner break his supporting spells. Elzon overdraws the death-magic he earlier borrowed from [[Zol]], allowing his spirit to be consumed entirely. Afrit then helps contain the disaster and is hailed as a New God. Zol himself remains dormant and gains strength through the involuntary absorption, without intervening openly in the Third Age.
 

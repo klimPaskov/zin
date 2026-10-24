@@ -49,7 +49,7 @@ Voice rules (the builder checks the mechanical ones, section 12):
 5. **Established lore stays itself.** An established paragraph keeps every fact and the key wording of its vault section. Editing is limited to shortening, reordering, joining sentences, removing status labels and hedges about canon, and replacing modern words.
 6. **No foreshadowing.** An entry open at the start describes the world up to 1 Thaw 4A 1748. It never says what will happen ("he would later…"). Later fates are added as new pages when their flags are set.
 7. **Dialogue.** At most two quoted lines per entry, attributed ("so the stranger later told it"). Only lines from the vault chronicle.
-8. **Names.** Canonical spellings (Eindil, Zol's Mistake, Aenor, Šodolôro, Golbran, Kilinti, Hunhun). Never Einendil, Edvoid, Rush, Gorbat, Klinti, Huhun, "Sovereign Spirit". Adjectives as the names spec says (Aenoran, Leren, Mirolonese).
+8. **Names.** Canonical spellings (Eindil, Zol's Mistake, Aenor, Šodolôro, Golbran, Kilinti, Hunhun). Never Einendil, Kusven, Rush, Gorbat, Klinti, Huhun, "Sovereign Spirit". Adjectives as the names spec says (Aenoran, Leren, Mirolonese).
 
 ### 2. Categories
 
@@ -398,7 +398,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 203 | founding_of_aenor | The Founding of Aenor | start | — | lords kneeling around an oath-stone | M | *The First Age of Aoaz* §1, *Aen*, *Middle Lands and Aenor* |
 | 204 | roads_of_aen | The Roads of Aen | start | — | ships leaving a harbour for a far western shore | M | *The First Age of Aoaz* §2, *Middle Lands and Aenor* |
 | 205 | long_weakening | The Long Weakening | start | — | cat | M | *The First Age of Aoaz* §3 |
-| 206 | volgan_comes | Volgan Comes North | start | — | a royal city burning under a southern storm | M | *The First Age of Aoaz* §4, *Volgans Dead Lands* |
+| 206 | volgan_comes | Volgan Comes North | start | — | a royal city burning under a southern storm | M | *The First Age of Aoaz* §4, *Volgans Ember Lands* |
 | 207 | grand_alliance | The Grand Alliance | start | — | banners of men, elves, dwarves and giants in one camp | M | *Grand Alliance*, *King Edran*, *The First Age of Aoaz* §5 (the Charter of Free Banners, proposed) |
 | 208 | dardan | The Battle of Dardan | start | — | an immense battlefield turning to wasteland, no landmarks | M | *Battle of Dardan*, *The First Age of Aoaz* §6 (the Thirteen Days, proposed) |
 | 209 | edrans_folly | Edran's Folly | start | — | an army retreating through heat-haze and ash | M | *The First Age of Aoaz* §7, *The Elven Refusal* |
@@ -562,14 +562,14 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 910 | zols_mistake | Zol's Mistake | start | F:zin_zol_rising | reuse `black_isles_lights` | E | *Zols Mistake* |
 | 911 | east_lands | The East Lands | start | — | domed cities by a rift sea | E | *Aoaz and Its Regions* |
 | 912 | south_lands | The South Lands | start | — | cat | E | *Aoaz and Its Regions* |
-| 913 | dead_lands | The Dead Lands | start | — | reuse `dead_lands_storm` | E | *Volgans Dead Lands* |
+| 913 | ember_lands | The Ember Lands | start | — | reuse `dead_lands_storm` | E | *Volgans Ember Lands* |
 | 914 | islands_of_south | The Islands of the South | start | — | cat | E | *Aoaz and Its Regions* |
 | 915 | lands_of_sun | The Lands of the Sun | start | — | white-gold towers in hard southern light | E | *Aoaz and Its Regions*, *Peoples of Aoaz* |
 | 916 | parim | Parim and the Great Lake | start | F:zin_west_parim_taken; F:zin_afrit_claims_aoaz, rev | a lake harbour with merchant ships below the palace towers | M | *Middle Lands and Aenor*, § Prologue |
 | 917 | selen | Selen | start | — | rangers at a forest road | E | *Selen* |
 | 918 | great_wall | The Great Wall of Aenor | start | F:zin_wall_accord_broken | a stone wall running over hills toward mountains | M | *Fourth Age Chronology* I, *The Campaign of 4A 1748* |
 | 919 | refuse_crown | Lands That Refuse the Crown | start | — | cat | E | *Middle Lands and Aenor*, *Great Powers and Relations* (the Cursed Lands and the Bloody Forest) |
-| 920 | mirolon | Mirolon | start | F:zin_mirolon_fallen (plate `mirolon_fallen`) | reuse `mirolon_passes` | E | *Volgans Dead Lands* |
+| 920 | mirolon | Mirolon | start | F:zin_mirolon_fallen (plate `mirolon_fallen`) | reuse `mirolon_passes` | E | *Volgans Ember Lands* |
 | 921 | nether | The Nether | start | — | a red sky over volcanic passes | E | *Nether* |
 | 922 | abyss | The Abyss | start | — | cat | E | *Abyss* |
 | 923 | furviatlon | Furviatlon and Šodolôro | start | — | cat | M | *Zols Mistake*, *Great Powers and Relations* |
@@ -588,7 +588,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 1005 | houses_first_light | The Houses of the First Light (Houses of the First Light) | start | rev \| hub: what the Houses became | reuse `houses` | P | *Houses of the First Light*, *The Second Age of Aoaz* §VIII (the Houses of Refuge, proposed) |
 | 1006 | worshipdom | The Worshipdom | start | rev \| hub: the hub of the Deliverer's network | reuse `hermitage` | P | *Fourth Age Chronology* III, *The Campaign of 4A 1748* |
 | 1007 | hidden_council | The Hidden Council | rev \| hub | F:zin_afrit_dead: what became of it is not told | cat | M | *Afrits Hidden Council* |
-| 1008 | southern_dominion | The Southern Dominion | start | F:zin_volgan_body_destroyed | demon banners at a desert fortress | W | *Great Powers and Relations*, *Volgans Dead Lands*, *Fourth Age Chronology* III |
+| 1008 | southern_dominion | The Southern Dominion | start | F:zin_volgan_body_destroyed | demon banners at a desert fortress | W | *Great Powers and Relations*, *Volgans Ember Lands*, *Fourth Age Chronology* III |
 | 1009 | narrow_strait | The Treaty of the Narrow Strait | start | F:zin_leren_withdrawal; F:zin_leren_treaty_honoured | cat | P | *Fourth Age Chronology* II, *The Campaign of 4A 1748* |
 | 1010 | four_camps | The Four Camps | F:zin_golden_king_dead | rev: the Deliverer's Faithful named for what they were | reuse `thirty_days` | E | *Kingdoms Factions and Conflicts* (camp labels two-faced as the names spec says) |
 

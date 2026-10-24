@@ -24,8 +24,8 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 | --- | --- | ---: | --- | --- | --- |
 | Aenor | Middle Lands | 18 | men | `aenor` | [major/aenor.md](major/aenor.md) |
 | Lerendor | North Lands | 6 | men | `lerendor` | [major/lerendor.md](major/lerendor.md) |
-| Volgan | Dead Lands | 9 | the_dead | `volgan` | [major/volgan.md](major/volgan.md) |
-| Zol | Ocean of Zol | 104 | the_dead | `zol` | [major/zol.md](major/zol.md) |
+| Volgan | Ember Lands | 9 | the_dead | `volgan` | [major/volgan.md](major/volgan.md) |
+| Zol | Kusmeel | 104 | the_dead | `zol` | [major/zol.md](major/zol.md) |
 | Worshipdom | Magical Lands | 3 | men | `worshipdom` | [major/worshipdom.md](major/worshipdom.md) |
 | Magical Forest | Magical Lands | 17 | elves | `magical_forest` | [major/magical_forest.md](major/magical_forest.md) |
 | Gala Elves | Lands of the Sun | 1 | elves | `gala` | [major/gala.md](major/gala.md) |
@@ -34,7 +34,7 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 | Stabilo | East Lands | 14 | men | `stabilo` | [major/stabilo.md](major/stabilo.md) |
 | Gunwaith | West Lands | 12 | men | `gunwaith` | [major/gunwaith.md](major/gunwaith.md) |
 | Goldoroth | Dark Lands | 6 | orcs | `goldoroth` | [major/goldoroth.md](major/goldoroth.md) |
-| Mirolon | Dead Lands | 6 | men | `mirolon` | [major/mirolon.md](major/mirolon.md) |
+| Mirolon | Ember Lands | 6 | men | `mirolon` | [major/mirolon.md](major/mirolon.md) |
 
 ## Tiers B and C by region
 
@@ -83,11 +83,11 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 - **Tier B** (own tree `regional_<name>`): Lccimio (`regional_lccimio`), The End (`regional_the_end`), Herrodon (`regional_herrodon`), Andos Enda (`regional_andos_enda`), Nolorim (`regional_nolorim`).
 - **Tier C** (shared tree `shared_magical_lands`, 15 countries): Luv-zhise, Lengoli, Filion, Kingdom, Ossa, Heron, Nolivorak, Perloia, Endelond, Greenland, Teste, Dulo-Dulo, Sacomananos, Velakton, Lusteli.
 
-### Ocean of Zol (1)
+### Kusmeel (1)
 
 - **Tier A:** Zol.
 
-### Dead Lands (13)
+### Ember Lands (13)
 
 - **Tier A:** Volgan, Mirolon.
 - **Tier B** (own tree `regional_<name>`): Olen (`regional_olen`), Nezer (`regional_nezer`), Demon (`regional_demon`), Dolon (`regional_dolon`), Nan (`regional_nan`).
@@ -119,7 +119,7 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 | C | 221 |
 | **All** | **305** |
 
-The Ocean of Zol region holds only Zol (tier A). Aenor Isle holds only Asgard, which has its own tier B tree (`regional_asgard`, in [regional/middle_lands.md](regional/middle_lands.md)); it does not use the Middle Lands' shared dominion tree.
+The Kusmeel region holds only Zol (tier A). Aenor Isle holds only Asgard, which has its own tier B tree (`regional_asgard`, in [regional/middle_lands.md](regional/middle_lands.md)); it does not use the Middle Lands' shared dominion tree.
 
 ## Acceptance
 

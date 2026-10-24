@@ -26,6 +26,6 @@ Zol, as God of Death and the only [[Old Gods|Old God]] in Aoaz, possesses a vast
 
 ## Third Age limitations and permanent death
 
-Established limits: undead raised by Elzon fade with time, and he loses power when he stays in Aenor rather than the magically sustaining Dead Lands. He cannot fully conquer the Magical Lands, where [[Varner]], a Lesser Spirit, can lift the curse of the dead. Men refuse to submit entirely. Elzon desires to convert Aenor into another region that naturally sustains his magic.
+Established limits: undead raised by Elzon fade with time, and he loses power when he stays in Aenor rather than the magically sustaining Ember Lands. He cannot fully conquer the Magical Lands, where [[Varner]], a Lesser Spirit, can lift the curse of the dead. Men refuse to submit entirely. Elzon desires to convert Aenor into another region that naturally sustains his magic.
 
 The proposed [[Black Roots]] and the [[The Last Tithe|Last Tithe]] explain his failure and **literal death** when he draws too deeply on old magic associated with [[Zol]]. These mechanics are proposed, while his eventual permanent death and broad limits are established.

@@ -20,10 +20,10 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Great Lake, Aenor Forest, and the sovereign giant kingdom of Hirolon (former label Hiloron). See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |
 | **Magical Lands** | Magical Lands | East of Middle Lands, same landmass, separated from them by the Great Wall of Aenor, a natural mountain range. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
-| **Zol / Zol's Mistake** | Ocean of Edvoid (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Ocean of Zol, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Edvoid]]. See [[Zols Mistake]]. |
+| **Zol / Zol's Mistake** | Kusmeel (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Kusmeel, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Kusven]]. See [[Zols Mistake]]. |
 | **East Lands** | South-Earth | Across the rift in the east, reaches off the eastern map. Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Mirrored for mod map. |
 | **South Lands** | Desert of South-Earth | Great desert of East Lands, extends south off the map. Noris Desert and former Sunhot Desert. |
-| **Dead Lands** | Dead Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Dead Lands]]. |
+| **Ember Lands** | Ember Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Ember Lands]]. |
 | **Islands of the South** | Islands of The South | Two arcs south of West Lands. Howan, Nara, Verde, Enhis Is Rond. |
 | **Lands of the Sun** | Sunhot | Far southwest, runs beyond southern map. Elvana, Igara, Hengyang, Sea of Gods, Heaven, Flame, Godland. |
 
@@ -31,6 +31,6 @@ The full **711-label** map transcription is described in the source snapshot but
 
 [[Names and Retcons]] · [[Great Powers and Relations]] · [[Peoples of Aoaz]]
 
-## Newly confirmed places within the Dead Lands
+## Newly confirmed places within the Ember Lands
 
-The [[Nether]], in the **south of the Dead Lands**, is the seat of the [[King of Demons]] and associated with the demon [[Agon]] in the Second Age. The [[Abyss]], also in the Dead Lands, is associated with [[Roka]] and the [[Necklace of the Abyss]], taken and used by Afrit in the Fourth Age. The **Void**, which formerly held Volgan, is a distinct name and should not be equated with either region.
+The [[Nether]], in the **south of the Ember Lands**, is the seat of the [[King of Demons]] and associated with the demon [[Agon]] in the Second Age. The [[Abyss]], also in the Dead Lands, is associated with [[Roka]] and the [[Necklace of the Abyss]], taken and used by Afrit in the Fourth Age. The **Void**, which formerly held Volgan, is a distinct name and should not be equated with either region.

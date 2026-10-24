@@ -365,7 +365,7 @@ All are fired by focus or option effects (`.14` by the mechanic's monthly check)
 | .22 | Molot's Answer | Lerendor | option of .8 | `generic_court` | Result text |
 | .9 | A Leren Envoy | Goldoroth | Bargain with Goldoroth | `leren_envoys` | "Trade and no raids" (non-aggression pact with Lerendor; lean +10) / "Orcs bargain with no one" (lean -10); AI 60/40 |
 | .23 | Goldoroth's Answer | Lerendor | option of .9 | `generic_court` | Result text |
-| .10 | Whispers in the Dark Holds | Lerendor | Whispers in the Dark Holds | `generic_sea` | Leren traders report that agents from the Dead Lands court the orc holds; most of the holds laugh at them. "Note it and watch" (flag) / "Tell Parim" (standing +3; Aenor's court dismisses it). No reveal of Volgan's plans |
+| .10 | Whispers in the Dark Holds | Lerendor | Whispers in the Dark Holds | `generic_sea` | Leren traders report that agents from the Ember Lands court the orc holds; most of the holds laugh at them. "Note it and watch" (flag) / "Tell Parim" (standing +3; Aenor's court dismisses it). No reveal of Volgan's plans |
 | .11 | What the Scholars Found | Lerendor | Scholars of the Dead | `generic_court` | Old books say the dead of the north were never laid to rest by steel alone. "Keep the books" (research [land_doctrine] 30% ×1) / "Old wives' tales" (political_power 25) |
 | .12 | The Oaths of 512 | Aenor | Renew the Oaths of 512 | `leren_envoys` | "Renew them" (standing +10; Lerendor ↔ Aenor military access; `zin_lerendor_opinion_oaths` toward Lerendor) / "Parim has no time for northern oaths" (standing -10); AI 60/40, ×0.5 if Aenor's `zin_court_corruption` ≥ 60 |
 | .24 | Parim Answers the Oaths | Lerendor | option of .12 | `generic_court` | Result text |

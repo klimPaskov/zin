@@ -59,7 +59,7 @@ These are safe in any text, for any country, from the first day.
 | Aen, First of His Name, and the War of Men | E | Everyone, Aenor most | The founder; the most royal blood. Never say who Ein's heirs are |
 | Aenor's conquests in the West | E | West Lands, Aenor | Aenor calls it discovery; the West calls it theft |
 | Dardan and Edran's Grand Alliance | E | Everyone; the Gala elves first-hand (Lorien fought there) | Victory bought with millions of lives; Dardan's place is never named (O) |
-| Edran's folly in the Dead Lands | E | Elves, the Dark Lands, the West | The reason the elves refused to fight for Aenor again |
+| Edran's folly in the Ember Lands | E | Elves, the Dark Lands, the West | The reason the elves refused to fight for Aenor again |
 | Elzon's occupation | E (at least 1,200 years) | Middle Lands above all | A long darkness; grave-fields; resistance passed from parent to child |
 | The Deliverer's rescue at Elzon's fall | E | Everyone | The founding miracle of the Deliverer's worship |
 
@@ -167,7 +167,7 @@ Each region lists what its people remember of the three eras, how they say it, a
 
 **Never say:** that the holds serve Volgan (they do not, automatically: E).
 
-#### Dead Lands
+#### Ember Lands
 
 | Era | Memory | St. |
 | --- | --- | --- |
@@ -184,7 +184,7 @@ Each region lists what its people remember of the three eras, how they say it, a
 | Era | Memory | St. |
 | --- | --- | --- |
 | All eras | A black land older than Aen, where nothing lives and the dead walk | E |
-| Golden King | Fishermen tell of black ships among the islands of the Ocean of Zol (4A 1744); no court believes them | P |
+| Golden King | Fishermen tell of black ships among the islands of the Kusmeel (4A 1744); no court believes them | P |
 
 **How it is told:** by the living on its shores, as a place not to sail near. The Mistake itself has no chroniclers.
 
@@ -253,7 +253,7 @@ Namespace `zin_lore` (ids 1–20 belong to [01_start_situation.md](01_start_situ
 | `zin_lore.105` | The Restorer's Day | Selen | Thaw 1748 | Selen honours Harion as its son | Honour Selen first (`zin_aenor_add_concord_loyalty` −2 on Selen; stability +0.05) / Honour the crown (`zin_aenor_add_concord_loyalty` +2 on Selen) | `generic_peace` |
 | `zin_lore.106` | Songs of the Unbinding | Every Middle Lands country | Thaw 1748 to Ironfrost 1749, random share 30% | Ploughmen sing of the wizard who lifted the curse | One option; stability +0.02 | `generic_peace` |
 | `zin_lore.107` | Customs at the Wall | Kingson | Thaw 1748 to Ironfrost 1749 | Elven traders refuse a new toll | Waive it (+10 opinion from the Magical Forest; `zin_elves_add_wall_grievance` −10) / Keep it (+25 political power; `zin_elves_add_wall_grievance` +10) (the elves spec's grievance effect, called in each option) | `generic_court` |
-| `zin_lore.110` | Edran's Folly | Magical Forest | Thaw 1748 to Ironfrost 1749 | Elders recall the Dead Lands campaign | Reaffirm the old refusal (stability +0.02) / Remember that Aoaz is shared (stability +0.01, +10 political power) | `generic_wilds` |
+| `zin_lore.110` | Edran's Folly | Magical Forest | Thaw 1748 to Ironfrost 1749 | Elders recall the Ember Lands campaign | Reaffirm the old refusal (stability +0.02) / Remember that Aoaz is shared (stability +0.01, +10 political power) | `generic_wilds` |
 | `zin_lore.111` | Wings over Dragon Mountain | Magical Forest, Herrodon, Andos Enda, Nolorim | Thaw 1748 to Ironfrost 1749 | Dragons fly at dusk | One option; army experience +5 | `generic_wilds` |
 | `zin_lore.112` | Pilgrims at Zilin | Worshipdom | first 365 days, up to six times | A caravan of pilgrims from a far court | Bless them (+10 opinion from a random country with `zin_footholds` ≥ 1) / Keep the gifts (+15 political power) | `hermitage` |
 | `zin_lore.120` | The Toll of 1716 | Lerendor | Rainwake 1748 | The anniversary of the insult | Remember it (`war_support` +0.03; `zin_leren_add_strait_standing` −2) / Let it rest (stability +0.02) | `strait_toll` |
@@ -266,10 +266,10 @@ Namespace `zin_lore` (ids 1–20 belong to [01_start_situation.md](01_start_situ
 | `zin_lore.142` | Taryn's Song | Gunwaith | Thaw 1748 to Ironfrost 1749 | A bard sings of Gunwaith's banner at Dardan | One option; `war_support` +0.02 | `generic_court` |
 | `zin_lore.150` | Charts for Sale | Adel, Pollos, Raerby, Nondondor | Thaw 1748 to Ironfrost 1749 | A crown buys the new Pupor charts | Sell (+25 political power) / Keep them (navy experience +5) | `generic_sea` |
 | `zin_lore.160` | Raids on the Border | Goldoroth, Dondor | Thaw 1748 to Ironfrost 1749 | A border raid, no war | Retaliate quietly (`war_support` +0.03; −10 opinion both ways) / Pay blood-price (−25 political power) | `generic_war` |
-| `zin_lore.161` | Gifts from the South | Bordon, Dreson, Dulundur, Troll Forest, Blackton | Thaw 1748 to Ironfrost 1749 | A stranger from the Dead Lands offers gifts | Refuse (stability +0.02) / Accept (+25 political power; country flag `zin_dark_took_southern_gifts`, read by the Dark Lands and Volgan specs) | `southern_warning` |
+| `zin_lore.161` | Gifts from the South | Bordon, Dreson, Dulundur, Troll Forest, Blackton | Thaw 1748 to Ironfrost 1749 | A stranger from the Ember Lands offers gifts | Refuse (stability +0.02) / Accept (+25 political power; country flag `zin_dark_took_southern_gifts`, read by the Dark Lands and Volgan specs) | `southern_warning` |
 | `zin_lore.170` | What the Scouts Saw | Mirolon | Thaw 1748 to Ironfrost 1749 | Dust columns on the southern road | Send word to Parim (+10 opinion of Aenor; nothing else) / Fortify (one stone fort level in a border province of its capital state: `add_building_construction = { type = bunker level = 1 province = { all_provinces = yes limit_to_border = yes } instant_build = yes }`) | `mirolon_passes` |
 | `zin_lore.171` | Behind the Storms | Volgan | Thaw 1748 | The hosts drill where no ship can see | One option; `zin_volgan_add_dominion_strength` +1 | `dead_lands_storm` |
-| `zin_lore.180` | Black Ships | Every country with a coast on the Ocean of Zol (`zin_is_zol_coast_country`, the flavour spec's generated trigger) | Thaw 1748 to Ironfrost 1749, random share 50% | Fishermen tell of black ships | Disbelieve (nothing) / Send a boat (it does not return: −1 convoy if the country has one, else nothing) | `black_ships_tale` |
+| `zin_lore.180` | Black Ships | Every country with a coast on the Kusmeel (`zin_is_zol_coast_country`, the flavour spec's generated trigger) | Thaw 1748 to Ironfrost 1749, random share 50% | Fishermen tell of black ships | Disbelieve (nothing) / Send a boat (it does not return: −1 convoy if the country has one, else nothing) | `black_ships_tale` |
 | `zin_lore.190` | The Caravan Price War | Noris, Stabilo | Thaw 1748 to Ironfrost 1749 | The other side undercuts the salt road | Undercut back (+15 political power; −10 opinion both ways) / Hold the price (+25 political power) | `generic_peace` |
 | `zin_lore.200` | The Reef of Voices | Every Islands of the South country | Thaw 1748 to Ironfrost 1749, random share 50% | The fisherfolk will not cross the reef at night | One option; nothing | `generic_sea` |
 | `zin_lore.201` | The Name in the Shrine | Enhis Is Rond (the proposed keeper of the shrine; the regional tree's site key `the_shrine_beneath_the_tide`) | Thaw 1748 to Ironfrost 1749 | Priests chant a name none understands: Aen | One option; stability +0.02 | `generic_peace` |

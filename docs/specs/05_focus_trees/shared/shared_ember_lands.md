@@ -1,12 +1,12 @@
-# Shared Tree: Freeholds of the Dead Lands
+# Shared Tree: Freeholds of the Ember Lands
 
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 6. **Phase:** 6 (tier C).
 
 ## Purpose
 
-The shared focus tree for the **6 tier C freeholds of the Dead Lands** (tree id `shared_dead_lands`, focus ids `zin_shared_dead_lands_<key>`, data file `docs/design/focus/shared_dead_lands.json`): small realms of men on the coasts and hills between Mirolon and Volgan's Nafeher. It plays [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md) from a freehold's walls: keep the old quiet with Nafeher, stand with Mirolon's wardens, or wall in; live by the furnace lands' iron and essence; watch the storm coasts; and, if the storm takes them, survive as Volgan's client crown or Mirolon's ward until the storm lifts.
+The shared focus tree for the **6 tier C freeholds of the Ember Lands** (tree id `shared_dead_lands`, focus ids `zin_shared_dead_lands_<key>`, data file `docs/design/focus/shared_dead_lands.json`): small realms of men on the coasts and hills between Mirolon and Volgan's Nafeher. It plays [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md) from a freehold's walls: keep the old quiet with Nafeher, stand with Mirolon's wardens, or wall in; live by the furnace lands' iron and essence; watch the storm coasts; and, if the storm takes them, survive as Volgan's client crown or Mirolon's ward until the storm lifts.
 
-The tree is the **module library** for the Dead Lands tier B trees ([../regional/dead_lands.md](../regional/dead_lands.md)); modules L1 to L10 may be copied under new keys.
+The tree is the **module library** for the Ember Lands tier B trees ([../regional/ember_lands.md](../regional/ember_lands.md)); modules L1 to L10 may be copied under new keys.
 
 | Item | Value |
 | --- | --- |
@@ -20,11 +20,11 @@ The tree is the **module library** for the Dead Lands tier B trees ([../regional
 
 ## Lore basis
 
-**Established** (vault): the Dead Lands lie south of the Middle Lands; Volgan's authority does not extend automatically to independent realms; the region is storm-girt at sea and hot farther south; Volgan retakes Mirolon in the Fourth Age and marches north; his manifested body is destroyed and whether his spirit survives is open; Mirolon is his rival (working table). The start: Aoaz seems at peace; nobody outside Mirolon watches Volgan.
+**Established** (vault): the Ember Lands lie south of the Middle Lands; Volgan's authority does not extend automatically to independent realms; the region is storm-girt at sea and hot farther south; Volgan retakes Mirolon in the Fourth Age and marches north; his manifested body is destroyed and whether his spirit survives is open; Mirolon is his rival (working table). The start: Aoaz seems at peace; nobody outside Mirolon watches Volgan.
 
 **Proposed elsewhere and used here:** Volgan's strength, veil, client crowns and the Steward; Mirolon's proof, passes, the Warden League and `zin_mirolon_league_friend` (Mirolon tree event `zin_mirolon.4` already invites all six of these realms); the storm pulse and heat of the magic spec ([../../03_gameplay/04_magic_and_world_systems.md](../../03_gameplay/04_magic_and_world_systems.md)); the Houses of the First Light and footholds ([../../04_mechanics/afrit_hidden_council.md](../../04_mechanics/afrit_hidden_council.md): cap 3 for these realms of men; the Afrit start table does not name them yet, and this tree proposes a start of 1); the roster note that Luminor and Gelon stayed independent when Mirolon united with the Mirolon Forests.
 
-**Proposed here:** every focus, spirit, event and number; the tree's own triggers and effects (Implementation). `zin_dominion_tributary_friend` is the regions spec's proposed flag (contract additions), shared with the Dead Lands tier B trees.
+**Proposed here:** every focus, spirit, event and number; the tree's own triggers and effects (Implementation). `zin_dominion_tributary_friend` is the regions spec's proposed flag (contract additions), shared with the Ember Lands tier B trees.
 
 **Kept open:** what remains of Volgan; the King of Demons; Dardan's place; the relation of Zol's dead to Volgan's. Texts say only that "the throne in Nafeher does not answer" after the body breaks. No text names Afrit or Eindil; the Houses are healers and bread.
 
@@ -126,7 +126,7 @@ Names use `[ROOT.GetName]` and `[ROOT.GetAdjective]`: "The Freehold of [ROOT.Get
 
 ### L4. Storm Coasts
 
-**Purpose:** harbours on a coast that wrecks foreign fleets (the magic spec's storm pulse spares Dead Lands realms). **Opens:** `allow_branch` and `available` on `storm_coast_harbour`: check `zin_shared_dead_lands_is_coastal`.
+**Purpose:** harbours on a coast that wrecks foreign fleets (the magic spec's storm pulse spares Ember Lands realms). **Opens:** `allow_branch` and `available` on `storm_coast_harbour`: check `zin_shared_dead_lands_is_coastal`.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI | Icon |
 | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
@@ -192,7 +192,7 @@ Names use `[ROOT.GetName]` and `[ROOT.GetAdjective]`: "The Freehold of [ROOT.Get
 
 ### L10. When the Storm Lifts
 
-**Purpose:** the Dead Lands after Volgan's body breaks. **Opens:** `allow_branch` and `available` on `the_storm_lifts`: global_flag `zin_volgan_body_destroyed`.
+**Purpose:** the Ember Lands after Volgan's body breaks. **Opens:** `allow_branch` and `available` on `the_storm_lifts`: global_flag `zin_volgan_body_destroyed`.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI | Icon |
 | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
@@ -335,5 +335,5 @@ Under PLAUSIBLE each "hist" factor f becomes 1 + (f − 1) ÷ 2; under FREE base
 Each question proceeds on the labelled proposal. Owner-only questions are listed in [../../OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md).
 
 1. **Luminor and Gelon.** *Resolved (proposed):* no extra lean to Mirolon. They stayed out of the union with the Mirolon Forests, so they weigh the wardens like any other freehold; Mirolon's own invitation (`zin_mirolon.4`) and the border factor above decide.
-2. **Tribute to Nafeher** (owner: regions: dark, magical, dead, question 12). *Proceeding on:* free Dead Lands realms may buy Volgan's quiet before the march. The tribute is a private exchange; it costs Volgan no veil and says nothing of his arming.
+2. **Tribute to Nafeher** (owner: regions: dark, magical, dead, question 12). *Proceeding on:* free Ember Lands realms may buy Volgan's quiet before the march. The tribute is a private exchange; it costs Volgan no veil and says nothing of his arming.
 3. **Mencnon** (owner: regions: dark, magical, dead, question 13). *Proceeding on:* no link between Mencnon and Hessa Mencnor, and no rename; no text of this tree joins the two names.

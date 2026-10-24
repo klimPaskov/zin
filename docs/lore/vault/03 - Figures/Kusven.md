@@ -4,13 +4,13 @@ status: established
 updated: 2026-10-24
 ---
 
-# Edvoid
+# Kusven
 
-*Edvoid (name to be replaced, Q-10): the implementation will propose a new name for the owner's approval, and the Ocean of Edvoid is renamed with him.*
+*Kusven (Leren, "the grave-wind") is the name the owner accepted on 24 October 2026 for the being formerly called Edvoid; the sea north of Zol's Mistake is Kusmeel, "the grave-sea" (Q-10, decision K29).*
 
 **Established (owner, 24 October 2026):**
 
-- Edvoid is an evil **Great Spirit** made by [[Zol]], and **Zol's most loyal servant**. He is a being of his own, separate from Zol.
+- Kusven is an evil **Great Spirit** made by [[Zol]], and **Zol's most loyal servant**. He is a being of his own, separate from Zol.
 - He is feared by all. He feeds on souls and covets all of Aoaz.
 - He dwells in **Šodolôrō** in [[Zols Mistake|Zol's Mistake]].
 - He is the Great Spirit who appears in the [[War of the Last Crowns]], where Zol himself does not appear. He breaks [[Horos Sword|Horos's blue sword]], is wounded by [[Eindil]] with a shard of it, and withdraws when [[Lorien]] and ancient spirits die opposing him. He is not destroyed.

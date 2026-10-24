@@ -26,7 +26,7 @@ No ZIN audio exists. The vanilla base-game music, DLC music stations, unit sound
 | Start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace after seventeen centuries | owner-fixed | *The Campaign of 4A 1748* |
 | Until `zin_afrit_revealed`, no text a player can read names Afrit or calls the Deliverer a demon | contract rule | [00_shared_contract.md](../04_mechanics/00_shared_contract.md) |
 | Before Lorien names him, Eindil is only "the Man from the Ice" | integration decision D4 | [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) |
-| The regions of Aoaz: Middle Lands with Aenor Isle, West Lands, Triton's Islands, North Lands, Cold Lands, Dark Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Dead Lands, Islands of the South, Lands of the Sun | established | vault, *Aoaz and Its Regions* |
+| The regions of Aoaz: Middle Lands with Aenor Isle, West Lands, Triton's Islands, North Lands, Cold Lands, Dark Lands, Magical Lands, Zol's Mistake, East Lands, South Lands, Ember Lands, Islands of the South, Lands of the Sun | established | vault, *Aoaz and Its Regions* |
 | The Deliverer is publicly worshipped in temples; the Golden Court feasts in Parim; the elves keep apart; Zol's dead stir in the north; Volgan's Southern Dominion arms in the south | established | vault, *The Campaign of 4A 1748*, *Canon Policy* |
 | The three endings: The Lost Cause, Children of Volgan, The Ashen Throne | established | *The Campaign of 4A 1748* |
 | No firearms, engines or aircraft in Aoaz | design | [05_defines_and_rules.md](../00_foundation/05_defines_and_rules.md) |
@@ -91,7 +91,7 @@ One palette ties the score together: low strings, horns, harp, frame drums, wood
 | Dark Lands | Heavy drums and low brass for Goldoroth; a sterner human line for Dondor |
 | Magical Lands | Harp, flute and soft choir; slow and old |
 | East Lands and South Lands | Plucked strings and hand drums of the caravan roads |
-| Dead Lands | Dark low strings and distant drums; Mirolon's watch heard as a lone horn |
+| Ember Lands | Dark low strings and distant drums; Mirolon's watch heard as a lone horn |
 | Zol's Mistake | Near-silence: sustained low tones, no melody |
 | Lands of the Sun | Bright, slow, tall harmonies |
 | Triton's Islands and Islands of the South | Light percussion, sea and wind colour |
@@ -112,7 +112,7 @@ Song ids are `zin_song_<key>`. The song named `maintheme` is ZIN's main theme (3
 | Dominion | `zin_song_dominion_peace`, `zin_song_dominion_war` | 2 | `has_government = fascism`: factor 2 | first (1), later (1) |
 | Shadow | `zin_song_shadow_1`, `_2` | 2 | `has_government = communism`: factor 2. The Worshipdom starts Light (D1), so this never reveals it at the start | first (1), later (1) |
 | Wild | `zin_song_wild_peace`, `zin_song_wild_war` | 2 | `has_government = neutrality`: factor 2 | first (1), later (1) |
-| Regions | `zin_song_region_<key>`, keys `middle_lands`, `west_lands`, `north_lands`, `cold_lands`, `dark_lands`, `magical_lands`, `east_lands`, `dead_lands`, `zols_mistake`, `lands_of_the_sun`, `islands` | 11 | The player's region of origin: factor 3, through `has_country_flag = zin_region_<key>` (contract additions register; `islands` matches `zin_region_tritons_islands` or `zin_region_islands_of_the_south`) | later |
+| Regions | `zin_song_region_<key>`, keys `middle_lands`, `west_lands`, `north_lands`, `cold_lands`, `dark_lands`, `magical_lands`, `east_lands`, `ember_lands`, `zols_mistake`, `lands_of_the_sun`, `islands` | 11 | The player's region of origin: factor 3, through `has_country_flag = zin_region_<key>` (contract additions register; `islands` matches `zin_region_tritons_islands` or `zin_region_islands_of_the_south`) | later |
 | Story | `zin_song_story_last_crowns_1`, `_2` | 2 | `has_global_flag = zin_war_of_last_crowns` and `has_war = yes`: factor 3 | later |
 | Story | `zin_song_story_stranger` | 1 | `has_global_flag = zin_eindil_named`: factor 1.5; factor 0 before | later |
 | Story | `zin_song_story_eastern_wind` | 1 | `has_global_flag = zin_afrit_revealed`: factor 1.5; factor 0 before | later |

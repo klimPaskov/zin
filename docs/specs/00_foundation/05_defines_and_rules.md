@@ -184,7 +184,7 @@ The vanilla `common/game_rules/00_game_rules.txt` is **overridden since stage 1 
 3. `HANDS_OFF_START_TAG` resolves to a defined ZIN tag.
 4. Every `has_game_rule` in a ZIN file names a rule and option that exist; every rule of the register exists exactly once across `common/game_rules/zin_*.txt`, in group `RULE_GROUP_ZIN`, with every text key defined.
 5. No loaded file (kept vanilla or ZIN) has a `has_game_rule` for a vanilla rule the override dropped.
-6. No rule text contains "Afrit", "Eindil", "Einendil", "Edvoid" or "Rush".
+6. No rule text contains "Afrit", "Eindil", "Einendil", "Kusven" or "Rush".
 7. Every per-power AI rule's first option is `DEFAULT`, and no file names a retired rule (`zin_rule_golden_king`, `zin_rule_ai_lerendor`, `zin_rule_ai_west`, `zin_rule_zol_behaviour`).
 
 ## AI

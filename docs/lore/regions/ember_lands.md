@@ -1,4 +1,4 @@
-# Regional dossier: the Dead Lands, with the Abyss
+# Regional dossier: the Ember Lands, with the Abyss
 
 **Requirement:** R-19, with R-14 (the Nether has its own dossier, [nether.md](nether.md)), R-21, R-23, R-26, R-28 (Volgan's country gets its own name) and R-29.
 **Status:** Draft of 24 October 2026. Everything not marked **established** is **proposed** (decisions L1 to L3).
@@ -7,7 +7,7 @@
 
 ## 1. Overview
 
-South of the Middle Lands, behind a belt of storms that kept the First Age's explorers out and an inland heat that kills, lie the Dead Lands: a volcanic island of grey plateau and burning ridges, the forested peninsula of Mirolon on the southern neck of the central landmass, a scatter of storm-beaten isles, and in the far south the Nether ([DL], [GMS] §2 Dead Lands). Volgan, the Great Spirit and principal dark lord, rules the island from Nafeher with grave hosts, demons, orcs, ogres, devils and necromantic orders; he has spent a century rebuilding behind the storms, and in 4A 1748 almost nobody outside Mirolon believes it ([DL], [C48]). Mirolon, the human kingdom he conquered in the First Age and lost after Dardan, keeps beacons lit toward the south; freeholds of salt-makers and fishers live between the two by paying tolls and saying nothing; three demon realms are sworn to Nafeher; and at the east tip of the island a chasm drops into the Abyss, where a huge rhinoceros-headed being called Roka once held a necklace that a thief carried away to the north ([AB], [RO], [NA]).
+South of the Middle Lands, behind a belt of storms that kept the First Age's explorers out and an inland heat that kills, lie the Ember Lands: a volcanic island of grey plateau and burning ridges, the forested peninsula of Mirolon on the southern neck of the central landmass, a scatter of storm-beaten isles, and in the far south the Nether ([DL], [GMS] §2 Ember Lands). Volgan, the Great Spirit and principal dark lord, rules the island from Nafeher with grave hosts, demons, orcs, ogres, devils and necromantic orders; he has spent a century rebuilding behind the storms, and in 4A 1748 almost nobody outside Mirolon believes it ([DL], [C48]). Mirolon, the human kingdom he conquered in the First Age and lost after Dardan, keeps beacons lit toward the south; freeholds of salt-makers and fishers live between the two by paying tolls and saying nothing; three demon realms are sworn to Nafeher; and at the east tip of the island a chasm drops into the Abyss, where a huge rhinoceros-headed being called Roka once held a necklace that a thief carried away to the north ([AB], [RO], [NA]).
 
 ## 2. Physical character
 
@@ -23,7 +23,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 
 **Mirolon.** A peninsula on the southern neck of the central landmass, nearly cut off from the Zilin Hills by the narrow Mirolon Neck inlet (`strait_mirolon_neck`) and separated from Volgan's island by the stormy Mirolon Sound, about 120 pixels wide (`strait_mirolon`) ([GM]; the model answers that Mirolon is not joined to the island by land, [GMS] §13 item 9). The Mirolon Mountains (`range_mirolon_mountains`, 4) cross it from west to east, with the Mirolon Passes (`pass_mirolon`) where they close the land neck from the Zilin side; the Mirolon Forests (`forest_mirolon`), the Great Swamp of Mirolon (`marsh_mirolon`), the River Mirolon (`river_mirolon`, P) and the Lake of Mirolon (`lake_mirolon`, on the Zilin side) give it the only good land in the region. The dark Nan Mountains (`range_nan`, 3) close its southern tip.
 
-**Isles.** Drawn isles: Olen, Vez, Unlo, "Netherbus Island", the "Death Islands" and the "Tonda Rand Islands" ([LBL] Dead Lands); the model has four small unnamed Dead Lands islands (`land_island_010`, `_033`, `_048`, `_054`, `_060`). Proposed: Olen is the cliff-isle of the Holy Breeze off the peninsula's south coast; the Death Islands (renamed the Kherith Isles, section 13) are the volcanic islets in the Sea of Lava where devils lair; Unlo and Vez are isles of Volgan's coast.
+**Isles.** Drawn isles: Olen, Vez, Unlo, "Netherbus Island", the "Death Islands" and the "Tonda Rand Islands" ([LBL] Ember Lands); the model has four small unnamed Ember Lands islands (`land_island_010`, `_033`, `_048`, `_054`, `_060`). Proposed: Olen is the cliff-isle of the Holy Breeze off the peninsula's south coast; the Death Islands (renamed the Kherith Isles, section 13) are the volcanic islets in the Sea of Lava where devils lair; Unlo and Vez are isles of Volgan's coast.
 
 **Water (one name each).**
 
@@ -45,7 +45,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | People | Culture (data id) | Language | Where | Status |
 | --- | --- | --- | --- | --- |
 | Men | Wardens of Mirolon (`mirolon_wardens`) | Mirolic, warden dialect | Mirolon | E Mirolon a human kingdom ([DL], [C48]); P culture |
-| Men | Dead Lands Freeholders (`dead_lands_freeholds`) | Mirolic, coast dialect | Halia (the salt coast), Nan, Olen | P |
+| Men | Ember Lands Freeholders (`dead_lands_freeholds`) | Mirolic, coast dialect | Halia (the salt coast), Nan, Olen | P |
 | The dead | Grave Hosts of Volgan (`grave_hosts`) | the Rite-Tongue for offices and gates | Volgan's island | E grave hosts ([DL]) |
 | Orcs, goblins, ogres | Volgan's living soldiers (P culture to be written; the model counts orcs 30% and ogres 15% of Volgan's living people, [DEM] minor peoples) | Orcish, Goblin Cant | The plateau and the Demonic Mountains | E orcs, goblins, ogres in Volgan's armies ([DL], [VO]) |
 | Demons | Netherborn (`netherborn`) | Infernal | Khorvrath (former label Demon), Dolon, Nezer | E Netherborn serving Volgan ([PA]); E Demon, Dolon, Nezer his satellites (working, [GP]) |
@@ -57,7 +57,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 
 **The devils.** Huge (20 to 30 metres), very few, evil, fighting with strength, claws, teeth, horns, wings and fire; "many devils serve Volgan" ([BC] card 46, where Volgan is written Vez'nan). **Owner decision:** devils are bound to their bodies, and a dead devil returns only by the lava rite, its skull thrown into lava ([OD]). Which Old God they served, and when they came to Aoaz, are not known to anyone in Aoaz (O; [OC] §6 item 5).
 
-**Population.** The model gives the Dead Lands 1.9 million living people in 13 countries and 30 states (the dead are not counted): Mirolon 800,000, the eight freeholds 652,100 together, Volgan 300,000, the three demon realms 148,100 ([DEM]). Revised (P): the total stays about 1.9 million, but the demon realms' figures are mostly not demons. Demons are immortal Great Folk and few: perhaps 1,500 in Khorvrath, 1,200 in Dolon and 2,500 in Nezer, ruling thralls, orc and goblin labourers and men of the old coast; the rest of each realm's people are those subjects. Volgan's 300,000 living subjects are orcs, ogres, goblins and men of the plateau oases (the model's minor-people shares). Mirolon's 800,000 are plausible for a forested, watered peninsula with a lake and a swamp.
+**Population.** The model gives the Ember Lands 1.9 million living people in 13 countries and 30 states (the dead are not counted): Mirolon 800,000, the eight freeholds 652,100 together, Volgan 300,000, the three demon realms 148,100 ([DEM]). Revised (P): the total stays about 1.9 million, but the demon realms' figures are mostly not demons. Demons are immortal Great Folk and few: perhaps 1,500 in Khorvrath, 1,200 in Dolon and 2,500 in Nezer, ruling thralls, orc and goblin labourers and men of the old coast; the rest of each realm's people are those subjects. Volgan's 300,000 living subjects are orcs, ogres, goblins and men of the plateau oases (the model's minor-people shares). Mirolon's 800,000 are plausible for a forested, watered peninsula with a lake and a swamp.
 
 ## 4. Livelihoods and resources
 
@@ -70,7 +70,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | Black powder | Dolon's forges, for Volgan's orc companies | Owner decision that gunpowder weapons are common in some realms ([OD]); the orc card's "catapults, cannons and so on" ([BC] card 20); P that the Dominion is one such realm |
 | Bitumen (the fuel resource of the game) | The plateau's sunken basins | [GMS] §2 resource table |
 | The dead | Volgan's grave-fields | Not a resource in the economy; a manpower of their own in the mechanic ([VSD] §3) |
-| Essence (game resource) | Where the Dead Lands' native magic sustains necromancy | E that the Dead Lands' magic sustained Elzon as Aenor's did not ([DL] Third Age) |
+| Essence (game resource) | Where the Ember Lands' native magic sustains necromancy | E that the Ember Lands' magic sustained Elzon as Aenor's did not ([DL] Third Age) |
 
 ## 5. Institutions and political forms
 
@@ -106,13 +106,13 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | 1A | Storms and heat keep Aenoran explorers out; men chart coasts without knowing the lands behind them. | E ([A1] §2, [DL]) |
 | 1A about 1150 to 1500 | Volgan invades Mirolon and makes it the opening of a vast campaign. | E ([DL], [A1] §4); P dates |
 | Late 1A | Volgan's armies include demons, devils, orcs, goblins, Great Spirits, dragons and Damned Spirits released from deep underground. | E ([A1] §4) |
-| By 1A 1675 | After Dardan Volgan is banished to the Void; Elzon gathers the remnants and repels Edran's invasion of the Dead Lands with heavy losses. | E ([DL], [A1] §7) |
+| By 1A 1675 | After Dardan Volgan is banished to the Void; Elzon gathers the remnants and repels Edran's invasion of the Ember Lands with heavy losses. | E ([DL], [A1] §7) |
 | 1A 1675 and after | Mirolon is freed after Dardan; its coast cousins stay and pay tolls to whoever holds the island. | P ([WB] Mirolon, Freeholders) |
 | 2A | Elzon, Great Spirit and Great Necromancer, holds the Dead Lands; his seat is at **Nazerun**, the old name of Nezer. | E Elzon's role ([EZ]); owner decision on Nazerun ([OD]); P that Nazerun was his seat ([BC] card 61) |
 | 2A | Demons raid Aenor through portals from the Nether; the Burning Gate of Nezer is closed by a garrison, an elven company and Dark Lands soldiers. | E raids ([2R]); P episode ([A2] §IV) |
 | 2A | Elzon frees Volgan's presence from the Void with old magic linked to Zol. | E ([2R]) |
 | 2A 2133 | Elzon takes Aenor. | E ([EO]) |
-| 3A | Volgan, too weak to leave the Dead Lands, commands Elzon from here; the Dead Lands' magic sustains Elzon as Aenor's does not. | E ([DL] Third Age) |
+| 3A | Volgan, too weak to leave the Ember Lands, commands Elzon from here; the Ember Lands' magic sustains Elzon as Aenor's does not. | E ([DL] Third Age) |
 | 3A 1260 | Elzon dies permanently; Volgan remains alive. | E outcome; P date ([3R]) |
 | 4A 1611 | A master thief takes the Necklace of the Abyss from Roka's domain and carries it north. | E theft ([RO], [NA]); P date and thief's name ([FC] III) |
 | about 4A 1650 | Volgan's strength returns; Demon (Khorvrath), Dolon and Nezer swear to him as the Southern Dominion; Mirolon fortifies its passes. | P ([FC] III) |
@@ -163,11 +163,11 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | Larorun | Nan | A warlord's fort in the Nan Mountains; about 10,000 | P ([DEM]) |
 | **Halon** (Mirolic "salt place") | Halia | The largest salt pans of the Veleeda coast | P |
 | Olen's shrine-town | Olen | On the cliffs of the Holy Breeze | Drawn "Holy Breeze" ([LBL]) |
-| The rim of the Abyss | none | Abyss Point | E Abyss in the Dead Lands ([AB]); P placement chosen by the model ([GM] `chasm_abyss`) |
+| The rim of the Abyss | none | Abyss Point | E Abyss in the Ember Lands ([AB]); P placement chosen by the model ([GM] `chasm_abyss`) |
 
 ## 11. Roster proposal (proposed)
 
-**Before:** 13 countries ([ROS] scan Dead Lands), 0 elven. **After:** 8 countries here, 0 elven; the Nether becomes its own country in [nether.md](nether.md) (from Volgan's regions).
+**Before:** 13 countries ([ROS] scan Ember Lands), 0 elven. **After:** 8 countries here, 0 elven; the Nether becomes its own country in [nether.md](nether.md) (from Volgan's regions).
 
 | Name | People and culture | Political form | Capital | Extent | Why it exists |
 | --- | --- | --- | --- | --- | --- |
@@ -228,7 +228,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 
 | Key | File and heading |
 | --- | --- |
-| [DL] | `docs/lore/vault/05 - Geography/Volgans Dead Lands.md` (all headings) |
+| [DL] | `docs/lore/vault/05 - Geography/Volgans Ember Lands.md` (all headings) |
 | [AB] | `docs/lore/vault/05 - Geography/Abyss.md` |
 | [NE] | `docs/lore/vault/05 - Geography/Nether.md` |
 | [PA] | `docs/lore/vault/04 - Peoples/Peoples of Aoaz.md` (Great Folk: demons; caution) |
@@ -238,15 +238,15 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | [NA] | `docs/lore/vault/08 - Artifacts/Necklace of the Abyss.md` |
 | [NR], [RK] | `docs/lore/vault/09 - Development/Names and Retcons.md`; `01 - Cosmology/Religious Knowledge and False Gods.md` |
 | [A1], [A2], [2R], [3R], [A4] | `docs/lore/vault/07 - History/The First Age of Aoaz.md` (§2, §4, §7); `The Second Age of Aoaz.md` (§IV); `Second Age Canon Register.md`; `Third Age Canon Register.md`; `The Fourth Age of Aoaz.md` (§IX, §XII) |
-| [FC], [C48], [WLC], [ER] | `docs/lore/vault/07 - History/Fourth Age Chronology.md` (III, IV); `The Campaign of 4A 1748.md` (The Dead Lands); `War of the Last Crowns.md`; `The Elven Refusal.md` |
+| [FC], [C48], [WLC], [ER] | `docs/lore/vault/07 - History/Fourth Age Chronology.md` (III, IV); `The Campaign of 4A 1748.md` (The Ember Lands); `War of the Last Crowns.md`; `The Elven Refusal.md` |
 | [OC] | `docs/zin-handoff/01-CONTEXT-AND-CANON.md` §2.6 (devils), §2.7 (Vez'nan), §6 |
 | [OD] | Owner decisions of 24 October 2026 relayed by the coordinator (Nazerun; devils and the lava rite; the demon king; gunpowder; renames; no exact ages) |
 | [GM] | `tools/content/data/geography/aoaz.json` (ids as cited) |
-| [GMS] | `docs/specs/01_map/05_geography_model.md` (§2 Dead Lands; §2 resource table; §13 items 7 to 9) |
-| [DEM] | `tools/content/data/world/demography.json` (Dead Lands; minor peoples; settlements) |
+| [GMS] | `docs/specs/01_map/05_geography_model.md` (§2 Ember Lands; §2 resource table; §13 items 7 to 9) |
+| [DEM] | `tools/content/data/world/demography.json` (Ember Lands; minor peoples; settlements) |
 | [WB] | `docs/specs/02_lore/05_world_bible.md` (§3.1 Wardens of Mirolon, Freeholders; §3.9 Grave Hosts; §3.10 Netherborn; §4; §6.7) |
 | [LANG] | `docs/specs/02_lore/06_languages.md` (§2, §3.5 Mirolic, §3.6 Rite-Tongue, §3.24 Infernal); `languages.json` |
-| [ROS], [LBL] | `tools/content/data/countries.json` (scan Dead Lands); `tools/content/data/labels.json` (Dead Lands) |
+| [ROS], [LBL] | `tools/content/data/countries.json` (scan Ember Lands); `tools/content/data/labels.json` (Ember Lands) |
 | [BC] | `docs/lore/sources/bestiary_cards_part1.md` (cards 8, 15, 18, 20, 22), `bestiary_cards_part2.md` (cards 46, 48, 61) |
 | [VSD] | `docs/specs/04_mechanics/volgan_southern_dominion.md` (lore basis; §2 to §10) |
 | [FT] | `docs/design/focus/*.json` (volgan, mirolon, regional_demon, regional_dolon, regional_nezer, regional_nan, regional_olen, shared_dead_lands) |

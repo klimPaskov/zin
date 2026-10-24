@@ -22,7 +22,7 @@ A criterion is **met** only when its check has run on the current build and pass
 | A-11 | R-11, R-18 terrain, relief, rivers, edge | not started | |
 | A-12 | R-12, R-15 borders and regions | not started | |
 | A-13 | R-13 coherent sea names | not started | |
-| A-14 | R-14 the Nether below the Dead Lands | dossier in progress | |
+| A-14 | R-14 the Nether below the Ember Lands | dossier in progress | |
 | A-16 | R-16, R-17 settlements, resources | not started | |
 | A-19 | R-19 regional dossiers | in progress | |
 | A-20 | R-20, R-21, R-26 peoples, cultures, forms | not started | |
@@ -63,7 +63,7 @@ A criterion is **met** only when its check has run on the current build and pass
 | F2 real three-letter tags, total below 439 | A-27 |
 | F3 no country named after its leader | A-28 |
 | F4 flags with culture and purpose | A-92 |
-| F5 coherent geography, the Nether below the Dead Lands | A-11, A-13, A-14 |
+| F5 coherent geography, the Nether below the Ember Lands | A-11, A-13, A-14 |
 | F6 no debug or placeholder text, no separators in names | A-52 |
 | F7 lore quotes carry worldbuilding | A-52 |
 | F8 gfx standard (transparent emblems) | A-91 |

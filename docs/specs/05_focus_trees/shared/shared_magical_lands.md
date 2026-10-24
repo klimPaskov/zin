@@ -362,7 +362,7 @@ Under PLAUSIBLE each "hist" factor f becomes 1 + (f − 1) ÷ 2; under FREE base
 
 Each question proceeds on the labelled proposal. Owner-only questions are listed in [../../OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md).
 
-1. **Which realms face the Mistake?** (owner: short-list question 4; regions: dark, magical, dead, question 7). *Proceeding on:* the black areas (Dlomntod, Medek, Lost Lands) belong to the Mistake, as on the map today; the trigger computes which realms border them or hold an Ocean of Zol coast.
+1. **Which realms face the Mistake?** (owner: short-list question 4; regions: dark, magical, dead, question 7). *Proceeding on:* the black areas (Dlomntod, Medek, Lost Lands) belong to the Mistake, as on the map today; the trigger computes which realms border them or hold an Kusmeel coast.
 2. **The Keeper** (owner: elves question 2). *Proceeding on:* the Magical Forest keeps Dragon Mountain, so M9 is dormant for all 15. *Resolved (proposed):* if the map gives the mountain to a tier C realm, the small module is enough; no tier B tree is added.
 3. **Mycids** (owner: short-list question 12). *Proceeding on:* the Mushroom Forest lies inside an elven realm and is not a country; no mycid module now. If the owner makes mycids a people, a mycid head is added like the Dark Lands tree's kin heads.
 4. **Sacomananos and Velakton** (owner: regions: dark, magical, dead, question 6). *Proceeding on:* Herrodon may be a crowned elven realm with them as its "lost kin"; they keep this shared tree, and M10 covers the case where they take Herrodon's crown.

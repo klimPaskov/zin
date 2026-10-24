@@ -39,7 +39,7 @@ The Middle Lands are the warm, wet, deep-soiled heart of Aoaz: a rounded land be
 | The sea of the Narrow Strait | `sea_leren_ocean`, `strait_narrow` | **Leren Ocean** and **the Narrow Strait** (drawn, E strait) | The North Lands lie across it ([AR]) |
 | North-east, between R'en and the Bloody Forest | `sea_rim_ocean` | **Rim Ocean** (drawn) | |
 | Between Aenor Isle and the mainland | `strait_aenor_isle` | **the Inner Sea** (P; drawn "Inner Seas" on the Rush Islands sheet, [LBL]) | Replaces the model's proposed "Asgard Sound" |
-| South-west strait to the Dark Lands | `strait_dark_south`, `sea_death_sea` | **Gaelmael**, "the Grey Water" (P, Aenoran) | The drawn "Sea of Death" collides with the Dead Lands' "Sea of Deaths" and "The Dead's Sea"; this name must be agreed with the Dark Lands dossier |
+| South-west strait to the Dark Lands | `strait_dark_south`, `sea_death_sea` | **Gaelmael**, "the Grey Water" (P, Aenoran) | The drawn "Sea of Death" collides with the Ember Lands' "Sea of Deaths" and "The Dead's Sea"; this name must be agreed with the Dark Lands dossier |
 | Bays | `bay_novez`, `bay_safeton` | **Novez Bay**, **Bay of Safeton** (P) | |
 | Capes | `cape_organ`, `cape_selen`, `cape_hiloron` | **Organ Cape**, **Selen Point**, **Hirolon Head** (former label Hiloron Head) (P) | |
 
@@ -284,7 +284,7 @@ Ages: First Age 1,675 years (E), Second 2,133 (E), Third at least 1,200 with 1,2
 | 1A about 1150 to 1500 | Volgan invades Mirolon and conquers outward. | E [A1] §4, [DL]; P dates |
 | 1A about 1500 to 1650 | The reigning king dies and Volgan's armies take the capital; its First Age name and its relation to Parim are open. | E [A1] §4; O name |
 | Late 1A | Edran is crowned outside the occupied capital and gathers the Grand Alliance of men, elves, dwarves, giants, spirits and island peoples. | E [A1] §5, [ED]; P coronation detail |
-| By 1A 1675 | The Battle of Dardan kills millions; Volgan is stripped and banished to the Void; Edran's invasion of the Dead Lands fails against Elzon. Dardan's place is open. | E [A1] §6–7; O place |
+| By 1A 1675 | The Battle of Dardan kills millions; Volgan is stripped and banished to the Void; Edran's invasion of the Ember Lands fails against Elzon. Dardan's place is open. | E [A1] §6–7; O place |
 | 2A, early | Edran rebuilds Aenor and dies of disease. | E [2R] |
 | 2A | The Registers of the Lost record the dead by name; later necromancers use them. | P [A2] §II |
 | 2A | Famines and plagues (the Grey Breath, the Grave Fever) return for generations; farming, medicine and fortification advance. | E broad [2R]; P plague names |
@@ -320,7 +320,7 @@ Ages: First Age 1,675 years (E), Second 2,133 (E), Third at least 1,200 with 1,2
 | **4A 1748** | **Start: peace.** | owner, [C48] |
 | 4A 1750 | The Golden King dies; the temples proclaim the Deliverer King of Aenor. | E [GK], [AF]; P date; hidden that it is murder |
 | 4A 1754 | A stranger warns Aenor and is denounced; Alleria of Selen protects him. | E warning [4R]; P date; hidden identity (Eindil) |
-| 4A 1755 to 1757 | The War of the Last Crowns: the West takes the capital; the East attacks the Magical Lands; Volgan marches from the south; Zol's dead come from the north. Zol does not appear in person; his most loyal servant does: Edvoid (name to be replaced). | E war [WLC]; owner decisions [OC] §2.4, [OD]; P dates |
+| 4A 1755 to 1757 | The War of the Last Crowns: the West takes the capital; the East attacks the Magical Lands; Volgan marches from the south; Zol's dead come from the north. Zol does not appear in person; his most loyal servant does: Kusven. | E war [WLC]; owner decisions [OC] §2.4, [OD]; P dates |
 | 4A 1758 to 1759 | The false king returns from the East, retakes the capital and dies in the palace battle. | E [WLC], [4R]; P dates; place of the palace P (Parim) |
 | 4A 1760 | Eindil is crowned King of Aenor; the Fourth Age ends. | E coronation; P date |
 
@@ -338,7 +338,7 @@ Ages: First Age 1,675 years (E), Second 2,133 (E), Third at least 1,200 with 1,2
 | The North Lands (Lerendor) | Treaty and grudge | Treaty of the Narrow Strait (P name of the E old alliance); the toll quarrel of 4A 1716 (P) |
 | The West Lands | Old grievance, present trade | First Age settlement wars (E [ML]); tariffs (P) |
 | The Dark Lands | Watched across the Grey Water | Orc holds; Goldoroth's ambition (E working table [GP]) |
-| The Dead Lands (Mirolon, Volgan) | Mirolon is a friend Parim laughs at; Volgan a legend | E rivalry [GP]; P envoy |
+| The Ember Lands (Mirolon, Volgan) | Mirolon is a friend Parim laughs at; Volgan a legend | E rivalry [GP]; P envoy |
 | Zol's Mistake | Unknown; fishermen's rumours | E [C48] |
 | Hirolon | A sovereign kingdom that treats with Aenor; friendship | Owner decision ([OD]); [hirolon.md](hirolon.md) |
 | Inside: Kunhrim and the elves | Cold | Dwarves dislike elves ([BC] card 44) |
@@ -508,7 +508,7 @@ Map and data defects found (no decision needed, recorded for the map work): Rish
 | Gelbin Mekkatorque (card 38) | Warcraft | dropped; the famous gnome stays unnamed | |
 | Steadtler (card 38) | resembles the Staedtler brand | read as the drawn **Stendorler** | Aenoran chart form |
 | Kingdom (Y80), "Kingdom Forests" | an English word as a realm name | **Dunelaeth** | Sylvan "the king's wood" |
-| Sea of Death (strait to the Dark Lands) | contradicts the Dead Lands' Sea of Deaths and The Dead's Sea | **Gaelmael**, "the Grey Water" | Aenoran *gael* "grey" + *mael* "sea" (to be agreed with the Dark Lands dossier) |
+| Sea of Death (strait to the Dark Lands) | contradicts the Ember Lands' Sea of Deaths and The Dead's Sea | **Gaelmael**, "the Grey Water" | Aenoran *gael* "grey" + *mael* "sea" (to be agreed with the Dark Lands dossier) |
 | Wall-Folk, Stone Vigil (culture and faith ids) | there is no wall | **Vale-Folk of Kingson**, **the Pass Vigil** | Common Speech |
 | Blue Mountain, Grey Mountain, Iron Hills (dwarf card 44) | Tolkien | not used in the Middle Lands; the West and North Lands dossiers name their ranges | |
 
@@ -522,7 +522,7 @@ Keys used above (vault paths are under `docs/lore/vault/`):
 | [AR] | `05 - Geography/Aoaz and Its Regions.md` (region table) |
 | [ML] | `05 - Geography/Middle Lands and Aenor.md` (all headings) |
 | [SE] | `05 - Geography/Selen.md` |
-| [DL] | `05 - Geography/Volgans Dead Lands.md` (First Age campaign) |
+| [DL] | `05 - Geography/Volgans Ember Lands.md` (First Age campaign) |
 | [PA] | `04 - Peoples/Peoples of Aoaz.md` (Great Folk; Mortal peoples; Other peoples) |
 | [AI] | `04 - Peoples/The Ainu.md` |
 | [GP] | `06 - Politics/Great Powers and Relations.md` (table) |
@@ -547,7 +547,7 @@ Keys used above (vault paths are under `docs/lore/vault/`):
 | [SN], [RK] | `02 - Spirits/Spirit Natures.md`; `01 - Cosmology/Religious Knowledge and False Gods.md` |
 | [OC] | `docs/zin-handoff/01-CONTEXT-AND-CANON.md` §2.2 (natural range), §2.3 (twelve New Gods), §2.4 (Zol's servant), §2.5 (Bastian), §3 (wider world), §6 |
 | [OQ] | `docs/zin-handoff/OWNER-QUESTIONS.md` (Q-11, Q-14, Q-21, Q-23) |
-| [OD] | Owner decisions of 24 October 2026 relayed by the coordinator: renaming of unfitting and borrowed labels, Hirolon sovereign, the Aenor Forest and its tree-people, the renaming of Coniferon and Vinocorne, small folk, dwarves in the great ranges, Edvoid as Zol's servant, gunpowder, Bastian, no exact ages, the twelve main and the lesser New Gods, the Deliverer's feast |
+| [OD] | Owner decisions of 24 October 2026 relayed by the coordinator: renaming of unfitting and borrowed labels, Hirolon sovereign, the Aenor Forest and its tree-people, the renaming of Coniferon and Vinocorne, small folk, dwarves in the great ranges, Kusven as Zol's servant, gunpowder, Bastian, no exact ages, the twelve main and the lesser New Gods, the Deliverer's feast |
 | [RQ] | `docs/zin-handoff/02-TOTAL-OVERHAUL-SPEC.md` (R-11, R-19, R-21, R-24 to R-29) |
 | [GM] | `tools/content/data/geography/aoaz.json` (ids as cited) |
 | [GMS] | `docs/specs/01_map/05_geography_model.md` (§2 Middle Lands, Aenor Isle; §4; §5; §13) |

@@ -15,21 +15,21 @@ The mechanic is shared by two major trees: [Volgan](../05_focus_trees/major/volg
 | Fact | Source |
 | --- | --- |
 | Volgan is a Great Spirit, the principal dark lord, not an Old God. He once served a New God and overcame it; that god's name is unknown. | *Volgan*, *Names and Retcons* |
-| His armies include demons, orcs, goblins, ogres, monster clans, grave hosts, necromantic orders and other spirits. | *Volgan*, *Volgans Dead Lands* |
+| His armies include demons, orcs, goblins, ogres, monster clans, grave hosts, necromantic orders and other spirits. | *Volgan*, *Volgans Ember Lands* |
 | The independent Dark Lands are not automatically his subjects; Dark Lands monsters do not all serve him. | *Volgan*, *Kingdoms Factions and Conflicts* |
-| In the First Age he invaded Mirolon, took Aenor's capital, lost at Dardan and was banished to the Void. Elzon brought him back in the Second Age; in the Third Age he was too weak to leave the Dead Lands. | *Volgan*, *The Return of Volgan*, *Volgans Dead Lands* |
+| In the First Age he invaded Mirolon, took Aenor's capital, lost at Dardan and was banished to the Void. Elzon brought him back in the Second Age; in the Third Age he was too weak to leave the Ember Lands. | *Volgan*, *The Return of Volgan*, *Volgans Ember Lands* |
 | In the Fourth Age he has recovered enough to retake Mirolon and march north with an army greater than any since the First Age. | *The Fourth Age of Aoaz*, *War of the Last Crowns* |
 | His hosts fight Zol's dead before the two powers briefly align against Eindil and the surviving kingdoms. | *War of the Last Crowns*, *The Fourth Age of Aoaz* |
 | Volgan strikes Eindil down once. Restored by the New Gods, Eindil pierces him with Horos's sword; his manifested body breaks and his army loses much of its supernatural organisation. | *Volgan*, *Fourth Age Canon Register* |
 | Whether Volgan's spirit survives is **open**. | *Volgan*, *Canon Policy*, *Open Questions* |
 | Seat Nafeher; Southern Dominion of Demon, Dolon and Nezer; rival Mirolon (working table). | *Great Powers and Relations* |
-| The Nether, in the south of the Dead Lands, is the seat of the King of Demons. His name, powers and relationship to Volgan are **open**. Not all demons serve Volgan. | *Nether*, *King of Demons* |
-| The Abyss is in the Dead Lands. Roka, of a rhinoceros-headed people, is tied to it and to the Necklace of the Abyss, which Afrit's thief took. Roka's fate and his people's name are **open**. The Abyss, the Nether and the Void are distinct. | *Abyss*, *Roka* |
+| The Nether, in the south of the Ember Lands, is the seat of the King of Demons. His name, powers and relationship to Volgan are **open**. Not all demons serve Volgan. | *Nether*, *King of Demons* |
+| The Abyss is in the Ember Lands. Roka, of a rhinoceros-headed people, is tied to it and to the Necklace of the Abyss, which Afrit's thief took. Roka's fate and his people's name are **open**. The Abyss, the Nether and the Void are distinct. | *Abyss*, *Roka* |
 | Volgan wants Glo. | *Kingdoms Factions and Conflicts* |
-| The dead of the Dead Lands and the dead of Zol's Mistake have no settled taxonomy or relationship. | *Volgans Dead Lands*, *Zols Mistake* |
+| The dead of the Ember Lands and the dead of Zol's Mistake have no settled taxonomy or relationship. | *Volgans Ember Lands*, *Zols Mistake* |
 | "Children of Volgan" is one of three alternative endings: Volgan dominates a ruined world through monsters, grave hosts and client states. | *Possible Endings* |
-| At the start Volgan has rebuilt his armies for a century and means to take Mirolon and march north; only Mirolon's scouts take the signs seriously. Mirolon, the human kingdom Volgan conquered in the First Age, is free again and stands in his way. | *The Campaign of 4A 1748*, *Volgans Dead Lands* |
-| Mirolon lies in the Dead Lands region; its political status differs between ages. | *Volgans Dead Lands* |
+| At the start Volgan has rebuilt his armies for a century and means to take Mirolon and march north; only Mirolon's scouts take the signs seriously. Mirolon, the human kingdom Volgan conquered in the First Age, is free again and stands in his way. | *The Campaign of 4A 1748*, *Volgans Ember Lands* |
+| Mirolon lies in the Ember Lands region; its political status differs between ages. | *Volgans Ember Lands* |
 | The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace. | owner, 18 October 2026 |
 
 ### Proposed (this spec or the vault's proposed notes)
@@ -38,7 +38,7 @@ The mechanic is shared by two major trees: [Volgan](../05_focus_trees/major/volg
 - Every mechanism below: dominion strength numbers, the Veil of Storms, grave musters, member oaths, the Nether pact, Abyss envoys, Dark Lands pacts, Mirolon's proof and passes, the Black Compact, the Silent Throne and the Steward.
 - Names: the Veil of Storms, the Black Compact, the Silent Throne, the Ember Herald, the Grave-Warden, Ghorvak of the Hundred Clubs, the Warden League, High Warden Maeric, Captain Selda Varrow, Scout-Master Hadric Thorne. All proposed.
 - Mirolon's government: a free human realm whose High Warden is chosen for life by the pass-lords and lake towns. This reconciles the vault's "human kingdom" with the map's Light ideology and `zin_light_wardens` stance. Proposed; owner's short list question 7 ([OPEN_QUESTIONS.md](../OPEN_QUESTIONS.md)), the work proceeds on it.
-- The passes lie on Mirolon's border with Volgan's realm (the vault's "northern passes" read as Mirolon's passes toward the Dead Lands). Proposed; owner's short list question 7.
+- The passes lie on Mirolon's border with Volgan's realm (the vault's "northern passes" read as Mirolon's passes toward the Ember Lands). Proposed; owner's short list question 7.
 - The Nether is part of Volgan's realm on the map; the King of Demons' court is a pact Volgan deals with, not a country. Proposed; owner's short list question 5.
 
 ### The game today (commit ca01fa3)
@@ -114,7 +114,7 @@ The mechanic is shared by two major trees: [Volgan](../05_focus_trees/major/volg
 
 ### 2. The Veil of Storms
 
-`zin_volgan_veil` (new, Volgan, 0 to 100) measures how well the storms, heat and silence of the Dead Lands hide the rebuilding. Everyone knows Volgan exists. The veil hides how strong he has become.
+`zin_volgan_veil` (new, Volgan, 0 to 100) measures how well the storms, heat and silence of the Ember Lands hide the rebuilding. Everyone knows Volgan exists. The veil hides how strong he has become.
 
 **Start:** 85.
 
@@ -127,9 +127,9 @@ The mechanic is shared by two major trees: [Volgan](../05_focus_trees/major/volg
 | Veil | State | Consequence |
 | --- | --- | --- |
 | ≥ 70 | Hidden | No Gathering Dark from Volgan's preparations. This mechanic adds no AI strategy against Volgan to any other country. |
-| 50–69 | Rumoured | Event `zin_dominion.2` to Mirolon, Herez and the free Dead Lands realms. `zin_world_add_gathering_dark` +2. |
+| 50–69 | Rumoured | Event `zin_dominion.2` to Mirolon, Herez and the free Ember Lands realms. `zin_world_add_gathering_dark` +2. |
 | 30–49 | Suspected | Mirolon's proof gains are doubled (from here down, also while Seen). The two heeding options of `zin_dominion.5` get their AI weight ×1.25. Gathering Dark +3. |
-| < 30 | Seen | News event `zin_dominion.4` "The Dead Lands Are Arming" to every country. Gathering Dark +5. Volgan cannot get "Out of the Storms". |
+| < 30 | Seen | News event `zin_dominion.4` "The Ember Lands Are Arming" to every country. Gathering Dark +5. Volgan cannot get "Out of the Storms". |
 
 **Surprise.** When Volgan declares war on Mirolon:
 
@@ -166,7 +166,7 @@ Demon, Dolon and Nezer are Volgan's subjects at the start (roster), with the dip
 | Grant Spoils to [member] | Volgan owns a non-core state | `transfer_state` of one owned non-core state to the member, oath +20 | 365 days (180 with the tree's flag `zin_volgan_spoils_promised`) |
 
 - Oath ≥ 50: the member counts toward monthly strength, and Volgan calls it into each of his wars at once (`add_to_war`; the sworn-realm autonomy cannot decline). With the Volgan tree's flag `zin_volgan_war_council` (*The War-Council*) every member is called whatever its oath, and the members' AI never seeks its own road while the flag holds.
-- Oath < 25: event `zin_dominion.22` "The Oath Falters" for the member: renew the oath (oath +15, member loses 50 PP) or seek its own road (country flag `zin_dominion_own_road`, read by the members' trees; timed idea `zin_dominion_seeking_own_road` for 365 days with `autonomy_gain = 0.5`; Volgan −5% stability). Members' own trees (tier B: `regional_demon`, `regional_dolon`, `regional_nezer`, [../05_focus_trees/regional/dead_lands.md](../05_focus_trees/regional/dead_lands.md)) read the oath.
+- Oath < 25: event `zin_dominion.22` "The Oath Falters" for the member: renew the oath (oath +15, member loses 50 PP) or seek its own road (country flag `zin_dominion_own_road`, read by the members' trees; timed idea `zin_dominion_seeking_own_road` for 365 days with `autonomy_gain = 0.5`; Volgan −5% stability). Members' own trees (tier B: `regional_demon`, `regional_dolon`, `regional_nezer`, [../05_focus_trees/regional/ember_lands.md](../05_focus_trees/regional/ember_lands.md)) read the oath.
 - When Volgan's body is destroyed: every member's oath −30, then `zin_dominion.18` "Old Allegiances" for each member: oath ≥ 40 stays; otherwise the member breaks free (Volgan `end_puppet`, `remove_from_faction`).
 
 ### 5. The Nether and the King of Demons
@@ -240,7 +240,7 @@ Under `zin_rules_is_historical` the factors stay as tabled: the vault says most 
 Mirolon is the only power that takes the danger seriously at the start. Two variables (new, Mirolon scope):
 
 - `zin_mirolon_proof` (0 to 100): evidence of Volgan's arming that a court cannot laugh away. **Start:** 15.
-- `zin_mirolon_passes` (0 to 100): readiness of the forts on the passes between Mirolon and Volgan's Dead Lands. **Start:** 30.
+- `zin_mirolon_passes` (0 to 100): readiness of the forts on the passes between Mirolon and Volgan's Ember Lands. **Start:** 30.
 
 **Scouting** (decision category `zin_dominion_mirolon_watch`, Mirolon only, opened by focus "The Watch on the Passes", flag `zin_mirolon_watch_open`):
 
@@ -256,7 +256,7 @@ Volgan's counter: decision **Silence the Watchers** (Volgan, category `zin_domin
 
 | Proof | Effect |
 | ---: | --- |
-| 25 | Herez and the free Dead Lands realms get `zin_dominion.3` "Mirolon's Fears"; opinion of Mirolon +10 |
+| 25 | Herez and the free Ember Lands realms get `zin_dominion.3` "Mirolon's Fears"; opinion of Mirolon +10 |
 | 50 | Aenor's heeding options in `zin_dominion.5` gain weight (their weights read proof); Lost Cause frontier companies may answer (Aenor spec) |
 | 75 | News event `zin_dominion.27` "Mirolon's Proof"; Gathering Dark +3; veil −10; Mirolon loses the tree's spirit `zin_mirolon_unheeded_warnings` |
 
@@ -288,8 +288,8 @@ and strength ≥ 50.
 - **Mirolon falls** when it capitulates or Volgan controls its capital and every pass state: `zin_dominion.11` sets global flag `zin_mirolon_fallen`, strength +10, all member oaths +10, Gathering Dark +5.
 - **Exile.** If Mirolon has the tree's flag `zin_mirolon_exile_ready` (focus "The Exile Court"), `on_capitulation_immediate` (ROOT Mirolon) makes it a government in exile (`become_exiled_in = { target = <host> legitimacy = 60 }`) in Herez if Herez exists and is not at war with Volgan, else the ruling Aenor realm, else the Gala Elves, and fires `zin_dominion.24`.
 - After the war Volgan may hold Mirolon with a dead garrison or make it a client crown (Volgan tree).
-- **Client crowns.** Decision "Make a Client Crown" (targeted, category `zin_dominion_court`, flag `zin_volgan_client_crowns` from the focus "Client Crowns"): for any capitulated or annexed realm of the Middle Lands or Dead Lands whose capital Volgan controls. Cost 100 PP; cooldown 90 days. Calls `zin_volgan_make_client` (`release_puppet` for an annexed realm, `puppet` for a capitulated one, then `set_autonomy` to `zin_autonomy_sworn_realm`). Client crowns count toward `zin_volgan_children_ready`.
-- **Tributary friends.** Volgan's AI declares no war before `zin_volgan_marches` on a realm with the country flag `zin_dominion_tributary_friend` (set by the Dead Lands trees' tribute events) and, when the march begins, sends it `zin_dominion.28` "Terms from Nafeher" instead of planning conquest: "Kneel as a client crown." (`zin_volgan_make_client`; AI 60) / "We paid for quiet, not chains." (the flag is cleared; AI 40).
+- **Client crowns.** Decision "Make a Client Crown" (targeted, category `zin_dominion_court`, flag `zin_volgan_client_crowns` from the focus "Client Crowns"): for any capitulated or annexed realm of the Middle Lands or Ember Lands whose capital Volgan controls. Cost 100 PP; cooldown 90 days. Calls `zin_volgan_make_client` (`release_puppet` for an annexed realm, `puppet` for a capitulated one, then `set_autonomy` to `zin_autonomy_sworn_realm`). Client crowns count toward `zin_volgan_children_ready`.
+- **Tributary friends.** Volgan's AI declares no war before `zin_volgan_marches` on a realm with the country flag `zin_dominion_tributary_friend` (set by the Ember Lands trees' tribute events) and, when the march begins, sends it `zin_dominion.28` "Terms from Nafeher" instead of planning conquest: "Kneel as a client crown." (`zin_volgan_make_client`; AI 60) / "We paid for quiet, not chains." (the flag is cleared; AI 40).
 
 ### 10. The march north
 
@@ -333,7 +333,7 @@ The Eindil's journey spec owns the duels: when and where Eindil and Volgan meet 
 8. Gathering Dark −10 (`zin_world_add_gathering_dark`).
 9. `mark_focus_tree_layout_dirty` so the Silent Throne branch appears.
 10. If the compact is active, `zin_dominion.23`.
-11. If Volgan is AI: 30 days later `zin_dominion.26` "The Steward Asks for Peace" to every enemy that is not a roster Dead Lands country (not Zol, not Mirolon, whose case is `zin_dominion.19`): "Peace, then." (`white_peace` with Volgan; AI 80, 100 under `zin_rules_is_historical`) / "Finish what the sword began." (AI 20, 0 under `zin_rules_is_historical`).
+11. If Volgan is AI: 30 days later `zin_dominion.26` "The Steward Asks for Peace" to every enemy that is not a roster Ember Lands country (not Zol, not Mirolon, whose case is `zin_dominion.19`): "Peace, then." (`white_peace` with Volgan; AI 80, 100 under `zin_rules_is_historical`) / "Finish what the sword began." (AI 20, 0 under `zin_rules_is_historical`).
 
 **What remains.** Event texts say only that his body broke and that "what remains of Volgan, no one living can say". The Steward rules "in a name that does not answer". The game rule `zin_rule_volgan_spirit` controls sandbox play:
 
@@ -375,7 +375,7 @@ Checkpoint numbers are those of [../03_gameplay/06_historical_path_and_ai.md](..
 
 Everything below is written by one new content-builder module, **`tools/content/modules/mech_volgan_dominion.mjs`** (`buildVolganDominion(staged, countries)`, imported and called by `tools/content/build.mjs`), into the `Staged` set that `tools/content/apply.mts` applies in one transaction. It reads:
 
-- `tools/content/data/countries.json` (politics step output): tags of Volgan, Mirolon, Demon, Dolon, Nezer, Herez, Goldoroth, Dondor, Zol and the ruling Aenor realm by name, capital states, and the roster regions (`scan`) "Dark Lands", "Dead Lands", "Rush Land" and "Rush Islands" (Middle Lands) for the region triggers;
+- `tools/content/data/countries.json` (politics step output): tags of Volgan, Mirolon, Demon, Dolon, Nezer, Herez, Goldoroth, Dondor, Zol and the ruling Aenor realm by name, capital states, and the roster regions (`scan`) "Dark Lands", "Ember Lands", "Rush Land" and "Rush Islands" (Middle Lands) for the region triggers;
 - `tools/content/data/mechanics/volgan_dominion.json` (new): every number of this spec (start values, monthly rates, thresholds, costs, cooldowns, AI weights and schedule), the character definitions and the localisation text, so tuning never touches code.
 
 Sites this spec reads (rows of the key-sites table, [../01_map/02_key_sites.md](../01_map/02_key_sites.md); resolved today as below):
@@ -441,7 +441,7 @@ Country, Volgan: `zin_volgan_veil_broken`, `zin_volgan_musters_open`, `zin_volga
 
 Country, Mirolon: `zin_mirolon_proof_25`, `zin_mirolon_proof_50`, `zin_mirolon_proof_75`, `zin_mirolon_holds`, `zin_mirolon_exile_ready`, `zin_mirolon_parim_laughed`, `zin_mirolon_watch_open`. The Mirolon tree adds its own flags (listed in its spec).
 
-Country, members and others: `zin_dominion_own_road` (member chose its own road in `zin_dominion.22`); `zin_dominion_tributary_friend` (set by the Dead Lands trees, read here).
+Country, members and others: `zin_dominion_own_road` (member chose its own road in `zin_dominion.22`); `zin_dominion_tributary_friend` (set by the Ember Lands trees, read here).
 
 ### Scripted triggers
 
@@ -464,8 +464,8 @@ Country, members and others: `zin_dominion_own_road` (member chose its own road 
 | `zin_mirolon_passes_held` | Mirolon at war with Volgan and Volgan controls no `zin_is_site_mirolon_passes` state |
 | `zin_is_volgan`, `zin_is_mirolon` | `original_tag` is Volgan's or Mirolon's tag |
 | `zin_dominion_is_dark_lands_country` | `original_tag` is one of the roster's Dark Lands countries |
-| `zin_dominion_is_free_dead_realm` | `original_tag` is one of the roster's Dead Lands countries, not Volgan, not Mirolon, not Volgan's subject |
-| `zin_dominion_is_dead_lands_country` | `original_tag` is one of the roster's Dead Lands countries |
+| `zin_dominion_is_free_dead_realm` | `original_tag` is one of the roster's Ember Lands countries, not Volgan, not Mirolon, not Volgan's subject |
+| `zin_dominion_is_dead_lands_country` | `original_tag` is one of the roster's Ember Lands countries |
 | `zin_dominion_is_middle_lands_state` | State scope: a core of any roster Middle Lands country (scan "Rush Land" and "Rush Islands" in `countries.json`, the politics step's superseded labels); the key sites table's `zin_is_region_middle_lands` (decision E7) may replace it once built, with the same states |
 | `zin_dominion_after_<yyyy_mm>` | The date floor, shifted by `global.zin_story_pace` (one trigger per floor in this spec) |
 | Site triggers | `zin_is_site_nafeher`, `zin_is_site_abyss`, `zin_is_site_nether`, `zin_is_site_mirolon_passes`, `zin_is_site_mirolon_seat`, `zin_is_site_parim`, in `zin_sites.txt` ([02_key_sites.md](../01_map/02_key_sites.md)); rows in "Builder" above |
@@ -534,7 +534,7 @@ Pictures are idea icons of the catalog in game (`GFX_idea_zin_<key>`).
 | --- | --- | --- | --- |
 | `zin_volgan_ember_herald` | The Ember Herald | proposed | General (Great Spirit of Volgan's court); Steward of Nafeher after the body breaks |
 | `zin_volgan_grave_warden` | The Grave-Warden | proposed | General; heads the necromantic orders |
-| `zin_volgan_ghorvak` | Ghorvak of the Hundred Clubs | proposed | General; ogre clan chief of the Dead Lands |
+| `zin_volgan_ghorvak` | Ghorvak of the Hundred Clubs | proposed | General; ogre clan chief of the Ember Lands |
 | `zin_mirolon_maeric` | High Warden Maeric | proposed | Mirolon's country leader `zin_light_wardens`; replaces the generated ruler |
 | `zin_mirolon_selda` | Captain Selda Varrow | proposed | Mirolon general (Pass Watch) |
 | `zin_mirolon_hadric` | Hadric Thorne, Scout-Master | proposed | Mirolon advisor (intelligence) |
@@ -548,9 +548,9 @@ Pictures are event pictures in game (`GFX_zin_evt_<key>`; news `GFX_zin_news_<ke
 | Id | Title | For | Trigger | Options | Picture |
 | --- | --- | --- | --- | --- | --- |
 | 1 | (hidden) The Dominion Wakes | Volgan | `on_startup` | Runs `zin_dominion_startup` (start values, start spirits of both trees, Maeric); the monthly pulse stays an on_action | — |
-| 2 | Rumours from the South | Mirolon, Herez, free Dead Lands realms | Veil drops below 70 | "We have heard such talk before." | `dead_lands_storm` |
-| 3 | Mirolon's Fears | Herez, free Dead Lands realms | Mirolon proof 25 | "Watch with them." (opinion of Mirolon +10) / "Mirolon frets." | `southern_warning` |
-| 4 | The Dead Lands Are Arming | all (news) | Veil below 30 | "So the legends wake." | news `dead_lands_storm` |
+| 2 | Rumours from the South | Mirolon, Herez, free Ember Lands realms | Veil drops below 70 | "We have heard such talk before." | `dead_lands_storm` |
+| 3 | Mirolon's Fears | Herez, free Ember Lands realms | Mirolon proof 25 | "Watch with them." (opinion of Mirolon +10) / "Mirolon frets." | `southern_warning` |
+| 4 | The Ember Lands Are Arming | all (news) | Veil below 30 | "So the legends wake." | news `dead_lands_storm` |
 | 5 | Mirolon's Warning | the ruling Aenor realm | Decision "Send Word to Parim" or a Mirolon focus | See section 8 | `southern_warning` |
 | 6 | Scouts Lost | Mirolon | Scouting with veil ≥ 70 (30%) | "Their names go on the wall." | `mirolon_passes` |
 | 7 | Scouts Found Dead | Mirolon | Volgan's "Silence the Watchers" | "Double the watch." (passes +3) / "Keep it quiet." (stability +2%) | `mirolon_passes` |
@@ -572,7 +572,7 @@ Pictures are event pictures in game (`GFX_zin_evt_<key>`; news `GFX_zin_news_<ke
 | 23 | The Compact Ends | Volgan, Zol | Body destroyed or `zin_zol_withdrawn`, compact active | "Each to his own dark." | `volgan_broken` |
 | 24 | A Court in Exile | Mirolon | Capitulation with `zin_mirolon_exile_ready` | "Mirolon lives while we do." | `generic_court` |
 | 25 | A Stirring in Nafeher | Volgan | Rule `STIRRING` only | "In this telling, the throne answers." | `dead_lands_storm` |
-| 26 | The Steward Asks for Peace | each enemy outside the Dead Lands | 30 days after the body breaks, Volgan AI | "Peace, then." / "Finish what the sword began." | `volgan_broken` |
+| 26 | The Steward Asks for Peace | each enemy outside the Ember Lands | 30 days after the body breaks, Volgan AI | "Peace, then." / "Finish what the sword began." | `volgan_broken` |
 | 27 | Mirolon's Proof | all (news) | Mirolon proof 75 | "Mirolon was right." | news `dead_lands_storm` |
 | 28 | Terms from Nafeher | a tributary friend | The march begins | Kneel / refuse | `generic_court` |
 

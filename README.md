@@ -7,7 +7,7 @@ ZIN is in early development. The world, countries, peoples, ideologies and inter
 ## What is in the current build
 
 - **Map.** A 5120 × 2560 Aoaz map built from the owner's hand-drawn sheets, with a widened central sea: 275 strategic regions and 1,332 states. Layout and every generation decision are in [docs/generation/assumptions.md](docs/generation/assumptions.md).
-- **Countries.** 305 regional countries, among them Aenor (the Middle Kingdom) with its puppets, Volgan's Dead Lands, Zol's Mistake, the Worshipdom of Afrit, Horos's Castle of Yeldenne and the elven realms. The Great Wall of Aenor is a hard border between the Middle Lands and the Magical Lands.
+- **Countries.** 305 regional countries, among them Aenor (the Middle Kingdom) with its puppets, Volgan's Ember Lands, Zol's Mistake, the Worshipdom of Afrit, Horos's Castle of Yeldenne and the elven realms. The Great Wall of Aenor is a hard border between the Middle Lands and the Magical Lands.
 - **Peoples.** Men, elves, Sunhot elves, giants, ents, yeti, trolls, orcs, grave hosts and demons, each as a national spirit. Every country's people, ideology and stance come from the editable table [docs/design/countries.csv](docs/design/countries.csv).
 - **Ideologies.** Light, Dominion, Shadow and the Wild replace the four vanilla ideologies, each with its own stances.
 - **Interface.** A Realm panel for each country's people and standing.

@@ -33,11 +33,11 @@ All numbers are **proposed (P)** design targets. They count the living. The dead
 | Dark Lands | 3.40 M | 3.9% | 47 | 72 k | 7% | 55 k | Orc holds, Dondor, the troll forest, volcano country. |
 | Magical Lands | 2.40 M | 2.8% | 131 | 18 k | 10% | 25 k | Elven realms in groves; the Wall; Dragon Mountain; the Worshipdom valleys. |
 | Triton's Islands | 2.00 M | 2.3% | 45 | 44 k | 14% | 20 k | Chart-houses and corsair isles; harbour towns. |
-| Dead Lands | 1.90 M | 2.2% | 30 | 63 k | 9% | 60 k | Thin: Mirolon's lake country, coast freeholds, the Nether realms and Volgan's hosts (the dead are not counted). |
+| Ember Lands | 1.90 M | 2.2% | 30 | 63 k | 9% | 60 k | Thin: Mirolon's lake country, coast freeholds, the Nether realms and Volgan's hosts (the dead are not counted). |
 | Islands of the South | 1.30 M | 1.5% | 24 | 54 k | 8% | 8 k | Small, poor and hospitable. |
 | Zol's Mistake | 0.14 M | 0.2% | 104 | 1 k | 10% | 12 k | Nearly empty; only the town of Furviatlon and a few fishers on the islands; the dead are not counted. |
 
-The Middle Lands are the most fertile and populous land by density: the Great Lake basin and the Vale of Aenor, with Aenor itself two-fifths of the Middle Lands. The East Lands follow, in rivers and oases. The Cold Lands are the largest landmass and hold one person in eight. The Dead Lands are thin. Zol's Mistake is nearly empty outside the town of Furviatlon.
+The Middle Lands are the most fertile and populous land by density: the Great Lake basin and the Vale of Aenor, with Aenor itself two-fifths of the Middle Lands. The East Lands follow, in rivers and oases. The Cold Lands are the largest landmass and hold one person in eight. The Ember Lands are thin. Zol's Mistake is nearly empty outside the town of Furviatlon.
 
 ### By people (primary people of each country, with minor-people carve-outs)
 
@@ -122,7 +122,7 @@ The computed regional totals above must be reproduced by this rule within 1%. Th
 | Dark Lands | 0.24 M | 0 | 2 | 17 | 7,529 | 94 |
 | Magical Lands | 0.24 M | 0 | 1 | 21 | 5,143 | 67 |
 | Triton's Islands | 0.28 M | 0 | 1 | 25 | 4,095 | 56 |
-| Dead Lands | 0.17 M | 0 | 3 | 9 | 4,117 | 53 |
+| Ember Lands | 0.17 M | 0 | 3 | 9 | 4,117 | 53 |
 | Islands of the South | 0.10 M | 0 | 0 | 11 | 2,848 | 36 |
 | Zol's Mistake | 0.01 M | 0 | 0 | 2 | 300 | 4 |
 | **World** | **15.03 M** | **6** | **47** | **1,290** | **170,503** | **2,408** |
@@ -157,7 +157,7 @@ Only cities and above are named in this spec (the 100 settlements of section 8).
 - **People:** 24.50 M (28.3% of the world) in 30 countries and 96 states; 255 thousand per state. Urban share 24%; largest city 380 thousand.
 - **Density:** Great Lake basin and plains: the best fed land of Aoaz; about 40 to 55 people per square kilometre on the plains and up to 110 beside the Aenar, the Great River and the Great Lake shore.
 - **Dominant cultures:** Lake Aenorans 68%, Selen Rangers 9%, March-Folk 8%.
-- **Minorities and mixed lands:** Aenor holds many dominions of its own culture; the Selen, Kilinti and Hiloron border has men, ents and giants living side by side; the south marches mix march-folk with refugees from the Dead Lands coast; the Veiled and Redbark are enclaves inside Aenor's roads.
+- **Minorities and mixed lands:** Aenor holds many dominions of its own culture; the Selen, Kilinti and Hiloron border has men, ents and giants living side by side; the south marches mix march-folk with refugees from the Ember Lands coast; the Veiled and Redbark are enclaves inside Aenor's roads.
 
 ### East Lands
 
@@ -214,11 +214,11 @@ Only cities and above are named in this spec (the 100 settlements of section 8).
 - **Density:** Small islands, fully used coasts: 25 to 40 per square kilometre on inhabited isles.
 - **Dominant cultures:** Chart-Islanders 68%, Corsair Lords 32%.
 
-### Dead Lands
+### Ember Lands
 
 - **People:** 1.90 M (2.2% of the world) in 13 countries and 30 states; 63 thousand per state. Urban share 9%; largest city 60 thousand.
 - **Density:** Hot desert and hills, storm-girt coasts: lake country and the north coast 8 to 15, the interior under one.
-- **Dominant cultures:** Wardens of Mirolon 42%, Dead Lands Freeholders 34%, Grave Hosts of Volgan 16%.
+- **Dominant cultures:** Wardens of Mirolon 42%, Ember Lands Freeholders 34%, Grave Hosts of Volgan 16%.
 - **Minorities and mixed lands:** Mirolon's wardens, coast freeholders and the Nether realms; Volgan's Dominion holds orcs, ogres and demons beside the dead.
 
 ### Islands of the South
@@ -279,7 +279,7 @@ A country's strength follows its land, its rivers and its trade. The class table
 
 ### Targets by region
 
-Region development (share of building slots filled): Middle Lands 0.60, East Lands 0.50, Cold Lands 0.25, West Lands 0.40, North Lands 0.45, Lands of the Sun 0.40, Dark Lands 0.30, Magical Lands 0.35, Triton's Islands 0.30, Dead Lands 0.30, Islands of the South 0.25, Zol's Mistake 0.00. The state pass multiplies workshops by development ÷ 0.60.
+Region development (share of building slots filled): Middle Lands 0.60, East Lands 0.50, Cold Lands 0.25, West Lands 0.40, North Lands 0.45, Lands of the Sun 0.40, Dark Lands 0.30, Magical Lands 0.35, Triton's Islands 0.30, Ember Lands 0.30, Islands of the South 0.25, Zol's Mistake 0.00. The state pass multiplies workshops by development ÷ 0.60.
 
 ### The largest countries by people (all 305 are in the data file)
 
@@ -302,7 +302,7 @@ Region development (share of building slots filled): Middle Lands 0.60, East Lan
 | The Lands of Light | Lands of the Sun | Sunhot Elves of the Light | 15 | 0.93 M | 0.11 M |
 | Lambin | West Lands | Gunwaith Clans | 10 | 0.85 M | 0.14 M |
 | Mostok | East Lands | Caravan Princes | 12 | 0.83 M | 0.17 M |
-| Mirolon | Dead Lands | Wardens of Mirolon | 6 | 0.80 M | 0.07 M |
+| Mirolon | Ember Lands | Wardens of Mirolon | 6 | 0.80 M | 0.07 M |
 | Miaed | East Lands | River-Kings of the East | 19 | 0.79 M | 0.16 M |
 | Fosoco | East Lands | River-Kings of the East | 10 | 0.78 M | 0.16 M |
 | Fearno | Cold Lands | Ice Clans | 25 | 0.77 M | 0.06 M |
@@ -320,7 +320,7 @@ Region development (share of building slots filled): Middle Lands 0.60, East Lan
 
 ### Cultural minorities and mixed lands
 
-- **Middle Lands.** Aenor holds many dominions of its own culture; the Selen, Kilinti and Hiloron border has men, ents and giants living side by side; the south marches mix march-folk with refugees from the Dead Lands coast; the Veiled and Redbark are enclaves inside Aenor's roads.
+- **Middle Lands.** Aenor holds many dominions of its own culture; the Selen, Kilinti and Hiloron border has men, ents and giants living side by side; the south marches mix march-folk with refugees from the Ember Lands coast; the Veiled and Redbark are enclaves inside Aenor's roads.
 - **North Lands.** The strait coast is Leren; the inland crowns are Free Crowns; Blackton on the Dark Lands coast is mixed Dondor and Leren; Leren sailors settle R'en.
 - **West Lands.** Gunwaith clans and Girdon wardens mix along the Grey Ford; guild towns have Aenoran merchants; Buldor companies recruit from every clan.
 - **Cold Lands.** Ice clans mix with yeti and giants at the high valleys; Windwaith and the western ports have Gunwaithic traders.
@@ -328,11 +328,11 @@ Region development (share of building slots filled): Middle Lands 0.60, East Lan
 - **Magical Lands.** Mushroom-forest mycids live inside an elven realm [O]; the Worshipdom valleys are men inside the elven region; the rift coast has Alerhic merchants.
 - **East Lands.** Noric, Stabilic and Alerhic peoples mix at the crossroads; caravan towns host every tongue; the Hidden Council's eastern clients are present in every city. [secret]
 - **Lands of the Sun.** The Sunfolk of Goodin live among the Sunhot; the Gala court has a few men and Sunhot courtiers.
-- **Dead Lands.** Mirolon's wardens, coast freeholders and the Nether realms; Volgan's Dominion holds orcs, ogres and demons beside the dead.
+- **Ember Lands.** Mirolon's wardens, coast freeholders and the Nether realms; Volgan's Dominion holds orcs, ogres and demons beside the dead.
 
 ### Refugees and old migrations
 
-The Second Age scattered the Aenorans into Selen, the steppe and Asgard; the Third Age pushed some into the Magical Lands' borders as guests of the elves; the Fourth Age brought them home. The result is three Aenoran refuge cultures (Selen Rangers, Steppe Riders, Isle Houses) that are Aenoran in speech and not in habit, and a wall of watch-families along the Great Wall. After the Fall of Aenor the Mirolonese moved to the north coast of the Dead Lands and back. The marchers settled the empty southern ground after the Second Age famine. These histories are why a state's culture can differ from its owner's.
+The Second Age scattered the Aenorans into Selen, the steppe and Asgard; the Third Age pushed some into the Magical Lands' borders as guests of the elves; the Fourth Age brought them home. The result is three Aenoran refuge cultures (Selen Rangers, Steppe Riders, Isle Houses) that are Aenoran in speech and not in habit, and a wall of watch-families along the Great Wall. After the Fall of Aenor the Mirolonese moved to the north coast of the Ember Lands and back. The marchers settled the empty southern ground after the Second Age famine. These histories are why a state's culture can differ from its owner's.
 
 ### Core and claim logic at the start
 
@@ -438,7 +438,7 @@ Placement uses countries, capital states and named features of the geography mod
 | 59 | Gelroze | Nezer | Demons | Netherborn | Hall of Queen Nazara | 22 | In Nezer's capital state, in the Nezerun hills. |
 | 60 | Miherze | Demon | Demons | Netherborn | Hall of Hazarel the Horned | 20 | In Demon's capital state, in the Nether foothills. |
 | 61 | Unzeky | Dolon | Demons | Netherborn | Salt-coast pact-hall | 12 | In Dolon's capital state, on the Dead Sea. |
-| 62 | Larorun | Nan | Men | Dead Lands Freeholders | Hill warlord's fort | 10 | In Nan's capital state, in the Nan Mountains. |
+| 62 | Larorun | Nan | Men | Ember Lands Freeholders | Hill warlord's fort | 10 | In Nan's capital state, in the Nan Mountains. |
 | 63 | Memate | Magical Forest | Elves | Council Elves of the Magical Forest | Seat of the First Speaker; tree-city | 25 | In the Magical Forest's capital state, inside the Living Forest. |
 | 64 | Ennaton | Nolorim | Elves | Pass-Warden Elves | Pass-warden hold | 6 | In Nolorim's capital state, on the high pass. |
 | 65 | Verozo | Herrodon | Elves | Hill-Kingdom Elves | Hill-kingdom hall | 14 | In Herrodon's capital state, on the Herrodon Mountains' lower slope. |
@@ -460,7 +460,7 @@ Placement uses countries, capital states and named features of the geography mod
 | 81 | Cereosa | Mostok | Men | Caravan Princes | Central trade city | 40 | In Mostok's capital state, at the central road junction. |
 | 82 | Furtonlin | Delbiz Grasslands | Men | River-Kings of the East | Grassland kingdom capital | 28 | In Delbiz Grasslands' capital state, on the rift coast. |
 | 83 | Kerdoco | Obmi | Men | Caravan Princes | Jungle-edge city | 30 | In Obmi's capital state, at the jungle edge. |
-| 84 | Pehami | Woqood | Men | Noris Camel Warriors | North-coast desert capital | 25 | In Woqood's capital state, on the Ocean of Zol coast. |
+| 84 | Pehami | Woqood | Men | Noris Camel Warriors | North-coast desert capital | 25 | In Woqood's capital state, on the Kusmeel coast. |
 | 85 | Delgidor | Arcon | Men | Caravan Princes | Southern city on the Gold Road | 24 | In Arcon's capital state, on the Gold Road. |
 | 86 | Liohado | Lorvens | Men | Lake Road Cities | Northern coast city | 18 | In Lorvens's capital state, on the coast. |
 | 87 | Torsain | Howan | Men | Southern Islanders | Island harbour | 8 | In Howan's capital state, in the lee of the reef. |

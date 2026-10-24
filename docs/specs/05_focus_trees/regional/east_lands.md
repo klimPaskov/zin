@@ -174,7 +174,7 @@ King Alerhan III (`<Alerhia>_zin_ruler`, characters spec), Wild stance `zin_wild
 
 ### Situation in 4A 1748
 
-Miaed holds the desert passes of the south-west: nineteen states where the Sand Road's branch climbs from the dunes to the high gates, bordering the Lands of Light and lying near the eastern edge of the Dead Lands (mechanic). Its rulers are the **Lords of the Passes** (proposed title); their wealth is tolls and their army is the pass-wardens who keep the gates. Lord Furanow lets every caravan through at a price and owes neither Furvior nor Postondoroth. Old songs of the passes speak of armies that once marched out of the south; nobody in Miaed has seen one (proposed flavour; the vault establishes only that Volgan's First Age army held allied men of the eastern and southern lands).
+Miaed holds the desert passes of the south-west: nineteen states where the Sand Road's branch climbs from the dunes to the high gates, bordering the Lands of Light and lying near the eastern edge of the Ember Lands (mechanic). Its rulers are the **Lords of the Passes** (proposed title); their wealth is tolls and their army is the pass-wardens who keep the gates. Lord Furanow lets every caravan through at a price and owes neither Furvior nor Postondoroth. Old songs of the passes speak of armies that once marched out of the south; nobody in Miaed has seen one (proposed flavour; the vault establishes only that Volgan's First Age army held allied men of the eastern and southern lands).
 
 ### Role
 
@@ -215,7 +215,7 @@ Lord Furanow of the Passes (`<Miaed>_zin_ruler`), Wild stance `zin_wild_freehold
 - `caravan_guards_of_the_passes` **Caravan Guards of the Passes** (7,3; ← passage_for_furvior / tolls_for_all / passage_for_postondoroth) `caravan`: add_spirit caravan_guards. AI 20.
 - `the_sand_road_branch` **The Sand Road Branch** (6,4; ← pass_forts / caravan_guards_of_the_passes) `traders_road`: call zin_shared_east_lands_road_infra; political_power 50. AI 20.
 
-**C. Watch on the Far Marches.** Miaed watches its south-west: the Lands of Light, and beyond the desert the Dead Lands.
+**C. Watch on the Far Marches.** Miaed watches its south-west: the Lands of Light, and beyond the desert the Ember Lands.
 
 - `watch_on_the_far_marches` **Watch on the Far Marches** (21,1; ← lord_of_the_passes; 35d) `eye_watchful`: political_power 25. AI 25.
 - `scouts_of_the_waste` **Scouts of the Waste** (20,2; ← watch_on_the_far_marches) `footprints_snow`: event regional_miaed.2. AI 20.
@@ -649,7 +649,7 @@ King Ocellio of Ostoroth (`<Ostoroth>_zin_ruler`), Wild stance `zin_wild_freehol
 
 ### Situation in 4A 1748
 
-Gondolin is the northern maritime crown of the East: six states where the Salt Road ends at the sea that faces the Ocean of Zol (mechanic, roster). It has been Furvior's partner in the Noris Treaty for generations (working table), and its quays ship Noris's salt along the northern coast. Queen Lorvena is proud of the Treaty and prouder of her captains. Her fishermen have lately told stories of dark sails among far islands that answer no hail; her court smiles at them (start situation pressure 3, proposed for Gondolin).
+Gondolin is the northern maritime crown of the East: six states where the Salt Road ends at the sea that faces the Kusmeel (mechanic, roster). It has been Furvior's partner in the Noris Treaty for generations (working table), and its quays ship Noris's salt along the northern coast. Queen Lorvena is proud of the Treaty and prouder of her captains. Her fishermen have lately told stories of dark sails among far islands that answer no hail; her court smiles at them (start situation pressure 3, proposed for Gondolin).
 
 ### Role
 

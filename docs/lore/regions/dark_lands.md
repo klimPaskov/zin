@@ -19,7 +19,7 @@ Between the North Lands and the Middle Lands, across narrow straits, lie two dar
 - The **Goldoroth Volcano** (`volcano_goldoroth`), a smoking grey cone above Cocanoor, the Fire-Mountain of the orcs; dormant smoke, no eruption yet [GM].
 - Passes: the **Dark Gate**; the drawn **Path of Dark** (`pass_path_of_dark`) along the south foot of the Darkness to the Dun Sea; the proposed **Dondor Pass** (`pass_dark_north`) between the Dark Forests and the ridge [GM].
 - Forests: the dense black **Dark Forests** (`forest_dark`) of Dondor's north-east; the **Fonoor and Giant Forests** (`forest_fonoor_giant`) between the Dondor arm and the ridge; the **Troll Forest** (`forest_troll`, drawn **Troy's Forest**) beside Bordon [GM; NT]; the drawn Dough Forest, Dondor Forest and Forest of Nothingness [NT].
-- Drawn lands: **The Borderline of Giants** below the Dark Forests; the **Goldoroth Dead Lands**, the dark south of the Goldoroth arm; the **Nothingness** tail pointing at the Middle Lands (`peninsula_nothingness`, proposed) [NT; GM].
+- Drawn lands: **The Borderline of Giants** below the Dark Forests; the **Goldoroth Ember Lands**, the dark south of the Goldoroth arm; the **Nothingness** tail pointing at the Middle Lands (`peninsula_nothingness`, proposed) [NT; GM].
 
 ### Climate and seasons
 
@@ -36,7 +36,7 @@ Cool, gloomy and overcast, with coastal fog; mild winters and mists [GM region_d
   - the **Dun Sea** (`sea_dun_sea`) at the east mouth of the inner channel [GM].
   - **Gaelmael**, "the Grey Water" (`sea_death_sea`, former label Sea of Death), the southern strait water between the Dark Lands and the Middle Lands. The drawn "Sea of Death" collided with the Dead Lands' drawn "Sea of Deaths" and "The Dead's Sea", which the owner's rule forbids [HO §5.1]; the Dead Lands dossier renames those, and the Middle Lands dossier proposes the Aenoran name Gaelmael (*gael* "grey" + *mael* "sea") for this water. This dossier adopts it so that the water has one name; the orcs of the Goldoroth shore call it *Gnashagh*, "bone-water" (Orcish *gnash* "bone" + *agh* "water" [LG §3.18]), a local usage only. The drawn **Islands of Death** beside it keep their name.
   - the **Gold Wides** (`sea_gold_wides`) off Goldoroth's south-east shore [GM].
-  - the **Sea of Dolon** (`sea_dolon_left_sea`, drawn "The Leat Sea of Dolon", reading uncertain; the model reads "Left"), south of the Goldoroth Islands, the water that leads toward Dolon of the Dead Lands [GM; NT].
+  - the **Sea of Dolon** (`sea_dolon_left_sea`, drawn "The Leat Sea of Dolon", reading uncertain; the model reads "Left"), south of the Goldoroth Islands, the water that leads toward Dolon of the Ember Lands [GM; NT].
   - the **Belonton Water** (`sea_dark_west_sea`, former model name "Western Dark Strait"), off Belonton and the Goldoroth Islands, open to the Crown Ocean; renamed because a sea called a strait beside two real straits confuses [GM].
 - **Straits:** the **Northern Dark Strait** (`strait_dark_north`, established) between the Dondor arm and Lerendor, 25 to 35 pixels; the **Southern Dark Strait** (`strait_dark_south`, established) between Goldoroth's south shore and the Middle Lands' west cape, about 30 pixels [V: Aoaz and Its Regions; GM]. Neither place is confirmed by the owner [GM notes].
 
@@ -60,7 +60,7 @@ Fog on every coast; ash-falls from the Fire-Mountain; the fens of Dreson that "s
 | Ogres | the ogre clans of the Darkness | Orcish | The Darks, beside orcs | ogres established as an independent Dark Lands people [V: Kingdoms Factions and Conflicts] |
 | Trolls | the forest trolls of Smash | Trollish | the Troll Forest | established people and separate polity [V: Great Powers and Relations]; Smash from the card [BC 13; OD] |
 | Giants | the giants of the Giant Forest (proposed) | Giants' Speech | the Giant Forest by the Giant River | independent Dark Lands giants established [V: Kingdoms Factions and Conflicts]; place proposed from the drawn labels [NT] |
-| Demons | the lords of Veshazel (proposed) | Infernal | the Goldoroth Dead Lands | independent Dark Lands demons established [V: Kingdoms Factions and Conflicts]; place proposed |
+| Demons | the lords of Veshazel (proposed) | Infernal | the Goldoroth Ember Lands | independent Dark Lands demons established [V: Kingdoms Factions and Conflicts]; place proposed |
 | Devils | not a people of the land | — | the Goldoroth Mountains and the Islands of Death | card [BC 46]; nature owner decision [OD] |
 
 **Languages.** Orcish is an isolate of closed syllables and throat sounds with no *e* (proposed [LG §3.18]); its dialects mark the clans. **Dondric** is Old Ainic "worn down by centuries of living beside orc holds", with Orcish loan-words [LG §3.4]: the one place where an Ainic tongue and Orcish share words, explained by contact. The chart names Bordon, Dreson and Goldoroth carry an *e* or the Aenoran *-dor* that Orcish lacks, because they are Aenor's chart forms; the orcs' own form of Goldoroth is *Gruzgoroth* (proposed [LG §7]).
@@ -148,7 +148,7 @@ Other livelihoods: tolls on the Iron Road, the Black Road (Bordon's caravan inns
 | --- | --- |
 | North Lands | Across the Northern Dark Strait: Leren ships at Blackton, Lerendor's lean on the Dark Shore [MS lerendor_narrow_strait §9]. |
 | Middle Lands and Aenor | Across the Southern Dark Strait and Gaelmael; Aenor once backed the free confederation against Elzon [V: The Second Age of Aoaz]. |
-| Dead Lands | Volgan's envoys from Nafeher court every hold; his authority does not extend to the independent Dark Lands [V: Volgans Dead Lands]; the Sea of Dolon leads south toward Dolon. |
+| Ember Lands | Volgan's envoys from Nafeher court every hold; his authority does not extend to the independent Dark Lands [V: Volgans Ember Lands]; the Sea of Dolon leads south toward Dolon. |
 | Zol's Mistake | The dead come through the straits late in the age [V: The Fourth Age of Aoaz §IX]. |
 | Within the region | Goldoroth and Dondor: armed peace [SS Relations]; Dondor and Belonton: the Accord; the free holds: Goldoroth presses them and Dondor needs their iron [WB §3.4]; the Troll Forest and the giants are left alone; Burnikit sells to everyone; Veshazel is shunned. |
 
@@ -180,7 +180,7 @@ Other livelihoods: tolls on the Iron Road, the Black Road (Bordon's caravan inns
 | **Ellenmoor** | Burnikit | warrens of about 15,000 | The card's caves where hobgoblins are most numerous [BC 29], proposed as the warm caves under the Goldoroth Mountains; the hobgoblin king's hall. |
 | **Gollonlon** | Fondor | about 5,000 | At the Fonoor Forest's edge [DM settlements]. |
 | **Dobudo** | Dun | about 4,000 | On the Dun Sea. |
-| **Veshazel** (proposed) | Veshazel | a black hold | Infernal *vesh* "ash" + *-azel* "hold" [LG §3.24]: the demon lord's seat on the Goldoroth Dead Lands. |
+| **Veshazel** (proposed) | Veshazel | a black hold | Infernal *vesh* "ash" + *-azel* "hold" [LG §3.24]: the demon lord's seat on the Goldoroth Ember Lands. |
 
 ## Sub-regions in depth
 
@@ -202,9 +202,9 @@ The orc warkingdom of the inner Dark Lands, united about 4A 1450 (proposed), aro
 
 **Land.** The drawn **Giant Forest**, the **Giant River** and **The Borderline of Giants** below the Dark Forests [NT; GM river_giant]. **People.** A few hundred giants, the vault's independent Dark Lands giants [V: Kingdoms Factions and Conflicts], who keep the forest behind a line of cairns that men and orcs do not cross. They may be the vault's **Forgotten Giants**, whose place is open [V: Peoples of Aoaz]; this dossier proposes the Giant Forest as their home and asks the owner. **Name.** *Hoorunoron*, Giants' Speech *hoorun* "forest" + *-oron* "giants' land" [LG §3.21].
 
-### Veshazel and the Goldoroth Dead Lands (proposed)
+### Veshazel and the Goldoroth Ember Lands (proposed)
 
-**Land.** The drawn **Goldoroth Dead Lands**, the black south of the Goldoroth arm facing the Sea of Dolon [NT]. **People.** Demons, corrupted angels in the existing account [V: Peoples of Aoaz]: the vault's independent Dark Lands demons under a ruler of their own [V: Kingdoms Factions and Conflicts]. Proposed: a lord who keeps a pact-name, with a few hundred demons and their thralls, courted by the Southern Dominion and by Goldoroth, sworn to neither. The demon card says demons are evil and cunning, cast fire from hand and mouth, and some can move in a blink from place to place [BC 48].
+**Land.** The drawn **Goldoroth Ember Lands**, the black south of the Goldoroth arm facing the Sea of Dolon [NT]. **People.** Demons, corrupted angels in the existing account [V: Peoples of Aoaz]: the vault's independent Dark Lands demons under a ruler of their own [V: Kingdoms Factions and Conflicts]. Proposed: a lord who keeps a pact-name, with a few hundred demons and their thralls, courted by the Southern Dominion and by Goldoroth, sworn to neither. The demon card says demons are evil and cunning, cast fire from hand and mouth, and some can move in a blink from place to place [BC 48].
 
 ### The Islands of Death
 
@@ -219,7 +219,7 @@ The drawn dots east of the black island Goldoroth [NT], proposed as the devil ca
 | **Goldoroth** (*Gruzgoroth*) | orcs, Volcano Clans | warkingdom under a Warking | Cocanoor | the Goldoroth arm's heart: the volcano, South and West Goldor, Sungodor, Gord, Zuriath | Working power [V: Great Powers and Relations]. |
 | **Dark Gate** | orcs, Volcano Clans | tributary gate-hold of the Iron Yoke | Doldes | the Dark Gate pass and Bold's border | The pass that tolls every caravan [WB §6.6]. |
 | **Burnikit** | goblins, with hobgoblins | warren-kingdom under the hobgoblin king | Ellenmoor | the deep caves of the Goldoroth Mountains | Owner decision on the hobgoblin king [OD]; cards [BC 29; BC 36]. |
-| **Veshazel** | demons | demon lordship | Veshazel | the Goldoroth Dead Lands | Vault's independent Dark Lands demons [V: Kingdoms Factions and Conflicts]. |
+| **Veshazel** | demons | demon lordship | Veshazel | the Goldoroth Ember Lands | Vault's independent Dark Lands demons [V: Kingdoms Factions and Conflicts]. |
 | **Dondor** | men, Dondor Brutes | clan-moot kingdom; leads the Dark Sea Accord | Notbuton | the Dondor plain, the Dondor Forest, the lower Giant River, the Dondor Fen | Working power [V: Great Powers and Relations]; grown from one state, as the foundation spec proposes [WB §5 Dondor]. |
 | **Blackton** | men, Dondor Brutes and Leren | league of five walled harbour towns | Dontadur | the eastern coast towns | Free human towns of the coast [V: The Campaign of 4A 1748]. |
 | **Belonton** | orcs, Sea Orcs | sea-orc confederacy | Notle | the Belonton borderlands and isles, the Gull Kingdom's cliffs, the Lestern Isles | Working Accord partner [V: Great Powers and Relations]. |
@@ -240,7 +240,7 @@ The drawn dots east of the black island Goldoroth [NT], proposed as the devil ca
 | --- | --- | --- |
 | Y1A Goldoroth | kept, enlarged | Takes the volcano clans' holds. |
 | Y48 Sungodor, Y4C Gord, Y4A Zuriath | merged into Goldoroth | The hold where the first Warking was acclaimed, the Warking's chain-smiths, the ash-glass ridge [WB §6.6]. |
-| Y1A's Goldoroth Dead Lands | split off as Veshazel | Independent demons. |
+| Y1A's Goldoroth Ember Lands | split off as Veshazel | Independent demons. |
 | Y49 Dark Gate | kept, enlarged | |
 | Y4B Bold | merged into Dark Gate | Its border strip lies under the same pass [NT]. |
 | Y19 Dondor | kept, enlarged | One state cannot lead an Accord against an orc kingdom. |
@@ -287,7 +287,7 @@ The drawn dots east of the black island Goldoroth [NT], proposed as the devil ca
 ## 14. Sources
 
 - **[OD]** owner decisions of 24 October 2026, relayed by the coordinator (direct replacement of borrowed names; renaming of ill-fitting labels; Smash and the hobgoblin king rule their own realms only; gunpowder; devils; no exact ages; the twelve main and the lesser New Gods).
-- **[V: note §heading]** lore vault `docs/lore/vault/`: `05 - Geography/Aoaz and Its Regions.md`; `05 - Geography/Volgans Dead Lands.md`; `04 - Peoples/Peoples of Aoaz.md`; `06 - Politics/Great Powers and Relations.md`; `06 - Politics/Kingdoms Factions and Conflicts.md`; `06 - Politics/Elzons Order.md`; `07 - History/The First Age of Aoaz.md` §4, §5; `07 - History/The Second Age of Aoaz.md` §I and the Dark Lands sections; `07 - History/The Third Age of Aoaz.md`; `07 - History/The Fourth Age of Aoaz.md` §IX; `07 - History/Fourth Age Chronology.md` §III; `07 - History/The Campaign of 4A 1748.md`; `07 - History/Timeline.md`; `01 - Cosmology/New Gods.md`; `01 - Cosmology/Religious Knowledge and False Gods.md`.
+- **[V: note §heading]** lore vault `docs/lore/vault/`: `05 - Geography/Aoaz and Its Regions.md`; `05 - Geography/Volgans Ember Lands.md`; `04 - Peoples/Peoples of Aoaz.md`; `06 - Politics/Great Powers and Relations.md`; `06 - Politics/Kingdoms Factions and Conflicts.md`; `06 - Politics/Elzons Order.md`; `07 - History/The First Age of Aoaz.md` §4, §5; `07 - History/The Second Age of Aoaz.md` §I and the Dark Lands sections; `07 - History/The Third Age of Aoaz.md`; `07 - History/The Fourth Age of Aoaz.md` §IX; `07 - History/Fourth Age Chronology.md` §III; `07 - History/The Campaign of 4A 1748.md`; `07 - History/Timeline.md`; `01 - Cosmology/New Gods.md`; `01 - Cosmology/Religious Knowledge and False Gods.md`.
 - **[HO §n]** `docs/zin-handoff/01-CONTEXT-AND-CANON.md` (§2.6 devils; §5.1 rules F1 to F8 on seas; §6 chronology issues).
 - **[GM id]** `tools/content/data/geography/aoaz.json`; spec `docs/specs/01_map/05_geography_model.md`.
 - **[NT]** `docs/name_table.md`, `tools/content/data/labels.json` (sheet Dark Lands).

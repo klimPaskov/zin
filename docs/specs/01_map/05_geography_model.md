@@ -49,7 +49,7 @@ The model replaces guessing with named, placed, lore-checked features. The struc
 | Orientation | North is up, east is right. Aoaz is **flat**: no globe, no poles, no wrap |
 | Layout | The game layout of 18 October 2026: the cleaned reference with the central sea widened |
 | Central sea | The **Crown Ocean** (*proposed*; drawn Rush Ocean is superseded): x 0.30 to 0.52, y 0.40 to 0.80, about 1,150 pixels west to east |
-| Landmasses | Western Mainland (Cold Lands and West Lands), Central Mainland (Middle Lands, Magical Lands, Mirolon), Eastern Mainland (East Lands and South Lands), Northern Wastes (Zol's Mistake), the North Lands isle, the Dark Lands arms, the Dead Lands island, the Lands of the Sun, and the island groups |
+| Landmasses | Western Mainland (Cold Lands and West Lands), Central Mainland (Middle Lands, Magical Lands, Mirolon), Eastern Mainland (East Lands and South Lands), Northern Wastes (Zol's Mistake), the North Lands isle, the Dark Lands arms, the Ember Lands island, the Lands of the Sun, and the island groups |
 
 ### The edges (no wrap)
 
@@ -68,7 +68,7 @@ Edge provinces are impassable, carry no buildings and have no adjacency to the o
 
 ### Coordinate frames
 
-The first plan was to measure everything against the working drawing. The working drawing is the owner's un-rearranged mosaic of the thirteen sheets. In it the East Lands, the Dead Lands and the Magical Lands sit elsewhere and at other scales than on the game map, and the central sea is narrow. A rasteriser that used it would rebuild the old layout.
+The first plan was to measure everything against the working drawing. The working drawing is the owner's un-rearranged mosaic of the thirteen sheets. In it the East Lands, the Ember Lands and the Magical Lands sit elsewhere and at other scales than on the game map, and the central sea is narrow. A rasteriser that used it would rebuild the old layout.
 
 So the model uses two frames:
 
@@ -95,7 +95,7 @@ Each region has an outline in `regions`. The outline is derived from the layout,
 | Zol's Mistake | 55% | 0% | 15% | 8% | 20% | 2% | 0% | 0% | 0% |
 | East Lands | 22% | 10% | 13% | 20% | 30% | 2% | 1% | 2% | 12% |
 | South Lands | 12% | 0% | 10% | 6% | 70% | 0% | 0% | 2% | 0% |
-| Dead Lands | 10% | 10% | 25% | 30% | 20% | 5% | 0% | 0% | 0% |
+| Ember Lands | 10% | 10% | 25% | 30% | 20% | 5% | 0% | 0% | 0% |
 | Islands of the South | 40% | 30% | 12% | 4% | 0% | 4% | 10% | 0% | 0% |
 | Lands of the Sun | 40% | 22% | 15% | 12% | 2% | 4% | 5% | 0% | 0% |
 
@@ -285,7 +285,7 @@ East of the Middle Lands on the same landmass. The Wall belt on the west; the Ma
 
 ### Zol's Mistake
 
-A vast black wasteland at the north edge and every black island of the Ocean of Zol. The black oval of Šodolôrō lies in the middle of the ocean.
+A vast black wasteland at the north edge and every black island of the Kusmeel. The black oval of Šodolôrō lies in the middle of the ocean.
 
 | Item | Value |
 | --- | --- |
@@ -297,7 +297,7 @@ A vast black wasteland at the north edge and every black island of the Ocean of 
 | Peoples | Almost none; the dead roam. Furviatlon is a town. |
 | Fertile areas | None. Settlement only at Furviatlon and the island of Šodolôrō. |
 | Major ranges | The Barren Crown |
-| Natural borders | The Ocean of Zol is the only border; every black island belongs to the Mistake. |
+| Natural borders | The Kusmeel is the only border; every black island belongs to the Mistake. |
 
 - **Terrain.** Black rock, ash and dust plains; the Barren Crown (*proposed*) is a low ridge. Population and infrastructure are near zero outside Furviatlon.
 - **Edge.** The Ashen Cliffs close the north edge.
@@ -342,7 +342,7 @@ The great desert of the East Lands, running off the south edge: the Sun Desert l
 
 - The Sun Desert (the owner renamed the drawn Sunhot Desert label on 19 October) is a dune sea with scattered oases. The Hardtmuth chain bounds it on the east.
 
-### Dead Lands
+### Ember Lands
 
 An island group south of the Middle Lands behind a storm belt: the main island (Demon, Dolon, Nafeher's plateau, Nezer), the Nether island to the south (*added*), and Mirolon on the southern neck of the central landmass.
 
@@ -356,7 +356,7 @@ An island group south of the Middle Lands behind a storm belt: the main island (
 | Peoples | Volgan at Nafeher; Demon, Dolon, Nezer; Mirolon (free); the Nether and the Abyss. |
 | Fertile areas | Mirolon's forest and marsh; elsewhere little. |
 | Major ranges | Mirolon Mountains, Demonic Mountains, Nether Mountains, Nan Mountains |
-| Natural borders | Mirolon and Volgan: Mirolon Sound. The Dead Lands island is bounded by the Tempest Reach. |
+| Natural borders | Mirolon and Volgan: Mirolon Sound. The Ember Lands island is bounded by the Tempest Reach. |
 
 - **Storm coast.** The Tempest Reach (*proposed*) rings the islands: attrition and port limits (magic spec).
 - **Mountains.** Demonic Mountains, Nether Mountains, Mirolon Mountains, Nan Mountains. **Volcanoes.** Demonic Fire, Nether Maw, Mount Nether.
@@ -410,7 +410,7 @@ The politics step may rebalance these. They follow the rock and climate.
 | Chromium | Hardtmuth Mountains; Herrodon Mountains | Volcanic and ultramafic rock |
 | Tungsten | Giant and Gigantic Mountains (the Wall belt) | Granite spine; Aenor holds the Aenor side |
 | Aluminium | Hellfire Range and Pego Mountains | Weathered volcanic slopes |
-| Oil | Noris Desert and the Dead Lands plateau | Sunken basins |
+| Oil | Noris Desert and the Ember Lands plateau | Sunken basins |
 | Rubber | Obmi Jungle, Hot Forest (Lands of the Sun), the Ihuy islands | The only jungles |
 | Food and manpower | Vale of Aenor, Hunhun Downs, Novez Fields, Mora, Sun Grasslands | See section 5 |
 | None | Zol's Mistake outside Furviatlon | Barren by the vault |
@@ -429,10 +429,10 @@ Each row gives the placement rule and what the map must hold. Coordinates are in
 | Dragon Mountain | established | 0.656, 0.655 (3359, 1677) | A massif of elevation 5 at the south-east corner of the Kingson ring, just east of the wall line (Magical Lands side). Three roost spurs. Not a country. A state of its own, owned by the nearest elven realm. |
 | Parim | established seat; place *proposed* | 0.598, 0.572 (3062, 1464) | North shore of the Great Lake on a lake bluff where the River Aenar enters. The palace cliff over the water is the same state. The largest city; victory point 50. Plains all round. |
 | Selen | established | 0.588, 0.482 (3011, 1234) | Edge of the Selen Weald by the River Selenar. Forest, hills, glades. |
-| The Abyss | established; place *proposed* | 0.619, 0.893 (3169, 2286) | A deep chasm at the east tip of the Dead Lands island (the vault leaves its position open; the model picks "geographically accessible chasm" from the vault's alternatives). A hill province ring with a sheer rim. It is **not** the Void and **not** the Nether. |
-| The Nether | established; place *proposed* | 0.600, 0.935 (3072, 2394) | Volcanic island south of the Dead Lands island, seat of the King of Demons. The reference has no land there; the rebuild adds the island `land_nether_island` (about 270 by 80 pixels). Sea of Lava around it. |
-| Šodolôrō (Šodolôro in game text) | established | 0.690, 0.298 (3533, 763) | The black oval island in the middle of the Ocean of Zol. Written Šodolôro in game text. A victory point in Zol's Mistake. |
-| Furviatlon | established working seat | 0.766, 0.168 (3922, 430) | South coast of the Mistake facing the Ocean of Zol. At most a town. Barren rock around it. |
+| The Abyss | established; place *proposed* | 0.619, 0.893 (3169, 2286) | A deep chasm at the east tip of the Ember Lands island (the vault leaves its position open; the model picks "geographically accessible chasm" from the vault's alternatives). A hill province ring with a sheer rim. It is **not** the Void and **not** the Nether. |
+| The Nether | established; place *proposed* | 0.600, 0.935 (3072, 2394) | Volcanic island south of the Ember Lands island, seat of the King of Demons. The reference has no land there; the rebuild adds the island `land_nether_island` (about 270 by 80 pixels). Sea of Lava around it. |
+| Šodolôrō (Šodolôro in game text) | established | 0.690, 0.298 (3533, 763) | The black oval island in the middle of the Kusmeel. Written Šodolôro in game text. A victory point in Zol's Mistake. |
+| Furviatlon | established working seat | 0.766, 0.168 (3922, 430) | South coast of the Mistake facing the Kusmeel. At most a town. Barren rock around it. |
 | Zilin Hills | established | 0.691, 0.705 (3538, 1805) | Brown hills south of the Magical Forest, elevation 3, with three valleys for the Worshipdom. The Lake of Mirolon lies on their west. |
 | Narrow Strait | established; place *proposed* | line from 2995, 1070 to 3302, 1096 | Between R'en's south cape and the Organ cape of the Middle Lands. 40 to 60 pixels at its narrowest. Sea crossing only. Naval bases at Sonargur and on the Aenor side. The owner has not confirmed the place; the proposal stands (short list 3). |
 | Bloody Forest | established | 0.630, 0.436 | Dense dark wood on the north-east coast beside the Organ Mountains. Resists Aenor. Forest with a hill under it. |
@@ -440,11 +440,11 @@ Each row gives the placement rule and what the map must hold. Coordinates are in
 | Castle of Yeldenne at Mp'E | established; place *proposed* | 0.188, 0.093 (963, 238) | Frozen north of the Cold Lands, in a high valley between the Yeldenne Heights and the Isengar Mountains. State named Mp'E. |
 | Dardan | established; place open | not placed | **Do not place.** No feature, label or victory point may be named Dardan. See `unplaced` in the JSON. |
 | East Lands volcanoes and ranges | drawn and *proposed* | Hellfire Range spine from 4378, 2342 to 5059, 2202 | The greatest mountain mass of Aoaz: elevation 5, core about 110 pixels wide with foothills to 280. Nine volcanoes (Ergo, Argon, Avalon, Plutondo, Drak, Pego, Hardtmuth, Fire Mountain, Reeto). Melty Mountains run along the east edge; the Hardtmuth chain on the south-west. |
-| Dead Lands storm coast | established | polygon `sea_tempest_reach` | A storm belt round the Dead Lands islands, `kind: storm_belt` (about 600 pixels across). Port capacity and attrition modifiers come from the magic spec; fleets need a storm-hardened port. |
+| Ember Lands storm coast | established | polygon `sea_tempest_reach` | A storm belt round the Ember Lands islands, `kind: storm_belt` (about 600 pixels across). Port capacity and attrition modifiers come from the magic spec; fleets need a storm-hardened port. |
 | Pupor Ocean | established | 0.068, 0.610 | The sea inside the Triton arcs. Sheltered, shallow, ringed by islands. |
 | Sea of Darkness | established; reading open | 0.500, 0.466 | The inner sea of the Dark Lands between the Dondor arm and the Goldoroth arm. The drawn grey island of that name is a separate land (the model calls the whole body the Gulf of Darkness). The owner has not said whether it opens to other seas; it opens to the Crown Ocean through the Dark Channel. |
 | Sea of Gods | established | 0.135, 0.935 | The warm pale sea on the north-east shore of the Lands of the Sun. Placement *proposed*. |
-| Ocean of Zol | established | 0.790, 0.250 | The ocean between Zol's Mistake and the Herrodon coast, scattered with black islands. |
+| Kusmeel | established | 0.790, 0.250 | The ocean between Zol's Mistake and the Herrodon coast, scattered with black islands. |
 | Gala and the Mirror of First Rain | Gala established; Mirror *proposed* | 0.094, 0.950 (481, 2432) | Court of Lorien on the mainland of the Lands of the Sun; the Mirror is a spring in an old elven courtyard. |
 | Mirolon passes | *proposed* | 0.664, 0.775 | The passes that close the Mirolon neck. The vault says Volgan takes Mirolon's northern passes; on the map Mirolon is a peninsula, so the passes close its northern neck and a sea crossing (Mirolon Sound) separates it from Volgan. |
 
@@ -459,7 +459,7 @@ Everything in this table is *proposed* unless marked, and links geography to the
 | The Great Wall | Elzon's Order raised a fortified line (the Pale March) against the Magical Lands; the Wall Accord of 4A 96 kept it and rebuilt it in stone | *The Campaign of 4A 1748*, *Fourth Age Chronology* (proposed in the vault) |
 | The Vale of Aenor | Second Age irrigation, crop rotation and soil cures made the plain the richest farmland in Aoaz; Varner cleansed the Third Age grave-fields | *Fourth Age of Aoaz* prologue |
 | The wide central sea | Aenor's rule over the West Lands always depended on ships and ports | *First Age*, *Fourth Age Map* |
-| The Dead Lands storm belt | Fierce storms at sea and heat to the south kept First Age explorers out | *Volgan's Dead Lands* |
+| The Ember Lands storm belt | Fierce storms at sea and heat to the south kept First Age explorers out | *Volgan's Ember Lands* |
 | Zol's Mistake | A black wasteland that existed before Aen; the reason is not explained | *Zol's Mistake* (open) |
 | The rift sea | A long sea between the Magical Lands and the East Lands | *Aoaz and Its Regions* |
 | Dardan | Not placed; the First Age note proposes a plain in the southern approaches of the Middle Lands | *First Age* (proposal only) |
@@ -511,14 +511,14 @@ Country and state borders follow these lines. A border may leave a line only to 
 | Magical Lands | The Magical Forest and the Mushroom Forest: the Elwen River. |
 | Magical Lands | Nolorim and the Worshipdom: the Lake of Mirolon. |
 | Magical Lands | Magical Lands and the East Lands: the Rift. |
-| Zol's Mistake | The Ocean of Zol is the only border; every black island belongs to the Mistake. |
+| Zol's Mistake | The Kusmeel is the only border; every black island belongs to the Mistake. |
 | East Lands | Noris and Stabilo: the Noris Rise and the Flaming Forests. |
 | East Lands | Noris and Gondolin: the Fosoco River and the Woqood Alps. |
 | East Lands | Stabilo and Drak: the Drak Mountains. |
 | East Lands | East Lands and the Magical Lands: the Rift Sea. |
 | South Lands | The Ocean of the Sun on the west; the Hardtmuth chain on the east. |
-| Dead Lands | Mirolon and Volgan: Mirolon Sound. |
-| Dead Lands | The Dead Lands island is bounded by the Tempest Reach. |
+| Ember Lands | Mirolon and Volgan: Mirolon Sound. |
+| Ember Lands | The Ember Lands island is bounded by the Tempest Reach. |
 | Islands of the South | Each island is its own border. |
 | Lands of the Sun | The Sun Mountains and Sukro Mountains split the realms; the Sea of Gods bounds the north. |
 | Aenor and the Dark Lands | The Southern Dark Strait (sea only) |
@@ -533,13 +533,13 @@ Country and state borders follow these lines. A border may leave a line only to 
 
 | Kind | Names |
 | --- | --- |
-| Seas and oceans | Amarelo Seas, Cold Ocean, Demonic Sea, Dun Sea, Gold Wides, Gorlab Sea, Great Sea of the Leviathan, Ihuy Seas, Kradlon Ocean, Leren Ocean, Mushroom Seas, Ocean of Peace, Ocean of Zol, Ocean of the Sun, Onp Ocean, Pandar, the Frozen Seas, Pupor Ocean, Rim Ocean, Santon Ocean, Sea of Darkness, Sea of Death, Sea of Deaths, Sea of Gods, Sea of Lava, Sea of Mernon, Sea of Monsters, Sea of Nazerch, Seas of Lemo, Seas of Lusain, Sharp Seas, Siroler Seas, The Blue Sea, The Dark Sea, The Dead's Sea, The Frozen Ocean, The Left Sea of Dolon, The Long Sea, The Magical Ocean, The Seas of Light, Triton's Ocean, Windy Seas |
+| Seas and oceans | Amarelo Seas, Cold Ocean, Demonic Sea, Dun Sea, Gold Wides, Gorlab Sea, Great Sea of the Leviathan, Ihuy Seas, Kradlon Ocean, Leren Ocean, Mushroom Seas, Ocean of Peace, Kusmeel, Ocean of the Sun, Onp Ocean, Pandar, the Frozen Seas, Pupor Ocean, Rim Ocean, Santon Ocean, Sea of Darkness, Sea of Death, Sea of Deaths, Sea of Gods, Sea of Lava, Sea of Mernon, Sea of Monsters, Sea of Nazerch, Seas of Lemo, Seas of Lusain, Sharp Seas, Siroler Seas, The Blue Sea, The Dark Sea, The Dead's Sea, The Frozen Ocean, The Left Sea of Dolon, The Long Sea, The Magical Ocean, The Seas of Light, Triton's Ocean, Windy Seas |
 | Mountain ranges | Adel Mountains, Benan Mountains, Black Hills, Bolpor and Boldor Mountains, Cold Mountains, Coldor Mountains, Corogon Highlands, Crown Mountains (north), Crown Mountains (south arc), Cursed Mountains, Demonic Mountains, Deodolor Hills, Dragon Mountain, Drak Mountains, Dusty Mountains, Erg Mountains, Etonia and Renann Mountains, Fog and Eye Mountains, Giant Mountains, Gigantic Mountains, Goldoroth Mountains, Grano Mountains, Great Wall of Aenor, Hardtmuth Mountains, Hendair Hills, Herlitz Mountains, Herrodon Mountains, Hiloff Rim, Icy Mountains, Isengar Mountains, Loron Mountains, Lunhrim, Lustras Hills, Magic Mountains (middle ridge), Magic Mountains (south ridge), Magic Mountains (wall section), Magic Mountains (west ridge), Melty Mountains, Mirolon Mountains, Nan Mountains, Neridor Mountains, Nether Mountains, Olsuaon Massif, Organ Mountains, Pego Mountains, Raerby and Hapos Mountains, Solondor Mountains, Sukro Mountains, Sun Mountains, The Darkness, The Grey Hills, Tinta Hills, Wely and Fair Mountains, Wide Mountains |
 | Volcanoes | Avalon Fires, Goldoroth Volcano, Good Volcanoes, Good Volcanoes (second cone), Great Volcano, Hardtmuth Fire, Mount Argon, Mount Ergo, Plutondo Vents |
 | Rivers | Kulolo River, River Tich, The Giant River, The Great River |
 | Lakes | Ergo Sea, Evian Sea, Hot Lake, Ilurdor Sea, Lake Lozo, Lake of Mirolon, Sea of R'en, Semi Sea, Soun Lake, Sun Lake, The Great Lake |
 | Forests | Alerhia Woods, Bloody Forest, Cologon Forest, Dark Forests, Death Forest, Dwarc and Swy Forests, Eagle Forest, Enhis Forest, Fallen Forest, Flaming Forests, Fonoor and Giant Forests, Forests of Darkhere, God Forest, Hell Forest, Hiloron Woods, Hot Forest, Kilinti Forests, Kingdom Forests, Light Forests of Yang, Living Forest, Magical Forest, Mirolon Forests, Mora Woods, Mushroom Forest, Obmi Jungle, Oreton Woods, Safeton Wood, Stone Forest, Swamp Forests, Taith Forests, Troll Forest, Worlond Forest, Zilin Forests |
-| Deserts and wastes | Alodale Desert, Black Islands of the Ocean of Zol, Cursed Lands, Isle of Šodolôrō, Noris Desert, Sun Desert, The Deadlands, Zol's Mistake |
+| Deserts and wastes | Alodale Desert, Black Islands of the Kusmeel, Cursed Lands, Isle of Šodolôrō, Noris Desert, Sun Desert, The Deadlands, Zol's Mistake |
 | Marshes | Papz Swamp, Saeton Swamp, The Great Swamp of Mirolon, Verde Mangroves |
 | Snowfields | Frozen Lands of Coldor, Lerenwaith, North Yeti Lands, Windwaith, Woqood |
 | Plains | Delbiz Grasslands, Greenland, Hunhun Downs, Konori Downs, Mora and Ernois Coast, Novez Fields, Poloto, Rish, Ronbo Grasslands, Safeton Coast, Sun Grasslands, Teste Vale, Thenon, Ulgus Glades, Zuman Uplands |
@@ -630,7 +630,7 @@ River width classes: 1 = river width 1 (narrow river); 2 = width 3; 3 = width 6 
 | Zol's Mistake | 8 / 12 / 16 | 3500 |
 | East Lands | 3 / 5 / 8 | 1300 |
 | South Lands | 6 / 9 / 14 | 3000 |
-| Dead Lands | 3 / 5 / 8 | 900 |
+| Ember Lands | 3 / 5 / 8 | 900 |
 | Islands of the South | 1 / 2 / 3 | 500 |
 | Lands of the Sun | 2 / 3 / 5 | 800 |
 
@@ -644,7 +644,7 @@ Seas: open ocean provinces of about 12,000 to 20,000 pixels; narrow straits, the
 2. The Vale of Aenor is plains and farmland, not beige desert: the dry yellow patches of the reference inside the Middle Lands are re-typed fertile plains.
 3. The Great Wall of Aenor is a continuous mountain barrier of elevation 5 from the Organ cape to the south coast, with Lunhrim, the Kingson ring and four gates; Kingson sits in a valley ringed by mountains.
 4. Rivers: 25 named rivers drawn from source to mouth, used as borders (Grey River, Fandan, Selenar, Aenar, Great River, Kulolo, Andos Water and others); lakes of every size are named.
-5. Mountains and volcanoes are massive and named: the Hellfire Range with seven East Lands volcanoes, the Melty and Hardtmuth ranges, Herrodon Mountains, and the volcanoes of the Dead Lands; the map no longer wraps and has four impassable edges.
+5. Mountains and volcanoes are massive and named: the Hellfire Range with seven East Lands volcanoes, the Melty and Hardtmuth ranges, Herrodon Mountains, and the volcanoes of the Ember Lands; the map no longer wraps and has four impassable edges.
 
 ## 11. Implementation
 
@@ -676,8 +676,8 @@ Each proceeds on its proposal. Copies go to [OPEN_QUESTIONS.md](../OPEN_QUESTION
 | 4 | Is the Sea of Darkness an inland sea, and what is the drawn grey island of that name? | An inner sea that opens to the Crown Ocean; the grey island is a separate land. |
 | 5 | What is the central sea called? | Crown Ocean (replaces the superseded Rush Ocean). |
 | 6 | How big may the Great Lake be? | About 205 by 200 pixels (the reference shows 124 by 173). |
-| 7 | Should the Dead Lands be larger? In the layout they are small (about 270 by 300 pixels for the main island). | Keep the layout; add the Nether island; scale only on the owner's word. |
-| 8 | Is the Abyss a chasm, a hidden depth, or a boundary of magic? | A geographically accessible chasm at the east tip of the Dead Lands island. |
+| 7 | Should the Ember Lands be larger? In the layout they are small (about 270 by 300 pixels for the main island). | Keep the layout; add the Nether island; scale only on the owner's word. |
+| 8 | Is the Abyss a chasm, a hidden depth, or a boundary of magic? | A geographically accessible chasm at the east tip of the Ember Lands island. |
 | 9 | Is Mirolon joined to Volgan's island by land? | No. Mirolon Sound separates them; Mirolon's passes close its northern neck. |
 | 10 | Where are the Worshipdom's three valleys in the Zilin Hills? | Three valleys of the brown hills, with the Lake of Mirolon on the west. |
 | 11 | Which island is Howan (the wreck), which has the shrine, which has the night reef? | Howan the wreck island; the ring island Enhis Is Rond the shrine; Nara the reef (all placements *proposed*). |

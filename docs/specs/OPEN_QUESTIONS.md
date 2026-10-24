@@ -58,8 +58,8 @@ This page is generated from the spec authors' reports; when it is regenerated, k
 | 32 | Is the Sea of Darkness an inland sea, and what is the drawn grey island of that name? | An inner sea that opens to the Crown Ocean; the grey island is a separate land. | [05_geography_model.md](01_map/05_geography_model.md) |
 | 33 | What is the central sea called? | Crown Ocean (replaces the superseded Rush Ocean). | [05_geography_model.md](01_map/05_geography_model.md) |
 | 34 | How big may the Great Lake be? | About 205 by 200 pixels (the reference shows 124 by 173). | [05_geography_model.md](01_map/05_geography_model.md) |
-| 35 | Should the Dead Lands be larger? In the layout they are small (about 270 by 300 pixels for the main island). | Keep the layout; add the Nether island; scale only on the owner's word. | [05_geography_model.md](01_map/05_geography_model.md) |
-| 36 | Is the Abyss a chasm, a hidden depth, or a boundary of magic? | A geographically accessible chasm at the east tip of the Dead Lands island. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 35 | Should the Ember Lands be larger? In the layout they are small (about 270 by 300 pixels for the main island). | Keep the layout; add the Nether island; scale only on the owner's word. | [05_geography_model.md](01_map/05_geography_model.md) |
+| 36 | Is the Abyss a chasm, a hidden depth, or a boundary of magic? | A geographically accessible chasm at the east tip of the Ember Lands island. | [05_geography_model.md](01_map/05_geography_model.md) |
 | 37 | Is Mirolon joined to Volgan's island by land? | No. Mirolon Sound separates them; Mirolon's passes close its northern neck. | [05_geography_model.md](01_map/05_geography_model.md) |
 | 38 | Where are the Worshipdom's three valleys in the Zilin Hills? | Three valleys of the brown hills, with the Lake of Mirolon on the west. | [05_geography_model.md](01_map/05_geography_model.md) |
 | 39 | Which island is Howan (the wreck), which has the shrine, which has the night reef? | Howan the wreck island; the ring island Enhis Is Rond the shrine; Nara the reef (all placements *proposed*). | [05_geography_model.md](01_map/05_geography_model.md) |
@@ -104,7 +104,7 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 ## dark lands
 
 1. Where exactly are the straits between the Dark Lands and the North Lands and between the Dark Lands and the Middle Lands? Is either of them Lerendor's Narrow Strait? Can armies cross either one on foot (a map crossing), or only by sea?
-2. Is the Sea of Darkness an inland sea, or does it open to the Ocean of Zol or the central sea?
+2. Is the Sea of Darkness an inland sea, or does it open to the Kusmeel or the central sea?
 3. Dondor holds one state but is a great power in the working table. Should it grow so it can stand against Goldoroth without its friends?
 4. The roster makes Belonton, Dondor's ally in the Accord, an orc confederacy. Is that right?
 5. Which Dark Lands holds are goblin or ogre holds?
@@ -153,7 +153,7 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 5. Do timed healers, loremasters and wardens sent by decision (the Wanderers) fit the vault's 'individual travellers, healers or independent figures'?
 6. May a realm receive an unsigned letter from Varner before Eindil returns, as long as no text says where he is?
 7. After the reveal, may the elves take the Zilin Hills by war (Drive Out the Temple), or only close their roads?
-8. Which approach do Nolorim's high passes guard: the road from the Dead Lands, or the eastern coalition's mountain approach? The map step needs this.
+8. Which approach do Nolorim's high passes guard: the road from the Ember Lands, or the eastern coalition's mountain approach? The map step needs this.
 9. Two names exist for the elves' start opinion of Aenor: zin_opinion_edrans_folly (start-situation spec) and zin_opinion_old_estrangement (peoples spec). Which stands?
 10. Lorien's trait: zin_trait_memory_of_dardan (characters spec) or zin_trait_ancient_king (ideologies spec)?
 11. Is the Noon Council acceptable: Sunhot realms under the Lands of Light, with Gala attending as a guest who does not vote, which keeps the Gala–Sunhot relationship open?
@@ -267,7 +267,7 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 ## regions: cold, west, tritons
 
 1. Cold Lands: Should Isengard's hall have a named seat? Is Horidor leaving the Accord and crowning its chieftain welcome? Is Fearno as a proud third pole (the Free Steadings) right?
-2. Cold Lands: Does the Windwaith arm reach the Ocean of Zol? Should Titanos and the Yeti Lands ever send help south? Is the 'green light in the north' rumour of Yeldenne acceptable?
+2. Cold Lands: Does the Windwaith arm reach the Kusmeel? Should Titanos and the Yeti Lands ever send help south? Is the 'green light in the north' rumour of Yeldenne acceptable?
 3. Cold Lands shared tree: Which of the 23 tier C clan realms owns Eindil's ice? Should it get a tier B tree? Should Cold Lands clans be able to welcome a House of the First Light?
 4. West Lands: Should Lambin be the likeliest leader of the Grey Ford Confederation, or should the confederation stay unnamed? Is a ruined First Age Aenoran trading station on Lambin's coast welcome?
 5. West Lands: May the Buldor companies serve dark powers for pay (the spec says no)? Is Kradlon as a league of guild towns right? Is Varnondor's peninsula the right staging port (where the fleets crossed is open)? Should Girdon cross with Gunwaith historically?
@@ -285,11 +285,11 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 5. Andos Enda and the Leren Compact: the spec gives friendly letters with Sonargur and no membership. Should Andos Enda start in the Compact, which the Refusal's faction rule currently forbids?
 6. May Herrodon be a crowned elven realm, with Sacomananos and Velakton as its 'lost kin', and should One Crown of the Woods exist?
 7. Which Magical Lands realms face Zol's Mistake (the black areas Dlomntod, Medek and Lost Lands)? The black-north branches wait for the map.
-8. Do Nolorim's passes face the eastern mountain approach (assumed) or the southern road from the Dead Lands? Is a guest branch for Eindil in Nolorim welcome?
+8. Do Nolorim's passes face the eastern mountain approach (assumed) or the southern road from the Ember Lands? Is a guest branch for Eindil in Nolorim welcome?
 9. Who owns the Nether? Demon's tree treats it as a court beyond Demon's border.
 10. The map's state 'Vez Nan / Abyss' lies in Volgan's realm, while the roster says Nan holds Nan and Vez Nan. Which is right, and does Nan border the Abyss?
 11. Should the historical path fix which sworn realms stay with the Steward after Volgan's body breaks (spec: Demon stays, Nezer goes, by oath)?
-12. May free Dead Lands realms buy Volgan's quiet with tribute before the march, and may Olen keep a faith of the Holy Breeze beside the Houses of the First Light?
+12. May free Ember Lands realms buy Volgan's quiet with tribute before the march, and may Olen keep a faith of the Holy Breeze beside the Houses of the First Light?
 13. Is 'of the Dead Sea' in Morvath's name a place (a salt inland water, proposed) or only an epithet? Mencnon and Mirolon's envoy Hessa Mencnor have near-identical names: link or rename?
 
 ## regions: east, south isles, sun
@@ -322,7 +322,7 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 7. Is the split between Konori (steppe kingdom of horse fairs and Hundreds) and Hunhun (brotherhood of riders) right?
 8. North Lands: does the owner want Sensai's optional third league, the Free Crowns of the North?
 9. Should every small North Lands crown stand apart with Sonargur on the historical path, or choose by lean as proposed? R'en's historical pick here is Parim's friend.
-10. Which North Lands crowns face the Ocean of Zol? Should the shore branches open only for the Zol rumour list? Does Molot face that sea? Are Tolhon and Low-ness Islands islands?
+10. Which North Lands crowns face the Kusmeel? Should the shore branches open only for the Zol rumour list? Does Molot face that sea? Are Tolhon and Low-ness Islands islands?
 11. Compiler: may allow_branch take ideology, flag, check and 'not is_subject'? May for_country, event_for and invite take ROOT, FROM and OVERLORD? Timed country flags are also needed. The shared trees rely on all of these.
 12. Fotan is outside the Concord with no overlord. Is it a free land by choice, or does it need its own story?
 
@@ -353,7 +353,7 @@ Settled by decisions on 19 October 2026 (no longer open): aenor 3 (Mirolon is no
 9. May the 3D route make separate weapon-only reference images (spear, sword, shield, axe, bow, club) for owner approval, since the pilots are weapon-free?
 10. The kit requires licensed external audio with provenance for unit sounds. Is that acceptable for ZIN, given that all art is image-generated?
 11. Should the AI of the Sunhot elves, 'among the most peaceful' peoples, ever attack, or only defend?
-12. Volgan's grave hosts lose strength outside the Dead Lands ('grave-host strain'), extending the Third Age rule about Elzon's corpses. Keep it?
+12. Volgan's grave hosts lose strength outside the Ember Lands ('grave-host strain'), extending the Third Age rule about Elzon's corpses. Keep it?
 13. Volgan's 'great spirits' become up to three rare support companies. Is that acceptable, or should they be generals only?
 14. Yeldenne starts with no divisions; Horos and the castle's protections are a mechanic. Please confirm.
 

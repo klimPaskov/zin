@@ -198,7 +198,7 @@ All are fired by effects; none has a trigger or mean time. `FROM` is the crown t
 | `whispers_from_the_holds` (5) | Whispers from the Holds | ROOT | `generic_sea` | *Whispers from the Holds* | Traders say gifts come to the orc holds from the south. **Note it**: flag `zin_north_heard_whispers` (AI 60) / **Tell Sonargur**: lean(3) (AI 40). Reveals nothing of Volgan's plans |
 | `a_northern_crown_keeps_faith` (6) | [FROM.GetName] Keeps Faith | the Aenor realm holding Parim | `generic_court` | `zin_north_keep_faith` | **Accept their companies**: `call zin_north_accept_northern_faith` (AI 70) / **Parim needs no northern swords**: nothing (AI 30) |
 
-Mechanic events also reach these crowns: `zin_leren.51` (the dead on the northern shore, coastal crowns), `zin_leren.70` (Lerendor's invitation), `zin_leren.71` (protection), Zol's rumour `zin_mistake.2` (Ocean of Zol coasts) and the flavour event `zin_lore.180` (black ships).
+Mechanic events also reach these crowns: `zin_leren.51` (the dead on the northern shore, coastal crowns), `zin_leren.70` (Lerendor's invitation), `zin_leren.71` (protection), Zol's rumour `zin_mistake.2` (Kusmeel coasts) and the flavour event `zin_lore.180` (black ships).
 
 ### Opinion modifiers (proposed)
 
@@ -284,6 +284,6 @@ Isolated Linux run (one in-game year from 1 Thaw 4A 1748, decision S8) and scena
 
 ## Open questions
 
-1. **Which crowns face the Ocean of Zol, and are Tolhon and Low-ness Islands islands?** Owner question ([OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md), "regions: middle and north" 10). Work proceeds on the proposal: *The Shore* opens for every coastal crown and *Island Crowns* for every crown whose capital is an island state, both read from the map; the Zol rumour list stays the Zol mechanic's.
+1. **Which crowns face the Kusmeel, and are Tolhon and Low-ness Islands islands?** Owner question ([OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md), "regions: middle and north" 10). Work proceeds on the proposal: *The Shore* opens for every coastal crown and *Island Crowns* for every crown whose capital is an island state, both read from the map; the Zol rumour list stays the Zol mechanic's.
 2. **Small crowns and the withdrawal.** Owner question (same file, "regions: middle and north" 9 and "lerendor" 5). Work proceeds on the proposal: each crown chooses by lean; nothing makes the choice history.
 3. **The Hold: hill or coast?** Settled by the map: `zin_shared_has_coast` decides which branch it sees; no design depends on the answer.

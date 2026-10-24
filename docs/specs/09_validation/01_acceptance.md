@@ -14,7 +14,7 @@ The Windows game is never launched, automated or captured. The HOI4 Agent Tools 
 | --- | --- | --- |
 | On 1 Thaw 4A 1748 the Golden King reigns, Eindil has not appeared, Afrit is unrevealed and Aoaz seems at peace | owner-fixed | *The Campaign of 4A 1748* |
 | People know only the Deliverer; the name Afrit is secret | established | *Fourth Age Canon Register* |
-| Canonical spellings: Eindil, Zol's Mistake, Aenor, Šodolôrō (game text Šodolôro, S11); never Einendil, Edvoid or Rush for places | owner rule | *Canon Policy*, CONVENTIONS |
+| Canonical spellings: Eindil, Zol's Mistake, Aenor, Šodolôrō (game text Šodolôro, S11); never Einendil, Kusven or Rush for places | owner rule | *Canon Policy*, CONVENTIONS |
 | Established facts are fixed; additions are proposed; open questions stay open | owner rule | *Canon Policy* |
 | Every check, number, case and tool sequence below | **proposed** | this spec |
 
@@ -50,7 +50,7 @@ A commit to `master` needs G1–G3 green. A phase needs G1–G5. Integration dec
 | Calendar | Any staged history or dated block still uses a 1936 date; the start is not `1748.3.1.12` | phase 2 |
 | Start state | Generated history sets any story flag of the contract, recruits `zin_eindil`, or creates a war at the start | now |
 | Encoding | A localisation file lacks the UTF-8 BOM or uses a character outside Windows-1252 | now |
-| Spellings | Any player-facing text contains "Einendil", "Edvoid" or "Rush" as a place | now |
+| Spellings | Any player-facing text contains "Einendil", "Kusven" or "Rush" as a place | now |
 | Open questions | Any text matches the forbidden-claims list (`forbidden_claims.json`: Zol's keeper named, Volgan's spirit settled, Dardan placed, Gala elves called Sunhot elves, Ein's sons' order stated, the arm Eindil loses) | when the list lands (phase 2) |
 | Contract | A flag, variable, scripted trigger or scripted effect name used by two systems is missing from the shared contract or its additions, or has a second name | phase 3 |
 | Manifests | A file listed in a manifest is missing or its hash differs; a generated file is missing from its manifest | now |

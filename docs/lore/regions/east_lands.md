@@ -8,7 +8,7 @@
 
 ## 1. Overview
 
-Across the long Rift Sea from the elves lies the richest and most divided land of Aoaz ([C48]). A white snow coast faces the Ocean of Zol in the north; the steaming Hot Lake fills the middle with fishing cities and salt pans; caravan roads run from the wells of the Noris camel-kings to the bronze-roofed markets of the merchant princes of Stabilo; old river kingdoms with stair-temples line the rift; and in the south-east a mountain mass of black volcanoes, the greatest in the world, smokes over red clay country (P). Men of the East first met Aenor's traders in the First Age, and some of their kings fought for Volgan while others did not ([A1] §2, §4). In 4A 1748 every eastern court is at peace and courted by Noris or Stabilo, and every eastern city has a generous temple of the Deliverer whose friends lend money to princes in trouble (hidden: the temples are Afrit's eastern branch, [AH]). Within a decade, an eastern coalition will cross the rift, and the god-king of Aenor will flee here and be proclaimed King of the East over the courts that kneel ([WLC], [A4] §IX).
+Across the long Rift Sea from the elves lies the richest and most divided land of Aoaz ([C48]). A white snow coast faces the Kusmeel in the north; the steaming Hot Lake fills the middle with fishing cities and salt pans; caravan roads run from the wells of the Noris camel-kings to the bronze-roofed markets of the merchant princes of Stabilo; old river kingdoms with stair-temples line the rift; and in the south-east a mountain mass of black volcanoes, the greatest in the world, smokes over red clay country (P). Men of the East first met Aenor's traders in the First Age, and some of their kings fought for Volgan while others did not ([A1] §2, §4). In 4A 1748 every eastern court is at peace and courted by Noris or Stabilo, and every eastern city has a generous temple of the Deliverer whose friends lend money to princes in trouble (hidden: the temples are Afrit's eastern branch, [AH]). Within a decade, an eastern coalition will cross the rift, and the god-king of Aenor will flee here and be proclaimed King of the East over the courts that kneel ([WLC], [A4] §IX).
 
 ## 2. Physical character
 
@@ -25,7 +25,7 @@ Across the long Rift Sea from the elves lies the richest and most divided land o
 
 | Water | Model id | Name used here | Note |
 | --- | --- | --- | --- |
-| The northern ocean | `sea_zol_ocean` | **Ocean of Zol** (E) | Its black islands are Zol's Mistake ([ZM]) |
+| The northern ocean | `sea_zol_ocean` | **Kusmeel** (E) | Its black islands are Zol's Mistake ([ZM]) |
 | The rift | `sea_magical_ocean`, `zone_rift` | **the Rift Sea** (P) | The East sheet's "Khadon Ocean" and the Magical sheet's "The Magical Ocean" are one water ([magical_lands.md](magical_lands.md)) |
 | The rift's southern reach | `sea_mushroom_seas` | **the Reeto Sea** (P; drawn "Reeto Seas") | Former labels Mushroom Seas, Reeto Seas |
 | The gulf under the Hellfire Range | `gulf_hellfire` | **the Hellfire Gulf** (P) | Lava-warmed water; the drawn "Flaming Ocean" and "Ocean of the Hellfire" are this one gulf |
@@ -132,7 +132,7 @@ The East is deliberately not one kind of state (P):
 | about 4A 1300 | The Hidden Council's eastern branch begins to court the eastern courts. | P ([FC] III); hidden |
 | 4A 1500s | Drak's forges learn to make black powder from the Furnace's sulphur; bombards spread to the caravan cities. | P (owner decision that gunpowder is common in some realms, [OD]) |
 | 4A 1719 | The towns of the Red Lands rise against their king and found the tribunes' commonwealth. | P ([FT] `regional_avalon`) |
-| 4A 1744 | Fishermen of the Ocean of Zol islands tell of black ships; no court believes them. | P ([FC] IV); Orato's fishermen P |
+| 4A 1744 | Fishermen of the Kusmeel islands tell of black ships; no court believes them. | P ([FC] IV); Orato's fishermen P |
 | **4A 1748** | **Start: peace.** The roads are open; nobody is at war ([EK] situation). | owner, [C48] |
 | 4A 1755 | The eastern coalition crosses the rift and threatens the Magical Lands and the Middle Kingdom. | E ([WLC], [A4] §IX); P date |
 | 4A 1756 | Afrit abandons Aenor and takes command of an eastern dominion; he and his allies proclaim him **King of the East**, though many eastern states resist. | E ([A4] §IX, [4R]); P date |
@@ -185,7 +185,7 @@ The East is deliberately not one kind of state (P):
 | Cereosa | Mostok | The central road junction; 40,000 | Drawn city label ([LBL]) |
 | Furtonlin | Delbiz | On the rift coast; 28,000 | P ([DEM]) |
 | Kerdoco | Obmi | At the jungle edge; 30,000 | P ([DEM]) |
-| Pehami | Woqood | On the Ocean of Zol coast; 25,000 | P ([DEM]) |
+| Pehami | Woqood | On the Kusmeel coast; 25,000 | P ([DEM]) |
 
 ## 11. Roster proposal (proposed)
 

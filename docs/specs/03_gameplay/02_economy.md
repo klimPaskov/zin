@@ -18,7 +18,7 @@ Replace the 1936 industrial economy with an Aoaz economy that a player reads at 
 - Cities grew around the Great Lake, ports expanded, and Aenor traded with the North Lands, West Lands, the islands, the Magical Lands and the eastern states (*The Fourth Age of Aoaz*, prologue).
 - The Golden King hoards treasure, sells offices, rewards flatterers and spends on his own grandeur. Strong institutions keep the kingdom running (*Golden King*).
 - Afrit's Hidden Council uses religious institutions, relief networks, foreign envoys and commercial connections (*Afrit's Hidden Council*).
-- The Dead Lands are hot and storm-girt; Zol's Mistake is a barren, sparsely peopled wasteland; dragons come from Dragon Mountain (*Volgan's Dead Lands*, *Zol's Mistake*, *Peoples of Aoaz*).
+- The Ember Lands are hot and storm-girt; Zol's Mistake is a barren, sparsely peopled wasteland; dragons come from Dragon Mountain (*Volgan's Ember Lands*, *Zol's Mistake*, *Peoples of Aoaz*).
 
 **Proposed in the vault** (*Fourth Age Chronology*, *The Campaign of 4A 1748*): the Great Lake ports rebuilt 4A 40–120; the East Lands caravan roads that made Noris and Stabilo rich (4A 600–780); the Triton islanders' charts of the Pupor Ocean (4A 702); Gunwaith and Girdon courting Aenoran gold (4A 1702); the Golden Court as a palace district where offices are bought (4A 1733); the Houses of the First Light keeping grain stores; the East Lands as Aoaz's richest and most divided region.
 
@@ -37,7 +37,7 @@ The engine has seven resources. ZIN keeps their keys (trade, AI and equipment co
 | `rubber` | **Horses** | Horses, camels and other mounts | Mounted equipment and pack trains |
 | `tungsten` | **Stone** | Quarried and dressed stone, shot | Engines |
 | `chromium` | **Gold** | Gold and silver | Elven arms ("rare stuff"), knightly plate and flagship fittings |
-| `oil` | **Essence** | Raw magic from wellsprings, elder groves, ley-stones and the Dead Lands' vents | Wards and other magical equipment |
+| `oil` | **Essence** | Raw magic from wellsprings, elder groves, ley-stones and the Ember Lands' vents | Wards and other magical equipment |
 | `coal` | **Grain** | Grain, fish and fodder | Never: it becomes Provisions (below) |
 
 Rules:
@@ -113,7 +113,7 @@ These are the resource columns of `docs/design/region_profiles.json` (the file b
 | Dark Lands | 2 | 1 | 1 | 2 | 0 | 1 | 1 | 0.30 | Forge-pits of the orc holds |
 | Magical Lands | 0 | 3 | 1 | 1 | 0 | 3 | 2 | 0.35 | Elder groves and essence wellsprings |
 | Zol's Mistake | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | Nothing grows |
-| Dead Lands | 2 | 0 | 0 | 2 | 1 | 3 | 0 | 0.30 | Essence vents and war-forges |
+| Ember Lands | 2 | 0 | 0 | 2 | 1 | 3 | 0 | 0.30 | Essence vents and war-forges |
 | East Lands (with the South Lands desert) | 1 | 1 | 2 | 2 | 3 | 1 | 2 | 0.50 | Gold and caravans |
 | Islands of the South | 0 | 1 | 0 | 0 | 0 | 0 | 2 | 0.25 | Poor and hospitable |
 | Lands of the Sun | 1 | 1 | 1 | 1 | 2 | 1 | 3 | 0.40 | Sun-blessed fields of the Sunhot elves |
@@ -126,7 +126,7 @@ Special sites: Dragon Mountain +12 Essence; the Abyss 0; Parim +6 Gold (the Gold
 
 Every country gets its region's spirit at start (by its roster region; Zol gets none). They are small and permanent.
 
-On startup every country also gets the country flag `zin_region_<key>` for its roster region (keys: `middle_lands`, `north_lands`, `cold_lands`, `west_lands`, `tritons_islands`, `dark_lands`, `magical_lands`, `zols_mistake`, `dead_lands`, `east_lands`, `islands_of_the_south`, `lands_of_the_sun`; Aenor Isle uses `middle_lands`, the Ocean of Zol `zols_mistake`). The flag records where a realm belongs by origin and never changes with conquest; for where a state lies, scripts use the generated state triggers `zin_is_region_<key>`.
+On startup every country also gets the country flag `zin_region_<key>` for its roster region (keys: `middle_lands`, `north_lands`, `cold_lands`, `west_lands`, `tritons_islands`, `dark_lands`, `magical_lands`, `zols_mistake`, `ember_lands`, `east_lands`, `islands_of_the_south`, `lands_of_the_sun`; Aenor Isle uses `middle_lands`, the Kusmeel `zols_mistake`). The flag records where a realm belongs by origin and never changes with conquest; for where a state lies, scripts use the generated state triggers `zin_is_region_<key>`.
 
 Every modifier below exists in the 1.19.3 modifier documentation (checked 19 October 2026; `production_speed_dockyard_factor` and `production_speed_arms_factory_factor` are instances of the documented `production_speed_<Building>_factor`).
 
@@ -139,14 +139,14 @@ Every modifier below exists in the 1.19.3 modifier documentation (checked 19 Oct
 | `zin_econ_tritons_islands`: Charts of the Pupor Ocean | Triton's Islands | `naval_detection = 0.10`, `convoy_escort_efficiency = 0.10` |
 | `zin_econ_dark_lands`: Forge-Pits | Dark Lands | `production_speed_arms_factory_factor = 0.10`, `consumer_goods_factor = 0.02` |
 | `zin_econ_magical_lands`: Elder Groves | Magical Lands | `research_speed_factor = 0.05`, `production_factory_efficiency_gain_factor = 0.05` |
-| `zin_econ_dead_lands`: Furnace Lands | Dead Lands | `heat_attrition_factor = -0.50`, `production_speed_arms_factory_factor = 0.05` |
+| `zin_econ_dead_lands`: Furnace Lands | Ember Lands | `heat_attrition_factor = -0.50`, `production_speed_arms_factory_factor = 0.05` |
 | `zin_econ_east_lands`: The Caravan Roads | East Lands | `trade_opinion_factor = 0.15`, `consumer_goods_factor = -0.02` |
 | `zin_econ_islands_of_the_south`: Hospitable Isles | Islands of the South | `stability_factor = 0.05` |
 | `zin_econ_lands_of_the_sun`: Sun-Blessed Fields | Lands of the Sun | `monthly_population = 0.10`, `stability_factor = 0.03` |
 
 ### Starting industry of the great powers
 
-Design targets for the state pass. The countries and states spec requires Aenor first in factories (a known defect today: Aenor has 33 factories, behind Zol, Coldor and the Magical Forest; [known issues](../01_map/03_known_issues.md) §3). Other countries fill by development with a civilian-to-military ratio of 3:1 (1:1 in the Dark Lands and Dead Lands).
+Design targets for the state pass. The countries and states spec requires Aenor first in factories (a known defect today: Aenor has 33 factories, behind Zol, Coldor and the Magical Forest; [known issues](../01_map/03_known_issues.md) §3). Other countries fill by development with a civilian-to-military ratio of 3:1 (1:1 in the Dark Lands and Ember Lands).
 
 | Country | Workshops | Armouries | Shipwrights | Main resources | Note |
 | --- | ---: | ---: | ---: | --- | --- |

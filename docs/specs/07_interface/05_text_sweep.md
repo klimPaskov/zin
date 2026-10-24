@@ -19,7 +19,7 @@ Out of scope here, and owned elsewhere: the wording of Aoaz objects (technology,
 | Aoaz has known more than seventeen centuries of peace; its realms are crowns, dominions, clans and island lordships, not modern states | proposed (campaign note) | *The Campaign of 4A 1748*, [02_full_ui_reskin.md](02_full_ui_reskin.md) |
 | The Fourth Age is counted from the first restored king; the start is 1 Thaw, 4A 1748 | proposed | *Fourth Age Chronology*, [01_start_and_calendar.md](../00_foundation/01_start_and_calendar.md) |
 | Ordinary people do not know the name Afrit before the reveal; Eindil is "the Man from the Ice" before he is named | established; labels proposed | [03_names_and_terms.md](../02_lore/03_names_and_terms.md), decisions D3, D4 |
-| Proper names, spellings and the retired names (Einendil, Edvoid, Rush, Klinti, Gorbat, Huhun, Hierarch, Sovereign Spirit) | established | [03_names_and_terms.md](../02_lore/03_names_and_terms.md) |
+| Proper names, spellings and the retired names (Einendil, Kusven, Rush, Klinti, Gorbat, Huhun, Hierarch, Sovereign Spirit) | established | [03_names_and_terms.md](../02_lore/03_names_and_terms.md) |
 | Every common-noun term the glossary introduces (Authority, Calm, Levies, host, company, Art, Study, Reign, and the rest; Orders, the Valour pools, the ranks and the institutions are the institutions spec's proposals) | **proposed** | this spec; each is one glossary entry the owner can change |
 
 The vault names no mechanical term. Nothing in the glossary closes an open question: no entry names Zol's administrator, the King of Demons, Roka's people or Volgan's former patron, and the veiled sun, the Deliverer's public sign, is not used as an image in any term or weekday.

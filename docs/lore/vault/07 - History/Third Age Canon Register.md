@@ -10,8 +10,8 @@ updated: 2026-10-17
 
 - Third Age lasts **at least 1,200 years**. The older 128-year proposal is fully superseded.
 - It starts with Elzon's conquest of Aenor in **Second Age year 2133** and ends with Elzon's **permanent death**.
-- Elzon is a Great Spirit, the Great Necromancer and Volgan's servant. Volgan is alive but remains too weak to leave the Dead Lands and commands Elzon indirectly.
-- Elzon's undead weaken over time. Aenor's local magic cannot sustain him as the Dead Lands can.
+- Elzon is a Great Spirit, the Great Necromancer and Volgan's servant. Volgan is alive but remains too weak to leave the Ember Lands and commands Elzon indirectly.
+- Elzon's undead weaken over time. Aenor's local magic cannot sustain him as the Ember Lands can.
 - The Magical Lands are never conquered. Elves, Varner the Lesser Spirit, and Golbran resist his magic. Men continue fighting him throughout the age.
 - Afrit helps save the world during Elzon's final defeat, is celebrated as a New God, and exerts growing secret influence while a genuinely good human king restores Aenor.
 - Varner and Golbran survive the Third Age. Their deaths occur late in the Fourth Age.

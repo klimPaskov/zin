@@ -44,6 +44,6 @@ The historical name of the capital during this period is **not yet confirmed**, 
 
 ## The Third Age and restored monarchy
 
-[[Elzon]] conquers Aenor in **Second Age year 2133**. Through the Third Age, men resist while he rules in [[Volgan]]'s name. He lacks a natural source of sustaining magic in Aenor and cannot permanently support his undead army without changing the land itself. The elven kingdoms do not send rescue armies to Aenor because of [[King Edran]]'s failed Dead Lands campaign. Elzon's eventual permanent death ends the occupation.
+[[Elzon]] conquers Aenor in **Second Age year 2133**. Through the Third Age, men resist while he rules in [[Volgan]]'s name. He lacks a natural source of sustaining magic in Aenor and cannot permanently support his undead army without changing the land itself. The elven kingdoms do not send rescue armies to Aenor because of [[King Edran]]'s failed Ember Lands campaign. Elzon's eventual permanent death ends the occupation.
 
 In the Fourth Age a genuinely good human king restores the monarchy, followed by a long peace under successive rulers. [[Afrit]] is praised and worshipped as a New God and secretly grows influential in the kingdom. See [[The Third Age of Aoaz]] and [[The Fourth Age of Aoaz]].

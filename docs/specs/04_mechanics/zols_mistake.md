@@ -17,13 +17,13 @@ Related specs: [00_shared_contract.md](00_shared_contract.md), [00_contract_addi
 | Fact | Source |
 | --- | --- |
 | Zol is the only Old God in Aoaz, the God of Death. He arrived before Aen and Volgan. | *Zol*, *Old Gods* |
-| Zol's Mistake is the whole black north and every black island of the Ocean of Zol: a barren wasteland, sparsely populated, roamed by the dead. Šodolôrō lies in it. | *Zols Mistake* |
+| Zol's Mistake is the whole black north and every black island of the Kusmeel: a barren wasteland, sparsely populated, roamed by the dead. Šodolôrō lies in it. | *Zols Mistake* |
 | The working seat is Furviatlon. Who administers it for Zol (Great Spirit, Lesser Spirit, New God, undead order or other) is **unknown**. | *Zols Mistake*, *Idea Bank* |
 | The dead wandering the land have no established classification or allegiance. Do not assume they all belong to Zol. | *Zols Mistake* |
 | The Fading and Aoaz's incompatible magic stop Zol from using his power freely or holding an ordinary body. His underlying power is immense and grows very slowly every day. Stored power and expressed power are separate matters. | *Zol*, *The Fading* |
 | Servants (Great Spirits, Lesser Spirits and even New Gods) feed or sustain his presence. Without them he could fade out of Aoaz (not be destroyed). What they collect or transfer, and why the New Gods serve, is **unknown**. | *Magic and Sustenance in Aoaz*, *New Gods* |
 | The identities of his servants are unknown. No canon names may be generated for them. | *New Gods*, *Great Powers and Relations* |
-| His dead stir in the islands of the Ocean of Zol at the start, and ordinary weapons cannot end them. | *The Campaign of 4A 1748* (marks this established) |
+| His dead stir in the islands of the Kusmeel at the start, and ordinary weapons cannot end them. | *The Campaign of 4A 1748* (marks this established) |
 | Late in the Fourth Age his forces emerge from the black north, through islands and straits toward the settled kingdoms. His dead are sustained by his own death-magic. Ordinary weapons break their shapes but cannot end them. Only potent magic, such as Glo's and Horos's sword, can. | *Zol*, *The Fourth Age of Aoaz*, *War of the Last Crowns* |
 | Zol's dead and Volgan's forces first clash, then briefly join against Eindil. Their relationship is otherwise not established. | *War of the Last Crowns*, *Kingdoms Factions and Conflicts* |
 | Zol manifests bodily once, rarely, temporarily and at great cost. He stops Eindil, crushes Horos's sword and drains New God power from him. Eindil wounds the form with a shard. Lorien and ancient spirits die or exhaust themselves forcing him to withdraw. He is wounded and constrained, not killed; his remaining hosts lose coherence or withdraw from the field. | *Zol*, *Fourth Age Canon Register*, *Lorien*, *The Fourth Age of Aoaz* |
@@ -121,7 +121,7 @@ The three established orders serve Zol: Great Spirits, Lesser Spirits and New Go
 
 ### 4. The black islands
 
-The black islands of the Ocean of Zol are a scripted list of states (`zin_is_site_ocean_of_zol_island`, a row of the key sites table "Ocean of Zol islands", generated into `common/scripted_triggers/zin_sites.txt`). An island **stirs** when state flag `zin_zol_island_stirring` is set. `zin_zol_islands_stirring` counts them (shared, so Aenor's Lost Cause and Lerendor can read it). The rising needs 4 stirring islands; if the map holds fewer than 4 island states, the threshold is their number (the builder writes the constant).
+The black islands of the Kusmeel are a scripted list of states (`zin_is_site_ocean_of_zol_island`, a row of the key sites table "Kusmeel islands", generated into `common/scripted_triggers/zin_sites.txt`). An island **stirs** when state flag `zin_zol_island_stirring` is set. `zin_zol_islands_stirring` counts them (shared, so Aenor's Lost Cause and Lerendor can read it). The rising needs 4 stirring islands; if the map holds fewer than 4 island states, the threshold is their number (the builder writes the constant).
 
 | Action | Effect |
 | --- | --- |

@@ -100,7 +100,7 @@ Notation: prerequisites `a + b` means both; `a | b` means either. `@site` is a b
 
 ## D. The Black Islands (columns 18–22)
 
-**Purpose:** wake the black islands of the Ocean of Zol, choose whether the fishermen's tales spread, gather black hulls and prepare the crossing "through islands and straits". Opens at the start. The last two focuses need the rising.
+**Purpose:** wake the black islands of the Kusmeel, choose whether the fishermen's tales spread, gather black hulls and prepare the crossing "through islands and straits". Opens at the start. The last two focuses need the rising.
 
 | key | name | prerequisites | exclusive with | x,y | days | effects | AI |
 | --- | --- | --- | --- | --- | --- | --- | --- |

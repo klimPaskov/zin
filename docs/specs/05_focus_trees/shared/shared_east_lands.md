@@ -47,7 +47,7 @@ On 1 Thaw 4A 1748 every available focus is about markets, roads, wells, temples,
 | Region | every country of the tree (all are East Lands courts) | Root, E1, E3, E4, E5 |
 | Region (South Lands) | `allow_branch`: `check zin_east_is_south_court` | E2 Wells of the South Lands |
 | Region (roads) | `allow_branch`: `check zin_shared_east_lands_on_road` | the road half of E1 (`lords_of_the_road`, `caravanserais`) |
-| Coast (Ocean of Zol) | `allow_branch`: `check zin_shared_east_lands_north_coast` | E6a The Northern Sea |
+| Coast (Kusmeel) | `allow_branch`: `check zin_shared_east_lands_north_coast` | E6a The Northern Sea |
 | Coast (rift sea) | `allow_branch`: `check zin_east_faces_rift` | E6b The Rift Shore |
 | Ideology | `allow_branch`: ruling ideology Dominion or Wild / Light or Wild / Wild | the three heads of E7 |
 | Overlord | `available`: `is_subject` | E8 Under a Protector |
@@ -164,7 +164,7 @@ Text before `zin_afrit_revealed` speaks only of temples, Houses of the First Lig
 
 ### E6. Coasts
 
-**E6a. The Northern Sea.** The north coast of the East Lands faces the Ocean of Zol. Its fishermen are the first eastern witnesses of the black ships (start situation pressure 3). **Opens:** `allow_branch` on `fishers_of_the_north_sea`: `check zin_shared_east_lands_north_coast` (today Woqood, Orato, Fladev, Hacsen, Vigodor and Cream). Text before `zin_zol_rising` speaks only of strange ships and silent boats; it never says what they are. These courts are not added to the lore spec's `zin_lore.180`; this tree's event `.3` is their black-ships tale (proposed).
+**E6a. The Northern Sea.** The north coast of the East Lands faces the Kusmeel. Its fishermen are the first eastern witnesses of the black ships (start situation pressure 3). **Opens:** `allow_branch` on `fishers_of_the_north_sea`: `check zin_shared_east_lands_north_coast` (today Woqood, Orato, Fladev, Hacsen, Vigodor and Cream). Text before `zin_zol_rising` speaks only of strange ships and silent boats; it never says what they are. These courts are not added to the lore spec's `zin_lore.180`; this tree's event `.3` is their black-ships tale (proposed).
 
 **E6b. The Rift Shore.** Courts on the rift sea trade with the elven shore across it. **Opens:** `allow_branch` on `rift_harbours`: `check zin_east_faces_rift` (today Delbiz Grasslands and Fosoco).
 

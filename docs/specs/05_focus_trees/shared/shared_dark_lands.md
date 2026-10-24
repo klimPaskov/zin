@@ -323,7 +323,7 @@ The compiler writes Goldoroth's, Volgan's and Dulundur's tags into these bodies 
 | Trigger | Scope | True when |
 | --- | --- | --- |
 | `zin_shared_dark_lands_on_dark_sea` | country | `any_owned_state = { zin_is_site_sea_of_darkness_coast = yes }` |
-| `zin_shared_dark_lands_faces_the_north` | country | `any_owned_state = { OR = { zin_is_site_dark_strait_north_shore = yes zin_is_site_ocean_of_zol_coast = yes } }` (the first is the Dark Lands mechanic's `_north_shore` subset of `zin_is_site_dark_strait_shore`; the second is the Ocean of Zol coast list that the mechanic's `zin_dark.80` also reaches) |
+| `zin_shared_dark_lands_faces_the_north` | country | `any_owned_state = { OR = { zin_is_site_dark_strait_north_shore = yes zin_is_site_ocean_of_zol_coast = yes } }` (the first is the Dark Lands mechanic's `_north_shore` subset of `zin_is_site_dark_strait_shore`; the second is the Kusmeel coast list that the mechanic's `zin_dark.80` also reaches) |
 | `zin_shared_dark_lands_moot_allowed` | country | The mechanic's Call the Free Moot conditions without the cost: `zin_dark_is_free_hold = yes`; `check_variable = { zin_volgan_pact < 3 }`; `NOT = { is_in_faction_with = <Volgan> }`; and `<Goldoroth>` exists and `OR = { <Goldoroth> = { check_variable = { zin_goldoroth_unity > 29 } } any_country = { zin_dark_is_hold = yes OR = { has_war_with = <Goldoroth> <Goldoroth> = { has_dynamic_modifier = { modifier = zin_cb_hold_defiance scope = PREV } } } } }` |
 | `zin_shared_dark_lands_south_bargain` | any | `<Goldoroth>` exists and has country flag `zin_goldoroth_southern_bargain` |
 | `zin_shared_dark_lands_goldoroth_busy` | country (the hold) | `<Goldoroth>` exists and `<Goldoroth> = { has_war = yes NOT = { has_war_with = ROOT } }` |
@@ -391,6 +391,6 @@ Under PLAUSIBLE every "hist" factor f becomes 1 + (f − 1) ÷ 2; under FREE the
 Each question proceeds on the labelled proposal. Owner-only questions are listed in [../../OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md).
 
 1. **Goblin and ogre holds** (owner: short-list question 12; regions question 2). *Proceeding on:* goblins and ogres as minor peoples of some orc holds; until the owner's rows exist, D10's goblin and ogre heads stay hidden.
-2. **Coasts.** *Resolved (proposed):* the builder computes the Sea of Darkness, northern-shore and Ocean of Zol tests from the map; no hand override. An island hold with a small coast counts if it passes the test. Where the straits lie stays owner short-list question 3; the triggers work either way.
+2. **Coasts.** *Resolved (proposed):* the builder computes the Sea of Darkness, northern-shore and Kusmeel tests from the map; no hand override. An island hold with a small coast counts if it passes the test. Where the straits lie stays owner short-list question 3; the triggers work either way.
 3. **Belonton** (owner: dark lands question 4). *Proceeding on:* Belonton is an orc confederacy (roster and `countries.csv`) sworn to the Accord beside Dondor.
 4. **Dun.** *Resolved (proposed):* D8 is enough. Dun stays tier C, as [../01_tiers_and_coverage.md](../01_tiers_and_coverage.md) assigns it; it plays "the swing power of the dark seas" through D8 and the mechanic's sea mastery.

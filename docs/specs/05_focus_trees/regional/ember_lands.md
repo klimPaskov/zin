@@ -1,10 +1,10 @@
-# Regional Trees: The Dead Lands
+# Regional Trees: The Ember Lands
 
 **Status:** Ready. Reviewed 19 October 2026 against CONVENTIONS "Status"; integrated 19 October 2026. **Priority:** 6. **Phase:** 6 (tier B).
 
 ## Purpose
 
-This spec gives the five tier B countries of the Dead Lands their own focus trees: the three demon realms of Volgan's Southern Dominion, **Nezer**, **Demon** and **Dolon**, and the two free human realms **Olen** and **Nan** ([../01_tiers_and_coverage.md](../01_tiers_and_coverage.md)). Volgan ([../major/volgan.md](../major/volgan.md)) and Mirolon ([../major/mirolon.md](../major/mirolon.md)) have major trees; the six small freeholds share [../shared/shared_dead_lands.md](../shared/shared_dead_lands.md).
+This spec gives the five tier B countries of the Ember Lands their own focus trees: the three demon realms of Volgan's Southern Dominion, **Nezer**, **Demon** and **Dolon**, and the two free human realms **Olen** and **Nan** ([../01_tiers_and_coverage.md](../01_tiers_and_coverage.md)). Volgan ([../major/volgan.md](../major/volgan.md)) and Mirolon ([../major/mirolon.md](../major/mirolon.md)) have major trees; the six small freeholds share [../shared/shared_dead_lands.md](../shared/shared_dead_lands.md).
 
 The trees play [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md) from below:
 
@@ -21,7 +21,7 @@ The trees play [Volgan and the Southern Dominion](../../04_mechanics/volgan_sout
 
 ## Lore basis
 
-**Established** (vault): the Dead Lands lie south of the Middle Lands and are Volgan's principal dominion; they include Mirolon, Nan, Demon, Dolon, Nezer and the Nether (*Volgans Dead Lands*). They were hard to reach because of fierce storms at sea and oppressive heat farther south. Volgan's realm includes grave hosts, Netherborn demons, orcs, ogres, monster clans and necromantic orders; his authority does not extend automatically to independent factions. The Nether, in the south of the Dead Lands, is the seat of the King of Demons, whose name, powers and relation to Volgan are open; demons need not all serve Volgan. The Abyss lies in the Dead Lands and is tied to Roka and the Necklace of the Abyss; Roka's fate and his people's name are open; the Void, the Nether and the Abyss are distinct. Volgan retakes Mirolon and marches north in the Fourth Age; his manifested body is destroyed; whether his spirit survives is open. Seat Nafeher; the Southern Dominion of Demon, Dolon and Nezer; rival Mirolon (working table). The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
+**Established** (vault): the Ember Lands lie south of the Middle Lands and are Volgan's principal dominion; they include Mirolon, Nan, Demon, Dolon, Nezer and the Nether (*Volgans Ember Lands*). They were hard to reach because of fierce storms at sea and oppressive heat farther south. Volgan's realm includes grave hosts, Netherborn demons, orcs, ogres, monster clans and necromantic orders; his authority does not extend automatically to independent factions. The Nether, in the south of the Ember Lands, is the seat of the King of Demons, whose name, powers and relation to Volgan are open; demons need not all serve Volgan. The Abyss lies in the Ember Lands and is tied to Roka and the Necklace of the Abyss; Roka's fate and his people's name are open; the Void, the Nether and the Abyss are distinct. Volgan retakes Mirolon and marches north in the Fourth Age; his manifested body is destroyed; whether his spirit survives is open. Seat Nafeher; the Southern Dominion of Demon, Dolon and Nezer; rival Mirolon (working table). The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
 
 **Proposed elsewhere and used here:** Volgan's strength returns and Demon, Dolon and Nezer swear to him about 4A 1650 (vault chronology); the Burning Gate of Nezer, a portal fought over in the Second Age (vault, *The Second Age of Aoaz*, proposed episode); the rulers Hazarel the Horned, Morvath of the Dead Sea, Queen Nazara of Nezerun, Warlord Dumar of Vez Nan and Olena of the Holy Breeze ([../../02_lore/02_characters.md](../../02_lore/02_characters.md)); every mechanic of the Volgan spec (strength, the veil, oaths, the Nether pact, the Black Compact, the Steward, client crowns, Mirolon's proof and passes, the Warden League); the Abyss-folk as a descriptive name.
 
@@ -347,7 +347,7 @@ Dolon is the forge of the Dominion: one land of salt flats, ash kilns and black 
 | --- | --- | --- | --- |
 | `forges_of_dolon` | The Forges of Dolon | — | An armoury; oath +5 (pairs with Volgan's own *The Forges of Dolon*) |
 | `arms_for_nafeher` | Arms for Nafeher | ash_kilns; Volgan's subject | 500 arms sent to Volgan; strength +1; oath +5 |
-| `galleys_for_the_dominion` | Galleys for the Dominion | pilots + harbour | Navy experience; oath +3. Dead Lands fleets are spared the storm pulse (magic spec) |
+| `galleys_for_the_dominion` | Galleys for the Dominion | pilots + harbour | Navy experience; oath +3. Ember Lands fleets are spared the storm pulse (magic spec) |
 | `a_ledger_of_our_own` | A Ledger of Our Own | — (oath < 40 or own road) | Autonomy +10% |
 | `free_dolon` | Free Dolon | a_throne_that_does_not_answer | Autonomy +50% or a free realm's spirit |
 
@@ -380,7 +380,7 @@ Dolon is the forge of the Dominion: one land of salt flats, ash kilns and black 
 
 ### Situation in 4A 1748
 
-Olen is a free realm of men on the cliffs of the Dead Lands' coast: three provinces of terraces, cisterns and windmills where a cool wind comes off the sea in the evenings, the only cool air for a hundred leagues. Its people call that wind the Holy Breeze and keep shrines to it on the cliff-tops (proposed). Olena of the Holy Breeze, keeper of the chief shrine, rules with the freeholders. Olen trades salt and dried fish with the storm-born galleys of the Dominion and with Mirolon's lake towns, and keeps the old quiet with Nafeher: it does not ask what drills behind the storms, and Nafeher does not ask anything of Olen. Pilgrims of the Deliverer have begun to come south with healers and bread, and the shrine-keepers are divided about them.
+Olen is a free realm of men on the cliffs of the Ember Lands' coast: three provinces of terraces, cisterns and windmills where a cool wind comes off the sea in the evenings, the only cool air for a hundred leagues. Its people call that wind the Holy Breeze and keep shrines to it on the cliff-tops (proposed). Olena of the Holy Breeze, keeper of the chief shrine, rules with the freeholders. Olen trades salt and dried fish with the storm-born galleys of the Dominion and with Mirolon's lake towns, and keeps the old quiet with Nafeher: it does not ask what drills behind the storms, and Nafeher does not ask anything of Olen. Pilgrims of the Deliverer have begun to come south with healers and bread, and the shrine-keepers are divided about them.
 
 ### Role
 
@@ -489,7 +489,7 @@ Olen is a free realm of men on the cliffs of the Dead Lands' coast: three provin
 
 ### Situation in 4A 1748
 
-Nan is a warlord's realm of islands and peninsulas: Nan and Vez Nan, held together by Warlord Dumar of Vez Nan and his captains (roster; names proposed). Its sailors are storm pilots who know the reefs and the storm belt of the Dead Lands' coast, where foreign fleets founder; no other men sail those waters for a living. Inland, beyond Vez Nan's hills, the elders say there is a stair that goes down into the dark, and that long ago a stranger from the north went down it and came back up (proposed telling of an established theft; no more is said). Nan answers to no one and sells to anyone.
+Nan is a warlord's realm of islands and peninsulas: Nan and Vez Nan, held together by Warlord Dumar of Vez Nan and his captains (roster; names proposed). Its sailors are storm pilots who know the reefs and the storm belt of the Ember Lands' coast, where foreign fleets founder; no other men sail those waters for a living. Inland, beyond Vez Nan's hills, the elders say there is a stair that goes down into the dark, and that long ago a stranger from the north went down it and came back up (proposed telling of an established theft; no more is said). Nan answers to no one and sells to anyone.
 
 ### Role
 
@@ -637,7 +637,7 @@ The content builder's focus compiler, `tools/content/modules/focus_compiler.mjs`
 | `zin_volgan_nether_bargain`, `zin_volgan_nether_bent`, `zin_volgan_gate_pact` | Volgan country flags | Volgan spec | Demon's branch C and F |
 | `zin_volgan_marches`, `zin_volgan_body_destroyed`, `zin_mirolon_fallen`, `zin_eindil_named`, `zin_eindil_stage` | global flags and variable | contract, Volgan spec | Gates |
 | `zin_dominion_own_road` | country flag (contract additions) | set by the Volgan spec's `zin_dominion.22` option "seek its own road" | Opens the sworn realms' branch D before oath falls below 40 |
-| `zin_dominion_tributary_friend` | country flag (contract additions) | set by Olen's and Nan's events to Volgan, and by the shared Dead Lands tree | Volgan's AI does not plan war on this realm before `zin_volgan_marches`; after the march it offers client-crown terms rather than conquest (dependency on the Volgan spec's AI) |
+| `zin_dominion_tributary_friend` | country flag (contract additions) | set by Olen's and Nan's events to Volgan, and by the shared Ember Lands tree | Volgan's AI does not plan war on this realm before `zin_volgan_marches`; after the march it offers client-crown terms rather than conquest (dependency on the Volgan spec's AI) |
 | `zin_mirolon_league_friend` | country flag (Mirolon tree, contract additions) | set here by Mirolon's answers | Mirolon's *The Warden League* invites the realm |
 | `zin_afrit_add_footholds` | scripted effect | [Afrit](../../04_mechanics/afrit_hidden_council.md) | Olen's footholds (the demon realms' cap is 0 and they never call it) |
 | `zin_eindil_add_regard`, `zin_eindil_add_renown` | scripted effects | [Eindil's journey](../../04_mechanics/eindil_journey.md) | Olen's *The Breeze Carries Word* |
@@ -671,7 +671,7 @@ Today Nezer, Demon and Dolon are Volgan's subjects (roster) but carry the roster
 4. Localisation scan: no `zin_regional_nezer`, `_demon`, `_dolon`, `_olen` or `_nan` text names Afrit or the King of Demons, states Roka's fate, places Dardan, or says that Volgan's spirit died, survived or lives on ("is dead", "destroyed forever", "survives", "lives on").
 5. *Open the Gate for Nafeher*, *Envoys Below*, *The Bargain of This Reign* and *Fire at the Gate* change `zin_nether_pact` only through `zin_volgan_add_nether_pact` (scan).
 6. Scripted tests with forced flags and variables: each sworn realm's own-road head is available only with oath below 40 or `zin_dominion_own_road`; each aftermath head only after `zin_volgan_body_destroyed`; Olen's event 3 accept option sets `zin_dominion_tributary_friend` on Olen; Nan's event 3 accept option gives Volgan `zin_regional_nan_pilots_of_nafeher` for 730 days.
-7. One in-game year in the isolated Linux run from 1 Thaw 4A 1748 (historical rule): no Dead Lands war starts, the five trees load without errors in the log, Nezer, Demon and Dolon take *Answer the Summons*, *First of the Sworn* and *The Forges of Dolon* in the first year, and their oaths stay at 50 or more.
+7. One in-game year in the isolated Linux run from 1 Thaw 4A 1748 (historical rule): no Ember Lands war starts, the five trees load without errors in the log, Nezer, Demon and Dolon take *Answer the Summons*, *First of the Sworn* and *The Forges of Dolon* in the first year, and their oaths stay at 50 or more.
 
 ## Open questions
 
@@ -682,4 +682,4 @@ Owner questions are listed in [OPEN_QUESTIONS.md](../../OPEN_QUESTIONS.md) (regi
 3. **The sworn realms after the body breaks.** (owner) Works on: the oath decides; on the historical path Demon stays with the Steward and Nezer goes its own way.
 4. **Olen's Holy Breeze and the tribute.** (owner) Works on: Olen keeps a faith of the sea wind (proposed) and the Houses' healers may work beside it; free realms may buy Volgan's quiet with tribute before the march.
 5. **Dolon's Dead Sea.** (owner) Works on: a salt inland water (proposed).
-6. **Nan's storm pilots.** Settled: Nan's men may sail the storm belt, as the magic spec spares the Dead Lands realms; *The Storm Pilots* gives naval modifiers only and changes no storm rule.
+6. **Nan's storm pilots.** Settled: Nan's men may sail the storm belt, as the magic spec spares the Ember Lands realms; *The Storm Pilots* gives naval modifiers only and changes no storm rule.

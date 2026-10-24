@@ -8,7 +8,7 @@ updated: 2026-10-17
 
 **Established:** During the First Age war with [[Volgan]], a new king of Aenor united **men, elves, dwarves, giants, spirits, and many other peoples** against the dark armies after the fall of the Aenoran capital. He drew in forces from the West Lands, North Lands, islands, Magical Lands, and parts of the Dark Lands. Elves came from several regions, including the **Gala elves from the Lands of the Sun** under their great king [[Lorien]].
 
-The Grand Alliance defeated Volgan at the [[Battle of Dardan]], where many died and allied spirits stripped Volgan's power and cast him into the Void. It then attempted to conquer his Dead Lands, where [[Elzon]]'s defense caused heavy losses. This failed campaign was opposed or resented by the elves and damaged the alliance's unity.
+The Grand Alliance defeated Volgan at the [[Battle of Dardan]], where many died and allied spirits stripped Volgan's power and cast him into the Void. It then attempted to conquer his Ember Lands, where [[Elzon]]'s defense caused heavy losses. This failed campaign was opposed or resented by the elves and damaged the alliance's unity.
 
 ## Proposed organization
 

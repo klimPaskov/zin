@@ -140,7 +140,7 @@ U = unique to the culture; V = variant of a shared kit; S = shared. "Names" is a
 | Free Crowns of the North | 3 | Men | U | V 4 | V grammar | V region + faith | V north_sea | S hill_fort | S region | S shared tree | group entry | 1 | V sea_horns |
 | Dondor Brutes | 2 | Men | U | U 8 | U grammar | U culture | V iron_brute | V iron_hall | V region | V flavour | 1 entry | 2 | U iron_drums |
 | Wardens of Mirolon | 2 | Men | U | U 8 | U grammar | U culture | V warden_blue | V stilt_beacon | V region | V flavour | 1 entry | 2 | U warden_horns |
-| Dead Lands Freeholders | 3 | Men | U | V 4 | V grammar | V region + faith | V warden_blue | S mud_brick_sea | S region | S shared tree | group entry | 1 | V warden_horns |
+| Ember Lands Freeholders | 3 | Men | U | V 4 | V grammar | V region + faith | V warden_blue | S mud_brick_sea | S region | S shared tree | group entry | 1 | V warden_horns |
 | Winter-Crown Folk | 1 | Men | U | U 12 | U grammar | U culture + faith | U winter_crown | U frost_stone | U | U branch | 2 entries | 3 | U northern_throat |
 | Ice Clans | 3 | Men | U | V 4 | V grammar | V region + faith | V winter_crown | S turf_hall | S region | S shared tree | group entry | 1 | V northern_throat |
 | Isengard Warlords | 2 | Men | U | U 8 | U grammar | U culture | V iron_brute | V black_fort | V region | V flavour | 1 entry | 2 | U iron_drums |

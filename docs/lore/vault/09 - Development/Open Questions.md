@@ -28,7 +28,7 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 - [ ] Does Afrit truly acquire one of the original divine ranks, or only comparable supernatural power and widespread worship?
 - [ ] What exactly does Glo bestow upon Eindil and how much remains after the sword is broken and he returns from death?
-- [ ] By what mechanism can Zol temporarily manifest, and what remains of Zol after the final battle? *(24 October 2026: Zol does not appear in the War of the Last Crowns; his most loyal servant, [[Edvoid]], does. Why Zol stays away has only a proposed explanation. The question stays open for Zol in general.)*
+- [ ] By what mechanism can Zol temporarily manifest, and what remains of Zol after the final battle? *(24 October 2026: Zol does not appear in the War of the Last Crowns; his most loyal servant, [[Kusven|Edvoid]], does. Why Zol stays away has only a proposed explanation. The question stays open for Zol in general.)*
 - [ ] Is Volgan's spirit destroyed along with his manifested body, or can he survive?
 - [ ] What can the Necklace of the Abyss do, and will Eindil be corrupted by wearing it?
 - [ ] What is Roka's fate, and what is the name of the rhinoceros-headed people?
@@ -46,15 +46,15 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 - [x] **Q-01** What is the purpose of the number twelve for the New Gods? What are the twelve gods' names and domains, and so the names of the months? Are the New Gods who serve Zol, and the New God Volgan once served, counted among the twelve? *(Answered 24 October 2026: the twelve main New Gods exist to answer the twelve needs of mortals, and one month honours each. Lesser New Gods also exist, still stronger than most Great Spirits, and have no month; the New Gods who serve Zol and the god Volgan overpowered may be lesser New Gods, and the vault does not yet say which. The gods' names, which need each answers, and so the month names, are still undecided.)*
 - [x] **Q-02** How does Afrit, publicly worshipped as a New God, relate to the twelve New Gods and the twelve months? *(Answered 24 October 2026: the months honour the twelve main New Gods; Afrit's public cult adds a feast, not a month. His true classification stays open.)*
-- [x] **Q-03** Who is Zol's most loyal servant, the Great Spirit who appears in the War of the Last Crowns? Is it Edvoid (name to be replaced, Q-10), whom his card calls "a former minion made by Zol", and whose name was once Zol's placeholder? *(Answered 24 October 2026: yes. The servant is Edvoid (name to be replaced, Q-10), a Great Spirit made by Zol and a being of his own, separate from Zol; "former minion" is read as an old title. See [[Edvoid]].)*
+- [x] **Q-03** Who is Zol's most loyal servant, the Great Spirit who appears in the War of the Last Crowns? Is it Edvoid (name to be replaced, Q-10), whom his card calls "a former minion made by Zol", and whose name was once Zol's placeholder? *(Answered 24 October 2026: yes. The servant is Edvoid (name to be replaced, Q-10), a Great Spirit made by Zol and a being of his own, separate from Zol; "former minion" is read as an old title. See [[Kusven|Edvoid]].)*
 - [x] **Q-07** Are devils immortal, and can they be revived? What is the demon king's name? *(Answered 24 October 2026: devils are bound to their bodies and can be killed; a slain devil returns only through the lava rite with its skull. The demon king receives an original name, not chosen yet; his seat is the Nether, his pacts bind the living, and the souls of the dead remain Zol's.)*
 - [x] **Q-09** What are Bastian's nature and era? *(Answered 24 October 2026: a living human wizard of the Fourth Age, famous in the Middle Lands, a contemporary of Varner.)*
-- [ ] **Q-10** What is Edvoid's new name? *(24 October 2026: the implementation proposes a name for the owner's approval, and the Ocean of Edvoid is renamed with it. Still open until approved.)*
+- [x] **Q-10** What is Edvoid's new name? *(Answered 24 October 2026: **Kusven** (Leren, 'the grave-wind'); the sea north of Zol's Mistake is **Kusmeel**. See [[Kusven]].)*
 
 ## Raised by the answers of 24 October 2026
 
 - [ ] Does "immortal" in the [[Hierarchy of Being]] mean "does not age" for every order? The owner reads Golbran's "immortal" that way, and devils, corrupted Lesser Spirits, can be killed, while the order table calls all spirits immortal.
-- [ ] How does [[Edvoid]]'s feeding on souls relate to Zol's claim on the souls of the dead?
+- [ ] How does [[Kusven|Edvoid]]'s feeding on souls relate to Zol's claim on the souls of the dead?
 - [ ] Hirolon is sovereign, but the older working table counted it among Aenor's 26 satellites. Does the Concord keep 26 members without Hirolon?
 - [ ] Where in the Middle Lands does Aenor Forest lie, and what are the new names of the walking tree people, the flower creature and the small folk and their homeland?
 

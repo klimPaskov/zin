@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Volgan's tree turns the ancient dark lord's century of hidden rebuilding into play. For the first years it is a tree of court, forges, oaths and secrets: Volgan grows his hosts behind the storms of the Dead Lands while the world laughs at Mirolon's warnings. When the War of the Last Crowns opens, or when Volgan chooses to break the veil early, the war branches carry him through the reconquest of Mirolon and the march north, the clash and compact with Zol, and either the established breaking of his body or the alternative ending, the Children of Volgan.
+Volgan's tree turns the ancient dark lord's century of hidden rebuilding into play. For the first years it is a tree of court, forges, oaths and secrets: Volgan grows his hosts behind the storms of the Ember Lands while the world laughs at Mirolon's warnings. When the War of the Last Crowns opens, or when Volgan chooses to break the veil early, the war branches carry him through the reconquest of Mirolon and the march north, the clash and compact with Zol, and either the established breaking of his body or the alternative ending, the Children of Volgan.
 
 Tree id `volgan`; country Volgan (tier A, [01_tiers_and_coverage.md](../01_tiers_and_coverage.md)). 114 focuses. Mechanic: [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md). Data format: [00_format_and_compiler.md](../00_format_and_compiler.md).
 
@@ -233,17 +233,17 @@ Prerequisites: "a and b" means both; "a or b" means either. Effects use the comp
 
 ### Branch 12: The Silent Throne
 
-**Purpose:** what the Dominion does when its master's body is gone. **Opens:** only when `zin_volgan_body_destroyed` is set. The root has `allow_branch` on that flag; `zin_volgan_destroy_body` calls `mark_focus_tree_layout_dirty`. **Mechanic:** replaces the mechanic spirit `zin_dominion_silent_throne`; the Steward (the Ember Herald) chooses between holding the Dead Lands and fighting on. Text never states whether Volgan's spirit lives.
+**Purpose:** what the Dominion does when its master's body is gone. **Opens:** only when `zin_volgan_body_destroyed` is set. The root has `allow_branch` on that flag; `zin_volgan_destroy_body` calls `mark_focus_tree_layout_dirty`. **Mechanic:** replaces the mechanic spirit `zin_dominion_silent_throne`; the Steward (the Ember Herald) chooses between holding the Ember Lands and fighting on. Text never states whether Volgan's spirit lives.
 
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `silent_throne` | The Silent Throne | — | — | 19,18 | 14 | allow_branch and available: global_flag zin_volgan_body_destroyed; call zin_volgan_steward_rule; political_power 100; stability 0.1 | 500 |
-| `hold_the_dead_lands` | Hold the Dead Lands | silent_throne | host_fights_on | 18,19 | 35 | add_spirit retreat_south | 80 (hist ×2) |
+| `hold_the_dead_lands` | Hold the Ember Lands | silent_throne | host_fights_on | 18,19 | 35 | add_spirit retreat_south | 80 (hist ×2) |
 | `host_fights_on` | The Host Fights On | silent_throne | hold_the_dead_lands | 20,19 | 35 | war_support 0.1; stability −0.1; strength +5 | 20 |
 | `keep_the_oaths` | Keep the Oaths | hold_the_dead_lands | — | 18,20 | 35 | oath all +20 | 30 |
 | `stewards_war` | The Steward's War | host_fights_on | — | 20,20 | 35 | timed_spirit steward_war 180; army_experience 20 | 30 |
 | `what_remains` | What Remains of Volgan | keep_the_oaths or stewards_war | — | 19,21 | 35 | event what_remains (zin_volgan.17); remove_spirit zin_dominion_silent_throne | 30 |
-| `dead_lands_endure` | The Dead Lands Endure | what_remains | — | 19,22 | 70 | add_spirit dead_lands_endure_spirit | 30 |
+| `dead_lands_endure` | The Ember Lands Endure | what_remains | — | 19,22 | 70 | add_spirit dead_lands_endure_spirit | 30 |
 
 ### Count
 
@@ -302,9 +302,9 @@ Keys compile to `zin_volgan_<key>`. Mechanic spirits (`zin_dominion_*`) are list
 | `clash_of_darks` | The Dead Against the Dead | `army_defence_factor` 0.05, `army_attack_factor` 0.05 | "The Dead Against the Dead"; 180 days |
 | `two_darks` | Two Darks, One Field | `army_attack_factor` 0.1, `army_defence_factor` 0.05 | "Two Darks, One Field"; removed by `zin_dominion.23` |
 | `hunt_the_champion` | Hunt the Champion | `army_morale_factor` 0.1, `war_support_factor` 0.05 | "The Champion of Men"; 180 days |
-| `retreat_south` | Hold the Dead Lands | `army_core_defence_factor` 0.2, `war_support_factor` 0.05 | "Hold the Dead Lands" |
+| `retreat_south` | Hold the Ember Lands | `army_core_defence_factor` 0.2, `war_support_factor` 0.05 | "Hold the Ember Lands" |
 | `steward_war` | The Steward's War | `army_org_factor` 0.05 | "The Steward's War"; 180 days |
-| `dead_lands_endure_spirit` | The Dead Lands Endure | `stability_factor` 0.1, `political_power_gain` 0.1 | "The Dead Lands Endure" |
+| `dead_lands_endure_spirit` | The Ember Lands Endure | `stability_factor` 0.1, `political_power_gain` 0.1 | "The Ember Lands Endure" |
 
 When `zin_volgan_destroy_body` runs, it also removes the spirits `host_of_first_age`, `one_dominion`, `gates_opened` and `two_darks`.
 
@@ -455,7 +455,7 @@ Every key is from the icon catalog ([02_icon_catalog.md](../02_icon_catalog.md))
 
 Build checks (focus compiler and `npm test` in `tools/`):
 
-1. `volgan.json` compiles: 114 focuses, unique keys and positions in columns 0–29 and rows 0–22, every prerequisite and exclusive exists, every focus sits below its prerequisites, the six exclusive pairs (Break the Veil / Wait for the Storm, the Orders / the Warlords, Bargain / Bend, Dead Garrison / Client Crown, the Dead Against the Dead / Leave the North, Hold the Dead Lands / The Host Fights On) are symmetric, every `days` is a multiple of 7, exactly one `raw` block.
+1. `volgan.json` compiles: 114 focuses, unique keys and positions in columns 0–29 and rows 0–22, every prerequisite and exclusive exists, every focus sits below its prerequisites, the six exclusive pairs (Break the Veil / Wait for the Storm, the Orders / the Warlords, Bargain / Bend, Dead Garrison / Client Crown, the Dead Against the Dead / Leave the North, Hold the Ember Lands / The Host Fights On) are symmetric, every `days` is a multiple of 7, exactly one `raw` block.
 2. Every icon is a catalog key and every event picture a picture key; `volgan_broken` is used only by event 17, whose focus needs `zin_volgan_body_destroyed`.
 3. Every spirit modifier is in the 1.19.3 modifier documentation; every `call` and `check` resolves to the mechanic's, world systems' or this tree's effects and triggers; every research category is a warfare `zin_cat_*` key or its stated vanilla fallback.
 4. Offline scan: no focus reachable on 1 Thaw 4A 1748 without `zin_volgan_war_open` has a `wargoal` or war effect; `old_claim` is the only claim; Break the Veil requires `zin_volgan_may_break_veil` (date ≥ 1750.1.1, strength ≥ 70).

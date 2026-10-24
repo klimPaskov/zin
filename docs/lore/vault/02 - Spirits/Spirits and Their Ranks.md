@@ -8,7 +8,7 @@ updated: 2026-10-24
 
 The ZIN order of spirits has **two confirmed ranks**:
 
-1. **Great Spirits**: the higher spirit order, immortal and capable of exceptional power. [[Volgan]], [[Elzon]] and [[Edvoid]] are Great Spirits. Elzon is also the Great Necromancer. Great Spirits can rule domains, command followers, or serve higher powers, but rulership is not an additional rank.
+1. **Great Spirits**: the higher spirit order, immortal and capable of exceptional power. [[Volgan]], [[Elzon]] and [[Kusven]] are Great Spirits. Elzon is also the Great Necromancer. Great Spirits can rule domains, command followers, or serve higher powers, but rulership is not an additional rank.
 2. **Lesser Spirits**: the lower immortal spirit order. Some are still powerful enough for mortals to mistake them for gods.
 
 Both ranks sit below the divine order in the formal [[Hierarchy of Being]]. Yet a spirit can defeat or surpass an individual New God, as happened with Volgan; whether that god was a lesser New God is not yet stated. Lesser New Gods are still stronger than most Great Spirits (owner, 24 October 2026). Formal rank is not a reliable combat-strength chart.

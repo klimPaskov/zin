@@ -338,7 +338,7 @@ Historical: A and C first, then B; the_charter_quarrel (turn them away 60 %), bo
 
 ### Situation in 4A 1748
 
-Herez holds the southern marches of the Concord, where the Middle Lands fall away toward the heat of the Dead Lands. Its marcher lords keep old towers that have watched an empty road for centuries. Mirolon's envoys pass through Herez on their way to Parim and back, laughed at; the marcher lords alone listen politely. Herez is loyal enough, poor in gold, rich in horses and stone, and proud of being the Concord's shield toward a danger everyone else calls a legend.
+Herez holds the southern marches of the Concord, where the Middle Lands fall away toward the heat of the Ember Lands. Its marcher lords keep old towers that have watched an empty road for centuries. Mirolon's envoys pass through Herez on their way to Parim and back, laughed at; the marcher lords alone listen politely. Herez is loyal enough, poor in gold, rich in horses and stone, and proud of being the Concord's shield toward a danger everyone else calls a legend.
 
 ### Role in the story
 

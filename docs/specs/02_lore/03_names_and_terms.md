@@ -10,7 +10,7 @@ The vault stays canon. This file only indexes it. Where a mechanic spec owns the
 
 ## Lore basis
 
-Vault: *Canon Policy*, *Names and Retcons*, *Aoaz and Its Regions*, *Fourth Age Map of Aoaz*, *Middle Lands and Aenor*, *Zols Mistake*, *Volgans Dead Lands*, *Nether*, *Abyss*, *Selen*, *Peoples of Aoaz*, *Spirits and Their Ranks*, *Old Gods*, *New Gods*, *Holy Seven*, the politics notes, the artifact notes, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Aoaz*, *Open Questions*. Map: `docs/name_table.csv` (711 drawn labels) and `localisation/replace/world_l_english.yml`. Decisions: [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) D3, D4, N10, N16, O5, O7, S4, S11.
+Vault: *Canon Policy*, *Names and Retcons*, *Aoaz and Its Regions*, *Fourth Age Map of Aoaz*, *Middle Lands and Aenor*, *Zols Mistake*, *Volgans Ember Lands*, *Nether*, *Abyss*, *Selen*, *Peoples of Aoaz*, *Spirits and Their Ranks*, *Old Gods*, *New Gods*, *Holy Seven*, the politics notes, the artifact notes, *Fourth Age Chronology*, *The Campaign of 4A 1748*, *The Fourth Age of Aoaz*, *Open Questions*. Map: `docs/name_table.csv` (711 drawn labels) and `localisation/replace/world_l_english.yml`. Decisions: [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) D3, D4, N10, N16, O5, O7, S4, S11.
 
 Labels: **E** established; **W** working map-design table; **P** proposed; **O** open; **S** superseded (never in player text).
 
@@ -19,7 +19,7 @@ Labels: **E** established; **W** working map-design table; **P** proposed; **O**
 ### Spelling rules
 
 1. Use the canonical spellings: **Eindil**, **Zol's Mistake**, **Aenor**, **Šodolôrō**, **Golbran**, **Kilinti**, **Eekedor**, **R'en**, **Mp'E**.
-2. Never use **Einendil**, **Edvoid**, **Rush**, **Gorbat**, **Klinti** or **Huhun** in player text.
+2. Never use **Einendil**, **Kusven**, **Rush**, **Gorbat**, **Klinti** or **Huhun** in player text.
 3. The game font draws only Windows-1252. **Šodolôrō** contains ō, which it cannot draw. Game text writes **Šodolôro** (S11). Š and ô are in Windows-1252 and in every font ZIN uses (checked 19 October 2026 in the installed `gfx/fonts`). Specs and design files keep the canonical spelling.
 4. Possessives keep the apostrophe: Zol's Mistake, Triton's Islands, Afrit's (after the reveal only).
 5. Regions are capitalised as names: the Cold Lands, the Middle Lands. "Aoaz" is the continent; "ZIN" is the wider universe and never appears in player text as a place.
@@ -42,7 +42,7 @@ Labels: **E** established; **W** working map-design table; **P** proposed; **O**
 | Zol's Mistake | E | The whole black north and every black island of the Ocean of Zol; formerly "Edvoid's Mistake" (S) |
 | East Lands | E | Across the rift sea; drawn as "South-Earth" (S) |
 | South Lands | E | The great desert of the East Lands (the Noris desert and the former Sunhot desert), which extends south off the map. On the map it is the East Lands' southern desert (owner short list 6, proposal) |
-| Dead Lands | E | South of the Middle Lands; Volgan's domain |
+| Ember Lands | E | South of the Middle Lands; Volgan's domain |
 | Islands of the South | E | Two arcs south of the West Lands |
 | Lands of the Sun | E | Far south-west; formerly "Sunhot" as a place (S); the Sunhot elves keep their name |
 
@@ -73,8 +73,8 @@ Labels: **E** established; **W** working map-design table; **P** proposed; **O**
 | Mp'E | E | The frozen north of the Cold Lands; Yeldenne's state |
 | Dragon Mountain | E | Home of dragons; not a country. The map has both "Dragon Mountain" and "Dragon's Mountain"; use **Dragon Mountain** |
 | Mushroom Forest, Magic Mountains | E | Magical Lands features |
-| The Abyss | E | In the Dead Lands; Roka's domain; not the Void, not the Nether |
-| The Nether | E | South of the Dead Lands; seat of the King of Demons |
+| The Abyss | E | In the Ember Lands; Roka's domain; not the Void, not the Nether |
+| The Nether | E | South of the Ember Lands; seat of the King of Demons |
 | The Void | E | Where Volgan was banished; a realm, not on the map |
 | Dardan | E battle; O place | Never placed on the map until the owner decides |
 | The palace cliff | E event; O place | Near Parim, scripted only |
@@ -94,7 +94,7 @@ Labels: **E** established; **W** working map-design table; **P** proposed; **O**
 | Sea of Gods | E | Lands of the Sun |
 | Leren Ocean, Sea of R'en | drawn | North Lands |
 | The Ocean of Peace | drawn | South-west of the Middle Lands |
-| Sea of Death, Demonic Sea, The Dead's Sea | drawn | Dead Lands |
+| Sea of Death, Demonic Sea, The Dead's Sea | drawn | Ember Lands |
 | All other drawn seas | drawn | As in `docs/name_table.csv`; uncertain readings stay flagged and are not used in game text |
 
 Drawn labels that carry a superseded word get new names in game text: **Crown Ocean**, **Crown Forest**, **Crown Mountains** for "Rush Ocean", "Rush Forest" and "Rush Mountains" (P). Drawn labels that use "Sunhot" as a place become **Sun Desert**, **Sun Gate** and **Sun Grasslands** (P). The politics step writes these names; the superseded-name check below fails the build until it does.
@@ -232,7 +232,7 @@ Drawn labels that carry a superseded word get new names in game text: **Crown Oc
 | Superseded | Current | Where the old name may survive |
 | --- | --- | --- |
 | Einendil | Eindil | Archived sources only |
-| Edvoid; Edvoid's Mistake; Ocean of Edvoid | Zol; Zol's Mistake; Ocean of Zol | Archived sources; two internal strategic-region file names (rename on next map rebuild) |
+| Kusven; Kusven's Mistake; Kusmeel | Zol; Zol's Mistake; Kusmeel | Archived sources; two internal strategic-region file names (rename on next map rebuild) |
 | Rush; Rush Kingdom | Aenor, the Middle Kingdom | Archived sources |
 | Rush Land | Middle Lands | Drawn sheet names |
 | Rush Islands | Aenor Isle | Drawn sheet names |
@@ -309,7 +309,7 @@ None.
 
 ## Acceptance
 
-1. T1 passes over the whole staged mod; a test build with "Edvoid" planted in a state name fails.
+1. T1 passes over the whole staged mod; a test build with "Kusven" planted in a state name fails.
 2. T2 passes; a test build with a deliberate "Afrit" in an Aenor event fails, and the same text through `[zin_loc_deliverer]` passes.
 3. T3 and T4 pass; "Šodolôro" is drawn by every font T4 reads (builder test).
 4. T5 passes: every proposed name in game text comes from a `zin_name_<key>` key.

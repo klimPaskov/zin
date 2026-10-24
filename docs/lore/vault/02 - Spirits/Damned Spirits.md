@@ -18,7 +18,7 @@ They are also called *Blighted Spirits*. beings transformed through curses, corr
 - Are there both Great and Lesser Damned Spirits?
 - Were they born in the deep world, driven underground, imprisoned, or transformed there?
 - Do they have distinct societies, hierarchies, or territories?
-- Do they have anything to do with [[Volgans Dead Lands|Volgan]] or the dead of [[Zols Mistake|Zol's Mistake]]?
+- Do they have anything to do with [[Volgans Ember Lands|Volgan]] or the dead of [[Zols Mistake|Zol's Mistake]]?
 
 ## Optional motifs for later use
 

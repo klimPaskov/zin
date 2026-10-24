@@ -113,13 +113,13 @@ People live on the Sun Grasslands, the ash coast of the Good Volcanoes, the shor
 | Before 1A | The standing stones of Tor Luni are raised by nobody the Sunhot remember. | P |
 | Late 1A | Edran's Grand Alliance reaches Lorien; Aenor knew little of the Gala before; one of the first great meetings of their courts. | E ([A1] §5) |
 | Late 1A | Lorien leads his formidable host to Dardan and helps break Volgan's power; the Gala host saves a collapsing flank. | E host at Dardan ([A1] §5, [LO]); P battle detail ([A1] §6) |
-| By 1A 1675 | Edran's invasion of the Dead Lands against elven advice; Lorien's people pay for a decision they opposed. | E ([A1] §7, [ER]) |
+| By 1A 1675 | Edran's invasion of the Ember Lands against elven advice; Lorien's people pay for a decision they opposed. | E ([A1] §7, [ER]) |
 | 2A | The Gala mourn; the elven kingdoms refuse to send armies to save Aenor from Elzon. | E ([ER], [2R]) |
 | 2A, 3A | Sunfolk farmers and boatmen settle the sanctuary shores as guests and stay. | P ([WB] Goodin Sunfolk) |
 | 4A, early | The Noon Council forms. | P |
 | **4A 1748** | **Start: peace.** | owner |
 | 4A 1752 | A stranger driven from the Islands of the South reaches Gala; Lorien speaks with him for weeks, recognises Eindil, son of Ein, son of Aen, and sends him north with a ship, armour, a sword and a crew of westerners, islanders and Gala elves. | E ([4R], [A4] §V); P date; hidden identity |
-| 4A 1757 | Lorien returns with Gala elves and ancient lords and spirits to defend the living, and dies. The vault has him die fighting Zol in person; by the owner's correction, Zol does not appear, and Lorien dies in the struggle with Zol's most loyal servant, Edvoid (name to be replaced). | E Lorien's death ([LO], [WLC]); owner correction ([OC] §2.4, [OD]); P date |
+| 4A 1757 | Lorien returns with Gala elves and ancient lords and spirits to defend the living, and dies. The vault has him die fighting Zol in person; by the owner's correction, Zol does not appear, and Lorien dies in the struggle with Zol's most loyal servant, Kusven. | E Lorien's death ([LO], [WLC]); owner correction ([OC] §2.4, [OD]); P date |
 | After 4A 1760 | What becomes of Gala after Lorien is open. | O ([A4] follow-up 6) |
 
 **Local legends (P).** The Sunfolk say the Good Volcanoes were put to sleep by a song and must not be sung near. The isle Sunhot say Hol's Great Volcano smokes when a ship is lost. The Gala keep a garden for the dead of Dardan, far from Dardan ([WB] §7).
@@ -220,7 +220,7 @@ People live on the Sun Grasslands, the ash coast of the Good Volcanoes, the shor
 | Godland | borrowed name | **Tor Luni** | Sunhot "white stone" |
 | Hengyang (country, island) | a real-world city name | the island **Ossi Luni** in Soyano | Sunhot "white harbour" |
 | Poyang (country, island) | a real-world lake name | the island **Yala Lisi** in Soyano | Sunhot "spring fields" |
-| The Seas of Light | plural; pairs with the Dead Lands' death-seas | **the Bright Sea** (*Sala Aila*) | Sunhot "bright sea" |
+| The Seas of Light | plural; pairs with the Ember Lands' death-seas | **the Bright Sea** (*Sala Aila*) | Sunhot "bright sea" |
 | The Yellow Sea | a real-world sea name | **Sala Olar**, "the Golden Sea" | Sunhot |
 | The Sea of the Dreams | repeats "Dreamland" | **Sala Nyel**, "the Moon Sea" | Sunhot |
 | Sun God Land, Godson, Godton, Godrela, Dreamland, Sunny, Him, Via, Helen, Land of the Sun | repetitive, placeholder-like or borrowed | merged (section 11) | |
@@ -237,7 +237,7 @@ People live on the Sun Grasslands, the ash coast of the Good Volcanoes, the shor
 | [A1], [2R], [A4] | `docs/lore/vault/07 - History/The First Age of Aoaz.md` (§5 to §7); `Second Age Canon Register.md`; `The Fourth Age of Aoaz.md` (§IV to §VI, §XI, §XIII, follow-up decisions) |
 | [4R], [FC], [C48], [ER], [WLC] | `docs/lore/vault/07 - History/Fourth Age Canon Register.md`; `Fourth Age Chronology.md` (V); `The Campaign of 4A 1748.md` (The Lands of the Sun); `The Elven Refusal.md`; `War of the Last Crowns.md` |
 | [OC] | `docs/zin-handoff/01-CONTEXT-AND-CANON.md` §2.4 (Zol's servant), §3 (Lao as belief) |
-| [OD] | Owner decisions of 24 October 2026 relayed by the coordinator (renames; Edvoid as Zol's servant; the twelve main and the lesser New Gods; the dead are Zol's; no exact ages) |
+| [OD] | Owner decisions of 24 October 2026 relayed by the coordinator (renames; Kusven as Zol's servant; the twelve main and the lesser New Gods; the dead are Zol's; no exact ages) |
 | [GM] | `tools/content/data/geography/aoaz.json` (ids as cited) |
 | [GMS] | `docs/specs/01_map/05_geography_model.md` (§2 Lands of the Sun; §2 resource table; §6) |
 | [DEM] | `tools/content/data/world/demography.json` (Lands of the Sun region, peoples, countries, settlements) |
