@@ -57,12 +57,23 @@ export async function loadArt(countries) {
 // using the cell map recorded when the sheets were generated: <ZIN_ART>/jobs/flags-cells.json, or its tracked copy
 // data/flags-cells.json, the map of the retired roster's sheets (art/flag-jobs.mjs writes the jobs of the realms' new sheets).
 export const FLAG_CELLS = fileURLToPath(new URL('../data/flags-cells.json', import.meta.url));
-let flagsReady;
+// The realms' own flags: the heraldry sheets of art/flag-jobs.mjs. The tracked cell map (data/realm-flags-cells.json, no images) lists
+// every realm flag with its sheet and index; a cell serves its flag only once its sheet is accepted (accepted: true).
+export const REALM_FLAG_CELLS = fileURLToPath(new URL('../data/realm-flags-cells.json', import.meta.url));
+let flagsReady, realmFlagsReady;
 export function flagsDir() { return flagsReady ??= sliceFlagsIfMissing(); }
+export function realmFlagsDir() { return realmFlagsReady ??= sliceRealmFlags(); }
+export async function acceptedRealmCells() {
+  return JSON.parse(await readFile(REALM_FLAG_CELLS, 'utf8')).filter(c => c.accepted === true);
+}
 async function sliceFlagsIfMissing() {
   if (existsSync(`${ART}/flags`)) return `${ART}/flags`;
   const cellsFile = existsSync(`${ART}/jobs/flags-cells.json`) ? `${ART}/jobs/flags-cells.json` : FLAG_CELLS;
-  const cells = JSON.parse(await readFile(cellsFile, 'utf8'));
+  return sliceSheetsCached(JSON.parse(await readFile(cellsFile, 'utf8')));
+}
+async function sliceRealmFlags() { return sliceSheetsCached(await acceptedRealmCells()); }
+// Cuts the sheets named by the cells into a content-addressed folder (the hash covers the cells and the sheet bytes).
+async function sliceSheetsCached(cells) {
   const bySheet = new Map(); for (const c of cells) (bySheet.get(c.sheet) ?? bySheet.set(c.sheet, []).get(c.sheet)).push(c);
   const h = createHash('sha256').update(JSON.stringify(cells));
   for (const sheet of [...bySheet.keys()].sort()) h.update(sheet).update(await readFile(rawFile(`flags/${sheet}.png`)));
@@ -77,26 +88,36 @@ async function sliceFlagsIfMissing() {
   return dir;
 }
 
-// A country's flag at the three HOI4 sizes, from its generated sheet slice flags/<name key>.png (492x312).
-export async function flagTgas(name) {
-  const { flagKey } = await import('../art/slice-flags.mjs');
-  const sharp = (await import('sharp')).default, file = `${await flagsDir()}/${flagKey(name)}.png`;
+// A flag slice at the three HOI4 sizes (492x312 in, 82x52, 41x26 and 10x7 out).
+async function tgasOf(file) {
+  const sharp = (await import('sharp')).default;
   const [large, medium, small] = await Promise.all([[82, 52], [41, 26], [10, 7]].map(async ([w, h]) => tga(fromRaw(await sharp(file).resize(w, h, { fit: 'fill', kernel: 'lanczos3' }).ensureAlpha().raw().toBuffer(), w, h))));
   return { large, medium, small };
 }
 
-// The realms' flags at the three sizes. Until the heraldry of data/world/heraldry.json is generated (art/flag-jobs.mjs), a realm flies the
-// old flag of its main former row (flagFrom, lib/roster.mjs); a realm with no old row has no flag yet. Both lists go to
-// docs/plans/zin-art/pending_from_integration.md. Returns { kept: [{ tag, name, from }], none: [{ tag, name }] }.
+// A country's flag at the three HOI4 sizes, from its generated sheet slice flags/<name key>.png (492x312).
+export async function flagTgas(name) {
+  const { flagKey } = await import('../art/slice-flags.mjs');
+  return tgasOf(`${await flagsDir()}/${flagKey(name)}.png`);
+}
+
+// The realms' flags at the three sizes. A realm flies its own heraldry flag once its sheet is accepted (acceptedRealmCells). Until then it
+// flies the old flag of its main former row (flagFrom, lib/roster.mjs), and a realm with neither has no flag yet (a pending art row in
+// docs/plans/zin-art/pending_from_integration.md). Returns { kept: [{ tag, name, from }], none: [{ tag, name }] }, where from is the sheet
+// cell (sheet#index) or the old row's name.
 export async function stageRealmFlags(staged, countries) {
-  const kept = [], none = [];
+  const kept = [], none = [], own = new Map((await acceptedRealmCells()).map(c => [c.tag, c]));
+  const { flagKey } = await import('../art/slice-flags.mjs');
   for (const c of countries) {
-    if (!c.flagFrom) { none.push({ tag: c.tag, name: c.name }); continue; }
-    const t = await flagTgas(c.flagFrom);
+    const cell = own.get(c.tag);
+    let t, from;
+    if (cell) { t = await tgasOf(`${await realmFlagsDir()}/${flagKey(cell.name)}.png`); from = `${cell.sheet}#${cell.index}`; }
+    else if (c.flagFrom) { t = await flagTgas(c.flagFrom); from = c.flagFrom; }
+    else { none.push({ tag: c.tag, name: c.name }); continue; }
     staged.add(`gfx/flags/${c.tag}.tga`, t.large);
     staged.add(`gfx/flags/medium/${c.tag}.tga`, t.medium);
     staged.add(`gfx/flags/small/${c.tag}.tga`, t.small);
-    kept.push({ tag: c.tag, name: c.name, from: c.flagFrom });
+    kept.push({ tag: c.tag, name: c.name, from });
   }
   return { kept, none };
 }
@@ -105,7 +126,7 @@ export async function stageRealmFlags(staged, countries) {
 export async function stageArtSources(staged, art) {
   for (const rel of art.sources) staged.add(`art/source/${rel}`, await readFile(rawFile(rel)));
   const flagSheets = existsSync(`${ART}/raw/flags`) ? `${ART}/raw/flags` : `${ART_SOURCE}/flags`;
-  for (const f of (await readdir(flagSheets)).filter(f => /^flags-sheet-\d+\.png$/.test(f)).sort()) staged.add(`art/source/flags/${f}`, await readFile(`${flagSheets}/${f}`));
+  for (const f of (await readdir(flagSheets)).filter(f => /^(realm-)?flags-sheet-\d+\.png$/.test(f)).sort()) staged.add(`art/source/flags/${f}`, await readFile(`${flagSheets}/${f}`));
   staged.add('art/source/provenance.jsonl', await readFile(provenanceFile()));
 }
 export { dds };

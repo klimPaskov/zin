@@ -60,6 +60,8 @@ export function createSourceResolver({ view, provenance, manifests, rules, table
   // A realm flies the old flag of its main former row (flagFrom, lib/roster.mjs) until its own is generated; the cell map is by old name.
   const countries = new Map((tables.countries ?? []).map(c => [c.tag, c.flagFrom ?? c.name]));
   const cellsByName = new Map((tables.flagCells ?? []).map(c => [c.name, c]));
+  // a realm whose own heraldry sheet is accepted flies that flag (data/realm-flags-cells.json, by tag)
+  const realmCells = new Map((tables.realmFlagCells ?? []).map(c => [c.tag, c]));
   const shaOf = rel => (view.has(rel) ? view.sha(rel) : null);
 
   // Generation and review lines of one tracked source picture.
@@ -112,7 +114,7 @@ export function createSourceResolver({ view, provenance, manifests, rules, table
     let srcRel = fill(rule?.source, cls?.m ?? []);
     let sheet = null, cell = null;
     if (rule?.flagTag) {
-      const tag = fill(rule.flagTag, cls.m), name = countries.get(tag), c = name ? cellsByName.get(name) : null;
+      const tag = fill(rule.flagTag, cls.m), name = countries.get(tag), c = realmCells.get(tag) ?? (name ? cellsByName.get(name) : null);
       if (!c) return { route, source: null, ops: [], manifest: null, problems: [{ code: 'PROV_SOURCE_UNKNOWN', message: `flag ${tag} has no country-table name or flag-sheet cell, so its source sheet is unknown` }], exempt: false };
       srcRel = `art/source/flags/${c.sheet}.png`; sheet = c.sheet; cell = { row: c.row, col: c.col, index: c.index };
     }

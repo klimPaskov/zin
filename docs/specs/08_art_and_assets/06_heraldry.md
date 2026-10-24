@@ -2172,7 +2172,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 ### Ember Coast Freeholders (`ember_freeholds`)
 
-*People:* men. *Family:* Ainic men. *Language:* mirolic. *Faith:* mourning_dust. *Line:* straight. *Realms:* 3 (Halia, Nan, Olen). *Formerly:* `dead_lands_freeholds` (the roster still writes the old id; both resolve here).
+*People:* men. *Family:* Ainic men. *Language:* mirolic. *Faith:* mourning_dust. *Line:* straight. *Realms:* 3 (Halia, Nan, Olen). *Formerly:* `ember_lands_freeholds` (the roster still writes the old id; both resolve here).
 
 *Palette:* sand `#c9b58a` (M); sea teal `#3e6b78` (C); mud brick `#8a5a3a` (C); salt white `#ece8dc` (M); storm grey `#6a6e70` (C); tar black `#2b2826` (C).
 

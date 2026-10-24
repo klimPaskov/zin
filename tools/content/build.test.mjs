@@ -13,7 +13,8 @@ import { PEOPLES } from './modules/peoples.mjs';
 import { historyFile } from './modules/countries.mjs';
 import { stanceIdeology, IDEOLOGIES } from './modules/ideologies.mjs';
 import { flagKey } from './art/slice-flags.mjs';
-import { flagsDir, FLAG_CELLS } from './modules/art.mjs';
+import { flagsDir, realmFlagsDir, acceptedRealmCells, FLAG_CELLS, REALM_FLAG_CELLS } from './modules/art.mjs';
+import { HERALDRY_FILE } from './art/flag-jobs.mjs';
 import { stagingDir, ART, ZIN } from './lib/paths.mjs';
 import { Canvas, tga, dds } from './lib/raster.mjs';
 import { cw, yml, assertModifiers } from './lib/core.mjs';
@@ -106,14 +107,32 @@ test('Negative: the staged tree is never placed inside the repository', () => {
   assert.equal(path.resolve(stagingDir(path.join(ZIN, '..', 'zin-staged'))), path.resolve(ZIN, '..', 'zin-staged'));
 });
 
+test('The realm flag cell map covers every realm once, matches its heraldry design, and accepts whole sheets only', async () => {
+  // data/realm-flags-cells.json is tracked (no images). A stale design hash means the heraldry changed after its flag was generated.
+  const cells = JSON.parse(await readFile(REALM_FLAG_CELLS, 'utf8'));
+  const design = new Map(JSON.parse(await readFile(HERALDRY_FILE, 'utf8')).countries.map(d => [d.tag, d]));
+  assert.deepEqual(cells.map(c => c.tag).sort(), [...tags].sort(), 'every realm has exactly one realm flag cell');
+  for (const c of cells) {
+    const country = countries.find(x => x.tag === c.tag);
+    assert.equal(c.name, country.name, `${c.tag}: cell name`);
+    assert.equal(c.design, design.get(c.tag).design_hash, `${c.tag}: the flag cell is stale for its heraldry design`);
+  }
+  const acceptance = new Map();
+  for (const c of cells) (acceptance.get(c.sheet) ?? acceptance.set(c.sheet, new Set()).get(c.sheet)).add(c.accepted === true);
+  for (const [sheet, values] of acceptance) assert.equal(values.size, 1, `${sheet} mixes accepted and unaccepted flag cells`);
+});
+
 test('Every country has a generated flag; every staged art source traces to a recorded generation', async () => {
-  // Until the realms' heraldry is generated, a realm flies the old flag of its main former row; a realm with no old row
-  // has no flag and is a pending art row (FLAG_MISSING accepted in the asset baseline).
-  const flags = await flagsDir();
+  // A realm flies its own heraldry flag once its sheet is accepted (data/realm-flags-cells.json). Until then it flies the old flag of its
+  // main former row; a realm with neither has no flag and is a pending art row (FLAG_MISSING accepted in the asset baseline).
+  const flags = await flagsDir(), realmFlags = await realmFlagsDir(), own = new Map((await acceptedRealmCells()).map(c => [c.tag, c]));
   const baseline = JSON.parse(await readFile(path.join(ZIN, 'docs/design/validation/asset_baseline.json'), 'utf8'));
   const pending = new Set(baseline.findings.filter(f => f.code === 'FLAG_MISSING').map(f => f.path));
   for (const c of countries) {
-    if (c.flagFrom) {
+    if (own.has(c.tag)) {
+      await readFile(path.join(realmFlags, `${flagKey(own.get(c.tag).name)}.png`));
+      for (const dir of ['gfx/flags', 'gfx/flags/medium', 'gfx/flags/small']) await readFile(path.join(STAGED, `${dir}/${c.tag}.tga`));
+    } else if (c.flagFrom) {
       await readFile(path.join(flags, `${flagKey(c.flagFrom)}.png`));
       for (const dir of ['gfx/flags', 'gfx/flags/medium', 'gfx/flags/small']) await readFile(path.join(STAGED, `${dir}/${c.tag}.tga`));
     } else for (const dir of ['gfx/flags', 'gfx/flags/medium', 'gfx/flags/small']) assert(pending.has(`${dir}/${c.tag}.tga`), `${c.name} has no flag and no pending row`);

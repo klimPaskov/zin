@@ -77,7 +77,11 @@ for (const rel of oldContent) if (!stagedFiles.has(rel) && !worldPaths.has(rel) 
 // Manifests from the exact final bytes.
 const contentManifest = { version: 1, files: contentPaths.map(relativePath => ({ relativePath, sha256: sha256Bytes(stagedFiles.get(relativePath)!) })) };
 const contentManifestBytes = Buffer.from(JSON.stringify(contentManifest, null, 2) + '\n');
-const newWorld = { ...world, files: world.files.map((f: any) => stagedFiles.has(f.relativePath) ? { ...f, sha256: sha256Bytes(stagedFiles.get(f.relativePath)!) } : f) };
+// Country-kind shared files (the bookmark, the orders of battle) keep the hash the map generator recorded: under the
+// workspace-owned countries of create_world (ADR 0069) a recorded country file whose bytes still match is retired as
+// the world's own, while one the mod rewrote is released to the mod. Only the other shared entry points are re-hashed.
+const COUNTRY_KIND = (rel: string) => rel === 'common/bookmarks/world.txt' || SHARED_WORLD_PATTERNS.some(re => re.test(rel));
+const newWorld = { ...world, files: world.files.map((f: any) => stagedFiles.has(f.relativePath) && !COUNTRY_KIND(f.relativePath) ? { ...f, sha256: sha256Bytes(stagedFiles.get(f.relativePath)!) } : f) };
 const worldBytes = Buffer.from(JSON.stringify(newWorld, null, 2) + '\n');
 const currentWorld = await readFile(path.join(root, WORLD_MANIFEST));
 if (!currentWorld.equals(worldBytes) && newWorld.files.some((f: any, i: number) => f.sha256 !== world.files[i].sha256)) changes.set(WORLD_MANIFEST, worldBytes);

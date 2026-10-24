@@ -70,9 +70,11 @@ export function loadAssetContext({ root = ZIN, staged = null, game = GAME, dataD
   const data = loadAssetData(dataDir);
   let t = tables;
   if (!t) {
-    t = { countries: [], flagCells: [] };
+    t = { countries: [], flagCells: [], realmFlagCells: [] };
     try { t.countries = dataDir === DATA_DIR ? countryTable() : readJson(`${dataDir}/countries.json`).countries; } catch { /* optional */ }
     try { t.flagCells = readJson(`${dataDir}/flags-cells.json`); } catch { /* optional */ }
+    // the realms' own heraldry flags (art/flag-jobs.mjs); only accepted sheets are staged
+    try { t.realmFlagCells = readJson(`${dataDir}/realm-flags-cells.json`).filter(c => c.accepted === true); } catch { /* optional */ }
   }
   return { root, view, vanilla, ...data, tables: t, phase, cache: perceptualCache(cachePath), descriptor: descriptorText };
 }

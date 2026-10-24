@@ -1773,7 +1773,7 @@ function crownBlazon(rec, mark) {
 export function blazon(rec, doc) {
   const { division, tinctures: F } = rec.field;
   const lineText = doc.lines[rec.field.line ?? 'straight'] ?? 'a straight line';
-  let s = doc.divisions[division].replace('{0}', F[0].name).replace('{1}', F[1]?.name ?? '').replace('{line}', lineText);
+  let s = doc.divisions[division].replaceAll('{0}', F[0].name).replaceAll('{1}', F[1]?.name ?? '').replaceAll('{line}', lineText);
   const parts = [s[0].toUpperCase() + s.slice(1) + '.'];
   for (const m of rec.marks) if (m.mark === 'label') parts.push(`In chief a narrow label of three short square points in ${m.tincture.name}.`);
   const P = rec.primary_charge;
