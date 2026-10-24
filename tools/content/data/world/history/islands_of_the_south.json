@@ -1,0 +1,768 @@
+{
+  "version": 1,
+  "region": "islands_of_the_south",
+  "overview": "Two arcs of warm, green, reef-ringed islands lie in the open sea south of the West Lands, between the western world and the Lands of the Sun. Their people are fishers, rice-growers, canoe-builders and navigators of the Yonic island speech found nowhere else, few in number, poor in metal and famous for the guest-right, by which every stranger the sea throws ashore is fed and housed. They are ruled by elders and moots, not kings: the Priest-Elders of the drowned shrine on the Great Isle, Howan's moot of terrace-heads with its house for the shipwrecked, Verde's clan hall of timber-folk, the elders of Nara facing the Night Reef, the ring-council of the Yong villages, the keepers of the oldest tally-caves, a terrace council of rice isles and one elder over the western islets. The islanders name their years after their great storms and count their dead as waves on the reef, and one shrine beneath the tide repeats the name of Aen without anyone knowing why. The years in this data are the continuous count from Aen's victory that every regional history shares: a First Age year is itself, a Second Age year adds 1,675, a Third Age year adds 3,808 (taking the proposed Third Age of 1,260 years) and a Fourth Age year adds 5,068, so that 4A 1748 is year 6,816; a realm or place older than the numbered years carries 0, and every dated entry also gives its date as the world writes it, in the form 4A 1748. Everything not marked established is a proposal under the owner's decision L1.",
+  "ages": [
+    {
+      "id": "age_of_kingdoms",
+      "name": "The Age of Kingdoms",
+      "from": 0,
+      "to": 0,
+      "fromDate": "before 1A",
+      "toDate": "before 1A",
+      "summary": "Before Aen, Yonic-speaking seafarers settled the two arcs from somewhere their oldest songs do not name, gave the reefs the archaic names that still survive, and began to count their dead as waves on the walls of the tally-caves of the deep isle.",
+      "canon": "proposed"
+    },
+    {
+      "id": "first_age",
+      "name": "The First Age",
+      "from": 1,
+      "to": 1675,
+      "fromDate": "1A 1",
+      "toDate": "1A 1675",
+      "summary": "Aenoran voyages reached the southern islands in the first half of the First Age, and Aenoran sailors raised a stone shrine on the Great Isle whose carved name the islanders took into their tally. Island peoples supplied the Grand Alliance's fleets in the war against Volgan, though no southern host is remembered at the great battle.",
+      "canon": "proposed"
+    },
+    {
+      "id": "second_age",
+      "name": "The Second Age",
+      "from": 1676,
+      "to": 3808,
+      "fromDate": "2A 1",
+      "toDate": "2A 2133",
+      "summary": "The Rising Tide of 2A 40 drowned the shrine and made the Priest-Elders its keepers beneath the water; the Fever Years of 2A 1210 brought plague on a wrecked ship and nearly ended the guest-right, which was sworn again at the drowned shrine and kept stronger than before.",
+      "canon": "proposed"
+    },
+    {
+      "id": "third_age",
+      "name": "The Third Age",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "The Order never reached the south. A few Aenoran refugee ships found shelter on the islands, the drum road of the western islets was learned, and in 3A 1187 the Isle Houses of Aenor Isle began buying Verde's hull-timber; the length of 1,260 years is proposed.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Enhis Is Rond",
+      "canon": "proposed",
+      "founding": {
+        "year": 1715,
+        "date": "2A 40",
+        "story": "The centre of the Great Isle had been held by lagoon villages since the first Yonic canoes came to the arcs, but its realm began with the Rising Tide, the storm year when the sea came over the southern shore and drowned the stone shrine that Aenoran sailors had raised there. The elders who had kept the shrine's tally of names went on keeping it beneath the water, and the islanders made them Priest-Elders over the lagoon, the Wide Mountains and the Enhis Forest, so that the names would never be lost.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Priest-Elders of the Tide Shrine",
+          "from": 1715,
+          "fromDate": "2A 40",
+          "notable": "The Priest-Elders are chosen by the tally-keepers from among themselves and keep the shrine beneath the tide; the first was Nuoyo nau Enhis, and the Priest-Elder in 4A 1748 is Taoyan nau Suyowan, who reads the tally at every Calling of Names.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Stone with the Name",
+          "year": 511,
+          "date": "1A 511",
+          "summary": "Aenoran sailors of the southern voyages raise a stone shrine on the Great Isle's southern shore and carve over its door a name, which the islanders read as Aen and take into their tally of the dead without knowing why.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Rising Tide",
+          "year": 1715,
+          "date": "2A 40",
+          "summary": "In the year the islanders call the Year of the Grey Sea, a storm tide drowns the southern shore and the shrine with it, and the elders found the office of Priest-Elder to keep the tally beneath the water.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Guest-Right Sworn Again",
+          "year": 2887,
+          "date": "2A 1212",
+          "summary": "After the Fever Years, when a wrecked ship brought plague to Howan and the islands nearly gave up the guest-right, the elders of every island meet at the drowned shrine and swear it again, stronger than before.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Salt Coast",
+          "year": 6373,
+          "date": "4A 1305",
+          "summary": "The salt-pan villages of Angsun on the Great Isle's north rim, whose old name Angsutz the islanders had long since softened, put themselves under the Priest-Elders after a storm year ruins their pans and the lagoon villages rebuild them.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Year of Ash",
+          "year": 6690,
+          "date": "4A 1622",
+          "summary": "The volcano islet Lua smokes for a whole dry season and drops ash on the lagoon; the Priest-Elders read the tally at its foot, the smoke stops, and nobody on the Great Isle has doubted the Priest-Elders since.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Howan",
+          "nature": "The Great Isle's three realms share one island and one shrine; Howan's terrace-heads think the Priest-Elders proud, and the Reef Road keeps the quarrel to words."
+        }
+      ],
+      "capitalReason": "Suyowan, the holy harbour, lies on the sheltered round lagoon of the Great Isle beside the drowned shrine, the safest anchorage in the islands and the place every islander must come to bring a name for the tally.",
+      "today": "Enhis Is Rond in 4A 1748 is a realm of some 250,000 islanders under the Priest-Elders of the shrine beneath the tide, holding the centre and lagoon of the Great Isle, the Wide Mountains, the Enhis Forest, the salt coast of Angsun and the volcano islet Lua. Its shrine still repeats the name of Aen without anyone on the island understanding it, and it counts its years by storms and its dead as waves on the reef.",
+      "divergence": [
+        {
+          "id": "the_name_explained",
+          "what": "A stranger finds and reads the inscription in the drowned shrine and tells the Priest-Elders what the name means.",
+          "consequence": "The tally of the south gains a meaning it never had, and word that a shrine of the islands names Aen reaches the courts of the north before the stranger does.",
+          "beat": "B11"
+        },
+        {
+          "id": "a_protector_for_the_isle",
+          "what": "In a storm year the Priest-Elders accept a protector from the Lands of the Sun or a northern crown.",
+          "consequence": "The Great Isle's three realms divide over the protector, and the Reef Road that kept them at peace becomes a border.",
+          "beat": "B11"
+        }
+      ]
+    },
+    {
+      "name": "Howan",
+      "canon": "proposed",
+      "founding": {
+        "year": 290,
+        "date": "1A 290",
+        "story": "The south of the Great Isle has the only river of note in the islands, the Tich, and the families who first terraced its banks for rice met in a harbour moot of terrace-heads to share its water. Howan has been ruled by that moot ever since, and since the Fever Years it has kept the house for the shipwrecked at Lamowan, where every stranger the sea throws ashore is fed and housed, and kept apart for a month before he is made welcome.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Terrace-Heads of the Moot",
+          "from": 290,
+          "fromDate": "1A 290",
+          "notable": "Each terrace family sends its head to the moot at Lamowan, and the moot chooses a Speaker for as long as the terraces are well watered; Speaker Wikuana nau Tich holds the office in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Terraces of the Tich",
+          "year": 290,
+          "date": "1A 290",
+          "summary": "The rice families of the River Tich swear to share its water through one moot, and the terraces of Howan become the richest fields of the islands.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Fever Years",
+          "year": 2885,
+          "date": "2A 1210",
+          "summary": "A wrecked ship brings plague to Howan in the Year of the Black Rain, and for two years the islands turn strangers back into the sea; the guest-right is sworn again at the drowned shrine in 2A 1212.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The House for the Shipwrecked",
+          "year": 2889,
+          "date": "2A 1214",
+          "summary": "The moot builds a house at Lamowan where every wrecked stranger is fed, housed and kept apart for a month before he is welcomed, so that the guest-right and the islands' health can both be kept.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Whale Coast",
+          "year": 5828,
+          "date": "4A 760",
+          "summary": "After a quarrel over the whale-road channel, the whaling villages of Yowi-yoor on the Great Isle's south-western lobe join Howan's moot, and their canoes hunt under its law.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Pearls for the North",
+          "year": 6658,
+          "date": "4A 1590",
+          "summary": "Howan's pearls reach the markets of Parim on Safeton's pilgrim ships for the first time, and the moot buys iron with them, which the islands want more than anything.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Enhis Is Rond",
+          "nature": "Neighbours on one island with one shrine; the moot thinks the Priest-Elders proud, and the Reef Road keeps the peace."
+        }
+      ],
+      "capitalReason": "Lamowan, the deep harbour, is the one deep anchorage on the Great Isle's south coast, at the mouth of the Tich, where the storms of the turning wind drive ships ashore and so where the house for the shipwrecked had to stand.",
+      "today": "Howan in 4A 1748 is a harbour moot of some 180,000 under Speaker Wikuana, holding the Great Isle's south with the River Tich, the Far Islands and the whale coast of Yowi-yoor. Its terraces feed the south, its divers sell pearls for iron, and its house for the shipwrecked takes in every stranger the storms bring.",
+      "divergence": [
+        {
+          "id": "the_house_turns_him_away",
+          "what": "When a storm brings a shipwrecked stranger to Lamowan, the moot puts him back on the first ship that asks.",
+          "consequence": "The guest-right is broken by the house built to keep it, and the stranger's road south to the elves of the Lands of the Sun must begin from another island.",
+          "beat": "B11"
+        },
+        {
+          "id": "the_house_shelters_him",
+          "what": "The house for the shipwrecked takes the stranger in, as it takes everyone.",
+          "consequence": "He lives among the islanders, settles their quarrels and hears of the long-lived elves to the south-west, and Howan's name goes north with him.",
+          "beat": "B11"
+        }
+      ]
+    },
+    {
+      "name": "Verde",
+      "canon": "proposed",
+      "founding": {
+        "year": 650,
+        "date": "1A 650",
+        "story": "The forested hills and mangroves of the Great Isle's west gave the best canoe timber in the islands, and the timber clans who cut it met in one hall to share the hills and choose a chief to deal with the other islands. Verde's clans became the navigators of the south as well as its timber-folk, because the men who knew which tree would make a hull also learned which star would bring it home.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Chiefs of the Clan Hall",
+          "from": 650,
+          "fromDate": "1A 650",
+          "notable": "The clans of the hills and the mangroves choose a chief in the hall of Pelo Tamo, and the chief must have sailed to the edge of the islands' charts before the hall will choose him; Chief Ruan nau Lua holds the hall in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Clan Hall",
+          "year": 650,
+          "date": "1A 650",
+          "summary": "The timber clans of the west build their hall at the timber harbour and choose their first chief to deal with the lagoon villages for them.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Timber Fleet",
+          "year": 4995,
+          "date": "3A 1187",
+          "summary": "In a storm year Isle House ships from Aenor Isle reach Verde and buy hull-timber; the trade between Verde and the shipwrights of Orohaf has never stopped since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Star Road",
+          "year": 6478,
+          "date": "4A 1410",
+          "summary": "Verde's navigators sail the Ihuy Seas to the Sunhot isles and back in one season, and the clan hall begins to sell its pilots to any ship that needs to cross the southern seas.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Mangrove Fire",
+          "year": 6758,
+          "date": "4A 1690",
+          "summary": "A dry year sets the Verde Mangroves alight for a month; the clans replant them under the hall's law, and no Verdean cuts a mangrove without the chief's leave since.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Pelo Tamo, the harbour of trees, lies where the forested hills come down to the water on the Great Isle's west, so that timber can go straight from the slopes onto the hulls of Orohaf's ships.",
+      "today": "Verde in 4A 1748 is a clan hall of some 120,000 timber-folk and navigators under Chief Ruan, holding the Great Isle's west and the Verde Mangroves. It sells hull-timber to Aenor Isle and pilots to anyone, and its navigators are the best of the south.",
+      "divergence": [
+        {
+          "id": "navigators_for_a_voyage",
+          "what": "A stranger's voyage north takes Verdean navigators in its crew.",
+          "consequence": "If the crew is ambushed on a far shore, the Wave-Tally gains Verdean names, and the clan hall asks who sent the ambush.",
+          "beat": "B14"
+        },
+        {
+          "id": "the_timber_withheld",
+          "what": "The clan hall stops the timber trade with Aenor Isle in the war.",
+          "consequence": "Orohaf cannot replace the ships it loses, and the Inner Sea is harder to hold against the western fleets.",
+          "beat": "B20"
+        }
+      ]
+    },
+    {
+      "name": "Nara",
+      "canon": "proposed",
+      "founding": {
+        "year": 800,
+        "date": "1A 800",
+        "story": "The fishing villages of the long island Ancha had quarrelled over the reef fisheries for generations when a storm year drowned half their boats on the reef off the island's north-east coast. The survivors met in one elders' moot at Riwang and swore to fish the reef only by day, and Nara has been a moot of elders ever since, facing the reef the islanders call the Night Reef.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Elders of Ancha",
+          "from": 800,
+          "fromDate": "1A 800",
+          "notable": "The villages of Ancha each send an elder to the moot at Riwang, and the eldest of them speaks for the island; Elder Panui nau Ancha speaks for Nara in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Day Rule",
+          "year": 800,
+          "date": "1A 800",
+          "summary": "After the storm year that drowned half the island's boats, the elders forbid fishing the reef after dark, and the rule has held for four ages.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Drowned Voices",
+          "year": 3095,
+          "date": "2A 1420",
+          "summary": "Fishers caught on the reef at night come home saying that drowned voices called them onto the rocks; the moot adds the voices to the Day Rule, and nobody in Nara has crossed the reef at night since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Refugee Ship",
+          "year": 4848,
+          "date": "3A 1040",
+          "summary": "An Aenoran ship fleeing the Order is wrecked on the Night Reef, and the villages take in its survivors under the guest-right; their grandchildren still speak a few Aenoran words in Riwang.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Riwang, the reef harbour, is the moot village facing the Night Reef, where the elders can see every boat that goes out and count every boat that comes back before dark.",
+      "today": "Nara in 4A 1748 is an elders' moot of some 80,000 fishers on the long island Ancha, facing the Night Reef. Its villages fish only by day, take in shipwrecked strangers like every island, and will not cross the reef after dark for anyone.",
+      "divergence": [
+        {
+          "id": "children_on_the_reef",
+          "what": "A storm strands the island's children on the Night Reef at dusk.",
+          "consequence": "If a stranger brings them ashore, the islanders say the sea went silent when he carried them, and the reef's legend gains a new verse; if not, the Wave-Tally gains their names.",
+          "beat": "B11"
+        },
+        {
+          "id": "nara_hosts_the_stranger",
+          "what": "The shipwrecked stranger comes ashore on Ancha instead of the Great Isle.",
+          "consequence": "Nara's elders become his hosts in the south, and the road to the elves of the south-west begins from Riwang.",
+          "beat": "B11"
+        }
+      ]
+    },
+    {
+      "name": "Yongyong",
+      "canon": "proposed",
+      "founding": {
+        "year": 5970,
+        "date": "4A 902",
+        "story": "The villages round the Yong lagoon all carry the name Yong, and for most of their history they fought one another over the lagoon's fish-traps as only villages of one name can. A feud of the Year of the Red Wind burned three of them, and the survivors swore a ring-council of the Yong elders on the shrine stone of Yongrost, so that the lagoon would never again be divided by fire.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Ring-Council of the Yong Elders",
+          "from": 5970,
+          "fromDate": "4A 902",
+          "notable": "Every Yong village sends its elder to the ring-council at Yongwa, and the council speaks with one voice only when every elder agrees; the elder of Yongwa calls it and has no other power. Elder Maiyan nau Yongwa calls the ring in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Burning of the Three",
+          "year": 5967,
+          "date": "4A 899",
+          "summary": "In the Year of the Red Wind a quarrel over fish-traps burns three villages of the Yong ring, and the lagoon goes unfished for a season.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Ring-Council",
+          "year": 5970,
+          "date": "4A 902",
+          "summary": "The surviving villages swear the ring-council on the shrine stone of Yongrost, and the isles of Jingar and Torsor join it in the same year.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The White Sand",
+          "year": 6328,
+          "date": "4A 1260",
+          "summary": "The beach isle Suna Pilu, whose old name Meng the islanders had dropped, joins the ring after its villages ask for the council's protection against the shark season's losses.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Yongwa, the city, is the largest of the Yong villages and the one that lost nothing in the burning, so the ring-council meets there because no other village would agree to meet anywhere else.",
+      "today": "Yongyong in 4A 1748 is a ring-council of the Yong villages, some 150,000 islanders round the largest lagoon of the eastern arc, with Jingar, Torsor, Yongrost, Suna Pilu and the Long Islands. It carves shell, makes the islands' rope and nets, cuts shrine stone on Yongrost, and fears its own feuds more than any foreign fleet.",
+      "divergence": [
+        {
+          "id": "the_ring_breaks",
+          "what": "A feud breaks the ring-council in a storm year.",
+          "consequence": "The Yong villages fight one another as they did before 4A 902, and any protector who comes to the eastern arc finds a ready ally in one village and an enemy in the next.",
+          "beat": "B11"
+        },
+        {
+          "id": "the_ring_takes_a_protector",
+          "what": "The ring-council takes a northern crown as protector to keep its feuds down.",
+          "consequence": "The eastern arc gains iron and ships and loses the ring's own voice, and the other islands begin to wonder whose guest-right Yongyong keeps.",
+          "beat": "B18"
+        }
+      ]
+    },
+    {
+      "name": "Kamu Lamo",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The deep isle has the oldest tally-caves of the south, where the islanders have counted their dead as waves on the cave walls since before any Aenoran sailor saw the arcs, and the elders of the caves have ruled the island for as long as the tally has been kept. The other islands send their tally-keepers to Kamu Lamo to learn the oldest names.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Elders of the Tally-Caves",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "The island's elders are the keepers of the tally-caves, chosen by the caves' keepers from among themselves; Elder Tikao nau Bukonyo keeps the caves in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Bird Isle",
+          "year": 1300,
+          "date": "1A 1300",
+          "summary": "The egg-gatherers of the bird isle Kamu Hawin, once called Dunn, put themselves under the elders of the caves, and the guano of the bird isle begins to feed the terraces of the south.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Fever Tally",
+          "year": 2886,
+          "date": "2A 1211",
+          "summary": "In the Fever Years the elders cut the names of the plague dead into the deepest cave, and the islanders still say the cave is cold because of how many names it holds.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Tally-Keepers' School",
+          "year": 5708,
+          "date": "4A 640",
+          "summary": "The elders begin to teach the tally-keepers of every island in the caves, and Kamu Lamo becomes the school of the Wave-Tally.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Bukonyo, the little hill, is the village above the tally-caves, because the elders who keep the caves must live where they can walk down to them every evening.",
+      "today": "Kamu Lamo in 4A 1748 is an island of some 40,000 under the elders of the tally-caves, with the bird isle Kamu Hawin. It keeps the oldest tally of the south, teaches the tally-keepers of every island, and gathers eggs and guano for the terraces.",
+      "divergence": [
+        {
+          "id": "the_caves_read",
+          "what": "A stranger asks to read the oldest tally and the elders let him.",
+          "consequence": "The oldest names of the south are heard outside the islands, and the elders learn whether any of them is a name the north remembers.",
+          "beat": "B11"
+        },
+        {
+          "id": "the_caves_closed",
+          "what": "The elders close the tally-caves to every foreigner when the war comes.",
+          "consequence": "The south keeps its memory to itself, and its tally-keepers become the only people who can say who of the islands died in other people's wars.",
+          "beat": "B14"
+        }
+      ]
+    },
+    {
+      "name": "Kea",
+      "canon": "proposed",
+      "founding": {
+        "year": 960,
+        "date": "1A 960",
+        "story": "The terraced isles of the south-western chain, Kea, Agla and the Rice Islands, have little water and grow rice on every slope that will hold it, and in a dry storm year the terrace families of all three swore to share their water by council rather than by war. The terrace council has ruled them since, and the rice of the Rice Islands feeds every island that has a bad harvest.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Terrace Council",
+          "from": 960,
+          "fromDate": "1A 960",
+          "notable": "The heads of the terrace families of Kea, Agla and the Rice Islands sit as one council and choose a Water-Keeper each dry season; Water-Keeper Luanga nau Kea holds the office in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Water Oath",
+          "year": 960,
+          "date": "1A 960",
+          "summary": "In the Year of the Dry Wind the terrace families of Kea, Agla and the Rice Islands swear to share their water by council, and the cisterns of Tuwang are dug.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Rice Ships",
+          "year": 2888,
+          "date": "2A 1213",
+          "summary": "After the Fever Years leave the Great Isle's terraces untended, the terrace council sends its rice to every island, and the guest-right of the south gains the custom that no island lets another go hungry.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Cistern Quarrel",
+          "year": 6548,
+          "date": "4A 1480",
+          "summary": "Agla accuses Kea of taking more than its share of the cisterns in a dry year; the council sends the quarrel to the elders of the tally-caves, who rule for Agla, and Kea pays in rice.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Tuwang, the field town, stands among the largest terraces of Kea, round the cisterns the council dug, because the town that holds the water must be where the council can watch it.",
+      "today": "Kea in 4A 1748 is a terrace council of some 120,000 rice-growers on Kea, Agla and the Rice Islands under Water-Keeper Luanga. It grows the rice of the south, shares its water by council, and sends rice to any island in a bad year.",
+      "divergence": [
+        {
+          "id": "rice_for_a_protector",
+          "what": "In a storm year the terrace council sells its rice to a foreign fleet instead of the islands.",
+          "consequence": "The guest-right's promise that no island goes hungry breaks, and the islands learn whose rice they can count on.",
+          "beat": "B11"
+        },
+        {
+          "id": "the_dry_year",
+          "what": "A dry storm year empties the cisterns and the council cannot share what it does not have.",
+          "consequence": "The islands go hungry together, and the guest-right is tested by hunger instead of by strangers.",
+          "beat": "B18"
+        }
+      ]
+    },
+    {
+      "name": "Sidea",
+      "canon": "proposed",
+      "founding": {
+        "year": 1975,
+        "date": "2A 300",
+        "story": "The islets at the western arc's end, Sidea, Pon and Yumbo, were too small for a moot each, and in a storm year that cut them off from the Great Isle for a whole season their families chose one elder to speak for all of them. Sidea has had one elder over its islets since, and its drummers of Yumbo beat the elder's summons from islet to islet across the water.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Elders of the Western Islets",
+          "from": 1975,
+          "fromDate": "2A 300",
+          "notable": "One elder is chosen by the families of all the islets and holds the office until the drummers of Yumbo will no longer beat his summons; Elder Nuoan nau Pon holds it in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "One Elder",
+          "year": 1975,
+          "date": "2A 300",
+          "summary": "In the Year of the Long Wind the islets, cut off for a season, choose one elder to speak for them all, and the drummers of Yumbo beat his first summons.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Drum Road",
+          "year": 4508,
+          "date": "3A 700",
+          "summary": "The drummers of Yumbo learn to beat messages from islet to islet faster than a canoe can sail, and the western arc warns the Great Isle of every storm it sees first.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Lost Canoes",
+          "year": 6618,
+          "date": "4A 1550",
+          "summary": "A storm year sinks the islets' fishing canoes in a single night, and the Great Isle's three realms rebuild them under the guest-right; Sidea still sends its first catch of every year to the drowned shrine.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Ponwan, the harbour of Pon, is the one sheltered anchorage at the end of the western arc, where the canoes of all the islets can lie together in a storm and the elder can be found by anyone who sails in.",
+      "today": "Sidea in 4A 1748 is a cluster of islets of some 60,000 under one elder, Nuoan, at the end of the western arc with Pon and Yumbo. Its drummers carry the first warning of every storm to the Great Isle, and it is the first land of the islands that a ship blown south from the West sees.",
+      "divergence": [
+        {
+          "id": "the_first_landfall",
+          "what": "A ship blown far south from the West makes its first landfall at the western islets.",
+          "consequence": "The elder decides whether to send the wreck on to the Great Isle's house for the shipwrecked or keep its survivors on Pon, and the drums carry the news before the ship is beached.",
+          "beat": "B11"
+        },
+        {
+          "id": "the_drums_silent",
+          "what": "In the war the drummers of Yumbo refuse to beat any foreign fleet's summons.",
+          "consequence": "The islands lose their warning road while the fleets are at sea, and the western arc keeps to itself.",
+          "beat": "B20"
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "Suyowan",
+      "country": "Enhis Is Rond",
+      "role": "capital",
+      "size": "town",
+      "founded": 1715,
+      "foundedDate": "2A 40",
+      "legend": "On the founding day of every storm year the Priest-Elders row out over the drowned shrine and read the tally into the water, and the islanders say the names come back on the next tide, which is why the lagoon is never quiet.",
+      "economy": "The shrine's pilgrims on the Reef Road, lagoon fish-traps, salt from Angsun, the safest anchorage of the islands.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Shrine Beneath the Tide",
+      "country": "Enhis Is Rond",
+      "role": "holy",
+      "size": "hamlet",
+      "founded": 511,
+      "foundedDate": "1A 511",
+      "legend": "Over the drowned door a name is carved that the islanders read as Aen; the tally-keepers repeat it at every Calling of Names, and they say it is needed, though no one on the island can say what for.",
+      "economy": "None but the offerings of names brought by the Reef Road.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Lamowan",
+      "country": "Howan",
+      "role": "capital",
+      "size": "town",
+      "founded": 290,
+      "foundedDate": "1A 290",
+      "legend": "In the house for the shipwrecked every stranger is given a mat, a bowl and a month alone, and the people of Lamowan say the sea sends them one good guest for every ten bad ones, which is a better rate than the land manages.",
+      "economy": "Rice terraces of the Tich, pearl-diving, whaling on the Yowi-yoor coast, the house for the shipwrecked.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Pelo Tamo",
+      "country": "Verde",
+      "role": "capital",
+      "size": "town",
+      "founded": 650,
+      "foundedDate": "1A 650",
+      "legend": "The clan hall of Pelo Tamo has a mast for a ridge-pole, and the timber-folk say the hall will stand until the last Verdean ship comes home, so they never let the last one leave.",
+      "economy": "Hull-timber for Aenor Isle, canoe-building, pilots hired to any ship.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Riwang",
+      "country": "Nara",
+      "role": "capital",
+      "size": "village",
+      "founded": 800,
+      "foundedDate": "1A 800",
+      "legend": "The elders of Riwang count the boats out at dawn and in at dusk, and the fishers say that a boat counted in after dark is not one of theirs, whatever it looks like.",
+      "economy": "Day fishing on the reef, dried fish, shell.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Yongwa",
+      "country": "Yongyong",
+      "role": "capital",
+      "size": "town",
+      "founded": 5970,
+      "foundedDate": "4A 902",
+      "legend": "The ring-council meets round a fire of driftwood that every Yong village must bring a stick for, and the islanders say the year a village brings none, the lagoon will burn again.",
+      "economy": "Lagoon fish-traps, shell-carving of Jingar, rope and nets of Torsor, shrine stone of Yongrost.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Bukonyo",
+      "country": "Kamu Lamo",
+      "role": "academy",
+      "size": "village",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "Above the tally-caves the elders say the deepest cave is cold because of how many names it holds, and the tally-keepers who come to learn are made to sleep one night in it before they are taught.",
+      "economy": "The school of the tally-keepers, eggs and guano from Kamu Hawin.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Tuwang",
+      "country": "Kea",
+      "role": "capital",
+      "size": "village",
+      "founded": 960,
+      "foundedDate": "1A 960",
+      "legend": "The cisterns of Tuwang were dug in the Year of the Dry Wind, and the terrace families say a Water-Keeper who lies about the water in them will find his own terrace dry the next season.",
+      "economy": "Rice of the terraces and the Rice Islands, the council's cisterns.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Ponwan",
+      "country": "Sidea",
+      "role": "capital",
+      "size": "village",
+      "founded": 1975,
+      "foundedDate": "2A 300",
+      "legend": "The drummers of Yumbo beat the elder's summons to Ponwan across the water, and the islet-folk say a summons that is not answered by the third drum means the elder must be chosen again.",
+      "economy": "Fishing, drum-making, the first sight of ships from the West.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Lua",
+      "country": "Enhis Is Rond",
+      "role": "shrine",
+      "size": "hamlet",
+      "founded": 6690,
+      "foundedDate": "4A 1622",
+      "legend": "On the volcano islet the Priest-Elders built a shrine at the foot of the smoking slope in the Year of Ash, and the islanders say the mountain has stayed quiet only because the tally is read there every dry season.",
+      "economy": "Ash-soil gardens, sulphur gathered for the salt-pans of Angsun.",
+      "canon": "proposed"
+    }
+  ],
+  "figures": [
+    {
+      "name": "Nuoyo nau Enhis",
+      "country": "Enhis Is Rond",
+      "role": "First Priest-Elder of the Tide Shrine",
+      "born": 1655,
+      "bornDate": "1A 1655",
+      "died": 1736,
+      "diedDate": "2A 61",
+      "biography": "A tally-keeper of the lagoon villages who swam down to the drowned shrine after the Rising Tide of 2A 40 to read the carved name and came up alive, Nuoyo was made the first Priest-Elder and founded the Calling of Names beneath the water.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Maiyan nau Lamowan",
+      "country": "Howan",
+      "role": "Builder of the house for the shipwrecked",
+      "born": 2845,
+      "bornDate": "2A 1170",
+      "died": 2914,
+      "diedDate": "2A 1239",
+      "biography": "A terrace-head of Howan who lost her family in the Fever Years and still argued in the moot against turning strangers back into the sea, Maiyan proposed the house at Lamowan where the wrecked are fed and kept apart for a month, and so saved both the guest-right and the islands' health.",
+      "canon": "proposed"
+    }
+  ],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "id": "guest_right",
+      "name": "The guest-right",
+      "realms": [
+        "Enhis Is Rond",
+        "Howan",
+        "Verde",
+        "Nara",
+        "Yongyong",
+        "Kamu Lamo",
+        "Kea",
+        "Sidea"
+      ],
+      "summary": "Every stranger the sea throws ashore is fed and housed, and to harm a guest is the worst crime of the south; since the Fever Years Howan keeps the wrecked apart for a month first, and since 2A 1213 no island lets another go hungry.",
+      "canon": "proposed"
+    },
+    {
+      "id": "storm_years",
+      "name": "The storm years",
+      "realms": [
+        "Enhis Is Rond",
+        "Howan",
+        "Verde",
+        "Nara",
+        "Yongyong",
+        "Kamu Lamo",
+        "Kea",
+        "Sidea"
+      ],
+      "summary": "The islanders name each year after its great storm and count its months by the tides; the twelve months of the north are used only with foreign captains.",
+      "canon": "proposed"
+    },
+    {
+      "id": "wave_tally",
+      "name": "The Wave-Tally",
+      "realms": [
+        "Enhis Is Rond",
+        "Kamu Lamo"
+      ],
+      "summary": "The dead of each island are counted as waves on the reef and on the walls of the tally-caves, and the names are called at the Calling of Names; the islanders say the names are needed.",
+      "canon": "proposed"
+    },
+    {
+      "id": "reef_road",
+      "name": "The Reef Road",
+      "realms": [
+        "Enhis Is Rond",
+        "Howan",
+        "Verde"
+      ],
+      "summary": "Every islander may walk the Reef Road to the drowned shrine to bring a name for the tally, and the three realms of the Great Isle keep the peace on the road and in the year of every pilgrimage.",
+      "canon": "proposed"
+    },
+    {
+      "id": "day_rule",
+      "name": "The Day Rule",
+      "realms": [
+        "Nara"
+      ],
+      "summary": "The reef off Ancha is fished only by day, and nobody of Nara crosses the Night Reef after dark.",
+      "canon": "proposed"
+    }
+  ]
+}

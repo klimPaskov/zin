@@ -1,0 +1,2626 @@
+{
+  "version": 1,
+  "region": "middle_lands",
+  "overview": "The Middle Lands are the warm, wet heart of Aoaz, between the Crown Sea on the west and the natural range called the Great Wall of Aenor on the east, with the Great Lake and the Vale of Aenor at their centre and Aenor Isle off the west coast. Here Aen ended the War of Men and founded Aenor; here the First Age capital fell to Volgan and Edran raised the Grand Alliance; here Elzon ruled through the Third Age, and here a restored crown has kept seventeen centuries of peace. The region is not one run of human kingdoms: ents keep the Kilinti Forests and the Baelim the great Aenor Forest of the north coast, the sovereign giants of Hirolon guard a ring of hills with the small folk of Tirlan inside it, the delving-clans of Kunhrim hold the range itself, a hobgoblin king rules the warm caves of Burrikkrit under a truce with them, gnomes hide in the hills beside Parim, one elven household lives on the wrong side of the mountains, and the descendants of Aen's beaten enemies keep their Orran tongue in the Bloody Forest and the Cursed Lands. Thirteen chartered dominions hold the twenty-six seats of the Concord Council under the Charters of Parim. This file gives each realm's founding, ruling lines, wars, treaties and plagues, its seat, its state on 1 Lumae 4A 1748 and the places where its history can turn; shared events carry the same year on every side. The years in this data are the continuous count from Aen's victory that every regional history shares: a First Age year is itself, a Second Age year adds 1,675, a Third Age year adds 3,808 (taking the proposed Third Age of 1,260 years) and a Fourth Age year adds 5,068, so that 4A 1748 is year 6,816; a realm or place older than the numbered years carries 0, and every dated entry also gives its date as the world writes it, in the form 4A 1748. Everything not marked established is a proposal under the owner's decision L1.",
+  "ages": [
+    {
+      "id": "age_of_kingdoms",
+      "name": "The Age of Kingdoms",
+      "from": 0,
+      "to": 0,
+      "fromDate": "before 1A",
+      "toDate": "before 1A",
+      "summary": "Men lived in many kingdoms for thousands of years before Aen, the earliest of them stronger, longer-lived and more apt for magic than later men. In the Middle Lands Orran-speaking kingdoms held the river valleys and left their names under later Aenoran towns, while the ents already stood in Kilinti, the giants on the western hills and the Baelim in the north-coast forest; the age ended in the War of Men, hundreds of years of fighting from which Aen made one crown.",
+      "canon": "proposed"
+    },
+    {
+      "id": "first_age",
+      "name": "The First Age",
+      "from": 1,
+      "to": 1675,
+      "fromDate": "1A 1",
+      "toDate": "1A 1675",
+      "summary": "Aen's victory founded Aenor, and centuries of peace brought roads, lake ports, voyages and the violent settlement of the West Lands, until bad kings and revolts weakened the kingdom and Volgan's armies, coming up out of the south, took its capital. A new king, Edran, gathered the Grand Alliance of men, elves, dwarves, giants, spirits and island peoples and broke Volgan at Dardan. He then lost the trust of the elves by carrying the war into the Ember Lands, where Elzon threw the Alliance back.",
+      "canon": "established"
+    },
+    {
+      "id": "second_age",
+      "name": "The Second Age",
+      "from": 1676,
+      "to": 3808,
+      "fromDate": "2A 1",
+      "toDate": "2A 2133",
+      "summary": "The longest age, of grief and rebuilding: Edran rebuilt the kingdom and died of disease, famine and plague returned for generations while farming, medicine and the art of fortification advanced, and demons raided through portals from the Nether. In its last centuries Elzon's war from within set men, elves and dwarves against one another, and in 2A 2133 he took Aenor while the elven kingdoms sent no army.",
+      "canon": "established"
+    },
+    {
+      "id": "third_age",
+      "name": "The Third Age",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "The age of Elzon's Order, at least twelve centuries long, here taken at the proposed 1,260 years: living governors, goblin garrisons and rotating hosts of the dead held the Vale while Selen, the dwarves' galleries, the giants' ring and the riders of the downs never fully submitted. The Black Roots soured the eastern downs, Varner's counterspells and the War of Unbinding broke the Order's hold, and the Last Tithe ended it with the Necromancer's death and the Deliverer's acclamation.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Aenor",
+      "canon": "established",
+      "founding": {
+        "year": 1,
+        "date": "1A 1",
+        "story": "In the year the chroniclers made the first of the First Age, Aen ended the War of Men, a struggle of hundreds of years among the kingdoms of men, and joined them under one crown in the Middle Lands. The kings who had fought him kept their lands and customs under the Peace of the One Crown, which forbade any lord to make war on another without the crown's judgement, and the Orran-speaking houses that would not kneel withdrew into the Bloody Forest and the grey downs beyond it. Aen left hundreds of sons, and every noble house of the Vale still counts its descent from one of them.",
+        "canon": "established"
+      },
+      "dynasties": [
+        {
+          "name": "The Line of Aen",
+          "from": 1,
+          "fromDate": "1A 1",
+          "notable": "Aen's own house, from which every later royal branch descends. Its kings took Old Ainic names ending in -dil, -or, -an or -ath, and its quarrels were never about whether a claimant had Aen's blood but about which branch had the right; the chronicles of the long weakening name four rival branches crowned within a single generation.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The House of Edran",
+          "from": 1614,
+          "fromDate": "1A 1614",
+          "notable": "A branch of Aen's line that nobody expected to inherit. Edran the Gatherer was crowned beneath the Moot Tree of Hifeco while the capital lay in enemy hands, raised the Grand Alliance and ruled the rebuilding kingdom into the Second Age; his direct line ended when the Grey Breath took his last grandson's heir in 2A 377.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The House of Korvelan",
+          "from": 2052,
+          "fromDate": "2A 377",
+          "notable": "A lake house of Edran's blood through his daughter, crowned when the Gatherer's line failed. It held the crown through the plague centuries, the demon gates and the long war from within; the name of the king who held the city on the day of the Fall is a question the chroniclers still argue over.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The House of Harion",
+          "from": 5069,
+          "fromDate": "4A 1",
+          "notable": "The restored crown. Harion of Selen, of a collateral branch of Aen's line, earned the throne by a lifetime in the resistance and founded a house that gave Aenor nineteen kings and fourteen centuries of peace, until its last king died without a son in 4A 1401.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The House of Hornan",
+          "from": 6470,
+          "fromDate": "4A 1402",
+          "notable": "A lake house of Hornan's Kos, of Harion's blood through a daughter's line, chosen over three rival cousins by the Royal Council and the Concord in the Seals Dispute. The present king, whom everyone from the Golden Court to the lake bargemen calls the Golden King, is its ninth; he has no son, and the Golden Court names Prince Eronel as his heir.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Peace of the One Crown",
+          "year": 1,
+          "date": "1A 1",
+          "summary": "Aen's first law leaves every lord his inheritance and custom but forbids any war between lords; breaking it becomes the first meaning of rebellion in Aenoran law, and the Concord courts still cite it.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Ship-Bond",
+          "year": 207,
+          "date": "1A 207",
+          "summary": "Leren and Aenoran ships chart the Narrow Strait together under the Ship-Bond, the first compact between the two peoples, in the same years that Sonargur is founded on the northern shore.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Western Settlements",
+          "year": 640,
+          "date": "1A 640",
+          "summary": "Aenoran ships carry settlers and traders across the Crown Sea to the West Lands, whose peoples and kings were there long before them; the wars that follow are remembered in every western court, and the crown's claim that discovery gave it sovereignty is still argued in 4A 1748.",
+          "canon": "established"
+        },
+        {
+          "name": "The Long Weakening",
+          "year": 820,
+          "date": "1A 820",
+          "summary": "A run of bad kings, contested successions and provincial revolts begins; governors collect their own taxes, the Roads of Aen decay and the remote garrisons learn to act without orders.",
+          "canon": "established"
+        },
+        {
+          "name": "The Fall of the Capital",
+          "year": 1612,
+          "date": "1A 1612",
+          "summary": "Volgan's armies, after centuries of conquest outward from Mirolon and through the southern approaches, take the capital of Aenor; the reigning king dies, and the archives, the succession rolls and the sacred objects of the crown are lost with the city.",
+          "canon": "established"
+        },
+        {
+          "name": "Edran Crowned Beneath the Moot Tree",
+          "year": 1614,
+          "date": "1A 1614",
+          "summary": "A council of surviving nobles, soldiers and refugees crowns Edran, a descendant of Aen from an unregarded branch, beneath the Moot Tree of Hifeco in the Selen Weald, outside the occupied capital.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Battle of Dardan",
+          "year": 1675,
+          "date": "1A 1675",
+          "summary": "The Grand Alliance of men, elves, dwarves, giants, spirits and island peoples breaks the host of Volgan at Dardan. Millions die, allied spirits strip his power and cast him into the Void, and the battlefield is left a wasteland whose place no chronicle settles.",
+          "canon": "established"
+        },
+        {
+          "name": "The Ember Lands Campaign",
+          "year": 1675,
+          "date": "1A 1675",
+          "summary": "In the same year, against the counsel of the elves, Edran carries the war into the Ember Lands, where Elzon's prepared defence throws the Alliance back with terrible losses, many of them elven; the campaign is given up before the end of the age and becomes the one stain on the Gatherer's name.",
+          "canon": "established"
+        },
+        {
+          "name": "The Registers of the Lost",
+          "year": 1681,
+          "date": "2A 6",
+          "summary": "Edran sends scribes into the ruined provinces to write down the names and graves of the dead so that families can prove their inheritance; centuries later the Necromancer's servants read the same rolls as maps of the graves.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Gatherer's Death",
+          "year": 1706,
+          "date": "2A 31",
+          "summary": "Edran the Gatherer dies of a fever in the rebuilt kingdom, after spending his last years on granaries, mills and the roads to the coast; every chronicle gives his sickness a different name.",
+          "canon": "established"
+        },
+        {
+          "name": "The Grey Breath",
+          "year": 2052,
+          "date": "2A 377",
+          "summary": "A sickness of crowded winter towns kills one Vale household in four over three winters and ends Edran's direct line; some lords blame demons, and the physicians who fought it begin the medicine for which the Second Age is remembered.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Demon Gates",
+          "year": 2915,
+          "date": "2A 1240",
+          "summary": "Portals from the Nether open in the southern Vale and demons raid as far as the lake ports for generations; the worst of them are shut only when men, an elven company and Dark Lands soldiers close the Burning Gate of Nezer in 2A 1388.",
+          "canon": "established"
+        },
+        {
+          "name": "The Fall of Aenor",
+          "year": 3808,
+          "date": "2A 2133",
+          "summary": "After generations of the war from within, Elzon's undead take the capital and he founds his Order over the kingdom; the elven kingdoms, which refused the crown's summons in 2A 2121 remembering Edran's campaign, send no army, and the Third Age begins.",
+          "canon": "established"
+        },
+        {
+          "name": "The Last Tithe",
+          "year": 5068,
+          "date": "3A 1260",
+          "summary": "The Great Necromancer dies for ever in the collapse of his power, and the Deliverer, who shields the people of the Vale in the ruin, is acclaimed a New God; the scholars of Parim still argue about how the Necromancer fell.",
+          "canon": "established"
+        },
+        {
+          "name": "The Crowning of Harion",
+          "year": 5069,
+          "date": "4A 1",
+          "summary": "Harion of Selen is crowned at Parim, the first king of the restored crown, and the temples acclaim the Deliverer in the same week.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Charters of Parim",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "The surviving dominions of the Middle Lands become self-governing members of a common defence, holding twenty-six charter-seats in proportion to the levies each owes; Hirolon swears the separate Cairn Treaty, and Fotan, the Cursed Lands and the Bloody Forest refuse any charter.",
+          "canon": "established"
+        },
+        {
+          "name": "The Houses Chartered",
+          "year": 5079,
+          "date": "4A 11",
+          "summary": "Harion grants the Houses of the First Light royal charters to keep the grain stores, the hospitals and the birth rolls of the kingdom, because they had kept the Vale fed through the last years of the Order.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Accord of the Passes",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "Harion's grandson and the elven realms agree to keep the two wheel passes of the Great Wall of Aenor guarded rather than open: men hold the western forts, elves the eastern, and the tolls are taken at Kingson.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Return to the West",
+          "year": 5256,
+          "date": "4A 188",
+          "summary": "An Aenoran merchant ship lands at Oslodon, the first to trade in the West Lands since the wars of the First Age; the western lords take the trade and refuse the old claims.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The First Concord Council",
+          "year": 5280,
+          "date": "4A 212",
+          "summary": "The crown and the dominions meet at Parim and agree on a common army in war and free roads in peace; the council has met every seventh year since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Treaty of the Narrow Strait",
+          "year": 5580,
+          "date": "4A 512",
+          "summary": "Aenor and Lerendor swear mutual defence across the Narrow Strait, the old alliance on which the North Lands' loyalty is still reckoned.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Thousand-Year Jubilee",
+          "year": 6068,
+          "date": "4A 1000",
+          "summary": "Parim celebrates a thousand years of peace before envoys from every region, and the temples bless the crown; later historians date the end of the high peace from that year.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Seals Dispute",
+          "year": 6470,
+          "date": "4A 1402",
+          "summary": "When the last king of Harion's house dies without a son, four cousins claim the crown; the Royal Council and the Concord give the seals to the House of Hornan after a winter in which no lord takes up arms against another, which the court counts as the Peace of the One Crown's finest hour.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Wool and Horse Tariffs",
+          "year": 6470,
+          "date": "4A 1402",
+          "summary": "The first act of the House of Hornan's council is a tariff on western wool and horses, to please the riders of Konori and Hunhun who had backed its claim; the western ports have called every Aenoran tariff since by the name of that one.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The R'en Marriage",
+          "year": 6658,
+          "date": "4A 1590",
+          "summary": "A prince of R'en marries into a cousin's house of the House of Hornan, close to the crown, and the smaller crowns of the North Lands learn that Parim will deal with them without asking Sonargur.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Toll of Parim",
+          "year": 6784,
+          "date": "4A 1716",
+          "summary": "Envoys of Lerendor, come to Parim over a disputed toll at Fotan's strait, are kept waiting a month and then mocked at a court masque; the Leren court has doubted the Treaty of the Narrow Strait ever since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Envoy of Molot",
+          "year": 6785,
+          "date": "4A 1717",
+          "summary": "The year after the Toll of Parim, Molot sends an envoy to Parim, and the court receives him with honours meant to show Sonargur that Aenor has other friends in the North.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Golden Crowning",
+          "year": 6797,
+          "date": "4A 1729",
+          "summary": "The present king is crowned and sells his first offices within the year, starting with the keepership of the lake granaries.",
+          "canon": "established"
+        },
+        {
+          "name": "The Golden Court Completed",
+          "year": 6801,
+          "date": "4A 1733",
+          "summary": "A palace district of gilded halls rises on the bluff of Parim, where offices, titles and charters are bought and sold under the King's eye.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Mirolonese Warning",
+          "year": 6804,
+          "date": "4A 1736",
+          "summary": "Baelan of Paron, envoy of Mirolon, warns the court that the Ember Lands are arming; the courtiers laugh him out of the hall, since nothing has come out of the south for longer than Aenor has had kings.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Founding of the Lost Cause",
+          "year": 6809,
+          "date": "4A 1741",
+          "summary": "The King proclaims a league of the Concord and willing foreign crowns against the powers of the dark, names himself its first lord and spends its first treasury on a triumph; its frontier companies and scholars take it more seriously than he does.",
+          "canon": "established"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Lerendor",
+          "nature": "The Treaty of the Narrow Strait binds the two crowns, and the Toll of Parim in 4A 1716 has soured it; Parim takes the North's loyalty for granted, which Sonargur resents."
+        },
+        {
+          "with": "Gunwyn",
+          "nature": "The West Lands remember the First Age settlements as conquest, and every western court treats Aenoran tariffs as the same quarrel in a newer coat."
+        },
+        {
+          "with": "Girdon",
+          "nature": "Courted with Aenoran gold through the Gunwyn wars and resentful of it, like its rival."
+        },
+        {
+          "with": "Fotan",
+          "nature": "The toll-lordship that refused the Charters and leans to Lerendor; Parim calls its strait chain an insult and pays the toll anyway."
+        },
+        {
+          "with": "Cursed Lands",
+          "nature": "The cord-mothers have rejected the crown since the Peace of the One Crown, and the crown has never had a reason worth the cost of forcing them."
+        },
+        {
+          "with": "Bloody Forest",
+          "nature": "The Redbark clans reject the crown and raid the Selen edge; Parim sends rangers rather than hosts."
+        }
+      ],
+      "capitalReason": "Parim stands on the lake bluff where the River Aenar enters the Great Lake: the grain barges of the Vale meet the lake ships there, the cliff gives the palace a seat that can be held, and Harion chose it in 4A 1 because the Selen resistance had held its port through the War of Unbinding while the older royal seats lay ruined. Whether Parim was also the capital of the First and Second Ages is not settled.",
+      "today": "Aenor in 4A 1748 is rich, crowded and badly ruled. The Golden King, in the nineteenth year of his reign, sells offices, spends the treasury on the Golden Court and leads the Lost Cause in parades, while the Royal Council under Merovan, Keeper of the Seals, and the institutions of seventeen centuries keep the granaries full and the roads open. The thirteen dominions of the Concord, holding twenty-six charter-seats, grumble at his taxes, and the Deliverer's temples are fuller than they have ever been.",
+      "divergence": [
+        {
+          "id": "golden_king_lives",
+          "what": "The Golden King does not die in 4A 1750: the Lost Cause's physicians, or plain good fortune, keep him on his throne.",
+          "consequence": "The four camps never contend over an empty throne; the quarrel becomes one between the King and his Golden Court on one side and his own Royal Council and the dominions on the other, and the Golden Court Endures becomes a possible end of the age.",
+          "beat": "B07"
+        },
+        {
+          "id": "free_dominions_take_the_seals",
+          "what": "In the Thirty Days after the King's death the Free Dominions, led by Selen and Noleksun, take the royal seals before the temples can.",
+          "consequence": "The Concord becomes a league of free dominions with Parim as the first among equals, the temples lose the crown they expected, and the realm's quarrel turns on the Worshipdom and its pilgrims.",
+          "beat": "B08"
+        },
+        {
+          "id": "parim_holds",
+          "what": "The lake ports and the Lost Cause's companies throw the Western Crossing back at Dolepar and Silesire, and the western fleets never take Parim.",
+          "consequence": "The western kings bargain from their ships instead of the palace, Aenor fights the dark from its own capital, and the West's evacuation never strands its soldiers beside the men they conquered.",
+          "beat": "B27"
+        }
+      ]
+    },
+    {
+      "name": "Selen",
+      "canon": "proposed",
+      "founding": {
+        "year": 230,
+        "date": "1A 230",
+        "story": "The hunting moots of the Selen Weald first met as one beneath the great oak on the Selenar that is now the Moot Tree, and swore the Quiet Law: no bow drawn on another ranger, no tree felled without the moot's leave, and every stranger given one night's shelter before he is asked his business. The Weald kept three moot-leagues, Vothrim, Svenlor and Ulgus, but one law and one tree, and men of the Vale have called the whole wood Selen ever since.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The First Wardens of the Moot Tree",
+          "from": 230,
+          "fromDate": "1A 230",
+          "notable": "Selen has no hereditary lord: the moots elect a First Warden to speak for the Weald, and the Warden's word holds until the next moot calls him to account. Edran was crowned in a Warden's year, and Harion was a Warden's son.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The House of Svenlor",
+          "from": 5756,
+          "fromDate": "4A 688",
+          "notable": "The leading house of wardens since the Moot of the Three Glades, which has given the moots eleven First Wardens; Daeric Svenlor holds the office in 4A 1748 and speaks for the Weald in Parim.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Gatherer Crowned at Hifeco",
+          "year": 1614,
+          "date": "1A 1614",
+          "summary": "With the capital lost, a council of nobles and refugees crowns Edran beneath the Moot Tree; the rangers hide the new king for two winters, and Selen's moots still keep a day of silence in Gaelor because the woods once hid a king.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Refugees of the Vale",
+          "year": 2087,
+          "date": "2A 412",
+          "summary": "Famine and the Grey Breath drive families from the Vale into the Weald's glades, and the moots take them in under the Quiet Law; the ranger dialect still carries their lake words.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Shelter of the Fall",
+          "year": 3808,
+          "date": "2A 2133",
+          "summary": "When the capital falls to Elzon, the Weald takes in its survivors and becomes the first home of the resistance that outlasts the Order; the Necromancer's hosts burn the glade edges for three generations and never take the Moot Tree.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Port Held",
+          "year": 5059,
+          "date": "3A 1251",
+          "summary": "In the War of Unbinding Selen's companies seize the lake port beneath the Parim bluff and hold it for nine years against the Order's last hosts, ferried and fed by the ships of the Isle Houses; that port becomes the restored capital.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Harion of Selen",
+          "year": 5069,
+          "date": "4A 1",
+          "summary": "A Warden's son of the Weald, of a collateral branch of Aen's line, is crowned at Parim; the moots refuse him nothing except their birth rolls.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The University of Selen",
+          "year": 5408,
+          "date": "4A 340",
+          "summary": "The moots found a school of physicians and rangers' lore at Hifeco in the same year as Parim's; its teachers have argued with Parim's ever since about who taught whom.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Moot of the Three Glades",
+          "year": 5756,
+          "date": "4A 688",
+          "summary": "Vothrim, Svenlor and Ulgus, each chartered with one seat in 4A 3, join as one dominion under the name the Vale had always used; Selen keeps their three charter-seats in the Concord Council.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Roll Quarrel",
+          "year": 6488,
+          "date": "4A 1420",
+          "summary": "The moots refuse to let the Houses of the First Light keep the birth rolls of the Weald, and after a year of closed roads the Houses give way in Selen alone; the rangers still write their own rolls in the moot-books.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Red Winter",
+          "year": 6676,
+          "date": "4A 1608",
+          "summary": "A Redbark raid burns three glade villages on the Bloody Forest edge, the rangers answer by burning the Redbark cord-trees at the forest's rim, and the feud runs until the cord-mothers and the Wardens exchange hostages in the spring.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Bloody Forest",
+          "nature": "Raids and counter-raids along the forest edge since the First Age; the Red Winter of 4A 1608 is the latest that both sides still name."
+        },
+        {
+          "with": "Aenor",
+          "nature": "Loyal to the crown and jealous of its own law; the Roll Quarrel and the Golden King's taxes make the Weald the natural voice of the Free Dominions."
+        }
+      ],
+      "capitalReason": "Hifeco stands where the first road out of the Weald crosses the Selenar, beside the Moot Tree under which the moots have met since the First Age; the university and the moot-house came to the tree, not the tree to them.",
+      "today": "Selen in 4A 1748 is a council of woodland moots of some 1.9 million rangers, woodsmen and scholars, holding the three charter-seats of Vothrim, Svenlor and Ulgus. First Warden Daeric Svenlor speaks for it in Parim, but in the glades the word that carries furthest is Alleria of Selen's, the ranger and archer whose companies watch the Bloody Forest edge and the north coast; the moots resent the Golden King's taxes more than any other dominion.",
+      "divergence": [
+        {
+          "id": "the_stranger_handed_over",
+          "what": "When a stranger from the sea warns Aenor and is denounced, the moots hand him to the Royal Council instead of hiding him.",
+          "consequence": "He goes to Parim in chains and the Weald loses the trust of the frontier companies; the hosting of his cause passes to whichever Middle Lands realm will still shelter him.",
+          "beat": "B16"
+        },
+        {
+          "id": "the_host_of_selen",
+          "what": "The moots raise their companies for the heir who returns on a dragon and become the core of his host.",
+          "consequence": "Selen carries the war's first common army and its losses; if the Weald has been conquered or has sided with the Royal Council, the host must gather without a home.",
+          "beat": "B29"
+        },
+        {
+          "id": "selen_secedes",
+          "what": "Over the Golden King's taxes, the Weald withdraws its three seats from the Concord Council before the King's death.",
+          "consequence": "The Free Dominions gain a capital in Hifeco, the Concord's levies fall by a quarter, and Parim must decide whether to march on the realm that gave it its restored kings.",
+          "beat": "B08"
+        }
+      ]
+    },
+    {
+      "name": "Kingson",
+      "canon": "proposed",
+      "founding": {
+        "year": 5071,
+        "date": "4A 3",
+        "story": "The watch-families of the ringed Kingson Vale had kept their fields through the whole Third Age under the shadow of the Order's forts, and in the War of Unbinding they took those forts from the inside. At the Charters of Parim the restored crown gave them the Pass Charter: the vale became a lordship holding the only wheel road through the Great Wall of Aenor, under a Pass-Lord chosen from the watch-families, and the first Pass-Lord, Deolof, had the forts' names read at the gorge so that no one would forget who had held them.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Watch-Families of the Gate",
+          "from": 5071,
+          "fromDate": "4A 3",
+          "notable": "The Pass-Lord is chosen by the heads of the watch-families from among themselves and holds the lordship for life; the vale still calls the pass the Gate and its lord the Gate-Lord. Deolof was the first; Arcen, Lord of the Gate in 4A 1748, is the thirty-first.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Order's Forts",
+          "year": 3869,
+          "date": "3A 61",
+          "summary": "Elzon's Order raises watch-forts on the Kingson Pass to keep the unconquered elves out of the vale, and makes the vale's farmers feed them; the families who stay learn to farm under the forts' eyes and remember every captain's name.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Vale Rises",
+          "year": 5052,
+          "date": "3A 1244",
+          "summary": "In the War of Unbinding the watch-families open the gorge forts to the Unbinding's companies one night in Kerun, and the Order never takes the vale back.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Accord of the Passes",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "Men keep the western forts of the Kingson Pass, the elves of the Magical Forest the eastern, and the tolls are taken at Kingson; the Pass-Lords have read the Accord aloud at the gorge every year since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Olvinc-un Joins the Vale",
+          "year": 5328,
+          "date": "4A 260",
+          "summary": "The gorge-lordship of Olvinc-un, chartered separately in 4A 3, marries into the watch-families and joins Kingson, which keeps both charter-seats.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Toll of Silver",
+          "year": 6757,
+          "date": "4A 1689",
+          "summary": "Pass-Lord Hallec doubles the toll on elven silver, and the Magical Forest closes its eastern fort for a whole winter; the Kingson Reckoning of 4A 1690 halves the toll again, but the vale still calls the elves' silence the Long Winter.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Magical Forest",
+          "nature": "Partners at the pass and quarrellers over its tolls: the Toll of Silver of 4A 1689 is still the pass-tolls grievance in every elven complaint."
+        },
+        {
+          "with": "Burrikkrit",
+          "nature": "The goblin warrens under the southern range are watched from the vale's south forts, and the vale-folk never believe in the Lamp Truce as much as the dwarves do."
+        }
+      ],
+      "capitalReason": "Deolofson lies at the centre of the ringed vale, where the Great River gathers its streams and meets the pass road, on the only farmland inside the range; anything that crosses between the Middle Lands and the Magical Lands on wheels passes its market.",
+      "today": "Kingson in 4A 1748 is a pass lordship of some 420,000 vale-folk under Arcen, Lord of the Gate, holding two charter-seats and the only wheel road through the Great Wall of Aenor. Its forts are stocked with Kunhrim's black powder, its market lives on silver, herbs and dragon-scale coming west and iron, grain and glass going east, and the tolls it takes are the elves' oldest complaint against men.",
+      "divergence": [
+        {
+          "id": "the_gate_closed",
+          "what": "The Pass-Lord closes the Kingson Pass to everyone, men and elves alike, when the war begins.",
+          "consequence": "Neither the eastern host nor the elves' messengers can use the wheel road; the Magical Lands fight alone, and the vale becomes a fortress that both sides court with grain.",
+          "beat": "B21"
+        },
+        {
+          "id": "the_tolls_forgiven",
+          "what": "Lord Arcen forgives the pass tolls on elven goods before the war, as a pledge of good faith.",
+          "consequence": "The pass-tolls grievance ends, the Magical Forest reopens the Long Winter's account in friendship, and an elven company may come west through the Gate when the dark comes.",
+          "beat": "B17"
+        }
+      ]
+    },
+    {
+      "name": "Hirolon",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The giants of the western ring count their history in stones, and the Eldest Cairn on the upper basin was already old when the first men of the Vale came to trade at the Grano Saddle. The ring's crests and wooded bowl have been theirs for as long as any people remembers; the year given is only the Aenoran chroniclers' guess at the raising of the Eldest Cairn, and the cairn-keepers decline to correct it.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The High Chiefs of the Cairn-Keepers",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "A High Chief is chosen by the cairn-keepers from the clan chiefs, and a dispute between clans is judged by which party can name the older cairn. Oronas is High Chief in 4A 1748; the stone of the chief who first spoke with men, Bruunar, is shown to every giant child.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Old Promise",
+          "year": 612,
+          "date": "1A 612",
+          "summary": "A shipload of small folk, driven from their western valleys by the wars of the Aenoran settlements, lands at the Hilorn mouth; the giants give them the three low valleys of the basin and swear that no evil will enter them while the harvest-share is paid.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Crossings Held",
+          "year": 1675,
+          "date": "1A 1675",
+          "summary": "Giants of the ring join Edran's Grand Alliance and hold the crossings at Dardan beside the dwarf engineers under fire, which the cairn-keepers count the ring's greatest deed.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Beacon-Cairns",
+          "year": 1815,
+          "date": "2A 140",
+          "summary": "Sea-orcs out of the Grey Water burn the harbour at the Hilorn mouth, and the giants raise beacon-cairns along the whole Hiloff Rim; no raider has landed unseen since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The First Tenants",
+          "year": 2545,
+          "date": "2A 870",
+          "summary": "Famine years bring Vale families to the Grano Saddle, and the giants let them graze the dry eastern slopes as tenants; they are the first Hilofrim herders, and they still pay their grazing in cheese.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Siege of the Stones",
+          "year": 4210,
+          "date": "3A 402",
+          "summary": "Elzon's dead come up to the Hilorn Gap, and the giants roll the cairn-stones down on them; the Necromancer, short of the power to keep his hosts in the field, leaves the ring under a tribute of cut stone and never garrisons it.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Cairn Treaty",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "While the dominions take the Charters of Parim, the giants refuse any charter and swear the Cairn Treaty with the restored crown as one sovereign with another: stone and hired strength for Parim, passage over the Saddle for its carts, and no Aenoran army inside the ring unasked.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Herders Refused",
+          "year": 5671,
+          "date": "4A 603",
+          "summary": "The Hilofrim herders ask Parim for a charter of their own; the High Chief answers that tenants do not take charters for the land they rent, and the crown, mindful of the Cairn Treaty, agrees.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The House at the Saddle",
+          "year": 6198,
+          "date": "4A 1130",
+          "summary": "The Houses of the First Light ask to build in the valleys and are refused; the giants allow one House at the Grano Saddle, outside the ring, for the herders' sick.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Hoorunoron",
+          "nature": "No feud, but the giants of the ring and the giants across the Grey Water have not exchanged a word in living memory, and each side's cairn-keepers say the other forgot the proper count."
+        }
+      ],
+      "capitalReason": "Torunalos stands on the highest hill of the basin above the cairn-fields, where a giant can see every crest of the ring at once; the High Chief's hall was put where the watch was, not the watch where the hall was.",
+      "today": "Hirolon in 4A 1748 is a sovereign kingdom of some 8,000 giants under High Chief Oronas, with about 92,000 Hilofrim herders as its tenants on the eastern Grano and the small folk of Tirlan under its ward in the valleys. It treats with Aenor under the Cairn Treaty, sells cut stone and the strength of its giants to Parim's quays, and asks only to be left alone.",
+      "divergence": [
+        {
+          "id": "the_last_free_ring",
+          "what": "When Parim falls and the dark comes from north and south, the giants open the ring to the Vale's children and close it to every army.",
+          "consequence": "Hirolon becomes the last free land of the Middle Lands, crowded and hungry, and the Saddle becomes the place where the war's refugees are counted.",
+          "beat": "B28"
+        },
+        {
+          "id": "the_saddle_opened",
+          "what": "The Hilofrim herders, angry at their tenancy, open the Grano Saddle to a western army.",
+          "consequence": "The Cairn Treaty breaks on the giants' own doorstep, the West gains a road to the lake's west shore, and the giants march out of the ring for the first time since Dardan.",
+          "beat": "B20"
+        }
+      ]
+    },
+    {
+      "name": "Tirlan",
+      "canon": "proposed",
+      "founding": {
+        "year": 612,
+        "date": "1A 612",
+        "story": "The small folk of Tirlan are kin of the hearth-folk of Dobbum in the West Lands. In the wars of the Aenoran settlements a party of households fled their burning valley on an Aenoran grain ship, were blown south of their course and came ashore at the Hilorn mouth inside the giants' ring. The giants gave them the three low valleys of the Hilorn and swore the Old Promise at the stone of the Hilorn Gap, and the households named the valleys Tirlan, the small fields, in the speech of the men who had carried them.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Wardens of the Fields",
+          "from": 612,
+          "fromDate": "1A 612",
+          "notable": "The households of each valley meet in moot and choose a Warden of the Fields for seven years; the first, Lillabel Tibbum, divided the valleys among the households who landed, and her field-names are still the household names of Tirlan.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Landing and the Old Promise",
+          "year": 612,
+          "date": "1A 612",
+          "summary": "The households land, the giants swear that no evil will enter the valleys while the harvest-share is paid, and the share is carried up to the giants' halls for the first time at harvest.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Herders Arrive",
+          "year": 2545,
+          "date": "2A 870",
+          "summary": "Famine brings Vale men to the Grano Saddle, and the Wardens agree to sell them barley; the small folk learn Aenoran from the herders and teach them to brew.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Children in the Cairn-Halls",
+          "year": 4210,
+          "date": "3A 402",
+          "summary": "When Elzon's dead come up to the Hilorn Gap, the giants hide every child of the valleys in the cairn-halls; the small folk tell that they heard the stones rolling for three nights and came out to find the dead gone.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Named in the Cairn Treaty",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "The Cairn Treaty names the three valleys as lying under the giants' ward, so that no Aenoran tax-farmer has ever crossed the Saddle into them.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Wet Year",
+          "year": 6612,
+          "date": "4A 1544",
+          "summary": "Rain rots the harvest in the field and the share cannot be paid; the giants carry grain over the Saddle from Parim on their own backs and refuse to count it as a debt, which the small folk have never forgotten.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Tirbur lies where the Hilorn's two head-streams meet in the largest of the three valleys, on the soft ground the morning fog keeps wet, at the point furthest from the Hilorn Gap and so furthest from anything that might come in from the sea.",
+      "today": "Tirlan in 4A 1748 is a moot of some 45,000 small folk under their Warden of the Fields, the safest and most closely farmed land in Aoaz, feeding Hirolon's halls with barley, beans, honey and beer and guarded by the giants on every path in. Its households rarely leave the valleys, rarely wear boots and keep the twelve at the hearth, with Lumae, Aurlan and Vaelei above the rest.",
+      "divergence": [
+        {
+          "id": "the_small_folk_leave",
+          "what": "For the first time since the landing, a company of small folk goes out over the Saddle to help the Vale in the war.",
+          "consequence": "They carry food and hide children rather than fight, and the giants must decide whether the Old Promise follows the small folk beyond the ring.",
+          "beat": "B28"
+        },
+        {
+          "id": "the_valleys_threatened",
+          "what": "An army forces the Hilorn Gap or the Saddle and enters the valleys.",
+          "consequence": "The Old Promise is broken for the first time, the giants are shamed in their own count, and Hirolon goes to war against whoever did it, whatever the Cairn Treaty says.",
+          "beat": "B20"
+        }
+      ]
+    },
+    {
+      "name": "Konori",
+      "canon": "proposed",
+      "founding": {
+        "year": 288,
+        "date": "1A 288",
+        "story": "The riders of the dry Konori plateau lived in Hundreds, each a clan with its own horse-marks, and they had fought on both sides of the War of Men. In the year the Aenoran chroniclers give, the Hundreds met at the ford of the Aenar and raised a king on a white felt so that one voice would answer the crown for all of them; every King of Konori since has been lifted on a felt at the same ford, and the riders swear to him by Hunvael and the sky.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Felt Kings of Arrovez",
+          "from": 288,
+          "fromDate": "1A 288",
+          "notable": "The kings are raised by the heads of the Hundreds from the house of Arrovar, which keeps the felt; a king who loses the riders' trust is set down on the same felt he was raised on. Sventor is King of Konori in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Gatherer's Horse",
+          "year": 1640,
+          "date": "1A 1640",
+          "summary": "The Hundreds ride for Edran in the war against Volgan and give the Grand Alliance its scouts; the clan-songs say the plateau sent every second horse it had.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Riders Scatter",
+          "year": 3838,
+          "date": "3A 30",
+          "summary": "Under Elzon's Order the Hundreds will not keep a king who would have to kneel, and the felt is hidden for twelve centuries; the plateau lives as raiders against the Order's tribute roads.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Felt Raised Again",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "King Hallovar is raised at the ford for the first time since the Order fell and takes the Charters of Parim, which give Konori two charter-seats for its horse levy.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Long Drought",
+          "year": 6256,
+          "date": "4A 1188",
+          "summary": "Four dry summers kill half the plateau's herds, and the Hundreds sell their best mares to Hunhun to buy grain; the Konori breed has never quite recovered its name.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Remount Quarrel",
+          "year": 6731,
+          "date": "4A 1663",
+          "summary": "Konori and Hunhun both claim the contract for the Concord's remounts, and riders of the two downs fight at three fairs before the Concord Council splits the contract between them.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Hunhun",
+          "nature": "Kin in speech and oath and rivals in everything else, above all the Concord's remount contract since the quarrel of 4A 1663."
+        },
+        {
+          "with": "Aenor Forest",
+          "nature": "The plateau's herds graze to the forest's southern edge, and riders who cut a tree there have been found under it."
+        }
+      ],
+      "capitalReason": "Arrovez grew round the ford of the Aenar at the steppe edge, where the Hundreds raise their kings on the felt and where the plateau's horses meet the Vale's grain buyers.",
+      "today": "Konori in 4A 1748 is a steppe kingdom of some 530,000 riders under King Sventor, holding two charter-seats and one of the Concord's horse reserves. The Hundreds breed remounts, sell them at Arrovez and complain that the Golden Court pays for them in titles instead of silver.",
+      "divergence": [
+        {
+          "id": "the_riders_ride_west",
+          "what": "The Hundreds, unpaid for three seasons, sell their remounts to the western fleets when they land.",
+          "consequence": "The Western Crossing gains horse and the Concord loses its plateau reserve, and the felt may be torn by the Hundreds that refused.",
+          "beat": "B20"
+        },
+        {
+          "id": "the_felt_for_the_heir",
+          "what": "King Sventor rides to the returned heir with every Hundred behind him.",
+          "consequence": "The Host gains its scouts and its fastest horse, as Edran's did, and Hunhun cannot afford to send fewer riders than its rival.",
+          "beat": "B29"
+        }
+      ]
+    },
+    {
+      "name": "Hunhun",
+      "canon": "proposed",
+      "founding": {
+        "year": 9,
+        "date": "1A 9",
+        "story": "The riders of the Hunhun Downs had carried Aen's banners in the last years of the War of Men, and when the war ended they met on the open downs at midsummer and swore the Horse-Oath to keep one Gathering a year and choose a Horse-Lord at it. The downs have kept the Gathering ever since, and they count themselves the first riders to swear to the One Crown, which the Konori riders deny.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Horse-Lords of the Gathering",
+          "from": 9,
+          "fromDate": "1A 9",
+          "notable": "A Horse-Lord is chosen each midsummer by acclaim and may be chosen again as often as the riders like; a good one rules for life and a bad one for a summer. Hunald has been chosen eleven summers running.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Vale Comes to the Downs",
+          "year": 2087,
+          "date": "2A 412",
+          "summary": "Famine refugees from the Vale settle the wetter eastern downs and learn to breed horses; their lake words are why the Hunhun dialect sounds softer than Konori's.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Downs Unridden",
+          "year": 4018,
+          "date": "3A 210",
+          "summary": "Elzon's Order cannot hold the open downs and stops trying; the riders pay no tribute and live as raiders on its grain roads for a thousand years, and the horse-barrows of the downs are the only graves in the Middle Lands the Order never opened.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Noloreh Joins the Gathering",
+          "year": 6170,
+          "date": "4A 1102",
+          "summary": "The steppe-march of Noloreh, chartered separately in 4A 3, marries its lord's daughter to the Horse-Lord's son, and the two downs keep one Gathering and two charter-seats.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Remount Quarrel",
+          "year": 6731,
+          "date": "4A 1663",
+          "summary": "Hunhun and Konori both claim the contract for the Concord's remounts, and riders of the two downs fight at three fairs before the Concord Council splits the contract between them.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Konori",
+          "nature": "Kin and rivals: the two downs share the Horse-Oath and quarrel over everything else, the remount contract of 4A 1663 above all."
+        }
+      ],
+      "capitalReason": "Ulrono is the Gathering itself: the open downs where the riders have met every midsummer since the First Age, a ground of tents, horse-lines and a few stone halls that empties every autumn and fills again in spring.",
+      "today": "Hunhun in 4A 1748 is a riders' moot of some 560,000 under Horse-Lord Hunald, holding the charter-seats of Hunhun and Noloreh. Its breed carries the Concord's lancers, its Gathering is the largest horse fair in Aoaz, and its riders are loyal to Parim in the way they are loyal to the weather, because it is there.",
+      "divergence": [
+        {
+          "id": "the_gathering_called",
+          "what": "Horse-Lord Hunald calls a war Gathering out of season and rides to the southern march against the hosts from the south.",
+          "consequence": "Herez gains the lancers it needs to hold the hills, and the downs lose the riders they will need when the dead come from the north.",
+          "beat": "B23"
+        },
+        {
+          "id": "the_downs_stay_home",
+          "what": "The Gathering refuses to send riders anywhere until the Concord pays what it owes.",
+          "consequence": "The Concord's lancers sit out the first year of the war, and the Free Dominions learn that a dominion can refuse its levy and survive.",
+          "beat": "B18"
+        }
+      ]
+    },
+    {
+      "name": "Klungori Guard",
+      "canon": "proposed",
+      "founding": {
+        "year": 5164,
+        "date": "4A 96",
+        "story": "When the Accord of the Passes put a tower on each side of the South Pass, the crown needed men who would live at the western foot of the pass and watch the goblin warrens of Burrikkrit for ever. Captain Klungor, grandson of a captain of the Unbinding's last company, and two hundred sworn men took the task for land instead of pay, and the company they founded has held the western foot under oath ever since; the Pass Charter of the South Pass is its charter.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Captains of the Sworn",
+          "from": 5164,
+          "fromDate": "4A 96",
+          "notable": "The Guard elects its Captain from the sworn for life; the Captain holds the land in the company's name and swears again at the Reading of Names every year at the tower. Klungor was the first; the present Captain, Tavec Hungohar, is the forty-fourth.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Lamp Truce",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "No army can dig the goblins out of the southern caves, so the Accord leaves them in place under the Lamp Truce, sworn with a lit lamp between the hobgoblin king, the Lord of the Deep Hall and the new Guard.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Tunnel Fight",
+          "year": 5955,
+          "date": "4A 887",
+          "summary": "A warren-boss of Burrikkrit breaks the truce and sends goblins through an old tunnel into the Guard's villages; the Guard and Kunhrim's delvers fight underground for a winter and seal the tunnel with fallen rock.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Truce Relit",
+          "year": 5956,
+          "date": "4A 888",
+          "summary": "The hobgoblin king gives up the warren-boss and the lamp is lit again at the tower; the Guard keeps the boss's helmet on the tower wall.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Pilgrim Fee",
+          "year": 6629,
+          "date": "4A 1561",
+          "summary": "When pilgrims begin to cross the South Pass to the Zilin Hills, the Guard escorts them for a fee, which the Worshipdom pays without complaint and Parim calls a toll.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Burrikkrit",
+          "nature": "The reason the Guard exists: an armed truce since 4A 96, broken once in the Tunnel Fight and watched every night since."
+        }
+      ],
+      "capitalReason": "Hungohon is the garrison town at the western foot of the South Pass, built round the tower the Accord required, because the Guard's whole purpose is to see whatever comes down the pass or up out of the caves.",
+      "today": "The Klungori Guard in 4A 1748 is a sworn company of some 120,000, soldiers, their families and the farmers who feed them, holding one charter-seat and the Pass Charter of the South Pass under Captain Tavec Hungohar. It escorts pilgrims, watches the warrens and has not lit a war-beacon since the Tunnel Fight.",
+      "divergence": [
+        {
+          "id": "the_guard_breaks_the_truce",
+          "what": "A new Captain decides to clear Burrikkrit's caves before the war rather than watch them through it.",
+          "consequence": "The Lamp Truce ends, Kunhrim's clans must choose a side, and the goblins sell their under-roads to the first enemy who will help them.",
+          "beat": "B21"
+        },
+        {
+          "id": "the_south_pass_shut",
+          "what": "The Guard closes the South Pass to pilgrims and armies alike when the war begins.",
+          "consequence": "The Worshipdom's couriers lose their shortest road west, and any host from the south must come by Herez or not at all.",
+          "beat": "B23"
+        }
+      ]
+    },
+    {
+      "name": "Herez",
+      "canon": "proposed",
+      "founding": {
+        "year": 1687,
+        "date": "2A 12",
+        "story": "After the failed campaign in the Ember Lands, Edran set a march across the Grey Hills so that the remnants of Volgan's host could never again come up the southern road unseen. He gave it to Hezar of the lake houses, a captain of the campaign who had brought his company home alive, and the march-lords of Hugomon have held the hills for the crown ever since, confirmed by every king and answering to none of the lake lords.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The House of Hezar",
+          "from": 1687,
+          "fromDate": "2A 12",
+          "notable": "The march-lords of Hugomon, confirmed by Parim at each succession; when the direct line failed in 3A, a cousin's line carried the name through the Order's years as a hill-chief's title. Heziel, Marcher-Lord in 4A 1748, is of the cousin's line restored at the Charters.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The March Raised",
+          "year": 1687,
+          "date": "2A 12",
+          "summary": "Edran raises the March of Herez across the Grey Hills and the southern road; its first towers stand where the road leaves the hills for the coast.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Hill-Chiefs",
+          "year": 3948,
+          "date": "3A 140",
+          "summary": "Under the Order the march is a tribute land of hill-chiefs who pay in grain and bodies and keep the old title in secret; the Order's garrisons never sleep in the hills.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Charters of Parim",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "Herez is chartered as a march lordship with one seat, and its lord swears to keep the southern road for the crown.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Belurithon Joins the March",
+          "year": 6358,
+          "date": "4A 1290",
+          "summary": "When the last lord of the Belurithon march dies without heirs, its people ask to be ruled from Hugomon, and Herez keeps the second charter-seat.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Empty Villages",
+          "year": 6807,
+          "date": "4A 1739",
+          "summary": "Marcher scouts report that the herders of the far southern road have left their summer villages a season early; Heziel's letter to Parim is answered with a receipt.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Puvulan",
+          "nature": "The march exists because of the realm beyond the south; nobody in Herez thinks the old enemy a legend, and nobody in Parim listens to them."
+        },
+        {
+          "with": "Aenor",
+          "nature": "Loyal, poor and unheard: the march pays the same taxes as the lake towns for land that grows half as much."
+        }
+      ],
+      "capitalReason": "Hugomon stands where the southern road enters the Grey Hills from the coast, at the first point a march-lord can close the road with one fort; it was built as a fort and became a town because the road brought trade.",
+      "today": "Herez in 4A 1748 is a march lordship of some 700,000 under Marcher-Lord Heziel, holding the charter-seats of Herez and Belurithon, with empty roads, old towers and a garrison that still drills. It is the realm that will feel the south first, and the only one that expects to.",
+      "divergence": [
+        {
+          "id": "herez_holds",
+          "what": "The march holds the Grey Hills when the hosts of the south come north.",
+          "consequence": "The march north is broken in the hills or delayed by a season, and the Vale has time to raise its levies before the lake shore burns.",
+          "beat": "B23"
+        },
+        {
+          "id": "herez_heard",
+          "what": "Parim heeds Heziel's letters before the war and sends the march men and money.",
+          "consequence": "The towers of the southern road are manned in time, and the Lost Cause's frontier companies gain a march to stand in.",
+          "beat": "B22"
+        }
+      ]
+    },
+    {
+      "name": "Noleksun",
+      "canon": "proposed",
+      "founding": {
+        "year": 5842,
+        "date": "4A 774",
+        "story": "The south-eastern frontier was settled after the Order fell by eight market towns, each round a crossing of the roads, which took the Charters of Parim as three leagues with three seats. Four centuries of quarrels over tolls ended at the Oath of Eight Hearths, sworn at Saelori, when the eight towns bound themselves into one confederacy with one Chief Speaker; it is the richest of the frontier dominions because no road in the south-east avoids it.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Chief Speakers of the Eight Towns",
+          "from": 5842,
+          "fromDate": "4A 774",
+          "notable": "Each household of the eight towns votes for the Chief Speaker every fifth year at Saelori; the office has never been held by the same family twice running, a rule the towns guard more jealously than any toll. Noleka of Dalvis is Chief Speaker in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Three Leagues Chartered",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "The frontier towns take the Charters of Parim as three leagues, each with a seat, because no one league would let another speak for it.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Oath of Eight Hearths",
+          "year": 5842,
+          "date": "4A 774",
+          "summary": "After a toll war that closed the south-eastern roads for two summers, the eight towns swear one confederacy at Saelori and keep all three seats.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Fairs of Saelori",
+          "year": 6523,
+          "date": "4A 1455",
+          "summary": "The confederacy opens the twice-yearly fairs at Saelori to every merchant of the Concord toll-free, and in a generation it is the richest frontier land of the Middle Lands.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Tax-Farmers",
+          "year": 6799,
+          "date": "4A 1731",
+          "summary": "The Golden King sells the right to collect the confederacy's crown dues to a Golden Court house, which doubles them; the eight towns pay and keep the receipts.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Aenor",
+          "nature": "The richest dominion pays the most and is listened to the least, and its Chief Speakers say so in every Concord Council."
+        },
+        {
+          "with": "Klungori Guard",
+          "nature": "The Guard's pilgrim fee and road escorts cut into Noleksun's toll-free fairs, and the eight towns call it a second toll."
+        }
+      ],
+      "capitalReason": "Saelori, the first of the eight towns, stands at the crossing of the two great south-eastern roads, and the Oath of Eight Hearths was sworn there because it was the one town every other could reach in two days.",
+      "today": "Noleksun in 4A 1748 is a confederacy of eight towns and some 1.04 million people under Chief Speaker Noleka, holding three charter-seats and the fairs of Saelori. It pays the Golden Court's tax-farmers with a smile and keeps a treasury that would pay for a war.",
+      "divergence": [
+        {
+          "id": "the_eight_towns_secede",
+          "what": "The Chief Speaker withdraws the confederacy's three seats from the Concord over the tax-farmers.",
+          "consequence": "The Free Dominions gain their treasury and Parim loses its richest frontier, and the eight towns must hire soldiers they have never needed.",
+          "beat": "B08"
+        },
+        {
+          "id": "the_treasury_opened",
+          "what": "Noleksun pays for the Lost Cause's frontier companies out of its own treasury.",
+          "consequence": "The league against the dark gains real soldiers on the southern march, and the eight towns gain a voice in how the war is fought.",
+          "beat": "B18"
+        }
+      ]
+    },
+    {
+      "name": "Kilinti",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The ents stood in the Kilinti Forests on the upper Aenar long before any people of men had a name for the place, and the edge-villages' oldest songs begin with the ents already old. Men came to the forest edges in the Age of Kingdoms to take fallen wood, and the Ent-Moot let them stay on one condition, that they speak for the forest to any lord who asked it a question; the edge-folk have kept the ents' accounts and carried their slow answers ever since. The year is the edge-villages' own reckoning of the first bargain.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Eldest of the Moot",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "The ents have no line: the Eldest is whichever of them has said the fewest words in the year, and the Eldest speaks last at the Ent-Moot every seventh spring. The edge-folk call the present Eldest Gronnar.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Edge-Reeves",
+          "from": 77,
+          "fromDate": "1A 77",
+          "notable": "Since the Timber Bargain the men of the edge-villages elect a Reeve to keep the forest's accounts and to sit in Parim for it; the Reeves are the only lords of Kilinti a man ever sees.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Timber Bargain",
+          "year": 77,
+          "date": "1A 77",
+          "summary": "Aen's kingdom asks the forest for its oaks; the Ent-Moot answers, after three springs, that the kingdom may have every tree that falls of itself and none that stands, and the bargain has held for four ages.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Dead Roots Turned",
+          "year": 4588,
+          "date": "3A 780",
+          "summary": "When the Black Roots creep up the Aenar valley, the ents walk to the forest's eastern edge and pull the dead roots out of the ground by hand; the edge-folk say the forest was silent for a year afterwards.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Grove Charter",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "Kilinti takes the Charters of Parim with two seats, one for the grove and one for the edge, and the charter asks of it only timber.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Great Felling Refused",
+          "year": 6718,
+          "date": "4A 1650",
+          "summary": "Parim asks for standing oaks to roof the new halls of the lake ports; the Eldest's answer, carried by the Reeve, is a single word, and the king does not ask again.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Ollolor is the moot-grove in the oldest part of the forest, where the ents gather every seventh spring; it has no walls and no houses, and the Reeves' hall stands at the forest edge a day's walk away because men may not sleep in the grove.",
+      "today": "Kilinti in 4A 1748 is a chartered dominion of a few thousand ents and some 72,000 edge-folk, holding two charter-seats. The ents keep the forest, the men keep the accounts and the timber trade in fallen wood, and the Golden Court has never found anything in Kilinti it could sell.",
+      "divergence": [
+        {
+          "id": "the_ents_walk",
+          "what": "The Ent-Moot, called out of season, walks out of the forest against an army that burns its edge.",
+          "consequence": "Whatever army it is learns what the Black Roots learned, and the Concord learns that its slowest dominion is not its weakest.",
+          "beat": "B28"
+        },
+        {
+          "id": "the_forest_closed",
+          "what": "The Eldest closes the forest to every army, the crown's included, for the length of the war.",
+          "consequence": "The upper Aenar becomes a wall in the middle of the Vale, and the Host must march around a dominion that has chosen no side.",
+          "beat": "B29"
+        }
+      ]
+    },
+    {
+      "name": "Safeton",
+      "canon": "proposed",
+      "founding": {
+        "year": 205,
+        "date": "1A 205",
+        "story": "The lake bargemen who carried the Vale's grain down the Safen to the sea built their warehouses at the river mouth where lake water and sea water meet, and the town of Lotrenri grew round them. The ship-houses that owned the warehouses came to rule the town between them, and the harbour has been governed by a council of ship-houses since the Second Age, the only dominion of the Concord with no lord at all.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Council of Ship-Houses",
+          "from": 2085,
+          "fromDate": "2A 410",
+          "notable": "The heads of the ship-houses of Lotrenri sit as the council and choose a Harbour-Master each year from among themselves; the oldest houses, Lotaren and Safarel, have between them provided half the Harbour-Masters in the harbour's history.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Ship-Houses Take the Town",
+          "year": 2085,
+          "date": "2A 410",
+          "summary": "When the crown's governor dies of the Grey Breath, the ship-houses run the harbour through the plague and refuse to give it back; Parim, with no one else to send, confirms them.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Hidden Hulls",
+          "year": 4108,
+          "date": "3A 300",
+          "summary": "Under the Order the ship-houses sink their best hulls in the Safen mud and raise them for smuggling on moonless nights; the Isle Houses buy what they carry.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Novez Joins the Harbour",
+          "year": 5973,
+          "date": "4A 905",
+          "summary": "The farmers of the Novez Fields, chartered separately in 4A 3, sell their seat's levy to the ship-houses in a famine year and become part of the harbour dominion, which keeps both seats.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Grain Wars Profit",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "When the Gunwyn and Girdon wars divide the West Lands, Safeton sells grain to both sides and builds its new mole with the profit.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Freshon",
+          "nature": "The lake road and the river road compete for the same grain, and the spring-town's Golden Charter freed its carts from tolls that Safeton's barges still pay."
+        }
+      ],
+      "capitalReason": "Lotrenri stands at the Safen mouth, where the Great Lake's only outflow meets the sea: everything the Vale sends south by water passes its quays, and the bar at the mouth makes it the one harbour the lake ships and the sea ships can share.",
+      "today": "Safeton in 4A 1748 is the Concord's southern harbour, a dominion of some 1.11 million ruled by its council of ship-houses and holding the charter-seats of Safeton and Novez. Its ships carry grain to every coast and pilgrims south over the Sea of Peace, and its Harbour-Master has more ships than the crown.",
+      "divergence": [
+        {
+          "id": "the_harbour_opened",
+          "what": "When the western fleets cross, the ship-houses open Lotrenri to them in exchange for keeping their warehouses.",
+          "consequence": "The West gains a southern harbour and a road up the Safen to the lake, and the Concord learns what a dominion with no lord will do for its trade.",
+          "beat": "B20"
+        },
+        {
+          "id": "the_fleet_for_the_crown",
+          "what": "The council lends every hull it has to the crown's fleet before the Crossing.",
+          "consequence": "Aenor's fleet can meet the West at sea, and the harbour stakes its trade on a crown that may not survive.",
+          "beat": "B20"
+        }
+      ]
+    },
+    {
+      "name": "Freshon",
+      "canon": "proposed",
+      "founding": {
+        "year": 160,
+        "date": "1A 160",
+        "story": "A warm spring rises where the lake road meets the south road, and a spring-house of Sulethe stood over it before there was a town. Travellers stopped to drink and drovers to water their herds, the drovers' inns became a market, and the market became Hordorton, the spring-town, whose spring-masters have governed it under one charter or another since the First Age.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Spring-Masters",
+          "from": 160,
+          "fromDate": "1A 160",
+          "notable": "The town is ruled by a council of the spring-masters, the families who hold the leases on the spring-houses and the inns round the spring; the First Spring-Master is chosen by lot from the council every third year.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Fever Wells",
+          "year": 2315,
+          "date": "2A 640",
+          "summary": "In a fever year the physicians of the southern Vale find that the sick who drink only from the warm spring die less often than the rest; Freshon's spring-houses become the hospitals of the southern Vale.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Two Seats",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "Freshon takes the Charters of Parim with two seats, because its markets owe the common defence more carts and horses than most dominions.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Golden Charter",
+          "year": 6799,
+          "date": "4A 1731",
+          "summary": "The spring-masters buy a Golden Charter from the King, which frees their carts from royal tolls and gives the town its own court, at a price that empties three generations of savings.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Pazoma",
+          "nature": "Both bought Golden Charters and each says the other paid too little; their quarrel over the lake road tolls has gone to the Concord court four times since 4A 1734."
+        },
+        {
+          "with": "Safeton",
+          "nature": "The spring-town's carts and the harbour's barges carry the same grain by different roads."
+        }
+      ],
+      "capitalReason": "Hordorton is the spring itself: the warm water where the lake road meets the south road, which made every traveller stop and so made a market where there would otherwise have been a ford.",
+      "today": "Freshon in 4A 1748 is a chartered spring-town of some 1.25 million in its town and four states of spring country, holding two charter-seats and the Golden Charter it bought in 4A 1731. Its spring-masters are proud, indebted and loyal to the Golden Court, because the Golden Court holds their debts.",
+      "divergence": [
+        {
+          "id": "the_charter_revoked",
+          "what": "A new ruler in Parim revokes the Golden Charters.",
+          "consequence": "Freshon's spring-masters lose the price they paid and their loyalty with it, and the Golden Court loses its surest dominion.",
+          "beat": "B08"
+        },
+        {
+          "id": "the_spring_houses",
+          "what": "In the war the spring-houses of Freshon become the hospitals of the Host.",
+          "consequence": "The spring-town's wells keep an army alive, and the spring-masters ask a seat at whatever council follows the war.",
+          "beat": "B30"
+        }
+      ]
+    },
+    {
+      "name": "Pazoma",
+      "canon": "proposed",
+      "founding": {
+        "year": 410,
+        "date": "1A 410",
+        "story": "The deep bay of Horlomon on the lake shore could take any ship the lake carried, and the craftsmen who settled round it in the First Age, bell-founders, glass-blowers, cloth-dyers and paper-makers, ruled the town through their guilds from the beginning. Pazoma has never had a lord; its guild-masters sit as its council, and its charter has always been written in their name.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Guild-Masters of Horlomon",
+          "from": 410,
+          "fromDate": "1A 410",
+          "notable": "The masters of the seven great guilds sit as the council and choose a Warden of the Guilds each year; the bell-founders have always held the first seat, because the bell of the guild hall rang the town into existence.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Seven Guilds",
+          "year": 410,
+          "date": "1A 410",
+          "summary": "The bell-founders, glass-blowers, dyers, paper-makers, bookbinders, rope-makers and shipwrights of the bay swear one council and cast the guild-hall bell.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Hidden Presses",
+          "year": 4488,
+          "date": "3A 680",
+          "summary": "Under the Order the paper-makers and bookbinders hide the kingdom's books in the guild cellars, and the printers' saying is still that Pazoma kept Aenor's memory while the Necromancer kept its body.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Bell Riot",
+          "year": 6678,
+          "date": "4A 1610",
+          "summary": "When the crown's tax on bells doubles, the bell-founders ring every bell in the town for three days and nights until the Royal Council rescinds it; the riot is the guild-city's proudest memory.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Golden Charter",
+          "year": 6802,
+          "date": "4A 1734",
+          "summary": "The guild council buys a Golden Charter from the King, three years after Freshon, and pays more for it, which Horlomon has not forgiven.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Freshon",
+          "nature": "Rivals for the Golden Court's favour and the lake road's tolls since both bought Golden Charters."
+        }
+      ],
+      "capitalReason": "Horlomon stands on the deepest bay of the Great Lake's shore, where ships of any draught can lie at the quays and the guild workshops can load bells, glass and books straight onto them.",
+      "today": "Pazoma in 4A 1748 is a chartered guild-city of some 1.25 million in its town and lake shore, holding two charter-seats and the Golden Charter it bought in 4A 1734. It makes the Concord's bells, glass, cloth, paper and books, and its guild-masters keep the best library outside the universities.",
+      "divergence": [
+        {
+          "id": "the_presses_speak",
+          "what": "The guild presses print the stranger's warnings and the scholars' doubts in the year of the King's death.",
+          "consequence": "Every lake town reads what the Royal Council would rather it did not, and the Golden Charter will not save the guilds if the wrong camp wins.",
+          "beat": "B16"
+        },
+        {
+          "id": "the_bells_for_the_heir",
+          "what": "When the heir returns, Horlomon rings every bell it has for him.",
+          "consequence": "The guild-city declares for him before any lord does, and the lake shore follows its bells.",
+          "beat": "B37"
+        }
+      ]
+    },
+    {
+      "name": "Orohaf",
+      "canon": "proposed",
+      "founding": {
+        "year": 133,
+        "date": "1A 133",
+        "story": "Aenor Isle had five great houses, Orohaf, Rish, Tinta, Holod and Faber, each ruled by its eldest woman, and in the year the chroniclers give their eldest women met at the harbour of Borrak and swore the Tide-Oath: one queen chosen from among them for life, the isle's ships at her call, and the dead given to the tide by the same rite in every house. The isle has been a queenship ever since, and its houses still choose the queen in the tide-chamber at the turn of the tide.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Queens of the Five Houses",
+          "from": 133,
+          "fromDate": "1A 133",
+          "notable": "The queen is chosen by the eldest women of the five houses from among the daughters of any of them, and her house holds the harbour of Borrak for her life; inheritance on the isle runs through daughters. Queen Faberra, of the house of Faber, reigns in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Refugee Ships",
+          "year": 2195,
+          "date": "2A 520",
+          "summary": "In the famine centuries the Isle Houses take in shiploads of Vale families and give them the green heart of Rish to farm; the isle's grandmothers say the tide brought them.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Timber Fleet",
+          "year": 4995,
+          "date": "3A 1187",
+          "summary": "Isle House ships, sailing south in a storm year, reach Verde in the Islands of the South and buy hull-timber; the timber trade between the isle and Verde has never stopped since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Ferry of the Unbinding",
+          "year": 5059,
+          "date": "3A 1251",
+          "summary": "The isle's ships carry Selen's companies to the lake port beneath the Parim bluff and feed them through nine years of fighting there.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Tide-Seats",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "The isle takes the Charters of Parim with two seats, for Borrak and the Tinta Hills, because its ships owe the common defence more than most lands owe in men.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Gunwyn",
+          "nature": "The isle is the first land the western fleets would have to pass, and its queens have watched the West's harbours for four ages."
+        }
+      ],
+      "capitalReason": "Borrak is the best natural harbour on the isle and faces the open sea, so the ships of all five houses lie there and the queen who commands them must sit beside them.",
+      "today": "Orohaf in 4A 1748 is an island queenship of some 300,000 shipwrights, fishers and farmers under Queen Faberra, holding two charter-seats. It builds the Concord's best hulls from Verde's timber, and any fleet crossing from the West must pass its harbours or go far out of its way.",
+      "divergence": [
+        {
+          "id": "the_isle_refuses_the_crossing",
+          "what": "The queen closes the Inner Sea to the western fleets and fights them off Borrak.",
+          "consequence": "The Western Crossing must land further south and later, and the isle pays for its loyalty with its ships.",
+          "beat": "B20"
+        },
+        {
+          "id": "the_isle_stands_aside",
+          "what": "The queen lets the western fleets pass in exchange for the isle being left alone.",
+          "consequence": "The Crossing lands on time and in strength, the isle's houses keep their ships, and Parim never forgives the Tide-Oath for keeping its own counsel.",
+          "beat": "B20"
+        }
+      ]
+    },
+    {
+      "name": "Fotan",
+      "canon": "proposed",
+      "founding": {
+        "year": 4912,
+        "date": "3A 1104",
+        "story": "In the century when the Order's grip weakened, a Leren sea-captain, Ostvar, married the daughter of the Aenoran ferry-house that worked the narrowest crossing of the strait, and the two families stretched a chain across the landing and charged the Order's tribute ships to pass. The Order burned their tower twice and never kept them out of it, and the house they founded has held the strait shore and its toll ever since.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The House of Ostvar",
+          "from": 4912,
+          "fromDate": "3A 1104",
+          "notable": "Leren and Aenoran by blood, Leren in its pride and Aenoran in its speech, the house has married across the strait in every generation. Lord Ragnec Ostvar holds the toll in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Chain Across the Landing",
+          "year": 4912,
+          "date": "3A 1104",
+          "summary": "Ostvar and the ferry-house stretch the toll-chain across the landing at Deoreh, and the strait-folk pay their first toll to a house instead of the Order.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Charters Refused",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "Fotan refuses the Charters of Parim because a dominion's tolls belong to the common defence, and keeps its strait toll as a free lordship; Harion lets it go, since the strait-folk had fought the Order as hard as anyone.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Strait Treaty",
+          "year": 5580,
+          "date": "4A 512",
+          "summary": "When Aenor and the North Lands swear the Treaty of the Narrow Strait, Fotan is named in it as neutral ground and its toll is left untouched by both crowns.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Toll of Parim",
+          "year": 6784,
+          "date": "4A 1716",
+          "summary": "A dispute over Fotan's toll on Leren timber is taken to Parim, where the Leren envoys are humiliated; the lord of Fotan takes Lerendor's side and has leaned to Sonargur ever since.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Aenor",
+          "nature": "The crown has never forgiven the refusal of the Charters, and the Toll of Parim in 4A 1716 made the lordship Lerendor's friend."
+        }
+      ],
+      "capitalReason": "Deoreh is the toll-town at the narrowest crossing of the Leren Sea on the Middle Lands side, where the chain can be stretched across the landing and every ship that wants the strait must pass within bowshot of the tower.",
+      "today": "Fotan in 4A 1748 is a free lordship of some 300,000 strait-folk under Lord Ragnec Ostvar, outside the Concord, living on its strait toll and leaning to Lerendor. Its toll-boats are the best-handled small craft on the strait, and its lord can open or shut the shortest crossing between the North Lands and Aenor.",
+      "divergence": [
+        {
+          "id": "the_strait_for_lerendor",
+          "what": "When Lerendor leaves the Treaty of the Narrow Strait, Fotan opens its landing to the Leren fleet.",
+          "consequence": "Lerendor gains a harbour on the Middle Lands side of the strait, and the North's withdrawal becomes an invasion if Sonargur wishes it.",
+          "beat": "B19"
+        },
+        {
+          "id": "the_chain_drawn",
+          "what": "Lord Ragnec draws the chain against every fleet, Leren and Aenoran alike.",
+          "consequence": "The strait closes to war for as long as Fotan holds, and both crowns must decide whether the toll-lordship is worth the cost of breaking.",
+          "beat": "B19"
+        }
+      ]
+    },
+    {
+      "name": "Kunhrim",
+      "canon": "proposed",
+      "founding": {
+        "year": 300,
+        "date": "1A 300",
+        "story": "The delving-clans had worked the Lunhrim massif since before men had a word for it, and they keep their own count of the years from the first delving, which they do not tell outsiders. To the Aenoran chroniclers Kunhrim begins when the clans cut the Western Gate into the massif's face and opened their galleries to trade with Aen's kingdom; the dwarves say the men only lost a letter when they named the mountain Lunhrim, and that the hold is older than the name.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Lords of the Deep Hall",
+          "from": 300,
+          "fromDate": "1A 300",
+          "notable": "The council of clan-elders chooses a Lord of the Deep Hall to speak for the hold at the Western Gate; outsiders deal with him and with nobody else. The office has passed among the clans of Kramast, Hrunord and Dolmerm, and Stulmar of the Kramast clan holds it in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Western Gate Cut",
+          "year": 300,
+          "date": "1A 300",
+          "summary": "The clans cut the Western Gate and open their galleries to Aenoran trade, and the Lunhrim Notch becomes a packmen's path; the gate faces west because the clans do not care for elves.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Delvers at the Crossings",
+          "year": 1675,
+          "date": "1A 1675",
+          "summary": "The hold's delvers join Edran's Grand Alliance and fight at Dardan under Brunek of the Stone Roads, the western engineer, collapsing the tunnels that the Damned Spirits came through while the giants held the crossings above them.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Forged Letters",
+          "year": 3779,
+          "date": "2A 2104",
+          "summary": "In the war from within, forged letters in the crown's hand accuse the hold of selling iron to the Necromancer; the clans close the Western Gate in anger, and Aenor fights its last war without dwarf iron.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Galleries Hold",
+          "year": 3898,
+          "date": "3A 90",
+          "summary": "The Order takes the Vale but never the galleries; Kunhrim shelters fugitives of the resistance in its outer halls throughout the occupation and sells the Order nothing.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Iron Charter",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "The hold takes the Charters of Parim as a chartered member with one seat, under the Iron Charter: iron for the crown, and no elf on its roads.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Lamp Truce",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "The Lord of the Deep Hall swears the Lamp Truce with the hobgoblin king of Burrikkrit and the new Klungori Guard, so that the goblins keep their caves and leave the dwarves' galleries alone.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Tunnel Fight",
+          "year": 5955,
+          "date": "4A 887",
+          "summary": "When a warren-boss of Burrikkrit sends goblins through an old tunnel, the hold's delvers fight beside the Klungori Guard underground for a winter and bring the tunnel down.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Powder Compact",
+          "year": 6680,
+          "date": "4A 1612",
+          "summary": "Having learned the making of black powder from the western hold of Hrennost, the clans agree to sell their powder to Aenor's crown alone, and it stands in the Kingson Pass forts from that year.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Burrikkrit",
+          "nature": "An armed truce since 4A 96, kept by the lamp and broken once in the Tunnel Fight; the clans say goblins remember promises only while they are frightened."
+        },
+        {
+          "with": "Magical Forest",
+          "nature": "The clans do not care for elves, and the Iron Charter keeps every elf off the hold's roads; the elves return the coolness."
+        }
+      ],
+      "capitalReason": "Hrakkerm, the iron fort, is the hold's outer hall at the foot of the Western Gate, where carts from the Kingson Vale can reach and the clans can trade without letting anyone into the deep halls; it is the seat of the Iron Charter because that is where the iron is weighed.",
+      "today": "Kunhrim in 4A 1748 is a hold of some 45,000 dwarves in the delving-clans and 15,000 men who carry and smith for them, under Stulmar, Lord of the Deep Hall, holding one charter-seat under the Iron Charter. Its iron, gold and gems go west, its black powder goes to the crown and nobody else, and its clans can starve any ruler in Parim of iron if they choose.",
+      "divergence": [
+        {
+          "id": "iron_withheld",
+          "what": "The Lord of the Deep Hall refuses iron and powder to a ruler in Parim the clans do not hold to be lawful.",
+          "consequence": "The Golden Court, the god-king or a western king finds its armouries empty within a year, and the hold must defend the Western Gate against whoever wants its iron badly enough.",
+          "beat": "B10"
+        },
+        {
+          "id": "iron_for_the_west",
+          "what": "The clans sell iron to the western fleets when they land.",
+          "consequence": "The Western Crossing is better armed than history allows, and the Iron Charter is broken by the realm that swore it.",
+          "beat": "B20"
+        }
+      ]
+    },
+    {
+      "name": "Burrikkrit",
+      "canon": "proposed",
+      "founding": {
+        "year": 3846,
+        "date": "3A 38",
+        "story": "When Elzon's Order took the Vale, it needed watchers for the southern range, the unconquered elves beyond it and the South Pass, and it sent goblin warbands into the warm caves under the Cursed Mountains and paid them in plunder. The Order fell and the goblins did not leave; the warrens tell that the Necromancer promised them the whole range, and that a promise outlives the one who made it.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Hobgoblin Kings of Glimzig",
+          "from": 3846,
+          "fromDate": "3A 38",
+          "notable": "The biggest hobgoblin rules, with warren-bosses under him; a king rules until a bigger one throws him out of the throne-cave. The king in 4A 1748 is Dwibrik, who has held the lamp longer than any king the warrens can name.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Garrison Caves",
+          "year": 3846,
+          "date": "3A 38",
+          "summary": "The Order sends goblin warbands into the caves under the Cursed Mountains and the southern Giant Mountains, and they dig their first warrens round the throne-cave of Glimzig.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Promise Kept",
+          "year": 5068,
+          "date": "3A 1260",
+          "summary": "When the Necromancer falls, the goblins hold their caves against everyone who comes to clear them, and nobody can dig them out.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Lamp Truce",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "The hobgoblin king swears the Lamp Truce over a lit lamp with the Lord of the Deep Hall and the Klungori Guard: the goblins keep the caves, the dwarves the galleries, and nobody crosses into the other's dark.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Tunnel Fight",
+          "year": 5955,
+          "date": "4A 887",
+          "summary": "A warren-boss sends raiders through an old tunnel into the Guard's villages; the Guard and the dwarves fight a winter underground, and the king gives up the boss to have the lamp lit again in 4A 888.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Under-Road Sold",
+          "year": 6723,
+          "date": "4A 1655",
+          "summary": "The king sells a smugglers' guild passage through the old tunnels under the Giant Mountains; the dwarves find out, the guild is never seen again, and the warrens learn to sell the road more quietly.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Kunhrim",
+          "nature": "The armed truce of the lamp; the warrens think the dwarves greedy and the dwarves think the goblins thieves, and both are right."
+        },
+        {
+          "with": "Klungori Guard",
+          "nature": "The sworn company exists to watch the warrens, and the warrens know it."
+        }
+      ],
+      "capitalReason": "Glimzig, the lamp hall, is the throne-cave deep under the Cursed Mountains, warm and dry and far from any road, where the Order's first warband made its camp; a goblin king lives where nobody can reach him in daylight.",
+      "today": "Burrikkrit in 4A 1748 is a warren-kingdom of some 75,000 goblins and 10,000 hobgoblins under King Dwibrik, outside the Concord and inside the dwarves' range, held to the Lamp Truce. Its goblins mine, trap and trade salvage at the edges, ride wurghs on the southern roads and make crude powder for the fire-pots they throw in tunnels; its under-roads are the one way through the range that nobody else knows in full.",
+      "divergence": [
+        {
+          "id": "the_under_roads_sold",
+          "what": "In the war the king sells the under-roads to the highest bidder: the hosts of the south, the West or the crown.",
+          "consequence": "A hidden road through the Great Wall of Aenor opens to whoever pays, and the Lamp Truce ends the day the dwarves find the buyer in their mountain.",
+          "beat": "B23"
+        },
+        {
+          "id": "the_warrens_cleared",
+          "what": "The Guard and the dwarves clear the caves before the war.",
+          "consequence": "The goblins scatter into the Forests of Darkhere, the under-roads close, and two Concord realms bleed for a victory nobody else notices.",
+          "beat": "B18"
+        }
+      ]
+    },
+    {
+      "name": "Olodor",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The gnomes of the Deodolor Hills say their eldest holt was dug under an old tree north of the Stone Forest before the War of Men reached the hills, and that its first village-king was crowned by the richest gnomes of the holt with a pot of gold. Men have never found that holt and do not know its name; the year given is the gnomes' own boast, repeated by the one Parim scholar who claims to have heard it.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Village-Kings of Tovodor",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "Every holt has one king, crowned by its gold-crowned, the richest gnomes; the king of Tovodor is the eldest of them, and the holts meet under him only when they are found. The village-king of Tovodor in 4A 1748 is Pebbo.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Quarries Come Close",
+          "year": 1180,
+          "date": "1A 1180",
+          "summary": "The Stendorler quarries that cut the grey stone for the lake bridges reach within a hundred paces of a holt; the holt's gnomes leave a pot of gold on the quarry ledge, and the quarrymen move their cutting east and prosper.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Holts Unfound",
+          "year": 4308,
+          "date": "3A 500",
+          "summary": "The Order searches the hills for hidden folk and never finds the holts; the gnomes say the chiromaws were more trouble than the Necromancer.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Mason Under the Bridge",
+          "year": 6456,
+          "date": "4A 1388",
+          "summary": "A Parim mason repairing a bridge pier finds a gnome door in the Stendorler stone and leaves it shut; his family prospers for three generations, and the masons' guild still tells apprentices to knock before they cut.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Tovodor, the king's holt, is the holt of the eldest village-king, dug into the Deodolor Hills where the old trees of the Stone Forest hide its doors and the quarries cannot reach it.",
+      "today": "Olodor in 4A 1748 is some 12,000 gnomes in hidden holts under their village-kings, within a day's walk of Parim, and almost nobody in Parim knows it. The gnomes mine gold, keep hidden gardens, give luck to anyone who brings them gold freely and ill luck to anyone who takes it, and honour Naisa of the twelve above every other power.",
+      "divergence": [
+        {
+          "id": "the_holts_found",
+          "what": "A lord of Parim finds the holts and takes their gold.",
+          "consequence": "The holts meet under the king of Tovodor for the first time in living memory, and the lord's house, the gnomes swear, will have ill luck for as long as anyone remembers why.",
+          "beat": "B10"
+        },
+        {
+          "id": "gold_brought_freely",
+          "what": "A ruler of Aenor brings the holts gold freely in the year of the war.",
+          "consequence": "The gnomes' luck follows the giver, and the holts offer their tunnels under the Deodolor Hills as a hiding place for whoever the giver chooses.",
+          "beat": "B28"
+        }
+      ]
+    },
+    {
+      "name": "Dunelaeth",
+      "canon": "proposed",
+      "founding": {
+        "year": 1678,
+        "date": "2A 3",
+        "story": "After Edran's campaign in the Ember Lands the elves who had lived on both sides of the range drew back east of the Great Wall of Aenor, and the hill elves of the western woods were called home to Herrodon. One household refused: it would not leave the Kingdom Forests at the foot of Lunhrim, where its dead lay, and it stayed on the wrong side of the mountains when its kin went east. Herrodon still calls them the lost kin of the west.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Eldest of Thamiel",
+          "from": 1678,
+          "fromDate": "2A 3",
+          "notable": "The household of a few hundred houses chooses its Eldest from among themselves, and the Eldest speaks for Dunelaeth to men, to dwarves and to Herrodon. Velaeth is Eldest in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Staying",
+          "year": 1678,
+          "date": "2A 3",
+          "summary": "The household refuses Herrodon's summons home and stays in the Kingdom Forests; the queen of Herrodon writes its name in her hall's book as lost, and the household writes hers in its own as mistaken.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Notch Guides",
+          "year": 4228,
+          "date": "3A 420",
+          "summary": "Under the Order the household guides fugitives of the resistance over the Lunhrim Notch into the Magical Lands on winter nights, and the Order's forts on the Kingson Pass never learn which way they went.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Guides of the Pass Road",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "Under the Accord of the Passes the household becomes the guides of the road to the Kingson Pass, and the forts on both sides pay it in salt and silver.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Envoys of Herrodon",
+          "year": 6680,
+          "date": "4A 1612",
+          "summary": "Herrodon's queen sends envoys to ask the household home a second time; the Eldest feeds them, shows them the graves and sends them back with gifts and no answer.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Herrodon",
+          "nature": "Kin who have argued for an age about who left whom; there is no enmity, only an old reproach on both sides."
+        },
+        {
+          "with": "Kunhrim",
+          "nature": "The clans of the massif above the forest keep the Iron Charter's rule against elves, and the household keeps off their roads."
+        }
+      ],
+      "capitalReason": "Thamiel, the hill, is the household's hall on a rise in the Kingdom Forests above the pass road, near the graves that kept the household in the west, and from it the guides can see every traveller who comes up from the gorge.",
+      "today": "Dunelaeth in 4A 1748 is one elven household of some 5,000 under its Eldest, Velaeth, outside the Concord, living in the Kingdom Forests and guiding travellers on the road to the Kingson Pass. It is the only elven realm on the Middle Lands side of the range, and the Kindred Song is sung there in an old western form the eastern elves find quaint.",
+      "divergence": [
+        {
+          "id": "the_lost_kin_return",
+          "what": "The household answers Herrodon at last and goes east over the pass.",
+          "consequence": "The Kingdom Forests are left without guides, and the elves of the Magical Lands gain a household that knows every way men use through the mountains.",
+          "beat": "B21"
+        },
+        {
+          "id": "guides_for_an_army",
+          "what": "The Eldest guides an army over the Lunhrim Notch in the war, for the heir or against him.",
+          "consequence": "A host comes through a pass that admits only raiders, and the household chooses a side in a war of men for the first time since the Staying.",
+          "beat": "B29"
+        }
+      ]
+    },
+    {
+      "name": "Aenor Forest",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The Baelim say that Graulvoa, the oldest stand of their forest, was already standing when the sea first reached the north coast, and the Selen rangers who live round the forest have no story older than the Baelim's low voices in the wood. The great wet forest between Selen, Konori and the Bloody Forest has never been cut, never had a crown and never let a man build in it; the year is only the rangers' guess at the oldest stand, and the Baelim answer questions about years with silence.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Eldest of Graulvoa",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "The Baelim are named for their stands and their stands for their oldest tree; the Eldest of the oldest stand speaks for the whole forest in its slow moot, and nobody outside has ever heard the moot end. Men call the present Eldest Goarvom.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Burnt Edge",
+          "year": 2795,
+          "date": "2A 1120",
+          "summary": "Redbark raiders set fire to the forest's eastern edge to drive game; the Baelim come out of the wood and pull down the raiders' camp trees, and the Redbark have not lit a fire in the forest since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Cutters Who Did Not Return",
+          "year": 4668,
+          "date": "3A 860",
+          "summary": "The Order sends woodcutters to take the forest's giant conifers for its forts; none of them come back, and the Order does not send more.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Baelim Speak",
+          "year": 6660,
+          "date": "4A 1592",
+          "summary": "Selen rangers on the forest edge hear the Baelim's voices for nine nights running after a great storm brings down part of a stand; the moots send a ranger in with an offering of water, and the voices stop.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Bloody Forest",
+          "nature": "The Redbark hunt at the forest's eastern edge and remember the Burnt Edge; the Baelim remember it too."
+        }
+      ],
+      "capitalReason": "Baeldran, the old tree, is Graulvoa, the oldest stand of the forest, where the Eldest stands; the Baelim did not choose a seat, they grew one, and men named it.",
+      "today": "The Aenor Forest in 4A 1748 is a forest domain without a crown, the largest forest of the Middle Lands and home of some 1,500 Baelim, a slow tree-people unlike the ents of Kilinti, who never share a forest with them. No men live inside it; tzikor flower in its clearings, and Selen's rangers leave water at its edge in dry summers.",
+      "divergence": [
+        {
+          "id": "the_forest_wakes",
+          "what": "An army cuts or burns the forest's edge in the war.",
+          "consequence": "The Baelim come out of the wood as they did against the Redbark, slowly and without mercy, and the army learns why no road has ever been made through the north coast.",
+          "beat": "B28"
+        },
+        {
+          "id": "the_forest_shelters",
+          "what": "The Baelim let the people of the Selen edge shelter under the stands when the dead come from the north.",
+          "consequence": "The largest forest of the Middle Lands becomes a refuge, and the Baelim speak to men in the moot for the first time anyone remembers.",
+          "beat": "B24"
+        }
+      ]
+    },
+    {
+      "name": "Cursed Lands",
+      "canon": "proposed",
+      "founding": {
+        "year": 1,
+        "date": "1A 1",
+        "story": "When Aen's victory ended the War of Men, the Orran-speaking houses that would not kneel to the One Crown withdrew into the grey downs east of the Vale with their cord-mothers, their names knotted on the cords and their tongue. The downs were poor but not yet sour, and the Veiled, as the Vale called them for the hoods their women wore, refused every crown that came after; the land was named the Cursed Lands only after the Black Roots soured it in the Third Age.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Cord-Mothers of Morluma",
+          "from": 1,
+          "fromDate": "1A 1",
+          "notable": "The Veiled are ruled by a council of cord-mothers, each keeping the eldest cord of her line, and descent runs through mothers; the Mother of the Eldest Cord speaks for the council. Izkala, daughter of Pelzen, keeps the eldest cord in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Withdrawal",
+          "year": 1,
+          "date": "1A 1",
+          "summary": "The Orran houses that refuse the One Crown withdraw into the grey downs and the Bloody Forest; the Veiled and the Redbark have counted the same tie as their first since then.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Revolt of the Hoods",
+          "year": 910,
+          "date": "1A 910",
+          "summary": "In the long weakening the Veiled raid the Vale's eastern roads for a generation, and the crown gives up trying to tax the downs.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Souring",
+          "year": 4552,
+          "date": "3A 744",
+          "summary": "The Black Roots reach the grey downs and the Necromancer's attempt to turn the land's magic sours the ground for ever; the Veiled stay, learn to grow roots and mushrooms in the sour earth, and the Vale names the land cursed.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Charters Refused",
+          "year": 5071,
+          "date": "4A 3",
+          "summary": "The cord-mothers refuse the Charters of Parim, as they refused every crown before; Harion lets them alone, since the land is not worth an army.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Grey March",
+          "year": 6378,
+          "date": "4A 1310",
+          "summary": "A Concord host marches into the downs to bring the Veiled under charter and turns back after a summer of poisoned wells and empty villages; no host has tried since.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Aenor",
+          "nature": "The Veiled have rejected the crown since the Peace of the One Crown; the Grey March of 4A 1310 is their proudest tie."
+        }
+      ],
+      "capitalReason": "Morluma is the cord-hall deep in the sour ground where no road reaches, chosen because it is the one place on the downs a Concord host would starve before it arrived.",
+      "today": "The Cursed Lands in 4A 1748 are a council of cord-mothers over some 40,000 Veiled on sour grey badlands, outside the Concord and against it. They speak Orran among themselves, count the years by the ties of the eldest cord, and trade roots and mushrooms at the downs' edge for iron and salt.",
+      "divergence": [
+        {
+          "id": "the_veiled_and_the_heir",
+          "what": "The cord-mothers tie the returned heir's name into the eldest cord.",
+          "consequence": "For the first time since the Withdrawal the Veiled stand with a king of Aen's line, and their knowledge of the sour ground opens a road the dark does not watch.",
+          "beat": "B37"
+        },
+        {
+          "id": "the_veiled_and_the_south",
+          "what": "The cord-mothers open the downs to the hosts of the south against the crown that has never let them be.",
+          "consequence": "The southern host gains a road round the Vale's eastern flank, and the Veiled learn too late what their new friends think of the living.",
+          "beat": "B23"
+        }
+      ]
+    },
+    {
+      "name": "Bloody Forest",
+      "canon": "proposed",
+      "founding": {
+        "year": 1,
+        "date": "1A 1",
+        "story": "The Orran houses that refused the One Crown and went north rather than to the downs took to the great red-oak forest above the Konorar, where the bark bleeds red when it is cut. There the Redbark clans have lived ever since by hunting and dyeing leather, ruled by their cord-mothers in peace and by war-chiefs on raids, and they have never taken a charter from any king.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Clan Moot of Giritren",
+          "from": 1,
+          "fromDate": "1A 1",
+          "notable": "The clans of the Redbark meet at the moot-clearing under the oldest red oak, and the cord-mothers of the clans choose a war-chief for each raid and unmake him when it ends. Tzorek, son of Amaz, is the moot's war-chief in 4A 1748 for a feud that has run three summers.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Withdrawal North",
+          "year": 1,
+          "date": "1A 1",
+          "summary": "The northern Orran houses go into the red-oak forest and tie the first tie of the Redbark cords; their kin the Veiled go into the downs.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Burnt Edge",
+          "year": 2795,
+          "date": "2A 1120",
+          "summary": "Redbark hunters fire the edge of the Aenor Forest to drive game, and the Baelim pull down their camp trees; the clans have not hunted in that forest since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Dead in the Red Oaks",
+          "year": 4408,
+          "date": "3A 600",
+          "summary": "The Order's dead come into the forest and do not come out; the Redbark tell that their cord-trees hold the names of the dead, and that the Necromancer could not raise what was already counted.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Red Winter",
+          "year": 6676,
+          "date": "4A 1608",
+          "summary": "A Redbark raid burns three Selen glade villages, the rangers burn the cord-trees at the forest's rim, and the feud runs until the cord-mothers and the Wardens exchange hostages in the spring.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Selen",
+          "nature": "Raid and counter-raid at the forest edge since the First Age; the Red Winter of 4A 1608 is the feud both sides still name."
+        },
+        {
+          "with": "Aenor Forest",
+          "nature": "The Burnt Edge of 2A 1120 is remembered by the Redbark as a lesson and by the Baelim as a debt."
+        }
+      ],
+      "capitalReason": "Giritren is the moot-clearing under the oldest stand of red oak, where the clans' cord-trees stand and where every Redbark cord was first knotted; the clans live scattered and meet there only for the moot.",
+      "today": "The Bloody Forest in 4A 1748 is a clan moot of some 90,000 Redbark under their cord-mothers, outside the Concord and against it. They hunt red deer and boar, dye leather, smuggle along the Organ Coast Road and raid the Selen edge when the moot's war-chief needs a name.",
+      "divergence": [
+        {
+          "id": "the_redbark_road",
+          "what": "The clans guide raiders or an army along the Organ Coast Road beneath the cliffs at low tide.",
+          "consequence": "A road that admits only single files at low water carries war into the north of the Vale, and the Redbark get the price they ask from whoever pays it.",
+          "beat": "B24"
+        },
+        {
+          "id": "the_redbark_and_the_rangers",
+          "what": "The cord-mothers make peace with Selen's moots when the dead come from the north.",
+          "consequence": "The oldest feud of the Middle Lands ends in the war, and the forest's hunters join the rangers against something that cannot be tied into any cord.",
+          "beat": "B30"
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "Parim",
+      "country": "Aenor",
+      "role": "capital",
+      "size": "great_city",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "The bargemen say the bluff was an Orran ford-town before the War of Men, and that the oldest stones of the lower quays still carry Orran marks; the Stone Forest north of the city, they add, is the wood that heard Aen's last horn and stood still, which is why it creaks in a lake fog.",
+      "economy": "The crown, the Royal Council, the Concord courts, the University of Parim and the Golden Court; grain barges, lake shipping, cloth, glass, books and the sale of offices.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Dolepar",
+      "country": "Aenor",
+      "role": "port",
+      "size": "city",
+      "founded": 520,
+      "foundedDate": "1A 520",
+      "legend": "Lake sailors hold that Dolepar's deep bay was dug by Aen's hand in a single night so that his ships would never wait on the weather, and the shipwrights still cast a nail into the water before every launching.",
+      "economy": "The best deep-water harbour of the lake's south lobe; shipyards, the lake fleet and the grain trade to Safeton.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Silesire",
+      "country": "Aenor",
+      "role": "port",
+      "size": "city",
+      "founded": 310,
+      "foundedDate": "1A 310",
+      "legend": "Where the Great River comes out of the Kingson gorge into the east lobe, the grain-merchants say the river brings everything down from the mountains but news, which always arrives a week late.",
+      "economy": "Grain port for the Vale's east, the range trade from Kingson, corallus-wardens in the reeds.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Kerepael",
+      "country": "Aenor",
+      "role": "fortress",
+      "size": "city",
+      "founded": 1693,
+      "foundedDate": "2A 18",
+      "legend": "Edran built the road fortress where the east road leaves the plain for the gorge, and the garrison still sounds a horn at dusk that, the soldiers say, Edran ordered blown until a king of Aen's line came back to stop it.",
+      "economy": "Garrison town of the east road, wagon yards, the crown's armoury for the eastern dominions.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Grafas",
+      "country": "Aenor",
+      "role": "port",
+      "size": "town",
+      "founded": 700,
+      "foundedDate": "1A 700",
+      "legend": "The grey ford under the Grano hills where giants once waded across the lake shallows with stone on their backs; the townsfolk keep a giant's footprint in the quay paving and charge travellers to stand in it.",
+      "economy": "The west-shore lake port; giant-cut stone from Hirolon, wool and cheese from the Hilofrim herders.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hifeco",
+      "country": "Selen",
+      "role": "capital",
+      "size": "city",
+      "founded": 230,
+      "foundedDate": "1A 230",
+      "legend": "Under the Moot Tree beside the town Edran was crowned while the capital lay in enemy hands, and the rangers say the oak has not dropped a leaf on a moot day since.",
+      "economy": "Moot-house of the Weald, the University of Selen, timber and hunting, the ranger companies' musters.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Deolofson",
+      "country": "Kingson",
+      "role": "capital",
+      "size": "city",
+      "founded": 5071,
+      "foundedDate": "4A 3",
+      "legend": "The town takes its name from the son of Deolof, the first Pass-Lord, who held the gorge alone for a night when the Order's last host came back for its forts; the vale reads his name first at every Reading of Names.",
+      "economy": "The only market inside the range: elven silver, herbs and dragon-scale west, iron, grain and glass east; the pass tolls.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Torunalos",
+      "country": "Hirolon",
+      "role": "capital",
+      "size": "town",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "The High Chief's hall stands above the cairn-fields on the hill from which every crest of the ring can be seen, and the giants say a chief who cannot see the whole ring from his door has no business being chief.",
+      "economy": "The giants' hall, the cairn-keepers, cattle that haul stone, the harvest-share brought up from Tirlan.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Ulmaros",
+      "country": "Hirolon",
+      "role": "port",
+      "size": "village",
+      "founded": 1816,
+      "foundedDate": "2A 141",
+      "legend": "The harbour at the Hilorn mouth was rebuilt after the sea-orcs burned it, under a beacon-cairn the giants raised in a single night; fishermen say the cairn is the only lighthouse in Aoaz that has never needed a fire.",
+      "economy": "The ring's only landing: fish, trade with Aenor Isle across the Inner Sea.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hilofrim",
+      "country": "Hirolon",
+      "role": "market",
+      "size": "town",
+      "founded": 2545,
+      "foundedDate": "2A 870",
+      "legend": "The herders tell that a giant once carried a whole flock over the Grano Saddle in a winter storm and asked only for the bell of the lead ram, which hangs over the market cross to this day.",
+      "economy": "Herders' market at the Grano Saddle; wool, cheese and hides; the House of the First Light that serves the herders.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Tirbur",
+      "country": "Tirlan",
+      "role": "capital",
+      "size": "town",
+      "founded": 612,
+      "foundedDate": "1A 612",
+      "legend": "The small folk say the morning fog that lies over Tirbur's fields is the giants' breath, laid over the valleys at night to keep the soil soft and the strangers out.",
+      "economy": "The moot-place of the three valleys; barley, beans, orchards, honey, beer and a dried smoking herb.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Arrovez",
+      "country": "Konori",
+      "role": "crossing",
+      "size": "city",
+      "founded": 288,
+      "foundedDate": "1A 288",
+      "legend": "At the ford of the Aenar the Hundreds raise their kings on the white felt, and the riders say a king who is set down from the felt must cross the ford on foot and never ride it again.",
+      "economy": "Horse fairs, remounts for the Concord, the king's felt-hall, the ford toll.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Ulrono",
+      "country": "Hunhun",
+      "role": "capital",
+      "size": "town",
+      "founded": 9,
+      "foundedDate": "1A 9",
+      "legend": "The Gathering ground is mostly tents and empties every autumn, and the riders say the stone halls in its middle were built by a Horse-Lord who was tired of losing his hall to the wind.",
+      "economy": "The summer Gathering, the largest horse fair in Aoaz, the horse-barrows of the downs.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hungohon",
+      "country": "Klungori Guard",
+      "role": "fortress",
+      "size": "town",
+      "founded": 5164,
+      "foundedDate": "4A 96",
+      "legend": "On the tower wall hangs the helmet of the warren-boss who broke the Lamp Truce, and the Guard's children are told that it shakes on the nights the goblins dig.",
+      "economy": "The South Pass garrison, the pilgrim escorts and their fees, farming for the sworn company.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hugomon",
+      "country": "Herez",
+      "role": "fortress",
+      "size": "town",
+      "founded": 1687,
+      "foundedDate": "2A 12",
+      "legend": "Hezar built the fort where the southern road enters the Grey Hills, and the march-folk say his towers face south because he was the only man in the Alliance who expected the war to come back.",
+      "economy": "March fort and garrison, sheep and barley of the Grey Hills, the southern road's trade.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Saelori",
+      "country": "Noleksun",
+      "role": "market",
+      "size": "town",
+      "founded": 5108,
+      "foundedDate": "4A 40",
+      "legend": "The Oath of Eight Hearths was sworn at Saelori's fair-ground over eight fires, and the confederacy still lights eight fires on the first night of every fair so that no town can say its hearth was forgotten.",
+      "economy": "The fairs of Saelori, toll-free trade, the confederacy's treasury.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Ollolor",
+      "country": "Kilinti",
+      "role": "holy",
+      "size": "hamlet",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "The moot-grove has no walls and no houses; the edge-folk say that a man who sleeps in it wakes a year older and a word wiser, and so nobody sleeps there.",
+      "economy": "No trade of its own; the Ent-Moot every seventh spring, and the edge-folk's offerings of water.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Lotrenri",
+      "country": "Safeton",
+      "role": "port",
+      "size": "city",
+      "founded": 205,
+      "foundedDate": "1A 205",
+      "legend": "Where the lake water meets the sea at the Safen mouth, the ship-houses say a drop of the Great Lake reaches every coast of Aoaz, and their captains pour a cup of lake water into the sea on every outward voyage.",
+      "economy": "Warehouses, grain shipping, the pilgrim fleet south, shipbuilding.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hordorton",
+      "country": "Freshon",
+      "role": "market",
+      "size": "city",
+      "founded": 160,
+      "foundedDate": "1A 160",
+      "legend": "The warm spring of Hordorton rose, the Bowl-Bearers say, where Sulethe set down her bowl to rest on the road, and they still break a bowl on the spring-house threshold when a fever leaves the town.",
+      "economy": "Spring-houses and hospitals, drovers' inns, the crossing of the lake road and the south road.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Horlomon",
+      "country": "Pazoma",
+      "role": "market",
+      "size": "city",
+      "founded": 410,
+      "foundedDate": "1A 410",
+      "legend": "The guild-hall bell was the first thing cast in Horlomon, before the guild-hall had a roof, and the bell-founders say the town grew up round the sound of it.",
+      "economy": "Bells, glass, cloth, paper, books and ships; the guild library.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Borrak",
+      "country": "Orohaf",
+      "role": "port",
+      "size": "city",
+      "founded": 133,
+      "foundedDate": "1A 133",
+      "legend": "The queens are chosen in the tide-chamber at the harbour's mouth at the turn of the tide, and the isle's grandmothers say a queen chosen on a falling tide will rule a short time and a hard one.",
+      "economy": "The isle's fleet, the shipwrights who build with Verde's timber, fishing, the tide-chambers.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Deoreh",
+      "country": "Fotan",
+      "role": "port",
+      "size": "town",
+      "founded": 4912,
+      "foundedDate": "3A 1104",
+      "legend": "The toll-chain at Deoreh has been broken three times in four ages, and each time the strait-folk melted the broken links into the chain's new anchor, which is why they say the chain grows heavier every century.",
+      "economy": "The strait toll, toll-boats, ferries and Leren timber.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hrakkerm",
+      "country": "Kunhrim",
+      "role": "fortress",
+      "size": "town",
+      "founded": 300,
+      "foundedDate": "1A 300",
+      "legend": "The iron fort at the foot of the Western Gate is where the clans weigh their iron before it goes down to Kingson, and the dwarves say a man who argues with the scales will be told the weight of his own head.",
+      "economy": "The hold's outer hall and market; iron, gold and gems; the Iron Charter's weighing-house; black powder for the crown.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Glimzig",
+      "country": "Burrikkrit",
+      "role": "capital",
+      "size": "town",
+      "founded": 3846,
+      "foundedDate": "3A 38",
+      "legend": "The throne-cave's lamp has never gone out since the first warband lit it, and the goblins say a warren lives as long as its lamp burns, which is why the king's lamp has the best guards in the mountain.",
+      "economy": "Mining, trapping, salvage and the sale of whatever falls into the tunnels; fire-pots and crude powder.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Tovodor",
+      "country": "Olodor",
+      "role": "capital",
+      "size": "hamlet",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "Nobody in Parim has ever seen Tovodor, but the masons' guild tells apprentices that a gnome door in the Stendorler stone leads there, and that the luck of the man who leaves it shut lasts three generations.",
+      "economy": "Gold mining, hidden gardens, and the luck the gnomes give for gold freely brought.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Thamiel",
+      "country": "Dunelaeth",
+      "role": "capital",
+      "size": "village",
+      "founded": 1678,
+      "foundedDate": "2A 3",
+      "legend": "The household's hall stands above the graves that kept it in the west, and the elves say that every traveller they guide over the pass road is shown the graves first, so that he knows why the guides stayed.",
+      "economy": "Guiding on the road to the Kingson Pass, paid in salt and silver by the forts; forest crafts.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Baeldran",
+      "country": "Aenor Forest",
+      "role": "holy",
+      "size": "hamlet",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "Graulvoa, the oldest stand, is where the Eldest stands, and the Selen rangers say the moss under it is warm in winter and that the low voices of the stand can be heard there on still nights.",
+      "economy": "None; the rangers leave water at the forest edge in dry summers.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Morluma",
+      "country": "Cursed Lands",
+      "role": "capital",
+      "size": "village",
+      "founded": 2,
+      "foundedDate": "1A 2",
+      "legend": "The cord-hall stands where the first cord-mothers knotted the names of the Withdrawal, and the Veiled say that whoever cuts a tie in the eldest cord loses his name in every cord in the downs.",
+      "economy": "Roots and mushrooms of the sour ground, cord-weaving, trade at the downs' edge for iron and salt.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Giritren",
+      "country": "Bloody Forest",
+      "role": "capital",
+      "size": "town",
+      "founded": 2,
+      "foundedDate": "1A 2",
+      "legend": "The oldest stand of red oak bleeds red when it is cut, and the Redbark say it bled for the first time on the day the clans came into the forest, as a welcome or a warning, nobody agrees which.",
+      "economy": "Hunting, leather dyed with red-oak bark, smuggling on the Organ Coast Road.",
+      "canon": "proposed"
+    }
+  ],
+  "figures": [
+    {
+      "name": "Harion of Selen",
+      "country": "Aenor",
+      "role": "First king of the restored crown",
+      "born": 5022,
+      "bornDate": "3A 1214",
+      "died": 5106,
+      "diedDate": "4A 38",
+      "biography": "A Warden's son of the Weald and of a collateral branch of Aen's line, Harion spent his youth in the War of Unbinding and held the lake port beneath the Parim bluff for Selen's companies. Crowned at Parim in 4A 1, he rebuilt the roads and granaries, gave the dominions the Charters of Parim and chartered the Houses of the First Light because they had kept the Vale fed; he is called the Restorer in every chronicle.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hezar of Hugomon",
+      "country": "Herez",
+      "role": "First Marcher-Lord of Herez",
+      "born": 1641,
+      "bornDate": "1A 1641",
+      "died": 1715,
+      "diedDate": "2A 40",
+      "biography": "A lake-house captain who brought his company home alive from the Ember Lands campaign, Hezar was given the new march across the Grey Hills by Edran in 2A 12 and built its first towers facing south. The march-folk remember him as the only man in the Alliance who expected the war to come back.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Ostvar of Deoreh",
+      "country": "Fotan",
+      "role": "Founder of the toll-lordship of Fotan",
+      "born": 4880,
+      "bornDate": "3A 1072",
+      "died": 4939,
+      "diedDate": "3A 1131",
+      "biography": "A Leren sea-captain who married into the Aenoran ferry-house at the strait's narrowest crossing, Ostvar stretched the first toll-chain across the landing at Deoreh and made the Order's tribute ships pay to pass. The Order burned his tower twice; he rebuilt it twice, and his house has held the strait ever since.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Deolof",
+      "country": "Kingson",
+      "role": "First Pass-Lord of Kingson",
+      "born": 5034,
+      "bornDate": "3A 1226",
+      "died": 5099,
+      "diedDate": "4A 31",
+      "biography": "A head of the watch-families who opened the gorge forts to the Unbinding's companies in 3A 1244, Deolof became the first Pass-Lord under the Pass Charter of 4A 3 and had the forts' names read at the gorge every year. His son's night alone in the gorge gave the vale's town its name.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Klungor",
+      "country": "Klungori Guard",
+      "role": "First Captain of the Klungori Guard",
+      "born": 5120,
+      "bornDate": "4A 52",
+      "died": 5199,
+      "diedDate": "4A 131",
+      "biography": "Grandson of a captain of the Unbinding's last company, Klungor took the western foot of the South Pass for land instead of pay with two hundred sworn men and founded the company that still bears his name; he swore the Lamp Truce for it in 4A 96.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Saelor of Dalvis",
+      "country": "Noleksun",
+      "role": "First Chief Speaker of the Eight Towns",
+      "born": 5799,
+      "bornDate": "4A 731",
+      "died": 5870,
+      "diedDate": "4A 802",
+      "biography": "A toll-master of Dalvis who ended the two-summer toll war of the south-eastern roads by persuading the eight towns to swear one confederacy at Saelori in 4A 774, Saelor laid down the rule that no family holds the Chief Speaker's office twice running.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Tamric Bellaren",
+      "country": "Pazoma",
+      "role": "Master of the bell-founders in the Bell Riot",
+      "born": 6639,
+      "bornDate": "4A 1571",
+      "died": 6708,
+      "diedDate": "4A 1640",
+      "biography": "Master of Horlomon's bell-founders when the crown doubled the tax on bells, Tamric rang every bell in the guild-city for three days and nights in 4A 1610 until the Royal Council rescinded it; the guild-hall bell still rings his name on the riot's anniversary.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hallec of the Gate",
+      "country": "Kingson",
+      "role": "Pass-Lord of Kingson in the Toll of Silver",
+      "born": 6709,
+      "bornDate": "4A 1641",
+      "died": 6770,
+      "diedDate": "4A 1702",
+      "biography": "The Pass-Lord who doubled the toll on elven silver in 4A 1689 and so earned the vale a winter of elven silence, Hallec signed the Kingson Reckoning in 4A 1690 that halved it again; the vale remembers him as clever, the elves as greedy.",
+      "canon": "proposed"
+    }
+  ],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "id": "peace_of_the_one_crown",
+      "name": "The Peace of the One Crown",
+      "realms": [
+        "Aenor"
+      ],
+      "summary": "No lord of Aenor may make war on another without the crown's judgement; breaking the Peace is the first meaning of rebellion in Aenoran law, and the Concord courts still cite it in every border quarrel.",
+      "canon": "proposed"
+    },
+    {
+      "id": "charter_seats",
+      "name": "The twenty-six charter-seats",
+      "realms": [
+        "Aenor",
+        "Selen",
+        "Konori",
+        "Hunhun",
+        "Kingson",
+        "Klungori Guard",
+        "Herez",
+        "Noleksun",
+        "Kilinti",
+        "Safeton",
+        "Freshon",
+        "Pazoma",
+        "Orohaf",
+        "Kunhrim"
+      ],
+      "summary": "The Charters of Parim gave each dominion seats in the Concord Council in proportion to the levies it owed the common defence, twenty-six in all, and a dominion that joins a neighbour keeps the neighbour's seat. In 4A 1748 Selen and Noleksun hold three each; Konori, Hunhun, Kingson, Herez, Kilinti, Safeton, Freshon, Pazoma and Orohaf two each; the Klungori Guard and Kunhrim one each.",
+      "canon": "established"
+    },
+    {
+      "id": "quiet_law",
+      "name": "The Quiet Law",
+      "realms": [
+        "Selen"
+      ],
+      "summary": "No ranger draws a bow on another ranger, no standing tree is felled without the moot's leave, and every stranger is given one night's shelter before he is asked his business.",
+      "canon": "proposed"
+    },
+    {
+      "id": "reading_of_names",
+      "name": "The Reading of Names",
+      "realms": [
+        "Kingson",
+        "Klungori Guard"
+      ],
+      "summary": "Every year at the pass forts the names of those who held the passes against the Order are read aloud, and every watch-family's child is presented at the reading in the year it is born.",
+      "canon": "proposed"
+    },
+    {
+      "id": "old_promise",
+      "name": "The Old Promise and the harvest-share",
+      "realms": [
+        "Hirolon",
+        "Tirlan"
+      ],
+      "summary": "The small folk carry a share of every harvest up to the giants' halls, and no stranger enters the Hilorn valleys without a giant's leave; the giants say the promise is theirs to keep and not a god's.",
+      "canon": "proposed"
+    },
+    {
+      "id": "cairn_count",
+      "name": "The cairn count",
+      "realms": [
+        "Hirolon"
+      ],
+      "summary": "A giant leaves one stone on a cairn for each winter of life, and a dispute between clans is judged by which party can name the older cairn; no giant is ever asked how many stones are in his own.",
+      "canon": "proposed"
+    },
+    {
+      "id": "iron_charter",
+      "name": "The Iron Charter",
+      "realms": [
+        "Kunhrim",
+        "Aenor"
+      ],
+      "summary": "The hold sells iron to the crown and keeps every elf off its roads, and since 4A 1612 its black powder, made by an art learned from the western hold of Hrennost, goes to the crown and to nobody else.",
+      "canon": "proposed"
+    },
+    {
+      "id": "lamp_truce",
+      "name": "The Lamp Truce",
+      "realms": [
+        "Burrikkrit",
+        "Kunhrim",
+        "Klungori Guard"
+      ],
+      "summary": "Sworn over a lit lamp in 4A 96: the goblins keep the caves, the dwarves the galleries, and nobody crosses into the other's dark; the lamp is relit at the Hungohon tower whenever the truce is renewed.",
+      "canon": "proposed"
+    },
+    {
+      "id": "tide_oath",
+      "name": "The Tide-Oath",
+      "realms": [
+        "Orohaf"
+      ],
+      "summary": "The queen is chosen from the daughters of the five Isle Houses by their eldest women, inheritance runs through daughters, and every house gives its dead to the tide by the same rite.",
+      "canon": "proposed"
+    },
+    {
+      "id": "felt_raising",
+      "name": "The raising on the felt",
+      "realms": [
+        "Konori"
+      ],
+      "summary": "A King of Konori is lifted on a white felt by the heads of the Hundreds at the ford of Arrovez, and a king who loses their trust is set down on it.",
+      "canon": "proposed"
+    },
+    {
+      "id": "mother_cords",
+      "name": "The cords of the mothers",
+      "realms": [
+        "Cursed Lands",
+        "Bloody Forest"
+      ],
+      "summary": "Among the Veiled and the Redbark descent runs through mothers, names are knotted on the mother's cord at birth, and a stolen name is a cut tie; the years are counted by the ties of the eldest cord.",
+      "canon": "proposed"
+    },
+    {
+      "id": "golden_charters",
+      "name": "The Golden Charters",
+      "realms": [
+        "Freshon",
+        "Pazoma",
+        "Aenor"
+      ],
+      "summary": "Privileges sold by the Golden King: freedom from royal tolls and a town court of its own, bought by Freshon in 4A 1731 and Pazoma in 4A 1734 at prices that left both in the Golden Court's debt.",
+      "canon": "proposed"
+    }
+  ]
+}

@@ -1,0 +1,1037 @@
+{
+  "version": 1,
+  "region": "magical_lands",
+  "overview": "East of the Great Wall of Aenor, on the same landmass as the Middle Lands, lie the Magical Lands: the snow ridges of the Magic Mountains, the Herrodon rim against the Kusmeel, the largest and oldest forest in Aoaz, a belt of giant fungi along the long rift sea, and Dragon Mountain, from which the dragons come. The elves here were never conquered, not by Volgan's corrupted kin in the First Age and not by Elzon in the Third, and they sent no army to save the men of Aenor after Edran's folly in the Ember Lands. In 4A 1748 they live in seven small realms scattered where their histories put them: the elected houses of the Magical Forest, a hill queen on the northern rim, a federation of lake groves bound to Lerendor, pass-wardens in the southern crags, the elder houses of the Long Shore, the loremasters of the Archive and a few thousand keepers of the dragon roosts. Men live here too, in the refugees' vale of Teste, the mixed port at the Rift Narrows and the pilgrim valleys of the Worshipdom, and the mycids keep the fungal belt to themselves. The years in this data are the continuous count from Aen's victory that every regional history shares: a First Age year is itself, a Second Age year adds 1,675, a Third Age year adds 3,808 (taking the proposed Third Age of 1,260 years) and a Fourth Age year adds 5,068, so that 4A 1748 is year 6,816; a realm or place older than the numbered years carries 0, and every dated entry also gives its date as the world writes it, in the form 4A 1748. Everything not marked established is a proposal under the owner's decision L1.",
+  "ages": [
+    {
+      "id": "age_of_kingdoms",
+      "name": "The Age of Kingdoms",
+      "from": 0,
+      "to": 0,
+      "fromDate": "before 1A",
+      "toDate": "before 1A",
+      "summary": "Before Aen the elves already held the Magical Lands and the dragons already nested on Dragon Mountain, and the elves alone could ask them for help. The rift-coast elves traded with men of the East across the rift for longer than any chronicle, and the hill elves lived on both sides of the range; no people of men had yet settled east of it.",
+      "canon": "proposed"
+    },
+    {
+      "id": "first_age",
+      "name": "The First Age",
+      "from": 1,
+      "to": 1675,
+      "fromDate": "1A 1",
+      "toDate": "1A 1675",
+      "summary": "To Aen's kingdom the elves were courteous strangers beyond the range. When Volgan came, corrupted elves and dragons fought in his armies, the pass-wardens of Nolorim swore to hold the heights above Mirolon, and the elves of the Magical Forest joined Edran's Grand Alliance under their war-speaker; many of them died afterwards in the Ember Lands campaign they had warned against.",
+      "canon": "proposed"
+    },
+    {
+      "id": "second_age",
+      "name": "The Second Age",
+      "from": 1676,
+      "to": 3808,
+      "fromDate": "2A 1",
+      "toDate": "2A 2133",
+      "summary": "The age of the elves' distrust: the hill houses of the west were called home over the range, the Archive was founded to keep the names of the fallen, and healers still crossed to help men while the realms refused every summons to war. In 2A 2121 the Refusal was voted, and when Elzon took Aenor no elven army came.",
+      "canon": "proposed"
+    },
+    {
+      "id": "third_age",
+      "name": "The Third Age",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "The Order never conquered the Magical Lands. The elves held its hosts at the passes, sheltered the Vale's refugees and let some of them settle the Teste Vale, cut down their own northern wood to sever the Black Roots, and held their magical places through the War of Unbinding without reforming the Grand Alliance; the length of 1,260 years is proposed.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Magical Forest",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The council elves say the Living Forest was sung before it grew, and that their houses met beneath its oldest Singing Grove to listen before any of them thought to speak; they keep many stories of how their kind began and hold none of them to be fact. No people of men remembers a time when the forest was not theirs, and it is the oldest realm in Aoaz that has never been conquered, not by Volgan's corrupted kin and not by the Great Necromancer.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The First Speakers of the Houses",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "The houses of the Magical Forest vote, keep a book of precedents and choose a First Speaker, who may hold the office for as long as the houses trust her; no house has a right to it. Lusiel of the house of Velakorin is First Speaker in 4A 1748, and Sirael, the war-speaker of the Grand Alliance, was of the same house.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The War-Speaker at Dardan",
+          "year": 1675,
+          "date": "1A 1675",
+          "summary": "The houses choose Sirael war-speaker for the Grand Alliance, wary of the human crown but warier of Volgan; she fights at Dardan beside the host of King Lorien, and her name is the first in the forest's book of the fallen.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Ember Lands Losses",
+          "year": 1675,
+          "date": "1A 1675",
+          "summary": "The forest's companies follow Edran into the Ember Lands against Sirael's warning, and many of them do not come back; the book of precedents records the campaign as the reason the houses will not again send an army at a king's request.",
+          "canon": "established"
+        },
+        {
+          "name": "The Refusal",
+          "year": 3796,
+          "date": "2A 2121",
+          "summary": "When the crown of Aenor summons the elven kingdoms against Elzon's war, the houses vote to send no army, remembering the Ember Lands; healers and individual travellers still go west, and the Refusal is written into the book as a precedent every realm of the Kindred keeps.",
+          "canon": "established"
+        },
+        {
+          "name": "The Fallen Forest",
+          "year": 4610,
+          "date": "3A 802",
+          "summary": "When the Black Roots reach the northern wood, the elves cut the trees themselves to sever the Necromancer's anchors in the ground; the felled wood still lies where it fell, and nobody has lived in the Fallen Forest since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Accord of the Passes",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "The houses agree with the restored crown to keep the eastern forts of the Kingson Pass while men keep the western, and the tolls are taken at Kingson.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Pilgrim Valleys",
+          "year": 6592,
+          "date": "4A 1524",
+          "summary": "The houses grant the three Zilin valleys south of the forest to the hermitage of the Deliverer as pilgrim ground, on condition that no pilgrim cuts a living tree; the grant is renewed every seventh year.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Long Winter",
+          "year": 6757,
+          "date": "4A 1689",
+          "summary": "When Kingson doubles the toll on elven silver, the houses close the eastern fort of the Kingson Pass for a winter; the Kingson Reckoning of 4A 1690 halves the toll again and the fort reopens.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Shore Debate",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "In the Elder Moot the houses of Lccimio propose to set the Refusal aside in return for a treaty of peace with the eastern courts; the First Speaker's houses refuse, and the shore remembers it.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Kingson",
+          "nature": "Partners at the Kingson Pass and quarrellers over its tolls since the Long Winter of 4A 1689."
+        },
+        {
+          "with": "Kunhrim",
+          "nature": "The delving-clans of the range keep elves off their roads under the Iron Charter, and the houses do not ask to use them."
+        },
+        {
+          "with": "Lccimio",
+          "nature": "Kin of the Kindred divided by the Question of the Refusal since the Shore Debate of 4A 1702."
+        }
+      ],
+      "capitalReason": "Lyrion grew round the oldest Singing Grove of the Living Forest, where the houses first met to listen; a council that keeps a book of precedents meets where the first precedent was set.",
+      "today": "The Magical Forest in 4A 1748 is an elected council of houses under First Speaker Lusiel Velakorin, some 180,000 elves with a few mycid families on the Elwen, the largest and oldest realm of the elves and the keeper of the Refusal. It is at peace with everyone, can call an Elder Moot of the Kindred, and with the other elven realms can ask the dragons of Dragon Mountain for help that no crown of men can command.",
+      "divergence": [
+        {
+          "id": "the_refusal_set_aside",
+          "what": "The houses vote to set the Refusal aside and march when the dark comes west.",
+          "consequence": "An elven host fights beside men for the first time since the Ember Lands, the Kindred divides over the vote, and the book of precedents gains its hardest page.",
+          "beat": "B21"
+        },
+        {
+          "id": "the_dragon_for_the_heir",
+          "what": "The houses refuse to entrust a dragon to the heir who comes east looking for help.",
+          "consequence": "He returns to the Middle Lands on foot, late, and without the wizard and his servant beside him; the war's turn waits on whoever can reach him.",
+          "beat": "B17"
+        },
+        {
+          "id": "the_woods_hidden",
+          "what": "The houses close the passes and hide the woods for the length of the war.",
+          "consequence": "The Magical Lands keep out of the war of men entirely, the eastern host finds the forest's edges empty, and Aenor fights alone.",
+          "beat": "B21"
+        }
+      ]
+    },
+    {
+      "name": "Herrodon",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The hill elves of the northern rim keep a hall on the south slope of the Herrodon Mountains whose first queen, they say, was acclaimed there by the houses of the hills before the sea had a name; the hall's book begins with her and no year. Herrodon has always been a queenship of the hall, never of blood alone, and the hill elves were once spread on both sides of the Great Wall of Aenor until the Second Age called them home.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Queens of the Hall of Verozo",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "A queen is acclaimed in her hall by the hall-keepers of the hill houses and reigns until she lays the hall-key down; daughters of queens have been acclaimed and passed over in roughly equal number. Herrowyn is queen in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Boundary Groves",
+          "year": 744,
+          "date": "1A 744",
+          "summary": "A flood moves the Andos Water's channel, and the Boundary Groves that both realms tended now stand on Andos Enda's bank; Herrodon's queen will not give up her houses' rites there, and the oldest feud of the Kindred begins.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Summons Home",
+          "year": 1678,
+          "date": "2A 3",
+          "summary": "After the Ember Lands campaign the queen calls the hill houses of the western woods home over the range; one household refuses and stays in the Kingdom Forests, and the queen writes its name in her hall's book as lost.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Vale Under the Rim",
+          "year": 3958,
+          "date": "3A 150",
+          "summary": "Refugees from the Vale who have come over the Kingson Pass settle the empty Teste Vale under the rim, and the queen takes them under her protection on condition that they feed her hall; Teste has kept the bargain since.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Envoys to the West",
+          "year": 6680,
+          "date": "4A 1612",
+          "summary": "Queen Herrowyn's mother sends envoys to the lost household in the Kingdom Forests to ask it home a second time; they come back with gifts and no answer, and the queen's hall still keeps a seat empty for its Eldest.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Andos Enda",
+          "nature": "The Boundary Groves feud since 1A 744: never fought with arms, always fought with rites, embassies and silence."
+        },
+        {
+          "with": "Dunelaeth",
+          "nature": "The lost kin of the west, whom the queens have asked home twice and will ask again."
+        }
+      ],
+      "capitalReason": "Verozo stands on the lower slope of the Herrodon Mountains above the Teste Vale, where the hall can see the vale that feeds it and the rim that shelters it, and where the first queen was acclaimed.",
+      "today": "Herrodon in 4A 1748 is a hill queenship of some 55,000 elves under Queen Herrowyn, with the men of the Teste Vale under its protection. It keeps the Boundary Groves feud with Andos Enda alive by ceremony, remembers the lost kin of the west, and its queen has said she would set the Refusal aside if the dragons were ever threatened.",
+      "divergence": [
+        {
+          "id": "the_queen_marches",
+          "what": "The queen sets the Refusal aside when the eastern host threatens the dragons' mountain.",
+          "consequence": "The hill elves march before the Magical Forest votes, the Kindred must follow or disown them, and the Boundary Groves feud is forgotten in a season.",
+          "beat": "B21"
+        },
+        {
+          "id": "the_groves_reconciled",
+          "what": "Herrodon and Andos Enda settle the Boundary Groves before the war.",
+          "consequence": "The two oldest rivals of the Kindred stand together, and the lake groves bring Lerendor's letters to a queen who can answer them.",
+          "beat": "B19"
+        }
+      ]
+    },
+    {
+      "name": "Andos Enda",
+      "canon": "proposed",
+      "founding": {
+        "year": 480,
+        "date": "1A 480",
+        "story": "The lake elves of the Andos Water name their houses after the waters they live on and move the name when they move, so for most of their history there was no realm, only groves. In the year the Aenoran chroniclers give, the groves of the Andos lakes swore the Weir Compact to share the water and judge their quarrels at a Water-Court, and the federation took its name from the water that bound it.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of the Water-Court",
+          "from": 480,
+          "fromDate": "1A 480",
+          "notable": "The groves choose a Speaker to sit over the Water-Court and speak for the federation abroad; the Speaker takes the name of the largest lake for the length of office. Andosiel is Speaker in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Weir Compact",
+          "year": 480,
+          "date": "1A 480",
+          "summary": "The lake groves swear to share the weirs and the boats of the Andos Water and to bring every quarrel to the Water-Court at Enliras.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Boundary Groves",
+          "year": 744,
+          "date": "1A 744",
+          "summary": "A flood moves the Andos Water's channel and leaves the Boundary Groves on the federation's bank; the groves claim them, Herrodon will not give up its rites there, and the feud begins.",
+          "canon": "proposed"
+        },
+        {
+          "name": "Sent On at Dawn",
+          "year": 3958,
+          "date": "3A 150",
+          "summary": "Families fleeing the Vale come over the Kingson Pass to the lakes; the groves shelter them for a night and send them on at dawn, as the lake elves send every guest, and some of them settle the empty Teste Vale.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Harbour Accord of Enliras",
+          "year": 6761,
+          "date": "4A 1693",
+          "summary": "After a century of letters between Enliras and Sonargur, the federation grants Leren ships harbour on the Andos Water but declines the Leren Compact itself, for the groves still remember the Elven Refusal and will not bind themselves to a crown of men.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Herrodon",
+          "nature": "The Boundary Groves feud since 1A 744, kept alive by ceremony rather than war."
+        }
+      ],
+      "capitalReason": "Enliras is the water-garden on the largest lake of the Andos Water, where the Water-Court sits because every grove can reach it by boat in a day.",
+      "today": "Andos Enda in 4A 1748 is a federation of lake groves of some 50,000 elves under Speaker Andosiel, courted by Lerendor, whose Leren Compact it has so far declined, and bound to Herrodon by an old quarrel. Its boats carry the letters between Sonargur and the elven realms, and its Water-Court judges weirs, boats and the Boundary Groves.",
+      "divergence": [
+        {
+          "id": "the_compact_called",
+          "what": "If Lerendor wins the federation into the Leren Compact, Sonargur can call on it when Lerendor leaves the Treaty of the Narrow Strait.",
+          "consequence": "The lake elves must choose between a crown of men and the Refusal, and the Kindred learns whether a compact of letters weighs more than a book of precedents.",
+          "beat": "B19"
+        },
+        {
+          "id": "the_lakes_shelter",
+          "what": "The groves shelter the refugees of the eastern invasion for longer than one night.",
+          "consequence": "The lake elves break their own oldest custom, the Andos Water fills with strangers, and the federation becomes the Magical Lands' refuge.",
+          "beat": "B21"
+        }
+      ]
+    },
+    {
+      "name": "Nolorim",
+      "canon": "proposed",
+      "founding": {
+        "year": 1150,
+        "date": "1A 1150",
+        "story": "When Volgan fell on Mirolon, the elven families of the southern crags saw his fires from the Nolorim East Pass above the Lake of Mirolon and swore, each family to one post, that nothing of his would come up through the heights into the Magical Lands. They kept the oath, and the families who swore it have kept their posts ever since as the Nolorim wardenship.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Pass-Wardens of the Posts",
+          "from": 1150,
+          "fromDate": "1A 1150",
+          "notable": "The post-captains of the warden families elect a Pass-Warden, who holds the office until a vigil is broken on his watch; no Pass-Warden has ever been unmade that way. Nolwe is Pass-Warden in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Oath of the Posts",
+          "year": 1150,
+          "date": "1A 1150",
+          "summary": "As Mirolon falls to Volgan, the families of the crags swear to hold the Nolorim passes post by post, and the first Pass-Warden lights the watch-fire on the East Pass.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Heights Held",
+          "year": 4108,
+          "date": "3A 300",
+          "summary": "The Order's hosts try the Nolorim West Pass from the Herez road three times in a century and never cross it; the wardens leave the cairns of the Order's dead on the pass road as a warning.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The South Pass Tower",
+          "year": 5164,
+          "date": "4A 96",
+          "summary": "Under the Accord of the Passes the wardens take the eastern tower of the South Pass, facing the Klungori Guard's tower across the saddle.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Pilgrim Road",
+          "year": 6629,
+          "date": "4A 1561",
+          "summary": "The wardens let the Deliverer's pilgrims cross the South Pass to the Zilin Hills unarmed and in daylight, and count every one of them.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Puvulan",
+          "nature": "The wardenship was sworn against the realm beyond the south, and its post-captains still watch the Lake of Mirolon every night."
+        }
+      ],
+      "capitalReason": "Ennaton, the wardens' hall, stands on the West Pass above the Herez road, at the post the Order tried hardest to take, because the Pass-Warden keeps his hall where the vigil is most likely to break.",
+      "today": "Nolorim in 4A 1748 is a pass-wardenship of some 15,000 elves under Pass-Warden Nolwe, holding the Nolorim Heights and the eastern tower of the South Pass. Its families count every pilgrim, merchant and stranger who crosses, and its watch on the Lake of Mirolon is the only one in the Magical Lands that never stopped.",
+      "divergence": [
+        {
+          "id": "the_wardens_warn",
+          "what": "The wardens see the fires of the south in time and send their count to Mirolon and to Herez.",
+          "consequence": "Mirolon has a season's warning and Herez an extra garrison, and the hosts of the south find every pass above the lake held.",
+          "beat": "B22"
+        },
+        {
+          "id": "the_vigil_broken",
+          "what": "A post falls in the war and the Pass-Warden is unmade for the first time.",
+          "consequence": "The heights open to the south, the wardens elect a new Pass-Warden in the field, and the Magical Lands lose the one watch they relied on.",
+          "beat": "B23"
+        }
+      ]
+    },
+    {
+      "name": "Lccimio",
+      "canon": "proposed",
+      "founding": {
+        "year": 1975,
+        "date": "2A 300",
+        "story": "The rift-coast elves of the northern shore had traded with men of the East for longer than any chronicle, and their names had long carried foreign sounds; in the plague centuries, when eastern ships brought fever as well as silver, the elder houses of the shore met at Hidirim and bound themselves under one quay-book, so that a ship turned away from one harbour could not be taken in at the next. The Long Shore has kept the quay-book and its council of elder houses ever since.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Elder Houses of the Long Shore",
+          "from": 1975,
+          "fromDate": "2A 300",
+          "notable": "The heads of the elder houses sit as the council and choose an Elder to keep the quay-book; the office passes among the houses of the orchards and the houses of the quays in turn. Lusmio is Elder in 4A 1748.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Quay-Book",
+          "year": 1975,
+          "date": "2A 300",
+          "summary": "The elder houses bind the shore's harbours under one law of ships, tolls and quarantine, and the quay-book becomes the oldest written law on the rift.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Port at the Narrows",
+          "year": 5208,
+          "date": "4A 140",
+          "summary": "The houses of the rift coast grant a charter to the Alerhic quay-houses at the Rift Narrows, and Luv-zhise becomes the crossing to the East under elven law.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Orchards Planted",
+          "year": 5678,
+          "date": "4A 610",
+          "summary": "The houses plant the orchards of the northern shore in the fields the Necromancer's age left empty, and Lccimio's fruit and wine reach Parim by the Kingson Pass for the first time.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Shore Debate",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "In the Elder Moot the houses propose to set the Refusal aside in return for peace with the eastern courts; the Magical Forest refuses, and the shore has grumbled about it since.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Magical Forest",
+          "nature": "Divided over the Question of the Refusal since the Shore Debate of 4A 1702."
+        }
+      ],
+      "capitalReason": "Hidirim is the best harbour of the northern rift shore, where the elder houses first met to bind the quays, and the quay-book is kept there because it is the harbour every eastern ship tries first.",
+      "today": "Lccimio in 4A 1748 is a council of elder houses of some 60,000 rift-coast elves under Elder Lusmio, holding the northern rift shore from Mushroom Head to the Gorlab Sea with its orchards and quays. Its houses know the eastern courts better than any elves alive, would trade the Refusal for an eastern peace, and lie first in the path of anyone who crosses the rift from the East.",
+      "divergence": [
+        {
+          "id": "the_shore_bargains",
+          "what": "When the eastern host crosses the rift, the elder houses make their own peace with it.",
+          "consequence": "The northern shore is spared and the Kindred divided, the host's road into the Magical Lands lies open, and the Magical Forest must choose between its book and its kin.",
+          "beat": "B21"
+        },
+        {
+          "id": "the_shore_holds",
+          "what": "The houses close the quays and fight at the Rift Narrows with Luv-zhise.",
+          "consequence": "The eastern host is held at the water for a season, and the Long Shore pays for it with its orchards.",
+          "beat": "B21"
+        }
+      ]
+    },
+    {
+      "name": "Eldafaen",
+      "canon": "proposed",
+      "founding": {
+        "year": 1684,
+        "date": "2A 9",
+        "story": "After the Ember Lands campaign a house of loremasters on the southern rift shore gathered the names, letters and songs of the elves who had died in the Alliance's wars, so that no one would ever again ask the elves to march without reading them first. The house became the Archive at the end of the old roads, and it has kept everything the Kindred has written since, and a great deal that others have written about the Kindred.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Archivists of Lenkei",
+          "from": 1684,
+          "fromDate": "2A 9",
+          "notable": "The loremasters choose an Archivist from among themselves; the Archivist keeps the keys of the Archive and may refuse any reader, king or elf.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Book of the Fallen",
+          "year": 1684,
+          "date": "2A 9",
+          "summary": "The loremasters write the first book of the Archive, the names of the elves who fell in the war against Volgan and in the Ember Lands, and lay it at the end of the old roads where every traveller must pass it.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Refusal Recorded",
+          "year": 3796,
+          "date": "2A 2121",
+          "summary": "The Archive writes down the votes of every realm in the Refusal and the reasons each gave, and keeps the record open for any elf who wants to argue with it.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Unfinished Book",
+          "year": 4988,
+          "date": "3A 1180",
+          "summary": "A loremaster stops writing in the middle of a sentence in one of the Archive's books and never finishes it; the loremasters keep the book and will not say who stopped writing or why.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Lenkei, the Archive, stands at the southern end of the rift coast where the old roads stop, so that every road of the Kindred ends at its door.",
+      "today": "Eldafaen in 4A 1748 is the House of the Archive, some 8,000 elves on the southern rift shore and Endelond, keeping the records of the Kindred and refusing readers it does not trust. It lies on the rift and so in the path of any eastern landing, and its loremasters have begun copying the oldest books in case they must carry them away.",
+      "divergence": [
+        {
+          "id": "the_archive_opened",
+          "what": "The Archivist opens the Archive's oldest books to scholars of men.",
+          "consequence": "What the Archive knows of the First Men becomes a matter of argument in Parim and the Lost Cause, years before anyone there is ready for it.",
+          "beat": "B16"
+        },
+        {
+          "id": "the_archive_carried",
+          "what": "The eastern host lands on the southern shore and the loremasters carry the Archive inland.",
+          "consequence": "The books survive the war in the Magical Forest's keeping, and the southern rift shore is left with empty shelves and no defenders.",
+          "beat": "B21"
+        }
+      ]
+    },
+    {
+      "name": "Yavieth",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The dragons of Dragon Mountain roosted on its three spurs before there were elves in the green strip beneath them, the roost-keepers say, and the first keepers were elves who went up to the roosts to listen rather than to command. They have lived under the mountain ever since without a ruler, keeping the roosts and the bond, and no realm of the elves commands a dragon without their word.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Eldest Keepers",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "The fellowship has no ruler; the eldest keeper speaks to the dragons and the rest listen to the eldest. The keepers say a dragon never forgets a name and never says one, and so they keep no list of eldest keepers.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Corrupted Roosts",
+          "year": 1600,
+          "date": "1A 1600",
+          "summary": "Dragons corrupted to Volgan's service fly against the Grand Alliance, and the keepers lose two roosts of the western spur to the corruption; the keepers do not speak of how the spur was made clean again.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Scale Trade",
+          "year": 5188,
+          "date": "4A 120",
+          "summary": "The keepers begin to trade shed dragon-scale at Kingson's market for salt and iron, and the scale becomes the Kingson Pass's most valuable cargo.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Long Winter",
+          "year": 6757,
+          "date": "4A 1689",
+          "summary": "When Kingson doubles its toll on elven goods, the keepers stop the scale trade with the Magical Forest's closing of the eastern fort, and the vale's merchants learn what a winter without dragon-scale costs.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Thoriveniel is the keepers' shelter on the slope of Greenland under the three spurs, close enough to the roosts to hear the dragons and far enough not to be eaten by them.",
+      "today": "Yavieth in 4A 1748 is a fellowship of some 6,000 roost-keepers under Dragon Mountain, without a ruler, keeping the roosts and the bond between the elves and the dragons. It trades dragon-scale at Kingson and grazes dragon-shy goats, which the dragons are allowed to take, on the green slopes beneath the mountain.",
+      "divergence": [
+        {
+          "id": "a_dragon_corrupted",
+          "what": "A dragon is turned from the roosts by a dark power before the war.",
+          "consequence": "The keepers lose the trust of the Kindred, the skies over the Middle Lands become dangerous to everyone, and the bond must be remade or broken.",
+          "beat": "B17"
+        },
+        {
+          "id": "the_keepers_entrust",
+          "what": "The eldest keeper entrusts a dragon to a stranger the elves vouch for.",
+          "consequence": "The heir returns to the Middle Lands by air with the wizard and his servant, as history has it, and the keepers become a party to a war of men.",
+          "beat": "B17"
+        }
+      ]
+    },
+    {
+      "name": "Teste",
+      "canon": "proposed",
+      "founding": {
+        "year": 3958,
+        "date": "3A 150",
+        "story": "In the early Third Age families fleeing the Vale crossed the Kingson Pass and came to the lakes of Andos Enda, where the lake elves sheltered them for a night and sent them on at dawn, as they send every guest. Some of them walked north to the empty Teste Vale under the Herrodon rim, the one fertile valley of the northern Magical Lands, and asked Herrodon's queen for leave to stay; she gave it in return for grain, and Teste has fed her hall since.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Reeves of the Vale",
+          "from": 3958,
+          "fromDate": "3A 150",
+          "notable": "The commune chooses a Reeve every year at the harvest moot; a Reeve may be chosen again, but none has been chosen more than five years running since the first, Halvar, who held it for twenty.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "Sent On at Dawn",
+          "year": 3958,
+          "date": "3A 150",
+          "summary": "The families leave the lake groves at dawn and settle the Teste Vale under Herrodon's protection; the vale's grandmothers say they were sent away at dawn and came home at dusk.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Hungry Year",
+          "year": 4568,
+          "date": "3A 760",
+          "summary": "When the Black Roots blight the Magical Lands' fields, Teste's grain feeds Herrodon and Andos Enda both, and the lake elves send the commune a boat every spring in thanks.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Deliverer's Chapel",
+          "year": 6648,
+          "date": "4A 1580",
+          "summary": "Pilgrims from the Zilin Hills build the vale's first chapel of the Deliverer beside the old hearth-shrine of the twelve, and the commune keeps both.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Testebur stands where the Teste Brook leaves the vale, at the only road out, so that the commune's market can sell its grain to Herrodon's hall and the lake boats without letting either into the fields.",
+      "today": "Teste in 4A 1748 is a valley commune of some 55,000 men under a Reeve chosen at the harvest moot, under Herrodon's protection, speaking an old ranger dialect of Aenoran. It feeds Herrodon and Andos Enda with grain and is the only land of men in the northern Magical Lands.",
+      "divergence": [
+        {
+          "id": "teste_sends_grain_west",
+          "what": "In the war the commune sends its grain west over the Kingson Pass to the Vale it fled.",
+          "consequence": "Herrodon's hall goes short, the queen's protection is tested, and the families of Teste meet the descendants of those who stayed behind.",
+          "beat": "B28"
+        },
+        {
+          "id": "the_stones_come_down",
+          "what": "The living stones of the Lustras Hills come down onto the Teste road in a hard year.",
+          "consequence": "The commune must ask Herrodon for help it has never needed, and the queen must decide what the bargain of 3A 150 obliges her to do.",
+          "beat": "B10"
+        }
+      ]
+    },
+    {
+      "name": "Luv-zhise",
+      "canon": "proposed",
+      "founding": {
+        "year": 5208,
+        "date": "4A 140",
+        "story": "Alerhic boatmen from the eastern shore had run ferries across the Rift Narrows for centuries without leave from anyone, and when the Order fell they asked the elder houses of the rift coast for a charter. The elves granted the quay-houses a strip of the Mushroom coast at the narrowest crossing under the quay-book's law, and the free port of Luv-zhise has lived on the crossing to the East ever since, men, elves and mycid traders together.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Quay-Houses of Hisemrak",
+          "from": 5208,
+          "fromDate": "4A 140",
+          "notable": "The heads of the quay-houses sit as the port's council and choose a Quay-Master each year; the river families with names in -ides and the temple families with names in -os have shared the office for six centuries. Blosian Furanides won the charter and was the first Quay-Master.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Charter of the Narrows",
+          "year": 5208,
+          "date": "4A 140",
+          "summary": "The rift-coast elves grant the Alerhic quay-houses their charter, and Luv-zhise becomes a free port under the quay-book.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Mycid Market",
+          "year": 5456,
+          "date": "4A 388",
+          "summary": "Mycid traders from the Mushroom Forest begin to come to the port's market with fungi, dyes and spore-cloth, and the port learns to trade with people whose speech no one has ever written down.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Spore Summer",
+          "year": 6686,
+          "date": "4A 1618",
+          "summary": "A summer of heavy spore-air closes the Rift Road through the fungal belt for a season and the port's ferries carry everything; the quay-houses double their fares and the Elder of Lccimio halves them again.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Delbiz",
+          "nature": "The ferry trade runs to the Delbiz coast across the Narrows, and the two shores have argued over fares, wrecks and runaway sailors for six centuries."
+        }
+      ],
+      "capitalReason": "Hisemrak, the old quay town, stands on the Mushroom coast at the Rift Narrows, the shortest crossing to the East, where the first ferrymen tied up their boats before anyone gave them leave.",
+      "today": "Luv-zhise in 4A 1748 is a free port of some 80,000, Alerhic quay-folk with rift-coast elves and mycid traders among them, ruled by its quay-houses under the elves' charter. It lives on the crossing to the East, keeps the River Temples' Lake Litany beside the twelve, and will side with whoever holds the rift crossing.",
+      "divergence": [
+        {
+          "id": "the_ferries_sunk",
+          "what": "When the eastern host comes to the Narrows, the quay-houses sink their ferries.",
+          "consequence": "The host must cross the rift elsewhere and later, the port loses its living, and the Magical Lands gain a season.",
+          "beat": "B21"
+        },
+        {
+          "id": "the_ferries_sold",
+          "what": "The quay-houses carry the eastern host across for gold.",
+          "consequence": "The Narrows open on the first day of the invasion, the rift coast falls before the Kindred can gather, and the port becomes the host's harbour.",
+          "beat": "B21"
+        }
+      ]
+    },
+    {
+      "name": "Mushroom Forest",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "date": "before 1A",
+        "story": "The belt of giant fungi along the rift shore has been the mycids' land for as long as the rift-coast elves remember, and the elves have never tried to rule it. Nobody outside the forest knows how the mycids came there, how they decide anything or what they call themselves; the traders of Luv-zhise know only that the mycids come to the forest's edge to trade and that strangers find the spore-air hard to breathe in summer.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The Rings at the Forest Edge",
+          "from": 0,
+          "fromDate": "before 1A",
+          "notable": "The quay-books of Luv-zhise call the gatherings of mycids that meet traders at the forest's edge rings, because they stand in a circle; whether a ring is a ruler, a family or only a market is not known to anyone outside the forest.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Dead Roots Stopped",
+          "year": 4628,
+          "date": "3A 820",
+          "summary": "When the Black Roots reach the rift coast, the fungi of the belt grow over them and the dead roots rot; the rift-coast elves say so, and the mycids have never said anything about it.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The First Mycid Market",
+          "year": 5456,
+          "date": "4A 388",
+          "summary": "Mycid traders come to the market of Luv-zhise with fungi, dyes and spore-cloth, and the quay-books record trade with them for the first time.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Spore Summer",
+          "year": 6686,
+          "date": "4A 1618",
+          "summary": "A summer of heavy spore-air closes the Rift Road through the belt for a season; nobody who tried to cross it came out sooner than a month later.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "No seat of the mycids is recorded, and no trader has been taken to one; the forest's heart, which the traders never see, is held to be where the mycids live because it is where they go when they leave the market.",
+      "today": "The Mushroom Forest in 4A 1748 is the land of some 12,000 mycids along the rift shore, an isolated community that trades through Luv-zhise and keeps its own counsel. It lies on the rift coast and so among the first lands in the path of anyone who crosses from the East.",
+      "divergence": [
+        {
+          "id": "passage_asked",
+          "what": "A realm of the Kindred asks the mycids for passage through the belt in the war, and they grant it.",
+          "consequence": "The Rift Road opens to an elven host or to refugees, and the mycids are drawn into a war of other peoples.",
+          "beat": "B21"
+        },
+        {
+          "id": "the_belt_overrun",
+          "what": "The eastern host lands on the fungal coast and burns its way inland.",
+          "consequence": "The mycids are scattered, the spore-air turns on the host as it turns on every stranger, and the quay-books of Luv-zhise record the mycids' market ending.",
+          "beat": "B21"
+        }
+      ]
+    },
+    {
+      "name": "Worshipdom",
+      "canon": "proposed",
+      "founding": {
+        "year": 6588,
+        "date": "4A 1520",
+        "story": "A hermit of the Deliverer built a hermitage in the central of the three Zilin valleys south of the Magical Forest, among the healing herbs the elves had never cut, and pilgrims began to come to it from the Middle Lands over the South Pass. Within a few years the hermitage was a house, the house a town, and the valleys a small temple-state with almost no army, whose strength is its pilgrims, its couriers and its confessors.",
+        "canon": "proposed"
+      },
+      "dynasties": [
+        {
+          "name": "The High Confessors of Lenlakron",
+          "from": 6592,
+          "fromDate": "4A 1524",
+          "notable": "The temple-state is led by a High Confessor chosen by the abbots of the pilgrim houses, with an Abbot-Steward who runs the valleys; Ilvane is High Confessor in 4A 1748 and Lozan Heron Abbot-Steward.",
+          "canon": "proposed"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hermitage",
+          "year": 6588,
+          "date": "4A 1520",
+          "summary": "A hermitage of the Deliverer is built among the herbs of the central Zilin valley, and the first pilgrims come to it from the lake towns.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Valleys Granted",
+          "year": 6592,
+          "date": "4A 1524",
+          "summary": "The Magical Forest's houses grant the three valleys to the hermitage as pilgrim ground on condition that no pilgrim cuts a living tree, and the first High Confessor is chosen.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Pilgrim Road",
+          "year": 6629,
+          "date": "4A 1561",
+          "summary": "The pilgrim road over the South Pass is opened under escort of the Klungori Guard and the Nolorim wardens, and the Worshipdom pays both their fees without complaint.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Courier Rule",
+          "year": 6670,
+          "date": "4A 1602",
+          "summary": "The pilgrim houses begin carrying letters for any court that asks, at a small fee, and within a generation the Worshipdom's couriers are welcome in every capital of Aoaz.",
+          "canon": "proposed"
+        },
+        {
+          "name": "The Blessing of the League",
+          "year": 6809,
+          "date": "4A 1741",
+          "summary": "The High Confessor blesses the Lost Cause at its founding, and the Golden King gives the valleys a gilded reliquary that the pilgrims are shown on feast days.",
+          "canon": "proposed"
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Lenlakron grew round the hermitage in the central of the three Zilin valleys, where the herbs grow thickest and the pilgrim road from the South Pass comes down; every pilgrim house in the valleys is a day's walk from it.",
+      "today": "The Worshipdom in 4A 1748 is a gentle temple-state of some 150,000 pilgrim-folk in the three Zilin valleys under High Confessor Ilvane, holding little land and almost no army. Its hostels shelter pilgrims of the Deliverer from every land, its couriers carry letters for every court, and its confessors are welcome in Parim, the East and the North alike.",
+      "divergence": [
+        {
+          "id": "the_valleys_annexed",
+          "what": "A neighbour annexes the Zilin valleys before the year of the King's death.",
+          "consequence": "The pilgrim roads close, the temples of Aenor lose their most honoured voice, and the crown's succession must be settled without the valleys' blessing.",
+          "beat": "B02"
+        },
+        {
+          "id": "the_blessing_delayed",
+          "what": "When the temples of Parim proclaim the Deliverer king, the High Confessor waits before giving the valleys' blessing.",
+          "consequence": "The Faithful hold Parim without the Worshipdom's voice, the Thirty Days run long, and the other camps gain time.",
+          "beat": "B09"
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "Lyrion",
+      "country": "Magical Forest",
+      "role": "capital",
+      "size": "city",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "The tree-city grew round the oldest Singing Grove, and the council elves say the grove still sings when the houses vote unanimously, which is why it is so seldom heard.",
+      "economy": "The council of houses, the book of precedents, the Elder Moot; fallen timber, healing herbs and silver from the Magic Mountains.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Verozo",
+      "country": "Herrodon",
+      "role": "capital",
+      "size": "town",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "The queen's hall keeps an empty seat for the Eldest of the lost household of the west, and the hall-keepers dust it every morning so that it will be ready if she ever comes.",
+      "economy": "The hill queen's hall, grain from Teste, the hard ore of the rim, hill herds.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Enliras",
+      "country": "Andos Enda",
+      "role": "capital",
+      "size": "town",
+      "founded": 480,
+      "foundedDate": "1A 480",
+      "legend": "The water-garden of the Water-Court floats half on the largest lake, and the lake elves say that a judgement given there is carried by the water to every grove before the judge has finished speaking.",
+      "economy": "The Water-Court, lake fishing, boats, the letters to Sonargur.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Boundary Groves",
+      "country": "Andos Enda",
+      "role": "holy",
+      "size": "hamlet",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "Both realms tend the groves on the Andos Water, and the lake elves say the trees lean toward Herrodon in the morning and toward Enliras in the evening, so that neither side can claim them by noon.",
+      "economy": "None; rites, embassies and the oldest feud of the Kindred.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Ennaton",
+      "country": "Nolorim",
+      "role": "fortress",
+      "size": "town",
+      "founded": 1150,
+      "foundedDate": "1A 1150",
+      "legend": "The wardens' hall on the West Pass keeps the watch-fire lit since the Oath of the Posts, and the wardens say the fire has gone out only once, and the warden on duty that night is still apologising.",
+      "economy": "The wardenship's hall, pass tolls and the count of pilgrims, hill goats.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hidirim",
+      "country": "Lccimio",
+      "role": "port",
+      "size": "town",
+      "founded": 1975,
+      "foundedDate": "2A 300",
+      "legend": "The quay-book is kept in a chest on the harbour wall, and the shore's sailors say an eastern captain who lies to the harbour-master will find his ship's name already written in it, under the wrong cargo.",
+      "economy": "Quays, orchards, fruit and wine, the eastern trade across the rift.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Lenkei",
+      "country": "Eldafaen",
+      "role": "academy",
+      "size": "town",
+      "founded": 1684,
+      "foundedDate": "2A 9",
+      "legend": "At the Archive where the old roads stop, the loremasters keep a book that ends in the middle of a sentence and will not say who stopped writing; travellers who ask are shown the book and not the page.",
+      "economy": "The Archive's copyists and readers, the rift fishery, gifts of every elven realm.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Thoriveniel",
+      "country": "Yavieth",
+      "role": "shrine",
+      "size": "village",
+      "founded": 0,
+      "foundedDate": "before 1A",
+      "legend": "The keepers' shelter under the three spurs is roofed with shed dragon-scale, and the keepers say a dragon flying over it knows it is welcome by the colour the roof shines back.",
+      "economy": "Dragon-scale traded at Kingson, dragon-shy goats, the roosts.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Testebur",
+      "country": "Teste",
+      "role": "market",
+      "size": "town",
+      "founded": 3958,
+      "foundedDate": "3A 150",
+      "legend": "The vale's grandmothers say their grandmothers' grandmothers were sent away from the lakes at dawn and came home to Testebur at dusk, and the town still shuts its gate at dawn and opens it at dusk on the founding day.",
+      "economy": "Grain for Herrodon and Andos Enda, the harvest moot, the vale's two chapels.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Hisemrak",
+      "country": "Luv-zhise",
+      "role": "capital",
+      "size": "city",
+      "founded": 5208,
+      "foundedDate": "4A 140",
+      "legend": "The first ferrymen tied up their boats at Hisemrak before anyone gave them leave, and the quay-houses still pay the rift-coast elves one rope a year for the right to have done it.",
+      "economy": "The ferries across the Rift Narrows, the mycid market, fungi, dyes and spore-cloth, tolls.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Lenlakron",
+      "country": "Worshipdom",
+      "role": "holy",
+      "size": "town",
+      "founded": 6588,
+      "foundedDate": "4A 1520",
+      "legend": "The pilgrims say the herbs round the first hermitage grew greener in the year it was built, and every pilgrim takes a leaf home pressed in a book of hours.",
+      "economy": "Pilgrim hostels, healing herbs, the couriers' fees, alms.",
+      "canon": "proposed"
+    }
+  ],
+  "figures": [
+    {
+      "name": "Halvar of Teste",
+      "country": "Teste",
+      "role": "First Reeve of the Teste Vale",
+      "born": 3932,
+      "bornDate": "3A 124",
+      "died": 4000,
+      "diedDate": "3A 192",
+      "biography": "One of the refugees the lake elves sent on at dawn, Halvar led the families north to the empty vale under the Herrodon rim, struck the grain bargain with the queen of Herrodon and was Reeve for twenty years; every Reeve since has been forbidden to hold the office as long.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Blosian Furanides",
+      "country": "Luv-zhise",
+      "role": "First Quay-Master of Luv-zhise",
+      "born": 5169,
+      "bornDate": "4A 101",
+      "died": 5236,
+      "diedDate": "4A 168",
+      "biography": "An Alerhic ferry-master of the river families, Blosian asked the elder houses of the rift coast for the charter of the Narrows in 4A 140 and won it by bringing the quay-book's keepers across the rift in his own boat, in a storm, without charging a fare.",
+      "canon": "proposed"
+    }
+  ],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "id": "book_of_precedents",
+      "name": "The book of precedents",
+      "realms": [
+        "Magical Forest"
+      ],
+      "summary": "The council elves decide by the precedents of their book, and every vote, including the Refusal of 2A 2121, becomes a page that a later vote must answer.",
+      "canon": "proposed"
+    },
+    {
+      "id": "the_refusal",
+      "name": "The Refusal",
+      "realms": [
+        "Magical Forest",
+        "Herrodon",
+        "Andos Enda",
+        "Nolorim",
+        "Lccimio",
+        "Eldafaen",
+        "Yavieth"
+      ],
+      "summary": "Elves help elves, not the crowns of men: no elven realm sends an army at a human king's request, though healers and travellers may go where they like.",
+      "canon": "established"
+    },
+    {
+      "id": "sent_on_at_dawn",
+      "name": "Sent on at dawn",
+      "realms": [
+        "Andos Enda",
+        "Teste"
+      ],
+      "summary": "The lake elves shelter every guest for one night and send him on at dawn; the men of Teste keep the founding day by shutting their gate at dawn and opening it at dusk.",
+      "canon": "proposed"
+    },
+    {
+      "id": "quay_book",
+      "name": "The quay-book",
+      "realms": [
+        "Lccimio",
+        "Luv-zhise"
+      ],
+      "summary": "The law of ships, tolls and quarantine of the rift coast since 2A 300: a ship turned away from one harbour may not be taken in at the next.",
+      "canon": "proposed"
+    },
+    {
+      "id": "oath_of_the_posts",
+      "name": "The Oath of the Posts",
+      "realms": [
+        "Nolorim"
+      ],
+      "summary": "Each warden family keeps one post on the heights, and a Pass-Warden on whose watch a vigil is broken is unmade.",
+      "canon": "proposed"
+    },
+    {
+      "id": "the_bond",
+      "name": "The roost-keepers' word",
+      "realms": [
+        "Yavieth",
+        "Magical Forest"
+      ],
+      "summary": "No realm of the Kindred asks a dragon for help without the roost-keepers' word, and the keepers give it only when the eldest keeper has spoken to the dragon.",
+      "canon": "proposed"
+    }
+  ]
+}
