@@ -12,8 +12,10 @@ import { checkModel, FEATURE_ARRAYS, pointInGeometry, loadModel } from './check_
 import * as G from './geo_core.mjs';
 import {
   repairRings, repairNether, repairEdges, repairLakes, repairBiomes, repairRanges, repairPoints, repairSeas, repairRegions,
-  repairRivers, buildOverrides, repairModel, isNameCode, NETHER_MIN_AREA_PX,
+  repairRivers, buildOverrides, repairModel, isNameCode, NETHER_MIN_AREA_PX, DEFAULT_REGISTRATION_PATH, DEFAULT_NAME_TABLE_PATH,
+  DEFAULT_LAYOUT_OVERRIDES_PATH, DEFAULT_SURFACE_OVERRIDES_PATH,
 } from './repair_model.mjs';
+import { readFileSync } from 'node:fs';
 
 const rect = (x0, y0, x1, y1) => ({ type: 'Polygon', coordinates: [[[x0, y0], [x1, y0], [x1, y1], [x0, y1]]] });
 const feature = (id, geometry, extra = {}) => ({ id, name: id.replace(/_/gu, ' '), established: false, source: 'test', kind: 'test', elevation: 1, geometry, ...extra });
@@ -306,11 +308,18 @@ test('rivers: mouths reach water, courses run downhill, a desert river dies in i
 });
 
 // ---------------------------------------------------------------------------------------------------- the whole model
-test('the whole model: only name findings and the Great River gorge remain; the repair is idempotent', { skip: !process.env.ZIN_GEO_FULL && 'set ZIN_GEO_FULL=1 (about two minutes)' }, () => {
+test('the whole model: with the registration and the name table the checker finds nothing; the repair and the overrides are idempotent', { skip: !process.env.ZIN_GEO_FULL && 'set ZIN_GEO_FULL=1 (about two minutes)' }, () => {
   const input = loadModel();
-  const { model } = repairModel(input);
-  const left = checkModel(model).errors.filter(e => !isNameCode(e.code));
-  assert.deepEqual(left.map(e => `${e.code} ${e.id}`), ['RIVER_UPHILL river_great']);
-  assert.equal(JSON.stringify(repairModel(model).model), JSON.stringify(model));
+  const read = p => JSON.parse(readFileSync(p, 'utf8'));
+  const data = { registration: read(DEFAULT_REGISTRATION_PATH), names: read(DEFAULT_NAME_TABLE_PATH) };
+  const { model } = repairModel(input, undefined, data);
+  assert.deepEqual(checkModel(model).errors.map(e => `${e.code} ${e.id}`), []);
+  assert.equal(JSON.stringify(repairModel(model, undefined, data).model), JSON.stringify(model));
+  const layout = read(DEFAULT_LAYOUT_OVERRIDES_PATH);
+  assert.ok(layout.entries.every(e => e.reason && e.region && e.feature), 'every layout override names its region, its feature and why');
+  assert.equal(`${JSON.stringify(buildOverrides(model, layout), null, 1)}\n`, readFileSync(DEFAULT_SURFACE_OVERRIDES_PATH, 'utf8'), 'surface_overrides.json is the repair\'s output');
   assert.equal(JSON.stringify(input), JSON.stringify(loadModel()), 'the input is not changed');
+  // without the data files the gorge still opens and only name findings remain
+  const bare = repairModel(input).model;
+  assert.deepEqual(checkModel(bare).errors.filter(e => !isNameCode(e.code)), []);
 });

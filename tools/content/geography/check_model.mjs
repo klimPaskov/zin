@@ -589,7 +589,8 @@ function checkRegions(model, rep, ctx) {
     [/\b(cold|frozen|snow|ice|winter)\b/iu, r => (r.snowShare ?? 0) >= 0.4 || (r.terrain?.snow ?? 0) >= 0.4 || (r.climate && /arctic|cold|frozen/iu.test(r.climate)), 'a cold name needs a cold climate'],
     [/\b(sun)\b/iu, r => !(r.climate && /arctic|frozen|snow/iu.test(r.climate)), 'a sun name cannot be arctic'],
     [/\b(marsh|fen|swamp|mire)\b/iu, r => (r.terrain?.marsh ?? 0) >= 0.2, 'a marsh name needs at least 20% marsh'],
-    [/\b(isles?|islands?)\b/iu, r => ringsOf(r.geometry).length >= 2, 'an island name needs several islands'],
+    // only a plural claims several islands: "Aenor Isle" is one isle, "the Pupor Isles" are many
+    [/\b(isles|islands)\b/iu, r => ringsOf(r.geometry).length >= 2, 'an island-group name needs several islands'],
   ];
   for (const r of regions) for (const [re, ok, why] of ruleSets) if (re.test(r.name) && !ok(r)) rep.error('REGION_NAME_TERRAIN', r.id, `${r.name}: ${why}`);
 }

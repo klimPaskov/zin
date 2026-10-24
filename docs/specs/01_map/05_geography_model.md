@@ -655,6 +655,54 @@ Seas: open ocean provinces of about 12,000 to 20,000 pixels; narrow straits, the
 
 A map rasteriser (not part of this spec) reads the JSON and writes the height, terrain, river and province inputs for the map rewrite. It never reads the owner's drawings. Site rules in [02_key_sites.md](02_key_sites.md) and the map accuracy table [01_map_accuracy.md](01_map_accuracy.md) resolve against the names here.
 
+### 11.1 The repair pipeline
+
+`aoaz.json` is design data and is never rewritten. A deterministic, idempotent pipeline in `tools/content/geography/` turns it into `tools/content/data/geography/aoaz.repaired.json`, on which the converter-independent checker (`check_model.mjs`) reports zero errors, and into the surface overrides that the drawn-map import (ADR 0067 of the tool repository) applies over the warped drawing.
+Every step is a pure function of its inputs: no clock and no random numbers, and running a step again on its own output writes the same file.
+Three steps read the owner's private working mosaic (`docs/reference/originals/Erdae-working.jpg`) into memory; they write only transforms, scores and polygons of the model's own land and sea, never anything traced from the drawing.
+The repair itself needs no drawing: it applies the data files those steps wrote.
+
+| Step | File | Reads | Writes |
+| --- | --- | --- | --- |
+| Repair | `repair_model.mjs` | `aoaz.json`, the three data files below when present | `aoaz.repaired.json`, `tools/content/geography/surface_overrides.json` |
+| Sheet registration | `sheet_registration.mjs` | the repaired model, the drawing, the drawn label anchors of `docs/name_table.md` | `tools/content/data/geography/sheet_registration.json` |
+| Rename table | `name_table.mjs` | the repaired model, `docs/name_table.md`, the language generator (`tools/content/modules/names.mjs`) | `tools/content/data/geography/name_table.json` |
+| Layout overrides | `layout_overrides.mjs` | the repaired model, the drawing | `tools/content/data/geography/layout_overrides.json` |
+| Tests | `repair_model.test.mjs`, `geography_steps.test.mjs` | synthetic models and rasters (the full-model test with `ZIN_GEO_FULL=1`) | nothing |
+
+The repair runs its rules in this order:
+
+1. **Registration.** Each sheet takes its registered transform and clip box from `sheet_registration.json`; the hand-fitted transform it replaces is kept in `registration.before`.
+2. **Rings and the Nether.** Broken rings are rebuilt; the Nether is laid south of the Ember Lands island.
+3. **Corrections.** Model features that contradict the drawing are fixed: Aenor Isle's region loses its box over the mainland coast (given to the Middle Lands) and Rish and the Tinta Hills move onto the isle; the Dark Lands' region part over the Selen coast goes to the Middle Lands, the Darkness ridge ends on the Dondor arm and the Path of Dark and the Nothingness point move onto the arm.
+4. **Edges.** The four bands where the engine wraps become open sea (R-18); the Lands of the Sun move out of them as one piece with their islands, and other small lands one by one.
+5. **Lakes, terrain areas, ranges, points, seas and regions.** Each is brought onto land or re-partitioned, as the physical rules require.
+6. **Gorge.** Where a river keeps its drawn course through a range, the range opens at the crossing: the Great River leaves the Kingson Vale through a 180-pixel opening in the Gigantic Mountains, and `pass_great_river_gorge` follows the river through it. The rest of the Kingson ring is untouched.
+7. **Rivers.** Every river runs downhill to water or ends in a desert basin.
+8. **Names.** `name_table.json` is applied: each feature takes its new name, keeps the old one as `formerLabel` and is marked `established: false`, with `nameStatus` saying whether an owner decision or a proposal gave the name.
+9. **Metadata and clips.** Areas, bounding boxes and drawing coordinates are refreshed; each sheet gets its `clip` (drawing coordinates) and `order`, the part of the sheet the import reads: the zones of the regions drawn on it, less the cells a smaller sheet of those regions covers, less the land and sea the layout generated.
+
+**Sheet registration.** Each pencil sheet's frame line is cut off its box. For every sheet whose zone agrees below 0.85, translations and scales are searched coarse to fine to maximise the intersection over union of the model's land and the warped drawing's land over the sheet's zone. A sheet placed undistorted is scaled alike on both axes, because the layout placed every region "without rotation or distortion" (`docs/generation/assumptions.md`); a distorted sheet is also searched from undistorted bases, which is how the Magical Lands and Aenor Isle sheets were registered. A rotation is kept only when it gains 0.02 and is then written in the `affine` form the import accepts; none was needed. A fit is refused when the drawn label anchors agree worse with the model, which keeps a fit from sliding onto the wrong coast.
+
+**Rename table.** The sources are, in order: the owner decisions of 24 October 2026 (the Ember Lands, the Kusmeel, no Ocean, no names from other fiction or real myth, no "-waith" names); the reconciled roster and the regional dossiers (their water lists and renamed-label tables); the owner's drawn island labels (confirmed readings only); and, for every remaining placeholder island, a name from the language generator in the island's regional language. Every sea, strait and lake keeps one name, and no two sea names share a meaning or differ only by a plural (R-13).
+
+**Surface overrides.** `buildOverrides` writes, in order: the four open-sea edge bands; the undrawn land (land that no sheet draws: the land the layout generated and land past every paper its region is drawn on); the drawn and new places of lands moved one by one; the Nether; and the layout entries. The layout entries come from `layout_overrides.json`: where the warped drawing and the model disagree, the model wins (lead decision of 24 October 2026), because the model encodes the owner-approved layout of 17 and 18 October 2026. For every region whose import agreement is under 0.85, the step forces the smallest set of disagreeing patches that brings the region to the target; each entry names its region, the model feature it restores and why.
+
+To rebuild everything, from the repository root:
+
+```
+node tools/content/geography/repair_model.mjs tools/content/data/geography/aoaz.repaired.json
+node tools/content/geography/sheet_registration.mjs --out tools/content/data/geography/sheet_registration.json
+node tools/content/geography/name_table.mjs
+node tools/content/geography/repair_model.mjs tools/content/data/geography/aoaz.repaired.json
+node tools/content/geography/layout_overrides.mjs
+node tools/content/geography/repair_model.mjs tools/content/data/geography/aoaz.repaired.json --overrides tools/content/geography/surface_overrides.json --drawing
+node tools/content/geography/check_model.mjs tools/content/data/geography/aoaz.repaired.json
+node --test tools/content/geography/repair_model.test.mjs tools/content/geography/geography_steps.test.mjs
+```
+
+The registration, rename and layout files are fixed points: run again on the model they produced, they write the same bytes. `--drawing` prints the land agreement per region: the input model against the hand-fitted transforms, and the repaired model against the surface the import builds, with and without the overrides. Without the drawing, the repair and name steps still run and apply the data files already written; only the registration, the layout step and the agreement report need the drawing.
+
 ## 12. Acceptance
 
 1. The JSON parses and every feature has `id`, `name`, `established`, `kind`, `elevation` and `geometry`.

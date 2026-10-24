@@ -6,7 +6,10 @@
 // specific sheets of the Dead Lands or Aenor Isle beat the wide East Lands sheet), maps the cell centre back into the
 // drawing (drawing = drawingAnchor + (world - worldAnchor) / scaleWorldPerDrawing) and classifies the pencil colour:
 // blue water (hue 180 to 258 degrees, saturation 0.15 or more) is sea, everything else (snow, paper, greens, browns,
-// greys, lava reds) is land. A 3 x 3 majority filter removes lettering and pencil lines.
+// greys, lava reds) is land. A 3 x 3 majority filter removes lettering and pencil lines. A sheet reads only its paper:
+// its `clipBox` (the drawing box less the pencil frame, from sheet_registration.mjs) when it has one. A sheet with an
+// `affine` transform ([a, b, c, d, e, f]: world x = a dx + b dy + c, world y = d dx + e dy + f) uses it instead of the
+// anchor form.
 //
 //   sheetCover(model, grid)            -> Int16Array of sheet indices (-1 where no sheet covers the cell)
 //   drawingLandBySheet(model, jpg, grid) -> Promise<{ sheets, masks }> (one mask per sheet: 1 land, 0 sea, 255 outside)
@@ -18,24 +21,35 @@ import { cellCentre } from './geo_core.mjs';
 /** The sheets of a model with their world boxes, smallest box first (the priority order where sheets overlap). */
 export function sheetList(model) {
   return Object.entries(model.sheets ?? {}).map(([id, s]) => {
-    const t = (dx, dy) => [s.worldAnchor[0] + (dx - s.drawingAnchor[0]) * s.scaleWorldPerDrawing[0], s.worldAnchor[1] + (dy - s.drawingAnchor[1]) * s.scaleWorldPerDrawing[1]];
-    const a = t(s.drawingBox[0], s.drawingBox[1]), b = t(s.drawingBox[2], s.drawingBox[3]);
-    const box = [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[0], b[0]), Math.max(a[1], b[1])];
+    const b0 = s.drawingBox;
+    const corners = [[b0[0], b0[1]], [b0[2], b0[1]], [b0[2], b0[3]], [b0[0], b0[3]]].map(d => toWorld(s, d));
+    const box = [Math.min(...corners.map(c => c[0])), Math.min(...corners.map(c => c[1])), Math.max(...corners.map(c => c[0])), Math.max(...corners.map(c => c[1]))];
     return { id, s, box, area: (box[2] - box[0]) * (box[3] - box[1]) };
   }).sort((p, q) => p.area - q.area || p.id.localeCompare(q.id));
 }
 /** World point to drawing point through one sheet. */
-export const toDrawing = (s, p) => [s.drawingAnchor[0] + (p[0] - s.worldAnchor[0]) / s.scaleWorldPerDrawing[0], s.drawingAnchor[1] + (p[1] - s.worldAnchor[1]) / s.scaleWorldPerDrawing[1]];
+export function toDrawing(s, p) {
+  if (s.affine) {
+    const [a, b, c, e, f, g] = s.affine, det = a * f - b * e, x = p[0] - c, y = p[1] - g;
+    return [(f * x - b * y) / det, (-e * x + a * y) / det];
+  }
+  return [s.drawingAnchor[0] + (p[0] - s.worldAnchor[0]) / s.scaleWorldPerDrawing[0], s.drawingAnchor[1] + (p[1] - s.worldAnchor[1]) / s.scaleWorldPerDrawing[1]];
+}
 /** Drawing point to world point through one sheet. */
-export const toWorld = (s, d) => [s.worldAnchor[0] + (d[0] - s.drawingAnchor[0]) * s.scaleWorldPerDrawing[0], s.worldAnchor[1] + (d[1] - s.drawingAnchor[1]) * s.scaleWorldPerDrawing[1]];
+export function toWorld(s, d) {
+  if (s.affine) { const [a, b, c, e, f, g] = s.affine; return [a * d[0] + b * d[1] + c, e * d[0] + f * d[1] + g]; }
+  return [s.worldAnchor[0] + (d[0] - s.drawingAnchor[0]) * s.scaleWorldPerDrawing[0], s.worldAnchor[1] + (d[1] - s.drawingAnchor[1]) * s.scaleWorldPerDrawing[1]];
+}
 export const insideBox = (box, d) => d[0] >= box[0] && d[0] <= box[2] && d[1] >= box[1] && d[1] <= box[3];
+/** The part of a sheet's drawing the import reads: its clip box, else its drawing box. */
+export const paperOf = s => s.clipBox ?? s.drawingBox;
 
 export function sheetCover(model, grid) {
   const sheets = sheetList(model);
   const out = new Int16Array(grid.w * grid.h).fill(-1);
   for (let j = 0; j < grid.h; j++) for (let i = 0; i < grid.w; i++) {
     const p = cellCentre(grid, i, j);
-    for (let k = 0; k < sheets.length; k++) if (insideBox(sheets[k].s.drawingBox, toDrawing(sheets[k].s, p))) { out[j * grid.w + i] = k; break; }
+    for (let k = 0; k < sheets.length; k++) if (insideBox(paperOf(sheets[k].s), toDrawing(sheets[k].s, p))) { out[j * grid.w + i] = k; break; }
   }
   return { cover: out, sheets };
 }
@@ -61,7 +75,7 @@ export async function drawingLandBySheet(model, jpgPath, grid) {
   const masks = sheets.map(({ s }) => {
     const raw = new Uint8Array(grid.w * grid.h).fill(255);
     for (let j = 0; j < grid.h; j++) for (let i = 0; i < grid.w; i++) {
-      if (!insideBox(s.drawingBox, toDrawing(s, cellCentre(grid, i, j)))) continue;
+      if (!insideBox(paperOf(s), toDrawing(s, cellCentre(grid, i, j)))) continue;
       let water = 0, n = 0;
       for (const dy of sub) for (const dx of sub) {
         const d = toDrawing(s, cellCentre(grid, i + dx, j + dy));
