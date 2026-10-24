@@ -98,5 +98,18 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-47 | Who performs the lava rite? | the Nether keeps the pits |
 | Q-48 | Does the house of Agon stay a house of the Halls? | yes |
 | Q-49 | The Nether's stance | Shadow |
+| Q-50 | Yeldenne: the capital Simoto (the landing on the Gulf of Minnolomak) lies about 400 px from the Castle of Yeldenne and the valley of Mp'E; a one-state realm cannot hold both. Move the landing below the castle, or the seat to the valley? | kept at the landing site |
+| Q-51 | Lerendor's North joins Sonargur by a corridor through Tolvael, the Heodwa Lands, Hrakbrund or Mustnom; or should it be a separate realm under the same crown? | the corridor (one realm) |
+| Q-52 | Where are the Low-ness Islands and Ferlinon's pine hills of Lerendor? | not placed |
+| Q-53 | Pornivior: beside Mount Argul (the drawing) or below Mount Ergo (the roster)? | beside Mount Argul, as drawn |
+| Q-54 | Ihuy and Soyano share Hol's island in the model: the island goes to Ihuy and Soyano's seat to the northernmost Sun isle. Agree? | as proposed |
+| Q-55 | Olen and Halia on Mirolon's eastern lowland: keep Olen on the mainland, or move it to an isle? | mainland |
+| Q-56 | Hirolon claims the crests of its ring (the Hiloff Rim south stretch and Grano), with Tirlan inside from Tirbur. Accept the ring as Hirolon's fixed land? | yes |
+| Q-57 | Kingson claims the whole Kingson Vale (about 200 by 300 px with the gorge), larger than three states. Keep, or the valley floor only? | the whole vale |
+| Q-58 | Ten wild lands are unowned at start (if the game accepts ownerless states). Keep them unowned, or give each to its neighbour? | unowned |
+| Q-59 | Realm sizes follow stated extents or old-map counts; where stated extents are smaller than the land (the Magical Lands most), realms grow larger than stated. Accept, or state the missing extents? | accept |
+| Q-60 | Wild lands not placed: the Lost Lands, Dragon Mountain's summit, the dune sea, the Plutondo Dunes, the Cursed Square, the Dark Lands' Death Islands. Agree? | agree |
+| Q-61 | Eldafaen: the roster puts it on the southern rift shore; the old seat and the drawn Endelond label lie in the north-east. Which is right? | the roster's southern rift shore |
+| Q-62 | The siteless Triton realms sit on the islands their drawn labels or the old map give them (Seite, the Windy Lands, Santon, Halenor, the Lens, Fineger). Agree? | agree |
 
 Also pending: the Meshy server did not connect in this session (`CONNECT_TIMEOUT`), so 3D model generation waits until it connects.
