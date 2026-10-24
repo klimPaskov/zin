@@ -2,29 +2,37 @@
 
 Working notes of the implementation lead. `docs/specs/PROGRAM.md` is the progress record; this file says what is running and what comes next, so work resumes after an interruption without loss.
 
+## Owner answers
+
+All 25 owner questions were answered on 24 October 2026 (`docs/zin-handoff/OWNER-QUESTIONS.md`, decisions K9 to K27 in `docs/specs/INTEGRATION_DECISIONS.md`). Highlights that drive work: twelve main New Gods for the twelve needs of mortals, lesser New Gods exist, Afrit gets a feast; Edvoid (to be renamed, name proposed by the lead for approval) is Zol's servant in the war; full drawing is the map source; Hirolon sovereign; licensed recordings for all audio; no exact ages of beings anywhere; gunpowder common in some realms; all borrowed and "-waith" names renamed without review; Coniferon and Vinocorne renamed.
+
 ## Running (24 October 2026)
 
 | Work | Who | Writes | Done when |
 | --- | --- | --- | --- |
-| MCP worker | separate session "ZIN MCP worker (HOI4 Agent Tools)", `claude-opus-5-5`, cwd the tool repository | tool repository only; record `docs/plans/zin-requests.md` there | ongoing for the whole project |
-| Bestiary transcription, cards 0 to 32 | subagent | `docs/lore/sources/bestiary_cards_part1.md` | merged into `docs/lore/sources/bestiary_cards.md` by the lead |
-| Bestiary transcription, cards 33 to 66 and the world map | subagent | `docs/lore/sources/bestiary_cards_part2.md` | as above |
-| Vault corrections K2 to K7, retcon rows, open questions | subagent | `docs/lore/vault/` | lead reviews the diff and commits |
+| MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)", `claude-opus-5-5` | tool repository; record `docs/plans/zin-requests.md` on its branch `claude/zin-integration` | ongoing; ADR 0067 (drawn-map import) approved by the lead; ZR-4 web-map reliability campaign (owner directive) |
 | Integration round 3 | subagent | `tools/content/`, `docs/design/stage2/`, `docs/design/validation/`, `docs/plans/zin-art/`; commits on `zin/integration-r3` | `node content/build.mjs` and `npm test` green |
-| Regional dossiers (Cold, West, Triton's, North, Dark, Zol's Mistake, Islands of the South) | subagent | `docs/lore/regions/` | lead reviews |
-| Regional dossiers (Middle Lands, Hirolon, Magical, East, South, Dead Lands, Nether, Sun) | subagent | `docs/lore/regions/` | lead reviews |
+| Regional dossiers, north and west | subagent | `docs/lore/regions/` | lead reviews |
+| Regional dossiers, centre, east and south | subagent | `docs/lore/regions/` | lead reviews |
+| Magic, wizards and knowledge layers | subagent | `docs/lore/references/` | lead reviews |
+| Heraldry system | subagent | `docs/specs/08_art_and_assets/06_heraldry.md`, `tools/content/data/world/heraldry.json` | lead reviews |
+| Owner answers into the vault | subagent | `docs/lore/vault/` | lead reviews and commits |
 
 ## Next, in order
 
-1. Review and commit the vault corrections and the bestiary transcription; merge the two parts; send the owner the follow-up questions (borrowed drawing names, the Edvoid placeholder history, card conflicts).
-2. Review the integration result (full build and suite myself), apply to the mod, run the first Linux check of the integrated build; merge `zin/integration-r3` into `master` and push.
-3. From the dossiers: the roster redesign (peoples, realms, tags, names), written as data before the politics step; Hirolon, the Nether, elven reduction, Middle Lands variety.
-4. Geography model repairs (R-11 defects, seas, the Great Wall range with passes) in `tools/content/data/geography/aoaz.json` with the checker `tools/content/geography/check_model.mjs`; coordinate with the worker on ZR-2.
-5. Move the politics step into `tools/politics/` and migrate its names.
-6. Branding (R-90) from the owner's five files; gfx standard check wired (R-91).
+1. Review the integration result (build and suite myself), register `content/tags.test.mjs` in `tools/package.json`, apply to the mod, first Linux run; merge `zin/integration-r3` into `master` and push.
+2. Pantheon of the twelve main New Gods and the lesser New Gods (R-30), then the god-month calendar (R-31) replacing Deepwinter to Longnight in `tools/content/lib/calendar.mjs`.
+3. Propose Edvoid's new name (Q-10) to the owner.
+4. Roster redesign from the dossiers (peoples, realms, names, tags with `lib/tags.mjs`), then the geography model repair and the converter to the tool's schemas (ADR 0067 section 7), then the import when the worker releases steps 1 and 2.
+5. Specs and content files still carry the old calendar names, the Pale March and Zol's appearance in the war (`docs/specs/00_foundation/01_start_and_calendar.md`, `02_lore/01_start_situation.md`, `02_lore/04_fourth_age_history_for_play.md`, `01_map/05_geography_model.md`, `docs/design/focus/regional_kingson.json` and others): propagate after integration.
+6. Branding (R-90): three refinements generated and accepted (`$ZIN_ART/raw/branding/`); wire them into menu, loading and descriptor thumbnail after integration; record hashes of the owner's originals (sha256 in `docs/zin-handoff/STATE-DELTA.md` area).
+7. Art persistence: the 53 accepted reskin sheets and the branding refinements live only in `$ZIN_ART` (inside the tool repository's `.tmp`); move `ZIN_ART` to a lead-owned folder and copy accepted sources into `art/source/` with provenance synced.
+8. The politics step is rebuilt as `tools/politics/` on the new roster (the v4 prototype in the tool repository's `.tmp` uses an artificial wall barrier, now void).
 
 ## Decisions taken by the lead (not owner canon)
 
 - The 19 October work is preserved on `zin/integration-r3` and reaches `master` only when the build and suite are green.
 - The name exchange leaves game output files alone; they are regenerated by the next build and apply.
 - The owner's copy of the vault in `Downloads` is not edited; the mod's vault is the maintained copy from 24 October 2026.
+- No ZIN tag equals a vanilla tag, so Noris takes NRS, not NOR (Norway).
+- Owner branding originals (sha256): `ZinLogoCut.png` ffd77044...4194, `ColorfulZinLogo.PNG` 6ea5e004...7360, `ZinLogo.png` a290f7da...6ecc, `ZIN.LOGO.BACKGROUND.png` bebd9c97...4042, `ZIN.png` 281ea09f...22d0.
