@@ -31,7 +31,7 @@
   }
  },
  "outputs": {
-  "aoaz.geography.json": "18f1a5d9c7bf12f6bb23235dba2679bbbacf8cb194c7bd059420d07ca39ab93b",
+  "aoaz.geography.json": "7a362b24b3b4a9762179aa000edd3d3235aa031382bef9ac64f8923b01a7798e",
   "aoaz.sheets.json": "a85601870b831641438a68b169a8f229aa9df2e6e0928bdbfab2cc3f66777752",
   "aoaz.annotations.json": "37fa63533909542c60aded957f9fcd758d64f7ba995243634e6699efdeebf43c",
   "aoaz.names.json": "5a6f936adcee9f51c262d09cc24910c2200f3fc265e344fe9b033101503f07d6",
@@ -326,6 +326,14 @@
  "palette": 50,
  "issues": [
   {
+   "id": "range_corogon_hills",
+   "issue": "spine untangled: 2 vertices of a loop dropped"
+  },
+  {
+   "id": "range_adel",
+   "issue": "spine untangled: 3 vertices of a loop dropped"
+  },
+  {
    "id": "river_fandan",
    "issue": "mouth moved 9 px from the shore into the water"
   },
@@ -344,6 +352,10 @@
   {
    "id": "river_grey",
    "issue": "mouth moved 2 px from the shore into the water"
+  },
+  {
+   "id": "river_leren",
+   "issue": "5 via points inside a lake dropped (the river crosses it)"
   },
   {
    "id": "river_great",

@@ -296,6 +296,8 @@ export function convertModel(model, { coast = null, roster = null, design = null
     let c = r.geometry.coordinates.map(pt);
     const closed = c.length > 3 && samePt(c[0], c[c.length - 1]);
     if (closed) c = c.slice(0, -1);
+    // a spine joined from drawn pieces can double back over itself; the resolver warns on a crossing path
+    else { const u = G.untangleLine(c); if (u.length !== c.length) issues.push({ id: r.id, issue: `spine untangled: ${c.length - u.length} vertices of a loop dropped` }); c = u; }
     return { id: r.id, name: r.name, tags: tagsOf(r), ...opt('note', note(r)), path: schemaPath(c), ...(closed ? { closed: true } : {}), halfWidth: Math.min(0.25, r.halfWidth ?? 0.005), peak: IMPORT.peakByClass[r.peakClass ?? r.elevation] ?? 0.75, ...(r.wall ? { profile: 'massif', barrier: 'impassable' } : {}) };
   });
   const passes = model.passes.map(p => {
@@ -322,6 +324,10 @@ export function convertModel(model, { coast = null, roster = null, design = null
       const w = G.nearestCell(CG, end, k => water[k] === 1 && !onLand(G.cellCentre(CG, k % CG.w, Math.floor(k / CG.w))), Math.ceil(IMPORT.mouthReachPx / CG.cell));
       if (w >= 0) { const p = pt(G.cellCentre(CG, w % CG.w, Math.floor(w / CG.w))); issues.push({ id: r.id, issue: `mouth moved ${Math.round(G.distPx(c[c.length - 1], p))} px from the shore into the water` }); c = [...c, p]; }
     }
+    // a river that flows through a lake crosses it: its via points inside the lake are not land to the resolver
+    const inLake = p => model.lakes.some(l => pointInGeometry(p[0], p[1], l.geometry));
+    const through = c.slice(1, -1).filter(inLake).length;
+    if (through) { c = [c[0], ...c.slice(1, -1).filter(p => !inLake(p)), c[c.length - 1]]; issues.push({ id: r.id, issue: `${through} via points inside a lake dropped (the river crosses it)` }); }
     let via = c.slice(1, -1);
     for (let tol = 0.5; via.length > IMPORT.maxVia; tol *= 1.5) via = G.simplifyLine(c, tol).slice(1, -1);
     // a river that ends in a lake names the lake as its mouth (a point inside a lake is not water to the resolver)
