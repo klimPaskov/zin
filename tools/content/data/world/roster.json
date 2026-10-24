@@ -942,7 +942,7 @@
     "siteId": "site_hiloron",
     "why": "Giants' Speech torunal \"throne\" + -os \"seat\"; replaces the working Bedogus."
    },
-   "extent": "The ring's crests, the upper basin, the three Hilorn valleys and the eastern Grano (2 to 3 states).",
+   "extent": "The ring's crests, the upper basin, the eastern Grano (2 to 3 states).",
    "population": 100000,
    "focusTier": "regional",
    "focusTree": "regional_hiloron",
@@ -8168,6 +8168,59 @@
    "source": {
     "dossier": "docs/lore/regions/magical_lands.md",
     "section": "11"
+   }
+  },
+  {
+   "key": "tirlan",
+   "name": "Tirlan",
+   "adjective": "Tirlani",
+   "endonym": null,
+   "formerLabels": [
+    "The Shire (bestiary card 32)"
+   ],
+   "tag": "TIR",
+   "region": "middle_lands",
+   "subRegion": "The three Hilorn valleys inside the ring of stones",
+   "people": "small_folk",
+   "peoples": {
+    "small_folk": 0.97,
+    "giants": 0.03
+   },
+   "culture": "hearth_folk",
+   "cultureSecondary": null,
+   "language": "hearthspeech",
+   "faith": {
+    "id": "hearth_table",
+    "name": "The Table and the Furrow",
+    "pantheon": "twelve",
+    "follows": "the twelve New Gods, favouring Lumae and Aurlan and Vaelei"
+   },
+   "calendar": "twelve",
+   "politicalForm": "moot",
+   "governmentNote": "A moot of households under a Warden of the Fields; a protectorate of Hirolon, whose giants guard the only ways in (owner decision K35).",
+   "overlord": "hirolon",
+   "subjectType": "protectorate",
+   "capital": {
+    "name": "Tirbur",
+    "siteId": null,
+    "why": "The valley moot-place where the Hilorn paths meet, furthest from the Hilorn Gap."
+   },
+   "extent": "The three low valleys of the Hilorn inside Hirolon's ring (1 state).",
+   "population": 45000,
+   "focusTier": "shared",
+   "focusTree": "new",
+   "focusNote": "shares the small folk module with Dobbum: the Old Promise with Hirolon, the harvest, staying out of the world",
+   "mechanics": [
+    "aenor_court_and_succession"
+   ],
+   "storyRole": "The second community of the small folk, the safest farmland in Aoaz; feeds Hirolon and is guarded by it.",
+   "gunpowder": false,
+   "heraldry": "people:small_folk",
+   "heraldryNote": null,
+   "source": {
+    "dossier": "docs/lore/regions/hirolon.md",
+    "section": "11. Roster proposal",
+    "decision": "K35"
    }
   }
  ],
