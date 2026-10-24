@@ -8,7 +8,7 @@ updated: 2026-10-24
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
-> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, a Great Spirit, takes the field instead.
+> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), takes the field instead.
 
 ## Prologue: the peace that followed Elzon
 
@@ -194,7 +194,7 @@ The victory did not end the battle. Zol's most loyal servant came forth.
 
 ## XIII. The servant beneath the black sky
 
-Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. Who that servant is remains open and is not invented here (Q-03 in [[Open Questions]]).
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. That servant is the Great Spirit [[Edvoid]] (name to be replaced, Q-10), made by Zol and feared by all. **Proposed:** the Fading and Aoaz's hostile magic are why Zol sent his servant rather than coming himself; the reason is not established.
 
 **Proposed explanation for the servant's strength:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces let the servant carry an unusual measure of Zol's death-magic onto the field. This cost strength and could not last indefinitely.
 
@@ -261,7 +261,7 @@ Only the First Age's **1,675 years**, the Second Age's **2,133 years**, and the 
 
 In the example Fourth Age, peace is strongest in years 1 to approximately 1,000, Afrit exercises increasingly effective political rule in the middle centuries, and his public seizure of the crown occurs late. The war and Eindil's coronation conclude the age. All detailed dates are editable.
 
-**Eindil and Afrit are approximately the same age, but neither has a fixed numerical age.** The earlier upper limit of 5,000 years was merely a rough estimate and is revoked. Eindil's total age must fit all the ages he spends asleep. Afrit's own survival across the ages depends on magic and corruption. The older claim that Eindil slept 100,000 years is also not active canon.
+**Eindil and Afrit are approximately the same age, but no exact age is stated for either** (see [[Canon Policy#Ages of beings]]). Eindil's life must span all the ages he spends asleep. Afrit's own survival across the ages depends on magic and corruption.
 
 ## Key distinctions and continuity rules
 
@@ -271,7 +271,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Glernaen is a real New God of Power and Wisdom. Horos is a Great Spirit who safeguards Glo, the crystal at his heart.
 - The Castle Yeldenne encounter is in the Cold Lands. Afrit wounds Horos mortally, Eindil wounds Afrit, Afrit flees, and Horos gives Glo and his sword to Eindil before turning to dust.
 - Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol's most loyal servant. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
-- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, a Great Spirit, whose identity is open (corrected 24 October 2026).
+- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10) (corrected 24 October 2026).
 - Volgan is defeated by Eindil with the aid of the New Gods. His incarnation collapses. His final spiritual fate is unresolved.
 - Varner dies in the final war. Golbran spends nearly all his magical strength defending Varner, survives that event, and finally dies giving Eindil his remaining life after Afrit's defeat.
 - Afrit briefly becomes king of an eastern coalition after abandoning Aenor. His title does not mean every eastern kingdom submits to him.
@@ -282,7 +282,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 
 1. Choose the historical public name for Afrit. Aurevan is the working suggestion. Decide whether the earliest worshippers of the Deliverer used that name too.
 2. Decide whether Afrit was Ein's elder or younger son, and why Ein denied him the throne. The proposed betrayal and engineered freezing need approval as specific facts.
-3. Fix the century and location of Eindil's birth and the place where he was enchanted into sleep, without imposing the abandoned 5,000-year estimate.
+3. Fix the location of Eindil's birth and the place where he was enchanted into sleep, without stating an exact age for him.
 4. Choose the full course of the Third Age's 1,200-plus years. A 1,260-year period must feature generations of human resistance and intervals of stability, not one continuous final campaign.
 5. Place the Castle of Yeldenne precisely on the Cold Lands map, and place Dardan and the late battlefields on a more detailed Middle Lands map.
 6. Develop the Gala elven history after Lorien's death and what Varner's death means for the Magical Lands.

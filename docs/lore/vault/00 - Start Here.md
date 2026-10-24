@@ -1,7 +1,7 @@
 ---
 type: index
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # ZIN Lore Vault
@@ -19,7 +19,7 @@ This vault documents the world of **ZIN** and the history, peoples, magic, and p
 
 ## Start with characters and relations
 
-[[Royal Line of Aen]] · [[Ein]] · [[Eindil]] · [[Afrit]] · [[Aurevan the Deliverer]] (proposed public name) · [[Horos]] · [[Glernaen]] · [[Lorien]] · [[Varner]] · [[Golbran]] · [[Alleria of Selen]] · [[Volgan]] · [[Elzon]] · [[Zol]] · [[Roka]]
+[[Royal Line of Aen]] · [[Ein]] · [[Eindil]] · [[Afrit]] · [[Aurevan the Deliverer]] (proposed public name) · [[Horos]] · [[Glernaen]] · [[Lorien]] · [[Varner]] · [[Golbran]] · [[Alleria of Selen]] · [[Volgan]] · [[Elzon]] · [[Zol]] · [[Edvoid]] · [[Roka]]
 
 ## Cosmology and artifacts
 
@@ -43,7 +43,7 @@ Read [[Canon Policy]], [[Fourth Age Canon Register]], [[Third Age Canon Register
 - Second Age: **2,133 years**, fixed and the longest known age.
 - Third Age: **at least 1,200 years**, fixed lower bound, **1,260** proposed.
 - Fourth Age: **more than a millennium**, length open, **1,760** proposed.
-- **Eindil and Afrit are brothers of approximately the same age.** Neither has a confirmed numeric age. The old 100,000-year and 5,000-year estimates are superseded.
+- **Eindil and Afrit are brothers of approximately the same age.** No exact age is stated for either, or for any other being (see [[Canon Policy#Ages of beings]]).
 - The sea between the West Lands and Middle Lands should be significantly wider than shown on the supplied Fourth Age map.
 
 The original [[ZIN Lore Compendium - original snapshot]] remains preserved unchanged. It contains historical statements later superseded by new owner instructions.

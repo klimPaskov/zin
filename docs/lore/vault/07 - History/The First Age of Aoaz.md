@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 period: First Age
 start_year: 1
 end_year: 1675
@@ -119,7 +119,7 @@ Dardan was formerly fertile, with settlements and roads that could supply a huge
 
 **Days 1–3: The lines close.** Volgan brings his central host against the Grand Alliance. Orc and goblin legions attack its forward positions, eastern and southern cavalry seek the open flanks, and corrupted elves break conventional defensive spells. Edran holds the mixed center. Taryn's Western forces defend one approach while Rovek's Dark Lands veterans prevent Volgan's scouts from finding an unguarded passage.
 
-**Days 4–6: The crossings.** Dark dragons set supply depots and temporary defenses aflame. Brunek's dwarven engineers and giants from Hiloron defend the crossings and build replacement passages under fire. Senra's ships deliver food, weapons, and wounded men where inland roads cannot cope with the size of the armies. Thousands die merely keeping the coalition in position long enough to fight.
+**Days 4–6: The crossings.** Dark dragons set supply depots and temporary defenses aflame. Brunek's dwarven engineers and giants from Hirolon defend the crossings and build replacement passages under fire. Senra's ships deliver food, weapons, and wounded men where inland roads cannot cope with the size of the armies. Thousands die merely keeping the coalition in position long enough to fight.
 
 **Days 7–9: The earth opens.** Volgan releases the Damned Spirits into the battle. Creatures and disembodied powers emerge from beneath the hills, bringing down sections of the defensive line. Maerul and other Great Spirits hold the breaches while the dwarves collapse infected tunnels. Some of those spirits remain buried or sealed beneath the later wasteland of Dardan. This stage explains why the place is feared long after the armies have departed.
 
@@ -187,7 +187,7 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 
 1. Precisely when and where Aen first appeared, and how his fatherless magical birth occurred.
 2. Whether *Ainu* means Aen's direct line, all First Men, or a different ancient designation.
-3. The precise date and explanation of Eindil's freezing. His absence must remain consistent with his Fourth Age awakening. **Eindil and his brother Afrit have no established numerical age**, and the prior 100,000-year claim is superseded.
+3. The precise date and explanation of Eindil's freezing. His absence must remain consistent with his Fourth Age awakening. **No exact age is stated for Eindil or his brother Afrit** (see [[Canon Policy#Ages of beings]]).
 4. The names, reigns, and histories of Aenor's intermediate kings.
 5. The details of **Edran**'s lineage, youth and early reign before he assembled the Grand Alliance.
 6. The site of Dardan on the detailed map and the historical battlefield's terrain.

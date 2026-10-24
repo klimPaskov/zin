@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # Elzon
@@ -11,6 +11,8 @@ updated: 2026-10-17
 **Allegiance:** Devoted servant of [[Volgan]]  
 **Principal domain:** [[Volgans Dead Lands|Dead Lands]], later the conquered realm of [[Middle Lands and Aenor|Aenor]]  
 **Historic role:** Defender after Dardan, architect of Volgan's return, victor at the end of the Second Age
+
+**Home on his bestiary card:** Nazerun, the old name of Nezer in the [[Volgans Dead Lands|Dead Lands]] (owner, 24 October 2026).
 
 ## First Age
 

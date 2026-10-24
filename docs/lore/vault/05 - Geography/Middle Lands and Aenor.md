@@ -8,13 +8,15 @@ updated: 2026-10-24
 
 **Aenor, the Middle Kingdom**, was previously called **Rush, the Rush Kingdom**. It is the central great power of Aoaz. Its current map-design capital is **Parim**.
 
-The **Middle Lands**, previously Rush Land, contain the Middle Kingdom's central plains, forests, mountains, and Great Lake. Associated named regions include **Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun**, and **Herez**. **Aenor Isle** (previously Rush Islands) lies off the west coast and contains **Asgard**.
+The **Middle Lands**, previously Rush Land, contain the Middle Kingdom's central plains, forests, mountains, and Great Lake. Associated named regions include **Selen, Kilinti, Kingson, Konori, Hunhun**, and **Herez**, beside the sovereign giant kingdom of **Hirolon** (former label Hiloron), which treats with Aenor (owner, 24 October 2026). **Aenor Isle** (previously Rush Islands) lies off the west coast and contains **Asgard**.
 
-**The Great Wall of Aenor (owner, 24 October 2026):** the Great Wall of Aenor is an enormous **natural mountain range** that separates the Middle Lands from the [[Aoaz and Its Regions|Magical Lands]]. It is not a built wall or fortified line. Its passes, valleys and snowlines decide the routes between the two lands, and fortified passes or watchtowers may stand only where history explains them.
+**The Great Wall of Aenor (owner, 24 October 2026):** the Great Wall of Aenor is an enormous **natural mountain range** that separates the Middle Lands from the [[Aoaz and Its Regions|Magical Lands]]. It is not a built wall or fortified line. Its passes, valleys and snowlines decide the routes between the two lands, and fortified passes or watchtowers may stand only where history explains them. **Dwarves** hold the range, as they hold the great ranges of the West and North Lands (owner, 24 October 2026).
 
-The older original story recognizes dominions including Selen's rangers, Hiloron's giants, Kilinti's ents and forest peoples, and the riders of **Huhun**. The revised map's country system treats Aenor's surrounding Middle Lands regions as **satellites**. Whether each original dominion is constitutionally a satellite or an internal division remains an open implementation/lore detail.
+**Aenor Forest (owner, 24 October 2026):** the largest forest of the Middle Lands. The bestiary cards call it Rush Forest, after Rush, the old name of Aenor. It is home of the walking tree people of Aenor Forest (former card name Coniferon; new name to be chosen), a people separate from the ents. Ents and the walking tree people never share a forest: the ents live in Kilinti. The forest's exact place in the Middle Lands is not yet fixed.
 
-The current working table assigns Aenor **26 satellites**, with listed examples **Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard, Herez**. The **Cursed Lands** and **Bloody Forest** resist its control.
+The older original story recognizes dominions including Selen's rangers, Kilinti's ents and forest peoples, and the riders of **Huhun**. It also counted Hiloron's giants among them, but **Hirolon is a sovereign giant kingdom that treats with Aenor**, not a dominion (owner, 24 October 2026). The revised map's country system treats Aenor's surrounding Middle Lands regions as **satellites**. Whether each original dominion is constitutionally a satellite or an internal division remains an open implementation/lore detail.
+
+The current working table assigns Aenor **26 satellites**, with listed examples **Selen, Kilinti, Kingson, Konori, Hunhun, Asgard, Herez**. The older table also listed Hiloron, but Hirolon is sovereign (owner, 24 October 2026). The **Cursed Lands** and **Bloody Forest** resist its control.
 
 Its ruling [[Golden King]] founded **The Lost Cause**, built a strong army, and misgoverns the realm. [[Afrit]] secretly causes his death and hopes to capture the crown. [[Eindil]] may emerge as a leader in the war that follows.
 

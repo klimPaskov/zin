@@ -1,7 +1,7 @@
 ---
 type: editorial
 status: proposed
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # Proposed characters of the First Age
@@ -24,7 +24,7 @@ The following characters were created as candidate additions on 17 October 2026.
 
 - Do not turn Sirael into a hereditary queen. The Magical Forest elves were previously described as democratic.
 - Do not assert that all of Dondor or the Dark Lands fought for the Grand Alliance.
-- Do not assign the dwarves a home region yet, since that question remains open.
+- The dwarves hold the great ranges of the West and North Lands and the Great Wall range (owner, 24 October 2026); place dwarven characters accordingly.
 - Allied Great Spirits may be bound or shattered, but the established cosmology calls them immortal.
 - Do not turn Ithren's proposed ritual into an act of the Old Gods or Holy Seven.
 

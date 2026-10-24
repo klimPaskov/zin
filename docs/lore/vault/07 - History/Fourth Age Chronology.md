@@ -12,7 +12,7 @@ updated: 2026-10-24
 
 Years are reckoned from the death of [[Elzon]] and the crowning of the first restored king, written **4A** (Fourth Age). 4A 1 is the first year of the restored monarchy. The age ends with Eindil's coronation.
 
-**Calendar.** Aoaz keeps **twelve months, each named after one of the twelve [[New Gods]]** (established, owner, 24 October 2026). The gods' names, and so the month names, are not yet written (Q-01 in [[Open Questions]]), and dates in this vault give the month by number. The earlier proposed farming-year month names are superseded; see [[Names and Retcons]]. **Proposed:** the months' lengths match the old reckoning of Aen's astronomers, and the seasons fall as below.
+**Calendar.** Aoaz keeps **twelve months, each honouring and named after one of the twelve main [[New Gods]]**, who answer the twelve needs of mortals (established, owner, 24 October 2026). Lesser New Gods have no month, and Afrit's public cult adds a feast, not a month. The gods' names, and so the month names, are not yet written, and dates in this vault give the month by number. The earlier proposed farming-year month names are superseded; see [[Names and Retcons]]. **Proposed:** the months' lengths match the old reckoning of Aen's astronomers, and the seasons fall as below.
 
 | No. | Month | Season |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ See [[The Campaign of 4A 1748]] for the world at the start and how the age can u
 | Year | Event |
 | --- | --- |
 | 4A 1 | [[Harion the Restorer (proposed)|Harion of Selen]] is crowned at Parim after Elzon's death. Afrit is acclaimed publicly as the Deliverer, under the proposed name [[Aurevan the Deliverer|Aurevan]]. |
-| 4A 3 | The **Charters of Parim** bind the surviving Middle Lands dominions to the crown as self-governing members of a common defence. They are the origin of the satellites of the Middle Kingdom Concord: Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun and the rest keep their own lords and laws. |
+| 4A 3 | The **Charters of Parim** bind the surviving Middle Lands dominions to the crown as self-governing members of a common defence. They are the origin of the satellites of the Middle Kingdom Concord: Selen, Kilinti, Kingson, Konori, Hunhun and the rest keep their own lords and laws. Hirolon, the sovereign giant kingdom (former label Hiloron), stays outside the Charters and treats with the crown (established, owner, 24 October 2026). |
 | 4A 4 to 60 | Varner's Unbinding lifts the curse from the old grave-fields. The [[Lantern Chain]] dissolves into village healers and wardens. |
 | 4A 11 | The [[Houses of the First Light]] receive royal charters to keep the grain stores, hospitals and birth rolls of the kingdom. |
 | 4A 40 to 120 | Roads, canals and the Great Lake ports are rebuilt. The Second Age's medicine and farming return to every province. |
@@ -103,7 +103,7 @@ The established events below are the **historical path**. In play they are what 
 | 4A 1754 | Eindil warns Aenor and is denounced as an impostor. Alleria of Selen protects him. |
 | 4A 1755 | **The War of the Last Crowns begins.** The Western Crossing, the Leren withdrawal from the Treaty of the Narrow Strait, the eastern invasion of the Magical Lands, Volgan's reconquest of Mirolon and the rising of Zol's dead. |
 | 4A 1756 | Afrit abandons Aenor and is proclaimed King of the East. Western armies take Parim. |
-| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol's most loyal servant, a Great Spirit, takes the field and is forced back; Lorien dies. Zol himself does not appear (corrected 24 October 2026). |
+| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), takes the field and is forced back; Lorien dies. Zol himself does not appear (corrected 24 October 2026). |
 | 4A 1758 | Afrit returns with an eastern host, casts Eindil from the cliff and claims kingship over all Aoaz. |
 | 4A 1759 | The battle in the palace. Afrit dies. Golbran dies saving Eindil. |
 | 4A 1760 | **Eindil is crowned King of Aenor.** The Fourth Age ends. |

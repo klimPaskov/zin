@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Kingdoms Factions and Conflicts
@@ -29,7 +29,11 @@ The event is certain in the story as summarized in the original compendium. The 
 
 ## Independent realms and monsters
 
-Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, orcs, goblins, trolls, ogres, giants and demons under separate rulers. Likewise, the Middle Lands' monster peoples may be independent, hostile, isolated, mercenary, or open to darker influence.
+Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, orcs, goblins, trolls, ogres, giants and demons under separate rulers. Likewise, the Middle Lands' monster peoples may be independent, hostile, isolated, mercenary, or open to darker influence. **Smash**, a troll king, and the **hobgoblin king** rule their own realms only, not every troll or goblin (owner, 24 October 2026).
+
+## Arms
+
+**Established (owner, 24 October 2026):** gunpowder weapons are **common in some realms** of Aoaz. Which realms have them, and since when, is not decided.
 
 ## The artifact conflict
 

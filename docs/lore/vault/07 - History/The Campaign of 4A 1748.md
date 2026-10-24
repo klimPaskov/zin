@@ -29,7 +29,8 @@ Beneath the peace, five pressures are building at once. Each is hidden, dismisse
 - **The Golden Court** (proposed name for the King's party): office-buyers, courtiers and merchant houses who profit from the King's extravagance.
 - **[[The Lost Cause]]**, founded 4A 1741 (proposed date): the King's league against the dark. Its court branch is ceremonial; its frontier companies, rangers and scholars are real (established direction).
 - **[[Afrits Hidden Council]]**: the true government. Chancellor Merovan (proposed) holds the seals of administration. The [[Houses of the First Light]] keep the grain, the hospitals and the rolls (proposed).
-- **The dominions** keep their own lords under the Charters of Parim: Selen's rangers, Kilinti's ents, Hiloron's giants, the riders of Hunhun, Kingson behind the Great Wall, Herez on the southern marches, Asgard on Aenor Isle and the rest (established names, proposed constitution). **Cursed Lands** and **Bloody Forest** reject the crown (established).
+- **The dominions** keep their own lords under the Charters of Parim: Selen's rangers, Kilinti's ents, the riders of Hunhun, Kingson behind the Great Wall, Herez on the southern marches, Asgard on Aenor Isle and the rest (established names, proposed constitution). **Cursed Lands** and **Bloody Forest** reject the crown (established).
+- **Hirolon** (former label Hiloron), the giants' kingdom, is **sovereign**: it is not a chartered dominion and treats with Aenor from outside the Charters (established, owner, 24 October 2026).
 - **The Great Wall of Aenor** is the enormous natural mountain range that runs from the Organ Mountains past Lunhrim and around Kingson, separating the Middle Lands from the Magical Lands (established geography; established as a natural range by the owner, 24 October 2026). Its passes, valleys and snowlines decide the routes between the two lands. A few passes carry watchtowers and customs posts under the Accord of the Passes of 4A 96 (proposed).
 
 ### The Magical Lands
@@ -64,7 +65,7 @@ Between the North Lands and the Middle Lands lie the Dark Lands. **Goldoroth**, 
 
 ### Zol's Mistake
 
-The whole black north and every black island of the Ocean of Zol belong to **Zol**, the Old God of Death (established). The land is almost empty of the living. Its seat is **Furviatlon** (established working seat), but who administers it for Zol is unknown and is **not** invented here. Zol cannot take a body; his servants sustain his presence; his power grows slowly (established). His dead are sustained by his own magic. Only potent magic, such as Glo's, can end them (established).
+The whole black north and every black island of the Ocean of Zol belong to **Zol**, the Old God of Death (established). The land is almost empty of the living. Its seat is **Furviatlon** (established working seat), but who administers it for Zol is unknown and is **not** invented here. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), dwells in Šodolôrō (established, owner, 24 October 2026). Zol cannot take a body; his servants sustain his presence; his power grows slowly (established). His dead are sustained by his own magic. Only potent magic, such as Glo's, can end them (established).
 
 ### The East Lands and the South Lands
 

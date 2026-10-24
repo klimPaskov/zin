@@ -8,7 +8,7 @@ updated: 2026-10-24
 
 **Aoaz** is a continent in the larger fictional ZIN universe and the setting of the ZIN map mod. The map was assembled from **13 hand-drawn regional sheets** and rearranged in October 2026. **Aenor Isle** is treated as a part of the Middle Lands, though it appears separately in the region list below.
 
-The **far west and north** of the Cold Lands, and **far east and south** beyond the East Lands and South Lands desert, extend outside the known map. What lies beyond is not fixed.
+The **far west and north** of the Cold Lands, and **far east and south** beyond the East Lands and South Lands desert, extend outside the known map. What lies beyond is not fixed. **The lands south of the South Lands**, home of devils, demons and other evil beings that live in fire and endless suffering, are known by name only: they lie off the map and are not placed on it (owner, 24 October 2026).
 
 | Current region | Drawn sheet or previous designation | Established geography, sites and peoples |
 | --- | --- | --- |
@@ -17,10 +17,10 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Triton's Islands** | Tritons Islands / Tornado Islands | West of West Lands, arcs around Pupor Ocean. Adel, Pollos, Raerby, Nondondor. |
 | **North Lands** | East-Earth, drawn sheet headed West Earth | North of Middle Lands across narrow strait. Lerendor and Lerenwaith (one crown), Eekedor, Molot, R'en. |
 | **Dark Lands** | Dark Lands | Between Lerendor and Middle Lands across narrow straits. Bordon, Dreson, Dulundur, Troll Forest, Dondor, Goldoroth, Sea of Darkness. |
-| **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Hiloron, Great Lake. See [[Middle Lands and Aenor]]. |
+| **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Great Lake, Aenor Forest, and the sovereign giant kingdom of Hirolon (former label Hiloron). See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |
 | **Magical Lands** | Magical Lands | East of Middle Lands, same landmass, separated from them by the Great Wall of Aenor, a natural mountain range. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
-| **Zol / Zol's Mistake** | Ocean of Edvoid (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Ocean of Zol, largely deserted and roamed by the dead. Contains Šodolôrō. See [[Zols Mistake]]. |
+| **Zol / Zol's Mistake** | Ocean of Edvoid (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Ocean of Zol, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Edvoid]]. See [[Zols Mistake]]. |
 | **East Lands** | South-Earth | Across the rift in the east, reaches off the eastern map. Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Mirrored for mod map. |
 | **South Lands** | Desert of South-Earth | Great desert of East Lands, extends south off the map. Noris Desert and former Sunhot Desert. |
 | **Dead Lands** | Dead Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Dead Lands]]. |

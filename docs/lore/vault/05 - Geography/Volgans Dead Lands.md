@@ -1,7 +1,7 @@
 ---
 type: lore
 status: established
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # Volgans Dead Lands
@@ -11,6 +11,8 @@ updated: 2026-10-17
 The Dead Lands lie **south of the Middle Lands** and are the principal dominion of [[Volgan]], the Great Spirit and main dark lord.
 
 The region includes **Mirolon, Nan, Demon, Dolon, Nezer, and Nether**. In the working great-power table, Volgan's seat is **Nafeher** and his satellites or allies include **Demon, Dolon, and Nezer**, while **Mirolon** opposes him.
+
+**Nazerun** is the old name of **Nezer** (owner, 24 October 2026). Elzon's bestiary card names Nazerun as his home.
 
 Volgan's realm includes grave hosts, Netherborn demons, orcs, ogres, monster clans, and necromantic orders. His authority does not automatically extend to independent Dark Lands factions or northern monsters.
 

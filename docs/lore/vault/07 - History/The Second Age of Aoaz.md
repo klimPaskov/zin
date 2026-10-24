@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 period: Second Age
 aliases:
   - The Dark Age
@@ -263,7 +263,7 @@ The owner established the **order** of major events and the total **2,133-year d
 | Final centuries or generations | Uprisings and corruption throughout Aenor, Elzon's open necromantic campaign, Afrit's ascension |
 | End of the Second Age | Conquest of Aenor, foundation of Elzon's Order, start of the Third Age |
 
-**Dating guardrail:** Eindil's exact age is now **undetermined**, and Afrit is approximately the same age because they are brothers. Previous estimates of 5,000 or 100,000 years are superseded. The First Age lasted **1,675 years** and the Second Age must be longer. The Second Age is now independently fixed at **2,133 years**. The Third Age lasts at least 1,200 years and Eindil's life extends across several ages, but his own birth and imprisonment dates are still unspecified.
+**Dating guardrail:** Eindil's exact age is now **undetermined**, and Afrit is approximately the same age because they are brothers. No exact age is stated for either (see [[Canon Policy#Ages of beings]]). The First Age lasted **1,675 years** and the Second Age must be longer. The Second Age is now independently fixed at **2,133 years**. The Third Age lasts at least 1,200 years and Eindil's life extends across several ages, but his own birth and imprisonment dates are still unspecified.
 
 ## XIV. Open story decisions
 
@@ -284,6 +284,6 @@ The owner established the **order** of major events and the total **2,133-year d
 
 ## XV. Canonical 2,133-year calendar and proposed internal periods
 
-The previous 2,300-year draft is superseded. The Second Age ends in **2A 2133**. A proposed 1,260-year Third Age and a much longer Fourth Age require Eindil's age to remain unfixed if he was born around year 300 of the First Age. The exact birth year and later age lengths remain open.
+The previous 2,300-year draft is superseded. The Second Age ends in **2A 2133**. A proposed 1,260-year Third Age and a much longer Fourth Age require Eindil's age to remain unfixed. His birth year and the later Ages' lengths remain open.
 
 **The 2,133-year length is canon.** Only the phases and the proposed later years remain flexible. See [[Second Age Proposed Timeline]] for the revised working divisions.

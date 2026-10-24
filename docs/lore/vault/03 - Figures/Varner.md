@@ -10,7 +10,7 @@ updated: 2026-10-24
 
 Late in the Fourth Age Varner accompanies [[Eindil]] and Golbran to Aenor, arriving by dragon during the War of the Last Crowns. He shields living armies from Zol's direct death-magic and spends his last strength to open a path of survival. Varner **dies in the final war** when Zol's forces threaten to overwhelm the defenders. His defense is essential to the time gained for Eindil and the New Gods' intervention.
 
-**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian**, a famous wizard of men, is another well-known wizard of the realm; his nature and era are open (Q-09 in [[Open Questions]]).
+**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian** is a living human wizard of the Fourth Age, famous in the Middle Lands and a contemporary of Varner (owner, 24 October 2026).
 
 The exact ritual he uses, whether any writings survive and the nature of his death are opportunities for further development. His order remains Lesser Spirit despite his importance.
 

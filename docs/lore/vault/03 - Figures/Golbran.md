@@ -14,4 +14,6 @@ Golbran plays a decisive part in Afrit's eventual death. He uses magic to remove
 
 The owner also used a variant name **Gorbat** in recounting the final sacrifice and requested another name. **Golbran** is retained consistently for the same already established character rather than introducing a new creature. The name itself can be reconsidered later if desired.
 
+**Gorbatik (owner, 24 October 2026):** Gorbatik, the name on the bestiary card of Varner's helper, **is Golbran**. The card calls him immortal, which means that he does not age; he can still die, as he does in the War of the Last Crowns.
+
 [[Varner]] · [[Eindil]] · [[The Last Battle in the Palace]]

@@ -1,12 +1,12 @@
 ---
 type: lore
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Horos
 
-**Established:** Horos is a **Great Spirit**, lord of [[Castle of Yeldenne and Glo|Castle Yeldenne]] in the **Cold Lands**, and guardian of [[Castle of Yeldenne and Glo|Glo]]. He is an enormous knight who appears in yellow-green armor with unusual branching points or spikes on his helm, glowing blue eyes and a blue magical sword. His original three drawings are preserved in [[Horos Visual References]].
+**Established:** Horos is a **Great Spirit**, lord of [[Castle of Yeldenne and Glo|Castle Yeldenne]] in the **Cold Lands**, and guardian of [[Castle of Yeldenne and Glo|Glo]]. He is an enormous knight who appears in yellow-green armor with unusual branching points or spikes on his helm, glowing blue eyes and a blue magical sword. His original three drawings are preserved in [[Horos Visual References]]. His bestiary card's underground castle is the halls beneath Castle Yeldenne, which receive an original name (owner, 24 October 2026).
 
 The crystal Glo, initially shown as a green jewel before his throne, is in fact **Horos's own heart**. It contains part of the power of **[[Glernaen]]**, a true New God of Power and Wisdom. Horos therefore carries both his Great Spirit strength and an entrusted divine power. He is able to resist the artifact-amplified Afrit far more effectively inside the castle than elsewhere.
 

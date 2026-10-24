@@ -1,7 +1,7 @@
 ---
 type: reference
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Second Age Canon Register
@@ -14,7 +14,7 @@ This note separates decisions supplied by the owner on 17 October 2026 from narr
 | --- | --- |
 | Dating | The Second Age begins after the Great War against Volgan and ends with Elzon's conquest of Aenor. It is **the longest age**. It lasts exactly **2,133 years** and ends in **2A 2133**. |
 | First Age | The First Age lasted **1,675 years** and ended following Dardan and the unsuccessful invasion of the Dead Lands. |
-| Eindil | Eindil's precise age is undetermined. A previous maximum of 5,000 years has been withdrawn, and the 100,000-year freezing duration is superseded. He and Afrit are brothers and roughly contemporaries. Their birth and freezing dates remain open. |
+| Eindil | No exact age is stated for Eindil (see [[Canon Policy#Ages of beings]]); earlier figures are superseded and kept only in [[Names and Retcons]]. He and Afrit are brothers and roughly contemporaries. Their birth and freezing dates remain open. |
 | Early Second Age | Aenor rebuilds amid enormous grief under **King Edran**, who eventually **dies of disease**. Orcs and goblins loyal to Volgan and Elzon continue raids. Dark Lands return to chaos. |
 | Elven military refusal | Elven kingdoms do **not** help Aenor when Elzon invades. Their refusal follows **Edran's costly mistake invading the Dead Lands** after Dardan. |
 | Long recovery and progress | Famine and plagues recur for generations, but farming, food reserves, medicine, disease cures, military technology and infrastructure advance significantly and help future ages. |
@@ -46,7 +46,7 @@ This note separates decisions supplied by the owner on 17 October 2026 from narr
 - **Nether**: the southern Dead Lands domain of the King of Demons and home to demon portal activity.
 - **Abyss**: the Dead Lands location associated with Roka and the Necklace of the Abyss.
 - There is no established claim that the three are identical or linked by ordinary gates.
-- The old source's Ainu and Eindil 100,000-year figures are **superseded**, including the claim that the Ainu line had vanished 100,000 years before the Fourth Age.
+- The old source's figures for the Ainu's disappearance and Eindil's age are **superseded** and recorded only in [[Names and Retcons]].
 
 [[The Second Age of Aoaz]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Ages of Aoaz]]
 

@@ -2,7 +2,7 @@
 
 **Current through the end of the Fourth Age, 18 October 2026**
 
-**Corrections of 24 October 2026:** the passages repeated from corrected notes carry the owner's corrections (Zol does not appear in the War of the Last Crowns, the Great Wall of Aenor is a natural mountain range, twelve New Gods, devils, Bastian, Edvoid). The individual notes and [[Names and Retcons]] are authoritative where this reading edition lags behind them.
+**Corrections of 24 October 2026:** the passages repeated from corrected notes carry the owner's corrections and answers (Zol does not appear in the War of the Last Crowns and his most loyal servant Edvoid appears instead, the Great Wall of Aenor is a natural mountain range, twelve main New Gods and the lesser New Gods, no exact ages of beings, devils and the King of Demons, Bastian, Hirolon, Golbran as Gorbatik, Aenor Forest, dwarves and goblins, Nazerun, borrowed names). The individual notes and [[Names and Retcons]] are authoritative where this reading edition lags behind them.
 
 This is a consolidated reading edition of the Obsidian vault. Earlier historical drafts, the unchanged original source, the Fourth Age map and Horos's three original drawings remain inside the ZIP archive. The historical accounts label proposed names, detailed chronology, dialogue and mechanisms separately from the creator's confirmed canon.
 
@@ -42,7 +42,7 @@ This vault documents the world of **ZIN** and the history, peoples, magic, and p
 
 ## Start with characters and relations
 
-[[Royal Line of Aen]] · [[Ein]] · [[Eindil]] · [[Afrit]] · [[Aurevan the Deliverer]] (proposed public name) · [[Horos]] · [[Glernaen]] · [[Lorien]] · [[Varner]] · [[Golbran]] · [[Alleria of Selen]] · [[Volgan]] · [[Elzon]] · [[Zol]] · [[Roka]]
+[[Royal Line of Aen]] · [[Ein]] · [[Eindil]] · [[Afrit]] · [[Aurevan the Deliverer]] (proposed public name) · [[Horos]] · [[Glernaen]] · [[Lorien]] · [[Varner]] · [[Golbran]] · [[Alleria of Selen]] · [[Volgan]] · [[Elzon]] · [[Zol]] · [[Edvoid]] · [[Roka]]
 
 ## Cosmology and artifacts
 
@@ -66,7 +66,7 @@ Read [[Canon Policy]], [[Fourth Age Canon Register]], [[Third Age Canon Register
 - Second Age: **2,133 years**, fixed and the longest known age.
 - Third Age: **at least 1,200 years**, fixed lower bound, **1,260** proposed.
 - Fourth Age: **more than a millennium**, length open, **1,760** proposed.
-- **Eindil and Afrit are brothers of approximately the same age.** Neither has a confirmed numeric age. The old 100,000-year and 5,000-year estimates are superseded.
+- **Eindil and Afrit are brothers of approximately the same age.** No exact age is stated for either, or for any other being (see [[Canon Policy#Ages of beings]]).
 - The sea between the West Lands and Middle Lands should be significantly wider than shown on the supplied Fourth Age map.
 
 The original [[ZIN Lore Compendium - original snapshot]] remains preserved unchanged. It contains historical statements later superseded by new owner instructions.
@@ -97,15 +97,19 @@ The original [[ZIN Lore Compendium - original snapshot]] remains preserved uncha
 - Second Age: **2,133 years** and the longest historical age; ends when Elzon captures Aenor.
 - Third Age: **at least 1,200 years**, with **1,260** the current proposed precise duration.
 - Fourth Age: lasts **more than a thousand years**; **1,760** is a proposed precise duration.
-- Eindil's age has **no current numeric limit**. The older 100,000-year freezing and intermediate 5,000-year maximum are no longer active. Afrit and Eindil are brothers born approximately in the same period.
+- Eindil's age is **not stated as a number**, and neither is Afrit's (see [[#Ages of beings]]). Earlier figures survive only in [[Names and Retcons]] as history of the notes. Afrit and Eindil are brothers born approximately in the same period.
 
 ## Metaphysical distinctions
 
-- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. He does not take a body or appear in the War of the Last Crowns; the being who appears there is his most loyal servant, a Great Spirit, whose identity is open (corrected 24 October 2026).
+- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. He does not take a body or appear in the War of the Last Crowns; the being who appears there is his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), a being of his own made by Zol (corrected 24 October 2026). Why Zol himself stays away from the war is not established: the Fading and Aoaz's magic are only a proposed explanation.
 - Great Spirit, Lesser Spirit, New God, Old God and Great Folk are distinct ranks or orders. Sovereign Spirit is not a separate rank.
 - [[Afrit]] is publicly worshipped as a New God and effectively attains godlike power. Whether he belongs to the original divinity created by the Holy Seven remains undetermined.
 - [[Elzon]] is a Great Spirit and Great Necromancer. He permanently dies after the Third Age. [[Volgan]] loses his manifested body in the Fourth Age, but the complete destruction of his essence has not yet been established.
 - A strong mortal or spirit can be mistaken for a god by worshippers.
+
+## Ages of beings
+
+**No exact age of any being is stated anywhere in the vault** (owner, 24 October 2026). The [[Old Gods]] are millions of years old, so [[Zol]] is very old, and Great Spirits can also be very old, but no god, spirit, person or creature receives a figure for its age or life span. The durations of the Ages, such as the First Age's 1,675 years, are not ages of beings and remain. Superseded figures are kept only in [[Names and Retcons]] as history of the notes.
 
 ## Records and references
 
@@ -119,15 +123,25 @@ The original compendium is unchanged in the Sources folder, and the Fourth Age m
 
 ## Corrections, 24 October 2026
 
-The world creator's corrections of 24 October 2026 are recorded in [[Names and Retcons#Corrections of 24 October 2026]] and their open points in [[Open Questions]].
+The world creator's corrections and answers of 24 October 2026 are recorded in [[Names and Retcons#Corrections of 24 October 2026]] and their remaining open points in [[Open Questions]].
 
 - The main setting is **Aoaz**. **Erdae** names only a small neighbouring continent.
 - The **Great Wall of Aenor** is an enormous natural mountain range between the Middle Lands and the Magical Lands, not a built wall.
-- Aoaz has **twelve New Gods**, and the twelve months are named after them, one per month. [[Glernaen]] is the mightiest. Their names, domains and the purpose of twelve are open (Q-01), as is Afrit's relation to them (Q-02).
-- [[Zol]] does not appear in the War of the Last Crowns. His most loyal servant, a Great Spirit, appears instead (identity open, Q-03).
-- **Bastian** is a famous wizard of men; [[Varner]] is one practitioner among many traditions (Q-09).
-- **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz; not every devil served Zol (Q-07).
-- **Vez'nan** is an old name of [[Volgan]]. **Edvoid** is to receive a new name (name to be replaced, Q-10).
+- Aoaz has **twelve main New Gods**, who exist to answer the twelve needs of mortals; one month honours each, and [[Glernaen]] is the mightiest. **Lesser New Gods** also exist, still stronger than most Great Spirits, and have no month. Afrit's public cult adds a **feast**, not a month. The gods' names and which need each answers are undecided.
+- [[Zol]] does not appear in the War of the Last Crowns. His most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), appears instead. Why Zol stays away is a proposal, not canon.
+- **Bastian** is a living human wizard of the Fourth Age, famous in the Middle Lands and a contemporary of [[Varner]], who is one practitioner among many traditions.
+- **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz; not every devil served Zol. They are bound to their bodies and can be killed; a slain devil returns only through the lava rite with its skull. The [[King of Demons]] (original name not chosen yet) has his seat in the [[Nether]]; his pacts bind the living, and the souls of the dead remain Zol's.
+- **Vez'nan** is an old name of [[Volgan]]. **[[Edvoid]]** (name to be replaced, Q-10), Zol's most loyal servant, is a being of his own made by Zol.
+- **No exact age of any being is stated** (see [[#Ages of beings]]).
+- **Hirolon** (former label Hiloron) is a sovereign giant kingdom that treats with Aenor.
+- The **small folk** of the former "hobbit" card receive an original people name and homeland, not chosen yet.
+- **Gunpowder weapons are common in some realms**; which realms is not decided.
+- **Gorbatik**, the bestiary card's name, is [[Golbran]]: he does not age, and he can still die.
+- **Aenor Forest** (the cards' Rush Forest) is the largest forest of the Middle Lands, home of a walking tree people separate from the ents.
+- **Dwarves** hold the great ranges of the West and North Lands and the Great Wall range; **dwarf goblins** are a people of their own near Lerendor; **goblins** hold sheltered valleys of the southern Cold Lands.
+- **Gektor** is a sorcerer-chief who traps and bleeds lesser spirits.
+- **Nazerun** is the old name of Nezer; the halls beneath Castle Yeldenne receive an original name.
+- Names from other fiction or real myth, and all "-waith" names, are to be replaced with original names; see [[Names and Retcons]].
 
 ---
 
@@ -170,15 +184,14 @@ The **Second Age is the longest of the first four ages**. The draft model of 1,6
 | Fourth Age, middle | Established broad placement | Afrit effectively directs kings and government through a council and servants. |
 | Fourth Age, late | Established | Afrit steals Roka's necklace through a thief, accumulates artifacts, murders the Golden King and rules openly under a human public name. |
 | Fourth Age, late | Established | Eindil awakens in Cold Lands, travels West and South, meets Lorien, and receives Glo from dying Horos at Yeldenne. Afrit flees after being wounded. |
-| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, a Great Spirit, withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
+| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
 | Fourth Age, final struggle | Established | Afrit returns from Eastern dominion, wounds and casts down Eindil, then is defeated after artifacts are stripped away with Alleria and Golbran's help. Golbran dies. |
 | Fourth Age, end | Established | Eindil, wearing the Necklace of the Abyss, returns and is crowned King of Aenor. |
 
 ### Dating cautions
 
 - **Third Age length of 1,260** and **Fourth Age length of 1,760** are models, not canonical dates. They are designed to keep the Second Age longest.
-- **Eindil and Afrit are brothers, the sons of Ein**, born at approximately the same time. Their exact age is **not fixed**, and the former 5,000-year upper limit is revoked. Their birth and Eindil's imprisonment must fit the ages that follow.
-- The older account of a 100,000-year imprisonment is also superseded.
+- **Eindil and Afrit are brothers, the sons of Ein**, born at approximately the same time. No exact age is stated for either (see [[Canon Policy#Ages of beings]]). Their birth and Eindil's imprisonment must fit the ages that follow.
 
 [[Ages of Aoaz]] · [[War of the Last Crowns]]
 
@@ -298,7 +311,7 @@ Dardan was formerly fertile, with settlements and roads that could supply a huge
 
 **Days 1–3: The lines close.** Volgan brings his central host against the Grand Alliance. Orc and goblin legions attack its forward positions, eastern and southern cavalry seek the open flanks, and corrupted elves break conventional defensive spells. Edran holds the mixed center. Taryn's Western forces defend one approach while Rovek's Dark Lands veterans prevent Volgan's scouts from finding an unguarded passage.
 
-**Days 4–6: The crossings.** Dark dragons set supply depots and temporary defenses aflame. Brunek's dwarven engineers and giants from Hiloron defend the crossings and build replacement passages under fire. Senra's ships deliver food, weapons, and wounded men where inland roads cannot cope with the size of the armies. Thousands die merely keeping the coalition in position long enough to fight.
+**Days 4–6: The crossings.** Dark dragons set supply depots and temporary defenses aflame. Brunek's dwarven engineers and giants from Hirolon defend the crossings and build replacement passages under fire. Senra's ships deliver food, weapons, and wounded men where inland roads cannot cope with the size of the armies. Thousands die merely keeping the coalition in position long enough to fight.
 
 **Days 7–9: The earth opens.** Volgan releases the Damned Spirits into the battle. Creatures and disembodied powers emerge from beneath the hills, bringing down sections of the defensive line. Maerul and other Great Spirits hold the breaches while the dwarves collapse infected tunnels. Some of those spirits remain buried or sealed beneath the later wasteland of Dardan. This stage explains why the place is feared long after the armies have departed.
 
@@ -366,7 +379,7 @@ The second greatest king after Aen can therefore be remembered as a heroic victo
 
 1. Precisely when and where Aen first appeared, and how his fatherless magical birth occurred.
 2. Whether *Ainu* means Aen's direct line, all First Men, or a different ancient designation.
-3. The precise date and explanation of Eindil's freezing. His absence must remain consistent with his Fourth Age awakening. **Eindil and his brother Afrit have no established numerical age**, and the prior 100,000-year claim is superseded.
+3. The precise date and explanation of Eindil's freezing. His absence must remain consistent with his Fourth Age awakening. **No exact age is stated for Eindil or his brother Afrit** (see [[Canon Policy#Ages of beings]]).
 4. The names, reigns, and histories of Aenor's intermediate kings.
 5. The details of **Edran**'s lineage, youth and early reign before he assembled the Grand Alliance.
 6. The site of Dardan on the detailed map and the historical battlefield's terrain.
@@ -645,7 +658,7 @@ The owner established the **order** of major events and the total **2,133-year d
 | Final centuries or generations | Uprisings and corruption throughout Aenor, Elzon's open necromantic campaign, Afrit's ascension |
 | End of the Second Age | Conquest of Aenor, foundation of Elzon's Order, start of the Third Age |
 
-**Dating guardrail:** Eindil's exact age is now **undetermined**, and Afrit is approximately the same age because they are brothers. Previous estimates of 5,000 or 100,000 years are superseded. The First Age lasted **1,675 years** and the Second Age must be longer. The Second Age is now independently fixed at **2,133 years**. The Third Age lasts at least 1,200 years and Eindil's life extends across several ages, but his own birth and imprisonment dates are still unspecified.
+**Dating guardrail:** Eindil's exact age is now **undetermined**, and Afrit is approximately the same age because they are brothers. No exact age is stated for either (see [[Canon Policy#Ages of beings]]). The First Age lasted **1,675 years** and the Second Age must be longer. The Second Age is now independently fixed at **2,133 years**. The Third Age lasts at least 1,200 years and Eindil's life extends across several ages, but his own birth and imprisonment dates are still unspecified.
 
 ## XIV. Open story decisions
 
@@ -666,7 +679,7 @@ The owner established the **order** of major events and the total **2,133-year d
 
 ## XV. Canonical 2,133-year calendar and proposed internal periods
 
-The previous 2,300-year draft is superseded. The Second Age ends in **2A 2133**. A proposed 1,260-year Third Age and a much longer Fourth Age require Eindil's age to remain unfixed if he was born around year 300 of the First Age. The exact birth year and later age lengths remain open.
+The previous 2,300-year draft is superseded. The Second Age ends in **2A 2133**. A proposed 1,260-year Third Age and a much longer Fourth Age require Eindil's age to remain unfixed. His birth year and the later Ages' lengths remain open.
 
 **The 2,133-year length is canon.** Only the phases and the proposed later years remain flexible. See [[Second Age Proposed Timeline]] for the revised working divisions.
 
@@ -715,7 +728,7 @@ Elzon's fall follows from his inability to transform Aenor's magical environment
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
-> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, a Great Spirit, takes the field instead.
+> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), takes the field instead.
 
 ## Prologue: the peace that followed Elzon
 
@@ -901,7 +914,7 @@ The victory did not end the battle. Zol's most loyal servant came forth.
 
 ## XIII. The servant beneath the black sky
 
-Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. Who that servant is remains open and is not invented here (Q-03 in [[Open Questions]]).
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. That servant is the Great Spirit [[Edvoid]] (name to be replaced, Q-10), made by Zol and feared by all. **Proposed:** the Fading and Aoaz's hostile magic are why Zol sent his servant rather than coming himself; the reason is not established.
 
 **Proposed explanation for the servant's strength:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces let the servant carry an unusual measure of Zol's death-magic onto the field. This cost strength and could not last indefinitely.
 
@@ -968,7 +981,7 @@ Only the First Age's **1,675 years**, the Second Age's **2,133 years**, and the 
 
 In the example Fourth Age, peace is strongest in years 1 to approximately 1,000, Afrit exercises increasingly effective political rule in the middle centuries, and his public seizure of the crown occurs late. The war and Eindil's coronation conclude the age. All detailed dates are editable.
 
-**Eindil and Afrit are approximately the same age, but neither has a fixed numerical age.** The earlier upper limit of 5,000 years was merely a rough estimate and is revoked. Eindil's total age must fit all the ages he spends asleep. Afrit's own survival across the ages depends on magic and corruption. The older claim that Eindil slept 100,000 years is also not active canon.
+**Eindil and Afrit are approximately the same age, but no exact age is stated for either** (see [[Canon Policy#Ages of beings]]). Eindil's life must span all the ages he spends asleep. Afrit's own survival across the ages depends on magic and corruption.
 
 ## Key distinctions and continuity rules
 
@@ -978,7 +991,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Glernaen is a real New God of Power and Wisdom. Horos is a Great Spirit who safeguards Glo, the crystal at his heart.
 - The Castle Yeldenne encounter is in the Cold Lands. Afrit wounds Horos mortally, Eindil wounds Afrit, Afrit flees, and Horos gives Glo and his sword to Eindil before turning to dust.
 - Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol's most loyal servant. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
-- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, a Great Spirit, whose identity is open (corrected 24 October 2026).
+- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10) (corrected 24 October 2026).
 - Volgan is defeated by Eindil with the aid of the New Gods. His incarnation collapses. His final spiritual fate is unresolved.
 - Varner dies in the final war. Golbran spends nearly all his magical strength defending Varner, survives that event, and finally dies giving Eindil his remaining life after Afrit's defeat.
 - Afrit briefly becomes king of an eastern coalition after abandoning Aenor. His title does not mean every eastern kingdom submits to him.
@@ -989,7 +1002,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 
 1. Choose the historical public name for Afrit. Aurevan is the working suggestion. Decide whether the earliest worshippers of the Deliverer used that name too.
 2. Decide whether Afrit was Ein's elder or younger son, and why Ein denied him the throne. The proposed betrayal and engineered freezing need approval as specific facts.
-3. Fix the century and location of Eindil's birth and the place where he was enchanted into sleep, without imposing the abandoned 5,000-year estimate.
+3. Fix the location of Eindil's birth and the place where he was enchanted into sleep, without stating an exact age for him.
 4. Choose the full course of the Third Age's 1,200-plus years. A 1,260-year period must feature generations of human resistance and intervals of stability, not one continuous final campaign.
 5. Place the Castle of Yeldenne precisely on the Cold Lands map, and place Dardan and the late battlefields on a more detailed Middle Lands map.
 6. Develop the Gala elven history after Lorien's death and what Varner's death means for the Magical Lands.
@@ -1018,9 +1031,9 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Afrit travels after him. All of Eindil's crew is killed in an ambush. Afrit reaches Horos first, fights him, wounds him mortally, and is wounded by the newly arrived Eindil before escaping. Horos yields Glo, his own crystalline heart, to Eindil and turns to dust. Glo holds power from Glernaen, a New God of Power and Wisdom. Horos is a Great Spirit.
 - Eindil warns Aenor of simultaneous invasions. Westerners capture the capital. Easterlings invade, northern lands withdraw from the old alliance, Volgan advances from the Dead Lands and Zol's uniquely powerful dead emerge. Afrit abandons Aenor and assumes power over an eastern host as a backup.
 - Eindil rides a dragon accompanied by Varner and Golbran. His magical sword destroys Zol's dead. The people unite against Volgan. Eindil initially loses to Volgan, Varner dies defending against Zol's dead, and Eindil meets the New Gods and is restored with greater power.
-- Eindil destroys Volgan's manifested body. Zol's most loyal servant, a Great Spirit, appears and overwhelms Eindil, but the magical sword shard wounds it. Lorien and other great beings sacrifice themselves, and the servant withdraws. Zol himself does not appear in the war (corrected 24 October 2026). The servant's identity is open (Q-03 in [[Open Questions]]).
+- Eindil destroys Volgan's manifested body. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), appears and overwhelms Eindil, but the magical sword shard wounds it. Lorien and other great beings sacrifice themselves, and the servant withdraws. Zol himself does not appear in the war (corrected 24 October 2026).
 - Afrit returns, wounds Eindil, cuts off an arm and throws him over a cliff. Afrit takes the capital again and claims universal kingship. Eindil survives and returns to the palace. Alleria the archer of Selen assists him in stripping Afrit's magical artifacts. Golbran removes the Necklace of the Abyss. Eindil kills Afrit, Golbran gives his last magic to save Eindil and dies. Eindil puts on the necklace, returns and is crowned king.
-- Third Age lasts at least 1,200 years. Earlier 128-year and 5,000-year age limits are revoked.
+- Third Age lasts at least 1,200 years. The earlier 128-year Third Age is revoked, and no exact age of any being is stated.
 
 ## Proposed continuity details, not yet confirmed
 
@@ -1075,7 +1088,7 @@ This note separates decisions supplied by the owner on 17 October 2026 from narr
 | --- | --- |
 | Dating | The Second Age begins after the Great War against Volgan and ends with Elzon's conquest of Aenor. It is **the longest age**. It lasts exactly **2,133 years** and ends in **2A 2133**. |
 | First Age | The First Age lasted **1,675 years** and ended following Dardan and the unsuccessful invasion of the Dead Lands. |
-| Eindil | Eindil's precise age is undetermined. A previous maximum of 5,000 years has been withdrawn, and the 100,000-year freezing duration is superseded. He and Afrit are brothers and roughly contemporaries. Their birth and freezing dates remain open. |
+| Eindil | No exact age is stated for Eindil (see [[Canon Policy#Ages of beings]]); earlier figures are superseded and kept only in [[Names and Retcons]]. He and Afrit are brothers and roughly contemporaries. Their birth and freezing dates remain open. |
 | Early Second Age | Aenor rebuilds amid enormous grief under **King Edran**, who eventually **dies of disease**. Orcs and goblins loyal to Volgan and Elzon continue raids. Dark Lands return to chaos. |
 | Elven military refusal | Elven kingdoms do **not** help Aenor when Elzon invades. Their refusal follows **Edran's costly mistake invading the Dead Lands** after Dardan. |
 | Long recovery and progress | Famine and plagues recur for generations, but farming, food reserves, medicine, disease cures, military technology and infrastructure advance significantly and help future ages. |
@@ -1107,7 +1120,7 @@ This note separates decisions supplied by the owner on 17 October 2026 from narr
 - **Nether**: the southern Dead Lands domain of the King of Demons and home to demon portal activity.
 - **Abyss**: the Dead Lands location associated with Roka and the Necklace of the Abyss.
 - There is no established claim that the three are identical or linked by ordinary gates.
-- The old source's Ainu and Eindil 100,000-year figures are **superseded**, including the claim that the Ainu line had vanished 100,000 years before the Fourth Age.
+- The old source's figures for the Ainu's disappearance and Eindil's age are **superseded** and recorded only in [[Names and Retcons]].
 
 [[The Second Age of Aoaz]] · [[The Return of Volgan]] · [[The Fall of Aenor]] · [[Ages of Aoaz]]
 
@@ -1146,13 +1159,15 @@ The ZIN universe contains an extraordinarily remote divine level above the ordin
 
 | Order | Status | What belongs here |
 | --- | --- | --- |
-| **Gods** | Immortal | [[Old Gods]] and [[New Gods]] are two generations within this one divine order. |
+| **Gods** | Immortal | [[Old Gods]] and [[New Gods]] are two generations within this one divine order. The New Gods are the twelve main New Gods and the lesser New Gods. |
 | **Great Spirits** | Immortal | First rank of spirits, including [[Volgan]]. |
 | **Lesser Spirits** | Immortal | Lower-ranked spirits, some powerful enough to be mistaken for deities. |
 | **Great Folk** | Immortal | Elves, angels, demons and other immortal beings who are not spirits. |
 | **Common Folk** | Mortal | Men, dwarves and other mortal beings. |
 
 **Only Common Folk are mortal**, according to the source snapshot's five-order scheme. The status of ghosts, revenants, and roaming dead as an *order* remains unresolved.
+
+**Immortal is not the same as unkillable (owner's answers, 24 October 2026).** The owner reads [[Golbran]]'s "immortal" as not ageing, so he can still die, and devils, corrupted Lesser Spirits, are bound to their bodies and can be killed. Whether "immortal" in this table means "does not age" for every order is not yet stated.
 
 ## Gods are not equivalent to worshipped beings
 
@@ -1162,10 +1177,13 @@ Ordinary Aoaz people can mistake powerful Lesser Spirits for Gods, and powerful 
 
 [[Old Gods]] possess more fundamental power than [[New Gods]], yet the [[The Fading|Fading]] restricts their manifestation. A [[Spirits and Their Ranks|Great Spirit]] such as [[Volgan]] can exercise enormous political and military power and once overcame a New God despite being of a lower *order*. **Hierarchy records type of being, not automatic victory in a confrontation.**
 
+**Main and lesser New Gods (owner, 24 October 2026).** The twelve main New Gods answer the twelve needs of mortals, and the twelve months honour them. Lesser New Gods have no month but are still stronger than most Great Spirits. Which New Gods serve [[Zol]], and whether the god Volgan overcame was a lesser New God, is not yet stated.
+
 ## Unknowns
 
 - Whether the Holy Seven were directly created by the supreme Creator, and how that act occurred.
 - How many Old and New Gods exist beyond Aoaz.
+- The number and names of the lesser New Gods.
 - How the immortal Great Folk originally came into being.
 - What order, if any, should contain the restless dead.
 
@@ -1246,9 +1264,11 @@ Do not quietly resolve these points into a specific magic system.
 
 The **New Gods** are a later divine generation created by the [[Holy Seven]]. They are younger than the [[Old Gods]] and less powerful in fundamental terms. They are widely known in Aoaz.
 
-**Twelve New Gods (owner, 24 October 2026).** Aoaz has **twelve** New Gods. The twelve months of the year are named after them, one month for each god. [[Glernaen]], the New God of Power and Wisdom, is the mightiest of the twelve. The names and domains of the others, and the purpose of the number twelve, remain open (Q-01 in [[Open Questions]]), so the month names are not yet written either.
+**Twelve main New Gods (owner, 24 October 2026).** Aoaz has **twelve main New Gods**, who exist to answer the **twelve needs of mortals**. The twelve months of the year honour them and are named after them, one month for each main god. [[Glernaen]], the New God of Power and Wisdom, is the mightiest of the twelve. The names of the other gods, and which need each of the twelve answers, are not yet decided, so the month names are not yet written either.
 
-**At least some New Gods serve [[Zol]].** Being a god does not prevent one from becoming a servant of an older deity.
+**Lesser New Gods (owner, 24 October 2026).** Beside the twelve there are **lesser New Gods**. They are not among the twelve, no month honours them, and they are still stronger than most Great Spirits. Their number and names are not decided.
+
+**At least some New Gods serve [[Zol]].** Being a god does not prevent one from becoming a servant of an older deity. The New Gods who serve Zol, and the New God whom Volgan overpowered, may be lesser New Gods; the vault does not yet say which.
 
 [[Volgan]] was once in the service of a New God. He ultimately overpowered that god in some unknown way and established his own dominion.
 
@@ -1260,11 +1280,11 @@ The **New Gods** are a later divine generation created by the [[Holy Seven]]. Th
 
 ## Undecided
 
-The names and domains of the twelve New Gods, the purpose of the number twelve, whether the New Gods who serve Zol and Volgan's former patron are counted among the twelve (Q-01), the identity and fate of Volgan's former patron, and the identity of Zol's divine servants are unknown. Do not generate canon names for them without a later decision.
+The names of the twelve main New Gods and which need of mortals each answers, the number and names of the lesser New Gods, whether the New Gods who serve Zol and Volgan's former patron are main or lesser New Gods, the identity and fate of Volgan's former patron, and the identity of Zol's divine servants are unknown. Do not generate canon names for them without a later decision.
 
 ## Afrit in Third and Fourth Age religion
 
-At the end of the [[The Third Age of Aoaz|Third Age]], [[Afrit]] is **publicly recognized as a New God**, widely praised for saving the world from [[Elzon]]. **Afrit the Deliverer** is a proposed religious title. Public worship is established. His real metaphysical classification is **not yet established** and may differ from what priests or ordinary people believe. The creation of real New Gods by the Holy Seven remains intact unless a future lore decision changes it. Whether Afrit stands in any relation to the twelve New Gods and their months is open (Q-02 in [[Open Questions]]).
+At the end of the [[The Third Age of Aoaz|Third Age]], [[Afrit]] is **publicly recognized as a New God**, widely praised for saving the world from [[Elzon]]. **Afrit the Deliverer** is a proposed religious title. Public worship is established. His real metaphysical classification is **not yet established** and may differ from what priests or ordinary people believe. The creation of real New Gods by the Holy Seven remains intact unless a future lore decision changes it. Afrit is not one of the twelve the months honour: **his public cult adds a feast, not a month** (owner, 24 October 2026). The feast's name and date are not yet written.
 
 [[Afrit the Deliverer]]
 
@@ -1449,10 +1469,10 @@ See also [[Spirits and Their Ranks]] and [[Spirit Manifestation States]].
 
 The ZIN order of spirits has **two confirmed ranks**:
 
-1. **Great Spirits**: the higher spirit order, immortal and capable of exceptional power. [[Volgan]] and [[Elzon]] are Great Spirits. Elzon is also the Great Necromancer. Great Spirits can rule domains, command followers, or serve higher powers, but rulership is not an additional rank.
+1. **Great Spirits**: the higher spirit order, immortal and capable of exceptional power. [[Volgan]], [[Elzon]] and [[Edvoid]] are Great Spirits. Elzon is also the Great Necromancer. Great Spirits can rule domains, command followers, or serve higher powers, but rulership is not an additional rank.
 2. **Lesser Spirits**: the lower immortal spirit order. Some are still powerful enough for mortals to mistake them for gods.
 
-Both ranks sit below the divine order in the formal [[Hierarchy of Being]]. Yet a spirit can defeat or surpass an individual New God, as happened with Volgan. Formal rank is not a reliable combat-strength chart.
+Both ranks sit below the divine order in the formal [[Hierarchy of Being]]. Yet a spirit can defeat or surpass an individual New God, as happened with Volgan; whether that god was a lesser New God is not yet stated. Lesser New Gods are still stronger than most Great Spirits (owner, 24 October 2026). Formal rank is not a reliable combat-strength chart.
 
 ## Three different descriptors
 
@@ -1475,7 +1495,7 @@ The exact dividing test between Great and Lesser Spirits, their creation, relati
 
 ## Devils
 
-**Established (owner, 24 October 2026):** devils are corrupted **Lesser Spirits** who formerly served an Old God and escaped to Aoaz. Not every devil served [[Zol]]; those who served another Old God came to Aoaz from elsewhere. Demons are a different kind of being, corrupted angels. Whether devils are immortal and can be revived is open (Q-07 in [[Open Questions]]). See [[Peoples of Aoaz#Devils]].
+**Established (owner, 24 October 2026):** devils are corrupted **Lesser Spirits** who formerly served an Old God and escaped to Aoaz. Not every devil served [[Zol]]; those who served another Old God came to Aoaz from elsewhere. Demons are a different kind of being, corrupted angels. Devils are **bound to their bodies** and can be killed; a slain devil returns only through the lava rite with its skull (owner, 24 October 2026). See [[Peoples of Aoaz#Devils]].
 
 ---
 
@@ -1510,7 +1530,7 @@ Aen fought in the [[War of Men]] for hundreds of years, uniting the rival kingdo
 
 **The Deliverer** is the public religious identity of [[Afrit]], who was acclaimed as a New God after helping bring down [[Elzon]] at the end of the [[The Third Age of Aoaz|Third Age]]. His human-style public name in the expanded [[The Fourth Age of Aoaz|Fourth Age]] is proposed as **[[Aurevan the Deliverer|Aurevan]]**. The name **Afrit** was known chiefly to the secret council, his enemies and certain supernatural beings.
 
-Afrit's popular worship and supernatural powers were real. His actual classification as a god of the order created by the Holy Seven is not confirmed. Later he manipulated Aenor's kings, arranged the Golden King's death and took the crown himself. He was killed by his brother [[Eindil]] at the end of the Fourth Age.
+Afrit's popular worship and supernatural powers were real. His cult keeps a feast in his honour, not a month, since the twelve months honour the twelve main New Gods (owner, 24 October 2026). His actual classification as a god of the order created by the Holy Seven is not confirmed. Later he manipulated Aenor's kings, arranged the Golden King's death and took the crown himself. He was killed by his brother [[Eindil]] at the end of the Fourth Age.
 
 [[Aurevan the Deliverer]] · [[Afrits Hidden Council]]
 
@@ -1524,7 +1544,7 @@ Afrit's popular worship and supernatural powers were real. His actual classifica
 
 **Origin, established in the Fourth Age:** Afrit is a son of **Ein**, a grandson of **Aen**, and brother of [[Eindil]]. The two brothers are approximately the same age, but no exact number of years has been fixed. Afrit was originally a man descended from the powerful First Men. After his father denied him the throne and he betrayed Eindil, he sought dominance through corruption, demonic magic, bargains, worship and artifacts. His demonic form develops over time. Underneath his protections he remains mortal and can be killed.
 
-During the **First Age**, he secretly assembled demons and other beings who helped oppose [[Volgan]] at [[Battle of Dardan|Dardan]]. His aim was to remove a rival and position himself for the crown. During the **Second Age** he gained worship, networks and supernatural power, including an important ascension near its end. During the **Third Age** his followers supported the resistance against [[Elzon]], and he helped protect lives during Elzon's demise. The people began to regard him as a New God who saved them. The actual cosmic validity of his divinity remains unresolved. Human adoration cannot by itself prove creation as a god by the [[Holy Seven]].
+During the **First Age**, he secretly assembled demons and other beings who helped oppose [[Volgan]] at [[Battle of Dardan|Dardan]]. His aim was to remove a rival and position himself for the crown. During the **Second Age** he gained worship, networks and supernatural power, including an important ascension near its end. During the **Third Age** his followers supported the resistance against [[Elzon]], and he helped protect lives during Elzon's demise. The people began to regard him as a New God who saved them. His public cult adds a feast to the year, not a month: the twelve months honour the twelve main New Gods (owner, 24 October 2026). The actual cosmic validity of his divinity remains unresolved. Human adoration cannot by itself prove creation as a god by the [[Holy Seven]].
 
 For most of the **Fourth Age** Afrit governed indirectly through priests, schools, relief institutions, councilors and royal puppets. Prosperity endured during much of this process. He accumulated servants and enchanted artifacts. He sent a master thief to take [[Necklace of the Abyss|Roka's necklace]] and kept his promise of eternal life to the thief. He murdered the [[Golden King]], seized the Aenoran crown openly under his public name, and proclaimed himself King of Men and New God. He continued to build political alliances across East and South Lands as a reserve dominion.
 
@@ -1613,19 +1633,52 @@ Eindil is **son of Ein, son of Aen**. The founder Aen had many descendants, but 
 
 ---
 
+## 03 - Figures/Edvoid.md
+
+# Edvoid
+
+*Edvoid (name to be replaced, Q-10): the implementation will propose a new name for the owner's approval, and the Ocean of Edvoid is renamed with him.*
+
+**Established (owner, 24 October 2026):**
+
+- Edvoid is an evil **Great Spirit** made by [[Zol]], and **Zol's most loyal servant**. He is a being of his own, separate from Zol.
+- He is feared by all. He feeds on souls and covets all of Aoaz.
+- He dwells in **Šodolôrō** in [[Zols Mistake|Zol's Mistake]].
+- He is the Great Spirit who appears in the [[War of the Last Crowns]], where Zol himself does not appear. He breaks [[Horos Sword|Horos's blue sword]], is wounded by [[Eindil]] with a shard of it, and withdraws when [[Lorien]] and ancient spirits die opposing him. He is not destroyed.
+- His bestiary card calls him "a former minion made by Zol"; "former minion" is read as an old title, not as a break with Zol.
+
+His age is not stated (see [[Canon Policy#Ages of beings]]).
+
+**Naming history:** an older note used "Edvoid" as a placeholder name for Zol himself, which survives in the superseded terms Edvoid's Mistake and Ocean of Edvoid. That note is kept only as a naming record in [[Names and Retcons]]; it does not make Edvoid and Zol the same being.
+
+## Proposed elsewhere
+
+- The battle details in [[The Fourth Age of Aoaz]] (stopping Eindil with one finger, seizing him by the throat and drawing out the New Gods' gifts) are proposed choreography.
+- The same chronicle proposes that the war's immense death and routes of power prepared by Zol's servants let him carry an unusual measure of Zol's death-magic onto the field.
+
+## Open
+
+- His new name (Q-10 in [[Open Questions]]).
+- Whether he governs Zol's Mistake or its seat Furviatlon, and how his feeding on souls relates to Zol's claim on the souls of the dead.
+- What his wound and withdrawal cost him after the war.
+
+[[Zol]] · [[Zols Mistake]] · [[War of the Last Crowns]] · [[Eindil]] · [[Lorien]]
+
+---
+
 ## 03 - Figures/Eindil.md
 
 # Eindil
 
 **Established identity:** Eindil, son of [[Ein]], grandson of [[Aen]], the founder of united human kingship, and brother of [[Afrit]]. More precisely, Eindil is *son of Ein, son of Aen*. The wording in this note does not mean that Eindil is directly the son of Aen.
 
-He comes from the ancient First Men, whose magical gifts, longevity and physical abilities were greater than those of later men. He is the strongest man remembered in the Fourth Age and is of royal blood closest to the original royal line. [[Afrit]] is approximately the same age. **Neither brother has a fixed number of years of age.** A previous upper estimate of 5,000 was explicitly described by the owner as rough and is no longer a limit, and the even older 100,000-year imprisonment account is superseded.
+He comes from the ancient First Men, whose magical gifts, longevity and physical abilities were greater than those of later men. He is the strongest man remembered in the Fourth Age and is of royal blood closest to the original royal line. [[Afrit]] is approximately the same age. **Neither brother's age is stated as a number**, in keeping with the rule that no being's exact age is given (see [[Canon Policy#Ages of beings]]). Earlier figures survive only in [[Names and Retcons]].
 
 Eindil was held in supernatural sleep for many ages by means not yet canonically defined. He awakened in the Cold Lands in the late Fourth Age and did not remember his origins. Local tribes found him and West Lands travelers took him south. He aided communities, brought peace between rivals, and briefly served as a western king. He sailed for Aenor, was diverted to the Islands of the South, visited the Gala elves, and learned of his heritage from Lorien's histories and vision. He then voyaged to Castle Yeldenne. All the companions on his voyage there died in an ambush set by Afrit.
 
 At Yeldenne he learned that the public god-king of Aenor was his brother. [[Horos]], a Great Spirit, gave him [[Castle of Yeldenne and Glo|Glo]], a crystal containing part of New God [[Glernaen]]'s power, and his blue sword. Eindil warned men of the gathering armies, returned with a dragon, [[Varner]] and [[Golbran]], and became the center of the last united defense of Aenor.
 
-He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol's most loyal servant, a Great Spirit, crushed Horos's sword and nearly killed him, but Eindil wounded the servant with a fragment. Lorien and ancient allies forced the servant to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
+He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), crushed Horos's sword and nearly killed him, but Eindil wounded the servant with a fragment. Lorien and ancient allies forced the servant to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
 
 Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss and returned to be crowned **King of Aenor**, ending the Fourth Age.
 
@@ -1644,6 +1697,8 @@ Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss 
 **Allegiance:** Devoted servant of [[Volgan]]  
 **Principal domain:** [[Volgans Dead Lands|Dead Lands]], later the conquered realm of [[Middle Lands and Aenor|Aenor]]  
 **Historic role:** Defender after Dardan, architect of Volgan's return, victor at the end of the Second Age
+
+**Home on his bestiary card:** Nazerun, the old name of Nezer in the [[Volgans Dead Lands|Dead Lands]] (owner, 24 October 2026).
 
 ## First Age
 
@@ -1701,7 +1756,7 @@ The following characters were created as candidate additions on 17 October 2026.
 
 - Do not turn Sirael into a hereditary queen. The Magical Forest elves were previously described as democratic.
 - Do not assert that all of Dondor or the Dark Lands fought for the Grand Alliance.
-- Do not assign the dwarves a home region yet, since that question remains open.
+- The dwarves hold the great ranges of the West and North Lands and the Great Wall range (owner, 24 October 2026); place dwarven characters accordingly.
 - Allied Great Spirits may be bound or shattered, but the established cosmology calls them immortal.
 - Do not turn Ithren's proposed ritual into an act of the Old Gods or Holy Seven.
 
@@ -1715,11 +1770,11 @@ The following characters were created as candidate additions on 17 October 2026.
 
 **Established:** Glernaen is a **New God of Power and Wisdom**. A portion of Glernaen's might resides in **Glo**, the crystalline heart carried by Great Spirit [[Horos]] and later given to [[Eindil]].
 
-**Established (owner, 24 October 2026):** Glernaen is the **mightiest of the twelve [[New Gods]]** of Aoaz. Each of the twelve months is named after one New God, so one month is named after Glernaen; its name and place in the year are open (Q-01 in [[Open Questions]]).
+**Established (owner, 24 October 2026):** Glernaen is the **mightiest of the twelve main [[New Gods]]** of Aoaz, who exist to answer the twelve needs of mortals. Each of the twelve months honours one main New God, so one month honours Glernaen. Its name, its place in the year and which need Glernaen answers are not yet decided.
 
-The blue sword associated with Horos and the divine power in Glo allow Eindil to destroy Zol's directly empowered undead, which cannot be permanently killed by ordinary weapons. When the New Gods revive Eindil after his initial defeat by Volgan, Glo is the proposed channel through which their combined power can reach him. Zol's most loyal servant, a Great Spirit, later breaks the sword, but a shard still bears divine magic and can wound the servant (corrected 24 October 2026: Zol himself does not appear in the war).
+The blue sword associated with Horos and the divine power in Glo allow Eindil to destroy Zol's directly empowered undead, which cannot be permanently killed by ordinary weapons. When the New Gods revive Eindil after his initial defeat by Volgan, Glo is the proposed channel through which their combined power can reach him. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), later breaks the sword, but a shard still bears divine magic and can wound the servant (corrected 24 October 2026: Zol himself does not appear in the war).
 
-**Unknown:** Glernaen's individual character, symbols, relation to the other New Gods beyond being the mightiest of them, origin of Glo, extent of independent intervention and any cult in Aoaz. Avoid assigning Glernaen a full doctrine before it is developed.
+**Unknown:** Glernaen's individual character, symbols, relation to the other New Gods beyond being the mightiest of the twelve, origin of Glo, extent of independent intervention and any cult in Aoaz. Avoid assigning Glernaen a full doctrine before it is developed.
 
 [[New Gods]] · [[Castle of Yeldenne and Glo]] · [[Horos]] · [[Eindil]]
 
@@ -1736,6 +1791,8 @@ Golbran plays a decisive part in Afrit's eventual death. He uses magic to remove
 **Continuity decision offered as a proposal:** when Varner dies resisting Zol's forces, Golbran makes an apparent or incomplete sacrifice by exhausting most of his magic, collapses and is believed dead, but survives with a small remaining reserve. He spends that last reserve in the final palace battle. This honors both sacrifice scenes without bringing him back from an established literal death.
 
 The owner also used a variant name **Gorbat** in recounting the final sacrifice and requested another name. **Golbran** is retained consistently for the same already established character rather than introducing a new creature. The name itself can be reconsidered later if desired.
+
+**Gorbatik (owner, 24 October 2026):** Gorbatik, the name on the bestiary card of Varner's helper, **is Golbran**. The card calls him immortal, which means that he does not age; he can still die, as he does in the War of the Last Crowns.
 
 [[Varner]] · [[Eindil]] · [[The Last Battle in the Palace]]
 
@@ -1775,7 +1832,7 @@ Harion accepts Afrit's religious relief institutions because they demonstrably h
 
 # Horos
 
-**Established:** Horos is a **Great Spirit**, lord of [[Castle of Yeldenne and Glo|Castle Yeldenne]] in the **Cold Lands**, and guardian of [[Castle of Yeldenne and Glo|Glo]]. He is an enormous knight who appears in yellow-green armor with unusual branching points or spikes on his helm, glowing blue eyes and a blue magical sword. His original three drawings are preserved in [[Horos Visual References]].
+**Established:** Horos is a **Great Spirit**, lord of [[Castle of Yeldenne and Glo|Castle Yeldenne]] in the **Cold Lands**, and guardian of [[Castle of Yeldenne and Glo|Glo]]. He is an enormous knight who appears in yellow-green armor with unusual branching points or spikes on his helm, glowing blue eyes and a blue magical sword. His original three drawings are preserved in [[Horos Visual References]]. His bestiary card's underground castle is the halls beneath Castle Yeldenne, which receive an original name (owner, 24 October 2026).
 
 The crystal Glo, initially shown as a green jewel before his throne, is in fact **Horos's own heart**. It contains part of the power of **[[Glernaen]]**, a true New God of Power and Wisdom. Horos therefore carries both his Great Spirit strength and an entrusted divine power. He is able to resist the artifact-amplified Afrit far more effectively inside the castle than elsewhere.
 
@@ -1809,7 +1866,7 @@ Edran might have descended from a relatively distant line of Aen. A proposed *Ch
 
 # King of Demons
 
-**Established:** A **King of Demons** resides in the southern [[Nether]] of the [[Volgans Dead Lands|Dead Lands]]. His name, powers, kind of demon, and relationship with [[Volgan]], [[Elzon]], [[Afrit]], and [[Agon]] are open. His name is tracked as Q-07 in [[Open Questions]].
+**Established:** A **King of Demons** has his seat in the southern [[Nether]] of the [[Volgans Dead Lands|Dead Lands]] (confirmed by the owner, 24 October 2026). He receives an original name, not chosen yet; meanwhile the vault calls him the King of Demons, and the demon card's real-world name for him is not used. **His pacts bind the living; the souls of the dead remain [[Zol]]'s** (owner, 24 October 2026). His powers, kind of demon, and relationship with [[Volgan]], [[Elzon]], [[Afrit]], and [[Agon]] are open.
 
 The title implies a ruler within demonic society. It does not establish that all demons in the universe, all Netherborn, or all demons serving other powers are subject to him. Agon is not confirmed as this king.
 
@@ -1831,7 +1888,7 @@ Edran's disastrous decision to attack the Dead Lands after Dardan brought unnece
 
 Late in the Fourth Age Lorien welcomes a stranger from the Islands of the South and speaks with him over many weeks. He identifies the man as **[[Eindil]], son of Ein, grandson of Aen**, and shares accounts of Aoaz long before Aen. He uses a vision, potentially the proposed **Mirror of First Rain**, to warn of approaching catastrophe and directs Eindil to Horos at Yeldenne to obtain Glo. He equips Eindil with a remarkable ship, armor, sword and companions from different peoples.
 
-When Zol's most loyal servant, a Great Spirit, takes the field at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with the servant**, helping force it to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). He is therefore alive long after Dardan but does not survive the Fourth Age.
+When Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), takes the field at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with the servant**, helping force it to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). He is therefore alive long after Dardan but does not survive the Fourth Age.
 
 [[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[Zol]]
 
@@ -1890,7 +1947,7 @@ The existence of the thief, the mission and the granting of eternal life are **e
 
 Late in the Fourth Age Varner accompanies [[Eindil]] and Golbran to Aenor, arriving by dragon during the War of the Last Crowns. He shields living armies from Zol's direct death-magic and spends his last strength to open a path of survival. Varner **dies in the final war** when Zol's forces threaten to overwhelm the defenders. His defense is essential to the time gained for Eindil and the New Gods' intervention.
 
-**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian**, a famous wizard of men, is another well-known wizard of the realm; his nature and era are open (Q-09 in [[Open Questions]]).
+**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian** is a living human wizard of the Fourth Age, famous in the Middle Lands and a contemporary of Varner (owner, 24 October 2026).
 
 The exact ritual he uses, whether any writings survive and the nature of his death are opportunities for further development. His order remains Lesser Spirit despite his importance.
 
@@ -1922,9 +1979,9 @@ In the Fourth Age Volgan has recovered enough to retake Mirolon and march north 
 
 He remains mostly dormant during the early numbered ages. Elzon borrows ancient magic associated with Zol to raise and bind the dead. A favored Third Age explanation has Zol passively consuming the Great Spirit Elzon when he overdraws on that magic. Zol grows stronger, but does not take the field or openly rule the war.
 
-**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. **Zol does not appear in the War of the Last Crowns (corrected 24 October 2026).** The being who takes the field is **Zol's most loyal servant, a Great Spirit**, whose identity is open (Q-03 in [[Open Questions]]). The servant stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the servant with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing the servant to withdraw.
+**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. **Zol does not appear in the War of the Last Crowns (corrected 24 October 2026).** The being who takes the field is **Zol's most loyal servant, the Great Spirit [[Edvoid]]** (name to be replaced, Q-10), whom Zol made and who is a being of his own. The servant stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the servant with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing the servant to withdraw.
 
-**Zol is not killed.** He takes no body in the war: the Fading and his dependence on Aoaz's special conditions still bind him, and his servants carry his power onto the field. His servants, realm and further intentions remain important unresolved matters for future ages.
+**Zol is not killed.** He takes no body in the war, and his servants carry his power onto the field. **Proposed explanation, not established:** the Fading and his dependence on Aoaz's special conditions keep him from the field. His servants, realm and further intentions remain important unresolved matters for future ages.
 
 [[The Fading]] · [[Magic and Sustenance in Aoaz]] · [[War of the Last Crowns]] · [[Lorien]]
 
@@ -1940,25 +1997,36 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 
 - **Elves:** peaceful democratic elves of the **Magical Forest**, the **Sunhot elves** of the Lands of the Sun (over three metres tall, among the strongest and most peaceful), **Gala elves**, and **God Forest Keepers**.
 - **Angels:** immortal Great Folk. Their history is not yet written.
-- **Demons:** corrupted angels, according to the existing order-of-beings account. Includes **Shachihata** (huge, powerful, and rare), **Netherborn** (serving [[Volgan]]), and [[Afrit]]'s demons. Whether all named demonic peoples share a specific corruption event is unknown.
+- **Demons:** corrupted angels, according to the existing order-of-beings account. Includes **Shachihata** (huge, powerful, and rare), **Netherborn** (serving [[Volgan]]), and [[Afrit]]'s demons. Whether all named demonic peoples share a specific corruption event is unknown. The [[King of Demons]] has his seat in the [[Nether]]; his original name is not chosen yet.
 
 ## Devils
 
 **Established (owner, 24 October 2026):** **Devils** are corrupted [[Spirits and Their Ranks|Lesser Spirits]] who formerly served an Old God and escaped to Aoaz. Not every devil served [[Zol]]. Zol is the only Old God in Aoaz, so devils who served another Old God came to Aoaz from elsewhere. Devils are therefore distinct from demons, who are corrupted angels.
 
-**Open (Q-07 in [[Open Questions]]):** whether devils are immortal and can be revived, and the name of the [[King of Demons|demon king]].
+**Bodies and return (owner, 24 October 2026):** devils are **bound to their bodies** and can be killed. A slain devil returns only through the **lava rite**, performed with its skull. Who performs the rite, and where, is not yet written.
+
+**The demon king (owner, 24 October 2026):** the [[King of Demons]] receives an original name, not chosen yet. His seat is the [[Nether]]. His pacts bind the living; the souls of the dead remain [[Zol]]'s.
+
+**Beyond the map (owner, 24 October 2026):** the lands south of the South Lands, home of devils, demons and other evil beings that live in fire and endless suffering, are known by name only. They lie off the map and are not placed on it.
+
+**Depiction (owner, 24 October 2026):** demonic rites may echo real-world ritual a little. Their sigils may include the pentagram, never the cross.
 
 ## Mortal and regionally identified peoples
 
 - **Men:** Middle Kingdom peoples, Dondor Brutes, Noris camel warriors, Gunwaith clans, Girdon wardens, Buldor companies, Aenor Isle houses, Goodin Sunfolk, and the ancient [[The Ainu|Ainu]] (First Men).
-- **Dwarves:** known as mortal Common Folk, but their homeland has not been designated.
+- **Dwarves:** mortal Common Folk who hold the great mountain ranges of the West Lands and the North Lands and the range of the Great Wall of Aenor (owner, 24 October 2026).
+- **Dwarf goblins:** a people of their own, neither dwarves nor goblins, in the hills of the North Lands near Lerendor (owner, 24 October 2026).
 
 ## Other peoples and creatures
 
-- **Giants:** Hiloron giants, Titanos ice giants, Forgotten Giants.
+- **Giants:** the giants of **Hirolon** (former label Hiloron), a sovereign giant kingdom that treats with Aenor (owner, 24 October 2026), Titanos ice giants, Forgotten Giants.
 - **Ents:** the people of Kilinti Forest.
+- **The walking tree people of Aenor Forest** (former card name Coniferon; new name to be chosen): a people separate from the ents, living in Aenor Forest, the largest forest of the Middle Lands. Ents and the walking tree people never share a forest (owner, 24 October 2026).
+- **The small folk:** the people of the bestiary's former "hobbit" card. Their original people name and homeland are not chosen yet; "hobbit" and "the Shire" are former labels only (owner, 24 October 2026).
 - **Yeti**, **mycids** of Mushroom Forest, **arcanists** of the Zhen Hills, **orcs**, **goblins**, **trolls**, **ogres**, **grave hosts**, and **undead**.
 - The many regional monster societies are independent or diverse, not a single obedient species-wide faction.
+- **Goblins** avoid the deep cold but hold sheltered valleys of the southern Cold Lands. **Smash**, a troll king, and the **hobgoblin king** of the goblin card rule their own realms only, not every troll or goblin (owner, 24 October 2026).
+- **Gektor**, a sorcerer-chief of the bestiary cards, traps and bleeds lesser spirits. His claim to kill Great Spirits is a boast (owner, 24 October 2026).
 - **Dragons:** chiefly come from Dragon Mountain and do **not** form a country. Elven powers can command them, and Afrit can do so through corruption.
 
 **Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, and the owner has since classified devils as corrupted Lesser Spirits, but the lore does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
@@ -1971,7 +2039,7 @@ See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Dead L
 
 Volgan's army contained **corrupted elves**, allied men from eastern and southern lands, demons, devils, monsters, Great Spirits, dragons, and [[Damned Spirits]]. These facts do not mean all members of any people served Volgan.
 
-**Open:** Gala elves and Sunhot elves both appear in the source lore. Their exact relationship is not yet specified. Dwarven homelands also remain unassigned.
+**Open:** Gala elves and Sunhot elves both appear in the source lore. Their exact relationship is not yet specified.
 
 [[The First Age of Aoaz]] · [[Grand Alliance]]
 
@@ -2010,13 +2078,13 @@ The many other sons and descendants of Aen create competing royal lineages. Thei
 
 **Established:** Human civilizations existed for thousands of years before the First Age and before [[Aen]]. The earliest generations of men were generally stronger, had longer lives, and were naturally better at magic than later men. Some possessed power resembling that of gods without being true gods.
 
-Aen was born from magic and power and had no ordinary father. The title **First of His Name** refers to his unique origin and place as founder of the unified human realm. It does not mean that he was the first biological human to exist. He lived more than 400 years, fathered hundreds of sons and eventually won the centuries-long War of Men.
+Aen was born from magic and power and had no ordinary father. The title **First of His Name** refers to his unique origin and place as founder of the unified human realm. It does not mean that he was the first biological human to exist. He lived an extraordinarily long life, fathered hundreds of sons and eventually won the centuries-long War of Men.
 
 The line most important to the Fourth Age is **[[Aen]] → [[Ein]] → [[Eindil]] and [[Afrit]]**. Eindil and Afrit are brothers and approximately the same age. Their exact ages have not been fixed. Both survive across many ages, Eindil through supernatural suspension and Afrit through magic and corruption.
 
 ## Former estimates
 
-An older compendium placed the disappearance of the Ainu and Eindil's suspension at more than 100,000 years, and an intermediate correction suggested Eindil might be no older than about 5,000 years. **Neither figure is currently binding**. The creator explicitly stated that 5,000 years was only a rough estimate. The current Four-Age framework can span more than 6,000 years, with the First Men's magical longevity and Eindil's suspension accounting for survival. No exact birth years should be inferred.
+Older notes gave figures for the disappearance of the Ainu and for Eindil's age. **They are superseded** and kept only in [[Names and Retcons]]; no exact age of any being is stated (see [[Canon Policy#Ages of beings]]). The current Four-Age framework can span more than 6,000 years, with the First Men's magical longevity and Eindil's suspension accounting for survival. No exact birth years should be inferred.
 
 **Open:** Whether the name *Ainu* refers to all powerful early humans, only Aen's dynasty, or an earlier culture remains unknown.
 
@@ -2050,7 +2118,7 @@ These are **alternatives for later selection**, not simultaneous facts.
 
 **Aoaz** is a continent in the larger fictional ZIN universe and the setting of the ZIN map mod. The map was assembled from **13 hand-drawn regional sheets** and rearranged in October 2026. **Aenor Isle** is treated as a part of the Middle Lands, though it appears separately in the region list below.
 
-The **far west and north** of the Cold Lands, and **far east and south** beyond the East Lands and South Lands desert, extend outside the known map. What lies beyond is not fixed.
+The **far west and north** of the Cold Lands, and **far east and south** beyond the East Lands and South Lands desert, extend outside the known map. What lies beyond is not fixed. **The lands south of the South Lands**, home of devils, demons and other evil beings that live in fire and endless suffering, are known by name only: they lie off the map and are not placed on it (owner, 24 October 2026).
 
 | Current region | Drawn sheet or previous designation | Established geography, sites and peoples |
 | --- | --- | --- |
@@ -2059,10 +2127,10 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Triton's Islands** | Tritons Islands / Tornado Islands | West of West Lands, arcs around Pupor Ocean. Adel, Pollos, Raerby, Nondondor. |
 | **North Lands** | East-Earth, drawn sheet headed West Earth | North of Middle Lands across narrow strait. Lerendor and Lerenwaith (one crown), Eekedor, Molot, R'en. |
 | **Dark Lands** | Dark Lands | Between Lerendor and Middle Lands across narrow straits. Bordon, Dreson, Dulundur, Troll Forest, Dondor, Goldoroth, Sea of Darkness. |
-| **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Hiloron, Great Lake. See [[Middle Lands and Aenor]]. |
+| **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Great Lake, Aenor Forest, and the sovereign giant kingdom of Hirolon (former label Hiloron). See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |
 | **Magical Lands** | Magical Lands | East of Middle Lands, same landmass, separated from them by the Great Wall of Aenor, a natural mountain range. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
-| **Zol / Zol's Mistake** | Ocean of Edvoid (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Ocean of Zol, largely deserted and roamed by the dead. Contains Šodolôrō. See [[Zols Mistake]]. |
+| **Zol / Zol's Mistake** | Ocean of Edvoid (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Ocean of Zol, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Edvoid]]. See [[Zols Mistake]]. |
 | **East Lands** | South-Earth | Across the rift in the east, reaches off the eastern map. Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Mirrored for mod map. |
 | **South Lands** | Desert of South-Earth | Great desert of East Lands, extends south off the map. Noris Desert and former Sunhot Desert. |
 | **Dead Lands** | Dead Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Dead Lands]]. |
@@ -2105,13 +2173,15 @@ The source image was supplied by the owner on 17 October 2026. [[Aoaz and Its Re
 
 **Aenor, the Middle Kingdom**, was previously called **Rush, the Rush Kingdom**. It is the central great power of Aoaz. Its current map-design capital is **Parim**.
 
-The **Middle Lands**, previously Rush Land, contain the Middle Kingdom's central plains, forests, mountains, and Great Lake. Associated named regions include **Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun**, and **Herez**. **Aenor Isle** (previously Rush Islands) lies off the west coast and contains **Asgard**.
+The **Middle Lands**, previously Rush Land, contain the Middle Kingdom's central plains, forests, mountains, and Great Lake. Associated named regions include **Selen, Kilinti, Kingson, Konori, Hunhun**, and **Herez**, beside the sovereign giant kingdom of **Hirolon** (former label Hiloron), which treats with Aenor (owner, 24 October 2026). **Aenor Isle** (previously Rush Islands) lies off the west coast and contains **Asgard**.
 
-**The Great Wall of Aenor (owner, 24 October 2026):** the Great Wall of Aenor is an enormous **natural mountain range** that separates the Middle Lands from the [[Aoaz and Its Regions|Magical Lands]]. It is not a built wall or fortified line. Its passes, valleys and snowlines decide the routes between the two lands, and fortified passes or watchtowers may stand only where history explains them.
+**The Great Wall of Aenor (owner, 24 October 2026):** the Great Wall of Aenor is an enormous **natural mountain range** that separates the Middle Lands from the [[Aoaz and Its Regions|Magical Lands]]. It is not a built wall or fortified line. Its passes, valleys and snowlines decide the routes between the two lands, and fortified passes or watchtowers may stand only where history explains them. **Dwarves** hold the range, as they hold the great ranges of the West and North Lands (owner, 24 October 2026).
 
-The older original story recognizes dominions including Selen's rangers, Hiloron's giants, Kilinti's ents and forest peoples, and the riders of **Huhun**. The revised map's country system treats Aenor's surrounding Middle Lands regions as **satellites**. Whether each original dominion is constitutionally a satellite or an internal division remains an open implementation/lore detail.
+**Aenor Forest (owner, 24 October 2026):** the largest forest of the Middle Lands. The bestiary cards call it Rush Forest, after Rush, the old name of Aenor. It is home of the walking tree people of Aenor Forest (former card name Coniferon; new name to be chosen), a people separate from the ents. Ents and the walking tree people never share a forest: the ents live in Kilinti. The forest's exact place in the Middle Lands is not yet fixed.
 
-The current working table assigns Aenor **26 satellites**, with listed examples **Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard, Herez**. The **Cursed Lands** and **Bloody Forest** resist its control.
+The older original story recognizes dominions including Selen's rangers, Kilinti's ents and forest peoples, and the riders of **Huhun**. It also counted Hiloron's giants among them, but **Hirolon is a sovereign giant kingdom that treats with Aenor**, not a dominion (owner, 24 October 2026). The revised map's country system treats Aenor's surrounding Middle Lands regions as **satellites**. Whether each original dominion is constitutionally a satellite or an internal division remains an open implementation/lore detail.
+
+The current working table assigns Aenor **26 satellites**, with listed examples **Selen, Kilinti, Kingson, Konori, Hunhun, Asgard, Herez**. The older table also listed Hiloron, but Hirolon is sovereign (owner, 24 October 2026). The **Cursed Lands** and **Bloody Forest** resist its control.
 
 Its ruling [[Golden King]] founded **The Lost Cause**, built a strong army, and misgoverns the realm. [[Afrit]] secretly causes his death and hopes to capture the crown. [[Eindil]] may emerge as a leader in the war that follows.
 
@@ -2149,9 +2219,9 @@ In the Fourth Age a genuinely good human king restores the monarchy, followed by
 
 # Nether
 
-**Established:** The **Nether** lies in the **south of the [[Volgans Dead Lands|Dead Lands]]**. It is the home or seat of the **King of Demons**. The named demon [[Agon]] and many other demons are active here during the Second Age. Demons emerge through portals and raid Aenor and other lands. The extent of the king's domain and his name are currently unknown.
+**Established:** The **Nether** lies in the **south of the [[Volgans Dead Lands|Dead Lands]]**. It is the home or seat of the **King of Demons**. The named demon [[Agon]] and many other demons are active here during the Second Age. Demons emerge through portals and raid Aenor and other lands. The extent of the king's domain is currently unknown, and he receives an original name, not chosen yet. His pacts bind the living; the souls of the dead remain [[Zol]]'s (owner, 24 October 2026).
 
-The Nether is a distinct geographic and supernatural setting within the Dead Lands. Its presence in the southern region is consistent with the older regional name *Nether* and older references to the Netherborn. It should not be equated with the **Void**, where Volgan was banished, or with the **Abyss**, where Roka and his necklace are found.
+The Nether is a distinct geographic and supernatural setting within the Dead Lands. Its presence in the southern region is consistent with the older regional name *Nether* and older references to the Netherborn. It should not be equated with the **Void**, where Volgan was banished, or with the **Abyss**, where Roka and his necklace are found. Nor is it the off-map lands south of the South Lands, the home of devils, demons and other evil beings that live in fire and endless suffering, which are known by name only (owner, 24 October 2026).
 
 ## Political uncertainties
 
@@ -2184,6 +2254,8 @@ Selen is a region and political entity of the [[Middle Lands and Aenor|Middle La
 The Dead Lands lie **south of the Middle Lands** and are the principal dominion of [[Volgan]], the Great Spirit and main dark lord.
 
 The region includes **Mirolon, Nan, Demon, Dolon, Nezer, and Nether**. In the working great-power table, Volgan's seat is **Nafeher** and his satellites or allies include **Demon, Dolon, and Nezer**, while **Mirolon** opposes him.
+
+**Nazerun** is the old name of **Nezer** (owner, 24 October 2026). Elzon's bestiary card names Nazerun as his home.
 
 Volgan's realm includes grave hosts, Netherborn demons, orcs, ogres, monster clans, and necromantic orders. His authority does not automatically extend to independent Dark Lands factions or northern monsters.
 
@@ -2219,7 +2291,7 @@ During the Third Age, Volgan cannot leave the Dead Lands, while [[Elzon]] rules 
 
 *Canonical displayed name: **Zol's Mistake**.*
 
-A vast **black northern region** comprising a barren wasteland and **all the black islands of the Ocean of Zol**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region.
+A vast **black northern region** comprising a barren wasteland and **all the black islands of the Ocean of Zol**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region; it is the dwelling of [[Edvoid]] (name to be replaced, Q-10), Zol's most loyal servant (owner, 24 October 2026).
 
 Its name derives from [[Zol]], the Old God of Death and the only Old God present in Aoaz. The exact event or transgression that makes this land a **"Mistake"** has not been explained.
 
@@ -2227,7 +2299,7 @@ The working political table places the capital or seat at **Furviatlon** and tre
 
 The dead wandering the land have no established classification or allegiance. Do not assume they all belong to Zol, [[Volgan]], or any single category until decided.
 
-**Former terms:** Edvoid's Mistake, Ocean of Edvoid (name to be replaced, Q-10). These names are **superseded**.
+**Former terms:** Edvoid's Mistake and Ocean of Edvoid are **superseded** names; their naming history is kept in [[Names and Retcons]]. The Ocean of Edvoid is renamed together with [[Edvoid]] (name to be replaced, Q-10).
 
 [[Magic and Sustenance in Aoaz]] · [[Aoaz and Its Regions]] · [[Names and Retcons]]
 
@@ -2277,7 +2349,7 @@ The occupation lasts many generations and cannot be maintained solely by a singl
 
 | Power | Map-design seat | Role | Satellites / alliance | Rival |
 | --- | --- | --- | --- | --- |
-| **Aenor (Middle Kingdom)** | Parim, Middle Lands | Central mainland power, surrounding regions as satellites, Cursed Lands and Bloody Forest resisting. | 26 satellites including Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard, Herez; **Middle Kingdom Concord**. | Lerendor, Zol |
+| **Aenor (Middle Kingdom)** | Parim, Middle Lands | Central mainland power, surrounding regions as satellites, Cursed Lands and Bloody Forest resisting. | 26 satellites including Selen, Kilinti, Kingson, Konori, Hunhun, Asgard, Herez; **Middle Kingdom Concord**. | Lerendor, Zol |
 | **Zol** | Furviatlon, Zol's Mistake | Black northern wastes, Šodolôrō, Ocean of Zol islands. **No active physical form** (newer lore). | None listed in older table, but newly established to have **Great Spirit, Lesser Spirit and New God servants** whose identities and political status remain unspecified. | Aenor |
 | **Volgan** | Nafeher, Dead Lands | Ancient Great Spirit, principal dark lord. | Demon, Dolon, Nezer; **Southern Dominion**. | Mirolon |
 | **Lerendor** | Sonargur, North Lands | United crown of Lerendor and Lerenwaith, northern counterweight to Aenor. | Eekedor, Andos Enda; **Leren Compact**. | Aenor |
@@ -2287,7 +2359,9 @@ The occupation lasts many generations and cannot be maintained solely by a singl
 | **Goldoroth** | Cocanoor, Dark Lands | Expansionist Dark Lands power. | None listed. | Dondor |
 | **Dondor** | Notbuton, Dark Lands | Northern Dark Lands kingdom. | Belonton; **Dark Sea Accord**. | Goldoroth |
 
-**Political note:** Zol's newly established bodyless nature and servant network qualify the older `Satellites: None yet` notation. That older entry means no *named political satellites* in the working country table, **not** that Zol lacks supernatural servants.
+**Political note:** Zol's newly established bodyless nature and servant network qualify the older `Satellites: None yet` notation. That older entry means no *named political satellites* in the working country table, **not** that Zol lacks supernatural servants. The most loyal of them is the Great Spirit [[Edvoid]] (name to be replaced, Q-10).
+
+**Hirolon (owner, 24 October 2026):** the older working table listed Hiloron among Aenor's satellites. Hirolon, the current spelling, is a sovereign giant kingdom that treats with Aenor, not a satellite.
 
 Additional polities which must remain separate on the map: **Bordon, Dreson, Dulundur, Troll Forest, Nolorim, Herez**. **Kilinti + Kilinti Forests** count as a single country, as do **Lerendor + Lerenwaith**.
 
@@ -2336,7 +2410,11 @@ The event is certain in the story as summarized in the original compendium. The 
 
 ## Independent realms and monsters
 
-Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, orcs, goblins, trolls, ogres, giants and demons under separate rulers. Likewise, the Middle Lands' monster peoples may be independent, hostile, isolated, mercenary, or open to darker influence.
+Not all Dark Lands monsters serve Volgan. The Dark Lands have independent men, orcs, goblins, trolls, ogres, giants and demons under separate rulers. Likewise, the Middle Lands' monster peoples may be independent, hostile, isolated, mercenary, or open to darker influence. **Smash**, a troll king, and the **hobgoblin king** rule their own realms only, not every troll or goblin (owner, 24 October 2026).
+
+## Arms
+
+**Established (owner, 24 October 2026):** gunpowder weapons are **common in some realms** of Aoaz. Which realms have them, and since when, is not decided.
 
 ## The artifact conflict
 
@@ -2720,7 +2798,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 2. The publicly worshipped god-king, secretly Afrit, abandons his subjects and assumes control of an eastern coalition through networks cultivated for ages. The western army occupies Aenor's capital.
 3. Eastern and Aenoran forces retreat as Volgan and Zol's dead overwhelm the region. Westerners find their conquest untenable and begin evacuating. Some eastern and western troops remain stranded. Zol's dead and Volgan's hosts initially clash before briefly joining forces against Eindil.
 4. Eindil returns on a dragon with Varner and Golbran. With Glo and Horos's blue blade he destroys Zol's stronger-than-necromantic dead, and the surviving peoples make a desperate common army. He is beaten by Volgan, but Glernaen and the New Gods restore him through Glo.
-5. Eindil defeats Volgan's embodied manifestation. Zol's most loyal servant, a Great Spirit, comes forth, overpowers the renewed champion, shatters the blue sword, and nearly conquers the field. Eindil wounds the servant with a shard. Lorien and ancient spirits die forcing the servant to withdraw. Zol himself does not appear in the war (corrected 24 October 2026).
+5. Eindil defeats Volgan's embodied manifestation. Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), comes forth, overpowers the renewed champion, shatters the blue sword, and nearly conquers the field. Eindil wounds the servant with a shard. Lorien and ancient spirits die forcing the servant to withdraw. Zol himself does not appear in the war (corrected 24 October 2026).
 6. Afrit returns from the East, wounds and casts Eindil from a cliff, and claims Aenor. Eindil survives, and Alleria and Golbran help strip Afrit's artifacts at the palace. Afrit dies, Golbran dies saving Eindil, and Eindil is crowned with the Necklace of the Abyss in his possession.
 
 ### Distinctions
@@ -2728,7 +2806,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 - Zol's dead derive from the Old God's own magic. Mortal arms cannot end them permanently without magic. Elzon's earlier reanimated corpses were comparatively vulnerable, requiring continuing magical support.
 - The western armies do not all become subjects of Aenor after cooperating with Eindil. Competing western and northern interests remain.
 - Volgan's manifested body is destroyed. His final spiritual fate is unresolved.
-- Zol does not appear in this war: the Fading and Aoaz's magic keep him from taking the field. The being who appears is his most loyal servant, a Great Spirit, whose identity is open (Q-03 in [[Open Questions]]). The servant is forced to withdraw, not killed (corrected 24 October 2026).
+- Zol does not appear in this war. **Proposed explanation, not established:** the Fading and Aoaz's magic keep him from taking the field. The being who appears is his most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10). The servant is forced to withdraw, not killed (corrected 24 October 2026).
 - Afrit's final death is literal.
 
 [[The Fourth Age of Aoaz]] · [[Eindil]] · [[Afrit]] · [[Zol]] · [[Volgan]]
@@ -2766,7 +2844,9 @@ In the late Fourth Age, [[Afrit]] arrives first to claim Glo and introduces hims
 
 With death approaching, Horos tells Eindil the hidden truth of his family and of Glo's earlier rejected claimants. He removes Glo from his chest and places it in Eindil's hands. His form crumbles to dust. Eindil also inherits Horos's blue enchanted sword. The crystal carries Glernaen's power into the final war and later serves as a bridge for the combined New Gods to revive and empower Eindil.
 
-Zol's most loyal servant, a Great Spirit, eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
+Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
+
+**The halls beneath the castle (owner, 24 October 2026):** Horos's bestiary card describes his underground castle. That place is the halls beneath Castle Yeldenne. The card's name for them, Tol Hithi, is a former label only; they receive an original name, not chosen yet.
 
 **Open:** The castle's precise location in the Cold Lands, its original construction, the source and limits of Glo, and its fate after Eindil receives the New Gods' power. The exact explanation for why the crystal can be entrusted only to a worthy bearer is a working rule.
 
@@ -2782,7 +2862,7 @@ Zol's most loyal servant, a Great Spirit, eventually crushes Horos's sword in ba
 
 In the last great war, Eindil drives the sword into the earth after descending from a dragon, sending a magical shock wave through [[Zol]]'s direct death-host. Unlike mundane weapons, the sword can permanently disperse those warriors. Later, after the New Gods empower Eindil, he kills Volgan's manifested body with this blade.
 
-Zol's most loyal servant, a Great Spirit, then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into the servant, and the remaining divine magic injures it (corrected 24 October 2026: Zol himself does not appear in the war). No intact original blade remains for the final palace fight against Afrit.
+Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into the servant, and the remaining divine magic injures it (corrected 24 October 2026: Zol himself does not appear in the war). No intact original blade remains for the final palace fight against Afrit.
 
 [[Horos]] · [[Glernaen]] · [[War of the Last Crowns]]
 
@@ -2877,6 +2957,36 @@ Dates, secondary names and magical mechanisms not directly specified by the crea
 - All other character facts are unchanged, including Eindil and Afrit being brothers, both sons of Ein and grandsons of Aen, approximately the same age with no fixed numerical maximum.
 - The older original source and superseded Third Age draft are preserved unchanged as historical documents. Their previous spelling is not current canon.
 
+## 24 October 2026: Owner corrections
+
+The world creator's corrections of 24 October 2026 are recorded in [[Names and Retcons#Corrections of 24 October 2026]], with their open points as Q-01, Q-02, Q-03, Q-07, Q-09 and Q-10 in [[Open Questions]].
+
+- **Canon Policy:** replaced the late Fourth Age Zol body with his most loyal servant and added a summary of the corrections.
+- **Zol in the War of the Last Crowns (K4):** Zol does not appear; his most loyal servant, a Great Spirit, overpowers Eindil, shatters the blue sword, is wounded by a shard and is forced to withdraw by Lorien and ancient spirits. Changed in [[War of the Last Crowns]], [[Zol]], [[Glernaen]], [[Eindil]], [[Lorien]], [[Afrit]], [[Golbran]], [[Horos Sword|Horos's Blue Sword]], [[Castle of Yeldenne and Glo]], [[The Fourth Age of Aoaz]] (section XIII rewritten as *The servant beneath the black sky*), [[Fourth Age Canon Register]], [[Fourth Age Chronology]] (4A 1757), [[The Campaign of 4A 1748]], [[Timeline]], [[Fifth Age Seeds]], [[The Last Battle in the Palace]] and [[The Third Age of Aoaz]].
+- **Great Wall of Aenor (K2):** the Great Wall is a natural mountain range. [[Fourth Age Chronology]] row 4A 96 is now the proposed Accord of the Passes; [[The Campaign of 4A 1748]] drops the Pale March origin; [[Middle Lands and Aenor]] and [[Aoaz and Its Regions]] describe the range.
+- **Twelve New Gods (K3):** [[New Gods]] and [[Glernaen]] record the twelve gods, the months named after them and Glernaen as the mightiest. [[Fourth Age Chronology]] replaces the proposed farming-year month names with numbered months, and the campaign start is now written as the first day of the third month, 4A 1748.
+- **Bastian (K5):** added to [[Varner]].
+- **Devils (K6):** defined in [[Peoples of Aoaz]] and [[Spirits and Their Ranks]]; [[King of Demons]] points to Q-07.
+- **Vez'nan and Edvoid (K7):** no page used Vez'nan. [[Aoaz and Its Regions]] and [[Zols Mistake]] flag Edvoid as a name to be replaced.
+- **Records:** [[Names and Retcons]], [[Open Questions]] and this log. The consolidated [[ZIN Lore Master Compendium]] received the same text changes wherever it repeats a corrected passage.
+
+## 24 October 2026: Owner answers
+
+The owner's answers of 24 October 2026 (Q-01 to Q-25, decisions K9 to K27) are applied and recorded as new rows in [[Names and Retcons#Corrections of 24 October 2026]]. Q-01, Q-02, Q-03, Q-07 and Q-09 are marked answered in [[Open Questions]], and Q-10 stays open.
+
+- **New Gods:** twelve main New Gods answer the twelve needs of mortals, lesser New Gods exist without a month, and Afrit's cult adds a feast. Changed in [[New Gods]], [[Hierarchy of Being]], [[Glernaen]], [[Afrit]], [[Afrit the Deliverer]], [[Spirits and Their Ranks]] and [[Fourth Age Chronology]].
+- **Edvoid:** Zol's most loyal servant is the Great Spirit Edvoid (name to be replaced, Q-10). New page [[Edvoid]]; named in [[Canon Policy]], [[00 - Start Here|Start Here]], [[Zol]], [[War of the Last Crowns]], [[The Fourth Age of Aoaz]], [[Fourth Age Canon Register]], [[Fourth Age Chronology]], [[Timeline]], [[Eindil]], [[Lorien]], [[Glernaen]], [[Horos Sword|Horos's Blue Sword]], [[Castle of Yeldenne and Glo]], [[Zols Mistake]], [[Aoaz and Its Regions]], [[Great Powers and Relations]], [[The Campaign of 4A 1748]] and [[Spirits and Their Ranks]].
+- **Why Zol does not appear:** relabelled as a proposed explanation in [[War of the Last Crowns]], [[Zol]], [[The Fourth Age of Aoaz]] and [[Canon Policy]].
+- **Ages of beings:** the rule is in [[Canon Policy#Ages of beings]]; numeric ages and life spans removed from [[00 - Start Here|Start Here]], [[The Ainu]], [[Eindil]], [[Second Age Canon Register]], [[Fourth Age Canon Register]], [[The First Age of Aoaz]], [[The Second Age of Aoaz]], [[The Fourth Age of Aoaz]], [[Timeline]] and [[Idea Bank]]. Earlier Change Log entries keep their figures as history of the notes.
+- **Hirolon:** spelling and sovereignty in [[Peoples of Aoaz]], [[Middle Lands and Aenor]], [[Aoaz and Its Regions]], [[Great Powers and Relations]], [[The Campaign of 4A 1748]], [[Fourth Age Chronology]] (4A 3) and [[The First Age of Aoaz]].
+- **Peoples:** the small folk, devils' bodies and the lava rite, the demon king, the lands south of the South Lands, demonic depiction, dwarves, dwarf goblins, goblins, Smash, the hobgoblin king, Gektor and the walking tree people of Aenor Forest in [[Peoples of Aoaz]]; dwarves also in [[First Age Proposed Characters]] and [[Middle Lands and Aenor]]; Smash and the hobgoblin king also in [[Kingdoms Factions and Conflicts]].
+- **Devils and the demon king:** [[Spirits and Their Ranks]], [[King of Demons]], [[Nether]] and [[Aoaz and Its Regions]].
+- **Bastian:** [[Varner]]. **Gunpowder:** [[Kingdoms Factions and Conflicts]]. **Gorbatik:** [[Golbran]].
+- **Aenor Forest:** [[Middle Lands and Aenor]], [[Aoaz and Its Regions]] and [[Peoples of Aoaz]].
+- **Nazerun and the halls beneath Castle Yeldenne:** [[Volgans Dead Lands]], [[Elzon]], [[Castle of Yeldenne and Glo]] and [[Horos]].
+- **Borrowed names and "-waith" names:** the replacement rule is recorded in [[Names and Retcons]]; no replacement names are invented in the vault.
+- **Records:** [[Names and Retcons]], [[Open Questions]] (answers and four new questions raised by them) and this log. The [[ZIN Lore Master Compendium]] received the same text changes wherever it repeats a changed passage, and a copy of the new [[Edvoid]] page.
+
 ---
 
 ## 09 - Development/Idea Bank.md
@@ -2927,7 +3037,7 @@ All these hooks are optional and should not be interpreted as events that alread
 
 ## Second Age optional development (17 October 2026)
 
-- [[Second Age Proposed Timeline]] now reflects the **established 2,133-year length**. Only internal phase dates and sample lifespan calculations remain proposals.
+- [[Second Age Proposed Timeline]] now reflects the **established 2,133-year length**. Only internal phase dates remain proposals; no lifespan of any being is calculated (see [[Canon Policy#Ages of beings]]).
 - [[The Second Age of Aoaz]] contains possible named events including the *Council of Empty Chairs*, *War of the Black Roads*, *Burning Gate of Nezer*, *War of the Hollow Crown*, and optional plague names.
 - Possible mechanisms for the [[The Return of Volgan|return from the Void]] include weakening the Dardan boundary and using magic Elzon drew from [[Zol]]. The mechanism is not established even though the return itself is.
 - *Night of a Thousand Oaths* is a proposed explanation for [[Afrits Ascension|Afrit's ascension]].
@@ -2947,11 +3057,11 @@ The detailed Third Age includes suggested **Black Roots** as Elzon's attempt to 
 | Subject | Current authority | Superseded or proposed |
 | --- | --- | --- |
 | Aenor | Middle Kingdom of men in Middle Lands | Earlier kingdom name Rush |
-| Zol | God of Death and sole Old God in Aoaz | Edvoid was the former placeholder |
+| Zol | God of Death and sole Old God in Aoaz | Edvoid was the former placeholder (naming history only: Edvoid is a separate being, Zol's most loyal servant, 24 October 2026) |
 | Volgan | Great Spirit, former servant of a New God | Not one of the Old Gods |
 | Elzon | Great Spirit and Great Necromancer | Earlier open question about rank resolved |
 | Varner | Lesser Spirit and wizard | Not a Great Spirit |
-| Golbran | Varner's small purple servant | The user's later 'Gorbat' was a provisional variant, not an additional being |
+| Golbran | Varner's small purple servant | The user's later 'Gorbat' was a provisional variant, not an additional being; the bestiary card's 'Gorbatik' is also Golbran (24 October 2026) |
 | Afrit | Hidden demon name for son of Ein, brother of Eindil | **Aurevan** is only a proposed public divine and royal name |
 | Ainu | Ancient powerful lineage or culture of First Men, precise definition open | More than 100,000 years since disappearance is not an active chronology fact |
 | Eindil | Son of Ein, grandson of Aen, brother of Afrit, age undetermined | The 5,000-year ceiling was expressly withdrawn, and 100,000 years of freezing is not canon. Previous name **Einendil** superseded on 18 October 2026. |
@@ -2974,6 +3084,34 @@ The world creator's full Fourth Age map is the primary overview. The ocean betwe
 
 **Eindil** is the only current canonical spelling. **Einendil** is the superseded name and is retained only in historical source archives and the naming change records. The character and journey notes, together with their Obsidian links, now use Eindil. No character, ancestry, or plot facts changed.
 
+## Corrections of 24 October 2026
+
+| Subject | Old statement | New canon | Date |
+| --- | --- | --- | --- |
+| Main setting and neighbouring continent | The main setting was called **Erdae** (earlier **Arda**), and **Aoaz** named a small neighbouring continent | The main setting is **Aoaz**; the small neighbouring continent formerly called Aoaz is **Erdae** | 24 October 2026 |
+| Great Wall of Aenor (K2) | Proposed origin as an artificial fortified line, the **Pale March**, raised by Elzon's Order and rebuilt in stone after the proposed **Wall Accord** of 4A 96 | An enormous **natural mountain range** separating the Middle Lands from the Magical Lands. Fortified passes and watchtowers may exist where history explains them. 4A 96 is now the proposed **Accord of the Passes** | 24 October 2026 |
+| New Gods and the months (K3) | The number of New Gods was unwritten; the proposed calendar named the months after the farming year (Deepwinter, Ironfrost, Thaw, Rainwake, Sowing, Highsun, Goldfield, Harvest, Fallowing, Emberleaf, Mistfall, Longnight) | Aoaz has **twelve New Gods** and the twelve months are named after them, one per month. **Glernaen**, god of power and wisdom, is the mightiest. Their names, domains and the purpose of twelve are open (Q-01); Afrit's relation to the twelve is open (Q-02). Dates are given by month number until the names are written | 24 October 2026 |
+| Zol in the War of the Last Crowns (K4) | Zol manifests bodily, overpowers Eindil, shatters the blue sword, is wounded by a shard and is forced to withdraw by Lorien and ancient spirits | **Zol does not appear in the war.** His **most loyal servant, a Great Spirit**, does all of this instead. The servant's identity is open (Q-03). Zol's general nature is unchanged | 24 October 2026 |
+| Bastian (K5) | Not recorded; Varner was the only named wizard | **Bastian** is a famous wizard of men. Varner is one practitioner among many traditions. Bastian's nature and era are open (Q-09) | 24 October 2026 |
+| Devils (K6) | Listed among Volgan's hosts without a definition | **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz. Not every devil served Zol, the only Old God in Aoaz, so those who served another Old God came from elsewhere. Demons remain corrupted angels. Immortality, revival and the demon king's name are open (Q-07) | 24 October 2026 |
+| Vez'nan (K7) | **Vez'nan**, an old name of Volgan | Use **Volgan**. No current vault page used Vez'nan | 24 October 2026 |
+| Edvoid (K7) | Former placeholder for Zol's name, kept in the superseded terms Edvoid's Mistake and Ocean of Edvoid | **Edvoid** (name to be replaced, Q-10) must receive a new name, which is open. The row above recording Edvoid as Zol's former placeholder stays | 24 October 2026 |
+| New Gods: purpose, lesser gods and Afrit's feast (Q-01, Q-02, Q-25) | The purpose of twelve, Afrit's relation to the twelve and whether other New Gods exist were open | The twelve **main** New Gods exist to answer the **twelve needs of mortals**, and one month honours each. **Lesser New Gods** also exist, still stronger than most Great Spirits, and have no month. Afrit's public cult adds a **feast, not a month**. The New Gods who serve Zol and the god Volgan overpowered may be lesser New Gods; the vault does not yet say which. The gods' names and which need each answers are undecided | 24 October 2026 |
+| Zol's most loyal servant (Q-03, Q-12) | A Great Spirit whose identity was open; this register recorded Edvoid only as a former placeholder name of Zol | The servant is **Edvoid** (name to be replaced, Q-10), an evil Great Spirit made by Zol, a being of his own, separate from Zol. His card's "former minion" is read as an old title. The Zol row above stays only as naming history. See [[Edvoid]] | 24 October 2026 |
+| Why Zol does not appear | "The Fading and Aoaz's magic keep him from taking the field", written as established in the morning's corrections | Relabelled as a **proposed** explanation; the reason is not established | 24 October 2026 |
+| Ages of beings (Q-13) | Numeric ages and life spans in narrative notes: Eindil's withdrawn 5,000-year ceiling and 100,000-year sleep, the Ainu's 100,000-year disappearance, Aen's "more than 400 years" and a proposed birth around year 300 of the First Age for Eindil; the bestiary cards give ages too | **No exact age of any being is stated anywhere.** Old Gods are millions of years old, so Zol is very old, and Great Spirits can be very old, without figures. The durations of the Ages stay. Superseded figures stay only in this register | 24 October 2026 |
+| Hirolon (Q-05) | Spelled Hiloron; listed among Aenor's satellites and, as a proposal, among the dominions under the Charters of Parim | **Hirolon** is the spelling (Hiloron is the former label). It is a **sovereign** giant kingdom that treats with Aenor, not a dominion or satellite | 24 October 2026 |
+| The small folk (Q-06) | The bestiary's "hobbit" card placed them in "the Shire" | The small folk receive an original people name and homeland, not chosen yet; "hobbit" and "the Shire" are former labels only | 24 October 2026 |
+| Devils and the demon king (Q-07, Q-17, Q-23, Q-24) | Devils' immortality and revival, and the demon king's name, were open; the demon card gives him a real-world religious name and lets him take the souls of the dead in pacts | Devils are **bound to their bodies** and can be killed; a slain devil returns only through the **lava rite** with its skull. The demon king receives an original name, not chosen yet (meanwhile "the King of Demons"). His seat is the **Nether**; his pacts bind the living, and the souls of the dead remain Zol's. The lands south of the South Lands, home of devils, demons and other evil beings that live in fire and endless suffering, are known by name only, off the map. Demonic rites may echo real-world ritual a little; their sigils may include the pentagram, never the cross | 24 October 2026 |
+| Bastian (Q-09) | A famous wizard of men whose nature and era were open | A **living human wizard of the Fourth Age**, famous in the Middle Lands, a contemporary of Varner | 24 October 2026 |
+| Gunpowder (Q-15) | Not recorded; the orc card gives orcs cannons | Gunpowder weapons are **common in some realms**; which realms is not decided | 24 October 2026 |
+| Gorbatik (Q-16) | The bestiary card's "Gorbatik", called immortal, looked like a separate being | **Gorbatik is Golbran.** "Immortal" means he does not age; he can still die, as he does in the War of the Last Crowns | 24 October 2026 |
+| Rush Forest and the walking tree people (Q-18) | The cards' "Rush Forest" was unplaced, and the Coniferons might have been the ents | "Rush" is the old name of Aenor, so **Rush Forest is Aenor Forest**, the largest forest of the Middle Lands. It is home of the walking tree people of Aenor Forest (former card name Coniferon; new name to be chosen), separate from the ents. Ents and the walking tree people never share a forest; the ents live in Kilinti | 24 October 2026 |
+| Dwarves, dwarf goblins, goblins, Smash and the hobgoblin king (Q-19, Q-21) | Dwarven homelands were unassigned; the goblin card says goblins never live in the cold; Smash and the hobgoblin king were called kings of whole peoples | **Dwarves** hold the great ranges of the West and North Lands and the Great Wall range. **Dwarf goblins** are a people of their own in the hills of the North Lands near Lerendor. **Goblins** avoid the deep cold but hold sheltered valleys of the southern Cold Lands. **Smash**, a troll king, and the **hobgoblin king** rule their own realms only | 24 October 2026 |
+| Gektor (Q-20) | His card says he often summons Great Spirits and kills them with armies of men | A sorcerer-chief who traps and bleeds lesser spirits; his claim to kill Great Spirits is a boast | 24 October 2026 |
+| Nazerun and Tol Hithi (Q-22) | Elzon's card names his home Nazerun; Horos's card names his underground castle Tol Hithi | **Nazerun** is the old name of **Nezer**. "Tol Hithi" was a name for the halls beneath Castle Yeldenne and is replaced by an original name, not chosen yet; write "the halls beneath Castle Yeldenne" | 24 October 2026 |
+| Borrowed names (Q-11, Q-14) | Names from other fiction or real myth (for example Isengard, Gondolin, Asgard, Avalon, Heaven, Godland, the Shire, Tol Hithi), the card names **Coniferon** and **Vinocorne**, and the "-waith" names (Lerenwaith, Gunwaith, Windwaith and the rest) stood as current names | All are to be **replaced with original names**, and the old labels stay as former labels. The owner's place names are not used word for word where they do not fit or repeat. The replacements are proposed in the regional dossiers, not here. Meanwhile write "the walking tree people of Aenor Forest (former card name Coniferon; new name to be chosen)" and "the flower creature (former card name Vinocorne; new name to be chosen)" | 24 October 2026 |
+
 ---
 
 ## 09 - Development/Open Questions.md
@@ -2986,7 +3124,7 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 - [ ] Which of Ein's sons is older, Afrit or Eindil, and why does Ein refuse Afrit the throne?
 - [ ] Exactly how, where and when is Eindil placed in magical sleep, and why does he lose his memory?
-- [ ] How old are the brothers numerically, and how does their long lifetime work across all four ages?
+- [ ] How old are the brothers numerically, and how does their long lifetime work across all four ages? *(24 October 2026: no exact age of any being is stated, so the brothers receive no number; how their long lives work stays open.)*
 - [ ] Who is their mother, and what becomes of Ein and Aen's other children?
 - [ ] Are the Ainu a people, a first lineage, or a name for the more powerful ancient men?
 
@@ -3002,7 +3140,7 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 - [ ] Does Afrit truly acquire one of the original divine ranks, or only comparable supernatural power and widespread worship?
 - [ ] What exactly does Glo bestow upon Eindil and how much remains after the sword is broken and he returns from death?
-- [ ] By what mechanism can Zol temporarily manifest, and what remains of Zol after the final battle? *(24 October 2026: Zol does not appear in the War of the Last Crowns; his most loyal servant does. The question stays open for Zol in general; see Q-03.)*
+- [ ] By what mechanism can Zol temporarily manifest, and what remains of Zol after the final battle? *(24 October 2026: Zol does not appear in the War of the Last Crowns; his most loyal servant, [[Edvoid]], does. Why Zol stays away has only a proposed explanation. The question stays open for Zol in general.)*
 - [ ] Is Volgan's spirit destroyed along with his manifested body, or can he survive?
 - [ ] What can the Necklace of the Abyss do, and will Eindil be corrupted by wearing it?
 - [ ] What is Roka's fate, and what is the name of the rhinoceros-headed people?
@@ -3012,18 +3150,25 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 - [ ] Approve or replace **Aurevan** as Afrit's human public name.
 - [ ] Approve or replace **Harion**, **Sevrin**, and **Chancellor Merovan** as proposed supporting names.
-- [ ] What is Golbran's origin, why was he with Varner, and can the final sacrifice establish a lasting magical legacy?
+- [ ] What is Golbran's origin, why was he with Varner, and can the final sacrifice establish a lasting magical legacy? *(24 October 2026: the bestiary card's Gorbatik is Golbran; he does not age but can die.)*
 - [ ] What becomes of the Golden King's faction, Afrit's followers, and eastern and western invaders after Eindil's coronation?
 - [ ] What form does the Fifth Age take under the restored king of men?
 
 ## Owner questions of 24 October 2026
 
-- [ ] **Q-01** What is the purpose of the number twelve for the New Gods? What are the twelve gods' names and domains, and so the names of the months? Are the New Gods who serve Zol, and the New God Volgan once served, counted among the twelve?
-- [ ] **Q-02** How does Afrit, publicly worshipped as a New God, relate to the twelve New Gods and the twelve months?
-- [ ] **Q-03** Who is Zol's most loyal servant, the Great Spirit who appears in the War of the Last Crowns? Is it Edvoid (name to be replaced, Q-10), whom his card calls "a former minion made by Zol", and whose name was once Zol's placeholder?
-- [ ] **Q-07** Are devils immortal, and can they be revived? What is the demon king's name?
-- [ ] **Q-09** What are Bastian's nature and era?
-- [ ] **Q-10** What is Edvoid's new name?
+- [x] **Q-01** What is the purpose of the number twelve for the New Gods? What are the twelve gods' names and domains, and so the names of the months? Are the New Gods who serve Zol, and the New God Volgan once served, counted among the twelve? *(Answered 24 October 2026: the twelve main New Gods exist to answer the twelve needs of mortals, and one month honours each. Lesser New Gods also exist, still stronger than most Great Spirits, and have no month; the New Gods who serve Zol and the god Volgan overpowered may be lesser New Gods, and the vault does not yet say which. The gods' names, which need each answers, and so the month names, are still undecided.)*
+- [x] **Q-02** How does Afrit, publicly worshipped as a New God, relate to the twelve New Gods and the twelve months? *(Answered 24 October 2026: the months honour the twelve main New Gods; Afrit's public cult adds a feast, not a month. His true classification stays open.)*
+- [x] **Q-03** Who is Zol's most loyal servant, the Great Spirit who appears in the War of the Last Crowns? Is it Edvoid (name to be replaced, Q-10), whom his card calls "a former minion made by Zol", and whose name was once Zol's placeholder? *(Answered 24 October 2026: yes. The servant is Edvoid (name to be replaced, Q-10), a Great Spirit made by Zol and a being of his own, separate from Zol; "former minion" is read as an old title. See [[Edvoid]].)*
+- [x] **Q-07** Are devils immortal, and can they be revived? What is the demon king's name? *(Answered 24 October 2026: devils are bound to their bodies and can be killed; a slain devil returns only through the lava rite with its skull. The demon king receives an original name, not chosen yet; his seat is the Nether, his pacts bind the living, and the souls of the dead remain Zol's.)*
+- [x] **Q-09** What are Bastian's nature and era? *(Answered 24 October 2026: a living human wizard of the Fourth Age, famous in the Middle Lands, a contemporary of Varner.)*
+- [ ] **Q-10** What is Edvoid's new name? *(24 October 2026: the implementation proposes a name for the owner's approval, and the Ocean of Edvoid is renamed with it. Still open until approved.)*
+
+## Raised by the answers of 24 October 2026
+
+- [ ] Does "immortal" in the [[Hierarchy of Being]] mean "does not age" for every order? The owner reads Golbran's "immortal" that way, and devils, corrupted Lesser Spirits, can be killed, while the order table calls all spirits immortal.
+- [ ] How does [[Edvoid]]'s feeding on souls relate to Zol's claim on the souls of the dead?
+- [ ] Hirolon is sovereign, but the older working table counted it among Aenor's 26 satellites. Does the Concord keep 26 members without Hirolon?
+- [ ] Where in the Middle Lands does Aenor Forest lie, and what are the new names of the walking tree people, the flower creature and the small folk and their homeland?
 
 [[Fifth Age Seeds]] · [[Canon Policy]] · [[Fourth Age Canon Register]]
 

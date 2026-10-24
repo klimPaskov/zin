@@ -21,14 +21,13 @@ updated: 2026-10-24
 | Fourth Age, middle | Established broad placement | Afrit effectively directs kings and government through a council and servants. |
 | Fourth Age, late | Established | Afrit steals Roka's necklace through a thief, accumulates artifacts, murders the Golden King and rules openly under a human public name. |
 | Fourth Age, late | Established | Eindil awakens in Cold Lands, travels West and South, meets Lorien, and receives Glo from dying Horos at Yeldenne. Afrit flees after being wounded. |
-| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, a Great Spirit, withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
+| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, the Great Spirit [[Edvoid]] (name to be replaced, Q-10), withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
 | Fourth Age, final struggle | Established | Afrit returns from Eastern dominion, wounds and casts down Eindil, then is defeated after artifacts are stripped away with Alleria and Golbran's help. Golbran dies. |
 | Fourth Age, end | Established | Eindil, wearing the Necklace of the Abyss, returns and is crowned King of Aenor. |
 
 ### Dating cautions
 
 - **Third Age length of 1,260** and **Fourth Age length of 1,760** are models, not canonical dates. They are designed to keep the Second Age longest.
-- **Eindil and Afrit are brothers, the sons of Ein**, born at approximately the same time. Their exact age is **not fixed**, and the former 5,000-year upper limit is revoked. Their birth and Eindil's imprisonment must fit the ages that follow.
-- The older account of a 100,000-year imprisonment is also superseded.
+- **Eindil and Afrit are brothers, the sons of Ein**, born at approximately the same time. No exact age is stated for either (see [[Canon Policy#Ages of beings]]). Their birth and Eindil's imprisonment must fit the ages that follow.
 
 [[Ages of Aoaz]] · [[War of the Last Crowns]]
