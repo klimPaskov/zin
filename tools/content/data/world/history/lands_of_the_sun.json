@@ -1,0 +1,703 @@
+{
+  "version": 1,
+  "region": "lands_of_the_sun",
+  "overview": "In the far south-west of the world, at the corner where the map runs off its southern edge, lies a small, sunny and wonderfully fertile land of grasslands, terraces, ash-rich volcanic slopes and warm seas, with the Ihuy and Soyano isles to the north. Here live the Sunhot elves, over three metres tall and among the strongest and most peaceful peoples of Aoaz, in small sanctuary realms led by the Lands of Light; here too the Gala elves keep the oldest court of Aoaz under King Lorien, who led his host to Dardan in the First Age and still remembers it; and here the Goodin Sunfolk, men who came as guests of the sanctuaries and stayed, farm the fields, sail the coasts and far outnumber the tall elves whose shrines they serve. The land looks north over the Sea of Gods, which the Sunhot believe is the nearest earthly water to the gods' own realm. It is reached only by sea, and its history is one of long peace broken once, by the Grand Alliance and the grief that followed it. The elves keep their own count of seasons among themselves and the Reckoning of the Twelve with men, and the Sunfolk of Goodin keep the Reckoning outright. Years are one continuous count from the victory of Aen: 1A 1 is year 1, the First Age runs to 1675, the Second Age from 1676 (2A 1) to 3808 (2A 2133), the Third Age from 3809 (3A 1) to 5068 (3A 1260, the proposed length) and the Fourth Age from 5069 (4A 1), so that the campaign year 4A 1748 is 6816; a founding year of 0 marks a realm older than the numbered years, whose beginning nobody dates. Everything here that the vault does not state is proposed; whether the Gala and the Sunhot are one kin is left open.",
+  "ages": [
+    {
+      "id": "sun_closed_shore",
+      "name": "The Closed Shore",
+      "from": 1,
+      "to": 1599,
+      "canon": "proposed",
+      "summary": "For most of the First Age the Lands of the Sun keep to themselves: the Sunhot tend their sanctuaries and choose their first Radiant Speaker, the Gala keep their court at Sodoli, and Aenor knows almost nothing of either. Ships come rarely, and only by the long sea road from the Great Lake ports."
+    },
+    {
+      "id": "sun_grand_alliance",
+      "name": "The Grand Alliance",
+      "from": 1600,
+      "to": 1675,
+      "canon": "established",
+      "summary": "King Edran's Grand Alliance reaches Lorien, and the courts of Aenor and Gala meet as equals for one of the first times. Lorien leads his formidable host to Dardan and helps break Volgan's power, and then his people pay for Edran's invasion of the Ember Lands, a decision they had opposed."
+    },
+    {
+      "id": "sun_long_grief",
+      "name": "The Long Grief",
+      "from": 1676,
+      "to": 3808,
+      "canon": "proposed",
+      "summary": "The Gala mourn their dead of Dardan and the Ember Lands and keep a garden for them far from both; the elven kingdoms refuse to send armies to save Aenor from Elzon. Sunfolk farmers and boatmen begin to settle the sanctuary shores as guests, and the Sunhot, fewer than before, let them stay."
+    },
+    {
+      "id": "sun_guest_centuries",
+      "name": "The Guest Centuries",
+      "from": 3809,
+      "to": 5068,
+      "canon": "proposed",
+      "summary": "Far from the occupation of Aenor, the Sunfolk become the farmers, sailors and town-folk of every realm, the isle Speakers form their councils, and the Sunhot sanctuaries grow smaller and fewer while the fields round them fill with men."
+    }
+  ],
+  "countries": [
+    {
+      "name": "Gala",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "story": "The Gala elves kept their court at Sodoli on the north-east shore before Aen won his war, and no Gala chronicle records a founding; they remember lineages by the keepers of the Mirror of First Rain, not by dates. Whether the Gala came to these shores from elsewhere, and whether they are kin to the Sunhot, are questions the Gala themselves do not answer."
+      },
+      "dynasties": [
+        {
+          "name": "The court of King Lorien",
+          "from": 0,
+          "notable": "Lorien holds the crown of Gala for as long as he wills and remembers the War of Men, Dardan, the fall of Aenor and the Necromancer's reign; no other king of Gala is named in any record men have seen."
+        }
+      ],
+      "events": [
+        {
+          "name": "Edran's Envoys at Sodoli",
+          "year": 1660,
+          "summary": "Envoys of King Edran's Grand Alliance reach Sodoli by sea, and Lorien receives them as an equal; Aenor's court had known little of the Gala before that meeting."
+        },
+        {
+          "name": "The Host of Gala at Dardan",
+          "year": 1675,
+          "summary": "Lorien leads his host to Dardan, where its arrival late in the battle restores a collapsing flank and helps the Alliance hold until Volgan is cast down."
+        },
+        {
+          "name": "The Ember Lands Folly",
+          "year": 1675,
+          "summary": "Against Lorien's advice Edran invades the Ember Lands; Elzon drives the invasion back, many Gala die, and Lorien's respect for Edran ends in lasting disagreement."
+        },
+        {
+          "name": "The Garden of the Dead",
+          "year": 1684,
+          "summary": "The Gala plant a garden at Sodoli for their dead of Dardan and the Ember Lands, far from both places, and keep it still."
+        },
+        {
+          "name": "The Refusal",
+          "year": 3796,
+          "summary": "Envoys of Aenor ask the elven kingdoms for armies against Elzon; the Gala, with the elves of the Magical Lands, refuse to fight another war on Aenor's behalf."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Sodoli is the old courtyard garden above the harbour where the spring of the Mirror of First Rain rises, and the Gala court has never been anywhere else in any memory men know of.",
+      "today": "King Lorien reigns at Sodoli over the north-east shore, some 35,000 Gala elves and the Sunfolk villages that farm the shore below the dormant Good Volcanoes, about 135,000 in all. Gala is at peace, courteous to Aenor and distrustful of kings who turn victories into crowns, honoured by the Noon Council as a guest and owing the Sunhot nothing; its ships are the fastest in the south, and its king still speaks of Dardan as if it were last year.",
+      "divergence": [
+        {
+          "id": "gala_refuses_stranger",
+          "what": "Lorien refuses the storm-driven stranger who comes to Sodoli, or keeps him at court instead of sending him north.",
+          "consequence": "The heir the age is waiting for never learns his name or never reaches the north in time, and the War of the Last Crowns is fought without him."
+        },
+        {
+          "id": "gala_marches_early",
+          "what": "Lorien marches north with the Gala before the dead of the north rise.",
+          "consequence": "The Elven Refusal is set aside for one war, Gala's host is in the field years early, and the old king may die before the moment he would have been needed."
+        }
+      ]
+    },
+    {
+      "name": "The Lands of Light",
+      "canon": "proposed",
+      "founding": {
+        "year": 840,
+        "story": "The sanctuaries of the eastern lowland had each kept their own Speaker until a drought in 1A 840 dried Sun Lake to its shallows and threatened every shrine at once. The Speakers met at the largest sanctuary, at Eldoga, chose one of themselves as Radiant Speaker to share the water out, and found that they preferred to keep her."
+      },
+      "dynasties": [
+        {
+          "name": "The Radiant Speakers of Eldoga",
+          "from": 840,
+          "notable": "The Radiant Speaker is chosen by the sanctuaries and serves until she or he lays the office down; Radiant Speaker Salin of Eldoga chairs the Noon Council in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Drought of the Shallows",
+          "year": 840,
+          "summary": "Sun Lake shrinks to its shallows in a dry decade, and the sanctuaries choose the first Radiant Speaker at Eldoga to share out the water."
+        },
+        {
+          "name": "The Noon Council",
+          "year": 5156,
+          "summary": "The Radiant Speaker calls the Sunhot realms to Eldoga and founds the Noon Council to settle their quarrels and keep the sanctuary roads open, with a guest's seat for Gala."
+        },
+        {
+          "name": "The Gathering of the Sanctuaries",
+          "year": 6358,
+          "summary": "The small sanctuaries of the lowland and the grasslands, Gulia, Menga, Sono, Sunweli, Sensun, Sali, the Dein Lands, Flame and Lovis among them, join the Lands of Light as their elves grow too few to keep them alone."
+        },
+        {
+          "name": "The Asking of the Levies",
+          "year": 6580,
+          "summary": "When pirates out of the Bright Sea raid the grassland coast, the Radiant Speaker asks the Sunfolk villages for levies and they agree; ever since, the Lands of Light must ask, and the villages may refuse."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Eldoga is the largest sanctuary of the eastern lowland, in the widest valley above Sun Lake, where the Speakers met in the drought; the Radiant Speaker stays there because the other sanctuaries can all reach it in a few days.",
+      "today": "Radiant Speaker Salin of Eldoga leads the eastern lowland and the Sun Grasslands, some 130,000 Sunhot elves of the Light among about 420,000 Sunfolk farmers, and chairs the Noon Council of the Sunhot realms. The Lands of Light are the largest realm of the region, peaceful and prosperous, and they can raise no host without asking the Sunfolk villages first.",
+      "divergence": [
+        {
+          "id": "light_sends_help",
+          "what": "The Noon Council, led by the Radiant Speaker, sends ships and companies north.",
+          "consequence": "For the first time since Dardan a Sunhot host takes the field, the Sunfolk villages must agree to it, and the Lands of the Sun are drawn into the wars of the north."
+        },
+        {
+          "id": "light_villages_refuse",
+          "what": "The Sunfolk villages refuse the Radiant Speaker's request for levies in a crisis.",
+          "consequence": "The Lands of Light cannot defend their coast without Goodin, and the guest-right of the Sunfolk becomes a question of power."
+        }
+      ]
+    },
+    {
+      "name": "Elvana",
+      "canon": "proposed",
+      "founding": {
+        "year": 2315,
+        "story": "The sanctuary on the Cape of Elvana was a house of weavers and healers that served the shrines of both shores of the cape, and in 2A 640 its elves chose their own Speaker rather than answer to Eldoga. They named their realm after the cape and have argued with Igara about almost everything since."
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of Googavis",
+          "from": 2315,
+          "notable": "Each Speaker of Elvana is chosen by the sanctuary of Googavis; Speaker Elvae holds the office in 4A 1748 and has argued Elvana's cause at the Noon Council longer than anyone can remember."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Speaker of the Cape",
+          "year": 2315,
+          "summary": "The sanctuary of Googavis chooses its own Speaker and becomes the realm of Elvana."
+        },
+        {
+          "name": "The Quarrel of the Shallows",
+          "year": 4208,
+          "summary": "Elvana and Igara both claim the right to keep the sun-cranes of the Sun Lake Shallows; the quarrel is fought with songs, weavings and petitions and has never been settled."
+        },
+        {
+          "name": "The Weavers' Judgement",
+          "year": 6585,
+          "summary": "The Noon Council judges a contest of weaving between Elvana and Igara a tie, and both realms walk out of the council for a season."
+        }
+      ],
+      "rivalries": [
+        "Igara"
+      ],
+      "capitalReason": "Googavis is the sanctuary vale on the Cape of Elvana that looks over both the cape shore and the Elvini shore, so that its elves could serve the shrines of both.",
+      "today": "Speaker Elvae leads the Cape of Elvana and the Elvini shore from Googavis, some 44,000 Sunhot elves of the western sanctuaries among about 120,000 Sunfolk. Elvana is a small, gentle house of weavers and healers whose only quarrel in the world is with Igara, a quarrel it would not give up for anything.",
+      "divergence": [
+        {
+          "id": "elvana_igara_union",
+          "what": "A marriage of houses or a judgement of the Noon Council unites Elvana and Igara.",
+          "consequence": "The western sanctuaries gain one voice at the council, and the region loses its oldest and most harmless quarrel."
+        },
+        {
+          "id": "elvana_healers_north",
+          "what": "Elvana sends its healers north with any ship that will take them.",
+          "consequence": "The hospitals of the war have Sunhot healers, and the cape learns more of the world than it wished to."
+        }
+      ]
+    },
+    {
+      "name": "Igara",
+      "canon": "proposed",
+      "founding": {
+        "year": 2377,
+        "story": "Igara began as a sanctuary on the southern shore of Sun Lake that kept the shrine of the shallows, and in 2A 702, sixty-two years after Elvana chose its own Speaker, its elves did the same, partly to keep the shrine and partly, the Elvanans say, out of envy."
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of Repgin",
+          "from": 2377,
+          "notable": "The Speakers of Igara are chosen by the sanctuary of Repgin; Speaker Igan holds the office in 4A 1748 and answers every petition of Elvana with two of his own."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Speaker of the Shallows",
+          "year": 2377,
+          "summary": "The sanctuary of Repgin chooses its own Speaker and becomes the realm of Igara, keeper of the shrine of the shallows."
+        },
+        {
+          "name": "The Quarrel of the Shallows",
+          "year": 4208,
+          "summary": "Igara claims the sun-cranes of the Sun Lake Shallows as the shrine's birds against Elvana's claim, and the quarrel enters the songs of both realms."
+        },
+        {
+          "name": "The Weavers' Judgement",
+          "year": 6585,
+          "summary": "The Noon Council declares Igara's weaving equal to Elvana's, and Igara's Speaker walks out of the council beside Elvana's, the only time the two have agreed."
+        }
+      ],
+      "rivalries": [
+        "Elvana"
+      ],
+      "capitalReason": "Repgin is the sanctuary vale on the southern shore of Sun Lake beside the shrine of the shallows, which is the reason Igara exists at all.",
+      "today": "Speaker Igan leads the land south of Sun Lake from Repgin, some 22,000 Sunhot elves among about 60,000 Sunfolk. Igara is the smallest sanctuary realm, proud of its shrine and its cranes, and it measures its standing at the Noon Council by how often it can outvote Elvana.",
+      "divergence": [
+        {
+          "id": "igara_shrine_lost",
+          "what": "Drought or fire destroys the shrine of the shallows.",
+          "consequence": "Igara loses its reason to stand alone and joins the Lands of Light or Elvana, which would be the harder blow."
+        },
+        {
+          "id": "igara_council_seat",
+          "what": "Igara gains the chair of the Noon Council when the Radiant Speaker lays down the office.",
+          "consequence": "The smallest realm leads the Sunhot, and its quarrel with Elvana becomes the council's business."
+        }
+      ]
+    },
+    {
+      "name": "Yeni Alang",
+      "canon": "proposed",
+      "founding": {
+        "year": 1201,
+        "story": "A household of Sunhot elves who went up to the western terraces to watch the sky founded a house of sky-watchers at Sudoni in 1A 1201, after one of them saw wings over the terraces on a still day and could not make anyone believe it. They named their high valley Yeni Alang and have kept a roll of every sighting since."
+      },
+      "dynasties": [
+        {
+          "name": "The Eldest Watchers of Sudoni",
+          "from": 1201,
+          "notable": "The house is led by its eldest watcher, who keeps the Roll of Wings; Wenang is Eldest Watcher in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Roll of Wings",
+          "year": 1210,
+          "summary": "The watchers of Sudoni begin the Roll of Wings, a record of every sighting of angels over the terraces, with the hour, the weather and the watcher's name."
+        },
+        {
+          "name": "Wings over the Terraces",
+          "year": 6370,
+          "summary": "Watchers and Sunfolk farmers together see a flight of angels over the western terraces on a still day, the longest sighting on the Roll."
+        },
+        {
+          "name": "The Empty Sky",
+          "year": 6757,
+          "summary": "For a whole year no watcher of Sudoni sees wings, and the house fasts until the first sighting of the next spring."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Sudoni stands on the highest terraces above the western shore, where the sky is clearest and the watchers can see furthest, and the house was founded where the first watcher saw the wings.",
+      "today": "Eldest Watcher Wenang leads the western terraces from Sudoni, some 45,000 Sunhot elves among about 100,000 Sunfolk terrace-farmers. Yeni Alang is a quiet house that farms, sings and watches; it adds a line to the Roll of Wings a few times in a good year, and the Sunfolk of the terraces count a sighting as a blessing on the harvest.",
+      "divergence": [
+        {
+          "id": "yeni_alang_wings_descend",
+          "what": "The watchers see angels come down to the terraces, which the Roll has never recorded.",
+          "consequence": "The house gains a visitor nobody can explain, and every realm of the region sends to Sudoni to ask what it means."
+        },
+        {
+          "id": "yeni_alang_watchers_north",
+          "what": "The watchers send word north of what they see in the sky in the war years.",
+          "consequence": "The Noon Council gains warning of whatever flies, and the house is drawn out of its quiet."
+        }
+      ]
+    },
+    {
+      "name": "Tor Luni",
+      "canon": "proposed",
+      "founding": {
+        "year": 1975,
+        "story": "The high places above the Sea of Gods are full of white stone and of standing stones older than any Sunhot record, and in 2A 300 the elves who quarried the white stone round the stones raised a sanctuary at Wefolen and chose a Keeper of the Stones to govern the quarries and keep the standing stones uncut. They named their realm Tor Luni, the white stone."
+      },
+      "dynasties": [
+        {
+          "name": "The Keepers of the Stones",
+          "from": 1975,
+          "notable": "The Keeper of the Stones governs the quarrying sanctuary and decides what may be cut; Tangin is Keeper in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Sanctuary of the Quarries",
+          "year": 1975,
+          "summary": "The quarrying elves raise the sanctuary of Wefolen and swear never to cut the standing stones that stand among the white quarries."
+        },
+        {
+          "name": "White Stone for the Garden",
+          "year": 1986,
+          "summary": "Tor Luni quarries the white stone for the Gala's Garden of the Dead at Sodoli, the first great work it sends beyond its own hills."
+        },
+        {
+          "name": "The Joining of the Quarries",
+          "year": 6478,
+          "summary": "Four small quarry-sanctuaries of the high places, too few to keep their quarries alone, join Tor Luni under its Keeper."
+        },
+        {
+          "name": "The Stone That Would Not Be Cut",
+          "year": 6656,
+          "summary": "A Keeper orders a block cut from the foot of a standing stone to mend the sanctuary; the chisels break, the Keeper lays down the office, and the order is never given again."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Wefolen stands on the shore of the Sea of Gods below the quarries, where the white stone can be loaded onto ships and the standing stones are in sight of the Keeper's hall.",
+      "today": "Keeper Tangin leads the high places by the Sea of Gods from Wefolen, some 45,000 Sunhot elves among about 100,000 Sunfolk quarrymen and fishers. Tor Luni quarries the white stone that builds half the realms of the region, keeps its standing stones uncut, and receives the pilgrims who come by sea to look out over the Sea of Gods.",
+      "divergence": [
+        {
+          "id": "tor_luni_stones_opened",
+          "what": "A Keeper lets scholars dig at the foot of the standing stones.",
+          "consequence": "Something older than the Sunhot is found or nothing is, and either way the pilgrims of the Sea of Gods come in greater numbers."
+        },
+        {
+          "id": "tor_luni_stone_north",
+          "what": "Tor Luni sells its white stone to Aenor to rebuild after the war.",
+          "consequence": "The Lands of the Sun gain gold and northern ties, and the quarries fill with men from beyond the sea."
+        }
+      ]
+    },
+    {
+      "name": "Ihuy",
+      "canon": "proposed",
+      "founding": {
+        "year": 3874,
+        "story": "The isle Sunhot of the Ihuy group each kept their own island shrine until 3A 66, when the Great Volcano on Hol threw ash over every island at once and the Speakers of Hol, Hel, Tei, Armic, Ofos, Sus and Rana met at Holang to share out boats and food. They kept meeting, and the meeting became the council of Ihuy."
+      },
+      "dynasties": [
+        {
+          "name": "The Council of Island Speakers",
+          "from": 3874,
+          "notable": "Each island sends its Speaker to the council at Holang, which chooses one to speak for all; Speaker Lovin of Hol speaks for the council in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Ash of Hol",
+          "year": 3874,
+          "summary": "The Great Volcano on Hol covers the Ihuy isles in ash, and the island Speakers form their council at Holang."
+        },
+        {
+          "name": "The Great Smoke",
+          "year": 6191,
+          "summary": "Hol smokes for a whole year, the pearl lagoons cloud over, and the council moves its meetings from Holang to Tei until the smoke clears."
+        },
+        {
+          "name": "The Reef-Words",
+          "year": 6528,
+          "summary": "The isle Sunhot adopt the reef-words of the Islands of the South, a pilots' speech of tides and shallows, so that their boats can trade on the southern reefs."
+        }
+      ],
+      "rivalries": [
+        "Soyano"
+      ],
+      "capitalReason": "Holang is the harbour of Hol under the Great Volcano, where the Speakers first met in the ash, and the council meets there because Hol is the island that most needs watching.",
+      "today": "Speaker Lovin of Hol speaks for the Ihuy isles, some 67,000 isle Sunhot among about 150,000 Sunfolk sailors, pearl-farmers and fishers. The council trades pearls, fish and salt with the Islands of the South and the mainland, watches the smoke of Hol, and the isle folk say it smokes harder whenever a ship is lost.",
+      "divergence": [
+        {
+          "id": "ihuy_hol_wakes",
+          "what": "The Great Volcano on Hol erupts in the war years.",
+          "consequence": "The Ihuy isles empty toward the mainland and Soyano, and the region must house a people for the first time in its history."
+        },
+        {
+          "id": "ihuy_southern_isles",
+          "what": "Ihuy binds itself to the Islands of the South by treaty.",
+          "consequence": "The storm-driven ships of the south come to Ihuy first, and the council learns of strangers before Gala does."
+        }
+      ]
+    },
+    {
+      "name": "Soyano",
+      "canon": "proposed",
+      "founding": {
+        "year": 4320,
+        "story": "The northern isles from Ossi Luni to Biggen were small sanctuaries of shipwrights and pilots, each too small to keep a harbour alone, until 3A 512, when they formed the Archipelago Council at Ileslia under a Tide-Speaker chosen at the turn of the tide. The council has built the best white ships of the region ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Tide-Speakers of Ileslia",
+          "from": 4320,
+          "notable": "The Archipelago Council chooses a Tide-Speaker from among the isles' shipwrights and pilots; Tide-Speaker Soyai holds the office in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Archipelago Council",
+          "year": 4320,
+          "summary": "The northern isles form the Archipelago Council at Ileslia and choose their first Tide-Speaker at the turn of the tide."
+        },
+        {
+          "name": "The White Ships of Gala",
+          "year": 6434,
+          "summary": "The shipwrights of Ossi Luni begin to build the white ships of Gala's court, and the council grows rich on the fastest hulls of the south."
+        },
+        {
+          "name": "The Strait Quarrel",
+          "year": 6671,
+          "summary": "Soyano and Ihuy dispute the fishing grounds of the strait between their isles until the Noon Council divides them by the line of the reef."
+        }
+      ],
+      "rivalries": [
+        "Ihuy"
+      ],
+      "capitalReason": "Ileslia is the main harbour of the northern isles, the one deep enough for the white ships, and the council meets where the ships are launched.",
+      "today": "Tide-Speaker Soyai speaks for the northern isles, some 67,000 isle Sunhot among about 150,000 Sunfolk shipwrights, pilots and fishers. Soyano builds the white ships of the south and the hulls of Gala's court, trades on the Bright Sea, and is the one realm of the region whose ships could carry a host north if the Noon Council ever asked.",
+      "divergence": [
+        {
+          "id": "soyano_fleet_north",
+          "what": "The Archipelago Council sends its white ships north in the war years.",
+          "consequence": "The Lands of the Sun can reach the north in force for the first time, and Soyano becomes the key to any southern help."
+        },
+        {
+          "id": "soyano_sells_ships",
+          "what": "Soyano sells white ships to a northern crown.",
+          "consequence": "A northern fleet gains hulls faster than any it has, and the Noon Council quarrels over whether ships are weapons."
+        }
+      ]
+    },
+    {
+      "name": "Goodin",
+      "canon": "proposed",
+      "founding": {
+        "year": 4713,
+        "story": "Sunfolk farmers had worked the western grasslands as guests of the sanctuaries since the Second Age, but by 3A 905 the elves of the western grass were too few to keep a sanctuary there, and the steadings met at the guest-town of Elgagen and chose elders to govern themselves. Goodin became a realm of men among the tall realms, still a guest at the Noon Council and nobody's servant."
+      },
+      "dynasties": [
+        {
+          "name": "The Elders of the Guest-Towns",
+          "from": 4713,
+          "notable": "The steadings of Goodin, Goodton and Guuden are governed by elders chosen by the guest-towns, who choose one to speak for them; Senan of Elgagen speaks for the elders in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Guest-Right",
+          "year": 2775,
+          "summary": "The western sanctuaries grant the Sunfolk farmers the guest-right: land to farm and a share of the harvest in return for working the sanctuary fields."
+        },
+        {
+          "name": "The Steadings' Moot",
+          "year": 4713,
+          "summary": "The steadings of the western grass meet at Elgagen and choose elders to govern themselves, and Goodin becomes a realm of men."
+        },
+        {
+          "name": "A Guest's Seat",
+          "year": 5480,
+          "summary": "The Noon Council gives Goodin a guest's seat, and its elder Talae the Guest is the first man to speak in the council."
+        },
+        {
+          "name": "The Joining of Goodton and Guuden",
+          "year": 6445,
+          "summary": "The steadings of Goodton and Guuden join Goodin under the guest-town elders, and all the Sunfolk of the western grass answer to one moot."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Elgagen is the largest Sunfolk steading on the western grass, the guest-town where the steadings first met to choose their elders.",
+      "today": "Senan of Elgagen speaks for the elders of Goodin, some 300,000 Sunfolk of the western grasslands with Goodton and Guuden. Goodin is the only realm of the Lands of the Sun that raises levies freely, it keeps the Reckoning of the Twelve, and it is the strongest arm the Noon Council has, though it sits at the council only as a guest.",
+      "divergence": [
+        {
+          "id": "goodin_full_seat",
+          "what": "Goodin demands a full seat at the Noon Council in return for its levies.",
+          "consequence": "The Sunfolk gain a voice equal to the Sunhot realms, and the guest-right of every Sunfolk village is reopened."
+        },
+        {
+          "id": "goodin_host_north",
+          "what": "Goodin raises a host of its own and sends it north.",
+          "consequence": "Men of the Lands of the Sun fight in the War of the Last Crowns whether the elves go or not, and come home with the north's ideas."
+        }
+      ]
+    },
+    {
+      "name": "God Forest",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "story": "The God Forest south of Sun Lake was kept by its household of Keepers before any record of the Sunhot, and nobody outside the wood knows when they came or what kin they are. The Sunhot say the Keepers were there when the first sanctuary was built, and the Keepers say nothing at all."
+      },
+      "dynasties": [
+        {
+          "name": "The Keepers' household",
+          "from": 0,
+          "notable": "A small household of secluded elves who keep the God Forest; no ruler is named, and the Keepers speak to outsiders only through whoever meets them at the wood's edge."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Keepers Close the Wood",
+          "year": 1680,
+          "summary": "After Dardan the Keepers close the God Forest to every outsider, elf or man, and the paths into the wood grow over."
+        },
+        {
+          "name": "The Lost Pilgrims",
+          "year": 4619,
+          "summary": "Three Sunfolk pilgrims who walk into the God Forest come out a year later unharmed, with nothing to say about where they have been."
+        },
+        {
+          "name": "The Seat Refused",
+          "year": 5156,
+          "summary": "The Keepers decline a seat at the new Noon Council, sending back the Radiant Speaker's invitation tied with a living vine."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "The Keepers' Glade lies deep in the God Forest, where no road reaches; it is not a seat but the place where the household lives.",
+      "today": "The Keepers' household holds the God Forest, a single dense wood of about 4,000 secluded elves. The wood is closed, the Keepers are hardly seen, the Sunhot treat their silence as holy and the Sunfolk avoid the forest edge after dark.",
+      "divergence": [
+        {
+          "id": "god_forest_opens",
+          "what": "The Keepers open the wood to someone in the war years.",
+          "consequence": "Whatever the household has kept is seen by outsiders for the first time since Dardan, and every realm of the region asks why now."
+        },
+        {
+          "id": "god_forest_shelters",
+          "what": "The Keepers take in refugees from the coast or the isles.",
+          "consequence": "The closed wood becomes a refuge, the Keepers become known, and their kinship, which nobody can now answer, becomes a question the Gala and the Sunhot must face."
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "Sodoli",
+      "country": "Gala",
+      "role": "capital",
+      "size": "town",
+      "founded": 0,
+      "economy": "The court; the white ships' harbour; the Sunfolk farms of the ash shore",
+      "canon": "proposed",
+      "legend": "The Gala keep a garden at Sodoli for their dead of Dardan, far from Dardan, and say that its white stones are warm at dawn even in winter because the dead are remembered there."
+    },
+    {
+      "name": "Eldoga",
+      "country": "The Lands of Light",
+      "role": "holy",
+      "size": "town",
+      "founded": 204,
+      "economy": "The great sanctuary; the Noon Council; grain from the Sun Grasslands",
+      "canon": "proposed",
+      "legend": "The Sunhot of the Light say Eldoga was built where the noon sun casts no shadow on one day of the year, and that the Radiant Speaker is chosen standing on that spot."
+    },
+    {
+      "name": "Googavis",
+      "country": "Elvana",
+      "role": "shrine",
+      "size": "village",
+      "founded": 1986,
+      "economy": "Weaving and healing; fish from both shores of the cape",
+      "canon": "proposed",
+      "legend": "The weavers of Googavis say their first loom was strung with the hair of a sun-crane that flew in from Igara's shallows, which is why the cranes belong to Elvana."
+    },
+    {
+      "name": "Repgin",
+      "country": "Igara",
+      "role": "shrine",
+      "size": "village",
+      "founded": 1825,
+      "economy": "The shrine of the shallows; fish and reed from Sun Lake",
+      "canon": "proposed",
+      "legend": "The elves of Repgin say the sun-cranes of the shallows nest at the shrine because the first Speaker sang them home, and that Elvana's story about the loom is a lie told in better verse."
+    },
+    {
+      "name": "Sudoni",
+      "country": "Yeni Alang",
+      "role": "academy",
+      "size": "village",
+      "founded": 1201,
+      "economy": "Terrace farming; the Roll of Wings",
+      "canon": "proposed",
+      "legend": "The watchers say that whoever sees wings over the terraces and tells no one will see them again, and that the Roll of Wings is therefore only a record of the watchers who could not keep quiet."
+    },
+    {
+      "name": "Wefolen",
+      "country": "Tor Luni",
+      "role": "port",
+      "size": "village",
+      "founded": 1975,
+      "economy": "White stone shipped by sea; pilgrims to the Sea of Gods",
+      "canon": "proposed",
+      "legend": "The quarrymen of Wefolen say the standing stones above the town were raised by nobody the Sunhot remember, and that on still nights they can be heard settling like an old house."
+    },
+    {
+      "name": "Holang",
+      "country": "Ihuy",
+      "role": "port",
+      "size": "town",
+      "founded": 3874,
+      "economy": "Pearls, fish and salt; the council of the isles",
+      "canon": "proposed",
+      "legend": "The isle Sunhot say Hol's Great Volcano smokes when a ship is lost, and that the families of Holang count their sailors home by watching the mountain."
+    },
+    {
+      "name": "Ileslia",
+      "country": "Soyano",
+      "role": "port",
+      "size": "town",
+      "founded": 4320,
+      "economy": "The shipyards of the white ships; fishing and the Bright Sea trade",
+      "canon": "proposed",
+      "legend": "The shipwrights say a white ship of Ileslia will not sink while its first sail is kept dry ashore, and that the sail-house of Ileslia holds every first sail ever made there."
+    },
+    {
+      "name": "Elgagen",
+      "country": "Goodin",
+      "role": "farm",
+      "size": "town",
+      "founded": 2775,
+      "economy": "Grain, fruit and sun-fruit of the western grass; the guest-town market",
+      "canon": "proposed",
+      "legend": "The Sunfolk say the Good Volcanoes were put to sleep by a song and must not be sung near, and that the guest-town of Elgagen keeps one song that it never sings for that reason."
+    }
+  ],
+  "figures": [
+    {
+      "name": "Senan of Elgagen",
+      "country": "Goodin",
+      "role": "Elder of the guest-towns",
+      "born": 6764,
+      "died": null,
+      "canon": "proposed",
+      "biography": "A farmer's son who became the guest-towns' spokesman by settling a water quarrel without a single steading leaving the moot, he means to ask the Noon Council for a full seat before he dies and has not yet decided how."
+    },
+    {
+      "name": "Talae the Guest",
+      "country": "Goodin",
+      "role": "Elder of the guest-towns",
+      "born": 5436,
+      "died": 5499,
+      "canon": "proposed",
+      "biography": "The first man to speak at the Noon Council, she thanked the Sunhot for the guest-right and then asked for a well for every steading, which the council granted before it noticed what it had agreed to."
+    }
+  ],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "id": "sun_noon_council",
+      "name": "The Noon Council",
+      "realms": [
+        "The Lands of Light",
+        "Elvana",
+        "Igara",
+        "Yeni Alang",
+        "Tor Luni",
+        "Ihuy",
+        "Soyano",
+        "Gala",
+        "Goodin"
+      ],
+      "canon": "proposed",
+      "summary": "The seven Sunhot realms sit at the Noon Council under the Radiant Speaker, with Gala as an honoured guest and Goodin in a guest's seat; it settles quarrels with songs, petitions and judgements and has never declared a war."
+    },
+    {
+      "id": "sun_guest_right",
+      "name": "The guest-right",
+      "realms": [
+        "The Lands of Light",
+        "Elvana",
+        "Igara",
+        "Yeni Alang",
+        "Tor Luni",
+        "Ihuy",
+        "Soyano",
+        "Gala",
+        "Goodin"
+      ],
+      "canon": "proposed",
+      "summary": "The Sunfolk farm the sanctuary fields as guests, with land and a share of the harvest; a sanctuary realm must ask its Sunfolk villages for levies, and the villages may refuse, while Goodin, a realm of men, raises its own."
+    },
+    {
+      "id": "sun_closed_wood",
+      "name": "The closed wood",
+      "realms": [
+        "God Forest"
+      ],
+      "canon": "proposed",
+      "summary": "No one enters the God Forest without the Keepers' leave, and the Sunhot treat the wood's silence as holy; a pilgrim who walks in without leave is not stopped, but is not expected back."
+    }
+  ]
+}

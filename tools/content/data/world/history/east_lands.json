@@ -1,0 +1,1313 @@
+{
+  "version": 1,
+  "region": "east_lands",
+  "overview": "Across the long Rift Sea from the elves lies the richest and most divided land of Aoaz. A white snow coast faces the Kusmeel in the north, the steaming Hot Lake fills the middle with fishing towns and salt pans, the camel-kings of Noris water their caravans at the Seven Wells, the merchant princes of Stabilo weigh gold under bronze roofs, the old river crowns of the rift keep their stair-temples above the flood, and in the south-east the Hellfire Range smokes over red clay country where the towns pay a tithe to the devils of the mountain. Men of the East first met Aenor's traders in the First Age, and some of their kings sent ships to Volgan while others refused him; the Second and Third Ages passed far from the wars of the Middle Lands, and the Fourth Age made the East rich when the five caravan roads opened between 4A 600 and 780. In 4A 1748 every eastern court is at peace, Noris and Stabilo compete by roads rather than by war, and every city has a generous temple of the Deliverer whose friends lend money to princes in trouble. The eastern courts keep their own reckonings: the desert and coast peoples count from the digging of the Seven Wells (4A 1748 is the 3952nd year of the Wells), the caravan princes from the opening of the Gold Road (the 1108th year of the Ledger), and the river-kings by the Risings of each king's reign; only the Lake Road cities use the Reckoning of the Twelve. Years are one continuous count from the victory of Aen: 1A 1 is year 1, the First Age runs to 1675, the Second Age from 1676 (2A 1) to 3808 (2A 2133), the Third Age from 3809 (3A 1) to 5068 (3A 1260, the proposed length) and the Fourth Age from 5069 (4A 1), so that the campaign year 4A 1748 is 6816; a founding year of 0 marks a realm older than the numbered years, whose beginning nobody dates. Everything here that the vault does not state is proposed.",
+  "ages": [
+    {
+      "id": "east_first_charts",
+      "name": "The Age of the First Charts",
+      "from": 1,
+      "to": 1149,
+      "canon": "proposed",
+      "summary": "The river crowns of the rift are already old when Aen wins his war, and the Eastern tongues have long since parted into desert, trade and river speech. In the first half of the First Age the traders of Aenor reach the river mouths and the Lake Road towns, and the Easterlings, as Aenor calls them, learn to write treaties in two hands."
+    },
+    {
+      "id": "east_black_tribute",
+      "name": "The Black Tribute",
+      "from": 1150,
+      "to": 1675,
+      "canon": "proposed",
+      "summary": "When Volgan opens his war from Mirolon, some eastern rulers give him ships, landing places and grain, and the chronicles of the river remember their gifts as the Black Tribute. Others refuse him, and eastern men fight on both sides; after Dardan the client kings fall with his host and their thrones pass to new houses."
+    },
+    {
+      "id": "east_river_wars",
+      "name": "The River Wars",
+      "from": 1676,
+      "to": 3808,
+      "canon": "proposed",
+      "summary": "The East lies far from the long struggle between Aenor and the Necromancer and fights its own wars over water. The Noric tribes dig the Seven Wells and choose their first king, Alerhia breaks the mountain kings in the War of the Two Floods, and the horse-lords of Delbiz and the princes of Plutondo take their own crowns."
+    },
+    {
+      "id": "east_far_trade",
+      "name": "The Far Trade",
+      "from": 3809,
+      "to": 5068,
+      "canon": "proposed",
+      "summary": "Through the long occupation of Aenor the East trades with the Necromancer's provinces through the rift ports and the Lake Road, and nobody in the East is conquered by him. Aenoran exiles settle at Porrenva and found Osrale, the highland lords choose a king at Ohitus, and the lake towns of Gonnois buy their freedom from their lord."
+    }
+  ],
+  "countries": [
+    {
+      "name": "Noris",
+      "canon": "proposed",
+      "founding": {
+        "year": 2889,
+        "story": "Twenty-four years after seven tribes dug the Seven Wells on the hill of Furvior, the well-lords met at the wells after the War of the Eighth Well and chose a single war-leader to keep the peace of the water. They took Qasud ben Melar of the Khadi, whose riders had won the war, and swore that every king after him would come from the same line and be chosen by them at the same wells."
+      },
+      "dynasties": [
+        {
+          "name": "The Khadi line",
+          "from": 2889,
+          "notable": "Every king of Noris since Qasud ben Melar has been a Khadi chosen by the well-lords; a king who loses the well-lords' trust is not deposed but left without riders, which the tribes consider worse."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Digging of the Seven Wells",
+          "year": 2865,
+          "summary": "Seven tribes of the desert dig seven wells on one hill, and the Count of the Wells begins; the camel-kings still say the wells were dug by seven brothers who quarrelled over an eighth."
+        },
+        {
+          "name": "The War of the Eighth Well",
+          "year": 2878,
+          "summary": "An eighth well dug below the hill runs sweet for one summer and then dry, and the tribes fight eleven years over who poisoned it until the Khadi riders end the war and the well is filled with stones."
+        },
+        {
+          "name": "The Charter of the Salt Road",
+          "year": 5695,
+          "summary": "The king charters the Salt Road from Furvior to the salt pans of the Hot Lake and on to the north coast, sets a well-keeper at every day's march and takes a toll on every camel-load of salt and dye."
+        },
+        {
+          "name": "The War of the Scales and Wells",
+          "year": 6456,
+          "summary": "Six years of raids and toll wars between Noris and Stabilo over the junctions of the Gold Road and the Salt Road end with the Peace of Cereosa, which makes Mostok and Kersian free cities that neither power may garrison."
+        },
+        {
+          "name": "The Noris Treaty",
+          "year": 6467,
+          "summary": "Noris and the sea crown of Naamis swear the Noris Treaty at Duum-Saah, sharing the Salt Road's tolls and promising each other riders and ships against the Stabilo Pact."
+        },
+        {
+          "name": "The Powder Refusal",
+          "year": 6629,
+          "summary": "When the caravan princes put black powder on their walls, the well-lords swear at the Seven Wells that no rider of Noris will carry it, and a Khadi prince who bought powder-engines is left without a following."
+        }
+      ],
+      "rivalries": [
+        "Stabilo",
+        "Miaed"
+      ],
+      "capitalReason": "Furvior stands on a hill of seven wells where the Salt Road meets the Sand Road, the one place in the northern desert where a royal host of camels can water for a month without emptying a well.",
+      "today": "In the 3952nd year of the Wells, King Rasiq ben Tumek of the Khadi rules the northern desert, the Salt Road and the tribes of the Moco and Mylunur from Furvior, a city of 210,000. The salt and dye trade has made the riders rich, the Noris Treaty with Naamis holds, and the rivalry with Stabilo is fought in tolls, bribes and caravan prices. The riders still scorn black powder, and the generous friends of the Deliverer's temple at Furvior have lent the king more than his treasurers like to admit.",
+      "divergence": [
+        {
+          "id": "noris_takes_powder",
+          "what": "The king breaks the Powder Refusal and buys powder-engines from Drak through a third party.",
+          "consequence": "Noris gains siege craft and can storm Stabilo's walled cities, but the oldest tribes leave the king's riders and the well-lords may choose another Khadi."
+        },
+        {
+          "id": "noris_unites_east",
+          "what": "Noris calls the eastern courts to Furvior and makes itself the head of the Free Crowns of the East before any foreign claimant can ask them to kneel.",
+          "consequence": "The coalition that would cross the rift forms under the Khadi instead, or never forms, and a king of the East from the desert becomes reachable."
+        }
+      ]
+    },
+    {
+      "name": "Stabilo",
+      "canon": "proposed",
+      "founding": {
+        "year": 5709,
+        "story": "The bronze towns of the southern hills had long sold their metal to the river crowns, but in 4A 641 their merchant houses joined to build the Gold Road from the mines to the sea and to Porrenva, and they set a bench of houses over the road with one Prince of the Scales first among them. The caravan princes count their years from that opening."
+      },
+      "dynasties": [
+        {
+          "name": "The Bench of Houses",
+          "from": 5709,
+          "notable": "The Prince of the Scales is chosen by the bench from among the great houses and rules for life; the houses of Fundo, Tablo, Prudo and Shindo have held the seat most often, and the present prince is Pleron Tablo."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Opening of the Gold Road",
+          "year": 5709,
+          "summary": "The houses open the Gold Road from the mines of the southern hills to the harbour of Postondoroth and on to Porrenva; the Ledger Count begins with the first weighing at the new road's gate."
+        },
+        {
+          "name": "The War of the Scales and Wells",
+          "year": 6456,
+          "summary": "Stabilo and Noris fight six years of toll wars and caravan raids, and Prince Demio Fundo makes the Peace of Cereosa in 4A 1394 rather than lose the junction cities to the riders."
+        },
+        {
+          "name": "The Stabilo Pact",
+          "year": 6464,
+          "summary": "Prince Demio Fundo gives his daughter Nelia to the Forge-Prince of Drak and binds the two crowns in the Stabilo Pact, a promise of companies, ore and credit against the riders of the desert."
+        },
+        {
+          "name": "Powder on the Walls",
+          "year": 6615,
+          "summary": "Postondoroth sets the first powder-engines bought from Drak on its harbour walls, and within a generation every Gold Road city that can afford them has hired companies trained to their use."
+        }
+      ],
+      "rivalries": [
+        "Noris",
+        "Plutondo"
+      ],
+      "capitalReason": "Postondoroth sits at the deep-water harbour where the Gold Road comes down from the bronze hills, so that the mine wagons and the ships meet at one weigh-house and every load is weighed once under the Prince's seal.",
+      "today": "In the 1108th year of the Ledger the bench of houses governs the southern hills, the Gold Road and the old caravan towns of Arcon, Furro, Olor and Oreton from Postondoroth, at 240,000 the largest city of the East. Its powder-engines and hired companies make it the strongest military purse of the region, the Stabilo Pact with Drak holds, and several great houses owe the Deliverer's temple more than the bench has been told.",
+      "divergence": [
+        {
+          "id": "stabilo_calls_debts",
+          "what": "A Prince of the Scales calls in the debts of every court that has borrowed on the Gold Road.",
+          "consequence": "The eastern courts must either pay, kneel to Postondoroth or default together, and a merchant empire of the East becomes possible."
+        },
+        {
+          "id": "stabilo_bench_splits",
+          "what": "The houses that borrowed from the temple and the old houses that did not refuse to sit together on the bench.",
+          "consequence": "Postondoroth falls into a war of houses, the Gold Road closes for a season and Noris profits."
+        }
+      ]
+    },
+    {
+      "name": "Alerhia",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "story": "Alerhia was a river crown before Aen won his war, and its scribes keep no account of a first king, only of the first Rising they wrote down. The temple chronicles say the valley people raised the first stair above the flood-line so that the river and the gods would each have a place, and crowned the man who carried the first stone up it."
+      },
+      "dynasties": [
+        {
+          "name": "The Alerhides",
+          "from": 1,
+          "notable": "The old river line whose scribes signed the first treaties with Aenoran traders and refused Volgan's envoys; it ended when its last king drowned at the Second Flood."
+        },
+        {
+          "name": "The Furanides",
+          "from": 3135,
+          "notable": "The house that won the War of the Two Floods; every Furanid king is crowned standing in the Rising and reigns under the river's name, so that the present king, Kerseus Furanides, is called Alerh in every proclamation."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Ships at the River Mouth",
+          "year": 412,
+          "summary": "Aenoran traders sail up the river to Porrenva, and the temple scribes write the first treaty of the East in two hands, Alerhic reed letters beside the Common hand."
+        },
+        {
+          "name": "The Refusal of the Black Tribute",
+          "year": 1214,
+          "summary": "Volgan's envoys ask Alerhia for ships and grain; the scribe-council refuses, the king burns the black-sailed hulls at the river mouth, and the mountain kings to the south give Volgan what Alerhia would not."
+        },
+        {
+          "name": "The War of the Two Floods",
+          "year": 3106,
+          "summary": "For twenty-nine years Alerhia fights the mountain kings of Erco and the princes of Plutondo over the upper river's water, until the Stair Peace of 2A 1460 divides the floods and the Furanides take the crown."
+        },
+        {
+          "name": "The Exiles' Quay",
+          "year": 3822,
+          "summary": "When Aenor falls to the Necromancer, the king gives Aenoran exiles a quay below Porrenva and keeps trading with the occupied provinces through the rift ports, which the scribes call prudence and the exiles call shame."
+        }
+      ],
+      "rivalries": [
+        "Erco",
+        "Plutondo",
+        "Rhachia"
+      ],
+      "capitalReason": "Porrenva stands where the valley narrows above the flood-line, so that the stair-temples stay dry when the Rising covers the fields and the king can see the whole flood from the top step.",
+      "today": "In the twelfth Rising of Alerh Kerseus, Alerhia rules the great river valley on the rift from Porrenva, a stair-city of 160,000 at the end of the Gold Road. It is an old crown in its own right, neutral between Noris and Stabilo, rich in grain and scribes, and it looks across the Rift Narrows at the elven shore its kings have traded with for three ages. The scribe-council distrusts the caravan princes and borrows from them all the same.",
+      "divergence": [
+        {
+          "id": "alerhia_crosses_rift",
+          "what": "Alerhia gives the eastern coalition its river fleet and the Rift Narrows crossing.",
+          "consequence": "The invasion of the Magical Lands comes sooner and stronger, and an old crown that never conquered anyone stakes its name on a war."
+        },
+        {
+          "id": "alerhia_closes_river",
+          "what": "The king closes the Rift Road and the river mouth to every coalition ship.",
+          "consequence": "The coalition must cross from the north mouth alone, Alerhia becomes the first of the Free Crowns, and the courts that kneel make it their enemy."
+        }
+      ]
+    },
+    {
+      "name": "Naamis",
+      "canon": "proposed",
+      "founding": {
+        "year": 4910,
+        "story": "The harbour houses of Hacsen and Vigodor fought for the north coast trade until 3A 1102, when the heiress of Hacsen married the master of Vigodor's ships and the two harbours took one crown. They built Duum-Saah, the coast hall, between them on the best anchorage of the plain, and named their realm Naamis, the sea country."
+      },
+      "dynasties": [
+        {
+          "name": "The Tamari line",
+          "from": 4910,
+          "notable": "The sea crown passes in one line of captains' blood, most often to a queen; Queen Shinah bat Alodar rules with the council of ship-masters, who may refuse her ships but not her crown."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Wedding of the Two Harbours",
+          "year": 4910,
+          "summary": "Hacsen and Vigodor unite by marriage, Duum-Saah is founded between them, and the ship-masters of both towns are given seats on one council under the queen."
+        },
+        {
+          "name": "The Salt Road Reaches the Sea",
+          "year": 5758,
+          "summary": "Noris extends the Salt Road to Duum-Saah, and the sea crown grows rich shipping salt, dye and camel-hair cloth along the coast of the Kusmeel and into the North Mouth of the Rift."
+        },
+        {
+          "name": "The Noris Treaty",
+          "year": 6467,
+          "summary": "Naamis swears the Noris Treaty with the camel-kings, trading its ships for a share of the Salt Road and the riders' protection of its landward border."
+        },
+        {
+          "name": "The Ice Winter",
+          "year": 6672,
+          "summary": "The Shaar-Sheek freezes to the sea, the fishing fails, and the sealers of Woqood come south over the ice; the queen feeds them and the Woqood clans have kept peace with Naamis ever since."
+        }
+      ],
+      "rivalries": [
+        "Stabilo",
+        "Drak"
+      ],
+      "capitalReason": "Duum-Saah has the one deep, sheltered anchorage of the north coast plain, with the Naamis Wood behind it for ship timber and the mouth of the Shaar-Sheek close enough to bring the inland trade down by barge.",
+      "today": "In the 3952nd year of the Wells, Queen Shinah rules the north coast plain, Hacsen and Vigodor from Duum-Saah, a harbour of 45,000. The Noris Treaty is the pillar of her policy, her ships carry the Salt Road's goods to the rift, and her captains listen with unease to the island fishers who say there are strange ships among the black isles of the Kusmeel.",
+      "divergence": [
+        {
+          "id": "naamis_leaves_treaty",
+          "what": "Stabilo's houses buy the council of ship-masters and Naamis leaves the Noris Treaty.",
+          "consequence": "Noris loses its sea and its northern outlet, and the Stabilo Pact holds both ends of the eastern trade."
+        },
+        {
+          "id": "naamis_carries_coalition",
+          "what": "The queen lends her ships to carry the eastern coalition across the North Mouth of the Rift.",
+          "consequence": "The invasion of the Magical Lands gains a northern landing, and the Kusmeel coast is left unwatched when the dead of the north stir."
+        }
+      ]
+    },
+    {
+      "name": "Drak",
+      "canon": "proposed",
+      "founding": {
+        "year": 5870,
+        "story": "The forge-houses that worked the iron and sulphur of the Drak Mountains swore the Furnace Oath in 4A 802 under the smoking cone of the Drak Furnace, pooling their mines and naming a Forge-Prince to sell their metal on the Gold Road. The first prince was Hardo Barzio, and the house of iron has kept the seat ever since."
+      },
+      "dynasties": [
+        {
+          "name": "House Barzio",
+          "from": 5870,
+          "notable": "The forge-house whose name means iron; its princes rule with a council of forge-masters, and the present Forge-Prince is Telino Barzio, great-grandson of the Nelia Fundo who sealed the Stabilo Pact."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Furnace Oath",
+          "year": 5870,
+          "summary": "The forge-houses of the Drak Mountains pool their mines and furnaces under one Forge-Prince and agree to sell iron and sulphur only through Stabilo's weigh-houses."
+        },
+        {
+          "name": "The Stabilo Pact",
+          "year": 6464,
+          "summary": "Forge-Prince Corio Barzio marries Nelia Fundo of Stabilo, and Drak becomes the iron arm of the Stabilo Pact."
+        },
+        {
+          "name": "The Furnace Year",
+          "year": 6600,
+          "summary": "Forge-master Arcan Dolgio compounds black powder from the Furnace's sulphur, saltpetre from the cave floors and charcoal, and the forge-houses learn to cast powder-engines that can break a gate."
+        },
+        {
+          "name": "The Ash Fall",
+          "year": 6731,
+          "summary": "The Drak Furnace erupts, burying the lower forge-town in ash, and the princes rebuild Castronuro higher on the ridge, behind walls that face the mountain as well as the road."
+        }
+      ],
+      "rivalries": [
+        "Noris",
+        "Naamis"
+      ],
+      "capitalReason": "Castronuro stands under the Drak Furnace because the forges need the cone's sulphur and the ridge's iron within a day's haul, and it was rebuilt on the ridge after the Ash Fall because the lower valley could no longer be trusted.",
+      "today": "In the 1108th year of the Ledger, Forge-Prince Telino Barzio rules the Drak Mountains from Castronuro, the place where the East learned black powder. Drak sells powder-engines and casks to the Stabilo Pact and to any caravan city that can pay, its forge-masters guard the recipe closely, and Noris's riders spit when its name is spoken.",
+      "divergence": [
+        {
+          "id": "drak_sells_powder_widely",
+          "what": "The forge-houses sell powder to every court that pays, Noris and the river crowns included.",
+          "consequence": "Black powder spreads through the East within a decade, walls fall that have stood for centuries, and the Stabilo Pact loses its edge."
+        },
+        {
+          "id": "drak_furnace_wakes",
+          "what": "The Drak Furnace erupts again in the war years.",
+          "consequence": "Castronuro is lost, the powder trade stops, and Stabilo's companies must fight with what they have stored."
+        }
+      ]
+    },
+    {
+      "name": "Rhachia",
+      "canon": "proposed",
+      "founding": {
+        "year": 6787,
+        "story": "The kiln-towns of the Red Lands had been ruled by a cadet line of Alerhia since 4A 1288, until King Mirodeus doubled the kiln-tax to pay his debts. In 4A 1719 the towns rose, the kiln-mothers opened the gates of Pordoce to the villagers, and the village heads elected a tribune instead of a king. They named their commonwealth Rhachia, the red land, for the clay that feeds them."
+      },
+      "dynasties": [
+        {
+          "name": "The Kings of the Kilns",
+          "from": 6356,
+          "notable": "A cadet branch of the Furanides of Alerhia, given the Red Lands as an appanage; its last king fled to Porrenva in 4A 1719 and his heir still lives there on a pension."
+        },
+        {
+          "name": "The Tribunes of Pordoce",
+          "from": 6787,
+          "notable": "Each tribune is elected by the village heads for seven years; Moiria of the Kilns was the first, and the present tribune is Kaiena of Pordoce."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Crown of the Kilns",
+          "year": 6356,
+          "summary": "Alerhia gives the Red Lands to a younger son of the Furanides, who builds a royal hall at Pordoce and taxes the kilns that the Gold Road cities buy from."
+        },
+        {
+          "name": "The Doubled Kiln-Tax",
+          "year": 6784,
+          "summary": "King Mirodeus, in debt to the caravan houses, doubles the tax on every kiln and seizes the clay pits of the villages that cannot pay."
+        },
+        {
+          "name": "The Rising of the Towns",
+          "year": 6787,
+          "summary": "The kiln-towns rise, the king flees to Porrenva, and the village heads elect Moiria of the Kilns the first tribune of the commonwealth."
+        },
+        {
+          "name": "The Recognition at Porrenva",
+          "year": 6792,
+          "summary": "Alerhia accepts the commonwealth in return for a yearly gift of pottery and grain, though the scribes still write the Red Lands as an appanage without a king."
+        }
+      ],
+      "rivalries": [
+        "Alerhia",
+        "Pornivior"
+      ],
+      "capitalReason": "Pordoce grew around the largest kiln-field of the Red Lands, where the clay pits, the river and the road meet, and the towns kept it as their seat because the kiln-mothers opened its gates in the rising.",
+      "today": "Tribune Kaiena of Pordoce governs the Red Lands and the vent-field of the Rhachia Fires from a kiln-city of 35,000, under the Count of the Floods as the old crown kept it. The commonwealth is poor, proud and watched: the deposed king's heir waits at Porrenva, the caravan houses still buy its pots, and the villages refire the clay figures of their first mothers every spring.",
+      "divergence": [
+        {
+          "id": "rhachia_restoration",
+          "what": "The heir of the Kings of the Kilns returns with Alerhic spears and a promise to halve the kiln-tax.",
+          "consequence": "The commonwealth either breaks or wins a war that makes it the model for every village of the East."
+        },
+        {
+          "id": "rhachia_tribunes_spread",
+          "what": "Villages of Mora and Erco elect tribunes of their own on Rhachia's model.",
+          "consequence": "Unrest spreads along the Lake Road and the southern mountains, and the eastern crowns must choose between reform and repression."
+        }
+      ]
+    },
+    {
+      "name": "Erco",
+      "canon": "proposed",
+      "founding": {
+        "year": 1687,
+        "story": "The old mountain kings of the Kalioth upland had given Volgan grain and men, and when his host broke at Dardan their fortresses were full of his beaten soldiers and empty of food. In 2A 12 the mine-lords of the southern mountains shut the passes against them, besieged the last king in his hall, and crowned the mine-lord Rhanoth, who had held the river ford through the whole war."
+      },
+      "dynasties": [
+        {
+          "name": "The Rhanides",
+          "from": 1687,
+          "notable": "The mine-lords' line; every Rhanid king swears at his crowning to pay what the mountain asks and to keep the seven forts, and the present king is Keroth Rhanides."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Fall of the Kalioth Kings",
+          "year": 1687,
+          "summary": "The mine-lords overthrow the mountain kings who served Volgan, and Erco takes its name from the southern river that its new kings crown themselves in."
+        },
+        {
+          "name": "The War of the Two Floods",
+          "year": 3106,
+          "summary": "Erco fights Alerhia beside Plutondo over the upper river and loses, and the Stair Peace forces its kings to let the Rising pass their dams unhindered."
+        },
+        {
+          "name": "The Seven Forts of the Kalioth",
+          "year": 6188,
+          "summary": "Erco builds seven forts along the Kalioth upland against the ogres of the heights and the raiders of the Gold Road, and fills them with miners who are also soldiers."
+        },
+        {
+          "name": "The Burning of Lower Atonto",
+          "year": 6274,
+          "summary": "A devil of the Hellfire Range burns the lower town of Atonto in one night, and King Thareus Rhanides begins to pay the fire-tithe as Pornivior does."
+        }
+      ],
+      "rivalries": [
+        "Alerhia",
+        "Plutondo"
+      ],
+      "capitalReason": "Atonto stands at the ford where the mine-lord Rhanoth held the river through the First Age war, at the meeting of the mountain roads and the river, and no king has wished to leave the place where the line began.",
+      "today": "In the ninth Rising of King Keroth, Erco holds the southern mountains, the river and the dry Kalioth upland from Atonto, a city of 95,000. Its mines are rich, its seven forts are manned, and every spring it pays the fire-tithe to the mountain, which its people call a tax and its priests call an offering.",
+      "divergence": [
+        {
+          "id": "erco_refuses_tithe",
+          "what": "The king refuses to pay the fire-tithe and fortifies Atonto against the mountain.",
+          "consequence": "Devil raids fall on the Hellfire states, and either Erco proves the tithe a custom without teeth or loses its lower towns."
+        },
+        {
+          "id": "erco_kalioth_claim",
+          "what": "A pretender of the old Kalioth line appears with foreign gold and claims the upland.",
+          "consequence": "Erco fights a war in its own mountains while the coalition gathers, and its seven forts decide who holds the Gold Road's southern loop."
+        }
+      ]
+    },
+    {
+      "name": "Plutondo",
+      "canon": "proposed",
+      "founding": {
+        "year": 2052,
+        "story": "Alerhic farmers followed the river south into the valley under the Plutondo Vents in the early Second Age, where the ash made the soil rich and the vents made the winters warm. In 2A 377 their valley lords chose a prince at Vobibiz to treat with Erco for the water, and the princedom kept its own house and its own Risings from then on."
+      },
+      "dynasties": [
+        {
+          "name": "The Plutides",
+          "from": 2052,
+          "notable": "The princes of the southern valley; Prince Blosian Plutides rules in 4A 1748 and keeps the upland of the Blozan Lands as his own estate."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Princedom of the Valley",
+          "year": 2052,
+          "summary": "The valley lords choose a prince at Vobibiz, and the new princedom treats with Erco as an equal for the river's water."
+        },
+        {
+          "name": "The War of the Two Floods",
+          "year": 3106,
+          "summary": "Plutondo fights beside Erco against Alerhia and is forced at the Stair Peace to pay a share of every flood harvest to Porrenva for a century."
+        },
+        {
+          "name": "The Head of the Gold Road",
+          "year": 5709,
+          "summary": "The Gold Road begins at Vobibiz, where the ore of the southern valley is loaded, and the princes grow rich on the first stage of every caravan."
+        },
+        {
+          "name": "The Vent Year",
+          "year": 6658,
+          "summary": "The Plutondo Vents throw ash over the valley for a whole season, the harvest fails, and Stabilo's houses buy the princedom's grain debts, which they still hold."
+        }
+      ],
+      "rivalries": [
+        "Stabilo",
+        "Erco"
+      ],
+      "capitalReason": "Vobibiz stands at the head of the Gold Road where the valley river becomes navigable for barges, so the princes can tax the ore before it leaves the valley and the grain before it reaches the road.",
+      "today": "In the fourth Rising of Prince Blosian, Plutondo holds the southern valley and the Blozan Lands upland from Vobibiz, a river city of 110,000. It is rich in ash-grown grain and ore but deep in Stabilo's ledgers, and the princes resent the caravan houses that fed them in the Vent Year more than the vents that starved them.",
+      "divergence": [
+        {
+          "id": "plutondo_toll_war",
+          "what": "The prince closes the head of the Gold Road to Stabilo's caravans until the debts are forgiven.",
+          "consequence": "The Gold Road stops at its first stage, Stabilo must choose between war and forgiveness, and Noris offers Plutondo its friendship."
+        },
+        {
+          "id": "plutondo_vents_wake",
+          "what": "The Plutondo Vents wake in the war years.",
+          "consequence": "The valley empties toward Erco and Stabilo, and its refugees and its grain become a prize for whoever shelters them."
+        }
+      ]
+    },
+    {
+      "name": "Ostoroth",
+      "canon": "proposed",
+      "founding": {
+        "year": 4323,
+        "story": "The highland lords of Ernois, Grova and Nethnu fought each other for the north-east lakes until the lake-readers of Ohitus shamed them into a truce at the shrine on the water in 3A 515. They chose the lord of Ohitus as king so that the shrine would always be in a king's keeping, and the kingdom has kept the three old lordships as its counties."
+      },
+      "dynasties": [
+        {
+          "name": "The Ostorides",
+          "from": 4323,
+          "notable": "The lake-kings of Ohitus; King Ernoian Ostorides rules in 4A 1748, and the counts of Ernois, Grova and Nethnu still carry the king's lantern at the Lantern Float."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Truce of the Shrine",
+          "year": 4323,
+          "summary": "The lake-readers end the highland wars at the shrine of Ohitus, and the three lordships accept one king of the lakes."
+        },
+        {
+          "name": "The Taking of the Reckoning",
+          "year": 4798,
+          "summary": "The kings of Ohitus adopt the Reckoning of the Twelve from Aenoran trade charts so that their merchants can keep one calendar with the west."
+        },
+        {
+          "name": "The Opening of the Lake Road",
+          "year": 5768,
+          "summary": "The Lake Road is laid round the Hot Lake from Ohitus to Gonnois and Osrale, and the highland kingdom grows rich on cedar, fish and lanterns."
+        },
+        {
+          "name": "The Lakeshore Quarrel",
+          "year": 6545,
+          "summary": "Ostoroth and Mora fight for three summers over the fisheries of the Hot Lake's east shore until the Lantern Peace of Osrale in 4A 1480 divides the waters by the line of the steam-shallows."
+        }
+      ],
+      "rivalries": [
+        "Mora",
+        "Noris"
+      ],
+      "capitalReason": "Ohitus is the shrine town on the highest of the north-east lakes, where the lake-readers made the truce that founded the kingdom, and its king keeps the shrine in his own hall.",
+      "today": "King Ernoian rules the north-east lakes, Ernois, Grova and Nethnu from Ohitus, a highland town of 70,000 on the Lake Road. Ostoroth keeps the Reckoning of the Twelve and trades cedar and lanterns with the west, both great powers claim the Lake Road it lives on, and the Lantern Peace with Mora has held for longer than any lake-reader expected.",
+      "divergence": [
+        {
+          "id": "ostoroth_takes_mora",
+          "what": "Ostoroth breaks the Lantern Peace and takes Mora's shore while the great powers are busy elsewhere.",
+          "consequence": "The best farmland of the East has a king, the Lake Road has one master, and both Noris and Stabilo must bid for him."
+        },
+        {
+          "id": "ostoroth_lake_league",
+          "what": "Ostoroth, Mora and Kersian swear a league of the Lake Road.",
+          "consequence": "A third power stands between Noris and Stabilo, and the coalition cannot cross the East without its leave."
+        }
+      ]
+    },
+    {
+      "name": "Mora",
+      "canon": "proposed",
+      "founding": {
+        "year": 4610,
+        "story": "The lake towns of the Hot Lake's east shore paid a highland lord for their fields until 3A 802, when the fishers and grain-farmers of Gonnois bought his rights with three years of harvests and set up a council of the towns under a Speaker. The council has met in the fish-hall of Gonnois ever since, and Mora is still the only realm of the East that was bought rather than won."
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of Gonnois",
+          "from": 4610,
+          "notable": "Each Speaker is chosen by the council of the lake towns for three years; Lorvena of Eraver is the Speaker in 4A 1748, the first from Eraver since that town joined the council."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Purchase of Gonnois",
+          "year": 4610,
+          "summary": "The lake towns buy their lord's rights with three years of harvests and found the council of Mora under a Speaker."
+        },
+        {
+          "name": "The Lakeshore Quarrel",
+          "year": 6545,
+          "summary": "Mora defends its east-shore fisheries against Ostoroth for three summers and keeps them at the Lantern Peace of Osrale."
+        },
+        {
+          "name": "The Year of Steam",
+          "year": 6723,
+          "summary": "The Hot Lake boils over the eastern salt pans for a month, killing the lake-steam eels and the pan-workers alike; the salt-boilers say something under the lake breathed out."
+        },
+        {
+          "name": "The Joining of Eraver",
+          "year": 6758,
+          "summary": "The coast town of Eraver joins the council with its fields and its harbour, and Mora reaches the coast for the first time."
+        }
+      ],
+      "rivalries": [
+        "Ostoroth"
+      ],
+      "capitalReason": "Gonnois stands on the Hot Lake shore at the mouth of the River Mora, where the best fields of the East meet the fish-hall and the salt pans, and the towns that bought their freedom met there because it was the largest.",
+      "today": "Speaker Lorvena governs the Hot Lake's east shore, the Mora coast and Eraver from Gonnois, a lake town of 60,000. Mora is the granary of the East and the most peaceful of its realms, it has no king and no wish for one, and every power that wants to feed a host in the East must buy its grain.",
+      "divergence": [
+        {
+          "id": "mora_withholds_grain",
+          "what": "The council refuses to sell grain to any host that crosses the rift.",
+          "consequence": "The coalition must feed itself from the river crowns, its march is slower, and the courts that need Mora's harvest grow angry with its council."
+        },
+        {
+          "id": "mora_seeks_crown",
+          "what": "Mora asks a king to protect it after a raid on its shore.",
+          "consequence": "Ostoroth or Noris gains the best farmland of the East, and the council of Gonnois ends after nine centuries."
+        }
+      ]
+    },
+    {
+      "name": "Delbiz",
+      "canon": "proposed",
+      "founding": {
+        "year": 3163,
+        "story": "The horse-lords of the grasslands had kept Alerhia's war-horses on the rift coast for two ages, and after the War of the Two Floods the Furanides could no longer pay them. In 2A 1488 the horse-lords swore an oath at the great fair of Furtonlin to keep their horses and their grass for themselves, and they crowned the master of the fair as king."
+      },
+      "dynasties": [
+        {
+          "name": "The Fair-Kings of Furtonlin",
+          "from": 3163,
+          "notable": "The masters of the horse-fair who took the crown at the Horse-Fair Oath; their line ended in a daughter, whose marriage brought in the Fosocides."
+        },
+        {
+          "name": "The Fosocides",
+          "from": 6338,
+          "notable": "The line that married the heiress of the Fosoco river lordship and joined it to the crown; King Esiuran Fosocides rules in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Horse-Fair Oath",
+          "year": 3163,
+          "summary": "The horse-lords break from Alerhia's service and crown the master of the Furtonlin fair as the first king of the grasslands."
+        },
+        {
+          "name": "The Bride of the Fosoco",
+          "year": 6338,
+          "summary": "The heiress of the Fosoco lordship marries the king's son, the river lordship joins the crown, and the new line takes the river's name."
+        },
+        {
+          "name": "The Great Murrain",
+          "year": 6690,
+          "summary": "A horse plague kills two in three of the grassland herds, and Delbiz is poor for a generation while its horse-lords buy breeding stock from the caravan princes on credit."
+        }
+      ],
+      "rivalries": [
+        "Alerhia"
+      ],
+      "capitalReason": "Furtonlin is the horse-fair town on the rift coast where the Fosoco reaches Delbiz Bay; the kingdom was sworn at its fair, and every buyer of horses in the East still comes there in the spring.",
+      "today": "King Esiuran rules the Delbiz Grasslands and the Fosoco from Furtonlin, a fair town of 28,000. The herds have recovered and the horse-fair is again the richest in the East, the old quarrel with Alerhia sleeps under a marriage treaty, and the caravan houses that lent after the Murrain expect to be repaid in horses.",
+      "divergence": [
+        {
+          "id": "delbiz_mounts_coalition",
+          "what": "Delbiz sells its whole year's herd to the eastern coalition.",
+          "consequence": "The host that crosses the rift is mounted as no eastern host has been, and Delbiz grows rich and enemies at once."
+        },
+        {
+          "id": "delbiz_reunites_alerhia",
+          "what": "A marriage brings Delbiz back under the Furanid crown.",
+          "consequence": "Alerhia gains the grasslands and a cavalry, and the balance of the rift coast tilts toward Porrenva."
+        }
+      ]
+    },
+    {
+      "name": "Kersian",
+      "canon": "proposed",
+      "founding": {
+        "year": 3839,
+        "story": "Aenoran exiles who would not live under the Necromancer came east by the Lake Road in the first years of the Third Age, and in 3A 31 they and the Alerhic lake traders who sheltered them built a walled market where the Lake Road would later cross the Gold Road. They called it Osrale, kept the Reckoning of the Twelve that they had brought, and governed it by a market council."
+      },
+      "dynasties": [
+        {
+          "name": "The Market Council of Osrale",
+          "from": 6462,
+          "notable": "A council of the market's guilds and lantern-wardens, free under the Peace of Cereosa; it chooses a Lantern-Warden each year to speak for the city, and Rhaina Kersides holds the lantern in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Exiles' Market",
+          "year": 3839,
+          "summary": "Aenoran exiles and Alerhic lake traders found Osrale as a walled market, and its families still keep Aenoran given names beside Alerhic surnames."
+        },
+        {
+          "name": "The Peace of Cereosa",
+          "year": 6462,
+          "summary": "Noris and Stabilo agree that Kersian shall be a free city that neither may garrison, and its council swears to tax both powers' caravans alike."
+        },
+        {
+          "name": "The Lantern Peace",
+          "year": 6548,
+          "summary": "The council hosts the peace between Ostoroth and Mora and floats the first lantern of the treaty on the city's cistern."
+        },
+        {
+          "name": "The Fire of Osrale",
+          "year": 6770,
+          "summary": "A fire in the caravanserai district burns a third of the city; Noris and Stabilo both send money to rebuild it, and the council spends each gift on a separate wall."
+        }
+      ],
+      "rivalries": [
+        "Mostok"
+      ],
+      "capitalReason": "Osrale is the city itself: it was built at the meeting of the Lake Road and the Gold Road because the exiles needed a market that no single lord owned, and Kersian has never held more land than its walls and fields.",
+      "today": "The market council governs Osrale and its fields, a free city of the Lake Road under the Peace of Cereosa. It is rich, small and anxious, kept free by the rivalry of two powers, and its Aenoran-descended families follow the news from Parim more closely than any other house in the East.",
+      "divergence": [
+        {
+          "id": "kersian_bought",
+          "what": "One great power buys a majority of the market council.",
+          "consequence": "The Peace of Cereosa breaks, the other power marches to restore it, and the War of the Scales and Wells begins again."
+        },
+        {
+          "id": "kersian_refuge",
+          "what": "Kersian opens its gates to refugees from the west when the war comes.",
+          "consequence": "Osrale doubles in a year, its council gains a voice in Aenor's affairs, and the eastern host has a hostile city on its road."
+        }
+      ]
+    },
+    {
+      "name": "Mostok",
+      "canon": "proposed",
+      "founding": {
+        "year": 5756,
+        "story": "Cereosa began as a caravanserai of the Gold Road at the central junction of the eastern roads, built by Stabilic weighers in 4A 688 to settle the caravans' quarrels over weights. It grew into a city of inns, weigh-houses and warehouses, and when the Peace of Cereosa was signed in its hall in 4A 1394 it became a free city under its weighers' council."
+      },
+      "dynasties": [
+        {
+          "name": "The Weighers' Council of Cereosa",
+          "from": 6462,
+          "notable": "The weighers who keep the city's honest scale also govern it, choosing a First Weigher each year; Milio Crovo is First Weigher in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Caravanserai of the Weighers",
+          "year": 5756,
+          "summary": "Stabilic weighers build an inn and weigh-house at the central road junction, and the caravans of every road begin to settle their weights there."
+        },
+        {
+          "name": "The Peace of Cereosa",
+          "year": 6462,
+          "summary": "The war of Noris and Stabilo ends in Cereosa's hall, and the city becomes free on condition that its scales stay honest for both powers."
+        },
+        {
+          "name": "The Bronze Toll",
+          "year": 6598,
+          "summary": "Stabilo demands that Cereosa weigh its bronze free of toll; the council refuses, Noris backs it, and Stabilo withdraws the demand after a year of empty warehouses."
+        }
+      ],
+      "rivalries": [
+        "Kersian",
+        "Stabilo"
+      ],
+      "capitalReason": "Cereosa stands at the central junction where the Gold Road crosses the roads of the desert and the lakes, which is the only reason anyone ever built there.",
+      "today": "In the 1108th year of the Ledger the weighers' council governs Cereosa, a junction city of 40,000 that lives on inns, storage and weighing. Both great powers watch it, both keep envoys there, and its council knows that its freedom lasts exactly as long as Noris and Stabilo distrust each other.",
+      "divergence": [
+        {
+          "id": "mostok_closes_junction",
+          "what": "The weighers close the junction to any host that marches west.",
+          "consequence": "The coalition must go round the central desert, losing a month, and both great powers threaten the city."
+        },
+        {
+          "id": "mostok_garrisoned",
+          "what": "Noris or Stabilo garrisons Cereosa in breach of the Peace.",
+          "consequence": "The free cities lose their protection, and every small court of the East learns that a treaty with two powers is no stronger than their rivalry."
+        }
+      ]
+    },
+    {
+      "name": "Azano",
+      "canon": "proposed",
+      "founding": {
+        "year": 6101,
+        "story": "Ceralon was a Gold Road town under Stabilo's bench until 4A 1033, when the house of Azano, which owned most of its warehouses and all of its debts, bought the town's charter outright and made itself its master. The bench let it go because the house paid in gold, and the city has taken the house's name ever since."
+      },
+      "dynasties": [
+        {
+          "name": "House Azano",
+          "from": 6101,
+          "notable": "One merchant family rules Ceralon by charter, and the head of the house is the city's lord; Mylana Azano has headed the house since her father's death in 4A 1739."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Purchase of the Charter",
+          "year": 6101,
+          "summary": "The house of Azano buys Ceralon's charter from the bench of houses and rules the city as its own."
+        },
+        {
+          "name": "The Ledger Feud",
+          "year": 6530,
+          "summary": "House Azano and House Prudo of Stabilo fight a feud of forged ledgers and hired knives for nine years, ended when Prudo's heir marries an Azano daughter."
+        },
+        {
+          "name": "The Silk Wager",
+          "year": 6756,
+          "summary": "The head of the house wagers the city's whole stock on silk from the South Lands, wins, and builds the bronze-roofed house that still stands over Ceralon's market."
+        }
+      ],
+      "rivalries": [
+        "Stabilo"
+      ],
+      "capitalReason": "Ceralon is where the house of Azano had its warehouses and its debtors; the house bought the town because it already owned most of it.",
+      "today": "Mylana Azano rules Ceralon, a southern trade city of the Gold Road, as head of the house that owns it. Azano is rich, small and independent by charter rather than by arms, its bench-cousins in Postondoroth resent its freedom, and its ledgers record loans to half the courts of the East.",
+      "divergence": [
+        {
+          "id": "azano_house_fails",
+          "what": "Mylana Azano dies without an heir the house accepts.",
+          "consequence": "The charter lapses, Stabilo and Plutondo both claim the city, and its ledgers of the East's debts fall into the hands of whoever takes it."
+        },
+        {
+          "id": "azano_backs_free_crowns",
+          "what": "House Azano lends its fortune to the courts that refuse to kneel.",
+          "consequence": "The Free Crowns of the East can pay their companies, and the house becomes the target of every claimant."
+        }
+      ]
+    },
+    {
+      "name": "Obmi",
+      "canon": "proposed",
+      "founding": {
+        "year": 5980,
+        "story": "Stabilic factors set up a timber camp at the edge of the Obmi Jungle in 4A 912 to cut hardwood for the bronze-roofed halls of the Gold Road, and stayed when they learned to tap the jungle gum that seals casks and ships' seams. Kerdoco grew round the camp, and its factors bought themselves free of their houses in 4A 1105."
+      },
+      "dynasties": [
+        {
+          "name": "The Factors of Kerdoco",
+          "from": 6173,
+          "notable": "A council of timber and gum factors chooses a Chief Factor for life; Narino Shindo is Chief Factor in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Timber Camp",
+          "year": 5980,
+          "summary": "Stabilic factors found a camp at the jungle edge to cut hardwood for the halls of the Gold Road."
+        },
+        {
+          "name": "The Freedom of the Factors",
+          "year": 6173,
+          "summary": "The factors of Kerdoco buy their freedom from their houses and govern the town by a council."
+        },
+        {
+          "name": "The Jungle Fever",
+          "year": 6387,
+          "summary": "A fever out of the jungle kills half of Kerdoco in one wet season, and the factors move the town to the higher ground where it now stands."
+        },
+        {
+          "name": "The Gum Charter",
+          "year": 6656,
+          "summary": "Kerdoco contracts to sell its jungle gum to Drak for sealing powder casks, and the town grows rich on the Stabilo Pact's war-trade."
+        }
+      ],
+      "rivalries": [
+        "Azano"
+      ],
+      "capitalReason": "Kerdoco stands on the first high ground at the jungle edge, where the timber can be floated out and the fever of the low camp does not reach.",
+      "today": "Chief Factor Narino Shindo governs Kerdoco and its timber and gum grounds, a jungle-edge city of 30,000. It lives by the Stabilo Pact's need for sealed casks and hardwood, it keeps the Ledger Count like its old houses, and it fears the jungle's fevers more than any army.",
+      "divergence": [
+        {
+          "id": "obmi_cuts_drak",
+          "what": "Kerdoco stops selling gum to Drak in a quarrel over prices.",
+          "consequence": "Drak's powder spoils in damp casks, and the Stabilo Pact must buy peace with a small city or take it."
+        },
+        {
+          "id": "obmi_fever_returns",
+          "what": "The jungle fever returns in the war years.",
+          "consequence": "Kerdoco empties, and the fever travels the Gold Road with the caravans that flee it."
+        }
+      ]
+    },
+    {
+      "name": "Pornivior",
+      "canon": "proposed",
+      "founding": {
+        "year": 5781,
+        "story": "Caravan factors built a waystation on the slopes below Mount Ergo in 4A 713 because the southern loop of the Gold Road needed water and the mountain's springs were the only ones for a week's march. They knew the mountain smoked and did not know what lived on it, and Nerhuus grew from that station into a city before anyone learned."
+      },
+      "dynasties": [
+        {
+          "name": "The Tithe-Wardens of Nerhuus",
+          "from": 5813,
+          "notable": "A council of wardens elected by the city's guilds collects and carries the fire-tithe up the mountain; Pelio Shindo is First Warden in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Waystation on the Slopes",
+          "year": 5781,
+          "summary": "Caravan factors build a waystation by the springs below Mount Ergo, and Nerhuus begins."
+        },
+        {
+          "name": "The Caravan of Scales",
+          "year": 5812,
+          "summary": "A whole caravan vanishes on the mountain road; searchers find only its scales, laid out in a row on a scorched stone, and the city learns that devils lair on the mountain."
+        },
+        {
+          "name": "The First Tithe",
+          "year": 5813,
+          "summary": "The wardens carry a tithe of gold and goods up to the scorched stone, and no caravan is taken that year or the next."
+        },
+        {
+          "name": "The Unpaid Year",
+          "year": 6570,
+          "summary": "The council decides the tithe is a superstition and keeps it back; in the autumn the upper town burns, and Nerhuus has paid every year since."
+        }
+      ],
+      "rivalries": [
+        "Rhachia"
+      ],
+      "capitalReason": "Nerhuus is built round the only springs on the southern loop of the Gold Road, under Mount Ergo, and the city stays because the water is there and the tithe keeps the mountain quiet.",
+      "today": "In the 1108th year of the Ledger the tithe-wardens govern Nerhuus and the slopes below Mount Ergo, a city of the caravan princes in the shadow of the devils' mountain. It pays the fire-tithe every year without fail, its people say a devil once took a whole caravan and left only the scales, and it trades with everyone because it cannot afford an enemy.",
+      "divergence": [
+        {
+          "id": "pornivior_withholds_tithe",
+          "what": "The wardens keep back the tithe to pay for walls and companies in the war years.",
+          "consequence": "The devils of Ergo raid the Hellfire states, and the East learns whether a tithe binds them or only pleases them."
+        },
+        {
+          "id": "pornivior_mountain_empties",
+          "what": "The devils of Mount Ergo leave the mountain in answer to a summons from the south.",
+          "consequence": "Pornivior is free of its tithe for the first time and rich with the savings, and the devils appear in a southern host instead."
+        }
+      ]
+    },
+    {
+      "name": "Woqood",
+      "canon": "proposed",
+      "founding": {
+        "year": 3395,
+        "story": "Noric-speaking boat clans who had followed the seals north along the coast swore a moot at the sheltered cove of Pehami in 2A 1720 to share the seal grounds and settle their quarrels without blood. The moot chose a Harpoon-Speaker to hold its peace, and the snow coast clans of Cream and Lorvens joined it as the hunting grounds narrowed."
+      },
+      "dynasties": [
+        {
+          "name": "The Harpoon-Speakers of the Clan-Moot",
+          "from": 3395,
+          "notable": "The clan-moot chooses a Harpoon-Speaker from the boat clans each winter; Yarun bat Nurek of the Meli boat holds the harpoon in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Moot at Pehami",
+          "year": 3395,
+          "summary": "The boat clans swear to share the seal grounds and settle quarrels by the moot, and the league of Woqood begins."
+        },
+        {
+          "name": "The Joining of Cream and Lorvens",
+          "year": 6248,
+          "summary": "The clans of the eastern snow coast join the moot after a bear winter that none of them could have survived alone."
+        },
+        {
+          "name": "The Ice Winter",
+          "year": 6672,
+          "summary": "The sea freezes from Woqood to Naamis, the clans cross the ice to the south, and Naamis feeds them; the moot has kept peace with the sea crown ever since."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Pehami is the sheltered cove where the boat clans first swore their moot, the one harbour of the snow coast that the winter ice does not close.",
+      "today": "In the 3952nd year of the Wells, the clan-moot of Pehami speaks for the snow coast, Cream and Lorvens, some 250,000 sealers, harpooners and sled-men. Woqood trades furs, seal-fat and ivory with Naamis and the Lake Road, keeps to itself, and will stay out of any eastern coalition unless someone attacks it.",
+      "divergence": [
+        {
+          "id": "woqood_watches_north",
+          "what": "The clans believe the island fishers and set watch-fires along the Kusmeel coast.",
+          "consequence": "The East has warning when the dead of the north stir, and Woqood becomes a frontier that every court must help or lose."
+        },
+        {
+          "id": "woqood_joins_naamis",
+          "what": "The moot accepts the sea crown's protection in a hard winter.",
+          "consequence": "Naamis gains the snow coast and its hunters, and the Noris Treaty reaches the edge of the ice."
+        }
+      ]
+    },
+    {
+      "name": "Orato",
+      "canon": "proposed",
+      "founding": {
+        "year": 6218,
+        "story": "The fishing families of Orato chose one lord of the boats in 4A 1150 to deal with the Naamis ship-masters who bought their catch, and the lord built a stone harbour at Nodoqood that every boat of the isle could use. Fladev, the smaller isle to the east, came to the lordship by marriage in 4A 1430."
+      },
+      "dynasties": [
+        {
+          "name": "The Lords of the Boats",
+          "from": 6218,
+          "notable": "The lordship passes in one fishing family when the boats accept the heir; Barim ben Yaqud is Lord of the Boats in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Stone Harbour",
+          "year": 6218,
+          "summary": "The first lord of the boats builds the stone harbour of Nodoqood, and the fishing families of Orato accept his rule."
+        },
+        {
+          "name": "The Fladev Wedding",
+          "year": 6498,
+          "summary": "The lord's son marries the daughter of Fladev's headman, and the eastern isle joins the lordship."
+        },
+        {
+          "name": "Black Ships Off Orato",
+          "year": 6812,
+          "summary": "Fishermen of Orato tell of black ships moving among the black islands of the Kusmeel without lights or oars; the lord sends word to Duum-Saah and Furvior, and no court believes them."
+        }
+      ],
+      "rivalries": [],
+      "capitalReason": "Nodoqood has the stone harbour the first lord of the boats built for every boat of the isle, and the fish-market grew round the harbour wall.",
+      "today": "In the 3952nd year of the Wells, the Lord of the Boats rules Orato and Fladev from Nodoqood, two small isles of fishers facing the Kusmeel. Four years ago its fishermen said they saw black ships among the islands of the north; the courts laughed, the fishermen stopped talking about it in the market, and some of them have stopped fishing the northern grounds.",
+      "divergence": [
+        {
+          "id": "orato_believed",
+          "what": "A court takes the fishermen's word and sends ships to look.",
+          "consequence": "The East learns of the dead of the north before they rise, and Orato becomes a watch-post rather than a joke."
+        },
+        {
+          "id": "orato_abandoned",
+          "what": "The fishers abandon the isles when the black ships come closer.",
+          "consequence": "Orato's people settle on the Naamis coast with their stories, and the north coast of the East has no eyes on the Kusmeel."
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "Furvior",
+      "country": "Noris",
+      "role": "capital",
+      "size": "great_city",
+      "founded": 2865,
+      "economy": "Salt, dye and camel trade; the wells; the Salt Road tolls",
+      "canon": "proposed",
+      "legend": "The camel-kings say the Seven Wells were dug by seven brothers who quarrelled over an eighth, and that the eighth lies filled with stones under the king's hall so that no one may quarrel over it again."
+    },
+    {
+      "name": "Postondoroth",
+      "country": "Stabilo",
+      "role": "capital",
+      "size": "great_city",
+      "founded": 5709,
+      "economy": "The Gold Road's harbour-market; bronze, gold and credit; the Hall of Scales",
+      "canon": "proposed",
+      "legend": "The weighers say the first scale of the Hall of Scales was weighed against a feather and an ingot by the founding houses, and that it has never been reset because it has never been wrong."
+    },
+    {
+      "name": "Porrenva",
+      "country": "Alerhia",
+      "role": "capital",
+      "size": "city",
+      "founded": 0,
+      "economy": "Grain, river trade, temple scribes; the end of the Gold Road",
+      "canon": "proposed",
+      "legend": "The temple scribes keep a mark on the lowest stair for every Rising they have written down, and say that when the river reaches the top stair the kings will have run out of names."
+    },
+    {
+      "name": "Duum-Saah",
+      "country": "Naamis",
+      "role": "port",
+      "size": "town",
+      "founded": 4910,
+      "economy": "Shipping on the Salt Road; ship timber from the Naamis Wood; fish",
+      "canon": "proposed",
+      "legend": "The sailors of the coast hall say that the founding queen threw her wedding crown into the harbour so that the sea would be married to Naamis, and that divers who look for it never come up with it."
+    },
+    {
+      "name": "Castronuro",
+      "country": "Drak",
+      "role": "mine",
+      "size": "town",
+      "founded": 5870,
+      "economy": "Iron, sulphur, the powder forges",
+      "canon": "proposed",
+      "legend": "The forge-masters say the Furnace breathes once a generation, and that the forge-house that keeps its fires lit through the breath will never be poor."
+    },
+    {
+      "name": "Pordoce",
+      "country": "Rhachia",
+      "role": "capital",
+      "size": "town",
+      "founded": 2286,
+      "economy": "Kilns and pottery for the Gold Road; grain from the Red Lands",
+      "canon": "proposed",
+      "legend": "The kiln-mothers say the red clay is the bone of the first mothers, and that a pot fired at Pordoce will not break while its maker's family lives."
+    },
+    {
+      "name": "Atonto",
+      "country": "Erco",
+      "role": "crossing",
+      "size": "city",
+      "founded": 1342,
+      "economy": "Mines of the southern mountains; the ford tolls; the forts' supply",
+      "canon": "proposed",
+      "legend": "The miners say the mine-lord Rhanoth held the ford for a whole war by standing in it himself, and that the river still runs cold where he stood."
+    },
+    {
+      "name": "Vobibiz",
+      "country": "Plutondo",
+      "role": "market",
+      "size": "city",
+      "founded": 2052,
+      "economy": "Ash-grown grain, ore loading at the head of the Gold Road, river barges",
+      "canon": "proposed",
+      "legend": "The valley folk say the vents keep the winters warm because the first prince bargained with the fire under the valley, and that the Vent Year came when a prince forgot the bargain."
+    },
+    {
+      "name": "Ohitus",
+      "country": "Ostoroth",
+      "role": "holy",
+      "size": "town",
+      "founded": 3948,
+      "economy": "Cedar, lanterns, lake fish; the lake-shrine and the Lake Road",
+      "canon": "proposed",
+      "legend": "The lake-readers say that the shrine on the water was built where a lantern floated against the wind for a whole night, and that the kings keep the shrine because the lantern chose the place."
+    },
+    {
+      "name": "Gonnois",
+      "country": "Mora",
+      "role": "farm",
+      "size": "town",
+      "founded": 2619,
+      "economy": "Grain, fruit and fish; the salt pans; the granary of the East",
+      "canon": "proposed",
+      "legend": "The salt-boilers of the Hot Lake say the lake is warm because something under it breathes, and that the Year of Steam was the one year it breathed out."
+    },
+    {
+      "name": "Furtonlin",
+      "country": "Delbiz",
+      "role": "market",
+      "size": "town",
+      "founded": 2687,
+      "economy": "The great horse-fair; grass and herds; the Delbiz Bay harbour",
+      "canon": "proposed",
+      "legend": "The horse-lords say the first king was crowned on the back of an unbroken mare, and that a king of Delbiz who cannot ride her line is no king."
+    },
+    {
+      "name": "Osrale",
+      "country": "Kersian",
+      "role": "market",
+      "size": "town",
+      "founded": 3839,
+      "economy": "The market at the meeting of the Lake Road and the Gold Road; lantern-making; brokerage",
+      "canon": "proposed",
+      "legend": "The exiles' families say the first stone of Osrale was carried from Aenor in a refugee's pack, and that it is set in the council hall face down so that no one may read what it says."
+    },
+    {
+      "name": "Cereosa",
+      "country": "Mostok",
+      "role": "crossing",
+      "size": "town",
+      "founded": 5756,
+      "economy": "Inns, weigh-houses and warehouses at the central junction",
+      "canon": "proposed",
+      "legend": "The weighers say that a false weight placed on the scale of Cereosa grows heavier each time it is lifted, and that a dishonest merchant once could not raise his own purse from the scale."
+    },
+    {
+      "name": "Ceralon",
+      "country": "Azano",
+      "role": "market",
+      "size": "town",
+      "founded": 5770,
+      "economy": "Silk, warehouses and lending; a waypoint of the Gold Road",
+      "canon": "proposed",
+      "legend": "The people of Ceralon say the house of Azano keeps a ledger in which every debt of the East is written, and that the day it is closed the house will own the road."
+    },
+    {
+      "name": "Kerdoco",
+      "country": "Obmi",
+      "role": "town",
+      "size": "town",
+      "founded": 5980,
+      "economy": "Hardwood, jungle gum for casks and seams",
+      "canon": "proposed",
+      "legend": "The factors say the jungle fever is the jungle's toll, and that the town moved uphill because the jungle, unlike the princes, cannot be bargained with."
+    },
+    {
+      "name": "Nerhuus",
+      "country": "Pornivior",
+      "role": "town",
+      "size": "town",
+      "founded": 5781,
+      "economy": "Springs and inns on the Gold Road's southern loop; the tithe trade",
+      "canon": "proposed",
+      "legend": "The people of Pornivior say a devil once took a whole caravan and left only the scales, laid out in a row on a scorched stone where the tithe is still carried."
+    },
+    {
+      "name": "Pehami",
+      "country": "Woqood",
+      "role": "port",
+      "size": "village",
+      "founded": 3395,
+      "economy": "Seal-fat, furs and ivory; the moot",
+      "canon": "proposed",
+      "legend": "The sealers say the cove of Pehami never freezes because the first Harpoon-Speaker drove his harpoon into the ice there, and that the sea has kept the hole open ever since."
+    },
+    {
+      "name": "Nodoqood",
+      "country": "Orato",
+      "role": "port",
+      "size": "village",
+      "founded": 6218,
+      "economy": "Fish for the Naamis market",
+      "canon": "proposed",
+      "legend": "The fishers say a lamp is kept burning on the harbour wall for the boats that did not come back, and that in some winters it is seen to answer a light far out on the Kusmeel."
+    }
+  ],
+  "figures": [
+    {
+      "name": "Rasiq ben Tumek",
+      "country": "Noris",
+      "role": "King of Noris",
+      "born": 6771,
+      "died": null,
+      "canon": "proposed",
+      "biography": "A Khadi chosen by the well-lords after his uncle's death, he is a careful king who keeps the Powder Refusal, plays Stabilo's houses against each other, and has borrowed more from the temple's generous friends than he admits."
+    },
+    {
+      "name": "Pleron Tablo",
+      "country": "Stabilo",
+      "role": "Prince of the Scales",
+      "born": 6767,
+      "died": null,
+      "canon": "proposed",
+      "biography": "A banker before he was a prince, he holds the bench together by knowing every house's debts, and believes the East can be ruled by ledgers without a single war."
+    },
+    {
+      "name": "Demio Fundo",
+      "country": "Stabilo",
+      "role": "Prince of the Scales",
+      "born": 6419,
+      "died": 6480,
+      "canon": "proposed",
+      "biography": "The prince who ended the War of the Scales and Wells at Cereosa and bound Drak to Stabilo by giving his daughter to its Forge-Prince; the bench remembers him as the prince who preferred a good peace to a costly victory."
+    },
+    {
+      "name": "Arcan Dolgio",
+      "country": "Drak",
+      "role": "Forge-master",
+      "born": 6565,
+      "died": 6627,
+      "canon": "proposed",
+      "biography": "The forge-master who first compounded black powder from the Furnace's sulphur in the Furnace Year; he lost two fingers to his own mixture and kept the recipe in his head until the forge-houses paid him a prince's pension."
+    },
+    {
+      "name": "Moiria of the Kilns",
+      "country": "Rhachia",
+      "role": "First Tribune",
+      "born": 6742,
+      "died": 6799,
+      "canon": "proposed",
+      "biography": "A kiln-mother of Pordoce who opened the city's gates to the villagers in the Rising of the Towns and became the first tribune of the commonwealth; she refused a second term so that no tribune after her would want one."
+    }
+  ],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "id": "east_water_kin",
+      "name": "Water makes kin",
+      "realms": [
+        "Noris",
+        "Naamis",
+        "Woqood",
+        "Orato"
+      ],
+      "canon": "proposed",
+      "summary": "Under the Well-Oath a guest who has drunk from a household's water may not be harmed by that household, and a tribe that shares a well with another may not raid it; the camel-kings judge breaches at the Seven Wells."
+    },
+    {
+      "id": "east_honest_weight",
+      "name": "The honest weight",
+      "realms": [
+        "Stabilo",
+        "Drak",
+        "Mostok",
+        "Azano",
+        "Obmi",
+        "Pornivior"
+      ],
+      "canon": "proposed",
+      "summary": "Among the caravan princes a false weight is the worst crime, worse than theft, because it robs both buyer and seller; the weighers who keep the scales are also the judges of contracts."
+    },
+    {
+      "id": "east_river_name",
+      "name": "The river's name",
+      "realms": [
+        "Alerhia",
+        "Erco",
+        "Plutondo",
+        "Delbiz"
+      ],
+      "canon": "proposed",
+      "summary": "The river-kings are crowned standing in the Rising and number the years of their reigns by its floods; in Alerhia the king reigns under the river's own name, and his given name is kept only by the scribes."
+    },
+    {
+      "id": "east_fire_tithe",
+      "name": "The fire-tithe",
+      "realms": [
+        "Pornivior",
+        "Erco"
+      ],
+      "canon": "proposed",
+      "summary": "The towns under the Hellfire Range carry a yearly tithe of gold and goods to a scorched stone on the mountain road; they believe it keeps the devils away, and nobody has dared to prove them wrong since the Unpaid Year."
+    },
+    {
+      "id": "east_free_junctions",
+      "name": "The Peace of Cereosa",
+      "realms": [
+        "Kersian",
+        "Mostok",
+        "Noris",
+        "Stabilo"
+      ],
+      "canon": "proposed",
+      "summary": "Since 4A 1394 neither Noris nor Stabilo may garrison the junction cities of Osrale and Cereosa, and both cities must tax the caravans of both powers alike."
+    }
+  ]
+}

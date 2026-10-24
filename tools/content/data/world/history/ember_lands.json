@@ -1,0 +1,751 @@
+{
+  "version": 1,
+  "region": "ember_lands",
+  "overview": "South of the Middle Lands, behind a belt of storms that kept the explorers of the First Age out and an inland heat that kills, lie the Ember Lands: a volcanic island of grey plateau and burning ridges, the forested peninsula of Mirolon on the southern neck of the central landmass, a scatter of storm-beaten isles, and in the far south the Nether, the seat of the King of Demons. Volgan, the Great Spirit and principal dark lord, rules the island from Nafeher through his necromantic orders and grave hosts, with orcs, ogres, goblins and devils among his soldiers and three demon realms sworn to him as the Southern Dominion. Mirolon, the human realm he conquered in the First Age and lost after Dardan, keeps its beacons lit toward the south; the salt freeholds of Halia, the warlord of Nan and the shrine-isle of Olen live between the two by paying tolls and saying nothing; the Nether keeps its own counsel behind the Sea of Lava, and its king's pacts bind the living while the dead remain Zol's; and at the east tip of the island a chasm drops into the Abyss, where Roka once held a necklace that a thief carried away to the north. In 4A 1748 almost nobody outside Mirolon believes the island is anything but a spent legend. The sworn realms count by the Musters of the Dominion and the Nether by the years of its pacts; the men of the peninsula keep the Reckoning of the Twelve. Years are one continuous count from the victory of Aen: 1A 1 is year 1, the First Age runs to 1675, the Second Age from 1676 (2A 1) to 3808 (2A 2133), the Third Age from 3809 (3A 1) to 5068 (3A 1260, the proposed length) and the Fourth Age from 5069 (4A 1), so that the campaign year 4A 1748 is 6816; a founding year of 0 marks a realm older than the numbered years, whose beginning nobody dates. Everything here that the vault does not state is proposed.",
+  "ages": [
+    {
+      "id": "ember_storm_bound",
+      "name": "The Storm-Bound Age",
+      "from": 1,
+      "to": 1149,
+      "canon": "proposed",
+      "summary": "Storms at sea and a killing heat keep the explorers of Aenor away from the island, and men chart its coasts without knowing what lies behind them. On the peninsula, Ainic lake-folk found the kingdom of Mirolon around its lake, and their coast cousins boil salt on the shore of Veleeda."
+    },
+    {
+      "id": "ember_volgans_war",
+      "name": "Volgan's War",
+      "from": 1150,
+      "to": 1675,
+      "canon": "established",
+      "summary": "In the second millennium of the First Age Volgan invades Mirolon and makes it the opening of a vast campaign against Aenor, with demons, devils, orcs, goblins and dragons in his hosts. He is banished to the Void after Dardan, and Elzon holds the Ember Lands against the Grand Alliance's invasion and drives it back with heavy losses."
+    },
+    {
+      "id": "ember_necromancer",
+      "name": "The Age of the Necromancer",
+      "from": 1676,
+      "to": 3808,
+      "canon": "proposed",
+      "summary": "Elzon, the Great Necromancer, rules the Ember Lands from Nazerun and wages a long war of raids against Aenor; demons come out of the Nether through portals, and the Burning Gate of Nezer is closed by men, elves and Dark Lands soldiers. Elzon brings back Volgan's presence from the Void and in 2A 2133 takes Aenor."
+    },
+    {
+      "id": "ember_long_weakness",
+      "name": "The Long Weakness",
+      "from": 3809,
+      "to": 5068,
+      "canon": "proposed",
+      "summary": "While Elzon rules Aenor, Volgan is too weak to leave the Ember Lands and gives his orders from Nafeher; the island's magic sustains the necromancers as Aenor's does not. Mirolon pays a silent toll to the Necromancer's order, the portals close one by one, and the age ends with Elzon's permanent death."
+    }
+  ],
+  "countries": [
+    {
+      "name": "Puvulan",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "story": "The necromantic orders call the grey plateau of the island Puvulan, the dust fields, and the Dominion that rules it is older than any chronicle of men. Nobody in Aoaz knows how the Great Spirit Volgan came to hold the plateau or when he raised the gate of Nafeher; the orders' own rolls begin with his name and admit no earlier one."
+      },
+      "dynasties": [
+        {
+          "name": "The Dominion of Nafeher",
+          "from": 0,
+          "notable": "Volgan rules in person through his lieutenants, the necromantic orders and the officers of the grave hosts, whose titles are written in the Rite-Tongue; in his absence in the Second and Third Ages, Elzon governed in his name."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Invasion of Mirolon",
+          "year": 1150,
+          "summary": "Volgan crosses Mirolon Sound with fleets that the storms do not hinder, takes the lake-kingdom of Mirolon and makes it the opening of his war on Aenor."
+        },
+        {
+          "name": "Dardan and the Defence of the Island",
+          "year": 1675,
+          "summary": "By the end of the First Age the Grand Alliance breaks Volgan's host at Dardan and spirits cast him into the Void; Elzon withdraws the remnants to the island and drives back the Alliance's invasion with heavy losses."
+        },
+        {
+          "name": "The Return from the Void",
+          "year": 3219,
+          "summary": "After centuries of work Elzon brings Volgan's presence back from the Void with old death-magic; Volgan returns without his former strength and gives his servant a freer hand."
+        },
+        {
+          "name": "The Death of the Necromancer",
+          "year": 5068,
+          "summary": "Elzon dies in Aenor and does not return, and Volgan, still too weak to leave the Ember Lands, loses his greatest servant and the conquered crownlands of the north."
+        },
+        {
+          "name": "The Southern Dominion Sworn",
+          "year": 6718,
+          "summary": "As Volgan's strength returns, the demon realms of Khorvrath, Dolon and Nezer swear to Nafeher, and the Dominion strikes its first bargain of the age with the Nether."
+        },
+        {
+          "name": "The Veil of Storms",
+          "year": 6720,
+          "summary": "The necromantic orders thicken the storms of the Tempest Reach round the island, so that the few ships that come near see only weather and the courts of the north see nothing at all."
+        }
+      ],
+      "rivalries": [
+        "Mirolon",
+        "Nether"
+      ],
+      "capitalReason": "Nafeher stands on the grey plateau behind the storms, far from any shore a fleet could reach and on ground no army can feed, and Volgan's gate has stood there since before men kept records.",
+      "today": "In 4A 1748, in the Musters that the Dominion counts instead of months, Volgan rules the plateau, the Demonic Mountains, the Abyss's rim, Unlo and the isle of Exhoros from Nafeher, with some 300,000 living subjects among orcs, ogres, goblins and men of the plateau oases, and the dead uncounted. Behind the Veil of Storms the Dominion has spent a century filling its musters again, which only Mirolon's scouts believe; the sworn demon realms keep their oaths, Dolon's forges make black powder for the orc companies, and the border at the Nether Maw is disputed with the King of Demons.",
+      "divergence": [
+        {
+          "id": "puvulan_waits",
+          "what": "Volgan keeps the veil closed and never strikes first.",
+          "consequence": "The south stays at peace through the War of the Last Crowns, the Middle Lands face only the West, the East and the dead, and the Dominion grows unseen."
+        },
+        {
+          "id": "puvulan_turns_dark_lands",
+          "what": "Volgan turns first on the Dark Lands holds instead of marching on Mirolon.",
+          "consequence": "Goldoroth and the orc holds kneel or fight, the Dominion grows by subjects rather than by conquest, and Mirolon gains years to prove its warning."
+        }
+      ]
+    },
+    {
+      "name": "Mirolon",
+      "canon": "proposed",
+      "founding": {
+        "year": 1678,
+        "story": "The old lake-kingdom of Mirolon, founded by Ainic lake-folk around its lake in the First Age, lost its kings when Volgan took Miherta. When his host collapsed after Dardan the survivors came back from the swamps and the hills, and in 2A 3 the pass-lords and the lake towns chose Hadric of Miherta to watch the south for life, the first High Warden of a realm that would never again trust a single royal line."
+      },
+      "dynasties": [
+        {
+          "name": "The Lake-Kings of Mirolon",
+          "from": 377,
+          "notable": "The Ainic line that founded the lake-kingdom and ended when Volgan took Miherta in 1A 1150; the wardens keep its crown in the beacon tower and do not wear it."
+        },
+        {
+          "name": "The High Wardens",
+          "from": 1678,
+          "notable": "Each High Warden is elected for life by the pass-lords and the lake towns, man or woman, and leads the scouts in war; Mirena of the Passes has been High Warden since 4A 1739."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Lake-Kingdom",
+          "year": 377,
+          "summary": "Ainic lake-folk found the kingdom of Mirolon on the lake and the peninsula's north shore, and their speech becomes the southern daughter of Old Ainic."
+        },
+        {
+          "name": "The Fall of Miherta",
+          "year": 1150,
+          "summary": "Volgan crosses the Sound, takes Miherta and kills the last lake-king, and Mirolon becomes the opening of his campaign against Aenor."
+        },
+        {
+          "name": "The Freeing of the Peninsula",
+          "year": 1675,
+          "summary": "When Volgan's host breaks at Dardan his garrisons on the peninsula starve or flee, and the Grand Alliance stages its failed invasion of the island from Mirolon's shore."
+        },
+        {
+          "name": "The First Beacon",
+          "year": 2419,
+          "summary": "The wardens begin to keep a lamp lit toward the south in every tower; they say the first was lit by a child who saw the storms part in the wrong direction."
+        },
+        {
+          "name": "The Silent Toll",
+          "year": 3809,
+          "summary": "With Aenor fallen, Mirolon pays a yearly toll to the Necromancer's order rather than be taken again, and the wardens keep their towers manned through twelve centuries of paying it."
+        },
+        {
+          "name": "The Fortifying of the Passes",
+          "year": 6718,
+          "summary": "Scouts report that the storms round the island have changed, and the High Warden fortifies the northern passes of the land neck and the beacon line along the Sound."
+        },
+        {
+          "name": "The Envoy Laughed At",
+          "year": 6804,
+          "summary": "Mirolon's envoy Baelan of Paron warns the court at Parim that the Ember Lands are arming; the court laughs, saying Volgan has been quiet for longer than Aenor has had kings."
+        }
+      ],
+      "rivalries": [
+        "Puvulan"
+      ],
+      "capitalReason": "Miherta stands on the lake and the peninsula's north shore, the seat of the old lake-kings, from whose beacon tower the wardens can see both the land neck and the storm line of the Sound.",
+      "today": "High Warden Mirena of the Passes rules the peninsula north of the Nan Mountains, its forests, its lake and the Great Swamp from Miherta, some 800,000 wardens, farmers and reed-cutters. Mirolon is free, watchful and alone: its scouts take the signs from the south seriously, Parim laughed at its envoy twelve years ago, and the beacon towers are manned every night.",
+      "divergence": [
+        {
+          "id": "mirolon_holds_passes",
+          "what": "Mirolon holds its passes and its shore when the Dominion comes.",
+          "consequence": "The march north is delayed or broken, the Middle Lands gain a year or more, and the Children of Volgan grow less likely."
+        },
+        {
+          "id": "mirolon_exile",
+          "what": "Mirolon falls and its court goes into exile in the Zilin Hills or among the marches of Herez.",
+          "consequence": "A warden-court without land carries the only first-hand knowledge of the Dominion north, and its scouts become the eyes of whoever shelters them."
+        }
+      ]
+    },
+    {
+      "name": "Khorvrath",
+      "canon": "proposed",
+      "founding": {
+        "year": 2652,
+        "story": "In the years when portals opened across Aoaz, a demon house came up out of the Nether Maw onto the island's Nether foothills with its thralls and would not go back down. It raised the horn-hold of Khorvazel in the hills, took the name Khorvrath, the horn-realm, and kept the pact-name of its lord to itself."
+      },
+      "dynasties": [
+        {
+          "name": "The Horned Court",
+          "from": 2652,
+          "notable": "A demon lordship whose lords keep a name of two beats for the world and a pact-name for the court; the lord of Khorvrath is Morvath, who took the horn-seat after his predecessor fell at the Burning Gate of Nezer."
+        }
+      ],
+      "events": [
+        {
+          "name": "Out of the Maw",
+          "year": 2652,
+          "summary": "A demon house climbs out of the Nether Maw onto the foothills with its thralls and founds the horned court of Khorvrath."
+        },
+        {
+          "name": "The Horn-Hold Raised",
+          "year": 2677,
+          "summary": "Thralls cut the hall of Khorvazel into the foothills, a hold of black stone crowned with the horns of the house's beasts."
+        },
+        {
+          "name": "The Burning Gate",
+          "year": 3063,
+          "summary": "Khorvrath's companies fight beside other demons at the Burning Gate of Nezer and lose their lord when men, elves and Dark Lands soldiers close it."
+        },
+        {
+          "name": "Sworn to Nafeher",
+          "year": 6718,
+          "summary": "Khorvrath swears to Volgan as a realm of the Southern Dominion, trading its freedom from the Nether's houses for a place in his hosts."
+        },
+        {
+          "name": "The Thrall-Flight",
+          "year": 6780,
+          "summary": "Three hundred thralls of Khorvazel steal boats and cross Veleeda to Olen, where the lamp-keepers shelter them; Khorvrath has demanded them back every year since."
+        }
+      ],
+      "rivalries": [
+        "Olen",
+        "Nether"
+      ],
+      "capitalReason": "Khorvazel stands in the Nether foothills where the house first came up out of the Maw, close enough to the vent to feel its heat and far enough to keep its back to the Nether's houses.",
+      "today": "Lord Morvath rules the Nether foothills of the island from Khorvazel, perhaps 1,500 demons over some 35,000 thralls, orc and goblin labourers and men of the old coast. Khorvrath is the horned court of the Southern Dominion, it keeps its oath to Nafeher while Volgan's strength stands, and it still demands the return of the thralls who fled to Olen.",
+      "divergence": [
+        {
+          "id": "khorvrath_own_road",
+          "what": "Khorvrath breaks its oath to Nafeher and seeks its own road when the Dominion falters.",
+          "consequence": "A demon realm fights for itself on the island, and the Dominion's sworn realms begin to doubt their oaths."
+        },
+        {
+          "id": "khorvrath_takes_olen",
+          "what": "Khorvrath raids Olen to take back its thralls.",
+          "consequence": "The shrine-isle burns or holds, the freeholds learn that silence does not protect them, and Mirolon gains cause to strike first."
+        }
+      ]
+    },
+    {
+      "name": "Dolon",
+      "canon": "proposed",
+      "founding": {
+        "year": 2795,
+        "story": "A demon queen of the Nether came out with her house on the salt coast of the island in 2A 1120 and took the salt pans of the men who worked them, raising a pact-hall at Unzeky where the brine and the Maw's sulphur could both be had. Her house has kept the coast since, and the old accounts call her Khirara."
+      },
+      "dynasties": [
+        {
+          "name": "The House of the Salt Pact",
+          "from": 2795,
+          "notable": "The demon queens of Dolon, who rule by pact and write their laws in salt; the present queen, Zhorith, keeps the Dominion's forge."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Queen's Coming",
+          "year": 2795,
+          "summary": "Queen Khirara's house takes the salt coast of the island and raises the pact-hall of Unzeky over the brine pans."
+        },
+        {
+          "name": "The Tribute Galleys",
+          "year": 6719,
+          "summary": "Dolon begins to send salt, sulphur and ash-glass to Nafeher in tribute galleys along the Veshir coast, and the Dominion's orders pay in thralls."
+        },
+        {
+          "name": "Dolon's Forge",
+          "year": 6761,
+          "summary": "The forges of Unzeky compound black powder from the coast's salts and the Maw's sulphur, and Dolon begins to arm Volgan's orc companies with powder-engines and casks."
+        }
+      ],
+      "rivalries": [
+        "Halia"
+      ],
+      "capitalReason": "Unzeky stands on the salt coast where the brine pans and the sulphur of the Nether Maw are both within reach, which is why the queen chose it for her pact-hall and why the forges stayed.",
+      "today": "Queen Zhorith rules the salt coast of the island from Unzeky, perhaps 1,200 demons over some 36,000 thralls and labourers. Dolon is the forge of the Southern Dominion: its black powder arms Volgan's orc companies, its galleys carry tribute along the Veshir coast, and its demons write their laws in salt so that the sea can wash away any oath the queen regrets.",
+      "divergence": [
+        {
+          "id": "dolon_sells_powder",
+          "what": "Dolon sells powder to the freeholds or to the Dark Lands holds behind Nafeher's back.",
+          "consequence": "Powder spreads to realms that Volgan does not control, and the Dominion's orc companies lose their edge."
+        },
+        {
+          "id": "dolon_forge_destroyed",
+          "what": "A raid or an eruption destroys the forges of Unzeky.",
+          "consequence": "Volgan's companies fight without powder, the Dominion's march is slower, and the sworn realms quarrel over the blame."
+        }
+      ]
+    },
+    {
+      "name": "Nezer",
+      "canon": "proposed",
+      "founding": {
+        "year": 5071,
+        "story": "In the Second Age the Nezer hills were Nazerun, the seat of the Great Necromancer Elzon, and when he died in Aenor his seat stood empty and its necromancers scattered. In 4A 3 two demon crowns of one family took the hills and the coast of the Sea of Nazerch, renamed them Nezer in their own speech and ruled them together from Gelroze."
+      },
+      "dynasties": [
+        {
+          "name": "The Twin Crowns of Gelroze",
+          "from": 5071,
+          "notable": "A confederacy of two demon crowns of one house, a queen and a lord who rule together and must agree on war; Queen Sathael and Lord Zeruath hold the crowns in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Necromancer's Seat",
+          "year": 1676,
+          "summary": "Elzon makes Nazerun his seat after Dardan and directs from its hills the long war of raids against Aenor."
+        },
+        {
+          "name": "The Burning Gate Closed",
+          "year": 3063,
+          "summary": "A garrison of men, a company of elves and Dark Lands soldiers close the Burning Gate, a portal of the Nether in a hold on the Nezer coast, and leave its broken ring standing."
+        },
+        {
+          "name": "The Empty Seat",
+          "year": 5068,
+          "summary": "Elzon dies in Aenor; his seat at Nazerun stands empty, and its necromancers scatter to Nafeher or into the hills."
+        },
+        {
+          "name": "The Two Crowns",
+          "year": 5071,
+          "summary": "Two demon crowns of one family take the empty hills and the Nazerch coast and name the realm Nezer."
+        },
+        {
+          "name": "Sworn to Nafeher",
+          "year": 6718,
+          "summary": "Nezer swears to Volgan as a realm of the Southern Dominion, and its two crowns agree for the first time in a century."
+        }
+      ],
+      "rivalries": [
+        "Nether"
+      ],
+      "capitalReason": "Gelroze is the hill-hold where the two crowns met when they took the empty seat of Nazerun, and it lies between the hills and the Nazerch coast, so that each crown can reach its own lands without crossing the other's.",
+      "today": "Queen Sathael and Lord Zeruath rule the Nezer hills and the coast of the Sea of Nazerch from Gelroze, perhaps 2,500 demons over some 70,000 thralls and labourers. Nezer is the largest of the sworn realms, it guards the broken ring of the Burning Gate on its coast, and its trade with the Nether crosses the Sea of Lava on galleys that only demons sail.",
+      "divergence": [
+        {
+          "id": "nezer_crowns_split",
+          "what": "The two crowns disagree on the war and divide the realm.",
+          "consequence": "Nezer fights itself, the Dominion loses its largest sworn realm, and the Nether is offered the half that refuses Nafeher."
+        },
+        {
+          "id": "nezer_gate_reopens",
+          "what": "The Burning Gate on the Nezer coast is opened again in the war years.",
+          "consequence": "Demons pass to the surface in numbers, and the realms north of the Ember Lands face a threat their chronicles thought closed."
+        }
+      ]
+    },
+    {
+      "name": "Nether",
+      "canon": "proposed",
+      "founding": {
+        "year": 0,
+        "story": "The Nether lies in the south of the Ember Lands, a volcanic island ringed by the Sea of Lava whose halls go down into the heat beneath it, and the court of its King of Demons is older than Volgan's conquest of Mirolon by the reckoning of its own houses. Nobody among men knows when the court began, and the houses count only the years of their pacts."
+      },
+      "dynasties": [
+        {
+          "name": "The King of Demons and the Houses of the Halls",
+          "from": 0,
+          "notable": "A monarchy of demonic houses under the King of Demons, whose own name is not spoken among men; the houses compete for his favour and the right to open portals, and the house of the demon Agon is one of the oldest and least obedient."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Portal Raids",
+          "year": 2652,
+          "summary": "Portals open across Aoaz, and demons of the Nether, the demon Agon among them, raid Aenor and other lands, not all of them at Elzon's bidding."
+        },
+        {
+          "name": "The Burning Gate Closed",
+          "year": 3063,
+          "summary": "Men, elves and Dark Lands soldiers close the Burning Gate on the Nezer coast, and the houses of the Halls lose their nearest road to the surface."
+        },
+        {
+          "name": "The Closing of the Portals",
+          "year": 4508,
+          "summary": "As the houses quarrel among themselves and with the Necromancer's order, the portals close one by one, and the Nether withdraws behind the Sea of Lava."
+        },
+        {
+          "name": "The First Bargain of the Age",
+          "year": 6718,
+          "summary": "Envoys of Nafeher come to the Halls, and the King of Demons strikes a bargain with Volgan for companies of demons at a price, a bargain he renews each reign and never swears."
+        }
+      ],
+      "rivalries": [
+        "Puvulan",
+        "Nezer"
+      ],
+      "capitalReason": "Zarath-Nazur, the dark throne, is cut into the Halls under Mount Nether, where the heat is greatest and no mortal army can reach, and the king's court has never needed another reason.",
+      "today": "In 4A 1748 the King of Demons rules the Nether island and the Halls beneath it from Zarath-Nazur, some 6,000 demons of the houses, a handful of devils on the Burning Shore and about 30,000 thralls. The Nether keeps its own counsel: it sells companies to Nafeher by bargain, disputes the Nether Maw with Volgan's servants, and still answers those who know the old rites and pay its price, a pact that binds the living and ends with them, because the dead are Zol's.",
+      "divergence": [
+        {
+          "id": "nether_refuses_volgan",
+          "what": "The King of Demons refuses to renew the bargain with Nafeher.",
+          "consequence": "Volgan marches without the Nether's companies, the Maw border becomes a war, and the sworn realms must choose between their oath and their kin."
+        },
+        {
+          "id": "nether_mortal_pact",
+          "what": "A mortal ruler of the north seeks the king's pact in the war years.",
+          "consequence": "The bargainer gains real power while he lives and pays in obedience or levies, and when he dies his heir is free, because the king does not take the dead."
+        }
+      ]
+    },
+    {
+      "name": "Halia",
+      "canon": "proposed",
+      "founding": {
+        "year": 6723,
+        "story": "The five salt freeholds of the peninsula's Veleeda coast, Mirodor, Mencnon, Bennen, Gelon and Dra, had each paid their own toll to whoever held the island since the First Age. In 4A 1655, when the storms changed and Nafeher's galleys came again, their headmen met at Halon and swore to pay one toll as one league, so that no freehold could be squeezed alone, and called the league Halia, the salt country."
+      },
+      "dynasties": [
+        {
+          "name": "The Salt-Moot of Halon",
+          "from": 6723,
+          "notable": "The headmen of the five freeholds meet at Halon and choose a Moot-Headman for three years; Delen of Bennen speaks for the league in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "Salt for Silence",
+          "year": 1180,
+          "summary": "Thirty years into Volgan's war the coast cousins of Mirolon agree to pay his tolls in salt and say nothing, and they are left to boil salt while the lake-kingdom burns."
+        },
+        {
+          "name": "The Thief Came This Way",
+          "year": 6677,
+          "summary": "The freeholders tell of a lone traveller from the north who came along their coast going south and, two years later, came back going north and did not seem to have grown any older."
+        },
+        {
+          "name": "The League of the Salt Coast",
+          "year": 6723,
+          "summary": "The five freeholds swear at Halon to pay one toll as one league, and Nafeher accepts a single payment of salt and fish each year."
+        }
+      ],
+      "rivalries": [
+        "Dolon"
+      ],
+      "capitalReason": "Halon has the largest salt pans of the Veleeda coast and lies in the middle of the five freeholds, so the headmen could meet there without any of them travelling furthest.",
+      "today": "Moot-Headman Delen of Bennen speaks for the salt coast of the peninsula, some 355,000 salt-makers and fishers in five freeholds. Halia pays its salt to Nafeher for silence as its grandfathers did, trades fish and salt with Mirolon, its cousin, and remembers the thief who came this way, though only in its taverns.",
+      "divergence": [
+        {
+          "id": "halia_shelters_mirolon",
+          "what": "The league shelters Mirolon's refugees and scouts when the Dominion comes.",
+          "consequence": "Halia loses its silence and its peace, and the Dominion's march has an unwilling coast behind it."
+        },
+        {
+          "id": "halia_client_crown",
+          "what": "The league kneels to Nafeher as a client crown.",
+          "consequence": "Halia keeps its pans and loses its name, and the Dominion gains a harbour on the peninsula's south coast for the crossing to Mirolon."
+        }
+      ]
+    },
+    {
+      "name": "Nan",
+      "canon": "proposed",
+      "founding": {
+        "year": 6256,
+        "story": "The hill chieftains of the dark Nan Mountains and the isles beyond them fought each other for every cove until 4A 1188, when Feron the Grey, a chieftain who had learned the storm-pilots' route through the Tempest Reach, took the fort of Larorun and made the others swear to him as warlord. Nan has been ruled by the strongest captain of the mountains ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Warlords of Larorun",
+          "from": 6256,
+          "notable": "The warlord is the captain the hill chieftains will follow, chosen by acclamation and kept by success; Almon the Small, a wayfinder from the southern isles, has held Larorun since 4A 1731."
+        }
+      ],
+      "events": [
+        {
+          "name": "Feron Takes Larorun",
+          "year": 6256,
+          "summary": "Feron the Grey takes the fort of Larorun and makes the chieftains of the Nan Mountains and the southern isles swear to him as warlord."
+        },
+        {
+          "name": "The Wayfinders' Charts",
+          "year": 6369,
+          "summary": "The wayfinders of Nan chart the storm-pilots' route through the Tempest Reach and keep it secret, so that only Nan's pilots can bring a ship to the island and back."
+        },
+        {
+          "name": "The Raid on the Salt Coast",
+          "year": 6612,
+          "summary": "A warlord of Nan raids the freeholds of the Veleeda coast for salt and slaves and is driven off by Mirolon's scouts, which the freeholds remember when they swear their league a century later."
+        },
+        {
+          "name": "The Toll to Nafeher",
+          "year": 6720,
+          "summary": "When the Veil of Storms is raised, Nan's warlord agrees to pay a toll to Nafeher and to lend the Dominion his pilots, which his chieftains call good business."
+        }
+      ],
+      "rivalries": [
+        "Halia",
+        "Mirolon"
+      ],
+      "capitalReason": "Larorun is the fort in the Nan Mountains that commands the southern tip of the peninsula and the coves of the isles, and whoever holds it holds the chieftains.",
+      "today": "Almon the Small rules the Nan Mountains and the southern isles from Larorun, a warlord's fort and some 59,000 hill-folk and islanders. Nan pays its toll to Nafeher, lends the Dominion its storm-pilots, and sells the same pilots to anyone who pays more, which makes it the one realm of the Ember Lands that both Mirolon and Nafeher need.",
+      "divergence": [
+        {
+          "id": "nan_sells_route",
+          "what": "The warlord sells the storm-pilots' route to Mirolon or to Aenor.",
+          "consequence": "A fleet of the north can reach the island through the Tempest Reach, and the Veil of Storms no longer hides the Dominion."
+        },
+        {
+          "id": "nan_sworn_dominion",
+          "what": "Nan swears to Nafeher as a realm of the Southern Dominion.",
+          "consequence": "The Dominion gains the peninsula's southern tip and its pilots, and Mirolon is caught between the island and its own mountains."
+        }
+      ]
+    },
+    {
+      "name": "Olen",
+      "canon": "proposed",
+      "founding": {
+        "year": 2087,
+        "story": "In 2A 412 a breeze blew out of the storm belt for a whole winter and kept the lamps lit on the cliffs of the isle of Olen while every other light on the coast went out, and the fishers built a shrine where the breeze touched the cliff. The shrine's lamp-keepers became the isle's rulers, and the isle took the name of the Holy Breeze."
+      },
+      "dynasties": [
+        {
+          "name": "The Lamp-Keepers of Gelbus",
+          "from": 2087,
+          "notable": "The keepers of the cliff lamps govern the isle as a shrine-realm, choosing a First Keeper from among themselves; Helia of the Lamps is First Keeper in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Holy Breeze",
+          "year": 2087,
+          "summary": "A breeze out of the storm belt keeps the cliff lamps of Olen lit through a whole winter, and the shrine of the Holy Breeze is built at Gelbus."
+        },
+        {
+          "name": "The Union with Luminor",
+          "year": 6658,
+          "summary": "The freehold of Luminor on the lamp-cliffs joins the shrine-realm, and Olen holds the whole line of cliffs on the peninsula's south coast."
+        },
+        {
+          "name": "The Shelter of the Thrall-Flight",
+          "year": 6780,
+          "summary": "The lamp-keepers shelter three hundred thralls who fled Khorvrath across Veleeda and refuse every demand to give them back."
+        }
+      ],
+      "rivalries": [
+        "Khorvrath"
+      ],
+      "capitalReason": "Gelbus is the shrine-town on the cliff where the Holy Breeze touched the isle, and the keepers will not move the shrine from the place the breeze chose.",
+      "today": "First Keeper Helia of the Lamps governs the isle of the Holy Breeze, the lamp-cliffs and Luminor from Gelbus, some 237,000 fishers and pilgrims. Olen pays its toll to Nafeher and shelters whoever reaches its cliffs, including the thralls Khorvrath still demands, and its lamps are the first lights a ship sees coming out of the storm belt.",
+      "divergence": [
+        {
+          "id": "olen_gives_up_thralls",
+          "what": "The keepers hand back the thralls to buy Khorvrath's peace.",
+          "consequence": "Olen keeps its cliffs and loses its name as a refuge, and the freeholds learn that the Holy Breeze can be bought."
+        },
+        {
+          "id": "olen_beacon_to_mirolon",
+          "what": "Olen lights its lamps in Mirolon's beacon code.",
+          "consequence": "Mirolon sees the island's fleets a day earlier, and Olen becomes a target of the Dominion."
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "Nafeher",
+      "country": "Puvulan",
+      "role": "capital",
+      "size": "city",
+      "founded": 0,
+      "economy": "The gate and halls of the Dominion; the necromantic orders; the grave-fields",
+      "canon": "proposed",
+      "legend": "Volgan's orcs say that nobody comes back up from the Abyss except the one who stole from it, and that the gate of Nafeher was shut on the day he came back."
+    },
+    {
+      "name": "Miherta",
+      "country": "Mirolon",
+      "role": "capital",
+      "size": "town",
+      "founded": 377,
+      "economy": "Lake fish, timber, marsh grain and reed paper; the wardens' seat",
+      "canon": "proposed",
+      "legend": "The wardens say the old lake-kings' crown hangs in the beacon tower of Miherta and that it will be worn again on the night the beacons are no longer needed."
+    },
+    {
+      "name": "Borpial",
+      "country": "Mirolon",
+      "role": "pass",
+      "size": "village",
+      "founded": 6718,
+      "economy": "The fort of the northern passes; the scouts' muster",
+      "canon": "proposed",
+      "legend": "The scouts say the north gate was built in one summer by every warden-family carrying a stone, and that the stones of families who failed to come lie in a heap beside it."
+    },
+    {
+      "name": "Khorvazel",
+      "country": "Khorvrath",
+      "role": "fortress",
+      "size": "town",
+      "founded": 2677,
+      "economy": "Thrall labour, obsidian and sulphur; the horned court",
+      "canon": "proposed",
+      "legend": "The thralls say the horns over the gate of Khorvazel belong to beasts that came up out of the Maw with the house, and that they grow back when they are broken."
+    },
+    {
+      "name": "Unzeky",
+      "country": "Dolon",
+      "role": "mine",
+      "size": "town",
+      "founded": 2795,
+      "economy": "Salt pans, sulphur and the powder forges of the Dominion",
+      "canon": "proposed",
+      "legend": "The salt-workers say that the queens of Dolon write their oaths in salt on the beach at low tide, so that the sea can carry off any promise the queen regrets."
+    },
+    {
+      "name": "Gelroze",
+      "country": "Nezer",
+      "role": "capital",
+      "size": "town",
+      "founded": 1715,
+      "economy": "Hill farms of the thralls; the galley trade across the Sea of Lava",
+      "canon": "proposed",
+      "legend": "The thralls of the Nezer hills say that the Necromancer's chair still stands in the empty hall of Nazerun, and that neither crown of Gelroze will sit in it."
+    },
+    {
+      "name": "Zarath-Nazur",
+      "country": "Nether",
+      "role": "capital",
+      "size": "town",
+      "founded": 0,
+      "economy": "Pact-tribute, thrall labour in the obsidian galleries, fire-glass",
+      "canon": "proposed",
+      "legend": "Men of the south say that the Throne of Embers is carved from a single stone that was cool when the king first sat on it, and that the Halls have been growing hotter ever since."
+    },
+    {
+      "name": "Halon",
+      "country": "Halia",
+      "role": "market",
+      "size": "town",
+      "founded": 612,
+      "economy": "The largest salt pans of the Veleeda coast; fish",
+      "canon": "proposed",
+      "legend": "The freeholders say that a thief once came through their coast going south and, years later, came back going north and did not grow older, and that he paid for his bread in coin nobody had seen before."
+    },
+    {
+      "name": "Larorun",
+      "country": "Nan",
+      "role": "fortress",
+      "size": "village",
+      "founded": 4013,
+      "economy": "Hill herds, the storm-pilots' fees, raiding when the warlord allows it",
+      "canon": "proposed",
+      "legend": "The hill-folk say that Feron the Grey learned the route through the Tempest Reach from a drowned pilot who spoke to him from the water, and that every warlord since has been taught it by the one before."
+    },
+    {
+      "name": "Gelbus",
+      "country": "Olen",
+      "role": "holy",
+      "size": "town",
+      "founded": 2087,
+      "economy": "Pilgrims, fish and the tallow of the cliff lamps",
+      "canon": "proposed",
+      "legend": "The lamp-keepers say the Holy Breeze still blows on the cliff of Gelbus on the night of every great storm, and that a lamp lit there in that breeze cannot be put out by any wind of the Reach."
+    }
+  ],
+  "figures": [
+    {
+      "name": "Mirena of the Passes",
+      "country": "Mirolon",
+      "role": "High Warden",
+      "born": 6766,
+      "died": null,
+      "canon": "proposed",
+      "biography": "A scout-master of the northern passes who was elected High Warden in 4A 1739, she reads every report from the south herself, has doubled the beacon line along the Sound, and has stopped expecting help from Parim."
+    },
+    {
+      "name": "Baelan of Paron",
+      "country": "Mirolon",
+      "role": "Envoy",
+      "born": 6762,
+      "died": null,
+      "canon": "proposed",
+      "biography": "The envoy who warned the court at Parim in 4A 1736 that the Ember Lands were arming and was laughed out of the hall; he has written down every word the courtiers said to him and reads them aloud to new scouts."
+    },
+    {
+      "name": "Hadric of Miherta",
+      "country": "Mirolon",
+      "role": "First High Warden",
+      "born": 1640,
+      "died": 1716,
+      "canon": "proposed",
+      "biography": "A lake-town captain who led the survivors back from the Great Swamp after Dardan and was chosen the first High Warden; he refused to wear the lake-kings' crown and hung it in the beacon tower instead."
+    },
+    {
+      "name": "Feron the Grey",
+      "country": "Nan",
+      "role": "Warlord of Larorun",
+      "born": 6219,
+      "died": 6282,
+      "canon": "proposed",
+      "biography": "The hill chieftain who learned the storm-pilots' route through the Tempest Reach, took Larorun and made the chieftains of the Nan Mountains swear to him; his chieftains named him for the grey of the storm, not of his hair."
+    }
+  ],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "id": "ember_salt_for_silence",
+      "name": "Salt for silence",
+      "realms": [
+        "Halia",
+        "Olen",
+        "Nan"
+      ],
+      "canon": "proposed",
+      "summary": "The freeholds of the peninsula pay a yearly toll in salt and fish to whoever holds the island and say nothing of Volgan or of Zol at the grave; they bury their dead quickly and deep, with salt."
+    },
+    {
+      "id": "ember_beacon_law",
+      "name": "The beacon law",
+      "realms": [
+        "Mirolon"
+      ],
+      "canon": "proposed",
+      "summary": "Every warden tower of Mirolon keeps a lamp lit toward the south each night, and a warden who lets his lamp go out is struck from the rolls; the High Warden is elected for life and may not pass the office to a child."
+    },
+    {
+      "id": "ember_pact_names",
+      "name": "Pact-names",
+      "realms": [
+        "Khorvrath",
+        "Dolon",
+        "Nezer",
+        "Nether"
+      ],
+      "canon": "proposed",
+      "summary": "Every demon lord or queen keeps a name of two beats for the world and a pact-name that only the pact knows; oaths are made in blood and ash, and in Dolon they are written in salt."
+    },
+    {
+      "id": "ember_lava_rite",
+      "name": "The lava rite",
+      "realms": [
+        "Puvulan",
+        "Nether"
+      ],
+      "canon": "established",
+      "summary": "Devils are bound to their bodies and can be killed, and a slain devil returns only when its skull is thrown into lava; who performs the rite for the devils who serve the Dominion is not known outside Nafeher."
+    },
+    {
+      "id": "ember_king_pacts",
+      "name": "The king's pacts",
+      "realms": [
+        "Nether"
+      ],
+      "canon": "established",
+      "summary": "The King of Demons can be called on by the old rites and grants real power in life; the bargain binds the living who make it, in service, obedience or tribute, and when they die they are Zol's, not his."
+    }
+  ]
+}

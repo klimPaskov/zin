@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "region": "south_lands",
+  "overview": "The South Lands are the great desert of the eastern mainland, running south off the edge of the known map: the dune sea of the Sun Desert in the south-west, the southern belt of the Noris Desert below the Hot Lake, the red sands of the Alodale at the north-west edge, the volcanic Hardtmuth chain on the east and a hot, empty sea along the west coast. Almost nothing lives in the open sand. People cling to the oases, the dry bed of the Noris Wadi and the coast road, where the pass-lords of Miaed sell passage through the Hardtmuth to whichever caravan power pays more, and the well-clans of Wahatud keep the oases by an oath sworn after a war of poisoned wells. Sand golems sleep in the dunes and wake angry when robbed, and on the clearest days, the oasis-folk say, angels can be seen far up in the dry sky. South of the last well, beyond every map, lie the burning lands that the southerners name only in dread; no road goes there and no traveller has come back to describe them. Both realms keep the Count of the Wells (4A 1748 is its 3952nd year) and use the Reckoning of the Twelve only in contracts with the west. Years are one continuous count from the victory of Aen: 1A 1 is year 1, the First Age runs to 1675, the Second Age from 1676 (2A 1) to 3808 (2A 2133), the Third Age from 3809 (3A 1) to 5068 (3A 1260, the proposed length) and the Fourth Age from 5069 (4A 1), so that the campaign year 4A 1748 is 6816; a founding year of 0 marks a realm older than the numbered years, whose beginning nobody dates. Everything here that the vault does not state is proposed.",
+  "ages": [
+    {
+      "id": "south_first_wells",
+      "name": "The Age of the First Wells",
+      "from": 1,
+      "to": 1149,
+      "canon": "proposed",
+      "summary": "The desert speech of the Eastern tongues is carried into the dune sea by the first well-clans, who dig where the golems allow and move when the water fails. Aenoran explorers chart the southern shores in the First Age without learning what lies behind them, and the desert already runs off the edge of every chart."
+    },
+    {
+      "id": "south_southern_clients",
+      "name": "The Southern Clients",
+      "from": 1150,
+      "to": 1675,
+      "canon": "proposed",
+      "summary": "Some rulers of the southern lands make common cause with Volgan when he opens his war, while others refuse him and keep their wells. The pass-houses of the Hardtmuth sell water and guides to his eastern clients, and after Dardan the desert lords who served him are driven from their oases by their own clans."
+    },
+    {
+      "id": "south_wells_change_hands",
+      "name": "The Wells Change Hands",
+      "from": 1676,
+      "to": 3808,
+      "canon": "proposed",
+      "summary": "The South Lands are far from the wars of the Middle Lands, and their history is the history of their wells: clans grow, quarrel and move, the Seven Wells of the Noris tribes give the desert a count of years, and the pass-houses of the Hardtmuth guard gorges that no great road yet uses."
+    },
+    {
+      "id": "south_quiet_sand",
+      "name": "The Quiet Sand",
+      "from": 3809,
+      "to": 5068,
+      "canon": "proposed",
+      "summary": "Through the long occupation of Aenor the desert trade is small and local: dates and salt to the river crowns, glass sand to the lake towns, guides for the few caravans that cross. The pass-houses fortify their gorges, and the oasis-folk learn to leave water on the white dune for nobody."
+    }
+  ],
+  "countries": [
+    {
+      "name": "Miaed",
+      "canon": "proposed",
+      "founding": {
+        "year": 5732,
+        "story": "When the caravan roads opened, the pass-houses of the Hardtmuth saw the Sand Road's first caravans come through their gorges and chose one of their lords to set a single toll for the whole chain. In 4A 664 they elected Rhanios of the Upper Gorge Lord of the Passes at Erdozan, where the great pass reaches the coast, and the pass-lords say he bargained with the mountain and paid it in the first caravan's bells."
+      },
+      "dynasties": [
+        {
+          "name": "The Lords of the Passes",
+          "from": 5732,
+          "notable": "Each Lord of the Passes is elected for life by the lords of the pass-forts and adopts his own heir, whom the forts may refuse; Lord Tharian of Erdozan, adopted from the house of the Lower Gorge, holds the seat in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Bells of the First Caravan",
+          "year": 5732,
+          "summary": "The pass-houses elect the first Lord of the Passes and set one toll for the Sand Road through the Hardtmuth; the bells of the first caravan to pay it hang in the dry temple stair of Erdozan."
+        },
+        {
+          "name": "The Hardtmuth Fire",
+          "year": 6160,
+          "summary": "The Hardtmuth Fire erupts and closes the great pass for three years; the caravans go round by the Noris wells, and Miaed learns that its toll is worth only what the mountain allows."
+        },
+        {
+          "name": "The Pass Fires Lit",
+          "year": 6308,
+          "summary": "The lords of the pass-forts begin to keep a fire burning on every pass through the dry season, a guide for caravans and an offering to the mountain, and the custom becomes the faith of the passes."
+        },
+        {
+          "name": "The Price War",
+          "year": 6574,
+          "summary": "Miaed doubles its tolls; Noris and Stabilo each offer to pay the difference for their own caravans alone, Miaed takes both offers in turn, and the pass-lords have sold passage to the higher bidder ever since."
+        }
+      ],
+      "rivalries": [
+        "Noris",
+        "Wahatud"
+      ],
+      "capitalReason": "Erdozan stands at the mouth of the great Hardtmuth pass where the Sand Road reaches the coast, the one place where every caravan through the chain must stop for water and toll.",
+      "today": "In the 3952nd year of the Wells, Lord Tharian rules the Hardtmuth passes and the south coast road from Erdozan, a city of about 120,000 with perhaps 450,000 people under the lordship. Miaed lives on tolls, glass sand and the goods of the Sand Road, it sells passage to Noris and Stabilo alike, and the friends of the Deliverer's temple at Erdozan are as generous to its lords as they are everywhere in the East.",
+      "divergence": [
+        {
+          "id": "miaed_closes_passes",
+          "what": "The Lord of the Passes closes the Hardtmuth to every host in the war years.",
+          "consequence": "The Sand Road stops, both caravan powers lose their southern trade, and Miaed becomes the price of any eastern alliance."
+        },
+        {
+          "id": "miaed_kneels_early",
+          "what": "Miaed kneels to a claimant of the East while Noris and Stabilo are still strong.",
+          "consequence": "The pass-lords gain a crown's protection and lose their freedom to sell to both sides, and the caravan powers march on Erdozan."
+        }
+      ]
+    },
+    {
+      "name": "Wahatud",
+      "canon": "proposed",
+      "founding": {
+        "year": 6705,
+        "story": "In 4A 1631 a quarrel over the great oasis of Biir-Raab turned into a war in which the well-clans of the Sun Desert poisoned each other's wells, until half the oases were dead and the golems walked on the dune roads. In 4A 1637 the surviving clan-mothers met at Biir-Raab, swore the Well-Moot and named their league Wahatud, the people of the oases."
+      },
+      "dynasties": [
+        {
+          "name": "The Keepers of the Moot",
+          "from": 6705,
+          "notable": "The Well-Moot meets at Biir-Raab and chooses a Keeper of the Moot each year from a different clan; Mai bat Nurud of the Zahui well holds the keeping in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The War of the Poisoned Wells",
+          "year": 6699,
+          "summary": "A quarrel over Biir-Raab becomes six years of war in which the clans poison each other's wells, half the oases die and the golems, disturbed, close the dune roads."
+        },
+        {
+          "name": "The Swearing of the Well-Moot",
+          "year": 6705,
+          "summary": "The clan-mothers swear at Biir-Raab that no clan will close or poison a well again and that every quarrel over water goes to the Moot."
+        },
+        {
+          "name": "Water at the White Dune",
+          "year": 6728,
+          "summary": "The Moot orders that water be left each month on the white dune the oasis-folk call the Angels' Dune, for nobody, and the custom has never been broken."
+        },
+        {
+          "name": "The Refugees of the Ash Year",
+          "year": 6731,
+          "summary": "When the Drak Furnace erupts far to the north, caravans of the southern road arrive starving and the Moot waters them all, the first time the league gives water to strangers in a body."
+        }
+      ],
+      "rivalries": [
+        "Miaed"
+      ],
+      "capitalReason": "Biir-Raab is the greatest oasis of the dune sea, the well the clans fought the war over, and they made it the seat of the Moot so that no clan could ever own it again.",
+      "today": "In the 3952nd year of the Wells, the Well-Moot of Wahatud keeps the oases of the Sun Desert, some 160,000 oasis-folk in four strings of wells with Biir-Raab at the centre. The league never joins a war, always offers water to refugees and sells water by the skin to caravans that are not refugees, and its guides are the only people who cross the dune sea without fear.",
+      "divergence": [
+        {
+          "id": "wahatud_shelters_east",
+          "what": "The Moot opens the oases to every refugee of the eastern wars.",
+          "consequence": "Wahatud doubles in a season and runs short of water, and the Moot must choose between its oath and its wells."
+        },
+        {
+          "id": "wahatud_guides_withheld",
+          "what": "The guides refuse to lead any host through the dune sea.",
+          "consequence": "No army can cross the Sun Desert without losing its way to the heat and the golems, and the southern flank of the East is closed."
+        }
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "Erdozan",
+      "country": "Miaed",
+      "role": "capital",
+      "size": "city",
+      "founded": 2985,
+      "economy": "Tolls of the Sand Road; the coast road; glass sand and dates",
+      "canon": "proposed",
+      "legend": "The pass-lords say their founder bargained with the mountain and paid it in the first caravan's bells, and that the bells in the dry temple stair ring by themselves before the Hardtmuth Fire wakes."
+    },
+    {
+      "name": "Dwarae",
+      "country": "Miaed",
+      "role": "pass",
+      "size": "village",
+      "founded": 4712,
+      "economy": "The fort at the crown of the Hardtmuth pass; guides and water for the caravans",
+      "canon": "proposed",
+      "legend": "The pass guard say the little gate of Dwarae was never closed in nine centuries because its hinges were forged in the mountain's own fire, and that the night it closes the pass will close with it."
+    },
+    {
+      "name": "Lebia",
+      "country": "Miaed",
+      "role": "mine",
+      "size": "village",
+      "founded": 5848,
+      "economy": "White glass sand from the coastal dunes, sold to the lake glass-makers and to Aenor",
+      "canon": "proposed",
+      "legend": "The sand-diggers of Lebia say the white dunes are made of the bones of a sea that dried before men came, and that the best glass sand lies where the glass-vipers sleep."
+    },
+    {
+      "name": "Biir-Raab",
+      "country": "Wahatud",
+      "role": "capital",
+      "size": "town",
+      "founded": 3225,
+      "economy": "Water, dates and camel fodder; the Well-Moot",
+      "canon": "proposed",
+      "legend": "The oasis-folk say a sand golem guards every buried well and gives it back to whoever brings it gold, and that the great well of Biir-Raab was bought from its golem with the first clan-mother's rings."
+    },
+    {
+      "name": "Wahat-Rakh",
+      "country": "Wahatud",
+      "role": "shrine",
+      "size": "village",
+      "founded": 4185,
+      "economy": "Dates and salt-hawks; the guides' school",
+      "canon": "proposed",
+      "legend": "The guides of the red oasis say the Angels' Dune can be seen from their palms on the clearest mornings, and that whoever leaves water there and asks for nothing will never lose his way in the sand."
+    }
+  ],
+  "figures": [
+    {
+      "name": "Tharian of Erdozan",
+      "country": "Miaed",
+      "role": "Lord of the Passes",
+      "born": 6769,
+      "died": null,
+      "canon": "proposed",
+      "biography": "Adopted from the house of the Lower Gorge by his childless predecessor, he is a shrewd, patient bargainer who has raised the Sand Road toll twice without losing a caravan, and who listens to the Deliverer's temple more than his pass-lords would like."
+    },
+    {
+      "name": "Yarah bat Kersud",
+      "country": "Wahatud",
+      "role": "Clan-mother of the Well-Moot",
+      "born": 6658,
+      "died": 6729,
+      "canon": "proposed",
+      "biography": "The clan-mother who called the survivors of the War of the Poisoned Wells to Biir-Raab and wrote the oath of the Well-Moot, which she made every clan swear with water in its mouth so that no one could speak a lie while swearing."
+    }
+  ],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "id": "south_higher_bidder",
+      "name": "Passage to the higher bidder",
+      "realms": [
+        "Miaed"
+      ],
+      "canon": "proposed",
+      "summary": "Since the Price War of 4A 1506 the Lord of the Passes sells passage through the Hardtmuth to whichever caravan power pays more in a given season, and a lord who refuses a higher offer for friendship's sake loses the forts' confidence."
+    },
+    {
+      "id": "south_well_moot",
+      "name": "The oath of the Well-Moot",
+      "realms": [
+        "Wahatud"
+      ],
+      "canon": "proposed",
+      "summary": "No clan may close or poison a well, every quarrel over water goes to the Moot at Biir-Raab, and a refugee is given water before he is asked his name; a caravan that is not fleeing pays for water by the skin."
+    },
+    {
+      "id": "south_white_dune",
+      "name": "Water for nobody",
+      "realms": [
+        "Wahatud",
+        "Miaed"
+      ],
+      "canon": "proposed",
+      "summary": "Once a month the oasis-folk leave water on the white dune called the Angels' Dune and ask nothing for it; the pass-lords of Miaed keep a similar custom with the pass fires, which they say are lit for the mountain and not for men."
+    }
+  ]
+}
