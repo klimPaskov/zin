@@ -23,6 +23,9 @@ import { PEOPLES } from './modules/peoples.mjs';
 import { Registry, exclusiveClosure, mergeRegistryData, loadRegistry, loadArgCodes, codesFor, checkCoverage, checkStructure } from './checks/focus_checks.mjs';
 
 const json = async f => JSON.parse(await readFile(f, 'utf8'));
+// The documents call the Dead Lands the Ember Lands (owner decision of 24 October 2026); the builder data keeps the old ids until the
+// renaming migration runs, which removes this map.
+const SPEC_FILE_RENAMED = { shared_dead_lands: 'shared_ember_lands' };
 const IDS = ['shared_cold_lands', 'shared_concord_dominions', 'shared_dark_lands', 'shared_dead_lands', 'shared_east_lands', 'shared_islands_of_the_south'];
 const EXPECT = {
   shared_cold_lands: { focuses: 70, spirits: 18, events: 5, countries: 23, opinions: 1, ns: 'zin_shared_cold_lands' },
@@ -76,7 +79,7 @@ const locOf = id => compiled.get(id).loc;
 function specRows(id) {
   const md = existsSync(`${SPEC_DIR}/shared/${id}.md`) ? null : null;
   void md;
-  return readFile(`${SPEC_DIR}/shared/${id}.md`, 'utf8').then(text => {
+  return readFile(`${SPEC_DIR}/shared/${SPEC_FILE_RENAMED[id] ?? id}.md`, 'utf8').then(text => {
     const strip = s => s.replace(/`/g, '').replace(/\*\*/g, '').trim();
     const rows = [];
     let cols = null;

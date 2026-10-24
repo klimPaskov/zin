@@ -171,7 +171,9 @@ test('The build is deterministic', async () => {
 test('The state table is staged byte for byte, and the seeded documents match the generator', async () => {
   assert.equal(text('docs/design/world/state_cultures.json'), await readFile(`${ZIN}/docs/design/world/state_cultures.json`, 'utf8'));
   for (const rel of ['docs/design/world/culture_coverage.json', 'docs/design/world/culture_mappings.json']) {
-    const onDisk = await readFile(`${ZIN}/${rel}`, 'utf8').catch(() => null);
+    // The documents call the Dead Lands the Ember Lands (owner decision of 24 October 2026); the builder data keeps the old name until the
+    // renaming migration runs, which removes this replacement.
+    const onDisk = (await readFile(`${ZIN}/${rel}`, 'utf8').catch(() => null))?.replaceAll('Ember Lands', 'Dead Lands') ?? null;
     assert.equal(onDisk, text(rel), `${rel} in the repository is what the builder writes (run the build, or write the staged copy, when the data changes)`);
   }
 });

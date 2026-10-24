@@ -393,7 +393,10 @@ test('focus_arg_codes.json agrees with the specs it copies', async () => {
     const spec = (await readFile(path.join(ZIN, owner.spec), 'utf8')).replace(/−/g, '-').toLowerCase();
     for (const [arg, table] of Object.entries(owner.args)) {
       assert(spec.includes(`\`${arg}\``), `${owner.owner}: ${arg} is not named in the spec`);
-      for (const [word, code] of Object.entries(table)) {
+      for (const [dataWord, code] of Object.entries(table)) {
+        // The documents call the Dead Lands the Ember Lands (owner decision of 24 October 2026); the builder data keeps the old key until the
+        // renaming migration runs, which removes this map.
+        const word = { dead_lands: 'ember_lands' }[dataWord] ?? dataWord;
         const w = word.replace(/_/g, '[_ ]');
         // The specs write "word code" ("seals 1", "bordering -1") or "code word" ("1 Coldor"); a word may be in backticks.
         assert(new RegExp(`\\b${w}\\b\`?[ =]*${code}(?![0-9])|(?<![0-9-])${code}[ ]*(?:for )?\\b${w}\\b`).test(spec), `${owner.owner}: ${arg} ${word} ${code} is not in the spec`);
