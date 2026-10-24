@@ -133,7 +133,7 @@ Other livelihoods: tolls on the Iron Road, the Black Road (Bordon's caravan inns
 | 4A, first centuries | established | The great invasions of orcs and goblins have ceased [V: The Fourth Age of Aoaz]. |
 | 4A about 1100 to 1450 | proposed | Orc clans move from the hills into the volcano country and the iron hills [WB §1 migrations]. |
 | 4A about 1450 | proposed | **Orc warlords unite the inner Dark Lands as Goldoroth**; its wars with Dondor begin [V: Fourth Age Chronology §III]. |
-| 4A about 1500 | proposed | Goldoroth's first bombards, bought from Burnikit's powder-makers, break Dondor's southern stockades; Dondor answers with beacon towers. |
+| 4A 1594 | proposed | Goldoroth's first bombards (Burnikit has made powder since 4A 1566, a generation after Drak's in the East), bought from Burnikit's powder-makers, break Dondor's southern stockades; Dondor answers with beacon towers. |
 | 4A about 1600 | proposed | **The Dark Sea Accord** of Dondor and Belonton (working name [V: Great Powers and Relations]) is sworn on an iron bar and a skull sunk in the sea. |
 | 4A 1748 | established start, proposed date | Armed peace: raids, gifts, tribute, beacons, envoys from the south; no war [SS Dark Lands; MS dark_lands, Phases]. |
 | 4A 1755 to 1757 | proposed | Goldoroth's war for the Dark Lands; the Accord stands or breaks; sworn holds open Volgan's northern front [MS dark_lands, Phases]. |
