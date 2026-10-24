@@ -1,0 +1,4588 @@
+{
+  "schema": 1,
+  "date": "2026-10-24",
+  "status": "Draft for the owner's review",
+  "requirements": [
+    "R-40",
+    "R-41"
+  ],
+  "doc": "docs/lore/references/bestiary.md",
+  "note": "The bestiary of Aoaz in machine-readable form. Every entry has the same id and section as in the bestiary document. Card sizes are the owner's figures (a man is 1.8 m); no age or life span of any being is stated (K18). playEffects are proposals for the systems that own them; target names state modifiers of the installed game or proposed ZIN decisions, events, ideas and units. habitatFlag is the proposed state flag that marks a creature's states. Regions use the roster keys (tritons_islands is the Pupor Isles).",
+  "vocab": {
+    "kind": [
+      "people",
+      "beast",
+      "spirit",
+      "other"
+    ],
+    "rarity": [
+      "common",
+      "uncommon",
+      "rare",
+      "very_rare",
+      "unique"
+    ],
+    "sizeClass": {
+      "tiny": "smaller than a dog",
+      "small": "below a man's shoulder",
+      "man": "about a man",
+      "large": "one and a quarter to three men",
+      "huge": "three to ten men",
+      "giant": "ten to thirty men",
+      "colossal": "more than thirty men"
+    },
+    "playEffectKind": [
+      "travel",
+      "farming",
+      "settlement",
+      "trade",
+      "war",
+      "tradition",
+      "event",
+      "decision"
+    ],
+    "canon": {
+      "established": "the creature and its main traits are the owner's or the vault's; a new name may still be proposed",
+      "proposed": "new in a dossier or in the bestiary"
+    }
+  },
+  "sourceKeys": {
+    "BC n": "card or drawing index n in docs/lore/sources/bestiary_cards_part1.md and _part2.md",
+    "K n": "owner decision in docs/specs/INTEGRATION_DECISIONS.md",
+    "vault: X": "docs/lore/vault page X",
+    "<region> §n": "docs/lore/regions/<region>.md section n",
+    "KL X": "docs/lore/references/knowledge_layers.md register entry X",
+    "magic reference": "docs/lore/references/magic_and_wizards.md"
+  },
+  "entries": [
+    {
+      "id": "tzikor",
+      "name": "tzikor",
+      "formerName": "Vinocorne",
+      "localNames": [
+        {
+          "lang": "orran",
+          "name": "tzikor",
+          "gloss": "thorn"
+        }
+      ],
+      "kind": "other",
+      "subkind": "moving plant",
+      "card": [
+        2,
+        3
+      ],
+      "section": "1.1",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "Aenor Forest: sunny clearings and the edges of the Baelim groves"
+      ],
+      "habitatFlag": "zin_hab_aenor_forest",
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "from a tall man's height to three times it (card 2 to 6 m, drawn 4 m)",
+      "uses": [
+        "arrow-venom milked by the Redbark (P)",
+        "nectar for the thorn-bees (P)"
+      ],
+      "threats": [
+        "thorned arms",
+        "poison shot from the blossoms",
+        "sap that rots the skin"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_aenor_forest / attrition_for_controller",
+          "magnitude": 0.05,
+          "notes": "The tzikor's share of the forest's attrition."
+        },
+        {
+          "kind": "event",
+          "target": "White Flowers in the Clearing",
+          "magnitude": "MTTH 36 months",
+          "notes": "Owners of states on the forest edge: -10% Timber in the state for 90 days, or rangers sent for -10 authority."
+        },
+        {
+          "kind": "war",
+          "target": "idea: Thorn-Venom Arrows (Bloody Forest realm)",
+          "magnitude": "+5% archer soft attack",
+          "notes": "Redbark venom arrows."
+        },
+        {
+          "kind": "tradition",
+          "target": "Selen rangers",
+          "magnitude": null,
+          "notes": "No clearing is cut that shows white flowers out of season."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 2",
+        "BC 3",
+        "K18",
+        "K21",
+        "K27",
+        "middle_lands §2.5a, §9"
+      ],
+      "canon": "established",
+      "canonNotes": "Card traits E; name P (K27 renames the card name); life span dropped (K18)."
+    },
+    {
+      "id": "king_of_demons",
+      "name": "the King of Demons",
+      "formerName": "Satan",
+      "localNames": [],
+      "kind": "other",
+      "subkind": "figure; a demon",
+      "card": [
+        5,
+        17
+      ],
+      "section": "1.2",
+      "regions": [
+        "ember_lands"
+      ],
+      "habitats": [
+        "the Nether: the Halls under Mount Nether"
+      ],
+      "habitatFlag": null,
+      "rarity": "unique",
+      "sizeClass": "huge",
+      "size": "five times a man's height (card 9.8 m)",
+      "uses": [
+        "pacts that give a living mortal a power (the card: fire from the hands)"
+      ],
+      "threats": [
+        "a thrown trident of red crystal blades",
+        "pacts kept to the letter"
+      ],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "Bargain with the Nether (pact-craft, magic reference §3.13)",
+          "magnitude": "timed power, 365 days",
+          "notes": "The price is paid in life (service, tribute, thralls); never a soul (K15)."
+        },
+        {
+          "kind": "tradition",
+          "target": "demon art",
+          "magnitude": null,
+          "notes": "Pentagram allowed, cross never (K26)."
+        }
+      ],
+      "publicText": "The King of Demons, never a name; his pacts only as a believer's account.",
+      "sources": [
+        "BC 5",
+        "BC 17",
+        "K15",
+        "K18",
+        "K26",
+        "vault: King of Demons",
+        "KL C20"
+      ],
+      "canon": "established",
+      "canonNotes": "Seat and pacts E (K15); original name not chosen; the card name is a former label only and never appears in text."
+    },
+    {
+      "id": "sand_golem",
+      "name": "sand golem",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "noric",
+          "name": "hoolkaar",
+          "gloss": "sand-stone (P)"
+        }
+      ],
+      "kind": "other",
+      "subkind": "rank open",
+      "card": [
+        7,
+        11
+      ],
+      "section": "1.3",
+      "regions": [
+        "south_lands",
+        "east_lands"
+      ],
+      "habitats": [
+        "Noris Desert caves and dune surfaces",
+        "the desert's northern edge below the wells of Noris"
+      ],
+      "habitatFlag": "zin_hab_sand_golem",
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "one and a half to nearly three times a man (card 2 to 5 m, drawn 3 m)",
+      "uses": [
+        "their caves hold gold (P)"
+      ],
+      "threats": [
+        "fury when disturbed",
+        "thrown sand and stones",
+        "camouflage"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_sand_golem / attrition_for_controller",
+          "magnitude": 0.05,
+          "notes": "Only where roads are below level 2: the marked tracks are safe."
+        },
+        {
+          "kind": "decision",
+          "target": "Mine the Southern Sands",
+          "magnitude": "+2 Gold",
+          "notes": "Costs 50 authority; the golem event chance x3. Reads economy specialSites.noris_south_desert as golem gold."
+        },
+        {
+          "kind": "event",
+          "target": "The Golem's Cave",
+          "magnitude": "MTTH 60 months",
+          "notes": "Take the gold (+2 Gold for 365 days, then attrition +0.15 in the state for 180 days) or seal the cave (calm +3%)."
+        },
+        {
+          "kind": "tradition",
+          "target": "caravans and oasis-folk",
+          "magnitude": null,
+          "notes": "Robbing a golem's cave is death; no fire on a dune that has moved."
+        }
+      ],
+      "publicText": "What caravans and the oasis-folk say; never a rank.",
+      "sources": [
+        "BC 7",
+        "BC 11",
+        "south_lands §2, §9",
+        "east_lands §9",
+        "economy.json specialSites"
+      ],
+      "canon": "established",
+      "canonNotes": "Card traits E; rank open (owner question 3); Noric name P."
+    },
+    {
+      "id": "roka",
+      "name": "Roka",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "figure; the greatest of the people of the Abyss",
+      "card": [
+        8,
+        10
+      ],
+      "section": "1.4",
+      "regions": [
+        "ember_lands"
+      ],
+      "habitats": [
+        "the Abyss: his great castle"
+      ],
+      "habitatFlag": null,
+      "rarity": "unique",
+      "sizeClass": "giant",
+      "size": "more than twenty men stood on one another's shoulders (card 42 m)",
+      "uses": [],
+      "threats": [
+        "a stone hammer that sends a shock through the ground"
+      ],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "unit: zin_abyss_folk (script unlock)",
+          "magnitude": "story grant only",
+          "notes": "Through a bargain with the Abyss or a wrong done to it; never standing service to Volgan."
+        }
+      ],
+      "publicText": "Roka by name and 'Roka's people'; the necklace's theft only behind its gate (KL A6).",
+      "sources": [
+        "BC 8",
+        "BC 10",
+        "vault: Roka",
+        "vault: Abyss",
+        "KL V4",
+        "KL V5",
+        "ember_lands §7"
+      ],
+      "canon": "established",
+      "canonNotes": "Age dropped (K18); rank open; the Necklace was taken by Afrit's thief (E; date 4A 1611 P); fate open (V5)."
+    },
+    {
+      "id": "sea_serpent",
+      "name": "sea serpent",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [
+        6,
+        12
+      ],
+      "section": "1.5",
+      "regions": [
+        "middle_lands",
+        "west_lands"
+      ],
+      "habitats": [
+        "the Sea of Monsters (most numerous)",
+        "the deep middle of the central sea",
+        "off Hirolon Head"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "huge",
+      "size": "as long as five to eleven men laid end to end (card 10 to 20 m, drawn 12.5 m)",
+      "uses": [
+        "serpent-scale from a carcass washed ashore"
+      ],
+      "threats": [
+        "takes small boats",
+        "scales no ordinary sword pierces",
+        "faster than any ship"
+      ],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "Serpent off Hirolon Head",
+          "magnitude": "MTTH 48 months",
+          "notes": "Realms with harbours on the Sea of Monsters lose one merchant fleet or one galley."
+        },
+        {
+          "kind": "trade",
+          "target": "A Serpent on the Shore",
+          "magnitude": "MTTH 240 months",
+          "notes": "Commander trait Serpent-Scale Mail (+1 defence)."
+        },
+        {
+          "kind": "travel",
+          "target": "naval",
+          "magnitude": null,
+          "notes": "No sea modifier exists; ships keep to the coast through events only. Ballistae answer serpents."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 6",
+        "BC 12",
+        "middle_lands §2.2, §9",
+        "hirolon §9",
+        "tritons_islands §9"
+      ],
+      "canon": "established",
+      "canonNotes": "\"Belegaer\" (Tolkien) dropped; \"[?Trenin?] Sea\" read as the Sea of Monsters (P, owner question 2); speed figure and life span dropped."
+    },
+    {
+      "id": "smash",
+      "name": "Smash",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "figure; king of the forest trolls of the Troll Forest only",
+      "card": [
+        13,
+        14
+      ],
+      "section": "1.6",
+      "regions": [
+        "dark_lands"
+      ],
+      "habitats": [
+        "the Troll Forest: the great cave of Holos"
+      ],
+      "habitatFlag": "zin_hab_troll_forest",
+      "rarity": "unique",
+      "sizeClass": "colossal",
+      "size": "the height of a hill, sixty men and more (card 112 m)",
+      "uses": [],
+      "threats": [
+        "night raids on castles and villages"
+      ],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "The Troll King Walks",
+          "magnitude": "MTTH 12 months at peace, 4 at war",
+          "notes": "States beside the Troll Forest whose owner is hostile or has not paid troll silver lose one fort level or one building."
+        },
+        {
+          "kind": "war",
+          "target": "grant: Troll Night-Host of Holos with Smash as unique commander",
+          "magnitude": "2 battalions",
+          "notes": "Traits Walks by Night (+night attack) and Stone at Dawn (-speed); dissolves at peace."
+        },
+        {
+          "kind": "decision",
+          "target": "Pay the Troll Silver",
+          "magnitude": "-30 authority yearly",
+          "notes": "No night raids."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 13",
+        "BC 14",
+        "K22",
+        "dark_lands §5, §10, §12"
+      ],
+      "canon": "established",
+      "canonNotes": "King of his forest only (K22); Holos P placement; age dropped."
+    },
+    {
+      "id": "wurgh",
+      "name": "wurgh",
+      "formerName": "warg",
+      "localNames": [
+        {
+          "lang": "orcish",
+          "name": "wurgh",
+          "gloss": "wolf"
+        },
+        {
+          "lang": "common speech",
+          "name": "bone-hound",
+          "gloss": "men's word, for its jaws"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [
+        15,
+        16
+      ],
+      "section": "1.7",
+      "regions": [
+        "dark_lands",
+        "middle_lands",
+        "cold_lands",
+        "ember_lands"
+      ],
+      "habitats": [
+        "Dark Lands moors and forests",
+        "the Forests of Darkhere under Burrikkrit",
+        "the warm valleys of Glimkit",
+        "the warrens of Burnikit",
+        "Volgan's island"
+      ],
+      "habitatFlag": "zin_hab_wurgh",
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "shoulder as high as a man's chest or over his head; twice that rearing (card 1.4 to 1.9 m)",
+      "uses": [
+        "mount of orcs and goblins"
+      ],
+      "threats": [
+        "herd raids",
+        "bone-crushing jaws",
+        "sees in the dark"
+      ],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "event: Wurgh Raid on the Herds / local_resources_factor (Horses)",
+          "magnitude": -0.1,
+          "notes": "MTTH 18 months, 120 days; herd states beside wurgh country."
+        },
+        {
+          "kind": "war",
+          "target": "idea: Eyes in the Dark / land_night_attack",
+          "magnitude": 0.1,
+          "notes": "Wurgh-riding realms."
+        },
+        {
+          "kind": "war",
+          "target": "unit: zin_goblin_wurgh_riders (P)",
+          "magnitude": null,
+          "notes": "Goblin rider line, unlocked by Break Wurgh Pups to the Saddle."
+        },
+        {
+          "kind": "decision",
+          "target": "Break Wurgh Pups to the Saddle",
+          "magnitude": "-25 authority, 180 days",
+          "notes": "Orc and goblin realms: unlocks goblin riders, or +1 Horses in a hold state for two years."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 15",
+        "BC 16",
+        "BC 20",
+        "BC 36",
+        "K14",
+        "middle_lands §3, §9",
+        "cold_lands §9",
+        "dark_lands §9",
+        "ember_lands §9",
+        "warfare_units zin_orcs_raiders"
+      ],
+      "canon": "established",
+      "canonNotes": "Card traits E; name P; kinds (moor, warren, shaggy) P after the card's \"many kinds\".",
+      "variants": [
+        {
+          "id": "moor_wurgh",
+          "name": "moor wurgh",
+          "where": "Dark Lands moors; Volgan's orcs",
+          "note": "the big war-mount of orc raiders"
+        },
+        {
+          "id": "warren_wurgh",
+          "name": "warren wurgh",
+          "where": "Burrikkrit, Burnikit",
+          "note": "smaller, short-coated, pale-eyed; carries a rider in tunnels"
+        },
+        {
+          "id": "shaggy_wurgh",
+          "name": "shaggy wurgh",
+          "where": "Glimkit",
+          "note": "thick winter coat; ridden only in summer"
+        }
+      ]
+    },
+    {
+      "id": "abyss_folk",
+      "name": "the people of the Abyss",
+      "formerName": "Rhino-Head",
+      "localNames": [],
+      "kind": "people",
+      "subkind": "rank and name open",
+      "card": [
+        9,
+        18
+      ],
+      "section": "1.8",
+      "regions": [
+        "ember_lands"
+      ],
+      "habitats": [
+        "the Abyss, east end of the Nether Mountains"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "giant",
+      "size": "eight to fourteen men tall (card 15 to 25 m, drawn 17 m)",
+      "uses": [],
+      "threats": [
+        "horn, fists and feet"
+      ],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "unit: zin_abyss_folk",
+          "magnitude": "story grant only",
+          "notes": "See Roka."
+        }
+      ],
+      "publicText": "\"Roka's people\" or \"the rhinoceros-headed folk of the Abyss\" (V4); never \"Rhino-Head\".",
+      "sources": [
+        "BC 9",
+        "BC 18",
+        "vault: Roka",
+        "KL V4",
+        "ember_lands §3, §9"
+      ],
+      "canon": "established",
+      "canonNotes": "\"Always evil\" kept only as the orcs' belief (vault diversity rule); solitude reconciled with Roka's hall (P)."
+    },
+    {
+      "id": "orc",
+      "name": "orcs",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        19,
+        20
+      ],
+      "section": "1.9",
+      "regions": [
+        "dark_lands",
+        "ember_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "caves, forests and sometimes castles",
+        "Goldoroth and the iron hills",
+        "the sea-orc isles",
+        "Volgan's island"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "man",
+      "size": "about a man (card 1.6 to 2.1 m)",
+      "uses": [],
+      "threats": [
+        "warbands, raids, black powder where they have it (K19)"
+      ],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "existing orc sub-units; wurgh mounts",
+          "magnitude": null,
+          "notes": "Goldoroth carries gunpowder in the roster."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 19",
+        "BC 20",
+        "K19",
+        "dark_lands §3",
+        "magic reference §3.11"
+      ],
+      "canon": "established",
+      "canonNotes": "Life span becomes \"short-lived\"; \"stupid\" read as of common warriors, not of orc rule."
+    },
+    {
+      "id": "ogre",
+      "name": "ogres",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        21,
+        22
+      ],
+      "section": "1.10",
+      "regions": [
+        "dark_lands",
+        "east_lands",
+        "ember_lands"
+      ],
+      "habitats": [
+        "caves of the Darkness (the Darks)",
+        "the Reeto Heights",
+        "caves of the Demonic Mountains"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "half again to twice a man's height (card 2.8 to 3.5 m)",
+      "uses": [
+        "hired caravan guards on the Rift Road"
+      ],
+      "threats": [
+        "clubs and thrown stones",
+        "raids on the Rift Road"
+      ],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "Ogres on the Rift Road",
+          "magnitude": "MTTH 24 months",
+          "notes": "-10% resources in the road state for 90 days."
+        },
+        {
+          "kind": "decision",
+          "target": "Hire Reeto Ogres",
+          "magnitude": "-20 authority",
+          "notes": "No ogre event for two years; local_supplies +0.10 in the road states."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 21",
+        "BC 22",
+        "dark_lands §3",
+        "east_lands §3, §9",
+        "ember_lands §9"
+      ],
+      "canon": "established",
+      "canonNotes": null
+    },
+    {
+      "id": "horos",
+      "name": "Horos",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "coldic",
+          "name": "Dounhalv",
+          "gloss": "the deep hall: proposed name for the halls beneath Yeldenne"
+        }
+      ],
+      "kind": "spirit",
+      "subkind": "Great Spirit",
+      "card": [
+        24,
+        25
+      ],
+      "section": "1.11",
+      "regions": [
+        "cold_lands"
+      ],
+      "habitats": [
+        "Castle Yeldenne at Mp'E: the halls beneath the castle"
+      ],
+      "habitatFlag": null,
+      "rarity": "unique",
+      "sizeClass": "huge",
+      "size": "three men tall (card 5.5 m)",
+      "uses": [],
+      "threats": [
+        "wakes and kills those who come too close"
+      ],
+      "playEffects": [
+        {
+          "kind": "tradition",
+          "target": "bread on the Silent Road (Mp'E)",
+          "magnitude": null,
+          "notes": "Existing Yeldenne and Glo mechanic; nothing added."
+        }
+      ],
+      "publicText": "The valley's beliefs; Glo's nature only behind zin_horos_dead.",
+      "sources": [
+        "BC 24",
+        "BC 25",
+        "K24",
+        "vault: Horos",
+        "vault: Castle of Yeldenne and Glo",
+        "cold_lands sub-regions"
+      ],
+      "canon": "established",
+      "canonNotes": "Tol Hithi is a former label (K24); age dropped; the halls' name Dounhalv is P."
+    },
+    {
+      "id": "man",
+      "name": "men",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        26,
+        27
+      ],
+      "section": "1.12",
+      "regions": [
+        "middle_lands",
+        "north_lands",
+        "cold_lands",
+        "west_lands",
+        "dark_lands",
+        "ember_lands",
+        "east_lands",
+        "south_lands",
+        "islands_of_the_south",
+        "tritons_islands",
+        "lands_of_the_sun",
+        "magical_lands",
+        "zols_mistake"
+      ],
+      "habitats": [
+        "every land; most numerous in the Middle Lands"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "man",
+      "size": "the measure (card 1.6 to 1.9 m)",
+      "uses": [],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "BC 27",
+        "vault: Peoples of Aoaz"
+      ],
+      "canon": "established",
+      "canonNotes": "Life span dropped; the card's \"wuuks\", \"ologs\" and cyclopes are not entered (owner question 6)."
+    },
+    {
+      "id": "hobgoblin",
+      "name": "hobgoblins",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": "a goblin kind",
+      "card": [
+        28,
+        29
+      ],
+      "section": "1.13",
+      "regions": [
+        "middle_lands",
+        "cold_lands",
+        "dark_lands"
+      ],
+      "habitats": [
+        "Burrikkrit (most numerous; the card's Ellenmoor)",
+        "Glimkit",
+        "Burnikit"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "a head taller than a tall man (card 2 to 2.4 m)",
+      "uses": [
+        "carry stone, hold the warren gates"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "settlement",
+          "target": "state: Burrikkrit's warren states / state_production_speed_buildings_factor",
+          "magnitude": 0.1,
+          "notes": "Hobgoblins carry the stone."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 28",
+        "BC 29",
+        "K22",
+        "middle_lands §3"
+      ],
+      "canon": "established",
+      "canonNotes": "The hobgoblin king rules Burrikkrit only (K22); Ellenmoor renamed Burrikkrit."
+    },
+    {
+      "id": "kror",
+      "name": "kror",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "living stone; rank open",
+      "card": [
+        23,
+        30
+      ],
+      "section": "1.14",
+      "regions": [
+        "magical_lands"
+      ],
+      "habitats": [
+        "the Lustras Hills (the card's Salomonanos, read as the drawn Sacomananos)"
+      ],
+      "habitatFlag": "zin_hab_kror",
+      "rarity": "uncommon",
+      "sizeClass": "huge",
+      "size": "two and a half to five men tall (card 4.5 to 9 m, drawn 5.5 m)",
+      "uses": [],
+      "threats": [
+        "hurls stones at anything that moves"
+      ],
+      "playEffects": [
+        {
+          "kind": "settlement",
+          "target": "state:zin_hab_kror / state category",
+          "magnitude": "Barren Waste",
+          "notes": "Never settled; no buildings."
+        },
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_kror / attrition_for_controller",
+          "magnitude": 0.15,
+          "notes": "With army_speed_factor_for_controller -0.20."
+        },
+        {
+          "kind": "event",
+          "target": "Stones from the Hills",
+          "magnitude": "25% per month present",
+          "notes": "An army loses 300 levies and 10% organisation."
+        }
+      ],
+      "publicText": "What the hill elves say; never a rank.",
+      "sources": [
+        "BC 23",
+        "BC 30",
+        "magical_lands §2.5, §9"
+      ],
+      "canon": "established",
+      "canonNotes": "Placement P; rank open (owner question 3)."
+    },
+    {
+      "id": "small_folk",
+      "name": "the small folk",
+      "formerName": "hobbit",
+      "localNames": [
+        {
+          "lang": "hearthspeech",
+          "name": "Hearth-folk",
+          "gloss": "their own name"
+        },
+        {
+          "lang": "aenoran",
+          "name": "Tirim",
+          "gloss": "the small ones"
+        },
+        {
+          "lang": "gunwaithic",
+          "name": "Bykkwyn",
+          "gloss": "Gunwyn exonym"
+        }
+      ],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        4,
+        26,
+        31,
+        32
+      ],
+      "section": "1.15",
+      "regions": [
+        "west_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "Dobbum in the Ronbo basin (Gunwyn Dolw-Grewn)",
+        "Tirlan inside Hirolon's ring"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "small",
+      "size": "chest-high to a man (card 1.0 to 1.3 m)",
+      "uses": [
+        "farming"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "settlement",
+          "target": "Dobbum, Tirlan",
+          "magnitude": "excluded",
+          "notes": "No beast raid or pest event of the bestiary fires there while their guards (dwarves, the Ronbo Watch, the giants) stand."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 31",
+        "BC 32",
+        "K14",
+        "K35",
+        "west_lands §3",
+        "hirolon §3",
+        "roster"
+      ],
+      "canon": "established",
+      "canonNotes": "Names and homelands by K14 and K35; drawings 4 and 26 possibly their watch (undecided)."
+    },
+    {
+      "id": "golbran",
+      "name": "Golbran",
+      "formerName": "Gorbatik",
+      "localNames": [],
+      "kind": "other",
+      "subkind": "figure; kind unknown",
+      "card": [
+        33,
+        34
+      ],
+      "section": "1.16",
+      "regions": [
+        "magical_lands"
+      ],
+      "habitats": [
+        "the Magic Mountains (the card); unknown in 4A 1748"
+      ],
+      "habitatFlag": null,
+      "rarity": "unique",
+      "sizeClass": "small",
+      "size": "shoulder-high to a man (card 1.4 m)",
+      "uses": [],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "Legend only before his gate (KL E5).",
+      "sources": [
+        "BC 33",
+        "BC 34",
+        "K20",
+        "vault: Golbran"
+      ],
+      "canon": "established",
+      "canonNotes": "Does not age, can die (K20)."
+    },
+    {
+      "id": "goblin",
+      "name": "goblins",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        35,
+        36
+      ],
+      "section": "1.17",
+      "regions": [
+        "middle_lands",
+        "cold_lands",
+        "dark_lands",
+        "ember_lands"
+      ],
+      "habitats": [
+        "Burrikkrit",
+        "the hot-spring valleys of Glimkit",
+        "Burnikit in the Goldoroth Mountains",
+        "quarters under the orc holds",
+        "Volgan's island"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "man",
+      "size": "a little shorter than a man (card 1.4 to 1.8 m)",
+      "uses": [
+        "lamps, traps and hot-spring salts"
+      ],
+      "threats": [
+        "raids on wurghs"
+      ],
+      "playEffects": [
+        {
+          "kind": "trade",
+          "target": "Glimkit-Holdon at Fentene",
+          "magnitude": "+10 opinion",
+          "notes": "While the Fentene fair runs."
+        },
+        {
+          "kind": "tradition",
+          "target": "the Warren Luck",
+          "magnitude": null,
+          "notes": "A lamp gone out: the warren's bad-air event."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 35",
+        "BC 36",
+        "K22",
+        "cold_lands §3",
+        "dark_lands §6",
+        "middle_lands §3"
+      ],
+      "canon": "established",
+      "canonNotes": "They avoid the deep cold but hold sheltered southern Cold Lands valleys (K22)."
+    },
+    {
+      "id": "gnome",
+      "name": "gnomes of Olodor",
+      "formerName": "Leprechaun (for the gold-crowned)",
+      "localNames": [
+        {
+          "lang": "common speech",
+          "name": "gold-crowned",
+          "gloss": "a gnome crowned when his pot of gold is full"
+        }
+      ],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        37,
+        38
+      ],
+      "section": "1.18",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "the Deodolor Hills (Olodor)",
+        "holts under the Stendorler ridge"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "small",
+      "size": "hip-high to a man (card 0.7 to 1 m)",
+      "uses": [
+        "gold-mining",
+        "luck for those who bring gold"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "Bring Gold to Olodor",
+          "magnitude": "calm +3%, research speed +3% for 365 days",
+          "notes": "Aenor pays 25 from the treasury; others send 2 Gold to Olodor for 365 days; never for a ruler who seized gold."
+        },
+        {
+          "kind": "tradition",
+          "target": "gnome luck",
+          "magnitude": "calm -5% for 365 days",
+          "notes": "For a realm that takes gnome gold."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 37",
+        "BC 38",
+        "K14",
+        "middle_lands §3, §12, §13"
+      ],
+      "canon": "established",
+      "canonNotes": "Olodor and Stendorler readings P (Q-23); the Warcraft name dropped."
+    },
+    {
+      "id": "baelim",
+      "name": "Baelim",
+      "formerName": "Coniferon",
+      "localNames": [
+        {
+          "lang": "aenoran",
+          "name": "Baelim, one Baelen",
+          "gloss": "the tree people"
+        }
+      ],
+      "kind": "people",
+      "subkind": "walking tree people, separate from the ents",
+      "card": [
+        39,
+        40
+      ],
+      "section": "1.19",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "the Aenor Forest"
+      ],
+      "habitatFlag": "zin_hab_aenor_forest",
+      "rarity": "rare",
+      "sizeClass": "giant",
+      "size": "six to seventeen men tall, as tall as the forest's oldest trees (card 10 to 30 m)",
+      "uses": [
+        "resin from fallen limbs"
+      ],
+      "threats": [
+        "slow strength against those who harm the forest"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_aenor_forest / attrition_for_controller",
+          "magnitude": 0.05,
+          "notes": "For realms at war with the Aenor Forest or holding its states; with army_speed_factor_for_controller -0.15."
+        },
+        {
+          "kind": "settlement",
+          "target": "state:zin_hab_aenor_forest / Timber",
+          "magnitude": 0,
+          "notes": "The forest is never cut."
+        },
+        {
+          "kind": "war",
+          "target": "unit: zin_baelim_walk (P, people unit)",
+          "magnitude": null,
+          "notes": "When an enemy holds a forest state; never leaves the forest."
+        },
+        {
+          "kind": "event",
+          "target": "A Baelen Falls",
+          "magnitude": "MTTH 60 months",
+          "notes": "Resin: +1 Essence for 365 days; resin taken from a living Baelen brings the Baelim to war."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 39",
+        "BC 40",
+        "K21",
+        "K27",
+        "middle_lands §2.5a, §9, §12"
+      ],
+      "canon": "established",
+      "canonNotes": "Name P (K27); life span dropped."
+    },
+    {
+      "id": "dwarf_goblin",
+      "name": "dwarf goblins",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": "a people of their own",
+      "card": [
+        41,
+        42
+      ],
+      "section": "1.20",
+      "regions": [
+        "north_lands"
+      ],
+      "habitats": [
+        "the road-warrens of Mustnom in the hills near Lerendor",
+        "every road of Aoaz"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "small",
+      "size": "hip-high to a man (card 0.7 to 1 m)",
+      "uses": [
+        "travelling trade"
+      ],
+      "threats": [
+        "beat and rob a cheeky customer"
+      ],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "Dwarf Goblin Pedlars at the Gate",
+          "magnitude": "MTTH 120 months",
+          "notes": "Buy (10 authority for +1 of a chosen resource for 180 days), refuse, or haggle too hard and be robbed."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 41",
+        "BC 42",
+        "K22",
+        "roster mustnom",
+        "languages_new pack_tongue"
+      ],
+      "canon": "established",
+      "canonNotes": "Card's slaves written as thralls; life span becomes \"longer than dwarves\"."
+    },
+    {
+      "id": "dwarf",
+      "name": "dwarves",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        43,
+        44
+      ],
+      "section": "1.21",
+      "regions": [
+        "middle_lands",
+        "west_lands",
+        "north_lands"
+      ],
+      "habitats": [
+        "Kunhrim (Lunhrim, the Gigantic Mountains)",
+        "Brundahrim and Gromkerm (Herlitz and Bolpor ranges)",
+        "Hrakbrund (High Mountains)"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "small",
+      "size": "chest- to shoulder-high to a man (card 1.3 to 1.5 m)",
+      "uses": [
+        "iron, gold and gems",
+        "pack-goat carriers"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "Hire Kunhrim Carriers / local_supplies",
+          "magnitude": 0.2,
+          "notes": "In the Lunhrim Notch states (Middle Lands dossier)."
+        },
+        {
+          "kind": "war",
+          "target": "warfare recruit table",
+          "magnitude": null,
+          "notes": "No dwarf people key exists; dwarves need their own foot line (gap for the warfare spec). They ride nothing."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 43",
+        "BC 44",
+        "K22",
+        "middle_lands §2.9, §12",
+        "roster"
+      ],
+      "canon": "established",
+      "canonNotes": "Tolkien range names dropped; Orewell read as the Cold Lands' Orewell iron."
+    },
+    {
+      "id": "devil",
+      "name": "devils",
+      "formerName": null,
+      "localNames": [],
+      "kind": "spirit",
+      "subkind": "corrupted Lesser Spirits",
+      "card": [
+        45,
+        46
+      ],
+      "section": "1.22",
+      "regions": [
+        "ember_lands",
+        "dark_lands",
+        "east_lands"
+      ],
+      "habitats": [
+        "the Kherith Isles (the card's Death Islands)",
+        "the Demonic Mountains",
+        "the Burning Shore of the Nether",
+        "the Goldoroth peaks",
+        "Mount Ergo and Mount Argon above Pornivior"
+      ],
+      "habitatFlag": "zin_hab_devil_lair",
+      "rarity": "very_rare",
+      "sizeClass": "giant",
+      "size": "eleven to seventeen men tall (card 20 to 30 m, drawn 25 m)",
+      "uses": [],
+      "threats": [
+        "strength, claws, teeth, horns, wings and fire"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_devil_lair / attrition_for_controller",
+          "magnitude": 0.1,
+          "notes": "Except realms that keep the lava rite."
+        },
+        {
+          "kind": "settlement",
+          "target": "state:zin_hab_devil_lair / local_building_slots_factor",
+          "magnitude": -0.5,
+          "notes": "The Hellfire uplands are emptied by ash and devils."
+        },
+        {
+          "kind": "war",
+          "target": "grant: zin_devil (granted equipment, like the Shachihata)",
+          "magnitude": "one per realm",
+          "notes": "Puvulan, Khorvrath, Veshazel; a slain devil leaves a skull (zin_devil_skulls)."
+        },
+        {
+          "kind": "decision",
+          "target": "The Lava Rite",
+          "magnitude": "-100 authority, 60 days",
+          "notes": "Restores a slain devil; needs a lava-rite state."
+        },
+        {
+          "kind": "tradition",
+          "target": "the fire-tithe (Pornivior)",
+          "magnitude": "-15 authority yearly, calm +5%",
+          "notes": "The people sleep sound; the devils are not bound."
+        }
+      ],
+      "publicText": "Ancient and terrible; their service and escape only as a named people's belief, never which Old God (KL C17, C18, C20).",
+      "sources": [
+        "BC 45",
+        "BC 46",
+        "K15",
+        "vault: Peoples of Aoaz",
+        "vault: Spirits and Their Ranks",
+        "ember_lands §3, §6",
+        "east_lands §6, §9",
+        "dark_lands §9"
+      ],
+      "canon": "established",
+      "canonNotes": "Nature and return by K15; who performs the rite is open (owner question 5)."
+    },
+    {
+      "id": "demon",
+      "name": "demons",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": "Great Folk; corrupted angels",
+      "card": [
+        47,
+        48,
+        51
+      ],
+      "section": "1.23",
+      "regions": [
+        "ember_lands",
+        "dark_lands"
+      ],
+      "habitats": [
+        "the Nether (the card's \"hell\")",
+        "the mountains of the Ember Lands",
+        "Veshazel",
+        "the southern isles of the Ember Lands (the card's \"South Islands\")"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "large",
+      "size": "twice to nearly three times a man (card 3.6 to 5 m)",
+      "uses": [],
+      "threats": [
+        "horns, claws, fire from hand and mouth, cunning",
+        "some step from place to place"
+      ],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "existing: Netherborn, Bound Host, Shachihata",
+          "magnitude": null,
+          "notes": "Summoning belongs to the Nether's pact-craft."
+        }
+      ],
+      "publicText": "Corrupted angels only as the elves' or scholars' belief (KL C19).",
+      "sources": [
+        "BC 47",
+        "BC 48",
+        "BC 51",
+        "K26",
+        "vault: Peoples of Aoaz",
+        "ember_lands §3"
+      ],
+      "canon": "established",
+      "canonNotes": "\"Hell\" and \"South Islands\" readings P; drawing 51 unidentified."
+    },
+    {
+      "id": "angel",
+      "name": "angels",
+      "formerName": null,
+      "localNames": [],
+      "kind": "people",
+      "subkind": "Great Folk",
+      "card": [
+        49,
+        50
+      ],
+      "section": "1.24",
+      "regions": [
+        "lands_of_the_sun",
+        "south_lands"
+      ],
+      "habitats": [
+        "the clear sky over the Lands of the Sun and the Sun Desert"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "large",
+      "size": "nearly twice a man (card 3 m)",
+      "uses": [],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "An Angel Seen over the Terraces",
+          "magnitude": "MTTH 60 months",
+          "notes": "Calm +5% for 180 days."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 49",
+        "BC 50",
+        "vault: Peoples of Aoaz",
+        "KL C21",
+        "lands_of_the_sun §9",
+        "south_lands §9"
+      ],
+      "canon": "established",
+      "canonNotes": "History open (C21); no kinship with the Sunhot inferred."
+    },
+    {
+      "id": "mukrom",
+      "name": "mukrom",
+      "formerName": "Chiromaw",
+      "localNames": [
+        {
+          "lang": "dwarvish",
+          "name": "mukkahrom",
+          "gloss": "night-cave"
+        },
+        {
+          "lang": "common speech",
+          "name": "mukrom",
+          "gloss": "as the men of Kingson shorten it"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [
+        52,
+        53
+      ],
+      "section": "1.25",
+      "regions": [
+        "middle_lands",
+        "magical_lands"
+      ],
+      "habitats": [
+        "caves of the Great Wall range (the card's Wall of Rush)",
+        "caves of the Hiloff Rim (Hirolon)",
+        "the Deodolor Hills (Olodor)",
+        "the Cursed Mountains"
+      ],
+      "habitatFlag": "zin_hab_mukrom",
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "waist- to shoulder-high to a man (card 0.9 to 1.5 m)",
+      "uses": [],
+      "threats": [
+        "night raids on stores, galleries and holts"
+      ],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "event: Mukroms in the Stores / local_resources_factor (Grain)",
+          "magnitude": -0.1,
+          "notes": "MTTH 24 months, 90 days; Kunhrim, Olodor, Hirolon, Burrikkrit cave states."
+        },
+        {
+          "kind": "decision",
+          "target": "Clear the Galleries",
+          "magnitude": "-20 authority (10 for goblins)",
+          "notes": "No mukrom event for 730 days."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 52",
+        "BC 53",
+        "K14",
+        "middle_lands §3, §9",
+        "hirolon §9",
+        "magical_lands §9"
+      ],
+      "canon": "established",
+      "canonNotes": "Name replaced (other fiction); Dwarvish name P; life span dropped."
+    },
+    {
+      "id": "mistake_beast",
+      "name": "the Beasts of the Mistake",
+      "formerName": "Beast",
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [
+        54,
+        55
+      ],
+      "section": "1.26",
+      "regions": [
+        "zols_mistake"
+      ],
+      "habitats": [
+        "the black mainland of Zol's Mistake"
+      ],
+      "habitatFlag": "zin_hab_mistake",
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "twice a man and more (card 3 to 4.5 m)",
+      "uses": [],
+      "threats": [
+        "seen only at night",
+        "attack everyone; prefer the flesh of men"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_mistake / attrition_for_controller",
+          "magnitude": 0.2,
+          "notes": "With local_supplies_for_controller -0.50: the Mistake feeds no army."
+        },
+        {
+          "kind": "event",
+          "target": "The Beasts on the Shore",
+          "magnitude": "MTTH 6 months, after zin_zol_rising",
+          "notes": "Coastal states on the Kusmeel lose one building or 2% of their levies."
+        },
+        {
+          "kind": "war",
+          "target": "grant: Night Beasts of the black north (P)",
+          "magnitude": "gated",
+          "notes": "country:Zol after the servant-appearance gate (owner question 7)."
+        }
+      ],
+      "publicText": "Only \"the Beasts of the black north\"; never their master (KL C24, C25).",
+      "sources": [
+        "BC 54",
+        "BC 55",
+        "K29",
+        "zols_mistake §9",
+        "KL C24",
+        "KL C25"
+      ],
+      "canon": "established",
+      "canonNotes": "Kusven's main minions by the card; sealed in public text."
+    },
+    {
+      "id": "gektor",
+      "name": "Gektor",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "sorcerer-chief; kind open",
+      "card": [
+        56,
+        57
+      ],
+      "section": "1.27",
+      "regions": [
+        "west_lands"
+      ],
+      "habitats": [
+        "Corogon (\"[?Sempos?]\", unplaced)"
+      ],
+      "habitatFlag": null,
+      "rarity": "unique",
+      "sizeClass": "large",
+      "size": "head and shoulders above a tall man (card 2.5 m)",
+      "uses": [],
+      "threats": [
+        "traps and bleeds lesser spirits"
+      ],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "Gektor's Errand",
+          "magnitude": null,
+          "notes": "Gold for a fetched book or stone; a stone may hold a small spirit, and freeing it angers Gektor (magic reference §5.2)."
+        },
+        {
+          "kind": "decision",
+          "target": "The Bleeding Stone",
+          "magnitude": "+2 Essence for two years",
+          "notes": "West Lands only; 30% chance of Hollow Ground: -25% resources in the state for five years."
+        }
+      ],
+      "publicText": "His trade; the boast always as his own claim; never his kind (KL V20).",
+      "sources": [
+        "BC 56",
+        "BC 57",
+        "K23",
+        "magic reference §3.15, §4.3"
+      ],
+      "canon": "established",
+      "canonNotes": null
+    },
+    {
+      "id": "forest_troll",
+      "name": "forest trolls",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "common speech",
+          "name": "stone trolls",
+          "gloss": "the card's other name"
+        },
+        {
+          "lang": "trollish",
+          "name": "Grootoom",
+          "gloss": "the great forest place: their forest"
+        }
+      ],
+      "kind": "people",
+      "subkind": null,
+      "card": [
+        58,
+        59
+      ],
+      "section": "1.28",
+      "regions": [
+        "dark_lands"
+      ],
+      "habitats": [
+        "the Troll Forest beside Bordon"
+      ],
+      "habitatFlag": "zin_hab_troll_forest",
+      "rarity": "rare",
+      "sizeClass": "huge",
+      "size": "eight to ten men tall (card 15 to 18 m, drawn 16 m)",
+      "uses": [],
+      "threats": [
+        "always hungry; groups of three to five",
+        "turn to stone in sunlight"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_troll_forest / attrition_for_controller",
+          "magnitude": 0.15,
+          "notes": "With army_speed_factor_for_controller -0.10; none for the Troll Forest and for payers of troll silver."
+        },
+        {
+          "kind": "war",
+          "target": "existing: zin_trolls_brute",
+          "magnitude": null,
+          "notes": "The Troll Forest's own line."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 58",
+        "BC 59",
+        "K22",
+        "dark_lands §3, §9, sub-regions"
+      ],
+      "canon": "established",
+      "canonNotes": "Trollshaws, Ettenmoors and Angmar dropped; about 600 trolls (P)."
+    },
+    {
+      "id": "elzon",
+      "name": "Elzon",
+      "formerName": null,
+      "localNames": [],
+      "kind": "spirit",
+      "subkind": "Great Spirit; the Great Necromancer; dead",
+      "card": [
+        60,
+        61
+      ],
+      "section": "1.29",
+      "regions": [
+        "ember_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "Nezer (the card's Nazerun)",
+        "Aenor, while he ruled it"
+      ],
+      "habitatFlag": null,
+      "rarity": "unique",
+      "sizeClass": "large",
+      "size": "nearly twice a man (card 3.3 m)",
+      "uses": [],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "The Necromancer of the Third Age.",
+      "sources": [
+        "BC 60",
+        "BC 61",
+        "K24",
+        "vault: Elzon"
+      ],
+      "canon": "established",
+      "canonNotes": "Dead since the end of the Third Age; history only."
+    },
+    {
+      "id": "kusven",
+      "name": "Kusven",
+      "formerName": "Edvoid",
+      "localNames": [],
+      "kind": "spirit",
+      "subkind": "Great Spirit made by Zol",
+      "card": [
+        62,
+        63
+      ],
+      "section": "1.30",
+      "regions": [
+        "zols_mistake"
+      ],
+      "habitats": [
+        "Šodolôrō"
+      ],
+      "habitatFlag": null,
+      "rarity": "unique",
+      "sizeClass": "large",
+      "size": "more than twice a man in his ordinary form (card 4.3 m, \"ordinary\")",
+      "uses": [],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "Sealed: never named, identified or alluded to; after the servant appears only \"a Great Spirit of the black north\" (KL C24, C25).",
+      "sources": [
+        "BC 62",
+        "BC 63",
+        "K11",
+        "K29",
+        "vault: Kusven"
+      ],
+      "canon": "established",
+      "canonNotes": "The card's daily destruction of cities read as a slow hidden working (P)."
+    },
+    {
+      "id": "corallus",
+      "name": "corallus",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [
+        64,
+        65
+      ],
+      "section": "1.31",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "the Great Lake",
+        "the Saeton reeds",
+        "the Great River (the card's Kingson River)",
+        "a reed marsh of the old Dariap lands (the card's \"[?Dorap?] Swamp\", P)"
+      ],
+      "habitatFlag": "zin_hab_corallus",
+      "rarity": "common",
+      "sizeClass": "huge",
+      "size": "as long as four to five men laid end to end (card 7 to 10 m)",
+      "uses": [
+        "hide for shields"
+      ],
+      "threats": [
+        "attacks anyone in its water",
+        "very hard to see"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_corallus / attrition_for_controller",
+          "magnitude": 0.05,
+          "notes": "With army_speed_factor_for_controller -0.05; halved for realms that pay the wardens."
+        },
+        {
+          "kind": "farming",
+          "target": "event: Coralluses in the Reeds / local_resources_factor (Grain)",
+          "magnitude": -0.15,
+          "notes": "MTTH 24 months (x0.5 with wardens), 90 days; or 10 authority for a hunt."
+        },
+        {
+          "kind": "decision",
+          "target": "Pay the Corallus-Wardens",
+          "magnitude": "-10 authority yearly",
+          "notes": "Halves the reeds' attrition and the event."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 64",
+        "BC 65",
+        "middle_lands §2.4, §9, §12"
+      ],
+      "canon": "established",
+      "canonNotes": "Only Middle Lands waters; also the name of a real snake genus (kept); Dorap reading P."
+    },
+    {
+      "id": "horse",
+      "name": "horses",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "middle_lands",
+        "west_lands",
+        "cold_lands",
+        "north_lands",
+        "magical_lands",
+        "east_lands",
+        "ember_lands"
+      ],
+      "habitats": [
+        "downs, grasslands and meadows of every land that rides"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "a man at the shoulder",
+      "uses": [
+        "mounts",
+        "draught",
+        "the Horses resource"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "resource: Horses (rubber) / zin_mounts_equipment",
+          "magnitude": null,
+          "notes": "Breeds act as ideas; see variants."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "economy.json resources",
+        "warfare_equipment zin_mounts_equipment",
+        "middle_lands §9",
+        "west_lands §9",
+        "cold_lands §4, §9",
+        "north_lands §9"
+      ],
+      "canon": "established",
+      "canonNotes": "Horses E; breeds P.",
+      "variants": [
+        {
+          "id": "hunhun_horse",
+          "name": "Hunhun horse",
+          "where": "Hunhun and the Konori Downs",
+          "note": "big-boned; idea Hunhun Remounts: cavalry and knights attack +5% (Aenor and its dominions)"
+        },
+        {
+          "id": "ronbo_horse",
+          "name": "Ronbo horse",
+          "where": "Ronbo Grasslands, Lothoro",
+          "note": "light and tireless; horse archers speed +5%"
+        },
+        {
+          "id": "snevhest",
+          "name": "snevhest, the snow-horse",
+          "where": "the Fandan meadows",
+          "note": "Coldic snev + hest; mounted hosts of Coldor: winter attrition -10%"
+        },
+        {
+          "id": "hill_pony",
+          "name": "hill pony",
+          "where": "Heodwa",
+          "note": "cavalry in hills and mountains: speed +10%"
+        },
+        {
+          "id": "elven_grey",
+          "name": "elven grey",
+          "where": "the Teste Vale",
+          "note": "elven riders in forest: speed +10%"
+        },
+        {
+          "id": "noric_horse",
+          "name": "Noric desert horse",
+          "where": "the wells of Noris",
+          "note": "part of Noris's Horses; raiders' speed"
+        },
+        {
+          "id": "dead_horse",
+          "name": "the dead horses of the grave riders",
+          "where": "Volgan's island",
+          "note": "no Horses drawn; fade beyond the Ember Lands"
+        }
+      ]
+    },
+    {
+      "id": "camel",
+      "name": "camels",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "noric",
+          "name": "gaml",
+          "gloss": "camel"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "east_lands",
+        "south_lands"
+      ],
+      "habitats": [
+        "the desert roads",
+        "the wells of Noris",
+        "the Stabilo caravan routes"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "taller than a man at the hump",
+      "uses": [
+        "caravans",
+        "camel warriors"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "existing: zin_men_camel_riders desert attack +0.2",
+          "magnitude": null,
+          "notes": "Counted in the Horses resource of Noris and Stabilo."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "vault: Peoples of Aoaz (Noris camel warriors)",
+        "east_lands §9",
+        "south_lands §9"
+      ],
+      "canon": "established",
+      "canonNotes": null
+    },
+    {
+      "id": "mule_and_ass",
+      "name": "mules and asses",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "middle_lands",
+        "west_lands",
+        "north_lands",
+        "east_lands",
+        "south_lands"
+      ],
+      "habitats": [
+        "every road; the Kingson Pass above all"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "shoulder-high to a man",
+      "uses": [
+        "pack trains"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "logistics: motorized_equipment (Pack Trains)",
+          "magnitude": null,
+          "notes": "The warfare data's pack trains are mule strings."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "warfare_equipment logistics",
+        "middle_lands §2.9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "cattle",
+      "name": "cattle and oxen",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "middle_lands",
+        "west_lands",
+        "north_lands",
+        "dark_lands",
+        "east_lands"
+      ],
+      "habitats": [
+        "the Vale of Aenor and every farmed land",
+        "the giants' upland pastures of Hirolon"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "shoulder-high to a man",
+      "uses": [
+        "ploughing",
+        "draught",
+        "meat and hide"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "settlement",
+          "target": "Hirolon / state_production_speed_buildings_factor (forts)",
+          "magnitude": 0.1,
+          "notes": "Great-horned cattle haul the giants' stone."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "hirolon §9",
+        "middle_lands §4"
+      ],
+      "canon": "proposed",
+      "canonNotes": null,
+      "variants": [
+        {
+          "id": "vale_ox",
+          "name": "Vale ox",
+          "where": "the Vale of Aenor",
+          "note": "ploughs and draws the grain to the barges"
+        },
+        {
+          "id": "great_horned",
+          "name": "great-horned cattle",
+          "where": "Hirolon's upland pastures",
+          "note": "the only beasts the giants keep; haul stone"
+        }
+      ]
+    },
+    {
+      "id": "lake_buffalo",
+      "name": "lake buffalo",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "east_lands"
+      ],
+      "habitats": [
+        "the Hot Lake shore",
+        "the Mora coast"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "a man at the shoulder, twice his weight many times over",
+      "uses": [
+        "ploughing wet fields",
+        "the salt-boilers' sledges"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "Hot Lake shore states / local_resources_factor (Grain)",
+          "magnitude": 0.1,
+          "notes": null
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "east_lands §2, §4"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "reindeer",
+      "name": "reindeer",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "cold_lands"
+      ],
+      "habitats": [
+        "the interior moors",
+        "Fearno",
+        "the far north-west"
+      ],
+      "habitatFlag": "zin_hab_herd",
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "shoulder-high to a man's chest",
+      "uses": [
+        "the clans' wealth",
+        "meat, hide, milk",
+        "draught"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "Cold Lands herd states / local_supplies (owner)",
+          "magnitude": 0.3,
+          "notes": "Armies in the north find meat where the herds are."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §4, §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "mountain_ox",
+      "name": "mountain ox",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "yetic",
+          "name": "gharu",
+          "gloss": "herd"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "cold_lands"
+      ],
+      "habitats": [
+        "the high snows of the Cold Mountains (Ghaahu)"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "as tall as a man at the hump",
+      "uses": [
+        "followed and hunted by the yeti height clans"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "cold_lands sub-regions (Ghaahu)",
+        "languages yetic"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "pack_goat",
+      "name": "pack-goats of the holds",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "west_lands",
+        "middle_lands",
+        "north_lands"
+      ],
+      "habitats": [
+        "the Herlitz and Bolpor ranges",
+        "the Great Wall range",
+        "the High Mountains"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "waist-high to a man",
+      "uses": [
+        "the dwarves' beasts of burden on the high paths"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "dwarf hold mountain states / local_supplies (the hold's armies)",
+          "magnitude": 0.2,
+          "notes": "And the Hire Kunhrim Carriers decision."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "west_lands §9",
+        "middle_lands §12"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "dragon_tithe_goat",
+      "name": "dragon-tithe goats",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "magical_lands"
+      ],
+      "habitats": [
+        "Yavieth (Greenland) under Dragon Mountain"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "waist-high to a man",
+      "uses": [
+        "the herds the dragons are allowed to take"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "tradition",
+          "target": "the dragon-tithe",
+          "magnitude": null,
+          "notes": "Dragon herd raids stop for its keepers and Yavieth's friends."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "magical_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "sheep",
+      "name": "sheep",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "middle_lands",
+        "west_lands",
+        "cold_lands",
+        "north_lands",
+        "tritons_islands"
+      ],
+      "habitats": [
+        "every grassland and upland"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "knee- to waist-high",
+      "uses": [
+        "wool, meat, milk"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "hirolon §9",
+        "tritons_islands §4",
+        "cold_lands §11"
+      ],
+      "canon": "proposed",
+      "canonNotes": null,
+      "variants": [
+        {
+          "id": "skerry_sheep",
+          "name": "skerry sheep",
+          "where": "the Pupor Isles",
+          "note": "small and dark; graze the kelp on the shore"
+        },
+        {
+          "id": "grano_sheep",
+          "name": "Grano sheep",
+          "where": "the Grano hills of Hirolon",
+          "note": "the lambs the rim kites take"
+        }
+      ]
+    },
+    {
+      "id": "sled_dog",
+      "name": "sled dogs and herd dogs",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "cold_lands"
+      ],
+      "habitats": [
+        "every Cold Lands household"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "knee-high",
+      "uses": [
+        "sleds",
+        "the ice-sleds of war",
+        "herding reindeer"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "existing spirit: The Long Winters",
+          "magnitude": null,
+          "notes": "The dogs are part of the Cold Lands' winter attrition relief; nothing extra."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §9",
+        "economy.json spirits"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "salt_hawk",
+      "name": "salt-hawks",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "noric",
+          "name": "baaz",
+          "gloss": "hawk"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "south_lands"
+      ],
+      "habitats": [
+        "the dry lake beds"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "tiny",
+      "size": "a hawk",
+      "uses": [
+        "finding water, game and strangers",
+        "gifts to eastern courts"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "trade",
+          "target": "diplomatic gift",
+          "magnitude": "+10 opinion",
+          "notes": null
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "south_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "tirri",
+      "name": "tirri",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "gnomish",
+          "name": "tirri",
+          "gloss": "bird"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "about the hidden holts of Olodor"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a finch",
+      "uses": [
+        "sing at strangers; warn the holts"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "settlement",
+          "target": "Olodor / local_intel_to_enemies",
+          "magnitude": -0.5,
+          "notes": "The holts are hard to spy on."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 37 (drawing)",
+        "languages_new gnomish"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "griffin",
+      "name": "griffins",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "the crags of the Crown Mountains and the western face of Lunhrim (only under the beasts rule)"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "large",
+      "size": "can carry an armed rider",
+      "uses": [
+        "griffin riders"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "existing: zin_air_griffin_riders, zin_griffin_equipment",
+          "magnitude": null,
+          "notes": "Only under zin_rule_skies = beasts."
+        },
+        {
+          "kind": "decision",
+          "target": "Bring Griffin Eggs Down",
+          "magnitude": "-50 authority",
+          "notes": "Aenor with eyries, under the rule only."
+        }
+      ],
+      "publicText": "Nothing outside the beasts rule.",
+      "sources": [
+        "01_warfare.md §6",
+        "warfare_units air"
+      ],
+      "canon": "proposed",
+      "canonNotes": "Owner question 4."
+    },
+    {
+      "id": "cinder_hound",
+      "name": "cinder-hounds",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.1",
+      "regions": [
+        "ember_lands"
+      ],
+      "habitats": [
+        "the Burning Shore of the Nether"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "small",
+      "size": "waist-high",
+      "uses": [
+        "the demon houses' hunting beasts; run down thralls who flee"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "nether §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "red_deer",
+      "name": "red deer",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "west_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "the downs and West Wood",
+        "the Selen Weald and the Bloody Forest",
+        "the Hiloron Woods"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "a stag stands a man's height at the antlers",
+      "uses": [
+        "meat, hide, antler"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "tradition",
+          "target": "hunting rights",
+          "magnitude": null,
+          "notes": "Clan rights in the West; by the giants' leave in Hirolon."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "west_lands §9",
+        "middle_lands §9",
+        "hirolon §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "wild_boar",
+      "name": "wild boar",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "orcish",
+          "name": "grunt",
+          "gloss": "boar"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "west_lands",
+        "middle_lands",
+        "dark_lands"
+      ],
+      "habitats": [
+        "the West Wood",
+        "the Middle Lands' woods",
+        "the Dark Forests"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "waist-high",
+      "uses": [
+        "meat",
+        "on Gunwyn's arms and orc shields"
+      ],
+      "threats": [
+        "tusks"
+      ],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "The Great Boar-Hunt (West Lands clan chiefs)",
+          "magnitude": "-10 authority every two years",
+          "notes": "Calm +3% and will to war +5% for 180 days."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "west_lands §9",
+        "dark_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "elk",
+      "name": "elk",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "north_lands"
+      ],
+      "habitats": [
+        "the Dwarc and Swy Forests",
+        "Veskel"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "taller than a man at the shoulder",
+      "uses": [
+        "meat, hide"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "north_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "wolf",
+      "name": "wolves",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "west_lands",
+        "north_lands",
+        "middle_lands",
+        "cold_lands"
+      ],
+      "habitats": [
+        "the West Wood",
+        "the northern forests",
+        "the Middle Lands' woods",
+        "the Frozen Lands, following the herds (white in winter)"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "waist-high",
+      "uses": [
+        "fur"
+      ],
+      "threats": [
+        "herd raids in hard winters"
+      ],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "event in the Long Dark: herd losses",
+          "magnitude": "MTTH 24 months in winter",
+          "notes": "-5% Grain or Horses in Veskel and Cold Lands herd states for 60 days."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §9",
+        "north_lands §9",
+        "west_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": "The Cold Lands' \"white wolves\" are the same wolf."
+    },
+    {
+      "id": "brown_bear",
+      "name": "brown bears",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "west_lands",
+        "north_lands"
+      ],
+      "habitats": [
+        "the West Wood",
+        "the mountain neck",
+        "the northern forests"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "taller than a man when it stands",
+      "uses": [
+        "fur"
+      ],
+      "threats": [
+        "herds"
+      ],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "west_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "reed_lynx",
+      "name": "reed-lynx",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "north_lands"
+      ],
+      "habitats": [
+        "the Eekedor Reeds"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "small",
+      "size": "knee-high",
+      "uses": [
+        "fur: the badge of Eekedor's merchant council"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "north_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "white_fox",
+      "name": "white fox",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "cold_lands"
+      ],
+      "habitats": [
+        "tundra and coasts"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a small fox",
+      "uses": [
+        "the commonest fur of the northern markets"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "trade",
+          "target": "idea: The Fur Fairs / consumer_goods_factor",
+          "magnitude": -0.02,
+          "notes": "Coldor, Fearno, Vindael."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §4"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "silver_hart",
+      "name": "silver harts",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "magical_lands"
+      ],
+      "habitats": [
+        "the Living Forest"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "large",
+      "size": "a tall deer",
+      "uses": [
+        "the elves' heraldic beast"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "The Silver Hart Seen",
+          "magnitude": "MTTH 60 months",
+          "notes": "Calm +5% for 180 days."
+        },
+        {
+          "kind": "tradition",
+          "target": "the silver hart's peace",
+          "magnitude": "-50 opinion",
+          "notes": "A realm that hunts one loses opinion with every elven realm."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "magical_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "lion",
+      "name": "lions",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.2",
+      "regions": [
+        "east_lands"
+      ],
+      "habitats": [
+        "the Delbiz Grasslands",
+        "the dry hills above the Mora coast"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "waist-high at the shoulder",
+      "uses": [
+        "the royal hunt of the river-kings"
+      ],
+      "threats": [
+        "cattle"
+      ],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "The Lion Hunt (river-kings)",
+          "magnitude": "+15 authority",
+          "notes": "A small chance of a royal death."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "BC 15 (the lion comparison)",
+        "east_lands §2"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "ice_bear",
+      "name": "ice bears",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "cold_lands",
+        "east_lands"
+      ],
+      "habitats": [
+        "the sea-ice of Pandar",
+        "the Yeti Shallows",
+        "the Vindael arm",
+        "the Woqood coast"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "large",
+      "size": "twice a man when it stands",
+      "uses": [
+        "a bear-skin is a chief's mantle",
+        "fur"
+      ],
+      "threats": [
+        "sealers on the ice"
+      ],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "A Bear on the Ice",
+          "magnitude": "MTTH 24 months in the sealing season",
+          "notes": "A sealing party lost, or a bear taken."
+        },
+        {
+          "kind": "tradition",
+          "target": "the bear-skin mantle",
+          "magnitude": "+25 authority",
+          "notes": "Once per ruler, for a chief who takes a bear in his own hand."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §9",
+        "east_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": "The Cold Lands' great white bears and Woqood's snow bears are one bear."
+    },
+    {
+      "id": "mist_wolf",
+      "name": "mist-wolves",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "magical_lands"
+      ],
+      "habitats": [
+        "the deadwood of the Fallen Forest"
+      ],
+      "habitatFlag": "zin_hab_dead_wood",
+      "rarity": "uncommon",
+      "sizeClass": "small",
+      "size": "waist-high",
+      "uses": [],
+      "threats": [
+        "hunt in the mist"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_dead_wood / attrition_for_controller",
+          "magnitude": 0.05,
+          "notes": "None for the Magical Forest's elves."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "magical_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "rim_kite",
+      "name": "rim kites",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "the sea cliffs of the Hiloff Rim"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a big red kite",
+      "uses": [],
+      "threats": [
+        "lambs on the Grano"
+      ],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "hirolon §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "ford_pike",
+      "name": "ford-pike",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "west_lands"
+      ],
+      "habitats": [
+        "deep pools above the Kulolo fords"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "large",
+      "size": "as long as a boat",
+      "uses": [],
+      "threats": [
+        "dogs and children at the fords"
+      ],
+      "playEffects": [
+        {
+          "kind": "tradition",
+          "target": "the wardens' loaf at the flood (Maelwen)",
+          "magnitude": "calm +3% in river states",
+          "notes": null
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "west_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "glass_viper",
+      "name": "glass-vipers",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "south_lands"
+      ],
+      "habitats": [
+        "the white dunes"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "tiny",
+      "size": "an arm's length",
+      "uses": [],
+      "threats": [
+        "a slow, sure bite"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "white-dune states off the roads / attrition_for_controller",
+          "magnitude": 0.03,
+          "notes": null
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "south_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "jungle_ape",
+      "name": "jungle apes",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "lands_of_the_sun"
+      ],
+      "habitats": [
+        "the Hot Forest"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "man",
+      "size": "a man's height standing",
+      "uses": [],
+      "threats": [
+        "raid the terraces' fruit; steal anything shiny"
+      ],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "lands_of_the_sun §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "ash_moth",
+      "name": "ash-moths",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "dark_lands"
+      ],
+      "habitats": [
+        "the warm slopes of the Goldoroth Fire-Mountain"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a moth",
+      "uses": [],
+      "threats": [
+        "swarms that strip the fields after an ash-fall"
+      ],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "event: Ash on the Fields / local_resources_factor (Grain)",
+          "magnitude": -0.25,
+          "notes": "180 days after the volcano's ash-fall event."
+        },
+        {
+          "kind": "tradition",
+          "target": "the Fire-Speakers' reading",
+          "magnitude": "will to war +5% or calm +5%",
+          "notes": "Goldoroth, after a swarm."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "dark_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "dune_locust",
+      "name": "dune locusts",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "south_lands",
+        "east_lands"
+      ],
+      "habitats": [
+        "the Alodale sands",
+        "wadi farms and oasis gardens"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a locust",
+      "uses": [],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "event: Locusts on the Wadi Farms / local_resources_factor (Grain)",
+          "magnitude": -0.3,
+          "notes": "MTTH 60 months in a dry year, 120 days."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "east_lands §2",
+        "south_lands §2"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "fen_midge",
+      "name": "fen-midges",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "north_lands",
+        "west_lands",
+        "dark_lands",
+        "magical_lands"
+      ],
+      "habitats": [
+        "the Eekedor Reeds",
+        "the Kulolo Fen",
+        "the Papz Swamp",
+        "Dreson's fens",
+        "the Zilin Fens"
+      ],
+      "habitatFlag": "zin_hab_fen",
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a midge",
+      "uses": [],
+      "threats": [
+        "fen fevers"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_fen / attrition_for_controller (summer)",
+          "magnitude": 0.05,
+          "notes": "Halved with field healers."
+        },
+        {
+          "kind": "settlement",
+          "target": "event: Fever in the Reeds / local_manpower",
+          "magnitude": -0.1,
+          "notes": "MTTH 12 months in summer, 90 days."
+        },
+        {
+          "kind": "decision",
+          "target": "Drain the Fen",
+          "magnitude": "three-year project",
+          "notes": "Removes the midges; -1 Grain (eels and fowling lost)."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "north_lands §2",
+        "west_lands §2",
+        "dark_lands §2"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "granary_rat",
+      "name": "granary rats",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "goblin",
+          "name": "skrat",
+          "gloss": "rat"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "middle_lands",
+        "north_lands",
+        "cold_lands",
+        "west_lands",
+        "dark_lands",
+        "ember_lands",
+        "east_lands",
+        "south_lands",
+        "islands_of_the_south",
+        "tritons_islands",
+        "lands_of_the_sun",
+        "magical_lands"
+      ],
+      "habitats": [
+        "every granary and every ship"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a rat",
+      "uses": [],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "event: Rats in the Granaries / Provisions",
+          "magnitude": -0.1,
+          "notes": "Through the K34 realm pulse; MTTH 60 months after a mild winter, 60 days; Granaries cut the chance."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "economy.json energy",
+        "K34"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "ice_borer",
+      "name": "ice-borers",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.3",
+      "regions": [
+        "cold_lands"
+      ],
+      "habitats": [
+        "the glacier ice of the Cold Mountains",
+        "the Frozen Lands of Coldor"
+      ],
+      "habitatFlag": "zin_hab_glacier",
+      "rarity": "uncommon",
+      "sizeClass": "small",
+      "size": "as long as a man, as thick as his thigh",
+      "uses": [],
+      "threats": [
+        "crevasse fields that open under sleds in the thaw"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_glacier / attrition_for_controller (Lumae to Vaelei)",
+          "magnitude": 0.05,
+          "notes": "None for Cold Lands realms."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §2 (crevasse fields)"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "raven",
+      "name": "ravens and crows",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "orcish",
+          "name": "krah",
+          "gloss": "raven"
+        },
+        {
+          "lang": "common speech",
+          "name": "ash-crow",
+          "gloss": "the crows of Volgan's plateau"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.4",
+      "regions": [
+        "dark_lands",
+        "ember_lands",
+        "middle_lands",
+        "west_lands",
+        "north_lands",
+        "cold_lands"
+      ],
+      "habitats": [
+        "everywhere; grey with ash on Volgan's plateau"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a raven",
+      "uses": [
+        "omens",
+        "orc banners"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "dark_lands §9",
+        "ember_lands §9",
+        "BC 4 (drawing)"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "heron",
+      "name": "herons",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.4",
+      "regions": [
+        "west_lands",
+        "middle_lands",
+        "ember_lands"
+      ],
+      "habitats": [
+        "the Ilurdor lagoon",
+        "the Kulolo Fen",
+        "Nimmael",
+        "the Great Swamp of Mirolon"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a heron",
+      "uses": [
+        "Mirolon's heraldic bird",
+        "fowling"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "west_lands §9",
+        "ember_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "sea_eagle",
+      "name": "sea-eagles",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.4",
+      "regions": [
+        "north_lands"
+      ],
+      "habitats": [
+        "the skerries",
+        "the Eagle Forest"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a great eagle",
+      "uses": [
+        "on Lerendor's arms"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "north_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "storm_petrel",
+      "name": "storm-petrels",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.4",
+      "regions": [
+        "tritons_islands"
+      ],
+      "habitats": [
+        "the outer seas in the gale season"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a small dark bird",
+      "uses": [
+        "warn of the gale"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "tradition",
+          "target": "drowned souls",
+          "magnitude": "storm losses at sea -10%",
+          "notes": "Fleets of Pupor realms that read the petrels; the warfare module picks the modifier."
+        }
+      ],
+      "publicText": "The islanders' belief that they are drowned souls, with the believer named.",
+      "sources": [
+        "tritons_islands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "sun_crane",
+      "name": "sun-cranes",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.4",
+      "regions": [
+        "lands_of_the_sun"
+      ],
+      "habitats": [
+        "Sun Lake and its shallows"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "man",
+      "size": "as tall as a man",
+      "uses": [
+        "the Sunhot's heraldic bird; protected"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "lands_of_the_sun §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "seabird_colonies",
+      "name": "seabird colonies",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.4",
+      "regions": [
+        "islands_of_the_south",
+        "tritons_islands",
+        "cold_lands",
+        "north_lands"
+      ],
+      "habitats": [
+        "Kamu Hawin, the bird isle",
+        "the outer rocks of the Pupor Isles",
+        "the northern cliffs"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "gulls, auks and terns",
+      "uses": [
+        "eggs",
+        "feathers",
+        "guano for the terraces"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "terrace states trading with Kamu Hawin / local_resources_factor (Grain)",
+          "magnitude": 0.1,
+          "notes": null
+        },
+        {
+          "kind": "tradition",
+          "target": "the egg-climb",
+          "magnitude": null,
+          "notes": "A Pupor boy's trial."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "islands_of_the_south §9",
+        "tritons_islands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "seals_and_walrus",
+      "name": "seals and walrus",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "cold_lands",
+        "north_lands",
+        "tritons_islands",
+        "east_lands",
+        "zols_mistake",
+        "middle_lands"
+      ],
+      "habitats": [
+        "Pandar",
+        "the Yeti Shallows",
+        "the Siroler Seas",
+        "the Onp",
+        "the strait and the Rim",
+        "the outer rocks of the Pupor Isles",
+        "the Woqood coast (white seals)",
+        "the outer isles of the Kusmeel"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "a seal is a man's length; a walrus three times his weight",
+      "uses": [
+        "oil",
+        "hide",
+        "walrus ivory"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "trade",
+          "target": "idea: The Fur Fairs",
+          "magnitude": null,
+          "notes": "Ivory is part of the northern fur fairs."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §9",
+        "north_lands §9",
+        "tritons_islands §9",
+        "east_lands §9",
+        "zols_mistake §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "spear_whale",
+      "name": "spear-whales",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "cold_lands"
+      ],
+      "habitats": [
+        "the Siroler Seas",
+        "off the Vindael arm"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "giant",
+      "size": "longer than a galley, with a tusk as long as a man",
+      "uses": [
+        "whale-oil for the Long Dark",
+        "ivory"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "trade",
+          "target": "idea: Lamps of the Long Dark (Vindael) / consumer_goods_factor",
+          "magnitude": -0.02,
+          "notes": null
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "cold_lands §4, §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "strait_whale",
+      "name": "strait-whales",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "north_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "the Leren water and the Narrow Strait (winter)",
+        "Londolo (summer)"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "giant",
+      "size": "longer than any ship",
+      "uses": [
+        "its coming opens the Ship-Blessing"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "tradition",
+          "target": "The Strait-Whale Comes: the Ship-Blessing (Maelwen)",
+          "magnitude": "calm +5% for 30 days",
+          "notes": null
+        },
+        {
+          "kind": "tradition",
+          "target": "the Litany",
+          "magnitude": "calm -10%",
+          "notes": "For a strait realm that kills one inside the strait."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "north_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "boat_breaker",
+      "name": "boat-breakers",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "yonic",
+          "name": "yoru",
+          "gloss": "the great one"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "islands_of_the_south"
+      ],
+      "habitats": [
+        "the whale-road in the channel of Yowi-yoor"
+      ],
+      "habitatFlag": null,
+      "rarity": "uncommon",
+      "sizeClass": "giant",
+      "size": "longer than a war canoe many times over",
+      "uses": [
+        "oil, bone, meat"
+      ],
+      "threats": [
+        "sink boats when they turn"
+      ],
+      "playEffects": [
+        {
+          "kind": "tradition",
+          "target": "the boat-breaker's jaw",
+          "magnitude": "calm +5%",
+          "notes": "Festival when a hall takes one."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "islands_of_the_south §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "shoal_fish",
+      "name": "herring and the shoal fish",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "tritons_islands",
+        "north_lands",
+        "west_lands",
+        "middle_lands",
+        "cold_lands",
+        "magical_lands",
+        "east_lands"
+      ],
+      "habitats": [
+        "the Pupor inner sea (herring)",
+        "the Windy Seas (white fish)",
+        "the strait (cod)",
+        "every coast"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "fish",
+      "uses": [
+        "food, salted and sold inland"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "fishing harbour states (harbour 2+) / Grain",
+          "magnitude": 1,
+          "notes": "Fish feed the Provisions; the Southern Banks are fought over."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "tritons_islands §9",
+        "north_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "shark",
+      "name": "sharks",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "islands_of_the_south",
+        "dark_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "the Long Sea in season",
+        "Gaelmael, following ships"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "large",
+      "size": "as long as one to three men",
+      "uses": [],
+      "threats": [
+        "close the outer reefs in their season"
+      ],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "islands_of_the_south §9",
+        "dark_lands §2"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "sea_turtle",
+      "name": "sea turtles",
+      "formerName": null,
+      "localNames": [
+        {
+          "lang": "yonic",
+          "name": "wanu",
+          "gloss": "turtle"
+        }
+      ],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "islands_of_the_south"
+      ],
+      "habitats": [
+        "the lagoons and beaches"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "a man's length across",
+      "uses": [
+        "food and shell",
+        "an elder's sign on a shield"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "islands_of_the_south §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "pearl_oyster",
+      "name": "pearl oysters",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "islands_of_the_south",
+        "lands_of_the_sun"
+      ],
+      "habitats": [
+        "Howan's reefs",
+        "the lagoons of the Sunhot isles"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "an oyster",
+      "uses": [
+        "pearls"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "trade",
+          "target": "pearl states / Gold",
+          "magnitude": 1,
+          "notes": "Pearls count as gold."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "islands_of_the_south §9",
+        "lands_of_the_sun §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "dolphin",
+      "name": "dolphins",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "middle_lands",
+        "islands_of_the_south",
+        "lands_of_the_sun"
+      ],
+      "habitats": [
+        "the Peace water",
+        "the Seas of Lusain, the Sharp Seas and the Ihuy Sea",
+        "the Sea of Gods and the Bright Sea"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "man",
+      "size": "a man's length",
+      "uses": [
+        "a sign the ship will make harbour"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "proposed here"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "steam_crab",
+      "name": "steam-crabs",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "east_lands"
+      ],
+      "habitats": [
+        "the hot vents of the Hellfire Gulf"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a large crab",
+      "uses": [
+        "food for the shore villages"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "east_lands §2 (the Hellfire Gulf)"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "spore_light",
+      "name": "spore-lights",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "magical_lands",
+        "east_lands"
+      ],
+      "habitats": [
+        "the Reeto Sea, where the Mushroom Forest's spores fall"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a glowing jelly the size of a hand",
+      "uses": [
+        "the Luv-zhise ferrymen steer by them"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "event",
+          "target": "Lights on the Reeto Water",
+          "magnitude": "each summer",
+          "notes": "Flavour; night crossings of the Rift Narrows for ferries."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "magical_lands §2.4"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "lake_fish",
+      "name": "lake fish",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "middle_lands",
+        "north_lands"
+      ],
+      "habitats": [
+        "the Great Lake (pike and whitefish)",
+        "Dolpar and the Sea of R'en"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "fish",
+      "uses": [
+        "the lake towns' food"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "Great Lake shore states / Grain",
+          "magnitude": 1,
+          "notes": "Per lake town state."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "middle_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "eel",
+      "name": "eels",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "dark_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "Dreson's fens",
+        "the Dondor Fen",
+        "the Nimmael shallows"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "an arm's length",
+      "uses": [
+        "Dreson's food and trade"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "dark_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "steam_eel",
+      "name": "steam eels",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.5",
+      "regions": [
+        "east_lands"
+      ],
+      "habitats": [
+        "the hottest shallows of the Hot Lake"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "an arm's length",
+      "uses": [
+        "the salt-boilers' food"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "east_lands §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": "The dossier's lake-steam eels."
+    },
+    {
+      "id": "dragon",
+      "name": "dragons",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "dragon; free allies of the elves",
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "magical_lands",
+        "middle_lands"
+      ],
+      "habitats": [
+        "the three spurs of Dragon Mountain",
+        "the high Magic Mountains",
+        "over the range to the Kingson Vale and the eastern downs"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "giant",
+      "size": "large enough to carry a rider and take an ox",
+      "uses": [
+        "dragon-scale (essence-bearing)",
+        "dragon flights by pact"
+      ],
+      "threats": [
+        "take cattle"
+      ],
+      "playEffects": [
+        {
+          "kind": "farming",
+          "target": "event: A Dragon over the Vale / local_resources_factor (Horses)",
+          "magnitude": -0.05,
+          "notes": "MTTH 36 months, 60 days; none for keepers of the dragon-tithe."
+        },
+        {
+          "kind": "trade",
+          "target": "decision: Buy Dragon-Scale at Kingson / Essence",
+          "magnitude": 2,
+          "notes": "Yearly, 25 authority, 365 days; reads specialSites Dragon Mountain Essence 12 as shed scale."
+        },
+        {
+          "kind": "war",
+          "target": "existing: zin_air_dragon_flight (granted)",
+          "magnitude": null,
+          "notes": "By the roost-keepers' word."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "vault: Peoples of Aoaz",
+        "magical_lands §4, §5, §9",
+        "middle_lands §2.9",
+        "economy.json specialSites",
+        "warfare_units air"
+      ],
+      "canon": "established",
+      "canonNotes": "Dragons, their home and the elven command E; the roost-keepers' bond and scale trade P."
+    },
+    {
+      "id": "giant_fungi",
+      "name": "giant fungi",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "fungus",
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "magical_lands"
+      ],
+      "habitats": [
+        "the Mushroom Forest along the rift shore"
+      ],
+      "habitatFlag": "zin_hab_spore_forest",
+      "rarity": "common",
+      "sizeClass": "giant",
+      "size": "some as tall as towers",
+      "uses": [
+        "dyes, spore-cloth"
+      ],
+      "threats": [
+        "spore-air in summer"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_spore_forest / local_supplies_for_controller (Rasthel to Aurlan)",
+          "magnitude": -0.3,
+          "notes": "None for the mycids and Luv-zhise."
+        },
+        {
+          "kind": "trade",
+          "target": "idea: The Spore Quays (Luv-zhise) / consumer_goods_factor",
+          "magnitude": -0.02,
+          "notes": null
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "magical_lands §2.3, §4, §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": "The mycids (E) are not described here (O)."
+    },
+    {
+      "id": "thorn_bee",
+      "name": "thorn-bees",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "middle_lands"
+      ],
+      "habitats": [
+        "the Aenor Forest's edge"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a bee",
+      "uses": [
+        "thorn-honey that numbs pain"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "Thorn-Honey for the Healers / attrition",
+          "magnitude": -0.05,
+          "notes": "15 authority, 180 days; Selen, Aenor and the forest's neighbours."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "proposed here"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "flame_silk_moth",
+      "name": "flame-silk moth",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "east_lands"
+      ],
+      "habitats": [
+        "the Flaming Forests east of the Noris Desert"
+      ],
+      "habitatFlag": "zin_hab_flame_silk",
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a moth the width of a hand",
+      "uses": [
+        "flame-silk"
+      ],
+      "threats": [
+        "caterpillars strip the red leaves; swarms blind caravans"
+      ],
+      "playEffects": [
+        {
+          "kind": "travel",
+          "target": "state:zin_hab_flame_silk / army_speed_factor_for_controller (dry season)",
+          "magnitude": -0.1,
+          "notes": "Caravans wait."
+        },
+        {
+          "kind": "trade",
+          "target": "silk states / Gold",
+          "magnitude": 1,
+          "notes": "Sold through Stabilo."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "east_lands §9 (ember-moths)"
+      ],
+      "canon": "proposed",
+      "canonNotes": "Replaces the dossier's ember-moth, which duplicated the ash-moth."
+    },
+    {
+      "id": "fire_lizard",
+      "name": "fire-lizards",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "lands_of_the_sun"
+      ],
+      "habitats": [
+        "the warm slopes of Hol's Great Volcano"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "small",
+      "size": "as long as a man",
+      "uses": [
+        "shed skins woven into cloth that does not catch fire"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "fire-lizard cloth for the smiths",
+          "magnitude": "+5% armoury output for one year",
+          "notes": null
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "lands_of_the_sun §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "glass_beetle",
+      "name": "glass-beetles",
+      "formerName": null,
+      "localNames": [],
+      "kind": "beast",
+      "subkind": null,
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "ember_lands"
+      ],
+      "habitats": [
+        "the Halls of the Nether",
+        "the Burning Shore"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a beetle the size of a fist",
+      "uses": [
+        "their shells are the Nether's glass"
+      ],
+      "threats": [],
+      "playEffects": [
+        {
+          "kind": "trade",
+          "target": "Nether glass",
+          "magnitude": "+10 opinion by event",
+          "notes": "The Nether's gifts to Volgan's court."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "nether §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "black_lichen",
+      "name": "black lichen",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "lichen",
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "zols_mistake"
+      ],
+      "habitats": [
+        "the rock of the Mistake"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "tiny",
+      "size": "a crust on the rock",
+      "uses": [
+        "burnt by the fishers; a cold grey smoke"
+      ],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "free",
+      "sources": [
+        "zols_mistake §9"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "small_spirits",
+      "name": "the small spirits of springs, groves, winds and hearths",
+      "formerName": null,
+      "localNames": [],
+      "kind": "spirit",
+      "subkind": "minor spirits below a named Lesser Spirit",
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "west_lands",
+        "magical_lands",
+        "middle_lands",
+        "north_lands"
+      ],
+      "habitats": [
+        "springs, groves, winds and hearths"
+      ],
+      "habitatFlag": null,
+      "rarity": "rare",
+      "sizeClass": "tiny",
+      "size": "seldom seen",
+      "uses": [
+        "honoured by the Lawspeakers and River Wardens; sung to by the elves"
+      ],
+      "threats": [
+        "trapped and bled by Gektor"
+      ],
+      "playEffects": [
+        {
+          "kind": "decision",
+          "target": "see Gektor: The Bleeding Stone",
+          "magnitude": null,
+          "notes": "A spring whose spirit has been taken runs thin."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "magic reference §3.15",
+        "vault: Spirit Natures (proposed natures)"
+      ],
+      "canon": "proposed",
+      "canonNotes": null
+    },
+    {
+      "id": "damned_spirits",
+      "name": "Damned Spirits",
+      "formerName": null,
+      "localNames": [],
+      "kind": "spirit",
+      "subkind": null,
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "ember_lands"
+      ],
+      "habitats": [
+        "very deep underground: below the deepest galleries and the Nether's Roots"
+      ],
+      "habitatFlag": null,
+      "rarity": "very_rare",
+      "sizeClass": "huge",
+      "size": "not described",
+      "uses": [],
+      "threats": [],
+      "playEffects": [],
+      "publicText": "Nothing beyond fear of the deep places.",
+      "sources": [
+        "vault: Damned Spirits"
+      ],
+      "canon": "established",
+      "canonNotes": "Deep underground and released by Volgan in the First Age E; everything else O; size class a placeholder."
+    },
+    {
+      "id": "the_dead",
+      "name": "the dead",
+      "formerName": null,
+      "localNames": [],
+      "kind": "other",
+      "subkind": "not wildlife",
+      "card": [],
+      "section": "2.6",
+      "regions": [
+        "zols_mistake",
+        "ember_lands"
+      ],
+      "habitats": [
+        "the wandering dead of Zol's Mistake",
+        "Volgan's grave-fields"
+      ],
+      "habitatFlag": null,
+      "rarity": "common",
+      "sizeClass": "man",
+      "size": "as they were in life",
+      "uses": [],
+      "threats": [
+        "Zol's sustained dead cannot be ended by ordinary iron"
+      ],
+      "playEffects": [
+        {
+          "kind": "war",
+          "target": "existing: grave hosts, the Deathless, Wardens",
+          "magnitude": null,
+          "notes": "The wandering dead of the Mistake are never recruited."
+        }
+      ],
+      "publicText": "free",
+      "sources": [
+        "zols_mistake §9",
+        "magic reference §2",
+        "warfare_units"
+      ],
+      "canon": "established",
+      "canonNotes": null
+    }
+  ]
+}

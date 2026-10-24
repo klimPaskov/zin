@@ -23,6 +23,6 @@ Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss 
 
 ## Appearance
 
-**Established (owner, 24 October 2026; decision K37):** Eindil has blue eyes and black hair, and he wears a helmet and silver armour.
+**Established (owner, 24 October 2026; decision K37):** Eindil has black hair and blue eyes that glow slightly, and he wears a helmet and light blue armour (decision K39).
 
 [[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[War of the Last Crowns]] · [[The Last Battle in the Palace]]

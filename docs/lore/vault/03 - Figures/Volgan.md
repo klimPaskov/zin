@@ -17,6 +17,6 @@ In the Fourth Age Volgan has recovered enough to retake Mirolon and march north 
 
 ## Appearance
 
-**Established (owner, 24 October 2026; decision K37):** Volgan is a wizard who wields green magic. He wears a crown and a purple cloak, and his eyes glow green.
+**Established (owner, 24 October 2026; decision K37):** Volgan is a wizard who wields green magic, and he is not human in form: a purple cloak filled with darkness, in which only his glowing green eyes can be seen, with his crown floating above the darkness (decision K39).
 
 [[The Fourth Age of Aoaz]] · [[Elzon]] · [[War of the Last Crowns]]

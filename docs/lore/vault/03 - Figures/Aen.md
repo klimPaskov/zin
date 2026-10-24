@@ -26,7 +26,7 @@ Aen fought in the [[War of Men]] for hundreds of years, uniting the rival kingdo
 
 ## Appearance
 
-**Established (owner, 24 October 2026; decision K37):** Aen is dark-haired and bearded, with a very powerful presence.
+**Established (owner, 24 October 2026; decision K37):** Aen is dark-haired and bearded, with a very powerful presence; he is shown crowned, in a black and red cloak (decision K39).
 
 [[The Ainu]] · [[The First Age of Aoaz]] · [[War of Men]] · [[Ages of Aoaz]]
 
