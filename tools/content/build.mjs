@@ -44,6 +44,10 @@ import { buildElves } from './modules/mech_elves.mjs';
 import { buildLerendor } from './modules/mech_lerendor.mjs';
 import { buildVolgan } from './modules/mech_volgan.mjs';
 import { buildPowersUi } from './modules/mech_powers_ui.mjs';
+import { buildMechCold } from './modules/mech_cold.mjs';
+import { buildMechDark } from './modules/mech_dark.mjs';
+import { buildMechEast } from './modules/mech_east.mjs';
+import { buildMechSun } from './modules/mech_sun.mjs';
 import { buildDecisionsRegional } from './modules/decisions_regional.mjs';
 import { buildFocusMajorC } from './modules/focus_major_c.mjs';
 import { buildSharedBCompanion } from './modules/focus_shared_b.mjs';
@@ -124,6 +128,10 @@ const powersElves = await buildElves(staged, { countries, table });
 const powersLeren = await buildLerendor(staged, { countries, table });
 const powersVolgan = await buildVolgan(staged, { countries });
 await buildPowersUi(staged, { countries });
+const mechCold = await buildMechCold(staged, { countries });
+const mechDark = await buildMechDark(staged, { countries, assignment });
+const mechEast = await buildMechEast(staged, { countries });
+const mechSun = await buildMechSun(staged, { countries, assignment });
 // The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
 // common/scripted_effects/zin_story.txt; storyBlocks gains 'lastwar' and 'lore' when the events-world module is wired.
 const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'ending'] });

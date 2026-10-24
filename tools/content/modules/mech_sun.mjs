@@ -4,7 +4,8 @@
 //   buildMechSun(staged, { countries, assignment?, data? }) -> { files, counts, definitions, externalEvents, dependencies, ... }
 // Data: tools/content/data/mech_regions_sun.json (roster names, every number, every player-visible text).
 // The faction template zin_faction_noon_league, the joining rule zin_faction_rule_join_sun_realms and the site trigger
-// zin_is_site_gala are not written here: the diplomacy module and the key-sites table own them (see docs/design/stage2/mech_regions.md).
+// zin_is_site_gala are not written here: the diplomacy module and the key-sites table own them. The news zin_sun.40 and the steward
+// choice zin_sun.42 are fired here and written by their event owner. Every name used and not defined: docs/design/stage2/mech_sun.md.
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -23,14 +24,14 @@ const READING_ORDER = [5, 2, 1, 3, 4];
 /** Names this module uses and does not define: other owners, by the contract register (lands_of_the_sun.md, "What other specs own"). */
 export const SUN_DEPENDENCIES = {
   effects: ['zin_world_add_gathering_dark', 'zin_afrit_add_veil', 'zin_elves_goodwill', 'zin_diplo_lift_refusal'],
-  triggers: ['zin_is_site_gala', 'zin_is_region_lands_of_the_sun', 'zin_is_region_middle_lands'],
+  triggers: ['zin_is_site_gala', 'zin_is_region_lands_of_the_sun', 'zin_is_region_middle_lands', 'zin_rules_is_historical', 'zin_rules_is_free'],
   characters: ['zin_lorien'],
   factionTemplates: ['zin_faction_noon_league'],
   events: ['zin_sun.40', 'zin_sun.42'],
-  globalFlags: ['zin_golden_king_dead', 'zin_afrit_regicide_ready', 'zin_war_of_last_crowns', 'zin_zol_rising', 'zin_aurevan_crowned', 'zin_lorien_dead'],
-  variables: ['zin_mistake_power', 'zin_dominion_strength', 'zin_west_resolve', 'zin_council_influence', 'zin_gathering_dark', 'zin_story_pace', 'zin_eindil_host'],
+  globalFlags: ['zin_golden_king_dead', 'zin_afrit_regicide_ready', 'zin_war_of_last_crowns', 'zin_zol_rising', 'zin_aurevan_crowned'],
+  variables: ['zin_mistake_power', 'zin_dominion_strength', 'zin_west_resolve', 'zin_council_influence', 'zin_gathering_dark', 'zin_eindil_host'],
   countryFlags: ['zin_gala_audiences', 'zin_gala_mirror_open', 'zin_gala_true_traces', 'zin_gala_cautious_seers', 'zin_gala_share_sight', 'zin_gala_kings_warning', 'zin_gala_mediator', 'zin_gala_courtyard_guarded', 'zin_gala_ready_to_ride', 'zin_refusal_lifted', 'zin_story_war', 'zin_east_rift_talk', 'zin_people_elves', 'zin_people_sun_elves', 'zin_region_islands_of_the_south'],
-  ideas: ['zin_gala_still_water_spirit'],
+  ideas: ['zin_gala_still_water_spirit', 'zin_gala_gala_endures_spirit'],
 };
 
 export async function buildMechSun(staged, ctx) {
@@ -46,6 +47,9 @@ export async function buildMechSun(staged, ctx) {
   if (realms.length !== R.expectedSunhotRealms) throw new Error(`The roster has ${realms.length} Sunhot realms, the data expects ${R.expectedSunhotRealms}`);
   const tag = n => found.get(n).tag;
   const GALA = tag(R.gala), LOL = tag(R.lands_of_light), AENOR = tag(R.aenor), ZOL = tag(R.zol), VOLGAN = tag(R.volgan), FOREST = tag(R.magical_forest);
+  const ELVANA = tag(R.elvana), IGARA = tag(R.igara), WORSHIPDOM = tag(R.worshipdom);
+  for (const [n, t] of [[R.gala, GALA], [R.lands_of_light, LOL], [R.elvana, ELVANA], [R.igara, IGARA]]) if (!sunCountries.some(c => c.tag === t)) throw new Error(`${n} is not a ${R.scan} country of the roster`);
+  if (!found.get(R.gala).capitalState) throw new Error(`${R.gala} has no capital state in the roster`);
   const pictures = await knownPictures(), icons = await knownIcons();
   const files = new Map();
   const put = (rel, text) => { files.set(rel, text.endsWith('\n') ? text : text + '\n'); };
@@ -53,6 +57,8 @@ export async function buildMechSun(staged, ctx) {
 
   const sightFlag = k => `zin_sun_sight_${k}`, heedFlag = k => `zin_sun_heeded_${k}`;
   const counselCost = n => ({ custom_cost_trigger: `check_variable = { zin_gala_counsel > ${num(n - 0.01)} }`, custom_cost_text: `zin_sun_cost_counsel_${n}`, extraText: [`zin_sun_cost_counsel_${n}`, `zin_sun_cost_counsel_${n}_blocked`, `zin_sun_cost_counsel_${n}_tooltip`] });
+  // An ask needs more counsel than it spends (section 3): the need is shown as its own requirement line.
+  const counselNeed = n => `custom_trigger_tooltip = {\n  tooltip = ${T.use(`zin_sun_need_counsel_${n}`)}\n  check_variable = { zin_gala_counsel > ${num(n - 0.01)} }\n}`;
 
   // ------------------------------------------------------------------------------------------------ triggers
   const trig = [];
@@ -63,14 +69,19 @@ export async function buildMechSun(staged, ctx) {
   T_('zin_sun_is_gala', `OR = {\n  has_character = zin_lorien\n  original_tag = ${GALA}\n}`);
   T_('zin_sun_mirror_available', 'NOT = { has_global_flag = zin_mirror_stilled }');
   T_('zin_sun_league_needed', `OR = {\n  check_variable = { global.zin_gathering_dark > ${num(N.league_dark - 0.01)} }\n  has_global_flag = zin_sun_foreign_hold\n}`);
-  T_('zin_sun_is_runner', `OR = {\n  original_tag = ${GALA}\n  AND = {\n    NOT = { country_exists = ${GALA} }\n    has_country_flag = zin_sun_council_president\n  }\n}`);
-  T_('zin_sun_lorien_leads', `${GALA} = {\n  has_country_leader = { character = zin_lorien ruling_only = no }\n}\nNOT = { has_global_flag = zin_lorien_dead }`);
+  // The monthly runner (spec, "Files"): the Gala Elves; when they are gone, the Council's president; when no realm holds the
+  // presidency (its holder fell between two runs), the first Sunhot realm, whose run hands the presidency on.
+  T_('zin_sun_is_runner', `OR = {\n  original_tag = ${GALA}\n  AND = {\n    NOT = { country_exists = ${GALA} }\n    OR = {\n      has_country_flag = zin_sun_council_president\n      AND = {\n        zin_sun_is_sunhot_realm = yes\n        NOT = { any_country = { has_country_flag = zin_sun_council_president } }\n      }\n    }\n  }\n}`);
+  T_('zin_sun_lorien_leads', `${GALA} = {\n  has_country_leader = { character = zin_lorien ruling_only = yes }\n}\nNOT = { has_global_flag = zin_lorien_dead }`);
+  // Counsel grows while Lorien leads; after his death only once the court endures (section 3).
+  T_('zin_sun_counsel_grows', `OR = {\n  zin_sun_lorien_leads = yes\n  ${GALA} = { has_idea = zin_gala_gala_endures_spirit }\n}`);
   T_('zin_sun_sight_true_north', `${ZOL} = { check_variable = { zin_mistake_power > ${num(N.sight_north - 0.01)} } }`);
   T_('zin_sun_sight_true_south', `${VOLGAN} = { check_variable = { zin_dominion_strength > ${num(N.sight_south - 0.01)} } }`);
   T_('zin_sun_sight_true_seas', `check_variable = { global.zin_west_resolve > ${num(N.sight_seas - 0.01)} }`);
   T_('zin_sun_sight_true_east', 'OR = {\n  has_global_flag = zin_war_of_last_crowns\n  any_country = { has_country_flag = zin_east_rift_talk }\n}');
   T_('zin_sun_sight_true_centre', `NOT = { has_global_flag = zin_golden_king_dead }\nOR = {\n  has_global_flag = zin_afrit_regicide_ready\n  ${AENOR} = { check_variable = { zin_council_influence > ${num(N.sight_centre - 0.01)} } }\n}`);
   T_('zin_sun_has_warnable_sight', `OR = {\n${SIGHTS.filter(s => s.key !== 'centre').map(s => `  has_country_flag = ${sightFlag(s.key)}`).join('\n')}\n  AND = {\n    has_country_flag = ${sightFlag('centre')}\n    FROM = { original_tag = ${AENOR} }\n  }\n}`);
+  T_('zin_sun_has_any_sight', `OR = {\n${SIGHTS.map(s => `  has_country_flag = ${sightFlag(s.key)}`).join('\n')}\n}`);
   T_('zin_sun_has_heeded_any', `OR = {\n${SIGHTS.filter(s => s.key !== 'centre').map(s => `  has_country_flag = ${heedFlag(s.key)}`).join('\n')}\n}`);
   put('common/scripted_triggers/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\n\n${trig.join('\n\n')}`);
 
@@ -80,7 +91,7 @@ export async function buildMechSun(staged, ctx) {
   const sightFire = (code, extra) => `if = {\n  limit = { ${code} }\n${ind(1, fmt(extra))}\n}`;
 
   E_('zin_sun_add_gala_counsel', `${GALA} = {\n  add_to_variable = { zin_gala_counsel = zin_arg_value }\n  clamp_variable = { var = zin_gala_counsel min = 0 max = 100 }\n}`);
-  E_('zin_sun_add_old_lords', `${GALA} = {\n  add_to_variable = { zin_gala_old_lords = zin_arg_value }\n  clamp_variable = { var = zin_gala_old_lords min = 0 max = 5 }\n}`);
+  E_('zin_sun_add_old_lords', `${GALA} = {\n  add_to_variable = { zin_gala_old_lords = zin_arg_value }\n  clamp_variable = { var = zin_gala_old_lords min = 0 max = ${N.old_lords_max} }\n}`);
   E_('zin_sun_add_concord', `add_to_variable = { global.zin_sun_concord = zin_arg_value }\nclamp_variable = { var = global.zin_sun_concord min = 0 max = 100 }`);
   E_('zin_sun_add_clarity', `if = {\n  limit = {\n    NOT = {\n      AND = {\n        has_global_flag = zin_mirror_stilled\n        check_variable = { zin_arg_value > 0 }\n      }\n    }\n  }\n  add_to_variable = { global.zin_mirror_clarity = zin_arg_value }\n  clamp_variable = { var = global.zin_mirror_clarity min = 0 max = 100 }\n}`);
   E_('zin_sun_spend_clarity', `subtract_from_variable = { global.zin_mirror_clarity = zin_arg_value }\nclamp_variable = { var = global.zin_mirror_clarity min = 0 max = 100 }`);
@@ -121,18 +132,22 @@ country_event = { id = zin_sun.10 }`);
 
   // Warnings: the sight to send, then the event to the target.
   const pick = SIGHTS.filter(s => s.key !== 'centre');
+  // A named sight is sent only if Gala has seen it; with `any` (0) the centre goes to Aenor first, then the sight seen last, then
+  // south, north, seas, east. The centre is shown to Aenor only (section 5).
+  const toAenor = `var:zin_arg_target = { original_tag = ${AENOR} }`;
+  const pickIf = (code, cond) => `if = {\n  limit = {\n    check_variable = { zin_sun_pick = 0 }\n${ind(2, fmt(cond))}\n  }\n  set_temp_variable = { zin_sun_pick = ${code} }\n}`;
   E_('zin_sun_send_warning', `set_temp_variable = { zin_sun_pick = 0 }
-if = {
-  limit = {
-    var:zin_arg_target = { original_tag = ${AENOR} }
-    has_country_flag = ${sightFlag('centre')}
-  }
-  set_temp_variable = { zin_sun_pick = 5 }
-}
-${pick.map(s => `if = {\n  limit = {\n    check_variable = { zin_sun_pick = 0 }\n    check_variable = { zin_sun_last_sight = ${s.code} }\n    has_country_flag = ${sightFlag(s.key)}\n  }\n  set_temp_variable = { zin_sun_pick = ${s.code} }\n}`).join('\n')}
-${[2, 1, 3, 4].map(code => { const s = SIGHTS.find(x => x.code === code); return `if = {\n  limit = {\n    check_variable = { zin_sun_pick = 0 }\n    has_country_flag = ${sightFlag(s.key)}\n  }\n  set_temp_variable = { zin_sun_pick = ${code} }\n}`; }).join('\n')}
+${pickIf(5, `check_variable = { zin_arg_sight = 5 }\nhas_country_flag = ${sightFlag('centre')}\n${toAenor}`)}
+${pick.map(s => pickIf(s.code, `check_variable = { zin_arg_sight = ${s.code} }\nhas_country_flag = ${sightFlag(s.key)}`)).join('\n')}
+${pickIf(5, `check_variable = { zin_arg_sight = 0 }\nhas_country_flag = ${sightFlag('centre')}\n${toAenor}`)}
+${pick.map(s => pickIf(s.code, `check_variable = { zin_arg_sight = 0 }\ncheck_variable = { zin_sun_last_sight = ${s.code} }\nhas_country_flag = ${sightFlag(s.key)}`)).join('\n')}
+${[2, 1, 3, 4].map(code => pickIf(code, `check_variable = { zin_arg_sight = 0 }\nhas_country_flag = ${sightFlag(SIGHTS.find(x => x.code === code).key)}`)).join('\n')}
 if = {
   limit = { check_variable = { zin_sun_pick > 0 } }
+  if = {
+    limit = { ${toAenor} }
+    set_country_flag = zin_sun_warned_aenor
+  }
   var:zin_arg_target = {
     set_variable = { zin_sun_warned_sight = zin_sun_pick }
     country_event = { id = zin_sun.20 }
@@ -182,7 +197,7 @@ else = {
 }`);
 
   // Lorien's last march (section 7).
-  const stand = [[1, 0, 1], [2, 2, 3], [3, 4, 5]];
+  const stand = N.stand_tiers.map((t, i) => [i + 1, t.lords_from, t.lords_to]);
   E_('zin_sun_lorien_rides', `set_global_flag = zin_lorien_rides
 if = {
   limit = { NOT = { has_country_flag = zin_refusal_lifted } }
@@ -347,7 +362,7 @@ if = {
 ${ind(1, call('zin_sun_add_concord', { value: N.concord_monthly }))}
 }
 if = {
-  limit = { zin_sun_lorien_leads = yes }
+  limit = { zin_sun_counsel_grows = yes }
 ${ind(1, call('zin_sun_add_gala_counsel', { value: N.counsel_monthly }))}
 }
 set_temp_variable = { zin_sun_regain = ${N.clarity_regain} }
@@ -363,7 +378,7 @@ if = {
     limit = { has_country_flag = zin_sun_council_president }
     if = {
       limit = { has_war = no }
-      add_to_variable = { global.zin_sun_league_peace_days = 30 }
+      add_to_variable = { global.zin_sun_league_peace_days = ${N.league_peace_step} }
     }
     else = { set_variable = { global.zin_sun_league_peace_days = 0 } }
   }
@@ -390,6 +405,8 @@ every_country = {
   }
 ${ind(1, call('zin_sun_add_concord', { value: N.concord_war_between }))}
 }`);
+  // The host of the court in exile (section 6): an existing realm at peace with the conqueror and not the conqueror itself.
+  const hostOk = `NOT = { original_tag = ${GALA} }\nNOT = { tag = FROM }\nNOT = { has_war_with = FROM }\nhas_capitulated = no`;
   E_('zin_sun_on_capitulation', `if = {
   limit = {
     original_tag = ${GALA}
@@ -399,7 +416,9 @@ ${ind(1, call('zin_sun_add_concord', { value: N.concord_war_between }))}
   if = {
     limit = {
       country_exists = ${LOL}
-      NOT = { ${LOL} = { has_war_with = FROM } }
+      ${LOL} = {
+${ind(4, fmt(hostOk))}
+      }
     }
     become_exiled_in = { target = ${LOL} legitimacy = ${N.exile_legitimacy} }
   }
@@ -407,20 +426,17 @@ ${ind(1, call('zin_sun_add_concord', { value: N.concord_war_between }))}
     limit = {
       any_country = {
         zin_sun_is_elven_realm = yes
-        NOT = { original_tag = ${GALA} }
-        NOT = { has_war_with = FROM }
+${ind(4, fmt(hostOk))}
       }
     }
     random_country = {
       limit = {
         zin_sun_is_elven_realm = yes
-        NOT = { original_tag = ${GALA} }
-        NOT = { has_war_with = FROM }
+${ind(4, fmt(hostOk))}
         NOT = {
           any_other_country = {
             zin_sun_is_elven_realm = yes
-            NOT = { original_tag = ${GALA} }
-            NOT = { has_war_with = FROM }
+${ind(6, fmt(hostOk))}
             check_variable = { num_owned_states > PREV.num_owned_states }
           }
         }
@@ -428,7 +444,11 @@ ${ind(1, call('zin_sun_add_concord', { value: N.concord_war_between }))}
       PREV = { become_exiled_in = { target = PREV legitimacy = ${N.exile_legitimacy} } }
     }
   }
-  else = {
+  else_if = {
+    limit = {
+      country_exists = ${FOREST}
+      ${FOREST} = { NOT = { tag = FROM } }
+    }
     become_exiled_in = { target = ${FOREST} legitimacy = ${N.exile_legitimacy} }
   }
 }`);
@@ -452,34 +472,36 @@ ${ind(1, call('zin_sun_add_concord', { value: N.concord_war_between }))}
       clr_global_flag = zin_mirror_stilled
     }
   }
-  else_if = {
+  if = {
     limit = {
       zin_is_region_lands_of_the_sun = yes
       ROOT = { zin_sun_is_lands_of_the_sun_country = no }
       FROM = { zin_sun_is_lands_of_the_sun_country = yes }
-      NOT = { has_global_flag = zin_sun_concord_rallied }
       ROOT = { has_war_with = FROM }
     }
-    set_global_flag = zin_sun_concord_rallied
-${ind(2, call('zin_sun_add_concord', { value: N.concord_rally }))}
+    if = {
+      limit = {
+        FROM = {
+          OR = {
+            zin_sun_is_sunhot_realm = yes
+            original_tag = ${GALA}
+          }
+        }
+      }
+      set_global_flag = zin_sun_foreign_hold
+    }
+    if = {
+      limit = { NOT = { has_global_flag = zin_sun_concord_rallied } }
+      set_global_flag = zin_sun_concord_rallied
+${ind(3, call('zin_sun_add_concord', { value: N.concord_rally }))}
+    }
   }
 }`);
   put('common/scripted_effects/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\n# Scripted effects take no parameters in 1.19.3 (decision E1): a call sets zin_arg_<name> temporary variables first.\n# sight codes: north 1, south 2, seas 3, east 4, centre 5, any 0.\n\n${eff.join('\n\n')}`);
 
   // ------------------------------------------------------------------------------------------------ ideas
-  const ideaList = [
-    { id: 'zin_sun_council_timber', picture: 'zin_timber_mill', modifier: { industrial_capacity_dockyard: 0.15, production_speed_buildings_factor: 0.05 } },
-    { id: 'zin_sun_heeded_north', picture: 'zin_beacon', modifier: { coastal_bunker_effectiveness_factor: 0.1, army_core_defence_factor: 0.05 } },
-    { id: 'zin_sun_heeded_south', picture: 'zin_fort_wall', modifier: { army_core_defence_factor: 0.05, dig_in_speed_factor: 0.1 } },
-    { id: 'zin_sun_heeded_seas', picture: 'zin_lighthouse', modifier: { coastal_bunker_effectiveness_factor: 0.1, naval_detection: 0.1 } },
-    { id: 'zin_sun_heeded_east', picture: 'zin_eye_watchful', modifier: { army_core_defence_factor: 0.05, war_support_factor: 0.03 } },
-    { id: 'zin_sun_kings_ride', picture: 'zin_gala_sun', modifier: { army_attack_factor: 0.2, army_morale_factor: 0.2 } },
-    { id: 'zin_sun_old_powers_stand_1', picture: 'zin_forest_ancient', modifier: { army_defence_factor: 0.05, army_org_factor: 0.03 } },
-    { id: 'zin_sun_old_powers_stand_2', picture: 'zin_forest_ancient', modifier: { army_defence_factor: 0.1, army_org_factor: 0.05 } },
-    { id: 'zin_sun_old_powers_stand_3', picture: 'zin_forest_ancient', modifier: { army_defence_factor: 0.15, army_org_factor: 0.08 } },
-    { id: 'zin_sun_king_fallen', picture: 'zin_banner_laid_down', modifier: { stability_factor: -0.1, war_support_factor: 0.1, political_power_gain: -0.1 } },
-    { id: 'zin_sun_mourning', picture: 'zin_tree_silver', modifier: { stability_factor: -0.02 } },
-  ];
+  // Spirits: every modifier value and picture is a data row (spec, "Ideas").
+  const ideaList = data.ideas.map(i => ({ id: i.id, picture: `zin_${i.icon}`, modifier: i.modifier }));
   const ideaTexts = [];
   for (const i of ideaList) {
     if (!icons.has(`GFX_idea_${i.picture}`)) throw new Error(`Idea ${i.id}: picture ${i.picture} is not in the icon catalog`);
@@ -488,13 +510,14 @@ ${ind(2, call('zin_sun_add_concord', { value: N.concord_rally }))}
   put('common/ideas/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\nideas = {\n\tcountry = {\n${ind(2, ideaTexts.join('\n\n'))}\n\t}\n}`);
 
   // ------------------------------------------------------------------------------------------------ opinion modifier
-  put('common/opinion_modifiers/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\nopinion_modifiers = {\n${ind(1, renderOpinion({ id: 'zin_opinion_warning_dismissed', value: -5, decay: 0.25 }, T))}\n}`);
+  put('common/opinion_modifiers/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\nopinion_modifiers = {\n${ind(1, renderOpinion({ id: 'zin_opinion_warning_dismissed', value: N.dismissed_opinion, decay: N.dismissed_decay }, T))}\n}`);
   defs.opinions.push('zin_opinion_warning_dismissed');
 
   // ------------------------------------------------------------------------------------------------ decisions
   const cats = [
     { id: 'zin_sun_counsel', icon: 'GFX_idea_zin_gala_sun', allowed: `original_tag = ${GALA}`, visible_when_empty: false },
-    { id: 'zin_sun_mirror', icon: 'GFX_idea_zin_mirror_rain', allowed: `original_tag = ${GALA}`, visible: 'zin_sun_mirror_available = yes' },
+    // A stilled Mirror stops visions only (section 5): warnings and the old lords stay in reach.
+    { id: 'zin_sun_mirror', icon: 'GFX_idea_zin_mirror_rain', allowed: `original_tag = ${GALA}` },
     { id: 'zin_sun_council', icon: 'GFX_idea_zin_concord_circle', allowed: 'always = yes', visible: 'has_country_flag = zin_sun_council_president' },
   ];
   for (const c of cats) { if (!icons.has(c.icon)) throw new Error(`Category ${c.id}: icon ${c.icon} is not in the catalog`); defs.categories.push(c.id); }
@@ -502,56 +525,64 @@ ${ind(2, call('zin_sun_add_concord', { value: N.concord_rally }))}
 
   const onlyGala = `original_tag = ${GALA}`;
   const heeders = R.heeders.map(n => tag(n));
-  const sendWord = (suffix, cost, visibleExtra, textAlias) => ({
+  const tagList = (tags, depth = 1) => tags.map(t => `${'  '.repeat(depth)}original_tag = ${t}`).join('\n');
+  const flags = { share: 'has_country_flag = zin_gala_share_sight', warn: 'has_country_flag = zin_gala_kings_warning' };
+  // Send Word of the Vision costs 50, 25 less for each of the two Gala flags (section 5); one decision per price.
+  const sendWord = (suffix, cost, visible, textAlias) => ({
     id: `zin_sun_send_word${suffix}`, icon: 'GFX_idea_zin_scroll_sealed', allowed: onlyGala,
-    target_root_trigger: 'zin_sun_mirror_available = yes',
-    target_trigger: `FROM = {\n  NOT = { original_tag = ${GALA} }\n  NOT = { original_tag = ${tag(R.worshipdom)} }\n}`,
-    visible: visibleExtra, available: 'zin_sun_has_warnable_sight = yes', cost, days_re_enable: N.warn_cooldown,
+    target_root_trigger: 'zin_sun_has_any_sight = yes',
+    target_trigger: `FROM = {\n  NOT = { original_tag = ${GALA} }\n}`,
+    visible, available: 'zin_sun_has_warnable_sight = yes', cost, days_re_enable: N.warn_cooldown,
     complete_effect: `set_temp_variable = { zin_arg_target = FROM }\nset_temp_variable = { zin_arg_sight = 0 }\nzin_sun_send_warning = yes`,
     ai: { base: 0, mods: [
-      { add: 10, when: `FROM = {\n  OR = {\n${heeders.map(t => `    original_tag = ${t}`).join('\n')}\n  }\n}` },
-      { add: 6, when: `FROM = { original_tag = ${AENOR} }` },
+      { add: 10, when: `FROM = {\n  OR = {\n${tagList(heeders, 2)}\n  }\n}` },
+      { add: 6, when: `FROM = { original_tag = ${AENOR} }\nNOT = { has_country_flag = zin_sun_warned_aenor }` },
+      { factor: N.ai_warn_free_factor, when: 'zin_rules_is_free = yes' },
+      { factor: 0, when: `FROM = { original_tag = ${WORSHIPDOM} }` },
       { factor: 0, when: 'FROM = { zin_sun_has_heeded_any = yes }' },
       { factor: 0, when: 'NOT = { zin_sun_has_warnable_sight = yes }' },
     ] },
     alias: textAlias,
   });
+  const quarrelPair = `OR = {\n  AND = {\n    original_tag = ${ELVANA}\n    country_exists = ${IGARA}\n  }\n  AND = {\n    original_tag = ${IGARA}\n    country_exists = ${ELVANA}\n  }\n  any_other_country = {\n    zin_sun_is_sunhot_realm = yes\n    has_opinion = { target = PREV value < 0 }\n  }\n}`;
+  const goodwillWith = other => `${other} = {\n  set_temp_variable = { zin_arg_target = PREV }\n  zin_elves_goodwill = yes\n}`;
   const decisionsList = [
     { id: 'zin_sun_audience', cat: 'zin_sun_counsel', icon: 'GFX_idea_zin_envoy', allowed: onlyGala,
       target_root_trigger: 'has_country_flag = zin_gala_audiences',
       target_trigger: `FROM = {\n  NOT = { original_tag = ${GALA} }\n  OR = {\n    zin_sun_is_lands_of_the_sun_country = yes\n    zin_sun_is_elven_realm = yes\n    has_country_flag = zin_region_islands_of_the_south\n  }\n}`,
       cost: N.audience_cost, days_re_enable: N.audience_cooldown,
       complete_effect: `${call('zin_sun_add_gala_counsel', { value: N.audience_counsel })}\n${call('zin_elves_goodwill', { target: 'FROM' })}\nFROM = { country_event = { id = zin_sun.5 } }`,
-      ai: { base: 3, mods: [{ add: 6, when: `FROM = { original_tag = ${LOL} }` }, { factor: 0, when: 'NOT = { has_political_power > 60 }' }] } },
+      ai: { base: 3, mods: [{ add: 6, when: `FROM = { original_tag = ${LOL} }` }, { add: 3, when: 'FROM = { has_country_flag = zin_region_islands_of_the_south }' }, { factor: 0, when: 'NOT = { has_political_power > 60 }' }] } },
     { id: 'zin_sun_ask_timber', cat: 'zin_sun_counsel', icon: 'GFX_idea_zin_timber_mill', allowed: onlyGala,
-      available: `NOT = { has_idea = zin_sun_council_timber }`, ...counselCost(N.timber_spend), days_re_enable: N.timber_days,
+      available: `NOT = { has_idea = zin_sun_council_timber }\n${counselNeed(N.timber_need)}`, ...counselCost(N.timber_spend), days_re_enable: N.timber_days,
       complete_effect: `${call('zin_sun_add_gala_counsel', { value: -N.timber_spend })}\nadd_timed_idea = { idea = zin_sun_council_timber days = ${N.timber_days} }`,
-      ai: { base: 2, mods: [{ factor: 0, when: 'NOT = { check_variable = { zin_gala_counsel > 55 } }' }] } },
+      ai: { base: 2, mods: [{ factor: 0, when: `NOT = { check_variable = { zin_gala_counsel > ${num(N.timber_need + N.ai_counsel_reserve - 0.01)} } }` }] } },
     { id: 'zin_sun_ask_sun_guard', cat: 'zin_sun_counsel', icon: 'GFX_idea_zin_pass_fort', allowed: onlyGala,
-      available: `OR = {\n  check_variable = { global.zin_gathering_dark > ${num(N.guard_dark - 0.01)} }\n  has_war = yes\n}\nany_country = { has_country_flag = zin_sun_council_president }`, ...counselCost(N.guard_spend), days_re_enable: N.guard_cooldown,
+      available: `OR = {\n  check_variable = { global.zin_gathering_dark > ${num(N.guard_dark - 0.01)} }\n  has_war = yes\n}\nany_country = { has_country_flag = zin_sun_council_president }\n${counselNeed(N.guard_need)}`, ...counselCost(N.guard_spend), days_re_enable: N.guard_cooldown,
       complete_effect: `${call('zin_sun_add_gala_counsel', { value: -N.guard_spend })}\nrandom_country = {\n  limit = { has_country_flag = zin_sun_council_president }\n  country_event = { id = zin_sun.6 }\n}`,
       ai: { base: 0, mods: [{ add: 10, when: `OR = {\n  check_variable = { global.zin_gathering_dark > ${num(N.guard_dark - 0.01)} }\n  has_war = yes\n}` }] } },
     { id: 'zin_sun_speak_quarrel', cat: 'zin_sun_counsel', icon: 'GFX_idea_zin_olive_branch', allowed: onlyGala,
       target_root_trigger: 'has_country_flag = zin_gala_mediator',
-      target_trigger: `FROM = {\n  zin_sun_is_sunhot_realm = yes\n  any_other_country = {\n    zin_sun_is_sunhot_realm = yes\n    has_opinion = { target = PREV value < 0 }\n  }\n}`,
+      target_trigger: `FROM = {\n  zin_sun_is_sunhot_realm = yes\n${ind(1, fmt(quarrelPair))}\n}`,
       ...counselCost(N.quarrel_spend), days_re_enable: N.quarrel_cooldown,
-      complete_effect: `${call('zin_sun_add_gala_counsel', { value: -N.quarrel_spend })}\nFROM = {\n  random_other_country = {\n    limit = {\n      zin_sun_is_sunhot_realm = yes\n      has_opinion = { target = PREV value < 0 }\n    }\n    set_temp_variable = { zin_arg_target = PREV }\n    zin_elves_goodwill = yes\n  }\n}\n${call('zin_sun_add_concord', { value: N.quarrel_concord })}`,
-      ai: { base: 2, mods: [{ factor: 0, when: 'NOT = { check_variable = { zin_gala_counsel > 35 } }' }] } },
+      complete_effect: `${call('zin_sun_add_gala_counsel', { value: -N.quarrel_spend })}\nFROM = {\n  if = {\n    limit = {\n      original_tag = ${ELVANA}\n      country_exists = ${IGARA}\n    }\n${ind(2, fmt(goodwillWith(IGARA)))}\n  }\n  else_if = {\n    limit = {\n      original_tag = ${IGARA}\n      country_exists = ${ELVANA}\n    }\n${ind(2, fmt(goodwillWith(ELVANA)))}\n  }\n  else = {\n    random_other_country = {\n      limit = {\n        zin_sun_is_sunhot_realm = yes\n        has_opinion = { target = PREV value < 0 }\n      }\n      set_temp_variable = { zin_arg_target = PREV }\n      zin_elves_goodwill = yes\n    }\n  }\n}\n${call('zin_sun_add_concord', { value: N.quarrel_concord })}`,
+      ai: { base: 2, mods: [{ factor: 0, when: `NOT = { check_variable = { zin_gala_counsel > ${num(N.quarrel_spend + N.ai_counsel_reserve - 0.01)} } }` }] } },
     { id: 'zin_sun_look_mirror', cat: 'zin_sun_mirror', icon: 'GFX_idea_zin_mirror_rain', allowed: onlyGala,
       visible: 'has_country_flag = zin_gala_mirror_open', available: `zin_sun_mirror_available = yes\ncheck_variable = { global.zin_mirror_clarity > ${num(N.look_clarity - 0.01)} }`, cost: N.look_cost, days_re_enable: N.look_cooldown,
       complete_effect: `set_temp_variable = { zin_arg_sight = 0 }\nzin_sun_mirror_vision = yes`,
-      ai: { base: 0, mods: [{ add: 20, when: 'check_variable = { global.zin_mirror_clarity > 49.99 }' }] } },
-    sendWord('', N.warn_cost, `has_country_flag = zin_gala_mirror_open\nNOT = {\n  has_country_flag = zin_gala_share_sight\n  has_country_flag = zin_gala_kings_warning\n}`),
-    sendWord('_half', N.warn_cost - N.warn_discount, `has_country_flag = zin_gala_mirror_open\nOR = {\n  AND = {\n    has_country_flag = zin_gala_share_sight\n    NOT = { has_country_flag = zin_gala_kings_warning }\n  }\n  AND = {\n    has_country_flag = zin_gala_kings_warning\n    NOT = { has_country_flag = zin_gala_share_sight }\n  }\n}`, 'zin_sun_send_word'),
-    sendWord('_free', Math.max(0, N.warn_cost - 2 * N.warn_discount), `has_country_flag = zin_gala_mirror_open\nhas_country_flag = zin_gala_share_sight\nhas_country_flag = zin_gala_kings_warning`, 'zin_sun_send_word'),
+      ai: { base: 0, mods: [{ add: 20, when: `check_variable = { global.zin_mirror_clarity > ${num(N.ai_look_clarity - 0.01)} }` }] } },
+    sendWord('', N.warn_cost, `NOT = { ${flags.share} }\nNOT = { ${flags.warn} }`),
+    sendWord('_half', N.warn_cost - N.warn_discount, `OR = {\n  AND = {\n    ${flags.share}\n    NOT = { ${flags.warn} }\n  }\n  AND = {\n    ${flags.warn}\n    NOT = { ${flags.share} }\n  }\n}`, 'zin_sun_send_word'),
+    sendWord('_free', Math.max(0, N.warn_cost - 2 * N.warn_discount), `${flags.share}\n${flags.warn}`, 'zin_sun_send_word'),
     { id: 'zin_sun_old_lords', cat: 'zin_sun_mirror', icon: 'GFX_idea_zin_forest_ancient', allowed: onlyGala,
-      available: `OR = {\n  has_global_flag = zin_zol_rising\n  check_variable = { global.zin_gathering_dark > ${num(N.old_lords_dark - 0.01)} }\n}\ncheck_variable = { zin_gala_old_lords < 5 }\nNOT = { has_global_flag = zin_lorien_dead }`, cost: N.old_lords_cost, days_re_enable: N.old_lords_cooldown,
+      available: `OR = {\n  has_global_flag = zin_zol_rising\n  check_variable = { global.zin_gathering_dark > ${num(N.old_lords_dark - 0.01)} }\n}\ncheck_variable = { zin_gala_old_lords < ${N.old_lords_max} }\nNOT = { has_global_flag = zin_lorien_dead }`, cost: N.old_lords_cost, days_re_enable: N.old_lords_cooldown,
       complete_effect: call('zin_sun_add_old_lords', { value: 1 }),
       ai: { base: 1, mods: [{ add: 100, when: 'has_global_flag = zin_zol_rising' }] } },
+    // On the historical path the Noon League is never raised (acceptance 7): the AI weight is 0 there.
     { id: 'zin_sun_raise_league', cat: 'zin_sun_council', icon: 'GFX_idea_zin_banner_league', allowed: 'always = yes',
-      available: `zin_sun_league_needed = yes\ncheck_variable = { global.zin_sun_concord > ${num(N.league_concord - 0.01)} }\nNOT = { has_global_flag = zin_sun_noon_league }\nis_in_faction = no`, cost: N.league_cost,
+      available: `has_country_flag = zin_sun_council_president\nzin_sun_league_needed = yes\ncheck_variable = { global.zin_sun_concord > ${num(N.league_concord - 0.01)} }\nNOT = { has_global_flag = zin_sun_noon_league }\nis_in_faction = no`, cost: N.league_cost,
       complete_effect: 'zin_sun_form_noon_league = yes',
-      ai: { base: 0, mods: [{ add: 100, when: 'zin_sun_league_needed = yes' }] } },
+      ai: { base: 0, mods: [{ add: 100, when: 'zin_sun_league_needed = yes' }, { factor: 0, when: 'zin_rules_is_historical = yes' }] } },
   ];
   const byCat = new Map();
   for (const d of decisionsList) {
@@ -568,33 +599,40 @@ ${ind(2, call('zin_sun_add_concord', { value: N.concord_rally }))}
 
   // ------------------------------------------------------------------------------------------------ events
   const eventsList = [];
-  const gift = id => ({ id, kind: 'country_event' });
   eventsList.push({ id: 'zin_sun.5', picture: 'GFX_zin_evt_gala_court', options: [{ key: 'a' }] });
+  // The Speaker answers Gala (section 3): 80 to watch, 10 while at war or ill-disposed to the Gala Elves.
+  const guardStrained = `OR = {\n  has_war = yes\n  has_opinion = { target = ${GALA} value < 0 }\n}`;
   eventsList.push({ id: 'zin_sun.6', picture: 'GFX_zin_evt_gala_court', options: [
-    { key: 'a', ai: { base: 80, mods: [{ factor: 0.125, when: 'OR = {\n  has_war = yes\n  has_opinion = { target = FROM value < 0 }\n}' }] }, effect: 'give_guarantee = FROM' },
-    { key: 'b', ai: 20, effect: call('zin_sun_add_gala_counsel', { value: N.guard_refund }) },
+    { key: 'a', ai: { base: N.ai_guard_watch, mods: [{ factor: 0, when: guardStrained }, { add: N.ai_guard_watch_strained, when: guardStrained }] }, effect: `give_guarantee = ${GALA}` },
+    { key: 'b', ai: { base: 100 - N.ai_guard_watch, mods: [{ factor: 0, when: guardStrained }, { add: 100 - N.ai_guard_watch_strained, when: guardStrained }] }, effect: call('zin_sun_add_gala_counsel', { value: N.guard_refund }) },
   ] });
   const sightDescs = [{ key: 'rain', code: 0 }, ...SIGHTS.map(s => ({ key: s.key, code: s.code }))];
   eventsList.push({ id: 'zin_sun.10', picture: 'GFX_zin_evt_gala_court', descVariants: sightDescs.map(s => ({ key: s.key, trigger: `check_variable = { zin_sun_last_sight = ${s.code} }` })), options: [{ key: 'a' }] });
+  // AI heeding (section 5): heed = 10 + opinion of the Gala Elves / 2 (steps of 20), +30 for the heeding and elven realms; Aenor's
+  // court 10 before the Golden King's death and 0 once Aurevan is crowned. The dismissal mirrors every term, so the two always sum to 100.
+  const H = N.ai_heed;
+  const heedTerms = [
+    { add: H.realm, when: `OR = {\n${tagList(heeders, 1)}\n  zin_sun_is_elven_realm = yes\n}` },
+    ...H.opinion_steps.map(v => ({ add: H.opinion_step, when: `has_opinion = { target = ${GALA} value > ${num(v - 1)} }` })),
+    { add: -H.opinion_step, when: `has_opinion = { target = ${GALA} value < ${num(-H.opinion_steps[0] + 1)} }` },
+  ];
+  const aenorCourt = `original_tag = ${AENOR}\nNOT = { has_global_flag = zin_golden_king_dead }`, aenorCrowned = `original_tag = ${AENOR}\nhas_global_flag = zin_aurevan_crowned`;
+  const heedAi = { base: H.base, mods: [...heedTerms, { factor: 0, when: aenorCourt }, { add: H.aenor_court, when: aenorCourt }, { factor: 0, when: aenorCrowned }] };
+  const dismissAi = { base: 100 - H.base, mods: [...heedTerms.map(m => ({ add: -m.add, when: m.when })), { factor: 0, when: aenorCourt }, { add: 100 - H.aenor_court, when: aenorCourt }, { factor: 0, when: aenorCrowned }, { add: 100, when: aenorCrowned }] };
   eventsList.push({ id: 'zin_sun.20', picture: 'GFX_zin_evt_gala_court', descVariants: SIGHTS.map(s => ({ key: s.key, trigger: `check_variable = { zin_sun_warned_sight = ${s.code} }` })), options: [
-    { key: 'a', ai: { base: 60 }, effect: `${GALA} = { add_opinion_modifier = { target = ROOT modifier = zin_opinion_warning_dismissed } }` },
-    { key: 'b', ai: { base: 10, mods: [
-      { add: 30, when: `OR = {\n${[...heeders].map(t => `  original_tag = ${t}`).join('\n')}\n}` },
-      { add: 10, when: `has_opinion = { target = ${GALA} value > 24 }` },
-      { add: 10, when: `has_opinion = { target = ${GALA} value > 49 }` },
-      { add: -15, when: `has_opinion = { target = ${GALA} value < -24 }` },
-      { factor: 0.5, when: `original_tag = ${AENOR}\nNOT = { has_global_flag = zin_golden_king_dead }` },
-      { factor: 0, when: `original_tag = ${AENOR}\nhas_global_flag = zin_aurevan_crowned` },
-    ] }, effect: 'zin_sun_heed_warning = yes' },
+    { key: 'a', ai: dismissAi, effect: `${GALA} = { add_opinion_modifier = { target = ROOT modifier = zin_opinion_warning_dismissed } }` },
+    { key: 'b', ai: heedAi, effect: 'zin_sun_heed_warning = yes' },
   ] });
   eventsList.push({ id: 'zin_sun.21', picture: 'GFX_zin_evt_gala_court', options: [{ key: 'a' }] });
   eventsList.push({ id: 'zin_sun.30', kind: 'news_event', picture: 'GFX_zin_news_generic_war', show_major: `OR = {\n  zin_sun_is_sunhot_realm = yes\n  original_tag = ${GALA}\n}`, options: [{ key: 'a' }] });
+  // AI join = 40 + concord / 2, in steps of 20 concord; keeping apart takes the rest of 100 (section 4).
+  const J = N.ai_join, joinSteps = J.concord_steps.map(v => ({ add: J.step, when: `check_variable = { global.zin_sun_concord > ${num(v)} }` }));
   eventsList.push({ id: 'zin_sun.31', picture: 'GFX_zin_evt_generic_war', options: [
-    { key: 'a', ai: { base: 20 }, effect: '' },
-    { key: 'b', ai: { base: 40, mods: [10, 30, 50, 70, 90].map(v => ({ add: 10, when: `check_variable = { global.zin_sun_concord > ${v} }` })) }, effect: 'FROM = { add_to_faction = ROOT }' },
+    { key: 'a', ai: { base: 100 - J.base, mods: joinSteps.map(m => ({ add: -m.add, when: m.when })) }, effect: '' },
+    { key: 'b', ai: { base: J.base, mods: joinSteps }, effect: 'FROM = { add_to_faction = ROOT }' },
   ] });
   eventsList.push({ id: 'zin_sun.35', picture: 'GFX_zin_evt_generic_court', descVariants: [{ key: 'gala', trigger: `original_tag = ${GALA}` }, { key: 'occupier', trigger: `NOT = { original_tag = ${GALA} }` }], options: [{ key: 'a' }] });
-  eventsList.push({ id: 'zin_sun.36', hidden: true, immediate: `every_state = {\n  limit = {\n    zin_is_site_gala = yes\n    controller = { zin_sun_is_elven_realm = no }\n  }\n  if = {\n    limit = { NOT = { has_global_flag = zin_mirror_stilled } }\n    set_global_flag = zin_mirror_stilled\n    ROOT = { country_event = { id = zin_sun.35 } }\n    CONTROLLER = { country_event = { id = zin_sun.35 } }\n  }\n}` });
+  eventsList.push({ id: 'zin_sun.36', hidden: true, immediate: `every_state = {\n  limit = {\n    zin_is_site_gala = yes\n    controller = { zin_sun_is_elven_realm = no }\n  }\n  if = {\n    limit = { NOT = { has_global_flag = zin_mirror_stilled } }\n    set_global_flag = zin_mirror_stilled\n    ROOT = { country_event = { id = zin_sun.35 } }\n    controller = { country_event = { id = zin_sun.35 } }\n  }\n}` });
   const eventTexts = [];
   for (const e of eventsList) {
     if (!pictures.has(e.picture) && !e.hidden) throw new Error(`Event ${e.id}: picture ${e.picture} is not in the catalog`);
@@ -640,10 +678,10 @@ on_actions = {
 }`);
 
   // ------------------------------------------------------------------------------------------------ AI strategies
-  const others = realms.concat(sunCountries.filter(c => !realms.includes(c)));
+
   const strategies = [
     ...[GALA, LOL].map(t => `\tai_strategy = {\n\t\ttype = befriend\n\t\tid = "${t}"\n\t\tvalue = ${N.ai_befriend}\n\t}`),
-    ...others.map(c => `\tai_strategy = {\n\t\ttype = conquer\n\t\tid = "${c.tag}"\n\t\tvalue = ${N.ai_conquer}\n\t}`),
+    ...sunCountries.map(c => `\tai_strategy = {\n\t\ttype = conquer\n\t\tid = "${c.tag}"\n\t\tvalue = ${N.ai_conquer}\n\t}`),
   ];
   put('common/ai_strategy/zin_sun.txt', `${HEADER('mech_sun', SPEC)}\n# The Sunhot AI never starts a war: it befriends Gala and the Lands of Light and will conquer no country of its own region.\nzin_sun_peaceful_realms = {\n\tenable = { zin_sun_is_sunhot_realm = yes }\n\tabort_when_not_enabled = yes\n${strategies.join('\n')}\n}`);
   defs.aiStrategies.push('zin_sun_peaceful_realms');

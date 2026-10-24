@@ -1,43 +1,267 @@
 {
   "schema": 1,
   "owner": "docs/specs/04_mechanics/cold_lands.md",
-  "note": "Builder data of tools/content/modules/mech_cold.mjs. Every number is a design target (spec: proposed); every player-visible text is Aoaz's own. Names resolve to tags through countries.json.",
+  "note": "Builder data of tools/content/modules/mech_cold.mjs. Every number is a design target (spec: proposed); every player-visible text is Aoaz's own. Names resolve to tags through countries.json. Text placeholders: {tag:<country name>} becomes the country's name in game, {n:<number key>} the number, {w:<number key>} the number in words, {month:<1-12>} the calendar's month name.",
   "roster": {
     "scan": "Cold Lands",
     "expectedCountries": 31,
-    "core": ["Coldor", "Isengard", "Yeldenne", "Horidor", "Windwaith", "Yeti Lands", "Titanos"],
-    "others": ["Gunwaith", "Aenor"],
-    "leans": { "Horidor": 60, "Holdon": 10, "Wonderland": 5, "Fearno": 0, "Windwaith": -5, "Yeti Lands": 0, "Titanos": 0 },
+    "core": [
+      "Coldor",
+      "Isengard",
+      "Yeldenne",
+      "Horidor",
+      "Windwaith",
+      "Yeti Lands",
+      "Titanos"
+    ],
+    "others": [
+      "Gunwaith",
+      "Aenor"
+    ],
+    "leans": {
+      "Horidor": 60,
+      "Holdon": 10,
+      "Wonderland": 5,
+      "Fearno": 0,
+      "Windwaith": -5,
+      "Yeti Lands": 0,
+      "Titanos": 0
+    },
     "defaultLean": 5,
     "borderLean": -20
   },
   "numbers": {
-    "dates": { "march_open": [1751, 3, 1], "march_historical": [1752, 3, 1], "timber_1": [1753, 3, 1], "timber_2": [1754, 3, 1] },
-    "season_years": [1748, 1800],
-    "defiance_start": 70, "swear_defiance": 30, "march_dark": 15, "march_defiance": 80,
-    "reach_weight_crown": 1.5, "reach_weight_member": 1, "reach_divisor": 150, "reach_pp_divisor": 400, "reach_winter_divisor": 500,
-    "reach_defiance": 40, "defiance_reach": 0.3, "defiance_foreign_war": 0.3, "defiance_bread": 0.5, "court_defiance": 80, "court_lean": 0.5,
-    "march_width": 80, "march_days": 45, "march_provinces": 4,
-    "march_defiance_coldor_win": -25, "march_defiance_isengard_win": 15, "march_war_support": 0.05, "march_stability": 0.05,
-    "charter_refused": 5, "marriage_defiance": 60, "marriage_refused": 5, "marriage_accepted": 15,
+    "dates": {
+      "march_open": [
+        1751,
+        3,
+        1
+      ],
+      "march_historical": [
+        1752,
+        3,
+        1
+      ],
+      "timber_1": [
+        1753,
+        3,
+        1
+      ],
+      "timber_2": [
+        1754,
+        3,
+        1
+      ]
+    },
+    "defiance_start": 70,
+    "swear_defiance": 30,
+    "march_dark": 15,
+    "march_defiance": 80,
+    "reach_weight_crown": 1.5,
+    "reach_weight_member": 1,
+    "reach_divisor": 150,
+    "reach_pp_divisor": 400,
+    "reach_winter_divisor": 500,
+    "reach_defiance": 40,
+    "defiance_reach": 0.3,
+    "defiance_foreign_war": 0.3,
+    "defiance_bread": 0.5,
+    "court_defiance": 80,
+    "court_lean": 0.5,
+    "march_width": 80,
+    "march_days": 45,
+    "march_provinces": 4,
+    "march_defiance_coldor_win": -25,
+    "march_defiance_isengard_win": 15,
+    "march_war_support": 0.05,
+    "march_stability": 0.05,
+    "charter_refused": 5,
+    "marriage_defiance": 60,
+    "marriage_refused": 5,
+    "marriage_accepted": 15,
     "pact_lean": 10,
-    "historical_winters": { "1748": 1, "1749": 0, "1750": 1, "1751": 2, "1752": 1, "1753": 0, "1754": 1, "1755": 2, "1756": 1, "1757": 0, "1758": 1, "1759": 0 },
-    "winter_odds": [40, 40, 20],
-    "winter_modifiers": { "hard": [0.1, -0.02, -0.05], "bitter": [0.25, -0.05, -0.1] },
-    "feed_lean": 15, "feed_stability": 0.03, "isengard_feed_lean": 15, "moot_lean": 5,
-    "raiders_mtth": 60, "raiders_cost": 25, "raiders_xp": 5, "forts_mtth": 365,
-    "decline_lean": 10, "refuse_lean": 20, "guard_wards": 5,
-    "neck_road_days": 730, "timber_pp": 40, "timber_fleet": 5, "timber_cooldown": 180,
-    "chart_lean": 5, "wardens_regard": 10, "wardens_renown": 2,
-    "white_manpower": 30000, "white_equipment": 3000, "white_xp": 0.3, "white_divisions": 3, "white_regard": 15,
-    "envoys_cost": 25, "envoys_cost_cheap": 15, "envoys_lean": 10, "envoys_cooldown": 120,
-    "feed_cost": 50, "feed_cost_stores": 25, "feed_cooldown": 30,
-    "invite_lean": 50, "invite_cost": 25, "invite_cooldown": 180,
-    "protect_lean": 80, "protect_reach": 40, "protect_cost": 100, "protect_cooldown": 365,
-    "bread_cost": 75, "bread_cooldown": 200, "bread_days": 90,
-    "gifts_cost": 25, "gifts_lean": 10, "gifts_cooldown": 120, "isengard_feed_cost": 50,
-    "renew_cost": 50, "renew_cooldown": 180,
-    "ai_befriend_horidor": 50, "ai_antagonize_isengard": 20, "ai_isengard_antagonize": 30, "ai_clan_befriend": 25
+    "historical_winters": {
+      "1748": 1,
+      "1749": 0,
+      "1750": 1,
+      "1751": 2,
+      "1752": 1,
+      "1753": 0,
+      "1754": 1,
+      "1755": 2,
+      "1756": 1,
+      "1757": 0,
+      "1758": 1,
+      "1759": 0
+    },
+    "winter_odds": [
+      40,
+      40,
+      20
+    ],
+    "winter_modifiers": {
+      "hard": [
+        0.1,
+        -0.02,
+        -0.05
+      ],
+      "bitter": [
+        0.25,
+        -0.05,
+        -0.1
+      ]
+    },
+    "feed_lean": 15,
+    "feed_stability": 0.03,
+    "isengard_feed_lean": 15,
+    "moot_lean": 5,
+    "raiders_mtth": 60,
+    "raiders_cost": 25,
+    "raiders_xp": 5,
+    "forts_mtth": 365,
+    "decline_lean": 10,
+    "refuse_lean": 20,
+    "guard_wards": 5,
+    "neck_road_days": 730,
+    "timber_pp": 40,
+    "timber_fleet": 5,
+    "timber_cooldown": 180,
+    "chart_lean": 5,
+    "wardens_regard": 10,
+    "wardens_renown": 2,
+    "white_manpower": 30000,
+    "white_equipment": 3000,
+    "white_xp": 0.3,
+    "white_divisions": 3,
+    "white_regard": 15,
+    "envoys_cost": 25,
+    "envoys_cost_cheap": 15,
+    "envoys_lean": 10,
+    "envoys_cooldown": 120,
+    "feed_cost": 50,
+    "feed_cost_stores": 25,
+    "feed_cooldown": 30,
+    "invite_lean": 50,
+    "invite_cost": 25,
+    "invite_cooldown": 180,
+    "protect_lean": 80,
+    "protect_reach": 40,
+    "protect_cost": 100,
+    "protect_cooldown": 365,
+    "bread_cost": 75,
+    "bread_cooldown": 200,
+    "bread_days": 90,
+    "gifts_cost": 25,
+    "gifts_lean": 10,
+    "gifts_cooldown": 120,
+    "isengard_feed_cost": 50,
+    "renew_cost": 50,
+    "renew_cooldown": 180,
+    "ai_befriend_horidor": 50,
+    "ai_antagonize_isengard": 20,
+    "ai_isengard_antagonize": 30,
+    "ai_clan_befriend": 25,
+    "charter_offered": 5,
+    "pact_refused": 5,
+    "renew_wait": 180,
+    "raiders_lean": 10,
+    "compact_lean": 20,
+    "compact_refused": 10,
+    "runner_guard_days": 25,
+    "far_ice_supplies": 0.3,
+    "far_ice_attrition": 0.1,
+    "far_ice_charted_share": 0.5,
+    "opinion_accord_kin": 15,
+    "opinion_fed_us": 15,
+    "opinion_hall_friend": 20,
+    "opinion_temple_swords": 10,
+    "opinion_marriage_kin": 20,
+    "opinion_road_refused": 10
+  },
+  "seasons": {
+    "mistfall": [
+      11,
+      1
+    ],
+    "deepwinter": [
+      1,
+      1
+    ],
+    "thaw_after": 120,
+    "year_days": 365,
+    "catch_up_grace": 2
+  },
+  "ai": {
+    "envoys": {
+      "base": 1,
+      "lean_steps": [
+        [
+          40,
+          12
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "min_pp": 40
+    },
+    "feed": {
+      "lean_min": -20,
+      "lean_max": 50,
+      "weight": 20,
+      "min_pp": 100
+    },
+    "invite": {
+      "lean": 60,
+      "weight": 20,
+      "min_pp": 60
+    },
+    "protect": {
+      "lean": 85,
+      "weight": 10,
+      "min_pp": 150
+    },
+    "bread": {
+      "pp": 120,
+      "weight": 12
+    },
+    "gifts": {
+      "base": 1,
+      "neighbour": 10,
+      "min_pp": 50
+    },
+    "isengard_feed": {
+      "neighbour": 10,
+      "pp": 100,
+      "pp_weight": 6
+    },
+    "timber": {
+      "base": 3,
+      "dated": 200
+    },
+    "renew": {
+      "base": 4,
+      "min_pp": 80
+    },
+    "raiders": [
+      30,
+      40,
+      30
+    ],
+    "join_step": 10,
+    "protect_offset": 40,
+    "protect_war_factor": 2,
+    "pact_base": 60,
+    "pact_lean_divisor": 2,
+    "pact_open_factor": 2,
+    "hearth": 100,
+    "marriage": 100,
+    "charter": 100
   },
   "text": {
     "zin_cold_accord": "The Northern Accord",
@@ -46,31 +270,37 @@
     "zin_cold_isengard_desc": "The warlord of Isengard cannot match the Winter Crown's granaries, so he matches its gifts. Every clan that eats at Isengard's table is a clan that will not kneel at Fandanar's. Defiance stands at §Y[?zin_cold_isengard_defiance|0]§! of a hundred.",
     "zin_cold_trade": "Timber and the Old Pacts",
     "zin_cold_trade_desc": "The north sells what the south has burned and keeps faith with peoples who owe no crown anything. Both take patience.",
-
     "zin_cold_send_envoys": "Send Envoys to a Steading",
-    "zin_cold_send_envoys_desc": "A rider with the Winter Crown's seal, gifts of salt and iron, and the Queen's greeting. The steading's headman listens, eats, and leans a little closer to Fandanar. The lean rises by ten.",
+    "zin_cold_send_envoys_desc": "A rider with the Winter Crown's seal, gifts of salt and iron, and the Queen's greeting. The steading's headman listens, eats, and leans a little closer to Fandanar. The lean rises by {w:envoys_lean}.",
     "zin_cold_feed_the_steadings": "Feed the Steadings",
-    "zin_cold_feed_the_steadings_desc": "In a hard winter Fandanar opens its granaries to a steading and sends carts over the snow. The steading's calm improves and its lean toward Fandanar rises by fifteen. At the Winter Moot it will be remembered who fed whom.",
+    "zin_cold_feed_the_steadings_desc": "In a hard winter Fandanar opens its granaries to a steading and sends carts over the snow. The steading's calm improves and its lean toward Fandanar rises by {w:feed_lean}. At the Winter Moot it will be remembered who fed whom.",
     "zin_cold_invite_to_accord": "Invite to the Accord",
     "zin_cold_invite_to_accord_desc": "A steading that already leans to Fandanar is asked to take a seat in the Northern Accord. It may decline; the invitation is never forgotten either way.",
     "zin_cold_offer_protection": "Offer the Crown's Protection",
     "zin_cold_offer_protection_desc": "The Winter Crown offers a realm that leans far toward Fandanar its banners on the passes and its granaries in lean years. The price is a herald in the hall who speaks last at every council. A realm that accepts becomes a vassal.",
     "zin_cold_bread_for_isengard": "Bread for Isengard",
-    "zin_cold_bread_for_isengard_desc": "In a hard winter Fandanar sends grain over the March Forts to the people of Isengard, who are cold and hungry and do not much care whose carts they are. For ninety days Isengard's calm improves, and its defiance wears down by the day.",
+    "zin_cold_bread_for_isengard_desc": "In a hard winter Fandanar sends grain over the March Forts to the people of Isengard, who are cold and hungry and do not much care whose carts they are. For {w:bread_days} days Isengard's calm improves, and its defiance wears down by the day.",
     "zin_cold_winter_gifts": "Winter Gifts",
-    "zin_cold_winter_gifts_desc": "Isengard's riders carry furs, mead and a warlord's compliments to a steading. The steading remembers who came first. Its lean toward Fandanar falls by ten.",
+    "zin_cold_winter_gifts_desc": "Isengard's riders carry furs, mead and a warlord's compliments to a steading. The steading remembers who came first. Its lean toward Fandanar falls by {w:gifts_lean}.",
     "zin_cold_isengard_feeds": "Isengard Feeds the Steadings",
-    "zin_cold_isengard_feeds_desc": "Isengard cannot feed everyone, but it can feed the steadings that matter. In a hard winter the warlord opens his stores to a neighbour, whose lean away from Fandanar grows by fifteen.",
+    "zin_cold_isengard_feeds_desc": "Isengard cannot feed everyone, but it can feed the steadings that matter. In a hard winter the warlord opens his stores to a neighbour, whose lean away from Fandanar grows by {w:isengard_feed_lean}.",
     "zin_cold_sell_timber_west": "Sell Timber to the West",
-    "zin_cold_sell_timber_west_desc": "The West Lands are building ships, and the northern forests have the timber. A rafted cargo of seasoned logs goes south for gold, and the West's fleet grows by five. The Crown earns forty Authority.",
+    "zin_cold_sell_timber_west_desc": "The West Lands are building ships, and the northern forests have the timber. A rafted cargo of seasoned logs goes south for gold, and the West's fleet grows by {w:timber_fleet}. The Crown earns {w:timber_pp} Authority.",
     "zin_cold_renew_old_pact": "Renew the Old Pact",
     "zin_cold_renew_old_pact_desc": "A refused offer may be made again after a season of silence, with new gifts and a humbler speech. The old peoples do not answer quickly, and they do not answer to threats.",
-
     "zin_cold_tt_lean_up": "The target's lean toward Fandanar rises.",
     "zin_cold_tt_lean_down": "The target's lean toward Fandanar falls.",
-    "zin_cold_tt_feed": "The target is fed this winter: its lean toward Fandanar rises by §Y15§!, its calm improves, and the Winter Moot will remember it.",
-    "zin_cold_tt_isengard_feed": "The target is fed by Isengard this winter: its lean toward Isengard grows by §Y15§!, its calm improves, and the Winter Moot will remember it.",
-
+    "zin_cold_tt_feed": "The target is fed this winter: its lean toward Fandanar rises by §Y{n:feed_lean}§!, its calm improves, and the Winter Moot will remember it.",
+    "zin_cold_tt_isengard_feed": "The target is fed by Isengard this winter: its lean toward Isengard grows by §Y{n:isengard_feed_lean}§!, its calm improves, and the Winter Moot will remember it.",
+    "zin_cold_tt_room_to_lean": "The target does not yet lean wholly toward Fandanar.",
+    "zin_cold_tt_room_to_lean_isengard": "The target does not yet lean wholly toward Isengard.",
+    "zin_cold_tt_hard_winter": "A hard or bitter winter lies on the Cold Lands.",
+    "zin_cold_tt_not_fed": "The target has not been fed this winter.",
+    "zin_cold_tt_invite_lean": "The target leans at least §Y{n:invite_lean}§! toward Fandanar.",
+    "zin_cold_tt_protect_lean": "The target leans at least §Y{n:protect_lean}§! toward Fandanar.",
+    "zin_cold_tt_protect_reach": "The Accord's reach is at least §Y{n:protect_reach}§!.",
+    "zin_cold_tt_west_ready": "The West's Ford Council sits, or the West has chosen its course.",
+    "zin_cold_tt_pact_waiting": "A season of silence has passed since the last refusal.",
     "zin_cold_bread_from_fandanar": "Bread From Fandanar",
     "zin_cold_bread_from_fandanar_desc": "Carts of Fandanar's grain have crossed the March Forts. Nobody in Isengard says thank you; everybody eats.",
     "zin_cold_sworn_to_the_accord": "Sworn to the Accord",
@@ -78,103 +308,85 @@
     "zin_cold_neck_road_trade": "The Neck Road",
     "zin_cold_neck_road_trade_desc": "Caravans of the north and the west use the road over the broad neck of land, and both sides take a share of the tolls.",
     "zin_cold_harbour_compact": "The Harbour Compact",
-    "zin_cold_harbour_compact_desc": "Coldor's ports and Windwaith's share lights, steersmen and charts, and neither undercuts the other's tolls.",
+    "zin_cold_harbour_compact_desc": "Coldor's ports and {tag:Windwaith}'s share lights, steersmen and charts, and neither undercuts the other's tolls.",
     "zin_cold_hall_guard": "A Guard Outside the Hall",
     "zin_cold_hall_guard_desc": "Coldor keeps a company of spears outside the hall of Yeldenne. They guard the road and the gate. They have never been through the door.",
     "zin_cold_far_ice_charted_idea": "The Far Ice Charted",
     "zin_cold_far_ice_charted_idea_desc": "Wardens have walked the far north-western ice and drawn what they found. The cold is no kinder, but the crossings are marked.",
-
     "zin_cold_reach_mod": "The Accord's Reach",
     "zin_cold_reach_mod_desc": "The more of the Cold Lands the Accord holds, the more Fandanar's word is worth and the better its armies endure the cold.",
     "zin_cold_winter_mod": "The Long Winter",
     "zin_cold_winter_mod_desc": "The winter lies on the Cold Lands. Armies freeze, steadings go hungry, and calm wears thin. A realm with winter stores bears half of it.",
     "zin_cold_far_ice": "The Far Ice",
     "zin_cold_far_ice_desc": "The north-western ice is empty, windy and very far from any supply cart.",
-
     "zin_cold_accord_kin": "Sworn in the Accord",
     "zin_cold_fed_us": "Fed Us in the Winter",
     "zin_cold_hall_friend": "Friend of the Hall",
     "zin_cold_temple_swords": "Temple Swords Left Unchallenged",
     "zin_cold_marriage_kin": "Married Across the March",
     "zin_cold_road_refused": "Closed the Neck Road",
-
     "zin_cold.11.t": "The Winter Comes",
     "zin_cold.11.d_mild": "The first snow came late and lay light. The steadings will eat what they stored, and the herders say it is a kind winter, which they say with suspicion.",
     "zin_cold.11.d_hard": "The snow came early and deep, and the passes closed behind it. Granaries are counted twice. A hard winter is the ordinary trouble of the north, and the north is practised at it.",
     "zin_cold.11.d_bitter": "The cold came down like a gate shutting. Wells froze to the bottom, and wolves took sheep from the byres. The old people say they have seen one such winter in their lives, and that it was long.",
     "zin_cold.11.a": "We have survived worse.",
-
     "zin_cold.12.t": "Raiders from the Snow",
     "zin_cold.12.d": "A hungry clan has come down out of the hills with torches and empty sacks. Two barns are stripped, and a child's ewe has gone with them. The headmen of the steadings ask what the Crown will do about it, and the Crown knows that whichever answer it gives, the clan will remember.",
     "zin_cold.12.a": "Pay them off.",
     "zin_cold.12.b": "Ride them down.",
     "zin_cold.12.c": "Feed them.",
-
     "zin_cold.21.t": "The Winter Moot",
-    "zin_cold.21.d": "On the first day of Deepwinter the headmen met at the moot stones and counted the winter's debts: who was fed, and by whom. Those who ate from Fandanar's stores remembered Fandanar. Those who ate from Isengard's remembered Isengard. The count is kept, because nobody forgets it.",
+    "zin_cold.21.d": "On the first day of {month:1} the headmen met at the moot stones and counted the winter's debts: who was fed, and by whom. Those who ate from Fandanar's stores remembered Fandanar. Those who ate from Isengard's remembered Isengard. The count is kept, because nobody forgets it.",
     "zin_cold.21.a": "The count is kept.",
-
     "zin_cold.30.t": "The Winter Charter",
     "zin_cold.30.d": "Riders from Fandanar bring a charter sealed with the Winter Crown's mark. It asks Isengard to swear to the Northern Accord as one hall among the halls, keeping its warlord, its forts and its own justice. The Accord, they say, is a league and not a crown. The warlord reads it twice, and his counsellors read it three times.",
     "zin_cold.30.a": "Refuse.",
     "zin_cold.30.b": "Swear to the Accord.",
-
     "zin_cold.31.t": "Isengard Rides to the Forts",
     "zin_cold.31.d": "Isengard's banners have been seen at the March Forts, and the warlord's riders say aloud what they want: the high pass, the toll, and an end to the Winter Crown's pretensions. The border is a day's ride from Fandanar's granaries.",
     "zin_cold.31.a": "Meet them at the forts.",
-
     "zin_cold.32.t": "The March Forts",
     "zin_cold.32.d_coldor": "The fighting at the March Forts is over. Coldor's banners hold the pass, and Isengard's warlord has sent riders to ask what terms the Winter Crown would grant.",
     "zin_cold.32.d_isengard": "The fighting at the March Forts is over. Isengard's banners hold the pass, and the Winter Crown has learned the price of its pride.",
     "zin_cold.32.a": "The pass is quiet again.",
-
     "zin_cold.33.t": "A Marriage Across the March",
     "zin_cold.33.d": "Fandanar proposes a marriage between the Queen's house and the warlord's, to be sealed at the March Forts under a truce flag. The warlord's counsellors argue that a bride is a hostage in a better dress. The warlord's mother says she has seen worse alliances.",
     "zin_cold.33.a": "Refuse.",
     "zin_cold.33.b": "Accept.",
-
     "zin_cold.40.t": "An Invitation from Fandanar",
     "zin_cold.40.d": "Fandanar invites us into the Northern Accord: a league of the north under the Winter Crown, with shared watch on the passes and shared stores in bad winters. The herald is courteous. The seat is real. So is the Crown.",
     "zin_cold.40.a": "Decline.",
     "zin_cold.40.b": "Take the seat.",
-
     "zin_cold.41.t": "The Crown's Protection",
     "zin_cold.41.d": "Fandanar offers the Winter Crown's protection: its banners on our passes, its granaries in our lean years. The price is a herald in our hall who speaks last at every council. The headmen are divided between those who would sooner be safe and those who would sooner be asked.",
     "zin_cold.41.a": "Refuse.",
     "zin_cold.41.b": "Accept the protection.",
-
     "zin_cold.50.t": "Hearth and Height",
     "zin_cold.50.d": "The old compact is called. Strangers have crossed into the lands of the Winter Crown, and the people of the hearth remember what was sworn at it. Nobody can make them ride. Nobody has ever needed to.",
     "zin_cold.50.a": "Stay in the snow.",
     "zin_cold.50.b": "Answer the call.",
-
     "zin_cold.51.t": "Envoys at the Hunting Grounds",
     "zin_cold.51.d": "Fandanar's envoys have climbed to the yeti hunting grounds with gifts of salt and iron and a request: that the white hunters leave the Winter Crown's herds alone and take what they need from the south slope. They do not ask for service. Nobody has asked the yeti for service since before the first kings.",
     "zin_cold.51.a": "Turn the envoys away.",
     "zin_cold.51.b": "Accept the truce.",
-
     "zin_cold.52.t": "Envoys at the Frost-King's Hall",
     "zin_cold.52.d": "Envoys from Fandanar have walked three days up the road of the giants to Titanos, bringing barrels and a long speech. They ask that the Crown pay a toll for the passes the giants hold, in return for a hall that is never closed to the Crown's riders. The hall is large and the envoys are small, and the speech is shortened accordingly.",
     "zin_cold.52.a": "Send them home.",
     "zin_cold.52.b": "Take the toll.",
-
     "zin_cold.60.t": "Strangers in the Snow",
     "zin_cold.60.d": "Watchers on the northern coast report a party of pilgrims camped below the headland: forty or so, in temple grey, with too many swords for a pilgrimage and too few prayers. They ask for nothing. They are waiting for a boat, or for weather. Whoever sent them did not send a name.",
     "zin_cold.60.a": "Keep out of it.",
     "zin_cold.60.b": "Warn the castle.",
-
     "zin_cold.61.t": "A Crown Offers a Guard",
     "zin_cold.61.d": "The Winter Crown offers a company of spears to stand outside the hall of Yeldenne, at the gate and on the road, and never to enter. Horos has kept this hall alone for ages. A guard is a courtesy or a claim, depending on who is asking.",
     "zin_cold.61.a": "Refuse.",
     "zin_cold.61.b": "Accept the guard.",
-
     "zin_cold.70.t": "The Neck Road",
-    "zin_cold.70.d": "Gunwaith asks leave for its caravans to use the Neck Road, the old way over the broad neck of land between the north and the west. Salt, horses and gossip would come north; furs and iron would go south. The steadings of the neck would have to be garrisoned, fed and watched.",
+    "zin_cold.70.d": "{tag:Gunwaith} asks leave for its caravans to use the Neck Road, the old way over the broad neck of land between the north and the west. Salt, horses and gossip would come north; furs and iron would go south. The steadings of the neck would have to be garrisoned, fed and watched.",
     "zin_cold.70.a": "Keep it closed.",
     "zin_cold.70.b": "Open the road.",
-
-    "zin_cold.71.t": "The Windwaith Question",
-    "zin_cold.71.d": "Fandanar's harbour-masters propose a compact: Windwaith's ships and Coldor's ports to share lights, steersmen and charts, and neither to undercut the other's tolls. Windwaith's council distrusts any compact signed in a throne room.",
+    "zin_cold.71.t": "The {tag:Windwaith} Question",
+    "zin_cold.71.d": "Fandanar's harbour-masters propose a compact: {tag:Windwaith}'s ships and Coldor's ports to share lights, steersmen and charts, and neither to undercut the other's tolls. {tag:Windwaith}'s council distrusts any compact signed in a throne room.",
     "zin_cold.71.a": "Refuse Fandanar's terms.",
     "zin_cold.71.b": "A Harbour Compact."
   }
