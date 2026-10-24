@@ -6530,6 +6530,38 @@
    "message": "Generic portrait GFX_zin_portrait_sun_elves_male_2 serves 20 characters; the pool sun_elves.male (2 portraits, 30 characters) allows 16.",
    "key": "UNIQ_PORTRAIT_POOL|common/characters/zin_rulers.txt|GFX_zin_portrait_sun_elves_male_2",
    "reason": "Accepted in the first baseline of 19 October 2026: a finding of another spec, recorded when the check landed (docs/specs/08_art_and_assets/05_asset_manifest.md, Implementation status, Baseline gate); not new in integration round 3."
+  },
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_emblem_v1.png",
+   "message": "branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/ (affects 1 shipped file, for example gfx/interface/logo_game.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_emblem_v1.png|branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_emblem_v1.png",
+   "message": "branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ZinLogoCut.png, outside art/source/ (affects 1 shipped file, for example gfx/interface/logo_game.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_emblem_v1.png|branding_emblem_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ZinLogoCut.png, outside art/source/",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_menu_backdrop_v1.png",
+   "message": "branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Backgrounds/ZIN.LOGO.BACKGROUND.png, outside art/source/ (affects 2 shipped files, for example gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_menu_backdrop_v1.png|branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Backgrounds/ZIN.LOGO.BACKGROUND.png, outside ar",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
+  },
+  {
+   "code": "PROV_REF_OUTSIDE",
+   "severity": "error",
+   "path": "art/source/branding/branding_menu_backdrop_v1.png",
+   "message": "branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/ (affects 2 shipped files, for example gfx/interface/zin/loadingscreens/zin_menu_backdrop_small.dds).",
+   "key": "PROV_REF_OUTSIDE|art/source/branding/branding_menu_backdrop_v1.png|branding_menu_backdrop_v1 references C:/Users/klimp/Documents/ZIN/Themed/Logos/ColorfulZinLogo.PNG, outside art/source/",
+   "reason": "R-90 branding: the generation records name the owner's branding originals in C:/Users/klimp/Documents/ZIN/Themed (read-only inputs, hashes in art/source/branding/branding_manifest.json); the originals are not tracked. See docs/design/branding.md."
   }
  ]
 }

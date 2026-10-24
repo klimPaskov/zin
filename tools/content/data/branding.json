@@ -1,0 +1,8 @@
+{
+  "dir": "art/source/branding",
+  "manifest": "art/source/branding/branding_manifest.json",
+  "logo": { "source": "branding_emblem_v1.png", "key": "black", "note": "the main-menu logo GFX_frontend_game_logo (vanilla sprite, logo_game.dds 448x175): the refined emblem (drawn from the owner's ZinLogoCut.png) with its black ground keyed to alpha; owner_emblem_matte.png is the matte of the owner drawing itself, kept as the reference" },
+  "menu": { "source": "branding_menu_backdrop_v1.png", "key": "backdrop", "note": "a fourth main-menu background (not the default), 4:3 centre crop of the 16:9 backdrop" },
+  "thumbnail": { "source": "branding_emblem_v1.png", "out": "thumbnail.png", "w": 250, "h": 250, "note": "mod picture for the descriptor; opaque, black ground" },
+  "source_only": { "branding_banner_v1.png": "no vanilla surface shows a wide ZIN banner; kept in art/source/branding for a later surface decision" }
+}

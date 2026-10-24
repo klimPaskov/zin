@@ -664,7 +664,8 @@ function planRows(inventory, { alertFrames } = {}) {
     if (DLC_BACKGROUND_GFX.test(gfx) && s.root) { reason('U', 'dlc_background'); continue; }
     if (s.kind === 'linked' && /shine_overlay/.test(p)) { done('R', { family: 'focus', sheet: 'ui-chrome-small', cells: ['shine'], fit: 'cover', alpha: 'cell', tranche: FAMILY_TRANCHE.focus }); continue; }
 
-    if (PRESENTATION_TEXTURES[p]) { done('R', { family: PRESENTATION_TEXTURES[p], writer: 'presentation', state: 'in_game', tranche: FAMILY_TRANCHE[PRESENTATION_TEXTURES[p]] }); continue; }
+    // The main-menu logo is an isolated emblem cut by its own alpha (R-90): no text is drawn over it, so it carries luma free.
+    if (PRESENTATION_TEXTURES[p]) { done('R', { family: PRESENTATION_TEXTURES[p], writer: 'presentation', state: 'in_game', tranche: FAMILY_TRANCHE[PRESENTATION_TEXTURES[p]], ...(p === 'gfx/interface/logo_game.dds' ? { luma: 'free' } : {}) }); continue; }
     // The minimap picture is the ZIN map itself (spec 4.10): ui_minimap resizes the generated colormap.
     if (MINIMAP_TEXTURES.has(p)) { done('R', { family: 'map_interface', writer: 'minimap', state: 'derived', tranche: FAMILY_TRANCHE.map_interface }); continue; }
     if (s.kind === 'file' && spriteStems.has(p.replace(/[.][a-z0-9]+$/, ''))) { reason('U', 'orphan'); continue; }

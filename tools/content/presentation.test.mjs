@@ -5,11 +5,13 @@ import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import sharp from 'sharp';
 import { Staged } from './lib/core.mjs';
 import { ART, GAME, ZIN, rawFile, provenanceFile } from './lib/paths.mjs';
+import { OWNER_FILES, GENERATED } from './branding_prepare.mjs';
 import {
   buildPresentation, checkTips, tipString, acceptance, keyMatte, boxDownscale, isCp1252, forbiddenIn, loadCells,
-  CELLS_COPY, TIPS_FILE, DECISIONS, MENU_KEYS, LOADING_COUNT, THUMB_DIR, CHROME, BOOKMARK, EMBLEM, SPRITE, FALLBACK_ICON, FALLBACK_PICTURE,
+  CELLS_COPY, TIPS_FILE, DECISIONS, MENU_KEYS, BACKDROP_KEY, LOADING_COUNT, THUMB_DIR, CHROME, BOOKMARK, EMBLEM, SPRITE, FALLBACK_ICON, FALLBACK_PICTURE,
 } from './modules/presentation.mjs';
 
 let staged, result;
@@ -17,6 +19,7 @@ const quiet = { warn: () => {} };
 before(async () => { staged = new Staged(); result = await buildPresentation(staged, quiet); });
 
 const sha = b => createHash('sha256').update(b).digest('hex');
+const OWNER_DIR = (process.env.ZIN_OWNER_LOGOS || 'C:/Users/klimp/Documents/ZIN/Themed');
 const ddsHead = b => ({ magic: b.toString('ascii', 0, 4), h: b.readUInt32LE(12), w: b.readUInt32LE(16), flags: b.readUInt32LE(8), mips: b.readUInt32LE(28), pf: b.readUInt32LE(80), bits: b.readUInt32LE(88), masks: [92, 96, 100, 104].map(o => b.readUInt32LE(o)) });
 const files = () => [...staged.files.keys()];
 const text = rel => staged.files.get(rel).toString('utf8');
@@ -57,11 +60,11 @@ test('every DDS is uncompressed A8R8G8B8, top-left, no mipmaps, at its exact siz
 
 test('the loading folder holds exactly the 24 screens and the 3 menu backgrounds; thumbnails live outside it', () => {
   const inFolder = files().filter(f => f.startsWith('gfx/loadingscreens/')).sort();
-  const want = [...Array.from({ length: LOADING_COUNT }, (_, i) => `gfx/loadingscreens/load_${i + 1}.dds`), ...MENU_KEYS.map(k => `gfx/loadingscreens/zin_menu_${k}.dds`)].sort();
+  const want = [...Array.from({ length: LOADING_COUNT }, (_, i) => `gfx/loadingscreens/load_${i + 1}.dds`), ...[...MENU_KEYS, BACKDROP_KEY].map(k => `gfx/loadingscreens/zin_menu_${k}.dds`)].sort();
   assert.deepEqual(inFolder, want);
-  for (const name of [...Array.from({ length: LOADING_COUNT }, (_, i) => `load_${i + 1}`), ...MENU_KEYS.map(k => `zin_menu_${k}`)]) assert(staged.files.has(`${THUMB_DIR}/${name}_small.dds`), `${name} thumbnail`);
+  for (const name of [...Array.from({ length: LOADING_COUNT }, (_, i) => `load_${i + 1}`), ...[...MENU_KEYS, BACKDROP_KEY].map(k => `zin_menu_${k}`)]) assert(staged.files.has(`${THUMB_DIR}/${name}_small.dds`), `${name} thumbnail`);
   assert(staged.files.has(`${THUMB_DIR}/zin_thumb_border.dds`));
-  assert.equal(result.counts.loadingScreens, 24); assert.equal(result.counts.menuBackgrounds, 3);
+  assert.equal(result.counts.loadingScreens, 24); assert.equal(result.counts.menuBackgrounds, 4);
 });
 
 test('thumbnails are the exact 10x box downscale of the shipped pictures', () => {
@@ -83,7 +86,7 @@ test('the chrome uses the exact vanilla file names and case and has transparent 
 
 test('the frontend files point at ZIN pictures only', () => {
   const backgrounds = [...text('common/frontend/backgrounds/zin_backgrounds.txt').matchAll(/^(\w+) = \{/gm)].map(m => m[1]);
-  assert.deepEqual(backgrounds, MENU_KEYS.map(k => `zin_menu_${k}`));
+  assert.deepEqual(backgrounds, [...MENU_KEYS, BACKDROP_KEY].map(k => `zin_menu_${k}`));
   const small = new Set(sprites('interface/small_background.gfx'));
   for (const k of backgrounds) { assert(staged.files.has(`gfx/loadingscreens/${k}.dds`), k); assert(small.has(`GFX_${k}_small`), `GFX_${k}_small`); }
   for (let n = 1; n <= LOADING_COUNT; n++) assert(small.has(`GFX_load_${n}_small`));
@@ -258,4 +261,56 @@ test('raster helpers: key matte and box downscale are exact', () => {
   const block = Buffer.alloc(2 * 2 * 4); block.set([0, 0, 0, 255, 255, 255, 255, 255, 0, 0, 0, 255, 255, 255, 255, 255]);
   assert.deepEqual([...boxDownscale(block, 2, 2, 2)], [128, 128, 128, 255]);
   assert.throws(() => boxDownscale(block, 2, 2, 3));
+});
+
+// ------------------------------------------------------------------------------------------------ branding (R-90)
+const brandingManifest = JSON.parse(readFileSync(`${ZIN}/art/source/branding/branding_manifest.json`, 'utf8'));
+const brandingPng = name => sharp(staged.files.get(name));
+
+test('the logo is the refined emblem with its black ground keyed out: 448x175, transparent outside the drawing, opaque on the strokes', () => {
+  const b = staged.files.get(EMBLEM.file), px = b.subarray(128), h = ddsHead(b);
+  assert.deepEqual([h.w, h.h], [EMBLEM.w, EMBLEM.h]);
+  const alpha = Array.from({ length: EMBLEM.w * EMBLEM.h }, (_, i) => px[i * 4 + 3]);
+  assert.equal(alpha[0], 0, 'top-left corner transparent');
+  assert.equal(alpha[alpha.length - 1], 0, 'bottom-right corner transparent');
+  assert(alpha.filter(a => a === 0).length > alpha.length / 2, 'most of the frame is transparent');
+  assert(alpha.filter(a => a > 200).length > 300, 'the strokes are opaque');
+  assert(brandingManifest.derived.some(e => e.out === 'art/source/branding/owner_emblem_matte.png'), 'owner matte recorded in the manifest');
+});
+
+test('the logo is built from the branding source, not the old presentation emblem', () => {
+  assert(!brandingManifest.derived.concat(brandingManifest.generated).some(e => e.out.endsWith('frontend-emblem.png')), 'branding sources never name the old emblem');
+  const entry = JSON.parse(text('art/source/presentation_manifest.json')).files.find(f => f.out === EMBLEM.file);
+  assert.equal(entry.source, 'art/source/branding/branding_emblem_v1.png');
+  assert.equal(entry.sourceSha256, brandingManifest.generated.find(e => e.id === 'branding_emblem_v1').sha256);
+});
+
+test('the mod picture is a 250x250 opaque PNG', async () => {
+  const meta = await brandingPng('thumbnail.png').metadata();
+  assert.deepEqual([meta.format, meta.width, meta.height], ['png', 250, 250]);
+  assert(!meta.hasAlpha, 'no alpha channel');
+});
+
+test('the fourth menu background is the 4:3 crop of the backdrop, with its exact 10x thumbnail', () => {
+  const big = staged.files.get('gfx/loadingscreens/zin_menu_backdrop.dds'), h = ddsHead(big);
+  assert.deepEqual([h.w, h.h], [1920, 1440]);
+  const small = staged.files.get(`${THUMB_DIR}/zin_menu_backdrop_small.dds`);
+  assert(boxDownscale(Buffer.from(big.subarray(128)), 1920, 1440, 10).equals(small.subarray(128)), 'thumbnail');
+  assert(text('common/frontend/backgrounds/zin_backgrounds.txt').includes('zin_menu_backdrop = {'));
+  assert(sprites('interface/small_background.gfx').includes('GFX_zin_menu_backdrop_small'));
+  assert(!textures('interface/frontendmainviewbg.gfx').some(t => t.includes('backdrop')), 'the default background stays Parim');
+});
+
+test('the owner originals are unchanged and every branding source matches its recorded hash', () => {
+  for (const [rel, want] of Object.entries(OWNER_FILES)) {
+    const file = `${OWNER_DIR}/${rel}`;
+    if (existsSync(file)) assert.equal(sha(readFileSync(file)), want, `${rel} changed`);
+    assert(brandingManifest.owner.some(o => o.sha256 === want), `${rel} recorded`);
+  }
+  for (const e of [...brandingManifest.derived, ...brandingManifest.generated]) assert.equal(sha(readFileSync(`${ZIN}/${e.out}`)), e.sha256, `${e.out} hash`);
+});
+
+test('provenance holds the three generations and the derived matte', () => {
+  const ids = new Set(readFileSync(`${ZIN}/art/source/provenance.jsonl`, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l).id));
+  for (const g of Object.values(GENERATED)) assert(ids.has(g.id), g.id);
 });
