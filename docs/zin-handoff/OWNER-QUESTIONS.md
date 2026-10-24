@@ -89,5 +89,14 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-38 | When Olodor is found, does all of Parim know? | yes (a global flag) |
 | Q-39 | Are the small folk called Bykkwyn (West) and Tirim (Hirolon) in text, or "the small folk" everywhere? | "the small folk" everywhere |
 | Q-40 | May the small folk keep a Watch of their own instead of the men of the Ronbo Watch? | both: the tree offers a Watch of their own as the alternative route to the Ronbo Watch |
+| Q-41 | Does Burrikkrit keep the under-roads dark in history? | yes: the AI keeps them dark; every sale is a divergence |
+| Q-42 | Burrikkrit's three-way hobgoblin succession | accepted, with the old custom as the historical pick |
+| Q-43 | A war of Burrikkrit on Kunhrim as a divergence | allowed, never historical |
+| Q-44 | Burrikkrit's stance | Wild |
+| Q-45 | Does the King of Demons renew the bargain with Nafeher and hold the Steward to it? | yes (historical) |
+| Q-46 | May the King of Demons call the freed demon realms home when Volgan's body breaks? | yes, one of three choices |
+| Q-47 | Who performs the lava rite? | the Nether keeps the pits |
+| Q-48 | Does the house of Agon stay a house of the Halls? | yes |
+| Q-49 | The Nether's stance | Shadow |
 
 Also pending: the Meshy server did not connect in this session (`CONNECT_TIMEOUT`), so 3D model generation waits until it connects.
