@@ -53,6 +53,8 @@ export async function buildAfrit(staged, ctx) {
   D.capZeroTags = D.caps.zero.map(n => need(n).tag);
   D.rivalCodes = D.rivals.map(([a, b]) => [need(a).tag, need(b).tag]);
   const loc = new Loc(), sprites = new Sprites(await loadCatalogKeys());
+  // The Council's decision sprites carry the module's prefix: the Aenor court picks some of the same catalog icons.
+  sprites.decisionPrefix = 'zin_afrit_';
   const HUB = T.hub, AEN = T.aenor;
   const { triggers, effects, tooltips } = afritScripts(D, T);
   const dates = triggers.__dates; delete triggers.__dates;
@@ -160,6 +162,10 @@ export async function buildAfrit(staged, ctx) {
     effect: 'zin_afrit_purge_houses = yes', ai: 'base = 10\nmodifier = {\n factor = 6\n has_global_flag = zin_afrit_revealed\n has_government = democratic\n}\nmodifier = {\n factor = 5\n has_country_flag = zin_lost_cause_member\n has_global_flag = zin_afrit_revealed\n}\nmodifier = {\n factor = 3\n has_country_flag = zin_afrit_suspicious\n}\nmodifier = {\n factor = 0\n NOT = { has_global_flag = zin_afrit_revealed }\n NOT = { has_country_flag = zin_afrit_suspicious }\n}' });
   const body = Object.entries(dec).map(([cat, ds]) => blk(cat, ds.map(d => writeDecision({ ...d, allowed: d.allowed ?? (cat === 'zin_afrit_council' ? `original_tag = ${HUB}` : 'always = yes') }, loc, sprites)).join('\n'))).join('\n');
   staged.text('common/decisions/zin_afrit.txt', format(`${hdr(MOD, SPEC, 'The Council\'s decisions (hub only) and the Houses decision of any other court. The eastern spec adds three hub decisions to the category from its own file.')}\n${body}\n`));
+  // The opinion modifiers of two Council decisions (section "The Council's decisions"): the target's opinion of the hub after the famine stores
+  // are opened (+20) and after the thief is caught (-30). Both fade by one a month.
+  const opinions = { zin_afrit_opinion_famine_stores: 20, zin_afrit_opinion_thief_caught: -30 };
+  staged.text('common/opinion_modifiers/zin_afrit.txt', format(`${hdr(MOD, SPEC, 'Opinion modifiers of the Council\'s decisions.')}\nopinion_modifiers = {\n${Object.entries(opinions).map(([id, v]) => blk(id, `value = ${v}\ndecay = 1`)).join('\n')}\n}\n`));
 
   // ---------------------------------------------------------------------------------------------- events (the ids 06_events does not carry)
   const events = [];
@@ -321,6 +327,6 @@ ${ramp.map((c, i) => `\t\t\t\t\t\t${i ? 'else_if' : 'if'} = {\n\t\t\t\t\t\t\tlim
   const problems = [...await wordProblems(entries), ...notCp1252(entries), ...secrecyLeaks(entries, privateKey)];
   if (problems.length) throw new Error(`mech_afrit text breaks the rules (${problems.length}):\n  ${problems.slice(0, 30).join('\n  ')}`);
   staged.add('localisation/english/zin_afrit_l_english.yml', loc.bytes());
-  const defs = { triggers: [...Object.keys(triggers), ...(dates.match(/^\w+(?= = \{)/gm) ?? [])], effects: [...Object.keys(effects), ...afritGui.effectNames()], ideas: ideas.map(i => i.id), decisions: Object.values(dec).flat().map(d => d.id), categories: Object.keys(cats), events: events.map(e => `zin_afrit.${e.id}`), dynamicModifiers: ['zin_afrit_houses', 'zin_afrit_graces'], characters: D.characters.map(c => c.id), traits: allTraits.map(t => t.id), scriptedLoc: sl.length, twoFace: faces.length };
+  const defs = { triggers: [...Object.keys(triggers), ...(dates.match(/^\w+(?= = \{)/gm) ?? [])], effects: [...Object.keys(effects), ...afritGui.effectNames()], ideas: ideas.map(i => i.id), decisions: Object.values(dec).flat().map(d => d.id), categories: Object.keys(cats), events: events.map(e => `zin_afrit.${e.id}`), opinionModifiers: Object.keys(opinions), dynamicModifiers: ['zin_afrit_houses', 'zin_afrit_graces'], characters: D.characters.map(c => c.id), traits: allTraits.map(t => t.id), scriptedLoc: sl.length, twoFace: faces.length };
   return { counts: Object.fromEntries(Object.entries(defs).map(([k, v]) => [k, Array.isArray(v) ? v.length : v])), definitions: defs, tags: T, loc: entries, gui, eventMeta: written.map(w => w.meta), decisions: dec, footholds: footholdLines.length, twoFace: faces, facesSource };
 }

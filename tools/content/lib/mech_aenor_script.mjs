@@ -1048,7 +1048,7 @@ export function aenorScripts(D, T) {
     	remove_from_faction = THIS
     }
     set_country_flag = zin_aenor_free_dominion
-    remove_ideas = { ${charterIdeas.join(' ')} zin_shared_concord_dominions_charter_loyalists }
+    remove_ideas = { ${charterIdeas.join(' ')} zin_shared_concord_dominions_charter_loyalists_spirit }
     add_ideas = zin_aenor_free_dominion
     country_event = { id = zin_aenor.220 }
     country_event = { id = zin_reign.37 }
@@ -1236,7 +1236,7 @@ export function aenorScripts(D, T) {
     set_country_flag = zin_aenor_eindil_crowned_here
     zin_eindil = { set_character_name = zin_aenor_eindil_king_name }
     ${setStance('zin_light_wardens')}
-    remove_ideas = { zin_aenor_interregnum zin_aenor_hailed_king zin_aenor_throne_abandoned zin_aenor_golden_court }
+    remove_ideas = { zin_aenor_interregnum zin_aenor_hailed_king zin_aenor_throne_abandoned }
     clr_country_flag = zin_aenor_hailed_king
     remove_dynamic_modifier = { modifier = zin_aenor_golden_court }
     add_ideas = zin_aenor_rightful_king

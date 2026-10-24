@@ -146,8 +146,10 @@ export function writeDecision(d, loc, sprites) {
   loc.set(d.id, d.title);
   if (d.desc) loc.set(`${d.id}_desc`, d.desc);
   const out = [];
-  out.push(`icon = ${d.icon}`);
-  sprites?.use(`GFX_decision_${d.icon}`, d.art ?? d.icon);
+  // A module may prefix its decision sprites (sprites.decisionPrefix) so two modules that pick the same catalog icon do not define one sprite twice.
+  const icon = `${sprites?.decisionPrefix ?? ''}${d.icon}`;
+  out.push(`icon = ${icon}`);
+  sprites?.use(`GFX_decision_${icon}`, d.art ?? d.icon);
   if (d.picture) out.push(`picture = ${d.picture}`);
   out.push(blk('allowed', d.allowed ?? 'always = yes'));
   if (d.rootTrigger) out.push(blk('target_root_trigger', d.rootTrigger));

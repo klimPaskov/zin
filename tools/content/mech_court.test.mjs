@@ -73,7 +73,7 @@ test('Counts: what the three modules define', () => {
 // ------------------------------------------------------------------------------------------------ vocabulary and references
 test('Every effect, trigger and modifier key is in the installed documentation, a control word or an id of this slice', async () => {
   const mine = new Set([...allScript.matchAll(/^\t*([A-Za-z0-9_]+) = \{/gm)].map(m => m[1]));
-  const structural = new Set(['alpha', 'blue', 'green', 'red', 'highlighted', 'large', 'expire', 'cost', 'priority', 'rule', 'x', 'y', 'C', 'D', 'F', 'N', 'P', 'S', 'T', 'removal_cost', 'days_remove', 'days_re_enable', 'fire_only_once', 'integer', 'num_owned_states', 'idea_token', 'division_names_group', 'army_intel', 'civilian_intel', 'bonus', 'category', 'uses', 'state_trigger', 'selectable_mission', 'is_good', 'days_mission_timeout', 'can_create_factions', 'can_join_factions', 'can_not_declare_war', 'can_puppet', 'can_send_volunteers', 'can_guarantee_other_ideologies', 'add_namespace', 'hidden', 'is_triggered_only', 'major', 'timeout_days', 'localization_key', 'context_type', 'dirty', 'window_name', 'change_scope', 'entry_container']);
+  const structural = new Set(['alpha', 'blue', 'green', 'red', 'highlighted', 'large', 'expire', 'cost', 'priority', 'rule', 'x', 'y', 'C', 'D', 'F', 'N', 'P', 'S', 'T', 'removal_cost', 'days_remove', 'days_re_enable', 'fire_only_once', 'integer', 'num_owned_states', 'idea_token', 'division_names_group', 'army_intel', 'civilian_intel', 'bonus', 'category', 'uses', 'state_trigger', 'selectable_mission', 'is_good', 'days_mission_timeout', 'can_create_factions', 'can_join_factions', 'can_not_declare_war', 'can_puppet', 'can_send_volunteers', 'can_guarantee_other_ideologies', 'add_namespace', 'hidden', 'is_triggered_only', 'major', 'timeout_days', 'localization_key', 'context_type', 'dirty', 'window_name', 'change_scope', 'entry_container', 'decay']);
   for (const f of scriptFiles.filter(f => f.endsWith('.txt') && !f.startsWith('interface'))) {
     const unknown = (await unknownCommands(text(f), mine)).filter(k => !structural.has(k));
     assert.deepEqual(unknown, [], `${f}: unknown keys`);
@@ -97,18 +97,34 @@ test('Negative: a call to an unknown scripted effect would be found by the same 
 
 test('Every event id fired or named is one of this slice\'s or one the events specs carry', async () => {
   const mine = new Set([...aenor.definitions.events, ...afrit.definitions.events, ...zol.definitions.events]);
-  const others = new Set([...A.externalEvents.map(n => `zin_aenor.${n}`), ...F.external.events, ...A.external.events, ...Z.external.events]);
+  const others = new Set([...F.external.events, ...A.external.events, ...Z.external.events]);
   const specs = (await Promise.all((await readdir(`${ZIN}/docs/specs/06_events`)).filter(f => f.endsWith('.md')).map(f => readFile(`${ZIN}/docs/specs/06_events/${f}`, 'utf8')))).join('\n') + (await readFile(`${ZIN}/docs/specs/04_mechanics/afrit_hidden_council.md`, 'utf8'));
   const refs = new Set([...allScript.matchAll(/\bid = (zin_(?:aenor|afrit|mistake|reign|eindil|dominion)\.\d+)/g)].map(m => m[1]));
   for (const id of refs) assert(mine.has(id) || others.has(id) || id.startsWith('zin_afrit.') && specs.includes(id.replace('zin_afrit.', '.')) || specs.includes(id), `${id} is neither defined nor listed`);
-  // an event the events specs carry is never defined here (06_events owns it)
-  const carried = (await Promise.all((await readdir(`${ZIN}/docs/specs/06_events`)).map(f => readFile(`${ZIN}/docs/specs/06_events/${f}`, 'utf8')))).join('\n');
-  for (const id of mine) if (/zin_(aenor|afrit|mistake)\.(\d+)/.test(id)) assert(!carried.includes('`' + id + '`') || ['zin_aenor.1', 'zin_aenor.2'].includes(id) === false, `${id} is in 06_events`);
 });
 
-test('The ids of the events this slice leaves to the events slice are not defined here', () => {
+// R5 (one namespace, one builder module) and 06_events/01 ("the texts of the owners' events (zin_aenor.*, zin_afrit.*) go into the owners' modules"):
+// the Aenor mechanic writes every zin_aenor event the events specs carry, in its story part (lib/mech_aenor_story.mjs, events/zin_aenor_story.txt).
+test('The Aenor mechanic owns the zin_aenor events of 06_events: its story part writes each of them, and nothing else does', async () => {
+  const story = new Set(aenor.definitions.storyEvents);
+  for (const n of A.storyEvents) assert(story.has(`zin_aenor.${n}`), `zin_aenor.${n} is not written by the story part`);
+  const carried = (await Promise.all((await readdir(`${ZIN}/docs/specs/06_events`)).filter(f => f.endsWith('.md')).map(f => readFile(`${ZIN}/docs/specs/06_events/${f}`, 'utf8')))).join('\n');
+  const retired = new Set(['zin_aenor.310']);
+  for (const [, n] of carried.matchAll(/`zin_aenor\.(\d+)`/g)) if (!retired.has(`zin_aenor.${n}`)) assert(A.storyEvents.includes(Number(n)), `zin_aenor.${n} is carried by 06_events but not in the story list of data/mech_aenor.json`);
+  assert.equal(strip(text('events/zin_aenor_story.txt')).match(/^(country|news)_event = \{/gm).length, A.storyEvents.length, 'one event per story id');
+  for (const id of story) assert(!afrit.definitions.events.includes(id) && !zol.definitions.events.includes(id));
+});
+
+test('Negative: without its story part the Aenor mechanic defines none of the 06_events ids', async () => {
+  const bare = await buildAenor(new Staged(), { countries, story: false });
+  for (const n of A.storyEvents) assert(!bare.definitions.events.includes(`zin_aenor.${n}`), `zin_aenor.${n}`);
+  assert(bare.definitions.events.includes('zin_aenor.1'), 'the mechanic events stay');
+});
+
+// The Afrit and Zol story parts (the ids their specs and 06_events carry) are not written yet; they are open items of the integration
+// (docs/design/stage2/integration_r3.md, data/pending_names.json). None of them is defined here by accident.
+test('The Afrit and Zol story ids of 06_events are not yet defined by these mechanics', () => {
   const mine = new Set([...aenor.definitions.events, ...afrit.definitions.events, ...zol.definitions.events]);
-  for (const n of A.externalEvents) assert(!mine.has(`zin_aenor.${n}`), `zin_aenor.${n}`);
   for (const n of [10, 11, 12, 14, 15, 16, 17, 20, 21, 22, 23, 30, 31, 32, 33, 34, 40, 43, 45, 50, 51, 52, 53, 60, 61, 62, 70, 71, 72, 73, 74, 75, 76, 80]) assert(!mine.has(`zin_afrit.${n}`), `zin_afrit.${n}`);
   for (const n of [2, 10, 11, 12, 16, 17, 20, 21, 22, 23, 24, 25]) assert(!mine.has(`zin_mistake.${n}`), `zin_mistake.${n}`);
   assert(!mine.has('zin_aenor.310') && !mine.has('zin_mistake.15'), 'retired ids');

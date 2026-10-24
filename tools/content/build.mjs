@@ -34,6 +34,9 @@ import { buildTechnologies } from './modules/technologies.mjs';
 import { buildWarfare } from './modules/warfare.mjs';
 import { buildForces } from './modules/forces.mjs';
 import { buildEventsCrown } from './modules/events_crown.mjs';
+import { buildAenor } from './modules/mech_aenor.mjs';
+import { buildAfrit } from './modules/mech_afrit.mjs';
+import { buildZol } from './modules/mech_zol.mjs';
 import { buildDecisionsRegional } from './modules/decisions_regional.mjs';
 import { buildFocusMajorC } from './modules/focus_major_c.mjs';
 import { buildSharedBCompanion } from './modules/focus_shared_b.mjs';
@@ -97,6 +100,14 @@ const economy = await buildEconomy(staged, { countries });
   if (missing.length) throw new Error(`The institutions workshops name equipment that warfare does not define: ${missing.join(', ')}`);
 }
 const institutions = await buildInstitutions(staged, { countries, table, pools });
+// The mechanic slices (docs/design/stage2/integration_r3.md): after institutions (the staged technology tags, flags and name pools),
+// before the crown and world events that call their effects, and before vanilla removal and the focus compiler, whose reference scans (C3)
+// must see every name they define. Order inside: the court first (Aenor, Afrit, Zol own the names the others read), the journey (Glo before
+// Eindil, whose hall rules call Glo; the crossing reads Eindil's hosts), the powers (the UI reads the three kits, so it runs last of them),
+// then the four regions.
+const mechAenor = await buildAenor(staged, { countries });
+const mechAfrit = await buildAfrit(staged, { countries, table });
+const mechZol = await buildZol(staged, { countries });
 // The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
 // common/scripted_effects/zin_story.txt; storyBlocks gains 'lastwar' and 'lore' when the events-world module is wired.
 const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'ending'] });
