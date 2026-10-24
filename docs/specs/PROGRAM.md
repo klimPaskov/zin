@@ -17,26 +17,26 @@ A criterion is **met** only when its check has run on the current build and pass
 | A-01 | R-01 Erdae and Aoaz exchanged | migration applied; check added; game files regenerate at the next apply | `81bc85a`, `tools/migrations/aoaz_name_exchange.applied.json`, `docs/lore/names_traceability.md`, text-scan rules `bw_setting_names_*` (24 Oct) |
 | A-02 | R-02 Great Wall a natural range | sources corrected (K2, P4 and P13 void); vault and map pending | `INTEGRATION_DECISIONS.md` K2 (24 Oct) |
 | A-03 | R-03 Zol's servant in the war | waits for owner question Q-03 | |
-| A-04 | R-04 contradiction register | in progress | |
+| A-04 | R-04 contradiction register | retcon rows written for every correction; Kusven, Kusmeel and the Ember Lands migrated in the documents (builder data after integration) | vault `Names and Retcons.md`; `docs/lore/names_traceability.md`; `1e14c95` (24 Oct) |
 | A-10 | R-10 drawn map imported through MCP | MCP worker designing the import (ZR-2) | |
 | A-11 | R-11, R-18 terrain, relief, rivers, edge | not started | |
 | A-12 | R-12, R-15 borders and regions | not started | |
 | A-13 | R-13 coherent sea names | not started | |
 | A-14 | R-14 the Nether below the Ember Lands | dossier in progress | |
 | A-16 | R-16, R-17 settlements, resources | not started | |
-| A-19 | R-19 regional dossiers | in progress | |
-| A-20 | R-20, R-21, R-26 peoples, cultures, forms | not started | |
-| A-22 | R-22 Hirolon | dossier in progress; Q-05 open | |
-| A-24 | R-24, R-25 fewer elves, varied Middle Lands | dossiers propose the roster | |
-| A-27 | R-27 real tags below 439 | not started (tags are still Y01 style) | |
+| A-19 | R-19 regional dossiers | written for all 13 regions, Hirolon and the Nether; consumers (map, roster, content, art) still to be checked against them | `docs/lore/regions/` (`16c9743`, 24 Oct) |
+| A-20 | R-20, R-21, R-26 peoples, cultures, forms | roster data: 156 realms with people shares, cultures, faiths, calendars and political forms; 5 new languages and 30 cultures; not yet merged into the builder | `tools/content/data/world/roster.json`, `languages_new.json`, `cultures_new.json` (`a6b193a`) |
+| A-22 | R-22 Hirolon | sovereign giant kingdom (K13) with Tirlan as protectorate; dossier and history written; map pending | `docs/lore/regions/hirolon.md`, history `middle_lands.json` |
+| A-24 | R-24, R-25 fewer elves, varied Middle Lands | roster: elven realms 65 to 17; dwarf holds, goblin realms, gnomes, small folk, Baelim; not yet in game | `docs/design/roster.md` |
+| A-27 | R-27 real tags below 439 | tags derived for the new roster (156 plus 75 dynamic = 231, check clean); migration of Y-tag references pending | `tools/content/lib/tags.mjs` (`6af039b`), `roster.json` |
 | A-28 | R-28 country and faction names | not started | |
 | A-29 | R-29 population | not started | |
-| A-30 | R-30 to R-32 twelve gods, calendar, faith | waits for Q-01, Q-02 | |
-| A-33 | R-33 knowledge layers | not started | |
-| A-34 | R-34, R-35 wizards and magic | Q-09 open | |
-| A-40 | R-23, R-40, R-41 bestiary, devils, ecology | transcription in progress | |
-| A-45 | R-45 regional histories | schema exists; no regional files | |
-| A-46 | R-46 alternate history | not started | |
+| A-30 | R-30 to R-32 twelve gods, calendar, faith | pantheon accepted by the owner (K28); calendar module not yet rebuilt | `docs/lore/references/pantheon.md`, `calendar.md`, `tools/content/data/world/pantheon.json` |
+| A-33 | R-33 knowledge layers | register of 84 hidden facts and the X18 check specification; check not yet built | `docs/lore/references/knowledge_layers.md` |
+| A-34 | R-34, R-35 wizards and magic | 15 traditions, Bastian (K17), practitioners documented; in-game presence pending | `docs/lore/references/magic_and_wizards.md` |
+| A-40 | R-23, R-40, R-41 bestiary, devils, ecology | all 67 photos transcribed and checked; owner answers applied; bestiary expansion and ecology in play pending | `docs/lore/sources/bestiary_cards.md` |
+| A-45 | R-45 regional histories | 13 region files, all 156 realms, every file passes `validateHistory`; content consumers pending | `tools/content/data/world/history/` (`ac51526`) |
+| A-46 | R-46 alternate history | design and soft-lock audit (37 findings, 9 critical) written; owner answers K34; implementation pending | `docs/design/alternate_history.md` (`cf35546`) |
 | A-47 | R-47, R-48 continuing lore, references | in progress | |
 | A-50 | R-50, R-51 naming | generator built (19 Oct); revision pending | |
 | A-52 | R-52 clean text | text scan built (19 Oct) | |
@@ -50,7 +50,7 @@ A criterion is **met** only when its check has run on the current build and pass
 | A-82 | R-82, R-83 states, resolutions, tooltips | not started | |
 | A-90 | R-90 owner's branding | not started | |
 | A-91 | R-91 gfx standard | `lib/gfx_standard.mjs` written (19 Oct), not wired | |
-| A-92 | R-92 flags | not started | |
+| A-92 | R-92 flags | heraldic grammars for 53 cultures and 18 peoples, forbidden motifs, dynamic-tag rules; designs to regenerate for the new roster; no images yet | `docs/specs/08_art_and_assets/06_heraldry.md` (`a17392a`) |
 | A-93 | R-93, R-94 unique art, units and 3D | manifest and checks built; Meshy not connected (24 Oct) | |
 | A-96 | R-96 music and sound | waits for Q-08 | |
 | A-98 | R-98, R-99 zero errors, sweep, observer runs, save and load, performance | not started | |
