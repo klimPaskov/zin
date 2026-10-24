@@ -70,4 +70,13 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-23 | Places named on the cards but not on the map (Pornyior, Ergos, the Death Islands, Olodor, Steadtler, Orewell, High Mountain, Gigantic Mountain, Dorap Swamp, the Trenin Sea, Holos, the caves of Ellenmoor, Salomonanos, Sempos): may the implementation place them where the regional dossiers suggest, labelled proposed? | the map, regional dossiers | yes, each placed with a reason and labelled proposed |
 | Q-24 | The Demon card shows an inverted cross and a pentagram. May game art use them? The art rules forbid real-world religious symbols. | demon art | no; demons get original sigils |
 
+### Still open (asked 24 October 2026, not yet answered; the implementation proceeds on the proposals, labelled proposed)
+
+| Id | Question | Proposal in use |
+| --- | --- | --- |
+| Q-26 | The King of Demons' original name | Kherazel (Infernal tongue), labelled proposed |
+| Q-27 | The cards' huge sizes (Smash 112 m, Roka 42 m, devils and tree people up to 30 m) in lore, pictures and models | kept as canon in text and pictures; map models scaled to read, as the game does for all units |
+| Q-28 | Do griffins exist in Aoaz? | no griffins; the air belongs to dragons and Aoaz's own winged creatures |
+| Q-29 | Do Kusven's Beasts of the black north fight in the War of the Last Crowns? | yes, as rare story-granted units with Zol's hosts |
+
 Also pending: the Meshy server did not connect in this session (`CONNECT_TIMEOUT`), so 3D model generation waits until it connects.
