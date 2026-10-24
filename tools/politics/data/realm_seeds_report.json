@@ -1,0 +1,7037 @@
+{
+ "schema": 1,
+ "generatedBy": "tools/politics/realm_seeds.mjs (deterministic; regenerate with --write, never edit by hand)",
+ "target": "hoi4_map_rewrite create_world.countries, workspace form (map tool ADR 0069 at commit 867807d, request ZR-8)",
+ "frame": {
+  "width": 5120,
+  "height": 2560,
+  "origin": "top-left",
+  "unit": "world pixel"
+ },
+ "inputs": {
+  "roster": {
+   "path": "tools/content/data/world/roster.json",
+   "sha256": "59a68d675b2ea086a595faf2f55a2d69525fcb63902d8170572669b0e605f159"
+  },
+  "geography": {
+   "path": "tools/content/data/geography/import/aoaz.geography.json",
+   "sha256": "4f5671c1154b7ca22b9d92c0761642ff63cbd69d1f05381e7a870d0d0920938d"
+  },
+  "repaired": {
+   "path": "tools/content/data/geography/aoaz.repaired.json",
+   "sha256": "2b2b6874492ef6482f82e364c4d52181757bf327fedeb401c75a21246f7cba5a"
+  },
+  "assignment": {
+   "path": "tools/content/data/world/state_assignment.json",
+   "sha256": "a445364766f95f6b757a8e7796b08e5796e01848ac262fe0dbef983d03b14f86"
+  },
+  "stateCentres": {
+   "path": "tools/content/data/forces_geography.json",
+   "sha256": "96b0d0a7d1780367f2b84c1493fbd19e588b6ddc943d7e7d7562f441f095670c"
+  },
+  "sheets": {
+   "path": "tools/content/data/geography/import/aoaz.sheets.json",
+   "sha256": "a85601870b831641438a68b169a8f229aa9df2e6e0928bdbfab2cc3f66777752"
+  },
+  "annotations": {
+   "path": "tools/content/data/geography/import/aoaz.annotations.json",
+   "sha256": "37fa63533909542c60aded957f9fcd758d64f7ba995243634e6699efdeebf43c"
+  }
+ },
+ "drawing": {
+  "path": "docs/reference/originals/Erdae.png",
+  "sha256": "37ef59399903bc8217dbc527e26158c06a133eace0340a5b95e233c1cadc2ecf",
+  "use": "read in memory only; points must stand on the land the import reads from it"
+ },
+ "surface": "the drawing as the import reads it (illustrated heuristic with the surface-override annotations of preview_call.json) less the model lakes the import carves; points keep PLACE.marginPx from its coast and generated points PLACE.edgeClearPx from the frame edge",
+ "tuning": {
+  "PLACE": {
+   "marginPx": 3,
+   "minSeparationPx": 20,
+   "snapReachPx": 220,
+   "seedSnapReachPx": 40,
+   "seedMaxFromCapitalPx": 450,
+   "seedMinLandPx": 400,
+   "validatorMinSeparationPx": 12,
+   "edgeClearPx": {
+    "x": 253,
+    "y": 88
+   },
+   "componentJoinPx": 2
+  },
+  "FIELD": {
+   "sigmaPx": 160,
+   "priorWeight": 0.15
+  },
+  "WEIGHT": {
+   "statesPerUnit": 4,
+   "min": 0.05,
+   "max": 100,
+   "decimals": 2,
+   "populationPerState": 250000
+  },
+  "POLYGON": {
+   "tolPx": 2,
+   "minAreaPx": 64,
+   "bandMinRadiusPx": 12
+  }
+ },
+ "options": {
+  "islands": "one-owner",
+  "islandsReason": "Every drawn island in the dossiers belongs to one realm or is a named wild place; the approved layout of 17 October 2026 gives each small island one owner (docs/generation/assumptions.md, \"a small island has one owner\"). With one-owner a landmass no seed is on goes whole to the first realm that reaches it over the sea (ADR 0060).",
+  "connectedMainland": true,
+  "connectedMainlandReason": "Every mainland realm is one connected piece in the approved layout (docs/generation/assumptions.md, \"Every mainland country is one connected piece; island possessions are allowed\"); seeds on a realm's capital landmass are joined by a corridor (ADR 0060)."
+ },
+ "barriers": [
+  {
+   "id": "great_wall",
+   "basis": "The Great Wall of Aenor is the natural range between the Middle Lands and the Magical Lands (decision K2; middle_lands.md 2.9). The belt of the range and its foothills (the repaired model's zone_great_wall, about 300 px wide) stays open; the land beyond each foothill edge is the other region's.",
+   "sides": [
+    {
+     "name": "Magical Lands beyond the eastern foothills",
+     "keepOut": [
+      "middle_lands"
+     ]
+    },
+    {
+     "name": "Middle Lands beyond the western foothills",
+     "keepOut": [
+      "magical_lands"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zilin_marches",
+   "basis": "Mirolon is the Ember Lands' peninsula on the southern neck of the central landmass, closed toward the Zilin side by the Mirolon Mountains and their passes (ember_lands.md 2); beyond it lie the Ember Lands' isles and, to the south-east, the South and East Lands. As the import reads the drawing, the central and eastern mainlands touch through Mirolon's eastern lowland, so the Middle and Magical Lands north of the Zilin marches and everything south of them are kept apart here; the Great Swamp and the Lake of Mirolon between stay open.",
+   "sides": [
+    {
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches",
+     "keepOut": [
+      "middle_lands",
+      "magical_lands"
+     ]
+    },
+    {
+     "name": "the Middle and Magical Lands north of the Zilin marches",
+     "keepOut": [
+      "ember_lands",
+      "east_lands",
+      "south_lands"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cold_neck",
+   "basis": "The Neridor Mountains and the Worlond Forest belt divide the West Lands from the Cold Lands; the Neck Road is the only road (west_lands.md 2; cold_lands.md 2). Holdon's coast and the Yeti Shallows are the Cold Lands' side, the Gunwyn Downs the West's.",
+   "sides": [
+    {
+     "name": "the Cold Lands north of the neck",
+     "keepOut": [
+      "west_lands"
+     ]
+    },
+    {
+     "name": "the West Lands south of the neck",
+     "keepOut": [
+      "cold_lands"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ember_isles",
+   "basis": "The Ember Lands island and the Nether lie in the sea south of the Middle Lands (ember_lands.md 2; nether.md), apart from the East and South Lands. As the import reads the drawing, the Nether's eastern tip touches the Sun Desert's western coast, so the two sides are kept apart here; Mirolon's eastern lowland, where Halia and Olen stand, stays open.",
+   "sides": [
+    {
+     "name": "the Ember Lands island and the Nether",
+     "keepOut": [
+      "east_lands",
+      "south_lands"
+     ]
+    },
+    {
+     "name": "the Sun Desert and the East Lands south of Mirolon",
+     "keepOut": [
+      "ember_lands"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hardtmuth",
+   "basis": "The South Lands lie between the Sea of the Sun on the west and the Hardtmuth chain on the east (south_lands.md 2); Miaed holds the passes and the south coast. The Sun Desert west of the chain is the South Lands'; the northern desert, the great river valley and the southern hills east of the Ergo country are the East Lands'.",
+   "sides": [
+    {
+     "name": "the Sun Desert west of the Hardtmuth chain",
+     "keepOut": [
+      "east_lands"
+     ]
+    },
+    {
+     "name": "the East Lands north of the desert and east of the Ergo country",
+     "keepOut": [
+      "south_lands"
+     ]
+    }
+   ]
+  }
+ ],
+ "wildLands": [
+  {
+   "id": "mount_ergo",
+   "name": "Mount Ergo",
+   "polygons": 1,
+   "basis": "The devils' mountain; a wild land, not a country (east_lands.md 11).",
+   "status": "proposed"
+  },
+  {
+   "id": "mount_argul",
+   "name": "Mount Argul",
+   "polygons": 1,
+   "basis": "The devils' second mountain (former Mount Argon, K48); a wild land (east_lands.md 11).",
+   "status": "proposed"
+  },
+  {
+   "id": "reeto_caves",
+   "name": "The Reeto caves",
+   "polygons": 1,
+   "basis": "The ogres' caves under the Reeto Heights; a wild land (east_lands.md 11).",
+   "status": "proposed"
+  },
+  {
+   "id": "melty_glaciers",
+   "name": "The high Melty glaciers",
+   "polygons": 1,
+   "basis": "The high glaciers of the Melty Mountains; a wild land (east_lands.md 11). Only the crest south of Ostoroth's seat.",
+   "status": "proposed"
+  },
+  {
+   "id": "kherith_isles",
+   "name": "The Kherith Isles",
+   "polygons": 1,
+   "basis": "The volcanic islets in the Sea of Lava where devils lair (former Death Islands); not a country (ember_lands.md 2, 11).",
+   "status": "proposed"
+  },
+  {
+   "id": "the_abyss",
+   "name": "The Abyss",
+   "polygons": 1,
+   "basis": "Roka's domain; no country is made for him (ember_lands.md 11). Puvulan holds the rim.",
+   "status": "proposed"
+  },
+  {
+   "id": "lustras_hills",
+   "name": "The Lustras Hills",
+   "polygons": 1,
+   "basis": "The krors' hills (the drawn Sacomananos); nobody settles them (magical_lands.md 9, 11).",
+   "status": "proposed"
+  },
+  {
+   "id": "herrodon_crest",
+   "name": "The crest of the Herrodon Mountains",
+   "polygons": 1,
+   "basis": "Nobody lives on the Herrodon crest (magical_lands.md 2, 11); Herrodon holds the south slope.",
+   "status": "proposed"
+  },
+  {
+   "id": "fallen_forest",
+   "name": "The heart of the Fallen Forest",
+   "polygons": 1,
+   "basis": "The Magical Forest leaves the Fallen Forest wild (roster extent; magical_lands.md 11).",
+   "status": "proposed"
+  },
+  {
+   "id": "magic_mountains",
+   "name": "The high snows of the Magic Mountains",
+   "polygons": 1,
+   "basis": "Where Golbran is said to live; a wild land (magical_lands.md 11).",
+   "status": "proposed"
+  }
+ ],
+ "wildNotPlaced": [
+  {
+   "name": "The Lost Lands",
+   "basis": "magical_lands.md 11",
+   "reason": "The drawn Lost and Filion labels lie on the strip of north coast where the drawing also puts Andos Enda's seat Enliras (the site is within 30 px); a separate wild strip there would cut the realm's capital off. Left to Andos Enda and Herrodon."
+  },
+  {
+   "name": "Dragon Mountain's summit",
+   "basis": "magical_lands.md 11",
+   "reason": "The roster gives Yavieth \"the mountain\" (1 state) and its site stands on the mountain; the roster wins."
+  },
+  {
+   "name": "The open dune sea of the Sun Desert and the deep southern sand",
+   "basis": "south_lands.md 11",
+   "reason": "Wahatud is the league of the dune sea's oases (about 4 states); the model's Sun Desert area is the realm's land, so a wild polygon would swallow it."
+  },
+  {
+   "name": "The Plutondo Dunes",
+   "basis": "east_lands.md 11",
+   "reason": "The model's dunes area holds Rhachia's seat Pordoce (site_avalon)."
+  },
+  {
+   "name": "The Cursed Square",
+   "basis": "tritons_islands.md 11; roster (Benan)",
+   "reason": "A reef where islanders live on wrecks, the model's coast_cursed_square point; it is a place on the water and Benan is its nominal holder."
+  },
+  {
+   "name": "The Death Islands of the Dark Lands",
+   "basis": "dark_lands.md 9",
+   "reason": "The drawn dots east of the black island have no land of their own in the model."
+  },
+  {
+   "name": "The high snows of Lunhrim and the Organ Mountains; the Forests of Darkhere",
+   "basis": "middle_lands.md 11",
+   "reason": "The dossier itself has them held on the map by Kunhrim, Aenor and Glimik."
+  }
+ ],
+ "summary": {
+  "realms": 156,
+  "capitalsByMethod": {
+   "site": 63,
+   "model feature": 16,
+   "old capital": 6,
+   "dossier text": 5,
+   "model area": 12,
+   "drawn label": 44,
+   "model land": 10
+  },
+  "sitesMovedOntoLand": [
+   {
+    "tag": "YEL",
+    "site": "site_yeldenne_landing",
+    "movedPx": 28.3
+   },
+   {
+    "tag": "HNH",
+    "site": "site_hunhun",
+    "movedPx": 3.6
+   },
+   {
+    "tag": "MOA",
+    "site": "site_mora",
+    "movedPx": 3
+   }
+  ],
+  "capitalsMovedOver60Px": [
+   {
+    "tag": "XIS",
+    "movedPx": 64.4
+   }
+  ],
+  "seeds": 7,
+  "realmsWithClaims": [
+   "ZOL",
+   "KIN",
+   "HIR",
+   "ORH",
+   "VND",
+   "NET"
+  ],
+  "subjects": 19
+ },
+ "ownerQuestions": [
+  {
+   "id": "P-01",
+   "realms": [
+    "YEL"
+   ],
+   "question": "Yeldenne's roster capital is Simoto, the model's site_yeldenne_landing on the Gulf of Minnolomak, about 400 px from the Castle of Yeldenne and the valley of Mp'E it is meant to serve; a one-state realm cannot hold both. The seed keeps the site (snapped 28 px onto the drawn coast). Should the landing move below the castle, or the realm's seat move to the valley?"
+  },
+  {
+   "id": "P-02",
+   "realms": [
+    "LER"
+   ],
+   "question": "Lerendor's North (decision K49) is seeded in the drawn snow country (Lerenwaith); Sonargur lies on the island's south coast with Tolvael, the Heodwa Lands, Hrakbrund and Mustnom between. The map tool joins a realm's pieces on one landmass by a corridor, which will cut through those realms. Accept the corridor, or make Lerendor's North a separate realm under the same crown?"
+  },
+  {
+   "id": "P-03",
+   "realms": [
+    "LER"
+   ],
+   "question": "The Low-ness Islands and Ferlinon's pine hills (roster extent) have no model feature; the old map's Low-ness state projects onto the drawn island of Tolhon. Not placed: where are they?"
+  },
+  {
+   "id": "P-04",
+   "realms": [
+    "PRN"
+   ],
+   "question": "The drawing labels Pornyior beside Argon (now Mount Argul); the roster says \"the slopes below Mount Ergo\". The seat follows the drawing. Which mountain?"
+  },
+  {
+   "id": "P-05",
+   "realms": [
+    "IHU",
+    "SOY"
+   ],
+   "question": "The model puts Ossi Luni (former Hengyang, Soyano's) on the same island as Hol's Great Volcano (Ihuy's seat). One owner per island gives it to Ihuy; Soyano's seat Ileslia is on the northernmost Sun isle (land_island_023). Agree?"
+  },
+  {
+   "id": "P-06",
+   "realms": [
+    "OLE",
+    "HAL",
+    "MIR"
+   ],
+   "question": "The drawing writes Gelbus and Luminor (Olen) on Mirolon's eastern lowland, which the import joins to the East Lands, not on an isle; Halia's salt coast is placed on the same lowland's south shore because the peninsula's western tongue is too narrow for two seats. Keep Olen on the mainland, or move it to an isle off Mirolon's south coast?"
+  },
+  {
+   "id": "P-07",
+   "realms": [
+    "HIR",
+    "TIR"
+   ],
+   "question": "Hirolon claims the crests of its proposed ring (the Hiloff Rim from Hirolon Head to the Hilorn mouth, and the Grano; hirolon.md 2.2) and Tirlan grows inside it from Tirbur at the Hilorn's head-streams. Accept the ring as Hirolon's fixed land?"
+  },
+  {
+   "id": "P-08",
+   "realms": [
+    "KIN"
+   ],
+   "question": "Kingson claims the model's whole Kingson Vale plain (plain_kingson_vale, about 200 by 300 px including the gorge), larger than its three roster states. Keep the whole vale, or claim only the valley floor?"
+  },
+  {
+   "id": "P-09",
+   "realms": [],
+   "question": "Ten wild lands are left unowned (Mount Ergo, Mount Argul, the Reeto caves, the high Melty glaciers, the Kherith Isles, the Abyss, the Lustras Hills, the Herrodon crest, the heart of the Fallen Forest, the high snows of the Magic Mountains); every one is proposed in its dossier, and whether the game accepts ownerless states is still to be verified in the Linux run (ADR 0069). Keep them unowned, or give each to the realm that borders it as the old map did?"
+  },
+  {
+   "id": "P-10",
+   "realms": [],
+   "question": "Realm sizes follow the roster's stated extent where it gives a state count and the old map's state count otherwise (WEIGHT); in regions where the roster states fewer states than the land holds (the Magical Lands most of all) the realms grow larger than their extent, or the wild lands must grow. Accept, or state extents for the remaining realms?"
+  },
+  {
+   "id": "P-12",
+   "realms": [
+    "ELD"
+   ],
+   "question": "The roster puts Eldafaen on the southern rift shore and its Archive at the southern end of the rift coast; the old map's seat and the drawn Endelond label lie in the north-east of the Magical Lands by the Fallen Forest. The seat follows the roster (south of the Rift Narrows). Which is right, and is Endelond a separate part?"
+  },
+  {
+   "id": "P-13",
+   "realms": [
+    "SEI",
+    "WND",
+    "SNT",
+    "HLN",
+    "LEN",
+    "FNG"
+   ],
+   "question": "The Triton realms without sites sit on the islands the drawing labels or, where it does not, on the islands the old map gave them: the Seite Islands on the long isle under their label, the Windy Lands on the south of Raerby's arc, Santon on the outer western arc, Halenor on the storm isle south of Kilos, the Lens on the narrow isle east of Adel, Fineger on the northernmost isle. Agree?"
+  },
+  {
+   "id": "P-11",
+   "realms": [
+    "MAG",
+    "YAV",
+    "ANE"
+   ],
+   "question": "Not placed as wild land: the Lost Lands (the drawn Lost and Filion labels lie where Andos Enda's seat stands), Dragon Mountain's summit (the roster gives Yavieth the mountain), the dune sea (Wahatud's oases), the Plutondo Dunes (Rhachia's seat stands in them), the Cursed Square (a reef on the water) and the Dark Lands' Death Islands (no land in the model). Agree?"
+  }
+ ],
+ "importObservations": [
+  "The West Lands and the Cold Lands do not touch: the drawing's sheets leave sea between Holdon's coast and the Gunwyn Downs (no land at y 940 between x 500 and 1400), while the model joins them by the neck (land_western_mainland). The Coldor Channel is also read as water between the Cold Lands and the Yeti shelf.",
+  "The Magical Lands sheet ends near x 3830: a strip of open sea (x 3815 to 3830), a pencil-line strip read as land (x 3831 to 3843, y 1100 to 1700) and sea again split the rift coast (the Mushroom Forest and the Rift Narrows) from the rest of the Magical Lands, which the model keeps as one land_central_mainland.",
+  "The central and eastern mainlands touch through Mirolon's eastern lowland (about x 3450 to 3700, y 1880 to 2000), and the Nether's eastern tip touches the Sun Desert's western coast near (3240, 2400); with the Nether Sound read as land, the Ember Lands island, the Nether and the East and South Lands form one landmass. The barriers zilin_marches and ember_isles and the Nether's claim keep the regions apart.",
+  "Lettering in the sea is read as land, for example the drawn \"Ocean of Edvoid\" between x 3260 and 3640 at y 660 to 700 north of the Magical Lands.",
+  "The workspace's common/country_tags holds only the 19 October world's 305 old Y tags (00_zin_countries.txt) and the dynamic tags; the roster's 156 tags are written by the mod's build to common/country_tags/01_zin_realms.txt (tools/content/modules/countries.mjs), which is not in the tree now. Until the build has written it, the tool refuses every realm (MAP_WORLD_REALM_TAG_UNKNOWN)."
+ ],
+ "validation": {
+  "ok": true,
+  "errors": [],
+  "warnings": []
+ },
+ "issues": [],
+ "realms": [
+  {
+   "tag": "AEN",
+   "key": "aenor",
+   "name": "Aenor",
+   "region": "middle_lands",
+   "subRegion": "The Vale and the Great Lake",
+   "capital": {
+    "name": "Parim",
+    "point": [
+     3061,
+     1464
+    ],
+    "method": "site",
+    "source": "site_parim",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 5.5,
+    "targetStates": 22,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "LER",
+   "key": "lerendor",
+   "name": "Lerendor",
+   "region": "north_lands",
+   "subRegion": "The Leren shore and Lerendor's North",
+   "capital": {
+    "name": "Sonargur",
+    "point": [
+     2975,
+     1023
+    ],
+    "method": "site",
+    "source": "site_sonargur",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [
+    {
+     "point": [
+      2754,
+      786
+     ],
+     "method": "model area",
+     "source": "ice_lerenwaith",
+     "snapPx": 0,
+     "basis": "Lerendor's North (former Lerenwaith) is part of Lerendor (decision K49; roster extent).",
+     "status": "proposed"
+    }
+   ],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds TOL; no seed added there."
+   ],
+   "proposed": [
+    "Seed: Lerendor's North (former Lerenwaith) is part of Lerendor (decision K49; roster extent)."
+   ]
+  },
+  {
+   "tag": "CLD",
+   "key": "coldor",
+   "name": "Coldor",
+   "region": "cold_lands",
+   "subRegion": "The Fandan valley and the western ports",
+   "capital": {
+    "name": "Fandanar",
+    "point": [
+     793,
+     355
+    ],
+    "method": "site",
+    "source": "site_fandanar",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 11,
+    "targetStates": 44,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "NRS",
+   "key": "noris",
+   "name": "Noris",
+   "region": "east_lands",
+   "subRegion": "The northern desert and the Salt Road",
+   "capital": {
+    "name": "Furvior",
+    "point": [
+     4285,
+     1960
+    ],
+    "method": "site",
+    "source": "site_noris",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 9.75,
+    "targetStates": 39,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "STA",
+   "key": "stabilo",
+   "name": "Stabilo",
+   "region": "east_lands",
+   "subRegion": "The southern hills and the Gold Road",
+   "capital": {
+    "name": "Postondoroth",
+    "point": [
+     4849,
+     2040
+    ],
+    "method": "site",
+    "source": "site_postondoroth",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 9.5,
+    "targetStates": 38,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "GOL",
+   "key": "goldoroth",
+   "name": "Goldoroth",
+   "region": "dark_lands",
+   "subRegion": "The Goldoroth arm and the Fire-Mountain",
+   "capital": {
+    "name": "Cocanoor",
+    "point": [
+     2467,
+     1182
+    ],
+    "method": "site",
+    "source": "site_cocanoor",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "dark_lands",
+    "land": "land_goldoroth_arm"
+   },
+   "seeds": [
+    {
+     "point": [
+      2570,
+      1200
+     ],
+     "method": "old states",
+     "source": "old state 243 (1 old state(s) on this land)",
+     "snapPx": 0,
+     "status": "proposed",
+     "land": "land_island_016"
+    }
+   ],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "DND",
+   "key": "dondor",
+   "name": "Dondor",
+   "region": "dark_lands",
+   "subRegion": "The Dondor plain",
+   "capital": {
+    "name": "Notbuton",
+    "point": [
+     2544,
+     1079
+    ],
+    "method": "site",
+    "source": "site_notbuton",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "north_lands",
+    "land": "land_dondor_arm",
+    "zoneNote": "stands in the repaired model's north_lands zone, not a zone of dark_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "PUV",
+   "key": "puvulan",
+   "name": "Puvulan",
+   "region": "ember_lands",
+   "subRegion": "The plateau and the Demonic Mountains",
+   "capital": {
+    "name": "Nafeher",
+    "point": [
+     3041,
+     2189
+    ],
+    "method": "site",
+    "source": "site_nafeher",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "ember_lands",
+    "land": "land_ember_lands_island"
+   },
+   "seeds": [
+    {
+     "point": [
+      3150,
+      2118
+     ],
+     "method": "model land",
+     "source": "land_island_033",
+     "snapPx": 0,
+     "basis": "The isle of Exhoros (drawn Vez) off Volgan's coast (roster extent).",
+     "status": "proposed"
+    },
+    {
+     "point": [
+      2954,
+      2302
+     ],
+     "method": "model land",
+     "source": "land_island_060",
+     "snapPx": 0,
+     "basis": "Unlo, an isle of Volgan's coast (ember_lands.md 2, 11).",
+     "status": "proposed"
+    }
+   ],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 1.75,
+    "targetStates": 7,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Seed: The isle of Exhoros (drawn Vez) off Volgan's coast (roster extent).",
+    "Seed: Unlo, an isle of Volgan's coast (ember_lands.md 2, 11)."
+   ]
+  },
+  {
+   "tag": "ZOL",
+   "key": "zols_mistake",
+   "name": "Zol's Mistake",
+   "region": "zols_mistake",
+   "subRegion": "The Northern Wastes and the black isles",
+   "capital": {
+    "name": "Furviatlon",
+    "point": [
+     3921,
+     430
+    ],
+    "method": "site",
+    "source": "site_furviatlon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "zols_mistake",
+    "land": "land_northern_wastes"
+   },
+   "seeds": [],
+   "claim": [
+    {
+     "source": "zone zols_mistake",
+     "polygons": 41,
+     "basis": "Zol's Mistake is the whole black north and every black island of the Kusmeel (zols_mistake.md; roster extent)."
+    }
+   ],
+   "exclude": [],
+   "weight": {
+    "value": 26,
+    "targetStates": 104,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "MIR",
+   "key": "mirolon",
+   "name": "Mirolon",
+   "region": "ember_lands",
+   "subRegion": "The Mirolon peninsula",
+   "capital": {
+    "name": "Miherta",
+    "point": [
+     3397,
+     1961
+    ],
+    "method": "site",
+    "source": "site_mirolon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "ember_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [
+    {
+     "point": [
+      3382,
+      1870
+     ],
+     "method": "model area",
+     "source": "marsh_mirolon",
+     "snapPx": 0,
+     "basis": "The Great Swamp of Mirolon (roster extent).",
+     "status": "proposed"
+    }
+   ],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds NAN; no seed added there."
+   ],
+   "proposed": [
+    "Seed: The Great Swamp of Mirolon (roster extent)."
+   ]
+  },
+  {
+   "tag": "WOR",
+   "key": "worshipdom",
+   "name": "Worshipdom",
+   "region": "magical_lands",
+   "subRegion": "The Zilin Hills",
+   "capital": {
+    "name": "Lenlakron",
+    "point": [
+     3530,
+     1807
+    ],
+    "method": "site",
+    "source": "site_worshipdom_valleys",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "MAG",
+   "key": "magical_forest",
+   "name": "Magical Forest",
+   "region": "magical_lands",
+   "subRegion": "The Living Forest",
+   "capital": {
+    "name": "Lyrion",
+    "point": [
+     3660,
+     1484
+    ],
+    "method": "site",
+    "source": "site_magical_forest",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "GAA",
+   "key": "gala",
+   "name": "Gala",
+   "region": "lands_of_the_sun",
+   "subRegion": "The north-east shore",
+   "capital": {
+    "name": "Sodoli",
+    "point": [
+     754,
+     2319
+    ],
+    "method": "site",
+    "source": "site_gala",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "GNW",
+   "key": "gunwyn",
+   "name": "Gunwyn",
+   "region": "west_lands",
+   "subRegion": "The Gunwyn Downs",
+   "capital": {
+    "name": "Bulligon",
+    "point": [
+     926,
+     1044
+    ],
+    "method": "site",
+    "source": "site_gunwaith",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 3,
+    "targetStates": 12,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "SEL",
+   "key": "selen",
+   "name": "Selen",
+   "region": "middle_lands",
+   "subRegion": "The Weald",
+   "capital": {
+    "name": "Hifeco",
+    "point": [
+     3010,
+     1233
+    ],
+    "method": "site",
+    "source": "site_selen",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 2.25,
+    "targetStates": 9,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "KIN",
+   "key": "kingson",
+   "name": "Kingson",
+   "region": "middle_lands",
+   "subRegion": "The ringed vale",
+   "capital": {
+    "name": "Deolofson",
+    "point": [
+     3348,
+     1497
+    ],
+    "method": "site",
+    "source": "site_kingson",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [
+    {
+     "source": "area plain_kingson_vale",
+     "polygons": 1,
+     "basis": "Kingson is the ringed Kingson Vale (roster extent; middle_lands.md 2.7)."
+    }
+   ],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "HIR",
+   "key": "hirolon",
+   "name": "Hirolon",
+   "region": "middle_lands",
+   "subRegion": "The ring of stones",
+   "capital": {
+    "name": "Torunalos",
+    "point": [
+     2867,
+     1556
+    ],
+    "method": "site",
+    "source": "site_hiloron",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [
+    {
+     "source": "band along range_hiloff_rim",
+     "polygons": 1,
+     "basis": "The ring's crests: the Hiloff Rim from Hirolon Head to the Hilorn mouth (hirolon.md 2.2, proposed)."
+    },
+    {
+     "source": "band along range_grano",
+     "polygons": 1,
+     "basis": "The eastern Grano, the ring's eastern crest (hirolon.md 2.2, 11)."
+    }
+   ],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "MLK",
+   "key": "melkgard",
+   "name": "Melkgard",
+   "region": "cold_lands",
+   "subRegion": "The Ormolak valley",
+   "capital": {
+    "name": "Minnolomak",
+    "point": [
+     1111,
+     184
+    ],
+    "method": "site",
+    "source": "site_isengard",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 3,
+    "targetStates": 12,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "HOR",
+   "key": "horidor",
+   "name": "Horidor",
+   "region": "cold_lands",
+   "subRegion": "The Neridor Gap",
+   "capital": {
+    "name": "Ollondo",
+    "point": [
+     1397,
+     552
+    ],
+    "method": "site",
+    "source": "site_horidor",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 5.5,
+    "targetStates": 22,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "YEL",
+   "key": "yeldenne",
+   "name": "Yeldenne",
+   "region": "cold_lands",
+   "subRegion": "Mp'E",
+   "capital": {
+    "name": "Simoto",
+    "point": [
+     1356,
+     144
+    ],
+    "method": "site",
+    "source": "site_yeldenne_landing",
+    "snapPx": 28.3,
+    "status": "canon",
+    "zone": "cold_lands",
+    "land": null
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [
+    "The capital site site_yeldenne_landing (1341, 120) is not on the land the import reads (or within 3 px of its coast); the nearest acceptable land is 28.3 px away."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "GIR",
+   "key": "girdon",
+   "name": "Girdon",
+   "region": "west_lands",
+   "subRegion": "The Girdon plain",
+   "capital": {
+    "name": "Arligon",
+    "point": [
+     977,
+     1164
+    ],
+    "method": "site",
+    "source": "site_girdon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "KON",
+   "key": "konori",
+   "name": "Konori",
+   "region": "middle_lands",
+   "subRegion": "The Konori Downs",
+   "capital": {
+    "name": "Arrovez",
+    "point": [
+     3189,
+     1241
+    ],
+    "method": "site",
+    "source": "site_konori",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "HNH",
+   "key": "hunhun",
+   "name": "Hunhun",
+   "region": "middle_lands",
+   "subRegion": "The Hunhun Downs",
+   "capital": {
+    "name": "Ulrono",
+    "point": [
+     3141,
+     1588
+    ],
+    "method": "site",
+    "source": "site_hunhun",
+    "snapPx": 3.6,
+    "status": "canon",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [
+    "The capital site site_hunhun (3138, 1586) is not on the land the import reads (or within 3 px of its coast); the nearest acceptable land is 3.6 px away."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "KLU",
+   "key": "klungori_guard",
+   "name": "Klungori Guard",
+   "region": "middle_lands",
+   "subRegion": "The South Pass",
+   "capital": {
+    "name": "Hungohon",
+    "point": [
+     3307,
+     1762
+    ],
+    "method": "model feature",
+    "source": "pass_south_gate",
+    "anchor": [
+     3307,
+     1762
+    ],
+    "snapPx": 0,
+    "basis": "Hungohon, the garrison town at the western foot of the South Pass (middle_lands.md 10, 11).",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Hungohon: Hungohon, the garrison town at the western foot of the South Pass (middle_lands.md 10, 11)."
+   ]
+  },
+  {
+   "tag": "HER",
+   "key": "herez",
+   "name": "Herez",
+   "region": "middle_lands",
+   "subRegion": "The Grey Hills",
+   "capital": {
+    "name": "Hugomon",
+    "point": [
+     3279,
+     1807
+    ],
+    "method": "site",
+    "source": "site_herez",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "NOL",
+   "key": "noleksun",
+   "name": "Noleksun",
+   "region": "middle_lands",
+   "subRegion": "The south-eastern frontier",
+   "capital": {
+    "name": "Saelori",
+    "point": [
+     3247,
+     1757
+    ],
+    "method": "old capital",
+    "source": "old state 1291 at (3214, 1755) moved by the displacement field",
+    "anchor": [
+     3247,
+     1757
+    ],
+    "snapPx": 0,
+    "basis": "Saelori, the crossing of the south-eastern roads; the old map's Noleksun seat (middle_lands.md 10).",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Saelori: Saelori, the crossing of the south-eastern roads; the old map's Noleksun seat (middle_lands.md 10)."
+   ]
+  },
+  {
+   "tag": "KIL",
+   "key": "kilinti",
+   "name": "Kilinti",
+   "region": "middle_lands",
+   "subRegion": "The Kilinti Forests",
+   "capital": {
+    "name": "Ollolor",
+    "point": [
+     3112,
+     1402
+    ],
+    "method": "site",
+    "source": "site_kilinti",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "SFT",
+   "key": "safeton",
+   "name": "Safeton",
+   "region": "middle_lands",
+   "subRegion": "The south coast",
+   "capital": {
+    "name": "Lotrenri",
+    "point": [
+     3126,
+     1752
+    ],
+    "method": "site",
+    "source": "site_safeton",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "FRE",
+   "key": "freshon",
+   "name": "Freshon",
+   "region": "middle_lands",
+   "subRegion": "The lake springs",
+   "capital": {
+    "name": "Hordorton",
+    "point": [
+     3155,
+     1730
+    ],
+    "method": "old capital",
+    "source": "old state 19 at (3111, 1721) moved by the displacement field",
+    "anchor": [
+     3155,
+     1730
+    ],
+    "snapPx": 0,
+    "basis": "Hordorton, a spring where the lake road meets the south road; the old map's Freshon seat (middle_lands.md 10).",
+    "status": "proposed",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Hordorton: Hordorton, a spring where the lake road meets the south road; the old map's Freshon seat (middle_lands.md 10)."
+   ]
+  },
+  {
+   "tag": "PAZ",
+   "key": "pazoma",
+   "name": "Pazoma",
+   "region": "middle_lands",
+   "subRegion": "The lake guild-city",
+   "capital": {
+    "name": "Horlomon",
+    "point": [
+     3172,
+     1652
+    ],
+    "method": "dossier text",
+    "source": "world (3172, 1652)",
+    "anchor": [
+     3172,
+     1652
+    ],
+    "snapPx": 0,
+    "basis": "Horlomon, a lake town on a deep bay (middle_lands.md 10): the Great Lake's south-east bay between the Hunhun Downs and the Saeton reeds, since Parim, Silesire, Dolepar and Grafas hold the north, east, south and west lobes.",
+    "status": "proposed",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Horlomon: Horlomon, a lake town on a deep bay (middle_lands.md 10): the Great Lake's south-east bay between the Hunhun Downs and the Saeton reeds, since Parim, Silesire, Dolepar and Grafas hold the north, east, south and west lobes."
+   ]
+  },
+  {
+   "tag": "ORH",
+   "key": "orohaf",
+   "name": "Orohaf",
+   "region": "middle_lands",
+   "subRegion": "Aenor Isle",
+   "capital": {
+    "name": "Borrak",
+    "point": [
+     2631,
+     1456
+    ],
+    "method": "site",
+    "source": "site_asgard",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "aenor_isle",
+    "land": "land_aenor_isle"
+   },
+   "seeds": [],
+   "claim": [
+    {
+     "source": "land land_aenor_isle",
+     "polygons": 1,
+     "basis": "Orohaf holds Aenor Isle with Rish and the Tinta Hills (roster extent; middle_lands.md 2.8)."
+    }
+   ],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "FOT",
+   "key": "fotan",
+   "name": "Fotan",
+   "region": "middle_lands",
+   "subRegion": "The Narrow Strait shore",
+   "capital": {
+    "name": "Deoreh",
+    "point": [
+     3065,
+     1122
+    ],
+    "method": "model feature",
+    "source": "strait_narrow",
+    "anchor": [
+     3066,
+     1118
+    ],
+    "snapPx": 4.1,
+    "basis": "Deoreh, the narrowest crossing of the Leren Sea on the Middle Lands side: the Middle Lands end of the Narrow Strait (middle_lands.md 10).",
+    "status": "proposed",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds LER, EEK, REN, MOO, KER, TLV, HEO, HRA, MIA, DOL, MUS; no seed added there."
+   ],
+   "proposed": [
+    "Capital Deoreh: Deoreh, the narrowest crossing of the Leren Sea on the Middle Lands side: the Middle Lands end of the Narrow Strait (middle_lands.md 10)."
+   ]
+  },
+  {
+   "tag": "KUN",
+   "key": "kunhrim",
+   "name": "Kunhrim",
+   "region": "middle_lands",
+   "subRegion": "The Great Wall range",
+   "capital": {
+    "name": "Hrakkerm",
+    "point": [
+     3389,
+     1323
+    ],
+    "method": "site",
+    "source": "site_great_wall_lunhrim_fort",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "AEN",
+    "subjectType": "chartered dominion"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "BRR",
+   "key": "burrikkrit",
+   "name": "Burrikkrit",
+   "region": "middle_lands",
+   "subRegion": "The Cursed and Giant Mountains",
+   "capital": {
+    "name": "Glimzig",
+    "point": [
+     3379,
+     1651
+    ],
+    "method": "model feature",
+    "source": "range_cursed_mountains",
+    "anchor": [
+     3379,
+     1651
+    ],
+    "snapPx": 0,
+    "basis": "Glimzig, the throne-cave deep under the Cursed Mountains; the south end of the ridge, as the old carve (middle_lands.md 2.9, 10).",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Glimzig: Glimzig, the throne-cave deep under the Cursed Mountains; the south end of the ridge, as the old carve (middle_lands.md 2.9, 10)."
+   ]
+  },
+  {
+   "tag": "OLO",
+   "key": "olodor",
+   "name": "Olodor",
+   "region": "middle_lands",
+   "subRegion": "The Deodolor Hills",
+   "capital": {
+    "name": "Tovodor",
+    "point": [
+     2988,
+     1399
+    ],
+    "method": "model feature",
+    "source": "range_deodolor",
+    "anchor": [
+     2988,
+     1399
+    ],
+    "snapPx": 0,
+    "basis": "Tovodor in the Deodolor Hills north of the Stone Forest (middle_lands.md 2.3, 3.7).",
+    "status": "proposed",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Tovodor: Tovodor in the Deodolor Hills north of the Stone Forest (middle_lands.md 2.3, 3.7)."
+   ]
+  },
+  {
+   "tag": "DNL",
+   "key": "dunelaeth",
+   "name": "Dunelaeth",
+   "region": "middle_lands",
+   "subRegion": "The Kingdom Forests",
+   "capital": {
+    "name": "Thamiel",
+    "point": [
+     3302,
+     1314
+    ],
+    "method": "model area",
+    "source": "forest_kingdom",
+    "anchor": [
+     3302,
+     1314
+    ],
+    "snapPx": 0,
+    "basis": "Thamiel, a hill in the Kingdom Forests (the model's Dunelaeth forest) at the foot of Lunhrim (middle_lands.md 10, 11).",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Thamiel: Thamiel, a hill in the Kingdom Forests (the model's Dunelaeth forest) at the foot of Lunhrim (middle_lands.md 10, 11)."
+   ]
+  },
+  {
+   "tag": "ANR",
+   "key": "aenor_forest",
+   "name": "Aenor Forest",
+   "region": "middle_lands",
+   "subRegion": "The north coast forest",
+   "capital": {
+    "name": "Baeldran",
+    "point": [
+     3058,
+     1158
+    ],
+    "method": "model area",
+    "source": "forest_crown",
+    "anchor": [
+     3058,
+     1158
+    ],
+    "snapPx": 0,
+    "basis": "Baeldran, the oldest stand of the Aenor Forest (middle_lands.md 2.5a, 11).",
+    "status": "proposed",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Baeldran: Baeldran, the oldest stand of the Aenor Forest (middle_lands.md 2.5a, 11)."
+   ]
+  },
+  {
+   "tag": "CUR",
+   "key": "cursed_lands",
+   "name": "Cursed Lands",
+   "region": "middle_lands",
+   "subRegion": "The Cursed Lands",
+   "capital": {
+    "name": "Morluma",
+    "point": [
+     3292,
+     1776
+    ],
+    "method": "model area",
+    "source": "waste_cursed_lands",
+    "anchor": [
+     3298,
+     1770
+    ],
+    "snapPx": 8.5,
+    "basis": "Morluma, deep in the sour ground of the Cursed Lands (middle_lands.md 10).",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland",
+    "zoneNote": "stands in the repaired model's magical_lands zone, not a zone of middle_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Morluma: Morluma, deep in the sour ground of the Cursed Lands (middle_lands.md 10)."
+   ]
+  },
+  {
+   "tag": "BLO",
+   "key": "bloody_forest",
+   "name": "Bloody Forest",
+   "region": "middle_lands",
+   "subRegion": "The Bloody Forest",
+   "capital": {
+    "name": "Giritren",
+    "point": [
+     3234,
+     1134
+    ],
+    "method": "model area",
+    "source": "forest_bloody",
+    "anchor": [
+     3234,
+     1134
+    ],
+    "snapPx": 0,
+    "basis": "Giritren, the oldest stand of red oak in the Bloody Forest (middle_lands.md 10).",
+    "status": "proposed",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [
+    {
+     "point": [
+      3276,
+      1003
+     ],
+     "method": "old states",
+     "source": "old state 324 (1 old state(s) on this land)",
+     "snapPx": 27.3,
+     "status": "proposed",
+     "land": "land_island_049"
+    }
+   ],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Giritren: Giritren, the oldest stand of red oak in the Bloody Forest (middle_lands.md 10)."
+   ]
+  },
+  {
+   "tag": "EEK",
+   "key": "eekedor",
+   "name": "Eekedor",
+   "region": "north_lands",
+   "subRegion": "The Eekedor Vale",
+   "capital": {
+    "name": "Viktara",
+    "point": [
+     3107,
+     924
+    ],
+    "method": "site",
+    "source": "site_eekedor",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "REN",
+   "key": "ren",
+   "name": "R'en",
+   "region": "north_lands",
+   "subRegion": "The strait cape",
+   "capital": {
+    "name": "Farnardur",
+    "point": [
+     3133,
+     1052
+    ],
+    "method": "site",
+    "source": "site_ren",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "MOO",
+   "key": "molot",
+   "name": "Molot",
+   "region": "north_lands",
+   "subRegion": "The northern march",
+   "capital": {
+    "name": "Altovian",
+    "point": [
+     3040,
+     752
+    ],
+    "method": "drawn label",
+    "source": "world (3040, 752)",
+    "anchor": [
+     3040,
+     752
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Molot at the island's northern tip, with Knorvik (drawn Allegro) beside it.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Altovian: The drawn label Molot at the island's northern tip, with Knorvik (drawn Allegro) beside it."
+   ]
+  },
+  {
+   "tag": "KER",
+   "key": "keredor_hellekton",
+   "name": "Keredor-Hellekton",
+   "region": "north_lands",
+   "subRegion": "The two coast crowns",
+   "capital": {
+    "name": "Nuadoso",
+    "point": [
+     3068,
+     818
+    ],
+    "method": "drawn label",
+    "source": "world (3068, 818)",
+    "anchor": [
+     3068,
+     818
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Keredor-Hellekton; Nuadoso, the shared inlet of the double crown.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Nuadoso: The drawn label Keredor-Hellekton; Nuadoso, the shared inlet of the double crown."
+   ]
+  },
+  {
+   "tag": "TLV",
+   "key": "tolvael",
+   "name": "Tolvael",
+   "region": "north_lands",
+   "subRegion": "The long vale",
+   "capital": {
+    "name": "Agtosai",
+    "point": [
+     2845,
+     860
+    ],
+    "method": "drawn label",
+    "source": "world (2845, 860)",
+    "anchor": [
+     2845,
+     860
+    ],
+    "snapPx": 0,
+    "basis": "The drawn labels Sensai and Gil'dul (Kerhil): the long vale on the island's west coast.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 2.75,
+    "targetStates": 11,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Agtosai: The drawn labels Sensai and Gil'dul (Kerhil): the long vale on the island's west coast."
+   ]
+  },
+  {
+   "tag": "TOL",
+   "key": "tolhon",
+   "name": "Tolhon",
+   "region": "north_lands",
+   "subRegion": "The Onp coast",
+   "capital": {
+    "name": "Migur",
+    "point": [
+     2770,
+     945
+    ],
+    "method": "drawn label",
+    "source": "world (2770, 945)",
+    "anchor": [
+     2770,
+     945
+    ],
+    "snapPx": 0,
+    "basis": "Migur, the island principality's harbour: the drawn island west of the long vale (land_island_008).",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_island_008"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Migur: Migur, the island principality's harbour: the drawn island west of the long vale (land_island_008)."
+   ]
+  },
+  {
+   "tag": "HEO",
+   "key": "heodwa_lands",
+   "name": "Heodwa Lands",
+   "region": "north_lands",
+   "subRegion": "The central hills",
+   "capital": {
+    "name": "Pand",
+    "point": [
+     2935,
+     866
+    ],
+    "method": "drawn label",
+    "source": "world (2935, 866)",
+    "anchor": [
+     2935,
+     866
+    ],
+    "snapPx": 0,
+    "basis": "The drawn labels Heodwa Lands and Agniy (drawn Agnas): the central hills.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Pand: The drawn labels Heodwa Lands and Agniy (drawn Agnas): the central hills."
+   ]
+  },
+  {
+   "tag": "HRA",
+   "key": "hrakbrund",
+   "name": "Hrakbrund",
+   "region": "north_lands",
+   "subRegion": "The High Mountains",
+   "capital": {
+    "name": "Ilmahrim",
+    "point": [
+     2895,
+     908
+    ],
+    "method": "drawn label",
+    "source": "world (2895, 908)",
+    "anchor": [
+     2895,
+     908
+    ],
+    "snapPx": 0,
+    "basis": "The drawn High Mountains at the island's centre; Ilmahrim, the deep hall.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Ilmahrim: The drawn High Mountains at the island's centre; Ilmahrim, the deep hall."
+   ]
+  },
+  {
+   "tag": "MIA",
+   "key": "mina",
+   "name": "Mina",
+   "region": "north_lands",
+   "subRegion": "The Etonia ore hills",
+   "capital": {
+    "name": "Gilvian",
+    "point": [
+     3150,
+     880
+    ],
+    "method": "drawn label",
+    "source": "world (3150, 880)",
+    "anchor": [
+     3150,
+     880
+    ],
+    "snapPx": 0,
+    "basis": "The drawn labels Mina, Mine Din, Fargur and Thowson: the Etonia ore hills; Gilvian below them.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.75,
+    "targetStates": 7,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Gilvian: The drawn labels Mina, Mine Din, Fargur and Thowson: the Etonia ore hills; Gilvian below them."
+   ]
+  },
+  {
+   "tag": "DOL",
+   "key": "dolpar",
+   "name": "Dolpar",
+   "region": "north_lands",
+   "subRegion": "The lake of Dolpar",
+   "capital": {
+    "name": "Parur",
+    "point": [
+     2973,
+     908
+    ],
+    "method": "model feature",
+    "source": "lake_evian",
+    "anchor": [
+     2982,
+     919
+    ],
+    "snapPx": 14.2,
+    "basis": "Parur, the lake league's market on Dolpar (the model's lake_evian), with the drawn Cinargo west of it.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Parur: Parur, the lake league's market on Dolpar (the model's lake_evian), with the drawn Cinargo west of it."
+   ]
+  },
+  {
+   "tag": "MUS",
+   "key": "mustnom",
+   "name": "Mustnom",
+   "region": "north_lands",
+   "subRegion": "The southern hills",
+   "capital": {
+    "name": "Krakur",
+    "point": [
+     2893,
+     990
+    ],
+    "method": "drawn label",
+    "source": "world (2893, 990)",
+    "anchor": [
+     2893,
+     990
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Must... under the Solondor Mountains: Krakur, the dwarf goblins' largest warren.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_isle_of_the_north_lands"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Krakur: The drawn label Must... under the Solondor Mountains: Krakur, the dwarf goblins' largest warren."
+   ]
+  },
+  {
+   "tag": "FEA",
+   "key": "fearno",
+   "name": "Fearno",
+   "region": "cold_lands",
+   "subRegion": "The eastern moors",
+   "capital": {
+    "name": "Azenoalion",
+    "point": [
+     1610,
+     458
+    ],
+    "method": "drawn label",
+    "source": "world (1610, 458)",
+    "anchor": [
+     1610,
+     458
+    ],
+    "snapPx": 0,
+    "basis": "The drawn town Azenoalion on the Naepu.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 8.25,
+    "targetStates": 33,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Azenoalion: The drawn town Azenoalion on the Naepu."
+   ]
+  },
+  {
+   "tag": "AUT",
+   "key": "austklev",
+   "name": "Austklev",
+   "region": "cold_lands",
+   "subRegion": "The east coast",
+   "capital": {
+    "name": "Vaestia",
+    "point": [
+     1641,
+     681
+    ],
+    "method": "drawn label",
+    "source": "world (1612, 712)",
+    "anchor": [
+     1612,
+     712
+    ],
+    "snapPx": 42.4,
+    "basis": "The drawn town Vaestia where the east-coast forest meets the coast, beside the drawn Wonderland (Austklev).",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": null
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Vaestia: The drawn town Vaestia where the east-coast forest meets the coast, beside the drawn Wonderland (Austklev)."
+   ]
+  },
+  {
+   "tag": "WRL",
+   "key": "worlond",
+   "name": "Worlond",
+   "region": "cold_lands",
+   "subRegion": "The Worlond Forest",
+   "capital": {
+    "name": "Tarvak",
+    "point": [
+     1106,
+     778
+    ],
+    "method": "model area",
+    "source": "forest_worlond",
+    "anchor": [
+     1106,
+     778
+    ],
+    "snapPx": 0,
+    "basis": "Tarvak, a forest town in the Worlond Forest on the neck.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 5.25,
+    "targetStates": 21,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Tarvak: Tarvak, a forest town in the Worlond Forest on the neck."
+   ]
+  },
+  {
+   "tag": "PLT",
+   "key": "poloto",
+   "name": "Poloto",
+   "region": "cold_lands",
+   "subRegion": "The Poloto plain",
+   "capital": {
+    "name": "Fandhavn",
+    "point": [
+     1390,
+     718
+    ],
+    "method": "model feature",
+    "source": "river_fandan",
+    "anchor": [
+     1401,
+     732
+    ],
+    "snapPx": 17.8,
+    "basis": "Fandhavn at the Fandan mouth, beside the drawn label Poloto.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Fandhavn: Fandhavn at the Fandan mouth, beside the drawn label Poloto."
+   ]
+  },
+  {
+   "tag": "HLD",
+   "key": "holdon",
+   "name": "Holdon",
+   "region": "cold_lands",
+   "subRegion": "The south coast",
+   "capital": {
+    "name": "Fentene",
+    "point": [
+     700,
+     684
+    ],
+    "method": "drawn label",
+    "source": "world (700, 684)",
+    "anchor": [
+     700,
+     684
+    ],
+    "snapPx": 0,
+    "basis": "The drawn town Fentene, the snowline fair-town on the south coast facing the Coldor Channel; the import reads the channel just south of the label, so the seat stands on the coast north of it.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Fentene: The drawn town Fentene, the snowline fair-town on the south coast facing the Coldor Channel; the import reads the channel just south of the label, so the seat stands on the coast north of it."
+   ]
+  },
+  {
+   "tag": "GLI",
+   "key": "glimkit",
+   "name": "Glimkit",
+   "region": "cold_lands",
+   "subRegion": "The warm valleys",
+   "capital": {
+    "name": "Drikzig",
+    "point": [
+     564,
+     677
+    ],
+    "method": "model feature",
+    "source": "range_coldor_mountains",
+    "anchor": [
+     561,
+     677
+    ],
+    "snapPx": 3,
+    "basis": "Drikzig in the warm-spring valleys of the Coldor Mountains; the drawn glens Agoron and Belor lie beside the range's western end.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Drikzig: Drikzig in the warm-spring valleys of the Coldor Mountains; the drawn glens Agoron and Belor lie beside the range's western end."
+   ]
+  },
+  {
+   "tag": "XIS",
+   "key": "xison",
+   "name": "Xison",
+   "region": "cold_lands",
+   "subRegion": "The western uplands",
+   "capital": {
+    "name": "Akahew",
+    "point": [
+     345,
+     594
+    ],
+    "method": "drawn label",
+    "source": "world (300, 640)",
+    "anchor": [
+     300,
+     640
+    ],
+    "snapPx": 64.4,
+    "basis": "Akahew, where the upland road meets the coast road: the west coast below the drawn Rion and Yeneldmore (the drawn label itself lies on water as the import reads it).",
+    "status": "proposed",
+    "zone": "windwaith",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 4.25,
+    "targetStates": 17,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "The anchor (300, 640) is 64.4 px from the nearest acceptable land; check the placement."
+   ],
+   "proposed": [
+    "Capital Akahew: Akahew, where the upland road meets the coast road: the west coast below the drawn Rion and Yeneldmore (the drawn label itself lies on water as the import reads it)."
+   ]
+  },
+  {
+   "tag": "PRT",
+   "key": "pertolor",
+   "name": "Pertolor",
+   "region": "cold_lands",
+   "subRegion": "The sheep vale",
+   "capital": {
+    "name": "Minsentia",
+    "point": [
+     1150,
+     440
+    ],
+    "method": "drawn label",
+    "source": "world (1150, 440)",
+    "anchor": [
+     1150,
+     440
+    ],
+    "snapPx": 0,
+    "basis": "The drawn labels Pertogor and Londor (Faaennar): the sheep vale east of Melkgard.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 4.25,
+    "targetStates": 17,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Minsentia: The drawn labels Pertogor and Londor (Faaennar): the sheep vale east of Melkgard."
+   ]
+  },
+  {
+   "tag": "OMR",
+   "key": "omar",
+   "name": "Omar",
+   "region": "cold_lands",
+   "subRegion": "The border moor",
+   "capital": {
+    "name": "Vaesdeon",
+    "point": [
+     1000,
+     272
+    ],
+    "method": "drawn label",
+    "source": "world (1000, 272)",
+    "anchor": [
+     1000,
+     272
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Omar beside Mp'E: the border moor between Melkgard and Mp'E.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 3.25,
+    "targetStates": 13,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Vaesdeon: The drawn label Omar beside Mp'E: the border moor between Melkgard and Mp'E."
+   ]
+  },
+  {
+   "tag": "POT",
+   "key": "portogalor",
+   "name": "Portogalor",
+   "region": "cold_lands",
+   "subRegion": "The north coast",
+   "capital": {
+    "name": "Fellodor",
+    "point": [
+     740,
+     195
+    ],
+    "method": "drawn label",
+    "source": "world (740, 195)",
+    "anchor": [
+     740,
+     195
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Portogalor on the north coast beside the Olsuaon Massif.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2.25,
+    "targetStates": 9,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Fellodor: The drawn label Portogalor on the north coast beside the Olsuaon Massif."
+   ]
+  },
+  {
+   "tag": "KVI",
+   "key": "kvittumm",
+   "name": "Kvittumm",
+   "region": "cold_lands",
+   "subRegion": "The far north-west",
+   "capital": {
+    "name": "Esrom",
+    "point": [
+     272,
+     300
+    ],
+    "method": "drawn label",
+    "source": "world (272, 300)",
+    "anchor": [
+     272,
+     300
+    ],
+    "snapPx": 0,
+    "basis": "The drawn moot-town Esrom by Gaadon in the far north-west.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 4.75,
+    "targetStates": 19,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Esrom: The drawn moot-town Esrom by Gaadon in the far north-west."
+   ]
+  },
+  {
+   "tag": "ORW",
+   "key": "orewele",
+   "name": "Orewele",
+   "region": "cold_lands",
+   "subRegion": "The Orewell lowland",
+   "capital": {
+    "name": "Guerlon",
+    "point": [
+     330,
+     278
+    ],
+    "method": "drawn label",
+    "source": "world (330, 278)",
+    "anchor": [
+     330,
+     278
+    ],
+    "snapPx": 0,
+    "basis": "The drawn labels Orewell and Guerlon: the iron town of the Orewell lowland.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2.5,
+    "targetStates": 10,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Guerlon: The drawn labels Orewell and Guerlon: the iron town of the Orewell lowland."
+   ]
+  },
+  {
+   "tag": "NIV",
+   "key": "nivaros",
+   "name": "Nivaros",
+   "region": "cold_lands",
+   "subRegion": "The Nivaros Heights",
+   "capital": {
+    "name": "Xitore",
+    "point": [
+     400,
+     178
+    ],
+    "method": "drawn label",
+    "source": "world (400, 178)",
+    "anchor": [
+     400,
+     178
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Titanos (Nivaros) on the heights of the far north-west.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Xitore: The drawn label Titanos (Nivaros) on the heights of the far north-west."
+   ]
+  },
+  {
+   "tag": "YEI",
+   "key": "yeti_lands",
+   "name": "Yeti Lands",
+   "region": "cold_lands",
+   "subRegion": "The southern shelf",
+   "capital": {
+    "name": "Ghaumbhu",
+    "point": [
+     842,
+     822
+    ],
+    "method": "model area",
+    "source": "hills_yeti_lands",
+    "anchor": [
+     842,
+     822
+    ],
+    "snapPx": 0,
+    "basis": "Ghaumbhu, the high cave of the Yeti Lands shelf south of the Coldor Mountains.",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 3.5,
+    "targetStates": 14,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Ghaumbhu: Ghaumbhu, the high cave of the Yeti Lands shelf south of the Coldor Mountains."
+   ]
+  },
+  {
+   "tag": "GHH",
+   "key": "ghaahu",
+   "name": "Ghaahu",
+   "region": "cold_lands",
+   "subRegion": "The Cold Mountains",
+   "capital": {
+    "name": "Huummal",
+    "point": [
+     1518,
+     354
+    ],
+    "method": "model area",
+    "source": "ice_north_yeti_lands",
+    "anchor": [
+     1518,
+     354
+    ],
+    "snapPx": 0,
+    "basis": "Huummal, the hum-cave of the snow plain the drawing calls North Yeti Lands (Ghaahu).",
+    "status": "proposed",
+    "zone": "cold_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Huummal: Huummal, the hum-cave of the snow plain the drawing calls North Yeti Lands (Ghaahu)."
+   ]
+  },
+  {
+   "tag": "VND",
+   "key": "vindael",
+   "name": "Vindael",
+   "region": "cold_lands",
+   "subRegion": "The Vindael arm",
+   "capital": {
+    "name": "Porideon",
+    "point": [
+     254,
+     1029
+    ],
+    "method": "model land",
+    "source": "land_island_001",
+    "anchor": [
+     254,
+     1029
+    ],
+    "snapPx": 0,
+    "basis": "Porideon, the council port on the westward headland of the Vindael ice arm (the model's land_island_001).",
+    "status": "proposed",
+    "zone": "windwaith",
+    "land": "land_island_001"
+   },
+   "seeds": [],
+   "claim": [
+    {
+     "source": "land land_island_001",
+     "polygons": 1,
+     "basis": "The Vindael arm is an island joined to the mainland only by winter ice (cold_lands.md, the Vindael arm: land_island_001)."
+    }
+   ],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the West Lands south of the neck"
+    }
+   ],
+   "weight": {
+    "value": 3,
+    "targetStates": 12,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds CLD, MLK, HOR, YEL, FEA, AUT, WRL, PLT, HLD, GLI, XIS, PRT, OMR, POT, KVI, ORW, NIV, YEI, GHH; no seed added there."
+   ],
+   "proposed": [
+    "Capital Porideon: Porideon, the council port on the westward headland of the Vindael ice arm (the model's land_island_001)."
+   ]
+  },
+  {
+   "tag": "WER",
+   "key": "werlendor",
+   "name": "Werlendor",
+   "region": "west_lands",
+   "subRegion": "The Erg finger",
+   "capital": {
+    "name": "Caer-Erg",
+    "point": [
+     666,
+     1129
+    ],
+    "method": "model feature",
+    "source": "range_erg",
+    "anchor": [
+     666,
+     1129
+    ],
+    "snapPx": 0,
+    "basis": "Caer-Erg, the hill-fort at the Erg spur on the drawn Erg finger.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.75,
+    "targetStates": 7,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Caer-Erg: Caer-Erg, the hill-fort at the Erg spur on the drawn Erg finger."
+   ]
+  },
+  {
+   "tag": "LAB",
+   "key": "lambin",
+   "name": "Lambin",
+   "region": "west_lands",
+   "subRegion": "The eastern downs",
+   "capital": {
+    "name": "Faennon",
+    "point": [
+     1070,
+     1175
+    ],
+    "method": "drawn label",
+    "source": "world (1070, 1175)",
+    "anchor": [
+     1070,
+     1175
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Lambin: Faennon, the granary town of the eastern downs.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2.25,
+    "targetStates": 9,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Faennon: The drawn label Lambin: Faennon, the granary town of the eastern downs."
+   ]
+  },
+  {
+   "tag": "THN",
+   "key": "thenon",
+   "name": "Thenon",
+   "region": "west_lands",
+   "subRegion": "The Thenon lowland",
+   "capital": {
+    "name": "Tummin",
+    "point": [
+     860,
+     1220
+    ],
+    "method": "drawn label",
+    "source": "world (860, 1220)",
+    "anchor": [
+     860,
+     1220
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Thenon: Tummin in the olive lowland.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Tummin: The drawn label Thenon: Tummin in the olive lowland."
+   ]
+  },
+  {
+   "tag": "DOB",
+   "key": "dobbum",
+   "name": "Dobbum",
+   "region": "west_lands",
+   "subRegion": "The Ronbo basin",
+   "capital": {
+    "name": "Luddum",
+    "point": [
+     810,
+     1358
+    ],
+    "method": "drawn label",
+    "source": "world (800, 1350)",
+    "anchor": [
+     800,
+     1350
+    ],
+    "snapPx": 12.8,
+    "basis": "The drawn basin label (HKY, the Ronbo basin) under the Herlitz Mountains: Luddum.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Luddum: The drawn basin label (HKY, the Ronbo basin) under the Herlitz Mountains: Luddum."
+   ]
+  },
+  {
+   "tag": "BRU",
+   "key": "brundahrim",
+   "name": "Brundahrim",
+   "region": "west_lands",
+   "subRegion": "The Herlitz and Dusty Mountains",
+   "capital": {
+    "name": "Hrennost",
+    "point": [
+     860,
+     1420
+    ],
+    "method": "drawn label",
+    "source": "world (860, 1420)",
+    "anchor": [
+     860,
+     1420
+    ],
+    "snapPx": 0,
+    "basis": "The drawn Dusty Mountains: Hrennost, where the West's first powder was made from their saltpetre.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds NND; no seed added there."
+   ],
+   "proposed": [
+    "Capital Hrennost: The drawn Dusty Mountains: Hrennost, where the West's first powder was made from their saltpetre."
+   ]
+  },
+  {
+   "tag": "GRO",
+   "key": "gromkerm",
+   "name": "Gromkerm",
+   "region": "west_lands",
+   "subRegion": "The Bolpor and Boldor Mountains",
+   "capital": {
+    "name": "Hrunost",
+    "point": [
+     1162,
+     1216
+    ],
+    "method": "model feature",
+    "source": "range_bolpor_boldor",
+    "anchor": [
+     1162,
+     1216
+    ],
+    "snapPx": 0,
+    "basis": "Hrunost in the Bolpor and Boldor Mountains on the east flank of the Kulolo valley.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Hrunost: Hrunost in the Bolpor and Boldor Mountains on the east flank of the Kulolo valley."
+   ]
+  },
+  {
+   "tag": "SAO",
+   "key": "saopon",
+   "name": "Saopon",
+   "region": "west_lands",
+   "subRegion": "The Kulolo mouth",
+   "capital": {
+    "name": "Lochon",
+    "point": [
+     1008,
+     1353
+    ],
+    "method": "model feature",
+    "source": "lake_ilurdor",
+    "anchor": [
+     1008,
+     1353
+    ],
+    "snapPx": 0,
+    "basis": "Lochon, the guild town on the Ilurdor lagoon at the Kulolo mouth.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Lochon: Lochon, the guild town on the Ilurdor lagoon at the Kulolo mouth."
+   ]
+  },
+  {
+   "tag": "BLD",
+   "key": "buldor",
+   "name": "Buldor",
+   "region": "west_lands",
+   "subRegion": "South of the Fog and Eye range",
+   "capital": {
+    "name": "Toples",
+    "point": [
+     920,
+     1390
+    ],
+    "method": "drawn label",
+    "source": "world (920, 1390)",
+    "anchor": [
+     920,
+     1390
+    ],
+    "snapPx": 0,
+    "basis": "The drawn town Toples at the crossroads of the southern roads.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Toples: The drawn town Toples at the crossroads of the southern roads."
+   ]
+  },
+  {
+   "tag": "KRA",
+   "key": "kradlon",
+   "name": "Kradlon",
+   "region": "west_lands",
+   "subRegion": "The Kradlon Peninsula",
+   "capital": {
+    "name": "Bolbin",
+    "point": [
+     765,
+     1508
+    ],
+    "method": "site",
+    "source": "site_kradlon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "CRG",
+   "key": "corogon",
+   "name": "Corogon",
+   "region": "west_lands",
+   "subRegion": "The Corogon Peninsula",
+   "capital": {
+    "name": "Oslodon",
+    "point": [
+     1315,
+     1435
+    ],
+    "method": "drawn label",
+    "source": "world (1320, 1430)",
+    "anchor": [
+     1320,
+     1430
+    ],
+    "snapPx": 7.1,
+    "basis": "The drawn label Corogon: Oslodon, the consuls' port on the bay facing the central sea.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_western_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 2.25,
+    "targetStates": 9,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Oslodon: The drawn label Corogon: Oslodon, the consuls' port on the bay facing the central sea."
+   ]
+  },
+  {
+   "tag": "VRN",
+   "key": "varnondor",
+   "name": "Varnondor",
+   "region": "west_lands",
+   "subRegion": "The western capes",
+   "capital": {
+    "name": "Varlibo",
+    "point": [
+     1364,
+     1536
+    ],
+    "method": "site",
+    "source": "site_varnondor_staging",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "west_lands",
+    "land": "land_island_002"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.75,
+    "targetStates": 7,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "2 old state(s) of this realm fall on a land that already holds GNW, GIR, KRA, WER, LAB, THN, DOB, BRU, GRO, SAO, BLD, CRG; no seed added there."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "WEN",
+   "key": "wennarith",
+   "name": "Wennarith",
+   "region": "west_lands",
+   "subRegion": "The peninsula's rivers",
+   "capital": {
+    "name": "Datidon",
+    "point": [
+     1480,
+     1421
+    ],
+    "method": "drawn label",
+    "source": "world (1480, 1420)",
+    "anchor": [
+     1480,
+     1420
+    ],
+    "snapPx": 1,
+    "basis": "The drawn label Argo (Wennarith) on the Varnondor peninsula's eastern bend.",
+    "status": "proposed",
+    "zone": "west_lands",
+    "land": "land_island_002"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "cold_neck",
+     "name": "the Cold Lands north of the neck"
+    }
+   ],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Datidon: The drawn label Argo (Wennarith) on the Varnondor peninsula's eastern bend."
+   ]
+  },
+  {
+   "tag": "DRK",
+   "key": "dark_gate",
+   "name": "Dark Gate",
+   "region": "dark_lands",
+   "subRegion": "The Dark Gate pass",
+   "capital": {
+    "name": "Doldes",
+    "point": [
+     2534,
+     1279
+    ],
+    "method": "model feature",
+    "source": "pass_dark_gate",
+    "anchor": [
+     2534,
+     1280
+    ],
+    "snapPx": 1,
+    "basis": "Doldes, the gate hold on the Dark Gate pass.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_goldoroth_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": {
+    "tag": "GOL",
+    "subjectType": "tributary"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Doldes: Doldes, the gate hold on the Dark Gate pass."
+   ]
+  },
+  {
+   "tag": "BUN",
+   "key": "burnikit",
+   "name": "Burnikit",
+   "region": "dark_lands",
+   "subRegion": "The Goldoroth Mountains",
+   "capital": {
+    "name": "Burnikzig",
+    "point": [
+     2473,
+     1150
+    ],
+    "method": "drawn label",
+    "source": "world (2473, 1150)",
+    "anchor": [
+     2473,
+     1150
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label South Goldor at the Goldoroth Volcano: the warm deep caves the volcano heats (Burnikzig).",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_goldoroth_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Burnikzig: The drawn label South Goldor at the Goldoroth Volcano: the warm deep caves the volcano heats (Burnikzig)."
+   ]
+  },
+  {
+   "tag": "VES",
+   "key": "veshazel",
+   "name": "Veshazel",
+   "region": "dark_lands",
+   "subRegion": "The Goldoroth Ash Fields",
+   "capital": {
+    "name": "Ozmath-Vesh",
+    "point": [
+     2529,
+     1242
+    ],
+    "method": "drawn label",
+    "source": "world (2529, 1242)",
+    "anchor": [
+     2529,
+     1242
+    ],
+    "snapPx": 0,
+    "basis": "The drawn Goldoroth Dead Lands, renamed the Goldoroth Ash Fields, facing the Sea of Dolon.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_goldoroth_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Ozmath-Vesh: The drawn Goldoroth Dead Lands, renamed the Goldoroth Ash Fields, facing the Sea of Dolon."
+   ]
+  },
+  {
+   "tag": "BLK",
+   "key": "blackton",
+   "name": "Blackton",
+   "region": "dark_lands",
+   "subRegion": "The eastern coast",
+   "capital": {
+    "name": "Dontadur",
+    "point": [
+     2723,
+     1098
+    ],
+    "method": "drawn label",
+    "source": "world (2723, 1098)",
+    "anchor": [
+     2723,
+     1098
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Blackton on the eastern coast: Dontadur, the largest of the five harbours.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_dondor_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Dontadur: The drawn label Blackton on the eastern coast: Dontadur, the largest of the five harbours."
+   ]
+  },
+  {
+   "tag": "BLN",
+   "key": "belonton",
+   "name": "Belonton",
+   "region": "dark_lands",
+   "subRegion": "The Belonton borderlands",
+   "capital": {
+    "name": "Notle",
+    "point": [
+     2457,
+     1281
+    ],
+    "method": "drawn label",
+    "source": "world (2457, 1281)",
+    "anchor": [
+     2457,
+     1281
+    ],
+    "snapPx": 0,
+    "basis": "The drawn Belonton Border: Notle, the sea-orc harbour on the borderland coast.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_goldoroth_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Notle: The drawn Belonton Border: Notle, the sea-orc harbour on the borderland coast."
+   ]
+  },
+  {
+   "tag": "BOR",
+   "key": "bordon",
+   "name": "Bordon",
+   "region": "dark_lands",
+   "subRegion": "The Black Road",
+   "capital": {
+    "name": "Zubudor",
+    "point": [
+     2416,
+     1060
+    ],
+    "method": "site",
+    "source": "site_bordon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "north_lands",
+    "land": "land_goldoroth_arm",
+    "zoneNote": "stands in the repaired model's north_lands zone, not a zone of dark_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "DRE",
+   "key": "dreson",
+   "name": "Dreson",
+   "region": "dark_lands",
+   "subRegion": "The fens",
+   "capital": {
+    "name": "Dolido",
+    "point": [
+     2406,
+     1075
+    ],
+    "method": "site",
+    "source": "site_dreson",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "north_lands",
+    "land": "land_goldoroth_arm",
+    "zoneNote": "stands in the repaired model's north_lands zone, not a zone of dark_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "DUL",
+   "key": "dulundur",
+   "name": "Dulundur",
+   "region": "dark_lands",
+   "subRegion": "The long valley",
+   "capital": {
+    "name": "Lesderle",
+    "point": [
+     2498,
+     1085
+    ],
+    "method": "site",
+    "source": "site_dulundur",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "north_lands",
+    "land": "land_dondor_arm",
+    "zoneNote": "stands in the repaired model's north_lands zone, not a zone of dark_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "TRO",
+   "key": "troll_forest",
+   "name": "Troll Forest",
+   "region": "dark_lands",
+   "subRegion": "The Troll Forest",
+   "capital": {
+    "name": "Holos",
+    "point": [
+     2590,
+     1102
+    ],
+    "method": "model area",
+    "source": "forest_troll",
+    "anchor": [
+     2590,
+     1102
+    ],
+    "snapPx": 0,
+    "basis": "Holos, Smash's great cave in the Troll Forest's heart.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_dondor_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds GOL, BOR, DRE, DRK, BUN, VES, BLN, BRT, WIL; no seed added there."
+   ],
+   "proposed": [
+    "Capital Holos: Holos, Smash's great cave in the Troll Forest's heart."
+   ]
+  },
+  {
+   "tag": "HOO",
+   "key": "hoorunoron",
+   "name": "Hoorunoron",
+   "region": "dark_lands",
+   "subRegion": "The Giant Forest",
+   "capital": {
+    "name": "Maruunos",
+    "point": [
+     2653,
+     1107
+    ],
+    "method": "drawn label",
+    "source": "world (2651, 1114)",
+    "anchor": [
+     2651,
+     1114
+    ],
+    "snapPx": 7.3,
+    "basis": "The drawn Giant Forest by the Giant River: Maruunos, the cairn-hall.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_dondor_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Maruunos: The drawn Giant Forest by the Giant River: Maruunos, the cairn-hall."
+   ]
+  },
+  {
+   "tag": "DAK",
+   "key": "the_darks",
+   "name": "The Darks",
+   "region": "dark_lands",
+   "subRegion": "The Dark Forests",
+   "capital": {
+    "name": "Notdertu",
+    "point": [
+     2662,
+     1089
+    ],
+    "method": "model area",
+    "source": "forest_dark",
+    "anchor": [
+     2662,
+     1090
+    ],
+    "snapPx": 1,
+    "basis": "Notdertu, the forest hold of the Dark Forests' band.",
+    "status": "proposed",
+    "zone": "north_lands",
+    "land": "land_dondor_arm",
+    "zoneNote": "stands in the repaired model's north_lands zone, not a zone of dark_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Notdertu: Notdertu, the forest hold of the Dark Forests' band."
+   ]
+  },
+  {
+   "tag": "SKR",
+   "key": "skragdurg",
+   "name": "Skragdurg",
+   "region": "dark_lands",
+   "subRegion": "The Fonoor Forest",
+   "capital": {
+    "name": "Gollonlon",
+    "point": [
+     2544,
+     1106
+    ],
+    "method": "drawn label",
+    "source": "world (2540, 1112)",
+    "anchor": [
+     2540,
+     1112
+    ],
+    "snapPx": 7.2,
+    "basis": "The drawn Fonoor Forest: Gollonlon at the forest's edge.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_dondor_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Gollonlon: The drawn Fonoor Forest: Gollonlon at the forest's edge."
+   ]
+  },
+  {
+   "tag": "DUN",
+   "key": "dun",
+   "name": "Dun",
+   "region": "dark_lands",
+   "subRegion": "The Dun peninsula",
+   "capital": {
+    "name": "Dobudo",
+    "point": [
+     2784,
+     1181
+    ],
+    "method": "drawn label",
+    "source": "world (2784, 1181)",
+    "anchor": [
+     2784,
+     1181
+    ],
+    "snapPx": 0,
+    "basis": "The drawn labels Dun and Dunbulinor: Dobudo on the Dun Sea.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_dondor_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Dobudo: The drawn labels Dun and Dunbulinor: Dobudo on the Dun Sea."
+   ]
+  },
+  {
+   "tag": "BRT",
+   "key": "britadon",
+   "name": "Britadon",
+   "region": "dark_lands",
+   "subRegion": "The south-east iron hills",
+   "capital": {
+    "name": "Fontadon",
+    "point": [
+     2607,
+     1278
+    ],
+    "method": "drawn label",
+    "source": "world (2607, 1278)",
+    "anchor": [
+     2607,
+     1278
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Britadon: the hill hold of the south-east iron hills.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_goldoroth_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Fontadon: The drawn label Britadon: the hill hold of the south-east iron hills."
+   ]
+  },
+  {
+   "tag": "WIL",
+   "key": "wild_lands",
+   "name": "Wild Lands",
+   "region": "dark_lands",
+   "subRegion": "The Wild Lands moor",
+   "capital": {
+    "name": "Zudertu",
+    "point": [
+     2401,
+     1181
+    ],
+    "method": "drawn label",
+    "source": "world (2401, 1181)",
+    "anchor": [
+     2401,
+     1181
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Wild Lands: Zudertu, the largest winter camp.",
+    "status": "proposed",
+    "zone": "dark_lands",
+    "land": "land_goldoroth_arm"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Zudertu: The drawn label Wild Lands: Zudertu, the largest winter camp."
+   ]
+  },
+  {
+   "tag": "KHO",
+   "key": "khorvrath",
+   "name": "Khorvrath",
+   "region": "ember_lands",
+   "subRegion": "The Nether foothills",
+   "capital": {
+    "name": "Khorvazel",
+    "point": [
+     3040,
+     2285
+    ],
+    "method": "dossier text",
+    "source": "world (3040, 2300)",
+    "anchor": [
+     3040,
+     2300
+    ],
+    "snapPx": 15,
+    "basis": "Khorvazel in the Nether foothills: the island's south coast facing the Nether across the Nether Sound (ember_lands.md 11).",
+    "status": "proposed",
+    "zone": "ember_lands",
+    "land": "land_ember_lands_island"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "PUV",
+    "subjectType": "sworn realm"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Khorvazel: Khorvazel in the Nether foothills: the island's south coast facing the Nether across the Nether Sound (ember_lands.md 11)."
+   ]
+  },
+  {
+   "tag": "DLN",
+   "key": "dolon",
+   "name": "Dolon",
+   "region": "ember_lands",
+   "subRegion": "The salt coast of the island",
+   "capital": {
+    "name": "Unzeky",
+    "point": [
+     3027,
+     2176
+    ],
+    "method": "site",
+    "source": "site_demon_dolon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "ember_lands",
+    "land": "land_ember_lands_island"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "PUV",
+    "subjectType": "sworn realm"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "NEZ",
+   "key": "nezer",
+   "name": "Nezer",
+   "region": "ember_lands",
+   "subRegion": "The Nezer hills",
+   "capital": {
+    "name": "Gelroze",
+    "point": [
+     3153,
+     2278
+    ],
+    "method": "site",
+    "source": "site_nezer",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "ember_lands",
+    "land": "land_ember_lands_island"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "PUV",
+    "subjectType": "sworn realm"
+   },
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "NET",
+   "key": "nether",
+   "name": "Nether",
+   "region": "ember_lands",
+   "subRegion": "The Nether island",
+   "capital": {
+    "name": "Zarath-Nazur",
+    "point": [
+     3072,
+     2393
+    ],
+    "method": "site",
+    "source": "site_nether",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "nether",
+    "land": "land_nether_island"
+   },
+   "seeds": [],
+   "claim": [
+    {
+     "source": "land land_nether_island",
+     "polygons": 1,
+     "basis": "The Nether is the volcanic land south of the Ember Lands island (nether.md; the model's land_nether_island)."
+    }
+   ],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "HAL",
+   "key": "halia",
+   "name": "Halia",
+   "region": "ember_lands",
+   "subRegion": "The salt coast of the peninsula",
+   "capital": {
+    "name": "Halon",
+    "point": [
+     3583,
+     2005
+    ],
+    "method": "dossier text",
+    "source": "world (3560, 1985)",
+    "anchor": [
+     3560,
+     1985
+    ],
+    "snapPx": 30.5,
+    "basis": "Halon, the salt pans of the peninsula's Veleeda coast: the south shore of Mirolon's eastern lowland, since the import reads the peninsula's western tongue as too narrow for both Miherta and Halon.",
+    "status": "proposed",
+    "zone": "ember_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds AEN, MIR, WOR, MAG, SEL, KIN, HIR, KON, HNH, HER, KIL, SFT, KUN, HRR, ANE, NLR, YAV, KLU, NOL, FRE, PAZ, FOT, BRR, OLO, DNL, ANR, CUR, BLO, LCC, TES, TIR; no seed added there.",
+    "4 old state(s) of this realm fall on a land that already holds NAN; no seed added there."
+   ],
+   "proposed": [
+    "Capital Halon: Halon, the salt pans of the peninsula's Veleeda coast: the south shore of Mirolon's eastern lowland, since the import reads the peninsula's western tongue as too narrow for both Miherta and Halon."
+   ]
+  },
+  {
+   "tag": "NAN",
+   "key": "nan",
+   "name": "Nan",
+   "region": "ember_lands",
+   "subRegion": "The Nan Mountains",
+   "capital": {
+    "name": "Larorun",
+    "point": [
+     3419,
+     2042
+    ],
+    "method": "site",
+    "source": "site_nan",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "ember_lands",
+    "land": "land_island_010"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "OLE",
+   "key": "olen",
+   "name": "Olen",
+   "region": "ember_lands",
+   "subRegion": "The isle of the Holy Breeze",
+   "capital": {
+    "name": "Gelbus",
+    "point": [
+     3670,
+     2050
+    ],
+    "method": "drawn label",
+    "source": "world (3670, 2050)",
+    "anchor": [
+     3670,
+     2050
+    ],
+    "snapPx": 0,
+    "basis": "The drawn labels Gelbus and Luminor east of the Great Swamp: the shrine-town of the isle of the Holy Breeze.",
+    "status": "proposed",
+    "zone": "ember_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Sun Desert and the East Lands south of Mirolon"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [
+    "4 old state(s) of this realm fall on a land that already holds NAN; no seed added there."
+   ],
+   "proposed": [
+    "Capital Gelbus: The drawn labels Gelbus and Luminor east of the Great Swamp: the shrine-town of the isle of the Holy Breeze."
+   ]
+  },
+  {
+   "tag": "ALR",
+   "key": "alerhia",
+   "name": "Alerhia",
+   "region": "east_lands",
+   "subRegion": "The great river valley",
+   "capital": {
+    "name": "Porrenva",
+    "point": [
+     3993,
+     2048
+    ],
+    "method": "site",
+    "source": "site_alerhia",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "south_lands",
+    "land": "land_eastern_mainland",
+    "zoneNote": "stands in the repaired model's south_lands zone, not a zone of east_lands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 6.5,
+    "targetStates": 26,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "NAA",
+   "key": "naamis",
+   "name": "Naamis",
+   "region": "east_lands",
+   "subRegion": "The north coast plain",
+   "capital": {
+    "name": "Duum-Saah",
+    "point": [
+     4413,
+     1264
+    ],
+    "method": "site",
+    "source": "site_gondolin",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 5,
+    "targetStates": 20,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "DRA",
+   "key": "drak",
+   "name": "Drak",
+   "region": "east_lands",
+   "subRegion": "The Drak Mountains",
+   "capital": {
+    "name": "Castronuro",
+    "point": [
+     4862,
+     1922
+    ],
+    "method": "site",
+    "source": "site_drak",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 2.75,
+    "targetStates": 11,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "RHA",
+   "key": "rhachia",
+   "name": "Rhachia",
+   "region": "east_lands",
+   "subRegion": "The Red Lands",
+   "capital": {
+    "name": "Pordoce",
+    "point": [
+     4654,
+     2316
+    ],
+    "method": "site",
+    "source": "site_avalon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "ERC",
+   "key": "erco",
+   "name": "Erco",
+   "region": "east_lands",
+   "subRegion": "The southern mountains",
+   "capital": {
+    "name": "Atonto",
+    "point": [
+     4736,
+     2419
+    ],
+    "method": "old capital",
+    "source": "old state 531 at (4702, 2430) moved by the displacement field",
+    "anchor": [
+     4736,
+     2419
+    ],
+    "snapPx": 0,
+    "basis": "Atonto on its river in the southern mountains; the old map's Erco seat (the drawing's Morodor lies beyond the frame).",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 4,
+    "targetStates": 16,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Atonto: Atonto on its river in the southern mountains; the old map's Erco seat (the drawing's Morodor lies beyond the frame)."
+   ]
+  },
+  {
+   "tag": "PLO",
+   "key": "plutondo",
+   "name": "Plutondo",
+   "region": "east_lands",
+   "subRegion": "The southern valley",
+   "capital": {
+    "name": "Vobibiz",
+    "point": [
+     4840,
+     2230
+    ],
+    "method": "drawn label",
+    "source": "world (4840, 2230)",
+    "anchor": [
+     4840,
+     2230
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Plutondo above the Plutondo Vents: Vobibiz in the southern valley.",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 4,
+    "targetStates": 16,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Vobibiz: The drawn label Plutondo above the Plutondo Vents: Vobibiz in the southern valley."
+   ]
+  },
+  {
+   "tag": "OST",
+   "key": "ostoroth",
+   "name": "Ostoroth",
+   "region": "east_lands",
+   "subRegion": "The north-east lakes",
+   "capital": {
+    "name": "Ohitus",
+    "point": [
+     4835,
+     1438
+    ],
+    "method": "site",
+    "source": "site_ostoroth",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 8,
+    "targetStates": 32,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "MOA",
+   "key": "mora",
+   "name": "Mora",
+   "region": "east_lands",
+   "subRegion": "The Hot Lake",
+   "capital": {
+    "name": "Gonnois",
+    "point": [
+     4717,
+     1658
+    ],
+    "method": "site",
+    "source": "site_mora",
+    "snapPx": 3,
+    "status": "canon",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 3.5,
+    "targetStates": 14,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "The capital site site_mora (4714, 1658) is not on the land the import reads (or within 3 px of its coast); the nearest acceptable land is 3 px away."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "DLB",
+   "key": "delbiz",
+   "name": "Delbiz",
+   "region": "east_lands",
+   "subRegion": "The Delbiz Grasslands",
+   "capital": {
+    "name": "Furtonlin",
+    "point": [
+     4130,
+     1480
+    ],
+    "method": "drawn label",
+    "source": "world (4130, 1480)",
+    "anchor": [
+     4130,
+     1480
+    ],
+    "snapPx": 0,
+    "basis": "The drawn Delbiz Grasslands: Furtonlin, the horse-fair town toward the rift coast.",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 6.75,
+    "targetStates": 27,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Furtonlin: The drawn Delbiz Grasslands: Furtonlin, the horse-fair town toward the rift coast."
+   ]
+  },
+  {
+   "tag": "KRS",
+   "key": "kersian",
+   "name": "Kersian",
+   "region": "east_lands",
+   "subRegion": "A road junction",
+   "capital": {
+    "name": "Osrale",
+    "point": [
+     4171,
+     1995
+    ],
+    "method": "drawn label",
+    "source": "world (4171, 1995)",
+    "anchor": [
+     4171,
+     1995
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label read as Kersian: Osrale at the junction of the Lake Road and the Gold Road.",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 2.5,
+    "targetStates": 10,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Osrale: The drawn label read as Kersian: Osrale at the junction of the Lake Road and the Gold Road."
+   ]
+  },
+  {
+   "tag": "MOS",
+   "key": "mostok",
+   "name": "Mostok",
+   "region": "east_lands",
+   "subRegion": "The central road junction",
+   "capital": {
+    "name": "Cereosa",
+    "point": [
+     4343,
+     1950
+    ],
+    "method": "drawn label",
+    "source": "world (4343, 1950)",
+    "anchor": [
+     4343,
+     1950
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Mostok: Cereosa at the central road junction.",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 3,
+    "targetStates": 12,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Cereosa: The drawn label Mostok: Cereosa at the central road junction."
+   ]
+  },
+  {
+   "tag": "AZA",
+   "key": "azano",
+   "name": "Azano",
+   "region": "east_lands",
+   "subRegion": "The southern trade city",
+   "capital": {
+    "name": "Ceralon",
+    "point": [
+     4380,
+     2000
+    ],
+    "method": "drawn label",
+    "source": "world (4380, 2000)",
+    "anchor": [
+     4380,
+     2000
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label read as Azano beside Mostok: Ceralon, the house's city.",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 2.75,
+    "targetStates": 11,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Ceralon: The drawn label read as Azano beside Mostok: Ceralon, the house's city."
+   ]
+  },
+  {
+   "tag": "OBM",
+   "key": "obmi",
+   "name": "Obmi",
+   "region": "east_lands",
+   "subRegion": "The Obmi Jungle's edge",
+   "capital": {
+    "name": "Kerdoco",
+    "point": [
+     4271,
+     2050
+    ],
+    "method": "drawn label",
+    "source": "world (4271, 2050)",
+    "anchor": [
+     4271,
+     2050
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Obmi at the jungle's edge: Kerdoco.",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 1.75,
+    "targetStates": 7,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Kerdoco: The drawn label Obmi at the jungle's edge: Kerdoco."
+   ]
+  },
+  {
+   "tag": "PRN",
+   "key": "pornivior",
+   "name": "Pornivior",
+   "region": "east_lands",
+   "subRegion": "Below Mount Ergo",
+   "capital": {
+    "name": "Nerhuus",
+    "point": [
+     4157,
+     2150
+    ],
+    "method": "drawn label",
+    "source": "world (4157, 2150)",
+    "anchor": [
+     4157,
+     2150
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Pornyior beside the drawn Argon: Nerhuus below the devils' mountains (the roster says below Mount Ergo; see the owner questions).",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 2.25,
+    "targetStates": 9,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Nerhuus: The drawn label Pornyior beside the drawn Argon: Nerhuus below the devils' mountains (the roster says below Mount Ergo; see the owner questions)."
+   ]
+  },
+  {
+   "tag": "WOQ",
+   "key": "woqood",
+   "name": "Woqood",
+   "region": "east_lands",
+   "subRegion": "The snow coast",
+   "capital": {
+    "name": "Pehami",
+    "point": [
+     4280,
+     1100
+    ],
+    "method": "drawn label",
+    "source": "world (4280, 1100)",
+    "anchor": [
+     4280,
+     1100
+    ],
+    "snapPx": 0,
+    "basis": "The drawn label Woqood on the snow coast: Pehami, the sealers' moot on the Kusmeel coast.",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": null
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 5.25,
+    "targetStates": 21,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Pehami: The drawn label Woqood on the snow coast: Pehami, the sealers' moot on the Kusmeel coast."
+   ]
+  },
+  {
+   "tag": "ORA",
+   "key": "orato",
+   "name": "Orato",
+   "region": "east_lands",
+   "subRegion": "Orato and Fladev",
+   "capital": {
+    "name": "Nodoqood",
+    "point": [
+     4206,
+     1070
+    ],
+    "method": "model land",
+    "source": "land_island_004",
+    "anchor": [
+     4206,
+     1070
+    ],
+    "snapPx": 0,
+    "basis": "Nodoqood, the harbour of the drawn isle Orato (the model's land_island_004).",
+    "status": "proposed",
+    "zone": "east_lands",
+    "land": "land_island_004"
+   },
+   "seeds": [
+    {
+     "point": [
+      4354,
+      901
+     ],
+     "method": "old states",
+     "source": "old state 478 (1 old state(s) on this land)",
+     "snapPx": 26.2,
+     "status": "proposed",
+     "land": "land_island_017"
+    }
+   ],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the Sun Desert west of the Hardtmuth chain"
+    }
+   ],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Nodoqood: Nodoqood, the harbour of the drawn isle Orato (the model's land_island_004)."
+   ]
+  },
+  {
+   "tag": "MIE",
+   "key": "miaed",
+   "name": "Miaed",
+   "region": "south_lands",
+   "subRegion": "The Hardtmuth passes",
+   "capital": {
+    "name": "Erdozan",
+    "point": [
+     3993,
+     2465
+    ],
+    "method": "site",
+    "source": "site_miaed",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "south_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the East Lands north of the desert and east of the Ergo country"
+    }
+   ],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "WAH",
+   "key": "wahatud",
+   "name": "Wahatud",
+   "region": "south_lands",
+   "subRegion": "The oases of the Sun Desert",
+   "capital": {
+    "name": "Biir-Raab",
+    "point": [
+     3584,
+     2278
+    ],
+    "method": "model feature",
+    "source": "site_sun_desert",
+    "anchor": [
+     3584,
+     2278
+    ],
+    "snapPx": 0,
+    "basis": "Biir-Raab, the greatest oasis of the dune sea: the model's Sun Desert town.",
+    "status": "proposed",
+    "zone": "south_lands",
+    "land": "land_eastern_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "zilin_marches",
+     "name": "the Middle and Magical Lands north of the Zilin marches"
+    },
+    {
+     "barrier": "ember_isles",
+     "name": "the Ember Lands island and the Nether"
+    },
+    {
+     "barrier": "hardtmuth",
+     "name": "the East Lands north of the desert and east of the Ergo country"
+    }
+   ],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Biir-Raab: Biir-Raab, the greatest oasis of the dune sea: the model's Sun Desert town."
+   ]
+  },
+  {
+   "tag": "ENH",
+   "key": "enhis_is_rond",
+   "name": "Enhis Is Rond",
+   "region": "islands_of_the_south",
+   "subRegion": "The Great Isle",
+   "capital": {
+    "name": "Suyowan",
+    "point": [
+     1305,
+     2053
+    ],
+    "method": "site",
+    "source": "site_enhis_is_rond",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "islands_south",
+    "land": "land_island_007"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "HWN",
+   "key": "howan",
+   "name": "Howan",
+   "region": "islands_of_the_south",
+   "subRegion": "The Great Isle's south",
+   "capital": {
+    "name": "Lamowan",
+    "point": [
+     1658,
+     1868
+    ],
+    "method": "site",
+    "source": "site_howan",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "islands_south",
+    "land": "land_island_020"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "2 old state(s) of this realm fall on a land that already holds ENH; no seed added there."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "VER",
+   "key": "verde",
+   "name": "Verde",
+   "region": "islands_of_the_south",
+   "subRegion": "The Great Isle's west",
+   "capital": {
+    "name": "Pelo Tamo",
+    "point": [
+     757,
+     2060
+    ],
+    "method": "site",
+    "source": "site_verde",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "islands_south",
+    "land": "land_island_012"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "NAR",
+   "key": "nara",
+   "name": "Nara",
+   "region": "islands_of_the_south",
+   "subRegion": "The long island Ancha",
+   "capital": {
+    "name": "Riwang",
+    "point": [
+     1800,
+     1824
+    ],
+    "method": "site",
+    "source": "site_nara",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "islands_south",
+    "land": "land_island_044"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "YON",
+   "key": "yongyong",
+   "name": "Yongyong",
+   "region": "islands_of_the_south",
+   "subRegion": "The Yong lagoon ring",
+   "capital": {
+    "name": "Yongwa",
+    "point": [
+     1202,
+     2090
+    ],
+    "method": "model land",
+    "source": "land_island_026",
+    "anchor": [
+     1202,
+     2090
+    ],
+    "snapPx": 0,
+    "basis": "Yongwa on the Yong lagoon ring: the model's ring-shaped island land_island_026.",
+    "status": "proposed",
+    "zone": "islands_south",
+    "land": "land_island_026"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Yongwa: Yongwa on the Yong lagoon ring: the model's ring-shaped island land_island_026."
+   ]
+  },
+  {
+   "tag": "KAM",
+   "key": "kamu_lamo",
+   "name": "Kamu Lamo",
+   "region": "islands_of_the_south",
+   "subRegion": "The cave island",
+   "capital": {
+    "name": "Bukonyo",
+    "point": [
+     1090,
+     2062
+    ],
+    "method": "model land",
+    "source": "land_island_041",
+    "anchor": [
+     1090,
+     2062
+    ],
+    "snapPx": 0,
+    "basis": "Bukonyo above the tally-caves of the cave island (land_island_041).",
+    "status": "proposed",
+    "zone": "islands_south",
+    "land": "land_island_041"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Bukonyo: Bukonyo above the tally-caves of the cave island (land_island_041)."
+   ]
+  },
+  {
+   "tag": "KEA",
+   "key": "kea",
+   "name": "Kea",
+   "region": "islands_of_the_south",
+   "subRegion": "The rice isles",
+   "capital": {
+    "name": "Tuwang",
+    "point": [
+     962,
+     2238
+    ],
+    "method": "model land",
+    "source": "land_island_034",
+    "anchor": [
+     962,
+     2238
+    ],
+    "snapPx": 0,
+    "basis": "Tuwang, the terrace town of the rice isles, next along the western arc (land_island_034).",
+    "status": "proposed",
+    "zone": "islands_south",
+    "land": "land_island_034"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds IHU; no seed added there."
+   ],
+   "proposed": [
+    "Capital Tuwang: Tuwang, the terrace town of the rice isles, next along the western arc (land_island_034)."
+   ]
+  },
+  {
+   "tag": "SDE",
+   "key": "sidea",
+   "name": "Sidea",
+   "region": "islands_of_the_south",
+   "subRegion": "The western arc",
+   "capital": {
+    "name": "Ponwan",
+    "point": [
+     874,
+     2282
+    ],
+    "method": "model land",
+    "source": "land_island_027",
+    "anchor": [
+     874,
+     2282
+    ],
+    "snapPx": 0,
+    "basis": "Ponwan at the end of the western arc: its westernmost island (land_island_027).",
+    "status": "proposed",
+    "zone": "islands_south",
+    "land": "land_island_027"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1,
+    "targetStates": 4,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "Old state 863 projects to (1264, 2007), 477 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added."
+   ],
+   "proposed": [
+    "Capital Ponwan: Ponwan at the end of the western arc: its westernmost island (land_island_027)."
+   ]
+  },
+  {
+   "tag": "ADE",
+   "key": "adel",
+   "name": "Adel",
+   "region": "tritons_islands",
+   "subRegion": "Adel island",
+   "capital": {
+    "name": "Sanderz",
+    "point": [
+     301,
+     1412
+    ],
+    "method": "site",
+    "source": "site_adel",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "tritons_islands",
+    "land": "land_island_006"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 2,
+    "targetStates": 8,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds LEN; no seed added there.",
+    "4 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there.",
+    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "RAE",
+   "key": "raerby",
+   "name": "Raerby",
+   "region": "tritons_islands",
+   "subRegion": "The eastern arc's north",
+   "capital": {
+    "name": "Ese",
+    "point": [
+     491,
+     1564
+    ],
+    "method": "site",
+    "source": "site_raerby",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "tritons_islands",
+    "land": "land_island_005"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "2 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "PLL",
+   "key": "pollos",
+   "name": "Pollos",
+   "region": "tritons_islands",
+   "subRegion": "The western island's north",
+   "capital": {
+    "name": "Havnai",
+    "point": [
+     568,
+     1487
+    ],
+    "method": "site",
+    "source": "site_pollos",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "tritons_islands",
+    "land": "land_island_009"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "2 old state(s) of this realm fall on a land that already holds ADE, SEI; no seed added there."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "NND",
+   "key": "nondondor",
+   "name": "Nondondor",
+   "region": "tritons_islands",
+   "subRegion": "The western island's south",
+   "capital": {
+    "name": "Kudaini",
+    "point": [
+     601,
+     1649
+    ],
+    "method": "site",
+    "source": "site_nondondor",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "tritons_islands",
+    "land": "land_island_009"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there."
+   ],
+   "proposed": []
+  },
+  {
+   "tag": "FNG",
+   "key": "fineger",
+   "name": "Fineger",
+   "region": "tritons_islands",
+   "subRegion": "The northern isles",
+   "capital": {
+    "name": "Kapai",
+    "point": [
+     366,
+     1206
+    ],
+    "method": "model land",
+    "source": "land_island_022",
+    "anchor": [
+     366,
+     1206
+    ],
+    "snapPx": 0,
+    "basis": "Kapai, the pilots' harbour of the northern isles: the northernmost Triton island (land_island_022).",
+    "status": "proposed",
+    "zone": "tritons_islands",
+    "land": "land_island_022"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "3 old state(s) of this realm fall on a land that already holds ADE, SEI; no seed added there."
+   ],
+   "proposed": [
+    "Capital Kapai: Kapai, the pilots' harbour of the northern isles: the northernmost Triton island (land_island_022)."
+   ]
+  },
+  {
+   "tag": "HLN",
+   "key": "halenor",
+   "name": "Halenor",
+   "region": "tritons_islands",
+   "subRegion": "The storm isles",
+   "capital": {
+    "name": "Sonrale",
+    "point": [
+     470,
+     1786
+    ],
+    "method": "old capital",
+    "source": "old state 1007 at (158, 1720) moved by the displacement field",
+    "anchor": [
+     462,
+     1736
+    ],
+    "snapPx": 50.6,
+    "basis": "No canon anchor; the old map's capital state, moved into the new frame.",
+    "status": "proposed",
+    "zone": "lands_sun",
+    "land": "land_island_019",
+    "zoneNote": "stands in the repaired model's lands_sun zone, not a zone of tritons_islands; the zones are coarse and the placement follows the drawing and the dossier"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.75,
+    "targetStates": 7,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there.",
+    "1 old state(s) of this realm fall on a land that already holds NND; no seed added there."
+   ],
+   "proposed": [
+    "Capital Sonrale: No canon anchor; the old map's capital state, moved into the new frame."
+   ]
+  },
+  {
+   "tag": "WND",
+   "key": "windy_lands",
+   "name": "Windy Lands",
+   "region": "tritons_islands",
+   "subRegion": "The eastern arc's south",
+   "capital": {
+    "name": "Audailon",
+    "point": [
+     450,
+     1660
+    ],
+    "method": "drawn label",
+    "source": "world (445, 1655)",
+    "anchor": [
+     445,
+     1655
+    ],
+    "snapPx": 7.1,
+    "basis": "Audailon, the windward capes' harbour: the drawn Sondor, Cheko and Amarelo on the south of the eastern arc.",
+    "status": "proposed",
+    "zone": "tritons_islands",
+    "land": "land_island_005"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "5 old state(s) of this realm fall on a land that already holds NND; no seed added there."
+   ],
+   "proposed": [
+    "Capital Audailon: Audailon, the windward capes' harbour: the drawn Sondor, Cheko and Amarelo on the south of the eastern arc."
+   ]
+  },
+  {
+   "tag": "SEI",
+   "key": "seite_islands",
+   "name": "Seite Islands",
+   "region": "tritons_islands",
+   "subRegion": "The four Seite isles",
+   "capital": {
+    "name": "Vesko",
+    "point": [
+     434,
+     1506
+    ],
+    "method": "model land",
+    "source": "land_island_029",
+    "anchor": [
+     434,
+     1506
+    ],
+    "snapPx": 0,
+    "basis": "Vesko, the moot isle of the four Seite isles: the long isle under the drawn Seite Islands label (land_island_029).",
+    "status": "proposed",
+    "zone": "tritons_islands",
+    "land": "land_island_029"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.25,
+    "targetStates": 5,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "2 old state(s) of this realm fall on a land that already holds PLL, BEN; no seed added there."
+   ],
+   "proposed": [
+    "Capital Vesko: Vesko, the moot isle of the four Seite isles: the long isle under the drawn Seite Islands label (land_island_029)."
+   ]
+  },
+  {
+   "tag": "SNT",
+   "key": "santon",
+   "name": "Santon",
+   "region": "tritons_islands",
+   "subRegion": "The outer western arc",
+   "capital": {
+    "name": "Straton",
+    "point": [
+     318,
+     1622
+    ],
+    "method": "model land",
+    "source": "land_island_014",
+    "anchor": [
+     318,
+     1622
+    ],
+    "snapPx": 0,
+    "basis": "Straton on the outer western arc facing the Santon Sea (land_island_014).",
+    "status": "proposed",
+    "zone": "tritons_islands",
+    "land": "land_island_014"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds ADE, SEI; no seed added there.",
+    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there."
+   ],
+   "proposed": [
+    "Capital Straton: Straton on the outer western arc facing the Santon Sea (land_island_014)."
+   ]
+  },
+  {
+   "tag": "BEN",
+   "key": "benan",
+   "name": "Benan",
+   "region": "tritons_islands",
+   "subRegion": "The Benan Mountains",
+   "capital": {
+    "name": "Torni",
+    "point": [
+     550,
+     1520
+    ],
+    "method": "model feature",
+    "source": "range_benan",
+    "anchor": [
+     550,
+     1520
+    ],
+    "snapPx": 0,
+    "basis": "Torni, a cove under the Benan Mountains (the model's range_benan).",
+    "status": "proposed",
+    "zone": "tritons_islands",
+    "land": "land_island_009"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [
+    "1 old state(s) of this realm fall on a land that already holds RAE, WND; no seed added there."
+   ],
+   "proposed": [
+    "Capital Torni: Torni, a cove under the Benan Mountains (the model's range_benan)."
+   ]
+  },
+  {
+   "tag": "LEN",
+   "key": "the_lens",
+   "name": "The Lens",
+   "region": "tritons_islands",
+   "subRegion": "The round isle",
+   "capital": {
+    "name": "Lighon",
+    "point": [
+     411,
+     1413
+    ],
+    "method": "old capital",
+    "source": "old state 1169 at (199, 1387) moved by the displacement field",
+    "anchor": [
+     397,
+     1403
+    ],
+    "snapPx": 17.2,
+    "basis": "No canon anchor; the old map's capital state, moved into the new frame.",
+    "status": "proposed",
+    "zone": "tritons_islands",
+    "land": "land_island_032"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "old map state count"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Lighon: No canon anchor; the old map's capital state, moved into the new frame."
+   ]
+  },
+  {
+   "tag": "LIG",
+   "key": "lands_of_light",
+   "name": "The Lands of Light",
+   "region": "lands_of_the_sun",
+   "subRegion": "The eastern lowland",
+   "capital": {
+    "name": "Eldoga",
+    "point": [
+     550,
+     2362
+    ],
+    "method": "model area",
+    "source": "plain_sun_grasslands",
+    "anchor": [
+     550,
+     2362
+    ],
+    "snapPx": 0,
+    "basis": "Eldoga, the largest valley of the eastern lowland and the Sun Grasslands.",
+    "status": "proposed",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 1.5,
+    "targetStates": 6,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [
+    "Old state 199 projects to (3794, 2471), 3246 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 201 projects to (3850, 2471), 3302 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 209 projects to (3844, 2213), 3297 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 210 projects to (3896, 2299), 3347 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 211 projects to (3764, 2275), 3215 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 212 projects to (3765, 2392), 3215 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 258 projects to (3822, 2157), 3278 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 399 projects to (3663, 2385), 3113 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 400 projects to (3575, 2440), 3026 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 933 projects to (3902, 2383), 3352 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 979 projects to (3839, 2078), 3301 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 980 projects to (3887, 2141), 3344 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added."
+   ],
+   "proposed": [
+    "Capital Eldoga: Eldoga, the largest valley of the eastern lowland and the Sun Grasslands."
+   ]
+  },
+  {
+   "tag": "ELV",
+   "key": "elvana",
+   "name": "Elvana",
+   "region": "lands_of_the_sun",
+   "subRegion": "The Cape of Elvana",
+   "capital": {
+    "name": "Googavis",
+    "point": [
+     651,
+     2244
+    ],
+    "method": "site",
+    "source": "site_elvana",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "IGA",
+   "key": "igara",
+   "name": "Igara",
+   "region": "lands_of_the_sun",
+   "subRegion": "South of Sun Lake",
+   "capital": {
+    "name": "Repgin",
+    "point": [
+     713,
+     2379
+    ],
+    "method": "site",
+    "source": "site_igara",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "YEN",
+   "key": "yeni_alang",
+   "name": "Yeni Alang",
+   "region": "lands_of_the_sun",
+   "subRegion": "The western terraces",
+   "capital": {
+    "name": "Sudoni",
+    "point": [
+     410,
+     2419
+    ],
+    "method": "site",
+    "source": "site_heaven",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "TOR",
+   "key": "tor_luni",
+   "name": "Tor Luni",
+   "region": "lands_of_the_sun",
+   "subRegion": "The high places by the Sea of Gods",
+   "capital": {
+    "name": "Wefolen",
+    "point": [
+     682,
+     2419
+    ],
+    "method": "site",
+    "source": "site_godland",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "IHU",
+   "key": "ihuy",
+   "name": "Ihuy",
+   "region": "lands_of_the_sun",
+   "subRegion": "The Ihuy Islands",
+   "capital": {
+    "name": "Holang",
+    "point": [
+     621,
+     1833
+    ],
+    "method": "model feature",
+    "source": "volcano_great",
+    "anchor": [
+     621,
+     1833
+    ],
+    "snapPx": 0,
+    "basis": "Holang, the harbour of Hol under the Great Volcano.",
+    "status": "proposed",
+    "zone": "lands_sun",
+    "land": "land_island_011"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [
+    "Old state 141 projects to (1387, 2079), 805 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 250 projects to (1467, 2333), 983 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 381 projects to (1290, 2038), 700 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 890 projects to (1378, 2070), 793 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 1159 projects to (2720, 1254), 2177 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added."
+   ],
+   "proposed": [
+    "Capital Holang: Holang, the harbour of Hol under the Great Volcano."
+   ]
+  },
+  {
+   "tag": "SOY",
+   "key": "soyano",
+   "name": "Soyano",
+   "region": "lands_of_the_sun",
+   "subRegion": "The northern isles",
+   "capital": {
+    "name": "Ileslia",
+    "point": [
+     794,
+     1762
+    ],
+    "method": "model land",
+    "source": "land_island_023",
+    "anchor": [
+     794,
+     1762
+    ],
+    "snapPx": 0,
+    "basis": "Ileslia, the main harbour of the northern isles: the northernmost island of the Sun group (land_island_023).",
+    "status": "proposed",
+    "zone": "lands_sun",
+    "land": "land_island_023"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [
+    "Old state 1147 projects to (2876, 1303), 2132 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 1149 projects to (2704, 1259), 1975 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added.",
+    "Old state 1157 projects to (2832, 1257), 2100 px from the capital, beyond 450 px; the old map's land there does not match the drawing, so no seed is added."
+   ],
+   "proposed": [
+    "Capital Ileslia: Ileslia, the main harbour of the northern isles: the northernmost island of the Sun group (land_island_023)."
+   ]
+  },
+  {
+   "tag": "GOO",
+   "key": "goodin",
+   "name": "Goodin",
+   "region": "lands_of_the_sun",
+   "subRegion": "The western grasslands",
+   "capital": {
+    "name": "Elgagen",
+    "point": [
+     434,
+     2304
+    ],
+    "method": "dossier text",
+    "source": "world (430, 2300)",
+    "anchor": [
+     430,
+     2300
+    ],
+    "snapPx": 5.7,
+    "basis": "Elgagen, the largest Sunfolk steading of the western grasslands, west of the Sun Mountains.",
+    "status": "proposed",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Elgagen: Elgagen, the largest Sunfolk steading of the western grasslands, west of the Sun Mountains."
+   ]
+  },
+  {
+   "tag": "GOF",
+   "key": "god_forest",
+   "name": "God Forest",
+   "region": "lands_of_the_sun",
+   "subRegion": "The God Forest",
+   "capital": {
+    "name": "the Keepers' Glade",
+    "point": [
+     630,
+     2366
+    ],
+    "method": "model area",
+    "source": "forest_god",
+    "anchor": [
+     630,
+     2366
+    ],
+    "snapPx": 0,
+    "basis": "The Keepers' Glade in the God Forest south of Sun Lake.",
+    "status": "proposed",
+    "zone": "lands_sun",
+    "land": "land_lands_of_the_sun"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital the Keepers' Glade: The Keepers' Glade in the God Forest south of Sun Lake."
+   ]
+  },
+  {
+   "tag": "HRR",
+   "key": "herrodon",
+   "name": "Herrodon",
+   "region": "magical_lands",
+   "subRegion": "The Herrodon Mountains",
+   "capital": {
+    "name": "Verozo",
+    "point": [
+     3412,
+     962
+    ],
+    "method": "site",
+    "source": "site_herrodon",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "ANE",
+   "key": "andos_enda",
+   "name": "Andos Enda",
+   "region": "magical_lands",
+   "subRegion": "The Andos Water",
+   "capital": {
+    "name": "Enliras",
+    "point": [
+     3742,
+     965
+    ],
+    "method": "site",
+    "source": "site_andos_enda",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "NLR",
+   "key": "nolorim",
+   "name": "Nolorim",
+   "region": "magical_lands",
+   "subRegion": "The Nolorim Heights",
+   "capital": {
+    "name": "Ennaton",
+    "point": [
+     3353,
+     1812
+    ],
+    "method": "site",
+    "source": "site_nolorim",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.5,
+    "targetStates": 2,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "LCC",
+   "key": "lccimio",
+   "name": "Lccimio",
+   "region": "magical_lands",
+   "subRegion": "The northern rift shore",
+   "capital": {
+    "name": "Hidirim",
+    "point": [
+     3750,
+     1351
+    ],
+    "method": "old capital",
+    "source": "old state 708 at (3699, 1409) moved by the displacement field",
+    "anchor": [
+     3750,
+     1351
+    ],
+    "snapPx": 0,
+    "basis": "Hidirim, the best harbour of the northern rift shore; the old map's Lccimio seat (the drawing labels Lccimio there).",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Hidirim: Hidirim, the best harbour of the northern rift shore; the old map's Lccimio seat (the drawing labels Lccimio there)."
+   ]
+  },
+  {
+   "tag": "ELD",
+   "key": "eldafaen",
+   "name": "Eldafaen",
+   "region": "magical_lands",
+   "subRegion": "The southern rift shore",
+   "capital": {
+    "name": "Lenkei",
+    "point": [
+     3869,
+     1629
+    ],
+    "method": "dossier text",
+    "source": "world (3880, 1640)",
+    "anchor": [
+     3880,
+     1640
+    ],
+    "snapPx": 15.6,
+    "basis": "Lenkei, the Archive at the southern end of the rift coast where the old roads stop (roster: the southern rift shore); the old map and the drawn Endelond label put it in the north-east instead (owner question P-12).",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Lenkei: Lenkei, the Archive at the southern end of the rift coast where the old roads stop (roster: the southern rift shore); the old map and the drawn Endelond label put it in the north-east instead (owner question P-12)."
+   ]
+  },
+  {
+   "tag": "YAV",
+   "key": "yavieth",
+   "name": "Yavieth",
+   "region": "magical_lands",
+   "subRegion": "Under Dragon Mountain",
+   "capital": {
+    "name": "Thoriveniel",
+    "point": [
+     3358,
+     1676
+    ],
+    "method": "site",
+    "source": "site_dragon_mountain",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "TES",
+   "key": "teste",
+   "name": "Teste",
+   "region": "magical_lands",
+   "subRegion": "The Teste Vale",
+   "capital": {
+    "name": "Testebur",
+    "point": [
+     3679,
+     1055
+    ],
+    "method": "model area",
+    "source": "plain_herrodon_vale",
+    "anchor": [
+     3662,
+     1038
+    ],
+    "snapPx": 24,
+    "basis": "Testebur, where the Teste Brook leaves the Teste Vale.",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "HRR",
+    "subjectType": "protectorate"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Testebur: Testebur, where the Teste Brook leaves the Teste Vale."
+   ]
+  },
+  {
+   "tag": "LUV",
+   "key": "luv_zhise",
+   "name": "Luv-zhise",
+   "region": "magical_lands",
+   "subRegion": "The Rift Narrows",
+   "capital": {
+    "name": "Hisemrak",
+    "point": [
+     3988,
+     1491
+    ],
+    "method": "model feature",
+    "source": "strait_rift_narrows",
+    "anchor": [
+     3990,
+     1494
+    ],
+    "snapPx": 3.6,
+    "basis": "Hisemrak, the quay town at the Rift Narrows.",
+    "status": "proposed",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": [
+    "Capital Hisemrak: Hisemrak, the quay town at the Rift Narrows."
+   ]
+  },
+  {
+   "tag": "MSH",
+   "key": "mushroom_forest",
+   "name": "Mushroom Forest",
+   "region": "magical_lands",
+   "subRegion": "The fungal belt",
+   "capital": {
+    "name": null,
+    "point": [
+     3932,
+     1331
+    ],
+    "method": "site",
+    "source": "site_mushroom_forest",
+    "snapPx": 0,
+    "status": "canon",
+    "zone": "magical_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Middle Lands beyond the western foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.75,
+    "targetStates": 3,
+    "basis": "roster extent"
+   },
+   "overlord": null,
+   "conflicts": [],
+   "proposed": []
+  },
+  {
+   "tag": "TIR",
+   "key": "tirlan",
+   "name": "Tirlan",
+   "region": "middle_lands",
+   "subRegion": "The three Hilorn valleys inside the ring of stones",
+   "capital": {
+    "name": "Tirbur",
+    "point": [
+     2885,
+     1529
+    ],
+    "method": "model feature",
+    "source": "river_hilorn",
+    "anchor": [
+     2885,
+     1529
+    ],
+    "snapPx": 0,
+    "basis": "Tirbur, where the Hilorn's head-streams meet, furthest from the Hilorn Gap (hirolon.md 10).",
+    "status": "proposed",
+    "zone": "middle_lands",
+    "land": "land_central_mainland"
+   },
+   "seeds": [],
+   "claim": [],
+   "exclude": [
+    {
+     "barrier": "great_wall",
+     "name": "Magical Lands beyond the eastern foothills"
+    },
+    {
+     "barrier": "zilin_marches",
+     "name": "Mirolon, its eastern lowland and the lands south of the Zilin marches"
+    }
+   ],
+   "weight": {
+    "value": 0.25,
+    "targetStates": 1,
+    "basis": "roster extent"
+   },
+   "overlord": {
+    "tag": "HIR",
+    "subjectType": "protectorate"
+   },
+   "conflicts": [],
+   "proposed": [
+    "Capital Tirbur: Tirbur, where the Hilorn's head-streams meet, furthest from the Hilorn Gap (hirolon.md 10)."
+   ]
+  }
+ ]
+}
