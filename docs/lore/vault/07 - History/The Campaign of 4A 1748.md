@@ -65,7 +65,7 @@ Between the North Lands and the Middle Lands lie the Dark Lands. **Goldoroth**, 
 
 ### Zol's Mistake
 
-The whole black north and every black island of the Kusmeel belong to **Zol**, the Old God of Death (established). The land is almost empty of the living. Its seat is **Furviatlon** (established working seat), but who administers it for Zol is unknown and is **not** invented here. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), dwells in Šodolôrō (established, owner, 24 October 2026). Zol cannot take a body; his servants sustain his presence; his power grows slowly (established). His dead are sustained by his own magic. Only potent magic, such as Glo's, can end them (established).
+The whole black north and every black island of the Kusmeel belong to **Zol**, the Old God of Death (established). The land is almost empty of the living. Its seat is **Furviatlon** (established working seat), but who administers it for Zol is unknown and is **not** invented here. Zol's most loyal servant, the Great Spirit [[Kusven]], dwells in Šodolôrō (established, owner, 24 October 2026). Zol cannot take a body; his servants sustain his presence; his power grows slowly (established). His dead are sustained by his own magic. Only potent magic, such as Glo's, can end them (established).
 
 ### The East Lands and the South Lands
 

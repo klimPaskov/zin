@@ -8,7 +8,7 @@ updated: 2026-10-24
 
 *Canonical displayed name: **Zol's Mistake**.*
 
-A vast **black northern region** comprising a barren wasteland and **all the black islands of the Kusmeel**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region; it is the dwelling of [[Kusven]] (name to be replaced, Q-10), Zol's most loyal servant (owner, 24 October 2026).
+A vast **black northern region** comprising a barren wasteland and **all the black islands of the Kusmeel**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region; it is the dwelling of [[Kusven]], Zol's most loyal servant (owner, 24 October 2026).
 
 Its name derives from [[Zol]], the Old God of Death and the only Old God present in Aoaz. The exact event or transgression that makes this land a **"Mistake"** has not been explained.
 

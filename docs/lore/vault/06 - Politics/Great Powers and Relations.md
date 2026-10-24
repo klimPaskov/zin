@@ -20,7 +20,7 @@ updated: 2026-10-24
 | **Goldoroth** | Cocanoor, Dark Lands | Expansionist Dark Lands power. | None listed. | Dondor |
 | **Dondor** | Notbuton, Dark Lands | Northern Dark Lands kingdom. | Belonton; **Dark Sea Accord**. | Goldoroth |
 
-**Political note:** Zol's newly established bodyless nature and servant network qualify the older `Satellites: None yet` notation. That older entry means no *named political satellites* in the working country table, **not** that Zol lacks supernatural servants. The most loyal of them is the Great Spirit [[Kusven]] (name to be replaced, Q-10).
+**Political note:** Zol's newly established bodyless nature and servant network qualify the older `Satellites: None yet` notation. That older entry means no *named political satellites* in the working country table, **not** that Zol lacks supernatural servants. The most loyal of them is the Great Spirit [[Kusven]].
 
 **Hirolon (owner, 24 October 2026):** the older working table listed Hiloron among Aenor's satellites. Hirolon, the current spelling, is a sovereign giant kingdom that treats with Aenor, not a satellite.
 

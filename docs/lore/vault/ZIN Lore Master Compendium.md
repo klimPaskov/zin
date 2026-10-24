@@ -101,7 +101,7 @@ The original [[ZIN Lore Compendium - original snapshot]] remains preserved uncha
 
 ## Metaphysical distinctions
 
-- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. He does not take a body or appear in the War of the Last Crowns; the being who appears there is his most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), a being of his own made by Zol (corrected 24 October 2026). Why Zol himself stays away from the war is not established: the Fading and Aoaz's magic are only a proposed explanation.
+- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. He does not take a body or appear in the War of the Last Crowns; the being who appears there is his most loyal servant, the Great Spirit [[Kusven]], a being of his own made by Zol (corrected 24 October 2026). Why Zol himself stays away from the war is not established: the Fading and Aoaz's magic are only a proposed explanation.
 - Great Spirit, Lesser Spirit, New God, Old God and Great Folk are distinct ranks or orders. Sovereign Spirit is not a separate rank.
 - [[Afrit]] is publicly worshipped as a New God and effectively attains godlike power. Whether he belongs to the original divinity created by the Holy Seven remains undetermined.
 - [[Elzon]] is a Great Spirit and Great Necromancer. He permanently dies after the Third Age. [[Volgan]] loses his manifested body in the Fourth Age, but the complete destruction of his essence has not yet been established.
@@ -128,7 +128,7 @@ The world creator's corrections and answers of 24 October 2026 are recorded in [
 - The main setting is **Aoaz**. **Erdae** names only a small neighbouring continent.
 - The **Great Wall of Aenor** is an enormous natural mountain range between the Middle Lands and the Magical Lands, not a built wall.
 - Aoaz has **twelve main New Gods**, who exist to answer the twelve needs of mortals; one month honours each, and [[Glernaen]] is the mightiest. **Lesser New Gods** also exist, still stronger than most Great Spirits, and have no month. Afrit's public cult adds a **feast**, not a month. The gods' names and which need each answers are undecided.
-- [[Zol]] does not appear in the War of the Last Crowns. His most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), appears instead. Why Zol stays away is a proposal, not canon.
+- [[Zol]] does not appear in the War of the Last Crowns. His most loyal servant, the Great Spirit [[Kusven]], appears instead. Why Zol stays away is a proposal, not canon.
 - **Bastian** is a living human wizard of the Fourth Age, famous in the Middle Lands and a contemporary of [[Varner]], who is one practitioner among many traditions.
 - **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz; not every devil served Zol. They are bound to their bodies and can be killed; a slain devil returns only through the lava rite with its skull. The [[King of Demons]] (original name not chosen yet) has his seat in the [[Nether]]; his pacts bind the living, and the souls of the dead remain Zol's.
 - **Vez'nan** is an old name of [[Volgan]]. **[[Kusven]]** (formerly Edvoid), Zol's most loyal servant, is a being of his own made by Zol.
@@ -184,7 +184,7 @@ The **Second Age is the longest of the first four ages**. The draft model of 1,6
 | Fourth Age, middle | Established broad placement | Afrit effectively directs kings and government through a council and servants. |
 | Fourth Age, late | Established | Afrit steals Roka's necklace through a thief, accumulates artifacts, murders the Golden King and rules openly under a human public name. |
 | Fourth Age, late | Established | Eindil awakens in Cold Lands, travels West and South, meets Lorien, and receives Glo from dying Horos at Yeldenne. Afrit flees after being wounded. |
-| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
+| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, the Great Spirit [[Kusven]], withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
 | Fourth Age, final struggle | Established | Afrit returns from Eastern dominion, wounds and casts down Eindil, then is defeated after artifacts are stripped away with Alleria and Golbran's help. Golbran dies. |
 | Fourth Age, end | Established | Eindil, wearing the Necklace of the Abyss, returns and is crowned King of Aenor. |
 
@@ -728,7 +728,7 @@ Elzon's fall follows from his inability to transform Aenor's magical environment
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
-> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), takes the field instead.
+> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, the Great Spirit [[Kusven]], takes the field instead.
 
 ## Prologue: the peace that followed Elzon
 
@@ -914,7 +914,7 @@ The victory did not end the battle. Zol's most loyal servant came forth.
 
 ## XIII. The servant beneath the black sky
 
-Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. That servant is the Great Spirit [[Kusven]] (name to be replaced, Q-10), made by Zol and feared by all. **Proposed:** the Fading and Aoaz's hostile magic are why Zol sent his servant rather than coming himself; the reason is not established.
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. That servant is the Great Spirit [[Kusven]], made by Zol and feared by all. **Proposed:** the Fading and Aoaz's hostile magic are why Zol sent his servant rather than coming himself; the reason is not established.
 
 **Proposed explanation for the servant's strength:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces let the servant carry an unusual measure of Zol's death-magic onto the field. This cost strength and could not last indefinitely.
 
@@ -991,7 +991,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Glernaen is a real New God of Power and Wisdom. Horos is a Great Spirit who safeguards Glo, the crystal at his heart.
 - The Castle Yeldenne encounter is in the Cold Lands. Afrit wounds Horos mortally, Eindil wounds Afrit, Afrit flees, and Horos gives Glo and his sword to Eindil before turning to dust.
 - Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol's most loyal servant. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
-- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10) (corrected 24 October 2026).
+- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, the Great Spirit [[Kusven]] (corrected 24 October 2026).
 - Volgan is defeated by Eindil with the aid of the New Gods. His incarnation collapses. His final spiritual fate is unresolved.
 - Varner dies in the final war. Golbran spends nearly all his magical strength defending Varner, survives that event, and finally dies giving Eindil his remaining life after Afrit's defeat.
 - Afrit briefly becomes king of an eastern coalition after abandoning Aenor. His title does not mean every eastern kingdom submits to him.
@@ -1031,7 +1031,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Afrit travels after him. All of Eindil's crew is killed in an ambush. Afrit reaches Horos first, fights him, wounds him mortally, and is wounded by the newly arrived Eindil before escaping. Horos yields Glo, his own crystalline heart, to Eindil and turns to dust. Glo holds power from Glernaen, a New God of Power and Wisdom. Horos is a Great Spirit.
 - Eindil warns Aenor of simultaneous invasions. Westerners capture the capital. Easterlings invade, northern lands withdraw from the old alliance, Volgan advances from the Ember Lands and Zol's uniquely powerful dead emerge. Afrit abandons Aenor and assumes power over an eastern host as a backup.
 - Eindil rides a dragon accompanied by Varner and Golbran. His magical sword destroys Zol's dead. The people unite against Volgan. Eindil initially loses to Volgan, Varner dies defending against Zol's dead, and Eindil meets the New Gods and is restored with greater power.
-- Eindil destroys Volgan's manifested body. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), appears and overwhelms Eindil, but the magical sword shard wounds it. Lorien and other great beings sacrifice themselves, and the servant withdraws. Zol himself does not appear in the war (corrected 24 October 2026).
+- Eindil destroys Volgan's manifested body. Zol's most loyal servant, the Great Spirit [[Kusven]], appears and overwhelms Eindil, but the magical sword shard wounds it. Lorien and other great beings sacrifice themselves, and the servant withdraws. Zol himself does not appear in the war (corrected 24 October 2026).
 - Afrit returns, wounds Eindil, cuts off an arm and throws him over a cliff. Afrit takes the capital again and claims universal kingship. Eindil survives and returns to the palace. Alleria the archer of Selen assists him in stripping Afrit's magical artifacts. Golbran removes the Necklace of the Abyss. Eindil kills Afrit, Golbran gives his last magic to save Eindil and dies. Eindil puts on the necklace, returns and is crowned king.
 - Third Age lasts at least 1,200 years. The earlier 128-year Third Age is revoked, and no exact age of any being is stated.
 
@@ -1678,7 +1678,7 @@ Eindil was held in supernatural sleep for many ages by means not yet canonically
 
 At Yeldenne he learned that the public god-king of Aenor was his brother. [[Horos]], a Great Spirit, gave him [[Castle of Yeldenne and Glo|Glo]], a crystal containing part of New God [[Glernaen]]'s power, and his blue sword. Eindil warned men of the gathering armies, returned with a dragon, [[Varner]] and [[Golbran]], and became the center of the last united defense of Aenor.
 
-He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), crushed Horos's sword and nearly killed him, but Eindil wounded the servant with a fragment. Lorien and ancient allies forced the servant to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
+He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol's most loyal servant, the Great Spirit [[Kusven]], crushed Horos's sword and nearly killed him, but Eindil wounded the servant with a fragment. Lorien and ancient allies forced the servant to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
 
 Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss and returned to be crowned **King of Aenor**, ending the Fourth Age.
 
@@ -1772,7 +1772,7 @@ The following characters were created as candidate additions on 17 October 2026.
 
 **Established (owner, 24 October 2026):** Glernaen is the **mightiest of the twelve main [[New Gods]]** of Aoaz, who exist to answer the twelve needs of mortals. Each of the twelve months honours one main New God, so one month honours Glernaen. Its name, its place in the year and which need Glernaen answers are not yet decided.
 
-The blue sword associated with Horos and the divine power in Glo allow Eindil to destroy Zol's directly empowered undead, which cannot be permanently killed by ordinary weapons. When the New Gods revive Eindil after his initial defeat by Volgan, Glo is the proposed channel through which their combined power can reach him. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), later breaks the sword, but a shard still bears divine magic and can wound the servant (corrected 24 October 2026: Zol himself does not appear in the war).
+The blue sword associated with Horos and the divine power in Glo allow Eindil to destroy Zol's directly empowered undead, which cannot be permanently killed by ordinary weapons. When the New Gods revive Eindil after his initial defeat by Volgan, Glo is the proposed channel through which their combined power can reach him. Zol's most loyal servant, the Great Spirit [[Kusven]], later breaks the sword, but a shard still bears divine magic and can wound the servant (corrected 24 October 2026: Zol himself does not appear in the war).
 
 **Unknown:** Glernaen's individual character, symbols, relation to the other New Gods beyond being the mightiest of the twelve, origin of Glo, extent of independent intervention and any cult in Aoaz. Avoid assigning Glernaen a full doctrine before it is developed.
 
@@ -1888,7 +1888,7 @@ Edran's disastrous decision to attack the Ember Lands after Dardan brought unnec
 
 Late in the Fourth Age Lorien welcomes a stranger from the Islands of the South and speaks with him over many weeks. He identifies the man as **[[Eindil]], son of Ein, grandson of Aen**, and shares accounts of Aoaz long before Aen. He uses a vision, potentially the proposed **Mirror of First Rain**, to warn of approaching catastrophe and directs Eindil to Horos at Yeldenne to obtain Glo. He equips Eindil with a remarkable ship, armor, sword and companions from different peoples.
 
-When Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), takes the field at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with the servant**, helping force it to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). He is therefore alive long after Dardan but does not survive the Fourth Age.
+When Zol's most loyal servant, the Great Spirit [[Kusven]], takes the field at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with the servant**, helping force it to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). He is therefore alive long after Dardan but does not survive the Fourth Age.
 
 [[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[Zol]]
 
@@ -1979,7 +1979,7 @@ In the Fourth Age Volgan has recovered enough to retake Mirolon and march north 
 
 He remains mostly dormant during the early numbered ages. Elzon borrows ancient magic associated with Zol to raise and bind the dead. A favored Third Age explanation has Zol passively consuming the Great Spirit Elzon when he overdraws on that magic. Zol grows stronger, but does not take the field or openly rule the war.
 
-**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. **Zol does not appear in the War of the Last Crowns (corrected 24 October 2026).** The being who takes the field is **Zol's most loyal servant, the Great Spirit [[Kusven]]** (name to be replaced, Q-10), whom Zol made and who is a being of his own. The servant stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the servant with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing the servant to withdraw.
+**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. **Zol does not appear in the War of the Last Crowns (corrected 24 October 2026).** The being who takes the field is **Zol's most loyal servant, the Great Spirit [[Kusven]]** (formerly Edvoid), whom Zol made and who is a being of his own. The servant stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the servant with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing the servant to withdraw.
 
 **Zol is not killed.** He takes no body in the war, and his servants carry his power onto the field. **Proposed explanation, not established:** the Fading and his dependence on Aoaz's special conditions keep him from the field. His servants, realm and further intentions remain important unresolved matters for future ages.
 
@@ -2130,7 +2130,7 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Great Lake, Aenor Forest, and the sovereign giant kingdom of Hirolon (former label Hiloron). See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |
 | **Magical Lands** | Magical Lands | East of Middle Lands, same landmass, separated from them by the Great Wall of Aenor, a natural mountain range. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
-| **Zol / Zol's Mistake** | Kusmeel (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Kusmeel, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Kusven]]. See [[Zols Mistake]]. |
+| **Zol / Zol's Mistake** | Ocean of Edvoid (drawn sheet; the sea is now Kusmeel) | Far northern black wasteland and every black island of the Kusmeel, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Kusven]]. See [[Zols Mistake]]. |
 | **East Lands** | South-Earth | Across the rift in the east, reaches off the eastern map. Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Mirrored for mod map. |
 | **South Lands** | Desert of South-Earth | Great desert of East Lands, extends south off the map. Noris Desert and former Sunhot Desert. |
 | **Ember Lands** | Ember Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Ember Lands]]. |
@@ -2291,7 +2291,7 @@ During the Third Age, Volgan cannot leave the Ember Lands, while [[Elzon]] rules
 
 *Canonical displayed name: **Zol's Mistake**.*
 
-A vast **black northern region** comprising a barren wasteland and **all the black islands of the Kusmeel**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region; it is the dwelling of [[Kusven]] (name to be replaced, Q-10), Zol's most loyal servant (owner, 24 October 2026).
+A vast **black northern region** comprising a barren wasteland and **all the black islands of the Kusmeel**. It is sparsely populated and roamed by the dead. **Šodolôrō** lies within the region; it is the dwelling of [[Kusven]], Zol's most loyal servant (owner, 24 October 2026).
 
 Its name derives from [[Zol]], the Old God of Death and the only Old God present in Aoaz. The exact event or transgression that makes this land a **"Mistake"** has not been explained.
 
@@ -2359,7 +2359,7 @@ The occupation lasts many generations and cannot be maintained solely by a singl
 | **Goldoroth** | Cocanoor, Dark Lands | Expansionist Dark Lands power. | None listed. | Dondor |
 | **Dondor** | Notbuton, Dark Lands | Northern Dark Lands kingdom. | Belonton; **Dark Sea Accord**. | Goldoroth |
 
-**Political note:** Zol's newly established bodyless nature and servant network qualify the older `Satellites: None yet` notation. That older entry means no *named political satellites* in the working country table, **not** that Zol lacks supernatural servants. The most loyal of them is the Great Spirit [[Kusven]] (name to be replaced, Q-10).
+**Political note:** Zol's newly established bodyless nature and servant network qualify the older `Satellites: None yet` notation. That older entry means no *named political satellites* in the working country table, **not** that Zol lacks supernatural servants. The most loyal of them is the Great Spirit [[Kusven]].
 
 **Hirolon (owner, 24 October 2026):** the older working table listed Hiloron among Aenor's satellites. Hirolon, the current spelling, is a sovereign giant kingdom that treats with Aenor, not a satellite.
 
@@ -2798,7 +2798,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 2. The publicly worshipped god-king, secretly Afrit, abandons his subjects and assumes control of an eastern coalition through networks cultivated for ages. The western army occupies Aenor's capital.
 3. Eastern and Aenoran forces retreat as Volgan and Zol's dead overwhelm the region. Westerners find their conquest untenable and begin evacuating. Some eastern and western troops remain stranded. Zol's dead and Volgan's hosts initially clash before briefly joining forces against Eindil.
 4. Eindil returns on a dragon with Varner and Golbran. With Glo and Horos's blue blade he destroys Zol's stronger-than-necromantic dead, and the surviving peoples make a desperate common army. He is beaten by Volgan, but Glernaen and the New Gods restore him through Glo.
-5. Eindil defeats Volgan's embodied manifestation. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), comes forth, overpowers the renewed champion, shatters the blue sword, and nearly conquers the field. Eindil wounds the servant with a shard. Lorien and ancient spirits die forcing the servant to withdraw. Zol himself does not appear in the war (corrected 24 October 2026).
+5. Eindil defeats Volgan's embodied manifestation. Zol's most loyal servant, the Great Spirit [[Kusven]], comes forth, overpowers the renewed champion, shatters the blue sword, and nearly conquers the field. Eindil wounds the servant with a shard. Lorien and ancient spirits die forcing the servant to withdraw. Zol himself does not appear in the war (corrected 24 October 2026).
 6. Afrit returns from the East, wounds and casts Eindil from a cliff, and claims Aenor. Eindil survives, and Alleria and Golbran help strip Afrit's artifacts at the palace. Afrit dies, Golbran dies saving Eindil, and Eindil is crowned with the Necklace of the Abyss in his possession.
 
 ### Distinctions
@@ -2806,7 +2806,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 - Zol's dead derive from the Old God's own magic. Mortal arms cannot end them permanently without magic. Elzon's earlier reanimated corpses were comparatively vulnerable, requiring continuing magical support.
 - The western armies do not all become subjects of Aenor after cooperating with Eindil. Competing western and northern interests remain.
 - Volgan's manifested body is destroyed. His final spiritual fate is unresolved.
-- Zol does not appear in this war. **Proposed explanation, not established:** the Fading and Aoaz's magic keep him from taking the field. The being who appears is his most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10). The servant is forced to withdraw, not killed (corrected 24 October 2026).
+- Zol does not appear in this war. **Proposed explanation, not established:** the Fading and Aoaz's magic keep him from taking the field. The being who appears is his most loyal servant, the Great Spirit [[Kusven]]. The servant is forced to withdraw, not killed (corrected 24 October 2026).
 - Afrit's final death is literal.
 
 [[The Fourth Age of Aoaz]] · [[Eindil]] · [[Afrit]] · [[Zol]] · [[Volgan]]
@@ -2844,7 +2844,7 @@ In the late Fourth Age, [[Afrit]] arrives first to claim Glo and introduces hims
 
 With death approaching, Horos tells Eindil the hidden truth of his family and of Glo's earlier rejected claimants. He removes Glo from his chest and places it in Eindil's hands. His form crumbles to dust. Eindil also inherits Horos's blue enchanted sword. The crystal carries Glernaen's power into the final war and later serves as a bridge for the combined New Gods to revive and empower Eindil.
 
-Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
+Zol's most loyal servant, the Great Spirit [[Kusven]], eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
 
 **The halls beneath the castle (owner, 24 October 2026):** Horos's bestiary card describes his underground castle. That place is the halls beneath Castle Yeldenne. The card's name for them, Tol Hithi, is a former label only; they receive an original name, not chosen yet.
 
@@ -2862,7 +2862,7 @@ Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10
 
 In the last great war, Eindil drives the sword into the earth after descending from a dragon, sending a magical shock wave through [[Zol]]'s direct death-host. Unlike mundane weapons, the sword can permanently disperse those warriors. Later, after the New Gods empower Eindil, he kills Volgan's manifested body with this blade.
 
-Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into the servant, and the remaining divine magic injures it (corrected 24 October 2026: Zol himself does not appear in the war). No intact original blade remains for the final palace fight against Afrit.
+Zol's most loyal servant, the Great Spirit [[Kusven]], then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into the servant, and the remaining divine magic injures it (corrected 24 October 2026: Zol himself does not appear in the war). No intact original blade remains for the final palace fight against Afrit.
 
 [[Horos]] · [[Glernaen]] · [[War of the Last Crowns]]
 
@@ -2967,7 +2967,7 @@ The world creator's corrections of 24 October 2026 are recorded in [[Names and R
 - **Twelve New Gods (K3):** [[New Gods]] and [[Glernaen]] record the twelve gods, the months named after them and Glernaen as the mightiest. [[Fourth Age Chronology]] replaces the proposed farming-year month names with numbered months, and the campaign start is now written as the first day of the third month, 4A 1748.
 - **Bastian (K5):** added to [[Varner]].
 - **Devils (K6):** defined in [[Peoples of Aoaz]] and [[Spirits and Their Ranks]]; [[King of Demons]] points to Q-07.
-- **Vez'nan and Kusven (K7):** no page used Vez'nan. [[Aoaz and Its Regions]] and [[Zols Mistake]] flag Kusven as a name to be replaced.
+- **Vez'nan and Kusven (K7):** no page used Vez'nan. [[Aoaz and Its Regions]] and [[Zols Mistake]] flagged Edvoid as a name to be replaced; the owner chose Kusven (Q-10).
 - **Records:** [[Names and Retcons]], [[Open Questions]] and this log. The consolidated [[ZIN Lore Master Compendium]] received the same text changes wherever it repeats a corrected passage.
 
 ## 24 October 2026: Owner answers

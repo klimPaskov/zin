@@ -103,7 +103,7 @@ The established events below are the **historical path**. In play they are what 
 | 4A 1754 | Eindil warns Aenor and is denounced as an impostor. Alleria of Selen protects him. |
 | 4A 1755 | **The War of the Last Crowns begins.** The Western Crossing, the Leren withdrawal from the Treaty of the Narrow Strait, the eastern invasion of the Magical Lands, Volgan's reconquest of Mirolon and the rising of Zol's dead. |
 | 4A 1756 | Afrit abandons Aenor and is proclaimed King of the East. Western armies take Parim. |
-| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol's most loyal servant, the Great Spirit [[Kusven]] (name to be replaced, Q-10), takes the field and is forced back; Lorien dies. Zol himself does not appear (corrected 24 October 2026). |
+| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol's most loyal servant, the Great Spirit [[Kusven]], takes the field and is forced back; Lorien dies. Zol himself does not appear (corrected 24 October 2026). |
 | 4A 1758 | Afrit returns with an eastern host, casts Eindil from the cliff and claims kingship over all Aoaz. |
 | 4A 1759 | The battle in the palace. Afrit dies. Golbran dies saving Eindil. |
 | 4A 1760 | **Eindil is crowned King of Aenor.** The Fourth Age ends. |
