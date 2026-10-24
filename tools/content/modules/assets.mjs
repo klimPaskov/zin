@@ -123,7 +123,7 @@ export async function buildAssets(staged, { root = ZIN, game = GAME, phase = Num
   staged.add(SUMMARY_FILE, Buffer.from(canonicalJson(summary)));
   log(summaryText(report));
   const baseline = readBaseline(baselineFile);
-  if (update) { writeJsonAtomic(baselineFile, baselineOf(report)); log(`assets: baseline rewritten (${baselineFile})`); return { summary, report, fresh: [], fixed: [], updated: true }; }
+  if (update) { writeJsonAtomic(baselineFile, baselineOf(report, { previous: baseline })); log(`assets: baseline rewritten (${baselineFile})`); return { summary, report, fresh: [], fixed: [], updated: true }; }
   const fresh = newFindings(report, baseline), fixed = fixedFindings(report, baseline);
   const warnings = report.findings.filter(f => f.severity === 'warning' && !(baseline?.findings ?? []).some(b => b.key === f.key));
   for (const w of warnings.slice(0, 10)) log(`assets warning ${w.code} ${w.path}: ${w.message}`);
@@ -131,7 +131,8 @@ export async function buildAssets(staged, { root = ZIN, game = GAME, phase = Num
   if (fixed.length) log(`assets: ${fixed.length} baseline findings are fixed; regenerate the baseline to drop them`);
   if (fresh.length) {
     for (const f of fresh.slice(0, 40)) log(`assets ERROR ${f.code} ${f.path}: ${f.message}`);
-    throw new Error(`assets: ${fresh.length} new errors not in the baseline (docs/design/validation/asset_baseline.json). Fix them, or accept them with ZIN_ASSETS_UPDATE_BASELINE=1 node tools/content/build.mjs.`);
+    if (process.env.ZIN_ASSETS_FRESH_OUT) writeJsonAtomic(process.env.ZIN_ASSETS_FRESH_OUT, fresh);
+    throw new Error(`assets: ${fresh.length} new errors not in the baseline (docs/design/validation/asset_baseline.json). Fix them; an error that needs new art is listed in docs/plans/zin-art/pending_from_integration.md and accepted in the baseline with a reason that names that file.`);
   }
   return { summary, report, fresh, fixed, updated: false };
 }

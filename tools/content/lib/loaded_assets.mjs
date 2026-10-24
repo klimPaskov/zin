@@ -378,7 +378,7 @@ function scanCharacters(g, rel, entries) {
       const portraits = [];
       walk(c.v, (x, anc) => { if (typeof x.v === 'string' && GFX_VALUE.test(x.v) && ['large', 'small', 'character'].includes(lc(x.k))) portraits.push({ sprite: x.v, slot: lc(x.k), kind: anc.at(-1)?.k ?? '' }); });
       const tagEntry = child(c.v, 'country_tag');
-      g.characters.push({ id: c.k, country: typeof tagEntry?.v === 'string' ? tagEntry.v : (/^([A-Za-z0-9]{3})_/.exec(c.k ?? '')?.[1] ?? ''), portraits, file: rel, line: c.line });
+      g.characters.push({ id: c.k, country: typeof tagEntry?.v === 'string' ? tagEntry.v : (/^([A-Z0-9]{3})_/.exec(c.k ?? '')?.[1] ?? ''), portraits, file: rel, line: c.line });
     }
   }
 }

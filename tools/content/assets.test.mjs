@@ -128,11 +128,17 @@ test('buildAssets stages the manifest and its summary, and gates on the baseline
   const bad = new Staged();
   bad.text('interface/zin_bad.gui', 'guiTypes = { containerWindowType = { name = "w" iconType = { name = "i" spriteType = "GFX_nowhere" } } }');
   await assert.rejects(() => buildAssets(bad, common), /new errors not in the baseline/);
-  // The same finding in the baseline is accepted, and a baseline rewrite records it.
+  // A baseline rewrite records nothing without a reason, so the error still fails; with a reason the same finding is accepted.
   const again = new Staged();
   again.text('interface/zin_bad.gui', 'guiTypes = { containerWindowType = { name = "w" iconType = { name = "i" spriteType = "GFX_nowhere" } } }');
   const updated = await buildAssets(again, { ...common, update: true });
   assert(updated.updated);
+  const still = new Staged();
+  still.text('interface/zin_bad.gui', 'guiTypes = { containerWindowType = { name = "w" iconType = { name = "i" spriteType = "GFX_nowhere" } } }');
+  await assert.rejects(() => buildAssets(still, common), /new errors not in the baseline/);
+  const base = JSON.parse(fs.readFileSync(common.baselineFile, 'utf8'));
+  base.findings = updated.report.findings.filter(f => f.severity === 'error').map(f => ({ ...f, reason: 'Accepted by the test.' }));
+  fs.writeFileSync(common.baselineFile, JSON.stringify(base));
   const accepted = new Staged();
   accepted.text('interface/zin_bad.gui', 'guiTypes = { containerWindowType = { name = "w" iconType = { name = "i" spriteType = "GFX_nowhere" } } }');
   const ok = await buildAssets(accepted, common);
@@ -474,10 +480,7 @@ test('Negative: a focus sharing an icon with its prerequisite, or one icon past 
   assert.equal(find(pre, 'UNIQ_ICON_PREREQUISITE').length, 1);
   const cap = run(t => t.edit('common/national_focus/test_tree.txt', s => s.replaceAll('GFX_focus_zin_test_b', 'GFX_focus_zin_test_a').replaceAll('GFX_focus_zin_test_c', 'GFX_focus_zin_test_a')));
   assert.equal(find(cap, 'UNIQ_ICON_TREE_CAP').length, 1);
-  assert.equal(find(cap, 'UNIQ_ICON_TREE_CAP')[0].severity, 'warning', 'catalog art is pending art before phase 7');
-  const late = run(t => t.edit('common/national_focus/test_tree.txt', s => s.replaceAll('GFX_focus_zin_test_b', 'GFX_focus_zin_test_a').replaceAll('GFX_focus_zin_test_c', 'GFX_focus_zin_test_a')), { phase: 7 });
-  assert.equal(find(late, 'UNIQ_ICON_TREE_CAP')[0].severity, 'error', 'an error from phase 7');
-  assert.equal(find(late, 'UNIQ_ICON_PREREQUISITE')[0].severity, 'error');
+  assert.equal(find(cap, 'UNIQ_ICON_TREE_CAP')[0].severity, 'error');
 });
 
 test('Negative: findings in interim and bridge files are warnings', () => {
@@ -489,6 +492,9 @@ test('Negative: findings in interim and bridge files are warnings', () => {
 test('Negative: two events one step apart that share a picture are UNIQ_EVENT_CHAIN', () => {
   const r = run(t => t.edit('events/test_events.txt', s => s.replace('GFX_zin_evt_two', 'GFX_zin_evt_one')));
   assert.equal(find(r, 'UNIQ_EVENT_CHAIN').length, 1);
+  // An event that fires itself is no chain: one event, one picture.
+  const pulse = run(t => t.edit('events/test_events.txt', s => s.replace('name = zin_test.2.a', 'name = zin_test.2.a\n\t\tcountry_event = { id = zin_test.2 days = 7 }')));
+  assert.equal(find(pulse, 'UNIQ_EVENT_CHAIN').length, 0);
 });
 
 test('Negative: one generic portrait twice in a country, or past the pool cap', () => {
@@ -498,6 +504,9 @@ test('Negative: one generic portrait twice in a country, or past the pool cap', 
   const pool = run(t => t.edit('common/characters/test_chars.txt', s => s.replace(/\}\s*$/, `${extra}}\n`)));
   const f = find(pool, 'UNIQ_PORTRAIT_POOL');
   assert.equal(f.length, 1); assert.match(f[0].message, /GFX_zin_portrait_men_male_1 serves 6 characters/);
+  // Mechanic figures with no country tag (zin_<name>, recruited by script) are in no start roster; one character with two roles counts once.
+  const figures = run(t => t.edit('common/characters/test_chars.txt', s => s.replace(/\}\s*$/, '\tzin_figure_a = {\n\t\tname = zin_figure_a\n\t\tportraits = { civilian = { large = GFX_zin_portrait_men_male_2 } army = { large = GFX_zin_portrait_men_male_2 } }\n\t}\n\tzin_figure_b = {\n\t\tname = zin_figure_b\n\t\tportraits = { civilian = { large = GFX_zin_portrait_men_male_2 } }\n\t}\n}\n')));
+  assert.equal(find(figures, 'UNIQ_PORTRAIT_COUNTRY').length, 0);
 });
 
 test('Negative: a default.map that names a missing file is MAP_FILE_MISSING', () => {
@@ -513,17 +522,23 @@ test('Without the installed game, vanilla references are skipped and a warning s
 });
 
 // ------------------------------------------------------------------------------------------ baseline
-test('The baseline accepts known errors and fails only new ones', () => {
+test('The baseline accepts known errors that carry a reason and fails only new ones', () => {
+  const why = { reasonOf: () => 'Needs new art: docs/plans/zin-art/pending_from_integration.md' };
   const clean = run();
-  assert.deepEqual(newFindings(clean.report, baselineOf(clean.report)), []);
+  assert.deepEqual(newFindings(clean.report, baselineOf(clean.report, why)), []);
   const broken = run(t => t.edit('interface/test.gui', s => s.replace('GFX_idea_zin_test_a', 'GFX_nowhere_at_all')));
-  const fresh = newFindings(broken.report, baselineOf(clean.report));
+  const fresh = newFindings(broken.report, baselineOf(clean.report, why));
   assert.deepEqual(fresh.map(f => f.code), ['SPRITE_UNDEFINED']);
-  assert.deepEqual(newFindings(broken.report, baselineOf(broken.report)), []);
-  assert.deepEqual(fixedFindings(clean.report, baselineOf(broken.report)).map(f => f.code), ['SPRITE_UNDEFINED']);
+  assert.deepEqual(newFindings(broken.report, baselineOf(broken.report, why)), []);
+  assert.deepEqual(fixedFindings(clean.report, baselineOf(broken.report, why)).map(f => f.code), ['SPRITE_UNDEFINED']);
   assert.equal(newFindings(broken.report, null).length, 1);
-  const base = baselineOf(broken.report);
-  assert(base.findings.every(f => f.severity !== 'info'));
+  const base = baselineOf(broken.report, why);
+  assert(base.findings.every(f => f.severity === 'error' && f.reason));
+  // Negative: an entry without a reason accepts nothing, and a regenerated baseline keeps the reasons it had.
+  assert.equal(baselineOf(broken.report).findings.length, 0);
+  const listed = { findings: base.findings.map(({ reason, ...f }) => f) };
+  assert.deepEqual(newFindings(broken.report, listed).map(f => f.code), ['SPRITE_UNDEFINED']);
+  assert.deepEqual(baselineOf(broken.report, { previous: base }).findings.map(f => f.reason), base.findings.map(f => f.reason));
   assert.match(summaryText(broken.report), /1 errors/);
 });
 

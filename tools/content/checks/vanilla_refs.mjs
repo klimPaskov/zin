@@ -187,6 +187,9 @@ export function references(files, universe) {
       const parent = a.length ? a[a.length - 1].k : null, v = e.v;
       // A scripted trigger or effect is called as a key below the top level (top-level keys are definitions).
       if (e.k && a.length && (has('trigger', e.k) || has('effect', e.k))) push(has('trigger', e.k) && has('effect', e.k) ? 'scripted' : has('trigger', e.k) ? 'trigger' : 'effect', e.k, e.line);
+      // ZIN scripted triggers and effects take no arguments (decision E1): `zin_name = yes` (or `no`) below the top level of a ZIN file is a
+      // call, so it is held to a definition even when nothing anywhere defines the name (the line above only sees names something defines).
+      else if (isMod(f) && e.k && a.length && /^zin_/.test(e.k) && (v === 'yes' || v === 'no')) push('scripted', e.k, e.line);
       // A character token used as a key scopes to that character (workshop files: PHI_vicente_lava = { ... }).
       if (e.k && a.length && has('character', e.k)) push('character', e.k, e.line);
       if (typeof v !== 'string' || !plain(v)) return;

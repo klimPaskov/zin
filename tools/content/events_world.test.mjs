@@ -377,7 +377,8 @@ test('Journey: the stage 8 warnings and the Host of Eindil follow the spec', () 
   assert(!/zin_eindil_go_to_parim/.test(allScript), 'the crown is found by the journey, not moved by it (O1)');
   assert(!evOf('zin_eindil', 130).options.some(o => (o.effects ?? []).some(x => String(x).includes('zin_aenor_crown_eindil'))), 'the coronation is zin_aenor.400');
   assert.equal(evOf('zin_eindil', 132).options[0].name, 'Take it back.');
-  for (const id of range(120, 127)) assert.equal(evOf('zin_eindil', id).picture, 'generic_war', 'the palace picture waits for its gate to admit the stand-in route');
+  // 122 and 125 follow 121 and 124 directly and take the false god's hall, so no two events one step apart share a picture.
+  for (const id of range(120, 127)) assert.equal(evOf('zin_eindil', id).picture, [122, 125].includes(id) ? 'golden_court' : 'generic_war', 'the palace picture waits for its gate to admit the stand-in route');
 });
 
 // ------------------------------------------------------------------------------------- the war (spec 03)

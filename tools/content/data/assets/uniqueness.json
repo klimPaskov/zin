@@ -19,7 +19,7 @@
     "scene.thumb": { "threshold": 0, "label": "thumbnails (exact only)" },
     "portrait.named": { "threshold": 14, "maxReuse": 1, "label": "named characters" },
     "portrait.generic": { "threshold": 12, "label": "generic pools: at most ceil(slots / pool size) + 1 characters per portrait; never twice in one country start roster" },
-    "ui": { "threshold": 0, "exactPendingArt": true, "label": "interface chrome (exact only; neutral sockets may coincide until the emblem sheets exist)" }
+    "ui": { "threshold": 0, "label": "interface chrome (exact only)" }
   },
   "near_duplicate_severity": "warning"
 }

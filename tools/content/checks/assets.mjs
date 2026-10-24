@@ -452,8 +452,7 @@ function uniqueness(ctx, A, F) {
     if ((ctx.uniq.aliases ?? []).some(a => list.every(f => a.paths.includes(f.rel)))) continue;
     out.exactGroups++;
     const groupName = list[0].cls.rule.group, rule = groupRule(groups, groupName);
-    // `exactPendingArt` groups hold placeholder chrome (the neutral sockets of the interface reskin) that several textures share until bespoke emblem sheets exist.
-    const severity = rule.exactSeverity ?? (rule.exactPendingArt && ctx.phase < 7 ? 'warning' : 'error');
+    const severity = rule.exactSeverity ?? 'error';
     const paths = list.map(f => f.rel).sort();
     F.add('UNIQ_EXACT_DUP', severity, paths[0], `${paths.length} different assets share the same bytes (${sha.slice(0, 12)}): ${paths.slice(0, 6).join(', ')}${paths.length > 6 ? ', ...' : ''}.`, sha);
   }
@@ -473,10 +472,9 @@ function uniqueness(ctx, A, F) {
   }
   // Stub files (interim trees and bridges to vanilla names) are placeholders by design: their findings are warnings,
   // and bridge characters of vanilla tags do not take part in the portrait pools.
-  const stubWords = (ctx.uniq.stub_files ?? []).map(w => w.toLowerCase()), isStub = file => stubWords.some(w => file.toLowerCase().includes(w));
-  // Catalog art is shared by design until the art track draws the signature icons and pictures (05_asset_manifest.md section 5, A1/A2/E1): before
-  // phase 7 a reuse past the caps is a warning that stays in the report and the baseline (pending art), from phase 7 an error, like FALLBACK_KEY.
-  const pendingArt = ctx.phase < 7, sev = file => (isStub(file) || pendingArt ? 'warning' : 'error');
+  // A reuse past a cap that needs new art is an error that the baseline may accept only with a reason naming
+  // docs/plans/zin-art/pending_from_integration.md (integration round 3).
+  const stubWords = (ctx.uniq.stub_files ?? []).map(w => w.toLowerCase()), isStub = file => stubWords.some(w => file.toLowerCase().includes(w)), sev = file => (isStub(file) ? 'warning' : 'error');
   // Focus icons: per tree, per game, and never on a focus and its direct prerequisite.
   const fg = groups.focus_icon ?? {};
   const perGame = new Map(), byId = new Map(g.focuses.map(f => [`${f.tree}/${f.id}`, f]));
@@ -497,22 +495,27 @@ function uniqueness(ctx, A, F) {
   }
   for (const [ic, list] of [...perGame].sort(([a], [b]) => (a < b ? -1 : 1))) {
     out.focusIcons[ic] = list.length;
-    if (list.length > (fg.gameMax ?? 40)) F.add('UNIQ_ICON_GAME_CAP', list.every(x => isStub(x.file)) || pendingArt ? 'warning' : 'error', list[0].file, `Icon ${ic} is used by ${list.length} focuses in the game; the cap is ${fg.gameMax ?? 40}.`, ic);
+    if (list.length > (fg.gameMax ?? 40)) F.add('UNIQ_ICON_GAME_CAP', list.every(x => isStub(x.file)) ? 'warning' : 'error', list[0].file, `Icon ${ic} is used by ${list.length} focuses in the game; the cap is ${fg.gameMax ?? 40}.`, ic);
   }
   // Event pictures: the game cap and "no two events one step apart share a picture".
   const eg = groups.event_picture ?? {};
   const evPics = new Map(), evById = new Map(g.events.map(e => [e.id, e]));
   for (const e of g.events) for (const p of new Set(e.pictures)) (evPics.get(p) ?? evPics.set(p, []).get(p)).push(e);
-  for (const [p, list] of [...evPics].sort(([a], [b]) => (a < b ? -1 : 1))) { out.eventPictures[p] = list.length; if (list.length > (eg.gameMax ?? 8)) F.add('UNIQ_EVENT_PICTURE_CAP', list.every(x => isStub(x.file)) || pendingArt ? 'warning' : 'error', list[0].file, `Picture ${p} is used by ${list.length} events; the cap is ${eg.gameMax ?? 8}.`, p); }
+  for (const [p, list] of [...evPics].sort(([a], [b]) => (a < b ? -1 : 1))) { out.eventPictures[p] = list.length; if (list.length > (eg.gameMax ?? 8)) F.add('UNIQ_EVENT_PICTURE_CAP', list.every(x => isStub(x.file)) ? 'warning' : 'error', list[0].file, `Picture ${p} is used by ${list.length} events; the cap is ${eg.gameMax ?? 8}.`, p); }
   for (const l of g.eventLinks) {
+    // An event that fires itself (a pulse that re-arms) is one event, not two events of a chain.
+    if (l.from === l.to) continue;
     const a = evById.get(l.from), b = evById.get(l.to);
     if (a && b && a.pictures.some(p => b.pictures.includes(p))) F.add('UNIQ_EVENT_CHAIN', sev(l.file), l.file, `Events ${l.from} and ${l.to} are one step apart and share a picture.`, `${l.from}>${l.to}`);
   }
   // Portraits: named portraits once; generic pools by the balancing cap; never twice in one country.
   const uses = new Map(), byCountry = new Map();
   for (const c of g.characters.filter(ch => !isStub(ch.file))) for (const p of c.portraits.filter(x => x.slot === 'large')) {
-    (uses.get(p.sprite) ?? uses.set(p.sprite, []).get(p.sprite)).push(c);
-    const k = `${c.country}|${p.sprite}`; (byCountry.get(k) ?? byCountry.set(k, []).get(k)).push(c);
+    // One character counts once per portrait, however many of its roles (civilian, army) show it.
+    const u = uses.get(p.sprite) ?? uses.set(p.sprite, []).get(p.sprite); if (!u.includes(c)) u.push(c);
+    // A character of no country (a mechanic's figure recruited by script) is in no country's start roster.
+    if (!c.country) continue;
+    const k = `${c.country}|${p.sprite}`, l = byCountry.get(k) ?? byCountry.set(k, []).get(k); if (!l.includes(c)) l.push(c);
   }
   const poolOf = s => /^GFX_zin_portrait_(.+)_(male|female)_\d+$/.exec(s)?.slice(1, 3).join('.');
   const pools = new Map();
@@ -536,13 +539,18 @@ const substitute = (tpl, m) => tpl.replace(/\$(\d)/g, (_, n) => m[Number(n)] ?? 
 export function readBaseline(file = BASELINE_FILE) {
   try { return readJson(file); } catch { return null; }
 }
-export function baselineOf(report) {
-  const keep = report.findings.filter(f => f.severity !== 'info').map(({ code, severity, path: p, message, key }) => ({ code, severity, path: p, message, key }));
-  return { version: REPORT_VERSION, note: 'Findings accepted as pre-existing (tools/content/checks/assets.mjs). The build fails only on an error that is not listed here. Regenerate with: node tools/content/checks/assets.mjs --write-baseline.', phase: report.phase, counts: report.counts, references: report.references, bySeverity: report.bySeverity, byCode: report.byCode, uniqueness: report.uniqueness, notChecked: report.notChecked, findings: keep };
+// The baseline lists the errors accepted for now, each with the reason it is accepted (integration round 3): an error that needs new
+// image-generated art names docs/plans/zin-art/pending_from_integration.md; the first baseline's findings of 19 October 2026 say so.
+// Warnings are not listed: they never fail the build and stay in the report. reasonOf(finding) gives the reason of a new entry; a
+// regenerated baseline keeps the reasons of `previous`. An entry without a reason accepts nothing.
+export function baselineOf(report, { reasonOf = () => undefined, previous = null } = {}) {
+  const prev = new Map((previous?.findings ?? []).filter(f => f.reason).map(f => [f.key, f.reason]));
+  const keep = report.findings.filter(f => f.severity === 'error').map(({ code, severity, path: p, message, key }) => ({ code, severity, path: p, message, key, reason: reasonOf({ code, severity, path: p, message, key }) ?? prev.get(key) }));
+  return { version: REPORT_VERSION, note: 'Errors accepted for now, each with its reason (tools/content/checks/assets.mjs, baselineOf). The build fails on an error that is not listed here with a reason. Warnings are in the report, not here.', phase: report.phase, counts: report.counts, bySeverity: report.bySeverity, byCode: report.byCode, findings: keep.filter(f => f.reason) };
 }
-// Errors in the report that the baseline does not list.
+// Errors in the report that the baseline does not accept (not listed, or listed without a reason).
 export function newFindings(report, baseline) {
-  const known = new Set((baseline?.findings ?? []).map(f => f.key));
+  const known = new Set((baseline?.findings ?? []).filter(f => f.reason).map(f => f.key));
   return report.findings.filter(f => f.severity === 'error' && !known.has(f.key));
 }
 export function fixedFindings(report, baseline) {
@@ -587,7 +595,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   console.log(summaryText(report, { top: 12 }));
   const baseline = readBaseline(opt('baseline') ?? BASELINE_FILE), fresh = newFindings(report, baseline);
   if (opt('report')) writeJsonAtomic(opt('report'), report);
-  if (args.includes('--write-baseline')) { writeJsonAtomic(opt('baseline') ?? BASELINE_FILE, baselineOf(report)); console.log(`baseline written: ${(opt('baseline') ?? BASELINE_FILE)}`); }
+  if (args.includes('--write-baseline')) { writeJsonAtomic(opt('baseline') ?? BASELINE_FILE, baselineOf(report, { previous: baseline })); console.log(`baseline written: ${(opt('baseline') ?? BASELINE_FILE)}`); }
   else {
     console.log(baseline ? `${fresh.length} new errors against the baseline (${fixedFindings(report, baseline).length} baseline findings fixed)` : 'no baseline file; every error is new');
     for (const f of fresh.slice(0, 30)) console.log(`  ${f.code} ${f.path}: ${f.message}`);

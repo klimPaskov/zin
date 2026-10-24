@@ -1,0 +1,375 @@
+{
+ "source": "Names that ZIN files use and a module not yet written will define, grouped by that owner (integration round 3, docs/design/stage2/integration_r3.md section \"Pending names\"). The final C3 pass of tools/content/build.mjs gives each an inert stand-in (modules/pending_names.mjs) and stops the build on any dangling name not listed here, on a listed name a module now defines, and on a listed name nothing uses. Remove a row when its owner lands.",
+ "owners": [
+  {
+   "id": "sites",
+   "owner": "the key-sites table (modules/sites.mjs, decision E7)",
+   "spec": "docs/specs/01_map/02_key_sites.md",
+   "names": {
+    "trigger": [
+     "zin_aenor_fallback_seat",
+     "zin_controls_sea_central",
+     "zin_is_region_cold_lands",
+     "zin_is_region_dark_lands",
+     "zin_is_region_dead_lands",
+     "zin_is_region_east_lands",
+     "zin_is_region_far_northwest",
+     "zin_is_region_islands_of_the_south",
+     "zin_is_region_lands_of_the_sun",
+     "zin_is_region_magical_lands",
+     "zin_is_region_middle_lands",
+     "zin_is_region_mpe_approach",
+     "zin_is_region_north_lands",
+     "zin_is_region_south_lands",
+     "zin_is_region_tritons_islands",
+     "zin_is_region_west_lands",
+     "zin_is_region_zols_mistake",
+     "zin_is_site_aenor_court_lands",
+     "zin_is_site_aenor_marches",
+     "zin_is_site_aenor_temple_cities",
+     "zin_is_site_boundary_groves",
+     "zin_is_site_dark_strait_far_shore",
+     "zin_is_site_dark_strait_north_shore",
+     "zin_is_site_dark_strait_shore",
+     "zin_is_site_dark_strait_south_far",
+     "zin_is_site_dark_strait_south_shore",
+     "zin_is_site_eindil_ice",
+     "zin_is_site_elven_wall",
+     "zin_is_site_furviatlon",
+     "zin_is_site_gala",
+     "zin_is_site_goldoroth_march",
+     "zin_is_site_great_lake_ports",
+     "zin_is_site_great_wall",
+     "zin_is_site_grey_ford",
+     "zin_is_site_isengard_march",
+     "zin_is_site_mirolon_passes",
+     "zin_is_site_mirolon_seat",
+     "zin_is_site_mushroom_forest",
+     "zin_is_site_nafeher",
+     "zin_is_site_neck_road",
+     "zin_is_site_nolorim_passes",
+     "zin_is_site_notbuton",
+     "zin_is_site_ocean_of_zol_coast",
+     "zin_is_site_ocean_of_zol_island",
+     "zin_is_site_parim",
+     "zin_is_site_postondoroth",
+     "zin_is_site_rift_east",
+     "zin_is_site_rift_west",
+     "zin_is_site_road_gold",
+     "zin_is_site_road_lake",
+     "zin_is_site_road_rift",
+     "zin_is_site_road_salt",
+     "zin_is_site_road_sand",
+     "zin_is_site_sea_of_darkness_coast",
+     "zin_is_site_sodoloro",
+     "zin_is_site_sonargur",
+     "zin_is_site_south_shrine",
+     "zin_is_site_strait_gateway",
+     "zin_is_site_strait_north",
+     "zin_is_site_strait_south",
+     "zin_is_site_three_oaths",
+     "zin_is_site_troll_forest",
+     "zin_is_site_west_landing_isle",
+     "zin_is_site_west_landing_shore",
+     "zin_is_site_winter_ford",
+     "zin_is_site_yeldenne",
+     "zin_is_site_yeldenne_landing"
+    ]
+   }
+  },
+  {
+   "id": "characters",
+   "owner": "the characters module (characters.mjs writes only the rulers today)",
+   "spec": "docs/specs/02_lore/02_characters.md; the regional and major tree specs for their advisors",
+   "names": {
+    "character": [
+     "zin_alleria",
+     "zin_aurevan",
+     "zin_coldor_harl",
+     "zin_coldor_ysolde",
+     "zin_eronel",
+     "zin_gala_heveneya",
+     "zin_gala_sulestien",
+     "zin_gala_tangsiel",
+     "zin_gunwaith_ilurda",
+     "zin_gunwaith_ostra",
+     "zin_horos",
+     "zin_ilsabet",
+     "zin_lerendor_brannoc",
+     "zin_lerendor_hesk",
+     "zin_lerendor_maelis",
+     "zin_lerendor_ostvar",
+     "zin_lorien",
+     "zin_magical_forest_ithrandel",
+     "zin_magical_forest_perlan",
+     "zin_merovan",
+     "zin_noris_tumo",
+     "zin_regional_adel_edda",
+     "zin_regional_adel_ysmay",
+     "zin_regional_buldor_mara",
+     "zin_regional_buldor_ulric",
+     "zin_regional_corogon_lio",
+     "zin_regional_corogon_ves",
+     "zin_regional_fearno_hroth",
+     "zin_regional_fearno_ilse",
+     "zin_regional_girdon_aldo",
+     "zin_regional_girdon_corla",
+     "zin_regional_halenor_gull",
+     "zin_regional_halenor_rhea",
+     "zin_regional_horidor_maela",
+     "zin_regional_horidor_tarvo",
+     "zin_regional_isengard_brana",
+     "zin_regional_isengard_veska",
+     "zin_regional_kradlon_bram",
+     "zin_regional_kradlon_hesta",
+     "zin_regional_lambin_essa",
+     "zin_regional_lambin_orrin",
+     "zin_regional_nondondor_saric",
+     "zin_regional_pollos_marra",
+     "zin_regional_pollos_teo",
+     "zin_regional_raerby_ilka",
+     "zin_regional_raerby_osk",
+     "zin_regional_seite_islands_brann",
+     "zin_regional_titanos_hrimla",
+     "zin_regional_titanos_skarn",
+     "zin_regional_varnondor_sevra",
+     "zin_regional_varnondor_tomas",
+     "zin_regional_windwaith_odo",
+     "zin_regional_windwaith_tamsin",
+     "zin_regional_yeti_lands_oruk",
+     "zin_regional_yeti_lands_sima",
+     "zin_stabilo_hardfic",
+     "zin_volgan"
+    ]
+   }
+  },
+  {
+   "id": "events_afrit",
+   "owner": "the Afrit story events (owner mech_afrit: 06_events/01 says the owners' texts go into the owners' modules; not written)",
+   "spec": "docs/specs/04_mechanics/afrit_hidden_council.md; docs/specs/06_events/01_golden_king_and_succession.md, 03_war_of_the_last_crowns.md",
+   "names": {
+    "event": [
+     "zin_afrit.10",
+     "zin_afrit.11",
+     "zin_afrit.14",
+     "zin_afrit.15",
+     "zin_afrit.16",
+     "zin_afrit.17",
+     "zin_afrit.20",
+     "zin_afrit.21",
+     "zin_afrit.22",
+     "zin_afrit.23",
+     "zin_afrit.32",
+     "zin_afrit.33",
+     "zin_afrit.34",
+     "zin_afrit.43",
+     "zin_afrit.45",
+     "zin_afrit.51",
+     "zin_afrit.52",
+     "zin_afrit.53",
+     "zin_afrit.70",
+     "zin_afrit.72",
+     "zin_afrit.73",
+     "zin_afrit.74",
+     "zin_afrit.75",
+     "zin_afrit.76"
+    ]
+   }
+  },
+  {
+   "id": "events_mistake",
+   "owner": "the Zol story events (owner mech_zol; not written; K4 and K11 change the manifestation beats)",
+   "spec": "docs/specs/04_mechanics/zols_mistake.md; docs/specs/06_events/03_war_of_the_last_crowns.md, 05_flavour_and_world.md",
+   "names": {
+    "event": [
+     "zin_mistake.10",
+     "zin_mistake.11",
+     "zin_mistake.2",
+     "zin_mistake.20",
+     "zin_mistake.24",
+     "zin_mistake.25"
+    ]
+   }
+  },
+  {
+   "id": "events_dominion",
+   "owner": "the Volgan story events (owner of namespace zin_dominion; the Volgan module fires them, mech_powers.md)",
+   "spec": "docs/specs/04_mechanics/volgan_southern_dominion.md; docs/specs/06_events/03_war_of_the_last_crowns.md",
+   "names": {
+    "event": [
+     "zin_dominion.10",
+     "zin_dominion.11",
+     "zin_dominion.12",
+     "zin_dominion.13",
+     "zin_dominion.14",
+     "zin_dominion.16",
+     "zin_dominion.17",
+     "zin_dominion.18",
+     "zin_dominion.19",
+     "zin_dominion.23",
+     "zin_dominion.24"
+    ]
+   }
+  },
+  {
+   "id": "events_war",
+   "owner": "the war and story events the mechanic slices fire but leave to the events engineers (zin_east, zin_elves, zin_leren, zin_lerendor, zin_dark, zin_sun; each module note lists its ids)",
+   "spec": "docs/specs/06_events/03_war_of_the_last_crowns.md and the owning mechanic specs",
+   "names": {
+    "event": [
+     "zin_dark.80",
+     "zin_dark.82",
+     "zin_east.41",
+     "zin_east.42",
+     "zin_east.43",
+     "zin_east.44",
+     "zin_east.45",
+     "zin_east.46",
+     "zin_east.50",
+     "zin_east.51",
+     "zin_east.52",
+     "zin_east.60",
+     "zin_elves.51",
+     "zin_elves.70",
+     "zin_elves.71",
+     "zin_elves.9",
+     "zin_leren.30",
+     "zin_leren.31",
+     "zin_leren.32",
+     "zin_leren.33",
+     "zin_leren.35",
+     "zin_leren.36",
+     "zin_leren.45",
+     "zin_sun.40",
+     "zin_sun.42"
+    ]
+   }
+  },
+  {
+   "id": "world",
+   "owner": "the world tension and endings module",
+   "spec": "docs/specs/03_gameplay/05_world_tension_and_endings.md",
+   "names": {
+    "effect": [
+     "zin_world_add_gathering_dark",
+     "zin_world_check_endings",
+     "zin_world_reach_ending"
+    ],
+    "event": [
+     "zin_world.45"
+    ],
+    "idea": [
+     "zin_world_lord_of_a_ruined_world",
+     "zin_world_no_crown_over_crowns",
+     "zin_world_outcome_eastern_king",
+     "zin_world_outcome_golden_court",
+     "zin_world_outcome_strait_master",
+     "zin_world_outcome_western_crown",
+     "zin_world_the_worshipped_king"
+    ],
+    "trigger": [
+     "zin_world_date_children",
+     "zin_world_date_last_crowns"
+    ]
+   }
+  },
+  {
+   "id": "magic_world",
+   "owner": "the magic and world systems module",
+   "spec": "docs/specs/03_gameplay/04_magic_and_world_systems.md",
+   "names": {
+    "effect": [
+     "zin_world_give_dragon",
+     "zin_world_grant_new_gods_gift",
+     "zin_world_raise_varners_wards"
+    ],
+    "trigger": [
+     "zin_has_potent_magic",
+     "zin_world_is_dragon_keeper"
+    ]
+   }
+  },
+  {
+   "id": "warfare",
+   "owner": "the warfare mechanics module",
+   "spec": "docs/specs/03_gameplay/01_warfare.md",
+   "names": {
+    "effect": [
+     "zin_war_feed_deathless",
+     "zin_war_grant_dragons",
+     "zin_war_grant_zol_manifestation",
+     "zin_war_remove_zol_manifestation"
+    ]
+   }
+  },
+  {
+   "id": "politics",
+   "owner": "the foundation politics module",
+   "spec": "docs/specs/00_foundation/02_ideologies_and_politics.md",
+   "names": {
+    "effect": [
+     "zin_politics_add_drift",
+     "zin_politics_set_stance"
+    ],
+    "idea": [
+     "zin_stance_zin_dom_warlord",
+     "zin_stance_zin_light_sanctuary",
+     "zin_stance_zin_light_wardens"
+    ]
+   }
+  },
+  {
+   "id": "diplomacy_gameplay",
+   "owner": "the diplomacy gameplay effects (not part of the diplomacy slice, docs/design/stage2/diplomacy.md item 8)",
+   "spec": "docs/specs/03_gameplay/03_diplomacy_and_factions.md",
+   "names": {
+    "effect": [
+     "zin_diplo_grant_cb",
+     "zin_diplo_lift_refusal",
+     "zin_lost_cause_add_strength"
+    ],
+    "event": [
+     "zin_diplo.23",
+     "zin_diplo.31"
+    ]
+   }
+  },
+  {
+   "id": "start",
+   "owner": "the start situation module",
+   "spec": "docs/specs/02_lore/01_start_situation.md",
+   "names": {
+    "idea": [
+     "zin_elves_the_old_refusal",
+     "zin_west_old_claims"
+    ],
+    "opinion_modifier": [
+     "zin_opinion_grey_ford_truce",
+     "zin_opinion_old_rivalry",
+     "zin_opinion_toll_of_1716"
+    ]
+   }
+  },
+  {
+   "id": "names",
+   "owner": "the names and terms module (start situation)",
+   "spec": "docs/specs/02_lore/01_start_situation.md",
+   "names": {
+    "trigger": [
+     "zin_eindil_known_by_name"
+    ]
+   }
+  },
+  {
+   "id": "peoples",
+   "owner": "the peoples table: goblins and ogres are not peoples of 03_peoples.md (the ten peoples have their triggers in modules/peoples.mjs); the Dark Lands trees test them as minor peoples",
+   "spec": "docs/specs/00_foundation/03_peoples.md",
+   "names": {
+    "trigger": [
+     "zin_people_includes_goblins",
+     "zin_people_includes_ogres"
+    ]
+   }
+  }
+ ]
+}

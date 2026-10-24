@@ -76,3 +76,7 @@ No new picture is needed: every key exists (`presentation-cells.json`). The endi
 - Not verified in the game: `on_monthly` firing on the first of the month (the date triggers are true from the day before), `[?ROOT.var|0]` in tooltips, `recruit_character = zin_eronel` when the characters module already attached him, the Chronicle's length in the event window (about 26 short lines).
 - `zin_reign.34`'s "two strongest non-ruling camps" is computed in temporary variables (`strongest_two_non_ruling`): the weakest of the non-ruling camps is skipped.
 - The text-sweep rule `bw_modern_society_012` against "Chancellor" (see 6 above).
+
+## Integration round 3 (24 October 2026)
+
+`build.mjs` passes `storyBlocks: ['reign', 'lastwar', 'ending', 'lore']` now that the world events are wired. The monthly scheduler `common/on_actions/zin_crown_story.txt` is an every-country `on_monthly` (CLAUDE.md rule 8); it is recorded for the lead in `integration_r3.md`, section 8.
