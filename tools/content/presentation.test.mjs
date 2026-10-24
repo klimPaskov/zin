@@ -151,7 +151,7 @@ test('the 52 picture keys have event and news sprites per their crop', async () 
 test('the tracked cell copy matches the art working copies', async () => {
   const copy = JSON.parse(readFileSync(CELLS_COPY, 'utf8'));
   if (existsSync(`${ART}/jobs/icons-catalog-cells.json`)) assert.deepEqual(JSON.parse(readFileSync(`${ART}/jobs/icons-catalog-cells.json`, 'utf8')).map(c => ({ sheet: c.sheet, cols: c.cols, rows: c.rows, keys: c.keys })), copy.icons);
-  if (existsSync(`${ART}/jobs/events-catalog-jobs.json`)) assert.deepEqual(JSON.parse(readFileSync(`${ART}/jobs/events-catalog-jobs.json`, 'utf8')).map(e => ({ key: e.keys[0], crop: e.crop })), copy.events.map(e => ({ key: e.key, crop: e.crop })));
+  if (existsSync(`${ART}/jobs/events-catalog-jobs.json`)) assert.deepEqual(JSON.parse(readFileSync(`${ART}/jobs/events-catalog-jobs.json`, 'utf8')).map(e => ({ key: e.keys[0], crop: e.crop })), copy.events.map(e => ({ key: e.raw ?? e.key, crop: e.crop }))); // raw: the name a picture was generated under before a canon rename
 });
 
 test('loading tips: every key, in order, Windows-1252, no gated or modern words', () => {
