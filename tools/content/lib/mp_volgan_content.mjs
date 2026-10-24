@@ -30,7 +30,7 @@ export function writeContent(V) {
 
   // ============================================================================================ characters and the trait
   const chars = T.characters;
-  const portrait = (c, role) => `portraits = {\n\t\t\t${role} = {\n\t\t\t\tlarge = ${spriteName(c.people, c.female, c.n)}\n\t\t\t\tsmall = ${spriteName(c.people, c.female, c.n)}\n\t\t\t}\n\t\t}`;
+  const portrait = (c, role) => `portraits = {\n\t\t\t${role} = {\n\t\t\t\tlarge = ${spriteName(c.people, c.female, c.n)}\n\t\t\t}\n\t\t}`;
   const general = (id, c) => { K.def('character', id); K.loc.set(id, c.name); return `\t${id} = {\n\t\tname = ${id}\n\t\t${portrait(c, 'army')}\n\t\tcorps_commander = {\n\t\t\ttraits = { ${c.traits.join(' ')} }\n\t\t\tskill = ${c.skill}\n\t\t\tattack_skill = ${c.attack}\n\t\t\tdefense_skill = ${c.defence}\n\t\t\tplanning_skill = ${c.planning}\n\t\t\tlogistics_skill = ${c.logistics}\n\t\t}\n\t}`; };
   const leader = (id, c) => { K.def('character', id); K.loc.set(id, c.name); return `\t${id} = {\n\t\tname = ${id}\n\t\t${portrait(c, 'civilian')}\n\t}`; };
   const advisor = (id, c) => { K.def('character', id); K.loc.set(id, c.name); K.loc.set(`${id}_desc`, c.desc); return `\t${id} = {\n\t\tname = ${id}\n\t\t${portrait(c, 'civilian')}\n\t\tadvisor = {\n\t\t\tslot = political_advisor\n\t\t\tidea_token = ${id}\n\t\t\tcost = 100\n\t\t\ttraits = { zin_adv_whisper_master }\n\t\t}\n\t}`; };
@@ -182,7 +182,7 @@ controller = { original_tag = ${VOL} }
   EV({ id: 'zin_dominion.7', kind: 'country', pic: 'mirolon_passes', options: [
     { effect: call('zin_mirolon_add_passes', { value: 3 }), ai: ai(60) },
     { effect: 'add_stability = 0.02', ai: ai(40) }] });
-  EV({ id: 'zin_dominion.8', kind: 'country', pic: 'generic_court', options: [
+  EV({ id: 'zin_dominion.8', kind: 'country', pic: 'dead_lands_storm', options: [
     { effect: `if = {
 limit = { check_variable = { var = zin_volgan_pact value = ${offer} compare = less_than } }
 if = {

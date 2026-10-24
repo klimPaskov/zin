@@ -92,3 +92,7 @@ existing people sprites. Event pictures `dragon_roosts`, `elven_moot` and `rift_
 - Ideas, characters and opinions are "pending categories" in the current `computeBridges` call.
 - MCP `hoi4_script_validate` could not be used (no registered workspace); evidence is the offline `mp_check.mjs` vocabulary check
   (0 problems) and the 30 tests.
+
+## Integration round 3 (24 October 2026)
+
+The three power modules and the panels are wired in `tools/content/build.mjs` in the order of this note (`integration_r3.md`, section 1). The foundation rule triggers and the general causes of war they call now exist (`modules/rules.mjs`, `modules/diplomacy.mjs`); the events this slice fires and leaves to the events slice are declared pending in `tools/content/data/pending_names.json` (owners `events_dominion` and `events_war`). The pending-trigger stand-ins named above are gone.

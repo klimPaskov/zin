@@ -538,7 +538,7 @@ country_event = { id = zin_leren.12 days = 2 }
     { effect: `add_political_power = -${N('cost.redress')}\n${redress}`, ai: ai(20, [{ factor: 0, when: histMock }]) },
     { effect: `${LER} = {\nset_country_flag = zin_leren_toll_arbitrated\n${standing(N('standing.arbitration'))}\ncountry_event = { id = zin_leren.13 days = ${N('cooldown.arbitration_days')} }\ncountry_event = { id = zin_leren.12 days = 2 }\n}`, ai: ai(30, [{ factor: 0, when: histMock }]) },
     { effect: `add_political_power = 25\n${mocking}`, ai: ai(50, [{ factor: 1.5, when: ge('zin_court_corruption', N('route.ai_mock_corruption')) }, { add: 1000, when: histMock }]) }] });
-  EV({ id: 'zin_leren.12', kind: 'country', pic: 'leren_envoys', descs: [{ key: 'redressed', trigger: 'has_country_flag = zin_leren_toll_redressed' }, { key: 'mocked', trigger: 'has_country_flag = zin_leren_toll_mocked' }], options: [
+  EV({ id: 'zin_leren.12', kind: 'country', pic: 'strait_toll', descs: [{ key: 'redressed', trigger: 'has_country_flag = zin_leren_toll_redressed' }, { key: 'mocked', trigger: 'has_country_flag = zin_leren_toll_mocked' }], options: [
     { trigger: 'has_country_flag = zin_leren_toll_redressed', effect: 'clr_country_flag = zin_leren_toll_redressed', ai: ai(100) },
     { trigger: `has_country_flag = zin_leren_toll_mocked\nNOT = { has_country_flag = zin_leren_toll_redressed }`, effect: `if = { limit = { has_idea = zin_leren_grievance_1716 } swap_ideas = { remove_idea = zin_leren_grievance_1716 add_idea = zin_leren_grievance_unanswered } }`, ai: ai(100) },
     { trigger: `has_country_flag = zin_leren_toll_arbitrated\nNOT = { has_country_flag = zin_leren_toll_mocked }\nNOT = { has_country_flag = zin_leren_toll_redressed }`, ai: ai(100) }] });
@@ -589,7 +589,7 @@ ${LER} = { country_event = { id = zin_leren.72 } }`,
   EV({ id: 'zin_leren.71', kind: 'country', pic: 'generic_court', options: [
     { effect: `${LER} = { puppet = PREV }\n${LER} = { country_event = { id = zin_leren.72 } }`, ai: ai(0, [{ add: 40, when: 'always = yes' }, { add: 40, when: `has_war_with = ${ZOL}` }, { factor: 0, when: 'has_country_flag = zin_elven_refusal' }]) },
     { effect: `${call('zin_leren_add_lean', { value: N('lean.refuse_protection') })}\n${LER} = { country_event = { id = zin_leren.72 } }`, ai: ai(60) }] });
-  EV({ id: 'zin_leren.72', kind: 'country', pic: 'generic_court', options: [{ ai: ai(100) }] });
+  EV({ id: 'zin_leren.72', kind: 'country', pic: 'leren_envoys', options: [{ ai: ai(100) }] });
   EV({ id: 'zin_leren.80', kind: 'country', pic: 'generic_court', trigger: `${onlyLer}\n${le('zin_leren_union_cohesion', N('cohesion.question_at'))}`, mtth: `days = ${N('cooldown.mtth_estates')}`, options: [
     { effect: `add_political_power = -${N('cost.estates')}\n${call('zin_leren_add_union_cohesion', { value: N('cohesion.grant') })}`, ai: ai(60) },
     { effect: `${call('zin_leren_add_union_cohesion', { value: N('cohesion.hold') })}\nadd_stability = -0.05\nadd_war_support = 0.03`, ai: ai(40) }] });

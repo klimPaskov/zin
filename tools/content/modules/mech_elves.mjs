@@ -910,9 +910,9 @@ add_political_power = ${N('cost.aenor_moot_hear')}
 clr_global_flag = zin_elves_moot_heard
 event_target:zin_elves_moot_caller = { country_event = { id = zin_elves.6 } }`, ai: ai(30, bands(1)) },
   ] });
-  EV({ id: 'zin_elves.6', kind: 'country', pic: 'concord_council', descs: [{ key: 'heard', trigger: 'has_global_flag = zin_elves_moot_heard' }],
+  EV({ id: 'zin_elves.6', kind: 'country', pic: 'generic_peace', descs: [{ key: 'heard', trigger: 'has_global_flag = zin_elves_moot_heard' }],
     options: [{ effect: 'clr_global_flag = zin_elves_moot_heard\nclr_global_flag = zin_elves_moot_open', ai: ai(100) }] });
-  EV({ id: 'zin_elves.7', kind: 'country', pic: 'generic_wilds',
+  EV({ id: 'zin_elves.7', kind: 'country', pic: 'mirolon_passes',
     trigger: `zin_world_is_dragon_keeper = yes\nzin_elves_is_magical_realm = yes\n${ge('global.zin_dragons_free', 1)}\nNOT = { has_global_flag = zin_wall_accord_broken }\nNOT = { has_war = yes }\nNOT = { has_country_flag = zin_elves_dragon_event_recent }`,
     mtth: `days = ${N('cooldown.dragon_event') - 10}`,
     immediate: `set_country_flag = { flag = zin_elves_dragon_event_recent days = ${N('cooldown.dragon_event')} }`,

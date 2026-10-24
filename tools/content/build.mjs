@@ -40,6 +40,10 @@ import { buildZol } from './modules/mech_zol.mjs';
 import { buildYeldenneGlo } from './modules/mech_yeldenne.mjs';
 import { buildEindilJourney } from './modules/mech_eindil.mjs';
 import { buildWesternCrossing } from './modules/mech_crossing.mjs';
+import { buildElves } from './modules/mech_elves.mjs';
+import { buildLerendor } from './modules/mech_lerendor.mjs';
+import { buildVolgan } from './modules/mech_volgan.mjs';
+import { buildPowersUi } from './modules/mech_powers_ui.mjs';
 import { buildDecisionsRegional } from './modules/decisions_regional.mjs';
 import { buildFocusMajorC } from './modules/focus_major_c.mjs';
 import { buildSharedBCompanion } from './modules/focus_shared_b.mjs';
@@ -116,6 +120,10 @@ const mechGlo = await buildYeldenneGlo(staged, { countries });
 // shipped yet; the flag is listed in docs/plans/zin-art/pending_from_integration.md.
 const mechEindil = await buildEindilJourney(staged, { countries, eindil: { hostFlag: false } });
 const mechWest = await buildWesternCrossing(staged, { countries });
+const powersElves = await buildElves(staged, { countries, table });
+const powersLeren = await buildLerendor(staged, { countries, table });
+const powersVolgan = await buildVolgan(staged, { countries });
+await buildPowersUi(staged, { countries });
 // The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
 // common/scripted_effects/zin_story.txt; storyBlocks gains 'lastwar' and 'lore' when the events-world module is wired.
 const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'ending'] });
