@@ -82,12 +82,12 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-31 | Yeldenne's capital: the roster's working name "Simoto" (the drawing reads "Hul..." under a seam) | kept as a working name, labelled proposed |
 | Q-32 | Approval of the named portraits of Horos, Eindil, Aurevan, Varner and Golbran before they ship (art pipeline spec); Eindil and Aurevan stay out of start-reachable files | portraits generated with luna and held back until approved |
 | Q-33 | Should a dwarf hold's council change its ideology (Forge-Lord to Dominion, Charter of the Gate to Light), or does every hold stay Wild? | the councils change it, as written in shared_delving_holds |
-| Q-34 | Is Kunhrim's Iron Charter a sixth charter of the Aenor mechanic, or a name for its Old Charter? | a name for its Old Charter (no sixth charter), labelled proposed |
+| Q-34 | Is Kunhrim's Iron Charter a sixth charter of the Aenor mechanic, or a name for its Old Charter? | a tree spirit beside the Aenor mechanic's charter idea, not a sixth charter; labelled proposed |
 | Q-35 | Is the Lamp Truce a non-aggression pact between Kunhrim and Burrikkrit in game terms? | yes, a non-aggression pact, labelled proposed |
 | Q-36 | When Dunelaeth returns east, does it become Herrodon's subject or leave the map? | Herrodon's subject, still playable |
-| Q-37 | May the Baelim leave the Aenor Forest to fight, or only defend it? | only defend it, except when the forest itself is threatened |
+| Q-37 | May the Baelim leave the Aenor Forest to fight, or only defend it? | only defend it (the tree only defends) |
 | Q-38 | When Olodor is found, does all of Parim know? | yes (a global flag) |
 | Q-39 | Are the small folk called Bykkwyn (West) and Tirim (Hirolon) in text, or "the small folk" everywhere? | "the small folk" everywhere |
-| Q-40 | May the small folk keep a Watch of their own instead of the men of the Ronbo Watch? | the men of the Ronbo Watch, as the dossier has it |
+| Q-40 | May the small folk keep a Watch of their own instead of the men of the Ronbo Watch? | both: the tree offers a Watch of their own as the alternative route to the Ronbo Watch |
 
 Also pending: the Meshy server did not connect in this session (`CONNECT_TIMEOUT`), so 3D model generation waits until it connects.
