@@ -135,7 +135,7 @@ Lerendor and Lerendor's North are one country, but they were two crowns until 4A
 - stability_factor = (cohesion − 50) / 500, so -0.10 to +0.10;
 - political_power_factor = (cohesion − 50) / 1000, so -0.05 to +0.05.
 
-Cohesion moves through focuses, events and these monthly sources: -0.2 while toll level is 3 or 4 (Lerendor's North's inland lords pay for the strait captains' quarrel); +0.2 while the estates' spirit is active. At 25 or below, `zin_leren.80` (The Lerendor's North Question) can fire. No route ever splits Lerendor's North into a separate country: the owner merged them.
+Cohesion moves through focuses, events and these monthly sources: -0.2 while toll level is 3 or 4 (the inland lords of Lerendor's North pay for the strait captains' quarrel); +0.2 while the estates' spirit is active. At 25 or below, `zin_leren.80` (The Lerendor's North Question) can fire. No route ever splits Lerendor's North into a separate country: the owner merged them.
 
 ### 4. The Leren Compact and the smaller crowns
 

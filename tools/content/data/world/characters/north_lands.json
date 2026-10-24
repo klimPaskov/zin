@@ -12,7 +12,7 @@
       "house": "House Sonarvik",
       "title": {
         "native": "Aar",
-        "english": "King of Lerendor and Veskel"
+        "english": "King of Lerendor and Lerendor's North"
       },
       "gender": "male",
       "people": "men",
@@ -29,7 +29,7 @@
         "colours": "Strait blue (#2a5a82), sail white (#e8e6dc), sea mist (#9fb4c4)."
       },
       "canon": "H",
-      "formerName": "King Ferlin III of Lerendor and Lerenwaith (characters spec); the crown is now Lerendor and Veskel"
+      "formerName": "King Ferlin III of Lerendor and Lerendor's North (characters spec); the crown is now Lerendor and Lerendor's North"
     },
     "heir": {
       "id": "zin_lerendor_helmar",
@@ -68,9 +68,9 @@
       },
       {
         "id": "zin_lerendor_maelis",
-        "name": "Maelis of Veskel",
+        "name": "Maelis of Lerendor's North",
         "given": "Maelis",
-        "office": "Steward of Veskel",
+        "office": "Steward of Lerendor's North",
         "gender": "female",
         "people": "men",
         "born": 6771,
@@ -79,10 +79,10 @@
           "zin_trait_lawspeaker"
         ],
         "role": "Speaks for the lords of the western ice-crown, who still name their children from the Heskdal line and expect Sonargur to remember that the union was a marriage.",
-        "portrait": "A pale, composed woman in white fur with the old Veskel seal.",
+        "portrait": "A pale, composed woman in white fur with the old Lerendor's North seal.",
         "canon": "S",
-        "formerName": "Maelis of Lerenwaith, Chancellor of Lerenwaith (Lerendor tree); no -waith names, and Chancellor is banned",
-        "recruit": "Recruited by the Lerendor tree focus The Chancellor of Lerenwaith (to be renamed for Veskel)."
+        "formerName": "Maelis of Lerendor's North, Chancellor of Lerendor's North (Lerendor tree); no -waith names, and Chancellor is banned",
+        "recruit": "Recruited by the Lerendor tree focus The Chancellor of Lerendor's North (to be renamed for Lerendor's North)."
       },
       {
         "id": "zin_lerendor_brannoc",
@@ -229,7 +229,7 @@
         "traits": [
           "defensive_doctrine"
         ],
-        "role": "A Veskel lord of the Heskdal blood who keeps the watch-towers of the Leren shore and would hold Sonargur's walls against anything that came out of the sea.",
+        "role": "A Lerendor's North lord of the Heskdal blood who keeps the watch-towers of the Leren shore and would hold Sonargur's walls against anything that came out of the sea.",
         "portrait": "A tall, grim lord in white fur over grey mail.",
         "canon": "P",
         "formerName": "Torvald Hesk (Lerendor tree); Torvald is a real-world name",
@@ -822,9 +822,9 @@
     "figures": []
   },
   {
-    "tag": "SNS",
-    "key": "sensai",
-    "name": "Sensai",
+    "tag": "TLV",
+    "key": "tolvael",
+    "name": "Tolvael",
     "stance": "zin_wild_freeholds",
     "court": "standard",
     "ruler": {
@@ -834,7 +834,7 @@
       "house": "the Agtos kings of the vale",
       "title": {
         "native": "Aarna",
-        "english": "Queen of Sensai"
+        "english": "Queen of Tolvael"
       },
       "gender": "female",
       "people": "men",
@@ -844,17 +844,17 @@
         "zin_trait_lawspeaker",
         "zin_trait_treaty_keeper"
       ],
-      "bio": "Vigild of the Agtos was confirmed by the landholders' council in 4A 1736, the first queen of the long vale in four reigns. Sensai's timber and pine tar have kept the strait fleets afloat since 4A 1290, and she sells them to the High Crown as a partner and not as a subject, which she reminds Sonargur of whenever its envoys forget. She is proud, careful with money and quicker to answer a request than an order.",
+      "bio": "Vigild of the Agtos was confirmed by the landholders' council in 4A 1736, the first queen of the long vale in four reigns. Tolvael's timber and pine tar have kept the strait fleets afloat since 4A 1290, and she sells them to the High Crown as a partner and not as a subject, which she reminds Sonargur of whenever its envoys forget. She is proud, careful with money and quicker to answer a request than an order.",
       "portrait": {
         "appearance": "A tall, handsome woman with dark braids.",
         "dress": "A forest-green gown, a crown of iron set with amber and a tar-merchant's seal at her girdle.",
         "colours": "Tar brown (#7a6a54), pine green (#4e5e4a), birch pale (#c8bfa4)."
       },
       "canon": "P",
-      "formerName": "Lady Agniya of Sensai (characters spec, Sensai tree); Agniy is a hill crown of Heodwa"
+      "formerName": "Lady Agniya of Tolvael (characters spec, Tolvael tree); Agniy is a hill crown of Heodwa"
     },
     "heir": {
-      "id": "zin_regional_sensai_tormik",
+      "id": "zin_regional_tolvael_tormik",
       "name": "Tormik Agtos, Heir of the Long Vale",
       "given": "Tormik",
       "office": "Heir of the Long Vale",
@@ -868,7 +868,7 @@
     },
     "advisors": [
       {
-        "id": "zin_regional_sensai_kesh",
+        "id": "zin_regional_tolvael_kesh",
         "name": "Steward Eirbrann Keshdal",
         "given": "Eirbrann",
         "office": "Steward of the Vale",
@@ -882,10 +882,10 @@
         "role": "Keeps the landholders' dues and the crown's timber-rolls, and has never let a load of tar leave Goran unpaid.",
         "portrait": "A grey steward with a tar-stained ledger.",
         "canon": "P",
-        "formerName": "Steward Borislav Kesh (Sensai tree); not Leren"
+        "formerName": "Steward Borislav Kesh (Tolvael tree); not Leren"
       },
       {
-        "id": "zin_regional_sensai_orlan",
+        "id": "zin_regional_tolvael_orlan",
         "name": "Ship-Master Runya Orlvik",
         "given": "Runya",
         "office": "Master of the Tar Ships",
@@ -899,10 +899,10 @@
         "role": "Runs the tar and timber ships out of Goran's fjord and sets the price of a mast for every shipwright in the North.",
         "portrait": "A broad woman in a pitch-blackened apron with a mast-gauge.",
         "canon": "P",
-        "formerName": "Ship-Master Veda Orlan (Sensai tree)"
+        "formerName": "Ship-Master Veda Orlan (Tolvael tree)"
       },
       {
-        "id": "zin_regional_sensai_vel",
+        "id": "zin_regional_tolvael_vel",
         "name": "Hall-Speaker Eirmar Holmsdal",
         "given": "Eirmar",
         "office": "Speaker of the Landholders",
@@ -916,12 +916,12 @@
         "role": "Speaks for the landholders' council to the queen and for the queen to the other free crowns.",
         "portrait": "A courteous man in a landholder's fur collar.",
         "canon": "P",
-        "formerName": "Hall-Speaker Dmitar Vel (Sensai tree); not Leren"
+        "formerName": "Hall-Speaker Dmitar Vel (Tolvael tree); not Leren"
       }
     ],
     "commanders": [
       {
-        "id": "zin_regional_sensai_gord",
+        "id": "zin_regional_tolvael_gord",
         "name": "Hill-Captain Sigvar Gardik",
         "given": "Sigvar",
         "office": "Captain of the Hill-Forts",
@@ -946,7 +946,7 @@
         "formerName": "Voivode Stanek Gord (Sensai tree); voivode is a real-world title and Gord a former label in the Dark Lands"
       },
       {
-        "id": "zin_regional_sensai_gunnulf",
+        "id": "zin_regional_tolvael_gunnulf",
         "name": "Gunnulf of Kerhil",
         "given": "Gunnulf",
         "office": "Captain of the Iron Hill",

@@ -2125,7 +2125,7 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Cold Lands** | Cold Lands | Northwest, reaches off west and north of the map, largest landmass. Coldor, Isengard, Horidor, Yeti Lands, Windwaith arm. |
 | **West Lands** | West-Earth, drawn sheet headed North Earth | South of Cold Lands, connected by broad neck. Gunwaith, Girdon, Kradlon, Corogon, Varnondor. Snow only near the Cold Lands neck. |
 | **Triton's Islands** | Tritons Islands / Tornado Islands | West of West Lands, arcs around Pupor Ocean. Adel, Pollos, Raerby, Nondondor. |
-| **North Lands** | East-Earth, drawn sheet headed West Earth | North of Middle Lands across narrow strait. Lerendor and Lerenwaith (one crown), Eekedor, Molot, R'en. |
+| **North Lands** | East-Earth, drawn sheet headed West Earth | North of Middle Lands across narrow strait. Lerendor and Lerendor's North (one crown), Eekedor, Molot, R'en. |
 | **Dark Lands** | Dark Lands | Between Lerendor and Middle Lands across narrow straits. Bordon, Dreson, Dulundur, Troll Forest, Dondor, Goldoroth, Sea of Darkness. |
 | **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Great Lake, Aenor Forest, and the sovereign giant kingdom of Hirolon (former label Hiloron). See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |

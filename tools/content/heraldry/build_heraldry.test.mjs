@@ -149,7 +149,7 @@ test('a division or line outside the grammar fails', () => {
 
 test('low contrast without fimbriation, a weak secondary and an over-full achievement fail', () => {
   let doc = fresh();
-  const r = rec(doc, 'sensai'); delete r.primary_charge.fimbriated;
+  const r = rec(doc, 'tolvael'); delete r.primary_charge.fimbriated;
   assert.ok(hasRule(checkRecordRules(doc), 'contrast'));
   doc = fresh(); rec(doc, 'aenor').primary_charge.contrast = 1.2; rec(doc, 'aenor').primary_charge.fimbriated = { name: 'deep lake', hex: '#1d3a5c', source: 'lake_aenoran' };
   assert.ok(hasRule(checkRecordRules(doc), 'contrast'));

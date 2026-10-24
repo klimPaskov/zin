@@ -479,9 +479,9 @@ The entries below are new unless marked; most come from the dossiers' section 9,
 
 **Wild boar** (P). The same black-bristled boar runs in the West Wood, the Middle Lands' woods and the Dark Forests, where the orcs call it *grunt* and paint it on their shields; it is on Gunwyn's arms, and a West Lands chief shows his strength at the boar-hunt.
 
-**Elk** (P). The Dwarc and Swy Forests of the North Lands and Veskel, hunted for meat and hide.
+**Elk** (P). The Dwarc and Swy Forests of the North Lands and Lerendor's North, hunted for meat and hide.
 
-**Wolves** (P). The grey wolf of the West Wood, the North Lands and the Middle Lands' woods; in the Cold Lands the same wolf runs in larger packs and turns white in the Long Dark, following the reindeer and taking the stragglers. Wolves press Veskel's herds in hard winters, and their furs go south.
+**Wolves** (P). The grey wolf of the West Wood, the North Lands and the Middle Lands' woods; in the Cold Lands the same wolf runs in larger packs and turns white in the Long Dark, following the reindeer and taking the stragglers. Wolves press the herds of Lerendor's North in hard winters, and their furs go south.
 
 **Brown bears** (P). The West Wood, the West's mountain neck and the northern forests; a threat to herds and a prize for a furrier.
 
@@ -821,7 +821,7 @@ The economy has seven resources (Essence, Timber, Horses, Stone, Iron, Gold, Gra
 | Rats in the Granaries | any realm, through the K34 pulse | MTTH 60 months after a mild winter | Provisions -10% for 60 days; Granaries cut the chance |
 | Locusts on the Wadi Farms | South and East desert-margin realms | MTTH 60 months in a dry year | -30% Grain in the state for 120 days |
 | Stones from the Hills | any realm with an army in `zin_hab_kror` | each month there, a 25% chance | the army loses 300 levies and 10% organisation |
-| Wolves in the Long Dark | owners of Veskel's and the Cold Lands' herd states | MTTH 24 months in winter | -5% Grain or Horses in the state for 60 days |
+| Wolves in the Long Dark | owners of the herd states of Lerendor's North and the Cold Lands | MTTH 24 months in winter | -5% Grain or Horses in the state for 60 days |
 | A Bear on the Ice | Cold Lands and Woqood sealing realms | MTTH 24 months in the sealing season | a sealing party lost, or a bear taken (see the bear-skin mantle) |
 | The Strait-Whale Comes | the strait realms | each Maelwen | the Ship-Blessing |
 | Ogres on the Rift Road | East caravan realms on the Rift Road | MTTH 24 months | -10% resources in the road state for 90 days |

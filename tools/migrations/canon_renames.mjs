@@ -39,8 +39,14 @@ export const RENAMES = [
   { from: /\bSensaian\b/g, to: 'Tolvaeli' },
   { from: /\bSensai\b/g, to: 'Tolvael' },
   { from: /sensai/g, to: 'tolvael' },
+  // Tolvael's tag from the new name (lib/tags.mjs deriveTag): SNS was Sensai's.
+  { from: /\bSNS\b/g, to: 'TLV' },
   { from: /\bLerenwaith\b/g, to: "Lerendor's North" },
-  { from: /lerenwaith/g, to: 'lerendors_north' },
+  // the geography model keeps its feature id ice_lerenwaith (a stable key renamed by its own name table)
+  { from: /(?<!ice_)lerenwaith/g, to: 'lerendors_north' },
+  // Veskel was the dossiers' stand-in for Lerenwaith; the owner's name replaces it too. A possessive is rewritten by hand.
+  { from: /\bVeskel\b(?!')/g, to: "Lerendor's North" },
+  { from: /\bveskel\b/g, to: 'lerendors_north' },
 ];
 
 export const PATH_RENAMES = [
@@ -58,6 +64,14 @@ const RECORDS = [
   'docs/lore/names_traceability.md', 'docs/lore/references/edvoid_name.md', 'tools/migrations/',
   // Transcriptions of the labels written on the owner's drawing, and the lead's own working notes.
   'docs/name_table.csv', 'docs/name_table.md', 'docs/name_alignment.json', 'docs/plans/zin-lead/',
+  // The old rows of the 19 October roster keep their names; the state assignment maps them to the realms.
+  'tools/content/data/world/legacy_countries.json',
+  // The reviewed transcription of the labels on the owner's drawing.
+  'tools/content/data/labels.json',
+  // The flag-sheet cells of the old rows, keyed by old name (a realm flies its main former row's flag until its own exists).
+  'tools/content/data/flags-cells.json',
+  // Generated from the roster and the old rows by tools/migrations/roster_state_assignment.mjs: rerun that instead.
+  'tools/content/data/world/state_assignment.json',
 ];
 // The focus tree designs are builder input, so they belong to the content scope.
 // The geography model is renamed by its own rename table (tools/content/geography/name_table.mjs, applied by
@@ -65,12 +79,26 @@ const RECORDS = [
 const GEOGRAPHY = ['tools/content/geography/', 'tools/content/data/geography/'];
 const SCOPES = { docs: ['docs/', 'README.md'], content: ['tools/content/', 'docs/design/focus/'], all: ['docs/', 'README.md', 'tools/content/'] };
 const EXCLUDE = { docs: ['docs/design/focus/'], content: GEOGRAPHY, all: GEOGRAPHY };
-const KEEP_LINE = /\bdrawn\b|\bformer\b|\bformerly\b|placeholder|superseded|\bold name\b|\bold label\b/i;
+// "raw" names an art file generated under its former name (presentation-cells.json); "generated as" says so in prose.
+// "oldName" and "oldTag" record a row of the 19 October roster in the migration tables.
+// A drawn label is quoted from the owner's drawing ("the drawn X", "drawn label", "drawn as", "the drawing reads").
+const KEEP_LINE = /"raw":|"oldName":|"oldTag":|generated as|\bthe drawn\b|\bdrawn (label|name|as)\b|\bdrawing reads\b|\bformer\b|\bformerly\b|placeholder|superseded|\bold name\b|\bold label\b/i;
 
-export function renameText(text) {
-  let count = 0;
+// Lines inside living files that record former names on purpose: an old-name detector and rename notes.
+const RECORD_LINES = {
+  'docs/design/text/authoring/quotes.mjs': /^const extra = /,
+  'docs/design/characters_part2.md': /^(Lerendor: Chancellor Ilse Relendion|Melkgard: Veska the Gift-Giver)/,
+  'docs/design/roster.md': /^| (Lerenwaith|Lerendor's North) | `lerendor_narrow_strait`/,
+};
+
+export function renameText(text, keep = null) {
+  let count = 0, inFormer = false;
   const out = text.split('\n').map(line => {
-    if (KEEP_LINE.test(line)) return line;
+    // a JSON "formerLabels" list records the old labels themselves, one per line until its closing bracket
+    if (/"formerLabels":\s*\[/.test(line)) inFormer = !/\]/.test(line.slice(line.indexOf('[')));
+    else if (inFormer) { if (/\]/.test(line)) inFormer = false; return line; }
+    if (/"formerLabels":/.test(line)) return line;
+    if (KEEP_LINE.test(line) || keep?.test(line)) return line;
     let l = line;
     for (const r of RENAMES) l = l.replace(r.from, (...m) => { count++; return typeof r.to === 'function' ? r.to(...m) : r.to; });
     return l;
@@ -93,7 +121,7 @@ function main() {
     if (/\.(png|jpe?g|dds|tga|webp|gif|bmp)$/i.test(f)) continue;
     const before = readFileSync(f, 'utf8');
     kept += before.split('\n').filter(l => KEEP_LINE.test(l) && RENAMES.some(r => new RegExp(r.from.source).test(l))).length;
-    const { text, count } = renameText(before);
+    const { text, count } = renameText(before, RECORD_LINES[f]);
     if (count) { total += count; edited++; if (apply) writeFileSync(f, text); }
     const to = renamePath(f);
     if (to !== f) { renames.push([f, to]); if (apply) execFileSync('git', ['mv', f, to]); }

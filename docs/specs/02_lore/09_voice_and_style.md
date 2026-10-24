@@ -302,7 +302,7 @@ Words given to the long dead are framed as remembered: "Words the heralds give t
 | the Kusmeel | the Kusmeel, the Kusmeel | The sea north of Zol's Mistake |
 | the Pupor Isles | Triton's Islands | |
 | Gunwyn | Gunwaith | No "-waith" name anywhere |
-| Lerendor and Veskel | Lerendor and Lerendor's North | One crown |
+| Lerendor and Lerendor's North | Lerendor and Lerendor's North | One crown |
 | Vindael | Windwaith | The Cold Lands' ice arm |
 | Orohaf | Asgard | Aenor Isle's harbour |
 | Melkgard | Isengard | |
@@ -338,7 +338,7 @@ Before a line is accepted, read it aloud once.
 ## 10. Open points
 
 - The owner has not yet approved the names of the twelve gods and the god-months (Q-01 answers in [pantheon.md](../../lore/references/pantheon.md)); text that uses them stays proposed until he does.
-- The replacement names in the regional dossiers (Gunwyn, Veskel, Orohaf, Melkgard, Nivaros, Naamis, Rhachia, Baelim, Tirim and the others) are proposals; if the owner changes one, the quotes that use it change with it.
+- The replacement names in the regional dossiers (Gunwyn, Lerendor's North, Orohaf, Melkgard, Nivaros, Naamis, Rhachia, Baelim, Tirim and the others) are proposals; if the owner changes one, the quotes that use it change with it.
 - The sea names on the map still carry "Ocean" in several dossiers; this guide avoids them in text until they are renamed.
 - Gunpowder realms are named by the roster (K19); text for other realms names no firearm.
 - The banned-word rule for "Kusven" still offers "Zol" as its replacement, which predates the correction that Kusven, now Kusven, is Zol's servant; the data's owner should change the hint, and Kusven needs a sealed rule in `secret_terms.json` (knowledge layers C25).

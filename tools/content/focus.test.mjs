@@ -530,7 +530,7 @@ test('The tiers spec lists the expected trees', async () => {
   const ids = await expectedTreeIds();
   for (const id of ['aenor', 'worshipdom', 'regional_noleksun', 'regional_r_en', 'shared_north_lands', 'shared_lands_of_the_sun']) assert(ids.includes(id), id);
   assert.equal(new Set(ids).size, ids.length);
-  assert.equal(ids.filter(i => i.startsWith('shared_')).length, 11);
+  assert.equal(ids.filter(i => i.startsWith('shared_')).length, 14);
 });
 
 // ------------------------------------------------------------------------------------------------ copy blocks

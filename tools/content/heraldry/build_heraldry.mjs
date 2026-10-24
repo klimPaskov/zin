@@ -830,7 +830,7 @@ const GRAMMAR_ADDITIONS = {
   leren_sea_kings: {
     charges: [ch('joined_oars', 'tool', 'two steering oars joined by one ring', 'two coast crowns steered as one'),
       ch('cape_watch', 'building', 'a watch-house on a low cape', 'the forts on the strait cape that the first prince of R\'en built and refused to pay for')],
-    patch: { 'charges.two_waves.meaning': 'Lerendor and Veskel under one High Crown' },
+    patch: { 'charges.two_waves.meaning': 'Lerendor and Lerendor\'s North under one High Crown' },
   },
   winter_crown: { charges: [ch('winter_sheaf', 'plant', 'a sheaf of winter rye bound with a white cord', 'the crown granaries whose bread holds the clans through the long winters')] },
   ice_clans: {
@@ -1112,7 +1112,7 @@ export const FORBIDDEN = [
   { id: 'wider_world', re: /\b(Erdu|Dunda|Haven|Cerio|Lao)\b/, scope: 'all' },
   { id: 'zol_servant', re: /\b(kusven|kusferl|kourven|kutven|kusven|black oval|sodoloro|šodolôr\S*|the beasts)\b/i, scope: 'all' },
   { id: 'elzon_order', re: /\b(elzon|pale regency)\b/i, scope: 'blazon' },
-  { id: 'retired_names', re: /\b(isengard|windwaith|gunwaith(?!ic)|titanos|hiloron|lerenwaith|ember lands|coniferons?|vinocorne)\b/i, scope: 'all' },
+  { id: 'retired_names', re: /\b(isengard|windwaith|gunwaith(?!ic)|titanos|hiloron|lerendors_north|ember lands|coniferons?|vinocorne)\b/i, scope: 'all' },
 ];
 
 // The hidden-identity deny-list for the public arms of the Worshipdom and Aenor (spec 1.5).
@@ -1184,7 +1184,7 @@ export const DESIGNS = [
 
   // ---- North Lands -------------------------------------------------------------------------------------------------
   d('lerendor', 'plain', ['strait blue'], ['two_waves', 'salt white'], null,
-    'Lerendor bears two waves under the ship-crown: the High Crown of Lerendor and Veskel, set on one head when Ostrik of the Sonarvik married Runild of Veskel, and the strait dues that make it the North\'s counterweight to Parim.'),
+    'Lerendor bears two waves under the ship-crown: the High Crown of Lerendor and Lerendor\'s North, set on one head when Ostrik of the Sonarvik married Runild of Lerendor\'s North, and the strait dues that make it the North\'s counterweight to Parim.'),
   d('eekedor', 'per_fess', ['salt white', 'strait blue'], ['salt_cellar', 'deep strait'], null,
     'Eekedor bears the salt cellar of its Arbitration Court, where salt shared at the table binds both sides of a quarrel: the council of counting houses that keeps the island\'s grain and money and holds its court open to any crown that pays.'),
   d('ren', 'base', ['Leren silver', 'strait blue'], ['cape_watch', 'deep strait'], null,
@@ -1193,8 +1193,8 @@ export const DESIGNS = [
     'Keredor-Hellekton impales its two coast crowns and joins their steering oars in one ring, as the Arbitration Court joined Vigda of Keredor and Helmund of Hellekton: a double crown whose court still crowns every heir twice.'),
   d('molot', 'base', ['hearth red', 'peat black'], ['grey_crane', 'fleece white'], null,
     'Molot bears the crane that stands watch above the marsh: the margraves whose fortress line behind the marsh took the raiders of the Raiding Years, and who still balance Sonargur against Parim so that neither will ever own them.'),
-  d('sensai', 'per_fess', ['fleece white', 'fir green'], ['brown_bear', 'earth brown'], null,
-    "Sensai's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told."),
+  d('tolvael', 'per_fess', ['fleece white', 'fir green'], ['brown_bear', 'earth brown'], null,
+    "Tolvael's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told."),
   d('tolhon', 'per_bend_sinister', ['fir green', 'straw gold'], ['otter', 'peat black'], null,
     'Tolhon bears the otter of its fisheries and its herring ban: an island principality of the Onp coast that lives by its toll-bridge at Sirtum and by its distance from everyone else.'),
   d('heodwa_lands', 'plain', ['fleece white'], ['rowan', 'fir green', 3], ['pact_hammer', 'hill grey'],

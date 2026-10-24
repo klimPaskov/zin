@@ -39,7 +39,7 @@
   "scripted_triggers": {
     "zin_shared_north_in_compact": {"conditions":[{"raw":"any_country = {\n\tzin_is_lerendor = yes\n\tis_in_faction_with = ROOT\n}"},{"not":[{"subject_of":"Lerendor"}]}]},
     "zin_north_can_ask_compact": {"conditions":[{"raw":"is_in_faction = no"},{"raw":"any_country = {\n\tzin_is_lerendor = yes\n\tis_faction_leader = yes\n}"}]},
-    "zin_north_free_crowns_open": {"conditions":[{"raw":"is_in_faction = no"},{"raw":"any_country = {\n\thas_country_flag = zin_sensai_free_crowns\n\tis_faction_leader = yes\n}"}]},
+    "zin_north_free_crowns_open": {"conditions":[{"raw":"is_in_faction = no"},{"raw":"any_country = {\n\thas_country_flag = zin_tolvael_free_crowns\n\tis_faction_leader = yes\n}"}]},
     "zin_north_with_lerendor": {"conditions":[{"raw":"any_country = {\n\tzin_is_lerendor = yes\n\tis_in_faction_with = ROOT\n}"}]},
     "zin_north_from_lean_60": {"conditions":[{"raw":"FROM = { check_variable = { zin_leren_lean > 59 } }"}]},
     "zin_north_from_shielded_by_parim": {"conditions":[{"check":"zin_leren_treaty_in_force"},{"raw":"any_country = {\n\tzin_aenor_is_realm = yes\n\thas_guaranteed = FROM\n}"}]},
@@ -143,7 +143,7 @@
       "prerequisite": [["our_own_counsel"]],
       "available": [{"check":"zin_north_free_crowns_open"}],
       "ai": {"base":40,"modifiers":[{"factor":0,"if":[{"variable":{"name":"zin_leren_lean","below":-20}}]},{"factor":0,"if":[{"variable":{"name":"zin_leren_lean","above":20}}]},{"factor":0,"if":[{"check":"zin_rules_is_historical"}]}]},
-      "effects": [{"join_faction_of":"Sensai"}]
+      "effects": [{"join_faction_of":"Tolvael"}]
     },
     {
       "key": "trade_with_both_shores",

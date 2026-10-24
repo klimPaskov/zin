@@ -105,7 +105,7 @@ export async function buildPowersUi(staged, ctx) {
     [null, 'ZIN_STRAIT_ROUTE_NONE', 'No road chosen yet.']], loc);
   const dues = [['Free Passage', 'standing +0.3 a month'], ['The Treaty Toll', 'standing steady'], ['Leren Dues', 'standing -0.2 a month'], ['Full Strait Dues', 'standing -0.4 a month'], ['The Iron Toll', 'standing -0.6 a month; every northern crown loses lean']];
   dues.forEach(([n, d], i) => words(`zin_strait_due_${i}`, [[`check_variable = { zin_leren_toll_level = ${i} }`, `ZIN_STRAIT_DUE_${i}_ON`, `§Y> ${i}  ${n}§! (${d})`], [null, `ZIN_STRAIT_DUE_${i}_OFF`, `${i}  ${n} (${d})`]], loc));
-  const leans = [['Eekedor', 'eekedor'], ['Sensai', 'sensai'], ['Molot', 'molot'], ["R'en", 'ren'], ['Mina', 'mina'], ['Dolpar', 'hold']];
+  const leans = [['Eekedor', 'eekedor'], ['Tolvael', 'tolvael'], ['Molot', 'molot'], ["R'en", 'ren'], ['Mina', 'mina'], ['Dolpar', 'hold']];
   leans.forEach(([n, k]) => { const t = tag(n); words(`zin_strait_lean_${k}`, [
     [`${t} = { ${ge('zin_leren_lean', 50)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_1`, '§Gwith Sonargur§!'], [`${t} = { ${ge('zin_leren_lean', 15)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_2`, 'leaning to Sonargur'],
     [`${t} = { ${gt('zin_leren_lean', -15)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_3`, 'neither'], [`${t} = { ${gt('zin_leren_lean', -50)} }`, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_4`, '§Oleaning to Parim§!'], [null, `ZIN_STRAIT_LEAN_${k.toUpperCase()}_5`, '§Rwith Parim§!']], loc); });
@@ -122,7 +122,7 @@ export async function buildPowersUi(staged, ctx) {
   strait.text('dues_head', 2, 40, 118, 540, 24, 'ZIN_STRAIT_T2_HEAD', 'The dues at Sonargur (the current level is marked):');
   dues.forEach((_, i) => strait.text(`due_${i}`, 2, 60, 156 + i * 38, 500, 28, `ZIN_STRAIT_T2_DUE${i}`, `[ROOT.zin_strait_due_${i}]`));
   strait.text('dues_note', 2, 40, 360, 540, 60, 'ZIN_STRAIT_T2_NOTE', 'Level 3 needs Full Strait Dues, level 4 the Iron Toll. The higher dues fill the treasury and cost the treaty and the Compact.', { font: 'small' });
-  strait.text('cohesion', 3, 40, 118, 540, 24, 'ZIN_STRAIT_T3_COHESION', 'Union of the two crowns: §Y[?ROOT.zin_leren_union_cohesion|0]§! of 100 (the Lerenwaith Question may rise at 25).');
+  strait.text('cohesion', 3, 40, 118, 540, 24, 'ZIN_STRAIT_T3_COHESION', 'Union of the two crowns: §Y[?ROOT.zin_leren_union_cohesion|0]§! of 100 (the Lerendor\'s North Question may rise at 25).');
   strait.gauge('cohesion', 3, 156, 'zin_ui_cohesion_x');
   strait.text('hegemony', 3, 40, 190, 540, 24, 'ZIN_STRAIT_T3_HEGEMONY', 'Lead over the North: §Y[?ROOT.zin_leren_hegemony|0]§! of 100. Northern crowns in the Compact: §Y[?ROOT.zin_ui_compact_members|0]§!.');
   strait.gauge('hegemony', 3, 228, 'zin_ui_hegemony_x');

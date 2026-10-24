@@ -43,7 +43,7 @@ const realmOf = old => { const s = successor(old); return s?.primary ? ROSTER.fi
 const CONTINUES = new Set(loadRoster().migration.map(m => successor(m.oldTag)?.primary).filter(Boolean));
 const TREE_FILES = new Set(readdirSync(`${ZIN}/docs/design/focus`).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5)));
 // The trees the roster names that are not written yet (docs/plans/roster_integration).
-const UNWRITTEN = ['new', 'shared_delving_holds', 'shared_middle_free'];
+const UNWRITTEN = [];
 function checkSpecList(id, countries, specNames) {
   for (const old of specNames) {
     const r = realmOf(old);

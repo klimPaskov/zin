@@ -6,7 +6,7 @@
 
 ## 1. Overview
 
-North of the Middle Lands across the Narrow Strait lies a single great island of fjords, snowy highlands, an inland lake ringed by hills and a rich eastern vale [V: Aoaz and Its Regions; GM land_isle_of_the_north_lands]. Its people, the Leren, sailed with Aen's Aenor in the First Age as allies, never as subjects, and their fleets have ruled the strait ever since [V: The First Age of Aoaz §2]. In 4A 1748 the united crown of **Lerendor and Veskel** (former label Lerenwaith) leads the Leren Compact with the counting houses of Eekedor, tolls every ship that passes Sonargur, and nurses an old insult from Parim (working table [V: Great Powers and Relations]; proposed toll quarrel [V: Fourth Age Chronology §III]). Around it a dozen smaller crowns, a lake league and a hill council look to Sonargur or to Parim as it suits them, while the dwarves of the High Mountains keep their own halls and the travelling dwarf goblins of the southern hills trade, steal and vanish [OD]. When the last war comes, the North will withdraw from its old alliance and hold its own coasts against the dead from the black sea (established outcome [V: The Fourth Age of Aoaz §IX]).
+North of the Middle Lands across the Narrow Strait lies a single great island of fjords, snowy highlands, an inland lake ringed by hills and a rich eastern vale [V: Aoaz and Its Regions; GM land_isle_of_the_north_lands]. Its people, the Leren, sailed with Aen's Aenor in the First Age as allies, never as subjects, and their fleets have ruled the strait ever since [V: The First Age of Aoaz §2]. In 4A 1748 the united crown of **Lerendor and Lerendor's North** (former labels Lerenwaith and Veskel) leads the Leren Compact with the counting houses of Eekedor, tolls every ship that passes Sonargur, and nurses an old insult from Parim (working table [V: Great Powers and Relations]; proposed toll quarrel [V: Fourth Age Chronology §III]). Around it a dozen smaller crowns, a lake league and a hill council look to Sonargur or to Parim as it suits them, while the dwarves of the High Mountains keep their own halls and the travelling dwarf goblins of the southern hills trade, steal and vanish [OD]. When the last war comes, the North will withdraw from its old alliance and hold its own coasts against the dead from the black sea (established outcome [V: The Fourth Age of Aoaz §IX]).
 
 ## 2. Physical character
 
@@ -14,29 +14,29 @@ North of the Middle Lands across the Narrow Strait lies a single great island of
 
 "Lowland 1 with a highland ring 3 to 4 round the Evian lake"; terrain shares plains 42%, forest 20%, hills 18%, mountain 15%, marsh 2%, towns 3%; snow share 0.25 [GM region_north_lands]. The North Lands are one island in the model, the **Isle of the North Lands** (`land_isle_of_the_north_lands`, about 125,700 pixels), with small isles off its coasts (`land_island_008`, `land_island_049`) [GM].
 
-- The **Loron Mountains** (`range_loron`; the drawn Loso and Loron heights) form the north-western highland that divides Veskel from Lerendor [GM].
+- The **Loron Mountains** (`range_loron`; the drawn Loso and Loron heights) form the north-western highland that divides Lerendor's North from the rest of Lerendor [GM].
 - The **Wely and Fair Mountains** (`range_wely_fair`) ring the inland lake [GM].
 - The snow-capped **Solondor Mountains** (`range_solondor`) form the southern ridge above the Leren Ocean [GM].
 - The **Etonia and Renann Mountains** (`range_etonia`) run between Eekedor and R'en [GM].
 - The drawn **High Mountains** stand in the centre of the island near the Heodwa Lands and the Swy Forest [NT]; the model has no range record for them. Proposed: the highest knot of the island, joined to the Loso heights, and the dwarves' country [OD].
 - Lowlands: the proposed **Eekedor Vale** (`plain_eekedor`), the rich eastern plain, and the Leren shore [GM]. The drawn **Green Hills** lie near Sensai [NT].
-- **Veskel** (`ice_lerenwaith`, former label Lerenwaith), the white snow country of the west [GM].
+- **Lerendor's North** (`ice_lerenwaith`, former labels Lerenwaith and Veskel), the white snow country of the west [GM].
 
 ### Climate and seasons
 
-Cool temperate maritime; snow in the west; cold winters, mild summers [GM region_north_lands]. Proposed: the west wind off Londolo brings snow to Veskel and rain to the Leren shore; the Eekedor Vale, sheltered by the Etonia ridge, has the longest summer of the island. The Leren reckon their year by the tides and the ships' seasons (the Ship-Blessing at the opening of the sailing season, the Reading of the Lost at the year's darkest night [WB §4]), not by month names, which are to follow the twelve main New Gods [V: New Gods; OD].
+Cool temperate maritime; snow in the west; cold winters, mild summers [GM region_north_lands]. Proposed: the west wind off Londolo brings snow to Lerendor's North and rain to the Leren shore; the Eekedor Vale, sheltered by the Etonia ridge, has the longest summer of the island. The Leren reckon their year by the tides and the ships' seasons (the Ship-Blessing at the opening of the sailing season, the Reading of the Lost at the year's darkest night [WB §4]), not by month names, which are to follow the twelve main New Gods [V: New Gods; OD].
 
 ### Water
 
 - **Rivers:** the proposed **Leren River** (`river_leren`), which drains the inland lake to the Leren Ocean at Sonargur; the proposed **Kerhil Water** (`river_gil`, former label Gil'dul Water) on the west coast; the proposed **R'en Water** (`river_ren`), the outflow of the Sea of R'en to the strait [GM].
 - **Lakes:** the inland lake in the Wely ring, **Dolpar** (`lake_evian`, former label Evian Sea; renamed because "Evian" is a real-world town and brand name, Leren *dol* "deep" + *par* "lake" [LG §3.3]); and the **Sea of R'en** (`lake_sea_of_ren`), the inland lake behind R'en [GM].
 - **Marsh:** the proposed **Eekedor Reeds** (`marsh_eekedor_reeds`) on Eekedor's south shore [GM].
-- **Seas, one name each:** **Londolo** (`sea_leviathan_sea`; the drawing reads "Londolo - The Great Sea of the Leviathan"; the Leviathan is a name of real myth, so the sea keeps only its own name Londolo [OD]), the great northern ocean west of the island; the **Onp** (`sea_onp_ocean`, drawn "Onp Ocean"), the small sea south of Veskel; the **Leren Ocean** (`sea_leren_ocean`), the sea of the Narrow Strait; the **Rim Ocean** (`sea_rim_ocean`), which with the drawn R'en Ocean forms the strait's eastern end [GM; NT]. **Naming note:** four small waters around one island carry the word "Ocean" [GM]; proposed usage: the Leren call them "the Onp", "the Leren water" and "the Rim", keeping "Ocean" only on Aenor's charts, and the drawn "R'en Ocean" is folded into the Rim, as the model already does.
+- **Seas, one name each:** **Londolo** (`sea_leviathan_sea`; the drawing reads "Londolo - The Great Sea of the Leviathan"; the Leviathan is a name of real myth, so the sea keeps only its own name Londolo [OD]), the great northern ocean west of the island; the **Onp** (`sea_onp_ocean`, drawn "Onp Ocean"), the small sea south of Lerendor's North; the **Leren Ocean** (`sea_leren_ocean`), the sea of the Narrow Strait; the **Rim Ocean** (`sea_rim_ocean`), which with the drawn R'en Ocean forms the strait's eastern end [GM; NT]. **Naming note:** four small waters around one island carry the word "Ocean" [GM]; proposed usage: the Leren call them "the Onp", "the Leren water" and "the Rim", keeping "Ocean" only on Aenor's charts, and the drawn "R'en Ocean" is folded into the Rim, as the model already does.
 - **Straits:** **the Narrow Strait** (`strait_narrow`, established), between R'en's south cape and the Bloody Forest cape of the Middle Lands, 40 to 60 pixels at its narrowest; its western mouth is the proposed **Mouth of the Leren Ocean** (`strait_leren_mouth`); **the Northern Dark Strait** (`strait_dark_north`, established), between the Dondor arm of the Dark Lands and Lerendor, 25 to 35 pixels [V: Aoaz and Its Regions; GM]. The owner has not confirmed either strait's exact place [GM notes].
 
 ### Hazards
 
-Winter storms in the strait; fog on the Rim; avalanches in the Loron highland; snow closing Veskel's passes; the Eekedor Reeds' fevers; skerries off the Low-ness coast; and, late in the age, the dead coming "through islands and straits" from the black north (established [V: The Fourth Age of Aoaz §IX]).
+Winter storms in the strait; fog on the Rim; avalanches in the Loron highland; snow closing the passes of Lerendor's North; the Eekedor Reeds' fevers; skerries off the Low-ness coast; and, late in the age, the dead coming "through islands and straits" from the black north (established [V: The Fourth Age of Aoaz §IX]).
 
 ## 3. Inhabitants
 
@@ -44,13 +44,13 @@ Winter storms in the strait; fog on the Rim; avalanches in the Loron highland; s
 
 | People | Culture | Language | Where | Status |
 | --- | --- | --- | --- | --- |
-| Men | Leren of the Strait | Leren, court dialect | Lerendor, Veskel, Eekedor, R'en, Keredor-Hellekton, the coasts | proposed culture [WB §3.1]; "North Earth" ally of Aenor established [V: The First Age of Aoaz §2] |
+| Men | Leren of the Strait | Leren, court dialect | Lerendor, Lerendor's North, Eekedor, R'en, Keredor-Hellekton, the coasts | proposed culture [WB §3.1]; "North Earth" ally of Aenor established [V: The First Age of Aoaz §2] |
 | Men | Free Crowns of the North | Leren, inland dialect (Orran loan-words in river names) | Tolvael, Molot, Tolhon, Heodwa, Mina, the lake towns | proposed [WB §3.1] |
 | Dwarves | the High Mountain hold (own name unwritten) | Dwarvish (reserved, unwritten [LG §2]); Leren with men | the High Mountains and the Loso heights | owner decision [OD]; card [BC 44] names a "High Mountain" among dwarf homes |
 | Dwarf goblins | a people of their own (own name unwritten) | unwritten; a traders' Leren | the southern hills near Lerendor (the drawn Mustnom) and on the roads | owner decision [OD]; card [BC 42] |
 | Men | Dondor folk | Dondric | a few Blackton traders in Sonargur | proposed minority [DM minorities] |
 
-**Leren** is a daughter of Old Ainic, the speech of Aenor's First Men, clipped and northern: long vowels written double, hard endings, names in *-ur*, *-vik*, *-sk* (proposed [LG §1, §3.3]). Its kinship with Aenoran (*sira/sir* "river", *par* "lake", *tal* "stone") is ancestry: the Leren descend from the northern kingdoms that allied with Aen's realm [WB §3.1]. Its Orran loan-words in inland river names come from the beaten kingdoms of the War of Men (proposed [LG §5]). **No "waith" names.** The Leren word *vaith* "shore" listed among the language's extras [LG §3.3] is not used in any place name, and Lerendor's North becomes **Veskel**, Leren *ves* "west" + *kel* "ice": the western ice country of the crown [OD].
+**Leren** is a daughter of Old Ainic, the speech of Aenor's First Men, clipped and northern: long vowels written double, hard endings, names in *-ur*, *-vik*, *-sk* (proposed [LG §1, §3.3]). Its kinship with Aenoran (*sira/sir* "river", *par* "lake", *tal* "stone") is ancestry: the Leren descend from the northern kingdoms that allied with Aen's realm [WB §3.1]. Its Orran loan-words in inland river names come from the beaten kingdoms of the War of Men (proposed [LG §5]). **No "waith" names.** The Leren word *vaith* "shore" listed among the language's extras [LG §3.3] is not used in any place name, and Lerendor's North becomes **Lerendor's North**, Leren *ves* "west" + *kel* "ice": the western ice country of the crown [OD].
 
 **Dwarves.** The owner places dwarves in the great ranges of the North Lands [OD], and the dwarf card lists a "High Mountain" among their homes [BC 44]; the drawn High Mountains [NT] are proposed as their hold. **Dwarf goblins** are a people of their own in the hills of the North Lands near Lerendor [OD]: small but strong and tough, cave-dwellers who love to travel for food and goods, rarely at home; in their caves bound labourers work under a boss; travellers bring the boss food and goods, and the boss gives iron to the smiths; they trade on the road and turn to beating and theft when a customer is cheeky, but run if resisted [BC 42]. The card's "[?Lerendor?]" reading is confirmed by the owner's placement.
 
@@ -58,11 +58,11 @@ Winter storms in the strait; fog on the Rim; avalanches in the Loron highland; s
 
 The model gives **6.8 million** in 28 countries and 60 states (43 per pixel, denser than the temperate West Lands at 30), with Lerendor at 1.24 million and the largest city Sonargur at 120,000 [DM regions; DM countries; DM settlements].
 
-**Revision proposed: about 3.9 million.** The model's own density note gives the North 15 to 30 per square kilometre, below the West Lands' 20 to 35 [DM §4], yet its total makes the North denser per pixel than the West; a quarter of the island lies under snow [GM region_north_lands]. Applying the North's own density to its land gives about 3.8 to 4.0 million. Proposed distribution: Lerendor with Veskel 1.20 M; Eekedor 0.60 M; Tolvael 0.40 M; R'en 0.30 M; Keredor-Hellekton 0.25 M; Heodwa Lands 0.25 M; Molot 0.20 M; Tolhon 0.20 M; Mina 0.20 M; the Hold 0.20 M; the High Mountain dwarves about 50,000; Mustnom's dwarf goblins about 30,000 at home, with as many again on the roads.
+**Revision proposed: about 3.9 million.** The model's own density note gives the North 15 to 30 per square kilometre, below the West Lands' 20 to 35 [DM §4], yet its total makes the North denser per pixel than the West; a quarter of the island lies under snow [GM region_north_lands]. Applying the North's own density to its land gives about 3.8 to 4.0 million. Proposed distribution: Lerendor with Lerendor's North 1.20 M; Eekedor 0.60 M; Tolvael 0.40 M; R'en 0.30 M; Keredor-Hellekton 0.25 M; Heodwa Lands 0.25 M; Molot 0.20 M; Tolhon 0.20 M; Mina 0.20 M; the Hold 0.20 M; the High Mountain dwarves about 50,000; Mustnom's dwarf goblins about 30,000 at home, with as many again on the roads.
 
 ### Where they live and why
 
-On the **Leren shore** and the strait ports, where fish, tolls and shipbuilding feed the largest towns [GM region_north_lands]; in the **Eekedor Vale**, the island's grain plain; along the **Leren River** valley from the lake to Sonargur; around the lake **Dolpar** in the Wely ring, where the lake towns fish and trade. Veskel's snow country is thinly settled with herders and fur-trappers. The dwarves live inside the High Mountains; the dwarf goblins in the southern hills' caves, though half of them are always away on the roads.
+On the **Leren shore** and the strait ports, where fish, tolls and shipbuilding feed the largest towns [GM region_north_lands]; in the **Eekedor Vale**, the island's grain plain; along the **Leren River** valley from the lake to Sonargur; around the lake **Dolpar** in the Wely ring, where the lake towns fish and trade. The snow country of Lerendor's North is thinly settled with herders and fur-trappers. The dwarves live inside the High Mountains; the dwarf goblins in the southern hills' caves, though half of them are always away on the roads.
 
 ## 4. Livelihoods and resources
 
@@ -81,7 +81,7 @@ Other livelihoods: the **strait dues** at Sonargur, the crown's great wealth [MS
 
 ## 5. Institutions and political forms
 
-- **The High Crown of Lerendor and Veskel** (proposed constitution [WB §3.1]): one crown over two realms since the marriage of the royal houses (proposed 4A 411 [V: Fourth Age Chronology §II]); it passes to the eldest child of either sex; a king takes a number and both crowns' titles [LG §3.3]. The **Speakers' Hall** of shipowners and landholders approves the taxes. The union's cohesion is a mechanic [MS lerendor_narrow_strait §3]; no route splits Veskel off, because the owner merged them [MS lerendor_narrow_strait §3].
+- **The High Crown of Lerendor and Lerendor's North** (proposed constitution [WB §3.1]): one crown over two realms since the marriage of the royal houses (proposed 4A 411 [V: Fourth Age Chronology §II]); it passes to the eldest child of either sex; a king takes a number and both crowns' titles [LG §3.3]. The **Speakers' Hall** of shipowners and landholders approves the taxes. The union's cohesion is a mechanic [MS lerendor_narrow_strait §3]; no route splits Lerendor's North off, because the owner merged them [MS lerendor_narrow_strait §3].
 - **The Leren Compact** (working name [V: Great Powers and Relations]): Lerendor's league with Eekedor, joinable by the smaller crowns and, if it is free of the Elven Refusal, by Andos Enda of the Magical Lands [MS lerendor_narrow_strait §4].
 - **The Treaty of the Narrow Strait** (proposed name for the established "old alliance" [V: Fourth Age Chronology §II]): the North must defend Aenor in war.
 - **Eekedor's merchant council** (proposed [FT regional_eekedor]): counting houses, an exchange and the **Arbitration Court**, where northern crowns settle feuds [WB §3.1 Free Crowns].
@@ -115,7 +115,7 @@ Other livelihoods: the **strait dues** at Sonargur, the crown's great wealth [MS
 | 1A, about 200 | proposed | **The Ship-Bond.** Leren and Aenoran ships chart the strait together; Sonargur is founded at the best harbour of the Leren shore. |
 | 1A, late | established | The Grand Alliance draws on the North Lands; Edran accepts that they remain allies rather than subjects (proposed detail) [V: The First Age of Aoaz §5]. |
 | 2A, middle | proposed | **The Raiding Years.** Orc and goblin bands from the Dark Lands cross the Northern Dark Strait; the coast crowns build the hill-forts of the free crowns. |
-| 2A, late | proposed (vault narrative) | **Avarin of Veskel** (the vault's proposed "Avarin of Lerendor's North"), envoy and commander, tries to keep the northern alliance while her own country faces raids [V: The Second Age of Aoaz, figures table]. |
+| 2A, late | proposed (vault narrative) | **Avarin of Lerendor's North** (the vault's proposed "Avarin of Lerendor's North"), envoy and commander, tries to keep the northern alliance while her own country faces raids [V: The Second Age of Aoaz, figures table]. |
 | 2A 2133 | established event, proposed detail | Elzon takes Aenor [V: The Third Age of Aoaz]. Proposed (vault narrative): the North Lands send help, but it cannot arrive in time [V: The Second Age of Aoaz, third turning point]. |
 | 3A, 1 to 1260 (proposed length) | proposed | The Narrow Strait is the border of Elzon's Order; Leren fleets carry refugees north and raid the occupied coast; the North stays free. |
 | 3A, about 800 | proposed | **The Hill Pact.** The dwarves of the High Mountains and the crowns of Heodwa swear a pact against Elzon's raiders; the Heodwa council is born of it. |
@@ -148,7 +148,7 @@ Other livelihoods: the **strait dues** at Sonargur, the crown's great wealth [MS
 | Creature | Habitat | Rarity | Effect |
 | --- | --- | --- | --- |
 | Seals, whales, shoal fish (proposed) | the strait, Londolo, the Onp | common | Fish and oil; the strait's fishing rights are part of the dues. |
-| Elk and wolves (proposed) | the Dwarc and Swy Forests, Veskel | common | Hunting and fur; wolves press Veskel's herds in hard winters. |
+| Elk and wolves (proposed) | the Dwarc and Swy Forests, Lerendor's North | common | Hunting and fur; wolves press the herds of Lerendor's North in hard winters. |
 | Reed-lynx (proposed: a small grey lynx of the Eekedor Reeds) | the Eekedor Reeds | uncommon | Its fur is the merchant council's badge of office. |
 | Sea-eagles (proposed) | the skerries and the Eagle Forest | common | On Lerendor's arms beside ships and gulls [WB §3.1]. |
 | Hill ponies (proposed) | Heodwa | common | The inland crowns' mounts. |
@@ -161,7 +161,7 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 | Settlement | Realm | Size (proposed) | Why it stands there |
 | --- | --- | --- | --- |
 | **Sonargur** | Lerendor | about 55,000 (model 120,000 [DM settlements]) | Working seat [V: Great Powers and Relations]; the best natural harbour of the strait, under Sonargur Point (`cape_sonargur`), at the Leren River's mouth [GM]; the Singing Quay. Smaller than the model because the island holds fewer people. |
-| **Kelur** (proposed) | Lerendor (Veskel) | about 6,000 | Leren *kel* "ice" + *-ur* "town": the old seat of the western crown, below the Loron highland. |
+| **Kelur** (proposed) | Lerendor (Lerendor's North) | about 6,000 | Leren *kel* "ice" + *-ur* "town": the old seat of the western crown, below the Loron highland. |
 | **Viktara** | Eekedor | about 14,000 | Drawn city near a blue inlet [NT]; the counting-house port of the vale. |
 | **Perhy** | Eekedor | about 8,000 | The Arbitration Court's town [DM settlements]. |
 | **Farnardur** | R'en | about 12,000 | At the strait's narrowest point; the gateway forts [DM settlements]. |
@@ -177,9 +177,9 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 
 ## Sub-regions in depth
 
-### Veskel (former label Lerenwaith)
+### Lerendor's North (former labels Lerenwaith and Veskel)
 
-**Land.** The white snow country of the west, beyond the Loron highland (`ice_lerendors_north` [GM]). **People.** Leren herders, trappers and fishers, prouder of their old western crown than the strait captains like (proposed). **Politics.** Veskel's lords sit in the Speakers' Hall; when the strait captains raise the dues, Veskel's inland lords pay for the quarrel and the union's cohesion falls [MS lerendor_narrow_strait §3]. **Name.** The owner's rule against "waith" names in the north [OD]; Veskel means "west-ice" in Leren.
+**Land.** The white snow country of the west, beyond the Loron highland (`ice_lerenwaith` [GM]). **People.** Leren herders, trappers and fishers, prouder of their old western crown than the strait captains like (proposed). **Politics.** The lords of Lerendor's North sit in the Speakers' Hall; when the strait captains raise the dues, the inland lords of the North pay for the quarrel and the union's cohesion falls [MS lerendor_narrow_strait §3]. **Name.** The owner's rule against "waith" names in the north [OD]; Lerendor's North means "west-ice" in Leren.
 
 ### The High Mountains and Karundun
 
@@ -195,7 +195,7 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 
 | Realm (local name) | People and culture | Political form | Capital | Approximate extent | Why it exists |
 | --- | --- | --- | --- | --- | --- |
-| **Lerendor and Veskel** (former label Lerendor and Lerenwaith) | men, Leren of the Strait | High Crown of two realms with a Speakers' Hall | Sonargur | the Leren shore, the Leren River valley, Veskel, the Low-ness Islands, Ferlinon's pine hills | Working great power [V: Great Powers and Relations]; one crown [V: Aoaz and Its Regions]. |
+| **Lerendor and Lerendor's North** (former labels Lerendor and Lerenwaith, then Veskel) | men, Leren of the Strait | High Crown of two realms with a Speakers' Hall | Sonargur | the Leren shore, the Leren River valley, Veskel, the Low-ness Islands, Ferlinon's pine hills | Working great power [V: Great Powers and Relations]; one crown [V: Aoaz and Its Regions]. |
 | **Eekedor** | men, Leren of the Strait | merchant council with the Arbitration Court | Viktara | the Eekedor Vale with Oirt, Pertawn and Filit | Compact member [V: Great Powers and Relations]; the island's grain and money. |
 | **R'en** | men, Leren of the Strait | gateway principality | Farnardur | the strait cape, the Sea of R'en | The southern gateway [GM site_ren]. |
 | **Molot** | men, Free Crowns | margravate | Altovian | the northern march, with the harbour of Knorvik (former label Allegro, an Italian word; Leren "ship-bay") | Marcher state balancing Lerendor [SS North Lands]. |
@@ -212,7 +212,7 @@ The Sea of Monsters belongs to the Middle Lands' coast [GM sea_monsters_sea] and
 
 | Current row | Fate (proposed) | Why |
 | --- | --- | --- |
-| Y0G Lerendor | kept, renamed Lerendor and Veskel, enlarged | Takes Ferlinon and the Low-ness Islands. |
+| Y0G Lerendor | kept, renamed Lerendor and Lerendor's North, enlarged | Takes Ferlinon and the Low-ness Islands. |
 | Y32 Ferlinon, Y2U Low-ness Islands | merged into Lerendor | Pine hills and skerries of the Leren shore. |
 | Y31 Mustnom | kept, people changed | Dwarf goblins instead of a Leren hill crown [OD]. |
 | Y0I Eekedor | kept, enlarged | A one-state "commercial republic" cannot be a great power's partner. |

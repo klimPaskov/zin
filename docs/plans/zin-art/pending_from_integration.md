@@ -81,7 +81,7 @@ Realms flying the old flag of a former row until their own is generated (141):
 | R'en | REN | R'en |
 | Molot | MOO | Molot |
 | Keredor-Hellekton | KER | Keredor-Hellekton |
-| Sensai | SNS | Sensai |
+| Tolvael | TLV | Tolvael |
 | Tolhon | TOL | Tolhon |
 | Heodwa Lands | HEO | Heodwa Lands |
 | Mina | MIA | Mina |
@@ -791,6 +791,18 @@ Realms flying the old flag of a former row until their own is generated (141):
 | P0776 | 2 signature focus icon(s) for zin_zol (now GFX_focus_zin_rune_stone) | A2 focus icon, signature | Icon GFX_focus_zin_rune_stone is used by 4 focuses of tree zin_zol; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree); 05_focus_trees/02_icon_catalog.md |
 | P0777 | 1 signature focus icon(s) for zin_zol (now GFX_focus_zin_ward_circle) | A2 focus icon, signature | Icon GFX_focus_zin_ward_circle is used by 3 focuses of tree zin_zol; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree); 05_focus_trees/02_icon_catalog.md |
 | P0778 | 6 signature focus icon(s) for zin_zol (now GFX_focus_zin_zol_sigil) | A2 focus icon, signature | Icon GFX_focus_zin_zol_sigil is used by 8 focuses of tree zin_zol; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree); 05_focus_trees/02_icon_catalog.md |
+| P0799 | 1 signature focus icon(s) for zin_regional_burrikkrit (now GFX_focus_zin_fort_wall) | A2 focus icon, signature | Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_regional_burrikkrit; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0800 | 1 signature focus icon(s) for zin_regional_burrikkrit (now GFX_focus_zin_goblin_raiders) | A2 focus icon, signature | Icon GFX_focus_zin_goblin_raiders is used by 3 focuses of tree zin_regional_burrikkrit; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0801 | 2 signature focus icon(s) for zin_regional_nether (now GFX_focus_zin_nether_gate) | A2 focus icon, signature | Icon GFX_focus_zin_nether_gate is used by 4 focuses of tree zin_regional_nether; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0802 | 1 signature focus icon(s) for zin_regional_nether (now GFX_focus_zin_throne_ashen) | A2 focus icon, signature | Icon GFX_focus_zin_throne_ashen is used by 3 focuses of tree zin_regional_nether; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0803 | 1 signature focus icon(s) for zin_shared_delving_holds (now GFX_focus_zin_crown_iron) | A2 focus icon, signature | Icon GFX_focus_zin_crown_iron is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0804 | 1 signature focus icon(s) for zin_shared_delving_holds (now GFX_focus_zin_forge_anvil) | A2 focus icon, signature | Icon GFX_focus_zin_forge_anvil is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0805 | 1 signature focus icon(s) for zin_shared_delving_holds (now GFX_focus_zin_fort_wall) | A2 focus icon, signature | Icon GFX_focus_zin_fort_wall is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0806 | 1 signature focus icon(s) for zin_shared_delving_holds (now GFX_focus_zin_foundry_fire) | A2 focus icon, signature | Icon GFX_focus_zin_foundry_fire is used by 3 focuses of tree zin_shared_delving_holds; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0807 | 2 signature focus icon(s) for zin_shared_delving_holds (now GFX_focus_zin_pass_fort) | A2 focus icon, signature | Icon GFX_focus_zin_pass_fort is used by 4 focuses of tree zin_shared_delving_holds; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0808 | 1 signature focus icon(s) for zin_shared_middle_free (now GFX_focus_zin_tree_silver) | A2 focus icon, signature | Icon GFX_focus_zin_tree_silver is used by 3 focuses of tree zin_shared_middle_free; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0809 | 1 signature focus icon(s) for zin_shared_small_folk (now GFX_focus_zin_farm_sowing) | A2 focus icon, signature | Icon GFX_focus_zin_farm_sowing is used by 3 focuses of tree zin_shared_small_folk; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
+| P0810 | 2 signature focus icon(s) for zin_shared_small_folk (now GFX_focus_zin_granary) | A2 focus icon, signature | Icon GFX_focus_zin_granary is used by 4 focuses of tree zin_shared_small_folk; the cap is 2. | 05_asset_manifest.md section 5 (focus_icon: one key on at most 2 focuses of a tree, 3 in a shared tree) |
 
 ## Focus icons shared with a prerequisite
 
@@ -911,6 +923,7 @@ Realms flying the old flag of a former row until their own is generated (141):
 | P0479 | signature focus icon for zin_zol_the_patient_dark | A2 focus icon, signature | Focus zin_zol_the_patient_dark shares an icon with its prerequisite zin_zol_the_long_patience. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
 | P0480 | signature focus icon for zin_zol_the_presence_takes_form | A2 focus icon, signature | Focus zin_zol_the_presence_takes_form shares an icon with its prerequisite zin_zol_a_fraction_of_a_god. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
 | P0481 | signature focus icon for zin_zol_what_the_war_leaves | A2 focus icon, signature | Focus zin_zol_what_the_war_leaves shares an icon with its prerequisite zin_zol_the_long_war_of_the_dead. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
+| P0798 | 1 signature focus icon for zin_regional_burrikkrit_nobody_gets_through | A2 focus icon, signature | Focus zin_regional_burrikkrit_nobody_gets_through shares an icon with its prerequisite zin_regional_burrikkrit_keep_the_road_dark. | 05_asset_manifest.md section 5 (a focus never shares its icon with a prerequisite) |
 
 ## Focus icons over the game cap
 
@@ -954,6 +967,9 @@ Realms flying the old flag of a former row until their own is generated (141):
 | P0363 | 6 signature focus icons to take the place of GFX_focus_zin_warship_sail | A2 focus icon, signature | Icon GFX_focus_zin_warship_sail is used by 46 focuses in the game; the cap is 40. | 05_asset_manifest.md section 5 (at most 40 focuses in the game) |
 | P0364 | 20 signature focus icons to take the place of GFX_focus_zin_chain_broken | A2 focus icon, signature | Icon GFX_focus_zin_chain_broken is used by 60 focuses in the game; the cap is 40. | 05_asset_manifest.md section 5 (at most 40 focuses in the game) |
 | P0365 | 2 signature focus icons to take the place of GFX_focus_zin_storm_sea | A2 focus icon, signature | Icon GFX_focus_zin_storm_sea is used by 42 focuses in the game; the cap is 40. | 05_asset_manifest.md section 5 (at most 40 focuses in the game) |
+| P0795 | 1 signature focus icon(s) to take the place of GFX_focus_zin_caravan (new trees of 25 October 2026) | A2 focus icon, signature | Icon GFX_focus_zin_caravan is used by 41 focuses in the game; the cap is 40. | 05_asset_manifest.md section 5 (at most 40 focuses in the game) |
+| P0796 | 1 signature focus icon(s) to take the place of GFX_focus_zin_galley_oars (new trees of 25 October 2026) | A2 focus icon, signature | Icon GFX_focus_zin_galley_oars is used by 41 focuses in the game; the cap is 40. | 05_asset_manifest.md section 5 (at most 40 focuses in the game) |
+| P0797 | 4 signature focus icon(s) to take the place of GFX_focus_zin_pass_fort (new trees of 25 October 2026) | A2 focus icon, signature | Icon GFX_focus_zin_pass_fort is used by 44 focuses in the game; the cap is 40. | 05_asset_manifest.md section 5 (at most 40 focuses in the game) |
 
 ## Event pictures over the game cap
 

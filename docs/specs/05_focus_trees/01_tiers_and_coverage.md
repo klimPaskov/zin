@@ -121,6 +121,15 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 
 The Kusmeel region holds only Zol (tier A). Aenor Isle holds only Asgard, which has its own tier B tree (`regional_asgard`, in [regional/middle_lands.md](regional/middle_lands.md)); it does not use the Middle Lands' shared dominion tree.
 
+## Trees of the 24 October roster
+
+The roster of 156 realms (`tools/content/data/world/roster.json`, its `focusTree` field) adds five trees to the tables above, which still count the old rows and are regenerated from the roster with the new map's politics step:
+
+- **Tier B** (own tree): Burrikkrit (`regional_burrikkrit`, [regional/middle_lands.md](regional/middle_lands.md) section 12) and the Nether (`regional_nether`, [regional/ember_lands.md](regional/ember_lands.md), The Nether).
+- **Tier C** (shared tree `shared_delving_holds`, 4 countries): Kunhrim, Hrakbrund, Brundahrim, Gromkerm. The one shared tree that spans three regions (Middle, North and West Lands), as the roster design accepts ([shared/shared_delving_holds.md](shared/shared_delving_holds.md)).
+- **Tier C** (shared tree `shared_middle_free`, 3 countries): Olodor, Dunelaeth, Aenor Forest ([shared/shared_middle_free.md](shared/shared_middle_free.md)).
+- **Tier C** (shared tree `shared_small_folk`, 2 countries): Dobbum, Tirlan ([shared/shared_small_folk.md](shared/shared_small_folk.md)); Dobbum leaves `shared_west_lands`.
+
 ## Acceptance
 
 The compiler's coverage check passes: every roster country maps to exactly one tree.

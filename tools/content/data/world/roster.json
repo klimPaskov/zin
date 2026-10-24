@@ -103,7 +103,7 @@
    ],
    "tag": "LER",
    "region": "north_lands",
-   "subRegion": "The Leren shore and Veskel",
+   "subRegion": "The Leren shore and Lerendor's North",
    "people": "men",
    "peoples": {
     "men": 1
@@ -119,7 +119,7 @@
    },
    "calendar": "twelve",
    "politicalForm": "kingdom",
-   "governmentNote": "The High Crown of Lerendor and Veskel, two realms under one king with a Speakers' Hall; head of the Leren Compact.",
+   "governmentNote": "The High Crown of Lerendor and Lerendor's North, two realms under one king with a Speakers' Hall; head of the Leren Compact.",
    "overlord": null,
    "subjectType": null,
    "capital": {
@@ -127,7 +127,7 @@
     "siteId": "site_sonargur",
     "why": "The strait city and royal seat on the Narrow Strait."
    },
-   "extent": "The Leren shore, the Leren River valley, Veskel (former label Lerenwaith), the Low-ness Islands and Ferlinon's pine hills.",
+   "extent": "The Leren shore, the Leren River valley, Lerendor's North (former labels Lerenwaith and Veskel), the Low-ness Islands and Ferlinon's pine hills.",
    "population": 1200000,
    "focusTier": "major",
    "focusTree": "lerendor",
@@ -970,7 +970,7 @@
    ],
    "tag": "MLK",
    "region": "cold_lands",
-   "subRegion": "The Isengar valley",
+   "subRegion": "The Ormolak valley",
    "people": "men",
    "peoples": {
     "men": 1
@@ -994,7 +994,7 @@
     "siteId": "site_isengard",
     "why": "The warlord's seat on the Gulf of Minnolomak."
    },
-   "extent": "The Isengar valley's eastern side and the north coast to the Gulf of Minnolomak.",
+   "extent": "The Ormolak valley's eastern side and the north coast to the Gulf of Minnolomak.",
    "population": 300000,
    "focusTier": "regional",
    "focusTree": "regional_isengard",
@@ -1832,7 +1832,7 @@
    "extent": "The caves of the Cursed Mountains and under the southern Giant Mountains, above the Forests of Darkhere (2 states).",
    "population": 85000,
    "focusTier": "regional",
-   "focusTree": "new",
+   "focusTree": "regional_burrikkrit",
    "focusNote": "the hobgoblin king: the Lamp Truce, the under-roads as a secret to sell, the hobgoblin succession, wurgh riders, gold-hunger",
    "mechanics": [
     "elves_wall_and_dragons"
@@ -2307,16 +2307,16 @@
    }
   },
   {
-   "key": "sensai",
-   "name": "Sensai",
-   "adjective": "Sensaian",
+   "key": "tolvael",
+   "name": "Tolvael",
+   "adjective": "Tolvaeli",
    "endonym": null,
    "formerLabels": [
     "Sensai (Y2Q)",
     "Gil'dul (Y2R)",
     "Goran (Y2P)"
    ],
-   "tag": "SNS",
+   "tag": "TLV",
    "region": "north_lands",
    "subRegion": "The long vale",
    "people": "men",
@@ -2345,7 +2345,7 @@
    "extent": "The long vale with Goran's fjord and the iron hill Kerhil (former label Gil'dul).",
    "population": 400000,
    "focusTier": "regional",
-   "focusTree": "regional_sensai",
+   "focusTree": "regional_tolvael",
    "focusNote": null,
    "mechanics": [
     "lerendor_narrow_strait"
@@ -3700,7 +3700,7 @@
    "extent": "The Ronbo basin below the Herlitz range, closed on three sides by hills and mountains and reached by two passes.",
    "population": 120000,
    "focusTier": "shared",
-   "focusTree": "shared_west_lands",
+   "focusTree": "shared_small_folk",
    "focusNote": "small folk module: the Watch, the leaf trade, staying home or going out",
    "mechanics": [
     "western_crossing"
@@ -5113,7 +5113,7 @@
    "extent": "The Nether island (1 to 2 states), with the Nether Maw a contested border with Puvulan.",
    "population": 36000,
    "focusTier": "regional",
-   "focusTree": "new",
+   "focusTree": "regional_nether",
    "focusNote": "the houses, the pacts, the gates, the bargain with Nafeher, and a choice when Volgan's body breaks",
    "mechanics": [
     "volgan_southern_dominion"
@@ -8208,7 +8208,7 @@
    "extent": "The three low valleys of the Hilorn inside Hirolon's ring (1 state).",
    "population": 45000,
    "focusTier": "shared",
-   "focusTree": "new",
+   "focusTree": "shared_small_folk",
    "focusNote": "shares the small folk module with Dobbum: the Old Promise with Hirolon, the harvest, staying out of the world",
    "mechanics": [
     "aenor_court_and_succession"
@@ -9413,22 +9413,22 @@
    "oldName": "Goran",
    "fate": "merged",
    "into": [
-    "sensai"
+    "tolvael"
    ],
    "newTag": [
-    "SNS"
+    "TLV"
    ],
-   "reason": "Its land and people join Sensai; the old name survives as a state or place name where it fits."
+   "reason": "Its land and people join Tolvael; the old name survives as a state or place name where it fits."
   },
   {
    "oldTag": "Y2Q",
    "oldName": "Sensai",
    "fate": "kept",
    "into": [
-    "sensai"
+    "tolvael"
    ],
    "newTag": [
-    "SNS"
+    "TLV"
    ],
    "reason": "Same realm, new tag."
   },
@@ -9437,12 +9437,12 @@
    "oldName": "Gil'dul",
    "fate": "merged",
    "into": [
-    "sensai"
+    "tolvael"
    ],
    "newTag": [
-    "SNS"
+    "TLV"
    ],
-   "reason": "Its land and people join Sensai; the old name survives as a state or place name where it fits."
+   "reason": "Its land and people join Tolvael; the old name survives as a state or place name where it fits."
   },
   {
    "oldTag": "Y2S",

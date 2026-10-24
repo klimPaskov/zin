@@ -385,7 +385,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 | Charge | Drawn as | Meaning in this culture |
 | --- | --- | --- |
-| `two_waves` | two waves, one above the other | Lerendor and Veskel under one High Crown |
+| `two_waves` | two waves, one above the other | Lerendor and Lerendor's North under one High Crown |
 | `leren_cog` | a high-prowed ship with one square sail | the fleets of the strait |
 | `strait_gull` | a gull | the skerries and the herring grounds |
 | `grey_seal` | a seal | sealskin and the hunting skerries |
@@ -2599,12 +2599,12 @@ Every design was written from the realm's history entry (founding, dynasties, ev
 
 | Tag | Realm | Culture | Design | Meaning |
 | --- | --- | --- | --- | --- |
-| LER | Lerendor | leren_sea_kings | plain, strait blue; two waves, one above the other in salt white [label, crown] | Lerendor bears two waves under the ship-crown: the High Crown of Lerendor and Veskel, set on one head when Ostrik of the Sonarvik married Runild of Veskel, and the strait dues that make it the North's counterweight to Parim. |
+| LER | Lerendor | leren_sea_kings | plain, strait blue; two waves, one above the other in salt white [label, crown] | Lerendor bears two waves under the ship-crown: the High Crown of Lerendor and Lerendor's North, set on one head when Ostrik of the Sonarvik married Runild of Lerendor's North, and the strait dues that make it the North's counterweight to Parim. |
 | EEK | Eekedor | leren_sea_kings | per fess, salt white and strait blue; a salt cellar in deep strait [label] | Eekedor bears the salt cellar of its Arbitration Court, where salt shared at the table binds both sides of a quarrel: the council of counting houses that keeps the island's grain and money and holds its court open to any crown that pays. |
 | REN | R'en | leren_sea_kings | base, Leren silver and strait blue; a watch-house on a low cape in deep strait [label] | R'en bears the watch-house its first prince built on the strait cape and refused to pay for: a gateway principality that has lived between two masters ever since and leans to Parim. |
 | KER | Keredor-Hellekton | leren_sea_kings | per pale, strait blue and kelp green; two steering oars joined by one ring in clasp gold [label, crown] | Keredor-Hellekton impales its two coast crowns and joins their steering oars in one ring, as the Arbitration Court joined Vigda of Keredor and Helmund of Hellekton: a double crown whose court still crowns every heir twice. |
 | MOO | Molot | free_crowns_north | base, hearth red and peat black; a crane standing in fleece white [label] | Molot bears the crane that stands watch above the marsh: the margraves whose fortress line behind the marsh took the raiders of the Raiding Years, and who still balance Sonargur against Parim so that neither will ever own them. |
-| SNS | Tolvael | free_crowns_north | per fess, fleece white and fir green; a bear walking in earth brown [label, crown] | Tolvael's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told. |
+| TLV | Tolvael | free_crowns_north | per fess, fleece white and fir green; a bear walking in earth brown [label, crown] | Tolvael's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told. |
 | TOL | Tolhon | free_crowns_north | per bend sinister, fir green and straw gold; an otter in peat black [label] | Tolhon bears the otter of its fisheries and its herring ban: an island principality of the Onp coast that lives by its toll-bridge at Sirtum and by its distance from everyone else. |
 | HEO | Heodwa Lands | free_crowns_north | plain, fleece white; rowan tree in berry (three) in fir green; a war-hammer held upright in hill grey [label] | The Heodwa Lands bear three rowans for the hill crowns of Heodwa, Nuatax and Agniy with the dwarves' hammer of the Hill Pact beneath them: a hill council that every crown of the North knows cannot be fought without fighting Hrakbrund. |
 | HRA | Hrakbrund | north_delvers | pile reversed, high slate and snow white; a squared black gate in a snowline rock face in gate black | Hrakbrund bears its black High Gate on the white peak above Ilmahrim: the dwarves of the High Mountains receive men only at the gate, sell them iron, gold and bombards there, and keep the Hill Pact with the hills below. |

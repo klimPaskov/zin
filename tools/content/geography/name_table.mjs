@@ -112,7 +112,7 @@ export const CURATED = Object.freeze([
   C('volcano_avalon', 'The Rhachia Fires', 'alerhic', null, 'Avalon is a name of real myth', 'east_lands.md renamed labels; roster Rhachia'),
   // ------------------------------------------------------------------ areas, rivers, coasts and passes
   C('ice_windwaith', 'Vindael', 'coldic', null, 'no "-waith" names (owner)', 'cold_lands.md, tritons_islands.md'),
-  C('ice_lerenwaith', 'Veskel', 'leren', null, 'no "-waith" names (owner)', 'north_lands.md section 2'),
+  C('ice_lerenwaith', "Lerendor's North", null, null, 'no "-waith" names; the owner named it Lerendor\'s North, replacing the stand-in Veskel (K49)', 'owner (K49); north_lands.md section 2'),
   C('ice_north_yeti_lands', 'Ghaahu', 'yetic', null, 'the yeti realm\'s own name', 'cold_lands.md renamed labels; roster Ghaahu'),
   C('plain_gunwaith', 'Gunwyn Downs', 'gunwaithic', null, 'no "-waith" names (owner)', 'west_lands.md section 2'),
   C('plain_greenland', 'Yavieth', 'sylvan', null, 'Greenland is a real place', 'magical_lands.md renamed labels; roster Yavieth'),

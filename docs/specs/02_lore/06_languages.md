@@ -227,7 +227,7 @@ The sea-speech of the North Lands: clipped, with long vowels and hard endings. I
 
 **30 personal names:** Ferlin Solenkov, Agnar Fargurvik, Ostek Brannson, Branur Heskov, Ulvik Sonardal, Stenmund Kornvik, Torolf Perhur, Ragar Relendkov, Ingar Ostvov, Sigmund Maelisson, Valdek Solenvik, Gunnar Fargurkov, Ormur Branndal, Eirik Sonarov, Helin Kornson, Ilse Relendkov, Agniva Fargurvik, Sigrid Solenson, Inga Heskov, Maelis Sonardal, Astrid Kornvik, Viga Perhur, Hilda Ostvov, Runa Branndal, Ostrid Maelisson, Elya Relendvik, Ingvi Fargurov, Agnivild Solendal, Ilseva Kornkov, Maelrid Heskson.
 
-**Established names:** 56 country and seat names belong here (43 fit the inventory, 13 adopted as drawn). Proposed readings: **Lerendor**: Leren + chart -dor "land": the Leren land. Lerenwaith is the Leren shore.
+**Established names:** 56 country and seat names belong here (43 fit the inventory, 13 adopted as drawn). Proposed readings: **Lerendor**: Leren + chart -dor "land": the Leren land. The former label Lerenwaith read as "the Leren shore"; the land is now Lerendor's North (K49).
 
 ### 3.4 Dondric (`dondric`)
 

@@ -184,7 +184,7 @@ Two arcs of islands that curl round the Pupor Ocean, with a western arc (Pollos,
 
 ### North Lands
 
-A compact isle north of the Middle Lands across the Narrow Strait. Lerendor's North's snow country in the north-west, Lerendor's highland ring in the centre, Eekedor's vale in the east, R'en on the southern cape.
+A compact isle north of the Middle Lands across the Narrow Strait. the snow country of Lerendor's North in the north-west, Lerendor's highland ring in the centre, Eekedor's vale in the east, R'en on the southern cape.
 
 | Item | Value |
 | --- | --- |

@@ -21,7 +21,7 @@ const FOCUS_DIR = `${ZIN}/docs/design/focus`;
 
 // Per tree: [country, focuses, spirits, events, grid width (max x), grid depth (max y)] from the four specs.
 const SPEC = {
-  regional_sensai: ['Sensai', 36, 11, 6, 17, 8], regional_mina: ['Mina', 32, 10, 3, 16, 7], regional_r_en: ["R'en", 36, 12, 4, 17, 8],
+  regional_tolvael: ['Tolvael', 36, 11, 6, 17, 8], regional_mina: ['Mina', 32, 10, 3, 16, 7], regional_r_en: ["R'en", 36, 12, 4, 17, 8],
   regional_molot: ['Molot', 33, 10, 3, 16, 7], regional_eekedor: ['Eekedor', 33, 11, 4, 15, 8],
   regional_adel: ['Adel', 31, 6, 2, 18, 7], regional_pollos: ['Pollos', 31, 6, 2, 18, 8], regional_raerby: ['Raerby', 31, 7, 2, 17, 7],
   regional_nondondor: ['Nondondor', 32, 8, 2, 17, 7], regional_halenor: ['Halenor', 33, 9, 1, 19, 7], regional_seite_islands: ['Seite Islands', 31, 6, 2, 18, 7],
@@ -158,7 +158,7 @@ test('The exclusive choices of the specs are symmetric, three-way where the spec
     regional_buldor: [['swords_for_the_west', 'whoever_pays', 'swords_for_parim']],
     regional_varnondor: [['close_the_approaches', 'open_the_approaches', 'watch_for_parim']],
     regional_yeldenne: [['ride_after_the_bearer', 'keep_the_empty_hall', 'seal_the_hall'], ['open_for_the_heir', 'seek_a_second_bearer']],
-    regional_sensai: [['friendship_with_sonargur', 'parims_old_friend', 'a_third_way']],
+    regional_tolvael: [['friendship_with_sonargur', 'parims_old_friend', 'a_third_way']],
     regional_halenor: [['wreckers_of_the_storm_isles', 'pilots_of_the_storms'], ['the_storm_isles_apart', 'pilots_for_the_crossing']],
     regional_nondondor: [['press_the_banks', 'share_the_banks'], ['corsair_letters', 'hang_the_corsairs']],
     regional_seite_islands: [['defy_the_king', 'seek_the_brokers'], ['join_the_charter', 'the_free_coves']],
@@ -171,8 +171,8 @@ test('The exclusive choices of the specs are symmetric, three-way where the spec
 
 test('The historical branch heads of the specs are in place with the right gates', () => {
   const g = (id, key) => find(BASE, id, key);
-  assert.deepEqual(g('regional_sensai', 'the_free_crowns_of_the_north').available.slice(0, 1), [{ or: [{ global_flag: 'zin_golden_king_dead' }, { after: '1751.3.1' }] }]);
-  assert(g('regional_sensai', 'the_shore_burns').available[0].or.some(c => c.at_war === true));
+  assert.deepEqual(g('regional_tolvael', 'the_free_crowns_of_the_north').available.slice(0, 1), [{ or: [{ global_flag: 'zin_golden_king_dead' }, { after: '1751.3.1' }] }]);
+  assert(g('regional_tolvael', 'the_shore_burns').available[0].or.some(c => c.at_war === true));
   assert.deepEqual(g('regional_girdon', 'the_winter_ford_remembered').allow_branch, [{ global_flag: 'zin_eindil_awake' }]);
   assert.deepEqual(g('regional_girdon', 'the_winter_ford_remembered').available[0], { global_flag: 'zin_eindil_awake' });
   for (const id of ['regional_adel', 'regional_pollos', 'regional_raerby']) {
@@ -248,7 +248,7 @@ test('The returning figure is named (the Heir, the stranger, the war-king) only 
   }
   assert(named >= 10, String(named));
   assert.match(allLoc['zin_regional_yeldenne.9.d'], /walked out of the old ice/);
-  assert.match(allLoc['zin_regional_sensai_northern_companies_desc'], /Heir/);
+  assert.match(allLoc['zin_regional_tolvael_northern_companies_desc'], /Heir/);
 });
 
 test('Spirit modifiers exist in the game documentation and every icon and picture is a catalog key', () => {
@@ -274,7 +274,7 @@ test('Every call, check, event, flag, idea and faction a tree names resolves', (
 test('Recruit effects exist for every named character, with a code per person', () => {
   for (const id of IDS.filter(i => i !== 'regional_yeldenne')) {
     const name = id.replace('regional_', ''), def = BASE[id].scripted_effects?.[`zin_regional_${name}_recruit`];
-    if (!def) { assert(['regional_sensai', 'regional_mina', 'regional_r_en', 'regional_molot', 'regional_eekedor'].includes(id), `${id} lacks recruit`); continue; }
+    if (!def) { assert(['regional_tolvael', 'regional_mina', 'regional_r_en', 'regional_molot', 'regional_eekedor'].includes(id), `${id} lacks recruit`); continue; }
     const people = Object.keys(def.args.character.keyword);
     assert(people.length >= 1 && people.length <= 2);
     const text = compiled.get(id).files.get(`common/scripted_effects/zin_${id}.txt`);
@@ -283,7 +283,7 @@ test('Recruit effects exist for every named character, with a code per person', 
 });
 
 test('Every lean change goes through zin_leren_add_lean and no tree writes zin_leren_lean directly', () => {
-  for (const id of ['regional_sensai', 'regional_mina', 'regional_r_en', 'regional_molot', 'regional_eekedor']) {
+  for (const id of ['regional_tolvael', 'regional_mina', 'regional_r_en', 'regional_molot', 'regional_eekedor']) {
     for (const [rel, body] of compiled.get(id).files) {
       const text = body.toString();
       assert(!/(?:set_variable|add_to_variable)\s*=\s*\{\s*zin_leren_lean/.test(text), `${id}: ${rel} writes the lean directly`);
