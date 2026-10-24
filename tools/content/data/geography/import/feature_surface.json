@@ -1,0 +1,838 @@
+{
+ "note": "Point features of the model that stand on the wrong surface of the drawing as the import reads it (the illustrated heuristic with the annotations), each with the nearest point of the right surface; measured by tools/content/geography/import_measures.mjs (featureSurface) and applied by convert_for_import.mjs. Numbers only.",
+ "reachPx": 96,
+ "features": [
+  {
+   "id": "site_varnondor_staging",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.266,
+    0.6023
+   ],
+   "to": [
+    0.2665,
+    0.6002
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "site_kradlon",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.148,
+    0.5852
+   ],
+   "to": [
+    0.14951,
+    0.58926
+   ],
+   "distPx": 13
+  },
+  {
+   "id": "site_adel",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.06175,
+    0.544
+   ],
+   "to": [
+    0.05889,
+    0.55176
+   ],
+   "distPx": 25
+  },
+  {
+   "id": "site_nondondor",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.11808,
+    0.643
+   ],
+   "to": [
+    0.11748,
+    0.64434
+   ],
+   "distPx": 4
+  },
+  {
+   "id": "site_sonargur",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.5816,
+    0.4008
+   ],
+   "to": [
+    0.58115,
+    0.3998
+   ],
+   "distPx": 4
+  },
+  {
+   "id": "site_ren",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.612,
+    0.413
+   ],
+   "to": [
+    0.61201,
+    0.41113
+   ],
+   "distPx": 5
+  },
+  {
+   "id": "site_notbuton",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.497,
+    0.412
+   ],
+   "to": [
+    0.49697,
+    0.42168
+   ],
+   "distPx": 25
+  },
+  {
+   "id": "site_bordon",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.4707,
+    0.4117
+   ],
+   "to": [
+    0.47197,
+    0.41426
+   ],
+   "distPx": 10
+  },
+  {
+   "id": "site_herez",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.64,
+    0.708
+   ],
+   "to": [
+    0.64053,
+    0.70605
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "site_safeton",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.6105,
+    0.6867
+   ],
+   "to": [
+    0.61064,
+    0.68457
+   ],
+   "distPx": 5
+  },
+  {
+   "id": "site_asgard",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.512,
+    0.565
+   ],
+   "to": [
+    0.51396,
+    0.56895
+   ],
+   "distPx": 14
+  },
+  {
+   "id": "site_zilin_hills",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.691,
+    0.705
+   ],
+   "to": [
+    0.69092,
+    0.70371
+   ],
+   "distPx": 3
+  },
+  {
+   "id": "site_herrodon",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.667,
+    0.377
+   ],
+   "to": [
+    0.6665,
+    0.37598
+   ],
+   "distPx": 4
+  },
+  {
+   "id": "site_nafeher",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.5949,
+    0.857
+   ],
+   "to": [
+    0.59404,
+    0.85527
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "site_mirolon",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.664,
+    0.768
+   ],
+   "to": [
+    0.66357,
+    0.76621
+   ],
+   "distPx": 5
+  },
+  {
+   "id": "site_nan",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.666,
+    0.798
+   ],
+   "to": [
+    0.66787,
+    0.79785
+   ],
+   "distPx": 10
+  },
+  {
+   "id": "site_demon_dolon",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.592,
+    0.848
+   ],
+   "to": [
+    0.59131,
+    0.8502
+   ],
+   "distPx": 7
+  },
+  {
+   "id": "site_nara",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.351,
+    0.712
+   ],
+   "to": [
+    0.35166,
+    0.7127
+   ],
+   "distPx": 4
+  },
+  {
+   "id": "site_elvana",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.12727,
+    0.87516
+   ],
+   "to": [
+    0.12725,
+    0.87676
+   ],
+   "distPx": 4
+  },
+  {
+   "id": "site_hengyang",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.11067,
+    0.71476
+   ],
+   "to": [
+    0.1124,
+    0.71191
+   ],
+   "distPx": 11
+  },
+  {
+   "id": "site_igara",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.13927,
+    0.92816
+   ],
+   "to": [
+    0.13936,
+    0.92949
+   ],
+   "distPx": 3
+  },
+  {
+   "id": "site_worshipdom_valleys",
+   "kind": "site",
+   "end": "at",
+   "from": [
+    0.69,
+    0.706
+   ],
+   "to": [
+    0.68955,
+    0.70605
+   ],
+   "distPx": 2
+  },
+  {
+   "id": "volcano_good_1",
+   "kind": "volcano",
+   "end": "at",
+   "from": [
+    0.12477,
+    0.85536
+   ],
+   "to": [
+    0.12686,
+    0.87676
+   ],
+   "distPx": 56
+  },
+  {
+   "id": "volcano_good_2",
+   "kind": "volcano",
+   "end": "at",
+   "from": [
+    0.13957,
+    0.87886
+   ],
+   "to": [
+    0.13896,
+    0.88145
+   ],
+   "distPx": 8
+  },
+  {
+   "id": "river_fandan",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.272,
+    0.288
+   ],
+   "to": [
+    0.27373,
+    0.28613
+   ],
+   "distPx": 10
+  },
+  {
+   "id": "river_naepu",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.35565,
+    0.12406
+   ],
+   "to": [
+    0.35557,
+    0.11465
+   ],
+   "distPx": 24
+  },
+  {
+   "id": "river_orewell",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.058,
+    0.03416
+   ],
+   "to": [
+    0.05811,
+    0.02988
+   ],
+   "distPx": 11
+  },
+  {
+   "id": "river_kulolo",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.21705,
+    0.4466
+   ],
+   "to": [
+    0.2335,
+    0.47949
+   ],
+   "distPx": 119
+  },
+  {
+   "id": "river_hky",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.15875,
+    0.52417
+   ],
+   "to": [
+    0.15967,
+    0.52559
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "river_hky",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.152,
+    0.5711
+   ],
+   "to": [
+    0.15088,
+    0.56855
+   ],
+   "distPx": 9
+  },
+  {
+   "id": "river_leren",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.59,
+    0.345
+   ],
+   "to": [
+    0.59033,
+    0.3459
+   ],
+   "distPx": 3
+  },
+  {
+   "id": "river_leren",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.5809,
+    0.4023
+   ],
+   "to": [
+    0.58193,
+    0.40371
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "river_giant",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.522,
+    0.462
+   ],
+   "to": [
+    0.52197,
+    0.46113
+   ],
+   "distPx": 2
+  },
+  {
+   "id": "river_giant",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.49,
+    0.433
+   ],
+   "to": [
+    0.48916,
+    0.43145
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "river_selenar",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.57564,
+    0.45754
+   ],
+   "to": [
+    0.5751,
+    0.45605
+   ],
+   "distPx": 5
+  },
+  {
+   "id": "river_safen",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.6,
+    0.661
+   ],
+   "to": [
+    0.6001,
+    0.66191
+   ],
+   "distPx": 2
+  },
+  {
+   "id": "river_hilorn",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.5496,
+    0.6117
+   ],
+   "to": [
+    0.54893,
+    0.61152
+   ],
+   "distPx": 3
+  },
+  {
+   "id": "river_konorar",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.634,
+    0.425
+   ],
+   "to": [
+    0.63525,
+    0.42285
+   ],
+   "distPx": 8
+  },
+  {
+   "id": "river_elwen",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.78931,
+    0.52394
+   ],
+   "to": [
+    0.78975,
+    0.52363
+   ],
+   "distPx": 2
+  },
+  {
+   "id": "river_andos",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.7504,
+    0.4258
+   ],
+   "to": [
+    0.75146,
+    0.42441
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "river_lozo_out",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.683,
+    0.668
+   ],
+   "to": [
+    0.68213,
+    0.67363
+   ],
+   "distPx": 15
+  },
+  {
+   "id": "river_lozo_out",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.70025,
+    0.72238
+   ],
+   "to": [
+    0.70029,
+    0.72949
+   ],
+   "distPx": 18
+  },
+  {
+   "id": "river_teste",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.7105,
+    0.38251
+   ],
+   "to": [
+    0.71123,
+    0.38418
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "river_teste",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.7137,
+    0.3523
+   ],
+   "to": [
+    0.71436,
+    0.35215
+   ],
+   "distPx": 3
+  },
+  {
+   "id": "river_furvi_run",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.76588,
+    0.188
+   ],
+   "to": [
+    0.76592,
+    0.18887
+   ],
+   "distPx": 2
+  },
+  {
+   "id": "river_gondolin",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.87486,
+    0.56144
+   ],
+   "to": [
+    0.87236,
+    0.56621
+   ],
+   "distPx": 18
+  },
+  {
+   "id": "river_fosoco",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.822,
+    0.575
+   ],
+   "to": [
+    0.82197,
+    0.57324
+   ],
+   "distPx": 5
+  },
+  {
+   "id": "river_fosoco",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.85963,
+    0.59504
+   ],
+   "to": [
+    0.86396,
+    0.58848
+   ],
+   "distPx": 28
+  },
+  {
+   "id": "river_tich",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.3199,
+    0.7273
+   ],
+   "to": [
+    0.3208,
+    0.72871
+   ],
+   "distPx": 6
+  },
+  {
+   "id": "river_tich",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.3309,
+    0.732
+   ],
+   "to": [
+    0.33193,
+    0.73418
+   ],
+   "distPx": 8
+  },
+  {
+   "id": "river_adel_stream",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.058,
+    0.555
+   ],
+   "to": [
+    0.0585,
+    0.55488
+   ],
+   "distPx": 3
+  },
+  {
+   "id": "river_adel_stream",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.06627,
+    0.57863
+   ],
+   "to": [
+    0.06553,
+    0.57988
+   ],
+   "distPx": 5
+  },
+  {
+   "id": "river_gil",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.56002,
+    0.35207
+   ],
+   "to": [
+    0.5585,
+    0.35332
+   ],
+   "distPx": 9
+  },
+  {
+   "id": "river_ren",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.612,
+    0.414
+   ],
+   "to": [
+    0.61338,
+    0.41582
+   ],
+   "distPx": 9
+  },
+  {
+   "id": "river_dead_ash",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.596,
+    0.856
+   ],
+   "to": [
+    0.59502,
+    0.85371
+   ],
+   "distPx": 8
+  },
+  {
+   "id": "river_dead_ash",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.606,
+    0.88
+   ],
+   "to": [
+    0.6042,
+    0.87598
+   ],
+   "distPx": 13
+  },
+  {
+   "id": "river_mirolon",
+   "kind": "river",
+   "end": "source",
+   "from": [
+    0.668,
+    0.78
+   ],
+   "to": [
+    0.66826,
+    0.78105
+   ],
+   "distPx": 3
+  },
+  {
+   "id": "river_mirolon",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.67213,
+    0.78097
+   ],
+   "to": [
+    0.67217,
+    0.7791
+   ],
+   "distPx": 5
+  }
+ ],
+ "unresolved": [
+  {
+   "id": "river_grey",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.21549,
+    0.43488
+   ]
+  },
+  {
+   "id": "river_great",
+   "kind": "river",
+   "end": "mouth",
+   "from": [
+    0.62,
+    0.628
+   ]
+  }
+ ]
+}

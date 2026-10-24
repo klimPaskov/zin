@@ -65,6 +65,7 @@ export const PATHS = Object.freeze({
   coast: path.join(DATA, 'coast_features.json'),
   names: path.join(DATA, 'name_table.json'),
   palette: path.join(DATA, 'import', 'aoaz.palette.json'),
+  surface: path.join(DATA, 'import', 'feature_surface.json'),
   overrides: path.join(here, 'surface_overrides.json'),
   roster: path.join(here, '../data/world/roster.json'),
 });
@@ -257,7 +258,10 @@ export const MIGRATION_TERMS = Object.freeze([['Ocean of Zol', 'Kusmeel'], ['Oce
 const migrated = text => MIGRATION_TERMS.reduce((t, [from, to]) => t.replaceAll(from, to), text);
 
 /** The geography model version 1 and the side documents (see the header). */
-export function convertModel(model, { coast = null, roster = null, design = null, nameTable = null } = {}) {
+export function convertModel(model, { coast = null, roster = null, design = null, nameTable = null, surface = null } = {}) {
+  // feature_surface.json (import_measures.mjs): points moved onto the drawing's surface, by feature id and end
+  const moved = new Map((surface?.features ?? []).map(m => [`${m.id}|${m.end}`, m.to]));
+  const placed = (id, end, p) => moved.get(`${id}|${end}`) ?? p;
   const issues = [], held = { terrainAreas: [], zones: [], rivers: [], straits: [], seaIce: [], regionTerrain: [], climate: null, edges: [] };
   const regionIds = new Set(model.regions.filter(r => r.kind === 'region').map(r => r.id));
   const regionOf = key => (regionIds.has(`region_${key}`) ? `region_${key}` : null);
@@ -306,7 +310,7 @@ export function convertModel(model, { coast = null, roster = null, design = null
     const range = p.gorge?.range ?? (near && near.d <= IMPORT.passReachPx ? near.r.id : null);
     return { id: p.id, name: p.name, tags: tagsOf(p), ...opt('note', note(p)), ...(range ? { range } : {}), position: at };
   });
-  const volcanoes = model.volcanoes.map(v => ({ id: v.id, name: v.name, tags: tagsOf(v), ...opt('note', note(v)), at: pt(v.geometry.coordinates), peak: IMPORT.volcanoPeakByElevation[v.elevation] ?? 0.85, active: v.status === 'active' }));
+  const volcanoes = model.volcanoes.map(v => ({ id: v.id, name: v.name, tags: tagsOf(v), ...opt('note', note(v)), at: pt(placed(v.id, 'at', v.geometry.coordinates)), peak: IMPORT.volcanoPeakByElevation[v.elevation] ?? 0.85, active: v.status === 'active' }));
   // water
   const lakes = model.lakes.map(l => ({ id: l.id, name: l.name, tags: tagsOf(l), ...opt('note', note(l)), ...areaFields(l.geometry, issues, l.id), gameplay: 'lake' }));
   const rivers = [];
@@ -316,11 +320,14 @@ export function convertModel(model, { coast = null, roster = null, design = null
   for (let c = 0; c < land.length; c++) if (!land[c]) water[c] = 1;
   for (const r of model.rivers) {
     let c = schemaPath(r.geometry.coordinates);
+    if (moved.has(`${r.id}|source`)) c = [pt(moved.get(`${r.id}|source`)), ...c.slice(1)];
+    if (moved.has(`${r.id}|mouth`)) c = [...c.slice(0, -1), pt(moved.get(`${r.id}|mouth`))];
     if (r.endorheic) { held.rivers.push({ id: r.id, name: r.name, reason: `ends in the ${r.basin ?? 'desert'} basin; the schema needs a mouth in water`, path: c }); continue; }
     // a mouth drawn on the shore of its sea or lake moves onto the nearest water cell (the resolver asks a mouth in water)
     const end = G.cellIndexOf(CG, c[c.length - 1]);
     const onLand = p => model.lands.some(l => pointInGeometry(p[0], p[1], l.geometry)) && !model.lakes.some(l => pointInGeometry(p[0], p[1], l.geometry));
-    if (end >= 0 && onLand(c[c.length - 1])) {
+    // a mouth the drawing measure already placed in the drawn water stays there (the import reads the drawing's coast)
+    if (end >= 0 && !moved.has(`${r.id}|mouth`) && onLand(c[c.length - 1])) {
       const w = G.nearestCell(CG, end, k => water[k] === 1 && !onLand(G.cellCentre(CG, k % CG.w, Math.floor(k / CG.w))), Math.ceil(IMPORT.mouthReachPx / CG.cell));
       if (w >= 0) { const p = pt(G.cellCentre(CG, w % CG.w, Math.floor(w / CG.w))); issues.push({ id: r.id, issue: `mouth moved ${Math.round(G.distPx(c[c.length - 1], p))} px from the shore into the water` }); c = [...c, p]; }
     }
@@ -353,7 +360,7 @@ export function convertModel(model, { coast = null, roster = null, design = null
     const realm = capitals.get(s.id);
     const kind = realm ? 'capital' : IMPORT.siteKind[s.kind] ?? 'landmark';
     const importance = realm ? (IMPORT.capitalImportance[realm.focusTier] ?? IMPORT.capitalImportance.default) : IMPORT.siteImportance[s.kind] ?? 2;
-    return { id: s.id, name: s.name, tags: tagsOf(s), ...opt('note', note(s)), kind, at: pt(s.geometry.coordinates), importance, ...(realm && /^[A-Z][A-Z0-9]{2}$/u.test(realm.tag) ? { country: realm.tag } : {}), ...(s.onWater ? { onWater: true } : {}), ...(s.lake && lakeIds.has(s.lake) ? { lake: s.lake } : {}) };
+    return { id: s.id, name: s.name, tags: tagsOf(s), ...opt('note', note(s)), kind, at: pt(placed(s.id, 'at', s.geometry.coordinates)), importance, ...(realm && /^[A-Z][A-Z0-9]{2}$/u.test(realm.tag) ? { country: realm.tag } : {}), ...(s.onWater ? { onWater: true } : {}), ...(s.lake && lakeIds.has(s.lake) ? { lake: s.lake } : {}) };
   });
   const roads = model.roads.map(r => ({ id: r.id, name: r.name, tags: tagsOf(r), ...opt('note', note(r)), path: schemaPath(r.geometry.coordinates), importance: IMPORT.roadImportance }));
   const places = (model.coasts ?? []).map(c => ({ id: c.id, name: c.name, tags: tagsOf(c), ...opt('note', note(c)), kind: IMPORT.placeKind[c.kind] ?? 'other', at: pt(c.geometry.coordinates) }));
@@ -462,7 +469,7 @@ async function main(argv) {
   mkdirSync(out, { recursive: true });
   const inputs = Object.fromEntries(Object.entries(PATHS).filter(([, p]) => existsSync(p)).map(([k, p]) => [k, { path: path.relative(path.join(here, '../../..'), p).replaceAll('\\', '/'), sha256: sha256(readFileSync(p)) }]));
   const model = readJson(PATHS.model);
-  const { geography, names, held, issues } = convertModel(model, { coast: readJson(PATHS.coast), roster: readJson(PATHS.roster), design: readJson(PATHS.design), nameTable: readJson(PATHS.names) });
+  const { geography, names, held, issues } = convertModel(model, { coast: readJson(PATHS.coast), roster: readJson(PATHS.roster), design: readJson(PATHS.design), nameTable: readJson(PATHS.names), surface: readJson(PATHS.surface) });
   const sheets = sheetsDocument(model);
   const { annotations, dropped } = annotationsFrom(readJson(PATHS.overrides));
   const palette = readJson(PATHS.palette)?.palette ?? null;

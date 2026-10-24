@@ -247,3 +247,11 @@ content/geography/repair_model.test.mjs content/geography/geography_steps.test.m
 ```
 
 All 66 tests of the four files pass (65 pass, 1 skipped: the full-model test, section 9). The converter suite compares a fresh conversion with the tracked outputs byte for byte, and validates them against the tool's schemas when the tool repository is present.
+
+## 9. First preview on the released 4.4.0 (lead, 25 October 2026)
+
+The prepared call (`import/preview_call.json`) ran on the released server 4.4.0 (`runtime-v440`, through an MCP stdio client because this session's connection still pointed at the old project registration). Result `MAP_GEOGRAPHY_PREVIEW_READY`, 22 s, no blockers: all 12 sheets registered, none hidden, land IoU 0.8979 (blocks below 0.85, warns below 0.95), 246,715 px land only in the drawing and 231,997 only in the model.
+
+The first run reported 13 model features on the wrong surface of the drawing (sites and a volcano in drawn water, river mouths on drawn land, sources in drawn water). `import_measures.mjs` now measures every point feature against the surface the import reads (the illustrated heuristic with the annotations) and the model's own land, and writes `import/feature_surface.json` (numbers only): each feature on the wrong surface, or within `SURFACE.marginPx` (3) of the coast, moves to the nearest point of the right surface of both readings within `SURFACE.reachPx` (96). `convert_for_import.mjs` applies it (sites, volcanoes, river sources and mouths). 58 points moved, median 6 px, the largest the Kulolo's mouth (119 px) and the Good Volcanoes (56 px); two mouths stay unresolved because they end in the model's lakes (the Great River into the Great Lake) or are already water in both readings (the Grey). The preview after the change reports no feature warnings; the only warning left is the land agreement below 0.95.
+
+Still needed before a write: ZR-8 (countries owned by the mod, exact ownership from seeds, retirement of the old world's country files), the override file and stable ids (ADR 0067 steps 3 to 5), and ZR-6 (strait crossings).

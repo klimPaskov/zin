@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 import * as G from './geo_core.mjs';
 import { isWaterColour } from './drawing_mask.mjs';
 import { regionZones } from './repair_model.mjs';
-import { ringsOf } from './check_model.mjs';
+import { ringsOf, pointInGeometry } from './check_model.mjs';
 import { IMPORT } from './convert_for_import.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -220,6 +220,64 @@ export function beforeDocument(model, doc) {
   const before = model.registration?.before ?? {};
   return { ...doc, sheets: doc.sheets.map(s => { const b = before[s.id]; const m = model.sheets[s.id]; if (!b) return s; const t = { ...m, ...b }; return { id: s.id, box: m.drawingBox, anchor: t.drawingAnchor, target: t.worldAnchor, scale: t.scaleWorldPerDrawing, order: s.order }; }) };
 }
+// ---------------------------------------------------------------------------------------------------- feature surface
+// marginPx: a moved point lands this far inside the right surface, since the import reads its own working copy of the
+// drawing and a point on the very edge can fall on either side of it.
+export const SURFACE = Object.freeze({ reachPx: 96, marginPx: 3 });
+/**
+ * Point features against the surface the import reads from the drawing (`drawn`: 1 land, 0 sea): a site or volcano
+ * must stand on land, a river's source on land and its mouth in water. Each one on the wrong surface moves to the
+ * nearest pixel of the right one within SURFACE.reachPx (ties: the first in reading order), so the import's
+ * MAP_IMPORT_FEATURE_SURFACE check passes. The right surface must hold in the model too (`modelMask`: 1 land, lakes
+ * cut out), because the resolver checks a river's mouth against the model's water. Sites the model puts on water or in
+ * a lake keep their place.
+ */
+export function featureSurface(model, drawn, modelMask = null, w = W, h = H) {
+  const at = ([x, y]) => drawn[Math.min(h - 1, Math.max(0, Math.floor(y * h))) * w + Math.min(w - 1, Math.max(0, Math.floor(x * w)))];
+  const inside = (px, py, want) => {
+    const m = SURFACE.marginPx;
+    for (let dy = -m; dy <= m; dy++) for (let dx = -m; dx <= m; dx++) {
+      const qx = Math.min(w - 1, Math.max(0, px + dx)), qy = Math.min(h - 1, Math.max(0, py + dy));
+      const q = qy * w + qx;
+      if (drawn[q] !== want || (modelMask && modelMask[q] !== want)) return false;
+    }
+    return true;
+  };
+  const nearest = ([x, y], want) => {
+    const cx = Math.floor(x * w), cy = Math.floor(y * h);
+    for (let r = 1; r <= SURFACE.reachPx; r++) {
+      let best = null, bd = Infinity;
+      for (let dy = -r; dy <= r; dy++) for (let dx = -r; dx <= r; dx++) {
+        if (Math.max(Math.abs(dx), Math.abs(dy)) !== r) continue;
+        const px = cx + dx, py = cy + dy;
+        if (px < 0 || py < 0 || px >= w || py >= h || !inside(px, py, want)) continue;
+        const d = dx * dx + dy * dy;
+        if (d < bd) { bd = d; best = [px, py]; }
+      }
+      if (best) return { to: [+((best[0] + 0.5) / w).toFixed(5), +((best[1] + 0.5) / h).toFixed(5)], distPx: Math.round(Math.sqrt(bd)) };
+    }
+    return null;
+  };
+  const out = [], unresolved = [];
+  const check = (id, kind, end, p, want) => {
+    // a point within the margin of the coast moves too: the import's own reading may put it on the other side
+    if (at(p) === want && inside(Math.floor(p[0] * w), Math.floor(p[1] * h), want)) return;
+    const n = nearest(p, want);
+    if (n) out.push({ id, kind, end, from: p, ...n }); else unresolved.push({ id, kind, end, from: p });
+  };
+  for (const s of model.sites) if (!s.onWater && !s.lake && s.geometry?.type === 'Point') check(s.id, 'site', 'at', s.geometry.coordinates, 1);
+  for (const v of model.volcanoes) check(v.id, 'volcano', 'at', v.geometry.coordinates, 1);
+  for (const r of model.rivers) {
+    if (r.endorheic) continue;
+    const c = r.geometry.coordinates;
+    check(r.id, 'river', 'source', c[0], 1);
+    // a mouth in one of the model's lakes is water whatever the drawing shows (the import carves the lakes)
+    const m = c[c.length - 1];
+    if (!model.lakes.some(l => pointInGeometry(m[0], m[1], l.geometry))) check(r.id, 'river', 'mouth', m, 0);
+  }
+  return { features: out, unresolved };
+}
+
 async function main(argv) {
   const args = argv.slice(2);
   const opt = (name, d) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : d; };
@@ -240,7 +298,7 @@ async function main(argv) {
   const mLand = modelLand(model);
   const result = { drawing: { file: 'docs/reference/originals/Erdae.png (private, git-ignored; read into memory only)', width: meta.width, height: meta.height, sha256: sha, workingSize: size }, readings: {} };
   const runs = [['after', doc], ['before', beforeDocument(model, doc)]];
-  let paletteResult = null;
+  let paletteResult = null, surface = null;
   for (const [label, d] of runs) {
     const { rgb, owner } = warp(d, picture);
     const pencil = classifyLand(rgb, owner, pencilLand);
@@ -257,11 +315,15 @@ async function main(argv) {
       const cover = {};
       for (let i = 0; i < owner.length; i++) { const id = d.sheets[owner[i]]?.id ?? 'none'; cover[id] = (cover[id] ?? 0) + 1; }
       result.coveragePx = cover;
+      // the import reads the illustrated picture with its own heuristic and the annotations on top (preview_call.json)
+      surface = featureSurface(model, annotate(readings.heuristic, annotations), mLand);
     }
   }
   const write = (file, v) => writeFileSync(path.join(out, file), `${JSON.stringify(v, null, 1)}\n`);
   write('aoaz.palette.json', { note: 'The reference palette of the import (one list for every sheet, ADR 0067 section 9): per sheet the median colour of its drawn water and of its drawn land per terrain class, measured by tools/content/geography/import_measures.mjs; numbers only.', mergeDistance: paletteResult.mergeDistance, palette: paletteResult.palette, provenance: paletteResult.provenance });
   write('drawing_measures.json', { note: 'Numbers measured on the private drawing by tools/content/geography/import_measures.mjs: land IoU of the model and the drawing as the import reads it (three classifiers; raw and with the surface-override annotations; after = the registered sheets with clips, before = the hand-fitted transforms of registration.before without clips), and the drawn land the open-sea edge bands clear.', ...result });
+  write('feature_surface.json', { note: 'Point features of the model that stand on the wrong surface of the drawing as the import reads it (the illustrated heuristic with the annotations), each with the nearest point of the right surface; measured by tools/content/geography/import_measures.mjs (featureSurface) and applied by convert_for_import.mjs. Numbers only.', reachPx: SURFACE.reachPx, ...surface });
+  console.log(`feature surface: ${surface.features.length} moved, ${surface.unresolved.length} unresolved`);
   const show = (label, name) => { const r = result.readings[label][name]; return `${r.raw.total}${r.withAnnotations ? ` (with annotations ${r.withAnnotations.total})` : ''}`; };
   for (const label of ['before', 'after']) for (const name of Object.keys(result.readings[label])) console.log(`${label.padEnd(6)} ${name.padEnd(9)} land IoU ${show(label, name)}`);
   for (const [name, e] of Object.entries(result.edgeBands)) console.log(`edge bands (${name}): ${e.strictBandPx.total} px of drawn land in the strict band, ${e.raggedUpTo.total} px up to the ragged clearing; ${JSON.stringify(e.strictBandPx.bySheet)}`);

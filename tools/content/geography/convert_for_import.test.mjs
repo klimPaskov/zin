@@ -18,7 +18,7 @@ import { pointInGeometry } from './check_model.mjs';
 import {
   schemaRing, areaFields, bridgeRings, clipRing, sheetsDocument, annotationsFrom, convertModel, carveSeas, edgeBandLand, previewCall, IMPORT,
 } from './convert_for_import.mjs';
-import { fillRings, warp, agreement, toolHeuristicLand, classifyLand, workingSize } from './import_measures.mjs';
+import { fillRings, warp, agreement, toolHeuristicLand, classifyLand, workingSize, featureSurface, SURFACE } from './import_measures.mjs';
 import { DEFAULT_TOOL, toolAjv, toolSchema, schemaErrors } from './validate_import.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -294,4 +294,28 @@ test('untangleLine cuts a loop at the crossing and leaves a clean line alone', (
   // a vertex repeated later in the line (a touch) is a loop too
   assert.equal(G.untangleLine([[0, 0], [0.1, 0], [0.1, 0.1], [0.1, 0], [0.2, 0]]).length, 3);
   assert.equal(G.segmentIntersection([0, 0], [1, 0], [0, 1], [1, 1]), null);
+});
+
+test('featureSurface moves points onto the right surface of drawing and model, a margin inside the coast', () => {
+  // a 100 x 50 frame: land on the left half, sea on the right
+  const w = 100, h = 50, drawn = new Uint8Array(w * h), modelMask = new Uint8Array(w * h);
+  for (let y = 0; y < h; y++) for (let x = 0; x < 50; x++) { drawn[y * w + x] = 1; modelMask[y * w + x] = 1; }
+  const model = {
+    sites: [{ id: 'site_wet', geometry: { type: 'Point', coordinates: [0.7, 0.5] } }, { id: 'site_ok', geometry: { type: 'Point', coordinates: [0.2, 0.5] } }, { id: 'site_ship', onWater: true, geometry: { type: 'Point', coordinates: [0.9, 0.5] } }],
+    volcanoes: [],
+    rivers: [{ id: 'river_short', geometry: { type: 'LineString', coordinates: [[0.1, 0.5], [0.3, 0.5], [0.45, 0.5]] } }],
+    lakes: [],
+  };
+  const { features, unresolved } = featureSurface(model, drawn, modelMask, w, h);
+  assert.deepEqual(unresolved, []);
+  const byKey = new Map(features.map(f => [`${f.id}|${f.end}`, f]));
+  assert.ok(!byKey.has('site_ok|at') && !byKey.has('site_ship|at'), 'a site on land, or one the model puts on water, stays');
+  const wet = byKey.get('site_wet|at');
+  assert.ok(wet && wet.to[0] * w < 50 - SURFACE.marginPx, 'the wet site moves onto land, a margin inside the coast');
+  const mouth = byKey.get('river_short|mouth');
+  assert.ok(mouth && mouth.to[0] * w >= 50 + SURFACE.marginPx, 'the mouth near the shore moves into the water, a margin out');
+  // where the model keeps land the drawing shows as sea, the mouth goes further, to water of both
+  for (let y = 0; y < h; y++) for (let x = 50; x < 60; x++) modelMask[y * w + x] = 1;
+  const both = featureSurface(model, drawn, modelMask, w, h).features.find(f => f.id === 'river_short' && f.end === 'mouth');
+  assert.ok(both.to[0] * w >= 60 + SURFACE.marginPx);
 });

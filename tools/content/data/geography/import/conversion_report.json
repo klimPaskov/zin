@@ -21,17 +21,21 @@
    "path": "tools/content/data/geography/import/aoaz.palette.json",
    "sha256": "f6909573174f6be2661f7d6e45d8c77d32158ba8579f9c8eca14cc8809b4765e"
   },
+  "surface": {
+   "path": "tools/content/data/geography/import/feature_surface.json",
+   "sha256": "f90da9f7b31d152ec3809ee1ed7629c53b35de93aa12d3a0c30ab729dbdc07e1"
+  },
   "overrides": {
    "path": "tools/content/geography/surface_overrides.json",
    "sha256": "4735e5a14cf2df0c70f8ee36a731770b9dd3d8cdc5cb4e26cadfa4c86ee288f0"
   },
   "roster": {
    "path": "tools/content/data/world/roster.json",
-   "sha256": "c3b4bc87cc0b91fdde44866262b59a85db42bdca52e58f86cb5cc28f8e69362d"
+   "sha256": "59a68d675b2ea086a595faf2f55a2d69525fcb63902d8170572669b0e605f159"
   }
  },
  "outputs": {
-  "aoaz.geography.json": "7a362b24b3b4a9762179aa000edd3d3235aa031382bef9ac64f8923b01a7798e",
+  "aoaz.geography.json": "4f5671c1154b7ca22b9d92c0761642ff63cbd69d1f05381e7a870d0d0920938d",
   "aoaz.sheets.json": "a85601870b831641438a68b169a8f229aa9df2e6e0928bdbfab2cc3f66777752",
   "aoaz.annotations.json": "37fa63533909542c60aded957f9fcd758d64f7ba995243634e6699efdeebf43c",
   "aoaz.names.json": "c27afb3c883818a826e6e44f87546fc08d2b6929066bb0c35894677505b8dbbc",
@@ -334,22 +338,6 @@
    "issue": "spine untangled: 3 vertices of a loop dropped"
   },
   {
-   "id": "river_fandan",
-   "issue": "mouth moved 9 px from the shore into the water"
-  },
-  {
-   "id": "river_naepu",
-   "issue": "mouth moved 16 px from the shore into the water"
-  },
-  {
-   "id": "river_orewell",
-   "issue": "mouth moved 10 px from the shore into the water"
-  },
-  {
-   "id": "river_kulolo",
-   "issue": "mouth moved 2 px from the shore into the water"
-  },
-  {
    "id": "river_grey",
    "issue": "mouth moved 2 px from the shore into the water"
   },
@@ -360,50 +348,6 @@
   {
    "id": "river_great",
    "issue": "mouth moved 16 px from the shore into the water"
-  },
-  {
-   "id": "river_selenar",
-   "issue": "mouth moved 2 px from the shore into the water"
-  },
-  {
-   "id": "river_hilorn",
-   "issue": "mouth moved 0 px from the shore into the water"
-  },
-  {
-   "id": "river_konorar",
-   "issue": "mouth moved 4 px from the shore into the water"
-  },
-  {
-   "id": "river_andos",
-   "issue": "mouth moved 4 px from the shore into the water"
-  },
-  {
-   "id": "river_gondolin",
-   "issue": "mouth moved 1 px from the shore into the water"
-  },
-  {
-   "id": "river_fosoco",
-   "issue": "mouth moved 1 px from the shore into the water"
-  },
-  {
-   "id": "river_tich",
-   "issue": "mouth moved 4 px from the shore into the water"
-  },
-  {
-   "id": "river_adel_stream",
-   "issue": "mouth moved 1 px from the shore into the water"
-  },
-  {
-   "id": "river_gil",
-   "issue": "mouth moved 1 px from the shore into the water"
-  },
-  {
-   "id": "river_dead_ash",
-   "issue": "mouth moved 5 px from the shore into the water"
-  },
-  {
-   "id": "river_mirolon",
-   "issue": "mouth moved 1 px from the shore into the water"
   }
  ]
 }
