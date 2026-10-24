@@ -1,0 +1,1797 @@
+[
+  {
+    "tag": "LER",
+    "key": "lerendor",
+    "name": "Lerendor",
+    "stance": "zin_dom_crown",
+    "court": "great",
+    "ruler": {
+      "id": "LER_zin_ruler",
+      "name": "King Ferlin III",
+      "given": "Ferlin",
+      "house": "House Sonarvik",
+      "title": {
+        "native": "Aar",
+        "english": "King of Lerendor and Veskel"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6767,
+      "stance": "zin_dom_crown",
+      "traits": [
+        "zin_trait_strait_pride",
+        "zin_trait_port_master"
+      ],
+      "bio": "Ferlin III of the Sonarvik was crowned in Sonargur in 4A 1731 and rules the strait as his fathers did, from the toll-house as much as from the throne. He was a boy at court when the envoys came home from Parim in 4A 1716 after the toll quarrel, and he has never let the Speakers' Hall forget how they were received there. He keeps the fleets strong and the dwarves' bombards on the royal ships, and he still keeps the Treaty of the Narrow Strait, though his court asks every year what it is worth.",
+      "portrait": {
+        "appearance": "A tall, long-faced northern king with a grey-shot fair beard and pale, tired eyes.",
+        "dress": "A sea-blue mantle over mail, the double circlet of the two crowns and a seal-ring of the strait dues.",
+        "colours": "Strait blue (#2a5a82), sail white (#e8e6dc), sea mist (#9fb4c4)."
+      },
+      "canon": "H",
+      "formerName": "King Ferlin III of Lerendor and Lerenwaith (characters spec); the crown is now Lerendor and Veskel"
+    },
+    "heir": {
+      "id": "zin_lerendor_helmar",
+      "name": "Prince Helmar",
+      "given": "Helmar",
+      "house": "House Sonarvik",
+      "office": "Prince of the Strait",
+      "gender": "male",
+      "people": "men",
+      "born": 6794,
+      "traits": [
+        "zin_trait_war_party"
+      ],
+      "role": "The king's son has served two summers with the strait fleets and talks of Leren mastery of the strait more loudly than his father likes.",
+      "succession": "The eldest son of the Sonarvik inherits both crowns, and the Speakers' Hall swears to him.",
+      "portrait": "A young fair-haired man in a sea-blue cloak with a ship-captain's whistle.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_lerendor_ilse",
+        "name": "Ilse Relendion, Keeper of the Treaty Rolls",
+        "given": "Ilse",
+        "office": "Keeper of the Treaty Rolls",
+        "gender": "female",
+        "people": "men",
+        "born": 6762,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_treaty_keeper"
+        ],
+        "role": "Keeps the rolls of the Treaty of the Narrow Strait and holds, against most of the court, that the treaty still pays.",
+        "portrait": "A stern grey-haired stateswoman in dark blue with a treaty-case.",
+        "canon": "S",
+        "formerName": "Chancellor Ilse Relendion (characters spec); \"Chancellor\" is a banned word"
+      },
+      {
+        "id": "zin_lerendor_maelis",
+        "name": "Maelis of Veskel",
+        "given": "Maelis",
+        "office": "Steward of Veskel",
+        "gender": "female",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Speaks for the lords of the western ice-crown, who still name their children from the Heskdal line and expect Sonargur to remember that the union was a marriage.",
+        "portrait": "A pale, composed woman in white fur with the old Veskel seal.",
+        "canon": "S",
+        "formerName": "Maelis of Lerenwaith, Chancellor of Lerenwaith (Lerendor tree); no -waith names, and Chancellor is banned",
+        "recruit": "Recruited by the Lerendor tree focus The Chancellor of Lerenwaith (to be renamed for Veskel)."
+      },
+      {
+        "id": "zin_lerendor_brannoc",
+        "name": "Brannoc the Toll-Master",
+        "given": "Brannoc",
+        "office": "Master of the Strait Dues",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_office_broker"
+        ],
+        "role": "Runs the toll-houses of Sonargur and knows to the coin what every ship that passed the strait last year paid and what it should have paid.",
+        "portrait": "A heavy man in a toll-master's chain with a ledger under his arm.",
+        "canon": "S",
+        "recruit": "Recruited by the Lerendor tree focus Toll Houses on Both Shores."
+      },
+      {
+        "id": "zin_lerendor_astris",
+        "name": "Astris of the Singing Quay",
+        "given": "Astris",
+        "office": "Mother of the Strait Litany",
+        "gender": "female",
+        "people": "men",
+        "born": 6756,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Leads the litany-singers of the Singing Quay at Sonargur, who open the Ship-Blessing when the strait-whale comes in winter.",
+        "portrait": "An old woman in a white sea-cloak, singing, with a silver whale-pin.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_lerendor_vigrid",
+        "name": "Vigrid the Sea-Wife",
+        "given": "Vigrid",
+        "office": "Reader of the Strait Weather",
+        "gender": "female",
+        "people": "men",
+        "born": 6765,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Reads the weather of the strait a day ahead for the royal fleets and is the only person at court whom the Lord Admiral never contradicts.",
+        "portrait": "A weather-browned woman in an oiled shawl with a bundle of weather-cords.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_lerendor_hellek",
+        "name": "Lord Admiral Ormik Brannkov",
+        "given": "Ormik",
+        "office": "Lord Admiral of the Strait",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "type": "navy_leader",
+        "skill": {
+          "level": 4,
+          "attack": 4,
+          "defense": 3,
+          "maneuvering": 4,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert",
+          "bold"
+        ],
+        "role": "Commands the royal fleets of the strait and wants Leren mastery of it, which he says would be cheaper than the treaty and much more pleasant.",
+        "portrait": "A broad admiral in sealskin over a blue coat, a bombard-match tucked in his belt.",
+        "canon": "P",
+        "formerName": "Lord Admiral Hellek Fargur (characters spec); Hellek is the crown of Hellekton and Fargur a town of Mina"
+      },
+      {
+        "id": "zin_lerendor_agnar",
+        "name": "Marshal Ostmund Gunndal",
+        "given": "Ostmund",
+        "office": "Marshal of the High Crown",
+        "gender": "male",
+        "people": "men",
+        "born": 6761,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "career_officer"
+        ],
+        "role": "A grey career soldier who has spent his life making a sea-power's small host fit to stand on the strait's southern shore if it ever has to.",
+        "portrait": "A grey-bearded northern marshal in sea-blue mail.",
+        "canon": "P",
+        "formerName": "Marshal Agnar Solenkov (characters spec); Solenkovi is a town of Dolpar"
+      },
+      {
+        "id": "zin_lerendor_ostvar",
+        "name": "Hegar Greysail, Second Admiral of the Strait",
+        "given": "Hegar",
+        "office": "Second Admiral of the Strait",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "navy_leader",
+        "skill": {
+          "level": 4,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 4,
+          "coordination": 4
+        },
+        "traits": [
+          "blockade_runner",
+          "bold"
+        ],
+        "role": "A captain of the Low-ness Islands who has never lost a ship to weather and means to be the first Leren admiral to close the strait in war.",
+        "portrait": "A lean, grey-sailed captain in a weathered blue coat.",
+        "canon": "P",
+        "formerName": "Ostvar Greysail (Lerendor tree); Ostvar is the margraves' house of Molot",
+        "recruit": "Recruited by the Lerendor tree focus A Lord Admiral of the Strait."
+      },
+      {
+        "id": "zin_lerendor_hesk",
+        "name": "Torvik Hesk, Marshal of the Long Watch",
+        "given": "Torvik",
+        "office": "Marshal of the Long Watch",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "A Veskel lord of the Heskdal blood who keeps the watch-towers of the Leren shore and would hold Sonargur's walls against anything that came out of the sea.",
+        "portrait": "A tall, grim lord in white fur over grey mail.",
+        "canon": "P",
+        "formerName": "Torvald Hesk (Lerendor tree); Torvald is a real-world name",
+        "recruit": "Recruited by the Lerendor tree focus The Long Watch."
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "EEK",
+    "key": "eekedor",
+    "name": "Eekedor",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "EEK_zin_ruler",
+      "name": "Speaker Pertav Perhkov",
+      "given": "Pertav",
+      "house": "the Perhkov house of the salt-pans of Oirt",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Counting Houses"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6763,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_banker_prince"
+      ],
+      "bio": "The council of counting houses chose Pertav for five years in 4A 1745, the ninth Speaker the Perhkov house has given it. He keeps the Leren Compact with the High Crown because the High Crown owes the counting houses more than any other debtor, and he holds the Arbitration Court open to any crown that pays its fee. He would very much like to judge the toll quarrel between Sonargur and Parim, and has said so to both.",
+      "portrait": {
+        "appearance": "A neat, round-faced man with spectacles of ground crystal.",
+        "dress": "A merchant's dark coat, a salt-white collar and a Speaker's chain of linked coins.",
+        "colours": "Strait blue (#2a5a82), sail white (#e8e6dc), sea mist (#9fb4c4)."
+      },
+      "canon": "P",
+      "formerName": "Speaker Pertav Oirt (characters spec, Eekedor tree); Oirt is a town of the vale"
+    },
+    "heir": {
+      "note": "No heir: Pertav's five years end in 4A 1750.",
+      "succession": "The council of counting houses chooses a Speaker for five years."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_eekedor_holm",
+        "name": "Banker Elvi Perdal",
+        "given": "Elvi",
+        "office": "Banker of the Compact",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the Compact's loans to the High Crown and the small crowns, and can say to the day when each falls due.",
+        "portrait": "A sharp, elegant woman with an abacus of silver beads.",
+        "canon": "P",
+        "formerName": "Banker Saskia Holm (Eekedor tree); not Leren"
+      },
+      {
+        "id": "zin_regional_eekedor_vey",
+        "name": "Arbiter Stenmund Ovik",
+        "given": "Stenmund",
+        "office": "First Arbiter of the Court",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Presides over the Arbitration Court and knows by heart the judgement of 4A 1344 that married the two coast crowns.",
+        "portrait": "A tall, grave old man in a black robe with a judge's rod.",
+        "canon": "P",
+        "formerName": "Arbiter Ammon Vey (Eekedor tree); not Leren"
+      },
+      {
+        "id": "zin_regional_eekedor_arden",
+        "name": "Treasurer Ragnik Hilsdal",
+        "given": "Ragnik",
+        "office": "Treasurer of the Vale",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the vale's grain-dues at Viktara and pays the council's soldiers, and does both on time.",
+        "portrait": "A thin man with ink on his cuffs and a grain-tally.",
+        "canon": "P",
+        "formerName": "Treasurer Clem Arden (Eekedor tree); not Leren"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_eekedor_strand",
+        "name": "Fleet-Captain Vigis Kelvik",
+        "given": "Vigis",
+        "office": "Fleet-Captain of the Vale",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 3
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the counting houses' grain fleet and its escorts out of the blue inlet at Viktara.",
+        "portrait": "A brisk woman captain in a dark blue coat at a ship's rail.",
+        "canon": "P",
+        "formerName": "Fleet-Captain Wenna Strand (Eekedor tree); Wenna is also a Dondor tree character"
+      },
+      {
+        "id": "zin_regional_eekedor_orvald",
+        "name": "Orvald Saltkov, Captain of the Council's Guard",
+        "given": "Orvald",
+        "office": "Captain of the Council's Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Commands the hired guard of the counting houses and keeps its pay chest locked and its muster honest.",
+        "portrait": "A heavy, careful man in good mail with a captain's sash.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "REN",
+    "key": "ren",
+    "name": "R'en",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "REN_zin_ruler",
+      "name": "Prince Agnek Farnur",
+      "given": "Agnek",
+      "house": "the Farnur princes of the cape",
+      "title": {
+        "native": null,
+        "english": "Prince of the Cape"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6766,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_port_master",
+        "zin_trait_pass_lord"
+      ],
+      "bio": "Agnek of the Farnur became prince of the cape in 4A 1729 and lives as his forebears have done since Torik built the forts, on the Aenoran ships that pass under his walls. His grandmother was a daughter of an Aenoran house close to the crown, and he leans openly to Parim. He knows that Leren mastery of the strait would begin at his forts, and he keeps them in better repair than his treasury can afford.",
+      "portrait": {
+        "appearance": "A dark, handsome man with a trimmed beard and a watchful smile.",
+        "dress": "An Aenoran-cut coat over Leren mail and a prince's silver chain with the cape's tower.",
+        "colours": "Strait blue (#2a5a82), sail white (#e8e6dc), sea mist (#9fb4c4)."
+      },
+      "canon": "P",
+      "formerName": "Prince Renan of R'en (characters spec, R'en tree); named after the realm"
+    },
+    "heir": {
+      "id": "zin_regional_r_en_sigolf",
+      "name": "Sigolf Farnur, Heir of the Cape",
+      "given": "Sigolf",
+      "office": "Heir of the Cape",
+      "gender": "male",
+      "people": "men",
+      "born": 6792,
+      "role": "The prince's son was schooled in Parim for two years and came home speaking the Common Speech like a courtier and Leren like a sailor.",
+      "succession": "The eldest son of the Farnur inherits the cape.",
+      "portrait": "A young man in Aenoran dress with a Leren sword.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_r_en_varrel",
+        "name": "Pilot-Master Askur Varrel",
+        "given": "Askur",
+        "office": "Pilot-Master of Farnardur",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Pilots the Aenoran ships through the narrowest water of the strait and carries the prince's word to their captains.",
+        "portrait": "A sea-browned pilot with a brass pilot's badge.",
+        "canon": "P",
+        "formerName": "Pilot-Master Aske Varrel (R'en tree)"
+      },
+      {
+        "id": "zin_regional_r_en_dross",
+        "name": "Harbour-Factor Ilmis Farvik",
+        "given": "Ilmis",
+        "office": "Harbour-Factor of the Sea of R'en",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the warehouses of Farnardur and the Aenoran trade that fills them, and knows every Aenoran house that owes the prince money.",
+        "portrait": "A plump, quick woman with a bunch of warehouse keys.",
+        "canon": "P",
+        "formerName": "Harbour-Factor Ilma Dross (R'en tree); not Leren"
+      },
+      {
+        "id": "zin_regional_r_en_hale",
+        "name": "Gatekeeper Tolgur Halvik",
+        "given": "Tolgur",
+        "office": "Keeper of the Cape Forts",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the forts that beat off the Order's hosts twice in the Third Age and drills their garrisons as if the Order were coming back next spring.",
+        "portrait": "A scarred old soldier in a fort-keeper's grey cloak.",
+        "canon": "P",
+        "formerName": "Gatekeeper Torun Hale (R'en tree); Torun is a real-world town"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_r_en_marrow",
+        "name": "Captain Ingur Salvik",
+        "given": "Ingur",
+        "office": "Captain of the Cape Ships",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the prince's galleys on the Sea of R'en and knows every shoal under the cape.",
+        "portrait": "A wiry captain with a salt-stained coat and a boat-hook.",
+        "canon": "P",
+        "formerName": "Captain Sef Marrow (R'en tree); not Leren"
+      },
+      {
+        "id": "zin_regional_r_en_ostik",
+        "name": "Ostik Farnsdal, Captain of the Cape Host",
+        "given": "Ostik",
+        "office": "Captain of the Cape Host",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "Commands the prince's levies and would hold the landward walls of Farnardur while the forts held the water.",
+        "portrait": "A broad captain in Leren mail with an Aenoran shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "MOO",
+    "key": "molot",
+    "name": "Molot",
+    "stance": "zin_dom_warlord",
+    "court": "standard",
+    "ruler": {
+      "id": "MOO_zin_ruler",
+      "name": "Margrave Valdur Ostvar",
+      "given": "Valdur",
+      "house": "the Ostvar margraves of Altovian",
+      "title": {
+        "native": null,
+        "english": "Margrave of Molot"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6765,
+      "stance": "zin_dom_warlord",
+      "traits": [
+        "zin_trait_warden_of_the_passes",
+        "zin_trait_marcher_lord"
+      ],
+      "bio": "Valdur commanded the fourth fort of the line for nine years before he inherited the margravate in 4A 1733, as every Ostvar margrave must. When the High Crown leaned away from Parim after the toll quarrel, his father sent an envoy south within the year, and Valdur has kept that envoy's chair warm in Parim ever since. He says that leaning to Aenor is only a way of not leaning to Sonargur, which in Molot passes for a family motto.",
+      "portrait": {
+        "appearance": "A square, weathered soldier with a grey moustache.",
+        "dress": "A margrave's grey cloak over mail and the fortress line's badge of a tower on a marsh.",
+        "colours": "Tar brown (#7a6a54), pine green (#4e5e4a), birch pale (#c8bfa4)."
+      },
+      "canon": "P",
+      "formerName": "Margrave Wokla of Molot (characters spec, Molot tree); w is not written in Leren"
+    },
+    "heir": {
+      "id": "zin_regional_molot_elda",
+      "name": "Elda Ostvar, Commander of the Third Fort",
+      "given": "Elda",
+      "office": "Commander of the Third Fort",
+      "gender": "female",
+      "people": "men",
+      "born": 6793,
+      "role": "The margrave's daughter commands the third fort of the line and has already made its garrison the best-fed on the march.",
+      "succession": "The margravate passes to the eldest son or daughter who has commanded a fort of the line.",
+      "portrait": "A tall young woman in grey mail with a fort-commander's key.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_molot_sobel",
+        "name": "Castellan Ulvmund Kvaldur",
+        "given": "Ulvmund",
+        "office": "Castellan of Altovian",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the margrave's seat and the muster-rolls of every fort of the line.",
+        "portrait": "A grey, heavy castellan with a ring of keys and a muster-roll.",
+        "canon": "P",
+        "formerName": "Castellan Jarek Sobel (Molot tree); not Leren"
+      },
+      {
+        "id": "zin_regional_molot_wend",
+        "name": "Herald Elsvi Vendur",
+        "given": "Elsvi",
+        "office": "Herald to Parim",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Holds the margrave's chair at the court of Parim and writes home every week about what the Golden Court said and what it meant.",
+        "portrait": "A poised woman in a herald's tabard of grey and white.",
+        "canon": "P",
+        "formerName": "Herald Elsa Wend (Molot tree); not Leren"
+      },
+      {
+        "id": "zin_regional_molot_krell",
+        "name": "Quartermaster Gunnik Krelson",
+        "given": "Gunnik",
+        "office": "Quartermaster of the March",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Feeds the forts of the line from the harbour of Knorvik and counts every barrel twice.",
+        "portrait": "A thin quartermaster with a wax tablet.",
+        "canon": "P",
+        "formerName": "Quartermaster Bodo Krell (Molot tree); not Leren"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_molot_vint",
+        "name": "Captain Harrik Vintur",
+        "given": "Harrik",
+        "office": "Captain of the Fortress Line",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "old_guard",
+          "defensive_doctrine"
+        ],
+        "role": "Has served on every fort of the line and holds that no wall of the march has fallen in his lifetime because none has been tried.",
+        "portrait": "A grizzled captain in grey mail behind a tower shield.",
+        "canon": "P",
+        "formerName": "Captain Harro Vint (Molot tree)"
+      },
+      {
+        "id": "zin_regional_molot_agnolf",
+        "name": "Agnolf of Knorvik",
+        "given": "Agnolf",
+        "office": "Captain of Knorvik",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the few ships of the harbour the margraves took in 4A 980 and keeps them ready to carry the margrave's envoys south.",
+        "portrait": "A young captain in a grey sea-cloak.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KER",
+    "key": "keredor_hellekton",
+    "name": "Keredor-Hellekton",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "KER_zin_ruler",
+      "name": "King Ormar",
+      "given": "Ormar",
+      "house": "the house of Vigda and Helmund",
+      "title": {
+        "native": "Aar",
+        "english": "King of Keredor and Hellekton"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6752,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_twin_crowns",
+        "zin_trait_truce_maker"
+      ],
+      "bio": "Ormar is the heir whose two coronations of 4A 1702 settled the quarrel of the old halls: he was crowned in Keredor at noon, rode through the night over the pass of Belg and was crowned again in Hellekton at dawn. He has held the double crown and the pass between them ever since, kept faith with the Leren Compact that the double crown joined after Nuadoso burned, and never once let either hall feel the lesser. He is old now, and the coast talks quietly of what will happen if his heir is crowned in one hall and not the other.",
+      "portrait": {
+        "appearance": "An old, upright king with a long white beard.",
+        "dress": "Two narrow crowns worn one above the other and a riding cloak lined with seal fur.",
+        "colours": "Strait blue (#2a5a82), sail white (#e8e6dc), sea mist (#9fb4c4)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "id": "zin_keredor_hellekton_helvarik",
+      "name": "Prince Helvarik",
+      "given": "Helvarik",
+      "office": "Heir of the Two Halls",
+      "gender": "male",
+      "people": "men",
+      "born": 6783,
+      "role": "The king's son has been crowned in neither hall yet, and the two courts have already begun to argue about which shall have him first.",
+      "succession": "Each heir is crowned twice, once in each old hall, before taking the seat at Nuadoso.",
+      "portrait": "A middle-aged prince in a riding coat with two seal-rings.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_keredor_hellekton_ingya",
+        "name": "Ingya of Belg",
+        "given": "Ingya",
+        "office": "Warden of the Pass of Belg",
+        "gender": "female",
+        "people": "men",
+        "born": 6767,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the pass between the two coast crowns, which three generations fought over before the marriage of 4A 1344.",
+        "portrait": "A weathered woman in a hooded cloak with a pass-warden's horn.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_keredor_hellekton_agvald",
+        "name": "Agvald Nuadal, Steward of Nuadoso",
+        "given": "Agvald",
+        "office": "Steward of Nuadoso",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Rebuilt the shared seat's treasury after the burning and keeps two of everything, one for each hall.",
+        "portrait": "A careful steward with two ledgers.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_keredor_hellekton_ragmar",
+        "name": "Ragmar the Arbiter's Clerk",
+        "given": "Ragmar",
+        "office": "Envoy to the Arbitration Court",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the double crown's business to Eekedor's court, which married its founders and which it expects to settle the coming succession.",
+        "portrait": "A thin envoy in black with a case of judgements.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_keredor_hellekton_eirmund",
+        "name": "Eirmund of the Burned Seat",
+        "given": "Eirmund",
+        "office": "Captain of the Coast Ships",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "bold"
+        ],
+        "role": "Commands the coast ships and wants nothing more than to sail against the Dark Shore and avenge Nuadoso.",
+        "portrait": "A fierce captain with a burned-ship badge on his coat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_keredor_hellekton_astrya",
+        "name": "Astrya Belgsdot, Captain of the Two Crowns' Host",
+        "given": "Astrya",
+        "office": "Captain of the Two Crowns' Host",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Leads the host that both halls muster together, and is careful to ride half the year with each.",
+        "portrait": "A young woman in mail with two badges on her shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SNS",
+    "key": "sensai",
+    "name": "Sensai",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "SNS_zin_ruler",
+      "name": "Queen Vigild Agtos",
+      "given": "Vigild",
+      "house": "the Agtos kings of the vale",
+      "title": {
+        "native": "Aarna",
+        "english": "Queen of Sensai"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6770,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_lawspeaker",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Vigild of the Agtos was confirmed by the landholders' council in 4A 1736, the first queen of the long vale in four reigns. Sensai's timber and pine tar have kept the strait fleets afloat since 4A 1290, and she sells them to the High Crown as a partner and not as a subject, which she reminds Sonargur of whenever its envoys forget. She is proud, careful with money and quicker to answer a request than an order.",
+      "portrait": {
+        "appearance": "A tall, handsome woman with dark braids.",
+        "dress": "A forest-green gown, a crown of iron set with amber and a tar-merchant's seal at her girdle.",
+        "colours": "Tar brown (#7a6a54), pine green (#4e5e4a), birch pale (#c8bfa4)."
+      },
+      "canon": "P",
+      "formerName": "Lady Agniya of Sensai (characters spec, Sensai tree); Agniy is a hill crown of Heodwa"
+    },
+    "heir": {
+      "id": "zin_regional_sensai_tormik",
+      "name": "Tormik Agtos, Heir of the Long Vale",
+      "given": "Tormik",
+      "office": "Heir of the Long Vale",
+      "gender": "male",
+      "people": "men",
+      "born": 6795,
+      "role": "The queen's son serves with the strait fleets, as the younger sons of the Agtos have done for generations, though he is the elder.",
+      "succession": "The eldest child of the Agtos inherits, and the landholders' council confirms each heir.",
+      "portrait": "A young man in a sailor's coat over vale wool.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_sensai_kesh",
+        "name": "Steward Eirbrann Keshdal",
+        "given": "Eirbrann",
+        "office": "Steward of the Vale",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the landholders' dues and the crown's timber-rolls, and has never let a load of tar leave Goran unpaid.",
+        "portrait": "A grey steward with a tar-stained ledger.",
+        "canon": "P",
+        "formerName": "Steward Borislav Kesh (Sensai tree); not Leren"
+      },
+      {
+        "id": "zin_regional_sensai_orlan",
+        "name": "Ship-Master Runya Orlvik",
+        "given": "Runya",
+        "office": "Master of the Tar Ships",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the tar and timber ships out of Goran's fjord and sets the price of a mast for every shipwright in the North.",
+        "portrait": "A broad woman in a pitch-blackened apron with a mast-gauge.",
+        "canon": "P",
+        "formerName": "Ship-Master Veda Orlan (Sensai tree)"
+      },
+      {
+        "id": "zin_regional_sensai_vel",
+        "name": "Hall-Speaker Eirmar Holmsdal",
+        "given": "Eirmar",
+        "office": "Speaker of the Landholders",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Speaks for the landholders' council to the queen and for the queen to the other free crowns.",
+        "portrait": "A courteous man in a landholder's fur collar.",
+        "canon": "P",
+        "formerName": "Hall-Speaker Dmitar Vel (Sensai tree); not Leren"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_sensai_gord",
+        "name": "Hill-Captain Sigvar Gardik",
+        "given": "Sigvar",
+        "office": "Captain of the Hill-Forts",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer",
+          "winter_specialist"
+        ],
+        "role": "Keeps the hill-forts that crown the vale and beat off three raider hosts in the Raiding Years.",
+        "portrait": "A stocky captain in a fur-lined coat over mail.",
+        "canon": "P",
+        "formerName": "Voivode Stanek Gord (Sensai tree); voivode is a real-world title and Gord a former label in the Dark Lands"
+      },
+      {
+        "id": "zin_regional_sensai_gunnulf",
+        "name": "Gunnulf of Kerhil",
+        "given": "Gunnulf",
+        "office": "Captain of the Iron Hill",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Holds the iron hill of Kerhil and its mines and commands the vale's levy when the queen calls it.",
+        "portrait": "A heavy man with an iron-shod spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "TOL",
+    "key": "tolhon",
+    "name": "Tolhon",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "TOL_zin_ruler",
+      "name": "Princess Hilvi Ishor",
+      "given": "Hilvi",
+      "house": "the Ishor princes of Migur",
+      "title": {
+        "native": null,
+        "english": "Princess of the Onp Coast"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6776,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_port_master",
+        "zin_trait_lord_of_the_boats"
+      ],
+      "bio": "Hilvi of the Ishor inherited the coast and the isles from her father in 4A 1739 and keeps them as her line always has, by the tolls of the Sirtum bridge, the herring of the Onp and a careful distance from everyone else's quarrels. She keeps the summer-net ban that brought the herring back and says that a principality which can wait a generation for its fish can wait for anything.",
+      "portrait": {
+        "appearance": "A small, bright-eyed woman with silver-fair hair.",
+        "dress": "A fisher's blue wool coat, a coronet of twisted silver and a toll-bridge key at her belt.",
+        "colours": "Tar brown (#7a6a54), pine green (#4e5e4a), birch pale (#c8bfa4)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "id": "zin_tolhon_holvik",
+      "name": "Holvik Ishor, Heir of the Onp",
+      "given": "Holvik",
+      "office": "Heir of the Onp",
+      "gender": "male",
+      "people": "men",
+      "born": 6801,
+      "role": "The princess's son is learning the tolls of the Sirtum bridge from its keeper and the herring ban from the fishers.",
+      "succession": "The principality passes to the eldest child.",
+      "portrait": "A boy in a blue fisher's coat with a toll-token on a cord.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_tolhon_sirtum",
+        "name": "Brannvik of the Bridge",
+        "given": "Brannvik",
+        "office": "Keeper of the Sirtum Bridge",
+        "gender": "male",
+        "people": "men",
+        "born": 6761,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Takes the tolls of the stone bridge the dwarf masons rebuilt and still bars any Mustnom packman whose face he remembers from the brawl.",
+        "portrait": "A heavy toll-keeper with a strong-box and a club.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_tolhon_astvi",
+        "name": "Old Astvi of the Nets",
+        "given": "Astvi",
+        "office": "Keeper of the Herring Ban",
+        "gender": "female",
+        "people": "men",
+        "born": 6748,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the summer-net ban for the fishers of the Onp and fines her own grandsons when they break it.",
+        "portrait": "An old fisherwoman mending a net.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_tolhon_gunnolf",
+        "name": "Gunnolf the Watcher",
+        "given": "Gunnolf",
+        "office": "Warden of the Londolo Watch",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Keeps the watch over the western water towards Londolo and sends word of every strange sail to Migur.",
+        "portrait": "A lean watchman with a horn and a spyglass.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_tolhon_ashorn",
+        "name": "Ingvar of Ashorn",
+        "given": "Ingvar",
+        "office": "Captain of the Isle Ships",
+        "gender": "male",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the princess's few ships among the isles of the Onp and knows every channel between them.",
+        "portrait": "A young captain at the tiller of a fishing-boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_tolhon_runvi",
+        "name": "Runvi of Migur",
+        "given": "Runvi",
+        "office": "Captain of the Bridge Guard",
+        "gender": "female",
+        "people": "men",
+        "born": 6778,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Commands the guard of the Sirtum bridge and the harbour of Migur, which have seen nothing worse than a brawl in her time.",
+        "portrait": "A sturdy woman in a toll-guard's leather coat.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HEO",
+    "key": "heodwa_lands",
+    "name": "Heodwa Lands",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "HEO_zin_ruler",
+      "name": "King Ingmund of Nuatax",
+      "given": "Ingmund",
+      "house": "the crown of Nuatax",
+      "title": {
+        "native": null,
+        "english": "King of Nuatax, Speaker of the Hill Council"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6764,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "The three hill kings chose Ingmund of Nuatax to speak for the hills in 4A 1748, as they choose one of themselves each year at Pand. His valley is the one the dwarves came down to in 3A 1022, and he keeps the Hill Pact with Hrakbrund as a matter of family pride as well as policy. Every crown of the North knows that a war on Heodwa is a war on the dwarves, and Ingmund makes sure that none of them forgets it.",
+      "portrait": {
+        "appearance": "A stout hill king with a grey beard braided in two.",
+        "dress": "A crown of bronze, a cloak of undyed hill wool and a dwarf-made brooch of the Hill Pact.",
+        "colours": "Tar brown (#7a6a54), pine green (#4e5e4a), birch pale (#c8bfa4)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir to the council: at the next meeting in Pand the kings of Heodwa, Nuatax and Agniy choose a speaker again.",
+      "succession": "The three hill crowns keep their own kings; the council chooses one of them to speak for the hills each year."
+    },
+    "advisors": [
+      {
+        "id": "zin_heodwa_lands_elsrid",
+        "name": "Elsrid of Agniy",
+        "given": "Elsrid",
+        "office": "Queen of Agniy",
+        "gender": "female",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Queen of the third hill crown, who keeps the council's letters to the High Crown and the free crowns.",
+        "portrait": "A grey-eyed queen in hill wool with a bronze circlet.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_heodwa_lands_mulchy",
+        "name": "Torgur of the Mulchy Lands",
+        "given": "Torgur",
+        "office": "Voice of the Mulchy Lands",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Speaks for the peat-country the council took under its protection in 4A 1460 and keeps its peat-roads open in the wet months.",
+        "portrait": "A peat-cutter with a broad spade and a cheerful face.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_heodwa_lands_eirolf",
+        "name": "Eirolf the Gate-Friend",
+        "given": "Eirolf",
+        "office": "Envoy to the High Gate",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Carries the hill council's word to the dwarves' High Gate and is one of the few men there whom the dwarves greet by name.",
+        "portrait": "A grey man in a hill cloak with a dwarf-made axe.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_heodwa_lands_brannolf",
+        "name": "Brannolf of Heodwa",
+        "given": "Brannolf",
+        "office": "King of Heodwa",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "King of the first hill crown, who would lead the hills' levies while the dwarves came down.",
+        "portrait": "A hill king in bronze mail with a horn.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_heodwa_lands_elrun",
+        "name": "Elrun of the Valleys",
+        "given": "Elrun",
+        "office": "Captain of the Valley Watch",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the watch on the valleys the Order's raiders came up in the Third Age.",
+        "portrait": "A lean woman in grey wool with a bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HRA",
+    "key": "hrakbrund",
+    "name": "Hrakbrund",
+    "stance": "zin_wild_freeholds",
+    "stanceNote": "No countries.csv row (new realm); the builder's default for a realm without a row.",
+    "court": "standard",
+    "ruler": {
+      "id": "HRA_zin_ruler",
+      "name": "Lord Hradin Ilmord",
+      "given": "Hradin",
+      "house": "the Ilmord lords of the White Hall",
+      "title": {
+        "native": "Baur",
+        "english": "Lord of the White Hall"
+      },
+      "gender": "male",
+      "people": "dwarves",
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_hold_lord",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Hradin of the Ilmord line rules the White Hall under the snows of the High Mountains and receives men only at the High Gate. He keeps the Hill Pact with the three hill crowns as his line has kept it since 3A 806, sells iron, gold and bombards to whoever pays and has sold Sonargur's fleets more bombards than it likes to remember owing for. He receives no elf at his gate, and an elven envoy at the court of Sonargur is enough to cool him for a year.",
+      "portrait": {
+        "appearance": "A broad dwarf with a white-streaked black beard bound in iron rings.",
+        "dress": "A hold-lord's mantle of white wool over black mail and a chain of hammered gold.",
+        "colours": "Night stone (#2e3a45), snow white (#d8d8d0), old gold (#9a7a3a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir is known to men.",
+      "succession": "The lord of the eldest delving line rules; the hold does not tell men how its heirs are chosen."
+    },
+    "advisors": [
+      {
+        "id": "zin_hrakbrund_brommas",
+        "name": "Brommas Olmerm, Warden of the High Gate",
+        "given": "Brommas",
+        "office": "Warden of the High Gate",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the High Gate where men trade, weighs every load of iron himself and remembers every buyer who was late to pay.",
+        "portrait": "A grey-bearded dwarf at a gate-table with brass weights.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_hrakbrund_troskin",
+        "name": "Troskin Vornord, Master of the Bombards",
+        "given": "Troskin",
+        "office": "Master of the Bombards",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Casts the bombards that ride on the royal ships of the strait and tells no man how much powder they take.",
+        "portrait": "A soot-blackened dwarf smith with a powder-horn.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_hrakbrund_balkum",
+        "name": "Balkum Stombord, Elder of the Hill Pact",
+        "given": "Balkum",
+        "office": "Elder of the Hill Pact",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the oath of the Hill Pact and the memory of the day the hold came down into Nuatax.",
+        "portrait": "A very old dwarf with a beard to his knees and a bronze oath-tablet.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_hrakbrund_hekkar",
+        "name": "Hekkar Durnord, Captain of the Pact Host",
+        "given": "Hekkar",
+        "office": "Captain of the Pact Host",
+        "gender": "male",
+        "people": "dwarves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 4,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer",
+          "unyielding_defender"
+        ],
+        "role": "Would lead the dwarves down from their mountains under the Hill Pact, the only dwarf host that has left its hold in an age.",
+        "portrait": "A heavy dwarf in black plate with a war-hammer.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_hrakbrund_malkis",
+        "name": "Malkis Kramerm, Warden of the Loso Heights",
+        "given": "Malkis",
+        "office": "Warden of the Loso Heights",
+        "gender": "female",
+        "people": "dwarves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Keeps the forts of the Loso heights and the roads the Hill Pact binds the hold to keep open.",
+        "portrait": "A dwarf woman in mail with a crossbow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "MIA",
+    "key": "mina",
+    "name": "Mina",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "MIA_zin_ruler",
+      "name": "King Valdik Korn",
+      "given": "Valdik",
+      "house": "the Korn kings of the Delvings",
+      "title": {
+        "native": "Aar",
+        "english": "King of the Delvings"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6768,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_mine_king",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Valdik of the Korn worked his season in the galleries, as every king has done since the gallery fall of 4A 1567, and was crowned at Gilvian in 4A 1735. He sells the iron of the Delvings to the strait fleets and the forges of the North, holds the sister crown of Mine Din by the old marriage and keeps one eye on Aenor's buyers across the strait. He still goes down the galleries once a year, and his miners like him the better for it.",
+      "portrait": {
+        "appearance": "A broad, heavy-handed man with a grey-flecked black beard.",
+        "dress": "A miner's leather coat under a king's red mantle and a crown of plain iron.",
+        "colours": "Tar brown (#7a6a54), pine green (#4e5e4a), birch pale (#c8bfa4)."
+      },
+      "canon": "P",
+      "formerName": "Lord Etonar of Mina (characters spec, Mina tree); Etonia is the realm's ore hills"
+    },
+    "heir": {
+      "id": "zin_regional_mina_agnid",
+      "name": "Princess Agnid",
+      "given": "Agnid",
+      "office": "Heir of the Delvings",
+      "gender": "female",
+      "people": "men",
+      "born": 6796,
+      "role": "The king's daughter is working her season in the Delvings this year and has already been carried up once with a broken arm.",
+      "succession": "The eldest child of the Korn inherits after working a season in the galleries.",
+      "portrait": "A young woman in a miner's hood with a lamp and a sling on one arm.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_mina_marsh",
+        "name": "Delve-Reeve Ostild Mardal",
+        "given": "Ostild",
+        "office": "Reeve of the Delvings",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Runs the galleries of the Delvings and the ore-roads to Fargur and Thowson.",
+        "portrait": "A strong woman in a miner's hood with a reeve's tally.",
+        "canon": "P",
+        "formerName": "Delve-Reeve Ottila Marsh (Mina tree)"
+      },
+      {
+        "id": "zin_regional_mina_kolm",
+        "name": "Smelt-Master Eirvald Kolmur",
+        "given": "Eirvald",
+        "office": "Master of the Smelters",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the smelters of Mine Din and sells their iron to whoever the king allows, at a price the king does not always hear.",
+        "portrait": "A sooty, red-faced smelter with leather gauntlets.",
+        "canon": "P",
+        "formerName": "Smelt-Master Ivar Kolm (Mina tree); Ivar is a real-world name"
+      },
+      {
+        "id": "zin_regional_mina_ruud",
+        "name": "Old Warden Ragnur",
+        "given": "Ragnur",
+        "office": "Old Warden of the Galleries",
+        "gender": "male",
+        "people": "men",
+        "born": 6749,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Survived the gallery fall of 4A 1567 as a boy carrying water and has kept the galleries' rescue-men ever since.",
+        "portrait": "An old miner with a scarred face and a rescue-rope.",
+        "canon": "P",
+        "formerName": "Old Warden Hagen Ruud (Mina tree); Hagen is a real-world name"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_mina_varn",
+        "name": "Captain Ostvis Varnik",
+        "given": "Ostvis",
+        "office": "Captain of the Ore Hills",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Leads the miners' levy, who fight as they dig, in tunnels and in short, hard rushes.",
+        "portrait": "A wiry woman with a miner's pick and a round shield.",
+        "canon": "P",
+        "formerName": "Captain Lisbet Varn (Mina tree); Lisbet is a real-world name and Varn a Kradlon tree surname"
+      },
+      {
+        "id": "zin_regional_mina_thowson",
+        "name": "Sigmur of Thowson",
+        "given": "Sigmur",
+        "office": "Warden of Mine Din",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Holds the sister crown's hills for the king and would feed a host from the Delvings' stores.",
+        "portrait": "A heavy man in mail with an ore-sack badge.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DOL",
+    "key": "dolpar",
+    "name": "Dolpar",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "DOL_zin_ruler",
+      "name": "Judge Maelvi of the Hold",
+      "given": "Maelvi",
+      "title": {
+        "native": null,
+        "english": "Presiding Judge of the Lake-Court"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6769,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_lawspeaker"
+      ],
+      "bio": "The judges of the five lake towns chose Maelvi, the Hold's judge, to preside over the lake-court at Parur for the year of 4A 1748, as the Hold's judge is chosen more often than any other. She is proud of the Judgement of the Mills, which two hill crowns obeyed, and she would dearly like the toll quarrel between Sonargur and Parim to come to her court rather than to the counting houses of Eekedor.",
+      "portrait": {
+        "appearance": "A tall, severe woman with grey hair under a judge's cap.",
+        "dress": "A black robe with a lake-blue collar and a judge's rod of bog-oak.",
+        "colours": "Tar brown (#7a6a54), pine green (#4e5e4a), birch pale (#c8bfa4)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the judges choose a presiding judge again at the year's end.",
+      "succession": "Each lake town sends a judge to the lake-court, and the judges choose one of themselves to preside for a year."
+    },
+    "advisors": [
+      {
+        "id": "zin_dolpar_stork",
+        "name": "Hegin of Stork",
+        "given": "Hegin",
+        "office": "Judge of Stork",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "The second judge of the lake-court, who writes down every judgement and every reason, and sends copies to Eekedor to annoy the counting houses.",
+        "portrait": "A thin judge with a quill behind his ear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dolpar_maelda",
+        "name": "Maelda of Cinargo",
+        "given": "Maelda",
+        "office": "Mistress of the Lake Market",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the lake market of Parur and the boats that carry its trade between the five towns.",
+        "portrait": "A cheerful market-woman with a boat-hook and a purse.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dolpar_gunnmar",
+        "name": "Gunnmar of the Walls",
+        "given": "Gunnmar",
+        "office": "Keeper of the Town Walls",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the walls the lake towns built in the Raiding Years and the town guards who man them.",
+        "portrait": "A burly man in a town guard's helmet.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_dolpar_solenkovi",
+        "name": "Gunnvi of Solenkovi",
+        "given": "Gunnvi",
+        "office": "Captain of the Lake Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the armed boats of the lake, which have never sailed beyond it.",
+        "portrait": "A young woman at the tiller of a lake-boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dolpar_brandmund",
+        "name": "Brandmund of the Lake Ring",
+        "given": "Brandmund",
+        "office": "Captain of the Town Guards",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Leads the guards of the five towns together, which is harder than leading them against anyone.",
+        "portrait": "A grey captain in town mail with five badges on his shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "MUS",
+    "key": "mustnom",
+    "name": "Mustnom",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "MUS_zin_ruler",
+      "name": "Snokust, Boss of Krakur",
+      "given": "Snokust",
+      "title": {
+        "native": "Gak",
+        "english": "Boss of Krakur"
+      },
+      "gender": "male",
+      "people": "dwarf_goblins",
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Snokust took the iron seat of Krakur in 4A 1739 and with it the cave's name, which every boss of Krakur bears in office, and so he is first among the bosses of the southern hills. He gives the iron to the smiths, sends the packmen out on the long road and lives on what they bring back. Northern towns welcome his goods and lock their doors, and the court of Sonargur has listened to his pedlars since they brought word of a landing three days before the king's own riders.",
+      "portrait": {
+        "appearance": "A squat, broad-nosed dwarf goblin with a heavy jaw and small sharp eyes.",
+        "dress": "A pack-strap worn like a sash, an iron boss-ring and a coat sewn from a dozen traded cloths.",
+        "colours": "Road brown (#5a4a3a), pack green (#7a8a4a), brass (#c0a060)."
+      },
+      "canon": "P",
+      "note": "Dwarf goblins: no birth year, since their kinship and lifespan are not settled. In office he is called Krakur, like every boss of that cave (histories); his own name is used here so that no ruler is shown by a place name."
+    },
+    "heir": {
+      "note": "No heir: the next boss of Krakur is whoever takes the cave.",
+      "succession": "Each cave obeys its boss; whoever takes the cave of Krakur becomes first among the bosses."
+    },
+    "advisors": [
+      {
+        "id": "zin_mustnom_knuta",
+        "name": "Knuta of the Long Road",
+        "given": "Knuta",
+        "office": "Mistress of the Packmen",
+        "gender": "female",
+        "people": "dwarf_goblins",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Sends the packmen out along the long road across the island and keeps the list of which towns lock their doors and which only lock their cellars.",
+        "portrait": "A tough dwarf goblin woman with a laden pack and a walking-stick.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mustnom_gurtak",
+        "name": "Gurtak the Ear",
+        "given": "Gurtak",
+        "office": "Gatherer of News",
+        "gender": "male",
+        "people": "dwarf_goblins",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Collects what the packmen hear on the roads and sells the best of it to Sonargur.",
+        "portrait": "A sly dwarf goblin with an ear-ring of beaten brass.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mustnom_skrota",
+        "name": "Skrota Iron-Giver, Keeper of the Iron Store",
+        "given": "Skrota",
+        "office": "Keeper of the Iron Store",
+        "gender": "female",
+        "people": "dwarf_goblins",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the store of iron at Krakur that the boss gives out to the smiths, and knows which smith owes what.",
+        "portrait": "A broad dwarf goblin woman with a key on a chain.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_mustnom_trusk",
+        "name": "Truskom of the Ridge",
+        "given": "Truskom",
+        "office": "Boss of the Solondor Caves",
+        "gender": "male",
+        "people": "dwarf_goblins",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 3
+        },
+        "traits": [
+          "trickster",
+          "hill_fighter"
+        ],
+        "role": "Boss of the caves under the Solondor ridge, who knows every path a packman has ever used to get away.",
+        "portrait": "A wiry dwarf goblin with a cudgel and a pack.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mustnom_vurmak",
+        "name": "Vurmak the Brawler",
+        "given": "Vurmak",
+        "office": "Captain of the Road-Guards",
+        "gender": "male",
+        "people": "dwarf_goblins",
+        "type": "field_marshal",
+        "skill": {
+          "level": 1,
+          "attack": 2,
+          "defense": 1,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_reckless"
+        ],
+        "role": "Led the packmen who beat the toll-keepers at Sirtum and ran, and has been in charge of the road-guards ever since.",
+        "portrait": "A thick-set dwarf goblin with a broken nose and a grin.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]

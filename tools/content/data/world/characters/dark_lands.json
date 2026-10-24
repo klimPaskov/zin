@@ -1,0 +1,2483 @@
+[
+  {
+    "tag": "GOL",
+    "key": "goldoroth",
+    "name": "Goldoroth",
+    "stance": "zin_dom_conquest",
+    "court": "great",
+    "ruler": {
+      "id": "GOL_zin_ruler",
+      "name": "Warking Gorduth",
+      "given": "Gorduth",
+      "house": "acclaimed by the moot of the four clan blocs",
+      "title": {
+        "native": "Karg",
+        "english": "Warking of Goldoroth"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6772,
+      "stance": "zin_dom_conquest",
+      "traits": [
+        "zin_trait_warking",
+        "zin_trait_war_party"
+      ],
+      "bio": "The chiefs of the four clan blocs acclaimed Gorduth Warking at the Fire-Mountain in 4A 1739, after he broke the last Warking in the ring at Sungodor and let him live to serve, as the ring allows. He rules some half a million orcs from the forge-city of Cocanoor, takes the Iron Yoke's tribute from the Dark Gate and wants the whole of the Dark Lands, which he has not quite the strength to take. His siege forges cast bombards with powder bought from Burnikit, and the envoys of the Southern Dominion are received at his court and sent home with gifts.",
+      "portrait": {
+        "appearance": "A huge, heavy-jawed orc with grey-black skin, small red-brown eyes and broken tusks.",
+        "dress": "Armour of volcanic black iron, a Warking's crown of riveted iron spikes and a cloak of ash-grey wolf hide.",
+        "colours": "Basalt black (#2a2a2e), lava red (#a83a26), ash grey (#7a7a74)."
+      },
+      "canon": "H",
+      "formerName": "Warking Gorduth of Cocanoor (characters spec)"
+    },
+    "heir": {
+      "note": "No heir: the Great Moot may name a bloc's chief as heir (zin_goldoroth.2), and otherwise the next Warking is whoever breaks Gorduth in the ring.",
+      "succession": "Not a family: the moot of the four clan blocs acclaims each Warking, who holds the throne until a stronger challenger breaks him in the ring."
+    },
+    "advisors": [
+      {
+        "id": "zin_goldoroth_bredo",
+        "name": "Bredo the Fire-Speaker",
+        "given": "Bredo",
+        "office": "Fire-Speaker of the Fire-Mountain",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6754,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "The greatest of the volcano shamans, who keeps the fire under Cocanoor that never goes out and speaks for the Warking before the mountain.",
+        "portrait": "An old orc shaman with an ash-marked face, a staff of fused black glass and a coal-pot.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_goldoroth_sungor",
+        "name": "Sungor of the Volcano Clans",
+        "given": "Sungor",
+        "office": "Chief of the Volcano Clans",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "Chief of the Volcano Clans, the first of the four blocs, who wants the rites kept and the Fire-Mountain honoured before any war is begun.",
+        "portrait": "An orc clan chief in red-lacquered iron with ash in his braids.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_goldoroth_ulgra",
+        "name": "Forge-Mistress Ulgra",
+        "given": "Ulgra",
+        "office": "Chief of the Iron Clans",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_forge_mistress"
+        ],
+        "role": "Chief of the Iron Clans and mistress of Cocanoor's siege forges, who wants forges, trade and tithes and knows that a war without powder is a short one.",
+        "portrait": "A broad orc woman in a scorched leather forge-apron with iron tongs.",
+        "canon": "S",
+        "definedBy": "Dark Lands mechanic (character table, zin_goldoroth_ulgra; trait zin_trait_forge_mistress)"
+      },
+      {
+        "id": "zin_goldoroth_tithe",
+        "name": "Gnashug the Iron-Reckoner",
+        "given": "Gnashug",
+        "office": "Reckoner of the Iron Yoke",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Weighs the iron the tributary holds pay each year at Cocanoor and confirms their new chiefs' names in the Warking's roll.",
+        "portrait": "A one-eyed orc with an iron balance and a tally-chain.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_goldoroth_gifts",
+        "name": "Bolga Gift-Bearer, Bearer of the Warking's Gifts",
+        "given": "Bolga",
+        "office": "Bearer of the Warking's Gifts",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6780,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the Warking's gifts and threats to the free holds, usually in the same sack.",
+        "portrait": "A sly orc woman with a laden pack and a bone-handled knife.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_goldoroth_britag",
+        "name": "Warchief Britag",
+        "given": "Britag",
+        "office": "Chief of the War-Clans",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6770,
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 5,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "offensive_doctrine"
+        ],
+        "role": "Chief of the War-Clans, the bloc that wants raids, war and spoils, and the likeliest orc in Goldoroth to break the Warking in the ring one day.",
+        "portrait": "A massive orc warchief in a spiked helm with a two-handed cleaver.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_goldoroth_snikkit",
+        "name": "Nubrik Many-Knives, Chief of the Goblin Warrens",
+        "given": "Nubrik",
+        "office": "Chief of the Goblin Warrens",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6783,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "trickster"
+        ],
+        "role": "Chief of the Goblin Warrens under the Goldoroth Mountains, who wants a voice at the moot and a share of the spoils and carries a knife for every promise he has been made.",
+        "portrait": "A small, grinning goblin festooned with knives.",
+        "canon": "P",
+        "formerName": "Snikkit Many-Knives (Dark Lands mechanic); Snikkit is the histories' first Big Snik of Burnikit",
+        "definedBy": "Dark Lands mechanic (character table, zin_goldoroth_snikkit)"
+      },
+      {
+        "id": "zin_goldoroth_kargash",
+        "name": "Kargash of the Bombards",
+        "given": "Kargash",
+        "office": "Master of the Bombards",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine",
+          "harsh_leader"
+        ],
+        "role": "Commands the bombards that broke Dondor's southern stockades in his grandfather's day and wants to see them break something new.",
+        "portrait": "A soot-blackened orc beside a bronze bombard, a match-cord in his fist.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_goldoroth_rask",
+        "name": "Rask Black-Sail, Captain of the Corsairs",
+        "given": "Rask",
+        "office": "Captain of the Corsairs",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6781,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "maneuvering": 3,
+          "coordination": 1
+        },
+        "traits": [
+          "bold"
+        ],
+        "role": "A corsair captain of the Sea of Darkness who would take the Warking's gold to raid the Accord's shipping.",
+        "portrait": "A scarred orc corsair under a black sail with a hooked blade.",
+        "canon": "S",
+        "definedBy": "Dark Lands mechanic (character table, zin_goldoroth_rask)",
+        "recruit": "Hidden until the Goldoroth tree focus The Black-Sail Corsairs.",
+        "note": "His byname echoes Hanei of the Black Sail, Santon's founder (histories); kept because the focus is named after it."
+      }
+    ],
+    "figures": [
+      {
+        "id": "zin_goldoroth_skarash",
+        "name": "Skarash, Fire-Speaker of the Iron Clans",
+        "given": "Skarash",
+        "office": "Fire-Speaker of the Iron Clans",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6777,
+        "role": "A heat-reader of an iron hold in the Goldoroth Mountains who reads heat in forge and mountain and is courted by the Southern Dominion's envoys.",
+        "portrait": "A lean orc with burn-scarred hands and a coal-red stone on a thong.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)",
+        "recruit": "Not recruited at the start: a rival of Bredo at the Warking's court and a heat-reader of his iron hold, reached by the Volgan envoy events."
+      }
+    ]
+  },
+  {
+    "tag": "DND",
+    "key": "dondor",
+    "name": "Dondor",
+    "stance": "zin_dom_warlord",
+    "court": "story",
+    "ruler": {
+      "id": "DND_zin_ruler",
+      "name": "King Dunmar",
+      "given": "Dunmar",
+      "house": "the Gulung",
+      "title": {
+        "native": "Ark",
+        "english": "Brute-King of Dondor"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6767,
+      "stance": "zin_dom_warlord",
+      "traits": [
+        "zin_trait_brute_king",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "The clan-moot chose Dunmar of the Gulung as Brute-King in 4A 1735, because the Gulung were the strongest line of the moment and Dunmar was the strongest of the Gulung. He leads the Dark Sea Accord with the sea orcs of Belonton, keeps the beacon towers manned on every hill of the plain and a few dear powder-pieces in them, and needs the free holds' iron more than he likes to admit. The spears of the men who closed the Burning Gate hang in his hall, and he swears by them.",
+      "portrait": {
+        "appearance": "A huge, broad-faced man with a shaved head and a black beard in two plaits.",
+        "dress": "Heavy iron scale, a bear-fur mantle and the bar of hearth-iron that is his house's oath worn on a chain.",
+        "colours": "Iron dark (#3a3a3e), rust brown (#7a4a2a), ash grey (#a8a8a0)."
+      },
+      "canon": "H",
+      "formerName": "King Dunmar of Dondor (characters spec)"
+    },
+    "heir": {
+      "note": "No heir: the moot will choose from the Barand, the Gulung or the Urdung, whichever is strongest when Dunmar dies.",
+      "succession": "The clan-moot chooses each king from the strongest line of the moment."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_dondor_gethra",
+        "name": "Beraga Ironjaw, Beacon-Warden",
+        "given": "Beraga",
+        "office": "Warden of the Beacons",
+        "gender": "female",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the beacon towers on every hill of the plain, so that the whole kingdom can be called to arms in a night.",
+        "portrait": "A broad woman with an iron jaw-guard and a torch-pole.",
+        "canon": "P",
+        "formerName": "Gethra Ironjaw (Dark Lands tree); Dondric has no th"
+      },
+      {
+        "id": "zin_regional_dondor_wenna",
+        "name": "Zilka Saltbrow, Envoy to the Straits",
+        "given": "Zilka",
+        "office": "Envoy to the Straits",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the Brute-King's word to Notle, Sonargur and Parim, and is the reason the Accord still holds after a bad year.",
+        "portrait": "A weathered woman with salt-white eyebrows and a sea-cloak.",
+        "canon": "P",
+        "formerName": "Wenna Saltbrow (Dark Lands tree); not Dondric"
+      },
+      {
+        "id": "zin_regional_dondor_harl",
+        "name": "Old Grimak of the Marches",
+        "given": "Grimak",
+        "office": "Speaker for the War",
+        "gender": "male",
+        "people": "men",
+        "born": 6750,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "Has fought on the southern march since boyhood and argues at every moot that the Accord should strike Goldoroth before Goldoroth strikes it.",
+        "portrait": "A one-armed old brute with a war-axe across his knees.",
+        "canon": "P",
+        "formerName": "Old Harl of the Marches (Dark Lands tree); Harl was also a Coldor tree name"
+      },
+      {
+        "id": "zin_regional_dondor_borgun",
+        "name": "Borgun, Iron-Keeper of Notbuton",
+        "given": "Borgun",
+        "office": "Keeper of the Hearth-Iron",
+        "gender": "male",
+        "people": "men",
+        "born": 6759,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Keeps the hall's hearth-iron and quenches the beacon forges' ward-bars in essence, a craft that is in the iron and not in him, as he tells anyone who asks.",
+        "portrait": "A grey brute smith with a bar of dark iron and a quenching-bucket.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
+      },
+      {
+        "id": "zin_regional_dondor_dagna",
+        "name": "Dagna Urdung, Keeper of the Blood-Price",
+        "given": "Dagna",
+        "office": "Keeper of the Blood-Price",
+        "gender": "female",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Sets the blood-prices the clan-moot demands and pays, and keeps the treasury that groans every time the powder-pieces need feeding.",
+        "portrait": "A stern woman with iron bars stacked in a chest beside her.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_dondor_draga",
+        "name": "Captain Draga Gollun",
+        "given": "Draga",
+        "office": "Captain of the March",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Commands the brutes on the southern march, where raiders cross in summer and blood-prices are paid in winter.",
+        "portrait": "A tall woman brute in iron scale with a heavy spear.",
+        "canon": "P",
+        "formerName": "Captain Draga Hollin (Dark Lands tree); Dondric has no h"
+      },
+      {
+        "id": "zin_regional_dondor_bargul",
+        "name": "Bargul of the Barand",
+        "given": "Bargul",
+        "office": "Marshal of the Clan-Moot",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "unyielding_defender",
+          "defensive_doctrine"
+        ],
+        "role": "Of the old Barand line, he would hold the walls of Notbuton and the beacon hills while the Accord's friends came across the straits.",
+        "portrait": "A grizzled brute in heavy iron with a tower shield.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_dondor_zulmok",
+        "name": "Murdag of the Fens",
+        "given": "Murdag",
+        "office": "Captain of the Fen Brutes",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "Leads the brutes of the lower Giant River fens, who know the reed-paths almost as well as the orcs of Dreson.",
+        "portrait": "A mud-spattered brute with a fen-spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_dondor_moal",
+        "name": "Urra of Notbuton",
+        "given": "Urra",
+        "office": "Captain of the Accord Ships",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 3
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands Dondor's few ships on the Sea of Darkness and sails beside Belonton's sea orcs as often as the Accord asks.",
+        "portrait": "A sturdy woman captain with an iron-shod boat-hook.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DRK",
+    "key": "dark_gate",
+    "name": "Dark Gate",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "DRK_zin_ruler",
+      "name": "Gate-Chief Ghorlak",
+      "given": "Ghorlak",
+      "house": "the gate-chiefs of Doldes",
+      "title": {
+        "native": null,
+        "english": "Gate-Chief of Doldes"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6775,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_pass_lord",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "Ghorlak broke the last gate-chief in the ring at Doldes in 4A 1742, and the Warking confirmed him as the Iron Yoke requires. He tolls every caravan that passes the gate-fort at the foot of the Goldoroth Mountains and pays Cocanoor its iron from the toll, and he tolled the Southern Dominion's envoys like any other caravan, which they found less amusing than he did.",
+      "portrait": {
+        "appearance": "A rangy, scarred orc with a toll-chain of iron rings across his chest.",
+        "dress": "A gate-chief's black cloak and an axe notched for every challenger he has broken.",
+        "colours": "Basalt black (#2a2a2e), lava red (#a83a26), ash grey (#7a7a74)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the next gate-chief is whoever breaks Ghorlak in the ring and is confirmed by Cocanoor.",
+      "succession": "A gate-chief holds the gate-fort until a stronger challenger breaks him in the ring; the Warking confirms each new chief."
+    },
+    "advisors": [
+      {
+        "id": "zin_dark_gate_toll",
+        "name": "Krazga Toll-Wife, Keeper of the Toll",
+        "given": "Krazga",
+        "office": "Keeper of the Toll",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6779,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Counts every caravan's toll at the gate and sets aside Cocanoor's share before the chief can spend it.",
+        "portrait": "A sharp-eyed orc woman with a toll-box of black iron.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dark_gate_pass",
+        "name": "Krumbag of Bold",
+        "given": "Krumbag",
+        "office": "Warden of Bold's Border",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6772,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the hold's warriors on Bold's border, where the southern road leaves the mountains.",
+        "portrait": "A stocky orc warrior with a round iron shield.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dark_gate_envoys",
+        "name": "Mugrash the Listener",
+        "given": "Mugrash",
+        "office": "Watcher of the Southern Envoys",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Watches every envoy who passes the gate from the south and tells the chief, and sometimes Cocanoor, what they carried.",
+        "portrait": "A thin orc with large ears and a hooded cloak.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_dark_gate_gatefort",
+        "name": "Ruzgul of the Gate-Fort",
+        "given": "Ruzgul",
+        "office": "Captain of the Gate-Fort",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 4,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "unyielding_defender",
+          "trait_mountaineer"
+        ],
+        "role": "Holds the gate-fort itself and has never let a caravan through without its toll.",
+        "portrait": "A heavy orc in iron behind a gate of black timber.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dark_gate_road",
+        "name": "Zagra of the South Road",
+        "given": "Zagra",
+        "office": "Captain of the Road-Riders",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6782,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Rides the southern road on a shaggy wolf-horse and brings back caravans that tried to go round the gate.",
+        "portrait": "An orc woman rider with a hooked spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BUN",
+    "key": "burnikit",
+    "name": "Burnikit",
+    "stance": "zin_wild_freeholds",
+    "stanceNote": "No countries.csv row (new realm); the builder's default for a realm without a row.",
+    "court": "standard",
+    "ruler": {
+      "id": "BUN_zin_ruler",
+      "name": "Big Snik Skritix",
+      "given": "Skritix",
+      "title": {
+        "native": "Snikbak",
+        "english": "Big Snik of Burnikzig"
+      },
+      "gender": "male",
+      "people": "goblins",
+      "born": 6780,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_big_snik",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Skritix is the loudest and cleverest boss the warrens of Burnikzig will follow, and so he is Big Snik, and he owes nothing to any hobgoblin king. His goblins make the best burning powder in the Dark Lands from the volcano's yellow crusts and the saltpetre of their caves, and he sells it to whoever pays most, which in 4A 1748 is usually Goldoroth. He sold to Dondor once in the same year as to Cocanoor and charged Dondor more, and he still tells the story.",
+      "portrait": {
+        "appearance": "A wiry, sharp-faced goblin with yellow-stained fingers and a wide grin.",
+        "dress": "A coat sewn with brass buttons, a powder-flask on every strap and a Big Snik's lamp-crown.",
+        "colours": "Moss green (#5a6a3a), tunnel dark (#3a3a2a), lamp yellow (#c8b868)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: when Skritix dies or is shouted down, the warrens follow whichever boss is loudest and cleverest.",
+      "succession": "Each Big Snik is the loudest and cleverest boss the warrens will follow."
+    },
+    "advisors": [
+      {
+        "id": "zin_burnikit_powder",
+        "name": "Blikka the Powder-Wife",
+        "given": "Blikka",
+        "office": "Mistress of the Powder Caves",
+        "gender": "female",
+        "people": "goblins",
+        "born": 6777,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Runs the caves where the yellow crusts are ground and mixed, and has the burns to show she knows the recipe better than anyone.",
+        "portrait": "A goblin woman with singed hair and a mortar on her hip.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_burnikit_lamp",
+        "name": "Duskit Lamp-Keeper, Keeper of the Great Lamp",
+        "given": "Duskit",
+        "office": "Keeper of the Great Lamp",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the great lamp in the hall of fire that has not gone out since the first Big Snik lit it.",
+        "portrait": "An old goblin with a lamp-hook and a leather hood.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_burnikit_liar",
+        "name": "Zwikkit Two-Tongues, Speaker to Buyers",
+        "given": "Zwikkit",
+        "office": "Speaker to Buyers",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6784,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Sells the powder to Cocanoor and to Notbuton and tells each that the other pays more, which is sometimes true.",
+        "portrait": "A grinning goblin with two purses.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_burnikit_tunnel",
+        "name": "Ripkit of the Deep Ways",
+        "given": "Ripkit",
+        "office": "Captain of the Tunnels",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ambusher",
+          "trickster"
+        ],
+        "role": "Knows the deep ways the warrens opened to the Necromancer and closed again, and would close them on anyone else.",
+        "portrait": "A small goblin with a lamp and a coil of rope in a tunnel mouth.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_burnikit_guards",
+        "name": "Grub the Hauler",
+        "given": "Grub",
+        "office": "Captain of the Hobgoblin Guards",
+        "gender": "male",
+        "people": "hobgoblins",
+        "born": 6772,
+        "type": "field_marshal",
+        "skill": {
+          "level": 1,
+          "attack": 2,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "old_guard"
+        ],
+        "role": "Leads the few hobgoblins who guard the warrens and haul their stone, and has never wanted to be a king.",
+        "portrait": "A big, slow hobgoblin carrying a block of stone.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "VES",
+    "key": "veshazel",
+    "name": "Veshazel",
+    "stance": "zin_shadow_dread",
+    "stanceNote": "No countries.csv row (new realm); the builder's default for demons. Its pacts would fit zin_shadow_worship as well (owner question).",
+    "court": "standard",
+    "ruler": {
+      "id": "VES_zin_ruler",
+      "name": "Lord Thazael",
+      "given": "Thazael",
+      "title": {
+        "native": "Zarkhan",
+        "english": "Lord of the Hall of Ash"
+      },
+      "gender": "male",
+      "people": "demons",
+      "stance": "zin_shadow_dread",
+      "traits": [
+        "zin_trait_pact_lord",
+        "zin_trait_refuser_of_crowns"
+      ],
+      "bio": "Thazael is the name the lord of Ozmath-Vesh gives at the courts of others; his pact-name is known only to his pact. He rules the hall of ash on the Goldoroth Ash Fields, a few hundred demons and the men and orcs who came to the ashes because they had nowhere else to go, and he is sworn to neither Volgan nor Goldoroth. When the Southern Dominion's envoys came to ask his oath in 4A 1650 he sent them home with gifts and without it, and they have come back every few years since to ask again.",
+      "portrait": {
+        "appearance": "A tall, horned demon lord with ember-red skin and eyes like banked coals, plainly not a man.",
+        "dress": "A robe of ash-grey silk over black iron and a pact-sigil burned into his palm.",
+        "colours": "Ash black (#2a1a1a), ember red (#a04020), bone pale (#b0b0a0)."
+      },
+      "canon": "H",
+      "secret": "His pact-name is never written; the pact itself is undefined."
+    },
+    "heir": {
+      "note": "No heir is known.",
+      "succession": "Pact-lords with hidden pact-names hold the hall; how the hall passes is the pact's business."
+    },
+    "advisors": [
+      {
+        "id": "zin_veshazel_herald",
+        "name": "Vorrek the Pact-Herald",
+        "given": "Vorrek",
+        "office": "Herald of the Pact",
+        "gender": "male",
+        "people": "demons",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_pact_broker"
+        ],
+        "role": "Speaks the hall's bargains to anyone who comes to the ashes to make one, and is careful to say every word of the price.",
+        "portrait": "A thin, grey-horned demon with a scroll of scorched hide.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_veshazel_thralls",
+        "name": "Morven Dask, Reeve of the Thralls",
+        "given": "Morven",
+        "office": "Reeve of the Thralls",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "A man who fled his debts on the coast and came to the Ash Fields, and now keeps the thralls' rolls and the hall's few stores.",
+        "portrait": "A gaunt man in grey rags with an iron collar he wears by choice.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_veshazel_orcs",
+        "name": "Ghashra of the Ashes",
+        "given": "Ghashra",
+        "office": "Captain of the Orc Thralls",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6776,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Leads the orcs broken in the clan wars who swore to the hall, and she trusts the hall more than she ever trusted a clan.",
+        "portrait": "An orc woman with ash-grey warpaint and a heavy spear.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_veshazel_khorv",
+        "name": "Zarvath the Burning",
+        "given": "Zarvath",
+        "office": "Captain of the Hall",
+        "gender": "male",
+        "people": "demons",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 1
+        },
+        "traits": [
+          "trait_reckless",
+          "harsh_leader"
+        ],
+        "role": "The hall's captain, who lends fire and terror to whoever the pact names and never asks why.",
+        "portrait": "A demon wreathed in ember-smoke with a blade of black iron.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_veshazel_ash",
+        "name": "Ulgas of the Ash Fields",
+        "given": "Ulgas",
+        "office": "Warden of the Ash Fields",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6770,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 1
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the ash-roads and the thralls who would defend the hall's shore against Goldoroth.",
+        "portrait": "An ash-caked orc with a hooded face and a long axe.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BLK",
+    "key": "blackton",
+    "name": "Blackton",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "BLK_zin_ruler",
+      "name": "Moot-Speaker Bruna Gorvik",
+      "given": "Bruna",
+      "house": "a burgher house of Dontadur",
+      "title": {
+        "native": null,
+        "english": "Moot-Speaker of the Five Towns"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6771,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "The town moot at Dontadur chose Bruna as moot-speaker for the year of 4A 1748; she is a Dondric burgher's daughter married into a Leren shipping house, which is the five towns in one person. She sells Dondor's iron to the North, keeps the league out of the Accord's wars where she can and has to sit through the charter quarrel at every meeting, since the moot refused a lord's charter in 4A 1688 by a single voice and has argued about it ever since.",
+      "portrait": {
+        "appearance": "A broad, sharp-eyed woman with copper-brown hair.",
+        "dress": "A burgher's dark coat with a Leren blue lining and the moot-speaker's iron chain of five links.",
+        "colours": "Iron dark (#3a3a3e), rust brown (#7a4a2a), ash grey (#a8a8a0)."
+      },
+      "canon": "P",
+      "formerName": "Lord Haclton (characters spec, Blackton tree); Blackton is a league under a town moot, and Haclton reads as the realm's own name"
+    },
+    "heir": {
+      "note": "No heir: the moot chooses again at the year's end, unless it finally takes a lord's charter.",
+      "succession": "The town moot chooses a moot-speaker each year."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_blackton_ilse",
+        "name": "Ingra Korvald, Harbour-Reeve",
+        "given": "Ingra",
+        "office": "Harbour-Reeve of Dontadur",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the harbour of Dontadur where the Leren ships load Dondor's iron every season.",
+        "portrait": "A tall Leren-born woman with a harbour ledger.",
+        "canon": "P",
+        "formerName": "Ilse Corran (Dark Lands tree); Ilse is Lerendor's Ilse Relendion"
+      },
+      {
+        "id": "zin_regional_blackton_tobin",
+        "name": "Dalmar Gobalson, Keeper of the Charts",
+        "given": "Dalmar",
+        "office": "Keeper of the Charts",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the league's charts and its counting-house, and is the loudest voice in the moot for taking a lord's charter.",
+        "portrait": "A heavy man with a chart-case and a merchant's fur collar.",
+        "canon": "P",
+        "formerName": "Tobin Greywater (Dark Lands tree); not Dondric or Leren"
+      },
+      {
+        "id": "zin_regional_blackton_aldo",
+        "name": "Gurmok Dalvik, Master of the Walls",
+        "given": "Gurmok",
+        "office": "Master of the Walls",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the walls of the five harbour towns and the town guards who man them.",
+        "portrait": "A broad, bald man in town mail with a mason's hammer.",
+        "canon": "P",
+        "formerName": "Aldo Fenwick (Dark Lands tree); not Dondric or Leren"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_blackton_merrin",
+        "name": "Captain Maraga Oskvik",
+        "given": "Maraga",
+        "office": "Captain of the Town Ships",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the armed merchantmen of the five towns and keeps them out of the Accord's fights unless the moot says otherwise.",
+        "portrait": "A weather-beaten woman captain in a blue sea-coat.",
+        "canon": "P",
+        "formerName": "Captain Merrin Vael (Dark Lands tree); not Dondric or Leren"
+      },
+      {
+        "id": "zin_regional_blackton_guard",
+        "name": "Borgand of the Five Gates",
+        "given": "Borgand",
+        "office": "Captain of the Town Guards",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Commands the guards of the five towns together, which is mainly a matter of settling which town marches first.",
+        "portrait": "A stolid captain with five badges on his shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BLN",
+    "key": "belonton",
+    "name": "Belonton",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "BLN_zin_ruler",
+      "name": "Sea-Chief Rukhag of the Ghashak",
+      "given": "Rukhag",
+      "house": "the Ghashak",
+      "title": {
+        "native": null,
+        "english": "Sea-Chief of Notle"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6771,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_captains_blood",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "Rukhag of the Ghashak won the Sea-Chief's chair at Notle by bringing home a Leren ship whole, crew and cargo and all, which no sea orc had done in a generation. He keeps the Dark Sea Accord that his forebears swore with Dondor on an iron bar and a skull, takes the Salt Tithe and raids only those whom the Accord does not protect. He remembers that Lerendor's fleet burned Notle in 4A 1532 and that the sea orcs have respected Leren sails since, and he is happy to let the High Crown think it is respect.",
+      "portrait": {
+        "appearance": "A broad, sea-weathered orc with grey-green skin, salt-crusted braids and a tusk capped in silver.",
+        "dress": "A coat of oiled sharkskin and a captain's chain of ship-nails.",
+        "colours": "Tide green (#3a5a62), salt grey (#8a8a82), driftwood pale (#a8a090)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the holds will choose the captain with the best voyages when Rukhag dies.",
+      "succession": "The holds choose the Sea-Chief for the voyages he has won."
+    },
+    "advisors": [
+      {
+        "id": "zin_belonton_tithe",
+        "name": "Skarga of the Salt Tithe",
+        "given": "Skarga",
+        "office": "Keeper of the Salt Tithe",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the Salt Tithe from every hold of the confederacy and sinks the first share in the sea, as the old way demands.",
+        "portrait": "An orc woman with a salt-sack and a bone tally.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_belonton_speaker",
+        "name": "Old Zhagrum",
+        "given": "Zhagrum",
+        "office": "Fire-Speaker of the Skerries",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6752,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_fire_speaker"
+        ],
+        "role": "Fire-Speaker of the Lestern skerries, who sinks the salt tithe for a safe season and reads the sea's heat for the captains.",
+        "portrait": "An old orc with a coal-pot and sea-shells woven in his beard.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_belonton_accord",
+        "name": "Ruzha the Bar-Keeper",
+        "given": "Ruzha",
+        "office": "Keeper of the Accord",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6778,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the confederacy's word to Notbuton and keeps the memory of the iron bar and the skull sunk together in the Sea of Darkness.",
+        "portrait": "An orc woman with an iron bar hung at her belt.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_belonton_fleet",
+        "name": "Ugruk Wave-Splitter, Captain of the Raiders",
+        "given": "Ugruk",
+        "office": "Captain of the Raiders",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "bold",
+          "naval_invader"
+        ],
+        "role": "Leads the confederacy's raiding ships and has taken more prizes than any captain of Notle except the Sea-Chief himself.",
+        "portrait": "A grinning orc corsair with a boarding axe at the prow of a black ship.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_belonton_gull",
+        "name": "Bolrak of the Gull Cliffs",
+        "given": "Bolrak",
+        "office": "Captain of the Cliff Holds",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Holds the cliffs of the old Gull Kingdom, where the sea orcs' landward holds stand.",
+        "portrait": "A tall orc woman with a gull-feather crest and a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BOR",
+    "key": "bordon",
+    "name": "Bordon",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "BOR_zin_ruler",
+      "name": "Chief Gruzash",
+      "given": "Gruzash",
+      "house": "the road-chiefs of Zubudor",
+      "title": {
+        "native": null,
+        "english": "Road-Chief of Zubudor"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6768,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Gruzash holds the iron and the ring at Zubudor, the third of his line to hold the hold through three challenges running. Bordon lives by the Black Road and its caravan inns, and Gruzash takes Volgan's gifts and Goldoroth's threats with the same grin and gives neither an answer. He knows exactly where the Troll Forest begins and pays the troll silver on time.",
+      "portrait": {
+        "appearance": "A heavy, grinning orc with a gold-capped tusk.",
+        "dress": "An innkeeper's leather apron over mail and a road-chief's chain of caravan tokens.",
+        "colours": "Iron grey (#5a5a60), rust (#8a4a2a), slag pale (#a8a8a0)."
+      },
+      "canon": "P",
+      "formerName": "Chief Bordag (characters spec, Bordon tree); Bordag reads as the hold's own name"
+    },
+    "heir": {
+      "note": "No heir: the next road-chief is whoever breaks Gruzash in the ring.",
+      "succession": "A road-chief keeps the iron and the ring until he is challenged."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_bordon_krugg",
+        "name": "Tollmaster Krugg",
+        "given": "Krugg",
+        "office": "Master of the Road Tolls",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Takes the tolls of the Black Road and the inns' rents, and keeps the silver for the trolls in a separate box.",
+        "portrait": "A squat orc with a toll-chain and a strong-box.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_bordon_nadra",
+        "name": "Nadra Roadwife, Keeper of the Caravan Inns",
+        "given": "Nadra",
+        "office": "Keeper of the Caravan Inns",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Runs the caravan inns that were barracks in the Buried Wars and keeps them clean, fed and free of brawls, mostly.",
+        "portrait": "A broad orc woman with a ladle and a cleaver.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_bordon_grimsh",
+        "name": "Grimsh the Envoy",
+        "given": "Grimsh",
+        "office": "Envoy of the Road-Hold",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6778,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the road-chief's answers, which are never quite answers, to Cocanoor and to the Free Moot.",
+        "portrait": "A lean orc with a silver-trimmed cloak and a courteous bow.",
+        "canon": "S"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_bordon_gorge",
+        "name": "Zugra of the Black Road",
+        "given": "Zugra",
+        "office": "Captain of the Road Guards",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Guards the gorge of the Black Road by Soun Lake, where Kargesk took the road from the Necromancer's garrison.",
+        "portrait": "An orc woman in iron with a heavy crossbow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_bordon_karguk",
+        "name": "Zhagrok Inn-Breaker, War-Leader of the Hold",
+        "given": "Zhagrok",
+        "office": "War-Leader of the Hold",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6771,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_reckless"
+        ],
+        "role": "Won his name by breaking up a caravan brawl with a table, and would lead the hold to war in much the same way.",
+        "portrait": "A huge orc with a club made from a table-leg.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DRE",
+    "key": "dreson",
+    "name": "Dreson",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "DRE_zin_ruler",
+      "name": "Chief Mudgash",
+      "given": "Mudgash",
+      "house": "chosen by the reed-council of Dolido",
+      "title": {
+        "native": null,
+        "english": "Chief of the Fen-Hold"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6766,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "The reed-council of Dolido chose Mudgash to keep the iron and the ring in 4A 1733, and it can unmake him as easily as it made him, which he does not forget. His folk live on eels, peat and bog-iron in the fens that the Necromancer's garrisons could never cross, and the Goldoroth host that the reed-council's guides led into the deep fens in 4A 1561 is remembered in Dolido with quiet satisfaction. He belongs to nobody and means to keep it so.",
+      "portrait": {
+        "appearance": "A lean, mud-grey orc with reed-green warpaint and pale eyes.",
+        "dress": "A cloak of woven reeds over eel-skin leather and a chief's bog-iron torc.",
+        "colours": "Iron grey (#5a5a60), rust (#8a4a2a), slag pale (#a8a8a0)."
+      },
+      "canon": "P",
+      "formerName": "Chief Dresk (characters spec, Dreson tree); Dresk reads as the hold's own name"
+    },
+    "heir": {
+      "note": "No heir: the reed-council chooses and unmakes chiefs as it sees fit.",
+      "succession": "The reed-council chooses a chief to keep the iron and the ring, and can unmake him."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_dreson_moss_eye",
+        "name": "Old Moss-Eye, Reed-Speaker",
+        "given": "Moss-Eye",
+        "office": "Reed-Speaker of the Council",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6748,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "The eldest of the reed-council, who knows every fen path and was a boy when the old ones told him how the deep fens drowned the host.",
+        "portrait": "A bent old orc with one eye clouded green and a reed-staff.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_dreson_ylsa",
+        "name": "Nagha Eel-Wife, Mistress of the Eel-Weirs",
+        "given": "Nagha",
+        "office": "Mistress of the Eel-Weirs",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Owns most of the eel-weirs of the fens and sells smoked eel and bog-iron to whoever comes to the fen's edge with silver.",
+        "portrait": "A broad orc woman with a basket of eels and a smoke-stained apron.",
+        "canon": "P",
+        "formerName": "Ylsa Eel-Wife (Dark Lands tree); Orcish has no y"
+      },
+      {
+        "id": "zin_regional_dreson_harrok",
+        "name": "Harrok Fen-Walker, Master of the Fen Levies",
+        "given": "Harrok",
+        "office": "Master of the Fen Levies",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6770,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Musters the fen orcs, who fight from the reeds and vanish into them.",
+        "portrait": "A tall orc on reed-stilts with a fish-spear.",
+        "canon": "S"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_dreson_varga",
+        "name": "Burga Bog-Runner, Captain of the Reed-Paths",
+        "given": "Burga",
+        "office": "Captain of the Reed-Paths",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trickster"
+        ],
+        "role": "Leads the guides who know the deep fens, the same craft that drowned Goldoroth's host.",
+        "portrait": "A wiry orc woman, mud to the thighs, with a guide-pole.",
+        "canon": "P",
+        "formerName": "Varga Bog-Runner (Dark Lands tree); Orcish has no v"
+      },
+      {
+        "id": "zin_regional_dreson_pilehall",
+        "name": "Gnorz of the Black Piles",
+        "given": "Gnorz",
+        "office": "Warden of Dolido",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6769,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 4,
+          "planning": 2,
+          "logistics": 1
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "Holds the hall on black piles at Dolido, which nobody has reached in arms in three ages.",
+        "portrait": "A heavy orc on a pile-walk with a hooked pike.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DUL",
+    "key": "dulundur",
+    "name": "Dulundur",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "DUL_zin_ruler",
+      "name": "Chief Ghorzug",
+      "given": "Ghorzug",
+      "house": "chief of the first valley",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Four Fires"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6769,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Ghorzug keeps the first of the Four Fires of Lesderle, and the hall chose him in 4A 1740 to speak for the long valley at the Free Moot. Dulundur hosts the moot of the free holds against the Iron Yoke and is their strongest voice, and when Goldoroth offered a place under the Yoke to one valley in 4A 1612 the hall put out that valley's envoy instead of its fire. Ghorzug tells that story to every envoy from Cocanoor, smiling.",
+      "portrait": {
+        "appearance": "A grizzled, heavy orc with four fire-scars on each cheek.",
+        "dress": "A chief's cloak of dark wolf hide and a torque of four twisted iron strands.",
+        "colours": "Iron grey (#5a5a60), rust (#8a4a2a), slag pale (#a8a8a0)."
+      },
+      "canon": "P",
+      "formerName": "Chief Dulgash (characters spec, Dulundur tree); Dulgash reads as the realm's own name"
+    },
+    "heir": {
+      "note": "No heir: the hall chooses again among the four chiefs when Ghorzug falls.",
+      "succession": "Four chiefs, one for each valley, each holds his fire until challenged; the hall chooses one to speak for the long valley."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_dulundur_grushka",
+        "name": "Grushka of the Four Fires",
+        "given": "Grushka",
+        "office": "Keeper of the Fires",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6758,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the four fires burning together in the hall of Lesderle and the oath that goes with them.",
+        "portrait": "An old orc woman tending a hearth of four fires.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_dulundur_ozgar",
+        "name": "Ozgar Ironhand, Pit-Master",
+        "given": "Ozgar",
+        "office": "Master of the Pits",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Runs the iron pits of the four valleys and sets the iron prices the Free Moot agrees.",
+        "portrait": "An orc with an iron hand and a miner's hood.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_dulundur_brakka",
+        "name": "Brakka the Loud",
+        "given": "Brakka",
+        "office": "War-Speaker of the Moot",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "The loudest voice at the Free Moot for striking the tributary holds before Goldoroth can strike the free ones.",
+        "portrait": "A big orc woman shouting, with a war-horn.",
+        "canon": "S"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_dulundur_ugmar",
+        "name": "Ugmar of the Hills",
+        "given": "Ugmar",
+        "office": "Captain of the Valley Host",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6772,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Leads the host of the four valleys in the hills of the long valley.",
+        "portrait": "A hard orc captain in iron with a hill-axe.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_dulundur_lamp",
+        "name": "Snagra Lamp-Bearer, Captain of the Goblin Quarters",
+        "given": "Snagra",
+        "office": "Captain of the Goblin Quarters",
+        "gender": "female",
+        "people": "goblins",
+        "born": 6781,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "trickster"
+        ],
+        "role": "Leads the goblins of the valley's quarters, who keep their lamp beside the four fires and their own counsel beside the chiefs'.",
+        "portrait": "A goblin woman with a lamp on a pole.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "TRO",
+    "key": "troll_forest",
+    "name": "Troll Forest",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "TRO_zin_ruler",
+      "name": "King Smash",
+      "given": "Smash",
+      "title": {
+        "native": "Baaru",
+        "english": "King of the Trolls of Grootoom"
+      },
+      "gender": "male",
+      "people": "trolls",
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_troll_king",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "Smash is the largest troll of Grootoom by far and king of this forest's trolls and no others, and he lives with them in the great cave of Holos. He walks at night, because sunlight slowly turns him to stone, and the caravan masters of Bordon have written down every night on which he came out and smashed a camp. Realms that leave the troll silver at the forest's edge are let through unharmed, and armies that camp inside it are not found until spring.",
+      "portrait": {
+        "appearance": "An enormous troll with mossy grey-green hide, tiny deep-set eyes and fists like boulders, plainly not a man.",
+        "dress": "A few strips of bark and a necklace of caravan bells.",
+        "colours": "Lichen green (#6d7a5a), earth brown (#4a4030), stone pale (#a09878)."
+      },
+      "canon": "H",
+      "formerName": "Troy the Old (characters spec, Troll Forest tree); the histories and the owner (K22) name him Smash"
+    },
+    "heir": {
+      "note": "No heir: the trolls follow whoever is largest and unbeaten after Smash.",
+      "succession": "The oldest unbeaten troll leads each group; the king is the largest troll of the forest."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_troll_forest_grumbold",
+        "name": "Grumbold Mossback, Eldest of the Cave",
+        "given": "Grumbold",
+        "office": "Eldest of the Cave",
+        "gender": "male",
+        "people": "trolls",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "The oldest unbeaten troll of Holos, who speaks slowly and only to Smash.",
+        "portrait": "A moss-covered old troll sitting very still.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_troll_forest_skarr",
+        "name": "Skarr the Young",
+        "given": "Skarr",
+        "office": "Leader of the Night-Walkers",
+        "gender": "male",
+        "people": "trolls",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "Leads the young trolls who follow Smash out at night and would like to go out more often.",
+        "portrait": "A lanky troll with a stone club.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_regional_troll_forest_brunn",
+        "name": "Brunn Silver-Counter, Counter of the Troll Silver",
+        "given": "Brunn",
+        "office": "Counter of the Troll Silver",
+        "gender": "male",
+        "people": "trolls",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the silver left at the forest's edge and counts it, slowly, every night.",
+        "portrait": "A troll with a pile of silver coins and a puzzled frown.",
+        "canon": "S"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_troll_forest_rokkum",
+        "name": "Rokkum Root-Breaker, Captain of the Night",
+        "given": "Rokkum",
+        "office": "Captain of the Night",
+        "gender": "male",
+        "people": "trolls",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 3,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "Leads the trolls who break up camps by night when Smash stays in the cave.",
+        "portrait": "A huge troll wrenching a tree out by its roots.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_troll_forest_mumug",
+        "name": "Mumuga of the Bog",
+        "given": "Mumuga",
+        "office": "Keeper of the Forest Edge",
+        "gender": "female",
+        "people": "trolls",
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 4,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "Watches the edge of the forest for anyone who tries to burn or fell it.",
+        "portrait": "A broad troll-wife half sunk in a bog.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HOO",
+    "key": "hoorunoron",
+    "name": "Hoorunoron",
+    "stance": "zin_wild_clans",
+    "stanceNote": "No countries.csv row (new realm); the builder's default for giants.",
+    "court": "standard",
+    "ruler": {
+      "id": "HOO_zin_ruler",
+      "name": "Cairn-Keeper Dorunas",
+      "given": "Dorunas",
+      "title": {
+        "native": null,
+        "english": "Keeper of the Cairn-Line"
+      },
+      "gender": "male",
+      "people": "giants",
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_cairn_keeper",
+        "zin_trait_slow_eldest"
+      ],
+      "bio": "The oldest giant of the Giant Forest keeps the line of cairns below the Dark Forests from the cairn-hall by the Giant River, and men call him Dorunas, although no man has ever heard him say his name. The giants never attack first, and whoever crosses the cairn-line or touches a cairn has them as an enemy, as the orcs of the Darks learned in 4A 1483. In the flood of 4A 1700 the giants were seen carrying the folk of the lower Dondor plain out of the water, and then they went back into the forest without a word.",
+      "portrait": {
+        "appearance": "A vast, moss-bearded forest giant with bark-brown skin and slow grey eyes, plainly not a man.",
+        "dress": "A mantle of woven branches and a cairn-stone held like a pebble.",
+        "colours": "Forest green (#4a5a3a), cairn grey (#a0a090), bark brown (#6a4a2a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the next oldest giant will keep the cairns.",
+      "succession": "The oldest giant keeps the line of cairns."
+    },
+    "advisors": [
+      {
+        "id": "zin_hoorunoron_marunar",
+        "name": "Marunar the Stone-Bearer",
+        "given": "Marunar",
+        "office": "Bearer of the Cairn-Stones",
+        "gender": "male",
+        "people": "giants",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Carries the stones to the cairns of the Borderline and mends any cairn that weather has touched.",
+        "portrait": "A giant with a sling of great stones over his shoulder.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_hoorunoron_oronena",
+        "name": "Oronena of the River",
+        "given": "Oronena",
+        "office": "Watcher of the Giant River",
+        "gender": "female",
+        "people": "giants",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Watches the Giant River and was among the giants who carried folk out of the flood of 4A 1700.",
+        "portrait": "A tall giantess standing in a river to her knees.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_hoorunoron_hiloras",
+        "name": "Hiloras the Slow",
+        "given": "Hiloras",
+        "office": "Speaker to Men",
+        "gender": "male",
+        "people": "giants",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "The only giant who speaks to men, which he does rarely and with very long pauses.",
+        "portrait": "A giant leaning down to listen, a hand cupped to his ear.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_hoorunoron_ulmaros",
+        "name": "Ulmaros of the Borderline",
+        "given": "Ulmaros",
+        "office": "Warden of the Cairn-Line",
+        "gender": "male",
+        "people": "giants",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 4,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "Broke the hold of the Darks that broke a cairn in 4A 1483 and has watched the line ever since.",
+        "portrait": "A giant with a club of an oak trunk at the edge of the forest.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_hoorunoron_tiranum",
+        "name": "Tiranum the Grey",
+        "given": "Tiranum",
+        "office": "Keeper of the Forest Road",
+        "gender": "male",
+        "people": "giants",
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Knows the giants' own road through the forest, which no army has walked.",
+        "portrait": "A grey giant on a mossy path.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DAK",
+    "key": "the_darks",
+    "name": "The Darks",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "DAK_zin_ruler",
+      "name": "Chief Zugmok",
+      "given": "Zugmok",
+      "house": "chief of the first forest hold",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Moot of the Four Holds"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6770,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Zugmok speaks for the four forest holds at the moot of Notdertu, where orc chiefs and ogre clan-heads sit together and nothing is decided until both agree. He keeps the hunting agreement with Dondor and the meat-peace with the ogres that Grimduth made in the hard winter of 4A 1222, and he gives the giants' cairn-line a wide berth since the holds learned in 4A 1483 what happens otherwise.",
+      "portrait": {
+        "appearance": "A stocky, dark-skinned orc with a scarred scalp.",
+        "dress": "A hunter's cloak of black boar hide and a chief's necklace of ogre-gifted bear teeth.",
+        "colours": "Iron grey (#5a5a60), rust (#8a4a2a), slag pale (#a8a8a0)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the moot chooses who speaks for the holds when Zugmok falls.",
+      "succession": "Four orc chiefs and the ogre clan-heads sit in one moot; the orcs speak for the holds and the ogres for the caves."
+    },
+    "advisors": [
+      {
+        "id": "zin_the_darks_ogre",
+        "name": "Gnorgul the Meat-Giver",
+        "given": "Gnorgul",
+        "office": "Head of the Ogre Clans",
+        "gender": "male",
+        "people": "ogres",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Speaks for the ogre clans of the Hills of Dark, who are few, strong and meat-eating, and agrees to nothing until he has eaten.",
+        "portrait": "A hulking ogre with a haunch of meat and a stone-headed club.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_the_darks_hunt",
+        "name": "Rukka the Hunt-Mistress",
+        "given": "Rukka",
+        "office": "Keeper of the Hunting Grounds",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the line of the hunting ground agreed with Dondor in 4A 1590 and the meat stores for the hard winters.",
+        "portrait": "An orc woman with a bow and a string of game.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_the_darks_war",
+        "name": "Ghurzag the Hungry",
+        "given": "Ghurzag",
+        "office": "War-Speaker of the Holds",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "Would hire the ogres to Goldoroth's host for meat in a hard winter, and says so at every moot.",
+        "portrait": "A gaunt orc with a hungry look and a long spear.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_the_darks_ogrecaptain",
+        "name": "Bruzga Bone-Biter, Captain of the Ogres",
+        "given": "Bruzga",
+        "office": "Captain of the Ogres",
+        "gender": "female",
+        "people": "ogres",
+        "born": 6772,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 5,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "trait_reckless"
+        ],
+        "role": "Leads the ogres when the moot agrees to fight, and is the strongest warrior in the Dark Forests.",
+        "portrait": "A massive ogre woman with a tree-trunk club.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_the_darks_forest",
+        "name": "Skagruk of the Dark Forests",
+        "given": "Skagruk",
+        "office": "Captain of the Forest Holds",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6771,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the warriors of the four forest holds through the Dark Forests they know tree by tree.",
+        "portrait": "An orc in black boar hide among dark trees.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SKR",
+    "key": "skragdurg",
+    "name": "Skragdurg",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "SKR_zin_ruler",
+      "name": "Chief Grumzag",
+      "given": "Grumzag",
+      "house": "the forest-chiefs of Gollonlon",
+      "title": {
+        "native": null,
+        "english": "Forest-Chief of Gollonlon"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6768,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Grumzag felled a great tree of the Fonoor Forest with his own axe, as every chief must, and broke the last forest-chief in the ring in 4A 1737. Skragdurg sells timber and charcoal to every shipwright on the straits, whatever master they serve, and Grumzag sold the Accord its ship-timber and Goldoroth its own in the same season, as his forebears did in 4A 1604. He says a tree does not ask who will sail it.",
+      "portrait": {
+        "appearance": "A tall, sinewy orc with sawdust in his braids and an axe-scarred forearm.",
+        "dress": "A charcoal-blackened leather coat and a chief's necklace of iron axe-heads.",
+        "colours": "Iron grey (#5a5a60), rust (#8a4a2a), slag pale (#a8a8a0)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the next chief is whoever breaks Grumzag in the ring and has felled his tree.",
+      "succession": "Chiefs hold the forest-hold until challenged; each must have felled a great tree with his own axe."
+    },
+    "advisors": [
+      {
+        "id": "zin_skragdurg_charcoal",
+        "name": "Ashka of Colost",
+        "given": "Ashka",
+        "office": "Mistress of the Charcoal-Burners",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the charcoal-burners of Colost, whose charcoal feeds the forges of the iron hills.",
+        "portrait": "A soot-black orc woman with a charcoal-rake.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_skragdurg_timber",
+        "name": "Gorbuk Log-Counter, Counter of the Timber",
+        "given": "Gorbuk",
+        "office": "Counter of the Timber",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Counts every log that goes down to the strait shipwrights and the price paid for it.",
+        "portrait": "An orc with a notched measuring-pole.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_skragdurg_axe",
+        "name": "Ruzdag of the Felling",
+        "given": "Ruzdag",
+        "office": "Master of the Fellers",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6776,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Leads the fellers, who would fight with the same axes they cut with.",
+        "portrait": "A broad orc with a felling-axe on each shoulder.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_skragdurg_edge",
+        "name": "Bolkash of the Forest Edge",
+        "given": "Bolkash",
+        "office": "Captain of the Forest-Hold",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6778,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Guards the forest edge of Gollonlon and the timber roads down to the straits.",
+        "portrait": "An orc in leather with a bow among stacked logs.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_skragdurg_raft",
+        "name": "Bolzha the Rafter",
+        "given": "Bolzha",
+        "office": "Captain of the Timber Rafts",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Floats the timber rafts down to the strait shipwrights and would float war-rafts if anyone paid for them.",
+        "portrait": "An orc woman with a raft-pole on a timber raft.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DUN",
+    "key": "dun",
+    "name": "Dun",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "DUN_zin_ruler",
+      "name": "Toll-Queen Zuraka of the Zhaggul",
+      "given": "Zuraka",
+      "house": "the Zhaggul toll-kings",
+      "title": {
+        "native": "Karga",
+        "english": "Toll-Queen of the Dun Peninsula"
+      },
+      "gender": "female",
+      "people": "orcs",
+      "born": 6773,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_pass_lord",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Zuraka won the ring at Dobudo in 4A 1738, as the crown of the Zhaggul goes to the son or daughter who wins it, and she lives as her forebears did on the tolls of the Dun Sea. She sells her favour by the season and has married into two holds already, so that the least trusted crown of the Dark Lands now has cousins in most of them. Her grandmother took Goldoroth's gold to close the Dun Sea to Dondor and Dondor's to open it again inside one year, and Zuraka regards that as the family's finest hour.",
+      "portrait": {
+        "appearance": "A handsome, hard-faced orc woman with silver rings through her tusks.",
+        "dress": "A toll-queen's coat of sea-green leather and a crown of linked toll-coins.",
+        "colours": "Moor brown (#6a5a40), peat dark (#3a3a30), heather straw (#a8a070)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: Zuraka's children will fight for the crown in the ring at Dobudo.",
+      "succession": "The crown goes to the son or daughter of the Zhaggul who wins the ring."
+    },
+    "advisors": [
+      {
+        "id": "zin_dun_tolls",
+        "name": "Rukbol of Dunbulinor",
+        "given": "Rukbol",
+        "office": "Gatherer of the Dun Sea Tolls",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the tolls of the Dun Sea's mouth at Dunbulinor and knows which ships paid twice.",
+        "portrait": "An orc with a toll-boat and a boat-hook.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dun_favour",
+        "name": "Ghazra the Seller of Seasons",
+        "given": "Ghazra",
+        "office": "Broker of the Crown's Favour",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Sells the toll-queen's favour to Goldoroth one season and Dondor the next, and keeps both buyers hoping.",
+        "portrait": "A sly orc woman with a purse in each hand.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dun_harbour",
+        "name": "Ugzag of Dobudo",
+        "given": "Ugzag",
+        "office": "Keeper of the Toll-Town",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6771,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the walls and the fighters of Dobudo, the toll-town Rukhesk took in 4A 1300.",
+        "portrait": "A heavy orc with a toll-chain and a mace.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_dun_channel",
+        "name": "Zhakka of the Inner Channel",
+        "given": "Zhakka",
+        "office": "Captain of the Toll-Ships",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the toll-ships that close the inner channel of the Dun Sea when the queen has been paid to close it.",
+        "portrait": "An orc woman captain with a chain to drag across a channel.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dun_peninsula",
+        "name": "Morgruk of the Peninsula",
+        "given": "Morgruk",
+        "office": "Captain of the Peninsula",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6775,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Leads the peninsula's warriors and has fought for and against both of the queen's best customers.",
+        "portrait": "A scarred orc in mixed armour from three holds.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BRT",
+    "key": "britadon",
+    "name": "Britadon",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "BRT_zin_ruler",
+      "name": "Iron-Chief Karguk of the Brakgul",
+      "given": "Karguk",
+      "house": "the Brakgul iron-chiefs",
+      "title": {
+        "native": null,
+        "english": "Iron-Chief of Fontadon"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6769,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_mine_king",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "Karguk of the Brakgul holds the iron and the ring at Fontadon, and he mines the iron hills of the south-east coast and sells their iron by sea so that it need never pass through Goldoroth's lands. He sits at the Free Moot of Dulundur, as the Brakgul have done since 4A 1520, and watches Goldoroth's border in the knowledge that the warkingdom wants his coast under the Yoke more than any other.",
+      "portrait": {
+        "appearance": "A broad, iron-grey orc with rust-red warpaint.",
+        "dress": "A miner's leather hood over mail and a chief's chain of raw iron nuggets.",
+        "colours": "Iron grey (#5a5a60), rust (#8a4a2a), slag pale (#a8a8a0)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the next iron-chief will be a Brakgul who breaks Karguk in the ring.",
+      "succession": "Chiefs of the Brakgul hold the iron and the ring until challenged."
+    },
+    "advisors": [
+      {
+        "id": "zin_britadon_mines",
+        "name": "Ghulga Ore-Wife, Mistress of the Iron Hills",
+        "given": "Ghulga",
+        "office": "Mistress of the Iron Hills",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Runs the mines of the iron hills and the ore-roads to the coast.",
+        "portrait": "An orc woman with a pick and an ore-basket.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_britadon_sea",
+        "name": "Bazgul of Beriath",
+        "given": "Bazgul",
+        "office": "Factor of the Iron Ships",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Sells the hold's iron by sea from the headland of Beriath to every harbour of the Dark Lands.",
+        "portrait": "An orc merchant with an iron ingot and a sea-cloak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_britadon_moot",
+        "name": "Bragnash the Moot-Goer",
+        "given": "Bragnash",
+        "office": "Envoy to the Free Moot",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries Britadon's voice to the Free Moot at Lesderle and comes home with the iron prices.",
+        "portrait": "A travelling orc with a moot-staff.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_britadon_headland",
+        "name": "Mogra of the Headland",
+        "given": "Mogra",
+        "office": "Captain of Beriath",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Holds the headland hold of Beriath that Bredesk brought under Fontadon's iron.",
+        "portrait": "An orc woman in iron on a sea-cliff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_britadon_ore",
+        "name": "Durkash of the Ore-Ships",
+        "given": "Durkash",
+        "office": "Captain of the Ore-Ships",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the heavy ore-ships of the coast, which would make poor warships and good blockships.",
+        "portrait": "A heavy orc captain at the helm of a broad ship.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "WIL",
+    "key": "wild_lands",
+    "name": "Wild Lands",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "WIL_zin_ruler",
+      "name": "Winter-Holder Ghashnag",
+      "given": "Ghashnag",
+      "house": "whoever is strongest at Zudertu when the snow comes",
+      "title": {
+        "native": null,
+        "english": "Holder of Zudertu"
+      },
+      "gender": "male",
+      "people": "orcs",
+      "born": 6777,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_refuser_of_crowns"
+      ],
+      "bio": "Ghashnag was the strongest orc at the winter camp of Zudertu when the snow came in 4A 1747, and so he speaks for the Wild Lands moor until the thaw. The moor has no council and belongs to whoever stays through a winter; it is where broken clans go when no hold will have them, and Ghashnag came to it with his own clan's broken remnant. He hopes to hold Zudertu for a second winter, which nobody has done since the camp split in 4A 1690.",
+      "portrait": {
+        "appearance": "A lean, hungry-looking orc with a broken tusk.",
+        "dress": "A patched fur cloak over mismatched armour and a winter-holder's bone torc.",
+        "colours": "Moor brown (#6a5a40), peat dark (#3a3a30), heather straw (#a8a070)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: at the next snow the strongest at Zudertu speaks for the moor.",
+      "succession": "Whoever holds the winter camp at Zudertu when the snow comes speaks for the moor until the thaw."
+    },
+    "advisors": [
+      {
+        "id": "zin_wild_lands_charm",
+        "name": "Old Nagbol",
+        "given": "Nagbol",
+        "office": "Charm-Wife of the Moor",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6754,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "A charm-wife of the wild holds who finds lost beasts, reads the weather of the moor and buries the dead where nothing will dig them up.",
+        "portrait": "An ancient orc woman hung with charms of bone and feather.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wild_lands_doltu",
+        "name": "Skurmag of the Doltu",
+        "given": "Skurmag",
+        "office": "Speaker for the Marsh Clans",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Speaks for the broken clans who came onto the moor from the Doltu marsh after the flood and stayed.",
+        "portrait": "A mud-caked orc with a marsh-reed staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wild_lands_stores",
+        "name": "Burzga Winter-Store, Keeper of the Winter Stores",
+        "given": "Burzga",
+        "office": "Keeper of the Winter Stores",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6779,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the camp's winter stores, which decide who stays through the winter and so who holds the moor.",
+        "portrait": "A sharp orc woman guarding a pit of stores.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_wild_lands_camp",
+        "name": "Zhurgul of the Second Camp",
+        "given": "Zhurgul",
+        "office": "Chief of the Second Camp",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_reckless"
+        ],
+        "role": "Leads the camp that would split from Zudertu if it grew too big, as every hold of the moor does.",
+        "portrait": "A wild-eyed orc with a spiked club.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wild_lands_moor",
+        "name": "Rukhsha of the Moor",
+        "given": "Rukhsha",
+        "office": "Captain of the Moor Riders",
+        "gender": "female",
+        "people": "orcs",
+        "born": 6781,
+        "type": "field_marshal",
+        "skill": {
+          "level": 1,
+          "attack": 2,
+          "defense": 1,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Rides the moor on a shaggy wolf-horse and knows where every camp will be when the snow comes.",
+        "portrait": "An orc woman rider with a hide shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]

@@ -1,0 +1,1169 @@
+[
+  {
+    "tag": "ENH",
+    "key": "enhis_is_rond",
+    "name": "Enhis Is Rond",
+    "stance": "zin_wild_freeholds",
+    "court": "story",
+    "ruler": {
+      "id": "ENH_zin_ruler",
+      "name": "Priest-Elder Taoyan nau Suyowan",
+      "given": "Taoyan",
+      "house": "the Priest-Elders of the Tide Shrine",
+      "title": {
+        "native": null,
+        "english": "Priest-Elder of the Tide Shrine"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6758,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_reader_of_names",
+        "zin_trait_guest_right"
+      ],
+      "bio": "The tally-keepers chose Taoyan nau Suyowan as Priest-Elder of the shrine beneath the tide, and he reads the tally at every Calling of Names, as the Priest-Elders have done since Nuoyo swam down to the drowned shrine after the Rising Tide. He holds the lagoon, the Wide Mountains, the Enhis Forest, the salt coast of Angsun and the smoking islet of Lua, and nobody on the Great Isle has doubted the Priest-Elders since the smoke of the Year of Ash stopped when they read the tally at its foot. The shrine still repeats a name the islanders read as Aen, and Taoyan reads it with the others without knowing why it is there.",
+      "portrait": {
+        "appearance": "A thin, very upright old man with a shaven head and the tally-marks of the dead tattooed in waves along his arms.",
+        "dress": "A plain sea-grey wrap, a necklace of shell tally-beads and a diver's stone weight on a cord.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "H",
+      "formerName": "Priest-Elder Enhis (characters spec); the histories name him Taoyan nau Suyowan",
+      "note": "Nau Suyowan is a Yonic byname (raised at Suyowan), the custom of the islands; kept from the histories."
+    },
+    "heir": {
+      "note": "No heir: the tally-keepers choose the next Priest-Elder at the drowned shrine.",
+      "succession": "The tally-keepers choose the Priest-Elder from among themselves."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_enhis_is_rond_tally",
+        "name": "Ngiruyan nau Enhis, First Tally-Keeper",
+        "given": "Ngiruyan",
+        "office": "First Tally-Keeper",
+        "gender": "female",
+        "people": "men",
+        "born": 6765,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_tally_keeper"
+        ],
+        "role": "Keeps the tally of names beneath the tide between the Callings and dives to the drowned shrine more often than anyone alive.",
+        "portrait": "A strong, lean woman diver with a tally-cord in her teeth.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_enhis_is_rond_reef",
+        "name": "Kenua nau Lua, Keeper of the Reef Road",
+        "given": "Kenua",
+        "office": "Keeper of the Reef Road",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the peace of the Reef Road that every islander may walk to the shrine, and the year's pilgrims fed on the way.",
+        "portrait": "A cheerful man with a walking-staff of driftwood.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_enhis_is_rond_salt",
+        "name": "Suana nau Angsun, Mistress of the Salt Pans",
+        "given": "Suana",
+        "office": "Mistress of the Salt Pans",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the salt pans of Angsun that the lagoon villages rebuilt after a storm year, and sells their salt to every island.",
+        "portrait": "A salt-crusted woman with a rake and a woven basket.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_enhis_is_rond_guests",
+        "name": "Wanyo nau Rumi, Keeper of the Guests",
+        "given": "Wanyo",
+        "office": "Keeper of the Guests",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Receives the strangers the sea brings to the lagoon and the envoys of the other islands, and feeds them all before asking anyone's business.",
+        "portrait": "A broad, smiling man with a bowl of rice and a shell horn.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_enhis_is_rond_canoes",
+        "name": "Tikayo nau Suyowan, Captain of the Lagoon Canoes",
+        "given": "Tikayo",
+        "office": "Captain of the Lagoon Canoes",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the lagoon's war-canoes, which have not gone to war in living memory and race each other at every Calling of Names.",
+        "portrait": "A young paddler at the stern of a long canoe.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_enhis_is_rond_mountains",
+        "name": "Luayan of the Wide Mountains",
+        "given": "Luayan",
+        "office": "Warden of the Wide Mountains",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Keeps the hill villages of the Wide Mountains and the forest paths of the Enhis Forest.",
+        "portrait": "A wiry woman with a fish-spear and a palm-leaf cloak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_enhis_is_rond_ash",
+        "name": "Rumang nau Lua, Watcher of the Smoking Islet",
+        "given": "Rumang",
+        "office": "Watcher of the Smoking Islet",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Watches the volcano islet of Lua and the villages below it, and sends word to the Priest-Elder at the first wisp of smoke.",
+        "portrait": "An ash-dusted man on a rocky slope with a horn.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HWN",
+    "key": "howan",
+    "name": "Howan",
+    "stance": "zin_light_council",
+    "court": "story",
+    "ruler": {
+      "id": "HWN_zin_ruler",
+      "name": "Speaker Wikuana nau Tich",
+      "given": "Wikuana",
+      "house": "the terrace-heads of the Moot",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Terrace-Heads"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6767,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_guest_right",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "The terrace-heads at Lamowan chose Wikuana nau Tich as Speaker, and she will hold the office for as long as the terraces of the River Tich stay well watered. She keeps the house for the shipwrecked that Maiyan nau Lamowan proposed after the Fever Years, where every stranger the sea throws ashore is fed, housed and kept apart for a month before he is made welcome. Her divers sell pearls for iron in the markets of Parim, and her terraces feed half the south.",
+      "portrait": {
+        "appearance": "A broad-faced, sun-dark woman with a wide smile and grey-streaked hair coiled with a shell comb.",
+        "dress": "A terrace-head's rice-straw mantle over a blue wrap and a Speaker's staff of polished palm-wood.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "H",
+      "formerName": "Speaker Tich Howa (characters spec); the histories name her Wikuana nau Tich"
+    },
+    "heir": {
+      "note": "No heir: the moot at Lamowan chooses again after a bad season or when Wikuana steps down.",
+      "succession": "The moot of terrace-heads chooses a Speaker for as long as the terraces are well watered."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_howan_house",
+        "name": "Lanisua nau Lamowan, Keeper of the House for the Shipwrecked",
+        "given": "Lanisua",
+        "office": "Keeper of the House for the Shipwrecked",
+        "gender": "female",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Runs the house at Lamowan where the wrecked are fed and kept apart for a month, and decides when each stranger may be made welcome.",
+        "portrait": "A calm woman at a doorway with a lamp and a bowl.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_howan_water",
+        "name": "Kean nau Tich, Keeper of the River Water",
+        "given": "Kean",
+        "office": "Keeper of the River Water",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Shares the water of the River Tich among the terraces through the moot, and is the most argued-with man on the Great Isle.",
+        "portrait": "An old terrace-farmer with a sluice-paddle.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_howan_pearls",
+        "name": "Pilua the Diver",
+        "given": "Pilua",
+        "office": "Mistress of the Pearl-Divers",
+        "gender": "female",
+        "people": "men",
+        "born": 6778,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Leads the pearl-divers and sells their pearls on the pilgrim ships to Parim, coming home with iron, which the islands want more than anything.",
+        "portrait": "A sleek young diver with a pearl-net and a knife.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_howan_healer",
+        "name": "Yumai nau Lamowan, Healer of the House",
+        "given": "Yumai",
+        "office": "Healer of the House",
+        "gender": "female",
+        "people": "men",
+        "born": 6761,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_tally_keeper"
+        ],
+        "role": "Tends the sick strangers in the house for the shipwrecked and keeps the names of those who die there for the tally.",
+        "portrait": "A grey-haired woman with healing leaves and a tally-cord.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_howan_whales",
+        "name": "Rumayo of Yowi-yoor",
+        "given": "Rumayo",
+        "office": "Captain of the Whale-Canoes",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the whaling canoes of the south-western lobe that joined Howan's moot after the quarrel over the whale-road.",
+        "portrait": "A powerful paddler with a whale-harpoon.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_howan_terraces",
+        "name": "Nuwana of the Terraces",
+        "given": "Nuwana",
+        "office": "Captain of the Terrace Levy",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Leads the terrace families' levy, who have never fought but can move a hillside of earth in a week.",
+        "portrait": "A young woman with a digging-stick and a basket.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_howan_far",
+        "name": "Tikoan of the Far Islands",
+        "given": "Tikoan",
+        "office": "Captain of the Far Islands",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 1,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "Keeps the canoes of the Far Islands, which bring word of every storm and every strange sail.",
+        "portrait": "A weathered navigator with a star-stick.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "VER",
+    "key": "verde",
+    "name": "Verde",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "VER_zin_ruler",
+      "name": "Chief Ruan nau Lua",
+      "given": "Ruan",
+      "house": "the Chiefs of the Clan Hall",
+      "title": {
+        "native": null,
+        "english": "Chief of the Clan Hall"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6765,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_storm_pilot",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "The clans of the hills and the mangroves chose Ruan nau Lua as chief in the hall of Pelo Tamo after he had sailed to the edge of the islands' charts, as every chief must. He sells hull-timber to the shipwrights of Orohaf, as Verde has done since the Isle House ships came in a storm year, and pilots to any ship that needs to cross the southern seas. Since the mangrove fire no Verdean cuts a mangrove without his leave, and he gives it rarely.",
+      "portrait": {
+        "appearance": "A tall, lean, deeply tanned man with a navigator's star-tattoos across his shoulders.",
+        "dress": "A timber-clan wrap of green cloth, a carved hull-adze worn as a badge and a necklace of turtle-shell.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "H",
+      "formerName": "Chief Lua Verd (characters spec); the histories name him Ruan nau Lua",
+      "note": "Nau Lua is a byname (raised by an elder of Lua); kept from the histories."
+    },
+    "heir": {
+      "note": "No heir: the clan hall chooses again from those who have sailed to the edge of the charts.",
+      "succession": "The clans choose a chief who has sailed to the edge of the islands' charts."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_verde_stars",
+        "name": "Ngiru the Star-Reader",
+        "given": "Ngiru",
+        "office": "First of the Navigators",
+        "gender": "female",
+        "people": "men",
+        "born": 6764,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_star_reader"
+        ],
+        "role": "Reads the stars that bring a hull home and teaches the young navigators the Star Road to the Sunhot isles.",
+        "portrait": "An old woman with a stick-chart of shells and cords.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_verde_timber",
+        "name": "Veryo nau Pelo, Master of the Timber",
+        "given": "Veryo",
+        "office": "Master of the Timber",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Chooses the trees that become hulls and sells the timber to the shipwrights of Orohaf.",
+        "portrait": "A broad woodsman with an adze and a measuring cord.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_verde_mangroves",
+        "name": "Suaya of the Mangroves",
+        "given": "Suaya",
+        "office": "Keeper of the Mangroves",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the mangroves replanted after the fire of 4A 1690 and gives the chief's leave to cut them, or more often does not.",
+        "portrait": "A muddy woman among mangrove seedlings.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_verde_navigators",
+        "name": "Anang of the Star Road",
+        "given": "Anang",
+        "office": "Captain of the Navigators",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 4,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "Has sailed the Star Road to the Sunhot isles and back in one season three times, and leads the hall's best hulls.",
+        "portrait": "A navigator in a sailing canoe under a woven sail.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_verde_hills",
+        "name": "Lanio of the Hills",
+        "given": "Lanio",
+        "office": "Captain of the Timber Clans",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the timber clans of the forested hills, who know every path under the trees.",
+        "portrait": "A young woodsman with a bow of black wood.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NAR",
+    "key": "nara",
+    "name": "Nara",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "NAR_zin_ruler",
+      "name": "Elder Panui nau Ancha",
+      "given": "Panui",
+      "house": "the Elders of Ancha",
+      "title": {
+        "native": null,
+        "english": "Eldest of the Elders of Ancha"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6748,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_guest_right",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Panui nau Ancha is the eldest of the elders whom the villages of Ancha send to the moot at Riwang, and so he speaks for Nara. He keeps the Day Rule as every elder has kept it for four ages, so that nobody of Nara fishes the reef after dark or crosses the Night Reef for anyone. His grandmother's village took in the survivors of the Aenoran ship that wrecked on the reef in the Third Age, and he still greets northern captains with three words of their tongue.",
+      "portrait": {
+        "appearance": "A small, very old man with white hair to his shoulders and clouded eyes.",
+        "dress": "A fisher's wrap, a staff of reef-coral and a shell lamp that he carries even by day.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "H",
+      "formerName": "Elder Ancha (characters spec); the histories name him Panui nau Ancha"
+    },
+    "heir": {
+      "note": "No heir: when Panui dies the next-eldest elder of the moot will speak for Nara.",
+      "succession": "The eldest of the elders sent by the villages of Ancha speaks for the island."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_nara_dayrule",
+        "name": "Maiwa nau Riwang, Keeper of the Day Rule",
+        "given": "Maiwa",
+        "office": "Keeper of the Day Rule",
+        "gender": "female",
+        "people": "men",
+        "born": 6762,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_tally_keeper"
+        ],
+        "role": "Keeps the Day Rule and the verses of the drowned voices, and rings the shell horn at dusk to call the boats in.",
+        "portrait": "A grave woman with a shell horn at the water's edge.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nara_reef",
+        "name": "Wanga nau Ancha, Master of the Reef Fisheries",
+        "given": "Wanga",
+        "office": "Master of the Reef Fisheries",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Shares the reef fisheries among the villages, by day, and sells the catch that the island does not eat.",
+        "portrait": "A sturdy fisherman with a fish-trap.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nara_words",
+        "name": "Old Yonai",
+        "given": "Yonai",
+        "office": "Speaker of the Northern Words",
+        "gender": "male",
+        "people": "men",
+        "born": 6752,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Speaks the few Aenoran words the refugees' grandchildren kept, and so talks to every northern captain who puts in at Riwang.",
+        "portrait": "An old man with a carved wooden ship-model.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_nara_boats",
+        "name": "Nuoang of the Day Boats",
+        "given": "Nuoang",
+        "office": "Captain of the Day Boats",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the fishing boats of Ancha, which come home before dusk whatever is chasing them.",
+        "portrait": "A young fisherman hauling a boat ashore at sunset.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nara_villages",
+        "name": "Tipani of the Long Island",
+        "given": "Tipani",
+        "office": "Captain of the Village Spears",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Leads the villages' spears, who guard the shore and the shipwrecked strangers it brings.",
+        "portrait": "A tall woman with a spear and a palm shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "YON",
+    "key": "yongyong",
+    "name": "Yongyong",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "YON_zin_ruler",
+      "name": "Elder Suayan nau Yongwa",
+      "given": "Suayan",
+      "house": "elder of Yongwa",
+      "title": {
+        "native": null,
+        "english": "Caller of the Ring-Council"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6766,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_truce_maker"
+      ],
+      "bio": "Suayan nau Yongwa calls the ring-council of the Yong elders, an office with no other power, since the council speaks with one voice only when every elder agrees. She keeps the oath sworn on the shrine stone of Yongrost after the Year of the Red Wind, so that the lagoon is never again divided by fire, and she fears the Yong villages' feuds more than any foreign fleet. Her island carves shell, makes the south's rope and nets and cuts its shrine stone, and its elders argue about all three.",
+      "portrait": {
+        "appearance": "A wiry, sharp-eyed woman in middle years with shell-carved earrings.",
+        "dress": "A rope-maker's wrap of undyed fibre and the caller's staff of shrine stone.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "P",
+      "formerName": "Maiyan nau Yongwa (histories); Maiyan is the histories' Maiyan nau Lamowan, founder of Howan's house for the shipwrecked"
+    },
+    "heir": {
+      "note": "No heir: the villages of Yongwa choose their elder, who calls the ring.",
+      "succession": "The elder of Yongwa calls the ring-council; every Yong village sends its elder."
+    },
+    "advisors": [
+      {
+        "id": "zin_yongyong_shell",
+        "name": "Koranyo nau Jingar, Master of the Shell-Carvers",
+        "given": "Koranyo",
+        "office": "Master of the Shell-Carvers",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Leads the shell-carvers and rope-makers, whose work goes to every island and some way beyond.",
+        "portrait": "A broad man with a carving-knife and a coil of rope.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_yongyong_stone",
+        "name": "Tonkan of Yongrost",
+        "given": "Tonkan",
+        "office": "Keeper of the Shrine Stone",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_tally_keeper"
+        ],
+        "role": "Keeps the shrine stone on which the ring-council was sworn and cuts shrine stone for the other islands.",
+        "portrait": "An old stone-cutter with a mallet and a carved stone.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_yongyong_traps",
+        "name": "Wikuya nau Torsor, Keeper of the Fish-Traps",
+        "given": "Wikuya",
+        "office": "Keeper of the Fish-Traps",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Shares out the fish-traps of the lagoon among the Yong villages, which is how the old feuds began and how she keeps them from starting again.",
+        "portrait": "A patient woman mending a fish-trap.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_yongyong_lagoon",
+        "name": "Yonang of the Lagoon",
+        "given": "Yonang",
+        "office": "Captain of the Lagoon Canoes",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the canoes of the Yong lagoon, which every village thinks it should lead.",
+        "portrait": "A young paddler with a shell-trumpet.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_yongyong_sand",
+        "name": "Pilunga of Suna Pilu",
+        "given": "Pilunga",
+        "office": "Warden of the White Sand",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the beach isle that joined the ring for protection in the shark season, and its watch-fires.",
+        "portrait": "A sun-browned woman on a white beach with a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KAM",
+    "key": "kamu_lamo",
+    "name": "Kamu Lamo",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "KAM_zin_ruler",
+      "name": "Elder Tikao nau Bukonyo",
+      "given": "Tikao",
+      "house": "the Elders of the Tally-Caves",
+      "title": {
+        "native": null,
+        "english": "Elder of the Tally-Caves"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6754,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_reader_of_names",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "The keepers of the tally-caves chose Tikao nau Bukonyo as elder, and he keeps the oldest tally of the south, where the islanders have counted their dead as waves on the cave walls since before any Aenoran sailor saw the arcs. Every island sends its tally-keepers to his caves to learn the oldest names, and he teaches them himself in the deepest cave, which the islanders say is cold because of the names of the Fever Years. He has never let a foreigner read the oldest tally, and has never been asked by one.",
+      "portrait": {
+        "appearance": "A bent, thin old man with wave-marks tattooed across his brow.",
+        "dress": "A cave-keeper's dark wrap, a torch of bound reeds and a tally-cord wound round his wrist.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the cave-keepers choose again.",
+      "succession": "The keepers of the tally-caves choose the elder from among themselves."
+    },
+    "advisors": [
+      {
+        "id": "zin_kamu_lamo_school",
+        "name": "Nuwa nau Bukonyo, Teacher of the Tally-Keepers",
+        "given": "Nuwa",
+        "office": "Teacher of the Tally-Keepers",
+        "gender": "female",
+        "people": "men",
+        "born": 6767,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_tally_keeper"
+        ],
+        "role": "Teaches the tally-keepers of every island in the caves, the school the elders opened in 4A 640.",
+        "portrait": "A gentle woman pointing to waves cut in a cave wall.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kamu_lamo_birds",
+        "name": "Hawang of Kamu Hawin",
+        "given": "Hawang",
+        "office": "Master of the Egg-Gatherers",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Leads the egg-gatherers of the bird isle and sells its guano to the terraces of the south.",
+        "portrait": "A wiry climber with an egg-basket on a rope.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kamu_lamo_caves",
+        "name": "Yulani of the Deep Cave",
+        "given": "Yulani",
+        "office": "Keeper of the Deep Cave",
+        "gender": "female",
+        "people": "men",
+        "born": 6759,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the deepest cave, where the names of the plague dead were cut, and lets nobody in without the elder.",
+        "portrait": "A silent woman holding a reed torch in a cave mouth.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_kamu_lamo_canoes",
+        "name": "Rumyo of the Deep Isle",
+        "given": "Rumyo",
+        "office": "Captain of the Isle Canoes",
+        "gender": "male",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 1,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the island's few canoes and carries the tally-keepers to and from their islands.",
+        "portrait": "A young paddler with a passenger in a canoe.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kamu_lamo_cliffs",
+        "name": "Panga of the Cliffs",
+        "given": "Panga",
+        "office": "Keeper of the Cliff Paths",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 3,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Keeps the cliff paths to the tally-caves, which one woman with a spear could hold against many.",
+        "portrait": "A strong woman on a narrow cliff path with a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KEA",
+    "key": "kea",
+    "name": "Kea",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "KEA_zin_ruler",
+      "name": "Water-Keeper Luanga nau Kea",
+      "given": "Luanga",
+      "house": "the Terrace Council",
+      "title": {
+        "native": null,
+        "english": "Water-Keeper of the Terrace Council"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6768,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_warden_of_the_fields",
+        "zin_trait_guest_right"
+      ],
+      "bio": "The heads of the terrace families of Kea, Agla and the Rice Islands chose Luanga nau Kea as Water-Keeper for this dry season, as they choose one each year, and she shares the water of the cisterns of Tuwang by council rather than by war. The rice of the Rice Islands feeds every island that has a bad harvest, as the council has promised since the Fever Years, and Luanga keeps a store for that purpose that she will not let anyone touch. Her own island paid Agla in rice after the cistern quarrel of 4A 1480, and Agla has never let Kea forget it.",
+      "portrait": {
+        "appearance": "A sturdy, practical woman with sun-creased eyes.",
+        "dress": "A rice-farmer's wrap kilted to the knee, a cistern-keeper's carved water-gauge and a straw hat.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "H",
+      "note": "Nau Kea is a byname (raised on Kea), the custom of the islands; kept from the histories."
+    },
+    "heir": {
+      "note": "No heir: the terrace council chooses again at the next dry season.",
+      "succession": "The terrace council chooses a Water-Keeper each dry season."
+    },
+    "advisors": [
+      {
+        "id": "zin_kea_cisterns",
+        "name": "Anyo nau Tuwang, Keeper of the Cisterns",
+        "given": "Anyo",
+        "office": "Keeper of the Cisterns",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the cisterns of Tuwang that the terrace families dug in the Year of the Dry Wind, and measures every jar drawn from them.",
+        "portrait": "A thin man with a water-jar and a measuring stick.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kea_agla",
+        "name": "Sualani of Agla",
+        "given": "Sualani",
+        "office": "Voice of Agla",
+        "gender": "female",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Speaks for Agla on the council and reminds it of the cistern quarrel whenever water is short.",
+        "portrait": "A sharp-tongued woman with a rice-sack.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kea_rice",
+        "name": "Keayo of the Rice Ships",
+        "given": "Keayo",
+        "office": "Master of the Rice Ships",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Sends the council's rice to any island with a bad harvest and keeps account of every boatload.",
+        "portrait": "A stout man on a laden rice-boat.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_kea_boats",
+        "name": "Wanang of the Rice Islands",
+        "given": "Wanang",
+        "office": "Captain of the Rice Boats",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 1,
+          "maneuvering": 2,
+          "coordination": 3
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the rice boats between the islands, a fleet built to carry food and never to fight.",
+        "portrait": "A young sailor on a broad, heavily laden boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kea_terraces",
+        "name": "Pilunai of the Terraces",
+        "given": "Pilunai",
+        "office": "Captain of the Terrace Families",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Leads the terrace families when there is a wall to build or a cistern to dig, and would lead them if there were a wall to defend.",
+        "portrait": "A muddy young woman with a digging-stick.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SDE",
+    "key": "sidea",
+    "name": "Sidea",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "SDE_zin_ruler",
+      "name": "Elder Nuoan nau Pon",
+      "given": "Nuoan",
+      "house": "the Elders of the Western Islets",
+      "title": {
+        "native": null,
+        "english": "Elder of the Western Islets"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6760,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_lord_of_the_boats"
+      ],
+      "bio": "The families of Sidea, Pon and Yumbo chose Nuoan nau Pon as their one elder, and he will hold the office until the drummers of Yumbo will no longer beat his summons. His drummers carry the first warning of every storm to the Great Isle faster than a canoe can sail, and his islets are the first land of the south that a ship blown down from the West will see. Sidea still sends its first catch of every year to the drowned shrine, in thanks for the canoes the Great Isle rebuilt in 4A 1550.",
+      "portrait": {
+        "appearance": "A stocky, weather-dark man with grey hair tied back and a drummer's calloused hands.",
+        "dress": "A fisher's wrap, a carved drum-stick worn through his belt and a necklace of storm-shells.",
+        "colours": "Lagoon blue (#3f9aa8), sand pale (#efe6c8), coral red (#c9644a)."
+      },
+      "canon": "H",
+      "note": "Nau Pon is a byname (raised on Pon), the custom of the islands; kept from the histories."
+    },
+    "heir": {
+      "note": "No heir: when the drummers stop beating Nuoan's summons the families choose again.",
+      "succession": "One elder is chosen by the families of all the islets and holds office until the drummers will no longer beat his summons."
+    },
+    "advisors": [
+      {
+        "id": "zin_sidea_drums",
+        "name": "Yunbang of the Drums",
+        "given": "Yunbang",
+        "office": "First of the Drummers of Yumbo",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Leads the drummers who beat messages from islet to islet and warn the Great Isle of every storm and strange sail.",
+        "portrait": "A powerful man at a great log-drum.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_sidea_wrecks",
+        "name": "Suwiya of the Landfall",
+        "given": "Suwiya",
+        "office": "Keeper of the Landfall",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Decides with the elder whether a wreck's survivors go on to the house at Lamowan or stay on Pon, and feeds them either way.",
+        "portrait": "A kindly woman on a beach with a water-gourd.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_sidea_catch",
+        "name": "Taowi nau Sidea, Keeper of the First Catch",
+        "given": "Taowi",
+        "office": "Keeper of the First Catch",
+        "gender": "female",
+        "people": "men",
+        "born": 6763,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_tally_keeper"
+        ],
+        "role": "Carries the first catch of every year to the drowned shrine and brings back the names for the islets' tally.",
+        "portrait": "An old woman in a canoe with a basket of fish.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_sidea_canoes",
+        "name": "Lanuyo of the Western Arc",
+        "given": "Lanuyo",
+        "office": "Captain of the Islet Canoes",
+        "gender": "male",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 1,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the fishing canoes of the islets, rebuilt by the Great Isle after the storm of 4A 1550.",
+        "portrait": "A young fisherman in a canoe with a net.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_sidea_watch",
+        "name": "Wiyan of the Watch-Rocks",
+        "given": "Wiyan",
+        "office": "Keeper of the Watch-Rocks",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the watch-rocks of the western islets, from which the first sail from the West is seen.",
+        "portrait": "A young woman on a rock looking out to sea.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]

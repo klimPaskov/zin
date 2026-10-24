@@ -1,0 +1,1535 @@
+[
+  {
+    "tag": "ADE",
+    "key": "adel",
+    "name": "Adel",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "ADE_zin_ruler",
+      "name": "Speaker Tinaios Andaios",
+      "given": "Tinaios",
+      "house": "the Andaios chart-house",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Chart Hall"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6765,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_storm_pilot"
+      ],
+      "bio": "The chart-houses of Adel elected Tinaios Speaker of the Chart Hall in 4A 1740, the latest of the many Speakers the Andaios house has given, and the house still reminds the island that Senra of the Grand Alliance's fleets was one of its own. He decides which crown gets the newest chart, and in a world at peace he sells to the highest bidder. He was a master-pilot before he was a Speaker, and he still corrects the copyists' soundings himself.",
+      "portrait": {
+        "appearance": "A lean, sea-browned man with close-cropped white hair and a pilot's squint.",
+        "dress": "A chart-house robe of sailcloth blue over a sea-coat, a brass chart-case and the Speaker's reef-coral chain.",
+        "colours": "Reef teal (#2f6f78), sailcloth pale (#e0d8be), chart red (#a8513a)."
+      },
+      "canon": "P",
+      "formerName": "Speaker Sanderz (characters spec, Adel tree); Sanderz is the seat of the Chart Hall"
+    },
+    "heir": {
+      "note": "No heir: the chart-houses elect again at Sanderz when Tinaios dies or is turned out.",
+      "succession": "Adel's chart-houses elect the Speaker from the master-pilots."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_adel_ysmay",
+        "name": "Chart-Master Aunei Seidos",
+        "given": "Aunei",
+        "office": "Chart-Master of the Hall",
+        "gender": "female",
+        "people": "men",
+        "born": 6771,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Keeps the copy-house of record at Sanderz and the book of the first namer of every reef.",
+        "portrait": "A small, ink-stained woman bent over a great chart.",
+        "canon": "P",
+        "formerName": "Chart-Master Ysmay Corran (Adel tree); Tritonic has no y, and Corran is a Blackton tree surname",
+        "recruit": "Recruited by the Adel tree focus The Chart-Masters."
+      },
+      {
+        "id": "zin_regional_adel_seilina",
+        "name": "Seilina of Adel",
+        "given": "Seilina",
+        "office": "Master-Pilot of the Chart Hall",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "The reef-wise heir of a chart-house founded after the charts of 4A 702, who reads reefs and sees far through the sea-sight glass, and sells her charts to every crown.",
+        "portrait": "A tall young woman with a ground sea-sight glass and salt-streaked hair.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
+      },
+      {
+        "id": "zin_regional_adel_charter",
+        "name": "Hesion Polaios, Envoy of the Pupor Charter",
+        "given": "Hesion",
+        "office": "Envoy of the Pupor Charter",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the Chart Hall's word to the other houses of the Charter and the tribute to Benan when it is due.",
+        "portrait": "A courteous envoy in sailcloth blue with a charter-roll.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_adel_edda",
+        "name": "Captain Eisaia Rifon",
+        "given": "Eisaia",
+        "office": "Captain of the Sea-Wardens",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "spotter",
+          "blue_water_expert"
+        ],
+        "role": "Commands the chart-houses' sea-wardens, who hunt Benan's corsairs when the tribute is late.",
+        "portrait": "A sturdy woman captain in a weathered sea-coat at the rail.",
+        "canon": "P",
+        "formerName": "Captain Edda Brine (Adel tree); not Tritonic",
+        "recruit": "Recruited by the Adel tree focus The Sea-Wardens."
+      },
+      {
+        "id": "zin_regional_adel_quay",
+        "name": "Sonei of Lusticos",
+        "given": "Sonei",
+        "office": "Captain of the Island Watch",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Keeps the island watch of Adel and its few soldiers, who are mostly sailors with spears.",
+        "portrait": "A young sailor-soldier with a boarding spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "RAE",
+    "key": "raerby",
+    "name": "Raerby",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "RAE_zin_ruler",
+      "name": "Captain-Speaker Daios Raeros",
+      "given": "Daios",
+      "house": "the Raeros family of Urbolon",
+      "title": {
+        "native": null,
+        "english": "Captain-Speaker of Ese"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6763,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_captains_blood"
+      ],
+      "bio": "The shipowners of Ese chose Daios as Captain-Speaker in 4A 1734, the fifth of the Raeros family to keep the freight-book, and they will keep him for as long as he keeps it honestly. He mediates the banks, hires out the isle's ships and watches Nondondor's fleet more closely than any other, because the sea-king's claim to the Southern Banks has never been settled. He holds the Charter's wreck-shares and has a reputation for sharing them fairly, which in the arcs is rarer than a calm.",
+      "portrait": {
+        "appearance": "A heavy, careful man with a grey beard and shrewd brown eyes.",
+        "dress": "A broker-captain's coat of dark teal, the freight-book's bronze clasp and a captain's whistle.",
+        "colours": "Reef teal (#2f6f78), sailcloth pale (#e0d8be), chart red (#a8513a)."
+      },
+      "canon": "P",
+      "formerName": "Captain-Speaker Lemo Raer (characters spec, Raerby tree); Lemo is a town of Raerby"
+    },
+    "heir": {
+      "note": "No heir: the shipowners choose again when Daios dies or the freight-book is found wanting.",
+      "succession": "The shipowners choose a Captain-Speaker for as long as he keeps the freight-book honestly."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_raerby_osk",
+        "name": "Arbiter Saneron Faranai",
+        "given": "Saneron",
+        "office": "Arbiter of the Banks",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Settles quarrels on the banks for a fee, as Raerby has done for centuries, and refuses every year to recognise the sea-king's claim.",
+        "portrait": "A spare, grave man with an arbiter's staff of driftwood.",
+        "canon": "P",
+        "formerName": "Arbiter Osk Faran (Raerby tree); not Tritonic",
+        "recruit": "Recruited by the Raerby tree focus Arbiters at Sea."
+      },
+      {
+        "id": "zin_regional_raerby_freight",
+        "name": "Talena Pannos, Keeper of the Freight-Book",
+        "given": "Talena",
+        "office": "Keeper of the Freight-Book",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Writes every hull, cargo and share into the freight-book and is the reason the book is honest.",
+        "portrait": "A neat woman with a great bound book and a quill.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_raerby_hire",
+        "name": "Hesor the Broker",
+        "given": "Hesor",
+        "office": "Broker of Hulls",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Hires out Raerby's ships to anyone who pays, from the Cold Lands' whalers to the western guild ports.",
+        "portrait": "A cheerful broker with a purse of contracts.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_raerby_ilka",
+        "name": "Captain Taloa Raeros",
+        "given": "Taloa",
+        "office": "Captain of the Broker Fleet",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 3,
+          "maneuvering": 4,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "The Captain-Speaker's niece, who commands the broker fleet and has outsailed Nondondor's galleys twice.",
+        "portrait": "A young woman captain in teal with a speaking-trumpet.",
+        "canon": "P",
+        "formerName": "Captain Ilka Raer (Raerby tree); not Tritonic",
+        "recruit": "Recruited by the Raerby tree focus The Broker Fleet."
+      },
+      {
+        "id": "zin_regional_raerby_urbolon",
+        "name": "Kilaios of Urbolon",
+        "given": "Kilaios",
+        "office": "Captain of the Banks Patrol",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Keeps the patrol on the Southern Banks and counts Nondondor's ships there every season.",
+        "portrait": "A weathered captain in a dark coat with a spyglass.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "PLL",
+    "key": "pollos",
+    "name": "Pollos",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "PLL_zin_ruler",
+      "name": "Guild-Master Pamon Polai",
+      "given": "Pamon",
+      "house": "the Polai family, keepers of the strong-room",
+      "title": {
+        "native": null,
+        "english": "First Guild-Master of Havnai"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6766,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_guild_master",
+        "zin_trait_banker_prince"
+      ],
+      "bio": "Pamon of the Polai keeps the strong-room where the chart-houses hold their coin and the Pupor Charter its dues, and the guild-masters of Havnai have made him first among them since 4A 1738. He sells everything to everyone, weighs every coin at the strong-room door as the market has done since the coiners were hanged on the quay, and humours the sea-king on the other half of the island because he must. He is a soft-spoken man who has never been known to lend the Charter's treasury, and is asked to every year.",
+      "portrait": {
+        "appearance": "A plump, soft-spoken man with heavy-lidded eyes.",
+        "dress": "A guild-master's gown of chart red over sailcloth, the strong-room's great key on a chain and a coin-scale at his belt.",
+        "colours": "Reef teal (#2f6f78), sailcloth pale (#e0d8be), chart red (#a8513a)."
+      },
+      "canon": "P",
+      "formerName": "Guild-Master Hesos Pol (characters spec, Pollos tree); Hesos is a town of Pollos"
+    },
+    "heir": {
+      "note": "No heir: the guild-masters choose the first among them when Pamon dies, and the Polai expect it to be one of theirs.",
+      "succession": "The guild-masters of the trades rule the market; the Polai have been first among them for most of its history."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_pollos_marra",
+        "name": "Naia of the Quay",
+        "given": "Naia",
+        "office": "Mistress of the Counting Quay",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the counting quay where every buyer and seller in Havnai swears to the market law.",
+        "portrait": "A brisk woman with a market-tally and a stall-ledger.",
+        "canon": "P",
+        "formerName": "Marra of the Quay (Pollos tree); not Tritonic",
+        "recruit": "Recruited by the Pollos tree focus The Counting Quay."
+      },
+      {
+        "id": "zin_regional_pollos_weigher",
+        "name": "Sondai the Weigher",
+        "given": "Sondai",
+        "office": "Weigher of the Strong-Room Door",
+        "gender": "male",
+        "people": "men",
+        "born": 6761,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Weighs every coin that enters the strong-room and has found three false ones in his life, which he keeps in a box.",
+        "portrait": "A small old man with a coin-balance and spectacles.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_pollos_factors",
+        "name": "Talani Hesai, Factor to the Mainland",
+        "given": "Talani",
+        "office": "Factor to the Mainland",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Keeps the market's factors on the Corogon coast and the trade that comes back from them.",
+        "portrait": "A well-travelled woman in a western cloak over island sailcloth.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_pollos_teo",
+        "name": "Captain Tinos Saltai",
+        "given": "Tinos",
+        "office": "Captain of the League Ships",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "inshore_fighter"
+        ],
+        "role": "Commands the market's guard-ships in Havnai's harbour and its approaches.",
+        "portrait": "A young captain on a quay with a boat-hook.",
+        "canon": "P",
+        "formerName": "Captain Teo Saltash (Pollos tree); not Tritonic",
+        "recruit": "Recruited by the Pollos tree focus League Captains."
+      },
+      {
+        "id": "zin_regional_pollos_guard",
+        "name": "Aunios of the Strong-Room",
+        "given": "Aunios",
+        "office": "Captain of the Quay Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 3,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Guards the strong-room and the quays, and has never let a corsair past the strong-room door.",
+        "portrait": "A broad guard in a chart-red tabard with a halberd.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NND",
+    "key": "nondondor",
+    "name": "Nondondor",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "NND_zin_ruler",
+      "name": "King Kusaros",
+      "given": "Kusaros",
+      "house": "the Kilai sea-kings of Kudaini",
+      "title": {
+        "native": "Tawros",
+        "english": "Sea-King of Kudaini"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6764,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_sea_king",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "Kusaros of the Kilai commanded a ship before he was twenty, as the crown demands, and took the sea-king's seat at the cliff harbour of Kudaini in 4A 1731. He makes his corsairs fishers in peacetime and his fishers corsairs in war, grants a sailing-writ to every corsair in his waters or hangs him, and presses his claim to the Southern Banks whenever his fleet is stronger than Raerby's. His grandfather hanged forty corsairs in one season to keep the western fleets from Kudaini, and Kusaros keeps the gallows in good repair.",
+      "portrait": {
+        "appearance": "A tall, hawk-faced man with a black beard shot with grey.",
+        "dress": "A sea-king's coat of black and red, a crown of salt-tarnished gold and a coil of hanging-rope at his belt as a sign of office.",
+        "colours": "Black sail (#2a2a2e), corsair red (#a83a2a), tarnished gold (#c8a85a)."
+      },
+      "canon": "P",
+      "formerName": "King Benan of Nondondor (characters spec, Nondondor tree); Benan is a neighbouring realm"
+    },
+    "heir": {
+      "id": "zin_regional_nondondor_lusaia",
+      "name": "Lusaia of the Kilai",
+      "given": "Lusaia",
+      "house": "the Kilai",
+      "office": "Heir of Kudaini",
+      "gender": "female",
+      "people": "men",
+      "born": 6792,
+      "role": "The sea-king's eldest daughter has commanded her own ship on the Southern Banks and is said to be harder than her father.",
+      "succession": "The crown passes to the eldest son or daughter who has commanded a ship.",
+      "portrait": "A young woman captain in black and red with a cutlass.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_nondondor_writs",
+        "name": "Lemios the Writ-Master",
+        "given": "Lemios",
+        "office": "Master of the Sailing-Writs",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Grants the sea-king's writs to the corsairs who pay for them and keeps the list of those who did not.",
+        "portrait": "A sly clerk with a box of sealed writs.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nondondor_banks",
+        "name": "Talai Melkos, Claimant of the Southern Banks",
+        "given": "Talai",
+        "office": "Claimant of the Southern Banks",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "Holds the sea-king's case for the Southern Banks and argues it at every chance with words and, when the fleet is ready, with ships.",
+        "portrait": "A fierce woman in a fisher's coat with a chart of the banks.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nondondor_gallows",
+        "name": "Kustos of the Gallows",
+        "given": "Kustos",
+        "office": "Keeper of the Quay Gallows",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Hangs the corsairs who sail without the sea-king's writ and musters the ones who sail with it.",
+        "portrait": "A grim man with a coil of rope and a tarred hat.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_nondondor_saric",
+        "name": "Admiral Hanos of the Kilai",
+        "given": "Hanos",
+        "office": "Admiral of the Royal Fleet",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "seawolf",
+          "inshore_fighter"
+        ],
+        "role": "The sea-king's brother, who commands the royal fleet and would take the Southern Banks in a summer if he were let.",
+        "portrait": "A broad corsair-admiral in black and red at the prow.",
+        "canon": "P",
+        "formerName": "Admiral Saric Benan (Nondondor tree); Saric is the founder of Thenon and Benan a neighbouring realm",
+        "recruit": "Recruited by the Nondondor tree focus The Royal Fleet."
+      },
+      {
+        "id": "zin_regional_nondondor_melkos",
+        "name": "Daisei of Melkos",
+        "given": "Daisei",
+        "office": "Captain of the Fisher-Corsairs",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "maneuvering": 3,
+          "coordination": 1
+        },
+        "traits": [
+          "bold"
+        ],
+        "role": "Leads the fishing boats of Melkos, which become corsair boats whenever the sea-king says so.",
+        "portrait": "A young fisherwoman with a gaff and a cutlass.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "FNG",
+    "key": "fineger",
+    "name": "Fineger",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "FNG_zin_ruler",
+      "name": "Speaker Lemaios Finon",
+      "given": "Lemaios",
+      "house": "the Finon family of the Kile Islands",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Pilots"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6762,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_storm_pilot",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "The master-pilots chose Lemaios Speaker at Kapai in 4A 1738, the most recent of the many Speakers the Finon family has given, and like every Speaker he has piloted a ship through the Poolho ice. He sets one fee for every ship that enters the pilots' waters, keeps the old pilotage compact with Vindael, and remembers that Raerby carried grain north on credit in the kelp famine of 4A 1601, which the pilots worked off for ten years. Any fleet that crosses towards the Cold Lands from the north will need his pilots, and he knows it.",
+      "portrait": {
+        "appearance": "A wiry, wind-cut old man with pale eyes and a white beard.",
+        "dress": "An oiled sheepskin coat, a pilot's lead-line wound round one arm and the Speaker's sealskin cap.",
+        "colours": "Reef teal (#2f6f78), sailcloth pale (#e0d8be), chart red (#a8513a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the master-pilots choose again at Kapai.",
+      "succession": "The master-pilots choose a Speaker who has piloted a ship through the Poolho ice."
+    },
+    "advisors": [
+      {
+        "id": "zin_fineger_fee",
+        "name": "Eisina Kapos, Keeper of the Pilots' Fee",
+        "given": "Eisina",
+        "office": "Keeper of the Pilots' Fee",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the pilots' fee from every ship that enters their waters and shares it out among the isles.",
+        "portrait": "A sharp woman in sheepskin with a fee-box.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_fineger_kelp",
+        "name": "Old Arai of the Kelp Beds",
+        "given": "Arai",
+        "office": "Keeper of the Kelp Beds",
+        "gender": "male",
+        "people": "men",
+        "born": 6747,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Remembers the kelp famine and the ten years of debt, and keeps the isles' kelp beds and sheep with that in mind.",
+        "portrait": "An old kelp-farmer with a rake and a shepherd's crook.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_fineger_ice",
+        "name": "Sonai the Ice-Pilot",
+        "given": "Sonai",
+        "office": "Eldest of the Ice-Pilots",
+        "gender": "female",
+        "people": "men",
+        "born": 6758,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Has taken more ships through the Poolho ice than anyone alive and reads its moods the way others read a face.",
+        "portrait": "A weathered woman pilot with a sounding-pole in the ice.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_fineger_pilots",
+        "name": "Kildaros of Ziza",
+        "given": "Kildaros",
+        "office": "Captain of the Pilot Boats",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 4,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the pilot boats of the northern isles and could lead a fleet through waters nobody else would try.",
+        "portrait": "A lean pilot at the tiller of a small boat in fog.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_fineger_shepherds",
+        "name": "Naiona of the Kile Islands",
+        "given": "Naiona",
+        "office": "Captain of the Isle Levy",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the shepherds' levy of the cold isles, who know every rock to hide behind.",
+        "portrait": "A sturdy shepherd-woman with a sling.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HLN",
+    "key": "halenor",
+    "name": "Halenor",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "HLN_zin_ruler",
+      "name": "Wreck-Lord Sonaios of the Mondon",
+      "given": "Sonaios",
+      "house": "the Mondon wreck-lords",
+      "title": {
+        "native": null,
+        "english": "Wreck-Lord of Sonrale"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6769,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_wreck_right",
+        "zin_trait_captains_blood"
+      ],
+      "bio": "Sonaios of the Mondon inherited the storm isles in 4A 1736 and swore at the shore, as every wreck-lord must, whether he would light the shore-fires in the gale season or leave them dark; he swore to leave them dark, as his father had. Each gale season brings wrecks ashore, and each season the Lamp-House of the Lens asks him to light his shores and is refused. His grandfather was the wayfinder lord who lit the fires every season of his life, and Sonaios has a portrait of him in the hall, facing the wall.",
+      "portrait": {
+        "appearance": "A burly, salt-weathered man with a black beard and hooded eyes.",
+        "dress": "A wreck-lord's coat sewn from the silks of a dozen wrecked cargoes and a shore-torch of black iron, unlit.",
+        "colours": "Reef teal (#2f6f78), sailcloth pale (#e0d8be), chart red (#a8513a)."
+      },
+      "canon": "P",
+      "formerName": "Sea-Lord Orvak Halen (Halenor tree); Orvak is not Tritonic and Halen echoes the realm"
+    },
+    "heir": {
+      "id": "zin_regional_halenor_seina",
+      "name": "Seina of the Mondon",
+      "given": "Seina",
+      "office": "Heir of Sonrale",
+      "gender": "female",
+      "people": "men",
+      "born": 6793,
+      "role": "The wreck-lord's daughter, who has not yet sworn at the shore and has let it be known that she might choose the fires.",
+      "succession": "The lordship passes to the eldest child, who swears at the shore to light the fires or leave them dark.",
+      "portrait": "A young woman with a lit torch and a wind-whipped cloak.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_halenor_gull",
+        "name": "Old Gull, Keeper of the Wreck-Right",
+        "given": "Gull",
+        "office": "Keeper of the Wreck-Right",
+        "gender": "male",
+        "people": "men",
+        "born": 6745,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the law of the wreck-right and judges which shore each wreck belongs to.",
+        "portrait": "An ancient beachcomber with gull feathers in his hat.",
+        "canon": "S",
+        "recruit": "Recruited by the Halenor tree focus Orvak's Oath (the focus name needs the ruler's new name)."
+      },
+      {
+        "id": "zin_regional_halenor_salvage",
+        "name": "Talmai of the Beaches",
+        "given": "Talmai",
+        "office": "Mistress of the Salvage",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Sells what the storms bring ashore at Sonrale's salvage market, and keeps the best for the wreck-lord.",
+        "portrait": "A shrewd woman among barrels and broken masts.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_halenor_fires",
+        "name": "Tinoras of the Shore-Fires",
+        "given": "Tinoras",
+        "office": "Keeper of the Shore-Fires",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Keeps the shore-fires ready, lit or dark as the lord commands, and reads the gales a day before they come.",
+        "portrait": "A soot-faced man beside a stack of fire-wood on a headland.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_halenor_rhea",
+        "name": "Seiloa Stormwake, Captain of the Storm Fleet",
+        "given": "Seiloa",
+        "office": "Captain of the Storm Fleet",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "maneuvering": 4,
+          "coordination": 2
+        },
+        "traits": [
+          "seawolf",
+          "blue_water_expert"
+        ],
+        "role": "Commands the storm isles' fleet and sails in weather that keeps every other captain in harbour.",
+        "portrait": "A storm-soaked woman captain at a heeling rail.",
+        "canon": "P",
+        "formerName": "Rhea Stormwake (Halenor tree); Rhea is a real-world name",
+        "recruit": "Recruited by the Halenor tree focus The Storm Fleet."
+      },
+      {
+        "id": "zin_regional_halenor_surla",
+        "name": "Kilon of the Surla Islands",
+        "given": "Kilon",
+        "office": "Captain of the Isle Watch",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Keeps the watch on the Surla Islands and the boats that go out to the wrecks.",
+        "portrait": "A tough islander with a salvage hook.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "WND",
+    "key": "windy_lands",
+    "name": "Windy Lands",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "WND_zin_ruler",
+      "name": "Cape-Lord Benaios of Sondor",
+      "given": "Benaios",
+      "house": "the cape-lords of Sondor",
+      "title": {
+        "native": null,
+        "english": "Speaker of the League of the Capes"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6768,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_ransom_tide",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "The four cape-lords chose Benaios of Sondor to speak for the league for the gale season of 4A 1748, as the lords of Sondor have spoken most often. His kite-fishers work the windward banks no other islanders can reach, his wreckers take what the gales drive onto the capes, and the league pays tribute to strong fleets and raids weak ones. It never agrees on anything quickly, and Benaios has learned to announce the league's decisions before the other three lords have quite made them.",
+      "portrait": {
+        "appearance": "A short, broad, wind-reddened man with a wild grey beard.",
+        "dress": "A coat patched with kite-silk, a cape-lord's chain of salvaged bells and a wrecker's hook.",
+        "colours": "Black sail (#2a2a2e), corsair red (#a83a2a), tarnished gold (#c8a85a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the cape-lords choose again each gale season.",
+      "succession": "Four cape-lords sit in council at Audailon and choose one to speak for the league each gale season."
+    },
+    "advisors": [
+      {
+        "id": "zin_windy_lands_kites",
+        "name": "Aunia of the Kites",
+        "given": "Aunia",
+        "office": "Mistress of the Kite Fleet",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Leads the kite-fishers whose great kites are on the league's banner and sells their catch to the market isles.",
+        "portrait": "A laughing woman with a kite-line wound round her arm.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_windy_lands_arpos",
+        "name": "Hesaros of Arpos",
+        "given": "Hesaros",
+        "office": "Cape-Lord of Arpos",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "The cape-lord who argues at every council for raiding any fleet that passes the capes unescorted.",
+        "portrait": "A hard-faced cape-lord with a wrecker's lantern.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_windy_lands_cheko",
+        "name": "Talina of Cheko",
+        "given": "Talina",
+        "office": "Cape-Lady of Cheko",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "The cape-lady who deals with Raerby's brokers and paid them a third of the Raerby wreck to keep the peace.",
+        "portrait": "A sharp-eyed woman in a sealskin cloak.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_windy_lands_wreckers",
+        "name": "Kusai the Wrecker",
+        "given": "Kusai",
+        "office": "Captain of the Wreckers",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "maneuvering": 3,
+          "coordination": 1
+        },
+        "traits": [
+          "bold"
+        ],
+        "role": "Leads the small boats that strip a wreck before the sea does, and that would strip a supply ship just as quickly.",
+        "portrait": "A grinning islander in a small boat with a boarding hook.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_windy_lands_amarelo",
+        "name": "Lustia of Amarelo",
+        "given": "Lustia",
+        "office": "Cape-Lady of Amarelo",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Holds the fourth cape and its cliffs, which nobody has ever needed an army to defend.",
+        "portrait": "A young cape-lady on a cliff with a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SEI",
+    "key": "seite_islands",
+    "name": "Seite Islands",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "SEI_zin_ruler",
+      "name": "Moot-Reader Tamsa of the Seite",
+      "given": "Tamsa",
+      "title": {
+        "native": null,
+        "english": "Moot-Reader of Vesko"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6764,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_refuser_of_crowns"
+      ],
+      "bio": "The moot of every household on the four Seite isles and Mondeluz chose Tamsa as moot-reader for 4A 1748, and she reads the moot's decisions standing under the reef-shrine as every reader has done. She refuses the sea-king of Nondondor his claim to the Southern Banks every year, as the moot has since 4A 1398, and she knows better than anyone that the isles' fishers alone cannot hold their fathers' banks against his fleet. She is a fisherwoman first and a reader second, and she would rather be at sea.",
+      "portrait": {
+        "appearance": "A strong, sun-lined fisherwoman with grey braids.",
+        "dress": "A plain fisher's smock, a moot-reader's shell necklace and a carved reef-token in her hand.",
+        "colours": "Reef teal (#2f6f78), sailcloth pale (#e0d8be), chart red (#a8513a)."
+      },
+      "canon": "S",
+      "formerName": "Elder Tamsa of the Seite (Seite Islands tree); the histories make the office a moot-reader chosen each year"
+    },
+    "heir": {
+      "note": "No heir: the moot chooses a new reader at Vesko each year.",
+      "succession": "The moot of every household chooses a moot-reader each year."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_seite_islands_shrine",
+        "name": "Old Raesei of the Reef-Shrine",
+        "given": "Raesei",
+        "office": "Keeper of the Reef-Shrines",
+        "gender": "male",
+        "people": "men",
+        "born": 6748,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Keeps the shrines raised on the reefs where the first pilots were spared and the tokens island pilots of every arc still leave there.",
+        "portrait": "An old man in a reef-shrine with a basket of tokens.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_seite_islands_banks",
+        "name": "Mondeia of the Fathers' Banks",
+        "given": "Mondeia",
+        "office": "Keeper of the Banks",
+        "gender": "female",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Knows which household fished which bank in her grandmother's day and will say so to the sea-king's envoys at length.",
+        "portrait": "A stout fisherwoman with a net over her shoulder.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_seite_islands_raerby",
+        "name": "Raeon the Go-Between",
+        "given": "Raeon",
+        "office": "Envoy to Raerby",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the moot's word to Raerby's broker-captains, who might broker a sharing of the banks that half the moot would hate.",
+        "portrait": "A careful man in a sailcloth coat with a sealed shell-case.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_seite_islands_brann",
+        "name": "Captain Pamios of the Banks",
+        "given": "Pamios",
+        "office": "Captain of the Banks",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "inshore_fighter"
+        ],
+        "role": "Leads the fishing boats of the isles on the Southern Banks, and would lead them against the sea-king's galleys if the moot asked.",
+        "portrait": "A fisherman-captain with a harpoon at a boat's bow.",
+        "canon": "P",
+        "formerName": "Captain Brann of the Banks (Seite Islands tree); Brann is the founder of Sensai",
+        "recruit": "Recruited by the Seite Islands tree focus The Moot's Captain."
+      },
+      {
+        "id": "zin_regional_seite_islands_vesko",
+        "name": "Aunoa of Vesko",
+        "given": "Aunoa",
+        "office": "Captain of the Moot Isle",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the moot isle and its households' spears, which have never been used on anything larger than a shark.",
+        "portrait": "A young woman with a fishing-spear on a beach.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SNT",
+    "key": "santon",
+    "name": "Santon",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "SNT_zin_ruler",
+      "name": "Captain Dairos the Red",
+      "given": "Dairos",
+      "house": "holds the outer arc by the sword",
+      "title": {
+        "native": null,
+        "english": "Captain of Straton"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6772,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_ransom_tide",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "Dairos the Red holds Straton and the outer arc because he is the best captain in it, and he will hold it until a better one comes. He swore the Ransom Tide law like every captain, raids weak merchant fleets and pays tribute to strong ones, and he has not raided Corogon's grain since the burning of 4A 1622. The consuls swore to burn Straton again after paying for the son his corsairs ransomed in 4A 1701, and Dairos keeps a fast ship ready in case they mean it.",
+      "portrait": {
+        "appearance": "A lean, red-bearded corsair with a scarred grin.",
+        "dress": "A black coat with red facings, gold rings in both ears and a cutlass with a ransom-tally notched in its grip.",
+        "colours": "Black sail (#2a2a2e), corsair red (#a83a2a), tarnished gold (#c8a85a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the next captain of Straton is whoever takes it.",
+      "succession": "The best captain holds the outer arc by the sword until a better one comes."
+    },
+    "advisors": [
+      {
+        "id": "zin_santon_ransom",
+        "name": "Ilasoa the Ransom-Keeper",
+        "given": "Ilasoa",
+        "office": "Keeper of the Ransom Tide",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the roll of captives, their prices and the tide-feast by which each must be ransomed, and keeps the law of it strictly.",
+        "portrait": "A cold-eyed woman with a ransom-roll and a purse of silver.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_santon_dani",
+        "name": "Benaron of Dani",
+        "given": "Benaron",
+        "office": "Captain of Dani",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "The captain of the Dani harbour, who thinks Dairos too careful with Corogon and says so when he has drunk enough.",
+        "portrait": "A heavy corsair with a boarding axe.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_santon_kusu",
+        "name": "Mondira of Kusu",
+        "given": "Mondira",
+        "office": "Broker of Tribute",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Arranges the tribute Santon pays to strong fleets so that it costs as little as possible and looks like a gift.",
+        "portrait": "A smiling woman with a chest of tribute.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_santon_blacksail",
+        "name": "Hanaros of the Outer Arc",
+        "given": "Hanaros",
+        "office": "Captain of the Raiders",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "bold",
+          "naval_invader"
+        ],
+        "role": "Leads Santon's raiding ships and has taken more ransoms than any captain of the arc.",
+        "portrait": "A young corsair at the prow of a black ship.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_santon_straton",
+        "name": "Pamaros of Straton",
+        "given": "Pamaros",
+        "office": "Keeper of Straton",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Rebuilt Straton's walls after the burning and would hold them against Corogon's next fleet.",
+        "portrait": "A scarred corsair with a mason's trowel tucked in his belt.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BEN",
+    "key": "benan",
+    "name": "Benan",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "BEN_zin_ruler",
+      "name": "Captain Urion the Quiet",
+      "given": "Urion",
+      "house": "chosen by the corsairs who pay the haven's dues",
+      "title": {
+        "native": null,
+        "english": "Captain of Torni"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6766,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_ransom_tide",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "The corsairs who pay the haven's dues chose Urion as captain of Torni in 4A 1736, and he keeps the haven's peace and the Ransom Tide law as every captain since Urai the Lame. He takes the chart-houses' tribute to keep his corsairs off Charter ships and raids anyway whenever the tribute is late, and he keeps well away from the Cursed Square, as Benan's corsairs have done since the royal Aenoran ship was lost there. He is a soft-spoken man in a loud trade.",
+      "portrait": {
+        "appearance": "A slight, grey-haired man with a calm face and watchful eyes.",
+        "dress": "A plain dark sea-coat, a captain's ring and a pilot's chart of the coves rolled under his arm.",
+        "colours": "Black sail (#2a2a2e), corsair red (#a83a2a), tarnished gold (#c8a85a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the corsairs choose again at Torni.",
+      "succession": "The haven chooses its captain from the corsairs who pay its dues."
+    },
+    "advisors": [
+      {
+        "id": "zin_benan_dues",
+        "name": "Nailia of the Coves",
+        "given": "Nailia",
+        "office": "Keeper of the Haven's Dues",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the dues of every corsair who shelters at Torni and the chart-houses' tribute when it comes.",
+        "portrait": "A brisk woman with a dues-box and a lantern.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_benan_kildos",
+        "name": "Kildos the Cove-Pilot",
+        "given": "Kildos",
+        "office": "Pilot of the Coves",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Knows every cove under the Benan Mountains that no fleet can find without a Benan pilot.",
+        "portrait": "An old pilot with a coil of sounding-line.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_benan_square",
+        "name": "Old Sannei",
+        "given": "Sannei",
+        "office": "Keeper of the Square's Tale",
+        "gender": "female",
+        "people": "men",
+        "born": 6747,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Tells the story of the royal ship lost on the Cursed Square to every young corsair, so that none of them sails into it.",
+        "portrait": "A very old woman by a fire with a ship's bell.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_benan_raiders",
+        "name": "Arnaios of Bono",
+        "given": "Arnaios",
+        "office": "Captain of the Haven Ships",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 1
+        },
+        "traits": [
+          "trickster"
+        ],
+        "role": "Leads the haven's ships out of the coves and back into them before any chart-house warden can follow.",
+        "portrait": "A young corsair in a dark coat at a cove mouth.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_benan_mountains",
+        "name": "Eisoa of the Benan Mountains",
+        "given": "Eisoa",
+        "office": "Keeper of the Mountain Paths",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Keeps the paths over the Benan Mountains between the coves, which the corsairs use when the sea is watched.",
+        "portrait": "A wiry woman with a mountain staff and a knife.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "LEN",
+    "key": "the_lens",
+    "name": "The Lens",
+    "stance": "zin_wild_clans",
+    "court": "standard",
+    "ruler": {
+      "id": "LEN_zin_ruler",
+      "name": "Keeper Ilonai",
+      "given": "Ilonai",
+      "house": "chosen from the lamp-keepers",
+      "title": {
+        "native": null,
+        "english": "Keeper of the Lamp-House"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6761,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_lamp_keeper",
+        "zin_trait_truce_maker"
+      ],
+      "bio": "The order of the Lamp-House chose Ilonai as Keeper in 4A 1737; she had kept the outermost tower through a whole gale season alone, as every Keeper must, and she swore never to take a side in any quarrel of the arcs. The order keeps the lamps of the northern passages for every ship whatever its flag, and since the sea-king tried to put out a lamp in 4A 1544 no realm of the arcs has touched one. She asks the wreck-lords of Halenor every gale season to light their shores, and expects to be refused.",
+      "portrait": {
+        "appearance": "A tall, pale, quiet woman with short silver hair.",
+        "dress": "A lamp-keeper's grey robe, glass-blower's scarred hands and the Keeper's lens of polished crystal on a chain.",
+        "colours": "Reef teal (#2f6f78), sailcloth pale (#e0d8be), chart red (#a8513a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the order chooses again at Lighon.",
+      "succession": "The order chooses its Keeper from the lamp-keepers who have kept a tower through a whole gale season alone."
+    },
+    "advisors": [
+      {
+        "id": "zin_the_lens_glass",
+        "name": "Saneia of the Glass-House",
+        "given": "Saneia",
+        "office": "Mistress of the Glass-House",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Blows and grinds the lamp-glass in the glass-house that Saneros founded and keeps its craft to the order.",
+        "portrait": "A soot-faced woman holding a glowing glass globe on a rod.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_the_lens_dues",
+        "name": "Arnai of the Lamp-Dues",
+        "given": "Arnai",
+        "office": "Keeper of the Lamp-Dues",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the lamp-dues every chart-house pays for the lights of the northern passages.",
+        "portrait": "A neat man in grey with a ledger.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_the_lens_towers",
+        "name": "Lunos of the Outer Tower",
+        "given": "Lunos",
+        "office": "Warden of the Towers",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Keeps the roster of the lamp-towers and the weather-book of the passages.",
+        "portrait": "A weathered man at the top of a lamp-tower.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_the_lens_tender",
+        "name": "Halenoa of the Tender Boats",
+        "given": "Halenoa",
+        "office": "Captain of the Tender Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the boats that carry lamp-casks and keepers to the outer lamp-towers.",
+        "portrait": "A young woman at the oar of a lamp-tender.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_the_lens_isle",
+        "name": "Tinuros of Lighon",
+        "given": "Tinuros",
+        "office": "Keeper of the Great Tower",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 3,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the great lamp-tower at Lighon and the few keepers who would defend it.",
+        "portrait": "A grey keeper at the door of a tall tower.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]

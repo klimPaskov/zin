@@ -1,0 +1,2034 @@
+[
+  {
+    "tag": "GNW",
+    "key": "gunwyn",
+    "name": "Gunwyn",
+    "stance": "zin_wild_freeholds",
+    "court": "great",
+    "ruler": {
+      "id": "GNW_zin_ruler",
+      "name": "King Herlic",
+      "given": "Herlic",
+      "house": "the Rookwyn",
+      "title": {
+        "native": "Tawr",
+        "english": "King of Gunwyn"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6765,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_truce_maker",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Herlic of the Rookwyn was acclaimed at the Oath-Ring of Bulligon in 4A 1726 and bound by the Lawspeaker with the oath every king of Gunwyn has sworn since Cadyn, that he rules by the clans' law and not above it. He fought the border wars with Girdon for twenty years and then, in 4A 1745, swore the Truce of the Grey Ford at the stone after a winter of talks at Faennon. The war-thanes say the truce gave away the ford-share, the guild ports make his court rich and resentful at once, and Herlic is tired of both.",
+      "portrait": {
+        "appearance": "A tall, heavy-shouldered man with a grey-red beard and a weary, steady face.",
+        "dress": "Clan plaid in red and green under a fur-trimmed mantle and an iron circlet.",
+        "colours": "Plaid red (#6b2f2a), downs green (#2f5a4a), gorse gold (#d4c07a)."
+      },
+      "canon": "H",
+      "formerName": "King Herlic of Gunwaith (characters spec); the realm is Gunwyn"
+    },
+    "heir": {
+      "note": "No named heir: the moot will choose from the Rookwyn when Herlic dies, and the Werlwyn of Werlendor will say the choice is theirs.",
+      "succession": "The clan moot chooses each king from among the dead king's kin."
+    },
+    "advisors": [
+      {
+        "id": "zin_gunwaith_ilurda",
+        "name": "Lawspeaker Ilurda",
+        "given": "Ilurda",
+        "office": "Lawspeaker of Gunwyn",
+        "gender": "female",
+        "people": "men",
+        "born": 6746,
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Judge and priest at once, she remembers every oath sworn at the Oath-Ring in her lifetime and judges strangers by the clans' law like anyone else.",
+        "portrait": "An old woman with a staff of carved law-marks and a plaid shawl.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_gunwaith_datid",
+        "name": "Thane Ruaric ap Garan",
+        "given": "Ruaric",
+        "office": "War-Thane of the Downs",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_war_party"
+        ],
+        "role": "Speaks for the war-thanes who hold that the truce gave away the ford-share and wants it broken before the fords are forgotten.",
+        "portrait": "A scarred war-thane in a red plaid with a broad sword.",
+        "canon": "P",
+        "formerName": "Thane Datid Werlen (characters spec); Datid echoes Datidon and Werlen echoes Werlendor",
+        "note": "The \"Silence him.\" option of zin_gunwaith.2 removes his advisor role."
+      },
+      {
+        "id": "zin_gunwaith_myrwen",
+        "name": "Myrwen ach Sarid, Keeper of the Royal Hall",
+        "given": "Myrwen",
+        "office": "Keeper of the Royal Hall",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the king's treasury and the rents of the guild ports, and knows how much of the court's wealth is Aenoran gold.",
+        "portrait": "A tidy woman in green with a ring of keys and a ledger.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gunwaith_eirada",
+        "name": "Eirada of Faennon",
+        "given": "Eirada",
+        "office": "Envoy of the Truce",
+        "gender": "female",
+        "people": "men",
+        "born": 6778,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Sat through the whole winter of talks at Faennon in 4A 1745 and is the court's envoy to Girdon's river-court.",
+        "portrait": "A composed woman in a grey travelling cloak with a white envoy's staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gunwaith_caddow",
+        "name": "Caddow of the Neck Road",
+        "given": "Caddow",
+        "office": "Keeper of the Neck Road Compact",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the Neck Road open from the thaw to the first snows, as the compact with the Winter Crown requires, and counts every cart of grain that goes north.",
+        "portrait": "A weathered drover in a hooded cloak with a waggoner's whip.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_gunwaith_sarudo",
+        "name": "Captain Emrow of the Rawdwyn",
+        "given": "Emrow",
+        "office": "Captain of the Clans",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Led the clan host through the last ten years of the border wars and knows every ford of the Grey River by the bodies it cost.",
+        "portrait": "A clan captain in hill plaid with a long spear and a battered round shield.",
+        "canon": "P",
+        "formerName": "Captain Sarudo Bolpor (characters spec); Sarudo echoes Sarudon and Bolpor is a dwarf range"
+      },
+      {
+        "id": "zin_gunwaith_garic",
+        "name": "Garic ap Ruaric, Captain of the Thanes' Riders",
+        "given": "Garic",
+        "office": "Captain of the Thanes' Riders",
+        "gender": "male",
+        "people": "men",
+        "born": 6789,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader",
+          "trait_reckless"
+        ],
+        "role": "The war-thane's son, who leads the thanes' riders and has never forgiven the truce for ending the war before he could win it.",
+        "portrait": "A young rider in red plaid with a lance and a wolf-tail crest.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gunwaith_cadiwen",
+        "name": "Cadiwen of the Downs Watch",
+        "given": "Cadiwen",
+        "office": "Warden of the Downs",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Keeps the watch on the downs and the standing stones, where she can call the clans to the Oath-Ring in two days.",
+        "portrait": "A lean woman in green plaid with a horn and a bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gunwaith_ostra",
+        "name": "Admiral Gwenda Chavnow",
+        "given": "Gwenda",
+        "office": "Admiral of the Western Fleets",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "A captain of the guild ports' merchant fleets who would lead the western fleets across the central sea if the clans ever agreed to sail.",
+        "portrait": "A broad sea-captain in a plaid-lined coat with a brass spyglass.",
+        "canon": "P",
+        "formerName": "Admiral Ostra Velk (Gunwyn tree); not Gunwaithic",
+        "recruit": "Recruited by the Gunwyn tree focus The Sea-Lords' Plan."
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "GIR",
+    "key": "girdon",
+    "name": "Girdon",
+    "stance": "zin_light_council",
+    "court": "story",
+    "ruler": {
+      "id": "GIR_zin_ruler",
+      "name": "Warden-Speaker Pernia Lothor",
+      "given": "Pernia",
+      "house": "warden of the Lothoro valley",
+      "title": {
+        "native": null,
+        "english": "Warden-Speaker of Girdon"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6768,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_truce_maker",
+        "zin_trait_horse_lord"
+      ],
+      "bio": "The ford-wardens chose Pernia, warden of the Lothoro horse valley, as their Warden-Speaker in 4A 1738, and like every warden she bears the name of the water she guards. She led the river-court through the last years of the border war and swore the Truce of the Grey Ford with King Herlic at the stone in 4A 1745. She answers raids with the blood-price more often than in kind, keeps Lothoro's riders sworn and knows that half the wardens think the truce came a generation too late and the other half that it came too soon.",
+      "portrait": {
+        "appearance": "A lean, sun-browned woman with grey-streaked dark hair.",
+        "dress": "A riding coat in river green, a warden's ford-stone pendant and a horsewoman's whip.",
+        "colours": "River green (#4a6b52), ford brown (#8a6f4a), reed pale (#d8d0b8)."
+      },
+      "canon": "H",
+      "note": "Lothor is her ford-name under the ford-share (wardens take the name of their water), kept from the histories."
+    },
+    "heir": {
+      "note": "No heir: the wardens choose again at Arligon when Pernia dies or steps down.",
+      "succession": "The ford-wardens choose a Warden-Speaker from among themselves."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_girdon_corla",
+        "name": "Breawen of the Mills",
+        "given": "Breawen",
+        "office": "Master of the Mills",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the mills and granaries of the Girdon plain, which make the commonwealth the West's breadbasket.",
+        "portrait": "A broad, flour-dusted woman with a miller's scoop.",
+        "canon": "P",
+        "formerName": "Corla Wend, Master of the Mills (Girdon tree); not Gunwaithic",
+        "recruit": "Recruited by the Girdon tree focus The Mills of Girdon."
+      },
+      {
+        "id": "zin_regional_girdon_bransyn",
+        "name": "Bransyn of the Winter Ford",
+        "given": "Bransyn",
+        "office": "Warden of the Winter Ford",
+        "gender": "male",
+        "people": "men",
+        "born": 6756,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the Winter Ford and the blood-price rolls of the river-court, and holds that the Drowned Warden of 4A 1702 was paid for twice over.",
+        "portrait": "An old warden in a green cloak with a ford-stone on a cord.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_girdon_nesia",
+        "name": "Nesia of Arligon",
+        "given": "Nesia",
+        "office": "Envoy of the River-Court",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the river-court's word to Bulligon and to the ferry-wardens of Wennarith, with whom Girdon keeps its warden-bond.",
+        "portrait": "A young woman in a river-green cloak with an envoy's staff.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_girdon_aldo",
+        "name": "Warden-Captain Rawdic of the Upper Ford",
+        "given": "Rawdic",
+        "office": "Warden-Captain of the Fords",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "unyielding_defender",
+          "trait_engineer"
+        ],
+        "role": "Holds the upper fords of the Grey River and has walled two of them since the truce, which the truce does not strictly allow.",
+        "portrait": "A heavy warden in green mail behind a ford-stake palisade.",
+        "canon": "P",
+        "formerName": "Warden-Captain Aldo Ferrin (Girdon tree); not Gunwaithic",
+        "recruit": "Recruited by the Girdon tree focus Aldo's Wardens (the focus name needs the new name)."
+      },
+      {
+        "id": "zin_regional_girdon_sarwen",
+        "name": "Sarwen of Lothoro",
+        "given": "Sarwen",
+        "office": "Captain of the Lothoro Riders",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Leads the riders of the Lothoro horse valley, the best of the West, who are sworn as the commonwealth's host.",
+        "portrait": "A rider in green and brown on a grey horse, a lance at rest.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "WER",
+    "key": "werlendor",
+    "name": "Werlendor",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "WER_zin_ruler",
+      "name": "King Dyfric",
+      "given": "Dyfric",
+      "house": "the Werlwyn",
+      "title": {
+        "native": "Tawr",
+        "english": "King of Werlendor, Heir of Bulligon"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6770,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_war_party",
+        "zin_trait_marcher_lord"
+      ],
+      "bio": "Dyfric of the Werlwyn was acclaimed at the Erg stone in 4A 1734 and calls himself, as every king of his line has done, the true heir of Bulligon. His father took the coast-steadings of the Erg while Gunwyn was busy with Girdon, and now that the truce in the south has turned Bulligon's eyes back to the coast, Dyfric keeps his hill clans close to Caer-Erg. He is a proud, quick-tempered man who has never once spoken of the king at Bulligon without calling him his cousin.",
+      "portrait": {
+        "appearance": "A wiry, dark-bearded man with a hawkish face.",
+        "dress": "A hill plaid in dark green and red, an iron torc and a claimant's ring with the old Bulligon stone.",
+        "colours": "Plaid red (#6b2f2a), downs green (#2f5a4a), gorse gold (#d4c07a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No named heir: the hill clans choose from Dyfric's kin, and his claim to Bulligon passes with the crown.",
+      "succession": "The Werlwyn kin choose the king from the dead king's family at the Erg stone."
+    },
+    "advisors": [
+      {
+        "id": "zin_werlendor_tarow",
+        "name": "Tarow of the Erg",
+        "given": "Tarow",
+        "office": "Steward of Caer-Erg",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the hill-fort's stores and the rents of the coast-steadings, which he counts as Werlendor's by right and by possession.",
+        "portrait": "A grizzled steward with a hill-fort key.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_werlendor_gwenieth",
+        "name": "Gwenieth ach Emrid, Keeper of the Claim",
+        "given": "Gwenieth",
+        "office": "Keeper of the Claim",
+        "gender": "female",
+        "people": "men",
+        "born": 6758,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Remembers the genealogy of the two sons of Bulligon better than any Lawspeaker and recites it at every feast.",
+        "portrait": "An old woman in a dark plaid with a carved genealogy-staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_werlendor_brennow",
+        "name": "Brennow of the Hills",
+        "given": "Brennow",
+        "office": "Captain of the Hill Clans",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Musters the hill clans of the Erg, who held Caer-Erg in 4A 1460 and would hold it again.",
+        "portrait": "A broad clansman with an axe and a hill plaid.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_werlendor_emryn",
+        "name": "Emryn of the Coast-Steadings",
+        "given": "Emryn",
+        "office": "Warden of the Coast-Steadings",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Holds the coast-steadings his king's father took in 4A 1724 and expects Gunwyn to come for them.",
+        "portrait": "A young warden in mail on a sea-cliff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_werlendor_cadlith",
+        "name": "Cadlith of the North-West Shore",
+        "given": "Cadlith",
+        "office": "Captain of the Coast Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the boats of the north-west coast, more used to herring than to war.",
+        "portrait": "A sturdy woman at the tiller of a coastal boat.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "LAB",
+    "key": "lambin",
+    "name": "Lambin",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "LAB_zin_ruler",
+      "name": "Lord Cadric of the Granaries",
+      "given": "Cadric",
+      "house": "Branorn's line",
+      "title": {
+        "native": null,
+        "english": "Lord of the Granaries of Faennon"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6762,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_warden_of_the_fields",
+        "zin_trait_truce_maker"
+      ],
+      "bio": "Cadric swore at the granary door in 4A 1727 to sell to every comer, as every lord of Branorn's line has sworn since the plague years, and he has kept the oath with both sides of a forty-three-year war. The envoys of Gunwyn and Girdon talked through a whole winter in his hall before the truce was sworn, and he fed them all and charged them for it. He is a quiet, round, patient man who believes that hunger has ended more wars than any battle.",
+      "portrait": {
+        "appearance": "A round, balding man with a kindly face and shrewd eyes.",
+        "dress": "A brown wool coat dusted with chaff, a granary lord's key-chain and a sheaf badge.",
+        "colours": "Plaid red (#6b2f2a), downs green (#2f5a4a), gorse gold (#d4c07a)."
+      },
+      "canon": "P",
+      "formerName": "Lord Werl of Lambin (characters spec, Lambin tree); Werl echoes Werlendor"
+    },
+    "heir": {
+      "id": "zin_regional_lambin_eirawen",
+      "name": "Eirawen of the Granaries",
+      "given": "Eirawen",
+      "office": "Heir of Faennon",
+      "gender": "female",
+      "people": "men",
+      "born": 6792,
+      "role": "The lord's daughter kept the envoys' tables during the talks of 4A 1745 and knows more of the West's secrets than her father wishes she did.",
+      "succession": "The lordship passes to the eldest child, who swears at the granary door to sell to every comer.",
+      "portrait": "A young woman in brown wool with a granary key and a sheaf brooch.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_lambin_orrin",
+        "name": "Ruaran the Grain-Reeve",
+        "given": "Ruaran",
+        "office": "Reeve of the Granaries",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Fills the stone granaries of Faennon and sells from them to Gunwyn, Girdon and the Neck Road alike.",
+        "portrait": "A thin reeve with a grain-scoop and a tally.",
+        "canon": "P",
+        "formerName": "Orrin the Grain-Reeve (Lambin tree); not Gunwaithic",
+        "recruit": "Recruited by the Lambin tree focus The Grain Lords."
+      },
+      {
+        "id": "zin_regional_lambin_sariena",
+        "name": "Sariena of the Neutral Ground",
+        "given": "Sariena",
+        "office": "Mistress of the Neutral Ground",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Arranges the talks of every court that wants to meet its enemies on Lambin's ground without losing face.",
+        "portrait": "A gracious woman in a grey gown with a white staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_lambin_ulwic",
+        "name": "Ulwic of the Downs",
+        "given": "Ulwic",
+        "office": "Captain of the Granary Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Guards the granaries and the roads to them, which in a famine year is the most dangerous post in the West.",
+        "portrait": "A broad guard-captain with a halberd.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_lambin_essa",
+        "name": "Myrda of the Downs",
+        "given": "Myrda",
+        "office": "Captain of the Downs Riders",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader",
+          "skirmisher"
+        ],
+        "role": "Leads the riders of the eastern downs, who escort the grain wagons and would escort an army if the lord let them.",
+        "portrait": "A rider in brown leather with a lance and a sheaf pennon.",
+        "canon": "P",
+        "formerName": "Essa of the Downs (Lambin tree); Essa is a Coldic stem",
+        "recruit": "Recruited by the Lambin tree focus Riders of the Downs."
+      },
+      {
+        "id": "zin_regional_lambin_gwerin",
+        "name": "Gwerin of Faennon",
+        "given": "Gwerin",
+        "office": "Warden of the Granary Walls",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Keeps the walls and stores of Faennon and could feed a host for a year from them.",
+        "portrait": "A heavy, grey warden in mail with a store-ledger.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "THN",
+    "key": "thenon",
+    "name": "Thenon",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "THN_zin_ruler",
+      "name": "King Cadlic",
+      "given": "Cadlic",
+      "house": "the Sarudwyn",
+      "title": {
+        "native": "Tawr",
+        "english": "King of Thenon"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6773,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_caravan_broker",
+        "zin_trait_truce_maker"
+      ],
+      "bio": "Cadlic of the Sarudwyn was acclaimed at the little hill of Tummin in 4A 1738, and like every king of Thenon he is judged by the olive harvest, which has been good. He keeps the Ronbo Oath with men sent to the Watch, stays out of the downs' feuds and sells his olives and wine to the guild ports. His mother was a daughter of Lambin's granary line, and he has her habit of feeding a quarrel until it falls asleep.",
+      "portrait": {
+        "appearance": "A genial, olive-skinned man with a curled black beard.",
+        "dress": "A light linen coat in green and gold, a circlet of silver olive leaves and a wine-cup at his belt.",
+        "colours": "Plaid red (#6b2f2a), downs green (#2f5a4a), gorse gold (#d4c07a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No named heir: the moot at Tummin chooses from the king's kin.",
+      "succession": "The clan moot chooses among the Sarudwyn kin."
+    },
+    "advisors": [
+      {
+        "id": "zin_thenon_olive",
+        "name": "Myrieth of the Groves",
+        "given": "Myrieth",
+        "office": "Mistress of the Olive Groves",
+        "gender": "female",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the olive groves that were replanted from the small folk's cuttings after the blight of 4A 1540 and sells what their presses yield to every guild port.",
+        "portrait": "A sun-browned woman with a press-jar and a pruning-hook.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_thenon_thenonlaw",
+        "name": "Lawspeaker Ilurorn ap Dyfow",
+        "given": "Ilurorn",
+        "office": "Lawspeaker of Thenon",
+        "gender": "male",
+        "people": "men",
+        "born": 6757,
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Binds the kings of Thenon at the stone of Tummin and keeps the oath of the Ronbo Watch among the oaths he remembers.",
+        "portrait": "An old man with a carved law-staff and a linen mantle.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_thenon_ronbo",
+        "name": "Bransow of the Ronbo Watch",
+        "given": "Bransow",
+        "office": "Captain of Thenon's Watchmen",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Chooses the men Thenon sends to guard the small folk's passes and pays them in grain and leaf.",
+        "portrait": "A broad watch-captain in a green cloak with a spear.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_thenon_tummin",
+        "name": "Garlyn of Tummin",
+        "given": "Garlyn",
+        "office": "Captain of the Lowland Levy",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Leads the lowland levy, which has not fought a war in living memory and is very well fed.",
+        "portrait": "A cheerful, stout captain in linen over mail.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_thenon_eiria",
+        "name": "Eiria of the Herds",
+        "given": "Eiria",
+        "office": "Captain of the Herd-Riders",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Leads the cattle-riders of the lowland, who move a herd faster than most hosts can march.",
+        "portrait": "A rider with a long goad and a sun-hat.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DOB",
+    "key": "dobbum",
+    "name": "Dobbum",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "DOB_zin_ruler",
+      "name": "Warden Hemmia Stubbel",
+      "given": "Hemmia",
+      "house": "the Stubbel household",
+      "title": {
+        "native": null,
+        "english": "Warden of the Fields"
+      },
+      "gender": "female",
+      "people": "small_folk",
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_warden_of_the_fields",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "The moot of householders at Luddum chose Hemmia as Warden of the Fields, the latest of the many Wardens the Stubbel household has given the basin, and she will keep the hall for as long as the harvest stays good. Her chief worry is the weather, her second the price of hearth-leaf at the dwarves' high passes, and she has never in her life been further from home than the Ronbo Watch's gate. She sends the Watch its grain and leaf on time and asks after every man in it by name.",
+      "portrait": {
+        "appearance": "A plump, rosy, curly-haired small-folk woman with bright eyes and bare toes.",
+        "dress": "A green waistcoat over a yellow skirt, a Warden's brass key on a ribbon and a pipe of hearth-leaf in her apron pocket.",
+        "colours": "Field green (#4f7a3a), harvest yellow (#e3c77a), hearth brown (#8a5a33)."
+      },
+      "canon": "H",
+      "note": "Small folk: no birth year (part 1 owner question 6)."
+    },
+    "heir": {
+      "note": "No heir: the moot at Luddum chooses a new Warden after a bad harvest or when the Warden asks to rest.",
+      "succession": "The moot of householders chooses a Warden for as long as the Warden keeps the harvest good."
+    },
+    "advisors": [
+      {
+        "id": "zin_dobbum_gubbel",
+        "name": "Gubbel Lebbum, Householder of the Moot",
+        "given": "Gubbel",
+        "office": "Householder of the Moot",
+        "gender": "male",
+        "people": "small_folk",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Speaks first at every moot of the householders and keeps the record of every Warden's harvests.",
+        "portrait": "A stout old small-folk man with a long pipe and a moot-staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dobbum_sippa",
+        "name": "Sippa Bupplel, Keeper of the Leaf",
+        "given": "Sippa",
+        "office": "Keeper of the Leaf",
+        "gender": "female",
+        "people": "small_folk",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Trades the basin's hearth-leaf and cheese with the dwarves at the high passes and has never yet been cheated by them, which the dwarves find unsettling.",
+        "portrait": "A sharp-nosed small-folk woman with a basket of leaf-bundles.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dobbum_wobbard",
+        "name": "Wobbard Stubbip, Keeper of the Pass-Gates",
+        "given": "Wobbard",
+        "office": "Keeper of the Pass-Gates",
+        "gender": "male",
+        "people": "small_folk",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Of a family that keeps the Watch's fords, he carries the basin's grain and leaf to the men of the Ronbo Watch and knows each of them by name.",
+        "portrait": "A sturdy small-folk man with a handcart and a lantern.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_dobbum_watch",
+        "name": "Garnow of the Ronbo Gate",
+        "given": "Garnow",
+        "office": "Captain of the Ronbo Watch",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "unyielding_defender",
+          "hill_fighter"
+        ],
+        "role": "A Kradlon clansman who commands the men of the Ronbo Watch at the two passes and has sworn, as every captain has since 3A 904, that nothing evil will pass them.",
+        "portrait": "A grizzled clan captain in a green cloak at a stone gate.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dobbum_tibbum",
+        "name": "Hubbel of the Hedges",
+        "given": "Hubbel",
+        "office": "Keeper of the Hedge-Watch",
+        "gender": "male",
+        "people": "small_folk",
+        "type": "field_marshal",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "Organises the small folk who watch the hedges of the basin, which they do mostly by noticing strangers and telling everyone.",
+        "portrait": "A round small-folk man peering over a hedge.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BRU",
+    "key": "brundahrim",
+    "name": "Brundahrim",
+    "stance": "zin_wild_freeholds",
+    "stanceNote": "No countries.csv row (new realm); the builder's default for a realm without a row.",
+    "court": "standard",
+    "ruler": {
+      "id": "BRU_zin_ruler",
+      "name": "Lord Hrokorn Durnast",
+      "given": "Hrokorn",
+      "house": "the Durnast lords of the deepest hall",
+      "title": {
+        "native": "Baur",
+        "english": "Lord of the Deepest Hall"
+      },
+      "gender": "male",
+      "people": "dwarves",
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_hold_lord",
+        "zin_trait_forge_prince"
+      ],
+      "bio": "Hrokorn of the Durnast line rules Brundahrim from the fire-hold of Hrennost, where his forebears' smiths first made the West's burning powder, and he receives no man below the Outer Gate. He sells iron, gold and powder-pieces to whoever wins his favour, keeps the small folk's high passes shut under the Ronbo Oath and is particularly unfriendly to elves. The western courts know that his favour is the price of fire in any war they fight, and he knows that they know it.",
+      "portrait": {
+        "appearance": "A massive, black-bearded dwarf with a burn-scarred face.",
+        "dress": "A mantle of red and black over dark mail, a chain of gold links and a powder-flask of chased bronze.",
+        "colours": "Deep stone (#3d3a36), forge gold (#c9a24a), ember red (#a33a2a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir is known to men.",
+      "succession": "The lord of the eldest delving line rules; the hold does not tell men how its heirs are chosen."
+    },
+    "advisors": [
+      {
+        "id": "zin_brundahrim_gervis",
+        "name": "Gervis Dolmord, Warden of the Outer Gate",
+        "given": "Gervis",
+        "office": "Warden of the Outer Gate",
+        "gender": "female",
+        "people": "dwarves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the Outer Gate where the men of the Ronbo country trade and turns away any buyer who arrives with an elf in his party.",
+        "portrait": "A stern dwarf woman with braided grey hair and a gate-ledger.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_brundahrim_dekkin",
+        "name": "Dekkin Hrakast, Master of the Fire-Forge",
+        "given": "Dekkin",
+        "office": "Master of the Fire-Forge",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Keeps the forge at Hrennost where the powder was first made and the secret that Kradlon's guilds bought only half of.",
+        "portrait": "A soot-black dwarf with singed eyebrows and a mortar and pestle.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_brundahrim_torvas",
+        "name": "Torvas Kunord, Keeper of the Factor-Houses",
+        "given": "Torvas",
+        "office": "Keeper of the Factor-Houses",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the accounts of the hold's one factor-house beyond the ranges, at Guerlon in the far north, and of every cartload of ore it buys.",
+        "portrait": "A grey dwarf with an abacus of iron beads.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_brundahrim_ulkar",
+        "name": "Ulkar Ilmast, Captain of the Powder-Men",
+        "given": "Ulkar",
+        "office": "Captain of the Powder-Men",
+        "gender": "male",
+        "people": "dwarves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine"
+        ],
+        "role": "Commands the hold's powder-men, who have never yet fought outside the hold and drill as if they meant to.",
+        "portrait": "A powerful dwarf in black plate with a powder-piece on his shoulder.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_brundahrim_ulmis",
+        "name": "Ulmis Stombast, Warden of the High Passes",
+        "given": "Ulmis",
+        "office": "Warden of the High Passes",
+        "gender": "female",
+        "people": "dwarves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 4,
+          "planning": 2,
+          "logistics": 1
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Keeps the high passes above the small folk's basin shut, as the hold swore in 3A 904.",
+        "portrait": "A dwarf woman in mail at a mountain gate.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "GRO",
+    "key": "gromkerm",
+    "name": "Gromkerm",
+    "stance": "zin_wild_freeholds",
+    "stanceNote": "No countries.csv row (new realm); the builder's default for a realm without a row.",
+    "court": "standard",
+    "ruler": {
+      "id": "GRO_zin_ruler",
+      "name": "Lord Stulmar Kunerm",
+      "given": "Stulmar",
+      "house": "the Kunerm gate-wardens",
+      "title": {
+        "native": "Baur",
+        "english": "Lord of Hrunost, Warden of the Gate"
+      },
+      "gender": "male",
+      "people": "dwarves",
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_hold_lord",
+        "zin_trait_refuser_of_crowns"
+      ],
+      "bio": "Stulmar of the Kunerm line rules the old hold of Hrunost from behind the gate-forts above the Kulolo, and he keeps the hold's grudge against the guild towns as carefully as its gold. The looting of 2A 1712 is remembered in Hrunost by the names of the guild masters who paid for it, and Stulmar can recite them all. He sells iron, powder-pieces and siege bombards at the Outer Gate, and no company of armed men may come within a bowshot of it.",
+      "portrait": {
+        "appearance": "A grim, grey-bearded dwarf with a broken nose.",
+        "dress": "An iron-grey mantle over plate and a gate-warden's key of black iron on a chain.",
+        "colours": "Deep stone (#3d3a36), forge gold (#c9a24a), ember red (#a33a2a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir is known to men.",
+      "succession": "The Kunerm line of fort-wardens rules from the deep hall; men are not told how."
+    },
+    "advisors": [
+      {
+        "id": "zin_gromkerm_hurdek",
+        "name": "Hurdek of the Gate-Forts",
+        "given": "Hurdek",
+        "office": "Keeper of the Bowshot",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the rule that no armed company may come within a bowshot of the Outer Gate and has shot at the boots of men who doubted it.",
+        "portrait": "A broad dwarf with a crossbow and a measuring rod.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gromkerm_drunnis",
+        "name": "Drunnis Olmast, Mistress of the Kulolo Contract",
+        "given": "Drunnis",
+        "office": "Mistress of the Kulolo Contract",
+        "gender": "female",
+        "people": "dwarves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Holds the iron contract of 4A 1530 with Saopon's guilds and enforces its fixed price to the last grain.",
+        "portrait": "A dwarf woman with a contract-tablet of bronze.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gromkerm_stomrim",
+        "name": "Stomrim the Grudge-Keeper",
+        "given": "Stomrim",
+        "office": "Keeper of the Names",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Keeps the names of the guild masters who paid for the looting of the gate, and reads them aloud each year on the day it happened.",
+        "portrait": "An ancient dwarf with a scroll of hold-runes.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_gromkerm_grattar",
+        "name": "Grattar Kermord, Master of the Bombards",
+        "given": "Grattar",
+        "office": "Master of the Bombards",
+        "gender": "male",
+        "people": "dwarves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine"
+        ],
+        "role": "Commands the hold's siege bombards and the crews who could break walls no western host can.",
+        "portrait": "A thick-armed dwarf beside a great bronze bombard.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gromkerm_velkis",
+        "name": "Veskis Hrunmaug, Warden of the Boldor Heights",
+        "given": "Veskis",
+        "office": "Warden of the Boldor Heights",
+        "gender": "female",
+        "people": "dwarves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Keeps the forts of the Boldor heights above the Kulolo valley.",
+        "portrait": "A dwarf woman in mail with an axe.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SAO",
+    "key": "saopon",
+    "name": "Saopon",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "SAO_zin_ruler",
+      "name": "First Guildsman Cadieth Pellkow",
+      "given": "Cadieth",
+      "house": "the boatmen's guild",
+      "title": {
+        "native": null,
+        "english": "First Guildsman of Lochon"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6767,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_guild_master",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "The guild councils of the Kulolo towns elected Cadieth First Guildsman in 4A 1743, the boatmen's guild giving the league its leader as it most often does, and the guild book of 1A 930 was read aloud at her election as at every one before it. She weighs Aenoran gold against Aenoran tariffs every year and complains about both, keeps the canal to Canako dredged and pays the dwarves of Gromkerm their fixed price without forgiveness on either side.",
+      "portrait": {
+        "appearance": "A broad-shouldered, red-cheeked woman with cropped hair.",
+        "dress": "A boatman's oiled coat under a guild mantle of wine-red and gold and the guild book's silver clasp.",
+        "colours": "Guild wine (#7a3b4e), guild gold (#c9a24a), harbour blue (#3f5f7a)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the councils elect again when Cadieth dies or is voted out.",
+      "succession": "The guild councils of the Kulolo towns elect a First Guildsman."
+    },
+    "advisors": [
+      {
+        "id": "zin_saopon_gwedric",
+        "name": "Old Gwedric, Reader of the Guild Book",
+        "given": "Gwedric",
+        "office": "Reader of the Guild Book",
+        "gender": "male",
+        "people": "men",
+        "born": 6748,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Reads the guild book at every election and knows every contract sworn on it in his lifetime.",
+        "portrait": "An old guild clerk with a great clasped book.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_saopon_canal",
+        "name": "Brealith of the Canako Cut",
+        "given": "Brealith",
+        "office": "Keeper of the Canal",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the canal through the Kulolo Fen dredged so that the barges need never risk the lagoon's mouth in the gales.",
+        "portrait": "A muddy, cheerful woman with a dredging-pole.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_saopon_rhuvic",
+        "name": "Rhuvic of the Iron Wharf",
+        "given": "Rhuvic",
+        "office": "Factor of the Kulolo Iron",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Buys the dwarves' iron at the fixed price and sells it to the world at whatever price the world will pay.",
+        "portrait": "A sleek merchant in wine-red with an iron ingot as a paperweight.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_saopon_fen",
+        "name": "Dyfwen of the Fens",
+        "given": "Dyfwen",
+        "office": "Captain of the Fen Guard",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "Guards the reed-beds the league disputes with Girdon and cuts reeds there herself to make the point.",
+        "portrait": "A lean woman in fen leathers with a reed-spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_saopon_lochric",
+        "name": "Lochric of the Lagoon",
+        "given": "Lochric",
+        "office": "Captain of the Guild Barges",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the armed barges of the Ilurdor lagoon and the canal.",
+        "portrait": "A weathered boatman with a barge-pole and a sword.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BLD",
+    "key": "buldor",
+    "name": "Buldor",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "BLD_zin_ruler",
+      "name": "Captain-General Tarnic of the Grey Banner",
+      "given": "Tarnic",
+      "house": "the Grey Banner company",
+      "title": {
+        "native": null,
+        "english": "Captain-General of Toples"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6764,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_contract_book",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "The company-lords elected Tarnic Captain-General at Toples in 4A 1741, after his Grey Banner had taken contracts from Gunwyn and Girdon in the same war and met itself in the field twice without losing its banner. He governs by the contract-book and nothing else, hires out the companies and their powder-men to the highest bidder and knows the price of every banner in the West, as do Aenor's envoys. He is a cheerful, unsentimental man who says the only bad war is one nobody pays for.",
+      "portrait": {
+        "appearance": "A broad, battered soldier with a grey moustache and a shrewd squint.",
+        "dress": "A buff leather coat over mail, a grey banner-sash and a ledger chained to his belt.",
+        "colours": "Leather brown (#5a3f2f), banner olive (#a8a36a), company blue (#2f3f5a)."
+      },
+      "canon": "P",
+      "formerName": "Emric of the Grey Banner (histories; Emric is also the founder of Werlendor) and Company-Lord Datidon Rook (characters spec; Datidon is Wennarith's seat)"
+    },
+    "heir": {
+      "note": "No heir: the company-lords elect again at Toples when Tarnic dies or his banner falls.",
+      "succession": "The company-lords elect a Captain-General; law is the contract-book."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_buldor_ulric",
+        "name": "Paymaster Sarlic Pennith",
+        "given": "Sarlic",
+        "office": "Paymaster of the Companies",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the companies' pay-chests and the contract-book's accounts, and has never paid a company a day before its contract said.",
+        "portrait": "A thin paymaster with a coin-scale and a chained ledger.",
+        "canon": "P",
+        "formerName": "Paymaster Ulric Penn (Buldor tree); Ulric is a real-world name",
+        "recruit": "Recruited by the Buldor tree focus The Paymaster's Ledger."
+      },
+      {
+        "id": "zin_regional_buldor_dafmor",
+        "name": "Dafmor of the Powder Company",
+        "given": "Dafmor",
+        "office": "Master of the Powder Company",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Raised Buldor's best powder company with pieces bought from Kradlon and keeps its powder dry in every weather.",
+        "portrait": "A grimy master-gunner with a match-cord and a powder-horn.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_buldor_nesith",
+        "name": "Nesith ach Toplow, Mistress of Contracts",
+        "given": "Nesith",
+        "office": "Mistress of Contracts",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Writes the companies' contracts with every court that hires them and reads the small print to their envoys aloud.",
+        "portrait": "A sharp woman in buff and grey with a writing-case.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_buldor_mara",
+        "name": "Captain Breada Holtow",
+        "given": "Breada",
+        "office": "Captain of the Captains' School",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "infantry_leader",
+          "skirmisher"
+        ],
+        "role": "Runs the school where Buldor's young captains learn the contract-book and the pike, in that order.",
+        "portrait": "A tough woman captain in buff leather with a pike.",
+        "canon": "P",
+        "formerName": "Captain Mara Holt (Buldor tree); not Gunwaithic",
+        "recruit": "Recruited by the Buldor tree focus The Captains' School."
+      },
+      {
+        "id": "zin_regional_buldor_cadorn",
+        "name": "Cadorn of the Black Banner",
+        "given": "Cadorn",
+        "office": "Captain of the Black Banner",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine",
+          "harsh_leader"
+        ],
+        "role": "Commands the largest company of Buldor, whose black banner has never fallen and whose price has never come down.",
+        "portrait": "A hard-faced captain in black-lacquered mail under a black banner.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KRA",
+    "key": "kradlon",
+    "name": "Kradlon",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "KRA_zin_ruler",
+      "name": "First Guildsman Brannic Tanuow",
+      "given": "Brannic",
+      "house": "the powder-masters' guild",
+      "title": {
+        "native": null,
+        "english": "First Guildsman of Bolbin"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6766,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_guild_master",
+        "zin_trait_forge_prince"
+      ],
+      "bio": "The guild council of Bolbin elected Brannic First Guildsman in 4A 1742, the powder-masters' guild giving the league its leader as it has more often than any other since the powder secret was bought from the dwarves. His workshops make powder-pieces and bombards for anyone who pays, and he weighs Aenor's tariffs, which his port pays more heavily than any other, against Aenor's trade and the West's long memory. He says he would rather sell to Parim than fight it, and adds that he has not yet been asked.",
+      "portrait": {
+        "appearance": "A lean, burn-scarred man with sharp eyes and black hair going grey.",
+        "dress": "A guild mantle of wine-red over a leather forge-apron and a chain of linked powder-measures.",
+        "colours": "Guild wine (#7a3b4e), guild gold (#c9a24a), harbour blue (#3f5f7a)."
+      },
+      "canon": "P",
+      "formerName": "First Guildsman Trilo Kradd (characters spec, Kradlon tree); Trilo echoes Trilino and Kradd the realm"
+    },
+    "heir": {
+      "note": "No heir: the council elects again when Brannic dies or is voted out.",
+      "succession": "The guild council of Bolbin elects a First Guildsman."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_kradlon_hesta",
+        "name": "Forge-Mistress Eirith Kelnow",
+        "given": "Eirith",
+        "office": "Mistress of the Forge Rows",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the forge rows of Bolbin and the orders that come to them from every court that wants fire.",
+        "portrait": "A muscular woman in a leather apron with tongs.",
+        "canon": "P",
+        "formerName": "Forge-Mistress Hesta Varn (Kradlon tree); not Gunwaithic",
+        "recruit": "Recruited by the Kradlon tree focus Forge Rows."
+      },
+      {
+        "id": "zin_regional_kradlon_tariff",
+        "name": "Dyfnow the Tariff-Reckoner",
+        "given": "Dyfnow",
+        "office": "Reckoner of the Tariffs",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Has counted every rise in Parim's tariffs on western wool and horses since 4A 1720 and can tell a guild meeting to the coin what Aenor has cost it.",
+        "portrait": "A sour clerk with a tally of tariff-rolls.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kradlon_shore",
+        "name": "Thane Ruarow of the Ronbo Shore",
+        "given": "Ruarow",
+        "office": "Thane of the Ronbo Shore",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Speaks for the clansmen of the Ronbo shore who send men to the Ronbo Watch and who do not much like the guild towns.",
+        "portrait": "A clan thane in plaid with a long-handled axe.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_kradlon_bram",
+        "name": "Stennow of the Wagon-Forts",
+        "given": "Stennow",
+        "office": "Captain of the Wagon-Forts",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "trait_engineer",
+          "unyielding_defender"
+        ],
+        "role": "Builds forts of chained wagons with powder-pieces in them and has tried them out on the guild's own militia, who did not enjoy it.",
+        "portrait": "A burly captain beside a chained wagon with a powder-piece.",
+        "canon": "P",
+        "formerName": "Captain Bram Kettle (Kradlon tree); not Gunwaithic",
+        "recruit": "Recruited by the Kradlon tree focus Wagon-Forts."
+      },
+      {
+        "id": "zin_regional_kradlon_pernwen",
+        "name": "Pernwen of Bolbin",
+        "given": "Pernwen",
+        "office": "Captain of the Harbour Ships",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "Commands the armed merchantmen of Bolbin and the powder cargoes they carry.",
+        "portrait": "A young woman captain in a wine-red coat.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "CRG",
+    "key": "corogon",
+    "name": "Corogon",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "CRG_zin_ruler",
+      "name": "Consul Sarieth of the House of Gwennow",
+      "given": "Sarieth",
+      "house": "the House of Gwennow",
+      "title": {
+        "native": null,
+        "english": "Consul of Corogon"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6772,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "The great houses of Oslodon chose Sarieth as one of the year's two consuls in 4A 1748, the second time her house has given a consul in ten years, so that it must give no more for a decade. She fears the corsairs of Santon, trades with Aenor and resents its tariffs, and she has not forgotten that the consuls paid a son's weight in silver to Straton in 4A 1701 and swore to burn it again one day. She would rather sail to Aenor's relief than to its capture, and says so in council.",
+      "portrait": {
+        "appearance": "A tall, elegant woman with dark hair coiled under a jewelled net.",
+        "dress": "A consul's gown of wine-red and blue, a chain of office and a merchant house's signet.",
+        "colours": "Guild wine (#7a3b4e), guild gold (#c9a24a), harbour blue (#3f5f7a)."
+      },
+      "canon": "P",
+      "formerName": "Consul Sobra Canak (characters spec, Corogon tree); Sobre and Canako are places"
+    },
+    "heir": {
+      "note": "No heir: the houses choose the next pair of consuls at the year's end.",
+      "succession": "The great houses choose two consuls each year; a house that gives three consuls in ten years must stand aside for the next ten."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_corogon_colleague",
+        "name": "Consul Bregan Dyfwyn",
+        "given": "Bregan",
+        "office": "Second Consul of Corogon",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "The year's other consul, who would rather trade with everyone and sail with nobody, and who signs nothing Sarieth has not signed first.",
+        "portrait": "A portly consul in blue with a chain of office.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_corogon_ves",
+        "name": "Breadia Doranow, Banker of the Quays",
+        "given": "Breadia",
+        "office": "Banker of the Quays",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Lends to the great houses and to half the courts of the West, and keeps their notes in a strong-room under the quays.",
+        "portrait": "A sharp-eyed woman with a strong-room key and a ledger.",
+        "canon": "P",
+        "formerName": "Ves Doran, Banker of the Quays (Corogon tree)",
+        "recruit": "Recruited by the Corogon tree focus The Counting-Houses."
+      },
+      {
+        "id": "zin_regional_corogon_watchhouse",
+        "name": "Gwerith of the Highlands",
+        "given": "Gwerith",
+        "office": "Warden of the Highland Towns",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the levies of the Corogon Highlands, where every inn has a story about the forgetful wizard and most of them are true.",
+        "portrait": "A highland captain in a sheepskin coat.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_corogon_lio",
+        "name": "Captain Emlow Marrenow",
+        "given": "Emlow",
+        "office": "Captain of the Consulate's Fleet",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "inshore_fighter",
+          "blue_water_expert"
+        ],
+        "role": "Commands the consulate's fleet and sailed with the ships that burned Straton in his youth, which he would like to do again.",
+        "portrait": "A weathered sea-captain in blue with a cutlass.",
+        "canon": "P",
+        "formerName": "Captain Lio Marren (Corogon tree)",
+        "recruit": "Recruited by the Corogon tree focus Sea-Captains of Corogon."
+      },
+      {
+        "id": "zin_regional_corogon_papz",
+        "name": "Eirlow of the Papz Swamp",
+        "given": "Eirlow",
+        "office": "Captain of the Swamp Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Guards the paths through the Papz Swamp, which keep smugglers in business and armies out.",
+        "portrait": "A muddy guard-captain in leather with a long knife.",
+        "canon": "P"
+      }
+    ],
+    "figures": [
+      {
+        "id": "zin_corogon_gwilid",
+        "name": "Gwilid of Corogon",
+        "given": "Gwilid",
+        "office": "The forgetful wizard of the Highlands",
+        "gender": "male",
+        "people": "unknown",
+        "role": "A famous, friendly and very forgetful wizard of the Corogon Highlands, much taller than a man, who collects books and magic stones and hires strangers to fetch them.",
+        "portrait": "A very tall figure of no plain kind, green and one-eyed after the owner's drawing, with a staff that serves as a second eye; follow the drawing (K38).",
+        "canon": "S",
+        "definedBy": "The owner's card (BC 57), renamed Gwilid in docs/lore/regions/west_lands.md; the owner's answer of 24 October 2026 calls him Gektor (magic_and_wizards.md 4.3)",
+        "recruit": "Story figure, never a plain hire: reached through the magic reference's proposed decision chain Gektor's Errand.",
+        "note": "Conflict: the West Lands dossier renames the card's Gektor as Gwilid, while the magic reference keeps Gektor as the owner's sorcerer-chief who traps and bleeds lesser spirits; they read as one being under two names (owner question). His kind is not established.",
+        "secret": "If Gwilid is Gektor, his magic stones hold trapped lesser spirits that he bleeds (magic_and_wizards.md 3.15); public text keeps him a harmless, forgetful collector."
+      }
+    ]
+  },
+  {
+    "tag": "VRN",
+    "key": "varnondor",
+    "name": "Varnondor",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "VRN_zin_ruler",
+      "name": "King Oslin IX",
+      "given": "Oslin",
+      "house": "the Oslin kings of the capes",
+      "title": {
+        "native": "Tawr",
+        "english": "King of Varnondor"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6763,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_lord_of_the_boats",
+        "zin_trait_port_master"
+      ],
+      "bio": "Oslin IX took the founder's name with the crown at Varlibo in 4A 1729, as every king of the capes has done since Oslin of the Trilinwyn set the first lanterns. He keeps the lanterns and the sea watch on the approaches the old Aenoran fleets used, sailed with the ships that burned Straton as a young man and bought Worlond's tallest pines for his hulls. Varlibo's quays are the West's natural staging port for any crossing, which the king knows and Parim has not forgotten.",
+      "portrait": {
+        "appearance": "A tall, grey-haired king with a sailor's weathered face.",
+        "dress": "A sea-blue mantle over a plaid coat, an iron crown set with a lantern-glass and a captain's whistle.",
+        "colours": "Plaid red (#6b2f2a), downs green (#2f5a4a), gorse gold (#d4c07a)."
+      },
+      "canon": "H",
+      "note": "Every king of the capes takes the founder's name, so the name repeats by custom (histories)."
+    },
+    "heir": {
+      "id": "zin_regional_varnondor_herwyn",
+      "name": "Prince Herwyn",
+      "given": "Herwyn",
+      "office": "Prince of the Capes",
+      "gender": "male",
+      "people": "men",
+      "born": 6790,
+      "role": "The king's son, who will reign as Oslin X, has served in the sea watch since boyhood and talks less of crossings than of lanterns.",
+      "succession": "The eldest son inherits and takes the founder's name with the crown.",
+      "portrait": "A young sea-captain in sea-blue with a lantern badge.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_varnondor_ruaryn",
+        "name": "Old Ruaryn of the Lanterns",
+        "given": "Ruaryn",
+        "office": "Keeper of the Cape Lanterns",
+        "gender": "male",
+        "people": "men",
+        "born": 6750,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Keeps the watch-lanterns of the capes and reads the weather from their towers for the sea watch.",
+        "portrait": "An old lantern-keeper with a glass and a brass lantern.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_varnondor_varlibo",
+        "name": "Gwennith of Varlibo",
+        "given": "Gwennith",
+        "office": "Harbour-Mistress of Varlibo",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the quays of Varlibo and the tanners' trade, and could berth a western fleet there in a month.",
+        "portrait": "A stout harbour-mistress with a quay-ledger.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_varnondor_sarnow",
+        "name": "Sarnow the Envoy",
+        "given": "Sarnow",
+        "office": "Envoy to Parim",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Keeps the king's friendship with Parim in repair and would carry the warning south if the king ever chose to send it.",
+        "portrait": "A neat envoy in Aenoran dress with a sealed letter-case.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_varnondor_sevra",
+        "name": "Lady Sevra of the Capes",
+        "given": "Sevra",
+        "office": "Captain of the Sea Watch",
+        "gender": "female",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "spotter",
+          "inshore_fighter"
+        ],
+        "role": "The king's niece, who commands the sea watch's fast hulls and has chased Santon's corsairs into their own harbour.",
+        "portrait": "A tall woman captain in sea-blue with a spyglass.",
+        "canon": "S",
+        "recruit": "Recruited by the Varnondor tree focus The Sea Watch."
+      },
+      {
+        "id": "zin_regional_varnondor_tomas",
+        "name": "Cape-Warden Gwerow Rawdith",
+        "given": "Gwerow",
+        "office": "Warden of the Sea Soldiers",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Drills the sea soldiers of the capes to go ashore from boats, which they practise on the sandbars every summer.",
+        "portrait": "A sea-soldier in a leather coat with a boarding spear.",
+        "canon": "P",
+        "formerName": "Cape-Warden Tomas Reed (Varnondor tree); Tomas is a real-world name",
+        "recruit": "Recruited by the Varnondor tree focus Sea Soldiers of the Capes."
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "WEN",
+    "key": "wennarith",
+    "name": "Wennarith",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "WEN_zin_ruler",
+      "name": "Warden-Speaker Nesiwen of the Datidon Ferry",
+      "given": "Nesiwen",
+      "house": "warden of the Datidon ferry",
+      "title": {
+        "native": null,
+        "english": "Warden-Speaker of Wennarith"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6769,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_truce_maker",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "The ferry-wardens chose Nesiwen, warden of the great ferry at Datidon, as their Warden-Speaker in 4A 1740, and she keeps the law of the ferries as her predecessors have done since 2A 1250. Wennarith refused to carry either Gunwyn's or Girdon's hosts across its rivers in the border wars and lost forty years of trade for it, and Nesiwen is in no hurry to join anyone else's war. She keeps the warden-bond with Girdon and visits Arligon every spring by boat.",
+      "portrait": {
+        "appearance": "A strong, weathered woman with grey hair under a ferry-warden's hood.",
+        "dress": "A river-green coat and a ferry-token of brass on a chain.",
+        "colours": "River green (#4a6b52), ford brown (#8a6f4a), reed pale (#d8d0b8)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the wardens choose again at Datidon.",
+      "succession": "The ferry-wardens choose a Warden-Speaker from among themselves."
+    },
+    "advisors": [
+      {
+        "id": "zin_wennarith_pernogon",
+        "name": "Ruarith of the Pernogon Bend",
+        "given": "Ruarith",
+        "office": "Warden of the Pernogon Ferries",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the ferries of the bend the great flood took in 4A 1275 and the boats Girdon's wardens sent to rebuild them.",
+        "portrait": "A heavy ferryman with a pole and a coil of rope.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wennarith_ilureth",
+        "name": "Ilureth the Ferry-Reeve",
+        "given": "Ilureth",
+        "office": "Reeve of the Ferry-Dues",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Collects the dues of every crossing and keeps the commonwealth's modest treasury.",
+        "portrait": "A neat woman with a toll-box.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wennarith_bond",
+        "name": "Garith of the Warden-Bond",
+        "given": "Garith",
+        "office": "Envoy to Arligon",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Keeps the warden-bond with Girdon in good repair and argues in the moot against those who want it made a union.",
+        "portrait": "A courteous man in river green with an envoy's staff.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_wennarith_rivers",
+        "name": "Dafyth of the River Guard",
+        "given": "Dafyth",
+        "office": "Captain of the River Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the river guard who hold the ferry-landings and would cut the ferries loose before letting a host across.",
+        "portrait": "A ferry-guard in leather with a boat-axe.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wennarith_nesida",
+        "name": "Nesida of the Bend",
+        "given": "Nesida",
+        "office": "Captain of the River Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the armed river boats of the commonwealth, which have never been further than the mouth of the bend.",
+        "portrait": "A young woman at the steering-oar of a river boat.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]
