@@ -4,8 +4,9 @@
 // functions. Warnings are returned by their own functions and never fail a build.
 //
 //   ctx = { roster, catalog, registry, trees (Map id -> effective tree), codes, retired, tierRanges }
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse, scriptText } from '../lib/clausewitz.mjs';
 import { ZIN, GAME } from '../lib/paths.mjs';
@@ -44,7 +45,19 @@ export async function loadCatalog(file = CELLS_FILE) {
   };
 }
 
-export async function loadArgCodes(file = ARG_CODES_FILE) { return JSON.parse(await readFile(file, 'utf8')); }
+// The data folder may hold extra files next to a data file, named `<stem>_<slice>.json` (focus_registry_shared_a.json,
+// focus_arg_codes_shared_a.json): every content slice adds its names there, so slices never edit one shared file at
+// the same time. Extras are read in file-name order; only the default file triggers the scan.
+async function extraFiles(file, stem) {
+  const dir = path.dirname(file);
+  if (path.basename(file) !== `${stem}.json` || !existsSync(dir)) return [];
+  return (await readdir(dir)).filter(n => new RegExp(`^${stem}_[a-z0-9_]+\\.json$`).test(n)).sort().map(n => path.join(dir, n));
+}
+export async function loadArgCodes(file = ARG_CODES_FILE) {
+  const base = JSON.parse(await readFile(file, 'utf8'));
+  for (const extra of await extraFiles(file, 'focus_arg_codes')) base.owners = [...(base.owners ?? []), ...(JSON.parse(await readFile(extra, 'utf8')).owners ?? [])];
+  return base;
+}
 // The keyword table of argument `arg` of effect `effectId`: the owner with the longest matching prefix that lists it.
 export function codesFor(codes, effectId, arg) {
   let best;
@@ -91,8 +104,11 @@ export async function loadRetired(file = CONTRACT_FILE) {
 // the options of a test. `<key>` in a pattern matches [a-z0-9_]+.
 const KINDS = ['scripted_effects', 'scripted_triggers', 'events', 'namespaces', 'ideas', 'decisions', 'opinion_modifiers', 'sub_units', 'characters', 'flags', 'global_flags', 'faction_templates'];
 export class Registry {
-  constructor(data = {}) {
+  // pending: the names are the hand-kept lists of modules that do not exist yet. A tree that declares such a name is
+  // that module, so it is no collision; a name found in a staged file (merge) is a real module's and still collides.
+  constructor(data = {}, { pending = false } = {}) {
     this.sets = Object.fromEntries(KINDS.map(k => [k, new Set(data[k] ?? [])]));
+    this.pending = Object.fromEntries(KINDS.map(k => [k, new Set(pending ? data[k] ?? [] : [])]));
     this.patterns = Object.fromEntries(KINDS.map(k => [k, (data.patterns?.[k] ?? []).map(patternRe)]));
     this.branch = {
       fixed_checks: new Set(data.branch?.fixed_checks ?? []), refreshed_checks: new Set(data.branch?.refreshed_checks ?? []),
@@ -102,12 +118,25 @@ export class Registry {
   }
   has(kind, name) { return this.sets[kind].has(name) || this.patterns[kind].some(re => re.test(name)); }
   add(kind, name) { this.sets[kind].add(name); }
-  merge(other) { for (const k of KINDS) for (const n of other.sets[k]) this.sets[k].add(n); return this; }
+  merge(other) { for (const k of KINDS) for (const n of other.sets[k]) { this.sets[k].add(n); this.pending[k].delete(n); } return this; }
+  // Is the name written by a module that exists (a staged file, or a name list that is not marked pending)?
+  writtenByModule(kind, name) { return this.sets[kind].has(name) && !this.pending[kind].has(name); }
   // Every id that shares a localisation or definition space with a tree's focus, spirit and opinion-modifier ids.
   hasMechanicId(id) { return ['ideas', 'decisions', 'opinion_modifiers', 'sub_units', 'characters'].some(k => this.sets[k].has(id)); }
 }
+// Merges registry data objects: lists of names, the patterns of each kind and the allow_branch lists of E4.
+export function mergeRegistryData(list) {
+  const out = { patterns: {}, branch: {} };
+  for (const d of list) {
+    for (const k of KINDS) if (d[k]) out[k] = [...(out[k] ?? []), ...d[k]];
+    for (const [k, v] of Object.entries(d.patterns ?? {})) out.patterns[k] = [...(out.patterns[k] ?? []), ...v];
+    for (const [k, v] of Object.entries(d.branch ?? {})) out.branch[k] = [...(out.branch[k] ?? []), ...v];
+  }
+  return out;
+}
 export async function loadRegistry(file = REGISTRY_FILE) {
-  return new Registry(existsSync(file) ? JSON.parse(await readFile(file, 'utf8')) : {});
+  const files = existsSync(file) ? [file, ...await extraFiles(file, 'focus_registry')] : [];
+  return new Registry(mergeRegistryData(await Promise.all(files.map(async f => JSON.parse(await readFile(f, 'utf8'))))), { pending: true });
 }
 
 // Reads the names the staged files of other modules define.
@@ -343,8 +372,14 @@ export function checkReferences(tree, ctx) {
   const out = [], t = tree.id, add = (code, msg) => out.push(problem(code, t, msg));
   const reg = ctx.registry, trees = [...ctx.trees.values()];
   const flags = (ctx.flagCache ??= flagsSetBy(trees));
-  const localEffects = new Set([...Object.keys(tree.scripted_effects ?? {}), ...(tree.opinion_modifiers && Object.keys(tree.opinion_modifiers).length ? [helperId(tree)] : [])]);
-  const localTriggers = new Set(Object.keys(tree.scripted_triggers ?? {}));
+  // A tree may call the effects and triggers that any tree of the build declares (the shared trees' helpers are called by
+  // the tier B trees and by other shared trees); a name of no tree and no module stays unresolved.
+  const declared = (ctx.declaredCache ??= {
+    effects: new Set(trees.flatMap(t => [...Object.keys(t.scripted_effects ?? {}), ...(Object.keys(t.opinion_modifiers ?? {}).length ? [helperId(t)] : [])])),
+    triggers: new Set(trees.flatMap(t => Object.keys(t.scripted_triggers ?? {}))),
+    events: new Set(trees.flatMap(t => [...ownEventIds(t).values()])),
+  });
+  const localEffects = declared.effects, localTriggers = declared.triggers;
   const numbers = eventNumbers(tree), ownIds = new Set([...ownEventIds(tree).values()]);
   const sp = (where, ref) => {
     if (ref.startsWith('zin_')) { if (!ownFullSpirits.has(ref) && !reg.has('ideas', ref)) add('spirit_unresolved', `${where}: idea ${ref} is not written by this tree or by a module`); }
@@ -352,7 +387,7 @@ export function checkReferences(tree, ctx) {
   };
   const ownFullSpirits = new Set(Object.keys(tree.spirits ?? {}).map(k => spiritId(tree, k)));
   const ev = (where, ref) => {
-    if (ref.includes('.')) { if (!ownIds.has(ref) && !reg.has('events', ref)) add('event_unresolved', `${where}: event ${ref} is not written by any module (F2)`); }
+    if (ref.includes('.')) { if (!ownIds.has(ref) && !declared.events.has(ref) && !reg.has('events', ref)) add('event_unresolved', `${where}: event ${ref} is not written by any module (F2)`); }
     else if (!numbers.has(ref)) add('event_unknown', `${where}: ${ref} is not an event of the tree`);
   };
   const flag = (where, name, global) => {
@@ -651,8 +686,8 @@ export function checkCollisions(trees, ctx) {
       claim('loc', id, tree, what);
       if (reg.hasMechanicId(id)) out.push(problem('collision_mechanic', tree.id, `F3: ${what} ${id} equals an id written by a mechanic module (idea, decision, opinion modifier, sub-unit or character)`));
     }
-    for (const id of Object.keys(tree.scripted_effects ?? {})) { claim('effect', id, tree, 'scripted effect'); if (reg.sets.scripted_effects.has(id)) out.push(problem('collision_mechanic', tree.id, `F3: scripted effect ${id} is also written by a module`)); }
-    for (const id of Object.keys(tree.scripted_triggers ?? {})) { claim('trigger', id, tree, 'scripted trigger'); if (reg.sets.scripted_triggers.has(id)) out.push(problem('collision_mechanic', tree.id, `F3: scripted trigger ${id} is also written by a module`)); }
+    for (const id of Object.keys(tree.scripted_effects ?? {})) { claim('effect', id, tree, 'scripted effect'); if (reg.writtenByModule('scripted_effects', id)) out.push(problem('collision_mechanic', tree.id, `F3: scripted effect ${id} is also written by a module`)); }
+    for (const id of Object.keys(tree.scripted_triggers ?? {})) { claim('trigger', id, tree, 'scripted trigger'); if (reg.writtenByModule('scripted_triggers', id)) out.push(problem('collision_mechanic', tree.id, `F3: scripted trigger ${id} is also written by a module`)); }
     if (Object.keys(tree.opinion_modifiers ?? {}).length) {
       claim('effect', helperId(tree), tree, 'scripted effect');
       if (tree.scripted_effects?.[helperId(tree)]) out.push(problem('collision_tree', tree.id, `F3: ${helperId(tree)} is generated for the opinion modifiers; the tree must not declare it`));

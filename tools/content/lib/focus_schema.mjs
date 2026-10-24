@@ -26,6 +26,7 @@ export const STRATEGY_FIELDS = ['country', 'type', 'target', 'value', 'if'];
 
 export const RE = {
   id: /^[a-z][a-z0-9_]*$/,                 // tree ids, keys, flags, variables
+  variable: /^(?:global\.)?[a-z][a-z0-9_]*$/,  // variables; a global. prefix names a global variable (docs/design/stage2/focus_major_b.md)
   full: /^zin_[a-z0-9_]+$/,                // a full ZIN id
   eventFull: /^[a-z][a-z0-9_]*\.\d+$/,     // a mechanic's event id
   date: /^\d{4}\.\d{1,2}\.\d{1,2}$/,
@@ -93,7 +94,7 @@ export function validateTree(data, ctx) {
     region: (v, p) => { if (!ctx.regions.has(v)) err(p, `${JSON.stringify(v)} is not a roster region`); },
     stability_above: num,
     variable: (v, p) => {
-      if (!obj(v, p, { name: (x, q) => str(x, q, { re: RE.id, what: 'a variable name' }) }, { above: num, below: num, equals: num })) return;
+      if (!obj(v, p, { name: (x, q) => str(x, q, { re: RE.variable, what: 'a variable name (a global. prefix names a global variable)' }) }, { above: num, below: num, equals: num })) return;
       const ops = ['above', 'below', 'equals'].filter(k => k in v);
       if (ops.length !== 1) err(p, 'needs exactly one of above, below, equals');
     },
@@ -127,7 +128,7 @@ export function validateTree(data, ctx) {
     flag: (v, p) => { if (typeof v === 'string') flagName(v, p); else obj(v, p, { name: flagName, days: (x, q) => int(x, q, { min: 1, max: 36500 }) }); },
     clear_flag: flagName, global_flag: flagName,
     variable: (v, p) => {
-      if (!obj(v, p, { name: (x, q) => str(x, q, { re: RE.id, what: 'a variable name' }) }, { add: num, set: num })) return;
+      if (!obj(v, p, { name: (x, q) => str(x, q, { re: RE.variable, what: 'a variable name (a global. prefix names a global variable)' }) }, { add: num, set: num })) return;
       if (['add', 'set'].filter(k => k in v).length !== 1) err(p, 'needs exactly one of add, set');
     },
     popularity: (v, p) => obj(v, p, { ideology, value: num }),

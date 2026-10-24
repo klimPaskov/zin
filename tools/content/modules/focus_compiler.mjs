@@ -176,7 +176,7 @@ export function effectLines(e, C) {
     case 'event': return typeof v === 'string' ? eventCall(eventRef(C, v)) : eventCall(eventRef(C, v.key), v.days);
     case 'event_for': return block(country(C, v.country), eventCall(eventRef(C, v.key), v.days));
     case 'flag': return typeof v === 'string' ? [`set_country_flag = ${v}`] : block('set_country_flag', [`flag = ${v.name}`, `days = ${v.days}`]);
-    case 'clear_flag': return [`clear_country_flag = ${v}`];
+    case 'clear_flag': return [`clr_country_flag = ${v}`]; // the 1.19.3 documentation names the effect clr_country_flag (clear_country_flag does not exist)
     case 'global_flag': return [`set_global_flag = ${v}`];
     case 'variable': return 'add' in v ? [`add_to_variable = { ${v.name} = ${num(v.add)} }`] : [`set_variable = { ${v.name} = ${num(v.set)} }`];
     case 'popularity': return block('add_popularity', [`ideology = ${IDEOLOGY_KEYS[v.ideology]}`, `popularity = ${num(v.value)}`]);

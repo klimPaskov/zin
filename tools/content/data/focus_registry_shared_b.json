@@ -1,0 +1,21 @@
+{
+ "source": "Registry additions of the shared_b trees (shared_lands_of_the_sun, shared_magical_lands, shared_north_lands, shared_tritons_islands, shared_west_lands): names that mechanics, diplomacy and world-system modules write and the focus compiler cannot yet read from staged files. Same shape as focus_registry.json. loadRegistry reads one file only, so the integrator merges these lists into focus_registry.json (see docs/design/stage2/focus_shared_b.md) and removes an entry when its module lands. tools/content/focus_shared_b.test.mjs merges this file with focus_registry.json for its own checks.",
+ "scripted_effects": ["zin_aenor_event_for_parim", "zin_afrit_add_footholds", "zin_afrit_purge_houses", "zin_eindil_add_regard", "zin_eindil_add_renown", "zin_eindil_aid_host", "zin_eindil_join_coalition", "zin_elves_add_kinship", "zin_elves_add_pass_watch", "zin_elves_add_roost_bond", "zin_elves_add_wall_grievance", "zin_elves_goodwill", "zin_elves_join_kindred", "zin_elves_set_pilgrim_roads", "zin_leren_add_lean", "zin_lost_cause_add_strength", "zin_sun_add_concord", "zin_sun_add_gala_counsel", "zin_west_add_fleet", "zin_west_add_grudge", "zin_west_add_unity"],
+ "scripted_triggers": ["zin_aenor_is_realm", "zin_aenor_king_alive", "zin_aenor_parim_lost", "zin_eindil_friend", "zin_eindil_resents", "zin_elves_eastern_threat", "zin_elves_is_pilgrim_road_realm", "zin_elves_is_rift_realm", "zin_elves_is_wall_realm", "zin_elves_kindred_exists", "zin_elves_refusal_question_open", "zin_is_lerendor", "zin_leren_treaty_in_force", "zin_people_is_common_folk", "zin_rules_is_free", "zin_rules_is_historical", "zin_shared_borders_dark_lands", "zin_shared_bound_away_from_host", "zin_shared_has_coast", "zin_shared_is_island_realm", "zin_sun_league_needed", "zin_west_historical", "zin_world_is_dragon_keeper"],
+ "events": [],
+ "namespaces": [],
+ "ideas": ["zin_west_aenoran_gold"],
+ "decisions": [],
+ "opinion_modifiers": ["zin_leren_compact_kin", "zin_tritons_banks_quarrel", "zin_tritons_mediation_refused"],
+ "sub_units": [],
+ "characters": [],
+ "flags": ["zin_afrit_houses_purged", "zin_afrit_suspicious", "zin_leren_route_supremacy", "zin_sensai_free_crowns", "zin_west_pledged", "zin_west_ships_only", "zin_west_stranded"],
+ "global_flags": ["zin_afrit_dead", "zin_afrit_revealed", "zin_aurevan_crowned", "zin_eastern_invasion", "zin_eindil_awake", "zin_eindil_crowned", "zin_eindil_named", "zin_eindil_returned", "zin_eindil_war_king", "zin_elves_roost_sickness", "zin_elves_wall_roads_closed", "zin_leren_withdrawal", "zin_lorien_dead", "zin_sun_noon_council", "zin_sun_noon_league", "zin_war_of_last_crowns", "zin_west_council", "zin_west_evacuated", "zin_west_evacuation", "zin_west_grey_ford_war", "zin_west_route_crossing", "zin_west_route_divided", "zin_west_route_relief", "zin_western_crossing", "zin_zol_rising", "zin_zol_withdrawn"],
+ "faction_templates": ["zin_faction_pupor_charter"],
+ "branch": {
+  "fixed_checks": ["zin_people_is_common_folk"],
+  "refreshed_checks": ["zin_elves_is_pilgrim_road_realm", "zin_elves_is_rift_realm", "zin_elves_is_wall_realm", "zin_shared_magical_lands_faces_the_mistake", "zin_shared_west_lands_by_the_ford", "zin_shared_west_lands_is_coastal", "zin_world_is_dragon_keeper"],
+  "refreshed_flags": ["zin_west_route_crossing", "zin_west_route_divided", "zin_west_route_relief"],
+  "patterns": []
+ }
+}

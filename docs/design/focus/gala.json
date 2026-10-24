@@ -1,0 +1,1072 @@
+{
+  "id": "gala",
+  "tier": "major",
+  "countries": ["Gala Elves"],
+  "summary": "King Lorien's court in the Lands of the Sun: memory, the Mirror of First Rain, the King's Ships, the Sunhot realms and the Noon Council, the watch on foreign agents, the Sunward Guard, the Long Estrangement, the stranger at Gala, the old lords' ride and Gala after its king (82 focuses, ten branches).",
+  "spirits": {
+    "songs_of_dardan_spirit": {"name":"The Songs of Dardan","desc":"The guard sings the old songs at dusk, and the young learn what the singers hold back.","modifier":{"army_morale_factor":0.05,"experience_gain_army_factor":0.05}},
+    "eldest_court_spirit": {"name":"The Eldest Court","desc":"Gala's court keeps customs older than most realms, and wears them as lightly as a robe.","modifier":{"political_power_gain":0.1}},
+    "memory_before_aen_spirit": {"name":"Memory Before Aen","desc":"The scribes set down what Lorien remembers while he still remembers it.","modifier":{"research_speed_factor":0.05}},
+    "kings_patience_spirit": {"name":"The King's Patience","desc":"Lorien waits, and the court waits with him. Little is rushed, and less is regretted.","cancel":[{"global_flag":"zin_lorien_dead"}],"modifier":{"stability_factor":0.05,"drift_defence_factor":0.1}},
+    "still_water_spirit": {"name":"Still Water","desc":"No ripple but rain disturbs the spring, and the Mirror answers more clearly for it.","modifier":{"research_speed_factor":0.03}},
+    "southern_charts_spirit": {"name":"Charts of the Southern Seas","desc":"The finest charts of the southern waters hang in the harbour-hall, corrected after every voyage.","modifier":{"navy_max_range_factor":0.15,"naval_speed_factor":0.05}},
+    "fleet_of_sun_spirit": {"name":"The Fleet of the Sun","desc":"White ships on the Sea of Gods, well drilled and ready, which no one in Gala expects to use.","modifier":{"navy_org_factor":0.05,"naval_hit_chance":0.03}},
+    "sun_festivals_spirit": {"name":"The Sun Festivals","desc":"Gala joins the lantern-nights of its neighbours, and finds that a friend at a feast is a friend in a crisis.","modifier":{"stability_factor":0.03,"opinion_gain_monthly_factor":0.1}},
+    "voice_of_memory_spirit": {"name":"The Voice of Memory","desc":"Courts that have forgotten why they trust Gala trust it anyway, and Lorien takes care never to abuse the habit.","modifier":{"political_power_gain":0.1,"improve_relations_maintain_cost_factor":-0.25}},
+    "harbour_wardens_spirit": {"name":"Harbour Wardens","desc":"Grey-robed wardens at every quay note who comes and who goes, and say nothing about it.","modifier":{"enemy_operative_detection_chance_factor":0.2,"civilian_intel_factor":0.05}},
+    "quiet_questions_spirit": {"name":"Quiet Questions","desc":"The wardens ask arriving travellers gentle questions, and most are happy to answer.","modifier":{"enemy_operative_detection_chance_factor":0.1,"civilian_intel_factor":0.05}},
+    "veterans_of_dardan_spirit": {"name":"Veterans of Dardan","desc":"The few who stood at Dardan teach the rest, and the lesson is mostly about patience.","modifier":{"army_org_factor":0.05,"army_leader_start_level":1}},
+    "kings_last_armour_spirit": {"name":"The King's Last Armour","desc":"Lorien wears the armour of Dardan again. The guard, seeing it, stands a little straighter.","cancel":[{"global_flag":"zin_lorien_dead"}],"modifier":{"army_attack_factor":0.1,"army_morale_factor":0.1}},
+    "his_memory": {"name":"His Memory Kept","desc":"The songs, the sayings and the empty chair: Gala keeps the king alive in the only way left to it.","modifier":{"stability_factor":0.05,"research_speed_factor":0.03}},
+    "gala_endures_spirit": {"name":"Gala Endures","desc":"The court is older than its last king and will outlast him. The walls hold, the Mirror answers, the bells are rung at noon.","modifier":{"stability_factor":0.05,"drift_defence_factor":0.1}}
+  },
+  "events": {
+    "what_lorien_remembers": {
+      "n": 1,
+      "title": "What Lorien Remembers",
+      "desc": "The King speaks in the open court of Dardan and of the kings who came after it. He says nothing that is not already written, and everyone listens as if it were new.",
+      "picture": "gala_court",
+      "options": [
+        {
+          "name": "Memory is a duty.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "stability": 0.02
+            }
+          ]
+        },
+        {
+          "name": "Memory is a burden.",
+          "ai_chance": {
+            "base": 40
+          },
+          "effects": [
+            {
+              "political_power": 25
+            }
+          ]
+        }
+      ]
+    },
+    "tales_from_the_shores": {
+      "n": 2,
+      "title": "Tales From Every Shore",
+      "desc": "Island scholars bring tales too old for any man to explain: a song with no beginning, a map with one coast missing, a bowl whose glaze nobody can name. They ask the King what he thinks.",
+      "picture": "generic_sea",
+      "options": [
+        {
+          "name": "Keep them in the archive.",
+          "ai_chance": {
+            "base": 50
+          },
+          "effects": [
+            {
+              "research": {
+                "categories": [
+                  "industry"
+                ],
+                "bonus": 0.3,
+                "uses": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Send answers back with them.",
+          "ai_chance": {
+            "base": 50
+          },
+          "effects": [
+            {
+              "call": "zin_sun_add_gala_counsel",
+              "args": {
+                "value": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "mirror_of_first_rain": {
+      "n": 3,
+      "title": "The Mirror of First Rain",
+      "desc": "In an old courtyard lies a spring. Lorien tells the court that the water shows true traces and possible futures, and never a certain one, and that it is the second thing that will tempt them.",
+      "picture": "gala_court",
+      "options": [
+        {
+          "name": "Let the water be still."
+        }
+      ]
+    },
+    "uncertain_futures": {
+      "n": 4,
+      "title": "Uncertain Futures",
+      "desc": "Lorien teaches that a prophecy can frighten people into the very deeds it foretells. He asks that nothing the water shows be spoken in haste.",
+      "picture": "gala_court",
+      "options": [
+        {
+          "name": "We will speak with care."
+        }
+      ]
+    },
+    "guest_at_noon": {
+      "n": 5,
+      "title": "A Guest at the Noon Council",
+      "desc": "The King of Gala asks to sit at the Noon Council as a guest, to listen and, when asked, to speak. The Council debates whether the oldest court in Erdae needs an invitation.",
+      "picture": "generic_court",
+      "options": [
+        {
+          "name": "Honour the King of Gala.",
+          "ai_chance": {
+            "base": 80
+          },
+          "effects": [
+            {
+              "call": "zin_sun_add_concord",
+              "args": {
+                "value": 5
+              }
+            },
+            {
+              "call": "zin_sun_add_gala_counsel",
+              "args": {
+                "value": 10
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hear him politely.",
+          "ai_chance": {
+            "base": 20
+          }
+        }
+      ]
+    },
+    "carry_it_to_gala": {
+      "n": 6,
+      "title": "Carry It to Gala",
+      "desc": "Scholars from many shores arrive in Gala with what they cannot explain: a coin, a carving, a dream that three people had on the same night. They have been told that if the old king cannot make sense of it, nobody can.",
+      "picture": "gala_court",
+      "options": [
+        {
+          "name": "Hear them all.",
+          "effects": [
+            {
+              "call": "zin_sun_add_gala_counsel",
+              "args": {
+                "value": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "noon_council_arms": {
+      "n": 7,
+      "title": "The Noon Council Arms",
+      "desc": "Gala's envoy asks the Noon Council to consider a league of the Sunhot realms for defence. The head of the Council is silent for a moment, then asks the hall whether it is time.",
+      "picture": "generic_war",
+      "options": [
+        {
+          "name": "Not yet.",
+          "ai_chance": {
+            "base": 70,
+            "modifiers": [
+              {
+                "add": -40,
+                "if": [
+                  {
+                    "check": "zin_gala_concord_60"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Raise the Noon League.",
+          "ai_chance": {
+            "base": 30,
+            "modifiers": [
+              {
+                "add": 40,
+                "if": [
+                  {
+                    "check": "zin_gala_concord_60"
+                  }
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "call": "zin_sun_add_concord",
+              "args": {
+                "value": 10
+              }
+            },
+            {
+              "if": {
+                "limit": [
+                  {
+                    "check": "zin_gala_concord_60"
+                  }
+                ],
+                "then": [
+                  {
+                    "call": "zin_sun_form_noon_league"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "strangers_at_quays": {
+      "n": 8,
+      "title": "Strangers at the Quays",
+      "desc": "Foreign priests and traders have been arriving in Gala in greater numbers. The wardens report that they are polite, generous and unusually curious about who comes and goes.",
+      "picture": "generic_sea",
+      "options": [
+        {
+          "name": "Watch them.",
+          "ai_chance": {
+            "base": 40,
+            "modifiers": [
+              {
+                "factor": 0.5,
+                "if": [
+                  {
+                    "rule": {
+                      "name": "zin_rule_historical_path",
+                      "option": "HISTORICAL"
+                    }
+                  }
+                ]
+              },
+              {
+                "factor": 0.75,
+                "if": [
+                  {
+                    "rule": {
+                      "name": "zin_rule_historical_path",
+                      "option": "PLAUSIBLE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "flag": "zin_gala_watching_quays"
+            }
+          ]
+        },
+        {
+          "name": "Gala is open to all.",
+          "ai_chance": {
+            "base": 60,
+            "modifiers": [
+              {
+                "factor": 1.5,
+                "if": [
+                  {
+                    "rule": {
+                      "name": "zin_rule_historical_path",
+                      "option": "HISTORICAL"
+                    }
+                  }
+                ]
+              },
+              {
+                "factor": 1.25,
+                "if": [
+                  {
+                    "rule": {
+                      "name": "zin_rule_historical_path",
+                      "option": "PLAUSIBLE"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    "pilgrim_priests": {
+      "n": 9,
+      "title": "The Pilgrim Priests",
+      "desc": "Priests of the Deliverer ask leave to open a house of healing by the harbour. They have brought physicians, medicines and a purse; the sick of the quays are watching to see what Gala will say.",
+      "picture": "generic_sea",
+      "options": [
+        {
+          "name": "We will consider it."
+        }
+      ]
+    },
+    "long_estrangement": {
+      "n": 10,
+      "title": "The Long Estrangement",
+      "desc": "Lorien recalls Edran's folly in the old hall, in words that have not changed in centuries. The court listens, and it is not clear whether it is listening for grief or for habit.",
+      "picture": "gala_court",
+      "options": [
+        {
+          "name": "The estrangement stands.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "stability": 0.02
+            }
+          ]
+        },
+        {
+          "name": "Erdae's fate still matters to us.",
+          "ai_chance": {
+            "base": 40
+          },
+          "effects": [
+            {
+              "call": "zin_sun_add_gala_counsel",
+              "args": {
+                "value": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "name_in_the_water": {
+      "n": 11,
+      "title": "The Name in the Water",
+      "desc": "The court hears the name that the water gave: Eindil, son of Ein. Lorien says it aloud once, and nobody in the hall moves for a long moment. Then the Keeper bows, and the court follows.",
+      "picture": "gala_court",
+      "options": [
+        {
+          "name": "Gala will help him.",
+          "effects": [
+            {
+              "war_support": 0.03
+            }
+          ]
+        }
+      ]
+    },
+    "bearer_of_glo": {
+      "n": 12,
+      "title": "Word From the North",
+      "desc": "Sailors returning from the north say the stranger lives and carries a green light out of the cold. They have it from a fisherman, who had it from a trader, and Lorien smiles and asks for the trader's name.",
+      "picture": "generic_sea",
+      "options": [
+        {
+          "name": "Then the voyage was not in vain.",
+          "effects": [
+            {
+              "call": "zin_sun_add_gala_counsel",
+              "args": {
+                "value": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "old_lords": {
+      "n": 13,
+      "title": "The Old Lords",
+      "desc": "Lorien sends word to lords and spirits who have lived since Dardan. He does not name them, and the heralds do not ask who they are; they carry the word to hills and hollows, and wait.",
+      "picture": "gala_court",
+      "options": [
+        {
+          "name": "Let them remember."
+        }
+      ]
+    }
+  },
+  "scripted_effects": {
+    "zin_gala_recruit": {
+      "args": {
+        "character": {
+          "keyword": {
+            "heveneya": 1,
+            "sulestien": 2,
+            "tangsiel": 3
+          }
+        }
+      },
+      "effects": [
+        {
+          "raw": "if = {\n\tlimit = {\n\t\tcheck_variable = { zin_arg_character = 1 }\n\t\tNOT = { has_character = zin_gala_heveneya }\n\t}\n\trecruit_character = zin_gala_heveneya\n}\nif = {\n\tlimit = {\n\t\tcheck_variable = { zin_arg_character = 2 }\n\t\tNOT = { has_character = zin_gala_sulestien }\n\t}\n\trecruit_character = zin_gala_sulestien\n}\nif = {\n\tlimit = {\n\t\tcheck_variable = { zin_arg_character = 3 }\n\t\tNOT = { has_character = zin_gala_tangsiel }\n\t}\n\trecruit_character = zin_gala_tangsiel\n}"
+        }
+      ]
+    },
+    "zin_gala_islands_goodwill": {
+      "effects": [
+        {
+          "for_country": {
+            "country": "Howan",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Nara",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Dunn",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Finn",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Lua",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Verde",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Angsutz",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Enhis Is Rond",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Yowi-yoor",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Yongyong",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Jingar",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Torsor",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Yongrost",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Meng",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Sidea Islands",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Kea",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Agla",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Yumbo",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "for_country": {
+            "country": "Pon",
+            "effects": [
+              {
+                "if": {
+                  "limit": [
+                    {
+                      "check": "zin_shared_has_coast"
+                    }
+                  ],
+                  "then": [
+                    {
+                      "call": "zin_elves_goodwill",
+                      "args": {
+                        "target": "Gala Elves"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "zin_gala_goodwill_with_gala": {
+      "effects": [
+        {
+          "call": "zin_elves_goodwill",
+          "args": {
+            "target": "Gala Elves"
+          }
+        }
+      ]
+    },
+    "zin_gala_neighbour_goodwill": {
+      "effects": [
+        {
+          "raw": "every_country = {\n\tlimit = {\n\t\tzin_sun_is_sunhot_realm = yes\n\t\tis_neighbor_of = ROOT\n\t}\n\tzin_gala_goodwill_with_gala = yes\n}"
+        }
+      ]
+    },
+    "zin_gala_sunhot_goodwill": {
+      "effects": [
+        {
+          "call": "zin_elves_goodwill",
+          "args": {
+            "target": "The Lands of Light"
+          }
+        },
+        {
+          "call": "zin_elves_goodwill",
+          "args": {
+            "target": "Poyang"
+          }
+        },
+        {
+          "call": "zin_elves_goodwill",
+          "args": {
+            "target": "Godland"
+          }
+        },
+        {
+          "call": "zin_elves_goodwill",
+          "args": {
+            "target": "Hengyang"
+          }
+        },
+        {
+          "call": "zin_elves_goodwill",
+          "args": {
+            "target": "Elvana"
+          }
+        },
+        {
+          "call": "zin_elves_goodwill",
+          "args": {
+            "target": "Heaven"
+          }
+        }
+      ]
+    },
+    "zin_gala_lay_down_ships": {
+      "args": {
+        "count": "number"
+      },
+      "effects": [
+        {
+          "raw": "add_equipment_production = {\n\tequipment = {\n\t\ttype = zin_hull_galley_1\n\t\tcreator = \"Y6X\"\n\t}\n\trequested_factories = 1\n\tprogress = 0.5\n\tamount = zin_arg_count\n}"
+        }
+      ]
+    }
+  },
+  "scripted_triggers": {
+    "zin_gala_stage_5": {
+      "conditions": [
+        {
+          "raw": "check_variable = {\n\tvar = global.zin_eindil_stage\n\tvalue = 5\n\tcompare = greater_than_or_equals\n}"
+        }
+      ]
+    },
+    "zin_gala_stage_6": {
+      "conditions": [
+        {
+          "raw": "check_variable = {\n\tvar = global.zin_eindil_stage\n\tvalue = 6\n\tcompare = greater_than_or_equals\n}"
+        }
+      ]
+    },
+    "zin_gala_dark_40": {
+      "conditions": [
+        {
+          "raw": "check_variable = {\n\tvar = global.zin_gathering_dark\n\tvalue = 40\n\tcompare = greater_than_or_equals\n}"
+        }
+      ]
+    },
+    "zin_gala_dark_50": {
+      "conditions": [
+        {
+          "raw": "check_variable = {\n\tvar = global.zin_gathering_dark\n\tvalue = 50\n\tcompare = greater_than_or_equals\n}"
+        }
+      ]
+    },
+    "zin_gala_clarity_30": {
+      "conditions": [
+        {
+          "raw": "check_variable = {\n\tvar = global.zin_mirror_clarity\n\tvalue = 30\n\tcompare = greater_than_or_equals\n}"
+        }
+      ]
+    },
+    "zin_gala_concord_60": {
+      "conditions": [
+        {
+          "raw": "check_variable = {\n\tvar = global.zin_sun_concord\n\tvalue = 60\n\tcompare = greater_than_or_equals\n}"
+        }
+      ]
+    }
+  },
+  "focuses": [
+    {"key":"what_lorien_remembers","name":"What Lorien Remembers","desc":"The king of the Gala elves has watched the ages turn since before Dardan. He speaks of them only when asked, and his court has learned to ask.","icon":"gala_sun","x":1,"y":0,"days":70,"ai":{"base":50},"effects":[{"political_power":50},{"event":"what_lorien_remembers"}],"filters":["political"]},
+    {"key":"kings_audiences","name":"The King's Audiences","desc":"On certain mornings Lorien receives anyone who comes, in the open court beside the Mirror. Kings and shepherds wait in the same line, and he hears them in the order they arrived.","icon":"council_table","x":0,"y":1,"days":35,"prerequisite":[["what_lorien_remembers"]],"ai":{"base":25},"effects":[{"call":"zin_sun_add_gala_counsel","args":{"value":5}},{"flag":"zin_gala_audiences"}],"filters":["political"]},
+    {"key":"songs_of_dardan","name":"The Songs of Dardan","desc":"The old songs are sung again in the evenings, those that tell of the field where the Grand Alliance stood. The young guards learn them, and learn what the singers leave out.","icon":"hymn_choir","x":2,"y":1,"days":70,"prerequisite":[["what_lorien_remembers"]],"ai":{"base":20},"effects":[{"add_spirit":"songs_of_dardan_spirit"},{"army_experience":10}],"filters":["political"]},
+    {"key":"eldest_court","name":"The Eldest Court","desc":"Gala's court has met in the same halls since before the kings of men learned to read. Its customs are older than the realms around it, and it wears them lightly.","icon":"gala_sun","x":1,"y":2,"days":70,"prerequisite":[["kings_audiences","songs_of_dardan"]],"ai":{"base":20},"effects":[{"add_spirit":"eldest_court_spirit"},{"stability":0.05}],"filters":["political"]},
+    {"key":"tales_from_the_shores","name":"Tales From Every Shore","desc":"Travellers from distant coasts bring Gala stories too strange for anyone else to keep. The archives take them in without judgement.","icon":"island_shrine","x":0,"y":3,"days":35,"prerequisite":[["eldest_court"]],"ai":{"base":15},"effects":[{"event":"tales_from_the_shores"},{"call":"zin_sun_add_gala_counsel","args":{"value":5}},{"political_power":25}],"filters":["political"]},
+    {"key":"first_men_records","name":"Records of the First Men","desc":"Scrolls of the First Men, stronger and longer-lived than their heirs, are copied by Gala's scribes. Most are about ordinary things: harvests, quarrels, the names of roads.","icon":"scroll_sealed","x":2,"y":3,"days":70,"prerequisite":[["eldest_court"]],"ai":{"base":15},"effects":[{"research":{"categories":["land_doctrine"],"bonus":0.5,"uses":1}},{"flag":"zin_gala_first_men_records"}],"filters":["political"]},
+    {"key":"memory_before_aen","name":"Memory Before Aen","desc":"Lorien remembers a time before the House of Aen, and his scribes write it down before it is forgotten again. History, he says, is mostly the story of what people chose to remember.","icon":"book_lore","x":1,"y":4,"days":70,"prerequisite":[["tales_from_the_shores","first_men_records"]],"ai":{"base":15},"effects":[{"add_spirit":"memory_before_aen_spirit"}],"filters":["political"]},
+    {"key":"kings_patience","name":"The King's Patience","desc":"Lorien chooses to wait, and to let the world come to him. Patience, he says, is not indifference, though it takes a patient mind to tell the two apart.","icon":"olive_branch","x":0,"y":5,"days":35,"prerequisite":[["memory_before_aen"]],"mutually_exclusive":["kings_warning"],"ai":{"base":10,"modifiers":[{"factor":2,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":1.5,"if":[{"rule":{"name":"zin_rule_historical_path","option":"PLAUSIBLE"}}]}]},"effects":[{"add_spirit":"kings_patience_spirit"}],"filters":["political"]},
+    {"key":"kings_warning","name":"The King's Warning","desc":"Lorien decides that some dangers must be spoken of before they arrive. He sends word to the courts that will listen, knowing that warnings do not always help.","icon":"eye_watchful","x":2,"y":5,"days":35,"prerequisite":[["memory_before_aen"]],"mutually_exclusive":["kings_patience"],"ai":{"base":10,"modifiers":[{"factor":2,"if":[{"rule":{"name":"zin_rule_historical_path","option":"FREE"}}]}]},"effects":[{"flag":"zin_gala_kings_warning"},{"call":"zin_sun_add_gala_counsel","args":{"value":10}}],"filters":["political"]},
+    {"key":"king_beyond_ages","name":"A King Beyond the Ages","desc":"Gala's king has outlived every grudge held against him and most of the causes that made them. His court is a fixed point in a changing world.","icon":"gala_sun","x":1,"y":6,"days":70,"prerequisite":[["kings_patience","kings_warning"]],"ai":{"base":15},"effects":[{"political_power":100},{"stability":0.05}],"filters":["political"]},
+    {"key":"mirror_of_first_rain","name":"The Mirror of First Rain","desc":"In a stone courtyard at the heart of Gala lies a spring that gathers the first rain of each year. Lorien says it shows true traces of what has passed and possible shapes of what may come, and never a certain one.","icon":"mirror_rain","x":5,"y":0,"days":70,"ai":{"base":40},"effects":[{"event":"mirror_of_first_rain"},{"flag":"zin_gala_mirror_open"}],"filters":["research"]},
+    {"key":"keeper_of_mirror","name":"The Keeper of the Mirror","desc":"Heveneya, a theorist of the old school, takes up the long watch beside the water. She studies the ripples as a scribe studies a hand.","icon":"mirror_rain","x":4,"y":1,"days":35,"prerequisite":[["mirror_of_first_rain"]],"ai":{"base":20},"effects":[{"call":"zin_gala_recruit","args":{"character":"heveneya"}},{"call":"zin_sun_add_clarity","args":{"value":10}}],"filters":["research"]},
+    {"key":"courtyard_of_rain","name":"The Courtyard of Rain","desc":"Tall silver trees are planted round the courtyard to keep the wind from the water, and benches are set for those who wait their turn to look.","icon":"sun_flowers","x":6,"y":1,"days":70,"prerequisite":[["mirror_of_first_rain"]],"ai":{"base":15},"effects":[{"call":"zin_sun_add_clarity","args":{"value":15}},{"stability":0.02}],"filters":["research"]},
+    {"key":"true_traces","name":"Reading True Traces","desc":"Heveneya teaches the court to read what the water has already shown: the marks of deeds done, the wake of ships long gone. Of all its answers, these are the surest.","icon":"book_lore","x":4,"y":2,"days":70,"prerequisite":[["keeper_of_mirror"]],"ai":{"base":15},"effects":[{"flag":"zin_gala_true_traces"}],"filters":["research"]},
+    {"key":"uncertain_futures","name":"Uncertain Futures","desc":"Lorien warns his scribes that a vision of the future is a river in flood, not a road. They write the warning above the water.","icon":"scroll_sealed","x":6,"y":2,"days":35,"prerequisite":[["courtyard_of_rain"]],"ai":{"base":15},"effects":[{"event":"uncertain_futures"},{"flag":"zin_gala_cautious_seers"}],"filters":["research"]},
+    {"key":"still_water","name":"Still Water","desc":"A rule is made that no ripple shall be added to the spring but rain. The water clears, and the Keeper finds that clear water is easier to read than troubled.","icon":"mirror_rain","x":5,"y":3,"days":70,"prerequisite":[["true_traces","uncertain_futures"]],"ai":{"base":15},"effects":[{"add_spirit":"still_water_spirit"}],"filters":["research"]},
+    {"key":"visions_north","name":"Visions of the North","desc":"The water is asked about the northern seas, the black islands and the long ocean beyond them. It answers in shades of grey.","icon":"compass_rose","x":4,"y":4,"days":35,"prerequisite":[["still_water"]],"available":[{"check":"zin_gala_clarity_30"}],"ai":{"base":15,"modifiers":[{"factor":3,"if":[{"check":"zin_gala_dark_40"}]}]},"effects":[{"call":"zin_sun_mirror_vision","args":{"sight":"north"}}],"filters":["research"]},
+    {"key":"visions_south","name":"Visions of the South","desc":"The water is asked about the southern deserts and the roads that lead into them. It shows dust, and a pale moving line that may be marching.","icon":"ember_desert","x":6,"y":4,"days":35,"prerequisite":[["still_water"]],"available":[{"check":"zin_gala_clarity_30"}],"ai":{"base":15,"modifiers":[{"factor":3,"if":[{"check":"zin_gala_dark_40"}]}]},"effects":[{"call":"zin_sun_mirror_vision","args":{"sight":"south"}}],"filters":["research"]},
+    {"key":"visions_across_seas","name":"Visions Across the Seas","desc":"The water is asked about the far islands and the central sea. It shows ships, and a great many of them.","icon":"sea_charts","x":7,"y":5,"days":35,"prerequisite":[["visions_south"]],"available":[{"check":"zin_gala_clarity_30"}],"ai":{"base":10},"effects":[{"call":"zin_sun_mirror_vision","args":{"sight":"seas"}}],"filters":["research"]},
+    {"key":"share_the_sight","name":"Share the Sight","desc":"What the Mirror shows is written out fair and sent to those who might use it. Some will not believe it, and Lorien is content that they were told.","icon":"beacon","x":5,"y":5,"days":35,"prerequisite":[["visions_north","visions_south"]],"ai":{"base":10},"effects":[{"flag":"zin_gala_share_sight"},{"call":"zin_sun_add_gala_counsel","args":{"value":5}}],"filters":["research"]},
+    {"key":"kings_ships","name":"The King's Ships","desc":"Gala is small but its ships are among the finest in Erdae: long, pale hulls with sails like folded wings. Lorien has them built for beauty and for need alike.","icon":"warship_sail","x":9,"y":0,"days":70,"ai":{"base":30},"effects":[{"building":{"type":"dockyard","level":1,"where":"capital"}},{"navy_experience":10}],"filters":["navy"]},
+    {"key":"shipwrights","name":"Sulestien's Shipwrights","desc":"Sulestien, Master of the King's Ships, takes charge of the yards and chooses the craftsmen himself. It is said he has never built a vessel that was not named before it was finished.","icon":"shipwright_yard","x":8,"y":1,"days":35,"prerequisite":[["kings_ships"]],"ai":{"base":15},"effects":[{"call":"zin_gala_recruit","args":{"character":"sulestien"}},{"navy_experience":5}],"filters":["navy"]},
+    {"key":"elven_hulls","name":"Elven Hulls","desc":"Hull-planks are steamed and bent in the elven manner, joined without nails. They are lighter than the ships of men, quicker and quiet on the water.","icon":"galley_oars","x":10,"y":1,"days":70,"prerequisite":[["kings_ships"]],"ai":{"base":20},"effects":[{"research":{"categories":["zin_cat_galleys"],"bonus":0.5,"uses":2}}],"filters":["navy"]},
+    {"key":"sun_harbour","name":"The Sun Harbour","desc":"A curved harbour of white stone is cut into Gala's coast, deep enough for the largest hull and sheltered from the western gales.","icon":"lighthouse","x":8,"y":2,"days":70,"prerequisite":[["shipwrights"]],"ai":{"base":15},"effects":[{"building":{"type":"naval_base","level":2,"where":"capital"}}],"filters":["navy"]},
+    {"key":"southern_charts","name":"Charts of the Southern Seas","desc":"Captains of the King's ships record every reef, current and island they pass. The result is a chart of the southern waters more exact than any other.","icon":"sea_charts","x":10,"y":2,"days":35,"prerequisite":[["elven_hulls"]],"ai":{"base":15},"effects":[{"add_spirit":"southern_charts_spirit"}],"filters":["navy"]},
+    {"key":"ships_to_islands","name":"Ships Calling at the Islands","desc":"Ships of Gala visit the island harbours of the south, bearing books, seed and news, and come home with songs and sailors' tales. Word spreads that the King's ships are friendly.","icon":"island_shrine","x":9,"y":3,"days":70,"prerequisite":[["sun_harbour","southern_charts"]],"ai":{"base":15},"effects":[{"call":"zin_gala_islands_goodwill"},{"call":"zin_sun_add_gala_counsel","args":{"value":5}}],"filters":["navy"]},
+    {"key":"ship_beyond_compare","name":"A Ship Beyond Compare","desc":"In the deep yard a single hull is laid down, finer than any other, with a keel cut from a tree older than the realm. Lorien has not said what it is for.","icon":"great_warship","x":8,"y":4,"days":70,"prerequisite":[["ships_to_islands"]],"ai":{"base":10,"modifiers":[{"factor":5,"if":[{"check":"zin_gala_stage_5"}]}]},"effects":[{"flag":"zin_gala_great_ship"},{"research":{"categories":["zin_cat_warships"],"bonus":0.5,"uses":1}}],"filters":["navy"]},
+    {"key":"warships_of_gala","name":"Warships of Gala","desc":"Gala is no realm that wants war. Yet its shipwrights lay down a few warships against need, as a prudent household keeps a lock on its door.","icon":"warship_sail","x":10,"y":4,"days":70,"prerequisite":[["ships_to_islands"]],"ai":{"base":10},"effects":[{"research":{"categories":["zin_cat_warships"],"bonus":0.5,"uses":1}},{"call":"zin_gala_lay_down_ships","args":{"count":2}}],"filters":["navy"]},
+    {"key":"fleet_of_sun","name":"The Fleet of the Sun","desc":"A small, swift fleet of white ships patrols the Sea of Gods. It has never fired a shot in anger, and every captain in it prays that this remains true.","icon":"anchor_rope","x":9,"y":5,"days":70,"prerequisite":[["ship_beyond_compare","warships_of_gala"]],"ai":{"base":10},"effects":[{"add_spirit":"fleet_of_sun_spirit"}],"filters":["navy"]},
+    {"key":"sun_realms","name":"Among the Sun Realms","desc":"Gala shares its coasts and skies with the great Sunhot realms, whose elves are the tallest and gentlest in Erdae. Lorien sends them courtesy in every season.","icon":"sun_flowers","x":14,"y":0,"days":70,"ai":{"base":40},"effects":[{"call":"zin_sun_add_concord","args":{"value":5}},{"political_power":25}],"filters":["political"]},
+    {"key":"envoys_lands_of_light","name":"Envoys to the Lands of Light","desc":"A delegation travels south to the largest of the Sunhot realms with a gift of silver wood and a letter in Lorien's own hand.","icon":"envoy","x":13,"y":1,"days":35,"prerequisite":[["sun_realms"]],"ai":{"base":25},"effects":[{"call":"zin_elves_goodwill","args":{"target":"The Lands of Light"}},{"call":"zin_sun_add_gala_counsel","args":{"value":5}}],"filters":["political"]},
+    {"key":"sun_festivals","name":"The Sun Festivals","desc":"Gala joins the festivals of its neighbours: the Day of First Light, the Feast of the Long Noon, the lantern-nights. Guests come from three realms and leave late.","icon":"sun_flowers","x":15,"y":1,"days":70,"prerequisite":[["sun_realms"]],"ai":{"base":15},"effects":[{"add_spirit":"sun_festivals_spirit"}],"filters":["political"]},
+    {"key":"guest_at_noon","name":"A Guest at the Noon Council","desc":"The Sunhot realms meet at noon each season under the presidency of the Lands of Light. Gala is asked to attend as a guest, to speak but not to vote.","icon":"council_table","x":13,"y":2,"days":70,"prerequisite":[["envoys_lands_of_light"]],"available":[{"global_flag":"zin_sun_noon_council"}],"ai":{"base":20},"effects":[{"event_for":{"country":"The Lands of Light","key":"guest_at_noon"}}],"filters":["political"]},
+    {"key":"sea_of_gods","name":"Pilgrims to the Sea of Gods","desc":"Gala makes room for pilgrims who walk the coast road to the Sea of Gods, with inns and wells along the way.","icon":"compass_rose","x":15,"y":2,"days":70,"prerequisite":[["sun_festivals"]],"ai":{"base":10},"effects":[{"building":{"type":"infrastructure","level":1,"where":"capital"}},{"call":"zin_sun_add_concord","args":{"value":3}}],"filters":["political"]},
+    {"key":"sun_guard_friends","name":"Friends Among the Sun Guard","desc":"The Sun Guard keeps the borders of the Sunhot realms. Gala sends its officers to share bread and talk of watches with them.","icon":"sunhot_spear","x":12,"y":3,"days":35,"prerequisite":[["guest_at_noon"]],"ai":{"base":10},"effects":[{"call":"zin_gala_neighbour_goodwill"},{"call":"zin_sun_add_gala_counsel","args":{"value":5}}],"filters":["political"]},
+    {"key":"honour_sunhot","name":"Honour the Sunhot Elves","desc":"Lorien sends gifts and a formal word of honour to every Sunhot court. They are a peaceful people, and he thinks them worth honouring.","icon":"sunhot_spear","x":14,"y":3,"days":70,"prerequisite":[["guest_at_noon","sea_of_gods"]],"ai":{"base":15},"effects":[{"call":"zin_sun_add_concord","args":{"value":10}},{"call":"zin_gala_sunhot_goodwill"}],"filters":["political"]},
+    {"key":"mediator_of_south","name":"Mediator of the South","desc":"When two Sunhot courts quarrel, Gala's envoys are the ones both sides will receive. A quarrel talked out is a war avoided.","icon":"olive_branch","x":13,"y":4,"days":70,"prerequisite":[["honour_sunhot"]],"ai":{"base":10},"effects":[{"flag":"zin_gala_mediator"},{"call":"zin_sun_add_gala_counsel","args":{"value":10}}],"filters":["political"]},
+    {"key":"carry_it_to_gala","name":"Carry It to Gala","desc":"\"Carry it to Gala\" has become a saying in the south: whatever you cannot understand, take it to the old king. The scholars arrive with their puzzles in satchels.","icon":"book_lore","x":15,"y":4,"days":35,"prerequisite":[["honour_sunhot"]],"ai":{"base":15},"effects":[{"event":"carry_it_to_gala"},{"call":"zin_sun_add_gala_counsel","args":{"value":5}},{"research":{"categories":["industry"],"bonus":0.5,"uses":1}}],"filters":["political"]},
+    {"key":"voice_of_memory","name":"The Voice of Memory","desc":"Lorien's counsel is sought by courts that have long forgotten why they trust him. They do trust him, and he knows what that means.","icon":"gala_sun","x":14,"y":5,"days":70,"prerequisite":[["mediator_of_south","carry_it_to_gala"]],"ai":{"base":10},"effects":[{"add_spirit":"voice_of_memory_spirit"}],"filters":["political"]},
+    {"key":"noon_council_arms","name":"The Noon Council Arms","desc":"If the south is attacked, the Noon Council may raise a league of its own realms. Gala offers to keep the records and to bring the oldest spears.","icon":"alliance_rings","x":14,"y":6,"days":70,"prerequisite":[["voice_of_memory"]],"available":[{"check":"zin_sun_league_needed"}],"ai":{"base":100},"effects":[{"event_for":{"country":"The Lands of Light","key":"noon_council_arms"}}],"filters":["political"]},
+    {"key":"strangers_at_quays","name":"Strangers at the Quays","desc":"Foreign priests, traders and scribes arrive at Gala's harbour in numbers not seen before. They are courteous, and they ask a great many questions.","icon":"harbour_lake","x":18,"y":0,"days":35,"ai":{"base":20},"effects":[{"event":"strangers_at_quays"}],"filters":["political"]},
+    {"key":"harbour_wardens","name":"Harbour Wardens","desc":"The harbour is watched, though not harshly: wardens in grey stand at every quay to note who comes and goes.","icon":"eye_watchful","x":17,"y":1,"days":70,"prerequisite":[["strangers_at_quays"]],"ai":{"base":15},"effects":[{"add_spirit":"harbour_wardens_spirit"}],"filters":["political"]},
+    {"key":"pilgrim_priests","name":"The Pilgrim Priests","desc":"Priests of the Deliverer ask leave to open a house of healing by the harbour. They bring skilled hands and generous gifts.","icon":"courier_pilgrim","x":19,"y":1,"days":35,"prerequisite":[["strangers_at_quays"]],"ai":{"base":15},"effects":[{"event":"pilgrim_priests"}],"filters":["political"]},
+    {"key":"courteous_distance","name":"A Courteous Distance","desc":"Gala thanks the priests for their offer and politely declines it. The harbour is open to all, but the healing house will not be built.","icon":"seal_wax","x":17,"y":2,"days":35,"prerequisite":[["harbour_wardens","pilgrim_priests"]],"mutually_exclusive":["welcome_priests"],"ai":{"base":10,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":0.5,"if":[{"rule":{"name":"zin_rule_historical_path","option":"PLAUSIBLE"}}]},{"factor":2,"if":[{"rule":{"name":"zin_rule_historical_path","option":"FREE"}}]},{"factor":2,"if":[{"flag":"zin_gala_watching_quays"}]}]},"effects":[{"call":"zin_afrit_add_footholds","args":{"value":-1}},{"political_power":25}],"filters":["political"]},
+    {"key":"welcome_priests","name":"Welcome the Healing Houses","desc":"The priests are given a house by the harbour and the hearty thanks of the sick. Gala has never turned healers away.","icon":"healer_herbs","x":19,"y":2,"days":35,"prerequisite":[["harbour_wardens","pilgrim_priests"]],"mutually_exclusive":["courteous_distance"],"ai":{"base":10,"modifiers":[{"factor":3,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":2,"if":[{"rule":{"name":"zin_rule_historical_path","option":"PLAUSIBLE"}}]}]},"effects":[{"call":"zin_afrit_add_footholds","args":{"value":1}},{"stability":0.03},{"call":"zin_elves_goodwill","args":{"target":"Worshipdom"}}],"filters":["political"]},
+    {"key":"quiet_questions","name":"Quiet Questions","desc":"Wardens put gentle questions to arriving travellers: where they have been, whom they serve and how long they mean to stay. Most answer freely.","icon":"scout_lantern","x":18,"y":3,"days":70,"prerequisite":[["courteous_distance","welcome_priests"]],"ai":{"base":10},"effects":[{"add_spirit":"quiet_questions_spirit"}],"filters":["political"]},
+    {"key":"no_word_leaves","name":"No Word Leaves Gala","desc":"A guest's departure is not a matter for gossip. The court quietly closes its doors to anyone who asks where he has gone.","icon":"scroll_sealed","x":18,"y":4,"days":35,"prerequisite":[["quiet_questions"]],"available":[{"check":"zin_gala_stage_5"}],"ai":{"base":30,"modifiers":[{"factor":0,"if":[{"not":[{"rule":{"name":"zin_rule_historical_path","option":"FREE"}}]}]}]},"effects":[{"call":"zin_afrit_add_footholds","args":{"value":-1}},{"flag":"zin_gala_word_kept"}],"filters":["political"]},
+    {"key":"sunward_guard","name":"The Sunward Guard","desc":"Gala's guard is small and old: a few hundred spears, led by veterans who fought at Dardan. They guard the court with the patience of long habit.","icon":"sword_shield","x":21,"y":0,"days":70,"ai":{"base":30},"effects":[{"army_experience":10},{"research":{"categories":["zin_cat_arms"],"bonus":0.5,"uses":1}}],"filters":["army"]},
+    {"key":"tangsiel_command","name":"Tangsiel's Command","desc":"Tangsiel, a captain who has never lost a gate, is given command of the guard. She believes in long drills and short speeches.","icon":"war_council_map","x":20,"y":1,"days":35,"prerequisite":[["sunward_guard"]],"ai":{"base":15},"effects":[{"call":"zin_gala_recruit","args":{"character":"tangsiel"}},{"army_experience":5}],"filters":["army"]},
+    {"key":"arms_of_gala","name":"Arms of Gala","desc":"Slender spears with leaf-shaped heads, silvered mail and bows of white yew. The smiths of Gala make little, and make it well.","icon":"forge_anvil","x":22,"y":1,"days":70,"prerequisite":[["sunward_guard"]],"ai":{"base":15},"effects":[{"equipment":{"type":"zin_elven_arms_equipment","amount":500}},{"research":{"categories":["zin_cat_arms"],"bonus":0.5,"uses":1}}],"filters":["army"]},
+    {"key":"walls_of_gala","name":"The Walls of Gala","desc":"The old walls are mended and raised in pale stone, with high towers and gates of silvered oak. They are meant to deter, and to be beautiful.","icon":"fort_wall","x":20,"y":2,"days":70,"prerequisite":[["tangsiel_command"]],"ai":{"base":10},"effects":[{"building":{"type":"bunker","level":2,"where":"capital"}},{"building":{"type":"coastal_bunker","level":1,"where":"capital"}}],"filters":["army"]},
+    {"key":"court_archers","name":"Archers of the King's Court","desc":"The King's archers are chosen for patience as much as aim. They stand quietly in the colonnades, and no one passes unseen.","icon":"elven_bow","x":22,"y":2,"days":70,"prerequisite":[["arms_of_gala"]],"ai":{"base":10},"effects":[{"research":{"categories":["zin_cat_bows"],"bonus":0.5,"uses":1}},{"army_experience":5}],"filters":["army"]},
+    {"key":"guard_courtyard","name":"Guard the Courtyard of Rain","desc":"A ring of guards stands day and night about the Mirror. They watch the water, and they watch whoever looks into it.","icon":"mirror_rain","x":20,"y":3,"days":35,"prerequisite":[["walls_of_gala"]],"ai":{"base":10},"effects":[{"building":{"type":"bunker","level":1,"where":"capital"}},{"flag":"zin_gala_courtyard_guarded"}],"filters":["army"]},
+    {"key":"veterans_of_dardan","name":"Veterans of Dardan","desc":"A few of the guard remember the field of Dardan, and they teach the rest in the evenings what the singers leave out.","icon":"banner_league","x":21,"y":3,"days":70,"prerequisite":[["walls_of_gala","court_archers"]],"ai":{"base":10},"effects":[{"add_spirit":"veterans_of_dardan_spirit"}],"filters":["army"]},
+    {"key":"wardsong_of_gala","name":"The Wardsong of Gala","desc":"A low chant taught by Lorien's oldest singers, sung at the changing of the watch, holds back shadows that ordinary courage cannot. Against the dead it may matter.","icon":"ward_circle","x":21,"y":4,"days":70,"prerequisite":[["veterans_of_dardan"]],"ai":{"base":10,"modifiers":[{"factor":5,"if":[{"global_flag":"zin_zol_rising"}]}]},"effects":[{"research":{"categories":["zin_cat_wards"],"bonus":0.5,"uses":2}}],"filters":["army"]},
+    {"key":"long_estrangement","name":"The Long Estrangement","desc":"Since Edran's folly, the elves have kept apart from the kings of Aenor. Gala shares the Refusal, and Lorien has never apologised for it.","icon":"chain_broken","x":24,"y":0,"days":35,"ai":{"base":30},"effects":[{"event":"long_estrangement"}],"filters":["political"]},
+    {"key":"letters_to_parim","name":"Letters to Parim","desc":"Lorien writes, in his own hand, to the King of Aenor. The letter is courteous and carefully short.","icon":"scroll_treaty","x":23,"y":1,"days":70,"prerequisite":[["long_estrangement"]],"mutually_exclusive":["refusal_holds"],"ai":{"base":5,"modifiers":[{"factor":0.5,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":0.75,"if":[{"rule":{"name":"zin_rule_historical_path","option":"PLAUSIBLE"}}]}]},"effects":[{"call":"zin_elves_goodwill","args":{"target":"Aenor"}},{"political_power":-25}],"filters":["political"]},
+    {"key":"refusal_holds","name":"The Refusal Holds","desc":"The elves will not fight the wars of men, and Lorien has no intention of pretending otherwise. The court is quiet, and quietly relieved.","icon":"banner_plain","x":25,"y":1,"days":35,"prerequisite":[["long_estrangement"]],"mutually_exclusive":["letters_to_parim"],"ai":{"base":15,"modifiers":[{"factor":3,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":2,"if":[{"rule":{"name":"zin_rule_historical_path","option":"PLAUSIBLE"}}]}]},"effects":[{"stability":0.03},{"political_power":25}],"filters":["political"]},
+    {"key":"friends_not_allies","name":"Friends Without Oaths","desc":"Gala will send help, but not armies: healers, loremasters, a little counsel. The Wanderers who leave the court carry the king's good name with them.","icon":"handshake_oath","x":24,"y":2,"days":70,"prerequisite":[["letters_to_parim","refusal_holds"]],"ai":{"base":10},"effects":[{"flag":"zin_gala_friends_not_allies"},{"call":"zin_sun_add_gala_counsel","args":{"value":5}}],"filters":["political"]},
+    {"key":"healers_of_gala","name":"Healers of Gala","desc":"Gala's healers are known across the central sea, and the best of them are sent out to the cities of men with only their herb-bags.","icon":"healer_herbs","x":23,"y":3,"days":70,"prerequisite":[["friends_not_allies"]],"ai":{"base":10},"effects":[{"flag":"zin_gala_healers"}],"filters":["political"]},
+    {"key":"care_for_erdae","name":"Care for All Erdae","desc":"Lorien has said he still cares for the fate of Erdae, though his people will not march for it. In a darkening time he is not alone in this.","icon":"map_unrolled","x":25,"y":3,"days":35,"prerequisite":[["friends_not_allies"]],"available":[{"or":[{"check":"zin_gala_dark_40"},{"global_flag":"zin_eindil_named"}]}],"ai":{"base":10},"effects":[{"war_support":0.03},{"call":"zin_sun_add_gala_counsel","args":{"value":5}}],"filters":["political"]},
+    {"key":"stranger_from_islands","name":"A Stranger From the Islands","desc":"A man arrives at Gala from the Islands of the South, weary and quiet, with no name he can give. Lorien receives him in the Courtyard of Rain and does not let him leave that night.","icon":"shipwreck","x":6,"y":8,"days":35,"prerequisite":[["eldest_court","still_water","sun_harbour"]],"available":[{"check":"zin_gala_stage_5"}],"ai":{"base":200},"effects":[{"call":"zin_sun_add_gala_counsel","args":{"value":5}},{"political_power":25}],"filters":["political"]},
+    {"key":"weeks_of_memory","name":"Weeks of Memory","desc":"For weeks Lorien speaks with the stranger, telling him what the world was and what it has become. The stranger answers little, and learns a great deal.","icon":"book_lore","x":5,"y":9,"days":14,"prerequisite":[["stranger_from_islands"]],"ai":{"base":200},"effects":[{"research":{"categories":["land_doctrine"],"bonus":0.5,"uses":1}},{"flag":"zin_gala_weeks_of_memory"}],"filters":["political"]},
+    {"key":"mirror_shows_a_name","name":"The Mirror Shows a Name","desc":"On a still night the water shows the court a name. Lorien does not speak it aloud until he is sure.","icon":"mirror_rain","x":7,"y":9,"days":14,"prerequisite":[["stranger_from_islands"]],"ai":{"base":200},"effects":[{"call":"zin_sun_add_clarity","args":{"value":20}},{"flag":"zin_gala_mirror_ready"}],"filters":["political"]},
+    {"key":"armour_and_sword","name":"Armour and Sword","desc":"Gala's smiths forge a suit of silvered mail and a long grey blade for the stranger. They work in silence, and the work takes all night.","icon":"lone_sword","x":5,"y":10,"days":14,"prerequisite":[["weeks_of_memory","mirror_shows_a_name"]],"available":[{"check":"zin_gala_stage_5"},{"not":[{"check":"zin_gala_stage_6"}]}],"ai":{"base":150},"effects":[{"equipment":{"type":"zin_elven_arms_equipment","amount":500}},{"flag":"zin_gala_gift_armour"}],"filters":["political"]},
+    {"key":"crew_of_many_peoples","name":"A Crew of Many Peoples","desc":"Western friends, island navigators and Gala elves sign on for a voyage none of them can name the end of. They are an odd crew, and a good one.","icon":"ship_voyage","x":7,"y":10,"days":14,"prerequisite":[["weeks_of_memory","mirror_shows_a_name"]],"available":[{"check":"zin_gala_stage_5"},{"not":[{"check":"zin_gala_stage_6"}]}],"ai":{"base":150},"effects":[{"manpower":1000},{"flag":"zin_gala_crew_chosen"}],"filters":["political"]},
+    {"key":"name_in_the_water","name":"The Name in the Water","desc":"The court has heard the name the water gave, and Gala will help the man who bears it.","icon":"mirror_rain","x":6,"y":11,"days":14,"prerequisite":[["armour_and_sword","crew_of_many_peoples"]],"available":[{"global_flag":"zin_eindil_named"}],"ai":{"base":200},"effects":[{"event":"name_in_the_water"},{"stability":0.05},{"war_support":0.05}],"filters":["political"]},
+    {"key":"ship_sails_north","name":"The Ship Sails North","desc":"The finest ship in Gala slips out of the Sun Harbour on the morning tide, bound for the frozen north with a crew and a quest.","icon":"great_warship","x":6,"y":12,"days":35,"prerequisite":[["name_in_the_water"]],"available":[{"check":"zin_gala_stage_6"}],"ai":{"base":100},"effects":[{"political_power":50},{"call":"zin_sun_add_gala_counsel","args":{"value":10}}],"filters":["political"]},
+    {"key":"bearer_of_glo","name":"Word From the North","desc":"Sailors returning from the north say the stranger lives and carries a light out of the cold. Gala keeps the news to itself, for now.","icon":"compass_rose","x":6,"y":13,"days":35,"prerequisite":[["ship_sails_north"]],"available":[{"global_flag":"zin_glo_with_eindil"}],"ai":{"base":100},"effects":[{"event":"bearer_of_glo"},{"war_support":0.05},{"call":"zin_sun_add_gala_counsel","args":{"value":5}}],"filters":["political"]},
+    {"key":"old_lords","name":"The Old Lords","desc":"Lorien sends word to lords and spirits who have lived since Dardan. Some answer; some are not sure how to.","icon":"banner_league","x":13,"y":8,"days":70,"prerequisite":[["voice_of_memory","wardsong_of_gala","king_beyond_ages"]],"available":[{"or":[{"check":"zin_gala_dark_50"},{"global_flag":"zin_eindil_named"},{"global_flag":"zin_zol_rising"}]}],"ai":{"base":30,"modifiers":[{"factor":5,"if":[{"global_flag":"zin_zol_rising"}]}]},"effects":[{"call":"zin_sun_add_old_lords","args":{"value":1}},{"event":"old_lords"}],"filters":["army"]},
+    {"key":"summon_ancient_lords","name":"Summon the Ancient Lords","desc":"Heralds travel to forgotten halls and high places to call the ancient lords to Gala. It is an old summons, and few have heard it in an age.","icon":"war_drums","x":12,"y":9,"days":70,"prerequisite":[["old_lords"]],"ai":{"base":20,"modifiers":[{"factor":5,"if":[{"global_flag":"zin_zol_rising"}]}]},"effects":[{"call":"zin_sun_add_old_lords","args":{"value":1}},{"political_power":-50}],"filters":["army"]},
+    {"key":"spirits_who_remember","name":"Spirits Who Remember Dardan","desc":"Spirits that have lived since Dardan will not come to a summons, but they will come to a request. Lorien asks in the old way.","icon":"rune_stone","x":14,"y":9,"days":70,"prerequisite":[["old_lords"]],"ai":{"base":20,"modifiers":[{"factor":5,"if":[{"global_flag":"zin_zol_rising"}]}]},"effects":[{"call":"zin_sun_add_old_lords","args":{"value":1}}],"filters":["army"]},
+    {"key":"kings_last_armour","name":"The King's Last Armour","desc":"Lorien's armour is brought out of the vault, mended and polished. He has not worn it since Dardan, and he does not say why he wears it now.","icon":"sword_shield","x":13,"y":10,"days":35,"prerequisite":[["summon_ancient_lords","spirits_who_remember"]],"ai":{"base":20,"modifiers":[{"factor":5,"if":[{"global_flag":"zin_zol_rising"}]}]},"effects":[{"add_spirit":"kings_last_armour_spirit"}],"filters":["army"]},
+    {"key":"ships_north_for_king","name":"Ships North for the King","desc":"The King's ships are readied for a long northern voyage. If Lorien rides, he will not ride alone, and he will need ships to follow.","icon":"ship_voyage","x":15,"y":10,"days":35,"prerequisite":[["spirits_who_remember"]],"ai":{"base":10,"modifiers":[{"factor":5,"if":[{"global_flag":"zin_zol_rising"}]}]},"effects":[{"flag":"zin_gala_fleet_ready"},{"navy_experience":10}],"filters":["army"]},
+    {"key":"what_death_cannot_end","name":"What Death Cannot End","desc":"The singers of Gala study the song that holds back the dead of Zol. It is old, it is hard, and it may stand against what ordinary weapons cannot answer.","icon":"ward_circle","x":12,"y":11,"days":35,"prerequisite":[["kings_last_armour"]],"available":[{"global_flag":"zin_zol_rising"}],"ai":{"base":200},"effects":[{"research":{"categories":["zin_cat_wards"],"bonus":1,"uses":1}}],"filters":["army"]},
+    {"key":"for_all_the_living","name":"For All the Living","desc":"The old lords are told what is coming and invited to ride. Lorien does not say that he expects to return.","icon":"banner_league","x":14,"y":11,"days":35,"prerequisite":[["kings_last_armour","ships_north_for_king"]],"available":[{"global_flag":"zin_zol_rising"}],"ai":{"base":200},"effects":[{"flag":"zin_gala_ready_to_ride"}],"filters":["army"]},
+    {"key":"king_has_fallen","name":"The King Has Fallen","desc":"Word comes that Lorien rode north and did not return. The halls of Gala are silent, and the Mirror lies unstirred.","icon":"empty_throne","x":20,"y":9,"days":35,"available":[{"global_flag":"zin_lorien_dead"}],"ai":{"base":500},"effects":[{"stability":0.1},{"political_power":100}],"filters":["political"]},
+    {"key":"keep_his_memory","name":"Keep His Memory","desc":"His songs are sung, his sayings written, his chair left empty. Gala resolves that what he remembered will not be forgotten with him.","icon":"book_lore","x":19,"y":10,"days":70,"prerequisite":[["king_has_fallen"]],"ai":{"base":100},"effects":[{"add_spirit":"his_memory"}],"filters":["political"]},
+    {"key":"mirror_without_king","name":"The Mirror Without Its King","desc":"The Keeper takes up the long watch beside the water alone. The Mirror answers her as it answered him, which is a comfort to nobody and a relief to all.","icon":"mirror_rain","x":21,"y":10,"days":35,"prerequisite":[["king_has_fallen"]],"ai":{"base":100},"effects":[{"call":"zin_sun_add_clarity","args":{"value":20}},{"flag":"zin_gala_mirror_kept"}],"filters":["political"]},
+    {"key":"gala_endures","name":"Gala Endures","desc":"A steward is chosen, the walls are manned and the court goes on. Gala was ancient before Lorien took its crown, and it will be ancient after.","icon":"gala_sun","x":20,"y":11,"days":70,"prerequisite":[["keep_his_memory","mirror_without_king"]],"ai":{"base":100},"effects":[{"swap_spirit":["zin_sun_king_fallen","gala_endures_spirit"]},{"call":"zin_sun_add_gala_counsel","args":{"value":10}}],"filters":["political"]},
+    {"key":"new_voice_at_noon","name":"A New Voice at Noon","desc":"Gala's new envoy takes the guest's seat at the Noon Council. The Sunhot courts rise to receive her.","icon":"sun_flowers","x":19,"y":12,"days":35,"prerequisite":[["gala_endures"]],"ai":{"base":50},"effects":[{"call":"zin_sun_add_concord","args":{"value":10}},{"call":"zin_elves_goodwill","args":{"target":"The Lands of Light"}}],"filters":["political"]},
+    {"key":"home_from_last_war","name":"Home From the Last War","desc":"Gala's war is over. The Refusal is restored, the guard returns to the walls, and the court turns to mending what the long journey has taken.","icon":"olive_branch","x":21,"y":12,"days":35,"prerequisite":[["gala_endures"]],"available":[{"at_war":false}],"ai":{"base":50},"effects":[{"if":{"limit":[{"flag":"zin_refusal_lifted"}],"then":[{"clear_flag":"zin_refusal_lifted"},{"event":"zin_diplo.31"}]}},{"stability":0.05}],"filters":["political"]}
+  ]
+}

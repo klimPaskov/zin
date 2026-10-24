@@ -1,0 +1,14 @@
+{
+ "source": "Number codes of the keyword arguments of the Concord helper effects (shared_concord_dominions.md, 'Arguments': charter old 0, golden 1, shield 2, free 3, wall 4; camp court 1, faithful 2, dominions 3, host 4 = the values of zin_aenor_ruling_camp). The Middle Lands tier B trees (regional_c) call zin_concord_petition_charter and zin_concord_back_camp with these keywords. Same shape as focus_arg_codes.json; loadArgCodes reads this file next to it. Remove it when the same prefix is listed in focus_arg_codes.json.",
+ "owners": [
+  {
+   "owner": "shared_concord_dominions",
+   "spec": "docs/specs/05_focus_trees/shared/shared_concord_dominions.md",
+   "prefixes": ["zin_concord_"],
+   "args": {
+    "charter": { "old": 0, "golden": 1, "shield": 2, "free": 3, "wall": 4 },
+    "camp": { "court": 1, "faithful": 2, "dominions": 3, "host": 4 }
+   }
+  }
+ ]
+}

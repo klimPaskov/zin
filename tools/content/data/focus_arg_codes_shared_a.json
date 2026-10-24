@@ -1,0 +1,22 @@
+{
+ "source": "Number codes of keyword arguments (decision E1) that the shared_a trees need. (1) zin_politics_add_drift: the politics spec (docs/specs/00_foundation/02_ideologies_and_politics.md, section 7) writes the call with parameters IDEOLOGY and VALUE; decision E1 says scripted effects take none in 1.19.3, so a tree call compiles to set_temp_variable = { zin_arg_ideology = <code> } and set_temp_variable = { zin_arg_value = <points> } before zin_politics_add_drift = yes. The codes follow the order of the ideology keys (light, dominion, shadow, wild; CONVENTIONS); the politics module reads zin_arg_ideology and zin_arg_value. The spec path is the integration note that proposes the table (docs/design/stage2/focus_shared_a.md). (2) The Concord helper effects (shared_concord_dominions.md, 'Arguments': charter old 0, golden 1, shield 2, free 3, wall 4; camp court 1, faithful 2, dominions 3, host 4 = the values of zin_aenor_ruling_camp), which the Middle Lands tier B trees call; the same table stands in focus_arg_codes_regional_c.json. Same shape as focus_arg_codes.json; loadArgCodes reads this file next to it. Remove an owner when the same prefix is listed in focus_arg_codes.json.",
+ "owners": [
+  {
+   "owner": "ideologies_and_politics",
+   "spec": "docs/design/stage2/focus_shared_a.md",
+   "prefixes": ["zin_politics_"],
+   "args": {
+    "ideology": { "light": 1, "dominion": 2, "shadow": 3, "wild": 4 }
+   }
+  },
+  {
+   "owner": "shared_concord_dominions",
+   "spec": "docs/specs/05_focus_trees/shared/shared_concord_dominions.md",
+   "prefixes": ["zin_concord_"],
+   "args": {
+    "charter": { "old": 0, "golden": 1, "shield": 2, "free": 3, "wall": 4 },
+    "camp": { "court": 1, "faithful": 2, "dominions": 3, "host": 4 }
+   }
+  }
+ ]
+}

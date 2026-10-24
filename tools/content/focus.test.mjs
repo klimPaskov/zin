@@ -574,3 +574,12 @@ test('The shipped registry data and catalog load', async () => {
   assert.equal(prepared.problems.length, 0);
   assert.equal(prepared.trees.get('regional_northmark').focuses.length, 4);
 });
+
+test('clear_flag compiles to clr_country_flag, the 1.19.3 effect (clear_country_flag does not exist)', async () => {
+  const { staged } = await compileFixtures();
+  const text = [...staged.files].filter(([k]) => /^(common|events)\/.*\.txt$/.test(k)).map(([, v]) => v.toString('utf8')).join('\n');
+  assert.match(text, /clr_country_flag = zin_testland_rich/);
+  assert(!/clear_country_flag/.test(text));
+  const docs = await readFile(`${process.env.HOI4_GAME ?? 'C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV'}/documentation/effects_documentation.md`, 'utf8').catch(() => null);
+  if (docs) { assert(/^## clr_country_flag$/m.test(docs)); assert(!/^## clear_country_flag$/m.test(docs)); }
+});

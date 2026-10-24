@@ -1,0 +1,997 @@
+{
+  "id": "aenor",
+  "tier": "major",
+  "countries": ["Aenor"],
+  "summary": "The Middle Kingdom from the gilded peace of 4A 1748 through the Golden King's death, the four-camp succession, the War of the Last Crowns and Eindil's coronation (140 focuses, branches A to N).",
+  "event_namespace": "zin_aenor",
+  "event_base": 500,
+  "spirits": {
+    "offices_for_sale": {"name":"Offices for Sale","desc":"Anything in the realm with a seal on it can be bought, and the buyers expect to be repaid.","modifier":{"political_power_gain":0.5,"stability_factor":-0.03}},
+    "gilded_parim": {"name":"Gilded Parim","desc":"Gold leaf glitters on every pillar of the capital. The city has never looked richer, and the people have never felt more pleased with their King.","modifier":{"stability_factor":0.05,"consumer_goods_factor":0.03}},
+    "merchant_houses": {"name":"The Merchant Houses","desc":"The great trading houses of the lake keep their own agents at court and their own wharves in every port.","modifier":{"trade_opinion_factor":0.2,"production_factory_max_efficiency_factor":0.03}},
+    "honest_accounts": {"name":"Honest Accounts","desc":"Every sum that enters or leaves the treasury is written in an open ledger. It is slow, and it is clean.","modifier":{"political_power_factor":0.1,"consumer_goods_factor":-0.03}},
+    "royal_auditors": {"name":"The Royal Auditors","desc":"Auditors in grey robes walk the offices of the realm with their rods and their ink. Clerks have learned to check their sums twice.","modifier":{"stability_factor":0.03,"production_factory_efficiency_gain_factor":0.05}},
+    "jubilee_celebrations": {"name":"The Golden Jubilee","desc":"Bonfires, banquets and bell-ringing for the long reign. For a season the whole realm is at festival.","modifier":{"stability_factor":0.08,"political_power_gain":0.25}},
+    "fleet_of_the_lake": {"name":"The Lake Fleet","desc":"Broad-beamed galleys patrol the lake in long lines, drilled in oar-signals and fire-pot drill.","modifier":{"navy_org_factor":0.05,"naval_speed_factor":0.05}},
+    "sea_routes": {"name":"Trade Across the Sea","desc":"Aenoran cogs call at harbours from the Ocean of Peace to the western isles, and foreign merchants know the lake colours.","modifier":{"trade_opinion_factor":0.25}},
+    "learned_halls": {"name":"The Universities","desc":"The halls of Parim and Selen share their masters and their books, and learning moves briskly between them.","modifier":{"research_speed_factor":0.05}},
+    "realm_of_plenty": {"name":"A Kingdom of Plenty","desc":"Barns brim and workshops hum. Builders find timber and journeymen where a few years ago they found excuses.","modifier":{"production_factory_max_efficiency_factor":0.05,"global_building_slots_factor":0.1}},
+    "levies_of_the_concord": {"name":"The Concord Levies","desc":"Each dominion keeps its quota of spears on the rolls, drilled by the village reeve and ready on the King's word.","modifier":{"weekly_manpower":300}},
+    "common_army_drill": {"name":"The Common Army","desc":"Spearmen from every dominion learn the same signals and the same songs. A horn in Selen is understood in Kingson.","modifier":{"experience_gain_army_factor":0.1,"army_org_factor":0.03}},
+    "concord_renewed": {"name":"The Concord Reborn","desc":"The old compact has been spoken again and believed. Lords who once sulked now ride to Parim of their own accord.","modifier":{"stability_factor":0.05,"political_power_gain":0.25}},
+    "league_of_the_king": {"name":"The King's League","desc":"Banner, oath and gilt mail: the Lost Cause has its own hall, its own colours and a king who loves to preside.","modifier":{"political_power_gain":0.25,"war_support_factor":0.05}},
+    "wall_watch": {"name":"Watchers on the Wall","desc":"Beacon-keepers and signal-masters sleep in the towers, and their lamps are lit before dusk.","modifier":{"civilian_intel_factor":0.1,"army_defence_factor":0.03}},
+    "first_light_houses": {"name":"The Houses of the First Light","desc":"Hospitals, granaries and birth rolls, kept by the temples and trusted by the people. Whoever holds the keys holds the realm's gratitude.","modifier":{"monthly_population":0.1,"recruitable_population_factor":0.05,"stability_factor":0.03}},
+    "temple_scholars": {"name":"The Temple Schools","desc":"The temples teach the young their letters and their prayers in one lesson.","modifier":{"research_speed_factor":0.03}},
+    "almoners": {"name":"The Royal Almoners","desc":"Bread is handed out at the temple door every dawn, and few ask where the grain comes from.","modifier":{"stability_factor":0.03,"consumer_goods_factor":-0.02}},
+    "counted_realm": {"name":"The Birth Rolls","desc":"The King now knows how many hands he can call. Recruiting captains no longer need to guess.","modifier":{"conscription_factor":0.05}},
+    "crown_blessed": {"name":"The Blessed Crown","desc":"The people kneel to a crown the temples have anointed, and they find it easier to forgive what it does.","modifier":{"drift_defence_factor":0.2,"political_power_factor":0.05}},
+    "blessed_realm": {"name":"One Faith, One Realm","desc":"The Deliverer's rites are kept in every dominion. Dissent is quiet, and so is much else.","modifier":{"stability_factor":0.1,"drift_defence_factor":0.25,"war_support_factor":-0.05}},
+    "own_counsel": {"name":"The King's Own Counsel","desc":"The King chooses his councillors himself, and cannot always tell which of them chose him.","modifier":{"political_power_factor":0.1,"stability_factor":-0.03}},
+    "bought_commissions": {"name":"Commissions for Sale","desc":"Captains pay for their ranks and expect to recoup the cost. The ranks look splendid and drill poorly.","modifier":{"army_org_factor":-0.05,"army_leader_cost_factor":-0.25}},
+    "merit_commissions": {"name":"Commissions by Merit","desc":"Officers rise on trial and record. Noble sons grumble, and the rank and file feel they are worth something.","modifier":{"army_leader_start_level":1,"experience_gain_army_factor":0.1}},
+    "guard_of_gold": {"name":"The Golden Guard","desc":"Two thousand picked spears in gilded helms hold the palace gates, and every one of them knows his name is on the roll.","modifier":{"army_core_defence_factor":0.05}},
+    "drilled_regiments": {"name":"The Drill Fields","desc":"Recruits drill on the lakeside meadows from first light under cheerfully merciless drill-masters.","modifier":{"training_time_factor":-0.1}},
+    "host_of_the_king": {"name":"The King's Host","desc":"Heavy foot, horse and archers wear the lake colours and march to one horn.","modifier":{"army_morale_factor":0.05,"conscription_factor":0.1}},
+    "realm_mobilised": {"name":"The Realm Mobilised","desc":"Beacons burn, bells ring and every village sends its men. Aenor is on a war footing.","modifier":{"war_support_factor":0.1,"conscription":0.01}},
+    "kings_awakening": {"name":"The King Awakes","desc":"The King has smelled the poison and understood what it meant. He is sharp, wary and, for the first time in years, truly king.","modifier":{"political_power_factor":0.1,"stability_factor":0.05}},
+    "kings_war": {"name":"The King's War","desc":"The sovereign is in the field with his own banner. The Host remembers what it is for.","modifier":{"army_attack_factor":0.05,"war_support_factor":0.1}},
+    "sobered_king": {"name":"A Sobered King","desc":"The King has stopped gilding his halls. He listens, he decides and the realm feels the difference.","modifier":{"stability_factor":0.1,"political_power_gain":0.25}},
+    "gold_regency": {"name":"The Regency of Gold","desc":"The Golden Court rules in the name of a crown nobody wears. Gold buys loyalty, and the court spends freely.","modifier":{"political_power_gain":0.5,"stability_factor":-0.05}},
+    "regency_war_chest": {"name":"The Treasury of War","desc":"The Regency's hoard has been turned to iron and timber. The forges of the lake never cool.","modifier":{"production_speed_arms_factory_factor":0.1,"army_org_factor":0.03}},
+    "deliverer_crowned": {"name":"The Deliverer Crowned","desc":"The people kneel in the streets as the king passes. Whatever else he is, he is loved.","modifier":{"stability_factor":0.1,"drift_defence_factor":0.3}},
+    "chancery": {"name":"The Seals of State","desc":"Scribes in white sort the realm's letters, and no decree leaves Parim without the Deliverer's seal.","modifier":{"political_power_factor":0.15}},
+    "altar_and_throne": {"name":"Temple and Crown","desc":"The priests sit beside the throne, and the throne sits within the priests' prayer.","modifier":{"party_popularity_stability_factor":0.1,"drift_defence_factor":0.1}},
+    "deliverance_shield": {"name":"The Shield of Deliverance","desc":"Carved wards guard the gates, and the temple guard keeps the towers. Parim feels safe, and will until it learns otherwise.","modifier":{"army_core_defence_factor":0.05,"max_dig_in":2}},
+    "sworn_realm": {"name":"The Oaths of the Realm","desc":"Every lord has knelt, every captain has sworn. The oaths are kept in a book in the temple vault.","modifier":{"war_support_factor":0.05,"stability_factor":0.05}},
+    "speakers_concord": {"name":"The Speakers' Council","desc":"Each dominion speaks with one voice and one vote. Debates are long, and the decisions are respected.","modifier":{"stability_factor":0.05,"political_power_gain":0.25}},
+    "defence_pact": {"name":"A Common Defence","desc":"A shared host under a chosen marshal, and a shared understanding that an attack on one dominion is an attack on all.","modifier":{"army_defence_factor":0.05,"experience_gain_army_factor":0.05}},
+    "concord_stands": {"name":"The Concord Stands","desc":"The compact has been remade by consent, and the realm hums with the quiet confidence of a thing that wants to last.","modifier":{"stability_factor":0.1,"production_factory_max_efficiency_factor":0.05}},
+    "popular_host": {"name":"The Popular Host","desc":"Rangers, scholars and ploughmen march under one banner. They are poorly equipped and tremendously sure.","modifier":{"recruitable_population_factor":0.1,"army_morale_factor":0.1,"war_support_factor":0.1}},
+    "glo_light": {"name":"The Light of Glo","desc":"A green glow in the van of the host. Men say it is hope. The dark things say nothing.","modifier":{"army_attack_factor":0.05}},
+    "banner_of_the_dragon": {"name":"The Dragon Banner","desc":"A dragon circles above the host. Horses scream, riders cheer and the foe loses its nerve before the first arrow is shot.","modifier":{"army_morale_factor":0.05,"war_support_factor":0.05}},
+    "last_alliance": {"name":"The Last Alliance of Men","desc":"Banners from the whole of the north and west stand under one king. The host is large, and for once, it is united.","modifier":{"army_org_factor":0.05,"opinion_gain_monthly_factor":0.2}},
+    "captains_command": {"name":"The Captains' Command","desc":"The captains hold the keys and give the orders. They are better at the second than the first.","modifier":{"army_org_factor":0.05,"political_power_factor":-0.1}},
+    "realm_beset": {"name":"Aenor Beset","desc":"The realm is attacked on every side. Every wall is manned, every road watched, and every heart a little harder.","modifier":{"army_core_defence_factor":0.1,"war_support_factor":0.1}},
+    "lake_levy": {"name":"The Levy of the Lake","desc":"One man in three has taken spear and shield. The villages are quiet and the barracks are loud.","modifier":{"conscription":0.015}},
+    "common_cause": {"name":"A Common Cause","desc":"Realms at war with the dark have opened their roads to Aenor, and Aenor has opened hers. Messengers pass freely.","modifier":{"opinion_gain_monthly_factor":0.25}},
+    "final_stand": {"name":"The Last Stand","desc":"Every soldier, mason and baker has a post. Nobody asks if the city can be held, because nobody intends to ask what happens if it cannot.","modifier":{"army_core_defence_factor":0.1,"army_core_attack_factor":0.05,"surrender_limit":0.1}},
+    "kingdom_of_ruins": {"name":"A Kingdom of Ruins","desc":"Half the realm is rubble and the other half is scaffolding. Builders are everywhere, and so is dust.","modifier":{"production_speed_buildings_factor":0.15,"stability_factor":-0.05}},
+    "peace_of_treaties": {"name":"Treaties, Not Conquest","desc":"The King sends heralds before he sends spears. Neighbours have noticed, and some have begun to answer.","modifier":{"stability_factor":0.05,"justify_war_goal_time":0.5}},
+    "age_of_the_king": {"name":"The Age of the King","desc":"A new reign in a rebuilt land. The old quarrels are put away, and the realm stands as it has not for centuries.","modifier":{"stability_factor":0.1,"political_power_gain":0.5,"research_speed_factor":0.05}}
+  },
+  "events": {
+    "court_feast": {
+      "n": 0,
+      "title": "A Feast in the Golden Court",
+      "desc": "The steward of the household asks how the high table is to be laid. Three hundred guests will sit before the lamps are lit, and every one of them has sent a gift.",
+      "picture": "court_feast",
+      "options": [
+        {
+          "name": "Gild the tables.",
+          "ai_chance": {
+            "base": 70
+          },
+          "effects": [
+            {
+              "political_power": 25
+            },
+            {
+              "call": "zin_aenor_add_court_corruption",
+              "args": {
+                "value": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "A modest board will do.",
+          "ai_chance": {
+            "base": 30
+          },
+          "effects": [
+            {
+              "stability": 0.02
+            }
+          ]
+        }
+      ]
+    },
+    "auditors_ledger": {
+      "n": 1,
+      "title": "The Auditors' Ledger",
+      "desc": "The auditors lay their finished ledger before the throne. It lists every gift, bribe and borrowed seal of the last ten years, and it runs to nine volumes.",
+      "picture": "golden_court",
+      "options": [
+        {
+          "name": "Publish it in open court.",
+          "ai_chance": {
+            "base": 50
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_court_corruption",
+              "args": {
+                "value": -5
+              }
+            },
+            {
+              "stability": -0.03
+            },
+            {
+              "flag": "zin_aenor_audit_done"
+            }
+          ]
+        },
+        {
+          "name": "Keep it in the royal archive.",
+          "ai_chance": {
+            "base": 50
+          },
+          "effects": [
+            {
+              "political_power": 25
+            },
+            {
+              "flag": "zin_aenor_audit_done"
+            }
+          ]
+        }
+      ]
+    },
+    "caravan_envoys": {
+      "n": 2,
+      "title": "Envoys from Parim",
+      "desc": "Envoys from the Middle Kingdom have crossed the rift sea with silks, glass and the Golden King's greeting. They ask nothing but a place at the caravan masters' feast.",
+      "picture": "generic_peace",
+      "options": [
+        {
+          "name": "Welcome them with open doors.",
+          "ai_chance": {
+            "base": 70
+          },
+          "effects": [
+            {
+              "opinion": {
+                "target": "Aenor",
+                "modifier": "opinion_envoys_welcomed",
+                "both_ways": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "Receive them, and watch them.",
+          "ai_chance": {
+            "base": 30
+          },
+          "effects": [
+            {
+              "opinion": {
+                "target": "Aenor",
+                "modifier": "opinion_envoys_received"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "selen_accord": {
+      "n": 3,
+      "title": "An Accord with Parim",
+      "desc": "A rider in Aenor's gold reaches the green hall of Selen with a scroll under the King's seal. It offers the rangers honour and relief from tolls in exchange for friendship, which is more than Parim has offered in a generation.",
+      "picture": "concord_council",
+      "options": [
+        {
+          "name": "Accept the accord.",
+          "ai_chance": {
+            "base": 70
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_concord_loyalty",
+              "args": {
+                "value": 10
+              }
+            },
+            {
+              "for_country": {
+                "country": "Aenor",
+                "effects": [
+                  {
+                    "army_experience": 5
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ask for more.",
+          "ai_chance": {
+            "base": 30
+          },
+          "effects": [
+            {
+              "for_country": {
+                "country": "Aenor",
+                "effects": [
+                  {
+                    "if": {
+                      "limit": [
+                        {
+                          "flag": "zin_aenor_free_charters_open"
+                        }
+                      ],
+                      "then": [
+                        {
+                          "for_country": {
+                            "country": "Selen",
+                            "effects": [
+                              {
+                                "call": "zin_aenor_set_charter",
+                                "args": {
+                                  "charter": "free"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "else": [
+                        {
+                          "for_country": {
+                            "country": "Selen",
+                            "effects": [
+                              {
+                                "call": "zin_aenor_add_concord_loyalty",
+                                "args": {
+                                  "value": -5
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "honorary_crowns": {
+      "n": 4,
+      "title": "An Honour from Parim",
+      "desc": "A herald in the King's livery presents a crown of gilded iron and a scroll naming this realm an honorary member of the Lost Cause. It is a gift of ribbons and ceremony, and it carries the King's friendship.",
+      "picture": "generic_court",
+      "options": [
+        {
+          "name": "Accept the honour.",
+          "ai_chance": {
+            "base": 80,
+            "modifiers": [
+              {
+                "factor": 0,
+                "if": [
+                  {
+                    "ideology": "dominion"
+                  }
+                ]
+              },
+              {
+                "factor": 0,
+                "if": [
+                  {
+                    "ideology": "shadow"
+                  }
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "flag": "zin_lost_cause_member"
+            },
+            {
+              "opinion": {
+                "target": "Aenor",
+                "modifier": "opinion_honorary_crown"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Decline politely.",
+          "ai_chance": {
+            "base": 20,
+            "modifiers": [
+              {
+                "add": 100,
+                "if": [
+                  {
+                    "ideology": "dominion"
+                  }
+                ]
+              },
+              {
+                "add": 100,
+                "if": [
+                  {
+                    "ideology": "shadow"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "league_triumph": {
+      "n": 5,
+      "title": "A Triumph for the League",
+      "desc": "Knights in gilt mail wind through the capital beneath the banners of the Lost Cause. The people throw flowers, the heralds shout the old oaths, and the treasury quietly pays for all of it.",
+      "picture": "lost_cause_triumph",
+      "options": [
+        {
+          "name": "Let the banners fly."
+        }
+      ]
+    },
+    "rangers_of_selen": {
+      "n": 6,
+      "title": "The Rangers Answer",
+      "desc": "The King's letter asks Selen to lend its rangers to the Lost Cause. The captains of Selen read it aloud in the green hall, and the room is divided between pride and suspicion.",
+      "picture": "generic_wilds",
+      "options": [
+        {
+          "name": "Send rangers.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "manpower": -1000
+            },
+            {
+              "for_country": {
+                "country": "Aenor",
+                "effects": [
+                  {
+                    "call": "zin_aenor_add_lost_cause",
+                    "args": {
+                      "value": 5
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Keep them home.",
+          "ai_chance": {
+            "base": 40
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_concord_loyalty",
+              "args": {
+                "value": -5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "black_ships": {
+      "n": 7,
+      "title": "The Black Ships",
+      "desc": "Fishermen on the western coast tell of black hulls that move without wind and show lanterns of the wrong colour. The harbour-master wants to know whether the King's court will listen.",
+      "picture": "black_ships_tale",
+      "options": [
+        {
+          "name": "Dismiss them as fishermen's tales.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "political_power": 10
+            }
+          ]
+        },
+        {
+          "name": "Send a ship north to look.",
+          "ai_chance": {
+            "base": 40
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_lost_cause",
+              "args": {
+                "value": 5
+              }
+            },
+            {
+              "political_power": -25
+            },
+            {
+              "flag": "zin_aenor_saw_black_ships"
+            }
+          ]
+        }
+      ]
+    },
+    "southern_warnings": {
+      "n": 8,
+      "title": "Warnings from the South",
+      "desc": "In 4A 1736 an envoy from Mirolon came to Parim with a warning about the Dead Lands, and the court laughed. The archive still holds his letters, and someone has begun to read them.",
+      "picture": "southern_warning",
+      "options": [
+        {
+          "name": "Laugh, as the court did before.",
+          "ai_chance": {
+            "base": 40
+          },
+          "effects": [
+            {
+              "political_power": 25
+            },
+            {
+              "call": "zin_aenor_add_court_corruption",
+              "args": {
+                "value": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": "Listen at last.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_lost_cause",
+              "args": {
+                "value": 5
+              }
+            },
+            {
+              "event_for": {
+                "country": "Mirolon",
+                "key": "southern_aid"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "hidden_hand": {
+      "n": 9,
+      "title": "The Hidden Hand",
+      "desc": "In the long evenings the King's clerks lay the rolls of appointments side by side. Whoever filled the great offices of the realm did so with a patience and a purpose no courtier ever showed. It is hard to say whose hand it is, and harder to stop asking.",
+      "picture": "generic_court",
+      "options": [
+        {
+          "name": "Mark the pattern, and say nothing."
+        }
+      ]
+    },
+    "deliverer_feast": {
+      "n": 10,
+      "title": "The Feast of the Deliverer",
+      "desc": "On the longest night every hearth in Aenor lights a white candle, and the temple halls serve bread to all who come. In the great hall of the Houses of the First Light the choir sings until dawn.",
+      "picture": "houses",
+      "options": [
+        {
+          "name": "Let the choir sing."
+        }
+      ]
+    },
+    "ledger_of_heirs": {
+      "n": 11,
+      "title": "The Ledger of Heirs",
+      "desc": "For thirty days the throne has been empty. The Regency's clerks open the great rolls and read out the names of the royal house, and the court argues over who may be named and who may be safely forgotten.",
+      "picture": "thirty_days",
+      "options": [
+        {
+          "name": "Rule in the crown's name.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_camp_support",
+              "args": {
+                "camp": "court",
+                "value": 10
+              }
+            }
+          ]
+        },
+        {
+          "name": "Search the old rolls for an heir.",
+          "ai_chance": {
+            "base": 40
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_lost_cause",
+              "args": {
+                "value": 5
+              }
+            },
+            {
+              "if": {
+                "limit": [
+                  {
+                    "global_flag": "zin_eindil_named"
+                  }
+                ],
+                "then": [
+                  {
+                    "call": "zin_aenor_add_camp_support",
+                    "args": {
+                      "camp": "host",
+                      "value": 10
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "eastern_friends": {
+      "n": 12,
+      "title": "Gifts from Parim",
+      "desc": "A new king in Aenor sends his greeting across the rift sea: caskets of gold, bolts of white cloth and a letter that asks for nothing. The court of the East turns the letter over and over.",
+      "picture": "generic_court",
+      "options": [
+        {
+          "name": "Accept the gifts.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "opinion": {
+                "target": "Aenor",
+                "modifier": "opinion_gifts_accepted"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Refuse them.",
+          "ai_chance": {
+            "base": 40
+          },
+          "effects": [
+            {
+              "opinion": {
+                "target": "Aenor",
+                "modifier": "opinion_gifts_refused"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "men_of_selen": {
+      "n": 13,
+      "title": "The Men of Selen",
+      "desc": "The rangers have heard the Hailed King speak, and they are of one mind. The captains ask only whether Selen marches now or after the border is safe.",
+      "picture": "generic_war",
+      "options": [
+        {
+          "name": "March with the Hailed King.",
+          "ai_chance": {
+            "base": 70
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_event_diplomacy",
+              "args": {
+                "act": "access_to_aenor"
+              }
+            },
+            {
+              "call": "zin_aenor_add_concord_loyalty",
+              "args": {
+                "value": 5
+              }
+            }
+          ]
+        },
+        {
+          "name": "Guard Selen first.",
+          "ai_chance": {
+            "base": 30
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_add_concord_loyalty",
+              "args": {
+                "value": -5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "southern_aid": {
+      "n": 14,
+      "title": "Aid from Aenor",
+      "desc": "A column of Aenoran wagons halts at the Mirolon passes, bearing spears and shields from the arsenals of Parim. The captain says only that the court has remembered a warning it once laughed at.",
+      "picture": "mirolon_passes",
+      "options": [
+        {
+          "name": "Accept the arms.",
+          "ai_chance": {
+            "base": 80
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_event_diplomacy",
+              "args": {
+                "act": "send_arms"
+              }
+            },
+            {
+              "opinion": {
+                "target": "Aenor",
+                "modifier": "opinion_southern_aid"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Decline.",
+          "ai_chance": {
+            "base": 20
+          }
+        }
+      ]
+    },
+    "league_invite": {
+      "n": 15,
+      "title": "The League of Free Crowns",
+      "desc": "The Speakers of the Concord of Equals write to your court. Aenor has no wish to rule beyond its borders, but it asks you to stand beside it against the powers of the dark.",
+      "picture": "concord_council",
+      "options": [
+        {
+          "name": "Decline for now.",
+          "ai_chance": {
+            "base": 70
+          }
+        },
+        {
+          "name": "Join the league.",
+          "ai_chance": {
+            "base": 30,
+            "modifiers": [
+              {
+                "add": 70,
+                "if": [
+                  {
+                    "or": [
+                      {
+                        "at_war_with": "Volgan"
+                      },
+                      {
+                        "at_war_with": "Zol"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_event_diplomacy",
+              "args": {
+                "act": "join_or_access"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "treaties": {
+      "n": 16,
+      "title": "Treaties, Not Conquest",
+      "desc": "A herald in the new king's colours stands at your gate. The King of Aenor offers peace on equal terms, with no tribute asked and no land taken.",
+      "picture": "generic_peace",
+      "options": [
+        {
+          "name": "Accept peace.",
+          "ai_chance": {
+            "base": 60
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_event_diplomacy",
+              "args": {
+                "act": "white_peace"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fight on.",
+          "ai_chance": {
+            "base": 40
+          }
+        }
+      ]
+    },
+    "fourth_age_ends": {
+      "n": 17,
+      "title": "The Fourth Age Ends",
+      "desc": "The bells of Parim ring for three days. A king has been crowned among the ruins, and the heralds cry that the Fourth Age is over. He wears a necklace of black stone about his throat, which the chroniclers describe and do not explain. What it costs him is not known.",
+      "picture": "crown_of_aen",
+      "options": [
+        {
+          "name": "So the age ends."
+        }
+      ]
+    },
+    "free_peoples": {
+      "n": 18,
+      "title": "The Free Peoples Are Called",
+      "desc": "A beacon burns on the hill and a rider stands at the gate. The Hailed King of Aenor asks every realm that fights the dark to stand under one banner.",
+      "picture": "generic_war",
+      "options": [
+        {
+          "name": "Stand alone.",
+          "ai_chance": {
+            "base": 20
+          }
+        },
+        {
+          "name": "Fight beside Aenor.",
+          "ai_chance": {
+            "base": 80
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_event_diplomacy",
+              "args": {
+                "act": "join_or_access"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "common_cause_offer": {
+      "n": 19,
+      "title": "A Common Cause",
+      "desc": "Aenor sends word that the roads of its realm are open to every host that fights the dark, and asks that the roads of yours be open in return.",
+      "picture": "generic_war",
+      "options": [
+        {
+          "name": "Refuse.",
+          "ai_chance": {
+            "base": 30
+          }
+        },
+        {
+          "name": "Open the roads.",
+          "ai_chance": {
+            "base": 70
+          },
+          "effects": [
+            {
+              "call": "zin_aenor_event_diplomacy",
+              "args": {
+                "act": "access_both"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scripted_effects": {
+    "zin_aenor_call_free_peoples": {
+      "effects": [
+        {
+          "raw": "every_country = {\n\tlimit = {\n\t\tOR = {\n\t\t\thas_war_with = Y8D\n\t\t\thas_war_with = Y0U\n\t\t}\n\t\tNOT = { has_war_with = ROOT }\n\t\tNOT = { is_subject_of = ROOT }\n\t}\n\tcountry_event = zin_aenor.518\n}"
+        }
+      ]
+    },
+    "zin_aenor_offer_common_cause": {
+      "effects": [
+        {
+          "raw": "every_country = {\n\tlimit = {\n\t\tOR = {\n\t\t\thas_war_with = Y8D\n\t\t\thas_war_with = Y0U\n\t\t}\n\t\tNOT = { has_war_with = ROOT }\n\t}\n\tcountry_event = zin_aenor.519\n}"
+        }
+      ]
+    },
+    "zin_aenor_offer_treaties": {
+      "effects": [
+        {
+          "raw": "every_country = {\n\tlimit = {\n\t\thas_war_with = ROOT\n\t\tNOT = { original_tag = Y8D }\n\t\tNOT = { original_tag = Y0U }\n\t\tNOT = { original_tag = Y8G }\n\t\tNOT = { is_subject_of = Y8G }\n\t}\n\tcountry_event = zin_aenor.516\n}"
+        }
+      ]
+    },
+    "zin_aenor_announce_fourth_age": {
+      "effects": [
+        {
+          "event": "fourth_age_ends"
+        },
+        {
+          "raw": "every_other_country = {\n\tcountry_event = zin_aenor.517\n}"
+        }
+      ]
+    },
+    "zin_aenor_event_diplomacy": {
+      "args": {
+        "act": {
+          "keyword": {
+            "white_peace": 1,
+            "access_both": 2,
+            "join_or_access": 3,
+            "send_arms": 4,
+            "access_to_aenor": 5
+          }
+        }
+      },
+      "effects": [
+        {
+          "raw": "if = {\n\tlimit = { check_variable = { zin_arg_act = 1 } }\n\tY0L = { white_peace = { tag = ROOT } }\n}\nif = {\n\tlimit = { check_variable = { zin_arg_act = 2 } }\n\tgive_military_access = Y0L\n\tY0L = { give_military_access = ROOT }\n}\nif = {\n\tlimit = { check_variable = { zin_arg_act = 3 } }\n\tif = {\n\t\tlimit = { Y0L = { is_faction_leader = yes } }\n\t\tY0L = { add_to_faction = ROOT }\n\t}\n\telse = {\n\t\tgive_military_access = Y0L\n\t\tY0L = { give_military_access = ROOT }\n\t}\n}\nif = {\n\tlimit = { check_variable = { zin_arg_act = 4 } }\n\tY0L = { send_equipment = { equipment = zin_arms_equipment amount = 2000 target = ROOT } }\n}\nif = {\n\tlimit = { check_variable = { zin_arg_act = 5 } }\n\tgive_military_access = Y0L\n}"
+        }
+      ]
+    }
+  },
+  "opinion_modifiers": {"opinion_envoys_welcomed":{"name":"Envoys Welcomed","value":20},"opinion_envoys_received":{"name":"Envoys Received Warily","value":5},"opinion_honorary_crown":{"name":"Honorary Crown Accepted","value":15},"opinion_gifts_accepted":{"name":"Gifts Accepted","value":25},"opinion_gifts_refused":{"name":"Gifts Refused","value":-10,"decay":1},"opinion_southern_aid":{"name":"Aid from the Middle Kingdom","value":20}},
+  "focuses": [
+    {"key":"the_golden_court","name":"The Golden Court","desc":"Seventeen centuries of the crown have gilded Parim until its halls outshine the lake. The King holds court at the water's edge, and every petitioner pays for the privilege of being heard.","icon":"crown_gold","x":2,"y":0,"days":35,"ai":{"base":100},"effects":[{"political_power":50},{"call":"zin_aenor_add_court_corruption","args":{"value":3}},{"event":"court_feast"}],"filters":["political"]},
+    {"key":"sale_of_offices","name":"The Sale of Offices","desc":"Seals, tolls and captaincies go to whoever bids highest. The treasury fills at once, and the honest begin to leave the court.","icon":"seal_royal","x":1,"y":1,"days":70,"prerequisite":[["the_golden_court"]],"mutually_exclusive":["audit_treasury"],"ai":{"base":30,"modifiers":[{"add":70,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"timed_spirit":{"key":"offices_for_sale","days":365}},{"call":"zin_aenor_add_court_corruption","args":{"value":8}}],"filters":["political"]},
+    {"key":"audit_treasury","name":"Audit the Royal Treasury","desc":"Clerks who owe nothing to the throne are set to count what the King's friends have taken. The sum will be a shock to somebody.","icon":"ledger_coins","x":3,"y":1,"days":70,"prerequisite":[["the_golden_court"]],"mutually_exclusive":["sale_of_offices"],"available":[{"not":[{"check":"zin_aenor_council_dominant"}]}],"ai":{"base":40,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":2,"if":[{"variable":{"name":"zin_court_corruption","above":74}}]}]},"effects":[{"political_power":-25},{"call":"zin_aenor_add_court_corruption","args":{"value":-10}},{"event":"auditors_ledger"}],"filters":["political"]},
+    {"key":"gilded_halls","name":"Gild the Halls of Parim","desc":"Gold leaf for the pillars, silver for the stair-rails, mirrors for the vaults. The city shines and the court is pleased, and its debts grow with the glitter.","icon":"palace_parim","x":0,"y":2,"days":70,"prerequisite":[["sale_of_offices"]],"ai":{"base":80},"effects":[{"add_spirit":"gilded_parim"},{"call":"zin_aenor_add_court_corruption","args":{"value":5}}],"filters":["political"]},
+    {"key":"merchant_princes","name":"The Merchant Princes","desc":"The great houses of the Lake pay handsomely for their charters, and the King lets them write the tariffs in return. Wealth follows, and so do favours.","icon":"guild_hall","x":1,"y":2,"days":70,"prerequisite":[["sale_of_offices"]],"ai":{"base":60},"effects":[{"add_spirit":"merchant_houses"},{"building":{"type":"industrial_complex","level":1,"where":"random_owned"}},{"call":"zin_aenor_add_court_corruption","args":{"value":3}}],"filters":["political"]},
+    {"key":"honest_ledgers","name":"Honest Ledgers","desc":"Every purse that passes the treasury door is written in a book that any lord may read. The court grumbles; the tax-gatherers sleep better.","icon":"seal_wax","x":3,"y":2,"days":70,"prerequisite":[["audit_treasury"]],"ai":{"base":50},"effects":[{"add_spirit":"honest_accounts"},{"call":"zin_aenor_add_court_corruption","args":{"value":-5}}],"filters":["political"]},
+    {"key":"dismiss_flatterers","name":"Dismiss the Flatterers","desc":"The courtiers who echo the King's every word are sent back to their estates. The council chamber falls quiet, and for the first time in years someone says no.","icon":"sceptre","x":4,"y":2,"days":35,"prerequisite":[["audit_treasury"]],"ai":{"base":40},"effects":[{"political_power":-50},{"stability":0.03},{"call":"zin_aenor_add_court_corruption","args":{"value":-5}},{"call":"zin_aenor_add_council_influence","args":{"value":-3}}],"filters":["political"]},
+    {"key":"royal_triumph","name":"A Royal Triumph","desc":"Banners, drums and a procession from the lake gate to the palace steps. The crowds cheer a king whose battles are always won by someone else.","icon":"war_drums","x":0,"y":3,"days":35,"prerequisite":[["gilded_halls"]],"ai":{"base":50},"effects":[{"war_support":0.05},{"stability":0.03},{"call":"zin_aenor_add_court_corruption","args":{"value":3}},{"call":"zin_aenor_add_lost_cause","args":{"value":-3}}],"filters":["political"]},
+    {"key":"golden_tribute","name":"The Golden Tribute","desc":"Heralds ride out to name the sum each dominion owes the throne. The coffers swell; the lords pay, and remember.","icon":"tribute_chest","x":1,"y":3,"days":70,"prerequisite":[["merchant_princes"]],"ai":{"base":40},"effects":[{"political_power":100},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":-3}},{"call":"zin_aenor_add_court_corruption","args":{"value":3}}],"filters":["political"]},
+    {"key":"royal_mint","name":"The Royal Mint","desc":"New dies, true weights and an assay no clerk can bribe. Coin from Parim rings clear in every market again.","icon":"coin_chest","x":3,"y":3,"days":70,"prerequisite":[["honest_ledgers"]],"ai":{"base":50},"effects":[{"building":{"type":"industrial_complex","level":2,"where":"capital"}},{"political_power":50}],"filters":["political"]},
+    {"key":"court_of_accounts","name":"The Court of Accounts","desc":"A standing bench of auditors may summon any officer of the realm to answer for a missing sum. Theft becomes a risk instead of a custom.","icon":"council_table","x":4,"y":3,"days":70,"prerequisite":[["dismiss_flatterers"]],"ai":{"base":40},"effects":[{"add_spirit":"royal_auditors"},{"call":"zin_aenor_add_court_corruption","args":{"value":-8}},{"call":"zin_aenor_add_council_influence","args":{"value":-3}}],"filters":["political"]},
+    {"key":"crown_purse","name":"The Crown's Purse","desc":"However the court has managed its gold, the treasury now answers to one purse and one seal. The King spends as he pleases, and knows to the coin what he has.","icon":"coin_chest","x":2,"y":4,"days":70,"prerequisite":[["golden_tribute","royal_mint","court_of_accounts"]],"ai":{"base":40},"effects":[{"political_power":75},{"stability":0.03}],"filters":["political"]},
+    {"key":"golden_jubilee","name":"The Golden Jubilee","desc":"Fifty days of feasting honour the long reign. Bells ring in every dominion, and nobody counts the cost until the lamps burn down.","icon":"feast_table","x":1,"y":5,"days":35,"prerequisite":[["crown_purse"]],"mutually_exclusive":["reform_the_court"],"ai":{"base":10,"modifiers":[{"add":30,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"timed_spirit":{"key":"jubilee_celebrations","days":180}},{"call":"zin_aenor_add_court_corruption","args":{"value":5}}],"filters":["political"]},
+    {"key":"reform_the_court","name":"Reform the Court","desc":"Gilded fittings are sold, sinecures struck from the rolls and the court's hours given back to the kingdom's business. Those it used to feed will not forgive it.","icon":"charter_old","x":3,"y":5,"days":70,"prerequisite":[["crown_purse"]],"mutually_exclusive":["golden_jubilee"],"available":[{"variable":{"name":"zin_court_corruption","below":51}}],"ai":{"base":50,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"remove_spirit":"gilded_parim"},{"call":"zin_aenor_add_court_corruption","args":{"value":-15}},{"stability":0.05}],"filters":["political"]},
+    {"key":"great_lake_ports","name":"The Great Lake Ports","desc":"The Lake is Aenor's road and its larder. New quays, chain-booms and harbour-lights make its ports the busiest water in the Middle Lands.","icon":"harbour_lake","x":7,"y":0,"days":70,"ai":{"base":80},"effects":[{"building":{"type":"naval_base","level":2,"where":"great_lake_ports"}},{"building":{"type":"infrastructure","level":1,"where":"great_lake_ports"}}],"filters":["industry"]},
+    {"key":"roads_of_parim","name":"The Roads of Parim","desc":"Paved ways run from the palace gate to every dominion that owes the crown a tithe. Wagons that took a fortnight now take a week.","icon":"roads_paved","x":5,"y":1,"days":70,"prerequisite":[["great_lake_ports"]],"ai":{"base":60},"effects":[{"building":{"type":"infrastructure","level":1,"where":"capital"}},{"building":{"type":"infrastructure","level":1,"where":"random_owned"}},{"building":{"type":"infrastructure","level":1,"where":"random_owned"}}],"filters":["industry"]},
+    {"key":"lake_shipwrights","name":"Lake Shipwrights","desc":"Yards along the shore lay keels for broad, shallow ships that no sea captain would trust and no lake captain would be without.","icon":"shipwright_yard","x":7,"y":1,"days":70,"prerequisite":[["great_lake_ports"]],"ai":{"base":30},"effects":[{"building":{"type":"dockyard","level":2,"where":"great_lake_ports"}},{"navy_experience":10}],"filters":["industry"]},
+    {"key":"market_charters","name":"Market Charters","desc":"The King grants a fair to every town that asks, and takes a tenth of what is sold. More towns ask than anyone expected.","icon":"market_stalls","x":9,"y":1,"days":35,"prerequisite":[["great_lake_ports"]],"ai":{"base":50},"effects":[{"building":{"type":"industrial_complex","level":1,"where":"random_owned"}},{"call":"zin_aenor_add_court_corruption","args":{"value":2}}],"filters":["industry"]},
+    {"key":"canal_works","name":"The Canal Works","desc":"Gangs of diggers cut waterways between the lake and the rivers beyond it, and lock-keepers learn a trade that did not exist a generation ago.","icon":"canal_lock","x":5,"y":2,"days":70,"prerequisite":[["roads_of_parim"]],"ai":{"base":50},"effects":[{"research":{"categories":["construction_tech"],"bonus":0.5,"uses":1}},{"building":{"type":"infrastructure","level":1,"where":"random_owned"}},{"building":{"type":"infrastructure","level":1,"where":"random_owned"}}],"filters":["industry"]},
+    {"key":"lake_fleet","name":"The Lake Fleet","desc":"A fleet of galleys keeps the lake lanes clear of smugglers and the shores clear of rumour. Its captains are proud and expensive.","icon":"galley_oars","x":7,"y":2,"days":70,"prerequisite":[["lake_shipwrights"]],"ai":{"base":30},"effects":[{"add_spirit":"fleet_of_the_lake"},{"research":{"categories":["zin_cat_galleys"],"bonus":0.5,"uses":1}}],"filters":["industry"]},
+    {"key":"sea_trade","name":"Trade Across the Sea","desc":"Aenoran cogs carry lake grain and Parim cloth out to the central sea, and come back with spice, glass and gossip from lands the court has never seen.","icon":"ship_voyage","x":9,"y":2,"days":70,"prerequisite":[["market_charters"]],"ai":{"base":40},"effects":[{"add_spirit":"sea_routes"}],"filters":["industry"]},
+    {"key":"royal_foundries","name":"The Royal Foundries","desc":"Furnaces ring the lake-towns, smelting iron for plough, nail and blade. The smoke is thick, and the King's smiths are paid in full.","icon":"foundry_fire","x":5,"y":3,"days":70,"prerequisite":[["canal_works"]],"ai":{"base":60},"effects":[{"building":{"type":"industrial_complex","level":2,"where":"random_owned"}}],"filters":["industry"]},
+    {"key":"guild_halls","name":"The Guild Halls","desc":"Each craft builds its own hall of carved timber and keeps its own rolls of masters. Apprentices travel from far shores to be bound there.","icon":"guild_hall","x":8,"y":3,"days":70,"prerequisite":[["lake_fleet","sea_trade"]],"ai":{"base":50},"effects":[{"building":{"type":"arms_factory","level":1,"where":"capital"}},{"building":{"type":"industrial_complex","level":1,"where":"random_coastal"}}],"filters":["industry"]},
+    {"key":"eastern_caravans","name":"The Eastern Caravans","desc":"Camel caravans from the far side of the rift sea reach Parim by the salt roads, and the court sends envoys with gifts to greet the caravan masters.","icon":"caravan","x":9,"y":3,"days":35,"prerequisite":[["sea_trade"]],"ai":{"base":40},"effects":[{"political_power":25},{"event_for":{"country":"Noris","key":"caravan_envoys"}},{"event_for":{"country":"Stabilo","key":"caravan_envoys"}}],"filters":["industry"]},
+    {"key":"arsenals_of_parim","name":"The Arsenals of Parim","desc":"Armourers, fletchers and spear-makers work in vaulted halls beneath the palace hill, and the racks never stand empty.","icon":"forge_anvil","x":5,"y":4,"days":70,"prerequisite":[["royal_foundries"]],"ai":{"base":50},"effects":[{"building":{"type":"arms_factory","level":2,"where":"capital"}},{"equipment":{"type":"zin_arms_equipment","amount":1000}}],"filters":["industry"]},
+    {"key":"universities","name":"The Universities of Parim and Selen","desc":"The old halls of learning are endowed anew. Scholars of Parim and Selen share their books, and their quarrels, across the whole Middle Kingdom.","icon":"university_hall","x":8,"y":4,"days":70,"prerequisite":[["guild_halls"]],"ai":{"base":50},"effects":[{"add_spirit":"learned_halls"},{"for_country":{"country":"Selen","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":5}}]}}],"filters":["industry"]},
+    {"key":"kingdom_of_plenty","name":"A Kingdom of Plenty","desc":"Granaries are full, the roads are busy and the guilds are fat. For a season it seems that nothing in Aenor could ever go wrong.","icon":"granary","x":7,"y":5,"days":70,"prerequisite":[["arsenals_of_parim"],["universities"]],"ai":{"base":60},"effects":[{"add_spirit":"realm_of_plenty"}],"filters":["industry"]},
+    {"key":"kingdoms_armouries","name":"The Kingdom's Armouries","desc":"When the crown calls its banners, the armouries are thrown open and every smith in the realm turns to the forge.","icon":"sword_shield","x":7,"y":6,"days":70,"prerequisite":[["kingdom_of_plenty"]],"available":[{"or":[{"global_flag":"zin_golden_king_dead"},{"global_flag":"zin_war_of_last_crowns"},{"focus_done":"mobilise_the_realm"}]}],"ai":{"base":80},"effects":[{"building":{"type":"arms_factory","level":3,"where":"random_owned"}}],"filters":["industry"]},
+    {"key":"middle_kingdom_concord","name":"The Middle Kingdom Concord","desc":"Aenor and her twenty-six chartered dominions are one realm in law and many in custom. The Charters of Parim bind them; the King's heralds remind them.","icon":"concord_circle","x":12,"y":0,"days":70,"ai":{"base":70},"effects":[{"political_power":25},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":3}},{"flag":"zin_aenor_charters_open"}],"filters":["political"]},
+    {"key":"convene_the_concord","name":"Convene the Concord Council","desc":"Lords of every dominion take their seats in the long hall at Parim, as their fathers did. They come to be heard, and the King comes to be obeyed.","icon":"council_table","x":11,"y":1,"days":35,"prerequisite":[["middle_kingdom_concord"]],"ai":{"base":50},"effects":[{"call":"zin_aenor_convene_concord_council"}],"filters":["political"]},
+    {"key":"royal_envoys","name":"Royal Envoys to the Dominions","desc":"Heralds with the King's seal travel to every dominion court, and return with the true measure of each lord's loyalty written in a sealed roll.","icon":"envoy","x":13,"y":1,"days":35,"prerequisite":[["middle_kingdom_concord"]],"ai":{"base":40},"effects":[{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":3}},{"flag":"zin_aenor_envoys"}],"filters":["political"]},
+    {"key":"golden_charters","name":"The Golden Charters","desc":"Privileges are sold to the dominion lords: tolls, mills and the right to hold their own courts. The Concord grows rich, and loyalty is for sale to the highest bidder.","icon":"charter_golden","x":10,"y":2,"days":70,"prerequisite":[["convene_the_concord"]],"mutually_exclusive":["charters_renewed"],"ai":{"base":20,"modifiers":[{"add":50,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"flag":"zin_aenor_golden_charters_open"},{"political_power":50},{"call":"zin_aenor_add_court_corruption","args":{"value":5}}],"filters":["political"]},
+    {"key":"charters_renewed","name":"The Charters of Parim Renewed","desc":"The old charters are read aloud and sealed afresh. Every dominion is promised its liberties in plain words, and the lords weigh the promise against the King's record.","icon":"charter_old","x":12,"y":2,"days":70,"prerequisite":[["convene_the_concord"]],"mutually_exclusive":["golden_charters"],"ai":{"base":40,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":2,"if":[{"variable":{"name":"zin_aenor_concord_avg","below":50}}]}]},"effects":[{"flag":"zin_aenor_free_charters_open"},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":8}},{"call":"zin_aenor_add_court_corruption","args":{"value":-3}}],"filters":["political"]},
+    {"key":"wall_charter","name":"The Wall Charter","desc":"Kingson, who keeps the gate in the Great Wall, is granted a charter of its own: freedom from tolls in return for an unbroken watch.","icon":"charter_wall","x":14,"y":2,"days":35,"prerequisite":[["royal_envoys"]],"ai":{"base":30},"effects":[{"for_country":{"country":"Kingson","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":10}}]}},{"building":{"type":"bunker","level":1,"where":"great_wall"}}],"filters":["political"]},
+    {"key":"concord_levies","name":"The Concord Levies","desc":"Each dominion owes the crown a fixed muster of spears every year. The lords mutter, and the rolls are kept in Parim.","icon":"levy_muster","x":10,"y":3,"days":70,"prerequisite":[["golden_charters"]],"ai":{"base":40,"modifiers":[{"factor":1,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"add_spirit":"levies_of_the_concord"},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":-3}}],"filters":["political"]},
+    {"key":"selen_accord","name":"An Accord with Selen","desc":"Selen's rangers hold the frontier and owe Parim little love. A written accord, signed in the green hall of Selen, offers them honour in place of orders.","icon":"scroll_treaty","x":12,"y":3,"days":70,"prerequisite":[["charters_renewed","royal_envoys"]],"ai":{"base":40,"modifiers":[{"add":-20,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"event_for":{"country":"Selen","key":"selen_accord"}},{"for_country":{"country":"Selen","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":15}}]}}],"filters":["political"]},
+    {"key":"asgard_isle","name":"The Isle of Asgard","desc":"Off the western coast lies the isle of Asgard, whose houses have sworn to the crown since the first charter. A beacon-tower is raised on their headland.","icon":"lighthouse","x":13,"y":3,"days":35,"prerequisite":[["royal_envoys"]],"ai":{"base":20},"effects":[{"for_country":{"country":"Asgard","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":10}},{"building":{"type":"naval_base","level":1,"where":"capital"}}]}}],"filters":["political"]},
+    {"key":"kingson_gate","name":"The Gate of Kingson","desc":"The gate in the Great Wall is rebuilt in dressed stone, with towers on either side and a portcullis that three men can raise.","icon":"fort_wall","x":14,"y":3,"days":70,"prerequisite":[["wall_charter"]],"ai":{"base":20},"effects":[{"for_country":{"country":"Kingson","effects":[{"building":{"type":"bunker","level":2,"where":"capital"}}]}},{"army_experience":5}],"filters":["political"]},
+    {"key":"tribute_roads","name":"The Tribute Roads","desc":"Tribute wagons rumble towards Parim on new causeways, and the dominions learn exactly how far the King's hand can reach.","icon":"tribute_chest","x":10,"y":4,"days":70,"prerequisite":[["concord_levies"]],"ai":{"base":30,"modifiers":[{"factor":1,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"political_power":75},{"building":{"type":"infrastructure","level":1,"where":"random_owned"}},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":-2}}],"filters":["political"]},
+    {"key":"peoples_of_the_concord","name":"The Peoples of the Concord","desc":"Kilinti's ents, the giants of Hiloron and the riders of Hunhun are invited to Parim as guests, not subjects. Their long memory is worth more than tribute.","icon":"banner_league","x":12,"y":4,"days":70,"prerequisite":[["selen_accord","concord_levies"]],"ai":{"base":40},"effects":[{"for_country":{"country":"Kilinti","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":10}}]}},{"for_country":{"country":"Hiloron","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":10}}]}},{"for_country":{"country":"Hunhun","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":10}}]}},{"army_experience":15}],"filters":["political"]},
+    {"key":"common_army","name":"The Common Army of the Concord","desc":"Drill-masters of Parim teach the same signals, the same formations and the same marching songs to levies from every dominion.","icon":"spear_levy","x":11,"y":5,"days":70,"prerequisite":[["peoples_of_the_concord"]],"ai":{"base":40},"effects":[{"add_spirit":"common_army_drill"}],"filters":["political"]},
+    {"key":"concord_reborn","name":"The Concord Reborn","desc":"The old compact is spoken again at the Council, and this time the lords mean the words. The Middle Kingdom stands as one realm, and says so.","icon":"alliance_rings","x":12,"y":6,"days":70,"prerequisite":[["common_army"]],"ai":{"base":50},"effects":[{"add_spirit":"concord_renewed"},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":10}}],"filters":["political"]},
+    {"key":"oaths_of_the_lost_cause","name":"The Oaths of the Lost Cause","desc":"The King's league against the powers of the dark was sworn in 4A 1741, on the steps of the palace. Now its oaths are renewed before the lords of the realm, and nobody laughs.","icon":"handshake_oath","x":17,"y":0,"days":35,"ai":{"base":90},"effects":[{"political_power":25},{"call":"zin_aenor_add_lost_cause","args":{"value":5}}],"filters":["political"]},
+    {"key":"kings_league","name":"The King's League","desc":"Banners of the Lost Cause are raised above the palace court. It is a league of fine robes and grand words, and the King is its most devoted member.","icon":"banner_league","x":15,"y":1,"days":70,"prerequisite":[["oaths_of_the_lost_cause"]],"ai":{"base":90},"effects":[{"swap_spirit":["zin_aenor_lost_cause_court","league_of_the_king"]},{"call":"zin_aenor_add_court_corruption","args":{"value":3}}],"filters":["political"]},
+    {"key":"frontier_companies","name":"The Frontier Companies","desc":"Rangers, scouts and ex-soldiers are given the King's coin and sent to watch the borders where the maps run out. Few of them are in it for the banners.","icon":"scout_lantern","x":17,"y":1,"days":70,"prerequisite":[["oaths_of_the_lost_cause"]],"ai":{"base":50,"modifiers":[{"factor":0.4,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"call":"zin_aenor_add_lost_cause","args":{"value":10}},{"call":"zin_aenor_raise_frontier_company"}],"filters":["political"]},
+    {"key":"scholars_of_the_cause","name":"The Scholars of the Cause","desc":"Loremasters at Parim and Selen are paid to search the old records for whatever the dark powers did before, and how they were stopped.","icon":"book_lore","x":19,"y":1,"days":70,"prerequisite":[["oaths_of_the_lost_cause"]],"ai":{"base":10,"modifiers":[{"add":20,"if":[{"after":"1751.1.1"}]}]},"effects":[{"political_power":25},{"call":"zin_aenor_add_lost_cause","args":{"value":5}}],"filters":["political"]},
+    {"key":"triumph_of_the_league","name":"A Triumph for the League","desc":"A procession of knights in gilt mail winds through the capital to honour the Lost Cause. The people throw flowers, and the ledgers throw up a sum.","icon":"war_drums","x":15,"y":2,"days":35,"prerequisite":[["kings_league"]],"ai":{"base":90},"effects":[{"political_power":50},{"stability":0.03},{"call":"zin_aenor_add_lost_cause","args":{"value":-5}},{"call":"zin_aenor_add_court_corruption","args":{"value":3}},{"event":"league_triumph"}],"filters":["political"]},
+    {"key":"honorary_crowns","name":"Honorary Crowns","desc":"Far courts are offered a place in the league as honorary members. It costs the King only a few ribbons, and it may buy a friend who matters.","icon":"crown_iron","x":16,"y":2,"days":70,"prerequisite":[["kings_league"]],"ai":{"base":60},"effects":[{"event_for":{"country":"Lerendor","key":"honorary_crowns"}},{"event_for":{"country":"Gunwaith","key":"honorary_crowns"}},{"event_for":{"country":"Girdon","key":"honorary_crowns"}},{"event_for":{"country":"Coldor","key":"honorary_crowns"}},{"event_for":{"country":"Dondor","key":"honorary_crowns"}}],"filters":["political"]},
+    {"key":"rangers_of_selen","name":"The Rangers of Selen","desc":"The rangers of Selen are asked to lend their skills to the Lost Cause. They answer that the wild does not take orders, and then they come anyway.","icon":"ranger_cloak","x":17,"y":2,"days":70,"prerequisite":[["frontier_companies"]],"ai":{"base":40},"effects":[{"event_for":{"country":"Selen","key":"rangers_of_selen"}},{"for_country":{"country":"Selen","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":10}}]}},{"call":"zin_aenor_add_lost_cause","args":{"value":5}}],"filters":["political"]},
+    {"key":"watchers_on_the_wall","name":"Watchers on the Wall","desc":"Beacon-keepers are posted every league along the Great Wall, with signal fires laid and ready. They watch the east and the south and pray to see nothing.","icon":"beacon","x":18,"y":2,"days":70,"prerequisite":[["frontier_companies"]],"ai":{"base":30},"effects":[{"add_spirit":"wall_watch"},{"call":"zin_aenor_add_lost_cause","args":{"value":5}}],"filters":["political"]},
+    {"key":"old_genealogies","name":"The Old Genealogies","desc":"Heralds copy out the great houses' lines of descent, back to the First Men and the first charters. Old claims are found, and some old names are forgotten for good reason.","icon":"heir_rolls","x":19,"y":2,"days":70,"prerequisite":[["scholars_of_the_cause"]],"ai":{"base":0,"modifiers":[{"add":30,"if":[{"after":"1751.1.1"}]}]},"effects":[{"flag":"zin_aenor_genealogies"},{"call":"zin_aenor_add_lost_cause","args":{"value":5}}],"filters":["political"]},
+    {"key":"black_ships","name":"The Black Ships","desc":"Fishermen on the western coast tell of black hulls moving without wind, and of lanterns that burn the wrong colour. The King's men note the tales and decide what to do.","icon":"black_hulls","x":17,"y":3,"days":35,"prerequisite":[["rangers_of_selen"]],"ai":{"base":30},"effects":[{"event":"black_ships"},{"building":{"type":"coastal_bunker","level":1,"where":"random_coastal"}},{"call":"zin_aenor_add_lost_cause","args":{"value":3}}],"filters":["political"]},
+    {"key":"southern_warnings","name":"Heed the Southern Warnings","desc":"Mirolon's envoy brought word of the Dead Lands in 4A 1736 and was laughed out of the hall. Perhaps the archive still holds his letters.","icon":"ember_desert","x":18,"y":3,"days":35,"prerequisite":[["rangers_of_selen","watchers_on_the_wall"]],"ai":{"base":30},"effects":[{"event":"southern_warnings"},{"war_support":0.02},{"call":"zin_aenor_add_lost_cause","args":{"value":5}}],"filters":["political"]},
+    {"key":"the_kings_tasters","name":"The King's Tasters","desc":"Every dish that reaches the King's table is first sampled by a trusted servant. The cooks are nervous, the King is amused and the physicians are quietly relieved.","icon":"healer_herbs","x":19,"y":3,"days":35,"prerequisite":[["rangers_of_selen","old_genealogies"]],"available":[{"check":"zin_aenor_king_alive"}],"ai":{"base":30,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"timed_spirit":{"key":"zin_aenor_kings_tasters","days":365}},{"call":"zin_aenor_delay_death_clock","args":{"days":120}},{"call":"zin_aenor_add_council_influence","args":{"value":-5}}],"filters":["political"]},
+    {"key":"shield_of_the_concord","name":"The Shield of the Concord","desc":"The Lost Cause stops being an ornament. Companies in the field, stores on the frontier and a charter of shields for every dominion that will take one.","icon":"charter_shield","x":16,"y":4,"days":70,"prerequisite":[["triumph_of_the_league","honorary_crowns"],["black_ships","southern_warnings"]],"available":[{"variable":{"name":"zin_aenor_lost_cause","above":59}}],"ai":{"base":50,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}},{"not":[{"global_flag":"zin_war_of_last_crowns"}]}]},{"add":10,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}},{"global_flag":"zin_war_of_last_crowns"}]}]},"effects":[{"call":"zin_aenor_raise_lost_cause_shield"},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":5}}],"filters":["political"]},
+    {"key":"the_hidden_hand","name":"The Hidden Hand","desc":"Appointments to the great offices follow a pattern that no king set. Whoever is drawing it knows the court better than the King does.","icon":"eye_watchful","x":19,"y":4,"days":70,"prerequisite":[["the_kings_tasters"]],"ai":{"base":40,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"flag":"zin_aenor_hidden_hand_seen"},{"call":"zin_aenor_add_council_influence","args":{"value":-5}},{"if":{"limit":[{"flag":"zin_aenor_audit_done"}],"then":[{"call":"zin_aenor_add_lost_cause","args":{"value":5}}]}},{"event":"hidden_hand"}],"filters":["political"]},
+    {"key":"proof_of_blood","name":"Proof of Blood","desc":"A man from the frontier carries a line of descent that the heralds cannot fault. Whoever stands behind him will want his claim made plain.","icon":"scroll_sealed","x":18,"y":5,"days":70,"prerequisite":[["old_genealogies"]],"available":[{"global_flag":"zin_eindil_named"}],"ai":{"base":60,"modifiers":[{"factor":0,"if":[{"check":"zin_aenor_ruled_by_faithful"}]}]},"effects":[{"flag":"zin_aenor_proof_of_blood"},{"call":"zin_aenor_add_camp_support","args":{"camp":"host","value":15}}],"filters":["political"]},
+    {"key":"lost_cause_reborn","name":"The Lost Cause Reborn","desc":"The league is no longer the King's plaything. Its banners follow a stranger, and its companies at last fight for something they believe in.","icon":"banner_plain","x":17,"y":6,"days":70,"prerequisite":[["shield_of_the_concord","proof_of_blood"]],"available":[{"global_flag":"zin_eindil_named"},{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"ai":{"base":100},"effects":[{"global_flag":"zin_lost_cause_with_eindil"},{"call":"zin_aenor_add_lost_cause","args":{"value":15}},{"call":"zin_aenor_add_camp_support","args":{"camp":"host","value":20}}],"filters":["political"]},
+    {"key":"temples_of_the_deliverer","name":"The Temples of the Deliverer","desc":"In every town of the Middle Kingdom the white-stoned temples of the Deliverer give bread, medicine and counsel. The King favours them; his people love them.","icon":"temple_parim","x":21,"y":0,"days":35,"ai":{"base":100},"effects":[{"stability":0.03},{"call":"zin_aenor_add_council_influence","args":{"value":5}}],"filters":["stability"]},
+    {"key":"houses_of_the_first_light","name":"The Houses of the First Light","desc":"Hospitals, grain stores and birth rolls, kept by the temples and open to all. No one in Aenor remembers when the realm did without them.","icon":"house_first_light","x":20,"y":1,"days":70,"prerequisite":[["temples_of_the_deliverer"]],"ai":{"base":100},"effects":[{"add_spirit":"first_light_houses"},{"call":"zin_aenor_add_council_influence","args":{"value":5}}],"filters":["stability"]},
+    {"key":"temple_schools","name":"The Temple Schools","desc":"Children of every rank learn their letters under the temple roofs. The teachers are kind, patient and thoroughly sure of what a child should believe.","icon":"book_lore","x":22,"y":1,"days":70,"prerequisite":[["temples_of_the_deliverer"]],"ai":{"base":60},"effects":[{"add_spirit":"temple_scholars"},{"call":"zin_aenor_add_council_influence","args":{"value":5}}],"filters":["stability"]},
+    {"key":"merovans_seals","name":"The Keeper's Seals","desc":"Merovan, who holds the seals of the realm, is given a hall of his own beside the throne room. Letters of state now reach the King by way of his table.","icon":"seal_chancellor","x":23,"y":1,"days":35,"prerequisite":[["temples_of_the_deliverer"]],"ai":{"base":80},"effects":[{"political_power":75},{"call":"zin_aenor_add_council_influence","args":{"value":5}},{"tooltip":"Merovan, Keeper of the Seals, gains authority in the King's council."}],"filters":["stability"]},
+    {"key":"royal_almoners","name":"The Royal Almoners","desc":"Almoners with the temples' badge walk the poorer quarters of Parim each dawn, and the poor bless a crown that seems to care.","icon":"alms_bread","x":20,"y":2,"days":70,"prerequisite":[["houses_of_the_first_light"]],"ai":{"base":40},"effects":[{"add_spirit":"almoners"},{"call":"zin_aenor_add_council_influence","args":{"value":3}}],"filters":["stability"]},
+    {"key":"birth_rolls","name":"The Birth Rolls","desc":"The temples record every birth and every death in the realm, and the King's officers learn at last how many hands he can call to his banner.","icon":"birth_rolls","x":21,"y":2,"days":70,"prerequisite":[["houses_of_the_first_light","temple_schools"]],"ai":{"base":60},"effects":[{"manpower":10000},{"timed_spirit":{"key":"counted_realm","days":730}},{"call":"zin_aenor_add_council_influence","args":{"value":5}}],"filters":["stability"]},
+    {"key":"blessed_crown","name":"The Blessed Crown","desc":"The King is anointed in the great temple, and the Deliverer's priests proclaim him favoured of heaven. The people kneel more readily afterwards.","icon":"crown_radiant","x":22,"y":2,"days":70,"prerequisite":[["temple_schools"]],"ai":{"base":50},"effects":[{"add_spirit":"crown_blessed"},{"call":"zin_aenor_add_council_influence","args":{"value":5}}],"filters":["stability"]},
+    {"key":"kings_own_counsel","name":"The King's Own Counsel","desc":"The King reminds his councillors that he alone appoints them. The temples bow, smile and remain exactly where they were.","icon":"seal_royal","x":20,"y":3,"days":70,"prerequisite":[["royal_almoners"]],"mutually_exclusive":["one_faith_one_realm"],"available":[{"or":[{"not":[{"check":"zin_aenor_council_dominant"}]},{"flag":"zin_aenor_hidden_hand_seen"}]}],"ai":{"base":30,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]},{"factor":3,"if":[{"flag":"zin_aenor_hidden_hand_seen"}]}]},"effects":[{"add_spirit":"own_counsel"},{"call":"zin_aenor_add_council_influence","args":{"value":-10}}],"filters":["stability"]},
+    {"key":"feast_of_the_deliverer","name":"The Feast of the Deliverer","desc":"On the longest night every hearth in Aenor lights a white candle, and every temple hall serves bread to all who come. The Deliverer's blessing is spoken in the King's name.","icon":"censer","x":21,"y":3,"days":35,"prerequisite":[["birth_rolls","blessed_crown"]],"ai":{"base":70},"effects":[{"stability":0.05},{"call":"zin_aenor_add_council_influence","args":{"value":5}},{"event":"deliverer_feast"}],"filters":["stability"]},
+    {"key":"one_faith_one_realm","name":"One Faith, One Realm","desc":"The King decrees that the Deliverer's rites shall be kept in every dominion. The temples are glad, the Concord is quiet, and a few old shrines go dark.","icon":"sun_veiled","x":22,"y":4,"days":70,"prerequisite":[["feast_of_the_deliverer"],["merovans_seals"]],"mutually_exclusive":["kings_own_counsel"],"ai":{"base":80},"effects":[{"add_spirit":"blessed_realm"},{"call":"zin_aenor_add_council_influence","args":{"value":10}}],"filters":["stability"]},
+    {"key":"royal_army","name":"The Royal Army of Aenor","desc":"The King's host is the strongest in the Middle Lands, and he keeps it sharp. It parades at every feast and has not yet been asked to fight.","icon":"sword_shield","x":26,"y":0,"days":70,"ai":{"base":60},"effects":[{"army_experience":10},{"research":{"categories":["land_doctrine"],"bonus":0.5,"uses":1}}],"filters":["army"]},
+    {"key":"commissions_for_sale","name":"Commissions for Sale","desc":"Captaincies go to the sons of men who can afford them. The ranks are filled with polished boots and unpractised spears.","icon":"coin_chest","x":24,"y":1,"days":35,"prerequisite":[["royal_army"]],"mutually_exclusive":["commissions_by_merit"],"ai":{"base":30,"modifiers":[{"add":50,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"political_power":40},{"add_spirit":"bought_commissions"},{"call":"zin_aenor_add_court_corruption","args":{"value":5}}],"filters":["army"]},
+    {"key":"commissions_by_merit","name":"Commissions by Merit","desc":"Officers are chosen by trial and by record, not by purse. Some noble houses are insulted, and the soldiers cheer.","icon":"scroll_sealed","x":25,"y":1,"days":70,"prerequisite":[["royal_army"]],"mutually_exclusive":["commissions_for_sale"],"ai":{"base":50,"modifiers":[{"factor":0,"if":[{"rule":{"name":"zin_rule_historical_path","option":"HISTORICAL"}}]}]},"effects":[{"add_spirit":"merit_commissions"},{"call":"zin_aenor_add_court_corruption","args":{"value":-3}}],"filters":["army"]},
+    {"key":"great_wall","name":"The Great Wall of Aenor","desc":"From the Organ Mountains to the gate at Kingson the Wall stands, as it has since the Wall Accord. Its towers are repaired and its ditches dug afresh.","icon":"fort_wall","x":27,"y":1,"days":70,"prerequisite":[["royal_army"]],"ai":{"base":40},"effects":[{"building":{"type":"bunker","level":1,"where":"great_wall"}},{"army_experience":5}],"filters":["army"]},
+    {"key":"golden_guard","name":"The Golden Guard","desc":"Two thousand picked men in gilded helms are quartered in the palace barracks. They cost a fortune, and they look splendid at the gate.","icon":"knight_lance","x":24,"y":2,"days":70,"prerequisite":[["commissions_for_sale","commissions_by_merit"]],"ai":{"base":50},"effects":[{"add_spirit":"guard_of_gold"},{"call":"zin_aenor_raise_golden_guard"}],"filters":["army"]},
+    {"key":"drill_fields","name":"The Drill Fields","desc":"Wide meadows beside the lake are cleared for the daily drill. Veterans teach shield-wall and volley to recruits who thought a march was a stroll.","icon":"spear_levy","x":25,"y":2,"days":70,"prerequisite":[["commissions_for_sale","commissions_by_merit"]],"ai":{"base":40},"effects":[{"add_spirit":"drilled_regiments"}],"filters":["army"]},
+    {"key":"wall_garrisons","name":"Garrisons of the Wall","desc":"Companies are quartered in the towers along the Wall, and relieved each season. Kingson's lords send wine for the watch.","icon":"fort_wall","x":27,"y":2,"days":70,"prerequisite":[["great_wall"]],"ai":{"base":30},"effects":[{"building":{"type":"bunker","level":1,"where":"great_wall"}},{"for_country":{"country":"Kingson","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":5}}]}}],"filters":["army"]},
+    {"key":"coastal_watch","name":"Watch on the Coasts","desc":"Look-out towers rise on every headland of the western shore, and fishermen are paid to count the sails they see.","icon":"lighthouse","x":28,"y":2,"days":70,"prerequisite":[["great_wall"]],"ai":{"base":30},"effects":[{"building":{"type":"coastal_bunker","level":1,"where":"random_coastal"}},{"building":{"type":"coastal_bunker","level":1,"where":"random_coastal"}}],"filters":["army"]},
+    {"key":"pacify_bloody_forest","name":"Pacify the Bloody Forest","desc":"The Bloody Forest has never accepted the crown, and its raiders have never stopped trying the borders of the Concord. The Golden Guard is sent to teach it manners.","icon":"forest_ancient","x":24,"y":3,"days":70,"prerequisite":[["golden_guard"]],"available":[{"at_war":false},{"exists":"Bloody Forest"}],"ai":{"base":0,"modifiers":[{"add":10,"if":[{"global_flag":"zin_golden_king_dead"}]}]},"filters":["annexation"],"effects":[{"wargoal":{"target":"Bloody Forest","type":"annex_everything"}},{"claims_on":"Cursed Lands"}]},
+    {"key":"new_doctrine","name":"A New Doctrine of War","desc":"Marshals of the old school argue with young captains over the lessons of the frontier. The King listens to both and decides for neither, so both are heard.","icon":"war_council_map","x":26,"y":3,"days":70,"prerequisite":[["golden_guard","drill_fields"]],"ai":{"base":50},"effects":[{"research":{"categories":["land_doctrine"],"bonus":0.5,"uses":2}},{"army_experience":10}],"filters":["army"]},
+    {"key":"strait_fortresses","name":"Fortresses on the Strait","desc":"The narrow waters between Aenor and the Dark Lands are lined with stone keeps, each with its own chain, harbour and fire-pit.","icon":"strait_chain","x":28,"y":3,"days":70,"prerequisite":[["coastal_watch"]],"ai":{"base":30,"modifiers":[{"factor":3,"if":[{"global_flag":"zin_leren_withdrawal"}]}]},"effects":[{"building":{"type":"naval_base","level":1,"where":"random_coastal"}},{"building":{"type":"coastal_bunker","level":2,"where":"random_coastal"}}],"filters":["army"]},
+    {"key":"kings_host","name":"The King's Host","desc":"When the King raises his standard, the Host answers: heavy foot, horse and archers in the colours of the lake. It will be a sight to see, and a worse one to face.","icon":"levy_muster","x":26,"y":4,"days":70,"prerequisite":[["new_doctrine"]],"ai":{"base":50},"effects":[{"add_spirit":"host_of_the_king"},{"equipment":{"type":"zin_arms_equipment","amount":2000}}],"filters":["army"]},
+    {"key":"mobilise_the_realm","name":"Mobilise the Realm","desc":"Beacons burn from the Wall to the lake, and every dominion is bidden to send its men. Aenor goes to war as it has not in generations.","icon":"war_drums","x":27,"y":5,"days":70,"prerequisite":[["kings_host"],["strait_fortresses","wall_garrisons"]],"available":[{"or":[{"global_flag":"zin_golden_king_dead"},{"global_flag":"zin_war_of_last_crowns"},{"at_war":true}]}],"ai":{"base":100},"filters":["manpower"],"effects":[{"add_spirit":"realm_mobilised"},{"war_support":0.05}]},
+    {"key":"poison_in_the_cup","name":"Poison in the Cup","desc":"A taster falls ill on a cup meant for the King. The court whispers of poison, and for the first time in years the King listens to a voice other than his own.","icon":"healer_herbs","x":1,"y":8,"days":35,"available":[{"global_flag":"zin_golden_king_plot_exposed"},{"check":"zin_aenor_king_alive"}],"ai":{"base":100},"effects":[{"add_spirit":"kings_awakening"},{"call":"zin_aenor_add_court_corruption","args":{"value":-10}}],"filters":["political"]},
+    {"key":"arrest_the_chancellor","name":"Arrest the Keeper of Seals","desc":"Merovan is taken from his hall at dawn, still wearing the chain of his office. The seals pass back into the King's own hand, and the Council's friends at court lose their voice.","icon":"seal_chancellor","x":0,"y":9,"days":35,"prerequisite":[["poison_in_the_cup"]],"ai":{"base":100},"effects":[{"call":"zin_aenor_add_council_influence","args":{"value":-10}},{"tooltip":"Merovan, Keeper of the Seals, is removed from the King's council."}],"filters":["political"]},
+    {"key":"seize_the_ledgers","name":"Seize the Houses' Ledgers","desc":"Royal officers enter the Houses of the First Light and carry off every roll and tally. The temples protest, loudly, and the ledgers are read aloud in open court.","icon":"ledger_coins","x":2,"y":9,"days":70,"prerequisite":[["poison_in_the_cup"]],"ai":{"base":60},"effects":[{"remove_spirit":"first_light_houses"},{"call":"zin_aenor_add_council_influence","args":{"value":-10}},{"stability":-0.03}],"filters":["political"]},
+    {"key":"the_loyal_clergy","name":"The Loyal Clergy","desc":"Priests who served the crown before the Deliverer's temples filled the city are brought back to the great altar. They preach obedience to the King, and the people hear them out.","icon":"hymn_choir","x":1,"y":10,"days":70,"prerequisite":[["arrest_the_chancellor","seize_the_ledgers"]],"ai":{"base":60},"effects":[{"stability":0.05},{"call":"zin_aenor_add_council_influence","args":{"value":-5}}],"filters":["political"]},
+    {"key":"the_kings_war","name":"The King's War","desc":"The Council's friends have taken up arms. The King, sobered and furious, rides out at the head of his Host.","icon":"sword_shield","x":0,"y":11,"days":35,"prerequisite":[["arrest_the_chancellor"]],"available":[{"at_war":true}],"ai":{"base":100},"effects":[{"timed_spirit":{"key":"kings_war","days":365}}],"filters":["political"]},
+    {"key":"golden_king_reborn","name":"The Golden King Reborn","desc":"The man who sold his offices is gone. In his place sits a king who has looked at his own death and learned what it is worth.","icon":"crown_gold","x":1,"y":12,"days":70,"prerequisite":[["the_kings_war","the_loyal_clergy"]],"available":[{"global_flag":"zin_golden_king_survives"}],"ai":{"base":100},"effects":[{"add_spirit":"sobered_king"},{"call":"zin_aenor_add_court_corruption","args":{"value":-20}}],"filters":["political"]},
+    {"key":"regency_of_gold","name":"The Regency of Gold","desc":"The throne stands empty and the Golden Court rules in its name. The seals are kept in a gilded casket, and every decree begins with the words \"For the crown\".","icon":"regency_seals","x":6,"y":8,"days":35,"ai":{"base":100},"effects":[{"add_spirit":"gold_regency"},{"remove_spirit":"zin_aenor_interregnum"}],"available":[{"check":"zin_aenor_ruled_by_court"}],"filters":["political"]},
+    {"key":"buy_the_captains","name":"Buy the Captains","desc":"Every captain of the Host receives a purse and a promise. Most of them take both.","icon":"coin_chest","x":5,"y":9,"days":35,"prerequisite":[["regency_of_gold"]],"ai":{"base":80},"effects":[{"army_experience":15},{"call":"zin_aenor_add_court_corruption","args":{"value":5}},{"call":"zin_aenor_add_camp_support","args":{"camp":"court","value":10}}],"available":[{"check":"zin_aenor_ruled_by_court"}],"filters":["political"]},
+    {"key":"ledger_of_heirs","name":"The Ledger of Heirs","desc":"Heralds open the great rolls and read the names of the royal house aloud. The Regency must find a name to rule for, and few are free of suspicion.","icon":"heir_rolls","x":7,"y":9,"days":70,"prerequisite":[["regency_of_gold"]],"available":[{"check":"zin_aenor_ruled_by_court"},{"global_flag":"zin_golden_king_dead"}],"ai":{"base":60},"effects":[{"event":"ledger_of_heirs"}],"filters":["political"]},
+    {"key":"a_golden_peace","name":"A Golden Peace","desc":"Envoys carry gold to Lerendor and Gunwaith with the offer of a long truce. They return richer in promises than in friends.","icon":"olive_branch","x":4,"y":10,"days":70,"prerequisite":[["buy_the_captains"]],"ai":{"base":60},"effects":[{"non_aggression":"Lerendor"},{"non_aggression":"Gunwaith"},{"political_power":50}],"available":[{"check":"zin_aenor_ruled_by_court"}],"filters":["political"]},
+    {"key":"crush_the_pretenders","name":"Crush the Pretenders","desc":"Every rival camp is named an enemy of the crown. Captains with warrants ride to arrest their leaders before the next feast.","icon":"crown_broken","x":6,"y":10,"days":70,"prerequisite":[["buy_the_captains","ledger_of_heirs"]],"ai":{"base":80},"effects":[{"call":"zin_aenor_add_camp_support","args":{"camp":"faithful","value":-10}},{"call":"zin_aenor_add_camp_support","args":{"camp":"dominions","value":-10}},{"call":"zin_aenor_add_camp_support","args":{"camp":"host","value":-10}},{"war_support":0.05}],"available":[{"check":"zin_aenor_ruled_by_court"}],"filters":["political"]},
+    {"key":"gold_for_the_dominions","name":"Gold for the Dominions","desc":"The treasury opens to the dominion lords one last time. Those who take the coin swear to the Regency; those who refuse are remembered.","icon":"tribute_chest","x":8,"y":10,"days":70,"prerequisite":[["ledger_of_heirs"]],"ai":{"base":60},"effects":[{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":8}},{"call":"zin_aenor_add_court_corruption","args":{"value":5}}],"available":[{"check":"zin_aenor_ruled_by_court"}],"filters":["political"]},
+    {"key":"treasury_of_war","name":"The Treasury of War","desc":"The Regency pours its hoard into forges and storehouses. The gold of seventeen centuries becomes spears.","icon":"ledger_coins","x":5,"y":11,"days":70,"prerequisite":[["a_golden_peace","crush_the_pretenders"]],"ai":{"base":60},"effects":[{"add_spirit":"regency_war_chest"},{"building":{"type":"arms_factory","level":2,"where":"random_owned"}}],"available":[{"check":"zin_aenor_ruled_by_court"}],"filters":["political"]},
+    {"key":"crown_kept_for_no_king","name":"A Crown Kept for No King","desc":"The crown rests on its cushion in the empty throne room, and the Regency rules in its shadow. No king has been named, and the Golden Court means to keep it so.","icon":"empty_throne","x":7,"y":12,"days":70,"prerequisite":[["crush_the_pretenders"],["gold_for_the_dominions","treasury_of_war"]],"ai":{"base":60},"effects":[{"stability":0.1},{"flag":"zin_aenor_regency_secure"}],"available":[{"check":"zin_aenor_ruled_by_court"}],"filters":["political"]},
+    {"key":"first_of_his_name","name":"First of His Name","desc":"The Deliverer takes the crown of Aenor in the great temple of Parim, under the name of Aurevan, and the bells ring for three days. Old men weep at the gates; children are lifted to see him pass.","icon":"crown_radiant","x":11,"y":8,"days":35,"ai":{"base":100},"effects":[{"add_spirit":"deliverer_crowned"},{"remove_spirit":"zin_aenor_interregnum"},{"call":"zin_aenor_add_council_influence","args":{"value":10}}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"seals_of_government","name":"The Seals of State","desc":"A new chancery is founded in the palace, with scribes in white and seals of silver. Every decree of the realm now passes beneath the Deliverer's eye.","icon":"seal_chancellor","x":10,"y":9,"days":70,"prerequisite":[["first_of_his_name"]],"ai":{"base":100},"effects":[{"add_spirit":"chancery"},{"call":"zin_aenor_add_council_influence","args":{"value":5}}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"silence_the_dissenters","name":"Silence the Dissenters","desc":"Lords and captains who question the new reign are called to the temple and spoken to kindly. Most of them stop questioning.","icon":"confessional","x":12,"y":9,"days":35,"prerequisite":[["first_of_his_name"]],"ai":{"base":100},"effects":[{"call":"zin_aenor_add_camp_support","args":{"camp":"court","value":-15}},{"call":"zin_aenor_add_camp_support","args":{"camp":"dominions","value":-15}},{"call":"zin_aenor_add_camp_support","args":{"camp":"host","value":-15}},{"stability":-0.02}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"temple_and_crown","name":"Temple and Crown","desc":"Altar and throne are joined: the temples sit in the council, and the crown shelters the temples. Few remember a time it was otherwise.","icon":"temple_parim","x":9,"y":10,"days":70,"prerequisite":[["seals_of_government"]],"ai":{"base":80},"effects":[{"add_spirit":"altar_and_throne"}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"deliverers_relief","name":"The Deliverer's Relief","desc":"Grain wagons roll from the Houses of the First Light to every hungry dominion. The people name the new king their saviour, and they mean it.","icon":"alms_bread","x":11,"y":10,"days":70,"prerequisite":[["seals_of_government","silence_the_dissenters"]],"ai":{"base":90},"effects":[{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":8}},{"call":"zin_aenor_add_council_influence","args":{"value":5}},{"stability":0.03}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"friends_in_the_east","name":"Friends in the East","desc":"Gifts and letters go to the courts of Noris, Stabilo and Alerhia, with the Deliverer's blessing and no demands attached. The gifts are generous.","icon":"caravan","x":13,"y":10,"days":70,"prerequisite":[["silence_the_dissenters"]],"ai":{"base":70},"effects":[{"political_power":25},{"event_for":{"country":"Noris","key":"eastern_friends"}},{"event_for":{"country":"Stabilo","key":"eastern_friends"}},{"event_for":{"country":"Alerhia","key":"eastern_friends"}}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"denounce_the_impostor","name":"Denounce the Impostor","desc":"A man from the frontier is hailed by common folk as the rightful heir. The Deliverer's heralds declare him a fraud, and the temples ring with the denunciation.","icon":"scroll_sealed","x":10,"y":11,"days":35,"prerequisite":[["temple_and_crown"]],"available":[{"check":"zin_aenor_ruled_by_faithful"},{"global_flag":"zin_eindil_named"}],"ai":{"base":100},"effects":[{"call":"zin_aenor_add_camp_support","args":{"camp":"host","value":-20}},{"flag":"zin_aenor_eindil_denounced"},{"stability":0.03}],"filters":["political"]},
+    {"key":"shield_of_deliverance","name":"The Shield of Deliverance","desc":"Wards are carved above the gates of Parim, and the temple guard is posted in every tower. The Deliverer's city will not be taken.","icon":"palace_wards","x":12,"y":11,"days":70,"prerequisite":[["deliverers_relief","friends_in_the_east"]],"ai":{"base":60},"effects":[{"add_spirit":"deliverance_shield"},{"building":{"type":"bunker","level":2,"where":"capital"}}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"oaths_of_the_realm","name":"The Oaths of the Realm","desc":"Every lord, captain and magistrate kneels in the temple to swear fealty to the Deliverer's crown. The oaths are written in a book that is kept under lock.","icon":"handshake_oath","x":11,"y":12,"days":70,"prerequisite":[["denounce_the_impostor","shield_of_deliverance"]],"ai":{"base":70},"effects":[{"add_spirit":"sworn_realm"},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":5}},{"call":"zin_aenor_add_council_influence","args":{"value":10}}],"available":[{"check":"zin_aenor_ruled_by_faithful"}],"filters":["political"]},
+    {"key":"hold_parim","name":"Hold Parim for the Crown","desc":"The war has come to the lake. Every gate of the capital is walled, every tower manned and every bell readied to ring when the enemy is seen.","icon":"palace_parim","x":11,"y":13,"days":70,"prerequisite":[["oaths_of_the_realm"]],"available":[{"check":"zin_aenor_ruled_by_faithful"},{"global_flag":"zin_war_of_last_crowns"}],"ai":{"base":80},"effects":[{"building":{"type":"bunker","level":3,"where":"capital"}},{"manpower":20000}],"filters":["political"]},
+    {"key":"concord_of_equals","name":"The Concord of Equals","desc":"The Free Dominions take the seals of Aenor and declare the Charters of Parim a compact among equals. The crown is a chair at the table, no more.","icon":"concord_circle","x":17,"y":8,"days":35,"available":[{"or":[{"check":"zin_aenor_ruled_by_dominions"},{"and":[{"check":"zin_aenor_free_dominions_exist"},{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}]}]}],"ai":{"base":80},"effects":[{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":10}},{"flag":"zin_aenor_free_charters_open"}],"filters":["political"]},
+    {"key":"speakers_council","name":"The Speakers' Council","desc":"Each dominion sends a speaker with a single voice. The council meets in the open hall and votes by raised hands, and the loudest do not always win.","icon":"council_table","x":16,"y":9,"days":70,"prerequisite":[["concord_of_equals"]],"ai":{"base":60},"effects":[{"add_spirit":"speakers_concord"},{"political_power":50}],"available":[{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"filters":["political"]},
+    {"key":"letters_to_the_free","name":"Letters to the Free Dominions","desc":"Messengers carry an offer to each dominion that left the Concord: return under a Free Charter, or stay free and be a friend.","icon":"scroll_treaty","x":18,"y":9,"days":35,"prerequisite":[["concord_of_equals"]],"ai":{"base":90},"effects":[{"call":"zin_aenor_invite_free_dominions"}],"available":[{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"filters":["political"]},
+    {"key":"common_defence","name":"A Common Defence","desc":"Dominions pledge spears to a shared host under a marshal chosen by the Speakers. Each keeps its own banner and its own captains.","icon":"alliance_rings","x":15,"y":10,"days":70,"prerequisite":[["speakers_council"]],"ai":{"base":60},"effects":[{"add_spirit":"defence_pact"}],"available":[{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"filters":["political"]},
+    {"key":"equal_tolls","name":"Equal Tolls","desc":"Customs on every road and river are set at one rate, the same for Parim and the smallest dominion. Merchants praise it; old tollkeepers do not.","icon":"toll_house","x":17,"y":10,"days":70,"prerequisite":[["speakers_council","letters_to_the_free"]],"mutually_exclusive":["restore_by_force"],"ai":{"base":70},"effects":[{"building":{"type":"industrial_complex","level":2,"where":"random_owned"}},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":5}}],"available":[{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"filters":["political"]},
+    {"key":"restore_by_force","name":"Restore the Charters by Force","desc":"Those who left the Concord will be brought back by the Speakers' orders, and by the Host if need be. The Charters, after all, are law.","icon":"siege_trebuchet","x":19,"y":10,"days":70,"prerequisite":[["letters_to_the_free"]],"mutually_exclusive":["equal_tolls"],"ai":{"base":5,"modifiers":[{"factor":0,"if":[{"flag":"zin_aenor_no_crown_by_force"}]}]},"effects":[{"flag":"zin_aenor_restore_by_force"},{"war_support":0.05},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":-10}}],"available":[{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"filters":["political"]},
+    {"key":"league_of_free_crowns","name":"The League of Free Crowns","desc":"Letters go to Mirolon, Lerendor and Gunwaith. The Concord of Equals has no ambitions beyond its borders, and wishes its neighbours to know it.","icon":"banner_league","x":16,"y":11,"days":70,"prerequisite":[["common_defence"]],"ai":{"base":50},"effects":[{"event_for":{"country":"Mirolon","key":"league_invite"}},{"event_for":{"country":"Lerendor","key":"league_invite"}},{"event_for":{"country":"Gunwaith","key":"league_invite"}}],"available":[{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"filters":["political"]},
+    {"key":"the_concord_stands","name":"The Concord Stands","desc":"The old compact has been remade by consent, and it is stronger for it. Aenor and its dominions keep their charters, their quarrels and their peace.","icon":"charter_free","x":17,"y":12,"days":70,"prerequisite":[["league_of_free_crowns","equal_tolls","restore_by_force"]],"ai":{"base":70},"effects":[{"add_spirit":"concord_stands"},{"flag":"zin_aenor_concord_of_equals"}],"available":[{"not":[{"check":"zin_aenor_ruled_by_faithful"}]}],"filters":["political"]},
+    {"key":"king_without_a_house","name":"The King Without a House","desc":"He has no palace, no treasury and no crown, only a following of rangers, scholars and plain folk who believe he is their king. They call him the Hailed King.","icon":"crown_hailed","x":22,"y":8,"days":35,"ai":{"base":100},"effects":[{"add_spirit":"popular_host"},{"remove_spirit":"captains_command"}],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]}],"filters":["army"]},
+    {"key":"son_of_ein","name":"The Hailed King's Claim","desc":"The line of Aen did not end with the Golden Court. The heralds have found the proof, and a stranger from the frontier carries it in his blood.","icon":"lone_sword","x":21,"y":9,"days":70,"prerequisite":[["king_without_a_house"]],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]},{"global_flag":"zin_eindil_named"},{"global_flag":"zin_lost_cause_with_eindil"}],"ai":{"base":100},"effects":[{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":10}},{"stability":0.05}],"filters":["army"]},
+    {"key":"men_of_selen","name":"The Men of Selen","desc":"The rangers of Selen ride beneath the Hailed King's banner. Selen has waited a long time for a king who deserved it.","icon":"ranger_cloak","x":23,"y":9,"days":35,"prerequisite":[["king_without_a_house"]],"ai":{"base":90},"effects":[{"event_for":{"country":"Selen","key":"men_of_selen"}},{"for_country":{"country":"Selen","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":15}}]}}],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]}],"filters":["army"]},
+    {"key":"call_the_free_peoples","name":"Call the Free Peoples","desc":"Beacons are lit on the highest hills, and messengers go to every realm that fights the dark. The King Without a House asks only for their spears.","icon":"beacon","x":20,"y":10,"days":70,"prerequisite":[["son_of_ein"]],"ai":{"base":80},"effects":[{"manpower":10000},{"flag":"zin_aenor_free_peoples"},{"call":"zin_aenor_call_free_peoples"}],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]}],"filters":["army"]},
+    {"key":"light_of_glo","name":"The Light of Glo","desc":"A green light burns in the Hailed King's hand. Men who see it grow quiet, and the dark things that watch the host draw back.","icon":"crystal_green","x":22,"y":10,"days":70,"prerequisite":[["son_of_ein","men_of_selen"]],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]},{"global_flag":"zin_glo_with_eindil"}],"ai":{"base":100},"effects":[{"add_spirit":"glo_light"}],"filters":["army"]},
+    {"key":"no_crown_by_force","name":"No Crown Taken by Force","desc":"The King Without a House will not take any dominion's loyalty at sword-point. Charters are offered freely, and the dominions are asked to come as friends.","icon":"charter_free","x":24,"y":10,"days":35,"prerequisite":[["men_of_selen"]],"ai":{"base":90},"effects":[{"call":"zin_aenor_set_charter_all","args":{"charter":"free"}},{"call":"zin_aenor_add_concord_loyalty_all","args":{"value":10}},{"flag":"zin_aenor_no_crown_by_force"}],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]}],"filters":["army"]},
+    {"key":"the_last_alliance","name":"The Last Alliance of Men","desc":"Banners of the Middle Lands, the Cold Lands and the western clans stand together under the Hailed King. It is the largest muster of men since the Grand Alliance.","icon":"alliance_rings","x":21,"y":11,"days":70,"prerequisite":[["call_the_free_peoples"]],"ai":{"base":80},"effects":[{"add_spirit":"last_alliance"},{"if":{"limit":[{"not":[{"global_flag":"zin_lost_cause_shield"}]}],"then":[{"call":"zin_aenor_raise_lost_cause_shield"}]}}],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]}],"filters":["army"]},
+    {"key":"dragon_banner","name":"The Dragon Banner","desc":"A dragon wheels above the Hailed King's host, and no horse in Erdae will stand against it. Men who laughed at the old tales stop laughing.","icon":"dragon_wing","x":23,"y":11,"days":35,"prerequisite":[["light_of_glo"]],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]},{"global_flag":"zin_eindil_returned"}],"ai":{"base":100},"effects":[{"add_spirit":"banner_of_the_dragon"}],"filters":["army"]},
+    {"key":"retake_parim","name":"Retake Parim","desc":"The capital lies in the hands of the western host. The King Without a House marches to take it back, street by street if he must.","icon":"siege_trebuchet","x":22,"y":12,"days":70,"prerequisite":[["the_last_alliance","dragon_banner"]],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]},{"check":"zin_aenor_parim_lost"}],"bypass":[{"not":[{"check":"zin_aenor_parim_lost"}]}],"ai":{"base":100},"filters":["annexation"],"effects":[{"call":"zin_aenor_wargoal_on_parim_holder"},{"war_support":0.1}]},
+    {"key":"the_people_choose","name":"The People Choose Their King","desc":"In the ruins of the lake gate the people raise their hands. They ask for the Hailed King, and he, at last, says yes.","icon":"banner_plain","x":22,"y":13,"days":35,"prerequisite":[["retake_parim"]],"available":[{"or":[{"check":"zin_aenor_ruled_by_host"},{"flag":"zin_aenor_hailed_king"}]},{"not":[{"check":"zin_aenor_parim_lost"}]}],"ai":{"base":100},"effects":[{"stability":0.05},{"call":"zin_aenor_people_choose"}],"filters":["army"]},
+    {"key":"abandoned_throne","name":"The Abandoned Throne","desc":"The Deliverer has gone and taken his guards with him. The throne room is silent, the temples are shuttered and the realm must remember how to rule itself.","icon":"empty_throne","x":27,"y":8,"days":35,"ai":{"base":100},"effects":[{"stability":0.08},{"remove_spirit":"deliverer_crowned"},{"remove_spirit":"chancery"},{"remove_spirit":"altar_and_throne"},{"remove_spirit":"sworn_realm"},{"remove_spirit":"blessed_realm"}],"available":[{"check":"zin_aenor_ruled_by_captains"}],"filters":["political"]},
+    {"key":"the_captains_rule","name":"The Captains' Rule","desc":"The captains of the Host take the keys of the capital. They have never ruled before, and they intend to do it briefly.","icon":"war_council_map","x":26,"y":9,"days":35,"prerequisite":[["abandoned_throne"]],"ai":{"base":90},"effects":[{"add_spirit":"captains_command"},{"army_experience":20}],"available":[{"check":"zin_aenor_ruled_by_captains"}],"filters":["political"]},
+    {"key":"open_temple_vaults","name":"Open the Temple Vaults","desc":"The temples' treasuries are broken open and counted. The gold goes to arms, the grain to the hungry and the ledgers to the archives.","icon":"reliquary","x":28,"y":9,"days":35,"prerequisite":[["abandoned_throne"]],"ai":{"base":80},"effects":[{"political_power":100},{"equipment":{"type":"zin_arms_equipment","amount":3000}},{"call":"zin_aenor_add_council_influence","args":{"value":-30}},{"remove_spirit":"first_light_houses"}],"available":[{"check":"zin_aenor_ruled_by_captains"}],"filters":["political"]},
+    {"key":"send_for_the_stranger","name":"Send for the Stranger","desc":"The captains have heard of a man from the frontier whom the common folk hail as their king. They send riders to find him and ask him to come.","icon":"envoy","x":27,"y":10,"days":35,"prerequisite":[["the_captains_rule","open_temple_vaults"]],"available":[{"check":"zin_aenor_ruled_by_captains"},{"global_flag":"zin_eindil_named"}],"ai":{"base":100},"effects":[{"call":"zin_aenor_add_camp_support","args":{"camp":"host","value":25}},{"call":"zin_aenor_add_lost_cause","args":{"value":10}}],"filters":["political"]},
+    {"key":"aenor_beset","name":"Aenor Beset","desc":"Enemies press from every side, and the Middle Kingdom must hold. Every dominion is asked to remember what it owes the crown.","icon":"fort_wall","x":14,"y":15,"days":35,"available":[{"or":[{"global_flag":"zin_war_of_last_crowns"},{"global_flag":"zin_western_crossing"},{"global_flag":"zin_volgan_marches"}]}],"ai":{"base":100},"effects":[{"add_spirit":"realm_beset"},{"war_support":0.1}],"filters":["army"]},
+    {"key":"hold_the_western_shore","name":"Hold the Western Shore","desc":"The coast is lined with new forts, all facing the sea. Fishermen are paid to watch, and signal-masters are posted on every headland.","icon":"anchor_rope","x":10,"y":16,"days":70,"prerequisite":[["aenor_beset"]],"ai":{"base":80,"modifiers":[{"factor":2,"if":[{"global_flag":"zin_western_crossing"}]}]},"effects":[{"building":{"type":"coastal_bunker","level":2,"where":"random_coastal"}},{"building":{"type":"coastal_bunker","level":2,"where":"random_coastal"}}],"filters":["army"]},
+    {"key":"the_strait_betrayed","name":"The Strait Betrayed","desc":"The north shore is no longer a friend. Lerendor has left the old treaty, and the narrow waters must be guarded as a frontier.","icon":"strait_chain","x":12,"y":16,"days":70,"prerequisite":[["aenor_beset"]],"available":[{"global_flag":"zin_leren_withdrawal"}],"ai":{"base":80},"effects":[{"building":{"type":"coastal_bunker","level":1,"where":"random_coastal"}},{"building":{"type":"naval_base","level":1,"where":"random_coastal"}},{"navy_experience":15}],"filters":["army"]},
+    {"key":"against_the_deathless","name":"Against the Deathless Dead","desc":"The dead walk out of the north at Zol's will. Ordinary weapons break them but cannot end them, and the Host must learn to hold the line whatever the cost.","icon":"dead_ranks_far","x":14,"y":16,"days":70,"prerequisite":[["aenor_beset"]],"available":[{"global_flag":"zin_zol_rising"}],"ai":{"base":80},"effects":[{"army_experience":15},{"tooltip":"Ordinary weapons break Zol's dead but cannot end them."}],"filters":["army"]},
+    {"key":"the_wall_holds","name":"The Wall Holds","desc":"From the Organ Mountains to Kingson the watchfires burn. The Wall has been breached before, and every man on it knows the story.","icon":"fort_wall","x":16,"y":16,"days":70,"prerequisite":[["aenor_beset"]],"ai":{"base":70},"effects":[{"building":{"type":"bunker","level":2,"where":"great_wall"}},{"for_country":{"country":"Kingson","effects":[{"call":"zin_aenor_add_concord_loyalty","args":{"value":10}}]}}],"filters":["army"]},
+    {"key":"the_southern_front","name":"The Southern Front","desc":"Companies from the southern marches rally at Mirolon's passes. The Dead Lands are no longer a rumour but a border.","icon":"pass_fort","x":18,"y":16,"days":70,"prerequisite":[["aenor_beset"]],"available":[{"global_flag":"zin_volgan_marches"}],"ai":{"base":70},"effects":[{"building":{"type":"bunker","level":2,"where":"random_owned"}},{"event_for":{"country":"Mirolon","key":"southern_aid"}}],"filters":["army"]},
+    {"key":"levy_of_the_lake","name":"The Levy of the Lake","desc":"Every village on the lake is told to send one man in three. They come, and the barracks of the capital overflow.","icon":"levy_muster","x":11,"y":17,"days":35,"prerequisite":[["hold_the_western_shore","the_strait_betrayed"]],"ai":{"base":90},"effects":[{"add_spirit":"lake_levy"},{"manpower":25000}],"filters":["army"]},
+    {"key":"fortress_parim","name":"Fortress Parim","desc":"The palace hill is ringed in stone, the lake gate chained, the cisterns filled. Parim has not known a siege in seventeen centuries.","icon":"palace_parim","x":13,"y":17,"days":70,"prerequisite":[["hold_the_western_shore","the_strait_betrayed","against_the_deathless"]],"ai":{"base":90},"effects":[{"building":{"type":"bunker","level":3,"where":"capital"}}],"filters":["army"]},
+    {"key":"a_common_cause","name":"A Common Cause","desc":"Riders go to every realm that fights the dark powers. Aenor asks for open roads and offers its own in return.","icon":"handshake_oath","x":16,"y":17,"days":35,"prerequisite":[["the_wall_holds","the_southern_front"]],"ai":{"base":70},"effects":[{"add_spirit":"common_cause"},{"flag":"zin_aenor_common_cause"},{"call":"zin_aenor_offer_common_cause"}],"filters":["army"]},
+    {"key":"last_stand","name":"The Last Stand of the Middle Kingdom","desc":"If the Middle Kingdom falls, it will fall at Parim. Every soldier, mason and baker takes a post, and the lake gate is sealed.","icon":"sword_shield","x":14,"y":18,"days":70,"prerequisite":[["levy_of_the_lake","fortress_parim"],["a_common_cause"]],"ai":{"base":90},"effects":[{"add_spirit":"final_stand"}],"filters":["army"]},
+    {"key":"a_kingdom_of_ruins","name":"A Kingdom of Ruins","desc":"The war is over, and what is left of Aenor must be built anew. The King walks among broken walls and orders them raised, stone by stone.","icon":"quarry_stone","x":13,"y":20,"days":70,"available":[{"global_flag":"zin_eindil_crowned"},{"check":"zin_aenor_eindil_rules"}],"ai":{"base":100},"effects":[{"add_spirit":"kingdom_of_ruins"},{"remove_spirit":"realm_beset"},{"building":{"type":"infrastructure","level":2,"where":"capital"}}],"filters":["political"]},
+    {"key":"treaties_not_conquest","name":"Treaties, Not Conquest","desc":"Heralds ride to every realm still at war with Aenor with the same offer: peace now, on equal terms. The King wants no more enemies.","icon":"olive_branch","x":15,"y":20,"days":70,"available":[{"global_flag":"zin_eindil_crowned"},{"check":"zin_aenor_eindil_rules"}],"ai":{"base":100},"effects":[{"add_spirit":"peace_of_treaties"},{"call":"zin_aenor_set_charter_all","args":{"charter":"free"}},{"call":"zin_aenor_offer_treaties"}],"filters":["political"]},
+    {"key":"the_fourth_age_ends","name":"The Fourth Age Ends","desc":"A king crowned among ruins, a realm that must learn to live in peace. The chroniclers will write that the Fourth Age ended here, and will not yet know what it cost.","icon":"crown_aen","x":14,"y":21,"days":70,"prerequisite":[["a_kingdom_of_ruins"],["treaties_not_conquest"]],"available":[{"global_flag":"zin_eindil_crowned"}],"ai":{"base":100},"effects":[{"swap_spirit":["kingdom_of_ruins","age_of_the_king"]},{"call":"zin_aenor_announce_fourth_age"}],"filters":["political"]}
+  ]
+}

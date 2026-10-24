@@ -1,0 +1,35 @@
+{
+  "source": "Registry additions of the regional_b trees (the nine East Lands, four Islands of the South and seven Lands of the Sun tier B trees): names that mechanics, diplomacy and world-system modules write and the focus compiler cannot yet read from staged files. Same shape as focus_registry.json; loadRegistry merges every focus_registry_<slice>.json next to it. Remove an entry when its module lands. See docs/design/stage2/focus_regional_b.md.",
+  "scripted_effects": [
+    "zin_afrit_add_footholds", "zin_afrit_add_veil", "zin_afrit_purge_houses", "zin_eindil_add_regard", "zin_eindil_add_renown", "zin_east_add_lean",
+    "zin_east_add_road_influence", "zin_east_claim_rift", "zin_elves_goodwill", "zin_stabilo_add_debt", "zin_sun_add_clarity", "zin_sun_add_concord",
+    "zin_sun_add_gala_counsel", "zin_sun_form_noon_league", "zin_west_add_fleet"
+  ],
+  "scripted_triggers": [
+    "zin_east_is_south_court", "zin_east_question_open", "zin_east_rule_refuse", "zin_east_rule_unite", "zin_eindil_is_host", "zin_is_region_east_lands",
+    "zin_is_site_ocean_of_zol_coast", "zin_is_site_postondoroth", "zin_is_site_rift_east", "zin_is_site_rift_west", "zin_is_site_south_shrine",
+    "zin_rules_is_historical", "zin_shared_has_coast", "zin_sun_league_needed"
+  ],
+  "events": [],
+  "namespaces": [],
+  "ideas": [],
+  "decisions": [],
+  "opinion_modifiers": [],
+  "sub_units": [],
+  "characters": [],
+  "flags": [
+    "zin_afrit_eastern_client", "zin_afrit_houses_purged", "zin_afrit_refused_east", "zin_afrit_suspicious", "zin_east_coalition_member", "zin_east_rift_talk", "zin_eindil_reef_island",
+    "zin_sun_heeded_south"
+  ],
+  "global_flags": [
+    "zin_afrit_king_of_east", "zin_afrit_revealed", "zin_east_caravan_war", "zin_eastern_invasion", "zin_eindil_lost", "zin_mirror_stilled", "zin_sun_noon_council",
+    "zin_sun_noon_league", "zin_volgan_marches", "zin_war_of_last_crowns", "zin_west_route_crossing", "zin_western_crossing", "zin_zol_rising"
+  ],
+  "faction_templates": [],
+  "branch": {
+    "fixed_checks": ["zin_east_is_south_court"],
+    "refreshed_checks": ["zin_regional_drak_holds_old_seat", "zin_regional_enhis_is_rond_holds_shrine", "zin_shared_has_coast"],
+    "refreshed_flags": [],
+    "patterns": []
+  }
+}

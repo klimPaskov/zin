@@ -1,0 +1,91 @@
+{
+ "source": "Names the 18 regional_d focus trees (regional/north_lands.md, tritons_islands.md, west_lands.md, yeldenne.md) reference that other owners write: the mechanics modules, the shared trees and the Aenor, Lerendor, journey, Glo, Western Crossing and diplomacy slices. Hand-kept while those modules are missing, as focus_registry.json describes; loadRegistry reads this file next to it and marks every name pending. Remove a name when its module stages it.",
+ "scripted_effects": [
+  "zin_aenor_event_for_parim",
+  "zin_afrit_add_footholds",
+  "zin_eindil_add_regard",
+  "zin_eindil_add_renown",
+  "zin_eindil_aid_host",
+  "zin_eindil_join_coalition",
+  "zin_glo_request_northern_watch",
+  "zin_leren_add_lean",
+  "zin_leren_add_strait_standing",
+  "zin_leren_offer_protection",
+  "zin_lost_cause_add_strength",
+  "zin_north_ask_compact_seat",
+  "zin_north_ask_parim_shield",
+  "zin_tritons_add_piracy",
+  "zin_tritons_found_charter",
+  "zin_tritons_join_charter",
+  "zin_tritons_join_crossing",
+  "zin_tritons_make_banks_accord",
+  "zin_tritons_offer_banks_mediation",
+  "zin_tritons_set_side",
+  "zin_west_add_fleet",
+  "zin_west_add_grudge",
+  "zin_west_add_truce",
+  "zin_west_add_unity",
+  "zin_yeldenne_add_wards"
+ ],
+ "scripted_triggers": [
+  "zin_aenor_parim_lost",
+  "zin_eindil_friend",
+  "zin_eindil_historical",
+  "zin_glo_lost_cause_leader",
+  "zin_is_site_grey_ford",
+  "zin_leren_treaty_in_force",
+  "zin_north_can_ask_compact",
+  "zin_north_lerendor_supremacy",
+  "zin_north_with_lerendor",
+  "zin_rules_is_historical",
+  "zin_tritons_charter_exists",
+  "zin_tritons_ship_has_sailed",
+  "zin_west_historical"
+ ],
+ "events": [
+  "zin_west.10"
+ ],
+ "ideas": [],
+ "opinion_modifiers": [
+  "zin_tritons_banks_quarrel"
+ ],
+ "faction_templates": [
+  "zin_faction_free_north"
+ ],
+ "global_flags": [
+  "zin_afrit_dead",
+  "zin_aurevan_crowned",
+  "zin_eindil_awake",
+  "zin_eindil_crowned",
+  "zin_eindil_lost",
+  "zin_eindil_named",
+  "zin_eindil_returned",
+  "zin_eindil_war_king",
+  "zin_glo_sealed",
+  "zin_glo_with_eindil",
+  "zin_golden_king_dead",
+  "zin_horos_dead",
+  "zin_horos_endures",
+  "zin_leren_withdrawal",
+  "zin_tritons_banks_accord",
+  "zin_tritons_charter_founded",
+  "zin_war_of_last_crowns",
+  "zin_west_council",
+  "zin_west_evacuated",
+  "zin_west_evacuation",
+  "zin_west_grey_ford_war",
+  "zin_west_route_crossing",
+  "zin_west_route_divided",
+  "zin_west_route_relief",
+  "zin_west_truce_broken",
+  "zin_western_crossing",
+  "zin_zol_rising",
+  "zin_zol_withdrawn"
+ ],
+ "flags": [
+  "zin_eindil_heeded",
+  "zin_tritons_corsair_haven",
+  "zin_west_pledged",
+  "zin_west_stranded"
+ ]
+}
