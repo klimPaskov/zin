@@ -1,0 +1,1175 @@
+{
+ "zin_men_levy": {
+  "target": {
+   "sa": 4,
+   "ha": 0.5,
+   "def": 16,
+   "brk": 1.5,
+   "arm": 0,
+   "ap": 2,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 6,
+   "ha": 1,
+   "def": 22,
+   "brk": 3,
+   "arm": 1,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "sa": -0.333,
+   "ha": -0.5,
+   "def": -0.273,
+   "brk": -0.5,
+   "ap": -0.6
+  },
+  "speedFactor": 0
+ },
+ "zin_men_infantry": {
+  "target": {
+   "sa": 6,
+   "ha": 1,
+   "def": 22,
+   "brk": 3,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 6,
+   "ha": 1,
+   "def": 22,
+   "brk": 3,
+   "arm": 1,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_men_archers": {
+  "target": {
+   "sa": 9,
+   "ha": 0.5,
+   "def": 14,
+   "brk": 2,
+   "arm": 0,
+   "ap": 4,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 8.917,
+   "ha": 0.583,
+   "def": 13.667,
+   "brk": 2.167,
+   "arm": 0.167,
+   "ap": 4.167,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.009,
+   "ha": -0.143,
+   "def": 0.024,
+   "brk": -0.077,
+   "ap": -0.04
+  },
+  "speedFactor": 0
+ },
+ "zin_men_heavy_infantry": {
+  "target": {
+   "sa": 7,
+   "ha": 2,
+   "def": 28,
+   "brk": 6,
+   "arm": 8,
+   "ap": 8,
+   "hard": 0.15
+  },
+  "blended": {
+   "sa": 4.875,
+   "ha": 1,
+   "def": 28,
+   "brk": 3.375,
+   "arm": 3.625,
+   "ap": 4.625,
+   "hard": 0.188
+  },
+  "factors": {
+   "sa": 0.436,
+   "ha": 1,
+   "brk": 0.778,
+   "arm": 1.207,
+   "ap": 0.73
+  },
+  "speedFactor": -0.125
+ },
+ "zin_men_hill_companies": {
+  "target": {
+   "sa": 6,
+   "ha": 1,
+   "def": 24,
+   "brk": 4,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 6,
+   "ha": 1,
+   "def": 22,
+   "brk": 3,
+   "arm": 1,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "def": 0.091,
+   "brk": 0.333
+  },
+  "speedFactor": 0
+ },
+ "zin_men_sea_soldiers": {
+  "target": {
+   "sa": 6,
+   "ha": 1,
+   "def": 22,
+   "brk": 4,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 6,
+   "ha": 1,
+   "def": 22,
+   "brk": 3,
+   "arm": 1,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "brk": 0.333
+  },
+  "speedFactor": 0
+ },
+ "zin_men_rangers": {
+  "target": {
+   "sa": 7,
+   "ha": 1,
+   "def": 18,
+   "brk": 5,
+   "arm": 0,
+   "ap": 6,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 8.1,
+   "ha": 0.7,
+   "def": 16,
+   "brk": 2.4,
+   "arm": 0.4,
+   "ap": 4.4,
+   "hard": 0
+  },
+  "factors": {
+   "sa": -0.136,
+   "ha": 0.429,
+   "def": 0.125,
+   "brk": 1.083,
+   "ap": 0.364
+  },
+  "speedFactor": 0.25
+ },
+ "zin_men_cavalry": {
+  "target": {
+   "sa": 6,
+   "ha": 1,
+   "def": 14,
+   "brk": 5,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 5.375,
+   "ha": 1.313,
+   "def": 15.75,
+   "brk": 6.125,
+   "arm": 0.375,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.116,
+   "ha": -0.238,
+   "def": -0.111,
+   "brk": -0.184
+  },
+  "speedFactor": 1.25
+ },
+ "zin_men_horse_archers": {
+  "target": {
+   "sa": 9,
+   "ha": 0.5,
+   "def": 10,
+   "brk": 6,
+   "arm": 0,
+   "ap": 4,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 7.25,
+   "ha": 1,
+   "def": 12,
+   "brk": 5,
+   "arm": 0,
+   "ap": 4.5,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.241,
+   "ha": -0.5,
+   "def": -0.167,
+   "brk": 0.2,
+   "ap": -0.111
+  },
+  "speedFactor": 1.25
+ },
+ "zin_men_knights": {
+  "target": {
+   "sa": 9,
+   "ha": 4,
+   "def": 10,
+   "brk": 18,
+   "arm": 12,
+   "ap": 10,
+   "hard": 0.35
+  },
+  "blended": {
+   "sa": 4.5,
+   "ha": 1.188,
+   "def": 24.25,
+   "brk": 5.25,
+   "arm": 3.25,
+   "ap": 4.625,
+   "hard": 0.188
+  },
+  "factors": {
+   "sa": 1,
+   "ha": 2.368,
+   "def": -0.588,
+   "brk": 2.429,
+   "arm": 2.692,
+   "ap": 1.162,
+   "hard": 0.867
+  },
+  "speedFactor": 1
+ },
+ "zin_men_camel_riders": {
+  "target": {
+   "sa": 6,
+   "ha": 1,
+   "def": 14,
+   "brk": 5,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 5.375,
+   "ha": 1.313,
+   "def": 15.75,
+   "brk": 6.125,
+   "arm": 0.375,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.116,
+   "ha": -0.238,
+   "def": -0.111,
+   "brk": -0.184
+  },
+  "speedFactor": 1
+ },
+ "zin_men_temple_wardens": {
+  "target": {
+   "sa": 6,
+   "ha": 1,
+   "def": 24,
+   "brk": 3,
+   "arm": 2,
+   "ap": 6,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 5.4,
+   "ha": 1,
+   "def": 25.2,
+   "brk": 3.2,
+   "arm": 2.4,
+   "ap": 4.8,
+   "hard": 0.1
+  },
+  "factors": {
+   "sa": 0.111,
+   "def": -0.048,
+   "brk": -0.062,
+   "ap": 0.25
+  },
+  "speedFactor": 0
+ },
+ "zin_elves_warden": {
+  "target": {
+   "sa": 8,
+   "ha": 2,
+   "def": 28,
+   "brk": 5,
+   "arm": 2,
+   "ap": 10,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 9,
+   "ha": 1.5,
+   "def": 24,
+   "brk": 5,
+   "arm": 3,
+   "ap": 8,
+   "hard": 0
+  },
+  "factors": {
+   "sa": -0.111,
+   "ha": 0.333,
+   "def": 0.167,
+   "ap": 0.25
+  },
+  "speedFactor": 0.25
+ },
+ "zin_elves_archers": {
+  "target": {
+   "sa": 11,
+   "ha": 1,
+   "def": 16,
+   "brk": 3,
+   "arm": 0,
+   "ap": 6,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 9,
+   "ha": 1.5,
+   "def": 24,
+   "brk": 5,
+   "arm": 3,
+   "ap": 8,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.222,
+   "ha": -0.333,
+   "def": -0.333,
+   "brk": -0.4,
+   "arm": -1,
+   "ap": -0.25
+  },
+  "speedFactor": 0.25
+ },
+ "zin_elves_riders": {
+  "target": {
+   "sa": 8,
+   "ha": 2,
+   "def": 16,
+   "brk": 7,
+   "arm": 0,
+   "ap": 6,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 6.714,
+   "ha": 1.5,
+   "def": 17.143,
+   "brk": 6.714,
+   "arm": 1.286,
+   "ap": 6.286,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.191,
+   "ha": 0.333,
+   "def": -0.067,
+   "brk": 0.043,
+   "arm": -1,
+   "ap": -0.045
+  },
+  "speedFactor": 1.5
+ },
+ "zin_elves_rangers": {
+  "target": {
+   "sa": 9,
+   "ha": 1,
+   "def": 20,
+   "brk": 5,
+   "arm": 0,
+   "ap": 8,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 9,
+   "ha": 1.5,
+   "def": 24,
+   "brk": 5,
+   "arm": 3,
+   "ap": 8,
+   "hard": 0
+  },
+  "factors": {
+   "ha": -0.333,
+   "def": -0.167,
+   "arm": -1
+  },
+  "speedFactor": 0.375
+ },
+ "zin_sun_elves_guard": {
+  "target": {
+   "sa": 9,
+   "ha": 3,
+   "def": 30,
+   "brk": 8,
+   "arm": 10,
+   "ap": 12,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 9,
+   "ha": 1.5,
+   "def": 24,
+   "brk": 5,
+   "arm": 3,
+   "ap": 8,
+   "hard": 0
+  },
+  "factors": {
+   "ha": 1,
+   "def": 0.25,
+   "brk": 0.6,
+   "arm": 2.333,
+   "ap": 0.5
+  },
+  "speedFactor": 0.125
+ },
+ "zin_sun_elves_bowmen": {
+  "target": {
+   "sa": 12,
+   "ha": 1,
+   "def": 18,
+   "brk": 4,
+   "arm": 2,
+   "ap": 6,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 9,
+   "ha": 1.5,
+   "def": 24,
+   "brk": 5,
+   "arm": 3,
+   "ap": 8,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.333,
+   "ha": -0.333,
+   "def": -0.25,
+   "brk": -0.2,
+   "ap": -0.25
+  },
+  "speedFactor": 0.125
+ },
+ "zin_orcs_warrior": {
+  "target": {
+   "sa": 8,
+   "ha": 1.5,
+   "def": 16,
+   "brk": 5,
+   "arm": 2,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 6,
+   "ha": 1,
+   "def": 22,
+   "brk": 3,
+   "arm": 1,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.333,
+   "ha": 0.5,
+   "def": -0.273,
+   "brk": 0.667
+  },
+  "speedFactor": 0.125
+ },
+ "zin_orcs_goblins": {
+  "target": {
+   "sa": 5,
+   "ha": 0.5,
+   "def": 12,
+   "brk": 3,
+   "arm": 0,
+   "ap": 2,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 9.5,
+   "ha": 0.5,
+   "def": 12,
+   "brk": 2,
+   "arm": 0,
+   "ap": 4,
+   "hard": 0
+  },
+  "factors": {
+   "sa": -0.474,
+   "brk": 0.5,
+   "ap": -0.5
+  },
+  "speedFactor": 0.25
+ },
+ "zin_orcs_raiders": {
+  "target": {
+   "sa": 8,
+   "ha": 1,
+   "def": 10,
+   "brk": 6,
+   "arm": 0,
+   "ap": 4,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 5.375,
+   "ha": 1.313,
+   "def": 15.75,
+   "brk": 6.125,
+   "arm": 0.375,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "sa": 0.488,
+   "ha": -0.238,
+   "def": -0.365,
+   "brk": -0.02,
+   "ap": -0.2
+  },
+  "speedFactor": 1.25
+ },
+ "zin_ogres_brutes": {
+  "target": {
+   "sa": 12,
+   "ha": 6,
+   "def": 14,
+   "brk": 14,
+   "arm": 15,
+   "ap": 10,
+   "hard": 0.5
+  },
+  "blended": {
+   "sa": 12,
+   "ha": 6,
+   "def": 14,
+   "brk": 14,
+   "arm": 15,
+   "ap": 10,
+   "hard": 0.5
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_abyss_folk": {
+  "target": {
+   "sa": 12,
+   "ha": 6,
+   "def": 14,
+   "brk": 14,
+   "arm": 15,
+   "ap": 10,
+   "hard": 0.5
+  },
+  "blended": {
+   "sa": 12,
+   "ha": 6,
+   "def": 14,
+   "brk": 14,
+   "arm": 15,
+   "ap": 10,
+   "hard": 0.5
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_trolls_brute": {
+  "target": {
+   "sa": 14,
+   "ha": 8,
+   "def": 16,
+   "brk": 16,
+   "arm": 22,
+   "ap": 14,
+   "hard": 0.6
+  },
+  "blended": {
+   "sa": 14,
+   "ha": 8,
+   "def": 16,
+   "brk": 16,
+   "arm": 22,
+   "ap": 14,
+   "hard": 0.6
+  },
+  "factors": {},
+  "speedFactor": -0.125
+ },
+ "zin_giants_host": {
+  "target": {
+   "sa": 14,
+   "ha": 10,
+   "def": 24,
+   "brk": 14,
+   "arm": 20,
+   "ap": 18,
+   "hard": 0.7
+  },
+  "blended": {
+   "sa": 14,
+   "ha": 10,
+   "def": 24,
+   "brk": 14,
+   "arm": 20,
+   "ap": 18,
+   "hard": 0.7
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_giants_hurlers": {
+  "target": {
+   "sa": 30,
+   "ha": 5,
+   "def": 6,
+   "brk": 2,
+   "arm": 10,
+   "ap": 12,
+   "hard": 0.4
+  },
+  "blended": {
+   "sa": 14,
+   "ha": 10,
+   "def": 24,
+   "brk": 14,
+   "arm": 20,
+   "ap": 18,
+   "hard": 0.7
+  },
+  "factors": {
+   "sa": 1.143,
+   "ha": -0.5,
+   "def": -0.75,
+   "brk": -0.857,
+   "arm": -0.5,
+   "ap": -0.333,
+   "hard": -0.429
+  },
+  "speedFactor": 0
+ },
+ "zin_ents_grove": {
+  "target": {
+   "sa": 10,
+   "ha": 12,
+   "def": 40,
+   "brk": 8,
+   "arm": 30,
+   "ap": 20,
+   "hard": 0.8
+  },
+  "blended": {
+   "sa": 10,
+   "ha": 12,
+   "def": 40,
+   "brk": 8,
+   "arm": 30,
+   "ap": 20,
+   "hard": 0.8
+  },
+  "factors": {},
+  "speedFactor": -0.375
+ },
+ "zin_yeti_band": {
+  "target": {
+   "sa": 10,
+   "ha": 3,
+   "def": 20,
+   "brk": 10,
+   "arm": 6,
+   "ap": 6,
+   "hard": 0.3
+  },
+  "blended": {
+   "sa": 10,
+   "ha": 3,
+   "def": 20,
+   "brk": 10,
+   "arm": 6,
+   "ap": 6,
+   "hard": 0.3
+  },
+  "factors": {},
+  "speedFactor": 0.25
+ },
+ "zin_demons_netherborn": {
+  "target": {
+   "sa": 12,
+   "ha": 4,
+   "def": 16,
+   "brk": 12,
+   "arm": 10,
+   "ap": 12,
+   "hard": 0.2
+  },
+  "blended": {
+   "sa": 12,
+   "ha": 4,
+   "def": 16,
+   "brk": 12,
+   "arm": 10,
+   "ap": 12,
+   "hard": 0.2
+  },
+  "factors": {},
+  "speedFactor": 0.25
+ },
+ "zin_demons_shachihata": {
+  "target": {
+   "sa": 30,
+   "ha": 20,
+   "def": 20,
+   "brk": 30,
+   "arm": 40,
+   "ap": 40,
+   "hard": 0.9
+  },
+  "blended": {
+   "sa": 30,
+   "ha": 20,
+   "def": 20,
+   "brk": 30,
+   "arm": 40,
+   "ap": 40,
+   "hard": 0.9
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_demons_bound": {
+  "target": {
+   "sa": 12,
+   "ha": 4,
+   "def": 16,
+   "brk": 12,
+   "arm": 10,
+   "ap": 12,
+   "hard": 0.2
+  },
+  "blended": {
+   "sa": 12,
+   "ha": 4,
+   "def": 16,
+   "brk": 12,
+   "arm": 10,
+   "ap": 12,
+   "hard": 0.2
+  },
+  "factors": {},
+  "speedFactor": 0.25
+ },
+ "zin_the_dead_revenant": {
+  "target": {
+   "sa": 6,
+   "ha": 1,
+   "def": 24,
+   "brk": 3,
+   "arm": 4,
+   "ap": 4,
+   "hard": 0.1
+  },
+  "blended": {
+   "sa": 6,
+   "ha": 1,
+   "def": 24,
+   "brk": 3,
+   "arm": 4,
+   "ap": 4,
+   "hard": 0.1
+  },
+  "factors": {},
+  "speedFactor": -0.125
+ },
+ "zin_dead_grave_riders": {
+  "target": {
+   "sa": 7,
+   "ha": 1,
+   "def": 14,
+   "brk": 6,
+   "arm": 4,
+   "ap": 5,
+   "hard": 0.1
+  },
+  "blended": {
+   "sa": 5.429,
+   "ha": 1.286,
+   "def": 17.143,
+   "brk": 5.857,
+   "arm": 1.714,
+   "ap": 4.571,
+   "hard": 0.043
+  },
+  "factors": {
+   "sa": 0.289,
+   "ha": -0.222,
+   "def": -0.183,
+   "brk": 0.024,
+   "arm": 1.333,
+   "ap": 0.094
+  },
+  "speedFactor": 1
+ },
+ "zin_dead_necromancers": {
+  "target": {
+   "sa": 2,
+   "ha": 0,
+   "def": 3,
+   "brk": 1,
+   "arm": 0,
+   "ap": 8,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 6,
+   "ha": 1,
+   "def": 24,
+   "brk": 3,
+   "arm": 4,
+   "ap": 4,
+   "hard": 0.1
+  },
+  "factors": {
+   "sa": -0.667,
+   "ha": -1,
+   "def": -0.875,
+   "brk": -0.667,
+   "arm": -1,
+   "ap": 1
+  },
+  "speedFactor": -1
+ },
+ "zin_zol_deathless": {
+  "target": {
+   "sa": 7,
+   "ha": 2,
+   "def": 26,
+   "brk": 5,
+   "arm": 80,
+   "ap": 8,
+   "hard": 0.85
+  },
+  "blended": {
+   "sa": 7,
+   "ha": 2,
+   "def": 26,
+   "brk": 5,
+   "arm": 80,
+   "ap": 8,
+   "hard": 0.85
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_zol_deathless_crews": {
+  "target": {
+   "sa": 7,
+   "ha": 2,
+   "def": 22,
+   "brk": 5,
+   "arm": 80,
+   "ap": 8,
+   "hard": 0.85
+  },
+  "blended": {
+   "sa": 7,
+   "ha": 2,
+   "def": 26,
+   "brk": 5,
+   "arm": 80,
+   "ap": 8,
+   "hard": 0.85
+  },
+  "factors": {
+   "def": -0.154
+  },
+  "speedFactor": 0
+ },
+ "zin_siege_catapult": {
+  "target": {
+   "sa": 22,
+   "ha": 2,
+   "def": 6,
+   "brk": 2,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 22,
+   "ha": 2,
+   "def": 6,
+   "brk": 2,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": -0.125
+ },
+ "zin_siege_trebuchet": {
+  "target": {
+   "sa": 36,
+   "ha": 4,
+   "def": 4,
+   "brk": 2,
+   "arm": 0,
+   "ap": 8,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 36,
+   "ha": 4,
+   "def": 4,
+   "brk": 2,
+   "arm": 0,
+   "ap": 8,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": -0.375
+ },
+ "zin_support_catapults": {
+  "target": {
+   "sa": 12,
+   "ha": 1,
+   "def": 4,
+   "brk": 1,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 22,
+   "ha": 2,
+   "def": 6,
+   "brk": 2,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {
+   "sa": -0.455,
+   "ha": -0.5,
+   "def": -0.333,
+   "brk": -0.5
+  },
+  "speedFactor": -0.125
+ },
+ "zin_support_ballistae": {
+  "target": {
+   "sa": 2,
+   "ha": 12,
+   "def": 6,
+   "brk": 1,
+   "arm": 0,
+   "ap": 40,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 2,
+   "ha": 12,
+   "def": 6,
+   "brk": 1,
+   "arm": 0,
+   "ap": 40,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": -0.125
+ },
+ "zin_support_scorpions": {
+  "target": {
+   "sa": 1,
+   "ha": 1,
+   "def": 4,
+   "brk": 0,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 1,
+   "ha": 1,
+   "def": 4,
+   "brk": 0,
+   "arm": 0,
+   "ap": 5,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": -0.125
+ },
+ "zin_support_wardens": {
+  "target": {
+   "sa": 3,
+   "ha": 1,
+   "def": 4,
+   "brk": 1,
+   "arm": 0,
+   "ap": 30,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 3,
+   "ha": 1,
+   "def": 4,
+   "brk": 1,
+   "arm": 0,
+   "ap": 30,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_elves_wardsingers": {
+  "target": {
+   "sa": 3,
+   "ha": 1,
+   "def": 4,
+   "brk": 1,
+   "arm": 0,
+   "ap": 50,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 3,
+   "ha": 1,
+   "def": 4,
+   "brk": 1,
+   "arm": 0,
+   "ap": 30,
+   "hard": 0
+  },
+  "factors": {
+   "ap": 0.667
+  },
+  "speedFactor": 0
+ },
+ "zin_glo_bearer": {
+  "target": {
+   "sa": 20,
+   "ha": 20,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 300,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 20,
+   "ha": 20,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 300,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_volgan_presence": {
+  "target": {
+   "sa": 60,
+   "ha": 30,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 200,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 60,
+   "ha": 30,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 200,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_great_spirit": {
+  "target": {
+   "sa": 15,
+   "ha": 0,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 60,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 15,
+   "ha": 0,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 60,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": 0
+ },
+ "zin_zol_manifestation": {
+  "target": {
+   "sa": 100,
+   "ha": 60,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 300,
+   "hard": 0
+  },
+  "blended": {
+   "sa": 100,
+   "ha": 60,
+   "def": 0,
+   "brk": 0,
+   "arm": 0,
+   "ap": 300,
+   "hard": 0
+  },
+  "factors": {},
+  "speedFactor": 0
+ }
+}

@@ -165,7 +165,7 @@ test('The secrets hold: no Afrit or Hidden Council anywhere, and Eindil is named
 test('Texts use Windows-1252 only and the secrets of the lore stay closed', () => {
   for (const t of clean.list) for (const [k, v] of Object.entries(compiled.get(t.id).loc)) {
     for (const ch of v) { const c = ch.codePointAt(0); assert(c <= 0xff || '–—‘’“”'.includes(ch), `${k} holds U+${c.toString(16)}`); }
-    assert.doesNotMatch(v, /Hierarch|Einendil|Edvoid|\bRush\b|Klinti|Gorbat/, k);
+    assert.doesNotMatch(v, /Hierarch|Einendil|Kusven|\bRush\b|Klinti|Gorbat/, k);
   }
   const gala = Object.values(compiled.get('gala').loc).join(' ');
   assert.doesNotMatch(gala, /kin of the Sunhot|kindred of the Sunhot|related to the Sunhot/i, 'Gala and the Sunhot elves are never called kin');

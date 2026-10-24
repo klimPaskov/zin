@@ -169,7 +169,7 @@ test('loading tips: every key, in order, Windows-1252, no gated or modern words'
 });
 
 test('no gated name in any sprite, file name or text this module ships', () => {
-  const gated = /afrit|eindil|hidden_?council|einendil|edvoid|man_from_the_ice/i;
+  const gated = /afrit|eindil|hidden_?council|einendil|kusven|man_from_the_ice/i;
   for (const rel of files()) assert(!gated.test(rel), rel);
   for (const rel of gfxFiles()) for (const n of sprites(rel)) assert(!gated.test(n), n);
   for (const rel of files().filter(f => /\.(gfx|txt|yml)$/.test(f))) { const t = text(rel); assert(isCp1252(t.replace(/^﻿/, '')), rel); if (!rel.endsWith('.yml')) assert(/^[\x09\x0a\x20-\x7e]*$/.test(t), `${rel}: ASCII`); }

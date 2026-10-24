@@ -3,7 +3,7 @@
 // The working mosaic (docs/reference/originals/Erdae-working.jpg, private and git-ignored) is read into memory only:
 // nothing derived from its pixels is written by this module. For each cell of a grid in the game frame the module
 // finds the registered sheet that covers it (the sheet with the smallest world box wins where sheets overlap, so the
-// specific sheets of the Dead Lands or Aenor Isle beat the wide East Lands sheet), maps the cell centre back into the
+// specific sheets of the Ember Lands or Aenor Isle beat the wide East Lands sheet), maps the cell centre back into the
 // drawing (drawing = drawingAnchor + (world - worldAnchor) / scaleWorldPerDrawing) and classifies the pencil colour:
 // blue water (hue 180 to 258 degrees, saturation 0.15 or more) is sea, everything else (snow, paper, greens, browns,
 // greys, lava reds) is land. A 3 x 3 majority filter removes lettering and pencil lines. A sheet reads only its paper:

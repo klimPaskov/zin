@@ -2,7 +2,7 @@
 // every "-waith" name and every name borrowed from other fiction or real myth gets one new name, with its old label kept.
 //
 // Sources, in order of authority:
-//   1 owner decisions of 24 October 2026 (OWNER below): the main setting is Aoaz; the Dead Lands region is the Ember
+//   1 owner decisions of 24 October 2026 (OWNER below): the main setting is Aoaz; the Ember Lands region is the Ember
 //     Lands; the sea of Zol's black islands is the Kusmeel; no body of water is called an Ocean; no names from other
 //     fiction or real myth; no "-waith" names; the owner's labels may be renamed where they do not fit or repeat;
 //   2 the reconciled roster (tools/content/data/world/roster.json, its realms' names and formerLabels) and the regional
@@ -33,7 +33,7 @@ export const DEFAULT_NAME_TABLE_PATH = path.join(here, '../data/geography/name_t
 const OD = 'owner decision of 24 October 2026';
 /** Owner decisions applied directly. */
 export const OWNER = Object.freeze([
-  { id: 'region_dead_lands', name: 'The Ember Lands', reason: `${OD}: the Dead Lands region is the Ember Lands`, source: 'owner' },
+  { id: 'region_ember_lands', name: 'The Ember Lands', reason: `${OD}: the Ember Lands region is the Ember Lands`, source: 'owner' },
   { id: 'sea_zol_ocean', name: 'Kusmeel', reason: `${OD}: the sea of Zol's black islands is the Kusmeel; no water is an Ocean`, source: 'owner; east_lands.md water table' },
   { id: 'waste_black_islands', name: 'Black Islands of the Kusmeel', reason: `${OD}: the sea is the Kusmeel`, source: 'owner; zols_mistake.md section 2' },
 ]);
@@ -82,7 +82,7 @@ export const CURATED = Object.freeze([
   C('zone_narrow_strait', 'The Narrow Strait', null, null, 'a zone is no name; the zone is the strait\'s water', 'geography'),
   // ------------------------------------------------------------------ lands
   C('land_nether_island', 'The Nether', null, null, 'no brackets in a name', 'nether.md'),
-  C('land_dead_lands_island', 'The Ember Isle', null, null, 'the island of the Ember Lands (owner: the Dead Lands are the Ember Lands)', 'owner; ember_lands.md'),
+  C('land_ember_lands_island', 'The Ember Isle', null, null, 'the island of the Ember Lands (owner: the Ember Lands are the Ember Lands)', 'owner; ember_lands.md'),
   C('land_island_001', 'Vindael', 'coldic', null, 'the Vindael arm\'s island', 'cold_lands.md renamed labels'),
   C('land_island_002', 'Varnondor', null, null, 'the curled Varnondor land, separate from the mainland', 'west_lands.md section 2'),
   C('land_island_003', 'Isle of Šodolôrō', null, null, 'the great black oval isle', 'zols_mistake.md section 2'),
@@ -143,7 +143,7 @@ export const CURATED = Object.freeze([
 
 /** The language that names a placeholder island, by its region. */
 export const REGION_LANGUAGE = Object.freeze({
-  tritons_islands: 'tritonic', islands_south: 'yonic', lands_sun: 'sunhot', dead_lands: 'mirolic', nether: 'infernal', east_lands: 'alerhic',
+  tritons_islands: 'tritonic', islands_south: 'yonic', lands_sun: 'sunhot', ember_lands: 'mirolic', nether: 'infernal', east_lands: 'alerhic',
   south_lands: 'noric', north_lands: 'leren', dark_lands: 'dondric', cold_lands: 'coldic', windwaith: 'coldic', west_lands: 'gunwaithic',
   magical_lands: 'sylvan', middle_lands: 'aenoran', aenor_isle: 'aenoran', zols_mistake: 'leren',
 });

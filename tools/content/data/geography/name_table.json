@@ -4,7 +4,7 @@
  "generatedBy": "tools/content/geography/name_table.mjs (deterministic; regenerate, do not edit by hand)",
  "appliedBy": "tools/content/geography/repair_model.mjs (applyNameTable): the feature takes newName and keeps oldName as formerLabel",
  "decisions": [
-  "owner decision of 24 October 2026: the Dead Lands region is the Ember Lands",
+  "owner decision of 24 October 2026: the Ember Lands region is the Ember Lands",
   "owner decision of 24 October 2026: the sea of Zol's black islands is the Kusmeel; no water is an Ocean",
   "owner decision of 24 October 2026: the sea is the Kusmeel"
  ],
@@ -59,7 +59,7 @@
   {
    "id": "waste_black_islands",
    "array": "deserts",
-   "oldName": "Black Islands of the Ocean of Zol",
+   "oldName": "Black Islands of the Kusmeel",
    "newName": "Black Islands of the Kusmeel",
    "language": null,
    "meaning": null,
@@ -167,13 +167,13 @@
    "source": "north_lands.md; roster Dolpar"
   },
   {
-   "id": "land_dead_lands_island",
+   "id": "land_ember_lands_island",
    "array": "lands",
-   "oldName": "Dead Lands Island",
+   "oldName": "Ember Lands Island",
    "newName": "The Ember Isle",
    "language": null,
    "meaning": null,
-   "reason": "the island of the Ember Lands (owner: the Dead Lands are the Ember Lands)",
+   "reason": "the island of the Ember Lands (owner: the Ember Lands are the Ember Lands)",
    "source": "owner; ember_lands.md"
   },
   {
@@ -269,7 +269,7 @@
   {
    "id": "land_island_010",
    "array": "lands",
-   "oldName": "Island 10 (dead_lands)",
+   "oldName": "Island 10 (ember_lands)",
    "newName": "Dolgarunon",
    "language": "mirolic",
    "meaning": "deep mountain -land",
@@ -499,12 +499,12 @@
   {
    "id": "land_island_033",
    "array": "lands",
-   "oldName": "Island 33 (dead_lands)",
+   "oldName": "Island 33 (ember_lands)",
    "newName": "Exhoros",
    "language": "mirolic",
    "meaning": "ash isle",
    "reason": "Vez is the old name of Volgan and no land carries the name of its lord; the isle of Vez; the owner's drawn label \"Vez\" lies 8 px from the island",
-   "source": "ember_lands.md renamed labels; docs/name_table.md (Dead Lands, 0.91817, 0.84992)"
+   "source": "ember_lands.md renamed labels; docs/name_table.md (Ember Lands, 0.91817, 0.84992)"
   },
   {
    "id": "land_island_034",
@@ -649,7 +649,7 @@
   {
    "id": "land_island_048",
    "array": "lands",
-   "oldName": "Island 48 (dead_lands)",
+   "oldName": "Island 48 (ember_lands)",
    "newName": "Mialia",
    "language": "mirolic",
    "meaning": "sea -country",
@@ -709,7 +709,7 @@
   {
    "id": "land_island_054",
    "array": "lands",
-   "oldName": "Island 54 (dead_lands)",
+   "oldName": "Island 54 (ember_lands)",
    "newName": "Fornia",
    "language": "mirolic",
    "meaning": "beacon -country",
@@ -769,12 +769,12 @@
   {
    "id": "land_island_060",
    "array": "lands",
-   "oldName": "Island 60 (dead_lands)",
+   "oldName": "Island 60 (ember_lands)",
    "newName": "Unlo",
    "language": null,
    "meaning": null,
    "reason": "the owner's drawn island label, 3 px from the island through the registered dead sheet",
-   "source": "docs/name_table.md (Dead Lands, 0.84063, 0.94552)"
+   "source": "docs/name_table.md (Ember Lands, 0.84063, 0.94552)"
   },
   {
    "id": "land_island_061",
@@ -884,7 +884,7 @@
    "language": null,
    "meaning": null,
    "reason": "the owner's drawn island label, 7 px from the island through the registered edv sheet",
-   "source": "docs/name_table.md (Ocean of Edvoid, 0.91716, 0.02866)"
+   "source": "docs/name_table.md (Kusmeel, 0.91716, 0.02866)"
   },
   {
    "id": "land_island_072",
@@ -1088,13 +1088,13 @@
    "source": "cold_lands.md section 2"
   },
   {
-   "id": "region_dead_lands",
+   "id": "region_ember_lands",
    "array": "regions",
-   "oldName": "Dead Lands",
+   "oldName": "Ember Lands",
    "newName": "The Ember Lands",
    "language": null,
    "meaning": null,
-   "reason": "owner decision of 24 October 2026: the Dead Lands region is the Ember Lands",
+   "reason": "owner decision of 24 October 2026: the Ember Lands region is the Ember Lands",
    "source": "owner"
   },
   {
@@ -1450,7 +1450,7 @@
   {
    "id": "sea_zol_ocean",
    "array": "seas",
-   "oldName": "Ocean of Zol",
+   "oldName": "Kusmeel",
    "newName": "Kusmeel",
    "language": null,
    "meaning": null,

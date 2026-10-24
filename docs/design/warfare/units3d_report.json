@@ -1,0 +1,428 @@
+{
+ "entities": {
+  "zin_men_levy": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_men_infantry": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": true,
+   "note": null
+  },
+  "zin_men_archers": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_men_heavy_infantry": {
+   "asset": "zin_men_infantry",
+   "height": 1.05,
+   "scale": 0.84,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_men_hill_companies": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_men_sea_soldiers": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_men_rangers": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_men_cavalry": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the rider's mount model is missing"
+  },
+  "zin_men_horse_archers": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the rider's mount model is missing"
+  },
+  "zin_men_knights": {
+   "asset": "zin_men_infantry",
+   "height": 1.1,
+   "scale": 0.88,
+   "ownModel": false,
+   "note": "the rider's mount model is missing"
+  },
+  "zin_men_camel_riders": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the rider's mount model is missing"
+  },
+  "zin_men_temple_wardens": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_elves_warden": {
+   "asset": "zin_elves_warden",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": true,
+   "note": null
+  },
+  "zin_elves_archers": {
+   "asset": "zin_elves_warden",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_elves_riders": {
+   "asset": "zin_elves_warden",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the rider's mount model is missing"
+  },
+  "zin_elves_rangers": {
+   "asset": "zin_elves_warden",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_sun_elves_guard": {
+   "asset": "zin_elves_warden",
+   "height": 1.5,
+   "scale": 1.2,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_sun_elves_bowmen": {
+   "asset": "zin_elves_warden",
+   "height": 1.5,
+   "scale": 1.2,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_orcs_warrior": {
+   "asset": "zin_orcs_warrior",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": true,
+   "note": null
+  },
+  "zin_orcs_goblins": {
+   "asset": "zin_orcs_warrior",
+   "height": 0.75,
+   "scale": 0.6,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_orcs_raiders": {
+   "asset": "zin_orcs_warrior",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the rider's mount model is missing"
+  },
+  "zin_ogres_brutes": {
+   "asset": "zin_trolls_brute",
+   "height": 1.8,
+   "scale": 0.9,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_abyss_folk": {
+   "asset": "zin_trolls_brute",
+   "height": 1.8,
+   "scale": 0.9,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_trolls_brute": {
+   "asset": "zin_trolls_brute",
+   "height": 1.6,
+   "scale": 0.8,
+   "ownModel": true,
+   "note": null
+  },
+  "zin_giants_host": {
+   "asset": "zin_trolls_brute",
+   "height": 2.2,
+   "scale": 1.1,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_giants_hurlers": {
+   "asset": "zin_trolls_brute",
+   "height": 2.2,
+   "scale": 1.1,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_ents_grove": {
+   "asset": "zin_trolls_brute",
+   "height": 2.5,
+   "scale": 1.25,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_yeti_band": {
+   "asset": "zin_trolls_brute",
+   "height": 1.4,
+   "scale": 0.7,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_demons_netherborn": {
+   "asset": "zin_the_dead_revenant",
+   "height": 1.2,
+   "scale": 0.96,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_demons_shachihata": {
+   "asset": "zin_the_dead_revenant",
+   "height": 2.2,
+   "scale": 1.76,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_demons_bound": {
+   "asset": "zin_the_dead_revenant",
+   "height": 1.2,
+   "scale": 0.96,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_the_dead_revenant": {
+   "asset": "zin_the_dead_revenant",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": true,
+   "note": null
+  },
+  "zin_dead_grave_riders": {
+   "asset": "zin_the_dead_revenant",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the rider's mount model is missing"
+  },
+  "zin_dead_necromancers": {
+   "asset": "zin_the_dead_revenant",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_siege_catapult": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the engine model is missing; the crew shows"
+  },
+  "zin_siege_trebuchet": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": "the engine model is missing; the crew shows"
+  },
+  "zin_support_catapults": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_ballistae": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_scorpions": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_scouts": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_sappers": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_healers": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_heralds": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_quartermasters": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_provosts": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_armourers": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_wardens": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_elves_wardsingers": {
+   "asset": "zin_elves_warden",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_support_pack_train": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_glo_bearer": {
+   "asset": "zin_men_infantry",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_volgan_presence": {
+   "asset": "zin_the_dead_revenant",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  },
+  "zin_great_spirit": {
+   "asset": "zin_the_dead_revenant",
+   "height": 1,
+   "scale": 0.8,
+   "ownModel": false,
+   "note": null
+  }
+ },
+ "noModel": {
+  "zin_zol_deathless": "Zol's dead get their own model; they never reuse the grave host (spec 14.1).",
+  "zin_zol_deathless_crews": "Zol's dead get their own model; they never reuse the grave host (spec 14.1).",
+  "zin_ship_galley": "No ship model exists (7 ship models are planned, WE-075).",
+  "zin_ship_warship": "No ship model exists.",
+  "zin_ship_great_warship": "No ship model exists.",
+  "zin_ship_raider": "No ship model exists.",
+  "zin_air_griffin_riders": "No griffin model exists (WE-076).",
+  "zin_air_dragon_flight": "No dragon model exists (WE-076).",
+  "zin_zol_manifestation": "Zol's own; it never reuses the grave host (spec 14.1)."
+ },
+ "borrowed": [
+  "zin_men_levy",
+  "zin_men_archers",
+  "zin_men_heavy_infantry",
+  "zin_men_hill_companies",
+  "zin_men_sea_soldiers",
+  "zin_men_rangers",
+  "zin_men_cavalry",
+  "zin_men_horse_archers",
+  "zin_men_knights",
+  "zin_men_camel_riders",
+  "zin_men_temple_wardens",
+  "zin_elves_archers",
+  "zin_elves_riders",
+  "zin_elves_rangers",
+  "zin_sun_elves_guard",
+  "zin_sun_elves_bowmen",
+  "zin_orcs_goblins",
+  "zin_orcs_raiders",
+  "zin_ogres_brutes",
+  "zin_abyss_folk",
+  "zin_giants_host",
+  "zin_giants_hurlers",
+  "zin_ents_grove",
+  "zin_yeti_band",
+  "zin_demons_netherborn",
+  "zin_demons_shachihata",
+  "zin_demons_bound",
+  "zin_dead_grave_riders",
+  "zin_dead_necromancers",
+  "zin_siege_catapult",
+  "zin_siege_trebuchet",
+  "zin_support_catapults",
+  "zin_support_ballistae",
+  "zin_support_scorpions",
+  "zin_support_scouts",
+  "zin_support_sappers",
+  "zin_support_healers",
+  "zin_support_heralds",
+  "zin_support_quartermasters",
+  "zin_support_provosts",
+  "zin_support_armourers",
+  "zin_support_wardens",
+  "zin_elves_wardsingers",
+  "zin_support_pack_train",
+  "zin_glo_bearer",
+  "zin_volgan_presence",
+  "zin_great_spirit"
+ ]
+}

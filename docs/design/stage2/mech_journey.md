@@ -110,7 +110,7 @@ The full list is in each module's `dependencies`. The ones that matter:
 - `zin_horos` is the contract id of the Yeldenne ruler, but the current character is `Y8H_zin_ruler`. The characters module must rename it.
 - `zin_glo_wave` is state-scoped (the spec's `state` argument is dropped); `zin_glo_wave_battlefield` calls it on `global.zin_eindil_battlefield`.
 - Battlefield selection is a random Zol-held, Aenor-cored state, not "most divisions" (no portable count trigger).
-- `zin_glo.50/.51` use ungated `generic_wilds` and `dead_lands_storm` pictures in place of the gated `vast_shadow`.
+- `zin_glo.50/.51` use ungated `generic_wilds` and `ember_lands_storm` pictures in place of the gated `vast_shadow`.
 - Conditional costs use twin decisions: `zin_glo_seek_as_bearer_called`, `zin_eindil_rally_rebels_unaided`.
 - The spec id `zin_west_crossing_host` is the template id; its display name is "Crossing Host".
 - `zin_west_choose_course` and `zin_west_convene_council` exist as both a decision and an effect (different kinds, no clash).

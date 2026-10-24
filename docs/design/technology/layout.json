@@ -1,0 +1,2362 @@
+{
+  "folders": {
+    "electronics_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_scriptoria_tree",
+          "px": 150,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_watch_fires_tree",
+          "px": 570,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_wax_seals_tree",
+          "px": 290,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_cipher_wheels_tree",
+          "px": 430,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1530,
+      "rows": [
+        0,
+        2,
+        4,
+        6,
+        10,
+        12,
+        14,
+        16,
+        18
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_scriptoria",
+          "root": "zin_tech_scriptoria",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_scriptoria_medium",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_libraries",
+          "root": "zin_tech_scriptoria",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_libraries_medium",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_watch_fires",
+          "root": "zin_tech_watch_fires",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_watch_fires_medium",
+          "x": 6,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_wax_seals",
+          "root": "zin_tech_wax_seals",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_wax_seals_medium",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_horn_chains",
+          "root": "zin_tech_watch_fires",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_horn_chains_medium",
+          "x": 6,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_universities",
+          "root": "zin_tech_scriptoria",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_universities_medium",
+          "x": 0,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_cipher_scripts",
+          "root": "zin_tech_wax_seals",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_cipher_scripts_medium",
+          "x": 2,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_cipher_wheels",
+          "root": "zin_tech_cipher_wheels",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_cipher_wheels_medium",
+          "x": 4,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_letter_counts",
+          "root": "zin_tech_cipher_wheels",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_letter_counts_medium",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_scholars_conclaves",
+          "root": "zin_tech_scriptoria",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_scholars_conclaves_medium",
+          "x": 0,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_far_seeing_glass",
+          "root": "zin_tech_watch_fires",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_far_seeing_glass_medium",
+          "x": 6,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_sealed_couriers",
+          "root": "zin_tech_wax_seals",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_sealed_couriers_medium",
+          "x": 2,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_reading_rooms",
+          "root": "zin_tech_cipher_wheels",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_reading_rooms_medium",
+          "x": 4,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_great_library",
+          "root": "zin_tech_scriptoria",
+          "rx": 0,
+          "ry": 18,
+          "sprite": "GFX_zin_tech_great_library_medium",
+          "x": 0,
+          "y": 18
+        },
+        {
+          "key": "zin_tech_glass_towers",
+          "root": "zin_tech_watch_fires",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_glass_towers_medium",
+          "x": 6,
+          "y": 18
+        }
+      ],
+      "width": 780
+    },
+    "industry_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_dressed_stone_tree",
+          "px": 150,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_leaf_craft_tree",
+          "px": 1270,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_pit_props_tree",
+          "px": 290,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_water_wheels_tree",
+          "px": 430,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_slipways_tree",
+          "px": 990,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_forge_pits_tree",
+          "px": 1270,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_seed_reserves_tree",
+          "px": 570,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_wellspring_tapping_tree",
+          "px": 1130,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_quarry_songs_tree",
+          "px": 1270,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_vent_forges_tree",
+          "px": 1270,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_great_halls_tree",
+          "px": 710,
+          "py": 620,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_village_forges_tree",
+          "px": 850,
+          "py": 620,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1530,
+      "rows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_dressed_stone",
+          "root": "zin_tech_dressed_stone",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_dressed_stone_medium",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_leaf_craft",
+          "root": "zin_tech_leaf_craft",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_leaf_craft_medium",
+          "x": 16,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_lime_mortar",
+          "root": "zin_tech_dressed_stone",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_lime_mortar_medium",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_pit_props",
+          "root": "zin_tech_pit_props",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_pit_props_medium",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_water_wheels",
+          "root": "zin_tech_water_wheels",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_water_wheels_medium",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_slipways",
+          "root": "zin_tech_slipways",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_slipways_medium",
+          "x": 12,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_forge_pits",
+          "root": "zin_tech_forge_pits",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_forge_pits_medium",
+          "x": 16,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_arch_and_vault",
+          "root": "zin_tech_dressed_stone",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_arch_and_vault_medium",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_quarry_wedges",
+          "root": "zin_tech_pit_props",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_quarry_wedges_medium",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_trip_hammers",
+          "root": "zin_tech_water_wheels",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_trip_hammers_medium",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_seed_reserves",
+          "root": "zin_tech_seed_reserves",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_seed_reserves_medium",
+          "x": 6,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_wellspring_tapping",
+          "root": "zin_tech_wellspring_tapping",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_wellspring_tapping_medium",
+          "x": 14,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_quarry_songs",
+          "root": "zin_tech_quarry_songs",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_quarry_songs_medium",
+          "x": 16,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_drainage_wheels",
+          "root": "zin_tech_pit_props",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_drainage_wheels_medium",
+          "x": 2,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_standard_patterns",
+          "root": "zin_tech_water_wheels",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_standard_patterns_medium",
+          "x": 4,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_dry_docks",
+          "root": "zin_tech_slipways",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_dry_docks_medium",
+          "x": 12,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_ley_stone_channels",
+          "root": "zin_tech_wellspring_tapping",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_ley_stone_channels_medium",
+          "x": 14,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_vent_forges",
+          "root": "zin_tech_vent_forges",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_vent_forges_medium",
+          "x": 16,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_great_halls",
+          "root": "zin_tech_great_halls",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_great_halls_medium",
+          "x": 8,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_village_forges",
+          "root": "zin_tech_village_forges",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_village_forges_medium",
+          "x": 10,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_masons_lodges",
+          "root": "zin_tech_dressed_stone",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_masons_lodges_medium",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_deep_shafts",
+          "root": "zin_tech_pit_props",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_deep_shafts_medium",
+          "x": 2,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_irrigation_canals",
+          "root": "zin_tech_seed_reserves",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_irrigation_canals_medium",
+          "x": 6,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_vaulted_halls",
+          "root": "zin_tech_great_halls",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_vaulted_halls_medium",
+          "x": 8,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_roadside_smithies",
+          "root": "zin_tech_village_forges",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_roadside_smithies_medium",
+          "x": 10,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_division_of_labour",
+          "root": "zin_tech_water_wheels",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_division_of_labour_medium",
+          "x": 4,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_covered_yards",
+          "root": "zin_tech_great_halls",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_covered_yards_medium",
+          "x": 8,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_charcoal_leagues",
+          "root": "zin_tech_village_forges",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_charcoal_leagues_medium",
+          "x": 10,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_phials_and_vials",
+          "root": "zin_tech_wellspring_tapping",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_phials_and_vials_medium",
+          "x": 14,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_treadwheel_cranes",
+          "root": "zin_tech_great_halls",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_treadwheel_cranes_medium",
+          "x": 8,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_travelling_smiths",
+          "root": "zin_tech_village_forges",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_travelling_smiths_medium",
+          "x": 10,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_great_yards",
+          "root": "zin_tech_slipways",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_great_yards_medium",
+          "x": 12,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_great_scaffolds",
+          "root": "zin_tech_dressed_stone",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_great_scaffolds_medium",
+          "x": 0,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_pattern_books",
+          "root": "zin_tech_water_wheels",
+          "rx": -1,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_pattern_books_medium",
+          "x": 3,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_masters_benches",
+          "root": "zin_tech_water_wheels",
+          "rx": 1,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_masters_benches_medium",
+          "x": 5,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_assayers_rolls",
+          "root": "zin_tech_pit_props",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_assayers_rolls_medium",
+          "x": 2,
+          "y": 18
+        },
+        {
+          "key": "zin_tech_crown_foundries",
+          "root": "zin_tech_great_halls",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_crown_foundries_medium",
+          "x": 8,
+          "y": 18
+        },
+        {
+          "key": "zin_tech_steading_foundries",
+          "root": "zin_tech_village_forges",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_steading_foundries_medium",
+          "x": 10,
+          "y": 18
+        },
+        {
+          "key": "zin_tech_deep_wells",
+          "root": "zin_tech_wellspring_tapping",
+          "rx": 0,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_deep_wells_medium",
+          "x": 14,
+          "y": 18
+        }
+      ],
+      "width": 1480
+    },
+    "zin_arms_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_iron_arms_tree",
+          "px": 150,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_hunting_bows_tree",
+          "px": 290,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_elven_arms_tree",
+          "px": 570,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_warband_iron_tree",
+          "px": 710,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_valley_wardens_tree",
+          "px": 850,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_sun_guard_tree",
+          "px": 990,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_forest_rangers_tree",
+          "px": 1130,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_mail_tree",
+          "px": 430,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_hill_companies_tree",
+          "px": 850,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_shield_wall_drill_tree",
+          "px": 990,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_sea_soldiers_tree",
+          "px": 850,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_ranger_craft_tree",
+          "px": 990,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_pike_squares_tree",
+          "px": 850,
+          "py": 900,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1670,
+      "rows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_iron_arms",
+          "root": "zin_tech_iron_arms",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_iron_arms_medium",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_hunting_bows",
+          "root": "zin_tech_hunting_bows",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_hunting_bows_medium",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_elven_arms",
+          "root": "zin_tech_elven_arms",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_elven_arms_medium",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_warband_iron",
+          "root": "zin_tech_warband_iron",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_warband_iron_medium",
+          "x": 8,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_valley_wardens",
+          "root": "zin_tech_valley_wardens",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_valley_wardens_medium",
+          "x": 10,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_sun_guard",
+          "root": "zin_tech_sun_guard",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_sun_guard_medium",
+          "x": 12,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_forest_rangers",
+          "root": "zin_tech_forest_rangers",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_forest_rangers_medium",
+          "x": 14,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_mail",
+          "root": "zin_tech_mail",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_mail_medium",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_forged_steel",
+          "root": "zin_tech_iron_arms",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_forged_steel_medium",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_composite_bows",
+          "root": "zin_tech_hunting_bows",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_composite_bows_medium",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_plate_and_mail",
+          "root": "zin_tech_mail",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_plate_and_mail_medium",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_hill_companies",
+          "root": "zin_tech_hill_companies",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_hill_companies_medium",
+          "x": 10,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_shield_wall_drill",
+          "root": "zin_tech_shield_wall_drill",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_shield_wall_drill_medium",
+          "x": 12,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_sea_soldiers",
+          "root": "zin_tech_sea_soldiers",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_sea_soldiers_medium",
+          "x": 10,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_ranger_craft",
+          "root": "zin_tech_ranger_craft",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_ranger_craft_medium",
+          "x": 12,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_tempered_steel",
+          "root": "zin_tech_iron_arms",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_tempered_steel_medium",
+          "x": 0,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_war_longbows",
+          "root": "zin_tech_hunting_bows",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_war_longbows_medium",
+          "x": 2,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_leaf_steel",
+          "root": "zin_tech_elven_arms",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_leaf_steel_medium",
+          "x": 6,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_pattern_welding",
+          "root": "zin_tech_iron_arms",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_pattern_welding_medium",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_full_plate",
+          "root": "zin_tech_mail",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_full_plate_medium",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_blackened_iron",
+          "root": "zin_tech_warband_iron",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_blackened_iron_medium",
+          "x": 8,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_crossbows",
+          "root": "zin_tech_hunting_bows",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_crossbows_medium",
+          "x": 2,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_pike_squares",
+          "root": "zin_tech_pike_squares",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_pike_squares_medium",
+          "x": 10,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_master_forges",
+          "root": "zin_tech_iron_arms",
+          "rx": 0,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_master_forges_medium",
+          "x": 0,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_tempered_plate",
+          "root": "zin_tech_mail",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_tempered_plate_medium",
+          "x": 4,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_windlass_crossbows",
+          "root": "zin_tech_hunting_bows",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_windlass_crossbows_medium",
+          "x": 2,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_elven_mastery",
+          "root": "zin_tech_elven_arms",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_elven_mastery_medium",
+          "x": 6,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_veteran_sergeants",
+          "root": "zin_tech_pike_squares",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_veteran_sergeants_medium",
+          "x": 10,
+          "y": 18
+        },
+        {
+          "key": "zin_tech_mountain_steel",
+          "root": "zin_tech_iron_arms",
+          "rx": 0,
+          "ry": 20,
+          "sprite": "GFX_zin_tech_mountain_steel_medium",
+          "x": 0,
+          "y": 20
+        },
+        {
+          "key": "zin_tech_masterwork_plate",
+          "root": "zin_tech_mail",
+          "rx": 0,
+          "ry": 18,
+          "sprite": "GFX_zin_tech_masterwork_plate_medium",
+          "x": 4,
+          "y": 20
+        }
+      ],
+      "width": 1340
+    },
+    "zin_camp_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_scouts_tree",
+          "px": 150,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_wagon_trains_tree",
+          "px": 290,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_quartermasters_tree",
+          "px": 430,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_heralds_tree",
+          "px": 570,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_provosts_tree",
+          "px": 570,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_armourers_tree",
+          "px": 710,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_winter_quarters_tree",
+          "px": 570,
+          "py": 620,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_water_caravans_tree",
+          "px": 710,
+          "py": 620,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1530,
+      "rows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        14,
+        18
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_scouts",
+          "root": "zin_tech_scouts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_scouts_medium",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_sappers",
+          "root": "zin_tech_scouts",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_sappers_medium",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_wagon_trains",
+          "root": "zin_tech_wagon_trains",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_wagon_trains_medium",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_supply_columns",
+          "root": "zin_tech_wagon_trains",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_supply_columns_medium",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_quartermasters",
+          "root": "zin_tech_quartermasters",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_quartermasters_medium",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_heralds",
+          "root": "zin_tech_heralds",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_heralds_medium",
+          "x": 6,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_high_roads",
+          "root": "zin_tech_wagon_trains",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_high_roads_medium",
+          "x": 2,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_provosts",
+          "root": "zin_tech_provosts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_provosts_medium",
+          "x": 6,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_armourers",
+          "root": "zin_tech_armourers",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_armourers_medium",
+          "x": 8,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_winter_quarters",
+          "root": "zin_tech_winter_quarters",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_winter_quarters_medium",
+          "x": 6,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_water_caravans",
+          "root": "zin_tech_water_caravans",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_water_caravans_medium",
+          "x": 8,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_war_camps",
+          "root": "zin_tech_quartermasters",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_war_camps_medium",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_field_kitchens",
+          "root": "zin_tech_quartermasters",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_field_kitchens_medium",
+          "x": 4,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_great_depots",
+          "root": "zin_tech_quartermasters",
+          "rx": 0,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_great_depots_medium",
+          "x": 4,
+          "y": 18
+        }
+      ],
+      "width": 920
+    },
+    "zin_engines_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_catapults_tree",
+          "px": 150,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_stone_forts_tree",
+          "px": 710,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_harbour_chains_tree",
+          "px": 850,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_scorpions_tree",
+          "px": 290,
+          "py": 760,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_siege_towers_tree",
+          "px": 430,
+          "py": 760,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_fire_pots_tree",
+          "px": 570,
+          "py": 760,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1670,
+      "rows": [
+        0,
+        4,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_catapults",
+          "root": "zin_tech_catapults",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_catapults_medium",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_stone_forts",
+          "root": "zin_tech_stone_forts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_stone_forts_medium",
+          "x": 8,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_torsion_engines",
+          "root": "zin_tech_catapults",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_torsion_engines_medium",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_layered_walls",
+          "root": "zin_tech_stone_forts",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_layered_walls_medium",
+          "x": 8,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_harbour_chains",
+          "root": "zin_tech_harbour_chains",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_harbour_chains_medium",
+          "x": 10,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_trebuchets",
+          "root": "zin_tech_catapults",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_trebuchets_medium",
+          "x": 0,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_wall_wardens",
+          "root": "zin_tech_stone_forts",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_wall_wardens_medium",
+          "x": 8,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_scorpions",
+          "root": "zin_tech_scorpions",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_scorpions_medium",
+          "x": 2,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_siege_towers",
+          "root": "zin_tech_siege_towers",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_siege_towers_medium",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_fire_pots",
+          "root": "zin_tech_fire_pots",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_fire_pots_medium",
+          "x": 6,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_bastions",
+          "root": "zin_tech_stone_forts",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_bastions_medium",
+          "x": 8,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_great_engines",
+          "root": "zin_tech_catapults",
+          "rx": 0,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_great_engines_medium",
+          "x": 0,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_curtain_walls",
+          "root": "zin_tech_stone_forts",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_curtain_walls_medium",
+          "x": 8,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_engine_corps",
+          "root": "zin_tech_catapults",
+          "rx": 0,
+          "ry": 18,
+          "sprite": "GFX_zin_tech_engine_corps_medium",
+          "x": 0,
+          "y": 18
+        },
+        {
+          "key": "zin_tech_master_engines",
+          "root": "zin_tech_catapults",
+          "rx": 0,
+          "ry": 20,
+          "sprite": "GFX_zin_tech_master_engines_medium",
+          "x": 0,
+          "y": 20
+        }
+      ],
+      "width": 1060
+    },
+    "zin_lore_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_wardsong_tree",
+          "px": 290,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_grave_binding_tree",
+          "px": 430,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_nether_pacts_tree",
+          "px": 570,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_deathless_tide_1_tree",
+          "px": 850,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_field_healers_tree",
+          "px": 150,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_bound_demons_tree",
+          "px": 710,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1250,
+      "rows": [
+        0,
+        2,
+        4,
+        10,
+        12,
+        14
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_wardsong",
+          "root": "zin_tech_wardsong",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_wardsong_medium",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_grave_binding",
+          "root": "zin_tech_grave_binding",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_grave_binding_medium",
+          "x": 4,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_nether_pacts",
+          "root": "zin_tech_nether_pacts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_nether_pacts_medium",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_deathless_tide_1",
+          "root": "zin_tech_deathless_tide_1",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_deathless_tide_1_medium",
+          "x": 10,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_field_healers",
+          "root": "zin_tech_field_healers",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_field_healers_medium",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_necromantic_orders",
+          "root": "zin_tech_grave_binding",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_necromantic_orders_medium",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_lantern_wards",
+          "root": "zin_tech_field_healers",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_lantern_wards_medium",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_bound_demons",
+          "root": "zin_tech_bound_demons",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_bound_demons_medium",
+          "x": 8,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_old_songs",
+          "root": "zin_tech_wardsong",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_old_songs_medium",
+          "x": 2,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_deeper_rites",
+          "root": "zin_tech_grave_binding",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_deeper_rites_medium",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_nether_forges",
+          "root": "zin_tech_nether_pacts",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_nether_forges_medium",
+          "x": 6,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_hallowed_arms",
+          "root": "zin_tech_field_healers",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_hallowed_arms_medium",
+          "x": 0,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_grave_riders",
+          "root": "zin_tech_grave_binding",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_grave_riders_medium",
+          "x": 4,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_deathless_tide_2",
+          "root": "zin_tech_deathless_tide_1",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_deathless_tide_2_medium",
+          "x": 10,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_wards_against_death",
+          "root": "zin_tech_field_healers",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_wards_against_death_medium",
+          "x": 0,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_deathless_tide_3",
+          "root": "zin_tech_deathless_tide_1",
+          "rx": 0,
+          "ry": 14,
+          "sprite": "GFX_zin_tech_deathless_tide_3_medium",
+          "x": 10,
+          "y": 14
+        }
+      ],
+      "width": 1060
+    },
+    "zin_mounts_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_riding_horses_tree",
+          "px": 150,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_elven_steeds_tree",
+          "px": 430,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_troll_brood_tree",
+          "px": 570,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_giant_kin_tree",
+          "px": 710,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_ent_moots_tree",
+          "px": 850,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_yeti_hunts_tree",
+          "px": 990,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_camel_corps_tree",
+          "px": 290,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_raider_mounts_tree",
+          "px": 430,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_ogre_pacts_tree",
+          "px": 570,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_horse_archery_tree",
+          "px": 290,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_kin_harness_tree",
+          "px": 1130,
+          "py": 760,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_couched_lance_tree",
+          "px": 290,
+          "py": 900,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1670,
+      "rows": [
+        0,
+        2,
+        4,
+        6,
+        10,
+        12,
+        16,
+        18,
+        20
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_riding_horses",
+          "root": "zin_tech_riding_horses",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_riding_horses_medium",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_elven_steeds",
+          "root": "zin_tech_elven_steeds",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_elven_steeds_medium",
+          "x": 4,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_troll_brood",
+          "root": "zin_tech_troll_brood",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_troll_brood_medium",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_giant_kin",
+          "root": "zin_tech_giant_kin",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_giant_kin_medium",
+          "x": 8,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_ent_moots",
+          "root": "zin_tech_ent_moots",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_ent_moots_medium",
+          "x": 10,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_yeti_hunts",
+          "root": "zin_tech_yeti_hunts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_yeti_hunts_medium",
+          "x": 12,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_camel_corps",
+          "root": "zin_tech_camel_corps",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_camel_corps_medium",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_raider_mounts",
+          "root": "zin_tech_raider_mounts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_raider_mounts_medium",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_ogre_pacts",
+          "root": "zin_tech_ogre_pacts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_ogre_pacts_medium",
+          "x": 6,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_war_horses",
+          "root": "zin_tech_riding_horses",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_war_horses_medium",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_horse_archery",
+          "root": "zin_tech_horse_archery",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_horse_archery_medium",
+          "x": 2,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_great_studs",
+          "root": "zin_tech_riding_horses",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_great_studs_medium",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_kin_harness",
+          "root": "zin_tech_kin_harness",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_kin_harness_medium",
+          "x": 14,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_couched_lance",
+          "root": "zin_tech_couched_lance",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_couched_lance_medium",
+          "x": 2,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_remount_depots",
+          "root": "zin_tech_riding_horses",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_remount_depots_medium",
+          "x": 0,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_kin_mastery",
+          "root": "zin_tech_kin_harness",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_kin_mastery_medium",
+          "x": 14,
+          "y": 18
+        },
+        {
+          "key": "zin_tech_plains_destriers",
+          "root": "zin_tech_riding_horses",
+          "rx": 0,
+          "ry": 20,
+          "sprite": "GFX_zin_tech_plains_destriers_medium",
+          "x": 0,
+          "y": 20
+        }
+      ],
+      "width": 1340
+    },
+    "zin_naval_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_oared_galleys_tree",
+          "px": 150,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_merchant_cogs_tree",
+          "px": 290,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_elven_hulls_tree",
+          "px": 570,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_sailing_warships_tree",
+          "px": 430,
+          "py": 200,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_triton_charts_tree",
+          "px": 570,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_corsair_craft_tree",
+          "px": 570,
+          "py": 480,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_bronze_sheathing_tree",
+          "px": 570,
+          "py": 900,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_warded_hulls_tree",
+          "px": 570,
+          "py": 1040,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_storm_rigging_tree",
+          "px": 570,
+          "py": 1180,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1530,
+      "rows": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_oared_galleys",
+          "root": "zin_tech_oared_galleys",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_oared_galleys_medium",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_merchant_cogs",
+          "root": "zin_tech_merchant_cogs",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_merchant_cogs_medium",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_elven_hulls",
+          "root": "zin_tech_elven_hulls",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_elven_hulls_medium",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_harbour_works",
+          "root": "zin_tech_merchant_cogs",
+          "rx": 0,
+          "ry": 2,
+          "sprite": "GFX_zin_tech_harbour_works_medium",
+          "x": 2,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_sailing_warships",
+          "root": "zin_tech_sailing_warships",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_sailing_warships_medium",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "key": "zin_tech_triton_charts",
+          "root": "zin_tech_triton_charts",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_triton_charts_medium",
+          "x": 6,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_war_galleys",
+          "root": "zin_tech_oared_galleys",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_war_galleys_medium",
+          "x": 0,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_high_castled_warships",
+          "root": "zin_tech_sailing_warships",
+          "rx": 0,
+          "ry": 4,
+          "sprite": "GFX_zin_tech_high_castled_warships_medium",
+          "x": 4,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_corsair_craft",
+          "root": "zin_tech_corsair_craft",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_corsair_craft_medium",
+          "x": 6,
+          "y": 6
+        },
+        {
+          "key": "zin_tech_boarding_parties",
+          "root": "zin_tech_oared_galleys",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_boarding_parties_medium",
+          "x": 0,
+          "y": 8
+        },
+        {
+          "key": "zin_tech_fire_ships",
+          "root": "zin_tech_oared_galleys",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_fire_ships_medium",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_deep_water_hulls",
+          "root": "zin_tech_sailing_warships",
+          "rx": 0,
+          "ry": 8,
+          "sprite": "GFX_zin_tech_deep_water_hulls_medium",
+          "x": 4,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_bronze_sheathing",
+          "root": "zin_tech_bronze_sheathing",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_bronze_sheathing_medium",
+          "x": 6,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_great_warships",
+          "root": "zin_tech_sailing_warships",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_great_warships_medium",
+          "x": 4,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_warded_hulls",
+          "root": "zin_tech_warded_hulls",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_warded_hulls_medium",
+          "x": 6,
+          "y": 14
+        },
+        {
+          "key": "zin_tech_storm_rigging",
+          "root": "zin_tech_storm_rigging",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_storm_rigging_medium",
+          "x": 6,
+          "y": 16
+        },
+        {
+          "key": "zin_tech_master_shipwrights",
+          "root": "zin_tech_sailing_warships",
+          "rx": 0,
+          "ry": 16,
+          "sprite": "GFX_zin_tech_master_shipwrights_medium",
+          "x": 4,
+          "y": 18
+        }
+      ],
+      "width": 780
+    },
+    "zin_skies_folder": {
+      "gridboxes": [
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_dragon_lore_tree",
+          "px": 290,
+          "py": 60,
+          "slotsize": 70,
+          "width": 100
+        },
+        {
+          "format": "UP",
+          "height": 140,
+          "name": "zin_tech_eyries_tree",
+          "px": 150,
+          "py": 340,
+          "slotsize": 70,
+          "width": 100
+        }
+      ],
+      "height": 1250,
+      "rows": [
+        0,
+        4,
+        10,
+        12,
+        14
+      ],
+      "tiles": [
+        {
+          "key": "zin_tech_dragon_lore",
+          "root": "zin_tech_dragon_lore",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_dragon_lore_medium",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "key": "zin_tech_eyries",
+          "root": "zin_tech_eyries",
+          "rx": 0,
+          "ry": 0,
+          "sprite": "GFX_zin_tech_eyries_medium",
+          "x": 0,
+          "y": 4
+        },
+        {
+          "key": "zin_tech_griffin_harness",
+          "root": "zin_tech_eyries",
+          "rx": 0,
+          "ry": 6,
+          "sprite": "GFX_zin_tech_griffin_harness_medium",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "key": "zin_tech_dragon_kinship",
+          "root": "zin_tech_dragon_lore",
+          "rx": 0,
+          "ry": 12,
+          "sprite": "GFX_zin_tech_dragon_kinship_medium",
+          "x": 2,
+          "y": 12
+        },
+        {
+          "key": "zin_tech_sky_lances",
+          "root": "zin_tech_eyries",
+          "rx": 0,
+          "ry": 10,
+          "sprite": "GFX_zin_tech_sky_lances_medium",
+          "x": 0,
+          "y": 14
+        }
+      ],
+      "width": 500
+    }
+  },
+  "origin": {
+    "x": 150,
+    "y": 60
+  },
+  "rowCaptions": {
+    "0": "Before 1650",
+    "2": "1650 to 1699",
+    "4": "1700 to 1729",
+    "6": "1730 to 1747",
+    "8": "1748 to 1750",
+    "10": "1751 to 1753",
+    "12": "1754 to 1756",
+    "14": "1757 to 1759",
+    "16": "1760 to 1762",
+    "18": "1763 to 1767",
+    "20": "1768 and later"
+  },
+  "rows": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20
+  ],
+  "slot": 70
+}

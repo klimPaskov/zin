@@ -22,8 +22,9 @@ export const RENAMES = [
   // K31: the Dead Lands are the Ember Lands.
   { from: /\bDead Lands\b/g, to: 'Ember Lands' },
   { from: /\bdead lands\b/g, to: 'ember lands' },
-  { from: /\bdead_lands\b/g, to: 'ember_lands' },
-  { from: /\bDEAD_LANDS\b/g, to: 'EMBER_LANDS' },
+  // Identifiers carry the region inside longer names (zin_is_region_dead_lands, shared_dead_lands), so no word boundary.
+  { from: /dead_lands/g, to: 'ember_lands' },
+  { from: /DEAD_LANDS/g, to: 'EMBER_LANDS' },
 ];
 
 export const PATH_RENAMES = [

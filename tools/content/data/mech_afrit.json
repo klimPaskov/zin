@@ -7,7 +7,7 @@
   "start": { "veil": 80, "plot": 20, "artifacts": 4, "seats": { "seals": 3, "censers": 2, "whispers": 1, "relics": 2 } },
   "seatCodes": { "seals": 1, "censers": 2, "whispers": 3, "relics": 4 },
   "artifactCodes": { "ring": 1, "crown": 2, "bracelet": 3, "necklace": 4 },
-  "regionCodes": { "middle_lands": 1, "north_lands": 2, "cold_lands": 3, "west_lands": 4, "tritons_islands": 5, "dark_lands": 6, "magical_lands": 7, "zols_mistake": 8, "dead_lands": 9, "east_lands": 10, "islands_of_the_south": 11, "lands_of_the_sun": 12 },
+  "regionCodes": { "middle_lands": 1, "north_lands": 2, "cold_lands": 3, "west_lands": 4, "tritons_islands": 5, "dark_lands": 6, "magical_lands": 7, "zols_mistake": 8, "ember_lands": 9, "east_lands": 10, "islands_of_the_south": 11, "lands_of_the_sun": 12 },
   "caps": { "zero": ["Volgan", "Demon", "Dolon", "Nezer", "Zol", "Yeldenne"], "elves": 2, "aenor": 5, "base": 3 },
   "footholdRows": [
     { "match": { "name": "Aenor" }, "start": 5 },
@@ -16,7 +16,7 @@
     { "match": { "name": "Selen" }, "start": 1 },
     { "match": { "name": "Fotan" }, "start": 1 },
     { "match": { "name": ["Cursed Lands", "Bloody Forest"] }, "start": 0 },
-    { "match": { "region": "dead_lands", "people": "men", "notName": "Mirolon" }, "start": 1 },
+    { "match": { "region": "ember_lands", "people": "men", "notName": "Mirolon" }, "start": 1 },
     { "match": { "region": "cold_lands", "notName": "Yeldenne" }, "start": 1 },
     { "match": { "name": ["Alerhia", "Erco", "Plutondo", "Miaed", "Noris", "Stabilo"] }, "start": 3 },
     { "match": { "region": "east_lands" }, "start": 2 },

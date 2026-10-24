@@ -20,7 +20,7 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Great Lake, Aenor Forest, and the sovereign giant kingdom of Hirolon (former label Hiloron). See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |
 | **Magical Lands** | Magical Lands | East of Middle Lands, same landmass, separated from them by the Great Wall of Aenor, a natural mountain range. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
-| **Zol / Zol's Mistake** | Ocean of Edvoid (drawn sheet; the sea is now Kusmeel) | Far northern black wasteland and every black island of the Kusmeel, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Kusven]]. See [[Zols Mistake]]. |
+| **Zol / Zol's Mistake** | Kusmeel (drawn sheet; the sea is now Kusmeel) | Far northern black wasteland and every black island of the Kusmeel, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Kusven]]. See [[Zols Mistake]]. |
 | **East Lands** | South-Earth | Across the rift in the east, reaches off the eastern map. Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Mirrored for mod map. |
 | **South Lands** | Desert of South-Earth | Great desert of East Lands, extends south off the map. Noris Desert and former Sunhot Desert. |
 | **Ember Lands** | Ember Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Ember Lands]]. |

@@ -1,0 +1,71 @@
+{
+ "id": "ui-focus",
+ "family": "focus",
+ "kind": "grid",
+ "aspect": "1:1",
+ "grid": [
+  3,
+  3
+ ],
+ "ground": "black",
+ "matte": "none",
+ "note": "The whole sheet background and every gutter between the tiles is flat pure black (#000000) with nothing painted on it: no backdrop, no lit or tinted panel behind a tile, no glow, no halo, no vignette, no gradient, no light spilling out of a tile. Each of the 9 tiles is a flat full-bleed swatch of its material that runs to its own edges with no margin of ground inside the tile and no frame drawn around it, so a crop of the tile holds only the material. The three wire cells are not thin lines: each is a thick bar of braided cord that fills the full width and most of the height of its cell.",
+ "cells": [
+  {
+   "key": "board_tile",
+   "subject": "a seamless walnut board tile, plain even grain, edge to edge",
+   "lum": "dark",
+   "luma": 41.5
+  },
+  {
+   "key": "title_unavailable",
+   "subject": "a title bar in dull iron, no gilt, matte",
+   "lum": "dark",
+   "luma": 45
+  },
+  {
+   "key": "title_can_start",
+   "subject": "a title bar in bronze",
+   "lum": "dark",
+   "luma": 76.3,
+   "design": "mid"
+  },
+  {
+   "key": "title_completed",
+   "subject": "a title bar in gilt with a verdigris enamel inlay",
+   "lum": "mid",
+   "luma": 98.1
+  },
+  {
+   "key": "ongoing_plate",
+   "subject": "a wide ongoing-focus plate: walnut with a gilt edge, empty",
+   "lum": "dark",
+   "luma": 37.5
+  },
+  {
+   "key": "link_bronze",
+   "subject": "a thick horizontal bar of braided bronze wire filling the whole cell edge to edge, no glow",
+   "lum": "dark",
+   "luma": 55.6
+  },
+  {
+   "key": "link_gilt",
+   "subject": "a thick horizontal bar of braided gilt wire filling the whole cell edge to edge, no glow",
+   "lum": "dark",
+   "luma": 90.9
+  },
+  {
+   "key": "link_wax",
+   "subject": "a thick horizontal bar of twisted red wax cord filling the whole cell edge to edge, no glow",
+   "lum": "dark",
+   "luma": 48.4
+  },
+  {
+   "key": "selection_plate",
+   "subject": "a walnut selection plate with a gold edge",
+   "lum": "dark",
+   "luma": 41.3
+  }
+ ],
+ "tranche": 7
+}

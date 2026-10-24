@@ -9,3 +9,13 @@ country_event = {
 		name = zin_occupied_countries_continue
 	}
 }
+# The 90 per cent resistance level (resistance_modifiers.txt of the diplomacy slice) fires occupied_countries.2. Inert until the
+# occupation and war slice gives the uprising its content.
+country_event = {
+	id = occupied_countries.2
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		name = zin_occupied_countries_continue
+	}
+}

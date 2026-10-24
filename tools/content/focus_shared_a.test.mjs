@@ -1,5 +1,5 @@
 // Tests of the six shared focus trees of batch A (docs/design/stage2/focus_shared_a.md): shared_cold_lands,
-// shared_concord_dominions, shared_dark_lands, shared_dead_lands, shared_east_lands and shared_islands_of_the_south.
+// shared_concord_dominions, shared_dark_lands, shared_ember_lands, shared_east_lands and shared_islands_of_the_south.
 // They compile the real tree files with the focus compiler's check API and the registry additions of
 // data/focus_registry_shared_a.json, assert counts, ids, prerequisites, localisation and text rules against the specs,
 // try the module copies the tier B trees make, test the compiler changes this slice made, and plant one failure for
@@ -23,15 +23,13 @@ import { PEOPLES } from './modules/peoples.mjs';
 import { Registry, exclusiveClosure, mergeRegistryData, loadRegistry, loadArgCodes, codesFor, checkCoverage, checkStructure } from './checks/focus_checks.mjs';
 
 const json = async f => JSON.parse(await readFile(f, 'utf8'));
-// The documents call the Dead Lands the Ember Lands (owner decision of 24 October 2026); the builder data keeps the old ids until the
-// renaming migration runs, which removes this map.
-const SPEC_FILE_RENAMED = { shared_dead_lands: 'shared_ember_lands' };
-const IDS = ['shared_cold_lands', 'shared_concord_dominions', 'shared_dark_lands', 'shared_dead_lands', 'shared_east_lands', 'shared_islands_of_the_south'];
+const SPEC_FILE_RENAMED = {};
+const IDS = ['shared_cold_lands', 'shared_concord_dominions', 'shared_dark_lands', 'shared_ember_lands', 'shared_east_lands', 'shared_islands_of_the_south'];
 const EXPECT = {
   shared_cold_lands: { focuses: 70, spirits: 18, events: 5, countries: 23, opinions: 1, ns: 'zin_shared_cold_lands' },
   shared_concord_dominions: { focuses: 66, spirits: 22, events: 8, countries: 18, opinions: 0, ns: 'zin_shared_concord_dominions' },
   shared_dark_lands: { focuses: 57, spirits: 23, events: 2, countries: 17, opinions: 5, ns: 'zin_shared_dark_lands' },
-  shared_dead_lands: { focuses: 47, spirits: 15, events: 6, countries: 6, opinions: 2, ns: 'zin_shared_dead_lands' },
+  shared_ember_lands: { focuses: 47, spirits: 15, events: 6, countries: 6, opinions: 2, ns: 'zin_shared_ember_lands' },
   shared_east_lands: { focuses: 68, spirits: 17, events: 4, countries: 24, opinions: 0, ns: 'zin_shared_east_lands' },
   shared_islands_of_the_south: { focuses: 46, spirits: 13, events: 2, countries: 15, opinions: 0, ns: 'zin_shared_islands_of_the_south' },
 };
@@ -276,7 +274,7 @@ test('No banned modern word, glossary-forbidden word or real-world name in any d
 
 test('Text rules: no Afrit, Hidden Council, Ilvane or Eindil anywhere; the stranger and the Man from the Ice only where the specs allow', () => {
   for (const id of IDS) for (const [key, v] of Object.entries(locOf(id))) {
-    assert.doesNotMatch(v, /Afrit|Hidden Council|Ilvane|Eindil|Aurevan|Einendil|Edvoid|\bRush\b/, `${id} ${key}`);
+    assert.doesNotMatch(v, /Afrit|Hidden Council|Ilvane|Eindil|Aurevan|Einendil|Kusven|\bRush\b/, `${id} ${key}`);
     assert.doesNotMatch(v, /\bsleeper\b/i, `${id} ${key}`);
   }
   // Cold Lands: the Man from the Ice and the King Without a House appear only in the two hidden focuses.
@@ -290,8 +288,8 @@ test('Text rules: no Afrit, Hidden Council, Ilvane or Eindil anywhere; the stran
     for (const f of BASE[id].focuses) assert.doesNotMatch(`${f.name} ${f.desc}`, /stranger|man from the ice|\bheir\b|king without a house/i, `${id}.${f.key}`);
     for (const ev of Object.values(BASE[id].events)) assert.doesNotMatch(`${ev.title} ${ev.desc}`, /stranger|man from the ice|\bheir\b/i, id);
   }
-  // Dark and Dead Lands: fire never ends Zol's dead, Volgan's fate is not told, no hold is called goblin or ogre.
-  for (const id of ['shared_dark_lands', 'shared_dead_lands']) for (const [key, v] of Object.entries(locOf(id))) {
+  // Dark and Ember Lands: fire never ends Zol's dead, Volgan's fate is not told, no hold is called goblin or ogre.
+  for (const id of ['shared_dark_lands', 'shared_ember_lands']) for (const [key, v] of Object.entries(locOf(id))) {
     for (const sentence of v.split(/(?<=[.!?])\s+/)) {
       if (/\bfire\b/i.test(sentence) && /\b(?:end|ends|ended|kill|kills|destroy|destroys)\s+(?:them|the dead)\b/i.test(sentence)) assert.match(sentence, /\b(?:does|do|did|can|could|will)\s+not\b|\bnever\b|\bnor\b/i, `${id} ${key}: ${sentence}`);
     }
@@ -330,7 +328,7 @@ test('Hidden and story branches: their heads carry allow_branch and the same con
     shared_cold_lands: ['the_clan_host', 'the_two_halls', 'the_cold_coast', 'under_a_greater_crown', 'the_far_edge', 'the_silent_castle', 'the_free_towns', 'the_neck_steadings', 'kin_of_the_high_snows', 'the_man_from_the_ice', 'songs_of_the_houseless_king'],
     shared_concord_dominions: ['seat_at_the_concord_council', 'harbour_works', 'the_free_council', 'the_lords_moot', 'a_governors_hand', 'a_free_land', 'watch_on_the_south', 'the_wall_road', 'children_of_the_restoration', 'the_old_kin_of_the_land'],
     shared_dark_lands: ['no_master_but_our_own', 'the_iron_tithe', 'oath_of_the_accord', 'speak_at_the_moot_stone', 'fishers_of_the_dark_sea', 'dead_on_our_shore', 'the_warrens_below', 'troll_kin_of_the_hold', 'ogre_chiefs', 'hearth_speakers', 'the_warchiefs_host', 'heralds_of_the_south'],
-    shared_dead_lands: ['the_southern_storm', 'storm_coast_harbour', 'a_client_crown', 'the_wardens_banner', 'the_night_cults', 'the_wardens_way', 'a_warlords_rule', 'the_storm_lifts'],
+    shared_ember_lands: ['the_southern_storm', 'storm_coast_harbour', 'a_client_crown', 'the_wardens_banner', 'the_night_cults', 'the_wardens_way', 'a_warlords_rule', 'the_storm_lifts'],
     shared_east_lands: ['the_dry_roads', 'lords_of_the_road', 'fishers_of_the_north_sea', 'rift_harbours', 'a_crown_over_the_road_lords', 'the_free_council', 'the_freeholds_endure'],
     shared_islands_of_the_south: ['nets_and_boats', 'the_speakers_council', 'the_chiefs_hall', 'a_sea_king', 'two_shores', 'island_navigators'],
   };
@@ -342,7 +340,7 @@ test('Hidden and story branches: their heads carry allow_branch and the same con
     for (const c of f.allow_branch) if (!fixed(c)) assert(JSON.stringify(f.available ?? []).includes(JSON.stringify(c)), `${id}.${k}: ${JSON.stringify(c)} repeated in available`);
   }
   // Story modules open by available only.
-  for (const [id, k] of [['shared_dark_lands', 'the_hold_at_war'], ['shared_dead_lands', 'the_freehold_at_war'], ['shared_islands_of_the_south', 'the_storm_years'], ['shared_concord_dominions', 'the_dark_comes'], ['shared_concord_dominions', 'the_golden_king_is_dead'], ['shared_east_lands', 'question_of_the_east'], ['shared_east_lands', 'answer_the_coalition'], ['shared_islands_of_the_south', 'oath_to_the_protector'], ['shared_east_lands', 'oath_to_the_protector']]) {
+  for (const [id, k] of [['shared_dark_lands', 'the_hold_at_war'], ['shared_ember_lands', 'the_freehold_at_war'], ['shared_islands_of_the_south', 'the_storm_years'], ['shared_concord_dominions', 'the_dark_comes'], ['shared_concord_dominions', 'the_golden_king_is_dead'], ['shared_east_lands', 'question_of_the_east'], ['shared_east_lands', 'answer_the_coalition'], ['shared_islands_of_the_south', 'oath_to_the_protector'], ['shared_east_lands', 'oath_to_the_protector']]) {
     const f = focus(BASE, id, k);
     assert(f.available?.length, `${id}.${k} has available`);
     assert(!f.allow_branch, `${id}.${k} has no allow_branch (the condition changes in play)`);
@@ -355,8 +353,8 @@ test('Branch checks of the specs: Light Holdon-style trees, subjects, coasts and
   assert.match(cond('shared_cold_lands', 'under_a_greater_crown', 'allow_branch'), /"is_subject":true/);
   assert.match(cond('shared_concord_dominions', 'a_free_land', 'allow_branch'), /"is_subject":false/);
   assert.match(cond('shared_concord_dominions', 'the_lords_moot', 'allow_branch'), /"ideology":"wild"/);
-  assert.match(cond('shared_dead_lands', 'a_client_crown', 'allow_branch'), /"subject_of":"Volgan"/);
-  assert.match(cond('shared_dead_lands', 'the_wardens_banner', 'allow_branch'), /"subject_of":"Mirolon"/);
+  assert.match(cond('shared_ember_lands', 'a_client_crown', 'allow_branch'), /"subject_of":"Volgan"/);
+  assert.match(cond('shared_ember_lands', 'the_wardens_banner', 'allow_branch'), /"subject_of":"Mirolon"/);
   assert.match(cond('shared_east_lands', 'riders_of_the_dunes', 'allow_branch'), /"people":"men"/);
   assert.match(cond('shared_islands_of_the_south', 'island_navigators', 'allow_branch'), /"people":"men"/);
   assert.match(cond('shared_islands_of_the_south', 'two_shores', 'allow_branch'), /zin_shared_islands_of_the_south_large/);
@@ -374,7 +372,7 @@ test('Spirits: no spirit key equals a focus key, every modifier is real, each ha
   }
   const cancels = Object.entries(BASE.shared_dark_lands.spirits).filter(([, s]) => s.cancel).map(([k]) => k).sort();
   assert.deepEqual(cancels, ['accord_kin', 'beach_fires', 'brutes_and_axes_spirit', 'chief_at_cocanoor', 'hearth_speakers_spirit', 'heralds', 'warchiefs_host']);
-  const deadCancels = Object.entries(BASE.shared_dead_lands.spirits).filter(([, s]) => s.cancel).map(([k]) => k).sort();
+  const deadCancels = Object.entries(BASE.shared_ember_lands.spirits).filter(([, s]) => s.cancel).map(([k]) => k).sort();
   assert.deepEqual(deadCancels, ['lake_trade_spirit', 'night_cults', 'one_watch_spirit', 'quiet_hearts_spirit', 'wardens_way', 'warlords_rule']);
   const ideas = compiled.get('shared_dark_lands').files.get('common/ideas/zin_focus_shared_dark_lands.txt');
   assert.match(ideas, /zin_shared_dark_lands_beach_fires = \{[\s\S]*?cancel = \{\n\t\t\t\thas_global_flag = zin_zol_withdrawn/);
@@ -409,7 +407,7 @@ test('The helper names other trees call are declared once, with the names the sp
   for (const n of ['zin_shared_east_lands_road_infra', 'zin_shared_east_lands_halve_lean', 'zin_shared_east_lands_rift_goodwill']) assert(declared('shared_east_lands').includes(n), n);
   assert(declared('shared_cold_lands').includes('zin_shared_cold_lands_lean_neighbours'));
   const triggers = Object.keys(BASE.shared_concord_dominions.scripted_triggers);
-  for (const n of ['zin_shared_has_coast', 'zin_shared_is_island_realm', 'zin_shared_borders_dead_lands', 'zin_shared_borders_magical_lands', 'zin_shared_borders_dark_lands', 'zin_shared_bound_away_from_host']) assert(triggers.includes(n), n);
+  for (const n of ['zin_shared_has_coast', 'zin_shared_is_island_realm', 'zin_shared_borders_ember_lands', 'zin_shared_borders_magical_lands', 'zin_shared_borders_dark_lands', 'zin_shared_bound_away_from_host']) assert(triggers.includes(n), n);
   // The generic triggers are declared by exactly one tree.
   const all = IDS.flatMap(id => Object.keys(BASE[id].scripted_triggers ?? {}).concat(Object.keys(BASE[id].scripted_effects ?? {})));
   assert.equal(new Set(all).size, all.length);
@@ -506,11 +504,11 @@ test('The module tags give each module a single root where a tier B tree copies 
   assert.deepEqual(rootsOf('shared_east_lands', 'E9'), ['question_of_the_east']);
   assert.deepEqual(rootsOf('shared_islands_of_the_south', 'I2'), ['the_guest_right']);
   assert.deepEqual(rootsOf('shared_islands_of_the_south', 'I9'), ['the_storm_years']);
-  // The Dark Lands and Dead Lands modules D1-D12 and L1-L10 are tagged; D12 and L9 have one root.
+  // The Dark Lands and Ember Lands modules D1-D12 and L1-L10 are tagged; D12 and L9 have one root.
   assert.equal(rootsOf('shared_dark_lands', 'D12').length, 1);
-  assert.equal(rootsOf('shared_dead_lands', 'L9').length, 1);
+  assert.equal(rootsOf('shared_ember_lands', 'L9').length, 1);
   assert(new Set(BASE.shared_dark_lands.focuses.map(f => f.module).filter(Boolean)).size === 12);
-  assert.equal(new Set(BASE.shared_dead_lands.focuses.map(f => f.module).filter(Boolean)).size, 10);
+  assert.equal(new Set(BASE.shared_ember_lands.focuses.map(f => f.module).filter(Boolean)).size, 10);
   // Each module spirit of a tree carries the tag of the module whose focus adds it.
   for (const [k, s] of Object.entries(BASE.shared_east_lands.spirits)) assert(s.module, `east spirit ${k}`);
   for (const [k, s] of Object.entries(BASE.shared_islands_of_the_south.spirits)) assert(s.module, `islands spirit ${k}`);
@@ -629,12 +627,12 @@ test('Fails: an unknown scripted trigger, effect, flag, event, spirit, opinion m
 });
 
 test('Fails: a duplicate focus key, a duplicate position, a missing prerequisite, a prerequisite above, a cycle and a bad day count', async () => {
-  await failsWith(raw => { raw.shared_dead_lands.focuses.push({ ...focus(raw, 'shared_dead_lands', 'the_lords_hall') }); }, 'duplicate_key', /the_lords_hall/);
-  await failsWith(raw => { focus(raw, 'shared_dead_lands', 'the_free_folk').x = 1; focus(raw, 'shared_dead_lands', 'the_free_folk').y = 1; }, 'duplicate_position', /the_free_folk/);
-  await failsWith(raw => { focus(raw, 'shared_dead_lands', 'the_free_folk').prerequisite = [['the_missing_focus']]; }, 'prerequisite_missing', /the_missing_focus/);
-  await failsWith(raw => { focus(raw, 'shared_dead_lands', 'the_lords_hall').y = 5; }, 'prerequisite_above', /the_lords_hall/);
-  await failsWith(raw => { focus(raw, 'shared_dead_lands', 'the_freehold').prerequisite = [['the_lords_hall']]; }, 'prerequisite_cycle');
-  await failsWith(raw => { focus(raw, 'shared_dead_lands', 'the_freehold').days = 40; }, 'days_multiple', /the_freehold/);
+  await failsWith(raw => { raw.shared_ember_lands.focuses.push({ ...focus(raw, 'shared_ember_lands', 'the_lords_hall') }); }, 'duplicate_key', /the_lords_hall/);
+  await failsWith(raw => { focus(raw, 'shared_ember_lands', 'the_free_folk').x = 1; focus(raw, 'shared_ember_lands', 'the_free_folk').y = 1; }, 'duplicate_position', /the_free_folk/);
+  await failsWith(raw => { focus(raw, 'shared_ember_lands', 'the_free_folk').prerequisite = [['the_missing_focus']]; }, 'prerequisite_missing', /the_missing_focus/);
+  await failsWith(raw => { focus(raw, 'shared_ember_lands', 'the_lords_hall').y = 5; }, 'prerequisite_above', /the_lords_hall/);
+  await failsWith(raw => { focus(raw, 'shared_ember_lands', 'the_freehold').prerequisite = [['the_lords_hall']]; }, 'prerequisite_cycle');
+  await failsWith(raw => { focus(raw, 'shared_ember_lands', 'the_freehold').days = 40; }, 'days_multiple', /the_freehold/);
 });
 
 test('Fails: an unknown icon and picture, a spirit equal to a focus key, a modifier the game lacks, an exclusive that is missing', async () => {
@@ -679,9 +677,9 @@ test('Fails: allow_branch conditions that change in play, a refreshed condition 
 });
 
 test('Fails: a country in two trees, a tree id the tiers do not allow, and a secret gate that cannot be proved', async () => {
-  await failsWith(raw => { raw.shared_dead_lands.countries.push('Volgan'); raw.shared_dark_lands.countries.push('Volgan'); }, 'coverage_many', /Volgan/);
-  await failsWith(raw => { raw.shared_dead_lands.id = 'dead_lands'; }, 'schema');
-  await failsWith(raw => { raw.shared_dead_lands.countries.push('Nowhere Land'); }, 'schema', /Nowhere Land/);
+  await failsWith(raw => { raw.shared_ember_lands.countries.push('Volgan'); raw.shared_dark_lands.countries.push('Volgan'); }, 'coverage_many', /Volgan/);
+  await failsWith(raw => { raw.shared_ember_lands.id = 'ember_lands'; }, 'schema');
+  await failsWith(raw => { raw.shared_ember_lands.countries.push('Nowhere Land'); }, 'schema', /Nowhere Land/);
 });
 
 test('Fails: a text with a banned word is the same word the build-wide text scan would reject (consistency of the two lists)', () => {

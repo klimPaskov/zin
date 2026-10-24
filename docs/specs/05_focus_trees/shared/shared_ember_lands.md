@@ -4,19 +4,19 @@
 
 ## Purpose
 
-The shared focus tree for the **6 tier C freeholds of the Ember Lands** (tree id `shared_dead_lands`, focus ids `zin_shared_dead_lands_<key>`, data file `docs/design/focus/shared_dead_lands.json`): small realms of men on the coasts and hills between Mirolon and Volgan's Nafeher. It plays [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md) from a freehold's walls: keep the old quiet with Nafeher, stand with Mirolon's wardens, or wall in; live by the furnace lands' iron and essence; watch the storm coasts; and, if the storm takes them, survive as Volgan's client crown or Mirolon's ward until the storm lifts.
+The shared focus tree for the **6 tier C freeholds of the Ember Lands** (tree id `shared_ember_lands`, focus ids `zin_shared_ember_lands_<key>`, data file `docs/design/focus/shared_ember_lands.json`): small realms of men on the coasts and hills between Mirolon and Volgan's Nafeher. It plays [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md) from a freehold's walls: keep the old quiet with Nafeher, stand with Mirolon's wardens, or wall in; live by the furnace lands' iron and essence; watch the storm coasts; and, if the storm takes them, survive as Volgan's client crown or Mirolon's ward until the storm lifts.
 
 The tree is the **module library** for the Ember Lands tier B trees ([../regional/ember_lands.md](../regional/ember_lands.md)); modules L1 to L10 may be copied under new keys.
 
 | Item | Value |
 | --- | --- |
-| Tree id | `shared_dead_lands` |
+| Tree id | `shared_ember_lands` |
 | Tier | C (shared) |
 | Countries (6) | Mencnon, Bennen, Dra, Gelon, Luminor, Mirodor |
 | Focuses | 47 (root and modules L1 to L10) |
 | Width | columns 0 to 29, rows 0 to 8 |
-| Events | namespace `zin_shared_dead_lands` |
-| Spirits | `zin_shared_dead_lands_<key>` |
+| Events | namespace `zin_shared_ember_lands` |
+| Spirits | `zin_shared_ember_lands_<key>` |
 
 ## Lore basis
 
@@ -40,13 +40,13 @@ On 1 Thaw 4A 1748 every available focus is about the hall, the furnace lands, wa
 | --- | --- | --- |
 | Region | every country of the tree | Root, L1, L2, L7, L9 |
 | Overlord: free | Volgan exists and ROOT is not Volgan's subject | L3 Nafeher's Shadow |
-| Coast | check `zin_shared_dead_lands_is_coastal` | L4 Storm Coasts |
+| Coast | check `zin_shared_ember_lands_is_coastal` | L4 Storm Coasts |
 | Overlord: Volgan | `subject_of: Volgan` | L5 A Client Crown |
 | Overlord: Mirolon | `subject_of: Mirolon` | L6 Under the Wardens |
 | Ideology | Shadow / Light / Dominion (Wild is the start) | L8 The Old Customs |
 | Story | `zin_volgan_body_destroyed` | L10 When the Storm Lifts |
 
-Every `allow_branch` head repeats its condition in `available`. The engine evaluates `allow_branch` at game start and again when `mark_focus_tree_layout_dirty` runs. The Dominion pulse (`zin_dominion.1`, every 30 days) runs `mark_focus_tree_layout_dirty = yes` for every country with `zin_region_dead_lands` (economy spec's region flag), so a freehold whose overlord or government changed sees the right branches within a month (dependency on the Volgan mechanic; requested there). The same pulse shows L10 within a month of the body breaking.
+Every `allow_branch` head repeats its condition in `available`. The engine evaluates `allow_branch` at game start and again when `mark_focus_tree_layout_dirty` runs. The Dominion pulse (`zin_dominion.1`, every 30 days) runs `mark_focus_tree_layout_dirty = yes` for every country with `zin_region_ember_lands` (economy spec's region flag), so a freehold whose overlord or government changed sees the right branches within a month (dependency on the Volgan mechanic; requested there). The same pulse shows L10 within a month of the body breaking.
 
 All six realms are men, Wild (`zin_wild_freeholds`, Freeholds) in `docs/design/countries.csv`. People branches are not needed today; if a released realm of another people takes this tree, it sees every module (no module assumes men).
 
@@ -73,10 +73,10 @@ Names use `[ROOT.GetName]` and `[ROOT.GetAdjective]`: "The Freehold of [ROOT.Get
 ### Notation used in the tables
 
 - **Prerequisites:** `a + b` means a and b; `a / b` means a or b.
-- **Shorthands:** **Strength ±n** = `for_country Volgan: call zin_volgan_add_dominion_strength(value = n)`. **Proof ±n** = `for_country Mirolon: call zin_mirolon_add_proof(value = n)`. **Passes ±n** = `for_country Mirolon: call zin_mirolon_add_passes(value = n)`. **Footholds ±n** = `call zin_afrit_add_footholds(value = n)` on ROOT. **Autonomy +r** = `call zin_shared_dead_lands_gain_autonomy(value = r)`. **Opinion X ±n (k) both ways** = `for_country X: call zin_shared_dead_lands_opinion_both_ways(modifier = k)`: X and ROOT both gain the tree's opinion modifier `zin_shared_dead_lands_<k>` toward each other. The compiler wraps every `for_country` effect in `if exists X`.
+- **Shorthands:** **Strength ±n** = `for_country Volgan: call zin_volgan_add_dominion_strength(value = n)`. **Proof ±n** = `for_country Mirolon: call zin_mirolon_add_proof(value = n)`. **Passes ±n** = `for_country Mirolon: call zin_mirolon_add_passes(value = n)`. **Footholds ±n** = `call zin_afrit_add_footholds(value = n)` on ROOT. **Autonomy +r** = `call zin_shared_ember_lands_gain_autonomy(value = r)`. **Opinion X ±n (k) both ways** = `for_country X: call zin_shared_ember_lands_opinion_both_ways(modifier = k)`: X and ROOT both gain the tree's opinion modifier `zin_shared_ember_lands_<k>` toward each other. The compiler wraps every `for_country` effect in `if exists X`.
 - **Avail:** the focus's `available` list. **Text:** what the focus description says. Country names in conditions and effects are resolved to tags by the compiler.
 - **AI** is `ai.base` and its factors. "0; N when available" or "N when available" means `ai.base` N: the focus is gated by `available`, so it carries no weight before. **hist** = factor applied with `check zin_rules_is_historical`; **free** = `check zin_rules_is_free`.
-- Spirit keys compile to `zin_shared_dead_lands_<key>`. Research categories are the warfare spec's `zin_cat_*` ([../../03_gameplay/01_warfare.md](../../03_gameplay/01_warfare.md)).
+- Spirit keys compile to `zin_shared_ember_lands_<key>`. Research categories are the warfare spec's `zin_cat_*` ([../../03_gameplay/01_warfare.md](../../03_gameplay/01_warfare.md)).
 - No focus uses a `raw` block.
 
 ### Root
@@ -117,20 +117,20 @@ Names use `[ROOT.GetName]` and `[ROOT.GetAdjective]`: "The Freehold of [ROOT.Get
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI | Icon |
 | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
 | `the_southern_storm` | The Storm over Nafeher | the_freehold | – | 11,1 | 35 | allow_branch and Avail: exists Volgan; not subject_of Volgan. event `rumours_from_nafeher` | 30 | `storm_veil` |
-| `keep_the_old_quiet` | Keep the Old Quiet | the_southern_storm | the_wardens_friend, behind_our_walls | 9,2 | 35 | event_for Volgan `freehold_offers_tribute` | 15; ×2 with check zin_shared_dead_lands_borders_volgan | `tribute_chest` |
-| `the_wardens_friend` | The Wardens' Friend | the_southern_storm | keep_the_old_quiet, behind_our_walls | 11,2 | 35 | Avail: exists Mirolon. event_for Mirolon `freehold_offers_friendship`; Proof +2 | 15; ×2 with check zin_shared_dead_lands_borders_mirolon; hist ×1.5 | `warden_crown` |
+| `keep_the_old_quiet` | Keep the Old Quiet | the_southern_storm | the_wardens_friend, behind_our_walls | 9,2 | 35 | event_for Volgan `freehold_offers_tribute` | 15; ×2 with check zin_shared_ember_lands_borders_volgan | `tribute_chest` |
+| `the_wardens_friend` | The Wardens' Friend | the_southern_storm | keep_the_old_quiet, behind_our_walls | 11,2 | 35 | Avail: exists Mirolon. event_for Mirolon `freehold_offers_friendship`; Proof +2 | 15; ×2 with check zin_shared_ember_lands_borders_mirolon; hist ×1.5 | `warden_crown` |
 | `behind_our_walls` | Behind Our Walls | the_southern_storm | keep_the_old_quiet, the_wardens_friend | 13,2 | 35 | building bunker 2 @capital | 15 | `fort_wall` |
 | `the_quiet_kept` | The Quiet Kept | keep_the_old_quiet | – | 9,3 | 35 | Avail: flag zin_dominion_tributary_friend. stability 0.05; political_power 50 | 20 | `olive_branch` |
-| `join_the_warden_league` | Join the Warden League | the_wardens_friend | – | 11,3 | 35 | Avail: check zin_shared_dead_lands_league_open (flag zin_mirolon_league_friend; Mirolon leads a faction; ROOT in no faction). join_faction_of Mirolon | 30; hist ×2 | `banner_league` |
+| `join_the_warden_league` | Join the Warden League | the_wardens_friend | – | 11,3 | 35 | Avail: check zin_shared_ember_lands_league_open (flag zin_mirolon_league_friend; Mirolon leads a faction; ROOT in no faction). join_faction_of Mirolon | 30; hist ×2 | `banner_league` |
 | `the_walls_hold` | The Walls Hold | behind_our_walls | – | 13,3 | 35 | add_spirit walls_hold | 15 | `pass_fort` |
 
 ### L4. Storm Coasts
 
-**Purpose:** harbours on a coast that wrecks foreign fleets (the magic spec's storm pulse spares Ember Lands realms). **Opens:** `allow_branch` and `available` on `storm_coast_harbour`: check `zin_shared_dead_lands_is_coastal`.
+**Purpose:** harbours on a coast that wrecks foreign fleets (the magic spec's storm pulse spares Ember Lands realms). **Opens:** `allow_branch` and `available` on `storm_coast_harbour`: check `zin_shared_ember_lands_is_coastal`.
 
 | Key | Name | Prerequisites | Exclusive with | x,y | Days | Effects | AI | Icon |
 | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
-| `storm_coast_harbour` | A Harbour on the Storm Coast | the_freehold | – | 16,1 | 35 | Avail: check zin_shared_dead_lands_is_coastal. building dockyard 1 @random_coastal | 25 | `harbour_lake` |
+| `storm_coast_harbour` | A Harbour on the Storm Coast | the_freehold | – | 16,1 | 35 | Avail: check zin_shared_ember_lands_is_coastal. building dockyard 1 @random_coastal | 25 | `harbour_lake` |
 | `storm_wise_sailors` | Storm-Wise Sailors | storm_coast_harbour | – | 15,2 | 35 | navy_experience 10; research [zin_cat_galleys] 50% ×1 | 15 | `storm_sea` |
 | `cliff_beacons` | Cliff Beacons | storm_coast_harbour | – | 17,2 | 35 | building coastal_bunker 1 @random_coastal | 15 | `beacon` |
 | `the_storm_shelters_us` | The Storm Shelters Us | storm_wise_sailors + cliff_beacons | – | 16,3 | 70 | add_spirit storm_shelter | 15 | `storm_sea` |
@@ -187,7 +187,7 @@ Names use `[ROOT.GetName]` and `[ROOT.GetAdjective]`: "The Freehold of [ROOT.Get
 | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
 | `the_freehold_at_war` | [ROOT.GetName] at War | – | – | 10,6 | 21 | Avail: at_war. war_support 0.10; manpower 1000 | 0; 300 when available | `sword_shield` |
 | `hold_the_walls` | Hold the Walls | the_freehold_at_war | – | 9,7 | 21 | building bunker 1 @capital; timed_spirit hold_the_walls_spirit 180 | 100 | `fort_wall` |
-| `the_freeholders_rise` | The Freeholders Rise | the_freehold_at_war | – | 11,7 | 21 | Avail: check zin_shared_dead_lands_core_occupied (an enemy controls a core state of ROOT). call zin_shared_dead_lands_raise_resistance | 100 when available | `banner_plain` |
+| `the_freeholders_rise` | The Freeholders Rise | the_freehold_at_war | – | 11,7 | 21 | Avail: check zin_shared_ember_lands_core_occupied (an enemy controls a core state of ROOT). call zin_shared_ember_lands_raise_resistance | 100 when available | `banner_plain` |
 | `the_freehold_returns` | The Freehold Returns | hold_the_walls / the_freeholders_rise | – | 10,8 | 35 | Avail: not at_war. stability 0.10 | 100 | `olive_branch` |
 
 ### L10. When the Storm Lifts
@@ -225,13 +225,13 @@ The "Removed" column is the spirit's `cancel` list: conditions under which the e
 
 Every modifier above exists in the 1.19.3 modifier documentation (checked 19 October 2026). Each spirit's icon is the icon key of the focus that adds it (`GFX_idea_zin_<key>`).
 
-### Events (namespace `zin_shared_dead_lands`)
+### Events (namespace `zin_shared_ember_lands`)
 
 | # | Key | Title | To | Trigger | Picture | Options |
 | ---: | --- | --- | --- | --- | --- | --- |
 | 1 | `freehold_hall` | The Hall of [ROOT.GetName] | ROOT | Root | `generic_court` | "The lord speaks." (political_power 25; AI 50) / "The freeholders speak." (stability 0.02; AI 50) |
-| 2 | `rumours_from_nafeher` | The Storm over Nafeher | ROOT | The Storm over Nafeher | `dead_lands_storm` | One option. Text: the storms over Nafeher have not lifted in a year; riders from the south buy iron and ask no prices |
-| 3 | `freehold_offers_tribute` | Tribute from [FROM.GetName] | Volgan | Keep the Old Quiet | `dead_lands_storm` | "The quiet holds." (call `zin_shared_dead_lands_accept_tribute`: non-aggression pact with FROM; Volgan +25 political power; FROM −50 political power; FROM country flag `zin_dominion_tributary_friend`; AI 80) / "Nafeher takes no gifts." (AI 20) |
+| 2 | `rumours_from_nafeher` | The Storm over Nafeher | ROOT | The Storm over Nafeher | `ember_lands_storm` | One option. Text: the storms over Nafeher have not lifted in a year; riders from the south buy iron and ask no prices |
+| 3 | `freehold_offers_tribute` | Tribute from [FROM.GetName] | Volgan | Keep the Old Quiet | `ember_lands_storm` | "The quiet holds." (call `zin_shared_ember_lands_accept_tribute`: non-aggression pact with FROM; Volgan +25 political power; FROM −50 political power; FROM country flag `zin_dominion_tributary_friend`; AI 80) / "Nafeher takes no gifts." (AI 20) |
 | 4 | `freehold_offers_friendship` | Friendship from [FROM.GetName] | Mirolon | The Wardens' Friend | `mirolon_passes` | "Stand together." (for_country FROM: flag `zin_mirolon_league_friend`; Opinion FROM +15 (wardens_friends) both ways; AI 80) / "We keep our own counsel." (AI 20) |
 | 5 | `houses_come_south` | The Houses Come South | ROOT | The Houses Come South | `houses` | One option. Text: healers and scribes of the Houses of the First Light ask to open a house of healing; they bring bread and ask little |
 | 6 | `the_storm_lifts` | The Storm Lifts | ROOT | The Storm Lifts | `volgan_broken` (gate `zin_volgan_body_destroyed`; the focus needs the flag) | One option. The text keeps Volgan's fate open: "The storms over Nafeher thin. What remains of its master, no one living can say." |
@@ -248,13 +248,13 @@ The tree is data, compiled by the focus compiler module `tools/content/modules/f
 
 | Path | Written by | Content |
 | --- | --- | --- |
-| `docs/design/focus/shared_dead_lands.json` | data (source of truth) | Tree data: `"id": "shared_dead_lands"`, `"tier": "shared"`, the 6 countries, the opinion modifiers below |
-| `common/national_focus/zin_shared_dead_lands.txt` | `focus_compiler.mjs` | Compiled tree |
-| `common/ideas/zin_focus_shared_dead_lands.txt` | `focus_compiler.mjs` | Spirits |
-| `events/zin_shared_dead_lands.txt` | `focus_compiler.mjs` | Events 1 to 6 |
-| `common/scripted_triggers/zin_shared_dead_lands.txt`, `common/scripted_effects/zin_shared_dead_lands.txt` | `focus_compiler.mjs` | Tree triggers and effects below |
-| `common/opinion_modifiers/zin_shared_dead_lands.txt` | `focus_compiler.mjs` (`opinion_modifiers` block, F1) | Tree opinion modifiers below |
-| `localisation/english/zin_focus_shared_dead_lands_l_english.yml` | `focus_compiler.mjs` | Text, UTF-8 with BOM |
+| `docs/design/focus/shared_ember_lands.json` | data (source of truth) | Tree data: `"id": "shared_ember_lands"`, `"tier": "shared"`, the 6 countries, the opinion modifiers below |
+| `common/national_focus/zin_shared_ember_lands.txt` | `focus_compiler.mjs` | Compiled tree |
+| `common/ideas/zin_focus_shared_ember_lands.txt` | `focus_compiler.mjs` | Spirits |
+| `events/zin_shared_ember_lands.txt` | `focus_compiler.mjs` | Events 1 to 6 |
+| `common/scripted_triggers/zin_shared_ember_lands.txt`, `common/scripted_effects/zin_shared_ember_lands.txt` | `focus_compiler.mjs` | Tree triggers and effects below |
+| `common/opinion_modifiers/zin_shared_ember_lands.txt` | `focus_compiler.mjs` (`opinion_modifiers` block, F1) | Tree opinion modifiers below |
+| `localisation/english/zin_focus_shared_ember_lands_l_english.yml` | `focus_compiler.mjs` | Text, UTF-8 with BOM |
 
 **Format.** The tree uses two compiler blocks of decision F1: the optional `"cancel"` list on a spirit (compiled to the idea's `cancel` trigger) and the tree-level `"opinion_modifiers"` block (compiled to `common/opinion_modifiers/zin_<tree>.txt`, ids `zin_<tree>_<key>`).
 
@@ -264,8 +264,8 @@ The tree is data, compiled by the focus compiler module `tools/content/modules/f
 
 | Id | Value | Decay | Use |
 | --- | ---: | --- | --- |
-| `zin_shared_dead_lands_wardens_friends` | +15 | 0.25 a month | Mirolon and a freehold, both ways (event 4) |
-| `zin_shared_dead_lands_exiles_return` | +15 | 0.5 a month | Mirolon and a freehold, both ways (*The Exiles Return*) |
+| `zin_shared_ember_lands_wardens_friends` | +15 | 0.25 a month | Mirolon and a freehold, both ways (event 4) |
+| `zin_shared_ember_lands_exiles_return` | +15 | 0.5 a month | Mirolon and a freehold, both ways (*The Exiles Return*) |
 
 ### Tree-declared scripted triggers and effects
 
@@ -273,15 +273,15 @@ The compiler writes Volgan's and Mirolon's tags into these bodies from the roste
 
 | Name | Kind | Scope | Does / true when |
 | --- | --- | --- | --- |
-| `zin_shared_dead_lands_is_coastal` | trigger | country | `any_owned_state = { is_coastal = yes }` |
-| `zin_shared_dead_lands_borders_volgan` | trigger | country | `any_neighbor_country = { tag = <Volgan> }` |
-| `zin_shared_dead_lands_borders_mirolon` | trigger | country | `any_neighbor_country = { tag = <Mirolon> }` |
-| `zin_shared_dead_lands_league_open` | trigger | country | `has_country_flag = zin_mirolon_league_friend`, `<Mirolon>` exists, `<Mirolon> = { is_faction_leader = yes }`, `is_in_faction = no` |
-| `zin_shared_dead_lands_core_occupied` | trigger | country | `any_core_state = { controller = { has_war_with = ROOT } }` |
-| `zin_shared_dead_lands_gain_autonomy` (`value`) | effect | ROOT | `if = { limit = { is_subject = yes } add_autonomy_ratio = { value = $value$ } }` |
-| `zin_shared_dead_lands_raise_resistance` | effect | ROOT | `every_core_state = { limit = { controller = { has_war_with = ROOT } } add_resistance = 15 }` |
-| `zin_shared_dead_lands_opinion_both_ways` (`modifier`) | effect | the other country | `add_opinion_modifier = { target = ROOT modifier = zin_shared_dead_lands_$modifier$ } ROOT = { add_opinion_modifier = { target = PREV modifier = zin_shared_dead_lands_$modifier$ } }` |
-| `zin_shared_dead_lands_accept_tribute` | effect | Volgan (event 3) | `diplomatic_relation = { country = FROM relation = non_aggression_pact active = yes }`; `add_political_power = 25`; `FROM = { add_political_power = -50 set_country_flag = zin_dominion_tributary_friend }` |
+| `zin_shared_ember_lands_is_coastal` | trigger | country | `any_owned_state = { is_coastal = yes }` |
+| `zin_shared_ember_lands_borders_volgan` | trigger | country | `any_neighbor_country = { tag = <Volgan> }` |
+| `zin_shared_ember_lands_borders_mirolon` | trigger | country | `any_neighbor_country = { tag = <Mirolon> }` |
+| `zin_shared_ember_lands_league_open` | trigger | country | `has_country_flag = zin_mirolon_league_friend`, `<Mirolon>` exists, `<Mirolon> = { is_faction_leader = yes }`, `is_in_faction = no` |
+| `zin_shared_ember_lands_core_occupied` | trigger | country | `any_core_state = { controller = { has_war_with = ROOT } }` |
+| `zin_shared_ember_lands_gain_autonomy` (`value`) | effect | ROOT | `if = { limit = { is_subject = yes } add_autonomy_ratio = { value = $value$ } }` |
+| `zin_shared_ember_lands_raise_resistance` | effect | ROOT | `every_core_state = { limit = { controller = { has_war_with = ROOT } } add_resistance = 15 }` |
+| `zin_shared_ember_lands_opinion_both_ways` (`modifier`) | effect | the other country | `add_opinion_modifier = { target = ROOT modifier = zin_shared_ember_lands_$modifier$ } ROOT = { add_opinion_modifier = { target = PREV modifier = zin_shared_ember_lands_$modifier$ } }` |
+| `zin_shared_ember_lands_accept_tribute` | effect | Volgan (event 3) | `diplomatic_relation = { country = FROM relation = non_aggression_pact active = yes }`; `add_political_power = 25`; `FROM = { add_political_power = -50 set_country_flag = zin_dominion_tributary_friend }` |
 
 Every engine effect and trigger named here (`is_coastal`, `any_neighbor_country`, `is_faction_leader`, `is_in_faction`, `any_core_state`, `every_core_state`, `has_war_with`, `add_autonomy_ratio`, `add_resistance`, `add_opinion_modifier`, `diplomatic_relation`, `mark_focus_tree_layout_dirty`) exists in the 1.19.3 documentation.
 
@@ -295,7 +295,7 @@ Every engine effect and trigger named here (`is_coastal`, `any_neighbor_country`
 | `zin_afrit_add_footholds` | effect | Afrit mechanic |
 | `zin_politics_add_drift` | effect | ideologies and politics spec |
 | `zin_volgan_marches`, `zin_volgan_body_destroyed` | story flags | Volgan |
-| `zin_region_dead_lands` | country flag | economy spec |
+| `zin_region_ember_lands` | country flag | economy spec |
 | `zin_rules_is_historical`, `zin_rules_is_free` | rule wrappers | defines and rules spec |
 
 ### Data checks (compiler and build test)
@@ -321,14 +321,14 @@ Under PLAUSIBLE each "hist" factor f becomes 1 + (f − 1) ÷ 2; under FREE base
 
 ## Acceptance
 
-1. The compiler accepts `shared_dead_lands.json`: 47 focuses, unique keys and positions, every prerequisite above its focus, exclusives symmetric, days multiples of 7 within 1 to 20 weeks, every icon and event picture a catalog key, zero `raw` blocks. The HOI4 Agent Tools focus inspector and script validator report no errors in the staged files.
-2. The coverage check maps each of the 6 countries to `shared_dead_lands` and to no other tree; none of them still shows the interim `zin_long_peace_*` tree.
+1. The compiler accepts `shared_ember_lands.json`: 47 focuses, unique keys and positions, every prerequisite above its focus, exclusives symmetric, days multiples of 7 within 1 to 20 weeks, every icon and event picture a catalog key, zero `raw` blocks. The HOI4 Agent Tools focus inspector and script validator report no errors in the staged files.
+2. The coverage check maps each of the 6 countries to `shared_ember_lands` and to no other tree; none of them still shows the interim `zin_long_peace_*` tree.
 3. On 1 Thaw 4A 1748: L5, L6, L8 and L10 are hidden for all six; L3 is visible for all six; no available focus declares war or claims.
 4. In a scripted test, *Keep the Old Quiet* accepted by Volgan sets `zin_dominion_tributary_friend` on the realm and creates a non-aggression pact between them.
 5. In a scripted test, a realm made Volgan's client crown (`zin_volgan_make_client`) sees L5 and loses L3 within 30 days (the next `zin_dominion.1` pulse).
 6. After `zin_volgan_body_destroyed`, *Free of Nafeher* raises a client's autonomy by 50%, and no text states Volgan's fate.
 7. Every modifier in the spirit table exists in the modifier documentation; every called effect and checked trigger exists in the staged files.
-8. The isolated Linux run (one in-game year from phase 3 on) logs no error line that names a `zin_shared_dead_lands` file, focus, idea or event.
+8. The isolated Linux run (one in-game year from phase 3 on) logs no error line that names a `zin_shared_ember_lands` file, focus, idea or event.
 
 ## Open questions
 

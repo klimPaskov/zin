@@ -451,10 +451,27 @@ function writeUnits(staged, model) {
 // ------------------------------------------------------------------------------------------------ equipment
 const iface = a => a.logistics ? (a.kind === 'convoy' ? 'interface_category_other_ships' : 'interface_category_land') : a.kindAir ? 'interface_category_air' : 'interface_category_land';
 
+// Equipment is parsed before the scripted triggers exist: a scripted trigger in `can_be_produced` or
+// `can_be_lend_leased` crashes the game while it loads (SIGSEGV after the ship modules, Linux run of 24 October 2026).
+// These blocks may use only engine triggers, so the sky rule is written as the game-rule test itself, as vanilla's
+// early-loaded ideas do (common/ideas/_manpower.txt).
+export const EQUIPMENT_TRIGGERS = new Set(['OR', 'AND', 'NOT', 'always', 'tag', 'original_tag', 'has_country_flag', 'has_game_rule', 'rule', 'option', 'has_dlc', 'has_idea']);
+const SKIES_RULE = 'zin_rule_skies';
+export function checkEquipmentTriggers(id, block) {
+  const inner = block.replace(/^\s*(can_be_produced|can_be_lend_leased)\s*=\s*\{/, '').replace(/#[^\n]*/g, '');
+  for (const m of inner.matchAll(/([A-Za-z_][A-Za-z0-9_]*)\s*=/g)) {
+    if (!EQUIPMENT_TRIGGERS.has(m[1])) err(`warfare: ${id} tests ${m[1]} in an equipment trigger; only engine triggers load there (a scripted trigger crashes the game)`);
+  }
+  return block;
+}
+
 function producePredicate(model, prod, rule) {
   const parts = [];
   for (const p of prod) parts.push(p.startsWith('country:') ? `tag = ${model.tag(p.slice(8))}` : `has_country_flag = zin_people_${p}`);
-  if (rule === 'beasts') return `\t\tcan_be_produced = {\n\t\t\tzin_rules_skies_beasts = yes\n\t\t\t${parts.length === 1 ? parts[0] : 'OR = { ' + parts.join(' ') + ' }'}\n\t\t}`;
+  if (rule) {
+    if (!model.raw.techIds.gameRules?.[SKIES_RULE]?.includes(rule)) err(`warfare: the sky rule has no option ${rule}`);
+    return `\t\tcan_be_produced = {\n\t\t\thas_game_rule = { rule = ${SKIES_RULE} option = ${rule} }\n\t\t\t${parts.length === 1 ? parts[0] : 'OR = { ' + parts.join(' ') + ' }'}\n\t\t}`;
+  }
   return `\t\tcan_be_produced = {\n\t\t\t${parts.length === 1 ? parts[0] : 'OR = {\n' + parts.map(x => `\t\t\t\t${x}`).join('\n') + '\n\t\t\t}'}\n\t\t}`;
 }
 
@@ -472,7 +489,7 @@ function landEquipment(a, model, which) {
   add('group_by', 'archetype');
   add('interface_category', iface(a));
   if (a.granted) { rows.push('\t\tcan_be_produced = {\n\t\t\talways = no\n\t\t}'); rows.push('\t\tcan_be_lend_leased = {\n\t\t\talways = no\n\t\t}'); }
-  else if (a.prod?.length || a.rule) rows.push(producePredicate(model, a.prod, a.rule));
+  else if (a.prod?.length || a.rule) rows.push(checkEquipmentTriggers(a.id, producePredicate(model, a.prod, a.rule)));
   else if (a.logistics) { /* every realm may build them */ }
   else err(`warfare: ${a.id} has no producer`);
   if (a.logistics) return logisticsEquipment(a, model);

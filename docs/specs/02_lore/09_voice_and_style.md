@@ -298,8 +298,8 @@ Words given to the long dead are framed as remembered: "Words the heralds give t
 | Write | Never write | Note |
 | --- | --- | --- |
 | Aoaz | Erdae, Arda | Erdae is only the small neighbouring continent and needs an allowance |
-| the Ember Lands | the Dead Lands | Volgan's country; the realm is proposed as Puvulan |
-| the Kusmeel | the Ocean of Zol, the Ocean of Edvoid | The sea north of Zol's Mistake |
+| the Ember Lands | the Ember Lands | Volgan's country; the realm is proposed as Puvulan |
+| the Kusmeel | the Kusmeel, the Kusmeel | The sea north of Zol's Mistake |
 | the Pupor Isles | Triton's Islands | |
 | Gunwyn | Gunwaith | No "-waith" name anywhere |
 | Lerendor and Veskel | Lerendor and Lerenwaith | One crown |
@@ -341,4 +341,4 @@ Before a line is accepted, read it aloud once.
 - The replacement names in the regional dossiers (Gunwyn, Veskel, Orohaf, Melkgard, Nivaros, Naamis, Rhachia, Baelim, Tirim and the others) are proposals; if the owner changes one, the quotes that use it change with it.
 - The sea names on the map still carry "Ocean" in several dossiers; this guide avoids them in text until they are renamed.
 - Which realms use gunpowder is undecided, and the banned-word data still forbids the words.
-- The banned-word rule for "Edvoid" still offers "Zol" as its replacement, which predates the correction that Edvoid, now Kusven, is Zol's servant; the data's owner should change the hint, and Kusven needs a sealed rule in `secret_terms.json` (knowledge layers C25).
+- The banned-word rule for "Kusven" still offers "Zol" as its replacement, which predates the correction that Kusven, now Kusven, is Zol's servant; the data's owner should change the hint, and Kusven needs a sealed rule in `secret_terms.json` (knowledge layers C25).

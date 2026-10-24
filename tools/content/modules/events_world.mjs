@@ -372,7 +372,7 @@ export async function renderAll(data, countries) {
   files.set('common/opinion_modifiers/zin_lastwar.txt', opinionsFile(meta.lastwar.opinions, 'Opinion modifiers of the War of the Last Crowns.'));
   files.set('common/scripted_effects/zin_lore.txt', loreScheduler(ev.zin_lore, W));
   files.set('common/scripted_effects/zin_lore_story.txt', loreRunner(ev.zin_lore, W));
-  files.set('common/scripted_triggers/zin_lore_flavour.txt', `${HEADER}\n# The coast list of the island-fishermen events (spec 05): every realm with a state on the coast of the Ocean of Zol, never Zol itself.\n\nzin_is_zol_coast_country = {\n\tNOT = { zin_is_zol = yes }\n\tany_owned_state = { zin_is_site_ocean_of_zol_coast = yes }\n}\n`);
+  files.set('common/scripted_triggers/zin_lore_flavour.txt', `${HEADER}\n# The coast list of the island-fishermen events (spec 05): every realm with a state on the coast of the Kusmeel, never Zol itself.\n\nzin_is_zol_coast_country = {\n\tNOT = { zin_is_zol = yes }\n\tany_owned_state = { zin_is_site_ocean_of_zol_coast = yes }\n}\n`);
   files.set('common/on_actions/zin_lore.txt', loreStartup(meta));
   files.set('common/ideas/zin_lore.txt', ideasFile(meta.lore.ideas, 'Timed ideas of the flavour events.', W));
   files.set('common/opinion_modifiers/zin_lore.txt', opinionsFile(meta.lore.opinions, 'Opinion modifiers of the flavour events (zin_lore). The Eindil events\' own modifiers are the journey module\'s.'));

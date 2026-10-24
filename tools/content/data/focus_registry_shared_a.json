@@ -1,5 +1,5 @@
 {
- "source": "Registry additions of the shared_a trees (shared_cold_lands, shared_concord_dominions, shared_dark_lands, shared_dead_lands, shared_east_lands, shared_islands_of_the_south): names that mechanics, diplomacy, peoples, politics, rules and key-site modules write and the focus compiler cannot yet read from staged files, plus the allow_branch lists of decision E4 for the trees' own branch triggers. Same shape as focus_registry.json; loadRegistry reads this file next to it. Remove an entry when its module lands (docs/design/stage2/focus_shared_a.md).",
+ "source": "Registry additions of the shared_a trees (shared_cold_lands, shared_concord_dominions, shared_dark_lands, shared_ember_lands, shared_east_lands, shared_islands_of_the_south): names that mechanics, diplomacy, peoples, politics, rules and key-site modules write and the focus compiler cannot yet read from staged files, plus the allow_branch lists of decision E4 for the trees' own branch triggers. Same shape as focus_registry.json; loadRegistry reads this file next to it. Remove an entry when its module lands (docs/design/stage2/focus_shared_a.md).",
  "scripted_effects": [
   "zin_aenor_add_concord_loyalty",
   "zin_aenor_add_court_corruption",
@@ -123,7 +123,7 @@
  "faction_templates": [],
  "branch": {
   "fixed_checks": ["zin_people_is_common_folk","zin_people_includes_yeti","zin_people_includes_giants","zin_people_includes_ents","zin_people_includes_trolls","zin_people_includes_goblins","zin_people_includes_ogres","zin_east_is_south_court","zin_east_faces_rift","zin_shared_east_lands_north_coast","zin_shared_east_lands_on_road","zin_shared_islands_of_the_south_large"],
-  "refreshed_checks": ["zin_aenor_is_concord_dominion","zin_cold_is_clan_realm","zin_dark_is_accord_member","zin_dark_is_free_hold","zin_dark_is_tributary","zin_shared_cold_lands_is_coastal","zin_shared_cold_lands_near_the_castle","zin_shared_cold_lands_on_the_neck","zin_shared_cold_lands_owns_far_ice","zin_shared_dark_lands_faces_the_north","zin_shared_dark_lands_on_dark_sea","zin_shared_dead_lands_is_coastal"],
+  "refreshed_checks": ["zin_aenor_is_concord_dominion","zin_cold_is_clan_realm","zin_dark_is_accord_member","zin_dark_is_free_hold","zin_dark_is_tributary","zin_shared_cold_lands_is_coastal","zin_shared_cold_lands_near_the_castle","zin_shared_cold_lands_on_the_neck","zin_shared_cold_lands_owns_far_ice","zin_shared_dark_lands_faces_the_north","zin_shared_dark_lands_on_dark_sea","zin_shared_ember_lands_is_coastal"],
   "refreshed_flags": ["zin_tradition_middle_kingdom"],
   "patterns": []
  }

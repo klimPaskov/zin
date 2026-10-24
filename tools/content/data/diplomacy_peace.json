@@ -111,8 +111,8 @@
       "enable": ["ROOT.FROM.FROM.FROM = { any_country_with_core = { exists = yes pc_is_on_same_side_as = ROOT } }"] },
     { "id": "zin_peace_volgan_takes_the_marches", "types": ["take_states"], "desire": 150,
       "enable": ["ROOT = { tag = TAG[Volgan] }", "ROOT.FROM = { tag = TAG[Volgan] }", "ROOT.FROM.FROM = { tag = TAG[Mirolon] }"] },
-    { "id": "zin_peace_volgan_swears_the_dead_lands", "types": ["puppet"], "desire": 50,
-      "enable": ["ROOT = { tag = TAG[Volgan] }", "ROOT.FROM = { tag = TAG[Volgan] }", "ROOT.FROM.FROM.FROM = { zin_is_region_dead_lands = yes }"] },
+    { "id": "zin_peace_volgan_swears_the_ember_lands", "types": ["puppet"], "desire": 50,
+      "enable": ["ROOT = { tag = TAG[Volgan] }", "ROOT.FROM = { tag = TAG[Volgan] }", "ROOT.FROM.FROM.FROM = { zin_is_region_ember_lands = yes }"] },
     { "id": "zin_peace_zol_takes_no_land", "types": ["take_states", "puppet", "force_government", "liberate"], "desire": -1000,
       "enable": ["ROOT = { tag = TAG[Zol] }"] }
   ]

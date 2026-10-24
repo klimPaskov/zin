@@ -22,7 +22,7 @@
    "x": 5120,
    "y": 2560
   },
-  "note": "Primary coordinates are in the game layout (the cleaned 5120 x 2560 reference of 18 October 2026, with the widened central sea), because the working drawing is the un-rearranged mosaic: the East Lands, the Dead Lands and the Magical Lands sit in other places and at other scales there. Every feature on a registered sheet also carries `drawing`, its coordinates in the working-drawing frame (0 to 1 of 3200 x 2323), computed through the per-sheet transforms in `sheets`."
+  "note": "Primary coordinates are in the game layout (the cleaned 5120 x 2560 reference of 18 October 2026, with the widened central sea), because the working drawing is the un-rearranged mosaic: the East Lands, the Ember Lands and the Magical Lands sit in other places and at other scales there. Every feature on a registered sheet also carries `drawing`, its coordinates in the working-drawing frame (0 to 1 of 3200 x 2323), computed through the per-sheet transforms in `sheets`."
  },
  "orientation": {
   "north": "up",
@@ -3544,7 +3544,7 @@
   "The Vale of Aenor is plains and farmland, not beige desert: the dry yellow patches of the reference inside the Middle Lands are re-typed fertile plains.",
   "The Great Wall of Aenor is a continuous mountain barrier of elevation 5 from the Organ cape to the south coast, with Lunhrim, the Kingson ring and four gates; Kingson sits in a valley ringed by mountains.",
   "Rivers: 25 named rivers drawn from source to mouth, used as borders (Grey River, Fandan, Selenar, Aenar, Great River, Kulolo, Andos Water and others); lakes of every size are named.",
-  "Mountains and volcanoes are massive and named: the Hellfire Range with seven East Lands volcanoes, the Melty and Hardtmuth ranges, Herrodon Mountains, and the volcanoes of the Dead Lands; the map no longer wraps and has four impassable edges."
+  "Mountains and volcanoes are massive and named: the Hellfire Range with seven East Lands volcanoes, the Melty and Hardtmuth ranges, Herrodon Mountains, and the volcanoes of the Ember Lands; the map no longer wraps and has four impassable edges."
  ],
  "seas": [
   {
@@ -25094,7 +25094,7 @@
    ],
    "areaPx": 1661070,
    "notes": "Vault: the Ocean of Zol with its black islands. Drawn 'Ocean of Edvoid' (superseded).",
-   "formerLabel": "Ocean of Zol",
+   "formerLabel": "Kusmeel",
    "renamedBy": "name_table",
    "nameStatus": "owner decision"
   },
@@ -30759,7 +30759,7 @@
     0.855
    ],
    "areaPx": 103574,
-   "notes": "Drawn west of the Dead Lands.",
+   "notes": "Drawn west of the Ember Lands.",
    "formerLabel": "Sea of Deaths",
    "renamedBy": "name_table",
    "nameStatus": "proposed",
@@ -32564,7 +32564,7 @@
     0.815
    ],
    "areaPx": 118988,
-   "notes": "Drawn 'Veleeda, the Dead's Sea': the water between Mirolon's south coast and the Dead Lands' north-east.",
+   "notes": "Drawn 'Veleeda, the Dead's Sea': the water between Mirolon's south coast and the Ember Lands' north-east.",
    "formerLabel": "The Dead's Sea",
    "renamedBy": "name_table",
    "nameStatus": "proposed"
@@ -41591,8 +41591,8 @@
      ]
     ]
    },
-   "region": "dead_lands",
-   "notes": "Vault: fierce storms at sea made the Dead Lands hard for First Age explorers. Proposed permanent storm belt around the islands (attrition and port capacity modifier, see the magic spec).",
+   "region": "ember_lands",
+   "notes": "Vault: fierce storms at sea made the Ember Lands hard for First Age explorers. Proposed permanent storm belt around the islands (attrition and port capacity modifier, see the magic spec).",
    "stormZone": {
     "type": "Polygon",
     "coordinates": [
@@ -45449,7 +45449,7 @@
    "regions": [
     "east_lands",
     "south_lands",
-    "dead_lands",
+    "ember_lands",
     "magical_lands",
     "zols_mistake"
    ],
@@ -48425,7 +48425,7 @@
     "magical_lands",
     "middle_lands",
     "dark_lands",
-    "dead_lands",
+    "ember_lands",
     "aenor_isle",
     "east_lands",
     "zols_mistake",
@@ -51161,7 +51161,7 @@
    "nameStatus": "proposed"
   },
   {
-   "id": "land_dead_lands_island",
+   "id": "land_ember_lands_island",
    "name": "The Ember Isle",
    "established": false,
    "source": "reference silhouette",
@@ -51267,7 +51267,7 @@
     ]
    },
    "regions": [
-    "dead_lands"
+    "ember_lands"
    ],
    "areaPx": 21376,
    "bbox": [
@@ -51276,8 +51276,8 @@
     0.6273,
     0.9125
    ],
-   "notes": "Main island of the Dead Lands: Demon, Dolon, Nezer, Volgan's plateau.",
-   "formerLabel": "Dead Lands Island",
+   "notes": "Main island of the Ember Lands: Demon, Dolon, Nezer, Volgan's plateau.",
+   "formerLabel": "Ember Lands Island",
    "renamedBy": "name_table",
    "nameStatus": "owner decision"
   },
@@ -51830,7 +51830,7 @@
     ]
    },
    "regions": [
-    "dead_lands"
+    "ember_lands"
    ],
    "areaPx": 4960,
    "bbox": [
@@ -51840,7 +51840,7 @@
     0.8109
    ],
    "notes": "Unnamed island in the reference; keep it as drawn; name it from the region list when states are built.",
-   "formerLabel": "Island 10 (dead_lands)",
+   "formerLabel": "Island 10 (ember_lands)",
    "renamedBy": "name_table",
    "nameStatus": "proposed",
    "nameLanguage": "mirolic",
@@ -53194,7 +53194,7 @@
     ]
    },
    "regions": [
-    "dead_lands"
+    "ember_lands"
    ],
    "areaPx": 1568,
    "bbox": [
@@ -53204,7 +53204,7 @@
     0.8344
    ],
    "notes": "Unnamed island in the reference; keep it as drawn; name it from the region list when states are built.",
-   "formerLabel": "Island 33 (dead_lands)",
+   "formerLabel": "Island 33 (ember_lands)",
    "renamedBy": "name_table",
    "nameStatus": "proposed",
    "nameLanguage": "mirolic",
@@ -53940,7 +53940,7 @@
     ]
    },
    "regions": [
-    "dead_lands"
+    "ember_lands"
    ],
    "areaPx": 816,
    "bbox": [
@@ -53950,7 +53950,7 @@
     0.7656
    ],
    "notes": "Unnamed island in the reference; keep it as drawn; name it from the region list when states are built.",
-   "formerLabel": "Island 48 (dead_lands)",
+   "formerLabel": "Island 48 (ember_lands)",
    "renamedBy": "name_table",
    "nameStatus": "proposed",
    "nameLanguage": "mirolic",
@@ -54226,7 +54226,7 @@
     ]
    },
    "regions": [
-    "dead_lands"
+    "ember_lands"
    ],
    "areaPx": 720,
    "bbox": [
@@ -54236,7 +54236,7 @@
     0.9234
    ],
    "notes": "Unnamed island in the reference; keep it as drawn; name it from the region list when states are built.",
-   "formerLabel": "Island 54 (dead_lands)",
+   "formerLabel": "Island 54 (ember_lands)",
    "renamedBy": "name_table",
    "nameStatus": "proposed",
    "nameLanguage": "mirolic",
@@ -54504,7 +54504,7 @@
     ]
    },
    "regions": [
-    "dead_lands"
+    "ember_lands"
    ],
    "areaPx": 512,
    "bbox": [
@@ -54514,7 +54514,7 @@
     0.9078
    ],
    "notes": "Unnamed island in the reference; keep it as drawn; name it from the region list when states are built.",
-   "formerLabel": "Island 60 (dead_lands)",
+   "formerLabel": "Island 60 (ember_lands)",
    "renamedBy": "name_table",
    "nameStatus": "proposed"
   },
@@ -55672,7 +55672,7 @@
     "nether"
    ],
    "added": true,
-   "notes": "The Nether: the volcanic land south of the Dead Lands island and the seat of the King of Demons (vault: the Nether lies in the south of the Dead Lands). Drawn at the foot of the Dead Lands sheet and carried south past the sheet edge; sized by the repair for at least three states of three provinces. Reached over the Nether Sound from the Dead Lands island, over the Ember Narrows from the South Lands, and inland through the Cinder Gate across the Nether Mountains.",
+   "notes": "The Nether: the volcanic land south of the Ember Lands island and the seat of the King of Demons (vault: the Nether lies in the south of the Ember Lands). Drawn at the foot of the Ember Lands sheet and carried south past the sheet edge; sized by the repair for at least three states of three provinces. Reached over the Nether Sound from the Ember Lands island, over the Ember Narrows from the South Lands, and inland through the Cinder Gate across the Nether Mountains.",
    "formerLabel": "The Nether (island)",
    "renamedBy": "name_table",
    "nameStatus": "proposed",
@@ -59329,7 +59329,7 @@
    "direction": "W-E",
    "lengthClass": "long",
    "peakClass": 5,
-   "notes": "The massive northern rim of the Magical Lands: the brown highland of Herrodon and Andos Enda against the Ocean of Zol.",
+   "notes": "The massive northern rim of the Magical Lands: the brown highland of Herrodon and Andos Enda against the Kusmeel.",
    "foothillFactor": 0.8,
    "drawingOffSheet": "mag"
   },
@@ -59404,7 +59404,7 @@
    "direction": "W-E",
    "lengthClass": "short",
    "peakClass": 5,
-   "notes": "Proposed high crags of Nolorim: the high passes of the south frontier lie here (owner question 8: they may face the eastern approach or the road from the Dead Lands; the model faces them south and east).",
+   "notes": "Proposed high crags of Nolorim: the high passes of the south frontier lie here (owner question 8: they may face the eastern approach or the road from the Ember Lands; the model faces them south and east).",
    "foothillFactor": 0.8,
    "drawingOffSheet": "mag"
   },
@@ -59587,7 +59587,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "halfWidth": 0.0048,
    "direction": "W-E",
    "lengthClass": "short",
@@ -59709,12 +59709,12 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "halfWidth": 0.006,
    "direction": "N-S",
    "lengthClass": "medium",
    "peakClass": 5,
-   "notes": "Burning ridge on the west of the Dead Lands island.",
+   "notes": "Burning ridge on the west of the Ember Lands island.",
    "foothillFactor": 0.8,
    "drawing": {
     "sheet": "dead",
@@ -59813,7 +59813,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "halfWidth": 0.0036,
    "direction": "NW-SE",
    "lengthClass": "short",
@@ -61287,7 +61287,7 @@
      0.872
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "status": "active",
    "notes": "Proposed vent in the Demonic Mountains.",
    "drawing": {
@@ -61313,7 +61313,7 @@
      0.888
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "status": "active",
    "notes": "Proposed great vent of the Nether Mountains; the Abyss lies at the east end of the ridge.",
    "drawing": {
@@ -63122,7 +63122,7 @@
    "region": "magical_lands",
    "width": 1,
    "length": "short",
-   "notes": "Proposed short stream to the Ocean of Zol shore.",
+   "notes": "Proposed short stream to the Kusmeel shore.",
    "drawingOffSheet": "mag"
   },
   {
@@ -63759,7 +63759,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "width": 1,
    "length": "short",
    "notes": "Proposed scalding stream on the grey plateau.",
@@ -63989,7 +63989,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "width": 1,
    "length": "short",
    "notes": "Proposed short river through Mirolon's forest to the Dead's Sea.",
@@ -71524,7 +71524,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "density": "normal",
    "notes": "Forest of Mirolon.",
    "drawing": {
@@ -71630,7 +71630,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "density": "dense",
    "notes": "Drawn Death Forest.",
    "drawing": {
@@ -71741,7 +71741,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "density": "dense",
    "notes": "Drawn Hell Forest.",
    "drawing": {
@@ -75135,7 +75135,7 @@
     ]
    },
    "region": "zols_mistake",
-   "notes": "Vault: Šodolôrō lies within Zol's Mistake. The great black oval island in the middle of the Ocean of Zol; Šodolôro in game text.",
+   "notes": "Vault: Šodolôrō lies within Zol's Mistake. The great black oval island in the middle of the Kusmeel; Šodolôro in game text.",
    "drawing": {
     "sheet": "edv",
     "type": "Polygon",
@@ -75514,8 +75514,8 @@
     ]
    },
    "region": "zols_mistake",
-   "notes": "Vault: every black island of the Ocean of Zol is part of Zol's Mistake.",
-   "formerLabel": "Black Islands of the Ocean of Zol",
+   "notes": "Vault: every black island of the Kusmeel is part of Zol's Mistake.",
+   "formerLabel": "Black Islands of the Kusmeel",
    "renamedBy": "name_table",
    "nameStatus": "owner decision",
    "drawingOffSheet": "edv"
@@ -75554,7 +75554,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "notes": "Grey dry plateau at the heart of Volgan's dominion; hot, bare, storm-scoured.",
    "drawing": {
     "sheet": "dead",
@@ -80652,7 +80652,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "notes": "Drawn swamp east of the Mirolon forest.",
    "drawing": {
     "sheet": "mag",
@@ -90937,14 +90937,14 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "joins": [
     "Mirolon",
-    "Dead Lands"
+    "Ember Lands"
    ],
    "widthClass": "medium",
    "crossing": "sea only",
-   "notes": "Proposed water between the Mirolon peninsula and the Dead Lands: 120 pixels, stormy.",
+   "notes": "Proposed water between the Mirolon peninsula and the Ember Lands: 120 pixels, stormy.",
    "drawingOffSheet": "dead"
   },
   {
@@ -91254,7 +91254,7 @@
      ]
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "joins": [
     "Mirolon",
     "Zilin Hills"
@@ -91290,11 +91290,11 @@
    },
    "region": "nether",
    "joins": [
-    "Dead Lands Island",
+    "Ember Lands Island",
     "The Nether (island)"
    ],
    "widthClass": "narrow",
-   "notes": "Proposed narrow sound between the south shore of the Dead Lands island and the Nether; the shortest crossing into the Nether.",
+   "notes": "Proposed narrow sound between the south shore of the Ember Lands island and the Nether; the shortest crossing into the Nether.",
    "drawing": {
     "sheet": "dead",
     "type": "LineString",
@@ -91771,8 +91771,8 @@
      0.7742
     ]
    },
-   "region": "dead_lands",
-   "notes": "Proposed passes where the Mirolon Mountains close the land neck from the Zilin side; the vault speaks of Mirolon's northern passes the gate Volgan must take. The sea lies between Mirolon and the Dead Lands.",
+   "region": "ember_lands",
+   "notes": "Proposed passes where the Mirolon Mountains close the land neck from the Zilin side; the vault speaks of Mirolon's northern passes the gate Volgan must take. The sea lies between Mirolon and the Ember Lands.",
    "drawing": {
     "sheet": "mag",
     "type": "Point",
@@ -93139,7 +93139,7 @@
    },
    "region": "zols_mistake",
    "rule": "Zol capital",
-   "notes": "Seat of Zol (working table). Placed on the southern coast of the Mistake facing the Ocean of Zol; at most a town.",
+   "notes": "Seat of Zol (working table). Placed on the southern coast of the Mistake facing the Kusmeel; at most a town.",
    "drawingOffSheet": "edv"
   },
   {
@@ -93181,7 +93181,7 @@
      0.857
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "rule": "Volgan capital",
    "notes": "Seat of Volgan (working table, replaceable). Large city on the grey plateau; not a megalopolis.",
    "drawing": {
@@ -93207,7 +93207,7 @@
      0.893
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "notes": "Roka's domain.",
    "drawing": {
     "sheet": "dead",
@@ -93233,7 +93233,7 @@
     ]
    },
    "region": "nether",
-   "notes": "South of the Dead Lands: seat of the King of Demons. Proposed placement on the volcanic Nether island south of the main island (the reference has no land there; the rebuild adds it).",
+   "notes": "South of the Ember Lands: seat of the King of Demons. Proposed placement on the volcanic Nether island south of the main island (the reference has no land there; the rebuild adds it).",
    "drawing": {
     "sheet": "dead",
     "type": "Point",
@@ -93257,7 +93257,7 @@
      0.768
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "notes": "Human kingdom; Volgan's First Age conquest. Capital on the peninsula's north shore.",
    "drawing": {
     "sheet": "mag",
@@ -93282,8 +93282,8 @@
      0.798
     ]
    },
-   "region": "dead_lands",
-   "notes": "Dead Lands name.",
+   "region": "ember_lands",
+   "notes": "Ember Lands name.",
    "drawing": {
     "sheet": "mag",
     "type": "Point",
@@ -93307,7 +93307,7 @@
      0.848
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "notes": "Demon realms.",
    "drawing": {
     "sheet": "dead",
@@ -93332,8 +93332,8 @@
      0.89
     ]
    },
-   "region": "dead_lands",
-   "notes": "Dead Lands name.",
+   "region": "ember_lands",
+   "notes": "Ember Lands name.",
    "drawing": {
     "sheet": "dead",
     "type": "Point",
@@ -94252,7 +94252,7 @@
    "correction": "The second box over the mainland coast is removed: Aenor Isle is the isle alone."
   },
   {
-   "id": "region_dead_lands",
+   "id": "region_ember_lands",
    "name": "The Ember Lands",
    "established": false,
    "source": "vault",
@@ -95857,9 +95857,9 @@
    ],
    "naturalBorders": [
     "Mirolon and Volgan: Mirolon Sound.",
-    "The Dead Lands island is bounded by the Tempest Reach."
+    "The Ember Lands island is bounded by the Tempest Reach."
    ],
-   "formerLabel": "Dead Lands",
+   "formerLabel": "Ember Lands",
    "renamedBy": "name_table",
    "nameStatus": "owner decision"
   },
@@ -96266,7 +96266,7 @@
     ]
    },
    "areaPx": 42795,
-   "parent": "dead_lands",
+   "parent": "ember_lands",
    "climate": "Volcanic heat.",
    "season": "Burning all year.",
    "terrain": {
@@ -96294,7 +96294,7 @@
     "The Ember Narrows",
     "The Sea of Lava"
    ],
-   "notes": "Vault: the Nether lies in the south of the Dead Lands (region_dead_lands) and is the seat of the King of Demons. A region of its own within region_dead_lands, below it, so that the import gives it its own states; the repair adds it."
+   "notes": "Vault: the Nether lies in the south of the Ember Lands (region_ember_lands) and is the seat of the King of Demons. A region of its own within region_ember_lands, below it, so that the import gives it its own states; the repair adds it."
   },
   {
    "id": "region_zols_mistake",
@@ -99133,7 +99133,7 @@
     "The Barren Crown"
    ],
    "naturalBorders": [
-    "The Ocean of Zol is the only border; every black island belongs to the Mistake."
+    "The Kusmeel is the only border; every black island belongs to the Mistake."
    ]
   },
   {
@@ -118586,7 +118586,7 @@
      0.782
     ]
    },
-   "region": "dead_lands",
+   "region": "ember_lands",
    "notes": "Southern neck of the central landmass; Mirolon and Nan.",
    "drawingOffSheet": "dead"
   },
@@ -118604,8 +118604,8 @@
      0.9
     ]
    },
-   "region": "dead_lands",
-   "notes": "East tip of the Dead Lands island above the Abyss.",
+   "region": "ember_lands",
+   "notes": "East tip of the Ember Lands island above the Abyss.",
    "drawing": {
     "sheet": "dead",
     "type": "Point",
@@ -119037,8 +119037,8 @@
      ]
     ]
    },
-   "region": "dead_lands",
-   "notes": "Vault: in the Dead Lands, Roka and the Necklace; not the Void and not the Nether. Placed at the east tip of the Dead Lands island as a deep chasm; the rasteriser makes a black hill province with a sheer rim. Chosen from the vault's alternatives: a geographically accessible chasm.",
+   "region": "ember_lands",
+   "notes": "Vault: in the Ember Lands, Roka and the Necklace; not the Void and not the Nether. Placed at the east tip of the Ember Lands island as a deep chasm; the rasteriser makes a black hill province with a sheer rim. Chosen from the vault's alternatives: a geographically accessible chasm.",
    "drawing": {
     "sheet": "dead",
     "type": "Polygon",
@@ -119123,7 +119123,7 @@
   "Avalon Fires",
   "Benan Mountains",
   "Black Hills",
-  "Black Islands of the Ocean of Zol",
+  "Black Islands of the Kusmeel",
   "Bloody Forest",
   "Bolpor and Boldor Mountains",
   "Bordon",
@@ -119144,7 +119144,7 @@
   "Dark Forests",
   "Dark Gate",
   "Dark Lands",
-  "Dead Lands",
+  "Ember Lands",
   "Death Forest",
   "Delbiz Grasslands",
   "Demon and Dolon",
@@ -119285,7 +119285,7 @@
   "Novez Fields",
   "Obmi Jungle",
   "Ocean of Peace",
-  "Ocean of Zol",
+  "Kusmeel",
   "Ocean of the Sun",
   "Olsuaon Massif",
   "Onp Ocean",

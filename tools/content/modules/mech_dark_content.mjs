@@ -73,7 +73,7 @@ every_country = {
   add_to_array = { array = global.zin_dark_accord_rows value = THIS }
 }`);
 
-  // The Zol hook of section 9: the northern shore and the Ocean of Zol coast watch for the dead (zin_dark.80 is the events slice's).
+  // The Zol hook of section 9: the northern shore and the Kusmeel coast watch for the dead (zin_dark.80 is the events slice's).
   E_('zin_dark_on_zol_rising', `if = {
   limit = { NOT = { has_global_flag = zin_dark_shore_warned } }
   set_global_flag = zin_dark_shore_warned

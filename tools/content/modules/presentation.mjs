@@ -128,13 +128,11 @@ const rawImage = (buf, w, h) => sharp(buf, { raw: { width: w, height: h, channel
 
 // ------------------------------------------------------------------------------------------------ data
 async function readJson(file) { return JSON.parse(await readFile(file, 'utf8')); }
-// The art working copies of the cell map and event jobs when present, otherwise the tracked copy.
+// The tracked cell map is the only source, so a build never depends on the art working folder's job files (which can
+// lag a rename or change while images generate). Art jobs are written from this file, not the other way round.
 export async function loadCells() {
   const copy = await readJson(CELLS_COPY);
-  const cellsFile = `${ART}/jobs/icons-catalog-cells.json`, eventsFile = `${ART}/jobs/events-catalog-jobs.json`;
-  const icons = existsSync(cellsFile) ? (await readJson(cellsFile)).map(c => ({ sheet: c.sheet, cols: c.cols, rows: c.rows, keys: c.keys, ...(c.matte ? { matte: c.matte } : {}) })) : copy.icons;
-  const events = existsSync(eventsFile) ? (await readJson(eventsFile)).map(e => ({ id: e.id, key: e.keys[0], crop: e.crop, gate: e.gate })) : copy.events;
-  return { icons, events, copy };
+  return { icons: copy.icons, events: copy.events, copy };
 }
 
 const spriteBlock = (name, file, extra = '') => `\tspriteType = {\n\t\tname = "${name}"\n\t\ttexturefile = "${file}"${extra}\n\t}`;
@@ -284,7 +282,9 @@ export async function buildPresentation(staged, { warn = msg => process.stderr.w
   if (!pictureKeys.includes(FALLBACK_PICTURE)) throw new Error(`the fallback picture key ${FALLBACK_PICTURE} is missing`);
   for (const e of events) {
     if (!['both', 'standard', 'news'].includes(e.crop)) throw new Error(`event ${e.key}: unknown crop ${e.crop}`);
-    const rel = `events/${e.key}.png`, s = await source(rel);
+    // `raw` names the generated source when a picture's key was renamed after generation (the source keeps the name
+    // its provenance records, e.g. the Ember Lands storm generated as dead_lands_storm).
+    const rel = `events/${e.raw ?? e.key}.png`, s = await source(rel);
     if (!s.ok) { note(`${rel}: ${s.why}; uses the ${FALLBACK_PICTURE} picture`); continue; }
     const meta = await sharp(s.file).metadata();
     if (e.crop !== 'news') {

@@ -336,8 +336,8 @@ The Worshipdom's decisions are visible only to it (Afrit spec, "The secret"). Th
 | 24 | The Hall Holds | owner of Mp'E; variant for the attacker | case C1 or D1 | `yeldenne_hall` |
 | 25 | The Sealed Heart | owner of Mp'E; variant for the attacker | case C2 or D2 | `yeldenne_hall` |
 | 30 | Silence in the North | news, all | Horos dies | `yeldenne_hall` |
-| 40 | The Grave Hunt Sets Out | Volgan | decision taken | `dead_lands_storm` |
-| 41 | The Grave Hunt | owner of Mp'E, Volgan | 180 days later | `dead_lands_storm` |
+| 40 | The Grave Hunt Sets Out | Volgan | decision taken | `ember_lands_storm` |
+| 41 | The Grave Hunt | owner of Mp'E, Volgan | 180 days later | `ember_lands_storm` |
 | 50 | The Seal Resists | defiler | every 90 days of defilement | `vast_shadow` |
 | 51 | Glo Dims | news, all | defilement done | `vast_shadow` |
 | 60 | Guard the Northern Hall | Yeldenne | decision | `yeldenne_hall` |

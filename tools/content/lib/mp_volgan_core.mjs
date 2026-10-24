@@ -11,8 +11,8 @@ export function writeTriggers(V) {
   T_('zin_is_mirolon', `original_tag = ${MIR}`, 'Generated tag check (read by the interface).');
   T_('zin_dominion_is_member', ownerOr(members), 'Demon, Dolon or Nezer: the sworn realms of the Southern Dominion.');
   T_('zin_dominion_is_dark_lands_country', ownerOr(dark.map(c => c.tag)), 'Generated: the roster\'s Dark Lands countries.');
-  T_('zin_dominion_is_dead_lands_country', ownerOr(dead.map(c => c.tag)), 'Generated: the roster\'s Dead Lands countries.');
-  T_('zin_dominion_is_free_dead_realm', `zin_dominion_is_dead_lands_country = yes\nNOT = { original_tag = ${VOL} }\nNOT = { original_tag = ${MIR} }\nNOT = { is_subject_of = ${VOL} }`, 'A free Dead Lands realm: not Volgan, not Mirolon, not Volgan\'s subject.');
+  T_('zin_dominion_is_ember_lands_country', ownerOr(dead.map(c => c.tag)), 'Generated: the roster\'s Ember Lands countries.');
+  T_('zin_dominion_is_free_dead_realm', `zin_dominion_is_ember_lands_country = yes\nNOT = { original_tag = ${VOL} }\nNOT = { original_tag = ${MIR} }\nNOT = { is_subject_of = ${VOL} }`, 'A free Ember Lands realm: not Volgan, not Mirolon, not Volgan\'s subject.');
   T_('zin_dominion_is_middle_lands_state', `OR = {\n${middle.map(c => `is_core_of = ${c.tag}`).join('\n')}\n}`, 'State scope: a core of any roster Middle Lands country (the key sites region trigger may replace it with the same states).');
   T_('zin_dominion_is_bound_by_the_dead', 'OR = {\nhas_country_flag = zin_people_orcs\nhas_country_flag = zin_people_trolls\n}', 'Scope: a country of orcs or trolls (goblins are orcs today): the Dark Lands acceptance table doubles them.');
   for (const [date, key] of Object.entries(N('pace.dates'))) { trig.push(afterDateTrigger(`zin_dominion_after_${key}`, date)); K.def('trigger', `zin_dominion_after_${key}`); }
@@ -556,7 +556,7 @@ country_event = { id = zin_dominion.19 }
 ${inVol(`if = {
 limit = { is_ai = yes }
 every_enemy_country = {
-limit = { NOT = { zin_dominion_is_dead_lands_country = yes } }
+limit = { NOT = { zin_dominion_is_ember_lands_country = yes } }
 country_event = { id = zin_dominion.26 days = 30 }
 }
 }

@@ -75,7 +75,7 @@ Global variables: `zin_dark_border_tension`, `zin_dark_accord_resolve`, `zin_dar
 ## Events it fires but does not define
 
 `zin_dark.80` "Dead on the Dark Shore" and `zin_dark.82` "The South Falls Silent" belong to the war events spec (`06_events/03_war_of_the_last_crowns.md`).
-They are fired through two hooks that act once: `zin_dark_on_zol_rising` (every Dark Lands country with a northern-strait shore or an Ocean of Zol coast) and `zin_dark_on_body_destroyed` (every Dark Lands country recorded as sworn, pact 3 or Volgan's subject, by `zin_dark_was_sworn` before the fall).
+They are fired through two hooks that act once: `zin_dark_on_zol_rising` (every Dark Lands country with a northern-strait shore or an Kusmeel coast) and `zin_dark_on_body_destroyed` (every Dark Lands country recorded as sworn, pact 3 or Volgan's subject, by `zin_dark_was_sworn` before the fall).
 The pulse calls both when it sees `zin_zol_rising` or `zin_volgan_body_destroyed`; the Zol rising and Volgan's broken body may call them directly to fire the same day, and must not fire `zin_dark.80` or `.82` themselves.
 `zin_diplo.23` (the honorary-crown invitation) is fired by `zin_dark.30` and is the diplomacy slice's.
 `zin_dark.80`'s option uses the spirit `zin_dark_watch_the_shore`, defined here.

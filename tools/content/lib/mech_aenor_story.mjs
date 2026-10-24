@@ -73,7 +73,7 @@ export function aenorStory(D, T, tt) {
 			{ key: 'b', text: 'The old liberties are kept.', ai: 60, effect: list(loyAll(5), corr(-2)) },
 		] });
 	E.push({ id: 151, kind: 'country', title: 'Warnings from Mirolon', picture: 'mirolon_passes',
-		desc: 'An envoy from the passes of Mirolon asks to be heard. He says the Dead Lands are arming, and that the beacons of the south were lit twice in the winter. The court remembers 4A 1736 and smiles.',
+		desc: 'An envoy from the passes of Mirolon asks to be heard. He says the Ember Lands are arming, and that the beacons of the south were lit twice in the winter. The court remembers 4A 1736 and smiles.',
 		trigger: list(realm, alive, 'date > 1748.5.31', 'NOT = { date > 1750.12.31 }', unexposed), mtth: 'days = 240',
 		options: [
 			{ key: 'a', text: 'Laugh, and pour the envoy wine.', ai: 85, effect: corr(1) },

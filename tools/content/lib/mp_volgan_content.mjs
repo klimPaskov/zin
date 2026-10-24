@@ -106,7 +106,7 @@ country_event = { id = zin_dominion.21 }`, ai: ai(0, [{ add: 60, when: 'has_war 
   court.push(K.decision({ id: 'zin_dominion_make_a_client_crown', icon: art('crown_broken'), allowed: onlyVol, visible: 'has_country_flag = zin_volgan_client_crowns',
     targeted: { root: 'has_country_flag = zin_volgan_client_crowns', trigger: `FROM = {
 OR = {
-zin_dominion_is_dead_lands_country = yes
+zin_dominion_is_ember_lands_country = yes
 ${V.middle.map(c => `original_tag = ${c.tag}`).join('\n')}
 }
 OR = {
@@ -161,11 +161,11 @@ controller = { original_tag = ${VOL} }
     { factor: 0, when: 'has_global_flag = zin_volgan_body_destroyed' },
   ];
   EV({ id: 'zin_dominion.1', kind: 'hidden', immediate: 'zin_dominion_startup = yes' });
-  EV({ id: 'zin_dominion.2', kind: 'country', pic: 'dead_lands_storm', options: [{ ai: ai(100) }] });
+  EV({ id: 'zin_dominion.2', kind: 'country', pic: 'ember_lands_storm', options: [{ ai: ai(100) }] });
   EV({ id: 'zin_dominion.3', kind: 'country', pic: 'southern_warning', options: [
     { effect: `add_opinion_modifier = { target = ${MIR} modifier = zin_dominion_watch_with_mirolon }`, ai: ai(50, [{ add: 30, when: `original_tag = ${HEREZ}` }]) },
     { ai: ai(50) }] });
-  EV({ id: 'zin_dominion.4', kind: 'news', pic: 'dead_lands_storm', options: [{ ai: ai(100) }] });
+  EV({ id: 'zin_dominion.4', kind: 'news', pic: 'ember_lands_storm', options: [{ ai: ai(100) }] });
   const pr = N('mirolon');
   const heed = n => ({ add: 10, when: `${MIR} = { ${ge(PF, n)} }` });
   const suspected = { factor: 1.25, when: ge('global.zin_volgan_veil_band', 2) };
@@ -182,7 +182,7 @@ controller = { original_tag = ${VOL} }
   EV({ id: 'zin_dominion.7', kind: 'country', pic: 'mirolon_passes', options: [
     { effect: call('zin_mirolon_add_passes', { value: 3 }), ai: ai(60) },
     { effect: 'add_stability = 0.02', ai: ai(40) }] });
-  EV({ id: 'zin_dominion.8', kind: 'country', pic: 'dead_lands_storm', options: [
+  EV({ id: 'zin_dominion.8', kind: 'country', pic: 'ember_lands_storm', options: [
     { effect: `if = {
 limit = { check_variable = { var = zin_volgan_pact value = ${offer} compare = less_than } }
 if = {
@@ -220,18 +220,18 @@ country_event = { id = zin_dominion.9 }
   ] });
   EV({ id: 'zin_dominion.9', kind: 'country', pic: 'generic_court', descs: [{ key: 'accepted', trigger: 'has_country_flag = zin_dominion_envoy_accepted' }], options: [{ effect: 'clr_country_flag = zin_dominion_envoy_accepted', ai: ai(100) }] });
   EV({ id: 'zin_dominion.20', kind: 'country', pic: 'mirolon_passes', options: [{ ai: ai(100) }] });
-  EV({ id: 'zin_dominion.21', kind: 'country', pic: 'dead_lands_storm', options: [{ ai: ai(100) }] });
+  EV({ id: 'zin_dominion.21', kind: 'country', pic: 'ember_lands_storm', options: [{ ai: ai(100) }] });
   EV({ id: 'zin_dominion.22', kind: 'country', pic: 'generic_court', options: [
     { effect: `set_temp_variable = { zin_arg_target = THIS }\n${call('zin_volgan_add_oath', { target: 'zin_arg_target', value: N('court.renew') })}\nadd_political_power = -${N('court.falter_cost')}`, ai: ai(40, [{ add: 40, when: ge('zin_dominion_oath', 15) }]) },
     { effect: `set_country_flag = zin_dominion_own_road\nadd_timed_idea = { idea = zin_dominion_seeking_own_road days = ${N('court.own_road_days')} }\n${VOL} = { add_stability = ${num(N('court.own_road_stability'))} }`, ai: ai(30, [{ add: 30, when: lt('zin_dominion_oath', 15) }]) }] });
-  EV({ id: 'zin_dominion.25', kind: 'country', pic: 'dead_lands_storm',
+  EV({ id: 'zin_dominion.25', kind: 'country', pic: 'ember_lands_storm',
     trigger: 'has_game_rule = { rule = zin_rule_volgan_spirit option = STIRRING }\nzin_is_volgan = yes',
     immediate: `set_global_flag = zin_dominion_stirred\nset_variable = { ${ST} = 30 }\nzin_volgan_refresh_strength = yes\nif = {\nlimit = { NOT = { has_character = zin_volgan } }\nrecruit_character = zin_volgan\n}\nadd_country_leader_role = {\ncharacter = zin_volgan\npromote_leader = yes\ncountry_leader = { ideology = zin_shadow_dread expire = "1965.1.1.1" traits = { zin_trait_dread_lord } }\n}`,
     options: [{ ai: ai(100) }] });
   EV({ id: 'zin_dominion.26', kind: 'country', pic: 'volgan_broken', trigger: `has_war_with = ${VOL}\nhas_global_flag = zin_volgan_body_destroyed`, options: [
     { effect: `white_peace = ${VOL}`, ai: ai(80, [{ add: 20, when: hist }]) },
     { ai: ai(20, [{ factor: 0, when: hist }]) }] });
-  EV({ id: 'zin_dominion.27', kind: 'news', pic: 'dead_lands_storm', options: [{ ai: ai(100) }] });
+  EV({ id: 'zin_dominion.27', kind: 'news', pic: 'ember_lands_storm', options: [{ ai: ai(100) }] });
   EV({ id: 'zin_dominion.28', kind: 'country', pic: 'generic_court', options: [
     { effect: 'set_temp_variable = { zin_arg_target = THIS }\nzin_volgan_make_client = yes', ai: ai(60) },
     { effect: 'clr_country_flag = zin_dominion_tributary_friend', ai: ai(40) }] });

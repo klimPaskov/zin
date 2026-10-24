@@ -14,7 +14,7 @@ import { compileBanned, findBanned } from './lib/banned.mjs';
 import { buildNames } from './modules/names.mjs';
 import {
   buildWarfare, loadRaw, prepareModel, solveUnit, unitPiercing, divisionPiercing, variantStats, hullBase, transformTactics, ordinalWord,
-  equipmentStatEnum, engineCategories, TERRAIN_KEYS, entityScale,
+  equipmentStatEnum, engineCategories, TERRAIN_KEYS, entityScale, checkEquipmentTriggers, EQUIPMENT_TRIGGERS,
 } from './modules/warfare.mjs';
 import { UNITS as UNIT_MODEL_ASSETS } from './modules/units3d.mjs';
 
@@ -181,7 +181,9 @@ test('Granted equipment cannot be produced, lent or bought, and no technology un
 });
 test('Griffins can be produced only under the sky rule beasts and by men; dragons are wings of three', () => {
   const g = eqBlocks.get('zin_griffin_equipment');
-  assert.match(text('common/units/equipment/zin_equipment_air.txt'), /zin_rules_skies_beasts = yes/);
+  const produced = field(g, 'can_be_produced');
+  assert.deepEqual(field(produced, 'has_game_rule').map(x => [x.k, x.v]), [['rule', 'zin_rule_skies'], ['option', 'beasts']]);
+  assert.equal(field(produced, 'has_country_flag'), 'zin_people_men');
   assert.equal(field(g, 'type'), 'fighter');
   const d = unitBlocks.get('zin_air_dragon_flight'), gr = unitBlocks.get('zin_air_griffin_riders');
   assert.equal(field(d, 'land_air_wing_size'), '3');
@@ -196,6 +198,28 @@ test('Griffins can be produced only under the sky rule beasts and by men; dragon
   assert.equal(field(dragon, 'air_range'), '900');
   assert.equal(field(dragon, 'type'), 'cas');
   for (const k of ['carrier_air_wing_size', 'mega_carrier_air_wing_size']) assert.equal(field(d, k), undefined, 'no carriers');
+});
+
+test('Equipment triggers use only engine triggers: a scripted trigger there crashes the game while equipment loads', async () => {
+  // Negative: the construct that crashed the Linux run of 24 October 2026 is refused.
+  assert.throws(() => checkEquipmentTriggers('zin_griffin_equipment', '\t\tcan_be_produced = {\n\t\t\tzin_rules_skies_beasts = yes\n\t\t}'), /scripted trigger crashes/);
+  assert.throws(() => checkEquipmentTriggers('x', 'can_be_lend_leased = { OR = { zin_tech_people_men = yes } }'), /zin_tech_people_men/);
+  assert.equal(checkEquipmentTriggers('x', 'can_be_produced = { has_game_rule = { rule = r option = o } }'), 'can_be_produced = { has_game_rule = { rule = r option = o } }');
+  // Positive, over the whole staged output: no equipment trigger block names a key outside the engine set or a scripted trigger of the mod.
+  const scripted = new Set();
+  const dir = path.join(ZIN, 'common/scripted_triggers');
+  for (const f of (existsSync(dir) ? await readdir(dir) : []).filter(x => x.endsWith('.txt'))) for (const e of parse(scriptText(readFileSync(path.join(dir, f))))) if (e.k) scripted.add(e.k);
+  const keys = v => Array.isArray(v) ? v.flatMap(x => [x.k, ...keys(x.v)]).filter(Boolean) : [];
+  let checked = 0;
+  for (const [id, b] of eqBlocks) for (const k of ['can_be_produced', 'can_be_lend_leased']) {
+    const v = field(b, k); if (!v) continue;
+    checked++;
+    for (const key of keys(v)) {
+      assert(!scripted.has(key), `${id} ${k} calls the scripted trigger ${key}`);
+      assert(EQUIPMENT_TRIGGERS.has(key), `${id} ${k} tests ${key}`);
+    }
+  }
+  assert(checked > 20, 'the equipment predicates were read');
 });
 
 // ------------------------------------------------------------------------------------------------ the stat model
@@ -561,7 +585,7 @@ test('No localised value says a modern word, uses a glyph outside Windows-1252, 
   for (const k of ['convoy', 'train_equipment', 'motorized_equipment']) assert(replaceLoc.has(k), `${k} is a kept key, so its text replaces the game's`);
 });
 test('Nothing readable before the reveal names Afrit or calls the Deliverer a demon', () => {
-  for (const [k, v] of [...mainLoc, ...replaceLoc]) assert.doesNotMatch(v, /afrit|deliverer|hidden council|einendil|edvoid/i, `${k}: ${v}`);
+  for (const [k, v] of [...mainLoc, ...replaceLoc]) assert.doesNotMatch(v, /afrit|deliverer|hidden council|einendil|kusven/i, `${k}: ${v}`);
   assert.doesNotMatch(mainLoc.get('zin_demons_bound_desc'), /afrit|deliverer/i);
   assert.match(mainLoc.get('zin_men_temple_wardens_desc'), /Zilin/);
   assert.doesNotMatch(mainLoc.get('zin_men_temple_wardens_desc'), /demon/i);

@@ -64,7 +64,7 @@ Today every one of these countries runs the interim "Long Peace" tree (`zin_long
 - **Free lands** (not a subject: Fotan, or a dominion that seceded) get *The Free March*.
 - **Coastal countries** (`check zin_shared_has_coast`) get *Harbours*.
 - **By ideology:** Light realms get *The Free Council*; Wild realms *The Lords' Moot*; Dominion realms *A Governor's Hand*.
-- **By region:** countries bordering a Ember Lands country (`check zin_shared_borders_dead_lands`) get *Watch on the South*; countries bordering a Magical Lands country (`check zin_shared_borders_magical_lands`) get *The Wall Road*.
+- **By region:** countries bordering a Ember Lands country (`check zin_shared_borders_ember_lands`) get *Watch on the South*; countries bordering a Magical Lands country (`check zin_shared_borders_magical_lands`) get *The Wall Road*.
 - **By people:** countries with the Middle Kingdom tradition get *Children of the Restoration*; countries whose primary or minor people include giants or ents get *The Old Kin* (no tier C country at the start; it serves owner-assigned minor peoples and released countries).
 
 `allow_branch` sits on each branch's first focus, under the compiler's E4 rule: people and tradition are fixed at the start; subject status, ideology, coast and borders change only at the layout refresh points of `common/on_actions/zin_focus_layout.txt` (ruling-party change, puppet, release, subject freed, annex, peace conference), and each branch head repeats its condition in `available`. Text uses `[ROOT.GetName]` and `[ROOT.GetAdjective]`, never a country name.
@@ -170,7 +170,7 @@ Prerequisites: `a / b` means a or b. **Bold** names mark key focuses. Days are 3
 | F | `join_the_free_dominions` | Join the Free Dominions | ask_for_a_charter / free_and_apart | — | 23,3 | 35 | `alliance_rings` | Avail: `check zin_aenor_free_dominions_exist`; `check zin_concord_can_join_free_dominions`. `call zin_concord_join_free_dominions` | 10; ×6 if flag `zin_aenor_free_dominion` |
 | F | `march_walls` | March Walls | free_and_apart | — | 25,3 | 70 | `fort_wall` | bld bunker 2 @capital | 20 |
 | F | `free_banners` | Free Banners | join_the_free_dominions / march_walls | — | 24,4 | 70 | `war_drums` | Avail: Story. army_xp 15; ws 0.05 | 100 |
-| G | `watch_on_the_south` | **Watch on the South** | charter_of_the_dominion | — | 27,1 | 35 | `eye_watchful` | allow: `check zin_shared_borders_dead_lands`. spirit `southern_watch` | 30 |
+| G | `watch_on_the_south` | **Watch on the South** | charter_of_the_dominion | — | 27,1 | 35 | `eye_watchful` | allow: `check zin_shared_borders_ember_lands`. spirit `southern_watch` | 30 |
 | G | `southern_forts` | Southern Forts | watch_on_the_south | — | 27,2 | 70 | `pass_fort` | bld bunker 1 @random_owned ×2 | 20; ×3 if global flag `zin_mirolon_fallen` |
 | G | `heed_mirolon` | Heed Mirolon | southern_forts | — | 27,3 | 35 | `mountain_pass` | Avail: exists Mirolon. lost_cause(3); `for_country Mirolon: call zin_mirolon_add_proof {value: 2}` | 20; hist ×0.5 |
 | G | `the_wall_road` | **The Wall Road** | charter_of_the_dominion | — | 29,1 | 35 | `caravan` | allow: `check zin_shared_borders_magical_lands`. spirit `wall_road_trade`; grievance(−3) | 30 |

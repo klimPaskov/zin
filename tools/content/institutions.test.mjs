@@ -302,7 +302,7 @@ test('Text: Aoaz words only, British spelling, Windows-1252, and no vanilla name
   assert.deepEqual(notCp1252(entries), []);
   const vanillaNames = ['Abwehr', 'NKVD', 'Stasi', 'Wehrmacht', 'Field Marshal', 'Lend-Lease', 'Quartermaster General', 'Intel Network', 'Cryptology', 'Radio', 'Tank', 'Aircraft', 'Submarine', 'Paratrooper', 'Commando', 'Nuclear'];
   for (const n of vanillaNames) assert(!new RegExp(`\\b${n}\\b`, 'i').test(Object.values(entries).join(' ')), `text contains ${n}`);
-  assert(!/afrit|hidden council|deliverer|einendil|edvoid/i.test(Object.values(entries).join(' ')), 'text names the secret or a retired name');
+  assert(!/afrit|hidden council|deliverer|einendil|kusven/i.test(Object.values(entries).join(' ')), 'text names the secret or a retired name');
   assert.deepEqual([...staged.files.get('localisation/english/zin_inst_l_english.yml').subarray(0, 3)], [0xef, 0xbb, 0xbf], 'UTF-8 with BOM');
 });
 

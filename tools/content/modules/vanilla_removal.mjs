@@ -287,7 +287,7 @@ function buildCollections(staged, loc) {
 
 // One theater per Aoaz region: a strategic region joins the region (country table scan) that owns most of its
 // land provinces. Regions are listed by id.
-const REGION_NAMES = { 'Cold Lands': 'Cold Lands', 'West-Earth': 'West Lands', 'East-Earth': 'North Lands', 'Tritons Islands': "Triton's Islands", 'Rush Land': 'Middle Lands', 'Rush Islands': 'Aenor Isle', 'Ocean of Edvoid': 'Ocean of Zol', 'Magical Lands': 'Magical Lands', 'Dead Lands': 'Dead Lands', 'South-Earth': 'East Lands', Sunhot: 'Lands of the Sun', 'Dark Lands': 'Dark Lands', 'Islands of The South': 'Islands of the South' };
+const REGION_NAMES = { 'Cold Lands': 'Cold Lands', 'West-Earth': 'West Lands', 'East-Earth': 'North Lands', 'Tritons Islands': "Triton's Islands", 'Rush Land': 'Middle Lands', 'Rush Islands': 'Aenor Isle', 'Kusmeel': 'Kusmeel', 'Magical Lands': 'Magical Lands', 'Ember Lands': 'Ember Lands', 'South-Earth': 'East Lands', Sunhot: 'Lands of the Sun', 'Dark Lands': 'Dark Lands', 'Islands of The South': 'Islands of the South' };
 async function buildTheaters(staged, loc, zin, countries) {
   const scanOf = new Map(countries.map(c => [c.tag, c.scan])), provinceScan = new Map();
   for (const f of (await readdir(`${zin}/history/states`)).filter(f => f.endsWith('.txt')).sort()) {

@@ -2,7 +2,7 @@
   "schema": "zin-pantheon/1",
   "status": "Draft: proposed for the owner's approval; every name, need, festival and month name here is proposed (P) unless a field says established (E)",
   "written": "2026-10-24",
-  "requirements": ["R-30 pantheon", "R-31 calendar", "R-32 faith in play", "Q-10 Edvoid's new name"],
+  "requirements": ["R-30 pantheon", "R-31 calendar", "R-32 faith in play", "Q-10 Kusven's new name"],
   "docs": {
     "pantheon": "docs/lore/references/pantheon.md",
     "calendar": "docs/lore/references/calendar.md",
@@ -179,7 +179,7 @@
       "monthIndex": 11, "monthName": "Gaelor", "monthShort": "Gaelor", "monthAbbr": "Gael", "engineKey": "November", "engineShortKey": "Nov", "season": "autumn",
       "regionalNames": { "aenoran": "Gaelor", "leren": "Geelor", "mirolic": "Gialor", "dondric": "Goalor", "coldic": "Graearyarl", "gunwaithic": "Yarl-Grei", "noric": "Beq-Rem", "stabilic": "Becoremo", "alerhic": "Rhemiabekia", "sylvan": "Gaeliel", "galic": "Eal Geale", "sunhot": "Hailu Gaili" },
       "holySites": [{ "siteId": null, "name": "the Names Wall of the Pale March" }, { "siteId": null, "name": "the ebb-shores where the Leren burn their dead" }],
-      "favouredBy": ["leren_sea_kings", "wall_folk", "dead_lands_freeholds", "isle_houses", "gala_court"], "shunnedBy": ["grave_hosts", "netherborn"]
+      "favouredBy": ["leren_sea_kings", "wall_folk", "ember_lands_freeholds", "isle_houses", "gala_court"], "shunnedBy": ["grave_hosts", "netherborn"]
     },
     {
       "id": "naisa", "name": "Naisa", "liturgicalName": "Naisa Dumlor", "liturgicalGloss": "Naisa the Bright-in-Dark", "commonSpeechName": "Naize", "sex": "female", "rank": null,
@@ -202,7 +202,7 @@
     { "id": "tidai", "name": "Tidai", "language": "tritonic", "gloss": "the tide", "domain": "tides, harbours and the ransoming of captives", "following": ["corsair_lords", "chart_islanders", "isle_houses"], "underGod": "maelwen", "feast": { "name": "The Ransoming", "month": 10, "day": 20 }, "servesZol": false, "publicName": true },
     { "id": "parethe", "name": "Parethe", "language": "ainic", "gloss": "she of the lake", "domain": "the Great Lake of Parim, its fishers and ferries", "following": ["lake_aenoran"], "underGod": "maelwen", "feast": { "name": "The Lake-Blessing", "month": 5, "day": 1 }, "servesZol": false, "publicName": true },
     { "id": "lunvat", "name": "Lunvat", "language": "coldic", "gloss": "moon-water", "domain": "calm seas and windless nights, as sailors pray for them", "following": ["windwaith_seafarers", "ice_clans", "isengard_warlords"], "underGod": "maelwen", "feast": { "name": "The Calm", "month": 6, "day": 10 }, "servesZol": true, "servesZolLayer": "sealed (C9, C10; proposed answer to C10 for the authorial record only)", "publicName": true },
-    { "id": "gaelkuth", "name": "Gaelkuth", "language": "ainic", "gloss": "grey grave", "regionalNames": { "aenoran": "Gaelkut", "leren": "Geelkus" }, "domain": "an easy death, the sleep of the old and the sick, the quiet of graves", "following": ["dead_lands_freeholds", "lake_aenoran", "leren_sea_kings"], "underGod": "gaelor", "feast": { "name": "The Quiet Night", "month": 11, "day": 15 }, "servesZol": true, "servesZolLayer": "sealed (C9, C10; proposed answer to C10 for the authorial record only)", "publicName": true },
+    { "id": "gaelkuth", "name": "Gaelkuth", "language": "ainic", "gloss": "grey grave", "regionalNames": { "aenoran": "Gaelkut", "leren": "Geelkus" }, "domain": "an easy death, the sleep of the old and the sick, the quiet of graves", "following": ["ember_lands_freeholds", "lake_aenoran", "leren_sea_kings"], "underGod": "gaelor", "feast": { "name": "The Quiet Night", "month": 11, "day": 15 }, "servesZol": true, "servesZolLayer": "sealed (C9, C10; proposed answer to C10 for the authorial record only)", "publicName": true },
     { "id": "herdsman_of_the_south", "name": null, "workingLabel": "the Herdsman of the South", "language": null, "domain": "the southern wilds and their beasts", "following": [], "formerFollowing": "peoples of the south before the numbered ages (unknown)", "underGod": null, "feast": null, "servesZol": false, "overthrownBy": "volgan", "overthrownLayer": "sealed (C11); its fate stays mystery-open (C12)", "publicName": false }
   ],
   "afritFeast": {
@@ -223,7 +223,7 @@
     "commonSpeechCalque": "Kutven",
     "superseded": "Edvoid",
     "layer": "sealed (C25): the servant is never identified in player text, before or after it appears",
-    "sea": { "chartName": "Ocean of Zol", "chartNameStatus": "E (vault, 24 October 2026)", "lerenName": "Kusmeel", "lerenGloss": "grave-sea, from Leren kus 'grave' + meel 'sea'", "optionNamedAfterServant": "Ocean of Kusven", "optionCost": "names the sealed servant on the map and breaks C25" }
+    "sea": { "chartName": "Kusmeel", "chartNameStatus": "E (vault, 24 October 2026)", "lerenName": "Kusmeel", "lerenGloss": "grave-sea, from Leren kus 'grave' + meel 'sea'", "optionNamedAfterServant": "Ocean of Kusven", "optionCost": "names the sealed servant on the map and breaks C25" }
   },
   "calendar": {
     "startDate": "1748.3.1.12",

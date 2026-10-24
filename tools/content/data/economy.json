@@ -8,7 +8,7 @@
       "frame": 1,
       "name": "Essence",
       "scarce": true,
-      "role": "Raw magic from wellsprings, elder groves, ley-stones and the vents of the Dead Lands",
+      "role": "Raw magic from wellsprings, elder groves, ley-stones and the vents of the Ember Lands",
       "warfareUse": "Wards and other magical equipment; the Stored Essence bar",
       "cic": 0.125,
       "convoys": 0.1
@@ -434,8 +434,8 @@
     "Tritons Islands": "tritons_islands",
     "Dark Lands": "dark_lands",
     "Magical Lands": "magical_lands",
-    "Ocean of Edvoid": "zols_mistake",
-    "Dead Lands": "dead_lands",
+    "Kusmeel": "zols_mistake",
+    "Ember Lands": "ember_lands",
     "South-Earth": "east_lands",
     "Islands of The South": "islands_of_the_south",
     "Sunhot": "lands_of_the_sun"
@@ -571,8 +571,8 @@
       "spirit": null
     },
     {
-      "key": "dead_lands",
-      "name": "Dead Lands",
+      "key": "ember_lands",
+      "name": "Ember Lands",
       "weights": {
         "steel": 2,
         "aluminium": 0,
@@ -584,7 +584,7 @@
       },
       "development": 0.3,
       "identity": "Essence vents and war-forges",
-      "spirit": "zin_econ_dead_lands",
+      "spirit": "zin_econ_ember_lands",
       "armouryShare": 0.5
     },
     {
@@ -741,10 +741,10 @@
         }
       },
       {
-        "key": "zin_econ_dead_lands",
-        "region": "dead_lands",
+        "key": "zin_econ_ember_lands",
+        "region": "ember_lands",
         "name": "Furnace Lands",
-        "desc": "The Dead Lands are hot and storm-girt, and their war-forges never go cold.",
+        "desc": "The Ember Lands are hot and storm-girt, and their war-forges never go cold.",
         "picture": "zin_ember_desert",
         "modifier": {
           "heat_attrition_factor": -0.5,

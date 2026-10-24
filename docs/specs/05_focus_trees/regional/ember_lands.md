@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This spec gives the five tier B countries of the Ember Lands their own focus trees: the three demon realms of Volgan's Southern Dominion, **Nezer**, **Demon** and **Dolon**, and the two free human realms **Olen** and **Nan** ([../01_tiers_and_coverage.md](../01_tiers_and_coverage.md)). Volgan ([../major/volgan.md](../major/volgan.md)) and Mirolon ([../major/mirolon.md](../major/mirolon.md)) have major trees; the six small freeholds share [../shared/shared_dead_lands.md](../shared/shared_dead_lands.md).
+This spec gives the five tier B countries of the Ember Lands their own focus trees: the three demon realms of Volgan's Southern Dominion, **Nezer**, **Demon** and **Dolon**, and the two free human realms **Olen** and **Nan** ([../01_tiers_and_coverage.md](../01_tiers_and_coverage.md)). Volgan ([../major/volgan.md](../major/volgan.md)) and Mirolon ([../major/mirolon.md](../major/mirolon.md)) have major trees; the six small freeholds share [../shared/shared_ember_lands.md](../shared/shared_ember_lands.md).
 
 The trees play [Volgan and the Southern Dominion](../../04_mechanics/volgan_southern_dominion.md) from below:
 
@@ -165,7 +165,7 @@ Nezer is the southern confederacy of the Dominion: two lands of one demon family
 | # | Key | Title | To | Trigger | Picture | Options |
 | ---: | --- | --- | --- | --- | --- | --- |
 | 1 | `two_crowns` | Two Crowns, One Family | Nezer | The Two Crowns of Nezer | `generic_court` | "Nezerun leads." (political_power 25) / "Nezer and Nezerun as equals." (stability 0.03) |
-| 2 | `burning_gate` | The Burning Gate | Nezer | The Burning Gate Remembered | `dead_lands_storm` | One option. Text: in an older age a gate of fire stood open in one of Nezer's strongholds; men, elves and dark soldiers closed it together and forgot it together. Nobody in Nezer says who opened it |
+| 2 | `burning_gate` | The Burning Gate | Nezer | The Burning Gate Remembered | `ember_lands_storm` | One option. Text: in an older age a gate of fire stood open in one of Nezer's strongholds; men, elves and dark soldiers closed it together and forgot it together. Nobody in Nezer says who opened it |
 | 3 | `silent_south` | The Silence from Nafeher | Nezer | A Name That Does Not Answer | `grave_muster` | One option. Text: the summons have stopped; the Steward speaks in a name that does not answer; what remains of the master of Nafeher, no one living can say |
 
 ### Historical AI route
@@ -267,7 +267,7 @@ Demon is the horned court of the Dominion: one land of cinder plains and vents o
 | # | Key | Title | To | Trigger | Picture | Options |
 | ---: | --- | --- | --- | --- | --- | --- |
 | 1 | `horned_court` | The Horned Court Sits | Demon | The Horned Court | `generic_court` | "Hazarel speaks." (political_power 25) / "The houses speak." (stability 0.03) |
-| 2 | `southern_heat` | Into the Southern Heat | Demon | The Nether's Edge | `dead_lands_storm` | One option. Text: Demon's envoys walk south into the heat toward the Nether's court and come back with answers they keep to themselves. Nothing names the King of Demons or what he owes |
+| 2 | `southern_heat` | Into the Southern Heat | Demon | The Nether's Edge | `ember_lands_storm` | One option. Text: Demon's envoys walk south into the heat toward the Nether's court and come back with answers they keep to themselves. Nothing names the King of Demons or what he owes |
 | 3 | `silence_from_nafeher` | Silence from Nafeher | Demon | Silence from Nafeher | `grave_muster` | One option. Same rule as Nezer's event 3 |
 
 ### Historical AI route
@@ -473,11 +473,11 @@ Olen is a free realm of men on the cliffs of the Ember Lands' coast: three provi
 | # | Key | Title | To | Trigger | Picture | Options |
 | ---: | --- | --- | --- | --- | --- | --- |
 | 1 | `breeze_rises` | The Evening Breeze | Olen | The Holy Breeze | `generic_peace` | "Light the shrines." (stability 0.03) / "Open the cisterns." (political_power 25) |
-| 2 | `rumours_from_nafeher` | Rumours from Nafeher | Olen | The Southern Storm | `dead_lands_storm` | One option. Text: the galleys of Dolon buy more salt than a peaceful land eats; the storms over Nafeher have not lifted in a year |
+| 2 | `rumours_from_nafeher` | Rumours from Nafeher | Olen | The Southern Storm | `ember_lands_storm` | One option. Text: the galleys of Dolon buy more salt than a peaceful land eats; the storms over Nafeher have not lifted in a year |
 | 3 | `olen_offers_tribute` | Tribute from Olen | Volgan | Keep the Old Quiet | `generic_court` | "The quiet holds." (non_aggression with Olen; Volgan political_power 25; for_country Olen: political_power −50 and flag `zin_dominion_tributary_friend`; event_for Olen `an_answer_on_the_wind`; AI 80) / "Nafeher takes no gifts from the north." (event_for Olen `the_wind_falls_still`; AI 20) |
 | 4 | `olen_offers_friendship` | Friendship from Olen | Mirolon | Stand with the Wardens | `mirolon_passes` | "Stand together." (for_country Olen: flag `zin_mirolon_league_friend`; opinion Olen +15 (`healers_sent`); event_for Olen `an_answer_on_the_wind`; AI 80) / "We keep our own counsel." (event_for Olen `the_wind_falls_still`; AI 20) |
 | 5 | `an_answer_on_the_wind` | An Answer on the Wind | Olen | Accepting options of 3 and 4 | `generic_peace` | One option, "So the wind carries it." Text: the answer has come back on the evening wind, and it is yes |
-| 6 | `the_wind_falls_still` | The Wind Falls Still | Olen | Refusing options of 3 and 4 | `dead_lands_storm` | One option, "We keep our cliffs." (stability 0.02). Text: the envoys came back with nothing |
+| 6 | `the_wind_falls_still` | The Wind Falls Still | Olen | Refusing options of 3 and 4 | `ember_lands_storm` | One option, "We keep our cliffs." (stability 0.02). Text: the envoys came back with nothing |
 
 ### Historical AI route
 
@@ -581,7 +581,7 @@ Nan is a warlord's realm of islands and peninsulas: Nan and Vez Nan, held togeth
 | # | Key | Title | To | Trigger | Picture | Options |
 | ---: | --- | --- | --- | --- | --- | --- |
 | 1 | `warlord_speaks` | The Warlord Speaks | Nan | The Warlord of Vez Nan | `generic_court` | "The captains obey." (political_power 25) / "The isles are heard." (stability 0.03) |
-| 2 | `tales_of_the_stair` | Tales of the Stair | Nan | Tales of the Stair | `dead_lands_storm` | One option. Text: inland of Vez Nan a stair goes down into the dark; long ago a stranger from the north went down it and came back up; the elders do not say what he carried, and no one in Nan has gone to look |
+| 2 | `tales_of_the_stair` | Tales of the Stair | Nan | Tales of the Stair | `ember_lands_storm` | One option. Text: inland of Vez Nan a stair goes down into the dark; long ago a stranger from the north went down it and came back up; the elders do not say what he carried, and no one in Nan has gone to look |
 | 3 | `nan_offers_pilots` | Pilots from Nan | Volgan | Pilots for Nafeher | `generic_sea` | "Take the pilots." (timed_spirit `pilots_of_nafeher` 730 days on Volgan; non_aggression with Nan; for_country Nan: political_power 50 and flag `zin_dominion_tributary_friend`; event_for Nan `an_answer_from_the_isles`; AI 70) / "Nafeher needs no ships." (event_for Nan `the_offer_refused`; AI 30) |
 | 4 | `ships_for_the_exiles` | Ships for the Exiles | Mirolon | The Exiles' Road | `generic_sea` | One option, "Carry our people north." (manpower 3000; opinion Nan +20 (`exiles_carried`); AI 100) |
 | 5 | `an_answer_from_the_isles` | An Answer from the Isles | Nan | Accepting options of 3 and 6 | `generic_sea` | One option, "The isles are paid." Text: the offer was taken |
@@ -650,7 +650,7 @@ None in the trees; `check_variable`, `add_autonomy_ratio`, `send_equipment` and 
 
 ### Icons
 
-Catalog keys only; none new. Each event's picture is in its table: `dead_lands_storm`, `generic_court`, `generic_peace`, `grave_muster` (no figure), `mirolon_passes`, `generic_sea`.
+Catalog keys only; none new. Each event's picture is in its table: `ember_lands_storm`, `generic_court`, `generic_peace`, `grave_muster` (no figure), `mirolon_passes`, `generic_sea`.
 
 ### Current game state
 

@@ -34,7 +34,7 @@ import { cultureLocEntries, loadCultureModel, resolveCountryCultures, portraitPo
 // Counts the specs fix: 53 cultures (bible), 24 languages, 51 building kits, 14 music palettes, 21 unit groups
 // (08_world_in_game.md sections 7 and 12), 39 faith rows (35 faiths plus the open one and the later additions).
 export const SPEC_COUNTS = Object.freeze({ cultures: 53, languages: 24, building_styles: 51, music_moods: 14, unit_groups: 21 });
-const SECRET_TERMS = /Afrit|Eindil|Einendil|Hidden Council|Edvoid|birth rolls?|hearth-names?/i;
+const SECRET_TERMS = /Afrit|Eindil|Einendil|Hidden Council|Kusven|birth rolls?|hearth-names?/i;
 const BIBLE_TAG = /\[(?:E|P|O|W|secret)[\s,\]]/;
 
 // ---------------------------------------------------------------------------------- duplicate keys in a JSON text

@@ -401,12 +401,12 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   shown(25, EVT('yeldenne_hall'), { desc: [{ trigger: ['zin_afrit_is_hub = yes'], key: 'zin_glo.25.d_hub' }, { trigger: [`original_tag = ${TAG.volgan}`], key: 'zin_glo.25.d_volgan' }, { key: 'zin_glo.25.d' }], options: opts(25, [['a', ['# The seal holds.'], 100]]) }); descOf(25);
   addNews(30, NEWS('generic_peace'), 'A hard winter for the north.');
   function addNews(id, picture, note) { descOf(id); shown(id, picture, { kind: 'news', options: opts(id, [['a', [`# ${note}`], 100]]) }); }
-  ack(40, EVT('dead_lands_storm'), 'Let them ride.');
-  shown(41, EVT('dead_lands_storm'), { immediate: ['set_temp_variable = { zin_arg_case = 5 }', 'zin_glo_resolve_hall = yes'], options: opts(41, [['a', ['# Bar the doors.'], 100]]) });
+  ack(40, EVT('ember_lands_storm'), 'Let them ride.');
+  shown(41, EVT('ember_lands_storm'), { immediate: ['set_temp_variable = { zin_arg_case = 5 }', 'zin_glo_resolve_hall = yes'], options: opts(41, [['a', ['# Bar the doors.'], 100]]) });
   shown(50, EVT('generic_wilds'), { trigger: ['has_global_flag = zin_glo_defiling'], options: opts(50, [
     ['a', [`country_event = { id = zin_glo.50 days = ${C.defile_roll_days} }`], 85],
     ['b', ['clr_global_flag = zin_glo_defiling', 'set_variable = { global.zin_glo_defile_end = 0 }'], 15]]) });
-  addNews(51, NEWS('dead_lands_storm'), 'Let the north mourn.');
+  addNews(51, NEWS('ember_lands_storm'), 'Let the north mourn.');
   shown(60, EVT('yeldenne_hall'), { trigger: ['zin_horos_alive = yes'], options: opts(60, [
     ['a', ['var:global.zin_glo_watch_sender = { give_guarantee = ROOT add_ideas = zin_glo_northern_watch }', 'set_global_flag = zin_glo_watch_active', `set_temp_variable = { zin_arg_value = ${K('watch_wards')} }`, 'zin_yeldenne_add_wards = yes'], 100],
     ['b', ['# The hall keeps its own doors.'], 0]]) });

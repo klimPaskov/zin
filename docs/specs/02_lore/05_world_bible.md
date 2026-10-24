@@ -430,7 +430,7 @@ The lake-folk of Mirolon, Volgan's First Age conquest and now a free elective wa
 | Neighbours: friendships, grudges, trade, kinship | Volgan is the enemy they cannot show anyone. The freeholds of the north coast are cousins. Aenor laughed at them. |
 | In the game | **Flags:** Lake blue, a beacon or lamp. **Portraits:** Lean, sun-browned, watchful. **Buildings:** Stilt towns, beacon towers. **Units:** Scouts, archers, couriers. **Music:** Horn calls, flute. **Palette:** #3c5f78, #9fa7ae, #cbbd8e |
 
-#### Ember Lands Freeholders (`dead_lands_freeholds`)
+#### Ember Lands Freeholders (`ember_lands_freeholds`)
 
 *People:* Men. *Language:* Mirolic (coast). *Faith:* The Mourning Customs of the Ember Lands and The Lamp and the Furrow. *Tier:* 3. *Countries (8):* Nan, Mirodor, Mencnon, Luminor, Bennen, Gelon, Olen, Dra.
 

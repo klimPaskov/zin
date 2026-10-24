@@ -48,7 +48,7 @@ FAMILIES = {
         'name': 'Ainic men', 'line': 'straight',
         'mark': 'label', 'mark_text': "Aen's label: a narrow bar across the upper field with three short square pendants, in a metal of the culture",
         'meaning': "The label is the medieval mark of a son of the house. Realms of Ainic speech and stock bear it because their first crowns were among the kingdoms Aen joined, and the Reckoning of Lines counts their founding houses among the descendants of his sons (proposed reading). Aenor itself bears none: the crown of Aen's own realm needs no difference. A theocracy bears none, because a faith claims no line.",
-        'members': ['lake_aenoran', 'selen_ranger', 'steppe_rider', 'wall_folk', 'march_folk', 'isle_houses', 'leren_sea_kings', 'free_crowns_north', 'dondor_brutes', 'mirolon_wardens', 'dead_lands_freeholds', 'zilin_pilgrims'],
+        'members': ['lake_aenoran', 'selen_ranger', 'steppe_rider', 'wall_folk', 'march_folk', 'isle_houses', 'leren_sea_kings', 'free_crowns_north', 'dondor_brutes', 'mirolon_wardens', 'ember_lands_freeholds', 'zilin_pilgrims'],
     },
     'boreal_men': {
         'name': 'Boreal men', 'line': 'indented',

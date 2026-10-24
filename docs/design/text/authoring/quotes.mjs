@@ -179,7 +179,7 @@ const TIP_FIX = {
 
 const banned = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/content/data/banned_words.json'), 'utf8'));
 const rx = banned.rules.map(r => ({ id: r.id, sev: r.severity, re: new RegExp(`(?<![A-Za-z0-9'])(?:${r.pattern})(?![A-Za-z0-9'])`, r.caseSensitive ? 'u' : 'iu') }));
-const extra = /\b(Ocean|Erdae|Edvoid|Kusven|Triton|Dead Lands|Gunwaith|Lerenwaith|Asgard|Isengard|Titanos|Hengyang|Gondolin|Hiloron|Thaw|Highsun|Deepwinter|Harvest|metres?|Einendil|-waith|arguably|in many ways|perhaps)\b/i;
+const extra = /\b(Ocean|Erdae|Kusven|Kusven|Triton|Ember Lands|Gunwaith|Lerenwaith|Asgard|Isengard|Titanos|Hengyang|Gondolin|Hiloron|Thaw|Highsun|Deepwinter|Harvest|metres?|Einendil|-waith|arguably|in many ways|perhaps)\b/i;
 
 const out = [];
 const problems = [];

@@ -109,7 +109,7 @@ for (const id of IDS) {
       const hits = findBanned(shown, banned);
       assert.deepEqual(hits.map(h => h.word), [], `${k}: ${v}`);
       assert(!/lorem|todo|tbd|placeholder|xxx/i.test(shown), `${k} placeholder`);
-      assert(!/Eindil|Einendil|Edvoid|\bRush\b|Sunhot/.test(shown), `${k} names a withheld or retired name`);
+      assert(!/Eindil|Einendil|Kusven|\bRush\b|Sunhot/.test(shown), `${k} names a withheld or retired name`);
       assert(!/ō/.test(shown), `${k} has o-macron`);
     }
   });
@@ -174,7 +174,7 @@ test('Stabilo: the Reckoning, three routes, the ledger events 30 to 33 and the s
 });
 
 test('Volgan: the exclusive pairs, exactly the raw blocks the spec allows and the war gate', () => {
-  const pairs = [['break_the_veil', 'wait_for_the_storm'], ['rule_through_orders', 'rule_through_warlords'], ['bargain_with_the_king', 'bend_the_nether'], ['dead_garrison', 'client_crown_of_mirolon'], ['dead_against_dead', 'leave_north_to_its_dead'], ['hold_the_dead_lands', 'host_fights_on']];
+  const pairs = [['break_the_veil', 'wait_for_the_storm'], ['rule_through_orders', 'rule_through_warlords'], ['bargain_with_the_king', 'bend_the_nether'], ['dead_garrison', 'client_crown_of_mirolon'], ['dead_against_dead', 'leave_north_to_its_dead'], ['hold_the_ember_lands', 'host_fights_on']];
   for (const [a, b] of pairs) { assert.deepEqual(focusOf(DATA, 'volgan', a).mutually_exclusive, [b]); assert.deepEqual(focusOf(DATA, 'volgan', b).mutually_exclusive, [a]); }
   assert.deepEqual(focusOf(DATA, 'volgan', 'silent_throne').allow_branch, [{ global_flag: 'zin_volgan_body_destroyed' }]);
   assert.deepEqual(focusOf(DATA, 'volgan', 'silent_throne').available, [{ global_flag: 'zin_volgan_body_destroyed' }]);

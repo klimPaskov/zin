@@ -48,7 +48,7 @@ Totals: 550 focuses, 128 spirits, 89 events, 58 tree effects, 14 tree triggers, 
 
 ## Art needs (requested picture keys, stand-ins used)
 
-`desert_court` and `caravan_road` (Noris; `generic_court`, `generic_wilds` used), `counting_house` (Stabilo; `generic_court`), `nafeher_hall`, `abyss_depths` (Volgan; `generic_court`, `dead_lands_storm`), `mistake_wastes` (Zol; `black_isles_lights`). No icon key is missing.
+`desert_court` and `caravan_road` (Noris; `generic_court`, `generic_wilds` used), `counting_house` (Stabilo; `generic_court`), `nafeher_hall`, `abyss_depths` (Volgan; `generic_court`, `ember_lands_storm`), `mistake_wastes` (Zol; `black_isles_lights`). No icon key is missing.
 
 ## Open items
 

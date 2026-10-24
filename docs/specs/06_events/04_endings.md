@@ -296,7 +296,7 @@ Art: the `ending_*` news pictures and the `chronicle` event picture are already 
 | `zin_ending.11` | `concord_council` |
 | `zin_ending.12`, `.22`, `.50`, `.51` | `generic_war` |
 | `zin_ending.15` | `houses` |
-| `zin_ending.20`, `.23` | `dead_lands_storm` |
+| `zin_ending.20`, `.23` | `ember_lands_storm` |
 | `zin_ending.40` | `court_feast` |
 | `zin_ending.41` | `council_chamber` (hub-only) |
 | `zin_ending.60`, `.61` | `strait_toll` |
@@ -307,7 +307,7 @@ Art: the `ending_*` news pictures and the `chronicle` event picture are already 
 
 | Key | Shows | Gate | Used by (now using) |
 | --- | --- | --- | --- |
-| standard 210 × 176 crops `GFX_zin_evt_ending_<key>` of the eight `ending_*` keys (the catalog lists them as news only) | as the catalog | ending flag | `zin_world.111` (`chronicle`); `zin_ending.10` (`crown_of_aen`), `.20` (`dead_lands_storm`), `.30` (`unmasking`), `.40` (`court_feast`), `.50` (`generic_war`), `.60` (`strait_toll`), `.70` (`generic_peace`) |
+| standard 210 × 176 crops `GFX_zin_evt_ending_<key>` of the eight `ending_*` keys (the catalog lists them as news only) | as the catalog | ending flag | `zin_world.111` (`chronicle`); `zin_ending.10` (`crown_of_aen`), `.20` (`ember_lands_storm`), `.30` (`unmasking`), `.40` (`court_feast`), `.50` (`generic_war`), `.60` (`strait_toll`), `.70` (`generic_peace`) |
 
 ### Ending spirits
 

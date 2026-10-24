@@ -9,7 +9,7 @@
 //   N corrections  model features that contradict the drawing are fixed (Aenor Isle's box over the mainland and its Rish
 //                and Tinta Hills; the Dark Lands' part over the Selen coast and the Darkness ridge's end in the strait);
 //   A rings      self-crossing, self-touching, spiked rings and stray holes are rebuilt from their even-odd fill;
-//   B nether     the Nether becomes a land south of the Dead Lands island, large enough for three states of three
+//   B nether     the Nether becomes a land south of the Ember Lands island, large enough for three states of three
 //                provinces, with region_nether, the Nether Mountains standing on it and three access routes (the
 //                Nether Sound and the Ember Narrows as straits, the Cinder Gate as a pass);
 //   C edges      the engine wraps the map, so the bands x<0.04, x>0.96, y<0.025, y>0.975 become open sea (R-18): land
@@ -229,8 +229,8 @@ const inward = (p, g, px = 2) => {
 
 export function repairNether(m, log) {
   const nether = m.lands.find(l => l.id === 'land_nether_island');
-  const dead = m.lands.find(l => l.id === 'land_dead_lands_island');
-  if (!nether || !dead) { log.push({ rule: 'nether', id: 'land_nether_island', action: 'UNRESOLVED: the Nether or the Dead Lands island is missing', unresolved: true }); return; }
+  const dead = m.lands.find(l => l.id === 'land_ember_lands_island');
+  if (!nether || !dead) { log.push({ rule: 'nether', id: 'land_nether_island', action: 'UNRESOLVED: the Nether or the Ember Lands island is missing', unresolved: true }); return; }
   const outline = netherOutline();
   const bounds = G.boundsOf(outline);
   const grid = G.makeGrid([bounds[0] - 0.01, bounds[1] - 0.01, bounds[2] + 0.01, bounds[3] + 0.01], 1, 2);
@@ -249,7 +249,7 @@ export function repairNether(m, log) {
   nether.geometry = geometry;
   nether.regions = ['nether'];
   nether.elevation = 3;
-  nether.notes = 'The Nether: the volcanic land south of the Dead Lands island and the seat of the King of Demons (vault: the Nether lies in the south of the Dead Lands). Drawn at the foot of the Dead Lands sheet and carried south past the sheet edge; sized by the repair for at least three states of three provinces. Reached over the Nether Sound from the Dead Lands island, over the Ember Narrows from the South Lands, and inland through the Cinder Gate across the Nether Mountains.';
+  nether.notes = 'The Nether: the volcanic land south of the Ember Lands island and the seat of the King of Demons (vault: the Nether lies in the south of the Ember Lands). Drawn at the foot of the Ember Lands sheet and carried south past the sheet edge; sized by the repair for at least three states of three provinces. Reached over the Nether Sound from the Ember Lands island, over the Ember Narrows from the South Lands, and inland through the Cinder Gate across the Nether Mountains.';
   if (netherChanged) log.push({ rule: 'nether', id: nether.id, action: `outline rebuilt: ${Math.round(before)} px to ${Math.round(G.geometryAreaPx(geometry))} px` });
 
   // The Nether Mountains stand on the Nether.
@@ -277,8 +277,8 @@ export function repairNether(m, log) {
     add('straits', {
       id: 'strait_nether_sound', name: 'Nether Sound', established: false, source: 'repair', kind: 'straits', elevation: 0,
       geometry: { type: 'LineString', coordinates: [a, pt5([(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]), b] },
-      region: 'nether', joins: ['Dead Lands Island', 'The Nether (island)'], widthClass: 'narrow',
-      notes: 'Proposed narrow sound between the south shore of the Dead Lands island and the Nether; the shortest crossing into the Nether.',
+      region: 'nether', joins: ['Ember Lands Island', 'The Nether (island)'], widthClass: 'narrow',
+      notes: 'Proposed narrow sound between the south shore of the Ember Lands island and the Nether; the shortest crossing into the Nether.',
     });
   }
   const east = m.lands.find(l => l.id === 'land_eastern_mainland');
@@ -810,18 +810,18 @@ export function repairRegions(m, log) {
   const grid = CG;
   const regions = m.regions.filter(r => r.kind === 'region');
   if (!m.regions.some(r => r.id === 'region_nether') && m.lands.some(l => l.id === 'land_nether_island')) {
-    const dead = m.regions.find(r => r.id === 'region_dead_lands');
+    const dead = m.regions.find(r => r.id === 'region_ember_lands');
     const nether = {
       id: 'region_nether', name: 'The Nether', established: true, source: 'vault', kind: 'region', elevation: 'Volcanic upland 2 to 5.',
-      geometry: null, areaPx: 0, parent: 'dead_lands',
+      geometry: null, areaPx: 0, parent: 'ember_lands',
       climate: 'Volcanic heat.', season: 'Burning all year.', terrain: { mountain: 0.35, hills: 0.3, desert: 0.2, plains: 0.15 }, snowShare: 0,
       density: { provincesPerState: [3, 3, 4], provinceAreaPx: 2600 }, people: 'The King of Demons and the Netherborn houses (the extent of his domain is unknown).',
       fertility: 'Almost none; ash fields.', ranges: ['Nether Mountains'], naturalBorders: ['The Nether Sound', 'The Ember Narrows', 'The Sea of Lava'],
-      notes: 'Vault: the Nether lies in the south of the Dead Lands (region_dead_lands) and is the seat of the King of Demons. A region of its own within region_dead_lands, below it, so that the import gives it its own states; the repair adds it.',
+      notes: 'Vault: the Nether lies in the south of the Ember Lands (region_ember_lands) and is the seat of the King of Demons. A region of its own within region_ember_lands, below it, so that the import gives it its own states; the repair adds it.',
     };
     m.regions.splice(dead ? m.regions.indexOf(dead) + 1 : m.regions.length, 0, nether);
     regions.splice(dead ? regions.indexOf(dead) + 1 : regions.length, 0, nether);
-    log.push({ rule: 'regions', id: 'region_nether', action: 'added region_nether (within region_dead_lands)' });
+    log.push({ rule: 'regions', id: 'region_nether', action: 'added region_nether (within region_ember_lands)' });
   }
   const land = new Int16Array(grid.w * grid.h).fill(-1);
   m.lands.forEach((l, k) => { const t = G.rasterize(l.geometry, grid); for (let i = 0; i < t.length; i++) if (t[i]) land[i] = k; });

@@ -134,10 +134,10 @@ As in the [Volgan tree](volgan.md): "a and b" means both, "a or b" either. "Proo
 | `voices_to_the_north` | Voices to the North | — | — | 23,0 | 35 | political_power 25 | 30 |
 | `envoy_to_parim` | An Envoy to Parim | voices_to_the_north | — | 21,1 | 35 | call zin_mirolon_tree_warn_parim | 30 |
 | `friendship_with_herez` | Friendship with Herez | voices_to_the_north | — | 23,1 | 35 | event_for Herez herez_friendship (zin_mirolon.3) | 20 |
-| `free_realms_of_the_dead_lands` | Free Realms of the Ember Lands | voices_to_the_north | — | 25,1 | 35 | event_for each of Olen, Luminor, Gelon, Mencnon, Bennen, Dra, Mirodor and Nan that exists: league_invite (zin_mirolon.4) | 20 |
+| `free_realms_of_the_ember_lands` | Free Realms of the Ember Lands | voices_to_the_north | — | 25,1 | 35 | event_for each of Olen, Luminor, Gelon, Mencnon, Bennen, Dra, Mirodor and Nan that exists: league_invite (zin_mirolon.4) | 20 |
 | `ask_the_lost_cause` | Ask the Lost Cause | envoy_to_parim | warden_league | 21,2 | 35 | event_for Aenor lost_cause_request (zin_mirolon.6) | 50, ×0.1 with flag zin_mirolon_parim_laughed |
 | `southern_marches_pact` | The Southern Marches Pact | friendship_with_herez | — | 23,2 | 35 | available: flag zin_mirolon_herez_friend; event_for Herez marches_pact (zin_mirolon.5) | 15 |
-| `warden_league` | The Warden League | free_realms_of_the_dead_lands | ask_the_lost_cause | 25,2 | 35 | faction `warden_league` (template `zin_faction_warden_league`, E3); call zin_mirolon_tree_invite_league (invites every country with flag zin_mirolon_league_friend) | 50 |
+| `warden_league` | The Warden League | free_realms_of_the_ember_lands | ask_the_lost_cause | 25,2 | 35 | faction `warden_league` (template `zin_faction_warden_league`, E3); call zin_mirolon_tree_invite_league (invites every country with flag zin_mirolon_league_friend) | 50 |
 | `through_the_concord_doors` | Through the Concord's Doors | ask_the_lost_cause | — | 21,3 | 35 | available: flag zin_mirolon_lost_cause_friend; add_spirit concord_backing; equipment zin_arms_equipment 1000 | 20 |
 | `appeal_to_gala` | An Appeal to Gala | southern_marches_pact | — | 23,3 | 35 | event_for Gala Elves appeal_to_gala (zin_mirolon.7) | 10 |
 | `league_musters` | The League Musters | warden_league | — | 25,3 | 35 | add_spirit league_musters_spirit | 15 |
@@ -254,9 +254,9 @@ All are fired by focus or option effects (no trigger, no mean time). Pictures ar
 | 7 | `appeal_to_gala` | Mirolon Remembers (to the Gala Elves) | Focus | `gala_court` | "Send rangers north." (Mirolon gets 500 `zin_arms_equipment` and flag zin_gala_rangers_mirolon; AI 15, ×2 with zin_mirolon_elves_remember; the Lands of the Sun spec may override) / "The elves made their choice long ago." (AI 85) |
 | 8 | `archives` | The Archives of the First Conquest | Focus | `generic_court` | "Read it to the young." (war_support +0.02) |
 | 9 | `passes_held` | The Passes Held (news) | Focus | `generic_war` (news) | "Mirolon stands." |
-| 10 | `storm_comes` | The Storm Comes | Focus | `dead_lands_storm` | "To the passes!" |
+| 10 | `storm_comes` | The Storm Comes | Focus | `ember_lands_storm` | "To the passes!" |
 | 11 | `mirolon_rises` | Mirolon Rises Again | Focus | `generic_peace` | "Home." (stability +0.05). Text: the master of Nafeher has fallen; what remains of him no one can say. |
-| 12 | `carry_war_south` | Into the Ember Lands? | Focus | `dead_lands_storm` | "Carry it south." (war goal `annex_everything` on Volgan if not at war; timed_spirit southern_war 180; AI 20) / "Remember Edran's host." (+100 PP; flag zin_mirolon_declined_south; AI 80). The text recalls that the First Age invasion of the Ember Lands failed. |
+| 12 | `carry_war_south` | Into the Ember Lands? | Focus | `ember_lands_storm` | "Carry it south." (war goal `annex_everything` on Volgan if not at war; timed_spirit southern_war 180; AI 20) / "Remember Edran's host." (+100 PP; flag zin_mirolon_declined_south; AI 80). The text recalls that the First Age invasion of the Ember Lands failed. |
 
 The mechanic's events that reach Mirolon (`zin_dominion.2`, `.3`, `.5`, `.6`, `.7`, `.10`, `.11`, `.20`, `.24`) are listed in the mechanic spec. The tree reaches `zin_dominion.5` (Mirolon's Warning, to Aenor) only through its own effect below.
 
@@ -269,7 +269,7 @@ With `zin_rule_historical_path`. Dates are targets.
 | Thaw to Longnight 1748 | wardens_hall, watch_on_the_passes, stone_on_the_passes, scouts_beyond_the_heat |
 | 1749 | voices_to_the_north, envoy_to_parim (the Golden Court laughs: `zin_mirolon_parim_laughed`), quarry_roads, the_first_gate, counting_the_fires, high_wardens_council, masons_guild |
 | 1750 | signal_towers, the_second_gate, scout_masters_school, signs_at_the_grave_fields, ledger_of_warnings, charter_of_the_lake_towns |
-| 1751 | friendship_with_herez, seats_for_pass_lords, the_wardens_law, open_the_muster_rolls, elective_crown, free_realms_of_the_dead_lands |
+| 1751 | friendship_with_herez, seats_for_pass_lords, the_wardens_law, open_the_muster_rolls, elective_crown, free_realms_of_the_ember_lands |
 | 1752 | one_realm_one_watch, the_iron_gate, fallback_lines, passes_are_shut, deep_patrols, warden_league |
 | 1753 | league_musters, lake_and_coast, army_of_the_passes, pass_warden_companies, levies_of_the_lake_towns, memory_of_the_first_conquest, lake_fisheries, coast_harbours |
 | 1754 | watch_never_sleeps, doctrine_of_the_narrows, rangers_of_the_forests, captain_of_the_passes, a_wall_of_realms, southern_marches_pact |
@@ -348,7 +348,7 @@ Every key is from the icon catalog ([02_icon_catalog.md](../02_icon_catalog.md))
 | 3 | memory_of_the_first_conquest `book_lore`; chronicles_of_the_alliance `banner_league`; songs_of_the_occupied_years `hymn_choir`; never_again `lone_sword`; what_the_elves_remember `tree_silver` |
 | 4 | wardens_hall `warden_crown`; high_wardens_council `council_table`; charter_of_the_lake_towns `charter_old`; seats_for_pass_lords `mountain_pass`; the_wardens_law `scroll_treaty`; open_the_muster_rolls `levy_muster`; elective_crown `warden_crown`; warden_assembly `council_table`; one_realm_one_watch `banner_plain`; mirolon_forests `forest_ancient`; last_free_realm `chain_broken` |
 | 5 | stone_on_the_passes `quarry_stone`; quarry_roads `roads_paved`; masons_guild `guild_hall`; the_first_gate `pass_fort`; signal_towers `beacon`; the_second_gate `fort_wall`; fallback_lines `fort_wall`; the_iron_gate `pass_fort`; passes_are_shut `mountain_pass` |
-| 6 | voices_to_the_north `envoy`; envoy_to_parim `palace_parim`; friendship_with_herez `handshake_oath`; free_realms_of_the_dead_lands `banner_league`; ask_the_lost_cause `concord_circle`; southern_marches_pact `scroll_treaty`; warden_league `alliance_rings`; through_the_concord_doors `charter_shield`; appeal_to_gala `gala_sun`; league_musters `levy_muster`; a_wall_of_realms `fort_wall`; the_north_listens `beacon` |
+| 6 | voices_to_the_north `envoy`; envoy_to_parim `palace_parim`; friendship_with_herez `handshake_oath`; free_realms_of_the_ember_lands `banner_league`; ask_the_lost_cause `concord_circle`; southern_marches_pact `scroll_treaty`; warden_league `alliance_rings`; through_the_concord_doors `charter_shield`; appeal_to_gala `gala_sun`; league_musters `levy_muster`; a_wall_of_realms `fort_wall`; the_north_listens `beacon` |
 | 7 | army_of_the_passes `sword_shield`; pass_warden_companies `spear_levy`; levies_of_the_lake_towns `levy_muster`; doctrine_of_the_narrows `war_council_map`; rangers_of_the_forests `ranger_cloak`; fire_against_the_dead `siege_trebuchet`; captain_of_the_passes `pass_fort`; arms_from_the_lake_forges `forge_anvil`; every_hand_a_warden `spear_levy` |
 | 8 | the_storm_comes `ember_desert`; last_stand_at_the_passes `pass_fort`; the_exile_court `exile_court`; burn_the_bridges `river_ford`; hold_every_stone `fort_wall`; evacuate_the_lake_towns `lake_town`; the_passes_held `mountain_pass`; the_court_abroad `exile_court`; the_hidden_mirolon `scout_lantern`; hope_from_the_north `beacon` |
 | 9 | mirolon_rises_again `warden_crown`; rebuild_the_gates `quarry_stone`; bury_the_dead_of_two_ages `grave_field`; carry_the_war_south `banner_plain`; a_watch_for_the_ages `eye_watchful`; the_free_south `chain_broken` |

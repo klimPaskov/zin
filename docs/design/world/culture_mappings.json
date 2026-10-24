@@ -25,17 +25,17 @@
         "spirit": "The Ransom Law",
         "summary": "Sword-lords of the cliff harbours. The isle's best captain wears its crown."
       },
-      "dead_lands_freeholds": {
-        "adjective": "Ember Lands",
-        "name": "Ember Lands Freeholders",
-        "spirit": "Salt and Silence",
-        "summary": "Salt-pan and fishing freeholds of the Ember Lands coast. They do not speak of what lies to the south."
-      },
       "dondor_brutes": {
         "adjective": "Dondor",
         "name": "Dondor Brutes",
         "spirit": "The Blood-Price",
         "summary": "Clan-moot kings and iron-halls of Dondor. They tax the iron road and leave magic to the Fire-speakers."
+      },
+      "ember_lands_freeholds": {
+        "adjective": "Ember Lands",
+        "name": "Ember Lands Freeholders",
+        "spirit": "Salt and Silence",
+        "summary": "Salt-pan and fishing freeholds of the Ember Lands coast. They do not speak of what lies to the south."
       },
       "forest_council_elves": {
         "adjective": "Council Elven",
@@ -770,42 +770,6 @@
       "tier": 3,
       "unit_group": "island_marines"
     },
-    "dead_lands_freeholds": {
-      "building_style": "mud_brick_sea",
-      "faith": "mourning_dust",
-      "flag": {
-        "alt": [
-          "salt_pan"
-        ],
-        "motif": "boat",
-        "palette": [
-          "#c9b58a",
-          "#3e6b78",
-          "#8a5a3a"
-        ],
-        "shape": "rect"
-      },
-      "graphical_culture": {
-        "fallback": "zin_men_gfx",
-        "group": "zin_warden_blue_gfx",
-        "key": "zin_warden_blue_gfx"
-      },
-      "icon": "salt_boat",
-      "language": "mirolic",
-      "magic": "wary",
-      "music_mood": "warden_horns",
-      "people": "men",
-      "portrait_pool": {
-        "kit": "men",
-        "per_sex": 2,
-        "pool": "dead_lands_freeholds",
-        "tier": 3,
-        "total": 4,
-        "unique": false
-      },
-      "tier": 3,
-      "unit_group": "warden_blue"
-    },
     "dondor_brutes": {
       "building_style": "iron_hall",
       "faith": "hearth_iron",
@@ -841,6 +805,42 @@
       },
       "tier": 2,
       "unit_group": "iron_brute"
+    },
+    "ember_lands_freeholds": {
+      "building_style": "mud_brick_sea",
+      "faith": "mourning_dust",
+      "flag": {
+        "alt": [
+          "salt_pan"
+        ],
+        "motif": "boat",
+        "palette": [
+          "#c9b58a",
+          "#3e6b78",
+          "#8a5a3a"
+        ],
+        "shape": "rect"
+      },
+      "graphical_culture": {
+        "fallback": "zin_men_gfx",
+        "group": "zin_warden_blue_gfx",
+        "key": "zin_warden_blue_gfx"
+      },
+      "icon": "salt_boat",
+      "language": "mirolic",
+      "magic": "wary",
+      "music_mood": "warden_horns",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "ember_lands_freeholds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "tier": 3,
+      "unit_group": "warden_blue"
     },
     "forest_council_elves": {
       "building_style": "living_tree",

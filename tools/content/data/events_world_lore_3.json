@@ -147,7 +147,7 @@
     "options": [
       { "name": "Punish the breakers.", "ai": 40, "effects": ["add_stability = 0.01"] },
       { "name": "Leave the images broken.", "ai": 60, "effects": ["add_war_support = 0.01"] } ] },
-  { "id": 408, "title": "The Storms Thin", "picture": "dead_lands_storm", "who": [{ "names": ["Mirolon", "Olen", "Nan"] }, { "all": ["group:dead_lands", "NOT = { zin_is_volgan = yes }", "NOT = { AND = { is_subject = yes OVERLORD = { zin_is_volgan = yes } } }"] }], "story": { "flag": "zin_volgan_body_destroyed", "delay": 30 },
+  { "id": 408, "title": "The Storms Thin", "picture": "ember_lands_storm", "who": [{ "names": ["Mirolon", "Olen", "Nan"] }, { "all": ["group:ember_lands", "NOT = { zin_is_volgan = yes }", "NOT = { AND = { is_subject = yes OVERLORD = { zin_is_volgan = yes } } }"] }], "story": { "flag": "zin_volgan_body_destroyed", "delay": 30 },
     "desc": "Sailors say the storms over the south are thinner this season, and that a ship can stand in to the old coast for half a day before the sky closes. Nobody knows what it means. The masters have begun to chart the gaps.",
     "options": [{ "name": "Watch the south.", "ai": 100, "effects": [] }] },
   { "id": 409, "title": "White Banners in the South", "picture": "generic_peace", "who": [{ "all": ["group:lands_of_the_sun"], "not_names": ["Gala Elves"] }], "story": { "flag": "zin_lorien_dead", "delay": 30 },

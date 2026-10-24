@@ -1,0 +1,165 @@
+scripted_gui = {
+zin_panel_mistake = {
+	context_type = player_context
+	window_name = "zin_mistake_window"
+	dirty = zin_ui_tick
+	ai_enabled = { always = no }
+	visible = {
+		zin_is_zol = yes
+		has_country_flag = zin_ui_mistake_open
+	}
+	effects = {
+		zin_mistake_tab_1_click = {
+			set_variable = { zin_ui_tab = 1 }
+			set_variable = { zin_ui_page = 0 }
+			zin_zol_ui_refresh = yes
+		}
+		zin_mistake_close_click = {
+			clr_country_flag = zin_ui_mistake_open
+		}
+	}
+	triggers = {
+		zin_mistake_power_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			NOT = { has_country_flag = zin_zol_presence_lapsed }
+		}
+		zin_mistake_lapsed_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			has_country_flag = zin_zol_presence_lapsed
+		}
+		zin_mistake_power_rule_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			NOT = { has_country_flag = zin_zol_presence_lapsed }
+		}
+		zin_mistake_power_mark_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			NOT = { has_country_flag = zin_zol_presence_lapsed }
+		}
+		zin_mistake_power_note_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_mistake_serve_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_mistake_bond_great_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_mistake_bond_great_1_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_great value = 1 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_great_2_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_great value = 2 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_great_3_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_great value = 3 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_great_4_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_great value = 4 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_great_5_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_great value = 5 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_lesser_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_mistake_bond_lesser_1_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_lesser value = 1 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_lesser_2_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_lesser value = 2 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_lesser_3_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_lesser value = 3 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_lesser_4_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_lesser value = 4 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_lesser_5_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_lesser value = 5 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_divine_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_mistake_bond_divine_1_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_divine value = 1 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_divine_2_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_divine value = 2 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_divine_3_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_divine value = 3 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_divine_4_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_divine value = 4 compare = greater_than_or_equals }
+		}
+		zin_mistake_bond_divine_5_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			check_variable = { var = zin_zol_bond_divine value = 5 compare = greater_than_or_equals }
+		}
+		zin_mistake_isles_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_mistake_conv_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			has_global_flag = zin_zol_rising
+		}
+		zin_mistake_conv_rule_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			has_global_flag = zin_zol_rising
+		}
+		zin_mistake_conv_mark_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			has_global_flag = zin_zol_rising
+		}
+		zin_mistake_seat_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_mistake_tab_1_on_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+	}
+	properties = {
+		zin_mistake_power_mark = {
+			x = zin_ui_power_x
+		}
+		zin_mistake_conv_mark = {
+			x = zin_ui_conv_x
+		}
+	}
+}
+zin_panel_mistake_launcher = {
+	context_type = player_context
+	window_name = "zin_mistake_button_window"
+	dirty = zin_ui_tick
+	ai_enabled = { always = no }
+	visible = {
+		zin_is_zol = yes
+	}
+	effects = {
+		zin_mistake_open_click = {
+			clr_country_flag = zin_ui_court_open
+			clr_country_flag = zin_ui_council_open
+			clr_country_flag = zin_ui_mistake_open
+			clr_country_flag = zin_realm_open
+			set_country_flag = zin_ui_mistake_open
+			set_variable = { zin_ui_tab = 1 }
+			set_variable = { zin_ui_page = 0 }
+			zin_zol_ui_refresh = yes
+		}
+	}
+}
+}

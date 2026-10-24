@@ -1,0 +1,267 @@
+guiTypes = {
+containerWindowType = {
+	name = "zin_mistake_window"
+	position = { x = -310 y = -250 }
+	size = { width = 620 height = 500 }
+	orientation = center
+	moveable = yes
+	background = {
+		name = "zin_mistake_bg"
+		spriteType = "GFX_zin_frame"
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_title"
+		position = { x = 40 y = 20 }
+		font = "hoi_24header"
+		text = "ZIN_MISTAKE_TITLE"
+		maxWidth = 540
+		maxHeight = 32
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_mistake_close"
+		position = { x = 576 y = 14 }
+		quadTextureSprite = "GFX_closebutton"
+		shortcut = "ESCAPE"
+	}
+	buttonType = {
+		name = "zin_mistake_tab_1"
+		position = { x = 30 y = 62 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_MISTAKE_TAB1"
+		buttonFont = "hoi_16mbs"
+	}
+	iconType = {
+		name = "zin_mistake_tab_1_on"
+		spriteType = "GFX_zin_rule"
+		position = { x = 26 y = 96 }
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_power"
+		position = { x = 40 y = 118 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_POWER"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_lapsed"
+		position = { x = 40 y = 118 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_LAPSED"
+		maxWidth = 540
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_mistake_power_rule"
+		spriteType = "GFX_zin_rule"
+		position = { x = 40 y = 156 }
+	}
+	iconType = {
+		name = "zin_mistake_power_mark"
+		spriteType = "GFX_zin_mistake_marker"
+		position = { x = 40 y = 144 }
+		scale = 0.4
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_power_note"
+		position = { x = 40 y = 172 }
+		font = "hoi_16mbs"
+		text = "ZIN_MISTAKE_POWER_NOTE"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_serve"
+		position = { x = 40 y = 214 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_SERVE"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_bond_great"
+		position = { x = 60 y = 244 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_BOND_GREAT"
+		maxWidth = 200
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_mistake_bond_great_1"
+		spriteType = "GFX_zin_mistake_great"
+		position = { x = 270 y = 238 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_great_2"
+		spriteType = "GFX_zin_mistake_great"
+		position = { x = 310 y = 238 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_great_3"
+		spriteType = "GFX_zin_mistake_great"
+		position = { x = 350 y = 238 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_great_4"
+		spriteType = "GFX_zin_mistake_great"
+		position = { x = 390 y = 238 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_great_5"
+		spriteType = "GFX_zin_mistake_great"
+		position = { x = 430 y = 238 }
+		scale = 0.5
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_bond_lesser"
+		position = { x = 60 y = 280 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_BOND_LESSER"
+		maxWidth = 200
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_mistake_bond_lesser_1"
+		spriteType = "GFX_zin_mistake_lesser"
+		position = { x = 270 y = 274 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_lesser_2"
+		spriteType = "GFX_zin_mistake_lesser"
+		position = { x = 310 y = 274 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_lesser_3"
+		spriteType = "GFX_zin_mistake_lesser"
+		position = { x = 350 y = 274 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_lesser_4"
+		spriteType = "GFX_zin_mistake_lesser"
+		position = { x = 390 y = 274 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_lesser_5"
+		spriteType = "GFX_zin_mistake_lesser"
+		position = { x = 430 y = 274 }
+		scale = 0.5
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_bond_divine"
+		position = { x = 60 y = 316 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_BOND_DIVINE"
+		maxWidth = 200
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_mistake_bond_divine_1"
+		spriteType = "GFX_zin_mistake_divine"
+		position = { x = 270 y = 310 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_divine_2"
+		spriteType = "GFX_zin_mistake_divine"
+		position = { x = 310 y = 310 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_divine_3"
+		spriteType = "GFX_zin_mistake_divine"
+		position = { x = 350 y = 310 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_divine_4"
+		spriteType = "GFX_zin_mistake_divine"
+		position = { x = 390 y = 310 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_mistake_bond_divine_5"
+		spriteType = "GFX_zin_mistake_divine"
+		position = { x = 430 y = 310 }
+		scale = 0.5
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_isles"
+		position = { x = 40 y = 358 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_ISLES"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_conv"
+		position = { x = 40 y = 392 }
+		font = "hoi_18mbs"
+		text = "ZIN_MISTAKE_CONV"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_mistake_conv_rule"
+		spriteType = "GFX_zin_rule"
+		position = { x = 40 y = 428 }
+	}
+	iconType = {
+		name = "zin_mistake_conv_mark"
+		spriteType = "GFX_zin_mistake_marker"
+		position = { x = 40 y = 416 }
+		scale = 0.4
+	}
+	instantTextBoxType = {
+		name = "zin_mistake_seat"
+		position = { x = 40 y = 448 }
+		font = "hoi_16mbs"
+		text = "ZIN_MISTAKE_SEAT"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+}
+containerWindowType = {
+	name = "zin_mistake_button_window"
+	position = { x = 148 y = 86 }
+	size = { width = 132 height = 30 }
+	orientation = upper_left
+	buttonType = {
+		name = "zin_mistake_open"
+		position = { x = 0 y = 0 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_MISTAKE_BUTTON"
+		buttonFont = "hoi_18mbs"
+		pdx_tooltip = "ZIN_MISTAKE_BUTTON_tt"
+	}
+}
+}

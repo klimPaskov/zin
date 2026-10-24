@@ -12,7 +12,7 @@
     "dark_lands",
     "magical_lands",
     "zols_mistake",
-    "dead_lands",
+    "ember_lands",
     "east_lands",
     "islands_of_the_south",
     "lands_of_the_sun"
@@ -182,7 +182,7 @@
         "Nezer"
       ],
       "start": true,
-      "purpose": "Volgan's dominion of the Dead Lands.",
+      "purpose": "Volgan's dominion of the Ember Lands.",
       "manifest": "dominion_of_the_south",
       "goals": [
         "grow_the_league",
@@ -516,7 +516,7 @@
         "is_subject_of = FROM",
         "capital_scope = {",
         "OR = {",
-        "zin_is_region_dead_lands = yes",
+        "zin_is_region_ember_lands = yes",
         "zin_is_region_dark_lands = yes",
         "}",
         "}",
@@ -1539,8 +1539,8 @@
     {
       "id": "zin_faction_manifest_dominion_of_the_south",
       "name": "Dominion of the South",
-      "desc": "The Dead Lands lie under one banner, and that banner is Volgan's.",
-      "region": "dead_lands",
+      "desc": "The Ember Lands lie under one banner, and that banner is Volgan's.",
+      "region": "ember_lands",
       "rangeMax": 0.67,
       "bonus": {
         "army_attack_factor": 0.05

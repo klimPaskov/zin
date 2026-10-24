@@ -249,7 +249,7 @@ test('The banned-word scan finds a planted modern word', async () => {
 test('Text keeps the secrets: no Eindil, Afrit or Hidden Council in any text, only the scripted names', () => {
   let scripted = 0;
   for (const id of IDS) for (const x of collectTexts(BASE[id])) {
-    assert(!/Eindil|Afrit|Hidden Council|Einendil|Edvoid|\bRush\b/.test(strip(x.text)), `${id} ${x.where}`);
+    assert(!/Eindil|Afrit|Hidden Council|Einendil|Kusven|\bRush\b/.test(strip(x.text)), `${id} ${x.where}`);
     if (/\[zin_loc_(eindil|deliverer)\]/.test(x.text)) scripted++;
     assert(!/(^|\W)(Eindil|Afrit)/i.test(BASE[id].focuses.map(f => f.name).join(' | ')), `${id} focus names`);
   }

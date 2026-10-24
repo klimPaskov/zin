@@ -2130,7 +2130,7 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Great Lake, Aenor Forest, and the sovereign giant kingdom of Hirolon (former label Hiloron). See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |
 | **Magical Lands** | Magical Lands | East of Middle Lands, same landmass, separated from them by the Great Wall of Aenor, a natural mountain range. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
-| **Zol / Zol's Mistake** | Ocean of Edvoid (drawn sheet; the sea is now Kusmeel) | Far northern black wasteland and every black island of the Kusmeel, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Kusven]]. See [[Zols Mistake]]. |
+| **Zol / Zol's Mistake** | Kusmeel (drawn sheet; the sea is now Kusmeel) | Far northern black wasteland and every black island of the Kusmeel, largely deserted and roamed by the dead. Contains Šodolôrō, dwelling of [[Kusven]]. See [[Zols Mistake]]. |
 | **East Lands** | South-Earth | Across the rift in the east, reaches off the eastern map. Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Mirrored for mod map. |
 | **South Lands** | Desert of South-Earth | Great desert of East Lands, extends south off the map. Noris Desert and former Sunhot Desert. |
 | **Ember Lands** | Ember Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Ember Lands]]. |
@@ -2967,7 +2967,7 @@ The world creator's corrections of 24 October 2026 are recorded in [[Names and R
 - **Twelve New Gods (K3):** [[New Gods]] and [[Glernaen]] record the twelve gods, the months named after them and Glernaen as the mightiest. [[Fourth Age Chronology]] replaces the proposed farming-year month names with numbered months, and the campaign start is now written as the first day of the third month, 4A 1748.
 - **Bastian (K5):** added to [[Varner]].
 - **Devils (K6):** defined in [[Peoples of Aoaz]] and [[Spirits and Their Ranks]]; [[King of Demons]] points to Q-07.
-- **Vez'nan and Kusven (K7):** no page used Vez'nan. [[Aoaz and Its Regions]] and [[Zols Mistake]] flagged Edvoid as a name to be replaced; the owner chose Kusven (Q-10).
+- **Vez'nan and Kusven (K7):** no page used Vez'nan. [[Aoaz and Its Regions]] and [[Zols Mistake]] flagged Kusven as a name to be replaced; the owner chose Kusven (Q-10).
 - **Records:** [[Names and Retcons]], [[Open Questions]] and this log. The consolidated [[ZIN Lore Master Compendium]] received the same text changes wherever it repeats a corrected passage.
 
 ## 24 October 2026: Owner answers

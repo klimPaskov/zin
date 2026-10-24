@@ -37,7 +37,7 @@ export async function buildPowersUi(staged, ctx) {
     [ge('zin_volgan_veil', 70), 'ZIN_DOM_VEIL_0', 'Hidden: the storms keep the secret.'],
     [ge('zin_volgan_veil', 50), 'ZIN_DOM_VEIL_1', 'Rumoured: Mirolon, Herez and the free realms of the south have heard something.'],
     [ge('zin_volgan_veil', 30), 'ZIN_DOM_VEIL_2', 'Suspected: Mirolon\'s proof grows twice as fast.'],
-    [null, 'ZIN_DOM_VEIL_3', 'Seen: every court knows the Dead Lands are arming.']], loc);
+    [null, 'ZIN_DOM_VEIL_3', 'Seen: every court knows the Ember Lands are arming.']], loc);
   words('zin_dominion_muster_word', [
     ['has_country_flag = zin_volgan_mustered', 'ZIN_DOM_MUSTER_YES', 'A muster was held within the month, and the veil will not mend yet.'],
     [null, 'ZIN_DOM_MUSTER_NO', 'No muster this month; the veil mends while the peace holds.']], loc);
@@ -59,7 +59,7 @@ export async function buildPowersUi(staged, ctx) {
   dom.gauge('nether', 1, 320, 'zin_ui_nether_x');
   dom.text('nethermarks', 1, 40, 328, 540, 20, 'ZIN_DOM_T1_NETHERMARKS', 'At 40 the Netherborn come to your companies. At 70 the gate may be opened in war.', { font: 'small' });
   dom.text('musters', 1, 40, 366, 540, 48, 'ZIN_DOM_T1_MUSTERS', 'Grave musters held: §Y[?ROOT.zin_volgan_musters|0]§!. [ROOT.zin_dominion_muster_word]');
-  dom.text('closed', 1, 40, 440, 540, 48, 'ZIN_DOM_T1_BROKEN', 'What remains of the Lord of the Dead Lands is not known.', { font: 'small', when: 'has_global_flag = zin_volgan_body_destroyed' });
+  dom.text('closed', 1, 40, 440, 540, 48, 'ZIN_DOM_T1_BROKEN', 'What remains of the Lord of the Ember Lands is not known.', { font: 'small', when: 'has_global_flag = zin_volgan_body_destroyed' });
   dom.text('sworn_head', 2, 40, 118, 540, 24, 'ZIN_DOM_T2_HEAD', 'The sworn realms and the strength of their oaths (0 to 100):');
   members.forEach(([t, n, k], i) => dom.text(`oath_${k}`, 2, 60, 156 + i * 34, 500, 24, `ZIN_DOM_T2_${k.toUpperCase()}`, `${n}: [ROOT.zin_dominion_oath_${k}]`));
   dom.text('oath_note', 2, 40, 262, 540, 40, 'ZIN_DOM_T2_NOTE', 'Below 25 a realm may seek its own road. Summon the Dominion to steady the oaths.', { font: 'small' });
@@ -70,7 +70,7 @@ export async function buildPowersUi(staged, ctx) {
 
   // ============================================================================================ the Watch on the Passes
   words('zin_watch_south_word', [
-    ['check_variable = { global.zin_volgan_veil_band = 3 }', 'ZIN_WATCH_SOUTH_3', 'Seen: the Dead Lands are plainly arming.'],
+    ['check_variable = { global.zin_volgan_veil_band = 3 }', 'ZIN_WATCH_SOUTH_3', 'Seen: the Ember Lands are plainly arming.'],
     ['check_variable = { global.zin_volgan_veil_band = 2 }', 'ZIN_WATCH_SOUTH_2', 'Suspected: signs are everywhere, though not yet proof for all.'],
     ['check_variable = { global.zin_volgan_veil_band = 1 }', 'ZIN_WATCH_SOUTH_1', 'Rumoured: whispers have crossed the passes.'],
     [null, 'ZIN_WATCH_SOUTH_0', 'Hidden: the south is quiet, or seems it.']], loc);

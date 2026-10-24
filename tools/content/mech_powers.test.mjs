@@ -353,7 +353,7 @@ test('Windows: the three panels exist under the interface spec\'s names; every e
 
 test('Windows: no panel text names a secret, and the Dominion window never says what became of Volgan', () => {
   for (const [k, v] of Object.entries(locEntries)) if (/^ZIN_(DOM|WATCH|STRAIT)/.test(k)) { assert(!/Afrit|Eindil|Hidden Council/.test(v), k); assert(!/is dead|survives|lives on|his spirit/i.test(v), k); }
-  assert(locEntries.ZIN_DOM_T1_BROKEN === 'What remains of the Lord of the Dead Lands is not known.');
+  assert(locEntries.ZIN_DOM_T1_BROKEN === 'What remains of the Lord of the Ember Lands is not known.');
 });
 
 test('Kit: duplicate ids, missing text, wrong option counts and unused variants are refused', () => {

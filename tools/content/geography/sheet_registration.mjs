@@ -75,8 +75,8 @@ export const REGISTRATION = Object.freeze({
 /** The scans of docs/name_table.md and the sheets of the model that show them. */
 export const SCAN_SHEETS = Object.freeze({
   'Cold Lands': 'cold', 'West-Earth': 'west', 'Tritons Islands': 'tritons', 'East-Earth': 'north', 'Dark Lands': 'dark',
-  'Rush Land': 'rush', 'Rush Islands': 'risle', 'Magical Lands': 'mag', 'Ocean of Edvoid': 'edv', 'South-Earth': 'east',
-  'Dead Lands': 'dead', 'Sunhot': 'sun',
+  'Rush Land': 'rush', 'Rush Islands': 'risle', 'Magical Lands': 'mag', 'Kusmeel': 'edv', 'South-Earth': 'east',
+  'Ember Lands': 'dead', 'Sunhot': 'sun',
 });
 
 // ---------------------------------------------------------------------------------------------------- transforms

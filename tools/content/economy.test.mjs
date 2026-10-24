@@ -300,7 +300,7 @@ test('The great powers start with the spec industry: Aenor first, workshops abou
     if (r.country !== 'Aenor') assert(aenor.workshops + aenor.armouries > r.workshops + r.armouries, `${r.country} below Aenor`);
   }
   assert.equal(aenor.workshops, 32);
-  assert(rows.find(r => r.country === 'Volgan').armouries > rows.find(r => r.country === 'Volgan').workshops, 'the Dead Lands run forges first');
+  assert(rows.find(r => r.country === 'Volgan').armouries > rows.find(r => r.country === 'Volgan').workshops, 'the Ember Lands run forges first');
 });
 
 // ------------------------------------------------------------------------------------------------ treasury

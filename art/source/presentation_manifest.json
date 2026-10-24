@@ -117,17 +117,6 @@
    "sha256": "e12e5538cf0f6f809db04a81a86bd2e58a0346ccf2174e468829c575699bba69"
   },
   {
-   "out": "gfx/event_pictures/zin/zin_evt_dead_lands_storm.dds",
-   "source": "art/source/events/dead_lands_storm.png",
-   "sourceSha256": "6cae90b28e3b40e35a2203a8afa7e9d2aec41c328be8f024d7a320877f06c47e",
-   "ops": [
-    "centre crop 928x778",
-    "lanczos3 210x176",
-    "dds a8r8g8b8"
-   ],
-   "sha256": "2a445e205b6df864345b71cbdb99336f9e93bc58020769d03d17fee9597cfab3"
-  },
-  {
    "out": "gfx/event_pictures/zin/zin_evt_dragon_return.dds",
    "source": "art/source/events/dragon_return.png",
    "sourceSha256": "c62260c4ed42b350ed8b429d9cdd0b50bcaa6a5c4c01ff755477e308a0978ec8",
@@ -148,6 +137,17 @@
     "dds a8r8g8b8"
    ],
    "sha256": "f13e77e40f950886bbb5af9829a5801105d0d4c1573d587d52ce0165f7ddd603"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_evt_ember_lands_storm.dds",
+   "source": "art/source/events/dead_lands_storm.png",
+   "sourceSha256": "6cae90b28e3b40e35a2203a8afa7e9d2aec41c328be8f024d7a320877f06c47e",
+   "ops": [
+    "centre crop 928x778",
+    "lanczos3 210x176",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "2a445e205b6df864345b71cbdb99336f9e93bc58020769d03d17fee9597cfab3"
   },
   {
    "out": "gfx/event_pictures/zin/zin_evt_gala_court.dds",
@@ -484,16 +484,6 @@
    "sha256": "5f59d6f17738d2bf3422c362d3bb6c2b1118c758356dbfb3e28d627e83db2424"
   },
   {
-   "out": "gfx/event_pictures/zin/zin_news_dead_lands_storm.dds",
-   "source": "art/source/events/dead_lands_storm.png",
-   "sourceSha256": "6cae90b28e3b40e35a2203a8afa7e9d2aec41c328be8f024d7a320877f06c47e",
-   "ops": [
-    "lanczos3 cover 397x153",
-    "dds a8r8g8b8"
-   ],
-   "sha256": "063de682a66f7ddda1abc34af4d75064560135d9e1fb9821a99959fb26748454"
-  },
-  {
    "out": "gfx/event_pictures/zin/zin_news_dragon_return.dds",
    "source": "art/source/events/dragon_return.png",
    "sourceSha256": "c62260c4ed42b350ed8b429d9cdd0b50bcaa6a5c4c01ff755477e308a0978ec8",
@@ -512,6 +502,16 @@
     "dds a8r8g8b8"
    ],
    "sha256": "9e0f24998e783911db18cde1db8514358f3dea451d38ad9187f7f6c98e2f7536"
+  },
+  {
+   "out": "gfx/event_pictures/zin/zin_news_ember_lands_storm.dds",
+   "source": "art/source/events/dead_lands_storm.png",
+   "sourceSha256": "6cae90b28e3b40e35a2203a8afa7e9d2aec41c328be8f024d7a320877f06c47e",
+   "ops": [
+    "lanczos3 cover 397x153",
+    "dds a8r8g8b8"
+   ],
+   "sha256": "063de682a66f7ddda1abc34af4d75064560135d9e1fb9821a99959fb26748454"
   },
   {
    "out": "gfx/event_pictures/zin/zin_news_ending_ashen_throne.dds",

@@ -1,0 +1,544 @@
+{
+ "schema": "zin-names-report/1",
+ "spec": "docs/specs/02_lore/06_languages.md",
+ "pools": {
+  "blocks": 306,
+  "entries": {
+   "male": 18120,
+   "female": 15113,
+   "surnames": 24522,
+   "callsigns": 3672
+  },
+  "distinct": {
+   "male": 1631,
+   "female": 1248,
+   "surnames": 2165,
+   "callsigns": 2310
+  }
+ },
+ "blend": [
+  {
+   "language": "aenoran",
+   "weight": 5.099
+  },
+  {
+   "language": "gigantic",
+   "weight": 1
+  },
+  {
+   "language": "longspeech",
+   "weight": 1
+  },
+  {
+   "language": "orran",
+   "weight": 1.414
+  }
+ ],
+ "collisions": {
+  "crossLanguage": 0,
+  "nearDuplicates": 0,
+  "banned": 0,
+  "reserved": 0,
+  "glyphs": 0
+ },
+ "registrySize": 13610,
+ "languages": {
+  "aenoran": {
+   "countries": 27,
+   "entries": 5724,
+   "distinct": {
+    "male": 197,
+    "female": 113,
+    "surnames": 280,
+    "callsigns": 169
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.58,
+    "infeasibleKinds": [
+     "river",
+     "mountain"
+    ]
+   },
+   "relatedness": {
+    "family": "ainic",
+    "regular": 72,
+    "matched": 72,
+    "rate": 1
+   }
+  },
+  "alerhic": {
+   "countries": 16,
+   "entries": 3392,
+   "distinct": {
+    "male": 77,
+    "female": 55,
+    "surnames": 132,
+    "callsigns": 151
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.936,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "eastern",
+    "regular": 69,
+    "matched": 69,
+    "rate": 1
+   }
+  },
+  "coldic": {
+   "countries": 29,
+   "entries": 6148,
+   "distinct": {
+    "male": 90,
+    "female": 63,
+    "surnames": 129,
+    "callsigns": 232
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.892,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "boreal",
+    "regular": 56,
+    "matched": 50,
+    "rate": 0.893
+   }
+  },
+  "dondric": {
+   "countries": 2,
+   "entries": 424,
+   "distinct": {
+    "male": 78,
+    "female": 57,
+    "surnames": 106,
+    "callsigns": 24
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.772,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "ainic",
+    "regular": 56,
+    "matched": 56,
+    "rate": 1
+   }
+  },
+  "galic": {
+   "countries": 3,
+   "entries": 510,
+   "distinct": {
+    "male": 47,
+    "female": 37,
+    "surnames": 74,
+    "callsigns": 33
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.672,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "elvish",
+    "regular": 73,
+    "matched": 72,
+    "rate": 0.986
+   }
+  },
+  "gigantic": {
+   "countries": 2,
+   "entries": 360,
+   "distinct": {
+    "male": 61,
+    "female": 44,
+    "surnames": 64,
+    "callsigns": 19
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.892,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "grave_rite": {
+   "countries": 1,
+   "entries": 170,
+   "distinct": {
+    "male": 58,
+    "female": 50,
+    "surnames": 50,
+    "callsigns": 12
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.956,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "ainic",
+    "regular": 64,
+    "matched": 64,
+    "rate": 1
+   }
+  },
+  "gunwaithic": {
+   "countries": 21,
+   "entries": 4452,
+   "distinct": {
+    "male": 91,
+    "female": 52,
+    "surnames": 152,
+    "callsigns": 195
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.884,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "boreal",
+    "regular": 66,
+    "matched": 65,
+    "rate": 0.985
+   }
+  },
+  "infernal": {
+   "countries": 3,
+   "entries": 543,
+   "distinct": {
+    "male": 68,
+    "female": 46,
+    "surnames": 63,
+    "callsigns": 29
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.996,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "leren": {
+   "countries": 28,
+   "entries": 5936,
+   "distinct": {
+    "male": 69,
+    "female": 73,
+    "surnames": 145,
+    "callsigns": 158
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.684,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "ainic",
+    "regular": 63,
+    "matched": 63,
+    "rate": 1
+   }
+  },
+  "longspeech": {
+   "countries": 1,
+   "entries": 179,
+   "distinct": {
+    "male": 60,
+    "female": 41,
+    "surnames": 66,
+    "callsigns": 12
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.992,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "mirolic": {
+   "countries": 9,
+   "entries": 1629,
+   "distinct": {
+    "male": 45,
+    "female": 44,
+    "surnames": 80,
+    "callsigns": 77
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.613,
+    "infeasibleKinds": [
+     "mountain"
+    ]
+   },
+   "relatedness": {
+    "family": "ainic",
+    "regular": 57,
+    "matched": 57,
+    "rate": 1
+   }
+  },
+  "noric": {
+   "countries": 9,
+   "entries": 1908,
+   "distinct": {
+    "male": 60,
+    "female": 59,
+    "surnames": 130,
+    "callsigns": 98
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 1,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "eastern",
+    "regular": 65,
+    "matched": 65,
+    "rate": 1
+   }
+  },
+  "orcish": {
+   "countries": 21,
+   "entries": 3843,
+   "distinct": {
+    "male": 94,
+    "female": 48,
+    "surnames": 63,
+    "callsigns": 139
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 1,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "orran": {
+   "countries": 2,
+   "entries": 362,
+   "distinct": {
+    "male": 75,
+    "female": 56,
+    "surnames": 59,
+    "callsigns": 20
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.92,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "stabilic": {
+   "countries": 10,
+   "entries": 2120,
+   "distinct": {
+    "male": 69,
+    "female": 82,
+    "surnames": 105,
+    "callsigns": 105
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.904,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "eastern",
+    "regular": 55,
+    "matched": 55,
+    "rate": 1
+   }
+  },
+  "sunhot": {
+   "countries": 44,
+   "entries": 7744,
+   "distinct": {
+    "male": 61,
+    "female": 54,
+    "surnames": 54,
+    "callsigns": 241
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.956,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "elvish",
+    "regular": 70,
+    "matched": 70,
+    "rate": 1
+   }
+  },
+  "sylvan": {
+   "countries": 21,
+   "entries": 4389,
+   "distinct": {
+    "male": 57,
+    "female": 51,
+    "surnames": 96,
+    "callsigns": 175
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.772,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "elvish",
+    "regular": 76,
+    "matched": 75,
+    "rate": 0.987
+   }
+  },
+  "tritonic": {
+   "countries": 34,
+   "entries": 6800,
+   "distinct": {
+    "male": 73,
+    "female": 57,
+    "surnames": 78,
+    "callsigns": 282
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.824,
+    "infeasibleKinds": []
+   },
+   "relatedness": {
+    "family": "boreal",
+    "regular": 67,
+    "matched": 67,
+    "rate": 1
+   }
+  },
+  "trollish": {
+   "countries": 1,
+   "entries": 161,
+   "distinct": {
+    "male": 59,
+    "female": 35,
+    "surnames": 55,
+    "callsigns": 12
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.916,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "yetic": {
+   "countries": 1,
+   "entries": 181,
+   "distinct": {
+    "male": 60,
+    "female": 46,
+    "surnames": 63,
+    "callsigns": 12
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.928,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  },
+  "yonic": {
+   "countries": 19,
+   "entries": 4028,
+   "distinct": {
+    "male": 81,
+    "female": 85,
+    "surnames": 121,
+    "callsigns": 105
+   },
+   "reference": {
+    "places": 250,
+    "persons": 250,
+    "failures": 0,
+    "duplicates": 0,
+    "signatureShare": 0.964,
+    "infeasibleKinds": []
+   },
+   "relatedness": null
+  }
+ },
+ "countriesWithoutLanguage": [
+  "Y0U"
+ ],
+ "cultures": 52
+}

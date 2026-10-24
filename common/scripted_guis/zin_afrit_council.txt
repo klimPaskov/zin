@@ -1,0 +1,254 @@
+scripted_gui = {
+zin_council = {
+	context_type = player_context
+	window_name = "zin_council_window"
+	dirty = zin_ui_tick
+	ai_enabled = { always = no }
+	visible = {
+		zin_afrit_is_hub = yes
+		NOT = { has_global_flag = zin_afrit_dead }
+		has_country_flag = zin_ui_council_open
+	}
+	effects = {
+		zin_council_tab_1_click = {
+			set_variable = { zin_ui_tab = 1 }
+			set_variable = { zin_ui_page = 0 }
+			zin_afrit_ui_refresh = yes
+		}
+		zin_council_tab_2_click = {
+			set_variable = { zin_ui_tab = 2 }
+			set_variable = { zin_ui_page = 0 }
+			zin_afrit_ui_refresh = yes
+		}
+		zin_council_tab_3_click = {
+			set_variable = { zin_ui_tab = 3 }
+			set_variable = { zin_ui_page = 0 }
+			zin_afrit_ui_refresh = yes
+		}
+		zin_council_tab_4_click = {
+			set_variable = { zin_ui_tab = 4 }
+			set_variable = { zin_ui_page = 0 }
+			zin_afrit_ui_refresh = yes
+		}
+		zin_council_close_click = {
+			clr_country_flag = zin_ui_council_open
+		}
+	}
+	triggers = {
+		zin_council_veil_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			zin_afrit_secret_kept = yes
+		}
+		zin_council_veil_rule_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			zin_afrit_secret_kept = yes
+		}
+		zin_council_veil_mark_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			zin_afrit_secret_kept = yes
+		}
+		zin_council_known_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			has_global_flag = zin_afrit_revealed
+		}
+		zin_council_plot_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			NOT = { has_global_flag = zin_golden_king_dead }
+		}
+		zin_council_plot_rule_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			NOT = { has_global_flag = zin_golden_king_dead }
+		}
+		zin_council_plot_mark_visible = {
+			check_variable = { zin_ui_tab = 1 }
+			NOT = { has_global_flag = zin_golden_king_dead }
+		}
+		zin_council_veil_note_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_council_seat_seals_visible = {
+			check_variable = { zin_ui_tab = 2 }
+		}
+		zin_council_seat_seals_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_seals value = 1 compare = greater_than_or_equals }
+		}
+		zin_council_seat_seals_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_seals value = 2 compare = greater_than_or_equals }
+		}
+		zin_council_seat_seals_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_seals value = 3 compare = greater_than_or_equals }
+		}
+		zin_council_seat_seals_4_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_seals value = 4 compare = greater_than_or_equals }
+		}
+		zin_council_seat_seals_5_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_seals value = 5 compare = greater_than_or_equals }
+		}
+		zin_council_seat_censers_visible = {
+			check_variable = { zin_ui_tab = 2 }
+		}
+		zin_council_seat_censers_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_censers value = 1 compare = greater_than_or_equals }
+		}
+		zin_council_seat_censers_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_censers value = 2 compare = greater_than_or_equals }
+		}
+		zin_council_seat_censers_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_censers value = 3 compare = greater_than_or_equals }
+		}
+		zin_council_seat_censers_4_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_censers value = 4 compare = greater_than_or_equals }
+		}
+		zin_council_seat_censers_5_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_censers value = 5 compare = greater_than_or_equals }
+		}
+		zin_council_seat_whispers_visible = {
+			check_variable = { zin_ui_tab = 2 }
+		}
+		zin_council_seat_whispers_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_whispers value = 1 compare = greater_than_or_equals }
+		}
+		zin_council_seat_whispers_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_whispers value = 2 compare = greater_than_or_equals }
+		}
+		zin_council_seat_whispers_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_whispers value = 3 compare = greater_than_or_equals }
+		}
+		zin_council_seat_whispers_4_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_whispers value = 4 compare = greater_than_or_equals }
+		}
+		zin_council_seat_whispers_5_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_whispers value = 5 compare = greater_than_or_equals }
+		}
+		zin_council_seat_relics_visible = {
+			check_variable = { zin_ui_tab = 2 }
+		}
+		zin_council_seat_relics_1_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_relics value = 1 compare = greater_than_or_equals }
+		}
+		zin_council_seat_relics_2_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_relics value = 2 compare = greater_than_or_equals }
+		}
+		zin_council_seat_relics_3_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_relics value = 3 compare = greater_than_or_equals }
+		}
+		zin_council_seat_relics_4_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_relics value = 4 compare = greater_than_or_equals }
+		}
+		zin_council_seat_relics_5_visible = {
+			check_variable = { zin_ui_tab = 2 }
+			check_variable = { var = global.zin_afrit_seat_relics value = 5 compare = greater_than_or_equals }
+		}
+		zin_council_art_necklace_visible = {
+			check_variable = { zin_ui_tab = 3 }
+			NOT = { has_global_flag = zin_afrit_lost_necklace }
+		}
+		zin_council_art_necklace_t_visible = {
+			check_variable = { zin_ui_tab = 3 }
+		}
+		zin_council_art_ring_visible = {
+			check_variable = { zin_ui_tab = 3 }
+			NOT = { has_global_flag = zin_afrit_lost_ring }
+		}
+		zin_council_art_ring_t_visible = {
+			check_variable = { zin_ui_tab = 3 }
+		}
+		zin_council_art_crown_visible = {
+			check_variable = { zin_ui_tab = 3 }
+			NOT = { has_global_flag = zin_afrit_lost_crown }
+		}
+		zin_council_art_crown_t_visible = {
+			check_variable = { zin_ui_tab = 3 }
+		}
+		zin_council_art_bracelet_visible = {
+			check_variable = { zin_ui_tab = 3 }
+			NOT = { has_global_flag = zin_afrit_lost_bracelet }
+		}
+		zin_council_art_bracelet_t_visible = {
+			check_variable = { zin_ui_tab = 3 }
+		}
+		zin_council_graces_visible = {
+			check_variable = { zin_ui_tab = 3 }
+		}
+		zin_council_houses_n_visible = {
+			check_variable = { zin_ui_tab = 4 }
+		}
+		zin_council_houses_scroll_visible = {
+			check_variable = { zin_ui_tab = 4 }
+		}
+		zin_council_map_hint_visible = {
+			check_variable = { zin_ui_tab = 4 }
+		}
+		zin_council_tab_1_on_visible = {
+			check_variable = { zin_ui_tab = 1 }
+		}
+		zin_council_tab_2_on_visible = {
+			check_variable = { zin_ui_tab = 2 }
+		}
+		zin_council_tab_3_on_visible = {
+			check_variable = { zin_ui_tab = 3 }
+		}
+		zin_council_tab_4_on_visible = {
+			check_variable = { zin_ui_tab = 4 }
+		}
+	}
+	properties = {
+		zin_council_veil_mark = {
+			x = zin_ui_veil_x
+		}
+		zin_council_plot_mark = {
+			x = zin_ui_plot_x
+		}
+	}
+	dynamic_lists = {
+		zin_council_houses = {
+			array = zin_afrit_houses_list
+			value = v
+			index = i
+			change_scope = yes
+			entry_container = "zin_council_house_row"
+		}
+	}
+}
+zin_council_launcher = {
+	context_type = player_context
+	window_name = "zin_council_button_window"
+	dirty = zin_ui_tick
+	ai_enabled = { always = no }
+	visible = {
+		zin_afrit_is_hub = yes
+		NOT = { has_global_flag = zin_afrit_dead }
+	}
+	effects = {
+		zin_council_open_click = {
+			clr_country_flag = zin_ui_court_open
+			clr_country_flag = zin_ui_council_open
+			clr_country_flag = zin_ui_mistake_open
+			clr_country_flag = zin_realm_open
+			set_country_flag = zin_ui_council_open
+			set_variable = { zin_ui_tab = 1 }
+			set_variable = { zin_ui_page = 0 }
+			zin_afrit_ui_refresh = yes
+		}
+	}
+}
+}

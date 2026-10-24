@@ -206,7 +206,7 @@ test('No focus, spirit or event name equals a focus name of the installed game',
 test('The secrets stay hidden: no Afrit, Hidden Council, Ilvane or Eindil in any text; the Man from the Ice only in the West', () => {
   for (const id of IDS) {
     const text = locText(id);
-    assert.doesNotMatch(text, /Afrit|Hidden Council|Ilvane|Eindil|Einendil|Edvoid/i, id);
+    assert.doesNotMatch(text, /Afrit|Hidden Council|Ilvane|Eindil|Einendil|Kusven/i, id);
     if (id !== 'shared_west_lands') assert.doesNotMatch(text, /Man from the Ice|the Heir|war-king/i, id);
   }
   assert.match(locText('shared_west_lands'), /Man from the Ice/);

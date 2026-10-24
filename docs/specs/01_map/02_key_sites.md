@@ -61,7 +61,7 @@ Every `state` site also gets a global variable `zin_site_<key>` (*proposed*) hol
 | `zin_is_region_dark_lands` | Dark Lands (47 states today) | Lerendor, Dark Lands |
 | `zin_is_region_magical_lands` | Magical Lands | elves |
 | `zin_is_region_zols_mistake` | Zol's Mistake and the Kusmeel | Magical Lands trees |
-| `zin_is_region_dead_lands` | Ember Lands | warfare, world systems |
+| `zin_is_region_ember_lands` | Ember Lands | warfare, world systems |
 | `zin_is_region_east_lands` | East Lands | eastern kings |
 | `zin_is_region_islands_of_the_south` | Islands of the South | diplomacy |
 | `zin_is_region_lands_of_the_sun` | Lands of the Sun | Lands of the Sun |

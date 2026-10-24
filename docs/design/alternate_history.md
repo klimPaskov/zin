@@ -14,11 +14,11 @@ It extends the checkpoint frame of [06_historical_path_and_ai.md](../specs/03_ga
 
 ## 2. Sources and evidence
 
-- Canon: the vault notes *The Campaign of 4A 1748*, *Fourth Age Chronology*, *The Journey of Eindil*, *War of the Last Crowns*, *The Last Battle in the Palace*, *Possible Endings*, *Fifth Age Seeds*, *Fourth Age Canon Register* and the figures (Golden King, Eindil, Afrit, Volgan, Zol, Edvoid, now Kusven, Varner, Golbran, Lorien, Alleria of Selen, Horos).
+- Canon: the vault notes *The Campaign of 4A 1748*, *Fourth Age Chronology*, *The Journey of Eindil*, *War of the Last Crowns*, *The Last Battle in the Palace*, *Possible Endings*, *Fifth Age Seeds*, *Fourth Age Canon Register* and the figures (Golden King, Eindil, Afrit, Volgan, Zol, Kusven, now Kusven, Varner, Golbran, Lorien, Alleria of Selen, Horos).
 
 - Owner corrections K1 to K27 in [INTEGRATION_DECISIONS.md](../specs/INTEGRATION_DECISIONS.md) override the vault and the specs, in particular K2 (the Great Wall of Aenor is a natural mountain range), K4 and K11 (Zol does not appear in the war; his most loyal servant does) and K13 (Hirolon is a sovereign giant kingdom).
 
-- Owner decisions of 24 October 2026 (relayed by the coordinator): the Dead Lands region is named **the Ember Lands**; Edvoid is named **Kusven**; the sea north of Zol's Mistake is **Kusmeel**; the twelve main New Gods (Glernaen, Sulethe, Lumae, Maelwen, Vaelei, Rasthel, Kerun, Aurlan, Ailtal, Irumas, Gaelor, Naisa) name the months and the game opens on 1 Lumae 4A 1748; the East and South Lands keep their own faith and calendar.
+- Owner decisions of 24 October 2026 (relayed by the coordinator): the Ember Lands region is named **the Ember Lands**; Kusven is named **Kusven**; the sea north of Zol's Mistake is **Kusmeel**; the twelve main New Gods (Glernaen, Sulethe, Lumae, Maelwen, Vaelei, Rasthel, Kerun, Aurlan, Ailtal, Irumas, Gaelor, Naisa) name the months and the game opens on 1 Lumae 4A 1748; the East and South Lands keep their own faith and calendar.
 
 - Specs: [06_events](../specs/06_events/) 01 to 05, [04_mechanics](../specs/04_mechanics/) (the shared contract, the contract additions and every mechanic spec), [05_world_tension_and_endings.md](../specs/03_gameplay/05_world_tension_and_endings.md), [06_historical_path_and_ai.md](../specs/03_gameplay/06_historical_path_and_ai.md).
 
@@ -1469,9 +1469,9 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 - **Kind:** text contradicts canon. **Beats:** B35.
 
-- **Where:** staged:localisation/english/zin_sun_l_english.yml (zin_sun_old_powers_stand_3_desc); tools/content/data/countries.json (Zol row scan "Ocean of Edvoid", regions "Edvoid's Mistake")
+- **Where:** staged:localisation/english/zin_sun_l_english.yml (zin_sun_old_powers_stand_3_desc); tools/content/data/countries.json (Zol row scan "Kusmeel", regions "Kusven's Mistake")
 
-- **Ids:** `zin_sun_old_powers_stand_3`, `Ocean of Edvoid`
+- **Ids:** `zin_sun_old_powers_stand_3`, `Kusmeel`
 
 - **Problem:** Remaining Edvoid labels and "an Old God's victory" phrasing; the sea north of Zol's Mistake is Kusmeel and the region name Edvoid's Mistake is superseded.
 

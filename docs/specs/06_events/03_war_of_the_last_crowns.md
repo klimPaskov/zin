@@ -393,7 +393,7 @@ Bare ids are `zin_lastwar`; other namespaces are written out. Owners' events not
 | `.20`, `.21`, `.60` | `western_crossing` (gate `zin_western_crossing`) |
 | `.30` | `zol_rising` (gate `zin_zol_rising`) |
 | `.40` | `mirolon_passes`; requested `passes_burning` |
-| `.41` | `dead_lands_storm` |
+| `.41` | `ember_lands_storm` |
 | `.51`, `.110` | `houses` |
 | `.52` | `generic_war` |
 | `.70`, `.71`, `.72` | `dragon_return` (gate `zin_eindil_returned`) |

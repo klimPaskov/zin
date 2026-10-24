@@ -331,7 +331,7 @@ Standard pictures are 210 × 176; news pictures 397 × 153. "Both" means one gen
 | `strait_toll` | Ships queuing at Sonargur's toll chain | both | — |
 | `leren_envoys` | Northern envoys in a cold hall | standard | — |
 | `grey_ford_truce` | Two western hosts at a ford under truce banners | standard | — |
-| `dead_lands_storm` | A storm wall over red desert seen from a pass | both | — |
+| `ember_lands_storm` | A storm wall over red desert seen from a pass | both | — |
 | `grave_muster` | Mist over barrows, figures rising far away | standard | — |
 | `mirolon_passes` | A watchtower on a pass at night | standard | — |
 | `black_isles_lights` | Lights among black islands at night | standard | — |
@@ -405,7 +405,7 @@ Other specs also ask for new crops or a wider gate of existing keys. These chang
 | --- | --- | --- | --- | --- |
 | `war_king` | Add a news crop (becomes "both") | `zin_eindil_awake` | `GFX_zin_news_generic_peace` | [06_events/02_eindil_journey.md](../06_events/02_eindil_journey.md) (`zin_eindil.35`) |
 | `cliff` | Add a news crop (becomes "both") | `zin_eindil_cast_down` | `GFX_zin_news_generic_war` | [06_events/03_war_of_the_last_crowns.md](../06_events/03_war_of_the_last_crowns.md) (`zin_eindil.112`) |
-| the eight `ending_*` keys | Add standard 210 × 176 crops `GFX_zin_evt_ending_<key>` (each becomes "both") | ending flag | the keys named in the asking spec (`chronicle`, `crown_of_aen`, `dead_lands_storm`, `unmasking`, `court_feast`, `generic_war`, `strait_toll`, `generic_peace`) | [06_events/04_endings.md](../06_events/04_endings.md) |
+| the eight `ending_*` keys | Add standard 210 × 176 crops `GFX_zin_evt_ending_<key>` (each becomes "both") | ending flag | the keys named in the asking spec (`chronicle`, `crown_of_aen`, `ember_lands_storm`, `unmasking`, `court_feast`, `generic_war`, `strait_toll`, `generic_peace`) | [06_events/04_endings.md](../06_events/04_endings.md) |
 | `palace_battle` | Widen the gate to `zin_afrit_returned` **or** `zin_afrit_stand_in_parim` (the cell map's gate becomes a list; rule 4 accepts either flag) | either flag | `generic_war` on the stand-in-Parim route | [06_events/03_war_of_the_last_crowns.md](../06_events/03_war_of_the_last_crowns.md) |
 
 No icon key is requested: every tier A tree maps its focuses to the 175 keys above.

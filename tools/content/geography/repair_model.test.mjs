@@ -108,18 +108,18 @@ test('rings: a self-crossing land is rebuilt, a clean land is untouched', () => 
 function netherWorld() {
   return mini({
     lands: [
-      feature('land_dead_lands_island', { type: 'Polygon', coordinates: [[[0.585, 0.80], [0.62, 0.80], [0.625, 0.85], [0.615, 0.903], [0.598, 0.905], [0.58, 0.85]]] }, { regions: ['dead_lands'] }),
-      feature('land_nether_island', rect(0.59, 0.93, 0.61, 0.95), { name: 'The Nether (island)', regions: ['dead_lands'] }),
+      feature('land_ember_lands_island', { type: 'Polygon', coordinates: [[[0.585, 0.80], [0.62, 0.80], [0.625, 0.85], [0.615, 0.903], [0.598, 0.905], [0.58, 0.85]]] }, { regions: ['ember_lands'] }),
+      feature('land_nether_island', rect(0.59, 0.93, 0.61, 0.95), { name: 'The Nether (island)', regions: ['ember_lands'] }),
       feature('land_eastern_mainland', { type: 'Polygon', coordinates: [[[0.66, 0.80], [0.9, 0.80], [0.9, 0.95], [0.655, 0.95]]] }, { regions: ['south_lands'] }),
     ],
     seas: [feature('sea_lava_sea', rect(0.5, 0.75, 0.66, 0.97), { name: 'Sea of Lava' })],
     ranges: [feature('range_nether', { type: 'LineString', coordinates: [[0.6, 0.85], [0.61, 0.86]] }, { name: 'Nether Mountains', halfWidth: 0.006, peakClass: 5 })],
     volcanoes: [feature('volcano_nether_island', { type: 'Point', coordinates: [0.600, 0.940] }, { name: 'Mount Nether' })],
     sites: [feature('site_nether', { type: 'Point', coordinates: [0.600, 0.935] }, { name: 'The Nether' })],
-    regions: [feature('region_dead_lands', rect(0.55, 0.78, 0.65, 0.97), { name: 'Dead Lands', kind: 'region', areaPx: 1 })],
+    regions: [feature('region_ember_lands', rect(0.55, 0.78, 0.65, 0.97), { name: 'Ember Lands', kind: 'region', areaPx: 1 })],
   });
 }
-test('nether: a land south of the Dead Lands, large enough, with its region, range and access routes', () => {
+test('nether: a land south of the Ember Lands, large enough, with its region, range and access routes', () => {
   const m = netherWorld();
   assert.ok(codes(m, 'NETHER_TOO_SMALL', 'NETHER_REGION', 'NETHER_RANGE').length);
   const log = [];
@@ -131,13 +131,13 @@ test('nether: a land south of the Dead Lands, large enough, with its region, ran
   assert.deepEqual(G.geometryDefects(nether.geometry), []);
   assert.deepEqual(m.straits.map(s => s.id).sort(), ['strait_ember_narrows', 'strait_nether_sound']);
   assert.ok(m.passes.some(p => p.id === 'pass_cinder_gate' && p.geometry.coordinates.every(q => pointInGeometry(q[0], q[1], nether.geometry))));
-  assert.equal(m.regions.find(r => r.id === 'region_nether')?.parent, 'dead_lands');
+  assert.equal(m.regions.find(r => r.id === 'region_nether')?.parent, 'ember_lands');
   // the name of the Nether land is kept
   assert.equal(nether.name, 'The Nether (island)');
 });
-test('nether: without the Dead Lands island nothing is invented (negative)', () => {
+test('nether: without the Ember Lands island nothing is invented (negative)', () => {
   const m = netherWorld();
-  m.lands = m.lands.filter(l => l.id !== 'land_dead_lands_island');
+  m.lands = m.lands.filter(l => l.id !== 'land_ember_lands_island');
   const before = JSON.stringify(m), log = [];
   repairNether(m, log);
   assert.equal(JSON.stringify(m), before);

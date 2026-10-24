@@ -91,16 +91,28 @@ const checks = { diagnostics: [], checks: [{ id: 'zin-content-hashes', passed: t
 // 2026). One transaction keeps the change all-or-nothing, so the builder allows a larger journal instead of splitting.
 const MAX_JOURNAL_BYTES = 4 * 1024 ** 3;
 const manager = new TransactionManager(resolver, undefined, undefined, MAX_JOURNAL_BYTES);
-const plan = await manager.plan({
-  workspaceId: 'zin', operationKind: 'zin-content', operations: [{ id: 'zin-content', kind: 'zin-content', summary: 'Apply staged ZIN overhaul content', data: { files: changes.size } }],
-  changes: [...changes].map(([relativePath, content]) => ({ relativePath, content, operationIds: ['zin-content'] })),
-  validate: async proposed => { for (const [rel, bytes] of changes) { const got = proposed.has(rel) ? proposed.get(rel) : undefined; assert.equal(got === null || got === undefined ? null : sha256Bytes(got), bytes ? sha256Bytes(bytes) : null, rel); } return checks; },
-});
-await manager.apply('zin', plan.transactionId, plan.planHash, {
-  postValidate: async () => {
-    for (const f of contentManifest.files) assert.equal(sha256Bytes((await readOptional(f.relativePath))!), f.sha256, f.relativePath);
-    for (const [rel, bytes] of changes) { const now = await readOptional(rel); assert.equal(now ? sha256Bytes(now) : null, bytes ? sha256Bytes(bytes) : null, rel); }
-    return checks;
-  },
-});
-console.log(JSON.stringify({ ...summary, applied: true }));
+// The engine refuses a transaction of more than 5,000 files (TRANSACTION_STRUCTURE_LIMIT; tool request ZR-5). Until it
+// carries a whole apply, the changes go in batches of at most BATCH files, each batch its own atomic transaction, and
+// both manifests go in the last batch: if an earlier batch fails, the manifests still describe the old state and a
+// re-run of this script converges, because it compares the staged tree with the mod again.
+const BATCH = 4500;
+const manifests = new Set([CONTENT_MANIFEST, WORLD_MANIFEST]);
+const ordered = [...[...changes].filter(([p]) => !manifests.has(p)), ...[...changes].filter(([p]) => manifests.has(p))];
+const batches: Array<Array<[string, Buffer | null]>> = [];
+for (let i = 0; i < ordered.length; i += BATCH) batches.push(ordered.slice(i, i + BATCH));
+for (const [index, batch] of batches.entries()) {
+  const last = index === batches.length - 1;
+  const plan = await manager.plan({
+    workspaceId: 'zin', operationKind: 'zin-content', operations: [{ id: 'zin-content', kind: 'zin-content', summary: `Apply staged ZIN overhaul content (batch ${index + 1} of ${batches.length})`, data: { files: batch.length } }],
+    changes: batch.map(([relativePath, content]) => ({ relativePath, content, operationIds: ['zin-content'] })),
+    validate: async proposed => { for (const [rel, bytes] of batch) { const got = proposed.has(rel) ? proposed.get(rel) : undefined; assert.equal(got === null || got === undefined ? null : sha256Bytes(got), bytes ? sha256Bytes(bytes) : null, rel); } return checks; },
+  });
+  await manager.apply('zin', plan.transactionId, plan.planHash, {
+    postValidate: async () => {
+      if (last) for (const f of contentManifest.files) assert.equal(sha256Bytes((await readOptional(f.relativePath))!), f.sha256, f.relativePath);
+      for (const [rel, bytes] of batch) { const now = await readOptional(rel); assert.equal(now ? sha256Bytes(now) : null, bytes ? sha256Bytes(bytes) : null, rel); }
+      return checks;
+    },
+  });
+}
+console.log(JSON.stringify({ ...summary, deleted: summary.deleted.length, batches: batches.length, applied: true }));

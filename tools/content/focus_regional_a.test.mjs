@@ -1,5 +1,5 @@
-// Tests of the regional_a focus trees: the 17 tier B trees of the Cold Lands, the Dark Lands and the Dead Lands
-// (docs/specs/05_focus_trees/regional/cold_lands.md, dark_lands.md, dead_lands.md). They compile the real tree files
+// Tests of the regional_a focus trees: the 17 tier B trees of the Cold Lands, the Dark Lands and the Ember Lands
+// (docs/specs/05_focus_trees/regional/cold_lands.md, dark_lands.md, ember_lands.md). They compile the real tree files
 // of docs/design/focus/ with the compiler's check API, assert counts, ids, prerequisites, exclusives, gates, text and
 // localisation, and plant one failure for each negative case.
 //   node --test tools/content/focus_regional_a.test.mjs
@@ -285,9 +285,9 @@ test('Every war-root, war-course and Moot focus the spec marks is closed behind 
   }
 });
 
-test('No text names Afrit, the Hidden Council, Einendil, Edvoid or Rush, and Eindil appears only as [zin_loc_eindil]', () => {
+test('No text names Afrit, the Hidden Council, Einendil, Kusven or Rush, and Eindil appears only as [zin_loc_eindil]', () => {
   for (const id of IDS) for (const x of collectTexts(base.trees.get(id))) {
-    assert.doesNotMatch(x.text, /Afrit|Hidden Council|Einendil|Edvoid|\bRush\b|Dardan/i, `${id} ${x.where}`);
+    assert.doesNotMatch(x.text, /Afrit|Hidden Council|Einendil|Kusven|\bRush\b|Dardan/i, `${id} ${x.where}`);
     assert.doesNotMatch(x.text.replace(/\[zin_loc_eindil\]/g, ''), /Eindil/, `${id} ${x.where}`);
   }
 });
@@ -301,7 +301,7 @@ test('Cold Lands text never calls giants or yeti Great Folk, Common Folk or beas
   }
 });
 
-test('Dead Lands text never names the King of Demons or says what became of Volgan\'s spirit', () => {
+test('Ember Lands text never names the King of Demons or says what became of Volgan\'s spirit', () => {
   for (const id of ['regional_nezer', 'regional_demon', 'regional_dolon', 'regional_olen', 'regional_nan']) for (const x of collectTexts(base.trees.get(id))) {
     assert.doesNotMatch(x.text, /King of Demons|is dead|destroyed forever|survives|lives on|Roka/, `${id} ${x.where}`);
   }

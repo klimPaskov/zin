@@ -226,7 +226,7 @@ C.append(dict(id='mirolon_wardens', crown=None,
     ('Y0Y', 'council', 'plain', ['night blue'], 'watch_heron', 'heron white', 'south_lamp', 'beacon gold', "Mirolon, the lake-watch, bears a heron keeping watch over the lamp turned south: the wardens' monthly vigil against an enemy the rest of Aoaz laughed at.", {}),
   ]))
 
-C.append(dict(id='dead_lands_freeholds', crown=None,
+C.append(dict(id='ember_lands_freeholds', crown=None,
   palette=[('sand', '#c9b58a'), ('sea teal', '#3e6b78'), ('mud brick', '#8a5a3a'), ('salt white', '#ece8dc'), ('storm grey', '#6a6e70'), ('tar black', '#2b2826')],
   divisions=['plain', 'per_fess', 'per_pale', 'per_bend', 'chief', 'base'],
   ornament='Low, wide charges hugging the base; nothing names or shows the dead.',

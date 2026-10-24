@@ -179,7 +179,7 @@ export const BANNED_NAME_PATTERNS = Object.freeze([
   ['slash', /[\\/]/u],
   ['bracket', /[()[\]{}<>]/u],
   ['bureaucratic word', /\b(district|region|settlement|province|zone|sector|area|unnamed|unknown|placeholder|tbd|sheet|drawing|reference|island\s+of\s+the\s+(?:north|south))\b/iu],
-  ['placeholder island', /\bisland\b.*\b(windwaith|west_lands|zols_mistake|east_lands|tritons_islands|islands_south|lands_sun|dead_lands|dark_lands|north_lands|cold_lands)\b/iu],
+  ['placeholder island', /\bisland\b.*\b(windwaith|west_lands|zols_mistake|east_lands|tritons_islands|islands_south|lands_sun|ember_lands|dark_lands|north_lands|cold_lands)\b/iu],
   ['underscore', /_/u],
   ['superseded name', /\b(rush|edvoid|einendil|klinti)\b/iu],
   ['dardan', /\bdardan\b/iu],
@@ -398,7 +398,7 @@ function checkSeaNames(model, rep, ctx) {
     }
   }
   const centre = s => { const r = ringsOf(s.geometry); let sx = 0, sy = 0, n = 0; for (const part of r) for (const p of part[0]) { sx += p[0]; sy += p[1]; n++; } return [sx / n, sy / n]; };
-  const deadLands = (model.lands ?? []).filter(l => (l.regions ?? []).includes('dead_lands') || l.id === 'land_nether' || l.region === 'dead_lands' || l.region === 'nether');
+  const deadLands = (model.lands ?? []).filter(l => (l.regions ?? []).includes('ember_lands') || l.id === 'land_nether' || l.region === 'ember_lands' || l.region === 'nether');
   for (const s of seas) {
     const classes = nameClasses(s.name), [cx, cy] = centre(s);
     const climate = s.climate;
@@ -407,11 +407,11 @@ function checkSeaNames(model, rep, ctx) {
     if (classes.has('fire') && climate && !['volcanic', 'hot', 'stormy'].includes(climate) && !/lava/iu.test(s.name)) rep.error('SEA_NAME_CLIMATE', s.id, `${s.name}: a name of fire on a ${climate} sea`);
     if (classes.has('death') || classes.has('demon')) {
       const near = deadLands.some(l => distanceToGeometry(cx, cy, l.geometry) < 0.09) || (model.lands ?? []).some(l => (l.regions ?? []).includes('zols_mistake') && l.id === 'land_northern_wastes' && distanceToGeometry(cx, cy, l.geometry) < 0.09);
-      if (!near) rep.error('SEA_NAME_PLACE', s.id, `${s.name}: a name of death or demons far from the Dead Lands and Zol's Mistake`);
+      if (!near) rep.error('SEA_NAME_PLACE', s.id, `${s.name}: a name of death or demons far from the Ember Lands and Zol's Mistake`);
     }
     if (classes.has('light') || classes.has('peace')) {
       const beside = deadLands.some(l => distanceToGeometry(cx, cy, l.geometry) < 0.05);
-      if (beside) rep.error('SEA_NAME_PLACE', s.id, `${s.name}: a name of light or peace beside the Dead Lands`);
+      if (beside) rep.error('SEA_NAME_PLACE', s.id, `${s.name}: a name of light or peace beside the Ember Lands`);
     }
   }
 }
@@ -597,15 +597,15 @@ function checkRegions(model, rep, ctx) {
 
 function checkRequired(model, rep, ctx) {
   const lands = model.lands ?? [];
-  const dead = lands.filter(l => l.region === 'dead_lands' || (l.regions ?? []).includes('dead_lands'));
+  const dead = lands.filter(l => l.region === 'ember_lands' || (l.regions ?? []).includes('ember_lands'));
   const nether = lands.find(l => /nether/iu.test(l.name) || l.id === 'land_nether' || l.region === 'nether');
-  const deadIsland = lands.find(l => l.id === 'land_dead_lands_island');
+  const deadIsland = lands.find(l => l.id === 'land_ember_lands_island');
   if (!nether) { rep.error('NETHER_MISSING', 'nether', 'the Nether has no land in the model'); return; }
-  if (!deadIsland) { rep.error('NETHER_DEAD_LANDS_MISSING', 'land_dead_lands_island', 'the Dead Lands island is missing'); return; }
+  if (!deadIsland) { rep.error('NETHER_EMBER_LANDS_MISSING', 'land_ember_lands_island', 'the Ember Lands island is missing'); return; }
   const cen = g => { let sx = 0, sy = 0, n = 0; for (const part of ringsOf(g)) for (const p of part[0]) { sx += p[0]; sy += p[1]; n++; } return [sx / n, sy / n]; };
   const [nx, ny] = cen(nether.geometry), [dx, dy] = cen(deadIsland.geometry);
-  if (!(ny > dy + 0.02)) rep.error('NETHER_NOT_BELOW', nether.id, `the Nether (centre y ${ny.toFixed(3)}) does not lie below the Dead Lands island (centre y ${dy.toFixed(3)})`);
-  if (Math.abs(nx - dx) > 0.12) rep.error('NETHER_NOT_BELOW', nether.id, `the Nether is ${Math.abs(nx - dx).toFixed(3)} frame widths away from the Dead Lands island sideways`);
+  if (!(ny > dy + 0.02)) rep.error('NETHER_NOT_BELOW', nether.id, `the Nether (centre y ${ny.toFixed(3)}) does not lie below the Ember Lands island (centre y ${dy.toFixed(3)})`);
+  if (Math.abs(nx - dx) > 0.12) rep.error('NETHER_NOT_BELOW', nether.id, `the Nether is ${Math.abs(nx - dx).toFixed(3)} frame widths away from the Ember Lands island sideways`);
   if (areaPx(nether.geometry) < 18000) rep.error('NETHER_TOO_SMALL', nether.id, `the Nether covers ${Math.round(areaPx(nether.geometry))} px, too small to hold three provinces of 900 px per state`);
   const b = boundsOf(ringsOf(nether.geometry)[0][0]);
   if (b[1] < EDGE_BAND.y || b[3] > 1 - EDGE_BAND.y || b[0] < EDGE_BAND.x || b[2] > 1 - EDGE_BAND.x) rep.error('NETHER_IN_EDGE', nether.id, 'the Nether enters the edge band');

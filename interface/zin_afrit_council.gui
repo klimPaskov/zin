@@ -1,0 +1,439 @@
+guiTypes = {
+containerWindowType = {
+	name = "zin_council_window"
+	position = { x = -310 y = -250 }
+	size = { width = 620 height = 500 }
+	orientation = center
+	moveable = yes
+	background = {
+		name = "zin_council_bg"
+		spriteType = "GFX_zin_frame"
+	}
+	instantTextBoxType = {
+		name = "zin_council_title"
+		position = { x = 40 y = 20 }
+		font = "hoi_24header"
+		text = "ZIN_COUNCIL_TITLE_hub"
+		maxWidth = 540
+		maxHeight = 32
+		format = centre
+		fixedsize = yes
+	}
+	buttonType = {
+		name = "zin_council_close"
+		position = { x = 576 y = 14 }
+		quadTextureSprite = "GFX_closebutton"
+		shortcut = "ESCAPE"
+	}
+	buttonType = {
+		name = "zin_council_tab_1"
+		position = { x = 30 y = 62 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_COUNCIL_TAB1_hub"
+		buttonFont = "hoi_16mbs"
+	}
+	iconType = {
+		name = "zin_council_tab_1_on"
+		spriteType = "GFX_zin_rule"
+		position = { x = 26 y = 96 }
+	}
+	buttonType = {
+		name = "zin_council_tab_2"
+		position = { x = 178 y = 62 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_COUNCIL_TAB2_hub"
+		buttonFont = "hoi_16mbs"
+	}
+	iconType = {
+		name = "zin_council_tab_2_on"
+		spriteType = "GFX_zin_rule"
+		position = { x = 174 y = 96 }
+	}
+	buttonType = {
+		name = "zin_council_tab_3"
+		position = { x = 326 y = 62 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_COUNCIL_TAB3_hub"
+		buttonFont = "hoi_16mbs"
+	}
+	iconType = {
+		name = "zin_council_tab_3_on"
+		spriteType = "GFX_zin_rule"
+		position = { x = 322 y = 96 }
+	}
+	buttonType = {
+		name = "zin_council_tab_4"
+		position = { x = 474 y = 62 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_COUNCIL_TAB4_hub"
+		buttonFont = "hoi_16mbs"
+	}
+	iconType = {
+		name = "zin_council_tab_4_on"
+		spriteType = "GFX_zin_rule"
+		position = { x = 470 y = 96 }
+	}
+	instantTextBoxType = {
+		name = "zin_council_veil"
+		position = { x = 40 y = 118 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T1_VEIL_hub"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_veil_rule"
+		spriteType = "GFX_zin_rule"
+		position = { x = 40 y = 156 }
+	}
+	iconType = {
+		name = "zin_council_veil_mark"
+		spriteType = "GFX_zin_council_marker"
+		position = { x = 40 y = 144 }
+		scale = 0.4
+	}
+	instantTextBoxType = {
+		name = "zin_council_known"
+		position = { x = 40 y = 118 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T1_KNOWN_hub"
+		maxWidth = 540
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_council_plot"
+		position = { x = 40 y = 190 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T1_PLOT_hub"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_plot_rule"
+		spriteType = "GFX_zin_rule"
+		position = { x = 40 y = 228 }
+	}
+	iconType = {
+		name = "zin_council_plot_mark"
+		spriteType = "GFX_zin_council_marker"
+		position = { x = 40 y = 216 }
+		scale = 0.4
+	}
+	instantTextBoxType = {
+		name = "zin_council_veil_note"
+		position = { x = 40 y = 290 }
+		font = "hoi_16mbs"
+		text = "ZIN_COUNCIL_T1_NOTE_hub"
+		maxWidth = 540
+		maxHeight = 120
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_council_seat_seals"
+		position = { x = 40 y = 122 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T2_SEALS_hub"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_seat_seals_1"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 40 y = 150 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_seals_2"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 80 y = 150 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_seals_3"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 120 y = 150 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_seals_4"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 160 y = 150 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_seals_5"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 200 y = 150 }
+		scale = 0.5
+	}
+	instantTextBoxType = {
+		name = "zin_council_seat_censers"
+		position = { x = 40 y = 206 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T2_CENSERS_hub"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_seat_censers_1"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 40 y = 234 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_censers_2"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 80 y = 234 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_censers_3"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 120 y = 234 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_censers_4"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 160 y = 234 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_censers_5"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 200 y = 234 }
+		scale = 0.5
+	}
+	instantTextBoxType = {
+		name = "zin_council_seat_whispers"
+		position = { x = 40 y = 290 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T2_WHISPERS_hub"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_seat_whispers_1"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 40 y = 318 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_whispers_2"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 80 y = 318 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_whispers_3"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 120 y = 318 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_whispers_4"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 160 y = 318 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_whispers_5"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 200 y = 318 }
+		scale = 0.5
+	}
+	instantTextBoxType = {
+		name = "zin_council_seat_relics"
+		position = { x = 40 y = 374 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T2_RELICS_hub"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_seat_relics_1"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 40 y = 402 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_relics_2"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 80 y = 402 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_relics_3"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 120 y = 402 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_relics_4"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 160 y = 402 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_seat_relics_5"
+		spriteType = "GFX_zin_council_pip"
+		position = { x = 200 y = 402 }
+		scale = 0.5
+	}
+	iconType = {
+		name = "zin_council_art_necklace"
+		spriteType = "GFX_zin_council_necklace"
+		position = { x = 40 y = 122 }
+		scale = 0.9
+	}
+	instantTextBoxType = {
+		name = "zin_council_art_necklace_t"
+		position = { x = 116 y = 130 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T3_NECKLACE_hub"
+		maxWidth = 440
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_art_ring"
+		spriteType = "GFX_zin_council_ring"
+		position = { x = 40 y = 192 }
+		scale = 0.9
+	}
+	instantTextBoxType = {
+		name = "zin_council_art_ring_t"
+		position = { x = 116 y = 200 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T3_RING_hub"
+		maxWidth = 440
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_art_crown"
+		spriteType = "GFX_zin_council_crown"
+		position = { x = 40 y = 262 }
+		scale = 0.9
+	}
+	instantTextBoxType = {
+		name = "zin_council_art_crown_t"
+		position = { x = 116 y = 270 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T3_CROWN_hub"
+		maxWidth = 440
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+	}
+	iconType = {
+		name = "zin_council_art_bracelet"
+		spriteType = "GFX_zin_council_bracelet"
+		position = { x = 40 y = 332 }
+		scale = 0.9
+	}
+	instantTextBoxType = {
+		name = "zin_council_art_bracelet_t"
+		position = { x = 116 y = 340 }
+		font = "hoi_18mbs"
+		text = "ZIN_COUNCIL_T3_BRACELET_hub"
+		maxWidth = 440
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_council_graces"
+		position = { x = 40 y = 410 }
+		font = "hoi_16mbs"
+		text = "ZIN_COUNCIL_T3_GRACES_hub"
+		maxWidth = 540
+		maxHeight = 40
+		format = left
+		fixedsize = yes
+	}
+	instantTextBoxType = {
+		name = "zin_council_houses_n"
+		position = { x = 40 y = 118 }
+		font = "hoi_16mbs"
+		text = "ZIN_COUNCIL_T4_COUNT_hub"
+		maxWidth = 540
+		maxHeight = 24
+		format = left
+		fixedsize = yes
+	}
+	containerWindowType = {
+		name = "zin_council_houses_scroll"
+		position = { x = 40 y = 156 }
+		size = { width = 540 height = 230 }
+		Orientation = upper_left
+		scroll_wheel_factor = 40
+		smooth_scrolling = yes
+		gridBoxType = {
+			name = "zin_council_houses"
+			position = { x = 0 y = 0 }
+			size = { width = 540 height = 230 }
+			Orientation = upper_left
+			slotsize = { width = 540 height = 22 }
+			format = "UPPER_LEFT"
+			max_slots_horizontal = 1
+		}
+	}
+	instantTextBoxType = {
+		name = "zin_council_map_hint"
+		position = { x = 40 y = 400 }
+		font = "hoi_16mbs"
+		text = "ZIN_COUNCIL_T4_MAP_hub"
+		maxWidth = 540
+		maxHeight = 48
+		format = left
+		fixedsize = yes
+	}
+}
+containerWindowType = {
+	name = "zin_council_button_window"
+	position = { x = 148 y = 86 }
+	size = { width = 132 height = 30 }
+	orientation = upper_left
+	buttonType = {
+		name = "zin_council_open"
+		position = { x = 0 y = 0 }
+		spriteType = "GFX_zin_button"
+		buttonText = "ZIN_COUNCIL_BUTTON"
+		buttonFont = "hoi_18mbs"
+		pdx_tooltip = "ZIN_COUNCIL_BUTTON_tt"
+	}
+}
+containerWindowType = {
+	name = "zin_council_house_row"
+	position = { x = 0 y = 0 }
+	size = { width = 540 height = 22 }
+	instantTextBoxType = {
+		name = "zin_council_row_text"
+		position = { x = 0 y = 0 }
+		font = "hoi_16mbs"
+		text = "ZIN_COUNCIL_ROW_hub"
+		maxWidth = 540
+		maxHeight = 22
+		format = left
+		fixedsize = yes
+	}
+}
+}

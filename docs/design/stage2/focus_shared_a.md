@@ -1,6 +1,6 @@
 # Integration note: shared focus trees, batch A
 
-Slice: the six shared trees `shared_cold_lands`, `shared_concord_dominions`, `shared_dark_lands`, `shared_dead_lands`, `shared_east_lands` and `shared_islands_of_the_south` (specs in `docs/specs/05_focus_trees/shared/`). Written 19 October 2026.
+Slice: the six shared trees `shared_cold_lands`, `shared_concord_dominions`, `shared_dark_lands`, `shared_ember_lands`, `shared_east_lands` and `shared_islands_of_the_south` (specs in `docs/specs/05_focus_trees/shared/`). Written 19 October 2026.
 
 ## Trees
 
@@ -9,7 +9,7 @@ Slice: the six shared trees `shared_cold_lands`, `shared_concord_dominions`, `sh
 | `shared_cold_lands.json` | 23 | 70 | 18 | 5 | 1 | 8 | 10 | none |
 | `shared_concord_dominions.json` | 18 | 66 | 22 | 8 | 0 | 7 | 15 | none |
 | `shared_dark_lands.json` | 17 | 57 | 23 | 2 | 5 | 3 | 6 | D1 to D12 |
-| `shared_dead_lands.json` | 6 | 47 | 15 | 6 | 2 | 5 | 5 | L1 to L10 |
+| `shared_ember_lands.json` | 6 | 47 | 15 | 6 | 2 | 5 | 5 | L1 to L10 |
 | `shared_east_lands.json` | 24 | 68 | 17 | 4 | 0 | 7 | 18 | E1 to E10 (E6a, E6b) |
 | `shared_islands_of_the_south.json` | 15 | 46 | 13 | 2 | 0 | 3 | 1 | I1 to I9 |
 | **Total** | **103** | **354** | **108** | **27** | **8** | | | |
@@ -31,7 +31,7 @@ All 65 tests of `focus.test.mjs` pass unchanged; the new behaviour is tested in 
 
 ## Names this slice writes (remove them from other slices' pending registry lists)
 
-Declared in `shared_concord_dominions` (prefixes `zin_concord_` and `zin_shared_` through `name_prefixes`): `zin_concord_add_own_loyalty`, `zin_concord_petition_charter`, `zin_concord_back_camp`, `zin_concord_ask_for_charter`, `zin_concord_join_free_dominions`, `zin_concord_grant_petition`, `zin_concord_admit_dominion` and the triggers `zin_concord_charter_grantable`, `_petition_is_golden`, `_has_golden_charter`, `_parim_takes_charters`, `_can_join_free_dominions`, `_owns_wall_state`, `_dark_rising`, `_overlord_corrupt`, `_overlord_with_host`; and the generic triggers of `zin_shared_trees.txt`: `zin_shared_has_coast`, `zin_shared_is_island_realm`, `zin_shared_borders_dead_lands`, `zin_shared_borders_magical_lands`, `zin_shared_borders_dark_lands`, `zin_shared_bound_away_from_host`. They compile into `common/scripted_triggers/zin_shared_concord_dominions.txt`, not into a file `zin_shared_trees.txt` (the compiler writes one file per tree); the names are what matters. Another slice's registry file that lists any of these as pending is harmless with change 2, and should be cleaned when convenient.
+Declared in `shared_concord_dominions` (prefixes `zin_concord_` and `zin_shared_` through `name_prefixes`): `zin_concord_add_own_loyalty`, `zin_concord_petition_charter`, `zin_concord_back_camp`, `zin_concord_ask_for_charter`, `zin_concord_join_free_dominions`, `zin_concord_grant_petition`, `zin_concord_admit_dominion` and the triggers `zin_concord_charter_grantable`, `_petition_is_golden`, `_has_golden_charter`, `_parim_takes_charters`, `_can_join_free_dominions`, `_owns_wall_state`, `_dark_rising`, `_overlord_corrupt`, `_overlord_with_host`; and the generic triggers of `zin_shared_trees.txt`: `zin_shared_has_coast`, `zin_shared_is_island_realm`, `zin_shared_borders_ember_lands`, `zin_shared_borders_magical_lands`, `zin_shared_borders_dark_lands`, `zin_shared_bound_away_from_host`. They compile into `common/scripted_triggers/zin_shared_concord_dominions.txt`, not into a file `zin_shared_trees.txt` (the compiler writes one file per tree); the names are what matters. Another slice's registry file that lists any of these as pending is harmless with change 2, and should be cleaned when convenient.
 
 Declared in `shared_east_lands`: `zin_shared_east_lands_road_infra`, `_halve_lean`, `_rift_goodwill` (called by the tier B East trees), `_withdraw`, `_deep_sand`, `_loyal_house`, `_own_laws` and 18 triggers. In `shared_cold_lands`: `zin_shared_cold_lands_lean_neighbours` (called by the regional Cold trees) and seven others. Dark, Ember Lands and Islands declare their own (see the JSON).
 
@@ -52,7 +52,7 @@ Dependencies on mechanic slices (they must write these, with the arguments liste
 1. Spec "No raw blocks": the specs also require scripted triggers and effects (`any_owned_state`, `every_other_country`, scoped tag tests, `add_autonomy_ratio`) that the compiler vocabulary cannot express. Every `raw` sits inside a tree-declared effect or trigger; no focus, event or spirit uses one (tested). Country tags in those bodies come from the roster (tested against `countries.json`).
 2. Spirit keys that equal a focus key (F3) were renamed: Concord `fishing_fleets_spirit`, `charter_loyalists_spirit`, `the_dark_comes_spirit`.
 3. Texts that the specs' own text rules forbid were reworded: Cold `a_harbour_for_strangers` is named "A Harbour for Wayfarers", `beside_the_heir` "Beside the Gathering Host" (no "stranger" or "Heir" before the journey); Islands `songs_for_strangers` is named "Songs for Visitors". Keys are unchanged.
-4. Ember Lands `zin_shared_dead_lands_gain_autonomy (value)` is three effects `_10`, `_30`, `_50` (effects take no parameters; a variable in `add_autonomy_ratio` is not guaranteed). Dark Lands `..._opinion_of_root` is inlined with the compiler's `opinion` effect inside `for_country`, wrapped in `if exists`.
+4. Ember Lands `zin_shared_ember_lands_gain_autonomy (value)` is three effects `_10`, `_30`, `_50` (effects take no parameters; a variable in `add_autonomy_ratio` is not guaranteed). Dark Lands `..._opinion_of_root` is inlined with the compiler's `opinion` effect inside `for_country`, wrapped in `if exists`.
 5. Autonomy tooltips use the focus name keys as `localization`; Cold `zin_shared_cold_lands_offer_coast_league` picks the partner with the most states, ties go to a random one of them (`random_other_country`), not to the first tag.
 6. Concord events 1, 3 and 6: the non-committal option is listed first (E2), so the order differs from the spec tables.
 7. Ember Lands `the_southern_storm` puts only "not subject of Volgan" into `allow_branch`; "Volgan exists" is in `available` (`exists` is not an allowed branch condition).

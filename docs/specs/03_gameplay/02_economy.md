@@ -139,7 +139,7 @@ Every modifier below exists in the 1.19.3 modifier documentation (checked 19 Oct
 | `zin_econ_tritons_islands`: Charts of the Pupor Ocean | Triton's Islands | `naval_detection = 0.10`, `convoy_escort_efficiency = 0.10` |
 | `zin_econ_dark_lands`: Forge-Pits | Dark Lands | `production_speed_arms_factory_factor = 0.10`, `consumer_goods_factor = 0.02` |
 | `zin_econ_magical_lands`: Elder Groves | Magical Lands | `research_speed_factor = 0.05`, `production_factory_efficiency_gain_factor = 0.05` |
-| `zin_econ_dead_lands`: Furnace Lands | Ember Lands | `heat_attrition_factor = -0.50`, `production_speed_arms_factory_factor = 0.05` |
+| `zin_econ_ember_lands`: Furnace Lands | Ember Lands | `heat_attrition_factor = -0.50`, `production_speed_arms_factory_factor = 0.05` |
 | `zin_econ_east_lands`: The Caravan Roads | East Lands | `trade_opinion_factor = 0.15`, `consumer_goods_factor = -0.02` |
 | `zin_econ_islands_of_the_south`: Hospitable Isles | Islands of the South | `stability_factor = 0.05` |
 | `zin_econ_lands_of_the_sun`: Sun-Blessed Fields | Lands of the Sun | `monthly_population = 0.10`, `stability_factor = 0.03` |

@@ -86,8 +86,8 @@
    "options": [{ "name": "Burn them.", "ai": 100, "effects": ["add_war_support = 0.03"] }]
   },
   {
-   "id": 40, "title": "The Passes Burn", "picture": "mirolon_passes", "picture_wanted": "passes_burning", "to": "every Middle Lands and Dead Lands country, and Aenor", "hist": "Highsun 1755",
-   "runner": { "if": ["any_state = { zin_is_site_mirolon_passes = yes controller = { zin_is_volgan = yes } }"], "to": [{ "who": [{ "or": ["has_country_flag = zin_region_middle_lands", "has_country_flag = zin_region_dead_lands"] }, "NOT = { zin_is_volgan = yes }"] }] },
+   "id": 40, "title": "The Passes Burn", "picture": "mirolon_passes", "picture_wanted": "passes_burning", "to": "every Middle Lands and Ember Lands country, and Aenor", "hist": "Highsun 1755",
+   "runner": { "if": ["any_state = { zin_is_site_mirolon_passes = yes controller = { zin_is_volgan = yes } }"], "to": [{ "who": [{ "or": ["has_country_flag = zin_region_middle_lands", "has_country_flag = zin_region_ember_lands"] }, "NOT = { zin_is_volgan = yes }"] }] },
    "desc": [
     { "key": "aenor", "if": ["zin_aenor_is_realm = yes"], "text": "Mirolon's watchtowers on the passes are burning. For twenty years Mirolon told Parim that this day would come, and for twenty years Parim found the warning inconvenient. The Marshal asks what the Lost Cause is for, if not for this." },
     { "text": "Mirolon's watchtowers on the passes are burning. For twenty years Mirolon told the north that this day would come, and for twenty years the north found the warning inconvenient." }
@@ -99,7 +99,7 @@
    ]
   },
   {
-   "id": 41, "title": "Herez Holds the Marches", "picture": "dead_lands_storm", "to": "Herez", "hist": "Mistfall 1755",
+   "id": 41, "title": "Herez Holds the Marches", "picture": "ember_lands_storm", "to": "Herez", "hist": "Mistfall 1755",
    "runner": { "if": ["has_global_flag = zin_volgan_marches", "{{tag:Herez}} = { has_war_with = {{tag:Volgan}} }"], "to": "tag:Herez" },
    "desc": "The southern marches of the Concord face the whole Dominion. Herez's wardens count the fires on the horizon every night, and the arithmetic does not improve with repetition. The ford-keepers have asked for the old orders, the ones that were never rescinded.",
    "options": [

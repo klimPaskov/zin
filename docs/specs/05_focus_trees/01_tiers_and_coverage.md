@@ -91,7 +91,7 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 
 - **Tier A:** Volgan, Mirolon.
 - **Tier B** (own tree `regional_<name>`): Olen (`regional_olen`), Nezer (`regional_nezer`), Demon (`regional_demon`), Dolon (`regional_dolon`), Nan (`regional_nan`).
-- **Tier C** (shared tree `shared_dead_lands`, 6 countries): Mencnon, Bennen, Dra, Gelon, Luminor, Mirodor.
+- **Tier C** (shared tree `shared_ember_lands`, 6 countries): Mencnon, Bennen, Dra, Gelon, Luminor, Mirodor.
 
 ### East Lands (35)
 

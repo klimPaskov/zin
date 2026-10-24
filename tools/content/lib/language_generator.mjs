@@ -34,7 +34,7 @@ const PLACE_SPEC = {
 
 // The substrings of tools/content/modules/names.mjs (kept) plus the spec's additions; languages.json repeats them and
 // the loader merges all three.
-export const BANNED_SUBSTRINGS = Object.freeze(['rush', 'klinti', 'sunhot', 'edvoid', 'zol', 'volgan', 'afrit', 'hell', 'dead', 'death', 'devil', 'demon', 'god', 'sex', 'ass', 'tit', 'cum', 'dick', 'cock', 'kill', 'rape', 'slut', 'piss', 'shit', 'fuck', 'nazi']);
+export const BANNED_SUBSTRINGS = Object.freeze(['rush', 'klinti', 'sunhot', 'kusven', 'zol', 'volgan', 'afrit', 'hell', 'dead', 'death', 'devil', 'demon', 'god', 'sex', 'ass', 'tit', 'cum', 'dick', 'cock', 'kill', 'rape', 'slut', 'piss', 'shit', 'fuck', 'nazi']);
 
 // Real-world names that the data's blocklists do not hold, kept out as whole words (Rite-Tongue marx + stem x made "Marx").
 export const REAL_WORLD_WORDS = Object.freeze(['marx', 'engels', 'freud', 'plato', 'caesar', 'nero', 'attila', 'genghis', 'darwin', 'newton', 'einstein']);
@@ -412,7 +412,7 @@ const SUBSTRATE = {
   'Dark Lands': [{ kinds: ['mountain'], language: 'orcish' }, { kinds: ['forest'], language: 'dondric' }],
   'Magical Lands': [{ kinds: '*', language: 'sylvan' }],
   'East Lands': [{ kinds: ['river'], language: 'alerhic' }, { kinds: ['lake', 'settlement', 'site'], language: 'noric' }],
-  'Dead Lands': [{ kinds: ['river', 'sea', 'strait', 'lake'], language: 'mirolic' }, { kinds: ['mountain'], language: 'infernal' }, { kinds: ['site'], language: 'grave_rite' }],
+  'Ember Lands': [{ kinds: ['river', 'sea', 'strait', 'lake'], language: 'mirolic' }, { kinds: ['mountain'], language: 'infernal' }, { kinds: ['site'], language: 'grave_rite' }],
 };
 const HOLY = { 'Lands of the Sun': 'galic' };
 

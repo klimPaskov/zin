@@ -13,7 +13,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Extent | The main island (bbox x 0.577 to 0.627, y 0.800 to 0.913), the Mirolon peninsula (about x 0.64 to 0.70, y 0.70 to 0.82), the isles, and the added Nether island to the south; 80,032 square pixels in all | [GM] `region_dead_lands`, `land_dead_lands_island`, `peninsula_mirolon`, `land_nether_island` |
+| Extent | The main island (bbox x 0.577 to 0.627, y 0.800 to 0.913), the Mirolon peninsula (about x 0.64 to 0.70, y 0.70 to 0.82), the isles, and the added Nether island to the south; 80,032 square pixels in all | [GM] `region_ember_lands`, `land_ember_lands_island`, `peninsula_mirolon`, `land_nether_island` |
 | Climate | Hot, dry, storm-lashed coasts; oppressive heat inland and to the south; storm season all year on the coasts | [GM]; E storms and heat ([DL] First Age campaign) |
 | Elevation | Volcanic ridges at 5, a grey plateau at 2, chasms | [GM] |
 | Terrain | Mountain 30%, hills 25%, desert 20%, forest 10%, plains 10%, marsh 5% | [GM] |
@@ -45,7 +45,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | People | Culture (data id) | Language | Where | Status |
 | --- | --- | --- | --- | --- |
 | Men | Wardens of Mirolon (`mirolon_wardens`) | Mirolic, warden dialect | Mirolon | E Mirolon a human kingdom ([DL], [C48]); P culture |
-| Men | Ember Lands Freeholders (`dead_lands_freeholds`) | Mirolic, coast dialect | Halia (the salt coast), Nan, Olen | P |
+| Men | Ember Lands Freeholders (`ember_lands_freeholds`) | Mirolic, coast dialect | Halia (the salt coast), Nan, Olen | P |
 | The dead | Grave Hosts of Volgan (`grave_hosts`) | the Rite-Tongue for offices and gates | Volgan's island | E grave hosts ([DL]) |
 | Orcs, goblins, ogres | Volgan's living soldiers (P culture to be written; the model counts orcs 30% and ogres 15% of Volgan's living people, [DEM] minor peoples) | Orcish, Goblin Cant | The plateau and the Demonic Mountains | E orcs, goblins, ogres in Volgan's armies ([DL], [VO]) |
 | Demons | Netherborn (`netherborn`) | Infernal | Khorvrath (former label Demon), Dolon, Nezer | E Netherborn serving Volgan ([PA]); E Demon, Dolon, Nezer his satellites (working, [GP]) |
@@ -196,7 +196,7 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 
 **Mechanics.** *Volgan's Southern Dominion* ([VSD]) stays the region's main mechanic: dominion strength, the Veil of Storms, grave musters, the sworn realms' oaths, the Nether pact (now with a real country, [nether.md](nether.md)), the Abyss envoys, the Dark Lands pacts, Mirolon's proof and passes, the reconquest, the march north, the clash and the Black Compact with Zol's forces, and the broken body. Changes (P): every text and tag that says "Volgan" for the country says Puvulan; the freehold rows collapse into Halia with one tribute decision; a **devils** layer: Puvulan may call devils from the Kherith Isles (a rare elite division that, when destroyed, can return only through the lava-rite decision on an owned volcanic state); black powder for the orc companies after the "Dolon's Forge" focus.
 
-**Focus trees ([FT]).** `volgan` (114 focuses, renamed for Puvulan), `mirolon` (83), `regional_demon` (renamed Khorvrath), `regional_dolon`, `regional_nezer`, `regional_nan`, `regional_olen`, `shared_dead_lands` (six freeholds, cut to Halia's own small tree).
+**Focus trees ([FT]).** `volgan` (114 focuses, renamed for Puvulan), `mirolon` (83), `regional_demon` (renamed Khorvrath), `regional_dolon`, `regional_nezer`, `regional_nan`, `regional_olen`, `shared_ember_lands` (six freeholds, cut to Halia's own small tree).
 
 **Events (P).** "The Storms Part Wrong" (Mirolon's proof); "A Skull in the Lava" (a devil returns); "Salt for Silence" (Halia's tribute); "The Thief Came This Way" (the freeholds remember); "The Rim of the Abyss" (envoys go down; the depths answer, are silent, or answer in wrath, [VSD] §6).
 
@@ -249,4 +249,4 @@ South of the Middle Lands, behind a belt of storms that kept the First Age's exp
 | [ROS], [LBL] | `tools/content/data/countries.json` (scan Ember Lands); `tools/content/data/labels.json` (Ember Lands) |
 | [BC] | `docs/lore/sources/bestiary_cards_part1.md` (cards 8, 15, 18, 20, 22), `bestiary_cards_part2.md` (cards 46, 48, 61) |
 | [VSD] | `docs/specs/04_mechanics/volgan_southern_dominion.md` (lore basis; §2 to §10) |
-| [FT] | `docs/design/focus/*.json` (volgan, mirolon, regional_demon, regional_dolon, regional_nezer, regional_nan, regional_olen, shared_dead_lands) |
+| [FT] | `docs/design/focus/*.json` (volgan, mirolon, regional_demon, regional_dolon, regional_nezer, regional_nan, regional_olen, shared_ember_lands) |

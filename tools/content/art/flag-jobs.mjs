@@ -31,8 +31,8 @@ const REGION = {
   'South-Earth': ['a camel', 'a palm tree', 'a scorpion', 'a desert sun', 'a falcon', 'a scimitar', 'a caravan lamp', 'an oasis', 'a lion', 'a jackal'],
   'Islands of The South': ['a sea turtle', 'a conch shell', 'a palm', 'a flying fish', 'a rising sun', 'a coral branch', 'an outrigger canoe', 'a parrot'],
   Sunhot: ['a radiant sun disc', 'a phoenix', 'a lotus', 'a flame', 'a golden bird', 'a sun-crowned spear', 'a temple dome', 'a golden tree'],
-  'Dead Lands': ['a skull', 'crossed bones', 'a black flame', 'a bat', 'a raven', 'a horned skull', 'a broken crown', 'a coffin nail'],
-  'Ocean of Edvoid': ['a black skull on a starless void'],
+  'Ember Lands': ['a skull', 'crossed bones', 'a black flame', 'a bat', 'a raven', 'a horned skull', 'a broken crown', 'a coffin nail'],
+  'Kusmeel': ['a black skull on a starless void'],
 };
 const PEOPLE = { elves: 'a slender silver leaf or star', sun_elves: 'a radiant golden sun', giants: 'a giant mountain or great hammer', ents: 'an ancient tree with spreading roots', yeti: 'a white clawed paw on snow', trolls: 'a spiked club', orcs: 'tusks or a crude axe', the_dead: 'a skull', demons: 'horns and a burning eye' };
 const ALIGN = { democratic: 'a bright, noble realm of the Light', fascism: 'a proud crowned dominion', communism: 'a sinister realm of Shadow', neutrality: 'an unaligned wild realm' };

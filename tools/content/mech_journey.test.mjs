@@ -197,7 +197,7 @@ test('No player text holds a banned word', () => {
 test('Afrit is named only in the hub variants and the heir only through the scripted localisation before he is named', () => {
   const glo = results.glo.localisation;
   for (const [k, v] of Object.entries(glo)) if (/Afrit/.test(v)) assert(/_hub/.test(k), `Afrit in ${k}`);
-  for (const r of Object.values(results)) for (const [k, v] of Object.entries(r.localisation)) { assert(!/Hidden Council/.test(v), k); assert(!/Einendil|Edvoid/.test(v), k); }
+  for (const r of Object.values(results)) for (const [k, v] of Object.entries(r.localisation)) { assert(!/Hidden Council/.test(v), k); assert(!/Einendil|Kusven/.test(v), k); }
   for (const [k, v] of Object.entries(results.west.localisation)) assert(!/Eindil/.test(v) || /zin_loc_eindil/.test(v) || /Eindil's coalition/.test(v), `Eindil in ${k}`);
   assert(/\[zin_loc_eindil\]/.test(glo['zin_glo.21.d']));
   assert(!/heart/i.test(JSON.stringify([glo['zin_glo_petition_horos_desc'], glo['zin_glo_guard_the_hall_desc'], glo['zin_glo.5.d'], glo['zin_glo.11.d'], glo['zin_glo.61.d'], glo['zin_glo.60.d']])), 'Glo is not the heart before the death');

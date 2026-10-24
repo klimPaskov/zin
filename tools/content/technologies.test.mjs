@@ -370,7 +370,7 @@ test('Every key has text: technologies, gates, folders, categories, doctrines, r
 test('No player text uses a banned word, a real-world name, an American spelling or the secret', () => {
   for (const [k, v] of allLoc()) {
     assert.deepEqual(bannedHits(v), [], `${k}: ${v}`);
-    assert(!/Afrit|Deliverer|Hidden Council|Einendil|Edvoid/.test(v), `${k} names the secret or a retired name`);
+    assert(!/Afrit|Deliverer|Hidden Council|Einendil|Kusven/.test(v), `${k} names the secret or a retired name`);
     assert(/^[\x20-\x7E -ÿ]*$/.test(v), `${k} has characters the game font does not draw`);
   }
 });

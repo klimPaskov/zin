@@ -296,7 +296,7 @@ test('Retired names: no staged file or text uses a name from the register\'s ret
     for (const re of retired.patterns) if (re.test(t)) hits.push(`${f}: ${re}`);
   }
   assert.deepEqual(hits, []);
-  for (const bad of ['Hierarch', 'Einendil', 'Edvoid', 'Aenorian', 'Rush Kingdom']) assert(!NAMESPACES.some(ns => Object.values(loc(ns)).some(v => v.includes(bad))), bad);
+  for (const bad of ['Hierarch', 'Einendil', 'Kusven', 'Aenorian', 'Rush Kingdom']) assert(!NAMESPACES.some(ns => Object.values(loc(ns)).some(v => v.includes(bad))), bad);
   assert(!/\bcreate_faction\b/.test(allScript));
 });
 

@@ -238,12 +238,12 @@ Prerequisites: "a and b" means both; "a or b" means either. Effects use the comp
 | Key | Name | Prerequisites | Exclusive | x,y | Days | Effects | AI |
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | `silent_throne` | The Silent Throne | — | — | 19,18 | 14 | allow_branch and available: global_flag zin_volgan_body_destroyed; call zin_volgan_steward_rule; political_power 100; stability 0.1 | 500 |
-| `hold_the_dead_lands` | Hold the Ember Lands | silent_throne | host_fights_on | 18,19 | 35 | add_spirit retreat_south | 80 (hist ×2) |
-| `host_fights_on` | The Host Fights On | silent_throne | hold_the_dead_lands | 20,19 | 35 | war_support 0.1; stability −0.1; strength +5 | 20 |
-| `keep_the_oaths` | Keep the Oaths | hold_the_dead_lands | — | 18,20 | 35 | oath all +20 | 30 |
+| `hold_the_ember_lands` | Hold the Ember Lands | silent_throne | host_fights_on | 18,19 | 35 | add_spirit retreat_south | 80 (hist ×2) |
+| `host_fights_on` | The Host Fights On | silent_throne | hold_the_ember_lands | 20,19 | 35 | war_support 0.1; stability −0.1; strength +5 | 20 |
+| `keep_the_oaths` | Keep the Oaths | hold_the_ember_lands | — | 18,20 | 35 | oath all +20 | 30 |
 | `stewards_war` | The Steward's War | host_fights_on | — | 20,20 | 35 | timed_spirit steward_war 180; army_experience 20 | 30 |
 | `what_remains` | What Remains of Volgan | keep_the_oaths or stewards_war | — | 19,21 | 35 | event what_remains (zin_volgan.17); remove_spirit zin_dominion_silent_throne | 30 |
-| `dead_lands_endure` | The Ember Lands Endure | what_remains | — | 19,22 | 70 | add_spirit dead_lands_endure_spirit | 30 |
+| `ember_lands_endure` | The Ember Lands Endure | what_remains | — | 19,22 | 70 | add_spirit ember_lands_endure_spirit | 30 |
 
 ### Count
 
@@ -304,7 +304,7 @@ Keys compile to `zin_volgan_<key>`. Mechanic spirits (`zin_dominion_*`) are list
 | `hunt_the_champion` | Hunt the Champion | `army_morale_factor` 0.1, `war_support_factor` 0.05 | "The Champion of Men"; 180 days |
 | `retreat_south` | Hold the Ember Lands | `army_core_defence_factor` 0.2, `war_support_factor` 0.05 | "Hold the Ember Lands" |
 | `steward_war` | The Steward's War | `army_org_factor` 0.05 | "The Steward's War"; 180 days |
-| `dead_lands_endure_spirit` | The Ember Lands Endure | `stability_factor` 0.1, `political_power_gain` 0.1 | "The Ember Lands Endure" |
+| `ember_lands_endure_spirit` | The Ember Lands Endure | `stability_factor` 0.1, `political_power_gain` 0.1 | "The Ember Lands Endure" |
 
 When `zin_volgan_destroy_body` runs, it also removes the spirits `host_of_first_age`, `one_dominion`, `gates_opened` and `two_darks`.
 
@@ -318,16 +318,16 @@ All are fired by focus or option effects (no trigger, no mean time). Pictures ar
 | 2 | `words_from_nafeher` | Words from Nafeher (to Mirolon) | Focus "The False Quiet" | `mirolon_passes` | "Accept the quiet." (non_aggression with Volgan; `zin_mirolon_add_proof` −5; Volgan veil +5; AI 30 if proof < 40, else 5) / "We know what the quiet hides." (`zin_mirolon_add_proof` +5; Volgan veil −2; AI 70) |
 | 3 | `summoned` | Summoned to Nafeher (to a member) | Dominion focuses | `generic_court` | "We come." (oath +5; AI 80 if oath ≥ 40, else 40) / "We come, slowly." (oath −5, the member gains 25 PP; AI 20) |
 | 4 | `war_council` | The War-Council | Focus | `generic_war` | "The Dominion marches as one." (flag `zin_volgan_war_council`: the members' AI joins every Volgan war; oath all +5) |
-| 5 | `nether_court` | The Court in the Nether | Focus | `dead_lands_storm` | "Speak as a guest." (pact +5; AI 60) / "Speak as a master." (pact +10, stability −0.03; AI 40) |
+| 5 | `nether_court` | The Court in the Nether | Focus | `ember_lands_storm` | "Speak as a guest." (pact +5; AI 60) / "Speak as a master." (pact +10, stability −0.03; AI 40) |
 | 6 | `kings_due` | The King's Due | Focus | `generic_court` | "Pay it." (−100 PP, pact +20; AI 70) / "The Dominion pays no one." (pact −10, strength +2; AI 30) |
-| 7 | `abyss_watch` | Watchers at the Abyss | Focus | `dead_lands_storm` | "Watch, and wait." |
+| 7 | `abyss_watch` | Watchers at the Abyss | Focus | `ember_lands_storm` | "Watch, and wait." |
 | 8 | `abyss_descent` | Into the Abyss (hidden) | Focus | none (hidden) | Fires 9, 10 or 11 with weights 50, 35, 15 |
-| 9 | `abyss_answers` | The Depths Answer | 8 | `dead_lands_storm` | "Let them climb." (flag `zin_volgan_abyss_answered`) |
-| 10 | `abyss_silent` | The Depths Are Silent | 8 | `dead_lands_storm` | "Another year, then." (+25 PP; call `zin_volgan_abyss_wait`, so the mechanic's decision "Descend Again" opens after 365 days) |
-| 11 | `abyss_wrath` | The Depths Answer in Wrath | 8 | `dead_lands_storm` | "Seal the stair." (strength −2, −40 PP; call `zin_volgan_abyss_wait`, so "Descend Again" opens after 365 days) |
+| 9 | `abyss_answers` | The Depths Answer | 8 | `ember_lands_storm` | "Let them climb." (flag `zin_volgan_abyss_answered`) |
+| 10 | `abyss_silent` | The Depths Are Silent | 8 | `ember_lands_storm` | "Another year, then." (+25 PP; call `zin_volgan_abyss_wait`, so the mechanic's decision "Descend Again" opens after 365 days) |
+| 11 | `abyss_wrath` | The Depths Answer in Wrath | 8 | `ember_lands_storm` | "Seal the stair." (strength −2, −40 PP; call `zin_volgan_abyss_wait`, so "Descend Again" opens after 365 days) |
 | 12 | `empty_setting` | The Empty Setting | Focus | `generic_court` | "A thief from the north, long ago. Let the thief's master keep his prize, for now." The text never names the master. |
 | 13 | `envoy_from_the_south` | An Envoy from the South (to Goldoroth) | Focus | `southern_warning` | "Dondor would make fine spoils." (Goldoroth pact +1; AI 30, ×0 when the Dark Lands trigger `zin_goldoroth_refuses_masters` holds) / "Goldoroth bows to no spirit." (Volgan opinion −20; AI 70) |
-| 14 | `green_crystal` | The Green Crystal | Focus | `dead_lands_storm` | If `zin_glo_with_eindil`: "Then take it from him." (flag `zin_volgan_seeks_glo`; call `zin_volgan_wargoal_on_bearer`) / otherwise "Watch the cold north for it." (flag `zin_volgan_seeks_glo`) |
+| 14 | `green_crystal` | The Green Crystal | Focus | `ember_lands_storm` | If `zin_glo_with_eindil`: "Then take it from him." (flag `zin_volgan_seeks_glo`; call `zin_volgan_wargoal_on_bearer`) / otherwise "Watch the cold north for it." (flag `zin_volgan_seeks_glo`) |
 | 15 | `word_to_the_mistake` | A Word to the Mistake (to Zol) | Focus "Leave the North to Its Dead" | `black_isles_lights` | "Let the south keep the south." (white peace with Volgan; AI by the Zol spec) / "The dead answer no one." |
 | 16 | `champion` | The Champion of Men | Focus | `generic_war` | "Find him." |
 | 17 | `what_remains` | What Remains of Volgan | Focus | `volgan_broken` (gate `zin_volgan_body_destroyed`; the focus needs it) | "Rule in his name." (stability +0.05; AI 60) / "Rule as he would." (war_support +0.05; AI 40). The text says no one living can say what remains. |
@@ -349,8 +349,8 @@ With `zin_rule_historical_path`, weights above make the AI follow this order. Da
 | Rainwake to Emberleaf 1755 | out_of_the_storms, storm_the_passes, the_lake_towns, mirolon_retaken (when Mirolon falls), dead_garrison (Mirolon's court is in exile, so no client crown) |
 | Mistfall 1755 | passes_are_ours, march_north (`zin_volgan_marches`) |
 | 1756 | great_muster, volgan_takes_the_field, southern_marches, road_to_parim, dead_of_the_north, dead_against_dead, terror_before_the_host, client_crowns, dominion_at_war |
-| 1757 | black_compact, two_darks_one_field, champion_of_men; then, after the body breaks: silent_throne, hold_the_dead_lands |
-| 1758 to 1760 | keep_the_oaths, what_remains, dead_lands_endure; leftover economy, Nether and Abyss focuses (fire_of_the_nether, kings_due) when no war focus is open |
+| 1757 | black_compact, two_darks_one_field, champion_of_men; then, after the body breaks: silent_throne, hold_the_ember_lands |
+| 1758 to 1760 | keep_the_oaths, what_remains, ember_lands_endure; leftover economy, Nether and Abyss focuses (fire_of_the_nether, kings_due) when no war focus is open |
 
 The AI never takes `break_the_veil` or `leave_north_to_its_dead` on the historical path. `old_claim` is held until 1754 so the claim does not stir the world early.
 
@@ -442,7 +442,7 @@ Every key is from the icon catalog ([02_icon_catalog.md](../02_icon_catalog.md))
 | 9 | old_conquest `banner_black`; out_of_the_storms `storm_veil`; storm_the_passes `pass_fort`; gates_behind_the_passes `nether_gate`; the_lake_towns `lake_town`; mirolon_retaken `crown_broken`; dead_garrison `grave_host`; client_crown_of_mirolon `crown_iron`; passes_are_ours `mountain_pass` |
 | 10 | march_north `dead_ranks_far`; volgan_takes_the_field `war_drums`; southern_marches `roads_paved`; terror_before_the_host `bones_risen`; road_to_parim `palace_parim`; green_crystal `crystal_green`; break_concord_south `chain_broken`; client_crowns `crown_iron`; old_battlefields `grave_field`; siege_of_parim `siege_trebuchet`; throne_in_parim `throne_gold`; children_of_volgan `dead_crown`; monster_and_grave `troll_club` |
 | 11 | dead_of_the_north `black_isles`; dead_against_dead `dead_ranks_far`; leave_north_to_its_dead `olive_branch`; black_compact `black_compact`; two_darks_one_field `black_compact`; champion_of_men `lone_sword` |
-| 12 | silent_throne `silent_throne`; hold_the_dead_lands `fort_wall`; host_fights_on `banner_black`; keep_the_oaths `handshake_oath`; stewards_war `war_council_map`; what_remains `empty_throne`; dead_lands_endure `ember_desert` |
+| 12 | silent_throne `silent_throne`; hold_the_ember_lands `fort_wall`; host_fights_on `banner_black`; keep_the_oaths `handshake_oath`; stewards_war `war_council_map`; what_remains `empty_throne`; ember_lands_endure `ember_desert` |
 
 ## AI
 

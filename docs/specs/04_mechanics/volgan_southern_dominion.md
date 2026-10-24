@@ -396,7 +396,7 @@ This module defines no site trigger: the key-sites module `tools/content/modules
 | Path | Content |
 | --- | --- |
 | `common/scripted_effects/zin_dominion.txt` | Effects below |
-| `common/scripted_triggers/zin_dominion.txt` | Triggers below, including `zin_is_volgan`, `zin_is_mirolon` (`original_tag`, read by the interface spec), the region triggers `zin_dominion_is_dark_lands_country`, `zin_dominion_is_dead_lands_country`, `zin_dominion_is_free_dead_realm` and `zin_dominion_is_middle_lands_state` (tag lists from `countries.json`), and the story-pace date floors `zin_dominion_after_<yyyy_mm>` |
+| `common/scripted_triggers/zin_dominion.txt` | Triggers below, including `zin_is_volgan`, `zin_is_mirolon` (`original_tag`, read by the interface spec), the region triggers `zin_dominion_is_dark_lands_country`, `zin_dominion_is_ember_lands_country`, `zin_dominion_is_free_dead_realm` and `zin_dominion_is_middle_lands_state` (tag lists from `countries.json`), and the story-pace date floors `zin_dominion_after_<yyyy_mm>` |
 | `common/decisions/zin_dominion.txt`, `common/decisions/categories/zin_dominion.txt` | Categories `zin_dominion_grave_musters`, `zin_dominion_court`, `zin_dominion_mirolon_watch` and their decisions |
 | `common/dynamic_modifiers/zin_dominion.txt` | `zin_dominion_hosts` (country), `zin_dominion_gate_scars` (state, 90 days) |
 | `common/ideas/zin_dominion.txt` | Mechanic spirits below |
@@ -465,7 +465,7 @@ Country, members and others: `zin_dominion_own_road` (member chose its own road 
 | `zin_is_volgan`, `zin_is_mirolon` | `original_tag` is Volgan's or Mirolon's tag |
 | `zin_dominion_is_dark_lands_country` | `original_tag` is one of the roster's Dark Lands countries |
 | `zin_dominion_is_free_dead_realm` | `original_tag` is one of the roster's Ember Lands countries, not Volgan, not Mirolon, not Volgan's subject |
-| `zin_dominion_is_dead_lands_country` | `original_tag` is one of the roster's Ember Lands countries |
+| `zin_dominion_is_ember_lands_country` | `original_tag` is one of the roster's Ember Lands countries |
 | `zin_dominion_is_middle_lands_state` | State scope: a core of any roster Middle Lands country (scan "Rush Land" and "Rush Islands" in `countries.json`, the politics step's superseded labels); the key sites table's `zin_is_region_middle_lands` (decision E7) may replace it once built, with the same states |
 | `zin_dominion_after_<yyyy_mm>` | The date floor, shifted by `global.zin_story_pace` (one trigger per floor in this spec) |
 | Site triggers | `zin_is_site_nafeher`, `zin_is_site_abyss`, `zin_is_site_nether`, `zin_is_site_mirolon_passes`, `zin_is_site_mirolon_seat`, `zin_is_site_parim`, in `zin_sites.txt` ([02_key_sites.md](../01_map/02_key_sites.md)); rows in "Builder" above |
@@ -548,15 +548,15 @@ Pictures are event pictures in game (`GFX_zin_evt_<key>`; news `GFX_zin_news_<ke
 | Id | Title | For | Trigger | Options | Picture |
 | --- | --- | --- | --- | --- | --- |
 | 1 | (hidden) The Dominion Wakes | Volgan | `on_startup` | Runs `zin_dominion_startup` (start values, start spirits of both trees, Maeric); the monthly pulse stays an on_action | — |
-| 2 | Rumours from the South | Mirolon, Herez, free Ember Lands realms | Veil drops below 70 | "We have heard such talk before." | `dead_lands_storm` |
+| 2 | Rumours from the South | Mirolon, Herez, free Ember Lands realms | Veil drops below 70 | "We have heard such talk before." | `ember_lands_storm` |
 | 3 | Mirolon's Fears | Herez, free Ember Lands realms | Mirolon proof 25 | "Watch with them." (opinion of Mirolon +10) / "Mirolon frets." | `southern_warning` |
-| 4 | The Ember Lands Are Arming | all (news) | Veil below 30 | "So the legends wake." | news `dead_lands_storm` |
+| 4 | The Ember Lands Are Arming | all (news) | Veil below 30 | "So the legends wake." | news `ember_lands_storm` |
 | 5 | Mirolon's Warning | the ruling Aenor realm | Decision "Send Word to Parim" or a Mirolon focus | See section 8 | `southern_warning` |
 | 6 | Scouts Lost | Mirolon | Scouting with veil ≥ 70 (30%) | "Their names go on the wall." | `mirolon_passes` |
 | 7 | Scouts Found Dead | Mirolon | Volgan's "Silence the Watchers" | "Double the watch." (passes +3) / "Keep it quiet." (stability +2%) | `mirolon_passes` |
 | 8 | Envoys from Nafeher | Dark Lands target | Envoy decision or tree offer | "Hear them." (pact to the offer level) / "Send them back south." | `generic_court` |
 | 9 | The Envoys Return | Volgan | Reply to 8 | "As expected." | `generic_court` |
-| 10 | Out of the Storms | Volgan, Mirolon | Volgan declares war on Mirolon | Applies the surprise spirits | `dead_lands_storm` |
+| 10 | Out of the Storms | Volgan, Mirolon | Volgan declares war on Mirolon | Applies the surprise spirits | `ember_lands_storm` |
 | 11 | Mirolon Falls | all (news) | `zin_volgan_mirolon_taken` while at war | Sets `zin_mirolon_fallen` | news `generic_war` |
 | 12 | The March North | all (news) | `zin_volgan_begin_march` | "The south is moving." | news `generic_war` |
 | 13 | The Dead Against the Dead | Volgan | Section 11 | "Then we break them too." / "Not yet." | `grave_muster` |
@@ -567,13 +567,13 @@ Pictures are event pictures in game (`GFX_zin_evt_<key>`; news `GFX_zin_news_<ke
 | 18 | Old Allegiances | Demon, Dolon, Nezer | Body destroyed | Stay with Nafeher / go our own way (AI by oath) | `volgan_broken` |
 | 19 | The Steward's Choice | Volgan | Body destroyed while Volgan holds Mirolon, or `zin_mirolon_restore` | "Let Mirolon go." (AI 90) / "Hold what we took." (AI 10) | `volgan_broken` |
 | 20 | The Passes Held | Volgan, Mirolon | `zin_mirolon_holds` | "The march waits." | `mirolon_passes` |
-| 21 | Fire from the Gate | Volgan | Nether Gate decision | "Again, when the gate allows." | `dead_lands_storm` |
+| 21 | Fire from the Gate | Volgan | Nether Gate decision | "Again, when the gate allows." | `ember_lands_storm` |
 | 22 | The Oath Falters | member | Oath below 25 | Renew / seek our own road | `generic_court` |
 | 23 | The Compact Ends | Volgan, Zol | Body destroyed or `zin_zol_withdrawn`, compact active | "Each to his own dark." | `volgan_broken` |
 | 24 | A Court in Exile | Mirolon | Capitulation with `zin_mirolon_exile_ready` | "Mirolon lives while we do." | `generic_court` |
-| 25 | A Stirring in Nafeher | Volgan | Rule `STIRRING` only | "In this telling, the throne answers." | `dead_lands_storm` |
+| 25 | A Stirring in Nafeher | Volgan | Rule `STIRRING` only | "In this telling, the throne answers." | `ember_lands_storm` |
 | 26 | The Steward Asks for Peace | each enemy outside the Ember Lands | 30 days after the body breaks, Volgan AI | "Peace, then." / "Finish what the sword began." | `volgan_broken` |
-| 27 | Mirolon's Proof | all (news) | Mirolon proof 75 | "Mirolon was right." | news `dead_lands_storm` |
+| 27 | Mirolon's Proof | all (news) | Mirolon proof 75 | "Mirolon was right." | news `ember_lands_storm` |
 | 28 | Terms from Nafeher | a tributary friend | The march begins | Kneel / refuse | `generic_court` |
 
 Events 4, 11, 12, 17 and 27 are news events. Every event is fired by an effect or an on_action; none uses a mean time to happen except 25 (yearly 10% roll from the pulse, rule `STIRRING` only). Every event sets `timeout_days = 30` and takes its first option on timeout (E2); none decides a historical checkpoint for a human, so the orders stay as tabled. The pulse (`zin_dominion_monthly_volgan`) ends with `mark_focus_tree_layout_dirty` for Volgan, Mirolon, Demon, Dolon and Nezer (E4); `zin_volgan_destroy_body` does the same at once. No event text before `zin_afrit_revealed` names Afrit; no text names Eindil before `zin_eindil_named` (event 16 calls him "the champion of men").

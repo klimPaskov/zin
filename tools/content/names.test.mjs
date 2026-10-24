@@ -336,7 +336,7 @@ test('No name of any pool breaks a rule: banned words, glyphs, form, floors, lea
   const result = checkStagedNames({ text, data, ctx, tagLanguage, blend: neutralBlend(data).map(b => b.language), generator });
   assert.deepEqual(result.violations, []);
   const lower = text.toLowerCase();
-  for (const word of ['afrit', 'volgan', 'zol', 'rush', 'klinti', 'edvoid']) assert(!lower.replace(/\byz0[a-z0-9]\b/g, '').includes(` ${word}`), word);
+  for (const word of ['afrit', 'volgan', 'zol', 'rush', 'klinti', 'kusven']) assert(!lower.replace(/\byz0[a-z0-9]\b/g, '').includes(` ${word}`), word);
   assert.deepEqual(nonWindows1252(text.replace(/[\t\r\n]/g, ' ')), []);
 });
 
@@ -394,8 +394,8 @@ test('placeNames: bulk, unique, deterministic, layered, and shared with the pers
 
 test('placeNames: a region mixes the languages of its countries; the registry refuses what persons hold', () => {
   resetNaming();
-  const dead = placeNames('Dead Lands', 'settlement', 80, { layers: false });
-  assert(new Set(dead.map(n => n.language)).size >= 2, 'Mirolic, Infernal and the Rite-Tongue share the Dead Lands');
+  const dead = placeNames('Ember Lands', 'settlement', 80, { layers: false });
+  assert(new Set(dead.map(n => n.language)).size >= 2, 'Mirolic, Infernal and the Rite-Tongue share the Ember Lands');
   const person = (() => { const b = getBuilt(); return b.pools.get(tagOf('Aenor')).male[0]; })();
   const noris = placeNames('Noris', 'city', 100, { layers: false });
   for (const n of noris) assert.notEqual(n.key, keyOf(person));

@@ -212,14 +212,14 @@ export const CULTURE_RENAMES = {
   isengard_warlords: 'melkgard_warlords',
   windwaith_seafarers: 'vindael_seafarers',
   gunwaith_clans: 'gunwyn_clans',
-  dead_lands_freeholds: 'ember_freeholds',
+  ember_lands_freeholds: 'ember_freeholds',
 };
 const RETIRED_CULTURES = {
   wall_folk: 'split into vale_folk (Kingson, Klungori Guard) and hilofrim_herders (the herders of Hirolon): there is no wall, the Great Wall of Aenor is a natural range',
   isengard_warlords: 'renamed melkgard_warlords: Isengard is a name of other fiction; the realm is Melkgard',
   windwaith_seafarers: 'renamed vindael_seafarers: "-waith" names are retired; the arm is Vindael',
   gunwaith_clans: 'renamed gunwyn_clans: "-waith" names are retired; the kingdom is Gunwyn',
-  dead_lands_freeholds: 'renamed ember_freeholds: the region is the Ember Lands (owner, 24 October 2026)',
+  ember_lands_freeholds: 'renamed ember_freeholds: the region is the Ember Lands (owner, 24 October 2026)',
 };
 const FAITH_RENAMES = { stone_vigil: 'pass_vigil', river_temples: 'flood_stair' };
 
@@ -817,7 +817,7 @@ const NEW_GRAMMARS = [
       theocracy: "The lamp-keepers' isle: a metal field and the lamp alone, no label.",
     },
     dissent: 'tar black', breakaway: 'a border of tar black', restoration: 'salt_pan',
-    note: 'Sand with a boat or salt-pan.', aliases: ['dead_lands_freeholds'],
+    note: 'Sand with a boat or salt-pan.', aliases: ['ember_lands_freeholds'],
   }),
 ];
 
@@ -1110,9 +1110,9 @@ export const FORBIDDEN = [
   { id: 'named_person', re: /\b(figure of|portrait of|likeness of)\b/i, scope: 'blazon' },
   { id: 'reserved_glo_sword', re: /\b(glo|blue sword|shards?|green crystal)\b/i, scope: 'blazon' },
   { id: 'wider_world', re: /\b(Erdu|Dunda|Haven|Cerio|Lao)\b/, scope: 'all' },
-  { id: 'zol_servant', re: /\b(kusven|kusferl|kourven|kutven|edvoid|black oval|sodoloro|šodolôr\S*|the beasts)\b/i, scope: 'all' },
+  { id: 'zol_servant', re: /\b(kusven|kusferl|kourven|kutven|kusven|black oval|sodoloro|šodolôr\S*|the beasts)\b/i, scope: 'all' },
   { id: 'elzon_order', re: /\b(elzon|pale regency)\b/i, scope: 'blazon' },
-  { id: 'retired_names', re: /\b(isengard|windwaith|gunwaith(?!ic)|titanos|hiloron|lerenwaith|dead lands|coniferons?|vinocorne)\b/i, scope: 'all' },
+  { id: 'retired_names', re: /\b(isengard|windwaith|gunwaith(?!ic)|titanos|hiloron|lerenwaith|ember lands|coniferons?|vinocorne)\b/i, scope: 'all' },
 ];
 
 // The hidden-identity deny-list for the public arms of the Worshipdom and Aenor (spec 1.5).

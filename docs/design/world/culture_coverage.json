@@ -179,47 +179,6 @@
       "unit_group": "island_marines",
       "unused": null
     },
-    "dead_lands_freeholds": {
-      "building_style": "mud_brick_sea",
-      "countries": [
-        "Bennen",
-        "Dra",
-        "Gelon",
-        "Luminor",
-        "Mencnon",
-        "Mirodor",
-        "Nan",
-        "Olen"
-      ],
-      "faith": "mourning_dust",
-      "idea_category": "hidden_ideas",
-      "ideas": [
-        "zin_culture_dead_lands_freeholds",
-        "zin_culture2_dead_lands_freeholds"
-      ],
-      "language": "mirolic",
-      "modifiers": [
-        "army_org_factor",
-        "heat_attrition_factor",
-        "trade_opinion_factor",
-        "war_support_factor"
-      ],
-      "music_mood": "warden_horns",
-      "name": "Ember Lands Freeholders",
-      "people": "men",
-      "portrait_pool": {
-        "kit": "men",
-        "per_sex": 2,
-        "pool": "dead_lands_freeholds",
-        "tier": 3,
-        "total": 4,
-        "unique": false
-      },
-      "second_countries": [],
-      "tier": 3,
-      "unit_group": "warden_blue",
-      "unused": null
-    },
     "dondor_brutes": {
       "building_style": "iron_hall",
       "countries": [
@@ -253,6 +212,47 @@
       "second_countries": [],
       "tier": 2,
       "unit_group": "iron_brute",
+      "unused": null
+    },
+    "ember_lands_freeholds": {
+      "building_style": "mud_brick_sea",
+      "countries": [
+        "Bennen",
+        "Dra",
+        "Gelon",
+        "Luminor",
+        "Mencnon",
+        "Mirodor",
+        "Nan",
+        "Olen"
+      ],
+      "faith": "mourning_dust",
+      "idea_category": "hidden_ideas",
+      "ideas": [
+        "zin_culture_ember_lands_freeholds",
+        "zin_culture2_ember_lands_freeholds"
+      ],
+      "language": "mirolic",
+      "modifiers": [
+        "army_org_factor",
+        "heat_attrition_factor",
+        "trade_opinion_factor",
+        "war_support_factor"
+      ],
+      "music_mood": "warden_horns",
+      "name": "Ember Lands Freeholders",
+      "people": "men",
+      "portrait_pool": {
+        "kit": "men",
+        "per_sex": 2,
+        "pool": "ember_lands_freeholds",
+        "tier": 3,
+        "total": 4,
+        "unique": false
+      },
+      "second_countries": [],
+      "tier": 3,
+      "unit_group": "warden_blue",
       "unused": null
     },
     "forest_council_elves": {
@@ -2328,7 +2328,7 @@
       "holy_sites": 0,
       "kept_by_cultures": [
         "chart_islanders",
-        "dead_lands_freeholds",
+        "ember_lands_freeholds",
         "free_crowns_north",
         "goodin_sunfolk",
         "isle_houses",
@@ -2358,7 +2358,7 @@
       "festivals": 1,
       "holy_sites": 0,
       "kept_by_cultures": [
-        "dead_lands_freeholds"
+        "ember_lands_freeholds"
       ],
       "name": "The Mourning Customs of the Ember Lands",
       "spirit": "zin_faith_mourning_dust"
@@ -2987,7 +2987,7 @@
     "mirolic": {
       "countries": 9,
       "cultures": [
-        "dead_lands_freeholds",
+        "ember_lands_freeholds",
         "mirolon_wardens"
       ],
       "name": "Mirolic"

@@ -132,9 +132,9 @@ The line and its forts are map and warfare work: level-5 forts on the Aenor side
 
 ### The Ember Lands: storms and heat
 
-- **The storm belt.** The sea strategic regions that touch a Ember Lands coastal province form the storm belt. The builder computes the list from `map/strategicregions` at build time and compares it with the tracked snapshot `tools/content/data/storm_seas.json`, so a map change that moves the belt fails a test until the snapshot is reviewed. The map gives these regions permanent storm weather (map spec G7). Every 7 days the world tick runs, for each region in the list, `damage_units = { region = <id> navy = yes str_damage = 0.04 org_damage = 0.10 ratio = yes limit = { NOT = { capital_scope = { zin_is_region_dead_lands = yes } } NOT = { has_tech = zin_tech_storm_rigging } } }`, and a second pulse at half strength for fleets of countries with warfare's `zin_tech_storm_rigging`. Ember Lands realms know the waters and are spared. Volgan's Veil of Storms is a separate, hidden mechanic of the Volgan spec.
+- **The storm belt.** The sea strategic regions that touch a Ember Lands coastal province form the storm belt. The builder computes the list from `map/strategicregions` at build time and compares it with the tracked snapshot `tools/content/data/storm_seas.json`, so a map change that moves the belt fails a test until the snapshot is reviewed. The map gives these regions permanent storm weather (map spec G7). Every 7 days the world tick runs, for each region in the list, `damage_units = { region = <id> navy = yes str_damage = 0.04 org_damage = 0.10 ratio = yes limit = { NOT = { capital_scope = { zin_is_region_ember_lands = yes } } NOT = { has_tech = zin_tech_storm_rigging } } }`, and a second pulse at half strength for fleets of countries with warfare's `zin_tech_storm_rigging`. Ember Lands realms know the waters and are spared. Volgan's Veil of Storms is a separate, hidden mechanic of the Volgan spec.
 - **The coasts.** Every country whose capital is in the Ember Lands has **Storm-Girt Coasts** (`zin_world_storm_coasts`): `amphibious_invasion_defence = 0.50`.
-- **The heat.** Ember Lands states carry the state modifier `zin_world_dead_lands_heat` (`enemy_attrition = 0.20`); the Nether and the Abyss carry 0.40. Ember Lands realms resist heat through their economic spirit (`heat_attrition_factor = -0.50`).
+- **The heat.** Ember Lands states carry the state modifier `zin_world_ember_lands_heat` (`enemy_attrition = 0.20`); the Nether and the Abyss carry 0.40. Ember Lands realms resist heat through their economic spirit (`heat_attrition_factor = -0.50`).
 
 ### The Fading (invariants for the Zol spec)
 
@@ -168,7 +168,7 @@ A new content-builder module, `tools/content/modules/world_magic.mjs`, writes ev
 | `common/scripted_triggers/zin_world_magic.txt` | generated | `zin_has_potent_magic`, `zin_world_is_dragon_keeper` |
 | `common/scripted_effects/zin_world_magic.txt` | generated | `zin_world_raise_varners_wards`, `zin_world_grant_new_gods_gift`, `zin_world_give_dragon` (arg `to`), `zin_world_storm_pulse`, `zin_world_mountain_pulse` |
 | `common/ideas/zin_world_magic.txt` | generated | `zin_world_varners_wards`, `zin_world_varners_shelter`, `zin_world_new_gods_gift`, `zin_world_storm_coasts`, `zin_world_wall_repairs` |
-| `common/dynamic_modifiers/zin_world_magic.txt` | generated | `zin_world_dead_lands_heat` and `zin_world_deep_heat` (Nether and Abyss) |
+| `common/dynamic_modifiers/zin_world_magic.txt` | generated | `zin_world_ember_lands_heat` and `zin_world_deep_heat` (Nether and Abyss) |
 | `common/decisions/zin_world_magic.txt`, `common/decisions/categories/zin_world_magic.txt` | generated | The Dragon Pact, Bound by Corruption, The Wall Watch |
 | `common/on_actions/zin_world_magic.txt` | generated | `on_startup`: Storm-Girt Coasts and the heat modifiers; the weekly pulses are called from the world tick ([05_world_tension_and_endings.md](05_world_tension_and_endings.md)) |
 | `common/ai_strategy/zin_world_magic.txt` | generated | Storm-sea avoidance |

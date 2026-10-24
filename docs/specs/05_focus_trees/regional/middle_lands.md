@@ -420,7 +420,7 @@ Herez holds the southern marches of the Concord, where the Middle Lands fall awa
 
 | Key (id) | Title | Picture | To | Options |
 | --- | --- | --- | --- | --- |
-| `what_the_scouts_found` (1) | What the Scouts Found | `dead_lands_storm` | Herez | Dust columns on the southern road. **Tell Parim** (pp 25; Parim laughs) / **Tell Mirolon** (`for_country Mirolon: call zin_mirolon_add_proof {value: 3}`; `for_country Volgan: call zin_volgan_add_veil {value: -2}`; AI hist) / **Build another tower** (bld bunker 1 @random_owned) |
+| `what_the_scouts_found` (1) | What the Scouts Found | `ember_lands_storm` | Herez | Dust columns on the southern road. **Tell Parim** (pp 25; Parim laughs) / **Tell Mirolon** (`for_country Mirolon: call zin_mirolon_add_proof {value: 3}`; `for_country Volgan: call zin_volgan_add_veil {value: -2}`; AI hist) / **Build another tower** (bld bunker 1 @random_owned) |
 | `herez_greetings` (2) | Greetings from Herez | `mirolon_passes` | Mirolon | **Welcome the marcher lords** (opinion +15 both ways; AI 80) / **Herez answers to Parim** |
 | `herez_warns_parim` (3) | Herez Warns Parim | `southern_warning` | overlord (Aenor realm) | **Laugh, as in 4A 1736** (pp 25; Herez loyalty(−5); AI = 30 + corruption ÷ 2) / **Listen** (lost_cause(5)) |
 | `the_almoners_come_south` (4) | The Almoners Come South | `houses` | Herez | **Give them a hall** (footholds(1); stab 0.03; AI hist) / **The marches feed their own** (nothing) |

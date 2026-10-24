@@ -132,7 +132,7 @@
    ],
    "options": [
     { "name": "Write it down.", "ai": 100, "if": ["tag:Mirolon"], "effects": ["@call zin_mirolon_add_proof 1"] },
-    { "name": "Volcanoes in the Dead Lands.", "ai": 100, "if": ["NOT = { original_tag = {{tag:Mirolon}} }"], "effects": [] }
+    { "name": "Volcanoes in the Ember Lands.", "ai": 100, "if": ["NOT = { original_tag = {{tag:Mirolon}} }"], "effects": [] }
    ]
   },
   {
@@ -238,8 +238,8 @@
    ]
   },
   {
-   "id": 343, "title": "The Night Fires Counted", "picture": "dead_lands_storm", "window": "Emberleaf 1748", "who": ["Mirolon"], "hist": "Emberleaf 1748",
-   "desc": "The wardens counted the fires in the Dead Lands this autumn. There are more than last year. There were more last year than the year before. Each autumn the count has been carried to Parim in a sealed box, and each autumn it has been sent back with a polite note that does not mention the number.",
+   "id": 343, "title": "The Night Fires Counted", "picture": "ember_lands_storm", "window": "Emberleaf 1748", "who": ["Mirolon"], "hist": "Emberleaf 1748",
+   "desc": "The wardens counted the fires in the Ember Lands this autumn. There are more than last year. There were more last year than the year before. Each autumn the count has been carried to Parim in a sealed box, and each autumn it has been sent back with a polite note that does not mention the number.",
    "options": [
     { "name": "Send the count to Parim.", "ai": 50, "tip": "Parim will think better of us, and do nothing.", "effects": ["@opinion_of zin_opinion_lore_regard aenor"] },
     { "name": "Keep counting.", "ai": 50, "effects": ["@call zin_mirolon_add_proof 2"] }

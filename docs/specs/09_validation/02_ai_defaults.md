@@ -423,7 +423,7 @@ Each proceeds on the proposal. Questions only the owner can answer are listed in
 | `zin_ai_ambition`, `zin_ai_caution`, `zin_ai_sea_drive`, `zin_ai_scholar_drive` | MTTH entries | Temperament weights (`common/mtth/zin_ai_mtth.txt`) |
 | `zin_default_<family>_<people>_<tier>` | strategy block | Generated L1 strategies (`land`, `production`, `navy`, `diplomacy`, `doctrines`, `court`) |
 | `zin_default_plan_<people>_<tier>` | AI strategy plan | Generic plans |
-| `zin_area_middle_lands`, `zin_area_aenor_isle`, `zin_area_north_lands`, `zin_area_cold_lands`, `zin_area_west_lands`, `zin_area_tritons_islands`, `zin_area_dark_lands`, `zin_area_magical_lands`, `zin_area_ocean_of_zol`, `zin_area_dead_lands`, `zin_area_east_lands`, `zin_area_islands_of_the_south`, `zin_area_lands_of_the_sun` | AI areas | One per roster region (`zin_area_middle_lands` is owned here from now; the Western Crossing spec used it) |
+| `zin_area_middle_lands`, `zin_area_aenor_isle`, `zin_area_north_lands`, `zin_area_cold_lands`, `zin_area_west_lands`, `zin_area_tritons_islands`, `zin_area_dark_lands`, `zin_area_magical_lands`, `zin_area_ocean_of_zol`, `zin_area_ember_lands`, `zin_area_east_lands`, `zin_area_islands_of_the_south`, `zin_area_lands_of_the_sun` | AI areas | One per roster region (`zin_area_middle_lands` is owned here from now; the Western Crossing spec used it) |
 | `siege_role` | AI role | Catapults, trebuchets, hurlers (`mobile`, `rangers_role` and the others are existing tokens) |
 | `naval_screen`, `naval_capital`, `naval_raider` | AI equipment roles | Galley, warship and great warship, corsair and black ship |
 | `AIC1` to `AIC13` | check codes | Section 5 |

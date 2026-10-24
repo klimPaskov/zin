@@ -346,7 +346,7 @@ Thirty-one cards, each with the drawings that belong to it. Every claim of the c
 
 **In play.** Night marches on the Mistake are deadly and keep the living off the mainland (Zol's Mistake dossier); late in the age they come to the Kusmeel shores (a gated event). Whether they fight in the last war as a granted host is owner question 7.
 
-**Reconciled.** "Edvoid's Mistake" is Zol's Mistake; "Edvoid's minions" are Kusven's (K29). **Public text:** as above.
+**Reconciled.** "Kusven's Mistake" is Zol's Mistake; "Kusven's minions" are Kusven's (K29). **Public text:** as above.
 
 ### 1.27 Gektor
 
@@ -380,7 +380,7 @@ Thirty-one cards, each with the drawings that belong to it. Every claim of the c
 
 **Reconciled.** The card's age is dropped. **Public text:** the Necromancer of the Third Age.
 
-### 1.30 Kusven (card title "Edvoid")
+### 1.30 Kusven (card title "Kusven")
 
 **Kind:** spirit, a Great Spirit made by Zol and Zol's most loyal servant (E, K11, K29). **Size:** more than twice a man in his ordinary form (card 4.3 m, "ordinary"), which implies greater ones. **Home:** Šodolôrō in Zol's Mistake (E). **Rarity:** unique.
 

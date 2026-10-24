@@ -185,7 +185,7 @@ test('Zol: no text names Afrit, the Deliverer or Eindil, a servant, a keeper of 
     assert(!/\b(souls?|worship|sacrifice|blood|prayer)s?\b/i.test(v), `${k}: feeding is never explained`);
     assert(!/ō/.test(v), k);
   }
-  assert(![...locOf('localisation/english/zin_mistake_l_english.yml').values()].some(v => /Edvoid|Rush /.test(v)));
+  assert(![...locOf('localisation/english/zin_mistake_l_english.yml').values()].some(v => /Kusven|Rush /.test(v)));
 });
 
 test('The two-face texts: 62 focuses, public faces mask-safe, each description present in both faces', () => {

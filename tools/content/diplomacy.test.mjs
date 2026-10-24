@@ -179,7 +179,7 @@ test('The joining rules test the capital region, the Refusal and the story flags
   assert(block('zin_faction_rule_join_warden_league').includes('zin_mirolon_league_friend'));
   assert(block('zin_faction_rule_join_free_dominions').includes('zin_aenor_free_dominion'));
   assert(block('zin_faction_rule_join_lost_cause').includes('zin_eindil_regard') && block('zin_faction_rule_join_lost_cause').includes('zin_west_stranded'));
-  assert(block('zin_faction_rule_join_sworn').includes('zin_is_region_dead_lands') && block('zin_faction_rule_join_sworn').includes('zin_is_region_dark_lands'));
+  assert(block('zin_faction_rule_join_sworn').includes('zin_is_region_ember_lands') && block('zin_faction_rule_join_sworn').includes('zin_is_region_dark_lands'));
 });
 
 test('Every rule belongs to a group and every group lists defined rules', () => {
@@ -425,7 +425,7 @@ test('Every modifier written is a real game modifier; an unknown one fails the b
 
 test('Dependencies on other modules are listed, and none of them is something this module defines', () => {
   const names = new Set(result.dependencies.map(d => d.name));
-  for (const n of ['zin_leren_is_north_crown', 'zin_leren_is_dark_shore', 'zin_cold_is_clan_realm', 'zin_elves_is_magical_realm', 'zin_sun_is_lands_of_the_sun_country', 'zin_afrit_rules_here', 'zin_afrit_is_hub', 'zin_is_region_middle_lands', 'zin_is_region_dead_lands', 'zin_concord_loyalty', 'occupied_countries.2']) assert(names.has(n), n);
+  for (const n of ['zin_leren_is_north_crown', 'zin_leren_is_dark_shore', 'zin_cold_is_clan_realm', 'zin_elves_is_magical_realm', 'zin_sun_is_lands_of_the_sun_country', 'zin_afrit_rules_here', 'zin_afrit_is_hub', 'zin_is_region_middle_lands', 'zin_is_region_ember_lands', 'zin_concord_loyalty', 'occupied_countries.2']) assert(names.has(n), n);
   for (const t of result.definitions.triggers) assert(!names.has(t), t);
   assert(!names.has('zin_diplo_refusal_binds'));
 });
@@ -591,7 +591,7 @@ test('The result names the roster of start leagues for the politics step', () =>
 
 test('Collections: twelve regions, the held collections the oaths read, and the lost cores of a league', () => {
   const colls = defined('common/collections/zin_regions.txt');
-  for (const k of ['middle_lands', 'north_lands', 'cold_lands', 'west_lands', 'tritons_islands', 'dark_lands', 'magical_lands', 'zols_mistake', 'dead_lands', 'east_lands', 'islands_of_the_south', 'lands_of_the_sun']) assert(colls.includes(`zin_region_${k}`), k);
-  for (const k of ['zin_region_north_lands_held', 'zin_region_cold_lands_held', 'zin_region_east_lands_held', 'zin_region_dead_lands_held', 'zin_region_magical_lands_held', 'zin_region_middle_lands_coast', 'zin_region_middle_lands_coast_held', 'zin_region_dark_lands_free', 'zin_faction_cores_lost']) assert(colls.includes(k), k);
+  for (const k of ['middle_lands', 'north_lands', 'cold_lands', 'west_lands', 'tritons_islands', 'dark_lands', 'magical_lands', 'zols_mistake', 'ember_lands', 'east_lands', 'islands_of_the_south', 'lands_of_the_sun']) assert(colls.includes(`zin_region_${k}`), k);
+  for (const k of ['zin_region_north_lands_held', 'zin_region_cold_lands_held', 'zin_region_east_lands_held', 'zin_region_ember_lands_held', 'zin_region_magical_lands_held', 'zin_region_middle_lands_coast', 'zin_region_middle_lands_coast_held', 'zin_region_dark_lands_free', 'zin_faction_cores_lost']) assert(colls.includes(k), k);
   assert(text('common/collections/zin_regions.txt').includes(`controller = { tag = ${roster.tag('Goldoroth')} }`));
 });

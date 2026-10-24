@@ -562,7 +562,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 910 | zols_mistake | Zol's Mistake | start | F:zin_zol_rising | reuse `black_isles_lights` | E | *Zols Mistake* |
 | 911 | east_lands | The East Lands | start | — | domed cities by a rift sea | E | *Aoaz and Its Regions* |
 | 912 | south_lands | The South Lands | start | — | cat | E | *Aoaz and Its Regions* |
-| 913 | ember_lands | The Ember Lands | start | — | reuse `dead_lands_storm` | E | *Volgans Ember Lands* |
+| 913 | ember_lands | The Ember Lands | start | — | reuse `ember_lands_storm` | E | *Volgans Ember Lands* |
 | 914 | islands_of_south | The Islands of the South | start | — | cat | E | *Aoaz and Its Regions* |
 | 915 | lands_of_sun | The Lands of the Sun | start | — | white-gold towers in hard southern light | E | *Aoaz and Its Regions*, *Peoples of Aoaz* |
 | 916 | parim | Parim and the Great Lake | start | F:zin_west_parim_taken; F:zin_afrit_claims_aoaz, rev | a lake harbour with merchant ships below the palace towers | M | *Middle Lands and Aenor*, § Prologue |

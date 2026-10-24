@@ -156,11 +156,11 @@
       "modifier": { "recon_factor": 0.12, "planning_speed": 0.1, "max_dig_in_factor": 0.06, "special_project_speed_factor": 0.1 },
       "flag": { "motif": "beacon", "alt": ["lamp"] }, "building": "stilt_beacon", "music": "warden_horns", "unit_group": "warden_blue"
     },
-    "dead_lands_freeholds": {
-      "id": 13, "adjective": "Dead Lands", "icon": "salt_boat", "magic": "wary",
+    "ember_lands_freeholds": {
+      "id": 13, "adjective": "Ember Lands", "icon": "salt_boat", "magic": "wary",
       "spirit": "Salt and Silence",
       "spirit_desc": "Freeholders bury quickly, tax lightly and avoid war. The sun and the salt have made them hard.",
-      "text": "Salt-pan and fishing freeholds of the Dead Lands coast. They do not speak of what lies to the south.",
+      "text": "Salt-pan and fishing freeholds of the Ember Lands coast. They do not speak of what lies to the south.",
       "modifier": { "heat_attrition_factor": -0.15, "war_support_factor": -0.05, "trade_opinion_factor": 0.1, "army_org_factor": -0.03 },
       "flag": { "motif": "boat", "alt": ["salt_pan"] }, "building": "mud_brick_sea", "music": "warden_horns", "unit_group": "warden_blue"
     },
@@ -770,7 +770,7 @@
     "mourning_dust": {
       "id": 36, "icon": "salt_grave", "clergy": "Grave-wives",
       "spirit_desc": "The dead are buried quickly and deep, with salt, and nothing is said of Zol or Volgan at the grave. Their gods are the gods of safe harbours.",
-      "text": "The mourning customs of the Dead Lands coast, kept by grave-wives.",
+      "text": "The mourning customs of the Ember Lands coast, kept by grave-wives.",
       "modifier": { "stability_factor": 0.04, "war_support_factor": -0.03 },
       "festivals": [{ "id": "salt_day", "name": "The Salt Day", "month": null }],
       "holy_sites": []
