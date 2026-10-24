@@ -1,0 +1,1301 @@
+[
+  {
+    "tag": "GAA",
+    "key": "gala",
+    "name": "Gala",
+    "stance": "zin_light_kinship",
+    "court": "great",
+    "ruler": {
+      "id": "zin_lorien",
+      "name": "King Lorien",
+      "given": "Lorien",
+      "house": "the court of Gala",
+      "title": {
+        "native": "Dunei",
+        "english": "King of Gala"
+      },
+      "gender": "male",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_memory_of_dardan",
+        "zin_trait_ancient_king"
+      ],
+      "bio": "Lorien has held the crown of Gala for as long as he has willed it, and no other king of Gala is named in any record men have seen. He led the Gala in King Edran's Grand Alliance, remembers the War of Men, Dardan, the fall of Aenor and the Necromancer's reign, and speaks of Dardan as if it were last year. He advised Edran against the Ember Lands campaign, buried his dead in the Garden of the Dead at Sodoli when the advice was not taken, and has been courteous to Aenor and distrustful of kings who turn victories into crowns ever since.",
+      "portrait": {
+        "appearance": "An elf king of immeasurable age and calm power, ageless face, gold hair, eyes that have seen a great deal.",
+        "dress": "White robes worked with sun-gold, a slender crown of white gold, an old sword at his side.",
+        "colours": "Sun gold (#e0c36a), white (#f2eedc), sea blue (#8aa8c9)."
+      },
+      "canon": "E",
+      "definedBy": "characters spec (zin_lorien; ruler id is the contract id)",
+      "note": "No birth year or age (V23). Lorien's later deeds (Eindil, the servant of the black north) are story events and appear nowhere in his start text."
+    },
+    "heir": {
+      "note": "No heir is named in any record: Lorien holds the crown for as long as he wills. Who follows him after zin_lorien_dead is left to the owner and the Gala tree.",
+      "succession": "Open."
+    },
+    "advisors": [
+      {
+        "id": "zin_gala_heveneya",
+        "name": "Heveneya, Keeper of the Mirror",
+        "given": "Heveneya",
+        "office": "Keeper of the Mirror of First Rain",
+        "gender": "female",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_keeper_of_the_mirror"
+        ],
+        "role": "Keeps the spring of the Mirror Vigil and its bowl of rain, and trusts no vision that shows itself too plainly.",
+        "portrait": "An elf-woman holding a water-filled bowl of white stone.",
+        "canon": "S",
+        "definedBy": "Gala tree (zin_gala_recruit)"
+      },
+      {
+        "id": "zin_gala_calien",
+        "name": "Calien, Steward of the Shore",
+        "given": "Calien",
+        "office": "Steward of the Sunfolk Shore",
+        "gender": "male",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_warden_of_the_fields"
+        ],
+        "role": "Looks after the Sunfolk villages that farm the shore below the dormant Good Volcanoes, and knows every village elder by name.",
+        "portrait": "An elf in plain white with a farmer's straw hat in his hand.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gala_mireya",
+        "name": "Mireya, Envoy to the Noon Council",
+        "given": "Mireya",
+        "office": "Envoy to the Noon Council",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Sits in the guest's seat the Noon Council keeps for Gala, and owes the Sunhot nothing but courtesy, which she pays in full.",
+        "portrait": "An elf-woman in sun-gold with a guest's white sash.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gala_lisiel",
+        "name": "Lisiel of the Garden",
+        "given": "Lisiel",
+        "office": "Keeper of the Garden of the Dead",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the garden at Sodoli where the Gala dead of Dardan and the Ember Lands are remembered, far from both places.",
+        "portrait": "An elf-woman among white stone and flowering trees.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gala_ondion",
+        "name": "Ondion, Master of the White Ships' Yards",
+        "given": "Ondion",
+        "office": "Master of the King's Yards",
+        "gender": "male",
+        "people": "elves",
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_master_of_ships"
+        ],
+        "role": "Keeps the court's white ships, built by the shipwrights of Ossi Luni and the fastest in the south.",
+        "portrait": "An elf with a shipwright's rule beside a white hull.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_gala_venion",
+        "name": "Venion of the Ancient Blades",
+        "given": "Venion",
+        "office": "Captain of the King's Swordsmen",
+        "gender": "male",
+        "people": "elves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 4,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "old_guard",
+          "brilliant_strategist"
+        ],
+        "role": "Captain of the ancient swordsmen of the court, who fought at Dardan beside his king and has not hurried since.",
+        "portrait": "A tall elf in white-gold mail with a long two-handed sword.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_gala_tangsiel",
+        "name": "Tangsiel of the Sunward Guard",
+        "given": "Tangsiel",
+        "office": "Captain of the Sunward Guard",
+        "gender": "male",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 4,
+          "attack": 3,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "desert_fox"
+        ],
+        "role": "Commands the Sunward Guard of the court and its watch on the dry shore.",
+        "portrait": "An elf guard captain in sun-gold mail.",
+        "canon": "S",
+        "definedBy": "Gala tree (zin_gala_recruit)"
+      },
+      {
+        "id": "zin_gala_sulestien",
+        "name": "Sulestien, Master of the King's Ships",
+        "given": "Sulestien",
+        "office": "Master of the King's Ships",
+        "gender": "male",
+        "people": "elves",
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 4,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "Commands the court's white ships, the fastest in the south.",
+        "portrait": "An elf captain in sea-white.",
+        "canon": "S",
+        "definedBy": "Gala tree (zin_gala_recruit)"
+      }
+    ],
+    "figures": [
+      {
+        "id": "zin_gala_ondeya",
+        "name": "Ondeya of the Mirror",
+        "given": "Ondeya",
+        "office": "Reader of the Mirror of First Rain",
+        "gender": "female",
+        "people": "elves",
+        "traits": [
+          "zin_trait_keeper_of_the_mirror"
+        ],
+        "role": "Gala's named wizard, who has kept the spring since before the Fourth Age and reads it for the king; a reading costs her days of sleep, and she does not explain what she reads.",
+        "portrait": "A pale elf-woman with water-dark eyes beside a still spring.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)",
+        "recruit": "Story figure of the Mirror Vigil for events; Heveneya holds the advisor seat. The owner may wish to merge the two.",
+        "note": "What the Mirror shows is belief (V18) and is never stated as fact."
+      }
+    ]
+  },
+  {
+    "tag": "LIG",
+    "key": "lands_of_light",
+    "name": "The Lands of Light",
+    "stance": "zin_light_sanctuary",
+    "court": "standard",
+    "ruler": {
+      "id": "LIG_zin_ruler",
+      "name": "Radiant Speaker Salin of Eldoga",
+      "given": "Salin",
+      "house": "of Eldoga",
+      "title": {
+        "native": null,
+        "english": "Radiant Speaker"
+      },
+      "gender": "male",
+      "people": "sun_elves",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_radiant_speaker",
+        "zin_trait_sanctuary_speaker"
+      ],
+      "bio": "Salin of Eldoga was chosen Radiant Speaker by the sanctuaries and will serve until he lays the office down, and he chairs the Noon Council of the Sunhot realms. He leads the eastern lowland and the Sun Grasslands, the largest realm of the region, peaceful and prosperous, where the elves of the Light are few among a great many Sunfolk farmers. Since the pirates of the Bright Sea raided the grassland coast, the Radiant Speaker must ask the villages for every levy, and the villages may refuse; Salin has never yet had to ask.",
+      "portrait": {
+        "appearance": "A tall, gold-skinned elf with bright amber eyes and a serene, sunlit face; no visible age.",
+        "dress": "White and gold sanctuary robes, a sunburst collar of beaten gold, an open hand raised in greeting.",
+        "colours": "Sun gold (#e0a02a), noon white (#f2e6c4), clay red (#b04a2a)."
+      },
+      "canon": "H",
+      "formerName": "Radiant Speaker Soyan (characters spec; superseded by the histories)",
+      "note": "His name is one letter from the sanctuary of Sali inside his realm; kept as the histories name him. See the owner questions."
+    },
+    "heir": {
+      "note": "No heir: the sanctuaries choose the next Radiant Speaker when the present one lays the office down.",
+      "succession": "Elective (the sanctuaries)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_the_lands_of_light_ranyi",
+        "name": "Ranyi of the Villages",
+        "given": "Ranyi",
+        "office": "Speaker of the Sunfolk villages",
+        "gender": "female",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "A Sunfolk village elder who speaks for the villages that must be asked for the levies, and who reminds the Radiant Speaker that they may say no.",
+        "portrait": "A sun-browned farmer-woman with a staff of woven grass.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_the_lands_of_light_helang",
+        "name": "Helang of the Sanctuary Roads",
+        "given": "Helang",
+        "office": "Keeper of the Sanctuary Roads",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the sanctuary roads open for the pilgrims and the Noon Council's couriers.",
+        "portrait": "A tall elf in a white travelling cloak with a sun-staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_the_lands_of_light_lovia",
+        "name": "Lovia, Clerk of the Noon Council",
+        "given": "Lovia",
+        "office": "Clerk of the Noon Council",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Keeps the council's rolls of quarrels settled, including the weaving contest that both Elvana and Igara walked out of.",
+        "portrait": "An elf-woman with a scroll of the council and a reed pen.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_the_lands_of_light_poyan",
+        "name": "Poyan of the Sun Guard",
+        "given": "Poyan",
+        "office": "Captain of the Sun Guard",
+        "gender": "male",
+        "people": "sun_elves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "desert_fox",
+          "defensive_doctrine"
+        ],
+        "role": "Commands the tall elven guards of the sanctuaries, who have not fought since the pirates of the Bright Sea.",
+        "portrait": "A very tall elf guard in gilded scale with a long spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_the_lands_of_light_wenayi",
+        "name": "Wenayi of the Grasslands",
+        "given": "Wenayi",
+        "office": "Captain of the Grassland Levies",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "A Sunfolk woman who leads the grassland levies when the villages agree to send them.",
+        "portrait": "A Sunfolk woman with a spear and a sun-bleached cloak.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "ELV",
+    "key": "elvana",
+    "name": "Elvana",
+    "stance": "zin_light_sanctuary",
+    "court": "standard",
+    "ruler": {
+      "id": "ELV_zin_ruler",
+      "name": "Speaker Talayi of Googavis",
+      "given": "Talayi",
+      "house": "of Googavis",
+      "title": {
+        "native": null,
+        "english": "Speaker of Elvana"
+      },
+      "gender": "female",
+      "people": "sun_elves",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_sanctuary_speaker",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Talayi was chosen Speaker by the sanctuary of Googavis and has argued Elvana's cause at the Noon Council longer than anyone there can remember. She leads the Cape of Elvana and the Elvini shore, a small, gentle house of weavers and healers. Her only quarrel in the world is with Igara over the sun-cranes of the Sun Lake Shallows, fought with songs, weavings and petitions, and she would not give it up for anything.",
+      "portrait": {
+        "appearance": "A tall, gold-skinned elf-woman with a patient, amused face and long braided hair; no visible age.",
+        "dress": "A woven robe of saffron and white in the cape's patterns, a crane-feather pin, a weaver's shuttle on a cord.",
+        "colours": "Terrace gold (#d89a2a), noon white (#f2e6c4), clay red (#a8452a)."
+      },
+      "canon": "P",
+      "formerName": "Elvae (named after the realm; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: the sanctuary of Googavis chooses each Speaker.",
+      "succession": "Elective (the sanctuary of Googavis)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_elvana_weavers",
+        "name": "Saliyi of the Looms",
+        "given": "Saliyi",
+        "office": "Mistress of the Weavers",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Leads the weavers of the cape, whose cloth the Noon Council once judged equal to Igara's, which she has not accepted.",
+        "portrait": "An elf-woman at a loom with crane patterns in the cloth.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_elvana_healer",
+        "name": "Sengi the Healer",
+        "given": "Sengi",
+        "office": "First Healer of Googavis",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sun_healer"
+        ],
+        "role": "Leads the healers of the sanctuary, who heal with warmth gathered from the noon.",
+        "portrait": "A gentle elf with warm hands held over a bowl of light.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_elvana_cranes",
+        "name": "Salia of the Cranes",
+        "given": "Salia",
+        "office": "Keeper of the Crane-Songs",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Composes the petitions and crane-songs that Elvana sends to the Noon Council against Igara, two a season.",
+        "portrait": "An elf-woman with a crane feather and a sheaf of songs.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_elvana_guard",
+        "name": "Tanga of the Cape Guard",
+        "given": "Tanga",
+        "office": "Captain of the Cape Guard",
+        "gender": "male",
+        "people": "sun_elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Commands the tall guards of the cape sanctuaries.",
+        "portrait": "A tall elf guard with a spear and a saffron cloak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_elvana_shore",
+        "name": "Elyi of the Elvini Shore",
+        "given": "Elyi",
+        "office": "Captain of the Shore Levies",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "A Sunfolk captain of the shore levies.",
+        "portrait": "A Sunfolk woman with a fishing spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "IGA",
+    "key": "igara",
+    "name": "Igara",
+    "stance": "zin_light_sanctuary",
+    "court": "standard",
+    "ruler": {
+      "id": "IGA_zin_ruler",
+      "name": "Speaker Ranin of Repgin",
+      "given": "Ranin",
+      "house": "of Repgin",
+      "title": {
+        "native": null,
+        "english": "Speaker of Igara"
+      },
+      "gender": "male",
+      "people": "sun_elves",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_sanctuary_speaker",
+        "zin_trait_war_party"
+      ],
+      "bio": "Ranin was chosen Speaker by the sanctuary of Repgin, keeper of the shrine of the shallows, and he answers every petition of Elvana with two of his own. Igara is the smallest sanctuary realm, proud of its shrine and its sun-cranes, and it measures its standing at the Noon Council by how often it can outvote Elvana. The only time the two have ever agreed was when the council judged their weavings equal and both Speakers walked out together.",
+      "portrait": {
+        "appearance": "A tall, sharp-featured gold-skinned elf with a stubborn chin and bright eyes; no visible age.",
+        "dress": "White robes edged with crane-grey, a shrine-key of gold, a stack of petitions under one arm.",
+        "colours": "Terrace gold (#d89a2a), noon white (#f2e6c4), clay red (#a8452a)."
+      },
+      "canon": "P",
+      "formerName": "Igan (named after the realm; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: the sanctuary of Repgin chooses each Speaker.",
+      "succession": "Elective (the sanctuary of Repgin)."
+    },
+    "advisors": [
+      {
+        "id": "zin_igara_shrine",
+        "name": "Lovai of the Shallows",
+        "given": "Lovai",
+        "office": "Keeper of the Shrine of the Shallows",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the shrine of the shallows and its cranes, which she calls the shrine's birds and not Elvana's.",
+        "portrait": "An elf-woman feeding a sun-crane in the reeds.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_igara_petitions",
+        "name": "Helin the Petition-Writer",
+        "given": "Helin",
+        "office": "Writer of Petitions",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Writes Igara's petitions to the Noon Council, two for every one of Elvana's.",
+        "portrait": "An elf with ink on his fingers and a basket of scrolls.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_igara_cranes",
+        "name": "Yungi the Crane-Keeper",
+        "given": "Yungi",
+        "office": "Keeper of the Sun-Cranes",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Counts the sun-cranes every spring and tells the council how many of them nested on Igara's side.",
+        "portrait": "An old elf among tall grey cranes.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_igara_guard",
+        "name": "Sengan of the Shrine Guard",
+        "given": "Sengan",
+        "office": "Captain of the Shrine Guard",
+        "gender": "male",
+        "people": "sun_elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Commands the few tall guards of the shrine.",
+        "portrait": "A tall elf guard with a crane-feathered spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_igara_levy",
+        "name": "Tali of the Lake Levy",
+        "given": "Tali",
+        "office": "Captain of the Lake Levy",
+        "gender": "female",
+        "people": "men",
+        "born": 6783,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "A Sunfolk captain of the levy of the Sun Lake shore.",
+        "portrait": "A Sunfolk woman with a reed shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "YEN",
+    "key": "yeni_alang",
+    "name": "Yeni Alang",
+    "stance": "zin_light_sanctuary",
+    "court": "standard",
+    "ruler": {
+      "id": "YEN_zin_ruler",
+      "name": "Eldest Watcher Wenang of Sudoni",
+      "given": "Wenang",
+      "house": "of Sudoni",
+      "title": {
+        "native": null,
+        "english": "Eldest Watcher of the Roll of Wings"
+      },
+      "gender": "male",
+      "people": "sun_elves",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_sanctuary_speaker",
+        "zin_trait_elder_memory"
+      ],
+      "bio": "Wenang is Eldest Watcher of Sudoni and keeps the Roll of Wings, the record of every sighting of angels over the western terraces, with the hour, the weather and the watcher's name. Yeni Alang is a quiet house that farms, sings and watches, and it adds a line to the Roll a few times in a good year. When no watcher saw wings for a whole year the house fasted until the next spring, and the Sunfolk of the terraces still count a sighting as a blessing on the harvest.",
+      "portrait": {
+        "appearance": "A tall, slender gold-skinned elf with far-seeing grey eyes, always looking up; no visible age.",
+        "dress": "Pale sky-blue robes over white, the bound Roll of Wings at his side, a reed pen behind the ear.",
+        "colours": "Terrace gold (#d89a2a), noon white (#f2e6c4), clay red (#a8452a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the house is led by its eldest watcher.",
+      "succession": "By age among the watchers."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_heaven_roll",
+        "name": "Selai, Keeper of the Roll",
+        "given": "Selai",
+        "office": "Keeper of the Roll of Wings",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Copies each sighting into the Roll and checks the watcher's account against the weather.",
+        "portrait": "An elf-woman bent over a great book with a sky-blue cover.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_heaven_terraces",
+        "name": "Ranga of the Terraces",
+        "given": "Ranga",
+        "office": "Elder of the terrace-farmers",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Speaks for the Sunfolk terrace-farmers and their harvest, which a sighting is said to bless.",
+        "portrait": "A Sunfolk farmer with a hoe and a sun-hat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_heaven_watch",
+        "name": "Elang of the High Watch",
+        "given": "Elang",
+        "office": "Captain of the High Watch",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "Keeps the watch-posts on the highest terraces, where the watchers sit through the still days.",
+        "portrait": "An elf seated on a high terrace with his face to the sky.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_heaven_guard",
+        "name": "Elin of Sudoni",
+        "given": "Elin",
+        "office": "Captain of the Sudoni Guard",
+        "gender": "male",
+        "people": "sun_elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Commands the guards of the terraces.",
+        "portrait": "A tall elf guard on a terrace stair.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_heaven_levy",
+        "name": "Poyi of the Terrace Levy",
+        "given": "Poyi",
+        "office": "Captain of the Terrace Levy",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "A Sunfolk captain of the terrace levy.",
+        "portrait": "A Sunfolk woman with a sling on a stepped field.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "TOR",
+    "key": "tor_luni",
+    "name": "Tor Luni",
+    "stance": "zin_light_sanctuary",
+    "court": "standard",
+    "ruler": {
+      "id": "TOR_zin_ruler",
+      "name": "Keeper Tangin of Wefolen",
+      "given": "Tangin",
+      "house": "of Wefolen",
+      "title": {
+        "native": null,
+        "english": "Keeper of the Stones"
+      },
+      "gender": "male",
+      "people": "sun_elves",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_sanctuary_speaker",
+        "zin_trait_guild_master"
+      ],
+      "bio": "Tangin is Keeper of the Stones of Tor Luni and decides what may be cut, in a sanctuary that quarries the white stone of half the realms of the region and leaves its standing stones uncut. Since a Keeper once ordered a block cut from the foot of a standing stone and the chisels broke, no Keeper has given that order again, and Tangin has no intention of being the second. He receives the pilgrims who come by sea to look out over the Sea of Gods from the high places by Wefolen.",
+      "portrait": {
+        "appearance": "A broad, strong-handed gold-skinned elf with white stone-dust in his hair; no visible age.",
+        "dress": "A quarry-keeper's pale robe tied at the waist, a mallet of white stone, a pilgrim's sun-token.",
+        "colours": "Terrace gold (#d89a2a), noon white (#f2e6c4), clay red (#a8452a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the sanctuary chooses its Keeper of the Stones.",
+      "succession": "Elective (the sanctuary)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_godland_helayi",
+        "name": "Helayi of the Noon",
+        "given": "Helayi",
+        "office": "Sanctuary-Warden of the Sea of Gods",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sun_healer"
+        ],
+        "role": "Tor Luni's named wizard, a sanctuary-warden who heals with warmth and keeps lamps of gathered sun for night surgery; she grows cold and sick when she gives too much.",
+        "portrait": "An elf-woman in white holding a lamp that glows like noon.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner; at Godland, the former label of Tor Luni)"
+      },
+      {
+        "id": "zin_regional_godland_quarry",
+        "name": "Senyi, Master of the Quarries",
+        "given": "Senyi",
+        "office": "Master of the Quarries",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Runs the white-stone quarries and the four small quarry-sanctuaries that joined Tor Luni.",
+        "portrait": "An elf-woman with a measuring cord and white dust on her arms.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_godland_stones",
+        "name": "Lovang of the Standing Stones",
+        "given": "Lovang",
+        "office": "Keeper of the Standing Stones",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the standing stones uncut and the pilgrims' paths among them.",
+        "portrait": "An old elf beside a tall white standing stone.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_godland_guard",
+        "name": "Hengin of the Quarry Guard",
+        "given": "Hengin",
+        "office": "Captain of the Quarry Guard",
+        "gender": "male",
+        "people": "sun_elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Commands the guards of the high places.",
+        "portrait": "A tall elf with a stone-headed spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_godland_boats",
+        "name": "Talia of the Pilgrim Boats",
+        "given": "Talia",
+        "office": "Captain of the Pilgrim Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "A Sunfolk fisher-captain who brings the sea pilgrims to the high places and takes them home again.",
+        "portrait": "A Sunfolk woman at the steering oar of a white boat.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "IHU",
+    "key": "ihuy",
+    "name": "Ihuy",
+    "stance": "zin_light_sanctuary",
+    "court": "standard",
+    "ruler": {
+      "id": "IHU_zin_ruler",
+      "name": "Speaker Lovin of Hol",
+      "given": "Lovin",
+      "house": "of Hol",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Island Council"
+      },
+      "gender": "male",
+      "people": "sun_elves",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_port_master"
+      ],
+      "bio": "Lovin of Hol was chosen by the island Speakers at Holang to speak for all the Ihuy isles, a council of pearl-farmers, sailors and fishers among the isle Sunhot and the Sunfolk. The council trades pearls, fish and salt with the Islands of the South and the mainland and uses the reef-words of the south for its pilots. Lovin keeps one eye on the smoke of Hol, which the isle folk say smokes harder whenever a ship is lost, and he has seen it smoke very hard this year.",
+      "portrait": {
+        "appearance": "A tall, sea-tanned isle elf with salt-bleached hair and a pearl-diver's easy breathing; no visible age.",
+        "dress": "A teal sea-robe with a pearl collar, bare feet, a reed-pilot's knotted cord at the wrist.",
+        "colours": "Lagoon teal (#2f8a8a), sun gold (#e0b23a), shell white (#f0e8cc)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: each island sends its Speaker to the council at Holang, which chooses one to speak for all.",
+      "succession": "Elective (the Council of Island Speakers)."
+    },
+    "advisors": [
+      {
+        "id": "zin_ihuy_pearls",
+        "name": "Salai of the Lagoons",
+        "given": "Salai",
+        "office": "Mistress of the Pearl Lagoons",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the pearl lagoons and sells their pearls to the south and the mainland.",
+        "portrait": "An elf-woman with a basket of pearls and wet hair.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_ihuy_smoke",
+        "name": "Yunge the Smoke-Watcher",
+        "given": "Yunge",
+        "office": "Watcher of Hol",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Watches the smoke of the Great Volcano on Hol and moves the council to Tei when it grows too thick.",
+        "portrait": "An elf on a black-sand shore looking up at a smoking peak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_ihuy_pilot",
+        "name": "Pangi the Reef-Pilot",
+        "given": "Pangi",
+        "office": "First of the Reef-Pilots",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "A Sunfolk pilot who speaks the reef-words of the south and can bring a boat through any shallows in Ihuy.",
+        "portrait": "A Sunfolk sailor with a sounding-pole and a cord of reef-knots.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_ihuy_fleet",
+        "name": "Tangi of the Island Boats",
+        "given": "Tangi",
+        "office": "Captain of the Island Boats",
+        "gender": "male",
+        "people": "sun_elves",
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the island council's boats.",
+        "portrait": "An elf captain on a teal-sailed boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_ihuy_guard",
+        "name": "Heli of Holang",
+        "given": "Heli",
+        "office": "Captain of the Isle Guard",
+        "gender": "female",
+        "people": "sun_elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Commands the guard of the council isle.",
+        "portrait": "A tall elf-woman with a shell-crested spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SOY",
+    "key": "soyano",
+    "name": "Soyano",
+    "stance": "zin_light_sanctuary",
+    "court": "standard",
+    "ruler": {
+      "id": "SOY_zin_ruler",
+      "name": "Tide-Speaker Yunga of Ileslia",
+      "given": "Yunga",
+      "house": "of Ileslia",
+      "title": {
+        "native": null,
+        "english": "Tide-Speaker of the Archipelago Council"
+      },
+      "gender": "male",
+      "people": "sun_elves",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_captains_blood",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Yunga was a pilot before the Archipelago Council chose him Tide-Speaker at the turn of the tide, as every Tide-Speaker has been chosen since the council was founded. The northern isles build the white ships of the south and the hulls of Gala's court, trade on the Bright Sea and grow rich on the fastest ships anywhere. His is the one realm of the region whose ships could carry a host north if the Noon Council ever asked, and he hopes it never will.",
+      "portrait": {
+        "appearance": "A lean, tanned isle elf with a pilot's squint and sea-salt in long dark hair; no visible age.",
+        "dress": "A white sailing coat over teal, a tide-staff carved with reef-lines, a shipwright's rule at the belt.",
+        "colours": "Lagoon teal (#2f8a8a), sun gold (#e0b23a), shell white (#f0e8cc)."
+      },
+      "canon": "P",
+      "formerName": "Soyai (named after the realm; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: the Archipelago Council chooses a Tide-Speaker from the isles' shipwrights and pilots.",
+      "succession": "Elective (the Archipelago Council)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_hengyang_shipwright",
+        "name": "Lovyi of Ossi Luni",
+        "given": "Lovyi",
+        "office": "Master Shipwright of Ossi Luni",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_master_of_ships"
+        ],
+        "role": "Leads the shipwrights of Ossi Luni who build Gala's white ships.",
+        "portrait": "An elf-woman with an adze beside a white hull.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hengyang_reef",
+        "name": "Sanga of the Reef Line",
+        "given": "Sanga",
+        "office": "Keeper of the Reef Line",
+        "gender": "male",
+        "people": "sun_elves",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Keeps the reef line by which the Noon Council divided the strait with Ihuy, and watches Ihuy's boats along it.",
+        "portrait": "An elf on a reef with a sounding-line.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hengyang_gala",
+        "name": "Hengyi, Envoy to Sodoli",
+        "given": "Hengyi",
+        "office": "Envoy to the Gala Court",
+        "gender": "female",
+        "people": "sun_elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the council's ship-contracts to King Lorien's court and brings back the Gala's orders, which are few and courteous.",
+        "portrait": "An elf-woman in white with a ship-contract case.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_hengyang_white",
+        "name": "Selang of the White Ships",
+        "given": "Selang",
+        "office": "Captain of the White Ships",
+        "gender": "male",
+        "people": "sun_elves",
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "maneuvering": 4,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "Commands the archipelago's white ships on the Bright Sea.",
+        "portrait": "An elf captain on the deck of a white ship.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hengyang_guard",
+        "name": "Wena of Ileslia",
+        "given": "Wena",
+        "office": "Captain of the Isle Guard",
+        "gender": "female",
+        "people": "sun_elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Commands the guard of the council isle.",
+        "portrait": "A tall elf-woman with a spear on a white quay.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "GOO",
+    "key": "goodin",
+    "name": "Goodin",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "GOO_zin_ruler",
+      "name": "Senan of Elgagen",
+      "given": "Senan",
+      "house": "of Elgagen",
+      "title": {
+        "native": null,
+        "english": "Elder of the Guest-Towns"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6764,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_war_party"
+      ],
+      "bio": "Senan is a farmer's son who became spokesman of the guest-towns of Goodin by settling a water quarrel without a single steading leaving the moot. He speaks for the Sunfolk of the western grass, with Goodton and Guuden, and his is the only realm of the Lands of the Sun that raises levies freely, which makes it the strongest arm the Noon Council has. Goodin sits at the council only as a guest, and Senan means to ask for a full seat before he dies; he has not yet decided how.",
+      "portrait": {
+        "appearance": "A tall, sun-browned Sunfolk man with a broad weathered face and grey-streaked hair.",
+        "dress": "A plain farmer's tunic and a guest-town elder's yellow sash, a staff of grassland oak.",
+        "colours": "Grass gold (#e0b23a), field green (#5a8a4a), straw (#f2e6b8)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the guest-towns choose their elders, and the elders one to speak for them.",
+      "succession": "Elective (the elders of the guest-towns)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_goodin_goodton",
+        "name": "Talin of Goodton",
+        "given": "Talin",
+        "office": "Elder of Goodton",
+        "gender": "female",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Elder of the steadings of Goodton, which joined the guest-towns and still likes its own way.",
+        "portrait": "A grey-haired farmer-woman with a yellow sash.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_goodin_levy",
+        "name": "Rangin, Master of the Levy",
+        "given": "Rangin",
+        "office": "Master of the Levy",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Raises the levies of the western grass, which come when they are called.",
+        "portrait": "A broad farmer with a spear and a horn.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_goodin_reckoner",
+        "name": "Lovi the Reckoner",
+        "given": "Lovi",
+        "office": "Keeper of the Reckoning",
+        "gender": "female",
+        "people": "men",
+        "born": 6760,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the Reckoning of the Twelve for the guest-towns and the wells the council granted every steading.",
+        "portrait": "An old woman with a calendar-cord of twelve knots and a lamp.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_goodin_captain",
+        "name": "Captain Hengan of the Grass",
+        "given": "Hengan",
+        "office": "Captain of the Grassland Levies",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer",
+          "career_officer"
+        ],
+        "role": "Leads the Sunfolk levies of the western grass, the only host in the region raised without asking twice.",
+        "portrait": "A tall Sunfolk captain with a long spear and a yellow sash.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_goodin_guuden",
+        "name": "Yali of Guuden",
+        "given": "Yali",
+        "office": "Captain of the Guuden Bows",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the bowmen of Guuden.",
+        "portrait": "A Sunfolk archer with a grass-woven quiver.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "GOF",
+    "key": "god_forest",
+    "name": "God Forest",
+    "stance": "zin_wild_seclusion",
+    "stanceNote": "No row in countries.csv; a closed wood whose keepers decline the Noon Council reads as Seclusion. Owner to confirm.",
+    "court": "open",
+    "ruler": {
+      "id": "GOF_zin_ruler",
+      "name": "The Keepers of the God Forest",
+      "house": "the Keepers' household",
+      "title": {
+        "native": null,
+        "english": "the Keepers' Household"
+      },
+      "gender": "none",
+      "people": "elves",
+      "stance": "zin_wild_seclusion",
+      "traits": [
+        "zin_trait_secluded_eldest",
+        "zin_trait_unknown_counsel"
+      ],
+      "bio": "A small household of secluded elves keeps the God Forest, and no ruler of it is named; the Keepers speak to outsiders only through whoever meets them at the wood's edge. They closed the wood to every outsider after Dardan, and when the Noon Council was founded they sent the Radiant Speaker's invitation back tied with a living vine. The Sunhot treat their silence as holy, and the Sunfolk avoid the forest edge after dark.",
+      "portrait": {
+        "appearance": "An emblem, not a figure: a dark wood seen from its edge, a single lantern hung on a branch.",
+        "dress": "None.",
+        "colours": "Forest dark (#1f4a3a), lantern gold (#e8d070), pale light (#f0f0e0)."
+      },
+      "canon": "H",
+      "note": "No Keeper is named and their kin is open (Sunhot, Gala or their own); the leader is an emblem. No advisors or commanders are named for the same reason."
+    },
+    "heir": {
+      "note": "Not applicable: no ruler is named.",
+      "succession": "Open."
+    },
+    "advisors": [],
+    "commanders": [],
+    "figures": [],
+    "notes": "Advisors and commanders stay generated (emblem portraits) until the owner rules on the Keepers' kin."
+  }
+]

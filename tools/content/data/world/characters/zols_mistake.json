@@ -1,0 +1,88 @@
+[
+  {
+    "tag": "ZOL",
+    "key": "zols_mistake",
+    "name": "Zol's Mistake",
+    "stance": "zin_shadow_grave",
+    "court": "open",
+    "ruler": {
+      "id": "zin_zol_will",
+      "name": "The Will of Zol",
+      "title": {
+        "native": null,
+        "english": "the Will of Zol"
+      },
+      "gender": "none",
+      "people": "the_dead",
+      "stance": "zin_shadow_grave",
+      "traits": [
+        "zin_trait_old_god_of_death",
+        "zin_trait_unknown_counsel"
+      ],
+      "bio": "The charts and the courts name the master of the black north only as the Will of Zol, because Zol, the Old God of Death, has no body to sit on a throne, and nobody living has seen who keeps his seat at Furviatlon. The Northern Wastes and the black islands of the Kusmeel are silent and sparsely peopled, and the fishers who winter on the outer isles never go near the seat. Nobody knows why the land is called a Mistake, and the fishermen who might guess do not care to.",
+      "portrait": {
+        "appearance": "An emblem, not a figure: a black sigil on a void.",
+        "dress": "None.",
+        "colours": "Void black (#0a0a0c), ash (#2a2a30), cold grey (#6a6a72)."
+      },
+      "canon": "E",
+      "definedBy": "Zol mechanic and characters spec (zin_zol_will; O6, S4)",
+      "note": "An emblem for the Old God's will; it says nothing about who administers the Mistake (V3). No trait implies a person."
+    },
+    "heir": {
+      "note": "Not applicable: the Will of Zol is an emblem and has no successor.",
+      "succession": "None."
+    },
+    "advisors": [],
+    "commanders": [
+      {
+        "id": "zin_zol_host_1",
+        "name": "The First Host",
+        "office": "The First Host of the black north",
+        "gender": "none",
+        "people": "the_dead",
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 4,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "A numbered formation of the risen dead, not a person; the emblem with a numeral.",
+        "portrait": "The Zol emblem with the numeral one.",
+        "canon": "S",
+        "definedBy": "Zol mechanic (zin_zol_host_1 to zin_zol_host_12)",
+        "recruit": "Recruited by the Zol mechanic when it raises hosts, never at the start."
+      },
+      {
+        "id": "zin_zol_host_2",
+        "name": "The Second Host",
+        "office": "The Second Host of the black north",
+        "gender": "none",
+        "people": "the_dead",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "A numbered formation of the risen dead, not a person; the Third to the Twelfth Hosts follow the same pattern.",
+        "portrait": "The Zol emblem with the numeral two.",
+        "canon": "S",
+        "definedBy": "Zol mechanic (zin_zol_host_1 to zin_zol_host_12)",
+        "recruit": "Recruited by the Zol mechanic when it raises hosts, never at the start."
+      }
+    ],
+    "figures": [],
+    "notes": "No advisors: any named counsellor, even an emblem such as the black ships, would imply an administrator (V3) or confirm the fishermen's tales before zin_zol_rising (V10). No navy leader is named; the owner may want an emblem fleet (\"the Black Fleet\") once the black ships are public. Zol's servants have no character (C9, C24, C25)."
+  }
+]

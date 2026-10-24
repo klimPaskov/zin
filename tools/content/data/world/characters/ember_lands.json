@@ -1,0 +1,1441 @@
+[
+  {
+    "tag": "PUV",
+    "key": "puvulan",
+    "name": "Puvulan",
+    "stance": "zin_shadow_dread",
+    "court": "great",
+    "ruler": {
+      "id": "zin_volgan",
+      "name": "Volgan",
+      "given": "Volgan",
+      "title": {
+        "native": "Arx",
+        "english": "the Crowned Lord of Nafeher"
+      },
+      "gender": "male",
+      "people": "spirits",
+      "stance": "zin_shadow_dread",
+      "traits": [
+        "zin_trait_dread_lord",
+        "zin_trait_ancient_great_spirit"
+      ],
+      "bio": "Volgan, the principal dark lord of Aoaz, rules the Ember Lands from Nafeher through his captains, the necromantic orders and the realms sworn to him. At Dardan the spirits stripped him of his strength and threw him into the Void, the Great Necromancer brought him back, and through the long Third Age he was too weak to leave his own lands. Mirolon's songs give him a crown, a purple cloak, eyes that burn green and a wizard's green fire, and Mirolon's scouts are the only people in the north who believe he is mustering again.",
+      "portrait": {
+        "appearance": "A tall, crowned wizard of terrible calm, his eyes glowing green, green fire gathered at his fingers.",
+        "dress": "A crown of dark metal, a heavy purple cloak over dark robes, a wizard's staff.",
+        "colours": "Royal purple, glowing green, dark iron; grave-host night (#2a2530) behind."
+      },
+      "canon": "E",
+      "definedBy": "Volgan mechanic (zin_volgan; mech_powers_volgan_text.json, which still lists people the_dead)",
+      "note": "A Great Spirit: no birth year. Appearance established by the owner on 24 October 2026 (K37); the mechanic's portrait people should move from the_dead to the established look. Field marshal in person on the historical path.",
+      "secret": "Once served a New God and overcame it (C11, sealed); whether his spirit survives the destruction of his body is open (C23)."
+    },
+    "heir": {
+      "note": "No heir: a Great Spirit has no successor. When his body is destroyed (zin_volgan_body_destroyed) the Volgan mechanic makes the Ember Herald Steward of Nafeher and country leader; Volgan is neither killed nor retired.",
+      "succession": "None (the Volgan mechanic's steward)."
+    },
+    "advisors": [
+      {
+        "id": "zin_volgan_palux",
+        "name": "Palux, Gera of the Gate",
+        "given": "Palux",
+        "office": "Gera of the Gate of Nafeher",
+        "gender": "male",
+        "people": "the_dead",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_grave_binder"
+        ],
+        "role": "The Dominion's named necromancer, a man of the coast who took the orders long ago and whose life-name has shrunk to a binding-name; he keeps the gate-names and the readiness of the grave hosts.",
+        "portrait": "A hooded, grey-skinned figure in black and rust, holding a chain of name-tablets.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)",
+        "note": "Named only in Volgan's own text; elsewhere the orders are a rumour. No birth year."
+      },
+      {
+        "id": "zin_volgan_dexar",
+        "name": "Dexar, Judge of the Muster",
+        "given": "Dexar",
+        "office": "Dex of the Muster of Names",
+        "gender": "male",
+        "people": "the_dead",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the Muster of Names, by which the dead of the grave-fields are counted and called, and has never once miscounted.",
+        "portrait": "A skull-faced judge in a stiff black robe with a ledger of bone.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_volgan_lunis",
+        "name": "Lunis, Herald of Nafeher",
+        "given": "Lunis",
+        "office": "Hera of Nafeher",
+        "gender": "female",
+        "people": "the_dead",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries Nafeher's words to the sworn realms and to the Halls of the Nether, calmly, and always to the letter.",
+        "portrait": "A veiled herald in grey with a staff topped by a dark crown.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_volgan_ostul",
+        "name": "Ostul, Keeper of the Tolls",
+        "given": "Ostul",
+        "office": "Qeper of the Tolls",
+        "gender": "male",
+        "people": "the_dead",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Counts the salt of Halia, the pilots of Nan and the toll of Olen, and the tribute the demon realms send to Nafeher.",
+        "portrait": "A gaunt hooded clerk with scales of black iron.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_volgan_urgash",
+        "name": "Urgash of the Powder Companies",
+        "given": "Urgash",
+        "office": "Chief of the orc powder companies",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6779,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_siege_master"
+        ],
+        "role": "Chief of the orc companies that carry Dolon's powder-engines, who boasts that no gate in the north will hold him an afternoon.",
+        "portrait": "A scarred orc in blackened iron with powder-casks slung across his back.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_volgan_snikrix",
+        "name": "Snikrix the Cask-Counter",
+        "given": "Snikrix",
+        "office": "Quartermaster of the plateau",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6790,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_quartermaster"
+        ],
+        "role": "The goblin who counts the casks, the rations and the slaves of the plateau oases, and steals only a little of each.",
+        "portrait": "A sly goblin with an abacus of finger-bones and a lamp.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_volgan_ember_herald",
+        "name": "The Ember Herald",
+        "office": "Captain of Nafeher",
+        "gender": "male",
+        "people": "spirits",
+        "type": "field_marshal",
+        "skill": {
+          "level": 5,
+          "attack": 5,
+          "defense": 3,
+          "planning": 4,
+          "logistics": 3
+        },
+        "traits": [
+          "brilliant_strategist"
+        ],
+        "role": "A Great Spirit of Volgan's court and the first of his captains, faceless, made of embers; Steward of Nafeher if the lord's body ever breaks.",
+        "portrait": "A faceless figure of embers in a black mantle.",
+        "canon": "S",
+        "definedBy": "Volgan mechanic (common/characters/zin_dominion.txt)",
+        "note": "Recruited by the Volgan tree's The Captains Assemble; mirrored here, not redefined."
+      },
+      {
+        "id": "zin_volgan_grave_warden",
+        "name": "The Grave-Warden",
+        "office": "Head of the necromantic orders",
+        "gender": "female",
+        "people": "the_dead",
+        "type": "corps_commander",
+        "skill": {
+          "level": 4,
+          "attack": 3,
+          "defense": 4,
+          "planning": 4,
+          "logistics": 3
+        },
+        "traits": [
+          "inflexible_strategist"
+        ],
+        "role": "Heads the necromantic orders and keeps the barrows of the grave-fields, knowing every name and every grievance of the dead.",
+        "portrait": "A hooded grave-lord in black and bone.",
+        "canon": "S",
+        "definedBy": "Volgan mechanic (common/characters/zin_dominion.txt)",
+        "note": "The mechanic data makes the Grave-Warden female; the Volgan tree text says \"his order\". Owner to settle."
+      },
+      {
+        "id": "zin_volgan_ghorvak",
+        "name": "Ghorvak of the Hundred Clubs",
+        "given": "Ghorvak",
+        "office": "Chief of the ogre clans",
+        "gender": "male",
+        "people": "ogres",
+        "born": null,
+        "type": "corps_commander",
+        "skill": {
+          "level": 4,
+          "attack": 6,
+          "defense": 3,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "brave"
+        ],
+        "role": "Ogre clan chief of the Ember Lands, who carries a ring of clubs and has broken most of them.",
+        "portrait": "An ogre chief with a ring of clubs at his belt.",
+        "canon": "S",
+        "definedBy": "Volgan mechanic (common/characters/zin_dominion.txt)",
+        "note": "Defined by the Volgan mechanic; no birth year is set here."
+      },
+      {
+        "id": "zin_volgan_xarul",
+        "name": "Xarul of the Grey Galleys",
+        "given": "Xarul",
+        "office": "Master of the Grey Galleys",
+        "gender": "male",
+        "people": "the_dead",
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Commands the Dominion's galleys rowed by the dead, which go out only with Nan's storm-pilots aboard.",
+        "portrait": "A grey-skinned captain in a rotting sea-cloak at the stern of a black galley.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "MIR",
+    "key": "mirolon",
+    "name": "Mirolon",
+    "stance": "zin_light_wardens",
+    "court": "great",
+    "ruler": {
+      "id": "MIR_zin_ruler",
+      "name": "High Warden Mirena of the Passes",
+      "given": "Mirena",
+      "house": "of the Passes",
+      "title": {
+        "native": "Oltgera",
+        "english": "High Warden of Mirolon"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6766,
+      "stance": "zin_light_wardens",
+      "traits": [
+        "zin_trait_warden_of_the_passes",
+        "zin_trait_unheeded_warning"
+      ],
+      "bio": "Mirena was a scout-master of the northern passes when the pass-lords and the lake towns elected her High Warden for life in 4A 1739, and she still reads every report from the south herself. She has doubled the beacon line along the Sound and fortified the passes of the land neck, because her scouts tell her the Ember Lands are arming. Parim laughed at her envoy twelve years ago, and she has stopped expecting help from it.",
+      "portrait": {
+        "appearance": "A lean, sun-browned woman with close-cropped grey hair, a scout's squint and a scar along the jaw.",
+        "dress": "A blue-grey warden's cloak over light mail, a beacon-tower badge, a spyglass at her belt; she never wears the lake-kings' crown, which hangs in the beacon tower.",
+        "colours": "Warden blue (#3c5f78), pass grey (#9fa7ae), straw gold (#cbbd8e)."
+      },
+      "canon": "H",
+      "note": "The Volgan mechanic and the Mirolon tree name the High Warden Maeric (zin_mirolon_maeric). This file follows the histories (Mirena) and keeps Maeric as the lake towns' candidate; see the conflicts in characters_part1.md."
+    },
+    "heir": {
+      "id": "zin_mirolon_maeric",
+      "name": "Maeric of Miherta",
+      "given": "Maeric",
+      "office": "Speaker of the Lake Towns",
+      "gender": "male",
+      "people": "men",
+      "born": 6771,
+      "traits": [
+        "zin_trait_warden_of_the_passes"
+      ],
+      "role": "Speaker of the lake towns in the High Warden's council and the lake towns' candidate the next time the office falls empty.",
+      "succession": "Elective for life: the pass-lords and the lake towns choose the High Warden, man or woman.",
+      "portrait": "A lake-country warden in blue-grey with a reed-bound staff.",
+      "canon": "S",
+      "definedBy": "Volgan mechanic (mech_powers_volgan_text.json, as High Warden Maeric)"
+    },
+    "advisors": [
+      {
+        "id": "zin_mirolon_hadric",
+        "name": "Scout-Master Hadric Thorne",
+        "given": "Hadric",
+        "house": "Thorne",
+        "office": "Scout-Master of the Passes",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Has walked the southern passes for thirty years and counts every stone of them; he believes what he has seen, and he has seen enough to be afraid.",
+        "portrait": "A lean scout-master with a spyglass and a dust-scarf.",
+        "canon": "S",
+        "definedBy": "Volgan mechanic; recruited by the Mirolon tree's The Scout-Master's School",
+        "note": "Shares his given name with Hadric of Miherta, the first High Warden of the histories; owner may wish to rename one."
+      },
+      {
+        "id": "zin_mirolon_baelan",
+        "name": "Envoy Baelan of Paron",
+        "given": "Baelan",
+        "office": "Envoy of the High Warden",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_unheeded_warning"
+        ],
+        "role": "The envoy who warned the court at Parim in 4A 1736 that the Ember Lands were arming and was laughed out of the hall; he wrote down every word the courtiers said and reads them aloud to new scouts.",
+        "portrait": "An old envoy in a travel-worn blue cloak holding a thick bundle of notes.",
+        "canon": "H"
+      },
+      {
+        "id": "zin_mirolon_hessa",
+        "name": "Envoy Hessa Mencnor",
+        "given": "Hessa",
+        "house": "Mencnor",
+        "office": "Envoy to the salt coast and the isles",
+        "gender": "female",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Keeps the High Warden's friends on the salt coast, in Nan and on the lamp-cliffs of Olen, and went with Baelan to Parim, where she did the listening while he did the talking.",
+        "portrait": "A shrewd woman in blue-grey with a sealed letter-case.",
+        "canon": "S",
+        "formerName": "the characters spec made her the envoy of 4A 1736; the histories give that embassy to Baelan of Paron"
+      },
+      {
+        "id": "zin_mirolon_venaelia",
+        "name": "Venaelia of the Beacons",
+        "given": "Venaelia",
+        "office": "Warden of the Lantern on the Passes",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_lantern_warden"
+        ],
+        "role": "Mirolon's named wizard, daughter of a beacon-tower family, who keeps the beacon wards and reads the Ember Lands' storms from the passes; her reports are the truest account of the south anyone outside the Ember Lands has.",
+        "portrait": "A young warden with wind-tangled hair, a lantern and warden's cords at her wrists.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
+      },
+      {
+        "id": "zin_mirolon_molon",
+        "name": "Molon, Vigil-Captain of the Long Watch",
+        "given": "Molon",
+        "office": "Vigil-Captain of the Long Watch",
+        "gender": "male",
+        "people": "men",
+        "born": 6755,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the monthly night vigil of the wardens and the lamp every tower keeps lit toward the south, and has not missed a vigil in fifty years.",
+        "portrait": "An old vigil-captain in grey with a lamp held toward the dark.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mirolon_dolaine",
+        "name": "Dolaine of the Sound",
+        "given": "Dolaine",
+        "office": "Warden of the Beacon Line",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "Keeps the doubled beacon line along the Sound and can light every tower from the land neck to Miherta before dawn.",
+        "portrait": "A sturdy woman with a fire-pot and a soot-black cloak on a tower top.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_mirolon_selda",
+        "name": "Captain Selda Varrow",
+        "given": "Selda",
+        "house": "Varrow",
+        "office": "Captain of the Pass Watch",
+        "gender": "female",
+        "people": "men",
+        "born": 6768,
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 3,
+          "defense": 6,
+          "planning": 3,
+          "logistics": 4
+        },
+        "traits": [
+          "inflexible_strategist"
+        ],
+        "role": "Has held the Lake Gate for twenty years against bandits, floods and the occasional foolish lord.",
+        "portrait": "A pass captain in dust-grey mail.",
+        "canon": "S",
+        "definedBy": "Volgan mechanic; recruited by the Mirolon tree's The Captain of the Passes"
+      },
+      {
+        "id": "zin_mirolon_bennar",
+        "name": "Captain Bennar of the Passes",
+        "given": "Bennar",
+        "office": "Captain of the Pass Scouts",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter",
+          "ranger"
+        ],
+        "role": "Leads the scouts who watch the Ember Lands from the passes and goes south himself more often than he should.",
+        "portrait": "A scout with a dust-scarf and a short bow.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_mirolon_delor",
+        "name": "Delor of the Reeds",
+        "given": "Delor",
+        "office": "Captain of the Great Swamp",
+        "gender": "male",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "Leads the reed-cutters' companies of the Great Swamp, who know every channel the survivors of Dardan once came home by.",
+        "portrait": "A reed-cutter in a wide hat with a long spear and mud to the thighs.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mirolon_ranell",
+        "name": "Ranell of the Lake",
+        "given": "Ranell",
+        "office": "Captain of the Lake and the Sound",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the warden boats on the Lake of Mirolon and the Sound, and carries the beacon news faster than horses can.",
+        "portrait": "A boat-captain in a blue-grey cloak at the tiller.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KHO",
+    "key": "khorvrath",
+    "name": "Khorvrath",
+    "stance": "zin_shadow_dread",
+    "court": "standard",
+    "ruler": {
+      "id": "KHO_zin_ruler",
+      "name": "Lord Morvath of Khorvazel",
+      "given": "Morvath",
+      "house": "the Horned Court",
+      "title": {
+        "native": null,
+        "english": "Lord of the Horned Court"
+      },
+      "gender": "male",
+      "people": "demons",
+      "stance": "zin_shadow_dread",
+      "traits": [
+        "zin_trait_pact_lord",
+        "zin_trait_war_party"
+      ],
+      "bio": "Morvath took the horn-seat of Khorvazel when his predecessor fell at the Burning Gate of Nezer, and he keeps a name of two beats for the world and another for the court, which only the pact knows. He rules the Nether foothills of the island, a few demons over many thousands of thralls, orc and goblin labourers and men of the old coast. He keeps his oath to Nafeher while Volgan's strength stands, and every year he demands back the three hundred thralls who stole boats and fled to Olen.",
+      "portrait": {
+        "appearance": "A towering horned demon with ember-red eyes and cracked, ash-dark skin.",
+        "dress": "Black iron plates riveted to the hide, a horned circlet, chains of the thrall-roll at the belt.",
+        "colours": "Ember red (#9b2a2a), soot (#2a1a1a), fire gold (#d8a060)."
+      },
+      "canon": "H",
+      "formerName": "the characters spec used Morvath for Dolon's ruler and Hazarel the Horned for Demon (now Khorvrath); the histories settle Morvath here"
+    },
+    "heir": {
+      "note": "No heir: the horn-seat is taken, not inherited; whoever holds it when the lord falls keeps it if the court accepts the pact.",
+      "succession": "By seizure and pact."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_demon_hazarel",
+        "name": "Hazarel, Herald of the Horned Court",
+        "given": "Hazarel",
+        "office": "Pact-Herald of the Horned Court",
+        "gender": "male",
+        "people": "demons",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_pact_broker"
+        ],
+        "role": "Carries the horned court's oaths to Nafeher and keeps the wording of the pact, which he can quote back to anyone who forgets it.",
+        "portrait": "A horned demon in a red mantle holding a sealed pact of ash-grey skin.",
+        "canon": "S",
+        "formerName": "Hazarel the Horned, the characters spec's ruler of Demon"
+      },
+      {
+        "id": "zin_regional_demon_vorek",
+        "name": "Vorek the Thrall-Master",
+        "given": "Vorek",
+        "office": "Master of the Thralls",
+        "gender": "male",
+        "people": "demons",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Keeps the roll of the thralls and drives them to the labour and the levy, and has sworn to have the runaways of Olen back.",
+        "portrait": "A broad demon with a chain-whip and the thrall-roll.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_demon_khiria",
+        "name": "Khiria of the Ash Rite",
+        "given": "Khiria",
+        "office": "Keeper of the Ash Night",
+        "gender": "female",
+        "people": "demons",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_pact_broker"
+        ],
+        "role": "Keeps the pact-rite of the horned court, and its oaths of blood and ash.",
+        "portrait": "A demoness with ash-white horns and a bowl of embers.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_demon_thazuum",
+        "name": "Thazuum the Burning",
+        "given": "Thazuum",
+        "office": "War-Lord of the Horned Court",
+        "gender": "male",
+        "people": "demons",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 5,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine",
+          "trait_reckless"
+        ],
+        "role": "Leads the demons of the horned court in the field and throws fire as readily as orders.",
+        "portrait": "A demon wreathed in flame with a great horned helm.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_demon_bordash",
+        "name": "Bordash of the Thrall Levies",
+        "given": "Bordash",
+        "office": "Captain of the orc levies",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6783,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "harsh_leader"
+        ],
+        "role": "An orc overseer who leads the thrall levies because the demons will not.",
+        "portrait": "An orc in a collar of iron with a spiked club.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DLN",
+    "key": "dolon",
+    "name": "Dolon",
+    "stance": "zin_shadow_dread",
+    "court": "standard",
+    "ruler": {
+      "id": "DLN_zin_ruler",
+      "name": "Queen Zhorith of Dolon",
+      "given": "Zhorith",
+      "house": "House of the Salt Pact",
+      "title": {
+        "native": "Zarkha",
+        "english": "Queen of Dolon"
+      },
+      "gender": "female",
+      "people": "demons",
+      "stance": "zin_shadow_dread",
+      "traits": [
+        "zin_trait_pact_lord",
+        "zin_trait_forge_prince"
+      ],
+      "bio": "Zhorith keeps the forge of the Southern Dominion at Unzeky, where the forges compound black powder from the coast's salts and the Maw's sulphur and arm Volgan's orc companies with powder-engines and casks. Her tribute galleys carry salt, sulphur and ash-glass along the Veshir coast to Nafeher, and the orders pay her in thralls. Like every queen of her house she writes her laws in salt, so that the sea can wash away any oath she comes to regret.",
+      "portrait": {
+        "appearance": "A tall demoness with salt-white horns and ember eyes, her skin crusted with salt.",
+        "dress": "Salt-crusted black iron, a crown of fused ash-glass, a forge-hammer of office.",
+        "colours": "Ember red (#9b2a2a), soot (#2a1a1a), fire gold (#d8a060), salt white."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir is known: the queens of the House of the Salt Pact rule by pact, and the pact names its own heir.",
+      "succession": "By pact (the House of the Salt Pact)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_dolon_sathara",
+        "name": "Sathara, Forge-Mistress of Unzeky",
+        "given": "Sathara",
+        "office": "Forge-Mistress of Unzeky",
+        "gender": "female",
+        "people": "demons",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Runs the forges that compound the Dominion's black powder and keeps the proportions in salt-script that nobody else can read.",
+        "portrait": "A demoness with scorched arms and a salt-stained apron at a glowing forge.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_dolon_khoruum",
+        "name": "Khoruum of the Tribute Galleys",
+        "given": "Khoruum",
+        "office": "Master of the Tribute Galleys",
+        "gender": "male",
+        "people": "demons",
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_galley_master"
+        ],
+        "role": "Sends the tribute galleys along the Veshir coast and has never lost one to the storms, which he says is because the storms know whose they are.",
+        "portrait": "A demon in a sea-cloak of scaled hide on a galley deck.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_dolon_vira",
+        "name": "Vira the Salt-Scribe",
+        "given": "Vira",
+        "office": "Scribe of the Salt Laws",
+        "gender": "female",
+        "people": "demons",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Writes the queen's laws in salt on the pact-hall floor, and knows exactly which tide will wash each one away.",
+        "portrait": "A slender demoness with a salt-horn and a stylus of bone.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_dolon_zugduth",
+        "name": "Zugduth of the Cask Companies",
+        "given": "Zugduth",
+        "office": "Captain of the cask companies",
+        "gender": "male",
+        "people": "orcs",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "offensive_doctrine"
+        ],
+        "role": "Leads the orcs who carry Dolon's powder-casks and engines, and is missing an ear to prove he knows how they work.",
+        "portrait": "A one-eared orc with a cask on his shoulder and a burning match-cord.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_dolon_hazek",
+        "name": "Hazek of the Salt Coast",
+        "given": "Hazek",
+        "office": "Captain of the Salt Galleys",
+        "gender": "male",
+        "people": "demons",
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 2,
+          "coordination": 3
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Commands the queen's war galleys on the salt coast.",
+        "portrait": "A horned demon at a galley's ram.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NEZ",
+    "key": "nezer",
+    "name": "Nezer",
+    "stance": "zin_shadow_dread",
+    "court": "standard",
+    "ruler": {
+      "id": "NEZ_zin_ruler",
+      "name": "Queen Sathael of Nezer",
+      "given": "Sathael",
+      "house": "the Twin Crowns of Gelroze",
+      "title": {
+        "native": "Zarkha",
+        "english": "Queen of Nezer, of the Twin Crowns"
+      },
+      "gender": "female",
+      "people": "demons",
+      "stance": "zin_shadow_dread",
+      "traits": [
+        "zin_trait_twin_crowns",
+        "zin_trait_pact_lord"
+      ],
+      "bio": "Sathael holds one of the two crowns of Gelroze, and Lord Zeruath of the same house holds the other, so that the two must agree before Nezer goes to war. They took the empty hills when the Great Necromancer's seat at Nazerun fell vacant, and they rule the largest of the sworn realms, its coast on the Sea of Nazerch and the broken ring of the Burning Gate. When they swore to Nafeher, the two crowns agreed for the first time in a century, which their court has not stopped talking about.",
+      "portrait": {
+        "appearance": "A horned demon queen with a narrow ember-eyed face and long black hair.",
+        "dress": "Ember-red robes over black scale, one of a pair of twin iron crowns.",
+        "colours": "Ember red (#9b2a2a), soot (#2a1a1a), fire gold (#d8a060)."
+      },
+      "canon": "H",
+      "formerName": "Queen Nazara of Nezerun (characters spec; superseded by the histories)"
+    },
+    "heir": {
+      "id": "zin_regional_nezer_zeruath",
+      "name": "Lord Zeruath of Nezer",
+      "given": "Zeruath",
+      "office": "Lord of Nezer, of the Twin Crowns",
+      "gender": "male",
+      "people": "demons",
+      "traits": [
+        "zin_trait_twin_crowns",
+        "zin_trait_war_party"
+      ],
+      "role": "The other crown of Gelroze, who rules beside the queen and must agree with her on war; if one crown falls, the other rules alone until the house names a second.",
+      "succession": "Two crowns of one house; the survivor rules alone until the house names another.",
+      "portrait": "A horned demon lord with the second twin iron crown.",
+      "canon": "H"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_nezer_vorith",
+        "name": "Vorith, Warden of the Burning Gate",
+        "given": "Vorith",
+        "office": "Warden of the Burning Gate",
+        "gender": "female",
+        "people": "demons",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "Guards the broken ring of the Burning Gate on the coast, which men, elves and Dark Lands soldiers closed in the Second Age.",
+        "portrait": "A demoness in black armour before a cracked ring of stone.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nezer_zarael",
+        "name": "Zarael of the Lava Galleys",
+        "given": "Zarael",
+        "office": "Master of the Lava Galleys",
+        "gender": "male",
+        "people": "demons",
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_galley_master"
+        ],
+        "role": "Runs the galleys that cross the Sea of Lava to the Nether, which only demons sail.",
+        "portrait": "A demon on a fire-blackened galley.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nezer_vorazuum",
+        "name": "Vorazuum, Pact-Herald to the Halls",
+        "given": "Vorazuum",
+        "office": "Pact-Herald to the Nether",
+        "gender": "male",
+        "people": "demons",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_pact_broker"
+        ],
+        "role": "Keeps Nezer's trade and its quarrels with the houses of the Nether, and is not trusted by either crown.",
+        "portrait": "A demon with a forked tongue and a pact-scroll.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_nezer_morazel",
+        "name": "Morazel of the Hills",
+        "given": "Morazel",
+        "office": "War-Lord of Nezer",
+        "gender": "male",
+        "people": "demons",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine"
+        ],
+        "role": "Leads the demons of the Nezer hills.",
+        "portrait": "A demon war-lord with a flaming glaive.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nezer_zhoria",
+        "name": "Zhoria of the Nazerch Coast",
+        "given": "Zhoria",
+        "office": "Captain of the Coast Galleys",
+        "gender": "female",
+        "people": "demons",
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "bold"
+        ],
+        "role": "Commands the galleys of the Sea of Nazerch.",
+        "portrait": "A demoness at the prow of a black galley.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NET",
+    "key": "nether",
+    "name": "Nether",
+    "stance": "zin_shadow_dread",
+    "stanceNote": "No row in countries.csv; the King of Demons is not sworn to Volgan, but a demon monarchy of pacts reads as Dread Lordship. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "NET_zin_ruler",
+      "name": "The King of Demons",
+      "house": "the Houses of the Halls",
+      "title": {
+        "native": "Zarkhan",
+        "english": "King of Demons"
+      },
+      "gender": "male",
+      "people": "demons",
+      "stance": "zin_shadow_dread",
+      "traits": [
+        "zin_trait_king_of_demons",
+        "zin_trait_secluded_eldest"
+      ],
+      "bio": "The King of Demons rules the Nether island and the Halls beneath it from Zarath-Nazur, and his own name is not spoken among men. The houses of the Halls compete for his favour and for the right to open portals, and the house of Agon is among the oldest and least obedient of them. He sells companies to Nafeher by a bargain he renews each reign and never swears, and he still answers those who know the old rites and pay his price, a pact that binds the living and ends with them, because the dead are Zol's.",
+      "portrait": {
+        "appearance": "A towering demon king, wise and very old, with great curved horns and ember eyes; his face partly in shadow.",
+        "dress": "A mantle of black and burning red, a crown of obsidian, a trident of dark iron.",
+        "colours": "Hall black (#1a0a0a), fire red (#c0301a), gold flame (#e0a040)."
+      },
+      "canon": "E",
+      "note": "His name is the owner's to give (the dossier proposes Kherazel); no name is shown or invented here, and no age."
+    },
+    "heir": {
+      "note": "Open in the vault: nothing is known of how the King of Demons came to his throne or who would follow him.",
+      "succession": "Open (vault)."
+    },
+    "advisors": [
+      {
+        "id": "zin_nether_khorvael",
+        "name": "Khorvael of the House of Agon",
+        "given": "Khorvael",
+        "office": "Lord of the House of Agon",
+        "gender": "male",
+        "people": "demons",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_pact_broker"
+        ],
+        "role": "Speaks for the house of Agon at the king's court, as obediently as that house ever does, which is not very.",
+        "portrait": "A sharp-horned demon lord in red with a smile that does not reach the eyes.",
+        "canon": "P",
+        "note": "A lord of Agon's house, not Agon himself, whose rank, fate and relation to the king are open."
+      },
+      {
+        "id": "zin_nether_zhorara",
+        "name": "Zhorara, Keeper of the Portal Rings",
+        "given": "Zhorara",
+        "office": "Keeper of the Portal Rings",
+        "gender": "female",
+        "people": "demons",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_pact_broker"
+        ],
+        "role": "Keeps the old portal rings on the Burning Shore, which have stood closed since the houses quarrelled with the Necromancer's order.",
+        "portrait": "A demoness among broken stone rings on a black shore.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_nether_zarek",
+        "name": "Zarek, Master of the Galleries",
+        "given": "Zarek",
+        "office": "Master of the Obsidian Galleries",
+        "gender": "male",
+        "people": "demons",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Works the thralls in the obsidian galleries and raises the companies the king sells to Nafeher.",
+        "portrait": "A heavy demon with an obsidian maul and the thrall-roll.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_nether_vorathael",
+        "name": "Vorathael of the Burning Shore",
+        "given": "Vorathael",
+        "office": "Captain of the Burning Shore",
+        "gender": "male",
+        "people": "demons",
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 5,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine",
+          "brilliant_strategist"
+        ],
+        "role": "Commands the companies of the houses on the Burning Shore and leads those the king lends to Nafeher.",
+        "portrait": "A winged demon captain with a burning sword.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_nether_thazira",
+        "name": "Thazira of the Sea of Lava",
+        "given": "Thazira",
+        "office": "Captain of the Fire-Galleys",
+        "gender": "female",
+        "people": "demons",
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "bold"
+        ],
+        "role": "Commands the fire-proof galleys on the Sea of Lava.",
+        "portrait": "A demoness on a galley of black iron over glowing water.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HAL",
+    "key": "halia",
+    "name": "Halia",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "HAL_zin_ruler",
+      "name": "Moot-Headman Delen of Bennen",
+      "given": "Delen",
+      "house": "of Bennen",
+      "title": {
+        "native": null,
+        "english": "Moot-Headman of the Salt Coast"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6771,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_salt_for_silence",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Delen of Bennen was chosen Moot-Headman by the headmen of the five freeholds at Halon, and he speaks for the salt coast for his three years. The league pays its salt and fish to Nafeher for silence, as the freeholders' grandfathers did, and trades with Mirolon, its cousin, on the other side. He buries the dead quickly and deep with salt, says nothing of the south at the graveside, and does not like the talk in the taverns about the traveller who came this way and did not grow older.",
+      "portrait": {
+        "appearance": "A sun-tanned, salt-cracked man with a grey beard and a hooded, careful face.",
+        "dress": "A hooded linen robe bleached by salt, a headman's staff, a pouch of salt at the belt.",
+        "colours": "Salt sand (#c9b58a), sea blue (#3e6b78), rust (#8a5a3a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the headmen of the five freeholds choose a Moot-Headman for three years.",
+      "succession": "Elective, three years (the Salt-Moot)."
+    },
+    "advisors": [
+      {
+        "id": "zin_shared_dead_lands_maelor",
+        "name": "Maelor of Gelon, Master of the Salt-Pans",
+        "given": "Maelor",
+        "office": "Master of the Salt-Pans",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the salt-pans and the yearly payment of salt and fish to Nafeher, and has the receipts of every year since the league was sworn.",
+        "portrait": "A salt-maker with white-crusted forearms and a rake.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_shared_dead_lands_irenela",
+        "name": "Irenela the Grave-Wife",
+        "given": "Irenela",
+        "office": "Grave-Wife of Halon",
+        "gender": "female",
+        "people": "men",
+        "born": 6760,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Buries the dead of the salt coast with salt, quickly and deep, and keeps the Salt Day.",
+        "portrait": "An old woman in a dark hood with a bowl of salt.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_shared_dead_lands_barell",
+        "name": "Barell the Innkeeper",
+        "given": "Barell",
+        "office": "Keeper of the Halon tavern",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_whisper_master"
+        ],
+        "role": "Keeps the tavern where the salt coast tells the story of the thief who came this way, and hears everything else that is said over his cups.",
+        "portrait": "A broad innkeeper with a cloth over his shoulder and a jug.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_shared_dead_lands_noran",
+        "name": "Noran of Dra",
+        "given": "Noran",
+        "office": "Captain of the Slingers",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Leads the slingers of the five freeholds, who have never had to fight anyone who could not be paid to leave.",
+        "portrait": "A lean slinger in a hooded robe.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_shared_dead_lands_venell",
+        "name": "Venell of Mirodor",
+        "given": "Venell",
+        "office": "Captain of the Salt Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the fishing boats of Veleeda when they are armed, which is seldom.",
+        "portrait": "A fisher-woman with a gaff at the tiller.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NAN",
+    "key": "nan",
+    "name": "Nan",
+    "stance": "zin_dom_warlord",
+    "court": "standard",
+    "ruler": {
+      "id": "NAN_zin_ruler",
+      "name": "Almon the Small",
+      "given": "Almon",
+      "house": "Warlord of Larorun",
+      "title": {
+        "native": null,
+        "english": "Warlord of Larorun"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6780,
+      "stance": "zin_dom_warlord",
+      "traits": [
+        "zin_trait_storm_pilot",
+        "zin_trait_warband_chief"
+      ],
+      "bio": "Almon the Small is a wayfinder from the southern isles whom the hill chieftains of the Nan Mountains have followed since 4A 1731, and a warlord of Larorun keeps his seat only for as long as he keeps winning. His pilots alone know the route through the storm belt of the Tempest Reach, which his wayfinders charted and keep secret. He pays his toll to Nafeher, lends the Dominion his storm-pilots and sells the same pilots to anyone who pays more, which makes him the one ruler of the Ember Lands that both Mirolon and Nafeher need.",
+      "portrait": {
+        "appearance": "A short, wiry, sun-tanned islander with a quick grin, salt-bleached hair and a wayfinder's squint.",
+        "dress": "A hooded sea-cloak over a leather jerkin, a chart-case on his back, a warlord's torc.",
+        "colours": "Salt sand (#c9b58a), sea blue (#3e6b78), rust (#8a5a3a)."
+      },
+      "canon": "H",
+      "formerName": "Warlord Dumar of Vez Nan (characters spec; superseded by the histories)"
+    },
+    "heir": {
+      "id": "zin_regional_nan_ferell",
+      "name": "Ferell of the Hill Clans",
+      "given": "Ferell",
+      "office": "Chieftain of the eastern hill clans",
+      "gender": "male",
+      "people": "men",
+      "born": 6776,
+      "traits": [
+        "zin_trait_war_party"
+      ],
+      "role": "The strongest of the hill chieftains, who would be acclaimed the day Almon stops winning, and makes sure Almon knows it.",
+      "succession": "By acclamation of the hill chieftains, kept by success.",
+      "portrait": "A big hill chieftain with a grey-streaked beard and a great axe.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_nan_almara",
+        "name": "Almara of the Charts",
+        "given": "Almara",
+        "office": "Keeper of the Wayfinders' Charts",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Keeps the charts of the storm-pilots' route through the Tempest Reach, and nobody has ever seen her write them down.",
+        "portrait": "A weather-beaten woman with knotted charts on her arms.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nan_barol",
+        "name": "Barol the Hill-Speaker",
+        "given": "Barol",
+        "office": "Speaker of the hill chieftains",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_war_speaker"
+        ],
+        "role": "Speaks for the chieftains at Larorun and calls the clans to war when the warlord asks, and sometimes when he does not.",
+        "portrait": "A grizzled chieftain with a war-horn and a fur cloak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nan_venic",
+        "name": "Venic the Toll-Envoy",
+        "given": "Venic",
+        "office": "Envoy to Nafeher",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries Nan's toll and its prices to Nafeher and to Miherta, and is careful never to tell either what the other paid.",
+        "portrait": "A sleek man in a grey cloak with a purse at each side.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_nan_delar",
+        "name": "Delar of the Storm-Pilots",
+        "given": "Delar",
+        "office": "First of the Storm-Pilots",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 3,
+          "maneuvering": 4,
+          "coordination": 2
+        },
+        "traits": [
+          "blue_water_expert",
+          "bold"
+        ],
+        "role": "The best of the storm-pilots of Nan, who keeps the route Feron the Grey first learned.",
+        "portrait": "A storm-pilot with a salt-stiff cloak and a lead-line.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nan_venor",
+        "name": "Venor of the Larorun Fort",
+        "given": "Venor",
+        "office": "Captain of Larorun",
+        "gender": "male",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Holds the warlord's fort and leads the hill-folk in the field.",
+        "portrait": "A hill captain with a round shield and a short sword.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "OLE",
+    "key": "olen",
+    "name": "Olen",
+    "stance": "zin_wild_freeholds",
+    "stanceNote": "Kept as countries.csv has it; a shrine-realm that shelters refugees could also be zin_light_sanctuary. Owner to decide.",
+    "court": "standard",
+    "ruler": {
+      "id": "OLE_zin_ruler",
+      "name": "First Keeper Dolara of the Lamps",
+      "given": "Dolara",
+      "house": "of the Lamps",
+      "title": {
+        "native": null,
+        "english": "First Keeper of the Lamps"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6768,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_lamp_keeper",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Dolara was chosen First Keeper by the keepers of the cliff lamps, and she governs the isle of the Holy Breeze, the lamp-cliffs and Luminor from Gelbus. Her lamps are the first lights a ship sees coming out of the storm belt, and she shelters whoever reaches the cliffs. When three hundred thralls fled Khorvrath across Veleeda she took them in, and she has refused every demand to give them back, though Olen still pays its toll to Nafeher.",
+      "portrait": {
+        "appearance": "A tall, calm woman with a sun-tanned face and grey eyes, her hair covered by a hood.",
+        "dress": "A pale hooded robe with a lamp-badge of brass, a lit lamp in one hand.",
+        "colours": "Salt sand (#c9b58a), sea blue (#3e6b78), lamp gold."
+      },
+      "canon": "P",
+      "formerName": "Helia of the Lamps (one letter from the realm name Halia; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: the keepers of the cliff lamps choose a First Keeper from among themselves.",
+      "succession": "Elective (the lamp-keepers)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_olen_nael",
+        "name": "Nael of the Holy Breeze",
+        "given": "Nael",
+        "office": "Keeper of the Shrine of the Holy Breeze",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the shrine at Gelbus where the Holy Breeze once kept the lamps lit through a whole winter.",
+        "portrait": "An old keeper in white with a brass lamp in the wind.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_olen_fenella",
+        "name": "Fenella of Luminor",
+        "given": "Fenella",
+        "office": "Speaker of Luminor",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Speaks for the freehold of Luminor, which joined the shrine-realm and still likes to be asked first.",
+        "portrait": "A sea-woman in a blue hood with a freehold seal.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_olen_barlon",
+        "name": "Barlon of the Shelter",
+        "given": "Barlon",
+        "office": "Keeper of the Shelter",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_pilgrim_steward"
+        ],
+        "role": "Keeps the shelter where the runaway thralls of Khorvrath live, and the pilgrims who come by sea besides.",
+        "portrait": "A broad man with a ladle and a ring of shelter keys.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_olen_norell",
+        "name": "Norell of the Cliffs",
+        "given": "Norell",
+        "office": "Captain of the Cliff Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Guards the cliff paths of Gelbus with slingers and short swords.",
+        "portrait": "A guard on a cliff path with a sling.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_olen_faeline",
+        "name": "Faeline of the Lamp Boats",
+        "given": "Faeline",
+        "office": "Captain of the Lamp Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6783,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Takes the lamp boats out to bring in ships lost in the storm belt.",
+        "portrait": "A boat-captain with a lantern at the bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]

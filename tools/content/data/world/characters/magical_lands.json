@@ -1,0 +1,1552 @@
+[
+  {
+    "tag": "MAG",
+    "key": "magical_forest",
+    "name": "Magical Forest",
+    "stance": "zin_light_kinship",
+    "court": "great",
+    "ruler": {
+      "id": "MAG_zin_ruler",
+      "name": "First Speaker Lusiel Velakorin",
+      "given": "Lusiel",
+      "house": "House of Velakorin",
+      "title": {
+        "native": null,
+        "english": "First Speaker of the Houses"
+      },
+      "gender": "female",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_speaker_of_houses",
+        "zin_trait_ancient_king"
+      ],
+      "bio": "Lusiel of the house of Velakorin has been First Speaker for as long as the houses have trusted her, which by the reckoning of men is a very long time, and she is of the same house as Sirael, the war-speaker of the Grand Alliance. She keeps the book of precedents, can call an Elder Moot of the Kindred, and with the other elven realms can ask the dragons of Dragon Mountain for help that no crown of men can command. When the houses of the Long Shore proposed in the Elder Moot to set the Refusal aside for a peace with the eastern courts, it was her houses that refused, and she has not changed her mind.",
+      "portrait": {
+        "appearance": "A fine-boned, ancient elf with long silver-pale hair and calm grey-green eyes; timeless, no visible age.",
+        "dress": "A gown of leaf-green over white, a slender silver circlet, the book of precedents bound in pale wood at her side.",
+        "colours": "Leaf green (#4f9a5a), mist white (#d8e0d2), silver grey (#9aa6b0)."
+      },
+      "canon": "S",
+      "note": "Elves are never given an age (V23); no birth year."
+    },
+    "heir": {
+      "note": "No heir: the houses vote and choose a First Speaker; no house has a right to the office.",
+      "succession": "Elective (the houses)."
+    },
+    "advisors": [
+      {
+        "id": "zin_magical_forest_perlan",
+        "name": "Perlan, Warden of the Dragon Roosts",
+        "given": "Perlan",
+        "office": "Warden of the Dragon Roosts",
+        "gender": "male",
+        "people": "elves",
+        "slot": "high_command",
+        "traits": [
+          "zin_trait_dragon_warden"
+        ],
+        "role": "Keeps the houses' side of the old pact with the dragons and is the one elf of the forest the roost-keepers of Yavieth will listen to without a long argument first.",
+        "portrait": "An elf in a cloak of shed dragon-scale, green and bronze, with a carved horn.",
+        "canon": "S",
+        "definedBy": "Magical Forest tree (zin_magical_forest_recruit) and the elves mechanic"
+      },
+      {
+        "id": "zin_magical_forest_aenwe",
+        "name": "Loremaster Aenwe Lozari",
+        "given": "Aenwe",
+        "house": "Lozari",
+        "office": "Loremaster of the Houses",
+        "gender": "female",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_elder_memory"
+        ],
+        "role": "Remembers the Third Age, the Necromancer's armies at the forest edge and the wizard Varner, and will tell any young elf who asks, at length.",
+        "portrait": "An elf scholar with a silver-bound book and ink-dark fingers.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_magical_forest_ilwaeth",
+        "name": "Ilwaeth of the Singing Groves",
+        "given": "Ilwaeth",
+        "office": "First Singer of the Singing Groves",
+        "gender": "male",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_song_warden"
+        ],
+        "role": "The forest's named wizard, a singer of the old wards who renews the songs of the Singing Groves and of the forest edge, and who says a ward sung in haste is a ward sung twice.",
+        "portrait": "A tall elf in pale grey with a harp of white wood and leaves caught in his hair.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_magical_forest_ornethiel",
+        "name": "Ornethiel, Keeper of the Book",
+        "given": "Ornethiel",
+        "office": "Keeper of the Book of Precedents",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Keeps the book of precedents by which the houses vote, and can find the ruling of any year in it before the speaker who asked has finished asking.",
+        "portrait": "A grave elf-woman with a great book on a lectern of living wood.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_magical_forest_taurion",
+        "name": "Taurion, Speaker to Men",
+        "given": "Taurion",
+        "office": "Speaker to the courts of men",
+        "gender": "male",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the houses' letters to Kingson and Parim, and was the elf who closed the eastern fort for the Long Winter when the toll on silver doubled.",
+        "portrait": "An elegant elf in a green travelling cloak with a sealed letter-case.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_magical_forest_dorveth",
+        "name": "Dorveth Silvael, Warden of the Eastern Fort",
+        "given": "Dorveth",
+        "house": "Silvael",
+        "office": "Warden of the Eastern Fort of the Kingson Pass",
+        "gender": "male",
+        "people": "elves",
+        "slot": "army_chief",
+        "traits": [
+          "zin_trait_warden_of_the_passes"
+        ],
+        "role": "Holds the eastern forts of the Kingson Pass under the Accord of the Passes and reads the toll-books of the men across the gorge with great care.",
+        "portrait": "An elf warden in grey-green mail with a tall bow.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_magical_forest_herrian",
+        "name": "Marshal Herrian Lustel",
+        "given": "Herrian",
+        "house": "Lustel",
+        "office": "Marshal of the Houses",
+        "gender": "male",
+        "people": "elves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 3,
+          "defense": 5,
+          "planning": 4,
+          "logistics": 3
+        },
+        "traits": [
+          "ranger",
+          "defensive_doctrine"
+        ],
+        "role": "Marshal of the houses' bowmen and swordsmen, who has not led them to war since the forest last needed it and plans as though it will tomorrow.",
+        "portrait": "An elf marshal in leaf-mail with a long sword and a silver horn.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_magical_forest_ithrandel",
+        "name": "Ithrandel, Captain of the Long Patrols",
+        "given": "Ithrandel",
+        "office": "Captain of the Long Patrols",
+        "gender": "male",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger",
+          "trickster"
+        ],
+        "role": "A younger captain beside Herrian, who leads the long patrols on the forest's borders and knows every path the eastern raiders might use.",
+        "portrait": "A young elf captain in patrol greens with a short bow.",
+        "canon": "S",
+        "definedBy": "Magical Forest tree (Captains of the Houses)"
+      },
+      {
+        "id": "zin_magical_forest_aelith",
+        "name": "Aelith of the Southern Edge",
+        "given": "Aelith",
+        "office": "Captain of the Southern Edge",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger",
+          "unyielding_defender"
+        ],
+        "role": "Watches the forest's southern edge above the pilgrim valleys of the Zilin Hills and counts the trees as carefully as the pilgrims.",
+        "portrait": "An elf-woman in dark green with a spear of white ash.",
+        "canon": "P"
+      }
+    ],
+    "figures": [
+      {
+        "id": "zin_varner",
+        "name": "Varner",
+        "given": "Varner",
+        "office": "Wizard of the Magical Lands",
+        "gender": "male",
+        "people": "spirits",
+        "traits": [],
+        "role": "A wise wizard and Lesser Spirit of the Magical Lands who helped the elves and men withstand the Necromancer through the Third Age; to men he is a legend.",
+        "portrait": "Appearance not established; proposal: weathered and grey-cloaked.",
+        "canon": "E",
+        "definedBy": "characters spec story figures (Eindil's journey mechanic)",
+        "recruit": "Defined, recruited by nobody at the start; enters on zin_eindil_returned.",
+        "note": "He belongs to no realm here; no text may say where he is before he appears (gate E4)."
+      },
+      {
+        "id": "zin_golbran",
+        "name": "Golbran",
+        "given": "Golbran",
+        "office": "Servant of Varner",
+        "gender": "male",
+        "people": "spirits",
+        "traits": [],
+        "role": "Varner's small purple servant, of unknown species and origin.",
+        "portrait": "Small, purple and humanoid; no other features invented.",
+        "canon": "E",
+        "definedBy": "characters spec story figures",
+        "recruit": "Defined, recruited by nobody; travels with Varner.",
+        "note": "Species and origin open (E6)."
+      }
+    ]
+  },
+  {
+    "tag": "WOR",
+    "key": "worshipdom",
+    "name": "Worshipdom",
+    "stance": "zin_light_sanctuary",
+    "court": "great",
+    "ruler": {
+      "id": "zin_aurevan",
+      "name": "Aurevan the Deliverer",
+      "given": "Aurevan",
+      "title": {
+        "native": null,
+        "english": "the Deliverer"
+      },
+      "gender": "male",
+      "people": "men",
+      "stance": "zin_light_sanctuary",
+      "traits": [
+        "zin_trait_beloved_god",
+        "zin_trait_beloved_deliverer"
+      ],
+      "bio": "The faithful of every land hold Aurevan the Deliverer to be the New God who ended the Great Necromancer's reign and has kept the peace of the Fourth Age ever since. He is seldom seen, and in the three Zilin valleys his High Confessor keeps the hostels, the couriers and the confessors in his name. The temples have never been fuller, and the abbots say that is only what a grateful age owes him.",
+      "portrait": {
+        "appearance": "Radiant, human and ageless, a man of noble Aenoran features with a calm, kindly gaze; no crown, no horns, no shadow.",
+        "dress": "White and gold robes, unadorned, a plain gold clasp at the breast.",
+        "colours": "Pilgrim white (#efe9d0), temple gold (#c9a24a), sky blue (#8aa8c9)."
+      },
+      "canon": "E",
+      "definedBy": "characters spec and Afrit mechanic (zin_aurevan; four portrait states A1 to A4)",
+      "note": "Public name proposed (key zin_name_aurevan); no birth year (a being). The roster's \"under the High Confessor\" is the Worshipdom's daily government; the leader is the Deliverer (D1).",
+      "secret": "Is Afrit, son of Ein (A1). Portraits A3 and A4 only after zin_afrit_revealed. The Worshipdom's own texts say Afrit through zin_loc_deliverer."
+    },
+    "heir": {
+      "note": "No heir: the Deliverer has no successor. The High Confessor, chosen by the abbots of the pilgrim houses, governs the valleys in his name and leads the Worshipdom while he is elsewhere.",
+      "succession": "None (the High Confessor governs)."
+    },
+    "advisors": [
+      {
+        "id": "zin_ilvane",
+        "name": "Ilvane, High Confessor",
+        "given": "Ilvane",
+        "office": "High Confessor of Lenlakron",
+        "gender": "male",
+        "people": "men",
+        "born": null,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_high_confessor"
+        ],
+        "role": "Chosen by the abbots of the pilgrim houses, he keeps the temples' voice and blessed the Lost Cause at its founding; the courts of Parim, the East and the North all receive him gladly.",
+        "portrait": "A tall priest in white and gold with a censer on a chain.",
+        "canon": "S",
+        "definedBy": "Afrit mechanic (mech_afrit.json)",
+        "note": "Defined by the Afrit mechanic; no birth year is set here.",
+        "secret": "Holds the Seat of Censers of the Hidden Council."
+      },
+      {
+        "id": "zin_corvel",
+        "name": "Corvel, Master of Couriers",
+        "given": "Corvel",
+        "office": "Master of Couriers",
+        "gender": "male",
+        "people": "men",
+        "born": null,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_master_of_couriers"
+        ],
+        "role": "Runs the couriers who carry letters for any court that asks at a small fee, and knows every road and every rider on it.",
+        "portrait": "A lean traveller in dust-grey with a courier's satchel.",
+        "canon": "S",
+        "definedBy": "Afrit mechanic (mech_afrit.json)",
+        "note": "Defined by the Afrit mechanic; no birth year is set here.",
+        "secret": "Holds the Seat of Whispers."
+      },
+      {
+        "id": "zin_kessarion",
+        "name": "Kessarion the Envoy",
+        "given": "Kessarion",
+        "office": "Envoy of the pilgrim houses to the eastern courts",
+        "gender": "male",
+        "people": "men",
+        "born": null,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_envoy_of_many_courts"
+        ],
+        "role": "Carries the pilgrim houses' greetings to the courts of the East and has a seat at every table there.",
+        "portrait": "An elegant traveller in eastern silks.",
+        "canon": "S",
+        "definedBy": "Afrit mechanic (mech_afrit.json)",
+        "note": "Defined by the Afrit mechanic; no birth year is set here.",
+        "secret": "Leads Corvel's eastern branch; no public text names him as such."
+      },
+      {
+        "id": "zin_ossar",
+        "name": "Magister Velan Ossar",
+        "given": "Velan",
+        "house": "Ossar",
+        "office": "Scholar of the Reliquary",
+        "gender": "male",
+        "people": "men",
+        "born": null,
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_seeker_of_relics"
+        ],
+        "role": "Keeps the reliquary of the valleys, including the gilded one the Golden King gave, and reads old things for what they once meant.",
+        "portrait": "A gaunt scholar with a sealed casket.",
+        "canon": "S",
+        "definedBy": "Afrit mechanic (mech_afrit.json)",
+        "note": "Defined by the Afrit mechanic; no birth year is set here.",
+        "secret": "The Reliquary's scholar under Sevrin."
+      },
+      {
+        "id": "zin_worshipdom_lozan",
+        "name": "Abbot-Steward Lozan Heron",
+        "given": "Lozan",
+        "house": "Heron",
+        "office": "Abbot-Steward of the Valleys",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_pilgrim_steward"
+        ],
+        "role": "Runs the three pilgrim valleys, their hostels and their hospitals, and has fed more travellers than any lord of Aoaz.",
+        "portrait": "A plain-robed, round-faced abbot with a ladle and a ring of keys.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_sevrin",
+        "name": "Sevrin the Unending",
+        "given": "Sevrin",
+        "office": "Guest of the Reliquary",
+        "gender": "male",
+        "people": "men",
+        "born": null,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_unending_thief"
+        ],
+        "role": "A quiet guest of the reliquary who seems never to grow older.",
+        "portrait": "An unageing man with old eyes in dark travelling clothes.",
+        "canon": "S",
+        "definedBy": "Afrit mechanic (hidden until the focus A Guest of the Reliquary)",
+        "note": "Unageing; no birth year. Hidden at the start.",
+        "secret": "The immortal thief of the Necklace of the Abyss (A6); Seat of Relics."
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_worshipdom_nolivar",
+        "name": "Brother-Captain Nolivar",
+        "given": "Nolivar",
+        "office": "Captain of the Pilgrim Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trickster"
+        ],
+        "role": "Commands the valley wardens of the Pilgrim Guard, who carry staves more often than swords and are better at finding lost pilgrims than at fighting.",
+        "portrait": "A temple guard in a white tabard with a quarterstaff.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_worshipdom_edette",
+        "name": "Sister-Warden Edette of the Hostels",
+        "given": "Edette",
+        "office": "Warden of the Hostel Roads",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Keeps the hostel roads of the three valleys open in winter and the pilgrims moving on them.",
+        "portrait": "A white-robed warden with a lantern and a travelling staff.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HRR",
+    "key": "herrodon",
+    "name": "Herrodon",
+    "stance": "zin_light_kinship",
+    "court": "standard",
+    "ruler": {
+      "id": "HRR_zin_ruler",
+      "name": "Queen Ornwen of Herrodon",
+      "given": "Ornwen",
+      "house": "acclaimed in the Hall of Verozo",
+      "title": {
+        "native": "Dunai",
+        "english": "Queen of Herrodon"
+      },
+      "gender": "female",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_ancient_king",
+        "zin_trait_dragon_warden"
+      ],
+      "bio": "Ornwen was acclaimed queen in the Hall of Verozo by the hall-keepers of the hill houses and will reign until she lays the hall-key down. She keeps the Boundary Groves feud with Andos Enda alive by ceremony, holds the men of the Teste Vale under her protection, and keeps a seat empty in her hall for the Eldest of the lost household in the west, as her mother did. She has said she would set the Refusal aside if the dragons were ever threatened, and the other houses believe her.",
+      "portrait": {
+        "appearance": "A sharp-featured elf with dark hair and bright grey eyes; no visible age.",
+        "dress": "A hill-queen's gown of deep green with a red mantle, the iron hall-key of Verozo on a chain.",
+        "colours": "Hill green (#3f6f4a), silver (#c9c9d2), queen's red (#a8402f)."
+      },
+      "canon": "P",
+      "formerName": "Herrowyn (named after the realm; renamed under the place-name rule)"
+    },
+    "heir": {
+      "id": "zin_regional_herrodon_lyriel",
+      "name": "Lyriel, daughter of the Queen",
+      "given": "Lyriel",
+      "office": "Daughter of the Queen",
+      "gender": "female",
+      "people": "elves",
+      "traits": [
+        "zin_trait_war_party"
+      ],
+      "role": "The queen's daughter, who may be acclaimed or passed over when the hall-key is laid down, as the daughters of queens have been in roughly equal number.",
+      "succession": "Acclaimed in the hall by the hall-keepers, never by blood alone.",
+      "portrait": "A young elf in green with a red cord in her dark hair.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_herrodon_lusithan",
+        "name": "Lusithan of Herrodon",
+        "given": "Lusithan",
+        "office": "Stone-singer of the hill houses",
+        "gender": "male",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_song_warden"
+        ],
+        "role": "Herrodon's named wizard, a stone-singer old enough to have sung the pass-wards renewed at the Accord of the Passes; he will sing the living rock and will not sing a siege-work.",
+        "portrait": "An old elf with a voice like a deep bell, his hands pressed to a standing stone.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
+      },
+      {
+        "id": "zin_regional_herrodon_halveth",
+        "name": "Halveth, Eldest Hall-Keeper",
+        "given": "Halveth",
+        "office": "Eldest Hall-Keeper of Verozo",
+        "gender": "male",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Eldest of the hall-keepers who acclaim the queens, and the keeper of the hall's book in which the lost household of the west is written.",
+        "portrait": "A grey-cloaked elf with a book of names and the keys of the hall.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_herrodon_taveth",
+        "name": "Taveth, Warden of the Boundary Groves",
+        "given": "Taveth",
+        "office": "Warden of the Boundary Groves",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Keeps Herrodon's rites in the Boundary Groves and argues the feud with Andos Enda's Water-Court every year, in verse.",
+        "portrait": "An elf-woman with a garland of the groves' leaves and a scroll of petitions.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_herrodon_kaelorn",
+        "name": "Marshal Kaelorn of the Hill Houses",
+        "given": "Kaelorn",
+        "office": "Marshal of the Hill Houses",
+        "gender": "male",
+        "people": "elves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger",
+          "hill_fighter"
+        ],
+        "role": "Leads the rangers of the hill houses and has hunted every ogre that strayed down from the heights.",
+        "portrait": "A dark-haired elf in hill-green with a war-bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_herrodon_nymiel",
+        "name": "Nymiel of the Teste Rim",
+        "given": "Nymiel",
+        "office": "Captain of the Rim",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Captain of the rangers who guard the rim above the Teste Vale and teach its men the bow.",
+        "portrait": "An elf-woman ranger with a red-fletched quiver.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "ANE",
+    "key": "andos_enda",
+    "name": "Andos Enda",
+    "stance": "zin_light_kinship",
+    "court": "standard",
+    "ruler": {
+      "id": "ANE_zin_ruler",
+      "name": "Speaker Nymeth of the Water-Court",
+      "given": "Nymeth",
+      "house": "of the lake groves",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Water-Court"
+      },
+      "gender": "female",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Nymeth was chosen by the groves to sit over the Water-Court and speak for the federation abroad, and for the length of her office she bears the name of the largest lake, as every Speaker has. Her boats carry the letters between Sonargur and the elven realms, and she granted the Leren ships harbour on the Andos Water while declining the Leren Compact itself, because the groves will not bind themselves to a crown of men. She keeps the quarrel over the Boundary Groves as her predecessors did, politely and without end.",
+      "portrait": {
+        "appearance": "A pale, dark-haired lake elf with still, watchful eyes; no visible age.",
+        "dress": "A blue-grey robe the colour of lake water, a silver reed-crown of office, a weir-judge's rod.",
+        "colours": "Lake teal (#4a8a8a), mist (#d8e0e0), slate blue (#8a9ab0)."
+      },
+      "canon": "P",
+      "formerName": "Andosiel (the lake-name the Speaker bears in office; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: the groves choose the next Speaker, who takes the lake's name for the length of office.",
+      "succession": "Elective (the groves)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_andos_enda_ilwen",
+        "name": "Ilwen of the Weirs",
+        "given": "Ilwen",
+        "office": "Judge of the Water-Court",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Judges the weirs, the boats and the Boundary Groves, and has never yet found for Herrodon.",
+        "portrait": "An elf-woman in blue with a staff carved with water-marks.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_andos_enda_ferian",
+        "name": "Ferian, Master of the Letter-Boats",
+        "given": "Ferian",
+        "office": "Master of the Letter-Boats",
+        "gender": "male",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Runs the boats that carry the letters between Sonargur and the elven realms, and reads more of them than he is meant to.",
+        "portrait": "An elf boatman with a satchel of sealed letters and a long pole.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_andos_enda_sireth",
+        "name": "Sireth of the Dawn Shore",
+        "given": "Sireth",
+        "office": "Keeper of the dawn guests",
+        "gender": "female",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_song_warden"
+        ],
+        "role": "Keeps the lake elves' custom of sheltering every guest for a night and sending them on at dawn, and sings the farewell over the water.",
+        "portrait": "An elf-woman with a lantern on a boat's prow at dawn.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_andos_enda_orvian",
+        "name": "Orvian of the Boat Archers",
+        "given": "Orvian",
+        "office": "Captain of the Boat Archers",
+        "gender": "male",
+        "people": "elves",
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the boat archers of the lakes and the Andos Water, who guard the letter-boats on their way to the sea.",
+        "portrait": "An elf archer standing in a narrow lake boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_andos_enda_thaleth",
+        "name": "Thaleth of the Groves",
+        "given": "Thaleth",
+        "office": "Captain of the Grove Wardens",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the wardens of the lake groves and keeps the federation's bank of the Boundary Groves.",
+        "portrait": "An elf-woman in blue-green with a long bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NLR",
+    "key": "nolorim",
+    "name": "Nolorim",
+    "stance": "zin_light_kinship",
+    "court": "standard",
+    "ruler": {
+      "id": "NLR_zin_ruler",
+      "name": "Pass-Warden Tavion",
+      "given": "Tavion",
+      "house": "of the warden families of the Posts",
+      "title": {
+        "native": "Tholgerith",
+        "english": "Pass-Warden of Nolorim"
+      },
+      "gender": "male",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_warden_of_the_passes",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Tavion was elected Pass-Warden by the post-captains of the warden families and will hold the office until a vigil is broken on his watch, which has never happened to any Pass-Warden. His families count every pilgrim, merchant and stranger who crosses the South Pass, and they let the Deliverer's pilgrims through unarmed and in daylight, counting each one. His watch on the Lake of Mirolon is the only one in the Magical Lands that never stopped, and he reads its reports himself.",
+      "portrait": {
+        "appearance": "A lean, grey-cloaked elf with a weathered face and pale watchful eyes; no visible age.",
+        "dress": "A grey warden's cloak over light mail, a long bow, the post-tally of the Pass-Warden at his belt.",
+        "colours": "Pass grey-green (#5f7a6a), frost (#c9ceca), slate (#6a6f78)."
+      },
+      "canon": "P",
+      "formerName": "Nolwe (named after the realm; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: the post-captains elect the next Pass-Warden.",
+      "succession": "Elective (the post-captains)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_nolorim_elwith",
+        "name": "Elwith, Keeper of the Tally",
+        "given": "Elwith",
+        "office": "Keeper of the Pass Tally",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_keeper_of_rolls"
+        ],
+        "role": "Keeps the tally of everyone who has crossed the South Pass for longer than men have kept birth rolls.",
+        "portrait": "An elf-woman with a long notched tally-staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nolorim_fenwen",
+        "name": "Fenwen of the Lake Watch",
+        "given": "Fenwen",
+        "office": "Warden of the Lake Watch",
+        "gender": "male",
+        "people": "elves",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "Commands the watch on the Lake of Mirolon and trades news with Mirolon's beacon towers across the water.",
+        "portrait": "An elf in a hooded grey cloak with a far-glass of crystal.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nolorim_sirwaeth",
+        "name": "Sirwaeth of the Eastern Tower",
+        "given": "Sirwaeth",
+        "office": "Captain of the Eastern Tower of the South Pass",
+        "gender": "male",
+        "people": "elves",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_captain_general"
+        ],
+        "role": "Holds the eastern tower facing the Klungori Guard across the saddle and keeps a courteous watch on both the Guard and the pilgrims.",
+        "portrait": "An elf captain in grey mail on a tower stair.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_nolorim_halith",
+        "name": "Halith of the Heights",
+        "given": "Halith",
+        "office": "Captain of the Heights",
+        "gender": "male",
+        "people": "elves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 5,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer",
+          "unyielding_defender"
+        ],
+        "role": "Holds the Nolorim West Pass that the Order's hosts tried three times and never crossed.",
+        "portrait": "An elf in grey with a tall shield beside a cairn of old helms.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_nolorim_tavaneth",
+        "name": "Tavaneth of the Posts",
+        "given": "Tavaneth",
+        "office": "Captain of the Mountain Archers",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Leads the mountain archers of the posts.",
+        "portrait": "An elf-woman archer on a snowy ledge.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "LCC",
+    "key": "lccimio",
+    "name": "Lccimio",
+    "stance": "zin_light_kinship",
+    "court": "standard",
+    "ruler": {
+      "id": "LCC_zin_ruler",
+      "name": "Elder Fenith of the Long Shore",
+      "given": "Fenith",
+      "house": "of the houses of the quays",
+      "title": {
+        "native": "Elda",
+        "english": "Elder of the Long Shore"
+      },
+      "gender": "male",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_truce_maker"
+      ],
+      "bio": "Fenith keeps the quay-book of the Long Shore, an office that passes between the houses of the orchards and the houses of the quays in turn, and this turn is the quays'. His houses know the eastern courts better than any elves alive and would trade the Refusal for an eastern peace, which the Magical Forest refused them in the Elder Moot and the shore has not forgotten. He knows his orchards and quays lie first in the path of anyone who crosses the rift, and he would rather make a treaty than a war.",
+      "portrait": {
+        "appearance": "A sea-pale elf with salt-whitened hair and a quick, merchant's smile; no visible age.",
+        "dress": "A sea-blue coat of fine wool, an orchard-blossom brooch, the quay-book under his arm.",
+        "colours": "Rift teal (#3f8a8a), sea-pale (#d6dce0), dusk blue (#8a96aa)."
+      },
+      "canon": "P",
+      "formerName": "Lusmio (named after the realm; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: the elder houses choose the next Elder, by turn from the orchards and the quays.",
+      "succession": "Elective by turn (the elder houses)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_lccimio_aenwith",
+        "name": "Aenwith of the Orchards",
+        "given": "Aenwith",
+        "office": "Mistress of the Orchards",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Sends the shore's fruit and wine to Parim by the Kingson Pass and will be Elder when the turn comes back to the orchards.",
+        "portrait": "An elf-woman with a basket of golden fruit.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_lccimio_dorwith",
+        "name": "Dorwith, Envoy to the Eastern Courts",
+        "given": "Dorwith",
+        "office": "Envoy to the Eastern Courts",
+        "gender": "male",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Has spent more years at Porrenva than on the Long Shore and speaks Alerhic like a scribe.",
+        "portrait": "An elf in Alerhic-cut silks with a gold collar.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_lccimio_ilthia",
+        "name": "Ilthia of the Narrows",
+        "given": "Ilthia",
+        "office": "Warden of the Narrows",
+        "gender": "female",
+        "people": "elves",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "Watches the Rift Narrows and Luv-zhise's ferries, and would see a landing coming before anyone in the Magical Lands.",
+        "portrait": "An elf-woman on a sea-wall with a lantern.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_lccimio_thaliel",
+        "name": "Thaliel of the Sea Archers",
+        "given": "Thaliel",
+        "office": "Captain of the Sea Archers",
+        "gender": "male",
+        "people": "elves",
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the shore's fast boats and sea archers on the northern rift.",
+        "portrait": "An elf archer at the prow of a white boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_lccimio_fenwaeth",
+        "name": "Fenwaeth of the Quays",
+        "given": "Fenwaeth",
+        "office": "Captain of the Quay Guard",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Leads the guard of the quays and orchards from Mushroom Head to the Gorlab Sea.",
+        "portrait": "An elf-woman in sea-blue mail with a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "ELD",
+    "key": "eldafaen",
+    "name": "Eldafaen",
+    "stance": "zin_light_kinship",
+    "court": "standard",
+    "ruler": {
+      "id": "ELD_zin_ruler",
+      "name": "Archivist Lyreth",
+      "given": "Lyreth",
+      "house": "of the loremasters of Lenkei",
+      "title": {
+        "native": null,
+        "english": "Archivist of the Kindred"
+      },
+      "gender": "female",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_elder_memory",
+        "zin_trait_secluded_eldest"
+      ],
+      "bio": "Lyreth was chosen Archivist by the loremasters of Lenkei and keeps the keys of the Archive, and with them the right to refuse any reader, king or elf. The first book of the Archive, the names of the elves who fell against Volgan, lies at the end of the old roads where every traveller must pass it. She keeps the unfinished book too, the one whose writer stopped in the middle of a sentence, and she will not say who stopped or why. Lately her loremasters have begun copying the oldest books, in case they must be carried away.",
+      "portrait": {
+        "appearance": "A sea-pale elf with ink-dark fingertips and tired, careful eyes; no visible age.",
+        "dress": "A plain grey loremaster's robe, an iron ring of keys at the belt, a copying-board under her arm.",
+        "colours": "Rift teal (#3f8a8a), parchment pale (#d6dce0), ink blue (#8a96aa)."
+      },
+      "canon": "P",
+      "note": "The Archivist is unnamed in the histories; this name is proposed.",
+      "secret": "The unfinished sentence concerns the sons of Ein (roster story role); never stated in player text."
+    },
+    "heir": {
+      "note": "No heir: the loremasters choose the next Archivist from among themselves.",
+      "succession": "Elective (the loremasters)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_the_end_aelwaeth",
+        "name": "Aelwaeth the Copyist",
+        "given": "Aelwaeth",
+        "office": "First of the Copyists",
+        "gender": "male",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Leads the copying of the oldest books against the day they must be carried away, and has not slept a full night since he started.",
+        "portrait": "An elf bent over a copying-desk by lamplight.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_the_end_orniel",
+        "name": "Orniel of the Book of the Fallen",
+        "given": "Orniel",
+        "office": "Keeper of the Book of the Fallen",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the Book of the Fallen at the end of the old roads and reads a name from it to every traveller who stops.",
+        "portrait": "An elf-woman beside a great open book on a stone.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_the_end_silvaren",
+        "name": "Silvaren, Keeper of the Refusal",
+        "given": "Silvaren",
+        "office": "Keeper of the Record of the Refusal",
+        "gender": "male",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Keeps the record of every realm's vote in the Refusal open for any elf who wants to argue with it, and many do.",
+        "portrait": "An elf with a scroll-case and a sharp, amused face.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_the_end_tharwen",
+        "name": "Tharwen of the Archive Gate",
+        "given": "Tharwen",
+        "office": "Warden of the Archive Gate",
+        "gender": "male",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the gate of the Archive and the few wardens who guard it.",
+        "portrait": "An elf warden with a sword and a lantern at a carved door.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_the_end_fennia",
+        "name": "Fennia of Endelond",
+        "given": "Fennia",
+        "office": "Warden of the Endelond Shore",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Watches the southern rift shore and Endelond for landings from the East.",
+        "portrait": "An elf-woman ranger on a grey shore.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "YAV",
+    "key": "yavieth",
+    "name": "Yavieth",
+    "stance": "zin_light_kinship",
+    "court": "standard",
+    "ruler": {
+      "id": "YAV_zin_ruler",
+      "name": "Aelion, Eldest of the Keepers",
+      "given": "Aelion",
+      "house": "the roost-keepers",
+      "title": {
+        "native": null,
+        "english": "Eldest Keeper of the Roosts"
+      },
+      "gender": "male",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_dragon_warden",
+        "zin_trait_secluded_eldest"
+      ],
+      "bio": "The fellowship of Yavieth has no ruler, and Aelion leads it only because he is the eldest keeper, which means the dragons speak to him and the rest listen to him. The keepers say a dragon never forgets a name and never says one, so they keep no list of eldest keepers, and Aelion has no intention of being the first written on one. He trades shed dragon-scale at Kingson for salt and iron, and he lets the dragons take the goats.",
+      "portrait": {
+        "appearance": "A wild-haired, scarred elf smelling of smoke, with burn-marked hands and amber eyes; no visible age.",
+        "dress": "A scorched leather coat sewn with shed scales, a goat-horn calling-horn, bare arms.",
+        "colours": "Roost green (#3a6a2a), dragon red (#c0302a), straw gold (#e0d0a0)."
+      },
+      "canon": "P",
+      "note": "The eldest keeper is unnamed in the histories; this name is proposed."
+    },
+    "heir": {
+      "note": "No heir: the eldest keeper speaks to the dragons; whoever is eldest next will speak.",
+      "succession": "By age within the fellowship."
+    },
+    "advisors": [
+      {
+        "id": "zin_yavieth_aenleth",
+        "name": "Aenleth the Scale-Trader",
+        "given": "Aenleth",
+        "office": "Trader of the scale at Kingson",
+        "gender": "female",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Takes the shed scale down to Kingson's market and brings back salt and iron, and has the vale's merchants afraid of her prices.",
+        "portrait": "An elf-woman with a pack of red scales and a scale-balance.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_yavieth_kaerwen",
+        "name": "Kaerwen of the Western Spur",
+        "given": "Kaerwen",
+        "office": "Keeper of the Western Spur",
+        "gender": "male",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_song_warden"
+        ],
+        "role": "Keeps the roosts of the western spur that were lost to corruption in the war against Volgan, and will not say how they were made clean.",
+        "portrait": "An elf with a scarred face beside a scorched rock.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_yavieth_nymara",
+        "name": "Nymara the Goat-Keeper",
+        "given": "Nymara",
+        "office": "Keeper of the Green Slopes",
+        "gender": "female",
+        "people": "elves",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_quartermaster"
+        ],
+        "role": "Keeps the dragon-shy goats on the green slopes and the stores of the roosts, and decides which goats the dragons may have.",
+        "portrait": "A sunburnt elf-woman with a crook and a herd of goats.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_yavieth_haeleth",
+        "name": "Haeleth the Dragon-Caller",
+        "given": "Haeleth",
+        "office": "First of the Dragon-Callers",
+        "gender": "male",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger",
+          "bold"
+        ],
+        "role": "Leads the dragon-callers who go with the dragons when the elven realms ask; he does not command the dragons, and says so loudly.",
+        "portrait": "A soot-faced elf with a great horn and a scale-cloak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_yavieth_aenara",
+        "name": "Aenara of the Roost Paths",
+        "given": "Aenara",
+        "office": "Warden of the Roost Paths",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Keeps the paths up Dragon Mountain and turns back anyone who climbs without the keepers' leave.",
+        "portrait": "An elf-woman with a spear on a high mountain path.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "TES",
+    "key": "teste",
+    "name": "Teste",
+    "stance": "zin_light_kinship",
+    "stanceNote": "Kept as countries.csv has it; a commune of men under Herrodon's protection. zin_light_council would also fit; owner to decide.",
+    "court": "standard",
+    "ruler": {
+      "id": "TES_zin_ruler",
+      "name": "Reeve Edovan Selbar",
+      "given": "Edovan",
+      "house": "Selbar",
+      "title": {
+        "native": null,
+        "english": "Reeve of the Teste Vale"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6779,
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_warden_of_the_fields"
+      ],
+      "bio": "Edovan Selbar was chosen Reeve at this year's harvest moot, his third year running, which is two short of the most any Reeve has been allowed since Halvar held it for twenty. The vale feeds Herrodon and Andos Enda with its grain and is the only land of men in the northern Magical Lands. He speaks the old ranger dialect of his grandmothers, keeps elven manners at Herrodon's hall and keeps both the hearth-shrine of the twelve and the chapel of the Deliverer in good repair, so that nobody in the vale has cause to complain.",
+      "portrait": {
+        "appearance": "A broad, plain-faced farmer with a sun-browned neck and a careful, courteous manner.",
+        "dress": "A clean homespun coat in green and brown, a sheaf-badge of the harvest moot, a bow on his back.",
+        "colours": "Field green (#5a7a3a), straw (#e0d0a0), river blue (#3a5a7a)."
+      },
+      "canon": "P",
+      "note": "The Reeve is unnamed in the histories; this name is proposed."
+    },
+    "heir": {
+      "note": "No heir: the commune chooses a Reeve every year at the harvest moot.",
+      "succession": "Elective, yearly (the harvest moot)."
+    },
+    "advisors": [
+      {
+        "id": "zin_teste_ilsette",
+        "name": "Ilsette of the Granary",
+        "given": "Ilsette",
+        "office": "Keeper of the Granary",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the grain that feeds Herrodon's hall and fills the boat the lake elves send every spring.",
+        "portrait": "A sturdy woman with a tally-stick and a grain-scoop.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_teste_havoran",
+        "name": "Old Havoran of the Hearth-Shrine",
+        "given": "Havoran",
+        "office": "Keeper of the Hearth-Shrine",
+        "gender": "male",
+        "people": "men",
+        "born": 6751,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Keeps the hearth-shrine of the Lamp and the Furrow, which is older than the chapel next to it, and reminds everyone of that.",
+        "portrait": "An old man with a lamp and a sheaf of wheat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_teste_ildrine",
+        "name": "Sister Ildrine of the Chapel",
+        "given": "Ildrine",
+        "office": "Keeper of the Deliverer's Chapel",
+        "gender": "female",
+        "people": "men",
+        "born": 6784,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_pilgrim_steward"
+        ],
+        "role": "Keeps the chapel the pilgrims of the Zilin Hills built beside the hearth-shrine, and gets on well with Old Havoran most days.",
+        "portrait": "A young woman in white and pale gold with a pilgrim's staff.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_teste_ervec",
+        "name": "Ervec Dalren of the Bowmen",
+        "given": "Ervec",
+        "house": "Dalren",
+        "office": "Captain of the Vale Bowmen",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the bowmen Herrodon trained, who are the best archers among the men of the north.",
+        "portrait": "A lean farmer-archer with an elven-made bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_teste_talette",
+        "name": "Talette of the Rim Path",
+        "given": "Talette",
+        "office": "Warden of the Rim Path",
+        "gender": "female",
+        "people": "men",
+        "born": 6787,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Keeps the path up the rim to Herrodon open in all weathers.",
+        "portrait": "A young woman in a hooded cloak with a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "LUV",
+    "key": "luv_zhise",
+    "name": "Luv-zhise",
+    "stance": "zin_light_council",
+    "stanceNote": "countries.csv has zin_light_kinship; a free port of Alerhic quay-houses reads as a Free Council. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "LUV_zin_ruler",
+      "name": "Quay-Master Ocellan Furanides",
+      "given": "Ocellan",
+      "house": "Furanides, of the river families",
+      "title": {
+        "native": null,
+        "english": "Quay-Master of Hisemrak"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6772,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_port_master",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Ocellan Furanides is this year's Quay-Master, chosen by the heads of the quay-houses, and he is of the river families with names in -ides who have shared the office with the temple families for six centuries. He traces his line to Blosian Furanides, who rowed the elves' quay-book keepers across the rift in a storm and won the charter of the Narrows. The port lives on the crossing to the East, trades with mycids whose speech nobody has written down, and will side with whoever holds the rift crossing, which Ocellan considers simple good sense.",
+      "portrait": {
+        "appearance": "An olive-skinned Alerhic merchant with painted eyes and a neat oiled beard.",
+        "dress": "A teal coat of eastern cut over linen, a gold collar of the quay-houses, a ferry-token on a chain.",
+        "colours": "Quay teal (#2a5a6a), brass gold (#d0b070), plum (#6a3a5a)."
+      },
+      "canon": "P",
+      "note": "The Quay-Master is unnamed in the histories; this name is proposed."
+    },
+    "heir": {
+      "note": "No heir: the heads of the quay-houses choose a Quay-Master each year, by custom alternating between the river families and the temple families.",
+      "succession": "Elective, yearly (the quay-houses)."
+    },
+    "advisors": [
+      {
+        "id": "zin_luv_zhise_theana",
+        "name": "Theana Moiros of the Lake Litany",
+        "given": "Theana",
+        "house": "Moiros",
+        "office": "Head of the temple families",
+        "gender": "female",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Head of the temple families, who keep the Lake Litany beside the twelve, and next year's Quay-Master if the custom holds.",
+        "portrait": "A dignified woman in a blue temple-robe with a lake-lamp.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_luv_zhise_nymwaeth",
+        "name": "Nymwaeth the Pilot",
+        "given": "Nymwaeth",
+        "office": "First Pilot of the Narrows",
+        "gender": "female",
+        "people": "elves",
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "A rift-coast elf who has piloted ships through the Narrows for longer than the quay-houses have kept records of pilots.",
+        "portrait": "A sea-pale elf-woman at a ship's wheel.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_luv_zhise_kersan",
+        "name": "Kersan Aleides, Master of the Ferries",
+        "given": "Kersan",
+        "house": "Aleides",
+        "office": "Master of the Ferries",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the ferries that carry everything when the Rift Road closes, and doubled the fares in the Spore Summer before the Elder of Lccimio made him halve them.",
+        "portrait": "A broad ferry-master with a purse and a boathook.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_luv_zhise_ocelleus",
+        "name": "Ocelleus Kalides of the Ferry-Guard",
+        "given": "Ocelleus",
+        "house": "Kalides",
+        "office": "Captain of the Ferry-Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Commands the ferry-guards of the quays.",
+        "portrait": "A ferry-guard in a scale coat with a short spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_luv_zhise_rhaiae",
+        "name": "Rhaiae Thalos of the Quay Galleys",
+        "given": "Rhaiae",
+        "house": "Thalos",
+        "office": "Captain of the Quay Galleys",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the port's few armed galleys at the Rift Narrows.",
+        "portrait": "A sea-captain in a teal cloak with a brass speaking-horn.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "MSH",
+    "key": "mushroom_forest",
+    "name": "Mushroom Forest",
+    "stance": "zin_wild_seclusion",
+    "stanceNote": "No row in countries.csv; an isolated community that keeps its own counsel reads as Seclusion. Owner to confirm.",
+    "court": "open",
+    "ruler": {
+      "id": "MSH_zin_ruler",
+      "name": "The Rings at the Forest Edge",
+      "title": {
+        "native": null,
+        "english": "the Rings at the Forest Edge"
+      },
+      "gender": "none",
+      "people": "mycids",
+      "stance": "zin_wild_seclusion",
+      "traits": [
+        "zin_trait_unknown_counsel",
+        "zin_trait_secluded_eldest"
+      ],
+      "bio": "The quay-books of Luv-zhise call the gatherings of mycids that meet traders at the forest's edge rings, because they stand in a circle. Whether a ring is a ruler, a family or only a market is not known to anyone outside the forest, and the mycids have never said. When the Black Roots reached the rift coast, the fungi of the belt grew over them and the dead roots rotted; the rift-coast elves say so, and the mycids have said nothing about it either.",
+      "portrait": {
+        "appearance": "An emblem, not a figure: a ring of pale fungi on dark ground, seen from above.",
+        "dress": "None.",
+        "colours": "Spore violet (#6a4a6a), pale cap (#d0c0a0), dark loam (#3a2a2a)."
+      },
+      "canon": "P",
+      "note": "How the mycids rule themselves is open in the vault and is not invented; the leader is an emblem, like the Will of Zol. No advisors or commanders are named for the same reason."
+    },
+    "heir": {
+      "note": "Not applicable: nothing is known of how the mycids choose anything.",
+      "succession": "Open (vault)."
+    },
+    "advisors": [],
+    "commanders": [],
+    "figures": [],
+    "notes": "Advisors and commanders are left to the generated pools with emblem portraits until the owner describes the mycids (see the owner questions)."
+  }
+]

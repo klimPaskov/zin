@@ -1,0 +1,3457 @@
+[
+  {
+    "tag": "AEN",
+    "key": "aenor",
+    "name": "Aenor",
+    "stance": "zin_dom_court",
+    "court": "great",
+    "ruler": {
+      "id": "AEN_zin_ruler",
+      "name": "The Golden King",
+      "house": "House of Hornan",
+      "title": {
+        "native": "Aurar",
+        "english": "King of Aenor, called the Golden King"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": null,
+      "stance": "zin_dom_court",
+      "traits": [
+        "zin_trait_gilded_fool",
+        "zin_trait_seller_of_offices",
+        "zin_trait_lord_of_the_lost_cause"
+      ],
+      "bio": "The ninth king of the House of Hornan was crowned in 4A 1729, and in nineteen years he has sold more offices than his eight forebears granted between them. He spends the treasury on the gilded halls of the Golden Court and leads the Lost Cause through Parim in parades, while the Royal Council and the Houses of the First Light keep the granaries full and the roads open. He has no son, and the Golden Court has already settled on Prince Eronel to follow him.",
+      "portrait": {
+        "appearance": "A heavy, soft-handed man of Lake Aenoran looks, rounded face, small satisfied eyes; no age is shown beyond middle life.",
+        "dress": "A gilded crown set too far back, a mantle stiff with gold leaf over Aenoran blue, a ring on every finger and a chain of bought honours.",
+        "colours": "Gold over deep Aenoran blue (#2f5d8a), cream linen (#f2f0e6)."
+      },
+      "canon": "E",
+      "note": "His personal name, exact years and relatives are open in the vault; no birth year is given and nothing here names him.",
+      "secret": "A puppet of the Hidden Council; Afrit engineers his death (knowledge layers A2, A4). Never in player text before zin_afrit_revealed."
+    },
+    "heir": {
+      "id": "zin_eronel",
+      "name": "Prince Eronel of Arcedor",
+      "given": "Eronel",
+      "house": "of Arcedor",
+      "office": "Prince of Arcedor, the Golden Court's candidate for the crown",
+      "gender": "male",
+      "people": "men",
+      "born": 6790,
+      "traits": [
+        "zin_trait_gilded_heir"
+      ],
+      "role": "A cousin of a collateral branch of Aen's line whom the Golden Court has groomed as the next king; he is handsome, generous with other people's money and very fond of being cheered.",
+      "succession": "The crown passes by blood with the acclaim of the Concord Council. The King has no son, and the Golden Court names Eronel; the regencies of the Aenor court mechanic take over if the acclaim fails.",
+      "portrait": "Young, handsome, overdressed in gold-embroidered blue, a coronet of the collateral line.",
+      "canon": "S",
+      "definedBy": "Aenor court and succession mechanic (external character of mech_aenor.json)"
+    },
+    "advisors": [
+      {
+        "id": "zin_merovan",
+        "name": "Merovan, Keeper of the Seals",
+        "given": "Merovan",
+        "office": "Keeper of the Seals",
+        "gender": "male",
+        "people": "men",
+        "born": 6744,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_keeper_of_seals"
+        ],
+        "role": "An old, quiet courtier who holds the royal seals and leads the Royal Council; every charter the King sells passes under his hand, and he has never been heard to complain about one.",
+        "portrait": "An old, quiet courtier in dark robes with the chain of the seals; a kind, patient face.",
+        "canon": "S",
+        "definedBy": "characters spec (zin_merovan, shared with the Afrit and Aenor mechanics)",
+        "secret": "Holds the Seat of Seals of the Hidden Council (A2)."
+      },
+      {
+        "id": "zin_aenor_halmor",
+        "name": "Lord Treasurer Halmor Monaris",
+        "given": "Halmor",
+        "house": "Monaris",
+        "office": "Lord Treasurer",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_office_broker"
+        ],
+        "role": "Leader of the Golden Court and the man who sets the price of every office in Parim; he keeps two ledgers, one for the King and one for himself, and both balance.",
+        "portrait": "Plump and smiling, fur-trimmed blue gown, a ledger under one arm and a gold quill.",
+        "canon": "S",
+        "formerName": "Halmor Infous"
+      },
+      {
+        "id": "zin_ilsabet",
+        "name": "Master Ilsabet Vothrim",
+        "given": "Ilsabet",
+        "house": "Vothrim",
+        "office": "Master of the University of Parim",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_scholar_of_the_first_men"
+        ],
+        "role": "The Lost Cause's scholar of the First Men, who has spent twenty years tracing Aen's many sons through the old genealogies and is the only member of the league who reads its charter for pleasure.",
+        "portrait": "A middle-aged scholar with ink-stained hands, a grey university gown and a sheaf of genealogies.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_aenor_sefan",
+        "name": "Sefan Daldar, Warden of the Rolls",
+        "given": "Sefan",
+        "house": "Daldar",
+        "office": "Warden of the Rolls",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_keeper_of_rolls"
+        ],
+        "role": "Keeps the birth rolls that the Houses of the First Light write in every town of the Vale, and can tell the court within a day how many sons any village has.",
+        "portrait": "A clerk in plain grey with a tally-staff and a seal-bag at his belt.",
+        "canon": "S",
+        "secret": "A client of the Hidden Council without knowing it (A3)."
+      },
+      {
+        "id": "zin_aenor_ederine",
+        "name": "Ederine Kordalis, Warden of the Lantern Roll",
+        "given": "Ederine",
+        "house": "Kordalis",
+        "office": "Warden of the Lantern Roll",
+        "gender": "female",
+        "people": "men",
+        "born": 6758,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_lantern_warden"
+        ],
+        "role": "Keeper of the roll of lantern wardens since 4A 1731, one of the few offices of the reign that was never sold; she has asked the court for frontier wardens every spring since Mirolon's warning, and every spring the court thanks her.",
+        "portrait": "A grey-haired warden in a dark blue coat, a small lantern of horn and brass hung at her hip.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
+      },
+      {
+        "id": "zin_aenor_gardec",
+        "name": "Gardec Hifar, Marshal of the Parades",
+        "given": "Gardec",
+        "house": "Hifar",
+        "office": "Master of the Royal Host",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_parade_marshal"
+        ],
+        "role": "Bought the command of the royal host in 4A 1738 and has drilled it for every jubilee since; the host has new banners and plumes every year, and the old soldiers say the boots will come next year.",
+        "portrait": "A sleek officer in parade plate with gilded edges and a tall plume.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_aenor_corwen",
+        "name": "Marshal Corwen Hornan",
+        "given": "Corwen",
+        "house": "Hornan",
+        "office": "Marshal of the Vale",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 3,
+          "defense": 4,
+          "planning": 4,
+          "logistics": 3
+        },
+        "traits": [
+          "old_guard",
+          "defensive_doctrine"
+        ],
+        "role": "An honest grey soldier of a lake family that shares the royal house's name and none of its money; he commands the Vale's real companies and tells the court the truth, which is why it seldom asks him.",
+        "portrait": "A grey veteran in worn Aenoran plate under a plain blue surcoat.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_tarec",
+        "name": "Lord-Commander Tarec Belurith",
+        "given": "Tarec",
+        "house": "Belurith",
+        "office": "Lord-Commander of the Lost Cause",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "ranger",
+          "inspirational_leader"
+        ],
+        "role": "Leads the Lost Cause's frontier companies and believes in the league's purpose more than its founder does; his men drill on the march roads, not in Parim.",
+        "portrait": "A weathered frontier officer in a brown riding coat, the Lost Cause badge pinned at the throat.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_aenor_edwen",
+        "name": "Captain Edwen Kormon of the Gilded Lances",
+        "given": "Edwen",
+        "house": "Kormon",
+        "office": "Captain of the Gilded Lances",
+        "gender": "male",
+        "people": "men",
+        "born": 6788,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "planning": 2,
+          "logistics": 1
+        },
+        "traits": [
+          "cavalry_leader",
+          "trait_reckless"
+        ],
+        "role": "Captain of the royal plate cavalry, a commission his father bought at the Golden Court; he is brave, splendidly mounted and has never seen an enemy.",
+        "portrait": "A young lancer in gilded plate on a white charger, a blue-and-gold pennon on his lance.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_aenor_isra",
+        "name": "Admiral Isra Leimon",
+        "given": "Isra",
+        "house": "Leimon",
+        "office": "Admiral of the Lake and the Sea of Peace",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the royal galleys on the Great Lake and the Sea of Peace and knows every shoal between Parim and the southern harbours.",
+        "portrait": "A sunburnt captain in a lake-blue naval coat with brass buttons, hair bound back.",
+        "canon": "S"
+      }
+    ],
+    "figures": [
+      {
+        "id": "zin_bastian",
+        "name": "Bastian",
+        "given": "Bastian",
+        "office": "The famous wizard of men",
+        "gender": "male",
+        "people": "men",
+        "born": null,
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "A living human wizard of the Fourth Age, famous through the Middle Lands, who keeps no tower and holds no royal leave; he travels the Vale and the lake towns, answers only the calls he chooses, and has refused every office the Golden King has offered him.",
+        "portrait": "A lean, sharp-eyed man of the Common Speech in a travel-stained grey-blue coat with many pockets and a plain staff; no age shown.",
+        "canon": "E",
+        "definedBy": "owner (vault, Varner note); biography proposed in magic_and_wizards.md 4.2",
+        "recruit": "Story character, never a plain hire: available to one Middle Lands realm by event (A Letter From Bastian). Belongs to no realm at the start.",
+        "note": "No text states his age (owner rule); his meeting with Varner stays under gate E4."
+      },
+      {
+        "id": "zin_aenor_norael",
+        "name": "Norael of the Lamp",
+        "given": "Norael",
+        "office": "Confessor-healer of the House of the First Light at Parim",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "A sincere healer of the House of the First Light in Parim's poorest streets; the blessings work in his hands and he believes in them with all his heart.",
+        "portrait": "A gentle young confessor in white and pale gold with a lit lamp.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)",
+        "recruit": "Event figure of the Houses of the First Light; not an advisor of Aenor, which has no high priest of its own (N10).",
+        "secret": "The source of the blessings is gated by zin_afrit_revealed (A8); he learns it with everyone else."
+      }
+    ]
+  },
+  {
+    "tag": "SEL",
+    "key": "selen",
+    "name": "Selen",
+    "stance": "zin_light_wardens",
+    "court": "story",
+    "ruler": {
+      "id": "SEL_zin_ruler",
+      "name": "First Warden Daeric Svenlor",
+      "given": "Daeric",
+      "house": "House of Svenlor",
+      "title": {
+        "native": "Selgere",
+        "english": "First Warden of the Weald"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6768,
+      "stance": "zin_light_wardens",
+      "traits": [
+        "zin_trait_free_dominion",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Daeric Svenlor is the eleventh First Warden his house has given the moots since the Moot of the Three Glades, and he speaks for the Weald in Parim with more patience than the Golden Court deserves. He grumbles at the King's taxes louder than any other dominion lord, and the moots like him for it. In the glades, though, everyone knows that Alleria's word carries further than his, and Daeric is wise enough not to mind.",
+      "portrait": {
+        "appearance": "A lean, weathered man with long greying hair tied back and a ranger's deep-lined eyes.",
+        "dress": "A green hooded warden's cloak over brown leather, the oak-leaf clasp of the First Warden at the shoulder, no crown.",
+        "colours": "Weald green (#3f6b2e), bark brown (#8a6a3c), pale sage (#c9d6c0)."
+      },
+      "canon": "S"
+    },
+    "heir": {
+      "note": "No heir: the moots elect the next First Warden and may call the present one to account at any moot. The house of Svenlor will put up a candidate, but Alleria's rangers will decide who the glades follow.",
+      "succession": "Elective (the moots)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_selen_tanovan",
+        "name": "Magister Tanovan Selonis",
+        "given": "Tanovan",
+        "house": "Selonis",
+        "office": "Magister of the University of Selen",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Selen's named wizard: a magister of the learned art who teaches the Weald's free wardens, quarrels with Parim over who may call himself a warden, and counts Bastian the proof that he is right.",
+        "portrait": "A bookish ranger-scholar in a green gown with singed cuffs, essence-stones on a cord.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
+      },
+      {
+        "id": "zin_regional_selen_serine",
+        "name": "Serine Ulgar, Keeper of the Moot-Books",
+        "given": "Serine",
+        "house": "Ulgar",
+        "office": "Keeper of the Moot-Books",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Keeps the moot-books in which the rangers write their own birth rolls, as they have since the Roll Quarrel, and has turned away three clerks of the Houses this year alone.",
+        "portrait": "A sharp-eyed woman in plain green wool, an iron-bound moot-book under her arm.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_selen_talwen",
+        "name": "Mother Talwen of the Moot Tree",
+        "given": "Talwen",
+        "office": "Keeper of the Moot Tree",
+        "gender": "female",
+        "people": "men",
+        "born": 6750,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "The old warden who keeps the Moot Tree of Hifeco and asks the Lord of the Green before any arrow is loosed in the Weald; even the First Warden waits for her nod.",
+        "portrait": "An old woman in moss-green with oak leaves woven into white hair, leaning on an ash staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_selen_harvec",
+        "name": "Harvec Ulgen, Warden of the Forest Edge",
+        "given": "Harvec",
+        "house": "Ulgen",
+        "office": "Warden of the Forest Edge",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Keeps the watch posts along the Bloody Forest and the north coast, and has a report from every one of them on his table by dawn.",
+        "portrait": "A broad, scarred ranger in a mottled hood with a horn at his belt.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_alleria",
+        "name": "Alleria of Selen",
+        "given": "Alleria",
+        "office": "Ranger-Captain of Selen",
+        "gender": "female",
+        "people": "men",
+        "born": null,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger",
+          "ambusher"
+        ],
+        "role": "The celebrated ranger and archer of Selen, whose companies watch the Bloody Forest edge and the north coast; in the glades her word carries further than the First Warden's.",
+        "portrait": "A ranger with a long bow, hood down, green and brown; neither old nor young (age open).",
+        "canon": "E",
+        "definedBy": "characters spec (zin_alleria; Eindil's journey mechanic)",
+        "note": "Her training, family, age and fate are open in the vault; no birth year is given. Portrait states: ranger (start), resistance leader (after zin_afrit_revealed)."
+      },
+      {
+        "id": "zin_regional_selen_belric",
+        "name": "Warden-Captain Belric Svenmar",
+        "given": "Belric",
+        "house": "Svenmar",
+        "office": "Warden-Captain of the Moots",
+        "gender": "male",
+        "people": "men",
+        "born": 6760,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "ranger",
+          "defensive_doctrine"
+        ],
+        "role": "Commands the moots' companies when they muster as one, which they have done twice in his life; he plans for the forest and refuses to fight outside it.",
+        "portrait": "A grizzled warden-captain in green-dyed mail with an antler-hilted sword.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_selen_ilsene",
+        "name": "Captain Ilsene Vothar of the Coast Boats",
+        "given": "Ilsene",
+        "house": "Vothar",
+        "office": "Captain of the North Coast Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Runs the handful of fast coast boats that carry Selen's rangers along the north shore and keep the smugglers of the Organ Coast honest.",
+        "portrait": "A wiry boat-captain in a green sea-cloak with a coil of rope over her shoulder.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KIN",
+    "key": "kingson",
+    "name": "Kingson",
+    "stance": "zin_wild_freeholds",
+    "court": "story",
+    "ruler": {
+      "id": "KIN_zin_ruler",
+      "name": "Arcen, Lord of the Gate",
+      "given": "Arcen",
+      "house": "the watch-families of the Gate",
+      "title": {
+        "native": "Paeltel",
+        "english": "Lord of the Gate (Pass-Lord of Kingson)"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6775,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_pass_lord",
+        "zin_trait_free_dominion"
+      ],
+      "bio": "Arcen is the thirty-first Pass-Lord since Deolof, chosen for life by the heads of the watch-families, and he reads the Accord of the Passes aloud at the gorge every year as every Pass-Lord has. He keeps the forts stocked with Kunhrim's powder and the toll-books in good order, and he knows the elves still call his tolls their oldest grievance against men. He would rather be remembered as the lord who settled that grievance than the one who doubled it.",
+      "portrait": {
+        "appearance": "A weathered man of the mountain vale, square-jawed, with a close grey-shot beard.",
+        "dress": "A fur-trimmed grey cloak over mail the colour of the gorge stone, the iron key of the Gate on a chain.",
+        "colours": "Stone grey (#5a5a6a), pale gold (#d8c080), Aenoran blue (#2f5d8a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "id": "zin_regional_kingson_merwen",
+      "name": "Merwen of the Upper Fort",
+      "given": "Merwen",
+      "office": "Head of the watch-family of the Upper Fort",
+      "gender": "female",
+      "people": "men",
+      "born": 6784,
+      "traits": [
+        "zin_trait_warden_of_the_passes"
+      ],
+      "role": "The head of the watch-family that holds the highest of the western forts, and the name most often spoken when the families talk of the next Pass-Lord.",
+      "succession": "Elective for life: the heads of the watch-families choose the next Pass-Lord from among themselves.",
+      "portrait": "A tall woman in pass-warden grey with a fur collar and a horn.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_kingson_tolven",
+        "name": "Tolven Arcar, Master of the Toll-Books",
+        "given": "Tolven",
+        "house": "Arcar",
+        "office": "Master of the Toll-Books",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_caravan_broker"
+        ],
+        "role": "Keeps the toll-books of the only wheel road through the range and can tell to the penny what the elves paid on silver in the year of the Long Winter.",
+        "portrait": "A stooped clerk in a fur cap with a brass toll-scale.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kingson_gerene",
+        "name": "Gerene of the Vigil Fire",
+        "given": "Gerene",
+        "office": "Warden of the Vigil Fire",
+        "gender": "female",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the vigil fire at the gorge for Kerun of the watch and reads the names of the pass's dead to Gaelor on Accord-Day; she has never let the fire go out.",
+        "portrait": "A grave woman in grey robes with soot on her sleeves and a long iron fire-hook.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kingson_havoric",
+        "name": "Havoric Delmar, Keeper of the Powder Stores",
+        "given": "Havoric",
+        "house": "Delmar",
+        "office": "Keeper of the Powder Stores",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Buys the black powder from Kunhrim's porters by the honest dwarvish pound and keeps it dry in the gorge forts, which is harder work than it sounds.",
+        "portrait": "A thickset man in a leather apron with a dwarf-made lamp and black-stained fingers.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kingson_lysette",
+        "name": "Lysette Arnel, Reader of the Accord",
+        "given": "Lysette",
+        "house": "Arnel",
+        "office": "Reader of the Accord and envoy to the eastern forts",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Carries the Pass-Lord's letters to the elven wardens of the eastern forts and speaks the Sylvan of the pass better than anyone in the vale.",
+        "portrait": "A young woman in a blue travelling cloak with an elven leaf-pin, a sealed case of letters.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_kingson_darovan",
+        "name": "Captain Darovan of the Western Forts",
+        "given": "Darovan",
+        "office": "Captain of the Western Forts",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 5,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "unyielding_defender",
+          "trait_mountaineer"
+        ],
+        "role": "Holds the western forts of the Kingson Pass and has walked every one of their walls with a measuring rod.",
+        "portrait": "A grizzled fort-captain in heavy grey mail with a bombard-match tucked in his belt.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kingson_halren",
+        "name": "Halren Tolmar, Captain of the Pikes",
+        "given": "Halren",
+        "house": "Tolmar",
+        "office": "Captain of the Vale Pikes",
+        "gender": "male",
+        "people": "men",
+        "born": 6786,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Drills the vale's pikemen on the slopes below the forts and swears they could hold the gorge against anything that walks.",
+        "portrait": "A young pike-captain with a fur-lined helm and a grey tabard.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HIR",
+    "key": "hirolon",
+    "name": "Hirolon",
+    "stance": "zin_light_wardens",
+    "court": "story",
+    "ruler": {
+      "id": "HIR_zin_ruler",
+      "name": "High Chief Oronas",
+      "given": "Oronas",
+      "house": "the High Chiefs of the Cairn-Keepers",
+      "title": {
+        "native": "Oronar",
+        "english": "High Chief of Hirolon"
+      },
+      "gender": "male",
+      "people": "giants",
+      "stance": "zin_light_wardens",
+      "traits": [
+        "zin_trait_cairn_keeper",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Oronas was chosen High Chief by the cairn-keepers because his clan could name the older cairn, and he has kept the Cairn Treaty with Parim as one sovereign with another ever since. He sells cut stone and the strength of his giants to the quays of Parim, guards the small folk of Tirlan on every path in, and asks only to be left alone. Men who come up the hill to hurry him go down again having learned that the giants have more patience than men have time.",
+      "portrait": {
+        "appearance": "A huge, rough-hewn hill giant with a broad grey face like weathered granite and slow, kind eyes.",
+        "dress": "A cloak of undyed wool pinned with a stone ring, a belt of plaited hide, a cairn-stone carried on a cord.",
+        "colours": "Earth brown (#7c6a58), dark moss (#4a4a40), lichen pale (#b0a888)."
+      },
+      "canon": "S",
+      "note": "Giants live long and are never given an age (V23); no birth year."
+    },
+    "heir": {
+      "note": "No heir: the cairn-keepers choose the next High Chief from the clan chiefs, and a dispute is judged by which party can name the older cairn.",
+      "succession": "Elective (the cairn-keepers)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_hiloron_nuumara",
+        "name": "Nuumara of the Eldest Cairn",
+        "given": "Nuumara",
+        "office": "Stone-Keeper of the Eldest Cairn",
+        "gender": "female",
+        "people": "giants",
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_elder_memory"
+        ],
+        "role": "Keeps the Eldest Cairn and the stones of every chief back to Bruunar, and is the giant the High Chief asks when he wants to know what happened before men had kings.",
+        "portrait": "A giantess in grey wool with lichen in her hair, her hands resting on a great smooth stone.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hiloron_harvan",
+        "name": "Harvan of the Saddle",
+        "given": "Harvan",
+        "office": "Headman of the Hilofrim herders",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Speaks for the Hilofrim herders who rent the eastern Grano and carries the giants' word to Parim, because a man can sit in a counting-house and a giant cannot.",
+        "portrait": "A sheep-herder in a felt hood and sheepskin with a crook and a satchel of letters.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hiloron_dorunar",
+        "name": "Dorunar, Chief of the Rim Clans",
+        "given": "Dorunar",
+        "office": "Chief of the Rim Clans",
+        "gender": "male",
+        "people": "giants",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_muster_master"
+        ],
+        "role": "Chief of the clans that hold the crests of the ring; when the giants must fight, it is his clan that counts how many can be spared from the stones.",
+        "portrait": "A giant with a moss-grown beard and a stone-headed maul across his back.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_hiloron_tiranos",
+        "name": "Tiranos the Wall",
+        "given": "Tiranos",
+        "office": "War-Chief of the Ring",
+        "gender": "male",
+        "people": "giants",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 5,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "unyielding_defender",
+          "hill_fighter"
+        ],
+        "role": "The giant who stood in the Hilorn Gap in the herders' raid-year and simply did not move, which is how he got his name.",
+        "portrait": "A broad giant in a hide coat sewn with stones, holding a tree-trunk club.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hiloron_belcor",
+        "name": "Belcor Hilsen, Captain of the Herders",
+        "given": "Belcor",
+        "house": "Hilsen",
+        "office": "Captain of the Herder Levy",
+        "gender": "male",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Leads the Hilofrim levy of slingers and spearmen who scout for the giants on the Grano road.",
+        "portrait": "A lean herder with a sling and a sheepskin jerkin.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "TIR",
+    "key": "tirlan",
+    "name": "Tirlan",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "TIR_zin_ruler",
+      "name": "Loddard Heggelum, Warden of the Fields",
+      "given": "Loddard",
+      "house": "Heggelum",
+      "title": {
+        "native": null,
+        "english": "Warden of the Fields"
+      },
+      "gender": "male",
+      "people": "small_folk",
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_warden_of_the_fields",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Loddard Heggelum was chosen Warden of the Fields by the households of the three valleys in 4A 1744, mostly because his hedge is the tidiest in Tirlan and his beer the best. He keeps the harvest-share for Hirolon's halls, settles quarrels over field-names and has never once worn boots to the moot. He is the first Warden in a hundred years to have walked over the Saddle and seen Parim, and he came home saying it was very large and very noisy, and that he did not care for it.",
+      "portrait": {
+        "appearance": "A small, round-faced, curly-haired householder with rosy cheeks and a comfortable belly; bare feet.",
+        "dress": "A green waistcoat with brass buttons over a linen shirt, a long clay pipe, a chain of office made of carved wooden field-tokens.",
+        "colours": "Hedge green (#4f7a3a), barley gold (#e3c77a), earth brown (#8a5a33)."
+      },
+      "canon": "P",
+      "note": "The small folk are long-lived on their card; no birth year is given."
+    },
+    "heir": {
+      "note": "No heir: the households choose the next Warden of the Fields at the moot for seven years.",
+      "succession": "Elective (the household moots)."
+    },
+    "advisors": [
+      {
+        "id": "zin_tirlan_mimmelma",
+        "name": "Mimmelma Brumel, Householder of the Moot",
+        "given": "Mimmelma",
+        "house": "Brumel",
+        "office": "Householder of the Moot",
+        "gender": "female",
+        "people": "small_folk",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the moot's tally of who owes what share to the giants' halls, and remembers every debt in the valleys to the last bean.",
+        "portrait": "A stout matron with a ledger, an apron and spectacles on a ribbon.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_tirlan_wobbel",
+        "name": "Old Wobbel Stubbip of the Harvest Stone",
+        "given": "Wobbel",
+        "house": "Stubbip",
+        "office": "Keeper of the Harvest Stone",
+        "gender": "male",
+        "people": "small_folk",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Sets the place at the table for Lumae, Aurlan and Vaelei at every harvest-moot and knows a cure for most things and a song for the rest.",
+        "portrait": "A white-haired old fellow with a sheaf of barley and a pipe.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_tirlan_hemmip",
+        "name": "Hemmip Dobbard, Captain of the Hedge-Wardens",
+        "given": "Hemmip",
+        "house": "Dobbard",
+        "office": "Captain of the Hedge-Wardens",
+        "gender": "male",
+        "people": "small_folk",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_quartermaster"
+        ],
+        "role": "Commands the hedge-wardens who watch the lanes inside the valleys; his chief duty in thirty years has been finding lost sheep, and he would like it to stay that way.",
+        "portrait": "A small fellow in a hooded brown cloak with a sling and a lantern.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_tirlan_tibbard",
+        "name": "Tibbard Pomel of the Fords",
+        "given": "Tibbard",
+        "house": "Pomel",
+        "office": "Keeper of the Fords",
+        "gender": "male",
+        "people": "small_folk",
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "Keeps the fords of the Hilorn with a band of slingers who know every stone in the river.",
+        "portrait": "A sunburnt small fellow with a sling and a reed hat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_tirlan_sippie",
+        "name": "Sippie Lebbum, Captain of the Slingers",
+        "given": "Sippie",
+        "house": "Lebbum",
+        "office": "Captain of the Slingers",
+        "gender": "female",
+        "people": "small_folk",
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 2,
+          "defense": 1,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "The best shot in the three valleys, who agreed to lead the slingers on condition that they never be asked to leave home.",
+        "portrait": "A freckled small woman with a sling and a basket of round stones.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KON",
+    "key": "konori",
+    "name": "Konori",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "KON_zin_ruler",
+      "name": "King Sventor of Konori",
+      "given": "Sventor",
+      "house": "House of Arrovar",
+      "title": {
+        "native": "Ar",
+        "english": "King of Konori (the Felt King of Arrovez)"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6779,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_horse_lord",
+        "zin_trait_free_dominion"
+      ],
+      "bio": "Sventor was raised on the white felt at the ford by the heads of the Hundreds, as every king of the house of Arrovar has been, and he knows they can set him down on it again. He rides the whole steppe each summer from the fords to the fair-grounds and sells the Hundreds' remounts at Arrovez, complaining loudly that the Golden Court pays for them in titles instead of silver. The Konori breed has never quite recovered from the Long Drought, and he means to be the king who restores its name.",
+      "portrait": {
+        "appearance": "A broad, weathered steppe rider with braided dark hair and a wind-burnt face.",
+        "dress": "A tall felt hat with a horsehair plume, a red riding coat trimmed with fur, a horse-headed whip of office.",
+        "colours": "Steppe red (#b04a30), felt white (#e6e0cc), dun gold (#c9a45a)."
+      },
+      "canon": "S"
+    },
+    "heir": {
+      "id": "zin_regional_konori_tanric",
+      "name": "Tanric Arrovar",
+      "given": "Tanric",
+      "house": "Arrovar",
+      "office": "Nephew of the King",
+      "gender": "male",
+      "people": "men",
+      "born": 6797,
+      "traits": [
+        "zin_trait_war_party"
+      ],
+      "role": "The king's sister's son, a fine rider and a hot head, whom the Hundreds would raise on the felt if the king fell tomorrow.",
+      "succession": "The heads of the Hundreds raise the king from the house of Arrovar.",
+      "portrait": "A young rider in a felt cap with a lance and a red sash.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_konori_tanvel",
+        "name": "Tanvel Hunsen, Head of the First Hundred",
+        "given": "Tanvel",
+        "house": "Hunsen",
+        "office": "Head of the First Hundred",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "The eldest of the heads of the Hundreds, who held the felt at Sventor's raising and reminds him of it at every council.",
+        "portrait": "A white-bearded rider in a worn felt coat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_konori_aelia",
+        "name": "Aelia the Oath-Rider",
+        "given": "Aelia",
+        "office": "Oath-Rider of the summer tents",
+        "gender": "female",
+        "people": "men",
+        "born": 6756,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "An old rider who witnesses the oaths sworn on horses at the summer gatherings and carries them, the riders say, to the spirits of the wind.",
+        "portrait": "An old woman with braids bound in horsehair cords, a white mare's tail on her staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_konori_halbec",
+        "name": "Halbec Ronar, Master of the Remounts",
+        "given": "Halbec",
+        "house": "Ronar",
+        "office": "Master of the Remounts",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_master_of_horse"
+        ],
+        "role": "Keeps the herds of the Concord remount contract and fought at two of the three fairs in the Remount Quarrel, which he does not regret.",
+        "portrait": "A bow-legged horse-master with a coiled lasso.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_konori_garwic",
+        "name": "Garwic Sventen, Rider-Captain of the Hundreds",
+        "given": "Garwic",
+        "house": "Sventen",
+        "office": "Rider-Captain of the Hundreds",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader",
+          "brilliant_strategist"
+        ],
+        "role": "Leads the Hundreds when they ride as one and plans a campaign as he would a horse-fair, by where the grass is.",
+        "portrait": "A lean rider-captain in lamellar over red felt, a horn bow on his back.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_konori_isavel",
+        "name": "Isavel of the Fords",
+        "given": "Isavel",
+        "office": "Captain of the Ford Riders",
+        "gender": "female",
+        "people": "men",
+        "born": 6785,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "planning": 2,
+          "logistics": 1
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Commands the horse archers who watch the fords of the western steppe.",
+        "portrait": "A young horse archer with a felt hood and a quiver of red-fletched arrows.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HNH",
+    "key": "hunhun",
+    "name": "Hunhun",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "HNH_zin_ruler",
+      "name": "Horse-Lord Hunald",
+      "given": "Hunald",
+      "house": "chosen at the Gathering",
+      "title": {
+        "native": "Huntel",
+        "english": "Horse-Lord of the Gathering"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6770,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_horse_lord",
+        "zin_trait_free_dominion"
+      ],
+      "bio": "The riders have chosen Hunald Horse-Lord by acclaim at eleven midsummer Gatherings running, which the downs consider a very long reign. He runs the largest horse fair in Aoaz, keeps both charter-seats of Hunhun and Noloreh, and is loyal to Parim in the way riders are loyal to the weather, because it is there. He has not forgiven Konori for the Remount Quarrel and never misses a chance to say so.",
+      "portrait": {
+        "appearance": "A big, broad-faced rider with a braided red-brown beard and laughing eyes.",
+        "dress": "A felt hat with a long horsehair crest, a heavy riding coat of red and cream, a horse-skull clasp.",
+        "colours": "Steppe red (#b04a30), felt white (#e6e0cc), dun gold (#c9a45a)."
+      },
+      "canon": "S",
+      "note": "The name echoes the realm (hun \"horse\"); kept because the histories and the regional tree use it. See the owner questions."
+    },
+    "heir": {
+      "id": "zin_regional_hunhun_belwen",
+      "name": "Belwen of Noloreh",
+      "given": "Belwen",
+      "office": "Lady of the Noloreh downs",
+      "gender": "female",
+      "people": "men",
+      "born": 6782,
+      "traits": [
+        "zin_trait_horse_lord"
+      ],
+      "role": "Lady of the Noloreh downs and the rider most often cheered after Hunald at the Gathering; if the acclaim ever turns, it will most likely turn to her.",
+      "succession": "Chosen every midsummer by acclaim at the Gathering.",
+      "portrait": "A tall rider in a cream felt coat with a crested hat and a lance.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_hunhun_corlec",
+        "name": "Corlec Hunar, Master of the Gathering",
+        "given": "Corlec",
+        "house": "Hunar",
+        "office": "Master of the Gathering",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the horse fair, takes the Horse-Lord's tenth of every sale and knows the price of every mare on the downs.",
+        "portrait": "A paunchy horse-trader with a purse at each hip.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hunhun_taliene",
+        "name": "Taliene of the Barrows",
+        "given": "Taliene",
+        "office": "Keeper of the Horse-Barrows",
+        "gender": "female",
+        "people": "men",
+        "born": 6752,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the horse-barrows of the downs, the only graves of the Middle Lands the Order never opened, and witnesses the oaths sworn on horses.",
+        "portrait": "An old rider-woman with a horsehair cloak and a bronze bell.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hunhun_ronec",
+        "name": "Ronec Halsen, Master of Lancers",
+        "given": "Ronec",
+        "house": "Halsen",
+        "office": "Master of the Concord Lancers",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_master_of_horse"
+        ],
+        "role": "Drills the lancers that the Hunhun breed carries for the Concord and says the Konori horses are good only for carrying the baggage.",
+        "portrait": "A lancer in a scale coat with a red-and-white pennon.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_hunhun_havrin",
+        "name": "Havrin the Long Rider",
+        "given": "Havrin",
+        "office": "Captain of the Lancers",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader",
+          "trait_reckless"
+        ],
+        "role": "Leads the lancers in the charge and has never seen a reason to do anything else.",
+        "portrait": "A long-legged rider in lamellar with a bent lance.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_hunhun_lysene",
+        "name": "Lysene Noloren of the Scouts",
+        "given": "Lysene",
+        "house": "Noloren",
+        "office": "Captain of the Down Scouts",
+        "gender": "female",
+        "people": "men",
+        "born": 6787,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the riders who scout the southern downs and the edges of the march road.",
+        "portrait": "A young scout on a dun pony with a short bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KLU",
+    "key": "klungori_guard",
+    "name": "Klungori Guard",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "KLU_zin_ruler",
+      "name": "Captain Tavec Hungohar",
+      "given": "Tavec",
+      "house": "Hungohar",
+      "title": {
+        "native": "Turgere",
+        "english": "Captain of the Sworn (Captain of the Klungori Guard)"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6772,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_warden_of_the_passes",
+        "zin_trait_free_dominion"
+      ],
+      "bio": "Tavec Hungohar is the forty-fourth Captain since Klungor, elected for life by the sworn and bound to swear again at the Reading of Names every year at the tower. He escorts the pilgrims over the South Pass for the Worshipdom's fee, watches the goblin warrens of Burrikkrit and keeps the warren-boss's old helmet polished on the tower wall as a reminder. The Guard has not lit a war-beacon since the Tunnel Fight, and Tavec intends to keep it that way by being ready to.",
+      "portrait": {
+        "appearance": "A compact, hard-faced soldier with cropped grey hair and a broken nose.",
+        "dress": "A grey tabard with the tower badge of the sworn over mail, a lantern of the Lamp Truce hanging from his sword-belt.",
+        "colours": "Stone grey (#5a5a6a), lamp gold (#d8c080), Aenoran blue (#2f5d8a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the sworn elect the next Captain from among themselves for life.",
+      "succession": "Elective (the sworn)."
+    },
+    "advisors": [
+      {
+        "id": "zin_klungori_guard_ardelle",
+        "name": "Ardelle Hungar, Keeper of the Lamp",
+        "given": "Ardelle",
+        "house": "Hungar",
+        "office": "Keeper of the Lamp of the Truce",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_treaty_keeper"
+        ],
+        "role": "Keeps the lamp of the Lamp Truce lit in the tower and carries the Guard's word to the hobgoblin king and the Lord of the Deep Hall.",
+        "portrait": "A grey-cloaked woman carrying a lit iron lamp.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_klungori_guard_sefric",
+        "name": "Sefric Toler, Master of the Pilgrim Road",
+        "given": "Sefric",
+        "house": "Toler",
+        "office": "Master of the Pilgrim Road",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Counts the pilgrims over the South Pass and the fees the Worshipdom pays for them, and has never once had to ask twice for the money.",
+        "portrait": "A road-warden in a grey cloak with a tally-board.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_klungori_guard_velmor",
+        "name": "Velmor Dunmar, Warden of the Tunnels",
+        "given": "Velmor",
+        "house": "Dunmar",
+        "office": "Warden of the Tunnels",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "Watches the old tunnels under the pass with the dwarves' help and listens at the rock-falls for picks on the other side.",
+        "portrait": "A soot-faced tunnel-warden with a miner's lamp and a short axe.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_klungori_guard_vothec",
+        "name": "Vothec Hungohar, Second of the Sworn",
+        "given": "Vothec",
+        "house": "Hungohar",
+        "office": "Second of the Sworn",
+        "gender": "male",
+        "people": "men",
+        "born": 6780,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer",
+          "unyielding_defender"
+        ],
+        "role": "The Captain's cousin and second, who holds the tower when the Captain rides with the pilgrims.",
+        "portrait": "A tall soldier in a grey tabard with a tower-shield.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_klungori_guard_renette",
+        "name": "Renette Toran of the Escorts",
+        "given": "Renette",
+        "house": "Toran",
+        "office": "Captain of the Pilgrim Escorts",
+        "gender": "female",
+        "people": "men",
+        "born": 6785,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Leads the escorts that walk the pilgrims over the saddle in daylight and back again.",
+        "portrait": "A mounted escort-captain in grey with a spear and a white pilgrim ribbon.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "HER",
+    "key": "herez",
+    "name": "Herez",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "HER_zin_ruler",
+      "name": "Marcher-Lord Heziel",
+      "given": "Heziel",
+      "house": "House of Hezar",
+      "title": {
+        "native": "Nestel",
+        "english": "Marcher-Lord of Herez"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6773,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_marcher_lord",
+        "zin_trait_unheeded_warning"
+      ],
+      "bio": "Heziel is of the cousin's line of the House of Hezar, restored at the Charters, and he keeps the old towers of the southern march manned and the garrison drilling on empty roads. When his scouts reported that the herders of the far southern road had left their summer villages a season early, he wrote to Parim, and Parim answered with a receipt. He has kept the receipt, and he is the only lord of the Concord who expects the south to come north again.",
+      "portrait": {
+        "appearance": "A sun-darkened, watchful man with a close-cut black beard going grey and a scar across one brow.",
+        "dress": "A marcher's brigandine over a faded green and ochre surcoat, the tower badge of Hezar, a riding cloak.",
+        "colours": "March ochre (#b38a3a), field green (#4e6b3a), wheat (#d8cba0)."
+      },
+      "canon": "S"
+    },
+    "heir": {
+      "id": "zin_regional_herez_ilia",
+      "name": "Ilia Hezar",
+      "given": "Ilia",
+      "house": "Hezar",
+      "office": "Daughter of the Marcher-Lord",
+      "gender": "female",
+      "people": "men",
+      "born": 6797,
+      "traits": [
+        "zin_trait_marcher_lord"
+      ],
+      "role": "The Marcher-Lord's elder daughter, who rides with the scouts and reads every one of her father's letters before they go north.",
+      "succession": "Hereditary in the House of Hezar, confirmed by Parim at each succession.",
+      "portrait": "A young woman in a marcher's riding coat with a short sword.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_herez_sefmar",
+        "name": "Sefmar Hugon, Steward of the March",
+        "given": "Sefmar",
+        "house": "Hugon",
+        "office": "Steward of the March",
+        "gender": "male",
+        "people": "men",
+        "born": 6761,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Finds the money for a garrison that Parim thinks unnecessary, mostly by not repairing the steward's own house.",
+        "portrait": "A thin steward with patched sleeves and a heavy key-ring.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_herez_avara",
+        "name": "Avara Belurin, Warden of Belurithon",
+        "given": "Avara",
+        "house": "Belurin",
+        "office": "Warden of the Belurithon seat",
+        "gender": "female",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Sits in the Concord Council for the second charter-seat and spends most of the year asking it for money for the march.",
+        "portrait": "A grave woman in dark green with a charter-seal on a ribbon.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_herez_tolmec",
+        "name": "Tolmec the Scout-Master",
+        "given": "Tolmec",
+        "office": "Master of the Southern Scouts",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Sends the marcher scouts down the southern road and was the first to count the empty villages.",
+        "portrait": "A wiry scout-master with a dust-scarf and a spyglass.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_herez_garan",
+        "name": "Garan Hezel, Captain of the Towers",
+        "given": "Garan",
+        "house": "Hezel",
+        "office": "Captain of the Towers",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "defensive_doctrine",
+          "old_guard"
+        ],
+        "role": "Holds the line of old towers that Hezar built facing south and has rebuilt half of them out of his own pay.",
+        "portrait": "A broad captain in an old helm with a green plume.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_herez_ravel",
+        "name": "Ravel of the Dust Road",
+        "given": "Ravel",
+        "office": "Captain of the March Riders",
+        "gender": "female",
+        "people": "men",
+        "born": 6784,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "desert_fox"
+        ],
+        "role": "Leads the riders who patrol the dry southern road and sleep in the empty villages.",
+        "portrait": "A dust-covered rider with a spear and a wide-brimmed hat.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NOL",
+    "key": "noleksun",
+    "name": "Noleksun",
+    "stance": "zin_light_council",
+    "stanceNote": "countries.csv has zin_wild_freeholds; an eight-town confederacy with an elected Chief Speaker reads as a Free Council. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "NOL_zin_ruler",
+      "name": "Chief Speaker Norene of Dalvis",
+      "given": "Norene",
+      "house": "of Dalvis",
+      "title": {
+        "native": null,
+        "english": "Chief Speaker of the Eight Towns"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6771,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_caravan_master"
+      ],
+      "bio": "Norene of Dalvis was voted Chief Speaker by the households of the eight towns in 4A 1745, the first of her family to hold the office, and by Saelor's rule she will be the last for a while. She pays the Golden Court's tax-farmers with a smile and keeps every receipt, and she keeps a treasury at Saelori that would pay for a war if the towns ever agreed to have one. The fairs of Saelori are richer than they have ever been, and she means to hand them on that way.",
+      "portrait": {
+        "appearance": "A sun-browned, shrewd-eyed woman of the marches with greying hair under a linen coif.",
+        "dress": "A good wool gown in ochre and green, the eight-link chain of the Chief Speaker, a fair-master's purse.",
+        "colours": "March ochre (#b38a3a), field green (#4e6b3a), wheat (#d8cba0)."
+      },
+      "canon": "P",
+      "formerName": "Noleka of Dalvis (named after the realm; renamed under the place-name rule)"
+    },
+    "heir": {
+      "note": "No heir: every household of the eight towns votes for the Chief Speaker every fifth year at Saelori, and no family may hold the office twice running.",
+      "succession": "Elective (the households, every fifth year)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_noleksun_tolric",
+        "name": "Tolric Ulren, Master of the Fairs",
+        "given": "Tolric",
+        "house": "Ulren",
+        "office": "Master of the Fairs of Saelori",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the twice-yearly fairs that made the confederacy rich, and has never let a toll be charged at them.",
+        "portrait": "A jovial merchant in a fur-collared coat with a tally-stick.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_noleksun_tannec",
+        "name": "Tannec Saelon, Keeper of the Treasury",
+        "given": "Tannec",
+        "house": "Saelon",
+        "office": "Keeper of the Treasury",
+        "gender": "male",
+        "people": "men",
+        "born": 6760,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the eight towns' war chest at Saelori, which he has never been allowed to spend and never wanted to.",
+        "portrait": "An elderly treasurer with a ring of keys and a stern face.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_noleksun_ilsara",
+        "name": "Ilsara of the Lamp Shrine",
+        "given": "Ilsara",
+        "office": "Keeper of the Lamp Shrine at Saelori",
+        "gender": "female",
+        "people": "men",
+        "born": 6768,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the hearth-shrine of the Lamp and the Furrow at Saelori, where the eight towns swore their oath, and blesses the fair-scales each spring.",
+        "portrait": "A plump priestess with a brass lamp and a sheaf of wheat.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_noleksun_darvel",
+        "name": "Captain Darvel Noren of the Town Bands",
+        "given": "Darvel",
+        "house": "Noren",
+        "office": "Captain of the Town Bands",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "type": "field_marshal",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Commands the spear militia of the eight towns, which drills twice a year at the fairs and is mostly famous for its banners.",
+        "portrait": "A sturdy militia captain with a spear and eight town badges on his surcoat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_noleksun_halvine",
+        "name": "Halvine of the Road Guard",
+        "given": "Halvine",
+        "office": "Captain of the Road Guard",
+        "gender": "female",
+        "people": "men",
+        "born": 6783,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Guards the south-eastern roads that the toll war once closed, and has kept them open for twenty years.",
+        "portrait": "A woman in a leather jerkin with a sling and a horn.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KIL",
+    "key": "kilinti",
+    "name": "Kilinti",
+    "stance": "zin_light_wardens",
+    "court": "standard",
+    "ruler": {
+      "id": "KIL_zin_ruler",
+      "name": "Gronnar, Eldest of Kilinti",
+      "given": "Gronnar",
+      "house": "the Eldest of the Moot",
+      "title": {
+        "native": "Ommall",
+        "english": "the Eldest of the Ent-Moot"
+      },
+      "gender": "none",
+      "people": "ents",
+      "stance": "zin_light_wardens",
+      "traits": [
+        "zin_trait_slow_eldest",
+        "zin_trait_ancient_king"
+      ],
+      "bio": "The edge-folk call the present Eldest Gronnar, because the ents' own name for it would take a morning to say. It is the Eldest because it said the fewest words in the year, and it speaks last at the Ent-Moot every seventh spring. When Parim asked for standing oaks to roof the halls of the lake ports, Gronnar's answer, carried by the Reeve, was a single word, and the King did not ask again.",
+      "portrait": {
+        "appearance": "An immense ent of oak and moss, a face of deep-grooved bark with two slow green-gold eyes.",
+        "dress": "No dress: lichen, ivy and old birds' nests in its branches.",
+        "colours": "Moss green (#3f6b2e), bark brown (#6a5a3a), pale lichen (#a8b890)."
+      },
+      "canon": "S",
+      "note": "The ents' rank, mortality and origin are open; no birth year."
+    },
+    "heir": {
+      "note": "No heir: the Eldest is whichever ent has said the fewest words in the year.",
+      "succession": "By the Ent-Moot's own reckoning."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_kilinti_hamovan",
+        "name": "Reeve Hamovan Selmon",
+        "given": "Hamovan",
+        "house": "Selmon",
+        "office": "Edge-Reeve, who sits in Parim for the forest",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Elected by the edge-villages to keep the forest's accounts and to carry the Eldest's words to Parim, all of which he has learned to deliver without adding any of his own.",
+        "portrait": "A woodsman in a moss-green coat with an account-book and a sprig of oak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kilinti_sefaline",
+        "name": "Sefaline Darel, Mistress of the Fallen Wood",
+        "given": "Sefaline",
+        "house": "Darel",
+        "office": "Mistress of the Fallen Wood",
+        "gender": "female",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Runs the timber trade in wood the ents let fall, and turns away every buyer who asks for a living tree.",
+        "portrait": "A broad woman with an axe she has never used on a standing tree.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kilinti_oonoran",
+        "name": "Oonoran",
+        "given": "Oonoran",
+        "office": "Ent of the eastern edge",
+        "gender": "none",
+        "people": "ents",
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_elder_memory"
+        ],
+        "role": "The ent who walked to the eastern edge in the year of the Black Roots and pulled the dead roots out by hand; the edge-folk ask it about the old days, and it sometimes answers by the following spring.",
+        "portrait": "A tall grey ent with scorched bark on its hands.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_kilinti_rannar",
+        "name": "Rannar the Walking Grove",
+        "given": "Rannar",
+        "office": "Ent of the moot",
+        "gender": "none",
+        "people": "ents",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 5,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "An ent that has walked to war once in living memory, and the edge-folk would rather not see it walk again.",
+        "portrait": "A massive ent with stones caught in its roots.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_kilinti_garmon",
+        "name": "Garmon Edsen of the Edge Bows",
+        "given": "Garmon",
+        "house": "Edsen",
+        "office": "Captain of the Edge Bows",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the edge-folk bowmen who keep woodcutters and raiders out of the groves.",
+        "portrait": "A woodsman in green with a yew bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "SFT",
+    "key": "safeton",
+    "name": "Safeton",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "SFT_zin_ruler",
+      "name": "Harbour-Master Ronric Safarel",
+      "given": "Ronric",
+      "house": "House of Safarel",
+      "title": {
+        "native": "Haftel",
+        "english": "Harbour-Master of Safeton"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6765,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_port_master",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Ronric Safarel was chosen Harbour-Master by the council of ship-houses at the turn of this year, as half the Harbour-Masters in the harbour's history have been chosen from his house or the Lotarens. His ships carry grain to every coast and pilgrims south over the Sea of Peace, and the harbour likes to say he has more ships than the crown. He sold grain to both sides in the western wars and built the new mole with the profit, and he would do it again.",
+      "portrait": {
+        "appearance": "A fleshy, sea-browned merchant with a trimmed white beard and shrewd blue eyes.",
+        "dress": "A fur-collared blue coat over cream linen, the bronze anchor-seal of the Harbour-Master on a chain.",
+        "colours": "Aenoran blue (#2f5d8a), sand gold (#e8d9a0), cream (#f2f0e6)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the council of ship-houses chooses a new Harbour-Master each year from among its heads; the head of the house of Lotaren is the likeliest next.",
+      "succession": "Elective, yearly (the council of ship-houses)."
+    },
+    "advisors": [
+      {
+        "id": "zin_safeton_belisa",
+        "name": "Belisa Lotaren, Head of the House of Lotaren",
+        "given": "Belisa",
+        "house": "Lotaren",
+        "office": "Head of the House of Lotaren",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Head of the other great ship-house and next year's Harbour-Master in all but name; she and Ronric agree about everything except who should be in charge.",
+        "portrait": "A tall shipowner in sea-grey silk with a model hull on her desk.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_safeton_tarvin",
+        "name": "Tarvin Noveser, Speaker of the Novez Fields",
+        "given": "Tarvin",
+        "house": "Noveser",
+        "office": "Speaker of the Novez Fields",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Speaks for the farmers who sold their seat's levy to the ship-houses in a famine year and have been arguing about the price ever since.",
+        "portrait": "A ruddy farmer in his best coat holding a sack of grain.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_safeton_aveline",
+        "name": "Mother Aveline of the Pilgrim Quay",
+        "given": "Aveline",
+        "office": "Keeper of the Pilgrim Quay",
+        "gender": "female",
+        "people": "men",
+        "born": 6759,
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_pilgrim_steward"
+        ],
+        "role": "Runs the hostels on the pilgrim quay where the faithful of the Deliverer wait for the ships south, and keeps them fed whatever the weather.",
+        "portrait": "An elderly woman in white and pale gold with a basket of loaves.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_safeton_edmar",
+        "name": "Captain Edmar Safen of the Mole",
+        "given": "Edmar",
+        "house": "Safen",
+        "office": "Captain of the Harbour Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Commands the harbour guard on the new mole and the boarding crews of the ship-houses.",
+        "portrait": "A broad harbour captain in a leather coat with a boarding axe.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_safeton_lysra",
+        "name": "Sea-Captain Lysra Marren",
+        "given": "Lysra",
+        "house": "Marren",
+        "office": "Captain of the Grain Fleet",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "Leads the grain fleet down the coast and has never lost a hull to weather, though she once lost one to a customs house.",
+        "portrait": "A weather-bitten captain in a blue sea-coat with a brass compass.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "FRE",
+    "key": "freshon",
+    "name": "Freshon",
+    "stance": "zin_dom_court",
+    "stanceNote": "countries.csv has zin_wild_freeholds; a spring-town indebted to and loyal to the Golden Court leans to the Golden Court stance. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "FRE_zin_ruler",
+      "name": "First Spring-Master Lisovan Tarmon",
+      "given": "Lisovan",
+      "house": "Tarmon",
+      "title": {
+        "native": "Sultel",
+        "english": "First Spring-Master of Freshon"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6769,
+      "stance": "zin_dom_court",
+      "traits": [
+        "zin_trait_guild_master",
+        "zin_trait_office_broker"
+      ],
+      "bio": "The lot fell to Lisovan Tarmon last spring, and he holds the leases on three spring-houses and two inns round the warm spring of Hordorton. He is proud of the Golden Charter the town bought in 4A 1731, which emptied three generations of savings, and he is loyal to the Golden Court, because the Golden Court holds his debts. His spring-houses are still the best hospitals of the southern Vale, which is more than can be said for his accounts.",
+      "portrait": {
+        "appearance": "A soft, pink-cheeked townsman with oiled curls and an anxious smile.",
+        "dress": "A blue velvet coat with a guild collar, the gilt seal of the Golden Charter pinned at the breast.",
+        "colours": "Aenoran blue (#2f5d8a), sand gold (#e8d9a0), cream (#f2f0e6)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the First Spring-Master is drawn by lot from the council of spring-masters every third year.",
+      "succession": "By lot (the council of spring-masters)."
+    },
+    "advisors": [
+      {
+        "id": "zin_freshon_avella",
+        "name": "Master-Physician Avella Sulren",
+        "given": "Avella",
+        "house": "Sulren",
+        "office": "Master-Physician of the Spring-Houses",
+        "gender": "female",
+        "people": "men",
+        "born": 6766,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Runs the spring-house hospitals and keeps a record of every fever year since the Fever Wells.",
+        "portrait": "A brisk physician in a white apron with a copper cup.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_freshon_sefovan",
+        "name": "Sefovan Aurmar, Agent of the Golden Court",
+        "given": "Sefovan",
+        "house": "Aurmar",
+        "office": "Agent of the Golden Court's creditors",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_court_favourite"
+        ],
+        "role": "Holds the town's debts for a Golden Court house and sits on the council because nobody dares ask him to leave.",
+        "portrait": "A smooth-faced man in gilded blue with a ledger and a smile.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_freshon_fabrisa",
+        "name": "Fabrisa Monar, Mistress of the Carts",
+        "given": "Fabrisa",
+        "house": "Monar",
+        "office": "Mistress of the Carts",
+        "gender": "female",
+        "people": "men",
+        "born": 6778,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Keeps the carts and horses that the town owes the common defence, now free of royal tolls under the Golden Charter.",
+        "portrait": "A sturdy carter-mistress with a whip and a wide hat.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_freshon_marvic",
+        "name": "Captain Marvic Hordel of the Spring Guard",
+        "given": "Marvic",
+        "house": "Hordel",
+        "office": "Captain of the Spring Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "career_officer"
+        ],
+        "role": "Commands the town guard, mainly at the springs, where it keeps the queue in order.",
+        "portrait": "A well-fed captain in a polished breastplate.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_freshon_tolene",
+        "name": "Tolene Arvin of the Cart Escort",
+        "given": "Tolene",
+        "house": "Arvin",
+        "office": "Captain of the Cart Escort",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 1,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Leads the mounted escort of the town's cart levy and knows every road of the southern Vale.",
+        "portrait": "A mounted woman in a blue cloak with a short spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "PAZ",
+    "key": "pazoma",
+    "name": "Pazoma",
+    "stance": "zin_dom_court",
+    "stanceNote": "countries.csv has zin_wild_freeholds; a guild-city that bought a Golden Charter leans to the Golden Court stance. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "PAZ_zin_ruler",
+      "name": "Warden of the Guilds Serette Bellaren",
+      "given": "Serette",
+      "house": "Bellaren",
+      "title": {
+        "native": "Gildangere",
+        "english": "Warden of the Guilds of Horlomon"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6773,
+      "stance": "zin_dom_court",
+      "traits": [
+        "zin_trait_guild_master",
+        "zin_trait_scholar_of_the_first_men"
+      ],
+      "bio": "Serette Bellaren is the great-granddaughter of Tamric Bellaren, who rang every bell in Horlomon for three days in the Bell Riot, and this year the guild masters chose her Warden of the Guilds from the bell-founders' first seat. Her guild-city makes the Concord's bells, glass, paper and books and keeps the best library outside the universities. She has not forgiven Freshon for buying its Golden Charter three years before Pazoma, and at a lower price.",
+      "portrait": {
+        "appearance": "A tall, sharp-featured woman with ink on her fingers and grey streaks in dark hair.",
+        "dress": "A dark blue guild gown with a bell-shaped silver badge and the seven-ribboned collar of the Warden.",
+        "colours": "Aenoran blue (#2f5d8a), sand gold (#e8d9a0), cream (#f2f0e6)."
+      },
+      "canon": "P"
+    },
+    "heir": {
+      "note": "No heir: the masters of the seven great guilds choose a Warden of the Guilds each year, the bell-founders holding the first seat.",
+      "succession": "Elective, yearly (the guild masters)."
+    },
+    "advisors": [
+      {
+        "id": "zin_pazoma_orvane",
+        "name": "Master Orvane Pellis, Keeper of the Guild Library",
+        "given": "Orvane",
+        "house": "Pellis",
+        "office": "Keeper of the Guild Library",
+        "gender": "male",
+        "people": "men",
+        "born": 6761,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Keeps the library the paper-makers hid from the Order in the guild cellars and will lend a book to a king if the king leaves a deposit.",
+        "portrait": "A stooped bookbinder with spectacles and a leather apron.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_pazoma_fabrine",
+        "name": "Fabrine Varran, Master of the Glass-Makers",
+        "given": "Fabrine",
+        "house": "Varran",
+        "office": "Master of the Glass-Makers",
+        "gender": "female",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Buys the white glass sand of the south and sells the finest glass in the Concord, and argues with the bell-founders at every council.",
+        "portrait": "A woman in a scorched leather apron holding a blue glass flask.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_pazoma_ronvel",
+        "name": "Ronvel Horl, Clerk of the Charter",
+        "given": "Ronvel",
+        "house": "Horl",
+        "office": "Clerk of the Golden Charter",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the Golden Charter's privileges in good order and counts what the city paid for them, which he does not do in public.",
+        "portrait": "A neat young clerk with a sealed charter-case.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_pazoma_hallard",
+        "name": "Captain Hallard Belmon of the Bell Guard",
+        "given": "Hallard",
+        "house": "Belmon",
+        "office": "Captain of the Bell Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Commands the guild militia, which rings the alarm bells better than any city in Aoaz and has had little else to do.",
+        "portrait": "A burly bell-founder in a breastplate with a hammer.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_pazoma_renalde",
+        "name": "Shipwright-Captain Renalde Shoren",
+        "given": "Renalde",
+        "house": "Shoren",
+        "office": "Captain of the Lake Shore Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 2,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the guild-city's handful of armed lake boats that guard its barges on the Great Lake.",
+        "portrait": "A lake-boat captain in a blue coat with a boathook.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "ORH",
+    "key": "orohaf",
+    "name": "Orohaf",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "ORH_zin_ruler",
+      "name": "Queen Faberra of Orohaf",
+      "given": "Faberra",
+      "house": "House of Faber",
+      "title": {
+        "native": "Arain",
+        "english": "Queen of Orohaf"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6766,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_captains_blood",
+        "zin_trait_free_dominion"
+      ],
+      "bio": "Faberra was chosen queen by the eldest women of the five houses, and her house of Faber holds the harbour of Borrak for as long as she lives. She sits in the house-moot with the lords of Rish, Tinta, Holod and Faber, keeps the Queen's Peace that forbids one house to seize another's ship, and builds the Concord's best hulls from the timber of Verde. Any fleet crossing from the West must pass her harbours, and she has never let Parim forget it.",
+      "portrait": {
+        "appearance": "A weather-bitten island woman with sea-grey eyes and iron-grey hair in a long plait.",
+        "dress": "A sea-grey gown under a cloak of oiled wool, a circlet of silver shells, a shipwright's rule hung at her belt.",
+        "colours": "Sea teal (#4a6f7c), sail cream (#ece4d0), driftwood (#8a7a52)."
+      },
+      "canon": "S"
+    },
+    "heir": {
+      "note": "No designated heir: the eldest women of the five houses choose the next queen from the daughters of any house; inheritance on the isle runs through daughters.",
+      "succession": "Elective among the daughters of the five houses."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_asgard_hela",
+        "name": "Tide-Mother Hela Rishan",
+        "given": "Hela",
+        "house": "Rishan",
+        "office": "Tide-Mother of the House of Rish",
+        "gender": "female",
+        "people": "men",
+        "born": 6750,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Eldest of the tide-mothers, who names the ancestors of the houses at every flood in the tide-chambers cut in the island rock.",
+        "portrait": "An ancient woman in sea-grey with a string of shells and a lamp.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_asgard_belovan",
+        "name": "Lord Belovan Tintar",
+        "given": "Belovan",
+        "house": "Tintar",
+        "office": "Lord of the Tinta Hills",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Lord of the house that holds the second charter-seat, who feeds the isle and grumbles that Borrak gets all the ships.",
+        "portrait": "A farmer-lord in a sheepskin coat with a seal ring.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_asgard_korvan",
+        "name": "Master Shipwright Korvan Holodar",
+        "given": "Korvan",
+        "house": "Holodar",
+        "office": "Master Shipwright of Borrak",
+        "gender": "male",
+        "people": "men",
+        "born": 6760,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_master_of_ships"
+        ],
+        "role": "Builds the hulls from Verde's timber and tells every buyer, including the crown, how long they will have to wait.",
+        "portrait": "A grizzled shipwright with an adze and wood-shavings in his beard.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_asgard_belra",
+        "name": "Sea-Captain Belra Faber",
+        "given": "Belra",
+        "house": "Faber",
+        "office": "Captain of the Isle Fleet",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert",
+          "bold"
+        ],
+        "role": "The queen's niece and captain of the isle fleet, who has sailed to Verde and back more often than any captain alive.",
+        "portrait": "A tall sea-captain in an oiled cloak with a short sword.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_asgard_kormar",
+        "name": "Kormar Rish, Captain of the Isle Boarders",
+        "given": "Kormar",
+        "house": "Rish",
+        "office": "Captain of the Isle Boarders",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Leads the isle's boarders and shore companies, and has a house-feud with the Tintas that the Queen's Peace keeps quiet.",
+        "portrait": "A scarred boarder in a leather jerkin with a hooked axe.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "FOT",
+    "key": "fotan",
+    "name": "Fotan",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "FOT_zin_ruler",
+      "name": "Lord Ragnec Ostvar",
+      "given": "Ragnec",
+      "house": "House of Ostvar",
+      "title": {
+        "native": "Tolimtel",
+        "english": "Lord of Fotan and of the Strait Toll"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6770,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_pass_lord",
+        "zin_trait_strait_pride"
+      ],
+      "bio": "Ragnec Ostvar is Leren in his pride and Aenoran in his speech, like every lord of his house since the sea-captain Ostvar stretched the first toll-chain across the landing at Deoreh. He holds the shortest crossing between the North Lands and Aenor outside the Concord and takes his toll from both crowns. Since the Leren envoys were humiliated at Parim in the timber dispute he has leaned openly to Sonargur, and he has a Leren wife to prove it.",
+      "portrait": {
+        "appearance": "A tall, fair-bearded man with a long Leren face and a toll-master's narrow eyes.",
+        "dress": "A dark sea-cloak trimmed with red, a silver toll-chain worn as a collar, a Leren knife at the belt.",
+        "colours": "Strait blue (#2f4a6a), sea-foam white (#e0e0d0), toll red (#8a2a2a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "id": "zin_fotan_ostric",
+      "name": "Ostric Ostvar",
+      "given": "Ostric",
+      "house": "Ostvar",
+      "office": "Heir of Fotan",
+      "gender": "male",
+      "people": "men",
+      "born": 6795,
+      "traits": [
+        "zin_trait_strait_pride"
+      ],
+      "role": "The lord's eldest son by his Leren wife, raised half in Sonargur and fond of saying so in Parim.",
+      "succession": "Hereditary in the House of Ostvar.",
+      "portrait": "A fair young man in a red-trimmed sea-cloak.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_fotan_eldra",
+        "name": "Eldra Sefaren, Keeper of the Chain",
+        "given": "Eldra",
+        "house": "Sefaren",
+        "office": "Keeper of the Toll-Chain",
+        "gender": "female",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_caravan_broker"
+        ],
+        "role": "Keeps the toll-chain at Deoreh and the books of every hull that passed it, Leren and Aenoran alike.",
+        "portrait": "A stern woman with a heavy key and a ledger bound in sealskin.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_fotan_hovard",
+        "name": "Litany-Singer Hovard Selmar",
+        "given": "Hovard",
+        "house": "Selmar",
+        "office": "Litany-Singer of the Toll Fleet",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Sings the Strait Litany at each tide and names the ships the strait took that year, and the storm that took them, which he does not call a god.",
+        "portrait": "An old singer in a grey sea-cloak with a bell.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_fotan_eskel",
+        "name": "Eskel Ostmar, Envoy to Sonargur",
+        "given": "Eskel",
+        "house": "Ostmar",
+        "office": "Envoy to Sonargur",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "The lord's cousin, who spends more of the year in Sonargur than in Fotan and writes home in Leren.",
+        "portrait": "A courtly man in Leren blue with a sealed letter.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_fotan_vegrik",
+        "name": "Toll-Captain Vegrik Ostvar",
+        "given": "Vegrik",
+        "house": "Ostvar",
+        "office": "Captain of the Toll-Boats",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 2,
+          "maneuvering": 4,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert",
+          "bold"
+        ],
+        "role": "Commands the toll-boats, the best-handled small craft on the strait, and can shut the crossing in an afternoon.",
+        "portrait": "A lean sailor in a red-trimmed cloak at the tiller of a toll-boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_fotan_hanrec",
+        "name": "Hanrec Dunren of the Landing",
+        "given": "Hanrec",
+        "house": "Dunren",
+        "office": "Captain of the Landing",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "naval_invader"
+        ],
+        "role": "Holds the tower at the landing that the Order burned twice, with the toll-boats' boarders.",
+        "portrait": "A grey soldier with a boarding pike on the landing stair.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KUN",
+    "key": "kunhrim",
+    "name": "Kunhrim",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "KUN_zin_ruler",
+      "name": "Stulmar of the Kramast, Lord of the Deep Hall",
+      "given": "Stulmar",
+      "house": "clan of Kramast",
+      "title": {
+        "native": "Kunhrimbaur",
+        "english": "Lord of the Deep Hall"
+      },
+      "gender": "male",
+      "people": "dwarves",
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_hold_lord",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Stulmar of the Kramast clan was chosen by the council of clan-elders to speak for the hold at the Western Gate, and outsiders deal with him and with nobody else. He sells iron, gold and gems west by the honest pound and black powder to Aenor's crown and to nobody else, as the Powder Compact requires. He keeps the Lamp Truce with the hobgoblin king because a truce is cheaper than a war, and he has told the Golden King, politely, that the clans could starve any ruler in Parim of iron if they chose.",
+      "portrait": {
+        "appearance": "A broad, heavy dwarf with a long braided grey-black beard bound in iron rings and soot-dark hands.",
+        "dress": "A brown leather coat over fine mail, a gold anvil badge, a hammer of office with a bronze head.",
+        "colours": "Deep brown (#4a3b2f), forge gold (#b8862f), stone grey (#8f8f8a)."
+      },
+      "canon": "H",
+      "note": "Dwarves are long-lived on their card; no birth year (owner question on dwarf lifespans)."
+    },
+    "heir": {
+      "note": "No heir: the council of clan-elders chooses the next Lord of the Deep Hall from the clans of Kramast, Hrunord and Dolmerm.",
+      "succession": "Elective among the clans (the council of clan-elders)."
+    },
+    "advisors": [
+      {
+        "id": "zin_kunhrim_tildis",
+        "name": "Tildis of the Hrunord, Mistress of the Forge",
+        "given": "Tildis",
+        "house": "clan of Hrunord",
+        "office": "Mistress of the Forge",
+        "gender": "female",
+        "people": "dwarves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Keeps the recipe of the black powder the hold learned from Hrennost, and the clans say she keeps it in her head and nowhere else.",
+        "portrait": "A stocky dwarf-woman in a scorched leather apron with braided red hair.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kunhrim_bromek",
+        "name": "Bromek of the Dolmerm, Elder of the Clans",
+        "given": "Bromek",
+        "house": "clan of Dolmerm",
+        "office": "Elder of the Clans",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "The eldest of the council, who remembers what every customer of the hold owes and will tell them, whether they ask or not.",
+        "portrait": "A white-bearded dwarf with a stone tablet of accounts.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kunhrim_hekkorn",
+        "name": "Hekkorn of the Kramast, Warden of the Gate",
+        "given": "Hekkorn",
+        "house": "clan of Kramast",
+        "office": "Warden of the Western Gate",
+        "gender": "male",
+        "people": "dwarves",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_siege_master"
+        ],
+        "role": "Keeps the Western Gate and the bombards the hold places in the Kingson forts, and has never let an elf through either.",
+        "portrait": "A grim dwarf in heavy mail with an axe and a powder-flask.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_kunhrim_gratas",
+        "name": "Gratas of the Kramast",
+        "given": "Gratas",
+        "house": "clan of Kramast",
+        "office": "Captain of the Axe Companies",
+        "gender": "male",
+        "people": "dwarves",
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 3,
+          "defense": 5,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "trait_mountaineer",
+          "unyielding_defender"
+        ],
+        "role": "Led the delvers in the winter of the Tunnel Fight underground and has fought in the dark more than any captain alive.",
+        "portrait": "A dwarf in black-iron mail with a two-handed axe and a miner's lamp on his helm.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kunhrim_dekkas",
+        "name": "Dekkas of the Hrunord",
+        "given": "Dekkas",
+        "house": "clan of Hrunord",
+        "office": "Captain of the Hammer Companies",
+        "gender": "male",
+        "people": "dwarves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 4,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Leads the hammer companies and the sappers who bring a tunnel down on whoever is in it.",
+        "portrait": "A broad dwarf with a war-hammer and a coil of fuse.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BRR",
+    "key": "burrikkrit",
+    "name": "Burrikkrit",
+    "stance": "zin_wild_tribes",
+    "stanceNote": "No row in countries.csv; a warren-kingdom under its biggest hobgoblin reads as a Tribal Chieftaincy. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "BRR_zin_ruler",
+      "name": "King Dwibrik of Glimzig",
+      "given": "Dwibrik",
+      "house": "the Hobgoblin Kings of Glimzig",
+      "title": {
+        "native": "Snikbak",
+        "english": "King of the Warrens (the Big Snik)"
+      },
+      "gender": "male",
+      "people": "hobgoblins",
+      "born": 6761,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_hobgoblin_king",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Dwibrik was only a hobgoblin once, like any other, but he ate well and grew, and he has held the lamp in the throne-cave longer than any king the warrens can name. He keeps the Lamp Truce with the dwarves and the Klungori Guard because the dwarves are bad neighbours to annoy, and he sells the under-roads through the range more quietly since the smugglers' guild went missing. Goblins who say he is only big, and not wise, are welcome to say it to him.",
+      "portrait": {
+        "appearance": "A huge, heavy hobgoblin with green-grey skin, long ears hung with gold rings and small clever eyes.",
+        "dress": "A crown of mismatched gold salvage, a cloak sewn from stolen banners, a lit lamp hanging from his belt.",
+        "colours": "Cave olive (#4a5a2a), soot black (#2a2a22), stolen gold (#d0b050)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: a king rules until a bigger hobgoblin throws him out of the throne-cave.",
+      "succession": "By size and nerve (the throne-cave)."
+    },
+    "advisors": [
+      {
+        "id": "zin_burrikkrit_snikit",
+        "name": "Snikit the Lamp-Keeper",
+        "given": "Snikit",
+        "office": "Keeper of the Lamp-Hole",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6789,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "The loudest goblin in Glimzig, which is why he keeps the warren's lamp; he says a warren lives while its lamp burns, and has never let it go out.",
+        "portrait": "A skinny big-eared goblin cupping a lamp in both hands.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_burrikkrit_zigka",
+        "name": "Zigka the Tunnel-Seller",
+        "given": "Zigka",
+        "office": "Warren-boss of the under-roads",
+        "gender": "female",
+        "people": "goblins",
+        "born": 6784,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_whisper_master"
+        ],
+        "role": "Sells passage through the old tunnels to whoever pays and remembers what happened to the last guild that talked about it.",
+        "portrait": "A sly goblin-woman with a ring of keys and a hood.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_burrikkrit_krittik",
+        "name": "Krittik Fire-Pot",
+        "given": "Krittik",
+        "office": "Master of the Fire-Pots",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6786,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Makes the crude powder for the fire-pots the goblins throw in the tunnels, and has lost fewer fingers doing it than his predecessor.",
+        "portrait": "A scorched goblin with goggles of glass and a clay pot under one arm.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_burrikkrit_blikkit",
+        "name": "Blikkit the Wurgh-Rider",
+        "given": "Blikkit",
+        "office": "Boss of the Wurgh Riders",
+        "gender": "male",
+        "people": "goblins",
+        "born": 6788,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "planning": 2,
+          "logistics": 1
+        },
+        "traits": [
+          "trait_reckless",
+          "ambusher"
+        ],
+        "role": "Leads the wurgh riders on the southern roads by night, since the sun makes him sleepy.",
+        "portrait": "A goblin in patched leather astride a snarling wurgh.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_burrikkrit_nubbix",
+        "name": "Nubbix Shieldwall",
+        "given": "Nubbix",
+        "office": "Captain of the Hobgoblin Shield-Wall",
+        "gender": "male",
+        "people": "hobgoblins",
+        "born": 6779,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "The second-biggest hobgoblin in the warrens, who leads the shield-wall and knows better than to grow any bigger.",
+        "portrait": "A huge hobgoblin behind a door-sized shield.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "OLO",
+    "key": "olodor",
+    "name": "Olodor",
+    "stance": "zin_wild_seclusion",
+    "stanceNote": "No row in countries.csv; hidden holts that meet only when found read as Seclusion. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "OLO_zin_ruler",
+      "name": "Pebbo, Village-King of Tovodor",
+      "given": "Pebbo",
+      "house": "the Village-Kings of Tovodor",
+      "title": {
+        "native": "Tovo",
+        "english": "Village-King of Tovodor"
+      },
+      "gender": "male",
+      "people": "gnomes",
+      "stance": "zin_wild_seclusion",
+      "traits": [
+        "zin_trait_hidden_king",
+        "zin_trait_secluded_eldest"
+      ],
+      "bio": "Pebbo was crowned by the gold-crowned of Tovodor as the eldest of the village-kings, and the holts meet under him only when they are found, which has not happened in his reign. He keeps the tally of the pots, crowns the gnome whose pot is full and honours Naisa, who keeps the account of luck. Almost nobody in Parim knows that he lives within a day's walk of the bridges, and he would like to keep it so.",
+      "portrait": {
+        "appearance": "A tiny, bearded gnome with a round nose, quick bright eyes and a white beard to his belt.",
+        "dress": "A tall red cap, a moss-green coat with gold buttons, a gold tally-rim worn round his neck.",
+        "colours": "Moss green (#2f6b3a), cap red (#b23a2a), gnome gold (#d4a93a)."
+      },
+      "canon": "H",
+      "note": "Gnomes are long-lived on their card; no birth year."
+    },
+    "heir": {
+      "note": "No heir: each holt crowns its own king, and the eldest of them, the king of Tovodor, is crowned by its gold-crowned.",
+      "succession": "By the gold-crowned of Tovodor."
+    },
+    "advisors": [
+      {
+        "id": "zin_olodor_vilenne",
+        "name": "Villenne Illo, the Gold-Crowned",
+        "given": "Villenne",
+        "office": "First of the Gold-Crowned",
+        "gender": "female",
+        "people": "gnomes",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "The richest gnome in Tovodor, whose full pot put the crown on Pebbo's head and could, she reminds him, take it off.",
+        "portrait": "A plump gnome-woman with a gold pot and a red cap.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_olodor_kottip",
+        "name": "Kottip of the Door",
+        "given": "Kottip",
+        "office": "Keeper of the Holt Doors",
+        "gender": "male",
+        "people": "gnomes",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "Keeps the doors in the Stendorler stone shut and knows which masons knock before they cut.",
+        "portrait": "A small gnome with a ring of tiny keys and a mallet.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_olodor_semmi",
+        "name": "Semmi Orri of the Gardens",
+        "given": "Semmi",
+        "office": "Keeper of the Hidden Gardens",
+        "gender": "female",
+        "people": "gnomes",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Keeps the hidden gardens and the old luck-lore, and can tell from a stranger's purse whether he will bring luck or ill luck.",
+        "portrait": "A white-haired gnome in a leaf cloak with a basket of herbs.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_olodor_bimmet",
+        "name": "Bimmet the Trapper",
+        "given": "Bimmet",
+        "office": "Captain of the Trappers",
+        "gender": "male",
+        "people": "gnomes",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ambusher",
+          "defensive_doctrine"
+        ],
+        "role": "Leads the hidden archers and trappers, who fight only when found and are seldom found.",
+        "portrait": "A gnome in a moss cloak with a tiny bow and a snare.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_olodor_tirrenne",
+        "name": "Tirrenne of the Burrows",
+        "given": "Tirrenne",
+        "office": "Captain of the Burrows",
+        "gender": "female",
+        "people": "gnomes",
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "Keeps the bolt-holes and the chiromaw traps under the holts.",
+        "portrait": "A gnome-woman with a lantern and a short spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DNL",
+    "key": "dunelaeth",
+    "name": "Dunelaeth",
+    "stance": "zin_light_kinship",
+    "court": "standard",
+    "ruler": {
+      "id": "DNL_zin_ruler",
+      "name": "Velaeth, Eldest of Thamiel",
+      "given": "Velaeth",
+      "house": "the Eldest of Thamiel",
+      "title": {
+        "native": null,
+        "english": "Eldest of Dunelaeth"
+      },
+      "gender": "female",
+      "people": "elves",
+      "stance": "zin_light_kinship",
+      "traits": [
+        "zin_trait_secluded_eldest",
+        "zin_trait_ancient_king"
+      ],
+      "bio": "Velaeth speaks for the one elven household that would not go home over the range when the queen of Herrodon called her kin east after the Ember Lands. Her people guide travellers on the road to the Kingson Pass for salt and silver, as they guided the fugitives of the resistance over the Lunhrim Notch under the Order. When Herrodon's envoys came to ask the household home a second time, she fed them, showed them the graves and sent them back with gifts and no answer.",
+      "portrait": {
+        "appearance": "A tall, grave elf with dark hair and grey eyes, fine-boned, without visible age.",
+        "dress": "An old green travelling cloak worn thin at the hem, a staff of black thorn, a guide's horn of carved bone.",
+        "colours": "Old forest green (#2a5a3a), parchment (#c8c0a0), bark (#5a3a2a)."
+      },
+      "canon": "H",
+      "note": "Elves are never given an age (V23); no birth year."
+    },
+    "heir": {
+      "note": "No heir: the houses of the household choose their Eldest from among themselves.",
+      "succession": "Elective (the houses of Thamiel)."
+    },
+    "advisors": [
+      {
+        "id": "zin_dunelaeth_lorneth",
+        "name": "Lorneth the Guide",
+        "given": "Lorneth",
+        "office": "First of the Guides",
+        "gender": "male",
+        "people": "elves",
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Leads the guides of the Kingson road and knows the Lunhrim Notch by night better than by day.",
+        "portrait": "A lean elf in a hooded green cloak with a lantern and a bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dunelaeth_lyrwen",
+        "name": "Lyrwen of the Graves",
+        "given": "Lyrwen",
+        "office": "Keeper of the Graves",
+        "gender": "female",
+        "people": "elves",
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_song_warden"
+        ],
+        "role": "Keeps the household's graves and sings the Kindred Song in the old western form that the eastern elves find quaint.",
+        "portrait": "An elf-woman in grey with a harp of dark wood.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dunelaeth_thaurin",
+        "name": "Thaurin the Trader",
+        "given": "Thaurin",
+        "office": "Keeper of the Salt and Silver",
+        "gender": "male",
+        "people": "elves",
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_caravan_broker"
+        ],
+        "role": "Collects the salt and silver the forts on both sides pay the guides and deals with men, dwarves and Herrodon on the household's behalf.",
+        "portrait": "An elf with a pack of salt-blocks and a silver scale.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_dunelaeth_tavelan",
+        "name": "Tavelan of the Notch",
+        "given": "Tavelan",
+        "office": "Captain of the Bowmen",
+        "gender": "male",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger",
+          "trait_mountaineer"
+        ],
+        "role": "Captain of the household's bowmen, who held the Notch for the fugitives of the resistance.",
+        "portrait": "An elf archer in faded green with a longbow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_dunelaeth_ornia",
+        "name": "Ornia of the Kingdom Forests",
+        "given": "Ornia",
+        "office": "Warden of the Forest Paths",
+        "gender": "female",
+        "people": "elves",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Keeps the paths of the Kingdom Forests open for guides and closed to everyone else.",
+        "portrait": "An elf-woman with a spear and a leaf-patterned cloak.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "ANR",
+    "key": "aenor_forest",
+    "name": "Aenor Forest",
+    "stance": "zin_light_wardens",
+    "stanceNote": "No row in countries.csv; a slow forest moot that keeps its edge reads as Warden Host, like Kilinti. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "ANR_zin_ruler",
+      "name": "Goarvom, Eldest of Graulvoa",
+      "given": "Goarvom",
+      "house": "the Eldest of Graulvoa",
+      "title": {
+        "native": "Graul",
+        "english": "the Eldest of the Stands"
+      },
+      "gender": "none",
+      "people": "tree_people",
+      "stance": "zin_light_wardens",
+      "traits": [
+        "zin_trait_slow_eldest",
+        "zin_trait_secluded_eldest"
+      ],
+      "bio": "Men call the present Eldest Goarvom, which is as near as a ranger's tongue can come to what the Baelim call it. It speaks for the oldest stand, Graulvoa, in a moot that nobody outside the forest has ever heard end. The rangers of Selen leave water at the forest's edge in dry summers, and the woodcutters the Order once sent in for timber never came out, so that nobody has asked for timber since.",
+      "portrait": {
+        "appearance": "A walking conifer of great height, bark and needle, its face seen only as knots and shadow.",
+        "dress": "None: hanging moss, cones and the dark of the deep wood around it.",
+        "colours": "Deep pine green (#2a4a2a), resin brown (#6a5a3a), pale needle (#a8b880)."
+      },
+      "canon": "H",
+      "note": "The Baelim are never given an age; no birth year. They are not ents and never share a forest with them."
+    },
+    "heir": {
+      "note": "No heir: the Eldest of the oldest stand speaks for the whole forest.",
+      "succession": "By the slow moot of the stands."
+    },
+    "advisors": [
+      {
+        "id": "zin_aenor_forest_hulmev",
+        "name": "Hulmev of the Burnt Edge",
+        "given": "Hulmev",
+        "office": "Stand of the eastern edge",
+        "gender": "none",
+        "people": "tree_people",
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_quartermaster"
+        ],
+        "role": "The stand that came out of the wood and pulled down the Redbark camp trees when the raiders fired the eastern edge; the Redbark have not lit a fire in the forest since.",
+        "portrait": "A scorched, towering tree-shape with blackened bark.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_aenor_forest_nualma",
+        "name": "Nualma of the Fallen Stand",
+        "given": "Nualma",
+        "office": "Stand of the storm-fall",
+        "gender": "none",
+        "people": "tree_people",
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_elder_memory"
+        ],
+        "role": "The stand whose voices the rangers heard for nine nights after the great storm brought down part of it, until a ranger came in with water and the voices stopped.",
+        "portrait": "A leaning tree-shape among fallen trunks, moss thick on its knots.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_aenor_forest_edrisa",
+        "name": "Ranger Edrisa Vothsen",
+        "given": "Edrisa",
+        "house": "Vothsen",
+        "office": "Ranger of Selen who carries water to the edge",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "The Selen ranger the moots send to the forest's edge with water and offerings, and the only one the Baelim seem to let near.",
+        "portrait": "A ranger in green with a water-skin and an offering bowl.",
+        "canon": "P",
+        "note": "A man of Selen who serves as the only go-between men have; the Baelim keep no men inside the forest."
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_aenor_forest_durvom",
+        "name": "Durvom the Wall of Needles",
+        "given": "Durvom",
+        "office": "Stand of the western edge",
+        "gender": "none",
+        "people": "tree_people",
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 5,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "unyielding_defender"
+        ],
+        "role": "A stand that does not march; when it moves, it is a wall.",
+        "portrait": "A dense line of dark conifers that seems to have stepped forward.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_aenor_forest_morvar",
+        "name": "Morvar of the Deep Dark",
+        "given": "Morvar",
+        "office": "Stand of the deep wood",
+        "gender": "none",
+        "people": "tree_people",
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 4,
+          "planning": 1,
+          "logistics": 1
+        },
+        "traits": [
+          "ambusher"
+        ],
+        "role": "The stand that took the Order's woodcutters; the rangers do not go near it.",
+        "portrait": "A shadowed tree-shape half-hidden in mist.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "CUR",
+    "key": "cursed_lands",
+    "name": "Cursed Lands",
+    "stance": "zin_wild_seclusion",
+    "court": "standard",
+    "ruler": {
+      "id": "CUR_zin_ruler",
+      "name": "Izkala, Mother of the Eldest Cord",
+      "given": "Izkala",
+      "house": "daughter of Pelzen",
+      "title": {
+        "native": null,
+        "english": "Mother of the Eldest Cord"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6762,
+      "stance": "zin_wild_seclusion",
+      "traits": [
+        "zin_trait_cord_mother",
+        "zin_trait_secluded_eldest"
+      ],
+      "bio": "Izkala, daughter of Pelzen, keeps the eldest cord of the Veiled, on which the years are counted by their knots, and she speaks for the council of cord-mothers to anyone who comes to the edge of the grey downs. Her people grow roots and mushrooms in the sour ground the Black Roots left, refuse every crown as their mothers did, and turned back the last Concord host with poisoned wells and empty villages. She sends envoys home fed, lodged and with their letters unopened.",
+      "portrait": {
+        "appearance": "A tall woman veiled to the eyes, her eyes dark and steady, grey hair showing under the veil.",
+        "dress": "Layered grey and violet veils, a long knotted cord wound over one shoulder and down to the knee.",
+        "colours": "Ash violet (#5a5560), night grey (#2b2830), pale smoke (#9d98a3)."
+      },
+      "canon": "H",
+      "formerName": "the Veiled Elder (characters spec title, used by the regional tree)",
+      "note": "The regional tree text calls her the Veiled Elder; the histories name her Izkala. Both refer to this character."
+    },
+    "heir": {
+      "note": "No designated heir: the eldest cord passes in the mother's line, and the council of cord-mothers names the next Mother of the Eldest Cord.",
+      "succession": "Mother-line (the council of cord-mothers)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_cursed_lands_tzaliar",
+        "name": "Tzaliar the Cord-Mother",
+        "given": "Tzaliar",
+        "office": "Cord-mother of Morluma",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "The Cursed Lands' named wise-woman, born on the scar of the Black Roots, who keeps names in her cords so that no necromancer can take them and quiets the soured ground where it can be quieted.",
+        "portrait": "A veiled woman with a dozen knotted cords hung from her belt.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)"
+      },
+      {
+        "id": "zin_regional_cursed_lands_ulaza",
+        "name": "Ulaza the Root-Wife",
+        "given": "Ulaza",
+        "office": "Keeper of the Root Fields",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the root and mushroom fields and the trade for iron and salt at the downs' edge.",
+        "portrait": "A veiled woman with a basket of grey roots.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_cursed_lands_mokar",
+        "name": "Mokar the Well-Keeper",
+        "given": "Mokar",
+        "office": "Keeper of the Wells",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_quartermaster"
+        ],
+        "role": "Keeps the wells of the downs and knows which can be spoiled and how fast, which is why the Grey March turned back.",
+        "portrait": "A veiled man with a well-rope and a clay jar.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_cursed_lands_kelik",
+        "name": "Kelik the Trapper",
+        "given": "Kelik",
+        "office": "Captain of the Trappers",
+        "gender": "male",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ambusher",
+          "trickster"
+        ],
+        "role": "Leads the veiled archers and trappers who empty the villages ahead of any host.",
+        "portrait": "A veiled archer with a short bow and a snare-cord.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_cursed_lands_nekhia",
+        "name": "Nekhia the Grey",
+        "given": "Nekhia",
+        "office": "Captain of the Downs",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps watch on the downs' edge and sends the envoys back with their letters.",
+        "portrait": "A veiled woman with a long spear and a grey hood.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "BLO",
+    "key": "bloody_forest",
+    "name": "Bloody Forest",
+    "stance": "zin_wild_tribes",
+    "court": "standard",
+    "ruler": {
+      "id": "BLO_zin_ruler",
+      "name": "Tzorek, son of Amaz",
+      "given": "Tzorek",
+      "house": "son of Amaz, of the Redbark clans",
+      "title": {
+        "native": null,
+        "english": "War-Chief of the Clan Moot"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6782,
+      "stance": "zin_wild_tribes",
+      "traits": [
+        "zin_trait_warband_chief",
+        "zin_trait_war_party"
+      ],
+      "bio": "The cord-mothers chose Tzorek, son of Amaz, as the moot's war-chief for a feud with the Selen edge that has now run three summers, and they will unmake him when it ends. He is young, painted and impatient, and he raids the glade villages when he needs a name, since a war-chief without a name is soon a hunter again. The red oaks of the moot-clearing hold the names of the clans' dead in their cords, and he swears by them that he will be remembered.",
+      "portrait": {
+        "appearance": "A young, lean hunter with a painted face, braided black hair and a red-stained grin.",
+        "dress": "Red-dyed leather, a cloak of boar-hide, a knotted cord of his mother's line on his arm.",
+        "colours": "Redbark red (#8a2f26), dark leather (#3b2a1c), bone (#c9a28a)."
+      },
+      "canon": "H",
+      "formerName": "Chieftain Rasvan Redbark (characters spec; superseded by the histories)"
+    },
+    "heir": {
+      "note": "No heir: the cord-mothers of the clans choose a war-chief for each raid and unmake him when it ends; the moot itself is ruled by the cord-mothers.",
+      "succession": "Appointed per raid (the cord-mothers)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_bloody_forest_amaz",
+        "name": "Amaz of the Red Oaks",
+        "given": "Amaz",
+        "office": "Cord-mother of the moot-clearing",
+        "gender": "female",
+        "people": "men",
+        "born": 6760,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_cord_mother"
+        ],
+        "role": "Tzorek's mother and the eldest cord-mother of the moot-clearing; she chose him, and she will be the one to unmake him.",
+        "portrait": "An old woman with painted cheeks and cords of red knots.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_bloody_forest_ozkar",
+        "name": "Ozkarr the Smuggler",
+        "given": "Ozkarr",
+        "office": "Master of the Coast Road",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_whisper_master"
+        ],
+        "role": "Runs the smuggling along the Organ Coast Road and knows every buyer of red leather between Selen and the sea.",
+        "portrait": "A wiry man with a pack of dyed hides and a hooked knife.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_bloody_forest_kozia",
+        "name": "Kozia the Knot-Keeper",
+        "given": "Kozia",
+        "office": "Keeper of the Knot-Trees",
+        "gender": "female",
+        "people": "men",
+        "born": 6765,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_hedge_wise"
+        ],
+        "role": "Hangs the cords on the knot-trees and says the Necromancer could not raise what was already counted.",
+        "portrait": "A woman with a basket of red cords beneath an old red oak.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_bloody_forest_gorrik",
+        "name": "Gorrik the Boar",
+        "given": "Gorrik",
+        "office": "Raid-captain",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 1,
+          "planning": 1,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_reckless",
+          "ambusher"
+        ],
+        "role": "Led the raid that burned three glade villages in the Red Winter and has wanted another raid ever since.",
+        "portrait": "A heavy man in boar-hide with a stone-headed club.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_bloody_forest_belzar",
+        "name": "Belzar the Quiet",
+        "given": "Belzar",
+        "office": "Hunt-captain",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the hunters who know the red deer paths and can lead a raid in and out without a sound.",
+        "portrait": "A painted hunter with a short bow and a deer-skin hood.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]

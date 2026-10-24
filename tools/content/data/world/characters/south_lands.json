@@ -1,0 +1,287 @@
+[
+  {
+    "tag": "MIE",
+    "key": "miaed",
+    "name": "Miaed",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "MIE_zin_ruler",
+      "name": "Lord Tharian of Erdozan",
+      "given": "Tharian",
+      "house": "adopted from the house of the Lower Gorge",
+      "title": {
+        "native": "Makbekia",
+        "english": "Lord of the Passes"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6769,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_pass_lord",
+        "zin_trait_temple_debtor"
+      ],
+      "bio": "Tharian was adopted from the house of the Lower Gorge by his childless predecessor, and the lords of the pass-forts accepted him as Lord of the Passes at Erdozan, where the Sand Road reaches the coast. He is a shrewd, patient bargainer who has raised the Sand Road toll twice without losing a caravan, and since the Price War his lordship has sold passage through the Hardtmuth to whichever caravan power pays more. He listens to the Deliverer's temple at Erdozan more than his pass-lords would like, because its friends are as generous to him as they are everywhere in the East.",
+      "portrait": {
+        "appearance": "A lean, sun-darkened desert lord with a hawk nose, painted eyes and a close grey beard.",
+        "dress": "Pale robes and a sand-veil thrown back, a cloak of rust-red wool, the bronze toll-seal of the passes and a small caravan bell on a cord.",
+        "colours": "Pass ochre (#c08a3a), rust (#6a2a1a), sand (#f0e0c0)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "id": "zin_regional_miaed_esiuroth",
+      "name": "Esiuroth of the Upper Gorge",
+      "given": "Esiuroth",
+      "office": "Adopted heir of the Lord of the Passes",
+      "gender": "male",
+      "people": "men",
+      "born": 6788,
+      "traits": [
+        "zin_trait_pass_lord"
+      ],
+      "role": "A young pass-lord of the Upper Gorge, the house of the first Lord of the Passes, whom Tharian has adopted; the forts may still refuse him.",
+      "succession": "Elected for life by the lords of the pass-forts; each Lord of the Passes adopts his heir, whom the forts may refuse.",
+      "portrait": "A young desert lord in rust-red with a veil and a short bow.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_miaed_fires",
+        "name": "Rhanae of the Pass Fires",
+        "given": "Rhanae",
+        "office": "Keeper of the Pass Fires",
+        "gender": "female",
+        "people": "men",
+        "born": 6762,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_star_reader"
+        ],
+        "role": "Keeps the fires that burn on every pass through the dry season, a guide for the caravans and, the pass-lords say, an offering to the mountain.",
+        "portrait": "A soot-faced woman in pale robes tending a fire-tower brazier.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_miaed_tolls",
+        "name": "Morodion, Master of the Tolls",
+        "given": "Morodion",
+        "office": "Master of the Sand Road Tolls",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_caravan_broker"
+        ],
+        "role": "Takes both offers each season and knows to the bell what Noris and Stabilo will each pay for passage.",
+        "portrait": "A shrewd official with a string of caravan bells and a tally.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_miaed_lebia",
+        "name": "Obmis of Lebia",
+        "given": "Obmis",
+        "office": "Master of the Glass-Sand",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Digs the white glass sand of the coastal dunes and sells it to the lake glass-makers and to Aenor.",
+        "portrait": "A dusty merchant with a jar of white sand.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_miaed_dwarae",
+        "name": "Captain Ernoth of Dwarae",
+        "given": "Ernoth",
+        "office": "Captain of the Pass Forts",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "trait_mountaineer",
+          "desert_fox"
+        ],
+        "role": "Holds the fort at the crown of the Hardtmuth pass, whose little gate has never been closed in nine centuries.",
+        "portrait": "A fort-captain in rust-red with a long spear and a veil.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_miaed_camels",
+        "name": "Moiriae of the Camel Guard",
+        "given": "Moiriae",
+        "office": "Captain of the Camel Guard",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "desert_fox"
+        ],
+        "role": "Leads the camel guards and pass archers who escort the caravans through the gorges.",
+        "portrait": "A veiled rider on a camel with a short bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "WAH",
+    "key": "wahatud",
+    "name": "Wahatud",
+    "stance": "zin_wild_freeholds",
+    "stanceNote": "No row in countries.csv; a league of well-clans that never joins a war reads as Freeholds. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "WAH_zin_ruler",
+      "name": "Mai bat Nurud, Keeper of the Moot",
+      "given": "Mai",
+      "house": "of the Zahui well",
+      "title": {
+        "native": null,
+        "english": "Keeper of the Well-Moot"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6772,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_keeper_of_the_moot",
+        "zin_trait_well_lord"
+      ],
+      "bio": "Mai bat Nurud of the Zahui well holds the keeping of the Well-Moot this year, chosen at Biir-Raab from a different clan, as every Keeper is. She keeps the oath the clan-mothers swore after the War of the Poisoned Wells, with water in their mouths so that no one could lie while swearing: no clan may close or poison a well, and every quarrel over water goes to the Moot. Her league never joins a war, always gives water to refugees before asking their names, and sells it by the skin to every caravan that is not fleeing.",
+      "portrait": {
+        "appearance": "A sun-browned, calm-eyed desert woman with silver rings in her ears and a weathered smile.",
+        "dress": "Pale wrapped robes and a blue head-cloth, a water-skin of the Moot on a cord, a palm-wood staff.",
+        "colours": "Oasis green (#3a8a7a), dune pale (#e8d8a8), date brown (#8a6a3a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the Well-Moot chooses a Keeper each year from a different clan.",
+      "succession": "Elective, yearly (the Well-Moot)."
+    },
+    "advisors": [
+      {
+        "id": "zin_wahatud_guides",
+        "name": "Tumar of Wahat-Rakh",
+        "given": "Tumar",
+        "office": "Master of the Guides' School",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_master_of_scouts"
+        ],
+        "role": "Teaches the guides of the red oasis, the only people who cross the dune sea without fear, and leaves water on the Angels' Dune each month and asks nothing for it.",
+        "portrait": "A lean old guide with a staff and a water-skin, squinting at the dunes.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wahatud_mothers",
+        "name": "Zahah bat Shinud, Clan-Mother",
+        "given": "Zahah",
+        "office": "Eldest of the Clan-Mothers",
+        "gender": "female",
+        "people": "men",
+        "born": 6750,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Granddaughter of Yarah bat Kersud, who wrote the oath of the Well-Moot, and the clan-mother who reminds each Keeper of it.",
+        "portrait": "A very old woman in dark robes with a cup of water held in both hands.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wahatud_water",
+        "name": "Nurak the Water-Seller",
+        "given": "Nurak",
+        "office": "Seller of Water to the Caravans",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Sells water by the skin to caravans that are not refugees, and has never once sold it to one that was.",
+        "portrait": "A merchant beside a line of full water-skins.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_wahatud_riders",
+        "name": "Barqud of the Four Strings",
+        "given": "Barqud",
+        "office": "Captain of the Well Riders",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "desert_fox"
+        ],
+        "role": "Leads the camel riders who keep the four strings of wells, and has never yet been sent to a war.",
+        "portrait": "A camel rider in pale robes with a spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_wahatud_dunes",
+        "name": "Lenun of the Dune Roads",
+        "given": "Lenun",
+        "office": "Warden of the Dune Roads",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "desert_fox",
+          "trickster"
+        ],
+        "role": "Keeps the dune roads open and knows where the sand golems sleep.",
+        "portrait": "A veiled guide with a staff on a dune crest.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]

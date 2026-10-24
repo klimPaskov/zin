@@ -1,0 +1,2821 @@
+[
+  {
+    "tag": "NRS",
+    "key": "noris",
+    "name": "Noris",
+    "stance": "zin_dom_crown",
+    "court": "great",
+    "ruler": {
+      "id": "NRS_zin_ruler",
+      "name": "King Rasiq ben Tumek",
+      "given": "Rasiq",
+      "house": "the Khadi line",
+      "title": {
+        "native": "Saar",
+        "english": "King of Noris"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6771,
+      "stance": "zin_dom_crown",
+      "traits": [
+        "zin_trait_caravan_master",
+        "zin_trait_well_lord",
+        "zin_trait_temple_debtor"
+      ],
+      "bio": "Rasiq ben Tumek is a Khadi chosen by the well-lords after his uncle's death, and he rules the northern desert, the Salt Road and the tribes of the Moco and Mylunur from Furvior. He is a careful king who keeps the Powder Refusal sworn at the Seven Wells, so that no rider of Noris carries black powder, and he fights the rivalry with Stabilo in tolls, bribes and caravan prices, playing its great houses against each other. The generous friends of the Deliverer's temple at Furvior have lent him more than his treasurers like to admit.",
+      "portrait": {
+        "appearance": "A lean, sun-browned desert king with kohl-rimmed eyes and a short greying beard.",
+        "dress": "An indigo robe and veil-cloth thrown back from the face, a camel-hair cloak, a silver well-seal on a cord.",
+        "colours": "Desert indigo (#2b3f7a), dune gold (#c9964a), sand pale (#efe3c4)."
+      },
+      "canon": "H",
+      "formerName": "King Esiurth II of Noris (characters spec and the Noris tree; superseded by the histories)"
+    },
+    "heir": {
+      "id": "zin_noris_zarud",
+      "name": "Zarud ben Tumek",
+      "given": "Zarud",
+      "office": "Brother of the King",
+      "gender": "male",
+      "people": "men",
+      "born": 6778,
+      "traits": [
+        "zin_trait_war_party"
+      ],
+      "role": "The king's younger brother, a rider of the border wells who thinks the Powder Refusal is a fine oath and a poor plan.",
+      "succession": "The well-lords choose the king from the Khadi line; a king who loses their trust is left without riders.",
+      "portrait": "A young rider in indigo with a lance and a hawk on his arm.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_noris_alodar",
+        "name": "Alodar Kersi, Master of Caravans",
+        "given": "Alodar",
+        "house": "Kersi",
+        "office": "Master of Caravans",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_caravan_broker"
+        ],
+        "role": "Sets the salt and dye caravans on the road and knows the price of every camel between Furvior and Duum-Saah.",
+        "portrait": "A caravan master in sand-coloured robes with three sets of scales.",
+        "canon": "S"
+      },
+      {
+        "id": "zin_noris_nurqas",
+        "name": "Nurqas, Star-Reader of the Seven Wells",
+        "given": "Nurqas",
+        "office": "Star-Reader of the Seven Wells",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_star_reader"
+        ],
+        "role": "Noris's named wise man, of a well-lord's line, who reads the stars for the caravans of the Salt Road and finds water where there is water to find; he distrusts the temples of every city.",
+        "portrait": "An old desert sage with a brass star-table and a white veil.",
+        "canon": "P",
+        "definedBy": "magic_and_wizards.md 4.5 (proposed practitioner)",
+        "secret": "His distrust of the temples is right (A); no text says so before zin_afrit_revealed."
+      },
+      {
+        "id": "zin_noris_melud",
+        "name": "Well-Lord Melud ben Yakar",
+        "given": "Melud",
+        "office": "Eldest of the Well-Lords",
+        "gender": "male",
+        "people": "men",
+        "born": 6754,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Eldest of the well-lords who chose the king, and the first to leave a king without riders if he loses their trust.",
+        "portrait": "A white-bearded well-lord with a water-skin and a staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_noris_khadiq",
+        "name": "Khadiq ben Furud, Keeper of the Treasury",
+        "given": "Khadiq",
+        "office": "Keeper of the Treasury",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the king's treasury and the list of what the temple's friends have lent, which he keeps shorter than it is.",
+        "portrait": "A stout treasurer with a locked chest and an abacus.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_noris_qasar",
+        "name": "Qasar ben Melek, Master of the Riders",
+        "given": "Qasar",
+        "office": "Master of the Riders",
+        "gender": "male",
+        "people": "men",
+        "born": 6767,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_master_of_horse"
+        ],
+        "role": "Keeps the camel herds and the tribes' riders, and swears no powder-engine ever caught a camel.",
+        "portrait": "A hawk-faced rider-captain with a curved sword and an indigo turban.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_noris_lenah",
+        "name": "Lenah bat Furud, Envoy to Duum-Saah",
+        "given": "Lenah",
+        "office": "Envoy to the Sea Crown",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Keeps the Noris Treaty in good repair at the court of Naamis, and is the treasurer's sister, which is useful to them both.",
+        "portrait": "A poised woman in indigo and gold with a treaty-case.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_noris_tumo",
+        "name": "Rider-General Tumo Furan",
+        "given": "Tumo",
+        "house": "Furan",
+        "office": "Rider-General of Noris",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "type": "field_marshal",
+        "skill": {
+          "level": 4,
+          "attack": 4,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "cavalry_leader",
+          "desert_fox"
+        ],
+        "role": "Has led the border riders for thirty years and never lost a well.",
+        "portrait": "A rider-general with a veil and a lance on a white camel.",
+        "canon": "S",
+        "definedBy": "Noris tree (rider_general_tumo)"
+      },
+      {
+        "id": "zin_noris_zarim",
+        "name": "Zarim ben Qasud of the Border Wells",
+        "given": "Zarim",
+        "office": "Captain of the Border Riders",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "desert_fox",
+          "trait_reckless"
+        ],
+        "role": "Leads the riders of the border wells and raids Stabilo's caravans when the king pretends not to notice.",
+        "portrait": "A young camel-rider with a red sash and a short bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_noris_zahi",
+        "name": "Zahi bat Rasud of the Salt Road",
+        "given": "Zahi",
+        "office": "Captain of the Salt Road Guard",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 4
+        },
+        "traits": [
+          "desert_fox",
+          "organizer"
+        ],
+        "role": "Guards the Salt Road from Furvior to the sea and knows the water at every stage of it.",
+        "portrait": "A veiled rider-captain with a lance and a string of water-skins.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "STA",
+    "key": "stabilo",
+    "name": "Stabilo",
+    "stance": "zin_dom_crown",
+    "court": "great",
+    "ruler": {
+      "id": "STA_zin_ruler",
+      "name": "Prince Pleron Tablo",
+      "given": "Pleron",
+      "house": "House of Tablo",
+      "title": {
+        "native": "Princo",
+        "english": "Prince of the Scales"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6767,
+      "stance": "zin_dom_crown",
+      "traits": [
+        "zin_trait_caravan_master",
+        "zin_trait_banker_prince"
+      ],
+      "bio": "Pleron Tablo was a banker before he was a prince, and the bench of houses chose him for life because he knows every house's debts. He governs the Gold Road, the southern hills and the old caravan towns from Postondoroth, the largest city of the East, whose powder-engines and hired companies make it the strongest purse in the region. He believes the East can be ruled by ledgers without a single war, which is an easy thing to believe with ledgers as full as his, and several of his great houses owe the Deliverer's temple more than the bench has been told.",
+      "portrait": {
+        "appearance": "An olive-skinned, smooth-shaven banker-prince with heavy-lidded, calculating eyes.",
+        "dress": "A robe of oxblood silk with a jewelled collar, the golden scales of the Prince on a chain, a signet with the Tablo mark.",
+        "colours": "Caravan amber (#a8742a), oxblood (#8a2f2a), jade (#3f6b4a)."
+      },
+      "canon": "H",
+      "formerName": "Prince Cereos of Postondoroth (characters spec; superseded by the histories)"
+    },
+    "heir": {
+      "id": "zin_stabilo_demano",
+      "name": "Demano Fundo",
+      "given": "Demano",
+      "house": "Fundo",
+      "office": "Head of the House of Fundo",
+      "gender": "male",
+      "people": "men",
+      "born": 6772,
+      "traits": [
+        "zin_trait_treaty_keeper"
+      ],
+      "role": "Head of the house of Fundo, descendant of the Demio who made the Peace of Cereosa, and the bench's likeliest choice when the seat falls empty.",
+      "succession": "The bench of houses chooses the Prince of the Scales for life from among the great houses.",
+      "portrait": "A grave merchant in green silk with the Fundo mark.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_stabilo_sarella",
+        "name": "Lady Sarella Azano, Treasurer of the Pact",
+        "given": "Sarella",
+        "house": "Azano",
+        "office": "Treasurer of the Pact",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_caravan_broker"
+        ],
+        "role": "A cousin of the house that owns Ceralon, who keeps the Stabilo Pact's treasury and whose books are better kept than the bench's.",
+        "portrait": "A treasurer with scales and seals, in amber silk.",
+        "canon": "S",
+        "formerName": "Lady Mylun Azano (characters spec and the Stabilo tree; renamed because Mylana Azano rules Azano in the histories)"
+      },
+      {
+        "id": "zin_stabilo_arcio",
+        "name": "Weigher Arcio Prudo of the Hall of Scales",
+        "given": "Arcio",
+        "house": "Prudo",
+        "office": "Master Weigher of the Hall of Scales",
+        "gender": "male",
+        "people": "men",
+        "born": 6760,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Judges contracts in the Hall of Scales, where a false weight is the worst crime in Stabilo, and has never found a Prudo guilty of one.",
+        "portrait": "A stern weigher in a black robe beside a great bronze scale.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_stabilo_demeo",
+        "name": "Demeo Dolgio, Master of the Wall-Engines",
+        "given": "Demeo",
+        "house": "Dolgio",
+        "office": "Master of the Wall-Engines",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_siege_master"
+        ],
+        "role": "Keeps the powder-engines on the harbour walls of Postondoroth and the crews hired to use them; he is a cousin of the Drak forge-masters and talks shop with them by every post.",
+        "portrait": "A soot-marked engine-master with a match-cord and a brass measuring rod.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_stabilo_pelina",
+        "name": "Magister Pelina Shindia",
+        "given": "Pelina",
+        "house": "Shindia",
+        "office": "Magister of the essence-smiths",
+        "gender": "female",
+        "people": "men",
+        "born": 6766,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Stabilo's named practitioner, a merchant-magister of the essence-smiths who quenches the companies' iron and argues with the star-readers of Noris by letter.",
+        "portrait": "A woman in a scorched silk apron with essence-vials at her belt.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_stabilo_trana",
+        "name": "Trana Prudo, Speaker for the Great Houses",
+        "given": "Trana",
+        "house": "Prudo",
+        "office": "Speaker for the Great Houses",
+        "gender": "female",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_trait_temple_debtor"
+        ],
+        "role": "Speaks for the great houses on the bench, several of which owe the temple's generous friends rather more than they have said.",
+        "portrait": "An elegant woman in jade silk with a ledger and a sealed loan.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_stabilo_belano",
+        "name": "Belano Ceron, Master of the Harbour",
+        "given": "Belano",
+        "house": "Ceron",
+        "office": "Master of the Harbour of Postondoroth",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_master_of_ships"
+        ],
+        "role": "Keeps the harbour and the galleys of Postondoroth, and the engines on the walls stand over his ships.",
+        "portrait": "A harbour-master in an amber coat with a brass speaking-trumpet.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_stabilo_hardfic",
+        "name": "Captain-General Hardfic Shindor",
+        "given": "Hardfic",
+        "house": "Shindor",
+        "office": "Captain-General of the Shield-Companies",
+        "gender": "male",
+        "people": "men",
+        "born": 6756,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 4
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Has led hired companies for forty years and never broken a contract; his house is paid in advance.",
+        "portrait": "A grizzled captain-general in bronze scale.",
+        "canon": "S",
+        "definedBy": "Stabilo tree (general_shindor, house_of_shindor)"
+      },
+      {
+        "id": "zin_stabilo_nareo",
+        "name": "Captain Nareo Tablon of the Crossbows",
+        "given": "Nareo",
+        "house": "Tablon",
+        "office": "Captain of the Crossbow Companies",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "career_officer",
+          "defensive_doctrine"
+        ],
+        "role": "Commands the bronze-armoured crossbow companies who hold the Gold Road junctions.",
+        "portrait": "A bronze-armoured captain with a crossbow on his back.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_stabilo_pelia",
+        "name": "Captain Lavana Fundo of the Engine Crews",
+        "given": "Lavana",
+        "house": "Fundo",
+        "office": "Captain of the Engine Crews",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine"
+        ],
+        "role": "Leads the companies trained to the powder-engines in the field and is the only Fundo who prefers a costly victory to a good peace.",
+        "portrait": "A sharp-faced woman in a leather coat with a match-cord.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_stabilo_posio",
+        "name": "Sea-Captain Posio Cerano",
+        "given": "Posio",
+        "house": "Cerano",
+        "office": "Captain of the Harbour Galleys",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the galleys that carry the Gold Road's goods along the coast and keep the Noris Treaty's ships honest.",
+        "portrait": "A galley captain in amber with a bronze helm.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "ALR",
+    "key": "alerhia",
+    "name": "Alerhia",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "ALR_zin_ruler",
+      "name": "King Kerseus Furanides",
+      "given": "Kerseus",
+      "house": "House of the Furanides",
+      "title": {
+        "native": "Saria",
+        "english": "King of Alerhia, called Alerh"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6779,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_river_king",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Kerseus Furanides was crowned standing in the Rising twelve floods ago, as every Furanid king has been, and every proclamation calls him Alerh after the river. He rules the great river valley on the rift from the stair-city of Porrenva, an old crown rich in grain and scribes, neutral between Noris and Stabilo, and he looks across the Rift Narrows at the elven shore his kings have traded with for three ages. His scribe-council distrusts the caravan princes and borrows from them all the same.",
+      "portrait": {
+        "appearance": "A tall, olive-skinned king with painted eyes and a carefully curled black beard.",
+        "dress": "A white linen robe with a broad gold collar, the river-crown of reeds and gold, wet to the knee from the Rising.",
+        "colours": "River gold (#c9a24a), flood blue (#2f5f8a), reed green (#4a7a4a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "id": "zin_regional_alerhia_kerseion",
+      "name": "Prince Kerseion Furanides",
+      "given": "Kerseion",
+      "house": "Furanides",
+      "office": "Heir of Alerhia",
+      "gender": "male",
+      "people": "men",
+      "born": 6801,
+      "traits": [
+        "zin_trait_river_king"
+      ],
+      "role": "The king's eldest son, who has been taught by the scribes and will stand in the Rising when his turn comes.",
+      "succession": "Hereditary in the Furanides; the new king is crowned standing in the Rising.",
+      "portrait": "A boy-prince in white linen with a small gold collar.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_alerhia_scribe",
+        "name": "Chief Scribe Moiris Alerhos",
+        "given": "Moiris",
+        "house": "Alerhos",
+        "office": "Chief Scribe of the Scribe-Council",
+        "gender": "female",
+        "people": "men",
+        "born": 6762,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Leads the scribe-council that has signed Alerhia's treaties since the first Aenoran traders came, and distrusts every caravan prince on principle.",
+        "portrait": "A grey-haired scribe with a reed pen behind her ear and a roll of papyrus.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_alerhia_stair",
+        "name": "Thareon of the Stair",
+        "given": "Thareon",
+        "office": "High Priest of the Stair-Temples",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Climbs the stair-temples to the River and the Kings Below each year, and seats the twelve as guests at the top step.",
+        "portrait": "An old priest in white on a temple stair with a bowl of river water.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_alerhia_treasurer",
+        "name": "Furanian Kalis, Keeper of the Granaries",
+        "given": "Furanian",
+        "house": "Kalides",
+        "office": "Keeper of the Granaries",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the granaries of the river valley and the loans from the caravan princes, which he hopes the scribes never add up.",
+        "portrait": "A plump official with a grain-measure and a gold collar.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_alerhia_chariots",
+        "name": "Rhanion of the Chariots",
+        "given": "Rhanion",
+        "office": "Captain of the Royal Chariots",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader",
+          "old_guard"
+        ],
+        "role": "Commands the chariots and archers of the river crown, who have not fought a real war since the Stair Peace and drill as though they had.",
+        "portrait": "A charioteer in a gilded corselet with a long bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_alerhia_river",
+        "name": "Lorvia of the River Fleet",
+        "given": "Lorvia",
+        "office": "Captain of the River Fleet",
+        "gender": "female",
+        "people": "men",
+        "born": 6777,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the river galleys from Porrenva to the rift and the ships that carry grain to the elven quays.",
+        "portrait": "A river-captain in blue linen at the steering oar.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "NAA",
+    "key": "naamis",
+    "name": "Naamis",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "NAA_zin_ruler",
+      "name": "Queen Shinah bat Alodar",
+      "given": "Shinah",
+      "house": "the Tamari line",
+      "title": {
+        "native": "Saari",
+        "english": "Queen of Naamis"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6775,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_captains_blood",
+        "zin_trait_treaty_keeper"
+      ],
+      "bio": "Shinah bat Alodar rules the sea crown of the north coast plain from Duum-Saah with the council of ship-masters, who may refuse her ships but not her crown. The Noris Treaty is the pillar of her policy, and her ships carry the Salt Road's salt, dye and camel-hair cloth along the coast and into the North Mouth of the Rift. She listens with unease when the island fishers tell of strange ships among the black isles of the Kusmeel, and unlike the other courts she has not laughed.",
+      "portrait": {
+        "appearance": "A tall coast-woman with a weathered face and long sailor's braids threaded with gold.",
+        "dress": "A deep blue sea-coat over pale linen, a gold anchor-circlet, a captain's whistle on a chain.",
+        "colours": "Sea blue (#1f4a7a), salt gold (#e0c070), sail white (#f0f0e8)."
+      },
+      "canon": "H",
+      "formerName": "Queen Lorvena of Gondolin (characters spec; superseded by the histories)"
+    },
+    "heir": {
+      "id": "zin_regional_gondolin_zahun",
+      "name": "Zahun bat Shinah",
+      "given": "Zahun",
+      "office": "Daughter of the Queen",
+      "gender": "female",
+      "people": "men",
+      "born": 6797,
+      "traits": [
+        "zin_trait_captains_blood"
+      ],
+      "role": "The queen's daughter, who has already captained her own ship to Woqood and back.",
+      "succession": "The sea crown passes in one line of captains' blood, most often to a queen.",
+      "portrait": "A young sea-captain with braids and a blue coat.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_gondolin_shipmasters",
+        "name": "Zahar ben Tamir, Speaker of the Ship-Masters",
+        "given": "Zahar",
+        "office": "Speaker of the Council of Ship-Masters",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Speaks for the ship-masters who may refuse the queen her ships, and reminds her of it when the price of salt falls.",
+        "portrait": "A grey-bearded ship-master with a rope-knot belt.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_gondolin_harbour",
+        "name": "Yaqir the Harbour-Master",
+        "given": "Yaqir",
+        "office": "Harbour-Master of Duum-Saah",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_master_of_ships"
+        ],
+        "role": "Keeps the harbour of Duum-Saah and the queen's ships ready.",
+        "portrait": "A harbour-master with a ledger of hulls and a brass glass.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_gondolin_charts",
+        "name": "Nurah bat Melek of the Northern Charts",
+        "given": "Nurah",
+        "office": "Keeper of the Northern Charts",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Keeps the charts of the Kusmeel coast and writes down what the island fishers say, whether the court believes them or not.",
+        "portrait": "A woman with ink-stained hands over a sea-chart.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_gondolin_captain",
+        "name": "Sea-Captain Tamir ben Zarud",
+        "given": "Tamir",
+        "office": "Captain of the Sea Crown's Fleet",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "type": "navy_leader",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "maneuvering": 3,
+          "coordination": 3
+        },
+        "traits": [
+          "blue_water_expert"
+        ],
+        "role": "Commands the queen's fleet on the coast of the Kusmeel.",
+        "portrait": "A broad captain in blue with salt in his beard.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_gondolin_riders",
+        "name": "Yakam ben Zahud of the Coast Riders",
+        "given": "Yakam",
+        "office": "Captain of the Coast Riders",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Leads the coast riders and boarders of the landward border that Noris's riders help to guard.",
+        "portrait": "A rider in a blue cloak with a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DRA",
+    "key": "drak",
+    "name": "Drak",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "DRA_zin_ruler",
+      "name": "Forge-Prince Telino Barzio",
+      "given": "Telino",
+      "house": "House Barzio",
+      "title": {
+        "native": "Princo",
+        "english": "Forge-Prince of Drak"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6770,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_forge_prince",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Telino Barzio, great-grandson of the Nelia Fundo who sealed the Stabilo Pact, rules the Drak Mountains from Castronuro with a council of forge-masters. His forges sell powder-engines and casks to the Stabilo Pact and to any caravan city that can pay, and they guard the recipe that the East learned in the Furnace Year more closely than his treasury. When the Drak Furnace buried the lower forge-town in ash he rebuilt Castronuro higher on the ridge, behind walls that face the mountain as well as the road.",
+      "portrait": {
+        "appearance": "A thickset, soot-marked prince with a scarred forearm and a short black beard.",
+        "dress": "A leather forge-coat under a mantle of oxblood, an iron circlet, the hammer-seal of House Barzio.",
+        "colours": "Caravan amber (#a8742a), oxblood (#8a2f2a), jade (#3f6b4a)."
+      },
+      "canon": "H",
+      "formerName": "King Morod of Drak (characters spec; superseded by the histories)"
+    },
+    "heir": {
+      "id": "zin_regional_drak_corino",
+      "name": "Corino Barzio",
+      "given": "Corino",
+      "house": "Barzio",
+      "office": "Heir of the Forge-Houses",
+      "gender": "male",
+      "people": "men",
+      "born": 6796,
+      "traits": [
+        "zin_trait_forge_prince"
+      ],
+      "role": "The Forge-Prince's son, apprenticed to the forge-masters like every Barzio heir before him.",
+      "succession": "Hereditary in House Barzio, with the forge-masters' assent.",
+      "portrait": "A young man in a leather apron with a forge-hammer.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_drak_pruno",
+        "name": "Forge-Master Pruno Dolgio",
+        "given": "Pruno",
+        "house": "Dolgio",
+        "office": "First of the Forge-Masters",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_powder_master"
+        ],
+        "role": "Grandson of Arcan Dolgio, who first compounded the powder and lost two fingers to it; Pruno keeps the recipe in his head, as his grandfather did.",
+        "portrait": "A grey forge-master with a burned leather apron and nine fingers.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_drak_mines",
+        "name": "Nelana Cadarina, Mistress of the Sulphur Mines",
+        "given": "Nelana",
+        "house": "Cadarina",
+        "office": "Mistress of the Sulphur Mines",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Runs the sulphur workings of the Furnace and the saltpetre caves, and argues with the mountain every day.",
+        "portrait": "A soot-faced woman with a lamp and a pick.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_drak_envoy",
+        "name": "Tabeo Barzion, Envoy to the Bench",
+        "given": "Tabeo",
+        "house": "Barzion",
+        "office": "Envoy to the Bench of Houses",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Sells Drak's engines to the bench at Postondoroth and collects the Pact's credit before the Prince of the Scales can think of a reason to delay it.",
+        "portrait": "A polished envoy in oxblood silk with an engine-model on his desk.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_drak_engines",
+        "name": "Captain Ferio Barzio of the Engines",
+        "given": "Ferio",
+        "house": "Barzio",
+        "office": "Captain of the Engine Companies",
+        "gender": "male",
+        "people": "men",
+        "born": 6768,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 3,
+          "logistics": 2
+        },
+        "traits": [
+          "offensive_doctrine"
+        ],
+        "role": "The Forge-Prince's cousin, who leads the companies that break gates with Drak's engines.",
+        "portrait": "A broad captain in blackened plate beside a powder-engine.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_drak_ridge",
+        "name": "Hardeo Altro of the Ridge",
+        "given": "Hardeo",
+        "house": "Altro",
+        "office": "Captain of the Ridge Walls",
+        "gender": "male",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Holds the new walls of Castronuro, which face the mountain as well as the road.",
+        "portrait": "A mountain captain in a fur-lined cloak on a high wall.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "RHA",
+    "key": "rhachia",
+    "name": "Rhachia",
+    "stance": "zin_light_council",
+    "stanceNote": "countries.csv has zin_wild_freeholds; an elected tribunes' commonwealth reads as a Free Council. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "RHA_zin_ruler",
+      "name": "Tribune Kaiena of Pordoce",
+      "given": "Kaiena",
+      "house": "of Pordoce",
+      "title": {
+        "native": null,
+        "english": "Tribune of the Red Lands"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6771,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_guild_master"
+      ],
+      "bio": "Kaiena of Pordoce was elected tribune by the village heads for seven years, the third tribune since the kiln-towns rose against King Mirodeus and his doubled kiln-tax. She governs the Red Lands and the vent-field of the Rhachia Fires from a kiln-city that is poor, proud and watched. The deposed king's heir waits at Porrenva, the caravan houses still buy her potters' wares, and every spring she refires the clay figure of her first mother with the rest of Pordoce.",
+      "portrait": {
+        "appearance": "A strong-armed, clay-stained woman with cropped dark hair and a level gaze.",
+        "dress": "A kiln-mother's red-brown apron over plain linen, a tribune's clay seal on a cord.",
+        "colours": "Kiln red (#a8452f), clay ochre (#d4a46a), umber (#6b4a3a)."
+      },
+      "canon": "H",
+      "formerName": "Tribune Arcon Vel (characters spec, for Avalon; superseded by the histories)"
+    },
+    "heir": {
+      "note": "No heir: the village heads elect a tribune every seven years. The deposed king's heir, Prince Mirodan, lives on a pension at Porrenva and claims the Red Lands.",
+      "succession": "Elective, seven years (the village heads)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_avalon_kilnmother",
+        "name": "Thaenis the Kiln-Mother",
+        "given": "Thaenis",
+        "office": "Eldest of the Kiln-Mothers",
+        "gender": "female",
+        "people": "men",
+        "born": 6755,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the kiln-shrines and the Refiring, when every house refires the clay figure of its first mother.",
+        "portrait": "An old woman with clay to the elbows holding a fired figure.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_avalon_pits",
+        "name": "Thaeos of the Clay Pits",
+        "given": "Thaeos",
+        "office": "Warden of the Clay Pits",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the clay pits the king once seized, and the tally of what the caravan houses pay for the pots.",
+        "portrait": "A broad man with a clay-caked spade.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_avalon_villages",
+        "name": "Senis of the Village Heads",
+        "given": "Senis",
+        "office": "Speaker of the Village Heads",
+        "gender": "male",
+        "people": "men",
+        "born": 6760,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Speaks for the village heads who elect the tribune, and remembers the night the gates of Pordoce were opened to them.",
+        "portrait": "A white-haired villager with a staff of red clay beads.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_avalon_slingers",
+        "name": "Rhoikos of the Slingers",
+        "given": "Rhoikos",
+        "office": "Captain of the Kiln Slingers",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Leads the slingers of the kiln-towns, who rose against the king and would do it again.",
+        "portrait": "A clay-stained slinger with a pouch of fired-clay shot.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_avalon_vents",
+        "name": "Kaithis of the Vent-Field",
+        "given": "Kaithis",
+        "office": "Warden of the Vent-Field",
+        "gender": "female",
+        "people": "men",
+        "born": 6783,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "trickster"
+        ],
+        "role": "Knows the paths through the Rhachia Fires that a stranger's host would not survive.",
+        "portrait": "A soot-faced woman with a cloth over her mouth and a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": [
+      {
+        "id": "zin_regional_avalon_mirodan",
+        "name": "Prince Mirodan Furanides",
+        "given": "Mirodan",
+        "house": "Furanides, of the Kings of the Kilns",
+        "office": "Heir of the deposed Kings of the Kilns",
+        "gender": "male",
+        "people": "men",
+        "born": 6790,
+        "traits": [
+          "zin_trait_gilded_heir"
+        ],
+        "role": "The heir of King Mirodeus, who fled the Rising of the Towns; he lives at Porrenva on a pension and has never stopped writing letters to the caravan houses.",
+        "portrait": "A pale, well-dressed young man in faded red silk.",
+        "canon": "P",
+        "recruit": "A pretender for events and the Rhachia tree; not recruited at the start."
+      }
+    ]
+  },
+  {
+    "tag": "ERC",
+    "key": "erco",
+    "name": "Erco",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "ERC_zin_ruler",
+      "name": "King Keroth Rhanides",
+      "given": "Keroth",
+      "house": "House of the Rhanides",
+      "title": {
+        "native": "Saria",
+        "english": "King of Erco"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6776,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_mine_king",
+        "zin_trait_fire_tithe"
+      ],
+      "bio": "Keroth Rhanides swore at his crowning nine floods ago, as every Rhanid king has sworn, to pay what the mountain asks and to keep the seven forts. He holds the southern mountains, the river and the dry Kalioth upland from Atonto, and his mines are rich and his forts manned with miners who are also soldiers. Every spring he pays the fire-tithe to the mountain, which his people call a tax and his priests an offering, and he has never once been late.",
+      "portrait": {
+        "appearance": "A hard, broad-shouldered mountain king with painted eyes and a grey-streaked beard.",
+        "dress": "A miner's leather under a gold collar, a crown of iron set with river gold, a seven-towered badge.",
+        "colours": "River gold (#c9a24a), flood blue (#2f5f8a), reed green (#4a7a4a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "id": "zin_regional_erco_kerios",
+      "name": "Prince Kerios Rhanides",
+      "given": "Kerios",
+      "house": "Rhanides",
+      "office": "Heir of Erco",
+      "gender": "male",
+      "people": "men",
+      "born": 6799,
+      "traits": [
+        "zin_trait_mine_king"
+      ],
+      "role": "The king's son, who has served a winter in each of the seven forts.",
+      "succession": "Hereditary in the Rhanides; each king swears at his crowning to pay the tithe and keep the forts.",
+      "portrait": "A young prince in a miner's coat with a gold collar.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_erco_tithe",
+        "name": "Kaithae of the Fire-Tithe",
+        "given": "Kaithae",
+        "office": "Priestess of the Fire-Tithe",
+        "gender": "female",
+        "people": "men",
+        "born": 6764,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Carries the fire-tithe up the Hellfire Range each spring and comes back down, which is the main thing her office requires.",
+        "portrait": "A soot-robed priestess with a brazier of offerings.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_erco_mines",
+        "name": "Morodis, Master of the Mines",
+        "given": "Morodis",
+        "office": "Master of the Mines",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the rich mines of the southern mountains and the loans the caravan houses make against their ore.",
+        "portrait": "A heavy man in a fur-lined coat with a lump of ore.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_erco_forts",
+        "name": "Castellan Esiuris of the Seven Forts",
+        "given": "Esiuris",
+        "office": "Castellan of the Seven Forts",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_captain_general"
+        ],
+        "role": "Keeps the seven forts of the Kalioth upland manned against the ogres of the heights and the raiders of the Gold Road.",
+        "portrait": "A grizzled castellan in iron with a ring of fort keys.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_erco_kalioth",
+        "name": "Captain Esiuron of the Kalioth",
+        "given": "Esiuron",
+        "office": "Captain of the Kalioth Forts",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 5,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "unyielding_defender",
+          "trait_mountaineer"
+        ],
+        "role": "Holds the upland forts and has fought more ogres than any man in the East.",
+        "portrait": "A scarred fort-captain with a long spear and a miner's lamp.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_erco_miners",
+        "name": "Kaira of the Miner Companies",
+        "given": "Kaira",
+        "office": "Captain of the Miner Companies",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Leads the miners who are also soldiers, and keeps their picks sharp for either work.",
+        "portrait": "A sturdy woman with a pick and a short sword.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "PLO",
+    "key": "plutondo",
+    "name": "Plutondo",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "PLO_zin_ruler",
+      "name": "Prince Blosian Plutides",
+      "given": "Blosian",
+      "house": "House of the Plutides",
+      "title": {
+        "native": null,
+        "english": "Prince of Plutondo"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6782,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_river_king",
+        "zin_trait_war_party"
+      ],
+      "bio": "Blosian Plutides is in the fourth Rising of his reign over the southern valley, and he keeps the upland of the Blozan Lands as his own estate. Plutondo is rich in ash-grown grain and ore and the Gold Road begins at its quays, but it lies deep in Stabilo's ledgers since the Vent Year, when the Plutondo Vents killed the harvest and the caravan houses bought the princedom's debts. He resents the houses that fed his people more than the vents that starved them, and says so at every banquet.",
+      "portrait": {
+        "appearance": "A young, restless prince with painted eyes and a quick temper in his face.",
+        "dress": "A white robe with a gold collar, an ash-grey mantle, the river-crown of the Plutides.",
+        "colours": "River gold (#c9a24a), flood blue (#2f5f8a), reed green (#4a7a4a)."
+      },
+      "canon": "H",
+      "formerName": "Prince Blozan (characters spec; named after a place and renamed by the histories)",
+      "note": "Shares his given name with Blosian Furanides, the historical first Quay-Master of Luv-zhise (a figure of the histories, not a character)."
+    },
+    "heir": {
+      "id": "zin_regional_plutondo_alerheus",
+      "name": "Alerheus Plutides",
+      "given": "Alerheus",
+      "house": "Plutides",
+      "office": "Brother of the Prince",
+      "gender": "male",
+      "people": "men",
+      "born": 6786,
+      "traits": [
+        "zin_trait_treaty_keeper"
+      ],
+      "role": "The prince's younger brother, who thinks the debts should be paid rather than shouted about, and is popular with the caravan houses for it.",
+      "succession": "Hereditary in the Plutides.",
+      "portrait": "A calm young man in white linen with a ledger.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_plutondo_debt",
+        "name": "Fulio Prudon, Agent of the Caravan Houses",
+        "given": "Fulio",
+        "house": "Prudon",
+        "office": "Agent of the Stabilo Houses",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_court_favourite"
+        ],
+        "role": "Holds the princedom's grain debts for the Stabilo houses, and attends every banquet at which he is insulted.",
+        "portrait": "A smooth Stabilic merchant in jade silk.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_plutondo_grain",
+        "name": "Mialia of the Ash Fields",
+        "given": "Mialia",
+        "office": "Keeper of the Ash Fields",
+        "gender": "female",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the ash-grown grain and the ore of the southern valley, and the count of every bushel the Vent Year cost.",
+        "portrait": "A farmer-woman with grey ash on her sleeves and a grain-measure.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_plutondo_vents",
+        "name": "Ernoith the Vent-Watcher",
+        "given": "Ernoith",
+        "office": "Watcher of the Plutondo Vents",
+        "gender": "male",
+        "people": "men",
+        "born": 6759,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Watches the vents and writes down every breath they take, and was the only man who warned of the Vent Year.",
+        "portrait": "An old scholar with a smoke-stained robe and a wax tablet.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_plutondo_valley",
+        "name": "Captain Morodian of the Valley Host",
+        "given": "Morodian",
+        "office": "Captain of the Valley Host",
+        "gender": "male",
+        "people": "men",
+        "born": 6771,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 3,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "career_officer"
+        ],
+        "role": "Commands the valley's chariots and archers.",
+        "portrait": "A captain in a bronze corselet with a chariot-whip.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_plutondo_blozan",
+        "name": "Theis of the Blozan Upland",
+        "given": "Theis",
+        "office": "Warden of the Blozan Upland",
+        "gender": "female",
+        "people": "men",
+        "born": 6780,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "hill_fighter"
+        ],
+        "role": "Keeps the prince's upland estate and its herdsmen-archers.",
+        "portrait": "A woman in a herder's cloak with a bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "OST",
+    "key": "ostoroth",
+    "name": "Ostoroth",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "OST_zin_ruler",
+      "name": "King Ernoian Ostorides",
+      "given": "Ernoian",
+      "house": "House of the Ostorides",
+      "title": {
+        "native": "Saria",
+        "english": "King of Ostoroth"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6773,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_treaty_keeper",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Ernoian Ostorides, lake-king of Ohitus, rules the north-east lakes and the counties of Ernois, Grova and Nethnu, whose counts still carry his lantern at the Lantern Float. His highland kingdom keeps the Reckoning of the Twelve so that its merchants share one calendar with the west, and it lives on the cedar, fish and lanterns of the Lake Road, which both great powers claim. The Lantern Peace with Mora has held for longer than any lake-reader expected, and he means it to hold for his whole reign.",
+      "portrait": {
+        "appearance": "A tall, lake-tanned highland king with a long grey-black beard and gentle eyes.",
+        "dress": "A cedar-green robe over pale linen, a lantern-crown of silver, a carved cedar staff.",
+        "colours": "Lake blue (#5a8aa8), lantern pale (#d8d4c4), cedar green (#3f5f4a)."
+      },
+      "canon": "H",
+      "formerName": "King Ocellio of Ostoroth (characters spec; superseded by the histories)",
+      "note": "His given name echoes the county of Ernois; kept because the Alerhic stem ernoi is in the language data and the histories use it."
+    },
+    "heir": {
+      "id": "zin_regional_ostoroth_kersion",
+      "name": "Prince Kersion Ostorides",
+      "given": "Kersion",
+      "house": "Ostorides",
+      "office": "Heir of Ohitus",
+      "gender": "male",
+      "people": "men",
+      "born": 6798,
+      "traits": [
+        "zin_trait_treaty_keeper"
+      ],
+      "role": "The king's son, who carried the lantern at the Float for the first time this year and did not drop it.",
+      "succession": "Hereditary in the Ostorides.",
+      "portrait": "A young prince in cedar-green with a lantern.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_ostoroth_grova",
+        "name": "Count Lorveos of Grova",
+        "given": "Lorveos",
+        "office": "Count of Grova",
+        "gender": "male",
+        "people": "men",
+        "born": 6765,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Eldest of the three counts who carry the king's lantern, and the one who carries it highest.",
+        "portrait": "An old count in a fur-trimmed robe with a silver lantern.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_ostoroth_reader",
+        "name": "Kaelis the Lake-Reader",
+        "given": "Kaelis",
+        "office": "Lake-Reader of Ohitus",
+        "gender": "female",
+        "people": "men",
+        "born": 6762,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Reads the lakes along the Lake Road, which keep the memory of the caravans, and leads the merchants and fishers in prayer at the water.",
+        "portrait": "A woman in lake-blue at the water's edge with a floating lamp.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_ostoroth_cedar",
+        "name": "Alerhion, Master of the Cedar",
+        "given": "Alerhion",
+        "office": "Master of the Cedar Trade",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Sells the cedar and the lanterns of the highlands to the west, and has never sold either to a power that claimed the Lake Road.",
+        "portrait": "A merchant with a cedar plank and a lantern sample.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_ostoroth_highland",
+        "name": "Captain Nethan of Nethnu",
+        "given": "Nethan",
+        "office": "Captain of the Highland Bows",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 2,
+          "defense": 4,
+          "planning": 3,
+          "logistics": 3
+        },
+        "traits": [
+          "hill_fighter",
+          "defensive_doctrine"
+        ],
+        "role": "Leads the boat archers and highland bowmen of the counties.",
+        "portrait": "A highland captain in a cedar-green cloak with a long bow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_ostoroth_lake",
+        "name": "Kaiae of the Lake Boats",
+        "given": "Kaiae",
+        "office": "Captain of the Lake Boats",
+        "gender": "female",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the boats on the Hot Lake that keep to the line of the hot shallows that the Lantern Peace set.",
+        "portrait": "A boat-captain in a lake-blue cloak with a lantern at the bow.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "MOA",
+    "key": "mora",
+    "name": "Mora",
+    "stance": "zin_light_council",
+    "court": "standard",
+    "ruler": {
+      "id": "MOA_zin_ruler",
+      "name": "Speaker Lorvena of Eraver",
+      "given": "Lorvena",
+      "house": "of Eraver",
+      "title": {
+        "native": null,
+        "english": "Speaker of the Lake Towns"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6770,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_warden_of_the_fields"
+      ],
+      "bio": "Lorvena of Eraver was chosen Speaker by the council of the lake towns for three years, the first from Eraver since that coast town joined the council. She governs the Hot Lake's east shore, the Mora coast and Eraver from Gonnois, and her realm is the granary of the East and the most peaceful of its realms, with no king and no wish for one. Every power that wants to feed a host in the East must buy her grain, and she makes sure they pay for it.",
+      "portrait": {
+        "appearance": "A lake-tanned, broad-faced woman with grey eyes and a farmer's strong hands.",
+        "dress": "A pale linen gown with a sheaf-brooch, a blue lake-cloak, the Speaker's chain of grain-ears in silver.",
+        "colours": "Lake blue (#5a8aa8), lantern pale (#d8d4c4), cedar green (#3f5f4a)."
+      },
+      "canon": "H",
+      "formerName": "Speaker Moira Eraver (characters spec; superseded by the histories)",
+      "note": "Her given name is close to the Woqood district of Lorvens; kept as the histories name her."
+    },
+    "heir": {
+      "note": "No heir: the council of the lake towns chooses a Speaker every three years.",
+      "succession": "Elective, three years (the lake towns' council)."
+    },
+    "advisors": [
+      {
+        "id": "zin_regional_mora_granary",
+        "name": "Theoris of the Granaries",
+        "given": "Theoris",
+        "office": "Keeper of the Granaries of Gonnois",
+        "gender": "female",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the granaries of the East's best farmland, and knows to the sack what each power has bought and what it still owes.",
+        "portrait": "A sturdy woman with a grain-measure and a ledger.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_mora_steam",
+        "name": "Ernoios of the Salt Pans",
+        "given": "Ernoios",
+        "office": "Lake-Reader of the Hot Shallows",
+        "gender": "male",
+        "people": "men",
+        "born": 6760,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Reads the lake at the hot shallows and says that something under it breathed out in the month the lake boiled over the salt pans.",
+        "portrait": "A gaunt lake-reader in a damp grey robe with a lamp.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_mora_towns",
+        "name": "Theonis of Gonnois",
+        "given": "Theonis",
+        "office": "Elder of the Lake Towns' Council",
+        "gender": "female",
+        "people": "men",
+        "born": 6758,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Eldest of the council of the lake towns, who has seen a dozen Speakers come and go and liked most of them.",
+        "portrait": "An old woman in pale linen with a staff of reeds.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_regional_mora_boats",
+        "name": "Furaneus of the Fisheries",
+        "given": "Furaneus",
+        "office": "Captain of the Fishery Boats",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the armed fishery boats that held the east shore in the Lakeshore Quarrel.",
+        "portrait": "A fisher-captain with a net-hook and a lake-blue cloak.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_regional_mora_militia",
+        "name": "Moiraena of the Town Militia",
+        "given": "Moiraena",
+        "office": "Captain of the Town Militia",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Leads the militia of the lake towns, who drill at harvest-fairs and are better at loading grain than at fighting.",
+        "portrait": "A woman in a leather jerkin with a spear and a grain-sack badge.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "DLB",
+    "key": "delbiz",
+    "name": "Delbiz",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "DLB_zin_ruler",
+      "name": "King Esiuran Fosocides",
+      "given": "Esiuran",
+      "house": "House of the Fosocides",
+      "title": {
+        "native": "Saria",
+        "english": "King of the Delbiz Grasslands"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6778,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_horse_lord",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Esiuran Fosocides rules the Delbiz Grasslands and the Fosoco from the fair town of Furtonlin, of the line that married the heiress of the Fosoco lordship and took the river's name. The herds have recovered since the Great Murrain killed two in three of them, and the horse-fair is again the richest in the East. The old quarrel with Alerhia sleeps under a marriage treaty, and the caravan houses that lent after the Murrain expect to be repaid in horses, which he pays them slowly and in the poorer ones.",
+      "portrait": {
+        "appearance": "A lean, wind-burnt grassland king with painted eyes and a horseman's bow legs.",
+        "dress": "A riding robe of gold and blue, a horse-headed gold collar, a crown of plaited gold wire.",
+        "colours": "River gold (#c9a24a), flood blue (#2f5f8a), reed green (#4a7a4a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "id": "zin_delbiz_fosian",
+      "name": "Prince Fosian Fosocides",
+      "given": "Fosian",
+      "house": "Fosocides",
+      "office": "Heir of Furtonlin",
+      "gender": "male",
+      "people": "men",
+      "born": 6800,
+      "traits": [
+        "zin_trait_horse_lord"
+      ],
+      "role": "The king's son, who rides better than he reads and is betrothed by treaty to a daughter of Alerhia.",
+      "succession": "Hereditary in the Fosocides.",
+      "portrait": "A boy on a fine grey horse in a gold-and-blue coat.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_delbiz_fair",
+        "name": "Obmaena, Mistress of the Horse-Fair",
+        "given": "Obmaena",
+        "office": "Mistress of the Horse-Fair",
+        "gender": "female",
+        "people": "men",
+        "born": 6767,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the richest horse-fair in the East and knows every buyer's purse before he reaches the pens.",
+        "portrait": "A sharp-eyed horse-trader with a coiled whip.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_delbiz_herds",
+        "name": "Rhanis of the Herds",
+        "given": "Rhanis",
+        "office": "Master of the Royal Herds",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "slot": "army_chief",
+        "traits": [
+          "zin_adv_master_of_horse"
+        ],
+        "role": "Rebuilt the herds after the Murrain from breeding stock bought on credit, and still counts the debt.",
+        "portrait": "An old horse-master with a halter and a weathered face.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_delbiz_creditor",
+        "name": "Cormo Cerano, Agent of the Houses",
+        "given": "Cormo",
+        "house": "Cerano",
+        "office": "Agent of the Caravan Houses",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_court_favourite"
+        ],
+        "role": "Represents the caravan houses that lent after the Murrain, and inspects every horse the king pays them with.",
+        "portrait": "A Stabilic merchant in amber with a tally of horses.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_delbiz_riders",
+        "name": "Captain Furanis of the Grass Riders",
+        "given": "Furanis",
+        "office": "Captain of the Grass Riders",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "type": "field_marshal",
+        "skill": {
+          "level": 3,
+          "attack": 4,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Leads the horse-lords' riders, who broke from Alerhia's service at the Horse-Fair Oath and have been proud of it since.",
+        "portrait": "A rider in a scale coat with a long lance.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_delbiz_fosoco",
+        "name": "Lorvae of the Fosoco",
+        "given": "Lorvae",
+        "office": "Warden of the Fosoco",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "cavalry_leader"
+        ],
+        "role": "Keeps the river lordship that came to the crown with the Fosoco bride.",
+        "portrait": "A woman rider in blue with a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "KRS",
+    "key": "kersian",
+    "name": "Kersian",
+    "stance": "zin_light_council",
+    "stanceNote": "countries.csv has zin_wild_freeholds; a free city under a market council reads as a Free Council. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "KRS_zin_ruler",
+      "name": "Lantern-Warden Rhaina Kersides",
+      "given": "Rhaina",
+      "house": "Kersides",
+      "title": {
+        "native": null,
+        "english": "Lantern-Warden of Osrale"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6777,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_elected_speaker",
+        "zin_trait_caravan_broker"
+      ],
+      "bio": "Rhaina Kersides holds the lantern this year, chosen by the market council of guilds and lantern-wardens to speak for Osrale, a free city of the Lake Road that neither Noris nor Stabilo may garrison. Her city is rich, small and anxious, kept free by the rivalry of two powers and taxing both their caravans alike. When the caravanserai district burned, both powers sent money to rebuild it and the council spent each gift on a separate wall, which she thinks the wisest thing it has ever done.",
+      "portrait": {
+        "appearance": "A quick-eyed, slender woman with Aenoran-fair skin and dark hair, of a family that follows the news from Parim.",
+        "dress": "A lake-blue gown with a guild collar, the treaty lantern of Osrale carried in one hand.",
+        "colours": "Lake blue (#5a8aa8), lantern pale (#d8d4c4), cedar green (#3f5f4a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the market council chooses a Lantern-Warden each year.",
+      "succession": "Elective, yearly (the market council)."
+    },
+    "advisors": [
+      {
+        "id": "zin_kersian_guilds",
+        "name": "Blosis Vikias, Master of the Guilds",
+        "given": "Blosis",
+        "house": "Vikias",
+        "office": "Master of the Market Guilds",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Speaks for the guilds of the market and the caravanserai, and taxes Noris and Stabilo alike, to the penny.",
+        "portrait": "A plump guildsman with a scale and a seal.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kersian_parim",
+        "name": "Velmec Parel of the Aenoran Families",
+        "given": "Velmec",
+        "house": "Parel",
+        "office": "Speaker of the Aenoran families",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Speaks for the Aenoran-descended families of Osrale and reads every letter from Parim before the council does.",
+        "portrait": "A man in Aenoran blue with a packet of letters.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kersian_cistern",
+        "name": "Obmae of the Cistern",
+        "given": "Obmae",
+        "office": "Keeper of the Cistern Lanterns",
+        "gender": "female",
+        "people": "men",
+        "born": 6760,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Keeps the cistern where the first lantern of the Lantern Peace was floated, and the Lake Litany beside it.",
+        "portrait": "An old woman in pale blue with a floating lantern.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_kersian_walls",
+        "name": "Captain Furanoth of the Walls",
+        "given": "Furanoth",
+        "office": "Captain of the Walls",
+        "gender": "male",
+        "people": "men",
+        "born": 6772,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the two new walls that the rival gifts built.",
+        "portrait": "A wall-captain with a lantern-badge and a spear.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_kersian_lanterns",
+        "name": "Alerhae of the Lantern-Wardens",
+        "given": "Alerhae",
+        "office": "Captain of the Lantern-Wardens",
+        "gender": "female",
+        "people": "men",
+        "born": 6784,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Leads the lantern-wardens who keep the night watch of the market.",
+        "portrait": "A young warden with a lantern on a pole.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "MOS",
+    "key": "mostok",
+    "name": "Mostok",
+    "stance": "zin_light_council",
+    "stanceNote": "countries.csv has zin_wild_freeholds; a free city under a weighers' council reads as a Free Council. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "MOS_zin_ruler",
+      "name": "First Weigher Milio Crovo",
+      "given": "Milio",
+      "house": "House of Crovo",
+      "title": {
+        "native": null,
+        "english": "First Weigher of Cereosa"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6768,
+      "stance": "zin_light_council",
+      "traits": [
+        "zin_trait_caravan_broker",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Milio Crovo is First Weigher of Cereosa for this year, chosen by the weighers who keep the city's honest scale and govern it besides. The junction city lives on inns, storage and weighing, both great powers keep envoys there, and the war of Noris and Stabilo ended in its hall. He knows that Cereosa's freedom lasts exactly as long as Noris and Stabilo distrust each other, and he does what he can to keep them at it.",
+      "portrait": {
+        "appearance": "An olive-skinned, round-faced weigher with a short grey beard and spectacles of polished crystal.",
+        "dress": "A black weigher's robe with a bronze scale embroidered on the breast, a set of brass weights at his belt.",
+        "colours": "Caravan amber (#a8742a), oxblood (#8a2f2a), jade (#3f6b4a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the weighers' council chooses a First Weigher each year.",
+      "succession": "Elective, yearly (the weighers' council)."
+    },
+    "advisors": [
+      {
+        "id": "zin_mostok_inns",
+        "name": "Nella Cerio, Mistress of the Caravanserai",
+        "given": "Nella",
+        "house": "Cerio",
+        "office": "Mistress of the Caravanserai",
+        "gender": "female",
+        "people": "men",
+        "born": 6771,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the inns and the warehouses of the junction, and emptied them for a year when Stabilo demanded its bronze be weighed free.",
+        "portrait": "A broad innkeeper-woman with a ring of warehouse keys.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mostok_envoys",
+        "name": "Plerano Tablia, Keeper of the Envoys' House",
+        "given": "Plerano",
+        "house": "Tablia",
+        "office": "Keeper of the Envoys' House",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_envoy"
+        ],
+        "role": "Lodges the envoys of Noris and Stabilo in the same house and makes sure they meet at breakfast.",
+        "portrait": "A genial host in a black coat with a tray of cups.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mostok_scale",
+        "name": "Weigher Sarina Fundia",
+        "given": "Sarina",
+        "house": "Fundia",
+        "office": "Keeper of the Honest Scale",
+        "gender": "female",
+        "people": "men",
+        "born": 6763,
+        "slot": "theorist",
+        "traits": [
+          "zin_trait_lawspeaker"
+        ],
+        "role": "Keeps the honest scale in the hall and the weights against which every caravan's are checked.",
+        "portrait": "A stern woman beside a great bronze scale.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_mostok_guard",
+        "name": "Captain Tabino Belano of the Scale Guard",
+        "given": "Tabino",
+        "house": "Belano",
+        "office": "Captain of the Scale Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Commands the small guard of the junction city, which keeps the peace among caravaneers rather than any army.",
+        "portrait": "A guard-captain in bronze scale with a crossbow.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_mostok_roads",
+        "name": "Fulina of the Four Roads",
+        "given": "Fulina",
+        "office": "Warden of the Four Roads",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Keeps the road junctions open and the caravans moving through them.",
+        "portrait": "A mounted road-warden with a horn.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "AZA",
+    "key": "azano",
+    "name": "Azano",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "AZA_zin_ruler",
+      "name": "Mylana Azano, Head of the House",
+      "given": "Mylana",
+      "house": "House Azano",
+      "title": {
+        "native": null,
+        "english": "Lady of Ceralon, Head of the House of Azano"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6781,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_caravan_master",
+        "zin_trait_banker_prince"
+      ],
+      "bio": "Mylana Azano has headed the house that owns Ceralon since her father's death in 4A 1739, and as head of the house she is the city's lord by charter. Her ledgers record loans to half the courts of the East, her bench-cousins in Postondoroth resent her freedom, and her bronze-roofed house over the market was built with the winnings of her father's silk wager. She keeps the city independent by charter rather than by arms, and she would rather lend to an army than raise one.",
+      "portrait": {
+        "appearance": "A young, olive-skinned woman with a merchant's cool gaze and a high, jewelled coiffure.",
+        "dress": "A gown of amber and oxblood silk, a jewelled collar, the house mark of Azano in gold at her breast.",
+        "colours": "Caravan amber (#a8742a), oxblood (#8a2f2a), jade (#3f6b4a)."
+      },
+      "canon": "H",
+      "note": "House Azano owns the city named for it; the name is the house's, not a place-name given to the ruler."
+    },
+    "heir": {
+      "id": "zin_azano_myleo",
+      "name": "Myleo Azano",
+      "given": "Myleo",
+      "house": "Azano",
+      "office": "Brother of the Head of the House",
+      "gender": "male",
+      "people": "men",
+      "born": 6785,
+      "traits": [
+        "zin_trait_caravan_broker"
+      ],
+      "role": "Mylana's younger brother, who keeps the house's second ledger and would head the house if she fell.",
+      "succession": "The head of the house names the heir; the charter passes with the headship.",
+      "portrait": "A young merchant in amber silk with a ledger.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_azano_ledger",
+        "name": "Posano Prudia, Keeper of the Ledgers",
+        "given": "Posano",
+        "house": "Prudia",
+        "office": "Keeper of the House Ledgers",
+        "gender": "male",
+        "people": "men",
+        "born": 6763,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the ledgers of the loans to half the courts of the East, and remembers the Ledger Feud with the Prudos better than anyone.",
+        "portrait": "An old clerk with ink-stained fingers and a stack of ledgers.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_azano_silk",
+        "name": "Travia Azanon, Mistress of the Silk",
+        "given": "Travia",
+        "house": "Azanon",
+        "office": "Mistress of the Silk Trade",
+        "gender": "female",
+        "people": "men",
+        "born": 6776,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Runs the silk trade from the South Lands that built the bronze-roofed house.",
+        "portrait": "A woman in shimmering silk with a bolt of cloth.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_azano_knives",
+        "name": "Crovio the Quiet",
+        "given": "Crovio",
+        "office": "Keeper of the Door",
+        "gender": "male",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_whisper_master"
+        ],
+        "role": "Keeps the door of the house, which in the Ledger Feud meant keeping hired knives out of it.",
+        "portrait": "A lean man in grey with a knife he never draws in company.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_azano_guard",
+        "name": "Captain Arcanio Fulio of the House Guard",
+        "given": "Arcanio",
+        "house": "Fulio",
+        "office": "Captain of the House Guard",
+        "gender": "male",
+        "people": "men",
+        "born": 6773,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "career_officer"
+        ],
+        "role": "Commands the hired guard of the house, which is paid well enough not to be bought by anyone else.",
+        "portrait": "A guard-captain in bronze with the Azano mark on his shield.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_azano_galleys",
+        "name": "Lavia of the Market Quay",
+        "given": "Lavia",
+        "office": "Captain of the House Galleys",
+        "gender": "female",
+        "people": "men",
+        "born": 6779,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Commands the house's two armed galleys that escort its cargoes along the coast.",
+        "portrait": "A galley-captain in amber with a brass whistle.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "OBM",
+    "key": "obmi",
+    "name": "Obmi",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "OBM_zin_ruler",
+      "name": "Chief Factor Narino Shindo",
+      "given": "Narino",
+      "house": "House of Shindo",
+      "title": {
+        "native": null,
+        "english": "Chief Factor of Kerdoco"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6765,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_caravan_broker",
+        "zin_trait_guild_master"
+      ],
+      "bio": "Narino Shindo was chosen Chief Factor for life by the council of timber and gum factors who govern Kerdoco, the jungle-edge city that bought its freedom from its houses. The town lives by the Stabilo Pact's need for hardwood and sealed casks, and its gum seals Drak's powder casks under the Gum Charter. He keeps the Ledger Count like the old houses and fears the jungle's fevers more than any army, since a fever once killed half the town and made it move to the higher ground.",
+      "portrait": {
+        "appearance": "A lean, sallow factor with a fever-thin face and sharp eyes.",
+        "dress": "A light linen robe against the heat, a wide hat, the factors' seal of jungle gum on a cord.",
+        "colours": "Caravan amber (#a8742a), oxblood (#8a2f2a), jade (#3f6b4a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the council of factors chooses the next Chief Factor for life.",
+      "succession": "Elective for life (the council of factors)."
+    },
+    "advisors": [
+      {
+        "id": "zin_obmi_gum",
+        "name": "Pelara Ciro, Mistress of the Gum",
+        "given": "Pelara",
+        "house": "Ciro",
+        "office": "Mistress of the Gum Grounds",
+        "gender": "female",
+        "people": "men",
+        "born": 6772,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Keeps the gum grounds and the contract with Drak.",
+        "portrait": "A sunburnt woman with sticky hands and a gum-pot.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_obmi_physician",
+        "name": "Doctor Belmio Narco",
+        "given": "Belmio",
+        "house": "Narco",
+        "office": "Physician of the Fevers",
+        "gender": "male",
+        "people": "men",
+        "born": 6760,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_sage"
+        ],
+        "role": "Keeps the town's fever-house and the records of the year half the town died.",
+        "portrait": "A gaunt physician with a herb-bag and a mask of cloth.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_obmi_timber",
+        "name": "Ferrano of the Timber",
+        "given": "Ferrano",
+        "office": "Master of the Timber Grounds",
+        "gender": "male",
+        "people": "men",
+        "born": 6769,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_road_warden"
+        ],
+        "role": "Cuts and floats the hardwood the Pact's shipwrights need.",
+        "portrait": "A broad woodsman with an axe and a hardwood log.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_obmi_jungle",
+        "name": "Captain Arcolo of the Jungle Edge",
+        "given": "Arcolo",
+        "office": "Captain of the Jungle Edge",
+        "gender": "male",
+        "people": "men",
+        "born": 6776,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "ranger"
+        ],
+        "role": "Leads the guards who keep the timber and gum grounds safe from the jungle.",
+        "portrait": "A captain in light leather with a machete-like blade.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_obmi_river",
+        "name": "Sarra of the Floats",
+        "given": "Sarra",
+        "office": "Warden of the Timber Floats",
+        "gender": "female",
+        "people": "men",
+        "born": 6783,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 3
+        },
+        "traits": [
+          "organizer"
+        ],
+        "role": "Keeps the timber floats moving down to the coast.",
+        "portrait": "A woman on a log raft with a pole.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "PRN",
+    "key": "pornivior",
+    "name": "Pornivior",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "PRN_zin_ruler",
+      "name": "First Warden Pelio Shindo",
+      "given": "Pelio",
+      "house": "House of Shindo",
+      "title": {
+        "native": null,
+        "english": "First Warden of the Tithe"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6772,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_fire_tithe",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Pelio Shindo is First Warden of the council that the guilds of Nerhuus elect to collect the fire-tithe and carry it up the mountain. His city of the caravan princes lies in the shadow of Mount Ergo, where the people say a devil once took a whole caravan and left only its scales laid out on a scorched stone. The council of 4A 1502 decided the tithe was a superstition, and in the autumn the upper town burned; Nerhuus has paid every year since, and Pelio carries the first sack up himself.",
+      "portrait": {
+        "appearance": "A soot-browned, nervous man with singed eyebrows and a careful smile.",
+        "dress": "A fire-proof leather cloak over amber silk, a tithe-warden's brass key, a scale-badge.",
+        "colours": "Caravan amber (#a8742a), oxblood (#8a2f2a), jade (#3f6b4a)."
+      },
+      "canon": "H",
+      "note": "Cousin of Narino Shindo of Obmi in the same great house (proposed)."
+    },
+    "heir": {
+      "note": "No heir: the guilds elect the tithe-wardens and the wardens choose their First Warden.",
+      "succession": "Elective (the guilds and the tithe-wardens)."
+    },
+    "advisors": [
+      {
+        "id": "zin_pornivior_carrier",
+        "name": "Nelo the Tithe-Bearer",
+        "given": "Nelo",
+        "office": "Bearer of the Tithe",
+        "gender": "male",
+        "people": "men",
+        "born": 6766,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_high_priest"
+        ],
+        "role": "Leads the procession that carries the tithe to the scorched stone, and has come back every time.",
+        "portrait": "A grey man in a soot-black robe with a sack of offerings.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_pornivior_guilds",
+        "name": "Fulara Arcon, Speaker of the Guilds",
+        "given": "Fulara",
+        "house": "Arcon",
+        "office": "Speaker of the Guilds",
+        "gender": "female",
+        "people": "men",
+        "born": 6770,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Speaks for the guilds that elect the wardens and trade with everyone, because the city cannot afford an enemy.",
+        "portrait": "A shrewd woman with a guild chain and a purse.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_pornivior_scales",
+        "name": "Corneo Seno, Keeper of the Scales",
+        "given": "Corneo",
+        "house": "Seno",
+        "office": "Keeper of the Caravan's Scales",
+        "gender": "male",
+        "people": "men",
+        "born": 6758,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_treasurer"
+        ],
+        "role": "Keeps the scales of the vanished caravan in the guild hall and the city's treasury beside them.",
+        "portrait": "An old clerk beside a set of blackened scales.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_pornivior_road",
+        "name": "Captain Bellino Telan of the Mountain Road",
+        "given": "Bellino",
+        "house": "Telan",
+        "office": "Captain of the Mountain Road",
+        "gender": "male",
+        "people": "men",
+        "born": 6774,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 3,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "trait_mountaineer"
+        ],
+        "role": "Guards the mountain road and refuses to go past the scorched stone.",
+        "portrait": "A captain in bronze scale on a dark mountain road.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_pornivior_watch",
+        "name": "Trella of the Upper Town",
+        "given": "Trella",
+        "office": "Captain of the Upper Town Watch",
+        "gender": "female",
+        "people": "men",
+        "born": 6785,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "Keeps the watch in the rebuilt upper town and its fire-buckets always full.",
+        "portrait": "A young woman with a bucket and a spear.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "WOQ",
+    "key": "woqood",
+    "name": "Woqood",
+    "stance": "zin_wild_clans",
+    "stanceNote": "countries.csv has zin_wild_freeholds; a league of sealers' clans under a clan-moot reads as Clan Moot. Owner to confirm.",
+    "court": "standard",
+    "ruler": {
+      "id": "WOQ_zin_ruler",
+      "name": "Harpoon-Speaker Yarun bat Nurek",
+      "given": "Yarun",
+      "house": "of the Meli boat",
+      "title": {
+        "native": null,
+        "english": "Harpoon-Speaker of the Clan-Moot"
+      },
+      "gender": "female",
+      "people": "men",
+      "born": 6779,
+      "stance": "zin_wild_clans",
+      "traits": [
+        "zin_trait_ice_hardy",
+        "zin_trait_elected_speaker"
+      ],
+      "bio": "Yarun bat Nurek of the Meli boat holds the harpoon this winter, chosen by the clan-moot of Pehami from the boat clans to speak for the snow coast, Cream and Lorvens. Her sealers, harpooners and sled-men trade furs, seal-fat and ivory with Naamis and the Lake Road and keep to themselves. The moot has kept peace with the sea crown since the Ice Winter, when the clans crossed the frozen sea and Naamis fed them, and she will stay out of any eastern war unless someone attacks her coast.",
+      "portrait": {
+        "appearance": "A broad, wind-reddened woman with black braids and narrow, laughing eyes.",
+        "dress": "A sealskin parka trimmed with white fur, an ivory harpoon of office, bone beads at the throat.",
+        "colours": "Snow white (#e8f0f0), sea slate (#3a5a6a), seal-blood red (#8a2a2a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "note": "No heir: the clan-moot chooses a Harpoon-Speaker from the boat clans each winter.",
+      "succession": "Elective, yearly (the clan-moot)."
+    },
+    "advisors": [
+      {
+        "id": "zin_woqood_grounds",
+        "name": "Melim of the Seal Grounds",
+        "given": "Melim",
+        "office": "Keeper of the Seal Grounds",
+        "gender": "male",
+        "people": "men",
+        "born": 6755,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Divides the seal grounds among the boat clans each spring, and is Yarun's uncle, which nobody has ever held against him.",
+        "portrait": "An old sealer with a scarred face and a walrus-ivory staff.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_woqood_furs",
+        "name": "Sharun bat Tumud of the Fur Trade",
+        "given": "Sharun",
+        "office": "Mistress of the Fur Trade",
+        "gender": "female",
+        "people": "men",
+        "born": 6774,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_merchant_prince"
+        ],
+        "role": "Sells the furs, fat and ivory to Naamis and the Lake Road.",
+        "portrait": "A woman in a fur cloak with a bale of white pelts.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_woqood_ice",
+        "name": "Barak the Ice-Reader",
+        "given": "Barak",
+        "office": "Reader of the Ice",
+        "gender": "male",
+        "people": "men",
+        "born": 6762,
+        "slot": "theorist",
+        "traits": [
+          "zin_adv_weather_reader"
+        ],
+        "role": "Reads the sea-ice and says when it will hold a sled and when it will not.",
+        "portrait": "A squinting old man with an ice-staff on a frozen shore.",
+        "canon": "P"
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_woqood_harpoons",
+        "name": "Tumak of the Harpooners",
+        "given": "Tumak",
+        "office": "Captain of the Harpooners",
+        "gender": "male",
+        "people": "men",
+        "born": 6777,
+        "type": "corps_commander",
+        "skill": {
+          "level": 2,
+          "attack": 3,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "winter_specialist"
+        ],
+        "role": "Leads the harpooners and sled-men who could fight on the ice if anyone were foolish enough to come.",
+        "portrait": "A sealer with a long harpoon and a sled-dog.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_woqood_boats",
+        "name": "Melah of the Boat Clans",
+        "given": "Melah",
+        "office": "Captain of the Boat Clans",
+        "gender": "female",
+        "people": "men",
+        "born": 6781,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 2,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the skin-boats of the clans along the snow coast.",
+        "portrait": "A woman in a skin-boat with a paddle and a harpoon.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  },
+  {
+    "tag": "ORA",
+    "key": "orato",
+    "name": "Orato",
+    "stance": "zin_wild_freeholds",
+    "court": "standard",
+    "ruler": {
+      "id": "ORA_zin_ruler",
+      "name": "Barim ben Yaqud, Lord of the Boats",
+      "given": "Barim",
+      "house": "the Lords of the Boats",
+      "title": {
+        "native": "Beq",
+        "english": "Lord of the Boats of Orato"
+      },
+      "gender": "male",
+      "people": "men",
+      "born": 6770,
+      "stance": "zin_wild_freeholds",
+      "traits": [
+        "zin_trait_lord_of_the_boats",
+        "zin_trait_port_master"
+      ],
+      "bio": "Barim ben Yaqud rules Orato and Fladev from the stone harbour of Nodoqood, two small isles of fishers facing the Kusmeel, as his family has since the boats accepted the first lord. Four years ago his fishermen said they had seen black ships moving among the black islands of the north without lights or oars, and he sent word to Duum-Saah and Furvior, and no court believed them. The fishermen have stopped talking about it in the market, and some of them have stopped fishing the northern grounds, and Barim has not told them they are wrong.",
+      "portrait": {
+        "appearance": "A weathered, grey-bearded fisher-lord with salt-cracked hands and wary eyes.",
+        "dress": "A heavy oiled sea-cloak, a fisherman's knitted cap, a silver boat-badge.",
+        "colours": "Sea blue (#3a6a8a), foam (#e0e0d0), tar brown (#5a3a2a)."
+      },
+      "canon": "H"
+    },
+    "heir": {
+      "id": "zin_orato_yaqud",
+      "name": "Yaqud ben Barim",
+      "given": "Yaqud",
+      "office": "Heir of the Boats",
+      "gender": "male",
+      "people": "men",
+      "born": 6796,
+      "traits": [
+        "zin_trait_lord_of_the_boats"
+      ],
+      "role": "The lord's son, named for his grandfather, who has fished the northern grounds since he could hold a line.",
+      "succession": "The lordship passes in one fishing family when the boats accept the heir.",
+      "portrait": "A young fisher with a net over his shoulder.",
+      "canon": "P"
+    },
+    "advisors": [
+      {
+        "id": "zin_orato_fladev",
+        "name": "Tamarah of Fladev",
+        "given": "Tamarah",
+        "office": "Headwoman of Fladev",
+        "gender": "female",
+        "people": "men",
+        "born": 6768,
+        "slot": "political_advisor",
+        "traits": [
+          "zin_adv_elder"
+        ],
+        "role": "Headwoman of the eastern isle that joined the lordship by a wedding, and the lord's cousin by the same wedding.",
+        "portrait": "A sturdy fisher-woman with a gutting knife and a shawl.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_orato_harbour",
+        "name": "Barzud the Harbour-Keeper",
+        "given": "Barzud",
+        "office": "Keeper of the Stone Harbour",
+        "gender": "male",
+        "people": "men",
+        "born": 6764,
+        "slot": "navy_chief",
+        "traits": [
+          "zin_adv_master_of_ships"
+        ],
+        "role": "Keeps the stone harbour and the boats, and counts every one that comes back.",
+        "portrait": "An old harbour-keeper with a coil of rope.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_orato_teller",
+        "name": "Nurim the Teller",
+        "given": "Nurim",
+        "office": "Fisherman of the northern grounds",
+        "gender": "male",
+        "people": "men",
+        "born": 6775,
+        "slot": "high_command",
+        "traits": [
+          "zin_adv_warden_of_beacons"
+        ],
+        "role": "The fisherman who first told of the black ships, and who still keeps watch from the north cape when the others will not.",
+        "portrait": "A fisherman on a cliff staring at a grey sea.",
+        "canon": "P",
+        "note": "His tale stays a disputed fishermen's tale until zin_zol_rising (V10)."
+      }
+    ],
+    "commanders": [
+      {
+        "id": "zin_orato_boats",
+        "name": "Yakar of the Fishing Fleet",
+        "given": "Yakar",
+        "office": "Captain of the Fishing Fleet",
+        "gender": "male",
+        "people": "men",
+        "born": 6778,
+        "type": "navy_leader",
+        "skill": {
+          "level": 2,
+          "attack": 1,
+          "defense": 2,
+          "maneuvering": 3,
+          "coordination": 2
+        },
+        "traits": [
+          "green_water_expert"
+        ],
+        "role": "Leads the fishing fleet when it is armed, which has never yet happened.",
+        "portrait": "A fisher-captain at the tiller of a broad boat.",
+        "canon": "P"
+      },
+      {
+        "id": "zin_orato_isle",
+        "name": "Leni bat Yaqud of the Isle Guard",
+        "given": "Leni",
+        "office": "Captain of the Isle Guard",
+        "gender": "female",
+        "people": "men",
+        "born": 6782,
+        "type": "corps_commander",
+        "skill": {
+          "level": 1,
+          "attack": 1,
+          "defense": 2,
+          "planning": 2,
+          "logistics": 2
+        },
+        "traits": [
+          "defensive_doctrine"
+        ],
+        "role": "The lord's sister, who keeps the isle guard of fishers with spears.",
+        "portrait": "A woman with a fish-spear on a stone quay.",
+        "canon": "P"
+      }
+    ],
+    "figures": []
+  }
+]
