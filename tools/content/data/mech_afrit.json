@@ -1,0 +1,89 @@
+{
+  "source": "docs/specs/04_mechanics/afrit_hidden_council.md. Every number is the spec's proposal. Countries are named here and resolved to tags through data/countries.json by the module.",
+  "hub": "Worshipdom",
+  "realm": "Aenor",
+  "selen": "Selen",
+  "mirolon": "Mirolon",
+  "start": { "veil": 80, "plot": 20, "artifacts": 4, "seats": { "seals": 3, "censers": 2, "whispers": 1, "relics": 2 } },
+  "seatCodes": { "seals": 1, "censers": 2, "whispers": 3, "relics": 4 },
+  "artifactCodes": { "ring": 1, "crown": 2, "bracelet": 3, "necklace": 4 },
+  "regionCodes": { "middle_lands": 1, "north_lands": 2, "cold_lands": 3, "west_lands": 4, "tritons_islands": 5, "dark_lands": 6, "magical_lands": 7, "zols_mistake": 8, "dead_lands": 9, "east_lands": 10, "islands_of_the_south": 11, "lands_of_the_sun": 12 },
+  "caps": { "zero": ["Volgan", "Demon", "Dolon", "Nezer", "Zol", "Yeldenne"], "elves": 2, "aenor": 5, "base": 3 },
+  "footholdRows": [
+    { "match": { "name": "Aenor" }, "start": 5 },
+    { "match": { "overlord": "Aenor", "people": "men", "notName": "Selen" }, "start": 2 },
+    { "match": { "overlord": "Aenor", "notPeople": "men" }, "start": 1 },
+    { "match": { "name": "Selen" }, "start": 1 },
+    { "match": { "name": "Fotan" }, "start": 1 },
+    { "match": { "name": ["Cursed Lands", "Bloody Forest"] }, "start": 0 },
+    { "match": { "region": "dead_lands", "people": "men", "notName": "Mirolon" }, "start": 1 },
+    { "match": { "region": "cold_lands", "notName": "Yeldenne" }, "start": 1 },
+    { "match": { "name": ["Alerhia", "Erco", "Plutondo", "Miaed", "Noris", "Stabilo"] }, "start": 3 },
+    { "match": { "region": "east_lands" }, "start": 2 },
+    { "match": { "name": ["Lerendor", "Dondor"] }, "start": 2 },
+    { "match": { "region": ["north_lands", "west_lands", "cold_lands", "dark_lands", "tritons_islands", "islands_of_the_south", "lands_of_the_sun"], "people": "men" }, "start": 1 },
+    { "match": { "name": "Mirolon" }, "start": 1 },
+    { "match": { "region": "dark_lands", "people": ["orcs", "trolls"] }, "start": 0 },
+    { "match": { "people": ["elves", "sun_elves"] }, "start": 1 },
+    { "match": { "any": true }, "start": 0 }
+  ],
+  "watch": { "base": 1, "light": 2, "selenOrMirolon": 3, "elves": 2, "lostCause": 1, "suspicious": 2, "wild": -1, "deep": -2 },
+  "houseCost": { "base": 25, "perLevel": 15, "censersDiscount": 0.04, "days": 60, "chanceBase": 85, "chancePerWatch": 8, "chancePerWhispers": 3, "suspiciousDays": 730 },
+  "houses": { "stability": [0, 0.01, 0.02, 0.03, 0.04, 0.05], "politicalPower": [0, 0, 0, -0.03, -0.06, -0.09], "tithe": 0.25, "titheCap": 10, "aenorTithe": 2 },
+  "artifacts": [
+    { "key": "ring", "code": 1, "name": "The Ring of Doors", "picture": "ring_doors", "graces": { "own_operative_capture_chance_factor": -0.3, "army_retreat_speed_factor": 0.1 } },
+    { "key": "crown", "code": 2, "name": "The Crown of Witnesses", "picture": "crown_witnesses", "graces": { "stability_factor": 0.08, "war_support_factor": 0.05 } },
+    { "key": "bracelet", "code": 3, "name": "The Bracelet of the First Seal", "picture": "bracelet_seal", "graces": { "army_core_defence_factor": 0.08, "defensive_war_stability_factor": 0.1 } },
+    { "key": "necklace", "code": 4, "name": "The Necklace of the Abyss", "picture": "necklace_deep", "graces": { "political_power_factor": 0.15, "army_morale_factor": 0.1 } }
+  ],
+  "graceVariables": { "political_power_factor": "zin_afrit_dm_pp", "army_morale_factor": "zin_afrit_dm_morale", "own_operative_capture_chance_factor": "zin_afrit_dm_capture", "army_retreat_speed_factor": "zin_afrit_dm_retreat", "stability_factor": "zin_afrit_dm_stab", "war_support_factor": "zin_afrit_dm_ws", "army_core_defence_factor": "zin_afrit_dm_coredef", "defensive_war_stability_factor": "zin_afrit_dm_defstab" },
+  "dates": { "regicideFallback": "1750.10.15", "flight": "1756.3.1", "returnOpen": "1758.1.1", "return": "1758.2.1", "parim": "1758.9.1", "ashenA": "1759.1.1", "ashenB": "1760.1.1" },
+  "palace": [
+    { "stage": 1, "event": 71, "artifact": "ring", "base": 60, "journey": 120 },
+    { "stage": 2, "event": 72, "artifact": "crown", "base": 55, "journey": null },
+    { "stage": 3, "event": 73, "artifact": "bracelet", "base": 55, "journey": 121 },
+    { "stage": 4, "event": 74, "artifact": "necklace", "base": 50, "journey": 123 }
+  ],
+  "acceptance": { "perFoothold": 20, "offset": -40, "biasDivisor": 2, "roadsEast": 20, "dominion": 15, "light": -20, "rival": -30, "secondEmbassy": 25, "min": 5, "max": 95 },
+  "rivals": [["Noris", "Stabilo"]],
+  "characters": [
+    { "id": "zin_ilvane", "name": "Ilvane, High Confessor", "slot": "political_advisor", "trait": "zin_trait_high_confessor", "portrait": "GFX_zin_portrait_men_male_1", "hidden": false, "cost": 150 },
+    { "id": "zin_corvel", "name": "Corvel, Master of Couriers", "slot": "political_advisor", "trait": "zin_trait_master_of_couriers", "portrait": "GFX_zin_portrait_men_male_2", "hidden": false, "cost": 150 },
+    { "id": "zin_sevrin", "name": "Sevrin the Unending", "slot": "political_advisor", "trait": "zin_trait_unending_thief", "portrait": "GFX_zin_portrait_men_male_2", "hidden": true, "cost": 150 },
+    { "id": "zin_kessarion", "name": "Kessarion the Envoy", "slot": "political_advisor", "trait": "zin_trait_envoy_of_many_courts", "portrait": "GFX_zin_portrait_men_male_1", "hidden": false, "cost": 150 },
+    { "id": "zin_ossar", "name": "Magister Velan Ossar", "slot": "theorist", "trait": "zin_trait_seeker_of_relics", "portrait": "GFX_zin_portrait_men_male_2", "hidden": false, "cost": 100 }
+  ],
+  "traits": {
+    "country": [
+      { "id": "zin_trait_deliverer", "name": "Beloved of the Faithful", "desc": "The people love the god who guards them, and tell him so in every street.", "mods": { "political_power_gain": 0.25, "stability_factor": 0.05 } },
+      { "id": "zin_trait_unmasked", "name": "The Unmasked God", "desc": "The name is spoken and the glory is no longer veiled. Some kneel at once, and some run.", "mods": { "war_support_factor": 0.1, "stability_factor": -0.05 } }
+    ],
+    "advisor": [
+      { "id": "zin_trait_high_confessor", "name": "High Confessor", "desc": "The priest who keeps the temples' voice and the realm's conscience.", "slot": "political_advisor", "mods": { "stability_factor": 0.05, "party_popularity_stability_factor": 0.1 } },
+      { "id": "zin_trait_master_of_couriers", "name": "Master of Couriers", "desc": "He knows every road and every rider on it.", "slot": "political_advisor", "mods": { "civilian_intel_factor": 0.1, "intel_network_gain_factor": 0.15 } },
+      { "id": "zin_trait_unending_thief", "name": "The Unending", "desc": "A man who has lived longer than anyone should, and who has learned to take what he wants.", "slot": "political_advisor", "mods": { "research_speed_factor": 0.03, "operation_cost": -0.1 } },
+      { "id": "zin_trait_envoy_of_many_courts", "name": "Envoy of Many Courts", "desc": "He has a seat at every table and a word for every king.", "slot": "political_advisor", "mods": { "civilian_intel_factor": 0.05, "improve_relations_maintain_cost_factor": -0.1 } },
+      { "id": "zin_trait_seeker_of_relics", "name": "Seeker of Relics", "desc": "A scholar who reads old things for the power they still hold.", "slot": "theorist", "mods": { "research_speed_factor": 0.03 } }
+    ]
+  },
+  "ideas": [
+    { "id": "zin_afrit_deliverer_rests", "name": "The Deliverer Rests", "desc": "The god keeps to his rooms, and no petition reaches him. The realm waits, singing.", "picture": "hermitage_hills", "mods": { "political_power_factor": -0.15, "stability_factor": -0.05 } },
+    { "id": "zin_afrit_unmasked", "name": "The Mask Slips", "desc": "The secret came out before its hour. Every house is watched, and every friend is a question.", "picture": "mask_veiled", "mods": { "stability_factor": -0.1, "political_power_factor": -0.2, "drift_defence_factor": -0.3 } },
+    { "id": "zin_afrit_necklace_drawn", "name": "The Necklace Drawn Upon", "desc": "The Necklace gives what it can, for a time, and the price is paid in the dark.", "picture": "necklace_deep", "mods": { "army_attack_factor": 0.1, "army_defence_factor": 0.1, "political_power_gain": 1 } },
+    { "id": "zin_afrit_edict_of_arms", "name": "The Edict of Arms", "desc": "The King's edict puts every muster-roll in the temples' hands, and every drill-yard under the altar.", "picture": "sword_shield", "mods": { "army_org_factor": 0.05, "training_time_army_factor": -0.1 } }
+  ],
+  "instruments": [
+    { "key": "physician", "bonus": 10, "label": "the physician's draught" },
+    { "key": "hunt", "bonus": 15, "label": "a hunting mishap" },
+    { "key": "fever", "bonus": 5, "label": "the fever-blessing" }
+  ],
+  "veil": { "thinsAt": 30, "exposedBelow": 15, "firstFloor": 1 },
+  "external": {
+    "effects": ["zin_aenor_expose_plot", "zin_aenor_hasten_death_clock", "zin_aenor_add_council_influence", "zin_aenor_add_concord_loyalty_all", "zin_east_prepare_kneel", "zin_eindil_start_hunt", "zin_politics_set_stance", "zin_politics_add_drift", "zin_world_add_gathering_dark", "zin_reign_on_crowning", "zin_aenor_find_parim_realm"],
+    "triggers": ["zin_is_site_parim", "zin_region_east_lands_country", "zin_east_is_court"],
+    "events": ["zin_reign.65", "zin_reign.81", "zin_reign.82", "zin_reign.83", "zin_reign.85", "zin_eindil.110", "zin_eindil.120", "zin_eindil.121", "zin_eindil.123", "zin_eindil.124", "zin_eindil.127"],
+    "characters": ["zin_aurevan", "zin_merovan", "zin_eronel"],
+    "ideas": ["zin_worshipdom_temple_state", "zin_worshipdom_radiant_face"],
+    "variables": ["zin_east_kneel_bias"]
+  }
+}

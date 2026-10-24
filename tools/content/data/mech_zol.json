@@ -1,0 +1,46 @@
+{
+  "source": "docs/specs/04_mechanics/zols_mistake.md. Every number is the spec's proposal. Names are resolved to tags through data/countries.json. No text names a servant, a keeper of Furviatlon or what feeding is.",
+  "realm": "Zol",
+  "aenor": "Aenor",
+  "lerendor": "Lerendor",
+  "volgan": "Volgan",
+  "gala": "Gala Elves",
+  "start": { "power": 35, "bondGreat": 1, "bondLesser": 2, "bondDivine": 1, "fadingPressure": 0.15, "returnRate": 0.6 },
+  "growth": { "base": 0.1, "great": 0.04, "lesser": 0.02, "divine": 0.06, "pressureFloor": 0.05, "weakBonds": 1 },
+  "bands": [24, 49, 74],
+  "manpowerPerHost": 200,
+  "bondsPerHost": 1000,
+  "hostCapDivisor": 4,
+  "preRisingHostCap": 4,
+  "risingPower": 55,
+  "manifestPower": 60,
+  "manifestConvergence": 100,
+  "formCost": { "weeklyPower": 3, "afterTheCost": 2, "missionDays": 63, "endsBelow": 20, "powerOnManifest": -25 },
+  "withdraw": { "powerDrop": 20, "powerFloor": 10, "woundedDays": 730, "deathfieldDays": 1095 },
+  "returnRate": { "base": 0.6, "cap": 0.9 },
+  "rumour": { "base": 30, "loud": 50, "dark": 10, "open": 90, "veiledHalves": true, "gatheringDarkPerTale": 0.5, "gatheringDarkCap": 5, "forewarnedDays": 365 },
+  "dates": { "appointed_hour": "1755.5.1", "hastened_hour": "1753.3.1", "forced_rising": "1755.7.1", "forced_rising_early": "1754.7.1", "late_manifest": "1758.1.1", "greater_hour": "1760.1.1", "second_stirring": "1770.1.1" },
+  "ideas": [
+    { "id": "zin_zol_without_a_body", "name": "Without a Body", "desc": "The Old God has no body in Erdae and cannot take one. What he commands, he commands from the dark, through those who serve.", "picture": "zol_sigil", "mods": { "surrender_limit": 0.5, "required_garrison_factor": -0.75, "research_speed_factor": -0.5, "drift_defence_factor": 1 } },
+    { "id": "zin_zol_the_dormancy", "name": "The Dormancy", "desc": "The north is quiet, as it has been for an age. The dead stir in the islands and the living do not hear.", "picture": "glyph_fading", "mods": { "political_power_factor": -0.2, "max_command_power": -50 } },
+    { "id": "zin_zol_the_rising", "name": "The Rising", "desc": "The dead have come out of the north. Nothing the living have built was made for them.", "picture": "bones_risen", "mods": { "war_support_factor": 1, "stability_factor": 0.5, "army_org_factor": 0.1 } },
+    { "id": "zin_zol_form_taken", "name": "The Form Taken", "desc": "For a short while the Old God stands in Erdae with a shape. It costs more than he can pay for long.", "picture": "zol_sigil", "mods": { "army_attack_factor": 0.3, "army_defence_factor": 0.2, "army_morale_factor": 0.3, "breakthrough_factor": 0.2 } },
+    { "id": "zin_zol_wounded", "name": "Wounded, Not Slain", "desc": "He withdrew into the dark of his domain. He was wounded, and constrained, and he was not slain.", "picture": "ashen_waste", "mods": { "army_attack_factor": -0.2, "army_org_factor": -0.2, "political_power_factor": -0.3 } },
+    { "id": "zin_zol_the_dead_endure", "name": "The Dead Endure", "desc": "A breath of the Old God's will goes through the host. Broken ranks stand and the fallen rise.", "picture": "dead_ranks_far", "mods": { "army_org_regain": 0.5, "land_reinforce_rate": 0.05 } },
+    { "id": "zin_zol_bane", "name": "The Bane of the Potent", "desc": "Weapons that carry old power can end what ordinary iron cannot. The dead press harder against those who bear them.", "picture": "potent_blade", "targeted": { "attack_bonus_against": 0.3, "defense_bonus_against": 0.2 } },
+    { "id": "zin_zol_bane_known", "name": "The Bane Known", "desc": "The hosts have learned where the potent blades stand and how to meet them. The dead press less blindly.", "picture": "potent_blade", "targeted": { "attack_bonus_against": 0.2, "defense_bonus_against": 0.2 } },
+    { "id": "zin_zol_forewarned", "name": "Forewarned of Black Ships", "desc": "Someone sent a ship to look when the fishermen spoke of black hulls. The crown that did so has not been surprised since.", "picture": "beacon", "targeted": { "defense_bonus_against": 0.1 } }
+  ],
+  "dynamicModifiers": {
+    "zin_zol_presence": { "name": "The Presence", "desc": "How much of the Old God's presence can act in Erdae. Not his whole power, which no one has measured.", "art": "zol_sigil", "mods": { "political_power_gain": "zin_zol_presence_pp", "weekly_manpower": "zin_zol_presence_manpower" } },
+    "zin_zol_black_waste": { "name": "The Black Wastes", "desc": "Nothing grows and nothing is easy to cross. The dead walk it without hunger.", "art": "ashen_waste", "mods": { "enemy_attrition": 0.15, "enemy_army_speed_factor": -0.15 } },
+    "zin_zol_deathfield": { "name": "The Land Made Waste", "desc": "Where the form stood, the land is dead for years: the soil gives nothing, and nothing wants to stay.", "art": "ashen_waste", "mods": { "local_manpower": -0.5, "state_resources_factor": -0.25, "local_supplies": -1 } }
+  },
+  "external": {
+    "effects": ["zin_world_add_gathering_dark", "zin_war_feed_deathless", "zin_war_grant_zol_manifestation", "zin_war_remove_zol_manifestation", "zin_diplo_lift_refusal", "zin_sun_lorien_rides", "zin_sun_lorien_falls"],
+    "triggers": ["zin_has_potent_magic", "zin_is_site_furviatlon", "zin_is_site_sodoloro", "zin_is_site_ocean_of_zol_island", "zin_is_site_ocean_of_zol_coast", "zin_is_region_middle_lands", "zin_is_zol_coast_country", "zin_rules_is_historical", "zin_rules_is_free", "zin_leren_strait_barred", "zin_dark_shore_barred"],
+    "events": ["zin_eindil.101", "zin_dominion.15"],
+    "characters": [],
+    "variables": []
+  }
+}
