@@ -1,170 +1,94 @@
 # The ZIN program: goal and completion criteria
 
-**Status:** In progress. Goal set 18 October 2026 and rewritten 19 October 2026 for the one-shot total-overhaul brief: build a complete, polished, playable Aoaz overhaul, start to finish, with no follow-up prompts.
+**Status:** In progress. Goal set 18 October 2026, rewritten 19 October 2026, and re-based on 24 October 2026 on the handoff package `docs/zin-handoff/` (requirements R-xx in `02-TOTAL-OVERHAUL-SPEC.md`, acceptance checks A-xx in `04-EXECUTION-AND-ACCEPTANCE.md`).
 
-This file is the goal. [ROADMAP.md](ROADMAP.md) orders the work, and the progress table at the end records where the work stands. Anyone resuming after a context reset reads this file first, then the resume packet at the end.
+This file is the single progress record. The criteria are the A-checks of the handoff package; this file does not keep a second checklist. Anyone resuming after a context reset reads this file first, then the resume packet at the end.
 
 ## The goal
 
-ZIN becomes a **complete, playable Hearts of Iron IV total overhaul that feels like an entirely different game**. From the main menu to the first day and to the end screen, nothing the player sees, hears or reads is vanilla. The world is **Aoaz**, from the owner's canon lore vault. The campaign opens on **1 Thaw 4A 1748**: the Golden King reigns, Eindil has not appeared, Afrit is hidden, and Aoaz seems at peace. A natural, strategically interesting map, a fantasy ruleset, an original interface, 305 countries with their own trees, and the full Fourth Age story are all in, finished, tested, and free of errors.
-
-It is judged on creativity, worldbuilding, gameplay depth and fun, immediate transformation, map quality, UI design, AI behaviour, technical correctness, visual consistency, completeness, and speed. Unfinished features, broken systems and placeholders count against it. No criterion below is lowered or deferred.
+ZIN is a complete, playable Hearts of Iron IV 1.19.3 total overhaul set on **Aoaz** (the main setting, formerly called Erdae), delivered as one finished assignment. From the main menu to the end screen, nothing the player sees, hears or reads is vanilla or real-world. The campaign opens in 4A 1748 of the Fourth Age: the Golden King reigns, Eindil has not appeared, Afrit is hidden, and Aoaz seems at peace. The established storyline runs to 4A 1760; the sandbox continues to 4A 1800. Planning, a demo, a first map import, a new main menu or a partly converted game do not count (R-00).
 
 ## Completion criteria
 
-Every criterion has an id and a named check. A criterion is **met** only when its check has run on the current build and passed; the progress table records the evidence. "Linux run" means the isolated Linux game under the shared WSL lock, with the clock unpaused (`tools/acceptance/`); the Windows game is never launched or controlled.
+A criterion is **met** only when its check has run on the current build and passed, with the evidence recorded below. "Linux run" means the isolated Linux game under the shared WSL lock `/tmp/hoi4_wsl.lock`, with the clock unpaused (`tools/acceptance/`); the Windows game is never launched, automated or captured. The definition of done is 04, section 7.
 
-### M. The map
+| Check | Requirement | State | Evidence (date) |
+| --- | --- | --- | --- |
+| A-01 | R-01 Erdae and Aoaz exchanged | migration applied; check added; game files regenerate at the next apply | `81bc85a`, `tools/migrations/aoaz_name_exchange.applied.json`, `docs/lore/names_traceability.md`, text-scan rules `bw_setting_names_*` (24 Oct) |
+| A-02 | R-02 Great Wall a natural range | sources corrected (K2, P4 and P13 void); vault and map pending | `INTEGRATION_DECISIONS.md` K2 (24 Oct) |
+| A-03 | R-03 Zol's servant in the war | waits for owner question Q-03 | |
+| A-04 | R-04 contradiction register | in progress | |
+| A-10 | R-10 drawn map imported through MCP | MCP worker designing the import (ZR-2) | |
+| A-11 | R-11, R-18 terrain, relief, rivers, edge | not started | |
+| A-12 | R-12, R-15 borders and regions | not started | |
+| A-13 | R-13 coherent sea names | not started | |
+| A-14 | R-14 the Nether below the Dead Lands | dossier in progress | |
+| A-16 | R-16, R-17 settlements, resources | not started | |
+| A-19 | R-19 regional dossiers | in progress | |
+| A-20 | R-20, R-21, R-26 peoples, cultures, forms | not started | |
+| A-22 | R-22 Hirolon | dossier in progress; Q-05 open | |
+| A-24 | R-24, R-25 fewer elves, varied Middle Lands | dossiers propose the roster | |
+| A-27 | R-27 real tags below 439 | not started (tags are still Y01 style) | |
+| A-28 | R-28 country and faction names | not started | |
+| A-29 | R-29 population | not started | |
+| A-30 | R-30 to R-32 twelve gods, calendar, faith | waits for Q-01, Q-02 | |
+| A-33 | R-33 knowledge layers | not started | |
+| A-34 | R-34, R-35 wizards and magic | Q-09 open | |
+| A-40 | R-23, R-40, R-41 bestiary, devils, ecology | transcription in progress | |
+| A-45 | R-45 regional histories | schema exists; no regional files | |
+| A-46 | R-46 alternate history | not started | |
+| A-47 | R-47, R-48 continuing lore, references | in progress | |
+| A-50 | R-50, R-51 naming | generator built (19 Oct); revision pending | |
+| A-52 | R-52 clean text | text scan built (19 Oct) | |
+| A-60 | R-60, R-67, R-68 ruleset, rules, inherited systems | stage 2 built (19 Oct), unverified in game | |
+| A-61 | R-61 focus trees | 95 trees written (19 Oct); integration round 3 running | |
+| A-62 | R-62 mechanics | slices written; integration round 3 running | |
+| A-63 | R-63, R-64 story, events, decisions | crown and world events written; integration round 3 running | |
+| A-65 | R-65 characters and portraits | not started | |
+| A-66 | R-66 AI | forces and templates built (19 Oct) | |
+| A-80 | R-80, R-81 interface coverage | reskin infrastructure; 204 textures pending (19 Oct) | |
+| A-82 | R-82, R-83 states, resolutions, tooltips | not started | |
+| A-90 | R-90 owner's branding | not started | |
+| A-91 | R-91 gfx standard | `lib/gfx_standard.mjs` written (19 Oct), not wired | |
+| A-92 | R-92 flags | not started | |
+| A-93 | R-93, R-94 unique art, units and 3D | manifest and checks built; Meshy not connected (24 Oct) | |
+| A-96 | R-96 music and sound | waits for Q-08 | |
+| A-98 | R-98, R-99 zero errors, sweep, observer runs, save and load, performance | not started | |
 
-| Id | Criterion | Check |
-| --- | --- | --- |
-| M1 | The map is rebuilt from the owner's drawings and a written geography model of Aoaz ([01_map/04_map_overhaul_plan.md](01_map/04_map_overhaul_plan.md)). Every map layer is generated by HOI4 Agent Tools, not hand-edited: heightmap, terrain, rivers, trees, provinces and definitions, adjacencies, strategic and sea regions, buildings, unit stacks, supply and railways, weather, positions, cities. | map validators; layer manifest in `.hoi4-agent-world.json` |
-| M2 | Real lakes: every lake in the geography model is a lake province with lake terrain, inland water in game, and its own name. | `MAP_LAKE_*` validators; lake table in the key-sites spec; Linux screenshots |
-| M3 | Aoaz is flat. Both east and west edge bands are sea or impassable, no province, adjacency, railway or supply link crosses the seam, and the world does not read as a globe. | edge validator; Linux screenshots at both edges |
-| M4 | Borders follow nature, measured by the tool's border-quality metric (`hoi4_map_inspect` with `quality: true`, ADR 0059, default radii) against the vanilla game as the calibration: enrichment over chance at least 1.3 for provinces, states and countries (vanilla 1.35, 1.40, 1.46; the old ZIN map 0.94, 0.70, 0.50), and a natural share of border length at least 0.70 for states and 0.73 for countries (vanilla parity), with the worst artificial runs listed and long straight runs within the metric's targets. | border-quality metric (tool change C10); `tools/content/checks/map_quality.mjs` |
-| M5 | Terrain has character at a glance: the Great Wall of Aenor is a massive mountain barrier against the Magical Lands; Kingson is ringed by mountains; the East Lands carry great ranges and named volcanoes; Aenor is fertile; the Dead Lands are hot and storm-girt; every other region follows its row in the geography model. | key-sites acceptance table; terrain-share report per region; Linux screenshots |
-| M6 | Rivers and water: a river network feeds every great lake and sea; every major city stands on water or a pass; every strait in the key-sites table is a named, working crossing in `adjacencies.csv`; every sea and strait is named. | river validator; adjacency test; naming check |
-| M7 | Names: every state, strategic region (land and sea), lake, river, strait, range and victory point has a proper Aoaz name. No "District", "Region N", "Settlement N" or generated placeholder survives. | world data check (G1) |
-| M8 | The history behind the borders makes sense: each country's holdings follow the vault and the start situation, and each state belongs to a region of its own people. | politics-step report; country-role review |
-| M9 | The country tag total stays below 439 (ZIN tags, then the 75 dynamic tags). | politics test |
+### Owner review rules (19 October 2026) and their checks
 
-### W. The world: peoples, cultures, languages and population
+| Rule | Checked by |
+| --- | --- |
+| F1 no bureaucratic names | A-28, A-52 |
+| F2 real three-letter tags, total below 439 | A-27 |
+| F3 no country named after its leader | A-28 |
+| F4 flags with culture and purpose | A-92 |
+| F5 coherent geography, the Nether below the Dead Lands | A-11, A-13, A-14 |
+| F6 no debug or placeholder text, no separators in names | A-52 |
+| F7 lore quotes carry worldbuilding | A-52 |
+| F8 gfx standard (transparent emblems) | A-91 |
 
-The world is complete, not just a map: everything that would exist in a real place is accounted for and consistent, and it shows in the game.
+### Where the 19 October criteria went
 
-| Id | Criterion | Check |
-| --- | --- | --- |
-| W1 | Every people and every culture of Aoaz is written down in the world bible ([02_lore/05_world_bible.md](02_lore/05_world_bible.md)): homeland, migrations and settlement history, languages, religion and beliefs, customs, government traditions, livelihood, architecture, dress and heraldry, military tradition, relations. Each of the 305 countries has exactly one dominant culture and a recorded history of how it came to hold its land. | world-data check; country-role review |
-| W2 | Languages are real in the game: every culture has a language with its own sound inventory, naming rules and vocabulary of place-name elements. Personal names, house names, titles and every place name (states, cities, rivers, mountains, seas) are generated from the culture's language, so names are recognisably related inside a culture and different between cultures. | language data tests; name-quality check (no cross-culture leaks, no banned or modern-sounding names) |
-| W3 | Population is distributed by a model, not by pixels: fertility, rivers, coasts, passes, climate and history decide where people live. Density, settlement hierarchy (capitals, cities, towns, villages), state population, manpower and economy follow it; empty lands are empty for a reason. The Dead Lands, the Mistake and the Great Wall zone are thinly peopled; the fertile Great Lake basin is the most populous place. | demography check (population against geography and vault); map renders |
-| W4 | Cultures, peoples, religions and languages show up in play: laws, traits, units, buildings, events, decisions, portraits, flags, building styles and names differ by culture, and the Chronicle explains them. | culture coverage matrix in the master plan; Linux screenshots |
-| W5 | History is logical: the vault's ages, the founding and borders of every country, migrations and wars before the start explain who lives where and who hates or trusts whom, and every claim, core and opinion at the start has a reason in that history. | history review; politics-step report |
-
-### T. The immediate transformation
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| T1 | The game opens on 1 Thaw 4A 1748. Every date a player reads uses Aoaz month names and the 4A year: top bar, events, news, decisions, tooltips, saves, the bookmark, the end screen. | calendar tests; Linux screenshots |
-| T2 | No vanilla surface remains. Every row of the overhaul inventory ([00_overhaul_inventory.md](00_overhaul_inventory.md)) with disposition `replace`, `override`, `reskin` or `remove` has status `done`; engine-generic exceptions are the few listed there, each justified. | inventory status check |
-| T3 | No modern word is shown anywhere: no factory, rifle, tank, airplane, nuclear, democracy, 1936 and the rest of the banned list, in any localisation value, tooltip, alert, icon text or file the player reads. | text scan over every shipped and every still-loaded vanilla localisation key that the game can display |
-| T4 | The vanilla energy and coal system, and the "Insufficient Energy" alert with it, are replaced by an Aoaz system or removed. | inventory rows; Linux screenshots |
-| T5 | The first minute is unmistakable: main menu, loading screen, country selection, first map view and top bar all read as Aoaz. | Linux screenshots reviewed against the identity section of the master plan |
-
-### S. Systems
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| S1 | Warfare: technologies, doctrines, units, equipment, commanders, special projects, navy and air are Aoaz's own. Every people has its units; air is the dragons and the winged; nothing of the modern arsenal remains. | warfare spec acceptance; builder tests; Linux run |
-| S2 | Economy and resources: resources, buildings, laws, trade, manpower and supply are Aoaz's own (specs: economy, defines and rules). | economy acceptance; Linux run |
-| S3 | Magic, artifacts, dragons, the Gathering Dark and the world systems work and are visible in the interface. | magic and world systems acceptance |
-| S4 | Diplomacy and factions: the seven factions and the leagues formed in play, subjects and the Eastern clients, peace and the peace conference, all re-themed. | diplomacy acceptance |
-| S5 | Each great power plays differently through its own mechanic (Aenor's Golden Court, Afrit's Hidden Council, Eindil's journey, Volgan's Dominion, Zol's Mistake, Lerendor's Strait, the Western Crossing, the eastern kings, the elves, Yeldenne and Glo). | mechanic specs' acceptance lists; scenario tests |
-
-### U. The interface
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| U1 | The whole interface has one original, coherent Aoaz theme: main menu, loading, country and bookmark selection, top bar and HUD, every gameplay window, buttons, frames, icons, typography and cursors where the engine allows, event, news and super-event windows, alerts and tooltips. A recolour or a new menu background does not count. | UI inventory rows all `done`; Linux screenshots of every window |
-| U2 | Readable and working: every control in every themed window still works and its text fits. | `hoi4_gui_inspect` and render passes; Linux click-through |
-| U3 | The mechanic panels (the Aoaz bar, Court, Council, Dominion, Mistake, Strait, Journey, Horde, Accord, the Chronicle) exist and show live values. | interface spec acceptance |
-
-### C. Content and story
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| C1 | All 305 countries have an Aoaz focus tree (13 major, 71 regional, 221 shared-regional, by tier), working politics, a people, units they can recruit and technologies they can research. No country uses a vanilla or interim tree. | focus compiler checks; focus inspector; coverage report |
-| C2 | Every country has its own history, struggles, ambitions and relationships, and a distinct playstyle, through trees, events, decisions and mechanics; choices have consequences and the game replays differently. | country package audit; event and decision counts |
-| C3 | The full Fourth Age story is playable on the historical path: the Golden King's death, Eindil's journey, the War of the Last Crowns, the three canon endings and the proposed alternatives, each reachable in test runs. | scenario tests; Linux forced-path runs |
-| C4 | The Chronicle of Aoaz holds the whole history of the vault as readable in-game entries. | Chronicle acceptance |
-| C5 | The characters, portraits and names of every country are Aoaz's own and unique. | portrait and character checks |
-
-### A. Assets
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| A1 | No missing sprite, icon, portrait, flag, picture, model, sound or localisation key: every reference resolves. | asset completeness check (new), error log |
-| A2 | Nothing generic or reused where it should be unique: flags, portraits, icons, pictures and models follow the uniqueness rules of the art plan. | uniqueness check over the asset manifest |
-| A3 | All art is image-generated with provenance in `art/source/provenance.jsonl`; 3D units come from Meshy through the HOI4 Mod Setup launcher; nothing is copied from vanilla or any other mod. | provenance gate; clean-room review |
-| A4 | Music and sound are Aoaz's own ([08_art_and_assets/04_music_and_sound.md](08_art_and_assets/04_music_and_sound.md)); vanilla audio is gone or justified. | audio inventory rows |
-
-### AI
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| AI1 | Every country and mechanic is used sensibly by the AI: it builds, researches, picks focuses, expands, wages war, makes peace, uses magic and dragons, and keeps the peaceful start. | AI probability audit; observer runs |
-| AI2 | The historical path holds with its rule on and diverges sensibly with it off. | scenario runs in both modes |
-
-### V. Validation and stability
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| V1 | `error.log` has zero lines caused by ZIN files and zero lines from vanilla content the mod leaves active. Only engine messages no mod file can affect are allowed, each listed with its reason. | error-budget check, stage 4 |
-| V2 | Every HOI4 Agent Tools validator (script, focus, GUI, events, map, package, technology) passes on the whole mod. | validator sweep |
-| V3 | Every one of the 305 countries starts and runs ten in-game years with the clock unpaused, without a crash. | every-country sweep (L9) |
-| V4 | Observer runs reach 4A 1760 and 4A 1800 without a crash. | observer runs (L10) |
-| V5 | Saving and loading works at any point, including mid-war and after every story beat. | save and load runs |
-| V6 | `npm test` in `tools/` passes, with a negative test beside every rule. | CI |
-
-### P. Process
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| P1 | Every game file comes from the deterministic content builder or the politics step, written through the shared atomic rewrite engine; nothing is hand-edited. | build determinism test |
-| P2 | HOI4 Agent Tools is improved wherever ZIN exposes a gap; each gap and fix is logged in its `docs/plans/tool-gaps.md`, shipped through its workflow, and used in ZIN. | tool-gaps log; merged pull requests |
-| P3 | The planning package is complete and consistent: identity, inventory, reference lessons, master plan, map plan, tool plan, and a spec for every gap. | documentation audit |
-| P4 | Every phase ended with tests, validators, a Linux run with screenshots, the error budget, a pushed commit, and an update to the table below. | the progress table |
+M1 to M9 are A-10 to A-16 and A-27; W1 to W5 are A-19, A-20, A-29, A-45, A-50; T1 is A-30 (the calendar is rebuilt on the twelve gods); T2 to T5 are A-52, A-60, A-80; S1 to S5 are A-60 and A-62; U1 to U3 are A-80 and A-82; C1 to C5 are A-61, A-63, A-65; A1 to A4 are A-91, A-93, A-96; AI1 and AI2 are A-66 and A-46; V1 to V6 and P1 to P4 are A-98 and the tranche discipline of 04, section 3.
 
 ## Scope decisions
 
-- **All of it is in.** The map rebuild, the calendar, warfare and economy, the full interface, all 305 trees, the story, the Chronicle, music and sound are in scope. Nothing is deferred to "a later pass".
-- **Order is by dependency, not importance.** The map and the tool work are the long poles, so they run in parallel with the systems, interface and content tracks, which do not depend on them until the politics step reruns on the new map.
-- **Budget limits become recorded fallbacks.** Where a route needs credits that are not available (Meshy), the run records the blocker and the fallback used (for example fewer unique 3D models, reusing a model across peoples with new textures) and keeps going.
-- **Out of scope:** other languages beyond English (tips and the Chronicle may be copied), multiplayer balance, Steam Workshop publishing.
+- **All of it is in** (R-00). Nothing is deferred to a later pass; a blocker is reported with evidence (04, section 6) and never counted as done.
+- **Order is by dependency** (04, section 1): name migrations before new text; the geography and the drawn-map import before states, the roster and the politics step; systems and content revised on the new roster; presentation; proof.
+- **Owner questions** Q-01 to Q-10 (`docs/zin-handoff/01-CONTEXT-AND-CANON.md` section 7, sent 24 October 2026 as `docs/zin-handoff/OWNER-QUESTIONS.md`) block only the work they name.
+- **Out of scope:** written languages beyond English (the other nine copy English), multiplayer balance, Steam Workshop publishing.
 
-## Owner review criteria (second review, 19 October 2026)
+## Progress log
 
-The owner reviewed the game and added these criteria. They apply to everything, not only the item raised.
-
-| Id | Criterion | Check |
-| --- | --- | --- |
-| F1 | No bureaucratic names: factions, institutions, laws and mechanics carry names a people would really use; no modern administrative words | the names audit (`docs/design/names_audit.md`) and the banned list |
-| F2 | Every country has a real three-letter tag from its name (NOR, AEN...), never a debug-looking tag; the total stays below 439 | the tag check and `tools/content/data/tag_map.json` |
-| F3 | No country is named after its leader (Zol's Mistake, not Zol; the Southern Dominion or the lore's own name, not Volgan) | the names audit |
-| F4 | Every flag has culture and purpose: no regional cliches (no palm trees across a region), distinct heraldry, family resemblance within a culture | the flag design check and the accepted flag sheets |
-| F5 | The geography reads as real fantasy geography: coherent seas and regions with no contradictory names, plausible rivers and ranges, the Nether below the Dead Lands | the geography model checker |
-| F6 | No debug or placeholder final text, no names with separators such as a slash | the text scan rules |
-| F7 | Lore quotes carry worldbuilding; none compares gods and men as trivia | the text audit |
-| F8 | Assets follow the game's gfx standard: focus, idea and similar icons are transparent shaped emblems, not opaque boxes | the gfx standard check |
-
-## Progress
-
-| Area | State | Evidence and notes (updated 19 October 2026) |
-| --- | --- | --- |
-| Planning package | met (P3) | 88 specs Ready (`9a4634e`); goal, inventory (734 rows), reference lessons, master plan, geography model, world bible, languages, demography written; the improvement-loop audit is still to run |
-| Stability | partly met | flag-sheet crash fixed (`ca01fa3`): four Linux runs of 10 to 15 minutes with the clock running; Windows confirmation and the every-country sweep open (V3) |
-| Error log | partly met | stage 2 now removes the vanilla ruleset in the build (67 disposition rows flipped); the new error count is unmeasured until the next Linux run |
-| Vanilla removal | stage 2 mostly built | technologies and doctrines, units, equipment and ships, economy and energy, diplomacy and factions, institutions, forces (AI templates, 305 starting orders of battle) wired into the build; still vanilla: scorers, country aliases, difficulty, cosmetic tags, portraits, DLC music lists, naval bases |
-| Map | tools in progress (M1 to M9) | HOI4 Agent Tools: phase 0 (lakes, colour map, validators, edge) merged in PR 35; relief, hydrology and the feature-aware partition in PR 36; climate and colour solver, territory service, straits, ports and names being built; the new map is not generated yet |
-| World bible: cultures, languages, population | partly built (W1 to W5) | world bible, 24 languages, 53 cultures, 35 faiths, demography and a name generator written and tested; cultures and faiths exist as game content (53 culture ideas, 38 faith spirits); applying them waits for the new map |
-| Calendar | met in game (T1) | 1 Thaw 4A 1748 with Aoaz months, verified in the isolated run |
-| Warfare, technology, energy | built, unverified in game (S1, T4) | 168 technologies and 15 grand doctrines, 61 sub-units and 92 equipment types, energy re-themed as Provisions and Stored Essence; no Linux run yet since the wiring |
-| Economy and laws | built, unverified (S2) | 7 resources, 33 buildings, 13 state categories, 17 spirits; treasury decisions and economic events unfinished |
-| Mechanics | 14 specs in implementation (S3 to S5) | four engineers writing them in parallel |
-| Focus trees | 36 tree specs in implementation (C1) | compiler and schema built and tested (65 tests); nine engineers authoring major, regional and shared trees |
-| Events and story | 5 specs in implementation (C3) | two engineers |
-| Interface | infrastructure built (U1 to U3) | 31,561 vanilla entries inventoried, 53 sheets planned; 48 sheets generated, review in progress; the text sweep rewrote 2,240 keys across 7 families |
-| Chronicle | specified (C4) | not built |
-| Music and sound | specified (A4) | not built |
-| Assets | partial (A1 to A3) | manifest and checks built (1,514 assets); 225 flag references unresolved (75 dynamic tags) |
-| AI | forces built (AI1, AI2) | AI templates, equipment, naval goals and plans for 305 countries; unverified in game |
-| Tools | in progress (P2) | PR 35 merged (phase 0, geography input, border metric); PR 36 open; three more tool branches running |
+| Date | Tranche | What happened | Evidence |
+| --- | --- | --- | --- |
+| 24 Oct 2026 | T0 | State reconciled (`docs/zin-handoff/STATE-DELTA.md`); the 19 October work preserved in nine commits on `zin/integration-r3`; the dedicated MCP worker started (separate session, `claude-opus-5-5`); owner questions sent; Erdae and Aoaz exchanged; corrections K1 to K8 recorded | `f8e3ba4` to `81bc85a` |
 
 ## Resume packet
 
-A fresh session picks up the work like this.
-
-1. Read this file, then [ROADMAP.md](ROADMAP.md), [CONVENTIONS.md](CONVENTIONS.md) and [INTEGRATION_DECISIONS.md](INTEGRATION_DECISIONS.md). The master plan is `00_master_overhaul_plan.md`.
-2. The repository is `C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin` (branch `master`, public). The tool is `C:/Users/klimp/Documents/Projects/hoi4-agent-tools`. The lore vault is `C:/Users/klimp/Downloads/ZIN_Lore_Vault`.
-3. Build and apply: `cd tools && node content/build.mjs && node --import tsx content/apply.mts plan|apply`; the politics step runs from the tool repository (`.tmp/zin-politics-v4.mts`, see `tools/README.md`). Tests: `cd tools && npm test`.
-4. Verification: the isolated Linux run (`tools/acceptance/`), under the lock in `/tmp/hoi4_wsl.lock`. Never launch the Windows game.
-5. `git log` shows the phase commits; the last commit message names the phase. The table above names the next open row.
+1. Read this file, then `docs/zin-handoff/README.md` and the package it lists, then `INTEGRATION_DECISIONS.md` and `CONVENTIONS.md`.
+2. Repositories: the mod `C:/Users/klimp/OneDrive/Documents/Paradox Interactive/Hearts of Iron IV/mod/zin` (public; work branch `zin/integration-r3` until the build is green, then `master`); the tool `C:/Users/klimp/Documents/Projects/hoi4-agent-tools` (owned by the MCP worker; request record `docs/plans/zin-requests.md` there).
+3. Build: `cd tools && node content/build.mjs`; tests: `npm test`; apply: `node --import tsx content/apply.mts plan|apply`.
+4. Verification: the Linux harness `tools/acceptance/` under `/tmp/hoi4_wsl.lock`. Never launch the Windows game.
+5. The lead's working notes and the state of running agents are in `docs/plans/zin-lead/STATUS.md`.

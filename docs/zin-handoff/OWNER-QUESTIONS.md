@@ -15,4 +15,11 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-09 | Bastian: a man, a Lesser Spirit or another being? Which era (a Fourth Age contemporary of Varner)? | wizards (R-34) | a living human wizard of the Fourth Age, famous in the Middle Lands |
 | Q-10 | Edvoid needs a new name. Accept the name the implementation proposes (from the language of the people who fear him most), or give one? | the bestiary, Q-03, the "Ocean of Edvoid" sea name | the implementation proposes a name in the first lore tranche, labelled proposed until you accept it |
 
+## Follow-up questions found during implementation (24 October 2026)
+
+| Id | Question | Blocks | Proposal (not decided) |
+| --- | --- | --- | --- |
+| Q-11 | Several drawing labels are names from other fiction or real myth: Isengard, Gondolin (Tolkien), Asgard (Norse myth), Avalon (Arthurian legend), Heaven, Godland, and The Shire (Q-06). The rules forbid real-world and other-fiction references on screen. May they be replaced by original names from the local languages (the old label kept as a former label)? | country and place names in those regions | yes: original names from each region's language, listed for your approval with the old label beside each |
+| Q-12 | The vault's retcon register records that "Edvoid" was once the placeholder name of Zol himself, while the card makes Edvoid a separate evil spirit, "a former minion made by Zol". Is the card's Edvoid a being of his own (to be renamed under Q-10)? | Q-03, Q-10 | a being of his own, separate from Zol |
+
 Also pending: the Meshy server did not connect in this session (`CONNECT_TIMEOUT`), so 3D model generation waits until it connects.
