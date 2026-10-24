@@ -1,0 +1,922 @@
+{
+ "kind": "events",
+ "namespace": "zin_eindil",
+ "note": "docs/specs/06_events/02_eindil_journey.md: the setup and pulse (1, 2), stage 1 to stage 3 (10 to 35, 150 to 157). Effects use the notation of lib/ew_script.mjs.",
+ "events": [
+  {
+   "id": 10,
+   "title": "The Man in the Ice",
+   "picture": "man_in_ice",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "owner of zin_is_site_eindil_ice",
+   "hist": "Ironfrost 1749",
+   "fired_by": "zin_eindil_advance_stage (stage 1)",
+   "desc": [
+    {
+     "key": "yeti",
+     "if": [
+      "zin_people_is_yeti = yes"
+     ],
+     "text": "The hunting bands of the white valleys were cutting a path across the old ice when they found a man inside it, laid out like a drowned log and warm as a sleeper. When they broke him free, he breathed. He does not know his name, or ours, and he has no tongue that any of us can answer."
+    },
+    {
+     "key": "giants",
+     "if": [
+      "zin_people_is_giants = yes"
+     ],
+     "text": "Our herders, crossing the old ice with their sleds, found a man set in it as a stone is set in a wall. He was small, for one of ours to carry, and warm. When they cut him out, he breathed. He does not know his name, or ours, and he has no tongue that any of us can answer."
+    },
+    {
+     "text": "Hunters cutting a path across the old ice found a man inside it, laid out like a drowned log and warm as a sleeper. When the clan broke him free, he breathed. He does not know his name, or ours, and he has no tongue that any of us can answer."
+    }
+   ],
+   "immediate": [
+    "@fire zin_eindil.150 days=30",
+    "@fire zin_eindil.151 days=60"
+   ],
+   "options": [
+    {
+     "name": "Nurse the stranger.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "He will stay among us as a guest, and remember it.",
+     "effects": [
+      "zin_eindil_set_host = yes",
+      "add_ideas = zin_eindil_stranger_among_us",
+      "@call zin_eindil_add_regard 20",
+      "@call zin_eindil_add_renown 5"
+     ]
+    },
+    {
+     "name": "Leave him to the elders.",
+     "ai": 20,
+     "effects": [
+      "zin_eindil_set_host = yes",
+      "@call zin_eindil_add_regard 5"
+     ]
+    },
+    {
+     "name": "Bind him to our service.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "He stays a year, and does not forget how.",
+     "effects": [
+      "zin_eindil_set_host = yes",
+      "add_ideas = zin_eindil_restless_guest",
+      "@call zin_eindil_add_delay 120",
+      "@call zin_eindil_add_regard -30",
+      "@call zin_eindil_hold_guest days=365"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 150,
+   "title": "Old Siula's Tale",
+   "picture": "man_in_ice",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "ice host",
+   "hist": "Thaw 1749",
+   "fired_by": "zin_eindil.10",
+   "desc": "Old Siula, who found him, tells it at every fire: the ice was older than her grandmother's grandmother, and the man in it was warm as new bread. The children ask what he dreamed. She says that is the one thing he cannot tell, and that she has stopped asking.",
+   "options": [
+    {
+     "name": "Let the tale travel.",
+     "ai": 60,
+     "effects": [
+      "@call zin_eindil_add_renown 5",
+      "@fire zin_eindil.11 days=15 to=tag:Coldor",
+      "@fire zin_eindil.11 days=15 to=tag:Isengard"
+     ]
+    },
+    {
+     "name": "Keep it among the clans.",
+     "ai": 40,
+     "effects": [
+      "add_stability = 0.02",
+      "@fire zin_eindil.11 days=30 to=tag:Coldor",
+      "@fire zin_eindil.11 days=30 to=tag:Isengard"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 151,
+   "title": "The Man from the Ice Learns Our Words",
+   "picture": "man_in_ice",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "ice host",
+   "hist": "Rainwake 1749",
+   "fired_by": "zin_eindil.10",
+   "desc": "In two months he speaks our tongue as if he had always known it, and a few words he should not know. He hunts better than our best. He shares the meat, and eats last.",
+   "options": [
+    {
+     "name": "He is one of us now.",
+     "ai": 70,
+     "effects": [
+      "@call zin_eindil_add_regard 5",
+      "army_experience = 5"
+     ]
+    },
+    {
+     "name": "He is a guest, not a son.",
+     "ai": 30,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "title": "Talk of a Man from the Ice",
+   "picture": "generic_court",
+   "to": "Coldor, Isengard",
+   "hist": "Sowing 1749",
+   "fired_by": "zin_eindil.150",
+   "title_note": "the second firing, 90 days after a summons, carries the flag zin_eindil_summoned",
+   "desc": [
+    {
+     "key": "left",
+     "if": [
+      "has_country_flag = zin_eindil_summoned"
+     ],
+     "text": "The northern guest has sat at our table for a season. He has asked to go south with the traders before the snows close the Neck Road. He does not say why. We think he does not know."
+    },
+    {
+     "text": "Hunters from the north-west tell of a man cut alive from old ice, stronger than three men and gentler than one. At the Winter Court some laugh. Some listen."
+    }
+   ],
+   "options": [
+    {
+     "name": "Ignore northern tales.",
+     "hist": true,
+     "ai": 100,
+     "if": [
+      "NOT = { has_country_flag = zin_eindil_summoned }"
+     ],
+     "effects": []
+    },
+    {
+     "name": "Summon him to court.",
+     "ai": {
+      "free": 20,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "if": [
+      "NOT = { has_country_flag = zin_eindil_summoned }"
+     ],
+     "tip": "He may come, and he will stay a season.",
+     "effects": [
+      {
+       "random": [
+        [
+         50,
+         [
+          "zin_eindil_set_host = yes",
+          "@flag zin_eindil_summoned",
+          "@call zin_eindil_add_delay 30",
+          "@call zin_eindil_add_regard 10",
+          "@fire zin_eindil.11 days=90"
+         ]
+        ],
+        [
+         50,
+         []
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Send the wardens to watch over him.",
+     "ai": 20,
+     "if": [
+      "tag:Coldor",
+      "has_country_flag = zin_cold_far_ice_charted",
+      "NOT = { has_country_flag = zin_eindil_summoned }"
+     ],
+     "tip": "Coldor's wardens will watch over him.",
+     "effects": [
+      "zin_cold_send_wardens = yes"
+     ]
+    },
+    {
+     "name": "Let him go with our thanks.",
+     "hist": true,
+     "ai": 100,
+     "if": [
+      "has_country_flag = zin_eindil_summoned"
+     ],
+     "effects": [
+      {
+       "if": [
+        "zin_eindil_is_host = yes"
+       ],
+       "then": [
+        "zin_eindil_clear_host = yes"
+       ]
+      },
+      "add_stability = 0.01",
+      "@clr zin_eindil_summoned"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "title": "The Traders' Road South",
+   "picture": "traders_road_south",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "ice host",
+   "hist": "Emberleaf 1749",
+   "fired_by": "zin_eindil.10",
+   "desc": "Western traders are going south before the snows. The stranger asks to go with them. He wants to know who he is, and every story of men that he has heard begins in the south.",
+   "immediate": [
+    "@fire zin_eindil.152 to=group:three_oaths_owner",
+    {
+     "scope": "tag:Coldor",
+     "do": [
+      {
+       "if": [
+        "has_global_flag = zin_cold_neck_road"
+       ],
+       "then": [
+        "@fire zin_eindil.152"
+       ]
+      }
+     ]
+    }
+   ],
+   "options": [
+    {
+     "name": "Give him furs and provisions.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "He will leave with our goodwill.",
+     "effects": [
+      "@call zin_eindil_add_delay -30",
+      "@call zin_eindil_add_regard 10",
+      "@call zin_eindil_add_renown 5",
+      {
+       "if": [
+        "has_global_flag = zin_cold_neck_road"
+       ],
+       "then": [
+        "@call zin_cold_reward_ice_host 5"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Let him go as he came.",
+     "ai": 30,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 152,
+   "title": "Traders Bring a Stranger",
+   "picture": "traders_road_south",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "owner of zin_is_site_three_oaths; Coldor with the Neck Road",
+   "hist": "Emberleaf 1749",
+   "fired_by": "zin_eindil.12",
+   "desc": "A trading caravan has come over the Neck Road with a tall man from the north who works for his bread and asks questions about Aen. The drivers say he has not told them his own name, and that they have stopped asking him to.",
+   "options": [
+    {
+     "name": "Let him pass.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "title": "The Bridge of the Three Oaths",
+   "picture": "traders_road_south",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "owner of zin_is_site_three_oaths",
+   "hist": "Emberleaf 1749",
+   "fired_by": "zin_eindil_advance_stage (stage 2)",
+   "desc": "Two lordships meet on the old bridge with torches, each come to burn the other's granary after a bad harvest. The stranger from the north, walking south with the traders, stands in the middle of the planks and asks them to count the bread first.",
+   "immediate": [
+    "@fire zin_eindil.21 days=45 to=var:zin_eindil_ford_host",
+    "@fire zin_eindil.22 days=90 to=var:zin_eindil_trial_host"
+   ],
+   "options": [
+    {
+     "name": "Accept his mediation.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "Both lordships keep their grain.",
+     "effects": [
+      "add_stability = 0.03",
+      "@call zin_eindil_add_regard 20",
+      "@call zin_eindil_add_renown 5",
+      {
+       "each": "group:west_lands",
+       "limit": [
+        "is_neighbor_of = ROOT",
+        "NOT = { original_tag = ROOT }"
+       ],
+       "do": [
+        "@fire zin_eindil.153"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Burn the grain anyway.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "Burned granaries will weigh on us for half a year.",
+     "effects": [
+      "add_timed_idea = { idea = zin_eindil_burned_granaries days = 180 }",
+      "@call zin_eindil_add_regard -20",
+      "@call zin_eindil_add_renown 5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 153,
+   "title": "The Bread Counted",
+   "picture": "grey_ford_truce",
+   "requires": [],
+   "to": "the other lordship, if different from the host",
+   "hist": "Emberleaf 1749",
+   "fired_by": "zin_eindil.20",
+   "desc": "Our lord kept his granary, and the neighbour who came with a torch went home with a loaf. The tale of the bridge is told in both halls now, and each tells it so that its own lord looks wiser.",
+   "options": [
+    {
+     "name": "Remember the stranger.",
+     "ai": 100,
+     "effects": [
+      "@call zin_eindil_add_regard 10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "title": "Girdon's Winter Ford",
+   "picture": "grey_ford_truce",
+   "to": "owner of zin_is_site_winter_ford (Girdon)",
+   "hist": "Longnight 1749",
+   "fired_by": "zin_eindil.20",
+   "desc": "The ford is breaking up under the ice, and a column of refugees is still on it. The stranger stands in the freezing water to his chest and holds the last cart until the children are across.",
+   "immediate": [
+    "@gflag zin_eindil_episode_21_done",
+    "@flag zin_eindil_hosted_stage2"
+   ],
+   "options": [
+    {
+     "name": "Hold the ford open for them.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "The refugees will settle on our side of the river.",
+     "effects": [
+      "add_manpower = 2000",
+      "@call zin_eindil_add_regard 20",
+      "@call zin_eindil_add_renown 5",
+      "@fire zin_eindil.154 days=30"
+     ]
+    },
+    {
+     "name": "Close the ford.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "effects": [
+      "@call zin_eindil_add_delay 60",
+      "@call zin_eindil_add_regard -25"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 154,
+   "title": "The Refugees Settle",
+   "picture": "grey_ford_truce",
+   "to": "Girdon or the ford's owner",
+   "hist": "Deepwinter 1750",
+   "fired_by": "zin_eindil.21",
+   "desc": "The refugees from the ford have built a village on our bank. They have named its well after the stranger, whose name they do not know, and so it is called the Well of the Man Who Stood in the Water.",
+   "options": [
+    {
+     "name": "Let the name stand.",
+     "ai": 100,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "title": "Judgment in Gunwaith",
+   "picture": "generic_court",
+   "to": "Gunwaith, or the owner of its former capital",
+   "hist": "Ironfrost 1750",
+   "fired_by": "zin_eindil.20",
+   "desc": "The stranger beat three champions hired by a Gunwaith thane to settle a quarrel with a neighbour. Now the thane demands that he be tried for the champions' broken bones. The stranger agrees, and asks only that the law be the same for him as for any man in the hall.",
+   "immediate": [
+    "@gflag zin_eindil_episode_22_done",
+    "@flag zin_eindil_hosted_stage2"
+   ],
+   "options": [
+    {
+     "name": "Try him fairly.",
+     "hist": true,
+     "ai": {
+      "free": 60,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "The judgment will be remembered for a year.",
+     "effects": [
+      "add_timed_idea = { idea = zin_eindil_judgment_honoured days = 365 }",
+      "@call zin_eindil_add_regard 20",
+      "@call zin_eindil_add_renown 10",
+      "@fire zin_eindil.155 days=7"
+     ]
+    },
+    {
+     "name": "Make an example of him.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "He is held half a year, and Gunwaith is not thanked for it.",
+     "effects": [
+      "@call zin_eindil_add_delay 180",
+      "@call zin_eindil_add_regard -40",
+      "@call zin_eindil_add_renown 5"
+     ]
+    },
+    {
+     "name": "Pardon him.",
+     "ai": {
+      "free": 30,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "He refuses to be spared a trial that others would face.",
+     "effects": [
+      "add_timed_idea = { idea = zin_eindil_judgment_honoured days = 365 }",
+      "@call zin_eindil_add_regard 20",
+      "@call zin_eindil_add_renown 10",
+      "@fire zin_eindil.155 days=7"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 155,
+   "title": "The Lawspeaker's Ruling",
+   "picture": "generic_court",
+   "to": "Gunwaith",
+   "hist": "Ironfrost 1750",
+   "fired_by": "zin_eindil.22",
+   "desc": [
+    {
+     "key": "named",
+     "if": [
+      "has_character = zin_gunwaith_ilurda"
+     ],
+     "text": "Lawspeaker Ilurda rules: the stranger owes the thane a season's labour and nothing more. He pays it in a month, rebuilding the bridge that the champions broke, and the thane is seen to nod at the work."
+    },
+    {
+     "text": "The lawspeaker rules: the stranger owes the thane a season's labour and nothing more. He pays it in a month, rebuilding the bridge that the champions broke, and the thane is seen to nod at the work."
+    }
+   ],
+   "options": [
+    {
+     "name": "The law holds.",
+     "ai": 100,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "title": "The King Without a House",
+   "picture": "war_king",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "the countries the journey picks (every West Lands country once his renown is 20, otherwise the hosts of the road)",
+   "hist": "Thaw 1750",
+   "fired_by": "zin_eindil_king_without_a_house (the stage runner)",
+   "desc": "From the Bridge of the Three Oaths to the courts of Gunwaith, people speak of [zin_loc_eindil], who makes peace and asks for nothing. Some call him the King Without a House. He has been seen at the fords of three rivers and has never slept under a roof that was offered twice.",
+   "options": [
+    {
+     "name": "A good man, wherever he is from.",
+     "ai": 100,
+     "effects": [
+      {
+       "if": [
+        {
+         "names": [
+          "Gunwaith",
+          "Girdon"
+         ]
+        }
+       ],
+       "then": [
+        "@call zin_eindil_add_regard 5"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "title": "The Grey Ford Breaks",
+   "picture": "war_king",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "leader of the Grey Ford Confederation",
+   "hist": "Rainwake 1750",
+   "fired_by": "zin_eindil_stage3_runner",
+   "desc": "Gunwaith and Girdon are fighting at the Grey Ford again, and the crowns between them cannot stop it alone. Someone at our council table says what everyone has been thinking since the autumn: ask the stranger.",
+   "options": [
+    {
+     "name": "Ask him.",
+     "ai": 100,
+     "effects": [
+      "@fire zin_eindil.32 days=3"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "title": "Feud on the Grey Ford",
+   "picture": "grey_ford_truce",
+   "requires": [],
+   "to": "leader of the Grey Ford Confederation",
+   "hist": "none: fallback on 1 Fallowing 1750",
+   "fired_by": "zin_eindil_stage3_runner",
+   "desc": "A border feud at the Grey Ford threatens the truce that Gunwaith and Girdon signed five years ago. No banners have moved, but the quarrel has drawn blood. The crowns between ask the stranger to stand between the two.",
+   "options": [
+    {
+     "name": "Ask him.",
+     "ai": 100,
+     "effects": [
+      "@fire zin_eindil.32 days=3"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "title": "A Crown Offered",
+   "picture": "war_king",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "checkpoint": 4,
+   "to": "leader of the Grey Ford Confederation",
+   "hist": "Highsun 1750",
+   "fired_by": "zin_eindil.30, .31",
+   "desc": "The confederation offers the stranger a war-king's crown for as long as it takes to make the peace, and not one day longer. He has said that he will carry it only so. The council wants to know whether we will lay it before him.",
+   "options": [
+    {
+     "name": "Refuse the stranger.",
+     "ai": 10,
+     "tip": "The offer passes to the next court.",
+     "effects": [
+      "@flag zin_eindil_refused_crown",
+      {
+       "if": [
+        "any_country = { has_country_flag = zin_region_west_lands NOT = { has_country_flag = zin_eindil_refused_crown } NOT = { original_tag = ROOT } check_variable = { zin_eindil_regard > -0.001 } }"
+       ],
+       "then": [
+        {
+         "each": "group:west_lands",
+         "limit": [
+          "NOT = { has_country_flag = zin_eindil_refused_crown }",
+          "check_variable = { zin_eindil_regard > -0.001 }",
+          {
+           "not": [
+            {
+             "names": [
+              "Gunwaith",
+              "Girdon"
+             ]
+            }
+           ]
+          }
+         ],
+         "do": [
+          "@fire zin_eindil.32 days=3"
+         ]
+        }
+       ],
+       "else": [
+        "@gflag zin_eindil_stage_3_done",
+        {
+         "if": [
+          "zin_eindil_historical = yes"
+         ],
+         "then": [
+          "@gflag zin_eindil_war_king"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Name him war-king.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "The confederation marches under his banner for one season.",
+     "effects": [
+      "@call zin_eindil_set_host role=2",
+      "@call zin_west_on_war_king event=named",
+      "@call zin_west_add_unity 5",
+      {
+       "each": "group:confederation_members",
+       "do": [
+        "add_ideas = zin_eindil_war_kings_banner",
+        {
+         "each": "group:confederation_members",
+         "limit": [
+          "NOT = { original_tag = PREV }"
+         ],
+         "do": [
+          "give_military_access = PREV"
+         ]
+        }
+       ]
+      },
+      "@fire zin_eindil.156 to=group:confederation_members",
+      "@fire zin_eindil.33 days=60 to=group:ford_belligerents",
+      "@fire zin_eindil.34 days=365 to=host"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 156,
+   "title": "The Confederation Gathers",
+   "picture": "war_king",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "each confederation member except the leader",
+   "hist": "Highsun 1750",
+   "fired_by": "zin_eindil.32",
+   "trigger": [
+    "NOT = { zin_eindil_is_host = yes }"
+   ],
+   "desc": "Our banners will march under the stranger's for one season. Our captains want to know if he can lead, and they have asked whether he can be made to explain where he learned to hold a line.",
+   "options": [
+    {
+     "name": "Send our captains.",
+     "ai": 70,
+     "effects": [
+      "army_experience = 5",
+      "@call zin_eindil_add_regard 5"
+     ]
+    },
+    {
+     "name": "Watch from our own shore.",
+     "ai": 30,
+     "tip": "We leave the confederation.",
+     "effects": [
+      "remove_ideas = zin_eindil_war_kings_banner",
+      "@call zin_eindil_add_regard -5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "title": "The War-King's Terms",
+   "picture": "grey_ford_truce",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "each western belligerent (Gunwaith, Girdon)",
+   "hist": "Goldfield 1750",
+   "fired_by": "zin_eindil.32",
+   "desc": "The war-king's host stands between the two armies at the Grey Ford. He offers terms: the old border, the dead buried, the prisoners sent home. He asks both sides to sign, and he asks it of each in the same words.",
+   "options": [
+    {
+     "name": "Accept his peace.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "When both sides accept, the war at the ford ends.",
+     "effects": [
+      "@flag zin_eindil_accepted_peace",
+      "add_timed_idea = { idea = zin_eindil_war_kings_peace days = 730 }",
+      "@call zin_eindil_add_regard 15",
+      "@fire zin_eindil.157 days=14",
+      {
+       "each": "group:ford_belligerents",
+       "limit": [
+        "NOT = { original_tag = ROOT }",
+        "has_country_flag = zin_eindil_accepted_peace"
+       ],
+       "do": [
+        "@call zin_west_end_ford_war how=peace",
+        "@fire zin_eindil.34 days=30 to=host"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Fight on.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "The war goes on, and the stranger will remember who refused him.",
+     "effects": [
+      "@call zin_west_on_war_king event=refused",
+      "@call zin_eindil_add_regard -20",
+      "@call zin_west_add_unity -10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 157,
+   "title": "A Feast at the Ford",
+   "picture": "war_king",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "both belligerents, if both accepted",
+   "hist": "Goldfield 1750",
+   "fired_by": "zin_eindil.33",
+   "trigger": [
+    {
+     "or": [
+      "tag:Gunwaith",
+      "tag:Girdon"
+     ]
+    },
+    "has_country_flag = zin_eindil_accepted_peace"
+   ],
+   "desc": "Gunwaith's thanes and Girdon's wardens eat at one table at the ford for the first time in fifty years. The war-king sits at the foot of it, not the head, and carves the meat for others before he eats.",
+   "options": [
+    {
+     "name": "To the stranger.",
+     "ai": 100,
+     "effects": [
+      "add_stability = 0.02",
+      {
+       "each": "group:ford_belligerents",
+       "limit": [
+        "NOT = { original_tag = ROOT }"
+       ],
+       "do": [
+        "ROOT = { add_opinion_modifier = { target = PREV modifier = zin_eindil_feast_at_the_ford } }"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "title": "The Crown Laid Down",
+   "picture": "war_king",
+   "requires": [
+    "zin_eindil_awake"
+   ],
+   "to": "leader of the Grey Ford Confederation",
+   "hist": "Harvest 1750",
+   "fired_by": "zin_eindil.33 (the peace holds)",
+   "desc": "The war-king sets the crown on the council table and asks for a horse and a road to the sea. He wants to cross to the old kingdom of Aen, he says, and see whether anything of it remains.",
+   "options": [
+    {
+     "name": "Release him with honour.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "The West will remember the war-king.",
+     "effects": [
+      "@gflag zin_eindil_war_king",
+      "@call zin_west_on_war_king event=released",
+      "@call zin_eindil_add_regard 20",
+      "@call zin_eindil_add_renown 15",
+      "@news zin_eindil.35 days=30"
+     ]
+    },
+    {
+     "name": "Try to keep the war-king.",
+     "ai": 0,
+     "tip": "He leaves by night, and the confederation dissolves.",
+     "effects": [
+      "@gflag zin_eindil_war_king",
+      "@call zin_west_on_war_king event=fled",
+      "@call zin_eindil_add_regard -50",
+      "@call zin_eindil_add_renown 10",
+      "@call zin_west_add_unity -15",
+      {
+       "each": "group:confederation_members",
+       "do": [
+        "remove_ideas = zin_eindil_war_kings_banner"
+       ]
+      },
+      "@news zin_eindil.35 days=30"
+     ]
+    }
+   ],
+   "trigger": [
+    "NOT = { has_global_flag = zin_eindil_war_king }"
+   ]
+  },
+  {
+   "id": 35,
+   "title": "The War-King Lays Down His Crown",
+   "news": true,
+   "picture": "generic_peace",
+   "to": "news: every country",
+   "hist": "Harvest 1750",
+   "fired_by": "zin_eindil.34",
+   "desc": "In the West a stranger made a peace that no king could make, and then gave the crown back. Taverns from the Grey Ford to the western shore argue about where he came from. Nobody knows his name.",
+   "options": [
+    {
+     "name": "A peace in the West.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  }
+ ]
+}

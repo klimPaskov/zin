@@ -1,0 +1,891 @@
+{
+ "kind": "events",
+ "namespace": "zin_eindil",
+ "note": "docs/specs/06_events/02_eindil_journey.md: stage 4 (the storm and the islands), stage 5 (Gala), stage 6 (the voyage north) and stage 7 (the ambush and Yeldenne).",
+ "events": [
+  {
+   "id": 40,
+   "title": "West Over the Sea",
+   "picture": "generic_sea",
+   "requires": [],
+   "to": "the departure host (the confederation leader)",
+   "hist": "Thaw 1751",
+   "fired_by": "zin_eindil_advance_stage (stage 4)",
+   "desc": "The stranger asks for passage across the wide sea to Aenor. He has heard that the oldest rolls of Aen's line are kept in Parim, and he means to read them. He has no money, no name and no ship. He has the peace of the Grey Ford, and that is thought to be worth a hull.",
+   "options": [
+    {
+     "name": "Give him a ship.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "He sails with our goodwill.",
+     "effects": [
+      "@call zin_eindil_add_regard 10",
+      "@fire zin_eindil.41 days=30 to=var:zin_eindil_wreck_host"
+     ]
+    },
+    {
+     "name": "Let him find passage.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "He will lose a month looking for a captain.",
+     "effects": [
+      "@call zin_eindil_add_delay 30",
+      "@fire zin_eindil.41 days=60 to=var:zin_eindil_wreck_host"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 41,
+   "title": "Wreck on the Southern Isles",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "the wreck host (proposed Howan)",
+   "hist": "Rainwake 1751",
+   "fired_by": "zin_eindil.40",
+   "desc": "Storms took a western ship far off its course and broke her on our reef in the night. By morning the beach was strewn with timber and rope. One passenger walked out of the surf carrying two sailors, one on each shoulder, and asked whether anyone was still in the water.",
+   "immediate": [
+    "@fire zin_eindil.44 days=180"
+   ],
+   "options": [
+    {
+     "name": "Shelter the castaways.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "They will stay with us until the sea is safe again.",
+     "effects": [
+      "zin_eindil_set_host = yes",
+      "@call zin_eindil_add_regard 20",
+      "@fire zin_eindil.158 days=30"
+     ]
+    },
+    {
+     "name": "Sell word of him to the Deliverer's priests.",
+     "if": [
+      "check_variable = { zin_footholds > 0.999 }"
+     ],
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "The priests will pay, and will ask for more.",
+     "effects": [
+      "zin_eindil_set_host = yes",
+      "add_political_power = 50",
+      "@call zin_eindil_add_delay 60",
+      "@call zin_eindil_add_regard -40",
+      "@fire zin_glo.5 to=group:afrit_hub",
+      "@fire zin_eindil.42 days=60 to=var:zin_eindil_reef_host",
+      "@fire zin_eindil.43 days=120 to=var:zin_eindil_shrine_host"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 158,
+   "title": "The Islanders' Feast",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "wreck host",
+   "hist": "Sowing 1751",
+   "fired_by": "zin_eindil.41",
+   "desc": "The island holds a feast for the drowned and the saved. The stranger sits with the fishermen and listens to their oldest stories, and asks to hear one of them twice. The old women argue about which story a man with no past should be given first.",
+   "options": [
+    {
+     "name": "Tell him the story of the reef.",
+     "ai": 60,
+     "effects": [
+      "@fire zin_eindil.42 days=1 to=var:zin_eindil_reef_host",
+      "@fire zin_eindil.43 days=90 to=var:zin_eindil_shrine_host"
+     ]
+    },
+    {
+     "name": "Tell him the story of the shrine.",
+     "ai": 40,
+     "effects": [
+      "@fire zin_eindil.42 days=30 to=var:zin_eindil_reef_host",
+      "@fire zin_eindil.43 days=60 to=var:zin_eindil_shrine_host"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "title": "The Reef of Drowned Voices",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "the wreck host, or Nara or Verde",
+   "hist": "Highsun 1751",
+   "fired_by": "zin_eindil.158 or .41",
+   "desc": "Children had been stranded on the reef where drowned voices call at night, and no boat would go to them. The stranger swam out and brought them back one by one, with his hands over their ears. The islanders say the sea went silent while he did it, and has not been quite the same since.",
+   "options": [
+    {
+     "name": "The sea went silent.",
+     "ai": 100,
+     "tip": "The island will keep the memory for a year.",
+     "effects": [
+      "add_timed_idea = { idea = zin_eindil_the_sea_went_silent days = 365 }",
+      "@call zin_eindil_add_renown 5",
+      "@flag zin_eindil_reef_island"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "title": "The Shrine Beneath the Tide",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "owner of zin_is_site_south_shrine (proposed Enhis Is Rond)",
+   "hist": "Harvest 1751",
+   "fired_by": "zin_eindil.158 or .41",
+   "desc": "At low tide the old shrine shows an inscription that the priests have chanted for generations without knowing its meaning. The stranger reads one word aloud, and the priests fall silent. The word is Aen. Nobody on the island has ever heard it said as if it were a name.",
+   "options": [
+    {
+     "name": "What else does it say?",
+     "ai": 100,
+     "effects": [
+      "@call zin_eindil_add_renown 5",
+      "@call zin_eindil_add_regard 5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "title": "Stay and Rule Us",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "the island with the highest regard (the wreck host)",
+   "hist": "Mistfall 1751",
+   "fired_by": "zin_eindil.41",
+   "desc": "The island elders ask the stranger to stay and be their lord. They offer him the best boat, the fishing rights of the north shore and a house with a view of the reef. He thanks them and says no, gently, as to a child who has offered him a toy.",
+   "options": [
+    {
+     "name": "Honour his choice.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "effects": [
+      "@call zin_eindil_add_regard 10",
+      "@fire zin_eindil.159 days=30"
+     ]
+    },
+    {
+     "name": "Hold him to the offer.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "He will not forgive being held.",
+     "effects": [
+      "@call zin_eindil_add_delay 60",
+      "@call zin_eindil_add_regard -20"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 159,
+   "title": "A Guide for the South-West",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "wreck host",
+   "hist": "Longnight 1751",
+   "fired_by": "zin_eindil.44",
+   "desc": "An old sea-guide offers to take him south-west, to where the tallest elves live, “when the tales of men grow too old for any man to explain”. The old man says it as one recites a thing his grandmother told him and he never believed.",
+   "options": [
+    {
+     "name": "Lend him the guide.",
+     "ai": 80,
+     "effects": [
+      "@call zin_eindil_add_delay -20",
+      "@call zin_eindil_add_regard 5"
+     ]
+    },
+    {
+     "name": "Our guides stay home.",
+     "ai": 20,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "title": "Carry the Old Tales to Gala",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "the wreck host",
+   "hist": "Deepwinter 1752",
+   "fired_by": "zin_eindil.41",
+   "desc": "When the tales of men grow too old for any man to explain, carry them to Gala. The islanders give him a boat, a chart drawn in sea-green ink, and the tale of the name in the shrine. He sets out with the dawn tide, and the children run down the beach after him until the water takes their knees.",
+   "options": [
+    {
+     "name": "Fair winds.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "title": "Hunters in the Isles",
+   "picture": "storm_wreck",
+   "requires": [
+    "zin_eindil_war_king"
+   ],
+   "to": "the wreck host",
+   "hist": "divergence",
+   "fired_by": "zin_glo.5 (the Worshipdom's option to send hunters, 90 days)",
+   "desc": "Armed men from a foreign ship came looking for the castaway. He drove them off without killing one of them, which the islanders found stranger than any fighting. We buried the dead at the edge of the reef, those the sea had not already taken.",
+   "options": [
+    {
+     "name": "Mourn the dead.",
+     "ai": 100,
+     "tip": "He will remember who came for him.",
+     "effects": [
+      "add_manpower = -1000",
+      "@call zin_eindil_add_delay 60",
+      "@call zin_eindil_add_renown 5",
+      "@gflag zin_eindil_hunted"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "title": "A Stranger at Gala",
+   "picture": "gala_court",
+   "checkpoint": 8,
+   "to": "the Gala Elves",
+   "hist": "Deepwinter 1752",
+   "fired_by": "zin_eindil_advance_stage (stage 5)",
+   "desc": [
+    {
+     "key": "again",
+     "if": [
+      "has_country_flag = zin_eindil_gala_turned_away"
+     ],
+     "text": "The tall man from the Islands of the South has waited out the season on the outer stair, in the rain and then in the snow, without a word of complaint. The gate-warden says he has been asked six times to leave, and has answered six times that he has a tale too old to carry home."
+    },
+    {
+     "text": "A tall man from the Islands of the South asks to speak with the King. He carries a tale too old for men to explain, and a word from a drowned shrine. The gate-warden says he waited three days at the outer stair and asked for nothing, not even a roof."
+    }
+   ],
+   "options": [
+    {
+     "name": "Turn him away for a season.",
+     "ai": {
+      "free": 5,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "if": [
+      "NOT = { has_country_flag = zin_eindil_gala_turned_away }"
+     ],
+     "tip": "Lorien will relent in half a year.",
+     "effects": [
+      "@flag zin_eindil_gala_turned_away",
+      "@call zin_eindil_add_delay 180",
+      "@call zin_eindil_add_regard -10",
+      "@fire zin_eindil.50 days=180"
+     ]
+    },
+    {
+     "name": "Receive him.",
+     "hist": true,
+     "ai": {
+      "free": 90,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "He will sit among Lorien's guests.",
+     "effects": [
+      "@clr zin_eindil_gala_turned_away",
+      "@call zin_eindil_set_host role=3",
+      "@call zin_eindil_add_regard 25",
+      "@fire zin_eindil.51 days=60"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "title": "Weeks of Memory",
+   "picture": "gala_court",
+   "to": "the Gala Elves",
+   "hist": "Rainwake 1752",
+   "fired_by": "zin_eindil.50",
+   "desc": "For weeks Lorien tells him of the War of Men, of Aen, of Dardan, and of what came after. The stranger learns how small his own memory is against the age of the world, and does not seem to mind. At the end of each evening he asks the same question: who was I?",
+   "options": [
+    {
+     "name": "Memory is a duty.",
+     "ai": 100,
+     "effects": [
+      "@call zin_eindil_add_renown 5",
+      "@fire zin_eindil.160 days=15"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 160,
+   "title": "What Lorien Will Not Say",
+   "picture": "gala_court",
+   "to": "the Gala Elves",
+   "hist": "Rainwake 1752",
+   "fired_by": "zin_eindil.51",
+   "desc": "Lorien sees the marks of the First Men in the way the stranger stands, and in all he has never needed to be taught. But he will not name a man on the strength of a likeness. There is water in the old courtyard that remembers more than any king does.",
+   "options": [
+    {
+     "name": "Then we will ask the water.",
+     "ai": 100,
+     "effects": [
+      {
+       "if": [
+        "has_global_flag = zin_mirror_stilled"
+       ],
+       "then": [
+        "@fire zin_eindil.52 days=75"
+       ],
+       "else": [
+        "@fire zin_eindil.52 days=15"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "title": "The Mirror of First Rain",
+   "picture": "gala_court",
+   "named": true,
+   "to": "the Gala Elves",
+   "hist": "Sowing 1752",
+   "fired_by": "zin_eindil.160",
+   "desc": [
+    {
+     "key": "records",
+     "if": [
+      "has_global_flag = zin_mirror_stilled"
+     ],
+     "text": "The spring in the old courtyard gives back only the sky. Lorien reads the oldest records of the First Men for sixty days, and at the end of them he says the name: “Eindil, son of Ein, son of Aen.” He has known many men who stood as this one stands. He has known one family that did."
+    },
+    {
+     "text": "In the old courtyard Lorien looks into the spring and sees an old royal line, and says the name he finds in it: “Eindil, son of Ein, son of Aen.” The stranger looks too. He sees a burning capital, armies coming from the west and from the east, death moving down from the north, a great darkness in the south, and his own hand holding a shard of broken blue metal."
+    }
+   ],
+   "options": [
+    {
+     "name": "Eindil.",
+     "ai": 100,
+     "tip": "He has a name, and the court of Gala keeps it for now.",
+     "effects": [
+      "zin_eindil_name_him = yes",
+      {
+       "if": [
+        "NOT = { has_global_flag = zin_mirror_stilled }"
+       ],
+       "then": [
+        "@call zin_sun_spend_clarity 30"
+       ]
+      },
+      "@fire zin_eindil.54 days=30"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 54,
+   "title": "Lorien's Gift",
+   "picture": "gala_court",
+   "named": true,
+   "to": "the Gala Elves",
+   "hist": "Highsun 1752",
+   "fired_by": "zin_eindil.52",
+   "desc": "Lorien gives Eindil a ship like no other, her hull of sea-pine bound with silver, and armour made for a man of Aen's line, and a sword that he says was forged when the First Men were young. He gives him a crew: western friends, navigators of the Islands of the South, and elves of Gala who chose to go. He tells him to go north to Horos, who keeps Glo.",
+   "options": [
+    {
+     "name": "Equip him generously.",
+     "hist": true,
+     "ai": 90,
+     "tip": "Gala gives what it can spare.",
+     "effects": [
+      {
+       "if": [
+        "check_variable = { manpower_k > 999.999 }"
+       ],
+       "then": [
+        "add_manpower = -1000"
+       ]
+      },
+      {
+       "if": [
+        "has_equipment = { zin_elven_arms_equipment > 499 }"
+       ],
+       "then": [
+        "add_equipment_to_stockpile = { type = zin_elven_arms_equipment amount = -500 }"
+       ]
+      },
+      "@gflag zin_eindil_elven_crew",
+      "@call zin_eindil_add_regard 15",
+      {
+       "if": [
+        {
+         "or": [
+          "has_country_flag = zin_gala_gift_armour",
+          "has_country_flag = zin_gala_crew_chosen"
+         ]
+        }
+       ],
+       "then": [
+        "@call zin_eindil_add_regard 5"
+       ]
+      },
+      "@fire zin_eindil.161 days=7"
+     ]
+    },
+    {
+     "name": "A ship and a sword, no more.",
+     "ai": 10,
+     "effects": [
+      "@call zin_eindil_add_regard 5",
+      "@fire zin_eindil.161 days=7"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 161,
+   "title": "Lorien's Warning",
+   "picture": "gala_court",
+   "named": true,
+   "to": "the Gala Elves",
+   "hist": "Highsun 1752",
+   "fired_by": "zin_eindil.54",
+   "desc": "Before the ship sails, Lorien stands on the quay and speaks plainly: a prophecy can frighten people into the very deeds it foretells. The water showed what may be, not what must be. “Do not sail to meet the vision, son of Ein. Sail to answer a question.”",
+   "options": [
+    {
+     "name": "Fair winds, son of Ein.",
+     "ai": 100,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 60,
+   "title": "Lorien's Ship Sails North",
+   "picture": "generic_sea",
+   "named": true,
+   "to": "the Gala Elves",
+   "hist": "Deepwinter 1753",
+   "fired_by": "zin_eindil_advance_stage (stage 6)",
+   "desc": "The King's ship leaves Gala with the son of Ein aboard. Lorien watches it from the harbour wall until it is only a sail, and then until it is only a thought of one. “It is a long way north,” he says to nobody, “and the cold there is not kind to ships.”",
+   "options": [
+    {
+     "name": "Let her go.",
+     "ai": 100,
+     "effects": [
+      "@fire zin_eindil.162 days=120"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 61,
+   "title": "A Ship at Our Harbour",
+   "picture": "generic_sea",
+   "named": true,
+   "to": "one coastal country per call: the Islands of the South, then Triton's Islands or the West Lands, then the Cold Lands",
+   "hist": "Ironfrost to Rainwake 1753",
+   "fired_by": "zin_eindil.60 (three times)",
+   "desc": "An elven ship with a mixed crew asks for water and timber at our quay. Its captain is a tall man who pays in Gala silver and does not haggle, and the crew sing in three tongues when they think no one is listening. A priest of the Houses has been at the harbour master's elbow since the tide turned.",
+   "immediate": [
+    "add_to_variable = { global.zin_eindil_ports_seen = 1 }"
+   ],
+   "options": [
+    {
+     "name": "Resupply the ship.",
+     "hist": [
+      {
+       "or": [
+        "check_variable = { global.zin_eindil_ports_betrayed > 0.999 }",
+        {
+         "and": [
+          "NOT = { check_variable = { zin_footholds > 1.999 } }",
+          "NOT = { check_variable = { global.zin_eindil_ports_seen > 2.999 } }"
+         ]
+        }
+       ]
+      }
+     ],
+     "ai": {
+      "free": 70,
+      "mods": [
+       {
+        "add": 70,
+        "if": [
+         "has_country_flag = zin_eindil_safe_harbour",
+         "NOT = { zin_rules_is_historical = yes }"
+        ]
+       }
+      ]
+     },
+     "tip": "The ship sails with full casks.",
+     "effects": [
+      "@call zin_eindil_add_delay -10",
+      "@call zin_eindil_add_regard 10",
+      "@call zin_eindil_add_renown 2"
+     ]
+    },
+    {
+     "name": "Say nothing.",
+     "hist": false,
+     "ai": 20,
+     "effects": []
+    },
+    {
+     "name": "Report the ship to the Deliverer's priests.",
+     "hist": [
+      "check_variable = { global.zin_eindil_ports_betrayed < 0.999 }",
+      "OR = { check_variable = { zin_footholds > 1.999 } check_variable = { global.zin_eindil_ports_seen > 2.999 } }"
+     ],
+     "ai": {
+      "free": 5,
+      "mods": [
+       {
+        "add": 20,
+        "if": [
+         "check_variable = { zin_footholds > 1.999 }"
+        ]
+       },
+       {
+        "add": 30,
+        "if": [
+         "check_variable = { zin_footholds > 2.999 }"
+        ]
+       }
+      ]
+     },
+     "tip": "The priests will pay for the news.",
+     "effects": [
+      "add_political_power = 50",
+      "add_to_variable = { global.zin_eindil_ports_betrayed = 1 }",
+      "@flag zin_eindil_port_betrayed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 162,
+   "title": "Ice in the Rigging",
+   "picture": "generic_sea",
+   "named": true,
+   "to": "the Gala Elves (as witness)",
+   "hist": "Sowing 1753",
+   "fired_by": "zin_eindil.60",
+   "desc": "Word comes back by a whaler: the elven ship was seen beyond the last port, iced to the masts, sailing north with her crew singing. The whaler says he did not follow. His captain would not let him, and his captain is not a man who is afraid of weather.",
+   "options": [
+    {
+     "name": "Pray for fair winds.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "title": "Landfall in the Frozen North",
+   "picture": "cold_shore",
+   "named": true,
+   "requires": [
+    "zin_eindil_named"
+   ],
+   "to": "owner of zin_is_site_yeldenne_landing",
+   "hist": "Sowing 1753",
+   "fired_by": "zin_eindil_advance_stage (stage 7)",
+   "desc": "An elven ship has anchored in our bay. Her sails are white and gold and her hull is iced to the waterline. Her crew are going inland toward the silent castle, in a long line with their packs, and nobody has asked our leave. A tall man walks at their head and carries a sword wrapped in sealskin.",
+   "immediate": [
+    {
+     "if": [
+      "has_global_flag = zin_afrit_at_yeldenne"
+     ],
+     "then": [
+      "@fire zin_afrit.33 to=group:afrit_hub"
+     ]
+    },
+    {
+     "if": [
+      "has_global_flag = zin_afrit_sent_others"
+     ],
+     "then": [
+      "@fire zin_eindil.71 days=1 to=group:ambush_audience"
+     ],
+     "else": [
+      "@fire zin_eindil.71 days=7 to=group:ambush_audience"
+     ]
+    }
+   ],
+   "options": [
+    {
+     "name": "Stay out of strangers' quarrels.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "effects": []
+    },
+    {
+     "name": "Send guides inland.",
+     "ai": 20,
+     "tip": "The crew will not walk blind into the snow.",
+     "effects": [
+      "@gflag zin_eindil_landing_guides",
+      "@call zin_eindil_add_regard 15"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 71,
+   "title": "The Ambush",
+   "picture": "cold_shore",
+   "named": true,
+   "requires": [
+    "zin_eindil_named"
+   ],
+   "to": "the owner of the landing, the owner of Mp'E, and the Worshipdom (private variants)",
+   "hist": "Sowing 1753",
+   "fired_by": "zin_eindil.70 (7 days after landfall, 1 day when the Council's agents wait)",
+   "trigger": [
+    {
+     "or": [
+      "has_global_flag = zin_afrit_at_yeldenne",
+      "has_global_flag = zin_afrit_sent_others"
+     ]
+    },
+    "NOT = { has_global_flag = zin_eindil_let_land }"
+   ],
+   "desc": [
+    {
+     "key": "hub_fail",
+     "if": [
+      "zin_afrit_is_hub = yes",
+      "check_variable = { global.zin_eindil_ambush_result = 3 }"
+     ],
+     "text": "The order was given, and the order was not enough. The men in the snow above the path were seen from the water, the crew came ashore in the shape of a shield wall, and our men are the ones who lie in the snow. Eindil goes on toward the castle with every companion he sailed with."
+    },
+    {
+     "key": "hub_few",
+     "if": [
+      "zin_afrit_is_hub = yes",
+      "check_variable = { global.zin_eindil_ambush_result = 2 }"
+     ],
+     "text": "Your men held the path, but not all of it. Two of the ship's company slipped through the rocks above the bay, bleeding and cursing in the tongue of the Islands, and they are making for the castle behind him."
+    },
+    {
+     "key": "hub",
+     "if": [
+      "zin_afrit_is_hub = yes"
+     ],
+     "text": "The order was given, and the snow kept the secret. Every one of the ship's company lies in it. The man they called a son of Ein has gone on alone toward the castle, leaving footprints where you can read them. He walks as though he were not tired."
+    },
+    {
+     "key": "fail",
+     "if": [
+      "check_variable = { global.zin_eindil_ambush_result = 3 }"
+     ],
+     "text": "Armed men waited in the snow above the path from the bay, and the travellers from the elven ship saw them first. The fight was short. The ones who fell were the ones who waited."
+    },
+    {
+     "key": "few",
+     "if": [
+      "check_variable = { global.zin_eindil_ambush_result = 2 }"
+     ],
+     "text": "Armed men waited in the snow above the path from the bay. The travellers from the elven ship fought them among the rocks, and not all of the travellers came out. Two of them went on up the road."
+    },
+    {
+     "text": "Armed men waited in the snow above the path from the bay, and the travellers from the elven ship fought them. The snow here is deep and keeps what it is given. Of the ship's company, the stranger at their head is the only one still walking."
+    }
+   ],
+   "immediate": [
+    {
+     "if": [
+      "NOT = { has_global_flag = zin_eindil_71_done }"
+     ],
+     "then": [
+      "@gflag zin_eindil_71_done",
+      "zin_eindil_compute_ambush = yes",
+      "set_temp_variable = { zin_arg_value = global.zin_eindil_ambush_strength }",
+      "zin_eindil_ambush_resolved = yes",
+      {
+       "if": [
+        "check_variable = { global.zin_eindil_ambush_strength > 3.999 }"
+       ],
+       "then": [
+        "set_variable = { global.zin_eindil_ambush_result = 1 }",
+        "@fire zin_eindil.72 days=1 to=group:mpe_owner"
+       ],
+       "else": [
+        {
+         "if": [
+          "check_variable = { global.zin_eindil_ambush_strength > 1.999 }"
+         ],
+         "then": [
+          "set_variable = { global.zin_eindil_ambush_result = 2 }",
+          "@gflag zin_eindil_companions_live"
+         ],
+         "else": [
+          "set_variable = { global.zin_eindil_ambush_result = 3 }",
+          "@gflag zin_eindil_ambush_failed"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "options": [
+    {
+     "name": "Bury the dead.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_afrit_is_hub = yes }"
+     ],
+     "effects": []
+    },
+    {
+     "name": "It is done.",
+     "ai": 100,
+     "if": [
+      "zin_afrit_is_hub = yes"
+     ],
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 72,
+   "title": "Alone in the Snow",
+   "picture": "cold_shore",
+   "named": true,
+   "requires": [
+    "zin_eindil_named"
+   ],
+   "to": "owner of Mp'E",
+   "hist": "Sowing 1753",
+   "fired_by": "zin_eindil.71 (strength 4 or more)",
+   "desc": "Herders found a field of dead men in the snow below the castle road: elves in white and gold, islanders, western friends, a ship's company lying where it fell. One set of footprints went on up the road toward the castle. The herders followed it as far as the gate, and no farther.",
+   "options": [
+    {
+     "name": "Bury them.",
+     "ai": 100,
+     "tip": "The one who walked on is shaken to the bone.",
+     "effects": [
+      "@trait zin_eindil_alone_in_the_snow days=180"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 73,
+   "title": "The Bearer Leaves Yeldenne",
+   "picture": "glo_given",
+   "named": true,
+   "requires": [
+    "zin_horos_dead"
+   ],
+   "to": "Eindil's current host, or at sea the Gala Elves as witness",
+   "hist": "Goldfield 1753",
+   "fired_by": "the Yeldenne and Glo hall (zin_glo_with_eindil)",
+   "desc": [
+    {
+     "key": "revealed",
+     "if": [
+      "NOT = { zin_afrit_secret_kept = yes }"
+     ],
+     "text": "The castle is empty. The guardian is dust. The man who walked out carries a green light at his breast and a blue sword at his hip, and he knows now that [zin_loc_deliverer], who sits in Parim as a god, is his own brother, a son of Ein."
+    },
+    {
+     "text": "The castle is empty. The guardian is dust. The man who walked out carries a green light at his breast and a blue sword at his hip, and he knows now that the king in Parim, worshipped as the Deliverer, is his own brother, a son of Ein."
+    }
+   ],
+   "options": [
+    {
+     "name": "South, to warn them.",
+     "ai": 100,
+     "tip": "He carries Glo out of the north.",
+     "effects": [
+      "zin_eindil_bearer_effects = yes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 163,
+   "title": "Word From the North",
+   "picture": "gala_court",
+   "named": true,
+   "to": "the Gala Elves",
+   "hist": "Emberleaf 1753",
+   "fired_by": "zin_eindil.73",
+   "trigger": [
+    "NOT = { has_country_flag = zin_gala_word_from_the_north }"
+   ],
+   "desc": "Whalers say the son of Ein lives, and carries a light out of the north. Of his crew they say nothing, and they look at the water when they are asked. Lorien hears it in silence, and then asks for the names of the crew to be read out in the hall, one at a time, from the ship's roll.",
+   "options": [
+    {
+     "name": "Then the voyage was not in vain.",
+     "ai": 100,
+     "effects": [
+      "@call zin_sun_add_gala_counsel 5"
+     ]
+    }
+   ]
+  }
+ ]
+}

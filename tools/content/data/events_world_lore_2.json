@@ -1,0 +1,273 @@
+{
+ "kind": "events",
+ "namespace": "zin_lore",
+ "note": "docs/specs/06_events/05_flavour_and_world.md: the peaceful-start flavour 300 to 349 (the Deliverer's temples, trade, omens, island fishermen, Mirolon's scouts). Rule F1: none of these sets a story flag, starts a war, changes zin_gathering_dark or moves a mechanic variable by more than 2. Rule F2: omens are not prophecies.",
+ "events": [
+  {
+   "id": 300, "title": "The Feast of Deliverance", "picture": "hermitage", "window": "1 Highsun 1748", "hist": "1 Highsun 1748",
+   "who": [{ "all": ["group:temple_courts"] }],
+   "desc": "Today the temples remember how the Deliverer shielded the people when Elzon fell. Bread is blessed at every temple door and given away to anyone who asks, and the queue goes round the corner twice. The old women say that the bread tastes the same as it did in their mothers' time, and that this is the point.",
+   "options": [
+    { "name": "Keep the feast.", "ai": 70, "effects": ["add_political_power = -10", "add_stability = 0.01"] },
+    { "name": "A day like any other.", "ai": 30, "effects": ["add_political_power = 10"] }
+   ]
+  },
+  {
+   "id": 301, "title": "A Healer Who Asks Nothing", "picture": "houses", "window": "any", "hist": "random share 30%",
+   "who": [{ "all": ["group:temple_courts"], "share": 30 }],
+   "desc": "A healer of the Houses of the First Light saved a lord's child from the spotted fever, sitting up with the boy for nine nights, and would take no payment. She said only that the bread at her House was enough. The lord has been asking his stewards what a man can give to someone who will not be paid.",
+   "options": [
+    { "name": "Reward the Houses.", "ai": 60, "tip": "The Houses' friends will think well of us.", "effects": ["add_political_power = -10", "@opinion zin_opinion_lore_goodwill tag:Worshipdom"] },
+    { "name": "Thank the healer.", "ai": 40, "effects": ["add_stability = 0.01"] }
+   ]
+  },
+  {
+   "id": 302, "title": "The Birth Rolls", "picture": "houses", "window": "any", "hist": "every Concord dominion with two or more footholds",
+   "who": [{ "all": ["group:concord", "check_variable = { zin_footholds > 1.999 }"] }],
+   "desc": "The Houses of the First Light ask to copy our birth rolls, to keep them safe in the vaults of Parim beside the rolls of every other dominion. They say that fire and damp take parish books, and that the Houses have never lost a roll. Our own clerk, who has lost several, has been very quiet.",
+   "options": [
+    { "name": "Let them copy the rolls.", "ai": { "free": 70, "mods": [{ "factor": 0, "if": ["tag:Selen"] }] }, "effects": ["add_stability = 0.01", "@call zin_aenor_add_council_influence 1"] },
+    { "name": "We keep our own rolls.", "ai": { "free": 30, "mods": [{ "add": 70, "if": ["tag:Selen"] }] }, "effects": ["add_political_power = 10"] }
+   ]
+  },
+  {
+   "id": 303, "title": "A Sermon on Gratitude", "picture": "houses", "window": "Rainwake 1748", "who": ["Aenor"], "hist": "Rainwake 1748",
+   "desc": "In Parim the High Confessor preaches that seventeen centuries of peace are the Deliverer's gift, and that a grateful kingdom is a safe one. The nave is full to the doors. A cloth-merchant, standing at the back, is heard to say that he is grateful for the roof as well.",
+   "options": [{ "name": "So it is sung.", "ai": 100, "effects": ["add_stability = 0.01"] }]
+  },
+  {
+   "id": 304, "title": "Grain From the Temple Stores", "picture": "houses", "window": "any", "hist": "random share 20%",
+   "who": [{ "all": ["group:temple_courts", "check_variable = { zin_footholds > 1.999 }", "has_stability < 0.5"], "share": 20 }],
+   "desc": "A poor harvest in the hills. The Houses opened their grain stores before our own officials had counted the sacks, and the carts were on the roads before the steward had finished his report. Nobody is starving. The steward is unhappy and cannot say why.",
+   "options": [
+    { "name": "Be grateful.", "ai": 80, "effects": ["add_stability = 0.02"] },
+    { "name": "Ask who paid for the grain.", "ai": 20, "effects": ["add_political_power = -10"] }
+   ]
+  },
+  {
+   "id": 305, "title": "A Temple Too Rich", "picture": "houses", "window": "any", "hist": "random share 15%",
+   "who": [{ "all": ["has_government = democratic", "check_variable = { zin_footholds > 1.999 }", "NOT = { zin_afrit_is_hub = yes }"], "share": 15 }],
+   "desc": "A provincial governor complains that the local temple owns more land than he does, and that its tenants pay their rent in blessings. He has a map with the temple's holdings marked in blue. The blue is most of the map.",
+   "options": [
+    { "name": "Let the temple keep its gifts.", "ai": 60, "effects": [] },
+    { "name": "Tax the temple land.", "ai": 40, "effects": ["add_political_power = 25", "add_stability = -0.01"] }
+   ]
+  },
+  {
+   "id": 310, "title": "The Lake Fleet Comes In", "picture": "generic_sea", "window": "Harvest 1748", "who": ["Aenor"], "hist": "Harvest 1748",
+   "desc": "The grain fleet of the Great Lake is in. The harbours of Parim are full to the breakwater, and the quay-masters have been shouting themselves hoarse since dawn. The granary-wardens ask what is to be done with the surplus, and the Lord Steward has several suggestions.",
+   "options": [
+    { "name": "Store it.", "ai": 50, "effects": ["add_stability = 0.02"] },
+    { "name": "Sell it abroad.", "ai": 50, "effects": ["add_political_power = 25"] }
+   ]
+  },
+  {
+   "id": 311, "title": "A Caravan From Beyond the Wall", "picture": "generic_peace", "window": "any", "who": ["Konori", "Noleksun", "Kingson"], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": "An eastern caravan has come through the elven roads, with pepper in oiled bags, glass the colour of weak tea and stories of rich courts across the rift. The drivers are polite and tired. They want to sell everything they carry and to buy nothing but salt.",
+   "options": [
+    { "name": "Buy the spices.", "ai": 50, "effects": ["add_political_power = -10", "add_stability = 0.01"] },
+    { "name": "Tax the caravan.", "ai": 50, "effects": ["add_political_power = 15"] }
+   ]
+  },
+  {
+   "id": 312, "title": "Furs for the South", "picture": "generic_sea", "window": "Emberleaf 1748", "hist": "Emberleaf 1748",
+   "who": [{ "names": ["Coldor", "Windwaith"] }, { "all": ["group:cold_lands", "any_owned_state = { is_coastal = yes }"], "not_names": ["Coldor", "Windwaith"], "share": 50 }],
+   "desc": "The fur ships sail south before the ice closes the harbours. The West Lands pay well this year, the factors say, and the best pelts are already reserved for the ones who paid in advance. The holds are being loaded by lantern-light, and the dockmen sing as they stack.",
+   "options": [{ "name": "Send the best furs.", "ai": 100, "effects": ["add_political_power = 20"] }]
+  },
+  {
+   "id": 313, "title": "Sun-Silk at the Harbour", "picture": "generic_sea", "window": "any", "hist": "Thaw 1748 to Thaw 1749",
+   "who": [{ "all": ["group:islands_of_the_south"] }, { "all": ["group:lands_of_the_sun", "any_owned_state = { is_coastal = yes }"] }],
+   "desc": "Traders from the tall folk's realms have anchored with white-gold silk in the hold, and are buying salt fish by the barrel. They pay in coin and in courtesy, and they ask after the health of the harbour-master's mother by name. Nobody remembers telling them.",
+   "options": [{ "name": "Trade fairly.", "ai": 100, "tip": "One of the sun-realms will remember it.", "effects": [{ "pick": "group:lands_of_the_sun", "limit": ["any_owned_state = { is_coastal = yes }", "NOT = { original_tag = ROOT }"], "do": ["ROOT = { add_opinion_modifier = { target = PREV modifier = zin_opinion_lore_goodwill } }"] }] }]
+  },
+  {
+   "id": 314, "title": "The Price of Salt", "picture": "generic_peace", "window": "any", "hist": "Thaw 1748 to Thaw 1749",
+   "who": [{ "all": ["group:dark_lands"], "not_names": ["Goldoroth"] }],
+   "desc": "Salt from Cocanoor's pans costs twice what it did, and nobody else sells it. The pans are worked by gangs of the Warking's own clansmen, and the price rises every time a caravan arrives. The cook has asked whether the soup can be made with less.",
+   "options": [
+    { "name": "Pay it.", "ai": 60, "effects": ["add_political_power = -10"] },
+    { "name": "Make do without.", "ai": 40, "effects": ["add_stability = -0.01"] }
+   ]
+  },
+  {
+   "id": 315, "title": "Timber Rafts on the River", "picture": "generic_peace", "window": "Sowing 1748", "who": ["Gunwaith", "Girdon", "Lambin"], "hist": "Sowing 1748",
+   "desc": "Log rafts come down the rivers from the northern forests, twelve to a tow, bound for the shipyards. The raftsmen are paid by the log and by the day, and the foreman has taken to sleeping on the rearmost raft with a cudgel in his arms.",
+   "options": [
+    { "name": "Build boats.", "ai": 50, "effects": ["navy_experience = 3"] },
+    { "name": "Sell the timber to Aenor.", "ai": 50, "tip": "Parim will think well of us.", "effects": ["add_political_power = 15", "@opinion_of zin_opinion_lore_regard aenor"] }
+   ]
+  },
+  {
+   "id": 316, "title": "Pirates Hanged at Adel", "picture": "generic_sea", "window": "any", "who": ["Adel", "Pollos", "Raerby"], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": "Three pirates are hanged on the quay at dusk. Their captain swears from the gallows that he was a merchant who missed a toll, and that the toll was posted in a script nobody can read. The crowd is large and quiet and unsure which way to look.",
+   "options": [
+    { "name": "Hang him too.", "ai": 60, "effects": ["add_stability = 0.01"] },
+    { "name": "Fine him and let him sail.", "ai": 40, "effects": ["add_political_power = 15"] }
+   ]
+  },
+  {
+   "id": 317, "title": "A Merchant Prince's Wedding", "picture": "generic_peace", "window": "Goldfield 1748", "who": ["Stabilo"], "hist": "Goldfield 1748",
+   "desc": "Two houses of Postondoroth marry their fortunes. The feast lasts nine days, and the fountains of the lower city run with wine on the third. The notaries of both houses have drawn up contracts in three languages, and have asked, in confidence, that they not be asked to read them aloud.",
+   "options": [{ "name": "Attend.", "ai": 100, "effects": ["add_political_power = -10", "add_stability = 0.01"] }]
+  },
+  {
+   "id": 320, "title": "The Lake Is Too Still", "picture": "generic_wilds", "window": "Highsun 1748", "who": ["Aenor"], "hist": "Highsun 1748",
+   "desc": "For three days the Great Lake did not ripple. The priests call it a blessing. The fishermen do not go out, and the ferrymen sit on the jetties and look at the water as one looks at a sleeping dog. On the fourth day the wind comes back, and nobody mentions it.",
+   "options": [
+    { "name": "A blessing.", "ai": 90, "effects": ["add_stability = 0.01"] },
+    { "name": "Ask the university.", "ai": 10, "effects": ["@call zin_aenor_add_lost_cause 1"] }
+   ]
+  },
+  {
+   "id": 321, "title": "Birds Leave the Northern Cliffs", "picture": "generic_wilds", "window": "any", "who": [{ "all": ["zin_is_zol_coast_country = yes"] }], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": "The seabirds have left the northern cliffs a month early. Old women say it means a hard winter, and the wood-stacks in the village are already higher than usual. The children are told that the birds will be back, and the children are sensible enough not to ask when.",
+   "options": [{ "name": "A hard winter, then.", "ai": 100, "effects": [] }]
+  },
+  {
+   "id": 322, "title": "Ash on the Wind", "picture": "generic_wilds", "window": "any", "who": ["Mirolon", "Herez"], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": [
+    { "key": "mirolon", "if": ["tag:Mirolon"], "text": "Grey ash fell on the passes in a week without clouds. It came from the south, and it fell thickest in the places where the old watchfires burned. The wardens swept it from the pass-house steps and found, an hour later, that the steps needed sweeping again." },
+    { "text": "Grey ash fell on the marches in a week without clouds, and the washerwomen of the border villages found their linen speckled with it. It came from the south. The wardens of Mirolon have written to ask whether Herez has seen it too." }
+   ],
+   "options": [
+    { "name": "Write it down.", "ai": 100, "if": ["tag:Mirolon"], "effects": ["@call zin_mirolon_add_proof 1"] },
+    { "name": "Volcanoes in the Dead Lands.", "ai": 100, "if": ["NOT = { original_tag = {{tag:Mirolon}} }"], "effects": [] }
+   ]
+  },
+  {
+   "id": 323, "title": "A Two-Headed Calf", "picture": "generic_wilds", "window": "any", "hist": "random share 25%",
+   "who": [{ "all": ["group:middle_lands"], "share": 25 }],
+   "desc": "A calf with two heads was born in a village near the capital. Half the province has come to see it, and the miller's wife has begun to sell little cakes shaped like calves. It has not lived beyond the first night, and its keeper has been offered large sums for the skin.",
+   "options": [
+    { "name": "Sell it to a travelling show.", "ai": 60, "effects": ["add_political_power = 10"] },
+    { "name": "Let the priests bless it.", "ai": 40, "effects": ["add_stability = 0.01"] }
+   ]
+  },
+  {
+   "id": 324, "title": "A Red Moon Over Cocanoor", "picture": "generic_war", "window": "Emberleaf 1748", "who": ["Goldoroth", "Dondor"], "hist": "Emberleaf 1748",
+   "desc": [
+    { "key": "goldoroth", "if": ["tag:Goldoroth"], "text": "The Fire-Speakers say that the red moon wants war. The Warking has asked them what the moon wants in particular, and for how long, and they have asked for a week to consult the embers." },
+    { "text": "The moon was red over the orc country. Our watchmen counted the fires on the far hills, and counted them again, and the number was the same both times. The captain of the beacons has asked for extra tallow for the towers." }
+   ],
+   "options": [
+    { "name": "Not this year.", "ai": 80, "if": ["tag:Goldoroth"], "effects": ["add_stability = 0.01"] },
+    { "name": "The clans grow restless.", "ai": 20, "if": ["tag:Goldoroth"], "effects": ["add_war_support = 0.02"] },
+    { "name": "Light the beacons.", "ai": 100, "if": ["NOT = { original_tag = {{tag:Goldoroth}} }"], "effects": [] }
+   ]
+  },
+  {
+   "id": 325, "title": "A Star Falls in the East", "picture": "generic_wilds", "window": "any", "hist": "random share 30%",
+   "who": [{ "all": ["group:east_lands"], "share": 30 }],
+   "desc": "A star fell over the desert in the second watch of the night, and was seen from three cities. Court astrologers have written three opinions on it and charge for each. The first says that it was a sign, the second that it was not, and the third that the first two were paid for.",
+   "options": [
+    { "name": "Pay for the best one.", "ai": 50, "effects": ["add_political_power = -10", "add_stability = 0.01"] },
+    { "name": "Dismiss them.", "ai": 50, "effects": [] }
+   ]
+  },
+  {
+   "id": 326, "title": "Smoke Seen From the Elven Hills", "picture": "generic_wilds", "window": "any", "hist": "random share 40%",
+   "who": [{ "all": ["group:magical_lands", "has_country_flag = zin_people_elves"], "share": 40 }],
+   "desc": "An elder says she saw smoke far to the south and far to the north on the same evening, from the same hill. The young ones laugh at her, politely, and bring her tea. She drinks it, and says that she is too old to be told what she saw.",
+   "options": [{ "name": "Let the young laugh.", "ai": 100, "effects": [] }]
+  },
+  {
+   "id": 327, "title": "The Bell That Rang by Itself", "picture": "generic_wilds", "window": "any", "hist": "random share 15%",
+   "who": [{ "all": ["group:north_lands"], "share": 15 }],
+   "desc": "A harbour bell rang at midnight with no one in the tower. The wind, says the harbour master, who has been to the tower and found the door locked from the inside. The bell-ringer's apprentice, who sleeps beneath it, has asked to be moved.",
+   "options": [{ "name": "The wind.", "ai": 100, "effects": [] }]
+  },
+  {
+   "id": 330, "title": "Nets Full of Black Water", "picture": "black_ships_tale", "window": "any", "hist": "random share 50% of the coast list",
+   "who": [{ "all": ["zin_is_zol_coast_country = yes"], "share": 50 }],
+   "desc": "The fishermen of the north coast say their nets came up full of water as black as ink, and no fish in them. They sold the nets at a loss and went home. The old men say that black water is a thing that happens. The young men are less sure.",
+   "options": [
+    { "name": "Fishermen's tales.", "ai": 90, "effects": [] },
+    { "name": "Send a clerk to look.", "ai": 10, "effects": ["add_political_power = -5"] }
+   ]
+  },
+  {
+   "id": 331, "title": "The Boat That Came Back Empty", "picture": "black_ships_tale", "window": "any", "hist": "random share 30% of the coast list",
+   "who": [{ "all": ["zin_is_zol_coast_country = yes"], "share": 30 }],
+   "desc": "A fishing boat drifted home with its nets folded and its crew gone. There was no storm, and the breakfast was still warm in the pot. The village has not yet decided whether to put the boat on the shingle or to burn it.",
+   "options": [
+    { "name": "Pay the widows.", "ai": 70, "effects": ["add_political_power = -10", "add_stability = 0.01"] },
+    { "name": "Keep it in the village.", "ai": 30, "effects": [] }
+   ]
+  },
+  {
+   "id": 332, "title": "A Fisherman Before the Court", "picture": "black_ships_tale", "window": "Fallowing 1748", "hist": "Fallowing 1748",
+   "who": [{ "all": ["zin_is_zol_coast_country = yes", "is_major = yes"] }, { "names": ["Lerendor"] }],
+   "desc": "An old fisherman insists before the court that he saw men walking on the sea floor among the black islands, in rows, at low tide. The court laughs. He does not. He has brought a witness, a boy of eleven, who confirms every word and is sent home with a sweet.",
+   "options": [
+    { "name": "Laugh with the court.", "ai": 90, "effects": ["add_political_power = 5"] },
+    { "name": "Give him a pension and silence.", "ai": 10, "effects": ["add_political_power = -10"] }
+   ]
+  },
+  {
+   "id": 333, "title": "The Fleet Stays South", "picture": "black_ships_tale", "window": "Thaw 1749", "hist": "Thaw 1749",
+   "who": [{ "all": ["zin_is_zol_coast_country = yes"], "share": 30 }],
+   "desc": "This spring the fishing fleets will not sail north of the last cape. No captain will say why. The harbour master has asked each in turn, and each has found a different reason that did not survive the second question.",
+   "options": [
+    { "name": "Order them north.", "ai": 40, "effects": ["add_political_power = 10", "add_stability = -0.01"] },
+    { "name": "Let them fish where they like.", "ai": 60, "effects": [] }
+   ]
+  },
+  {
+   "id": 340, "title": "The Wall of Names", "picture": "mirolon_passes", "window": "Thaw 1748", "who": ["Mirolon"], "hist": "Thaw 1748",
+   "desc": "On the wardens' wall in the passes, the names of scouts who never came back fill four hundred years of stone. The mason who cuts them has run out of wall on the east face and begun on the west. He asks whether this year's names are to be added, or whether the year has not yet earned them.",
+   "options": [
+    { "name": "Add none this year.", "ai": 60, "effects": ["add_stability = 0.01"] },
+    { "name": "Read them aloud.", "ai": 40, "effects": ["add_war_support = 0.02"] }
+   ]
+  },
+  {
+   "id": 341, "title": "Tracks in the Ash", "picture": "mirolon_passes", "window": "any", "who": ["Mirolon"], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": "Scouts found tracks in the ash south of the passes: many tread, in step, not all of them human. They followed the tracks for a morning and found no end. They came home with a drawing of one print, and the drawing is still on the table where the High Warden put it.",
+   "options": [
+    { "name": "Copy them for the archives.", "ai": 80, "effects": ["@call zin_mirolon_add_proof 2"] },
+    { "name": "Tracks blow away.", "ai": 20, "effects": [] }
+   ]
+  },
+  {
+   "id": 342, "title": "A Scout Comes Back Changed", "picture": "mirolon_passes", "window": "any", "who": ["Mirolon"], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": "A scout came back from beyond the storms. He eats and sleeps, and he does not speak of what he saw. He wakes in the night with his hand on the hilt of a sword that he has not worn since he was a boy. The healers say that there is nothing wrong with him that they can name.",
+   "options": [
+    { "name": "Give him a pension.", "ai": 70, "effects": ["add_political_power = -10", "add_stability = 0.01"] },
+    { "name": "Send him back south.", "ai": 30, "effects": ["@call zin_mirolon_add_proof 1", "add_stability = -0.01"] }
+   ]
+  },
+  {
+   "id": 343, "title": "The Night Fires Counted", "picture": "dead_lands_storm", "window": "Emberleaf 1748", "who": ["Mirolon"], "hist": "Emberleaf 1748",
+   "desc": "The wardens counted the fires in the Dead Lands this autumn. There are more than last year. There were more last year than the year before. Each autumn the count has been carried to Parim in a sealed box, and each autumn it has been sent back with a polite note that does not mention the number.",
+   "options": [
+    { "name": "Send the count to Parim.", "ai": 50, "tip": "Parim will think better of us, and do nothing.", "effects": ["@opinion_of zin_opinion_lore_regard aenor"] },
+    { "name": "Keep counting.", "ai": 50, "effects": ["@call zin_mirolon_add_proof 2"] }
+   ]
+  },
+  {
+   "id": 344, "title": "A Letter From Mirolon", "picture": "mirolon_passes", "window": "any", "who": ["Herez"], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": "The High Warden writes to Herez again: watch the south. Herez's lords have read such letters before, and keep them in a drawer in the order they arrived. The drawer is getting full.",
+   "options": [
+    { "name": "Watch with them.", "ai": 40, "tip": "Mirolon will think well of us.", "effects": ["@opinion zin_opinion_lore_goodwill tag:Mirolon"] },
+    { "name": "Mirolon frets.", "ai": 60, "effects": [] }
+   ]
+  },
+  {
+   "id": 345, "title": "The Lake Towns Count the Cost", "picture": "mirolon_passes", "window": "Longnight 1748", "who": ["Mirolon"], "hist": "Longnight 1748",
+   "desc": "The lake towns pay for the watch on the passes. Their councils ask how long they must pay for a war that nobody else believes in, and the treasurer has brought the ledgers to show them how little of it has been fought. He has a way of saying that is not a comfort.",
+   "options": [
+    { "name": "As long as Volgan lives.", "ai": 70, "effects": ["add_stability = -0.01", "add_war_support = 0.02"] },
+    { "name": "Lighten the levy.", "ai": 30, "effects": ["add_political_power = 15", "@call zin_mirolon_add_passes -2"] }
+   ]
+  },
+  {
+   "id": 346, "title": "Mirolonese Students in Parim", "picture": "generic_court", "window": "any", "who": ["Aenor"], "hist": "Thaw 1748 to Thaw 1749",
+   "desc": "Students from Mirolon at the University of Parim are mocked as the boys who fear the dark. They have asked the masters for a hearing, and the masters have agreed to one on a day that falls in the vacation. The students have not yet worked out whether this is a courtesy or an answer.",
+   "options": [
+    { "name": "Boys will be boys.", "ai": 80, "effects": [] },
+    { "name": "Let the masters hear them.", "ai": 20, "effects": ["@call zin_aenor_add_lost_cause 1"] }
+   ]
+  }
+ ]
+}

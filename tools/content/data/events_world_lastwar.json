@@ -1,0 +1,249 @@
+{
+ "kind": "events",
+ "namespace": "zin_lastwar",
+ "note": "docs/specs/06_events/03_war_of_the_last_crowns.md: the cross-front events of the War of the Last Crowns. Every runner entry is evaluated once a month by zin_story_tick_lastwar inside the guard has_global_flag = zin_war_of_last_crowns. No event starts a war.",
+ "events": [
+  {
+   "id": 10, "title": "The Warnings Remembered", "picture": "generic_war",
+   "to": "every country with zin_eindil_heeded or a zin_sun_heeded_<sight> flag", "hist": "Rainwake 1755",
+   "runner": { "if": [], "to": [{ "who": [{ "or": ["has_country_flag = zin_eindil_heeded", "has_country_flag = zin_sun_heeded_north", "has_country_flag = zin_sun_heeded_south", "has_country_flag = zin_sun_heeded_seas", "has_country_flag = zin_sun_heeded_east", "has_country_flag = zin_sun_heeded_centre"] }] }], "days": 3 },
+   "desc": [
+    { "key": "sun", "if": ["NOT = { has_country_flag = zin_eindil_heeded }"], "text": "The King of Gala's envoys told us what the water showed. We listened, and the elders who counselled patience have asked, quietly, to be forgiven. The walls are manned, the granaries are full, and the beacons have fresh tallow in their bowls." },
+    { "text": "A year ago [zin_loc_eindil] stood in a hall like ours and told our court what is happening now. We listened, and were laughed at in the markets for it. Nobody is laughing now. The walls are manned and the granaries are full, and the captains have stopped asking whether the stranger was right." }
+   ],
+   "options": [{ "name": "Then we are ready.", "ai": 100, "effects": ["add_war_support = 0.05", "army_experience = 10"] }]
+  },
+  {
+   "id": 11, "title": "Aenor Beset", "picture": "generic_war", "to": "the ruling Aenor realm", "hist": "Goldfield 1755; Mistfall 1755",
+   "runner": [
+    { "key": "11", "if": ["check_variable = { zin_lastwar_fronts > 1.999 }"], "to": "aenor" },
+    { "key": "11_4", "if": ["check_variable = { zin_lastwar_fronts > 3.999 }"], "to": "aenor", "set": ["@gflag zin_lastwar_four_fronts"] }
+   ],
+   "desc": [
+    { "key": "four", "if": ["has_global_flag = zin_lastwar_four_fronts"], "text": "Sails in the west, oaths torn in the north, the dead on the northern coast, the south on the march and eastern banners over the rift: the horizon has no quarter left that is quiet. The council knows that whatever it chooses to hold, the other quarters will notice, and will come the sooner for it." },
+    { "text": "Sails in the west, oaths torn in the north, the dead on the northern coast, the south on the march, eastern banners over the rift. The council must choose where Aenor fights first, and it knows that whatever it chooses, the other quarters will notice." }
+   ],
+   "options": [
+    { "name": "Hold the west shore.", "hist": ["zin_aenor_ruled_by_captains = yes"], "ai": 25, "tip": "The AI will weigh the western shore and Aenor Isle for half a year.", "effects": ["@flag zin_lastwar_hold_west days=180", "add_war_support = 0.03"] },
+    { "name": "Hold the north against the dead.", "ai": 25, "tip": "The AI will weigh the strait and the northern coast for half a year.", "effects": ["@flag zin_lastwar_hold_north days=180"] },
+    { "name": "Hold the south against the Dominion.", "ai": 25, "tip": "The AI will weigh the southern marches for half a year.", "effects": ["@flag zin_lastwar_hold_south days=180"] },
+    { "name": "Hold Parim and nothing else.", "hist": ["NOT = { zin_aenor_ruled_by_captains = yes }"], "ai": 25, "tip": "The AI will weigh Parim and its neighbours for half a year.", "effects": ["@flag zin_lastwar_hold_parim days=180", "add_stability = 0.03"] }
+   ]
+  },
+  {
+   "id": 12, "title": "The Concord Calls Its Levies", "picture": "concord_council", "to": "every Concord dominion", "hist": "Sowing 1755",
+   "runner": { "if": ["any_country = { zin_aenor_is_realm = yes has_war = yes }", "has_global_flag = zin_story_done_lastwar_10"], "to": "group:concord", "days": 30 },
+   "desc": "Parim calls every dominion's levy. The charters say that the crown may ask; they do not say that the dominions must come. The keeper of our muster-roll has brought the roll to the hall, and asks whether it is to be read out in the yard or put back in its chest.",
+   "options": [
+    { "name": "Send the levy.", "hist": ["NOT = { original_tag = {{tag:Selen}} }"], "ai": { "free": 30, "mods": [{ "add": 50, "if": ["check_variable = { zin_concord_loyalty > 49.999 }"] }] }, "tip": "Our levy marches to Parim.",
+      "effects": ["add_manpower = -2000", "@call zin_aenor_add_concord_loyalty 5", "zin_aenor_event_for_parim = yes", "event_target:zin_aenor_parim_realm = { add_manpower = 2000 }"] },
+    { "name": "Guard our own borders.", "hist": ["original_tag = {{tag:Selen}}"], "ai": { "free": 30, "mods": [{ "add": 40, "if": ["NOT = { check_variable = { zin_concord_loyalty > 49.999 } }"] }] }, "tip": "The crown will remember who stayed home.", "effects": ["@call zin_aenor_add_concord_loyalty -5"] }
+   ]
+  },
+  {
+   "id": 13, "title": "Refugees on the Roads", "picture": "generic_war", "to": "every Middle Lands country", "hist": "Highsun 1755",
+   "runner": { "if": ["check_variable = { zin_lastwar_fronts > 2.999 }"], "to": "group:middle_lands" },
+   "desc": "The roads to the Great Lake are full of carts. Nobody knows which way is safe, and every ferryman has doubled his fee. In the villages near the Wall they say that the Great Lake will hold, and in the villages near the Great Lake they say the opposite.",
+   "options": [
+    { "name": "Open the granaries.", "ai": 70, "effects": ["add_political_power = -25", "add_stability = 0.02"] },
+    { "name": "Close the roads.", "ai": 30, "effects": ["add_stability = -0.02", "add_war_support = 0.02"] }
+   ]
+  },
+  {
+   "id": 14, "title": "Northern Ships Turn Home", "picture": "generic_sea", "to": "the ruling Aenor realm", "hist": "Sowing 1755",
+   "runner": { "if": ["has_global_flag = zin_leren_withdrawal"], "to": "aenor", "days": 7 },
+   "desc": "The Leren fleets that watched the strait for Aenor have sailed home. The strait's southern forts are ours alone, and their garrisons look out at the empty water where the northern masts used to stand.",
+   "options": [
+    { "name": "Man the forts.", "ai": 100, "tip": "Sea forts will rise on the southern shore of the strait.",
+      "effects": ["add_political_power = -25", "every_owned_state = { limit = { zin_is_site_strait_south = yes } add_building_construction = { type = coastal_bunker level = 1 instant_build = yes province = { all_provinces = yes limit_to_coastal = yes } } }"] },
+    { "name": "Let them go.", "ai": 0, "effects": [] }
+   ]
+  },
+  {
+   "id": 20, "title": "Sails Off Aenor Isle", "picture": "western_crossing", "requires": ["zin_western_crossing"], "to": "Asgard and the ruling Aenor realm", "hist": "Goldfield 1755",
+   "runner": { "if": ["has_global_flag = zin_western_crossing", "any_state = { zin_is_site_west_landing_isle = yes NOT = { is_controlled_by = OWNER } }"], "to": ["tag:Asgard", "aenor"] },
+   "desc": [
+    { "key": "asgard", "if": ["tag:Asgard"], "text": "Our harbours were the first the Aenoran ships reached, long ago. Now the western ships take them, one quay at a time, and the same stones that welcomed the first Aenorans are being walked on by men who have come to remind Parim of that day." },
+    { "text": "The western host is ashore on Aenor Isle. Their ships lie off the harbour towns of Asgard in the same water where Aenor's first ships once anchored, and the lake fleet, which has never fought in salt water, is being asked to." }
+   ],
+   "options": [
+    { "name": "Fight from every quay.", "ai": 70, "if": ["tag:Asgard"], "effects": ["add_war_support = 0.05"] },
+    { "name": "Spare the harbour towns.", "ai": 30, "if": ["tag:Asgard"], "tip": "The towns the West holds will be easier to govern.", "effects": ["every_owned_state = { limit = { NOT = { is_controlled_by = ROOT } } add_compliance = 5 }"] },
+    { "name": "Send the lake fleet.", "ai": 100, "if": ["NOT = { original_tag = {{tag:Asgard}} }"], "tip": "The AI will weigh the western shore for half a year.", "effects": ["add_political_power = -25", "@flag zin_lastwar_hold_west days=180"] }
+   ]
+  },
+  {
+   "id": 21, "title": "The West Remembers", "picture": "western_crossing", "requires": ["zin_western_crossing"], "to": "every West Lands country in the Crossing", "hist": "Highsun 1755",
+   "runner": { "if": ["has_global_flag = zin_story_done_lastwar_20"], "to": [{ "who": ["has_country_flag = zin_region_west_lands", "has_country_flag = zin_west_pledged"] }], "days": 30 },
+   "desc": "Our grandfathers' grandfathers were ruled from Parim, and told that it was discovery. Our sons are on its shore, and the quays are the same stone. The captains say that there are songs now about the day the sea was crossed the other way.",
+   "options": [{ "name": "For the old claims.", "ai": 100, "effects": ["add_war_support = 0.05"] }]
+  },
+  {
+   "id": 30, "title": "The Dead Do Not Stay Down", "picture": "zol_rising", "requires": ["zin_zol_rising"], "to": "the ruling Aenor realm and every country at war with Zol, once each", "hist": "Goldfield 1755",
+   "seen": "zin_story_seen_lastwar_30",
+   "runner": { "if": ["has_global_flag = zin_zol_rising"], "to": [{ "who": [{ "or": ["zin_aenor_is_realm = yes", "has_war_with = {{tag:Zol}}"] }, "NOT = { zin_is_zol = yes }"], "once": true }] },
+   "desc": "Our soldiers broke their ranks. In the morning the same ranks stood again, in the same order, with the same wounds. The captains of the watch say that it is not the dead who are afraid.",
+   "options": [{ "name": "Burn them.", "ai": 100, "effects": ["add_war_support = 0.03"] }]
+  },
+  {
+   "id": 40, "title": "The Passes Burn", "picture": "mirolon_passes", "picture_wanted": "passes_burning", "to": "every Middle Lands and Dead Lands country, and Aenor", "hist": "Highsun 1755",
+   "runner": { "if": ["any_state = { zin_is_site_mirolon_passes = yes controller = { zin_is_volgan = yes } }"], "to": [{ "who": [{ "or": ["has_country_flag = zin_region_middle_lands", "has_country_flag = zin_region_dead_lands"] }, "NOT = { zin_is_volgan = yes }"] }] },
+   "desc": [
+    { "key": "aenor", "if": ["zin_aenor_is_realm = yes"], "text": "Mirolon's watchtowers on the passes are burning. For twenty years Mirolon told Parim that this day would come, and for twenty years Parim found the warning inconvenient. The Marshal asks what the Lost Cause is for, if not for this." },
+    { "text": "Mirolon's watchtowers on the passes are burning. For twenty years Mirolon told the north that this day would come, and for twenty years the north found the warning inconvenient." }
+   ],
+   "options": [
+    { "name": "Mirolon was right.", "ai": 100, "effects": [] },
+    { "name": "Send the Lost Cause south.", "if": ["zin_aenor_is_realm = yes"], "ai": { "free": 20, "mods": [{ "factor": 0, "if": ["has_global_flag = zin_aurevan_crowned"] }, { "add": 30, "if": ["zin_aenor_ruled_by_captains = yes"] }] }, "tip": "A thousand sets of arms go to Mirolon.",
+      "effects": ["add_political_power = -50", "send_equipment = { equipment = zin_arms_equipment amount = 1000 target = {{tag:Mirolon}} }"] }
+   ]
+  },
+  {
+   "id": 41, "title": "Herez Holds the Marches", "picture": "dead_lands_storm", "to": "Herez", "hist": "Mistfall 1755",
+   "runner": { "if": ["has_global_flag = zin_volgan_marches", "{{tag:Herez}} = { has_war_with = {{tag:Volgan}} }"], "to": "tag:Herez" },
+   "desc": "The southern marches of the Concord face the whole Dominion. Herez's wardens count the fires on the horizon every night, and the arithmetic does not improve with repetition. The ford-keepers have asked for the old orders, the ones that were never rescinded.",
+   "options": [
+    { "name": "Hold every ford.", "ai": 80, "tip": "The marches will dig in for half a year.", "effects": ["add_war_support = 0.1", "add_timed_idea = { idea = zin_lastwar_marches_hold days = 180 }"] },
+    { "name": "Fall back to the Great Lake.", "ai": 20, "effects": [] }
+   ]
+  },
+  {
+   "id": 50, "title": "The False God Gone", "picture": "concord_council", "to": "every Concord dominion", "hist": "Rainwake 1756",
+   "runner": { "if": ["has_global_flag = zin_afrit_abandoned_aenor"], "to": "group:concord", "days": 7 },
+   "desc": "The god who wore Aenor's crown has fled east. The Captains in Parim ask the dominions to hold, and the dominions, who were told for a year and a half that the king was a god, are discovering what they think of the Captains.",
+   "options": [
+    { "name": "Hold with the Captains.", "ai": { "free": 20, "mods": [{ "add": 60, "if": ["check_variable = { zin_concord_loyalty > 39.999 }"] }] }, "effects": ["@call zin_aenor_add_concord_loyalty 10"] },
+    { "name": "Every dominion for itself.", "ai": 20, "tip": "The charters weaken. Below 25 loyalty, a dominion may secede.", "effects": ["@call zin_aenor_add_concord_loyalty -15"] }
+   ]
+  },
+  {
+   "id": 51, "title": "The Faithful Divided", "picture": "houses", "to": "every country with three or more footholds that is not the Worshipdom or its subject", "hist": "Sowing 1756",
+   "runner": { "if": ["has_global_flag = zin_afrit_king_of_east"], "to": [{ "who": ["check_variable = { zin_footholds > 2.999 }", "NOT = { zin_afrit_is_hub = yes }", "NOT = { zin_afrit_rules_here = yes }", "NOT = { AND = { is_subject = yes OVERLORD = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } }"] }], "days": 14 },
+   "desc": "The Houses of the First Light are full of people who never knew whom they served. Some priests have gone east. Most are still feeding the poor, and have asked the court whether the poor are to be told whose bread they are eating.",
+   "options": [
+    { "name": "Close the Houses.", "ai": { "free": 10, "mods": [{ "add": 50, "if": ["has_government = democratic"] }] }, "tip": "The Houses are shut and their stores seized.", "effects": ["zin_afrit_purge_houses = yes"] },
+    { "name": "Keep the hospitals, dismiss the priests.", "ai": 30, "effects": ["@call zin_afrit_add_footholds -1", "add_stability = -0.01"] },
+    { "name": "Leave them be.", "ai": 10, "effects": [] }
+   ]
+  },
+  {
+   "id": 52, "title": "Eastern Banners in the Middle Lands", "picture": "generic_war", "to": "the ruling Aenor realm", "hist": "1756",
+   "runner": { "if": ["any_state = { zin_is_region_middle_lands = yes controller = { has_country_flag = zin_east_coalition_member } }"], "to": "aenor" },
+   "desc": "The eastern host that crossed the rift is in the Middle Lands now. Its banners are the King of the East's, or its own; our scouts cannot tell, and the banners have been taken down from the baggage so that nobody has to say.",
+   "options": [{ "name": "Fight them at the Wall.", "ai": 100, "tip": "The AI will weigh the Great Wall for half a year.", "effects": ["@flag zin_lastwar_hold_wall days=180", "add_war_support = 0.03"] }]
+  },
+  {
+   "id": 60, "title": "Parim Under Western Banners", "picture": "western_crossing", "requires": ["zin_western_crossing"], "to": "the ruling Aenor realm (now at its fallback seat)", "hist": "Sowing 1756",
+   "runner": { "if": ["has_global_flag = zin_west_parim_taken"], "to": "aenor" },
+   "desc": "The Captains' Regency rules from [ROOT.Capital.GetName]. Parim's people watch the westerners in the streets and count the days until the dead or the south arrive, which they agree will be sooner than the westerners think.",
+   "options": [{ "name": "We will take it back.", "ai": 100, "effects": ["add_war_support = 0.05"] }]
+  },
+  {
+   "id": 61, "title": "Crushed Between Two Darks", "picture": "generic_war", "to": "every Middle Lands country at war with both Zol and Volgan", "hist": "1756",
+   "runner": { "if": ["has_global_flag = zin_volgan_zol_clash"], "to": [{ "who": ["has_country_flag = zin_region_middle_lands", "has_war_with = {{tag:Zol}}", "has_war_with = {{tag:Volgan}}"] }], "set": ["@call zin_world_add_gathering_dark 1"] },
+   "desc": "Between the dead from the north and the hosts from the south there is nowhere left to stand. The two darks have fought each other and the field is theirs; the villages in the middle are not on anyone's map any longer.",
+   "options": [{ "name": "Hold on.", "ai": 100, "effects": ["add_war_support = 0.05", "add_stability = -0.05"] }]
+  },
+  {
+   "id": 62, "title": "Stranded Beside the Conquered", "picture": "generic_war", "to": "every country with stranded armies", "hist": "Ironfrost 1757",
+   "runner": { "if": ["has_global_flag = zin_west_evacuated"], "to": [{ "who": [{ "or": ["has_country_flag = zin_west_stranded", { "and": ["has_country_flag = zin_region_east_lands", "has_country_flag = zin_east_coalition_member", "has_war = yes"] }] }] }], "days": 30 },
+   "desc": "Our soldiers who missed the ships are camped beside the Aenorans they fought a season ago. Both are fighting the dead now, and the quartermasters have stopped counting whose bread is whose.",
+   "options": [
+    { "name": "They are our men still.", "ai": 60, "effects": ["add_political_power = -25", "add_war_support = 0.03"] },
+    { "name": "They chose their road.", "ai": 40, "effects": [] }
+   ]
+  },
+  {
+   "id": 70, "title": "Beside Former Foes", "picture": "dragon_return", "requires": ["zin_eindil_returned"], "to": "every coalition member that fought an Aenor realm in the last year", "hist": "Rainwake 1757",
+   "runner": { "if": ["has_global_flag = zin_eindil_returned"], "to": [{ "who": ["check_variable = { zin_eindil_regard > 24.999 }", "NOT = { zin_aenor_is_realm = yes }", "NOT = { zin_eindil_is_host = yes }"] }], "days": 30 },
+   "desc": "Our captains share a fire with Aenorans they fought last year. Nobody speaks of it. The older men have found that a man will pass the salt to anyone who has stood on the same line as he has.",
+   "options": [{ "name": "For now, we are one army.", "ai": 100, "tip": "Aenor's realms in the coalition will think better of us.",
+    "effects": ["army_experience = 10", "every_country = { limit = { zin_aenor_is_realm = yes check_variable = { zin_eindil_regard > 24.999 } } ROOT = { add_opinion_modifier = { target = PREV modifier = zin_lastwar_beside_former_foes } } }"] }]
+  },
+  {
+   "id": 71, "title": "Two Darks, One Field", "picture": "dragon_return", "requires": ["zin_eindil_returned"], "to": "every coalition member", "hist": "Rainwake 1757",
+   "runner": { "if": ["has_global_flag = zin_black_compact", "NOT = { has_global_flag = zin_black_compact_ended }"], "to": [{ "who": ["check_variable = { zin_eindil_regard > 24.999 }"] }], "set": ["@call zin_world_add_gathering_dark 2"] },
+   "desc": "The dead and the Dominion no longer fight each other. They fight us. The scouts who have crossed the line between them say that the two hosts keep their camps a bowshot apart and do not look at one another.",
+   "options": [{ "name": "Then we fight both.", "ai": 100, "effects": ["add_war_support = 0.05"] }]
+  },
+  {
+   "id": 72, "title": "Where Is Golbran?", "picture": "dragon_return", "requires": ["zin_eindil_returned"], "to": "the Host", "hist": "Goldfield 1757",
+   "runner": { "if": ["has_global_flag = zin_varner_dead"], "to": "host", "days": 30 },
+   "desc": "Nobody has seen the wizard's small companion since the wards fell. Alleria's scouts found no body, and they looked, as they put it, in all the places where a body would be. The Host has stopped saying that he is dead and has not yet begun to say that he lives.",
+   "options": [{ "name": "Keep looking.", "ai": 100, "effects": [] }]
+  },
+  {
+   "id": 73, "title": "Lorien on the Field", "picture": "vast_shadow", "requires": ["zin_zol_manifested"], "to": "the Host and every coalition member", "hist": "Fallowing 1757",
+   "runner": { "if": ["has_global_flag = zin_lorien_rides", "has_global_flag = zin_zol_manifested"], "to": ["host", { "who": ["check_variable = { zin_eindil_regard > 24.999 }", "NOT = { zin_eindil_is_host = yes }"] }], "days": 7 },
+   "desc": "Elves in white and gold, and things older than elves, came onto the field. They did not come to restore any crown. They came because an Old God's victory would end the freedom of every living people, and they said so, plainly, to the first captain who asked.",
+   "options": [{ "name": "They came.", "ai": 100, "effects": ["add_war_support = 0.05"] }]
+  },
+  {
+   "id": 80, "title": "A Field Full of Dead", "picture": "generic_war", "to": "every Middle Lands country and every coalition member", "hist": "Fallowing 1757",
+   "runner": { "if": ["has_global_flag = zin_zol_withdrawn"], "to": [{ "who": [{ "or": ["has_country_flag = zin_region_middle_lands", "check_variable = { zin_eindil_regard > 24.999 }"] }] }], "days": 14 },
+   "desc": "The dead of the north have lost their hold or gone home. The Dominion's hosts are scattered. The living count who is left, and find that the count is a shorter list than they had hoped, and that the field is wider than any list.",
+   "options": [
+    { "name": "Bury them all, ours and theirs.", "ai": 70, "effects": ["add_political_power = -25", "add_stability = 0.03"] },
+    { "name": "Rebuild the walls first.", "ai": 30, "tip": "A stone fort will rise in the capital's city.", "effects": ["capital_scope = { add_building_construction = { type = bunker level = 1 instant_build = yes province = { all_provinces = yes limit_to_victory_point > 0 } } }"] }
+   ]
+  },
+  {
+   "id": 90, "title": "The King of the East Marches West", "news": true, "picture": "eastern_court", "requires": ["zin_afrit_abandoned_aenor"], "to": "news: every country", "hist": "Ironfrost 1758",
+   "runner": { "if": ["has_global_flag = zin_afrit_returned"], "to": "news", "days": 7 },
+   "desc": "[zin_loc_deliverer] has come back from the East with a new host. He demands that the exhausted kingdoms recognise him as ruler of the East and the Middle Lands. His envoys carry the old temple seals, and they ask the courts they pass through to remember who fed them.",
+   "options": [
+    { "name": "Never.", "ai": 100, "if": ["check_variable = { zin_eindil_regard > 24.999 }"], "effects": [] },
+    { "name": "So be it.", "ai": 100, "if": [{ "and": ["is_subject = yes", "OVERLORD = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } }"] }], "effects": [] },
+    { "name": "Watch.", "ai": 100, "if": ["NOT = { check_variable = { zin_eindil_regard > 24.999 } }", "NOT = { AND = { is_subject = yes OVERLORD = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } }"], "effects": [] }
+   ]
+  },
+  {
+   "id": 91, "title": "The Claim of All Erdae", "picture": "eastern_court", "requires": ["zin_afrit_abandoned_aenor"], "to": "every great power that is not the Worshipdom or its subject", "hist": "1758",
+   "runner": { "if": ["has_global_flag = zin_afrit_claims_erdae"], "to": [{ "who": ["is_major = yes", "NOT = { zin_afrit_is_hub = yes }", "NOT = { zin_afrit_rules_here = yes }", "NOT = { AND = { is_subject = yes OVERLORD = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } }"] }], "days": 14 },
+   "desc": "Envoys from Parim demand that our court recognise [zin_loc_deliverer] as king over all Erdae. They stand in the hall in the grey cloaks of the Houses, and they ask for the answer in writing, so that it may be read out in the east.",
+   "options": [
+    { "name": "Never.", "ai": 90, "tip": "He will not forget it, and neither will we.", "effects": ["every_country = { limit = { zin_afrit_rules_here = yes } ROOT = { add_opinion_modifier = { target = PREV modifier = zin_lastwar_refused_the_claim } } }", "add_war_support = 0.05"] },
+    { "name": "Send no answer.", "ai": 10, "effects": [] },
+    { "name": "Recognise him.", "if": ["check_variable = { zin_footholds > 3.999 }"], "ai": { "free": 5, "mods": [{ "factor": 0, "if": ["zin_rules_is_historical = yes"] }] }, "tip": "The King of the East will count us a friend.",
+      "effects": ["every_country = { limit = { zin_afrit_rules_here = yes } ROOT = { add_opinion_modifier = { target = PREV modifier = zin_lastwar_recognised_the_claim } } }", "@call zin_world_add_gathering_dark 1"] }
+   ]
+  },
+  {
+   "id": 92, "title": "Opposition Is Punished", "picture": "generic_war", "to": "every Concord dominion; every Middle Lands country that holds a state under Afrit's side", "hist": "1758",
+   "runner": { "if": ["has_global_flag = zin_afrit_claims_erdae"], "to": [{ "who": [{ "or": ["zin_aenor_is_concord_dominion = yes", { "and": ["has_country_flag = zin_region_middle_lands", "any_owned_state = { controller = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } }"] }] }] }], "days": 30 },
+   "desc": "In Parim the old council has resumed its work. Those who spoke against the false god have been taken from their houses at night, and the lists are posted on the doors of the Houses so that no one may say that they were not told.",
+   "options": [{ "name": "Endure.", "ai": 100, "tip": "Resistance rises in the states the King of the East holds.", "effects": ["add_stability = -0.03", "every_owned_state = { limit = { controller = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } } } add_resistance = 5 }"] }]
+  },
+  {
+   "id": 110, "title": "The False God Is Dead", "picture": "houses", "to": "every Concord dominion and every Light country", "hist": "1759",
+   "runner": { "if": ["has_global_flag = zin_afrit_dead"], "to": [{ "who": [{ "or": ["zin_aenor_is_concord_dominion = yes", "has_government = democratic"] }] }], "days": 7 },
+   "desc": "[zin_loc_deliverer] is dead. His temples are full of people who loved a god that was never what they thought, and who do not yet know what to do with their hands. The bread is still being given out at the doors.",
+   "options": [
+    { "name": "Let the people mourn what they believed.", "ai": 60, "effects": ["add_stability = 0.02"] },
+    { "name": "Tear down his images.", "ai": 40, "effects": [{ "if": ["check_variable = { zin_footholds > 0.999 }"], "then": ["zin_afrit_purge_houses = yes"] }, "add_stability = -0.02", "add_war_support = 0.02"] }
+   ]
+  },
+  {
+   "id": 111, "title": "The Worshipdom Without Its God", "picture": "hermitage", "to": "the Worshipdom", "hist": "1759",
+   "runner": { "if": ["has_global_flag = zin_afrit_dead"], "to": "tag:Worshipdom", "days": 7 },
+   "desc": "The hermitage is quiet. Ilvane keeps the doors open for the pilgrims who still come, and answers what questions can be answered. In the Zilin Hills the bells are rung at the old hours, and nobody has decided what they are ringing for.",
+   "options": [{ "name": "Keep the doors open.", "ai": 100, "effects": ["add_stability = 0.03"] }]
+  },
+  {
+   "id": 112, "title": "Peace With the Living", "picture": "generic_peace", "to": "every AI country on Afrit's side", "hist": "1759",
+   "runner": { "if": ["has_global_flag = zin_afrit_dead"], "to": [{ "who": ["is_ai = yes", "has_war = yes", { "or": ["zin_afrit_is_hub = yes", "zin_afrit_rules_here = yes", { "and": ["is_subject = yes", "OVERLORD = { OR = { zin_afrit_is_hub = yes zin_afrit_rules_here = yes } }"] }] }] }] },
+   "desc": "The war that brought us here has no master now. The heralds on both sides have been told to ask whether anyone remembers what it was for, and the heralds on our side have found nobody who can say.",
+   "options": [{ "name": "Enough.", "ai": 100, "tip": "We make white peace with every enemy.", "effects": ["every_enemy_country = { white_peace = ROOT }"] }]
+  },
+  {
+   "id": 113, "title": "Envoys to the Coronation", "picture": "generic_court", "to": "every coalition member; every great power not at war with the Host; the Free Dominions", "hist": "Thaw 1760",
+   "fired_by": "zin_eindil.130 (3 days)", "named": true,
+   "desc": "Parim invites every crown to the coronation of Eindil, son of Ein. Banners that faced each other a year ago will stand in one hall, and the heralds have been told to seat the guests by the date of their last war, oldest enmity nearest the door.",
+   "options": [
+    { "name": "Send our envoy.", "ai": { "free": 25, "mods": [{ "add": 45, "if": ["check_variable = { zin_eindil_regard > -0.001 }"] }] }, "tip": "Aenor will think well of us.", "effects": ["zin_aenor_event_for_parim = yes", "event_target:zin_aenor_parim_realm = { add_opinion_modifier = { target = ROOT modifier = zin_lastwar_coronation_envoy } }", "@call zin_eindil_add_regard 5"] },
+    { "name": "Send a letter.", "ai": 25, "effects": [] },
+    { "name": "Stay away.", "ai": 5, "tip": "The slight will be noted.", "effects": ["zin_aenor_event_for_parim = yes", "event_target:zin_aenor_parim_realm = { add_opinion_modifier = { target = ROOT modifier = zin_lastwar_coronation_snub } }"] }
+   ]
+  }
+ ]
+}

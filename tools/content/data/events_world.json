@@ -1,0 +1,609 @@
+{
+ "kind": "meta",
+ "note": "Shared data of the story-event module (modules/events_world.mjs): recipient groups, AI presets, Eindil's pulse, the lastwar and lore extras, the secret rules and the names expected from other slices. Notation: lib/ew_script.mjs.",
+ "aiPresets": {
+  "friend": [
+   {
+    "factor": 2,
+    "if": [
+     "check_variable = { zin_eindil_regard > 24.999 }"
+    ]
+   }
+  ],
+  "hinder": [
+   {
+    "factor": 3,
+    "if": [
+     "check_variable = { zin_footholds > 2.999 }"
+    ]
+   },
+   {
+    "factor": 2,
+    "if": [
+     "has_government = fascism",
+     "has_idea = zin_stance_zin_dom_warlord"
+    ]
+   },
+   {
+    "factor": 0,
+    "if": [
+     {
+      "or": [
+       "has_idea = zin_stance_zin_light_wardens",
+       "has_idea = zin_stance_zin_light_sanctuary"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "groups": {
+  "all_countries": {
+   "limit": [
+    "always = yes"
+   ]
+  },
+  "middle_lands": {
+   "limit": [
+    "has_country_flag = zin_region_middle_lands"
+   ]
+  },
+  "north_lands": {
+   "limit": [
+    "has_country_flag = zin_region_north_lands"
+   ]
+  },
+  "cold_lands": {
+   "limit": [
+    "has_country_flag = zin_region_cold_lands"
+   ]
+  },
+  "west_lands": {
+   "limit": [
+    "has_country_flag = zin_region_west_lands"
+   ]
+  },
+  "tritons_islands": {
+   "limit": [
+    "has_country_flag = zin_region_tritons_islands"
+   ]
+  },
+  "dark_lands": {
+   "limit": [
+    "has_country_flag = zin_region_dark_lands"
+   ]
+  },
+  "magical_lands": {
+   "limit": [
+    "has_country_flag = zin_region_magical_lands"
+   ]
+  },
+  "dead_lands": {
+   "limit": [
+    "has_country_flag = zin_region_dead_lands"
+   ]
+  },
+  "east_lands": {
+   "limit": [
+    "has_country_flag = zin_region_east_lands"
+   ]
+  },
+  "islands_of_the_south": {
+   "limit": [
+    "has_country_flag = zin_region_islands_of_the_south"
+   ]
+  },
+  "lands_of_the_sun": {
+   "limit": [
+    "has_country_flag = zin_region_lands_of_the_sun"
+   ]
+  },
+  "concord": {
+   "limit": [
+    "zin_aenor_is_concord_dominion = yes"
+   ]
+  },
+  "great_powers": {
+   "limit": [
+    "is_major = yes"
+   ]
+  },
+  "afrit_hub": {
+   "limit": [
+    "zin_afrit_is_hub = yes"
+   ]
+  },
+  "dragon_keeper": {
+   "limit": [
+    "zin_world_is_dragon_keeper = yes"
+   ]
+  },
+  "three_oaths_owner": {
+   "limit": [
+    "any_owned_state = { zin_is_site_three_oaths = yes }"
+   ]
+  },
+  "confederation_members": {
+   "limit": [
+    "has_country_flag = zin_eindil_confed_member"
+   ]
+  },
+  "ford_belligerents": {
+   "limit": [
+    {
+     "names": [
+      "Gunwaith",
+      "Girdon"
+     ]
+    }
+   ]
+  },
+  "landing_owner": {
+   "limit": [
+    "any_owned_state = { zin_is_site_yeldenne_landing = yes }"
+   ]
+  },
+  "mpe_owner": {
+   "limit": [
+    "any_owned_state = { zin_is_site_yeldenne = yes }"
+   ]
+  },
+  "ambush_audience": {
+   "limit": [
+    {
+     "or": [
+      "any_owned_state = { zin_is_site_yeldenne_landing = yes }",
+      "any_owned_state = { zin_is_site_yeldenne = yes }",
+      "zin_afrit_is_hub = yes"
+     ]
+    }
+   ]
+  },
+  "ilsabet_employer": {
+   "limit": [
+    "has_character = zin_ilsabet"
+   ]
+  },
+  "alleria_employer": {
+   "limit": [
+    "has_character = zin_alleria"
+   ]
+  },
+  "warned": {
+   "limit": [
+    {
+     "or": [
+      "is_major = yes",
+      "has_country_flag = zin_region_middle_lands",
+      "check_variable = { zin_eindil_regard > 24.999 }"
+     ]
+    },
+    "NOT = { zin_is_volgan = yes }",
+    "NOT = { zin_is_zol = yes }",
+    "NOT = { zin_afrit_is_hub = yes }",
+    "NOT = { zin_afrit_rules_here = yes }",
+    "NOT = { zin_is_lerendor = yes }",
+    "NOT = { AND = { is_subject = yes OVERLORD = { zin_is_volgan = yes } } }"
+   ]
+  },
+  "friends": {
+   "limit": [
+    "check_variable = { zin_eindil_regard > 24.999 }",
+    "NOT = { zin_eindil_is_host = yes }"
+   ]
+  },
+  "ride_with_heir": {
+   "limit": [
+    "is_ai = no",
+    "NOT = { zin_eindil_is_host = yes }",
+    "check_variable = { zin_eindil_regard > 49.999 }"
+   ]
+  },
+  "coalition_invitees": {
+   "limit": [
+    {
+     "or": [
+      "check_variable = { zin_eindil_regard > 24.999 }",
+      "has_country_flag = zin_west_stranded",
+      "has_country_flag = zin_east_companies_with_eindil"
+     ]
+    },
+    "NOT = { zin_eindil_is_host = yes }",
+    "NOT = { zin_is_volgan = yes }",
+    "NOT = { zin_is_zol = yes }",
+    "NOT = { zin_afrit_is_hub = yes }",
+    "NOT = { zin_afrit_rules_here = yes }"
+   ]
+  },
+  "lost_cause_leader": {
+   "limit": [
+    "zin_lost_cause_exists = yes",
+    "is_faction_leader = yes",
+    "NOT = { zin_eindil_is_host = yes }"
+   ]
+  },
+  "coronation_guests": {
+   "limit": [
+    {
+     "or": [
+      "check_variable = { zin_eindil_regard > 24.999 }",
+      {
+       "and": [
+        "is_major = yes",
+        "NOT = { has_war_with = var:global.zin_eindil_host }"
+       ]
+      },
+      "zin_aenor_free_dominions_exist = yes"
+     ]
+    },
+    "NOT = { zin_aenor_is_realm = yes }",
+    "NOT = { zin_afrit_rules_here = yes }"
+   ]
+  },
+  "border_belligerents": {
+   "limit": [
+    {
+     "names": [
+      "Goldoroth",
+      "Dondor"
+     ]
+    }
+   ]
+  },
+  "road_rivals": {
+   "limit": [
+    {
+     "names": [
+      "Noris",
+      "Stabilo"
+     ]
+    }
+   ]
+  },
+  "temple_courts": {
+   "limit": [
+    "check_variable = { zin_footholds > 0.999 }",
+    "NOT = { zin_afrit_is_hub = yes }",
+    "NOT = { zin_is_volgan = yes }",
+    "NOT = { zin_is_zol = yes }",
+    "NOT = { AND = { is_subject = yes OVERLORD = { OR = { zin_is_volgan = yes zin_is_zol = yes } } } }"
+   ]
+  }
+ },
+ "contractFlags": [
+  "zin_eindil_awake",
+  "zin_eindil_war_king",
+  "zin_golden_king_dead",
+  "zin_aurevan_crowned",
+  "zin_eindil_named",
+  "zin_horos_dead",
+  "zin_glo_with_eindil",
+  "zin_afrit_revealed",
+  "zin_war_of_last_crowns",
+  "zin_western_crossing",
+  "zin_leren_withdrawal",
+  "zin_volgan_marches",
+  "zin_zol_rising",
+  "zin_afrit_king_of_east",
+  "zin_eindil_returned",
+  "zin_varner_dead",
+  "zin_volgan_body_destroyed",
+  "zin_zol_manifested",
+  "zin_zol_withdrawn",
+  "zin_lorien_dead",
+  "zin_afrit_dead",
+  "zin_golbran_dead",
+  "zin_eindil_crowned",
+  "zin_ending_lost_cause",
+  "zin_ending_children_of_volgan",
+  "zin_ending_ashen_throne"
+ ],
+ "eindil": {
+  "effects": {
+   "zin_eindil_after_host_raised": {
+    "note": "After the Host of Eindil exists (the .92 options, or the journey stage 9 runner): invitations to ride with the heir (humans), the coalition and the Lost Cause. Once only. Scope: any.",
+    "do": [
+     {
+      "if": [
+       "NOT = { has_global_flag = zin_eindil_invites_sent }"
+      ],
+      "then": [
+       "@gflag zin_eindil_invites_sent",
+       "@fire zin_eindil.93 days=1 to=group:ride_with_heir",
+       "@fire zin_eindil.94 days=7 to=group:coalition_invitees",
+       "@fire zin_eindil.95 days=7 to=group:lost_cause_leader"
+      ]
+     }
+    ]
+   }
+  }
+ },
+ "lastwar": {
+  "prelude": [
+   "set_temp_variable = { zin_lastwar_fronts = 0 }",
+   {
+    "if": [
+     "has_global_flag = zin_western_crossing"
+    ],
+    "then": [
+     "add_to_temp_variable = { zin_lastwar_fronts = 1 }"
+    ]
+   },
+   {
+    "if": [
+     "has_global_flag = zin_leren_withdrawal"
+    ],
+    "then": [
+     "add_to_temp_variable = { zin_lastwar_fronts = 1 }"
+    ]
+   },
+   {
+    "if": [
+     "has_global_flag = zin_zol_rising"
+    ],
+    "then": [
+     "add_to_temp_variable = { zin_lastwar_fronts = 1 }"
+    ]
+   },
+   {
+    "if": [
+     "has_global_flag = zin_volgan_marches"
+    ],
+    "then": [
+     "add_to_temp_variable = { zin_lastwar_fronts = 1 }"
+    ]
+   },
+   {
+    "if": [
+     "has_global_flag = zin_eastern_invasion"
+    ],
+    "then": [
+     "add_to_temp_variable = { zin_lastwar_fronts = 1 }"
+    ]
+   }
+  ],
+  "ideas": {
+   "zin_lastwar_marches_hold": {
+    "picture": "pass_fort",
+    "name": "The Marches Hold",
+    "desc": "Every ford has a watch and every watch has orders: nothing crosses the marches that the wardens have not seen first.",
+    "modifier": {
+     "army_core_defence_factor": 0.1,
+     "dig_in_speed_factor": 0.2
+    }
+   }
+  },
+  "opinions": {
+   "zin_lastwar_beside_former_foes": {
+    "value": 20,
+    "decay": 0.5,
+    "name": "Shared a Fire"
+   },
+   "zin_lastwar_refused_the_claim": {
+    "value": -50,
+    "decay": 1,
+    "name": "Refused the Claim"
+   },
+   "zin_lastwar_recognised_the_claim": {
+    "value": 25,
+    "decay": 1,
+    "name": "Recognised the Claim"
+   },
+   "zin_lastwar_coronation_envoy": {
+    "value": 20,
+    "decay": 1,
+    "name": "Sent an Envoy to the Coronation"
+   },
+   "zin_lastwar_coronation_snub": {
+    "value": -10,
+    "decay": 1,
+    "name": "Stayed Away from the Coronation"
+   }
+  },
+  "strategies": [
+   {
+    "id": "zin_lastwar_hold_west",
+    "states": [
+     "zin_is_site_west_landing_isle = yes",
+     "zin_is_site_west_landing_shore = yes"
+    ],
+    "value": 80
+   },
+   {
+    "id": "zin_lastwar_hold_north",
+    "states": [
+     "zin_is_site_strait_south = yes",
+     "zin_is_site_ocean_of_zol_coast = yes"
+    ],
+    "value": 80
+   },
+   {
+    "id": "zin_lastwar_hold_south",
+    "states": [
+     "zin_is_site_aenor_marches = yes",
+     "zin_is_site_mirolon_passes = yes"
+    ],
+    "value": 80
+   },
+   {
+    "id": "zin_lastwar_hold_parim",
+    "states": [
+     "zin_is_site_parim = yes",
+     "zin_is_site_aenor_court_lands = yes"
+    ],
+    "value": 80
+   },
+   {
+    "id": "zin_lastwar_hold_wall",
+    "states": [
+     "zin_is_site_great_wall = yes"
+    ],
+    "value": 80
+   }
+  ]
+ },
+ "lore": {
+  "ideas": {
+   "zin_lore_jubilee_feast": {
+    "picture": "feast_table",
+    "name": "The Jubilee Feast",
+    "desc": "The tables were long, the toasts were longer, and for half a year the people of Parim will say that they remember what peace tasted like.",
+    "modifier": {
+     "stability_factor": 0.05
+    }
+   },
+   "zin_lore_old_report": {
+    "picture": "scroll_sealed",
+    "name": "The Old Report",
+    "desc": "The Marshal has read the Mirolonese report from cover to cover, and has put marks in the margin where the court laughed.",
+    "modifier": {
+     "army_intel_factor": 0.05
+    }
+   }
+  },
+  "opinions": {
+   "zin_opinion_lore_goodwill": {
+    "value": 10,
+    "decay": 1,
+    "name": "Goodwill"
+   },
+   "zin_opinion_lore_regard": {
+    "value": 5,
+    "decay": 1,
+    "name": "Regard"
+   },
+   "zin_opinion_lore_slight": {
+    "value": -5,
+    "decay": 1,
+    "name": "A Slight"
+   },
+   "zin_opinion_lore_provoked": {
+    "value": -10,
+    "decay": 1,
+    "name": "Provoked"
+   }
+  }
+ },
+ "secret": {
+  "hubEvents": [
+   "zin_lore.2",
+   "zin_lore.220",
+   "zin_lore.221"
+  ],
+  "preNamingEindil": [
+   10,
+   11,
+   12,
+   20,
+   21,
+   22,
+   23,
+   30,
+   31,
+   32,
+   33,
+   34,
+   35,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   50,
+   51,
+   150,
+   151,
+   152,
+   153,
+   154,
+   155,
+   156,
+   157,
+   158,
+   159,
+   160
+  ],
+  "forbiddenPhrases": [
+   {
+    "re": "Volgan (is dead|died|was slain|has died|survives|survived|lives on)",
+    "why": "closes the question of Volgan's spirit (C4)"
+   },
+   {
+    "re": "\\b(left|right) arm\\b",
+    "why": "says which arm Eindil lost (C4)"
+   },
+   {
+    "re": "Necklace (will|would|gives|grants|drains|binds|curses|feeds)",
+    "why": "says what the Necklace does (C4)"
+   },
+   {
+    "re": "Zol('s)? (face|eyes|horns|wings|claws|head|mouth)",
+    "why": "describes the form Zol takes (C4)"
+   },
+   {
+    "re": "Merovan (died|was killed|fled|follows|stayed|stays)",
+    "why": "closes Merovan's fate (C4)"
+   },
+   {
+    "re": "Dardan (lies|stands|is in|is on)",
+    "why": "places Dardan (C4)"
+   },
+   {
+    "re": "(Gala|Lorien).{0,20}(kin|cousins) of the Sunhot",
+    "why": "says what Gala is to the Sunhot elves (C4)"
+   }
+  ]
+ },
+ "externals": {
+  "note": "Names this module uses and another slice defines (docs/design/stage2/events_world.md lists the owner of each). events: fired by this module; effects: called with @call.",
+  "events": [
+   "zin_afrit.10",
+   "zin_afrit.33",
+   "zin_glo.5",
+   "zin_aenor.160",
+   "zin_leren.45",
+   "zin_reign.83",
+   "zin_dominion.16",
+   "zin_world.45",
+   "zin_ending.80"
+  ],
+  "effects": [
+   "zin_aenor_add_camp_support",
+   "zin_aenor_add_concord_loyalty",
+   "zin_aenor_add_council_influence",
+   "zin_aenor_add_court_corruption",
+   "zin_aenor_add_lost_cause",
+   "zin_afrit_add_footholds",
+   "zin_afrit_add_veil",
+   "zin_cold_reward_ice_host",
+   "zin_eindil_add_delay",
+   "zin_eindil_add_regard",
+   "zin_eindil_add_renown",
+   "zin_eindil_hold_guest",
+   "zin_eindil_set_host",
+   "zin_eindil_wound",
+   "zin_elves_add_wall_grievance",
+   "zin_glo_add_power",
+   "zin_leren_add_strait_standing",
+   "zin_mirolon_add_passes",
+   "zin_mirolon_add_proof",
+   "zin_sun_add_gala_counsel",
+   "zin_sun_spend_clarity",
+   "zin_volgan_add_dominion_strength",
+   "zin_war_grant_dragons",
+   "zin_west_add_grudge",
+   "zin_west_add_unity",
+   "zin_west_end_ford_war",
+   "zin_west_on_war_king",
+   "zin_world_add_gathering_dark"
+  ],
+  "requested": {
+   "zin_gala_word_from_the_north": "Gala country flag set by the Gala tree focus \"Word From the North\"; zin_eindil.163 does not fire while it is set",
+   "zin_eindil_name_named": "localisation key \"Eindil\" read by set_character_name in zin_eindil.52 (journey mechanic text file)",
+   "zin_name_aurevan": "localisation key of the public name, nested in zin_lore.2 (terms module)",
+   "zin_eindil_let_land": "global flag set by the hub's zin_afrit.33 option \"Let them land\" (the journey engine and zin_eindil.71 read it)"
+  }
+ }
+}

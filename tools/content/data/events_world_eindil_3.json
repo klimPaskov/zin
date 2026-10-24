@@ -1,0 +1,1834 @@
+{
+ "kind": "events",
+ "namespace": "zin_eindil",
+ "note": "docs/specs/06_events/02_eindil_journey.md stage 8 (the warnings, 80 to 88, 164 to 169) and the Host's own beats of stages 9 to 12 (90 to 140) of 03_war_of_the_last_crowns.md. One-time world effects of a multi-recipient event sit in the pulse (zin_eindil_pulse) or in a global-flag guard in the event's immediate block, never in an option every recipient can choose.",
+ "events": [
+  {
+   "id": 80,
+   "title": "A Stranger on Selen's Shore",
+   "picture": "generic_sea",
+   "named": true,
+   "to": "the stage 8 host (Selen)",
+   "hist": "Deepwinter 1754",
+   "fired_by": "zin_eindil_advance_stage (stage 8)",
+   "desc": "A man with a green light at his breast came ashore at night, in the cove below the old signal tower, and walked up to the first watch-fire as if he had been expected. He asked for the rangers, not the governor. The watch-captain has locked him in the tower, and does not know whether the lock is to keep him in or to keep something out.",
+   "options": [
+    {
+     "name": "Send for Alleria.",
+     "ai": 100,
+     "effects": [
+      "@fire zin_eindil.81 days=7",
+      "@fire zin_aenor.160 to=aenor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 81,
+   "title": "Alleria's Watch",
+   "picture": "generic_court",
+   "named": true,
+   "to": "Selen, or the substitute host",
+   "hist": "Ironfrost 1754",
+   "fired_by": "zin_eindil.80",
+   "desc": "Alleria of Selen has heard him out for three nights by the signal fire. She believes enough to hide him, and not enough to stop asking questions. The governor is away at Parim, and the tower is quiet; the watch has been told that the prisoner is a smuggler.",
+   "options": [
+    {
+     "name": "Shelter him in secret.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "The rangers of Selen will keep him, and the court will hear of it.",
+     "effects": [
+      "zin_eindil_set_host = yes",
+      "@call zin_eindil_add_regard 25",
+      "@fire zin_eindil.164 days=30",
+      "@fire zin_eindil.82 days=30 to=aenor",
+      "@fire zin_eindil.83 days=60 to=group:warned",
+      "@fire zin_eindil.167 days=180 to=aenor"
+     ]
+    },
+    {
+     "name": "Hand him to the court.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "He will be chained in Parim, and will not stay there.",
+     "effects": [
+      "@call zin_eindil_add_delay 60",
+      "@call zin_eindil_add_regard -50",
+      "@fire zin_eindil.85 to=aenor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 164,
+   "title": "Alleria's Questions",
+   "picture": "generic_court",
+   "named": true,
+   "to": "Selen",
+   "hist": "Thaw 1754",
+   "fired_by": "zin_eindil.81",
+   "desc": "Alleria asks him for a proof that only a son of Ein could give. He has none but the crystal at his breast, the sword at his hip and what the guardian of the castle told him. She says that is more than most kings have, and less than a court will want.",
+   "options": [
+    {
+     "name": "The crystal is proof enough.",
+     "ai": 60,
+     "effects": [
+      "@call zin_eindil_add_renown 5"
+     ]
+    },
+    {
+     "name": "Send to Parim's archives for the old rolls.",
+     "ai": 40,
+     "effects": [
+      "@fire zin_eindil.165 to=group:ilsabet_employer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 165,
+   "title": "Master Ilsabet's Rolls",
+   "picture": "generic_court",
+   "named": true,
+   "to": "the country that employs Master Ilsabet (Aenor at the start)",
+   "hist": "Rainwake 1754",
+   "fired_by": "zin_eindil.164 (B), or 60 days after .81 while Aenor has left the scholars free",
+   "trigger": [
+    "has_character = zin_ilsabet"
+   ],
+   "desc": "Master Ilsabet Vothrim of the University of Parim has found, in the oldest rolls of the First Men, a line that ends with no burial: a son of Ein, entered in the year of his birth and in no year after. The rolls prove nothing about any other son, and Master Ilsabet has been careful to say so, twice, in writing.",
+   "options": [
+    {
+     "name": "Send the rolls to Selen.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       {
+        "add": 50,
+        "if": [
+         {
+          "or": [
+           "has_government = democratic",
+           "has_government = neutrality"
+          ]
+         },
+         "NOT = { zin_afrit_rules_here = yes }"
+        ]
+       },
+       {
+        "factor": 0,
+        "if": [
+         "zin_afrit_rules_here = yes"
+        ]
+       }
+      ]
+     },
+     "tip": "Master Ilsabet goes with the rolls.",
+     "effects": [
+      "retire_character = zin_ilsabet",
+      {
+       "scope": "var:global.zin_eindil_host",
+       "do": [
+        "recruit_character = zin_ilsabet"
+       ]
+      },
+      "@call zin_eindil_add_renown 10",
+      "@call zin_afrit_add_veil -5"
+     ]
+    },
+    {
+     "name": "Lock the rolls away.",
+     "hist": true,
+     "ai": 60,
+     "effects": []
+    },
+    {
+     "name": "Burn them.",
+     "if": [
+      "zin_afrit_rules_here = yes"
+     ],
+     "ai": 30,
+     "tip": "The ink goes up in a single clean flame.",
+     "effects": [
+      "@call zin_afrit_add_veil 3",
+      "@call zin_eindil_add_renown -5",
+      "@call zin_world_add_gathering_dark 1"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 82,
+   "title": "The Impostor",
+   "picture": "generic_court",
+   "named": true,
+   "checkpoint": 10,
+   "to": "the Aenor realm's government",
+   "hist": "Thaw 1754",
+   "fired_by": "zin_eindil.81",
+   "desc": [
+    {
+     "key": "king",
+     "if": [
+      "zin_aenor_king_alive = yes"
+     ],
+     "text": "A foreign stranger in the dominions claims the blood of Aen and speaks against the King's counsellors. The Golden Court finds it amusing for an afternoon. The chancery asks what the crown wishes to do."
+    },
+    {
+     "key": "deliverer",
+     "if": [
+      "has_global_flag = zin_aurevan_crowned"
+     ],
+     "text": "A foreign stranger in the dominions claims the blood of Aen, and says that the king in Parim is not what the temples say. The chancery has the report in three hands. It asks what the crown wishes to do."
+    },
+    {
+     "text": "A foreign stranger in the dominions claims the blood of Aen and speaks against those who hold the seals. The chancery has the report in three hands, and nobody who could answer it wants to be the one who does."
+    }
+   ],
+   "options": [
+    {
+     "name": "Leave it to the chancery.",
+     "ai": 0,
+     "effects": []
+    },
+    {
+     "name": "Denounce and hunt the impostor.",
+     "hist": [
+      {
+       "or": [
+        "has_global_flag = zin_aurevan_crowned",
+        "zin_aenor_ruled_by_court = yes",
+        "zin_aenor_ruled_by_faithful = yes"
+       ]
+      }
+     ],
+     "ai": 40,
+     "tip": "Parim's men will ask questions in every town where he might be.",
+     "effects": [
+      "add_political_power = -50",
+      "@call zin_aenor_add_camp_support camp=host value=-20",
+      "add_stability = 0.03",
+      "@flag zin_aenor_eindil_denounced",
+      "@gflag zin_afrit_impostor_denounced",
+      "zin_eindil_start_hunt = yes",
+      "@fire zin_reign.83"
+     ]
+    },
+    {
+     "name": "Let him speak.",
+     "if": [
+      {
+       "or": [
+        "NOT = { has_global_flag = zin_aurevan_crowned }",
+        "is_ai = no"
+       ]
+      }
+     ],
+     "hist": [
+      {
+       "or": [
+        "zin_aenor_ruled_by_dominions = yes"
+       ]
+      }
+     ],
+     "ai": 15,
+     "tip": "The dominions will hear the warning at once.",
+     "effects": [
+      "@call zin_eindil_add_renown 15",
+      "@call zin_aenor_add_camp_support camp=host value=10",
+      "@call zin_aenor_add_lost_cause 5",
+      "@fire zin_eindil.83 to=group:concord"
+     ]
+    },
+    {
+     "name": "Seize him.",
+     "ai": 20,
+     "tip": "If the host is warned in time, the attempt will cost us.",
+     "effects": [
+      {
+       "random": [
+        [
+         60,
+         [
+          "@fire zin_eindil.85"
+         ]
+        ],
+        [
+         40,
+         [
+          "add_opinion_modifier = { target = var:global.zin_eindil_host modifier = zin_eindil_seize_failed }",
+          {
+           "scope": "var:global.zin_eindil_host",
+           "do": [
+            "add_opinion_modifier = { target = ROOT modifier = zin_eindil_seize_failed }"
+           ]
+          }
+         ]
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Shelter him.",
+     "if": [
+      {
+       "or": [
+        "has_government = democratic",
+        "has_government = neutrality"
+       ]
+      },
+      "NOT = { zin_afrit_rules_here = yes }"
+     ],
+     "hist": [
+      {
+       "or": [
+        "zin_aenor_ruled_by_captains = yes",
+        "zin_aenor_ruled_by_host = yes"
+       ]
+      }
+     ],
+     "ai": 10,
+     "tip": "No hunt will be run while this crown shelters him.",
+     "effects": [
+      "@call zin_aenor_add_camp_support camp=host value=25",
+      "@call zin_eindil_add_regard 25",
+      "@flag zin_eindil_crown_shelters"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 83,
+   "title": "Warnings of the Heir",
+   "picture": "southern_warning",
+   "named": true,
+   "to": "every great power, every Middle Lands country and every country with regard 25 or more; never Volgan, his subjects, Zol, the Worshipdom or Lerendor",
+   "hist": "Rainwake 1754",
+   "fired_by": "zin_eindil.81 (60 days) and zin_eindil.82 (Let him speak)",
+   "desc": [
+    {
+     "key": "concord",
+     "if": [
+      "zin_aenor_is_concord_dominion = yes"
+     ],
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say. He asks the dominions to keep their companies ready, not to rise against the crown."
+    },
+    {
+     "key": "mirolon",
+     "if": [
+      "tag:Mirolon"
+     ],
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say. He says what Mirolon has said for twenty years, and he says it with a sword at his hip."
+    },
+    {
+     "key": "cold",
+     "if": [
+      {
+       "names": [
+        "Coldor",
+        "Isengard"
+       ]
+      }
+     ],
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say. The man from the ice is a man of Aen's line, he says, and we should hear it from our own hunters before we hear it from a stranger."
+    },
+    {
+     "key": "elves",
+     "if": [
+      "has_country_flag = zin_region_magical_lands",
+      "has_country_flag = zin_people_elves"
+     ],
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say. He asks nothing of the elves but that they guard their own woods."
+    },
+    {
+     "key": "east",
+     "if": [
+      "has_country_flag = zin_region_east_lands"
+     ],
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say. He says eastern banners will cross the rift sea, and he says it as one who has seen them."
+    },
+    {
+     "key": "west",
+     "if": [
+      "has_country_flag = zin_region_west_lands",
+      "check_variable = { zin_eindil_regard > 24.999 }"
+     ],
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say. The war-king of the Grey Ford has a name now, and the name is a warning."
+    },
+    {
+     "key": "north",
+     "if": [
+      "has_country_flag = zin_region_north_lands"
+     ],
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say. He says the dead will come through the islands and the straits."
+    },
+    {
+     "text": "A man who calls himself Eindil, son of Ein, warns every court: armies will come from the west and from the east, the North will abandon its oaths, Volgan is rebuilding his hosts, and the dead are stirring in the north. He says the king in Parim is not what the temples say."
+    }
+   ],
+   "immediate": [
+    {
+     "if": [
+      "NOT = { has_global_flag = zin_eindil_83_done }"
+     ],
+     "then": [
+      "@gflag zin_eindil_83_done",
+      "@fire zin_leren.45 to=tag:Lerendor",
+      {
+       "each": "group:all_countries",
+       "limit": [
+        "has_country_flag = zin_eindil_port_betrayed"
+       ],
+       "do": [
+        "@call zin_eindil_add_regard -30"
+       ]
+      }
+     ]
+    }
+   ],
+   "options": [
+    {
+     "name": "Heed the warning.",
+     "hist": [
+      {
+       "names": [
+        "Selen",
+        "Mirolon",
+        "Kingson",
+        "Hiloron",
+        "Magical Forest",
+        "Gala Elves"
+       ]
+      }
+     ],
+     "ai": {
+      "free": 10,
+      "mods": [
+       {
+        "add": 20,
+        "if": [
+         "check_variable = { global.zin_eindil_renown > 39.999 }"
+        ]
+       },
+       {
+        "add": 20,
+        "if": [
+         "check_variable = { global.zin_eindil_renown > 69.999 }"
+        ]
+       }
+      ]
+     },
+     "tip": "The warning will be remembered, and the crown in Parim will not forgive it.",
+     "effects": [
+      "add_timed_idea = { idea = zin_eindil_warning_heeded days = 730 }",
+      "@flag zin_eindil_heeded",
+      "@call zin_eindil_add_regard 15",
+      "zin_aenor_event_for_parim = yes",
+      "event_target:zin_aenor_parim_realm = { add_opinion_modifier = { target = ROOT modifier = zin_eindil_heeded_the_impostor } }",
+      {
+       "if": [
+        "has_country_flag = zin_region_middle_lands"
+       ],
+       "then": [
+        {
+         "if": [
+          "has_global_flag = zin_afrit_impostor_denounced"
+         ],
+         "then": [
+          "@call zin_afrit_add_veil -4"
+         ],
+         "else": [
+          "@call zin_afrit_add_veil -8"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Dismiss it.",
+     "hist": [
+      {
+       "not": [
+        {
+         "names": [
+          "Selen",
+          "Mirolon",
+          "Kingson",
+          "Hiloron",
+          "Magical Forest",
+          "Gala Elves"
+         ]
+        },
+        "zin_aenor_is_realm = yes"
+       ]
+      }
+     ],
+     "ai": 70,
+     "effects": []
+    },
+    {
+     "name": "Denounce him.",
+     "hist": [
+      "zin_aenor_is_realm = yes"
+     ],
+     "ai": 20,
+     "tip": "The crown in Parim will not forget who stood with it.",
+     "effects": [
+      "zin_aenor_event_for_parim = yes",
+      "event_target:zin_aenor_parim_realm = { add_opinion_modifier = { target = ROOT modifier = zin_eindil_denounced_the_impostor } }",
+      "@call zin_eindil_add_regard -20"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 84,
+   "title": "The Hunt for the Impostor",
+   "picture": "generic_wilds",
+   "named": true,
+   "to": "the host",
+   "hist": "every 90 days in 1754 and 1755 while the hunt runs",
+   "fired_by": "zin_eindil_stage8_runner (the hunt clock, every 90 days)",
+   "trigger": [
+    "has_global_flag = zin_eindil_hunt_active",
+    "zin_eindil_is_host = yes",
+    "NOT = { any_country = { has_country_flag = zin_eindil_crown_shelters } }"
+   ],
+   "desc": [
+    {
+     "key": "found",
+     "if": [
+      "has_country_flag = zin_eindil_shelter_found"
+     ],
+     "text": "Someone talked. Parim's men are at the end of the lane that leads to the house where the stranger sleeps, and they have brought a priest of the Houses to read the warrant. The ranger on watch can have him over the back wall in the time it takes to read it."
+    },
+    {
+     "text": "Parim's men are asking questions in our towns, with a priest of the Houses at their shoulder and silver in their purses. Someone will talk. The rangers have moved the stranger twice this month, and each time a day before the questions arrived."
+    }
+   ],
+   "immediate": [
+    "@clr zin_eindil_shelter_found",
+    {
+     "if": [
+      "check_variable = { zin_footholds > 2.999 }"
+     ],
+     "then": [
+      {
+       "random": [
+        [
+         25,
+         [
+          "@flag zin_eindil_shelter_found"
+         ]
+        ],
+        [
+         75,
+         []
+        ]
+       ]
+      }
+     ],
+     "else": [
+      {
+       "random": [
+        [
+         15,
+         [
+          "@flag zin_eindil_shelter_found"
+         ]
+        ],
+        [
+         85,
+         []
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "options": [
+    {
+     "name": "Hide him in the hills.",
+     "hist": true,
+     "ai": 80,
+     "if": [
+      "has_country_flag = zin_eindil_shelter_found"
+     ],
+     "tip": "It will cost us dear to buy the silence of three villages.",
+     "effects": [
+      "add_political_power = -50",
+      "@clr zin_eindil_shelter_found"
+     ]
+    },
+    {
+     "name": "Send him to the elves.",
+     "ai": 20,
+     "if": [
+      "has_country_flag = zin_eindil_shelter_found"
+     ],
+     "tip": "He will go to the woods of the Magical Lands.",
+     "effects": [
+      "@clr zin_eindil_shelter_found",
+      "zin_eindil_clear_host = yes",
+      "zin_eindil_to_the_forest = yes"
+     ]
+    },
+    {
+     "name": "Keep him hidden.",
+     "hist": true,
+     "ai": 100,
+     "if": [
+      "NOT = { has_country_flag = zin_eindil_shelter_found }"
+     ],
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 85,
+   "title": "The Impostor in Chains",
+   "picture": "generic_court",
+   "named": true,
+   "to": "the Aenor realm's government",
+   "hist": "divergence",
+   "fired_by": "zin_eindil.81 (handed over), zin_eindil.82 (seized)",
+   "desc": "The impostor is in the cells under the palace, in a room with one window and no light. He has not asked for food, or a priest, or an advocate. He has asked the jailer whether he can read, and when the jailer said he could not, the prisoner offered to teach him.",
+   "options": [
+    {
+     "name": "Guard him well.",
+     "ai": 100,
+     "effects": [
+      "@fire zin_eindil.166 days=60"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 166,
+   "title": "An Empty Cell",
+   "picture": "generic_court",
+   "named": true,
+   "to": "the Aenor realm's government",
+   "hist": "divergence",
+   "fired_by": "zin_eindil.85",
+   "desc": "The cell is empty. The door is locked from the outside, the guards swear that they never slept, and the bars of the one window are bent outward as if by a slow hand. The prisoner has gone into the hills toward the elves, and no dog will follow the trail.",
+   "immediate": [
+    "zin_eindil_to_the_forest = yes"
+   ],
+   "options": [
+    {
+     "name": "Hang the guards.",
+     "ai": 40,
+     "effects": [
+      "add_stability = 0.01",
+      "@call zin_eindil_add_regard -10"
+     ]
+    },
+    {
+     "name": "Say nothing.",
+     "ai": 60,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 167,
+   "title": "Frontier Companies Listen",
+   "picture": "lost_cause_triumph",
+   "named": true,
+   "to": "the Aenor realm's government",
+   "hist": "Highsun 1754",
+   "fired_by": "zin_eindil.81",
+   "trigger": [
+    "check_variable = { zin_aenor_lost_cause > 29.999 }"
+   ],
+   "desc": "Captains of the Lost Cause's frontier companies have been seen at the stranger's fires, with their cloaks turned inside out so that nobody can say to which company they belong. Parim has noticed that the cloaks are a sign, and has not yet decided what it is a sign of.",
+   "options": [
+    {
+     "name": "Recall them to Parim.",
+     "hist": true,
+     "ai": 70,
+     "effects": [
+      "@call zin_aenor_add_lost_cause -5"
+     ]
+    },
+    {
+     "name": "Let them listen.",
+     "ai": 30,
+     "effects": [
+      "@call zin_aenor_add_lost_cause 5",
+      "@call zin_eindil_add_regard 5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 86,
+   "title": "The Bearer in the Forest",
+   "picture": "generic_wilds",
+   "named": true,
+   "to": "the Magical Forest",
+   "hist": "Rainwake 1755",
+   "fired_by": "zin_eindil.2 (when the war begins), zin_eindil.84, zin_eindil.166",
+   "desc": "The rangers of Selen bring a man with a green light into our woods. They ask nothing, and they leave before the houses can ask them anything. The houses must now decide whether the woods shelter him, and whether the Refusal has a clause for a guest who carries a piece of a New God.",
+   "options": [
+    {
+     "name": "Shelter the bearer.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "The wizard of the Unbinding will hear of it.",
+     "effects": [
+      "zin_eindil_set_host = yes",
+      "@call zin_eindil_add_regard 20",
+      {
+       "if": [
+        "has_country_flag = zin_magical_forest_wizard_found"
+       ],
+       "then": [
+        "@fire zin_eindil.87 days=30"
+       ],
+       "else": [
+        "@fire zin_eindil.87 days=90"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Send him on.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "tip": "Nolorim, at the high passes, will be asked instead.",
+     "effects": [
+      "@call zin_eindil_add_delay 60",
+      "zin_eindil_clear_host = yes",
+      "@fire zin_eindil.86 days=3 to=tag:Nolorim"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 87,
+   "title": "Varner and Golbran",
+   "picture": "generic_wilds",
+   "named": true,
+   "to": "the Magical Forest",
+   "hist": "Goldfield 1755",
+   "fired_by": "zin_eindil.86",
+   "desc": "The wizard of the Unbinding walks out of the trees with a small purple companion at his heel. He has heard of a green light in the woods, and has not come to be introduced. The companion looks at the bearer for a long time and says nothing, which Varner says is a compliment.",
+   "immediate": [
+    "@gflag zin_eindil_golbran_joined"
+   ],
+   "options": [
+    {
+     "name": "The wizard is welcome.",
+     "ai": 100,
+     "tip": "Varner and Golbran will ride with the bearer.",
+     "effects": [
+      "recruit_character = zin_varner",
+      "recruit_character = zin_golbran",
+      "@call zin_eindil_add_renown 5",
+      "@fire zin_eindil.168 days=30",
+      "@fire zin_eindil.88 days=60 to=group:dragon_keeper"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 168,
+   "title": "The Wizard and the Bearer",
+   "picture": "generic_wilds",
+   "named": true,
+   "to": "the Magical Forest",
+   "hist": "Harvest 1755",
+   "fired_by": "zin_eindil.87",
+   "desc": "Varner looks at Glo for a long time and says only that it is lighter than it should be, and heavier. Golbran says a single word in a tongue nobody in the forest knows. The word is not translated, and the elves who heard it agree afterwards that it was kindly meant.",
+   "options": [
+    {
+     "name": "Let them talk.",
+     "ai": 100,
+     "tip": "The wizard's counsel will quicken our study of wards.",
+     "effects": [
+      "add_tech_bonus = { name = zin_eindil.168.a bonus = 0.3 uses = 1 category = zin_cat_wards }"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 88,
+   "title": "A Dragon's Pact",
+   "picture": "generic_wilds",
+   "named": true,
+   "checkpoint": 19,
+   "to": "the Keeper of Dragon Mountain",
+   "hist": "Mistfall 1755 to Goldfield 1757",
+   "fired_by": "zin_eindil.87 (60 days), repeating every 180 days",
+   "desc": "The bearer asks the Keeper of the Roosts for a dragon, not as a servant, but as an ally who chooses to fly with him. Dragons are not lent. The elders say so, and then look at each other, and then look at the green light.",
+   "immediate": [
+    "@gflag zin_eindil_pact_asked"
+   ],
+   "options": [
+    {
+     "name": "The dragons are not ours to lend.",
+     "ai": {
+      "free": 10,
+      "mods": [
+       "hinder"
+      ]
+     },
+     "effects": [
+      "@fire zin_eindil.88 days=180 to=group:dragon_keeper"
+     ]
+    },
+    {
+     "name": "Entrust a dragon to the bearer.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       {
+        "add": 100,
+        "if": [
+         "has_country_flag = zin_magical_forest_bearer_dragon_ready"
+        ]
+       }
+      ]
+     },
+     "tip": "A dragon of the high roosts will fly with him as a free ally.",
+     "effects": [
+      "zin_eindil_make_dragon_pact = yes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 169,
+   "title": "The Dragon Chooses",
+   "picture": "generic_wilds",
+   "named": true,
+   "to": "the Keeper of Dragon Mountain",
+   "hist": "Mistfall 1755 onward",
+   "fired_by": "zin_eindil_make_dragon_pact (7 days)",
+   "desc": "A dragon from the high roosts lands in the clearing and bows its head to the man with the green light. Then it waits, as one waits for a friend who has not yet decided to leave. Nobody ordered it to come. The roost wardens agree that if they had, it would not have.",
+   "options": [
+    {
+     "name": "Let it choose.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 90,
+   "title": "On Dragon's Wings",
+   "news": true,
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "news: every country",
+   "hist": "1 Thaw 1757",
+   "fired_by": "zin_eindil_advance_stage (stage 9; it sets zin_eindil_returned first)",
+   "desc": [
+    {
+     "key": "quiet",
+     "if": [
+      "has_global_flag = zin_eindil_quiet_return"
+     ],
+     "text": "The heir came home on a dragon. There was no battle to win, only a crown in the wrong hands and a kingdom that has not yet decided to notice. Farmers on the northern roads stood in the fields and watched him pass, and went on ploughing."
+    },
+    {
+     "text": "A dragon came down over the northern front with three riders: a man with a green light at his breast, an old wizard, and a small purple companion. The man leapt down and struck the earth with a blue sword. The dead around him fell and did not rise."
+    }
+   ],
+   "options": [
+    {
+     "name": "The heir has come back.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_is_volgan = yes }",
+      "NOT = { zin_is_zol = yes }"
+     ],
+     "effects": []
+    },
+    {
+     "name": "Who is this?",
+     "ai": 100,
+     "if": [
+      {
+       "or": [
+        "zin_is_volgan = yes",
+        "zin_is_zol = yes"
+       ]
+      }
+     ],
+     "effects": []
+    }
+   ],
+   "immediate": [
+    {
+     "if": [
+      "NOT = { has_global_flag = zin_eindil_90_done }"
+     ],
+     "then": [
+      "@gflag zin_eindil_90_done",
+      "@fire zin_eindil.91 days=1 to=host",
+      "@fire zin_eindil.91 days=1 to=tag:Zol",
+      "zin_eindil_pick_host_candidate = yes",
+      "@fire zin_eindil.92 days=1 to=var:zin_eindil_host_candidate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 91,
+   "title": "The Wave of Glo",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "the Host and Zol",
+   "hist": "1 Thaw 1757, one day after the return",
+   "fired_by": "zin_eindil.90 (one day after the return)",
+   "desc": [
+    {
+     "key": "zol",
+     "if": [
+      "zin_is_zol = yes"
+     ],
+     "text": "A wave of green light ran across the ground from the point of a blue sword. A whole front of the dead was unmade in a breath, and the ground where it had stood is clean. The Will of Zol marks the place."
+    },
+    {
+     "text": "A wave of green light ran across the ground from the point of the blue sword. A whole front of the dead was unmade, and the ground where they had stood is clean. Wherever the green light touched, the grass stands up again."
+    }
+   ],
+   "options": [
+    {
+     "name": "Let the wave run.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_is_zol = yes }"
+     ],
+     "tip": "Glo's first wave will be loosed on the battlefield.",
+     "effects": [
+      "zin_glo_wave_battlefield = yes",
+      "@call zin_eindil_add_renown 10"
+     ]
+    },
+    {
+     "name": "The dead are unmade.",
+     "ai": 100,
+     "if": [
+      "zin_is_zol = yes"
+     ],
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 92,
+   "title": "Raise the Host of Eindil",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "Selen (the sworn country); if Selen no longer exists, the sworn country",
+   "hist": "Thaw 1757",
+   "fired_by": "zin_eindil.90 (one day after the return)",
+   "desc": "Selen swore to raise the heir's host. He is here, and he has brought a wizard, a dragon and a sword that cuts the dead. Alleria stands beside him in the square and says that an oath is not a thing that can be taken back, and that the square has heard it said.",
+   "options": [
+    {
+     "name": "Raise the Host.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "Selen takes the name of the Host of Eindil, and its claims on Aenor's lost lands.",
+     "effects": [
+      "set_temp_variable = { zin_arg_choice = 1 }",
+      "zin_eindil_raise_host = yes",
+      "zin_eindil_after_host_raised = yes"
+     ]
+    },
+    {
+     "name": "Stand beside him, remain ourselves.",
+     "ai": 30,
+     "tip": "Selen keeps its own name and its own claims, and Eindil leads its armies.",
+     "effects": [
+      "set_temp_variable = { zin_arg_choice = 2 }",
+      "zin_eindil_raise_host = yes",
+      "zin_eindil_after_host_raised = yes"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 93,
+   "title": "Ride with the Heir",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "human players whose regard is 50 or more and whose country is not the Host",
+   "hist": "Thaw 1757",
+   "fired_by": "zin_eindil_after_host_raised",
+   "trigger": [
+    "is_ai = no",
+    "NOT = { zin_eindil_is_host = yes }",
+    "check_variable = { zin_eindil_regard > 49.999 }"
+   ],
+   "desc": "Will you ride with the heir? The Host of Eindil has no capital but his camp, and no treasury but the loyalty of those who have fed him in his wanderings. He has not asked for your crown. He has said that those who remember what you did for him are welcome at his fire.",
+   "options": [
+    {
+     "name": "Keep our country.",
+     "ai": 100,
+     "effects": []
+    },
+    {
+     "name": "Switch to the Host.",
+     "ai": 0,
+     "tip": "You will take up the cause of the Host of Eindil.",
+     "effects": [
+      "var:global.zin_eindil_host = { change_tag_from = ROOT }"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 94,
+   "title": "The Coalition of the Living",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "every country with regard 25 or more and every country with stranded armies",
+   "hist": "Thaw 1757",
+   "fired_by": "zin_eindil_after_host_raised",
+   "desc": "The heir asks every crown that fights the dead and the south to stand together. He asks no crown to kneel, and no kingdom to give up its own. Those who have armies stranded among Aenorans have been told that their men will be fed at his fire, and sent home when the dark is beaten.",
+   "options": [
+    {
+     "name": "Stand together.",
+     "hist": [
+      "check_variable = { zin_eindil_regard > 24.999 }"
+     ],
+     "ai": {
+      "free": 30,
+      "mods": [
+       {
+        "add": 40,
+        "if": [
+         {
+          "or": [
+           "has_country_flag = zin_west_stranded",
+           "has_country_flag = zin_east_companies_with_eindil"
+          ]
+         }
+        ]
+       },
+       {
+        "add": 15,
+        "if": [
+         "has_global_flag = zin_west_remembers_war_king"
+        ]
+       },
+       {
+        "add": 20,
+        "if": [
+         "check_variable = { zin_eindil_regard > 49.999 }"
+        ]
+       }
+      ]
+     },
+     "tip": "We will fight under his fire, and not under his crown.",
+     "effects": [
+      "zin_eindil_join_coalition = yes"
+     ]
+    },
+    {
+     "name": "We fight our own war.",
+     "hist": [
+      "NOT = { check_variable = { zin_eindil_regard > 24.999 } }"
+     ],
+     "ai": 40,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 95,
+   "title": "Give the Lost Cause to the Heir",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "the leader of the Lost Cause, if it has become a faction",
+   "hist": "Thaw 1757",
+   "fired_by": "zin_eindil_after_host_raised",
+   "trigger": [
+    "zin_lost_cause_exists = yes",
+    "is_faction_leader = yes",
+    "NOT = { zin_eindil_is_host = yes }"
+   ],
+   "desc": "The league the Golden King founded for his own glory asks to serve the heir. Its frontier captains were already at his fires, and its treasury was spent long ago on a triumph. What is left is a banner, a charter and a habit of marching.",
+   "options": [
+    {
+     "name": "Give it to him.",
+     "hist": [
+      "has_global_flag = zin_golden_king_dead"
+     ],
+     "ai": 70,
+     "tip": "The league will follow the heir.",
+     "effects": [
+      "@gflag zin_lost_cause_with_eindil",
+      "var:global.zin_eindil_host = { set_faction_leader = yes }"
+     ]
+    },
+    {
+     "name": "The league is the crown's.",
+     "hist": [
+      "NOT = { has_global_flag = zin_golden_king_dead }"
+     ],
+     "ai": 30,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 96,
+   "title": "Volgan at the Southern Front",
+   "picture": "generic_war",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "the Host, Volgan and the friends of the Host",
+   "hist": "1 Highsun 1757",
+   "fired_by": "zin_eindil_battles (the host)",
+   "desc": [
+    {
+     "key": "host",
+     "if": [
+      "zin_eindil_is_host = yes"
+     ],
+     "text": "Volgan himself stood on the southern front. “You swear that men are united,” he said, “and in a hundred years their sons come to me asking help against their brothers.” “Because these men have chosen to stand together,” said Eindil. “Then I will bury them together.” His blast threw the heir to the ground."
+    },
+    {
+     "key": "volgan",
+     "if": [
+      "zin_is_volgan = yes"
+     ],
+     "text": "The Great Spirit stood on the southern front, and the host of men before him did not break. “You swear that men are united,” he said to their champion, “and in a hundred years their sons come to me asking help against their brothers.” The champion said that these men had chosen to stand together. Then the Great Spirit answered him, and the champion lay on the ground."
+    },
+    {
+     "text": "Word has come from the southern front: Volgan himself stood against the heir's host, and spoke, and the heir answered, and Volgan struck. The heir lies on the field. His friends are carrying him back through the line."
+    }
+   ],
+   "options": [
+    {
+     "name": "Carry him from the field.",
+     "ai": 100,
+     "if": [
+      "zin_eindil_is_host = yes"
+     ],
+     "tip": "The heir is down, and the Host will remember how long the field was held.",
+     "effects": [
+      {
+       "if": [
+        "NOT = { check_variable = { global.zin_glo_state = 1 } }"
+       ],
+       "then": [
+        "zin_eindil_lose_heir = yes"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Press the attack.",
+     "ai": 100,
+     "if": [
+      "zin_is_volgan = yes"
+     ],
+     "effects": []
+    },
+    {
+     "name": "Hold the line.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_eindil_is_host = yes }",
+      "NOT = { zin_is_volgan = yes }"
+     ],
+     "effects": []
+    }
+   ],
+   "immediate": [
+    {
+     "if": [
+      "NOT = { has_global_flag = zin_eindil_96_done }",
+      "zin_eindil_is_host = yes"
+     ],
+     "then": [
+      "@gflag zin_eindil_96_done",
+      "@trait zin_eindil_struck_down days=60",
+      "add_timed_idea = { idea = zin_eindil_heir_has_fallen days = 60 }",
+      "@fire zin_dominion.16 to=tag:Volgan",
+      "@fire zin_eindil.96 to=tag:Volgan",
+      "@fire zin_eindil.96 to=group:friends",
+      {
+       "if": [
+        "zin_eindil_zol_in_field = yes",
+        "NOT = { has_global_flag = zin_varner_dead }"
+       ],
+       "then": [
+        "@gflag zin_varner_dead",
+        "zin_world_raise_varners_wards = yes",
+        "@flag zin_golbran_spent",
+        "retire_character = zin_varner",
+        "retire_character = zin_golbran",
+        "@fire zin_eindil.97",
+        "@fire zin_eindil.97 to=tag:Magical_Forest",
+        "@fire zin_eindil.97 to=group:friends"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 97,
+   "title": "Varner's Last Wards",
+   "picture": "generic_war",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "the Host, the Magical Forest and the friends of the Host",
+   "hist": "1 Highsun 1757",
+   "fired_by": "zin_eindil.2 (the pulse, battle 1b)",
+   "desc": "The dead rolled down from the north while the heir lay on the field, and Varner stood in their way. He lifted curses, opened roads for the living, and held until there was nothing left of him to hold with. His small companion poured his own magic into the wards and fell beside him. Those who saw it thought that both were dead.",
+   "options": [
+    {
+     "name": "The wizard is gone.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 98,
+   "title": "The Gathering of the New Gods",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "the Host",
+   "hist": "1 Goldfield 1757",
+   "fired_by": "zin_eindil_battles (battle 2)",
+   "desc": "The heir did not wake. His friends say that his spirit went somewhere else. Through the green light at his breast the New Gods gathered about him, and he could not see them all clearly. Last came one whose voice he knew from the crystal: Glernaen, the New God of Power and Wisdom. “What will you do if you rise?” “I will return to them.” “Then carry what we can give. You may yet fall, and we cannot promise to raise you again.”",
+   "options": [
+    {
+     "name": "He rises.",
+     "ai": 100,
+     "tip": "The New Gods give what they can, once.",
+     "effects": [
+      "@gflag zin_eindil_restored",
+      "zin_world_grant_new_gods_gift = yes",
+      "zin_eindil = { remove_unit_leader_trait = zin_eindil_struck_down }",
+      "@trait zin_eindil_blessed_of_the_new_gods",
+      "@call zin_glo_add_power 100",
+      "@fire zin_world.45"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 99,
+   "title": "The Heir Does Not Rise",
+   "news": true,
+   "picture": "generic_war",
+   "named": true,
+   "to": "news: every country",
+   "hist": "divergence",
+   "fired_by": "zin_eindil.96 (the Host, when Glo is not with Eindil)",
+   "desc": "The heir did not wake. In this telling of the age the war goes on without him. His friends keep the blue sword by his bed and the green light burns on his breast, but it does not answer, and there are few left who believe that it will.",
+   "options": [
+    {
+     "name": "The age turns without him.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "title": "The Blue Sword Through Volgan",
+   "picture": "generic_war",
+   "named": true,
+   "requires": [
+    "zin_eindil_restored"
+   ],
+   "to": "the Host and Volgan",
+   "hist": "1 Harvest 1757",
+   "fired_by": "zin_eindil.2 (the pulse, battle 3)",
+   "desc": [
+    {
+     "key": "volgan",
+     "if": [
+      "zin_is_volgan = yes"
+     ],
+     "text": "The restored champion broke the southern host's engines and its captains, and then met the Great Spirit again. This time the blue sword went through him. The body that Volgan had made for himself broke apart, and a storm of magic tore through the southern host from end to end."
+    },
+    {
+     "text": "The restored heir broke the southern host's engines and its captains, and then met the Great Spirit again. This time the blue sword went through him. Volgan's body broke apart, and a storm of magic tore through the southern host from end to end."
+    }
+   ],
+   "options": [
+    {
+     "name": "His body is broken.",
+     "ai": 100,
+     "if": [
+      "zin_eindil_is_host = yes"
+     ],
+     "tip": "Volgan's manifested body is destroyed.",
+     "effects": [
+      {
+       "scope": "tag:Volgan",
+       "do": [
+        "zin_volgan_destroy_body = yes"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "What remains, no one can say.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_eindil_is_host = yes }"
+     ],
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 101,
+   "title": "The Old God Comes Forth",
+   "picture": "vast_shadow",
+   "named": true,
+   "requires": [
+    "zin_zol_manifested"
+   ],
+   "to": "the Host",
+   "hist": "Harvest 1757",
+   "fired_by": "zin_mistake.21, or zin_zol_manifest when Eindil carries no Glo",
+   "desc": "The heir is down, badly wounded. The dead are overrunning the field, and the sword that cut them is in pieces on the ground. Those who carried him out say that his eyes were open and that he was counting something. Nobody asked what.",
+   "options": [
+    {
+     "name": "Hold the field for him.",
+     "ai": 100,
+     "tip": "The heir will lie wounded for a long season.",
+     "effects": [
+      "@call zin_eindil_wound days=120",
+      "add_war_support = -0.05"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "title": "Hailed as King",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "the Host and the coalition",
+   "hist": "Fallowing 1757",
+   "fired_by": "zin_eindil.2 (the pulse, battle 5)",
+   "desc": "When the soldiers helped the heir upright, nobody on that field doubted that he had earned the crown of Aenor. They did not say it. They stood, in the mud, in the ranks of a dozen peoples who had been enemies a year before, and one of them began to clap his spear against his shield.",
+   "options": [
+    {
+     "name": "Hail the king.",
+     "ai": 100,
+     "effects": [
+      "@call zin_eindil_add_regard 10",
+      {
+       "if": [
+        "zin_eindil_is_host = yes"
+       ],
+       "then": [
+        "@call zin_eindil_add_renown 10"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 110,
+   "title": "The Cliff",
+   "picture": "cliff",
+   "named": true,
+   "requires": [
+    "zin_eindil_cast_down"
+   ],
+   "to": "the Host; a private variant to the Worshipdom",
+   "hist": "Thaw 1758",
+   "fired_by": "zin_afrit.61",
+   "desc": [
+    {
+     "key": "hub",
+     "if": [
+      "zin_afrit_is_hub = yes"
+     ],
+     "text": "You took one of your brother's arms with a single stroke, on the cliff road above the gorge. You drove your blade through him and threw him over the edge. You did not look for a body. You told yourself that there would be no need, and you were careful not to ask yourself why you needed to say it."
+    },
+    {
+     "key": "revealed",
+     "if": [
+      "NOT = { zin_afrit_secret_kept = yes }"
+     ],
+     "text": "The brothers met on a cliff road above a gorge. [zin_loc_deliverer] took one of the heir's arms with a single stroke, drove a blade through him and threw him over the edge. He watched him fall and did not look for a body."
+    },
+    {
+     "text": "The brothers met on a cliff road above a gorge. The king in Parim took one of the heir's arms with a single stroke, drove a blade through him and threw him over the edge. He watched him fall and did not look for a body."
+    }
+   ],
+   "options": [
+    {
+     "name": "Hold the line without him.",
+     "ai": 100,
+     "if": [
+      "zin_eindil_is_host = yes"
+     ],
+     "tip": "The heir is gone from the field, and his Host fights on without him.",
+     "effects": [
+      "@gflag zin_eindil_cast_down",
+      "zin_eindil_cliff_effects = yes",
+      {
+       "if": [
+        "zin_aenor_eindil_rules = yes"
+       ],
+       "then": [
+        "zin_aenor_regency_while_king_lost = yes"
+       ]
+      },
+      "@fire zin_eindil.111 days=3 to=group:alleria_employer",
+      "@news zin_eindil.112 days=7"
+     ]
+    },
+    {
+     "name": "It is done.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_eindil_is_host = yes }"
+     ],
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 111,
+   "title": "Below the Cliff",
+   "picture": "cliff",
+   "named": true,
+   "requires": [
+    "zin_eindil_cast_down"
+   ],
+   "to": "the country that employs Alleria (Selen on the historical path)",
+   "hist": "Thaw 1758",
+   "fired_by": "zin_eindil.110",
+   "desc": "Alleria will not believe what the soldiers say. She takes her scouts down the gorge by night, with lanterns shaded and no one told where they are going. The river below the cliff has a bend where it slows, and she says that things that fall are sometimes given back at the bend.",
+   "options": [
+    {
+     "name": "Search the ravine.",
+     "hist": true,
+     "ai": {
+      "free": 70,
+      "mods": [
+       "friend"
+      ]
+     },
+     "tip": "He will be found, and he will take a long time to mend.",
+     "effects": [
+      "@fire zin_eindil.113 days=180 to=host"
+     ]
+    },
+    {
+     "name": "Mourn him.",
+     "ai": 30,
+     "effects": [
+      "@fire zin_eindil.113 days=365 to=host"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 112,
+   "title": "Word of the King's Death",
+   "news": true,
+   "picture": "generic_war",
+   "named": true,
+   "to": "news: every country",
+   "hist": "Thaw 1758",
+   "fired_by": "zin_eindil.110",
+   "desc": "They say the heir of Aen fell from a cliff in the Middle Lands. They say that no man could live through such a fall, and that the brother who threw him has not troubled to deny it. In the taverns of three realms the same sentence is being said, quietly, over the same cups.",
+   "options": [
+    {
+     "name": "The age is darker for it.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 113,
+   "title": "The King Returns from the Dead",
+   "picture": "dragon_return",
+   "named": true,
+   "requires": [
+    "zin_eindil_returned"
+   ],
+   "to": "the Host and the coalition",
+   "hist": "Fallowing 1758",
+   "fired_by": "zin_eindil.111",
+   "desc": "The heir is alive. He has one arm, and a simpler sword, and wounds that would have killed any other man. The green light at his breast is dim but burning. Alleria's scouts carried him out of the gorge on a door, and he has asked, in his first lucid hour, for the date.",
+   "options": [
+    {
+     "name": "The king lives.",
+     "ai": 100,
+     "if": [
+      "zin_eindil_is_host = yes"
+     ],
+     "tip": "The heir takes the field again.",
+     "effects": [
+      "zin_eindil_recover = yes",
+      {
+       "if": [
+        "zin_aenor_eindil_rules = yes"
+       ],
+       "then": [
+        "zin_aenor_restore_hailed_king = yes"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "The king lives.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_eindil_is_host = yes }"
+     ],
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 120,
+   "title": "An Arrow in the Eye",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "Thaw 1759",
+   "fired_by": "zin_afrit.71",
+   "desc": "[zin_loc_deliverer] showed himself to direct the palace's defences. Alleria's arrow took him in the eye. While his protections healed it, Eindil seized his hand, cut off a finger and tore away a ring. The ring was warm, and it did not wish to leave him.",
+   "options": [
+    {
+     "name": "Take the ring.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 121,
+   "title": "The Seals Broken",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "Thaw 1759",
+   "fired_by": "zin_afrit.73",
+   "desc": "Alleria and the palace rebels broke the seals that fed the crown he wore. Eindil turned one of [zin_loc_deliverer]'s own spells against the band on his wrist. Each loss made the false god bleed more easily, and he had not bled in an age.",
+   "options": [
+    {
+     "name": "Press on.",
+     "ai": 100,
+     "effects": [
+      "@fire zin_eindil.122 days=1"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 122,
+   "title": "Into His Own Realm",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "Thaw 1759",
+   "fired_by": "zin_eindil.121",
+   "desc": "[zin_loc_deliverer] opened a passage out of the world with the necklace. Eindil caught its chain and was carried through with him, into a place that was the false god's alone: a hall without a ceiling, lit by a light that came from nowhere, where nothing had ever been allowed to change.",
+   "options": [
+    {
+     "name": "Hold on.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 123,
+   "title": "Golbran's Last Working",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "Thaw 1759",
+   "fired_by": "zin_afrit.74 (needs Golbran with the Host)",
+   "desc": "[zin_loc_deliverer] had the heir on the floor and his blade at his throat. Then a small purple figure, who had followed them through the same passage, climbed onto his back and tore the necklace from his neck. He did it with both hands, and with everything he had left.",
+   "options": [
+    {
+     "name": "Now.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 124,
+   "title": "The Death of a False God",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "Thaw 1759",
+   "fired_by": "zin_afrit.75",
+   "desc": "Without his artifacts [zin_loc_deliverer] was a mortal man of Aen's line. Eindil cut his throat. He died without a miracle, in the hall that he had made so that nothing could happen to him in it.",
+   "options": [
+    {
+     "name": "It is finished.",
+     "ai": 100,
+     "effects": [
+      "@fire zin_eindil.125 days=1"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 125,
+   "title": "Golbran's Gift",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "Thaw 1759",
+   "fired_by": "zin_eindil.124",
+   "desc": "Eindil was dying too. Golbran gave the last of his life and his magic to close his worst wounds, and died beside the two brothers. Where he came from, nobody ever learned, and where he went, nobody in the hall could say.",
+   "options": [
+    {
+     "name": "Remember him.",
+     "ai": 100,
+     "effects": [
+      "@gflag zin_golbran_dead",
+      "retire_character = zin_golbran",
+      "@fire zin_eindil.126 days=1"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 126,
+   "title": "The Necklace",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "Thaw 1759",
+   "fired_by": "zin_eindil.125",
+   "desc": "To find the way back from that place, Eindil put the necklace around his own neck. He came back into the palace carrying the proof of the false king's fall, and an artifact whose price nobody knows.",
+   "options": [
+    {
+     "name": "Carry it out.",
+     "ai": 100,
+     "effects": [
+      "@gflag zin_eindil_wears_necklace"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 127,
+   "title": "The Palace Holds",
+   "picture": "generic_war",
+   "picture_wanted": "palace_battle",
+   "named": true,
+   "to": "the Host",
+   "hist": "divergence",
+   "fired_by": "zin_afrit.76",
+   "desc": "The attempt failed. Eindil escaped wounded through the passages, with the rebels carrying what they could, and the doors of the service stairs closed behind them one after another. In the morning the palace wards were quiet, and the rebels who stayed behind had stopped speaking.",
+   "options": [
+    {
+     "name": "Bind the wounds.",
+     "ai": 100,
+     "tip": "The Host will not stand again for half a year.",
+     "effects": [
+      "add_timed_idea = { idea = zin_eindil_palace_failed days = 180 }",
+      "@call zin_eindil_wound days=120",
+      "zin_eindil_palace_reset = yes",
+      "add_to_variable = { global.zin_eindil_palace_failures = 1 }",
+      {
+       "if": [
+        "check_variable = { global.zin_eindil_palace_failures > 1.999 }"
+       ],
+       "then": [
+        "zin_eindil_lose_heir = yes"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 130,
+   "title": "The Crown Is Offered",
+   "picture": "lost_cause_triumph",
+   "named": true,
+   "to": "the Host and the crowning realm",
+   "hist": "Thaw 1760",
+   "fired_by": "zin_eindil_go_to_parim",
+   "desc": "The captains, the lords of the dominions and the stranded soldiers of half of Erdae ask the heir to take the crown of Aenor. They stood in the ruined hall of Parim to ask it, under the broken windows of the Golden Court, and they asked it of a man with one arm and a dull sword who had not been sure he would be asked.",
+   "options": [
+    {
+     "name": "For them, not for myself.",
+     "ai": 100,
+     "if": [
+      "zin_eindil_is_crowning_realm = yes"
+     ],
+     "tip": "The crown will be set on his head in a week.",
+     "effects": [
+      "zin_aenor_people_choose = yes",
+      "@fire zin_lastwar.113 days=3 to=group:coronation_guests"
+     ]
+    },
+    {
+     "name": "Let the crown be offered.",
+     "ai": 100,
+     "if": [
+      "NOT = { zin_eindil_is_crowning_realm = yes }"
+     ],
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 131,
+   "title": "The Host Comes Home",
+   "picture": "lost_cause_triumph",
+   "named": true,
+   "requires": [
+    "zin_eindil_crowned"
+   ],
+   "to": "the dynamic Host of Eindil, if it exists",
+   "hist": "Thaw 1760",
+   "fired_by": "zin_aenor.400",
+   "desc": "The Host of Eindil has a kingdom now. Its banners go into Aenor's, and the captains of the Host, who were Aenorans all along, take the oath in the great hall of Parim. The company-captains hang the heir's rough banner above the door, beside the old gold one, and nobody objects.",
+   "options": [
+    {
+     "name": "Take the oath.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 132,
+   "title": "The Crown Withheld",
+   "picture": "generic_war",
+   "named": true,
+   "to": "the Host",
+   "hist": "divergence",
+   "fired_by": "zin_eindil_go_to_parim (every 30 days while Parim is held by an enemy)",
+   "desc": "The crown waits in Parim, and Parim is not ours. The captains are ready to swear, and the lords of the dominions are ready to kneel, and between them and the throne lie the walls of a city held by someone who will not open the gate.",
+   "options": [
+    {
+     "name": "Take it back.",
+     "ai": 100,
+     "tip": "The Host claims Parim from the one who holds it.",
+     "effects": [
+      "every_state = { limit = { zin_is_site_parim = yes } controller = { ROOT = { meta_effect = { text = { create_wargoal = { type = take_state_focus target = PREV generator = { [STATE] } } } STATE = \"[?global.zin_site_parim|.0]\" } } } }"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 140,
+   "title": "The Heir Is Lost",
+   "news": true,
+   "picture": "generic_war",
+   "named": true,
+   "to": "news: every country",
+   "hist": "divergence",
+   "fired_by": "zin_eindil_lose_heir",
+   "desc": "The heir is gone. The league he gathered is still in the field, and the dark has not gone home. In the camps there are men who say that he will come again, and men who say that the age has no more kings in it, and the quarrel is the only thing that is moving.",
+   "options": [
+    {
+     "name": "The age goes on.",
+     "ai": 100,
+     "effects": []
+    }
+   ],
+   "immediate": [
+    {
+     "if": [
+      "NOT = { has_global_flag = zin_eindil_140_done }"
+     ],
+     "then": [
+      "@gflag zin_eindil_140_done",
+      {
+       "if": [
+        "zin_eindil_has_host = yes"
+       ],
+       "then": [
+        "@fire zin_ending.80 days=14 to=host"
+       ],
+       "else": [
+        "@fire zin_ending.80 days=14 to=aenor"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

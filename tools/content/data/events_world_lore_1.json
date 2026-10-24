@@ -1,0 +1,1196 @@
+{
+ "kind": "events",
+ "namespace": "zin_lore",
+ "note": "The opening events (zin_lore.1 to .15), the start check (.20), the scheduler (.100) and the regional flavour of memory (.101 to .221) of docs/specs/02_lore/04_fourth_age_history_for_play.md. Windows count days from 1 Thaw 4A 1748; who lists the recipient clauses; every scheduled event repeats its recipient test in its own trigger.",
+ "events": [
+  {
+   "id": 1,
+   "title": "The Year 1748",
+   "picture": "golden_court",
+   "opening": "Aenor",
+   "to": "Aenor (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "For seventeen centuries the Middle Kingdom has known peace. The Golden King is in the nineteenth year of his reign. The Concord's dominions grumble at his taxes, and the Golden Court sells what it likes: a judgeship to the highest bidder, a charter to the next.\n\nThe peace is permanent, the court says. The Deliverer protects the crown, and the temples are full. Volgan is a legend told to children, and the dominions will obey, as they always have.\n\nThe King wants glory and gold, and a triumph for his Lost Cause. The court wants offices. The dominions want lower taxes, and none of them has said so to the King's face.",
+   "options": [
+    {
+     "name": "Long live the Golden King.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "title": "The Year 1748",
+   "picture": "council_chamber",
+   "opening": "Worshipdom",
+   "to": "the Worshipdom (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "The hermitage of the Zilin Hills holds three valleys and almost no army. Its strength is the pilgrims, couriers and confessors who pass through it to every court in Erdae, and the bread that the Houses of the First Light give away at every gate. You are Afrit. The world knows you as $zin_name_aurevan$ the Deliverer.\n\nThe Golden King is a liability, the Council believes. The Lost Cause could become a rival seat of power, and the dominions grumble where they should be grateful. The Council judged so in 4A 1746, in the room where the Council judges.\n\nYou mean to take Aenor's crown openly, to keep the eastern courts as a reserve against the day it is needed, and one day to hold Glo.",
+   "options": [
+    {
+     "name": "The Council sits.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "title": "The Year 1748",
+   "picture": "strait_toll",
+   "opening": "Lerendor",
+   "to": "Lerendor (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "The two crowns of Lerendor and Lerenwaith are one kingdom, and its fleets guard the Narrow Strait. The ships of the North have kept the water for twelve generations, and the harbour-masters of Sonargur can tell a Leren keel from an Aenoran one by the sound of the oars.\n\nAenor despises the North. The toll of 4A 1716 proves it, and the court at Sonargur has not forgotten the shape of that insult. The treaty serves Parim, the lords say, and Parim has never once thanked the sea that guards it.\n\nYou may honour the Treaty of the Narrow Strait, break it, or bend it into Leren mastery of the strait. The North remembers either way.",
+   "options": [
+    {
+     "name": "The North remembers.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "title": "The Year 1748",
+   "picture": "dead_lands_storm",
+   "opening": "Volgan",
+   "to": "Volgan (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "Behind the storms and the heat of the Dead Lands, the hosts drill where no ship can see. Demon, Dolon and Nezer are sworn to you, and the storm-wall that keeps strangers out has kept your people in for a hundred years.\n\nThe kingdoms of men always divide. Their time is passing, and they have not noticed. They have forgotten Dardan the way a man forgets a wound that has stopped hurting.\n\nYou mean to retake Mirolon, to march north, and to possess the green crystal of the north.",
+   "options": [
+    {
+     "name": "Patience.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "title": "The Year 1748",
+   "picture": "black_isles_lights",
+   "opening": "Zol",
+   "to": "Zol (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "The black north is silent. The dead walk the wastes, and the islands of the Ocean of Zol lie dark. The tide comes in and goes out. Nothing on the shore looks at it.\n\nNo one in Erdae can say what the north believes.\n\nIt grows, very slowly.",
+   "options": [
+    {
+     "name": "…",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "title": "The Year 1748",
+   "picture": "generic_wilds",
+   "opening": "Magical Forest",
+   "to": "the Magical Forest (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "The oldest and most peaceful of the elven realms is ruled by its council of houses, which has not once in a thousand years taken a decision in less than a season. The Great Wall keeps the kings of men on their side of it, and the dragons of Dragon Mountain on theirs.\n\nMen break alliances. The Elven Refusal still stands. The Wall keeps the peace, and the peace is worth keeping.\n\nThe woods mean to stay apart, to keep the dragons safe, and to keep the Wall a customs line and not a border of war.",
+   "options": [
+    {
+     "name": "The woods endure.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "title": "The Year 1748",
+   "picture": "gala_court",
+   "opening": "Gala Elves",
+   "to": "the Gala Elves (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "King Lorien, who fought at Dardan, keeps his ancient court among the realms of the Lands of the Sun. The young ones come to hear him speak of it on feast days, and go away quieter than they came.\n\nHuman kings turn common victories into dominion, he has said. Still, Erdae's fate is not a matter that a king may stop caring about because he is tired.\n\nGala means to keep its memory, and its distance.",
+   "options": [
+    {
+     "name": "Memory is a duty.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "title": "The Year 1748",
+   "picture": "generic_wilds",
+   "opening": "Coldor",
+   "to": "Coldor (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "The Winter Crown rules the frozen interior and the western ports. Horidor stands with it in the Northern Accord; Isengard stands against it, and has stood against it since the year Coldor's first king was crowned.\n\nIsengard is the enemy. The Cold Lands are a world of their own, and the rest of Erdae is a rumour that comes in through the harbours with the grain.\n\nYou mean to bring Isengard to heel and to keep the Accord.",
+   "options": [
+    {
+     "name": "The winter is long.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "title": "The Year 1748",
+   "picture": "generic_peace",
+   "opening": "Noris",
+   "to": "Noris (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "Noris holds the Salt Road and the desert, and leads the Noris Treaty with Gondolin. The camel-riders of the dunes pay their tithe in salt, and the caravan-masters of Furvior keep their ledgers in three scripts.\n\nStabilo is the rival that matters. Aenor is a distant market, rich and badly governed, and the only thing the Deliverer's friends have ever asked of Noris is hospitality.\n\nYou mean to own the caravan roads.",
+   "options": [
+    {
+     "name": "The roads are ours.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "title": "The Year 1748",
+   "picture": "generic_peace",
+   "opening": "Stabilo",
+   "to": "Stabilo (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "Stabilo's merchant princes rule from Postondoroth and lead the Stabilo Pact with Drak. Their fleets of river-barges go down the river with the spring floods, and their agents sit in every market between the Rift and the southern dunes.\n\nNoris is the rival that matters. The gold road and the salt road have been one road in the minds of two courts for as long as either has had a court.\n\nYou mean to win the southern trade routes.",
+   "options": [
+    {
+     "name": "Every road ends in Postondoroth.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "title": "The Year 1748",
+   "picture": "grey_ford_truce",
+   "opening": "Gunwaith",
+   "to": "Gunwaith (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "After fifty years of war with Girdon, Gunwaith keeps the Truce of the Grey Ford, signed three years ago. The clans have put their swords on the rafters, and the lawspeakers are busy for the first time in a generation with disputes about cattle.\n\nThe truce is fragile. Aenor once tried to rule the West, and it still taxes the West through its tariffs, which is an older grievance than the feud with Girdon.\n\nYou want peace at home, lower tariffs, and the old claims of Parim buried for good.",
+   "options": [
+    {
+     "name": "The clans are weary.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "title": "The Year 1748",
+   "picture": "generic_war",
+   "opening": "Goldoroth",
+   "to": "Goldoroth (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "The Warking of Cocanoor rules the inner Dark Lands, where the fire-clans of the volcano country gave up their quarrels three hundred years ago for the pleasure of making them with someone else. Dondor and its Accord stand in the way.\n\nThe Dark Lands should be one kingdom, and the kingdom is yours. Every clan that sends its sons to the Warking's march is a clan that does not send them to a rival.\n\nYou mean to subdue Dondor and the free holds.",
+   "options": [
+    {
+     "name": "Iron and fire.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "title": "The Year 1748",
+   "picture": "mirolon_passes",
+   "opening": "Mirolon",
+   "to": "Mirolon (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "Mirolon is free again, long after Volgan took it in the First Age. Its wardens watch the passes to the south and write the names of their dead on the wall of the pass-house, four hundred years of them in stone.\n\nVolgan is arming. Mirolon has told Parim so for twelve years, and Parim has sent a scholar to look at the maps. Nobody in the north will listen.\n\nYou mean to hold the passes and to win allies, and to see to it that the second goes faster than the first.",
+   "options": [
+    {
+     "name": "The watch never sleeps.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "title": "The Year 1748",
+   "picture": "generic_war",
+   "opening": "Dondor",
+   "to": "Dondor (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "Dondor holds the northern Dark Lands with Belonton's help in the Dark Sea Accord. Its beacon-towers stand a day's march apart along the whole border, and its levies drill on market days whatever the weather.\n\nGoldoroth is the danger. Its warlord is patient, and patient warlords are the worst kind.\n\nYou mean to survive Goldoroth, and to make sure that surviving does not become a habit.",
+   "options": [
+    {
+     "name": "Light the beacons.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "title": "The Year 1748",
+   "picture": "yeldenne_hall",
+   "opening": "Yeldenne",
+   "to": "Yeldenne (human player)",
+   "hist": "1 Thaw 1748",
+   "desc": "In the frozen north of the Cold Lands, the Castle of Yeldenne keeps its silence. Its lord, Horos, guards Glo, a crystal of old and holy power that has burned there longer than the castle has had walls. Nobody has come to the gate in living memory.\n\nGlo is for the worthy, Horos has said, and has not said who they are.\n\nYou mean to keep Glo from the unworthy.",
+   "options": [
+    {
+     "name": "Who walks here?",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "hidden": true,
+   "to": "any one country, once, when the game rule zin_rule_debug_checks is on",
+   "hist": "1 Thaw 1748, three hours after the start",
+   "fired_by": "common/on_actions/zin_lore.txt (on_startup)",
+   "trigger": [
+    "has_game_rule = { rule = zin_rule_debug_checks option = ON }"
+   ],
+   "immediate": [
+    {
+     "if": [
+      {
+       "or": [
+        "has_global_flag = zin_eindil_awake",
+        "has_global_flag = zin_eindil_war_king",
+        "has_global_flag = zin_golden_king_dead",
+        "has_global_flag = zin_aurevan_crowned",
+        "has_global_flag = zin_eindil_named",
+        "has_global_flag = zin_horos_dead",
+        "has_global_flag = zin_glo_with_eindil",
+        "has_global_flag = zin_afrit_revealed",
+        "has_global_flag = zin_war_of_last_crowns",
+        "has_global_flag = zin_western_crossing",
+        "has_global_flag = zin_leren_withdrawal",
+        "has_global_flag = zin_volgan_marches",
+        "has_global_flag = zin_zol_rising",
+        "has_global_flag = zin_afrit_king_of_east",
+        "has_global_flag = zin_eindil_returned",
+        "has_global_flag = zin_varner_dead",
+        "has_global_flag = zin_volgan_body_destroyed",
+        "has_global_flag = zin_zol_manifested",
+        "has_global_flag = zin_zol_withdrawn",
+        "has_global_flag = zin_lorien_dead",
+        "has_global_flag = zin_afrit_dead",
+        "has_global_flag = zin_golbran_dead",
+        "has_global_flag = zin_eindil_crowned",
+        "has_global_flag = zin_ending_lost_cause",
+        "has_global_flag = zin_ending_children_of_volgan",
+        "has_global_flag = zin_ending_ashen_throne",
+        "any_country = { has_war = yes }"
+       ]
+      }
+     ],
+     "then": [
+      "@gflag zin_start_check_failed",
+      "log = \"ZIN start: a story flag is set or a war exists on the first day\""
+     ],
+     "else": [
+      "log = \"ZIN start: no story flag is set and no country is at war\""
+     ]
+    }
+   ]
+  },
+  {
+   "id": 100,
+   "hidden": true,
+   "to": "every country, once",
+   "hist": "1 Thaw 1748, two hours after the start",
+   "fired_by": "common/on_actions/zin_lore.txt (on_startup)",
+   "trigger": [
+    "NOT = { has_country_flag = zin_lore_scheduled }"
+   ],
+   "immediate": [
+    "@flag zin_lore_scheduled",
+    "zin_lore_schedule_flavour = yes"
+   ]
+  },
+  {
+   "id": 101,
+   "title": "The Jubilee Remembered",
+   "picture": "court_feast",
+   "window": "Highsun 1748",
+   "who": [
+    "Aenor"
+   ],
+   "hist": "Highsun 1748",
+   "desc": "The Lord Steward has laid out the Jubilee accounts: a feast for the peace of seventeen centuries, with the Golden Court's own musicians, forty kinds of fish from the Great Lake and a bill the size of a small shire. The temples have sent word that they will bless the tables whatever the cost.",
+   "options": [
+    {
+     "name": "Spend, and let the city see it.",
+     "ai": 60,
+     "tip": "A feast that all Parim will talk of for half a year.",
+     "effects": [
+      "add_political_power = -50",
+      "add_timed_idea = { idea = zin_lore_jubilee_feast days = 180 }"
+     ]
+    },
+    {
+     "name": "A modest feast.",
+     "ai": 40,
+     "effects": [
+      "add_political_power = 25"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "title": "The Price of a Seat",
+   "picture": "golden_court",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Aenor"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "A merchant of the Great Lake ports has come to the Golden Court with a purse the weight of a child, and a request for the vacant judgeship of the lower bench. He has read no law. He has, he says, read the Lord Steward, who has read the purse.",
+   "options": [
+    {
+     "name": "Sell the seat.",
+     "ai": 70,
+     "effects": [
+      "add_political_power = 50",
+      "@call zin_aenor_add_court_corruption 2"
+     ]
+    },
+    {
+     "name": "Refuse the merchant.",
+     "ai": 30,
+     "effects": [
+      "add_political_power = -25"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 103,
+   "title": "The Lost Cause Parades",
+   "picture": "lost_cause_triumph",
+   "window": "Sowing 1748",
+   "who": [
+    "Aenor"
+   ],
+   "hist": "Sowing 1748",
+   "desc": "The league the Golden King founded against the powers of the dark marches through Parim behind the King, in gilt cuirasses cut for the occasion. The frontier companies that make up its real strength have been told to march at the back, where their mud will not be seen.",
+   "options": [
+    {
+     "name": "Pay for the parade.",
+     "ai": 60,
+     "effects": [
+      "add_political_power = -75",
+      "add_war_support = 0.05"
+     ]
+    },
+    {
+     "name": "Let the frontier keep the money.",
+     "ai": 40,
+     "effects": [
+      "@call zin_aenor_add_lost_cause 2"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 104,
+   "title": "A Joke at Court",
+   "picture": "generic_court",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Aenor"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "A courtier has found it amusing to mimic the Mirolonese envoy who came to Parim twelve years ago to warn of arming in the Dead Lands. The envoy had a stammer. The court laughs; the old marshal does not.",
+   "options": [
+    {
+     "name": "Laugh with him.",
+     "ai": 70,
+     "effects": []
+    },
+    {
+     "name": "Ask the Marshal to read the old report.",
+     "ai": 30,
+     "tip": "The army will study the report for half a year.",
+     "effects": [
+      "add_timed_idea = { idea = zin_lore_old_report days = 180 }"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 105,
+   "title": "The Restorer's Day",
+   "picture": "generic_peace",
+   "window": "Thaw 1748",
+   "who": [
+    "Selen"
+   ],
+   "hist": "Thaw 1748",
+   "desc": "Selen keeps the day that Harion the Restorer was crowned at Parim. The rangers say that he was Selen's son before he was Aenor's king, and the children are taught the rhyme before they are taught the letters. Parim keeps the same day with a banquet and does not mention where he was born.",
+   "options": [
+    {
+     "name": "Honour Selen first.",
+     "ai": 50,
+     "effects": [
+      "@call zin_aenor_add_concord_loyalty -2",
+      "add_stability = 0.05"
+     ]
+    },
+    {
+     "name": "Honour the crown.",
+     "ai": 50,
+     "effects": [
+      "@call zin_aenor_add_concord_loyalty 2"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 106,
+   "title": "Songs of the Unbinding",
+   "picture": "generic_peace",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    {
+     "all": [
+      "group:middle_lands"
+     ],
+     "share": 30
+    }
+   ],
+   "hist": "random share 30%",
+   "desc": "The ploughmen of the old grave-fields sing at the furrow of the wizard who lifted the curse from the soil, and of the small purple servant who carried his lamp. The tune is older than the words, and some of the words have worn smooth.",
+   "options": [
+    {
+     "name": "Let them sing.",
+     "ai": 100,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 107,
+   "title": "Customs at the Wall",
+   "picture": "generic_court",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Kingson"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "Elven traders at the great gate refuse to pay a new toll, and say that the Wall Accord names no such toll. The customs-master has read the Accord twice. He thinks that the elves are right, and that the crown will not thank him for saying so.",
+   "options": [
+    {
+     "name": "Waive it.",
+     "ai": 60,
+     "tip": "The Magical Forest will think well of Kingson.",
+     "effects": [
+      "@opinion_of zin_opinion_lore_goodwill tag:Magical_Forest",
+      "@call zin_elves_add_wall_grievance -10"
+     ]
+    },
+    {
+     "name": "Keep it.",
+     "ai": 40,
+     "effects": [
+      "add_political_power = 25",
+      "@call zin_elves_add_wall_grievance 10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 110,
+   "title": "Edran's Folly",
+   "picture": "generic_wilds",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Magical Forest"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "In the House of Elders the old ones recall the march into the Dead Lands after Dardan, and the thousands who did not return from it, and the war-king who would not hear that the war was won. The young ones listen. They have heard it before, and they listen all the same.",
+   "options": [
+    {
+     "name": "Reaffirm the old refusal.",
+     "ai": 60,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    },
+    {
+     "name": "Remember that Erdae is shared.",
+     "ai": 40,
+     "effects": [
+      "add_stability = 0.01",
+      "add_political_power = 10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 111,
+   "title": "Wings over Dragon Mountain",
+   "picture": "generic_wilds",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Magical Forest",
+    "Herrodon",
+    "Andos Enda",
+    "Nolorim"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "At dusk the dragons rise from the high roosts and circle the mountain in a slow wheel, as they have every evening of the year since the elves began to count. The roost wardens count them aloud, and say that the number is right.",
+   "options": [
+    {
+     "name": "The roosts are well.",
+     "ai": 100,
+     "effects": [
+      "army_experience = 5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 112,
+   "title": "Pilgrims at Zilin",
+   "picture": "hermitage",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Worshipdom"
+   ],
+   "repeatable": true,
+   "hist": "first 365 days, up to six times",
+   "desc": "A caravan of pilgrims has come to the hermitage from a far court, footsore, grateful and carrying gifts for the Deliverer: dates in wax, a bale of white wool, a box of silver coins tied up in a child's sock. They ask to be allowed to kiss the threshold.",
+   "immediate": [
+    "add_to_variable = { zin_lore_pilgrims = 1 }",
+    {
+     "if": [
+      "check_variable = { zin_lore_pilgrims < 5.999 }"
+     ],
+     "then": [
+      "@fire zin_lore.112 days=40 random_days=40"
+     ]
+    }
+   ],
+   "options": [
+    {
+     "name": "Bless them.",
+     "ai": 60,
+     "tip": "A court somewhere will remember the welcome.",
+     "effects": [
+      {
+       "pick": "group:all_countries",
+       "limit": [
+        "check_variable = { zin_footholds > 0.999 }",
+        "NOT = { original_tag = ROOT }"
+       ],
+       "do": [
+        "add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_goodwill }"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Keep the gifts.",
+     "ai": 40,
+     "effects": [
+      "add_political_power = 15"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 120,
+   "title": "The Toll of 1716",
+   "picture": "strait_toll",
+   "window": "Rainwake 1748",
+   "who": [
+    "Lerendor"
+   ],
+   "hist": "Rainwake 1748",
+   "desc": "It is the anniversary of the toll quarrel, when Leren envoys were made to wait three days at the door of the Golden Court in the rain and were then asked to pay for the privilege. The skalds of Sonargur recite the list of the insults, in order, to a hall that knows it by heart.",
+   "options": [
+    {
+     "name": "Remember it.",
+     "ai": 60,
+     "effects": [
+      "add_war_support = 0.03",
+      "@call zin_leren_add_strait_standing -2"
+     ]
+    },
+    {
+     "name": "Let it rest.",
+     "ai": 40,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 121,
+   "title": "Two Crowns, One Kingdom",
+   "picture": "leren_envoys",
+   "window": "Goldfield 1748",
+   "who": [
+    "Lerendor"
+   ],
+   "hist": "Goldfield 1748",
+   "desc": "The festival of the union is kept in Sonargur with torches along the harbour wall and a procession of both royal houses, the elder carrying the sceptre of Lerendor and the younger the sceptre of Lerenwaith. The crowd cheers each in turn, and louder for the two together.",
+   "options": [
+    {
+     "name": "One kingdom.",
+     "ai": 100,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 122,
+   "title": "The Treaty Read Aloud",
+   "picture": "leren_envoys",
+   "window": "Harvest 1748",
+   "who": [
+    "Lerendor"
+   ],
+   "hist": "Harvest 1748",
+   "desc": "Custom requires that the Treaty of the Narrow Strait be read aloud once a year in the great hall of Sonargur. The reader this year is a young skald who has been told by an uncle at court how he is to read it, and by a cousin at the harbour how he is to read it otherwise.",
+   "options": [
+    {
+     "name": "Read it with honour.",
+     "ai": 40,
+     "effects": [
+      "@call zin_leren_add_strait_standing 2"
+     ]
+    },
+    {
+     "name": "Read it with a smirk.",
+     "ai": 60,
+     "effects": [
+      "@call zin_leren_add_strait_standing -2",
+      "add_war_support = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 130,
+   "title": "The Winter Crown",
+   "picture": "generic_court",
+   "window": "Deepwinter 1749",
+   "who": [
+    "Coldor"
+   ],
+   "hist": "Deepwinter 1749",
+   "desc": "The kings of Coldor brought the frozen interior under one crown on this day, nine hundred years ago, and Isengard refused. The envoy of Isengard sends his compliments on the anniversary every year, in a letter composed to be read aloud and to be hurtful.",
+   "options": [
+    {
+     "name": "Keep the feast.",
+     "ai": 50,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    },
+    {
+     "name": "Parade on the border.",
+     "ai": 50,
+     "tip": "Isengard will not forgive the drums.",
+     "effects": [
+      "add_war_support = 0.03",
+      "@opinion_of zin_opinion_lore_provoked tag:Isengard"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 131,
+   "title": "The Silent Castle",
+   "picture": "generic_wilds",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Coldor",
+    "Horidor",
+    "Fearno",
+    "Yeti Lands",
+    "Titanos"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "A trader came back from the far north with a green light in his story and a good reason for not having gone nearer: he saw it, and turned round. Nobody at the fire called him a coward. The silent castle has been there longer than anyone's grandmother, and has not yet sent for anyone.",
+   "options": [
+    {
+     "name": "Pass the cup.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 140,
+   "title": "Truce Day",
+   "picture": "grey_ford_truce",
+   "window": "Thaw 1748",
+   "who": [
+    "Gunwaith",
+    "Girdon"
+   ],
+   "hist": "Thaw 1748",
+   "desc": "The third anniversary of the Truce of the Grey Ford falls today. Gunwaith's thanes and Girdon's wardens have each been asked to the other's feast, and each has been told by an uncle that it would be unwise to go. Nobody wishes to be the first to refuse.",
+   "options": [
+    {
+     "name": "Keep the feast together.",
+     "ai": 60,
+     "tip": "The two courts will like each other better.",
+     "effects": [
+      {
+       "each": "group:ford_belligerents",
+       "limit": [
+        "NOT = { original_tag = ROOT }"
+       ],
+       "do": [
+        "add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_goodwill }",
+        "ROOT = { add_opinion_modifier = { target = PREV modifier = zin_opinion_lore_goodwill } }"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Feast alone.",
+     "ai": 40,
+     "tip": "The two courts will like each other less.",
+     "effects": [
+      {
+       "each": "group:ford_belligerents",
+       "limit": [
+        "NOT = { original_tag = ROOT }"
+       ],
+       "do": [
+        "add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_provoked }",
+        "ROOT = { add_opinion_modifier = { target = PREV modifier = zin_opinion_lore_provoked } }"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 141,
+   "title": "Aenoran Tariffs",
+   "picture": "generic_sea",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    {
+     "all": [
+      "group:west_lands"
+     ],
+     "share": 50
+    }
+   ],
+   "hist": "random share 50%",
+   "desc": "Parim has raised a duty on western grain, and the customs-houses on the central sea have posted the new rate in a script that few of the factors can read. The merchants have gathered on the quay to decide who will tell the king, and have not agreed.",
+   "options": [
+    {
+     "name": "Grumble.",
+     "ai": 60,
+     "tip": "Parim will like us less.",
+     "effects": [
+      "@opinion zin_opinion_lore_provoked aenor",
+      "@call zin_west_add_grudge 3"
+     ]
+    },
+    {
+     "name": "Pay.",
+     "ai": 40,
+     "effects": [
+      "add_political_power = -25",
+      "@call zin_west_add_grudge 1"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 142,
+   "title": "Taryn's Song",
+   "picture": "generic_court",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Gunwaith"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "A bard sings in the hall of Gunwaith's banner at Dardan, and of Taryn who would not draw a sword until her people had been named on the roll beside Aenor's. The thanes bang their cups on the table at the verse where she wins the argument.",
+   "options": [
+    {
+     "name": "Sing it again.",
+     "ai": 100,
+     "effects": [
+      "add_war_support = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 150,
+   "title": "Charts for Sale",
+   "picture": "generic_sea",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Adel",
+    "Pollos",
+    "Raerby",
+    "Nondondor"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "A crown on the mainland wants to buy the new charts of the Pupor Ocean, drawn in the chart-hall this winter with the currents of the outer isles marked in three colours. The chart-masters say that a chart sold is a chart copied, and that a chart kept is a chart not paid for.",
+   "options": [
+    {
+     "name": "Sell them.",
+     "ai": 60,
+     "effects": [
+      "add_political_power = 25"
+     ]
+    },
+    {
+     "name": "Keep them.",
+     "ai": 40,
+     "effects": [
+      "navy_experience = 5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 160,
+   "title": "Raids on the Border",
+   "picture": "generic_war",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Goldoroth",
+    "Dondor"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "A band crossed the border in the night and drove off forty head of cattle and burned a barn. No war has been declared, and no one has been killed, which both courts have remarked on with the care of men who intend to remember it.",
+   "options": [
+    {
+     "name": "Retaliate quietly.",
+     "ai": 60,
+     "tip": "The other court will like us less.",
+     "effects": [
+      "add_war_support = 0.03",
+      {
+       "each": "group:border_belligerents",
+       "limit": [
+        "NOT = { original_tag = ROOT }"
+       ],
+       "do": [
+        "add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_provoked }",
+        "ROOT = { add_opinion_modifier = { target = PREV modifier = zin_opinion_lore_provoked } }"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Pay the blood-price.",
+     "ai": 40,
+     "effects": [
+      "add_political_power = -25"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 161,
+   "title": "Gifts from the South",
+   "picture": "southern_warning",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Bordon",
+    "Dreson",
+    "Dulundur",
+    "Troll Forest",
+    "Blackton"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "A stranger from the Dead Lands has come to our hold with a string of mules. He brings iron, salt and good wine, and asks for nothing but a night's lodging and the pleasure of our company. He speaks well of everyone and has not once said whom he serves.",
+   "options": [
+    {
+     "name": "Refuse.",
+     "ai": 70,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    },
+    {
+     "name": "Accept.",
+     "ai": 30,
+     "tip": "The south will remember who took its gifts.",
+     "effects": [
+      "add_political_power = 25",
+      "@flag zin_dark_took_southern_gifts"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 170,
+   "title": "What the Scouts Saw",
+   "picture": "mirolon_passes",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Mirolon"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "Scouts returned from the southern road with dust on their cloaks and a count of the columns they had seen: three, and a fourth they could not count. The wardens at the pass-house have heard such reports before. They write this one down, in the book that Parim does not read.",
+   "options": [
+    {
+     "name": "Send word to Parim.",
+     "ai": 20,
+     "tip": "Parim will think better of us, and do nothing.",
+     "effects": [
+      "@opinion zin_opinion_lore_goodwill aenor"
+     ]
+    },
+    {
+     "name": "Fortify.",
+     "ai": 80,
+     "tip": "A stone fort will rise in the capital's border country.",
+     "effects": [
+      "capital_scope = { add_building_construction = { type = bunker level = 1 province = { all_provinces = yes limit_to_border = yes } instant_build = yes } }"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 171,
+   "title": "Behind the Storms",
+   "picture": "dead_lands_storm",
+   "window": "Thaw 1748",
+   "who": [
+    "Volgan"
+   ],
+   "hist": "Thaw 1748",
+   "desc": "The hosts drill where no ship can see. The drill-masters have been given the old rolls of the First Age and a year to teach the young how a great host marches in step. They find that it can be taught, if it is taught by the same voice for long enough.",
+   "options": [
+    {
+     "name": "Continue.",
+     "ai": 100,
+     "effects": [
+      "@call zin_volgan_add_dominion_strength 1"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 180,
+   "title": "Black Ships",
+   "picture": "black_ships_tale",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    {
+     "all": [
+      "zin_is_zol_coast_country = yes"
+     ],
+     "share": 50
+    }
+   ],
+   "hist": "random share 50%",
+   "desc": "Fishermen have come to the harbour-master with a tale of black ships among the islands, ships with no crews that the tide moves in the wrong direction. The harbour-master has promised to look into it. He has put the tale at the bottom of the pile.",
+   "options": [
+    {
+     "name": "Disbelieve them.",
+     "ai": 60,
+     "effects": []
+    },
+    {
+     "name": "Send a boat.",
+     "ai": 40,
+     "tip": "The boat will not come back.",
+     "effects": [
+      "add_political_power = -5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 190,
+   "title": "The Caravan Price War",
+   "picture": "generic_peace",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Noris",
+    "Stabilo"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "The rival court has undercut the price of salt on the road by a copper to the load, and every caravan-master from the river to the dunes knows it before the sun is up. The treasurer wants to know whether we answer in kind, or in silence.",
+   "options": [
+    {
+     "name": "Undercut back.",
+     "ai": 50,
+     "tip": "The other court will like us less.",
+     "effects": [
+      "add_political_power = 15",
+      {
+       "each": "group:road_rivals",
+       "limit": [
+        "NOT = { original_tag = ROOT }"
+       ],
+       "do": [
+        "add_opinion_modifier = { target = ROOT modifier = zin_opinion_lore_provoked }",
+        "ROOT = { add_opinion_modifier = { target = PREV modifier = zin_opinion_lore_provoked } }"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Hold the price.",
+     "ai": 50,
+     "effects": [
+      "add_political_power = 25"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 200,
+   "title": "The Reef of Voices",
+   "picture": "generic_sea",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    {
+     "all": [
+      "group:islands_of_the_south"
+     ],
+     "share": 50
+    }
+   ],
+   "hist": "random share 50%",
+   "desc": "The fisherfolk will not cross the reef at night. They say that it sings, and that what it sings is a name you know, and that this is the reason not to go. The old men tell the story slightly differently every time.",
+   "options": [
+    {
+     "name": "Let the boats stay in.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 201,
+   "title": "The Name in the Shrine",
+   "picture": "generic_peace",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Enhis Is Rond"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "At low tide the priests of the half-drowned shrine chant the name cut into its lintel, as their grandmothers' grandmothers did. Aen, they chant. No priest can say who Aen was, and none has thought it right to ask the tide.",
+   "options": [
+    {
+     "name": "Let them chant.",
+     "ai": 100,
+     "effects": [
+      "add_stability = 0.02"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 210,
+   "title": "Lorien's Audience",
+   "picture": "gala_court",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    "Gala Elves"
+   ],
+   "hist": "Thaw 1748 to Ironfrost 1749",
+   "desc": "The King speaks of Dardan to a hall of young elves who were born a thousand years after it. He does not speak of the victory. He speaks of the smell of the field on the second morning, and of the order in which the names were read out, and the hall sits very still.",
+   "options": [
+    {
+     "name": "Let him speak.",
+     "ai": 100,
+     "effects": [
+      "army_experience = 5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 211,
+   "title": "Carry It to Gala",
+   "picture": "generic_sea",
+   "window": "Thaw 1748 to Ironfrost 1749",
+   "who": [
+    {
+     "all": [
+      {
+       "or": [
+        "group:lands_of_the_sun",
+        "group:islands_of_the_south"
+       ]
+      }
+     ],
+     "not_names": [
+      "Gala Elves"
+     ],
+     "share": 30
+    }
+   ],
+   "hist": "random share 30%",
+   "desc": "An old tale too strange to explain has come down to us from a grandmother, and the family has agreed that it must go to Gala, where the old ones are. A boat is being fitted for the voyage, and the tale is being written down by three people in three hands, so that it cannot be lost.",
+   "options": [
+    {
+     "name": "Send it south.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 220,
+   "title": "The Ledger of Kings",
+   "picture": "council_chamber",
+   "window": {
+    "offset": 1,
+    "length": 0
+   },
+   "who": [
+    "Worshipdom"
+   ],
+   "hist": "1 Thaw 1748 (day 2)",
+   "desc": "The Council's record lies open on the table of the room where the Council sits. At the end of the Third Age Afrit shielded the people at the fall of Elzon, and was hailed the Deliverer. In 4A 1 he was acclaimed in the open under the name Aurevan. Some time after the Thousand-Year Jubilee the Council took its four seats: Seals, Censers, Whispers and Relics.\n\nThe record goes on. Priests teach princes, and councillors rise by the god's favour. Kings reign; the Council governs. In 4A 1611 the thief returned from the Abyss with the Necklace, and was granted unending life. Between then and 4A 1700 the lesser artifacts were gathered. Not one name in the ledger has changed in three hundred years.",
+   "options": [
+    {
+     "name": "Read on.",
+     "ai": 100,
+     "effects": []
+    }
+   ]
+  },
+  {
+   "id": 221,
+   "title": "The Decision of 4A 1746",
+   "picture": "council_chamber",
+   "window": "Rainwake 1748",
+   "who": [
+    "Worshipdom"
+   ],
+   "hist": "Rainwake 1748",
+   "desc": "The Council confirms its judgement of the Golden King. He sells offices to men the Council did not choose. His league, the Lost Cause, has frontier companies that answer to no seat. The dominions grumble at his taxes in rooms that the Council does not hear. A liability, the Seals say. The Censers agree. The Whispers offer to arrange it quietly, in the year the Council names.",
+   "options": [
+    {
+     "name": "So it is written.",
+     "ai": 100,
+     "tip": "The Council's preparations begin.",
+     "effects": [
+      "@fire zin_afrit.10 days=30 to=group:afrit_hub"
+     ]
+    }
+   ]
+  }
+ ]
+}
