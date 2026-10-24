@@ -12,7 +12,7 @@ Late in the Fourth Age Varner accompanies [[Eindil]] and Golbran to Aenor, arriv
 
 **Appearance (owner, 24 October 2026):** Varner is a wizard, a Lesser Spirit in the form of an old man.
 
-**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian** is a living human wizard of the Fourth Age, famous in the Middle Lands and a contemporary of Varner (owner, 24 October 2026).
+**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian** is a living human wizard of the Fourth Age, famous in the Middle Lands and a contemporary of Varner: an older man dressed as a wizard (owner, 24 October 2026).
 
 The exact ritual he uses, whether any writings survive and the nature of his death are opportunities for further development. His order remains Lesser Spirit despite his importance.
 

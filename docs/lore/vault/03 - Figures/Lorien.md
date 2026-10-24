@@ -14,4 +14,8 @@ Late in the Fourth Age Lorien welcomes a stranger from the Islands of the South 
 
 When Zol's most loyal servant, the Great Spirit [[Kusven]], takes the field at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with the servant**, helping force it to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). He is therefore alive long after Dardan but does not survive the Fourth Age.
 
+## Appearance and standing (owner, 24 October 2026)
+
+The **Gala elves are the most powerful elves**. Lorien looks very mythical: his eyes glow an extremely bright yellow, and he wears an extremely golden and white robe.
+
 [[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[Zol]]
