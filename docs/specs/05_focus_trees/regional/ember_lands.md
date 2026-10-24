@@ -10,6 +10,7 @@ The trees play [Volgan and the Southern Dominion](../../04_mechanics/volgan_sout
 
 - **The sworn realms** hold to Nafeher through `zin_dominion_oath`, feed Volgan's strength, deal with the Nether's court, march when Volgan marches, may seek their own road when the oath weakens, and answer the silence after Volgan's body breaks.
 - **The free realms** live in Nafeher's shadow: they keep the old quiet with tribute, stand with Mirolon's wardens, or wall themselves in, and they watch the storms.
+- **The Nether** (section "The Nether", proposed design of 25 October 2026, registered by the lead after the roster merge) plays the King of Demons' court: the houses of the Halls, the pacts, the portal rings, the bargain with Nafeher and a choice when Volgan's body breaks.
 
 | Tree id | Country | Focuses | Grid | Events | Spirits |
 | --- | --- | ---: | --- | --- | --- |
@@ -591,6 +592,204 @@ Nan is a warlord's realm of islands and peninsulas: Nan and Vez Nan, held togeth
 ### Historical AI route
 
 1748–1750: warlord_of_vez_nan, storm_pilots, island_warbands, dumars_captains, the_island_lords, black_reefs_charted, harbour_of_nan, tales_of_the_stair. 1750–1754: one_warlord, the_storm_is_our_wall, between_storm_and_sea, pilots_for_no_one, the_warlords_neutrality, watchers_on_the_rim, reef_raiders, peninsula_forts, nan_and_vez_nan. 1755 onward: war branch only if attacked; the rest.
+
+---
+
+## The Nether
+
+**Status of this section:** proposed design of 25 October 2026, written autonomously while the owner is away (handoff [../../../plans/focus_new_trees/burrikkrit_nether_handoff.md](../../../plans/focus_new_trees/burrikkrit_nether_handoff.md)). Every focus, spirit, event, number and route below is **proposed**; the lore it rests on is listed under "Lore basis for this tree". The design data is [docs/design/focus/regional_nether.json](../../../design/focus/regional_nether.json); it compiles with the builder's focus compiler against the new world roster. The roster makes the Nether a country of its own (tag NET), so the Volgan spec's note that the King of Demons' court "is not a country" is superseded for this tree by the [Nether dossier](../../../lore/regions/nether.md) section 11; the Nether pact itself stays on Puvulan (Volgan's realm) and is moved only through `zin_volgan_add_nether_pact`.
+
+| Item | Value |
+| --- | --- |
+| Tree id | `regional_nether` |
+| Country | Nether (tag NET; Ember Lands, the Nether island and the Halls beneath it; 1 to 2 states; demons 0.17 with men, orcs and goblins as thralls; culture `nether_houses`; faith the Pact-Rite; Shadow, `zin_shadow_dread`; independent, not sworn to Nafeher) |
+| Focuses | 46; columns 0–25, rows 0–9 |
+| Events | `zin_regional_nether` (7) |
+| Spirits | 13 |
+| Former labels | The Hell, Netherbus Island (drawn) |
+
+### Lore basis for this tree
+
+**Established or owner-decided:** the Nether, in the south of the Ember Lands, is the seat of the King of Demons; demons need not all serve Volgan; demons raided Aenor and other lands through portals in the Second Age, Agon among them (vault *Nether*, *Agon*); the king has an original name that no text gives, his pacts bind the living, and the dead remain Zol's (K15); devils are bound to their bodies, can be killed, and return only through the lava rite with their skull (K15); the Nether, the Void and the Abyss are distinct; Volgan is never Vez'nan; Volgan's manifested body is destroyed and his spiritual fate stays open (B34).
+
+**Proposed elsewhere and used here:** the Burning Shore, the Halls and Zarath-Nazur; the houses of the Halls with their pact-names; the house of Agon as one of the oldest and least obedient; the bargain with Nafeher renewed each reign and never sworn; the Nether Maw as a border disputed with Puvulan; the fire-galleys of the Sea of Lava; thralls; the dossier events "A Summoner at the Rim", "Agon Raids Alone", "The Gate of Nezer Smoulders" and "The King Will Not Take the Dead" ([Nether dossier](../../../lore/regions/nether.md) sections 2 to 12); the court of Khorvael, Zhorara, Zarek, Vorathael and Thazira (`tools/content/data/world/characters/ember_lands.json`); the Burning Gate of Nezer; the Nether pact mechanic ([Volgan](../../04_mechanics/volgan_southern_dominion.md) section 5).
+
+**Proposed here:** every focus, spirit, event and number; the houses' settlement (the King's Favour or the Houses' Due) and Agon's two fates; the gates for Nafeher or for the houses; the three answers to the envoys; the Nether keeping the lava-rite pits (owner question NET-3); the three answers to the silence in Nafeher.
+
+**Kept open (no text closes them):** the king's name (never written; the dossier's proposed Kherazel is not used), his kind, rank and relation to Volgan; Agon's own fate (the tree names only his house and its lord Khorvael); which Old God the devils served (no text says); what remains of Volgan ("the throne in Nafeher does not answer", "what remains of the master of Nafeher, no one living can say"). A demon's text never says that every demon is the king's subject.
+
+### Situation in 4A 1748
+
+Under Mount Nether, in the obsidian Halls where the heat is greatest, the King of Demons holds court at Zarath-Nazur over some 6,000 demons of the houses, a handful of devils on the Burning Shore and about 30,000 thralls. The houses compete for his favour and for the right to open the portal rings, which have stood closed since the houses quarrelled with the Necromancer's order. Envoys of Nafeher come once in every reign to buy Netherborn companies; the king names a price, never swears and never kneels. Those who know the old rites can still call on him, and what he gives is real; he takes his price from the living, and the heir of a dead bargainer goes free.
+
+**Starting problem:** the houses contend (`houses_contend`, a calm and authority penalty), and every route forward is a bargain with a cost: with the houses, with Nafeher, with mortal summoners or with the devils.
+
+### Role in the story
+
+- **Historical path (proposed):** the king favours the houses he chooses and humbles the house of Agon; he renews the bargain, opens the rings for Nafeher's wars and sells companies to the march north; when Volgan's body breaks he holds the Steward to the bargain. This is a proposal, not lore (owner question NET-1).
+- **Divergences offered:** the king refuses Nafeher (the dossier's `nether_refuses_volgan`: the pact falls by 20 and the Maw is fortified); the rings open for the houses alone; mortal pacts that raise the Gathering Dark (`nether_mortal_pact`); after the break, the king calls the freed demon realms of the island home, or seals the Halls.
+- **Peaceful start:** nothing available on 1 Lumae 4A 1748 declares war, creates a war goal or a claim. The war branch (G) and `fire_from_the_rings` need the Nether to be at war; the AI never invades the surface.
+
+### Ruler and court
+
+All are records of `tools/content/data/world/characters/ember_lands.json`; the tree recruits the advisors and the navy leader with a guarded `recruit_character`.
+
+| Id | Name | Role | Recruited by |
+| --- | --- | --- | --- |
+| `NET_zin_ruler` | The King of Demons (no name shown) | Country leader (`zin_trait_king_of_demons`, `zin_trait_secluded_eldest`) | country history |
+| `zin_nether_khorvael` | Khorvael of the House of Agon | Political advisor (`zin_adv_pact_broker`) | `the_house_of_agon` |
+| `zin_nether_zhorara` | Zhorara, Keeper of the Portal Rings | Theorist (`zin_adv_pact_broker`) | `the_portal_rings` |
+| `zin_nether_zarek` | Zarek, Master of the Galleries | Army chief (`zin_adv_muster_master`) | `the_obsidian_galleries` |
+| `zin_nether_thazira` | Thazira of the Sea of Lava | Navy leader | `fire_galleys` |
+| `zin_nether_vorathael` | Vorathael of the Burning Shore | Field marshal (named in `companies_through_the_rings`) | not recruited by the tree |
+
+### Branches
+
+| Br. | Branch | Columns | Opens | Focuses | Payoff |
+| --- | --- | --- | --- | ---: | --- |
+| A | The Houses of the Halls | 0–3, rows 0–5 | start | 9 | Exclusive: the King's Favour (humble Agon's house) or the Houses' Due (give Agon's house the Maw); `the_halls_answer` |
+| B | The Pacts | 6–8, rows 0–4 | start | 7 | Pact-heralds, a summoner's bargain, thralls, the rule that the king does not take the dead; `every_bargain_kept` (spirit upgrade, flag `zin_nether_pacts_deep`) |
+| C | The Gates | 10–12, rows 0–4 | start | 7 | The rings cleared and relit (with Nezer's broken ring); exclusive gates for Nafeher or for the houses; `fire_from_the_rings` in war |
+| D | The Bargain with Nafeher | 14–18, rows 0–3 | Puvulan exists | 7 | Exclusive three-way: renew, raise the price, or refuse; companies for hire or the Maw disputed; `a_bargain_never_an_oath` |
+| E | The Burning Shore | 21–25, rows 0–3 | start | 8 | Galleries, fire-galleys, fire-glass, outer forts, `the_shore_holds`; the devils of the shore and the lava rite |
+| G | The Houses at War | 1–3, rows 7–8 | at war | 3 | Levies, the shore held, companies through the relit rings |
+| F | Silence in Nafeher (the Volgan beat) | 9–13, rows 7–9 | `zin_volgan_body_destroyed` | 5 | Exclusive three-way choice; `the_long_counsel` |
+
+Mutual exclusions: A `the_kings_favour` / `the_houses_due`; C `gates_for_nafeher` / `gates_for_the_houses`; D `renew_the_bargain` / `raise_the_price` / `refuse_nafeher`; F `hold_the_steward_to_the_bargain` / `call_the_kin_home` / `seal_the_halls`.
+
+**The choice when Volgan's body breaks (F).** `silence_in_nafeher` is available only after `zin_volgan_body_destroyed` (a refreshed flag of E4, used here in `available` only). Then:
+
+- **Hold the Steward to the Bargain:** the pact with Puvulan rises by 10 and the opinion holds; the Nether stays Nafeher's paid supplier under the Steward. Needs Puvulan and no earlier refusal.
+- **Call the Kin Home:** for each of Nezer, Khorvrath and Dolon that exists and is no longer a subject (the Volgan spec's `zin_dominion.18` frees members whose oath falls below 40), the event `the_king_calls_the_kin` offers friendship; a kin court that answers is guaranteed by the Nether. Available only when at least one of them stands free (`zin_regional_nether_kin_unsworn`).
+- **Seal the Halls:** the rings go dark and the pact falls by 10; a strong defensive spirit.
+
+Cross-branch links: the gates branch's `zin_nether_rings_lit` opens `companies_through_the_rings` in war; a refusal in D closes `gates_for_nafeher`, `companies_for_hire` and `hold_the_steward_to_the_bargain`; giving Agon's house the Maw (A) sours Puvulan's opinion, which the bargain (D) must then buy back; the pacts (B) raise the Gathering Dark through events, the gates (C) through `the_rings_relit`, the devils (E) through their bargain.
+
+### Focuses
+
+Notation as in this file; "Puvulan: call …" is `for_country Puvulan`; "recruit" is a guarded `raw` `recruit_character`.
+
+| Br. | Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Available | Effects | AI |
+| --- | --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| A | `the_throne_of_embers` | The Throne of Embers | `throne_ashen` | — | — | 2,0 | 35 | — | pp 50; spirit `houses_contend` | AI 30 |
+| A | `the_kings_hall` | The King's Hall | `crown_iron` | the_throne_of_embers | — | 1,1 | 35 | — | pp 25; stab 0.02 | AI 20 |
+| A | `the_house_of_agon` | The House of Agon | `demon_horn` | the_throne_of_embers | — | 3,1 | 35 | — | event `agon_raids_alone`; recruit `zin_nether_khorvael` | AI 20 |
+| A | `the_pact_names_counted` | The Pact-Names Counted | `scroll_sealed` | the_kings_hall + the_house_of_agon | — | 2,2 | 35 | — | pp 50 | AI 20 |
+| A | `the_kings_favour` | The King's Favour | `seal_royal` | the_pact_names_counted | the_houses_due | 1,3 | 70 | — | swap `houses_contend`→`kings_favour_spirit` | AI 15; ×2 if `zin_rules_is_historical` |
+| A | `the_houses_due` | The Houses' Due | `council_table` | the_pact_names_counted | the_kings_favour | 3,3 | 70 | — | swap `houses_contend`→`houses_due_spirit`; mp 1000 | AI 10 |
+| A | `humble_the_house_of_agon` | Humble the House of Agon | `chain_broken` | the_kings_favour | — | 1,4 | 35 | — | stab 0.05; pp 25; flag `zin_nether_agon_humbled` | AI 15 |
+| A | `give_agon_the_maw` | Give Agon's House the Maw | `nether_gate` | the_houses_due | — | 3,4 | 35 | — | army_xp 15; bld bunker 1 @capital; flag `zin_nether_agon_holds_maw`; if exists Puvulan: opinion Puvulan `maw_disputed` both ways | AI 15 |
+| A | `the_halls_answer` | The Halls Answer to One Throne | `throne_ashen` | humble_the_house_of_agon / give_agon_the_maw | — | 2,5 | 70 | — | pp 75; stab 0.05 | AI 15 |
+| B | `the_old_rites` | The Old Rites | `rune_stone` | — | — | 7,0 | 35 | — | flag `zin_nether_pacts_open`; pp 25 | AI 30 |
+| B | `the_pact_heralds` | The Pact-Heralds | `envoy` | the_old_rites | — | 6,1 | 35 | — | spirit `pact_heralds_spirit` | AI 20 |
+| B | `a_summoner_at_the_rim` | A Summoner at the Rim | `censer` | the_old_rites | — | 8,1 | 35 | — | event `a_summoner_at_the_rim` | AI 20 |
+| B | `to_the_letter` | To the Letter | `seal_wax` | the_pact_heralds + a_summoner_at_the_rim | — | 7,2 | 70 | — | spirit `kept_to_the_letter` | AI 20 |
+| B | `thralls_of_the_burning_shore` | Thralls of the Burning Shore | `levy_muster` | to_the_letter | — | 6,3 | 35 | — | mp 2000; stab -0.02 | AI 15 |
+| B | `the_king_does_not_take_the_dead` | The King Does Not Take the Dead | `grave_field` | to_the_letter | — | 8,3 | 35 | — | event `the_dead_are_not_his` | AI 15 |
+| B | `every_bargain_kept` | Every Bargain Kept | `handshake_oath` | thralls_of_the_burning_shore + the_king_does_not_take_the_dead | — | 7,4 | 70 | — | swap `kept_to_the_letter`→`every_bargain_kept_spirit`; flag `zin_nether_pacts_deep` | AI 15 |
+| C | `the_portal_rings` | The Portal Rings | `ring_doors` | — | — | 11,0 | 35 | — | res [zin_cat_dark_rites] 0.5 ×1; recruit `zin_nether_zhorara` | AI 25 |
+| C | `clear_the_old_rings` | Clear the Old Rings | `quarry_stone` | the_portal_rings | — | 10,1 | 70 | — | bld infrastructure 1 @capital; pp 25 | AI 20 |
+| C | `the_gate_of_nezer_smoulders` | The Gate of Nezer Smoulders | `nether_gate` | the_portal_rings | — | 12,1 | 35 | exists Nezer | event_for Nezer `the_broken_ring` | AI 20 |
+| C | `the_rings_relit` | The Rings Relit | `ring_doors` | clear_the_old_rings + the_gate_of_nezer_smoulders | — | 11,2 | 70 | — | flag `zin_nether_rings_lit`; res [zin_cat_dark_rites] 0.5 ×1; call `zin_world_add_gathering_dark`(value 1) | AI 20 |
+| C | `gates_for_nafeher` | Gates for Nafeher | `banner_black` | the_rings_relit | gates_for_the_houses | 10,3 | 35 | exists Puvulan; not_flag zin_nether_refused_nafeher | Puvulan: call `zin_volgan_add_nether_pact`(value 10); opinion Puvulan `bargain_kept` both ways | AI 15; ×3 if `zin_rules_is_historical` |
+| C | `gates_for_the_houses` | Gates for the Houses | `demon_horn` | the_rings_relit | gates_for_nafeher | 12,3 | 35 | — | spirit `houses_gates`; if exists Puvulan: Puvulan: call `zin_volgan_add_nether_pact`(value -5) | AI 10 |
+| C | `fire_from_the_rings` | Fire from the Rings | `nether_gate` | gates_for_nafeher / gates_for_the_houses | — | 11,4 | 35 | at_war | timed `fire_from_the_rings_spirit` 180; ws 0.05 | AI 100 |
+| D | `envoys_of_nafeher` | Envoys of Nafeher | `envoy` | — | — | 16,0 | 35 | exists Puvulan | pp 25 | AI 30 |
+| D | `renew_the_bargain` | Renew the Bargain | `handshake_oath` | envoys_of_nafeher | raise_the_price, refuse_nafeher | 14,1 | 35 | — | Puvulan: call `zin_volgan_add_nether_pact`(value 10); pp 50; opinion Puvulan `bargain_kept` both ways | AI 20; ×3 if `zin_rules_is_historical` |
+| D | `raise_the_price` | Raise the Price | `tribute_chest` | envoys_of_nafeher | renew_the_bargain, refuse_nafeher | 16,1 | 35 | — | Puvulan: call `zin_volgan_add_nether_pact`(value 5); pp -50; pp 100; opinion Puvulan `price_raised` both ways | AI 15 |
+| D | `refuse_nafeher` | Refuse Nafeher | `chain_broken` | envoys_of_nafeher | renew_the_bargain, raise_the_price | 18,1 | 35 | — | Puvulan: call `zin_volgan_add_nether_pact`(value -20); opinion Puvulan `refused_nafeher` both ways; spirit `kings_own_counsel`; flag `zin_nether_refused_nafeher` | AI 5; ×0 if `zin_rules_is_historical` |
+| D | `companies_for_hire` | Companies for Hire | `levy_muster` | renew_the_bargain / raise_the_price | — | 15,2 | 70 | exists Puvulan; not_flag zin_nether_refused_nafeher | Puvulan: mp 3000; call `zin_volgan_add_dominion_strength`(value 2); pp 50 | AI 20 |
+| D | `the_maw_disputed` | The Maw Disputed | `fort_wall` | refuse_nafeher | — | 18,2 | 70 | — | bld bunker 2 @capital; army_xp 10; ws 0.05 | AI 20 |
+| D | `a_bargain_never_an_oath` | A Bargain, Never an Oath | `scroll_treaty` | companies_for_hire / the_maw_disputed | — | 16,3 | 70 | — | pp 100; stab 0.05 | AI 15 |
+| E | `the_burning_shore` | The Burning Shore | `ember_desert` | — | — | 22,0 | 70 | — | bld industrial_complex 1 @capital | AI 25 |
+| E | `the_obsidian_galleries` | The Obsidian Galleries | `mine_cart` | the_burning_shore | — | 21,1 | 70 | — | bld industrial_complex 1 @capital; recruit `zin_nether_zarek` | AI 20 |
+| E | `fire_galleys` | Fire-Galleys on the Sea of Lava | `galley_oars` | the_burning_shore | — | 23,1 | 70 | — | bld dockyard 1 @capital; navy_xp 10; res [zin_cat_galleys] 0.5 ×1; recruit `zin_nether_thazira` | AI 15 |
+| E | `fire_glass_and_sulphur` | Fire-Glass and Sulphur | `foundry_fire` | the_obsidian_galleries | — | 21,2 | 70 | — | bld arms_factory 1 @capital; eq zin_nether_arms_equipment 200 | AI 15 |
+| E | `the_outer_forts` | The Outer Forts of the Shore | `fort_wall` | fire_galleys | — | 23,2 | 70 | — | bld coastal_bunker 1 @capital; bld naval_base 1 @capital | AI 15 |
+| E | `devils_of_the_burning_shore` | Devils of the Burning Shore | `ashen_waste` | fire_galleys | — | 25,2 | 35 | — | event `the_devils_on_the_shore` | AI 15 |
+| E | `the_shore_holds` | The Shore Holds | `ember_desert` | fire_glass_and_sulphur + the_outer_forts | — | 22,3 | 70 | — | spirit `shore_holds_spirit` | AI 15 |
+| E | `the_lava_rite` | The Lava Rite | `bones_risen` | devils_of_the_burning_shore | — | 25,3 | 70 | — | spirit `lava_rite_spirit`; flag `zin_nether_keeps_lava_rite` | AI 15 |
+| G | `the_houses_take_the_field` | The Houses Take the Field | `war_drums` | — | — | 2,7 | 35 | at_war | ws 0.1; mp 2000 | AI 100 |
+| G | `hold_the_burning_shore` | Hold the Burning Shore | `beacon` | the_houses_take_the_field | — | 1,8 | 35 | — | bld coastal_bunker 1 @capital; timed `shore_defended` 180 | AI 100 |
+| G | `companies_through_the_rings` | Companies through the Rings | `nether_gate` | the_houses_take_the_field | — | 3,8 | 35 | flag zin_nether_rings_lit | army_xp 15; eq zin_nether_arms_equipment 300 | AI 100 |
+| F | `silence_in_nafeher` | Silence in Nafeher | `silent_throne` | — | — | 11,7 | 35 | global_flag zin_volgan_body_destroyed | stab 0.05; event `silence_in_nafeher` | AI 100 |
+| F | `hold_the_steward_to_the_bargain` | Hold the Steward to the Bargain | `scroll_treaty` | silence_in_nafeher | call_the_kin_home, seal_the_halls | 9,8 | 35 | exists Puvulan; not_flag zin_nether_refused_nafeher | Puvulan: call `zin_volgan_add_nether_pact`(value 10); pp 50; opinion Puvulan `bargain_kept` both ways | AI 20; ×3 if `zin_rules_is_historical` |
+| F | `call_the_kin_home` | Call the Kin Home | `banner_league` | silence_in_nafeher | hold_the_steward_to_the_bargain, seal_the_halls | 11,8 | 35 | `zin_regional_nether_kin_unsworn` | call `zin_regional_nether_call_kin`; stab 0.03 | AI 15; ×0.5 if `zin_rules_is_historical` |
+| F | `seal_the_halls` | Seal the Halls | `ward_circle` | silence_in_nafeher | hold_the_steward_to_the_bargain, call_the_kin_home | 13,8 | 35 | — | spirit `halls_sealed`; if exists Puvulan: Puvulan: call `zin_volgan_add_nether_pact`(value -10) | AI 10 |
+| F | `the_long_counsel` | The Long Counsel of the Halls | `throne_ashen` | hold_the_steward_to_the_bargain / call_the_kin_home / seal_the_halls | — | 11,9 | 70 | — | pp 100; stab 0.05 | AI 100 |
+
+### Spirits
+
+| Key | Name | Modifiers |
+| --- | --- | --- |
+| `houses_contend` | The Houses Contend | `stability_factor` -0.03, `political_power_factor` -0.05 |
+| `kings_favour_spirit` | The King's Favour | `political_power_gain` 0.1, `stability_factor` 0.05, `drift_defence_factor` 0.1 |
+| `houses_due_spirit` | The Houses' Due | `army_attack_factor` 0.05, `war_support_factor` 0.05, `stability_factor` -0.02 |
+| `pact_heralds_spirit` | The Pact-Heralds | `opinion_gain_monthly_factor` 0.1, `improve_relations_maintain_cost_factor` -0.1 |
+| `kept_to_the_letter` | To the Letter | `political_power_gain` 0.1, `trade_opinion_factor` 0.05 |
+| `every_bargain_kept_spirit` | Every Bargain Kept | `political_power_gain` 0.15, `trade_opinion_factor` 0.1, `recruitable_population_factor` 0.05 |
+| `houses_gates` | Gates for the Houses | `army_attack_factor` 0.05, `breakthrough_factor` 0.05 |
+| `fire_from_the_rings_spirit` | Fire from the Rings | `army_attack_factor` 0.1, `breakthrough_factor` 0.1 |
+| `kings_own_counsel` | The King's Own Counsel | `drift_defence_factor` 0.15, `stability_factor` 0.03 |
+| `shore_holds_spirit` | The Shore Holds | `army_core_defence_factor` 0.1, `heat_attrition_factor` -0.25, `production_speed_buildings_factor` 0.05 |
+| `lava_rite_spirit` | The Lava Rite | `army_morale_factor` 0.05, `experience_gain_army_factor` 0.1 |
+| `halls_sealed` | The Halls Sealed | `drift_defence_factor` 0.2, `army_core_defence_factor` 0.15, `stability_factor` 0.05 |
+| `shore_defended` | The Shore Defended | `army_core_defence_factor` 0.15 |
+
+Spirit lifecycles: `houses_contend` → `kings_favour_spirit` or `houses_due_spirit`; `kept_to_the_letter` → `every_bargain_kept_spirit`; `fire_from_the_rings_spirit` and `shore_defended` are timed (180 days).
+
+### Events (namespace `zin_regional_nether`)
+
+The non-committal option is listed first (E2). `silence_in_nafeher` uses the gated picture `volgan_broken`; it fires only from a focus whose `available` requires `zin_volgan_body_destroyed`.
+
+| # | Key | Title | Picture | Options |
+| ---: | --- | --- | --- | --- |
+| 1 | `agon_raids_alone` | Agon Raids Alone | `ember_lands_storm` | "Let them keep their sport." (army_xp 10; stab -0.02) AI 50 / "Call the house to the Halls." (pp -25; stab 0.03) AI 50; ×1.5 if `zin_rules_is_historical` |
+| 2 | `a_summoner_at_the_rim` | A Summoner at the Rim | `ember_lands_storm` | "Send him home unanswered." AI 20 / "Hear his price." (pp 50; mp 500; call `zin_world_add_gathering_dark`(value 1)) AI 80 |
+| 3 | `the_dead_are_not_his` | The King Will Not Take the Dead | `grave_muster` | "The heir owes nothing." (stab 0.05) AI 50 / "Offer the heir a pact of his own." (pp 25; call `zin_world_add_gathering_dark`(value 1)) AI 50 |
+| 4 | `the_broken_ring` | The Broken Ring | `ember_lands_storm` | "The ring stays broken, and it stays ours." AI 50 / "Let the keepers look, under guard." (pp 25; opinion FROM `kin_courtesy` both ways; FROM: res [zin_cat_dark_rites] 0.5 ×1) AI 50 |
+| 5 | `the_devils_on_the_shore` | Devils on the Burning Shore | `ember_lands_storm` | "Leave them to their lairs." AI 30 / "Strike a bargain with the devils." (army_xp 15; ws 0.03; call `zin_world_add_gathering_dark`(value 1)) AI 70 |
+| 6 | `silence_in_nafeher` | Silence in Nafeher | `volgan_broken` | "The Halls will choose in their own time." (stab 0.03) |
+| 7 | `the_king_calls_the_kin` | The King Calls the Kin | `ember_lands_storm` | "Our road is our own." AI 40 / "Answer the Halls." (stab 0.03; opinion FROM `kin_courtesy` both ways; FROM: guarantee "ROOT") AI 60 |
+
+### Tree scripts and opinion modifiers
+
+| Name | Kind | Does |
+| --- | --- | --- |
+| `zin_regional_nether_kin_unsworn` | scripted trigger | Nezer, Khorvrath or Dolon exists and is not a subject (`raw`, tags `NEZ`, `KHO`, `DLN` of the new roster) |
+| `zin_regional_nether_call_kin` | scripted effect | Sends `the_king_calls_the_kin` to each of them that exists and is not a subject |
+| `zin_regional_nether_bargain_kept` | opinion modifier | +15, decay 0.5 |
+| `zin_regional_nether_price_raised` | opinion modifier | −10, decay 0.5 |
+| `zin_regional_nether_refused_nafeher` | opinion modifier | −25, decay 0.25 |
+| `zin_regional_nether_maw_disputed` | opinion modifier | −15, decay 0.25 |
+| `zin_regional_nether_kin_courtesy` | opinion modifier | +20, decay 0.5 |
+
+Flags for other owners (proposed hooks): `zin_nether_pacts_open` and `zin_nether_pacts_deep` (the dossier's decision family "Call on the King of Demons" may open and deepen with them), `zin_nether_keeps_lava_rite` (the bestiary's decision "The Lava Rite"), `zin_nether_rings_lit`, `zin_nether_refused_nafeher`, `zin_nether_agon_humbled`, `zin_nether_agon_holds_maw` (a later Agon rebellion may read them).
+
+Mechanic calls: `zin_volgan_add_nether_pact` and `zin_volgan_add_dominion_strength` in Puvulan's scope (Volgan spec sections 1 and 5), `zin_world_add_gathering_dark`.
+
+### AI
+
+| Situation | Behaviour |
+| --- | --- |
+| Opening, historical rule | A, B, D and E first; `the_kings_favour` (×2), `renew_the_bargain` (×3), `gates_for_nafeher` (×3); `refuse_nafeher` ×0 |
+| After the break, historical rule | `hold_the_steward_to_the_bargain` (×3), `call_the_kin_home` ×0.5 |
+| War | G and `fire_from_the_rings` weight 100 once at war; no AI strategy toward conquest: the Nether defends its island and sells companies |
+| AI strategies | befriend Puvulan 30 unless `zin_nether_refused_nafeher`; antagonize Puvulan 25 after a refusal; befriend Nezer, Khorvrath and Dolon 15 each after `zin_volgan_body_destroyed` |
+
+### Owner questions (proposed elements)
+
+| # | Question | Proposed answer used |
+| --- | --- | --- |
+| NET-1 | On the historical path, does the king renew the bargain and hold the Steward to it after the body breaks? | Yes (renew ×3, hold ×3) |
+| NET-2 | May the king call the freed demon realms of the island (Nezer, Khorvrath, Dolon) to the Halls as friends after the break? | Yes, as a divergence, by guarantee and opinion only |
+| NET-3 | Who performs the lava rite (bestiary 1.22, open)? May the Nether's houses keep the pits on the Burning Shore? | The tree lets the Nether keep them (`zin_nether_keeps_lava_rite`) |
+| NET-4 | Does the house of Agon stay a house of the Halls (Nether dossier question 3)? | Yes; the tree names only its lord Khorvael and never Agon's own fate |
+| NET-5 | The stance `zin_shadow_dread` for a realm not sworn to Volgan (characters file, "Owner to confirm") | The tree assumes Shadow |
+
+### Registration (for the lead)
+
+The tree is written for the merged world roster (the Nether, Puvulan, Khorvrath) and passes the builder's analysis with every other tree. The lead adds `regional_nether` to the Ember Lands tier B list of [../01_tiers_and_coverage.md](../01_tiers_and_coverage.md); the five court characters above must be written by the characters module; the Nether pact helpers already exist in `common/scripted_effects/zin_dominion.txt`.
 
 ---
 

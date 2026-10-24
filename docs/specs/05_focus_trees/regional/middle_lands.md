@@ -17,6 +17,8 @@ This spec gives each of the eleven tier B countries of the Middle Lands and Aeno
 
 The eighteen tier C countries of the region use [../shared/shared_concord_dominions.md](../shared/shared_concord_dominions.md), which also defines the helper effects these trees call.
 
+Section 12 adds the tree of **Burrikkrit**, the hobgoblin king's warren-kingdom of the new world roster (proposed design of 25 October 2026, registered by the lead after the roster merge).
+
 ## Lore basis
 
 **Established** (vault): Aenor leads 26 satellites in the Middle Kingdom Concord, among them Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard and Herez; the Cursed Lands and Bloody Forest resist the crown (working table). Selen is the land of rangers; Alleria of Selen is a ranger and archer who helps Eindil at the palace. Kilinti's people are ents (and forest peoples); Hiloron's are giants; the riders of Hunhun are a regional tradition of men; the Aenor Isle houses are a people of men; Asgard lies on Aenor Isle. The Great Wall of Aenor runs from the Organ Mountains past Lunhrim and around Kingson. Some men believe Eindil's warnings, "especially frontier troops, scholars of the First Men and branches of the Lost Cause"; Alleria investigates and protects him. "Men of Selen" join his temporary coalition. Volgan retakes Mirolon and moves north; Zol's dead come through islands and straits; western rulers seize the capital. The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
@@ -1292,6 +1294,207 @@ Asgard is the kingdom of Aenor Isle, off the Middle Lands' west coast, and the C
 ### AI
 
 Historical: B, A, C, D; E: spare_the_isle once the fleets land (hist), harbours_for_the_heir in 1757, the_isle_rebuilt after the evacuation. bar_the_harbours hist 0 (it would change the historical landing); under `FREE` weight 50 when `zin_west_fleet` ≥ 40.
+
+---
+
+## 12. Burrikkrit
+
+**Status of this section:** proposed design of 25 October 2026, written autonomously while the owner is away (handoff [../../../plans/focus_new_trees/burrikkrit_nether_handoff.md](../../../plans/focus_new_trees/burrikkrit_nether_handoff.md)). Every focus, spirit, event, number and route below is **proposed**; the lore it rests on is marked in "Lore basis for this tree". The design data is [docs/design/focus/regional_burrikkrit.json](../../../design/focus/regional_burrikkrit.json); it compiles with the builder's focus compiler against the new world roster.
+
+| Item | Value |
+| --- | --- |
+| Tree id | `regional_burrikkrit` |
+| Country | Burrikkrit (tag BRR; Middle Lands, the Cursed and Giant Mountains; 2 states; goblins 0.88 and hobgoblins 0.12; culture `king_warrens`; faith the Warren Luck; Wild, `zin_wild_tribes`; independent, outside the Concord) |
+| Focuses | 50; columns 0–24, rows 0–9 |
+| Events | `zin_regional_burrikkrit` (9) |
+| Spirits | 20 |
+| Former labels | Glimik (Middle Lands dossier), Ellenmoor (card 29) |
+
+### Lore basis for this tree
+
+**Established or owner-decided:** goblins live in warm caves, love gold and fine things, are cleverer with tools than orcs, ride wolf-like beasts on the surface and are made drowsy by the sun (bestiary cards 15, 36); hobgoblins are bigger goblins and "the king of the goblins is also a hobgoblin who simply grew very big" (card 29); the hobgoblin king rules his own realm only (K22); dwarves hold the Great Wall range (K22); gunpowder is common in some realms (K19), but no text names a firearm until the banned-word data allows it (voice spec 2.5).
+
+**Proposed elsewhere and used here:** the warrens as Elzon's left-behind garrisons of 3A 38; the Lamp Truce of 4A 96 with the Lord of the Deep Hall and the Klungori Guard; the Tunnel Fight of 4A 887; the under-road sold in 4A 1655 and the smugglers' guild that vanished; the under-roads as the one way through the range the defenders do not watch ([middle_lands dossier](../../../lore/regions/middle_lands.md) sections 2.9, 3.7, 7 and 12; `tools/content/data/world/history/middle_lands.json`); King Dwibrik, Snikit, Zigka, Krittik, Blikkit and Nubbix (`tools/content/data/world/characters/middle_lands.json`); the warren wurgh (bestiary 1.7); "Hobgoblins Carry the Stone" and "Eyes in the Dark" (bestiary 1.13 and 1.7, "In play"); the divergences `the_under_roads_sold` (B23) and `the_warrens_cleared` (B18).
+
+**Proposed here:** every focus, spirit, event and number; the three successions (the Old Custom, Chosen at the Lamp, Feed an Heir); the Counting-Cave; the four buyers of the under-roads and the flags that record the sale.
+
+### Situation in 4A 1748
+
+Burrikkrit is two states of warrens under the Cursed Mountains and the southern Giant Mountains, above the Forests of Darkhere, inside the range the dwarves of Kunhrim hold. Some 75,000 goblins and 10,000 hobgoblins live there under King Dwibrik of Glimzig, who has held the lamp of the throne-cave longer than any king the warrens can name and has no heir, because a king rules until a bigger hobgoblin throws him out. The Lamp Truce keeps the goblins out of the dwarves' galleries and the Klungori Guard watches the warrens from its tower on the South Pass. The warrens mine, trap, raid herds on wurgh-back by night and sell salvage at the edges; their one real treasure is the under-roads, old tunnels under the Giant Mountains that only the goblins know in full.
+
+**Starting problem:** a poor realm boxed in by an armed truce, with a succession that will come by fist unless the king arranges otherwise. The tree gives one opening spirit (`warren_luck`) and lets the player answer the box with the truce, the tunnels or the war.
+
+### Role in the story
+
+- **Historical path (proposed):** the truce is relit, the succession follows the old custom, the hoard is filled, and in the War of the Last Crowns the king keeps the under-roads dark and stands with the Pass-Lord of Kingson. This is a proposal, not lore; the historical-AI choice of the under-roads is owner question BRR-1.
+- **Divergences offered:** the under-roads sold to the hosts of Nafeher, which lets the southern march use them and raises the Gathering Dark (B23, `the_under_roads_sold`); sold to the crown or to the western hosts; the truce let gutter and a second Tunnel Fight against Kunhrim; the warrens dug in against the Guard and the dwarves (B18, `the_warrens_cleared`, played from the defender's side).
+- **Peaceful start:** nothing available on 1 Lumae 4A 1748 declares war or creates a claim. The war goal on Kunhrim needs the Last Crowns or a war, and the sale of the roads needs the Last Crowns or a war (the western sale needs `zin_western_crossing`).
+
+### Ruler and court
+
+All six are records of `tools/content/data/world/characters/middle_lands.json`; the tree recruits the advisors and commanders with a guarded `recruit_character` (it does nothing when the character is already present).
+
+| Id | Name | Role | Recruited by |
+| --- | --- | --- | --- |
+| `BRR_zin_ruler` | King Dwibrik of Glimzig | Country leader (`zin_trait_hobgoblin_king`, `zin_trait_treaty_keeper`) | country history |
+| `zin_burrikkrit_snikit` | Snikit the Lamp-Keeper | Theorist (`zin_adv_hedge_wise`) | `king_dwibriks_court` |
+| `zin_burrikkrit_zigka` | Zigka the Tunnel-Seller | Political advisor (`zin_adv_whisper_master`) | `the_under_roads` |
+| `zin_burrikkrit_krittik` | Krittik Fire-Pot | Army chief (`zin_adv_powder_master`) | `fire_pots` |
+| `zin_burrikkrit_blikkit` | Blikkit the Wurgh-Rider | Corps commander | `riders_by_night` |
+| `zin_burrikkrit_nubbix` | Nubbix Shieldwall | Field marshal | `feed_an_heir` |
+
+### Branches
+
+| Br. | Branch | Columns | Opens | Focuses | Payoff |
+| --- | --- | --- | --- | ---: | --- |
+| A | The Throne-Cave (the hobgoblin succession) | 0–4, rows 0–5 | start | 11 | Three exclusive successions, each with its own spirit and follow-up, converging on `the_lamp_passes` (upgrade `warren_luck` → `warren_luck_2`) |
+| B | The Lamp Truce | 6–8, rows 0–6 | start | 10 | Exclusive: relight (non-aggression with Kunhrim and the Guard, iron, the truce sworn anew) or let it gutter (tunnels under the Deep Hall, a war goal on Kunhrim in the war-years, the galleries held) |
+| C | The Under-Roads | 10–16, rows 0–5 | start; the sale needs the war-years | 11 | Four exclusive answers to the buyers (south, crown, west, nobody), each with a mechanic consequence, converging on `what_the_road_was_worth` |
+| D | Wurgh Riders and the Shield-Wall | 18–20, rows 0–3 | start | 6 | Wurgh mounts and riders (`eyes_in_the_dark`), the shield-wall, fire-pots, `hobgoblins_carry_stone`, and the `warren_host` |
+| E | Gold-Hunger | 22–24, rows 0–4 | start | 7 | The Counting-Cave, then exclusive Spend the Hoard (`open_purse`, workshops) or Fill the Hoard (`hoard_of_glimzig`) |
+| F | The War-Years | 3–5, rows 7–9 | `zin_war_of_last_crowns` or at war | 4 | Exclusive: stand with the Pass-Lord of Kingson or raid the southern roads; then `nobody_digs_us_out` |
+
+Mutual exclusions: A `the_old_custom` / `chosen_at_the_lamp` / `feed_an_heir`; B `relight_the_lamp` / `let_the_lamp_gutter`; C `sell_the_road_south` / `sell_the_road_to_the_crown` / `sell_the_road_west` / `keep_the_road_dark`; E `spend_the_hoard` / `fill_the_hoard`; F `stand_with_the_pass_lord` / `raid_the_southern_roads`.
+
+Cross-branch links: the truce branch's iron feeds the warren host's equipment; the road branch's spirits (`road_tolls`, `the_secret_roads`) carry political power and terrain mobility into the war-years; selling the roads moves Nafeher's dominion strength, the Gathering Dark and Nolorim's pass watch; keeping them dark warms the dwarves (opinion) and fortifies the capital that the war branch then defends.
+
+### Focuses
+
+The notation is this file's ("Effect notation"); "res", "bld" and "eq" are the compiler's research, building and equipment effects; "recruit" is a guarded `raw` `recruit_character`. "AI n" is `ai.base`; "×f if `zin_rules_is_historical`" is an AI modifier.
+
+| Br. | Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Available | Effects | AI |
+| --- | --- | --- | --- | --- | --- | --- | ---: | --- | --- | --- |
+| A | `the_lamp_in_the_throne_cave` | The Lamp in the Throne-Cave | `lantern_chain` | — | — | 2,0 | 35 | — | pp 50; spirit `warren_luck` | AI 30 |
+| A | `king_dwibriks_court` | King Dwibrik's Court | `throne_gold` | the_lamp_in_the_throne_cave | — | 1,1 | 35 | — | pp 25; recruit `zin_burrikkrit_snikit` | AI 20 |
+| A | `the_warren_bosses` | The Warren-Bosses | `council_table` | the_lamp_in_the_throne_cave | — | 3,1 | 35 | — | stab 0.03; event `bosses_grumble` | AI 20 |
+| A | `who_is_biggest` | Who Is Biggest? | `crown_broken` | king_dwibriks_court + the_warren_bosses | — | 2,2 | 35 | — | pp 25; event `the_question_of_size` | AI 20 |
+| A | `the_old_custom` | The Old Custom | `giant_hammer` | who_is_biggest | chosen_at_the_lamp, feed_an_heir | 0,3 | 35 | — | spirit `the_biggest_rules`; army_xp 10 | AI 15; ×2 if `zin_rules_is_historical` |
+| A | `chosen_at_the_lamp` | Chosen at the Lamp | `seal_wax` | who_is_biggest | the_old_custom, feed_an_heir | 2,3 | 35 | — | spirit `lamp_council`; pp 50 | AI 10 |
+| A | `feed_an_heir` | Feed an Heir | `feast_table` | who_is_biggest | the_old_custom, chosen_at_the_lamp | 4,3 | 35 | — | spirit `the_fed_heir`; recruit `zin_burrikkrit_nubbix` | AI 10 |
+| A | `the_throne_cave_fight` | A Fight in the Throne-Cave | `war_drums` | the_old_custom | — | 0,4 | 35 | — | event `throne_cave_fight` | AI 15 |
+| A | `the_lamps_raised` | The Lamps Raised | `seal_royal` | chosen_at_the_lamp | — | 2,4 | 35 | — | pp 75 | AI 15 |
+| A | `the_heir_grows` | The Heir Grows | `granary` | feed_an_heir | — | 4,4 | 35 | — | mp 1000; army_xp 5 | AI 15 |
+| A | `the_lamp_passes` | The Lamp Passes | `lantern_chain` | the_throne_cave_fight / the_lamps_raised / the_heir_grows | — | 2,5 | 70 | — | swap `warren_luck`→`warren_luck_2`; stab 0.05 | AI 15 |
+| B | `the_lamp_truce` | The Lamp Truce | `handshake_oath` | — | — | 7,0 | 35 | — | pp 25; if exists Kunhrim: opinion Kunhrim `lamp_truce` both ways | AI 30 |
+| B | `salvage_for_iron` | Salvage for Iron | `traders_road` | the_lamp_truce | — | 6,1 | 35 | exists Kunhrim | event_for Kunhrim `salvage_for_iron` | AI 20 |
+| B | `a_word_at_the_tower` | A Word at the Tower | `pass_fort` | the_lamp_truce | — | 8,1 | 35 | exists Klungori Guard | event_for Klungori Guard `goblins_at_the_tower` | AI 20 |
+| B | `the_truce_questioned` | The Truce Questioned | `scroll_sealed` | salvage_for_iron / a_word_at_the_tower | — | 7,2 | 35 | — | event `truce_questioned` | AI 20 |
+| B | `relight_the_lamp` | Relight the Lamp | `beacon` | the_truce_questioned | let_the_lamp_gutter | 6,3 | 35 | — | spirit `truce_renewed`; flag `zin_burrikkrit_truce_renewed`; if exists Kunhrim: non-aggression Kunhrim; if exists Klungori Guard: non-aggression Klungori Guard | AI 20; ×3 if `zin_rules_is_historical` |
+| B | `let_the_lamp_gutter` | Let the Lamp Gutter | `chain_broken` | the_truce_questioned | relight_the_lamp | 8,3 | 35 | — | spirit `lamp_guttering`; flag `zin_burrikkrit_truce_breaking`; if exists Kunhrim: opinion Kunhrim `truce_strained` both ways | AI 5; ×0 if `zin_rules_is_historical` |
+| B | `dwarf_iron_in_goblin_hands` | Dwarf Iron in Goblin Hands | `forge_anvil` | relight_the_lamp | — | 6,4 | 70 | — | bld arms_factory 1 @capital; eq zin_arms_equipment 300 | AI 15 |
+| B | `tunnels_under_the_deep_hall` | Tunnels under the Deep Hall | `mine_cart` | let_the_lamp_gutter | — | 8,4 | 70 | — | army_xp 10; res [zin_cat_siege] 0.5 ×1 | AI 10 |
+| B | `the_lamp_truce_sworn_anew` | The Lamp Truce Sworn Anew | `scroll_treaty` | dwarf_iron_in_goblin_hands | — | 6,5 | 70 | — | swap `truce_renewed`→`truce_sworn`; if exists Klungori Guard: opinion Klungori Guard `lamp_truce` both ways | AI 15 |
+| B | `the_second_tunnel_fight` | The Second Tunnel Fight | `goblin_raiders` | tunnels_under_the_deep_hall | — | 8,5 | 35 | exists Kunhrim; (global_flag zin_war_of_last_crowns or at_war); not at_war_with Kunhrim | claims on Kunhrim; war goal take_claimed_state on Kunhrim; ws 0.05 | AI 5; ×0 if `zin_rules_is_historical` |
+| B | `the_galleries_taken` | The Galleries Taken | `quarry_stone` | the_second_tunnel_fight | — | 8,6 | 70 | `zin_regional_burrikkrit_holds_galleries` | spirit `the_galleries`; bld industrial_complex 1 @random_owned; pp 50 | AI 100 |
+| C | `the_under_roads` | The Under-Roads | `map_unrolled` | — | — | 13,0 | 35 | — | pp 25; recruit `zin_burrikkrit_zigka` | AI 30 |
+| C | `chalk_marks_in_the_dark` | Chalk Marks in the Dark | `scout_lantern` | the_under_roads | — | 12,1 | 70 | — | bld infrastructure 1 @capital | AI 20 |
+| C | `the_smugglers_rate` | The Smugglers' Rate | `coin_chest` | the_under_roads | — | 14,1 | 35 | — | spirit `road_tolls`; pp 25 | AI 20 |
+| C | `a_secret_worth_keeping` | A Secret Worth Keeping | `ring_doors` | chalk_marks_in_the_dark + the_smugglers_rate | — | 13,2 | 70 | — | spirit `the_secret_roads` | AI 20 |
+| C | `sell_the_road_south` | Sell the Road to the South | `banner_black` | a_secret_worth_keeping | sell_the_road_to_the_crown, sell_the_road_west, keep_the_road_dark | 10,3 | 35 | (global_flag zin_war_of_last_crowns or at_war); exists Puvulan; not at_war_with Puvulan | flag `zin_burrikkrit_road_sold_south`; event_for Puvulan `a_road_through_the_range`; call `zin_world_add_gathering_dark`(value 2); call `zin_elves_add_pass_watch`(value 5) | AI 10; ×0 if `zin_rules_is_historical`; ×3 if global_flag zin_mirolon_fallen |
+| C | `sell_the_road_to_the_crown` | Sell the Road to the Crown | `palace_parim` | a_secret_worth_keeping | sell_the_road_south, sell_the_road_west, keep_the_road_dark | 12,3 | 35 | (global_flag zin_war_of_last_crowns or at_war); exists Aenor; not at_war_with Aenor | flag `zin_burrikkrit_road_sold_crown`; event_for Aenor `goblin_guides_for_the_crown`; call `zin_elves_add_pass_watch`(value 5) | AI 10; ×0 if `zin_rules_is_historical`; ×2 if global_flag zin_volgan_marches |
+| C | `sell_the_road_west` | Sell the Road to the West | `ship_voyage` | a_secret_worth_keeping | sell_the_road_south, sell_the_road_to_the_crown, keep_the_road_dark | 14,3 | 35 | global_flag zin_western_crossing; exists Gunwyn; not at_war_with Gunwyn | flag `zin_burrikkrit_road_sold_west`; event_for Gunwyn `guides_for_the_west`; call `zin_elves_add_pass_watch`(value 5) | AI 10; ×0 if `zin_rules_is_historical` |
+| C | `keep_the_road_dark` | Keep the Road Dark | `fort_wall` | a_secret_worth_keeping | sell_the_road_south, sell_the_road_to_the_crown, sell_the_road_west | 16,3 | 35 | (global_flag zin_war_of_last_crowns or at_war) | flag `zin_burrikkrit_road_kept`; stab 0.03; if exists Kunhrim: opinion Kunhrim `lamp_truce` both ways | AI 20; ×5 if `zin_rules_is_historical` |
+| C | `hosts_in_the_under_roads` | Hosts in the Under-Roads | `grave_host` | sell_the_road_south | — | 10,4 | 35 | global_flag zin_volgan_marches; exists Puvulan | pp 100; ws 0.05; Puvulan: call `zin_volgan_add_dominion_strength`(value 2); call `zin_world_add_gathering_dark`(value 2) | AI 100 |
+| C | `nobody_gets_through` | Nobody Gets Through | `fort_wall` | keep_the_road_dark | — | 16,4 | 70 | — | spirit `the_road_dark`; bld bunker 2 @capital | AI 100 |
+| C | `what_the_road_was_worth` | What the Road Was Worth | `tribute_chest` | hosts_in_the_under_roads / sell_the_road_to_the_crown / sell_the_road_west / nobody_gets_through | — | 13,5 | 70 | — | pp 100; stab 0.05 | AI 100 |
+| D | `wurgh_pens_of_darkhere` | Wurgh Pens in Darkhere | `goblin_raiders` | — | — | 19,0 | 35 | — | eq zin_mounts_equipment 100; res [zin_cat_mounts] 0.5 ×1 | AI 25 |
+| D | `riders_by_night` | Riders by Night | `wild_hunt` | wurgh_pens_of_darkhere | — | 18,1 | 70 | — | spirit `eyes_in_the_dark`; recruit `zin_burrikkrit_blikkit` | AI 20 |
+| D | `the_hobgoblin_shield_wall` | The Hobgoblin Shield-Wall | `sword_shield` | wurgh_pens_of_darkhere | — | 20,1 | 70 | — | army_xp 10; res [zin_cat_armour] 0.5 ×1 | AI 20 |
+| D | `fire_pots` | Fire-Pots | `foundry_fire` | riders_by_night | — | 18,2 | 70 | — | bld arms_factory 1 @capital; res [zin_cat_siege] 0.5 ×1; recruit `zin_burrikkrit_krittik` | AI 15 |
+| D | `hobgoblins_carry_the_stone` | Hobgoblins Carry the Stone | `quarry_stone` | the_hobgoblin_shield_wall | — | 20,2 | 70 | — | spirit `hobgoblins_carry_stone` | AI 15 |
+| D | `the_warren_host` | The Warren Host | `war_drums` | fire_pots + hobgoblins_carry_the_stone | — | 19,3 | 70 | — | spirit `warren_host`; mp 2000 | AI 15 |
+| E | `gold_hunger` | Gold-Hunger | `ledger_coins` | — | — | 23,0 | 70 | — | bld industrial_complex 1 @capital; spirit `gold_hunger_spirit` | AI 25 |
+| E | `salvage_at_the_edges` | Salvage at the Edges | `market_stalls` | gold_hunger | — | 22,1 | 35 | — | pp 50; stab 0.02 | AI 20 |
+| E | `deep_seams` | Deep Seams | `mine_cart` | gold_hunger | — | 24,1 | 70 | — | bld industrial_complex 1 @random_owned | AI 20 |
+| E | `the_counting_cave` | The Counting-Cave | `council_table` | salvage_at_the_edges + deep_seams | — | 23,2 | 35 | — | pp 50 | AI 20 |
+| E | `spend_the_hoard` | Spend the Hoard | `workshop_tools` | the_counting_cave | fill_the_hoard | 22,3 | 70 | — | swap `gold_hunger_spirit`→`open_purse`; bld arms_factory 1 @capital; bld infrastructure 1 @random_owned | AI 15; ×0.5 if `zin_rules_is_historical` |
+| E | `fill_the_hoard` | Fill the Hoard | `coin_chest` | the_counting_cave | spend_the_hoard | 24,3 | 70 | — | swap `gold_hunger_spirit`→`hoard_of_glimzig`; pp 50 | AI 15; ×2 if `zin_rules_is_historical` |
+| E | `gold_enough_for_a_king` | Gold Enough for a King | `crown_gold` | spend_the_hoard / fill_the_hoard | — | 23,4 | 70 | — | pp 75; stab 0.05 | AI 15 |
+| F | `lamps_in_the_war_years` | Lamps in the War-Years | `scout_lantern` | — | — | 4,7 | 35 | (global_flag zin_war_of_last_crowns or at_war) | ws 0.1; mp 1500 | AI 100 |
+| F | `stand_with_the_pass_lord` | Stand with the Pass-Lord | `pass_fort` | lamps_in_the_war_years | raid_the_southern_roads | 3,8 | 35 | exists Kingson; not at_war_with Kingson | non-aggression Kingson; opinion Kingson `pass_friends` both ways; army_xp 5 | AI 20; ×3 if `zin_rules_is_historical` |
+| F | `raid_the_southern_roads` | Raid the Southern Roads | `goblin_raiders` | lamps_in_the_war_years | stand_with_the_pass_lord | 5,8 | 35 | at_war | timed `wurgh_raids` 180; ws 0.05 | AI 15 |
+| F | `nobody_digs_us_out` | Nobody Digs Us Out | `fort_wall` | stand_with_the_pass_lord / raid_the_southern_roads | — | 4,9 | 70 | — | bld bunker 2 @capital; if at_war: spirit `dug_in_deep` | AI 100 |
+
+### Spirits
+
+| Key | Name | Modifiers |
+| --- | --- | --- |
+| `warren_luck` | The Warren Luck | `stability_factor` 0.03, `political_power_gain` 0.05 |
+| `warren_luck_2` | The Lamp Burns Bright | `stability_factor` 0.08, `political_power_gain` 0.1, `drift_defence_factor` 0.1 |
+| `the_biggest_rules` | The Biggest Rules | `army_attack_factor` 0.05, `war_support_factor` 0.05, `stability_factor` -0.03 |
+| `lamp_council` | Lamps Held Up | `political_power_gain` 0.1, `stability_factor` 0.05 |
+| `the_fed_heir` | The Fed Heir | `stability_factor` 0.05, `army_defence_factor` 0.05 |
+| `truce_renewed` | The Lamp Relit | `trade_opinion_factor` 0.1, `stability_factor` 0.03 |
+| `truce_sworn` | The Lamp Truce Sworn Anew | `trade_opinion_factor` 0.15, `stability_factor` 0.05, `army_core_defence_factor` 0.05 |
+| `lamp_guttering` | The Lamp Guttering | `war_support_factor` 0.05, `army_attack_factor` 0.03, `stability_factor` -0.03 |
+| `the_galleries` | Goblins in the Galleries | `production_factory_max_efficiency_factor` 0.05, `stability_factor` -0.02 |
+| `road_tolls` | The Smugglers' Rate | `political_power_gain` 0.1, `trade_opinion_factor` 0.05 |
+| `the_secret_roads` | A Secret Worth Keeping | `enemy_operative_detection_chance_factor` 0.15, `terrain_penalty_reduction` 0.1 |
+| `the_road_dark` | Nobody Gets Through | `army_core_defence_factor` 0.1, `drift_defence_factor` 0.1 |
+| `eyes_in_the_dark` | Eyes in the Dark | `land_night_attack` 0.1, `recon_factor` 0.1, `cavalry_attack_factor` 0.05 |
+| `hobgoblins_carry_stone` | Hobgoblins Carry the Stone | `production_speed_buildings_factor` 0.1, `production_speed_bunker_factor` 0.15 |
+| `warren_host` | The Warren Host | `army_defence_factor` 0.05, `dig_in_speed_factor` 0.15, `max_dig_in_factor` 0.1 |
+| `gold_hunger_spirit` | Gold-Hunger | `political_power_gain` 0.05, `stability_factor` -0.02 |
+| `open_purse` | The King's Open Purse | `production_factory_max_efficiency_factor` 0.05, `consumer_goods_factor` -0.02 |
+| `hoard_of_glimzig` | The Hoard of Glimzig | `political_power_gain` 0.15, `stability_factor` 0.03, `consumer_goods_factor` 0.02 |
+| `wurgh_raids` | Wurgh Raids on the Southern Roads | `cavalry_attack_factor` 0.1, `army_attack_factor` 0.05 |
+| `dug_in_deep` | Dug In Deep | `army_core_defence_factor` 0.15, `max_dig_in_factor` 0.15; removed when at_war false |
+
+Spirit lifecycles: `warren_luck` → `warren_luck_2` (A capstone); the succession spirits stay as the realm's custom; `truce_renewed` → `truce_sworn`; `gold_hunger_spirit` → `open_purse` or `hoard_of_glimzig`; `wurgh_raids` is timed (180 days); `dug_in_deep` is removed by its `cancel` when the realm is at peace.
+
+### Events (`zin_regional_burrikkrit`)
+
+Events to another court list the refusal first, so a timed-out human answer never accepts the bargain (E2).
+
+| # | Key | Title | Picture | Options |
+| ---: | --- | --- | --- | --- |
+| 1 | `bosses_grumble` | The Bosses Grumble | `generic_court` | "Knock their heads together." (ws 0.03) AI 40 / "Feed them until they stop talking." (pp -25; stab 0.03) AI 60 |
+| 2 | `the_question_of_size` | The Question of Size | `generic_court` | "The king is still the biggest." (pp 25) |
+| 3 | `throne_cave_fight` | A Fight in the Throne-Cave | `generic_war` | "The old king holds the lamp." (stab 0.05; pp 25) AI 50; ×1.5 if `zin_rules_is_historical` / "A bigger king takes it." (ws 0.05; army_xp 15) AI 50 |
+| 4 | `truce_questioned` | The Lamp Truce Questioned | `generic_wilds` | "Let them come and look, if they dare." (ws 0.03) AI 40 / "Send the captain a lamp and an apology." (pp -25; stab 0.03) AI 60; ×2 if `zin_rules_is_historical` |
+| 5 | `salvage_for_iron` | Salvage for Iron | `generic_court` | "The clans buy nothing from thieves." AI 30 / "Weigh it honestly and pay in iron." (pp 25; opinion FROM `lamp_truce` both ways; FROM: eq zin_arms_equipment 200) AI 70 |
+| 6 | `goblins_at_the_tower` | Goblins at the Tower | `generic_wilds` | "The helmet stays on the wall." AI 50 / "Give them their helmet and their lamp." (stab 0.02; opinion FROM `lamp_truce` both ways) AI 50 |
+| 7 | `a_road_through_the_range` | A Road through the Range | `grave_muster` | "We have roads of our own." AI 30 / "Pay the goblins." (pp -50; call `zin_volgan_add_dominion_strength`(value 3); opinion FROM `road_bought` both ways; FROM: pp 100) AI 70 |
+| 8 | `goblin_guides_for_the_crown` | Goblin Guides for the Crown | `generic_court` | "The crown does not deal with goblins." AI 30 / "Pay for the guides." (pp -50; army_xp 10; opinion FROM `road_bought` both ways; FROM: pp 100) AI 70 |
+| 9 | `guides_for_the_west` | Guides for the West | `generic_war` | "We will take the roads we can see." AI 30 / "Pay for the guides." (pp -50; army_xp 10; opinion FROM `road_bought` both ways; FROM: pp 100) AI 70 |
+
+### Tree scripts and opinion modifiers
+
+| Name | Kind | Does |
+| --- | --- | --- |
+| `zin_regional_burrikkrit_holds_galleries` | scripted trigger | Burrikkrit owns a state that is a core of Kunhrim (`raw`, tag `KUN` of the new roster) |
+| `zin_regional_burrikkrit_lamp_truce` | opinion modifier | +15, decay 0.5 |
+| `zin_regional_burrikkrit_truce_strained` | opinion modifier | −20, decay 0.5 |
+| `zin_regional_burrikkrit_road_bought` | opinion modifier | +15, decay 0.5 |
+| `zin_regional_burrikkrit_pass_friends` | opinion modifier | +20, decay 0.5 |
+
+Flags set for other owners to read (proposed hooks): `zin_burrikkrit_road_sold_south`, `zin_burrikkrit_road_sold_crown`, `zin_burrikkrit_road_sold_west`, `zin_burrikkrit_road_kept` (the dossier's hidden adjacency through the range belongs to the map owner, who may open it for the buyer while the flag holds); `zin_burrikkrit_truce_renewed`, `zin_burrikkrit_truce_breaking` (read by the tree's AI strategies).
+
+Mechanic calls: `zin_world_add_gathering_dark` (world systems), `zin_elves_add_pass_watch` ([elves, the Wall and dragons](../../04_mechanics/elves_wall_and_dragons.md) section 7: Nolorim doubles its watch when a road under the range is sold), `zin_volgan_add_dominion_strength` ([Volgan](../../04_mechanics/volgan_southern_dominion.md) section 1, in Puvulan's scope).
+
+### AI
+
+| Situation | Behaviour |
+| --- | --- |
+| Opening, historical rule | A, B, D and E first; `relight_the_lamp` (×3), `the_old_custom` (×2), `fill_the_hoard` (×2) |
+| War-years, historical rule | `keep_the_road_dark` (×5), every sale ×0; `stand_with_the_pass_lord` (×3); `let_the_lamp_gutter` and `the_second_tunnel_fight` ×0 |
+| `PLAUSIBLE` and `FREE` | Sales weighted 10 against keeping 20; the southern sale ×3 once `zin_mirolon_fallen` holds, the crown's ×2 once `zin_volgan_marches` holds |
+| AI strategies | befriend Kunhrim 25 while `zin_burrikkrit_truce_renewed`; antagonize Kunhrim 30 while `zin_burrikkrit_truce_breaking`; befriend Kingson 15; befriend Puvulan 20 after the southern sale |
+
+The dossier's AI line ("sells the under-roads to the highest bidder in a war") is the `PLAUSIBLE`/`FREE` behaviour here; under the historical rule the king keeps the roads dark, because no beat of the alternate history makes the sale historical. Owner question BRR-1.
+
+### Owner questions (proposed elements)
+
+| # | Question | Proposed answer used |
+| --- | --- | --- |
+| BRR-1 | Is the historical Burrikkrit one that keeps the under-roads secret in the war, or one that sells them (and to whom)? | Keeps them dark; every sale is a divergence |
+| BRR-2 | May the hobgoblin succession be played as a choice among the old custom, a council of lamps and a fed heir? | Yes, with the old custom as the historical pick |
+| BRR-3 | Is a war of the goblins on Kunhrim in the war-years (a second Tunnel Fight) acceptable as a divergence? | Yes, never historical, never before the Last Crowns or a war |
+| BRR-4 | Should the roster's stance `zin_wild_tribes` stand (characters file, "Owner to confirm")? | The tree assumes Wild |
+
+### Registration (for the lead)
+
+The tree is written for the merged world roster (Burrikkrit, Puvulan, Gunwyn) and passes the builder's analysis with every other tree. The lead adds `regional_burrikkrit` to the Middle Lands tier B list of [../01_tiers_and_coverage.md](../01_tiers_and_coverage.md); the six characters above must be written by the characters module, and the event pictures and icons are catalog keys already in `presentation-cells.json`.
 
 ---
 
