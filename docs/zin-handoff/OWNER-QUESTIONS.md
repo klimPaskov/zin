@@ -78,7 +78,7 @@ Sent 24 October 2026 by the implementation session. Each question blocks only th
 | Q-27 | The cards' huge sizes (Smash 112 m, Roka 42 m, devils and tree people up to 30 m) in lore, pictures and models | kept as canon in text and pictures; map models scaled to read, as the game does for all units |
 | Q-28 | Do griffins exist in Aoaz? | no griffins; the air belongs to dragons and Aoaz's own winged creatures |
 | Q-29 | Do Kusven's Beasts of the black north fight in the War of the Last Crowns? | yes, as rare story-granted units with Zol's hosts |
-| Q-30 | Regenerate the earlier gpt-6-astra images (590 generations, including the chosen design references) with gpt-6-luna (K50)? | kept for now; new and replacement images use luna |
+| Q-30 | Regenerate the earlier gpt-6-astra images (590 generations, including the chosen design references) with gpt-6-luna (K50)? | answered by the owner (24 October 2026): keep them; astra and luna are the same image model, and luna is used from now on because it spends the plan's allowance more slowly |
 | Q-31 | Yeldenne's capital: the roster's working name "Simoto" (the drawing reads "Hul..." under a seam) | kept as a working name, labelled proposed |
 | Q-32 | Approval of the named portraits of Horos, Eindil, Aurevan, Varner and Golbran before they ship (art pipeline spec); Eindil and Aurevan stay out of start-reachable files | portraits generated with luna and held back until approved |
 
