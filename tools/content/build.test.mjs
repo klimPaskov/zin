@@ -14,7 +14,7 @@ import { historyFile } from './modules/countries.mjs';
 import { stanceIdeology, IDEOLOGIES } from './modules/ideologies.mjs';
 import { flagKey } from './art/slice-flags.mjs';
 import { flagsDir, realmFlagsDir, acceptedRealmCells, FLAG_CELLS, REALM_FLAG_CELLS } from './modules/art.mjs';
-import { HERALDRY_FILE } from './art/flag-jobs.mjs';
+import { HERALDRY_FILE, flagJobs, acceptedLayoutRef, isNearBlackField } from './art/flag-jobs.mjs';
 import { stagingDir, ART, ZIN } from './lib/paths.mjs';
 import { Canvas, tga, dds } from './lib/raster.mjs';
 import { cw, yml, assertModifiers } from './lib/core.mjs';
@@ -105,6 +105,22 @@ test('Negative: unknown modifiers, peoples and stances are rejected', async () =
 test('Negative: the staged tree is never placed inside the repository', () => {
   for (const dir of [ZIN, path.join(ZIN, 'tools/staged'), path.join(ZIN, 'common')]) assert.throws(() => stagingDir(dir), /outside the ZIN repository/, dir);
   assert.equal(path.resolve(stagingDir(path.join(ZIN, '..', 'zin-staged'))), path.resolve(ZIN, '..', 'zin-staged'));
+});
+
+test('Flag jobs copy the layout of an accepted sheet only and key the near-black fields', async () => {
+  // The reference is the first accepted sheet of the tracked cell map (never a rejected file); a dark field gets a keyline and the others do not.
+  const accepted = JSON.parse(await readFile(path.join(here, 'data/realm-flags-cells.json'), 'utf8')).filter(c => c.accepted).map(c => c.sheet);
+  const first = [...accepted].sort()[0], rawFlags = path.join(ART, 'raw/flags').split(path.sep).join('/');
+  assert.equal(await acceptedLayoutRef(path.join(ART, 'raw/flags')), `${rawFlags}/${first}.png`);
+  assert.equal(isNearBlackField({ field: { tinctures: [{ hex: '#2a2a2e' }] } }), true);
+  assert.equal(isNearBlackField({ field: { tinctures: [{ hex: '#e0d8be' }, { hex: '#2f6f78' }] } }), false);
+  const heraldry = JSON.parse(await readFile(HERALDRY_FILE, 'utf8')), design = new Map(heraldry.countries.map(d => [d.tag, d]));
+  const { jobs } = await flagJobs({ heraldry });
+  for (const j of jobs) {
+    const dark = j.designs.some(d => isNearBlackField(design.get(d.tag)));
+    assert.equal(/Keyline: flags /.test(j.prompt), dark, `${j.id} keyline`);
+    if (j.references.length) assert.equal(j.references[0], `${rawFlags}/${first}.png`, j.id);
+  }
 });
 
 test('The realm flag cell map covers every realm once, matches its heraldry design, and accepts whole sheets only', async () => {

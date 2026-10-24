@@ -17,90 +17,35 @@ Totals: 792 rows (15 realm flags of the roster integration, 302 exact duplicates
 
 ## Realm flags (roster integration)
 
-The 156 realms of the roster (tools/content/data/world/roster.json) have one heraldic design each in tools/content/data/world/heraldry.json. Their flag sheets come from tools/content/art/flag-jobs.mjs; 89 realms have an accepted flag (tools/content/data/realm-flags-cells.json, accepted: true), which the builder stages in place of the old row flag (modules/art.mjs stageRealmFlags). Six sheets of 67 realms (realm-flags-sheet-01, -02, -06, -08, -10, -14) were rejected after three generations each and are listed in docs/plans/zin-art/realm_flags_handoff.md; those realms keep the old row flag (if they have one) or have no flag (the 7 pending rows P0780 to P0794 above).
+The 156 realms of the roster (tools/content/data/world/roster.json) have one heraldic design each in tools/content/data/world/heraldry.json. Their flag sheets come from tools/content/art/flag-jobs.mjs, and every sheet after the first takes its layout from the first accepted sheet. 149 realms have an accepted flag (tools/content/data/realm-flags-cells.json, accepted: true), which the builder stages in place of the old row flag (modules/art.mjs stageRealmFlags). The seven dark realms of realm-flags-sheet-14 (the dead and demons) were rejected after six generations and keep their old row flag if they have one; the two without an old row, NET and VES, have no flag (rows P0788 and P0790).
 
 | Row | Asset | Family | Why (the asset-check finding) | Spec |
 | --- | --- | --- | --- | --- |
-| P0780 | gfx/flags/BRR.tga, medium/BRR.tga, small/BRR.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): Burrikkrit (BRR) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0781 | gfx/flags/OLO.tga, medium/OLO.tga, small/OLO.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): Olodor (OLO) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0782 | gfx/flags/ANR.tga, medium/ANR.tga, small/ANR.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): Aenor Forest (ANR) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0783 | gfx/flags/HRA.tga, medium/HRA.tga, small/HRA.tga | I1 flag | Hrakbrund (HRA) has no old row and its flag sheet realm-flags-sheet-06 was rejected after three generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0784 | gfx/flags/GHH.tga, medium/GHH.tga, small/GHH.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): Ghaahu (GHH) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0785 | gfx/flags/BRU.tga, medium/BRU.tga, small/BRU.tga | I1 flag | Brundahrim (BRU) has no old row and its flag sheet realm-flags-sheet-06 was rejected after three generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0786 | gfx/flags/GRO.tga, medium/GRO.tga, small/GRO.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): Gromkerm (GRO) flies its generated heraldry flag from realm-flags-sheet-07 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0787 | gfx/flags/BUN.tga, medium/BUN.tga, small/BUN.tga | I1 flag | Burnikit (BUN) has no old row and its flag sheet realm-flags-sheet-08 was rejected after three generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0788 | gfx/flags/VES.tga, medium/VES.tga, small/VES.tga | I1 flag | Veshazel (VES) has no old row and its flag sheet realm-flags-sheet-14 was rejected after three generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0789 | gfx/flags/HOO.tga, medium/HOO.tga, small/HOO.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): Hoorunoron (HOO) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0790 | gfx/flags/NET.tga, medium/NET.tga, small/NET.tga | I1 flag | Nether (NET) has no old row and its flag sheet realm-flags-sheet-14 was rejected after three generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0791 | gfx/flags/WAH.tga, medium/WAH.tga, small/WAH.tga | I1 flag | Wahatud (WAH) has no old row and its flag sheet realm-flags-sheet-08 was rejected after three generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0792 | gfx/flags/GOF.tga, medium/GOF.tga, small/GOF.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): God Forest (GOF) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0793 | gfx/flags/MSH.tga, medium/MSH.tga, small/MSH.tga | I1 flag | Mushroom Forest (MSH) has no old row and its flag sheet realm-flags-sheet-10 was rejected after three generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
-| P0794 | gfx/flags/TIR.tga, medium/TIR.tga, small/TIR.tga | I1 flag | Accepted sheet, not yet wired (the asset gate blocks the build; see docs/plans/zin-art/realm_flags_handoff.md): Tirlan (TIR) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; the three sizes are staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0780 | gfx/flags/BRR.tga, medium/BRR.tga, small/BRR.tga | I1 flag | DONE: Burrikkrit (BRR) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0781 | gfx/flags/OLO.tga, medium/OLO.tga, small/OLO.tga | I1 flag | DONE: Olodor (OLO) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0782 | gfx/flags/ANR.tga, medium/ANR.tga, small/ANR.tga | I1 flag | DONE: Aenor Forest (ANR) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0783 | gfx/flags/HRA.tga, medium/HRA.tga, small/HRA.tga | I1 flag | DONE: Hrakbrund (HRA) flies its generated heraldry flag from realm-flags-sheet-06 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0784 | gfx/flags/GHH.tga, medium/GHH.tga, small/GHH.tga | I1 flag | DONE: Ghaahu (GHH) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0785 | gfx/flags/BRU.tga, medium/BRU.tga, small/BRU.tga | I1 flag | DONE: Brundahrim (BRU) flies its generated heraldry flag from realm-flags-sheet-06 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0786 | gfx/flags/GRO.tga, medium/GRO.tga, small/GRO.tga | I1 flag | DONE: Gromkerm (GRO) flies its generated heraldry flag from realm-flags-sheet-07 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0787 | gfx/flags/BUN.tga, medium/BUN.tga, small/BUN.tga | I1 flag | DONE: Burnikit (BUN) flies its generated heraldry flag from realm-flags-sheet-08 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0788 | gfx/flags/VES.tga, medium/VES.tga, small/VES.tga | I1 flag | Veshazel (VES) has no old row and its flag sheet realm-flags-sheet-14 was rejected after six generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0789 | gfx/flags/HOO.tga, medium/HOO.tga, small/HOO.tga | I1 flag | DONE: Hoorunoron (HOO) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0790 | gfx/flags/NET.tga, medium/NET.tga, small/NET.tga | I1 flag | Nether (NET) has no old row and its flag sheet realm-flags-sheet-14 was rejected after six generations (raw/rejected), so it flies no flag until a reviewed sheet is generated (FLAG_MISSING for the three sizes). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0791 | gfx/flags/WAH.tga, medium/WAH.tga, small/WAH.tga | I1 flag | DONE: Wahatud (WAH) flies its generated heraldry flag from realm-flags-sheet-08 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0792 | gfx/flags/GOF.tga, medium/GOF.tga, small/GOF.tga | I1 flag | DONE: God Forest (GOF) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0793 | gfx/flags/MSH.tga, medium/MSH.tga, small/MSH.tga | I1 flag | DONE: Mushroom Forest (MSH) flies its generated heraldry flag from realm-flags-sheet-10 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0794 | gfx/flags/TIR.tga, medium/TIR.tga, small/TIR.tga | I1 flag | DONE: Tirlan (TIR) flies its generated heraldry flag from realm-flags-sheet-09 (accepted; staged by modules/art.mjs stageRealmFlags). See docs/plans/zin-art/realm_flags_handoff.md. | 08_art_and_assets/06_heraldry.md; R-92 |
 
-Realms still flying the old flag of a former row, until their own sheet is accepted (60):
+Realms still flying the old flag of a former row, until their own sheet is accepted (5):
 
 | Realm | Tag | Old flag of |
 | --- | --- | --- |
-| Aenor | AEN | Aenor |
-| Lerendor | LER | Lerendor |
-| Coldor | CLD | Coldor |
-| Noris | NRS | Noris |
-| Dondor | DND | Dondor |
 | Puvulan | PUV | Volgan |
 | Zol's Mistake | ZOL | Zol |
-| Mirolon | MIR | Mirolon |
-| Gala | GAA | Gala Elves |
-| Selen | SEL | Selen |
-| Melkgard | MLK | Isengard |
-| Yeldenne | YEL | Yeldenne |
-| Herez | HER | Herez |
-| Noleksun | NOL | Noleksun |
-| Safeton | SFT | Safeton |
-| Freshon | FRE | Freshon |
-| Pazoma | PAZ | Pazoma |
-| Orohaf | ORH | Asgard |
-| Kunhrim | KUN | Kunhrim |
-| Eekedor | EEK | Eekedor |
-| R'en | REN | R'en |
-| Molot | MOO | Molot |
-| Keredor-Hellekton | KER | Keredor-Hellekton |
-| Tolvael | TLV | Tolvael |
-| Tolhon | TOL | Tolhon |
-| Heodwa Lands | HEO | Heodwa Lands |
-| Mina | MIA | Mina |
-| Dolpar | DOL | The Hold |
-| Mustnom | MUS | Mustnom |
-| Poloto | PLT | Poloto |
-| Kvittumm | KVI | Celen |
-| Yeti Lands | YEI | Yeti Lands |
-| Vindael | VND | Windwaith |
-| Saopon | SAO | Saopon |
-| Kradlon | KRA | Kradlon |
-| Corogon | CRG | Corogon |
-| Dark Gate | DRK | Dark Gate |
-| Blackton | BLK | Blackton |
-| Belonton | BLN | Belonton |
-| Bordon | BOR | Bordon |
-| Dreson | DRE | Dreson |
-| Dulundur | DUL | Dulundur |
-| Troll Forest | TRO | Troll Forest |
-| The Darks | DAK | The Darks |
-| Skragdurg | SKR | Fondor |
-| Britadon | BRT | Britadon |
 | Khorvrath | KHO | Demon |
 | Dolon | DLN | Dolon |
 | Nezer | NEZ | Nezer |
-| Halia | HAL | Mencnon (merged into it) |
-| Nan | NAN | Nan |
-| Olen | OLE | Olen |
-| Alerhia | ALR | Alerhia |
-| Rhachia | RHA | Avalon |
-| Erco | ERC | Erco |
-| Plutondo | PLO | Plutondo |
-| Delbiz | DLB | Delbiz Grasslands |
-| Woqood | WOQ | Woqood |
-| Orato | ORA | Orato |
-| Luv-zhise | LUV | Luv-zhise |
 
 ## Exact duplicates (interface reskin placeholders)
 

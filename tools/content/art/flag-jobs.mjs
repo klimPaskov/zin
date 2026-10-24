@@ -17,6 +17,19 @@ const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve
 const outDir = path.resolve(isMain && process.argv[2] ? process.argv[2] : `${ART}/jobs`);
 export const HERALDRY_FILE = path.join(here, '../data/world/heraldry.json');
 const DARK = new Set(['the_dead', 'demons']);
+export const REALM_CELLS_FILE = path.join(here, '../data/realm-flags-cells.json');
+
+// The layout reference of every sheet: the first ACCEPTED sheet of data/realm-flags-cells.json (never a rejected file), so the grid is
+// copied from a sheet that passed review and the designs are not. Returns null while no sheet is accepted.
+export async function acceptedLayoutRef(dir) {
+  const cells = JSON.parse(await readFile(REALM_CELLS_FILE, 'utf8'));
+  const sheet = cells.filter(c => c.accepted === true).map(c => c.sheet).sort()[0];
+  return sheet ? path.join(dir, `${sheet}.png`).split(path.sep).join('/') : null;
+}
+
+// A field whose tincture is near-black (every channel below 64) merges with the black ground of the sheet, so the slicer cannot
+// separate its flag. Such flags get a thin light-grey keyline just inside their edge (the slicer trims the keyline with its inset).
+export const isNearBlackField = d => (d.field?.tinctures ?? []).some(t => /^#/.test(t.hex ?? '') && Math.max(...[1, 3, 5].map(i => parseInt(t.hex.slice(i, i + 2), 16))) < 64);
 
 // The tincture names a design uses (field, charges, marks), in order of appearance.
 function tinctureNames(d) {
@@ -42,18 +55,20 @@ export async function flagJobs({ heraldry = null, countries = countryTable() } =
   const streams = [all.filter(d => !DARK.has(d.people)).sort(order), all.filter(d => DARK.has(d.people)).sort(order)];
   const groups = streams.flatMap(list => Array.from({ length: Math.ceil(list.length / S.per_sheet) }, (_, i) => list.slice(i * S.per_sheet, (i + 1) * S.per_sheet)));
   const jobs = [], cells = [];
+  const layoutRef = await acceptedLayoutRef(path.join(outDir, '../raw/flags'));
   groups.forEach((group, s) => {
     const id = `realm-flags-sheet-${String(s + 1).padStart(2, '0')}`;
     const rows = Math.ceil(group.length / S.columns);
     const families = [...new Set(group.map(d => d.family))];
     const palette = [...new Set(group.flatMap(tinctureNames))];
-    const familyStyle = `${families.map(f => `Family style: ${H.families[f]?.mark_text ?? 'no family mark'}.`).join(' ')} Shared palette of this sheet: ${palette.join(', ')}.`;
+    const dark = group.map((d, i) => (isNearBlackField(d) ? i + 1 : 0)).filter(Boolean);
+    const keyline = dark.length ? ` Keyline: flags ${dark.join(', ')} have a near-black field; each of them is edged all round by a thin light-grey keyline (#a6a6a6), about two percent of the flag's width, drawn just inside the flag's own edge so it stands clear of the black ground. The keyline is the only addition; every tincture stays exactly as named.` : '';
+    const familyStyle = `${families.map(f => `Family style: ${H.families[f]?.mark_text ?? 'no family mark'}.`).join(' ')} Shared palette of this sheet: ${palette.join(', ')}.${keyline}`;
     const rowsText = Array.from({ length: rows }, (_, r) => `Row ${r + 1}, left to right: ${group.slice(r * S.columns, (r + 1) * S.columns).map((d, i) => `${r * S.columns + i + 1}. ${d.blazon}`).join(' ')}`).join('\n');
     const prompt = P.prompt_frame.replace('{n}', String(group.length)).replace('{cols}', String(S.columns)).replace('{rows}', String(rows)).replace('{family_style}', familyStyle).replace('{rows_text}', rowsText);
-    const layoutRef = path.join(outDir, '../raw/flags/realm-flags-sheet-01.png').split(path.sep).join('/');
     jobs.push({
-      id, prompt: s === 0 ? prompt : `Image 1 is ONLY a layout reference: copy its solid pure black background, its ${S.columns}-column grid, its flag size and its spacing exactly, but paint completely new flags as described below and copy none of its designs.\n${prompt}`,
-      references: s === 0 ? [] : [layoutRef], out: path.join(outDir, '../raw/flags', `${id}.png`).split(path.sep).join('/'), size: S.canvas, quality: 'high',
+      id, prompt: layoutRef ? `Image 1 is ONLY a layout reference: copy its solid pure black background, its ${S.columns}-column grid, its flag size and its spacing exactly, but paint completely new flags as described below and copy none of its designs.\n${prompt}` : prompt,
+      references: layoutRef ? [layoutRef] : [], out: path.join(outDir, '../raw/flags', `${id}.png`).split(path.sep).join('/'), size: S.canvas, quality: 'high',
       check: { expected: group.length, cols: S.columns, rows, aspect: [1.4, 1.75], minAreaFraction: 1 / 3 },
       designs: group.map(d => ({ tag: d.tag, hash: d.design_hash })),
     });
