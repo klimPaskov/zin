@@ -97,7 +97,7 @@ async function build(extra = {}) {
   const game = await fakeGame(VANILLA);
   const staged = new Staged();
   const defs = extra.defs ?? DEFS;
-  for (const lang of LANGS) staged.add(`localisation/replace/zin_calendar_l_${lang}.yml`, yml({ January: 'Deepwinter' }, lang));
+  for (const lang of LANGS) staged.add(`localisation/replace/zin_calendar_l_${lang}.yml`, yml({ January: 'Glernaen' }, lang));
   const summary = await buildTextSweep(staged, { vanillaDir: path.join(game, 'localisation'), familyTable: extra.table ?? FAM, defs, languages: LANGS, glossary, frames, names: {}, ...extra.ctx });
   return { game, staged, summary, defs };
 }

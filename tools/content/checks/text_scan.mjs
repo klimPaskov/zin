@@ -22,6 +22,11 @@ import { LANGUAGES, parseLocText, headerOf, signature, sigText, signatureDiff, d
 import { loadRuleSet, compileBanned, findBanned, allowanceCovers } from '../lib/banned.mjs';
 import { loadGlossary } from '../lib/text_engine.mjs';
 import { loadFamilyTable, loadFamilyDef, claimsOf, TEXT_DATA } from '../modules/text_sweep.mjs';
+import { LANGUAGE_FORMULA } from '../lib/calendar.mjs';
+
+// The month counter a language's calendar formula adds around the god's name (月 in Japanese and Chinese, 월 in Korean, as the
+// installed game writes its months): the one non-Windows-1252 character a calendar file may hold, drawn by that language's font.
+const formulaChars = lang => new Set([...Object.values(LANGUAGE_FORMULA[lang] ?? {}).join('').replace(/\{[a-z]+\}/g, '')]);
 
 export const SCAN_REPORT_PATH = 'docs/design/validation/text_scan_report.json';
 export const NEAR_COPY = 0.85;                       // spec question 4: tunable
@@ -165,7 +170,7 @@ export async function runTextScan(staged, ctx = {}) {
       if (!/^[A-Za-z0-9_.\-']+$/.test(key)) add('X11', 'error', family, key, rel, 'the key holds characters the game does not accept');
       if (seen.has(key)) add('X12', 'error', family, key, rel, 'the key is defined twice in this file');
       seen.set(key, value);
-      const bad = nonCp1252(value);
+      const bad = nonCp1252(value).filter(ch => !(family === 'calendar' && formulaChars(lang).has(ch)));
       if (bad.length) add('X11', 'error', family, key, rel, `characters outside Windows-1252: ${[...new Set(bad)].join('')} in ${value}`);
       if (value.trim() === '' && !(ctx.emptyOk ?? []).includes(key)) add('X11', 'error', family, key, rel, 'the value is empty');
     }
@@ -257,7 +262,8 @@ export async function runTextScan(staged, ctx = {}) {
       const copy = fileKeys.get(`localisation/replace/zin_${m[1]}_l_${lang}.yml`);
       if (!copy) { add('X13', 'error', m[1], '', f.rel, `the ${lang} copy is missing`); continue; }
       const eng = fileKeys.get(f.rel);
-      for (const [k, v] of eng) if (copy.get(k) !== v) { add('X13', 'error', m[1], k, f.rel, `the ${lang} copy differs or lacks the key`); break; }
+      // The calendar's month values follow each language's formula (lib/calendar.mjs monthKeys), so only its keys must match.
+      for (const [k, v] of eng) if (m[1] === 'calendar' ? !copy.has(k) : copy.get(k) !== v) { add('X13', 'error', m[1], k, f.rel, `the ${lang} copy differs or lacks the key`); break; }
       if (copy.size !== eng.size) add('X13', 'error', m[1], '', f.rel, `the ${lang} copy has ${copy.size} keys, English has ${eng.size}`);
     }
   }

@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "written": "2026-10-24",
+  "requirement": "R-31",
+  "decisions": ["K28", "K30"],
+  "doc": "docs/lore/references/calendar.md section 10 and docs/design/calendar_localisation.md",
+  "status": "Everything here is proposed (P) except the anchors quoted from the regional histories, which are proposed lore of the R-45 histories; the owner decided only that these realms keep their own reckonings and that their text shows them (K30).",
+  "note": "The local reckonings of the realms whose roster field calendar is not twelve (tools/content/data/world/roster.json). lib/calendar.mjs reads this file; modules/calendar.mjs writes the scripted localisation zin_reckoning_date from it. Forms use {year} (the 4A year), {month} (the god-month), {season}, {muster} (the month counted as a Muster, First to Twelfth), {leader} (the country leader), {yearOrdinal} (an era year with its suffix, 3952nd) and {reignOrdinal} (a Rising in words, twelfth).",
+  "ages": {
+    "1A": { "first": 1, "years": 1675 },
+    "2A": { "first": 1676, "years": 2133 },
+    "3A": { "first": 3809, "years": 1260 },
+    "4A": { "first": 5069, "years": null },
+    "source": "tools/content/data/world/history/east_lands.json overview: 1A 1 is year 1, the First Age runs to 1675, the Second Age from 1676 (2A 1) to 3808 (2A 2133), the Third Age from 3809 (3A 1) to 5068 (3A 1260, proposed length), the Fourth Age from 5069 (4A 1), so 4A 1748 is 6816"
+  },
+  "seasonWords": { "winter": "winter", "spring": "spring", "summer": "summer", "autumn": "autumn" },
+  "calendars": {
+    "twelve": {
+      "kind": "twelve",
+      "name": "The Reckoning of the Twelve",
+      "form": "{month}, 4A {year}"
+    },
+    "well_count": {
+      "kind": "era",
+      "name": "The Count of the Wells",
+      "anchor": { "year4A": 1748, "localYear": 3952 },
+      "source": "history/east_lands.json overview (4A 1748 is the 3952nd year of the Wells); the today texts of Noris, Naamis, Woqood, Orato, and of Miaed and Wahatud in history/south_lands.json",
+      "form": "the {yearOrdinal} year of the Wells",
+      "formBefore": "a year before the digging of the Seven Wells"
+    },
+    "ledger_count": {
+      "kind": "era",
+      "name": "The Ledger Count",
+      "anchor": { "year4A": 1748, "localYear": 1108 },
+      "source": "history/east_lands.json overview (the 1108th year of the Ledger); the today texts of Stabilo, Drak, Mostok and Pornivior",
+      "form": "the {yearOrdinal} year of the Ledger",
+      "formBefore": "a year before the opening of the Gold Road"
+    },
+    "flood_count": {
+      "kind": "reign",
+      "name": "The Count of the Floods",
+      "risingFrom": "floods",
+      "risingDay": 1,
+      "source": "roster.json calendars.flood_count (the river-kings begin the year with the Rising and number the years of each king); pantheon.json calendar.seasonalMechanic.floods gives the month of the Rising",
+      "form": "the {reignOrdinal} Rising of {leader}",
+      "formNoReign": "the reign of {leader}",
+      "reigns": {
+        "alerhia": { "rising": 12, "source": "history/east_lands.json Alerhia today: in the twelfth Rising of Alerh Kerseus" },
+        "erco": { "rising": 9, "source": "history/east_lands.json Erco today: in the ninth Rising of King Keroth" },
+        "plutondo": { "rising": 4, "source": "history/east_lands.json Plutondo today and characters/east_lands.json: the fourth Rising of Prince Blosian" },
+        "delbiz": { "rising": null, "source": "No Rising of King Esiuran is written in the histories or the characters; open for the lore owner" },
+        "rhachia": { "rising": null, "source": "Tribune Kaiena's Risings are not written (she was elected for seven years); open for the lore owner" }
+      }
+    },
+    "numbered_musters": {
+      "kind": "muster",
+      "name": "The Musters",
+      "source": "roster.json calendars.numbered_musters (\"the Third Muster\"); history/ember_lands.json Puvulan today (in 4A 1748, in the Musters that the Dominion counts instead of months)",
+      "form": "the {muster} Muster of 4A {year}"
+    },
+    "season_count": {
+      "kind": "season",
+      "name": "By the seasons",
+      "source": "roster.json calendars.season_count (by the seasons only, without months)",
+      "form": "the {season}"
+    },
+    "elven_seasons": {
+      "kind": "season",
+      "name": "The elven count of seasons",
+      "source": "roster.json calendars.elven_seasons; the number of the elven seasons is not written",
+      "form": "the {season}"
+    },
+    "delving_count": {
+      "kind": "season",
+      "name": "The Delving Count",
+      "source": "roster.json calendars.delving_count; the holds do not tell outsiders their count of years (history/middle_lands.json Kunhrim, north_lands.json Hrakbrund, west_lands.json Brundahrim)",
+      "form": "the {season} shifts of the hold"
+    },
+    "knot_cords": {
+      "kind": "season",
+      "name": "The Cords",
+      "source": "roster.json calendars.knot_cords; the knots of the eldest cord are not numbered in the histories",
+      "form": "the {season} of the eldest cord"
+    },
+    "storm_years": {
+      "kind": "season",
+      "name": "The Storm Years",
+      "source": "roster.json calendars.storm_years; the islands' storm names are not written",
+      "form": "the {season} tides"
+    },
+    "nether_count": {
+      "kind": "reign_unnumbered",
+      "name": "The Count of the Halls",
+      "source": "roster.json calendars.nether_count (the years of their pacts and of the King's reign); the history dates no pact",
+      "form": "the reign of {leader}"
+    },
+    "none": {
+      "kind": "twelve",
+      "name": "No calendar",
+      "source": "roster.json calendars.none (no calendar anyone knows): its text uses the engine's dates",
+      "form": "{month}, 4A {year}"
+    }
+  }
+}

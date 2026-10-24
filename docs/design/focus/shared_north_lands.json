@@ -14,7 +14,7 @@
     "forest_trails_spirit": {"name":"Forest Trails","desc":"Lanterns at the trailheads and hunters for guides: the forests of [ROOT.GetName] are friends to its own and foes to strangers.","modifier":{"army_defence_factor":0.05,"attrition":-0.05}},
     "island_crown_spirit": {"name":"An Island Crown","desc":"The sea is the only road to [ROOT.GetName], and its people know every yard of it.","modifier":{"naval_detection":0.05,"army_core_defence_factor":0.05}},
     "freeholders_moot": {"name":"The Freeholders' Moot","desc":"Every free farmer has a voice at the open-air moot, and what he hears there he keeps.","modifier":{"stability_factor":0.03,"political_power_gain":0.05}},
-    "freeholders_moot_2": {"name":"Old Rights Kept","desc":"The old rights are read aloud each Deepwinter, and every freeholder of [ROOT.GetName] knows exactly what he is owed.","modifier":{"stability_factor":0.05,"political_power_gain":0.1,"drift_defence_factor":0.1}},
+    "freeholders_moot_2": {"name":"Old Rights Kept","desc":"The old rights are read aloud each Glernaen, and every freeholder of [ROOT.GetName] knows exactly what he is owed.","modifier":{"stability_factor":0.05,"political_power_gain":0.1,"drift_defence_factor":0.1}},
     "free_towns": {"name":"The Free Towns' Council","desc":"The burghers of [ROOT.GetName] tax themselves, build their own walls and listen to one another.","modifier":{"stability_factor":0.05,"opinion_gain_monthly_factor":0.1}},
     "lords_men": {"name":"The Lord's Men","desc":"Stewards and sworn knights run the realm to the lord's measure, and the council is glad of the quiet.","modifier":{"political_power_factor":0.1,"stability_factor":-0.03}},
     "leren_banner": {"name":"Under the Leren Banner","desc":"A Leren garrison and a Leren drillmaster have made the crown's host steadier, if not any freer.","modifier":{"army_org_factor":0.03,"stability_factor":0.03}},
@@ -447,7 +447,7 @@
     {
       "key": "old_rights_kept",
       "name": "Old Rights Kept",
-      "desc": "The moot copies the old rights onto a long roll and reads them aloud each Deepwinter. Every freeholder hears what he is owed, and what the crown is owed in return.",
+      "desc": "The moot copies the old rights onto a long roll and reads them aloud each Glernaen. Every freeholder hears what he is owed, and what the crown is owed in return.",
       "icon": "charter_old",
       "x": 19,
       "y": 2,

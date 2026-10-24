@@ -15,14 +15,14 @@ Move the game from 1936 to the Fourth Age of Aoaz, so every date the player read
 
 | Item | Value |
 | --- | --- |
-| Start | `1748.3.1.12`, shown as 1 Thaw 1748 |
+| Start | `1748.3.1.12`, shown as 1 Lumae 1748 (in prose 1 Lumae, 4A 1748) |
 | End of the game | `1800.1.1.1` (40 years of sandbox after the historical end) |
 | Year shown | The Fourth Age year number. The engine's date format stays; the Aoaz bar's age button shows "4A [year]" ([07_interface/01_interface.md](../07_interface/01_interface.md) section 2). |
-| Months | Deepwinter, Ironfrost, Thaw, Rainwake, Sowing, Highsun, Goldfield, Harvest, Fallowing, Emberleaf, Mistfall, Longnight (proposed, vault) |
+| Months | Glernaen, Sulethe, Lumae, Maelwen, Vaelei, Rasthel, Kerun, Aurlan, Ailtal, Irumas, Gaelor, Naisa, named after the twelve main New Gods (owner, decision K28, 24 October 2026); forms and formulas in `docs/lore/references/calendar.md` and `tools/content/data/world/pantheon.json`. They supersede the farming-year names of the vault note (Deepwinter to Longnight). |
 | Short months | Dpw, Irf, Tha, Rnw, Sow, Hsn, Gld, Hrv, Fal, Emb, Mis, Lng (*proposed*) |
 | Month lengths | Unchanged (the engine's calendar). |
 
-Month 3 is Thaw, so the start falls on the first day of spring.
+Month 3 is Lumae, so the start falls on the first day of spring.
 
 ## Implementation
 
@@ -37,7 +37,7 @@ Month 3 is Thaw, so the start falls on the first day of spring.
 
 ## Acceptance
 
-- The game opens on 1 Thaw 1748 with the Fourth Age bookmark.
+- The game opens on 1 Lumae 1748 with the Fourth Age bookmark.
 - Every date string players see uses Aoaz month names, in the full and the short form (build: `zin_calendar_l_english.yml` defines all 23 keys; Linux run: the top bar date and a tooltip date both read Aoaz months).
 - No ZIN history file still uses 1936 dates (a generator test checks the staged tree).
 - The research screen does not show ahead-of-time penalties for the starting technologies.

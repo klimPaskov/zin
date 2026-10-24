@@ -18,6 +18,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GAME, ZIN } from '../lib/paths.mjs';
 import { yml } from '../lib/core.mjs';
+import { START_SHOWN } from '../lib/calendar.mjs';
 import { parse, scriptText } from '../lib/clausewitz.mjs';
 import { layoutFolders, bandY, ruleCost, clauseAdmits, whoAdmits, whoCovered, SLOT, ORIGIN } from '../lib/tech_layout.mjs';
 import { defaultPeople, PEOPLES } from './peoples.mjs';
@@ -819,7 +820,7 @@ async function localisation(staged, model) {
   for (const t of model.techs) { set(t.key, t.name); set(`${t.key}_desc`, t.desc); }
   for (const g of model.gates) { set(g.key, g.name); set(`${g.key}_desc`, g.desc); }
   for (const [y, caption] of Object.entries(model.bandCaptions)) set(`zin_techtree_year_${y}`, caption);
-  set('zin_techtree_year_start', '1 Thaw 4A 1748');
+  set('zin_techtree_year_start', START_SHOWN);
   const d = model.doctrines;
   for (const f of d.folders) { set(`zin_doctrine_folder_${f.key}`, f.name); set(`zin_doctrine_folder_${f.key}_desc`, f.desc); }
   for (const t of d.tracks) { set(t.key, t.name); }

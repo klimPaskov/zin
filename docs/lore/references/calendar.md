@@ -1,10 +1,10 @@
 # The Reckoning of the Twelve: the calendar of Aoaz
 
-**Status:** Draft for the owner's approval. **Date:** 24 October 2026. **Requirement:** R-31 (calendar).
+**Status:** The twelve month names, their order and the start on 1 Lumae are accepted by the owner (decision K28); the local reckonings follow decision K30; the rest is proposed. Implemented in the content builder on 24 October 2026 (section 8). **Date:** 24 October 2026. **Requirement:** R-31 (calendar).
 **Companions:** [pantheon.md](pantheon.md) (R-30, the gods and their needs), [edvoid_name.md](edvoid_name.md) (Q-10). **Data:** the month fields and `calendar` block of [tools/content/data/world/pantheon.json](../../../tools/content/data/world/pantheon.json), which `tools/content/lib/calendar.mjs` is to read.
 **Sources read:** `tools/content/lib/calendar.mjs`, `tools/content/modules/calendar.mjs`, `tools/content/calendar.test.mjs`, `docs/specs/00_foundation/01_start_and_calendar.md`, the vault's `07 - History/Fourth Age Chronology.md`, `Ages of Aoaz.md`, `Canon Policy.md` and `09 - Development/Names and Retcons.md` (K3), the faith festivals of `tools/content/data/cultures_game.json`, and the month keys of the installed game's localisation in all ten languages (`core_l_<language>.yml`, `combat_l_<language>.yml`).
 
-Labels as in [pantheon.md](pantheon.md): **E** established, **P** proposed, **O** open. Every month name here is **P** until the owner accepts the gods' names.
+Labels as in [pantheon.md](pantheon.md): **E** established, **P** proposed, **O** open. The twelve month names and their order are **E** (decision K28); their short forms, abbreviations, festivals and history are **P**.
 
 ## 1. What is fixed
 
@@ -114,7 +114,8 @@ The engine decides the order of day, month and year in each language; ZIN change
 
 ## 8. Implementation notes
 
-These are for the owners of the files named; this document changes none of them.
+Items 1 to 3 and 6 are implemented; item 4 is implemented for every staged text (the list of rewritten lines is in [docs/design/calendar_localisation.md](../../design/calendar_localisation.md) section 5); item 5 concerns a document rule and is unchanged.
+The Japanese, Chinese and Korean counters 月 and 월 are the only characters outside Windows-1252 in ZIN text; the text scan allows exactly these characters, only in the calendar files of those languages, because the installed game writes its own months with them in the same fonts.
 
 1. `tools/content/lib/calendar.mjs`: `MONTHS` reads `name` from `monthName` and `abbr` from `monthAbbr` of `pantheon.json`, ordered by `monthIndex`; `START_DATE` stays `1748.3.1.12`.
 2. `tools/content/modules/calendar.mjs`: writes each language folder from `calendar.languageFormula` (`{name}`, `{abbr}`), keeping the `assertKeysExist` check and the `May` exception.
@@ -129,3 +130,23 @@ These are for the owners of the files named; this document changes none of them.
 2. Should the Reckoning date from Aen's First Age, as proposed, or be older than the numbered ages?
 3. Do you accept the Third Age's months by number under the Great Necromancer, restored in 4A 1?
 4. Should Russian and the Asian languages keep the Latin names, as proposed, or should a later translation pass transliterate them?
+
+## 10. Local reckonings
+
+Not every realm keeps the Reckoning of the Twelve (decision K30). The engine shows every date in the twelve months; a realm whose roster field `calendar` names another count writes its own dates in its own text through the scripted localisation `zin_reckoning_date`, whose use is described in [docs/design/calendar_localisation.md](../../design/calendar_localisation.md). The data is [tools/content/data/world/reckonings.json](../../../tools/content/data/world/reckonings.json).
+
+**The shared year count (P, from the R-45 histories).** Years run in one count from the victory of Aen: 1A 1 is year 1, 2A 1 is 1676, 3A 1 is 3809 and 4A 1 is 5069, so 4A 1748 is 6816.
+
+| Reckoning (`calendar`) | How a date reads in 4A 1748 | Conversion | Label |
+| --- | --- | --- | --- |
+| The Count of the Wells (`well_count`) | the 3952nd year of the Wells | Wells year = 4A year + 2204; the Seven Wells were dug in 2A 1190 | P (East Lands history) |
+| The Ledger Count (`ledger_count`) | the 1108th year of the Ledger | Ledger year = 4A year - 640; the Gold Road opened in 4A 641 | P (East Lands history) |
+| The Count of the Floods (`flood_count`) | the twelfth Rising of the country leader (Alerhia) | the Rising of the ruler's reign, counted from the Rising he was crowned in; the year turns on 1 Maelwen, the floods month of the seasonal mechanic | P; Alerhia 12, Erco 9 and Plutondo 4 from the histories; Delbiz and Rhachia are **O** (no Rising written) and read "the reign of" their ruler |
+| The Musters (`numbered_musters`) | the Third Muster of 4A 1748 | the month number in words | P |
+| By the seasons (`season_count`), the elven seasons (`elven_seasons`) | the spring | the season of the month (section 3) | P |
+| The Delving Count (`delving_count`) | the spring shifts of the hold | the season; the holds keep their year count from outsiders | P; the year count is **O** |
+| The Cords (`knot_cords`) | the spring of the eldest cord | the season; the knots are not numbered | P; the year count is **O** |
+| The Storm Years (`storm_years`) | the spring tides | the season; the storms are not named | P; the storm names are **O** |
+| The Count of the Halls (`nether_count`) | the reign of the country leader | the reign; no pact is dated | P; the pact years are **O** |
+| No calendar (`none`) and the twelve | Lumae, 4A 1748 | the engine's month and the 4A year | P |
+

@@ -469,7 +469,7 @@ test('Negative: the builder refuses a banned word, an unknown placeholder and un
 test('Placeholders: number words and month names resolve; anything else is refused', () => {
   assert.deepEqual([5, 10, 15, 40, 90, 21, 100, 365].map(numberWord), ['five', 'ten', 'fifteen', 'forty', 'ninety', 'twenty-one', 'one hundred', 'three hundred and sixty-five']);
   assert.throws(() => numberWord(1.5)); assert.throws(() => numberWord(-1));
-  assert.equal(resolveText('{month:1} and {month:11}', { tags: new Map(), numbers: {} }), 'Deepwinter and Mistfall');
+  assert.equal(resolveText('{month:1} and {month:11}', { tags: new Map(), numbers: {} }), 'Glernaen and Gaelor');
   assert.equal(resolveText('{n:a} {w:a}', { tags: new Map(), numbers: { a: 15 } }), '15 fifteen');
   assert.throws(() => resolveText('{month:13}', { tags: new Map(), numbers: {} }), /No month/);
 });

@@ -28,7 +28,7 @@ import { fileURLToPath } from 'node:url';
 import { assertModifiers } from '../lib/core.mjs';
 import { loadBanned, compileBanned, findBanned } from '../lib/banned.mjs';
 import { nonCp1252 } from '../lib/loc_parse.mjs';
-import { MONTHS } from '../lib/calendar.mjs';
+import { monthIndex } from '../lib/calendar.mjs';
 import { cultureLocEntries, loadCultureModel, resolveCountryCultures, portraitPoolFor, canonicalJson, DATA } from '../lib/cultures_model.mjs';
 
 // Counts the specs fix: 53 cultures (bible), 24 languages, 51 building kits, 14 music palettes, 21 unit groups
@@ -203,14 +203,13 @@ export async function runCultureChecks(model, opts = {}) {
   for (const [k, f] of Object.entries(game.faiths)) if (f.spirit_desc && !/^[a-z][a-z0-9_]*$/.test(f.icon ?? '')) err('mapping', `faith ${k}: icon "${f.icon}" is not a key`);
 
   // ---- festivals and holy sites
-  const months = new Set(MONTHS.map(m => m.name));
   for (const [k, f] of Object.entries(game.faiths)) {
     const seen = new Set();
     for (const fest of f.festivals ?? []) {
       if (!/^[a-z][a-z0-9_]*$/.test(fest.id ?? '')) err('festival', `faith ${k}: a festival id "${fest.id}" is not a key`);
       if (seen.has(fest.id)) err('duplicate', `faith ${k}: the festival ${fest.id} is listed twice`); seen.add(fest.id);
       if (!fest.name) err('festival', `faith ${k}: festival ${fest.id} has no name`);
-      if (fest.month !== null && !months.has(fest.month)) err('festival', `faith ${k}: festival ${fest.id} falls in ${fest.month}, which the calendar lacks`);
+      if (fest.month !== null && monthIndex(fest.month) === null) err('festival', `faith ${k}: festival ${fest.id} falls in ${fest.month}, which the calendar lacks`);
       if (fest.days !== undefined && !(Number.isInteger(fest.days) && fest.days >= 1 && fest.days <= 30)) err('festival', `faith ${k}: festival ${fest.id} lasts ${fest.days} days`);
     }
     if (geography) for (const s of f.holy_sites ?? []) if (!geography.has(s)) err('site', `faith ${k}: the holy site ${s} is not in the geography model`);

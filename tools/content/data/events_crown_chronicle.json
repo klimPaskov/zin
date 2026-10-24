@@ -22,7 +22,7 @@
           "2": { "text": "The man in the ice woke at an hour no one had foretold.", "variants": [ { "if": ["rule:zin_rule_eindil_waking=EARLY"], "suffix": "early", "text": "The man in the ice woke early, before the world was ready for him." }, { "if": ["rule:zin_rule_eindil_waking=LATE"], "suffix": "late", "text": "The man in the ice woke late, when the world had stopped looking north." } ] } },
   "03": { "1": "The Truce of the Grey Ford broke, and the western clans remembered their old quarrels.", "2": "The Grey Ford truce held, and the clans kept their bows strung but quiet." },
   "04": { "1": "In the West he made a peace and laid a crown down.", "2": "Another hand made the western peace.", "3": "The West never knew him." },
-  "05": { "1": "In Mistfall the Golden King died in his sleep, and Parim rang its bells for a day.",
+  "05": { "1": "In Gaelor the Golden King died in his sleep, and Parim rang its bells for a day.",
           "2": { "text": "The Golden King did not die in the year the age foretold.", "variants": [ { "if": ["gflag:zin_afrit_revealed"], "suffix": "revealed", "text": "The Golden King did not die as the Council planned." } ] } },
   "06": { "1": "The temples laid the crown before [zin_loc_deliverer].", "2": "Another camp took the seals of Parim.", "3": "No god took Aenor's crown." },
   "07": { "1": "Storms carried the stranger to the Islands of the South." },

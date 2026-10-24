@@ -14,7 +14,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { yml, assertModifiers } from '../lib/core.mjs';
-import { MONTHS, START_DATE } from '../lib/calendar.mjs';
+import { monthIndex, START_DATE } from '../lib/calendar.mjs';
 import { block, trigger, effects, effectsPlain, aiChance, fire } from '../lib/ew_script.mjs';
 import { loadArgCodes } from '../checks/focus_checks.mjs';
 import { PACES, paceDate } from './focus_compiler.mjs';
@@ -56,20 +56,20 @@ export function eventsOf(data, ns) {
 }
 
 // ------------------------------------------------------------------------------------------------ dates
-const MONTH_INDEX = new Map(MONTHS.map((m, i) => [m.name, i + 1]));
 const utcDays = (y, m, d) => Date.UTC(y, m - 1, d) / 86400000;
 export const START_DAYS = (() => { const [y, m, d] = START_DATE.split('.').map(Number); return utcDays(y, m, d); })();
 function monthSpan(name, year) {
-  const m = MONTH_INDEX.get(name);
+  const m = monthIndex(name);
   if (!m) throw new Error(`unknown month ${name}`);
   return [utcDays(year, m, 1), m === 12 ? utcDays(year + 1, 1, 1) : utcDays(year, m + 1, 1)];
 }
-// "any" | "Thaw 1749" | "Thaw 1748 to Ironfrost 1749" | "1 Highsun 1748" | { offset, length }: days from the start date.
+// "any" | "Lumae 1749" | "Lumae 1748 to Sulethe 1749" | "1 Rasthel 1748" | { offset, length }: days from the start date. A month is a
+// god-month or a former month name (lib/calendar.mjs monthIndex), so windows written before the god-months keep their dates.
 export function parseWindow(spec) {
   if (spec === 'any') return { days: 14, random_days: 350 };
   if (typeof spec === 'object') return { days: spec.offset, random_days: spec.length };
   let m = spec.match(/^(\d+) ([A-Za-z]+) (\d{4})$/);
-  if (m) { const mi = MONTH_INDEX.get(m[2]); if (!mi) throw new Error(`window ${spec}`); return { days: utcDays(+m[3], mi, +m[1]) - START_DAYS }; }
+  if (m) { const mi = monthIndex(m[2]); if (!mi) throw new Error(`window ${spec}`); return { days: utcDays(+m[3], mi, +m[1]) - START_DAYS }; }
   m = spec.match(/^([A-Za-z]+) (\d{4})(?: to ([A-Za-z]+) (\d{4}))?$/);
   if (!m) throw new Error(`window ${spec}`);
   const [a] = monthSpan(m[1], +m[2]), [, b] = monthSpan(m[3] ?? m[1], +(m[4] ?? m[2]));
@@ -289,7 +289,7 @@ export function loreScheduler(lore, W) {
   }
   return `${HEADER}
 # Schedules the flavour events of one country (spec 05 "Scheduling", spec 02_lore/04). zin_lore.100 calls it once per country, a few
-# hours after the start, when the regional flags of the economy slice are set. Windows count days from the start date (1 Thaw 4A 1748).
+# hours after the start, when the regional flags of the economy slice are set. Windows count days from the start date (1 Lumae 4A 1748).
 # The opening events go to human players only.
 
 zin_lore_schedule_flavour = {
