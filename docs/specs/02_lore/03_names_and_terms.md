@@ -170,7 +170,7 @@ Drawn labels that carry a superseded word get new names in game text: **Crown Oc
 | The Kindred of the Woods | P | The Magical Lands elves' defensive league (elves spec) |
 | The Noon League | P | The Lands of the Sun's defensive league (Lands of the Sun spec) |
 | The Pupor Charter | P | The chart houses' league of Triton's Islands (shared Triton's Islands tree) |
-| The Free Crowns of the North | P | Sensai's league of free North Lands crowns (regional North Lands tree) |
+| The Free Crowns of the North | P | Tolvael's league of free North Lands crowns (regional North Lands tree) |
 | The Warden League | P | Mirolon's league of the free south (Mirolon tree) |
 
 ### Artifacts

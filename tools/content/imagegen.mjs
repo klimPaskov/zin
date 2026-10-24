@@ -12,7 +12,9 @@ import { pathToFileURL } from 'node:url';
 import { findRegionsAdaptive } from './lib/sheets.mjs';
 import { GPTIMAGE_LIB } from './lib/paths.mjs';
 const LIB = pathToFileURL(GPTIMAGE_LIB + '/').href;
-process.env.GPTIMAGE_MODEL ??= 'gpt-6-astra';
+// Owner rule (24 October 2026): every picture is generated with gpt-6-luna; gpt-6-astra is never used.
+process.env.GPTIMAGE_MODEL ??= 'gpt-6-luna';
+if (/astra/iu.test(process.env.GPTIMAGE_MODEL)) throw new Error(`GPTIMAGE_MODEL ${process.env.GPTIMAGE_MODEL} is not allowed: the owner's image model is gpt-6-luna`);
 const { getValidCredentials } = await import(LIB + 'auth.js');
 const { generateImage } = await import(LIB + 'codex.js');
 const { readReferenceImages } = await import(LIB + 'images.js');

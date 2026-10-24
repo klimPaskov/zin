@@ -1,0 +1,3537 @@
+{
+ "note": "Every renamed or proposed name of the converted model with the label it replaces, keyed by a world point, for the `names` of the future override file (world-overrides, step 3 of ADR 0067). formerLabel is the label before the rename table; designLabel the design model's name when it differs.",
+ "names": [
+  {
+   "id": "cape_gondolin",
+   "array": "coasts",
+   "at": [
+    0.85,
+    0.44
+   ],
+   "name": "Naamis Cape",
+   "formerLabel": "Gondolin Cape",
+   "nameStatus": "proposed",
+   "language": "noric",
+   "reason": "Gondolin is a name from other fiction",
+   "source": "east_lands.md water table"
+  },
+  {
+   "id": "cape_hiloron",
+   "array": "coasts",
+   "at": [
+    0.538,
+    0.56
+   ],
+   "name": "Hirolon Head",
+   "formerLabel": "Hiloron Head",
+   "nameStatus": "proposed",
+   "reason": "the giants' realm is Hirolon (R-22)",
+   "source": "hirolon.md, middle_lands.md"
+  },
+  {
+   "id": "cape_wonderland",
+   "array": "coasts",
+   "at": [
+    0.384,
+    0.15
+   ],
+   "name": "Austklev Point",
+   "formerLabel": "Wonderland Point",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "east cliff",
+   "reason": "Wonderland is a name from other fiction",
+   "source": "cold_lands.md renamed labels"
+  },
+  {
+   "id": "gulf_hellfire",
+   "array": "coasts",
+   "at": [
+    0.838,
+    0.96355
+   ],
+   "name": "The Gulf of the Teeth",
+   "formerLabel": "Hellfire Gulf",
+   "nameStatus": "owner decision",
+   "reason": "the gulf under the Smoking Teeth (K48)",
+   "source": "owner (K48); east_lands.md water table"
+  },
+  {
+   "id": "waste_black_islands",
+   "array": "deserts",
+   "at": [
+    0.75338,
+    0.34035
+   ],
+   "name": "Black Islands of the Kusmeel",
+   "formerLabel": "Black Islands of the Ocean of Zol",
+   "nameStatus": "owner decision"
+  },
+  {
+   "id": "forest_crown",
+   "array": "forests",
+   "at": [
+    0.60455,
+    0.45519
+   ],
+   "name": "Aenor Forest",
+   "formerLabel": "Crown Forest",
+   "nameStatus": "proposed",
+   "reason": "the realm's name",
+   "source": "middle_lands.md renamed labels; roster Aenor Forest"
+  },
+  {
+   "id": "forest_death",
+   "array": "forests",
+   "at": [
+    0.58697,
+    0.88175
+   ],
+   "name": "Vokh-Gul",
+   "formerLabel": "Death Forest",
+   "nameStatus": "proposed",
+   "language": "infernal",
+   "meaning": "forest of graves",
+   "reason": "repetitive death-names",
+   "source": "ember_lands.md renamed labels"
+  },
+  {
+   "id": "forest_gondolin",
+   "array": "forests",
+   "at": [
+    0.82252,
+    0.59191
+   ],
+   "name": "Naamis Wood",
+   "formerLabel": "Gondolin Wood",
+   "nameStatus": "proposed",
+   "language": "noric",
+   "reason": "Gondolin is a name from other fiction",
+   "source": "east_lands.md renamed labels"
+  },
+  {
+   "id": "forest_hell",
+   "array": "forests",
+   "at": [
+    0.58697,
+    0.87316
+   ],
+   "name": "Vokh-Ashkar",
+   "formerLabel": "Hell Forest",
+   "nameStatus": "proposed",
+   "language": "infernal",
+   "meaning": "fire forest",
+   "reason": "repetitive death-names",
+   "source": "ember_lands.md renamed labels"
+  },
+  {
+   "id": "forest_hiloron",
+   "array": "forests",
+   "at": [
+    0.55767,
+    0.59035
+   ],
+   "name": "Hirolon Woods",
+   "formerLabel": "Hiloron Woods",
+   "nameStatus": "owner decision",
+   "reason": "the giants' realm is spelled Hirolon (K13); the woods follow the realm's name as Hirolon Head does",
+   "source": "owner decision K13; hirolon.md"
+  },
+  {
+   "id": "forest_kingdom",
+   "array": "forests",
+   "at": [
+    0.64596,
+    0.50597
+   ],
+   "name": "Dunelaeth",
+   "formerLabel": "Kingdom Forests",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "reason": "the elves' name of the forest at the foot of Lunhrim",
+   "source": "middle_lands.md renamed labels"
+  },
+  {
+   "id": "forest_taith",
+   "array": "forests",
+   "at": [
+    0.07096,
+    0.57394
+   ],
+   "name": "Tath Forests",
+   "formerLabel": "Taith Forests",
+   "nameStatus": "proposed",
+   "reason": "\"Taith\" echoes the retired \"-waith\" names; the other reading of the drawing",
+   "source": "tritons_islands.md section 2 [OD]"
+  },
+  {
+   "id": "ice_lerenwaith",
+   "array": "ice",
+   "at": [
+    0.53892,
+    0.30675
+   ],
+   "name": "Veskel",
+   "formerLabel": "Lerenwaith",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "reason": "no \"-waith\" names (owner)",
+   "source": "north_lands.md section 2"
+  },
+  {
+   "id": "ice_north_yeti_lands",
+   "array": "ice",
+   "at": [
+    0.27877,
+    0.13175
+   ],
+   "name": "Ghaahu",
+   "formerLabel": "North Yeti Lands",
+   "nameStatus": "proposed",
+   "language": "yetic",
+   "reason": "the yeti realm's own name",
+   "source": "cold_lands.md renamed labels; roster Ghaahu"
+  },
+  {
+   "id": "ice_windwaith",
+   "array": "ice",
+   "at": [
+    0.07603,
+    0.41457
+   ],
+   "name": "Vindael",
+   "formerLabel": "Windwaith",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "reason": "no \"-waith\" names (owner)",
+   "source": "cold_lands.md, tritons_islands.md"
+  },
+  {
+   "id": "lake_evian",
+   "array": "lakes",
+   "at": [
+    0.5858,
+    0.3591
+   ],
+   "name": "Dolpar",
+   "formerLabel": "Evian Sea",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "reason": "Evian is a real place; the lake-realm's name",
+   "source": "north_lands.md; roster Dolpar"
+  },
+  {
+   "id": "land_ember_lands_island",
+   "array": "lands",
+   "at": [
+    0.61197,
+    0.88566
+   ],
+   "name": "The Ember Isle",
+   "formerLabel": "Dead Lands Island",
+   "nameStatus": "owner decision",
+   "reason": "the island of the Ember Lands (owner: the Ember Lands are the Ember Lands)",
+   "source": "owner; ember_lands.md"
+  },
+  {
+   "id": "land_island_001",
+   "array": "lands",
+   "at": [
+    0.07603,
+    0.41457
+   ],
+   "name": "Vindael",
+   "formerLabel": null,
+   "placeholder": "Island 1 (windwaith)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "reason": "the Vindael arm's island",
+   "source": "cold_lands.md renamed labels"
+  },
+  {
+   "id": "land_island_002",
+   "array": "lands",
+   "at": [
+    0.28267,
+    0.613
+   ],
+   "name": "Varnondor",
+   "formerLabel": null,
+   "placeholder": "Island 2 (west_lands)",
+   "nameStatus": "proposed",
+   "reason": "the curled Varnondor land, separate from the mainland",
+   "source": "west_lands.md section 2"
+  },
+  {
+   "id": "land_island_003",
+   "array": "lands",
+   "at": [
+    0.68892,
+    0.30285
+   ],
+   "name": "Isle of Šodolôrō",
+   "formerLabel": null,
+   "placeholder": "Island 3 (zols_mistake)",
+   "nameStatus": "proposed",
+   "reason": "the great black oval isle",
+   "source": "zols_mistake.md section 2"
+  },
+  {
+   "id": "land_island_004",
+   "array": "lands",
+   "at": [
+    0.82017,
+    0.40363
+   ],
+   "name": "Amkerezia",
+   "formerLabel": null,
+   "placeholder": "Island 4 (east_lands)",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "meaning": "deep cedar -kingdom",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_005",
+   "array": "lands",
+   "at": [
+    0.09596,
+    0.60129
+   ],
+   "name": "Raerby",
+   "formerLabel": null,
+   "placeholder": "Island 5 (tritons_islands)",
+   "nameStatus": "proposed",
+   "reason": "the eastern arc",
+   "source": "tritons_islands.md section 2"
+  },
+  {
+   "id": "land_island_006",
+   "array": "lands",
+   "at": [
+    0.06861,
+    0.56691
+   ],
+   "name": "Adel",
+   "formerLabel": null,
+   "placeholder": "Island 6 (tritons_islands)",
+   "nameStatus": "proposed",
+   "reason": "the northern island",
+   "source": "tritons_islands.md section 2"
+  },
+  {
+   "id": "land_island_007",
+   "array": "lands",
+   "at": [
+    0.26119,
+    0.80207
+   ],
+   "name": "Great Isle",
+   "formerLabel": null,
+   "placeholder": "Island 7 (islands_south)",
+   "nameStatus": "proposed",
+   "reason": "the ring island that the drawing makes one main island",
+   "source": "islands_of_the_south.md section 2"
+  },
+  {
+   "id": "land_island_008",
+   "array": "lands",
+   "at": [
+    0.54049,
+    0.36535
+   ],
+   "name": "Deelor",
+   "formerLabel": null,
+   "placeholder": "Island 8 (north_lands)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "valley island",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_009",
+   "array": "lands",
+   "at": [
+    0.11119,
+    0.57707
+   ],
+   "name": "Benan",
+   "formerLabel": null,
+   "placeholder": "Island 9 (tritons_islands)",
+   "nameStatus": "proposed",
+   "reason": "the long western island of Pollos, Benan and Nondondor, named for the drawn Benan in its middle",
+   "source": "tritons_islands.md section 2"
+  },
+  {
+   "id": "land_island_010",
+   "array": "lands",
+   "at": [
+    0.6733,
+    0.79269
+   ],
+   "name": "Dolgarunon",
+   "formerLabel": null,
+   "placeholder": "Island 10 (dead_lands)",
+   "nameStatus": "proposed",
+   "language": "mirolic",
+   "meaning": "deep mountain -land",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_011",
+   "array": "lands",
+   "at": [
+    0.12056,
+    0.71691
+   ],
+   "name": "Saloyia",
+   "formerLabel": null,
+   "placeholder": "Island 11 (lands_sun)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "salt -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_012",
+   "array": "lands",
+   "at": [
+    0.14322,
+    0.80207
+   ],
+   "name": "Verde",
+   "formerLabel": null,
+   "placeholder": "Island 12 (islands_south)",
+   "nameStatus": "proposed",
+   "reason": "the island that carries Verde",
+   "source": "islands_of_the_south.md section 2"
+  },
+  {
+   "id": "land_island_013",
+   "array": "lands",
+   "at": [
+    0.7526,
+    0.34035
+   ],
+   "name": "Neshil",
+   "formerLabel": null,
+   "placeholder": "Island 13 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "south hill",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_014",
+   "array": "lands",
+   "at": [
+    0.06275,
+    0.65832
+   ],
+   "name": "Kitodolwai",
+   "formerLabel": null,
+   "placeholder": "Island 14 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "white valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_015",
+   "array": "lands",
+   "at": [
+    0.72096,
+    0.2591
+   ],
+   "name": "Seellis",
+   "formerLabel": null,
+   "placeholder": "Island 15 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "holy coast",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_016",
+   "array": "lands",
+   "at": [
+    0.49635,
+    0.46379
+   ],
+   "name": "Dolgdoal",
+   "formerLabel": null,
+   "placeholder": "Island 16 (dark_lands)",
+   "nameStatus": "proposed",
+   "language": "dondric",
+   "meaning": "pass valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_017",
+   "array": "lands",
+   "at": [
+    0.8565,
+    0.34113
+   ],
+   "name": "Fladev",
+   "formerLabel": null,
+   "placeholder": "Island 17 (zols_mistake)",
+   "nameStatus": "proposed",
+   "reason": "the owner's drawn island label, 33 px from the island through the registered east sheet",
+   "source": "docs/name_table.md (South-Earth, 0.17624, 0.53893)"
+  },
+  {
+   "id": "land_island_018",
+   "array": "lands",
+   "at": [
+    0.14791,
+    0.72238
+   ],
+   "name": "Yen Ila",
+   "formerLabel": null,
+   "placeholder": "Island 18 (lands_sun)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "lake valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_019",
+   "array": "lands",
+   "at": [
+    0.09205,
+    0.70754
+   ],
+   "name": "Nailia",
+   "formerLabel": null,
+   "placeholder": "Island 19 (lands_sun)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "river -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_020",
+   "array": "lands",
+   "at": [
+    0.3233,
+    0.73175
+   ],
+   "name": "Howan",
+   "formerLabel": null,
+   "placeholder": "Island 20 (islands_south)",
+   "nameStatus": "proposed",
+   "reason": "the island that carries Howan",
+   "source": "islands_of_the_south.md section 2"
+  },
+  {
+   "id": "land_island_021",
+   "array": "lands",
+   "at": [
+    0.73814,
+    0.30285
+   ],
+   "name": "Vikland",
+   "formerLabel": null,
+   "placeholder": "Island 21 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "bay -land",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_022",
+   "array": "lands",
+   "at": [
+    0.07135,
+    0.47238
+   ],
+   "name": "Lighodolwai",
+   "formerLabel": null,
+   "placeholder": "Island 22 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "bright valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_023",
+   "array": "lands",
+   "at": [
+    0.15572,
+    0.688
+   ],
+   "name": "Orn Esa",
+   "formerLabel": null,
+   "placeholder": "Island 23 (lands_sun)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "east mountain",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_024",
+   "array": "lands",
+   "at": [
+    0.86119,
+    0.27082
+   ],
+   "name": "Gunndor",
+   "formerLabel": null,
+   "placeholder": "Island 24 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "named for Gunn -land (chart form)",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_025",
+   "array": "lands",
+   "at": [
+    0.81978,
+    0.28019
+   ],
+   "name": "Eilsel",
+   "formerLabel": null,
+   "placeholder": "Island 25 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "white forest",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_026",
+   "array": "lands",
+   "at": [
+    0.23463,
+    0.81691
+   ],
+   "name": "Tamoyyan",
+   "formerLabel": null,
+   "placeholder": "Island 26 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "tree -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_027",
+   "array": "lands",
+   "at": [
+    0.17056,
+    0.89191
+   ],
+   "name": "Tariyyan",
+   "formerLabel": null,
+   "placeholder": "Island 27 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "ford -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_028",
+   "array": "lands",
+   "at": [
+    0.29088,
+    0.04582
+   ],
+   "name": "Lochvait",
+   "formerLabel": null,
+   "placeholder": "Island 28 (cold_lands)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "lake -shore",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_029",
+   "array": "lands",
+   "at": [
+    0.08619,
+    0.613
+   ],
+   "name": "Sterrotumai",
+   "formerLabel": null,
+   "placeholder": "Island 29 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "star hill",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_030",
+   "array": "lands",
+   "at": [
+    0.28775,
+    0.90285
+   ],
+   "name": "Nuwayang Yaso",
+   "formerLabel": null,
+   "placeholder": "Island 30 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "high marsh -islands",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_031",
+   "array": "lands",
+   "at": [
+    0.26666,
+    0.91066
+   ],
+   "name": "Pesangang",
+   "formerLabel": null,
+   "placeholder": "Island 31 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "coast -islands",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_032",
+   "array": "lands",
+   "at": [
+    0.08306,
+    0.53957
+   ],
+   "name": "Austoklevo",
+   "formerLabel": null,
+   "placeholder": "Island 32 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "east cliff",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_033",
+   "array": "lands",
+   "at": [
+    0.61666,
+    0.8255
+   ],
+   "name": "Exhoros",
+   "formerLabel": "Vez",
+   "nameStatus": "proposed",
+   "language": "mirolic",
+   "meaning": "ash isle",
+   "reason": "Vez is the old name of Volgan and no land carries the name of its lord; the isle of Vez; the owner's drawn label \"Vez\" lies 8 px from the island",
+   "source": "ember_lands.md renamed labels; docs/name_table.md (Dead Lands, 0.91817, 0.84992)"
+  },
+  {
+   "id": "land_island_034",
+   "array": "lands",
+   "at": [
+    0.18814,
+    0.87394
+   ],
+   "name": "Tonkayyan",
+   "formerLabel": null,
+   "placeholder": "Island 34 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "stone -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_035",
+   "array": "lands",
+   "at": [
+    0.77955,
+    0.29972
+   ],
+   "name": "Seeldeel",
+   "formerLabel": null,
+   "placeholder": "Island 35 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "holy valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_036",
+   "array": "lands",
+   "at": [
+    0.86939,
+    0.23488
+   ],
+   "name": "Neideel",
+   "formerLabel": null,
+   "placeholder": "Island 36 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "new valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_037",
+   "array": "lands",
+   "at": [
+    0.31392,
+    0.05675
+   ],
+   "name": "Vestfaaenn",
+   "formerLabel": null,
+   "placeholder": "Island 37 (cold_lands)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "west field",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_038",
+   "array": "lands",
+   "at": [
+    0.36197,
+    0.87082
+   ],
+   "name": "Kamu Kolan",
+   "formerLabel": null,
+   "placeholder": "Island 38 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "dark island",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_039",
+   "array": "lands",
+   "at": [
+    0.80299,
+    0.31691
+   ],
+   "name": "Karunland",
+   "formerLabel": null,
+   "placeholder": "Island 39 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "mountain -land",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_040",
+   "array": "lands",
+   "at": [
+    0.17369,
+    0.70832
+   ],
+   "name": "Il Nesa",
+   "formerLabel": null,
+   "placeholder": "Island 40 (lands_sun)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "south lake",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_041",
+   "array": "lands",
+   "at": [
+    0.21275,
+    0.80597
+   ],
+   "name": "Yukuyang Yaso",
+   "formerLabel": null,
+   "placeholder": "Island 41 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "high spring -islands",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_042",
+   "array": "lands",
+   "at": [
+    0.37447,
+    0.83879
+   ],
+   "name": "Yongka Sinya",
+   "formerLabel": null,
+   "placeholder": "Island 42 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "bright mountain",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_043",
+   "array": "lands",
+   "at": [
+    0.59713,
+    0.23332
+   ],
+   "name": "Parkrak",
+   "formerLabel": null,
+   "placeholder": "Island 43 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "lake cliff",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_044",
+   "array": "lands",
+   "at": [
+    0.35142,
+    0.71379
+   ],
+   "name": "Ancha",
+   "formerLabel": null,
+   "placeholder": "Island 44 (islands_south)",
+   "nameStatus": "proposed",
+   "reason": "Nara on its drawn island Ancha",
+   "source": "islands_of_the_south.md section 2"
+  },
+  {
+   "id": "land_island_045",
+   "array": "lands",
+   "at": [
+    0.59752,
+    0.20207
+   ],
+   "name": "Seelkrak",
+   "formerLabel": null,
+   "placeholder": "Island 45 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "holy cliff",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_046",
+   "array": "lands",
+   "at": [
+    0.13463,
+    0.72707
+   ],
+   "name": "Uelo Yavi",
+   "formerLabel": null,
+   "placeholder": "Island 46 (lands_sun)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "green island",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_047",
+   "array": "lands",
+   "at": [
+    0.50455,
+    0.52629
+   ],
+   "name": "Dumgil",
+   "formerLabel": null,
+   "placeholder": "Island 47 (dark_lands)",
+   "nameStatus": "proposed",
+   "language": "dondric",
+   "meaning": "bridge hill",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_048",
+   "array": "lands",
+   "at": [
+    0.6815,
+    0.75754
+   ],
+   "name": "Mialia",
+   "formerLabel": null,
+   "placeholder": "Island 48 (dead_lands)",
+   "nameStatus": "proposed",
+   "language": "mirolic",
+   "meaning": "sea -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_049",
+   "array": "lands",
+   "at": [
+    0.63775,
+    0.4005
+   ],
+   "name": "Eissol",
+   "formerLabel": null,
+   "placeholder": "Island 49 (north_lands)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "east pass",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_050",
+   "array": "lands",
+   "at": [
+    0.30221,
+    0.0716
+   ],
+   "name": "Dervvait",
+   "formerLabel": null,
+   "placeholder": "Island 50 (cold_lands)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "oak -shore",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_051",
+   "array": "lands",
+   "at": [
+    0.63892,
+    0.24425
+   ],
+   "name": "Doldeel",
+   "formerLabel": null,
+   "placeholder": "Island 51 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "deep valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_052",
+   "array": "lands",
+   "at": [
+    0.66705,
+    0.22629
+   ],
+   "name": "Nespar",
+   "formerLabel": null,
+   "placeholder": "Island 52 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "south lake",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_053",
+   "array": "lands",
+   "at": [
+    0.34596,
+    0.08175
+   ],
+   "name": "Braenndor",
+   "formerLabel": null,
+   "placeholder": "Island 53 (cold_lands)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "mountain -land (chart form)",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_054",
+   "array": "lands",
+   "at": [
+    0.58892,
+    0.913
+   ],
+   "name": "Fornia",
+   "formerLabel": null,
+   "placeholder": "Island 54 (dead_lands)",
+   "nameStatus": "proposed",
+   "language": "mirolic",
+   "meaning": "beacon -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_055",
+   "array": "lands",
+   "at": [
+    0.90221,
+    0.25129
+   ],
+   "name": "Seldor",
+   "formerLabel": null,
+   "placeholder": "Island 55 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "forest -land (chart form)",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_056",
+   "array": "lands",
+   "at": [
+    0.06236,
+    0.48332
+   ],
+   "name": "Sudowaitos",
+   "formerLabel": null,
+   "placeholder": "Island 56 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "south coast",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_057",
+   "array": "lands",
+   "at": [
+    0.28072,
+    0.79113
+   ],
+   "name": "Tuwa Ronga",
+   "formerLabel": null,
+   "placeholder": "Island 57 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "red field",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_058",
+   "array": "lands",
+   "at": [
+    0.65533,
+    0.25285
+   ],
+   "name": "Parkarun",
+   "formerLabel": null,
+   "placeholder": "Island 58 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "lake mountain",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_059",
+   "array": "lands",
+   "at": [
+    0.07213,
+    0.67707
+   ],
+   "name": "Sang Tilu",
+   "formerLabel": null,
+   "placeholder": "Island 59 (lands_sun)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "small hill",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_060",
+   "array": "lands",
+   "at": [
+    0.57642,
+    0.9005
+   ],
+   "name": "Unlo",
+   "formerLabel": null,
+   "placeholder": "Island 60 (dead_lands)",
+   "nameStatus": "proposed",
+   "reason": "the owner's drawn island label, 3 px from the island through the registered dead sheet",
+   "source": "docs/name_table.md (Dead Lands, 0.84063, 0.94552)"
+  },
+  {
+   "id": "land_island_061",
+   "array": "lands",
+   "at": [
+    0.09752,
+    0.49894
+   ],
+   "name": "Austodolwai",
+   "formerLabel": null,
+   "placeholder": "Island 61 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "east valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_062",
+   "array": "lands",
+   "at": [
+    0.64674,
+    0.29113
+   ],
+   "name": "Veelhil",
+   "formerLabel": null,
+   "placeholder": "Island 62 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "green hill",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_063",
+   "array": "lands",
+   "at": [
+    0.2483,
+    0.913
+   ],
+   "name": "Bukon Kolan",
+   "formerLabel": null,
+   "placeholder": "Island 63 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "dark hill",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_064",
+   "array": "lands",
+   "at": [
+    0.32721,
+    0.06066
+   ],
+   "name": "Aelvait",
+   "formerLabel": null,
+   "placeholder": "Island 64 (cold_lands)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "island -shore",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_065",
+   "array": "lands",
+   "at": [
+    0.60846,
+    0.2591
+   ],
+   "name": "Hildeel",
+   "formerLabel": null,
+   "placeholder": "Island 65 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "hill valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_066",
+   "array": "lands",
+   "at": [
+    0.06978,
+    0.663
+   ],
+   "name": "Kim",
+   "formerLabel": null,
+   "placeholder": "Island 66 (tritons_islands)",
+   "nameStatus": "proposed",
+   "reason": "the owner's drawn island label, 11 px from the island through the registered tritons sheet",
+   "source": "docs/name_table.md (Tritons Islands, 0.04321, 0.45702)"
+  },
+  {
+   "id": "land_island_067",
+   "array": "lands",
+   "at": [
+    0.30806,
+    0.9005
+   ],
+   "name": "Bukonyan",
+   "formerLabel": null,
+   "placeholder": "Island 67 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "hill -country",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_068",
+   "array": "lands",
+   "at": [
+    0.58619,
+    0.19582
+   ],
+   "name": "Seelsel",
+   "formerLabel": null,
+   "placeholder": "Island 68 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "holy forest",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_069",
+   "array": "lands",
+   "at": [
+    0.91392,
+    0.22941
+   ],
+   "name": "Geelmos",
+   "formerLabel": null,
+   "placeholder": "Island 69 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "grey marsh",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_070",
+   "array": "lands",
+   "at": [
+    0.09322,
+    0.5716
+   ],
+   "name": "Margolohu",
+   "formerLabel": null,
+   "placeholder": "Island 70 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "sea lake",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_071",
+   "array": "lands",
+   "at": [
+    0.68697,
+    0.20363
+   ],
+   "name": "Peledor",
+   "formerLabel": null,
+   "placeholder": "Island 71 (zols_mistake)",
+   "nameStatus": "proposed",
+   "reason": "the owner's drawn island label, 7 px from the island through the registered edv sheet",
+   "source": "docs/name_table.md (Ocean of Edvoid, 0.91716, 0.02866)"
+  },
+  {
+   "id": "land_island_072",
+   "array": "lands",
+   "at": [
+    0.83853,
+    0.38097
+   ],
+   "name": "Rhuhyalia",
+   "formerLabel": null,
+   "placeholder": "Island 72 (east_lands)",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "meaning": "wind valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_073",
+   "array": "lands",
+   "at": [
+    0.76666,
+    0.31691
+   ],
+   "name": "Geelkarundor",
+   "formerLabel": null,
+   "placeholder": "Island 73 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "grey mountain -land (chart form)",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_074",
+   "array": "lands",
+   "at": [
+    0.11314,
+    0.45988
+   ],
+   "name": "Hotomurtos",
+   "formerLabel": null,
+   "placeholder": "Island 74 (tritons_islands)",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "meaning": "high wall -isle",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_075",
+   "array": "lands",
+   "at": [
+    0.71119,
+    0.21691
+   ],
+   "name": "Astrland",
+   "formerLabel": null,
+   "placeholder": "Island 75 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "named for Astr -land",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_076",
+   "array": "lands",
+   "at": [
+    0.28814,
+    0.07707
+   ],
+   "name": "Novtumm",
+   "formerLabel": null,
+   "placeholder": "Island 76 (cold_lands)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "new hill",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_077",
+   "array": "lands",
+   "at": [
+    0.66588,
+    0.20519
+   ],
+   "name": "Kourkarun",
+   "formerLabel": null,
+   "placeholder": "Island 77 (zols_mistake)",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "meaning": "black mountain",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_island_078",
+   "array": "lands",
+   "at": [
+    0.22603,
+    0.91144
+   ],
+   "name": "Wunyo Lawun",
+   "formerLabel": null,
+   "placeholder": "Island 78 (islands_south)",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "meaning": "sea valley",
+   "reason": "a placeholder name; no drawn label lies beside the island",
+   "source": "tools/content/modules/names.mjs placeNames, current layer"
+  },
+  {
+   "id": "land_nether_island",
+   "array": "lands",
+   "at": [
+    0.6108,
+    0.93566
+   ],
+   "name": "The Nether",
+   "formerLabel": "The Nether (island)",
+   "nameStatus": "proposed",
+   "reason": "no brackets in a name",
+   "source": "nether.md"
+  },
+  {
+   "id": "pass_isengar",
+   "array": "passes",
+   "at": [
+    0.206,
+    0.118
+   ],
+   "name": "Ormolak Pass",
+   "formerLabel": "Isengar Pass",
+   "nameStatus": "owner decision",
+   "language": "coldic",
+   "reason": "the pass takes the range's new name (K48)",
+   "source": "owner (K48); cold_lands.md relief"
+  },
+  {
+   "id": "pass_kingson_gate",
+   "array": "passes",
+   "at": [
+    0.676,
+    0.575
+   ],
+   "name": "The Kingson Pass",
+   "formerLabel": "Kingson Gate",
+   "nameStatus": "proposed",
+   "reason": "the geography name of the one pass east out of the vale",
+   "source": "middle_lands.md section 2.7"
+  },
+  {
+   "id": "pass_south_gate",
+   "array": "passes",
+   "at": [
+    0.653,
+    0.69
+   ],
+   "name": "The South Pass",
+   "formerLabel": "South Gate",
+   "nameStatus": "proposed",
+   "reason": "the geography name of the southern gate road",
+   "source": "middle_lands.md relief table"
+  },
+  {
+   "id": "plain_gondolin_coast",
+   "array": "plains",
+   "at": [
+    0.86275,
+    0.48957
+   ],
+   "name": "Naamis Coast",
+   "formerLabel": "Gondolin Coast",
+   "nameStatus": "proposed",
+   "language": "noric",
+   "reason": "Gondolin is a name from other fiction",
+   "source": "east_lands.md renamed labels"
+  },
+  {
+   "id": "plain_greenland",
+   "array": "plains",
+   "at": [
+    0.66002,
+    0.58722
+   ],
+   "name": "Yavieth",
+   "formerLabel": "Greenland",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "reason": "Greenland is a real place",
+   "source": "magical_lands.md renamed labels; roster Yavieth"
+  },
+  {
+   "id": "plain_gunwaith",
+   "array": "plains",
+   "at": [
+    0.17721,
+    0.40832
+   ],
+   "name": "Gunwyn Downs",
+   "formerLabel": "Gunwaith Downs",
+   "nameStatus": "proposed",
+   "language": "gunwaithic",
+   "reason": "no \"-waith\" names (owner)",
+   "source": "west_lands.md section 2"
+  },
+  {
+   "id": "range_crown_north",
+   "array": "ranges",
+   "at": [
+    0.61979,
+    0.47064
+   ],
+   "name": "Konori Heights",
+   "formerLabel": "Crown Mountains (north)",
+   "nameStatus": "proposed",
+   "reason": "no brackets; the northern foothills on the Konori side",
+   "source": "geography; middle_lands.md relief table"
+  },
+  {
+   "id": "range_hellfire",
+   "array": "ranges",
+   "at": [
+    0.90288,
+    0.94144
+   ],
+   "name": "The Smoking Teeth",
+   "formerLabel": "Hellfire Range",
+   "nameStatus": "owner decision",
+   "reason": "\"Hellfire\" is a real-world word; the owner chose the Smoking Teeth, a folk name for the burning cones (K48)",
+   "source": "owner (K48); east_lands.md relief"
+  },
+  {
+   "id": "range_isengar_mountains",
+   "array": "ranges",
+   "at": [
+    0.21277,
+    0.11064
+   ],
+   "name": "Ormolak Mountains",
+   "formerLabel": "Isengar Mountains",
+   "nameStatus": "owner decision",
+   "language": "coldic",
+   "reason": "\"Isengar\" echoes Isengard, a name from other fiction; the owner chose Ormolak (K48)",
+   "source": "owner (K48); cold_lands.md relief"
+  },
+  {
+   "id": "range_magic_1",
+   "array": "ranges",
+   "at": [
+    0.68216,
+    0.4543
+   ],
+   "name": "Magic Mountains",
+   "formerLabel": "Magic Mountains (west ridge)",
+   "nameStatus": "proposed",
+   "reason": "no brackets; the drawn label \"Magic Mountains\" names the great central ridges",
+   "source": "magical_lands.md relief; drawn label"
+  },
+  {
+   "id": "range_magic_2",
+   "array": "ranges",
+   "at": [
+    0.68978,
+    0.48481
+   ],
+   "name": "Tirikraniel",
+   "formerLabel": "Magic Mountains (middle ridge)",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "meaning": "small cliff",
+   "reason": "no brackets; the middle ridge takes a name of its own",
+   "source": "geography"
+  },
+  {
+   "id": "range_magic_3",
+   "array": "ranges",
+   "at": [
+    0.68,
+    0.625
+   ],
+   "name": "Lozo Heights",
+   "formerLabel": "Magic Mountains (south ridge)",
+   "nameStatus": "proposed",
+   "reason": "no brackets; the southern ridge beside Lake Lozo",
+   "source": "geography; magical_lands.md"
+  },
+  {
+   "id": "range_magic_wall",
+   "array": "ranges",
+   "at": [
+    0.67676,
+    0.58352
+   ],
+   "name": "Kingson Wall",
+   "formerLabel": "Magic Mountains (wall section)",
+   "nameStatus": "proposed",
+   "reason": "no brackets; the ridge that is the east side of the Kingson ring; the owner keeps the name for natural mountains (K47)",
+   "source": "geography; middle_lands.md section 2.7"
+  },
+  {
+   "id": "range_rush_south",
+   "array": "ranges",
+   "at": [
+    0.65386,
+    0.66084
+   ],
+   "name": "Crown Mountains",
+   "formerLabel": "Crown Mountains (south arc)",
+   "nameStatus": "proposed",
+   "reason": "no brackets; the drawn Rush Mountains on Kingson's south edge, renamed Crown",
+   "source": "middle_lands.md relief table"
+  },
+  {
+   "id": "range_titanos_heights",
+   "array": "ranges",
+   "at": [
+    0.1031,
+    0.0471
+   ],
+   "name": "Nivaros Heights",
+   "formerLabel": "Titanos Heights",
+   "nameStatus": "proposed",
+   "language": "gigantic",
+   "reason": "the Titans are a name of real myth",
+   "source": "cold_lands.md section 2"
+  },
+  {
+   "id": "range_woqood_alps",
+   "array": "ranges",
+   "at": [
+    0.85349,
+    0.44351
+   ],
+   "name": "Woqood Spires",
+   "formerLabel": "Woqood Alps",
+   "nameStatus": "owner decision",
+   "reason": "the Alps are a real-world range; the owner chose the Woqood Spires (K48)",
+   "source": "owner (K48); east_lands.md relief"
+  },
+  {
+   "id": "region_ember_lands",
+   "array": "regions",
+   "at": [
+    0.70767,
+    0.80441
+   ],
+   "name": "The Ember Lands",
+   "formerLabel": "Dead Lands",
+   "nameStatus": "owner decision",
+   "reason": "owner decision of 24 October 2026: the Ember Lands region is the Ember Lands",
+   "source": "owner"
+  },
+  {
+   "id": "region_tritons_islands",
+   "array": "regions",
+   "at": [
+    0.07017,
+    0.57082
+   ],
+   "name": "The Pupor Isles",
+   "formerLabel": "Triton's Islands",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "reason": "the dossiers' name of the archipelago around the Pupor Sea",
+   "source": "tritons_islands.md, cold_lands.md, west_lands.md"
+  },
+  {
+   "id": "region_windwaith",
+   "array": "regions",
+   "at": [
+    0.07642,
+    0.41457
+   ],
+   "name": "Vindael",
+   "formerLabel": "Windwaith arm (Cold Lands)",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "reason": "no \"-waith\" names (owner)",
+   "source": "cold_lands.md; roster Vindael (former label Windwaith)"
+  },
+  {
+   "id": "zone_great_wall",
+   "array": "regions",
+   "at": [
+    0.66588,
+    0.52472
+   ],
+   "name": "The Wall Marches",
+   "formerLabel": "Great Wall zone",
+   "nameStatus": "proposed",
+   "reason": "a zone is no name; the march along the Great Wall of Aenor",
+   "source": "geography"
+  },
+  {
+   "id": "zone_narrow_strait",
+   "array": "regions",
+   "at": [
+    0.59088,
+    0.4216
+   ],
+   "name": "The Narrow Strait",
+   "formerLabel": "Narrow Strait zone",
+   "nameStatus": "proposed",
+   "reason": "a zone is no name; the zone is the strait's water",
+   "source": "geography"
+  },
+  {
+   "id": "river_gil",
+   "array": "rivers",
+   "at": [
+    0.56253,
+    0.34758
+   ],
+   "name": "Kerhil Water",
+   "formerLabel": "Gil'dul Water",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "reason": "Gil'dul echoes a name from other fiction",
+   "source": "north_lands.md section 2"
+  },
+  {
+   "id": "river_gondolin",
+   "array": "rivers",
+   "at": [
+    0.87151,
+    0.53254
+   ],
+   "name": "Shaar-Sheek",
+   "formerLabel": "Gondolin River",
+   "nameStatus": "proposed",
+   "language": "noric",
+   "reason": "Gondolin is a name from other fiction",
+   "source": "east_lands.md water table"
+  },
+  {
+   "id": "river_melt",
+   "array": "rivers",
+   "at": [
+    0.94154,
+    0.63071
+   ],
+   "name": "The Meltwater",
+   "formerLabel": "Meltwater River",
+   "nameStatus": "proposed",
+   "reason": "the dossier's name",
+   "source": "east_lands.md water table"
+  },
+  {
+   "id": "sea_bay_bay_of_arligon",
+   "array": "seas",
+   "at": [
+    0.23711,
+    0.46953
+   ],
+   "name": "Bay of Arligon",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "nearest shore site site_girdon (239 px)"
+  },
+  {
+   "id": "sea_bay_bay_of_borrak",
+   "array": "seas",
+   "at": [
+    0.5332,
+    0.55391
+   ],
+   "name": "Bay of Borrak",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "nearest shore site site_asgard (112 px)"
+  },
+  {
+   "id": "sea_bay_bay_of_bulligon",
+   "array": "seas",
+   "at": [
+    0.15508,
+    0.42422
+   ],
+   "name": "Bay of Bulligon",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "nearest shore site site_gunwaith (139 px)"
+  },
+  {
+   "id": "sea_bay_bay_of_enliras",
+   "array": "seas",
+   "at": [
+    0.73008,
+    0.38672
+   ],
+   "name": "Bay of Enliras",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "nearest shore site site_andos_enda (25 px)"
+  },
+  {
+   "id": "sea_bay_bay_of_sonargur",
+   "array": "seas",
+   "at": [
+    0.54336,
+    0.35234
+   ],
+   "name": "Bay of Sonargur",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "nearest shore site site_sonargur (232 px)"
+  },
+  {
+   "id": "sea_bay_bay_of_the_cold_lands",
+   "array": "seas",
+   "at": [
+    0.12461,
+    0.28203
+   ],
+   "name": "Bay of the Cold Lands",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "its region region_cold_lands"
+  },
+  {
+   "id": "sea_bay_bay_of_the_west_lands",
+   "array": "seas",
+   "at": [
+    0.26445,
+    0.56172
+   ],
+   "name": "Bay of the West Lands",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "its region region_west_lands"
+  },
+  {
+   "id": "sea_bay_bay_of_varlibo",
+   "array": "seas",
+   "at": [
+    0.2332,
+    0.52734
+   ],
+   "name": "Bay of Varlibo",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "nearest shore site site_varnondor_staging (255 px)"
+  },
+  {
+   "id": "sea_bay_isemkei",
+   "array": "seas",
+   "at": [
+    0.68789,
+    0.32891
+   ],
+   "name": "Isemkei Bay",
+   "formerLabel": null,
+   "nameStatus": "established",
+   "reason": "a bay of decision K46",
+   "source": "model coast point bay_isemkei"
+  },
+  {
+   "id": "sea_bay_kradlon",
+   "array": "seas",
+   "at": [
+    0.17305,
+    0.58359
+   ],
+   "name": "Bay of Kradlon",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a bay of decision K46",
+   "source": "model coast point bay_kradlon (proposed in the model)"
+  },
+  {
+   "id": "sea_cold_ocean",
+   "array": "seas",
+   "at": [
+    0.30572,
+    0.32238
+   ],
+   "name": "Suddmarg",
+   "formerLabel": "Cold Ocean",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "meaning": "south sea (sudd + marg)",
+   "reason": "no water is an Ocean (owner); \"Cold Ocean\" shared its meaning with the Frozen Sea (R-13); the Coldic name of the coast folk of Poloto",
+   "source": "geography; languages.json coldic elements"
+  },
+  {
+   "id": "sea_crown_ocean",
+   "array": "seas",
+   "at": [
+    0.38971,
+    0.57472
+   ],
+   "name": "Crown Sea",
+   "formerLabel": "Crown Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner); the proposed name Crown kept",
+   "source": "middle_lands.md water table"
+  },
+  {
+   "id": "sea_dark_sea",
+   "array": "seas",
+   "at": [
+    0.50338,
+    0.37863
+   ],
+   "name": "Dulundur Sea",
+   "formerLabel": "The Dark Sea",
+   "nameStatus": "proposed",
+   "reason": "\"The Dark Sea\" beside the Sea of Darkness names one idea twice; the drawing's own first line Dulundur",
+   "source": "dark_lands.md seas"
+  },
+  {
+   "id": "sea_dark_west_sea",
+   "array": "seas",
+   "at": [
+    0.47642,
+    0.55832
+   ],
+   "name": "Belonton Water",
+   "formerLabel": "Western Dark Strait",
+   "nameStatus": "proposed",
+   "reason": "a sea called a strait beside two real straits",
+   "source": "dark_lands.md seas"
+  },
+  {
+   "id": "sea_dead_sea",
+   "array": "seas",
+   "at": [
+    0.64752,
+    0.83488
+   ],
+   "name": "Veleeda",
+   "formerLabel": "The Dead's Sea",
+   "nameStatus": "proposed",
+   "reason": "the owner's own drawn name; the English half dropped",
+   "source": "ember_lands.md water table"
+  },
+  {
+   "id": "sea_death_sea",
+   "array": "seas",
+   "at": [
+    0.56236,
+    0.44425
+   ],
+   "name": "Gaelmael",
+   "formerLabel": "Sea of Death",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "meaning": "grey water",
+   "reason": "the Aenoran name of the dossiers; \"Sea of Death\" collided with the Ember waters",
+   "source": "dark_lands.md, middle_lands.md"
+  },
+  {
+   "id": "sea_deaths_sea",
+   "array": "seas",
+   "at": [
+    0.55221,
+    0.86222
+   ],
+   "name": "Vehmial",
+   "formerLabel": "Sea of Deaths",
+   "nameStatus": "proposed",
+   "language": "mirolic",
+   "meaning": "the west water",
+   "reason": "collided with the Sea of Death and the Dead's Sea",
+   "source": "ember_lands.md water table"
+  },
+  {
+   "id": "sea_demonic_sea",
+   "array": "seas",
+   "at": [
+    0.5983,
+    0.82238
+   ],
+   "name": "Veshir",
+   "formerLabel": "Demonic Sea",
+   "nameStatus": "proposed",
+   "language": "infernal",
+   "meaning": "ash water",
+   "reason": "repetitive with the realm names",
+   "source": "ember_lands.md water table"
+  },
+  {
+   "id": "sea_dolon_left_sea",
+   "array": "seas",
+   "at": [
+    0.52291,
+    0.5341
+   ],
+   "name": "Sea of Dolon",
+   "formerLabel": "The Left Sea of Dolon",
+   "nameStatus": "proposed",
+   "reason": "the dossier's single name",
+   "source": "dark_lands.md seas"
+  },
+  {
+   "id": "sea_dun_sea",
+   "array": "seas",
+   "at": [
+    0.54791,
+    0.47316
+   ],
+   "name": "Sea of Dobudo",
+   "formerLabel": "Dun Sea",
+   "nameStatus": "proposed",
+   "reason": "\"Dun\" means dark: it shared its meaning with the Sea of Darkness (R-13); named after Dobudo, the Dun port on its shore",
+   "source": "geography; dark_lands.md settlements (Dobudo, on the Dun Sea)"
+  },
+  {
+   "id": "sea_frozen_ocean",
+   "array": "seas",
+   "at": [
+    0.35494,
+    0.04191
+   ],
+   "name": "The Frozen Sea",
+   "formerLabel": "The Frozen Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner); the drawn name otherwise kept",
+   "source": "cold_lands.md seas"
+  },
+  {
+   "id": "sea_gold_wides",
+   "array": "seas",
+   "at": [
+    0.54127,
+    0.50207
+   ],
+   "name": "The Goldoroth Wides",
+   "formerLabel": "Gold Wides",
+   "nameStatus": "proposed",
+   "reason": "\"Gold\" is a name of light beside the dark waters and the Ember Lands; the drawn \"Wides\" kept, named for the Goldoroth shore it lies off",
+   "source": "geography; dark_lands.md seas"
+  },
+  {
+   "id": "sea_gulf_gulf_of_googavis",
+   "array": "seas",
+   "at": [
+    0.12305,
+    0.84922
+   ],
+   "name": "Gulf of Googavis",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a gulf of decision K46",
+   "source": "nearest shore site site_elvana (70 px)"
+  },
+  {
+   "id": "sea_gulf_gulf_of_the_west_lands",
+   "array": "seas",
+   "at": [
+    0.26367,
+    0.48984
+   ],
+   "name": "Gulf of the West Lands",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a gulf of decision K46",
+   "source": "its region region_west_lands"
+  },
+  {
+   "id": "sea_gulf_inner_dark",
+   "array": "seas",
+   "at": [
+    0.50586,
+    0.46797
+   ],
+   "name": "Gulf of Darkness",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a gulf of decision K46",
+   "source": "model coast point gulf_inner_dark (proposed in the model)"
+  },
+  {
+   "id": "sea_gulf_northern_bay",
+   "array": "seas",
+   "at": [
+    0.31836,
+    0.07422
+   ],
+   "name": "Gulf of Minnolomak",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a gulf of decision K46",
+   "source": "model coast point gulf_northern_bay (proposed in the model)"
+  },
+  {
+   "id": "sea_ihuy_seas",
+   "array": "seas",
+   "at": [
+    0.18463,
+    0.7716
+   ],
+   "name": "The Ihuy Sea",
+   "formerLabel": "Ihuy Seas",
+   "nameStatus": "proposed",
+   "reason": "one water, one singular name",
+   "source": "lands_of_the_sun.md water"
+  },
+  {
+   "id": "sea_kradlon_ocean",
+   "array": "seas",
+   "at": [
+    0.1983,
+    0.63332
+   ],
+   "name": "Kradlon Sea",
+   "formerLabel": "Kradlon Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner)",
+   "source": "west_lands.md seas"
+  },
+  {
+   "id": "sea_leren_ocean",
+   "array": "seas",
+   "at": [
+    0.58346,
+    0.42394
+   ],
+   "name": "Leren Sea",
+   "formerLabel": "Leren Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner)",
+   "source": "middle_lands.md, north_lands.md"
+  },
+  {
+   "id": "sea_leviathan_sea",
+   "array": "seas",
+   "at": [
+    0.52486,
+    0.14113
+   ],
+   "name": "Londolo",
+   "formerLabel": "Great Sea of the Leviathan",
+   "nameStatus": "proposed",
+   "reason": "the Leviathan is a name of real myth; the drawn Londolo kept",
+   "source": "north_lands.md seas [OD]; cold_lands.md"
+  },
+  {
+   "id": "sea_light_seas",
+   "array": "seas",
+   "at": [
+    0.03853,
+    0.90597
+   ],
+   "name": "Sala Aila",
+   "formerLabel": "The Seas of Light",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "the bright sea",
+   "reason": "the dossier's Sunhot form; its Common Speech \"Bright Sea\" shares the meaning of the vault's Sea of Gods (R-13)",
+   "source": "lands_of_the_sun.md water"
+  },
+  {
+   "id": "sea_magical_ocean",
+   "array": "seas",
+   "at": [
+    0.77642,
+    0.61847
+   ],
+   "name": "The Rift Sea",
+   "formerLabel": "The Magical Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner); the dossiers name the rift water",
+   "source": "east_lands.md, magical_lands.md water tables"
+  },
+  {
+   "id": "sea_mushroom_seas",
+   "array": "seas",
+   "at": [
+    0.76236,
+    0.67472
+   ],
+   "name": "The Reeto Sea",
+   "formerLabel": "Mushroom Seas",
+   "nameStatus": "proposed",
+   "reason": "the East sheet's drawn name of the southern rift; \"Mushroom Seas\" repeated the forest",
+   "source": "east_lands.md, magical_lands.md water tables"
+  },
+  {
+   "id": "sea_onp_ocean",
+   "array": "seas",
+   "at": [
+    0.55103,
+    0.38566
+   ],
+   "name": "Onp",
+   "formerLabel": "Onp Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner)",
+   "source": "north_lands.md seas"
+  },
+  {
+   "id": "sea_pandar_frozen_seas",
+   "array": "seas",
+   "at": [
+    0.03111,
+    0.26144
+   ],
+   "name": "Pandar",
+   "formerLabel": "Pandar, the Frozen Seas",
+   "nameStatus": "proposed",
+   "reason": "\"Frozen Seas\" beside the Frozen Sea names one water twice",
+   "source": "cold_lands.md seas (single name Pandar)"
+  },
+  {
+   "id": "sea_peace_ocean",
+   "array": "seas",
+   "at": [
+    0.53736,
+    0.70129
+   ],
+   "name": "Nesmael",
+   "formerLabel": "Ocean of Peace",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "meaning": "south sea (nes + mael)",
+   "reason": "no water is an Ocean (owner); \"Ocean of Peace\" contradicted the storm belt and the Ember waters beside it (R-13); the Aenoran name of the pilgrim road south",
+   "source": "geography; languages.json aenoran elements"
+  },
+  {
+   "id": "sea_pupor_ocean",
+   "array": "seas",
+   "at": [
+    0.04556,
+    0.57707
+   ],
+   "name": "Pupor Sea",
+   "formerLabel": "Pupor Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner); the vault name Pupor kept",
+   "source": "tritons_islands.md seas; vault Aoaz and Its Regions"
+  },
+  {
+   "id": "sea_rim_ocean",
+   "array": "seas",
+   "at": [
+    0.62408,
+    0.1841
+   ],
+   "name": "Rim Sea",
+   "formerLabel": "Rim Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner)",
+   "source": "middle_lands.md water table"
+  },
+  {
+   "id": "sea_santon_ocean",
+   "array": "seas",
+   "at": [
+    0.03228,
+    0.72394
+   ],
+   "name": "Santon Sea",
+   "formerLabel": "Santon Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner)",
+   "source": "tritons_islands.md"
+  },
+  {
+   "id": "sea_sun_ocean",
+   "array": "seas",
+   "at": [
+    0.47525,
+    0.89425
+   ],
+   "name": "Naam-Maqr",
+   "formerLabel": "Ocean of the Sun",
+   "nameStatus": "proposed",
+   "language": "noric",
+   "meaning": "west sea (naam + maqr)",
+   "reason": "no water is an Ocean (owner); \"of the Sun\" shared its meaning with the Sea of Gods (R-13); the Noric name of the desert coast",
+   "source": "geography; languages.json noric elements"
+  },
+  {
+   "id": "sea_tempest_reach",
+   "array": "seas",
+   "at": [
+    0.61939,
+    0.81847
+   ],
+   "name": "Zavrekir",
+   "formerLabel": "The Tempest Reach",
+   "nameStatus": "proposed",
+   "language": "infernal",
+   "meaning": "storm water (zavrek + ir)",
+   "reason": "\"Tempest\" shared its meaning with the drawn Windy Seas (R-13); the Infernal name beside Veshir",
+   "source": "geography; languages.json infernal elements"
+  },
+  {
+   "id": "sea_tritons_ocean",
+   "array": "seas",
+   "at": [
+    0.12096,
+    0.37707
+   ],
+   "name": "Norrai Sea",
+   "formerLabel": "Triton's Ocean",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "reason": "the Tritonic name of the dossiers; no water is an Ocean (owner)",
+   "source": "cold_lands.md, tritons_islands.md, west_lands.md (Norrai)"
+  },
+  {
+   "id": "sea_zol_ocean",
+   "array": "seas",
+   "at": [
+    0.94674,
+    0.31222
+   ],
+   "name": "Kusmeel",
+   "formerLabel": "Ocean of Zol",
+   "nameStatus": "owner decision"
+  },
+  {
+   "id": "site_adel",
+   "array": "sites",
+   "at": [
+    0.06175,
+    0.544
+   ],
+   "name": "Sanderz",
+   "formerLabel": "Adel",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "reason": "the capital of Adel (ADE) in the reconciled roster",
+   "source": "roster ADE capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_alerhia",
+   "array": "sites",
+   "at": [
+    0.78,
+    0.8
+   ],
+   "name": "Porrenva",
+   "formerLabel": "Alerhia",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "reason": "the capital of Alerhia (ALR) in the reconciled roster",
+   "source": "roster ALR capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_andos_enda",
+   "array": "sites",
+   "at": [
+    0.731,
+    0.377
+   ],
+   "name": "Enliras",
+   "formerLabel": "Andos Enda",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "reason": "the capital of Andos Enda (ANE) in the reconciled roster",
+   "source": "roster ANE capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_asgard",
+   "array": "sites",
+   "at": [
+    0.512,
+    0.565
+   ],
+   "name": "Borrak",
+   "formerLabel": "Asgard",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Orohaf (ORH) in the reconciled roster; Asgard is a name of Norse myth",
+   "source": "roster ORH capital; middle_lands.md realms table; middle_lands.md section 2.8; roster Orohaf"
+  },
+  {
+   "id": "site_avalon",
+   "array": "sites",
+   "at": [
+    0.909,
+    0.905
+   ],
+   "name": "Pordoce",
+   "formerLabel": "Avalon",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "reason": "the capital of Rhachia (RHA) in the reconciled roster; Avalon is a name of real myth",
+   "source": "roster RHA capital; east_lands.md realms table; east_lands.md renamed labels; roster Rhachia"
+  },
+  {
+   "id": "site_bordon",
+   "array": "sites",
+   "at": [
+    0.4707,
+    0.4117
+   ],
+   "name": "Zubudor",
+   "formerLabel": "Bordon",
+   "nameStatus": "proposed",
+   "language": "orcish",
+   "reason": "the capital of Bordon (BOR) in the reconciled roster",
+   "source": "roster BOR capital; dark_lands.md realms table"
+  },
+  {
+   "id": "site_demon_dolon",
+   "array": "sites",
+   "at": [
+    0.592,
+    0.848
+   ],
+   "name": "Unzeky",
+   "formerLabel": "Demon and Dolon",
+   "nameStatus": "proposed",
+   "language": "infernal",
+   "reason": "the capital of Dolon (DLN) in the reconciled roster",
+   "source": "roster DLN capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_dragon_mountain",
+   "array": "sites",
+   "at": [
+    0.656,
+    0.655
+   ],
+   "name": "Thoriveniel",
+   "formerLabel": "Dragon Mountain",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "reason": "the capital of Yavieth (YAV) in the reconciled roster",
+   "source": "roster YAV capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_drak",
+   "array": "sites",
+   "at": [
+    0.94979,
+    0.751
+   ],
+   "name": "Castronuro",
+   "formerLabel": "Drak",
+   "nameStatus": "proposed",
+   "language": "stabilic",
+   "reason": "the capital of Drak (DRA) in the reconciled roster",
+   "source": "roster DRA capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_dreson",
+   "array": "sites",
+   "at": [
+    0.47,
+    0.42
+   ],
+   "name": "Dolido",
+   "formerLabel": "Dreson",
+   "nameStatus": "proposed",
+   "language": "orcish",
+   "reason": "the capital of Dreson (DRE) in the reconciled roster",
+   "source": "roster DRE capital; dark_lands.md realms table"
+  },
+  {
+   "id": "site_dulundur",
+   "array": "sites",
+   "at": [
+    0.488,
+    0.424
+   ],
+   "name": "Lesderle",
+   "formerLabel": "Dulundur",
+   "nameStatus": "proposed",
+   "language": "orcish",
+   "reason": "the capital of Dulundur (DUL) in the reconciled roster",
+   "source": "roster DUL capital; dark_lands.md realms table"
+  },
+  {
+   "id": "site_eekedor",
+   "array": "sites",
+   "at": [
+    0.607,
+    0.361
+   ],
+   "name": "Viktara",
+   "formerLabel": "Eekedor",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "reason": "the capital of Eekedor (EEK) in the reconciled roster",
+   "source": "roster EEK capital; north_lands.md realms table"
+  },
+  {
+   "id": "site_elvana",
+   "array": "sites",
+   "at": [
+    0.12727,
+    0.87516
+   ],
+   "name": "Googavis",
+   "formerLabel": "Elvana",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "reason": "the capital of Elvana (ELV) in the reconciled roster",
+   "source": "roster ELV capital; lands_of_the_sun.md realms table"
+  },
+  {
+   "id": "site_enhis_is_rond",
+   "array": "sites",
+   "at": [
+    0.255,
+    0.802
+   ],
+   "name": "Suyowan",
+   "formerLabel": "Enhis Is Rond",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "reason": "the capital of Enhis Is Rond (ENH) in the reconciled roster",
+   "source": "roster ENH capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_gala",
+   "array": "sites",
+   "at": [
+    0.14727,
+    0.90616
+   ],
+   "name": "Sodoli",
+   "formerLabel": "Gala",
+   "nameStatus": "proposed",
+   "language": "galic",
+   "reason": "the capital of Gala (GAA) in the reconciled roster",
+   "source": "roster GAA capital; lands_of_the_sun.md realms table"
+  },
+  {
+   "id": "site_girdon",
+   "array": "sites",
+   "at": [
+    0.191,
+    0.455
+   ],
+   "name": "Arligon",
+   "formerLabel": "Girdon",
+   "nameStatus": "proposed",
+   "language": "gunwaithic",
+   "reason": "the capital of Girdon (GIR) in the reconciled roster",
+   "source": "roster GIR capital; west_lands.md realms table"
+  },
+  {
+   "id": "site_godland",
+   "array": "sites",
+   "at": [
+    0.13327,
+    0.94516
+   ],
+   "name": "Wefolen",
+   "formerLabel": "Godland",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "reason": "the capital of Tor Luni (TOR) in the reconciled roster; a name of real religion",
+   "source": "roster TOR capital; lands_of_the_sun.md realms table; lands_of_the_sun.md renamed labels; roster Tor Luni"
+  },
+  {
+   "id": "site_gondolin",
+   "array": "sites",
+   "at": [
+    0.862,
+    0.494
+   ],
+   "name": "Duum-Saah",
+   "formerLabel": "Gondolin",
+   "nameStatus": "proposed",
+   "language": "noric",
+   "reason": "the capital of Naamis (NAA) in the reconciled roster; Gondolin is a name from other fiction",
+   "source": "roster NAA capital; east_lands.md realms table; east_lands.md renamed labels; roster Naamis"
+  },
+  {
+   "id": "site_great_lake_port_1",
+   "array": "sites",
+   "at": [
+    0.5793,
+    0.60234
+   ],
+   "name": "Grafas",
+   "formerLabel": "Great Lake port (west shore)",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "meaning": "grey ford",
+   "reason": "a port needs a name, not a description",
+   "source": "middle_lands.md settlements"
+  },
+  {
+   "id": "site_great_lake_port_2",
+   "array": "sites",
+   "at": [
+    0.60273,
+    0.58359
+   ],
+   "name": "Borepar",
+   "formerLabel": "Great Lake port (north shore)",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "meaning": "north lake (bore + par)",
+   "reason": "a port needs a name; the dossier's \"Parim\" is the capital beside it",
+   "source": "geography; middle_lands.md settlements"
+  },
+  {
+   "id": "site_great_lake_port_3",
+   "array": "sites",
+   "at": [
+    0.61836,
+    0.60547
+   ],
+   "name": "Silesire",
+   "formerLabel": "Great Lake port (east shore)",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "a port needs a name, not a description",
+   "source": "middle_lands.md settlements"
+  },
+  {
+   "id": "site_great_lake_port_4",
+   "array": "sites",
+   "at": [
+    0.60039,
+    0.66016
+   ],
+   "name": "Dolepar",
+   "formerLabel": "Great Lake port (south shore)",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "a port needs a name, not a description",
+   "source": "middle_lands.md settlements"
+  },
+  {
+   "id": "site_great_wall_lunhrim_fort",
+   "array": "sites",
+   "at": [
+    0.662,
+    0.517
+   ],
+   "name": "Hrakkerm",
+   "formerLabel": "Lunhrim Fortress",
+   "nameStatus": "proposed",
+   "language": "dwarvish",
+   "reason": "the capital of Kunhrim (KUN) in the reconciled roster",
+   "source": "roster KUN capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_great_wall_north_fort",
+   "array": "sites",
+   "at": [
+    0.648,
+    0.44
+   ],
+   "name": "Organ Wall Fortress",
+   "formerLabel": "North Wall Fort (Organ)",
+   "nameStatus": "proposed",
+   "reason": "no brackets; the fortress at the Organ end of the Great Wall",
+   "source": "geography"
+  },
+  {
+   "id": "site_gunwaith",
+   "array": "sites",
+   "at": [
+    0.181,
+    0.408
+   ],
+   "name": "Bulligon",
+   "formerLabel": "Gunwaith",
+   "nameStatus": "proposed",
+   "language": "gunwaithic",
+   "reason": "the capital of Gunwyn (GNW) in the reconciled roster; no \"-waith\" names (owner)",
+   "source": "roster GNW capital; west_lands.md realms table; west_lands.md realms; roster Gunwyn"
+  },
+  {
+   "id": "site_heaven",
+   "array": "sites",
+   "at": [
+    0.08027,
+    0.94516
+   ],
+   "name": "Sudoni",
+   "formerLabel": "Heaven",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "reason": "the capital of Yeni Alang (YEN) in the reconciled roster; a name of real religion",
+   "source": "roster YEN capital; lands_of_the_sun.md realms table; lands_of_the_sun.md renamed labels; roster Yeni Alang"
+  },
+  {
+   "id": "site_hengyang",
+   "array": "sites",
+   "at": [
+    0.11067,
+    0.71476
+   ],
+   "name": "Ossi Luni",
+   "formerLabel": "Hengyang",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "reason": "Hengyang is a real city",
+   "source": "lands_of_the_sun.md renamed labels"
+  },
+  {
+   "id": "site_herez",
+   "array": "sites",
+   "at": [
+    0.64,
+    0.708
+   ],
+   "name": "Hugomon",
+   "formerLabel": "Herez",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Herez (HER) in the reconciled roster",
+   "source": "roster HER capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_herrodon",
+   "array": "sites",
+   "at": [
+    0.667,
+    0.377
+   ],
+   "name": "Verozo",
+   "formerLabel": "Herrodon",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "reason": "the capital of Herrodon (HRR) in the reconciled roster",
+   "source": "roster HRR capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_hiloron",
+   "array": "sites",
+   "at": [
+    0.56,
+    0.608
+   ],
+   "name": "Torunalos",
+   "formerLabel": "Hiloron",
+   "nameStatus": "proposed",
+   "language": "gigantic",
+   "reason": "the capital of Hirolon (HIR) in the reconciled roster; the giants' realm is Hirolon (R-22)",
+   "source": "roster HIR capital; middle_lands.md realms table; hirolon.md; roster Hirolon"
+  },
+  {
+   "id": "site_horidor",
+   "array": "sites",
+   "at": [
+    0.273,
+    0.216
+   ],
+   "name": "Ollondo",
+   "formerLabel": "Horidor",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "reason": "the capital of Horidor (HOR) in the reconciled roster",
+   "source": "roster HOR capital; cold_lands.md realms table"
+  },
+  {
+   "id": "site_howan",
+   "array": "sites",
+   "at": [
+    0.324,
+    0.73
+   ],
+   "name": "Lamowan",
+   "formerLabel": "Howan",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "reason": "the capital of Howan (HWN) in the reconciled roster",
+   "source": "roster HWN capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_hunhun",
+   "array": "sites",
+   "at": [
+    0.61289,
+    0.61953
+   ],
+   "name": "Ulrono",
+   "formerLabel": "Hunhun",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Hunhun (HNH) in the reconciled roster",
+   "source": "roster HNH capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_igara",
+   "array": "sites",
+   "at": [
+    0.13927,
+    0.92816
+   ],
+   "name": "Repgin",
+   "formerLabel": "Igara",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "reason": "the capital of Igara (IGA) in the reconciled roster",
+   "source": "roster IGA capital; lands_of_the_sun.md realms table"
+  },
+  {
+   "id": "site_isengard",
+   "array": "sites",
+   "at": [
+    0.217,
+    0.072
+   ],
+   "name": "Minnolomak",
+   "formerLabel": "Isengard",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "reason": "the capital of Melkgard (MLK) in the reconciled roster; Isengard is a name from other fiction",
+   "source": "roster MLK capital; cold_lands.md realms table; cold_lands.md realms; roster Melkgard"
+  },
+  {
+   "id": "site_kilinti",
+   "array": "sites",
+   "at": [
+    0.608,
+    0.548
+   ],
+   "name": "Ollolor",
+   "formerLabel": "Kilinti",
+   "nameStatus": "proposed",
+   "language": "longspeech",
+   "reason": "the capital of Kilinti (KIL) in the reconciled roster",
+   "source": "roster KIL capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_kingson",
+   "array": "sites",
+   "at": [
+    0.654,
+    0.585
+   ],
+   "name": "Deolofson",
+   "formerLabel": "Kingson",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Kingson (KIN) in the reconciled roster",
+   "source": "roster KIN capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_konori",
+   "array": "sites",
+   "at": [
+    0.623,
+    0.485
+   ],
+   "name": "Arrovez",
+   "formerLabel": "Konori",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Konori (KON) in the reconciled roster",
+   "source": "roster KON capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_kradlon",
+   "array": "sites",
+   "at": [
+    0.148,
+    0.5852
+   ],
+   "name": "Bolbin",
+   "formerLabel": "Kradlon",
+   "nameStatus": "proposed",
+   "language": "gunwaithic",
+   "reason": "the capital of Kradlon (KRA) in the reconciled roster",
+   "source": "roster KRA capital; west_lands.md realms table"
+  },
+  {
+   "id": "site_magical_forest",
+   "array": "sites",
+   "at": [
+    0.715,
+    0.58
+   ],
+   "name": "Lyrion",
+   "formerLabel": "Magical Forest",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "reason": "the capital of Magical Forest (MAG) in the reconciled roster",
+   "source": "roster MAG capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_miaed",
+   "array": "sites",
+   "at": [
+    0.78,
+    0.963
+   ],
+   "name": "Erdozan",
+   "formerLabel": "Miaed",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "reason": "the capital of Miaed (MIE) in the reconciled roster",
+   "source": "roster MIE capital; south_lands.md realms table"
+  },
+  {
+   "id": "site_mirolon",
+   "array": "sites",
+   "at": [
+    0.664,
+    0.768
+   ],
+   "name": "Miherta",
+   "formerLabel": "Mirolon",
+   "nameStatus": "proposed",
+   "language": "mirolic",
+   "reason": "the capital of Mirolon (MIR) in the reconciled roster",
+   "source": "roster MIR capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_mora",
+   "array": "sites",
+   "at": [
+    0.9207,
+    0.64766
+   ],
+   "name": "Gonnois",
+   "formerLabel": "Mora",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "reason": "the capital of Mora (MOA) in the reconciled roster",
+   "source": "roster MOA capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_nan",
+   "array": "sites",
+   "at": [
+    0.666,
+    0.798
+   ],
+   "name": "Larorun",
+   "formerLabel": "Nan",
+   "nameStatus": "proposed",
+   "language": "mirolic",
+   "reason": "the capital of Nan (NAN) in the reconciled roster",
+   "source": "roster NAN capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_nara",
+   "array": "sites",
+   "at": [
+    0.351,
+    0.712
+   ],
+   "name": "Riwang",
+   "formerLabel": "Nara",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "reason": "the capital of Nara (NAR) in the reconciled roster",
+   "source": "roster NAR capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_nether",
+   "array": "sites",
+   "at": [
+    0.6,
+    0.935
+   ],
+   "name": "Zarath-Nazur",
+   "formerLabel": "The Nether",
+   "nameStatus": "proposed",
+   "language": "infernal",
+   "reason": "the capital of Nether (NET) in the reconciled roster",
+   "source": "roster NET capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_nezer",
+   "array": "sites",
+   "at": [
+    0.616,
+    0.89
+   ],
+   "name": "Gelroze",
+   "formerLabel": "Nezer",
+   "nameStatus": "proposed",
+   "language": "infernal",
+   "reason": "the capital of Nezer (NEZ) in the reconciled roster",
+   "source": "roster NEZ capital; ember_lands.md realms table"
+  },
+  {
+   "id": "site_nolorim",
+   "array": "sites",
+   "at": [
+    0.655,
+    0.708
+   ],
+   "name": "Ennaton",
+   "formerLabel": "Nolorim",
+   "nameStatus": "proposed",
+   "language": "sylvan",
+   "reason": "the capital of Nolorim (NLR) in the reconciled roster",
+   "source": "roster NLR capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_nondondor",
+   "array": "sites",
+   "at": [
+    0.11808,
+    0.643
+   ],
+   "name": "Kudaini",
+   "formerLabel": "Nondondor",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "reason": "the capital of Nondondor (NND) in the reconciled roster",
+   "source": "roster NND capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_noris",
+   "array": "sites",
+   "at": [
+    0.837,
+    0.766
+   ],
+   "name": "Furvior",
+   "formerLabel": "Noris",
+   "nameStatus": "proposed",
+   "language": "noric",
+   "reason": "the capital of Noris (NRS) in the reconciled roster",
+   "source": "roster NRS capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_ostoroth",
+   "array": "sites",
+   "at": [
+    0.94448,
+    0.562
+   ],
+   "name": "Ohitus",
+   "formerLabel": "Ostoroth",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "reason": "the capital of Ostoroth (OST) in the reconciled roster",
+   "source": "roster OST capital; east_lands.md realms table"
+  },
+  {
+   "id": "site_pollos",
+   "array": "sites",
+   "at": [
+    0.11108,
+    0.581
+   ],
+   "name": "Havnai",
+   "formerLabel": "Pollos",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "reason": "the capital of Pollos (PLL) in the reconciled roster",
+   "source": "roster PLL capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_raerby",
+   "array": "sites",
+   "at": [
+    0.096,
+    0.611
+   ],
+   "name": "Ese",
+   "formerLabel": "Raerby",
+   "nameStatus": "proposed",
+   "language": "tritonic",
+   "reason": "the capital of Raerby (RAE) in the reconciled roster",
+   "source": "roster RAE capital; tritons_islands.md realms table"
+  },
+  {
+   "id": "site_ren",
+   "array": "sites",
+   "at": [
+    0.612,
+    0.413
+   ],
+   "name": "Farnardur",
+   "formerLabel": "R'en",
+   "nameStatus": "proposed",
+   "language": "leren",
+   "reason": "the capital of R'en (REN) in the reconciled roster",
+   "source": "roster REN capital; north_lands.md realms table"
+  },
+  {
+   "id": "site_safeton",
+   "array": "sites",
+   "at": [
+    0.6105,
+    0.6867
+   ],
+   "name": "Lotrenri",
+   "formerLabel": "Safeton",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Safeton (SFT) in the reconciled roster",
+   "source": "roster SFT capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_selen",
+   "array": "sites",
+   "at": [
+    0.588,
+    0.482
+   ],
+   "name": "Hifeco",
+   "formerLabel": "Selen",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Selen (SEL) in the reconciled roster",
+   "source": "roster SEL capital; middle_lands.md realms table"
+  },
+  {
+   "id": "site_varnondor_staging",
+   "array": "sites",
+   "at": [
+    0.266,
+    0.6023
+   ],
+   "name": "Varlibo",
+   "formerLabel": "Varnondor staging port",
+   "nameStatus": "proposed",
+   "language": "gunwaithic",
+   "reason": "the capital of Varnondor (VRN) in the reconciled roster",
+   "source": "roster VRN capital; west_lands.md realms table"
+  },
+  {
+   "id": "site_verde",
+   "array": "sites",
+   "at": [
+    0.148,
+    0.805
+   ],
+   "name": "Pelo Tamo",
+   "formerLabel": "Verde",
+   "nameStatus": "proposed",
+   "language": "yonic",
+   "reason": "the capital of Verde (VER) in the reconciled roster",
+   "source": "roster VER capital; islands_of_the_south.md realms table"
+  },
+  {
+   "id": "site_worshipdom_valleys",
+   "array": "sites",
+   "at": [
+    0.69,
+    0.706
+   ],
+   "name": "Lenlakron",
+   "formerLabel": "The Three Valleys",
+   "nameStatus": "proposed",
+   "language": "aenoran",
+   "reason": "the capital of Worshipdom (WOR) in the reconciled roster",
+   "source": "roster WOR capital; magical_lands.md realms table"
+  },
+  {
+   "id": "site_yeldenne_landing",
+   "array": "sites",
+   "at": [
+    0.262,
+    0.047
+   ],
+   "name": "Simoto",
+   "formerLabel": "The Landing below Mp'E",
+   "nameStatus": "proposed",
+   "language": "coldic",
+   "reason": "the capital of Yeldenne (YEL) in the reconciled roster",
+   "source": "roster YEL capital; cold_lands.md realms table"
+  },
+  {
+   "id": "strait_aenor_isle",
+   "array": "straits",
+   "at": [
+    0.51133,
+    0.54651
+   ],
+   "name": "The Inner Sea",
+   "formerLabel": "Asgard Sound",
+   "nameStatus": "proposed",
+   "reason": "Asgard is a name of Norse myth; the drawn \"Inner Seas\" of the Rush Islands sheet",
+   "source": "middle_lands.md water table"
+  },
+  {
+   "id": "strait_gap_austoklevo_sound",
+   "array": "straits",
+   "at": [
+    0.07891,
+    0.57187
+   ],
+   "name": "The Austoklevo Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_benan_sound",
+   "array": "straits",
+   "at": [
+    0.10391,
+    0.59609
+   ],
+   "name": "The Benan Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_deelor_sound",
+   "array": "straits",
+   "at": [
+    0.55118,
+    0.35313
+   ],
+   "name": "The Deelor Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_deelor_sound_north",
+   "array": "straits",
+   "at": [
+    0.53203,
+    0.38829
+   ],
+   "name": "The Deelor Sound North",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_dolgarunon_sound",
+   "array": "straits",
+   "at": [
+    0.66524,
+    0.77188
+   ],
+   "name": "The Dolgarunon Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_dolgdoal_sound",
+   "array": "straits",
+   "at": [
+    0.50586,
+    0.4586
+   ],
+   "name": "The Dolgdoal Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_dolgdoal_sound_north",
+   "array": "straits",
+   "at": [
+    0.49063,
+    0.47032
+   ],
+   "name": "The Dolgdoal Sound North",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_dumgil_sound",
+   "array": "straits",
+   "at": [
+    0.50195,
+    0.51641
+   ],
+   "name": "The Dumgil Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_fornia_sound",
+   "array": "straits",
+   "at": [
+    0.5875,
+    0.925
+   ],
+   "name": "The Fornia Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_goldoroth_arm_sound",
+   "array": "straits",
+   "at": [
+    0.51289,
+    0.50313
+   ],
+   "name": "The Goldoroth Arm Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_kim_sound",
+   "array": "straits",
+   "at": [
+    0.06758,
+    0.66016
+   ],
+   "name": "The Kim Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_kim_sound_north",
+   "array": "straits",
+   "at": [
+    0.06914,
+    0.66796
+   ],
+   "name": "The Kim Sound North",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_margolohu_sound",
+   "array": "straits",
+   "at": [
+    0.09375,
+    0.58047
+   ],
+   "name": "The Margolohu Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_mialia_sound",
+   "array": "straits",
+   "at": [
+    0.67578,
+    0.75547
+   ],
+   "name": "The Mialia Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_sang_tilu_sound",
+   "array": "straits",
+   "at": [
+    0.06718,
+    0.67109
+   ],
+   "name": "The Sang Tilu Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_sterrotumai_sound",
+   "array": "straits",
+   "at": [
+    0.08281,
+    0.5914
+   ],
+   "name": "The Sterrotumai Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_sterrotumai_sound_north",
+   "array": "straits",
+   "at": [
+    0.08789,
+    0.60078
+   ],
+   "name": "The Sterrotumai Sound North",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_sudowaitos_sound",
+   "array": "straits",
+   "at": [
+    0.06445,
+    0.47969
+   ],
+   "name": "The Sudowaitos Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_uelo_yavi_sound",
+   "array": "straits",
+   "at": [
+    0.13125,
+    0.72266
+   ],
+   "name": "The Uelo Yavi Sound",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_gap_uelo_yavi_sound_north",
+   "array": "straits",
+   "at": [
+    0.13945,
+    0.72969
+   ],
+   "name": "The Uelo Yavi Sound North",
+   "formerLabel": null,
+   "nameStatus": "proposed",
+   "reason": "a narrow gap of decision K46",
+   "source": "coast_features.mjs"
+  },
+  {
+   "id": "strait_leren_mouth",
+   "array": "straits",
+   "at": [
+    0.55904,
+    0.42372
+   ],
+   "name": "Leren Mouth",
+   "formerLabel": "Mouth of the Leren Ocean",
+   "nameStatus": "proposed",
+   "reason": "no water is an Ocean (owner)",
+   "source": "north_lands.md straits"
+  },
+  {
+   "id": "volcano_argon",
+   "array": "volcanoes",
+   "at": [
+    0.865,
+    0.915
+   ],
+   "name": "Mount Argul",
+   "formerLabel": "Mount Argon",
+   "nameStatus": "owner decision",
+   "reason": "argon is a chemical element; the owner chose Mount Argul (K48)",
+   "source": "owner (K48); east_lands.md relief"
+  },
+  {
+   "id": "volcano_avalon",
+   "array": "volcanoes",
+   "at": [
+    0.906,
+    0.897
+   ],
+   "name": "The Rhachia Fires",
+   "formerLabel": "Avalon Fires",
+   "nameStatus": "proposed",
+   "language": "alerhic",
+   "reason": "Avalon is a name of real myth",
+   "source": "east_lands.md renamed labels; roster Rhachia"
+  },
+  {
+   "id": "volcano_good_2",
+   "array": "volcanoes",
+   "at": [
+    0.13957,
+    0.87886
+   ],
+   "name": "Uelo Ruang",
+   "formerLabel": "Good Volcanoes (second cone)",
+   "nameStatus": "proposed",
+   "language": "sunhot",
+   "meaning": "root island",
+   "reason": "no brackets; the second of the two Good Volcanoes takes a name of its own",
+   "source": "geography"
+  }
+ ]
+}

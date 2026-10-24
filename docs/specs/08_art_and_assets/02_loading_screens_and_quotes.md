@@ -269,7 +269,7 @@ The "Basis" column gives the vault fact each line rests on and its status (E, W,
 | `LOADING_TIP_61` | The houses have debated the matter for forty years. We are nearly ready to begin. | First Speaker Lusiel Velakorin of the Magical Forest | Elected houses of the Magical Forest (P constitution) |
 | `LOADING_TIP_62` | A dragon is not a weapon. It is a neighbour who has agreed, for now, to be polite. | Perlan, Warden of the Dragon Roosts | Elves command dragons (E); office (P) |
 | `LOADING_TIP_63` | We did not refuse Aenor. We refused King Edran, a little late and for a very long time. | Loremaster Aenwe Lozari of the Magical Forest | The Elven Refusal (E); speaker (P) |
-| `LOADING_TIP_64` | We were not humiliated in Parim in 4A 1716. We were taught the price of a toll. We have been studying it since. | King Ferlin III of Lerendor and Lerenwaith | The toll quarrel (P) |
+| `LOADING_TIP_64` | We were not humiliated in Parim in 4A 1716. We were taught the price of a toll. We have been studying it since. | King Ferlin III of Lerendor and Lerendor's North | The toll quarrel (P) |
 | `LOADING_TIP_65` | A queen of the Cold Lands rules ice, wind and men, in that order of obedience. | Queen Vaestia of Coldor | Coldor's crown (P) |
 | `LOADING_TIP_66` | I signed the truce at the Grey Ford with my left hand. My right was on my sword, out of habit. | King Herlic of Gunwaith | Truce of the Grey Ford (P) |
 | `LOADING_TIP_67` | The law of Gunwaith binds the king as it binds the shepherd. The shepherd finds this more comforting than the king does. | Lawspeaker Ilurda of Gunwaith | Gunwaith's lawspeaker (P) |
@@ -327,9 +327,9 @@ Public faith only. These lines are sincere, and they stay true to what believers
 
 | Key | Text | Attribution | Basis |
 | --- | --- | --- | --- |
-| `LOADING_TIP_100` | Two crowns, one kingdom, one fleet. Lerendor married Lerenwaith, and the strait has paid the dowry ever since. | Saying of Sonargur | Union of the Leren crowns (P date, E one crown) |
+| `LOADING_TIP_100` | Two crowns, one kingdom, one fleet. Lerendor married Lerendor's North, and the strait has paid the dowry ever since. | Saying of Sonargur | Union of the Leren crowns (P date, E one crown) |
 | `LOADING_TIP_101` | The Treaty of the Narrow Strait is an old promise. Parim keeps the promise. Sonargur keeps the strait. | Saying of the Leren court | The old alliance (E); treaty name (P) |
-| `LOADING_TIP_102` | Sensai answers to no crown, and sells timber to all of them. | Saying of Sensai | Sensai's timber (P) |
+| `LOADING_TIP_102` | Tolvael answers to no crown, and sells timber to all of them. | Saying of Tolvael | Tolvael's timber (P) |
 | `LOADING_TIP_103` | Molot and R'en sit between two masters of the strait. Small crowns learn to smile in both directions. | Saying of the North Lands | Molot and R'en (E names) |
 | `LOADING_TIP_104` | Never run the narrow strait without paying the dues. The Leren fleet does not argue. It collects. | Sailors' saying, Sea of R'en | Leren fleets guard the strait (P) |
 

@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Lerendor is the united crown of Lerendor and Lerenwaith, the strongest power of the North Lands and the northern counterweight to Aenor. Its whole story in the Fourth Age is one question: what does the North owe Aenor? This spec defines the mechanic that asks it:
+Lerendor is the united crown of Lerendor and Lerendor's North, the strongest power of the North Lands and the northern counterweight to Aenor. Its whole story in the Fourth Age is one question: what does the North owe Aenor? This spec defines the mechanic that asks it:
 
 - **Strait standing** (`zin_strait_standing`): how Lerendor stands under the Treaty of the Narrow Strait, from bitter (-100) to trusted (+100).
 - **The toll quarrel**: the strait dues and the old grievance of 4A 1716, the main peacetime lever on standing.
@@ -21,7 +21,7 @@ The treaty meets the Western Crossing ([western_crossing.md](western_crossing.md
 
 | Fact | Status | Source |
 | --- | --- | --- |
-| Lerendor and Lerenwaith are one crown and one country | established (owner merge) | *Great Powers and Relations*, *Aoaz and Its Regions* |
+| Lerendor and Lerendor's North are one crown and one country | established (owner merge) | *Great Powers and Relations*, *Aoaz and Its Regions* |
 | Seat at Sonargur | established working seat (constructed name, replaceable) | *Great Powers and Relations* |
 | Lerendor leads the **Leren Compact**; its rival is Aenor | established working table | *Great Powers and Relations*, *Kingdoms Factions and Conflicts* |
 | The working table lists Eekedor and Andos Enda in the Compact; the map starts it with Eekedor only. Decided (S5): Andos Enda, an elven realm bound by the Elven Refusal, is **not** in the Compact at the start; Lerendor can court it | working table vs map; decision S5 | *Great Powers and Relations*; [INTEGRATION_DECISIONS.md](../INTEGRATION_DECISIONS.md) |
@@ -35,9 +35,9 @@ The treaty meets the Western Crossing ([western_crossing.md](western_crossing.md
 | The **toll quarrel** of 4A 1716, when Leren envoys were humiliated in Parim | proposed | *Fourth Age Chronology* |
 | Lerendor can honour the treaty, abandon it, or become master of the strait | proposed (play choices, not history) | *The Campaign of 4A 1748* |
 | The withdrawal falls in 4A 1755; the start is 1 Thaw 4A 1748 | proposed dates | *Fourth Age Chronology* |
-| Avarin of Lerenwaith, a Second Age envoy (memory only; this spec uses her in no event) | proposed character | *Second Age Proposed Characters* |
+| Avarin of Lerendor's North, a Second Age envoy (memory only; this spec uses her in no event) | proposed character | *Second Age Proposed Characters* |
 
-Everything else in this spec is **proposed**: the standing scale, toll levels, union cohesion, hegemony, the Lerenwaith estates, the arbitration at Eekedor, the North shore and strait sites, all characters, all numbers and all event text.
+Everything else in this spec is **proposed**: the standing scale, toll levels, union cohesion, hegemony, the Lerendor's North estates, the arbitration at Eekedor, the North shore and strait sites, all characters, all numbers and all event text.
 
 This spec never states as history who wins the War of the Last Crowns, what treaty the North signs after it, or anything the vault leaves open about Zol's servants. Outcomes offered by gameplay are labelled as outcomes.
 
@@ -45,7 +45,7 @@ This spec never states as history who wins the War of the Last Crowns, what trea
 
 ### The situation on 1 Thaw 4A 1748
 
-The treaty is in force. Aenor and Lerendor are at peace and trade freely. Aenoran ships pay the old fixed due at the strait. The Leren court remembers 1716 and resents Parim, but nobody plans a war. Lerendor leads the Leren Compact with Eekedor. Sensai, Molot, R'en, Mina and the other small crowns are independent and courted by both Sonargur and Parim. Andos Enda, an elven realm of the Magical Lands, exchanges friendly letters with Sonargur (proposed, Magical Lands trees) but stays outside the Compact (decision S5).
+The treaty is in force. Aenor and Lerendor are at peace and trade freely. Aenoran ships pay the old fixed due at the strait. The Leren court remembers 1716 and resents Parim, but nobody plans a war. Lerendor leads the Leren Compact with Eekedor. Tolvael, Molot, R'en, Mina and the other small crowns are independent and courted by both Sonargur and Parim. Andos Enda, an elven realm of the Magical Lands, exchanges friendly letters with Sonargur (proposed, Magical Lands trees) but stays outside the Compact (decision S5).
 
 **Start state from the [start situation](../02_lore/01_start_situation.md)**, read or removed here, never redefined (decision N5 naming): opinion `zin_opinion_toll_of_1716` ("The Toll of 1716", −20, Lerendor toward Aenor) and `zin_opinion_northern_pride` ("Northern Pride", −10, Aenor toward Lerendor). This spec adds `zin_leren_treaty_partner` (+20, both ways) at the start. Standing starts at this spec's −15, which the start situation also uses (decision V1: the owning mechanic's value).
 
@@ -130,12 +130,12 @@ Random toll incidents (`zin_leren.15`) fire while the toll is 2 or more and the 
 
 ### 3. The union of the two crowns
 
-Lerendor and Lerenwaith are one country, but they were two crowns until 4A 411 (proposed). The tree's court branch is about keeping them one throne. `zin_leren_union_cohesion` (Lerendor, 0–100, start 55) drives a dynamic modifier `zin_leren_union`:
+Lerendor and Lerendor's North are one country, but they were two crowns until 4A 411 (proposed). The tree's court branch is about keeping them one throne. `zin_leren_union_cohesion` (Lerendor, 0–100, start 55) drives a dynamic modifier `zin_leren_union`:
 
 - stability_factor = (cohesion − 50) / 500, so -0.10 to +0.10;
 - political_power_factor = (cohesion − 50) / 1000, so -0.05 to +0.05.
 
-Cohesion moves through focuses, events and these monthly sources: -0.2 while toll level is 3 or 4 (Lerenwaith's inland lords pay for the strait captains' quarrel); +0.2 while the estates' spirit is active. At 25 or below, `zin_leren.80` (The Lerenwaith Question) can fire. No route ever splits Lerenwaith into a separate country: the owner merged them.
+Cohesion moves through focuses, events and these monthly sources: -0.2 while toll level is 3 or 4 (Lerendor's North's inland lords pay for the strait captains' quarrel); +0.2 while the estates' spirit is active. At 25 or below, `zin_leren.80` (The Lerendor's North Question) can fire. No route ever splits Lerendor's North into a separate country: the owner merged them.
 
 ### 4. The Leren Compact and the smaller crowns
 
@@ -150,7 +150,7 @@ The Compact is the in-game faction Lerendor leads at start (localised "Leren Com
 | The Hold | 15 | |
 | Tolhon | 10 | island principality |
 | Belg | 10 | |
-| Sensai | -5 | the most populous North Lands crown; proud |
+| Tolvael | -5 | the most populous North Lands crown; proud |
 | Molot | -20 | marcher state that balances Lerendor |
 | R'en | -25 | the southern gateway between the Leren and Aenor seas; lives on Aenoran trade |
 | every other North Lands country | 5 | |
@@ -489,7 +489,7 @@ Category pictures are `GFX_decision_cat_picture_zin_leren_strait` and `GFX_decis
 | .70 | An Invitation from Sonargur | target | `zin_leren_invite_to_compact` | Join (`add_to_faction` from Lerendor; `zin_leren_compact_kin`) (AI chance = lean; 0 while bound by the Elven Refusal) / Decline (lean -10) |
 | .71 | Sonargur Offers Protection | target | `zin_leren_offer_protection` | Accept (Lerendor `puppet`s target) (AI chance = lean − 40, ×2 if target at war with Zol) / Refuse (lean -20) |
 | .72 | Answer from the North | Lerendor | after `.70`/`.71` | Result text |
-| .80 | The Lerenwaith Question | Lerendor | cohesion ≤ 25; MTTH 180 days | Grant the estates' petition (-50 PP, cohesion +15; AI 60) / Hold firm (cohesion +5, stability -5%, war support +3%; AI 40) |
+| .80 | The Lerendor's North Question | Lerendor | cohesion ≤ 25; MTTH 180 days | Grant the estates' petition (-50 PP, cohesion +15; AI 60) / Hold firm (cohesion +5, stability -5%, war support +3%; AI 40) |
 | .81 | One Throne Again | Lerendor | cohesion ≥ 80 first time | Flavour; stability +3% |
 | .90 | The Strait Is Closed | target | `zin_leren_close_strait` | Acknowledge |
 

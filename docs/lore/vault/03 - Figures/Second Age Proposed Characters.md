@@ -8,7 +8,7 @@ updated: 2026-10-18
 
 These supporting characters were invented for [[The Second Age of Aoaz]] on 17 October 2026. They are **not established canon**.
 
-- **Avarin of Lerenwaith:** North Lands envoy and eventual commander trying to coordinate aid for Aenor while defending her own kingdom. Her impossible diplomatic position shows why the Grand Alliance cannot simply be restored.
+- **Avarin of Lerendor's North:** North Lands envoy and eventual commander trying to coordinate aid for Aenor while defending her own kingdom. Her impossible diplomatic position shows why the Grand Alliance cannot simply be restored.
 - **Seron of Selen:** Human commander assigned to guard rebuilding efforts and provincial supply routes. His campaigns briefly stabilize whole districts, but he loses troops faster than they can be replaced. He could become a tragic revenant, die defending refugees, or survive as a resistance leader.
 - **Tavriel of the Magical Forest:** Elven healer and guardian of wards who continues to help men despite widespread resentment of Aenor. Her opponents among the elves argue for closing borders. She gives concrete form to disagreements inside elven society.
 - **Arelon, Keeper of the Last Seal:** Royal archivist who escapes Elzon's conquest with fragments of Aen's lineages and the ancient law of succession. The archive may survive to complicate the politics around [[Eindil]] in the Fourth Age.

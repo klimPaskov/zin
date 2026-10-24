@@ -520,7 +520,7 @@ Each check has a negative test with a planted bad entry: an "Afrit" in a `start`
 | 721 | free_banners | The Free Banners of Dardan | start | — | cat | P | *First Age Proposed Characters* (Sirael, Taryn of Gunwaith, Senra of Triton's Islands, Brunek of the Stone Roads, Rovek of Dondor) |
 | 722 | binding_spirits | Ithren and Maerul | start | — | cat | P | *First Age Proposed Characters*, *Second Age Proposed Characters* |
 | 723 | vareth | Vareth the Pale | start | — | cat | P | *First Age Proposed Characters* |
-| 724 | second_age_defenders | Defenders of the Second Age | start | — | cat | P | *Second Age Proposed Characters* (Avarin of Lerenwaith, Seron of Selen, Tavriel of the Magical Forest) |
+| 724 | second_age_defenders | Defenders of the Second Age | start | — | cat | P | *Second Age Proposed Characters* (Avarin of Lerendor's North, Seron of Selen, Tavriel of the Magical Forest) |
 | 725 | arelon | Arelon, Keeper of the Last Seal (Arelon) | start | — | cat | P | *Second Age Proposed Characters*, *The Fall of Aenor* |
 
 #### 8. Peoples (`peoples`)

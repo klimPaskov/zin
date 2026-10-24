@@ -2,7 +2,7 @@
 // One sheet per twelve catalog keys, in the order of data/presentation-cells.json; each emblem is a die-cut painted object on flat
 // black, so its own outline becomes the alpha (lib/emblem.mjs). This script only writes the jobs; it never calls the generator.
 //   node tools/content/art/emblem-jobs.mjs [outDir] [--sheet NN ...]       (default outDir: <ZIN_ART>/jobs)
-//   GPTIMAGE_MODEL=gpt-6-astra node tools/content/imagegen.mjs <outDir>/emblem-jobs.json
+//   node tools/content/imagegen.mjs <outDir>/emblem-jobs.json
 // Raw sheets land in <ZIN_ART>/raw/icons/icons-emblem-NN.png. The builder (modules/presentation.mjs) uses a sheet only when the
 // cell map names it with "matte": "emblem" and its last review line in provenance.jsonl is accepted.
 import { readFileSync } from 'node:fs';

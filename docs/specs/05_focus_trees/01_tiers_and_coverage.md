@@ -51,7 +51,7 @@ A tier B tree may reuse modules of its region's shared tree through the compiler
 ### North Lands (28)
 
 - **Tier A:** Lerendor.
-- **Tier B** (own tree `regional_<name>`): Sensai (`regional_sensai`), Mina (`regional_mina`), R'en (`regional_r_en`), Molot (`regional_molot`), Eekedor (`regional_eekedor`).
+- **Tier B** (own tree `regional_<name>`): Tolvael (`regional_tolvael`), Mina (`regional_mina`), R'en (`regional_r_en`), Molot (`regional_molot`), Eekedor (`regional_eekedor`).
 - **Tier C** (shared tree `shared_north_lands`, 22 countries): Belg, Goran, Heodwa Lands, Pertawn, Solenkovi, The Hold, Allegro, Mine Din, Nuatax, Ashorn, Cinargo, Ferlinon, Filit, Gil'dul, Gul'dur, Keredor-Hellekton, Low-ness Islands, Mustnom, Oirt, Stork, Thowson, Tolhon.
 
 ### Cold Lands (31)

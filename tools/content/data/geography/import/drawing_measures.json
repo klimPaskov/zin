@@ -1,0 +1,343 @@
+{
+ "note": "Numbers measured on the private drawing by tools/content/geography/import_measures.mjs: land IoU of the model and the drawing as the import reads it (three classifiers; raw and with the surface-override annotations; after = the registered sheets with clips, before = the hand-fitted transforms of registration.before without clips), and the drawn land the open-sea edge bands clear.",
+ "drawing": {
+  "file": "docs/reference/originals/Erdae.png (private, git-ignored; read into memory only)",
+  "width": 17520,
+  "height": 12720,
+  "sha256": "37ef59399903bc8217dbc527e26158c06a133eace0340a5b95e233c1cadc2ecf",
+  "workingSize": {
+   "width": 5028,
+   "height": 3658
+  }
+ },
+ "readings": {
+  "after": {
+   "pencil": {
+    "raw": {
+     "total": 0.701,
+     "regions": {
+      "aenor_isle": 0.9038,
+      "cold_lands": 0.8517,
+      "dark_lands": 0.8136,
+      "east_lands": 0.8575,
+      "ember_lands": 0.4919,
+      "islands_south": 0,
+      "lands_sun": 0.2309,
+      "magical_lands": 0.5975,
+      "middle_lands": 0.8847,
+      "nether": 0.2448,
+      "north_lands": 0.7855,
+      "south_lands": 0.8414,
+      "tritons_islands": 0.4744,
+      "west_lands": 0.8786,
+      "windwaith": 0.4704,
+      "zols_mistake": 0.0488
+     }
+    },
+    "withAnnotations": {
+     "total": 0.9094,
+     "regions": {
+      "aenor_isle": 0.9038,
+      "cold_lands": 0.9057,
+      "dark_lands": 0.8288,
+      "east_lands": 0.9155,
+      "ember_lands": 0.8714,
+      "islands_south": 0.9079,
+      "lands_sun": 0.9012,
+      "magical_lands": 0.8717,
+      "middle_lands": 0.8949,
+      "nether": 0.9454,
+      "north_lands": 0.8371,
+      "south_lands": 0.9703,
+      "tritons_islands": 0.8368,
+      "west_lands": 0.8788,
+      "windwaith": 0.9321,
+      "zols_mistake": 0.9657
+     }
+    }
+   },
+   "heuristic": {
+    "raw": {
+     "total": 0.7005,
+     "regions": {
+      "aenor_isle": 0.9031,
+      "cold_lands": 0.8658,
+      "dark_lands": 0.831,
+      "east_lands": 0.8547,
+      "ember_lands": 0.4809,
+      "islands_south": 0,
+      "lands_sun": 0.2173,
+      "magical_lands": 0.5875,
+      "middle_lands": 0.8848,
+      "nether": 0.2367,
+      "north_lands": 0.785,
+      "south_lands": 0.8421,
+      "tritons_islands": 0.4658,
+      "west_lands": 0.8689,
+      "windwaith": 0.477,
+      "zols_mistake": 0.0494
+     }
+    },
+    "withAnnotations": {
+     "total": 0.9105,
+     "regions": {
+      "aenor_isle": 0.9031,
+      "cold_lands": 0.9212,
+      "dark_lands": 0.845,
+      "east_lands": 0.9128,
+      "ember_lands": 0.8578,
+      "islands_south": 0.9079,
+      "lands_sun": 0.888,
+      "magical_lands": 0.8627,
+      "middle_lands": 0.8951,
+      "nether": 0.9555,
+      "north_lands": 0.8368,
+      "south_lands": 0.971,
+      "tritons_islands": 0.8307,
+      "west_lands": 0.8691,
+      "windwaith": 0.9491,
+      "zols_mistake": 0.9627
+     }
+    }
+   },
+   "palette": {
+    "raw": {
+     "total": 0.6898,
+     "regions": {
+      "aenor_isle": 0.8672,
+      "cold_lands": 0.8346,
+      "dark_lands": 0.7397,
+      "east_lands": 0.8526,
+      "ember_lands": 0.4848,
+      "islands_south": 0,
+      "lands_sun": 0.2303,
+      "magical_lands": 0.5763,
+      "middle_lands": 0.8613,
+      "nether": 0.2582,
+      "north_lands": 0.7695,
+      "south_lands": 0.8336,
+      "tritons_islands": 0.4662,
+      "west_lands": 0.8658,
+      "windwaith": 0.4544,
+      "zols_mistake": 0.0499
+     }
+    },
+    "withAnnotations": {
+     "total": 0.8942,
+     "regions": {
+      "aenor_isle": 0.8672,
+      "cold_lands": 0.8868,
+      "dark_lands": 0.7527,
+      "east_lands": 0.9097,
+      "ember_lands": 0.8531,
+      "islands_south": 0.9079,
+      "lands_sun": 0.8799,
+      "magical_lands": 0.8509,
+      "middle_lands": 0.8712,
+      "nether": 0.912,
+      "north_lands": 0.8197,
+      "south_lands": 0.9612,
+      "tritons_islands": 0.8171,
+      "west_lands": 0.866,
+      "windwaith": 0.8969,
+      "zols_mistake": 0.9593
+     }
+    }
+   }
+  },
+  "before": {
+   "pencil": {
+    "raw": {
+     "total": 0.5864,
+     "regions": {
+      "aenor_isle": 0.4669,
+      "cold_lands": 0.6756,
+      "dark_lands": 0.7899,
+      "east_lands": 0.7166,
+      "ember_lands": 0.4017,
+      "islands_south": 0,
+      "lands_sun": 0.0831,
+      "magical_lands": 0.7794,
+      "middle_lands": 0.7441,
+      "nether": 0.2829,
+      "north_lands": 0.8349,
+      "south_lands": 0.6763,
+      "tritons_islands": 0.2419,
+      "west_lands": 0.4899,
+      "windwaith": 0.3124,
+      "zols_mistake": 0.0561
+     }
+    }
+   },
+   "heuristic": {
+    "raw": {
+     "total": 0.589,
+     "regions": {
+      "aenor_isle": 0.4721,
+      "cold_lands": 0.6875,
+      "dark_lands": 0.808,
+      "east_lands": 0.712,
+      "ember_lands": 0.4106,
+      "islands_south": 0,
+      "lands_sun": 0.0872,
+      "magical_lands": 0.7735,
+      "middle_lands": 0.7442,
+      "nether": 0.2801,
+      "north_lands": 0.8408,
+      "south_lands": 0.6758,
+      "tritons_islands": 0.2535,
+      "west_lands": 0.481,
+      "windwaith": 0.3133,
+      "zols_mistake": 0.0558
+     }
+    }
+   },
+   "palette": {
+    "raw": {
+     "total": 0.5699,
+     "regions": {
+      "aenor_isle": 0.3586,
+      "cold_lands": 0.6651,
+      "dark_lands": 0.709,
+      "east_lands": 0.7078,
+      "ember_lands": 0.3564,
+      "islands_south": 0,
+      "lands_sun": 0.0781,
+      "magical_lands": 0.747,
+      "middle_lands": 0.7197,
+      "nether": 0.3063,
+      "north_lands": 0.7599,
+      "south_lands": 0.6632,
+      "tritons_islands": 0.2323,
+      "west_lands": 0.4931,
+      "windwaith": 0.3055,
+      "zols_mistake": 0.0564
+     }
+    }
+   }
+  }
+ },
+ "edgeBands": {
+  "pencil": {
+   "strictBandPx": {
+    "mode": "sea-band",
+    "bandPx": 205,
+    "polarPx": 64,
+    "total": 6247,
+    "bySheet": {
+     "cold": 1132,
+     "east": 5115
+    }
+   },
+   "raggedUpTo": {
+    "bandPx": 308,
+    "polarPx": 96,
+    "total": 166103,
+    "bySheet": {
+     "cold": 47277,
+     "east": 115499,
+     "tritons": 3327
+    }
+   }
+  },
+  "heuristic": {
+   "strictBandPx": {
+    "mode": "sea-band",
+    "bandPx": 205,
+    "polarPx": 64,
+    "total": 6247,
+    "bySheet": {
+     "cold": 1132,
+     "east": 5115
+    }
+   },
+   "raggedUpTo": {
+    "bandPx": 308,
+    "polarPx": 96,
+    "total": 165548,
+    "bySheet": {
+     "cold": 47078,
+     "east": 115244,
+     "tritons": 3226
+    }
+   }
+  },
+  "palette": {
+   "strictBandPx": {
+    "mode": "sea-band",
+    "bandPx": 205,
+    "polarPx": 64,
+    "total": 6247,
+    "bySheet": {
+     "cold": 1132,
+     "east": 5115
+    }
+   },
+   "raggedUpTo": {
+    "bandPx": 308,
+    "polarPx": 96,
+    "total": 166717,
+    "bySheet": {
+     "cold": 47586,
+     "east": 115694,
+     "tritons": 3437
+    }
+   }
+  },
+  "model": {
+   "strictBandPx": {
+    "mode": "sea-band",
+    "bandPx": 205,
+    "polarPx": 64,
+    "total": 0,
+    "bySheet": {}
+   },
+   "raggedUpTo": {
+    "bandPx": 308,
+    "polarPx": 96,
+    "total": 146528,
+    "bySheet": {
+     "none": 56806,
+     "cold": 25645,
+     "east": 63230,
+     "tritons": 847
+    }
+   }
+  },
+  "withAnnotations": {
+   "strictBandPx": {
+    "mode": "sea-band",
+    "bandPx": 205,
+    "polarPx": 64,
+    "total": 0,
+    "bySheet": {}
+   },
+   "raggedUpTo": {
+    "bandPx": 308,
+    "polarPx": 96,
+    "total": 145790,
+    "bySheet": {
+     "none": 57143,
+     "cold": 25837,
+     "east": 61459,
+     "tritons": 1351
+    }
+   }
+  }
+ },
+ "coveragePx": {
+  "none": 8371780,
+  "cold": 1216871,
+  "edv": 122546,
+  "north": 242163,
+  "east": 1528995,
+  "mag": 529854,
+  "west": 425302,
+  "rush": 292878,
+  "dark": 103778,
+  "tritons": 108888,
+  "risle": 17381,
+  "sun": 54641,
+  "dead": 92123
+ }
+}

@@ -15,7 +15,7 @@ The Cold Lands are the largest landmass of Aoaz and the least known: a white cou
 The heart of the land is a flat snow plain at elevation 1, the drawn **Frozen Lands of Coldor** (`ice_frozen_lands_of_coldor`), inside the wider permanent **Snowfields of the Cold Lands** (`ice_cold_lands_field`, proposed name) [GM]. Terrain shares in the model are plains 74%, mountain 12%, hills 9%, forest 4% and marsh 1%, with a snow share of 0.9 [GM region_cold_lands]. Three great ranges break the plain [GM region_cold_lands]:
 
 - The **Icy Mountains** (`range_icy_mountains`, peak class 5) run down the west coast above Tinton, ice-sheathed to the sea.
-- The **Isengar Mountains** (`range_isengar_mountains`, peak class 5; the drawn name is not the borrowed one and is kept) and the proposed **Yeldenne Heights** (`range_yeldenne_heights`) wall the high valley of Mp'E on the east and west; the proposed **Isengar Pass** (`pass_isengar`) is its one way in.
+- The **Ormolak Mountains** (`range_isengar_mountains`, peak class 5; the drawn name is not the borrowed one and is kept) and the proposed **Yeldenne Heights** (`range_yeldenne_heights`) wall the high valley of Mp'E on the east and west; the proposed **Ormolak Pass** (`pass_isengar`) is its one way in.
 - The **Cold Mountains** (`range_cold_mountains`, peak class 5, the highest range of the north) run west to east as the Naepu and Fearno ridges and then curve north along the east coast.
 
 Lesser relief: the **Coldor Mountains** (`range_coldor_mountains`) along the south coast facing the Yeti Lands, whose deep southern valleys hold warm springs (proposed; see the goblin holds below); the **Neridor Mountains** (`range_neridor_mountains`, drawn Meridor or Neridor, reading uncertain), the rampart of the neck toward the West Lands, crossed at the proposed **Neridor Gap** (`pass_neridor_gap`); the lone **Hendair Hills** (`range_hendair_hills`) in the Coldor plain; the **Olsuaon Massif** (`range_olsuaon`); and the proposed heights of the giants in the far north-west (`range_titanos_heights`, proposed name **Nivaros Heights**). The drawn **Frozen Mountains** and **Seteno Mountains** lie in the part of the drawing cropped from the mosaic, beyond the playable edge [NT].
@@ -47,7 +47,7 @@ The Long Dark itself; whiteout blizzards on the coasts; sea-ice that opens under
 | --- | --- | --- | --- | --- |
 | Men | Winter-Crown folk | Coldic, crown dialect | Coldor: the Fandan valley, the Coldor plain, the western ports | culture proposed [WB §3.1]; Coldor working |
 | Men | Ice clans | Coldic, clan dialect (Yeti and Giant loan-words) | Horidor, Fearno, the north-west, the road clans, the coasts | proposed [WB §3.1] |
-| Men | Melkgard warlords | Coldic, march dialect (forge-words) | the Isengar valley's east side and Minnolomak | proposed [WB §3.1, renamed] |
+| Men | Melkgard warlords | Coldic, march dialect (forge-words) | the Ormolak valley's east side and Minnolomak | proposed [WB §3.1, renamed] |
 | Men | Vindael seafarers | Coldic, coast dialect, with Gunwyn sea-talk | the Vindael ice arm | proposed [WB §3.1, renamed] |
 | Goblins | Glimkit warrens (proposed) | Goblin Cant | the warm-spring valleys of the Coldor Mountains | owner decision [OD]; holds proposed |
 | Yeti | two song-lines (proposed below) | Yeti Speech (sung) | the southern shelf and the northern heights | people established [V: Peoples of Aoaz] |
@@ -76,7 +76,7 @@ Proposed distribution (living people): Coldor 0.82 M; Melkgard 0.30 M; Fearno 0.
 
 ### Where they live and why
 
-People follow open water, fish and grass. The densest belt is the **Fandan valley** from Fandanar down to the Neridor Gap, where the river opens in the Long Light, sedge meadows feed horses and the Neck Road brings western grain (proposed). The **west coast** below the Icy Mountains (Alorio, Akahew, Andgas, Norrak) lives by the harbour trade with the West Lands and the sealing grounds of Pandar [NT; DM settlements]. The **south coast** (Holdon, Fentene, Poloto) faces the Cold Ocean, which freezes late, and trades with the yeti across the Coldor Channel (proposed). The **warm-spring valleys** of the Coldor Mountains shelter the goblins. The **Isengar valley** (Mp'E and Melkgard's march) is sheltered from the north wind by its ranges [GM region_cold_lands]. The **interior moors** of Fearno and the north-west carry reindeer clans that move with the herds. The ice heart is empty except for herders crossing it and the white wolves that follow the herds.
+People follow open water, fish and grass. The densest belt is the **Fandan valley** from Fandanar down to the Neridor Gap, where the river opens in the Long Light, sedge meadows feed horses and the Neck Road brings western grain (proposed). The **west coast** below the Icy Mountains (Alorio, Akahew, Andgas, Norrak) lives by the harbour trade with the West Lands and the sealing grounds of Pandar [NT; DM settlements]. The **south coast** (Holdon, Fentene, Poloto) faces the Cold Ocean, which freezes late, and trades with the yeti across the Coldor Channel (proposed). The **warm-spring valleys** of the Coldor Mountains shelter the goblins. The **Ormolak valley** (Mp'E and Melkgard's march) is sheltered from the north wind by its ranges [GM region_cold_lands]. The **interior moors** of Fearno and the north-west carry reindeer clans that move with the herds. The ice heart is empty except for herders crossing it and the white wolves that follow the herds.
 
 ## 4. Livelihoods and resources
 
@@ -84,7 +84,7 @@ The economy spec weights the Cold Lands at iron 3, timber 2, horses 1, stone 2, 
 
 | Resource | Where and why (proposed unless marked) |
 | --- | --- |
-| Iron | The forges of Minnolomak, fed by bog-ore and the rock-ore of the Isengar Mountains; the Orewell mines, worked by men and bought by dwarf factors from the western holds; the Hendair Hills; the goblins' small, clever smithies. |
+| Iron | The forges of Minnolomak, fed by bog-ore and the rock-ore of the Ormolak Mountains; the Orewell mines, worked by men and bought by dwarf factors from the western holds; the Hendair Hills; the goblins' small, clever smithies. |
 | Timber | The Worlond Forest on the neck (`forest_worlond`, dense conifer) for ship timbers and charcoal. Coldor sells timber to the West [MS cold_lands §7]. |
 | Horses | A short, shaggy northern horse bred in the Fandan meadows (proposed name *snevhest*, Coldic "snow-horse"), hardy but few. |
 | Stone | Dark stone and turf for halls; the black stone of the Melkgard forts [WB §3.1]. |
@@ -141,7 +141,7 @@ Other livelihoods: reindeer herding; sealing and walrus-hunting on Pandar and th
 | 2A, about 600 | proposed | The first Frost-Hall is raised at Fandanar around a fire brought from the eastern Fandan clans. |
 | 2A, about 1000 | proposed | **The Warm Valleys.** Goblin warrens driven north by the wars of the Long Grief cross the Coldor Channel's winter ice and settle around the hot springs of the Coldor Mountains; the south-coast clans first fight them, then trade with them. |
 | 2A, about 1300 | proposed | **The old pacts**: a hunting truce with the southern yeti and a toll-peace with the ice giants (origin of the mechanic's pacts [MS cold_lands §4]). |
-| 2A, late | proposed | Warlords first fortify the Isengar valley against raiders from the Frozen Ocean coast; the Black Gallery is cut into the rock below Minnolomak. |
+| 2A, late | proposed | Warlords first fortify the Ormolak valley against raiders from the Frozen Ocean coast; the Black Gallery is cut into the rock below Minnolomak. |
 | 2A 2133 | established | Elzon conquers Aenor; the Third Age begins [V: The Third Age of Aoaz]. |
 | 3A, 1 to 1260 (proposed length) | proposed | Elzon's Order never reaches the Cold Lands; Aenoran refugees come north by sea in small numbers; western trade replaces southern trade at Alorio. |
 | 3A, about 700 | proposed | **The March of Bones.** Necromancers of Elzon's Order buy dead from a starving coastal clan; the Fandan chiefs burn the buyers' ship at Poloto, and the Winter Hearth's rule that the dead are burned takes its present force. |
@@ -197,7 +197,7 @@ No sea serpent is placed here; the serpent card names its waters only with a Tol
 | **Hendak** (former label Hodor, a name from other fiction [OD]) | Coldor | about 2,500 | Coldic house stem *hend* + *-ak* "place": the house-seat of the Hendair line under the Hendair Hills. |
 | **Akahew**, **Andgas** | Xison | about 5,000 and 3,000 | Drawn [NT]. Market towns where the upland road meets the coast road. |
 | **Norrak** (former label Narnia, a name from other fiction [OD]) | Xison | about 2,000 | Coldic *norr* "north" + *-ak*: the moor town of the Rion herders. |
-| **Minnolomak** | Melkgard | about 12,000 (model 30,000) | Drawn [NT]. At the mouth of the main Isengar pass; the warlord's fort-city and forges; the Black Gallery below. |
+| **Minnolomak** | Melkgard | about 12,000 (model 30,000) | Drawn [NT]. At the mouth of the main Ormolak pass; the warlord's fort-city and forges; the Black Gallery below. |
 | **Ollondo** | Horidor | about 6,000 | Drawn [NT]. On the valley road below the Neridor Gap. |
 | **Azenoalion** | Fearno | about 5,000 | Drawn [NT]. The hall-town of the Free Steadings on the Naepu. |
 | **Vaestia** | Austklev | about 4,000 | Drawn [NT]. Where the east-coast forest meets the coast road. |
@@ -232,7 +232,7 @@ The drawn localities beyond the playable edge (Luivinen, Ludghis, Siulas, Eciele
 
 ### Mp'E and the Castle of Yeldenne
 
-**Land.** A high valley between the Yeldenne Heights and the Isengar Mountains, entered by the Isengar Pass; the nearest water is the head of the northern bay, the proposed **Landing below Mp'E** (`site_yeldenne_landing`) [GM]. The model calls it "the sheltered Isengar valley", one of the few inhabited places of the north [GM region_cold_lands].
+**Land.** A high valley between the Yeldenne Heights and the Ormolak Mountains, entered by the Ormolak Pass; the nearest water is the head of the northern bay, the proposed **Landing below Mp'E** (`site_yeldenne_landing`) [GM]. The model calls it "the sheltered Ormolak valley", one of the few inhabited places of the north [GM region_cold_lands].
 
 **People and rule.** Horos, a Great Spirit and enormous armoured knight, is lord of the castle; Glo is his crystalline heart [V: Castle of Yeldenne and Glo]. Who else lives in the castle is open [WB §5 Yeldenne]. Below it lies an ordinary small town of Coldic-speaking herders and charcoal-burners (the drawn **Hul'…**, proposed) with its own headman and the custom of leaving bread at the start of the Silent Road (proposed). The valley pays no tax to Melkgard or Coldor; both let it be because its people say the hall's lord kills those who come too close, which the owner's Horos card also says [BC 25]. The card's name for his castle is Tolkien-derived and is not used [OD]; the card's statement that the castle lies underground is read as a hall cut into the mountain beneath the castle (proposed).
 
@@ -330,7 +330,7 @@ The drawn localities beyond the playable edge (Luivinen, Ludghis, Siulas, Eciele
 - **The Orewell iron.** The western dwarves' factors buy Orewell ore; Melkgard and Coldor bid for the mines, and a Melkgard that holds them gains defiance.
 - **The two yeti peoples.** The shelf clans can be courted; the height clans of Ghaahu cannot be reached until a shelf eldest vouches for an envoy.
 - **The sealing and whaling seasons** for Vindael, Portogalor and Austklev.
-- **Divergence hooks:** a Celen chief who does not trust the stranger; Coldor's guides saving Eindil's crew (already a human-only divergence in the spec); Melkgard's warlord selling the Isengar Pass to the temple party; the Warden of Mp'E calling the valley's men to guard the empty hall.
+- **Divergence hooks:** a Celen chief who does not trust the stranger; Coldor's guides saving Eindil's crew (already a human-only divergence in the spec); Melkgard's warlord selling the Ormolak Pass to the temple party; the Warden of Mp'E calling the valley's men to guard the empty hall.
 
 **Focus-tree themes.** Coldor: court, granaries, ports, the Accord, Melkgard, the old peoples, the silent castle, the far ice, the final war [FT coldor]. Melkgard: forts, gifts to the steadings, never to kneel or a seat at the Accord [FT regional_isengard]. Fearno: the Free Steadings. Vindael: carrying trade and the coast watch. Nivaros and the yeti: open or closed to every crown. Glimkit (new, proposed): the springs, the lamp-trade, the bone-hound riders, a valley closed or opened to one crown.
 

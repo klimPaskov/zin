@@ -119,7 +119,7 @@ The earlier draft's separate priest of Parim is retired by N10: Ilvane is the on
 
 | Id | Name | St. | Appears | Role | Traits / skill | Portrait |
 | --- | --- | --- | --- | --- | --- | --- |
-| `<Lerendor>_zin_ruler` | King Ferlin III of Lerendor and Lerenwaith | P | Start | Country leader, High Crown | `zin_trait_strait_pride` | Tall northern king, sea-blue mantle (P). |
+| `<Lerendor>_zin_ruler` | King Ferlin III of Lerendor and Lerendor's North | P | Start | Country leader, High Crown | `zin_trait_strait_pride` | Tall northern king, sea-blue mantle (P). |
 | `zin_lerendor_ilse` | Chancellor Ilse Relendion | P | Start | Political advisor; holds that the treaty pays | `zin_trait_treaty_keeper` | Stern stateswoman (P). |
 | `zin_lerendor_hellek` | Lord Admiral Hellek Fargur | P | Start | Navy leader; wants Leren mastery of the strait | skill 4; `blue_water_expert`, `bold` | Admiral in sealskin (P). |
 | `zin_lerendor_agnar` | Marshal Agnar Solenkov | P | Start | Field marshal | skill 3; `career_officer` | Grey-bearded northern marshal in sea-blue mail (P). |
@@ -245,7 +245,7 @@ All proposed (P). Country leaders only; their councils are written in the region
 | Eekedor | North Lands | Speaker Pertav Oirt | Leren Compact |
 | Molot | North Lands | Margrave Wokla | Marcher state |
 | R'en | North Lands | Prince Renan | Strait gateway |
-| Sensai | North Lands | Lady Agniya | — |
+| Tolvael | North Lands | Lady Agniya | — |
 | Mina | North Lands | Lord Etonar | — |
 | Girdon | West Lands | Warden-Speaker Pernia Lothor | Signed the Truce of the Grey Ford (P) |
 | Kradlon | West Lands | First Guildsman Trilo Kradd | Guild republic |

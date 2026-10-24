@@ -1,0 +1,1016 @@
+{
+ "note": "The reference palette of the import (one list for every sheet, ADR 0067 section 9): per sheet the median colour of its drawn water and of its drawn land per terrain class, measured by tools/content/geography/import_measures.mjs; numbers only.",
+ "mergeDistance": 18,
+ "palette": [
+  {
+   "kind": "sea",
+   "color": {
+    "r": 117,
+    "g": 131,
+    "b": 209
+   }
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 96,
+    "g": 142,
+    "b": 209
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 148,
+    "g": 127,
+    "b": 118
+   }
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 137,
+    "g": 113,
+    "b": 98
+   }
+  },
+  {
+   "kind": "hills",
+   "color": {
+    "r": 147,
+    "g": 146,
+    "b": 148
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 180,
+    "g": 124,
+    "b": 121
+   }
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 129,
+    "g": 167,
+    "b": 221
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 171,
+    "g": 188,
+    "b": 174
+   }
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 102,
+    "g": 205,
+    "b": 140
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 125,
+    "g": 137,
+    "b": 136
+   }
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 88,
+    "g": 98,
+    "b": 199
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 176,
+    "g": 182,
+    "b": 107
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 173,
+    "g": 206,
+    "b": 129
+   }
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 110,
+    "g": 177,
+    "b": 234
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 211,
+    "g": 245,
+    "b": 204
+   }
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 38,
+    "g": 82,
+    "b": 139
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 46,
+    "g": 44,
+    "b": 46
+   }
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 45,
+    "g": 44,
+    "b": 45
+   }
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 98,
+    "g": 116,
+    "b": 204
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 162,
+    "g": 180,
+    "b": 135
+   }
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 135,
+    "g": 189,
+    "b": 129
+   }
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 66,
+    "g": 175,
+    "b": 80
+   }
+  },
+  {
+   "kind": "snow",
+   "color": {
+    "r": 255,
+    "g": 255,
+    "b": 255
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 149,
+    "g": 194,
+    "b": 137
+   }
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 166,
+    "g": 176,
+    "b": 122
+   }
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 118,
+    "g": 165,
+    "b": 87
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 171,
+    "g": 169,
+    "b": 136
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 180,
+    "g": 218,
+    "b": 142
+   }
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 175,
+    "g": 219,
+    "b": 123
+   }
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 172,
+    "g": 90,
+    "b": 151
+   }
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 182,
+    "g": 205,
+    "b": 117
+   }
+  },
+  {
+   "kind": "marsh",
+   "color": {
+    "r": 195,
+    "g": 198,
+    "b": 178
+   }
+  },
+  {
+   "kind": "hills",
+   "color": {
+    "r": 181,
+    "g": 113,
+    "b": 163
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 175,
+    "g": 221,
+    "b": 143
+   }
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 250,
+    "g": 250,
+    "b": 250
+   }
+  },
+  {
+   "kind": "marsh",
+   "color": {
+    "r": 125,
+    "g": 149,
+    "b": 84
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 150,
+    "g": 189,
+    "b": 104
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 216,
+    "g": 222,
+    "b": 221
+   }
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 171,
+    "g": 170,
+    "b": 174
+   }
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 6,
+    "g": 146,
+    "b": 83
+   }
+  },
+  {
+   "kind": "hills",
+   "color": {
+    "r": 254,
+    "g": 254,
+    "b": 254
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 238,
+    "g": 240,
+    "b": 242
+   }
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 64,
+    "g": 122,
+    "b": 199
+   }
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 212,
+    "g": 194,
+    "b": 164
+   }
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 209,
+    "g": 223,
+    "b": 156
+   }
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 209,
+    "g": 198,
+    "b": 142
+   }
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 245,
+    "g": 225,
+    "b": 91
+   }
+  },
+  {
+   "kind": "marsh",
+   "color": {
+    "r": 250,
+    "g": 245,
+    "b": 144
+   }
+  },
+  {
+   "kind": "snow",
+   "color": {
+    "r": 236,
+    "g": 236,
+    "b": 234
+   }
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 226,
+    "g": 173,
+    "b": 152
+   }
+  }
+ ],
+ "provenance": [
+  {
+   "kind": "sea",
+   "color": {
+    "r": 117,
+    "g": 131,
+    "b": 209
+   },
+   "sheets": [
+    "risle",
+    "mag"
+   ],
+   "samples": 7592
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 96,
+    "g": 142,
+    "b": 209
+   },
+   "sheets": [
+    "dead"
+   ],
+   "samples": 8229
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 148,
+    "g": 127,
+    "b": 118
+   },
+   "sheets": [
+    "dead"
+   ],
+   "samples": 2769
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 137,
+    "g": 113,
+    "b": 98
+   },
+   "sheets": [
+    "dead"
+   ],
+   "samples": 501
+  },
+  {
+   "kind": "hills",
+   "color": {
+    "r": 147,
+    "g": 146,
+    "b": 148
+   },
+   "sheets": [
+    "dead"
+   ],
+   "samples": 407
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 180,
+    "g": 124,
+    "b": 121
+   },
+   "sheets": [
+    "dead"
+   ],
+   "samples": 1061
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 129,
+    "g": 167,
+    "b": 221
+   },
+   "sheets": [
+    "dark",
+    "rush",
+    "cold"
+   ],
+   "samples": 39412
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 171,
+    "g": 188,
+    "b": 174
+   },
+   "sheets": [
+    "dark"
+   ],
+   "samples": 5639
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 102,
+    "g": 205,
+    "b": 140
+   },
+   "sheets": [
+    "dark",
+    "west"
+   ],
+   "samples": 16472
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 125,
+    "g": 137,
+    "b": 136
+   },
+   "sheets": [
+    "dark"
+   ],
+   "samples": 2605
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 88,
+    "g": 98,
+    "b": 199
+   },
+   "sheets": [
+    "tritons"
+   ],
+   "samples": 12407
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 176,
+    "g": 182,
+    "b": 107
+   },
+   "sheets": [
+    "tritons"
+   ],
+   "samples": 1753
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 173,
+    "g": 206,
+    "b": 129
+   },
+   "sheets": [
+    "tritons"
+   ],
+   "samples": 1035
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 110,
+    "g": 177,
+    "b": 234
+   },
+   "sheets": [
+    "sun"
+   ],
+   "samples": 2725
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 211,
+    "g": 245,
+    "b": 204
+   },
+   "sheets": [
+    "sun"
+   ],
+   "samples": 4446
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 38,
+    "g": 82,
+    "b": 139
+   },
+   "sheets": [
+    "edv"
+   ],
+   "samples": 12882
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 46,
+    "g": 44,
+    "b": 46
+   },
+   "sheets": [
+    "edv"
+   ],
+   "samples": 1356
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 45,
+    "g": 44,
+    "b": 45
+   },
+   "sheets": [
+    "edv"
+   ],
+   "samples": 3262
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 98,
+    "g": 116,
+    "b": 204
+   },
+   "sheets": [
+    "north",
+    "west"
+   ],
+   "samples": 36178
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 162,
+    "g": 180,
+    "b": 135
+   },
+   "sheets": [
+    "north",
+    "rush",
+    "west"
+   ],
+   "samples": 27141
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 135,
+    "g": 189,
+    "b": 129
+   },
+   "sheets": [
+    "north"
+   ],
+   "samples": 2459
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 66,
+    "g": 175,
+    "b": 80
+   },
+   "sheets": [
+    "north"
+   ],
+   "samples": 449
+  },
+  {
+   "kind": "snow",
+   "color": {
+    "r": 255,
+    "g": 255,
+    "b": 255
+   },
+   "sheets": [
+    "north",
+    "cold"
+   ],
+   "samples": 110404
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 149,
+    "g": 194,
+    "b": 137
+   },
+   "sheets": [
+    "north"
+   ],
+   "samples": 2149
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 166,
+    "g": 176,
+    "b": 122
+   },
+   "sheets": [
+    "rush"
+   ],
+   "samples": 14638
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 118,
+    "g": 165,
+    "b": 87
+   },
+   "sheets": [
+    "rush"
+   ],
+   "samples": 8414
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 171,
+    "g": 169,
+    "b": 136
+   },
+   "sheets": [
+    "rush"
+   ],
+   "samples": 3737
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 180,
+    "g": 218,
+    "b": 142
+   },
+   "sheets": [
+    "mag"
+   ],
+   "samples": 27114
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 175,
+    "g": 219,
+    "b": 123
+   },
+   "sheets": [
+    "mag"
+   ],
+   "samples": 3678
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 172,
+    "g": 90,
+    "b": 151
+   },
+   "sheets": [
+    "mag"
+   ],
+   "samples": 25588
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 182,
+    "g": 205,
+    "b": 117
+   },
+   "sheets": [
+    "mag"
+   ],
+   "samples": 2874
+  },
+  {
+   "kind": "marsh",
+   "color": {
+    "r": 195,
+    "g": 198,
+    "b": 178
+   },
+   "sheets": [
+    "mag"
+   ],
+   "samples": 466
+  },
+  {
+   "kind": "hills",
+   "color": {
+    "r": 181,
+    "g": 113,
+    "b": 163
+   },
+   "sheets": [
+    "mag"
+   ],
+   "samples": 869
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 175,
+    "g": 221,
+    "b": 143
+   },
+   "sheets": [
+    "mag"
+   ],
+   "samples": 9437
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 250,
+    "g": 250,
+    "b": 250
+   },
+   "sheets": [
+    "west"
+   ],
+   "samples": 6344
+  },
+  {
+   "kind": "marsh",
+   "color": {
+    "r": 125,
+    "g": 149,
+    "b": 84
+   },
+   "sheets": [
+    "west"
+   ],
+   "samples": 913
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 150,
+    "g": 189,
+    "b": 104
+   },
+   "sheets": [
+    "west"
+   ],
+   "samples": 4639
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 216,
+    "g": 222,
+    "b": 221
+   },
+   "sheets": [
+    "cold"
+   ],
+   "samples": 22081
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 171,
+    "g": 170,
+    "b": 174
+   },
+   "sheets": [
+    "cold"
+   ],
+   "samples": 456
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 6,
+    "g": 146,
+    "b": 83
+   },
+   "sheets": [
+    "cold"
+   ],
+   "samples": 2873
+  },
+  {
+   "kind": "hills",
+   "color": {
+    "r": 254,
+    "g": 254,
+    "b": 254
+   },
+   "sheets": [
+    "cold"
+   ],
+   "samples": 5537
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 238,
+    "g": 240,
+    "b": 242
+   },
+   "sheets": [
+    "cold"
+   ],
+   "samples": 12440
+  },
+  {
+   "kind": "sea",
+   "color": {
+    "r": 64,
+    "g": 122,
+    "b": 199
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 21830
+  },
+  {
+   "kind": "land",
+   "color": {
+    "r": 212,
+    "g": 194,
+    "b": 164
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 77599
+  },
+  {
+   "kind": "plains",
+   "color": {
+    "r": 209,
+    "g": 223,
+    "b": 156
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 4797
+  },
+  {
+   "kind": "forest",
+   "color": {
+    "r": 209,
+    "g": 198,
+    "b": 142
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 12311
+  },
+  {
+   "kind": "desert",
+   "color": {
+    "r": 245,
+    "g": 225,
+    "b": 91
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 71003
+  },
+  {
+   "kind": "marsh",
+   "color": {
+    "r": 250,
+    "g": 245,
+    "b": 144
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 610
+  },
+  {
+   "kind": "snow",
+   "color": {
+    "r": 236,
+    "g": 236,
+    "b": 234
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 15851
+  },
+  {
+   "kind": "mountain",
+   "color": {
+    "r": 226,
+    "g": 173,
+    "b": 152
+   },
+   "sheets": [
+    "east"
+   ],
+   "samples": 14290
+  }
+ ]
+}

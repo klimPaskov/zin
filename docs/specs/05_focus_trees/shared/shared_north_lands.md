@@ -39,7 +39,7 @@ Today every one of these countries runs the interim "Long Peace" tree (`zin_long
 
 - **Established:** the North Lands lie north of the Middle Lands across a narrow strait; Lerendor leads the Leren Compact; in the final war rulers in the North Lands withdraw from Aenoran alliances, and the North Lands are not one unanimous enemy; Zol's dead come through islands and straits, and ordinary weapons cannot end them; northern companies join Eindil's coalition without surrendering their independence; competing northern interests remain after the war.
 - **Proposed in the vault:** the Treaty of the Narrow Strait (4A 512); island fishermen's tales of black ships (4A 1744).
-- **Proposed in the specs:** each crown's lean toward Sonargur or Parim, the Compact decisions and the withdrawal in 4A 1755 (Lerendor spec); footholds (Afrit spec); Sensai's Free Crowns of the North (North Lands regional file).
+- **Proposed in the specs:** each crown's lean toward Sonargur or Parim, the Compact decisions and the withdrawal in 4A 1755 (Lerendor spec); footholds (Afrit spec); Tolvael's Free Crowns of the North (North Lands regional file).
 - **Proposed here:** every focus, spirit, event and number; the request for a Compact seat and for Parim's shield.
 - **Kept open:** whether a small crown withdraws from Aenoran alliances on its own (here it is the crown's choice, never history); anything about Zol's servants or who governs the Mistake; the post-war order of the North. Text states none of these.
 
@@ -106,7 +106,7 @@ Prerequisites: `a / b` means a or b. **Bold** names mark key focuses. Days are 3
 | A | `our_own_counsel` | **Our Own Counsel** | crown_of_the_north | look_to_sonargur, look_to_parim | 4,1 | 35 | `banner_plain` | spirit `own_counsel` | 20; hist: ×5 if lean < 10, else 0 |
 | A | `ask_for_a_compact_seat` | Ask for a Seat in the Compact | look_to_sonargur | — | 0,2 | 35 | `banner_league` | Avail: lean ≥ 50; `check zin_north_can_ask_compact`. ask_compact | 60; hist 0 before 1752.1.1 |
 | A | `envoys_to_parim` | Envoys to Parim | look_to_parim | — | 2,2 | 35 | `envoy` | Avail: not `check zin_aenor_parim_lost`. ask_parim | 40 |
-| A | `join_the_free_crowns` | Join the Free Crowns | our_own_counsel | — | 4,2 | 35 | `alliance_rings` | Avail: `check zin_north_free_crowns_open`. join_faction_of Sensai | 40; ×0 if lean < −20 or lean ≥ 21; hist 0 |
+| A | `join_the_free_crowns` | Join the Free Crowns | our_own_counsel | — | 4,2 | 35 | `alliance_rings` | Avail: `check zin_north_free_crowns_open`. join_faction_of Tolvael | 40; ×0 if lean < −20 or lean ≥ 21; hist 0 |
 | A | `trade_with_both_shores` | Trade with Both Shores | look_to_sonargur / look_to_parim / our_own_counsel | — | 2,3 | 70 | `handshake_oath` | spirit `two_shore_trade` | 20 |
 | A | `a_crown_among_crowns` | A Crown Among Crowns | trade_with_both_shores | — | 2,4 | 70 | `seal_royal` | pp 50; stab 0.05 | 20 |
 | B | `hearth_and_harbour` | **Hearth and Harbour** | crown_of_the_north | — | 7,1 | 70 | `workshop_tools` | bld industrial_complex 1 @capital | 40 |
@@ -227,7 +227,7 @@ Tree-declared scripts go to `common/scripted_effects/zin_shared_north_lands.txt`
 | Name | Kind | Scope | Does |
 | --- | --- | --- | --- |
 | `zin_north_can_ask_compact` | scripted trigger | country | `is_in_faction = no`; the `zin_is_lerendor` country exists and `is_faction_leader = yes` |
-| `zin_north_free_crowns_open` | scripted trigger | country | `is_in_faction = no`; a country with flag `zin_sensai_free_crowns` is a faction leader |
+| `zin_north_free_crowns_open` | scripted trigger | country | `is_in_faction = no`; a country with flag `zin_tolvael_free_crowns` is a faction leader |
 | `zin_north_with_lerendor` | scripted trigger | country | ROOT `is_in_faction_with` the `zin_is_lerendor` country |
 | `zin_north_from_lean_60` | scripted trigger | Lerendor (event) | `FROM` has `zin_leren_lean` ≥ 60 |
 | `zin_north_from_shielded_by_parim` | scripted trigger | Lerendor (event) | `zin_leren_treaty_in_force`, and a `zin_aenor_is_realm` country `has_guaranteed = FROM` |
@@ -254,7 +254,7 @@ Flags this tree sets that others read: `zin_zol_forewarned` (Zol mechanic), `zin
 
 Everything is applied in the builder's one transaction through `tools/content/apply.mts`. The compiler drops these twenty-two countries from the interim Long Peace tree. Raw blocks: none.
 
-**Names this tree reads from other specs.** Lerendor: `zin_leren_add_lean`, `zin_leren_lean`, `zin_leren_treaty_in_force`, `zin_leren_withdrawal`, `zin_leren_route_supremacy`, `zin_leren_compact_kin`, `zin_is_lerendor`. Aenor: `zin_aenor_is_realm`, `zin_aenor_king_alive`, `zin_aenor_parim_lost`, `zin_court_corruption`. Sensai's tree: `zin_sensai_free_crowns`. Zol: `zin_zol_rising`, `zin_zol_withdrawn`, `zin_zol_forewarned`. Afrit: `zin_afrit_add_footholds`, `zin_afrit_suspicious`, `zin_afrit_revealed`, `zin_afrit_dead`. Eindil: `zin_eindil_add_regard`, `zin_eindil_join_coalition`, `zin_eindil_aid_host`, `zin_eindil_friend`, `zin_eindil_resents`, `zin_eindil_returned`, `zin_eindil_crowned`. World: `zin_war_of_last_crowns`, `zin_rules_is_historical`. Map: `zin_is_site_parim`, `zin_region_dark_lands`.
+**Names this tree reads from other specs.** Lerendor: `zin_leren_add_lean`, `zin_leren_lean`, `zin_leren_treaty_in_force`, `zin_leren_withdrawal`, `zin_leren_route_supremacy`, `zin_leren_compact_kin`, `zin_is_lerendor`. Aenor: `zin_aenor_is_realm`, `zin_aenor_king_alive`, `zin_aenor_parim_lost`, `zin_court_corruption`. Tolvael's tree: `zin_tolvael_free_crowns`. Zol: `zin_zol_rising`, `zin_zol_withdrawn`, `zin_zol_forewarned`. Afrit: `zin_afrit_add_footholds`, `zin_afrit_suspicious`, `zin_afrit_revealed`, `zin_afrit_dead`. Eindil: `zin_eindil_add_regard`, `zin_eindil_join_coalition`, `zin_eindil_aid_host`, `zin_eindil_friend`, `zin_eindil_resents`, `zin_eindil_returned`, `zin_eindil_crowned`. World: `zin_war_of_last_crowns`, `zin_rules_is_historical`. Map: `zin_is_site_parim`, `zin_region_dark_lands`.
 
 **Advisors.** None added. Each crown keeps the three generated councillors `modules/characters.mjs` gives it today, from the North Lands name pool: `zin_adv_road_warden`, `zin_adv_muster_master`, `zin_adv_merchant_prince` (Wild); a crown that turns Light swaps the muster-master for `zin_adv_envoy` (politics spec).
 
@@ -263,7 +263,7 @@ Everything is applied in the builder's one transaction through `tools/content/ap
 ## AI
 
 - **Historical:** root; B; A by start lean: crowns with lean ≥ 10 (The Hold, Belg, Tolhon) *Look to Sonargur*, the rest *Our Own Counsel*; *Ask for a Seat in the Compact* when lean reaches 50 after 4A 1752 (the Hold historically); C or D; *Watch the Waters* (the AI disbelieves); J when available: *Stand Apart with Sonargur* for every crown with lean ≥ 0, *Keep Faith with Parim* for the rest; *Against the Deathless* and *Beacons on the Capes* after `zin_zol_rising`; *Northern Companies* from 4A 1757, except crowns with lean ≥ 20, which keep their companies home.
-- **Free:** lean decides A and J; *Join the Free Crowns* when Sensai has founded it and lean is between −20 and 20.
+- **Free:** lean decides A and J; *Join the Free Crowns* when Tolvael has founded it and lean is between −20 and 20.
 - Before `zin_golden_king_dead` no AI strategy toward war is added.
 
 ## Acceptance

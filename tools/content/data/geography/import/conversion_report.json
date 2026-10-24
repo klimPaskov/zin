@@ -1,0 +1,409 @@
+{
+ "generatedBy": "tools/content/geography/convert_for_import.mjs (deterministic; regenerate, do not edit by hand)",
+ "inputs": {
+  "model": {
+   "path": "tools/content/data/geography/aoaz.repaired.json",
+   "sha256": "edee765a4f01314b21e5e557c6f5d190328e66d32a781a75bbacfc4baeadc41f"
+  },
+  "design": {
+   "path": "tools/content/data/geography/aoaz.json",
+   "sha256": "71e7faa0a4b0bf81778746820d69a9d6e2f995f568cda6e48b386571af067f1a"
+  },
+  "coast": {
+   "path": "tools/content/data/geography/coast_features.json",
+   "sha256": "210997d7a8177518b9679d1ed1fc52bf084ab8fb3fee64d5c9e8d53021a3154a"
+  },
+  "names": {
+   "path": "tools/content/data/geography/name_table.json",
+   "sha256": "b715cd08341ef1211802dbea6816ace97a00521364bf1f168addd6267dfcc2d5"
+  },
+  "palette": {
+   "path": "tools/content/data/geography/import/aoaz.palette.json",
+   "sha256": "f6909573174f6be2661f7d6e45d8c77d32158ba8579f9c8eca14cc8809b4765e"
+  },
+  "overrides": {
+   "path": "tools/content/geography/surface_overrides.json",
+   "sha256": "4735e5a14cf2df0c70f8ee36a731770b9dd3d8cdc5cb4e26cadfa4c86ee288f0"
+  },
+  "roster": {
+   "path": "tools/content/data/world/roster.json",
+   "sha256": "a50bb8a1927e0c5b03e7266c6cb45e4df2ece6a8c69069180b0d763970babcdd"
+  }
+ },
+ "outputs": {
+  "aoaz.geography.json": "7a362b24b3b4a9762179aa000edd3d3235aa031382bef9ac64f8923b01a7798e",
+  "aoaz.sheets.json": "a85601870b831641438a68b169a8f229aa9df2e6e0928bdbfab2cc3f66777752",
+  "aoaz.annotations.json": "37fa63533909542c60aded957f9fcd758d64f7ba995243634e6699efdeebf43c",
+  "aoaz.names.json": "5a6f936adcee9f51c262d09cc24910c2200f3fc265e344fe9b033101503f07d6",
+  "aoaz.held_back.json": "ecf2045310362b0d274cc99da199a356e5f1b7fdb4ab8d770bc9df6cc22c42d4",
+  "preview_call.json": "fd03cfe654f73d35e77a34566ae5d102e04183ec84f8660973787d8ee44da862",
+  "preview_call_palette.json": "e8b8845550040642f5ac82f9ccbbaf0bc8d3ce03b19c66b7426162cd57117cf5"
+ },
+ "counts": {
+  "seas": 58,
+  "lands": 89,
+  "regions": 16,
+  "ranges": 63,
+  "passes": 21,
+  "volcanoes": 16,
+  "rivers": 30,
+  "lakes": 12,
+  "straits": 33,
+  "sites": 86,
+  "roads": 5,
+  "places": 30
+ },
+ "heldBack": {
+  "terrainAreas": 88,
+  "zones": [
+   "zone_great_wall",
+   "zone_kingson_vale",
+   "zone_narrow_strait",
+   "zone_rift"
+  ],
+  "rivers": [
+   "river_mora",
+   "river_noris_wadi"
+  ],
+  "straits": [
+   "strait_coldor_channel: both shores are one land; the schema refuses a strait from a land to itself",
+   "strait_mirolon_neck: both shores are one land; the schema refuses a strait from a land to itself"
+  ],
+  "seaIce": 0,
+  "regionTerrain": 16,
+  "edges": [
+   "edge_west",
+   "edge_north",
+   "edge_east",
+   "edge_south"
+  ]
+ },
+ "edgeBandLand": [],
+ "edgeRemoval": [
+  {
+   "id": "land_eastern_mainland",
+   "designName": "Eastern Mainland",
+   "name": "Eastern Mainland",
+   "designPx": 1884864,
+   "inBandsPx": 328000,
+   "repairedPx": 1460592
+  },
+  {
+   "id": "land_western_mainland",
+   "designName": "Western Mainland",
+   "name": "Western Mainland",
+   "designPx": 1444736,
+   "inBandsPx": 119936,
+   "repairedPx": 1283200
+  },
+  {
+   "id": "land_northern_wastes",
+   "designName": "Northern Wastes",
+   "name": "Northern Wastes",
+   "designPx": 556784,
+   "inBandsPx": 88128,
+   "repairedPx": 436416
+  },
+  {
+   "id": "land_island_001",
+   "designName": "Island 1 (windwaith)",
+   "name": "Vindael",
+   "designPx": 80976,
+   "inBandsPx": 37920,
+   "repairedPx": 36944
+  },
+  {
+   "id": "land_lands_of_the_sun",
+   "designName": "Lands of the Sun",
+   "name": "Lands of the Sun",
+   "designPx": 73664,
+   "inBandsPx": 34304,
+   "repairedPx": 74000,
+   "movedBy": [
+    0.053269,
+    -0.043837
+   ]
+  },
+  {
+   "id": "land_island_014",
+   "designName": "Island 14 (tritons_islands)",
+   "name": "Kitodolwai",
+   "designPx": 3056,
+   "inBandsPx": 3056,
+   "repairedPx": 3056,
+   "movedBy": [
+    0.033985,
+    0
+   ]
+  },
+  {
+   "id": "land_island_019",
+   "designName": "Island 19 (lands_sun)",
+   "name": "Nailia",
+   "designPx": 2704,
+   "inBandsPx": 1808,
+   "repairedPx": 2672,
+   "movedBy": [
+    0.053269,
+    -0.043837
+   ]
+  },
+  {
+   "id": "land_island_009",
+   "designName": "Island 9 (tritons_islands)",
+   "name": "Benan",
+   "designPx": 4080,
+   "inBandsPx": 1504,
+   "repairedPx": 4112,
+   "movedBy": [
+    0.069076,
+    0
+   ]
+  },
+  {
+   "id": "land_island_029",
+   "designName": "Island 29 (tritons_islands)",
+   "name": "Sterrotumai",
+   "designPx": 1168,
+   "inBandsPx": 1168,
+   "repairedPx": 1168,
+   "movedBy": [
+    0.064835,
+    0
+   ]
+  },
+  {
+   "id": "land_island_032",
+   "designName": "Island 32 (tritons_islands)",
+   "name": "Austoklevo",
+   "designPx": 1104,
+   "inBandsPx": 1104,
+   "repairedPx": 960,
+   "movedBy": [
+    0.058924,
+    0
+   ]
+  },
+  {
+   "id": "land_island_028",
+   "designName": "Island 28 (cold_lands)",
+   "name": "Lochvait",
+   "designPx": 1648,
+   "inBandsPx": 736,
+   "repairedPx": 640
+  },
+  {
+   "id": "land_island_037",
+   "designName": "Island 37 (cold_lands)",
+   "name": "Vestfaaenn",
+   "designPx": 800,
+   "inBandsPx": 464,
+   "repairedPx": 96
+  },
+  {
+   "id": "land_island_059",
+   "designName": "Island 59 (lands_sun)",
+   "name": "Sang Tilu",
+   "designPx": 240,
+   "inBandsPx": 240,
+   "repairedPx": 240,
+   "movedBy": [
+    0.053269,
+    -0.043837
+   ]
+  },
+  {
+   "id": "land_island_006",
+   "designName": "Island 6 (tritons_islands)",
+   "name": "Adel",
+   "designPx": 9760,
+   "inBandsPx": 64,
+   "repairedPx": 7920
+  },
+  {
+   "id": "land_island_056",
+   "designName": "Island 56 (tritons_islands)",
+   "name": "Sudowaitos",
+   "designPx": 336,
+   "inBandsPx": 64,
+   "repairedPx": 336,
+   "movedBy": [
+    0.01917,
+    0
+   ]
+  },
+  {
+   "id": "land_island_066",
+   "designName": "Island 66 (tritons_islands)",
+   "name": "Kim",
+   "designPx": 208,
+   "inBandsPx": 64,
+   "repairedPx": 192,
+   "movedBy": [
+    0.028856,
+    0
+   ]
+  }
+ ],
+ "sheets": [
+  {
+   "id": "risle",
+   "order": 12,
+   "clipVertices": 33
+  },
+  {
+   "id": "dead",
+   "order": 11,
+   "clipVertices": 54
+  },
+  {
+   "id": "dark",
+   "order": 10,
+   "clipVertices": 45
+  },
+  {
+   "id": "tritons",
+   "order": 9,
+   "clipVertices": 113
+  },
+  {
+   "id": "sun",
+   "order": 8,
+   "clipVertices": 60
+  },
+  {
+   "id": "edv",
+   "order": 7,
+   "clipVertices": 127
+  },
+  {
+   "id": "north",
+   "order": 6,
+   "clipVertices": 114
+  },
+  {
+   "id": "rush",
+   "order": 5,
+   "clipVertices": 132
+  },
+  {
+   "id": "mag",
+   "order": 4,
+   "clipVertices": 88
+  },
+  {
+   "id": "west",
+   "order": 3,
+   "clipVertices": 197
+  },
+  {
+   "id": "cold",
+   "order": 2,
+   "clipVertices": 249
+  },
+  {
+   "id": "east",
+   "order": 1,
+   "clipVertices": 291
+  }
+ ],
+ "annotations": {
+  "polygons": 70,
+  "points": 2782,
+  "dropped": [
+   {
+    "kind": "sea",
+    "areaPx": 64,
+    "reason": "could not be traced into a valid polygon"
+   },
+   {
+    "kind": "land",
+    "areaPx": 64,
+    "reason": "could not be traced into a valid polygon"
+   }
+  ]
+ },
+ "palette": 50,
+ "issues": [
+  {
+   "id": "range_corogon_hills",
+   "issue": "spine untangled: 2 vertices of a loop dropped"
+  },
+  {
+   "id": "range_adel",
+   "issue": "spine untangled: 3 vertices of a loop dropped"
+  },
+  {
+   "id": "river_fandan",
+   "issue": "mouth moved 9 px from the shore into the water"
+  },
+  {
+   "id": "river_naepu",
+   "issue": "mouth moved 16 px from the shore into the water"
+  },
+  {
+   "id": "river_orewell",
+   "issue": "mouth moved 10 px from the shore into the water"
+  },
+  {
+   "id": "river_kulolo",
+   "issue": "mouth moved 2 px from the shore into the water"
+  },
+  {
+   "id": "river_grey",
+   "issue": "mouth moved 2 px from the shore into the water"
+  },
+  {
+   "id": "river_leren",
+   "issue": "5 via points inside a lake dropped (the river crosses it)"
+  },
+  {
+   "id": "river_great",
+   "issue": "mouth moved 16 px from the shore into the water"
+  },
+  {
+   "id": "river_selenar",
+   "issue": "mouth moved 2 px from the shore into the water"
+  },
+  {
+   "id": "river_hilorn",
+   "issue": "mouth moved 0 px from the shore into the water"
+  },
+  {
+   "id": "river_konorar",
+   "issue": "mouth moved 4 px from the shore into the water"
+  },
+  {
+   "id": "river_andos",
+   "issue": "mouth moved 4 px from the shore into the water"
+  },
+  {
+   "id": "river_gondolin",
+   "issue": "mouth moved 1 px from the shore into the water"
+  },
+  {
+   "id": "river_fosoco",
+   "issue": "mouth moved 1 px from the shore into the water"
+  },
+  {
+   "id": "river_tich",
+   "issue": "mouth moved 4 px from the shore into the water"
+  },
+  {
+   "id": "river_adel_stream",
+   "issue": "mouth moved 1 px from the shore into the water"
+  },
+  {
+   "id": "river_gil",
+   "issue": "mouth moved 1 px from the shore into the water"
+  },
+  {
+   "id": "river_dead_ash",
+   "issue": "mouth moved 5 px from the shore into the water"
+  },
+  {
+   "id": "river_mirolon",
+   "issue": "mouth moved 1 px from the shore into the water"
+  }
+ ]
+}

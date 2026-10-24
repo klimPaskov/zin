@@ -242,7 +242,7 @@ These are story candidates, not fixed canon. Established figures such as Elzon, 
 | **King Edran** | Established Grand Alliance king, rebuilding ruler who dies of disease in the Second Age | A great war leader must learn that reconstruction demands different skills than victory at Dardan |
 | **Lorien of Gala** | Established king of the Gala elves | His people aid the afflicted, but he refuses to hand his host over for another reckless campaign |
 | **Ithren of the Threshold** | Earlier proposed Great Spirit associated with Dardan's binding | He senses the imprisonment weakening yet cannot compel the divided kings to act |
-| **Avarin of Lerenwaith** | Proposed North Lands envoy and later commander | Attempts to preserve a northern alliance while her own country faces raids |
+| **Avarin of Lerendor's North** | Proposed North Lands envoy and later commander | Attempts to preserve a northern alliance while her own country faces raids |
 | **Seron of Selen** | Proposed human commander of reconstruction armies | Saves several provinces but finally loses the ability to keep the king's forces together |
 | **Tavriel of the Magical Forest** | Proposed elven healer and ward-keeper | Helps people of several races survive supernatural outbreaks, opposed by her own isolationist faction |
 | **Arelon, Keeper of the Last Seal** | Proposed royal archivist | Carries part of the Aenoran inheritance through the fall, with consequences for the Fourth Age |

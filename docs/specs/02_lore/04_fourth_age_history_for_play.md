@@ -112,7 +112,7 @@ Each region lists what its people remember of the three eras, how they say it, a
 | Era | Memory | St. |
 | --- | --- | --- |
 | Older | The First Age alliance with Aenor ("North Earth" in old texts) | E |
-| Long Peace | The Leren crowns unite: Lerendor and Lerenwaith marry their royal houses (4A 411) | P |
+| Long Peace | The Leren crowns unite: Lerendor and Lerendor's North marry their royal houses (4A 411) | P |
 | Long Peace | The Treaty of the Narrow Strait: mutual defence across the strait (4A 512) | P name and date, E "old alliance" |
 | Golden King's eve | The toll quarrel: Leren envoys humiliated in Parim (4A 1716) | P |
 

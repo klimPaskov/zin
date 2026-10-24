@@ -7,7 +7,8 @@
 //     fiction or real myth; no "-waith" names; the owner's labels may be renamed where they do not fit or repeat;
 //   2 the reconciled roster (tools/content/data/world/roster.json, its realms' names and formerLabels) and the regional
 //     dossiers (docs/lore/regions/*.md: their water lists, which give each sea, strait, gulf and lake one name, and
-//     their renamed-label tables), cited per entry in CURATED;
+//     their renamed-label tables), cited per entry in CURATED; every capital site takes its city's name from the
+//     roster (rosterCapitalEntries), ahead of a curated entry that named it after its realm;
 //   3 the owner's drawn island labels (docs/name_table.md, confirmed readings only), which name a placeholder island
 //     when a label lies beside it through its registered sheet;
 //   4 the language generator (tools/content/modules/names.mjs placeNames, in the language of the island's region,
@@ -20,7 +21,7 @@
 // keeping each old label as `formerLabel`; the repair itself never calls the generator.
 //
 //   node tools/content/geography/name_table.mjs [--model <repaired.json>] [--out <name_table.json>]
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { BANNED_NAME_PATTERNS, nameKey, distanceToGeometry, FEATURE_ARRAYS } from './check_model.mjs';
@@ -97,7 +98,13 @@ export const CURATED = Object.freeze([
   C('range_magic_1', 'Magic Mountains', null, null, 'no brackets; the drawn label "Magic Mountains" names the great central ridges', 'magical_lands.md relief; drawn label'),
   C('range_magic_2', null, 'sylvan', null, 'no brackets; the middle ridge takes a name of its own', 'geography', { kind: 'mountain' }),
   C('range_magic_3', 'Lozo Heights', null, null, 'no brackets; the southern ridge beside Lake Lozo', 'geography; magical_lands.md'),
-  C('range_magic_wall', 'Kingson Wall', null, null, 'no brackets; the ridge that is the east side of the Kingson ring', 'geography; middle_lands.md section 2.7'),
+  C('range_magic_wall', 'Kingson Wall', null, null, 'no brackets; the ridge that is the east side of the Kingson ring; the owner keeps the name for natural mountains (K47)', 'geography; middle_lands.md section 2.7'),
+  C('range_isengar_mountains', 'Ormolak Mountains', 'coldic', null, '"Isengar" echoes Isengard, a name from other fiction; the owner chose Ormolak (K48)', 'owner (K48); cold_lands.md relief'),
+  C('pass_isengar', 'Ormolak Pass', 'coldic', null, 'the pass takes the range\'s new name (K48)', 'owner (K48); cold_lands.md relief'),
+  C('range_woqood_alps', 'Woqood Spires', null, null, 'the Alps are a real-world range; the owner chose the Woqood Spires (K48)', 'owner (K48); east_lands.md relief'),
+  C('range_hellfire', 'The Smoking Teeth', null, null, '"Hellfire" is a real-world word; the owner chose the Smoking Teeth, a folk name for the burning cones (K48)', 'owner (K48); east_lands.md relief'),
+  C('volcano_argon', 'Mount Argul', null, null, 'argon is a chemical element; the owner chose Mount Argul (K48)', 'owner (K48); east_lands.md relief'),
+  C('gulf_hellfire', 'The Gulf of the Teeth', null, null, 'the gulf under the Smoking Teeth (K48)', 'owner (K48); east_lands.md water table'),
   C('range_rush_south', 'Crown Mountains', null, null, 'no brackets; the drawn Rush Mountains on Kingson\'s south edge, renamed Crown', 'middle_lands.md relief table'),
   C('range_crown_north', 'Konori Heights', null, null, 'no brackets; the northern foothills on the Konori side', 'geography; middle_lands.md relief table'),
   C('range_titanos_heights', 'Nivaros Heights', 'gigantic', null, 'the Titans are a name of real myth', 'cold_lands.md section 2'),
@@ -122,6 +129,7 @@ export const CURATED = Object.freeze([
   C('cape_gondolin', 'Naamis Cape', 'noric', null, 'Gondolin is a name from other fiction', 'east_lands.md water table'),
   C('cape_wonderland', 'Austklev Point', 'coldic', 'east cliff', 'Wonderland is a name from other fiction', 'cold_lands.md renamed labels'),
   C('cape_hiloron', 'Hirolon Head', null, null, 'the giants\' realm is Hirolon (R-22)', 'hirolon.md, middle_lands.md'),
+  C('forest_hiloron', 'Hirolon Woods', null, null, 'the giants\' realm is spelled Hirolon (K13); the woods follow the realm\'s name as Hirolon Head does', 'owner decision K13; hirolon.md'),
   C('pass_kingson_gate', 'The Kingson Pass', null, null, 'the geography name of the one pass east out of the vale', 'middle_lands.md section 2.7'),
   C('pass_south_gate', 'The South Pass', null, null, 'the geography name of the southern gate road', 'middle_lands.md relief table'),
   // ------------------------------------------------------------------ sites
@@ -140,6 +148,23 @@ export const CURATED = Object.freeze([
   C('site_great_lake_port_4', 'Dolepar', 'aenoran', null, 'a port needs a name, not a description', 'middle_lands.md settlements'),
   C('site_great_wall_north_fort', 'Organ Wall Fortress', null, null, 'no brackets; the fortress at the Organ end of the Great Wall', 'geography'),
 ]);
+
+export const DEFAULT_ROSTER_PATH = path.join(here, '../data/world/roster.json');
+/**
+ * Capital names from the reconciled roster (tools/content/data/world/roster.json): every realm whose `capital.siteId` is
+ * a model site names that site after its capital city (the dossiers' realm tables give the same capitals). A drawn site
+ * labelled with its realm's name thus takes the city's name, and the realm's name stays on the realm. Curated entries
+ * win over the roster; a capital without a name (`capital.name` null) leaves its site alone.
+ */
+export function rosterCapitalEntries(roster) {
+  const out = [];
+  for (const x of roster?.realms ?? []) {
+    const c = x.capital;
+    if (!c?.siteId || !c.name) continue;
+    out.push(C(c.siteId, c.name, x.language ?? null, null, `the capital of ${x.name} (${x.tag}) in the reconciled roster`, `roster ${x.tag} capital${x.region ? `; ${x.region}.md realms table` : ''}`));
+  }
+  return out.sort((p, q) => p.id.localeCompare(q.id));
+}
 
 /** The language that names a placeholder island, by its region. */
 export const REGION_LANGUAGE = Object.freeze({
@@ -205,10 +230,14 @@ export function islandLabels(m, labels, taken) {
 }
 
 /** Build the rename table for a model. `generate(language, kind, seed)` returns candidate names ({ text, gloss }). */
-export function buildNameTable(m, labels, generate) {
+export function buildNameTable(m, labels, generate, roster = null) {
   const entries = [];
   const decided = new Map();
-  for (const e of [...OWNER, ...CURATED]) if (!decided.has(e.id)) decided.set(e.id, e);
+  // a capital site takes its city's name from the roster even where a curated entry named it after its realm; the
+  // curated reason (a borrowed or retired drawn label) is kept beside the roster's
+  const curated = new Map(CURATED.map(e => [e.id, e]));
+  const capitals = rosterCapitalEntries(roster).map(e => (curated.has(e.id) ? { ...e, reason: `${e.reason}; ${curated.get(e.id).reason}`, source: `${e.source}; ${curated.get(e.id).source}` } : e));
+  for (const e of [...OWNER, ...capitals, ...CURATED]) if (!decided.has(e.id)) decided.set(e.id, e);
   // names that stay: every current name not being replaced, by array, so that new names do not repeat them
   const keep = new Map();
   for (const a of FEATURE_ARRAYS) for (const f of m[a] ?? []) if (!decided.has(f.id) && !placeholder(f) && f.name) { if (!keep.has(a)) keep.set(a, new Set()); keep.get(a).add(nameKey(f.name)); }
@@ -254,7 +283,8 @@ export function buildNameTable(m, labels, generate) {
       name = c.text; meaning = c.gloss ?? null; reason = 'a placeholder name; no drawn label lies beside the island'; source = 'tools/content/modules/names.mjs placeNames, current layer';
     }
     takenIn('lands').add(nameKey(name)); allTaken.add(nameKey(name));
-    entries.push({ id: isl.id, array: 'lands', oldName: isl.name, newName: name, language, meaning, reason, source });
+    // the owner's drawn label a renamed island carries (the override file keeps it as its former label)
+    entries.push({ id: isl.id, array: 'lands', oldName: isl.name, newName: name, language, meaning, reason, source, ...(lab && LABEL_RENAMES[lab.name] ? { drawnLabel: lab.name } : {}) });
   }
   entries.sort((p, q) => p.array.localeCompare(q.array) || p.id.localeCompare(q.id));
   return {
@@ -284,7 +314,9 @@ async function main(argv) {
   const opt = name => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
   const model = unapplyNames(JSON.parse(readFileSync(opt('--model') ?? path.join(here, '../data/geography/aoaz.repaired.json'), 'utf8')));
   const labels = parseLabels(readFileSync(DEFAULT_LABELS_PATH, 'utf8'));
-  const table = buildNameTable(model, labels, await generatorFromNames());
+  const rosterPath = opt('--roster') ?? DEFAULT_ROSTER_PATH;
+  const roster = existsSync(rosterPath) ? JSON.parse(readFileSync(rosterPath, 'utf8')) : null;
+  const table = buildNameTable(model, labels, await generatorFromNames(), roster);
   const out = opt('--out') ?? DEFAULT_NAME_TABLE_PATH;
   writeFileSync(out, `${JSON.stringify(table, null, 1)}\n`);
   console.log(`${table.entries.length} renames: ${Object.entries(table.counts).map(([k, v]) => `${k} ${v}`).join(', ')}`);

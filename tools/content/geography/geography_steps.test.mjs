@@ -12,12 +12,12 @@ import { checkModel, FEATURE_ARRAYS, pointInGeometry, ringsOf } from './check_mo
 import * as G from './geo_core.mjs';
 import {
   applyRegistration, correctModel, correctDarkLands, repairEdges, openGorges, applyNameTable, generatedMask, sheetAuthority,
-  buildOverrides, GENERATED,
+  buildOverrides, GENERATED, sheetClips, CLIP_COAST_MARGIN_PX,
 } from './repair_model.mjs';
 import {
-  candidate, sheetToWorld, sheetToDrawing, frameInset, insetBox, registerAll, parseLabels, labelExpectation, REGISTRATION, DRAWING_PX,
+  candidate, sheetToWorld, sheetToDrawing, frameInset, insetBox, registerAll, parseLabels, labelExpectation, REGISTRATION, DRAWING_PX, SCAN_SHEETS,
 } from './sheet_registration.mjs';
-import { buildNameTable, EXTRA_BANNED, fictionLike, unapplyNames } from './name_table.mjs';
+import { buildNameTable, EXTRA_BANNED, fictionLike, unapplyNames, rosterCapitalEntries } from './name_table.mjs';
 import { chooseLayoutOverrides, importSurface, regionAgreement, LAYOUT } from './layout_overrides.mjs';
 
 const rect = (x0, y0, x1, y1) => ({ type: 'Polygon', coordinates: [[[x0, y0], [x1, y0], [x1, y1], [x0, y1]]] });
@@ -268,6 +268,39 @@ test('names: the table renames, keeps the old label and marks a proposal; a feat
   assert.equal(m.seas[0].name, 'X Ocean', 'the table can be rebuilt from a renamed model');
 });
 
+test('names: a capital site takes its city\'s name from the roster ahead of a curated realm name; a capital without a name is left alone (negative)', () => {
+  const m = namesWorld();
+  m.sites.push(feature('site_isengard', { type: 'Point', coordinates: [0.3, 0.3] }, { name: 'Isengard' }), feature('site_nameless', { type: 'Point', coordinates: [0.7, 0.7] }, { name: 'Nameless' }));
+  const roster = { realms: [
+    { tag: 'MLK', name: 'Melkgard', language: 'coldic', region: 'cold_lands', capital: { name: 'Minnolomak', siteId: 'site_isengard' } },
+    { tag: 'NON', name: 'Nobody', capital: { name: null, siteId: 'site_nameless' } },
+  ] };
+  assert.deepEqual(rosterCapitalEntries(roster).map(e => [e.id, e.name]), [['site_isengard', 'Minnolomak']]);
+  const table = buildNameTable(m, [], () => [], roster);
+  const e = table.entries.find(x => x.id === 'site_isengard');
+  assert.equal(e.newName, 'Minnolomak', 'the roster capital wins over the curated "Melkgard"');
+  assert.match(e.reason, /capital of Melkgard/u);
+  assert.match(e.reason, /Isengard is a name from other fiction/u, 'the curated reason is kept beside it');
+  assert.ok(!table.entries.some(x => x.id === 'site_nameless'));
+});
+
+test('names: a feature an earlier table renamed is renamed again from its former label; an unrelated name stays reported (negative)', () => {
+  const m = namesWorld(), log = [];
+  applyNameTable(m, NAMES, log);
+  const next = { entries: NAMES.entries.map(e => (e.id === 'site_y' ? { ...e, newName: 'Borrak' } : e)) };
+  applyNameTable(m, next, log);
+  assert.equal(m.sites[0].name, 'Borrak');
+  assert.equal(m.sites[0].formerLabel, 'Asgard', 'the former label is the drawn label, not the earlier new name');
+  assert.equal(m.sites[1].name, 'Zed');
+});
+
+test('names: the owner\'s scan titles of the label table map to their sheets beside the current region names', () => {
+  assert.equal(SCAN_SHEETS['Dead Lands'], 'dead');
+  assert.equal(SCAN_SHEETS['Ember Lands'], 'dead');
+  assert.equal(SCAN_SHEETS['Ocean of Edvoid'], 'edv');
+  assert.equal(SCAN_SHEETS.Kusmeel, 'edv');
+});
+
 test('names: an island takes the drawn label beside it, else a generated name; banned and borrowed candidates are refused', () => {
   const m = registeredWorld();
   m.lands = [feature('land_island_901', rect(0.45, 0.45, 0.46, 0.46), { name: 'Island 901 (tritons_islands)', regions: ['tritons_islands'] }), feature('land_island_902', rect(0.62, 0.62, 0.63, 0.63), { name: 'Island 902 (tritons_islands)', regions: ['tritons_islands'] })];
@@ -349,6 +382,18 @@ test('authority: land past the paper of its region\'s sheets is forced to land; 
   assert.ok(pointInGeometry(0.55, 0.5, g) && !pointInGeometry(0.45, 0.5, g));
   const whole = paperWorld([0.05, 0.05, 0.95, 0.95]);
   assert.deepEqual(buildOverrides(whole).surface.filter(e => e.id.startsWith('undrawn_land')), []);
+});
+test('clips: a sheet reads its paper only near the model\'s land, so open sea far out stays sea; the coast and the water beside it are read (negative)', () => {
+  const m = paperWorld([0.05, 0.05, 0.95, 0.95]);
+  sheetClips(m);
+  const clip = m.sheets.west.clip;
+  assert.ok(clip, 'the sheet has a clip');
+  const inClip = p => pointInGeometry(...sheetToDrawing(m.sheets.west, p), clip);
+  assert.ok(inClip([0.5, 0.5]), 'the land is read');
+  assert.ok(inClip([0.40 - 24 / G.W, 0.5]), 'water 24 px off the coast is read');
+  assert.ok(!inClip([0.40 - 96 / G.W, 0.5]), 'water 96 px off the coast is not');
+  assert.ok(!inClip([0.15, 0.5]), 'open sea far from land is not');
+  assert.equal(CLIP_COAST_MARGIN_PX, 48);
 });
 test('authority: the layout\'s generated bands and lands are undrawn, and a moved land carries its band (negative: the middle is drawn)', () => {
   const m = mini({ lands: [feature('land_northern_wastes', rect(0.3, 0.06, 0.4, 0.1)), feature('land_south', rect(0.5, 0.90, 0.6, 0.94))] });

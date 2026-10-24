@@ -646,3 +646,28 @@ export function simplifyLine(c, tolPx, locked = new Set()) {
 }
 /** Remove consecutive points closer than `tolPx`. */
 export const dedupeLine = (c, tolPx = 0.05) => c.filter((p, i) => i === 0 || distPx(p, c[i - 1]) > tolPx);
+/** Intersection point of segments ab and cd (touching counts), or null. */
+export function segmentIntersection(a, b, c, d) {
+  const r = [b[0] - a[0], b[1] - a[1]], s = [d[0] - c[0], d[1] - c[1]];
+  const den = r[0] * s[1] - r[1] * s[0], q = [c[0] - a[0], c[1] - a[1]];
+  if (den === 0) {
+    // parallel: only a shared endpoint or an overlap of collinear segments counts, taken at its first shared point
+    if (q[0] * r[1] - q[1] * r[0] !== 0) return null;
+    for (const p of [c, d]) if (Math.min(a[0], b[0]) <= p[0] && p[0] <= Math.max(a[0], b[0]) && Math.min(a[1], b[1]) <= p[1] && p[1] <= Math.max(a[1], b[1])) return p;
+    return null;
+  }
+  const t = (q[0] * s[1] - q[1] * s[0]) / den, u = (q[0] * r[1] - q[1] * r[0]) / den;
+  return t >= 0 && t <= 1 && u >= 0 && u <= 1 ? [a[0] + t * r[0], a[1] + t * r[1]] : null;
+}
+/** Cut the loops out of an open polyline: where a later segment meets an earlier one, the part between is dropped at the meeting point. */
+export function untangleLine(c) {
+  let line = c.slice();
+  for (let changed = true; changed;) {
+    changed = false;
+    outer: for (let i = 0; i + 1 < line.length; i++) for (let j = line.length - 2; j > i + 1; j--) {
+      const x = segmentIntersection(line[i], line[i + 1], line[j], line[j + 1]);
+      if (x) { line = [...line.slice(0, i + 1), x, ...line.slice(j + 1)]; changed = true; break outer; }
+    }
+  }
+  return dedupeLine(line);
+}

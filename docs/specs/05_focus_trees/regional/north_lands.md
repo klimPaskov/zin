@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This spec gives each of the five tier B countries of the North Lands its own focus tree: Sensai, Mina, R'en, Molot and Eekedor. Lerendor, the united Leren crown, has the major tree ([../major/lerendor.md](../major/lerendor.md)); the twenty-two tier C crowns share [../shared/shared_north_lands.md](../shared/shared_north_lands.md), which also defines the helper effects these trees call.
+This spec gives each of the five tier B countries of the North Lands its own focus tree: Tolvael, Mina, R'en, Molot and Eekedor. Lerendor, the united Leren crown, has the major tree ([../major/lerendor.md](../major/lerendor.md)); the twenty-two tier C crowns share [../shared/shared_north_lands.md](../shared/shared_north_lands.md), which also defines the helper effects these trees call.
 
 The North Lands' one question is what the North owes Aenor. These trees play the smaller crowns' side of it through the [Treaty of the Narrow Strait mechanic](../../04_mechanics/lerendor_narrow_strait.md):
 
@@ -17,13 +17,13 @@ The North Lands' one question is what the North owes Aenor. These trees play the
 
 ## Lore basis
 
-**Established** (vault): the North Lands lie north of the Middle Lands across a narrow strait; Lerendor and Lerenwaith are one crown and lead the Leren Compact with Eekedor (working table); Eekedor, Molot and R'en are named North Lands polities; in the final war rulers in the North Lands withdraw from Aenoran alliances, and the North Lands are not one unanimous enemy; Zol's dead come from the black north through islands and straits and ordinary weapons cannot end them; northern companies join Eindil's temporary coalition without surrendering their independence; competing northern interests remain after the war. The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
+**Established** (vault): the North Lands lie north of the Middle Lands across a narrow strait; Lerendor and Lerendor's North are one crown and lead the Leren Compact with Eekedor (working table); Eekedor, Molot and R'en are named North Lands polities; in the final war rulers in the North Lands withdraw from Aenoran alliances, and the North Lands are not one unanimous enemy; Zol's dead come from the black north through islands and straits and ordinary weapons cannot end them; northern companies join Eindil's temporary coalition without surrendering their independence; competing northern interests remain after the war. The start: the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, Aoaz seems at peace.
 
 **Proposed in the vault, used here:** the Treaty of the Narrow Strait (4A 512); the union of the Leren crowns (4A 411); the toll quarrel of 4A 1716; island fishermen's tales of black ships (4A 1744); the withdrawal in 4A 1755.
 
-**Proposed in the specs, used here:** the roster roles (Sensai the most populous crown, R'en the southern gateway between the Leren and Aenor seas, Molot the marcher state balancing Lerendor, Eekedor the eastern commercial republic); the start leans; the arbitration of Eekedor; rulers' names from [02_characters.md](../../02_lore/02_characters.md).
+**Proposed in the specs, used here:** the roster roles (Tolvael the most populous crown, R'en the southern gateway between the Leren and Aenor seas, Molot the marcher state balancing Lerendor, Eekedor the eastern commercial republic); the start leans; the arbitration of Eekedor; rulers' names from [02_characters.md](../../02_lore/02_characters.md).
 
-**Proposed here:** every focus, spirit, event, advisor and number; the Delvings of Mina; Sensai's timber halls and its Free Crowns of the North; the pilots of R'en; the margraves of Molot; Eekedor's counting houses.
+**Proposed here:** every focus, spirit, event, advisor and number; the Delvings of Mina; Tolvael's timber halls and its Free Crowns of the North; the pilots of R'en; the margraves of Molot; Eekedor's counting houses.
 
 **Kept open:** who wins the War of the Last Crowns and what treaty the North signs after it; whether the smaller crowns withdraw on their own or only through Lerendor (Lerendor spec's open question; here it is each crown's choice); anything about Zol's servants or who administers the Mistake.
 
@@ -67,43 +67,43 @@ Prerequisites: `a + b` and; `a / b` or; brackets group; every name is a focus ke
 
 ---
 
-## 1. Sensai
+## 1. Tolvael
 
 | Item | Value |
 | --- | --- |
-| Tree id | `regional_sensai` (focus ids `zin_regional_sensai_<key>`) |
-| Country | Sensai (North Lands; 7 states; men; Wild, Freeholds; independent) |
+| Tree id | `regional_tolvael` (focus ids `zin_regional_tolvael_<key>`) |
+| Country | Tolvael (North Lands; 7 states; men; Wild, Freeholds; independent) |
 | Focuses | 36; columns 0–17 |
-| Events | `zin_regional_sensai` |
+| Events | `zin_regional_tolvael` |
 | Start values | `zin_leren_lean` −5; `zin_footholds` 1 |
 
 ### Situation in 4A 1748
 
-Sensai is the most populous crown of the North Lands: seven states of forest, tar-pits and shipyards, ruled by Lady Agniya from the timber halls of her capital (proposed). Its great houses are proud and many; its timber builds half the North's ships, Lerendor's included. Sonargur courts Sensai and taxes its timber at the strait; Parim buys its tar and flatters its lady. Sensai answers, by its own saying, to no crown. The North is at peace, and Sensai means to stay rich in it.
+Tolvael is the most populous crown of the North Lands: seven states of forest, tar-pits and shipyards, ruled by Lady Agniya from the timber halls of her capital (proposed). Its great houses are proud and many; its timber builds half the North's ships, Lerendor's included. Sonargur courts Tolvael and taxes its timber at the strait; Parim buys its tar and flatters its lady. Tolvael answers, by its own saying, to no crown. The North is at peace, and Tolvael means to stay rich in it.
 
 ### Role in the story
 
-- **Historical path:** Lerendor's *The Sensai Question* (event `zin_lerendor.7`, 4A 1752–1753) may win friendship or meet refusal (AI chance 50 + lean). The historical AI takes the third way and keeps Sensai its own; when Zol's dead reach the northern shore (4A 1755) Sensai holds its coast; some of its companies join the Heir's coalition in 4A 1757.
+- **Historical path:** Lerendor's *The Tolvael Question* (event `zin_lerendor.7`, 4A 1752–1753) may win friendship or meet refusal (AI chance 50 + lean). The historical AI takes the third way and keeps Tolvael its own; when Zol's dead reach the northern shore (4A 1755) Tolvael holds its coast; some of its companies join the Heir's coalition in 4A 1757.
 - **War of the Last Crowns:** the North's largest reserve of men; the decisive vote between Sonargur and Parim.
-- **Alternatives:** Sensai in the Leren Compact (Lerendor's hegemony leaps); Sensai as Parim's friend under an Aenoran guarantee; Sensai at the head of the Free Crowns of the North.
+- **Alternatives:** Tolvael in the Leren Compact (Lerendor's hegemony leaps); Tolvael as Parim's friend under an Aenoran guarantee; Tolvael at the head of the Free Crowns of the North.
 
 ### Ruler and court
 
 | Id | Name | Role | Traits / skill |
 | --- | --- | --- | --- |
-| `<Sensai>_zin_ruler` | Lady Agniya of Sensai | Country leader | `zin_trait_lawspeaker` |
-| `zin_regional_sensai_kesh` | Steward Borislav Kesh | Political advisor | `zin_adv_treasurer` |
-| `zin_regional_sensai_orlan` | Ship-Master Veda Orlan | Political advisor | `zin_adv_merchant_prince` |
-| `zin_regional_sensai_vel` | Hall-Speaker Dmitar Vel | Political advisor | `zin_adv_envoy` |
-| `zin_regional_sensai_gord` | Voivode Stanek Gord | Corps commander | skill 3; `organizer`, `winter_specialist` |
+| `<Tolvael>_zin_ruler` | Lady Agniya of Tolvael | Country leader | `zin_trait_lawspeaker` |
+| `zin_regional_tolvael_kesh` | Steward Borislav Kesh | Political advisor | `zin_adv_treasurer` |
+| `zin_regional_tolvael_orlan` | Ship-Master Veda Orlan | Political advisor | `zin_adv_merchant_prince` |
+| `zin_regional_tolvael_vel` | Hall-Speaker Dmitar Vel | Political advisor | `zin_adv_envoy` |
+| `zin_regional_tolvael_gord` | Voivode Stanek Gord | Corps commander | skill 3; `organizer`, `winter_specialist` |
 
 ### Branches
 
 | Br. | Branch | Columns | Opens | Focuses |
 | --- | --- | --- | --- | ---: |
-| A | The Pride of Sensai | 0–4 | start | 8 |
+| A | The Pride of Tolvael | 0–4 | start | 8 |
 | B | Timber and Tar | 5–7 | start | 7 |
-| C | The Sensai Host | 9–11 | start | 7 |
+| C | The Tolvael Host | 9–11 | start | 7 |
 | D | Between Sonargur and Parim | 13–17 | start | 8 |
 | E | The Northern Shore | 6–10 | Shore | 6 |
 
@@ -111,40 +111,40 @@ Sensai is the most populous crown of the North Lands: seven states of forest, ta
 
 | Br. | Key | Name | Icon | Prerequisites | Excl. | x,y | Days | Effects |
 | --- | --- | --- | --- | --- | --- | --- | ---: | --- |
-| A | `the_pride_of_sensai` | **The Pride of Sensai** | `crown_iron` | — | — | 2,0 | 35 | pp 50; spirit `pride_of_sensai` |
-| A | `the_timber_halls` | The Timber Halls | `council_table` | the_pride_of_sensai | — | 1,1 | 70 | pp 25; stab 0.03 |
-| A | `the_lady_rides_out` | The Lady Rides Out | `horse_cavalry` | the_pride_of_sensai | — | 3,1 | 35 | event `the_ladys_progress` |
-| A | `houses_of_sensai` | The Great Houses | `seal_royal` | the_timber_halls | — | 0,2 | 70 | spirit `great_houses` |
+| A | `the_pride_of_tolvael` | **The Pride of Tolvael** | `crown_iron` | — | — | 2,0 | 35 | pp 50; spirit `pride_of_tolvael` |
+| A | `the_timber_halls` | The Timber Halls | `council_table` | the_pride_of_tolvael | — | 1,1 | 70 | pp 25; stab 0.03 |
+| A | `the_lady_rides_out` | The Lady Rides Out | `horse_cavalry` | the_pride_of_tolvael | — | 3,1 | 35 | event `the_ladys_progress` |
+| A | `houses_of_tolvael` | The Great Houses | `seal_royal` | the_timber_halls | — | 0,2 | 70 | spirit `great_houses` |
 | A | `law_of_the_north_shore` | Law of the North Shore | `charter_old` | the_timber_halls / the_lady_rides_out | — | 2,2 | 70 | stab 0.05 |
 | A | `temples_in_the_halls` | Temples in the Halls | `house_first_light` | the_lady_rides_out | — | 4,2 | 35 | event `temples_in_the_halls` |
-| A | `one_hall_many_hearths` | One Hall, Many Hearths | `alliance_rings` | houses_of_sensai + law_of_the_north_shore | — | 1,3 | 70 | swap pride_of_sensai→pride_of_sensai_2 |
-| A | `answers_to_no_crown` | **Sensai Answers to No Crown** | `banner_plain` | law_of_the_north_shore / temples_in_the_halls | — | 3,3 | 70 | spirit `no_crown_above`; flag `zin_sensai_no_crown` |
+| A | `one_hall_many_hearths` | One Hall, Many Hearths | `alliance_rings` | houses_of_tolvael + law_of_the_north_shore | — | 1,3 | 70 | swap pride_of_tolvael→pride_of_tolvael_2 |
+| A | `answers_to_no_crown` | **Tolvael Answers to No Crown** | `banner_plain` | law_of_the_north_shore / temples_in_the_halls | — | 3,3 | 70 | spirit `no_crown_above`; flag `zin_tolvael_no_crown` |
 | B | `timber_and_tar` | **Timber and Tar** | `timber_mill` | — | — | 6,0 | 70 | bld industrial_complex 1 @capital |
 | B | `the_great_forests` | The Great Forests | `forest_ancient` | timber_and_tar | — | 5,1 | 70 | bld industrial_complex 1 @random_owned |
-| B | `shipwrights_of_sensai` | Shipwrights of Sensai | `shipwright_yard` | timber_and_tar | — | 7,1 | 70 | bld dockyard 1 @random_coastal; res [zin_cat_galleys] 0.5 ×1 |
+| B | `shipwrights_of_tolvael` | Shipwrights of Tolvael | `shipwright_yard` | timber_and_tar | — | 7,1 | 70 | bld dockyard 1 @random_coastal; res [zin_cat_galleys] 0.5 ×1 |
 | B | `tar_and_rope` | Tar and Rope | `anchor_rope` | the_great_forests | — | 5,2 | 35 | spirit `tar_and_rope` |
-| B | `timber_for_the_world` | Timber for the World | `market_stalls` | shipwrights_of_sensai | — | 7,2 | 70 | spirit `timber_trade` |
+| B | `timber_for_the_world` | Timber for the World | `market_stalls` | shipwrights_of_tolvael | — | 7,2 | 70 | spirit `timber_trade` |
 | B | `iron_of_the_north` | Iron of the North | `forge_anvil` | tar_and_rope / timber_for_the_world | — | 6,3 | 70 | bld arms_factory 1 @random_owned |
-| B | `the_wealth_of_sensai` | The Wealth of Sensai | `coin_chest` | iron_of_the_north | — | 6,4 | 70 | bld industrial_complex 1 @random_owned ×2 |
-| C | `the_sensai_host` | The Sensai Host | `war_drums` | — | — | 10,0 | 70 | army_xp 10; res [zin_cat_arms] 0.5 ×1 |
-| C | `many_hearths_muster` | The Many Hearths Muster | `spear_levy` | the_sensai_host | — | 9,1 | 70 | mp 3000; spirit `hearth_muster` |
-| C | `shore_wardens` | Shore Wardens | `fort_wall` | the_sensai_host | — | 11,1 | 70 | bld coastal_bunker 1 @random_coastal |
+| B | `the_wealth_of_tolvael` | The Wealth of Tolvael | `coin_chest` | iron_of_the_north | — | 6,4 | 70 | bld industrial_complex 1 @random_owned ×2 |
+| C | `the_tolvael_host` | The Tolvael Host | `war_drums` | — | — | 10,0 | 70 | army_xp 10; res [zin_cat_arms] 0.5 ×1 |
+| C | `many_hearths_muster` | The Many Hearths Muster | `spear_levy` | the_tolvael_host | — | 9,1 | 70 | mp 3000; spirit `hearth_muster` |
+| C | `shore_wardens` | Shore Wardens | `fort_wall` | the_tolvael_host | — | 11,1 | 70 | bld coastal_bunker 1 @random_coastal |
 | C | `axes_and_shields` | Axes and Shields | `sword_shield` | many_hearths_muster | — | 9,2 | 70 | res [zin_cat_arms] 0.5 ×1; res [zin_cat_armour] 0.5 ×1 |
-| C | `the_fleet_of_sensai` | The Fleet of Sensai | `warship_sail` | shore_wardens | — | 11,2 | 70 | navy_xp 10; res [zin_cat_warships] 0.5 ×1 |
-| C | `the_voivodes` | The Voivodes | `war_council_map` | axes_and_shields / the_fleet_of_sensai | — | 10,3 | 70 | spirit `voivodes` |
+| C | `the_fleet_of_tolvael` | The Fleet of Tolvael | `warship_sail` | shore_wardens | — | 11,2 | 70 | navy_xp 10; res [zin_cat_warships] 0.5 ×1 |
+| C | `the_voivodes` | The Voivodes | `war_council_map` | axes_and_shields / the_fleet_of_tolvael | — | 10,3 | 70 | spirit `voivodes` |
 | C | `the_host_of_many` | The Host of Many | `levy_muster` | the_voivodes | — | 10,4 | 70 | swap hearth_muster→hearth_muster_2 (adds if missing) |
 | D | `between_two_masters` | **Between Two Masters** | `strait_chain` | — | — | 15,0 | 35 | pp 25 |
-| D | `friendship_with_sonargur` | Friendship with Sonargur | `handshake_oath` | between_two_masters | parims_old_friend, a_third_way | 13,1 | 70 | lean(20); event_for Lerendor `sensai_friendship` |
-| D | `parims_old_friend` | Parim's Old Friend | `palace_parim` | between_two_masters | friendship_with_sonargur, a_third_way | 15,1 | 70 | lean(−20); event_for the Aenor realm holding Parim `sensai_friendship_parim` |
-| D | `a_third_way` | **A Third Way** | `compass_rose` | between_two_masters | friendship_with_sonargur, parims_old_friend | 17,1 | 70 | `call zin_regional_sensai_centre_lean` (lean moves halfway toward 0); spirit `third_way` |
+| D | `friendship_with_sonargur` | Friendship with Sonargur | `handshake_oath` | between_two_masters | parims_old_friend, a_third_way | 13,1 | 70 | lean(20); event_for Lerendor `tolvael_friendship` |
+| D | `parims_old_friend` | Parim's Old Friend | `palace_parim` | between_two_masters | friendship_with_sonargur, a_third_way | 15,1 | 70 | lean(−20); event_for the Aenor realm holding Parim `tolvael_friendship_parim` |
+| D | `a_third_way` | **A Third Way** | `compass_rose` | between_two_masters | friendship_with_sonargur, parims_old_friend | 17,1 | 70 | `call zin_regional_tolvael_centre_lean` (lean moves halfway toward 0); spirit `third_way` |
 | D | `a_seat_in_the_compact` | A Seat in the Compact | `alliance_rings` | friendship_with_sonargur | — | 13,2 | 35 | Avail: lean ≥ 50; ROOT in no faction. ask_compact |
 | D | `parims_guarantee` | Parim's Guarantee | `charter_shield` | parims_old_friend | — | 15,2 | 35 | ask_parim |
-| D | `the_free_crowns_of_the_north` | **The Free Crowns of the North** | `banner_league` | a_third_way | — | 17,2 | 70 | Avail: (`zin_golden_king_dead` or after 1751.3.1); ROOT in no faction; lean between −40 and 40. `faction` "The Free Crowns of the North" (template `zin_faction_free_north`); flag `zin_sensai_free_crowns` |
-| D | `call_the_small_crowns` | Call the Small Crowns | `envoy` | the_free_crowns_of_the_north | — | 17,3 | 70 | `call zin_regional_sensai_call_crowns`; pp 25 |
+| D | `the_free_crowns_of_the_north` | **The Free Crowns of the North** | `banner_league` | a_third_way | — | 17,2 | 70 | Avail: (`zin_golden_king_dead` or after 1751.3.1); ROOT in no faction; lean between −40 and 40. `faction` "The Free Crowns of the North" (template `zin_faction_free_north`); flag `zin_tolvael_free_crowns` |
+| D | `call_the_small_crowns` | Call the Small Crowns | `envoy` | the_free_crowns_of_the_north | — | 17,3 | 70 | `call zin_regional_tolvael_call_crowns`; pp 25 |
 | E | `the_shore_burns` | **The Shore Burns** | `storm_sea` | — | — | 8,6 | 35 | Avail: Shore. ws 0.10; spirit `shore_burns` |
 | E | `fire_on_the_beaches` | Fire on the Beaches | `beacon` | the_shore_burns | — | 6,7 | 70 | Avail: `zin_zol_rising`. bld coastal_bunker 1 @random_coastal ×2; army_xp 10 |
 | E | `stand_with_sonargur` | Stand with Sonargur | `handshake_oath` | the_shore_burns | keep_faith_with_parim | 8,7 | 35 | Avail: `zin_leren_withdrawal`. lean(15); stab 0.03 |
-| E | `keep_faith_with_parim` | Keep Faith with Parim | `palace_parim` | the_shore_burns | stand_with_sonargur | 10,7 | 35 | Avail: `zin_leren_withdrawal`; an Aenor realm holds Parim. lean(−20); event_for that realm `sensai_keeps_faith` |
+| E | `keep_faith_with_parim` | Keep Faith with Parim | `palace_parim` | the_shore_burns | stand_with_sonargur | 10,7 | 35 | Avail: `zin_leren_withdrawal`; an Aenor realm holds Parim. lean(−20); event_for that realm `tolvael_keeps_faith` |
 | E | `northern_companies` | Northern Companies | `lone_sword` | fire_on_the_beaches / stand_with_sonargur | — | 7,8 | 70 | Avail: `zin_eindil_returned`. coalition; regard(10); army_xp 10 |
 | E | `the_shore_holds` | The Shore Holds | `olive_branch` | stand_with_sonargur / keep_faith_with_parim | — | 9,8 | 70 | Avail: End. stab 0.10; remove `shore_burns` |
 
@@ -152,8 +152,8 @@ Sensai is the most populous crown of the North Lands: seven states of forest, ta
 
 | Key | Name | Modifiers |
 | --- | --- | --- |
-| `pride_of_sensai` | The Pride of Sensai | `political_power_gain` 0.10, `war_support_factor` 0.03 |
-| `pride_of_sensai_2` | One Hall, Many Hearths | `political_power_gain` 0.15, `war_support_factor` 0.05, `stability_factor` 0.05 |
+| `pride_of_tolvael` | The Pride of Tolvael | `political_power_gain` 0.10, `war_support_factor` 0.03 |
+| `pride_of_tolvael_2` | One Hall, Many Hearths | `political_power_gain` 0.15, `war_support_factor` 0.05, `stability_factor` 0.05 |
 | `great_houses` | The Great Houses | `stability_factor` 0.03, `political_power_factor` 0.05 |
 | `no_crown_above` | No Crown Above Ours | `drift_defence_factor` 0.20, `stability_factor` 0.03 |
 | `tar_and_rope` | Tar and Rope | `production_speed_dockyard_factor` 0.10 |
@@ -164,32 +164,32 @@ Sensai is the most populous crown of the North Lands: seven states of forest, ta
 | `third_way` | A Third Way | `political_power_gain` 0.10, `drift_defence_factor` 0.10 |
 | `shore_burns` | The Shore Burns | `army_core_defence_factor` 0.10, `coastal_bunker_effectiveness_factor` 0.15 |
 
-### Events (`zin_regional_sensai`)
+### Events (`zin_regional_tolvael`)
 
 | Key (id) | Title | Picture | To | Options |
 | --- | --- | --- | --- | --- |
-| `the_ladys_progress` (1) | The Lady Rides Out | `generic_court` | Sensai | **Feast the great houses** (pp −25; stab 0.03) / **Hear the hearths** (pp 25) |
-| `temples_in_the_halls` (2) | Temples in the Halls | `houses` | Sensai | **Endow the almoners** (footholds(1); stab 0.02) / **The halls have their own priests** (nothing; AI hist 60) |
-| `sensai_friendship` (3) | Sensai Offers Friendship | `leren_envoys` | Lerendor | **Welcome it** (opinion +15 both ways; Sensai lean(5); AI 80) / **Sensai should ask for the Compact** (nothing) |
-| `sensai_friendship_parim` (4) | Sensai Remembers Parim | `generic_court` | Aenor realm | **Send gifts** (pp −25; opinion +15 both ways; AI 60) / **The North is far** |
-| `free_crowns_invite` (5) | The Free Crowns of the North | `leren_envoys` | each crown called | **Join the Free Crowns** (join Sensai's faction; AI 30 + 50 if lean between −20 and 20) / **We stand alone** |
-| `sensai_keeps_faith` (6) | Sensai Keeps Faith | `generic_war` | Aenor realm | **Accept the companies** (guarantee Sensai; military access both ways; opinion +25; AI 70) / **Parim needs no northern swords** |
+| `the_ladys_progress` (1) | The Lady Rides Out | `generic_court` | Tolvael | **Feast the great houses** (pp −25; stab 0.03) / **Hear the hearths** (pp 25) |
+| `temples_in_the_halls` (2) | Temples in the Halls | `houses` | Tolvael | **Endow the almoners** (footholds(1); stab 0.02) / **The halls have their own priests** (nothing; AI hist 60) |
+| `tolvael_friendship` (3) | Tolvael Offers Friendship | `leren_envoys` | Lerendor | **Welcome it** (opinion +15 both ways; Tolvael lean(5); AI 80) / **Tolvael should ask for the Compact** (nothing) |
+| `tolvael_friendship_parim` (4) | Tolvael Remembers Parim | `generic_court` | Aenor realm | **Send gifts** (pp −25; opinion +15 both ways; AI 60) / **The North is far** |
+| `free_crowns_invite` (5) | The Free Crowns of the North | `leren_envoys` | each crown called | **Join the Free Crowns** (join Tolvael's faction; AI 30 + 50 if lean between −20 and 20) / **We stand alone** |
+| `tolvael_keeps_faith` (6) | Tolvael Keeps Faith | `generic_war` | Aenor realm | **Accept the companies** (guarantee Tolvael; military access both ways; opinion +25; AI 70) / **Parim needs no northern swords** |
 
 ### Tree scripts
 
 | Name | Kind | Does |
 | --- | --- | --- |
-| `zin_regional_sensai_centre_lean` | scripted effect | Reads ROOT's lean and calls `zin_leren_add_lean` with minus half of it |
-| `zin_regional_sensai_call_crowns` | scripted effect | Fires `free_crowns_invite` to every North Lands country (`zin_region_north_lands` flag) except Lerendor that is in no faction and has lean between −40 and 40 |
+| `zin_regional_tolvael_centre_lean` | scripted effect | Reads ROOT's lean and calls `zin_leren_add_lean` with minus half of it |
+| `zin_regional_tolvael_call_crowns` | scripted effect | Fires `free_crowns_invite` to every North Lands country (`zin_region_north_lands` flag) except Lerendor that is in no faction and has lean between −40 and 40 |
 
 ### AI
 
 | Period | Historical route |
 | --- | --- |
-| 1748–1749 | the_pride_of_sensai, timber_and_tar, the_timber_halls, the_great_forests, shipwrights_of_sensai, between_two_masters |
-| 1750–1751 | the_lady_rides_out, law_of_the_north_shore, tar_and_rope, timber_for_the_world, the_sensai_host |
-| 1752–1754 | a_third_way (hist), houses_of_sensai, answers_to_no_crown, iron_of_the_north, many_hearths_muster, shore_wardens, one_hall_many_hearths |
-| 1755–1756 | the_shore_burns, fire_on_the_beaches, stand_with_sonargur (hist), the_wealth_of_sensai |
+| 1748–1749 | the_pride_of_tolvael, timber_and_tar, the_timber_halls, the_great_forests, shipwrights_of_tolvael, between_two_masters |
+| 1750–1751 | the_lady_rides_out, law_of_the_north_shore, tar_and_rope, timber_for_the_world, the_tolvael_host |
+| 1752–1754 | a_third_way (hist), houses_of_tolvael, answers_to_no_crown, iron_of_the_north, many_hearths_muster, shore_wardens, one_hall_many_hearths |
+| 1755–1756 | the_shore_burns, fire_on_the_beaches, stand_with_sonargur (hist), the_wealth_of_tolvael |
 | 1757– | northern_companies; the_shore_holds at the end |
 
 Never hist: the_free_crowns_of_the_north, keep_faith_with_parim. Under `FREE`: friendship_with_sonargur if lean ≥ 10 after Lerendor's event; parims_old_friend if lean ≤ −10; the Free Crowns when Lerendor is on the supremacy route.
@@ -411,7 +411,7 @@ R'en holds the southern gateway between the Leren sea and the Aenoran sea: three
 
 ### Tree scripts
 
-`zin_regional_r_en_centre_lean`: as Sensai's, moves R'en's lean halfway toward 0.
+`zin_regional_r_en_centre_lean`: as Tolvael's, moves R'en's lean halfway toward 0.
 
 ### AI
 
@@ -647,7 +647,7 @@ Every tree is compiled by `tools/content/modules/focus_compiler.mjs` ([compiler 
 
 ### Files per tree
 
-For each tree id `regional_<name>` (`sensai`, `mina`, `r_en`, `molot`, `eekedor`):
+For each tree id `regional_<name>` (`tolvael`, `mina`, `r_en`, `molot`, `eekedor`):
 
 | Path | What | Written by |
 | --- | --- | --- |
@@ -666,7 +666,7 @@ Rulers keep their generated ids `<TAG>_zin_ruler` (tags resolved by name at buil
 
 | Tree | Focuses | Spirits | Events | Tree scripts |
 | --- | ---: | ---: | --- | --- |
-| Sensai | 36 | 11 | `zin_regional_sensai.1`–`.6` | `zin_regional_sensai_centre_lean`, `zin_regional_sensai_call_crowns` |
+| Tolvael | 36 | 11 | `zin_regional_tolvael.1`–`.6` | `zin_regional_tolvael_centre_lean`, `zin_regional_tolvael_call_crowns` |
 | Mina | 32 | 10 | `zin_regional_mina.1`–`.3` | — |
 | R'en | 36 | 12 | `zin_regional_r_en.1`–`.4` | `zin_regional_r_en_centre_lean` |
 | Molot | 33 | 10 | `zin_regional_molot.1`–`.3` | — |
@@ -695,9 +695,9 @@ All proposed; all are already in the [contract additions register](../../04_mech
 
 | Name | Kind | Meaning |
 | --- | --- | --- |
-| `zin_faction_free_north` | faction template (diplomacy spec) | "The Free Crowns of the North": a defensive league Sensai may found; rules `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`, `faction_peace_rule_no_puppeting`; no manifest. Created with `create_faction_from_template` |
+| `zin_faction_free_north` | faction template (diplomacy spec) | "The Free Crowns of the North": a defensive league Tolvael may found; rules `war_declaration_rule_faction_leader_only`, `call_to_war_rule_faction_leader_only`, `change_leader_rule_never`, `faction_peace_rule_no_puppeting`; no manifest. Created with `create_faction_from_template` |
 | `zin_faction_rule_join_free_north` | faction joining rule (diplomacy spec) | Capital in the North Lands; not Lerendor; not in Lerendor's faction; not Shadow; `zin_leren_lean` between −40 and 40 |
-| `zin_sensai_no_crown`, `zin_sensai_free_crowns` | country flags | Sensai's choices; Lerendor's AI may read `zin_sensai_free_crowns` as a rival league |
+| `zin_tolvael_no_crown`, `zin_tolvael_free_crowns` | country flags | Tolvael's choices; Lerendor's AI may read `zin_tolvael_free_crowns` as a rival league |
 | `zin_r_en_neutral` | country flag | R'en declared its waters neutral |
 | `zin_eekedor_court_open` | country flag | Eekedor's arbitration court is open (readable by the Lerendor mechanic) |
 | `zin_regional_<tree>` | event namespaces | One per tree (five) |
@@ -715,17 +715,17 @@ The Free Crowns of the North is not the Leren Compact, so its members do not cou
 
 ## Acceptance
 
-1. The compiler builds the five trees with these counts: Sensai 36, Mina 32, R'en 36, Molot 33, Eekedor 33. Positions are unique, every focus sits below its prerequisites, exclusions are symmetric, days are multiples of 7, no tree has a `raw` block, and the HOI4 Agent Tools focus inspector and script validator pass.
+1. The compiler builds the five trees with these counts: Tolvael 36, Mina 32, R'en 36, Molot 33, Eekedor 33. Positions are unique, every focus sits below its prerequisites, exclusions are symmetric, days are multiples of 7, no tree has a `raw` block, and the HOI4 Agent Tools focus inspector and script validator pass.
 2. On 1 Thaw 4A 1748 no available focus in these trees declares war, makes a claim or a war goal; *The Free Crowns of the North* is unavailable before `zin_golden_king_dead` or 1 Thaw 4A 1751 (scenario check).
 3. Every lean change in these trees goes through `zin_leren_add_lean` (text scan of the compiled effects for direct `zin_leren_lean` writes finds none).
 4. Every modifier in the spirit tables exists in the 1.19.3 modifier documentation (with the templated `production_speed_dockyard_factor`); every icon and picture is a catalog key; the secret scan finds no "Afrit" and no "Eindil" in these trees' text.
-5. Historical observer run, 4A 1748 to 1760 (one in-game year per phase from phase 3; the dates assume the 4A 1748 calendar): Mina is in Lerendor's faction by 1 Deepwinter 4A 1754; Sensai and R'en are not; Molot takes *Play One Against the Other*; after `zin_zol_rising` every coastal tree's shore root becomes available within 1 day; after `zin_eindil_returned` at least two of the five crowns join the Heir's coalition.
+5. Historical observer run, 4A 1748 to 1760 (one in-game year per phase from phase 3; the dates assume the 4A 1748 calendar): Mina is in Lerendor's faction by 1 Deepwinter 4A 1754; Tolvael and R'en are not; Molot takes *Play One Against the Other*; after `zin_zol_rising` every coastal tree's shore root becomes available within 1 day; after `zin_eindil_returned` at least two of the five crowns join the Heir's coalition.
 6. Scenario test: Eekedor's *An Impartial Bench* at lean 60 leaves lean 30; Lerendor's `zin_leren.13` ruling chance falls from 65 % to about 57 %.
 7. None of the five countries loads the interim Long Peace tree.
 
 ## Open questions
 
-1. **The Free Crowns of the North.** OPEN_QUESTIONS, "regions: middle and north" 8. Proceeds on the proposal: Sensai may found the optional third league; the historical AI never does.
+1. **The Free Crowns of the North.** OPEN_QUESTIONS, "regions: middle and north" 8. Proceeds on the proposal: Tolvael may found the optional third league; the historical AI never does.
 2. **R'en's history.** OPEN_QUESTIONS, "regions: middle and north" 9. Proceeds on the proposal: R'en's historical pick is Parim's friend; the other small crowns choose by lean.
 3. **Molot's coast.** OPEN_QUESTIONS, "regions: middle and north" 10. Proceeds on the proposal: Molot faces the northern sea; if the final map gives it no coast, its `random_coastal` buildings find no state and do nothing, and the rest of its shore branch still works.
 

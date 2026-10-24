@@ -112,7 +112,7 @@ node content/modules/ui_reskin.mjs plan    # derive data/ui/reskin.json (one row
 node content/modules/ui_reskin.mjs validate   # builder check 2 on the committed tables (exit code 1 on a problem)
 node content/modules/ui_reskin.mjs report  # counts by disposition, family and production step
 node content/art/ui-reskin-jobs.mjs        # write $ZIN_ART/jobs/ui-reskin-jobs.json for imagegen.mjs (does not call the generator)
-GPTIMAGE_MODEL=gpt-6-astra node content/imagegen.mjs "$ZIN_ART/jobs/ui-reskin-jobs.json"   # when the art tranche starts
+node content/imagegen.mjs "$ZIN_ART/jobs/ui-reskin-jobs.json"   # when the art tranche starts
 ```
 
 - **Inventory** (`ui_inventory.mjs`): parses `spriteType`, `corneredTileSpriteType`, `frameAnimatedSpriteType`, `textSpriteType`, `progressbartype` (both textures), `maskedShieldType`, `arrowType` and the chart types in every `interface/**/*.gfx`, resolves each texture case-insensitively (`gfx//x//y.dds` and a `.tga` name that ships as `.dds` both resolve), reads the DDS, TGA, PNG, CUR and ANI headers, decodes the pixels once for the luminance class (`dark` below a mean luma of 96, `light` from 160, alpha weighted) and the alpha kind (`opaque`, `keyed`, `uniform:<a>`, `shaped`), and records which `.gui` file and top-level window names each sprite. Textures a sprite names besides its own (a progress bar's second texture, a shine overlay) become `linked` entries; image files in the engine folders that no sprite names become `file` entries (cursors, the minimap, move arrows, unreferenced art). The output is a pure function of the installed files and holds metadata only.
@@ -148,7 +148,7 @@ owner's machine.
 | `HOI4_GAME` | `C:/Program Files (x86)/Steam/steamapps/common/Hearts of Iron IV` | `documentation/modifiers_documentation.md`, which validates every modifier the builder writes |
 | `ZIN_LORE_VAULT` | `C:/Users/klimp/Downloads/ZIN_Lore_Vault` | the owner's lore vault export. If it is absent, the copy already in `docs/lore/vault/` is used. |
 | `GPTIMAGE_LIB` | `C:/Users/klimp/tools/gptimage/src` | the gptimage library (`auth.js`, `codex.js`, `images.js`) |
-| `GPTIMAGE_MODEL` | `gpt-6-astra` | the image model `imagegen.mjs` asks for |
+| `GPTIMAGE_MODEL` | `gpt-6-luna` | the image model `imagegen.mjs` asks for; the owner allows only gpt-6-luna, and `gpt-6-astra` is refused |
 | `ZIN_STAGED` | `<OS temp>/zin-content-staged` | the staged tree that `build.test.mjs` checks |
 | `ZIN_WORKFLOW_CONFIG` | `$HOI4_AGENT_TOOLS/.tmp/zin-workflow/config.json` | the hoi4-agent-tools workspace configuration `apply.mts` uses |
 | `ZIN_WORKFLOW_STATE` | `~/.zin-content-workflow` | private transaction state, used only when `ZIN_WORKFLOW_CONFIG` does not exist and `apply.mts` derives a configuration for this repository |
@@ -204,7 +204,7 @@ node --import tsx content/apply.mts D:/staging/zin apply      # writes the mod; 
 # Image generation: write jobs, generate, slice flags (the jobs default to $ZIN_ART/jobs)
 node tools/content/art/asset-jobs.mjs
 node tools/content/art/flag-jobs.mjs
-GPTIMAGE_MODEL=gpt-6-astra node tools/content/imagegen.mjs "$ZIN_ART/jobs/assets-jobs.json"
+node tools/content/imagegen.mjs "$ZIN_ART/jobs/assets-jobs.json"
 node tools/content/art/slice-flags.mjs "$ZIN_ART/jobs/flags-cells.json" "$ZIN_ART/raw/flags" "$ZIN_ART/flags"
 
 # Review staged sprites

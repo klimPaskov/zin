@@ -404,7 +404,7 @@ Where a culture card of `cultures_new.json` asks for a motif the register forbid
 
 ### Free Crowns of the North (`free_crowns_north`)
 
-*People:* men. *Family:* Ainic men. *Language:* leren. *Faith:* strait_litany. *Line:* straight. *Realms:* 6 (Molot, Sensai, Tolhon, Heodwa Lands, Mina, Dolpar).
+*People:* men. *Family:* Ainic men. *Language:* leren. *Faith:* strait_litany. *Line:* straight. *Realms:* 6 (Molot, Tolvael, Tolhon, Heodwa Lands, Mina, Dolpar).
 
 *Palette:* earth brown `#7a6a54` (C); fir green `#4e5e4a` (C); hearth red `#9a3a2c` (C); hill grey `#8a8a80` (C); fleece white `#e4dccb` (M); straw gold `#c8b070` (M); peat black `#2e2a26` (C).
 
@@ -2604,7 +2604,7 @@ Every design was written from the realm's history entry (founding, dynasties, ev
 | REN | R'en | leren_sea_kings | base, Leren silver and strait blue; a watch-house on a low cape in deep strait [label] | R'en bears the watch-house its first prince built on the strait cape and refused to pay for: a gateway principality that has lived between two masters ever since and leans to Parim. |
 | KER | Keredor-Hellekton | leren_sea_kings | per pale, strait blue and kelp green; two steering oars joined by one ring in clasp gold [label, crown] | Keredor-Hellekton impales its two coast crowns and joins their steering oars in one ring, as the Arbitration Court joined Vigda of Keredor and Helmund of Hellekton: a double crown whose court still crowns every heir twice. |
 | MOO | Molot | free_crowns_north | base, hearth red and peat black; a crane standing in fleece white [label] | Molot bears the crane that stands watch above the marsh: the margraves whose fortress line behind the marsh took the raiders of the Raiding Years, and who still balance Sonargur against Parim so that neither will ever own them. |
-| SNS | Sensai | free_crowns_north | per fess, fleece white and fir green; a bear walking in earth brown [label, crown] | Sensai's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told. |
+| SNS | Tolvael | free_crowns_north | per fess, fleece white and fir green; a bear walking in earth brown [label, crown] | Tolvael's bear wears its crown about its neck: the first and proudest of the North's free crowns, its long vale rich in timber, tar and iron, a partner of the High Crown as long as it is asked rather than told. |
 | TOL | Tolhon | free_crowns_north | per bend sinister, fir green and straw gold; an otter in peat black [label] | Tolhon bears the otter of its fisheries and its herring ban: an island principality of the Onp coast that lives by its toll-bridge at Sirtum and by its distance from everyone else. |
 | HEO | Heodwa Lands | free_crowns_north | plain, fleece white; rowan tree in berry (three) in fir green; a war-hammer held upright in hill grey [label] | The Heodwa Lands bear three rowans for the hill crowns of Heodwa, Nuatax and Agniy with the dwarves' hammer of the Hill Pact beneath them: a hill council that every crown of the North knows cannot be fought without fighting Hrakbrund. |
 | HRA | Hrakbrund | north_delvers | pile reversed, high slate and snow white; a squared black gate in a snowline rock face in gate black | Hrakbrund bears its black High Gate on the white peak above Ilmahrim: the dwarves of the High Mountains receive men only at the gate, sell them iron, gold and bombards there, and keep the Hill Pact with the hills below. |

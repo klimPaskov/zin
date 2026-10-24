@@ -45,7 +45,7 @@ Your Chaos Redux brief for event 68, "ZIN", is the canon. The 18-document Chaos 
 | Rush, the Rush Kingdom | Aenor, the Middle Kingdom | Rush Land is now the Middle Lands; Rush Islands is now Aenor Isle. |
 | Kusven, Kusven's Mistake, Kusmeel | Zol, Zol's Mistake, Kusmeel | Zol is the God of Death of event 10. |
 | North Earth (sheet headed "North Earth") | West Lands | Gunwaith, Girdon, Kradlon, Buldor |
-| East Earth (sheet headed "West Earth") | North Lands | Lerenwaith, Lerendor |
+| East Earth (sheet headed "West Earth") | North Lands | Lerendor's North, Lerendor |
 | South Earth | East Lands | Its great desert is the South Lands. |
 | Sunhot | Lands of the Sun | The Sunhot elves keep their name unless you rename them. |
 | Tornado Islands, Triton's Islands | Triton's Islands | Folder and drawing disagree; the map uses Triton's Islands. |
@@ -61,7 +61,7 @@ Aoaz is a continent-scale world of thirteen drawn regions (Aenor Isle counts as 
 | Cold Lands | Cold Lands | North-west, running off the west and north edges | Largest landmass. Coldor, Isengard, Horidor, the Yeti Lands, the Windwaith arm. |
 | West Lands | West-Earth (headed "North Earth") | South of Cold Lands, joined to it by a broad neck | Gunwaith, Girdon, Kradlon, Corogon, Varnondor. Snow only near the Cold Lands neck. |
 | Triton's Islands | Tritons Islands | West of West Lands | Ring and arcs of islands around the Pupor Ocean: Adel, Pollos, Raerby, Nondondor. |
-| North Lands | East-Earth (headed "West Earth") | Just north of the Middle Lands across a narrow strait | Lerenwaith and Lerendor (one crown), Eekedor, Molot, R'en. |
+| North Lands | East-Earth (headed "West Earth") | Just north of the Middle Lands across a narrow strait | Lerendor's North and Lerendor (one crown), Eekedor, Molot, R'en. |
 | Dark Lands | Dark Lands | Between Lerendor and the Middle Lands, across narrow straits | Bordon, Dreson, Dulundur, Troll Forest, Dondor, Goldoroth, the Sea of Darkness. |
 | Middle Lands | Rush Land | Centre of the world | The Middle Kingdom of Aenor (formerly Rush): Selen, Kilinti, Kingson, Hiloron, the Great Lake. |
 | Aenor Isle | Rush Islands | Off the Middle Lands' west coast; part of the Middle Lands | Asgard and its island. |
@@ -84,7 +84,7 @@ Aoaz is divided among about 280 regional polities. A few great powers stand abov
 | Aenor, the Middle Kingdom (formerly Rush) | Parim, Middle Lands | Rules its central homeland and governs the other Middle Lands regions as satellites; the central power of Aoaz. Cursed Lands and Bloody Forest resist its control. | 26 satellites, among them Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun, Asgard (Aenor Isle) and Herez. Middle Kingdom Concord. | Lerendor, Zol |
 | Zol | Furviatlon, Zol's Mistake | Rules Šodolôrō, the black northern wasteland and the Kusmeel islands. The land is barely peopled and roamed by the dead. | None yet | Aenor |
 | Volgan | Nafeher, Ember Lands | The main dark lord. Dominates the southern Ember Lands. | Demon, Dolon, Nezer. Southern Dominion. | Mirolon |
-| Lerendor | Sonargur, North Lands | United crown of Lerendor and Lerenwaith; counterweight to Aenor. | Eekedor, Andos Enda. Leren Compact. | Aenor |
+| Lerendor | Sonargur, North Lands | United crown of Lerendor and Lerendor's North; counterweight to Aenor. | Eekedor, Andos Enda. Leren Compact. | Aenor |
 | Coldor | Fandanar, Cold Lands | Northern great power of the frozen interior and western ports. | Horidor. Northern Accord. | Isengard |
 | Noris | Furvior, East Lands | Eastern great power; Noris and its desert. | Gondolin. Noris Treaty. | Stabilo |
 | Stabilo | Postondoroth, East Lands | Central East Lands power competing for the southern trade routes. | Drak. Stabilo Pact. | Noris |
@@ -93,7 +93,7 @@ Aoaz is divided among about 280 regional polities. A few great powers stand abov
 
 Seats are the capitals the map mod uses. No capital carries an antagonist's or a region's name; names not drawn on the sheets were generated in each region's naming style and can be replaced.
 
-Smaller named polities the owner asked to keep as their own countries: Bordon, Dreson, Dulundur, Troll Forest, Nolorim and Herez. Related names count as one country: Kilinti with the Kilinti Forests, and Lerendor with Lerenwaith.
+Smaller named polities the owner asked to keep as their own countries: Bordon, Dreson, Dulundur, Troll Forest, Nolorim and Herez. Related names count as one country: Kilinti with the Kilinti Forests, and Lerendor with Lerendor's North.
 
 ### Figures from the canon
 

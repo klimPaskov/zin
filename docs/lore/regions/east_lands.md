@@ -19,7 +19,7 @@ Across the long Rift Sea from the elves lies the richest and most divided land o
 | Terrain | Desert 30%, plains 22%, mountain 20%, hills 13%, forest 10%, marsh 2%, towns 2%, jungle 1% | [GM] |
 | Fertile ground | The Hot Lake shore, the Mora and Ernois Coast (`plain_mora`, "the best farmland of the East Lands"), the Delbiz Grasslands (`plain_delbiz`), the northern coast plain (`plain_gondolin_coast`), the caravan oases | [GM] |
 
-**Ranges.** The Melty Mountains (`range_melty`, drawn Melty and Militiv Mountains), a very long glacier-capped range on the east edge that runs off the map in the north-east, crossed only by the glacier Melty Pass (`pass_melty`) to the Burning Rim's edge road. The Woqood Alps (`range_woqood_alps`, P name), ice-capped along the northern snow coast. The Ernois Mountains (`range_ernois`, P), a coral-red highland east of the Hot Lake. The Noris Rise (`range_noris_rise`, P), a brown ridge across the desert road with the Noris Gap (`pass_noris_gap`) on the Salt Road. The Reeto Heights (`range_reeto`, P), black-rock mountains on the rift coast above the southern lobe, with the smoking Reeto Fire (`volcano_reeto`). The Hardtmuth Mountains (`range_hardtmuth`, drawn Hardtmuth and Mountains of Fire), a volcanic chain on the west coast of the southern lobe with the Hardtmuth Fire, the Fire Mountain and the Hardtmuth Pass on the Sand Road (`volcano_hardtmuth`, `volcano_fire_mountain`, `pass_hardtmuth`). The Drak Mountains (`range_drak`), a brown volcanic ridge with the Drak Furnace (`volcano_drak`). And the **Hellfire Range** (`range_hellfire`, P name), "the greatest mountain mass of Aoaz": the massif of Mount Ergo (`volcano_ergo`, the highest cone of the east), Mount Argon (`volcano_argon`), the vent field of the Red Lands (`volcano_avalon`, drawn "Avalon Fires"), the Plutondo Vents (`volcano_plutondo`) and the Pego Mountains and Pego Cones (`range_pego`, `volcano_pego`) on the south edge ([GM]).
+**Ranges.** The Melty Mountains (`range_melty`, drawn Melty and Militiv Mountains), a very long glacier-capped range on the east edge that runs off the map in the north-east, crossed only by the glacier Melty Pass (`pass_melty`) to the Burning Rim's edge road. The Woqood Spires (`range_woqood_alps`, P name), ice-capped along the northern snow coast. The Ernois Mountains (`range_ernois`, P), a coral-red highland east of the Hot Lake. The Noris Rise (`range_noris_rise`, P), a brown ridge across the desert road with the Noris Gap (`pass_noris_gap`) on the Salt Road. The Reeto Heights (`range_reeto`, P), black-rock mountains on the rift coast above the southern lobe, with the smoking Reeto Fire (`volcano_reeto`). The Hardtmuth Mountains (`range_hardtmuth`, drawn Hardtmuth and Mountains of Fire), a volcanic chain on the west coast of the southern lobe with the Hardtmuth Fire, the Fire Mountain and the Hardtmuth Pass on the Sand Road (`volcano_hardtmuth`, `volcano_fire_mountain`, `pass_hardtmuth`). The Drak Mountains (`range_drak`), a brown volcanic ridge with the Drak Furnace (`volcano_drak`). And the **Smoking Teeth** (`range_hellfire`, P name), "the greatest mountain mass of Aoaz": the massif of Mount Ergo (`volcano_ergo`, the highest cone of the east), Mount Argul (`volcano_argon`), the vent field of the Red Lands (`volcano_avalon`, drawn "Avalon Fires"), the Plutondo Vents (`volcano_plutondo`) and the Pego Mountains and Pego Cones (`range_pego`, `volcano_pego`) on the south edge ([GM]).
 
 **Water (one name each).**
 
@@ -28,7 +28,7 @@ Across the long Rift Sea from the elves lies the richest and most divided land o
 | The northern ocean | `sea_zol_ocean` | **Kusmeel** (E) | Its black islands are Zol's Mistake ([ZM]) |
 | The rift | `sea_magical_ocean`, `zone_rift` | **the Rift Sea** (P) | The East sheet's "Khadon Ocean" and the Magical sheet's "The Magical Ocean" are one water ([magical_lands.md](magical_lands.md)) |
 | The rift's southern reach | `sea_mushroom_seas` | **the Reeto Sea** (P; drawn "Reeto Seas") | Former labels Mushroom Seas, Reeto Seas |
-| The gulf under the Hellfire Range | `gulf_hellfire` | **the Hellfire Gulf** (P) | Lava-warmed water; the drawn "Flaming Ocean" and "Ocean of the Hellfire" are this one gulf |
+| The gulf under the Smoking Teeth | `gulf_hellfire` | **the Gulf of the Teeth** (P) | Lava-warmed water; the drawn "Flaming Ocean" and "Ocean of the Hellfire" are this one gulf |
 | The south-west ocean | `sea_sun_ocean` | **Ocean of the Sun** (drawn) | The South Lands' coast |
 | The great lake | `lake_hot` | **the Hot Lake** (drawn) | About 330 by 315 pixels; hot springs, steaming reed shallows (`marsh_hot_lake_reeds`), salt pans |
 | Rivers | `river_gondolin`, `river_fosoco`, `river_mora`, `river_melt`, `river_noris_wadi` | **Shaar-Sheek** "Ice River" (Noric; former model name Gondolin River), **Fosoco River**, **River Mora** (a seasonal wadi), **the Meltwater**, **Noris Wadi** | All P |
@@ -36,7 +36,7 @@ Across the long Rift Sea from the elves lies the richest and most divided land o
 
 **Forests and other land.** The Flaming Forests (`forest_flaming`), a dark red-leaved wood east of the Noris Desert; the Obmi Jungle (`forest_obmi`); the Mora Woods; the Alerhia Woods; the Oreton Woods; the wood of the north coast (`forest_gondolin`, renamed **the Naamis Wood**). The white snow country of Woqood (`ice_woqood`). The red sands of the Alodale Desert (`desert_alodale`) and the Plutondo Dunes (`desert_plutondo`).
 
-**Hazards.** Dust storms and dry years on the roads; the boiling springs and steam-shallows of the Hot Lake; lava flows and ash from the Hellfire Range (four active cones); devils on Mount Ergo (section 9); ogre raiders in the Reeto Heights (P); blizzards on the Woqood coast; and the still black sea of the north, from which, in 4A 1744, fishermen report black ships ([FC] IV, P date).
+**Hazards.** Dust storms and dry years on the roads; the boiling springs and steam-shallows of the Hot Lake; lava flows and ash from the Smoking Teeth (four active cones); devils on Mount Ergo (section 9); ogre raiders in the Reeto Heights (P); blizzards on the Woqood coast; and the still black sea of the north, from which, in 4A 1744, fishermen report black ships ([FC] IV, P date).
 
 **The edge and beyond.** The map ends in the impassable lava cliffs and dune walls of the Burning Rim (`edge_east`) and, in the south, the Line of Sun (`edge_south`) ([GM]). **Owner decision ([OD]):** the lands south of the South Lands are the home of devils, demons and beings of fire and endless suffering, and they appear only as reference names, off the map. The East sheet's drawn labels that read as those lands become such reference names (section 13): the Unforgivable Lands, the Lands of Burning Men, the Devil's Place, the Altering Lands of Death, the Upland of Lava and the Burning Lands of Ocellios. Eastern people speak of them as belief and dread, never from a traveller's report.
 
@@ -53,11 +53,11 @@ Across the long Rift Sea from the elves lies the richest and most divided land o
 | Men | Red Lands Tribunes (`red_lands_tribunes`) | Alerhic, clay dialect | Rhachia (former label Avalon) | P |
 | Men | Island fishers of Orato (P) | Noric | Orato and Fladev | P |
 | Ogres | Ogre clans of the Reeto caves (P) | none recorded | The Reeto Heights | E that ogres exist ([PA]); [BC] card 22 (caves and mountains, few, meat-eaters); P placement |
-| Devils | none (individuals) | none recorded | Mount Ergo and Mount Argon | P placement after [BC] card 46 ("Ergos"); owner decisions on devils ([OD], [OC] §2.6) |
+| Devils | none (individuals) | none recorded | Mount Ergo and Mount Argul | P placement after [BC] card 46 ("Ergos"); owner decisions on devils ([OD], [OC] §2.6) |
 
 **Languages.** The Eastern family's three tongues ([LANG] §1): Noric (long vowels, q and kh, hyphenated constructs), Stabilic (clusters pl pr tr st, endings in -o -a -io) and Alerhic (rh and th, kingdoms in -ia). The family shares roots, which is why Noric *biir* "well", Stabilic *bro* and Alerhic *biria* look alike: one people before the roads (P). Aenoran is the trade speech of the caravan towns.
 
-**Population.** The demography model gives the East Lands 21.5 million in 35 countries and 337 states, with Postondoroth at 240,000 and Furvior at 210,000 ([DEM] East Lands). Without Miaed (South Lands), 20.7 million. Revised (P): **about 19.8 million**, because the Woqood snow coast cannot carry ten lake-city states (the model gives Cream alone 599,100) and the Hellfire uplands are emptied by ash and devils. People live where water is: the Hot Lake shore and the Mora coast (up to 110 per square kilometre), the river valleys of the rift, the oasis strings of the Salt Road; the open desert holds under one per square kilometre ([DEM] East Lands).
+**Population.** The demography model gives the East Lands 21.5 million in 35 countries and 337 states, with Postondoroth at 240,000 and Furvior at 210,000 ([DEM] East Lands). Without Miaed (South Lands), 20.7 million. Revised (P): **about 19.8 million**, because the Woqood snow coast cannot carry ten lake-city states (the model gives Cream alone 599,100) and the Smoking Teeth uplands are emptied by ash and devils. People live where water is: the Hot Lake shore and the Mora coast (up to 110 per square kilometre), the river valleys of the rift, the oasis strings of the Salt Road; the open desert holds under one per square kilometre ([DEM] East Lands).
 
 ## 4. Livelihoods and resources
 
@@ -71,7 +71,7 @@ Across the long Rift Sea from the elves lies the richest and most divided land o
 | Fish, cedar, lanterns | The Lake Road cities | [WB] §7 |
 | Furs, seal-fat, ivory | The Woqood coast | P |
 | Black powder | Drak's forges at the Drak Furnace; Stabilo's companies | Owner decision that gunpowder weapons are common in some realms ([OD]); P that the caravan princes are such realms: bombards on their walls, hand-tubes in their hired companies; the Noris riders despise it |
-| Game resources | Chromium in the Hardtmuth; aluminium in the Hellfire and Pego; bitumen under the Noris Desert; rubber in the Obmi Jungle | [GMS] §2 resource table |
+| Game resources | Chromium in the Hardtmuth; aluminium in the Smoking Teeth and Pego; bitumen under the Noris Desert; rubber in the Obmi Jungle | [GMS] §2 resource table |
 | Tolls | The five caravan roads | [EK] §1 |
 
 ## 5. Institutions and political forms
@@ -110,7 +110,7 @@ The East is deliberately not one kind of state (P):
 | The Lake Litany | Lake Road cities | Merchants and fishers pray together at the water | |
 | The Red Hearth | Rhachia | The red clay is the bone of the first mothers | |
 | The Faith of the Deliverer | Every city's temple | The Deliverer saved Aoaz and lends to the needy (E public worship) | **Hidden:** the Deliverer is Afrit and the temples are his eastern branch ([AH]). |
-| The fire-tithe (P) | Pornivior and the Hellfire villages | Devils keep away from those who pay the mountain | Belief and custom; devils are corrupted Lesser Spirits who once served an Old God and escaped to Aoaz, and many serve Volgan ([OC] §2.6); a tithe does not bind them. |
+| The fire-tithe (P) | Pornivior and the Smoking Teeth villages | Devils keep away from those who pay the mountain | Belief and custom; devils are corrupted Lesser Spirits who once served an Old God and escaped to Aoaz, and many serve Volgan ([OC] §2.6); a tithe does not bind them. |
 
 **Beliefs about the burning south (belief only).** The southern peoples say the burning lands beyond the desert are where devils and demons dwell and the damned suffer without end; caravan-masters swear no road goes there. These are reference names and dread, not travellers' knowledge ([OD]).
 
@@ -123,7 +123,7 @@ The East is deliberately not one kind of state (P):
 | Before 1A | The river valleys of the rift coast are as old as any kingdom of men; the Eastern family of tongues splits into desert, trade and river speech. | P ([WB] River-Kings) |
 | Before 1A | The rift-coast elves trade with eastern men across the rift. | P |
 | 1A, first half | Aenoran traders make contact with the peoples of the East, the Easterlings. | E ([A1] §2) |
-| 1A, before Volgan's war | Devils, corrupted Lesser Spirits who once served an Old God, have escaped to Aoaz; some lair on the Hellfire cones. | E devils' nature ([OC] §2.6); P place and date |
+| 1A, before Volgan's war | Devils, corrupted Lesser Spirits who once served an Old God, have escaped to Aoaz; some lair on the Smoking Teeth cones. | E devils' nature ([OC] §2.6); P place and date |
 | 1A about 1150 to 1500 | Volgan allies with rulers of the eastern and southern lands; eastern client rulers give him ships and landing sites. Not all Easterlings join him. | E alliances selective ([A1] §4); P ships |
 | By 1A 1675 | Eastern men fight on both sides; after Dardan the eastern clients fall with Volgan's host. | E ([A1] §4); P aftermath |
 | 2A | The East is far from Elzon's war; its kings fight their own wars over the rivers. | P |
@@ -161,7 +161,7 @@ The East is deliberately not one kind of state (P):
 | Creature | Habitat | Effect | Source |
 | --- | --- | --- | --- |
 | Camels | The desert roads | The caravans' and the Noris riders' mounts | E camel warriors ([PA]) |
-| Devils | Lairs on Mount Ergo and Mount Argon | Huge (20 to 30 metres), few, evil; strength, claws, teeth, horns, wings and fire; many serve Volgan; bound to their bodies, and a dead devil returns only by the lava rite, its skull thrown into lava ([OD]) | [BC] card 46; [OD]; [OC] §2.6 |
+| Devils | Lairs on Mount Ergo and Mount Argul | Huge (20 to 30 metres), few, evil; strength, claws, teeth, horns, wings and fire; many serve Volgan; bound to their bodies, and a dead devil returns only by the lava rite, its skull thrown into lava ([OD]) | [BC] card 46; [OD]; [OC] §2.6 |
 | Ogres | Caves of the Reeto Heights | Few, near-blind meat-eaters with clubs and thrown stones; raid the Rift Road; hired as caravan guards by the bold | [BC] card 22; P placement |
 | Lake-steam eels (P) | The hot shallows of the Hot Lake | The salt-boilers' food and the only fish that lives in the hottest water | P |
 | Ember-moths (P) | The Flaming Forests | Swarms in the dry season that strip the red leaves; caravans wait them out | P |
@@ -212,7 +212,7 @@ The East is deliberately not one kind of state (P):
 | **Woqood** | Men, Woqood sealers | League of sealers' clans | Pehami | The snow coast; absorbs Cream and Lorvens | Drawn snow country |
 | **Orato** | Men, island fishers | Island lordship | Nodoqood | Orato and Fladev | Drawn islands; the fishermen who see the black ships |
 
-**Wild lands, not countries (P):** Mount Ergo and Mount Argon (devils; the card's "Ergos"), the Reeto caves (ogres), the high Melty glaciers, the Plutondo Dunes.
+**Wild lands, not countries (P):** Mount Ergo and Mount Argul (devils; the card's "Ergos"), the Reeto caves (ogres), the high Melty glaciers, the Plutondo Dunes.
 
 | Current rows | Change |
 | --- | --- |
@@ -245,7 +245,7 @@ The East is deliberately not one kind of state (P):
 ## 13. Questions for the owner
 
 1. **The burning south.** May the East sheet's labels the Unforgivable Lands, the Lands of Burning Men, the Devil's Place, the Altering Lands of Death, the Upland of Lava and the Burning Lands of Ocellios be the off-map reference names of the lands beyond the South Lands?
-2. **Devils on the map.** The devil card places devils in "Pornyior" and "Ergos"; may a few lair on Mount Ergo and Mount Argon inside the map, with the city of Pornivior below them?
+2. **Devils on the map.** The devil card places devils in "Pornyior" and "Ergos"; may a few lair on Mount Ergo and Mount Argul inside the map, with the city of Pornivior below them?
 3. **Woqood's people.** May the snow coast get a northern sealers' culture of the Noric tongue instead of the desert camel culture?
 4. **Unused drawn labels.** Shindor (also on the Sunhot sheet), Hardfich, Tumo, Luthuus, Finingrenros, Esiurth, the Lands of Liotus, the Blozan Lands and the Vodohool Forests ([LBL] South-Earth): may they become state and place names inside the eighteen realms (proposed: Hardfich a Hardtmuth town of Stabilo, Esiurth a Noris well-town, the Blozan Lands Plutondo's upland)?
 
@@ -258,7 +258,7 @@ The East is deliberately not one kind of state (P):
 | Shachihata (drawn region; also a demon kind in the vault, [PA]) | a real-world company name | **Ashkarith** for the demon kind; the region label becomes an off-map reference name | Infernal *ashkar* "fire" + *-ith* |
 | Morodor (drawn region) | echoes Tolkien's Mordor | **Kalioth**, a dry upland of Erco | Alerhic *kalia* "dark" + *-oth* "high place" |
 | Khadon Ocean, The Magical Ocean | two names for one sea | **the Rift Sea** | Common Speech |
-| Flaming Ocean, Ocean of the Hellfire | two names for one gulf | **the Hellfire Gulf** | Common Speech |
+| Flaming Ocean, Ocean of the Smoking Teeth | two names for one gulf | **the Gulf of the Teeth** | Common Speech |
 | Mushroom Seas, Reeto Seas | two names, plural | **the Reeto Sea** | drawn |
 | Delbiz Grasslands (country) | a landscape as a realm name | **Delbiz** | drawn |
 

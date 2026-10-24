@@ -50,7 +50,7 @@ Dates inside an age are proposals unless the vault fixes them. The four age leng
 | **2A 1 to 2133**, the Age of Long Grief | Rebuilding and plague [E]. The Registers of the Lost are made. Elzon stirs the Dark Lands, returns Volgan's presence, raises the dead [E]. Refugees flee to the forests of Selen, the steppe of Hunhun and the isle of Asgard. Farming, medicine and fortification advance [E]. | The three refuge cultures of the Middle Lands; the marchers who resettle the south; the Houses of Refuge that become the Houses of the First Light. |
 | **3A 1 to 1260**, Elzon's Order [E] | Elzon holds Aenor, never the Magical Lands [E]. The Pale March goes up against the elves. The Black Roots sour the land. Varner and Golbran keep the Lantern Chain [P]. | The Cursed Lands and the Veiled; the Redbark tribes; the Great Wall's line; elven unity. |
 | **4A 1 to 212**, the Restoration | Harion crowns at Parim [P]. The Charters of Parim bind the dominions (4A 3 [P]). The Houses of the First Light get royal charters (4A 11 [P]). The Wall Accord keeps the Pale March as the Great Wall (4A 96 [P]). | The Concord and its 26 dominions; the Wall and Kingson's gate; the roads and Great Lake ports. |
-| **4A 212 to 1000**, the Long Peace | The Concord Council meets (212). Universities open (340). Lerendor and Lerenwaith unite (411). The Treaty of the Narrow Strait is signed (512). The caravan roads open (600 to 780). The Pupor charts are made (702). Coldor unites the interior (850). [P, vault] | The Leren crown; the North's old alliance; Noris and Stabilo; the chart-islanders' wealth; Isengard's refusal. |
+| **4A 212 to 1000**, the Long Peace | The Concord Council meets (212). Universities open (340). Lerendor and Lerendor's North unite (411). The Treaty of the Narrow Strait is signed (512). The caravan roads open (600 to 780). The Pupor charts are made (702). Coldor unites the interior (850). [P, vault] | The Leren crown; the North's old alliance; Noris and Stabilo; the chart-islanders' wealth; Isengard's refusal. |
 | **4A 1000 to 1729** | The Thousand-Year Jubilee (1000). The Hidden Council takes its shape (about 1100) [secret]. Goldoroth unites (about 1450). The Worshipdom grows in the Zilin Hills (about 1520). The Necklace is taken (1611). Volgan's strength returns (about 1650); Mirolon fortifies. Gunwaith and Girdon fight (1702). [P, vault] | The Dark Lands order; the Zilin valleys; Mirolon's passes; the western wars. |
 | **4A 1729 to 1748**, the Golden King | He is crowned (1729). The Golden Court is built (1733). A Mirolonese envoy is laughed at (1736). The Lost Cause is founded (1741). The Truce of the Grey Ford is signed (1745). [P, vault] | The start of the game. |
 
@@ -354,11 +354,11 @@ The forest tribes of the Bloody Forest, hostile to the crown. [E] They stain the
 
 *People:* Men. *Language:* Leren (court). *Faith:* The Strait Litany and The Lamp and the Furrow. *Tier:* 1. *Countries (7):* Lerendor, Eekedor, R'en, Tolhon, Allegro, Keredor-Hellekton, Low-ness Islands.
 
-The seafaring kings and merchants of Lerendor, Lerenwaith and the strait coast: proud, quick to take offence, and masters of the northern fleet.
+The seafaring kings and merchants of Lerendor, Lerendor's North and the strait coast: proud, quick to take offence, and masters of the northern fleet.
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | They descend from the northern kingdoms that allied with Aen's Aenor in the First Age ("North Earth" in old texts, now the North Lands [E]). Lerendor and Lerenwaith united their crowns by marriage in 4A 411 [P]. The Treaty of the Narrow Strait of 4A 512 [P name; E "old alliance"] binds them to defend Aenor. The toll quarrel of 4A 1716 [P] soured the alliance. |
+| Homeland, origin and settlement | They descend from the northern kingdoms that allied with Aen's Aenor in the First Age ("North Earth" in old texts, now the North Lands [E]). Lerendor and Lerendor's North united their crowns by marriage in 4A 411 [P]. The Treaty of the Narrow Strait of 4A 512 [P name; E "old alliance"] binds them to defend Aenor. The toll quarrel of 4A 1716 [P] soured the alliance. |
 | Language | Leren: clipped, with doubled vowels and endings in -ur -ar -ik -vik. Written in angular strokes, with a cursive for ledgers. |
 | Faith, holy sites, clergy, festivals | The Strait Litany: a song to the New Gods at each tide naming the ships lost that year, and a bargain with storms that they will not call a god. **Holy sites:** The Singing Quay at Sonargur; sea-chapels on the Leren skerries. **Clergy:** Litany-singers, one to each fleet. **Festivals:** The Ship-Blessing (Thaw), the Reading of the Lost (Longnight). |
 | Rule, inheritance, law | One High Crown over two realms, passing to the eldest child of either sex. A Speakers' Hall of shipowners and landholders approves the taxes. Land is divided among the children but the farm-seat goes to the eldest. Law is a written code of the strait and the salt. |
@@ -372,13 +372,13 @@ The seafaring kings and merchants of Lerendor, Lerenwaith and the strait coast: 
 
 #### Free Crowns of the North (`free_crowns_north`)
 
-*People:* Men. *Language:* Leren (inland). *Faith:* The Strait Litany and The Lamp and the Furrow. *Tier:* 3. *Countries (21):* Molot, Belg, Goran, Sensai, Gil'dul, Ashorn, Gul'dur, Heodwa Lands, Nuatax, Solenkovi, Stork, Cinargo, The Hold, Mustnom, Ferlinon, Thowson, Mina, Mine Din, Oirt, Pertawn, Filit.
+*People:* Men. *Language:* Leren (inland). *Faith:* The Strait Litany and The Lamp and the Furrow. *Tier:* 3. *Countries (21):* Molot, Belg, Goran, Tolvael, Gil'dul, Ashorn, Gul'dur, Heodwa Lands, Nuatax, Solenkovi, Stork, Cinargo, The Hold, Mustnom, Ferlinon, Thowson, Mina, Mine Din, Oirt, Pertawn, Filit.
 
 Some twenty small crowns of the North Lands: hill kingdoms, fjord holds and marcher states, each ruled by a lord who counts himself a king.
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | They are the smaller Leren settlements of the First Age that never joined Lerendor. They look to Lerendor or to Parim as it suits. Sensai may lead a league of free crowns. [P, names spec] |
+| Homeland, origin and settlement | They are the smaller Leren settlements of the First Age that never joined Lerendor. They look to Lerendor or to Parim as it suits. Tolvael may lead a league of free crowns. [P, names spec] |
 | Language | Leren in its inland dialect: harder consonants, more Orran loan-names in river words. |
 | Faith, holy sites, clergy, festivals | The Strait Litany as a household rite; most small crowns share one chaplain. **Holy sites:** The Singing Quay at Sonargur; sea-chapels on the Leren skerries. **Clergy:** Litany-singers, one to each fleet. **Festivals:** The Ship-Blessing (Thaw), the Reading of the Lost (Longnight). |
 | Rule, inheritance, law | A king with a small council of landowners, elected or hereditary by custom. Crown-sharing marriages join neighbours. Arbitration at Eekedor settles feuds. |
@@ -498,7 +498,7 @@ The iron-forted warlord realm of Isengard, Coldor's proud rival, with fortified 
 
 | Topic | Description |
 | --- | --- |
-| Homeland, origin and settlement | They refused the Winter Crown in 4A 850 [P] and built forts along the Isengar Mountains. The name Isengard is on the owner's map [E label]. |
+| Homeland, origin and settlement | They refused the Winter Crown in 4A 850 [P] and built forts along the Ormolak Mountains. The name Isengard is on the owner's map [E label]. |
 | Language | Coldic in its march dialect: blunt, with many forge-words. |
 | Faith, holy sites, clergy, festivals | The Storm Court, kept in the Black Gallery of the forts; they bargain with the wind. The Winter Hearth remains the house religion. **Holy sites:** Wind-towers on the Windwaith headlands; the Black Gallery in Isengard's forts. **Clergy:** Wind-readers and storm-speakers. **Festivals:** The Calm (Highsun), the First Gale (Fallowing). |
 | Rule, inheritance, law | A warlord holds the realm by oath-companies; the heir is the best sworn man, not the eldest. Law is the warlord's word and the march-law. |
@@ -1330,7 +1330,7 @@ Three valleys in the Zilin Hills, east of the Great Wall, were a hermitage of th
 
 Its rulers know what the world does not: that the Deliverer is Afrit, that the Hidden Council meets here and in Parim, and that the old king must die. [secret] The public face is a quiet temple-state led by a High Confessor, with a pilgrim guard in white tabards. Its border is whatever the elves allowed, three valleys that the Magical Forest lets it keep. It trusts its pilgrims. It fears the elven wardens, who ask no questions and remember Varner. Everything it does at the start must be a kindness.
 
-### Lerendor and Lerenwaith
+### Lerendor and Lerendor's North
 
 Two northern crowns, one Leren speech, one sea. The Leren sailed with Aenor's first ships and stayed independent. In 4A 411 [P] their royal houses married, and the united crown made Sonargur its seat on the strait [W]. The Treaty of the Narrow Strait of 4A 512 [P name; E "old alliance"] binds the North to defend Aenor. A toll quarrel in 4A 1716 [P] has made the Leren court doubt the treaty.
 
@@ -1376,7 +1376,7 @@ The king is war-leader of the tribes, chosen by the well-lords from one line. Th
 
 The merchant houses of the southern cities grew on the Gold Road. They hold their power by a bench of houses, and the Prince of Stabilo is only first among them. Their seat is Postondoroth [W]. They lead the Stabilo Pact with Drak [W]. Their law is the ledger, and their crime is the false weight.
 
-Stabilo trusts Drak and every contract it has a copy of. It fears Noris, whose camel riders can cut the roads in a week. Its borders are the roads themselves: the Gold Road to the north and the Sand Road to the west, with the Hellfire Range at its back.
+Stabilo trusts Drak and every contract it has a copy of. It fears Noris, whose camel riders can cut the roads in a week. Its borders are the roads themselves: the Gold Road to the north and the Sand Road to the west, with the Smoking Teeth at its back.
 
 ### Gunwaith
 
@@ -1451,7 +1451,7 @@ Every country has exactly one dominant culture and, where it truly is mixed, a s
 
 | Country | People | Culture | Language | Religion | Founding story | Trusts | Fears | Why the borders lie there |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Lerendor | Men | Leren of the Strait | Leren (court) | Strait Litany | Lerendor and Lerenwaith united by marriage in 4A 411 [P] under one crown, seat Sonargur [W]. | Eekedor, the Leren Compact | Aenor's disdain, the toll of 1716, the dead from the north | The straits on its two sides are its border. |
+| Lerendor | Men | Leren of the Strait | Leren (court) | Strait Litany | Lerendor and Lerendor's North united by marriage in 4A 411 [P] under one crown, seat Sonargur [W]. | Eekedor, the Leren Compact | Aenor's disdain, the toll of 1716, the dead from the north | The straits on its two sides are its border. |
 | Molot | Men | Free Crowns of the North (also Leren of the Strait) | Leren (inland) | Strait Litany | A marcher state balancing Lerendor on the strait's western shore. | Itself | Lerendor's reach | The marsh line that keeps Lerendor out. |
 | Eekedor | Men | Leren of the Strait | Leren (court) | Strait Litany | A coastal crown that joined the Leren Compact [W]. | Lerendor | The Dark Lands across the water | The inlet that is its harbour. |
 | R'en | Men | Leren of the Strait | Leren (court) | Strait Litany | The gateway state on the strait between the Leren and Aenor seas [W]. | Lerendor, Aenor | Being squeezed | The strait's narrowest point. |
@@ -1460,7 +1460,7 @@ Every country has exactly one dominant culture and, where it truly is mixed, a s
 | Keredor-Hellekton | Men | Leren of the Strait | Leren (court) | Strait Litany | Two coast crowns joined by a marriage settled at Eekedor. | Eekedor | A rival claim | The shared inlet. |
 | Belg | Men | Free Crowns of the North | Leren (inland) | Strait Litany | A hill crown of sheep-farmers on a high pass. | Goran | Hard winters | The pass. |
 | Goran | Men | Free Crowns of the North | Leren (inland) | Strait Litany | A fjord crown with a long deep harbour. | Belg | Raiders from the sea | The fjord head. |
-| Sensai | Men | Free Crowns of the North | Leren (inland) | Strait Litany | The largest of the small crowns; its lord may lead a league of free crowns [P]. | The Free Crowns | Lerendor's fleet | The long vale that holds seven states. |
+| Tolvael | Men | Free Crowns of the North | Leren (inland) | Strait Litany | The largest of the small crowns; its lord may lead a league of free crowns [P]. | The Free Crowns | Lerendor's fleet | The long vale that holds seven states. |
 | Gil'dul | Men | Free Crowns of the North | Leren (inland) | Strait Litany | A hill hold with a famous smithy on Gil'dul Water [E geography]. | Ashorn | A bad harvest | The water and its valley. |
 | Ashorn | Men | Free Crowns of the North | Leren (inland) | Strait Litany | A mountain crown that sells timber and charcoal. | Gil'dul | Avalanches | The tree-line. |
 | Gul'dur | Men | Free Crowns of the North | Leren (inland) | Strait Litany | A river crown with a toll-bridge. | Ashorn | Floods | The bridge. |
@@ -1485,7 +1485,7 @@ Every country has exactly one dominant culture and, where it truly is mixed, a s
 | Country | People | Culture | Language | Religion | Founding story | Trusts | Fears | Why the borders lie there |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Coldor | Men | Winter-Crown Folk | Coldic (crown) | Winter Hearth | Coldor's kings united the frozen interior in 4A 850 [P]; Isengard refused. Seat Fandanar [W]. | Horidor, the Northern Accord | Isengard, the Long Dark | The Frozen and Cold Mountains hem it; the western ports give it the sea. |
-| Isengard | Men | Isengard Warlords | Coldic (march) | Storm Court | Warlords who refused the Winter Crown in 4A 850 [P] and built forts in the Isengar Mountains [E label]. | Its oath-companies | Coldor's grain-power | The mountain passes it forted. |
+| Isengard | Men | Isengard Warlords | Coldic (march) | Storm Court | Warlords who refused the Winter Crown in 4A 850 [P] and built forts in the Ormolak Mountains [E label]. | Its oath-companies | Coldor's grain-power | The mountain passes it forted. |
 | Horidor | Men | Ice Clans (also Winter-Crown Folk) | Coldic (clan) | Winter Hearth | A clan realm allied to Coldor in the Northern Accord [W]. | Coldor | Isengard | The valley that links it to Fandanar. |
 | Windwaith | Men | Windwaith Seafarers | Coldic (coast) | Storm Court | A maritime council on the Windwaith arm [E]. | Its own ships | A western fleet | The headland. |
 | Holdon | Men | Ice Clans | Coldic (clan) | Winter Hearth | A small clan realm of herders. | Coldor | Isengard raiders | The lake valley. |

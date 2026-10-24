@@ -12,7 +12,7 @@ Set the data standard for all 305 countries and 1,332 states: what every record 
 
 - Aoaz holds about 280 polities (working figure); the map holds 305 (*Great Powers and Relations*, *The Campaign of 4A 1748*).
 - The working table of great powers, seats, alliances and rivals: Aenor (Parim, Middle Kingdom Concord, 26 satellites), Zol (Furviatlon), Volgan (Nafeher, Southern Dominion: Demon, Dolon, Nezer), Lerendor (Sonargur, Leren Compact), Coldor (Fandanar, Northern Accord), Noris (Furvior, Noris Treaty), Stabilo (Postondoroth, Stabilo Pact), Goldoroth (Cocanoor), Dondor (Notbuton, Dark Sea Accord). It is working map design, not fixed narrative canon.
-- Bordon, Dreson, Dulundur, Troll Forest, Nolorim and Herez stay separate. Kilinti with the Kilinti Forests is one country; Lerendor with Lerenwaith is one country.
+- Bordon, Dreson, Dulundur, Troll Forest, Nolorim and Herez stay separate. Kilinti with the Kilinti Forests is one country; Lerendor with Lerendor's North is one country.
 - Cursed Lands and Bloody Forest resist Aenor. Seat names not drawn on the maps are constructed and replaceable; no capital carries an antagonist's or a region's name.
 - Zol's Mistake is a barren wasteland, barely peopled, roamed by the dead. The Ember Lands are hot, storm-girt and hard to reach by sea. Aenor is rich and strong.
 - Start situation (owner, 18 October 2026): the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, nobody who matters is at war.

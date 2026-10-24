@@ -611,7 +611,8 @@ function checkRequired(model, rep, ctx) {
   if (b[1] < EDGE_BAND.y || b[3] > 1 - EDGE_BAND.y || b[0] < EDGE_BAND.x || b[2] > 1 - EDGE_BAND.x) rep.error('NETHER_IN_EDGE', nether.id, 'the Nether enters the edge band');
   const region = (model.regions ?? []).find(r => r.id === 'region_nether');
   if (!region) rep.error('NETHER_REGION', 'region_nether', 'no region_nether');
-  if (!(model.sites ?? []).some(s => /^the nether$/iu.test(s.name))) rep.error('NETHER_SITE', 'site_nether', 'no site named The Nether');
+  // the seat of the Nether: site_nether (named for its capital in the roster, Zarath-Nazur) or a site named The Nether
+  if (!(model.sites ?? []).some(s => s.id === 'site_nether' || /^the nether$/iu.test(s.name))) rep.error('NETHER_SITE', 'site_nether', 'no seat of the Nether (site_nether)');
   if (!(model.ranges ?? []).some(r => /nether/iu.test(r.name) && ringsOf(nether.geometry).some(part => pointInRing(...r.geometry.coordinates[Math.floor(r.geometry.coordinates.length / 2)], part[0])))) rep.error('NETHER_RANGE', 'range_nether', 'the Nether Mountains do not stand on the Nether');
   if (!(model.volcanoes ?? []).some(v => pointInGeometry(v.geometry.coordinates[0], v.geometry.coordinates[1], nether.geometry))) rep.error('NETHER_VOLCANO', 'volcano_nether', 'no volcano stands on the Nether');
   if (!(model.seas ?? []).some(s => /lava/iu.test(s.name))) rep.error('NETHER_SEA', 'sea_lava', 'the Nether has no Sea of Lava');
