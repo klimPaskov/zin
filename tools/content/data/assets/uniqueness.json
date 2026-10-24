@@ -5,7 +5,7 @@
   "aliases": [
     { "paths": ["gfx/interface/bookmarks/zin_fourth_age.dds", "gfx/interface/select_date_1936.dds", "gfx/interface/select_date_1939.dds"], "reason": "the engine's select_date pictures show the bookmark picture (integration decision A5)" }
   ],
-  "stub_files": ["bridge", "interim"],
+  "stub_files": ["bridge", "interim", "pending"],
   "groups": {
     "flag.large": { "threshold": 10, "maxReuse": 1, "siblingSetMax": 3, "label": "one flag per tag" },
     "flag.medium": { "threshold": 10, "maxReuse": 1, "siblingSetMax": 3, "exactSeverity": "warning", "label": "one flag per tag" },
@@ -19,7 +19,7 @@
     "scene.thumb": { "threshold": 0, "label": "thumbnails (exact only)" },
     "portrait.named": { "threshold": 14, "maxReuse": 1, "label": "named characters" },
     "portrait.generic": { "threshold": 12, "label": "generic pools: at most ceil(slots / pool size) + 1 characters per portrait; never twice in one country start roster" },
-    "ui": { "threshold": 0, "label": "interface chrome (exact only)" }
+    "ui": { "threshold": 0, "exactPendingArt": true, "label": "interface chrome (exact only; neutral sockets may coincide until the emblem sheets exist)" }
   },
   "near_duplicate_severity": "warning"
 }

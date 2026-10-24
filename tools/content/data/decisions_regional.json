@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "owner": "docs/specs/05_focus_trees/regional/west_lands.md, Buldor, 'Decisions: The Company Books'. The focus compiler writes no decisions and its tree schema has no decisions block, so the two decisions of the Buldor spec live here and are written by modules/decisions_regional.mjs. A fragment is Clausewitz script; the module indents it. Triggers and effects named zin_regional_buldor_* are declared by docs/design/focus/regional_buldor.json.",
+  "groups": [
+    {
+      "id": "regional_buldor",
+      "country": "Buldor",
+      "categories": [
+        {
+          "id": "zin_regional_buldor_contracts",
+          "icon": "GFX_idea_zin_ledger_coins",
+          "priority": 5,
+          "name": "The Company Books",
+          "desc": "Heralds come to the paymaster from every court that has a war to fight. The Company Books list the contracts the companies may take, the fee for each and the day it ends.",
+          "visible": ["has_country_flag = zin_regional_buldor_books_open"]
+        }
+      ],
+      "decisions": [
+        {
+          "id": "zin_regional_buldor_sell_contract",
+          "category": "zin_regional_buldor_contracts",
+          "icon": "GFX_idea_zin_coin_chest",
+          "name": "Sell a Contract",
+          "desc": "Offer a company's service to a realm at war. If the employer signs, it pays the fee in advance and the company serves for a year and a day. The paymaster counts the coin, and the veterans come home afterwards.",
+          "cost": 25,
+          "target_array": "global.countries",
+          "target_root_trigger": ["has_country_flag = zin_regional_buldor_books_open"],
+          "target_trigger": ["FROM = {\n\tzin_regional_buldor_contract_allowed = yes\n}"],
+          "available": ["check_variable = { zin_regional_buldor_contracts < zin_regional_buldor_contract_cap }", "has_manpower > 2999"],
+          "complete_effect": ["zin_regional_buldor_offer_contract = yes", "set_country_flag = {\n\tflag = zin_regional_buldor_sold_recently\n\tdays = 90\n}"],
+          "ai_will_do": ["base = 0", "modifier = {\n\tadd = 40\n\tFROM = { has_war_with_major = yes }\n\tNOT = { has_country_flag = zin_regional_buldor_sold_recently }\n}", "modifier = {\n\tadd = 15\n\tNOT = { FROM = { has_war_with_major = yes } }\n\tNOT = { has_country_flag = zin_regional_buldor_sold_recently }\n\thas_idea = zin_regional_buldor_paid_swords\n}"]
+        },
+        {
+          "id": "zin_regional_buldor_recall_company",
+          "category": "zin_regional_buldor_contracts",
+          "icon": "GFX_idea_zin_levy_muster",
+          "name": "Recall a Company",
+          "desc": "Call back the newest company before its term is out. Its employer loses their service at once, and the men march home to the drill fields of Buldor.",
+          "cost": 0,
+          "available": ["check_variable = { zin_regional_buldor_contracts > 0 }"],
+          "visible": ["check_variable = { zin_regional_buldor_contracts > 0 }"],
+          "complete_effect": ["zin_regional_buldor_recall_contract = yes"],
+          "ai_will_do": ["base = 0", "modifier = {\n\tadd = 30\n\thas_war = yes\n}"]
+        }
+      ]
+    }
+  ]
+}

@@ -355,8 +355,11 @@ export function runChecks(ctx, A, manifest = null) {
       if (vi?.valid) {
         const diff = [];
         if (vi.width !== f.info.width || vi.height !== f.info.height) diff.push(`size ${f.info.width}x${f.info.height} vs ${vi.width}x${vi.height}`);
-        if (vi.format !== f.info.format) diff.push(`format ${f.info.format} vs ${vi.format}`);
-        if (vi.mips !== f.info.mips) diff.push(`${f.info.mips} mips vs ${vi.mips}`);
+        // The interface reskin writes A8R8G8B8 with no mipmaps at the vanilla path by decision (spec 02, builder check 3, which also enforces the
+        // size); a file of its manifest is therefore held to the vanilla size only.
+        const reskinned = A.manifests.byOut.get(rel)?.manifest === 'art/source/reskin_manifest.json';
+        if (!reskinned && vi.format !== f.info.format) diff.push(`format ${f.info.format} vs ${vi.format}`);
+        if (!reskinned && vi.mips !== f.info.mips) diff.push(`${f.info.mips} mips vs ${vi.mips}`);
         C.ref('replace_shape', diff.length === 0);
         if (diff.length) F.add('REPLACE_SHAPE', 'error', rel, `${rel} replaces a vanilla file but differs from it: ${diff.join('; ')}.`, 'shape');
       }
@@ -449,7 +452,8 @@ function uniqueness(ctx, A, F) {
     if ((ctx.uniq.aliases ?? []).some(a => list.every(f => a.paths.includes(f.rel)))) continue;
     out.exactGroups++;
     const groupName = list[0].cls.rule.group, rule = groupRule(groups, groupName);
-    const severity = rule.exactSeverity ?? 'error';
+    // `exactPendingArt` groups hold placeholder chrome (the neutral sockets of the interface reskin) that several textures share until bespoke emblem sheets exist.
+    const severity = rule.exactSeverity ?? (rule.exactPendingArt && ctx.phase < 7 ? 'warning' : 'error');
     const paths = list.map(f => f.rel).sort();
     F.add('UNIQ_EXACT_DUP', severity, paths[0], `${paths.length} different assets share the same bytes (${sha.slice(0, 12)}): ${paths.slice(0, 6).join(', ')}${paths.length > 6 ? ', ...' : ''}.`, sha);
   }
@@ -469,7 +473,10 @@ function uniqueness(ctx, A, F) {
   }
   // Stub files (interim trees and bridges to vanilla names) are placeholders by design: their findings are warnings,
   // and bridge characters of vanilla tags do not take part in the portrait pools.
-  const stubWords = (ctx.uniq.stub_files ?? []).map(w => w.toLowerCase()), isStub = file => stubWords.some(w => file.toLowerCase().includes(w)), sev = file => (isStub(file) ? 'warning' : 'error');
+  const stubWords = (ctx.uniq.stub_files ?? []).map(w => w.toLowerCase()), isStub = file => stubWords.some(w => file.toLowerCase().includes(w));
+  // Catalog art is shared by design until the art track draws the signature icons and pictures (05_asset_manifest.md section 5, A1/A2/E1): before
+  // phase 7 a reuse past the caps is a warning that stays in the report and the baseline (pending art), from phase 7 an error, like FALLBACK_KEY.
+  const pendingArt = ctx.phase < 7, sev = file => (isStub(file) || pendingArt ? 'warning' : 'error');
   // Focus icons: per tree, per game, and never on a focus and its direct prerequisite.
   const fg = groups.focus_icon ?? {};
   const perGame = new Map(), byId = new Map(g.focuses.map(f => [`${f.tree}/${f.id}`, f]));
@@ -490,13 +497,13 @@ function uniqueness(ctx, A, F) {
   }
   for (const [ic, list] of [...perGame].sort(([a], [b]) => (a < b ? -1 : 1))) {
     out.focusIcons[ic] = list.length;
-    if (list.length > (fg.gameMax ?? 40)) F.add('UNIQ_ICON_GAME_CAP', list.every(x => isStub(x.file)) ? 'warning' : 'error', list[0].file, `Icon ${ic} is used by ${list.length} focuses in the game; the cap is ${fg.gameMax ?? 40}.`, ic);
+    if (list.length > (fg.gameMax ?? 40)) F.add('UNIQ_ICON_GAME_CAP', list.every(x => isStub(x.file)) || pendingArt ? 'warning' : 'error', list[0].file, `Icon ${ic} is used by ${list.length} focuses in the game; the cap is ${fg.gameMax ?? 40}.`, ic);
   }
   // Event pictures: the game cap and "no two events one step apart share a picture".
   const eg = groups.event_picture ?? {};
   const evPics = new Map(), evById = new Map(g.events.map(e => [e.id, e]));
   for (const e of g.events) for (const p of new Set(e.pictures)) (evPics.get(p) ?? evPics.set(p, []).get(p)).push(e);
-  for (const [p, list] of [...evPics].sort(([a], [b]) => (a < b ? -1 : 1))) { out.eventPictures[p] = list.length; if (list.length > (eg.gameMax ?? 8)) F.add('UNIQ_EVENT_PICTURE_CAP', list.every(x => isStub(x.file)) ? 'warning' : 'error', list[0].file, `Picture ${p} is used by ${list.length} events; the cap is ${eg.gameMax ?? 8}.`, p); }
+  for (const [p, list] of [...evPics].sort(([a], [b]) => (a < b ? -1 : 1))) { out.eventPictures[p] = list.length; if (list.length > (eg.gameMax ?? 8)) F.add('UNIQ_EVENT_PICTURE_CAP', list.every(x => isStub(x.file)) || pendingArt ? 'warning' : 'error', list[0].file, `Picture ${p} is used by ${list.length} events; the cap is ${eg.gameMax ?? 8}.`, p); }
   for (const l of g.eventLinks) {
     const a = evById.get(l.from), b = evById.get(l.to);
     if (a && b && a.pictures.some(p => b.pictures.includes(p))) F.add('UNIQ_EVENT_CHAIN', sev(l.file), l.file, `Events ${l.from} and ${l.to} are one step apart and share a picture.`, `${l.from}>${l.to}`);

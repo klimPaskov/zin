@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { ART, ART_SOURCE, rawFile, provenanceFile } from '../lib/paths.mjs';
 import { findRegionsAdaptive as findRegions, cropRegion } from '../lib/sheets.mjs';
 import { fromRaw, tga, dds } from '../lib/raster.mjs';
+import { readEmblemSheet, emblemCell, fitEmblem } from '../lib/emblem.mjs';
 import { PEOPLES } from './peoples.mjs';
 
 export { ART };
@@ -23,12 +24,18 @@ async function regions(file, expected, opts) {
 }
 
 export async function loadArt(countries) {
-  const art = { emblems: new Map(), portraits: new Map(), sources: [] };
+  const art = { emblems: new Map(), focusEmblems: new Map(), portraits: new Map(), sources: [] };
   const source = rel => { art.sources.push(rel); return rawFile(rel); };
-  // People emblems: 5 x 2 round medallions, in PEOPLES order.
+  // People emblems: 5 x 2 round medallions, in PEOPLES order. The medallion's outline is the alpha (docs/design/validation/gfx_standard.md): the idea
+  // picture is 64 x 64 and the focus icon 100 x 88, both with a transparent ground, never an opaque square.
   const keys = Object.keys(PEOPLES), emblemSheet = source('emblems/emblems-peoples.png');
   const er = await regions(emblemSheet, keys.length, { cols: 5, rows: 2, aspect: [0.75, 1.33], minAreaFraction: 0.25 });
-  for (const [i, k] of keys.entries()) art.emblems.set(k, fromRaw(await cropRegion(emblemSheet, er[i], 64, 64, { inset: 0, fit: 'contain' }), 64, 64));
+  const emblemPixels = await readEmblemSheet(emblemSheet);
+  for (const [i, k] of keys.entries()) {
+    const cell = emblemCell(emblemPixels, er[i]);
+    art.emblems.set(k, fromRaw(await fitEmblem(cell, 64, 64, 1), 64, 64));
+    art.focusEmblems.set(k, fromRaw(await fitEmblem(cell, 100, 88, 3), 100, 88));
+  }
   // Portraits: per people, 2 x 2 — top row male 1 / female 1, bottom row male 2 / female 2.
   for (const k of keys) {
     const sheet = source(`portraits/portraits-${k}.png`), pr = await regions(sheet, 4, { cols: 2, rows: 2, aspect: [0.45, 1.0], minAreaFraction: 0.3 });

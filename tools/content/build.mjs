@@ -20,7 +20,7 @@ import { buildUnits3d } from './modules/units3d.mjs';
 import { buildPresentation } from './modules/presentation.mjs';
 import { PEOPLES } from './modules/peoples.mjs';
 import { buildVanillaRemoval, writeEngineFiles, writeLocalisation } from './modules/vanilla_removal.mjs';
-import { computeBridges, writeBridgeFiles, scanStaged } from './modules/vanilla_bridges.mjs';
+import { computeBridges, writeBridgeFiles, writePendingFiles, scanStaged } from './modules/vanilla_bridges.mjs';
 import { definitions } from './checks/vanilla_refs.mjs';
 import { scriptText } from './lib/clausewitz.mjs';
 import { buildSilenced } from './modules/vanilla_silence.mjs';
@@ -33,6 +33,10 @@ import { buildDiplomacy } from './modules/diplomacy.mjs';
 import { buildTechnologies } from './modules/technologies.mjs';
 import { buildWarfare } from './modules/warfare.mjs';
 import { buildForces } from './modules/forces.mjs';
+import { buildEventsCrown } from './modules/events_crown.mjs';
+import { buildDecisionsRegional } from './modules/decisions_regional.mjs';
+import { buildFocusMajorC } from './modules/focus_major_c.mjs';
+import { buildSharedBCompanion } from './modules/focus_shared_b.mjs';
 import { buildEconomy } from './modules/economy.mjs';
 import { buildInstitutions, requiredEnumEntries } from './modules/institutions.mjs';
 import { buildTextSweep } from './modules/text_sweep.mjs';
@@ -93,6 +97,13 @@ const economy = await buildEconomy(staged, { countries });
   if (missing.length) throw new Error(`The institutions workshops name equipment that warfare does not define: ${missing.join(', ')}`);
 }
 const institutions = await buildInstitutions(staged, { countries, table, pools });
+// The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
+// common/scripted_effects/zin_story.txt; storyBlocks gains 'lastwar' and 'lore' when the events-world module is wired.
+const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'ending'] });
+// Buldor's company books (regional decisions) come after the compiler; the focus companions (dynamic modifiers of Noris and Stabilo,
+// Triton's opinion modifiers) write what the compiler cannot, so they run before it.
+const focusMajorC = await buildFocusMajorC(staged);
+const focusSharedB = await buildSharedBCompanion(staged);
 
 // Scripted triggers the diplomacy slice uses and mechanic slices that do not exist yet will define (the region tests of sites.mjs,
 // the Afrit, Lerendor, Cold Lands, elves and Sun tests). Until then each is an inert trigger (always = no), so no rule or collection
@@ -115,10 +126,11 @@ const calendar = await buildCalendar(staged);
 const defines = await buildDefines(staged, { countries });
 const ENGINE_FILES = ['common/scripted_triggers/00_zin_engine_hooks.txt', 'common/scripted_effects/00_zin_engine.txt', 'common/dynamic_modifiers/zin_dynamic_modifiers.txt'];
 writeEngineFiles(staged, vr.engine, { triggers: [], effects: [], dynamicModifiers: [] });
-const bridges = await computeBridges(vr.disp, staged);
+const bridges = await computeBridges(vr.disp, staged, { pendingCategories: ['idea', 'character', 'opinion_modifier'] });
 for (const f of ENGINE_FILES) staged.files.delete(f);
 writeEngineFiles(staged, vr.engine, bridges);
 await writeBridgeFiles(staged, bridges, vr.loc);
+writePendingFiles(staged, bridges.pending, vr.loc);
 writeLocalisation(staged, vr.loc);
 // Text sweep (docs/design/stage2/text_sweep.md): after every module has staged its text, so it leaves alone any key another module wrote.
 const textSweep = await buildTextSweep(staged);
@@ -134,6 +146,22 @@ const bridgeCounts = Object.fromEntries([...bridges.triggers.map(b => 'trigger')
 
 // Focus trees (docs/design/focus/*.json): compiled last, so the checks see every name the other modules stage.
 const focusTrees = await buildFocusTrees(staged, { countries });
+// Regional decisions come after the compiler: they name spirits the Buldor tree writes, which the C3 scan above cannot see.
+const decisionsRegional = await buildDecisionsRegional(staged, { countries });
+// Second reference pass over the finished tree (the compiled trees, their helpers and the decisions): the characters, spirits and opinion modifiers they name
+// that the mechanic slices not yet wired will define get the same inert stand-ins as before. Anything else that dangles stops the build.
+{
+  const final = await scanStaged(vr.disp, staged);
+  const pending2 = final.dangling.filter(g => g.modFiles.size && !g.gameFiles.size && ['idea', 'character', 'opinion_modifier'].includes(g.cat)).map(g => ({ cat: g.cat, name: g.name, files: [...g.modFiles].sort() }));
+  const loc2 = { text: {}, replace: {} };
+  writePendingFiles(staged, pending2, loc2, '_trees');
+  const haveBridgeName = [...staged.files].some(([k, v]) => k.startsWith('localisation/english/') && v.toString('utf8').includes(' ZIN_BRIDGE_CHARACTER:'));
+  if (haveBridgeName) delete loc2.text.ZIN_BRIDGE_CHARACTER;
+  if (Object.keys(loc2.text).length) staged.loc('zin_pending', loc2.text);
+  const left = (await scanStaged(vr.disp, staged)).dangling;
+  if (left.length) throw new Error(`C3: ${left.length} names dangle in the finished tree: ${left.slice(0, 10).map(g => `${g.cat} ${g.name} (${[...g.modFiles, ...g.gameFiles][0]})`).join(', ')}`);
+  var pendingAfterTrees = pending2.length;
+}
 // Text scan (X1 to X15) over the finished staged tree; the report is staged beside the other validation data.
 const textScan = await runTextScan(staged);
 writeScanReport(staged, textScan);
@@ -154,4 +182,4 @@ if (uiEnforced.length) throw new Error(uiEnforced.map(c => `ui check ${c.id} ${c
 const assets = await buildAssets(staged);
 await staged.write(out);
 const counts = {}; for (const rel of staged.files.keys()) { const top = rel.split('/').slice(0, 2).join('/'); counts[top] = (counts[top] ?? 0) + 1; }
-console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, assets: assets.summary, calendar, defines, cultures: cultures.counts, warfare, forces, diplomacy: diplomacy.counts, technologies, economy, institutions, textSweep, textScan: textScan.counts, ui: { ...ui.counts, checks: uiReport.checks.map(c => `${c.id}:${c.status}`) }, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));
+console.log(JSON.stringify({ staged: out, files: staged.files.size, lore, units3d, counts, presentation: presentation.counts, focusTrees, assets: assets.summary, calendar, defines, cultures: cultures.counts, warfare, forces, pendingStandIns: bridges.pending.length + pendingAfterTrees, crown: crown.counts, decisionsRegional, focusMajorC, focusSharedB, diplomacy: diplomacy.counts, technologies, economy, institutions, textSweep, textScan: textScan.counts, ui: { ...ui.counts, checks: uiReport.checks.map(c => `${c.id}:${c.status}`) }, vanillaRemoval: { silenced: silenced.silenced, replacePaths: vr.disp.rows.filter(r => r.action === 'replace' && r.kind === 'folder' && r.stage <= vr.disp.currentStage).length, theaters: vr.theaters, bridges: bridgeCounts }, peoples: Object.fromEntries([...assignment.values()].reduce((m, p) => m.set(p, (m.get(p) ?? 0) + 1), new Map())), stances: Object.fromEntries([...table.values()].reduce((m, t) => m.set(t.stance, (m.get(t.stance) ?? 0) + 1), new Map())) }));

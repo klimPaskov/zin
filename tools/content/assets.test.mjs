@@ -406,6 +406,13 @@ test('Negative: a file that replaces a vanilla path with another shape is REPLAC
   assert.equal(find(r, 'VANILLA_COPY').length, 0);
 });
 
+test('A file of the interface reskin manifest is held to the vanilla size only, not to its format or mip count', () => {
+  const manifest = JSON.stringify({ files: [{ out: 'gfx/interface/vanilla_icon.dds', source: 'art/source/ui/reskin/x.png', sourceSha256: '0', sha256: '0' }] });
+  const r = run(t => { t.put('art/source/reskin_manifest.json', manifest); t.put('gfx/interface/vanilla_icon.dds', ddsOf(32, 32, 62)); });
+  const f = find(r, 'REPLACE_SHAPE', 'vanilla_icon.dds');
+  assert.equal(f.length, 1); assert.match(f[0].message, /size 32x32 vs 64x64/); assert.doesNotMatch(f[0].message, /format|mips/);
+});
+
 test('Negative: a missing mesh, texture or animation file breaks the entity chain', () => {
   const model = 'gfx/models/units/zin/zin_test_unit';
   assert.equal(find(run(t => t.rm(`${model}/zin_test_unit.mesh`)), 'MESH_FILE_MISSING').length, 1);
@@ -467,7 +474,10 @@ test('Negative: a focus sharing an icon with its prerequisite, or one icon past 
   assert.equal(find(pre, 'UNIQ_ICON_PREREQUISITE').length, 1);
   const cap = run(t => t.edit('common/national_focus/test_tree.txt', s => s.replaceAll('GFX_focus_zin_test_b', 'GFX_focus_zin_test_a').replaceAll('GFX_focus_zin_test_c', 'GFX_focus_zin_test_a')));
   assert.equal(find(cap, 'UNIQ_ICON_TREE_CAP').length, 1);
-  assert.equal(find(cap, 'UNIQ_ICON_TREE_CAP')[0].severity, 'error');
+  assert.equal(find(cap, 'UNIQ_ICON_TREE_CAP')[0].severity, 'warning', 'catalog art is pending art before phase 7');
+  const late = run(t => t.edit('common/national_focus/test_tree.txt', s => s.replaceAll('GFX_focus_zin_test_b', 'GFX_focus_zin_test_a').replaceAll('GFX_focus_zin_test_c', 'GFX_focus_zin_test_a')), { phase: 7 });
+  assert.equal(find(late, 'UNIQ_ICON_TREE_CAP')[0].severity, 'error', 'an error from phase 7');
+  assert.equal(find(late, 'UNIQ_ICON_PREREQUISITE')[0].severity, 'error');
 });
 
 test('Negative: findings in interim and bridge files are warnings', () => {

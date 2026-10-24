@@ -171,8 +171,8 @@ async function buildTraits(staged, loc, countries) {
 // shine sprite (the engine's own shine overlay, masked by the emblem).
 const ICON = people => `GFX_focus_zin_${people}`;
 export function focusIconSprites(peoples) {
-  const anim = (people, rotation) => `\t\tanimation = {\n\t\t\tanimationmaskfile = "gfx/interface/ideas/zin_people_${people}.dds"\n\t\t\tanimationtexturefile = "gfx/interface/goals/shine_overlay.dds"\n\t\t\tanimationrotation = ${rotation}\n\t\t\tanimationlooping = no\n\t\t\tanimationtime = 0.75\n\t\t\tanimationdelay = 0\n\t\t\tanimationblendmode = "add"\n\t\t\tanimationtype = "scrolling"\n\t\t\tanimationrotationoffset = { x = 0.0 y = 0.0 }\n\t\t\tanimationtexturescale = { x = 1.0 y = 1.0 }\n\t\t}`;
-  return `spriteTypes = {\n${peoples.map(p => `\tspriteType = {\n\t\tname = "${ICON(p)}"\n\t\ttexturefile = "gfx/interface/ideas/zin_people_${p}.dds"\n\t}\n\tspriteType = {\n\t\tname = "${ICON(p)}_shine"\n\t\ttexturefile = "gfx/interface/ideas/zin_people_${p}.dds"\n\t\teffectFile = "gfx/FX/buttonstate.lua"\n${anim(p, -90.0)}\n${anim(p, 90.0)}\n\t\tlegacy_lazy_load = no\n\t}`).join('\n')}\n}\n`;
+  const anim = (people, rotation) => `\t\tanimation = {\n\t\t\tanimationmaskfile = "gfx/interface/goals/zin/people_${people}.dds"\n\t\t\tanimationtexturefile = "gfx/interface/goals/shine_overlay.dds"\n\t\t\tanimationrotation = ${rotation}\n\t\t\tanimationlooping = no\n\t\t\tanimationtime = 0.75\n\t\t\tanimationdelay = 0\n\t\t\tanimationblendmode = "add"\n\t\t\tanimationtype = "scrolling"\n\t\t\tanimationrotationoffset = { x = 0.0 y = 0.0 }\n\t\t\tanimationtexturescale = { x = 1.0 y = 1.0 }\n\t\t}`;
+  return `spriteTypes = {\n${peoples.map(p => `\tspriteType = {\n\t\tname = "${ICON(p)}"\n\t\ttexturefile = "gfx/interface/goals/zin/people_${p}.dds"\n\t}\n\tspriteType = {\n\t\tname = "${ICON(p)}_shine"\n\t\ttexturefile = "gfx/interface/goals/zin/people_${p}.dds"\n\t\teffectFile = "gfx/FX/buttonstate.lua"\n${anim(p, -90.0)}\n${anim(p, 90.0)}\n\t\tlegacy_lazy_load = no\n\t}`).join('\n')}\n}\n`;
 }
 const LONG_PEACE = [
   ['zin_long_peace_keep_the_peace', 'Keep the Long Peace', 'Seventeen centuries of peace are not an accident. The crown keeps the old oaths.', 0, 0, [], 'add_stability = 0.05', 'men'],
@@ -395,7 +395,19 @@ function buildInterimRules(staged) {
     ZIN_RULE_SKIES_BEASTS_DESC: 'Griffin riders join the dragons, and any realm that knows the Eyries may raise them.',
     ZIN_RULE_SKIES_NONE: 'Empty Skies',
     ZIN_RULE_SKIES_NONE_DESC: 'No wing takes the air. The Eyries folder and the scorpions are hidden, and dragons become a timed boon.',
+    ZIN_RULE_EINDIL_WAKING: 'The Waking of Eindil',
+    ZIN_RULE_EINDIL_WAKING_DESC: 'When the heir wakes. He never wakes at the start of the campaign.',
+    ZIN_RULE_EINDIL_WAKING_HISTORICAL: 'In Highsun',
+    ZIN_RULE_EINDIL_WAKING_HISTORICAL_DESC: 'The heir wakes in Highsun of 4A 1748, as the Chronicle has it.',
+    ZIN_RULE_EINDIL_WAKING_EARLY: 'Early',
+    ZIN_RULE_EINDIL_WAKING_EARLY_DESC: 'The heir wakes early in 4A 1749.',
+    ZIN_RULE_EINDIL_WAKING_LATE: 'Late',
+    ZIN_RULE_EINDIL_WAKING_LATE_DESC: 'The heir wakes only in 4A 1751.',
   });
+  // The foundation rule zin_rule_eindil_waking (05_defines_and_rules.md) is read by the crown events (the Chronicle); the foundation rules module that
+  // owns common/game_rules/zin_game_rules.txt does not exist yet. Written here in its final form; that module takes the file over.
+  const o = (name, def) => `\t${def ? 'default' : 'option'} = {\n\t\tname = ${name}\n\t\ttext = ZIN_RULE_EINDIL_WAKING_${name}\n\t\tdesc = ZIN_RULE_EINDIL_WAKING_${name}_DESC\n\t}`;
+  staged.text('common/game_rules/zin_rules_eindil.txt', `${HEADER}\n# Interim writer in vanilla_removal.mjs until the foundation rules module exists.\nzin_rule_eindil_waking = {\n\tname = ZIN_RULE_EINDIL_WAKING\n\tdesc = ZIN_RULE_EINDIL_WAKING_DESC\n\tgroup = RULE_GROUP_ZIN\n${o('HISTORICAL', true)}\n${o('EARLY', false)}\n${o('LATE', false)}\n}\n`);
 }
 
 function buildOverrides(staged, loc) {

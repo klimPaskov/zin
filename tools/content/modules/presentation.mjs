@@ -18,6 +18,8 @@ import { findRegionsAdaptive } from '../lib/sheets.mjs';
 import { fromRaw, dds } from '../lib/raster.mjs';
 // The mattes and fits live in lib/fit.mjs (spec 02); they are re-exported so existing imports keep working.
 import { boxDownscale, keyMatte, alphaBox, stripWindow, stripRgba, medallionMask } from '../lib/fit.mjs';
+// Shaped emblems (docs/design/validation/gfx_standard.md): the alpha is the emblem's own outline, for sheets whose cell map says "matte": "emblem".
+import { readEmblemSheet, emblemRegions, emblemCell, fitEmblem } from '../lib/emblem.mjs';
 export { boxDownscale, keyMatte };
 
 export const CELLS_COPY = fileURLToPath(new URL('../data/presentation-cells.json', import.meta.url));
@@ -29,7 +31,7 @@ export const MENU_KEYS = ['parim', 'strait', 'wall'];               // A5; the f
 export const LOADING = { w: 1920, h: 1440, thumbW: 192, thumbH: 144 };
 export const THUMB_DIR = 'gfx/interface/zin/loadingscreens';          // A5: thumbnails outside the loading folder
 export const FOCUS = { w: 100, h: 88, pad: 3 };
-export const IDEA = { w: 64, h: 64, field: 0.64 };                    // square inside the enamel field (A3)
+export const IDEA = { w: 64, h: 64, field: 0.64, pad: 2 };            // medallion sheets: a square inside the enamel field (A3); emblem sheets: the emblem, padded
 export const EVENT = { w: 210, h: 176 };
 export const NEWS = { w: 397, h: 153 };
 export const BOOKMARK = { w: 180, h: 104, sprite: 'GFX_zin_bookmark_fourth_age', file: 'gfx/interface/bookmarks/zin_fourth_age.dds' };
@@ -130,7 +132,7 @@ async function readJson(file) { return JSON.parse(await readFile(file, 'utf8'));
 export async function loadCells() {
   const copy = await readJson(CELLS_COPY);
   const cellsFile = `${ART}/jobs/icons-catalog-cells.json`, eventsFile = `${ART}/jobs/events-catalog-jobs.json`;
-  const icons = existsSync(cellsFile) ? (await readJson(cellsFile)).map(c => ({ sheet: c.sheet, cols: c.cols, rows: c.rows, keys: c.keys })) : copy.icons;
+  const icons = existsSync(cellsFile) ? (await readJson(cellsFile)).map(c => ({ sheet: c.sheet, cols: c.cols, rows: c.rows, keys: c.keys, ...(c.matte ? { matte: c.matte } : {}) })) : copy.icons;
   const events = existsSync(eventsFile) ? (await readJson(eventsFile)).map(e => ({ id: e.id, key: e.keys[0], crop: e.crop, gate: e.gate })) : copy.events;
   return { icons, events, copy };
 }
@@ -243,6 +245,18 @@ export async function buildPresentation(staged, { warn = msg => process.stderr.w
   for (const sheet of sheets) {
     const rel = `icons/${sheet.sheet}.png`, s = await source(rel);
     if (!s.ok) { note(`${rel}: ${s.why}; ${sheet.keys.length} keys use the ${FALLBACK_ICON} icon`); continue; }
+    if (sheet.matte === 'emblem') {
+      // Shaped emblems: one die-cut object per cell, its own outline is the alpha (lib/emblem.mjs). Focus and idea icons are the same emblem.
+      const em = await readEmblemSheet(s.file), r = emblemRegions(em, sheet.cols, sheet.rows, sheet.keys.length), how = em.mode === 'alpha' ? 'cut-out alpha' : 'outline on black';
+      if (!r.ok) throw new Error(`${rel}: ${r.problems.slice(0, 3).join('; ')} (expected ${sheet.keys.length} emblems)`);
+      for (const [i, key] of sheet.keys.entries()) {
+        const cell = emblemCell(em, r.regions[i]);
+        ship(`gfx/interface/goals/zin/${key}.dds`, ddsOf(await fitEmblem(cell, FOCUS.w, FOCUS.h, FOCUS.pad), FOCUS.w, FOCUS.h), { rel, sha: s.sha }, [`cell ${i}`, `emblem ${how}`, `lanczos3 contain ${FOCUS.w - 2 * FOCUS.pad}x${FOCUS.h - 2 * FOCUS.pad}`, `pad ${FOCUS.pad}`, 'dds a8r8g8b8']);
+        ship(`gfx/interface/ideas/zin/${key}.dds`, ddsOf(await fitEmblem(cell, IDEA.w, IDEA.h, IDEA.pad), IDEA.w, IDEA.h), { rel, sha: s.sha }, [`cell ${i}`, `emblem ${how}`, `lanczos3 contain ${IDEA.w - 2 * IDEA.pad}x${IDEA.h - 2 * IDEA.pad}`, `pad ${IDEA.pad}`, 'dds a8r8g8b8']);
+        iconFile.set(key, key);
+      }
+      continue;
+    }
     const r = await findRegionsAdaptive(s.file, sheet.keys.length, { cols: sheet.cols, rows: sheet.rows, aspect: [0.75, 1.33], minAreaFraction: 0.25 });
     if (!r.ok) throw new Error(`${rel}: found ${r.found} medallions, expected ${sheet.keys.length}`);
     const { data, info } = await sharp(s.file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
