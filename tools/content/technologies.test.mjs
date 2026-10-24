@@ -1,8 +1,9 @@
 // Tests for the technology, doctrine and research-sharing module (docs/specs/03_gameplay/07_industry_and_electronics_techs.md,
 // 01_warfare.md sections 11 to 13, 09_naval_air_doctrines.md, 03_diplomacy_and_factions.md). They use only builder output: a
-// Staged set built from the roster of data/countries.json. Negative tests plant a bad row in a copy of the data and expect the
+// Staged set built from the roster (lib/roster.mjs). Negative tests plant a bad row in a copy of the data and expect the
 // module to refuse it.
 import test from 'node:test';
+import { countryTable, successor } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -14,7 +15,10 @@ import { buildTechnologies, prepareModel, loadRaw, technologyPackages, startFor,
 import { bandY, ruleCost, layoutFolders } from './lib/tech_layout.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
+// The realm that took a retired row's role (the spec tables were written for the old roster: Volgan is Puvulan, Zol is Zol's Mistake).
+const heir = name => countries.find(c => c.key === successor(name).primary).name;
+const ZOL = heir('Zol'), VOLGAN = heir('Volgan');
 const banned = JSON.parse(await readFile(path.join(here, 'data/banned_words.json'), 'utf8'));
 const bannedRules = banned.rules.map(r => ({ ...r, re: new RegExp(`(?<![\\p{L}\\p{N}'])(?:${r.pattern})(?![\\p{L}\\p{N}'])`, r.caseSensitive ? 'u' : 'iu') }));
 const staged = new Staged();
@@ -97,7 +101,7 @@ test('Spec 4.2 and 4.3: the tables equal the data field by field (name, line, sl
     assert.deepEqual(t.modifiers, mods, `${k} effects`);
     const buildings = unlocks.startsWith('radar_station') ? [{ building: 'radar_station', level: Number(unlocks.match(/L(\d+)/)[1]) }] : [];
     assert.deepEqual(t.unlocks.buildings ?? [], buildings, `${k} unlocks`);
-    const whoWant = who === 'all' ? [] : who.split(',').map(w => w.trim()).map(w => (w === 'Volgan' ? { country: 'Volgan' } : { people: w }));
+    const whoWant = who === 'all' ? [] : who.split(',').map(w => w.trim()).map(w => (w === 'Volgan' ? { country: VOLGAN } : { people: w }));
     assert.deepEqual(t.whoOwn, whoWant, `${k} who`);
   }
 });
@@ -176,8 +180,8 @@ test('The seven gate technologies are grant-only, list their building at level 1
 test('People-restricted rows carry allow_branch with the people wrappers; Zol sees none of the craft rows but its own tide', () => {
   const text = allTechText();
   assert(/zin_tech_leaf_craft = \{[^]*?allow_branch = \{\s+zin_tech_not_zol = yes\s+OR = \{\s+zin_tech_people_elves = yes\s+zin_tech_people_sun_elves = yes/.test(text));
-  assert(/zin_tech_vent_forges = \{[^]*?original_tag = Y8D/.test(text), 'Volgan is matched by tag, never by people');
-  const zol = model.tags.get('Zol');
+  assert(new RegExp(`zin_tech_vent_forges = \\{[^]*?original_tag = ${model.tags.get(VOLGAN)}`).test(text), 'Puvulan (the Volgan row) is matched by tag, never by people');
+  const zol = model.tags.get(ZOL);
   assert(new RegExp(`zin_tech_deathless_tide_1 = \\{[^]*?allow_branch = \\{\\s+original_tag = ${zol}\\s+\\}`).test(text));
   for (const t of model.techs.filter(x => !x.requires.length && x.key !== 'zin_tech_deathless_tide_1')) {
     const block = text.match(new RegExp(`\\t${t.key} = \\{[^]*?\\n\\t\\}`))[0];
@@ -247,11 +251,11 @@ test('Every roster country has a closed start package; none grants an exclusive 
   assert.equal(starts.Aenor.landGrandDoctrine, 'zin_gd_shield_wall');
   assert.equal(starts.Aenor.navalGrandDoctrine, 'zin_gd_command_of_the_sea');
   assert.equal(starts.Aenor.navalSubDoctrine, 'zin_sub_line_of_battle');
-  assert.equal(starts.Zol.navalGrandDoctrine, 'zin_gd_corsair_fleets');
-  assert.equal(starts.Volgan.landGrandDoctrine, 'zin_gd_grave_muster');
+  assert.equal(starts[ZOL].navalGrandDoctrine, 'zin_gd_corsair_fleets');
+  assert.equal(starts[VOLGAN].landGrandDoctrine, 'zin_gd_grave_muster');
   assert.equal(starts.Goldoroth.landGrandDoctrine, 'zin_gd_warband');
   assert(starts.Goldoroth.technologies.includes('ogre_pacts'));
-  for (const c of countries) { const s = starts[c.name]; if (c.name !== 'Zol') assert(!s.technologies.includes('deathless_tide_1'), `${c.name} must not hold the deathless tide`); if (s.people !== 'elves' && s.people !== 'sun_elves') assert(!s.technologies.includes('dragon_lore'), `${c.name} must not start with dragon lore`); }
+  for (const c of countries) { const s = starts[c.name]; if (c.name !== ZOL) assert(!s.technologies.includes('deathless_tide_1'), `${c.name} must not hold the deathless tide`); if (s.people !== 'elves' && s.people !== 'sun_elves') assert(!s.technologies.includes('dragon_lore'), `${c.name} must not start with dragon lore`); }
   assert(!JSON.stringify(starts).includes('great_halls') && !JSON.stringify(starts).includes('village_forges'));
 });
 
@@ -308,13 +312,13 @@ test('Each people sees a land grand doctrine, only Zol sees the Deathless Tide, 
     return ok && !g.hideForClauses.some(c => c.country === profile.country);
   };
   for (const people of ['men', 'elves', 'sun_elves', 'orcs', 'trolls', 'giants', 'ents', 'yeti', 'demons']) assert(d.some(g => g.folder === 'land' && sees(g, { people })), `${people} sees a land doctrine`);
-  assert.deepEqual(d.filter(g => g.folder === 'land' && sees(g, { people: 'the_dead', country: 'Zol' })).map(g => g.key), ['zin_gd_deathless_tide']);
-  assert.deepEqual(d.filter(g => g.folder === 'land' && sees(g, { people: 'the_dead', country: 'Volgan' })).map(g => g.key), ['zin_gd_grave_muster']);
-  assert.deepEqual(d.filter(g => g.folder === 'naval' && sees(g, { people: 'the_dead', country: 'Zol' })).map(g => g.key), ['zin_gd_corsair_fleets']);
+  assert.deepEqual(d.filter(g => g.folder === 'land' && sees(g, { people: 'the_dead', country: ZOL })).map(g => g.key), ['zin_gd_deathless_tide']);
+  assert.deepEqual(d.filter(g => g.folder === 'land' && sees(g, { people: 'the_dead', country: VOLGAN })).map(g => g.key), ['zin_gd_grave_muster']);
+  assert.deepEqual(d.filter(g => g.folder === 'naval' && sees(g, { people: 'the_dead', country: ZOL })).map(g => g.key), ['zin_gd_corsair_fleets']);
   assert.equal(d.filter(g => g.folder === 'naval' && sees(g, { people: 'men', country: 'Aenor' })).length, 3);
   const text = file(DOCTRINE_FILES.grand);
   assert(/zin_gd_griffin_eyries = \{[^]*?zin_rules_skies_beasts = yes/.test(text), 'griffin doctrine only under beasts');
-  assert(/zin_gd_deathless_tide = \{[^]*?original_tag = Y0U/.test(text));
+  assert(new RegExp(`zin_gd_deathless_tide = \\{[^]*?original_tag = ${model.tags.get(ZOL)}`).test(text));
 });
 
 test('zin_inst_air_start sets the first air doctrine only when the receiver has none and costs no experience', () => {
@@ -328,7 +332,7 @@ test('zin_inst_air_start sets the first air doctrine only when the receiver has 
 test('Research sharing: one group per faction at 0.10 per member, tied to the faction leader tags, plus a faction group for the rest', () => {
   const text = file('common/technology_sharing/zin_tech_sharing.txt');
   assert.equal([...text.matchAll(/^technology_sharing_group = \{$/gm)].length, 8);
-  for (const [name, id] of [['Aenor', 'zin_research_concord'], ['Lerendor', 'zin_research_leren_compact'], ['Coldor', 'zin_research_northern_accord'], ['Noris', 'zin_research_noris_treaty'], ['Stabilo', 'zin_research_stabilo_pact'], ['Dondor', 'zin_research_dark_sea_accord'], ['Volgan', 'zin_research_southern_dominion']])
+  for (const [name, id] of [['Aenor', 'zin_research_concord'], ['Lerendor', 'zin_research_leren_compact'], ['Coldor', 'zin_research_northern_accord'], ['Noris', 'zin_research_noris_treaty'], ['Stabilo', 'zin_research_stabilo_pact'], ['Dondor', 'zin_research_dark_sea_accord'], [VOLGAN, 'zin_research_southern_dominion']])
     assert(new RegExp(`id = ${id}\\n[^]*?research_sharing_per_country_bonus = 0\\.1\\n\\tavailable = \\{\\s+is_in_faction_with = ${model.tags.get(name)}`).test(text), id);
   assert(/id = zin_research_leagues[^]*?is_faction_sharing = yes/.test(text));
   const fx = file('common/scripted_effects/zin_technologies.txt');

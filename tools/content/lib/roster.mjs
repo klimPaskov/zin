@@ -89,7 +89,11 @@ export function loadRoster() {
   const FATE_ORDER = { kept: 0, renamed: 0, merged: 1, split: 2, removed: 3 };
   const countries = roster.realms.map(r => {
     const former = [...formerOf.get(r.key)].sort((a, b) => FATE_ORDER[a.fate] - FATE_ORDER[b.fate]);
-    const main = former.find(m => m.fate === 'kept' || m.fate === 'renamed') ?? null;
+    // The row a realm continues: the row it keeps or renames, or the split row whose capital it keeps. A realm made only of merged rows
+    // takes the one that gave it the most states as its main row (its old flag and start setup); a realm with no old row has none.
+    const continued = former.find(m => m.fate === 'kept' || m.fate === 'renamed') ?? former.find(m => m.fate === 'split' && m.into[0] === r.key) ?? null;
+    const oldStates = t => (assignment?.states ?? []).filter(s => s.oldOwner === t && s.realm === r.key).length;
+    const main = continued ?? [...former].filter(m => m.fate === 'merged').sort((a, b) => oldStates(b.oldTag) - oldStates(a.oldTag) || (a.oldTag < b.oldTag ? -1 : 1))[0] ?? null;
     const overlord = r.overlord ? byKeyRealm.get(r.overlord) : null;
     if (r.overlord && !overlord) throw new Error(`roster: ${r.key} names an unknown overlord ${r.overlord}`);
     const stance = stances.get(r.key) ?? null;
@@ -109,7 +113,9 @@ export function loadRoster() {
       focusTier: r.focusTier, focusTree: r.focusTree, mechanics: r.mechanics ?? [], storyRole: r.storyRole ?? null,
       gunpowder: !!r.gunpowder, heraldry: r.heraldry ?? null,
       stance, ideology: stance ? stanceIdeology[stance] : null,
-      formerTags: former.map(m => m.oldTag), formerNames: former.map(m => m.oldName), mainFormerTag: main?.oldTag ?? null, formerFates: former.map(m => m.fate),
+      formerTags: former.map(m => m.oldTag), formerNames: former.map(m => m.oldName), mainFormerTag: main?.oldTag ?? null, mainFormerName: main?.oldName ?? null, continues: !!continued,
+      // The old flag the realm flies until its own is generated: the flag of its main former row (none for a realm with no old row).
+      flagFrom: main?.oldName ?? null, formerFates: former.map(m => m.fate),
     };
   });
   // The legacy scan label and the old region names (the names generator keeps them reserved) come from the old table.
@@ -143,6 +149,18 @@ export function successor(ref) {
   }
   return { oldTag: m.oldTag, oldName: m.oldName, fate: m.fate, keys, primary: keys[0] ?? null, tags: keys.map(k => R.byKey.get(k).tag), reason: m.reason };
 }
+
+// The map generator's country files of the retired roster (debug tags Y01 ... Y8H) that the builder's own country package replaces:
+// the tag table, the country and history files and the order-of-battle files of the old rows. They stay in the mod until the politics
+// step retires them (docs/plans/roster_integration/transition.md); every check of the builder reads the mod without them.
+export const SUPERSEDED_WORLD_FILES = [
+  /^common\/country_tags\/00_zin_countries\.txt$/,
+  /^common\/countries\/Y[0-9A-Z]{2} - .*\.txt$/,
+  /^history\/countries\/Y[0-9A-Z]{2} - .*\.txt$/,
+  /^history\/units\/Y[0-9A-Z]{2}_world(_naval)?\.txt$/,
+  /^gfx\/flags\/(medium\/|small\/)?Y[0-9A-Z]{2}\.tga$/,
+];
+export const supersededWorldFile = rel => SUPERSEDED_WORLD_FILES.some(re => re.test(rel));
 
 // The culture rows of every realm, in the shape of the retired data/world/country_cultures.json (country, tag, region, people,
 // culture, culture_secondary, language, dialect, faith).

@@ -6,7 +6,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
+import { countryTable, successor, loadRoster } from './lib/roster.mjs';
 import { Staged } from './lib/core.mjs';
 import { ZIN, GAME } from './lib/paths.mjs';
 import { absolutePositions, expandCopies } from './lib/focus_model.mjs';
@@ -17,13 +18,34 @@ import { Registry, exclusiveClosure, gateWarnings } from './checks/focus_checks.
 import { buildSharedBCompanion, tritonsOpinionText, TRITONS_OPINIONS } from './modules/focus_shared_b.mjs';
 
 const json = async f => JSON.parse(await readFile(f, 'utf8'));
+// The roster decides which realms a shared tree serves (roster.json focusTree); the tiers spec lists the countries of the
+// retired roster. Each spec country is continued by a realm of the tree or by a realm with a tree of its own (or one the roster
+// assigns to a tree not written yet), and each realm of the tree continues a spec country or is new (a split's second realm).
+const ROSTER = countryTable();
+const treeCountries = id => ROSTER.filter(c => c.focusTree === id).map(c => c.name);
+const realmOf = old => { const s = successor(old); return s?.primary ? ROSTER.find(c => c.key === s.primary) : null; };
+const CONTINUES = new Set(loadRoster().migration.map(m => successor(m.oldTag)?.primary).filter(Boolean));
+const TREE_FILES = new Set(readdirSync(`${ZIN}/docs/design/focus`).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5)));
+// The trees the roster names that are not written yet (docs/plans/roster_integration).
+const UNWRITTEN = ['new', 'shared_delving_holds', 'shared_middle_free'];
+function checkSpecList(id, countries, specNames) {
+  for (const old of specNames) {
+    const r = realmOf(old);
+    assert(r, `${id}: ${old} of the tiers spec is continued by a realm`);
+    assert(r.focusTree === id ? countries.includes(r.name) : TREE_FILES.has(r.focusTree) || UNWRITTEN.includes(r.focusTree), `${id}: ${old} is continued by ${r.name}, which is in ${id} or has a tree of its own`);
+  }
+  for (const name of countries) {
+    const r = ROSTER.find(c => c.name === name);
+    assert(specNames.some(o => realmOf(o)?.key === r.key) || !CONTINUES.has(r.key), `${id}: ${name} continues a country of the spec or is a new realm`);
+  }
+}
 const IDS = ['shared_lands_of_the_sun', 'shared_magical_lands', 'shared_north_lands', 'shared_tritons_islands', 'shared_west_lands'];
 const EXPECT = {
-  shared_lands_of_the_sun: { focuses: 44, spirits: 13, events: 1, countries: 39, opinions: 0 },
-  shared_magical_lands: { focuses: 55, spirits: 15, events: 4, countries: 15, opinions: 1 },
-  shared_north_lands: { focuses: 55, spirits: 18, events: 6, countries: 22, opinions: 2 },
-  shared_tritons_islands: { focuses: 52, spirits: 16, events: 3, countries: 28, opinions: 0 },
-  shared_west_lands: { focuses: 65, spirits: 11, events: 3, countries: 14, opinions: 1 },
+  shared_lands_of_the_sun: { focuses: 44, spirits: 13, events: 1, opinions: 0 },
+  shared_magical_lands: { focuses: 55, spirits: 15, events: 4, opinions: 1 },
+  shared_north_lands: { focuses: 55, spirits: 18, events: 6, opinions: 2 },
+  shared_tritons_islands: { focuses: 52, spirits: 16, events: 3, opinions: 0 },
+  shared_west_lands: { focuses: 65, spirits: 11, events: 3, opinions: 1 },
 };
 const TREE_DIR = `${ZIN}/docs/design/focus`;
 const BASE = {};
@@ -97,7 +119,8 @@ test('Counts of focuses, spirits, events, opinion modifiers and countries match 
     assert.equal(Object.keys(t.spirits ?? {}).length, e.spirits, `${id} spirits`);
     assert.equal(Object.keys(t.events ?? {}).length, e.events, `${id} events`);
     assert.equal(Object.keys(t.opinion_modifiers ?? {}).length, e.opinions, `${id} opinion modifiers`);
-    assert.equal(t.countries.length, e.countries, `${id} countries`);
+    assert.deepEqual([...t.countries].sort(), treeCountries(id).sort(), `${id} countries are the roster's realms of the tree`);
+    assert(t.countries.length >= 1, `${id} serves a realm`);
   }
   assert.equal(IDS.reduce((n, id) => n + BASE[id].focuses.length, 0), 271);
 });
@@ -114,10 +137,11 @@ test('Each tree serves exactly the countries the tiers spec lists, and no countr
     const line = md.split('\n').find(l => l.includes(`shared tree \`${id}\``));
     assert(line, `${id} is listed in the tiers spec`);
     const listed = line.slice(line.indexOf('):') + 2).trim().replace(/\.$/, '').split(', ');
-    assert.deepEqual([...BASE[id].countries].sort(), [...listed].sort(), id);
+    assert.deepEqual([...BASE[id].countries].sort(), treeCountries(id).sort(), id);
+    checkSpecList(id, BASE[id].countries, listed);
     for (const c of BASE[id].countries) { assert(!seen.has(c), `${c} is in ${seen.get(c)} and ${id}`); seen.set(c, id); }
   }
-  assert.equal(seen.size, 118);
+  assert.equal(seen.size, IDS.reduce((n, id) => n + treeCountries(id).length, 0));
 });
 
 test('Focus ids, spirit ids and event ids carry the tree prefix and the file lists them all', () => {
@@ -379,8 +403,9 @@ test('Negative: a bad country, a duplicate trigger across trees and an unknown c
 });
 
 test('Negative: a country in two trees is reported by the coverage check', async () => {
-  const a = await analyse(r => { r.shared_west_lands.countries.push('Belg'); });
-  assert(a.problems.some(p => p.code === 'coverage_many' && /Belg/.test(p.message)));
+  const other = BASE.shared_north_lands.countries[0];
+  const a = await analyse(r => { r.shared_west_lands.countries.push(other); });
+  assert(a.problems.some(p => p.code === 'coverage_many' && p.message.includes(other)));
 });
 
 test('The companion module writes the two Tritons opinion modifiers whose ids the tier B island trees use', async () => {

@@ -2,6 +2,7 @@
 // same directory when it is not the default (<OS temp>/zin-content-staged).
 //   node --test tools/content/build.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -9,6 +10,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PEOPLES } from './modules/peoples.mjs';
+import { historyFile } from './modules/countries.mjs';
 import { stanceIdeology, IDEOLOGIES } from './modules/ideologies.mjs';
 import { flagKey } from './art/slice-flags.mjs';
 import { flagsDir, FLAG_CELLS } from './modules/art.mjs';
@@ -19,7 +21,7 @@ import { cw, yml, assertModifiers } from './lib/core.mjs';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const STAGED = stagingDir(process.env.ZIN_STAGED);
 const read = p => readFile(path.join(STAGED, p), 'utf8');
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const tags = countries.map(c => c.tag);
 async function hashTree(dir) { const h = createHash('sha256'); const walk = async d => { for (const e of (await readdir(d, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name))) { const f = path.join(d, e.name); if (e.isDirectory()) await walk(f); else { h.update(path.relative(dir, f)); h.update(await readFile(f)); } } }; await walk(dir); return h.digest('hex'); }
 
@@ -41,14 +43,26 @@ test('Startup applies a defined people spirit to every country', async () => {
   for (const key of Object.keys(PEOPLES)) assert.match(ideas, new RegExp(`zin_people_${key} = \\{`));
 });
 
+// Every staged character, by id: the text of its block in common/characters (the courts are spread over several files).
+async function stagedCharacters() {
+  const out = new Map();
+  for (const f of (await readdir(path.join(STAGED, 'common/characters'))).filter(f => f.endsWith('.txt'))) {
+    for (const block of (await read(`common/characters/${f}`)).split(/^\t(?=[A-Za-z0-9_]+ = \{)/m).slice(1)) out.set(block.match(/^([A-Za-z0-9_]+)/)[1], block);
+  }
+  return out;
+}
+
 test('Every country has names, a portrait pool and a ruler (the game crashed generating characters without them)', async () => {
-  const names = await read('common/names/zin_names.txt'), portraits = await read('portraits/zin_portraits.txt'), rulers = await read('common/characters/zin_rulers.txt');
-  for (const tag of tags) {
+  const names = await read('common/names/zin_names.txt'), portraits = await read('portraits/zin_portraits.txt'), characters = await stagedCharacters();
+  for (const c of countries) {
+    const tag = c.tag;
     const block = names.match(new RegExp(`^${tag} = \\{([\\s\\S]*?)\\n\\}`, 'm'))?.[1]; assert(block, `names ${tag}`);
     for (const part of ['male', 'female']) assert(block.match(new RegExp(`${part} = \\{\\s*names = \\{ ([^}]+) \\}`))[1].trim().split(' ').length >= 20, `${part} names ${tag}`);
     assert(block.match(/surnames = \{ ([^}]+) \}/)[1].trim().split(' ').length >= 40, `surnames ${tag}`);
     assert.match(portraits, new RegExp(`^${tag} = \\{\\n\\tarmy = `, 'm'), `portraits ${tag}`);
-    assert.match(rulers, new RegExp(`\\t${tag}_zin_ruler = \\{`), `ruler ${tag}`);
+    // The history recruits the ruler: a staged character with a country_leader role.
+    const recruited = [...(await read(historyFile(c))).matchAll(/recruit_character = (\w+)/g)].map(m => m[1]);
+    assert(recruited.some(id => /country_leader = \{/.test(characters.get(id) ?? '')), `ruler ${tag}`);
   }
   for (const n of [1, 2, 3]) assert.match(portraits, new RegExp(`name = world_continent_${n}\\n\\tarmy`));
 });
@@ -57,7 +71,7 @@ test('Every referenced sprite is defined and every defined sprite file is staged
   const gfx = (await read('interface/zin_portraits.gfx')) + (await read('interface/zin_peoples.gfx'));
   const defined = new Map([...gfx.matchAll(/name = "([^"]+)"\s*texturefile = "([^"]+)"/g)].map(m => [m[1], m[2]]));
   for (const file of defined.values()) await readFile(path.join(STAGED, file));
-  const used = [...(await read('portraits/zin_portraits.txt')).matchAll(/"(GFX_[^"]+)"/g), ...(await read('common/characters/zin_rulers.txt')).matchAll(/large = (GFX_\w+)/g)].map(m => m[1]);
+  const used = [...(await read('portraits/zin_portraits.txt')).matchAll(/"(GFX_[^"]+)"/g), ...[...(await stagedCharacters()).values()].join('\n').matchAll(/large = "?(GFX_\w+)/g)].map(m => m[1]);
   for (const s of used) assert(defined.has(s), s);
 });
 
@@ -80,9 +94,10 @@ test('Negative: unknown modifiers, peoples and stances are rejected', async () =
   const { loadCountryTable } = await import('./modules/countries.mjs');
   const { writeFile, mkdtemp } = await import('node:fs/promises'); const os = await import('node:os');
   const dir = await mkdtemp(path.join(os.tmpdir(), 'zin-')), bad = path.join(dir, 'countries.csv');
-  await writeFile(bad, 'tag,country,people,ideology,stance\nY01,Coldor,dragons,neutrality,zin_wild_clans\n');
+  const row = `${countries[0].tag},${countries[0].name}`;
+  await writeFile(bad, `tag,country,people,ideology,stance\n${row},dragons,neutrality,zin_wild_clans\n`);
   await assert.rejects(loadCountryTable(countries, bad), /Unknown people dragons/);
-  await writeFile(bad, 'tag,country,people,ideology,stance\nY01,Coldor,men,neutrality,anarchy\n');
+  await writeFile(bad, `tag,country,people,ideology,stance\n${row},men,neutrality,anarchy\n`);
   await assert.rejects(loadCountryTable(countries, bad), /Unknown stance anarchy/);
 });
 
@@ -92,8 +107,17 @@ test('Negative: the staged tree is never placed inside the repository', () => {
 });
 
 test('Every country has a generated flag; every staged art source traces to a recorded generation', async () => {
+  // Until the realms' heraldry is generated, a realm flies the old flag of its main former row; a realm with no old row
+  // has no flag and is a pending art row (FLAG_MISSING accepted in the asset baseline).
   const flags = await flagsDir();
-  for (const c of countries) await readFile(path.join(flags, `${flagKey(c.name)}.png`));
+  const baseline = JSON.parse(await readFile(path.join(ZIN, 'docs/design/validation/asset_baseline.json'), 'utf8'));
+  const pending = new Set(baseline.findings.filter(f => f.code === 'FLAG_MISSING').map(f => f.path));
+  for (const c of countries) {
+    if (c.flagFrom) {
+      await readFile(path.join(flags, `${flagKey(c.flagFrom)}.png`));
+      for (const dir of ['gfx/flags', 'gfx/flags/medium', 'gfx/flags/small']) await readFile(path.join(STAGED, `${dir}/${c.tag}.tga`));
+    } else for (const dir of ['gfx/flags', 'gfx/flags/medium', 'gfx/flags/small']) assert(pending.has(`${dir}/${c.tag}.tga`), `${c.name} has no flag and no pending row`);
+  }
   // The tracked cell map must stay the one the sheets were generated and sliced with.
   const workingCells = path.join(ART, 'jobs/flags-cells.json');
   if (await readFile(workingCells).then(() => true, () => false)) assert.deepEqual(JSON.parse(await readFile(FLAG_CELLS, 'utf8')), JSON.parse(await readFile(workingCells, 'utf8')), 'data/flags-cells.json is out of date');

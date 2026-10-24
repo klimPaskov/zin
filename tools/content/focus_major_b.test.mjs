@@ -14,7 +14,10 @@ import { loadRuleSet, compileBanned, findBanned } from './lib/banned.mjs';
 import { loadGlossary } from './lib/text_engine.mjs';
 import { displayText } from './lib/loc_parse.mjs';
 import { Registry, mergeRegistryData, REGISTRY_FILE } from './checks/focus_checks.mjs';
+import { countryTable, successor } from './lib/roster.mjs';
 
+// The realm of the roster that took an old row's role (Volgan's roles went to Puvulan, the first realm of its split).
+const realm = old => countryTable().find(c => c.key === successor(old).primary).name;
 const IDS = ['gunwaith', 'lerendor', 'magical_forest', 'mirolon'];
 const EXPECT = {
   mirolon: { focuses: 83, spirits: 27, events: 12, raw: 6, x: 25, y: 16 },
@@ -172,7 +175,7 @@ test('Mirolon never places Dardan or names Eindil, and starts without war', () =
   for (const w of text.match(/Dardan[^"]{0,20}/g) ?? []) assert.fail(`Mirolon text mentions ${w}`);
   const war = f => JSON.stringify(f.effects ?? []).match(/wargoal|claims_on|annex/);
   assert.deepEqual(raw.mirolon.focuses.filter(war).map(f => f.key), []);
-  assert(focus(raw, 'mirolon', 'the_storm_comes').available.some(c => c.at_war_with === 'Volgan'));
+  assert(focus(raw, 'mirolon', 'the_storm_comes').available.some(c => c.at_war_with === realm('Volgan')));
   assert(focus(raw, 'mirolon', 'mirolon_rises_again').available.some(c => c.global_flag === 'zin_volgan_body_destroyed'));
   assert(focus(raw, 'mirolon', 'carry_the_war_south').prerequisite[0][0] === 'rebuild_the_gates');
   assert(raw.mirolon.events.carry_war_south.options[0].effects.some(e => e.if?.then?.some(x => x.wargoal)));

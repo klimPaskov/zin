@@ -3,6 +3,7 @@
 // check the output against the specs' id tables, the installed game's documentation, the contract register and the text rules,
 // then break copies of the data and expect the checks to fail. Run: node --test tools/content/events_world.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -19,7 +20,7 @@ import { aiChance, trigger as scriptTrigger } from './lib/ew_script.mjs';
 import { buildEventsWorld, loadWorldData, loadPictures, renderAll, eventsOf, parseWindow, NAMESPACES, RANGES, TIMEOUT_DAYS } from './modules/events_world.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const data = await loadWorldData();
 const pictures = await loadPictures();
 const out = await renderAll(data, countries);
@@ -338,7 +339,7 @@ test('Journey: one-time world effects never sit in an option that several recipi
     const e = parsedEvents('zin_eindil').find(x => child(x.v, 'id') === `zin_eindil.${id}`);
     for (const o of children(e.v, 'option')) {
       const s = JSON.stringify(o);
-      assert(!/zin_world_raise_varners_wards|zin_volgan_destroy_body.*(?!tag)|set_global_flag\\?"?:? ?"?zin_varner_dead/.test(s.replace(/Y8D/g, '')) || id === 100, `zin_eindil.${id} option holds a one-time world effect`);
+      assert(!/zin_world_raise_varners_wards|zin_volgan_destroy_body.*(?!tag)|set_global_flag\\?"?:? ?"?zin_varner_dead/.test(s.split(countries.find(c => c.name === 'Puvulan').tag).join('')) || id === 100, `zin_eindil.${id} option holds a one-time world effect`);
     }
   }
   const fall = text('events/zin_eindil.txt').split('country_event = {\n\tid = zin_eindil.96')[1].split('\n}\n')[0];
@@ -364,7 +365,8 @@ test('Journey: this module writes no clock, no pulse and no stage logic; the eng
 test('Journey: the stage 8 warnings and the Host of Eindil follow the spec', () => {
   assert.equal(evOf('zin_eindil', 83).picture, 'southern_warning');
   const heed = evOf('zin_eindil', 83).options[0];
-  assert.deepEqual(heed.hist, [{ names: ['Selen', 'Mirolon', 'Kingson', 'Hiloron', 'Magical Forest', 'Gala Elves'] }]);
+  // Hiloron is Hirolon and the Gala Elves are the realm Gala (roster of 24 October 2026).
+  assert.deepEqual(heed.hist, [{ names: ['Selen', 'Mirolon', 'Kingson', 'Hirolon', 'Magical Forest', 'Gala'] }]);
   const warn = text('events/zin_eindil.txt').split('country_event = {\n\tid = zin_eindil.83')[1].split('\n}\n')[0];
   assert(warn.includes('zin_leren.45') && warn.includes('zin_eindil_83_done') && warn.includes('zin_eindil_heeded_the_impostor') && warn.includes('zin_eindil_denounced_the_impostor'));
   const host = text('events/zin_eindil.txt').split('country_event = {\n\tid = zin_eindil.92')[1].split('\n}\n')[0];
@@ -476,7 +478,8 @@ test('Flavour: F1 and F2 hold for every flavour event', () => {
 
 test('Flavour: every opening event has three paragraphs and sets nothing but its seen flag', () => {
   const openers = eventsOf(data, 'zin_lore').filter(e => e.opening);
-  assert.deepEqual(openers.map(e => e.opening), ['Aenor', 'Worshipdom', 'Lerendor', 'Volgan', 'Zol', 'Magical Forest', 'Gala Elves', 'Coldor', 'Noris', 'Stabilo', 'Gunwaith', 'Goldoroth', 'Mirolon', 'Dondor', 'Yeldenne']);
+  // Puvulan opens for the Volgan role, Zol's Mistake for Zol, Gala for the Gala Elves and Gunwyn for Gunwaith (roster of 24 October 2026).
+  assert.deepEqual(openers.map(e => e.opening), ['Aenor', 'Worshipdom', 'Lerendor', 'Puvulan', "Zol's Mistake", 'Magical Forest', 'Gala', 'Coldor', 'Noris', 'Stabilo', 'Gunwyn', 'Goldoroth', 'Mirolon', 'Dondor', 'Yeldenne']);
   for (const e of openers) { assert.equal(e.options.length, 1); assert.deepEqual(e.options[0].effects, []); }
   assert(loc('zin_lore')['zin_lore.4.d'].includes('green crystal of the north') && !/\bGlo\b/.test(loc('zin_lore')['zin_lore.4.d']));
   assert(!/\bGlo\b.*heart|heart.*\bGlo\b/i.test(loc('zin_lore')['zin_lore.15.d']));
@@ -492,7 +495,7 @@ test('AI: the historical option takes 100 under the historical rule, the others 
   assert(other.includes('factor = 0') && other.includes('add = -5') && other.includes('add = 10'));
   assert(!aiChance({ ai: 50 }, false, W).join('\n').includes('zin_rules_is_historical'), 'events without a hist option use their table weights');
   const cond = aiChance({ ai: 70, hist: ['tag:Selen'] }, true, W).join('\n');
-  assert(cond.includes('original_tag = Y0M') && /factor = 0[\s\S]*NOT/.test(cond), 'a conditional hist option is historical only where the condition holds');
+  assert(cond.includes(`original_tag = ${W.tags.get('Selen')}`) && /factor = 0[\s\S]*NOT/.test(cond), 'a conditional hist option is historical only where the condition holds');
   for (const [ns, id] of [['zin_eindil', 10], ['zin_eindil', 32], ['zin_eindil', 83], ['zin_lastwar', 11]]) {
     const body = parsedEvents(ns).find(e => child(e.v, 'id') === `${ns}.${id}`);
     assert(JSON.stringify(body).includes('zin_story_rules_plausible'), `${ns}.${id} is weighed under the plausible rule`);

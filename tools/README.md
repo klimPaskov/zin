@@ -28,7 +28,7 @@ by hand, and do not point the builder at the repository.
 | `content/apply.mts` | Compares the staged tree with the mod. `plan` reports the writes and deletes without changing anything. `apply` performs them in one TransactionManager transaction and updates `.zin-content.json` (and `.hoi4-agent-world.json` hashes for shared entry points). |
 | `content/imagegen.mjs` | Generates images in batches through the owner's gptimage library (ChatGPT plan). It skips finished jobs and rejects sheets that fail their layout check, trying up to three times. Every generation is recorded in `provenance.jsonl` next to the jobs file. |
 | `content/art/asset-jobs.mjs` | Writes the image jobs for people emblems, portraits and interface art (`assets-jobs.json`). |
-| `content/art/flag-jobs.mjs` | Writes the image jobs for the flag sheets and their cell map (`flags-jobs.json`, `flags-cells.json`) from the current country table. |
+| `content/art/flag-jobs.mjs` | Writes the image jobs for the realms' flag sheets and their cell map (`realm-flags-jobs.json`, `realm-flags-cells.json`) from the heraldic designs of `content/data/world/heraldry.json`, 12 flags per sheet as its `pipeline` says. |
 | `content/art/slice-flags.mjs` | Cuts flag sheets into one 492x312 PNG per country. The builder runs it by itself when the flag slices are missing (see below). |
 | `content/art/unit-ref-jobs.mjs`, `content/art/stage-unit-jobs.mjs` | Write the image jobs for the 3D unit reference images, then stage the approved references into the 3D job roots under `docs/assets/hoi4_3d_model_jobs/`. |
 | `content/preview.mjs` | Builds a contact sheet PNG from staged DDS sprites, for review. |
@@ -40,7 +40,7 @@ by hand, and do not point the builder at the repository.
 | `content/lib/language_generator.mjs`, `content/lib/sound_laws.mjs` | The deterministic name generator (patterns, junction rules, banned-name filter, Windows-1252 and length limits, leak markers, the world registry that refuses duplicates and near-duplicates across languages) and the sound-law engine that derives a daughter language from its family's proto lexicon. |
 | `content/checks/names_check.mjs` | The name checks: cross-language leaks, near-duplicates, banned words, glyphs, forms, pool floors, the signature of each language, the 250-and-250 reference run, relatedness by sound laws. `node content/checks/names_check.mjs [stagedDir]` is also a CLI. |
 | `content/names.test.mjs` | Tests the generator, the pools, `placeNames`, the checks and their negative cases (a banned name, a duplicate, a character outside Windows-1252, a leak, an unknown language, a reserved vault name). It needs no staged tree. |
-| `content/data/world/` | The world data the names read: `languages.json` (24 languages), `cultures.json`, `country_cultures.json` (culture and language of each of the 305 countries), `reserved_names.json` (established vault names that no language may produce), `demography.json`. |
+| `content/data/world/` | The world data the names read: `languages.json` (24 languages), `cultures.json`, `roster.json` (the 156 realms: tag, name, culture, faith, people, political form, overlord, and the fate of every one of the 305 old rows), `state_assignment.json` (the realm of every state, with rule and reason, written by `tools/migrations/roster_state_assignment.mjs`), `reserved_names.json` (established vault names that no language may produce), `demography.json`. |
 | `content/data/assets/` | Data of the asset manifest and check: `families.json` (path rules to family, key, kind, group and source), `formats.json` (sizes, formats and mip counts), `bound.json` (files the engine loads by path), `kept.json` (vanilla files ZIN may point at), `implicit_names.json` (names the engine builds, fallback sprites), `uniqueness.json` (thresholds, caps, aliases). |
 | `content/modules/text_sweep.mjs`, `content/lib/text_engine.mjs`, `content/lib/loc_parse.mjs`, `content/lib/banned.mjs` | The vanilla text sweep (spec `docs/specs/07_interface/05_text_sweep.md`): the glossary and template engine, the family writer that stages `localisation/replace/zin_<family>_l_<language>.yml` in ten languages and the people-variant scripted localisation, and the helpers they share. See "Text sweep" below. |
 | `content/modules/mech_*.mjs`, `content/modules/events_world.mjs` | The mechanic slices (the court, the journey, the powers, the four regions) and the world story events, wired in integration round 3 in the order of `docs/design/stage2/integration_r3.md`; each slice's note is in `docs/design/stage2/`. Tested by `mech_court`, `mech_journey`, `mech_powers`, `mech_cold`, `mech_dark`, `mech_east`, `mech_sun` and `events_world` `.test.mjs`. |
@@ -48,7 +48,8 @@ by hand, and do not point the builder at the repository.
 | `content/modules/pending_names.mjs` | The declared pending names of the final C3 pass (`content/data/pending_names.json`): a name that dangles stops the build unless the register names the module that will define it; declared names get inert stand-ins, and a declared name that a module now defines or that nothing uses stops the build. Tested by `content/pending_names.test.mjs`. |
 | `content/checks/text_scan.mjs` | The text scan: finds every installed interface key the game can still show, reports which are replaced, and checks every ZIN value for banned words, colour, icon and placeholder integrity, Windows-1252, copies, duplicates, language copies and people terms. `node content/checks/text_scan.mjs <stagedDir>` is also a CLI. |
 | `content/text_sweep.test.mjs` | Tests the sweep and the scan on a synthetic installed tree generated in a temporary directory, with a negative test for every check; two blocks use the installed game when `HOI4_GAME` is set. |
-| `content/data/` | Inputs: `countries.json` (countries from the map build), `labels.json` (reviewed drawing labels, used for names), `flags-cells.json` (the cell map the flag sheets were generated and sliced with). |
+| `content/lib/roster.mjs` | The roster loader: `countryTable()` (the 156 realms in the shape the modules read), `successor()` (the realm that took an old row's role), `cultureRows()`, `stateOwners()` and the list of the map generator's superseded country files. Tested by `content/roster.test.mjs`; the tag rules are in `content/lib/tags.mjs` (`content/tags.test.mjs`). |
+| `content/data/` | Inputs: `labels.json` (reviewed drawing labels, used for names), `flags-cells.json` (the cell map the flag sheets were generated and sliced with). |
 
 ## Focus trees
 
@@ -160,8 +161,8 @@ Fallbacks:
 - **Flag slices.** When `$ZIN_ART/flags/` is missing, the flags are cut again from the sheets. The cuts go into a
   content-addressed folder under `<OS temp>/zin-content-flags/`, never inside the repository. The cell map is
   `$ZIN_ART/jobs/flags-cells.json` or its tracked copy `content/data/flags-cells.json`. It must be the map the sheets
-  were generated with, so a test fails if the two differ. `art/flag-jobs.mjs` derives a map from today's table,
-  which no longer matches the existing sheets. Use it only when generating new sheets.
+  were generated with, so a test fails if the two differ. Those sheets are the retired roster's; a realm that continues
+  an old row flies that row's flag until its own heraldry is generated (`art/flag-jobs.mjs` writes those jobs as new sheets).
 - **3D units.** A job root under `docs/assets/hoi4_3d_model_jobs/models_3d/<id>/` whose `export/` and `textures/`
   folders are both absent (they are gitignored) is read from the shipped copies in `gfx/models/units/zin/<id>/`.
   These hold the same bytes under their staged names.
@@ -212,8 +213,8 @@ node tools/content/preview.mjs <staged>/gfx/leaders/zin preview.png
 
 `cd tools && npm run build` and `npm test` run the first two commands with their defaults.
 
-When you generate new flag sheets, copy the new `$ZIN_ART/jobs/flags-cells.json` to `content/data/flags-cells.json`
-in the same change. New art reaches `art/source/` only through a build and an apply.
+The realms' sheets (`realm-flags-sheet-NN.png`) are not generated yet; switching `modules/art.mjs` to their cell map
+(`realm-flags-cells.json`) is part of that generation, see `docs/plans/roster_integration/transition.md`. New art reaches `art/source/` only through a build and an apply.
 
 ## Limits
 
@@ -222,5 +223,6 @@ in the same change. New art reaches `art/source/` only through a build and an ap
   `.zin-content.json` lists those files, so on a clone without them, `apply` would drop them from the manifest.
   Apply on the owner's machine.
 - `apply.mts` needs a hoi4-agent-tools checkout. The engine is not vendored into this repository.
-- The politics step (`zin-politics-v4.mts`, which writes country history and flags) still lives in the hoi4-agent-tools
-  `.tmp` folder. It imports the old builder copy there.
+- The country tags, country files, histories, names and flags of the realms are written by the builder
+  (`content/modules/countries.mjs`); the state owners still come from the politics step. Before an apply, the map
+  generator's files of the 305 retired rows must go: see `docs/plans/roster_integration/transition.md`.

@@ -1,0 +1,612 @@
+{
+ "schema": 1,
+ "note": "Leader and advisor traits of the characters of Aoaz (docs/design/characters_part1.md and characters_part2.md, section 4). Country-leader traits, random = no, usable by rulers and advisors; every modifier is checked against the installed documentation/modifiers_documentation.md by the characters module (modules/characters.mjs). Values are design targets for the balance pass.",
+ "traits": {
+  "zin_trait_horse_lord": {
+   "name": "Horse-Lord",
+   "kind": "leader",
+   "modifier": {
+    "mobilization_speed": 0.1,
+    "war_support_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_pass_lord": {
+   "name": "Lord of the Pass",
+   "kind": "leader",
+   "modifier": {
+    "trade_opinion_factor": 0.1,
+    "dig_in_speed_factor": 0.1
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_marcher_lord": {
+   "name": "Marcher-Lord",
+   "kind": "leader",
+   "modifier": {
+    "army_core_defence_factor": 0.05,
+    "war_support_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_guild_master": {
+   "name": "Master of the Guilds",
+   "kind": "leader",
+   "modifier": {
+    "production_speed_buildings_factor": 0.05,
+    "consumer_goods_factor": -0.02
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_cord_mother": {
+   "name": "Keeper of the Eldest Cord",
+   "kind": "leader",
+   "modifier": {
+    "drift_defence_factor": 0.2,
+    "stability_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_hold_lord": {
+   "name": "Lord of the Deep Hall",
+   "kind": "leader",
+   "modifier": {
+    "local_resources_factor": 0.05,
+    "production_factory_max_efficiency_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_hobgoblin_king": {
+   "name": "The Biggest Hobgoblin",
+   "kind": "leader",
+   "modifier": {
+    "recruitable_population_factor": 0.05,
+    "army_attack_factor": 0.03,
+    "stability_factor": -0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_hidden_king": {
+   "name": "King of a Hidden Holt",
+   "kind": "leader",
+   "modifier": {
+    "encryption_factor": 0.25,
+    "army_core_defence_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_slow_eldest": {
+   "name": "The Eldest Speaks Last",
+   "kind": "leader",
+   "modifier": {
+    "army_core_defence_factor": 0.15,
+    "political_power_factor": -0.1
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_cairn_keeper": {
+   "name": "Keeper of the Cairns",
+   "kind": "leader",
+   "modifier": {
+    "army_defence_factor": 0.05,
+    "stability_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_warden_of_the_fields": {
+   "name": "Warden of the Fields",
+   "kind": "leader",
+   "modifier": {
+    "consumer_goods_factor": -0.03,
+    "stability_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_river_king": {
+   "name": "Crowned in the Rising",
+   "kind": "leader",
+   "modifier": {
+    "stability_factor": 0.05,
+    "research_speed_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_banker_prince": {
+   "name": "Banker on the Throne",
+   "kind": "leader",
+   "modifier": {
+    "political_power_gain": 0.1,
+    "war_support_factor": -0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_forge_prince": {
+   "name": "Forge-Prince",
+   "kind": "leader",
+   "modifier": {
+    "production_factory_max_efficiency_factor": 0.05,
+    "trade_opinion_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_captains_blood": {
+   "name": "Captains' Blood",
+   "kind": "leader",
+   "modifier": {
+    "navy_org_factor": 0.05,
+    "naval_speed_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_fire_tithe": {
+   "name": "Payer of the Fire-Tithe",
+   "kind": "leader",
+   "modifier": {
+    "stability_factor": 0.05,
+    "consumer_goods_factor": 0.02
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_well_lord": {
+   "name": "Lord of the Wells",
+   "kind": "leader",
+   "modifier": {
+    "heat_attrition_factor": -0.15,
+    "supply_consumption_factor": -0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_lamp_keeper": {
+   "name": "Keeper of the Lamps",
+   "kind": "leader",
+   "modifier": {
+    "opinion_gain_monthly_factor": 0.1,
+    "stability_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_salt_for_silence": {
+   "name": "Salt for Silence",
+   "kind": "leader",
+   "modifier": {
+    "war_support_factor": -0.1,
+    "consumer_goods_factor": -0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_storm_pilot": {
+   "name": "Storm-Pilot",
+   "kind": "leader",
+   "modifier": {
+    "naval_speed_factor": 0.1,
+    "trade_opinion_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_pact_lord": {
+   "name": "Pact-Bound Lord",
+   "kind": "leader",
+   "modifier": {
+    "army_morale_factor": 0.05,
+    "army_attack_factor": 0.05,
+    "stability_factor": -0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_twin_crowns": {
+   "name": "One of Two Crowns",
+   "kind": "leader",
+   "modifier": {
+    "political_power_factor": -0.05,
+    "army_defence_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_king_of_demons": {
+   "name": "King of Demons",
+   "kind": "leader",
+   "modifier": {
+    "army_morale_factor": 0.1,
+    "improve_relations_maintain_cost_factor": 0.15
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_radiant_speaker": {
+   "name": "Radiant Speaker",
+   "kind": "leader",
+   "modifier": {
+    "stability_factor": 0.1,
+    "conscription_factor": -0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_sanctuary_speaker": {
+   "name": "Speaker of a Sanctuary",
+   "kind": "leader",
+   "modifier": {
+    "stability_factor": 0.05,
+    "research_speed_factor": 0.02
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_temple_debtor": {
+   "name": "In the Temple's Debt",
+   "kind": "leader",
+   "modifier": {
+    "consumer_goods_factor": -0.03,
+    "drift_defence_factor": -0.1
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_ice_hardy": {
+   "name": "Hardy as the Ice",
+   "kind": "leader",
+   "modifier": {
+    "winter_attrition_factor": -0.15
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_lord_of_the_boats": {
+   "name": "Lord of the Boats",
+   "kind": "leader",
+   "modifier": {
+    "navy_intel_factor": 0.1,
+    "naval_speed_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_mine_king": {
+   "name": "Lord of Mines and Forts",
+   "kind": "leader",
+   "modifier": {
+    "local_resources_factor": 0.05,
+    "army_core_defence_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_secluded_eldest": {
+   "name": "Speaks Rarely to Outsiders",
+   "kind": "leader",
+   "modifier": {
+    "drift_defence_factor": 0.2,
+    "army_core_defence_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_unknown_counsel": {
+   "name": "Counsel Nobody Hears",
+   "kind": "leader",
+   "modifier": {
+    "encryption_factor": 0.25,
+    "army_core_defence_factor": 0.1
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_keeper_of_the_moot": {
+   "name": "Keeper of the Well-Moot",
+   "kind": "leader",
+   "modifier": {
+    "justify_war_goal_time": 0.5,
+    "stability_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_captain_general": {
+   "name": "Captain-General",
+   "kind": "advisor",
+   "slot": "army_chief",
+   "modifier": {
+    "army_org_factor": 0.05,
+    "army_morale_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_master_of_horse": {
+   "name": "Master of Horse",
+   "kind": "advisor",
+   "slot": "army_chief",
+   "modifier": {
+    "army_speed_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_siege_master": {
+   "name": "Master of Siege-Works",
+   "kind": "advisor",
+   "slot": "army_chief",
+   "modifier": {
+    "army_attack_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_quartermaster": {
+   "name": "Quartermaster of the Host",
+   "kind": "advisor",
+   "slot": "army_chief",
+   "modifier": {
+    "supply_consumption_factor": -0.05,
+    "out_of_supply_factor": -0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_parade_marshal": {
+   "name": "Marshal of the Parades",
+   "kind": "advisor",
+   "slot": "army_chief",
+   "modifier": {
+    "army_morale_factor": 0.03,
+    "war_support_factor": 0.03,
+    "army_org_factor": -0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_warden_of_beacons": {
+   "name": "Warden of the Beacons",
+   "kind": "advisor",
+   "slot": "high_command",
+   "modifier": {
+    "army_intel_factor": 0.15,
+    "dig_in_speed_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_master_of_scouts": {
+   "name": "Master of Scouts",
+   "kind": "advisor",
+   "slot": "political_advisor",
+   "modifier": {
+    "army_intel_factor": 0.1,
+    "civilian_intel_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_master_of_ships": {
+   "name": "Master of Ships",
+   "kind": "advisor",
+   "slot": "navy_chief",
+   "modifier": {
+    "navy_org_factor": 0.05,
+    "naval_speed_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_galley_master": {
+   "name": "Master of Galleys",
+   "kind": "advisor",
+   "slot": "navy_chief",
+   "modifier": {
+    "naval_damage_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_weather_reader": {
+   "name": "Reader of Weather",
+   "kind": "advisor",
+   "slot": "navy_chief",
+   "modifier": {
+    "naval_speed_factor": 0.05,
+    "navy_intel_factor": 0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_powder_master": {
+   "name": "Master of Powder",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "research_speed_factor": 0.02,
+    "army_attack_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_song_warden": {
+   "name": "Singer of Wards",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "army_core_defence_factor": 0.05,
+    "research_speed_factor": 0.02
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_star_reader": {
+   "name": "Reader of Stars",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "supply_consumption_factor": -0.05,
+    "heat_attrition_factor": -0.1
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_sun_healer": {
+   "name": "Healer of the Noon",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "land_reinforce_rate": 0.02,
+    "attrition": -0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_lantern_warden": {
+   "name": "Warden of the Lantern",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "army_morale_factor": 0.03,
+    "stability_factor": 0.03
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_pact_broker": {
+   "name": "Broker of Pacts",
+   "kind": "advisor",
+   "slot": "political_advisor",
+   "modifier": {
+    "political_power_factor": 0.05,
+    "army_attack_factor": 0.03,
+    "stability_factor": -0.02
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_adv_hedge_wise": {
+   "name": "Wise of the Hedge",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "drift_defence_factor": 0.1,
+    "attrition": -0.05
+   },
+   "source": "characters_part1.md"
+  },
+  "zin_trait_bread_right": {
+   "name": "The Bread-Right of the Frost-Hall",
+   "kind": "leader",
+   "modifier": {
+    "stability_factor": 0.03,
+    "opinion_gain_monthly_factor": 0.1,
+    "war_support_factor": -0.05
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_refuser_of_crowns": {
+   "name": "Refuser of Crowns",
+   "kind": "leader",
+   "modifier": {
+    "drift_defence_factor": 0.15,
+    "war_support_factor": 0.03
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_free_steading": {
+   "name": "First Among Free Lords",
+   "kind": "leader",
+   "modifier": {
+    "drift_defence_factor": 0.1,
+    "stability_factor": 0.03
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_eldest_song": {
+   "name": "The Eldest's Song",
+   "kind": "leader",
+   "modifier": {
+    "stability_factor": 0.05,
+    "winter_attrition_factor": -0.1
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_brute_king": {
+   "name": "Brute-King",
+   "kind": "leader",
+   "modifier": {
+    "army_defence_factor": 0.05,
+    "war_support_factor": 0.05
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_big_snik": {
+   "name": "Big Snik",
+   "kind": "leader",
+   "modifier": {
+    "production_factory_max_efficiency_factor": 0.03,
+    "trade_opinion_factor": 0.1
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_troll_king": {
+   "name": "King of the Night",
+   "kind": "leader",
+   "modifier": {
+    "army_core_defence_factor": 0.2,
+    "army_attack_factor": 0.03
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_contract_book": {
+   "name": "Keeper of the Contract-Book",
+   "kind": "leader",
+   "modifier": {
+    "experience_gain_army": 0.05,
+    "trade_opinion_factor": 0.05
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_sea_king": {
+   "name": "Sea-King",
+   "kind": "leader",
+   "modifier": {
+    "navy_org_factor": 0.05,
+    "convoy_raiding_efficiency_factor": 0.1
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_wreck_right": {
+   "name": "Lord of the Wreck-Right",
+   "kind": "leader",
+   "modifier": {
+    "convoy_raiding_efficiency_factor": 0.05,
+    "naval_detection": 0.05
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_ransom_tide": {
+   "name": "Sworn to the Ransom Tide",
+   "kind": "leader",
+   "modifier": {
+    "convoy_raiding_efficiency_factor": 0.1,
+    "stability_factor": -0.03
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_reader_of_names": {
+   "name": "Reader of the Names",
+   "kind": "leader",
+   "modifier": {
+    "stability_factor": 0.05,
+    "drift_defence_factor": 0.1
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_trait_guest_right": {
+   "name": "Keeper of the Guest-Right",
+   "kind": "leader",
+   "modifier": {
+    "opinion_gain_monthly_factor": 0.15,
+    "stability_factor": 0.03
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_adv_storm_speaker": {
+   "name": "Storm-Speaker",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "winter_attrition_factor": -0.1,
+    "naval_speed_factor": 0.05
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_adv_tally_keeper": {
+   "name": "Keeper of the Wave-Tally",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "drift_defence_factor": 0.15,
+    "stability_factor": 0.02
+   },
+   "source": "characters_part2.md"
+  },
+  "zin_adv_fire_speaker": {
+   "name": "Fire-Speaker of the Holds",
+   "kind": "advisor",
+   "slot": "theorist",
+   "modifier": {
+    "stability_factor": 0.03,
+    "army_morale_factor": 0.03
+   },
+   "source": "characters_part2.md"
+  }
+ }
+}

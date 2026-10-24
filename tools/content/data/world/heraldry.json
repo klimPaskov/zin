@@ -6437,7 +6437,7 @@
     "restoration_charge": "beacon_peak"
    },
    "source_flag_note": "A gate-tower between two peaks on grey; the dominion's charter-seal border.",
-   "supersedes": "vale_folk",
+   "supersedes": "wall_folk",
    "refused_from_source": "The source card's gate-tower is not drawn: a tower in the pass reads as masonry of the Great Wall, which is a natural range."
   },
   "hilofrim_herders": {
@@ -6525,7 +6525,7 @@
     "restoration_charge": "stone_fold"
    },
    "source_flag_note": "A sheep and a cairn on green.",
-   "supersedes": "vale_folk"
+   "supersedes": "wall_folk"
   },
   "strait_folk": {
    "id": "strait_folk",
@@ -8837,7 +8837,7 @@
    },
    "source_flag_note": "Black or grey, a tower or chain.",
    "aliases": [
-    "melkgard_warlords"
+    "isengard_warlords"
    ]
   },
   "vindael_seafarers": {
@@ -8932,7 +8932,7 @@
    },
    "source_flag_note": "Teal, a ship or wind-rose.",
    "aliases": [
-    "vindael_seafarers"
+    "windwaith_seafarers"
    ]
   },
   "gunwyn_clans": {
@@ -9060,7 +9060,7 @@
    },
    "source_flag_note": "Plaid or a stag/stone ring on a clan colour.",
    "aliases": [
-    "gunwyn_clans"
+    "gunwaith_clans"
    ]
   },
   "ember_freeholds": {
@@ -9177,36 +9177,36 @@
    },
    "source_flag_note": "Sand with a boat or salt-pan.",
    "aliases": [
-    "ember_freeholds"
+    "ember_lands_freeholds"
    ]
   }
  },
  "renames": {
   "cultures": [
    {
-    "from": "melkgard_warlords",
+    "from": "isengard_warlords",
     "to": "melkgard_warlords",
     "reason": "renamed melkgard_warlords: Isengard is a name of other fiction; the realm is Melkgard"
    },
    {
-    "from": "vindael_seafarers",
+    "from": "windwaith_seafarers",
     "to": "vindael_seafarers",
     "reason": "renamed vindael_seafarers: \"-waith\" names are retired; the arm is Vindael"
    },
    {
-    "from": "gunwyn_clans",
+    "from": "gunwaith_clans",
     "to": "gunwyn_clans",
     "reason": "renamed gunwyn_clans: \"-waith\" names are retired; the kingdom is Gunwyn"
    },
    {
-    "from": "ember_freeholds",
+    "from": "ember_lands_freeholds",
     "to": "ember_freeholds",
     "reason": "renamed ember_freeholds: the region is the Ember Lands (owner, 24 October 2026)"
    }
   ],
   "retired": [
    {
-    "id": "vale_folk",
+    "id": "wall_folk",
     "into": [
      "vale_folk",
      "hilofrim_herders"
@@ -9216,11 +9216,11 @@
   ],
   "faiths": [
    {
-    "from": "pass_vigil",
+    "from": "stone_vigil",
     "to": "pass_vigil"
    },
    {
-    "from": "flood_stair",
+    "from": "river_temples",
     "to": "flood_stair"
    }
   ]

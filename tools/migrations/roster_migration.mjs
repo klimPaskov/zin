@@ -52,9 +52,13 @@ function primaryOf(m) {
   return key ? realmByKey.get(key) : null;
 }
 
+// quietly(fn): run a migration step without recording it (to ask what a value would become).
+let QUIET = false;
+const quietly = fn => { QUIET = true; try { return fn(); } finally { QUIET = false; } };
+const log = (list, entry) => { if (!QUIET) list.push(entry); };
 const report = { schema: 1, written: 'tools/migrations/roster_migration.mjs', world: {}, renames: [], tags: [], names: [], keys: [], deduped: [], dropped: [], unresolved: [], focusCountries: [], special: [], code: { tags: [], names: [], tests: [] }, retired: [] };
 const writes = new Map();
-const put = (r, text) => { writes.set(r, text); };
+const put = (r, text) => { if (text !== readFileSync(abs(r), 'utf8')) writes.set(r, text); else writes.delete(r); };
 const read = r => (writes.has(r) ? writes.get(r) : readFileSync(abs(r), 'utf8'));
 // Whole-file serialisation keeps the file's indentation (the merged world files are written by JSON.stringify).
 const jsonText = (v, like) => JSON.stringify(v, null, /^\{\r?\n( +)"/.exec(like)?.[1]?.length ?? 1) + (like.endsWith('\n') ? '\n' : '');
@@ -101,6 +105,7 @@ function mergeCultures() {
   const r = `${WORLD}/cultures.json`, nr = `${WORLD}/cultures_new.json`;
   if (!existsSync(abs(nr))) return;
   const text = read(r), C = JSON.parse(text), N = readJson(nr);
+  // Idempotent: a second run finds the renamed ids gone and the new entries equal, and writes nothing.
   ID_RENAMES = N.renames.filter(x => x.newId && x.kind !== 'dialect').map(x => ({ kind: x.kind, from: x.id, to: x.newId, name: x.newName ?? null }));
   const dialects = N.renames.filter(x => x.kind === 'dialect').map(x => { const [lang, from] = x.id.split(':'), [, to] = x.newId.split(':'); return { lang, from, to }; });
   const strip = ({ countries, secondary_countries, ...rest }) => rest;
@@ -129,15 +134,17 @@ function mergeCultures() {
   C.written = N.written;
   put(r, jsonText(C, text));
   report.world.cultures = { added: Object.keys(N.cultures), faiths: Object.keys(N.faiths), renames: ID_RENAMES.map(x => `${x.kind} ${x.from} -> ${x.to}`), dialects: dialects.map(d => `${d.lang}:${d.from} -> ${d.to}`), peopleChanges: N.renames.filter(x => x.field).map(x => `${x.id}.${x.field}: ${x.from} -> ${x.to}`) };
-  report.retired.push({ file: nr, why: 'merged into cultures.json' });
+  report.world.culturesInput = `${nr} stays: the heraldry generator (tools/content/heraldry/build_heraldry.mjs) reads its grammars and renames`;
 }
 
 // Culture, faith and dialect id renames in every builder source and design file.
 const NOT_MINE = [`${DATA}/presentation-cells.json`, `${DATA}/branding.json`, `${WORLD}/reckonings.json`];
+// The heraldry generator and its data already use the new ids and record the renames in their own tables.
+const RECORDS = [`${WORLD}/heraldry.json`, 'tools/content/heraldry/'];
 function applyIdRenames() {
   if (!ID_RENAMES.length) return;
   const files = [...listFiles('tools/content', /\.(json|mjs|mts)$/), ...listFiles('docs/design', /\.json$/)]
-    .filter(f => ![`${WORLD}/cultures.json`, `${WORLD}/cultures_new.json`, `${WORLD}/legacy_countries.json`, `${WORLD}/country_cultures.json`, `${DATA}/countries.json`, ...NOT_MINE].includes(f) && !f.startsWith(`${DATA}/vanilla/`) && !f.startsWith(`${DATA}/ui/`) && !f.startsWith('tools/content/fixtures/focus/expected/'));
+    .filter(f => ![`${WORLD}/cultures.json`, `${WORLD}/cultures_new.json`, `${WORLD}/legacy_countries.json`, `${WORLD}/country_cultures.json`, `${DATA}/countries.json`, ...NOT_MINE].includes(f) && !RECORDS.some(x => f === x || f.startsWith(x)) && !f.startsWith(`${DATA}/vanilla/`) && !f.startsWith(`${DATA}/ui/`) && !f.startsWith('tools/content/fixtures/focus/expected/'));
   for (const f of files) {
     const text = read(f);
     let t = text;
@@ -175,8 +182,8 @@ function migrateTagsInString(s, where) {
   return s.replace(TAG_RE, t => {
     if (!OLD_TAGS.has(t)) return t;
     const m = rowByTag.get(t), p = primaryOf(m);
-    if (!p) { report.unresolved.push({ where, ref: t, oldName: m.oldName, fate: m.fate, why: 'a removed row with no successor' }); return t; }
-    report.tags.push({ where, from: t, to: p.tag, oldName: m.oldName, fate: m.fate, realm: p.key });
+    if (!p) { log(report.unresolved, { where, ref: t, oldName: m.oldName, fate: m.fate, why: 'a removed row with no successor' }); return t; }
+    log(report.tags, { where, from: t, to: p.tag, oldName: m.oldName, fate: m.fate, realm: p.key });
     return p.tag;
   });
 }
@@ -188,12 +195,26 @@ const pathKey = (p, k) => `${p}.${/^[A-Za-z_]\w*$/.test(k) ? k : JSON.stringify(
 const OLD_NAMES = [...rowByName.keys()].filter(n => !realmNames.has(n)).sort((a, b) => b.length - a.length);
 const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const PREFIXED_RE = new RegExp(`\\b(capital|tag|country|subject_of|war):(${OLD_NAMES.flatMap(n => [n, n.replace(/ /g, '_')]).map(escRe).join('|')})(?![A-Za-z])`, 'g');
+// TAG[Name] and CAPSTATE[Name] of the diplomacy and journey data.
+const BRACKET_RE = new RegExp(`\\b(TAG|CAPSTATE)\\[(${OLD_NAMES.map(escRe).join('|')})\\]`, 'g');
 function migratePrefixed(s, where) {
-  return s.replace(PREFIXED_RE, (m, prefix, raw) => {
+  s = s.replace(BRACKET_RE, (m, kind, name) => {
+    const row = rowByName.get(name), r = primaryOf(row);
+    if (!r) { log(report.unresolved, { where, ref: m, why: 'a removed row with no successor' }); return m; }
+    log(report.names, { where, from: m, to: `${kind}[${r.name}]`, fate: row.fate });
+    return `${kind}[${r.name}]`;
+  });
+  return s.replace(PREFIXED_RE, (m, prefix, raw, offset, whole) => {
+    // An old name that begins a realm's name is that realm (country:Zol's Mistake), not the old row.
+    const rest = whole.slice(offset + prefix.length + 1);
+    if ([...realmNames].some(n => n !== raw && n.startsWith(raw) && (rest.startsWith(n) || rest.startsWith(n.replace(/ /g, '_'))))) return m;
     const name = rowByName.has(raw) ? raw : raw.replace(/_/g, ' '), row = rowByName.get(name), r = row && primaryOf(row);
-    if (!r) { report.unresolved.push({ where, ref: m, why: 'a removed row with no successor' }); return m; }
-    report.names.push({ where, from: m, to: `${prefix}:${r.name}`, fate: row.fate });
-    return `${prefix}:${raw.includes('_') ? r.name.replace(/ /g, '_') : r.name}`;
+    if (!r) { log(report.unresolved, { where, ref: m, why: 'a removed row with no successor' }); return m; }
+    log(report.names, { where, from: m, to: `${prefix}:${r.name}`, fate: row.fate });
+    // A tag: token outside {{...}} may stand in a space-separated line (to=tag:Country_Name), so its spaces become underscores, which
+    // the events reader turns back into spaces.
+    const braced = whole.slice(Math.max(0, offset - 2), offset) === '{{';
+    return `${prefix}:${raw.includes('_') || (prefix === 'tag' && !braced) ? r.name.replace(/ /g, '_') : r.name}`;
   });
 }
 function migrateString(v, p, file, parentKey) {
@@ -201,7 +222,7 @@ function migrateString(v, p, file, parentKey) {
   if (rowByName.has(s) && !realmNames.has(s) && !PROSE_KEYS.has(parentKey) && !denied(file, p)) {
     const m = rowByName.get(s), r = primaryOf(m);
     if (!r) return { drop: true, ref: s, m };
-    report.names.push({ where: `${file} ${p}`, from: s, to: r.name, fate: m.fate });
+    log(report.names, { where: `${file} ${p}`, from: s, to: r.name, fate: m.fate });
     s = r.name;
   }
   return { value: s };
@@ -230,12 +251,13 @@ function migrateNode(node, p, file, parentKey, edits) {
     return null;
   }
   if (node.type === 'array') {
-    const removed = new Set(), seen = [];
+    // A migrated entry that repeats an entry the list already holds (before or after it) is removed; the unchanged entry stays.
+    const removed = new Set(), seen = [], kept = new Set(node.items.filter(it => it.type === 'string' && quietly(() => migrateString(it.value, p, file, parentKey)).value === it.value).map(it => it.value));
     node.items.forEach((it, i) => {
       if (it.type === 'string') {
         const r = migrateString(it.value, `${p}[${i}]`, file, parentKey);
         if (r.drop) { removed.add(i); report.dropped.push({ where: `${file} ${p}[${i}]`, ref: r.ref, oldTag: r.m.oldTag, why: `${r.m.oldName} was removed with no successor (${r.m.reason})` }); return; }
-        if (r.value !== it.value && seen.includes(r.value)) { removed.add(i); report.deduped.push({ where: `${file} ${p}`, value: r.value, from: it.value }); return; }
+        if (r.value !== it.value && (seen.includes(r.value) || kept.has(r.value))) { removed.add(i); report.deduped.push({ where: `${file} ${p}`, value: r.value, from: it.value }); return; }
         if (r.value !== it.value) edits.push({ start: it.start, end: it.end, text: JSON.stringify(r.value) });
         seen.push(r.value);
       } else migrateNode(it, `${p}[${i}]`, file, parentKey, edits);
@@ -330,6 +352,51 @@ function demographyCountries() {
   report.special.push({ file: f, what: 'The 305 per-country rows are removed: the roster gives each realm its population (lib/roster.mjs).' });
 }
 
+// The regional mechanics check that their data names every realm of their region and count the realms: the counts follow the roster,
+// and the Dark Lands list of other holds names every Dark Lands realm that no other field of the table names (the new Burnikit,
+// Veshazel and Hoorunoron included). Runs after the generic pass.
+const LEGACY_SCAN = { middle_lands: 'Rush Land', north_lands: 'East-Earth', cold_lands: 'Cold Lands', west_lands: 'West-Earth', dark_lands: 'Dark Lands', ember_lands: 'Ember Lands', east_lands: 'South-Earth', south_lands: 'South-Earth', islands_of_the_south: 'Islands of The South', tritons_islands: 'Tritons Islands', lands_of_the_sun: 'Sunhot', magical_lands: 'Magical Lands', zols_mistake: 'Kusmeel' };
+const scanOfRealm = r => LEGACY_SCAN[r.region];
+const GAME_PEOPLE = { dwarves: 'men', gnomes: 'men', small_folk: 'men', goblins: 'orcs', hobgoblins: 'orcs', dwarf_goblins: 'orcs', ogres: 'orcs', tree_people: 'ents', mycids: 'elves' };
+function setMember(text, pathKeys, value) {
+  let node = parseJsonPositions(text);
+  for (const k of pathKeys) node = node.members.find(m => m.key.value === k).value;
+  return applyEdits(text, [{ start: node.start, end: node.end, text: JSON.stringify(value) }]);
+}
+function regionalTables() {
+  const count = scan => roster.realms.filter(r => scanOfRealm(r) === scan).length;
+  for (const [file, keys] of [['mech_regions_cold.json', ['expectedCountries']], ['mech_regions_dark.json', ['expectedCountries']], ['mech_regions_east.json', ['expectedCountries']], ['mech_regions_sun.json', ['expectedCountries', 'expectedSunhotRealms']]]) {
+    const f = `${DATA}/${file}`; let text = read(f);
+    const R = JSON.parse(text).roster, before = {};
+    for (const k of keys) {
+      const want = k === 'expectedSunhotRealms' ? roster.realms.filter(r => scanOfRealm(r) === R.scan && (GAME_PEOPLE[r.people] ?? r.people) === 'sun_elves').length : count(R.scan);
+      before[k] = R[k];
+      if (R[k] !== want) text = setMember(text, ['roster', k], want);
+    }
+    if (text !== read(f)) { put(f, text); report.special.push({ file: f, what: `The realm counts follow the roster: ${keys.map(k => `${k} ${before[k]} -> ${JSON.parse(text).roster[k]}`).join(', ')}.` }); }
+  }
+  // The east's lean and friendship tables belong to the courts: a row merged into Noris or Stabilo leaves them.
+  {
+    const f = `${DATA}/mech_regions_east.json`; let text = read(f);
+    const R = JSON.parse(text).roster, powers = new Set([R.noris, R.stabilo]), gone = [];
+    const leans = Object.fromEntries(Object.entries(R.leans).filter(([n]) => !powers.has(n) || !gone.push(`leans.${n}`)));
+    if (Object.keys(leans).length !== Object.keys(R.leans).length) text = setMember(text, ['roster', 'leans'], leans);
+    for (const k of ['befriendNoris', 'befriendStabilo', 'befriendBoth']) {
+      const list = R[k].filter(n => !powers.has(n) || !gone.push(`${k}.${n}`));
+      if (list.length !== R[k].length) text = setMember(text, ['roster', k], list);
+    }
+    if (gone.length) { put(f, text); report.special.push({ file: f, what: 'Rows merged into Noris or Stabilo leave the courts\' lean and friendship tables.', removed: gone }); }
+  }
+  const f = `${DATA}/mech_regions_dark.json`, text = read(f), R = JSON.parse(text).roster;
+  const named = new Set(Object.entries(R).filter(([k, v]) => typeof v === 'string' && k !== 'scan').map(([, v]) => v));
+  const dark = roster.realms.filter(r => scanOfRealm(r) === R.scan).map(r => r.name);
+  const holds = [...new Set([...R.other_holds.filter(n => !named.has(n) && dark.includes(n)), ...dark.filter(n => !named.has(n) && !R.other_holds.includes(n))])];
+  if (JSON.stringify(holds) !== JSON.stringify(R.other_holds)) {
+    put(f, setMember(text, ['roster', 'other_holds'], holds));
+    report.special.push({ file: f, what: 'The other holds name each Dark Lands realm that no other field names, once.', before: R.other_holds, after: holds });
+  }
+}
+
 // ------------------------------------------------------------------------------------------------------------ 3. code
 // Module and library code (not the tests): a quoted old country name is a lookup of that country (every one was reviewed: none is a
 // person), so it becomes the successor's name; the pattern leaves "'Zol's Mistake'" alone. Tests are listed, not edited: their
@@ -371,6 +438,7 @@ applyIdRenames();
 concordDominions();
 demographyCountries();
 migrateJsonFiles();
+regionalTables();
 migrateCode();
 retire();
 
@@ -390,7 +458,7 @@ if (REPORT_ARG) writeFileSync(REPORT_ARG, JSON.stringify(report, null, 1) + '\n'
 if (APPLY && changes) {
   for (const [r, t] of writes) writeFileSync(abs(r), t);
   if (existsSync(abs(`${DATA}/countries.json`))) renameSync(abs(`${DATA}/countries.json`), abs(`${WORLD}/legacy_countries.json`));
-  for (const f of [`${WORLD}/country_cultures.json`, `${WORLD}/languages_new.json`, `${WORLD}/cultures_new.json`, 'docs/design/focus/regional_poyang.json']) if (existsSync(abs(f))) rmSync(abs(f));
+  for (const f of [`${WORLD}/country_cultures.json`, `${WORLD}/languages_new.json`, 'docs/design/focus/regional_poyang.json']) if (existsSync(abs(f))) rmSync(abs(f));
   mkdirSync(path.dirname(abs(REPORT_FILE)), { recursive: true });
   writeFileSync(abs(REPORT_FILE), JSON.stringify(report, null, 1) + '\n');
 }

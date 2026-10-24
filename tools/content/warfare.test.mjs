@@ -1,7 +1,8 @@
 // Tests for the warfare module (docs/specs/03_gameplay/01_warfare.md, 09_naval_air_doctrines.md): sub-units, equipment, ship
 // modules, groups, categories, tactics and the name lists. They use only builder output: a Staged set built from the roster of
-// data/countries.json. Negative tests plant a bad row in a copy of the data and expect the module to refuse it.
+// the roster (lib/roster.mjs). Negative tests plant a bad row in a copy of the data and expect the module to refuse it.
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { readFileSync, existsSync } from 'node:fs';
@@ -19,7 +20,7 @@ import {
 import { UNITS as UNIT_MODEL_ASSETS } from './modules/units3d.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const { labels } = JSON.parse(await readFile(path.join(here, 'data/labels.json'), 'utf8'));
 const banned = compileBanned(JSON.parse(await readFile(path.join(here, 'data/banned_words.json'), 'utf8')));
 const raw0 = await loadRaw();
@@ -287,7 +288,7 @@ test('The deathless invariant: no mortal or elven division comes within half of 
     giants: ['zin_giants_host', 'zin_giants_host', 'zin_giants_host', 'zin_giants_hurlers', 'zin_support_ballistae'],
     shachihata: ['zin_demons_shachihata', 'zin_demons_netherborn', 'zin_demons_netherborn', 'zin_demons_netherborn'],
   };
-  const WHO = { men_warded: ['men'], men_ballista: ['men'], elves_host: ['elves'], sun_guard: ['sun_elves'], orc_brute: ['orcs'], volgan_vanguard: ['country:Volgan', 'demons', 'orcs'], giants: ['giants'], shachihata: ['demons'] };
+  const WHO = { men_warded: ['men'], men_ballista: ['men'], elves_host: ['elves'], sun_guard: ['sun_elves'], orc_brute: ['orcs'], volgan_vanguard: ['country:Puvulan', 'demons', 'orcs'], giants: ['giants'], shachihata: ['demons'] };
   for (const year of [1748, 1755, 1760, 1775, 1790]) for (const [name, ids] of Object.entries(templates)) {
     const prcs = ids.map(id => unitPiercing(model, id, year, WHO[name]));
     const dp = divisionPiercing(prcs);
@@ -395,12 +396,12 @@ test('The unit tags keep every engine category and add the five ZIN ones', () =>
 test('Every people can recruit a line unit whose gear its people can produce, and nobody recruits the granted units', () => {
   const producers = new Map();
   for (const a of [...raw0.equipment.land, ...raw0.equipment.air]) producers.set(a.id, new Set(a.prod ?? []));
-  const peoples = new Set(model.cultureRows.map(c => c.people));
+  const peoples = new Set(model.cultureRows.map(c => c.gamePeople));
   for (const people of peoples) {
     const key = people === 'the_dead' ? null : people;
-    const list = key ? raw0.units.recruit.line[key] : [...raw0.units.recruit.line['country:Volgan'], ...raw0.units.recruit.line['country:Zol']];
+    const list = key ? raw0.units.recruit.line[key] : [...raw0.units.recruit.line['country:Puvulan'], ...raw0.units.recruit.line["country:Zol's Mistake"]];
     assert(list.length > 0, people);
-    const buildable = list.filter(id => Object.keys(model.unitById.get(id).needs).every(a => (people === 'the_dead' ? ['Volgan', 'Zol'].some(c => producers.get(a)?.has(`country:${c}`) || producers.get(a)?.size === 0) : producers.get(a)?.has(people) || producers.get(a)?.has(`country:${people}`))) || ['zin_zol_deathless', 'zin_zol_deathless_crews'].includes(id));
+    const buildable = list.filter(id => Object.keys(model.unitById.get(id).needs).every(a => (people === 'the_dead' ? ['Puvulan', "Zol's Mistake"].some(c => producers.get(a)?.has(`country:${c}`) || producers.get(a)?.size === 0) : producers.get(a)?.has(people) || producers.get(a)?.has(`country:${people}`))) || ['zin_zol_deathless', 'zin_zol_deathless_crews'].includes(id));
     assert(buildable.length > 0, `${people} cannot produce the gear of any of its units`);
   }
   for (const id of ['zin_abyss_folk', 'zin_demons_shachihata', 'zin_demons_bound', 'zin_glo_bearer', 'zin_volgan_presence', 'zin_great_spirit', 'zin_zol_manifestation']) {
@@ -412,7 +413,7 @@ test('Every people can recruit a line unit whose gear its people can produce, an
 });
 test('The producers of the spec are written as people flags and the three named countries', () => {
   const t = text('common/units/equipment/zin_equipment_land.txt');
-  const volgan = countries.find(c => c.name === 'Volgan').tag;
+  const volgan = countries.find(c => c.name === 'Puvulan').tag;
   assert.match(t, new RegExp(`tag = ${volgan}`));
   assert.match(t, /has_country_flag = zin_people_trolls/);
   const grave = eqBlocks.get('zin_grave_arms_equipment');
@@ -471,7 +472,7 @@ test('Every realm of the roster has a host group in its culture\'s language and 
   const shipGroups = parse(ships).filter(e => e.k);
   const shipTags = new Map();
   for (const g of shipGroups) for (const t of listOf(field(g.v, 'for_countries'))) shipTags.set(t, (shipTags.get(t) ?? 0) + 1);
-  for (const c of countries) assert.equal(shipTags.get(c.tag), c.name === 'Zol' ? 1 : 4, `${c.name} ship groups`);
+  for (const c of countries) assert.equal(shipTags.get(c.tag), c.name === "Zol's Mistake" ? 1 : 4, `${c.name} ship groups`);
   const ids = parse(hosts).filter(e => e.k).map(e => e.k);
   assert.equal(new Set(ids).size, ids.length, 'duplicate group');
   assert(!ids.includes('ZIN_HOSTS'), 'the stage-1 stub keeps that id until the integrator removes it');
@@ -529,7 +530,9 @@ test('Agents\' code names come from each culture\'s callsign pool, the railway-g
   for (const key of ['destroyer', 'heavy_cruiser', 'battleship', 'submarine', 'codename', 'zin_dragon_equipment', 'zin_men_infantry', 'zin_trolls_brute']) assert(generic.some(x => x.k === key), key);
   const elven = model.cultureRows.filter(c => ['elves', 'sun_elves'].includes(c.people));
   assert.equal(names.filter(e => e.k && e.k !== 'generic').length, elven.length);
-  assert(elven.length >= 60);
+  // One dragon-flight list per elven realm of the roster (elves and sun elves).
+  assert.equal(elven.length, countries.filter(c => ['elves', 'sun_elves'].includes(c.people)).length);
+  assert(elven.length > 0);
 });
 
 // ------------------------------------------------------------------------------------------------ models
@@ -606,7 +609,7 @@ test('The ids file lists exactly what the build defines', async () => {
   assert.equal(file.modules.length, 16);
   assert(file.equipmentTypes.includes('zin_glo_blade_equipment_shard'));
   assert.equal(file.hostGroupByCountry.Aenor, 'ZIN_HOSTS_LAKE_AENORAN');
-  assert.equal(file.hostGroupByCountry.Zol, 'ZIN_HOSTS_ZOL');
+  assert.equal(file.hostGroupByCountry["Zol's Mistake"], 'ZIN_HOSTS_ZOL');
 });
 
 // ------------------------------------------------------------------------------------------------ negative tests
@@ -626,9 +629,9 @@ test('The module refuses a granted unit that a technology unlocks', () => reject
 test('The module refuses a default module that does not fit its hull', () => rejects(r => { r.naval.hulls[0].variants[0].defaults.armament = ['zin_mod_catapult_deck']; }, /does not fit/));
 test('The module refuses a hull with the wrong number of default armament modules', () => rejects(r => { r.naval.hulls[1].variants[0].defaults.armament = [null]; }, /armament defaults/));
 test('The module refuses a target stat its equipment cannot give', () => rejects(r => { const u = r.units.land.find(x => x.id === 'zin_support_sappers'); u.s = [0, 1, 5, 1, 1, 1, 0, 1, 4, 0, 1, 1]; }, /gives 0/));
-test('The module refuses a roster without Volgan', async () => {
+test('The module refuses a roster without Puvulan (the dead realm its data names)', async () => {
   const raw = clone();
-  await assert.rejects(prepareModel({ countries: countries.filter(c => c.name !== 'Volgan') }, raw).then(m => buildWarfare(new Staged(), { countries: countries.filter(c => c.name !== 'Volgan'), pools: buildNames(new Staged(), countries, labels), raw })), /Volgan/);
+  await assert.rejects(prepareModel({ countries: countries.filter(c => c.name !== 'Puvulan') }, raw).then(m => buildWarfare(new Staged(), { countries: countries.filter(c => c.name !== 'Puvulan'), pools: buildNames(new Staged(), countries, labels), raw })), /Puvulan/);
 });
 test('The build refuses a modern word in a player text', () => rejects(r => { r.units.land[1].desc = 'Foot soldiers armed with a rifle and a tank.'; }, /says/, { build: true }));
 test('The build refuses text that leaves Windows-1252', () => rejects(r => { r.units.land[1].name = 'Line Infantry 中'; }, /Windows-1252|says/, { build: true }));

@@ -5,7 +5,7 @@ None is invented here and none is baselined silently: each row's finding is in `
 When the art for a row ships, the finding disappears from the report and the build logs it as fixed; drop the row and regenerate the baseline entry with it.
 The findings that code or data could fix were fixed in the builder instead (docs/design/stage2/integration_r3.md, section "Asset findings").
 
-Totals: 779 rows (302 exact duplicates of the interface reskin, 297 focus icons over a tree's cap, 116 focus icons shared with a prerequisite, 38 focus icons over the game cap, 25 event pictures over the game cap, 1 portrait findings).
+Totals: 792 rows (15 realm flags of the roster integration, 302 exact duplicates of the interface reskin, 297 focus icons over a tree's cap, 115 focus icons shared with a prerequisite, 38 focus icons over the game cap, 25 event pictures over the game cap).
 
 ## Art the integration also needs that no check reports
 
@@ -14,6 +14,174 @@ Totals: 779 rows (302 exact duplicates of the interface reskin, 297 focus icons 
 | `gfx/flags/zin_host_of_eindil.tga` and its medium and small sizes | I1 flag (cosmetic) | The journey slice could derive it in code by recolouring Selen's flag; that would be new art made by code, so the build does not stage it (`buildEindilJourney` with `hostFlag: false`), and the cosmetic tag that shows it is not shipped yet | docs/specs/04_mechanics/eindil_journey.md; docs/design/stage2/mech_journey.md section 7 |
 | `GFX_zin_rule_<name>` for every ZIN game rule (29 x 30, `gfx/game_rules/zin/`, sprites in `interface/zin_rules.gfx`) | rule icons | No ZIN rule carries an icon until these exist (`modules/rules.mjs`) | docs/specs/07_interface/03_main_menu_and_frontend.md section 5 |
 | Event pictures the slices asked for and replaced with catalog keys | E1 | Listed in each slice note: `mech_cold.md`, `mech_dark.md`, `mech_east.md`, `mech_sun.md`, `mech_powers.md`, `mech_journey.md`, `events_world.md` | 08_art_and_assets/03_full_asset_inventory.md |
+
+## Realm flags (roster integration)
+
+The 156 realms of the roster (tools/content/data/world/roster.json) have one heraldic design each in tools/content/data/world/heraldry.json; tools/content/art/flag-jobs.mjs writes their image jobs (13 sheets of 12) and no sheet is generated yet. Until the sheets are generated and reviewed, no realm flies a flag of its own: a realm that continues an old row (kept, renamed, the first realm of a split, or the largest row merged into it) flies the old row's flag (modules/art.mjs stageRealmFlags), and the 15 realms with no old row have no flag.
+
+| Row | Asset | Family | Why (the asset-check finding) | Spec |
+| --- | --- | --- | --- | --- |
+| P0780 | gfx/flags/BRR.tga, medium/BRR.tga, small/BRR.tga | I1 flag | Burrikkrit (BRR) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0781 | gfx/flags/OLO.tga, medium/OLO.tga, small/OLO.tga | I1 flag | Olodor (OLO) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0782 | gfx/flags/ANR.tga, medium/ANR.tga, small/ANR.tga | I1 flag | Aenor Forest (ANR) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0783 | gfx/flags/HRA.tga, medium/HRA.tga, small/HRA.tga | I1 flag | Hrakbrund (HRA) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0784 | gfx/flags/GHH.tga, medium/GHH.tga, small/GHH.tga | I1 flag | Ghaahu (GHH) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0785 | gfx/flags/BRU.tga, medium/BRU.tga, small/BRU.tga | I1 flag | Brundahrim (BRU) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0786 | gfx/flags/GRO.tga, medium/GRO.tga, small/GRO.tga | I1 flag | Gromkerm (GRO) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0787 | gfx/flags/BUN.tga, medium/BUN.tga, small/BUN.tga | I1 flag | Burnikit (BUN) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0788 | gfx/flags/VES.tga, medium/VES.tga, small/VES.tga | I1 flag | Veshazel (VES) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0789 | gfx/flags/HOO.tga, medium/HOO.tga, small/HOO.tga | I1 flag | Hoorunoron (HOO) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0790 | gfx/flags/NET.tga, medium/NET.tga, small/NET.tga | I1 flag | Nether (NET) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0791 | gfx/flags/WAH.tga, medium/WAH.tga, small/WAH.tga | I1 flag | Wahatud (WAH) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0792 | gfx/flags/GOF.tga, medium/GOF.tga, small/GOF.tga | I1 flag | God Forest (GOF) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0793 | gfx/flags/MSH.tga, medium/MSH.tga, small/MSH.tga | I1 flag | Mushroom Forest (MSH) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+| P0794 | gfx/flags/TIR.tga, medium/TIR.tga, small/TIR.tga | I1 flag | Tirlan (TIR) is a realm with no old row, so it has no flag until its design in data/world/heraldry.json is generated (FLAG_MISSING for the three sizes); the image jobs are written by tools/content/art/flag-jobs.mjs | 08_art_and_assets/06_heraldry.md; R-92 |
+
+Realms flying the old flag of a former row until their own is generated (141):
+
+| Realm | Tag | Old flag of |
+| --- | --- | --- |
+| Aenor | AEN | Aenor |
+| Lerendor | LER | Lerendor |
+| Coldor | CLD | Coldor |
+| Noris | NRS | Noris |
+| Stabilo | STA | Stabilo |
+| Goldoroth | GOL | Goldoroth |
+| Dondor | DND | Dondor |
+| Puvulan | PUV | Volgan |
+| Zol's Mistake | ZOL | Zol |
+| Mirolon | MIR | Mirolon |
+| Worshipdom | WOR | Worshipdom |
+| Magical Forest | MAG | Magical Forest |
+| Gala | GAA | Gala Elves |
+| Gunwyn | GNW | Gunwaith |
+| Selen | SEL | Selen |
+| Kingson | KIN | Kingson |
+| Hirolon | HIR | Hiloron |
+| Melkgard | MLK | Isengard |
+| Horidor | HOR | Horidor |
+| Yeldenne | YEL | Yeldenne |
+| Girdon | GIR | Girdon |
+| Konori | KON | Konori |
+| Hunhun | HNH | Hunhun |
+| Klungori Guard | KLU | Klungori Guard |
+| Herez | HER | Herez |
+| Noleksun | NOL | Noleksun |
+| Kilinti | KIL | Kilinti |
+| Safeton | SFT | Safeton |
+| Freshon | FRE | Freshon |
+| Pazoma | PAZ | Pazoma |
+| Orohaf | ORH | Asgard |
+| Fotan | FOT | Fotan |
+| Kunhrim | KUN | Kunhrim |
+| Dunelaeth | DNL | Kingdom |
+| Cursed Lands | CUR | Cursed Lands |
+| Bloody Forest | BLO | Bloody Forest |
+| Eekedor | EEK | Eekedor |
+| R'en | REN | R'en |
+| Molot | MOO | Molot |
+| Keredor-Hellekton | KER | Keredor-Hellekton |
+| Sensai | SNS | Sensai |
+| Tolhon | TOL | Tolhon |
+| Heodwa Lands | HEO | Heodwa Lands |
+| Mina | MIA | Mina |
+| Dolpar | DOL | The Hold |
+| Mustnom | MUS | Mustnom |
+| Fearno | FEA | Fearno |
+| Austklev | AUT | Wonderland |
+| Worlond | WRL | Worlond |
+| Poloto | PLT | Poloto |
+| Holdon | HLD | Holdon |
+| Glimkit | GLI | Agoron (merged into it) |
+| Xison | XIS | Xison |
+| Pertolor | PRT | Pertolor |
+| Omar | OMR | Omar |
+| Portogalor | POT | Portogalor |
+| Kvittumm | KVI | Celen |
+| Orewele | ORW | Orewele |
+| Nivaros | NIV | Titanos |
+| Yeti Lands | YEI | Yeti Lands |
+| Vindael | VND | Windwaith |
+| Werlendor | WER | Werlendor |
+| Lambin | LAB | Lambin |
+| Thenon | THN | Thenon |
+| Dobbum | DOB | Hky |
+| Saopon | SAO | Saopon |
+| Buldor | BLD | Buldor |
+| Kradlon | KRA | Kradlon |
+| Corogon | CRG | Corogon |
+| Varnondor | VRN | Varnondor |
+| Wennarith | WEN | Argo |
+| Dark Gate | DRK | Dark Gate |
+| Blackton | BLK | Blackton |
+| Belonton | BLN | Belonton |
+| Bordon | BOR | Bordon |
+| Dreson | DRE | Dreson |
+| Dulundur | DUL | Dulundur |
+| Troll Forest | TRO | Troll Forest |
+| The Darks | DAK | The Darks |
+| Skragdurg | SKR | Fondor |
+| Dun | DUN | Dun |
+| Britadon | BRT | Britadon |
+| Wild Lands | WIL | Wild Lands |
+| Khorvrath | KHO | Demon |
+| Dolon | DLN | Dolon |
+| Nezer | NEZ | Nezer |
+| Halia | HAL | Mencnon (merged into it) |
+| Nan | NAN | Nan |
+| Olen | OLE | Olen |
+| Alerhia | ALR | Alerhia |
+| Naamis | NAA | Gondolin |
+| Drak | DRA | Drak |
+| Rhachia | RHA | Avalon |
+| Erco | ERC | Erco |
+| Plutondo | PLO | Plutondo |
+| Ostoroth | OST | Ostoroth |
+| Mora | MOA | Mora |
+| Delbiz | DLB | Delbiz Grasslands |
+| Kersian | KRS | Kersian |
+| Mostok | MOS | Mostok |
+| Azano | AZA | Azano |
+| Obmi | OBM | Obmi |
+| Pornivior | PRN | Pornivior |
+| Woqood | WOQ | Woqood |
+| Orato | ORA | Orato |
+| Miaed | MIE | Miaed |
+| Enhis Is Rond | ENH | Enhis Is Rond |
+| Howan | HWN | Howan |
+| Verde | VER | Verde |
+| Nara | NAR | Nara |
+| Yongyong | YON | Yongyong |
+| Kamu Lamo | KAM | Finn |
+| Kea | KEA | Kea |
+| Sidea | SDE | Sidea Islands |
+| Adel | ADE | Adel |
+| Raerby | RAE | Raerby |
+| Pollos | PLL | Pollos |
+| Nondondor | NND | Nondondor |
+| Fineger | FNG | Fineger |
+| Halenor | HLN | Halenor |
+| Windy Lands | WND | Windy Lands |
+| Seite Islands | SEI | Seite Islands |
+| Santon | SNT | Santon |
+| Benan | BEN | Benan |
+| The Lens | LEN | The Lens |
+| The Lands of Light | LIG | The Lands of Light |
+| Elvana | ELV | Elvana |
+| Igara | IGA | Igara |
+| Yeni Alang | YEN | Heaven |
+| Tor Luni | TOR | Godland |
+| Ihuy | IHU | Hel (merged into it) |
+| Soyano | SOY | Soyano |
+| Goodin | GOO | Goodin |
+| Herrodon | HRR | Herrodon |
+| Andos Enda | ANE | Andos Enda |
+| Nolorim | NLR | Nolorim |
+| Lccimio | LCC | Lccimio |
+| Eldafaen | ELD | The End |
+| Yavieth | YAV | Greenland |
+| Teste | TES | Teste |
+| Luv-zhise | LUV | Luv-zhise |
 
 ## Exact duplicates (interface reskin placeholders)
 
@@ -684,7 +852,6 @@ Totals: 779 rows (302 exact duplicates of the interface reskin, 297 focus icons 
 | P0419 | signature focus icon for zin_regional_nezer_keep_the_gate_sealed | A2 focus icon, signature | Focus zin_regional_nezer_keep_the_gate_sealed shares an icon with its prerequisite zin_regional_nezer_wardens_of_the_gate. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
 | P0420 | signature focus icon for zin_regional_nezer_old_portal_lore | A2 focus icon, signature | Focus zin_regional_nezer_old_portal_lore shares an icon with its prerequisite zin_regional_nezer_the_burning_gate_remembered. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
 | P0421 | signature focus icon for zin_regional_nezer_open_the_gate_for_nafeher | A2 focus icon, signature | Focus zin_regional_nezer_open_the_gate_for_nafeher shares an icon with its prerequisite zin_regional_nezer_old_portal_lore. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
-| P0422 | signature focus icon for zin_regional_poyang_the_old_strength | A2 focus icon, signature | Focus zin_regional_poyang_the_old_strength shares an icon with its prerequisite zin_regional_poyang_when_shadows_reach_the_sun. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
 | P0423 | signature focus icon for zin_regional_selen_alleria_s_company | A2 focus icon, signature | Focus zin_regional_selen_alleria_s_company shares an icon with its prerequisite zin_regional_selen_rangers_of_selen. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
 | P0424 | signature focus icon for zin_regional_selen_break_the_charter | A2 focus icon, signature | Focus zin_regional_selen_break_the_charter shares an icon with its prerequisite zin_regional_selen_for_the_free_dominions. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
 | P0425 | signature focus icon for zin_regional_selen_proof_in_the_rolls | A2 focus icon, signature | Focus zin_regional_selen_proof_in_the_rolls shares an icon with its prerequisite zin_regional_selen_scholars_of_the_first_men. | 05_asset_manifest.md section 5 (never on a focus and its direct prerequisite) |
@@ -818,8 +985,3 @@ Totals: 779 rows (302 exact duplicates of the interface reskin, 297 focus icons 
 | P0024 | 4 event pictures to take the place of GFX_zin_evt_strait_toll | E1 event picture | Picture GFX_zin_evt_strait_toll is used by 12 events; the cap is 8. | 05_asset_manifest.md section 5 (event_picture: at most 8 events in the game); 08_art_and_assets/03_full_asset_inventory.md |
 | P0025 | 8 event pictures to take the place of GFX_zin_evt_black_isles_lights | E1 event picture | Picture GFX_zin_evt_black_isles_lights is used by 16 events; the cap is 8. | 05_asset_manifest.md section 5 (event_picture: at most 8 events in the game); 08_art_and_assets/03_full_asset_inventory.md |
 
-## Portraits
-
-| Row | Asset | Family | Why (the asset-check finding) | Spec |
-| --- | --- | --- | --- | --- |
-| P0779 | named portraits for the figures of common/characters/zin_aenor_court.txt | D1 to D6 named portraits | Generic portrait GFX_zin_portrait_men_male_1 serves 100 characters; the pool men.male (2 portraits, 172 characters) allows 87. | 02_lore/02_characters.md; 05_asset_manifest.md section 5 (portrait.named, generic pools) |

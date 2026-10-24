@@ -44,7 +44,7 @@ test('every realm of the roster has exactly one design, keyed by key and tag', (
 test('every culture of cultures_new.json, every renamed id and the Baelim and mycids have grammars', () => {
   for (const id of Object.keys(src.culturesNew.cultures)) assert.ok(base.doc.cultures[id], id);
   for (const [from, to] of Object.entries(CULTURE_RENAMES)) { assert.ok(base.doc.cultures[to], to); assert.equal(base.doc.cultures[from], undefined, from); }
-  assert.equal(base.doc.cultures.vale_folk, undefined);
+  assert.equal(base.doc.cultures.wall_folk, undefined);
   assert.ok(base.doc.peoples.find((p) => p.id === 'tree_people'));
   assert.ok(base.doc.peoples.find((p) => p.id === 'mycids'));
   assert.equal(base.doc.cultures.baelim.people, 'tree_people');

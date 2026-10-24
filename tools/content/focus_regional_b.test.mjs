@@ -15,13 +15,17 @@ import { absolutePositions, focusId, spiritId } from './lib/focus_model.mjs';
 import { compileBanned, findBanned, loadRuleSet } from './lib/banned.mjs';
 import { analyseTrees, compileTree } from './modules/focus_compiler.mjs';
 import { checkTierRange, collectTexts, loadRegistry, Registry } from './checks/focus_checks.mjs';
+import { countryTable, successor } from './lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const TREES = path.join(here, '../../docs/design/focus');
 const FIX = path.join(here, 'fixtures/focus_regional_b');
 const json = async f => JSON.parse(await readFile(f, 'utf8'));
+// The realm of the roster that continues an old row (Gondolin is Naamis, Hengyang joined Soyano).
+const realmOf = old => countryTable().find(c => c.key === successor(old).primary);
 
-// tree id -> { region, focuses (copies expanded), own (own focuses), spirits (own), events, shared }
+// tree id -> { region, focuses (copies expanded), own (own focuses), spirits (own), events, shared }. The roster folds Poyang into
+// Soyano, whose tree is regional_hengyang, so the Poyang tree of the spec is retired (docs/plans/roster_integration).
 const EXPECT = {
   regional_alerhia: { region: 'east', focuses: 49, own: 27, spirits: 8, events: 2, copies: ['E2', 'E4', 'E9'] },
   regional_miaed: { region: 'east', focuses: 41, own: 19, spirits: 6, events: 3, copies: ['E2', 'E4', 'E9'] },
@@ -37,7 +41,6 @@ const EXPECT = {
   regional_verde: { region: 'islands', focuses: 32, own: 17, spirits: 5, events: 0, copies: ['I2', 'I4', 'I9'] },
   regional_enhis_is_rond: { region: 'islands', focuses: 33, own: 18, spirits: 5, events: 3, copies: ['I1', 'I4', 'I9'] },
   regional_the_lands_of_light: { region: 'sun', focuses: 40, own: 26, spirits: 7, events: 1, copies: ['S1', 'S7', 'S10'] },
-  regional_poyang: { region: 'sun', focuses: 32, own: 16, spirits: 5, events: 2, copies: ['S6', 'S6m', 'S7', 'S5', 'S10'] },
   regional_godland: { region: 'sun', focuses: 32, own: 17, spirits: 4, events: 1, copies: ['S2', 'S7', 'S10'] },
   regional_hengyang: { region: 'sun', focuses: 33, own: 18, spirits: 3, events: 1, copies: ['S2', 'S7', 'S10'] },
   regional_elvana: { region: 'sun', focuses: 33, own: 14, spirits: 4, events: 4, copies: ['S2', 'S5', 'S7', 'S10'] },
@@ -49,7 +52,7 @@ const SHARED = { east: 'shared_east_lands', islands: 'shared_islands_of_the_sout
 const COUNTRY = {
   regional_alerhia: 'Alerhia', regional_miaed: 'Miaed', regional_erco: 'Erco', regional_plutondo: 'Plutondo', regional_drak: 'Drak', regional_ostoroth: 'Ostoroth',
   regional_gondolin: 'Gondolin', regional_mora: 'Mora', regional_avalon: 'Avalon', regional_howan: 'Howan', regional_nara: 'Nara', regional_verde: 'Verde',
-  regional_enhis_is_rond: 'Enhis Is Rond', regional_the_lands_of_light: 'The Lands of Light', regional_poyang: 'Poyang', regional_godland: 'Godland',
+  regional_enhis_is_rond: 'Enhis Is Rond', regional_the_lands_of_light: 'The Lands of Light', regional_godland: 'Godland',
   regional_hengyang: 'Hengyang', regional_elvana: 'Elvana', regional_goodin: 'Goodin', regional_heaven: 'Heaven',
 };
 
@@ -72,9 +75,9 @@ const rules = compileBanned(await loadRuleSet({ glossary: await json(path.join(h
 const eff = id => base.trees.get(id);
 
 // ------------------------------------------------------------------------------------------------ positive
-test('The 20 regional B trees and the stand-ins of the shared trees pass every compiler check', () => {
+test('The 19 regional B trees (the Poyang tree is retired) and the stand-ins of the shared trees pass every compiler check', () => {
   assert.equal(base.problems.length, 0, base.problems.map(p => p.message).join('\n'));
-  assert.equal(IDS.length, 20);
+  assert.equal(IDS.length, 19);
   for (const id of IDS) assert(base.trees.has(id), id);
 });
 
@@ -86,26 +89,26 @@ test('Each tree has the focus count of its spec, copies expanded, inside the tie
     assert(eff(id).focuses.length >= 30 && eff(id).focuses.length <= 50, id);
   }
   const total = IDS.reduce((n, id) => n + eff(id).focuses.length, 0);
-  assert.equal(total, 49 + 41 + 41 + 41 + 40 + 40 + 41 + 40 + 40 + 34 + 35 + 32 + 33 + 40 + 32 + 32 + 33 + 33 + 32 + 32);
+  assert.equal(total, 49 + 41 + 41 + 41 + 40 + 40 + 41 + 40 + 40 + 34 + 35 + 32 + 33 + 40 + 32 + 33 + 33 + 32 + 32);
 });
 
-test('Region totals: nine East Lands trees, four Islands trees, seven Lands of the Sun trees', () => {
+test('Region totals: nine East Lands trees, four Islands trees, six Lands of the Sun trees', () => {
   const count = r => IDS.filter(id => EXPECT[id].region === r).length;
-  assert.deepEqual([count('east'), count('islands'), count('sun')], [9, 4, 7]);
+  assert.deepEqual([count('east'), count('islands'), count('sun')], [9, 4, 6]);
   assert.equal(IDS.filter(id => EXPECT[id].region === 'east').reduce((n, id) => n + eff(id).focuses.length, 0), 49 + 41 + 41 + 41 + 40 + 40 + 41 + 40 + 40);
   assert.equal(IDS.filter(id => EXPECT[id].region === 'islands').reduce((n, id) => n + eff(id).focuses.length, 0), 34 + 35 + 32 + 33);
-  assert.equal(IDS.filter(id => EXPECT[id].region === 'sun').reduce((n, id) => n + eff(id).focuses.length, 0), 40 + 32 + 32 + 33 + 33 + 32 + 32);
+  assert.equal(IDS.filter(id => EXPECT[id].region === 'sun').reduce((n, id) => n + eff(id).focuses.length, 0), 40 + 32 + 33 + 33 + 32 + 32);
 });
 
 test('Every tree serves exactly its country and is a regional tree with the regional_ id prefix', () => {
   for (const id of IDS) {
     const t = OWN[id];
     assert.equal(t.tier, 'regional', id);
-    assert.deepEqual(t.countries, [COUNTRY[id]], id);
+    assert.deepEqual(t.countries, [realmOf(COUNTRY[id]).name], `${id} serves the realm that continues ${COUNTRY[id]}`);
     assert(id.startsWith('regional_'), id);
   }
   const all = IDS.flatMap(id => OWN[id].countries);
-  assert.equal(new Set(all).size, 20);
+  assert.equal(new Set(all).size, 19);
 });
 
 test('Spirit, event and own-focus counts match the design', () => {
@@ -145,8 +148,6 @@ test('Event ids are the numbers of the specs in the tree namespace', () => {
   const events = out.files.get('events/zin_regional_elvana.txt');
   assert.match(events, /add_namespace = zin_regional_elvana/);
   for (const n of [1, 2, 3, 4]) assert.match(events, new RegExp(`id = zin_regional_elvana\\.${n}\\b`));
-  const poyang = compileTree(eff('regional_poyang'), base.ctx).files.get('events/zin_regional_poyang.txt');
-  assert.match(poyang, /id = zin_regional_poyang\.2\b/);
 });
 
 test('Prerequisites exist, no focus sits above its prerequisites and positions are unique', () => {
@@ -187,14 +188,12 @@ test('The copy blocks put each module root where the spec says and carry the mod
   assert.deepEqual(rootAt('regional_nara', 'I7'), [22, 1]);
   assert.deepEqual(rootAt('regional_howan', 'I3'), [21, 1]);
   assert.deepEqual(rootAt('regional_elvana', 'S2'), [12, 1]);
-  assert.deepEqual(rootAt('regional_poyang', 'S6m'), [15, 2]);
   const pos = (id, key) => absolutePositions(eff(id)).pos.get(key);
   assert.deepEqual(pos('regional_alerhia', 'riders_of_the_dunes'), { x: 14, y: 4 });
   assert.deepEqual(pos('regional_alerhia', 'close_the_houses'), { x: 18, y: 4 });
   assert.deepEqual(pos('regional_nara', 'masters_of_the_southern_seas'), { x: 22, y: 4 });
   assert.deepEqual(pos('regional_howan', 'songs_for_strangers'), { x: 21, y: 3 });
   assert.deepEqual(pos('regional_the_lands_of_light', 'orchards_and_vines'), { x: 20, y: 2 });
-  assert.deepEqual(pos('regional_poyang', 'heed_the_old_king'), { x: 13, y: 2 });
   assert.deepEqual(pos('regional_elvana', 'ready_for_the_noon_league'), { x: 13, y: 3 });
   // every East tree places E9 with its root at (14,6)
   for (const id of IDS.filter(i => EXPECT[i].region === 'east')) assert.deepEqual(pos(id, 'question_of_the_east'), { x: 14, y: 6 }, id);
@@ -364,9 +363,8 @@ test('Tree-declared scripts exist with the tree prefix and the spec names', () =
   assert.deepEqual(Object.keys(OWN.regional_enhis_is_rond.scripted_triggers), ['zin_regional_enhis_is_rond_holds_shrine']);
   assert(Object.keys(OWN.regional_the_lands_of_light.scripted_effects).includes('zin_regional_the_lands_of_light_settle_quarrels'));
   assert(Object.keys(OWN.regional_the_lands_of_light.scripted_effects).includes('zin_regional_the_lands_of_light_fortify_east'));
-  assert(Object.keys(OWN.regional_poyang.scripted_effects).includes('zin_regional_poyang_seed_gifts'));
   const drak = compileTree(eff('regional_drak'), base.ctx).files.get('common/scripted_effects/zin_regional_drak.txt');
-  assert.match(drak, /transfer_state_to = Y16/);
+  assert.match(drak, new RegExp(`transfer_state_to = ${realmOf('Stabilo').tag}\\b`));
   assert.match(drak, /zin_stabilo_add_debt = yes/);
 });
 

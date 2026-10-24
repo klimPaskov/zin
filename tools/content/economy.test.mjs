@@ -1,7 +1,8 @@
 // Tests for the economy module (docs/specs/03_gameplay/02_economy.md, vanilla removal stage 2). They use only builder
-// output: a Staged set filled by buildEconomy with the roster of data/countries.json.
+// output: a Staged set filled by buildEconomy with the roster (lib/roster.mjs).
 //   node --test tools/content/economy.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -14,7 +15,7 @@ import { assertDefinesExist, rowsInEffect } from './modules/defines.mjs';
 import * as E from './modules/economy.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const { data } = await E.loadEconomy();
 const staged = new Staged();
 // The reference text: every key the module writes, before it yields keys to the text sweep.
@@ -273,7 +274,7 @@ test('The ideas file holds the eleven regional spirits and six timed ideas with 
 
 test('Startup gives every country one region flag and its region spirit, except Zol, which gets the flag only', () => {
   const t = text('common/on_actions/zin_economy.txt');
-  const aenor = countries.find(c => c.name === 'Aenor'), zol = countries.find(c => c.name === 'Zol');
+  const aenor = countries.find(c => c.name === 'Aenor'), zol = countries.find(c => c.name === "Zol's Mistake");
   for (const c of countries) {
     const key = data.regionByRoster[c.scan], line = new RegExp(`\\t${c.tag} = \\{ set_country_flag = zin_region_${key}( add_ideas = (zin_econ_\\w+))? \\}`).exec(t);
     assert(line, c.tag);
@@ -300,7 +301,7 @@ test('The great powers start with the spec industry: Aenor first, workshops abou
     if (r.country !== 'Aenor') assert(aenor.workshops + aenor.armouries > r.workshops + r.armouries, `${r.country} below Aenor`);
   }
   assert.equal(aenor.workshops, 32);
-  assert(rows.find(r => r.country === 'Volgan').armouries > rows.find(r => r.country === 'Volgan').workshops, 'the Ember Lands run forges first');
+  assert(rows.find(r => r.country === 'Puvulan').armouries > rows.find(r => r.country === 'Puvulan').workshops, 'the Ember Lands run forges first (Puvulan, the Volgan row)');
 });
 
 // ------------------------------------------------------------------------------------------------ treasury

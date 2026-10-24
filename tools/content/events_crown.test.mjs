@@ -1,7 +1,8 @@
 // Tests of the crown events (docs/specs/06_events/01_golden_king_and_succession.md and 04_endings.md, note docs/design/stage2/events_crown.md).
-// They call the builder directly with the roster of data/countries.json and assert on the staged files. The installed game is read
+// They call the builder directly with the roster (lib/roster.mjs) and assert on the staged files. The installed game is read
 // for the engine's own effect, trigger and modifier names; the register of shared names is read from the specs.
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -17,7 +18,7 @@ import { makeEnv, condLines, effLines, effects, aiLines, eventLines } from './li
 import { buildEventsCrown, loadCrownData, validateCrown, pictureCatalog, vanillaTitles, textProblems, checkEngine, ENDING_CODES, NAMESPACES } from './modules/events_crown.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const staged = new Staged();
 const summary = await buildEventsCrown(staged, { countries });
 const data = await loadCrownData();
@@ -344,7 +345,7 @@ test('Lead-up: .1 and .2 by date, .3 on two checks in a row, .4 on twelve crowns
   assert(s.includes('clr_global_flag = zin_ending_volgan_near'), 'a gap in readiness starts the count again');
   assert(s.includes('zin_world_date_children'), 'before 1 Thaw 1756 only');
   assert(s.includes('zin_t_deep > 11') && s.includes('zin_afrit_ashen_throne_ready'));
-  assert(s.includes(`has_war_with = ${tags.get('Volgan')}`));
+  assert(s.includes(`has_war_with = ${tags.get('Puvulan')}`));
   assert(s.includes('zin_ending_cp11_early') && s.includes('zin_ending_cp11_late'));
   for (const n of [1, 2, 3, 4]) assert(s.includes(`zin_story_done_ending_${n}`));
 });
@@ -741,7 +742,7 @@ function hookFires(source, effect) {
 }
 
 // Evaluates the ai_chance of every option of an event under a rule. `truths` lists situational conditions as the tests write
-// them: 'zin_x = yes', 'var:x>=50' (as written in the data), 'original_tag Y0M', 'has_government democratic'.
+// them: 'zin_x = yes', 'var:x>=50' (as written in the data), 'original_tag SEL', 'has_government democratic'.
 function weightsOf(id, rule, divergence, truths) {
   const ev = allEvents.find(e => idOf(e) === id);
   assert(ev, id);

@@ -11,7 +11,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ZIN } from './paths.mjs';
-import { cultureRows } from './roster.mjs';
+import { cultureRows, gamePeopleOf } from './roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const DATA = path.join(here, '../data');
@@ -61,6 +61,8 @@ export const languageNumber = (model, id) => model.game.language_ids[id];
 
 export const tierOf = (model, key) => model.world.cultures[key].tier;
 export const peopleOf = (model, key) => model.world.cultures[key].people;
+// The people whose kit (emblem, portraits, troops) a culture borrows while its own people has none (lib/roster.mjs GAME_PEOPLE).
+export const kitPeopleOf = (model, key) => gamePeopleOf(peopleOf(model, key));
 export const cultureName = (model, key) => model.world.cultures[key].name;
 export const faithName = (model, key) => model.game.faiths[key]?.name ?? model.world.faiths[key].name;
 export const languageOf = (model, key) => model.world.cultures[key].language;
@@ -120,7 +122,7 @@ export function ideaCategory(model, key, secondary = false) {
 export function portraitPoolFor(model, key) {
   const p = model.game.portrait_pools, tier = tierOf(model, key);
   const perSex = p.per_sex_overrides[key] ?? p.per_sex_by_tier[tier];
-  return { pool: key, kit: peopleOf(model, key), tier, per_sex: perSex, total: perSex * 2, unique: tier < 3 };
+  return { pool: key, kit: kitPeopleOf(model, key), tier, per_sex: perSex, total: perSex * 2, unique: tier < 3 };
 }
 export function flagStyleFor(model, key) {
   const f = model.game.cultures[key].flag, shapes = model.game.flag_shapes;
@@ -132,7 +134,7 @@ export const unitGroupFor = (model, key) => model.game.cultures[key].unit_group;
 // The graphical culture of a culture's units: `zin_<group>_gfx`, or the people's `zin_<people>_gfx` (the one units3d
 // defines today) while the group's own culture is not in `available`. Pass the set modules/units3d.mjs defines.
 export function graphicalCultureFor(model, key, available = null) {
-  const group = `zin_${unitGroupFor(model, key)}_gfx`, fallback = `zin_${peopleOf(model, key)}_gfx`;
+  const group = `zin_${unitGroupFor(model, key)}_gfx`, fallback = `zin_${kitPeopleOf(model, key)}_gfx`;
   return { key: available && !available.has(group) ? fallback : group, group, fallback };
 }
 export const musicMoods = model => [...new Set(model.cultureKeys.map(k => musicMoodFor(model, k)))].sort();

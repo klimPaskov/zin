@@ -97,7 +97,7 @@ async function buildLaws(staged, loc) {
 
 // ----------------------------------------------------------------------------------------- leader traits
 // From the ideologies spec (country leaders and advisors) and the characters spec. Names are proposed.
-const TRAITS = {
+export const TRAITS = {
   zin_trait_gilded_fool: ['Gilded Fool', { political_power_factor: -0.15, consumer_goods_factor: 0.05, stability_factor: -0.05 }],
   zin_trait_beloved_god: ['Beloved God', { stability_factor: 0.15, drift_defence_factor: 0.3 }],
   zin_trait_dread_lord: ['Dread Lord', { war_support_factor: 0.2, army_attack_factor: 0.1 }],
@@ -153,7 +153,7 @@ const TRAITS = {
 // Generated councillors for every country until the characters spec names each court's own (tier C rule).
 const COUNCILLORS = [['zin_councillor_treasurer', 'zin_adv_treasurer'], ['zin_councillor_road_warden', 'zin_adv_road_warden'], ['zin_councillor_envoy', 'zin_adv_envoy']];
 
-async function buildTraits(staged, loc, countries) {
+async function buildTraits(staged, loc, countries, councilCountries = countries) {
   const body = [];
   for (const [key, [name, modifier]] of Object.entries(TRAITS)) {
     await assertModifiers(`trait ${key}`, modifier);
@@ -161,9 +161,11 @@ async function buildTraits(staged, loc, countries) {
     body.push(`${key} = {\n\trandom = no\n${cw(modifier, 1)}}`);
   }
   staged.text('common/country_leader/00_zin_leader_traits.txt', `${HEADER}\nleader_traits = {\n${tab(1, body.join('\n'))}\n}\n`);
-  const tags = countries.map(c => `tag = ${c.tag}`).join(' ');
+  const tags = councilCountries.map(c => `tag = ${c.tag}`).join(' ');
   const gen = COUNCILLORS.map(([token, trait]) => `\tgenerate_character = {\n\t\ttoken_base = ${token}\n\t\tadvisor = {\n\t\t\tslot = political_advisor\n\t\t\tidea_token = ${token}\n\t\t\ttraits = { ${trait} }\n\t\t\tcost = 150\n\t\t\tai_will_do = { factor = 1 }\n\t\t}\n\t}`).join('\n');
-  staged.text('history/general/zin_general.txt', `${HEADER}\n# Three generated councillors for every ZIN court, named from its own name pool and drawn from its people's\n# portraits. Courts with named councillors (characters spec) will leave this list when those land.\nevery_possible_country = {\n\tlimit = { OR = { ${tags} } }\n${gen}\n}\n`);
+  // Every court of the roster has named advisors or keeps none on purpose (Zol's Mistake, the Mushroom Forest, the God Forest), so the
+  // list is usually empty and the file holds no block.
+  staged.text('history/general/zin_general.txt', `${HEADER}\n# Three generated councillors for every ZIN court, named from its own name pool and drawn from its people's\n# portraits: the courts without named advisors in data/world/characters (modules/characters.mjs).\n${tags ? `every_possible_country = {\n\tlimit = { OR = { ${tags} } }\n${gen}\n}\n` : ''}`);
 }
 
 // --------------------------------------------------------------------------------- focus tree and continuous
@@ -409,12 +411,12 @@ function buildOverrides(staged, loc) {
 }
 
 // ------------------------------------------------------------------------------------------------- the build
-export async function buildVanillaRemoval(staged, { zin, countries }) {
+export async function buildVanillaRemoval(staged, { zin, countries, councilCountries }) {
   const disp = await loadJson('dispositions.json');
   const loc = { text: {}, replace: {} };
   staged.text('descriptor.mod', descriptorText(disp));
   await buildLaws(staged, loc);
-  await buildTraits(staged, loc, countries);
+  await buildTraits(staged, loc, countries, councilCountries ?? countries);
   const contModifiers = buildFocus(staged, loc);
   staged.text('interface/zin_focus_icons.gfx', focusIconSprites(Object.keys(PEOPLES)));
   // The vanilla focus title-bar styles left with the folder; the engine wants one default style (it logged "No styles

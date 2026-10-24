@@ -58,7 +58,8 @@ const byEn = (a, b) => a.localeCompare(b, 'en');
 const num = v => { const r = Math.round(v * 1000) / 1000; return String(r); };
 const sortDeep = v => Array.isArray(v) ? v.map(sortDeep) : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort(byEn).map(k => [k, sortDeep(v[k])])) : v;
 const canonicalJson = v => JSON.stringify(sortDeep(v), null, 1) + '\n';
-const slugOf = key => key.startsWith('country:') ? key.slice(8).toLowerCase().replace(/[^a-z0-9]+/g, '_') : key;
+// A named realm's id stem: lower case, apostrophes dropped, other runs of non-letters one underscore (Zol's Mistake -> zols_mistake).
+const slugOf = key => key.startsWith('country:') ? key.slice(8).toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '_') : key;
 const tagLines = (tags, depth) => { const out = []; for (let i = 0; i < tags.length; i += 12) out.push(`${T(depth)}${tags.slice(i, i + 12).join(' ')}`); return out.join('\n'); };
 const listBlock = (name, tags, depth) => `${T(depth)}${name} = {\n${tagLines(tags, depth + 1)}\n${T(depth)}}`;
 const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
@@ -125,7 +126,8 @@ export async function prepareModel(ctx, raw0 = null, staged = null) {
   const tierA = new Set(institutions.tiers.a.map(n => { const t = tagOfName.get(n); if (!t) P(`tier A names ${n}, which is not in the roster`); return t; }).filter(Boolean)), tierB = new Set(institutions.tiers.b.map(n => tagOfName.get(n)).filter(Boolean));
   const tierOf = tag => tierA.has(tag) ? 'a' : tierB.has(tag) ? 'b' : 'c';
   const cultureOf = new Map(cultures.countries.map(c => [c.tag, c.culture]));
-  const popOf = new Map(demography.countries.map(c => [c.tag, c.population]));
+  // Populations come from the roster (the living, by realm; data/world/roster.json).
+  const popOf = new Map(countries.map(c => [c.tag, c.population]));
   const share = demography.game_numbers.manpower_share_by_people;
 
   // start technologies

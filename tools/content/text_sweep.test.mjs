@@ -19,6 +19,7 @@ import {
   loadGlossary, indexGlossary, makeEngine, expandSlots, termForm, composeLabel, applyFrame, renderFamily, loadFrames, TextError,
 } from './lib/text_engine.mjs';
 import { buildCalendar } from './modules/calendar.mjs';
+import { countryTable } from './lib/roster.mjs';
 import { buildTextSweep, loadFamilyTable, loadVanillaTable, claimsOf, peopleTerms, TEXT_DATA } from './modules/text_sweep.mjs';
 import { runTextScan, writeScanReport, assertTextScan, summariseScan, SCAN_REPORT_PATH } from './checks/text_scan.mjs';
 
@@ -617,7 +618,7 @@ test('data: every glossary id the family files use exists, and the people terms 
 const haveGame = existsSync(`${GAME}/localisation/english/core_l_english.yml`);
 test('real game: the sweep builds, the scan passes and the families in effect show no banned installed text', { skip: !haveGame }, async () => {
   const staged = new Staged();
-  await buildCalendar(staged);
+  await buildCalendar(staged, { countries: countryTable() });
   const summary = await buildTextSweep(staged, {});
   assert(summary.entries > 1500, `${summary.entries} entries`);
   assert.equal(summary.languages, 10);

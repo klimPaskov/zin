@@ -1,8 +1,9 @@
 // Tests for the forces module (docs/design/stage2/forces.md): the starting orders of battle, the AI templates, ship designs, fleets,
 // strategies and plans, and the designer pieces. They use only builder output: the warfare module is built first (the forces module
-// reads its name lists), then forces, on a Staged set made from the roster of data/countries.json. Negative tests plant a bad row
+// reads its name lists), then forces, on a Staged set made from the roster (lib/roster.mjs). Negative tests plant a bad row
 // in a copy of the data and expect the module to refuse it.
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
@@ -19,7 +20,7 @@ import { buildForces, loadRaw, prepareModel, layoutRegiments, apportion, divisio
 import { readStates } from './write_forces_geography.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const { labels } = JSON.parse(await readFile(path.join(here, 'data/labels.json'), 'utf8'));
 const banned = compileBanned(JSON.parse(await readFile(path.join(here, 'data/banned_words.json'), 'utf8')));
 const raw0 = await loadRaw();
@@ -28,6 +29,10 @@ const table = await loadCountryTable(countries, `${ZIN}/docs/design/countries.cs
 const assignment = new Map([...table].map(([t, v]) => [t, v.people]));
 const byName = new Map(countries.map(c => [c.name, c]));
 const tag = n => byName.get(n).tag;
+// The floors of these tests were set on the 305 rows of the old map roster; they scale with the realms of the roster.
+const scaled = n => Math.floor(n * countries.length / 305);
+// The id stem the module derives from a people key (country:Zol's Mistake -> zols_mistake).
+const slug = k => k.replace('country:', '').toLowerCase().replace(/'/g, '').replace(/[^a-z0-9]+/g, '_');
 
 // One warfare build, one forces build; a second forces build on a copy of the warfare files checks determinism.
 const warfareStaged = new Staged();
@@ -71,9 +76,9 @@ const rejects = async (mutate, pattern) => { const raw = clone(); mutate(raw); a
 
 // ------------------------------------------------------------------------------------------------ files and counts
 test('The build stages every file of the integration note and counts what it generates', () => {
-  assert.equal(summary.countries, 305);
+  assert.equal(summary.countries, countries.length);
   for (const f of Object.values(FILES)) assert(staged.files.has(f), `staged ${f}`);
-  assert.equal([...staged.files.keys()].filter(k => /^history\/units\/Y[0-9A-Z]{2}_world\.txt$/.test(k)).length, 305, 'one order of battle per roster tag');
+  assert.equal([...staged.files.keys()].filter(k => /^history\/units\/[A-Z][0-9A-Z]{2}_world\.txt$/.test(k)).length, countries.length, 'one order of battle per roster tag');
   const total = [...parsed.values()].reduce((a, p) => a + p.divisions.length, 0);
   assert.equal(summary.divisions, total, 'the summary counts the divisions of the files');
   assert.equal(summary.ships, [...parsed.values()].reduce((a, p) => a + p.ships.length, 0));
@@ -111,7 +116,7 @@ test('Templates stand in valid columns of one group, supports in the one support
     sup.forEach((s, i) => { assert.equal(s.x, 0); assert.equal(s.y, i); assert.equal(groupOfUnit.get(s.sub), 'support', `${s.sub} is a support company`); });
     checked++;
   }
-  assert(checked > 400, `${checked} templates checked`);
+  assert(checked > scaled(400), `${checked} templates checked`);
 });
 test('Template names are unique inside a country and every division names a template of its file', () => {
   for (const c of countries) {
@@ -153,8 +158,8 @@ test('Every equipment type and ship definition is in the warfare id list', () =>
     for (const s of p.ships) { assert(shipIds.has(s.definition) && sub.has(s.definition), `${c.name}: ship ${s.definition}`); assert(types.has(s.hull), `${c.name}: hull ${s.hull}`); assert(s.hull.startsWith(`zin_hull_${s.definition.replace('zin_ship_', '')}`), `${c.name}: hull ${s.hull} for ${s.definition}`); }
   }
 });
-test('The start is at peace: no army outside its realm, Zol has three black ships and no division, Yeldenne nothing', () => {
-  const zol = parsed.get(tag('Zol')), yel = parsed.get(tag('Yeldenne'));
+test('The start is at peace: no army outside its realm, Zol\'s Mistake has three black ships and no division, Yeldenne nothing', () => {
+  const zol = parsed.get(tag("Zol's Mistake")), yel = parsed.get(tag('Yeldenne'));
   assert.equal(zol.divisions.length, 0); assert.equal(zol.ships.length, 3);
   assert(zol.ships.every(s => s.definition === 'zin_ship_raider' && s.hull === 'zin_hull_raider_0'), 'three corsairs');
   assert.equal(new Set(zol.ships.map(s => s.name)).size, 3);
@@ -164,21 +169,23 @@ test('The start is at peace: no army outside its realm, Zol has three black ship
   assert.deepEqual([...parsed.get(tag('Worshipdom')).templates.keys()], ['Valley Wardens']);
 });
 test('The named realms of the start table have their divisions, templates and fleets', () => {
-  const want = { Aenor: 36, Lerendor: 16, Coldor: 16, Isengard: 10, Noris: 14, Stabilo: 12, Gunwaith: 8, Girdon: 8, Goldoroth: 14, Dondor: 10, Mirolon: 10, Volgan: 40, Demon: 4, Dolon: 4, Nezer: 4, 'Magical Forest': 12, 'Gala Elves': 4, Worshipdom: 1, Selen: 3, Kingson: 4, Hiloron: 3, Kilinti: 3, Hunhun: 4 };
+  // The start table of the spec under the realm names of the roster (Isengard is Melkgard, Gunwaith Gunwyn, Volgan's host Puvulan,
+  // Demon Khorvrath, Gala Elves Gala, Hiloron Hirolon).
+  const want = { Aenor: 36, Lerendor: 16, Coldor: 16, Melkgard: 10, Noris: 14, Stabilo: 12, Gunwyn: 8, Girdon: 8, Goldoroth: 14, Dondor: 10, Mirolon: 10, Puvulan: 40, Khorvrath: 4, Dolon: 4, Nezer: 4, 'Magical Forest': 12, Gala: 4, Worshipdom: 1, Selen: 3, Kingson: 4, Hirolon: 3, Kilinti: 3, Hunhun: 4 };
   for (const [n, d] of Object.entries(want)) assert.equal(parsed.get(tag(n)).divisions.length, d, `${n} divisions`);
   const count = (n, tmpl) => parsed.get(tag(n)).divisions.filter(x => x.template === tmpl).length;
   assert.equal(count('Aenor', 'Wall Garrison'), 6);
-  assert.equal(count('Volgan', 'Grave Host'), 20); assert.equal(count('Volgan', 'Dominion Vanguard'), 10); assert.equal(count('Volgan', 'Monster Clan'), 10);
+  assert.equal(count('Puvulan', 'Grave Host'), 20); assert.equal(count('Puvulan', 'Dominion Vanguard'), 10); assert.equal(count('Puvulan', 'Monster Clan'), 10);
   assert.equal(count('Kingson', 'Wall Garrison'), 4);
   assert.equal(count('Selen', 'Ranger Companies'), 2);
   const ships = (n, def) => parsed.get(tag(n)).ships.filter(s => s.definition === def).length;
   assert.equal(ships('Aenor', 'zin_ship_galley'), 8); assert.equal(ships('Aenor', 'zin_ship_warship'), 4);
   assert.equal(ships('Lerendor', 'zin_ship_galley'), 12); assert.equal(ships('Lerendor', 'zin_ship_warship'), 8);
-  // a realm without a port in map/buildings.txt (Coldor, Gunwaith, Girdon, Noris, Stabilo today) gets its spec fleet when the map has one
+  // a realm without a port in map/buildings.txt (Coldor, Gunwyn, Girdon, Noris, Stabilo today) gets its spec fleet when the map has one
   const portly = (n, k) => portsOf(tag(n)).size ? k : 0;
-  for (const [n, k] of [['Coldor', 6], ['Gunwaith', 4], ['Girdon', 4], ['Noris', 4], ['Stabilo', 4], ['Isengard', 2], ['Dondor', 3], ['Mirolon', 3], ['Gala Elves', 3]]) assert.equal(ships(n, 'zin_ship_galley'), portly(n, k), `${n} galleys`);
+  for (const [n, k] of [['Coldor', 6], ['Gunwyn', 4], ['Girdon', 4], ['Noris', 4], ['Stabilo', 4], ['Melkgard', 2], ['Dondor', 3], ['Mirolon', 3], ['Gala', 3]]) assert.equal(ships(n, 'zin_ship_galley'), portly(n, k), `${n} galleys`);
   assert.equal(ships('Coldor', 'zin_ship_warship'), portly('Coldor', 3));
-  assert(ships('Aenor', 'zin_ship_galley') > 0 && ships('Lerendor', 'zin_ship_galley') > 0 && ships('Gala Elves', 'zin_ship_galley') === 3);
+  assert(ships('Aenor', 'zin_ship_galley') > 0 && ships('Lerendor', 'zin_ship_galley') > 0 && ships('Gala', 'zin_ship_galley') === 3);
   assert(text(oobFile(tag('Aenor'))).includes('pride_of_the_fleet = yes'), 'a pride of the fleet');
 });
 test('The Great Wall garrisons stand in the states next to the wall forts', () => {
@@ -200,17 +207,17 @@ test('Villages keep one garrison, realms of three states or more field hosts, an
     assert(p.divisions.length >= 1 && p.divisions.length <= 24, `${c.name}: ${p.divisions.length} divisions`);
   }
   const withField = countries.filter(c => parsed.get(c.tag).divisions.some(d => !reserveName.has(d.template)));
-  assert(withField.length > 60, `${withField.length} realms field an army`);
+  assert(withField.length > scaled(60), `${withField.length} realms field an army`);
 });
 test('Garrison templates are reserves and ships of generic realms are galleys named from their culture', () => {
   for (const c of countries) for (const [name, tm] of parsed.get(c.tag).templates) if (reserveName.has(name)) assert.equal(field(tm, 'priority'), '0', `${c.name} ${name}`); else assert.equal(field(tm, 'priority'), undefined);
   const generic = countries.filter(c => !raw0.templates.named[c.name] && parsed.get(c.tag).ships.length);
-  assert(generic.length > 30);
+  assert(generic.length > scaled(30));
   for (const c of generic) { const s = parsed.get(c.tag).ships; assert(s.every(x => x.definition === 'zin_ship_galley'), c.name); assert(s.length <= raw0.templates.formula.galleysMax); assert.equal(new Set(s.map(x => x.name)).size, s.length, `${c.name}: duplicate ship names`); }
 });
 test('Experience is low, the same at every run, and equipment is full', () => {
   for (const c of countries) for (const d of parsed.get(c.tag).divisions) { assert(d.xp >= 0 && d.xp <= 0.45, `${c.name}: experience ${d.xp}`); assert.equal(d.equip, 1); }
-  assert.equal(parsed.get(tag('Volgan')).divisions[0].xp, 0.4);
+  assert.equal(parsed.get(tag('Puvulan')).divisions[0].xp, 0.4);
   assert.equal(parsed.get(tag('Aenor')).divisions.find(d => d.template === 'Line Host').xp, 0.05);
 });
 test('Division names use a name group of the warfare module that fits the template, in order', () => {
@@ -225,17 +232,17 @@ test('Division names use a name group of the warfare module that fits the templa
       if (g) { assert(d.ordered, `${c.name}: ordered name`); assert.equal(Number(field(d.ordered, 'name_order')), ++order); assert.equal(field(d.ordered, 'is_name_ordered'), 'yes'); named++; } else { assert(d.name, `${c.name}: a literal name`); order++; plain++; }
     }
   }
-  assert(named > 800, `${named} divisions use their culture's host names`);
+  assert(named > scaled(800), `${named} divisions use their culture's host names`);
   assert(plain < named, 'most divisions are named from the culture');
 });
-test('The equipment stock is 1.2 times the need of the divisions (Volgan 1.5) and the first line makes the people\'s own arms', () => {
+test('The equipment stock is 1.2 times the need of the divisions (Puvulan, the Volgan host, 1.5) and the first line makes the people\'s own arms', () => {
   const need = (t, p) => {
     const sum = new Map();
     for (const d of p.divisions) for (const r of [...regimentsOf(p.templates.get(d.template)), ...supportOf(p.templates.get(d.template))]) for (const [a, v] of Object.entries(model.needOf.get(r.sub))) sum.set(a, (sum.get(a) ?? 0) + v);
     return sum;
   };
   for (const c of countries) {
-    const p = parsed.get(c.tag), n = need(c.tag, p), f = c.name === 'Volgan' ? 1.5 : 1.2;
+    const p = parsed.get(c.tag), n = need(c.tag, p), f = c.name === 'Puvulan' ? 1.5 : 1.2;
     for (const [a, v] of n) { const type = p.stock.filter(s => s.type.startsWith(`${a}_`) && /_\d+$/.test(s.type)); assert.equal(type.length, 1, `${c.name}: one stock line for ${a}`); assert.equal(type[0].amount, Math.ceil(v * f / 10) * 10, `${c.name}: ${a}`); }
     if (p.divisions.length && model.raw.templates.profiles[model.profileKey(c)].arms) { assert.equal(p.production.length, 1); assert(p.production[0].type.startsWith(model.raw.templates.profiles[model.profileKey(c)].arms), `${c.name} line`); assert.equal(p.production[0].efficiency, 50); assert.equal(p.production[0].factories, 1); }
     else assert.equal(p.production.length, 0);
@@ -314,7 +321,7 @@ test('Every AI target names ZIN land sub-units that the entry\'s people recruits
   for (const e of menEntries) assert(field(e.v, 'blocked_for'), 'men are written with blocked_for');
 });
 test('A target template of a people only uses sub-units that people can recruit (the warfare recruit table)', () => {
-  const peopleOfEntry = new Map(raw0.ai.entries.map(e => [`zin_ai_${e.people.replace('country:', '').toLowerCase()}_${e.role}`, e.people]));
+  const peopleOfEntry = new Map(raw0.ai.entries.map(e => [`zin_ai_${slug(e.people)}_${e.role}`, e.people]));
   for (const e of aiEntries) {
     const people = peopleOfEntry.get(e.k), name = people.startsWith('country:') ? people : people;
     for (const t of e.v.filter(x => x.k && Array.isArray(x.v) && field(x.v, 'target_template'))) {
@@ -331,7 +338,7 @@ test('Heavier targets wait for their technology or flag and for tiers A and B', 
   assert(JSON.stringify(en).includes('zin_ai_is_tier_c'));
   const tech = en.find(x => x.k === 'has_tech').v;
   assert(raw0.techs.technologies.some(t => `zin_tech_${t.key}` === tech && t.unlocks.subunits.includes('zin_men_heavy_infantry')));
-  const zol = aiEntries.find(e => e.k === 'zin_ai_zol_infantry');
+  const zol = aiEntries.find(e => e.k === 'zin_ai_zols_mistake_infantry');
   assert.equal(field(field(zol.v, 'upgrade_prio'), 'factor'), '0', 'the Mistake spends no experience on templates');
 });
 
@@ -464,7 +471,7 @@ test('Role ratios are the spec table, with the tier shifts of the garrison share
   const peace = land.get('zin_default_peace_first');
   assert(JSON.stringify(field(peace.v, 'enable')).includes('zin_ai_era_peace'));
   assert.equal(Number(field(all(peace.v, 'ai_strategy')[0].v, 'value')), -50);
-  for (const k of Object.keys(raw0.ai.ratios)) assert(land.has(`zin_default_land_${k.replace('country:', '').toLowerCase()}`), `a land block for ${k}`);
+  for (const k of Object.keys(raw0.ai.ratios)) assert(land.has(`zin_default_land_${slug(k)}`), `a land block for ${k}`);
 });
 test('Production never builds granted equipment, builds nothing for the Mistake\'s arms, and every id is a warfare archetype', () => {
   const prod = new Map(blocksOf(FILES.production).map(b => [b.k, b]));
@@ -477,12 +484,12 @@ test('Production never builds granted equipment, builds nothing for the Mistake\
   assert.equal(Number(field(all(orcs.v, 'ai_strategy')[0].v, 'value')), 150, 'orcs build armouries first');
   assert(JSON.stringify(prod.get('zin_default_production_no_skies').v).includes('zin_rules_skies_present'));
 });
-test('Dragons are never produced and Zol builds no ships', () => {
+test('Dragons are never produced and Zol\'s Mistake builds no ships', () => {
   const navy = new Map(blocksOf(FILES.navy).map(b => [b.k, b]));
   const air = navy.get('zin_default_air_dragons');
   assert(all(air.v, 'ai_strategy').every(s => Number(field(s.v, 'value')) === 0 && ['cas', 'fighter'].includes(field(s.v, 'id'))));
   const zolBlock = navy.get('zin_default_navy_zol');
-  assert(JSON.stringify(zolBlock.v).includes(tag('Zol')));
+  assert(JSON.stringify(zolBlock.v).includes(tag("Zol's Mistake")));
   assert(all(zolBlock.v, 'ai_strategy').every(s => Number(field(s.v, 'value')) === -100), 'base 100 minus 100 is none');
   assert(JSON.stringify(navy.get('zin_default_navy_sea_power').v).includes(tag('Lerendor')));
   assert(JSON.stringify(navy.get('zin_default_air_griffins').v).includes('zin_rules_skies_beasts'));
@@ -510,11 +517,12 @@ test('Every trigger, token and effect the files use is in the installed document
   assert(triggersUsed.has('is_coastal') && triggersUsed.has('has_doctrine') && triggersUsed.has('has_completed_track'));
   for (const e of ['add_equipment_to_stockpile', 'add_equipment_production']) assert(docE.has(e), `${e} is a documented effect`);
 });
-test('Tier triggers cover the roster once (13 + 71 named, the rest by negation) and the four eras read only global state', () => {
+test('Tier triggers cover the roster once (13 + 70 named, the rest by negation) and the four eras read only global state', () => {
   const tiers = parse(text(FILES.tiers)), tagsIn = k => new Set(field(field(tiers, k), 'OR').map(x => x.v));
   const a = tagsIn('zin_ai_is_tier_a'), b = tagsIn('zin_ai_is_tier_b');
-  assert.equal(a.size, 13); assert.equal(b.size, 71); for (const t of a) assert(!b.has(t));
-  assert(a.has(tag('Zol')) && a.has(tag('Aenor')) && b.has(tag('Yeldenne')));
+  // 71 named tier-B realms in the spec; Poyang and Hengyang are one realm of the roster (Soyano), so 70 remain.
+  assert.equal(a.size, 13); assert.equal(b.size, raw0.institutions.tiers.b.length); assert.equal(b.size, new Set(raw0.institutions.tiers.b.map(tag)).size); for (const t of a) assert(!b.has(t));
+  assert(a.has(tag("Zol's Mistake")) && a.has(tag('Aenor')) && b.has(tag('Yeldenne')));
   assert(JSON.stringify(field(field(tiers, 'zin_ai_is_tier_c'), 'NOT')).includes('zin_ai_is_tier_a'));
   const eras = text(FILES.eras);
   for (const e of ['zin_ai_era_peace', 'zin_ai_era_stirring', 'zin_ai_era_war', 'zin_ai_era_after']) assert(eras.includes(`${e} = {`));
@@ -551,7 +559,7 @@ test('The geography file is current with the states of the mod', async () => {
   assert.equal(states.length, fromFile.size);
   for (const s of states) { const f = fromFile.get(s.id); assert(f, `state ${s.id}`); assert.equal(f.owner, s.owner); assert(s.provinces.includes(f.province)); }
   assert.deepEqual(raw0.geography.anomalies, []);
-  assert.equal(Object.keys(geo).length, 305);
+  assert.equal(Object.keys(geo).length, countries.length);
   for (const c of countries) assert(geo[c.tag], `${c.name} has states`);
   assert(countries.every(c => geo[c.tag].some(s => s.id === c.capitalState)), 'every capital state is among the states of its owner');
 });
@@ -630,8 +638,8 @@ test('Negative: support companies among the regiments, a granted unit, too many 
 test('Negative: a named realm outside the roster, a mix that does not add up and a template of another people are refused', async () => {
   await rejects(r => { r.templates.named.Atlantis = { divisions: 1, xp: 0.1, mix: { men_line_host: 1 } }; }, /Atlantis is not in the roster/);
   await rejects(r => { r.templates.named.Aenor.divisions = 37; }, /the mix names 36 divisions, not 37/);
-  await rejects(r => { r.templates.named.Volgan.mix = { men_line_host: 40 }; }, /template men_line_host is not for country:Volgan/);
-  await rejects(r => { r.templates.named.Zol.navy = { destroyer: 3 }; }, /unknown ship destroyer/);
+  await rejects(r => { r.templates.named.Puvulan.mix = { men_line_host: 40 }; }, /template men_line_host is not for country:Puvulan/);
+  await rejects(r => { r.templates.named["Zol's Mistake"].navy = { destroyer: 3 }; }, /unknown ship destroyer/);
 });
 test('Negative: a vanilla ship in a task force, a fleet with no task force, an unknown goal and a bad doctrine are refused', async () => {
   await rejects(r => { r.ai.navy.taskforces[0].min = { destroyer: 2 }; }, /destroyer is not a ZIN ship sub-unit/);
@@ -667,7 +675,7 @@ test('With splitNaval the fleets move to <TAG>_world_naval.txt and the land file
   const n = await buildForces(s, { countries, assignment, table, splitNaval: true });
   assert.equal(n.ships, summary.ships);
   const withShips = countries.filter(c => parsed.get(c.tag).ships.length);
-  assert(withShips.length > 100);
+  assert(withShips.length > scaled(100));
   for (const c of withShips) {
     const naval = s.files.get(`history/units/${c.tag}_world_naval.txt`);
     assert(naval, `${c.name}: a naval file`);
@@ -693,7 +701,7 @@ function parseOobFrom(t) {
 }
 test('The report lists every country with its divisions, ships and stock, and the AI coverage', () => {
   const r = JSON.parse(text(FILES.report));
-  assert.equal(Object.keys(r.countries).length, 305);
+  assert.equal(Object.keys(r.countries).length, countries.length);
   assert.equal(r.divisions, summary.divisions);
   for (const c of countries) { const row = r.countries[c.tag]; assert.equal(row.divisions, parsed.get(c.tag).divisions.length); assert.equal(Object.values(row.ships).reduce((a, b) => a + b, 0), parsed.get(c.tag).ships.length); }
   assert.equal(r.aiTemplateCoverage.men.infantry, 'zin_ai_men_infantry');

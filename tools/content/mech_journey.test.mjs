@@ -3,8 +3,10 @@
 // They build the three modules from the roster and check the output against the installed game's documentation, the specs' acceptance
 // lines that a build can decide, and negative cases. Run: node --test tools/content/mech_journey.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Staged, assertModifiers } from './lib/core.mjs';
@@ -17,7 +19,10 @@ import { buildYeldenneGlo } from './modules/mech_yeldenne.mjs';
 import { buildWesternCrossing } from './modules/mech_crossing.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
+// Tags come from the roster: Zol's Mistake (ZOL), Puvulan (the Volgan role), Worshipdom, Yeldenne, Kradlon and Gunwyn.
+const tagOf = n => { const c = countries.find(x => x.name === n); assert(c, `${n} is not in the roster`); return c.tag; };
+const ZOL = tagOf("Zol's Mistake"), VOL = tagOf('Puvulan'), WOR = tagOf('Worshipdom'), YEL = tagOf('Yeldenne'), KRA = tagOf('Kradlon'), GUN = tagOf('Gunwyn');
 const readData = async n => JSON.parse(await readFile(path.join(here, 'data', n), 'utf8'));
 const eindilData = await readData('mech_journey_eindil.json'), gloData = await readData('mech_journey_glo.json'), westData = await readData('mech_journey_west.json');
 const clone = o => structuredClone(o);
@@ -252,7 +257,7 @@ test('Guest rules: an offensive war loses the guest, a border war does not', () 
   const trig = text('common/scripted_triggers/zin_eindil.txt');
   const off = trig.slice(trig.indexOf('zin_eindil_host_offends = {'), trig.indexOf('zin_eindil_afrit_foes_exist = {'));
   assert.match(off, /has_offensive_war = yes/); assert(!/start_border_war|has_border_war/.test(off));
-  assert.match(off, /original_tag = Y0U/); assert.match(off, /original_tag = Y8D/);
+  assert.match(off, new RegExp(`original_tag = ${ZOL}\\b`)); assert.match(off, new RegExp(`original_tag = ${VOL}\\b`));
 });
 test('Annexing the host moves Eindil to a friend of the host, never the annexer', () => {
   const eff = text('common/scripted_effects/zin_eindil.txt');
@@ -301,11 +306,11 @@ test('Glo never passes to the Worshipdom, a realm Afrit rules or Volgan (O3), an
   const all = ['common/scripted_effects/zin_glo.txt', 'events/zin_glo.txt', 'common/decisions/zin_glo.txt'].map(text).join('\n');
   assert(!/zin_glo_with_afrit|zin_afrit\.35/.test(all)); assert(!/zin_potent_magic/.test(all));
   const tr = text('common/scripted_effects/zin_glo.txt'); const transfer = tr.slice(tr.indexOf('zin_glo_transfer = {'), tr.indexOf('\n}\n', tr.indexOf('zin_glo_transfer = {')));
-  assert(!/zin_afrit|Y8G|Y8D|zin_glo_dark_power/.test(transfer)); assert.match(transfer, /zin_arg_to/);
+  assert(!new RegExp(`zin_afrit|\\b${WOR}\\b|\\b${VOL}\\b|zin_glo_dark_power`).test(transfer)); assert.match(transfer, /zin_arg_to/);
 });
 test('Glo\'s Wave only damages Zol\'s and Zol\'s subjects\' hosts and marks the state cleansed for 60 days', () => {
   const eff = text('common/scripted_effects/zin_glo.txt'); const w = eff.slice(eff.indexOf('zin_glo_wave = {'), eff.indexOf('zin_glo_wave_battlefield = {'));
-  assert.match(w, /original_tag = Y0U is_subject_of = Y0U/); assert.match(w, /zin_glo_cleansed days = 60/); assert(!/zin_zol_return_the_fallen|zin_zol_/.test(w));
+  assert.match(w, new RegExp(`original_tag = ${ZOL} is_subject_of = ${ZOL}`)); assert.match(w, /zin_glo_cleansed days = 60/); assert(!/zin_zol_return_the_fallen|zin_zol_/.test(w));
   const dec = text('common/decisions/zin_glo.txt'); assert.match(dec, /zin_glo_wave_decision[\s\S]*days_re_enable = 60/);
 });
 test('Hall outcomes: the cases A, B1, B2, C and D and the effects common to a death exist', () => {
@@ -316,7 +321,7 @@ test('Hall outcomes: the cases A, B1, B2, C and D and the effects common to a de
   assert.match(text('common/on_actions/zin_glo.txt'), /on_declare_war[\s\S]*zin_glo_conqueror/);
 });
 test('Glo\'s startup and ai: wards 50, power 0, state 0, the conquer block', () => {
-  const s = text('common/on_actions/zin_glo.txt'); assert.match(s, /zin_glo_state = 0/); assert.match(s, /zin_yeldenne_wards = constant:zin_glo\.wards_start/); assert.match(s, /Y8H = \{ country_event = \{ id = zin_glo\.1/);
+  const s = text('common/on_actions/zin_glo.txt'); assert.match(s, /zin_glo_state = 0/); assert.match(s, /zin_yeldenne_wards = constant:zin_glo\.wards_start/); assert.match(s, new RegExp(`${YEL} = \\{ country_event = \\{ id = zin_glo\\.1`));
   assert.match(text('common/ai_strategy/zin_glo.txt'), /type = conquer[\s\S]*value = -500/);
   assert.match(text('common/dynamic_modifiers/zin_glo.txt'), /zin_yeldenne_hall_wards[\s\S]*enemy_attrition = 0\.2/);
 });
@@ -324,9 +329,11 @@ test('Glo\'s startup and ai: wards 50, power 0, state 0, the conquer block', () 
 // ------------------------------------------------------------------------------------------------ Western Crossing
 test('The west: grudge table, start values and the anchor list', () => {
   const s = text('common/on_actions/zin_west.txt');
-  assert.match(s, /Y09 = \{ set_variable = \{ zin_west_grudge = 60 \}/); assert.match(s, /Y07 = \{ set_variable = \{ zin_west_grudge = 55 \}/);
+  assert.match(s, new RegExp(`${KRA} = \\{ set_variable = \\{ zin_west_grudge = 60 \\}`)); assert.match(s, new RegExp(`${GUN} = \\{ set_variable = \\{ zin_west_grudge = 55 \\}`));
   assert.match(s, /zin_west_truce = constant:zin_west\.truce_start/); assert.match(s, /zin_west_unity = constant:zin_west\.unity_start/);
-  assert.equal(results.west.anchors[0], 'Y07'); assert.equal(results.west.anchors.length, 21);
+  const economy = JSON.parse(readFileSync(path.join(here, 'data/economy.json'), 'utf8'));
+  assert.equal(results.west.anchors[0], GUN); assert.equal(results.west.anchors.length, countries.filter(c => economy.regionByRoster[c.scan] === 'west_lands').length);
+  assert(results.west.anchors.length > 5, 'every West Lands realm is an anchor in turn');
   const t = text('common/scripted_triggers/zin_west.txt'); assert.match(t, /zin_west_is_anchor = \{/);
 });
 test('The paced dates are three branches each and equal the spec at the standard pace', () => {
@@ -365,10 +372,10 @@ test('Route changes refresh the western layouts (E4) and the monthly pulse does 
   assert.match(text('common/game_rules/zin_west.txt'), /zin_rule_west_route[\s\S]*default = \{\s+name = DEFAULT/);
   for (const o of ['historical', 'crossing_hold', 'relief', 'divided', 'free']) assert(text('common/game_rules/zin_west.txt').includes(`name = ${o}`), o);
 });
-test('Gunwaith gets its start spirit from zin_west.1 and the host template is made on every western country', () => {
+test('Gunwyn gets its start spirit from zin_west.1 and the host template is made on every western country', () => {
   const e = eventBlocks('events/zin_west.txt').find(b => b.v.find(x => x.k === 'id').v === 'zin_west.1'); const s = JSON.stringify(e.v);
   assert(s.includes('zin_gunwaith_weary_clans')); assert(s.includes('division_template')); assert(s.includes('zin_men_archers'));
-  const startup = text('common/on_actions/zin_west.txt'); assert.equal((startup.match(/country_event = \{ id = zin_west\.1 days = 2 \}/g) ?? []).length, 21);
+  const startup = text('common/on_actions/zin_west.txt'); assert.equal((startup.match(/country_event = \{ id = zin_west\.1 days = 2 \}/g) ?? []).length, results.west.anchors.length, 'one per West Lands realm');
 });
 test('The geography file is the one the module reads: ports, shore, isle and strategic regions', async () => {
   const g = await readData('mech_journey_geography.json');

@@ -23,7 +23,7 @@ import { Staged, yml } from '../lib/core.mjs';
 import { GAME, ZIN } from '../lib/paths.mjs';
 import { placeNames, buildNames } from './names.mjs';
 import { compileBanned, findBanned } from '../lib/banned.mjs';
-import { cultureRows } from '../lib/roster.mjs';
+import { cultureRows, gamePeopleOf } from '../lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(here, '../data');
@@ -294,7 +294,8 @@ export async function prepareModel(ctx, raw) {
   }
 
   // names and models
-  model.cultureRows = cultures.countries.filter(c => tagOf.has(c.country)).map(c => ({ ...c, tag: tagOf.get(c.country) }));
+  // `people` is the roster people (dwarves, mycids, ...); `gamePeople` the kit whose units, gear and names it uses (lib/roster.mjs).
+  model.cultureRows = cultures.countries.filter(c => tagOf.has(c.country)).map(c => ({ ...c, tag: tagOf.get(c.country), gamePeople: gamePeopleOf(c.people) }));
   for (const [id, m] of Object.entries(models.units)) {
     const u = model.unitById.get(id) ?? err(`warfare: models name ${id}, which is not a sub-unit`);
     if (!models.native[m.asset]) err(`warfare: model of ${id} names unknown asset ${m.asset}`);
@@ -782,8 +783,8 @@ function buildNameFiles(staged, model, ctx) {
   const groupOfTag = {}, shipGroupsOfTag = {};
   for (const [culture, tags] of [...byCulture].sort(([a], [b]) => (a < b ? -1 : 1))) {
     const def = model.raw.cultureDefs.cultures[culture] ?? err(`warfare: unknown culture ${culture}`);
-    const people = def.people, cult = slug(culture), forC = `\t\t\tfor_countries = { ${tags.sort().join(' ')} }`;
-    if (!def.language) {
+    const people = gamePeopleOf(def.people), cult = slug(culture), forC = `\t\t\tfor_countries = { ${tags.sort().join(' ')} }`;
+    if (!def.language && people === 'the_dead') {
       // Zol's Mistake: numbered hosts only (S4), black ships without names.
       const gid = 'ZIN_HOSTS_ZOL';
       const ordered = names.zol.hosts.map((h, i) => `\t\t${i + 1} = { ${q(h)} }`).join('\n');
@@ -794,17 +795,20 @@ function buildNameFiles(staged, model, ctx) {
       report.groups.push(gid, 'ZIN_SHIPS_ZOL');
       continue;
     }
+    // A living culture with no language yet (the mycids, until the owner rules on their speech) names its hosts and ships from
+    // the blend of its region, as its name pools do.
+    const target = def.language ? culture : { region: model.cultureRows.find(r => r.culture === culture).region };
     const noun = nounOf(model, culture, people), n = names.ordinalCount[culture] ?? names.ordinalCount.default;
-    const places = mixPlaces(culture, n, 'host:', ['settlement', 'city']);
+    const places = mixPlaces(target, n, 'host:', ['settlement', 'city']);
     const gid = `ZIN_HOSTS_${cult}`;
     const ordered = places.map((p, i) => `\t\t${i + 1} = { ${q(`${ordinalWord(i + 1)} ${noun} of ${p}`)} }`).join('\n');
-    const typeList = model.raw.units.recruit.line[people === 'the_dead' ? 'country:Volgan' : people] ?? ['zin_men_infantry'];
+    const typeList = model.raw.units.recruit.line[people === 'the_dead' ? 'country:Puvulan' : people] ?? ['zin_men_infantry'];
     hostBlocks.push(`${gid} = {\n\tname = ${q(`Hosts of the ${def.name}`)}\n\tfor_countries = { ${tags.join(' ')} }\n\tcan_use = { always = yes }\n\tdivision_types = { ${typeList.map(q).join(' ')} }\n\tfallback_name = ${q(`%d. ${noun}`)}\n\tordered = {\n${ordered}\n\t}\n}`);
     for (const t of tags) groupOfTag[t] = gid;
     report.hosts += places.length; report.groups.push(gid);
     const shipIds = {};
     for (const hull of ['galley', 'warship', 'great_warship', 'raider']) {
-      const list = mixPlaces(culture, names.shipCount[hull], `ship:${hull}:`, names.shipKinds[hull]);
+      const list = mixPlaces(target, names.shipCount[hull], `ship:${hull}:`, names.shipKinds[hull]);
       const id = `ZIN_SHIPS_${cult}_${hull.toUpperCase()}`;
       shipBlocks.push(`${id} = {\n\tname = ${names.shipThemes[hull]}\n\tfor_countries = { ${tags.join(' ')} }\n\ttype = ship\n\tship_types = { zin_hull_${hull} ${{ galley: 'destroyer', warship: 'heavy_cruiser', great_warship: 'battleship', raider: 'submarine' }[hull]} }\n\tfallback_name = ${q(names.shipFallback[hull])}\n\tunique = {\n\t\t${list.map(q).join(' ')}\n\t}\n}`);
       shipIds[hull] = id; report.ships += list.length; report.groups.push(id);

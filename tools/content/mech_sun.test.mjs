@@ -1,11 +1,12 @@
 // Tests of the Lands of the Sun mechanic (docs/design/stage2/mech_sun.md, spec docs/specs/04_mechanics/lands_of_the_sun.md): Lorien's
 // counsel, the Noon Council and its concord, the Noon League, the Mirror of First Rain, and Lorien's last march and death. The module is
-// built into a fresh Staged with the roster of data/countries.json and the people assignment of docs/design/countries.csv; nothing
+// built into a fresh Staged with the roster (lib/roster.mjs) and the people assignment of docs/design/countries.csv; nothing
 // needs a prior build. The installed game is read for engine vocabulary (effects, triggers, modifiers). Every rule has a positive
 // check on the real output and at least one negative test that mutates the data or the output and shows the check or the module
 // refusing it.
 // Run: cd tools && node --test content/mech_sun.test.mjs
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -23,7 +24,7 @@ import { loadGlossary } from './lib/text_engine.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const json = async f => JSON.parse(await readFile(path.join(here, 'data', f), 'utf8'));
-const { countries } = await json('countries.json');
+const countries = countryTable();
 const table = await loadCountryTable(countries, `${ZIN}/docs/design/countries.csv`);
 const assignment = new Map([...table].map(([tag, t]) => [tag, t.people]));
 const DATA = await loadSunData();
@@ -33,7 +34,8 @@ const build = async (data = DATA) => { const s = new Staged(); const r = await b
 const { s: staged, r: sun } = await build();
 
 const tagOf = n => { const c = countries.find(x => x.name === n); assert(c, `${n} is not in the roster`); return c.tag; };
-const GALA = tagOf('Gala Elves'), LOL = tagOf('The Lands of Light'), AENOR = tagOf('Aenor'), ZOL = tagOf('Zol'), VOLGAN = tagOf('Volgan');
+// Gala is the realm of the Gala Elves (the old rows Gala and North Gala joined it); Puvulan holds the Volgan role of the Southern Dominion.
+const GALA = tagOf('Gala'), LOL = tagOf('The Lands of Light'), AENOR = tagOf('Aenor'), ZOL = tagOf("Zol's Mistake"), VOLGAN = tagOf('Puvulan');
 const text = rel => { const b = staged.files.get(rel); assert(b, `missing staged file ${rel}`); return b.toString('utf8'); };
 const scriptFiles = new Map([...staged.files].filter(([k]) => k.endsWith('.txt')).map(([k, v]) => [k, v.toString('utf8')]));
 const allScript = [...scriptFiles.values()].join('\n');
@@ -137,25 +139,28 @@ test('Negative: an event id the spec retires or a missing event is refused by th
   assert(check(EV.replace('\tid = zin_sun.21\n', '\tid = zin_sun.22\n')).some(p => p === 'missing zin_sun.21'));
 });
 
-test('Roster: 47 Lands of the Sun countries, 41 Sunhot realms, the Lands of Light and the Gala Elves with a capital state', () => {
+// The roster of 24 October 2026 counts 10 Lands of the Sun realms, 7 of them Sunhot (the data's expected counts; many old rows merged).
+test('Roster: the Lands of the Sun countries and Sunhot realms of the data, the Lands of Light and the Gala Elves with a capital state', () => {
   const sunland = countries.filter(c => c.scan === 'Sunhot');
-  assert.equal(sunland.length, 47);
-  assert.equal(sunland.filter(c => assignment.get(c.tag) === 'sun_elves').length, 41);
-  assert.equal(sun.tags.sunhotRealms, 41);
+  assert.equal(sunland.length, DATA.roster.expectedCountries);
+  assert.equal(sunland.filter(c => assignment.get(c.tag) === 'sun_elves').length, DATA.roster.expectedSunhotRealms);
+  assert.equal(sun.tags.sunhotRealms, DATA.roster.expectedSunhotRealms);
+  assert(DATA.roster.expectedSunhotRealms > 1 && DATA.roster.expectedSunhotRealms < DATA.roster.expectedCountries);
   assert.equal(sun.tags.gala, GALA); assert.equal(sun.tags.landsOfLight, LOL);
   assert(countries.find(c => c.tag === GALA).capitalState > 0, 'the Gala Elves have a capital state');
   const list = parse(TR).find(e => e.k === 'zin_sun_is_lands_of_the_sun_country').v[0].v.map(e => e.v);
   assert.deepEqual([...list].sort(), sunland.map(c => c.tag).sort());
-  for (const name of ['Goodin', 'Goodton', 'Guuden', 'Gala', 'North Gala']) assert.notEqual(assignment.get(tagOf(name)), 'sun_elves', `${name} is no Sunhot realm`);
+  for (const name of ['Goodin', 'Gala']) assert.notEqual(assignment.get(tagOf(name)), 'sun_elves', `${name} is no Sunhot realm`);
 });
 
 test('Negative: the module refuses a roster count, a missing name or a realm outside the region', async () => {
-  const a = clone(); a.roster.expectedSunhotRealms = 40;
-  await assert.rejects(() => build(a), /41 Sunhot realms, the data expects 40/);
-  const b = clone(); b.roster.expectedCountries = 46;
-  await assert.rejects(() => build(b), /47 Sunhot countries/);
+  const realms = DATA.roster.expectedSunhotRealms, lands = DATA.roster.expectedCountries;
+  const a = clone(); a.roster.expectedSunhotRealms = realms - 1;
+  await assert.rejects(() => build(a), new RegExp(`${realms} Sunhot realms, the data expects ${realms - 1}`));
+  const b = clone(); b.roster.expectedCountries = lands - 1;
+  await assert.rejects(() => build(b), new RegExp(`${lands} Sunhot countries`));
   const c = clone(); c.roster.igara = 'Igaraa';
-  await assert.rejects(() => build(c), /not in countries\.json/);
+  await assert.rejects(() => build(c), /not in the roster/);
   const d = clone(); d.roster.elvana = 'Selen';
   await assert.rejects(() => build(d), /Selen is not a Sunhot country/);
 });
@@ -485,7 +490,7 @@ test('Warnings: three prices of Send Word, the named or any sight, the heeded id
 });
 
 test('Warnings: the AI heeds at 10 + opinion / 2, +30 for the heeding and elven realms, Aenor 10 then 0, and the two answers sum to 100', () => {
-  const heeders = ['Selen', 'Mirolon', 'Kingson', 'Hiloron', 'Magical Forest'].map(tagOf);
+  const heeders = ['Selen', 'Mirolon', 'Kingson', 'Hirolon', 'Magical Forest'].map(tagOf);
   const [dismiss, heed] = aiBlocks(eventBlock(EV, 'zin_sun.20'));
   for (const h of heeders) assert(heed.includes(`original_tag = ${h}`), h);
   const scenario = s => cond => {
@@ -713,8 +718,8 @@ test('AI strategies: every Sunhot realm befriends the Gala Elves and the Lands o
   const strategies = top.v.filter(e => e.k === 'ai_strategy').map(e => Object.fromEntries(e.v.map(x => [x.k, x.v])));
   assert.deepEqual(strategies.filter(s => s.type === 'befriend').map(s => [s.id, s.value]), [[GALA, '20'], [LOL, '20']]);
   const conquer = strategies.filter(s => s.type === 'conquer');
-  assert.equal(conquer.length, 47); assert(conquer.every(s => s.value === '-100'));
-  assert.equal(new Set(conquer.map(s => s.id)).size, 47, 'no duplicate strategy');
+  assert.equal(conquer.length, DATA.roster.expectedCountries); assert(conquer.every(s => s.value === '-100'));
+  assert.equal(new Set(conquer.map(s => s.id)).size, DATA.roster.expectedCountries, 'no duplicate strategy');
   assert(ai.includes('enable = { zin_sun_is_sunhot_realm = yes }'));
   assert(!/declare_war_on|create_wargoal|add_state_claim|add_claim_by/.test(allScript.replace(blockOf(EF, 'zin_sun_lorien_rides'), '')), 'the only war this slice opens is the ride against Zol');
 });

@@ -13,6 +13,7 @@ import { analyseTrees, compileTree } from './modules/focus_compiler.mjs';
 import { Registry, loadArgCodes, loadRegistry, exclusiveClosure, gateWarnings } from './checks/focus_checks.mjs';
 import { absolutePositions } from './lib/focus_model.mjs';
 import { compileBanned, findBanned, loadRuleSet } from './lib/banned.mjs';
+import { countryTable } from './lib/roster.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const json = async f => JSON.parse(await readFile(f, 'utf8'));
@@ -77,7 +78,8 @@ test('Counts, tiers and grid sizes match the specs', () => {
   for (const id of IDS) {
     const t = RAW[id], e = EXPECT[id];
     assert.equal(t.tier, 'major');
-    assert.deepEqual(t.countries, [id === 'gala' ? 'Gala Elves' : id[0].toUpperCase() + id.slice(1)]);
+    // Each major tree serves the one realm of the roster whose key is the tree id (Gala Elves is the realm Gala).
+    assert.deepEqual(t.countries, [countryTable().find(c => c.key === id).name]);
     assert.equal(t.focuses.length, e.focuses, `${id} focuses`);
     assert.equal(Object.keys(t.spirits).length, e.spirits, `${id} spirits`);
     assert.equal(Object.keys(t.events).length, e.events, `${id} events`);

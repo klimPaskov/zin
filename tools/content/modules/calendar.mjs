@@ -11,6 +11,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { yml } from '../lib/core.mjs';
 import { GAME } from '../lib/paths.mjs';
+import { countryTable } from '../lib/roster.mjs';
 import { MONTHS, monthKeys, START_DATE, CALENDARS, SEASON_WORDS, ORDINAL_WORDS, eraOffset, risingDay, firstRisingYear, fillForm } from '../lib/calendar.mjs';
 
 export const LANGUAGES = ['english', 'braz_por', 'french', 'german', 'japanese', 'korean', 'polish', 'russian', 'simp_chinese', 'spanish'];
@@ -191,7 +192,7 @@ export async function buildCalendar(staged, ctx = {}) {
   for (const lang of LANGUAGES) staged.add(`localisation/replace/zin_calendar_l_${lang}.yml`, yml(monthKeys(lang), lang));
 
   const roster = ctx.roster ?? JSON.parse(await readFile(path.join(here, '../data/world/roster.json'), 'utf8'));
-  const countries = ctx.countries ?? JSON.parse(await readFile(path.join(here, '../data/countries.json'), 'utf8')).countries;
+  const countries = ctx.countries ?? countryTable();
   const { resolved, unresolved } = resolveReckoningRealms(roster, countries);
   staged.text('common/script_constants/zin_calendar_constants.txt', constantsFile());
   staged.text('common/scripted_effects/zin_calendar.txt', effectsFile());

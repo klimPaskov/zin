@@ -3,6 +3,7 @@
 //   node --test tools/content/vanilla.test.mjs
 // The baseline classifier test reads the owner's 18 October 2026 log (ZIN_BASELINE_LOG) and is skipped without it.
 import test from 'node:test';
+import { countryTable } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile, readdir, mkdtemp, mkdir, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -23,7 +24,7 @@ const STAGED = stagingDir(process.env.ZIN_STAGED);
 const read = p => readFile(path.join(STAGED, p), 'utf8');
 const disp = await V.loadDispositions();
 const baseline = await V.loadJson('baseline_errors.json');
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 async function walkDir(d, b = d) { const o = []; for (const e of await readdir(d, { withFileTypes: true })) { const f = path.join(d, e.name); if (e.isDirectory()) o.push(...await walkDir(f, b)); else o.push(path.relative(b, f).split(path.sep).join('/')); } return o; }
 const stagedFiles = new Map(); for (const r of await walkDir(STAGED)) stagedFiles.set(r, await readFile(path.join(STAGED, r)));
 const staged = { files: stagedFiles };
@@ -180,13 +181,24 @@ test('Laws define every key the histories add; the engine hooks keep their names
   for (const k of ['improve_relation', 'guarantee', 'embargo']) assert.match(await read('common/opinion_modifiers/00_zin_opinion_modifiers.txt'), new RegExp(`\\t${k} = \\{`), k);
   assert.match(await read('common/ideas/zin_hidden.txt'), /received_attache = \{/);
 });
-test('Every ZIN country gets the interim tree and three ZIN councillors; no vanilla advisors remain', async () => {
+test('Every ZIN country gets the interim tree; only a court without named advisors gets the three ZIN councillors; no vanilla advisors remain', async () => {
   const tree = await read('common/national_focus/zin_interim_default.txt');
   assert.match(tree, /default = yes/); assert.equal([...tree.matchAll(/^\t\tid = zin_long_peace_/gm)].length, 6);
   assert(!/declare_war|create_wargoal|add_state_core/.test(tree), 'the interim tree keeps the peace');
   const general = await read('history/general/zin_general.txt');
-  for (const c of countries) assert.match(general, new RegExp(`tag = ${c.tag}\\b`), c.tag);
-  assert.equal([...general.matchAll(/generate_character = \{/g)].length, 3);
+  // A court has named advisors when its realm's history recruits a staged advisor (modules/characters.mjs withAdvisors).
+  const characters = [...stagedFiles].filter(([f]) => f.startsWith('common/characters/')).map(([, b]) => b.toString('utf8')).join('\n');
+  const advisorIds = new Set([...characters.split(/^\t(?=[A-Za-z0-9_]+ = \{)/m)].filter(b => /advisor = \{/.test(b)).map(b => b.match(/^([A-Za-z0-9_]+)/)?.[1]));
+  const { historyFile } = await import('./modules/countries.mjs');
+  const withoutCourt = [];
+  for (const c of countries) {
+    const recruited = [...(await read(historyFile(c))).matchAll(/recruit_character = (\w+)/g)].map(m => m[1]);
+    if (!recruited.some(id => advisorIds.has(id))) withoutCourt.push(c.tag);
+  }
+  const generated = [...general.matchAll(/tag = ([A-Z0-9]{3})\b/g)].map(m => m[1]);
+  // Courts that keep no advisors on purpose (characters data court: "open") get none either, so generated is a subset.
+  for (const tag of generated) assert(withoutCourt.includes(tag), `${tag} has named advisors and generated councillors`);
+  assert.equal([...general.matchAll(/generate_character = \{/g)].length, generated.length ? 3 : 0);
   assert(![...stagedFiles.keys()].some(f => f === 'history/general/generic_advisors.txt'));
   for (const t of general.matchAll(/traits = \{ (\w+) \}/g)) assert.match(await read('common/country_leader/00_zin_leader_traits.txt'), new RegExp(`\\t${t[1]} = \\{`), t[1]);
 });

@@ -57,7 +57,8 @@ export function classify(rules, rel) {
 // Build the resolver. `tables` holds the country table and the flag cell map for the world-owned flags.
 export function createSourceResolver({ view, provenance, manifests, rules, tables = {} }) {
   const gens = provenance.lines.filter(isGeneration), reviews = provenance.lines.filter(isReview);
-  const countries = new Map((tables.countries ?? []).map(c => [c.tag, c.name]));
+  // A realm flies the old flag of its main former row (flagFrom, lib/roster.mjs) until its own is generated; the cell map is by old name.
+  const countries = new Map((tables.countries ?? []).map(c => [c.tag, c.flagFrom ?? c.name]));
   const cellsByName = new Map((tables.flagCells ?? []).map(c => [c.name, c]));
   const shaOf = rel => (view.has(rel) ? view.sha(rel) : null);
 

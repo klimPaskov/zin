@@ -1,0 +1,1186 @@
+{
+ "schema": "zin-cultures/1",
+ "status": "Draft",
+ "written": "2026-10-24",
+ "note": "New and split cultures and faiths for the roster of 24 October 2026 (docs/design/roster.md); everything is proposed (P). Fields beyond cultures.json: government, kinship, calendar (a key of roster.json calendars), supersedes, status. Faiths carry pantheon (\"twelve\" or \"own\") and favours (ids of pantheon.json gods). renames lists existing ids whose names repeat retired labels; the culture data's owner applies them.",
+ "cultures": {
+  "wall_delvers": {
+   "id": "wall_delvers",
+   "name": "Delving-Clans of Kunhrim",
+   "people": "dwarves",
+   "language": "dwarvish",
+   "dialect": "wall",
+   "faith": "deep_reckoning",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#4a3b2f",
+    "#b8862f",
+    "#8f8f8a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A gold anvil under a stone arch on dark brown; the Iron Charter adds a narrow blue bordure.",
+    "portrait": "Broad, heavy, long braided beards bound with rings; soot-dark hands.",
+    "building": "Gates cut into the rock face, stepped halls, bronze doors.",
+    "unit": "Axe and hammer companies in heavy mail; bombards in the pass forts.",
+    "music": "Hammer-beat work songs, deep and slow."
+   },
+   "government": "A council of clan-elders under the Lord of the Deep Hall; contracts are law and are cut in stone.",
+   "kinship": "Clan lines counted through the father and named for a stone or a deed; a clan owns its delving, the hold owns the gate.",
+   "calendar": "delving_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Kunhrim"
+   ],
+   "secondary_countries": []
+  },
+  "west_delvers": {
+   "id": "west_delvers",
+   "name": "Western Hold-Folk",
+   "people": "dwarves",
+   "language": "dwarvish",
+   "dialect": "west",
+   "faith": "deep_reckoning",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3d3a36",
+    "#c9a24a",
+    "#a33a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A red forge-flame or a grey tower on a dark field, with a gold rim.",
+    "portrait": "Heavy and bearded; leather aprons; burn scars worn with pride.",
+    "building": "Outer gates above the valleys; trade halls where men may enter; deep halls where they may not.",
+    "unit": "Axemen and handgunners; siege bombards cast for sale.",
+    "music": "Bells struck underground; drum and hammer."
+   },
+   "government": "Each hold obeys the lord of its deepest hall, advised by the masters of the forges.",
+   "kinship": "Clan lines through the father; a broken contract is a feud of the whole line.",
+   "calendar": "delving_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Brundahrim",
+    "Gromkerm"
+   ],
+   "secondary_countries": []
+  },
+  "north_delvers": {
+   "id": "north_delvers",
+   "name": "High Hold-Folk",
+   "people": "dwarves",
+   "language": "dwarvish",
+   "dialect": "high",
+   "faith": "deep_reckoning",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2e3a45",
+    "#d8d8d0",
+    "#9a7a3a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A white peak over a black gate on grey.",
+    "portrait": "Heavy, bearded, wrapped in furs above ground.",
+    "building": "The High Gate in the snowline; the white hall below it.",
+    "unit": "Axe and hammer companies; bombards for Sonargur's ships.",
+    "music": "Horns and hammer."
+   },
+   "government": "The Lord of the White Hall with a council of clans; the Hill Pact binds the hold to the Heodwa council.",
+   "kinship": "Clan lines through the father; marriages seal pacts between holds.",
+   "calendar": "delving_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Hrakbrund"
+   ],
+   "secondary_countries": []
+  },
+  "hearth_folk": {
+   "id": "hearth_folk",
+   "name": "Hearth-Folk of Dobbum",
+   "people": "small_folk",
+   "language": "hearthspeech",
+   "dialect": "vale",
+   "faith": "hearth_table",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#4f7a3a",
+    "#e3c77a",
+    "#8a5a33"
+   ],
+   "heraldry_and_look": {
+    "flag": "A round green door in a yellow field.",
+    "portrait": "Small, round-faced, bare-footed, curly-haired; pipes and waistcoats.",
+    "building": "Round doors in grassy banks; low stone barns.",
+    "unit": "Slingers and hedge-wardens; they rarely march.",
+    "music": "Fiddles and table songs."
+   },
+   "government": "A moot of householders under the Warden of the Fields; the Ronbo Watch of men keeps the passes by an old oath.",
+   "kinship": "Households counted through both parents; a household is named for its door or its field.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Dobbum"
+   ],
+   "secondary_countries": []
+  },
+  "holt_gnomes": {
+   "id": "holt_gnomes",
+   "name": "Holt-Folk of Olodor",
+   "people": "gnomes",
+   "language": "gnomish",
+   "dialect": "holt",
+   "faith": "full_pot",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2f6b3a",
+    "#b23a2a",
+    "#d4a93a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A brimming pot of gold on green, a red cap above.",
+    "portrait": "Tiny, bearded, red-capped, quick-eyed.",
+    "building": "Houses inside trees and under the hills, doors that look like roots.",
+    "unit": "Hidden archers and trappers; they fight only when found.",
+    "music": "Whistles and small bells."
+   },
+   "government": "Every village has one king, who keeps the tally of the pots and crowns the gnome whose pot is full; the villages meet only when they are found.",
+   "kinship": "Kin by village rather than by blood; a crowned gnome founds a household.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Olodor"
+   ],
+   "secondary_countries": []
+  },
+  "road_warrens": {
+   "id": "road_warrens",
+   "name": "Road-Warrens of Mustnom",
+   "people": "dwarf_goblins",
+   "language": "pack_tongue",
+   "dialect": "road",
+   "faith": "road_due",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a4a3a",
+    "#7a8a4a",
+    "#c0a060"
+   ],
+   "heraldry_and_look": {
+    "flag": "A laden pack on a grey field with a black boss-mark.",
+    "portrait": "Small, thick-set and tough; heavy packs and walking sticks.",
+    "building": "Cave-markets and warrens in the southern hills.",
+    "unit": "Cudgel-men and road-guards; they run when resisted.",
+    "music": "Road chants in time with the step."
+   },
+   "government": "Boss-warrens with no king: each cave obeys the boss who receives what the travellers bring and gives iron to the smiths; bound labourers work the caves.",
+   "kinship": "Kin by warren and by road-band; half of every family is always away.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Mustnom"
+   ],
+   "secondary_countries": []
+  },
+  "baelim": {
+   "id": "baelim",
+   "name": "the Baelim",
+   "people": "tree_people",
+   "language": "lowspeech",
+   "dialect": "stand",
+   "faith": "standing_silence",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2a4a2a",
+    "#6a5a3a",
+    "#a8b880"
+   ],
+   "heraldry_and_look": {
+    "flag": "A tree with its roots drawn as wide as its crown, on dark green.",
+    "portrait": "Walking trees of bark and needle; faces seen only as knots and shadow.",
+    "building": "No buildings: the stands themselves.",
+    "unit": "They do not march; a stand that moves is a wall.",
+    "music": "Low voices like wind in the trunks."
+   },
+   "government": "A slow moot without a crown in which the Eldest speaks for the stand; a moot can last a season.",
+   "kinship": "A stand is one and many; saplings belong to the stand they root beside.",
+   "calendar": "season_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Aenor Forest"
+   ],
+   "secondary_countries": []
+  },
+  "mycid_rings": {
+   "id": "mycid_rings",
+   "name": "Mycids of the Mushroom Forest",
+   "people": "mycids",
+   "language": null,
+   "dialect": null,
+   "faith": "none",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#6a4a6a",
+    "#d0c0a0",
+    "#3a2a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A ring of white caps on purple (proposed until the owner rules on the mycids).",
+    "portrait": "Not described in the vault; the art waits for the owner.",
+    "building": "Not described.",
+    "unit": "Not described; spores are the only arms reported.",
+    "music": "Silence."
+   },
+   "government": "Open in the vault; nothing about their rule is invented here.",
+   "kinship": "Open in the vault.",
+   "calendar": "none",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Mushroom Forest"
+   ],
+   "secondary_countries": []
+  },
+  "kingdom_forest_elves": {
+   "id": "kingdom_forest_elves",
+   "name": "the Kingdom Forest Company",
+   "people": "elves",
+   "language": "sylvan",
+   "dialect": "old_west",
+   "faith": "kindred_song",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2a5a3a",
+    "#c8c0a0",
+    "#5a3a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A crowned tree on green with a silver road beneath.",
+    "portrait": "Tall, grave, in old green travelling cloaks.",
+    "building": "Hidden halls in the Kingdom Forests on the road to the Kingson Pass.",
+    "unit": "Bowmen and guides.",
+    "music": "Old songs in the western form of Sylvan."
+   },
+   "government": "A single elven household under its eldest, guides of the Kingson road.",
+   "kinship": "Elven houses; the company counts itself one house of the lost kin of the west.",
+   "calendar": "elven_seasons",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Dunelaeth"
+   ],
+   "secondary_countries": []
+  },
+  "roost_keepers": {
+   "id": "roost_keepers",
+   "name": "Roost-Keepers of Yavieth",
+   "people": "elves",
+   "language": "sylvan",
+   "dialect": "roost",
+   "faith": "kindred_song",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3a6a2a",
+    "#c0302a",
+    "#e0d0a0"
+   ],
+   "heraldry_and_look": {
+    "flag": "A dragon's wing over a green hill.",
+    "portrait": "Wild-haired, scarred, smelling of smoke.",
+    "building": "Shelters on the slopes of Dragon Mountain.",
+    "unit": "Dragon-callers; few bows.",
+    "music": "Calls and answers across the slopes."
+   },
+   "government": "A fellowship without a ruler: the eldest keeper speaks for the roosts.",
+   "kinship": "A fellowship, not a kin; keepers are chosen by the dragons' tolerance.",
+   "calendar": "elven_seasons",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Yavieth"
+   ],
+   "secondary_countries": []
+  },
+  "god_forest_keepers": {
+   "id": "god_forest_keepers",
+   "name": "Keepers of the God Forest",
+   "people": "elves",
+   "language": "sunhot",
+   "dialect": "keeper",
+   "faith": "kindred_song",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#1f4a3a",
+    "#e8d070",
+    "#f0f0e0"
+   ],
+   "heraldry_and_look": {
+    "flag": "A closed gate of branches on deep green with a gold sun behind.",
+    "portrait": "Seldom seen; the art waits for the owner's word on their kin.",
+    "building": "A glade and no walls.",
+    "unit": "None recorded.",
+    "music": "Silence and birdsong."
+   },
+   "government": "One household of keepers; whether they are Sunhot, Gala or a kin of their own is open (Sunhot speech is a working assumption).",
+   "kinship": "Open.",
+   "calendar": "elven_seasons",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "God Forest"
+   ],
+   "secondary_countries": []
+  },
+  "vale_folk": {
+   "id": "vale_folk",
+   "name": "Vale-Folk of Kingson",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "march",
+   "faith": "pass_vigil",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a5a6a",
+    "#d8c080",
+    "#2f5d8a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A gate-tower between two peaks on grey; the dominion's charter-seal border.",
+    "portrait": "Weathered mountain faces; fur-trimmed cloaks.",
+    "building": "Stone towns in the ringed vale; forts on both sides of the pass.",
+    "unit": "Pikes and pass-wardens; bombards bought from Kunhrim.",
+    "music": "Horn calls echoing in the gorge."
+   },
+   "government": "A pass lordship under a Pass-Lord, a chartered dominion of the Concord.",
+   "kinship": "Families who held the vale through the occupation; the pass watch passes from father to son.",
+   "calendar": "twelve",
+   "supersedes": "wall_folk",
+   "status": "P",
+   "countries": [
+    "Kingson",
+    "Klungori Guard"
+   ],
+   "secondary_countries": []
+  },
+  "strait_folk": {
+   "id": "strait_folk",
+   "name": "Strait-Folk of Fotan",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "strait",
+   "faith": "strait_litany",
+   "faith_secondary": "deliverer",
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2f4a6a",
+    "#e0e0d0",
+    "#8a2a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A toll-chain across blue water.",
+    "portrait": "Mixed Leren and Aenoran looks; sea-cloaks.",
+    "building": "Toll-towers and quays.",
+    "unit": "Marines of the toll-boats.",
+    "music": "Sea shanties in two tongues."
+   },
+   "government": "A free lordship outside the Charters that lives on its strait toll and leans to Lerendor.",
+   "kinship": "Leren and Aenoran houses married into each other.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Fotan"
+   ],
+   "secondary_countries": []
+  },
+  "hilofrim_herders": {
+   "id": "hilofrim_herders",
+   "name": "Hill-Herders of Hilofrim",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "hill",
+   "faith": "lamp_furrow",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#6a7a4a",
+    "#e8e0c0",
+    "#5a4a3a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A sheep and a cairn on green.",
+    "portrait": "Lean hill people; wool and crooks.",
+    "building": "Low stone farms on the Grano.",
+    "unit": "Shepherds' slings; they guide armies over the saddle.",
+    "music": "Pipes."
+   },
+   "government": "Tenants of the giants of Hirolon, with village headmen who answer to the High Chief.",
+   "kinship": "Clans of herders; grazing rights pass by family.",
+   "calendar": "twelve",
+   "supersedes": "wall_folk",
+   "status": "P",
+   "countries": [],
+   "secondary_countries": [
+    "Hirolon"
+   ]
+  },
+  "teste_valley_folk": {
+   "id": "teste_valley_folk",
+   "name": "Teste Valley-Folk",
+   "people": "men",
+   "language": "aenoran",
+   "dialect": "old_ranger",
+   "faith": "lamp_furrow",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a7a3a",
+    "#e0d0a0",
+    "#3a5a7a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A furrow and a leaf on green.",
+    "portrait": "Plain farmers who keep elven manners.",
+    "building": "Timber farms in the Teste Vale.",
+    "unit": "Bowmen trained by Herrodon.",
+    "music": "Old ranger songs."
+   },
+   "government": "A valley commune under Herrodon's protection, run by a moot of farms.",
+   "kinship": "Families descended from Third Age refugees; the founding families sit first at the moot.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Teste"
+   ],
+   "secondary_countries": []
+  },
+  "quay_folk": {
+   "id": "quay_folk",
+   "name": "Quay-Folk of Luv-zhise",
+   "people": "men",
+   "language": "alerhic",
+   "dialect": "quay",
+   "faith": "lake_litany",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#2a5a6a",
+    "#d0b070",
+    "#6a3a5a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A ferry-boat between two shores.",
+    "portrait": "Alerhic merchants, elven pilots and mycid traders side by side.",
+    "building": "Quay-houses on stilts at the Rift Narrows.",
+    "unit": "Ferry-guards and pilots.",
+    "music": "Many tongues at once."
+   },
+   "government": "A free port of quay-houses: the heads of the houses sit as a council.",
+   "kinship": "Mixed households; a quay-house adopts whoever works its boats.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Luv-zhise"
+   ],
+   "secondary_countries": []
+  },
+  "reindeer_clans": {
+   "id": "reindeer_clans",
+   "name": "Reindeer Clans of Kvittumm",
+   "people": "men",
+   "language": "coldic",
+   "dialect": "herd",
+   "faith": "winter_hearth",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#6a7a8a",
+    "#f0f0f0",
+    "#7a3a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "An antlered head on white.",
+    "portrait": "Wind-burnt herders in reindeer hide.",
+    "building": "Hide tents and turf houses.",
+    "unit": "Mounted herders with bows.",
+    "music": "Throat songs."
+   },
+   "government": "A herding confederacy whose chiefs meet at the winter moot.",
+   "kinship": "Clans by herd; a herd is the clan's wealth.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Kvittumm"
+   ],
+   "secondary_countries": []
+  },
+  "woqood_sealers": {
+   "id": "woqood_sealers",
+   "name": "Sealers of Woqood",
+   "people": "men",
+   "language": "noric",
+   "dialect": "snow",
+   "faith": "well_oath",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#e8f0f0",
+    "#3a5a6a",
+    "#8a2a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A harpoon on white over blue.",
+    "portrait": "Hardy coast people in seal-skin.",
+    "building": "Turf and whalebone halls on the snow coast.",
+    "unit": "Harpooners and sled-men.",
+    "music": "Drums."
+   },
+   "government": "A league of sealers' clans under a clan-moot.",
+   "kinship": "Clans by boat; the crew is the family.",
+   "calendar": "well_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Woqood"
+   ],
+   "secondary_countries": []
+  },
+  "naamis_sea_crown": {
+   "id": "naamis_sea_crown",
+   "name": "Sea-Crown Folk of Naamis",
+   "people": "men",
+   "language": "noric",
+   "dialect": "coast",
+   "faith": "well_oath",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#1f4a7a",
+    "#e0c070",
+    "#f0f0e8"
+   ],
+   "heraldry_and_look": {
+    "flag": "A crown on waves.",
+    "portrait": "Coast-folk of the north plain; sailors' braids.",
+    "building": "White harbour towns.",
+    "unit": "Marines and coast riders.",
+    "music": "Reed pipes."
+   },
+   "government": "A sea crown allied to Noris by the Noris Treaty.",
+   "kinship": "Houses of captains; the crown passes in one line.",
+   "calendar": "well_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Naamis"
+   ],
+   "secondary_countries": []
+  },
+  "orato_fishers": {
+   "id": "orato_fishers",
+   "name": "Island Fishers of Orato",
+   "people": "men",
+   "language": "noric",
+   "dialect": "isle",
+   "faith": "well_oath",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#3a6a8a",
+    "#e0e0d0",
+    "#5a3a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A fish and a black ship's sail.",
+    "portrait": "Weathered fishers.",
+    "building": "Stone huts on the isles.",
+    "unit": "Boatmen.",
+    "music": "Net songs."
+   },
+   "government": "An island lordship under one lord of the boats.",
+   "kinship": "Fishing families.",
+   "calendar": "well_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Orato"
+   ],
+   "secondary_countries": []
+  },
+  "miaed_pass_lords": {
+   "id": "miaed_pass_lords",
+   "name": "Pass-Lords of Miaed",
+   "people": "men",
+   "language": "alerhic",
+   "dialect": "desert",
+   "faith": "pass_fires",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#c08a3a",
+    "#6a2a1a",
+    "#f0e0c0"
+   ],
+   "heraldry_and_look": {
+    "flag": "A fire on a mountain pass, ochre and dark red.",
+    "portrait": "Desert faces; veils against the sand.",
+    "building": "Pass forts and the coast road towns.",
+    "unit": "Camel guards and pass archers.",
+    "music": "Drums at the pass fires."
+   },
+   "government": "A lordship of the passes: the lords of the pass-forts elect the Lord of Erdozan.",
+   "kinship": "Lineages of the pass-forts; a lord adopts his heir.",
+   "calendar": "flood_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Miaed"
+   ],
+   "secondary_countries": []
+  },
+  "wahatud_oasis_folk": {
+   "id": "wahatud_oasis_folk",
+   "name": "Oasis-Folk of Wahatud",
+   "people": "men",
+   "language": "noric",
+   "dialect": "dune",
+   "faith": "water_share",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#3a8a7a",
+    "#e8d8a8",
+    "#8a6a3a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A well with three palms.",
+    "portrait": "Desert people in pale robes.",
+    "building": "Mud-brick oasis towns.",
+    "unit": "Guides and camel riders.",
+    "music": "Night songs at the wells."
+   },
+   "government": "A league of well-clans that meets at the Well-Moot.",
+   "kinship": "Clans by well; to share water makes kin.",
+   "calendar": "well_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Wahatud"
+   ],
+   "secondary_countries": []
+  },
+  "king_warrens": {
+   "id": "king_warrens",
+   "name": "Warrens of the Hobgoblin King",
+   "people": "goblins",
+   "language": "goblin",
+   "dialect": "king",
+   "faith": "warren_luck",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#4a5a2a",
+    "#2a2a22",
+    "#d0b050"
+   ],
+   "heraldry_and_look": {
+    "flag": "A lamp in a cave mouth under a hobgoblin's crown.",
+    "portrait": "Small, big-eared goblins and huge hobgoblin guards.",
+    "building": "Warrens under the Cursed and Giant Mountains; the throne-cave of Glimzig.",
+    "unit": "Wurgh riders, trappers, fire-pots; hobgoblin shield-walls.",
+    "music": "Clatter and gongs."
+   },
+   "government": "A warren-kingdom under the hobgoblin king, who rules these warrens only.",
+   "kinship": "Kin by warren; the hobgoblins are the warrens' guards and heavy workers.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Burrikkrit"
+   ],
+   "secondary_countries": []
+  },
+  "spring_warrens": {
+   "id": "spring_warrens",
+   "name": "Warrens of the Warm Springs",
+   "people": "goblins",
+   "language": "goblin",
+   "dialect": "spring",
+   "faith": "warren_luck",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#5a7a5a",
+    "#3a3a2a",
+    "#e8d070"
+   ],
+   "heraldry_and_look": {
+    "flag": "A lamp over steaming water.",
+    "portrait": "Small goblins wrapped in lamp-oil furs.",
+    "building": "Warrens in the warm-spring valleys.",
+    "unit": "Bone-hound riders and trappers.",
+    "music": "Dripping water and clatter."
+   },
+   "government": "A warren-valley under a hobgoblin chief.",
+   "kinship": "Kin by warren.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Glimkit"
+   ],
+   "secondary_countries": []
+  },
+  "ogre_clans": {
+   "id": "ogre_clans",
+   "name": "Ogre Clans",
+   "people": "ogres",
+   "language": "orcish",
+   "dialect": "ogre",
+   "faith": "hold_luck",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#5a4a3a",
+    "#8a3a2a",
+    "#c0b090"
+   ],
+   "heraldry_and_look": {
+    "flag": "A club and a cauldron.",
+    "portrait": "Huge, slow, heavy-jawed.",
+    "building": "Caves and great timber halls.",
+    "unit": "Club-bearers; few and very strong.",
+    "music": "Grunting chant."
+   },
+   "government": "Clans under the biggest; in the Darks they sit in the moot of four holds with the orcs.",
+   "kinship": "Clans by cave; their own speech is unrecorded and they use Orcish among orcs.",
+   "calendar": "twelve",
+   "supersedes": null,
+   "status": "P",
+   "countries": [],
+   "secondary_countries": [
+    "The Darks"
+   ]
+  },
+  "plateau_soldiery": {
+   "id": "plateau_soldiery",
+   "name": "Soldiery of the Plateau",
+   "people": "orcs",
+   "language": "orcish",
+   "dialect": "dominion",
+   "faith": "skull_fire",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#3a2a2a",
+    "#8a1a1a",
+    "#c0a080"
+   ],
+   "heraldry_and_look": {
+    "flag": "Under the Dominion's banner; their own marks are scars.",
+    "portrait": "Orcs, ogres and goblins in the Dominion's black.",
+    "building": "Barracks on the plateau.",
+    "unit": "Orc companies; black powder after Dolon's forges.",
+    "music": "War drums."
+   },
+   "government": "Companies under the necromantic orders' officers.",
+   "kinship": "Kin by company; the orders do not care.",
+   "calendar": "numbered_musters",
+   "supersedes": null,
+   "status": "P",
+   "countries": [],
+   "secondary_countries": [
+    "Puvulan"
+   ]
+  },
+  "cairn_giants": {
+   "id": "cairn_giants",
+   "name": "Cairn-Keepers of the Giant Forest",
+   "people": "giants",
+   "language": "gigantic",
+   "dialect": "forest",
+   "faith": "giant_cairn",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#4a5a3a",
+    "#a0a090",
+    "#6a4a2a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A cairn of three stones on green.",
+    "portrait": "Enormous, moss-bearded.",
+    "building": "Cairn-halls by the Giant River.",
+    "unit": "Very few, very strong.",
+    "music": "Slow stone-beat."
+   },
+   "government": "A cairn-kept enclave without a king; the oldest giant keeps the line of cairns.",
+   "kinship": "Few households; the cairns name the dead.",
+   "calendar": "season_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Hoorunoron"
+   ],
+   "secondary_countries": []
+  },
+  "height_yeti": {
+   "id": "height_yeti",
+   "name": "Height Clans of Ghaahu",
+   "people": "yeti",
+   "language": "yetic",
+   "dialect": "height",
+   "faith": "yeti_hum",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#e8e8f0",
+    "#6a7a8a",
+    "#3a3a4a"
+   ],
+   "heraldry_and_look": {
+    "flag": "A white hum-mark on grey.",
+    "portrait": "Huge white-furred yeti.",
+    "building": "Hum-caves among the Cold Mountains.",
+    "unit": "Ambushers in the snow.",
+    "music": "Humming that carries for miles."
+   },
+   "government": "A clan web under the Eldest's song; no envoy reaches them unless a shelf eldest vouches for him.",
+   "kinship": "Clans by cave and song.",
+   "calendar": "season_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Ghaahu"
+   ],
+   "secondary_countries": []
+  },
+  "nether_houses": {
+   "id": "nether_houses",
+   "name": "Houses of the Nether",
+   "people": "demons",
+   "language": "infernal",
+   "dialect": "halls",
+   "faith": "pact_rite",
+   "faith_secondary": null,
+   "tier": 2,
+   "minor_people": false,
+   "secret": false,
+   "palette": [
+    "#1a0a0a",
+    "#c0301a",
+    "#e0a040"
+   ],
+   "heraldry_and_look": {
+    "flag": "A trident between two flames on black.",
+    "portrait": "Towering horned demons; thralls in chains.",
+    "building": "The Halls under the burning shore.",
+    "unit": "Demon lords, thrall levies, a few devils for hire.",
+    "music": "Low gongs and roaring fire."
+   },
+   "government": "A monarchy of demonic houses under the King of Demons, whose name is the owner's to give.",
+   "kinship": "Houses bound by pacts, not by blood.",
+   "calendar": "nether_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Nether"
+   ],
+   "secondary_countries": []
+  },
+  "veshazel_court": {
+   "id": "veshazel_court",
+   "name": "the Ash Court of Veshazel",
+   "people": "demons",
+   "language": "infernal",
+   "dialect": "ash",
+   "faith": "pact_rite",
+   "faith_secondary": null,
+   "tier": 3,
+   "minor_people": true,
+   "secret": false,
+   "palette": [
+    "#2a1a1a",
+    "#a04020",
+    "#b0b0a0"
+   ],
+   "heraldry_and_look": {
+    "flag": "An ash-grey flame on black.",
+    "portrait": "Horned demons over thralls.",
+    "building": "Ash-towers in the black south of the Goldoroth arm.",
+    "unit": "Fire-casters and thralls.",
+    "music": "Crackling fire."
+   },
+   "government": "A demon lordship under a lord who keeps a pact-name, sworn to neither Volgan nor Goldoroth.",
+   "kinship": "Pacts, not blood.",
+   "calendar": "nether_count",
+   "supersedes": null,
+   "status": "P",
+   "countries": [
+    "Veshazel"
+   ],
+   "secondary_countries": []
+  }
+ },
+ "faiths": {
+  "deep_reckoning": {
+   "name": "The Deep Reckoning",
+   "short": "Deep Reckoning",
+   "kind": "devotion",
+   "pantheon": "twelve",
+   "favours": [
+    "irumas",
+    "ailtal"
+   ],
+   "belief": "The dwarves honour two of the twelve, Irumas of the forge and Ailtal of the oath, and keep the reckoning of each hold's founders cut in stone; a contract broken is a sin against both gods.",
+   "sites": "The founders' wall of every deep hall; the forge-altar where every new blade is first struck.",
+   "clergy": "The Masters of the Forge and the Keepers of the Wall, who read the reckonings.",
+   "festivals": "The First Strike (each hold's founding day), the Settling of Accounts at the year's end."
+  },
+  "hearth_table": {
+   "name": "The Table and the Furrow",
+   "short": "Table and Furrow",
+   "kind": "household",
+   "pantheon": "twelve",
+   "favours": [
+    "lumae",
+    "aurlan",
+    "vaelei"
+   ],
+   "belief": "The small folk set a place at the table for Lumae of the hearth, Aurlan of the harvest and Vaelei of births, and no other gods are asked into the house.",
+   "sites": "Every hearth; the harvest stone at the moot-hall.",
+   "clergy": "None; the eldest of the household lays the god's place.",
+   "festivals": "The Long Table at harvest; the First Furrow in spring."
+  },
+  "full_pot": {
+   "name": "The Full Pot",
+   "short": "Full Pot",
+   "kind": "custom",
+   "pantheon": "own",
+   "favours": [
+    "naisa"
+   ],
+   "belief": "Luck is a debt: gold freely given returns as good fortune and gold taken returns as ill fortune. The gnomes honour Naisa of fortune as the one who keeps the account, and no other god.",
+   "sites": "The pots of the crowned; the king's tally-rim.",
+   "clergy": "The village kings, who crown the gnome whose pot is full.",
+   "festivals": "A Crowning, whenever a pot is full."
+  },
+  "road_due": {
+   "name": "The Boss's Due",
+   "short": "Boss's Due",
+   "kind": "custom",
+   "pantheon": "own",
+   "favours": [],
+   "belief": "The road gives and the boss takes: what a traveller brings home is owed to the cave, and a cheeky customer is owed a beating. Spirits of the road are thanked with a pinch of salt; the twelve are townsfolk's gods.",
+   "sites": "The boss's seat in each cave-market.",
+   "clergy": "None; the boss is judge of the due.",
+   "festivals": "The Homecoming, when the road-bands return before winter."
+  },
+  "standing_silence": {
+   "name": "The Standing Silence",
+   "short": "Standing Silence",
+   "kind": "spirit",
+   "pantheon": "own",
+   "favours": [],
+   "belief": "Not described in the vault. Proposed: the Baelim keep silence for the felled and the burned, and the rangers think they listen to something under the roots; what it is, nobody knows.",
+   "sites": "The oldest stand, Graulvoa (Baeldran).",
+   "clergy": "None recorded.",
+   "festivals": "None recorded."
+  },
+  "pass_vigil": {
+   "name": "The Pass Vigil",
+   "short": "Pass Vigil",
+   "kind": "devotion",
+   "pantheon": "twelve",
+   "favours": [
+    "kerun",
+    "gaelor"
+   ],
+   "supersedes": "stone_vigil",
+   "belief": "The vale-folk keep watch on the passes for Kerun of the watch and name the dead of the passes to Gaelor; the vigil fire at the pass is never let out.",
+   "sites": "The vigil fires of the Kingson and South Passes.",
+   "clergy": "Wardens of the Vigil, who are also the forts' captains.",
+   "festivals": "The Night of the Passes, when every fort lights its fire at once."
+  },
+  "flood_stair": {
+   "name": "The Stair of the River",
+   "short": "River Stair",
+   "kind": "devotion",
+   "pantheon": "own",
+   "favours": [],
+   "supersedes": "river_temples",
+   "belief": "The river-kings climb the stair-temples to the River and to the Kings Below, their crowned ancestors, who send the flood; the twelve are honoured only as guests at the top step, and the flood, not a god's month, begins the year.",
+   "sites": "The stair-temples of Porrenva, Atonto and Vobibiz.",
+   "clergy": "The Stair-Priests, who measure the flood.",
+   "festivals": "The Rising, when the flood reaches the first step."
+  },
+  "pass_fires": {
+   "name": "The Pass Fires",
+   "short": "Pass Fires",
+   "kind": "devotion",
+   "pantheon": "own",
+   "favours": [],
+   "belief": "The pass-lords keep fires on the passes for the spirits of the high road, who lead caravans through the sand-storms; strangers' gods are respected and not asked.",
+   "sites": "The fire-towers of the Hardtmuth passes.",
+   "clergy": "Fire-keepers of the passes.",
+   "festivals": "The Rekindling, after the storm season."
+  },
+  "water_share": {
+   "name": "The Well-Moot",
+   "short": "Well-Moot",
+   "kind": "custom",
+   "pantheon": "own",
+   "favours": [],
+   "belief": "Water shared makes kin and water refused makes enemies; the oasis-folk honour the wells themselves and the dead who dug them, and pray to no god of the coast.",
+   "sites": "The great wells of the oases.",
+   "clergy": "The well-keepers.",
+   "festivals": "The Sharing, at the first rain."
+  }
+ },
+ "renames": [
+  {
+   "kind": "culture",
+   "id": "isengard_warlords",
+   "newId": "melkgard_warlords",
+   "newName": "Melkgard Warlords",
+   "reason": "Isengard is a Tolkien name; the realm is Melkgard."
+  },
+  {
+   "kind": "culture",
+   "id": "windwaith_seafarers",
+   "newId": "vindael_seafarers",
+   "newName": "Vindael Seafarers",
+   "reason": "\"-waith\" names are retired; the arm is Vindael."
+  },
+  {
+   "kind": "culture",
+   "id": "gunwaith_clans",
+   "newId": "gunwyn_clans",
+   "newName": "Gunwyn Clans",
+   "reason": "\"-waith\" names are retired; the kingdom is Gunwyn."
+  },
+  {
+   "kind": "culture",
+   "id": "wall_folk",
+   "newId": "vale_folk",
+   "newName": "Vale-Folk of Kingson",
+   "reason": "There is no wall; the Great Wall is a natural range. Split: Kingson and Klungori Guard take vale_folk, the Hilofrim herders take hilofrim_herders."
+  },
+  {
+   "kind": "culture",
+   "id": "ember_lands_freeholds",
+   "newId": "ember_freeholds",
+   "newName": "Ember Coast Freeholders",
+   "reason": "The region is the Ember Lands (owner, 24 October 2026); the culture keeps its people and faith."
+  },
+  {
+   "kind": "culture",
+   "id": "goblin_warrens",
+   "field": "people",
+   "from": "orcs",
+   "to": "goblins",
+   "reason": "Goblins are a people of their own in the heraldry and the roster; the culture keeps its id and serves the free warrens of Burnikit."
+  },
+  {
+   "kind": "faith",
+   "id": "stone_vigil",
+   "newId": "pass_vigil",
+   "newName": "The Pass Vigil",
+   "reason": "There is no wall."
+  },
+  {
+   "kind": "faith",
+   "id": "river_temples",
+   "newId": "flood_stair",
+   "newName": "The Stair of the River",
+   "reason": "Owner decision of 24 October 2026: several eastern realms keep their own faiths; the river-kings honour the River and their ancestors before the twelve."
+  },
+  {
+   "kind": "dialect",
+   "id": "gigantic:titanos",
+   "newId": "gigantic:nivaros",
+   "reason": "Titanos is a name of Greek myth; the realm is Nivaros."
+  },
+  {
+   "kind": "dialect",
+   "id": "gigantic:hiloron",
+   "newId": "gigantic:hirolon",
+   "reason": "Owner spelling Hirolon."
+  }
+ ]
+}

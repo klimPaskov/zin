@@ -48,16 +48,16 @@
   "portrait_pools": { "per_sex_by_tier": { "1": 6, "2": 4, "3": 2 }, "per_sex_overrides": { "goblin_warrens": 1 } },
   "flag_shapes": { "default": "rect", "leren_sea_kings": "swallowtail", "free_crowns_north": "swallowtail", "steppe_rider": "pennant" },
   "kin": [["vale_folk", "lake_aenoran"]],
-  "no_language_cultures": ["zols_dead"],
+  "no_language_cultures": ["zols_dead", "mycid_rings"],
   "magic_attitudes": ["respected", "regulated", "wary", "distrusted", "neutral", "natural", "core", "none"],
   "resistance_levels": { "none": 0, "passive": 0, "low": 0.1, "medium": 0.25, "strong": 0.4, "total": 0.6 },
   "resistance_rules": { "other_culture": 0.2, "great_folk_under_common_folk": 0.1, "other_faith": 0.05 },
   "great_folk_peoples": ["elves", "sun_elves", "demons"],
-  "common_folk_peoples": ["men"],
+  "common_folk_peoples": ["men", "dwarves"],
   "language_ids": {
     "aenoran": 1, "ainic": 2, "dondric": 3, "leren": 4, "mirolic": 5, "grave_rite": 6, "orran": 7, "alerhic": 8,
     "coldic": 9, "gunwaithic": 10, "noric": 11, "stabilic": 12, "tritonic": 13, "yonic": 14, "galic": 15, "sunhot": 16,
-    "sylvan": 17, "gigantic": 18, "goblin": 19, "infernal": 20, "longspeech": 21, "orcish": 22, "trollish": 23, "yetic": 24
+    "sylvan": 17, "gigantic": 18, "goblin": 19, "infernal": 20, "longspeech": 21, "orcish": 22, "trollish": 23, "yetic": 24, "dwarvish": 25, "gnomish": 26, "hearthspeech": 27, "pack_tongue": 28, "lowspeech": 29
   },
   "cultures": {
     "lake_aenoran": {
@@ -85,10 +85,10 @@
       "flag": { "motif": "horse_head", "alt": ["horse_hair_standard"] }, "building": "felt_tents", "music": "steppe_drums", "unit_group": "steppe_riders"
     },
     "vale_folk": {
-      "id": 4, "adjective": "Wall-Folk", "icon": "tower_key", "magic": "neutral",
+      "id": 4, "adjective": "Vale-Folk", "icon": "tower_key", "magic": "neutral",
       "spirit": "The Watch-Family Posts",
-      "spirit_desc": "A post passes to the eldest of a watch-family, and a breach of watch is a hanging matter. The Wall is held with patience and drill.",
-      "text": "Watch-families of the Great Wall. They keep its gates in the king's name.",
+      "spirit_desc": "A post passes to the eldest of a watch-family, and a breach of watch is a hanging matter. The passes are held with patience and drill.",
+      "text": "Watch-families of the ringed vale of Kingson and the South Pass. They keep the passes in the king's name.",
       "modifier": { "max_dig_in_factor": 0.1, "army_defence_factor": 0.05, "required_garrison_factor": -0.1, "army_speed_factor": -0.03 },
       "flag": { "motif": "tower", "alt": ["key"] }, "building": "wall_grey", "music": "choral_bells", "unit_group": "aenoran_blue"
     },
@@ -157,7 +157,7 @@
       "flag": { "motif": "beacon", "alt": ["lamp"] }, "building": "stilt_beacon", "music": "warden_horns", "unit_group": "warden_blue"
     },
     "ember_freeholds": {
-      "id": 13, "adjective": "Ember Lands", "icon": "salt_boat", "magic": "wary",
+      "id": 13, "adjective": "Ember Coast", "icon": "salt_boat", "magic": "wary",
       "spirit": "Salt and Silence",
       "spirit_desc": "Freeholders bury quickly, tax lightly and avoid war. The sun and the salt have made them hard.",
       "text": "Salt-pan and fishing freeholds of the Ember Lands coast. They do not speak of what lies to the south.",
@@ -181,7 +181,7 @@
       "flag": { "motif": "clan_beast", "alt": [] }, "building": "turf_hall", "music": "northern_throat", "unit_group": "winter_crown"
     },
     "melkgard_warlords": {
-      "id": 16, "adjective": "Isengard", "icon": "tower_chain", "magic": "distrusted",
+      "id": 16, "adjective": "Melkgard", "icon": "tower_chain", "magic": "distrusted",
       "spirit": "The Oath-Companies",
       "spirit_desc": "The best sworn man inherits the hall, not the eldest son. Mailed foot hold the mountain forts.",
       "text": "Warlords of the iron forts, bound by oath-companies. They suspect every hedge-wise.",
@@ -189,18 +189,18 @@
       "flag": { "motif": "tower", "alt": ["chain"] }, "building": "black_fort", "music": "iron_drums", "unit_group": "iron_brute"
     },
     "vindael_seafarers": {
-      "id": 17, "adjective": "Windwaith", "icon": "ship_windrose", "magic": "respected",
+      "id": 17, "adjective": "Vindael", "icon": "ship_windrose", "magic": "respected",
       "spirit": "The Ship-Share",
-      "spirit_desc": "Land is held by share in a ship, and a Council of Captains elects its Speaker. Windwaith ships range far for timber and whalebone.",
-      "text": "Captains of the Windwaith headlands. They read the wind the way others read letters.",
+      "spirit_desc": "Land is held by share in a ship, and a Council of Captains elects its Speaker. Vindael ships range far for timber and whalebone.",
+      "text": "Captains of the Vindael headlands. They read the wind the way others read letters.",
       "modifier": { "naval_speed_factor": 0.05, "navy_max_range_factor": 0.1, "experience_gain_navy_factor": 0.08, "trade_opinion_factor": 0.1 },
       "flag": { "motif": "ship", "alt": ["wind_rose"] }, "building": "harbour_wood", "music": "sea_horns", "unit_group": "winter_crown"
     },
     "gunwyn_clans": {
-      "id": 18, "adjective": "Gunwaith", "icon": "stag_stone", "magic": "respected",
+      "id": 18, "adjective": "Gunwyn", "icon": "stag_stone", "magic": "respected",
       "spirit": "The Lawspeaker's Memory",
       "spirit_desc": "Oaths are sworn at the stone and remembered by the Lawspeaker. Clan bands ride and fight for kin and for wergild.",
-      "text": "Hill clans of Gunwaith, whose kings are acclaimed at a standing stone. The chiefs hold the real power.",
+      "text": "Hill clans of Gunwyn, whose kings are acclaimed at a standing stone. The chiefs hold the real power.",
       "modifier": { "army_attack_factor": 0.04, "cavalry_attack_factor": 0.06, "conscription_factor": 0.05, "stability_factor": -0.03 },
       "flag": { "motif": "stag_stone_ring", "alt": ["plaid"] }, "building": "hill_ring_fort", "music": "western_pipes", "unit_group": "western_clan"
     },
@@ -416,10 +416,9 @@
       "id": 45, "adjective": "Goblin", "icon": "lamp_hole", "magic": "neutral",
       "spirit": "The Loud and the Clever",
       "spirit_desc": "The loudest, cleverest goblin leads until someone cleverer arrives. Traps, slings and tunnels do the fighting.",
-      "text": "Tunnel-dwelling goblins under the orc holds. They sell lamps and traps to those above.",
+      "text": "Tunnel-dwelling goblins of the Dark Lands, in the warm warrens of Burnikit and under the orc holds. They sell lamps and traps to those above.",
       "modifier": { "enemy_attrition": 0.1, "dig_in_speed_factor": 0.1, "conscription_factor": 0.06, "army_attack_factor": -0.05 },
-      "flag": { "motif": "lamp", "alt": [] }, "building": "warren", "music": "iron_drums", "unit_group": "orc_horde",
-      "unused": "No country has the warrens as its dominant or second culture: goblins are a minor people inside orc holds (demography.json, minor_peoples). The culture is kept for the state function (state_cultures.json) and for a future country."
+      "flag": { "motif": "lamp", "alt": [] }, "building": "warren", "music": "iron_drums", "unit_group": "orc_horde"
     },
     "troll_tribes": {
       "id": 46, "adjective": "Troll", "icon": "boulder_heap", "magic": "none",
@@ -430,18 +429,18 @@
       "flag": { "motif": "boulder", "alt": [] }, "building": "cave_heap", "music": "slow_bass", "unit_group": "troll"
     },
     "hill_giants": {
-      "id": 47, "adjective": "Hiloron Giant", "icon": "cairn_giant", "magic": "none",
+      "id": 47, "adjective": "Hirolon Giant", "icon": "cairn_giant", "magic": "none",
       "spirit": "The Cairn-Count",
       "spirit_desc": "A dispute is judged by which side can name the older cairn. Giants quarry stone and raise walls that outlast kings.",
-      "text": "Giants of Hiloron who count years by stones, led by a High Chief of the cairn-keepers.",
+      "text": "Giants of Hirolon who count years by stones, led by a High Chief of the cairn-keepers.",
       "modifier": { "production_speed_buildings_factor": 0.08, "max_dig_in_factor": 0.08, "stability_factor": 0.03, "conscription_factor": -0.05 },
       "flag": { "motif": "stone", "alt": [] }, "building": "giant_hall", "music": "slow_bass", "unit_group": "giant"
     },
     "ice_giants": {
-      "id": 48, "adjective": "Titanos Giant", "icon": "ice_throne", "magic": "natural",
+      "id": 48, "adjective": "Nivaros Giant", "icon": "ice_throne", "magic": "natural",
       "spirit": "The Frost-Throne",
       "spirit_desc": "A Frost-King sits an ice throne chosen by the cairn-keepers. The cold itself is an old and patient ally.",
-      "text": "Giants of Titanos who carve ice and ivory. They honour the cold as an elder spirit.",
+      "text": "Giants of Nivaros who carve ice and ivory. They honour the cold as an elder spirit.",
       "modifier": { "winter_attrition_factor": -0.15, "army_defence_factor": 0.04, "acclimatization_cold_climate_gain_factor": 0.2, "production_speed_buildings_factor": -0.05 },
       "flag": { "motif": "throne", "alt": [] }, "building": "ice_hall", "music": "slow_bass", "unit_group": "giant"
     },
@@ -484,6 +483,238 @@
       "text": "The demon realms of the Nether, each ruled by a Lord or Queen bound to a pact.",
       "modifier": { "army_morale_factor": 0.05, "army_attack_factor": 0.04, "justify_war_goal_time": -0.15, "opinion_gain_monthly_factor": -0.15 },
       "flag": { "motif": "horn", "alt": [] }, "building": "obsidian_hall", "music": "dread", "unit_group": "demon"
+    },
+    "wall_delvers": {
+      "id": 54, "adjective": "Delving-Clan", "icon": "anvil_arch", "magic": "wary",
+      "spirit": "Contracts Cut in Stone",
+      "spirit_desc": "Every bargain of the clans is cut into the wall of the deep hall, and a broken word is a feud of the whole line. The high road is kept, the powder is sold, and the secret of it is not.",
+      "text": "Dwarves of the clan-halls under Lunhrim, who keep the high road for the crown in Parim and sell it iron and black powder.",
+      "modifier": { "production_factory_efficiency_gain_factor": 0.08, "max_dig_in_factor": 0.08, "army_defence_factor": 0.04, "trade_opinion_factor": -0.1 },
+      "flag": { "motif": "anvil", "alt": ["arch"] }, "building": "rock_gate_hall", "music": "delving_hammers", "unit_group": "dwarf_hold"
+    },
+    "west_delvers": {
+      "id": 55, "adjective": "Western Hold", "icon": "forge_flame_tower", "magic": "wary",
+      "spirit": "The Outer Gate",
+      "spirit_desc": "Men may trade in the outer halls above the valleys, and no man goes below them. What the deep forges cast, the holds sell, and the bombards of the West are theirs.",
+      "text": "Dwarves of the western holds in the Herlitz, Dusty, Bolpor and Boldor Mountains: smiths, gunners and hard bargainers.",
+      "modifier": { "production_factory_efficiency_gain_factor": 0.06, "trade_opinion_factor": 0.1, "army_attack_factor": 0.03, "army_speed_factor": -0.03 },
+      "flag": { "motif": "forge_flame", "alt": ["tower"] }, "building": "outer_gate_hall", "music": "delving_hammers", "unit_group": "dwarf_hold"
+    },
+    "north_delvers": {
+      "id": 56, "adjective": "High Hold", "icon": "peak_gate", "magic": "wary",
+      "spirit": "The Hill Pact",
+      "spirit_desc": "The lord of the White Hall keeps the pact with the hill council of Heodwa: iron for the hill folk's grain, and the High Gate shut to every other army.",
+      "text": "Dwarves of the High Mountains under the snowline, wrapped in furs above ground, who cast bombards for the ships of Sonargur.",
+      "modifier": { "winter_attrition_factor": -0.1, "production_factory_efficiency_gain_factor": 0.05, "army_core_defence_factor": 0.06, "conscription_factor": -0.05 },
+      "flag": { "motif": "peak", "alt": ["gate"] }, "building": "snowline_gate", "music": "delving_hammers", "unit_group": "dwarf_hold"
+    },
+    "hearth_folk": {
+      "id": 57, "adjective": "Hearth-Folk", "icon": "round_door", "magic": "neutral",
+      "spirit": "The Table Kept Full",
+      "spirit_desc": "Six meals a day, a full larder and a door that is never locked to a neighbour. The small folk have no wish to see the world, and the world has seldom found the way to their valleys.",
+      "text": "The small folk of Dobbum and Tirlan, farmers of sheltered valleys kept from the world by the passes and the strong realms around them.",
+      "modifier": { "monthly_population": 0.06, "stability_factor": 0.05, "war_support_factor": -0.08, "production_speed_buildings_factor": 0.04 },
+      "flag": { "motif": "round_door", "alt": ["field"] }, "building": "bank_house", "music": "hearth_fiddles", "unit_group": "small_folk"
+    },
+    "holt_gnomes": {
+      "id": 58, "adjective": "Holt-Gnome", "icon": "gold_pot", "magic": "natural",
+      "spirit": "The Pot of Gold",
+      "spirit_desc": "Every gnome keeps a pot, and the one whose pot is full is crowned. Gold given away returns as luck and gold taken comes back as grief, and the villages are very hard to find.",
+      "text": "The gnomes of the Deodolor Hills beside Parim, who live in hidden holts inside trees and under the hills.",
+      "modifier": { "army_core_defence_factor": 0.06, "recon_factor": 0.08, "trade_opinion_factor": 0.08, "conscription_factor": -0.06 },
+      "flag": { "motif": "pot", "alt": ["cap"] }, "building": "root_house", "music": "woodland", "unit_group": "small_folk"
+    },
+    "road_warrens": {
+      "id": 59, "adjective": "Road-Warren", "icon": "laden_pack", "magic": "wary",
+      "spirit": "Half the Family on the Road",
+      "spirit_desc": "Half of every warren is always away with packs on their backs, and what comes home is owed to the cave. A cheeky customer is owed a beating, and every customer knows it.",
+      "text": "The dwarf goblins of the southern hills near Lerendor: road-bands, cave-markets and the iron their smiths are given.",
+      "modifier": { "supply_consumption_factor": -0.06, "army_speed_factor": 0.04, "trade_opinion_factor": 0.06, "army_defence_factor": -0.04 },
+      "flag": { "motif": "pack", "alt": ["boss_mark"] }, "building": "cave_market", "music": "iron_drums", "unit_group": "goblin_warren"
+    },
+    "baelim": {
+      "id": 60, "adjective": "Baelim", "icon": "root_crown", "magic": "natural",
+      "spirit": "The Stand Is a Wall",
+      "spirit_desc": "The Baelim do not march, and a moot of the stand can last a season. When a stand moves, it moves as a wall, and the axe that began the quarrel is not seen again.",
+      "text": "The tree people of the Aenor Forest: walking stands of bark and needle that answer to the slow word of the Eldest.",
+      "modifier": { "army_core_defence_factor": 0.1, "army_speed_factor": -0.08, "justify_war_goal_time": 0.2, "enemy_attrition": 0.08 },
+      "flag": { "motif": "tree_roots", "alt": [] }, "building": "living_stand", "music": "slow_bass", "unit_group": "ent"
+    },
+    "mycid_rings": {
+      "id": 61, "adjective": "Mycid", "icon": "spore_ring", "magic": "natural",
+      "spirit": "The Spore Season",
+      "spirit_desc": "Strangers find the air of the fungal shore hard to breathe in summer. What the mycids want, and how they choose it, nobody beyond the rift has learned.",
+      "text": "The mycids of the Mushroom Forest on the rift coast, a people of whom little is known beyond their trade in spores.",
+      "modifier": { "enemy_attrition": 0.12, "required_garrison_factor": -0.1, "monthly_population": 0.04 },
+      "flag": { "motif": "cap_ring", "alt": [] }, "building": "fungal_ring", "music": "slow_bass", "unit_group": "elven"
+    },
+    "kingdom_forest_elves": {
+      "id": 62, "adjective": "Kingdom Forest", "icon": "crowned_tree_road", "magic": "natural",
+      "spirit": "Guides of the Kingson Road",
+      "spirit_desc": "One elven house never went east, and lives in hidden halls on the road to the Kingson Pass. Its bowmen guide whoever they judge worth guiding and lose the others in the trees.",
+      "text": "The elves of the Kingdom Forests in the Middle Lands, a lost house of the western kin.",
+      "modifier": { "recon_factor": 0.1, "org_loss_when_moving": -0.08, "experience_gain_army_factor": 0.06, "conscription_factor": -0.05 },
+      "flag": { "motif": "crowned_tree", "alt": ["road"] }, "building": "hidden_hall", "music": "elven_voices", "unit_group": "elven"
+    },
+    "roost_keepers": {
+      "id": 63, "adjective": "Roost-Keeper", "icon": "dragon_wing", "magic": "natural",
+      "spirit": "Chosen by the Dragons",
+      "spirit_desc": "No one is born a keeper: the dragons of the mountain suffer a few to come near, and those few keep the roosts. They smell of smoke and do not fear fire.",
+      "text": "The keepers of the dragon roosts on Dragon Mountain, a fellowship of a few hundred wild-haired elves.",
+      "modifier": { "army_morale_factor": 0.05, "special_project_speed_factor": 0.08, "recon_factor": 0.06, "stability_factor": -0.03 },
+      "flag": { "motif": "dragon_wing", "alt": ["hill"] }, "building": "roost_shelter", "music": "elven_voices", "unit_group": "elven"
+    },
+    "god_forest_keepers": {
+      "id": 64, "adjective": "Keeper", "icon": "branch_gate", "magic": "natural",
+      "spirit": "The Closed Gate",
+      "spirit_desc": "The Keepers let nobody through the God Forest without leave, and they give leave rarely. What they keep there is their own affair.",
+      "text": "The keepers of the God Forest in the Lands of the Sun, a single household that is seldom seen.",
+      "modifier": { "army_core_defence_factor": 0.08, "stability_factor": 0.04, "trade_opinion_factor": -0.12, "required_garrison_factor": -0.08 },
+      "flag": { "motif": "branch_gate", "alt": ["sun"] }, "building": "open_glade", "music": "gong_flute", "unit_group": "sun_elven"
+    },
+    "strait_folk": {
+      "id": 65, "adjective": "Strait", "icon": "toll_chain", "magic": "regulated",
+      "spirit": "The Strait Toll",
+      "spirit_desc": "Fotan lives on the chain across the water, and every ship that passes pays, Leren or Aenoran. Its lords refused the Charters to keep the toll, and they lean to the north for it.",
+      "text": "The Leren and Aenoran houses of Fotan on the Narrow Strait, married into each other for generations.",
+      "modifier": { "trade_opinion_factor": 0.12, "navy_org_factor": 0.04, "political_power_gain": 0.04, "army_defence_factor": -0.03 },
+      "flag": { "motif": "chain", "alt": ["wave"] }, "building": "toll_tower", "music": "sea_horns", "unit_group": "aenoran_blue"
+    },
+    "hilofrim_herders": {
+      "id": 66, "adjective": "Hilofrim", "icon": "sheep_cairn", "magic": "respected",
+      "spirit": "Tenants of the Giants",
+      "spirit_desc": "The herders graze the giants' hills by the Old Promise and guide armies over the saddle when the High Chief asks. In return, nothing that comes up the valley comes twice.",
+      "text": "The hill-herders of Hilofrim, tenants of the giants of Hirolon.",
+      "modifier": { "supply_consumption_factor": -0.05, "planning_speed": 0.06, "monthly_population": 0.04 },
+      "flag": { "motif": "sheep", "alt": ["cairn"] }, "building": "hill_farm", "music": "woodland", "unit_group": "aenoran_blue"
+    },
+    "teste_valley_folk": {
+      "id": 67, "adjective": "Teste", "icon": "furrow_leaf", "magic": "natural",
+      "spirit": "Under Herrodon's Shield",
+      "spirit_desc": "The farms of the Teste Vale descend from the refugees of the Third Age, and the elves of Herrodon have taught their sons the bow for many lifetimes of men.",
+      "text": "Farmers of the Teste Vale in the Magical Lands, who keep elven manners and an elven protector.",
+      "modifier": { "land_reinforce_rate": 0.06, "recon_factor": 0.05, "production_speed_buildings_factor": 0.04, "conscription_factor": 0.03 },
+      "flag": { "motif": "furrow", "alt": ["leaf"] }, "building": "vale_timber_farm", "music": "woodland", "unit_group": "aenoran_blue"
+    },
+    "quay_folk": {
+      "id": 68, "adjective": "Quay", "icon": "ferry_boat", "magic": "neutral",
+      "spirit": "Who Crosses the Narrows",
+      "spirit_desc": "Every boat at the Rift Narrows belongs to a quay-house, and every quay-house takes in whoever works its boats. Men, elves and mycid traders haggle on one quay in many tongues.",
+      "text": "The free port of Luv-zhise at the Rift Narrows, ruled by the heads of its quay-houses.",
+      "modifier": { "trade_opinion_factor": 0.15, "naval_speed_factor": 0.04, "opinion_gain_monthly_factor": 0.1, "army_attack_factor": -0.04 },
+      "flag": { "motif": "ferry", "alt": ["shores"] }, "building": "stilt_quay", "music": "lyre_bronze", "unit_group": "bronze_merchants"
+    },
+    "reindeer_clans": {
+      "id": 69, "adjective": "Reindeer-Clan", "icon": "antler_head", "magic": "respected",
+      "spirit": "The Herd Is the Clan",
+      "spirit_desc": "A clan is as rich as its herd, and the herd goes where the moss is. The chiefs meet once a year at the winter moot and otherwise follow the reindeer.",
+      "text": "The herding clans of Kvittumm, the white hills of the Cold Lands.",
+      "modifier": { "winter_attrition_factor": -0.12, "army_speed_factor": 0.05, "cavalry_attack_factor": 0.04, "production_speed_buildings_factor": -0.06 },
+      "flag": { "motif": "antlers", "alt": [] }, "building": "hide_tent", "music": "northern_throat", "unit_group": "winter_crown"
+    },
+    "woqood_sealers": {
+      "id": 70, "adjective": "Sealer", "icon": "harpoon", "magic": "respected",
+      "spirit": "The Crew Is the Family",
+      "spirit_desc": "On the snow coast a boat's crew is a family, and the clan-moot is a meeting of boats. The sealers know the ice better than any sailor of the south.",
+      "text": "The sealers' clans of Woqood on the snow coast of the East Lands.",
+      "modifier": { "acclimatization_cold_climate_gain_factor": 0.2, "navy_org_factor": 0.03, "winter_attrition_factor": -0.08, "trade_opinion_factor": 0.05 },
+      "flag": { "motif": "harpoon", "alt": [] }, "building": "whalebone_hall", "music": "northern_throat", "unit_group": "winter_crown"
+    },
+    "naamis_sea_crown": {
+      "id": 71, "adjective": "Naamis", "icon": "crown_waves", "magic": "respected",
+      "spirit": "The Treaty with Noris",
+      "spirit_desc": "Naamis keeps its own crown and its own coast, and stands beside Noris by treaty when the riders of the desert ride. Its harbours are the north plain's door to the sea.",
+      "text": "The coast folk of Naamis on the north plain of the East Lands.",
+      "modifier": { "navy_org_factor": 0.05, "naval_speed_factor": 0.03, "cavalry_attack_factor": 0.04, "opinion_gain_monthly_factor": 0.08 },
+      "flag": { "motif": "crown", "alt": ["waves"] }, "building": "white_harbour", "music": "desert_reeds", "unit_group": "desert_riders"
+    },
+    "orato_fishers": {
+      "id": 72, "adjective": "Orato", "icon": "fish_black_sail", "magic": "neutral",
+      "spirit": "The Island Watch",
+      "spirit_desc": "The fishers of Orato watch the sea from their isles and tell the lord of the boats what passes. Some of what they report, the coast does not believe.",
+      "text": "The island fishers of Orato off the coast of the East Lands.",
+      "modifier": { "experience_gain_navy_factor": 0.06, "monthly_population": 0.03, "stability_factor": 0.03 },
+      "flag": { "motif": "fish", "alt": ["sail"] }, "building": "isle_hut", "music": "sea_horns", "unit_group": "island_marines"
+    },
+    "miaed_pass_lords": {
+      "id": 73, "adjective": "Miaed", "icon": "pass_fire", "magic": "wary",
+      "spirit": "The Lords of the Pass-Forts",
+      "spirit_desc": "The lords of the forts elect the Lord of Erdozan, and every lord adopts the heir he trusts. No caravan crosses the Hardtmuth without their fires and their price.",
+      "text": "The pass-lords of Miaed in the Hardtmuth passes and on the road of the south coast.",
+      "modifier": { "heat_attrition_factor": -0.12, "dig_in_speed_factor": 0.08, "trade_opinion_factor": 0.08, "army_leader_cost_factor": -0.1 },
+      "flag": { "motif": "fire", "alt": ["pass"] }, "building": "pass_fort_desert", "music": "desert_reeds", "unit_group": "desert_riders"
+    },
+    "wahatud_oasis_folk": {
+      "id": 74, "adjective": "Wahatud", "icon": "well_palms", "magic": "neutral",
+      "spirit": "Water Shared Makes Kin",
+      "spirit_desc": "Each oasis is a clan, and every quarrel over water goes to the Well-Moot at the greatest well. A stranger who is given water is kin until he leaves.",
+      "text": "The oasis-folk of the Sun Desert, guides and camel riders of the dune sea.",
+      "modifier": { "heat_attrition_factor": -0.15, "supply_consumption_factor": -0.06, "opinion_gain_monthly_factor": 0.12 },
+      "flag": { "motif": "well", "alt": ["palms"] }, "building": "oasis_brick", "music": "desert_reeds", "unit_group": "desert_riders"
+    },
+    "king_warrens": {
+      "id": 75, "adjective": "King's Warren", "icon": "crowned_lamp", "magic": "distrusted",
+      "spirit": "The Lamp Truce",
+      "spirit_desc": "The hobgoblin king rules his own warrens and no others, and keeps a truce of lamps with the delvers of the range. Wurgh riders hunt the Forests of Darkhere below, and the warrens sell what they find.",
+      "text": "The goblins and hobgoblins of the Cursed and Giant Mountains, under the hobgoblin king of Glimzig.",
+      "modifier": { "enemy_attrition": 0.08, "conscription_factor": 0.06, "army_infantry_defence_factor": 0.04, "equipment_capture_factor": 0.08 },
+      "flag": { "motif": "lamp", "alt": ["crown"] }, "building": "throne_cave", "music": "iron_drums", "unit_group": "goblin_warren"
+    },
+    "spring_warrens": {
+      "id": 76, "adjective": "Spring-Warren", "icon": "steam_lamp", "magic": "distrusted",
+      "spirit": "The Warm Springs",
+      "spirit_desc": "Goblins avoid the deep cold, but the springs of the southern valleys keep their warrens warm through the long winters. Their bone-hound riders know every path of the valleys.",
+      "text": "The goblins of Glimkit in the warm-spring valleys of the southern Cold Lands.",
+      "modifier": { "winter_attrition_factor": -0.1, "recon_factor": 0.06, "conscription_factor": 0.05, "army_org_factor": -0.04 },
+      "flag": { "motif": "lamp_water", "alt": [] }, "building": "spring_warren", "music": "iron_drums", "unit_group": "goblin_warren"
+    },
+    "ogre_clans": {
+      "id": 77, "adjective": "Ogre", "icon": "club_cauldron", "magic": "none",
+      "spirit": "The Biggest Rules",
+      "spirit_desc": "An ogre clan obeys its biggest member until a bigger one grows. They are few, slow and very strong, and the orcs of the Darks are glad of them at the moot.",
+      "text": "The ogre clans of the Darks and the caves of the Dark Lands.",
+      "modifier": { "army_infantry_attack_factor": 0.06, "army_speed_factor": -0.06, "conscription_factor": -0.06 },
+      "flag": { "motif": "club", "alt": ["cauldron"] }, "building": "ogre_hall", "music": "iron_drums", "unit_group": "orc_horde"
+    },
+    "plateau_soldiery": {
+      "id": 78, "adjective": "Plateau", "icon": "black_company", "magic": "core",
+      "spirit": "The Companies of the Plateau",
+      "spirit_desc": "Orc, ogre and goblin companies drill on the southern plateau under officers who keep their own counsel. Nobody asks a soldier of the plateau where he was born.",
+      "text": "The living soldiery of the southern plateau, orcs for the most part.",
+      "modifier": { "training_time_army_factor": -0.1, "army_org_factor": 0.04, "war_support_factor": 0.04, "stability_factor": -0.04 },
+      "flag": { "motif": "scar_mark", "alt": [] }, "building": "plateau_barracks", "music": "iron_drums", "unit_group": "orc_horde"
+    },
+    "cairn_giants": {
+      "id": 79, "adjective": "Cairn-Giant", "icon": "three_cairn", "magic": "none",
+      "spirit": "The Line of Cairns",
+      "spirit_desc": "The oldest giant keeps the line of cairns by the Giant River, and every cairn names one of the dead. No king rules the Giant Forest, and no army has found a reason to enter it twice.",
+      "text": "The giants of the Giant Forest beyond the Borderline of Giants in the Dark Lands.",
+      "modifier": { "army_core_defence_factor": 0.08, "max_dig_in_factor": 0.06, "stability_factor": 0.04, "conscription_factor": -0.06 },
+      "flag": { "motif": "cairn", "alt": [] }, "building": "cairn_hall", "music": "slow_bass", "unit_group": "giant"
+    },
+    "height_yeti": {
+      "id": 80, "adjective": "Height-Clan", "icon": "hum_mark", "magic": "natural",
+      "spirit": "The Hum Across the Snow",
+      "spirit_desc": "The height clans hum from cave to cave across miles of snow, and no envoy reaches them unless an eldest of the shelf vouches for him.",
+      "text": "The yeti of Ghaahu, on the north-east snow plain among the Cold Mountains.",
+      "modifier": { "winter_attrition_factor": -0.15, "army_org_factor": 0.04, "opinion_gain_monthly_factor": -0.1, "recon_factor": 0.05 },
+      "flag": { "motif": "hum", "alt": [] }, "building": "hum_cave_height", "music": "northern_throat", "unit_group": "yeti"
+    },
+    "nether_houses": {
+      "id": 81, "adjective": "Nether", "icon": "trident_flames", "magic": "core",
+      "spirit": "Houses Bound by Pacts",
+      "spirit_desc": "The houses of the Nether are bound by pacts, not by blood, and the King of Demons keeps every pact-name. Thralls work the burning shore below the Halls.",
+      "text": "The demon houses of the Nether, the burning island south of the Ember Lands.",
+      "modifier": { "army_attack_factor": 0.05, "army_morale_factor": 0.04, "political_power_gain": 0.04, "opinion_gain_monthly_factor": -0.12 },
+      "flag": { "motif": "trident", "alt": ["flame"] }, "building": "nether_hall", "music": "dread", "unit_group": "demon"
+    },
+    "veshazel_court": {
+      "id": 82, "adjective": "Ash Court", "icon": "ash_flame", "magic": "core",
+      "spirit": "Sworn to Neither",
+      "spirit_desc": "The lord of the Ash Court keeps a pact-name of his own and is sworn to no other power. His fire-casters keep the ash fields, and his thralls keep everything else.",
+      "text": "The demon lordship of Veshazel on the Goldoroth Ash Fields.",
+      "modifier": { "army_defence_factor": 0.05, "equipment_capture_factor": 0.06, "resistance_damage_to_garrison": 0.08, "stability_factor": -0.04 },
+      "flag": { "motif": "ash_flame", "alt": [] }, "building": "ash_tower", "music": "dread", "unit_group": "demon"
     }
   },
   "faiths": {
@@ -521,8 +752,8 @@
     },
     "pass_vigil": {
       "id": 5, "icon": "names_wall", "clergy": "Watch-chaplains",
-      "spirit_desc": "The Wall is a promise to the dead of the Third Age, and every post is holy. Watch-chaplains keep the roll of the fallen.",
-      "text": "A faith of duty on the Great Wall and the marches.",
+      "spirit_desc": "The passes are a promise to the dead of the Third Age, and every post is holy. Watch-chaplains keep the roll of the fallen.",
+      "text": "A faith of duty on the passes of the Great Wall range and the marches.",
       "modifier": { "army_morale_factor": 0.04, "max_dig_in_factor": 0.05, "war_support_factor": 0.03 },
       "festivals": [{ "id": "accord_day", "name": "The Accord-Day", "month": null }, { "id": "night_watch", "name": "The Night Watch", "month": "Longnight" }, { "id": "reading_of_names", "name": "The Reading of Names", "month": null }],
       "holy_sites": ["site_kingson", "pass_kingson_gate"]
@@ -634,7 +865,7 @@
     "flood_stair": {
       "id": 19, "icon": "flood_temple", "clergy": "Temple scribes and flood-priests",
       "spirit_desc": "The river is the oldest god we can see. Tall temples honour the gods above the flood-line, and the river below it.",
-      "text": "The faith of the river kings, served by temple scribes and flood-priests.",
+      "text": "The faith of the river kings, who honour the River and their ancestors before the twelve; flood-priests and temple scribes serve it.",
       "modifier": { "research_speed_factor": 0.03, "monthly_population": 0.04, "stability_factor": 0.02 },
       "festivals": [{ "id": "the_rising", "name": "The Rising", "month": null }, { "id": "the_falling", "name": "The Falling", "month": null }, { "id": "kings_walk", "name": "The King's Walk", "month": null }],
       "holy_sites": ["site_alerhia"]
@@ -730,7 +961,7 @@
     "giant_cairn": {
       "id": 31, "icon": "cairn_stones", "clergy": "Stone-keepers",
       "spirit_desc": "A giant leaves one stone for each year of life. The great cairns are the giants' memory.",
-      "text": "The cairn-faith of Hiloron and Titanos, kept by stone-keepers.",
+      "text": "The cairn-faith of the giants of Hirolon, Nivaros and the Giant Forest, kept by stone-keepers.",
       "modifier": { "stability_factor": 0.04, "production_speed_buildings_factor": 0.03 },
       "festivals": [{ "id": "stone_laying", "name": "The Stone-Laying", "month": "Thaw" }, { "id": "frost_hour", "name": "The Frost-Hour", "month": null }],
       "holy_sites": ["site_hiloron"]
@@ -797,6 +1028,61 @@
       "text": "No faith is recorded.",
       "modifier": {},
       "festivals": [],
+      "holy_sites": []
+    },
+    "deep_reckoning": {
+      "id": 40, "icon": "founders_wall", "clergy": "Masters of the Forge",
+      "spirit_desc": "Every hold keeps the reckoning of its founders cut in stone, and a broken contract is a sin against both Irumas of the forge and Ailtal of the oath.",
+      "text": "The faith of the dwarves, who honour two of the twelve above the others and read their reckonings in stone.",
+      "modifier": { "production_factory_efficiency_gain_factor": 0.04, "stability_factor": 0.03, "justify_war_goal_time": 0.1 },
+      "festivals": [{ "id": "first_strike", "name": "The First Strike", "month": null }, { "id": "settling_of_accounts", "name": "The Settling of Accounts", "month": "Longnight" }],
+      "holy_sites": []
+    },
+    "hearth_table": {
+      "id": 41, "icon": "set_table", "clergy": null,
+      "spirit_desc": "A place is laid at every table for Lumae of the hearth, Aurlan of the harvest and Vaelei of births, and no other god is asked into the house.",
+      "text": "The household faith of the small folk; the eldest of the house lays the gods' place.",
+      "modifier": { "monthly_population": 0.04, "stability_factor": 0.03 },
+      "festivals": [{ "id": "first_furrow", "name": "The First Furrow", "month": "Thaw" }, { "id": "long_table", "name": "The Long Table", "month": "Harvest" }],
+      "holy_sites": []
+    },
+    "full_pot": {
+      "id": 42, "icon": "tally_rim", "clergy": "The village kings",
+      "spirit_desc": "Gold freely given returns as good fortune, and gold taken returns as ill. Naisa of fortune keeps the account, and the village kings keep the tally.",
+      "text": "The faith of the gnomes of Olodor, for whom luck is a debt.",
+      "modifier": { "trade_opinion_factor": 0.06, "political_power_gain": 0.03 },
+      "festivals": [{ "id": "crowning", "name": "A Crowning", "month": null }],
+      "holy_sites": []
+    },
+    "road_due": {
+      "id": 43, "icon": "salt_pinch", "clergy": null,
+      "spirit_desc": "The road gives and the boss takes: what a traveller brings home is owed to the cave, and the spirits of the road are thanked with a pinch of salt.",
+      "text": "The custom of the dwarf goblins' road-bands, to whom the twelve are the gods of townsfolk.",
+      "modifier": { "supply_consumption_factor": -0.04, "army_speed_factor": 0.02 },
+      "festivals": [{ "id": "homecoming", "name": "The Homecoming", "month": "Mistfall" }],
+      "holy_sites": []
+    },
+    "standing_silence": {
+      "id": 44, "icon": "silent_stand", "clergy": null,
+      "text": "The Baelim keep silence for the felled and the burned; what they listen for under the roots, nobody knows.",
+      "modifier": {},
+      "festivals": [],
+      "holy_sites": []
+    },
+    "pass_fires": {
+      "id": 45, "icon": "fire_tower", "clergy": "Fire-keepers of the passes",
+      "spirit_desc": "Fires burn on the passes for the spirits of the high road, who lead the caravans through the sand-storms. The gods of strangers are respected and not asked.",
+      "text": "The faith of the pass-lords of Miaed.",
+      "modifier": { "heat_attrition_factor": -0.06, "supply_consumption_factor": -0.03 },
+      "festivals": [{ "id": "rekindling", "name": "The Rekindling", "month": "Fallowing" }],
+      "holy_sites": []
+    },
+    "water_share": {
+      "id": 46, "icon": "shared_well", "clergy": "The well-keepers",
+      "spirit_desc": "Water shared makes kin and water refused makes enemies. The oasis-folk honour the wells and the dead who dug them, and pray to no god of the coast.",
+      "text": "The faith of the oasis-folk of Wahatud.",
+      "modifier": { "opinion_gain_monthly_factor": 0.08, "stability_factor": 0.03 },
+      "festivals": [{ "id": "sharing", "name": "The Sharing", "month": "Rainwake" }],
       "holy_sites": []
     }
   }

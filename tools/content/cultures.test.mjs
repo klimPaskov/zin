@@ -2,6 +2,7 @@
 // docs/specs/02_lore/08_world_in_game.md sections 1, 6, 13 and 14. The module runs on the real data into a fresh staged
 // set (no full build needed). Negative tests plant one mistake in a copy of the model and expect the check that owns it.
 import test from 'node:test';
+import { countryTable, cultureRows } from './lib/roster.mjs';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -14,7 +15,7 @@ import * as C from './modules/cultures.mjs';
 import { runCultureChecks, findDuplicateJsonKeys, loadGeographyIds, SPEC_COUNTS } from './checks/cultures_check.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const { countries } = JSON.parse(await readFile(path.join(here, 'data/countries.json'), 'utf8'));
+const countries = countryTable();
 const model = await C.loadCultureModel();
 const geography = await loadGeographyIds();
 const banned = compileBanned(await loadBanned());
@@ -26,6 +27,10 @@ const codes = r => new Set(r.errors.map(e => e.code));
 const mutated = fn => { const m = structuredClone(model); fn(m); return m; };
 const byName = name => countries.find(c => c.name === name);
 const startupOf = name => built.startup.split('\n').find(l => l.startsWith(`\t\t\t${byName(name).tag} = `));
+// The faiths that carry a spirit: every faith with written spirit text. The open faith (none) and the Baelim's Standing Silence,
+// which the vault does not describe, carry none.
+const SPIRITLESS = ['none', 'standing_silence'];
+const secondRows = cultureRows().filter(r => r.culture_secondary);
 const defs = file => [...text(file).matchAll(/^([a-z0-9_]+) = \{$/gm)].map(m => m[1]);
 
 // ----------------------------------------------------------------------------------------------------- the build
@@ -36,10 +41,10 @@ test('The module stages the ten files and counts what the task asks for', () => 
     'docs/design/world/culture_coverage.json', 'docs/design/world/culture_mappings.json', 'docs/design/world/state_cultures.json',
     'localisation/english/zin_cultures_l_english.yml',
   ]);
-  assert.equal(built.counts.countries, 305);
-  assert.equal(built.counts.cultures, 53);
-  assert.equal(built.counts.cultureIdeas, 106, '53 culture ideas and 53 second-culture ideas');
-  assert.equal(built.counts.faithSpirits, 38, '39 faith rows, the open one has no spirit');
+  assert.equal(built.counts.countries, countries.length);
+  assert.equal(built.counts.cultures, SPEC_COUNTS.cultures);
+  assert.equal(built.counts.cultureIdeas, 2 * SPEC_COUNTS.cultures, 'a culture idea and a second-culture idea per culture');
+  assert.equal(built.counts.faithSpirits, model.faithKeys.length - SPIRITLESS.length, 'every faith row but the open one and the Standing Silence has a spirit');
   assert.equal(built.counts.festivals, Object.values(model.game.faiths).reduce((n, f) => n + f.festivals.length, 0));
   assert(built.counts.triggers > 400);
   assert.equal(built.counts.scriptedEffects, 2 + Object.values(model.game.faiths).filter(f => f.festivals.length).length);
@@ -55,10 +60,11 @@ test('Every culture has a culture idea, every faith a spirit, in the right categ
     const tier = model.world.cultures[k].tier;
     assert.equal(countrySection.includes(`\t\tzin_culture_${k} = {`), tier <= 2, `${k} (tier ${tier}) sits in the visible section only for tiers 1 and 2`);
   }
-  for (const k of model.faithKeys) assert.equal(ideas.includes(`\t\tzin_faith_${k} = {`), k !== 'none', `faith spirit ${k}`);
-  assert.equal([...ideas.matchAll(/allowed = \{ always = no \}/g)].length, 106 + 38);
-  assert.equal([...ideas.matchAll(/removal_cost = -1/g)].length, 106 + 38);
-  assert.equal([...ideas.matchAll(/allowed_civil_war = \{ always = yes \}/g)].length, 106 + 38, 'spirits survive a civil war');
+  for (const k of model.faithKeys) assert.equal(ideas.includes(`\t\tzin_faith_${k} = {`), !SPIRITLESS.includes(k), `faith spirit ${k}`);
+  assert.deepEqual(model.faithKeys.filter(k => !model.game.faiths[k].spirit_desc), SPIRITLESS, 'only these faiths have no spirit text');
+  assert.equal([...ideas.matchAll(/allowed = \{ always = no \}/g)].length, 2 * SPEC_COUNTS.cultures + model.faithKeys.length - SPIRITLESS.length);
+  assert.equal([...ideas.matchAll(/removal_cost = -1/g)].length, 2 * SPEC_COUNTS.cultures + model.faithKeys.length - SPIRITLESS.length);
+  assert.equal([...ideas.matchAll(/allowed_civil_war = \{ always = yes \}/g)].length, 2 * SPEC_COUNTS.cultures + model.faithKeys.length - SPIRITLESS.length, 'spirits survive a civil war');
 });
 
 test('Culture modifiers are valid, small, distinct and within the bounds of the data file', async () => {
@@ -92,17 +98,19 @@ test('A second culture counts at half strength and loses the integer skill level
 });
 
 test('The startup lines carry the culture, the second culture, the language and the faith the way the people do', () => {
-  assert.equal(built.startup.split('\n').length, 305);
+  assert.equal(built.startup.split('\n').length, countries.length);
   assert.equal(startupOf('Aenor'), `\t\t\t${byName('Aenor').tag} = { add_ideas = { zin_culture_lake_aenoran zin_faith_deliverer } set_country_flag = zin_culture_lake_aenoran set_variable = { zin_culture_id = 1 } set_country_flag = zin_language_aenoran set_variable = { zin_language_id = 1 } set_country_flag = zin_faith_deliverer set_variable = { zin_faith_id = 1 } }`);
-  const kilinti = startupOf('Kilinti');
-  assert(kilinti.includes('zin_culture_kilinti_ents') && kilinti.includes('zin_culture2_selen_ranger') && kilinti.includes('set_country_flag = zin_culture2_selen_ranger'));
-  const zol = startupOf('Zol');
+  const kunhrim = startupOf('Kunhrim');
+  assert(kunhrim.includes('zin_culture_wall_delvers') && kunhrim.includes('zin_culture2_lake_aenoran') && kunhrim.includes('set_country_flag = zin_culture2_lake_aenoran'));
+  assert(kunhrim.includes('set_country_flag = zin_language_dwarvish'), 'the dwarves speak their own tongue');
+  const zol = startupOf("Zol's Mistake");
   assert(!zol.includes('zin_language_'), "Zol's dead have no language");
   assert(zol.includes('set_country_flag = zin_faith_none') && !zol.includes('add_ideas = { zin_culture_zols_dead zin_faith'), "Zol's dead have no faith spirit");
   const ideas = text('common/ideas/zin_cultures.txt');
   const used = new Set([...built.startup.matchAll(/add_ideas = \{ ([^}]*) \}/g)].flatMap(m => m[1].split(' ')));
   for (const id of used) assert(ideas.includes(`\t\t${id} = {`), `${id} is defined`);
-  assert.equal(built.startup.split('\n').filter(l => l.includes('zin_culture2_')).length, 11, 'eleven countries carry a second culture');
+  assert.equal(built.startup.split('\n').filter(l => l.includes('zin_culture2_')).length, secondRows.length, 'every realm with a second culture in the roster carries it');
+  assert.equal(secondRows.length, 8);
 });
 
 test('The trigger family reads flags and variables, never a list of tags', () => {
@@ -181,16 +189,17 @@ test('Coverage: every country has a culture and a faith that exist, every cultur
   const r = await check(model);
   assert.equal(r.errors.length, 0, JSON.stringify(r.errors.slice(0, 3)));
   const cov = JSON.parse(text('docs/design/world/culture_coverage.json'));
-  assert.equal(cov.totals.countries, 305);
-  assert.deepEqual(cov.gaps.cultures_without_country, ['goblin_warrens']);
-  assert.match(cov.cultures.goblin_warrens.unused, /minor people/);
-  assert.equal(cov.cultures.lake_aenoran.countries.length, 11);
+  assert.equal(cov.totals.countries, countries.length);
+  assert.deepEqual(cov.gaps.cultures_without_country, [], 'every culture is kept by a realm of the roster (the goblin warrens by Burnikit)');
+  assert.deepEqual(cov.cultures.goblin_warrens.countries, ['Burnikit']);
+  assert.equal(cov.cultures.goblin_warrens.unused, null);
+  assert.deepEqual(cov.cultures.lake_aenoran.countries, cultureRows().filter(r => r.culture === 'lake_aenoran').map(r => r.country).sort());
   assert.equal(cov.cultures.kilinti_ents.second_countries.length, 0);
-  assert.deepEqual(cov.cultures.selen_ranger.second_countries, ['Kilinti']);
-  assert.equal(cov.gaps.countries_with_second_culture.length, 11);
-  assert.deepEqual(cov.gaps.countries_without_language, ['Zol']);
-  assert.equal(Object.values(cov.cultures).reduce((n, c) => n + c.countries.length, 0), 305, 'each country is the dominant culture of exactly one culture');
-  assert.equal(Object.keys(cov.languages).length, 24);
+  assert.deepEqual(cov.cultures.lake_aenoran.second_countries, ['Kunhrim']);
+  assert.equal(cov.gaps.countries_with_second_culture.length, secondRows.length);
+  assert.deepEqual(cov.gaps.countries_without_language, ['Mushroom Forest', "Zol's Mistake"]);
+  assert.equal(Object.values(cov.cultures).reduce((n, c) => n + c.countries.length, 0), countries.length, 'each country is the dominant culture of exactly one culture');
+  assert.equal(Object.keys(cov.languages).length, SPEC_COUNTS.languages);
   assert.deepEqual(Object.entries(cov.languages).filter(([, l]) => !l.cultures.length).map(([k]) => k), ['ainic'], 'only the liturgical Old Ainic has no culture');
   for (const row of C.resolveCountryCultures(model, countries).rows.values()) {
     assert(model.world.cultures[row.culture], `${row.country} culture`); assert(model.world.faiths[row.faith], `${row.country} faith`);
@@ -208,7 +217,11 @@ test('Mappings: portrait pools, flag styles, building kits, music moods, unit gr
   assert.equal(C.portraitPoolFor(model, 'selen_ranger').per_sex, 4);
   assert.equal(C.portraitPoolFor(model, 'march_folk').per_sex, 2);
   assert.equal(C.portraitPoolFor(model, 'goblin_warrens').per_sex, 1);
-  assert.equal(pools.reduce((n, p) => n + p.total, 0), 374, 'the bible budget of about 374 culture portraits');
+  // The budget of 08_world_in_game.md: tier 1 x 12, tier 2 x 8, tier 3 x 4, a minor people 2. About 374 for the 53 cultures of the
+  // bible; the 29 cultures of the roster of 24 October 2026 add theirs by the same rule.
+  const rule = { 1: 12, 2: 8, 3: 4 }, minor = new Set(Object.keys(model.game.portrait_pools.per_sex_overrides));
+  assert.equal(pools.reduce((n, p) => n + p.total, 0), model.cultureKeys.reduce((n, k) => n + (minor.has(k) ? 2 * model.game.portrait_pools.per_sex_overrides[k] : rule[model.world.cultures[k].tier]), 0));
+  assert.equal(pools.filter(p => p.tier === 1).length * 12 + pools.filter(p => p.tier === 2).length * 8 <= pools.reduce((n, p) => n + p.total, 0), true);
   assert.equal(C.portraitPoolFor(model, 'volcano_clans').kit, 'orcs');
   assert.equal(C.flagStyleFor(model, 'leren_sea_kings').shape, 'swallowtail');
   assert.equal(C.flagStyleFor(model, 'steppe_rider').shape, 'pennant');
@@ -225,11 +238,11 @@ test('Mappings: portrait pools, flag styles, building kits, music moods, unit gr
   assert.equal(C.graphicalCultureFor(model, 'noris_riders', new Set(['zin_desert_riders_gfx'])).key, 'zin_desert_riders_gfx');
   assert.equal(C.graphicalCultureFor(model, 'kilinti_ents').fallback, 'zin_ents_gfx');
   const maps = JSON.parse(text('docs/design/world/culture_mappings.json'));
-  assert.equal(Object.keys(maps.cultures).length, 53);
+  assert.equal(Object.keys(maps.cultures).length, SPEC_COUNTS.cultures);
   assert.equal(maps.cultures.gala_court.music_mood, 'elven_voices');
   assert.equal(maps.chronicle.cultures.lake_aenoran.name, 'Lake Aenorans');
   assert.equal(maps.chronicle.faiths.none.name, 'No Faith Recorded');
-  assert.equal(Object.keys(C.chronicleNames(model).languages).length, 24);
+  assert.equal(Object.keys(C.chronicleNames(model).languages).length, SPEC_COUNTS.languages);
 });
 
 // --------------------------------------------------------------------------------------------- per-state cultures
@@ -296,7 +309,9 @@ test('The data passes its own checks with no error, and the Knots warning is the
   const r = await check(model);
   assert.deepEqual(r.errors, []);
   assert(r.warnings.every(w => ['country-faith', 'text'].includes(w.code)));
-  assert(r.warnings.some(w => w.code === 'country-faith' && /Yeldenne/.test(w.detail)));
+  // The Old Knots are the one review item: their name holds a banned unit word. Every realm keeps a faith of its culture.
+  assert.deepEqual(r.warnings.map(w => w.code), ['text', 'text']);
+  assert(r.warnings.every(w => /Old Knots/.test(w.detail)));
   assert.equal(findDuplicateJsonKeys(model.gameText).length, 0);
   assert.equal(findDuplicateJsonKeys(model.stateText).length, 0);
   assert.equal(model.cultureKeys.length, SPEC_COUNTS.cultures);
@@ -357,8 +372,12 @@ test('Negative: modifier values, counts and overlap', async () => {
 });
 
 test('Negative: a culture nobody keeps, a language that does not exist, a faith nobody keeps', async () => {
-  const unused = await check(mutated(m => { delete m.game.cultures.goblin_warrens.unused; }));
-  assert(unused.errors.some(e => e.code === 'unused' && /goblin_warrens/.test(e.detail)));
+  // Selen is the one realm of the Selen rangers: without it the culture has no country and no note.
+  assert.deepEqual(cultureRows().filter(r => r.culture === 'selen_ranger' || r.culture_secondary === 'selen_ranger').map(r => r.country), ['Selen']);
+  const unused = await check(model, { countries: countries.filter(c => c.name !== 'Selen') });
+  assert(unused.errors.some(e => e.code === 'unused' && /selen_ranger/.test(e.detail)), JSON.stringify(unused.errors.slice(0, 3)));
+  const noted = await check(mutated(m => { m.game.cultures.selen_ranger.unused = 'kept by no realm'; }), { countries: countries.filter(c => c.name !== 'Selen') });
+  assert(!noted.errors.some(e => e.code === 'unused' && /selen_ranger/.test(e.detail)), 'a note explains an unused culture');
   const stale = await check(mutated(m => { m.game.cultures.noris_riders.unused = 'a stale note'; }));
   assert(stale.warnings.some(w => w.code === 'unused'));
   const noLanguage = await check(mutated(m => { m.world.cultures.selen_ranger.language = 'elder_tongue'; }));
@@ -391,7 +410,7 @@ test('Negative: text that leaks the secret, uses a banned word, breaks Windows-1
 
 test('Negative: mappings, festivals and sites', async () => {
   const kit = await check(mutated(m => { m.game.cultures.vale_folk.building = 'lake_stone'; }));
-  assert(kit.errors.some(e => e.code === 'mapping' && /50 building styles, the spec has 51/.test(e.detail)));
+  assert(kit.errors.some(e => e.code === 'mapping' && e.detail.includes(`${SPEC_COUNTS.building_styles - 1} building styles, the spec has ${SPEC_COUNTS.building_styles}`)), 'the Vale-Folk\'s grey walls are their own style');
   const music = await check(mutated(m => { m.game.cultures.vale_folk.music = 'Bad Key'; }));
   assert(music.errors.some(e => e.code === 'mapping' && /music "Bad Key"/.test(e.detail)));
   const magic = await check(mutated(m => { m.game.cultures.vale_folk.magic = 'adored'; }));

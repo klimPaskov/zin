@@ -55,7 +55,7 @@ export async function loadArt(countries) {
 // The per-country flag slices: <ZIN_ART>/flags/ when present. Otherwise they are cut again from the flag sheets by
 // art/slice-flags.mjs into a content-addressed folder under the OS temp directory (never inside the repository),
 // using the cell map recorded when the sheets were generated: <ZIN_ART>/jobs/flags-cells.json, or its tracked copy
-// data/flags-cells.json. (art/flag-jobs.mjs derives cells from today's table, which no longer matches the sheets.)
+// data/flags-cells.json, the map of the retired roster's sheets (art/flag-jobs.mjs writes the jobs of the realms' new sheets).
 export const FLAG_CELLS = fileURLToPath(new URL('../data/flags-cells.json', import.meta.url));
 let flagsReady;
 export function flagsDir() { return flagsReady ??= sliceFlagsIfMissing(); }
@@ -83,6 +83,22 @@ export async function flagTgas(name) {
   const sharp = (await import('sharp')).default, file = `${await flagsDir()}/${flagKey(name)}.png`;
   const [large, medium, small] = await Promise.all([[82, 52], [41, 26], [10, 7]].map(async ([w, h]) => tga(fromRaw(await sharp(file).resize(w, h, { fit: 'fill', kernel: 'lanczos3' }).ensureAlpha().raw().toBuffer(), w, h))));
   return { large, medium, small };
+}
+
+// The realms' flags at the three sizes. Until the heraldry of data/world/heraldry.json is generated (art/flag-jobs.mjs), a realm flies the
+// old flag of its main former row (flagFrom, lib/roster.mjs); a realm with no old row has no flag yet. Both lists go to
+// docs/plans/zin-art/pending_from_integration.md. Returns { kept: [{ tag, name, from }], none: [{ tag, name }] }.
+export async function stageRealmFlags(staged, countries) {
+  const kept = [], none = [];
+  for (const c of countries) {
+    if (!c.flagFrom) { none.push({ tag: c.tag, name: c.name }); continue; }
+    const t = await flagTgas(c.flagFrom);
+    staged.add(`gfx/flags/${c.tag}.tga`, t.large);
+    staged.add(`gfx/flags/medium/${c.tag}.tga`, t.medium);
+    staged.add(`gfx/flags/small/${c.tag}.tga`, t.small);
+    kept.push({ tag: c.tag, name: c.name, from: c.flagFrom });
+  }
+  return { kept, none };
 }
 
 // The generated sources and their provenance travel with the mod so every asset can be traced to its prompt.
