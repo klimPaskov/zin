@@ -197,7 +197,7 @@ export function eindilScripts({ data, TAG, C, floors, roster, dep }) {
     'set_temp_variable = { zin_arg_role = 0 }');
   dep('zin_potent_magic', 'country flag', 'magic and world systems (04_magic_and_world_systems.md)');
   dep('zin_glo_follow_bearer', 'scripted effect', 'yeldenne_and_glo (mech_yeldenne.mjs)');
-  const portrait = state => `set_portraits = { character = zin_eindil civilian = { large = ${portraitOf(state)} } army = { large = ${portraitOf(state)} small = ${portraitOf(state)} } }`;
+  const portrait = state => `set_portraits = { character = zin_eindil civilian = { large = ${portraitOf(state)} } army = { large = ${portraitOf(state)} } }`;
   E('zin_eindil_refresh_portrait',
     '# The seven portrait states E1 to E7 follow the story flags; until the art pipeline draws them each is the generic man (data: portraits).',
     L('if', `limit = { ${gflag('zin_eindil_crowned')} }`, portrait('E7')),

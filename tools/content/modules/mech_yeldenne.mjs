@@ -417,7 +417,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   dep('zin_cold_hall_respected', 'country flag', 'cold_lands');
   ack(62, EVT('yeldenne_hall'), 'Withdraw.');
   ack(63, EVT('yeldenne_hall'), 'So the north keeps its own king.');
-  shown(64, EVT('yeldenne_hall'), { trigger: ['zin_horos_alive = yes'], options: opts(64, [
+  shown(64, EVT('lost_cause_triumph'), { trigger: ['zin_horos_alive = yes'], options: opts(64, [
     ['a', [`${TAG.yeldenne} = { country_event = { id = zin_glo.60 days = 1 } }`], ['base = 60', L('modifier', 'factor = 0.5', 'has_war = yes'), L('modifier', 'factor = 1.7', 'zin_eindil_historical = yes NOT = { has_war = yes }')]],
     ['b', [`${TAG.yeldenne} = { add_opinion_modifier = { target = ROOT modifier = zin_glo_rebuked } }`], 40]]) });
   addNews(70, NEWS('generic_court'), 'The light is carried.');
@@ -434,7 +434,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
     const d = data.decisions[id];
     if (!d) throw new Error(`No text for decision ${id}`);
     decisions.push({ cat, id, body }); defs.decisions.push(id); loc.add(id, d.name); loc.add(`${id}_desc`, d.desc);
-    scripts.add(id, 'decision', L(id, `icon = zin_${d.icon}`, ...body));
+    scripts.add(id, 'decision', L(id, `icon = zin_glo_${d.icon}`, ...body));
   };
   D('zin_glo_seekers', 'zin_glo_petition_horos',
     'allowed = { always = yes }',
@@ -483,7 +483,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   const bearerVisible = (flag) => L('visible', 'has_global_flag = zin_eindil_lost', flag, L('OR', 'check_variable = { global.zin_glo_state = 0 }', 'check_variable = { global.zin_glo_state = 2 }'));
   D('zin_glo_seekers', 'zin_glo_seek_as_bearer', 'allowed = { always = yes }', bearerVisible('NOT = { has_global_flag = zin_yeldenne_calls_bearer }'), bearerAvail, 'cost = 100', ...bearerTail);
   D('zin_glo_seekers', 'zin_glo_seek_as_bearer_called', 'allowed = { always = yes }', bearerVisible('has_global_flag = zin_yeldenne_calls_bearer'), bearerAvail, 'cost = 0', ...bearerTail);
-  D('zin_glo_bearer', 'zin_glo_wave_decision',
+  D('zin_glo_cat_bearer', 'zin_glo_wave_decision',
     'allowed = { always = yes }',
     L('visible', 'zin_glo_is_bearer_host = yes'),
     L('available', 'zin_glo_is_bearer_host = yes',
@@ -496,7 +496,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   for (const d of decisions) (cats[d.cat] ??= []).push(d);
   for (const c of data.categories) { loc.add(c.id, c.name); loc.add(`${c.id}_desc`, c.desc); defs.categories.push(c.id); }
   put('common/decisions/categories/zin_glo.txt', fileText(...data.categories.map(c => render(L(c.id, 'allowed = { always = yes }', `icon = zin_${c.icon}`, 'priority = 5')))));
-  put('common/decisions/zin_glo.txt', fileText(...Object.entries(cats).map(([c, ds]) => render(L(c, ...ds.map(d => L(d.id, `icon = zin_${data.decisions[d.id].icon}`, ...d.body)))))));
+  put('common/decisions/zin_glo.txt', fileText(...Object.entries(cats).map(([c, ds]) => render(L(c, ...ds.map(d => L(d.id, `icon = zin_glo_${data.decisions[d.id].icon}`, ...d.body)))))));
 
   // ---------------------------------------------------------------------------------------------- triggers and effects files
   put('common/scripted_triggers/zin_glo.txt', fileText(comment('Triggers of the Yeldenne and Glo mechanic.'), ...triggerDefs.map(d => render(L(d.name, ...d.body)))));
@@ -520,7 +520,7 @@ export async function buildYeldenneGlo(staged, ctx = {}) {
   const sprites = [];
   const seen = new Set();
   const addSprite = (name, tex) => { if (seen.has(name)) return; seen.add(name); sprites.push(`\tspriteType = {\n\t\tname = "${name}"\n\t\ttexturefile = "gfx/interface/ideas/zin/${tex}.dds"\n\t}`); };
-  for (const d of Object.values(data.decisions)) addSprite(`GFX_decision_zin_${d.icon}`, d.icon);
+  for (const d of Object.values(data.decisions)) addSprite(`GFX_decision_zin_glo_${d.icon}`, d.icon);
   for (const c of data.categories) addSprite(`GFX_decision_category_zin_${c.icon}`, c.icon);
   put('interface/zin_glo.gfx', `spriteTypes = {\n${sprites.join('\n')}\n}\n`);
   staged.loc('zin_glo', loc.entries);

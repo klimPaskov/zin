@@ -134,3 +134,7 @@ nothing to build; the decisions use the stock decision screen.
 6. The Linux-run and scenario acceptance lines from the specs were not run.
 7. `build.test.mjs` "The build is deterministic" fails because the whole build stops on the asset baseline check (813 new `UNIQ_EVENT_CHAIN` errors in `events/zin_stabilo.txt`
    and similar, from another slice); it is not caused by these modules, which are not wired.
+
+## Integration round 3 (24 October 2026)
+
+The three modules are wired in `tools/content/build.mjs` (`integration_r3.md`, section 1); the Host of Eindil flag is not staged (`hostFlag: false`: a recolour made in code is new art, listed in `docs/plans/zin-art/pending_from_integration.md`). The Glo decision category `zin_glo_bearer` is `zin_glo_cat_bearer` (its text key collided with the warfare sub-unit of the same id), and the Glo and West decision sprites carry the prefixes `zin_glo_` and `zin_west_`. The names this slice uses from owners not yet written are declared in `tools/content/data/pending_names.json`. Items 1 and 3 of section 8 are done; items 2 and 4 remain.

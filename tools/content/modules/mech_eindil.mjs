@@ -71,7 +71,7 @@ export async function buildEindilJourney(staged, ctx = {}) {
 
   // ---------------------------------------------------------------------------------------------- characters
   const ext = opt.externalCharacters ?? [];
-  const portrait = { civilian: { large: ch.portrait }, army: { large: ch.portrait, small: ch.portrait } };
+  const portrait = { civilian: { large: ch.portrait }, army: { large: ch.portrait } };
   const chars = {};
   for (const id of [ch.eindil, ch.varner, ch.golbran, ch.companion1, ch.companion2]) if (!ext.includes(id)) chars[id] = { name: id, portraits: portrait };
   if (Object.keys(chars).length) put('common/characters/zin_eindil.txt', `${HEADER}\ncharacters = {\n${cw(chars, 1)}}\n`);

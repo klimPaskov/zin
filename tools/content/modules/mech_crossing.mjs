@@ -555,11 +555,11 @@ export async function buildWesternCrossing(staged, ctx = {}) {
     L('complete_effect', 'zin_west_begin_evacuation = yes'), L('ai_will_do', 'base = 0'));
   // the mission
   loc.add('zin_west_fleet_waits', data.decisions.zin_west_fleet_waits.name); loc.add('zin_west_fleet_waits_desc', data.decisions.zin_west_fleet_waits.desc); defs.decisions.push('zin_west_fleet_waits');
-  const mission = L('zin_west_fleet_waits', `icon = zin_${data.decisions.zin_west_fleet_waits.icon}`, 'allowed = { always = yes }', 'days_mission_timeout = 60', 'is_good = no', L('timeout_effect', 'zin_west_resolve_evacuation = yes'));
+  const mission = L('zin_west_fleet_waits', `icon = zin_west_${data.decisions.zin_west_fleet_waits.icon}`, 'allowed = { always = yes }', 'days_mission_timeout = 60', 'is_good = no', L('timeout_effect', 'zin_west_resolve_evacuation = yes'));
   scripts.add('zin_west_fleet_waits', 'decision', mission);
   put('common/decisions/categories/zin_west.txt', fileText(...data.categories.map(c => render(L(c.id, 'allowed = { always = yes }', `icon = zin_${c.icon}`, 'priority = 7')))));
   const cats = {};
-  for (const d of decisions) (cats[d.cat] ??= []).push(render(L(d.id, `icon = zin_${data.decisions[d.id].icon}`, ...d.body)));
+  for (const d of decisions) (cats[d.cat] ??= []).push(render(L(d.id, `icon = zin_west_${data.decisions[d.id].icon}`, ...d.body)));
   cats.zin_west_crossing.push(render(mission));
   put('common/decisions/zin_west.txt', fileText(...Object.entries(cats).map(([c, ds]) => `${c} = {\n${ds.map(t => t.split('\n').map(l => '\t' + l).join('\n')).join('\n')}\n}`)));
 
@@ -595,7 +595,7 @@ export async function buildWesternCrossing(staged, ctx = {}) {
   // ---------------------------------------------------------------------------------------------- interface and text
   const sprites = [], seen = new Set();
   const addSprite = (name, tex) => { if (seen.has(name)) return; seen.add(name); sprites.push(`\tspriteType = {\n\t\tname = "${name}"\n\t\ttexturefile = "gfx/interface/ideas/zin/${tex}.dds"\n\t}`); };
-  for (const d of Object.values(data.decisions)) addSprite(`GFX_decision_zin_${d.icon}`, d.icon);
+  for (const d of Object.values(data.decisions)) addSprite(`GFX_decision_zin_west_${d.icon}`, d.icon);
   for (const c of data.categories) addSprite(`GFX_decision_category_zin_${c.icon}`, c.icon);
   put('interface/zin_west.gfx', `spriteTypes = {\n${sprites.join('\n')}\n}\n`);
   staged.loc('zin_west', loc.entries);

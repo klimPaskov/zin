@@ -37,6 +37,9 @@ import { buildEventsCrown } from './modules/events_crown.mjs';
 import { buildAenor } from './modules/mech_aenor.mjs';
 import { buildAfrit } from './modules/mech_afrit.mjs';
 import { buildZol } from './modules/mech_zol.mjs';
+import { buildYeldenneGlo } from './modules/mech_yeldenne.mjs';
+import { buildEindilJourney } from './modules/mech_eindil.mjs';
+import { buildWesternCrossing } from './modules/mech_crossing.mjs';
 import { buildDecisionsRegional } from './modules/decisions_regional.mjs';
 import { buildFocusMajorC } from './modules/focus_major_c.mjs';
 import { buildSharedBCompanion } from './modules/focus_shared_b.mjs';
@@ -108,6 +111,11 @@ const institutions = await buildInstitutions(staged, { countries, table, pools }
 const mechAenor = await buildAenor(staged, { countries });
 const mechAfrit = await buildAfrit(staged, { countries, table });
 const mechZol = await buildZol(staged, { countries });
+const mechGlo = await buildYeldenneGlo(staged, { countries });
+// No Host of Eindil flag: the journey would recolour Selen's flag in code, which is new art, and the cosmetic tag that would show it is not
+// shipped yet; the flag is listed in docs/plans/zin-art/pending_from_integration.md.
+const mechEindil = await buildEindilJourney(staged, { countries, eindil: { hostFlag: false } });
+const mechWest = await buildWesternCrossing(staged, { countries });
 // The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
 // common/scripted_effects/zin_story.txt; storyBlocks gains 'lastwar' and 'lore' when the events-world module is wired.
 const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'ending'] });
