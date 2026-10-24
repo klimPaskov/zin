@@ -1,0 +1,324 @@
+{
+ "schema": 1,
+ "owner": "tools/content/write_journey_geography.mjs; regenerate with node tools/content/write_journey_geography.mjs, never by hand",
+ "note": "Middle Lands states (economy region middle_lands): mainland and Aenor Isle, their port provinces, the five westernmost mainland ports (the Western Crossing's shore, proposed rule of the key-sites table), and the strategic regions that hold them. Source: history/states, map/strategicregions, forces_geography.json, countries.json.",
+ "mainland": [
+  16,
+  17,
+  18,
+  19,
+  73,
+  74,
+  78,
+  130,
+  131,
+  133,
+  134,
+  150,
+  151,
+  152,
+  202,
+  205,
+  206,
+  207,
+  208,
+  238,
+  239,
+  240,
+  241,
+  324,
+  666,
+  667,
+  668,
+  669,
+  670,
+  672,
+  673,
+  674,
+  675,
+  724,
+  725,
+  726,
+  727,
+  744,
+  748,
+  749,
+  750,
+  751,
+  752,
+  753,
+  754,
+  755,
+  756,
+  808,
+  812,
+  876,
+  878,
+  879,
+  880,
+  881,
+  882,
+  883,
+  884,
+  885,
+  886,
+  897,
+  898,
+  901,
+  902,
+  904,
+  905,
+  937,
+  938,
+  939,
+  940,
+  941,
+  942,
+  943,
+  963,
+  964,
+  965,
+  966,
+  967,
+  968,
+  1104,
+  1277,
+  1278,
+  1279,
+  1280,
+  1281,
+  1282,
+  1283,
+  1284,
+  1287,
+  1288,
+  1289,
+  1290,
+  1291,
+  1292,
+  1328,
+  1329
+ ],
+ "isle": [
+  {
+   "id": 192,
+   "tag": "Y0T",
+   "port": 4175
+  }
+ ],
+ "ports": [
+  {
+   "id": 1328,
+   "tag": "Y4S",
+   "port": 3963
+  },
+  {
+   "id": 1329,
+   "tag": "Y4S",
+   "port": 4035
+  },
+  {
+   "id": 725,
+   "tag": "Y0L",
+   "port": 3822
+  },
+  {
+   "id": 727,
+   "tag": "Y0L",
+   "port": 4277
+  },
+  {
+   "id": 968,
+   "tag": "Y0L",
+   "port": 4425
+  },
+  {
+   "id": 241,
+   "tag": "Y0Q",
+   "port": 4495
+  },
+  {
+   "id": 724,
+   "tag": "Y0L",
+   "port": 3632
+  },
+  {
+   "id": 749,
+   "tag": "Y0Q",
+   "port": 4632
+  },
+  {
+   "id": 668,
+   "tag": "Y0L",
+   "port": 3439
+  },
+  {
+   "id": 1281,
+   "tag": "Y4O",
+   "port": 3317
+  },
+  {
+   "id": 748,
+   "tag": "Y4Y",
+   "port": 4720
+  },
+  {
+   "id": 751,
+   "tag": "Y50",
+   "port": 4893
+  },
+  {
+   "id": 1277,
+   "tag": "Y4O",
+   "port": 3315
+  },
+  {
+   "id": 750,
+   "tag": "Y4Z",
+   "port": 4815
+  },
+  {
+   "id": 17,
+   "tag": "Y50",
+   "port": 4980
+  },
+  {
+   "id": 1278,
+   "tag": "Y4N",
+   "port": 3210
+  },
+  {
+   "id": 753,
+   "tag": "Y0R",
+   "port": 5006
+  },
+  {
+   "id": 666,
+   "tag": "Y0M",
+   "port": 3186
+  },
+  {
+   "id": 755,
+   "tag": "Y0R",
+   "port": 5009
+  },
+  {
+   "id": 202,
+   "tag": "Y0M",
+   "port": 3051
+  },
+  {
+   "id": 744,
+   "tag": "Y4M",
+   "port": 2725
+  },
+  {
+   "id": 18,
+   "tag": "Y51",
+   "port": 5080
+  },
+  {
+   "id": 19,
+   "tag": "Y51",
+   "port": 5057
+  },
+  {
+   "id": 133,
+   "tag": "Y0M",
+   "port": 3108
+  },
+  {
+   "id": 756,
+   "tag": "Y52",
+   "port": 5190
+  },
+  {
+   "id": 131,
+   "tag": "Y0M",
+   "port": 3043
+  },
+  {
+   "id": 675,
+   "tag": "Y52",
+   "port": 5191
+  },
+  {
+   "id": 878,
+   "tag": "Y0M",
+   "port": 2920
+  },
+  {
+   "id": 1291,
+   "tag": "Y0S",
+   "port": 5227
+  },
+  {
+   "id": 130,
+   "tag": "Y8E",
+   "port": 3000
+  },
+  {
+   "id": 78,
+   "tag": "Y55",
+   "port": 5268
+  },
+  {
+   "id": 324,
+   "tag": "Y8E",
+   "port": 2679
+  },
+  {
+   "id": 73,
+   "tag": "Y55",
+   "port": 5329
+  },
+  {
+   "id": 812,
+   "tag": "Y55",
+   "port": 5348
+  }
+ ],
+ "shore": [
+  {
+   "id": 1328,
+   "tag": "Y4S",
+   "port": 3963
+  },
+  {
+   "id": 1329,
+   "tag": "Y4S",
+   "port": 4035
+  },
+  {
+   "id": 725,
+   "tag": "Y0L",
+   "port": 3822
+  },
+  {
+   "id": 727,
+   "tag": "Y0L",
+   "port": 4277
+  },
+  {
+   "id": 968,
+   "tag": "Y0L",
+   "port": 4425
+  }
+ ],
+ "strategicRegions": [
+  12,
+  14,
+  38,
+  86,
+  87,
+  98,
+  101,
+  104,
+  116,
+  135,
+  145,
+  148,
+  160,
+  204
+ ]
+}

@@ -1,0 +1,580 @@
+{
+  "schema": 1,
+  "owner": "tools/content/modules/mech_crossing.mjs",
+  "spec": "docs/specs/04_mechanics/western_crossing.md",
+  "note": "Data of the West Lands and the Western Crossing: tuning constants (script constants, integers; hundredths where a fraction is meant), the grudge table by country name, the spirits, opinion modifiers, decisions and the text of every event of namespace zin_west. Scripts live in the module.",
+  "countries": {
+    "gunwaith": "Gunwaith",
+    "girdon": "Girdon",
+    "aenor": "Aenor",
+    "asgard": "Asgard",
+    "volgan": "Volgan",
+    "zol": "Zol",
+    "lerendor": "Lerendor",
+    "coldor": "Coldor",
+    "selen": "Selen"
+  },
+  "grudge": {
+    "Kradlon": 60,
+    "Gunwaith": 55,
+    "Corogon": 50,
+    "Varnondor": 45,
+    "Lambin": 45,
+    "Girdon": 40,
+    "Buldor": 35
+  },
+  "grudgeDefault": 40,
+  "template": {
+    "name": "Crossing Host",
+    "regiments": [
+      "zin_men_infantry",
+      "zin_men_infantry",
+      "zin_men_infantry",
+      "zin_men_infantry",
+      "zin_men_infantry",
+      "zin_men_infantry"
+    ],
+    "extra": [
+      "zin_men_archers"
+    ],
+    "support": [
+      "zin_support_scouts"
+    ],
+    "equipment": "zin_arms_equipment"
+  },
+  "constants": {
+    "truce_start": 40,
+    "unity_start": 15,
+    "fleet_start": 10,
+    "month_days": 28,
+    "pulse_days": 7,
+    "truce_raid_below": 50,
+    "truce_break_gap": 20,
+    "raid_chance_percent": 12,
+    "grudge_gd": 40,
+    "grudge_gd_drift": 20,
+    "grudge_gold_drift": 50,
+    "grudge_heed_drift": 20,
+    "grudge_home_drift": 10,
+    "grudge_home": 40,
+    "grudge_high": 70,
+    "grudge_low": 20,
+    "grudge_heed_once": 15,
+    "truce_base_drift": 50,
+    "truce_thanes_drift": 50,
+    "truce_peace_drift": 50,
+    "truce_commission_drift": 30,
+    "truce_dark_drift": 30,
+    "truce_dark_at": 25,
+    "unity_council_drift": 50,
+    "unity_pair_drift": 100,
+    "unity_delegate": 2,
+    "resolve_grudge_w": 50,
+    "resolve_unity_w": 30,
+    "resolve_fleet_w": 20,
+    "bonus_king_dead": 5,
+    "bonus_civil_war": 10,
+    "bonus_leren_left": 5,
+    "bonus_honour": 5,
+    "bonus_last_crowns": 15,
+    "bonus_calm": 10,
+    "fleet_decay": 30,
+    "fleet_rumour_at": 40,
+    "fleet_cross_at": 50,
+    "resolve_cross_at": 60,
+    "resolve_early_at": 80,
+    "lift_divisor": 3,
+    "storm_fleet_loss": 10,
+    "question_unity": 40,
+    "route_crossing_resolve": 50,
+    "route_divided_resolve": 40,
+    "relief_regard": 25,
+    "pledge_base": 2,
+    "pledge_grudge_step": 20,
+    "pledge_men": 10000,
+    "pledge_equipment": 1000,
+    "pledge_min_grudge": 45,
+    "ships_min_grudge": 30,
+    "strain_base": 150,
+    "strain_fleet": 100,
+    "strain_zol": 300,
+    "strain_volgan": 300,
+    "strain_east": 100,
+    "strain_garrison": 100,
+    "strain_hold": 100,
+    "strain_low_fleet": 40,
+    "strain_shore_calls": 70,
+    "strain_break": 100,
+    "strain_sound": 40,
+    "strain_hold_again": 90,
+    "strain_sail_dynamic": 60,
+    "modifier_divisor": 500,
+    "evacuation_days": 60,
+    "lift_cap": 80,
+    "break_org": 40,
+    "break_str": 20,
+    "early_after_year_resolve": 80,
+    "council_floor_year": 1752
+  },
+  "spirits": [
+    {
+      "id": "zin_west_aenoran_gold",
+      "icon": "coin_chest",
+      "name": "Aenoran Gold",
+      "desc": "Parim's coin pays the court's debts and the court's silence. The old claims are mentioned less often at table.",
+      "modifier": {
+        "political_power_gain": 0.1
+      }
+    },
+    {
+      "id": "zin_west_own_shore",
+      "icon": "banner_plain",
+      "name": "Our Own Shore",
+      "desc": "The Ford Council broke up without a crossing, and every court went home to its own harvest. It is a quieter, poorer, safer year.",
+      "modifier": {
+        "stability_factor": 0.05,
+        "political_power_gain": 0.05
+      }
+    },
+    {
+      "id": "zin_west_beachhead_host",
+      "icon": "ship_voyage",
+      "name": "The Beachhead",
+      "desc": "Our banners stand on the far shore. Every man there knows the sea behind him is wide.",
+      "modifier": {
+        "army_defence_factor": 0.1,
+        "supply_consumption_factor": -0.1
+      }
+    },
+    {
+      "id": "zin_west_generous_conquerors",
+      "icon": "olive_branch",
+      "name": "Generous Conquerors",
+      "desc": "Our captains accepted surrenders and kept their word. Towns that opened their gates were not burned.",
+      "modifier": {
+        "resistance_target_on_our_occupied_states": -0.1,
+        "compliance_growth_on_our_occupied_states": 0.1
+      }
+    },
+    {
+      "id": "zin_west_claimant_of_parim",
+      "icon": "throne_gold",
+      "name": "Claimant to the Throne of Men",
+      "desc": "A western hand rests on the old throne of Aenor. It is a heavy thing to hold, and a heavier thing to be seen holding.",
+      "modifier": {
+        "political_power_gain": 0.2,
+        "war_support_factor": 0.05,
+        "stability_factor": -0.05
+      }
+    },
+    {
+      "id": "zin_west_parim_defiant",
+      "icon": "palace_parim",
+      "name": "Parim Will Not Yield",
+      "desc": "The old city's defenders have sworn to fight from the cellars, and the garrison believes it.",
+      "modifier": {
+        "army_core_defence_factor": 0.15
+      }
+    },
+    {
+      "id": "zin_west_hold_fast",
+      "icon": "sword_shield",
+      "name": "Hold What We Took",
+      "desc": "The host refused the ships and dug in on the far shore. Every day it holds, the dead and the south draw nearer.",
+      "modifier": {
+        "army_defence_factor": 0.1,
+        "stability_factor": -0.05
+      }
+    },
+    {
+      "id": "zin_west_stranded_host",
+      "icon": "shipwreck",
+      "name": "Stranded Beyond the Sea",
+      "desc": "Part of our army missed the last ships and stands on a foreign shore with nowhere to run. Men with nowhere to run hold their ground.",
+      "modifier": {
+        "army_morale_factor": -0.05,
+        "army_defence_factor": 0.1,
+        "land_reinforce_rate": -0.02
+      }
+    },
+    {
+      "id": "zin_west_beside_former_foes",
+      "icon": "banner_league",
+      "name": "Beside Former Foes",
+      "desc": "Our soldiers share a fire with the Aenorans they fought a season ago. Neither side talks about it.",
+      "modifier": {
+        "army_morale_factor": 0.1,
+        "army_org_factor": 0.05
+      }
+    }
+  ],
+  "dynamicModifiers": [
+    {
+      "id": "zin_west_strain_mod",
+      "icon": "storm_sea",
+      "name": "The Strain of the Far Shore",
+      "modifier": {
+        "army_morale_factor": "zin_west_strain_morale",
+        "supply_consumption_factor": "zin_west_strain_supply"
+      }
+    }
+  ],
+  "opinionModifiers": [
+    {
+      "id": "zin_west_conquerors",
+      "value": -50,
+      "decay": 1,
+      "name": "Conquerors of Parim"
+    },
+    {
+      "id": "zin_west_pledge_holders",
+      "value": -20,
+      "decay": 1,
+      "name": "Holders of Parim in Pledge"
+    },
+    {
+      "id": "zin_west_fought_beside",
+      "value": 30,
+      "decay": 0,
+      "name": "Fought Beside Us"
+    },
+    {
+      "id": "zin_west_refused_the_call",
+      "value": -10,
+      "decay": 1,
+      "name": "Refused the Call to Cross"
+    },
+    {
+      "id": "zin_west_ford_blood",
+      "value": -30,
+      "decay": 1,
+      "name": "Blood at the Grey Ford"
+    },
+    {
+      "id": "zin_west_envoy_welcome",
+      "value": 10,
+      "decay": 1,
+      "name": "Envoys of the Ford Council"
+    }
+  ],
+  "categories": [
+    {
+      "id": "zin_west_council",
+      "icon": "grey_ford",
+      "name": "The Ford Council",
+      "desc": "The crowns of the West meet where the old truce was signed, and decide whether the West stays divided, sails for revenge, or sails to Aenor's help."
+    },
+    {
+      "id": "zin_west_crossing",
+      "icon": "ship_voyage",
+      "name": "The Western Crossing",
+      "desc": "The host has sailed, or is about to. Landings, surrenders, the long wait for ships home."
+    }
+  ],
+  "decisions": {
+    "zin_west_convene_council": {
+      "cat": "zin_west_council",
+      "icon": "grey_ford",
+      "name": "Convene the Ford Council",
+      "desc": "Summon the crowns of the West to the Grey Ford. Whoever convenes it will lead what comes after."
+    },
+    "zin_west_end_the_truce": {
+      "cat": "zin_west_council",
+      "icon": "chain_broken",
+      "name": "End the Truce of the Grey Ford",
+      "desc": "The truce has worn thin and the dark is rising. Let the old quarrel be fought out at the ford, as a border feud and no more."
+    },
+    "zin_west_choose_course": {
+      "cat": "zin_west_council",
+      "icon": "compass_rose",
+      "name": "The Question of the Sea",
+      "desc": "The Council has sat long enough. Put the question to the crowns: cross, stay, or sail to Aenor's aid."
+    },
+    "zin_west_build_crossing_ships": {
+      "cat": "zin_west_council",
+      "icon": "shipwright_yard",
+      "name": "Build Crossing Ships",
+      "desc": "The sea is wider than the old maps drew. Lay down hulls and hire island charters until the fleet can lift a host."
+    },
+    "zin_west_send_envoys": {
+      "cat": "zin_west_council",
+      "icon": "envoy",
+      "name": "Send Envoys to a Western Court",
+      "desc": "Carry the Council's argument to a court that has not yet sent a delegate. Old grudges are easier to water than to uproot."
+    },
+    "zin_west_launch": {
+      "cat": "zin_west_crossing",
+      "icon": "ship_voyage",
+      "name": "Launch the Crossing",
+      "desc": "The ships are ready and the crowns are pledged. Name the landing and sail."
+    },
+    "zin_west_accept_surrenders": {
+      "cat": "zin_west_crossing",
+      "icon": "olive_branch",
+      "name": "Accept the Surrenders",
+      "desc": "Aenoran commanders ask terms. Take them, and keep the terms, and the conquered will not take up the torch."
+    },
+    "zin_west_second_sailing": {
+      "cat": "zin_west_crossing",
+      "icon": "ship_voyage",
+      "name": "The Second Sailing",
+      "desc": "The ships have come home empty. Load the rest of the pledged hosts and cross again."
+    },
+    "zin_west_sound_the_retreat": {
+      "cat": "zin_west_crossing",
+      "icon": "banner_laid_down",
+      "name": "Sound the Retreat",
+      "desc": "The far shore is untenable. Call the ships and let the hosts march to the harbours while there is time."
+    },
+    "zin_west_fleet_waits": {
+      "cat": "zin_west_crossing",
+      "icon": "ship_voyage",
+      "name": "The Fleet Waits",
+      "desc": "The fleet lies at the shore for sixty days. Every host that reaches a harbour sails home. Those that do not may not see another ship."
+    }
+  },
+  "tooltips": {
+    "zin_west_tt_peace": "The West is at peace with itself.",
+    "zin_west_tt_truce_low": "The truce is almost spent",
+    "zin_west_tt_dark": "The Gathering Dark has risen",
+    "zin_west_tt_ready": "The ships, the pledges and the cause are ready",
+    "zin_west_tt_ships": "The realm has a shipwright and timber for hulls",
+    "zin_west_tt_surrenders": "The host holds three or more states of Aenor",
+    "zin_west_tt_pledges": "Pledges remain unsailed",
+    "zin_west_tt_strain": "The far shore strains the host",
+    "zin_west_tt_question": "The Council sits and the West is united enough to choose",
+    "zin_west_tt_envoy": "The target has sent no delegate",
+    "zin_west_tt_second": "Ninety days have passed since the first sailing",
+    "zin_west_tt_fleet": "The fleet grows"
+  },
+  "rules": {
+    "route": {
+      "id": "zin_rule_west_route",
+      "name": "The West's Course",
+      "desc": "Where the western crowns steer when no player steers them.",
+      "options": [
+        {
+          "id": "DEFAULT",
+          "name": "Follows the Historical Path",
+          "desc": "The western crowns choose as the Historical Path rule says."
+        },
+        {
+          "id": "historical",
+          "name": "As the Chronicle Tells It",
+          "desc": "The West prepares the Crossing, launches when the great war begins, and sails home when the shore cannot be held."
+        },
+        {
+          "id": "crossing_hold",
+          "name": "Cross and Hold",
+          "desc": "The West crosses and never sails home. The far shore is held until it breaks."
+        },
+        {
+          "id": "relief",
+          "name": "Sail to the Rescue",
+          "desc": "The West sails to Aenor's help against the dark, as allies and never as conquerors."
+        },
+        {
+          "id": "divided",
+          "name": "Keep Our Own Shore",
+          "desc": "The Ford Council breaks up. No western banner crosses the sea."
+        },
+        {
+          "id": "free",
+          "name": "Every Crown Chooses",
+          "desc": "Resolve, unity and old grudges decide the course."
+        }
+      ]
+    }
+  },
+  "events": {
+    "1": {
+      "t": "The West Awakens"
+    },
+    "2": {
+      "t": "The Western Pulse"
+    },
+    "3": {
+      "t": "The Question of the Sea",
+      "d": "The delegates have sat at the Grey Ford long enough to know each other's faces. The old claims on Parim are spoken of openly now, and so are the ships. The question is put to the crowns: do we cross the sea to end the quarrel with Aenor, keep to our own shore, or sail to Aenor's help against what is rising?",
+      "a": "Prepare the Crossing.",
+      "b": "Keep our own shore.",
+      "c": "Sail to Aenor's help."
+    },
+    "10": {
+      "t": "A Protest from the West",
+      "d": "A western court writes to Parim, politely, that the duties on its goods are heavier than the treaties allow. The letter is signed by a councillor of trade and read aloud by a clerk who cannot quite keep a straight face. The court wants an answer, and it wants one in writing.",
+      "a": "Lower the duty.",
+      "b": "Refuse. The duty stands."
+    },
+    "15": {
+      "t": "A God on Aenor's Throne",
+      "d": "The temples of Parim rejoice, and the news crosses the sea faster than the ships. A god sits on the throne that once was claimed over our fathers. The old claims stir in the western halls, and a number of lords are asking, rather too loudly, how a god keeps a treaty.",
+      "a": "So the old claims stir."
+    },
+    "20": {
+      "t": "The Ford Commission",
+      "d": "Gunwaith proposes a commission of both courts to sit at the Grey Ford and settle the small quarrels before they become large ones. Our wardens are suspicious. The proposal is, however, signed in good ink and sealed in the old way.",
+      "a": "Sit with them.",
+      "b": "Decline."
+    },
+    "21": {
+      "t": "A Raid at the Ford",
+      "d": "Riders crossed the shallows at night and drove off cattle. Whoever they were, they did not wear a banner. The thanes want to answer in kind, the elders want to pay the blood-price, and the old men who remember the last war are asking everybody to be quiet.",
+      "a": "Answer in kind.",
+      "b": "Pay the blood-price.",
+      "c": "Refer it to the Ford Commission."
+    },
+    "22": {
+      "t": "Blood at the Grey Ford",
+      "d": "The truce is broken. At the ford both banks are lit with torches, and the nearest villages are emptying. Neither side will say who began it. Both are certain of the answer.",
+      "a": "To the ford!"
+    },
+    "23": {
+      "t": "The Feud Decided"
+    },
+    "24": {
+      "t": "After the Feud",
+      "d": "The feud at the ford is over. The dead are counted, the prisoners are bargained for, and the old border sits where it sat before. One court has won and one has lost, and both know the stranger's peace was a better bargain than this.",
+      "a": "Make peace.",
+      "b": "Stay hostile."
+    },
+    "25": {
+      "t": "The Grey Ford Is Broken",
+      "d": "The Truce of the Grey Ford has broken. Gunwaith and Girdon are at the ford with their banners, and every court of the West is deciding which side to blame. The West has been at peace for three winters. It will not be at peace for many more unless someone can end this.",
+      "a": "Bad news for every road in the West."
+    },
+    "26": {
+      "t": "Peace at the Ford",
+      "d": "The feud at the Grey Ford is over. The courts have put their banners away, the dead are in the ground, and the traders are already arguing about tolls on the new road. It was a small war, and the next one will not be.",
+      "a": "May the peace hold."
+    },
+    "30": {
+      "t": "The Ford Council Convenes",
+      "d": "The convener of the Council has sent riders to every western court: the crowns will meet at the Grey Ford, where the truce was signed, to speak of the old claims and the sea. Our delegates would ride at our expense and speak with our voice. We may also stay at home and leave the speaking to others.",
+      "a": "Send a delegate.",
+      "b": "Stay away."
+    },
+    "31": {
+      "t": "The Call to Cross",
+      "d": "The Ford Council has chosen. The West will cross the wide sea to end the old quarrel with Aenor for good. The convener asks each court for its host: a pledge of men, ships alone, or nothing. Parim has not yet heard of it. When it does, the answer will be written in blood.",
+      "a": "Refuse.",
+      "b": "Pledge the host.",
+      "c": "Send ships, not men."
+    },
+    "40": {
+      "t": "Where Shall the Host Land?",
+      "d": "The ships are laden and the pledged hosts are aboard. The pilots ask the only question that matters: where? The isle off the Middle Lands' western coast is nearest, and its harbours were the first Aenor's ships reached in ages past. The mainland shore is larger, and defended in proportion.",
+      "a": "Aenor Isle first.",
+      "b": "Straight to the mainland shore."
+    },
+    "41": {
+      "t": "The Western Crossing",
+      "d": "The western fleet has crossed the wide sea. Beacons burn along the coast of the Middle Lands, and the first reports are contradictory. It is certain only that banners from the far shore have been seen on the water, and that the water is wider than the maps allowed.",
+      "a": "The West has sailed."
+    },
+    "42": {
+      "t": "Sails on the Western Sea",
+      "d": "Sails on the western horizon, then more sails, then the coast watch stopped counting. Whatever the western courts have been planning for fifty years has put to sea. The harbour garrison asks for orders.",
+      "a": "Man the shore."
+    },
+    "44": {
+      "t": "Storm and Sail",
+      "d": "The sea took part of the fleet. Our pilots kept their heads and the main host landed, but a quarter of the transports are gone, and the foe's ships were waiting on the weather. What was hoped to be a landing is a salvage.",
+      "a": "Press on with what remains."
+    },
+    "50": {
+      "t": "Letters from the West",
+      "d": "A rider from the western courts brings a plain letter. The dead are moving in the north, the south is arming, and Aenor stands alone. The crowns of the West do not forget the old quarrel, but they remember it is old. They ask passage for their ships through your ports, and the right to stand beside you.",
+      "a": "Grant passage.",
+      "b": "Refuse."
+    },
+    "51": {
+      "t": "The Western Relief",
+      "d": "The ships that come into Aenor's harbours carry no conquerors' banners. Western hosts are landing in friendly ports and marching for the fronts. Old men on the quays say they never thought to see the day.",
+      "a": "A strange alliance."
+    },
+    "55": {
+      "t": "The Keys of Parim",
+      "d": "The western host is at the gates, and the Captains' Regency has counted it. The dead are in the north, the south is on the road, the king has gone east, and Parim has no army that can hold a siege. The western commander has sent word that the city will be spared if the gates are opened.",
+      "a": "Fight for every street.",
+      "b": "Yield the city to spare it."
+    },
+    "56": {
+      "t": "Western Banners over Parim",
+      "d": "Western banners fly over Parim. The Captains yielded the city to spare it, or the city was taken, depending on whom you ask. The western leader has announced what he will do with it. The announcement was shorter than expected.",
+      "a": "The city has new masters."
+    },
+    "57": {
+      "t": "The Throne of Men",
+      "d": "Parim is in our hands, and the old throne of Aenor stands empty in the great hall. The crowns who followed us will ask what we mean to do with it. Some say take the throne. Others say hold the city as a pledge against the sea. Whoever sits in that hall will be remembered for what he did next.",
+      "a": "Claim the throne of men.",
+      "b": "Hold Parim as a pledge."
+    },
+    "60": {
+      "t": "The Shore Calls",
+      "d": "The dead have crossed the northern coasts, the south is on the march, eastern banners have been seen on the passes, and Parim cannot be held. The fleet lies at the shore. The commanders ask whether to sail home while there are ships to sail in, or to dig in and hope the sea is kinder than the land.",
+      "a": "Sail home.",
+      "b": "Hold what we took."
+    },
+    "61": {
+      "t": "The Fleet at the Shore",
+      "d": "The fleet has come to the shore, and the call has gone out: every host that can reach a harbour within sixty days will sail home. Those that do not are on their own. Your captains are already looking at the roads.",
+      "a": "March to the ports."
+    },
+    "62": {
+      "t": "Terms on the Shore",
+      "d": "The western fleet has sailed, and part of the western host has not. Several thousand soldiers stand on your soil with no ships, no supplies and no orders. They have asked for terms. The captains say the terms are simple: nothing is demanded of them but that they do not burn anything.",
+      "a": "Let them stand with us.",
+      "b": "Let them go, but not on our soil.",
+      "c": "No terms."
+    },
+    "63": {
+      "t": "Those Left Behind",
+      "d": "Our soldiers who missed the ships are camped beside the Aenorans they fought a season ago. Both are fighting the dead now. The commanders write home each week, and each week the letters are shorter.",
+      "a": "Send word home.",
+      "b": "Make the best of it."
+    },
+    "64": {
+      "t": "The Host Breaks",
+      "d": "The far shore broke the host. Without supplies, without ships and under the weight of the war around them, the hosts came apart in a week. Those who can still march are marching for the harbours.",
+      "a": "To the ships, if there are ships."
+    },
+    "65": {
+      "t": "The Boats Come In"
+    },
+    "66": {
+      "t": "The Western Fleet Sails Home",
+      "d": "Some sailed home. Some were still on the march when the fleet left. The harbours of the Middle Lands are quieter now, and the western banners that remain on the shore are held by men who have decided to stay.",
+      "a": "Some did not sail."
+    },
+    "70": {
+      "t": "The Long Way Home",
+      "d": "In this telling, the false god is dead and the heir is crowned. The men who stayed behind in the Middle Lands ask the same question: now what? A ship could be sent, or they could stay. The decision is ours to make, and those soldiers will not thank us for either.",
+      "a": "Bring them home.",
+      "b": "Let those who wish stay."
+    },
+    "71": {
+      "t": "A Crown Across the Sea",
+      "d": "A western crown holds Parim. The Fourth Age has not yet found an end, and in the meantime a king from across the sea sits in the old palace. Nobody knows what he means to do with it.",
+      "a": "A crown across the sea."
+    },
+    "72": {
+      "t": "The Heir Asks for Parim",
+      "d": "The heir of Aen has come to the western holder of Parim with a plain request: the city is his, and he asks for it freely. He does not demand that the western crowns give up their own, and he promises that the city will keep its walls and its treaties. Our captains are divided.",
+      "a": "Give him the city.",
+      "b": "Keep it."
+    },
+    "80": {
+      "t": "The West Keeps Its Own Shore",
+      "d": "The Ford Council has broken up without a crossing. The crowns have gone home, and for the first time in a generation no one in the West is planning a war. The old claims on Parim are spoken of only on feast days.",
+      "a": "A quiet year."
+    },
+    "90": {
+      "t": "Talk of Ships in Western Yards",
+      "d": "Merchants returning from the western shores bring a rumour: the shipwrights are working through the night. No one in the West says the word 'invasion'. The captain of the western shore asks whether to fortify, to send gold to the western courts, or to dismiss the talk.",
+      "a": "Dismiss the tale.",
+      "b": "Fortify the shore.",
+      "c": "Send gold west."
+    }
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "schema": 1,
+  "owner": "tools/content/modules/mech_yeldenne.mjs",
+  "spec": "docs/specs/04_mechanics/yeldenne_and_glo.md",
+  "note": "Data of the Yeldenne and Glo mechanic: tuning constants (script constants, integers; hundredths where a fraction is meant), the spirits, traits, dynamic modifiers and opinion modifiers of the spec, the decisions and the text of every event. Scripts live in the module.",
+  "countries": {
+    "yeldenne": "Yeldenne",
+    "worshipdom": "Worshipdom",
+    "volgan": "Volgan",
+    "zol": "Zol",
+    "aenor": "Aenor",
+    "coldor": "Coldor",
+    "isengard": "Isengard"
+  },
+  "characters": {
+    "horos": "zin_horos",
+    "warden": "zin_yeldenne_warden",
+    "wardenPortrait": "GFX_zin_portrait_men_male_2",
+    "wardenStance": "zin_light_wardens"
+  },
+  "constants": {
+    "wards_start": 50,
+    "wards_max": 100,
+    "hall_base": 30,
+    "hall_forewarned": 10,
+    "hall_unyielding": 10,
+    "afrit_per_artifact": 15,
+    "volgan_hunt": 40,
+    "repel_at": 50,
+    "repel_wards_cost": 20,
+    "wards_mid": 50,
+    "wards_high": 80,
+    "org_damage": 50,
+    "str_damage_low": 5,
+    "str_damage_mid": 10,
+    "str_damage_high": 15,
+    "pulse_days": 7,
+    "expel_days": 28,
+    "regen_days": 28,
+    "regen_power": 3,
+    "power_max": 100,
+    "power_max_broken": 50,
+    "power_broken": 25,
+    "wave_cost": 30,
+    "test_days": 60,
+    "test_days_awaits": 30,
+    "seal_open_days": 30,
+    "defile_days": 365,
+    "defile_days_warded": 545,
+    "defile_roll_days": 90,
+    "grave_hunt_days": 180,
+    "watch_wards": 10,
+    "petition_days": 30,
+    "dark_horos_dies": 5,
+    "dark_hall_holds": 3,
+    "dark_glo_dims": 10,
+    "heir_arrives_after": 21,
+    "heir_fallback_after": 28
+  },
+  "spirits": [
+    {
+      "id": "zin_yeldenne_guardian_of_glo",
+      "icon": "crystal_green",
+      "name": "Guardian of Glo",
+      "desc": "A green crystal beats in the hall of Mp'E, and the guardian who keeps it has never yielded it. Wardens, herders and tithe-folk hold the passes in his name.",
+      "modifier": {
+        "army_core_defence_factor": 0.25,
+        "drift_defence_factor": 0.5,
+        "stability_factor": 0.15
+      }
+    },
+    {
+      "id": "zin_yeldenne_the_empty_throne",
+      "icon": "empty_throne",
+      "name": "The Empty Throne",
+      "desc": "The hall is silent. The wardens keep the doors and the lamps, and wait to learn what the silence asks of them.",
+      "modifier": {
+        "stability_factor": -0.1,
+        "political_power_gain": -0.2
+      }
+    },
+    {
+      "id": "zin_glo_glernaens_light",
+      "icon": "new_gods_light",
+      "name": "Glernaen's Light",
+      "desc": "A green light burns at the breast of the host's champion. Soldiers who march beside it say the cold bites less and the fear sits further off.",
+      "modifier": {
+        "army_org_factor": 0.05,
+        "attrition": -0.05,
+        "stability_factor": 0.05
+      }
+    },
+    {
+      "id": "zin_glo_wound_of_yeldenne",
+      "icon": "castle_ice",
+      "name": "The Wound of Yeldenne",
+      "desc": "The southern lord reached for the green crystal and the north answered. His hunters came back broken, and his court has not forgotten how they were carried.",
+      "modifier": {
+        "political_power_gain": -0.2,
+        "stability_factor": -0.05
+      }
+    },
+    {
+      "id": "zin_glo_northern_watch",
+      "icon": "ward_circle",
+      "name": "The Northern Watch",
+      "desc": "A company of the Lost Cause stands at the gate of Mp'E, outside the hall and never within. The long road north costs the court dear.",
+      "modifier": {
+        "political_power_gain": -0.1
+      }
+    }
+  ],
+  "countryLeaderTraits": [
+    {
+      "id": "zin_horos_guardian",
+      "name": "Guardian of the Hall",
+      "desc": "He has kept one crystal and one oath through more ages than the chronicles number.",
+      "modifier": {
+        "stability_factor": 0.1,
+        "political_power_gain": 0.25
+      }
+    },
+    {
+      "id": "zin_yeldenne_warden_trait",
+      "name": "Warden of Mp'E",
+      "desc": "Chosen from the household that keeps the doors, the Warden rules as the hall's steward and never as its master.",
+      "modifier": {
+        "army_core_defence_factor": 0.05
+      }
+    }
+  ],
+  "unitLeaderTraits": [
+    {
+      "id": "zin_glo_second_bearer",
+      "name": "Second Bearer of Glo",
+      "desc": "The green light did not choose a king. It chose a marshal who would carry it and ask for nothing.",
+      "modifier": {
+        "army_attack_factor": 0.1,
+        "army_org_factor": 0.1
+      }
+    }
+  ],
+  "dynamicModifiers": [
+    {
+      "id": "zin_yeldenne_hall_wards",
+      "icon": "ward_circle",
+      "modifier": {
+        "enemy_attrition": 0.2,
+        "enemy_army_speed_factor": -0.25,
+        "enemy_local_supplies": -0.5
+      },
+      "name": "The Hall Wards"
+    },
+    {
+      "id": "zin_yeldenne_sealed_hall",
+      "icon": "ice_cavern",
+      "modifier": {
+        "enemy_attrition": 0.15,
+        "enemy_local_supplies": -0.3
+      },
+      "name": "The Sealed Hall"
+    },
+    {
+      "id": "zin_yeldenne_empty_hall",
+      "icon": "castle_ice",
+      "modifier": {
+        "enemy_attrition": 0.05
+      },
+      "name": "The Empty Hall"
+    }
+  ],
+  "opinionModifiers": [
+    {
+      "id": "zin_glo_friend_of_the_hall",
+      "value": 20,
+      "decay": 1,
+      "name": "Friend of the Hall"
+    },
+    {
+      "id": "zin_glo_rebuked",
+      "value": -20,
+      "decay": 1,
+      "name": "Rebuked at the Hall"
+    }
+  ],
+  "categories": [
+    {
+      "id": "zin_glo_seekers",
+      "icon": "crystal_green",
+      "name": "The Green Crystal",
+      "desc": "Crowns and dark powers seek the keeper of the green crystal in the frozen north, and the keeper answers them one by one."
+    },
+    {
+      "id": "zin_glo_bearer",
+      "icon": "new_gods_light",
+      "name": "The Bearer's Light",
+      "desc": "The power the bearer of the green light can spend, and what the light asks for it."
+    }
+  ],
+  "decisions": {
+    "zin_glo_petition_horos": {
+      "icon": "scroll_sealed",
+      "name": "Petition the Guardian",
+      "desc": "Send envoys to the hall of Mp'E to ask the guardian for the green crystal he keeps. Every crown that has asked has been refused. Some were refused with courtesy."
+    },
+    "zin_glo_guard_the_hall": {
+      "icon": "ward_circle",
+      "name": "Guard the Northern Hall",
+      "desc": "The Lost Cause may offer the guardian a company of its captains to stand at his gate, outside the hall and never within. He may accept, or he may not."
+    },
+    "zin_glo_grave_hunt": {
+      "icon": "grave_host",
+      "name": "Hunt the Crystal in the North",
+      "desc": "Volgan's hunters have heard of a green light in the frozen north. Send them to find it, and to bring it south if it can be brought."
+    },
+    "zin_glo_enter_the_hall": {
+      "icon": "frozen_gate",
+      "name": "Enter the Hall",
+      "desc": "The party waits above the road to the castle. The hall is not far, and the guardian is one old knight. Strike now, or wait for the heir to come to you."
+    },
+    "zin_glo_defile_seal": {
+      "icon": "abyss_stair",
+      "name": "Defile the Seal",
+      "desc": "The hall is sealed over the crystal, and the hall is yours. A year of black rites on the flagstones may close the seal for good, and the green light beneath with it."
+    },
+    "zin_glo_seek_as_bearer": {
+      "icon": "crystal_green",
+      "name": "Seek Glo as Its Bearer",
+      "desc": "The heir is lost, and the green light waits in the north for another hand. Send your best marshal to the hall of Mp'E and let the crystal judge."
+    },
+    "zin_glo_wave_decision": {
+      "icon": "new_gods_light",
+      "name": "Glo's Wave",
+      "desc": "The bearer drives the sword into the earth and the green light runs outward through the ground. The dead do not rise where it passes."
+    },
+    "zin_glo_seek_as_bearer_called": {
+      "icon": "crystal_green",
+      "name": "Seek Glo as Its Bearer",
+      "desc": "The heir is lost, and the green light waits in the north for another hand. Yeldenne has called for a bearer, and the hall asks no fee. Send your best marshal to Mp'E and let the crystal judge."
+    }
+  },
+  "tooltips": {
+    "zin_glo_tt_hall_unspoiled": "The guardian of Mp'E still keeps the hall",
+    "zin_glo_tt_not_petitioned": "Your envoys have not yet been to the hall",
+    "zin_glo_tt_peace": "The realm is not fighting a war it began",
+    "zin_glo_tt_party_waits": "The party waits above the road to the castle",
+    "zin_glo_tt_sealed": "The crystal lies sealed under the hall and the hall is yours",
+    "zin_glo_tt_heir_lost": "The heir of Aen is out of the story",
+    "zin_glo_tt_worthy": "Your realm passes the green light's test of worth",
+    "zin_glo_tt_bearer_near": "A state near the bearer's army holds the dead of the Mistake",
+    "zin_glo_tt_power": "The bearer holds enough of Glernaen's power",
+    "zin_glo_tt_volgan_seeks": "Volgan has turned toward the green crystal",
+    "zin_glo_tt_lost_cause_leader": "Your realm leads the Lost Cause",
+    "zin_glo_tt_cost_power": "Costs 30 of the bearer's power",
+    "zin_glo_tt_glo_free": "The crystal is in the hall, or sealed under it"
+  },
+  "events": {
+    "3": {
+      "t": "The Test Ends"
+    },
+    "5": {
+      "t": "A Castaway Who Speaks of Aen",
+      "d": "A priest of the southern isles writes that a man was cast up on the reef after a western ship broke there. He walks like a lord. In his fever he speaks the oldest tongue of men, and the fishermen heard him call a name out of the surf: Aen. The whisperers wait for your word.",
+      "a": "It is a drowned man's dream. Let it lie.",
+      "b": "Send hunters south."
+    },
+    "11": {
+      "t": "The Approach to Yeldenne",
+      "d": "Your party stands in the snow above the one road that climbs from the shore to the Castle of Yeldenne. Nothing moves on the white slope but the wind. A foreign ship lies in the bay below, and the road would take any stranger beneath your men.",
+      "a": "Lie in wait on the approach.",
+      "b": "Climb to the hall now."
+    },
+    "20": {
+      "t": "Who Walks Here?",
+      "d_a": "A king in a gold mantle walked into the hall of Mp'E and named himself lord of Aenor and a god. The guardian rose from his throne. 'Son of Ein,' he said. 'I know why your father denied you. Go.' The man did not go. The wardens in the lower passages heard iron ring on stone, then a cry, then a second step on the stair.",
+      "d_b1": "A stranger from the south and a stranger from the sea met on the stair of the hall in the same hour, and the guardian stood between them. The wardens say the two never spoke to one another: the one in the king's mantle struck, the one in sea-worn armour struck back, and the guardian's blue sword swept the hall.",
+      "d_b2": "A tall man in a salt-stained cloak climbed alone from the shore. He did not demand the hall, and he did not name himself king of anything. The guardian looked at him for a long time and bade the wardens open the inner door.",
+      "d_c": "A king's party climbed to Mp'E in the third week of the thaw and asked for the green crystal in the name of a god. The guardian refused, as he has refused every claimant. The wardens bolted the lower doors and lit every lamp.",
+      "d_hub_a": "'Afrit, son of Ein,' said the guardian. 'I know why your father denied you. Go.' You did not go. You had come for the green stone, and with the artifacts at your throat and wrist you were stronger than any thing that has stood in this hall. You seized the guardian and passed behind him, and the blade you carried went into the back of his neck.",
+      "d_hub_b1": "The heir was already inside. You came up the stair with the artifacts at your throat and wrist and found two men in the hall instead of one: the guardian, and the stranger from the sea who has your father's jaw.",
+      "d_hub_c": "'Afrit, son of Ein,' said the guardian. 'Go back down the road.' You did not go back. The artifacts at your throat and wrist hummed against the hall's old wards, and the wards hummed back.",
+      "a": "The hall answers."
+    },
+    "21": {
+      "t": "The Heart of Horos",
+      "d": "It is told in Mp'E, and nowhere else with certainty. The guardian took the intruder in both hands, and the intruder was behind him, and a blade went into the back of the guardian's neck. [zin_loc_eindil] came up the stair and struck the intruder, and the intruder was gone, as through a door that is not in the wall. The guardian knelt. He spoke to the stranger for a long while, quietly. Then he opened his own breast and laid in the stranger's hands a green stone that beat like a heart, and a blue sword beside it, and was dust.",
+      "a": "The hall is empty."
+    },
+    "22": {
+      "t": "The Willing Gift",
+      "d": "For many days [zin_loc_eindil] kept the wardens' hours. He carried water, mended the lamp-stairs and sat by night with the herders' children. On the last evening the guardian called him to the throne. 'You came for no crown,' he said. 'That is why it may be yours.' He opened his own breast and laid in the stranger's hands a green stone that beat like a heart, and a blue sword beside it, and turned to dust.",
+      "a": "The hall is empty."
+    },
+    "23": {
+      "t": "Two Against One",
+      "d": "The guardian had the intruder pinned against the great pillar when [zin_loc_eindil] reached the door. For a heartbeat the hall held three. Then the intruder tore free and was gone, bleeding gold on the stair. The guardian was wounded as well. 'This is the one,' he said, and gave away what he had been given to keep: a green stone that beat like a heart, and a blue sword. He was dust before the wardens reached the throne.",
+      "d_hub": "The guardian had you against the great pillar when the heir reached the door. You tore free with your blood on the stair and the artifacts at your throat screaming. Behind you, the old knight gave the heir the green stone and fell to dust. You had been a breath from taking it yourself.",
+      "a": "The hall is empty."
+    },
+    "24": {
+      "t": "The Hall Holds",
+      "d": "The hall of Mp'E was never taken by a host, and it was not taken now. The intruders came up the road in good order and went down it carried. The wardens say the walls themselves leaned in. The guardian sits his throne with the green stone beating at his breast, and the wards burn the brighter for the trial.",
+      "d_hub": "You came up the road strong, with every artifact you have gathered, and the hall broke you. The old knight did not rise from his throne until the last moment. When he did, the light from his breast drove the artifacts dark. You fell back to the bay with fewer men than you brought and a wound that will not close.",
+      "d_volgan": "Your hunters came down from Mp'E on their shields. The guardian let the living go, to say what they had seen: a hall that leaned in, a green light that did not fade, and a knight who did not seem to tire.",
+      "a": "The north keeps its keeper."
+    },
+    "25": {
+      "t": "The Sealed Heart",
+      "d": "The guardian fell at the foot of his throne. Where the stone should have lain on the dais there was only light, and the light folded into the stone and the stone into the floor, and the hall went dark. The wardens say the crystal still beats beneath the flagstones, and that it will wake for no one who comes with a blade.",
+      "d_hub": "The guardian is dead, and the stone is not in your hands. It went down into the floor of the hall as you reached for it, and it will not come up for you. You hold a dark room with a very old knight's armour in it.",
+      "d_volgan": "The guardian is dead, but the stone sank into the hall's floor before your hunters could lift it. They stand in a dark room with an old knight's armour and a green glimmer beneath their feet that no blade can pry loose.",
+      "a": "The seal holds."
+    },
+    "30": {
+      "t": "Silence in the North",
+      "d": "No one has come down from Mp'E for twenty days, and the herders will not go up. Travellers on the north road say the beacon at the castle gate is out. The tithe-folk say the guardian of Yeldenne is dead.",
+      "a": "A hard winter for the north."
+    },
+    "40": {
+      "t": "The Grave Hunt Sets Out",
+      "d": "Volgan has named his hunters: riders of the Grave-Warden and two of the Ember Herald's best scouts. They go north in grey cloaks by the western roads, with orders to bring back a green light or a reason.",
+      "a": "Let them ride."
+    },
+    "41": {
+      "t": "The Grave Hunt",
+      "d": "A column of riders in southern black came up the road to Mp'E under a banner the wardens did not know. They asked the guardian for the green crystal. He said no, and the hall answered with him.",
+      "a": "Bar the doors."
+    },
+    "50": {
+      "t": "The Seal Resists",
+      "d": "The sealed hall will not be defiled by simple force. Your scholars have broken three of the floor's seven bindings, and each time the green light beneath the flagstones brightens, as if to remind them what it is. They ask whether to press on.",
+      "a": "Press on.",
+      "b": "Break off the work."
+    },
+    "51": {
+      "t": "Glo Dims",
+      "d": "The green light under the hall of Mp'E has gone out. The wardens who survive say it did not flee. It was closed, as a door is closed by hands that wanted it shut.",
+      "a": "Let the north mourn."
+    },
+    "60": {
+      "t": "Guard the Northern Hall",
+      "d": "The Lost Cause offers a company of its captains to stand at the gate of the castle, outside the hall and never within. The Warden's steward asks whether the guardian will have them.",
+      "a": "Let the captains stand at the gate.",
+      "b": "The hall keeps its own doors."
+    },
+    "61": {
+      "t": "The Guardian Refuses",
+      "d": "The guardian heard the envoys in the cold hall and said only what he has said to every crown: the green stone is not a prize. He did not send them away angry. The wardens poured them wine, and the envoys remembered it.",
+      "d_rebuked": "The guardian heard the envoys in the cold hall and said only what he has said to every crown: the green stone is not a prize. Then he looked at the one who had sent them, across a thousand miles, and the envoys left with the feeling of having been weighed.",
+      "a": "We take our leave."
+    },
+    "62": {
+      "t": "The Hall Expels the Intruders",
+      "d": "For four weeks your host held the pale stone of Mp'E, and for four weeks the cold, the dark and the wind took their toll. On the twenty-ninth day the sentries found themselves outside the walls with no memory of leaving, and the gates barred behind them.",
+      "a": "Withdraw."
+    },
+    "63": {
+      "t": "The Hall Remains",
+      "d": "You hold the state of Mp'E, and the paper that says so is correct. But the guardian still sits his hall, the green stone is still his, and the wardens still pay their tithes to him. No annexation reached him.",
+      "a": "So the north keeps its own king."
+    },
+    "64": {
+      "t": "The Hall Asks for Guards",
+      "d": "A rider from Mp'E brings the Warden's word: the guardian will let a company of the Lost Cause stand at the gate, if the Lost Cause will send it. The long road north is cold, and the court of Parim would rather spend its captains elsewhere.",
+      "a": "Send the guard.",
+      "b": "We cannot spare them."
+    },
+    "70": {
+      "t": "A Second Bearer",
+      "d": "The green stone has chosen again. A marshal of [zin_glo_claimant.GetNameDef] walked into the hall of Mp'E, and what the stone found there was not a crown. It rose to the marshal's hand. In the north they say it burns a little dimmer than it burned for the heir, and no one is sure whether that is the stone or the age.",
+      "a": "The light is carried."
+    },
+    "80": {
+      "t": "The Seal Opens for the Heir",
+      "d": "The wardens have waited at the sealed door longer than any of them can reckon. The man in the salt-stained cloak laid his palm on the flagstone, and the floor of the hall went green. The stone rose to his hand as if it had never left it. He stood a long time with his eyes shut. When he opened them he knew who wears the crown in Parim, and whose son he is.",
+      "a": "The stone is his."
+    }
+  }
+}
