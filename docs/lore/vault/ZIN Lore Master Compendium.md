@@ -2,6 +2,8 @@
 
 **Current through the end of the Fourth Age, 18 October 2026**
 
+**Corrections of 24 October 2026:** the passages repeated from corrected notes carry the owner's corrections (Zol does not appear in the War of the Last Crowns, the Great Wall of Aenor is a natural mountain range, twelve New Gods, devils, Bastian, Edvoid). The individual notes and [[Names and Retcons]] are authoritative where this reading edition lags behind them.
+
 This is a consolidated reading edition of the Obsidian vault. Earlier historical drafts, the unchanged original source, the Fourth Age map and Horos's three original drawings remain inside the ZIP archive. The historical accounts label proposed names, detailed chronology, dialogue and mechanisms separately from the creator's confirmed canon.
 
 ## Ages at a glance
@@ -99,7 +101,7 @@ The original [[ZIN Lore Compendium - original snapshot]] remains preserved uncha
 
 ## Metaphysical distinctions
 
-- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. His late Fourth Age body is exceptional, temporary and costly.
+- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. He does not take a body or appear in the War of the Last Crowns; the being who appears there is his most loyal servant, a Great Spirit, whose identity is open (corrected 24 October 2026).
 - Great Spirit, Lesser Spirit, New God, Old God and Great Folk are distinct ranks or orders. Sovereign Spirit is not a separate rank.
 - [[Afrit]] is publicly worshipped as a New God and effectively attains godlike power. Whether he belongs to the original divinity created by the Holy Seven remains undetermined.
 - [[Elzon]] is a Great Spirit and Great Necromancer. He permanently dies after the Third Age. [[Volgan]] loses his manifested body in the Fourth Age, but the complete destruction of his essence has not yet been established.
@@ -114,6 +116,18 @@ The original compendium is unchanged in the Sources folder, and the Fourth Age m
 ## Character naming, 18 October 2026
 
 **Eindil** is the canonical name for the son of Ein, grandson of Aen, and brother of Afrit. The earlier spelling is archived for source fidelity. Current narrative and links should use Eindil.
+
+## Corrections, 24 October 2026
+
+The world creator's corrections of 24 October 2026 are recorded in [[Names and Retcons#Corrections of 24 October 2026]] and their open points in [[Open Questions]].
+
+- The main setting is **Aoaz**. **Erdae** names only a small neighbouring continent.
+- The **Great Wall of Aenor** is an enormous natural mountain range between the Middle Lands and the Magical Lands, not a built wall.
+- Aoaz has **twelve New Gods**, and the twelve months are named after them, one per month. [[Glernaen]] is the mightiest. Their names, domains and the purpose of twelve are open (Q-01), as is Afrit's relation to them (Q-02).
+- [[Zol]] does not appear in the War of the Last Crowns. His most loyal servant, a Great Spirit, appears instead (identity open, Q-03).
+- **Bastian** is a famous wizard of men; [[Varner]] is one practitioner among many traditions (Q-09).
+- **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz; not every devil served Zol (Q-07).
+- **Vez'nan** is an old name of [[Volgan]]. **Edvoid** is to receive a new name (name to be replaced, Q-10).
 
 ---
 
@@ -156,7 +170,7 @@ The **Second Age is the longest of the first four ages**. The draft model of 1,6
 | Fourth Age, middle | Established broad placement | Afrit effectively directs kings and government through a council and servants. |
 | Fourth Age, late | Established | Afrit steals Roka's necklace through a thief, accumulates artifacts, murders the Golden King and rules openly under a human public name. |
 | Fourth Age, late | Established | Eindil awakens in Cold Lands, travels West and South, meets Lorien, and receives Glo from dying Horos at Yeldenne. Afrit flees after being wounded. |
-| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol withdraws after Lorien's sacrifice. Varner dies. |
+| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, a Great Spirit, withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
 | Fourth Age, final struggle | Established | Afrit returns from Eastern dominion, wounds and casts down Eindil, then is defeated after artifacts are stripped away with Alleria and Golbran's help. Golbran dies. |
 | Fourth Age, end | Established | Eindil, wearing the Necklace of the Abyss, returns and is crowned King of Aenor. |
 
@@ -689,7 +703,7 @@ The above year bands, institutional names and techniques are **proposals**, not 
 
 An army of fading corpses could not simply remain at full size for twelve centuries. Elzon therefore rotates hosts through regions near his sources of power, raises new dead from campaigns, appoints living provincial rulers and relies on orc and goblin garrisons. Some lands even achieve ordinary commerce under oppressive taxes. Rebel communities can be defeated without being completely eradicated, enabling repeated wars across generations. Institutions and defensive strategies evolve on both sides.
 
-Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Aoaz|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol, Volgan, and Afrit.
+Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Aoaz|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol's forces, Volgan, and Afrit.
 
 [[Third Age Canon Register]] · [[Elzon]] · [[Varner]] · [[Golbran]] · [[The Last Tithe]] · [[Afrit]]
 
@@ -701,7 +715,7 @@ Elzon's fall follows from his inability to transform Aenor's magical environment
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
-> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider.
+> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, a Great Spirit, takes the field instead.
 
 ## Prologue: the peace that followed Elzon
 
@@ -883,27 +897,27 @@ Eindil returned to the battlefield and broke the southern host. He destroyed com
 
 This time Eindil's strength exceeded what Volgan could withstand. He drove the blue sword through Volgan. The Great Spirit's visible body broke apart, releasing a violent burst of magic that shattered much of the command structure of his host. His servants screamed and fled. Some supernatural bonds sustaining the southern army collapsed. **Volgan's physical manifestation is destroyed.** Whether his underlying Great Spirit essence perishes completely is deliberately left open, since unlike Elzon his absolute death has not yet been explicitly established.
 
-The victory did not end the battle. Zol himself came forth.
+The victory did not end the battle. Zol's most loyal servant came forth.
 
-## XIII. The Old God beneath the black sky
+## XIII. The servant beneath the black sky
 
-Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise.
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. Who that servant is remains open and is not invented here (Q-03 in [[Open Questions]]).
 
-**Proposed explanation for this exceptional manifestation:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces temporarily aligned enough of Aoaz's magic for Zol to embody a fraction of himself. This cost him strength and could not last indefinitely. He appeared in a form that the mortal witnesses could perceive, not in the fullness of his unfaded cosmic existence.
+**Proposed explanation for the servant's strength:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces let the servant carry an unusual measure of Zol's death-magic onto the field. This cost strength and could not last indefinitely.
 
-Eindil charged. Zol stopped him with one finger, took Horos's sword, and crushed it into glittering shards. He seized Eindil by the throat and began drawing out the combined gifts of the New Gods. The power in Eindil's armor dimmed. With his remaining strength he caught a shard of the shattered blade and drove it into the body Zol had made.
+Eindil charged. The servant stopped him with one finger, took Horos's sword, and crushed it into glittering shards. It seized Eindil by the throat and began drawing out the combined gifts of the New Gods. The power in Eindil's armor dimmed. With his remaining strength he caught a shard of the shattered blade and drove it into the servant.
 
-The fragment still carried Glernaen's power through Glo. The wound did not kill Zol, but destabilized the form he had struggled to create. A storm swept across Aoaz and the sky darkened. Zol struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
+The fragment still carried Glernaen's power through Glo. The wound did not kill the servant, but loosened its hold on the power it carried. A storm swept across Aoaz and the sky darkened. The servant struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
 
-At last **Lorien** arrived with Gala elves and some of the great lords and spirits who had survived the long history since Dardan. They had not come to restore Aenoran empire. They came because an Old God's victory would destroy the freedom of the living, elves and men alike. The oldest warriors spent the remnants of their own power holding the black presence back. Several great spirits were destroyed or broken. Lorien challenged Zol directly and died in the struggle.
+At last **Lorien** arrived with Gala elves and some of the great lords and spirits who had survived the long history since Dardan. They had not come to restore Aenoran empire. They came because a victory for the Old God's servant would destroy the freedom of the living, elves and men alike. The oldest warriors spent the remnants of their own power holding the black presence back. Several great spirits were destroyed or broken. Lorien challenged the servant directly and died in the struggle.
 
-Their sacrifice forced the embodied Old God to expend more power than he could sustain. Zol withdrew into the darkness of his domain, leaving an enormous wasteland and a continent full of dead. He was wounded and constrained, not permanently destroyed. His remaining hosts lost coherence or withdrew from the immediate field. When surviving soldiers helped Eindil to his feet, there was no longer a serious doubt among the people present that he had earned the crown of Aenor.
+Their sacrifice forced the servant to expend more power than it could sustain. The servant withdrew into the darkness of Zol's domain, leaving an enormous wasteland and a continent full of dead. It was wounded, not destroyed. Zol's remaining hosts lost coherence or withdrew from the immediate field. When surviving soldiers helped Eindil to his feet, there was no longer a serious doubt among the people present that he had earned the crown of Aenor.
 
 ## XIV. The second betrayal
 
-But the fourth age had not ended. Afrit returned from the East Lands with a new eastern host. He had watched the destruction of Volgan and Zol's withdrawal, and he believed Eindil's wounds had finally created the opportunity he needed. He demanded that the exhausted kingdoms recognize him as ruler of both East and Middle Lands.
+But the fourth age had not ended. Afrit returned from the East Lands with a new eastern host. He had watched the destruction of Volgan and the withdrawal of Zol's servant, and he believed Eindil's wounds had finally created the opportunity he needed. He demanded that the exhausted kingdoms recognize him as ruler of both East and Middle Lands.
 
-A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Aoaz. Afrit found Eindil weakened by the struggle against Zol. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
+A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Aoaz. Afrit found Eindil weakened by the struggle against Zol's servant. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
 
 With Eindil gone, Afrit seized the capital once more. He proclaimed himself king over Aenor, the East Lands, and ultimately every people of Aoaz. That proclamation was larger than the territory he actually controlled, but his surviving army and his court treated it as a universal claim. His old council resumed its work, and opposition was punished.
 
@@ -911,7 +925,7 @@ With Eindil gone, Afrit seized the capital once more. He proclaimed himself king
 
 ## XV. The palace of the false god
 
-Eindil entered the royal palace in battered armor, missing an arm and bearing wounds that would have killed most men. Horos's blue sword had been destroyed by Zol, so he carried a simpler replacement weapon. He understood now that Afrit's strength depended on objects, accumulated worship, and the prepared places where his magic was strongest. He could not hope to overpower every defense directly.
+Eindil entered the royal palace in battered armor, missing an arm and bearing wounds that would have killed most men. Horos's blue sword had been destroyed by Zol's servant, so he carried a simpler replacement weapon. He understood now that Afrit's strength depended on objects, accumulated worship, and the prepared places where his magic was strongest. He could not hope to overpower every defense directly.
 
 Alleria of Selen had already reached the palace with allies from the remaining resistance. Her bow gave Eindil openings he could not make alone. Golbran, who had survived Varner's last stand in a greatly weakened condition, followed secretly through old service passages. He had recovered enough to use one final working, but not enough to survive it.
 
@@ -933,11 +947,11 @@ He took the Necklace of the Abyss and put it around his own neck. The act was ne
 
 ## XVI. The king of men
 
-Eindil was crowned King of Aenor. His claim came from his descent as son of Ein and grandson of Aen, but his subjects also knew what he had done. His coronation was attended by survivors whose banners had recently faced one another across battle lines. The ceremony did not erase their grievances. Among the witnesses were envoys, wounded soldiers and families searching for those who would never return. He had ended conflicts in the west, crossed the southern seas, won Glo through the sacrifice of Horos, resisted Volgan and Zol, and destroyed Afrit, the brother who had stolen his future.
+Eindil was crowned King of Aenor. His claim came from his descent as son of Ein and grandson of Aen, but his subjects also knew what he had done. His coronation was attended by survivors whose banners had recently faced one another across battle lines. The ceremony did not erase their grievances. Among the witnesses were envoys, wounded soldiers and families searching for those who would never return. He had ended conflicts in the west, crossed the southern seas, won Glo through the sacrifice of Horos, resisted Volgan and Zol's servant, and destroyed Afrit, the brother who had stolen his future.
 
 He inherited a kingdom that had been occupied more than once in a single war, a capital full of ruins, an exhausted army, and foreign peoples who had alternately invaded and helped defend it. A number of western, northern, and eastern soldiers had fought beside him. Their participation did not make them his subjects. The old human divisions remained, and the surviving kingdoms would need treaties instead of forced submission.
 
-Aenor now had a rightful king, but its victories had been costly. Varner, Horos, Golbran, and Lorien were dead. The New Gods had spent part of their power to restore their champion. The great magical blade had been broken. Volgan's visible form had been destroyed, but the condition of his surviving spiritual essence remained unknown. Zol had withdrawn after a rare and devastating manifestation, not been slain. The Necklace of the Abyss remained in human hands.
+Aenor now had a rightful king, but its victories had been costly. Varner, Horos, Golbran, and Lorien were dead. The New Gods had spent part of their power to restore their champion. The great magical blade had been broken. Volgan's visible form had been destroyed, but the condition of his surviving spiritual essence remained unknown. Zol's servant had withdrawn wounded, not been slain, and Zol himself had never taken the field. The Necklace of the Abyss remained in human hands.
 
 **The Fourth Age ends with Eindil's coronation.** The form, title, and promises of the Fifth Age have not been established. Peace cannot be assumed merely because a rightful king has returned.
 
@@ -963,8 +977,8 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Aen's blood explains Afrit's exceptional original nature, but divinity bestowed by the Holy Seven is a separate cosmic order.
 - Glernaen is a real New God of Power and Wisdom. Horos is a Great Spirit who safeguards Glo, the crystal at his heart.
 - The Castle Yeldenne encounter is in the Cold Lands. Afrit wounds Horos mortally, Eindil wounds Afrit, Afrit flees, and Horos gives Glo and his sword to Eindil before turning to dust.
-- Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
-- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol's own physical appearance is rare and temporary because of the Fading.
+- Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol's most loyal servant. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
+- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, a Great Spirit, whose identity is open (corrected 24 October 2026).
 - Volgan is defeated by Eindil with the aid of the New Gods. His incarnation collapses. His final spiritual fate is unresolved.
 - Varner dies in the final war. Golbran spends nearly all his magical strength defending Varner, survives that event, and finally dies giving Eindil his remaining life after Afrit's defeat.
 - Afrit briefly becomes king of an eastern coalition after abandoning Aenor. His title does not mean every eastern kingdom submits to him.
@@ -979,7 +993,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 4. Choose the full course of the Third Age's 1,200-plus years. A 1,260-year period must feature generations of human resistance and intervals of stability, not one continuous final campaign.
 5. Place the Castle of Yeldenne precisely on the Cold Lands map, and place Dardan and the late battlefields on a more detailed Middle Lands map.
 6. Develop the Gala elven history after Lorien's death and what Varner's death means for the Magical Lands.
-7. Decide what, if anything, survives of Volgan after the destruction of his manifested form, and what long-term damage Zol suffered.
+7. Decide what, if anything, survives of Volgan after the destruction of his manifested form, and what long-term damage Zol's servant suffered.
 8. Clarify Glo's continuing power after the sword shatters and the gods' one-time intervention, and why the gods cannot simply repeat their rescue.
 9. Decide what becomes of the immortal thief, Afrit's human collaborators, eastern rulers who backed him, the exiled Westerners, and the council in Aenor.
 10. Determine whether Eindil's use of the Necklace of the Abyss has a price in the Fifth Age.
@@ -1003,8 +1017,8 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Lorien explains the ancient world and tells Eindil who he is, with a vision of possible coming events. He gives him a ship, armor and sword, and sends him to Horos in Castle Yeldenne, located in the Cold Lands.
 - Afrit travels after him. All of Eindil's crew is killed in an ambush. Afrit reaches Horos first, fights him, wounds him mortally, and is wounded by the newly arrived Eindil before escaping. Horos yields Glo, his own crystalline heart, to Eindil and turns to dust. Glo holds power from Glernaen, a New God of Power and Wisdom. Horos is a Great Spirit.
 - Eindil warns Aenor of simultaneous invasions. Westerners capture the capital. Easterlings invade, northern lands withdraw from the old alliance, Volgan advances from the Dead Lands and Zol's uniquely powerful dead emerge. Afrit abandons Aenor and assumes power over an eastern host as a backup.
-- Eindil rides a dragon accompanied by Varner and Golbran. His magical sword destroys Zol's dead. The people unite against Volgan. Eindil initially loses to Volgan, Varner dies defending against Zol, and Eindil meets the New Gods and is restored with greater power.
-- Eindil destroys Volgan's manifested body. Zol briefly appears bodily and overwhelms Eindil, but the magical sword shard wounds his manifestation. Lorien and other great beings sacrifice themselves, and Zol withdraws.
+- Eindil rides a dragon accompanied by Varner and Golbran. His magical sword destroys Zol's dead. The people unite against Volgan. Eindil initially loses to Volgan, Varner dies defending against Zol's dead, and Eindil meets the New Gods and is restored with greater power.
+- Eindil destroys Volgan's manifested body. Zol's most loyal servant, a Great Spirit, appears and overwhelms Eindil, but the magical sword shard wounds it. Lorien and other great beings sacrifice themselves, and the servant withdraws. Zol himself does not appear in the war (corrected 24 October 2026). The servant's identity is open (Q-03 in [[Open Questions]]).
 - Afrit returns, wounds Eindil, cuts off an arm and throws him over a cliff. Afrit takes the capital again and claims universal kingship. Eindil survives and returns to the palace. Alleria the archer of Selen assists him in stripping Afrit's magical artifacts. Golbran removes the Necklace of the Abyss. Eindil kills Afrit, Golbran gives his last magic to save Eindil and dies. Eindil puts on the necklace, returns and is crowned king.
 - Third Age lasts at least 1,200 years. Earlier 128-year and 5,000-year age limits are revoked.
 
@@ -1014,7 +1028,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - 1,260-year Third Age and 1,760-year Fourth Age drafting dates, names of internal wars and royal councils.
 - Ein himself selecting Eindil as successor, Afrit causing the exact original enchantment, and their birth order.
 - The Mirror of First Rain as Lorien's prophetic fountain, and the form and reliability of its visions.
-- Exact mechanics of Zol's rare manifestation, New Gods' shared blessing, and the survival of Golbran after expending his magic earlier.
+- Exact mechanics of how Zol's servant carries his power onto the field, New Gods' shared blessing, and the survival of Golbran after expending his magic earlier.
 - Names and detailed effects of Afrit's secondary artifacts, the thief, the restored king, and new companions.
 - Mechanics of Eindil's survival below the cliff, return through Afrit's private dimension, and how the necklace may affect his future.
 - Whether the shattered manifested body marks Volgan's final spiritual death. Elzon's permanent death remains settled.
@@ -1230,7 +1244,9 @@ Do not quietly resolve these points into a specific magic system.
 
 ## Established
 
-The **New Gods** are a later divine generation created by the [[Holy Seven]]. They are younger than the [[Old Gods]] and less powerful in fundamental terms. They are widely known in Aoaz, though their number, identities, and domains are still unwritten.
+The **New Gods** are a later divine generation created by the [[Holy Seven]]. They are younger than the [[Old Gods]] and less powerful in fundamental terms. They are widely known in Aoaz.
+
+**Twelve New Gods (owner, 24 October 2026).** Aoaz has **twelve** New Gods. The twelve months of the year are named after them, one month for each god. [[Glernaen]], the New God of Power and Wisdom, is the mightiest of the twelve. The names and domains of the others, and the purpose of the number twelve, remain open (Q-01 in [[Open Questions]]), so the month names are not yet written either.
 
 **At least some New Gods serve [[Zol]].** Being a god does not prevent one from becoming a servant of an older deity.
 
@@ -1244,11 +1260,11 @@ The **New Gods** are a later divine generation created by the [[Holy Seven]]. Th
 
 ## Undecided
 
-The total number of New Gods, the identity and fate of Volgan's former patron, and the identity of Zol's divine servants are unknown. Do not generate canon names for them without a later decision.
+The names and domains of the twelve New Gods, the purpose of the number twelve, whether the New Gods who serve Zol and Volgan's former patron are counted among the twelve (Q-01), the identity and fate of Volgan's former patron, and the identity of Zol's divine servants are unknown. Do not generate canon names for them without a later decision.
 
 ## Afrit in Third and Fourth Age religion
 
-At the end of the [[The Third Age of Aoaz|Third Age]], [[Afrit]] is **publicly recognized as a New God**, widely praised for saving the world from [[Elzon]]. **Afrit the Deliverer** is a proposed religious title. Public worship is established. His real metaphysical classification is **not yet established** and may differ from what priests or ordinary people believe. The creation of real New Gods by the Holy Seven remains intact unless a future lore decision changes it.
+At the end of the [[The Third Age of Aoaz|Third Age]], [[Afrit]] is **publicly recognized as a New God**, widely praised for saving the world from [[Elzon]]. **Afrit the Deliverer** is a proposed religious title. Public worship is established. His real metaphysical classification is **not yet established** and may differ from what priests or ordinary people believe. The creation of real New Gods by the Holy Seven remains intact unless a future lore decision changes it. Whether Afrit stands in any relation to the twelve New Gods and their months is open (Q-02 in [[Open Questions]]).
 
 [[Afrit the Deliverer]]
 
@@ -1457,6 +1473,10 @@ These labels can overlap. They do not automatically introduce new orders between
 
 The exact dividing test between Great and Lesser Spirits, their creation, relations to angels and demons, and whether a spirit can change rank remain unwritten.
 
+## Devils
+
+**Established (owner, 24 October 2026):** devils are corrupted **Lesser Spirits** who formerly served an Old God and escaped to Aoaz. Not every devil served [[Zol]]; those who served another Old God came to Aoaz from elsewhere. Demons are a different kind of being, corrupted angels. Whether devils are immortal and can be revived is open (Q-07 in [[Open Questions]]). See [[Peoples of Aoaz#Devils]].
+
 ---
 
 ## 03 - Figures/Aen.md
@@ -1508,7 +1528,7 @@ During the **First Age**, he secretly assembled demons and other beings who help
 
 For most of the **Fourth Age** Afrit governed indirectly through priests, schools, relief institutions, councilors and royal puppets. Prosperity endured during much of this process. He accumulated servants and enchanted artifacts. He sent a master thief to take [[Necklace of the Abyss|Roka's necklace]] and kept his promise of eternal life to the thief. He murdered the [[Golden King]], seized the Aenoran crown openly under his public name, and proclaimed himself King of Men and New God. He continued to build political alliances across East and South Lands as a reserve dominion.
 
-After learning of Eindil's journey, he arrived first at Castle Yeldenne, where Horos named him as Eindil's brother. He fought Horos, mortally wounded him, and was then pierced by Eindil before escaping to his private dimension. In the last war he abandoned Aenor, acquired an eastern kingship, and returned after Zol and Volgan were repelled. He cut off Eindil's arm, struck him, and cast him from a cliff, then took Aenor again and proclaimed universal rule.
+After learning of Eindil's journey, he arrived first at Castle Yeldenne, where Horos named him as Eindil's brother. He fought Horos, mortally wounded him, and was then pierced by Eindil before escaping to his private dimension. In the last war he abandoned Aenor, acquired an eastern kingship, and returned after Volgan and Zol's most loyal servant were repelled (corrected 24 October 2026). He cut off Eindil's arm, struck him, and cast him from a cliff, then took Aenor again and proclaimed universal rule.
 
 Eindil, helped by Alleria and Golbran, stripped away Afrit's rings, wards, and other artifacts. Golbran removed the Necklace of the Abyss, leaving Afrit vulnerable. Eindil **literally kills Afrit** in their last struggle. There is no surviving divine incarnation or resurrection established.
 
@@ -1605,7 +1625,7 @@ Eindil was held in supernatural sleep for many ages by means not yet canonically
 
 At Yeldenne he learned that the public god-king of Aenor was his brother. [[Horos]], a Great Spirit, gave him [[Castle of Yeldenne and Glo|Glo]], a crystal containing part of New God [[Glernaen]]'s power, and his blue sword. Eindil warned men of the gathering armies, returned with a dragon, [[Varner]] and [[Golbran]], and became the center of the last united defense of Aenor.
 
-He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol crushed Horos's sword and nearly killed him, but Eindil wounded the Old God's temporary incarnation with a fragment. Lorien and ancient allies forced Zol to withdraw. Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
+He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol's most loyal servant, a Great Spirit, crushed Horos's sword and nearly killed him, but Eindil wounded the servant with a fragment. Lorien and ancient allies forced the servant to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
 
 Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss and returned to be crowned **King of Aenor**, ending the Fourth Age.
 
@@ -1695,9 +1715,11 @@ The following characters were created as candidate additions on 17 October 2026.
 
 **Established:** Glernaen is a **New God of Power and Wisdom**. A portion of Glernaen's might resides in **Glo**, the crystalline heart carried by Great Spirit [[Horos]] and later given to [[Eindil]].
 
-The blue sword associated with Horos and the divine power in Glo allow Eindil to destroy Zol's directly empowered undead, which cannot be permanently killed by ordinary weapons. When the New Gods revive Eindil after his initial defeat by Volgan, Glo is the proposed channel through which their combined power can reach him. Zol later breaks the sword, but a shard still bears divine magic and can wound the Old God's temporary physical manifestation.
+**Established (owner, 24 October 2026):** Glernaen is the **mightiest of the twelve [[New Gods]]** of Aoaz. Each of the twelve months is named after one New God, so one month is named after Glernaen; its name and place in the year are open (Q-01 in [[Open Questions]]).
 
-**Unknown:** Glernaen's individual character, symbols, relation to other New Gods, origin of Glo, extent of independent intervention and any cult in Aoaz. Avoid assigning Glernaen a full doctrine before it is developed.
+The blue sword associated with Horos and the divine power in Glo allow Eindil to destroy Zol's directly empowered undead, which cannot be permanently killed by ordinary weapons. When the New Gods revive Eindil after his initial defeat by Volgan, Glo is the proposed channel through which their combined power can reach him. Zol's most loyal servant, a Great Spirit, later breaks the sword, but a shard still bears divine magic and can wound the servant (corrected 24 October 2026: Zol himself does not appear in the war).
+
+**Unknown:** Glernaen's individual character, symbols, relation to the other New Gods beyond being the mightiest of them, origin of Glo, extent of independent intervention and any cult in Aoaz. Avoid assigning Glernaen a full doctrine before it is developed.
 
 [[New Gods]] · [[Castle of Yeldenne and Glo]] · [[Horos]] · [[Eindil]]
 
@@ -1711,7 +1733,7 @@ The blue sword associated with Horos and the divine power in Glo allow Eindil to
 
 Golbran plays a decisive part in Afrit's eventual death. He uses magic to remove Roka's Necklace of the Abyss from Afrit, leaving the god-king mortal and vulnerable. After Eindil kills Afrit, Golbran transfers his last remaining life and magic to Eindil, saving him at the price of his own death.
 
-**Continuity decision offered as a proposal:** when Varner dies resisting Zol, Golbran makes an apparent or incomplete sacrifice by exhausting most of his magic, collapses and is believed dead, but survives with a small remaining reserve. He spends that last reserve in the final palace battle. This honors both sacrifice scenes without bringing him back from an established literal death.
+**Continuity decision offered as a proposal:** when Varner dies resisting Zol's forces, Golbran makes an apparent or incomplete sacrifice by exhausting most of his magic, collapses and is believed dead, but survives with a small remaining reserve. He spends that last reserve in the final palace battle. This honors both sacrifice scenes without bringing him back from an established literal death.
 
 The owner also used a variant name **Gorbat** in recounting the final sacrifice and requested another name. **Golbran** is retained consistently for the same already established character rather than introducing a new creature. The name itself can be reconsidered later if desired.
 
@@ -1787,7 +1809,7 @@ Edran might have descended from a relatively distant line of Aen. A proposed *Ch
 
 # King of Demons
 
-**Established:** A **King of Demons** resides in the southern [[Nether]] of the [[Volgans Dead Lands|Dead Lands]]. His name, powers, kind of demon, and relationship with [[Volgan]], [[Elzon]], [[Afrit]], and [[Agon]] are open.
+**Established:** A **King of Demons** resides in the southern [[Nether]] of the [[Volgans Dead Lands|Dead Lands]]. His name, powers, kind of demon, and relationship with [[Volgan]], [[Elzon]], [[Afrit]], and [[Agon]] are open. His name is tracked as Q-07 in [[Open Questions]].
 
 The title implies a ruler within demonic society. It does not establish that all demons in the universe, all Netherborn, or all demons serving other powers are subject to him. Agon is not confirmed as this king.
 
@@ -1809,7 +1831,7 @@ Edran's disastrous decision to attack the Dead Lands after Dardan brought unnece
 
 Late in the Fourth Age Lorien welcomes a stranger from the Islands of the South and speaks with him over many weeks. He identifies the man as **[[Eindil]], son of Ein, grandson of Aen**, and shares accounts of Aoaz long before Aen. He uses a vision, potentially the proposed **Mirror of First Rain**, to warn of approaching catastrophe and directs Eindil to Horos at Yeldenne to obtain Glo. He equips Eindil with a remarkable ship, armor, sword and companions from different peoples.
 
-During Zol's temporary embodiment at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with Zol**, helping force the Old God to withdraw. He is therefore alive long after Dardan but does not survive the Fourth Age.
+When Zol's most loyal servant, a Great Spirit, takes the field at the end of the Fourth Age, Lorien returns with ancient lords and spirits to defend all the living peoples of Aoaz. He **dies in direct battle with the servant**, helping force it to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). He is therefore alive long after Dardan but does not survive the Fourth Age.
 
 [[The Journey of Eindil]] · [[The Fourth Age of Aoaz]] · [[Zol]]
 
@@ -1868,6 +1890,8 @@ The existence of the thief, the mission and the granting of eternal life are **e
 
 Late in the Fourth Age Varner accompanies [[Eindil]] and Golbran to Aenor, arriving by dragon during the War of the Last Crowns. He shields living armies from Zol's direct death-magic and spends his last strength to open a path of survival. Varner **dies in the final war** when Zol's forces threaten to overwhelm the defenders. His defense is essential to the time gained for Eindil and the New Gods' intervention.
 
+**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian**, a famous wizard of men, is another well-known wizard of the realm; his nature and era are open (Q-09 in [[Open Questions]]).
+
 The exact ritual he uses, whether any writings survive and the nature of his death are opportunities for further development. His order remains Lesser Spirit despite his importance.
 
 [[The Third Age of Aoaz]] · [[Golbran]] · [[War of the Last Crowns]]
@@ -1898,9 +1922,9 @@ In the Fourth Age Volgan has recovered enough to retake Mirolon and march north 
 
 He remains mostly dormant during the early numbered ages. Elzon borrows ancient magic associated with Zol to raise and bind the dead. A favored Third Age explanation has Zol passively consuming the Great Spirit Elzon when he overdraws on that magic. Zol grows stronger, but does not take the field or openly rule the war.
 
-**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. A convergence of immense death and prepared magic permits Zol to **manifest physically for a rare and limited period** in the War of the Last Crowns. He stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the manifestation with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing Zol to withdraw.
+**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. **Zol does not appear in the War of the Last Crowns (corrected 24 October 2026).** The being who takes the field is **Zol's most loyal servant, a Great Spirit**, whose identity is open (Q-03 in [[Open Questions]]). The servant stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the servant with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing the servant to withdraw.
 
-**Zol is not permanently killed.** His manifestation is a strained projection of a fraction of an Old God's might. Its temporary existence does not remove the Fading and its dependence on Aoaz's special conditions. His servants, realm and further intentions remain important unresolved matters for future ages.
+**Zol is not killed.** He takes no body in the war: the Fading and his dependence on Aoaz's special conditions still bind him, and his servants carry his power onto the field. His servants, realm and further intentions remain important unresolved matters for future ages.
 
 [[The Fading]] · [[Magic and Sustenance in Aoaz]] · [[War of the Last Crowns]] · [[Lorien]]
 
@@ -1918,6 +1942,12 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 - **Angels:** immortal Great Folk. Their history is not yet written.
 - **Demons:** corrupted angels, according to the existing order-of-beings account. Includes **Shachihata** (huge, powerful, and rare), **Netherborn** (serving [[Volgan]]), and [[Afrit]]'s demons. Whether all named demonic peoples share a specific corruption event is unknown.
 
+## Devils
+
+**Established (owner, 24 October 2026):** **Devils** are corrupted [[Spirits and Their Ranks|Lesser Spirits]] who formerly served an Old God and escaped to Aoaz. Not every devil served [[Zol]]. Zol is the only Old God in Aoaz, so devils who served another Old God came to Aoaz from elsewhere. Devils are therefore distinct from demons, who are corrupted angels.
+
+**Open (Q-07 in [[Open Questions]]):** whether devils are immortal and can be revived, and the name of the [[King of Demons|demon king]].
+
 ## Mortal and regionally identified peoples
 
 - **Men:** Middle Kingdom peoples, Dondor Brutes, Noris camel warriors, Gunwaith clans, Girdon wardens, Buldor companies, Aenor Isle houses, Goodin Sunfolk, and the ancient [[The Ainu|Ainu]] (First Men).
@@ -1931,7 +1961,7 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 - The many regional monster societies are independent or diverse, not a single obedient species-wide faction.
 - **Dragons:** chiefly come from Dragon Mountain and do **not** form a country. Elven powers can command them, and Afrit can do so through corruption.
 
-**Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, but does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
+**Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, and the owner has since classified devils as corrupted Lesser Spirits, but the lore does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
 
 See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Dead Lands]].
 
@@ -2031,8 +2061,8 @@ The **far west and north** of the Cold Lands, and **far east and south** beyond 
 | **Dark Lands** | Dark Lands | Between Lerendor and Middle Lands across narrow straits. Bordon, Dreson, Dulundur, Troll Forest, Dondor, Goldoroth, Sea of Darkness. |
 | **Middle Lands** | Rush Land | Geographic center. Aenor and its neighbouring regions: Selen, Kilinti, Kingson, Hiloron, Great Lake. See [[Middle Lands and Aenor]]. |
 | **Aenor Isle** | Rush Islands | Off the Middle Lands' west coast, **part of Middle Lands**. Includes Asgard. |
-| **Magical Lands** | Magical Lands | East of Middle Lands, same landmass. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
-| **Zol / Zol's Mistake** | Ocean of Edvoid | Far northern black wasteland and every black island of the Ocean of Zol, largely deserted and roamed by the dead. Contains Šodolôrō. See [[Zols Mistake]]. |
+| **Magical Lands** | Magical Lands | East of Middle Lands, same landmass, separated from them by the Great Wall of Aenor, a natural mountain range. Magical Forest, Mushroom Forest, Magic Mountains, Herrodon, Andos Enda, Nolorim. Long rift sea separates it from East Lands. |
+| **Zol / Zol's Mistake** | Ocean of Edvoid (name to be replaced, Q-10) | Far northern black wasteland and every black island of the Ocean of Zol, largely deserted and roamed by the dead. Contains Šodolôrō. See [[Zols Mistake]]. |
 | **East Lands** | South-Earth | Across the rift in the east, reaches off the eastern map. Noris, Stabilo, Avalon, Ostoroth, Gondolin, Drak, Mora. Mirrored for mod map. |
 | **South Lands** | Desert of South-Earth | Great desert of East Lands, extends south off the map. Noris Desert and former Sunhot Desert. |
 | **Dead Lands** | Dead Lands | South of Middle Lands. [[Volgan]]'s domain: Mirolon, Nan, Demon, Dolon, Nezer, Nether. See [[Volgans Dead Lands]]. |
@@ -2076,6 +2106,8 @@ The source image was supplied by the owner on 17 October 2026. [[Aoaz and Its Re
 **Aenor, the Middle Kingdom**, was previously called **Rush, the Rush Kingdom**. It is the central great power of Aoaz. Its current map-design capital is **Parim**.
 
 The **Middle Lands**, previously Rush Land, contain the Middle Kingdom's central plains, forests, mountains, and Great Lake. Associated named regions include **Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun**, and **Herez**. **Aenor Isle** (previously Rush Islands) lies off the west coast and contains **Asgard**.
+
+**The Great Wall of Aenor (owner, 24 October 2026):** the Great Wall of Aenor is an enormous **natural mountain range** that separates the Middle Lands from the [[Aoaz and Its Regions|Magical Lands]]. It is not a built wall or fortified line. Its passes, valleys and snowlines decide the routes between the two lands, and fortified passes or watchtowers may stand only where history explains them.
 
 The older original story recognizes dominions including Selen's rangers, Hiloron's giants, Kilinti's ents and forest peoples, and the riders of **Huhun**. The revised map's country system treats Aenor's surrounding Middle Lands regions as **satellites**. Whether each original dominion is constitutionally a satellite or an internal division remains an open implementation/lore detail.
 
@@ -2195,7 +2227,7 @@ The working political table places the capital or seat at **Furviatlon** and tre
 
 The dead wandering the land have no established classification or allegiance. Do not assume they all belong to Zol, [[Volgan]], or any single category until decided.
 
-**Former terms:** Edvoid's Mistake, Ocean of Edvoid. These names are **superseded**.
+**Former terms:** Edvoid's Mistake, Ocean of Edvoid (name to be replaced, Q-10). These names are **superseded**.
 
 [[Magic and Sustenance in Aoaz]] · [[Aoaz and Its Regions]] · [[Names and Retcons]]
 
@@ -2413,14 +2445,14 @@ The mechanism, name, and geographic placement are inventions for the [[The Third
 
 # The Fifth Age: open foundations
 
-The Fourth Age ends with **[[Eindil]] being crowned king of Aenor**. Any Fifth Age remains to be defined. The victory ends [[Afrit]]'s mortal life, removes [[Elzon]] entirely, drives [[Zol]] back, and destroys [[Volgan]]'s manifested body. It does not automatically restore the prosperity or alliances of the previous millennium.
+The Fourth Age ends with **[[Eindil]] being crowned king of Aenor**. Any Fifth Age remains to be defined. The victory ends [[Afrit]]'s mortal life, removes [[Elzon]] entirely, drives back the most loyal servant of [[Zol]] and his dead, and destroys [[Volgan]]'s manifested body. It does not automatically restore the prosperity or alliances of the previous millennium.
 
 ## Established consequences
 
 - The Middle Lands have been devastated by simultaneous invasions and supernatural war.
 - The West Lands, North Lands, East Lands and other independent regions retain political claims and grievances despite temporary wartime cooperation.
 - [[Lorien]], [[Varner]], [[Horos]], and [[Golbran]] have died.
-- A number of other ancient spirits and lords fall in the struggle against Zol.
+- A number of other ancient spirits and lords fall in the struggle against Zol's most loyal servant and his dead (corrected 24 October 2026).
 - Zol remains an Old God, constrained by the Fading but not slain.
 - Eindil possesses or wears Roka's [[Necklace of the Abyss]], whose long-term effects remain unknown.
 
@@ -2558,7 +2590,7 @@ Possible survival of an archivist with Aen's genealogies and of scattered royal 
 
 # The Last Battle in the Palace
 
-After Zol's withdrawal, [[Afrit]] returns from the East, defeats the badly weakened [[Eindil]], severs one of his arms and casts him off a cliff, believing him dead. He claims Aenor again. Eindil survives through circumstances still open to development, supported in the working narrative by residual Glo magic and [[Alleria of Selen]].
+After the withdrawal of Zol's most loyal servant (corrected 24 October 2026), [[Afrit]] returns from the East, defeats the badly weakened [[Eindil]], severs one of his arms and casts him off a cliff, believing him dead. He claims Aenor again. Eindil survives through circumstances still open to development, supported in the working narrative by residual Glo magic and [[Alleria of Selen]].
 
 Eindil returns to the royal palace severely wounded. Afrit still holds Roka's [[Necklace of the Abyss]] and other artifacts. Alleria fires into Afrit's eye, allowing Eindil to cut off a finger and take a ring. They continue removing his defenses. At last Afrit tries to escape to his private dimension, but Eindil grips the necklace and is carried with him. Afrit nearly kills Eindil. [[Golbran]] removes the necklace with the final remnants of his magic. Without external supports Afrit becomes a vulnerable mortal man. Eindil kills his brother by cutting his throat.
 
@@ -2686,9 +2718,9 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 
 1. Aenor is beset from four directions. West Lands rulers sail across the wide central sea to seize the capital. Eastern coalitions threaten the Magical Lands. North Lands rulers withdraw from Aenor's alliance. Zol's dead advance from the far north. Volgan retakes Mirolon and moves from the southern Dead Lands toward Aenor.
 2. The publicly worshipped god-king, secretly Afrit, abandons his subjects and assumes control of an eastern coalition through networks cultivated for ages. The western army occupies Aenor's capital.
-3. Eastern and Aenoran forces retreat as Volgan and Zol's dead overwhelm the region. Westerners find their conquest untenable and begin evacuating. Some eastern and western troops remain stranded. Zol and Volgan initially clash before briefly joining forces against Eindil.
+3. Eastern and Aenoran forces retreat as Volgan and Zol's dead overwhelm the region. Westerners find their conquest untenable and begin evacuating. Some eastern and western troops remain stranded. Zol's dead and Volgan's hosts initially clash before briefly joining forces against Eindil.
 4. Eindil returns on a dragon with Varner and Golbran. With Glo and Horos's blue blade he destroys Zol's stronger-than-necromantic dead, and the surviving peoples make a desperate common army. He is beaten by Volgan, but Glernaen and the New Gods restore him through Glo.
-5. Eindil defeats Volgan's embodied manifestation. Zol appears bodily for a rare moment, overpowers the renewed champion, shatters the blue sword, and nearly conquers the field. Eindil wounds Zol's body with a shard. Lorien and ancient spirits die forcing the Old God to withdraw.
+5. Eindil defeats Volgan's embodied manifestation. Zol's most loyal servant, a Great Spirit, comes forth, overpowers the renewed champion, shatters the blue sword, and nearly conquers the field. Eindil wounds the servant with a shard. Lorien and ancient spirits die forcing the servant to withdraw. Zol himself does not appear in the war (corrected 24 October 2026).
 6. Afrit returns from the East, wounds and casts Eindil from a cliff, and claims Aenor. Eindil survives, and Alleria and Golbran help strip Afrit's artifacts at the palace. Afrit dies, Golbran dies saving Eindil, and Eindil is crowned with the Necklace of the Abyss in his possession.
 
 ### Distinctions
@@ -2696,7 +2728,7 @@ Free human armies, local rebels, sympathetic minor rulers, and defenders associa
 - Zol's dead derive from the Old God's own magic. Mortal arms cannot end them permanently without magic. Elzon's earlier reanimated corpses were comparatively vulnerable, requiring continuing magical support.
 - The western armies do not all become subjects of Aenor after cooperating with Eindil. Competing western and northern interests remain.
 - Volgan's manifested body is destroyed. His final spiritual fate is unresolved.
-- Zol's manifestation is temporary and costly in the presence of the Fading. He is forced to withdraw, not killed.
+- Zol does not appear in this war: the Fading and Aoaz's magic keep him from taking the field. The being who appears is his most loyal servant, a Great Spirit, whose identity is open (Q-03 in [[Open Questions]]). The servant is forced to withdraw, not killed (corrected 24 October 2026).
 - Afrit's final death is literal.
 
 [[The Fourth Age of Aoaz]] · [[Eindil]] · [[Afrit]] · [[Zol]] · [[Volgan]]
@@ -2734,7 +2766,7 @@ In the late Fourth Age, [[Afrit]] arrives first to claim Glo and introduces hims
 
 With death approaching, Horos tells Eindil the hidden truth of his family and of Glo's earlier rejected claimants. He removes Glo from his chest and places it in Eindil's hands. His form crumbles to dust. Eindil also inherits Horos's blue enchanted sword. The crystal carries Glernaen's power into the final war and later serves as a bridge for the combined New Gods to revive and empower Eindil.
 
-Zol eventually crushes Horos's sword in battle. A fragment of it can still wound Zol's temporary physical manifestation due to the power channeled by Glo.
+Zol's most loyal servant, a Great Spirit, eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
 
 **Open:** The castle's precise location in the Cold Lands, its original construction, the source and limits of Glo, and its fate after Eindil receives the New Gods' power. The exact explanation for why the crystal can be entrusted only to a worthy bearer is a working rule.
 
@@ -2750,7 +2782,7 @@ Zol eventually crushes Horos's sword in battle. A fragment of it can still wound
 
 In the last great war, Eindil drives the sword into the earth after descending from a dragon, sending a magical shock wave through [[Zol]]'s direct death-host. Unlike mundane weapons, the sword can permanently disperse those warriors. Later, after the New Gods empower Eindil, he kills Volgan's manifested body with this blade.
 
-Zol then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into Zol's temporary body, and the remaining divine magic injures the manifestation. No intact original blade remains for the final palace fight against Afrit.
+Zol's most loyal servant, a Great Spirit, then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into the servant, and the remaining divine magic injures it (corrected 24 October 2026: Zol himself does not appear in the war). No intact original blade remains for the final palace fight against Afrit.
 
 [[Horos]] · [[Glernaen]] · [[War of the Last Crowns]]
 
@@ -2970,7 +3002,7 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 
 - [ ] Does Afrit truly acquire one of the original divine ranks, or only comparable supernatural power and widespread worship?
 - [ ] What exactly does Glo bestow upon Eindil and how much remains after the sword is broken and he returns from death?
-- [ ] By what mechanism can Zol temporarily manifest, and what remains of Zol after the final battle?
+- [ ] By what mechanism can Zol temporarily manifest, and what remains of Zol after the final battle? *(24 October 2026: Zol does not appear in the War of the Last Crowns; his most loyal servant does. The question stays open for Zol in general; see Q-03.)*
 - [ ] Is Volgan's spirit destroyed along with his manifested body, or can he survive?
 - [ ] What can the Necklace of the Abyss do, and will Eindil be corrupted by wearing it?
 - [ ] What is Roka's fate, and what is the name of the rhinoceros-headed people?
@@ -2983,6 +3015,15 @@ These are deliberately unresolved. Proposals elsewhere in the vault should not b
 - [ ] What is Golbran's origin, why was he with Varner, and can the final sacrifice establish a lasting magical legacy?
 - [ ] What becomes of the Golden King's faction, Afrit's followers, and eastern and western invaders after Eindil's coronation?
 - [ ] What form does the Fifth Age take under the restored king of men?
+
+## Owner questions of 24 October 2026
+
+- [ ] **Q-01** What is the purpose of the number twelve for the New Gods? What are the twelve gods' names and domains, and so the names of the months? Are the New Gods who serve Zol, and the New God Volgan once served, counted among the twelve?
+- [ ] **Q-02** How does Afrit, publicly worshipped as a New God, relate to the twelve New Gods and the twelve months?
+- [ ] **Q-03** Who is Zol's most loyal servant, the Great Spirit who appears in the War of the Last Crowns? Is it Edvoid (name to be replaced, Q-10), whom his card calls "a former minion made by Zol", and whose name was once Zol's placeholder?
+- [ ] **Q-07** Are devils immortal, and can they be revived? What is the demon king's name?
+- [ ] **Q-09** What are Bastian's nature and era?
+- [ ] **Q-10** What is Edvoid's new name?
 
 [[Fifth Age Seeds]] · [[Canon Policy]] · [[Fourth Age Canon Register]]
 

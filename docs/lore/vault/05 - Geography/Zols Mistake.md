@@ -1,7 +1,7 @@
 ---
 type: lore
 status: established
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # Zols Mistake
@@ -16,7 +16,7 @@ The working political table places the capital or seat at **Furviatlon** and tre
 
 The dead wandering the land have no established classification or allegiance. Do not assume they all belong to Zol, [[Volgan]], or any single category until decided.
 
-**Former terms:** Edvoid's Mistake, Ocean of Edvoid. These names are **superseded**.
+**Former terms:** Edvoid's Mistake, Ocean of Edvoid (name to be replaced, Q-10). These names are **superseded**.
 
 [[Magic and Sustenance in Aoaz]] · [[Aoaz and Its Regions]] · [[Names and Retcons]]
 

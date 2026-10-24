@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # Peoples of Aoaz
@@ -13,6 +13,12 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 - **Elves:** peaceful democratic elves of the **Magical Forest**, the **Sunhot elves** of the Lands of the Sun (over three metres tall, among the strongest and most peaceful), **Gala elves**, and **God Forest Keepers**.
 - **Angels:** immortal Great Folk. Their history is not yet written.
 - **Demons:** corrupted angels, according to the existing order-of-beings account. Includes **Shachihata** (huge, powerful, and rare), **Netherborn** (serving [[Volgan]]), and [[Afrit]]'s demons. Whether all named demonic peoples share a specific corruption event is unknown.
+
+## Devils
+
+**Established (owner, 24 October 2026):** **Devils** are corrupted [[Spirits and Their Ranks|Lesser Spirits]] who formerly served an Old God and escaped to Aoaz. Not every devil served [[Zol]]. Zol is the only Old God in Aoaz, so devils who served another Old God came to Aoaz from elsewhere. Devils are therefore distinct from demons, who are corrupted angels.
+
+**Open (Q-07 in [[Open Questions]]):** whether devils are immortal and can be revived, and the name of the [[King of Demons|demon king]].
 
 ## Mortal and regionally identified peoples
 
@@ -27,7 +33,7 @@ The snapshot divides ZIN's non-spirit inhabitants into immortal **Great Folk** a
 - The many regional monster societies are independent or diverse, not a single obedient species-wide faction.
 - **Dragons:** chiefly come from Dragon Mountain and do **not** form a country. Elven powers can command them, and Afrit can do so through corruption.
 
-**Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, but does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
+**Caution:** The snapshot explicitly classifies men and dwarves, elves, angels, and demons, and the owner has since classified devils as corrupted Lesser Spirits, but the lore does not settle the formal rank, mortality, or origin of every other listed people. Do not infer missing taxonomy from their names.
 
 See also [[Spirits and Their Ranks]], [[Aoaz and Its Regions]], [[Volgans Dead Lands]].
 

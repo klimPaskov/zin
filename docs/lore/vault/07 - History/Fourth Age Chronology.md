@@ -1,7 +1,7 @@
 ---
 type: lore
 status: proposed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Fourth Age Chronology
@@ -12,26 +12,26 @@ updated: 2026-10-18
 
 Years are reckoned from the death of [[Elzon]] and the crowning of the first restored king, written **4A** (Fourth Age). 4A 1 is the first year of the restored monarchy. The age ends with Eindil's coronation.
 
-**Proposed calendar.** Aoaz keeps twelve months whose lengths match the old reckoning of Aen's astronomers. Their names come from the farming year of the Middle Lands:
+**Calendar.** Aoaz keeps **twelve months, each named after one of the twelve [[New Gods]]** (established, owner, 24 October 2026). The gods' names, and so the month names, are not yet written (Q-01 in [[Open Questions]]), and dates in this vault give the month by number. The earlier proposed farming-year month names are superseded; see [[Names and Retcons]]. **Proposed:** the months' lengths match the old reckoning of Aen's astronomers, and the seasons fall as below.
 
 | No. | Month | Season |
 | --- | --- | --- |
-| 1 | Deepwinter | winter |
-| 2 | Ironfrost | winter |
-| 3 | Thaw | spring |
-| 4 | Rainwake | spring |
-| 5 | Sowing | spring |
-| 6 | Highsun | summer |
-| 7 | Goldfield | summer |
-| 8 | Harvest | summer |
-| 9 | Fallowing | autumn |
-| 10 | Emberleaf | autumn |
-| 11 | Mistfall | autumn |
-| 12 | Longnight | winter |
+| 1 | named after a New God (open) | winter |
+| 2 | named after a New God (open) | winter |
+| 3 | named after a New God (open) | spring |
+| 4 | named after a New God (open) | spring |
+| 5 | named after a New God (open) | spring |
+| 6 | named after a New God (open) | summer |
+| 7 | named after a New God (open) | summer |
+| 8 | named after a New God (open) | summer |
+| 9 | named after a New God (open) | autumn |
+| 10 | named after a New God (open) | autumn |
+| 11 | named after a New God (open) | autumn |
+| 12 | named after a New God (open) | winter |
 
 ## The campaign begins in 4A 1748
 
-**Start: 1 Thaw, 4A 1748** (the owner fixed the situation on 18 October 2026; the date itself is proposed). The Golden King reigns in his nineteenth year. Eindil has not appeared. Afrit is unrevealed: the world knows only the Deliverer it worships. Aoaz seems at peace, as it has been for seventeen centuries. The dangers exist, but only a few people see them: Mirolon's scouts, island fishermen, the Hidden Council itself. Twelve years later, in 4A 1760, the age can end with Eindil's coronation. Eindil's whole journey, the Golden King's murder, Afrit's open kingship and the War of the Last Crowns therefore fit inside one campaign, and the player meets every established event as something that can still go another way.
+**Start: the first day of the third month, 4A 1748** (the owner fixed the situation on 18 October 2026; the date itself is proposed). The Golden King reigns in his nineteenth year. Eindil has not appeared. Afrit is unrevealed: the world knows only the Deliverer it worships. Aoaz seems at peace, as it has been for seventeen centuries. The dangers exist, but only a few people see them: Mirolon's scouts, island fishermen, the Hidden Council itself. Twelve years later, in 4A 1760, the age can end with Eindil's coronation. Eindil's whole journey, the Golden King's murder, Afrit's open kingship and the War of the Last Crowns therefore fit inside one campaign, and the player meets every established event as something that can still go another way.
 
 See [[The Campaign of 4A 1748]] for the world at the start and how the age can unfold.
 
@@ -44,7 +44,7 @@ See [[The Campaign of 4A 1748]] for the world at the start and how the age can u
 | 4A 4 to 60 | Varner's Unbinding lifts the curse from the old grave-fields. The [[Lantern Chain]] dissolves into village healers and wardens. |
 | 4A 11 | The [[Houses of the First Light]] receive royal charters to keep the grain stores, hospitals and birth rolls of the kingdom. |
 | 4A 40 to 120 | Roads, canals and the Great Lake ports are rebuilt. The Second Age's medicine and farming return to every province. |
-| 4A 96 | **The Wall Accord.** Elzon's Order had raised a fortified line, the Pale March, against the Magical Lands, which it never conquered. Harion's grandson and the elven realms agree to keep it rather than tear it down: the elves wanted their old separation, the kings wanted a customs line and a guard against the dragons of the east. Rebuilt in stone, it becomes the **Great Wall of Aenor**. |
+| 4A 96 | **The Accord of the Passes.** The **Great Wall of Aenor** is the enormous natural mountain range between the Middle Lands and the Magical Lands (established, owner, 24 October 2026). Elzon's Order had held watch-posts in its passes against the Magical Lands, which it never conquered. Harion's grandson and the elven realms agree to keep a few passes guarded rather than open every road: the elves wanted their old separation, the kings wanted customs posts on the pass roads and a watch against the dragons of the east. The treaty, its name and the posts are proposed. |
 | 4A 150 to 212 | Aenoran merchants return to the West Lands for the first time since the First Age wars. Western lords accept the trade but not the old Aenoran claims. |
 
 ## II. The Long Peace, 4A 212 to 4A 1000
@@ -96,14 +96,14 @@ The established events below are the **historical path**. In play they are what 
 | --- | --- |
 | 4A 1748 | The peaceful year. Nothing visible happens beyond the ordinary quarrels of courts. |
 | 4A 1749 | **Eindil wakes** in the ice of the far Cold Lands, early in the year. Tribes of the north-west find him and nurse him back to strength. Late in the year he travels south with West Lands traders. |
-| 4A 1750 | The Bridge of the Three Oaths, Girdon's Winter Ford and the Gunwaith trial (proposed episodes). When the Truce of the Grey Ford breaks, a western confederation makes Eindil its temporary war-king; he makes peace and lays the title down. **In Mistfall, the Golden King dies.** The Council and the temples proclaim Aurevan King of Aenor, First of His Name. |
+| 4A 1750 | The Bridge of the Three Oaths, Girdon's Winter Ford and the Gunwaith trial (proposed episodes). When the Truce of the Grey Ford breaks, a western confederation makes Eindil its temporary war-king; he makes peace and lays the title down. **In the eleventh month, the Golden King dies.** The Council and the temples proclaim Aurevan King of Aenor, First of His Name. |
 | 4A 1751 | Eindil sails for Aenor; storms carry him to the Islands of the South. |
 | 4A 1752 | Eindil reaches the Gala elves. Lorien names him. The Mirror of First Rain (proposed). |
 | 4A 1753 | The voyage north. Afrit leaves Chancellor Merovan (proposed) in Parim. The ambush; the hall of Horos. Horos gives Glo and dies; Afrit is wounded and flees. |
 | 4A 1754 | Eindil warns Aenor and is denounced as an impostor. Alleria of Selen protects him. |
 | 4A 1755 | **The War of the Last Crowns begins.** The Western Crossing, the Leren withdrawal from the Treaty of the Narrow Strait, the eastern invasion of the Magical Lands, Volgan's reconquest of Mirolon and the rising of Zol's dead. |
 | 4A 1756 | Afrit abandons Aenor and is proclaimed King of the East. Western armies take Parim. |
-| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol manifests and is forced back; Lorien dies. |
+| 4A 1757 | Eindil returns on a dragon with Varner and Golbran. Varner dies. The New Gods restore Eindil. Volgan's manifested body is destroyed. Zol's most loyal servant, a Great Spirit, takes the field and is forced back; Lorien dies. Zol himself does not appear (corrected 24 October 2026). |
 | 4A 1758 | Afrit returns with an eastern host, casts Eindil from the cliff and claims kingship over all Aoaz. |
 | 4A 1759 | The battle in the palace. Afrit dies. Golbran dies saving Eindil. |
 | 4A 1760 | **Eindil is crowned King of Aenor.** The Fourth Age ends. |

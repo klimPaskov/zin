@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Middle Lands and Aenor
@@ -9,6 +9,8 @@ updated: 2026-10-18
 **Aenor, the Middle Kingdom**, was previously called **Rush, the Rush Kingdom**. It is the central great power of Aoaz. Its current map-design capital is **Parim**.
 
 The **Middle Lands**, previously Rush Land, contain the Middle Kingdom's central plains, forests, mountains, and Great Lake. Associated named regions include **Selen, Kilinti, Kingson, Hiloron, Konori, Hunhun**, and **Herez**. **Aenor Isle** (previously Rush Islands) lies off the west coast and contains **Asgard**.
+
+**The Great Wall of Aenor (owner, 24 October 2026):** the Great Wall of Aenor is an enormous **natural mountain range** that separates the Middle Lands from the [[Aoaz and Its Regions|Magical Lands]]. It is not a built wall or fortified line. Its passes, valleys and snowlines decide the routes between the two lands, and fortified passes or watchtowers may stand only where history explains them.
 
 The older original story recognizes dominions including Selen's rangers, Hiloron's giants, Kilinti's ents and forest peoples, and the riders of **Huhun**. The revised map's country system treats Aenor's surrounding Middle Lands regions as **satellites**. Whether each original dominion is constitutionally a satellite or an internal division remains an open implementation/lore detail.
 

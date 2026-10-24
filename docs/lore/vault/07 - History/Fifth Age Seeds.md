@@ -1,19 +1,19 @@
 ---
 type: idea
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # The Fifth Age: open foundations
 
-The Fourth Age ends with **[[Eindil]] being crowned king of Aenor**. Any Fifth Age remains to be defined. The victory ends [[Afrit]]'s mortal life, removes [[Elzon]] entirely, drives [[Zol]] back, and destroys [[Volgan]]'s manifested body. It does not automatically restore the prosperity or alliances of the previous millennium.
+The Fourth Age ends with **[[Eindil]] being crowned king of Aenor**. Any Fifth Age remains to be defined. The victory ends [[Afrit]]'s mortal life, removes [[Elzon]] entirely, drives back the most loyal servant of [[Zol]] and his dead, and destroys [[Volgan]]'s manifested body. It does not automatically restore the prosperity or alliances of the previous millennium.
 
 ## Established consequences
 
 - The Middle Lands have been devastated by simultaneous invasions and supernatural war.
 - The West Lands, North Lands, East Lands and other independent regions retain political claims and grievances despite temporary wartime cooperation.
 - [[Lorien]], [[Varner]], [[Horos]], and [[Golbran]] have died.
-- A number of other ancient spirits and lords fall in the struggle against Zol.
+- A number of other ancient spirits and lords fall in the struggle against Zol's most loyal servant and his dead (corrected 24 October 2026).
 - Zol remains an Old God, constrained by the Fading but not slain.
 - Eindil possesses or wears Roka's [[Necklace of the Abyss]], whose long-term effects remain unknown.
 

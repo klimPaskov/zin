@@ -1,14 +1,14 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # The Fourth Age of Aoaz
 
 *The Long Peace, the Kingdom Behind the Throne, the Journey of Eindil, and the War of the Last Crowns*
 
-> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider.
+> **Status:** The core history in this chronicle comes from the world creator's account of 17 October 2026 and is established ZIN lore. Names, dates, dialogue, subsidiary characters, precise magical mechanisms, and military explanations devised to connect that account are **proposed expansions** until approved. The reference map depicts the Fourth Age, but the central ocean between the West Lands and Middle Lands should be wider. The owner's corrections of 24 October 2026 apply throughout: Zol does not appear in the War of the Last Crowns, where his most loyal servant, a Great Spirit, takes the field instead.
 
 ## Prologue: the peace that followed Elzon
 
@@ -190,27 +190,27 @@ Eindil returned to the battlefield and broke the southern host. He destroyed com
 
 This time Eindil's strength exceeded what Volgan could withstand. He drove the blue sword through Volgan. The Great Spirit's visible body broke apart, releasing a violent burst of magic that shattered much of the command structure of his host. His servants screamed and fled. Some supernatural bonds sustaining the southern army collapsed. **Volgan's physical manifestation is destroyed.** Whether his underlying Great Spirit essence perishes completely is deliberately left open, since unlike Elzon his absolute death has not yet been explicitly established.
 
-The victory did not end the battle. Zol himself came forth.
+The victory did not end the battle. Zol's most loyal servant came forth.
 
-## XIII. The Old God beneath the black sky
+## XIII. The servant beneath the black sky
 
-Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise.
+Zol had been present in Aoaz long before Aen or Volgan. The Fading had made the ancient Old God unable to take ordinary physical form. Aoaz's local magic was hostile to his nature, and maintaining a presence there required the slow feeding of servants. His power had grown over ages, including through the spiritual consumption of Elzon, but remained difficult to exercise. **Zol himself did not take the field (corrected 24 October 2026).** The being who came forth was **his most loyal servant, a Great Spirit**. Who that servant is remains open and is not invented here (Q-03 in [[Open Questions]]).
 
-**Proposed explanation for this exceptional manifestation:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces temporarily aligned enough of Aoaz's magic for Zol to embody a fraction of himself. This cost him strength and could not last indefinitely. He appeared in a form that the mortal witnesses could perceive, not in the fullness of his unfaded cosmic existence.
+**Proposed explanation for the servant's strength:** the immense death of the War of the Last Crowns, ancient routes of power prepared by Zol's servants, and the breaking of Volgan's summoned forces let the servant carry an unusual measure of Zol's death-magic onto the field. This cost strength and could not last indefinitely.
 
-Eindil charged. Zol stopped him with one finger, took Horos's sword, and crushed it into glittering shards. He seized Eindil by the throat and began drawing out the combined gifts of the New Gods. The power in Eindil's armor dimmed. With his remaining strength he caught a shard of the shattered blade and drove it into the body Zol had made.
+Eindil charged. The servant stopped him with one finger, took Horos's sword, and crushed it into glittering shards. It seized Eindil by the throat and began drawing out the combined gifts of the New Gods. The power in Eindil's armor dimmed. With his remaining strength he caught a shard of the shattered blade and drove it into the servant.
 
-The fragment still carried Glernaen's power through Glo. The wound did not kill Zol, but destabilized the form he had struggled to create. A storm swept across Aoaz and the sky darkened. Zol struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
+The fragment still carried Glernaen's power through Glo. The wound did not kill the servant, but loosened its hold on the power it carried. A storm swept across Aoaz and the sky darkened. The servant struck back with terrible force. Eindil fell, gravely wounded, while Zol's dead overwhelmed the remaining defenders.
 
-At last **Lorien** arrived with Gala elves and some of the great lords and spirits who had survived the long history since Dardan. They had not come to restore Aenoran empire. They came because an Old God's victory would destroy the freedom of the living, elves and men alike. The oldest warriors spent the remnants of their own power holding the black presence back. Several great spirits were destroyed or broken. Lorien challenged Zol directly and died in the struggle.
+At last **Lorien** arrived with Gala elves and some of the great lords and spirits who had survived the long history since Dardan. They had not come to restore Aenoran empire. They came because a victory for the Old God's servant would destroy the freedom of the living, elves and men alike. The oldest warriors spent the remnants of their own power holding the black presence back. Several great spirits were destroyed or broken. Lorien challenged the servant directly and died in the struggle.
 
-Their sacrifice forced the embodied Old God to expend more power than he could sustain. Zol withdrew into the darkness of his domain, leaving an enormous wasteland and a continent full of dead. He was wounded and constrained, not permanently destroyed. His remaining hosts lost coherence or withdrew from the immediate field. When surviving soldiers helped Eindil to his feet, there was no longer a serious doubt among the people present that he had earned the crown of Aenor.
+Their sacrifice forced the servant to expend more power than it could sustain. The servant withdrew into the darkness of Zol's domain, leaving an enormous wasteland and a continent full of dead. It was wounded, not destroyed. Zol's remaining hosts lost coherence or withdrew from the immediate field. When surviving soldiers helped Eindil to his feet, there was no longer a serious doubt among the people present that he had earned the crown of Aenor.
 
 ## XIV. The second betrayal
 
-But the fourth age had not ended. Afrit returned from the East Lands with a new eastern host. He had watched the destruction of Volgan and Zol's withdrawal, and he believed Eindil's wounds had finally created the opportunity he needed. He demanded that the exhausted kingdoms recognize him as ruler of both East and Middle Lands.
+But the fourth age had not ended. Afrit returned from the East Lands with a new eastern host. He had watched the destruction of Volgan and the withdrawal of Zol's servant, and he believed Eindil's wounds had finally created the opportunity he needed. He demanded that the exhausted kingdoms recognize him as ruler of both East and Middle Lands.
 
-A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Aoaz. Afrit found Eindil weakened by the struggle against Zol. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
+A further battle followed between Afrit's eastern coalition and the defenders who had just fought for Aoaz. Afrit found Eindil weakened by the struggle against Zol's servant. The two brothers confronted one another in the fighting near a high cliff. Afrit severed Eindil's arm, drove a blade through his body, and told him that he had hated him since their father's refusal. He cast him over the edge and believed him dead.
 
 With Eindil gone, Afrit seized the capital once more. He proclaimed himself king over Aenor, the East Lands, and ultimately every people of Aoaz. That proclamation was larger than the territory he actually controlled, but his surviving army and his court treated it as a universal claim. His old council resumed its work, and opposition was punished.
 
@@ -218,7 +218,7 @@ With Eindil gone, Afrit seized the capital once more. He proclaimed himself king
 
 ## XV. The palace of the false god
 
-Eindil entered the royal palace in battered armor, missing an arm and bearing wounds that would have killed most men. Horos's blue sword had been destroyed by Zol, so he carried a simpler replacement weapon. He understood now that Afrit's strength depended on objects, accumulated worship, and the prepared places where his magic was strongest. He could not hope to overpower every defense directly.
+Eindil entered the royal palace in battered armor, missing an arm and bearing wounds that would have killed most men. Horos's blue sword had been destroyed by Zol's servant, so he carried a simpler replacement weapon. He understood now that Afrit's strength depended on objects, accumulated worship, and the prepared places where his magic was strongest. He could not hope to overpower every defense directly.
 
 Alleria of Selen had already reached the palace with allies from the remaining resistance. Her bow gave Eindil openings he could not make alone. Golbran, who had survived Varner's last stand in a greatly weakened condition, followed secretly through old service passages. He had recovered enough to use one final working, but not enough to survive it.
 
@@ -240,11 +240,11 @@ He took the Necklace of the Abyss and put it around his own neck. The act was ne
 
 ## XVI. The king of men
 
-Eindil was crowned King of Aenor. His claim came from his descent as son of Ein and grandson of Aen, but his subjects also knew what he had done. His coronation was attended by survivors whose banners had recently faced one another across battle lines. The ceremony did not erase their grievances. Among the witnesses were envoys, wounded soldiers and families searching for those who would never return. He had ended conflicts in the west, crossed the southern seas, won Glo through the sacrifice of Horos, resisted Volgan and Zol, and destroyed Afrit, the brother who had stolen his future.
+Eindil was crowned King of Aenor. His claim came from his descent as son of Ein and grandson of Aen, but his subjects also knew what he had done. His coronation was attended by survivors whose banners had recently faced one another across battle lines. The ceremony did not erase their grievances. Among the witnesses were envoys, wounded soldiers and families searching for those who would never return. He had ended conflicts in the west, crossed the southern seas, won Glo through the sacrifice of Horos, resisted Volgan and Zol's servant, and destroyed Afrit, the brother who had stolen his future.
 
 He inherited a kingdom that had been occupied more than once in a single war, a capital full of ruins, an exhausted army, and foreign peoples who had alternately invaded and helped defend it. A number of western, northern, and eastern soldiers had fought beside him. Their participation did not make them his subjects. The old human divisions remained, and the surviving kingdoms would need treaties instead of forced submission.
 
-Aenor now had a rightful king, but its victories had been costly. Varner, Horos, Golbran, and Lorien were dead. The New Gods had spent part of their power to restore their champion. The great magical blade had been broken. Volgan's visible form had been destroyed, but the condition of his surviving spiritual essence remained unknown. Zol had withdrawn after a rare and devastating manifestation, not been slain. The Necklace of the Abyss remained in human hands.
+Aenor now had a rightful king, but its victories had been costly. Varner, Horos, Golbran, and Lorien were dead. The New Gods had spent part of their power to restore their champion. The great magical blade had been broken. Volgan's visible form had been destroyed, but the condition of his surviving spiritual essence remained unknown. Zol's servant had withdrawn wounded, not been slain, and Zol himself had never taken the field. The Necklace of the Abyss remained in human hands.
 
 **The Fourth Age ends with Eindil's coronation.** The form, title, and promises of the Fifth Age have not been established. Peace cannot be assumed merely because a rightful king has returned.
 
@@ -270,8 +270,8 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 - Aen's blood explains Afrit's exceptional original nature, but divinity bestowed by the Holy Seven is a separate cosmic order.
 - Glernaen is a real New God of Power and Wisdom. Horos is a Great Spirit who safeguards Glo, the crystal at his heart.
 - The Castle Yeldenne encounter is in the Cold Lands. Afrit wounds Horos mortally, Eindil wounds Afrit, Afrit flees, and Horos gives Glo and his sword to Eindil before turning to dust.
-- Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
-- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol's own physical appearance is rare and temporary because of the Fading.
+- Lorien helps reveal Eindil's identity, equips his voyage, and ultimately dies opposing Zol's most loyal servant. The Gala elves' earlier estrangement from Aenor after Edran's mistake remains historically important.
+- Zol's directly sustained dead cannot be permanently defeated by mundane arms. The magic of Glo and the New Gods can destroy them. Zol does not appear in the War of the Last Crowns; the being who appears is his most loyal servant, a Great Spirit, whose identity is open (corrected 24 October 2026).
 - Volgan is defeated by Eindil with the aid of the New Gods. His incarnation collapses. His final spiritual fate is unresolved.
 - Varner dies in the final war. Golbran spends nearly all his magical strength defending Varner, survives that event, and finally dies giving Eindil his remaining life after Afrit's defeat.
 - Afrit briefly becomes king of an eastern coalition after abandoning Aenor. His title does not mean every eastern kingdom submits to him.
@@ -286,7 +286,7 @@ In the example Fourth Age, peace is strongest in years 1 to approximately 1,000,
 4. Choose the full course of the Third Age's 1,200-plus years. A 1,260-year period must feature generations of human resistance and intervals of stability, not one continuous final campaign.
 5. Place the Castle of Yeldenne precisely on the Cold Lands map, and place Dardan and the late battlefields on a more detailed Middle Lands map.
 6. Develop the Gala elven history after Lorien's death and what Varner's death means for the Magical Lands.
-7. Decide what, if anything, survives of Volgan after the destruction of his manifested form, and what long-term damage Zol suffered.
+7. Decide what, if anything, survives of Volgan after the destruction of his manifested form, and what long-term damage Zol's servant suffered.
 8. Clarify Glo's continuing power after the sword shatters and the gods' one-time intervention, and why the gods cannot simply repeat their rescue.
 9. Decide what becomes of the immortal thief, Afrit's human collaborators, eastern rulers who backed him, the exiled Westerners, and the council in Aenor.
 10. Determine whether Eindil's use of the Necklace of the Abyss has a price in the Fifth Age.

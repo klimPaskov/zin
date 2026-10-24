@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # The Third Age of Aoaz
@@ -33,6 +33,6 @@ The above year bands, institutional names and techniques are **proposals**, not 
 
 An army of fading corpses could not simply remain at full size for twelve centuries. Elzon therefore rotates hosts through regions near his sources of power, raises new dead from campaigns, appoints living provincial rulers and relies on orc and goblin garrisons. Some lands even achieve ordinary commerce under oppressive taxes. Rebel communities can be defeated without being completely eradicated, enabling repeated wars across generations. Institutions and defensive strategies evolve on both sides.
 
-Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Aoaz|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol, Volgan, and Afrit.
+Elzon's fall follows from his inability to transform Aenor's magical environment before his defenses collapse. Varner weakens the curse at the end, while Afrit prepares to inherit the population's gratitude and political dependence. During [[The Fourth Age of Aoaz|the Fourth Age]], Varner and Golbran survive for centuries longer and finally die during the last war involving Zol's forces, Volgan, and Afrit.
 
 [[Third Age Canon Register]] · [[Elzon]] · [[Varner]] · [[Golbran]] · [[The Last Tithe]] · [[Afrit]]

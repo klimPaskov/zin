@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Aoaz Timeline
@@ -21,7 +21,7 @@ updated: 2026-10-18
 | Fourth Age, middle | Established broad placement | Afrit effectively directs kings and government through a council and servants. |
 | Fourth Age, late | Established | Afrit steals Roka's necklace through a thief, accumulates artifacts, murders the Golden King and rules openly under a human public name. |
 | Fourth Age, late | Established | Eindil awakens in Cold Lands, travels West and South, meets Lorien, and receives Glo from dying Horos at Yeldenne. Afrit flees after being wounded. |
-| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol withdraws after Lorien's sacrifice. Varner dies. |
+| Fourth Age, final wars | Established | West invades, North breaks away, East attacks, Volgan marches and Zol's dead surge. Eindil defeats Volgan's manifested body, Zol's most loyal servant, a Great Spirit, withdraws after Lorien's sacrifice; Zol himself does not appear (corrected 24 October 2026). Varner dies. |
 | Fourth Age, final struggle | Established | Afrit returns from Eastern dominion, wounds and casts down Eindil, then is defeated after artifacts are stripped away with Alleria and Golbran's help. Golbran dies. |
 | Fourth Age, end | Established | Eindil, wearing the Necklace of the Abyss, returns and is crowned King of Aenor. |
 

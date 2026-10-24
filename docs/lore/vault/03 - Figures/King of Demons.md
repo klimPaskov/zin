@@ -1,12 +1,12 @@
 ---
 type: character
 status: mixed
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # King of Demons
 
-**Established:** A **King of Demons** resides in the southern [[Nether]] of the [[Volgans Dead Lands|Dead Lands]]. His name, powers, kind of demon, and relationship with [[Volgan]], [[Elzon]], [[Afrit]], and [[Agon]] are open.
+**Established:** A **King of Demons** resides in the southern [[Nether]] of the [[Volgans Dead Lands|Dead Lands]]. His name, powers, kind of demon, and relationship with [[Volgan]], [[Elzon]], [[Afrit]], and [[Agon]] are open. His name is tracked as Q-07 in [[Open Questions]].
 
 The title implies a ruler within demonic society. It does not establish that all demons in the universe, all Netherborn, or all demons serving other powers are subject to him. Agon is not confirmed as this king.
 

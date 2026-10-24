@@ -1,7 +1,7 @@
 ---
 type: reference
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Canon Policy
@@ -30,7 +30,7 @@ updated: 2026-10-18
 
 ## Metaphysical distinctions
 
-- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. His late Fourth Age body is exceptional, temporary and costly.
+- [[Zol]] remains immensely powerful and very slowly gains power, but the Fading and Aoaz's local magic constrain manifestation. He does not take a body or appear in the War of the Last Crowns; the being who appears there is his most loyal servant, a Great Spirit, whose identity is open (corrected 24 October 2026).
 - Great Spirit, Lesser Spirit, New God, Old God and Great Folk are distinct ranks or orders. Sovereign Spirit is not a separate rank.
 - [[Afrit]] is publicly worshipped as a New God and effectively attains godlike power. Whether he belongs to the original divinity created by the Holy Seven remains undetermined.
 - [[Elzon]] is a Great Spirit and Great Necromancer. He permanently dies after the Third Age. [[Volgan]] loses his manifested body in the Fourth Age, but the complete destruction of his essence has not yet been established.
@@ -45,3 +45,15 @@ The original compendium is unchanged in the Sources folder, and the Fourth Age m
 ## Character naming, 18 October 2026
 
 **Eindil** is the canonical name for the son of Ein, grandson of Aen, and brother of Afrit. The earlier spelling is archived for source fidelity. Current narrative and links should use Eindil.
+
+## Corrections, 24 October 2026
+
+The world creator's corrections of 24 October 2026 are recorded in [[Names and Retcons#Corrections of 24 October 2026]] and their open points in [[Open Questions]].
+
+- The main setting is **Aoaz**. **Erdae** names only a small neighbouring continent.
+- The **Great Wall of Aenor** is an enormous natural mountain range between the Middle Lands and the Magical Lands, not a built wall.
+- Aoaz has **twelve New Gods**, and the twelve months are named after them, one per month. [[Glernaen]] is the mightiest. Their names, domains and the purpose of twelve are open (Q-01), as is Afrit's relation to them (Q-02).
+- [[Zol]] does not appear in the War of the Last Crowns. His most loyal servant, a Great Spirit, appears instead (identity open, Q-03).
+- **Bastian** is a famous wizard of men; [[Varner]] is one practitioner among many traditions (Q-09).
+- **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz; not every devil served Zol (Q-07).
+- **Vez'nan** is an old name of [[Volgan]]. **Edvoid** is to receive a new name (name to be replaced, Q-10).

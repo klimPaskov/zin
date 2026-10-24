@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Golbran
@@ -10,7 +10,7 @@ updated: 2026-10-18
 
 Golbran plays a decisive part in Afrit's eventual death. He uses magic to remove Roka's Necklace of the Abyss from Afrit, leaving the god-king mortal and vulnerable. After Eindil kills Afrit, Golbran transfers his last remaining life and magic to Eindil, saving him at the price of his own death.
 
-**Continuity decision offered as a proposal:** when Varner dies resisting Zol, Golbran makes an apparent or incomplete sacrifice by exhausting most of his magic, collapses and is believed dead, but survives with a small remaining reserve. He spends that last reserve in the final palace battle. This honors both sacrifice scenes without bringing him back from an established literal death.
+**Continuity decision offered as a proposal:** when Varner dies resisting Zol's forces, Golbran makes an apparent or incomplete sacrifice by exhausting most of his magic, collapses and is believed dead, but survives with a small remaining reserve. He spends that last reserve in the final palace battle. This honors both sacrifice scenes without bringing him back from an established literal death.
 
 The owner also used a variant name **Gorbat** in recounting the final sacrifice and requested another name. **Golbran** is retained consistently for the same already established character rather than introducing a new creature. The name itself can be reconsidered later if desired.
 

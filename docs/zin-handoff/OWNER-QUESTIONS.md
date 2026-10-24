@@ -1,5 +1,36 @@
 # Questions for the owner
 
+## Answers (owner, 24 October 2026, in the interactive question round)
+
+Every question below was answered on 24 October 2026. The answers are owner decisions; they are recorded as K9 to K26 in `docs/specs/INTEGRATION_DECISIONS.md`.
+
+| Id | Answer |
+| --- | --- |
+| Q-01 | The twelve New Gods exist to answer the **twelve needs of mortals**. |
+| Q-02 | The months honour the twelve; **Afrit's cult adds a feast, not a month**. |
+| Q-03 | Zol's most loyal servant, the Great Spirit who appears in the War of the Last Crowns, is **Edvoid** (who is renamed under Q-10); "former minion" is read as an old title. |
+| Q-04 | ZIN's own map source is **the full drawing** with the recorded per-sheet transforms. In addition the owner directed: "Try many different maps from the web. Like at least 100 different maps and each time you fix any defects and improve the tool more and more until its like extremely reliable" (passed to the MCP worker as request ZR-3). |
+| Q-05 | **Hirolon**, a **sovereign** giant kingdom that treats with Aenor; Hiloron is kept as the former label. |
+| Q-06 | The small folk get **original names** for the people and their homeland; "hobbit" and "the Shire" remain only as former labels. |
+| Q-07 | Devils are **bound to their bodies** and can be killed; a slain devil returns only through the lava rite with its skull. The demon king gets an **original name**, not Satan. |
+| Q-08 | Music and sound use **sourced, licensed recordings** with documented licences. |
+| Q-09 | Bastian is a **living human wizard of the Fourth Age**, famous in the Middle Lands, a contemporary of Varner. |
+| Q-10 | The implementation **proposes** Edvoid's new name for the owner's approval; "Ocean of Edvoid" is renamed with it. |
+| Q-11, Q-14 | Names from other fiction or real myth are **replaced with original names without a review round**; old labels stay as former labels. |
+| Q-12 | Answered by Q-03: Edvoid is a being of his own, Zol's servant, not Zol. |
+| Q-13 | Card ages are redone. Old Gods are extremely old, millions of years old, so Zol is very old; Great Spirits can also be very old. **Exact ages are never mentioned anywhere.** |
+| Q-15 | Gunpowder weapons are **common in some realms**. |
+| Q-16 | Gorbatik **is Golbran**; "immortal" means he does not age, so he can still die in the war. |
+| Q-17 | The demon king's seat is **the Nether**; his pacts bind the living, and the souls of the dead remain Zol's. |
+| Q-18 | "Rush" is the old name of Aenor, so Rush Forest is **Aenor Forest**, the largest forest of the Middle Lands. Coniferons are **separate beings from ents**, and ents and Coniferons never share a forest. |
+| Q-19 | Dwarves hold the great ranges of the West and North Lands and the Great Wall range; **dwarf goblins are a people of their own** in the hills of the North Lands near Lerendor. |
+| Q-20 | Gektor is a **spirit-trapper**, a sorcerer-chief who traps and bleeds lesser spirits; killing "Great Spirits" is his boast. |
+| Q-21 | Goblins avoid the deep cold but hold **sheltered valleys** of the southern Cold Lands; Smash and the hobgoblin king rule **their own realms**, not every troll or goblin. |
+| Q-22 | Nazerun is the **old name of Nezer**; Tol Hithi describes the halls beneath Castle Yeldenne, under an original name. |
+| Q-23 | Place the card places that can be placed. The lands south of the South Lands (the home of devils, demons and other evil beings that live in fire and endless suffering) are **reference names only**, off the map. |
+| Q-24 | Demon art may use the card's **original sigils, but not the cross**; rituals may follow the real world a little. |
+| Q-25 | There are also **lesser New Gods**, still stronger than most Great Spirits; the months honour the **main** New Gods. |
+
 Sent 24 October 2026 by the implementation session. Each question blocks only the work named; everything else continues. A proposal is only a suggestion; nothing here is decided until you answer. Reply with the id and your answer (for example "Q-04: proposal" or "Q-01: ...").
 
 | Id | Question | Blocks | Proposal (not decided) |

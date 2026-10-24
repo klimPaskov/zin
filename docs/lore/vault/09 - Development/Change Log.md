@@ -1,7 +1,7 @@
 ---
 type: reference
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Change Log
@@ -38,3 +38,16 @@ Dates, secondary names and magical mechanisms not directly specified by the crea
 - Renamed **Einendil** to **Eindil** at the creator’s request. This affects his personal note, journey note, all current histories, genealogies, Obsidian links, timelines, and consolidated lore.
 - All other character facts are unchanged, including Eindil and Afrit being brothers, both sons of Ein and grandsons of Aen, approximately the same age with no fixed numerical maximum.
 - The older original source and superseded Third Age draft are preserved unchanged as historical documents. Their previous spelling is not current canon.
+
+## 24 October 2026: Owner corrections
+
+The world creator's corrections of 24 October 2026 are recorded in [[Names and Retcons#Corrections of 24 October 2026]], with their open points as Q-01, Q-02, Q-03, Q-07, Q-09 and Q-10 in [[Open Questions]].
+
+- **Canon Policy:** replaced the late Fourth Age Zol body with his most loyal servant and added a summary of the corrections.
+- **Zol in the War of the Last Crowns (K4):** Zol does not appear; his most loyal servant, a Great Spirit, overpowers Eindil, shatters the blue sword, is wounded by a shard and is forced to withdraw by Lorien and ancient spirits. Changed in [[War of the Last Crowns]], [[Zol]], [[Glernaen]], [[Eindil]], [[Lorien]], [[Afrit]], [[Golbran]], [[Horos Sword|Horos's Blue Sword]], [[Castle of Yeldenne and Glo]], [[The Fourth Age of Aoaz]] (section XIII rewritten as *The servant beneath the black sky*), [[Fourth Age Canon Register]], [[Fourth Age Chronology]] (4A 1757), [[The Campaign of 4A 1748]], [[Timeline]], [[Fifth Age Seeds]], [[The Last Battle in the Palace]] and [[The Third Age of Aoaz]].
+- **Great Wall of Aenor (K2):** the Great Wall is a natural mountain range. [[Fourth Age Chronology]] row 4A 96 is now the proposed Accord of the Passes; [[The Campaign of 4A 1748]] drops the Pale March origin; [[Middle Lands and Aenor]] and [[Aoaz and Its Regions]] describe the range.
+- **Twelve New Gods (K3):** [[New Gods]] and [[Glernaen]] record the twelve gods, the months named after them and Glernaen as the mightiest. [[Fourth Age Chronology]] replaces the proposed farming-year month names with numbered months, and the campaign start is now written as the first day of the third month, 4A 1748.
+- **Bastian (K5):** added to [[Varner]].
+- **Devils (K6):** defined in [[Peoples of Aoaz]] and [[Spirits and Their Ranks]]; [[King of Demons]] points to Q-07.
+- **Vez'nan and Edvoid (K7):** no page used Vez'nan. [[Aoaz and Its Regions]] and [[Zols Mistake]] flag Edvoid as a name to be replaced.
+- **Records:** [[Names and Retcons]], [[Open Questions]] and this log. The consolidated [[ZIN Lore Master Compendium]] received the same text changes wherever it repeats a corrected passage.

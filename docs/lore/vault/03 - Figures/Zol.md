@@ -1,7 +1,7 @@
 ---
 type: lore
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Zol
@@ -10,8 +10,8 @@ updated: 2026-10-18
 
 He remains mostly dormant during the early numbered ages. Elzon borrows ancient magic associated with Zol to raise and bind the dead. A favored Third Age explanation has Zol passively consuming the Great Spirit Elzon when he overdraws on that magic. Zol grows stronger, but does not take the field or openly rule the war.
 
-**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. A convergence of immense death and prepared magic permits Zol to **manifest physically for a rare and limited period** in the War of the Last Crowns. He stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the manifestation with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing Zol to withdraw.
+**Late Fourth Age:** Zol's forces emerge from the black north. His dead are more powerful than Elzon's earlier animated corpses because they are directly sustained by an Old God's death-magic. Ordinary weapons cannot permanently kill them. Glo's magic and Horos's sword can destroy them. **Zol does not appear in the War of the Last Crowns (corrected 24 October 2026).** The being who takes the field is **Zol's most loyal servant, a Great Spirit**, whose identity is open (Q-03 in [[Open Questions]]). The servant stops Eindil, crushes the blue sword, and drains New God power from him. Eindil wounds the servant with a divine shard. Lorien and ancient spirits die or exhaust themselves forcing the servant to withdraw.
 
-**Zol is not permanently killed.** His manifestation is a strained projection of a fraction of an Old God's might. Its temporary existence does not remove the Fading and its dependence on Aoaz's special conditions. His servants, realm and further intentions remain important unresolved matters for future ages.
+**Zol is not killed.** He takes no body in the war: the Fading and his dependence on Aoaz's special conditions still bind him, and his servants carry his power onto the field. His servants, realm and further intentions remain important unresolved matters for future ages.
 
 [[The Fading]] · [[Magic and Sustenance in Aoaz]] · [[War of the Last Crowns]] · [[Lorien]]

@@ -1,7 +1,7 @@
 ---
 type: lore
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Varner
@@ -9,6 +9,8 @@ updated: 2026-10-18
 **Established:** Varner is a wise wizard and **Lesser Spirit** of the Magical Lands. He helped the elves and the human resistance withstand Elzon's necromancy throughout the long Third Age. He is capable of undoing the curse binding Elzon's reanimated dead. He has a small purple servant of unknown origin, [[Golbran]]. His wisdom remains influential for centuries afterward.
 
 Late in the Fourth Age Varner accompanies [[Eindil]] and Golbran to Aenor, arriving by dragon during the War of the Last Crowns. He shields living armies from Zol's direct death-magic and spends his last strength to open a path of survival. Varner **dies in the final war** when Zol's forces threaten to overwhelm the defenders. His defense is essential to the time gained for Eindil and the New Gods' intervention.
+
+**Other wizards (owner, 24 October 2026):** Varner is one practitioner among many traditions of magic. **Bastian**, a famous wizard of men, is another well-known wizard of the realm; his nature and era are open (Q-09 in [[Open Questions]]).
 
 The exact ritual he uses, whether any writings survive and the nature of his death are opportunities for further development. His order remains Lesser Spirit despite his importance.
 

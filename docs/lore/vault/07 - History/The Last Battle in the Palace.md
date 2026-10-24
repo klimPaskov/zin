@@ -1,12 +1,12 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # The Last Battle in the Palace
 
-After Zol's withdrawal, [[Afrit]] returns from the East, defeats the badly weakened [[Eindil]], severs one of his arms and casts him off a cliff, believing him dead. He claims Aenor again. Eindil survives through circumstances still open to development, supported in the working narrative by residual Glo magic and [[Alleria of Selen]].
+After the withdrawal of Zol's most loyal servant (corrected 24 October 2026), [[Afrit]] returns from the East, defeats the badly weakened [[Eindil]], severs one of his arms and casts him off a cliff, believing him dead. He claims Aenor again. Eindil survives through circumstances still open to development, supported in the working narrative by residual Glo magic and [[Alleria of Selen]].
 
 Eindil returns to the royal palace severely wounded. Afrit still holds Roka's [[Necklace of the Abyss]] and other artifacts. Alleria fires into Afrit's eye, allowing Eindil to cut off a finger and take a ring. They continue removing his defenses. At last Afrit tries to escape to his private dimension, but Eindil grips the necklace and is carried with him. Afrit nearly kills Eindil. [[Golbran]] removes the necklace with the final remnants of his magic. Without external supports Afrit becomes a vulnerable mortal man. Eindil kills his brother by cutting his throat.
 

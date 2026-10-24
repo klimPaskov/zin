@@ -1,7 +1,7 @@
 ---
 type: artifact
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Horos's Blue Sword
@@ -10,6 +10,6 @@ updated: 2026-10-18
 
 In the last great war, Eindil drives the sword into the earth after descending from a dragon, sending a magical shock wave through [[Zol]]'s direct death-host. Unlike mundane weapons, the sword can permanently disperse those warriors. Later, after the New Gods empower Eindil, he kills Volgan's manifested body with this blade.
 
-Zol then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into Zol's temporary body, and the remaining divine magic injures the manifestation. No intact original blade remains for the final palace fight against Afrit.
+Zol's most loyal servant, a Great Spirit, then stops Eindil, takes the sword and crushes it into fragments. Eindil drives one shard into the servant, and the remaining divine magic injures it (corrected 24 October 2026: Zol himself does not appear in the war). No intact original blade remains for the final palace fight against Afrit.
 
 [[Horos]] · [[Glernaen]] · [[War of the Last Crowns]]

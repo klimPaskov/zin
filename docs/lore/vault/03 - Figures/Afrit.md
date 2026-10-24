@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Afrit
@@ -14,7 +14,7 @@ During the **First Age**, he secretly assembled demons and other beings who help
 
 For most of the **Fourth Age** Afrit governed indirectly through priests, schools, relief institutions, councilors and royal puppets. Prosperity endured during much of this process. He accumulated servants and enchanted artifacts. He sent a master thief to take [[Necklace of the Abyss|Roka's necklace]] and kept his promise of eternal life to the thief. He murdered the [[Golden King]], seized the Aenoran crown openly under his public name, and proclaimed himself King of Men and New God. He continued to build political alliances across East and South Lands as a reserve dominion.
 
-After learning of Eindil's journey, he arrived first at Castle Yeldenne, where Horos named him as Eindil's brother. He fought Horos, mortally wounded him, and was then pierced by Eindil before escaping to his private dimension. In the last war he abandoned Aenor, acquired an eastern kingship, and returned after Zol and Volgan were repelled. He cut off Eindil's arm, struck him, and cast him from a cliff, then took Aenor again and proclaimed universal rule.
+After learning of Eindil's journey, he arrived first at Castle Yeldenne, where Horos named him as Eindil's brother. He fought Horos, mortally wounded him, and was then pierced by Eindil before escaping to his private dimension. In the last war he abandoned Aenor, acquired an eastern kingship, and returned after Volgan and Zol's most loyal servant were repelled (corrected 24 October 2026). He cut off Eindil's arm, struck him, and cast him from a cliff, then took Aenor again and proclaimed universal rule.
 
 Eindil, helped by Alleria and Golbran, stripped away Afrit's rings, wards, and other artifacts. Golbran removed the Necklace of the Abyss, leaving Afrit vulnerable. Eindil **literally kills Afrit** in their last struggle. There is no surviving divine incarnation or resurrection established.
 

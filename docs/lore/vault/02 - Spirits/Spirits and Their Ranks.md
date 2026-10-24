@@ -1,7 +1,7 @@
 ---
 type: lore
 status: mixed
-updated: 2026-10-17
+updated: 2026-10-24
 ---
 
 # Spirits and Their Ranks
@@ -31,3 +31,7 @@ These labels can overlap. They do not automatically introduce new orders between
 ## Open issues
 
 The exact dividing test between Great and Lesser Spirits, their creation, relations to angels and demons, and whether a spirit can change rank remain unwritten.
+
+## Devils
+
+**Established (owner, 24 October 2026):** devils are corrupted **Lesser Spirits** who formerly served an Old God and escaped to Aoaz. Not every devil served [[Zol]]; those who served another Old God came to Aoaz from elsewhere. Demons are a different kind of being, corrupted angels. Whether devils are immortal and can be revived is open (Q-07 in [[Open Questions]]). See [[Peoples of Aoaz#Devils]].

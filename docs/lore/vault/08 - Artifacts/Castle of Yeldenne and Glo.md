@@ -1,7 +1,7 @@
 ---
 type: artifact
 status: mixed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Castle Yeldenne and Glo
@@ -12,7 +12,7 @@ In the late Fourth Age, [[Afrit]] arrives first to claim Glo and introduces hims
 
 With death approaching, Horos tells Eindil the hidden truth of his family and of Glo's earlier rejected claimants. He removes Glo from his chest and places it in Eindil's hands. His form crumbles to dust. Eindil also inherits Horos's blue enchanted sword. The crystal carries Glernaen's power into the final war and later serves as a bridge for the combined New Gods to revive and empower Eindil.
 
-Zol eventually crushes Horos's sword in battle. A fragment of it can still wound Zol's temporary physical manifestation due to the power channeled by Glo.
+Zol's most loyal servant, a Great Spirit, eventually crushes Horos's sword in battle. A fragment of it can still wound the servant due to the power channeled by Glo (corrected 24 October 2026: Zol himself does not appear in the war).
 
 **Open:** The castle's precise location in the Cold Lands, its original construction, the source and limits of Glo, and its fate after Eindil receives the New Gods' power. The exact explanation for why the crystal can be entrusted only to a worthy bearer is a working rule.
 

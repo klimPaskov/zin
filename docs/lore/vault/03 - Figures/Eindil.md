@@ -1,7 +1,7 @@
 ---
 type: lore
 status: established
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # Eindil
@@ -14,7 +14,7 @@ Eindil was held in supernatural sleep for many ages by means not yet canonically
 
 At Yeldenne he learned that the public god-king of Aenor was his brother. [[Horos]], a Great Spirit, gave him [[Castle of Yeldenne and Glo|Glo]], a crystal containing part of New God [[Glernaen]]'s power, and his blue sword. Eindil warned men of the gathering armies, returned with a dragon, [[Varner]] and [[Golbran]], and became the center of the last united defense of Aenor.
 
-He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol crushed Horos's sword and nearly killed him, but Eindil wounded the Old God's temporary incarnation with a fragment. Lorien and ancient allies forced Zol to withdraw. Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
+He defeated Volgan's manifested body after the [[New Gods]] revived him and gave him extraordinary power through Glo. Zol's most loyal servant, a Great Spirit, crushed Horos's sword and nearly killed him, but Eindil wounded the servant with a fragment. Lorien and ancient allies forced the servant to withdraw (corrected 24 October 2026: Zol himself does not appear in the war). Afrit then returned, cut off Eindil's arm and threw him from a cliff. Eindil survived, took on Afrit in the palace with Alleria and Golbran, and killed his brother after removing the artifacts that sustained him.
 
 Golbran gave his life to preserve Eindil. Eindil wore the Necklace of the Abyss and returned to be crowned **King of Aenor**, ending the Fourth Age.
 

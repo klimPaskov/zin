@@ -187,3 +187,21 @@ These are the owner's canonical corrections (record: `docs/zin-handoff/01-CONTEX
 | K6 | **Devils** are corrupted Lesser Spirits who formerly served an Old God and escaped to Aoaz; not every devil served Zol. Their immortality and revival and the demon king's name are owner question Q-07. |
 | K7 | **Vez'nan** (any spelling) is an old name of **Volgan**; every reference means Volgan and the text says Volgan. **Edvoid** gets a new name (owner question Q-10), with the "Ocean of Edvoid" label renamed with it. |
 | K8 | The wider world (Erdu, Dunda, Haven, Cerio, Lao, and Erdae the neighbour) is a layered mystery: authorial truth, local belief and rumour are kept apart, and nothing hidden reaches public text (requirement R-33). |
+| K9 | **The owner's answers of 24 October 2026** (interactive round; full table in `docs/zin-handoff/OWNER-QUESTIONS.md`) override K3, K4, K6 and K7 where they add detail. The rows K10 to K26 restate them as working rules. |
+| K10 | The twelve main New Gods exist to answer the twelve needs of mortals; one month honours each. Lesser New Gods also exist, still stronger than most Great Spirits, and have no month. Afrit's public cult adds a feast, not a month. |
+| K11 | Edvoid, under a new name the implementation proposes for approval, is Zol's most loyal servant, the Great Spirit who appears in the War of the Last Crowns. "Ocean of Edvoid" is renamed with him. |
+| K12 | ZIN's map source is the owner's full drawing with the recorded per-sheet transforms (5,120 x 2,560). The import is hardened on at least 100 maps from the web (MCP request ZR-3). |
+| K13 | Hirolon is spelled Hirolon (former label Hiloron) and is a sovereign giant kingdom. |
+| K14 | The small folk of the hobbit card get original names for the people and their homeland. Names from other fiction or real myth on the drawing and the cards are replaced with original names from the local languages without a review round; former labels are recorded in `docs/lore/names_traceability.md`. |
+| K15 | Devils are bound to their bodies and can be killed; a slain devil returns only through the lava rite with its skull. The demon king has an original name (not Satan); his seat is the Nether; his pacts bind the living, and the dead remain Zol's. |
+| K16 | Music and sound use sourced, licensed recordings with documented licences (master plan P12 is replaced by this). |
+| K17 | Bastian is a living human wizard of the Fourth Age, famous in the Middle Lands, a contemporary of Varner. |
+| K18 | **No exact age of any being is stated anywhere** in game text or lore text. Old Gods are millions of years old and Great Spirits can be very old; card ages are redone as relative age only. |
+| K19 | Gunpowder weapons are common in some realms (the ruleset carries black-powder equipment for those realms). |
+| K20 | Gorbatik is Golbran: he does not age, and he can still die in the War of the Last Crowns. |
+| K21 | Rush is the old name of Aenor: Rush Forest is Aenor Forest, the largest forest of the Middle Lands, home of the Coniferons, a tree people separate from the ents; ents and Coniferons never share a forest. |
+| K22 | Dwarves hold the great ranges of the West and North Lands and the Great Wall range; dwarf goblins are a people of their own in the hills of the North Lands near Lerendor. Goblins avoid the deep cold but hold sheltered valleys of the southern Cold Lands; the troll king Smash and the hobgoblin king rule their own realms only. |
+| K23 | Gektor is a sorcerer-chief who traps and bleeds lesser spirits; his claim to kill Great Spirits is a boast. |
+| K24 | Nazerun is the old name of Nezer; Tol Hithi's halls are those beneath Castle Yeldenne, under an original name. |
+| K25 | Card places that can be placed go on the map (labelled proposed). The lands south of the South Lands, home of devils, demons and other evil beings that live in fire and endless suffering, are reference names only, off the map. |
+| K26 | Demon art may use the card's sigils (the pentagram), never the cross; demonic rites may echo real-world ritual a little. |

@@ -1,12 +1,12 @@
 ---
 type: lore
 status: proposed
-updated: 2026-10-18
+updated: 2026-10-24
 ---
 
 # The Campaign of 4A 1748
 
-> **Status: proposed.** This note describes Aoaz on **1 Thaw, 4A 1748**, the start of play, and how the end of the Fourth Age can unfold from there. The owner fixed the starting situation on 18 October 2026: **the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, and everything seems peaceful.** Established history is marked as such; everything else is a proposal commissioned by the owner on 18 October 2026. Realm-by-realm gameplay detail lives in the ZIN specifications (docs/specs).
+> **Status: proposed.** This note describes Aoaz on **the first day of the third month, 4A 1748**, the start of play, and how the end of the Fourth Age can unfold from there. The owner fixed the starting situation on 18 October 2026: **the Golden King reigns, Eindil has not appeared, Afrit is unrevealed, and everything seems peaceful.** Established history is marked as such; everything else is a proposal commissioned by the owner on 18 October 2026. Realm-by-realm gameplay detail lives in the ZIN specifications (docs/specs).
 
 ## The shape of the world
 
@@ -30,7 +30,7 @@ Beneath the peace, five pressures are building at once. Each is hidden, dismisse
 - **[[The Lost Cause]]**, founded 4A 1741 (proposed date): the King's league against the dark. Its court branch is ceremonial; its frontier companies, rangers and scholars are real (established direction).
 - **[[Afrits Hidden Council]]**: the true government. Chancellor Merovan (proposed) holds the seals of administration. The [[Houses of the First Light]] keep the grain, the hospitals and the rolls (proposed).
 - **The dominions** keep their own lords under the Charters of Parim: Selen's rangers, Kilinti's ents, Hiloron's giants, the riders of Hunhun, Kingson behind the Great Wall, Herez on the southern marches, Asgard on Aenor Isle and the rest (established names, proposed constitution). **Cursed Lands** and **Bloody Forest** reject the crown (established).
-- **The Great Wall of Aenor** runs from the Organ Mountains past Lunhrim and around Kingson, separating the Middle Lands from the Magical Lands (established geography; proposed origin in Elzon's Pale March).
+- **The Great Wall of Aenor** is the enormous natural mountain range that runs from the Organ Mountains past Lunhrim and around Kingson, separating the Middle Lands from the Magical Lands (established geography; established as a natural range by the owner, 24 October 2026). Its passes, valleys and snowlines decide the routes between the two lands. A few passes carry watchtowers and customs posts under the Accord of the Passes of 4A 96 (proposed).
 
 ### The Magical Lands
 
@@ -78,7 +78,7 @@ In the far south-west the **Sunhot elves**, over three metres tall and among the
 
 ### The established path
 
-Play opens in peace. The first crises come from inside the courts, not from the borders. If nobody changes history, the age unfolds as the chronicle says (see [[Fourth Age Chronology]] for proposed dates): Eindil wakes and wins the West's trust; Afrit murders the Golden King and takes the crown; Eindil learns his name from Lorien and receives Glo from Horos; the War of the Last Crowns strikes Aenor from five directions; Afrit flees east; Eindil breaks Volgan's body and Zol is forced back at the cost of Lorien and Varner; Afrit returns, and dies in the palace; Eindil is crowned in 4A 1760 (established outline).
+Play opens in peace. The first crises come from inside the courts, not from the borders. If nobody changes history, the age unfolds as the chronicle says (see [[Fourth Age Chronology]] for proposed dates): Eindil wakes and wins the West's trust; Afrit murders the Golden King and takes the crown; Eindil learns his name from Lorien and receives Glo from Horos; the War of the Last Crowns strikes Aenor from five directions; Afrit flees east; Eindil breaks Volgan's body and Zol's most loyal servant is forced back at the cost of Lorien and Varner (corrected 24 October 2026); Afrit returns, and dies in the palace; Eindil is crowned in 4A 1760 (established outline).
 
 ### Where history can turn
 
