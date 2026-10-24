@@ -1,0 +1,940 @@
+{
+  "version": 1,
+  "region": "tritons_islands",
+  "name": "The Pupor Isles",
+  "overview": "West of the West Lands three arcs of windy, storm-beaten islands curve round an inner sea that the islanders call simply the Pupor, and the islands take their name from it. Their people are seafarers of a Boreal tongue who named the reefs, tides and straits before anyone else; Aenor's First Age ships hired their pilots and copied their reef-names into the first charts, and island ships carried food and wounded for the Grand Alliance where no road could. The plagues of the Second Age emptied whole harbours and let corsair captains take the outer isles, the gales taught the chart-houses to read the names of their drowned each year, and the Necromancer never crossed the wide sea to reach them. Since 4A 702 every crown of Aoaz has sailed by island charts, and since 4A 903 the chart-houses of Adel, Pollos and Raerby have bound themselves by the Pupor Charter. In 4A 1748 the arcs are a crowded sea-world of chart-houses, market isles, broker captains, a sea-king, wreck-right lords, a neutral order of lamp-keepers and corsair havens, poor in land and rich in knowledge, and any fleet that crosses the central sea will need their pilots. Years in the data are one continuous count from the victory of Aen on the proposed lengths of the ages (First Age 1,675 years, Second Age 2,133, Third Age 1,260): 1A 1 is year 1, 2A 1 is 1,676, 3A 1 is 3,809 and 4A 1 is 5,069, so that the campaign year 4A 1748 is 6,816; every entry also carries its date in the Age-and-year form, which is the form the prose uses.",
+  "ages": [
+    {
+      "id": "pi_reef_names",
+      "name": "The Reef-Names",
+      "from": 1,
+      "to": 800,
+      "fromDate": "1A 1",
+      "toDate": "1A 800",
+      "summary": "Island pilots guided the first Aenoran ships through the arcs, and the southerners copied the islanders' names for reefs, tides and straits into their charts; the sea-words of Tritonic were borrowed into every northern tongue with the charts themselves.",
+      "canon": "proposed"
+    },
+    {
+      "id": "pi_alliance",
+      "name": "The Supply Fleets",
+      "from": 801,
+      "to": 1675,
+      "fromDate": "1A 801",
+      "toDate": "1A 1675",
+      "summary": "As Aenor declined the islands traded with whoever came, and when the Grand Alliance gathered against Volgan, island ships kept its armies supplied across the separated seas; the fleet captain Senra of the Pupor Isles is remembered in every chart-house for the supply fleets she brought through.",
+      "canon": "proposed"
+    },
+    {
+      "id": "pi_empty_harbours",
+      "name": "The Empty Harbours",
+      "from": 1676,
+      "to": 2775,
+      "fromDate": "2A 1",
+      "toDate": "2A 1100",
+      "summary": "The plagues of the Long Grief came by ship and killed whole harbours; corsair captains took the emptied isles of the south-west, and in 2A 904 a gale season that sank a third of the fleets of Adel and Raerby began the reading of the Drowned Names.",
+      "canon": "proposed"
+    },
+    {
+      "id": "pi_lamps",
+      "name": "The Lamps of the Passages",
+      "from": 2776,
+      "to": 3808,
+      "fromDate": "2A 1101",
+      "toDate": "2A 2133",
+      "summary": "The chart-houses rebuilt their fleets and quarrelled over reefs, and when a royal Aenoran ship was lost with all hands on the Cursed Square in 2A 1507 the Lamp-House of the Lens was founded to keep the northern passages lit for every ship whatever its flag.",
+      "canon": "proposed"
+    },
+    {
+      "id": "pi_freight",
+      "name": "The Freight Centuries",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "Aenor fell to the Necromancer, but the islands lay beyond his reach across the wide sea; they traded with the West Lands and the Cold Lands, Raerby's broker-captains grew rich on freight, and the wreck-right lords of the storm isles grew rich on the gales.",
+      "canon": "proposed"
+    },
+    {
+      "id": "pi_charts",
+      "name": "The Charts of the Pupor",
+      "from": 5069,
+      "to": 6816,
+      "fromDate": "4A 1",
+      "toDate": "4A 1748",
+      "summary": "After the reef-name quarrels Adel's Chart Hall became the copy-house of record, the islanders charted the Pupor and sold the charts to every crown in 4A 702, and the Pupor Charter of 4A 903 bound the chart-houses together while the corsair isles stayed outside it.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Adel",
+      "tag": "ADE",
+      "founding": {
+        "year": 5456,
+        "date": "4A 388",
+        "story": "For four centuries after the restoration of Aenor the chart-houses of the arcs quarrelled over who had first named which reef, until in 4A 388 the chart-houses of Adel island agreed to copy every chart in one house at Sanderz and to record there the first namer of every reef. The Chart Hall became the copy-house of record for all the isles, and the league of Adel's chart-houses grew round it."
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of the Chart Hall",
+          "from": 5456,
+          "date": "4A 388",
+          "notable": "Elected by Adel's chart-houses from the master-pilots; the Andaios chart-house, which claims Senra of the Pupor Isles among its forebears, has given the Hall the most Speakers."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Copy-House of Record",
+          "year": 5456,
+          "date": "4A 388",
+          "summary": "Adel's chart-houses agreed to copy all charts at Sanderz and to record the first namer of every reef there."
+        },
+        {
+          "name": "The Charts of the Pupor",
+          "year": 5770,
+          "date": "4A 702",
+          "summary": "The Chart Hall finished the charting of the Pupor and sold copies to every crown of Aoaz, and island charts have been the standard of every navy since."
+        },
+        {
+          "name": "The Pupor Charter",
+          "year": 5971,
+          "date": "4A 903",
+          "summary": "Adel, Pollos and Raerby swore the compact that fixes chart dues, wreck-shares and the protection of pilots; the corsair isles stayed outside it."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Benan",
+          "nature": "The corsair haven inside the arcs, which pays tribute to the chart-houses one year and raids them the next."
+        }
+      ],
+      "capital": "Sanderz",
+      "capitalReason": "Sanderz is the best harbour below the Adel Mountains on the sheltered inner shore, the island's richest ground, where the chart-houses first gathered to copy their charts.",
+      "today": "About three hundred thousand people live on Adel island and its districts under the chart-house league. Whoever sits in the Chart Hall decides which crown gets the newest chart, and in a world at peace the Speaker sells to the highest bidder.",
+      "divergence": [
+        {
+          "id": "ade_charts_west",
+          "what": "The Chart Hall sells its newest charts to the western courts.",
+          "consequence": "The Crossing sails with island charts and pilots and loses fewer ships to the wide sea.",
+          "beat": "B20"
+        },
+        {
+          "id": "ade_charts_kept",
+          "what": "The Speaker keeps the newest charts close and sells to nobody in the war.",
+          "consequence": "Every navy sails by old charts, and the island chart-houses become the prize that fleets fight over."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Raerby",
+      "tag": "RAE",
+      "founding": {
+        "year": 4418,
+        "date": "3A 610",
+        "story": "In the centuries when the islands were cut off from Aenor and lived by carrying the West's and the Cold Lands' goods, the shipowners of Ese on the eastern arc grew rich enough to lend ships to others and to settle their quarrels for a fee. In 3A 610 they chose a Captain-Speaker from among themselves to keep the freight-book and the peace of the banks, and Raerby has been an isle of broker-captains ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Captain-Speakers of Ese",
+          "from": 4418,
+          "date": "3A 610",
+          "notable": "Chosen by the shipowners for as long as they keep the freight-book honestly; the Raeros family of Urbolon has held the office longest."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Drowned Names",
+          "year": 2579,
+          "date": "2A 904",
+          "summary": "A gale season sank a third of Raerby's and Adel's fleets, and the chart-houses began reading the names of the lost each year."
+        },
+        {
+          "name": "The Freight-Book",
+          "year": 4418,
+          "date": "3A 610",
+          "summary": "The shipowners of Ese chose their first Captain-Speaker to keep the freight-book and mediate the banks."
+        },
+        {
+          "name": "The Pupor Charter",
+          "year": 5971,
+          "date": "4A 903",
+          "summary": "Raerby swore the Charter with Adel and Pollos, and its broker-captains became the keepers of the Charter's wreck-shares."
+        },
+        {
+          "name": "The Southern Banks Quarrel",
+          "year": 6466,
+          "date": "4A 1398",
+          "summary": "Nondondor's sea-king claimed the Southern Banks, and Raerby's broker-captains, who had settled disputes on the banks for centuries, refused to recognise the claim; the quarrel has not ended."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Nondondor",
+          "nature": "The Southern Banks, claimed by the sea-king since 4A 1398."
+        }
+      ],
+      "capital": "Ese",
+      "capitalReason": "Ese is the drawn harbour on the eastern arc, sheltered by a pond-lagoon behind the town, where the broker-captains could moor more hulls than any other harbour of the arcs could hold.",
+      "today": "About a quarter of a million people live on the eastern arc's north with Urbolon and Lemo under the broker-captains. Raerby mediates the banks, hires out ships and watches Nondondor's fleet more closely than any other.",
+      "divergence": [
+        {
+          "id": "rae_banks_peace",
+          "what": "Raerby brokers a sharing of the Southern Banks that Nondondor accepts.",
+          "consequence": "The oldest quarrel of the arcs ends, and the islands can face the war at sea as one."
+        },
+        {
+          "id": "rae_hulls_hire",
+          "what": "The broker-captains hire their hulls to the Crossing.",
+          "consequence": "The West gains a freight fleet, and Raerby gains the West's gold and Aenor's enmity.",
+          "beat": "B20"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Pollos",
+      "tag": "PLL",
+      "founding": {
+        "year": 5208,
+        "date": "4A 140",
+        "story": "Havnai, the great harbour of the western island's north, had always been where island goods changed hands, and in 4A 140 its guild-masters wrote the market law that every buyer and seller in the harbour swears to and set up the strong-room where the chart-houses keep their coin. Pollos has been the market and treasury of the isles since."
+      },
+      "dynasties": [
+        {
+          "name": "The guild-masters of Havnai",
+          "from": 5208,
+          "date": "4A 140",
+          "notable": "The market is ruled by the guild-masters of its trades; the Polai family, who keep the strong-room, have been first among them for most of its history."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Market Law",
+          "year": 5208,
+          "date": "4A 140",
+          "summary": "The guild-masters of Havnai wrote the market law and opened the chart-houses' strong-room."
+        },
+        {
+          "name": "The Pupor Charter",
+          "year": 5971,
+          "date": "4A 903",
+          "summary": "Pollos swore the Charter with Adel and Raerby and became the treasury that holds its dues."
+        },
+        {
+          "name": "The False Coin",
+          "year": 6356,
+          "date": "4A 1288",
+          "summary": "A ring of corsair coiners passed false silver through the market; the guild-masters hanged them on the quay and since then every coin is weighed at the strong-room door."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Nondondor",
+          "nature": "The southern half of the same island, whose corsairs the market must tolerate and whose king it must humour."
+        }
+      ],
+      "capital": "Havnai",
+      "capitalReason": "Havnai is the one great harbour of the western island, on the Pollos Passage between the western and inner arcs, where ships of every arc meet.",
+      "today": "About a hundred and twenty thousand people live in the north of the western island, with Hesos and Aatah, under the guild-masters. Pollos holds the chart-houses' treasury and sells everything to everyone.",
+      "divergence": [
+        {
+          "id": "pll_treasury_loan",
+          "what": "The guild-masters lend the Charter's treasury to one crown in the war.",
+          "consequence": "That crown's fleet is paid for a year, and every chart-house asks whether the Charter's coin was Pollos's to lend."
+        },
+        {
+          "id": "pll_market_closed",
+          "what": "Pollos closes its market to a crown that attacks the isles.",
+          "consequence": "The aggressor loses the islands' trade and the islands lose their best customer."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Nondondor",
+      "tag": "NND",
+      "founding": {
+        "year": 2435,
+        "date": "2A 760",
+        "story": "The southern half of the western island was a nest of corsair captains after the Empty Harbours, until in 2A 760 a captain named Kusion of the Kilai beat the others one by one, hanged those who would not swear and took the title of sea-king at the cliff harbour of Kudaini. He made his corsairs fishers in peacetime and his fishers corsairs in war, and his line is the only hereditary crown of the arcs."
+      },
+      "dynasties": [
+        {
+          "name": "The Kilai sea-kings of Kudaini",
+          "from": 2435,
+          "date": "2A 760",
+          "notable": "Descended from Kusion, the first sea-king; the crown passes to the eldest son or daughter who has commanded a ship, and the king grants a sailing-writ to every corsair in his waters or hangs him."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Sea-King",
+          "year": 2435,
+          "date": "2A 760",
+          "summary": "Kusion of the Kilai beat the corsair captains of the southern isle and took the title of sea-king at Kudaini."
+        },
+        {
+          "name": "The Southern Banks Claimed",
+          "year": 6466,
+          "date": "4A 1398",
+          "summary": "The sea-king claimed the Southern Banks fishing grounds for his crown, and the quarrel with Seite and Raerby began."
+        },
+        {
+          "name": "The Hanging Season",
+          "year": 6698,
+          "date": "4A 1630",
+          "summary": "After the burning of Straton the sea-king hanged forty corsairs who had sailed without his writ, so that the western fleets would not come for Kudaini next."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Raerby",
+          "nature": "The Southern Banks."
+        },
+        {
+          "with": "Seite Islands",
+          "nature": "The Southern Banks, which Seite calls its fathers' banks."
+        }
+      ],
+      "capital": "Kudaini",
+      "capitalReason": "Kudaini is the sea-king's cliff harbour on the island's south shore, which the first king took because its cliffs could not be stormed and its harbour faced the banks.",
+      "today": "About ninety thousand corsairs and fishers live on the south of the western island and on Melkos under the sea-king. Nondondor presses its banks claim whenever its fleet is stronger than Raerby's, and grants writs or hangs corsairs as suits the season.",
+      "divergence": [
+        {
+          "id": "nnd_press_banks",
+          "what": "The sea-king seizes the Southern Banks by force.",
+          "consequence": "The arcs go to war with themselves, and the island fleets are spent before the war at sea begins."
+        },
+        {
+          "id": "nnd_hang_corsairs",
+          "what": "The sea-king hangs every corsair who sails without his writ and joins the Pupor Charter.",
+          "consequence": "The arcs are safer than they have been in an age, and the corsair havens of the outer arc stand alone."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Fineger",
+      "tag": "FNG",
+      "founding": {
+        "year": 5588,
+        "date": "4A 520",
+        "story": "The northern isles of the arcs are cold, poor and full of reefs, and their folk lived by kelp, sheep and piloting other men's ships through waters only they knew. In 4A 520 the pilots of the Fineger Islands, Ziza and the Kile Islands met at the harbour of Kapai and chose a Speaker to set the pilots' fee for every ship that enters their waters, and the pilots' isles have kept their Speaker since."
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of the pilots",
+          "from": 5588,
+          "date": "4A 520",
+          "notable": "Chosen by the master-pilots; the Finon family of the Kile Islands has given the most Speakers, and every Speaker must have piloted a ship through the Poolho ice."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Pilots' Fee",
+          "year": 5588,
+          "date": "4A 520",
+          "summary": "The pilots of the northern isles chose their Speaker at Kapai and fixed one fee for every ship."
+        },
+        {
+          "name": "The Norrai Pilotage",
+          "year": 6534,
+          "date": "4A 1466",
+          "summary": "Fineger and the harbour council of Vindael agreed that each would pilot the other's ships through its own waters for a fixed share, the oldest standing compact between the isles and the Cold Lands."
+        },
+        {
+          "name": "The Kelp Famine",
+          "year": 6669,
+          "date": "4A 1601",
+          "summary": "A cold summer killed the kelp beds of the Kile Islands; Raerby's brokers carried grain north on credit and the pilots worked off the debt for ten years."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Kapai",
+      "capitalReason": "Kapai, the capes, is the pilots' harbour at the meeting of the northern channels, where every ship coming into the arcs from the north must stop to take a pilot aboard.",
+      "today": "About eighty thousand pilots, kelp-farmers and shepherds live on the cold northern isles. Fineger's pilots know the northern waters better than anyone alive, and any fleet that crosses toward the Cold Lands or the central sea from the north will need them.",
+      "divergence": [
+        {
+          "id": "fng_pilots_crossing",
+          "what": "The Speaker hires Fineger's pilots to the Crossing.",
+          "consequence": "The western fleets cross with fewer losses, and the pilots' isles are counted among the West's friends.",
+          "beat": "B20"
+        },
+        {
+          "id": "fng_pilots_withheld",
+          "what": "The pilots refuse every war fleet.",
+          "consequence": "Northern waters become a graveyard for fleets that try them without pilots, and the isles' neutrality is tested by whoever loses ships there."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Halenor",
+      "tag": "HLN",
+      "founding": {
+        "year": 4088,
+        "date": "3A 280",
+        "story": "On the storm isles of the outer south the gales throw more ships ashore than anywhere else in the arcs, and in 3A 280 the island chiefs of Halenor swore that whatever the storm brings to a shore belongs to the lord of that shore. Lusai of the Mondon, the first to hold the wreck-right, built the harbour of Sonrale, and her line has argued ever since over whether its lords are wreckers or wayfinders."
+      },
+      "dynasties": [
+        {
+          "name": "The Mondon wreck-lords of Sonrale",
+          "from": 4088,
+          "date": "3A 280",
+          "notable": "Descended from Lusai of the Mondon; the lordship passes to the eldest child, and each lord swears at the shore either to light the shore-fires or to leave them dark."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Wreck-Right Sworn",
+          "year": 4088,
+          "date": "3A 280",
+          "summary": "The chiefs of the storm isles swore that the storm's gifts belong to the lord of the shore."
+        },
+        {
+          "name": "The Lamp Quarrel",
+          "year": 6136,
+          "date": "4A 1068",
+          "summary": "The Lamp-House of the Lens asked Halenor to light its shores in the gale season; the wreck-lord refused, and the Lamp-House has never forgiven it."
+        },
+        {
+          "name": "The Wayfinder Lord",
+          "year": 6758,
+          "date": "4A 1690",
+          "summary": "A wreck-lord of Sonrale lit the shore-fires every gale season of his life and saved more ships than his forebears had wrecked; his heirs went back to the old ways."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "The Lens",
+          "nature": "Lamps against wreck-right since 4A 1068."
+        }
+      ],
+      "capital": "Sonrale",
+      "capitalReason": "Sonrale is the harbour of the storm isles that the gales cannot reach, behind a reef that breaks every wave, so that the wreck-lords can wait out the storm and go out for the wrecks when it ends.",
+      "today": "About eighty thousand people live on Halenor, Kilos, Tined, Lunnai and the Surla Islands under the wreck-lord. Each gale season brings wrecks ashore, and each lord chooses again whether to light the shore-fires.",
+      "divergence": [
+        {
+          "id": "hln_wayfinders",
+          "what": "The wreck-lord swears to be a wayfinder and lights the shores.",
+          "consequence": "The storm isles become the safest route of the outer arc, and the Lamp-House at last counts Halenor a friend."
+        },
+        {
+          "id": "hln_wreck_fleet",
+          "what": "The wreck-lord darkens the shores against a war fleet in the gale season.",
+          "consequence": "A fleet that tries the storm isles in autumn can be broken without a single island ship leaving harbour."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Windy Lands",
+      "tag": "WND",
+      "founding": {
+        "year": 6078,
+        "date": "4A 1010",
+        "story": "The windward capes of the eastern arc's south take the full force of the gales, and their folk fish from kites and small boats and take whatever the storm drives onto their rocks. In 4A 1010 the cape-lords of Arpos, Sondor, Cheko and Amarelo met at Audailon and swore a league so that no outsider could play one cape against another, and they have kept it, quarrelsomely, ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The cape-lords' league",
+          "from": 6078,
+          "date": "4A 1010",
+          "notable": "Four cape-lords sit in council at Audailon and choose one of themselves to speak for the league each gale season; the lords of Sondor have spoken most often."
+        }
+      ],
+      "events": [
+        {
+          "name": "The League of the Capes",
+          "year": 6078,
+          "date": "4A 1010",
+          "summary": "The cape-lords of the windward capes swore their league at Audailon."
+        },
+        {
+          "name": "The Kite Fleet",
+          "year": 6423,
+          "date": "4A 1355",
+          "summary": "Fishers of the capes learned to fish from great kites flown from small boats, which let them work the windward banks that no other islanders could; the kites are on the league's banner."
+        },
+        {
+          "name": "The Raerby Wreck",
+          "year": 6658,
+          "date": "4A 1590",
+          "summary": "A Raerby freight fleet was driven onto the capes and the cape-lords took its cargo by wreck-right; Raerby demanded it back and was paid a third."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Raerby",
+          "nature": "Neighbours on the same arc, whose wrecks the capes take and whose brokers the capes owe."
+        }
+      ],
+      "capital": "Audailon",
+      "capitalReason": "Audailon is the windward capes' one harbour with shelter on both sides, where the four cape-lords can meet without any of them sailing into another's waters.",
+      "today": "About eighty thousand kite-fishers and wreckers live on the windward capes. The league pays tribute to strong fleets, raids weak ones, and never agrees on anything quickly.",
+      "divergence": [
+        {
+          "id": "wnd_charter",
+          "what": "The cape-lords join the Pupor Charter.",
+          "consequence": "The eastern arc becomes one sea of the Charter, and corsairs lose their last friends on it."
+        },
+        {
+          "id": "wnd_raid_convoys",
+          "what": "The cape-lords raid the war fleets' supply ships.",
+          "consequence": "Every crown that sends ships past the capes must escort them or lose them."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Seite Islands",
+      "tag": "SEI",
+      "founding": {
+        "year": 3015,
+        "date": "2A 1340",
+        "story": "The four Seite isles and Mondeluz have fished the same banks for as long as their songs go back, and in 2A 1340 every household of the isles met on the moot isle of Vesko and swore that the banks their fathers fished belong to their children. The isle moot has met every year since, and every household speaks in it."
+      },
+      "dynasties": [
+        {
+          "name": "The isle moot of Vesko",
+          "from": 3015,
+          "date": "2A 1340",
+          "notable": "No lord rules Seite; the moot of every household chooses a moot-reader each year to keep its decisions, and the moot-reader stands under the reef-shrine when he reads them."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Fathers' Banks",
+          "year": 3015,
+          "date": "2A 1340",
+          "summary": "The households of the Seite isles swore at Vesko that their fathers' banks belong to their children."
+        },
+        {
+          "name": "The Reef-Shrines Raised",
+          "year": 3275,
+          "date": "2A 1600",
+          "summary": "The moot raised shrines on the reefs where the first pilots were spared, and island pilots of every arc still leave a token there."
+        },
+        {
+          "name": "The Southern Banks Claimed",
+          "year": 6466,
+          "date": "4A 1398",
+          "summary": "Nondondor's sea-king claimed the Southern Banks, which Seite counts among its fathers' banks; the moot has sent his envoys home every year since."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Nondondor",
+          "nature": "The Southern Banks."
+        }
+      ],
+      "capital": "Vesko",
+      "capitalReason": "Vesko is the moot isle at the centre of the four Seite isles, which every household can reach by small boat in a calm day.",
+      "today": "About seventy thousand fishers live on the four Seite isles and Mondeluz. The moot keeps the reef-shrines, refuses the sea-king every year and knows that its fishers alone cannot hold the banks against his fleet.",
+      "divergence": [
+        {
+          "id": "sei_banks_war",
+          "what": "The moot fights for the Southern Banks.",
+          "consequence": "A small isle war becomes the arcs' war, and whoever helps Seite earns the Chart-Faith's gratitude."
+        },
+        {
+          "id": "sei_banks_shared",
+          "what": "The moot agrees to share the banks under Raerby's brokering.",
+          "consequence": "The fathers' banks are shared for the first time, and the moot argues for a generation over whether it was right."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Santon",
+      "tag": "SNT",
+      "founding": {
+        "year": 1805,
+        "date": "2A 130",
+        "story": "When the plagues of the Long Grief emptied the outer western arc, corsair captains moved into the dead harbours of Santon, Dani and Kusu, and in 2A 130 the strongest of them, Hanei of the Black Sail, took the strait-place harbour of Straton and made the others swear the Ransom Tide law. The outer arc has been a corsair captaincy since, held by whichever captain is best."
+      },
+      "dynasties": [
+        {
+          "name": "The captains of Straton",
+          "from": 1805,
+          "date": "2A 130",
+          "notable": "The best captain holds the outer arc by sword until a better one comes; the Ransom Tide law decides who is ransomed and who is drowned, and every captain swears to it."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Empty Harbours Taken",
+          "year": 1805,
+          "date": "2A 130",
+          "summary": "Corsair captains took the plague-emptied harbours of the outer western arc, and Hanei of the Black Sail held Straton."
+        },
+        {
+          "name": "The Burning of Straton",
+          "year": 6690,
+          "date": "4A 1622",
+          "summary": "After Santon's corsairs took three Corogon grain ships, Corogon's fleet and Varnondor's sea watch burned Straton; the captains rebuilt it within ten years and have not raided Corogon's grain since."
+        },
+        {
+          "name": "The Ransom of the Consul's Son",
+          "year": 6769,
+          "date": "4A 1701",
+          "summary": "Santon's corsairs took a son of Corogon's consuls at sea and ransomed him under the Ransom Tide law for his weight in silver; the consuls paid, and swore to burn Straton again one day."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Corogon",
+          "nature": "The consulate that burned Straton in 4A 1622."
+        },
+        {
+          "with": "Varnondor",
+          "nature": "The sea watch that hunts the outer arc's corsairs."
+        }
+      ],
+      "capital": "Straton",
+      "capitalReason": "Straton, the strait-place, commands the narrows between Santon and Dani, where every ship from the Santon Sea into the arcs must pass under the corsairs' cliffs.",
+      "today": "About sixty thousand corsairs and their families live on Santon, Dani and Kusu facing the Santon Sea. The captains raid weak merchant fleets, pay tribute to strong ones and remember that Corogon has sworn to burn Straton again.",
+      "divergence": [
+        {
+          "id": "snt_prey_evacuation",
+          "what": "Santon's corsairs prey on the western fleets in the last war.",
+          "consequence": "Western ships carrying men home from the war are taken under the Ransom Tide law, and the West's grudge turns on the islands.",
+          "beat": "B28"
+        },
+        {
+          "id": "snt_licensed",
+          "what": "A crown takes Santon's corsairs into its pay as its own raiders.",
+          "consequence": "The outer arc becomes a fleet in that crown's service, and the corsairs' enemies become that crown's enemies."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Benan",
+      "tag": "BEN",
+      "founding": {
+        "year": 2655,
+        "date": "2A 980",
+        "story": "The Benan Mountains rise in the middle of the long western island with coves under them that no fleet can find without a Benan pilot, and in 2A 980 a captain named Urai the Lame made the cove of Torni a haven for every corsair who would pay its dues and keep its peace. Benan holds the Cursed Square as its own in name, because nobody else wants it, and its captains keep the haven still."
+      },
+      "dynasties": [
+        {
+          "name": "The captains of Torni",
+          "from": 2655,
+          "date": "2A 980",
+          "notable": "The haven chooses its captain from the corsairs who pay its dues; the captain keeps the haven's peace and the Ransom Tide law."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Haven at Torni",
+          "year": 2655,
+          "date": "2A 980",
+          "summary": "Urai the Lame opened the cove of Torni as a haven for corsairs who would pay its dues and keep its peace."
+        },
+        {
+          "name": "The Wreck of the Square",
+          "year": 3182,
+          "date": "2A 1507",
+          "summary": "A royal Aenoran ship was lost with all hands on the Cursed Square; Benan's corsairs took nothing from it and have refused to sail into the Square since."
+        },
+        {
+          "name": "The Tribute Years",
+          "year": 6548,
+          "date": "4A 1480",
+          "summary": "The chart-houses paid Benan a yearly tribute to keep its corsairs off Charter ships, and Benan took it and raided anyway whenever the tribute was late."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Adel",
+          "nature": "The chart-houses who pay Benan tribute and hunt its corsairs at the same time."
+        }
+      ],
+      "capital": "Torni",
+      "capitalReason": "Torni is a cove under the Benan Mountains whose entrance cannot be seen from the sea, the safest haven inside the arcs for ships that do not want to be found.",
+      "today": "About fifty thousand people live in the Benan Mountains, on Bono and in the coves, under the haven's captain. The corsairs take tribute from the Charter and raid when it is late, and they keep well away from the Cursed Square.",
+      "divergence": [
+        {
+          "id": "ben_charter_bound",
+          "what": "The Pupor Charter buys Benan into its compact for good.",
+          "consequence": "The haven inside the arcs becomes a Charter harbour, and the inner sea is safe for the first time since the Empty Harbours."
+        },
+        {
+          "id": "ben_haven_war",
+          "what": "Benan opens its haven to a war fleet hunting the islands.",
+          "consequence": "An enemy can lie hidden inside the arcs, and no chart-house harbour is safe."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "The Lens",
+      "tag": "LEN",
+      "founding": {
+        "year": 3182,
+        "date": "2A 1507",
+        "story": "When a royal Aenoran ship was lost with all hands on the Cursed Square in 2A 1507, the glass-blowers of the round isle of the Lens swore themselves an order to keep the northern passages lit, for every ship whatever its flag. The first Keeper, Saneros of the glass-house, built the great lamp-tower at Lighon, and every chart-house of the arcs has paid lamp-dues to the order since."
+      },
+      "dynasties": [
+        {
+          "name": "The Keepers of the Lamp-House",
+          "from": 3182,
+          "date": "2A 1507",
+          "notable": "The order chooses its Keeper from the lamp-keepers who have kept a tower through a whole gale season alone; the Keeper swears never to take a side in any quarrel of the arcs."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Lamp-House Sworn",
+          "year": 3182,
+          "date": "2A 1507",
+          "summary": "The glass-blowers of the Lens swore their order after the Wreck of the Square and built the great lamp-tower at Lighon."
+        },
+        {
+          "name": "The Lamp Quarrel",
+          "year": 6136,
+          "date": "4A 1068",
+          "summary": "The order asked the wreck-lords of Halenor to light their shores in the gale season and was refused."
+        },
+        {
+          "name": "The Neutral Lamps",
+          "year": 6612,
+          "date": "4A 1544",
+          "summary": "When Nondondor's ships tried to put out a lamp to wreck a Raerby fleet, every chart-house refused the sea-king's charts for a year, and since then no realm of the arcs has touched a lamp."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Halenor",
+          "nature": "Lamps against wreck-right."
+        }
+      ],
+      "capital": "Lighon",
+      "capitalReason": "Lighon, the bright harbour, sits under the great lamp-tower on the round isle, which stands where the northern passages meet and where a light can be seen from all of them.",
+      "today": "About twenty thousand lamp-keepers and glass-blowers live on the round isle. The order keeps the lamps of the northern passages, takes no side in any feud, and any realm that attacks the Lens loses the good will of every chart-house of the arcs.",
+      "divergence": [
+        {
+          "id": "len_lamps_dark",
+          "what": "The Keeper darkens the lamps to stop a war fleet entering the arcs.",
+          "consequence": "The passages become deadly for every ship including the islanders' own, and the order's oath of neutrality is broken for the first time."
+        },
+        {
+          "id": "len_attacked",
+          "what": "A crown seizes the Lens to control the passages.",
+          "consequence": "That crown holds the lights of the north and loses the friendship of every chart-house of the arcs."
+        }
+      ],
+      "canon": "proposed"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Sanderz",
+      "country": "Adel",
+      "role": "academy",
+      "size": "city",
+      "founded": 160,
+      "foundedDate": "1A 160",
+      "legend": "The chart-masters of Sanderz say that the first reef ever charted in the arcs is drawn on the wall of the Chart Hall's oldest room, and that a pilot who cannot name it may not be called a master.",
+      "economy": "The Chart Hall: charts copied and sold to every crown, pilots, timber and fish.",
+      "canon": "proposed",
+      "population": 14000
+    },
+    {
+      "name": "Lusticos",
+      "country": "Adel",
+      "role": "town",
+      "size": "town",
+      "founded": 620,
+      "foundedDate": "1A 620",
+      "legend": "Shepherds of the Zuman Uplands say the green upland was a reef once, raised from the sea so that the islanders would have one field of good grass.",
+      "economy": "Sheep, wool, oats and beans on the uplands' shore.",
+      "canon": "proposed",
+      "population": 5000
+    },
+    {
+      "name": "Ese",
+      "country": "Raerby",
+      "role": "port",
+      "size": "city",
+      "founded": 300,
+      "foundedDate": "1A 300",
+      "legend": "The broker-captains say the pond beside Ese was dug by the first captain to hide his ships from a corsair fleet, and that it has never since held fewer than ten hulls.",
+      "economy": "Freight and brokerage, ships for hire and the banks mediation.",
+      "canon": "proposed",
+      "population": 12000
+    },
+    {
+      "name": "Havnai",
+      "country": "Pollos",
+      "role": "market",
+      "size": "town",
+      "founded": 180,
+      "foundedDate": "1A 180",
+      "legend": "The guild-masters say that every coin that has passed through Havnai's market since the False Coin has been weighed at the strong-room door, and that the scales have never been wrong.",
+      "economy": "The market of the isles and the chart-houses' strong-room.",
+      "canon": "proposed",
+      "population": 9000
+    },
+    {
+      "name": "Kudaini",
+      "country": "Nondondor",
+      "role": "fortress",
+      "size": "town",
+      "founded": 2435,
+      "foundedDate": "2A 760",
+      "legend": "Corsairs of Kudaini say the first sea-king hanged the last captain who refused him from the cliff above the harbour, and that the rope still hangs there for the next one.",
+      "economy": "The sea-king's harbour, fishing and corsairing under the king's writ.",
+      "canon": "proposed",
+      "population": 7000
+    },
+    {
+      "name": "Kapai",
+      "country": "Fineger",
+      "role": "port",
+      "size": "town",
+      "founded": 5588,
+      "foundedDate": "4A 520",
+      "legend": "The pilots of Kapai say that a pilot who has seen the Poolho ice break in spring will never be lost at sea, and every apprentice is taken north to watch it.",
+      "economy": "Pilots' fees, kelp, sheep and the northern channels.",
+      "canon": "proposed",
+      "population": 3000
+    },
+    {
+      "name": "Sonrale",
+      "country": "Halenor",
+      "role": "port",
+      "size": "town",
+      "founded": 4088,
+      "foundedDate": "3A 280",
+      "legend": "The wreck-lords of Sonrale keep a bell from every ship the storm has given them, and the islanders say the bells ring of themselves before a great gale.",
+      "economy": "Wreck-right, salvage, fishing and storm-isle sheep.",
+      "canon": "proposed",
+      "population": 3000
+    },
+    {
+      "name": "Straton",
+      "country": "Santon",
+      "role": "port",
+      "size": "town",
+      "founded": 1805,
+      "foundedDate": "2A 130",
+      "legend": "The corsairs of Straton say the town has been burned twice and rebuilt twice, and that the third burning will be Corogon's last mistake.",
+      "economy": "Corsairing, ransom under the Ransom Tide law, and fishing.",
+      "canon": "proposed",
+      "population": 2500
+    },
+    {
+      "name": "Torni",
+      "country": "Benan",
+      "role": "port",
+      "size": "village",
+      "founded": 2655,
+      "foundedDate": "2A 980",
+      "legend": "Benan's pilots say the cove of Torni cannot be found by a man who has not been born on the island, and that strangers who sail into it by chance are not allowed to sail out.",
+      "economy": "The corsair haven: dues, repairs and stolen cargoes sold quietly.",
+      "canon": "proposed",
+      "population": 2500
+    },
+    {
+      "name": "Lighon",
+      "country": "The Lens",
+      "role": "shrine",
+      "size": "town",
+      "founded": 3182,
+      "foundedDate": "2A 1507",
+      "legend": "The lamp-keepers say the great lamp of Lighon has not gone out since the night it was first lit, and that the night it does, the passages will take a ship for every year it burned.",
+      "economy": "The Lamp-House, glass-blowing and the lamp-dues of every chart-house.",
+      "canon": "proposed",
+      "population": 1500
+    },
+    {
+      "name": "Vesko",
+      "country": "Seite Islands",
+      "role": "holy",
+      "size": "village",
+      "founded": 3015,
+      "foundedDate": "2A 1340",
+      "legend": "The households of Vesko say the reef-shrine at the moot isle was built where the first Seite pilot was spared by the sea, and that a moot-reader who reads a false decision there will be drowned within the year.",
+      "economy": "Fishing the banks, the isle moot and the reef-shrines.",
+      "canon": "proposed",
+      "population": 2500
+    },
+    {
+      "name": "Audailon",
+      "country": "Windy Lands",
+      "role": "port",
+      "size": "town",
+      "founded": 6078,
+      "foundedDate": "4A 1010",
+      "legend": "The cape-lords say the league's kite banner was sewn from the sails of the first kite boat, and that the league will last as long as it flies.",
+      "economy": "Kite-fishing, wreck-taking and the cape-lords' council.",
+      "canon": "proposed",
+      "population": 3000
+    }
+  ],
+  "figures": [],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "name": "The Drowned Names",
+      "realms": [
+        "Adel",
+        "Raerby",
+        "Pollos",
+        "Fineger",
+        "Halenor",
+        "Seite Islands",
+        "The Lens"
+      ],
+      "summary": "Since the gale season of 2A 904 every chart-house reads the names of the year's drowned at the close of the gale season, and a pilot's name read there is copied into the Chart Hall's book.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Pupor Charter",
+      "realms": [
+        "Adel",
+        "Pollos",
+        "Raerby"
+      ],
+      "summary": "The chart-houses' compact of 4A 903 fixes chart dues and wreck-shares, protects pilots in every harbour of its members and keeps its treasury at Pollos; the corsair isles stand outside it.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The wreck-right",
+      "realms": [
+        "Halenor",
+        "Windy Lands"
+      ],
+      "summary": "Whatever the storm brings to a shore belongs to the lord of that shore, and he may choose whether to light the shore-fires or leave them dark.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Ransom Tide law",
+      "realms": [
+        "Santon",
+        "Benan",
+        "Nondondor",
+        "Windy Lands"
+      ],
+      "summary": "A captive ransomed stands under the god of the harbour and goes home; one not ransomed by the next tide-feast belongs to the sea, and every corsair captain swears to this law.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The lamp-dues and the lamp-peace",
+      "realms": [
+        "The Lens",
+        "Adel",
+        "Pollos",
+        "Raerby",
+        "Fineger",
+        "Seite Islands"
+      ],
+      "summary": "Every chart-house pays the Lamp-House for the lights of the northern passages, and since 4A 1544 no realm of the arcs touches a lamp.",
+      "canon": "proposed"
+    }
+  ]
+}

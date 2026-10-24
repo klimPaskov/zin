@@ -1,0 +1,1198 @@
+{
+  "version": 1,
+  "region": "west_lands",
+  "name": "The West Lands",
+  "overview": "South of the Cold Lands, joined to them by a broad mountain neck, the West Lands are a wet green country of downs, river plains, dark forest and long peninsulas facing a sea so wide that Aenor has never ruled it for long. The clans had raised their standing stones at the fords long before Aenor's First Age ships arrived, and the wars that followed the settlers are remembered in every western court as theft, whatever Parim calls them. The settler harbours became the guild towns of Kradlon, Corogon and Saopon, the clans became the kingdoms of Gunwyn, Thenon and Varnondor and the warden commonwealth of Girdon, and when the plagues of the Second Age emptied the southern valleys their landless men became the sworn companies of Buldor. Dwarves have held the Herlitz and the Bolpor ranges for longer than anyone can say, and it was in the dry Dusty Mountains, in 4A 1561, that their smiths first made the West's burning powder, which the West now sells to anyone who pays. Behind the Ronbo passes the small folk farm their green basin under the Watch of men sworn to keep it. In 4A 1748 the Truce of the Grey Ford has held for three years after half a century of war between Gunwyn and Girdon, the guild ports grumble at Aenoran tariffs, and nobody in the West expects to cross the sea. Years in the data are one continuous count from the victory of Aen on the proposed lengths of the ages (First Age 1,675 years, Second Age 2,133, Third Age 1,260): 1A 1 is year 1, 2A 1 is 1,676, 3A 1 is 3,809 and 4A 1 is 5,069, so that the campaign year 4A 1748 is 6,816; every entry also carries its date in the Age-and-year form, which is the form the prose uses.",
+  "ages": [
+    {
+      "id": "wl_stones",
+      "name": "The Stones and the Charts",
+      "from": 1,
+      "to": 299,
+      "fromDate": "1A 1",
+      "toDate": "1A 299",
+      "summary": "The Boreal-speaking clans of the downs and rivers met at their standing stones and traded with the dwarves at the mountain doors, until Aenoran ships charted the coast around 1A 200 and stamped their own names on it. The western grudge begins with who got to name the coast, and the clans kept their own names in song.",
+      "canon": "proposed"
+    },
+    {
+      "id": "wl_settler_wars",
+      "name": "The Settler Wars",
+      "from": 300,
+      "to": 879,
+      "fromDate": "1A 300",
+      "toDate": "1A 879",
+      "summary": "Aenoran settlements at the Kradlon and Corogon harbours fought the clans for the river plains for four centuries, and the fords of Girdon became the frontier that the first wardens swore to hold. The dwarves sold arms to both sides and let neither into their halls.",
+      "canon": "proposed"
+    },
+    {
+      "id": "wl_free_kingdoms",
+      "name": "The Free Kingdoms",
+      "from": 880,
+      "to": 1675,
+      "fromDate": "1A 880",
+      "toDate": "1A 1675",
+      "summary": "As Aenor weakened under its bad kings, Gunwyn and Girdon became kingdoms in their own right and the settler towns stopped paying Parim and became guild towns. When Edran called the Grand Alliance, western banners marched under their own commanders, and Taryn of Gunwyn would not bring hers until Aenor recognised the West's freedom; the West won at Dardan beside Aenor and kept its grievance all the same.",
+      "canon": "proposed"
+    },
+    {
+      "id": "wl_companies",
+      "name": "The Company Age",
+      "from": 1676,
+      "to": 3808,
+      "fromDate": "2A 1",
+      "toDate": "2A 2133",
+      "summary": "Plague and famine emptied the southern valleys in the Age of Long Grief, and landless clansmen formed sworn companies at Buldor that sold their swords to the guild towns. When companies hired by Saopon's guilds looted a dwarf gate in 2A 1712, both western holds closed their doors to men for three generations, and when the Necromancer took Aenor at the age's end the western kings refused the royal summons.",
+      "canon": "proposed"
+    },
+    {
+      "id": "wl_cut_off",
+      "name": "The Long Severance",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "The Necromancer's Order never crossed the wide sea. The West was free but cut off from the south, Aenoran refugee families settled in the guild ports, and the western courts traded with the Pupor Isles and the Cold Lands instead. In 3A 904 western clansmen swore the Ronbo Oath to guard the small folk's passes.",
+      "canon": "proposed"
+    },
+    {
+      "id": "wl_tariffs",
+      "name": "The Return of the Southern Ships",
+      "from": 5218,
+      "to": 6816,
+      "fromDate": "4A 150",
+      "toDate": "4A 1748",
+      "summary": "Aenoran merchants came back to the West in the first centuries of the Fourth Age, and the western lords took the trade but not the old claims. Aenor's tariffs on wool and horses from 4A 1402 sharpened the grudge, and from 4A 1702 the Gunwyn and Girdon wars divided the West until the Truce of the Grey Ford of 4A 1745.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Gunwyn",
+      "tag": "GNW",
+      "founding": {
+        "year": 880,
+        "date": "1A 880",
+        "story": "The downs clans had fought the Aenoran settlers for four centuries under war-chiefs who were chosen for one war at a time, and in 1A 880, when the settlers' towns stopped answering to Parim and Aenor's grip failed, the clan chiefs met at the Oath-Ring of Bulligon and acclaimed Cadyn of the Rookwyn as a king for life. The first Lawspeaker bound him at the standing stone with the oath every king of Gunwyn has sworn since, that the king rules by the clans' law and not above it."
+      },
+      "dynasties": [
+        {
+          "name": "The Rookwyn kings of Bulligon",
+          "from": 880,
+          "date": "1A 880",
+          "notable": "The royal clan of the downs, descended from Cadyn I; the clan moot chooses each king from among the dead king's kin. Taryn of Gunwyn, who led the western banners to Dardan, was of this clan, and King Herlic, who signed the Truce of the Grey Ford, reigns in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Acclamation at the Oath-Ring",
+          "year": 880,
+          "date": "1A 880",
+          "summary": "Cadyn of the Rookwyn was acclaimed king at the standing stone of Bulligon and bound by the first Lawspeaker."
+        },
+        {
+          "name": "The Two Sons of Bulligon",
+          "year": 6256,
+          "date": "4A 1188",
+          "summary": "King Dyfan's two sons both claimed the crown; the moot chose the elder, and the younger, Emric, took the Erg finger with his own followers and made himself king there, the beginning of Werlendor."
+        },
+        {
+          "name": "The Neck Road Compact",
+          "year": 6282,
+          "date": "4A 1214",
+          "summary": "Gunwyn's king agreed with the Winter Crown of Coldor, Horidor and Worlond to keep the Neck Road open from the thaw to the first snows, western grain and cattle for northern iron, furs and timber."
+        },
+        {
+          "name": "The Drowned Warden",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "A Gunwyn war-thane killed a Girdon ford-warden in a quarrel over the ford-share at the Grey Ford, and Girdon's blood-price was refused; the border wars began that year and lasted forty-three years."
+        },
+        {
+          "name": "The Truce of the Grey Ford",
+          "year": 6813,
+          "date": "4A 1745",
+          "summary": "King Herlic and Warden-Speaker Pernia Lothor swore the truce at the Stone of the Grey Ford, after talks held on neutral ground at Faennon in Lambin."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Girdon",
+          "nature": "Half a century of border war over the Grey River fords, ended by the truce of 4A 1745 and not forgotten by either side."
+        },
+        {
+          "with": "Werlendor",
+          "nature": "The rival branch of the royal kin, which has never accepted the moot's choice of 4A 1188."
+        }
+      ],
+      "capital": "Bulligon",
+      "capitalReason": "Bulligon stands where the Neck Road leaves the neck for the downs, beside the Oath-Ring where the clans acclaimed their first king; the royal hall was built at the stone, because a Gunwyn king rules where he swore.",
+      "today": "King Herlic rules some one and a half million people of the downs, the largest western kingdom, from the royal hall beside the Oath-Ring. The Lawspeaker Ilurda keeps the clans' law, the war-thanes grumble that the truce gave away the ford-share, and the guild ports' Aenoran trade makes the court rich and resentful at once.",
+      "divergence": [
+        {
+          "id": "gnw_truce_permanent",
+          "what": "The king and the Lawspeaker make the Truce of the Grey Ford permanent at the Oath-Ring.",
+          "consequence": "There is no feud for a stranger to end and no western war-king, but the West's unity starts higher and a Crossing becomes likelier.",
+          "beat": "B05"
+        },
+        {
+          "id": "gnw_make_example",
+          "what": "The Lawspeaker makes an example of a stranger who breaks the clans' law, instead of judging him lightly.",
+          "consequence": "The stranger's road is delayed by half a year and Gunwyn is less likely to follow him later.",
+          "beat": "B04"
+        },
+        {
+          "id": "gnw_lead_crossing",
+          "what": "Gunwyn leads the western fleets across the central sea for the old grudge.",
+          "consequence": "The West takes ship for Parim under a Gunwyn king, and every western court that sails expects a share of what it finds.",
+          "beat": "B20"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Girdon",
+      "tag": "GIR",
+      "founding": {
+        "year": 640,
+        "date": "1A 640",
+        "story": "In the Settler Wars the fords of the Grey River were the frontier, and in 1A 640 the clansmen who held them swore at the ford-stone of Arligon to keep every crossing against the settlers and to judge every quarrel on the river by one law. Each sworn man took the name of the ford he guarded, and the wardens chose a Warden-Speaker from among themselves; when the settler wars ended the wardens kept the river, and the commonwealth has never had a king."
+      },
+      "dynasties": [
+        {
+          "name": "The Warden-Speakers of Arligon",
+          "from": 640,
+          "date": "1A 640",
+          "notable": "Chosen by the ford-wardens from among themselves; each warden takes the name of the river or ford he guards. Warden-Speaker Pernia Lothor, of the Lothoro horse valley, signed the truce of 4A 1745."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Oath at the Ford-Stone",
+          "year": 640,
+          "date": "1A 640",
+          "summary": "The ford-wardens swore to hold the Grey River crossings against the settlers and founded the commonwealth."
+        },
+        {
+          "name": "The Riders of Lothoro Sworn",
+          "year": 6218,
+          "date": "4A 1150",
+          "summary": "The horse clans of the Lothoro valley swore to ride as the commonwealth's host in return for a ford-share on the upper river, and Girdon has fielded riders ever since."
+        },
+        {
+          "name": "The Drowned Warden",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "A ford-warden was killed by a Gunwyn war-thane at the Grey Ford and the blood-price was refused, beginning forty-three years of border war."
+        },
+        {
+          "name": "The Truce of the Grey Ford",
+          "year": 6813,
+          "date": "4A 1745",
+          "summary": "Warden-Speaker Pernia Lothor and King Herlic swore the truce at the Stone of the Grey Ford."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Gunwyn",
+          "nature": "The Grey River border, fought over from 4A 1702 to 4A 1745 and held under truce since."
+        },
+        {
+          "with": "Saopon",
+          "nature": "The fen boundary at the Kulolo mouth, disputed since 4A 1612."
+        }
+      ],
+      "capital": "Arligon",
+      "capitalReason": "Arligon is built at the main ford of the Grey River around the ford-stone where the first wardens swore; the commonwealth's law is the river's law, and the river-court sits where the river is crossed.",
+      "today": "About six hundred thousand people of the Girdon plain, the south bank and the Lothoro valley live under the wardens' river-court. Girdon answers raids with the blood-price more often than in kind, its riders are the best of the West, and its floods and fords make it the West's breadbasket as well as its oldest frontier.",
+      "divergence": [
+        {
+          "id": "gir_close_ford",
+          "what": "The wardens close Girdon's Winter Ford to strangers coming south.",
+          "consequence": "A traveller from the north is delayed by two months and remembers the wardens coldly.",
+          "beat": "B04"
+        },
+        {
+          "id": "gir_commission",
+          "what": "Girdon's ford commission settles the ford-share for good and the truce becomes a peace.",
+          "consequence": "No border war breaks out, the West has no feud to unite against, and the riders of Lothoro stay at home.",
+          "beat": "B05"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Werlendor",
+      "tag": "WER",
+      "founding": {
+        "year": 6256,
+        "date": "4A 1188",
+        "story": "When King Dyfan of Gunwyn died in 4A 1188 the clan moot chose his elder son, and the younger, Emric, who had the better claim in his own eyes and the hill clans of the Erg on his side, rode west with them to the hill-fort of Caer-Erg and had himself acclaimed king at the Erg stone. Gunwyn never accepted the second crown and Werlendor never accepted the moot's choice, and the two have been cousins and enemies ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Werlwyn kings of the Erg",
+          "from": 6256,
+          "date": "4A 1188",
+          "notable": "The rival branch of Gunwyn's royal kin, descended from Emric, younger son of King Dyfan; they still style themselves the true heirs of Bulligon."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Two Sons of Bulligon",
+          "year": 6256,
+          "date": "4A 1188",
+          "summary": "Emric, younger son of King Dyfan, took the Erg finger and its hill clans and was acclaimed king at Caer-Erg."
+        },
+        {
+          "name": "The Erg Raid",
+          "year": 6528,
+          "date": "4A 1460",
+          "summary": "Gunwyn's riders burned the lower Erg valley to force Werlendor's oath; the hill clans held Caer-Erg and the raid ended with nothing sworn."
+        },
+        {
+          "name": "The Coast-Steadings Taken",
+          "year": 6792,
+          "date": "4A 1724",
+          "summary": "While Gunwyn fought Girdon, Werlendor occupied the coast-steadings of the Erg that Bulligon had held since the split; Gunwyn has demanded them back at every moot since the truce."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Gunwyn",
+          "nature": "The two sons of Bulligon: the Werlwyn claim the royal hall and Gunwyn claims the coast-steadings taken in 4A 1724."
+        }
+      ],
+      "capital": "Caer-Erg",
+      "capitalReason": "Caer-Erg is the hill-fort at the Erg spur that commands the only road into the finger from the downs; Emric's followers held it because it could be held, and the Werlwyn have never felt safe anywhere else.",
+      "today": "About five hundred and fifty thousand hill clansfolk live on the Erg finger and the north-west coast under a Werlwyn king who calls himself the heir of Bulligon. The truce in the south has turned Gunwyn's eyes back to the coast-steadings, and Werlendor knows it.",
+      "divergence": [
+        {
+          "id": "wer_claim_bulligon",
+          "what": "Werlendor presses its claim to the royal hall if the Gunwyn king falls.",
+          "consequence": "The West's chief kingdom faces a succession war at home, and any Crossing waits until the Oath-Ring has one king again."
+        },
+        {
+          "id": "wer_reconcile",
+          "what": "A marriage reunites the Werlwyn and the Rookwyn.",
+          "consequence": "The two sons of Bulligon are one house again, and a united downs kingdom leads the West with nobody behind it to fear."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Lambin",
+      "tag": "LAB",
+      "founding": {
+        "year": 2055,
+        "date": "2A 380",
+        "story": "When the plagues of the Long Grief left the eastern downs half empty, Branorn of Faennon built great stone granaries below the hills in 2A 380 and filled them with the grain of fields nobody else was left to farm, and in the famine years that followed every clan of the downs came to buy from him. He took no side in their quarrels and sold to all, and the lords of Lambin have kept his rule that the granary ground is neutral ground."
+      },
+      "dynasties": [
+        {
+          "name": "The lords of the granaries, Branorn's line",
+          "from": 2055,
+          "date": "2A 380",
+          "notable": "Descended from Branorn of Faennon; the lordship passes to the eldest child, who swears at the granary door to sell to every comer."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Granaries of Faennon",
+          "year": 2055,
+          "date": "2A 380",
+          "summary": "Branorn built the stone granaries in the plague years and sold to every clan, founding the lordship."
+        },
+        {
+          "name": "The Granary Peace",
+          "year": 2330,
+          "date": "2A 655",
+          "summary": "Feuding clans of the downs met at Faennon because they could not afford to quarrel with the granary lord, and the custom began that enemies talk on Lambin's ground."
+        },
+        {
+          "name": "The Talks at Faennon",
+          "year": 6813,
+          "date": "4A 1745",
+          "summary": "The envoys of Gunwyn and Girdon met at Faennon through a whole winter before the truce was sworn at the Grey Ford."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Faennon",
+      "capitalReason": "Faennon lies below the hills on the eastern downs where the downs roads and the Grey River road meet, close enough to every court to be reached in a few days and far enough from all of them to be nobody's.",
+      "today": "About eight hundred and fifty thousand people live on the eastern downs, the West's granary and its neutral ground. The lord sells grain to Gunwyn, Girdon and the Neck Road alike, and every western court that wants to talk without losing face sends its envoys to Faennon.",
+      "divergence": [
+        {
+          "id": "lab_ford_council",
+          "what": "Lambin hosts the Ford Council of the western courts.",
+          "consequence": "The West decides its course on neutral ground, and the granary lord's voice weighs more than his host."
+        },
+        {
+          "id": "lab_take_side",
+          "what": "A lord of Lambin breaks the granary rule and sells to one side only.",
+          "consequence": "The West loses its peacemakers' ground, and the next feud has nowhere to end."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Thenon",
+      "tag": "THN",
+      "founding": {
+        "year": 1100,
+        "date": "1A 1100",
+        "story": "The clans of the warm Thenon lowland, where olives grow in the West's mildest corner, kept out of the Settler Wars by paying the settlers in cattle and olives, and in 1A 1100, when the settler towns no longer had the strength to demand anything, they acclaimed Saric of the Sarudwyn their king at the little hill of Tummin. Thenon has been a quiet, rich kingdom since, and its kings are judged by the olive harvest."
+      },
+      "dynasties": [
+        {
+          "name": "The Sarudwyn kings of Tummin",
+          "from": 1100,
+          "date": "1A 1100",
+          "notable": "Descended from Saric, acclaimed at Tummin; the clan moot chooses among his kin, and the kings have married into Lambin's granary line more than once."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Acclamation at Tummin",
+          "year": 1100,
+          "date": "1A 1100",
+          "summary": "Saric of the Sarudwyn was acclaimed king of the lowland clans."
+        },
+        {
+          "name": "The Ronbo Oath",
+          "year": 4712,
+          "date": "3A 904",
+          "summary": "Clansmen of Thenon and Kradlon swore at a standing stone to guard the passes of the small folk's basin, who had fed them in a famine, and the Ronbo Watch was born; Thenon still sends men to it."
+        },
+        {
+          "name": "The Olive Blight",
+          "year": 6608,
+          "date": "4A 1540",
+          "summary": "A blight killed half the lowland's olive groves; the kingdom lived on its cattle for a generation while the groves were replanted from the small folk's orchards beyond the Ronbo passes."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Tummin",
+      "capitalReason": "Tummin, the little hill, rises in the middle of the olive lowland, high enough to be dry in the wet winters and close to every grove; the clans acclaimed their first king there and have met there since.",
+      "today": "About four hundred thousand people live by olives, wine and cattle in the warm lowland. Thenon keeps the Ronbo Oath with men sent to the Watch, stays out of the downs' feuds and sells its olives to the guild ports.",
+      "divergence": [
+        {
+          "id": "thn_watch_strength",
+          "what": "Thenon doubles the men it sends to the Ronbo Watch in a time of war.",
+          "consequence": "The small folk's basin stays safe whatever happens in the West, and Thenon's levies are thinner for any other war."
+        },
+        {
+          "id": "thn_recall_watch",
+          "what": "Thenon recalls its men from the Watch to fight elsewhere.",
+          "consequence": "The Watch weakens, and for the first time raiders or refugees can reach the small folk's basin."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Dobbum",
+      "tag": "DOB",
+      "founding": {
+        "year": 3105,
+        "date": "2A 1430",
+        "story": "The small folk have farmed the warm Ronbo basin below the Herlitz range for longer than any western song remembers, but they date their own moot from 2A 1430, when the householders first met in one hall at Luddum to choose a Warden of the Fields who would speak for the whole basin to the dwarves at the high passes. They took the name of their homeland from the hearth-word for a home, and the Warden has sat in the moot-hall home ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Wardens of the Fields",
+          "from": 3105,
+          "date": "2A 1430",
+          "notable": "The moot of householders chooses a Warden for as long as the Warden keeps the harvest good; the Stubbel household has given the basin the most Wardens, and Warden Hemmia Stubbel holds the hall in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Moot at Luddum",
+          "year": 3105,
+          "date": "2A 1430",
+          "summary": "The householders met in one hall and chose the first Warden of the Fields to speak for the basin."
+        },
+        {
+          "name": "The Famine Bread",
+          "year": 4707,
+          "date": "3A 899",
+          "summary": "In a western famine the small folk carried grain over the Ronbo passes to starving clansmen of Thenon and Kradlon, and asked nothing for it."
+        },
+        {
+          "name": "The Ronbo Oath",
+          "year": 4712,
+          "date": "3A 904",
+          "summary": "The clansmen they had fed swore at a standing stone to guard the basin's passes for ever, and the dwarves of Brundahrim closed the high passes above it; evil has not entered the basin since, as the small folk tell it."
+        },
+        {
+          "name": "The Orchard Gift",
+          "year": 6608,
+          "date": "4A 1540",
+          "summary": "When blight killed Thenon's olive groves, the Warden sent cuttings from the basin's orchards over the passes, and the Watch's pay in grain and leaf was doubled for a generation in thanks."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Luddum",
+      "capitalReason": "Luddum is the moot-hall home at the middle of the basin, where the roads from both passes meet among the best fields; the small folk built their hall where every household could walk to it and home again in a day.",
+      "today": "About a hundred and twenty thousand small folk farm the green basin, grow grain and hearth-leaf, rarely wear boots and almost never leave. The men of the Ronbo Watch keep the two passes and the dwarves keep the high ones, and the Warden's chief worry is the weather.",
+      "divergence": [
+        {
+          "id": "dob_watch_fails",
+          "what": "Western wars or famine strip the Watch of its men.",
+          "consequence": "Raiders or refugees enter the basin, and the small folk must choose for the first time whether to fight, flee or take strangers in."
+        },
+        {
+          "id": "dob_go_out",
+          "what": "The moot sends small folk out into the world with a friend who asks for help.",
+          "consequence": "A people who never leave send a few of their own beyond the passes, and the basin's name is heard in courts that never knew it."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Brundahrim",
+      "tag": "BRU",
+      "founding": {
+        "year": 150,
+        "date": "1A 150",
+        "story": "The dwarves of the Herlitz and Dusty Mountains count their years from their own first delving, a reckoning they do not share with men, and the West dates the hold from 1A 150, when the clans first traded at its Outer Gate for iron and gold. Men have never been further than the gate. The hold is ruled from its deepest hall, Hrennost, the fire-hold, by the lord of the eldest delving line."
+      },
+      "dynasties": [
+        {
+          "name": "The Durnast lords of the deepest hall",
+          "from": 150,
+          "date": "1A 150",
+          "notable": "The line that opened the first delving, so far as men are told; the present lord, Hrokorn Durnast, receives no man below the Outer Gate. Brunek of the Stone Roads, who held the crossings at Dardan for the Grand Alliance, was of this hold."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Gate-Trade",
+          "year": 150,
+          "date": "1A 150",
+          "summary": "The clans of the Ronbo country first traded at the Outer Gate, grain and cattle for iron, gold and worked stone."
+        },
+        {
+          "name": "The Doors Closed",
+          "year": 3387,
+          "date": "2A 1712",
+          "summary": "When companies hired by Saopon's guilds looted Gromkerm's gate, Brundahrim closed its own doors to men as well, and both western holds stayed shut for three generations."
+        },
+        {
+          "name": "The High Passes Closed",
+          "year": 4712,
+          "date": "3A 904",
+          "summary": "Under the Ronbo Oath the dwarves shut the high passes above the small folk's basin, whom they trade with for leaf and cheese."
+        },
+        {
+          "name": "The First Powder of the West",
+          "year": 6629,
+          "date": "4A 1561",
+          "summary": "A generation after word came west that the smiths of Drak in the East had learned a burning powder, the smiths of Hrennost found their own way to make it from the Dusty Mountains' saltpetre, and the fire-hold took its name from the forge where they did it."
+        },
+        {
+          "name": "The Factor-House Charter",
+          "year": 6370,
+          "date": "4A 1302",
+          "summary": "Brundahrim chartered a factor-house at Guerlon in the far north to buy Orewell ore, the only dwarf house beyond the western ranges."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Hrennost",
+      "capitalReason": "Hrennost, the fire-hold, is the deepest hall of the Dusty Mountains, beside the saltpetre beds and the forge where the West's first powder was made; the lord rules from the deepest hall because that is where the eldest line delved first.",
+      "today": "About forty thousand dwarves hold the Herlitz and Dusty Mountains, dig gold and gems, and sell iron, gold and powder-pieces at the Outer Gate to whoever wins their favour. They are proud, quarrelsome, trusting of no court and particularly unfriendly to elves, and they keep the small folk's high passes shut.",
+      "divergence": [
+        {
+          "id": "bru_arm_crossing",
+          "what": "The lord sells powder-pieces and siege bombards to the western courts for the Crossing.",
+          "consequence": "The West crosses the sea with fire the Middle Lands have rarely faced, and Brundahrim's favour becomes the price of every western alliance.",
+          "beat": "B20"
+        },
+        {
+          "id": "bru_doors_shut",
+          "what": "An insult at the gate, a broken contract or an elven envoy at a western court makes the hold shut its doors.",
+          "consequence": "No western court can buy dwarf iron or powder for years, and Kradlon's workshops must manage on their own."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Gromkerm",
+      "tag": "GRO",
+      "founding": {
+        "year": 210,
+        "date": "1A 210",
+        "story": "The dwarves of the Bolpor and Boldor Mountains, on the east flank of the Kulolo valley, first opened an Outer Gate to men in 1A 210, above the river where their iron could go down by boat. Men call the deep hall behind it Hrunost, the old hold, and know its rulers only as the wardens of the gate-forts, whose line has kept the hold's doors for as long as men have knocked on them."
+      },
+      "dynasties": [
+        {
+          "name": "The Kunerm gate-wardens",
+          "from": 210,
+          "date": "1A 210",
+          "notable": "A line of fort-wardens who rule the hold from the deep hall; the present lord, Stulmar Kunerm, keeps the hold's grudge against the guild towns as carefully as its gold."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Outer Gate Opened",
+          "year": 210,
+          "date": "1A 210",
+          "summary": "The hold opened its Outer Gate above the Kulolo and began sending iron down the river."
+        },
+        {
+          "name": "The Looting of the Gate",
+          "year": 3387,
+          "date": "2A 1712",
+          "summary": "Companies hired by Saopon's guilds broke into the gate-hall and looted it; the hold closed its doors for three generations and still keeps the names of the guild masters who paid them."
+        },
+        {
+          "name": "The Gate Reopened",
+          "year": 3470,
+          "date": "2A 1795",
+          "summary": "The hold reopened its Outer Gate on condition that no company of men ever come within a bowshot of it under arms, a rule still kept."
+        },
+        {
+          "name": "The Kulolo Iron Contract",
+          "year": 6598,
+          "date": "4A 1530",
+          "summary": "Gromkerm agreed to sell its iron down the Kulolo through Saopon's guilds at a fixed price, the first contract it had signed with the guild towns since the looting."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Saopon",
+          "nature": "The looting of 2A 1712, remembered by name; trade resumed in 4A 1530 without forgiveness."
+        }
+      ],
+      "capital": "Hrunost",
+      "capitalReason": "Hrunost is the deep hall of the Bolpor range behind the Outer Gate above the Kulolo, where the richest iron veins run close to a river that can carry the ore to the sea.",
+      "today": "About thirty thousand dwarves hold the Bolpor and Boldor Mountains and sell iron, powder-pieces and siege bombards at their gate. They would sell to the Crossing, or shut their gates on any court that insults them, and no company of armed men may come within a bowshot of the Outer Gate.",
+      "divergence": [
+        {
+          "id": "gro_bombards",
+          "what": "The hold sells its siege bombards to one western court alone.",
+          "consequence": "That court can break walls no other western host can, and the others treat the hold as its friend."
+        },
+        {
+          "id": "gro_saopon_grudge",
+          "what": "The hold's old grudge against Saopon ends in a closed river.",
+          "consequence": "Gromkerm's iron stops coming down the Kulolo, the guild towns lose their best ore, and Saopon's powder-workshops go quiet."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Saopon",
+      "tag": "SAO",
+      "founding": {
+        "year": 930,
+        "date": "1A 930",
+        "story": "Lochon began as a landing on the Ilurdor lagoon where Kulolo boatmen met Aenoran traders, and by the Settler Wars it was a walled trading town. In 1A 930 its guilds and those of the fen towns swore a league on the guild book, chose a First Guildsman and stopped paying Parim, and the Kulolo's trade has been ruled by guild law ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The First Guildsmen of Lochon",
+          "from": 930,
+          "date": "1A 930",
+          "notable": "Elected by the guild councils of the Kulolo towns; the boatmen's guild has given most of them, and the guild book of 1A 930 is still read at every election."
+        }
+      ],
+      "events": [
+        {
+          "name": "The League on the Guild Book",
+          "year": 930,
+          "date": "1A 930",
+          "summary": "The guilds of Lochon and the fen towns swore their league and stopped paying dues to Parim."
+        },
+        {
+          "name": "The Looting of the Gate",
+          "year": 3387,
+          "date": "2A 1712",
+          "summary": "Companies hired by Saopon's guilds looted Gromkerm's Outer Gate; the league disowned them too late and has been paying for it in the dwarves' memory ever since."
+        },
+        {
+          "name": "The Canako Cut",
+          "year": 6418,
+          "date": "4A 1350",
+          "summary": "The guilds dug a canal through the Kulolo Fen to Canako so that barges need not risk the lagoon's mouth in the gales."
+        },
+        {
+          "name": "The Fen Boundary",
+          "year": 6680,
+          "date": "4A 1612",
+          "summary": "Girdon's wardens and Saopon's guilds quarrelled over the reed-beds where the Grey River's floods reach the Kulolo Fen; the line was never settled and both still cut reeds there."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Girdon",
+          "nature": "The fen boundary at the Kulolo mouth since 4A 1612."
+        },
+        {
+          "with": "Gromkerm",
+          "nature": "The looted gate of 2A 1712."
+        }
+      ],
+      "capital": "Lochon",
+      "capitalReason": "Lochon stands on the Ilurdor lagoon at the Kulolo's mouth, where river barges meet sea ships; every load of dwarf iron and Girdon grain going to sea passes its quays.",
+      "today": "About half a million people live in the Kulolo towns and the fens under a guild league that sells iron, grain and cloth to the world. The guilds weigh Aenoran gold against Aenoran tariffs every year and complain about both.",
+      "divergence": [
+        {
+          "id": "sao_arm_west",
+          "what": "The guilds turn their workshops to the Crossing.",
+          "consequence": "The West's fleets are fitted from the Kulolo, and Saopon grows rich on the war while hoping never to see it."
+        },
+        {
+          "id": "sao_aenor_gold",
+          "what": "Aenoran gold buys the league out of the Crossing.",
+          "consequence": "The Kulolo's ships stay at home and the West sails short of hulls and iron.",
+          "beat": "B20"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Buldor",
+      "tag": "BLD",
+      "founding": {
+        "year": 2775,
+        "date": "2A 1100",
+        "story": "The plagues of the Long Grief emptied the valleys south of the Fog and Eye range, and the landless men who survived gathered at the crossroads toll-town of Toples and swore themselves into companies under banners of their own, selling their swords to the guild towns. In 2A 1100 the company-lords met at Toples, wrote the first contract-book and elected a Captain-General, and Buldor has been a state of companies ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Captains-General of Toples",
+          "from": 2775,
+          "date": "2A 1100",
+          "notable": "Elected by the company-lords; law is the contract-book, and a company whose banner falls is ended. The present Captain-General is Emric of the Grey Banner."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Contract-Book",
+          "year": 2775,
+          "date": "2A 1100",
+          "summary": "The company-lords wrote the contract-book at Toples and elected the first Captain-General."
+        },
+        {
+          "name": "The Powder Companies",
+          "year": 6708,
+          "date": "4A 1640",
+          "summary": "Buldor's first powder company was raised with pieces bought from Kradlon's workshops, and within a generation every great company kept one."
+        },
+        {
+          "name": "Both Sides of the Ford",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "Buldor's companies took contracts from both Gunwyn and Girdon in the forty-three years of border war, and twice met each other in the field, which the contract-book allows."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Toples",
+      "capitalReason": "Toples is the toll-town at the crossroads of the southern roads below the Fog Gap, where every hirer can reach the companies and every company can reach its hirer; it was a toll-town before it was a capital.",
+      "today": "About six hundred and twenty thousand people live south of the Fog and Eye range, with Toples and the dye-town of Sarudon. Buldor's companies and powder-men hire out to the highest bidder, and Aenor's envoys know the price of every banner.",
+      "divergence": [
+        {
+          "id": "bld_hire_crossing",
+          "what": "The Captain-General sells the companies to the Crossing.",
+          "consequence": "The West crosses with trained companies and powder-men, and the war becomes the best contract Buldor has had in a century.",
+          "beat": "B20"
+        },
+        {
+          "id": "bld_hire_aenor",
+          "what": "Aenor hires Buldor's companies first.",
+          "consequence": "The West faces its own sellswords on the far shore, and the contract-book is tested as never before."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Kradlon",
+      "tag": "KRA",
+      "founding": {
+        "year": 260,
+        "date": "1A 260",
+        "story": "Aenoran settlers built a harbour at Bolbin, on the western sea at the root of the long peninsula, around 1A 260, and fought the clans of the Ronbo shore for two centuries from behind its walls. When Aenor's ships stopped coming its guilds kept the harbour and swore a league on the guild book in 1A 912, and the settler town became the first guild port of the West."
+      },
+      "dynasties": [
+        {
+          "name": "The First Guildsmen of Bolbin",
+          "from": 912,
+          "date": "1A 912",
+          "notable": "Elected by the guild council; since 4A 1598 the powder-masters' guild has given the league more First Guildsmen than any other."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Unpaid Year",
+          "year": 912,
+          "date": "1A 912",
+          "summary": "Bolbin's guilds sent no dues to Parim and swore their league instead."
+        },
+        {
+          "name": "The Powder Secret Bought",
+          "year": 6666,
+          "date": "4A 1598",
+          "summary": "Kradlon's workshops bought the secret of the burning powder from the dwarves of Brundahrim at a price the guilds still will not name."
+        },
+        {
+          "name": "The Tariffs of Parim",
+          "year": 6470,
+          "date": "4A 1402",
+          "summary": "Aenor laid tariffs on western wool and horses, and Kradlon's guilds paid the heaviest duties of any western port; the grudge has grown with every rise since."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Corogon",
+          "nature": "Trade rivals in every market and tariff partners against Parim."
+        }
+      ],
+      "capital": "Bolbin",
+      "capitalReason": "Bolbin has the best harbour on the western sea at the root of the Kradlon Peninsula, where the Ronbo shore road meets the sea; the settlers built there for the harbour and the guilds stayed for the same reason.",
+      "today": "About three quarters of a million people live on the peninsula's coast and the Ronbo shore under the guild league, whose workshops make powder-pieces and bombards for anyone who pays. Kradlon weighs tariffs against trade and memory, and its clansmen still send men to the Ronbo Watch.",
+      "divergence": [
+        {
+          "id": "kra_arms_west",
+          "what": "The guilds arm the Crossing with powder and bombards.",
+          "consequence": "The western fleets carry fire across the sea, and Kradlon's workshops grow into the West's armoury.",
+          "beat": "B20"
+        },
+        {
+          "id": "kra_tariff_deal",
+          "what": "Parim lowers its tariffs to buy Kradlon's neutrality.",
+          "consequence": "The richest guild port stays at home, and the West's grudge loses its loudest voice."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Corogon",
+      "tag": "CRG",
+      "founding": {
+        "year": 240,
+        "date": "1A 240",
+        "story": "Oslodon was the first Aenoran settlement on the western coast, built around 1A 240 on the bay facing the central sea, and the merchant houses that grew rich there governed it after Aenor's grip failed. In 1A 940 the great houses chose two consuls to rule the peninsula for a year at a time, and the consulate of Corogon has kept that custom since."
+      },
+      "dynasties": [
+        {
+          "name": "The consuls of Oslodon",
+          "from": 940,
+          "date": "1A 940",
+          "notable": "Two consuls chosen each year from the great merchant houses; a house that gives three consuls in ten years must stand aside for the next ten."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Two Consuls",
+          "year": 940,
+          "date": "1A 940",
+          "summary": "Oslodon's merchant houses chose the first pair of consuls to rule the peninsula for a year, so that no single house could make itself a prince."
+        },
+        {
+          "name": "The Southern Ships Return",
+          "year": 5256,
+          "date": "4A 188",
+          "summary": "The first Aenoran merchant ship since the First Age wars put in at Oslodon; the consuls bought its cargo and refused to read its letters of claim."
+        },
+        {
+          "name": "The Burning of Straton",
+          "year": 6690,
+          "date": "4A 1622",
+          "summary": "After Santon's corsairs took three of its grain ships, Corogon paid Varnondor's sea watch to join its own fleet, and together they burned the corsair harbour of Straton; the corsairs rebuilt it within ten years."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Kradlon",
+          "nature": "Trade rivals and tariff partners."
+        },
+        {
+          "with": "Santon",
+          "nature": "The corsairs of the outer arc, whose harbour Corogon burned in 4A 1622."
+        }
+      ],
+      "capital": "Oslodon",
+      "capitalReason": "Oslodon stands on the bay facing the central sea, the nearest western harbour to Aenor Isle, which is why the first settlers chose it and why the merchant houses grew rich there.",
+      "today": "About nine hundred and fifty thousand people live on the Corogon Peninsula, its highlands and the Papz Swamp under a consulate of merchant houses. Corogon fears the corsairs, trades with Aenor and resents its tariffs, and its highland towns have a story about Gwilid, the forgetful wizard, for every inn.",
+      "divergence": [
+        {
+          "id": "crg_crossing_port",
+          "what": "The consuls lend Oslodon as the Crossing's harbour.",
+          "consequence": "The West sails from the nearest shore to Aenor and Corogon's houses take a share of the venture.",
+          "beat": "B20"
+        },
+        {
+          "id": "crg_relief",
+          "what": "Corogon's consuls argue for sailing to Aenor's relief instead of its capture.",
+          "consequence": "The West may cross as defenders of Parim rather than its conquerors.",
+          "beat": "B20"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Varnondor",
+      "tag": "VRN",
+      "founding": {
+        "year": 2130,
+        "date": "2A 455",
+        "story": "After the plagues of the Long Grief left the western capes without lords, Oslin of the Trilinwyn gathered the cape clans and the tanners' quays under his banner and was acclaimed king at Varlibo in 2A 455. He founded the harbour of Oslinod and set the first lanterns on the capes to watch the approaches the old Aenoran fleets had used, and his heirs have kept the sea watch since."
+      },
+      "dynasties": [
+        {
+          "name": "The Oslin kings of the capes",
+          "from": 2130,
+          "date": "2A 455",
+          "notable": "Descended from Oslin I of the Trilinwyn; every king takes the founder's name, and King Oslin who reigns in 4A 1748 is the ninth of it."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Lanterns",
+          "year": 2130,
+          "date": "2A 455",
+          "summary": "Oslin I set the first watch-lanterns on the capes and founded Oslinod."
+        },
+        {
+          "name": "The Burning of Straton",
+          "year": 6690,
+          "date": "4A 1622",
+          "summary": "The sea watch joined Corogon's fleet and burned the corsair harbour of Straton on Santon."
+        },
+        {
+          "name": "The Hull-Timber Contract",
+          "year": 6758,
+          "date": "4A 1690",
+          "summary": "The king bought Worlond's tallest pines for the hulls of the sea watch, and northern timber has come to the capes ever since."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Santon",
+          "nature": "The corsairs the sea watch hunts."
+        }
+      ],
+      "capital": "Varlibo",
+      "capitalReason": "Varlibo is the royal seat on the capes' only plain, near the best harbour of the peninsula and the staging quays; the first Oslin was acclaimed there because the cape clans could all reach it by sea.",
+      "today": "About six hundred and fifty thousand people live on the western capes with Oslinod and Trilino under King Oslin, whose lanterns and sea watch guard the approaches. Varlibo's quays are the West's natural staging port for any crossing, which the king knows and Parim has not forgotten.",
+      "divergence": [
+        {
+          "id": "vrn_staging",
+          "what": "King Oslin opens Varlibo as the staging port of the Crossing.",
+          "consequence": "The western fleets gather under the capes' lanterns, and Varnondor's sea watch leads them across.",
+          "beat": "B20"
+        },
+        {
+          "id": "vrn_watch_parim",
+          "what": "The king keeps the sea watch for its old purpose and warns Parim.",
+          "consequence": "Aenor has warning of the western fleets, and Varnondor stands outside a war its neighbours start."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Wennarith",
+      "tag": "WEN",
+      "founding": {
+        "year": 2925,
+        "date": "2A 1250",
+        "story": "The rivers of the Varnondor Peninsula's eastern bend could only be crossed by ferry, and in 2A 1250 the ferrymen of Datidon and Pernogon swore themselves ferry-wardens on the model of Girdon's ford-wardens, keeping every crossing and judging every quarrel on the water. The commonwealth takes its name from the Gunwyn words for the river shore, and its law is the law of the ferries."
+      },
+      "dynasties": [
+        {
+          "name": "The Warden-Speakers of Datidon",
+          "from": 2925,
+          "date": "2A 1250",
+          "notable": "Chosen by the ferry-wardens; each warden takes the name of the ferry he keeps, as Girdon's wardens take their fords."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Ferry Oath",
+          "year": 2925,
+          "date": "2A 1250",
+          "summary": "The ferrymen of Datidon and Pernogon swore themselves wardens of the crossings."
+        },
+        {
+          "name": "The Bend Flood",
+          "year": 6343,
+          "date": "4A 1275",
+          "summary": "A great flood took the Pernogon bend and its ferries; Girdon's wardens sent boats and men, and the two commonwealths have kept a warden-bond since."
+        },
+        {
+          "name": "The Neutral Ferries",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "Wennarith refused to carry either Gunwyn's or Girdon's hosts across its rivers in the border wars, and lost trade to the sea routes for forty years."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Datidon",
+      "capitalReason": "Datidon is the ferry town at the river mouth on the peninsula's eastern coast, the crossing that every road of the bend must use.",
+      "today": "About six hundred thousand people live along the peninsula's eastern rivers under the ferry-wardens, in a warden-bond with Girdon and in no hurry to join anyone's war.",
+      "divergence": [
+        {
+          "id": "wen_ferry_host",
+          "what": "The ferry-wardens carry a western host across their rivers to Varlibo.",
+          "consequence": "The Crossing gathers faster, and Wennarith gives up the neutrality it kept through the border wars."
+        },
+        {
+          "id": "wen_girdon_union",
+          "what": "The warden-bond becomes a union with Girdon.",
+          "consequence": "One warden commonwealth holds the rivers of both lands, and Gunwyn faces a larger neighbour across the Grey River."
+        }
+      ],
+      "canon": "proposed"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Bulligon",
+      "country": "Gunwyn",
+      "role": "capital",
+      "size": "city",
+      "founded": 880,
+      "foundedDate": "1A 880",
+      "legend": "The clans say the Oath-Ring of Bulligon remembers every oath sworn inside it, and that a king who breaks his will hear the stones say his name when he next walks past them.",
+      "economy": "Royal hall, cattle and wool markets on the downs, the Neck Road trade.",
+      "canon": "proposed",
+      "population": 50000
+    },
+    {
+      "name": "Arligon",
+      "country": "Girdon",
+      "role": "crossing",
+      "size": "city",
+      "founded": 640,
+      "foundedDate": "1A 640",
+      "legend": "The wardens of Arligon feed a loaf to the Grey River at every flood, and the bridge-folk say the great ford-pike that lives under the arches is the river keeper's hound.",
+      "economy": "The main ford of the Grey River, grain from the Girdon plain, horse fairs and the river-court.",
+      "canon": "proposed",
+      "population": 40000
+    },
+    {
+      "name": "Bolbin",
+      "country": "Kradlon",
+      "role": "port",
+      "size": "city",
+      "founded": 260,
+      "foundedDate": "1A 260",
+      "legend": "The powder-masters of Bolbin keep a sealed jar in their guild-hall that they say holds the first powder the dwarves ever sold them, and nobody has been allowed to open it.",
+      "economy": "Guild port on the western sea, cloth, glass, ships and powder workshops.",
+      "canon": "proposed",
+      "population": 38000
+    },
+    {
+      "name": "Oslodon",
+      "country": "Corogon",
+      "role": "port",
+      "size": "city",
+      "founded": 240,
+      "foundedDate": "1A 240",
+      "legend": "The merchant houses say that the first Aenoran settler who landed at Oslodon bought the bay from a clan chief for a cloak, and that the chief's heirs have been asking for the cloak back ever since.",
+      "economy": "Trade with Aenor across the central sea, the consuls' hall, books and dye.",
+      "canon": "proposed",
+      "population": 40000
+    },
+    {
+      "name": "Hrennost",
+      "country": "Brundahrim",
+      "role": "fortress",
+      "size": "town",
+      "founded": 150,
+      "foundedDate": "1A 150",
+      "legend": "Men at the Outer Gate say the forge where the first powder was made still burns at the bottom of the hold, and that the dwarves keep it lit so that they will never forget how dangerous it was.",
+      "economy": "The deepest hall: gold, gems, deep iron, saltpetre and powder.",
+      "canon": "proposed",
+      "population": 4000
+    },
+    {
+      "name": "Hrunost",
+      "country": "Gromkerm",
+      "role": "mine",
+      "size": "town",
+      "founded": 210,
+      "foundedDate": "1A 210",
+      "legend": "The Kulolo boatmen say the dwarves of Hrunost carved the names of the guild masters who paid for the looting of their gate above the gate itself, so that every buyer reads them.",
+      "economy": "Iron of the Bolpor range sent down the Kulolo, bombards and gate-trade.",
+      "canon": "proposed",
+      "population": 3000
+    },
+    {
+      "name": "Luddum",
+      "country": "Dobbum",
+      "role": "capital",
+      "size": "town",
+      "founded": 3105,
+      "foundedDate": "2A 1430",
+      "legend": "The small folk say a Warden of the Fields who lets a harvest fail will find the moot-hall door too small for him in the morning.",
+      "economy": "Grain, orchards, hearth-leaf and cheese traded through the Watch and the dwarf gate.",
+      "canon": "proposed",
+      "population": 6000
+    },
+    {
+      "name": "Toples",
+      "country": "Buldor",
+      "role": "market",
+      "size": "town",
+      "founded": 2775,
+      "foundedDate": "2A 1100",
+      "legend": "Company men say that the first contract-book is kept under the floor of the Captain-General's hall, and that a company that breaks its contract will find its banner fallen there in the morning.",
+      "economy": "Tolls at the crossroads, hiring-halls of the companies, Sarudon dye.",
+      "canon": "proposed",
+      "population": 16000
+    },
+    {
+      "name": "Lochon",
+      "country": "Saopon",
+      "role": "port",
+      "size": "town",
+      "founded": 340,
+      "foundedDate": "1A 340",
+      "legend": "The boatmen of Lochon say the lagoon was dug by a giant pike looking for the sea, and that the fogs are its breath.",
+      "economy": "The Kulolo's mouth: iron, grain and cloth to sea, fowling and reed-cutting.",
+      "canon": "proposed",
+      "population": 18000
+    },
+    {
+      "name": "Faennon",
+      "country": "Lambin",
+      "role": "farm",
+      "size": "town",
+      "founded": 2055,
+      "foundedDate": "2A 380",
+      "legend": "The granary-keepers of Faennon say that a man who lies on Lambin's ground will find his bread gone mouldy by morning, which is why enemies speak plainly there.",
+      "economy": "The West's granaries and the neutral ground of its courts.",
+      "canon": "proposed",
+      "population": 18000
+    },
+    {
+      "name": "Varlibo",
+      "country": "Varnondor",
+      "role": "capital",
+      "size": "city",
+      "founded": 2130,
+      "foundedDate": "2A 455",
+      "legend": "The capes folk say the first lantern on Varlibo's headland was lit with an ember from Oslin's own hearth and has been relit from its embers ever since.",
+      "economy": "Royal seat, staging quays, oak hulls, tanneries and the sea watch.",
+      "canon": "proposed",
+      "population": 20000
+    },
+    {
+      "name": "Datidon",
+      "country": "Wennarith",
+      "role": "crossing",
+      "size": "town",
+      "founded": 2925,
+      "foundedDate": "2A 1250",
+      "legend": "The ferry-wardens of Datidon say no ferry has sunk with a warden aboard, and they make every new warden ride the first crossing of the flood season to keep it so.",
+      "economy": "Ferries, river fishing and the peninsula's river trade.",
+      "canon": "proposed",
+      "population": 9000
+    },
+    {
+      "name": "Caer-Erg",
+      "country": "Werlendor",
+      "role": "fortress",
+      "size": "town",
+      "founded": 6256,
+      "foundedDate": "4A 1188",
+      "legend": "The hill clans say that Emric struck the Erg stone with his sword when he was acclaimed and that the notch is still there, and that a Werlwyn king who forgets the claim to Bulligon will find it healed.",
+      "economy": "Hill-fort and market of the Erg, sheep, cattle and coast fishing.",
+      "canon": "proposed",
+      "population": 7000
+    },
+    {
+      "name": "Tummin",
+      "country": "Thenon",
+      "role": "farm",
+      "size": "town",
+      "founded": 1100,
+      "foundedDate": "1A 1100",
+      "legend": "The olive growers of Tummin say the first grove on the hill was planted by Saric the day he was acclaimed, and that a king of Thenon must eat its olives before any others each year.",
+      "economy": "Olives, wine and cattle of the warm lowland.",
+      "canon": "proposed",
+      "population": 6000
+    }
+  ],
+  "figures": [],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "name": "The Lawspeaker's oath-law",
+      "realms": [
+        "Gunwyn",
+        "Werlendor",
+        "Thenon",
+        "Varnondor",
+        "Lambin"
+      ],
+      "summary": "A clan king is acclaimed at a standing stone and bound by the Lawspeaker, who is judge and priest at once and remembers every oath; wrongs are paid by the wergild set at the stone.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The ford-share",
+      "realms": [
+        "Girdon",
+        "Wennarith"
+      ],
+      "summary": "Land on the rivers is held by ford-share: each warden keeps a crossing and takes its dues, judges quarrels on his water and takes the name of his ford or ferry.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The guild book",
+      "realms": [
+        "Kradlon",
+        "Saopon",
+        "Corogon"
+      ],
+      "summary": "Law in the guild ports is the guild book, read at every election; contracts are sworn on it rather than on any god.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The contract-book and the fallen banner",
+      "realms": [
+        "Buldor"
+      ],
+      "summary": "A company is bound by its contract and nothing else, may meet another Buldor company in the field if both are hired, and ends when its banner falls.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Charter of Free Banners",
+      "realms": [
+        "Gunwyn",
+        "Girdon",
+        "Werlendor",
+        "Lambin",
+        "Thenon",
+        "Kradlon",
+        "Corogon",
+        "Varnondor",
+        "Buldor",
+        "Saopon",
+        "Wennarith"
+      ],
+      "summary": "Every western court quotes Edran's First Age promise that western rulers fight under their own banners and their own commanders, and none will march under another's.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Ronbo Oath",
+      "realms": [
+        "Thenon",
+        "Kradlon",
+        "Dobbum",
+        "Brundahrim"
+      ],
+      "summary": "Since 3A 904 clansmen of Thenon and Kradlon guard the two passes of the small folk's basin, paid in grain and leaf, and the dwarves of Brundahrim keep the high passes above it shut.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The neutral ground of Faennon",
+      "realms": [
+        "Lambin"
+      ],
+      "summary": "Enemies may meet and talk on Lambin's granary ground, and the lord sells grain to every comer whatever their quarrel.",
+      "canon": "proposed"
+    }
+  ]
+}

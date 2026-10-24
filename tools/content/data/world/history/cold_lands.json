@@ -1,0 +1,1554 @@
+{
+  "version": 1,
+  "region": "cold_lands",
+  "name": "The Cold Lands",
+  "overview": "The Cold Lands are the largest and least known country of Aoaz, a white land of snow plain, three great ranges and a winter so long that the clans count the year in two halves, the Long Dark and the Long Light. Men have herded reindeer and hunted seal here since before Aen, and the giants of the north-west heights and the yeti of the shelf and the high snows are older still in the clans' tales. Aenor's First Age ships charted the coast and left trading posts behind them, but no southern crown ever ruled the interior, and when Aenor fell to the Necromancer the north was too far and too cold to be worth his taking. Its own history turns on bread rather than ore: the chief who opened his stores in the Hunger Winters founded the custom from which the Winter Crown of Coldor grew, and in 4A 850 that crown brought the frozen interior under one rule, while the warlords of Melkgard behind their black forts refused it and have refused it ever since. In 4A 1748 Coldor and Horidor keep the Northern Accord, Melkgard keeps its forts manned, the Free Steadings of Fearno answer to neither, goblins tend the warm springs of the southern valleys, and in the valley of Mp'E an ordinary town lives below a silent castle whose lord nobody visits. Years in the data are one continuous count from the victory of Aen on the proposed lengths of the ages (First Age 1,675 years, Second Age 2,133, Third Age 1,260): 1A 1 is year 1, 2A 1 is 1,676, 3A 1 is 3,809 and 4A 1 is 5,069, so that the campaign year 4A 1748 is 6,816; every entry also carries its date in the Age-and-year form, which is the form the prose uses.",
+  "ages": [
+    {
+      "id": "cl_charts",
+      "name": "The Charts and the Posts",
+      "from": 1,
+      "to": 800,
+      "fromDate": "1A 1",
+      "toDate": "1A 800",
+      "summary": "Aenoran ships reached the Cold Lands early in the First Age, named the coast Coldor, the ice-land, on their charts and set trading posts at Alorio and the Fandan mouth, where they bought furs, amber and walrus ivory from clans who had never heard of a king. Around 1A 400 Aenoran surveyors with clan guides drew the first road over the Neridor Gap, the line that later became the Neck Road.",
+      "canon": "proposed"
+    },
+    {
+      "id": "cl_free_harbours",
+      "name": "The Free Harbours",
+      "from": 801,
+      "to": 1675,
+      "fromDate": "1A 801",
+      "toDate": "1A 1675",
+      "summary": "As Aenor weakened under its bad kings the northern posts passed to clan chiefs, and Alorio and the Fandan mouth became free harbours that paid nothing to Parim. The Cold Lands sent no banners to Dardan, and the clans remember the war of the south only as the southern burning, a glow on the traders' faces when they came north again.",
+      "canon": "proposed"
+    },
+    {
+      "id": "cl_hunger",
+      "name": "The Hunger Winters and the Frost-Hall",
+      "from": 1676,
+      "to": 2975,
+      "fromDate": "2A 1",
+      "toDate": "2A 1300",
+      "summary": "The plagues of the Age of Long Grief came north by ship, and three bitter winters in one generation broke the coastal clans until the Fandan chief Kolar opened his stores to every clan that came to his fire. The custom of bread that his line kept grew into the first Frost-Hall at Fandanar in 2A 600, and around 2A 1000 goblin warrens crossed the Coldor Channel's winter ice and settled the warm-spring valleys of the southern mountains.",
+      "canon": "proposed"
+    },
+    {
+      "id": "cl_pacts",
+      "name": "The Pacts and the Black Forts",
+      "from": 2976,
+      "to": 3808,
+      "fromDate": "2A 1301",
+      "toDate": "2A 2133",
+      "summary": "The clans made their old pacts with the elder peoples of the snow, a hunting truce with the shelf yeti at Fentene and a toll-peace with the ice giants of the heights, and the snowline fair grew from the first. In the same centuries warlords fortified the Isengar valley against sea-raiders from the north coast and cut the Black Gallery into the rock below Minnolomak, the beginning of the march that became Melkgard.",
+      "canon": "proposed"
+    },
+    {
+      "id": "cl_refuge",
+      "name": "The Far Refuge",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "The Necromancer's Order never reached the Cold Lands. Aenoran families fled north by sea in small numbers, the western trade replaced the southern at Alorio, and the one time his servants came, to buy the dead of a starving clan in 3A 702, the Fandan chiefs burned their ship in Fandhavn harbour and made the burning of the dead the first law of the Winter Hearth.",
+      "canon": "proposed"
+    },
+    {
+      "id": "cl_winter_crown",
+      "name": "The Winter Crown",
+      "from": 5918,
+      "to": 6816,
+      "fromDate": "4A 850",
+      "toDate": "4A 1748",
+      "summary": "From 4A 850 the Winter Crown of Coldor rules the frozen interior and the western ports and leads the Northern Accord with Horidor, while Melkgard refuses it and the Free Steadings of Fearno stand apart from both. The age is one of raids across the Fandan rather than declared wars, of western grain bought over the Neck Road and of crowns that buy the clans' loyalty one hard winter at a time.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Coldor",
+      "tag": "CLD",
+      "founding": {
+        "year": 5918,
+        "date": "4A 850",
+        "story": "The kings of the Fandan valley had kept the Frost-Hall's bread for six centuries before Queen Ilvra of the Vording line called the clan-fire keepers to Fandanar in 4A 850 and was crowned with a circlet of white iron as the first Winter Queen. Every clan of the frozen interior that had eaten from the crown granaries in a hard winter swore to her, and at the Neridor Gap Horidor's chiefs swore the Northern Accord beside them; only the warlords of the Isengar valley sent back her envoys unfed."
+      },
+      "dynasties": [
+        {
+          "name": "The Kolaring, bread-chiefs of the Fandan",
+          "from": 1833,
+          "date": "2A 158",
+          "notable": "Descended from Kolar, the chief who opened his stores to every clan in the Hunger Winters; they raised the first Frost-Hall in 2A 600 and ruled the valley as chiefs until the crown was made.",
+          "to": 850,
+          "toDate": "4A 850"
+        },
+        {
+          "name": "House Vording, the Winter Crown",
+          "from": 5918,
+          "date": "4A 850",
+          "notable": "Founded by Queen Ilvra I, a daughter of the Kolaring through her mother; the crown passes to the eldest child of either sex, and Queen Vaestia, who reigns in 4A 1748, is the eleventh ruler of the line."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hunger Winters",
+          "year": 1833,
+          "date": "2A 158",
+          "summary": "Three bitter winters in one generation broke the coastal clans after plague came north by ship, and the Fandan chief Kolar fed every clan that reached his fire, the act from which the crown later took its right to the granaries."
+        },
+        {
+          "name": "The March of Bones",
+          "year": 4510,
+          "date": "3A 702",
+          "summary": "Servants of the Necromancer's Order bought the dead of a starving coast clan; the Fandan chiefs rode to Fandhavn, burned the buyers' ship at its moorings and made the burning of the dead the law of every Coldic hearth."
+        },
+        {
+          "name": "The Winter Crown",
+          "year": 5918,
+          "date": "4A 850",
+          "summary": "Queen Ilvra I was crowned at Fandanar and the Northern Accord was sworn with Horidor at the Neridor Gap; Melkgard refused the crown and the rivalry of the two halves of the Isengar country began."
+        },
+        {
+          "name": "The Forty Winters' Quarrel",
+          "year": 5919,
+          "date": "4A 851",
+          "summary": "For forty winters Fandanar and Minnolomak raided each other across the frozen Fandan without ever declaring war, and both sides built the March Forts on the river banks that still stand manned."
+        },
+        {
+          "name": "The Neck Road Compact",
+          "year": 6282,
+          "date": "4A 1214",
+          "summary": "Coldor, Horidor and Worlond agreed with Gunwyn's king to keep the Neck Road open from the thaw to the first snows, western grain and cattle going north for Coldic iron, furs and timber; the crown granaries at Fandanar and Alorio have been filled by it ever since."
+        },
+        {
+          "name": "The White Year",
+          "year": 6799,
+          "date": "4A 1731",
+          "summary": "The worst winter in living memory closed the Neck Road for two summers; Coldor opened its granaries to Pertolor, Omar and Xison as well as its own clans, and the crown's lean among the moors has never been higher."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Melkgard",
+          "nature": "The Cold Rivalry since 4A 850: the warlords refused the Winter Crown and the March Forts face each other across the Fandan."
+        },
+        {
+          "with": "Fearno",
+          "nature": "The Free Steadings refused the crown in 4A 1304; Fandanar courts their lords with grain and is courteously refused."
+        }
+      ],
+      "capital": "Fandanar",
+      "capitalReason": "Fandanar stands where the Neck Road leaves the Fandan for the high country, in the one valley whose sedge meadows feed horses through the Long Light; the first Frost-Hall was raised here around a fire carried from the eastern Fandan clans, and the crown granaries stand beside it.",
+      "today": "Queen Vaestia rules some eight hundred thousand people from the Frost-Hall, the strongest crown of the north and the least warlike, whose real power is the bread in its granaries and the grain bought each summer over the Neck Road. The Accord with Horidor holds, the clans still remember the White Year, the March Forts are manned against Melkgard, and the Houses of the First Light keep a small hospital and grain-roll at Alorio for the port.",
+      "divergence": [
+        {
+          "id": "cld_summon_ice",
+          "what": "Coldor's wardens hear of the stranger found in the far north-west ice and summon him to Fandanar instead of letting the clans nurse him.",
+          "consequence": "The road south is delayed by about a month and the stranger owes the Winter Crown a debt of hospitality; the clans who found him resent the crown's hand.",
+          "beat": "B03"
+        },
+        {
+          "id": "cld_iron_hand",
+          "what": "The queen settles the Cold Rivalry by the Iron Hand, crossing the Fandan in force while Melkgard's oath-companies are scattered.",
+          "consequence": "Melkgard can be made to kneel, but the Free Steadings and the border clans fear the crown more than they love its bread, and Fearno looks for friends elsewhere."
+        },
+        {
+          "id": "cld_white_companies",
+          "what": "Coldor sends its White Companies south with timber and ships for the coalition of the living instead of standing apart in the last war.",
+          "consequence": "The Cold Lands enter the War of the Last Crowns for the first time in their history, and the crown's granaries empty faster than the Neck Road can refill them.",
+          "beat": "B20"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Melkgard",
+      "tag": "MLK",
+      "founding": {
+        "year": 3455,
+        "date": "2A 1780",
+        "story": "Sea-raiders from the north coast had burned the Isengar valley for a generation when a chief named Zorak brought the valley's men under one oath in 2A 1780, set them to cut the Black Gallery into the cliff below Minnolomak and built the first of the black-stone forts that give the march its name, melk for black and gard for the stronghold. He took no crown and left none: the march has been held ever since by the best sworn man of the oath-companies, chosen over the warlord's pyre."
+      },
+      "dynasties": [
+        {
+          "name": "The oath-heirs of the Black Gallery",
+          "from": 3455,
+          "date": "2A 1780",
+          "notable": "No family holds Melkgard; each warlord is chosen by the oath-companies from among the men sworn to his predecessor. Warlord Grinek, who sent Queen Ilvra's envoys home unfed in 4A 850, is the most honoured of them, and Warlord Ezhan Isenmar holds the march in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Cutting of the Black Gallery",
+          "year": 3455,
+          "date": "2A 1780",
+          "summary": "Zorak's oath-men cut the long gallery into the cliff below Minnolomak, where the Storm Court keeps a token of every wind that has sunk a raider's ship, and raised the first black forts of the march."
+        },
+        {
+          "name": "The Raiders Broken",
+          "year": 4218,
+          "date": "3A 410",
+          "summary": "The last great fleet of north-coast raiders broke on the forts of the Gulf of Minnolomak, and its survivors settled as sealers on the coast beyond, where their grandchildren became the folk of Portogalor."
+        },
+        {
+          "name": "The Refusal",
+          "year": 5918,
+          "date": "4A 850",
+          "summary": "Warlord Grinek refused the Winter Crown when Coldor united the interior, and the march has kept that refusal as its founding pride."
+        },
+        {
+          "name": "The Forty Winters' Quarrel",
+          "year": 5919,
+          "date": "4A 851",
+          "summary": "Forty winters of raids across the frozen Fandan, in which Melkgard took cattle and Coldor took hostages, ended in a cold peace and the March Forts on both banks."
+        },
+        {
+          "name": "The Bid for Guerlon",
+          "year": 6588,
+          "date": "4A 1520",
+          "summary": "Melkgard offered Orewele's mining clan protection in return for half its iron; the clan took Coldor's grain instead, and the warlords have bid for the Orewell mines in every generation since."
+        },
+        {
+          "name": "The Gifts of the White Year",
+          "year": 6799,
+          "date": "4A 1731",
+          "summary": "While Coldor opened its granaries, Melkgard sent salt meat and iron tools to Omar and the border moor, so that the clan nearest its forts owed it at the next moot."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Coldor",
+          "nature": "The Cold Rivalry: the march has refused the Winter Crown since 4A 850 and measures its pride by never asking for the Accord."
+        },
+        {
+          "with": "Omar",
+          "nature": "The border clan Melkgard presses hardest, with gifts in hard winters and oath-demands in good ones."
+        }
+      ],
+      "capital": "Minnolomak",
+      "capitalReason": "Minnolomak stands at the mouth of the main Isengar pass on the Gulf of Minnolomak, where the valley's bog-ore and the rock-ore of the mountains meet a harbour; whoever holds it holds the only road between the north coast and the sheltered valley.",
+      "today": "Some three hundred thousand people live under Warlord Ezhan Isenmar and his oath-companies, in a march of forges and black forts whose men would rather go hungry than eat the queen's bread. The March Forts are manned, gifts flow to the border clans, the Storm Court's captains keep their tokens in the Black Gallery, and the warlord still bids for the Orewell iron.",
+      "divergence": [
+        {
+          "id": "mlk_swear_accord",
+          "what": "A warlord chosen after a bad winter swears to the Northern Accord and takes a seat at the Frost Moot.",
+          "consequence": "The Cold Rivalry ends without a war, Coldor's reach covers the whole interior and the oath-companies who refused the new warlord go south as sellswords."
+        },
+        {
+          "id": "mlk_sell_pass",
+          "what": "The warlord sells passage through the Isengar Pass to a southern temple party seeking the valley of Mp'E.",
+          "consequence": "The party reaches the silent castle sooner and better guided; Coldor's watch-fires never see it pass, and the valley folk do not forgive the march.",
+          "beat": "B14"
+        },
+        {
+          "id": "mlk_take_guerlon",
+          "what": "Melkgard seizes the Orewell mines while Coldor is busy elsewhere.",
+          "consequence": "The march gains the iron of the far north and the defiance to match it, and the western dwarves' factors deal with the warlord instead of the clan."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Horidor",
+      "tag": "HOR",
+      "founding": {
+        "year": 2015,
+        "date": "2A 340",
+        "story": "The clans of the lower Fandan had guided Aenor's surveyors over the Neridor Gap in the First Age and kept the cairns that marked the road after the southerners left. In 2A 340 their chiefs met at the drawn town below the Gap and swore to keep the cairn road open for every traveller who paid the cairn-due, and the cairn moot of Ollondo, the oldest standing moot of the Cold Lands, has met there every Long Light since."
+      },
+      "dynasties": [
+        {
+          "name": "The Azling cairn-chiefs",
+          "from": 2015,
+          "date": "2A 340",
+          "notable": "The moot chooses its chief from the Azling hearth-line more often than any other; Chief Bransdok Azling swore the Northern Accord at the Gap beside Queen Ilvra in 4A 850."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Charting of the Neck",
+          "year": 400,
+          "date": "1A 400",
+          "summary": "Horidor's forebears guided Aenoran surveyors over the Neridor Gap and helped them draw the first road from the Fandan to the West Lands, and they kept its cairns when the surveyors went home."
+        },
+        {
+          "name": "The Northern Accord",
+          "year": 5918,
+          "date": "4A 850",
+          "summary": "Chief Bransdok swore mutual defence with the new Winter Crown at the Neridor Gap, and Horidor's chiefs have sat at the Frost Moot of Fandanar ever since."
+        },
+        {
+          "name": "The Neck Road Compact",
+          "year": 6282,
+          "date": "4A 1214",
+          "summary": "Horidor took the keeping of the cairn road and its stages over the Gap under the compact with Gunwyn, and the cairn-due became the moot's main income."
+        },
+        {
+          "name": "The Year of the Closed Gap",
+          "year": 6671,
+          "date": "4A 1603",
+          "summary": "An avalanche buried the high cairn road for a whole Long Light; Horidor's clans cut a new way around the slide by hand, and the western traders who waited at Tarvak still tell of it."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Melkgard",
+          "nature": "Horidor stands with Coldor in the Accord, and Melkgard's raiders have twice burned the lower Fandan steadings."
+        }
+      ],
+      "capital": "Ollondo",
+      "capitalReason": "Ollondo sits on the valley road just below the Neridor Gap, where travellers wait for the weather before the crossing and pay the cairn-due; the moot meets where the road is, because the road is what the moot exists to keep.",
+      "today": "About two hundred and twenty thousand people live along the lower Fandan and in the Neridor Mountains under the cairn moot. Horidor keeps the Accord faithfully, collects its dues from every western cart and remembers the White Year, when Coldor's bread came up the valley before the snow did.",
+      "divergence": [
+        {
+          "id": "hor_close_gap",
+          "what": "The cairn moot closes the Gap to western travellers after a quarrel over dues.",
+          "consequence": "The Neck Road shuts for a season, Coldor's granaries run low and any stranger coming south from the far north-west must wait in the Worlond Forest for the moot to relent.",
+          "beat": "B04"
+        },
+        {
+          "id": "hor_leave_accord",
+          "what": "A cairn-chief bought with Melkgard's gifts takes Horidor out of the Northern Accord.",
+          "consequence": "Coldor loses the Gap, the Accord becomes a crown with no league, and the Neck Road becomes the price of every quarrel in the north."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Yeldenne",
+      "tag": "YEL",
+      "founding": {
+        "year": 2825,
+        "date": "2A 1150",
+        "story": "Herders and charcoal-burners from the Isengar country settled the sheltered valley of Mp'E around 2A 1150, below a castle that was already old and already silent. Their first headman, Sten Ezhson, set the custom the valley still keeps: a loaf is left each Long Dark at the start of the Silent Road that climbs to the castle, and nobody walks on, because the folk of Simoto believe that the Watcher in the Hall is a sleeping king of the old north who will wake if the valley ever breaks its bread."
+      },
+      "dynasties": [
+        {
+          "name": "The headmen of Simoto, Sten Ezhson's line",
+          "from": 2825,
+          "date": "2A 1150",
+          "notable": "The valley chooses its headman from the founder's kin; he keeps the bread-custom and the valley's peace with both crowns. Above the town, the lord of the hall, whom the valley names Horos, has never been seen to come down."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Loaf",
+          "year": 2825,
+          "date": "2A 1150",
+          "summary": "Sten Ezhson laid the first loaf at the start of the Silent Road, and the valley has never let a Long Dark pass without one."
+        },
+        {
+          "name": "The Warlord's Climb",
+          "year": 6077,
+          "date": "4A 1009",
+          "summary": "A warlord of Melkgard who meant to tax the valley sent twenty oath-men up the Silent Road; none came back down, and since then neither Melkgard nor Coldor has asked Mp'E for anything."
+        },
+        {
+          "name": "The Southern Pilgrims",
+          "year": 6716,
+          "date": "4A 1648",
+          "summary": "A party of southern scholars and temple folk reached Simoto asking about a castle in the ice; the headman fed them, refused them a guide and sent them home by the Isengar Pass."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Simoto",
+      "capitalReason": "Simoto is the ordinary town of the valley, on the only good ground below the Silent Road where the sheltered air lets barley ripen; the castle above it is the valley's mystery, not its seat.",
+      "today": "About three thousand herders and charcoal-burners live in the valley of Mp'E, paying no tax to anyone and keeping their loaf on the Silent Road. Travellers who come over the Isengar Pass tell of a green light seen above the town at night; the headman tells them it is none of their business and gives them supper.",
+      "divergence": [
+        {
+          "id": "yel_warden_calls",
+          "what": "The headman calls the valley's men to guard the empty road to the hall when strangers come asking.",
+          "consequence": "The hall's defenders are mortal men with bows, few but forewarned, and a party that tries to force the road meets them first.",
+          "beat": "B15"
+        },
+        {
+          "id": "yel_bread_broken",
+          "what": "A hungry winter makes the valley eat the loaf it owes the Silent Road.",
+          "consequence": "The valley's belief says the Watcher will wake; what happens in the hall is not known, but the town would never be the same in its own eyes."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Fearno",
+      "tag": "FEA",
+      "founding": {
+        "year": 6372,
+        "date": "4A 1304",
+        "story": "The steading lords of the eastern moors had grazed the Naepu country since the Second Age without any lord above them, and when Fandanar and Minnolomak both sent envoys in 4A 1304 to ask their oath, they met in the hall at Azenoalion and agreed to refuse both. They named themselves the Free Steadings, chose a first lord to speak for them for seven winters, and swore that no steading would go hungry while another had stores."
+      },
+      "dynasties": [
+        {
+          "name": "The first lords of the hall",
+          "from": 6372,
+          "date": "4A 1304",
+          "notable": "A first lord is chosen for seven winters from among the steading lords; the Azening steading of the upper Naepu has given the hall more first lords than any other."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Settling of the Naepu",
+          "year": 2575,
+          "date": "2A 900",
+          "summary": "Reindeer clans settled the moors along the Naepu and learned to sow moor oats in its few sheltered bends, the beginning of the steadings."
+        },
+        {
+          "name": "The Naepu Raid",
+          "year": 6180,
+          "date": "4A 1112",
+          "summary": "Oath-companies of Melkgard rode across the frozen interior to burn Azenoalion and were lost in a whiteout on the open snow; the steadings buried the men they found in spring, and the hall keeps their banners."
+        },
+        {
+          "name": "The Free Steadings",
+          "year": 6372,
+          "date": "4A 1304",
+          "summary": "The steading lords refused both crowns at once and founded the hall of many lords at Azenoalion."
+        },
+        {
+          "name": "The Cold Tarn Fishing Feud",
+          "year": 6628,
+          "date": "4A 1560",
+          "summary": "Fearno and Austklev quarrelled over the char of the Cold Tarn until the Frost Moot of Fandanar arbitrated a sharing of the shores, one of the few times the steadings accepted the crown's judgement."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Coldor",
+          "nature": "Fearno refuses the Winter Crown and its bread both, politely."
+        },
+        {
+          "with": "Austklev",
+          "nature": "The Cold Tarn shores, divided by arbitration in 4A 1560 and quarrelled over every Long Light since."
+        }
+      ],
+      "capital": "Azenoalion",
+      "capitalReason": "Azenoalion stands on the Naepu where the moor roads meet the river ice, a hall-town big enough to seat every steading lord and central enough that none of them rides further than the others.",
+      "today": "Some two hundred and fifty thousand herders live in the largest free realm of the north, a third pole between Fandanar and Minnolomak whose hall argues for a month before it agrees on anything. The present first lord leans neither way and means to keep it so.",
+      "divergence": [
+        {
+          "id": "fea_join_accord",
+          "what": "The hall votes to join the Northern Accord after Coldor feeds the steadings in a bitter winter.",
+          "consequence": "Coldor's Accord covers the whole east, and Melkgard stands alone against a united interior."
+        },
+        {
+          "id": "fea_with_melkgard",
+          "what": "The first lord makes a pact with Melkgard against the crown's reach.",
+          "consequence": "Coldor faces enemies on two sides of the snow, and the Cold Rivalry becomes a war the Accord might lose."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Austklev",
+      "tag": "AUT",
+      "founding": {
+        "year": 5680,
+        "date": "4A 612",
+        "story": "Whaling crews from the eastern cliffs, the aust-klev of the Coldic name, had gathered at the sheltered harbour of Vaestia for generations before Jarl Kolim Ezhair built a hall there in 4A 612 and took a tithe of every whale brought ashore in return for keeping the harbour boom and the forest timber. The jarls have kept the hall and the tithe since, and the east coast takes its law from the harbour rather than from any crown."
+      },
+      "dynasties": [
+        {
+          "name": "The Ezhair jarls of Vaestia",
+          "from": 5680,
+          "date": "4A 612",
+          "notable": "A coast family of whalers who keep the harbour hall; the jarldom passes to the son or daughter who has captained a whaling crew."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hall at Vaestia",
+          "year": 5680,
+          "date": "4A 612",
+          "summary": "Jarl Kolim Ezhair built the harbour hall and its boom and claimed the whale-tithe, founding the jarldom."
+        },
+        {
+          "name": "The Cold Tarn Fishing Feud",
+          "year": 6628,
+          "date": "4A 1560",
+          "summary": "Austklev's fishers and Fearno's steadings fought over the char of the Cold Tarn until the Frost Moot divided its shores."
+        },
+        {
+          "name": "The Ice-Lock",
+          "year": 6756,
+          "date": "4A 1688",
+          "summary": "An early freeze locked half the whaling fleet in the Siroler ice for a winter; the crews lived on their catch and walked home over the ice in spring, and the jarl since keeps a winter store at the harbour."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Fearno",
+          "nature": "The Cold Tarn shores."
+        }
+      ],
+      "capital": "Vaestia",
+      "capitalReason": "Vaestia is the one deep, sheltered harbour of the east coast where the forest comes down to the sea, so that the whalers can build their ships and land their catch in the same place.",
+      "today": "About a hundred thousand people live by whaling, sealing and timber along the east coast facing the Siroler Seas. The jarl sells whale-fat and spear-whale tusk south and west, keeps out of the Cold Rivalry and watches the ice.",
+      "divergence": [
+        {
+          "id": "aut_whale_fleet",
+          "what": "The jarl hires out his whaling fleet as transports for whichever crown pays in the last war.",
+          "consequence": "A small but hardy northern fleet joins the war at sea, and the east coast's lamps go dim for want of whale-fat at home."
+        },
+        {
+          "id": "aut_accord",
+          "what": "Austklev joins the Northern Accord to win the Cold Tarn dispute.",
+          "consequence": "The Accord gains an eastern harbour and Fearno is ringed by the crown's friends."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Worlond",
+      "tag": "WRL",
+      "founding": {
+        "year": 6282,
+        "date": "4A 1214",
+        "story": "The forest clans of the neck had always charged a little to let travellers through the Worlond Forest, but it was the Neck Road Compact of 4A 1214 that made a lordship of them: the crowns of Coldor and Gunwyn wanted one man to answer for the forest stages, and the clans chose Yorak Hozening of Tarvak, who built the waystations and kept them stocked with fodder and dry wood from the thaw to the first snows."
+      },
+      "dynasties": [
+        {
+          "name": "The Hozening lords of the forest stages",
+          "from": 6282,
+          "date": "4A 1214",
+          "notable": "Descended from Yorak Hozening, the first Lord of the Stages; the lordship passes to the eldest son or daughter who has walked the whole road from the Gap to the West Lands."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Neck Road Compact",
+          "year": 6282,
+          "date": "4A 1214",
+          "summary": "Worlond took the forest stages of the Neck Road under the compact between Coldor and Gunwyn and became a lordship."
+        },
+        {
+          "name": "The Burning of Hozoson",
+          "year": 6458,
+          "date": "4A 1390",
+          "summary": "A summer fire took the glen of Hozoson and a third of the forest stages; Coldor and Gunwyn both sent timber-men to rebuild the road before the autumn wagons came."
+        },
+        {
+          "name": "The Hull-Timber Contract",
+          "year": 6758,
+          "date": "4A 1690",
+          "summary": "Varnondor's king bought Worlond's tallest pines for the hulls of his sea watch, and the forest's timber has gone south by the Neck Road and the Grey River ever since."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Tarvak",
+      "capitalReason": "Tarvak, the forest-place, is the largest clearing on the Neck Road, half-way between the Gap and the West Lands, where wagons must stop for a night whichever way they travel.",
+      "today": "About a hundred and sixty thousand foresters, charcoal-burners and waystation keepers live in the Worlond Forest on the neck. The lord keeps the stages for both crowns, sells timber to the West and hopes nobody ever fights over the road.",
+      "divergence": [
+        {
+          "id": "wrl_stage_closed",
+          "what": "Worlond closes its forest stages to traffic from one side in a quarrel over the compact.",
+          "consequence": "The Neck Road becomes a weapon: the West or the Cold Lands loses the other's goods, and travellers on the road are stranded in the forest."
+        },
+        {
+          "id": "wrl_timber_west",
+          "what": "The lord sells the whole winter's cut to the western courts for the hulls of the Crossing.",
+          "consequence": "The West builds its fleet faster, Coldor's ports go short of timber, and Worlond grows rich on a war it never meant to join.",
+          "beat": "B20"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Poloto",
+      "tag": "PLT",
+      "founding": {
+        "year": 310,
+        "date": "1A 310",
+        "story": "Aenoran ships built a trading post at the mouth of the Fandan around 1A 310, where the Cold Sea freezes latest and the river carries furs down from the interior. When Aenor's grip failed in 1A 905 the harbour men who had kept the post for Parim kept it for themselves, wrote their dues into a harbour book and chose a Harbour-Master from among the guild of pilots, and Fandhavn has been a free port under its guild ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The harbour guild of Fandhavn",
+          "from": 905,
+          "date": "1A 905",
+          "notable": "Masters are chosen by the pilots' guild for life; Harbour-Master Zenka Grindair, who burned the Necromancer's ship in 3A 702 with the Fandan chiefs' help, is the guild's great name."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Free Harbour",
+          "year": 905,
+          "date": "1A 905",
+          "summary": "The post at the Fandan mouth stopped paying Parim and became a free port under its pilots' guild."
+        },
+        {
+          "name": "The March of Bones",
+          "year": 4510,
+          "date": "3A 702",
+          "summary": "The guild let the Fandan chiefs burn the ship of the Necromancer's buyers at its moorings, and the harbour book still records the date in red."
+        },
+        {
+          "name": "The Charts of the Pupor",
+          "year": 5770,
+          "date": "4A 702",
+          "summary": "Fandhavn's pilots bought the new island charts and opened a regular trade to the Pupor Isles, carrying furs and ivory south for sailcloth."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Fandhavn",
+      "capitalReason": "Fandhavn stands at the Fandan mouth on the Cold Sea, the harbour of the north that stays open longest each year, where the river brings the interior's goods to the sea.",
+      "today": "About sixty thousand people live in the free port and on the Poloto plain, under a harbour guild that sells to everyone and swears to nobody. A House of the First Light keeps the port's grain-roll and a hospital by the quay.",
+      "divergence": [
+        {
+          "id": "plt_open_harbour",
+          "what": "The guild opens Fandhavn to the western fleets as a supply harbour in the last war.",
+          "consequence": "The Crossing gains a northern harbour that stays open late in the year, and Coldor is pressed to choose whether a free port in its valley may take sides.",
+          "beat": "B20"
+        },
+        {
+          "id": "plt_crown_port",
+          "what": "The guild accepts the Winter Crown in return for the crown's granaries.",
+          "consequence": "Coldor gains its second great harbour, and the free towns of the coast lose their last free port."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Holdon",
+      "tag": "HLD",
+      "founding": {
+        "year": 6188,
+        "date": "4A 1120",
+        "story": "The south-coast clans who had kept the hunting truce with the shelf yeti since 2A 1288 grew rich on the snowline fair at Fentene, and in 4A 1120 they crowned Bran Grindair, the fair's keeper, as their king so that one hand would hold the fair's peace. Holdon's kings are still judged by one thing, which is whether the fair was good."
+      },
+      "dynasties": [
+        {
+          "name": "The Grindair kings of Fentene",
+          "from": 6188,
+          "date": "4A 1120",
+          "notable": "Founded by Bran Grindair, keeper of the snowline fair; the crown passes to the eldest child, who must first keep the fair for a year as the king's deputy."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hunting Truce of the Shelf",
+          "year": 2963,
+          "date": "2A 1288",
+          "summary": "The south-coast chiefs and the Eldest of the shelf yeti agreed which seal-grounds each would hunt, and the first snowline fair was held at Fentene to seal it."
+        },
+        {
+          "name": "The Crowning of the Fair-Keeper",
+          "year": 6188,
+          "date": "4A 1120",
+          "summary": "The coast clans crowned Bran Grindair, keeper of the snowline fair, at Fentene, so that one hand would hold the fair's peace for men, yeti and goblins alike."
+        },
+        {
+          "name": "The Spring Quarrel",
+          "year": 6571,
+          "date": "4A 1503",
+          "summary": "Holdon's herders drove their beasts to winter in Glimkit's warm valleys and the goblins drove them out again with traps; the quarrel was settled at the fair with a yearly gift of grain for grazing rights in the bitterest winters."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Glimkit",
+          "nature": "Trade and quarrel over the warm springs, settled at the fair each year and reopened each winter."
+        }
+      ],
+      "capital": "Fentene",
+      "capitalReason": "Fentene sits at the snowline above the south coast, where the yeti come down from the shelf and the goblins up from their valleys, and where the fair has been held since the Hunting Truce; before Holdon was crowned it was the shelf yeti's chief meeting-place with men.",
+      "today": "About eighty thousand people live along the south coast facing the Coldor Channel. The king keeps the fair, the yeti come down each Long Light, the goblins bring traps and lamp-fat, and the springs quarrel simmers as it always has.",
+      "divergence": [
+        {
+          "id": "hld_fair_raided",
+          "what": "A raid on the snowline fair, by Holdon's own young men or by strangers, spills yeti blood.",
+          "consequence": "The Hunting Truce breaks, the shelf clans close their country to men and every crown loses its only envoy route to the yeti."
+        },
+        {
+          "id": "hld_seize_springs",
+          "what": "Holdon seizes the warm springs in a bitter winter.",
+          "consequence": "The coast herds survive the winter, but the goblins of Glimkit become an unruly warren inside the kingdom, and the lamps go out at the fair."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Glimkit",
+      "tag": "GLI",
+      "founding": {
+        "year": 2675,
+        "date": "2A 1000",
+        "story": "Goblin warrens driven north by the wars of the Long Grief crossed the Coldor Channel on its winter ice around 2A 1000 and found, deep in the southern face of the Coldor Mountains, valleys where hot springs kept the snow off the ground. They dug their warrens round the largest spring and built Drikzig, the hall of the warm water, and the biggest hobgoblin among them was made chief so that the coast clans would think twice before coming to drive them out."
+      },
+      "dynasties": [
+        {
+          "name": "The hobgoblin chiefs of Drikzig",
+          "from": 2675,
+          "date": "2A 1000",
+          "notable": "Each chief is the biggest hobgoblin the warrens can agree on and rules this valley and no other; the warrens obey their cleverest goblins, and the chief obeys the warrens more often than he admits. The present chief is called Plickit the Broad."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Crossing of the Ice",
+          "year": 2675,
+          "date": "2A 1000",
+          "summary": "The goblins crossed the Coldor Channel on the winter ice and settled round the hot springs."
+        },
+        {
+          "name": "The First Fair",
+          "year": 2965,
+          "date": "2A 1290",
+          "summary": "Goblin trappers came up to the new snowline fair at Fentene with lamps and traps, and the coast clans who had fought them began to buy from them instead."
+        },
+        {
+          "name": "The Spring Quarrel",
+          "year": 6571,
+          "date": "4A 1503",
+          "summary": "Holdon's herds were driven out of the warm valleys with traps, and the quarrel was settled at the fair with grain for grazing rights in the bitterest winters."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Holdon",
+          "nature": "The springs: trade in summer, traps in winter."
+        }
+      ],
+      "capital": "Drikzig",
+      "capitalReason": "Drikzig is built round the largest hot spring of the Coldor Mountains, which the goblins call the mountain's breath and bathe in as their one solemn rite; without the spring there would be no goblins in the north at all.",
+      "today": "About fifteen thousand goblins and a few hobgoblins live in the steaming valleys of Agoron and Belor, making the best traps and lamps of the north and riding shaggy bone-hounds in summer. They join no league and leave their valleys only for the fair, and Coldor's crown has never tried to tax them.",
+      "divergence": [
+        {
+          "id": "gli_open_valley",
+          "what": "The warrens open their valleys to a crown that swears to guard the springs.",
+          "consequence": "That crown gains goblin traps and lamps for its forts, and the goblins gain a protector they will expect to keep its word."
+        },
+        {
+          "id": "gli_sell_melkgard",
+          "what": "Glimkit sells its lamps and traps to Melkgard's forts.",
+          "consequence": "The March Forts grow harder to take by night, and Holdon, which trades with the goblins, finds itself between the warrens and the crown."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Xison",
+      "tag": "XIS",
+      "founding": {
+        "year": 5970,
+        "date": "4A 902",
+        "story": "The upland clans between Fandanar and the west coast had suffered in the Forty Winters' Quarrel when both crowns' riders used the high road, and in 4A 902 the chiefs of Xison, Rion and Yeneldmore met at Akahew and swore a road league: each clan keeps its stretch of the road, all share the tolls, and no army crosses the uplands without the moot's leave."
+      },
+      "dynasties": [
+        {
+          "name": "The moot-speakers of Akahew",
+          "from": 5970,
+          "date": "4A 902",
+          "notable": "The road-moot chooses a speaker for three Long Lights at a time; the Esroming hearth of the Rion moors has given the most, and the league's seal shows their reindeer."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Road League",
+          "year": 5970,
+          "date": "4A 902",
+          "summary": "The upland clans swore the road league at Akahew after the Forty Winters' Quarrel."
+        },
+        {
+          "name": "The Toll of the Uplands",
+          "year": 6428,
+          "date": "4A 1360",
+          "summary": "Coldor demanded that crown wagons go free on the high road; the moot refused, the crown sent its grain to Alorio by sea for three years, and the matter ended in a lower toll rather than none."
+        },
+        {
+          "name": "The Founding of Norrak",
+          "year": 6508,
+          "date": "4A 1440",
+          "summary": "The Rion herders built the moor town of Norrak on the upland road so that the reindeer markets need not go down to the coast."
+        },
+        {
+          "name": "The White Year",
+          "year": 6799,
+          "date": "4A 1731",
+          "summary": "Coldor's granaries fed the upland clans, and the road-moot let the crown's wagons pass free for that winter alone."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Akahew",
+      "capitalReason": "Akahew is the market town where the upland road meets the coast road above Alorio, the natural place for a league whose whole wealth is the traffic between the crown and its western port.",
+      "today": "About a hundred and twenty thousand upland clansfolk keep the high road, trade amber and reindeer hides and grumble at every crown wagon that pays the lower toll. The moot leans to Coldor since the White Year but keeps its gate.",
+      "divergence": [
+        {
+          "id": "xis_crown_road",
+          "what": "The road-moot gives the high road to the Winter Crown in return for a seat at the Frost Moot.",
+          "consequence": "Coldor's capital and western port are joined under one law, and the uplands lose the tolls that made them free."
+        },
+        {
+          "id": "xis_close_road",
+          "what": "The moot closes the high road to all armies in the last war.",
+          "consequence": "Coldor's ports can only be reached by sea in winter, and any crown at war in the north must go round the uplands or through them."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Pertolor",
+      "tag": "PRT",
+      "founding": {
+        "year": 5828,
+        "date": "4A 760",
+        "story": "The shepherds of the sheep vale east of the Isengar country, the only valley of the north where sheep do better than reindeer, built a hall at Minsentia in 4A 760 and gave their best breeder, Hildra Hozening, the keeping of the vale's wool-market. The vale has been courted by both crowns since they were crowns, because its wool and mutton feed whoever holds its friendship."
+      },
+      "dynasties": [
+        {
+          "name": "The Hozening lords of the sheep vale",
+          "from": 5828,
+          "date": "4A 760",
+          "notable": "Descended from Hildra Hozening; the lordship passes to the eldest child, and the family marries into both crowns' houses when it can."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hall at Minsentia",
+          "year": 5828,
+          "date": "4A 760",
+          "summary": "Hildra Hozening was given the vale's wool-market and built the hall at Minsentia."
+        },
+        {
+          "name": "The Vale Marriage",
+          "year": 6658,
+          "date": "4A 1590",
+          "summary": "Lady Zena Hozening married Prince Branak of House Vording, and Coldor's queens have since counted the vale's lords as cousins; Melkgard answered by taking two Hozening sons into its oath-companies."
+        },
+        {
+          "name": "The White Year",
+          "year": 6799,
+          "date": "4A 1731",
+          "summary": "Both crowns sent grain to the vale, and the lord took both and thanked both."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Minsentia",
+      "capitalReason": "Minsentia stands at the head of the sheep vale where the drove roads to Faaennar and the Isengar country meet, the market-place of the vale's wool.",
+      "today": "About ninety thousand herders live in the sheep vale and on the Faaennar plain. The lord is cousin to the Winter Queen and godfather to a Melkgard captain, and he intends to stay both for as long as the crowns let him.",
+      "divergence": [
+        {
+          "id": "prt_choose_crown",
+          "what": "The lord chooses a side in the Cold Rivalry, by marriage or by oath.",
+          "consequence": "The wool and mutton of the vale go to one crown alone, and the other treats the vale as an enemy's larder."
+        },
+        {
+          "id": "prt_annexed",
+          "what": "Coldor or Melkgard takes the vale by force.",
+          "consequence": "The taker gains the vale's herds and loses every border clan's trust, and the Cold Rivalry becomes open war."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Omar",
+      "tag": "OMR",
+      "founding": {
+        "year": 3195,
+        "date": "2A 1520",
+        "story": "The Omar clan came onto the border moor between the Isengar country and the valley of Mp'E in 2A 1520, driving their reindeer ahead of a hard winter, and built the hill-fort of Vaesdeon on the one rise that commands the moor. They have held it since by being too poor to be worth a war and too stubborn to give an oath."
+      },
+      "dynasties": [
+        {
+          "name": "Kerdok's line",
+          "from": 3195,
+          "date": "2A 1520",
+          "notable": "The clan moot chooses its chief from the descendants of Kerdok, who built the hill-fort; the chief must have spent a winter alone on the moor."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hill-Fort",
+          "year": 3195,
+          "date": "2A 1520",
+          "summary": "Kerdok's clan drove its herds onto the border moor ahead of a hard winter and built the hill-fort of Vaesdeon on its only rise."
+        },
+        {
+          "name": "The Oath Refused",
+          "year": 6218,
+          "date": "4A 1150",
+          "summary": "Melkgard's warlord demanded the clan's oath; the chief sent back a reindeer skull, the clan's old sign of refusal."
+        },
+        {
+          "name": "The Hill-Fort Winter",
+          "year": 6480,
+          "date": "4A 1412",
+          "summary": "Melkgard's oath-companies besieged Vaesdeon through a Long Dark until a relief of Coldic riders came over the Fandan ice; Omar has owed Coldor ever since and has never quite forgiven it the debt."
+        },
+        {
+          "name": "The Gifts of the White Year",
+          "year": 6799,
+          "date": "4A 1731",
+          "summary": "Melkgard sent salt meat and iron tools to the starving clan, and the chief took them."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Melkgard",
+          "nature": "The march that presses the clan hardest, with gifts and oath-demands."
+        }
+      ],
+      "capital": "Vaesdeon",
+      "capitalReason": "Vaesdeon stands on the only rise of the border moor, from which a watcher can see riders coming from the Isengar country or the Fandan a day before they arrive.",
+      "today": "About fifty thousand herders hold the border moor, owing Coldor for the Hill-Fort Winter and Melkgard for the White Year. Their chief counts the debts and pays neither.",
+      "divergence": [
+        {
+          "id": "omr_swear_melkgard",
+          "what": "The chief swears to Melkgard.",
+          "consequence": "The march reaches the road to Mp'E, and Coldor loses its nearest friend on the warlord's border."
+        },
+        {
+          "id": "omr_guide_south",
+          "what": "The clan guides southern strangers across the moor to the valley of Mp'E for silver.",
+          "consequence": "Strangers reach the silent castle without passing Melkgard's forts, and the valley folk count Omar among those who sold the road.",
+          "beat": "B14"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Portogalor",
+      "tag": "POT",
+      "founding": {
+        "year": 4218,
+        "date": "3A 410",
+        "story": "The last fleet of north-coast raiders broke on Melkgard's forts in 3A 410, and its survivors, who could not go home and could not stay, settled the bare coast below the Olsuaon Massif and turned from raiding to sealing. Their captain, Ulvar Azlak, built the sealers' harbour at Fellodor, and his descendants have kept it as lords of the coast."
+      },
+      "dynasties": [
+        {
+          "name": "The Azlak lords of Fellodor",
+          "from": 4218,
+          "date": "3A 410",
+          "notable": "Descended from the raider-captain Ulvar Azlak; the lord is chosen from the family by the sealing captains."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Raiders Broken",
+          "year": 4218,
+          "date": "3A 410",
+          "summary": "Ulvar Azlak's fleet broke on the forts of the Gulf of Minnolomak and its survivors settled the north coast."
+        },
+        {
+          "name": "The Frozen Sea Trade",
+          "year": 6248,
+          "date": "4A 1180",
+          "summary": "Fellodor's sealers opened a summer trade along the Frozen Sea coast to Minnolomak and Fandhavn, selling hides and ivory for grain."
+        },
+        {
+          "name": "The Bear Winter",
+          "year": 6667,
+          "date": "4A 1599",
+          "summary": "Great white bears came ashore in numbers after a poor seal year and killed sealers on the ice; the lord's bear-hunt that spring made a chief's mantle for every captain who joined it."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Melkgard",
+          "nature": "Old enemies who became trading partners; the march still calls the sealers raiders when it wants their harbour."
+        }
+      ],
+      "capital": "Fellodor",
+      "capitalReason": "Fellodor is the one harbour of the bare north coast that the Olsuaon Massif shelters from the north wind, close to the sealing grounds of Pandar.",
+      "today": "About fifty thousand sealers live on the north coast and the massif, selling hides, ivory and seal-fat on the Frozen Sea trade. They are proud of their raider forebears and careful not to remind Melkgard of them.",
+      "divergence": [
+        {
+          "id": "pot_fleet_north",
+          "what": "The lord sends his sealing fleet to watch the far northern waters in the last war.",
+          "consequence": "The north coast gains a watch on the cold sea, and any landing there is seen from the ice."
+        },
+        {
+          "id": "pot_melkgard_harbour",
+          "what": "Melkgard takes Fellodor as a second harbour.",
+          "consequence": "The march gains the north coast and the sealers' hulls, and its quarrel with Coldor reaches the sea."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Kvittumm",
+      "tag": "KVI",
+      "founding": {
+        "year": 2987,
+        "date": "2A 1312",
+        "story": "The reindeer clans of the far north-west, who move with their herds between the giants' foothills and the Orewell lowland, first met as one confederacy in 2A 1312, when the Frost-King of the heights would treat with no more than one voice. They swore the toll-peace at Xitore together, and the white-hills confederacy has met each Long Dark since at its winter moot-place of Esrom."
+      },
+      "dynasties": [
+        {
+          "name": "The winter moot of Esrom",
+          "from": 2987,
+          "date": "2A 1312",
+          "notable": "The clans choose a moot-chief each Long Dark; the chief must own the largest herd or have saved the most beasts in a bad year, and the Grinson clan of Radeon has given the most."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Toll-Peace of the Heights",
+          "year": 2987,
+          "date": "2A 1312",
+          "summary": "The reindeer clans swore with the Frost-King of the ice giants that their herds may cross the heights for a toll in meat or iron."
+        },
+        {
+          "name": "The Year Without Calves",
+          "year": 6163,
+          "date": "4A 1095",
+          "summary": "A spring freeze killed a whole year's calves; the clans went south to the Orewell lowland and Guerlon's miners fed them for a winter in return for herding work."
+        },
+        {
+          "name": "The Southern Strangers Turned Away",
+          "year": 6690,
+          "date": "4A 1622",
+          "summary": "Southern scholars came to Esrom asking where the oldest ice lay; the moot fed them and sent them back to Alorio with a guide who took the longest road."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Esrom",
+      "capitalReason": "Esrom is the winter moot-place where the clans bring their herds to the sheltered lowland edge in the Long Dark, the one time in the year that all of them are in one place.",
+      "today": "About fifty thousand herders follow their reindeer across the far north-west moors and the giants' foothills, keeping the toll-peace and the old ice-roads. Nothing at Esrom hints at anything but herds, weather and the winter moot.",
+      "divergence": [
+        {
+          "id": "kvi_nurse",
+          "what": "Herders of Kvittumm find a man in the ice and nurse him through the spring.",
+          "consequence": "The stranger owes his life to the clans; their regard goes with him south, and the confederacy has a friend whom the world will come to know.",
+          "beat": "B03"
+        },
+        {
+          "id": "kvi_bind",
+          "what": "A moot-chief who distrusts the stranger keeps him at Esrom for a season as a guest who may not leave.",
+          "consequence": "His road south is delayed by months and his regard for the clans cools; Coldor hears of the matter and sends to ask why.",
+          "beat": "B03"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Orewele",
+      "tag": "ORW",
+      "founding": {
+        "year": 6370,
+        "date": "4A 1302",
+        "story": "Men had dug bog-iron in the Orewell lowland since the Second Age, but the mining clan became a realm when the dwarves of the western holds sent factors north and, in 4A 1302, chartered a factor-house at Guerlon to buy the lowland's rock-ore by the cartload. The clan's chief, Ezhdok Siulak, signed the charter at the dwarves' gate under the Herlitz range and came home a lord."
+      },
+      "dynasties": [
+        {
+          "name": "The Siulak mine-chiefs of Guerlon",
+          "from": 6370,
+          "date": "4A 1302",
+          "notable": "Descended from Ezhdok Siulak; the chief is chosen by the clan from the family and must be acceptable to the dwarf factor."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Factor-House Charter",
+          "year": 6370,
+          "date": "4A 1302",
+          "summary": "Brundahrim chartered a factor-house at Guerlon to buy Orewell ore, and the mining clan became a lordship on the dwarves' silver."
+        },
+        {
+          "name": "The Bid for Guerlon",
+          "year": 6588,
+          "date": "4A 1520",
+          "summary": "Melkgard offered protection for half the iron; the clan chose Coldor's grain and the dwarves' trade."
+        },
+        {
+          "name": "The Flooded Shaft",
+          "year": 6745,
+          "date": "4A 1677",
+          "summary": "The deepest shaft flooded in a thaw; the dwarf factors brought pumps of their own make north and refused to say how they worked."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Melkgard",
+          "nature": "The warlords bid for the mines in every generation."
+        }
+      ],
+      "capital": "Guerlon",
+      "capitalReason": "Guerlon stands on the Orewell Water at the mouth of the richest mines, where the ore can go downriver to the sea and the dwarves' carts can reach the Neck Road.",
+      "today": "About sixty thousand miners and their families, with a small house of dwarf factors, work the iron of the far north and sell it west. The chief keeps both crowns at arm's length and the dwarves close.",
+      "divergence": [
+        {
+          "id": "orw_dwarf_hold",
+          "what": "The dwarf factors take the mines into their own keeping when the clan cannot pay its debts.",
+          "consequence": "The far north's iron becomes Brundahrim's, and both crowns find a dwarf gate where they expected a clan."
+        },
+        {
+          "id": "orw_coldor_mine",
+          "what": "Orewele gives the mines to the Winter Crown for protection.",
+          "consequence": "Coldor gains the iron of the far north, Melkgard loses its last bid, and the warlords take it as an insult."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Nivaros",
+      "tag": "NIV",
+      "founding": {
+        "year": 2987,
+        "date": "2A 1312",
+        "story": "The ice giants of the far north-west heights were in the clans' tales long before men counted years, but men first knew them as a realm in 2A 1312, when the Frost-King came down to the glacier's edge and swore the toll-peace with the reindeer clans. The cairn-keepers say their kings are much older than that oath, and they leave one stone on the cairns for every winter a giant lives, though no giant will tell a man how high any cairn has grown."
+      },
+      "dynasties": [
+        {
+          "name": "The Frost-Kings of Xitore",
+          "from": 2987,
+          "date": "2A 1312",
+          "notable": "Chosen by the cairn-keepers and enthroned on the ice-throne at Xitore; men know the line from the toll-peace onwards, and the present Frost-King is called Huk."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Toll-Peace of the Heights",
+          "year": 2987,
+          "date": "2A 1312",
+          "summary": "The Frost-King swore with the reindeer clans that their herds may cross the heights for a toll in meat or iron."
+        },
+        {
+          "name": "The Iron Toll Raised",
+          "year": 6256,
+          "date": "4A 1188",
+          "summary": "The giants doubled the toll in iron after a poor seal year; the clans paid half in iron and half in herding labour, and the giants accepted."
+        },
+        {
+          "name": "The Coldor Pact",
+          "year": 6538,
+          "date": "4A 1470",
+          "summary": "A Winter Queen's envoy climbed to Xitore and was received; the giants agreed to let Coldic hunters cross the heights under the toll-peace, though they refused to swear to the Accord."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Xitore",
+      "capitalReason": "Xitore is the Frost-King's ice-throne on the glacier plain, where the cairn-fields of the giants' dead stand; the giants have no town, and the throne is where their king sits because that is where the cairns are.",
+      "today": "About three thousand giants hunt seal and caribou on the heights and keep their Frost-King and their cairns. They let the clans' herds pass for the toll and close their country to any crown that comes in arms.",
+      "divergence": [
+        {
+          "id": "niv_open_heights",
+          "what": "The Frost-King opens the heights to a crown that keeps the toll-peace faithfully.",
+          "consequence": "That crown can cross the far north-west by the shortest road, and the giants' friendship becomes a thing other crowns bid for."
+        },
+        {
+          "id": "niv_close_heights",
+          "what": "An attack on the herd roads makes the giants close their country to every crown.",
+          "consequence": "The far north-west becomes impassable in all but deepest winter, and the reindeer clans are cut off from their summer grazing."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Yeti Lands",
+      "tag": "YEI",
+      "founding": {
+        "year": 2963,
+        "date": "2A 1288",
+        "story": "The shelf clans of the yeti, who call their country Haruhu, the coast-country, hunted seal on the Yeti Shallows long before men came to the south coast. Men first counted them a realm in 2A 1288, when the Eldest came down to Fentene and sang the hunting truce with the coast chiefs, dividing the seal-grounds between them, and the yeti have kept the song ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Eldests of the high cave",
+          "from": 2963,
+          "date": "2A 1288",
+          "notable": "The yeti have no royal line; each winter the Eldest sings the clans' names at the gathering in Ghaumbhu, and the clans follow the singer whose song carries furthest. The present Eldest is called Grumhal."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hunting Truce of the Shelf",
+          "year": 2963,
+          "date": "2A 1288",
+          "summary": "The Eldest sang the truce with the south-coast chiefs, and the snowline fair began."
+        },
+        {
+          "name": "The Smoke Winter",
+          "year": 6328,
+          "date": "4A 1260",
+          "summary": "Smoke from the goblin valleys drifted onto the shelf through a whole Long Dark; the yeti will not hunt where they smell it and moved their winter gathering further east, where it has stayed."
+        },
+        {
+          "name": "The Envoy to the Heights",
+          "year": 6338,
+          "date": "4A 1270",
+          "summary": "An Eldest vouched for a Coldic envoy to the height clans of Ghaahu, the only time men have been brought to the high snows."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Ghaumbhu",
+      "capitalReason": "Ghaumbhu, the high cave, is the largest cave-gathering of the shelf, where the clans meet each winter to hear their names sung; the yeti go where the song is.",
+      "today": "About twenty-five thousand yeti hunt the Yeti Shallows and come down to the snowline fair. They can be courted by a patient crown, and only a shelf Eldest can vouch for an envoy to their kin in the high snows.",
+      "divergence": [
+        {
+          "id": "yei_vouch",
+          "what": "The Eldest vouches for a crown's envoy to Ghaahu.",
+          "consequence": "The height clans can be reached for the first time in generations, and the crown that sent the envoy gains the friendship of both yeti peoples."
+        },
+        {
+          "id": "yei_close",
+          "what": "A broken truce or a raid on the fair makes the shelf clans close their country.",
+          "consequence": "The snowline fair ends, the seal-grounds are fought over, and Ghaahu becomes unreachable."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Ghaahu",
+      "tag": "GHH",
+      "founding": {
+        "year": 6338,
+        "date": "4A 1270",
+        "story": "The height clans of the yeti, who follow wild herds among the Cold Mountains, were only a rumour to men until 4A 1270, when a shelf Eldest led a Coldic envoy up to the song-cave of Huummal and the height Eldest let him sit by the fire. The yeti of the shelf call the high country Ghaahu, and its clans have their own song and their own Eldest."
+      },
+      "dynasties": [
+        {
+          "name": "The Eldests of the song-cave",
+          "from": 6338,
+          "date": "4A 1270",
+          "notable": "Known to men only since the envoy of 4A 1270; the Eldest is chosen by the song as on the shelf, and the height clans say their song is the older."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Envoy to the Heights",
+          "year": 6338,
+          "date": "4A 1270",
+          "summary": "A Coldic envoy reached Huummal under a shelf Eldest's vouching and came back with a gift of carved horn, which hangs in the Frost-Hall."
+        },
+        {
+          "name": "The Avalanche Song",
+          "year": 6583,
+          "date": "4A 1515",
+          "summary": "An avalanche buried a whole height clan; the others sang for it every dusk for a year, and the shelf clans heard the singing across the mountains."
+        },
+        {
+          "name": "The Closed Snows",
+          "year": 6718,
+          "date": "4A 1650",
+          "summary": "A party of hunters from the east coast followed a herd into the high snows without leave and did not return; since then no man has been received at Huummal."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Huummal",
+      "capitalReason": "Huummal, the song-cave, is the hum-cave where the height clans answer the mountain at dusk; the yeti believe a clan without a hum is lost, and the cave is where the hum is loudest.",
+      "today": "About fifteen thousand yeti follow the wild herds of the Cold Mountains and are almost never seen. No crown can reach them unless a shelf Eldest vouches for its envoy.",
+      "divergence": [
+        {
+          "id": "ghh_received",
+          "what": "Ghaahu receives a vouched envoy and trades with men.",
+          "consequence": "Furs and horn from the high snows reach the fair, and the crown that sent the envoy has guides who know the Cold Mountains."
+        },
+        {
+          "id": "ghh_war",
+          "what": "A crown that enters the high snows in arms meets the height clans.",
+          "consequence": "The Cold Mountains become a killing ground for any army, and both yeti peoples close to men."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Vindael",
+      "tag": "VND",
+      "founding": {
+        "year": 5770,
+        "date": "4A 702",
+        "story": "The sealers of the wind-isle, the long ice arm joined to the mainland only by winter sea-ice, lived in a few harbours on its sheltered southern shore and kept to their own grounds until the island charts of 4A 702 showed them the whaling waters to the south. That year the captains of Porideon met, chose a Speaker to hold the harbour book and sent their first fleet south, and the harbour council has governed the arm by ship-share since."
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of the harbour council",
+          "from": 5770,
+          "date": "4A 702",
+          "notable": "Captains elect a Speaker for a gale season at a time; land and catch are held by ship-share. Speaker Furla Hozen holds the book in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Whaling Road South",
+          "year": 5770,
+          "date": "4A 702",
+          "summary": "With the new island charts the captains of Porideon opened a regular whaling route south and chose their first Speaker."
+        },
+        {
+          "name": "The Norrai Pilotage",
+          "year": 6534,
+          "date": "4A 1466",
+          "summary": "Vindael and the pilots' isles of Fineger agreed that each would pilot the other's ships through its own waters for a fixed share, the oldest standing compact between the Cold Lands and the Pupor Isles."
+        },
+        {
+          "name": "The Wind-Towers Raised",
+          "year": 6648,
+          "date": "4A 1580",
+          "summary": "The captains raised wind-towers on the headlands for the Storm Court, where each crew keeps a token of the wind that last spared it."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Porideon",
+      "capitalReason": "Porideon stands on the westward headland of the arm's sheltered southern shore, the one harbour that opens toward both the whaling grounds and the Pupor routes.",
+      "today": "About forty thousand whalers, sealers and harbour folk live on the ice arm, with a carrying fleet of perhaps sixty hulls. The council trades with the islands, keeps the coast watch and signs a compact with Coldor only when the crown's friendship is worth its price.",
+      "divergence": [
+        {
+          "id": "vnd_harbour_compact",
+          "what": "The council signs a Harbour Compact with Coldor.",
+          "consequence": "The Winter Crown gains a carrying fleet and a coast watch, and the arm gains the crown's grain in hard winters."
+        },
+        {
+          "id": "vnd_hulls_west",
+          "what": "Vindael hires its hulls to the western fleets for the Crossing.",
+          "consequence": "The West carries more men across the central sea, and the arm's whaling grounds go unworked for a season.",
+          "beat": "B20"
+        }
+      ],
+      "canon": "proposed"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Fandanar",
+      "country": "Coldor",
+      "role": "capital",
+      "size": "city",
+      "founded": 2275,
+      "foundedDate": "2A 600",
+      "legend": "The folk of Fandanar say the fire in the Frost-Hall was carried up the valley from the eastern Fandan clans in an iron pot and has never been allowed to go out, so that every hearth of the Winter Crown is lit from a flame older than the crown itself.",
+      "economy": "Crown granaries, the Neck Road trade, horse meadows, furs and the Frost Moot.",
+      "canon": "proposed",
+      "population": 32000
+    },
+    {
+      "name": "Alorio",
+      "country": "Coldor",
+      "role": "port",
+      "size": "town",
+      "founded": 280,
+      "foundedDate": "1A 280",
+      "legend": "The harbour folk keep a stone from the old Aenoran post above the harbour gate and touch it for luck before the first sailing, though nobody can read what the southerners cut into it.",
+      "economy": "The best harbour of the west coast: grain from the West, furs, amber and timber out, and a House of the First Light by the quay.",
+      "canon": "proposed",
+      "population": 10000
+    },
+    {
+      "name": "Minnolomak",
+      "country": "Melkgard",
+      "role": "fortress",
+      "size": "city",
+      "founded": 3455,
+      "foundedDate": "2A 1780",
+      "legend": "In the Black Gallery under the fort-city the Storm Court keeps a token for every wind that sank a raider's ship, and the oath-men say that on a still night you can hear them rattle.",
+      "economy": "Forges fed by bog-ore and rock-ore, the oath-companies, and the harbour of the Gulf of Minnolomak.",
+      "canon": "proposed",
+      "population": 12000
+    },
+    {
+      "name": "Ollondo",
+      "country": "Horidor",
+      "role": "pass",
+      "size": "town",
+      "founded": 2015,
+      "foundedDate": "2A 340",
+      "legend": "Travellers waiting for the weather at Ollondo are told that the first cairn on the Gap was raised over an Aenoran surveyor who walked ahead of his guides, and that it is bad luck to pass it without adding a stone.",
+      "economy": "The cairn-due on every Neck Road wagon, waystations and the cairn moot.",
+      "canon": "proposed",
+      "population": 6000
+    },
+    {
+      "name": "Fentene",
+      "country": "Holdon",
+      "role": "market",
+      "size": "town",
+      "founded": 2963,
+      "foundedDate": "2A 1288",
+      "legend": "The fair-folk say the snowline fair has never been held without at least one yeti coming down, and that a fair no yeti attends would be the last one.",
+      "economy": "The snowline fair: yeti fur and ivory, goblin traps and lamp-fat, hot-spring salts, iron and grain.",
+      "canon": "proposed",
+      "population": 3000
+    },
+    {
+      "name": "Fandhavn",
+      "country": "Poloto",
+      "role": "port",
+      "size": "town",
+      "founded": 310,
+      "foundedDate": "1A 310",
+      "legend": "The harbour book of Fandhavn records the burning of the Necromancer's ship in red, and the pilots still refuse to moor at the berth where it burned.",
+      "economy": "The longest-open harbour of the north, a pilots' guild, river trade from the interior.",
+      "canon": "proposed",
+      "population": 9000
+    },
+    {
+      "name": "Drikzig",
+      "country": "Glimkit",
+      "role": "shrine",
+      "size": "town",
+      "founded": 2675,
+      "foundedDate": "2A 1000",
+      "legend": "The goblins say the great spring is the mountain breathing, and that if a goblin ever lies in it with a lie in his mouth the water goes cold.",
+      "economy": "Copper and iron smithies, traps and lamps, hot-spring salts and bone-hound breeding.",
+      "canon": "proposed",
+      "population": 4000
+    },
+    {
+      "name": "Guerlon",
+      "country": "Orewele",
+      "role": "mine",
+      "size": "town",
+      "founded": 6370,
+      "foundedDate": "4A 1302",
+      "legend": "The miners say the dwarf factors keep a lamp in the factor-house that is never lit, and that it is for the day the dwarves decide to take the mines themselves.",
+      "economy": "Orewell rock-ore and bog-iron, sold through the dwarf factor-house.",
+      "canon": "proposed",
+      "population": 3000
+    },
+    {
+      "name": "Porideon",
+      "country": "Vindael",
+      "role": "port",
+      "size": "town",
+      "founded": 5770,
+      "foundedDate": "4A 702",
+      "legend": "Every crew of Porideon keeps a token of the wind that last spared it in the wind-towers, and a captain who loses his token will not sail until he has found another.",
+      "economy": "Whaling, sealing, the carrying trade to the Pupor Isles and the coast watch.",
+      "canon": "proposed",
+      "population": 4000
+    },
+    {
+      "name": "Azenoalion",
+      "country": "Fearno",
+      "role": "town",
+      "size": "town",
+      "founded": 6372,
+      "foundedDate": "4A 1304",
+      "legend": "In the hall of many lords the banners of the Melkgard riders lost in the Naepu whiteout still hang, and the steading lords say that a first lord who takes them down will lose the next vote.",
+      "economy": "Reindeer markets, moor oats, the Cold Tarn char fishery and the hall of the Free Steadings.",
+      "canon": "proposed",
+      "population": 5000
+    },
+    {
+      "name": "Esrom",
+      "country": "Kvittumm",
+      "role": "town",
+      "size": "village",
+      "founded": 2987,
+      "foundedDate": "2A 1312",
+      "legend": "The herders of Esrom say a moot-chief who lies at the winter moot will see his best bull walk out onto the ice and never come back.",
+      "economy": "Reindeer herds, hides and the winter moot.",
+      "canon": "proposed",
+      "population": 1500
+    },
+    {
+      "name": "Simoto",
+      "country": "Yeldenne",
+      "role": "town",
+      "size": "village",
+      "founded": 2825,
+      "foundedDate": "2A 1150",
+      "legend": "The valley folk leave a loaf at the start of the Silent Road every Long Dark, and they say that the night a loaf is missed, the Watcher in the Hall will wake.",
+      "economy": "Herding, charcoal and a little barley in the sheltered valley; no tax is paid to anyone.",
+      "canon": "proposed",
+      "population": 1500
+    },
+    {
+      "name": "Xitore",
+      "country": "Nivaros",
+      "role": "holy",
+      "size": "hamlet",
+      "founded": 2987,
+      "foundedDate": "2A 1312",
+      "legend": "The cairn-keepers of Xitore leave one stone for each winter of a giant's life, and no giant will ever tell a man how high his own cairn has grown.",
+      "economy": "Seal and caribou hunting, the herd-road toll, and the cairn-fields of the giants.",
+      "canon": "proposed",
+      "population": 300
+    },
+    {
+      "name": "Ghaumbhu",
+      "country": "Yeti Lands",
+      "role": "shrine",
+      "size": "village",
+      "founded": 2963,
+      "foundedDate": "2A 1288",
+      "legend": "The yeti say the high cave answers when the Eldest sings, and that a clan whose name the cave does not repeat must find another song.",
+      "economy": "Seal and walrus hunting on the Yeti Shallows; fur and ivory taken to the fair.",
+      "canon": "proposed",
+      "population": 2000
+    },
+    {
+      "name": "Tarvak",
+      "country": "Worlond",
+      "role": "town",
+      "size": "town",
+      "founded": 6282,
+      "foundedDate": "4A 1214",
+      "legend": "Wagoners on the Neck Road say Tarvak's waystation fire has warmed every king who ever came north, and the keepers show a bench they claim a Winter Queen slept on.",
+      "economy": "Waystations of the Neck Road, timber, charcoal and pine pitch.",
+      "canon": "proposed",
+      "population": 3000
+    }
+  ],
+  "figures": [],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "name": "Hearth-law",
+      "realms": [
+        "Coldor",
+        "Horidor",
+        "Fearno",
+        "Xison",
+        "Pertolor",
+        "Omar",
+        "Austklev",
+        "Worlond",
+        "Holdon",
+        "Portogalor",
+        "Kvittumm",
+        "Orewele"
+      ],
+      "summary": "No feud may be carried past a shared fire: men who have eaten at the same hearth may not fight until both have left it, and a stranger fed at the door is under the hearth's peace until the thaw.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The bread-right of the Frost-Hall",
+      "realms": [
+        "Coldor"
+      ],
+      "summary": "The Winter Crown alone may open the great granaries in the Long Dark, and a clan fed from them in a hard winter owes the crown at the next winter moot; the custom descends from Kolar's stores in the Hunger Winters.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The burning of the dead",
+      "realms": [
+        "Coldor",
+        "Horidor",
+        "Fearno",
+        "Xison",
+        "Pertolor",
+        "Omar",
+        "Austklev",
+        "Worlond",
+        "Holdon",
+        "Poloto",
+        "Kvittumm",
+        "Orewele",
+        "Portogalor"
+      ],
+      "summary": "The dead are burned on stone pyres so that no cold remains in them and nothing can be bought of them; since the March of Bones of 3A 702 a clan that sells or buries its dead is outlawed at the moot.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The winter moot debt",
+      "realms": [
+        "Horidor",
+        "Xison",
+        "Kvittumm",
+        "Omar"
+      ],
+      "summary": "Chiefs are chosen and feuds settled before the Long Dark, and a clan that was fed by another in a hard winter owes it a voice at the next moot.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The loaf on the Silent Road",
+      "realms": [
+        "Yeldenne"
+      ],
+      "summary": "Each Long Dark the valley of Mp'E leaves a loaf at the start of the road to the castle, and nobody walks further.",
+      "canon": "proposed"
+    }
+  ]
+}

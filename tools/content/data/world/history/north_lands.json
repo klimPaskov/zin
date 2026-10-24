@@ -1,0 +1,987 @@
+{
+  "version": 1,
+  "region": "north_lands",
+  "name": "The North Lands",
+  "overview": "North of the Middle Lands across the Narrow Strait lies one great island of fjords, snowy highlands, an inland lake ringed by hills and a rich eastern vale. Its people, the Leren, speak a daughter of the old Ainic tongue and descend from the northern kingdoms that stood with Aen's realm; they sailed with Aenor in the First Age as partners, never as subjects, and their fleets have ruled the strait ever since. In the Second Age orc and goblin bands crossed from the Dark Lands and the small crowns of the interior built their hill-forts against them; when the Necromancer took Aenor the strait became the border of his Order, and Leren ships carried refugees north for twelve centuries while the dwarves of the High Mountains and the hill crowns of Heodwa swore the Hill Pact against his raiders. In the Fourth Age the crowns of Lerendor and Veskel were joined by marriage in 4A 411, the Treaty of the Narrow Strait of 4A 512 bound the North to Aenor's defence, and the counting houses of Eekedor became the North's bank and its court of arbitration. In 4A 1748 the High Crown leads the Leren Compact and tolls every ship that passes Sonargur, still smarting from the toll quarrel of 4A 1716 in Parim, while the smaller crowns, a lake league, a hill council, a dwarf hold and the travelling dwarf goblins of the southern hills look to Sonargur or to Parim as it suits them. Years in the data are one continuous count from the victory of Aen on the proposed lengths of the ages (First Age 1,675 years, Second Age 2,133, Third Age 1,260): 1A 1 is year 1, 2A 1 is 1,676, 3A 1 is 3,809 and 4A 1 is 5,069, so that the campaign year 4A 1748 is 6,816; every entry also carries its date in the Age-and-year form, which is the form the prose uses.",
+  "ages": [
+    {
+      "id": "nl_ship_bond",
+      "name": "The Ship-Bond",
+      "from": 1,
+      "to": 900,
+      "fromDate": "1A 1",
+      "toDate": "1A 900",
+      "summary": "The Leren kingdoms of the strait coast made alliance with Aen's Aenor, and around 1A 207 Leren and Aenoran ships charted the strait together and founded Sonargur at the best harbour of the Leren shore. The North sailed with Aenor as a partner and kept its own kings.",
+      "canon": "proposed"
+    },
+    {
+      "id": "nl_allies_not_subjects",
+      "name": "Partners, Not Subjects",
+      "from": 901,
+      "to": 1675,
+      "fromDate": "1A 901",
+      "toDate": "1A 1675",
+      "summary": "As Aenor declined the Leren crowns kept the strait for themselves, and when King Edran gathered the Grand Alliance against Volgan, the North sent its fleets and its levies on the understanding, which Edran accepted, that they came as partners rather than subjects.",
+      "canon": "proposed"
+    },
+    {
+      "id": "nl_raiding_years",
+      "name": "The Raiding Years",
+      "from": 1676,
+      "to": 3808,
+      "fromDate": "2A 1",
+      "toDate": "2A 2133",
+      "summary": "In the middle of the Second Age orc and goblin bands from the Dark Lands crossed the Northern Dark Strait and burned the coasts, and the small crowns of the interior built the hill-forts that still crown their valleys. Late in the age the envoy and commander Avarin of Veskel tried to keep the northern alliance with Aenor alive while her own country faced the raids, and when the Necromancer took Aenor in 2A 2133 the help the North sent arrived too late.",
+      "canon": "proposed"
+    },
+    {
+      "id": "nl_strait_border",
+      "name": "The Strait Border",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "For the whole Third Age the Narrow Strait was the border of the Necromancer's Order. Leren fleets carried refugees north and raided the occupied coast, the North stayed free, and in 3A 806 the dwarves of the High Mountains and the hill crowns of Heodwa swore the Hill Pact against his raiders.",
+      "canon": "proposed"
+    },
+    {
+      "id": "nl_high_crown",
+      "name": "The High Crown and the Treaty",
+      "from": 5069,
+      "to": 6816,
+      "fromDate": "4A 1",
+      "toDate": "4A 1748",
+      "summary": "After the restoration the Leren crowns were united by marriage in 4A 411 and swore the Treaty of the Narrow Strait with Aenor in 4A 512. Eekedor's counting houses founded the Arbitration Court in 4A 906, the Leren Compact bound the counting houses to the High Crown, and the toll quarrel of 4A 1716 taught the court of Sonargur to doubt the treaty.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Lerendor",
+      "tag": "LER",
+      "founding": {
+        "year": 5479,
+        "date": "4A 411",
+        "story": "The strait kingdom of Lerendor and the western ice-crown of Veskel had been rivals and kin for a thousand years when King Ostrik of the Sonarvik married Queen Runild of Veskel in 4A 411 and the two crowns were set on one head. The Speakers' Hall of shipowners and landholders from both realms was summoned to approve the union's taxes, and the High Crown of Lerendor and Veskel has been the strongest power of the North Lands since that wedding."
+      },
+      "dynasties": [
+        {
+          "name": "House Sonarvik of the strait",
+          "from": 207,
+          "date": "1A 207",
+          "notable": "The strait kings who founded Sonargur with the Ship-Bond; a king takes a number and both crowns' titles. King Ferlin III reigns in 4A 1748."
+        },
+        {
+          "name": "House Heskdal of Veskel",
+          "from": 640,
+          "date": "1A 640",
+          "notable": "The old western crown of the ice country, joined to the Sonarvik by Queen Runild's marriage in 4A 411; Veskel's lords still name their children from the Heskdal line.",
+          "to": 411,
+          "toDate": "4A 411"
+        }
+      ],
+      "events": [
+        {
+          "name": "The Ship-Bond",
+          "year": 207,
+          "date": "1A 207",
+          "summary": "Leren and Aenoran ships charted the strait together and the Sonarvik kings founded Sonargur at the best harbour of the Leren shore."
+        },
+        {
+          "name": "The Leren Crowns United",
+          "year": 5479,
+          "date": "4A 411",
+          "summary": "King Ostrik of the Sonarvik married Queen Runild of Veskel, and the two crowns became the High Crown of Lerendor and Veskel."
+        },
+        {
+          "name": "The Treaty of the Narrow Strait",
+          "year": 5580,
+          "date": "4A 512",
+          "summary": "The High Crown and Aenor swore mutual defence across the strait, the old alliance the North has kept for twelve centuries."
+        },
+        {
+          "name": "The Burning of Nuadoso",
+          "year": 6599,
+          "date": "4A 1531",
+          "summary": "Sea orcs of Belonton burned the shared seat of Keredor-Hellekton; the next year the High Crown's fleet burned the sea-orc harbour of Notle in return, and the Dark Shore has respected Leren sails since."
+        },
+        {
+          "name": "The Toll of Parim",
+          "year": 6784,
+          "date": "4A 1716",
+          "summary": "Lerendor's envoys were humiliated before the Aenoran court over a disputed toll on Leren ships in Aenoran harbours, and the court of Sonargur began to ask what the treaty was worth."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "R'en",
+          "nature": "The gateway principality that leans to Parim and holds the strait's southern cape."
+        },
+        {
+          "with": "Molot",
+          "nature": "The marcher state that balances Sonargur against Parim."
+        }
+      ],
+      "capital": "Sonargur",
+      "capitalReason": "Sonargur stands under Sonargur Point at the mouth of the Leren River, the best natural harbour of the Narrow Strait, where the strait dues can be taken from every ship that passes and the river brings the interior's goods to the sea.",
+      "today": "King Ferlin III rules some one and a fifth million people of the Leren shore, the river valley, Veskel, the Low-ness Islands and Ferlinon's pine hills. The strait dues make the crown rich, the fleets guard the strait, the dwarves' bombards ride on the royal ships, and the court has not forgiven Parim for the toll of 4A 1716.",
+      "divergence": [
+        {
+          "id": "ler_honour",
+          "what": "The High Crown honours the Treaty of the Narrow Strait when the last war comes.",
+          "consequence": "Lerendor fights for Aenor and can bar the strait to its enemies, and the North keeps the old alliance.",
+          "beat": "B19"
+        },
+        {
+          "id": "ler_supremacy",
+          "what": "The High Crown turns the war into Leren mastery of the strait.",
+          "consequence": "Lerendor wars on R'en and claims the strait's southern shore, and the North becomes the strait's master rather than its keeper.",
+          "beat": "B19"
+        },
+        {
+          "id": "ler_withdraw_early",
+          "what": "The court withdraws from the treaty before any war begins.",
+          "consequence": "The North stands apart from the first day, and Aenor's northern flank is open.",
+          "beat": "B19"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Eekedor",
+      "tag": "EEK",
+      "founding": {
+        "year": 5688,
+        "date": "4A 620",
+        "story": "The grain of the Eekedor Vale had always gone out through the blue inlet at Viktara, and the merchant families who bought it lent so much to the island's crowns that in 4A 620 they formed a council of counting houses to keep their books together and their debtors honest. The council has ruled the vale since, and in 4A 906 it founded the Arbitration Court where the North's crowns settle their feuds for a fee."
+      },
+      "dynasties": [
+        {
+          "name": "The Speakers of the counting houses",
+          "from": 5688,
+          "date": "4A 620",
+          "notable": "The council of counting houses chooses a Speaker for five years; the Perhkov house of the salt-pans of Oirt has given the most Speakers."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Council of Counting Houses",
+          "year": 5688,
+          "date": "4A 620",
+          "summary": "The merchant families of Viktara formed the council that has ruled the vale since."
+        },
+        {
+          "name": "The Arbitration Court",
+          "year": 5974,
+          "date": "4A 906",
+          "summary": "The council founded the Arbitration Court, and the small crowns of the North began to settle their feuds there."
+        },
+        {
+          "name": "The Leren Compact",
+          "year": 6273,
+          "date": "4A 1205",
+          "summary": "Eekedor and the High Crown swore the Leren Compact, binding the North's grain and money to its fleets; the smaller crowns may join it, and some have."
+        },
+        {
+          "name": "The Marriage of the Coast Crowns",
+          "year": 6412,
+          "date": "4A 1344",
+          "summary": "The Arbitration Court settled the marriage that joined Keredor and Hellekton, the most famous judgement in its history."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Dolpar",
+          "nature": "The lake league's court, set up in 4A 1580 as a rival to Eekedor's arbitration."
+        }
+      ],
+      "capital": "Viktara",
+      "capitalReason": "Viktara stands on the blue inlet of the vale where the grain barges come down to the sea, the one harbour of the island's rich east, and the counting houses built beside the granaries they lent against.",
+      "today": "About six hundred thousand people live in the Eekedor Vale with Oirt, Pertawn and Filit under the council of counting houses. Eekedor is the island's grain and money, keeps the Compact with the High Crown and holds its court open to any crown that pays.",
+      "divergence": [
+        {
+          "id": "eek_leave_compact",
+          "what": "The counting houses leave the Leren Compact over the strait dues.",
+          "consequence": "Lerendor loses its bank, and the High Crown's fleets must be paid from the dues alone."
+        },
+        {
+          "id": "eek_arbitrate_strait",
+          "what": "The Arbitration Court is asked to judge the toll quarrel between Sonargur and Parim.",
+          "consequence": "The quarrel of 4A 1716 may end in a judgement rather than a war, and the court's name rises across Aoaz."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "R'en",
+      "tag": "REN",
+      "founding": {
+        "year": 1240,
+        "date": "1A 1240",
+        "story": "The strait cape at the Narrow Strait's narrowest point was a watch-post of the strait kings until 1A 1240, when its keeper, Torik of the Farnur, refused to pay the Sonarvik for the forts he had built and declared himself prince of the cape. He made his living on the Aenoran ships that passed under his walls, and his heirs have lived between two masters ever since, the strait kings across the water and the southern crown below the cape."
+      },
+      "dynasties": [
+        {
+          "name": "The Farnur princes of the cape",
+          "from": 1240,
+          "date": "1A 1240",
+          "notable": "Descended from Torik, the keeper who made himself prince; the princes marry into Aenoran houses more often than Leren ones."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Prince of the Cape",
+          "year": 1240,
+          "date": "1A 1240",
+          "summary": "Torik of the Farnur refused to pay the strait kings for his forts and made himself prince of the cape."
+        },
+        {
+          "name": "The Strait Under the Order",
+          "year": 4108,
+          "date": "3A 300",
+          "summary": "The princes held Farnardur as the North's southern gate against the Necromancer's Order for the whole occupation, and twice beat off its hosts at the forts."
+        },
+        {
+          "name": "The Aenoran Marriage",
+          "year": 6658,
+          "date": "4A 1590",
+          "summary": "A prince of R'en married a daughter of an Aenoran house close to the crown, and since then the cape has leaned openly to Parim."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Lerendor",
+          "nature": "The strait kings, who claim the cape and need its forts."
+        }
+      ],
+      "capital": "Farnardur",
+      "capitalReason": "Farnardur stands at the strait's narrowest point on the southern cape, where the forts command every ship that passes and the Sea of R'en behind gives a sheltered harbour.",
+      "today": "About three hundred thousand people live on the strait cape and around the Sea of R'en under a prince with two masters. R'en lives on Aenoran trade, leans to Parim, and knows that Lerendor's mastery of the strait would begin at its forts.",
+      "divergence": [
+        {
+          "id": "ren_bar_strait",
+          "what": "The prince bars the strait to Leren ships in Aenor's name.",
+          "consequence": "Lerendor must take the cape or give up the strait, and the North's quarrel with Parim becomes a war on the cape."
+        },
+        {
+          "id": "ren_join_compact",
+          "what": "The prince joins the Leren Compact.",
+          "consequence": "The strait is wholly Leren, and Aenor loses its friend on the northern shore."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Molot",
+      "tag": "MOO",
+      "founding": {
+        "year": 2915,
+        "date": "2A 1240",
+        "story": "In the Raiding Years the northern march of the island took the worst of the raiders from the Dark Lands, and in 2A 1240 the strait kings gave its defence to Helmund of the Ostvar, who built a fortress line behind the marsh and was named margrave. The margraves kept the march long after the raids ended and learned to balance the High Crown against Parim, so that neither would ever think it needed to take the march for itself."
+      },
+      "dynasties": [
+        {
+          "name": "The Ostvar margraves of Altovian",
+          "from": 2915,
+          "date": "2A 1240",
+          "notable": "Descended from Helmund, the first margrave; the margravate passes to the eldest son or daughter who has commanded a fort of the line."
+        }
+      ],
+      "events": [
+        {
+          "name": "The March Given",
+          "year": 2915,
+          "date": "2A 1240",
+          "summary": "Helmund of the Ostvar was named margrave and built the fortress line of the northern march."
+        },
+        {
+          "name": "The Harbour of Knorvik",
+          "year": 6048,
+          "date": "4A 980",
+          "summary": "The margraves took the ship-bay of Knorvik from a coast crown that sold its harbour to whoever paid, and Molot has had its own harbour since."
+        },
+        {
+          "name": "The Margrave's Balance",
+          "year": 6785,
+          "date": "4A 1717",
+          "summary": "After the toll quarrel the margrave sent an envoy to Parim within the year, and Molot has leaned to Aenor whenever Sonargur leans away."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Lerendor",
+          "nature": "The High Crown, whose reach the margraves balance with Parim's friendship."
+        }
+      ],
+      "capital": "Altovian",
+      "capitalReason": "Altovian is the margrave's fortress-town behind the marsh line, where the fortress line meets the road from Knorvik to the interior, built for defence rather than trade.",
+      "today": "About two hundred thousand people live in the northern march with the harbour of Knorvik under the margrave, whose forts are manned and whose envoys are in Parim. Molot leans to Aenor, which in the North is a way of not leaning to Sonargur.",
+      "divergence": [
+        {
+          "id": "moo_for_aenor",
+          "what": "The margrave declares for Aenor when the High Crown withdraws from the treaty.",
+          "consequence": "The North is divided in the last war, and Lerendor must watch its march as well as the strait."
+        },
+        {
+          "id": "moo_for_leren",
+          "what": "The margrave swears to the High Crown.",
+          "consequence": "The North stands united behind Sonargur, and Parim loses its last friend on the island's west."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Keredor-Hellekton",
+      "tag": "KER",
+      "founding": {
+        "year": 6412,
+        "date": "4A 1344",
+        "story": "The coast crowns of Keredor and Hellekton had fought over the pass of Belg for three generations when in 4A 1344 the Arbitration Court of Eekedor ruled that Queen Vigda of Keredor should marry King Helmund of Hellekton and that their children should hold both crowns and the pass between them. The two courts moved to the shared inlet of Nuadoso, and the double crown has been the North's best example of its custom of crown-sharing marriages."
+      },
+      "dynasties": [
+        {
+          "name": "The house of Vigda and Helmund",
+          "from": 6412,
+          "date": "4A 1344",
+          "notable": "The joint line of the two coast crowns; each heir is crowned twice, once in each crown's old hall, before taking the seat at Nuadoso."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Marriage of the Coast Crowns",
+          "year": 6412,
+          "date": "4A 1344",
+          "summary": "The Arbitration Court married Queen Vigda of Keredor to King Helmund of Hellekton and joined the crowns and the pass of Belg."
+        },
+        {
+          "name": "The Burning of Nuadoso",
+          "year": 6599,
+          "date": "4A 1531",
+          "summary": "Sea orcs of Belonton burned the shared seat; the High Crown's fleet burned Notle in return the next year, and the double crown joined the Leren Compact in gratitude."
+        },
+        {
+          "name": "The Two Coronations",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "A quarrel over which old hall should crown the heir first was settled by crowning him in both on the same day, riding between them by night."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Nuadoso",
+      "capitalReason": "Nuadoso is the shared inlet between the two coast crowns, chosen because it belonged to neither and could be reached by both courts by sea in a day.",
+      "today": "About a quarter of a million people live on the two coast crowns and the pass of Belg under the double crown, a member of the Leren Compact since the burning of its seat. Its court still crowns every heir twice.",
+      "divergence": [
+        {
+          "id": "ker_split",
+          "what": "A disputed succession splits the double crown back into two.",
+          "consequence": "The pass of Belg is fought over again, and the North's custom of crown-sharing loses its proudest example."
+        },
+        {
+          "id": "ker_dark_shore",
+          "what": "The double crown takes ship against the Dark Shore to avenge Nuadoso.",
+          "consequence": "The North's quarrel with Belonton reopens, and the Dark Sea Accord loses a partner's attention when it most needs it."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Sensai",
+      "tag": "SNS",
+      "founding": {
+        "year": 1360,
+        "date": "1A 1360",
+        "story": "The long vale of Sensai, with its fjord at Goran and its iron hill at Kerhil, was the richest valley of the island's interior, and in 1A 1360 its landholders crowned Brann of the Agtos king in the vale town of Agtosai so that the vale would not be shared out among the coast crowns. Sensai has been the first and proudest of the North's free crowns ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Agtos kings of the vale",
+          "from": 1360,
+          "date": "1A 1360",
+          "notable": "Descended from Brann, the first king; the landholders' council confirms each heir, and the kings have sent their younger sons to the strait fleets for generations."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Crowning in the Vale",
+          "year": 1360,
+          "date": "1A 1360",
+          "summary": "The landholders of the long vale crowned Brann of the Agtos at Agtosai."
+        },
+        {
+          "name": "The Hill-Forts",
+          "year": 2855,
+          "date": "2A 1180",
+          "summary": "In the Raiding Years Sensai built the hill-forts that crown the vale and beat off three raider hosts from the Dark Lands."
+        },
+        {
+          "name": "The Tar Trade",
+          "year": 6358,
+          "date": "4A 1290",
+          "summary": "Sensai's timber and pine tar became the strait fleets' supply, and the vale has grown rich on every ship the North has built since."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Agtosai",
+      "capitalReason": "Agtosai lies in the middle of the long vale where the road from Goran's fjord meets the road to the iron hill, the vale's market and its natural seat.",
+      "today": "About four hundred thousand people live in the long vale with Goran's fjord and the iron hill Kerhil, the most populous of the small crowns. Sensai is proud, rich in timber and tar, and a willing partner of the High Crown as long as it is asked rather than told.",
+      "divergence": [
+        {
+          "id": "sns_compact",
+          "what": "Sensai joins the Leren Compact as the first of the small crowns.",
+          "consequence": "The Compact grows toward hegemony, and the smaller crowns follow the vale."
+        },
+        {
+          "id": "sns_free_league",
+          "what": "Sensai leads the small crowns in a league of their own against Sonargur's reach.",
+          "consequence": "The North divides between the High Crown and the free crowns, and the strait fleets lose their timber."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Tolhon",
+      "tag": "TOL",
+      "founding": {
+        "year": 5328,
+        "date": "4A 260",
+        "story": "The west coast of the island faces the small sea of the Onp, and its isles and toll-bridge town at Sirtum were held by a dozen lords until in 4A 260 Ulvek of the Ishor took the harbour of Migur and the bridge and made himself prince of the coast and the isles. Tolhon has been an island principality since, living by its toll-bridge, its fisheries and its distance from everyone else's quarrels."
+      },
+      "dynasties": [
+        {
+          "name": "The Ishor princes of Migur",
+          "from": 5328,
+          "date": "4A 260",
+          "notable": "Descended from Ulvek, the first prince; the principality passes to the eldest child, and the princes take their name from the fish isle where their line began."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Prince of the Onp Coast",
+          "year": 5328,
+          "date": "4A 260",
+          "summary": "Ulvek of the Ishor took Migur and the toll-bridge of Sirtum and founded the principality."
+        },
+        {
+          "name": "The Sirtum Bridge Rebuilt",
+          "year": 6218,
+          "date": "4A 1150",
+          "summary": "The princes rebuilt the river-bridge of Sirtum in stone with dwarf masons from the High Mountains, and its tolls have paid for the principality since."
+        },
+        {
+          "name": "The Gaci Herring",
+          "year": 6678,
+          "date": "4A 1610",
+          "summary": "The herring left the Onp for a whole generation and returned only when the prince forbade the summer nets; Tolhon's fishers still keep the ban."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Migur",
+      "capitalReason": "Migur is the one harbour of the west coast sheltered from both the Onp and Londolo, close to the toll-bridge of Sirtum and the isles of Gaci and Ishor.",
+      "today": "About two hundred thousand people live on the west coast with Ashorn, Sirtum and the isles under their prince. Tolhon takes its tolls, keeps its herring ban and stays out of the strait's quarrels.",
+      "divergence": [
+        {
+          "id": "tol_compact",
+          "what": "The prince joins the Leren Compact.",
+          "consequence": "The High Crown's reach extends to the Onp, and the west coast's toll-bridge serves Sonargur."
+        },
+        {
+          "id": "tol_western_watch",
+          "what": "Tolhon's ships watch Londolo for landings in the last war.",
+          "consequence": "The North has warning of anything that comes from the west, and the principality's quiet ends."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Heodwa Lands",
+      "tag": "HEO",
+      "founding": {
+        "year": 4614,
+        "date": "3A 806",
+        "story": "The three hill crowns of the island's centre, Heodwa, Nuatax and Agniy, had fought each other for centuries until the Necromancer's raiders came up the valleys in the Third Age. In 3A 806 their kings met the dwarves of the High Mountains at Pand and swore the Hill Pact, under which the dwarves would come down to any hill crown that was attacked; the three kings formed one hill council to keep the pact, and the council has ruled the hills since."
+      },
+      "dynasties": [
+        {
+          "name": "The hill council of the three crowns",
+          "from": 4614,
+          "date": "3A 806",
+          "notable": "The three hill crowns keep their own kings, who sit together in the council at Pand and choose one of themselves to speak for the hills each year."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hill Pact",
+          "year": 4614,
+          "date": "3A 806",
+          "summary": "The three hill crowns and the dwarves of the High Mountains swore the Hill Pact against the Necromancer's raiders, and the hill council was born of it."
+        },
+        {
+          "name": "The Dwarves Come Down",
+          "year": 4830,
+          "date": "3A 1022",
+          "summary": "Raiders of the Order came up the valley of Nuatax, and for the first time the dwarves came down from the High Mountains under the pact and broke them."
+        },
+        {
+          "name": "The Mulchy Lands Taken In",
+          "year": 6528,
+          "date": "4A 1460",
+          "summary": "The council took the peat-country of the Mulchy Lands under its protection, and its folk sent a voice to the council at Pand."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Pand",
+      "capitalReason": "Pand is the council town where the roads of the three hill crowns meet below the High Mountains, the place where the kings first met the dwarves and swore the pact.",
+      "today": "About a quarter of a million people live in the central hills with Nuatax, Agniy and the Mulchy Lands under the hill council. The Hill Pact still binds the dwarves to the hills, and every crown of the North knows that a war on Heodwa is a war on Hrakbrund.",
+      "divergence": [
+        {
+          "id": "heo_pact_called",
+          "what": "The hill council calls on the Hill Pact in the last war.",
+          "consequence": "The dwarves of Hrakbrund come down from their mountains, and the North gains the only dwarf host that has left its hold in an age."
+        },
+        {
+          "id": "heo_council_split",
+          "what": "The three hill crowns quarrel and the council breaks.",
+          "consequence": "The Hill Pact lapses, and the dwarves close their High Gate to the hills."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Hrakbrund",
+      "tag": "HRA",
+      "founding": {
+        "year": 110,
+        "date": "1A 110",
+        "story": "The dwarves of the High Mountains count their years from their own first delving and keep that count to themselves; men date the hold from 1A 110, when the Leren first traded at its High Gate for iron and gold. Their deep hall under the snows, Ilmahrim, the white hall, is ruled by the lord of the eldest delving line, and men are received only at the gate."
+      },
+      "dynasties": [
+        {
+          "name": "The Ilmord lords of the White Hall",
+          "from": 110,
+          "date": "1A 110",
+          "notable": "The line that rules from the white hall; the present lord, Hradin Ilmord, keeps the Hill Pact and receives no elf at his gate."
+        }
+      ],
+      "events": [
+        {
+          "name": "The High Gate Opened",
+          "year": 110,
+          "date": "1A 110",
+          "summary": "The dwarves of the High Mountains opened their High Gate to Leren traders."
+        },
+        {
+          "name": "The Hill Pact",
+          "year": 4614,
+          "date": "3A 806",
+          "summary": "The hold swore the Hill Pact with the three hill crowns of Heodwa against the Necromancer's raiders."
+        },
+        {
+          "name": "The Dwarves Come Down",
+          "year": 4830,
+          "date": "3A 1022",
+          "summary": "Under the pact the dwarves came down into the valley of Nuatax and broke the Order's raiders."
+        },
+        {
+          "name": "The Bombards of Sonargur",
+          "year": 6680,
+          "date": "4A 1612",
+          "summary": "The hold sold its first bombards to the High Crown, and the royal ships of the strait have carried them since."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Ilmahrim",
+      "capitalReason": "Ilmahrim, the white hall, lies deep under the snows of the High Mountains where the richest veins of iron and gold run; the High Gate below it is where men trade, because men go no further.",
+      "today": "About fifty thousand dwarves hold the High Mountains and the Loso heights, sell iron, gold and bombards at the High Gate and keep the Hill Pact with Heodwa. Sonargur's fleets need their bombards, and an elven envoy at Sonargur's court cools the hold at once.",
+      "divergence": [
+        {
+          "id": "hra_arm_sonargur",
+          "what": "The hold arms Sonargur's mastery of the strait with its best bombards.",
+          "consequence": "The High Crown's fleets can break any fort on the strait, and the hold's favour becomes the price of the North."
+        },
+        {
+          "id": "hra_gate_closed",
+          "what": "An elven envoy at Sonargur or a broken contract closes the High Gate.",
+          "consequence": "The North's fleets go without new bombards, and the High Crown learns how much it leaned on the dwarves."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Mina",
+      "tag": "MIA",
+      "founding": {
+        "year": 5708,
+        "date": "4A 640",
+        "story": "The ore hills of Etonia had been dug for iron since the Second Age by miners who owed their lord a share of every cartload, and in 4A 640 the miners' lord, Stenolf of the Korn, opened the great galleries the North calls the Delvings and was crowned king of the ore hills at Gilvian. Mina has been the North's mining crown since, with its sister crown of Mine Din joined to it by marriage."
+      },
+      "dynasties": [
+        {
+          "name": "The Korn kings of the Delvings",
+          "from": 5708,
+          "date": "4A 640",
+          "notable": "Descended from Stenolf, the first king of the ore hills; each heir must work a season in the galleries before taking the crown."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Opening of the Delvings",
+          "year": 5708,
+          "date": "4A 640",
+          "summary": "Stenolf of the Korn opened the great galleries and was crowned at Gilvian."
+        },
+        {
+          "name": "The Sister Crown",
+          "year": 6169,
+          "date": "4A 1101",
+          "summary": "The crown of Mine Din was joined to Mina by marriage, and the two ore crowns have had one king since."
+        },
+        {
+          "name": "The Gallery Fall",
+          "year": 6635,
+          "date": "4A 1567",
+          "summary": "The deepest gallery of the Delvings fell in on two hundred miners; the king went down to the rescue himself and did not come up, and every king since has worked his season in the galleries in his memory."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Gilvian",
+      "capitalReason": "Gilvian lies below the ore hills at the mouth of the Delvings, where the ore comes out of the galleries and the road runs down to the coast.",
+      "today": "About two hundred thousand people live in the Etonia ore hills with Mine Din, Fargur and Thowson under the mining crown. Mina's iron goes to the strait fleets and to the forges of the North, and its king has worked his season in the galleries.",
+      "divergence": [
+        {
+          "id": "mia_iron_compact",
+          "what": "Mina sells all its iron to the Leren Compact in the last war.",
+          "consequence": "The North's forges and fleets are fed from the Delvings, and Mina is counted Sonargur's friend."
+        },
+        {
+          "id": "mia_iron_aenor",
+          "what": "Mina sells its iron to Aenor across the strait.",
+          "consequence": "The southern crown's armouries are fed from the North's own hills, and Sonargur takes it as betrayal."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Dolpar",
+      "tag": "DOL",
+      "founding": {
+        "year": 6648,
+        "date": "4A 1580",
+        "story": "The walled towns of the lake Dolpar, the Hold, Stork, Cinargo and Solenkovi, had traded across their deep lake since the Raiding Years, and their merchants grew tired of riding to Eekedor to settle every quarrel. In 4A 1580 the four towns and the lake market of Parur set up a lake-court of their own and swore to obey it, and the lake league has ruled the lake ring since, a rival in arbitration to the counting houses of the vale."
+      },
+      "dynasties": [
+        {
+          "name": "The lake-court of Parur",
+          "from": 6648,
+          "date": "4A 1580",
+          "notable": "Each of the five towns sends a judge to the lake-court, and the judges choose one of themselves to preside for a year; the judge of the Hold presides most often."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Walls of the Lake Towns",
+          "year": 2895,
+          "date": "2A 1220",
+          "summary": "In the Raiding Years the towns of the lake ring built the walls that still stand, and the Hold was the strongest of them."
+        },
+        {
+          "name": "The Lake-Court",
+          "year": 6648,
+          "date": "4A 1580",
+          "summary": "The towns of Dolpar set up their lake-court at Parur as a rival to Eekedor's Arbitration Court."
+        },
+        {
+          "name": "The Judgement of the Mills",
+          "year": 6762,
+          "date": "4A 1694",
+          "summary": "The lake-court judged a quarrel between two hill crowns over the mills of the lake's outflow, and both crowns obeyed, the first time the lake-court's judgement was accepted beyond the lake."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Eekedor",
+          "nature": "Rival courts of arbitration, each claiming the North's quarrels."
+        }
+      ],
+      "capital": "Parur",
+      "capitalReason": "Parur, the lake-town, is the market on the lake shore that all four walled towns can reach by boat in a day, chosen so that no one town would hold the court.",
+      "today": "About two hundred thousand people live in the towns around the lake under the lake-court. Dolpar fishes, trades, judges and competes with Eekedor for the North's quarrels.",
+      "divergence": [
+        {
+          "id": "dol_court_strait",
+          "what": "The lake-court is asked to judge the toll quarrel instead of Eekedor.",
+          "consequence": "The lake league's name rises across the North, and the counting houses take it as an insult."
+        },
+        {
+          "id": "dol_compact",
+          "what": "The lake league joins the Leren Compact.",
+          "consequence": "The interior of the island is bound to Sonargur, and Eekedor loses its rival."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Mustnom",
+      "tag": "MUS",
+      "founding": {
+        "year": 6565,
+        "date": "4A 1497",
+        "story": "The dwarf goblins of the southern hills have lived in their caves below the Solondor ridge for longer than the Leren remember, trading and stealing on the island's roads, but they became a power of the North in 4A 1497, when the boss of Krakur sent his packmen out on the long road that runs across the whole island and, by Leren ships, beyond. Since then half of Mustnom is always away on the roads, and the bosses at home live on what the packmen bring back."
+      },
+      "dynasties": [
+        {
+          "name": "The bosses of the iron seat",
+          "from": 6565,
+          "date": "4A 1497",
+          "notable": "No king rules the warrens; each cave obeys its boss, who takes the name of his cave when he takes the cave. The boss of Krakur, who gives iron to the smiths, is first among them."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Long Road Opened",
+          "year": 6565,
+          "date": "4A 1497",
+          "summary": "The boss of Krakur sent the first packmen along the long road across the island, the beginning of Mustnom's pedlary."
+        },
+        {
+          "name": "The Sirtum Brawl",
+          "year": 6690,
+          "date": "4A 1622",
+          "summary": "A party of packmen was cheated at the toll-bridge of Sirtum, beat the toll-keepers and ran; Tolhon's prince barred Mustnom from the bridge for twenty years."
+        },
+        {
+          "name": "The News of the Landings",
+          "year": 6770,
+          "date": "4A 1702",
+          "summary": "Mustnom's packmen brought word of a Belonton raid on the coast to Sonargur three days before the High Crown's own riders, and the court has listened to the pedlars since."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Krakur",
+      "capitalReason": "Krakur, the iron seat, is the largest warren of the Solondor hills, where the boss gives iron to the smiths and where the packmen bring what they have gathered on the roads.",
+      "today": "About sixty thousand dwarf goblins live in the southern hills, half of them always on the roads with packs of goods. Northern towns welcome their goods and lock their doors, and nobody in the North hears news faster than a Mustnom packman.",
+      "divergence": [
+        {
+          "id": "mus_warnings",
+          "what": "Mustnom's packmen bring warning of landings from the black sea in the last war.",
+          "consequence": "The North's coasts learn of the dead's landings faster than any courier could tell them, and the pedlars become the North's eyes."
+        },
+        {
+          "id": "mus_thefts",
+          "what": "The packmen rob the royal wagons in a hard winter.",
+          "consequence": "The High Crown turns on the southern hills, and the long road closes for a generation."
+        }
+      ],
+      "canon": "proposed"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Sonargur",
+      "country": "Lerendor",
+      "role": "capital",
+      "size": "city",
+      "founded": 207,
+      "foundedDate": "1A 207",
+      "legend": "The litany-singers of Sonargur say the Singing Quay was built where the first Leren and Aenoran ships moored side by side, and that a king who sells the strait will hear the quay fall silent.",
+      "economy": "The strait dues, shipbuilding, the royal fleets and the Singing Quay.",
+      "canon": "proposed",
+      "population": 55000
+    },
+    {
+      "name": "Kelur",
+      "country": "Lerendor",
+      "role": "town",
+      "size": "town",
+      "founded": 640,
+      "foundedDate": "1A 640",
+      "legend": "The folk of Veskel say the old western crown is buried under the hall at Kelur, and that the ice country will rise again the day a king of Sonargur forgets to swear by both crowns.",
+      "economy": "Herding, furs and the old seat of Veskel's lords below the Loron highland.",
+      "canon": "proposed",
+      "population": 6000
+    },
+    {
+      "name": "Viktara",
+      "country": "Eekedor",
+      "role": "market",
+      "size": "city",
+      "founded": 5688,
+      "foundedDate": "4A 620",
+      "legend": "The counting houses of Viktara say that a debt written in their books cannot drown, burn or die, and that the books are older than the town.",
+      "economy": "Grain of the vale, the counting houses, loans and the Arbitration Court.",
+      "canon": "proposed",
+      "population": 14000
+    },
+    {
+      "name": "Farnardur",
+      "country": "R'en",
+      "role": "fortress",
+      "size": "city",
+      "founded": 1240,
+      "foundedDate": "1A 1240",
+      "legend": "The cape folk say that the forts of Farnardur have never been taken, and that the Necromancer's hosts broke on them twice because the first prince buried a strait-whale's jaw under the gate.",
+      "economy": "The strait forts, Aenoran trade and the harbour of the Sea of R'en.",
+      "canon": "proposed",
+      "population": 12000
+    },
+    {
+      "name": "Altovian",
+      "country": "Molot",
+      "role": "fortress",
+      "size": "town",
+      "founded": 2915,
+      "foundedDate": "2A 1240",
+      "legend": "The marchers say the first margrave walked the fortress line every night of his life and that his lantern can still be seen on the walls in a hard winter.",
+      "economy": "The fortress line, the march's garrison and the road to Knorvik.",
+      "canon": "proposed",
+      "population": 8000
+    },
+    {
+      "name": "Agtosai",
+      "country": "Sensai",
+      "role": "town",
+      "size": "town",
+      "founded": 1360,
+      "foundedDate": "1A 1360",
+      "legend": "The vale folk say the first king of Sensai was crowned with a circlet of pine-tar and iron from the hill of Kerhil, and that the vale will be free as long as the circlet holds.",
+      "economy": "Timber, pine tar and iron of the long vale.",
+      "canon": "proposed",
+      "population": 10000
+    },
+    {
+      "name": "Gilvian",
+      "country": "Mina",
+      "role": "mine",
+      "size": "town",
+      "founded": 5708,
+      "foundedDate": "4A 640",
+      "legend": "Miners of Gilvian say the king who did not come up from the fallen gallery still walks the Delvings with a lamp, and that miners who see it go home for the day.",
+      "economy": "The iron of the Delvings and the forges of the ore hills.",
+      "canon": "proposed",
+      "population": 6000
+    },
+    {
+      "name": "Pand",
+      "country": "Heodwa Lands",
+      "role": "town",
+      "size": "town",
+      "founded": 4614,
+      "foundedDate": "3A 806",
+      "legend": "The hill folk say the stone on which the three kings and the dwarf lord swore the Hill Pact still stands in the council hall, and that a king who breaks the pact will not be able to lift his hand from it.",
+      "economy": "The hill council, hill ponies, peat and wool.",
+      "canon": "proposed",
+      "population": 5000
+    },
+    {
+      "name": "Ilmahrim",
+      "country": "Hrakbrund",
+      "role": "mine",
+      "size": "town",
+      "founded": 110,
+      "foundedDate": "1A 110",
+      "legend": "Men at the High Gate say the white hall is so deep that its dwarves have never seen the snow above it, and that they keep a bowl of snow at the gate for every lord who is crowned.",
+      "economy": "Iron, gold, gems and bombards sold at the High Gate.",
+      "canon": "proposed",
+      "population": 3000
+    },
+    {
+      "name": "Parur",
+      "country": "Dolpar",
+      "role": "market",
+      "size": "town",
+      "founded": 6648,
+      "foundedDate": "4A 1580",
+      "legend": "The lake folk say Dolpar has no bottom, and that the lake-court's judgements are dropped into it so that nobody can appeal them.",
+      "economy": "The lake market, fishing and the lake-court.",
+      "canon": "proposed",
+      "population": 6000
+    },
+    {
+      "name": "Migur",
+      "country": "Tolhon",
+      "role": "port",
+      "size": "town",
+      "founded": 5328,
+      "foundedDate": "4A 260",
+      "legend": "The fishers of Migur say the herring of the Onp came back only because the first prince's grandson threw his summer nets into the sea, and that they will leave again the day the ban is broken.",
+      "economy": "Herring of the Onp, the Sirtum bridge tolls and the isles' trade.",
+      "canon": "proposed",
+      "population": 5000
+    },
+    {
+      "name": "Nuadoso",
+      "country": "Keredor-Hellekton",
+      "role": "port",
+      "size": "town",
+      "founded": 6412,
+      "foundedDate": "4A 1344",
+      "legend": "The folk of the double crown say that Nuadoso was rebuilt after the burning with one stone from each old hall in every wall, so that neither crown could ever claim it alone.",
+      "economy": "Coast trade, fishing and the pass of Belg.",
+      "canon": "proposed",
+      "population": 4000
+    },
+    {
+      "name": "Krakur",
+      "country": "Mustnom",
+      "role": "town",
+      "size": "town",
+      "founded": 6565,
+      "foundedDate": "4A 1497",
+      "legend": "Packmen of Mustnom say the boss of Krakur can tell by weighing a pack whether its packman has stolen from it, and that no packman has ever fooled him twice.",
+      "economy": "The warrens' smithies and the goods the packmen bring back from the long road.",
+      "canon": "proposed",
+      "population": 5000
+    }
+  ],
+  "figures": [],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "name": "The Speakers' Hall",
+      "realms": [
+        "Lerendor"
+      ],
+      "summary": "The shipowners and landholders of both crowns of the High Crown approve its taxes in the Speakers' Hall, and a king who raises the strait dues without them is asked to explain himself to Veskel's lords.",
+      "canon": "proposed"
+    },
+    {
+      "name": "Crown-sharing marriages",
+      "realms": [
+        "Keredor-Hellekton",
+        "Lerendor",
+        "Mina"
+      ],
+      "summary": "Neighbouring crowns of the North join by marriages that set both crowns on the heirs; such marriages are settled by the Arbitration Court so that neither side can later call them conquest.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Arbitration Court",
+      "realms": [
+        "Eekedor"
+      ],
+      "summary": "Since 4A 906 the crowns of the North may bring their feuds to Eekedor's court for a fee and swear to obey its judgement; the lake-court of Dolpar has offered the same since 4A 1580.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Hill Pact",
+      "realms": [
+        "Heodwa Lands",
+        "Hrakbrund"
+      ],
+      "summary": "Since 3A 806 the dwarves of the High Mountains are bound to come down to any hill crown of Heodwa that is attacked, and the hill council is bound to keep the High Gate's roads open.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Strait Litany's peace of the whale",
+      "realms": [
+        "Lerendor",
+        "Eekedor",
+        "R'en",
+        "Keredor-Hellekton",
+        "Molot"
+      ],
+      "summary": "The strait-whale that winters in the Leren water opens the Ship-Blessing when it comes, and the Litany forbids killing one inside the strait.",
+      "canon": "proposed"
+    }
+  ]
+}

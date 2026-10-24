@@ -1,0 +1,1313 @@
+{
+  "version": 1,
+  "region": "dark_lands",
+  "name": "The Dark Lands",
+  "overview": "Between the North Lands and the Middle Lands, across narrow straits, two dark arms of forest, ridge and volcano curl round an inner sea, the Sea of Darkness. The Dark Lands were never one realm: men, orcs, goblins, trolls, ogres, giants and demons live here under rulers of their own, and none of them belongs to Volgan by nature. Aen's northern garrisons left behind the men who became Dondor; orcs and goblins of the iron hills marched in Volgan's armies in the First Age while other Dark Lands soldiers fought him under Edran, and in 2A 1388 Dondor's spearmen stood with men of the south and an elven company to close the Burning Gate of Nezer. Late in the Second Age the holds opened their passes and their deep ways to the Necromancer's hosts, and in the Third Age the Buried Wars between his garrisons and the free holds bled his strength away. In the Fourth Age, once the great invasions had ceased, orc warlords united the inner Dark Lands as Goldoroth around 4A 1452, the goblins of Burnikit learned to make powder from the volcano's fire and sold it to the orcs' siege forges, and Dondor and the sea orcs of Belonton swore the Dark Sea Accord in 4A 1604. In 4A 1748 the two sides keep an armed peace of raids, gifts, tribute and beacon-fires; the free holds, the troll king Smash, the giants behind their cairn-line and a demon lordship on the black south answer only to themselves, and Volgan's envoys court them all. Years in the data are one continuous count from the victory of Aen on the proposed lengths of the ages (First Age 1,675 years, Second Age 2,133, Third Age 1,260): 1A 1 is year 1, 2A 1 is 1,676, 3A 1 is 3,809 and 4A 1 is 5,069, so that the campaign year 4A 1748 is 6,816; every entry also carries its date in the Age-and-year form, which is the form the prose uses.",
+  "ages": [
+    {
+      "id": "dl_garrisons",
+      "name": "The Garrisons and the Charts",
+      "from": 1,
+      "to": 1099,
+      "fromDate": "1A 1",
+      "toDate": "1A 1099",
+      "summary": "Aenoran ships charted the Dark Lands' coasts and left chart names behind them, and the garrisons Aen's heirs kept on the Dondor plain stayed when the ships stopped coming; their descendants, worn into the speech of their orc neighbours, became the men of Dondor. The orc holds of the iron hills were already old.",
+      "canon": "proposed"
+    },
+    {
+      "id": "dl_volgan",
+      "name": "The Southern Burning",
+      "from": 1100,
+      "to": 1675,
+      "fromDate": "1A 1100",
+      "toDate": "1A 1675",
+      "summary": "Volgan opened contacts with the powers of the Dark Lands and found orcs and goblins willing to march for him when he invaded Mirolon in 1A 1150, while other holds and the men of Dondor sent soldiers to the Grand Alliance under Rovek of Dondor, who knew Volgan's friends better than anyone; the Dark Lands fought on both sides at Dardan.",
+      "canon": "proposed"
+    },
+    {
+      "id": "dl_turmoil",
+      "name": "The Raiding Centuries",
+      "from": 1676,
+      "to": 3375,
+      "fromDate": "2A 1",
+      "toDate": "2A 1700",
+      "summary": "After Volgan's banishment many orcs and goblins kept fighting in his name and the free Dark Lands fell back into turmoil; bands of the iron holds crossed the Northern Dark Strait to raid the North in the Raiding Years, while Dondor's spearmen marched south in 2A 1388 to close the Burning Gate of Nezer, and the holds fought the War of the Black Roads against the Necromancer's followers in the years after Volgan returned.",
+      "canon": "proposed"
+    },
+    {
+      "id": "dl_passes",
+      "name": "The Opening of the Passes",
+      "from": 3376,
+      "to": 3808,
+      "fromDate": "2A 1701",
+      "toDate": "2A 2133",
+      "summary": "As the Necromancer's wars spread, orc and goblin armies descended from the Dark Lands and rose from the deep ways underground; the goblin warrens under the Goldoroth Mountains opened their tunnels to his hosts in 2A 2110 and closed them again when he did not pay.",
+      "canon": "proposed"
+    },
+    {
+      "id": "dl_buried_wars",
+      "name": "The Buried Wars",
+      "from": 3809,
+      "to": 5068,
+      "fromDate": "3A 1",
+      "toDate": "3A 1260",
+      "summary": "The Necromancer relied on orc and goblin garrisons to hold Aenor, and between 3A 431 and 3A 690 the Buried Wars between his garrisons and the free holds of the Dark Lands cost him men he could not replace. The free holds learned to fight for no master, a lesson they have kept.",
+      "canon": "proposed"
+    },
+    {
+      "id": "dl_warkingdom",
+      "name": "The Warkingdom and the Accord",
+      "from": 5069,
+      "to": 6816,
+      "fromDate": "4A 1",
+      "toDate": "4A 1748",
+      "summary": "The great invasions of orcs and goblins ceased with the Fourth Age. Orc clans moved from the hills into the volcano country, Goldoroth was united around 4A 1452 and began its wars with Dondor, the goblins of Burnikit sold powder to its forges from 4A 1566, and the Dark Sea Accord of Dondor and Belonton has held against the warkingdom since 4A 1604.",
+      "canon": "proposed"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Goldoroth",
+      "tag": "GOL",
+      "founding": {
+        "year": 6520,
+        "date": "4A 1452",
+        "story": "For three centuries orc clans had been moving out of the hills into the volcano country of the Goldoroth arm, fighting each other for the warm slopes, until in 4A 1452 Skarag of the Krumgul broke the last rival chief in the ring at Sungodor and the chiefs of the four clan blocs acclaimed him Warking. He moved his seat to the forge-city below the Fire-Mountain, and the orcs call the realm Gruzgoroth, though every chart in Aoaz writes it Goldoroth."
+      },
+      "dynasties": [
+        {
+          "name": "The Warkings acclaimed at the Fire-Mountain",
+          "from": 6520,
+          "date": "4A 1452",
+          "notable": "Not a family: each Warking is acclaimed by the moot of the four clan blocs and holds the throne until a stronger challenger breaks him in the ring. Skarag of the Krumgul was the first, and Warking Gorduth holds Cocanoor in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Moving of the Clans",
+          "year": 6168,
+          "date": "4A 1100",
+          "summary": "Orc clans began moving from the iron hills into the volcano country and the warm slopes of the Fire-Mountain, a migration that lasted three centuries."
+        },
+        {
+          "name": "The Acclamation at Sungodor",
+          "year": 6520,
+          "date": "4A 1452",
+          "summary": "Skarag of the Krumgul was acclaimed the first Warking, and the wars with Dondor began within the year."
+        },
+        {
+          "name": "The Iron Yoke",
+          "year": 6538,
+          "date": "4A 1470",
+          "summary": "The Warking made the gate-hold of the Dark Gate a tributary paying Cocanoor in iron, the first hold under the Iron Yoke."
+        },
+        {
+          "name": "The Reed Drowning",
+          "year": 6629,
+          "date": "4A 1561",
+          "summary": "A Goldoroth host sent to bring Dreson under the Yoke was led into the fens by the reed-council's guides and drowned; the warkingdom has not marched into the fens since."
+        },
+        {
+          "name": "The First Bombards",
+          "year": 6662,
+          "date": "4A 1594",
+          "summary": "The siege forges of Cocanoor cast their first bombards, fired with powder bought from the goblins of Burnikit, and broke Dondor's southern stockades."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Dondor",
+          "nature": "The armed peace since 4A 1452: raids, beacon-fires and two wars over the border holds."
+        },
+        {
+          "with": "Dulundur",
+          "nature": "The host of the Free Moot of the holds that refuse the Iron Yoke."
+        }
+      ],
+      "capital": "Cocanoor",
+      "capitalReason": "Cocanoor is the forge-city cut into black stone at the foot of the Fire-Mountain, where the volcano's heat and the iron of the arm meet; the Volcano Clans hold the mountain holy, and the Warking sits beneath it so that the Fire-Speakers stand at his side.",
+      "today": "Warking Gorduth rules some half a million orcs, with goblin quarters and a few trolls, from the forge-city below the Fire-Mountain. Goldoroth wants the whole Dark Lands and has not quite the strength to take them; its siege forges cast bombards with Burnikit's powder, its tribute holds pay in iron, and Volgan's envoys are received at court.",
+      "divergence": [
+        {
+          "id": "gol_one_dark",
+          "what": "Goldoroth breaks the Accord and the Free Moot and unites the Dark Lands under the Warking.",
+          "consequence": "One orc kingdom holds both arms of the Dark Lands and the straits on either side, and every crown of the North and the Middle Lands has a new great power on its doorstep."
+        },
+        {
+          "id": "gol_sworn_volgan",
+          "what": "The Warking swears to Volgan when he marches north.",
+          "consequence": "The Dark Lands open a northern front for the Southern Dominion, and Goldoroth's fortunes are tied to Volgan's body.",
+          "beat": "B23"
+        },
+        {
+          "id": "gol_broken",
+          "what": "The Dark Sea Accord breaks Goldoroth in the field.",
+          "consequence": "The warkingdom falls back into four clan blocs fighting in the ring, and the free holds go back to answering to nobody."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Dondor",
+      "tag": "DND",
+      "founding": {
+        "year": 352,
+        "date": "1A 352",
+        "story": "When Aenor's ships stopped coming to the Dondor plain around 1A 352, the garrison they left behind had married into the plain's few villages and could not go home. Its captains held a clan-moot on the forest edge and chose Dromand of the Barand, the strongest of them, as Brute-King, a title their orc neighbours gave them as an insult and they took as a boast. Their speech wore down over the centuries into Dondric, full of orc words, but they have kept their king and their iron."
+      },
+      "dynasties": [
+        {
+          "name": "The Brute-Kings of the clan-moot",
+          "from": 352,
+          "date": "1A 352",
+          "notable": "The clan-moot chooses each king from the strongest line of the moment; the Barand, the Gulung and the Urdung have each held the hall for centuries. King Dunmar of the Gulung reigns in 4A 1748."
+        }
+      ],
+      "events": [
+        {
+          "name": "The First Clan-Moot",
+          "year": 352,
+          "date": "1A 352",
+          "summary": "The garrison captains left on the Dondor plain chose Dromand of the Barand as their first Brute-King."
+        },
+        {
+          "name": "The Burning Gate",
+          "year": 3063,
+          "date": "2A 1388",
+          "summary": "Dondor's spearmen under Brunmar of the Urdung marched south and stood with men of the southern kingdoms and an elven company to close the Burning Gate of Nezer; the clan-moot keeps their spears in the king's hall."
+        },
+        {
+          "name": "The Beacon Towers",
+          "year": 6662,
+          "date": "4A 1594",
+          "summary": "After Goldoroth's bombards broke the southern stockades, the Brute-King raised beacon towers on every hill of the plain so that the whole kingdom could be called to arms in a night."
+        },
+        {
+          "name": "The Dark Sea Accord",
+          "year": 6672,
+          "date": "4A 1604",
+          "summary": "Dondor and the sea orcs of Belonton swore the Accord on an iron bar and a skull sunk together in the Sea of Darkness."
+        },
+        {
+          "name": "The Dear Powder",
+          "year": 6728,
+          "date": "4A 1660",
+          "summary": "Dondor bought its first powder-pieces from Burnikit for the beacon towers, at a price the treasury still complains of."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Goldoroth",
+          "nature": "The armed peace since 4A 1452."
+        }
+      ],
+      "capital": "Notbuton",
+      "capitalReason": "Notbuton stands on the forest edge of the Dondor plain facing the straits, where the old garrison's stockade stood; the plain feeds it, the forest hides it and the straits bring it Leren trade.",
+      "today": "King Dunmar rules about a quarter of a million men of the Dondor plain, the Dondor Forest, the lower Giant River and the fens from the Brute-King's hall. Dondor leads the Dark Sea Accord, keeps its beacon towers manned and a few dear powder-pieces in them, and needs the free holds' iron more than it likes to admit.",
+      "divergence": [
+        {
+          "id": "dnd_accord_breaks",
+          "what": "The Accord breaks when Belonton makes its own peace with Goldoroth.",
+          "consequence": "Dondor stands alone against the warkingdom, and the Dondor plain becomes the Dark Lands' battlefield."
+        },
+        {
+          "id": "dnd_free_moot",
+          "what": "Dondor joins the free holds' Free Moot against the Iron Yoke.",
+          "consequence": "Men and orcs stand together against Goldoroth for the first time since the Buried Wars, and the warkingdom is ringed."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Dark Gate",
+      "tag": "DRK",
+      "founding": {
+        "year": 4688,
+        "date": "3A 880",
+        "story": "The pass at the foot of the Goldoroth Mountains is the only road from the Goldoroth arm to the south, and in 3A 880 an orc chief named Zugash built a gate-fort across it at Doldes and began taking a toll from every caravan that passed. His heirs tolled the road for six centuries as a free hold, until the first Warking of Goldoroth made them his tributary in 4A 1470."
+      },
+      "dynasties": [
+        {
+          "name": "The gate-chiefs of Doldes",
+          "from": 4688,
+          "date": "3A 880",
+          "notable": "Chiefs who hold the gate-fort until a stronger challenger breaks them in the ring; since 4A 1470 each new chief must be confirmed by the Warking."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Gate-Fort",
+          "year": 4688,
+          "date": "3A 880",
+          "summary": "Zugash built the gate-fort across the pass and began the toll."
+        },
+        {
+          "name": "The Iron Yoke",
+          "year": 6538,
+          "date": "4A 1470",
+          "summary": "The gate-hold became Goldoroth's first tributary, paying Cocanoor in iron from its tolls."
+        },
+        {
+          "name": "The Southern Envoys",
+          "year": 6723,
+          "date": "4A 1655",
+          "summary": "Envoys from Volgan's Southern Dominion came north through the pass for the first time in the age, and the gate-chief tolled them like any caravan."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Doldes",
+      "capitalReason": "Doldes is the gate-fort built across the narrowest point of the Dark Gate pass, where no caravan can go round it.",
+      "today": "About forty thousand orcs hold the pass and Bold's border under a gate-chief confirmed by the Warking. Every caravan pays the toll, and Volgan's envoys pass through it to every court of the Dark Lands.",
+      "divergence": [
+        {
+          "id": "drk_break_yoke",
+          "what": "The gate-chief throws off the Iron Yoke.",
+          "consequence": "Goldoroth loses its road south and the toll's iron, and the Free Moot gains a hold at the warkingdom's back door."
+        },
+        {
+          "id": "drk_open_south",
+          "what": "The gate-chief opens the pass to a southern host.",
+          "consequence": "Volgan's armies can come north through the Goldoroth arm, and the Dark Lands are a front of the last war.",
+          "beat": "B23"
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Burnikit",
+      "tag": "BUN",
+      "founding": {
+        "year": 4812,
+        "date": "3A 1004",
+        "story": "The goblin warrens under the Goldoroth Mountains had opened their deep ways to the Necromancer's hosts and regretted it, and in 3A 1004, when his recruiters came again, the warrens chose their loudest and cleverest boss, a goblin called Snikkit, as the first Big Snik, so that one voice would lie to the recruiters for all of them. The trick worked, and the warrens have kept a Big Snik and their freedom ever since, owing nothing to any hobgoblin king."
+      },
+      "dynasties": [
+        {
+          "name": "The Big Sniks of Burnikzig",
+          "from": 4812,
+          "date": "3A 1004",
+          "notable": "Each Big Snik is the loudest and cleverest boss the warrens will follow; the present Big Snik is called Skritix."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Deep Ways Opened",
+          "year": 3785,
+          "date": "2A 2110",
+          "summary": "The warrens opened their tunnels to the Necromancer's hosts and closed them again when he did not pay."
+        },
+        {
+          "name": "The Great Lamp",
+          "year": 4812,
+          "date": "3A 1004",
+          "summary": "The warrens chose their first Big Snik to keep the Necromancer's recruiters out, and lit the great lamp in the hall of fire that has not gone out since."
+        },
+        {
+          "name": "The Fire-Powder",
+          "year": 6634,
+          "date": "4A 1566",
+          "summary": "The goblins learned to make a burning powder from the volcano's yellow crusts and the saltpetre of their caves, the first powder of the Dark Lands, and began selling it to the highest bidder."
+        },
+        {
+          "name": "Powder for Both",
+          "year": 6728,
+          "date": "4A 1660",
+          "summary": "Burnikit sold powder to Goldoroth's siege forges and powder-pieces to Dondor's beacon towers in the same year, and charged Dondor more."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Burnikzig",
+      "capitalReason": "Burnikzig, the hall of fire, lies in the warmest caves under the Goldoroth Mountains, heated by the volcano, where goblins who hate the sun and the cold can live all year.",
+      "today": "About sixty thousand goblins, with a few hobgoblins as guards and haulers of stone, live in the warm deep caves under a Big Snik. They are the best powder-makers of the region and sell to whoever pays most, which in 4A 1748 is usually Goldoroth.",
+      "divergence": [
+        {
+          "id": "bun_deny_goldoroth",
+          "what": "The Accord buys Burnikit's favour and the Big Snik stops selling to Cocanoor.",
+          "consequence": "Goldoroth's bombards fall silent for want of powder, and the warkingdom's siege forges must find another supplier."
+        },
+        {
+          "id": "bun_sell_all",
+          "what": "The Big Snik sells powder to every side in the last war.",
+          "consequence": "Every Dark Lands host goes to war with fire, and Burnikit grows rich on all of them."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Veshazel",
+      "tag": "VES",
+      "founding": {
+        "year": 6248,
+        "date": "4A 1180",
+        "story": "The black south of the Goldoroth arm, where ash covers everything and nothing grows, was empty of everything but devils' roosts until demons came up out of the south and raised a hall of ash at Ozmath-Vesh in 4A 1180, under a lord who keeps a pact-name that only his pact knows. Men and orcs who had nowhere else to go came to serve the hall as thralls, and the lordship has belonged to no master since."
+      },
+      "dynasties": [
+        {
+          "name": "The pact-lords of the hall of ash",
+          "from": 6248,
+          "date": "4A 1180",
+          "notable": "Lords of two-beat names and hidden pact-names; the present lord is called Thazael at the courts of others. The lordship is sworn to neither Volgan nor Goldoroth."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hall of Ash",
+          "year": 6248,
+          "date": "4A 1180",
+          "summary": "Demons raised the hall of ash at Ozmath-Vesh on the Goldoroth Ash Fields."
+        },
+        {
+          "name": "The Thralls of the Ash",
+          "year": 6458,
+          "date": "4A 1390",
+          "summary": "Orcs broken in the clan wars of the volcano country and men fleeing debts on the coasts came to the Ash Fields and swore to the hall, and the lordship has had more mortal subjects than demons since."
+        },
+        {
+          "name": "The Dominion's Envoys",
+          "year": 6718,
+          "date": "4A 1650",
+          "summary": "When the Southern Dominion was sworn to Volgan, its envoys came to Ozmath-Vesh and asked the lord to swear too; he sent them home with gifts and without his oath."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Goldoroth",
+          "nature": "The warkingdom wants the Ash Fields' shore and fears what lives on them."
+        }
+      ],
+      "capital": "Ozmath-Vesh",
+      "capitalReason": "Ozmath-Vesh, the hall of ash, stands on the black shore facing the Sea of Dolon, the one place on the Goldoroth arm that nobody else wanted and the shore that leads south toward the Ember Lands.",
+      "today": "About two thousand souls live on the Goldoroth Ash Fields: a few hundred demons and their mortal thralls under a lord who keeps a pact-name. The lordship is shunned by its neighbours and courted by the Southern Dominion, which wants it as its northern foothold.",
+      "divergence": [
+        {
+          "id": "ves_swear_dominion",
+          "what": "The lord swears to the Southern Dominion when Volgan marches.",
+          "consequence": "The Dominion has a foothold on the Dark Lands' southern shore, and Goldoroth has demons at its back."
+        },
+        {
+          "id": "ves_lend_fire",
+          "what": "The lord lends fire and terror to one Dark Lands power for a price.",
+          "consequence": "That power fights with demons beside it, and the price is named in the pact, not in gold."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Blackton",
+      "tag": "BLK",
+      "founding": {
+        "year": 6170,
+        "date": "4A 1102",
+        "story": "The harbour towns at the end of the Iron Road had been Dondric fishing villages until Leren merchants began to settle at Dontadur in 4A 1071 to buy Dondor's iron, and within a generation the five harbours were walled towns of mixed Dondric and Leren folk who wanted no king. In 4A 1102 they swore a league of five towns under a town moot, and they have defended their walls and their trade together since."
+      },
+      "dynasties": [
+        {
+          "name": "The town moot of the five harbours",
+          "from": 6170,
+          "date": "4A 1102",
+          "notable": "Each walled town sends its burghers to the moot at Dontadur, which chooses a moot-speaker each year; whether to keep the moot or take a lord's charter is argued in every generation."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Leren Landing",
+          "year": 6139,
+          "date": "4A 1071",
+          "summary": "Leren merchants settled at Dontadur to buy the iron of the Iron Road, and their ships have come every season since."
+        },
+        {
+          "name": "The League of Five Towns",
+          "year": 6170,
+          "date": "4A 1102",
+          "summary": "The five walled harbours swore their league under a town moot."
+        },
+        {
+          "name": "The Charter Quarrel",
+          "year": 6756,
+          "date": "4A 1688",
+          "summary": "A Leren-born burgher offered to rule the league as lord under a charter; the moot refused by a single voice, and the quarrel still divides the towns."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Dontadur",
+      "capitalReason": "Dontadur is the largest of the five walled harbours, where the Iron Road from the Dondor hills meets the sea and the Leren ships moor.",
+      "today": "About two hundred thousand people of mixed Dondric and Leren blood live in the five walled harbour towns of the eastern coast. Blackton sells Dondor's iron to the North, keeps out of the Accord's wars where it can, and argues about its charter.",
+      "divergence": [
+        {
+          "id": "blk_charter",
+          "what": "The moot takes a lord's charter under a Leren-born lord.",
+          "consequence": "Blackton leans to Lerendor, and the Dark Shore gains a friend of the High Crown."
+        },
+        {
+          "id": "blk_accord",
+          "what": "The five towns join the Dark Sea Accord.",
+          "consequence": "Dondor gains harbours and ships, and Goldoroth gains another enemy on the coast."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Belonton",
+      "tag": "BLN",
+      "founding": {
+        "year": 4748,
+        "date": "3A 940",
+        "story": "The sea orcs of the Belonton borderlands and isles were raiders of the straits for the whole Third Age, and in 3A 940 their holds swore a confederacy at the harbour of Notle so that their ships would raid others rather than each other. The Sea-Chief is chosen by the voyages he has won, and the confederacy has kept the Salt Tithe and its ships ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Sea-Chiefs of Notle",
+          "from": 4748,
+          "date": "3A 940",
+          "notable": "Chosen by the holds for the voyages they have won; the present Sea-Chief is Rukhag of the Ghashak, who won his chair by bringing home a Leren ship whole."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Confederacy at Notle",
+          "year": 4748,
+          "date": "3A 940",
+          "summary": "The sea-orc holds swore their confederacy and chose their first Sea-Chief."
+        },
+        {
+          "name": "The Burning of Nuadoso",
+          "year": 6599,
+          "date": "4A 1531",
+          "summary": "Belonton's ships burned the shared seat of the North's double crown of Keredor-Hellekton, and the next year Lerendor's fleet burned Notle in return."
+        },
+        {
+          "name": "The Dark Sea Accord",
+          "year": 6672,
+          "date": "4A 1604",
+          "summary": "Belonton swore the Accord with Dondor on an iron bar and a skull sunk together in the Sea of Darkness."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Goldoroth",
+          "nature": "The warkingdom that wants the sea orcs' harbours."
+        },
+        {
+          "with": "Lerendor",
+          "nature": "The fleet that burned Notle in 4A 1532."
+        }
+      ],
+      "capital": "Notle",
+      "capitalReason": "Notle is the sea orcs' harbour on the borderland coast, sheltered by the Lestern Isles, from which Belonton's ships can reach every strait of the Dark Lands.",
+      "today": "About eighty thousand sea orcs live on the Belonton borderlands, the Gull Kingdom's cliffs and the Lestern Isles. They are Dondor's partner in the Accord, keep the Salt Tithe and raid only those the Accord does not protect.",
+      "divergence": [
+        {
+          "id": "bln_separate_peace",
+          "what": "The Sea-Chief makes a separate peace with Goldoroth.",
+          "consequence": "The Accord breaks, and Dondor faces the warkingdom with no fleet beside it."
+        },
+        {
+          "id": "bln_strait_fleet",
+          "what": "Belonton's ships guard the Northern Dark Strait in the last war.",
+          "consequence": "The dead and the living alike find the strait watched by sea orcs, and the North owes Belonton a debt it never expected."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Bordon",
+      "tag": "BOR",
+      "founding": {
+        "year": 4508,
+        "date": "3A 700",
+        "story": "In the Buried Wars the gorge of the Black Road by Soun Lake was the free holds' road between the iron hills, and in 3A 700 an orc chief named Kargesk took it from the Necromancer's garrison and built a hold at Zubudor to keep it. When the wars ended his heirs turned the hold's barracks into caravan inns, and Bordon has lived by the road ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The road-chiefs of Zubudor",
+          "from": 4508,
+          "date": "3A 700",
+          "notable": "Chiefs who keep the iron and the ring until they are challenged; the present chief's line has held the hold for three challenges running."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Road Taken",
+          "year": 4508,
+          "date": "3A 700",
+          "summary": "Kargesk took the Black Road gorge from the Necromancer's garrison and built the hold at Zubudor."
+        },
+        {
+          "name": "The Caravan Inns",
+          "year": 5108,
+          "date": "4A 40",
+          "summary": "The hold's barracks became caravan inns, and Bordon began to live by the road rather than the sword."
+        },
+        {
+          "name": "The Night of the Trolls",
+          "year": 6458,
+          "date": "4A 1390",
+          "summary": "A caravan camped in the Troll Forest beside the Black Road was smashed in the night by the troll king, and Bordon's chiefs have forbidden caravans to camp there since."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Goldoroth",
+          "nature": "The warkingdom wants the Black Road under the Iron Yoke."
+        }
+      ],
+      "capital": "Zubudor",
+      "capitalReason": "Zubudor is the hold in the Black Road's gorge by Soun Lake, the narrowest point of the road between the iron hills, where caravans must stop.",
+      "today": "About fifty thousand orcs of the Iron Clans keep the Black Road and its caravan inns. Bordon is a separate hold that belongs to nobody, takes Volgan's gifts and Goldoroth's threats with the same grin, and knows exactly where the Troll Forest begins.",
+      "divergence": [
+        {
+          "id": "bor_yoke",
+          "what": "Bordon bows to the Iron Yoke.",
+          "consequence": "Goldoroth controls the Black Road, and the free holds' iron goes to Cocanoor."
+        },
+        {
+          "id": "bor_free_moot",
+          "what": "Bordon holds the Free Moot together when Goldoroth presses.",
+          "consequence": "The free holds keep their road, and the warkingdom must fight for every hill."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Dreson",
+      "tag": "DRE",
+      "founding": {
+        "year": 4328,
+        "date": "3A 520",
+        "story": "In the Buried Wars orcs who would not fight for the Necromancer fled into the fens his garrisons could not cross, and in 3A 520 they built a hall on black piles in the reeds at Dolido and chose a reed-council to rule them. The fens have kept Dreson free ever since; its folk live on eels, peat and bog-iron, and armies that come after them do not come back."
+      },
+      "dynasties": [
+        {
+          "name": "The reed-council of Dolido",
+          "from": 4328,
+          "date": "3A 520",
+          "notable": "Elders who know the fen paths sit in the hall on black piles; the council chooses a chief to keep the iron and the ring, and can unmake him."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Hall on Black Piles",
+          "year": 4328,
+          "date": "3A 520",
+          "summary": "Orcs fleeing the Necromancer's levies built the hall at Dolido and chose the first reed-council."
+        },
+        {
+          "name": "The Buried Wars",
+          "year": 4408,
+          "date": "3A 600",
+          "summary": "The fen orcs struck the Necromancer's garrisons from the reeds and vanished into them, and the Order never brought them under its yoke."
+        },
+        {
+          "name": "The Reed Drowning",
+          "year": 6629,
+          "date": "4A 1561",
+          "summary": "The reed-council's guides led a Goldoroth host into the deep fens and left it there."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Goldoroth",
+          "nature": "The host drowned in the fens in 4A 1561 is not forgotten in Cocanoor."
+        }
+      ],
+      "capital": "Dolido",
+      "capitalReason": "Dolido is the hall on black piles in the middle of the fens, reached only by paths the reed-council knows, which is why it was built there.",
+      "today": "About forty thousand orcs live in the fens on eels, peat and bog-iron under the reed-council. Dreson is a separate hold that belongs to nobody, and its fens swallow armies.",
+      "divergence": [
+        {
+          "id": "dre_guides",
+          "what": "The reed-council guides another power's host through the fens.",
+          "consequence": "An army can cross the Dark Lands where nobody expects one, and Dreson's neutrality is spent."
+        },
+        {
+          "id": "dre_refuge",
+          "what": "The fens take in the free holds' folk when Goldoroth marches.",
+          "consequence": "The Free Moot cannot be destroyed while the fens hold, and the warkingdom's victory is never complete."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Dulundur",
+      "tag": "DUL",
+      "founding": {
+        "year": 4958,
+        "date": "3A 1150",
+        "story": "The four valleys of the long valley were four quarrelling holds until, late in the Third Age, the Necromancer's last levies came for their young orcs. In 3A 1150 the four chiefs lit four fires in one hall at Lesderle and swore to keep them burning together, and the Four Fires have ruled the long valley since, each valley keeping its own chief and its own fire."
+      },
+      "dynasties": [
+        {
+          "name": "The Four Fires of Lesderle",
+          "from": 4958,
+          "date": "3A 1150",
+          "notable": "Four chiefs, one for each valley, each holding his fire until challenged; the hall chooses one to speak for the long valley at the Free Moot. Its goblin quarters keep a lamp beside the fires."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Four Fires Lit",
+          "year": 4958,
+          "date": "3A 1150",
+          "summary": "The four valley chiefs lit their fires in one hall at Lesderle and swore to keep them together."
+        },
+        {
+          "name": "The Free Moot",
+          "year": 6556,
+          "date": "4A 1488",
+          "summary": "When Goldoroth's Iron Yoke took the Dark Gate, the Four Fires called the free holds to Lesderle, and the Free Moot has settled tolls and iron prices there since."
+        },
+        {
+          "name": "The Fire Kept",
+          "year": 6680,
+          "date": "4A 1612",
+          "summary": "Goldoroth's envoys offered the Four Fires a place under the Yoke for one valley; the hall put out that valley's envoy instead of its fire."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Goldoroth",
+          "nature": "The Free Moot stands against the Iron Yoke."
+        }
+      ],
+      "capital": "Lesderle",
+      "capitalReason": "Lesderle is the moot hold in the largest of the four valleys, where the four valley roads meet; the Four Fires burn in its hall because it is the only hall all four chiefs could reach in a day.",
+      "today": "About a hundred and fifty thousand orcs, with goblin quarters, live in the long valley's four holds under the Four Fires. Dulundur hosts the Free Moot against the Iron Yoke and is the free holds' strongest voice.",
+      "divergence": [
+        {
+          "id": "dul_moot_holds",
+          "what": "The Free Moot holds together under Dulundur's lead when Goldoroth presses.",
+          "consequence": "The warkingdom faces a league of holds rather than a row of single ones, and the Dark Lands stay divided."
+        },
+        {
+          "id": "dul_fire_out",
+          "what": "One of the Four Fires goes out when a valley bows to Goldoroth.",
+          "consequence": "The long valley is divided, the Free Moot loses its hall, and the Iron Yoke reaches the iron hills."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Troll Forest",
+      "tag": "TRO",
+      "founding": {
+        "year": 6458,
+        "date": "4A 1390",
+        "story": "Trolls have lived in the forest beside the Black Road for as long as any orc remembers, and they call it Grootoom, the great forest-place. Men and orcs date the realm from 4A 1390, the first time Bordon's caravan masters wrote down that a king of the trolls walked out at night and smashed a camp, and they have written down every such night since. The trolls live with their king in the great cave of Holos and keep the old rule that the oldest unbeaten troll leads each group."
+      },
+      "dynasties": [
+        {
+          "name": "The troll kings of Holos",
+          "from": 6458,
+          "date": "4A 1390",
+          "notable": "The forest's king is by far the largest troll and rules the trolls of this forest only; the present king is called Smash, and he walks at night because sunlight slowly turns him to stone."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Night of the Trolls",
+          "year": 6458,
+          "date": "4A 1390",
+          "summary": "A caravan camped in the forest beside the Black Road was smashed by the troll king in the night, and Bordon's caravan masters began to keep a record of his nights."
+        },
+        {
+          "name": "The Troll Silver",
+          "year": 6583,
+          "date": "4A 1515",
+          "summary": "A Dondor envoy left silver at the forest's edge and was let through unharmed; since then realms that want to cross pay the troll silver."
+        },
+        {
+          "name": "The Burned Edge",
+          "year": 6708,
+          "date": "4A 1640",
+          "summary": "Goldoroth's raiders tried to burn the forest's edge to make a road; Smash came out of Holos that night and the raiders' camp was not found until spring."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Holos",
+      "capitalReason": "Holos is the great cave in the forest's heart where the troll king lives with the trolls who guard him, out of the sun that turns trolls to stone.",
+      "today": "About six hundred forest trolls live in the Troll Forest under Smash, king of these trolls and no others. The forest belongs to nobody; realms that pay the troll silver are left alone, and armies that camp there are smashed by night.",
+      "divergence": [
+        {
+          "id": "tro_wake_forest",
+          "what": "An invader burns or fells the forest.",
+          "consequence": "Smash wakes the whole forest against the invader, and every army near the Black Road suffers his nights."
+        },
+        {
+          "id": "tro_paid",
+          "what": "A realm pays the troll silver faithfully through the last war.",
+          "consequence": "That realm may cross the forest unharmed, and the Black Road becomes its road."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Hoorunoron",
+      "tag": "HOO",
+      "founding": {
+        "year": 6278,
+        "date": "4A 1210",
+        "story": "The giants of the Giant Forest were there before the orcs came to the iron hills, and men and orcs have always known that the line of cairns below the Dark Forests is not to be crossed. They date the giants' realm from 4A 1210, when a band of Dondor woodcutters crossed the cairn-line and the giants came out of the forest and carried them back over it, one under each arm, and set them down without a word."
+      },
+      "dynasties": [
+        {
+          "name": "The cairn-keepers of Maruunos",
+          "from": 6278,
+          "date": "4A 1210",
+          "notable": "The oldest giant keeps the line of cairns, and the cairn-hall by the Giant River is his seat; the present keeper is called Dorunas by men, who have never heard him say his name."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Carried Woodcutters",
+          "year": 6278,
+          "date": "4A 1210",
+          "summary": "Dondor woodcutters who crossed the cairn-line were carried back over it by the giants, the first meeting men recorded."
+        },
+        {
+          "name": "The Broken Cairn",
+          "year": 6551,
+          "date": "4A 1483",
+          "summary": "Orcs of the Darks broke a cairn of the Borderline for its stone; the giants came out and broke the orcs' hold in return, and no one has touched a cairn since."
+        },
+        {
+          "name": "The River Gift",
+          "year": 6768,
+          "date": "4A 1700",
+          "summary": "A flood of the Giant River drowned the lower Dondor plain; the giants were seen carrying folk from the water, and then they went back into the forest."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Maruunos",
+      "capitalReason": "Maruunos, the river-seat, is the cairn-hall by the Giant River where the line of cairns begins; the oldest giant keeps the line from where it starts.",
+      "today": "A few hundred giants keep the Giant Forest behind the Borderline of Giants. They never attack first, and whoever crosses the cairn-line has them as an enemy.",
+      "divergence": [
+        {
+          "id": "hoo_crossed",
+          "what": "An army crosses the cairn-line in the last war.",
+          "consequence": "The giants join any war against the crosser, and the forest becomes a wall for its enemies."
+        },
+        {
+          "id": "hoo_door_once",
+          "what": "The cairn-keeper opens the forest once to a realm that has kept the line.",
+          "consequence": "That realm can cross the Giant Forest by the giants' own road, a passage no other army has."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "The Darks",
+      "tag": "DAK",
+      "founding": {
+        "year": 6290,
+        "date": "4A 1222",
+        "story": "The orc holds of the Dark Forests and the ogre clans of the caves under the Hills of Dark had raided each other for centuries until in 4A 1222 a hard winter drove both to the edge of starving, and the orc chief Grimduth went into the ogres' caves with meat instead of spears. The four forest holds and the ogre clans made one moot at Notdertu, where orc chiefs and ogre clan-heads sit together, and the orcs have had the ogres' strength beside them since."
+      },
+      "dynasties": [
+        {
+          "name": "The moot of the four holds",
+          "from": 6290,
+          "date": "4A 1222",
+          "notable": "Four orc chiefs and the ogre clan-heads sit in one moot; the orcs speak for the holds and the ogres for the caves, and nothing is decided until both agree."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Meat Moot",
+          "year": 6290,
+          "date": "4A 1222",
+          "summary": "Grimduth brought meat to the ogre caves in a hard winter, and the orc holds and the ogre clans formed one moot at Notdertu."
+        },
+        {
+          "name": "The Broken Cairn",
+          "year": 6551,
+          "date": "4A 1483",
+          "summary": "Orcs of the Darks broke a cairn of the giants' Borderline, and the giants broke their hold in return."
+        },
+        {
+          "name": "The Hunting Ground",
+          "year": 6658,
+          "date": "4A 1590",
+          "summary": "The moot agreed with Dondor which part of the Dark Forests each would hunt, the first agreement between the Darks and the men of the plain."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Hoorunoron",
+          "nature": "The broken cairn of 4A 1483."
+        }
+      ],
+      "capital": "Notdertu",
+      "capitalReason": "Notdertu is the forest hold at the foot of the Hills of Dark, between the orcs' forest and the ogres' caves, the one place both peoples could meet on even ground.",
+      "today": "About sixty thousand orcs and ogres live in the Dark Forests' band and the Hills of Dark under their moot. The ogres are few, strong and meat-eating, and the orcs need their strength.",
+      "divergence": [
+        {
+          "id": "dak_ogres_hired",
+          "what": "The moot hires its ogres to Goldoroth's host.",
+          "consequence": "The warkingdom gains the strongest warriors of the Dark Lands, and the Darks gain meat for a hard winter."
+        },
+        {
+          "id": "dak_moot_breaks",
+          "what": "The orcs and the ogres quarrel and the moot breaks.",
+          "consequence": "The Dark Forests fall back into raids between holds and caves, and Dondor's northern forest is a battlefield again."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Skragdurg",
+      "tag": "SKR",
+      "founding": {
+        "year": 6188,
+        "date": "4A 1120",
+        "story": "The Fonoor Forest is the timber of the Dark Lands' straits, and the orcs who felled it and burned its charcoal were scattered camps until in 4A 1120 their chiefs built a hold at the forest edge of Gollonlon and named it the forest-hold. Since then Skragdurg has sold timber and charcoal to every shipwright on the straits, whatever master they serve."
+      },
+      "dynasties": [
+        {
+          "name": "The forest-chiefs of Gollonlon",
+          "from": 6188,
+          "date": "4A 1120",
+          "notable": "Chiefs who hold the forest-hold until challenged; each chief must have felled a great tree with his own axe."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Forest-Hold",
+          "year": 6188,
+          "date": "4A 1120",
+          "summary": "The timber and charcoal camps of the Fonoor Forest built the hold at Gollonlon."
+        },
+        {
+          "name": "The Colost Charcoal",
+          "year": 6418,
+          "date": "4A 1350",
+          "summary": "The charcoal-burners of Colost joined the forest-hold, and Skragdurg's charcoal began to feed the forges of the iron hills."
+        },
+        {
+          "name": "The Strait Hulls",
+          "year": 6672,
+          "date": "4A 1604",
+          "summary": "Skragdurg sold the timber for the Accord's new ships and the timber for Goldoroth's in the same season."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Gollonlon",
+      "capitalReason": "Gollonlon stands at the Fonoor Forest's edge where the felled timber can be dragged down to the strait, the one place where forest and water meet.",
+      "today": "About sixty thousand orcs of the Iron Clans fell timber and burn charcoal in the Fonoor Forest with Colost, selling to every shipwright on the straits.",
+      "divergence": [
+        {
+          "id": "skr_timber_one",
+          "what": "Skragdurg sells its timber to one side only in the last war.",
+          "consequence": "That side's ships are built and the other's are not."
+        },
+        {
+          "id": "skr_yoke",
+          "what": "Skragdurg bows to the Iron Yoke.",
+          "consequence": "Goldoroth gains the timber of the straits and can build a fleet for the Sea of Darkness."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Dun",
+      "tag": "DUN",
+      "founding": {
+        "year": 6368,
+        "date": "4A 1300",
+        "story": "The eastern peninsula commands the mouth of the Dun Sea, and in 4A 1300 an orc chief named Rukhesk of the Zhaggul took the toll-town of Dobudo and called himself king of the peninsula. His heirs have lived on the Dun Sea's tolls since, and they swing to whichever neighbour pays best, which has made them the least trusted crown of the Dark Lands."
+      },
+      "dynasties": [
+        {
+          "name": "The Zhaggul toll-kings",
+          "from": 6368,
+          "date": "4A 1300",
+          "notable": "Descended from Rukhesk; the crown goes to the son or daughter who wins the ring, and the toll-kings have married into every hold that would have them."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Toll-Town Taken",
+          "year": 6368,
+          "date": "4A 1300",
+          "summary": "Rukhesk of the Zhaggul took Dobudo and made himself king of the Dun peninsula."
+        },
+        {
+          "name": "The Dunbulinor Tolls",
+          "year": 6508,
+          "date": "4A 1440",
+          "summary": "The toll-gatherers of Dunbulinor were brought under the crown, and the whole mouth of the Dun Sea paid one king."
+        },
+        {
+          "name": "The Swing",
+          "year": 6664,
+          "date": "4A 1596",
+          "summary": "Dun took Goldoroth's gold to close the Dun Sea to Dondor, then Dondor's to open it again, inside one year."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Dobudo",
+      "capitalReason": "Dobudo is the toll-town on the Dun Sea's mouth, where every ship into or out of the inner channel passes under its walls.",
+      "today": "About fifty thousand orcs of mixed holds live on the Dun peninsula with Dunbulinor under a toll-king who sells his favour by the season.",
+      "divergence": [
+        {
+          "id": "dun_close_sea",
+          "what": "The toll-king closes the Dun Sea to one side in the last war.",
+          "consequence": "That side's ships cannot use the inner channel, and Dun names its price for opening it."
+        },
+        {
+          "id": "dun_annexed",
+          "what": "Goldoroth or Dondor takes the peninsula.",
+          "consequence": "The Dun Sea's tolls go to a great power, and the Dark Lands lose their swing crown."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Britadon",
+      "tag": "BRT",
+      "founding": {
+        "year": 6448,
+        "date": "4A 1380",
+        "story": "The iron hills of the south-east coast had been dug by small orc holds for centuries, and in 4A 1380 the chief of the hill hold at Fontadon, Bredesk of the Brakgul, brought the headland hold of Beriath under his iron and made one hold of the coast. Britadon has sold its iron by sea ever since."
+      },
+      "dynasties": [
+        {
+          "name": "The Brakgul iron-chiefs",
+          "from": 6448,
+          "date": "4A 1380",
+          "notable": "Chiefs of the Brakgul clan who hold the iron and the ring at Fontadon until challenged."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Headland Joined",
+          "year": 6448,
+          "date": "4A 1380",
+          "summary": "Bredesk of the Brakgul brought Beriath under Fontadon's iron."
+        },
+        {
+          "name": "The Iron by Sea",
+          "year": 6568,
+          "date": "4A 1500",
+          "summary": "Britadon opened a sea trade in iron to the Dark Lands' harbours, so that it need not send its iron through Goldoroth's lands."
+        },
+        {
+          "name": "The Free Moot Joined",
+          "year": 6588,
+          "date": "4A 1520",
+          "summary": "Britadon's chief took a seat at the Free Moot of Dulundur, so that the coast would have friends in the iron hills if Goldoroth came for its iron."
+        }
+      ],
+      "rivalries": [
+        {
+          "with": "Goldoroth",
+          "nature": "The warkingdom wants the coast's iron under the Yoke."
+        }
+      ],
+      "capital": "Fontadon",
+      "capitalReason": "Fontadon is the hill hold above the richest iron of the south-east hills, close enough to the coast for the iron to go down to the sea.",
+      "today": "About fifty thousand orcs of the Iron Clans mine the south-east iron hills with Beriath and sell iron by sea. Britadon sits at the Free Moot and watches Goldoroth's border.",
+      "divergence": [
+        {
+          "id": "brt_yoke",
+          "what": "Britadon bows to the Iron Yoke.",
+          "consequence": "Goldoroth gains the iron of the south-east coast and a harbour for it."
+        },
+        {
+          "id": "brt_accord_iron",
+          "what": "Britadon sells all its iron to the Accord.",
+          "consequence": "Dondor's armouries are fed from the coast, and Goldoroth marks Britadon for its first campaign."
+        }
+      ],
+      "canon": "proposed"
+    },
+    {
+      "name": "Wild Lands",
+      "tag": "WIL",
+      "founding": {
+        "year": 6568,
+        "date": "4A 1500",
+        "story": "The Wild Lands moor and the Doltu marsh are where broken clans go when no hold will have them, and they have never had a council. Men and orcs date the wild land from 4A 1500, when the clans of the moor agreed on the one rule they keep: the moor belongs to whoever stays through a winter, and the largest winter camp, at Zudertu, belongs to whoever is strongest there when the snow comes."
+      },
+      "dynasties": [
+        {
+          "name": "The winter-holders of Zudertu",
+          "from": 6568,
+          "date": "4A 1500",
+          "notable": "No chief rules the Wild Lands; whoever holds the winter camp at Zudertu when the snow comes speaks for the moor until the thaw."
+        }
+      ],
+      "events": [
+        {
+          "name": "The Winter Rule",
+          "year": 6568,
+          "date": "4A 1500",
+          "summary": "The clans of the moor agreed that the land belongs to whoever stays through a winter."
+        },
+        {
+          "name": "The Doltu Clans",
+          "year": 6648,
+          "date": "4A 1580",
+          "summary": "Broken clans of the Doltu marsh came onto the moor after a flood and stayed the winter, and so stayed for good."
+        },
+        {
+          "name": "The Splitting of Zudertu",
+          "year": 6758,
+          "date": "4A 1690",
+          "summary": "The winter camp grew so large that it split into two camps that fought each other through the spring, as every hold of the Wild Lands does when it grows too big."
+        }
+      ],
+      "rivalries": [],
+      "capital": "Zudertu",
+      "capitalReason": "Zudertu is the largest winter camp on the moor, where the ground is driest and the wind least cruel, held each winter by whoever is strongest there.",
+      "today": "About thirty thousand orcs of broken clans live on the Wild Lands moor and the Doltu marsh without a council. The land is held by whoever stays through a winter and contested by everyone else.",
+      "divergence": [
+        {
+          "id": "wil_one_chief",
+          "what": "A strong chief holds Zudertu for many winters and makes the moor a hold.",
+          "consequence": "The Wild Lands gain a council and a voice at the Free Moot, and lose the freedom that made them a refuge."
+        },
+        {
+          "id": "wil_taken",
+          "what": "Goldoroth or Dondor settles the moor.",
+          "consequence": "The broken clans are scattered again, and the Dark Lands lose the one place where anyone can start over."
+        }
+      ],
+      "canon": "proposed"
+    }
+  ],
+  "cities": [
+    {
+      "name": "Cocanoor",
+      "country": "Goldoroth",
+      "role": "capital",
+      "size": "city",
+      "founded": 6520,
+      "foundedDate": "4A 1452",
+      "legend": "The Fire-Speakers of Cocanoor say the fire in the Warking's hall was taken from the mountain's mouth by the first Warking with his bare hand, and that a Warking who cannot hold his hand over it may be challenged.",
+      "economy": "Siege forges, iron of the arm, ash-glass and the tribute of the Iron Yoke.",
+      "canon": "proposed",
+      "population": 30000
+    },
+    {
+      "name": "Notbuton",
+      "country": "Dondor",
+      "role": "capital",
+      "size": "city",
+      "founded": 352,
+      "foundedDate": "1A 352",
+      "legend": "The folk of Notbuton say the first Brute-King's iron bar lies under the hall's hearth, and that the kingdom will stand as long as nobody digs it up.",
+      "economy": "Grain of the plain, iron, Leren trade across the straits and the beacon hills.",
+      "canon": "proposed",
+      "population": 18000
+    },
+    {
+      "name": "Dontadur",
+      "country": "Blackton",
+      "role": "port",
+      "size": "city",
+      "founded": 6139,
+      "foundedDate": "4A 1071",
+      "legend": "The burghers of Dontadur say the first Leren ship to moor there was so heavy with silver that it sank at the quay, and that the town was built on what the divers brought up.",
+      "economy": "Iron of the Iron Road shipped north, Leren trade and the town moot.",
+      "canon": "proposed",
+      "population": 12000
+    },
+    {
+      "name": "Lesderle",
+      "country": "Dulundur",
+      "role": "town",
+      "size": "town",
+      "founded": 4958,
+      "foundedDate": "3A 1150",
+      "legend": "The orcs of the long valley say that if one of the Four Fires in the hall at Lesderle ever goes out, that valley will be lost within a year, and so a goblin is paid to sit by each one at night.",
+      "economy": "Iron of the four valleys, the Free Moot and its toll and iron prices.",
+      "canon": "proposed",
+      "population": 10000
+    },
+    {
+      "name": "Notle",
+      "country": "Belonton",
+      "role": "port",
+      "size": "town",
+      "founded": 4748,
+      "foundedDate": "3A 940",
+      "legend": "The sea orcs of Notle say the skull sunk with the iron bar when the Accord was sworn will rise again the day the Accord is broken.",
+      "economy": "Sea-orc ships, fishing, salt and the Salt Tithe.",
+      "canon": "proposed",
+      "population": 5000
+    },
+    {
+      "name": "Doldes",
+      "country": "Dark Gate",
+      "role": "pass",
+      "size": "town",
+      "founded": 4688,
+      "foundedDate": "3A 880",
+      "legend": "The gate-orcs say Zugash built the gate-fort with the bones of the first caravan that refused his toll, and that the gate creaks whenever a caravan thinks of refusing.",
+      "economy": "The pass toll on every caravan, paid partly to Cocanoor.",
+      "canon": "proposed",
+      "population": 5000
+    },
+    {
+      "name": "Zubudor",
+      "country": "Bordon",
+      "role": "town",
+      "size": "town",
+      "founded": 4508,
+      "foundedDate": "3A 700",
+      "legend": "Caravan masters at Zubudor say the inns were barracks once and the orc chiefs still keep a spear behind every bar, which is why nobody starts a fight there.",
+      "economy": "Caravan inns on the Black Road, iron and the gorge toll.",
+      "canon": "proposed",
+      "population": 4000
+    },
+    {
+      "name": "Dolido",
+      "country": "Dreson",
+      "role": "town",
+      "size": "village",
+      "founded": 4328,
+      "foundedDate": "3A 520",
+      "legend": "The fen orcs say the hall on black piles stands on the drowned host of the Necromancer's levies, and that the piles were driven through them.",
+      "economy": "Eels, peat, bog-iron and the reed-council's hall.",
+      "canon": "proposed",
+      "population": 3000
+    },
+    {
+      "name": "Holos",
+      "country": "Troll Forest",
+      "role": "holy",
+      "size": "hamlet",
+      "founded": 6458,
+      "foundedDate": "4A 1390",
+      "legend": "Orcs of the Black Road say the troll king's cave goes down further than any mine, and that the trolls who turned to stone in the sun stand in its mouth as guards.",
+      "economy": "Nothing that is traded; the troll silver left at the forest's edge.",
+      "canon": "proposed",
+      "population": 200
+    },
+    {
+      "name": "Burnikzig",
+      "country": "Burnikit",
+      "role": "mine",
+      "size": "town",
+      "founded": 4812,
+      "foundedDate": "3A 1004",
+      "legend": "The goblins say the great lamp in the hall of fire was lit from the volcano itself on the night the first Big Snik was chosen, and that the warrens are free only while it burns.",
+      "economy": "Powder, traps, small smithies and the warm caves' sulphur and saltpetre.",
+      "canon": "proposed",
+      "population": 15000
+    },
+    {
+      "name": "Gollonlon",
+      "country": "Skragdurg",
+      "role": "town",
+      "size": "town",
+      "founded": 6188,
+      "foundedDate": "4A 1120",
+      "legend": "The forest-orcs say every chief of Gollonlon must fell a great tree with his own axe, and that the stumps round the hold are the chiefs who could not.",
+      "economy": "Timber and charcoal for the straits and the iron hills.",
+      "canon": "proposed",
+      "population": 5000
+    },
+    {
+      "name": "Dobudo",
+      "country": "Dun",
+      "role": "crossing",
+      "size": "town",
+      "founded": 6368,
+      "foundedDate": "4A 1300",
+      "legend": "The toll-gatherers of Dobudo say a ship that passes without paying will find the Dun Sea's current against it all the way home.",
+      "economy": "The Dun Sea tolls, fishing and the swing crown's bargains.",
+      "canon": "proposed",
+      "population": 4000
+    },
+    {
+      "name": "Ozmath-Vesh",
+      "country": "Veshazel",
+      "role": "fortress",
+      "size": "village",
+      "founded": 6248,
+      "foundedDate": "4A 1180",
+      "legend": "The thralls of the hall of ash say the hall has no door that a mortal can find from outside, and that those who leave it never find the way back in.",
+      "economy": "Nothing grows; the hall lives on what its thralls fish and what its pact-bargains bring.",
+      "canon": "proposed",
+      "population": 800
+    },
+    {
+      "name": "Maruunos",
+      "country": "Hoorunoron",
+      "role": "holy",
+      "size": "hamlet",
+      "founded": 6278,
+      "foundedDate": "4A 1210",
+      "legend": "Woodcutters of the Dondor plain say the cairn-hall by the Giant River has a stone for every winter the giants have kept the line, and that nobody has ever seen the last one laid.",
+      "economy": "Hunting and gathering in the Giant Forest; the giants trade with nobody.",
+      "canon": "proposed",
+      "population": 100
+    }
+  ],
+  "figures": [],
+  "addedCultures": [],
+  "addedFaiths": [],
+  "lawsAndCustoms": [
+    {
+      "name": "The ring",
+      "realms": [
+        "Goldoroth",
+        "Dark Gate",
+        "Bordon",
+        "Dreson",
+        "Dulundur",
+        "Skragdurg",
+        "Dun",
+        "Britadon",
+        "The Darks"
+      ],
+      "summary": "An orc chief holds his hold, and the Warking his throne, until a stronger challenger breaks him in the ring; a chief broken in the ring is not killed if he yields, and may serve the one who broke him.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The Iron Yoke",
+      "realms": [
+        "Goldoroth",
+        "Dark Gate"
+      ],
+      "summary": "A tributary hold of Goldoroth pays Cocanoor in iron each year and has its new chiefs confirmed by the Warking, but keeps its own ring and its own fire.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The blood-price of Dondor",
+      "realms": [
+        "Dondor",
+        "Blackton"
+      ],
+      "summary": "Dondor's law is the blood-price, set by the clan-moot, and a bar of iron is kept at every hearth and passed to the eldest as the house's oath.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The troll silver",
+      "realms": [
+        "Troll Forest",
+        "Bordon",
+        "Dondor"
+      ],
+      "summary": "Silver left at the Troll Forest's edge buys a traveller or an envoy passage through it; caravans may not camp inside it, and armies that do are smashed by night.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The cairn-line",
+      "realms": [
+        "Hoorunoron"
+      ],
+      "summary": "The Borderline of Giants is not crossed and its cairns are not touched; whoever does either has the giants as an enemy.",
+      "canon": "proposed"
+    },
+    {
+      "name": "The winter rule",
+      "realms": [
+        "Wild Lands"
+      ],
+      "summary": "The moor belongs to whoever stays through a winter, and a hold that grows too big splits.",
+      "canon": "proposed"
+    }
+  ]
+}
