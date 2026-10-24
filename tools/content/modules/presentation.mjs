@@ -66,7 +66,8 @@ export const FORBIDDEN = [
   [/\bAfrit/i, 'gated: Afrit'], [/Hidden Council/i, 'gated: Hidden Council'], [/\bEindil/i, 'gated: Eindil'], [/\bEin\b/, 'gated: Ein'],
   [/Man from the Ice/i, 'gated: the Man from the Ice'], [/\bsleep(er|ers)\b/i, 'gated: sleeper'], [/\bNecklace\b/i, 'gated: Necklace'],
   [/\bSevrin\b/i, 'gated: the thief'], [/Ring of Doors|Crown of Witnesses|Bracelet of the First Seal/i, 'gated: lesser artifact'],
-  [/\bRoka\b/i, 'gated: Roka'], [/\bGlernaen\b/i, 'gated: Glernaen'], [/King of Demons/i, 'gated: King of Demons'],
+  // Glernaen is a public god (the first month bears his name, decision K28); only his bond with Glo is gated.
+  [/\bRoka\b/i, 'gated: Roka'], [/^(?=.*\bGlernaen\b)(?=.*\bGlo\b)/is, 'gated: Glernaen with Glo'], [/King of Demons/i, 'gated: King of Demons'],
   [/^(?=.*\bheart\b)(?=.*\b(Glo|Horos)\b)/is, 'gated: heart with Glo or Horos'], [/^(?=.*\bdemons?\b)(?=.*\bDeliverer\b)/is, 'gated: demon with Deliverer'],
   [/Einendil|Edvoid|\bKlinti\b|\bGorbat\b|Sovereign Spirit/i, 'superseded name'], [/\bRush\b/, 'superseded name: Rush'],
   [/\bfactor(y|ies)\b|\brifles?\b|\bdemocra(cy|tic)\b|\b193\d\b|\bgunpowder\b|\bfirearms?\b|\btanks?\b/i, 'modern word'],
