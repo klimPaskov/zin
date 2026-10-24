@@ -10,7 +10,9 @@ updated: 2026-10-24
 
 The **New Gods** are a later divine generation created by the [[Holy Seven]]. They are younger than the [[Old Gods]] and less powerful in fundamental terms. They are widely known in Aoaz.
 
-**Twelve main New Gods (owner, 24 October 2026).** Aoaz has **twelve main New Gods**, who exist to answer the **twelve needs of mortals**. The twelve months of the year honour them and are named after them, one month for each main god. [[Glernaen]], the New God of Power and Wisdom, is the mightiest of the twelve. The names of the other gods, and which need each of the twelve answers, are not yet decided, so the month names are not yet written either.
+**Twelve main New Gods (owner, 24 October 2026).** Aoaz has **twelve main New Gods**, who exist to answer the **twelve needs of mortals**. The twelve months of the year honour them and are named after them, one month for each main god. [[Glernaen]], the New God of Power and Wisdom, is the mightiest of the twelve. The owner accepted the twelve (24 October 2026, in month order): **Glernaen** (strength and counsel), **Sulethe** (healing), **Lumae** (shelter and the hearth), **Maelwen** (fair weather and safe waters), **Vaelei** (kin and birth), **Rasthel** (safe roads and fair exchange), **Kerun** (protection), **Aurlan** (daily bread), **Ailtal** (justice and kept promises), **Irumas** (skill and work), **Gaelor** (a good death and remembrance) and **Naisa** (hope and fortune); the year begins with Glernaen's month and the campaign opens on 1 Lumae 4A 1748. Their full descriptions are in the project's pantheon reference (`docs/lore/references/pantheon.md`).
+
+**How the gods are shown (owner, 24 October 2026).** The gods are never depicted as human. Temple art shows them as cosmic presences: light, stars, celestial forms and their symbols made of the heavens. No halo, saint-like face or human body stands for a god.
 
 **Lesser New Gods (owner, 24 October 2026).** Beside the twelve there are **lesser New Gods**. They are not among the twelve, no month honours them, and they are still stronger than most Great Spirits. Their number and names are not decided.
 

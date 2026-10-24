@@ -31,6 +31,8 @@ Every god's name, need, symbol, rite, festival and month name below is **P** unl
 - The New Gods restore Eindil through Glo in the last war, and they cannot remain in Aoaz to fight it themselves (E restoration; the reason is the chronicle's proposal).
 - The gods are born and trained on a continent the people of Aoaz do not know, and traditions place their dwelling in Lao (W6 sealed; W12 belief, W13 kept mystery). Nothing in this file puts either in public text.
 - No being's exact age is stated anywhere (E, owner rule). Dates below are by Age and year, never by a god's years.
+- The twelve, their names and their month order are accepted by the owner (E, decision K28, 24 October 2026).
+- **The gods are never depicted as human** (E, owner, decision K38): in temple art, banners, statues and every game picture they appear as cosmic presences (light, stars, celestial forms, their symbols made of the heavens), never as human figures, faces or bodies, never with halos or real-world religious iconography. Where this file describes a cult image as a human figure, read it as the god's cosmic sign in that place.
 
 ## 1. The twelve needs of mortals
 
