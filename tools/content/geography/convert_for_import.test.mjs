@@ -286,10 +286,11 @@ test('untangleLine cuts a loop at the crossing and leaves a clean line alone', (
   // the line runs right, turns back down across its own first segment, then goes on
   const looped = [[0.1, 0.1], [0.3, 0.1], [0.3, 0.2], [0.2, 0.05], [0.2, 0.0]];
   const u = G.untangleLine(looped);
-  assert.equal(u.length, 3);
+  assert.equal(u.length, 4);
   assert.deepEqual(u[0], [0.1, 0.1]);
-  assert.ok(Math.abs(u[1][0] - 0.2) < 1e-9 && Math.abs(u[1][1] - 0.1) < 1e-9, 'cut at the crossing point');
-  assert.deepEqual(u[2], [0.2, 0.0]);
+  // the third segment (0.3,0.2)-(0.2,0.05) meets the first at y 0.1, two thirds of its way: x = 0.3 - 0.1 * 2/3
+  assert.ok(Math.abs(u[1][0] - (0.3 - 0.1 * 2 / 3)) < 1e-9 && Math.abs(u[1][1] - 0.1) < 1e-9, 'cut at the crossing point');
+  assert.deepEqual(u.slice(2), [[0.2, 0.05], [0.2, 0.0]]);
   // a vertex repeated later in the line (a touch) is a loop too
   assert.equal(G.untangleLine([[0, 0], [0.1, 0], [0.1, 0.1], [0.1, 0], [0.2, 0]]).length, 3);
   assert.equal(G.segmentIntersection([0, 0], [1, 0], [0, 1], [1, 1]), null);
