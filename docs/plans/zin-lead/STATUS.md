@@ -4,43 +4,31 @@ Working notes of the implementation lead. `docs/specs/PROGRAM.md` is the progres
 
 ## Owner answers
 
-All 25 owner questions were answered on 24 October 2026 (`docs/zin-handoff/OWNER-QUESTIONS.md`, decisions K9 to K27 in `docs/specs/INTEGRATION_DECISIONS.md`). Highlights that drive work: twelve main New Gods for the twelve needs of mortals, lesser New Gods exist, Afrit gets a feast; Edvoid (to be renamed, name proposed by the lead for approval) is Zol's servant in the war; full drawing is the map source; Hirolon sovereign; licensed recordings for all audio; no exact ages of beings anywhere; gunpowder common in some realms; all borrowed and "-waith" names renamed without review; Coniferon and Vinocorne renamed.
+All owner questions of 24 October 2026 are answered and recorded as decisions K9 to K36 in `docs/specs/INTEGRATION_DECISIONS.md` (table of answers: `docs/zin-handoff/OWNER-QUESTIONS.md`).
 
 ## Running (24 October 2026, after the session restart)
 
 | Work | Who | Writes | Done when |
 | --- | --- | --- | --- |
-| MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)",  | tool repository; record  on  | ongoing; ADR 0067 approved; ZR-4 campaign on 144 Wikimedia maps |
-| Integration round 3 | subagent (resumed) | , , ,  | build and suite green |
-| Design previews (13 figures, 12 gods, 6 redesigns) | subagent (resumed) | ,  | sheets sent to the owner to choose |
-| Voice guide and quote rewrite | subagent (resumed) | ,  | lead reviews, swaps in after integration |
-| Regional histories (three groups) | subagents |  |  passes for every region |
+| MCP worker | session "ZIN MCP worker (HOI4 Agent Tools)", `claude-opus-5-5` | tool repository; record `docs/plans/zin-requests.md` on `claude/zin-integration` | ongoing; ADR 0067 approved; ZR-4 campaign on 144 Wikimedia maps |
+| Integration round 3 | subagent (resumed) | `tools/content/`, `docs/design/stage2/`, `docs/design/validation/`, `docs/plans/zin-art/` | build and suite green |
+| Design previews (13 figures, 12 gods, 6 redesigns) | subagent (resumed) | `$ZIN_ART/raw/previews/`, `$ZIN_ART/review/previews/` | sheets sent to the owner to choose |
+| Voice guide and quote rewrite | subagent (resumed) | `docs/specs/02_lore/09_voice_and_style.md`, `docs/design/text/loading_quotes_v2.json` | lead reviews, swaps in after integration |
+| Regional histories (three groups) | subagents | `tools/content/data/world/history/<region>.json` | `validateHistory` passes for every region |
 
 ## Done today (see PROGRAM.md and the git log)
 
-Handoff reconciled; 19 October work preserved; Erdae and Aoaz exchanged; owner answers K9 to K36; vault corrected; bestiary transcribed; dossiers; magic and knowledge layers; heraldry; pantheon and calendar (accepted); Kusven, Kusmeel, the Ember Lands (documents only so far); alternate-history design and soft-lock audit; geography model repair script; roster of 156 realms with tags (231 with dynamic tags).
+Handoff reconciled; 19 October work preserved; Erdae and Aoaz exchanged; owner answers K9 to K36; vault corrected; bestiary transcribed; regional dossiers; magic and knowledge layers; heraldry; pantheon and calendar (accepted); Kusven, Kusmeel and the Ember Lands (documents only so far); alternate-history design and soft-lock audit; geography model repair script; roster of 156 realms with tags (231 with the dynamic tags).
 
 ## Next, in order
 
-1. When integration is green: review it (build and suite myself), register ,  tests,  in ; run {
- "mode": "dry-run",
- "scope": "content",
- "filesEdited": 72,
- "occurrences": 400,
- "linesKeptAsRecords": 12,
- "renames": [
-  [
-   "docs/design/focus/shared_dead_lands.json",
-   "docs/design/focus/shared_ember_lands.json"
-  ]
- ]
-}; apply the repaired geography model (open the Great River's gorge through Kingson's ring); merge to , push; first Linux run.
-2. Merge the new roster into the builder: , ,  into  and the world data; migrate every Y-tag reference with the roster's migration table; retarget focus trees (kept, renamed, folded, to write: Burrikkrit, the Nether, , , the small folk module); heraldry grammars for the 30 new cultures, the Baelim and the mycids.
-3. Calendar: the twelve god-months in  from  (1 Lumae 4A 1748).
-4. Story soft-locks of  (world-tension module, ending runner, Afrit's death, 61 missing spec events, Kusven replacing Zol-in-person content), then the generic realm systems (K34, monthly batches allowed) and start variety.
-5. Geography: sheet registrations for Aenor Isle, the Ember Lands and the West Lands (land IoU 0.24, 0.36, 0.50); renaming the 195 model names from the roster and dossiers (no Ocean names); the converter to the tool's schemas (ADR 0067 section 7); the import when the worker releases.
-6. Branding (R-90) wiring; art persistence (move  out of the tool repository, accepted sources into ); quotes v2 swap; the voice applied to events and focus text.
-7. The politics step rebuilt as  on the new roster and map.
+1. When integration is green: review it (build and suite myself); register `content/tags.test.mjs`, the migration tests and `geography/repair_model.test.mjs` in `tools/package.json`; run `node tools/migrations/canon_renames.mjs --scope content --apply`; apply the repaired geography model (opening the Great River's gorge through Kingson's ring); merge to `master` and push; first Linux run.
+2. Merge the new roster into the builder: `languages_new.json`, `cultures_new.json` and `roster.json` into `countries.json` and the world data; migrate every Y-tag reference with the roster's migration table; retarget the focus trees (kept, renamed, folded; to write: Burrikkrit, the Nether, `shared_delving_holds`, `shared_middle_free`, the small folk module for Dobbum and Tirlan); heraldry grammars for the 30 new cultures, the Baelim and the mycids.
+3. Calendar: the twelve god-months in `tools/content/lib/calendar.mjs` from `tools/content/data/world/pantheon.json` (1 Lumae 4A 1748); local reckonings in eastern and southern text.
+4. Story soft-locks of `docs/design/alternate_history.md` (world-tension module, ending runner, Afrit's death, 61 missing spec events, Kusven replacing the Zol-in-person content), then the generic realm systems (K34: monthly batches allowed) and start variety.
+5. Geography: sheet registrations for Aenor Isle, the Ember Lands and the West Lands (land IoU 0.24, 0.36, 0.50); renaming the 195 model names from the roster and dossiers (no "Ocean" names); the converter to the tool's schemas (ADR 0067 section 7); the import when the worker releases.
+6. Branding (R-90) wiring; art persistence (move `ZIN_ART` out of the tool repository, accepted sources into `art/source/`); quotes v2 swap; the voice applied to events and focus text.
+7. The politics step rebuilt as `tools/politics/` on the new roster and map.
 
 ## Decisions taken by the lead (not owner canon)
 
@@ -48,4 +36,7 @@ Handoff reconciled; 19 October work preserved; Erdae and Aoaz exchanged; owner a
 - The name exchange leaves game output files alone; they are regenerated by the next build and apply.
 - The owner's copy of the vault in `Downloads` is not edited; the mod's vault is the maintained copy from 24 October 2026.
 - No ZIN tag equals a vanilla tag, so Noris takes NRS, not NOR (Norway).
+- The Great River keeps its drawn course through a gorge in Kingson's ring of mountains (the range is opened), rather than making the Kingson Vale an inland basin.
+- The open-sea seam (R-18) costs the Windwaith arm (to be renamed Vindael) 55% of its drawn land; accepted, shown to the owner in the map preview.
+- Never write file contents through a shell string with backticks or `$`: use the Write and Edit tools (a shell rewrite of this file lost every path on 24 October 2026).
 - Owner branding originals (sha256): `ZinLogoCut.png` ffd77044...4194, `ColorfulZinLogo.PNG` 6ea5e004...7360, `ZinLogo.png` a290f7da...6ecc, `ZIN.LOGO.BACKGROUND.png` bebd9c97...4042, `ZIN.png` 281ea09f...22d0.
