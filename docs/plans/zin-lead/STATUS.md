@@ -14,7 +14,11 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Roster migration | subagent, worktree `%TEMP%\zrw`, branch `roster-int` | `tools/content/` builder, data and tests | 156 realms in the build, suite green; lead reviews and merges |
 | Map-import conversion (ADR 0067 section 7) | subagent | `tools/content/geography/`, `tools/content/data/geography/`, `docs/plans/map-import/` | schema-valid model and sheets; preview call ready for 4.4.0 |
 | Portraits (named figures from the design picks, generic pools) | subagent `hoi4-portrait-creator` | `$ZIN_ART/raw/portraits/`, `art/source/portraits/`, `docs/plans/zin-art/portraits_handoff.md` | handoff ready; lead wires through the builder |
-| MCP worker | see above | tool repository | PRs 36 to 40 merged; PR 41 then release 4.4.0 |
+| MCP worker | see above | tool repository | PRs 36 to 40 merged; PR 41 then release 4.4.0; ZR-6 (strait crossings) filed |
+| New focus trees: Burrikkrit, the Nether | subagent | `docs/design/focus/regional_{burrikkrit,nether}.json`, specs, `docs/plans/focus_new_trees/` | compiled and MCP-rendered; lead registers after the roster merge |
+| New shared trees: delving holds, middle free, small folk | subagent | `docs/design/focus/shared_*.json` (new files), `docs/specs/05_focus_trees/shared/`, `docs/plans/focus_new_trees/` | compiled and MCP-rendered; lead registers after the roster merge |
+
+The owner is away (24 October 2026, evening) and asked for autonomous work; questions queue in `docs/zin-handoff/OWNER-QUESTIONS.md` (Q-30 onward) for the owner's return. Image generation uses gpt-6-luna only (K50) on the owner's Plus plan, which has usage limits.
 
 ## Done today (see PROGRAM.md and the git log)
 
