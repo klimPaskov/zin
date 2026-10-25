@@ -21,6 +21,8 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Work | Who | Writes |
 | --- | --- | --- |
 | MCP worker: release 4.5.0 | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
+| Story AI and the magic module (next step 2) | subagent | AI strategy plans and MTTH, tier AI, magic module, world-tension widget; `docs/plans/story/ai_magic_handoff.md` |
+| Black powder (K19) and the second error pass (next steps 4 and 7b) | subagent | `modules/warfare.mjs`, `forces.mjs`, equipment data, the pass-2 fixes; `docs/plans/zin-errors/powder_and_pass2_handoff.md` |
 
 ## Next, in order
 
