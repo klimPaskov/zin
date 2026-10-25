@@ -35,6 +35,7 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 5. Art debt: the pending rows of `docs/plans/zin-art/pending_from_integration.md` (focus icons over caps, event pictures, interface reskin duplicates), with gpt-6-luna on the Plus allowance.
 6. Calendar follow-ups: `zin_reckoning_new_reign` from the river-kings' succession; the politics step's bookmark text still says "Erdae".
 7. AI-weight audits once this session runs the 4.4.0 server (ZR-7); the Linux sweep, observer runs to 4A 1760 and 1800, save and load, zero ZIN error lines; final report.
+7b. Second error pass after the story agents (`docs/plans/zin-errors/r3b_fixes.md`, "needs your decision" and "not touched"): the 92 `recruit_character` calls during play (recruit in history, give the role later), the three `has_opinion_modifier` checks with a target block (Gunwaith tree, two in `zin_ending.txt`: a flag set beside the modifier), malformed equipment tokens in the institutions AI strategy, `state_trigger` in two decision files, `slot` in the Afrit traits, `any_country` used as an effect, airframe names in the equipment script enum, missing technology grid boxes; the Deep-Water Hulls text (one convoy type, the Merchant Cog; lead decision). Orders-group lines: read the AI's army groups from a save if they remain.
 8. Model sites of Yeldenne, Hunhun and Mora sit on water or the coast in the geography model; move them in the repair inputs.
 
 ## Decisions taken by the lead (not owner canon)
