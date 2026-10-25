@@ -154,6 +154,12 @@ const characters = await buildCharacters(staged, { countries });
 // The histories recruit the courts and the chiefs of the Council of Captains (institutions): the game recruits a character only in history.
 const recruits = new Map([...characters.recruits].map(([t, ids]) => [t, [...ids]]));
 for (const [t, ids] of institutions.recruits) recruits.set(t, [...(recruits.get(t) ?? []), ...ids]);
+// Realm life (G1 to G9) and the start variety (V1 to V13) of docs/design/alternate_history.md: the named heirs are recruited in the
+// histories after the courts (the first recruited leader rules), and zin_story_tick calls the realm pulse (storyBlocks 'realm' below).
+const realmLife = await (await import('./modules/realm_life.mjs')).buildRealmLife(staged, { countries, skipped: characters.skipped });
+for (const [t, ids] of realmLife.heirRecruits) recruits.set(t, [...(recruits.get(t) ?? []), ...ids]);
+const startVariety = await (await import('./modules/start_variety.mjs')).buildStartVariety(staged, { countries });
+void startVariety;
 const countryPackage = buildCountryPackage(staged, { countries, table, recruits, variants: forces.variants, factions: diplomacy.factions, starts: JSON.parse(staged.files.get('docs/design/technology/start_packages.json').toString('utf8')), zin: ZIN, cultures: cultures.model.world.cultures });
 const flags = await stageRealmFlags(staged, countries);
 // The foundation's game rules and their wrapper triggers (05_defines_and_rules.md section 2): after the slices whose own rule files
@@ -164,7 +170,7 @@ const world = await buildEventsWorld(staged, { countries });
 // The crown events (docs/design/stage2/events_crown.md): after presentation (picture keys), before vanilla removal and the text sweep. It owns
 // common/scripted_effects/zin_story.txt, whose zin_story_tick calls the runner block of every story namespace (convention C6).
 // The world tick of world_tension.mjs calls zin_story_tick (step 9), so the crown module writes no every-country on_monthly scheduler.
-const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'lastwar', 'ending', 'lore'], scheduler: false });
+const crown = await buildEventsCrown(staged, { countries, storyBlocks: ['reign', 'lastwar', 'ending', 'lore', 'realm'], scheduler: false });
 // The story framework (docs/design/alternate_history.md): the Gathering Dark, the War of the Last Crowns, the endings and the world tick
 // (world_tension.mjs), then the checkpoints, the measure and the roles (historical_path.mjs). After the mechanic slices, the rules and the
 // world and crown events, whose flags, triggers and effects they read and call.

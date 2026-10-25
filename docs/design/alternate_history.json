@@ -3152,7 +3152,7 @@
   {
    "id": "SL-25",
    "statusWorld": "world side fixed 25 October 2026 (story framework, commit 794e1fd9): the Golden Court Endures (zin_world_golden_court_holds) needs an Aenor realm controlling Parim with the King alive or the Regency of Gold, and never holds after zin_golden_king_exiled; CP05 resolves skipped (B07 D6) when the King is exiled or no Aenor realm is left; the other outcomes and the Age Unfinished stay open.",
-   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): on_capitulation and on_annex of the original Aenor with the King alive call zin_aenor_exile_king (zin_golden_king_exiled, news zin_aenor.470, proposed); the clock sets zin_golden_king_natural when the King dies with no Council left; the Chronicle's line 05 and the Golden Court outcome read both. Open: zin_realm.50 (the realm-life module) and the endings' outcome 4 reader (story framework). Test tools/content/events_mech.test.mjs.",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): on_capitulation and on_annex of the original Aenor with the King alive call zin_aenor_exile_king (zin_golden_king_exiled, news zin_aenor.470, proposed); the clock sets zin_golden_king_natural when the King dies with no Council left; the Chronicle's line 05 and the Golden Court outcome read both. Open: zin_realm.50 (the realm-life module) and the endings' outcome 4 reader (story framework). Test tools/content/events_mech.test.mjs. Realm life 25 October 2026: zin_golden_king_exiled houses the court of the King in exile (zin_realm_house_golden_king from on_capitulation, on_annex and the weekly batch; zin_realm.50) with Lerendor, Selen or an old Concord dominion, and zin_realm.51 can restore it (zin_golden_king_restored). Test tools/content/realm_life.test.mjs.",
    "title": "A conquered Golden King never dies and still endures",
    "severity": "high",
    "beats": [
@@ -3331,7 +3331,7 @@
   },
   {
    "id": "SL-31",
-   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit_add_plot does nothing once zin_golden_king_survives is set. The generic mortality that may still end a surviving King belongs to the realm-life module. Test tools/content/events_mech.test.mjs.",
+   "status": "fixed 25 October 2026 (Afrit, Aenor and Eindil pass): zin_afrit_add_plot does nothing once zin_golden_king_survives is set. The generic mortality that may still end a surviving King belongs to the realm-life module. Test tools/content/events_mech.test.mjs. Realm life 25 October 2026: a surviving King stays a story ruler, so generic mortality never ends him; whether he may die of age is an owner question (docs/plans/story/realm_life_handoff.md).",
    "title": "The King can both survive and die",
    "severity": "medium",
    "beats": [
@@ -3632,7 +3632,8 @@
     "No war between realms that matter: no great power at war, no faction changes, the seven start factions stand.",
     "No canon figure changes: Lorien, Horos, Volgan, the Will of Zol, the Golden King's vices, Alleria, Varner and Golbran.",
     "Every drawn value stays inside the owner's documented range and the owning mechanic's start value (V1) is the midpoint."
-   ]
+   ],
+   "status": "implemented 25 October 2026: tools/content/data/game_rules.json (perPower, power variety, branch HISTORICAL OFF, PLAUSIBLE LIGHT, FREE FULL); wrappers zin_rules_ai_branch_variety_off, _light, _full; the draws in common/on_actions/zin_start_variety.txt (after zin_rules.txt) and the application by zin_variety.1 on day 3."
   },
   "options": [
    {
@@ -3643,7 +3644,8 @@
     "beats": [
      "B07"
     ],
-    "owner": "Aenor"
+    "owner": "Aenor",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): global.zin_sv_clock (-180 to +180 days, not under the historical death rule) added to zin_aenor_king_clock on day 3; zin_gk_temper_gilded, _restless or _fearful on Aenor, read by the AI of zin_reign.10, .14 and .16."
    },
    {
     "id": "V2",
@@ -3655,7 +3657,8 @@
      "B07",
      "B25"
     ],
-    "owner": "Afrit"
+    "owner": "Afrit",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): global.zin_afrit_regicide_plot 10 to 35 and global.zin_afrit_veil 70 to 90."
    },
    {
     "id": "V3",
@@ -3666,7 +3669,8 @@
      "B08",
      "B09"
     ],
-    "owner": "Aenor"
+    "owner": "Aenor",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): global.zin_sv_camp_<camp> -10 to +10 read by zin_aenor_compute_camps; zin_aenor_eronel_favour 0 to 2 (5 points of the camp of the Golden Court each)."
    },
    {
     "id": "V4",
@@ -3679,7 +3683,8 @@
      "B20",
      "B21"
     ],
-    "owner": "characters"
+    "owner": "characters",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): a temper zin_trait_temper_<key> (eight, proposed) for half the AI tier A and B rulers who are not story rulers; new AI rulers draw one too while the variety is on."
    },
    {
     "id": "V5",
@@ -3692,7 +3697,8 @@
      "B24",
      "B35"
     ],
-    "owner": "Volgan; Zol; world"
+    "owner": "Volgan; Zol; world",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): zin_dominion_strength 40 to 50, zin_mistake_power 30 to 40, global.zin_gathering_dark 8 to 12."
    },
    {
     "id": "V6",
@@ -3702,7 +3708,8 @@
     "beats": [
      "B01"
     ],
-    "owner": "start_variety.mjs"
+    "owner": "start_variety.mjs",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): at most two border feuds between AI realms of one feud group that share a border (the Dark Lands holds with the Troll Forest, the Triton lordships), start_border_war with change_state_after_war = no, cancelled by zin_variety.2 ninety days on (K34)."
    },
    {
     "id": "V7",
@@ -3714,7 +3721,8 @@
      "B06",
      "B20"
     ],
-    "owner": "Western Crossing"
+    "owner": "Western Crossing",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): global.zin_west_truce 30 to 50 and global.zin_west_unity 10 to 20."
    },
    {
     "id": "V8",
@@ -3727,7 +3735,8 @@
      "B19",
      "B21"
     ],
-    "owner": "start_variety.mjs (state transfers on startup)"
+    "owner": "start_variety.mjs (state transfers on startup)",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): for each of the six pairs a one in two chance that a non-capital border state starts with the other claimant (transfer_state_to, add_claim_by for the giver), AI realms only."
    },
    {
     "id": "V9",
@@ -3738,7 +3747,8 @@
      "B19",
      "B21"
     ],
-    "owner": "realm life (marriages)"
+    "owner": "realm life (marriages)",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): at most one: a Leren courtship of Andos Enda (zin_realm_courtship, +25 both ways, no match), a Stabilo guarantee of Alerhia, a Coldor pact with Nivaros; AI realms only."
    },
    {
     "id": "V10",
@@ -3750,7 +3760,8 @@
      "B26",
      "B44"
     ],
-    "owner": "Afrit"
+    "owner": "Afrit",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): a foothold more in two eastern courts and one fewer in two others, within the cap of 3 and never above zero caps."
    },
    {
     "id": "V11",
@@ -3760,7 +3771,8 @@
     "beats": [
      "B22"
     ],
-    "owner": "Volgan"
+    "owner": "Volgan",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): zin_mirolon_passes and zin_mirolon_proof -10 to +10."
    },
    {
     "id": "V12",
@@ -3770,7 +3782,8 @@
     "beats": [
      "B19"
     ],
-    "owner": "Lerendor"
+    "owner": "Lerendor",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): zin_strait_standing -15 to +15."
    },
    {
     "id": "V13",
@@ -3780,7 +3793,8 @@
     "beats": [
      "B03"
     ],
-    "owner": "Eindil's journey"
+    "owner": "Eindil's journey",
+    "status": "implemented 25 October 2026 (start variety, tools/content/modules/start_variety.mjs and data/start_variety.json; rule zin_rule_start_variety; tests tools/content/realm_life.test.mjs): under zin_rule_eindil_waking = HISTORICAL only, 0 to 40 days more on global.zin_eindil_wake_age (the jitter widens from 0 to 20 to 0 to 60)."
    }
   ]
  },
@@ -3791,7 +3805,8 @@
    "what": "Each country's ruler has a hidden `zin_ruler_vigour` (0 to 100) that falls each pulse by a people rate (men 1, orcs and goblins 1.3, dwarves 0.6, giants 0.5, elves 0.05) and by war losses; at 0, or by a small chance below 20, the ruler dies (`kill_country_leader`) and G2 runs.",
    "exempt": "Canon figures and story rulers (`zin_realm_is_story_ruler`): the Golden King while the clock runs, Aurevan, Lorien, Volgan, Horos, the Will of Zol, the Warden of Yeldenne, the King of Demons, every `zin_trait_ancient_king`.",
    "historical": "Tier A rulers never die of age; tier B and C do.",
-   "free": "All but the exempt."
+   "free": "All but the exempt.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): zin_ruler_vigour and zin_ruler_rate per realm on startup (the design rates, proposed rates for the other peoples), the monthly fall in zin_realm_age_ruler (more at war and in defeat), death at the floor or by mtth zin_realm_frail_death below 20; zin_realm_mortal exempts zin_realm_is_story_ruler, the pending story realms and, on the historical path, tier A and the courts the chronicle names. The Golden King stays a story ruler even when he survives (owner question)."
   },
   {
    "id": "G2",
@@ -3799,7 +3814,8 @@
    "what": "Tier A and B countries start with a designated heir (pre-built characters `<TAG>_zin_heir`, names from the country's language, flag `zin_char_heir`); tier C heirs are made with `generate_character` (token base `zin_heir`, verify in the Linux run). Adult heir: `zin_realm.10` The Crown Passes. Child heir: `zin_realm.11` A Child on the Throne, timed idea `zin_realm_regency` (two to five years), a regent advisor. No heir: `zin_realm.12` No Heir of the Body (G3).",
    "exempt": "As G1.",
    "historical": "Heirs succeed quietly; no crisis in tier A.",
-   "free": "Crises allowed everywhere."
+   "free": "Crises allowed everywhere.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): 36 named heirs of data/world/characters recruited in the country histories (build.mjs hands heirRecruits to the country package), promoted by zin_realm_crown_heir; a child heir rules through zin_realm_regency until grown (zin_realm.11, .14); zin_realm.10 for heirs, named kinsmen and the realm's own custom. Realms without a named heir take the successor the engine names (no generate_character template; owner question)."
   },
   {
    "id": "G3",
@@ -3807,7 +3823,8 @@
    "what": "`zin_realm.12` and `.13` The Claimants: candidates from the ruling party, a strong general or advisor, and a married foreign house (G7). Outcomes: a council election (elves, democratic realms), a contested crown (`start_civil_war` when the realm has at least `constant:zin_realm.crisis_min_states` states and the tag budget S12 allows), or a neighbour's candidate (puppet). `zin_realm.15` The Crisis Settled.",
    "exempt": "Story realms while their beat is pending (Aenor before CP06, the Worshipdom, Volgan, Zol, Gala before CP23, Selen while it hosts Eindil).",
    "historical": "Off for tier A; tier B by election only.",
-   "free": "All outcomes by situation."
+   "free": "All outcomes by situation.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): zin_realm_open_crisis (zin_realm.12), the claimants (zin_realm.13: election, the captain-general, a contested crown through start_civil_war with ruling_party and the counted tag budget, the house we married into), zin_realm_settle_crisis (zin_realm.15); zin_realm_crisis_allowed exempts the pending story realms and tier A on the historical path, where tier B elects only."
   },
   {
    "id": "G4",
@@ -3815,7 +3832,8 @@
    "what": "Stability below 25 and a general or advisor with `zin_char_ambitious`: `zin_realm.20` A Captain's Ambition; the coup uses the institutions' Raise the Captains operation (`operation_coup_government`) for foreign plots; `zin_realm.21` The Usurper Crowned, `.22` The Usurper Fails.",
    "exempt": "Story realms while their beat is pending.",
    "historical": "Off.",
-   "free": "On."
+   "free": "On.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): zin_realm_check_ambition (mtth zin_realm_ambition_chance) marks zin_char_ambitious and fires zin_realm.20; zin_realm.21 crowns the captain (zin_realm_crown_captain, one branch per stance), zin_realm.22 retires the captain; off on the historical path."
   },
   {
    "id": "G5",
@@ -3823,7 +3841,8 @@
    "what": "A subject with overlord opinion below -25 while the overlord is at war: `zin_realm.30` The Subject Stirs (break free, demand autonomy, stay); occupied cores with resistance above 50: `zin_realm.31` A Rising in Occupied Lands, ended by `.32`. The Concord's own secession (`zin_aenor_secede_dominion`) and the Dominion's `zin_dominion_member_breaks_free` are the model.",
    "exempt": "Eastern clients of the Dominion of the East before `zin_afrit_dead` (their autonomy rule decides).",
    "historical": "Risings only in occupied cores.",
-   "free": "On."
+   "free": "On.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): zin_realm.30 for subjects below -25 opinion while the overlord is at war (end_puppet, add_autonomy_ratio, keep faith; zin_realm_bond_owned exempts the Concord, the sworn realms of Volgan and Zol and the clients of the East before zin_afrit_dead); zin_realm.31 and .32 for risings in controlled non-core states above 50 resistance."
   },
   {
    "id": "G6",
@@ -3831,7 +3850,8 @@
    "what": "After 12 months without a war goal moving: `zin_realm.40` Terms Offered (white peace, a claimed state, tribute); a war whose target or cause is gone: `zin_realm.42` War Without Purpose (white peace). After `zin_afrit_dead` every AI still at war only because of Afrit's realm accepts white peace (06 spec).",
    "exempt": "Wars started by a story owner keep their own peace (Terms on the Shore, the Steward's peace, Kusven's withdrawal).",
    "historical": "AI accepts terms that match the chronicle.",
-   "free": "AI accepts by war score."
+   "free": "AI accepts by war score.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): zin_realm_war_months; an AI realm offers terms a year into a war no story owner ends (zin_realm_offer_terms, zin_realm.40, .41: white peace, the claimed land it holds, or silver); zin_realm.42 makes peace in a war it cannot fight and with the courts of the East after zin_afrit_dead; players use the decision Offer Terms."
   },
   {
    "id": "G7",
@@ -3839,7 +3859,8 @@
    "what": "Decision `zin_realm_seek_match` between monarchies of compatible peoples (men with men, elves with elves; giants, orcs and dwarves among themselves): `zin_realm.60` A Royal Match Proposed, `.61` accepted (opinion +25, a G3 claim, a guarantee option), `.62` refused (opinion -15); `zin_realm.63` The Kinship Called asks the kin to join a defensive war.",
    "exempt": "Story realms whose alliances are owned by a mechanic (the Leren Compact, the Concord, the Dominion, the Kindred).",
    "historical": "Only the start bonds and V9.",
-   "free": "AI seeks matches by threat and opinion."
+   "free": "AI seeks matches by threat and opinion.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): the decision Seek a Match between royal houses of one kin class (zin_realm.60 to .62, zin_realm_match, opinion +25 or -15, a guarantee option), zin_realm.63 The Kinship Called; zin_realm_alliance_owned exempts the alliances the mechanics own; the AI by mtth zin_realm_match_will, never on the historical path."
   },
   {
    "id": "G8",
@@ -3847,7 +3868,8 @@
    "what": "Native raids (`common/raids`, hoi4-native-raids) for raiding peoples: orc and goblin holds of the Dark Lands, Triton island lordships, Ember Lands freeholds, Cold Lands clans; `zin_realm.70` Raiders on the March, `.71` The Raid Answered (punish, pay, ignore). The diplomacy cause `zin_cb_orc_raids` is the model.",
    "exempt": "None.",
    "historical": "Raids at their documented rate; never against a great power before CP11.",
-   "free": "By situation."
+   "free": "By situation.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): nineteen raiding realms (zin_realm_is_raider), mtth zin_realm_raid_chance, a neighbour or a coastal realm of the same land, never a great power before zin_war_of_last_crowns; zin_realm.70 (ride out: the cause zin_realm_cb_raiders, pay, bar the gates) and .71; the decision Punish the Raiders. Event raids, not native common/raids (owner question)."
   },
   {
    "id": "G9",
@@ -3855,7 +3877,8 @@
    "what": "A capitulated or annexed realm whose ruler lives keeps a court in exile (`zin_realm.50`; Mirolon's `zin_dominion.24` is the model) with the realm that shelters it; restoration by `release` of its cores (`zin_realm.51` The Exiles Return).",
    "exempt": "None.",
    "historical": "Exiled story courts only.",
-   "free": "All."
+   "free": "All.",
+   "status": "implemented 25 October 2026 (realm life, tools/content/modules/realm_life.mjs and data/realm_life.json; spec docs/specs/04_mechanics/realm_life.md; tests tools/content/realm_life.test.mjs; handoff docs/plans/story/realm_life_handoff.md): zin_realm_found_exile_court on on_capitulation and on_annex (an ally, the house married into, a neighbour, a friend; never the conqueror), zin_realm.50 and .51 (release free, release sworn, keep the land, or go home), the decision Shelter the Exiles; the Golden King's court from zin_golden_king_exiled through zin_realm_house_golden_king (Q-65 default), zin_golden_king_restored on its return; story courts only on the historical path."
   },
   {
    "id": "G10",
@@ -3863,7 +3886,8 @@
    "what": "The role registry below re-targets every story role at fire time; `zin_realm.80` A Duty Passes tells the world when a role moves.",
    "exempt": "None.",
    "historical": "Roles move only when their holder is gone.",
-   "free": "Same."
+   "free": "Same.",
+   "status": "superseded 25 October 2026 by the historical path (tools/content/modules/historical_path.mjs): the role registry zin_path_role_<key> and its news zin_path.11 to .17 already tell the players when a public role moves, so zin_realm.80 A Duty Passes is not written (it would announce the same change twice; docs/specs/04_mechanics/realm_life.md section 2.11)."
   }
  ],
  "roles": [
@@ -4096,19 +4120,22 @@
    "kind": "Module",
    "target": "`tools/content/modules/realm_life.mjs` (new) and `data/realm_life.json`",
    "content": "Namespace `zin_realm` (events `.10` to `.15`, `.20` to `.22`, `.30` to `.32`, `.40` to `.42`, `.50`, `.51`, `.60` to `.63`, `.70`, `.71`, `.80`); decisions category `zin_realm_court` (Name an Heir, Seek a Match, Offer Terms, Shelter the Exiles, Punish the Raiders); effects `zin_realm_pulse`, `zin_realm_succeed`, `zin_realm_open_crisis`, `zin_realm_settle_crisis`, `zin_realm_offer_terms`, `zin_realm_found_exile_court`; triggers `zin_realm_is_story_ruler`, `zin_realm_crisis_allowed`; constants `common/script_constants/zin_realm.txt`",
-   "fixes": "G1 to G10"
+   "fixes": "G1 to G10",
+   "status": "implemented 25 October 2026; zin_realm.80 superseded by the role news of the historical path (G10); zin_realm_pulse runs inside zin_story_tick_realm."
   },
   {
    "kind": "Module",
    "target": "`tools/content/modules/start_variety.mjs` (new) and `data/start_variety.json`",
    "content": "On-startup draws V1 to V13 (inside `zin_rules.txt` order: after the pace is set); flag `zin_start_variety_drawn`; temper traits",
-   "fixes": "variety"
+   "fixes": "variety",
+   "status": "implemented 25 October 2026."
   },
   {
    "kind": "Rule",
    "target": "`zin_rule_start_variety` in `tools/content/data/game_rules.json`",
    "content": "Options DEFAULT, OFF, LIGHT, FULL; branch HISTORICAL OFF, PLAUSIBLE LIGHT, FREE FULL (R1)",
-   "fixes": "variety"
+   "fixes": "variety",
+   "status": "implemented 25 October 2026."
   },
   {
    "kind": "Fix",

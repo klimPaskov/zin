@@ -1,0 +1,420 @@
+{
+ "kind": "realm_life",
+ "source": "docs/design/alternate_history.md section 8 (G1 to G10) and docs/specs/04_mechanics/realm_life.md. Every value, list and text here is proposed (25 October 2026) unless the design names it; the owner answered the batch question in K34. modules/realm_life.mjs builds the game files from this file.",
+ "namespace": "zin_realm",
+ "constants": {
+  "slot_count": 4,
+  "vigour_max": 100,
+  "vigour_frail": 20,
+  "vigour_floor": 0.01,
+  "rate_default": 1,
+  "war_wear": 0.5,
+  "losing_wear": 1,
+  "losing_surrender": 0.3,
+  "new_ruler_min": 60,
+  "new_ruler_max": 100,
+  "start_vigour_default_min": 50,
+  "start_vigour_default_max": 100,
+  "count_offset": 5068,
+  "start_count": 6816,
+  "adult_age": 16,
+  "days_per_year": 365,
+  "regency_min_days": 730,
+  "regency_max_days": 1825,
+  "crisis_days": 365,
+  "claimants_days": 15,
+  "crisis_min_states": 4,
+  "contested_max": 12,
+  "ambition_stability": 0.25,
+  "ambition_cooldown_days": 730,
+  "subject_opinion": -25,
+  "subject_cooldown_days": 730,
+  "rising_resistance": 50,
+  "rising_end_resistance": 25,
+  "rising_cooldown_days": 365,
+  "terms_war_months": 12,
+  "terms_cooldown_days": 180,
+  "terms_winning_surrender": 0.25,
+  "terms_losing_surrender": 0.25,
+  "terms_even_surrender": 0.1,
+  "purpose_war_months": 18,
+  "purpose_cooldown_days": 365,
+  "kin_cooldown_days": 365,
+  "raid_cooldown_days": 365,
+  "raided_memory_days": 365,
+  "raid_tribute": 40,
+  "tribute": 50,
+  "cause_days": 365,
+  "terms_decision_months": 6,
+  "raided_days": 180,
+  "punitive_days": 180,
+  "random_scale": 100
+ },
+ "batch": { "days": [7, 14, 21] },
+ "people": {
+  "rate": { "men": 1, "small_folk": 1, "gnomes": 0.8, "orcs": 1.3, "goblins": 1.3, "hobgoblins": 1.3, "dwarf_goblins": 1.3, "ogres": 1.3, "trolls": 1.3, "dwarves": 0.6, "giants": 0.5, "yeti": 0.5, "elves": 0.05, "sun_elves": 0.05, "ents": 0.05, "tree_people": 0.05, "mycids": 0.05, "demons": 0.05 },
+  "rateNote": "Men 1, orcs and goblins 1.3, dwarves 0.6, giants 0.5 and elves 0.05 are the design's rates (G1). The other peoples are proposals: the small folk as men, gnomes a little slower, hobgoblins, ogres and trolls as orcs, the yeti as giants, and ents, the Baelim, the mycids and the demon lords as slow as elves. The dead and the spirits have no rate: their rulers are story rulers.",
+  "lifespanYears": { "men": 70, "small_folk": 80, "gnomes": 90, "orcs": 55, "goblins": 50, "hobgoblins": 55, "dwarf_goblins": 55, "ogres": 60, "trolls": 60 },
+  "kinClass": { "men": "men", "small_folk": "men", "gnomes": "men", "elves": "elves", "sun_elves": "elves", "giants": "giants", "yeti": "giants", "dwarves": "dwarves", "orcs": "orcs", "goblins": "orcs", "hobgoblins": "orcs", "dwarf_goblins": "orcs", "ogres": "orcs", "trolls": "orcs" },
+  "kinNote": "G7: men with men, elves with elves; giants, orcs and dwarves among themselves. The small folk and the gnomes marry among men, the yeti among the giants, every goblin-kind among the orcs (proposed). Ents, the Baelim, the mycids, the demons, the dead and the spirits make no royal matches."
+ },
+ "storyRulers": {
+  "characters": ["AEN_zin_ruler", "zin_aurevan", "zin_lorien", "zin_volgan", "zin_horos", "zin_zol_will", "NET_zin_ruler", "zin_eindil"],
+  "traits": ["zin_trait_ancient_king", "zin_yeldenne_warden_trait"],
+  "realms": ["Aenor", "Worshipdom", "Puvulan", "Zol's Mistake", "Yeldenne"],
+  "note": "The Golden King (while the Aenor mechanic owns his death), Aurevan, Lorien, Volgan, Horos, the Will of Zol, the King of Demons, every ancient king and the Warden of Yeldenne, and the heir if he ever rules. Aenor's whole line of rulers (the King, the regencies, the crowned god-king and the crowned heir) belongs to the court mechanic, and the Worshipdom, Puvulan, Zol's Mistake and Yeldenne are ruled by figures the story owns."
+ },
+ "historicalCourts": ["Selen", "Girdon", "Yeldenne"],
+ "crisisPending": [
+  { "realm": "Aenor", "until": "zin_path_cp06_done", "trigger": "zin_aenor_is_realm = yes" },
+  { "realm": "Worshipdom" },
+  { "realm": "Puvulan" },
+  { "realm": "Zol's Mistake" },
+  { "realm": "Gala", "until": "zin_path_cp23_done" },
+  { "realm": "Mirolon", "until": "zin_path_cp15_done" }
+ ],
+ "succession": {
+  "contested": "\\b(ring|breaks|fight for the crown|whoever (?:takes|holds|is largest)|taken, not inherited|bigger hobgoblin|throws him out|shouted down)\\b",
+  "open": "^(?:Not applicable|No heir is known|No heir is named in any record|Open in the vault)",
+  "monarchyForms": ["kingdom", "principality", "lordship", "house", "household", "merchant principality", "march", "domain", "wardenship", "dominion", "hold", "enclave"],
+  "note": "A realm with a named heir in data/world/characters inherits through that heir; a realm whose heir note settles the crown by combat is contested; a realm whose note says nothing is known is quiet (the engine names a successor); every other realm chooses by its own custom (a moot, a council, a guild). A realm that inherits and has no living heir, and a contested realm, fall into No Heir of the Body when their crown may fall into crisis. The monarchy forms are the royal houses that make matches (G7)."
+ },
+ "civilWarSize": 0.35,
+ "usurperDays": 365,
+ "exileAskDays": 90,
+ "arrest": { "fails": 70, "rises": 30 },
+ "mtth": {
+  "zin_realm_frail_death": { "base": 4, "modifiers": [
+   { "add": 2, "if": "has_war = yes" },
+   { "add": 2, "if": "has_stability < 0.3" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_cautious" },
+   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_weary" }
+  ] },
+  "zin_realm_ambition_chance": { "base": 3, "modifiers": [
+   { "add": 3, "if": "has_stability < 0.15" },
+   { "add": 2, "if": "has_war = yes" },
+   { "add": 2, "if": "surrender_progress > 0.3" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_cautious" },
+   { "factor": 1.5, "if": "has_country_leader_with_trait = zin_trait_temper_weary" }
+  ] },
+  "zin_realm_raid_chance": { "base": 3, "modifiers": [
+   { "factor": 1.5, "if": "zin_rules_is_free = yes" },
+   { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_bold" },
+   { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_grasping" },
+   { "add": 1, "if": "has_war_support > 0.5" },
+   { "factor": 0.5, "if": "has_country_leader_with_trait = zin_trait_temper_cautious" }
+  ] },
+  "zin_realm_match_will": { "base": 2, "modifiers": [
+   { "add": 4, "if": "threat > 0.4" },
+   { "add": 2, "if": "has_country_leader_with_trait = zin_trait_temper_generous" },
+   { "add": 2, "if": "NOT = { zin_realm_has_heir = yes }" },
+   { "factor": 0.5, "if": "zin_rules_is_free = no" },
+   { "factor": 0, "if": "zin_rules_is_historical = yes" }
+  ] }
+ },
+ "raiders": {
+  "realms": ["Burnikit", "Belonton", "Bordon", "Dreson", "Dulundur", "The Darks", "Skragdurg", "Dun", "Britadon", "Wild Lands", "Troll Forest", "Halenor", "Santon", "Benan", "Halia", "Horidor", "Glimkit", "Omar", "Orewele"],
+  "note": "G8: the orc, goblin and troll holds of the Dark Lands outside Goldoroth's own raids (the Dark Lands mechanic keeps Goldoroth and its sworn holds), the Triton island lordship and the two corsair captaincies, the Ember Lands freeholds of Halia and the clans of the Cold Lands (proposed list)."
+ },
+ "goldenKingShelter": ["Lerendor", "Selen", "Kingson", "Konori", "Hunhun", "Herez", "Noleksun", "Orohaf", "Kunhrim"],
+ "goldenKingNote": "Owner question Q-65, default: the Golden King keeps a court in exile that can return. His shelter is the first of these realms that still stands, has not capitulated, does not hold Parim and is not the Deliverer's seat: Lerendor, bound to Aenor by the Treaty of the Narrow Strait, then the old Concord dominions (proposed order).",
+ "ideas": {
+  "zin_realm_regency": { "picture": "regency_seals", "name": "A Council of Regency", "desc": "The crown sits on a child, and a council of lords signs every writ in the young ruler's name, each of them sure that the realm would be better governed if the others signed less.", "mods": { "political_power_gain": -0.1, "stability_factor": -0.05 } },
+  "zin_realm_crisis": { "picture": "crown_broken", "name": "The Crown in Dispute", "desc": "There is no ruler everyone will bow to, the claimants keep their own courts in their own halls, and every lord has started counting his friends.", "mods": { "stability_factor": -0.15, "political_power_gain": -0.25 } },
+  "zin_realm_usurper_rule": { "picture": "crown_iron", "name": "A Captain's Crown", "desc": "The crown was taken with a host at the gate, and the lords who swore to the new ruler swore with soldiers standing behind them.", "mods": { "stability_factor": -0.1, "war_support_factor": 0.05 } },
+  "zin_realm_exiled_court": { "picture": "exile_court", "name": "A Court in Exile", "desc": "A fallen court lives under our roof, eats at our table and keeps its own seals, and its lords never stop talking about the day they will go home.", "mods": { "political_power_gain": -0.05, "stability_factor": 0.02 } },
+  "zin_realm_raided": { "picture": "goblin_raiders", "name": "Raiders in the Hills", "desc": "The border villages sleep with their doors barred and their beasts inside, and the levies spend the nights on watch instead of in bed.", "mods": { "stability_factor": -0.03, "production_speed_buildings_factor": -0.05 } },
+  "zin_realm_raid_spoils": { "picture": "coin_chest", "name": "Spoils of the Raid", "desc": "The bands came home with silver, cattle and boasting, and every hall in the hills is feasting on what they brought.", "mods": { "political_power_gain": 0.1, "war_support_factor": 0.03 } },
+  "zin_realm_punitive_host": { "picture": "sword_shield", "name": "The Raids Answered", "desc": "A host has been raised to ride into the raiders' hills and burn their halls, and the border villages are glad to feed it.", "mods": { "army_attack_factor": 0.05, "war_support_factor": 0.03 } }
+ },
+ "opinions": {
+  "zin_realm_royal_match": { "value": 25, "name": "Kin by Marriage" },
+  "zin_realm_match_refused": { "value": -15, "decay": 0.5, "name": "A Match Refused" },
+  "zin_realm_kin_answered": { "value": 15, "decay": 0.2, "name": "Answered the Call of Kin" },
+  "zin_realm_kin_failed": { "value": -20, "decay": 0.5, "name": "Failed the Call of Kin" },
+  "zin_realm_broke_the_bond": { "value": -50, "decay": 0.5, "name": "Broke Their Oath to Us" },
+  "zin_realm_demanded_autonomy": { "value": -10, "decay": 0.5, "name": "Demanded a Looser Bond" },
+  "zin_realm_kept_faith": { "value": 15, "decay": 0.2, "name": "Kept Faith in a Hard Season" },
+  "zin_realm_sheltered_us": { "value": 30, "decay": 0.1, "name": "Sheltered Our Court" },
+  "zin_realm_turned_us_away": { "value": -20, "decay": 0.5, "name": "Turned Our Court Away" },
+  "zin_realm_restored_us": { "value": 40, "decay": 0.1, "name": "Gave Us Back Our Land" },
+  "zin_realm_raided_us": { "value": -20, "decay": 0.5, "name": "Raided Our Villages" },
+  "zin_realm_terms_refused": { "value": -10, "decay": 0.5, "name": "Refused Our Terms" },
+  "zin_realm_courtship": { "value": 25, "name": "A Royal Courtship" }
+ },
+ "cause": { "id": "zin_realm_cb_raiders", "tension": 1, "name": "The Raids Answered", "desc": "Raiders out of this realm have burned our villages, and we have every right to ride into their hills and see that they do not come again." },
+ "category": { "id": "zin_realm_court", "title": "The Court", "desc": "The business every crown in Aoaz has to see to sooner or later: heirs, marriages, wars that have gone on too long, exiles at the gate and raiders in the hills.", "art": "crown_iron", "priority": 25 },
+ "decisions": {
+  "zin_realm_name_heir": { "icon": "heir_rolls", "cost": 75, "title": "Name an Heir", "desc": "The court has no heir it can agree on, and every lord with a royal grandmother has noticed. If one of the ruler's kin is named before the court in good time, the realm may be spared a quarrel at the graveside.", "tip": "When the ruler dies, the named kinsman takes the crown without a quarrel." },
+  "zin_realm_seek_match": { "icon": "two_crowns", "cost": 50, "cooldown": 365, "title": "Seek a Match with [FROM.GetName]", "desc": "Send envoys with gifts and a proposal of marriage between our royal house and theirs. Kin by marriage stand by each other, at least in the songs.", "tip": "Envoys carry a proposal of marriage to [FROM.GetName], who may accept it or refuse it." },
+  "zin_realm_offer_terms": { "icon": "olive_branch", "cost": 25, "cooldown": 120, "title": "Offer Terms to [FROM.GetName]", "desc": "Send heralds under a green branch with terms: peace on the old borders, a land given up by treaty, or silver to buy an end to it, as the war allows.", "tip": "Heralds carry our terms to [FROM.GetName]: peace on the old borders if the war is even, the land our hosts hold of theirs if we are winning, or silver for peace if we are losing." },
+  "zin_realm_shelter_exiles": { "icon": "exile_court", "cost": 50, "title": "Shelter the Court of [FROM.GetName]", "desc": "The court of a fallen realm has nowhere to go. Offer them a hall, a guard of honour and a place at our table until better days, and they will remember who opened the door.", "tip": "The court of [FROM.GetName] comes to live under our roof. We gain claims on their lands that others hold, and they may one day go home." },
+  "zin_realm_punish_raiders": { "icon": "goblin_raiders", "cost": 25, "title": "Punish the Raiders", "desc": "Raise a host to ride into the raiders' hills, burn their halls and hang their chiefs, so that the next band thinks twice before it crosses our border.", "tip": "We gain a cause of war against the raiders and a host raised to punish them." }
+ },
+ "tooltips": {
+  "zin_realm_heir_named_tt": "A kinsman of the ruler is named heir before the court.",
+  "zin_realm_match_sent_tt": "The envoys set out with the gifts and the portrait.",
+  "zin_realm_terms_sent_tt": "The heralds set out under a green branch.",
+  "zin_realm_court_housed_tt": "The fallen court comes to live under our roof.",
+  "zin_realm_cause_tt": "We may justify a war against the raiders for a year."
+ },
+ "events": [
+  {
+   "id": 10, "kind": "country", "picture": "generic_court", "title": "The Crown Passes",
+   "fired_by": "zin_realm_succeed (G1, G2): the ruler died and an heir, a named kinsman or the realm's own custom gave the crown to a successor",
+   "desc": [
+    { "if": "check_variable = { zin_realm_succession_way = 1 }", "text": "The old ruler of [ROOT.GetName] was laid in the earth this week, and the heir the court had been grooming walked behind the bier and came back from the grave as ruler. The household has changed its colours, the clerks have changed the names on the writs, and the market wants to know only whether [ROOT.GetLeader] will change the tolls as well." },
+    { "if": "check_variable = { zin_realm_succession_way = 3 }", "text": "The ruler of [ROOT.GetName] is dead, and the kinsman named before the court in good time has taken the seals without a quarrel. A few of the old lords grumble that nobody asked them, but none of them has gone home to call out his levies, and [ROOT.GetLeader] has already held a first council." },
+    { "if": "check_variable = { zin_realm_succession_way = 4 }", "text": "The ruler of [ROOT.GetName] is dead, and those who choose by the old custom of the realm have met and chosen [ROOT.GetLeader] to lead in turn. The feasting was short and the oaths were long, as they always are, and riders have gone out to every hall with the news." },
+    { "text": "The ruler of [ROOT.GetName] is dead, and the nearest of the blood, [ROOT.GetLeader], took the seals before anyone thought to dispute them. The court mutters, as courts do, and the realm is quiet." }
+   ],
+   "options": [
+    { "text": "Let the bells ring and the tables be laid for everyone.", "trigger": ["has_political_power > 49"], "effect": ["add_political_power = -50", "add_stability = 0.05"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_political_power > 150\n}\nmodifier = {\nadd = 20\nhas_stability < 0.5\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_generous\n}" },
+    { "text": "Keep the old councillors in their seats and change nothing.", "effect": ["add_political_power = 50", "add_stability = -0.02"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_stability > 0.6\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_grasping\n}" }
+   ]
+  },
+  {
+   "id": 11, "kind": "country", "picture": "concord_council", "title": "A Child on the Throne",
+   "fired_by": "zin_realm_succeed (G2): the heir who takes the crown is not yet grown; the timed idea zin_realm_regency lasts until the heir is grown, two to five years",
+   "desc": "The ruler of [ROOT.GetName] has died, and the heir who takes the crown is still a child who had to be lifted onto the throne for the oath. Until [ROOT.GetLeader] is grown, a council of regency will sign in the young ruler's name, and every lord who sits on it means to be the one who signs most often.",
+   "options": [
+    { "text": "Let the council of regency govern by the old charters.", "effect": ["add_stability = 0.03"], "ai": "base = 60\nmodifier = {\nadd = 20\nhas_war = no\n}" },
+    { "text": "Give the regency to the captain-general and the hosts.", "effect": ["army_experience = 10", "add_war_support = 0.05", "add_stability = -0.03"], "ai": "base = 20\nmodifier = {\nadd = 40\nhas_war = yes\n}" }
+   ]
+  },
+  {
+   "id": 12, "kind": "country", "picture": "concord_council", "title": "No Heir of the Body",
+   "fired_by": "zin_realm_open_crisis (G3): a hereditary or contested crown has no living heir and its crown may fall into crisis",
+   "desc": "The ruler of [ROOT.GetName] is dead and left no child and no named heir, and before the mourning bells had stopped, three or four houses had remembered that their grandmothers married into the royal line. Every one of them has a claim written out in a fair hand, and every one of them has friends among the captains.",
+   "options": [
+    { "text": "Let the claimants come forward and make their case.", "tip": "The claimants will plead before the court within the month.", "effect": ["country_event = { id = zin_realm.13 days = 15 }"], "ai": "base = 60" },
+    { "text": "Proclaim the nearest kinsman before the others can gather.", "trigger": ["has_political_power > 99"], "effect": ["add_political_power = -100", "set_temp_variable = { zin_arg_way = 5 }", "zin_realm_settle_crisis = yes"], "ai": "base = 20\nmodifier = {\nadd = 40\nhas_political_power > 150\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_cautious\n}" }
+   ]
+  },
+  {
+   "id": 13, "kind": "country", "picture": "generic_court", "title": "The Claimants",
+   "fired_by": "zin_realm.12 option a, fifteen days on (G3)",
+   "desc": [
+    { "if": "has_variable = zin_realm_match", "text": "The claimants have come to court with their banners, their lawyers and rather more armed men than a lawsuit needs, and the envoys of the house we married into have let it be known that a prince of their blood would be glad of the crown. The council may choose among them all, a captain with a host behind him may settle it by taking the crown, and the claimants are ready to settle it in the field if nobody else will." },
+    { "text": "The claimants have come to court with their banners, their lawyers and rather more armed men than a lawsuit needs. The council of the realm may choose among them, a captain with a host behind him may settle it by taking the crown, and the claimants are ready to settle it in the field if nobody else will." }
+   ],
+   "options": [
+    { "text": "Let the council choose the best of them.", "effect": ["set_temp_variable = { zin_arg_way = 1 }", "zin_realm_settle_crisis = yes"], "ai": "base = 40\nmodifier = {\nadd = 40\nzin_rules_is_historical = yes\n}\nmodifier = {\nadd = 30\nhas_government = democratic\n}\nmodifier = {\nadd = 30\nhas_country_flag = zin_realm_kin_elves\n}" },
+    { "text": "Let the captain-general take the crown.", "trigger": ["zin_realm_crisis_may_turn = yes", "zin_realm_has_captain = yes"], "tip": "The ablest captain of the realm takes the crown.", "effect": ["set_temp_variable = { zin_arg_way = 4 }", "zin_realm_settle_crisis = yes"], "ai": "base = 15\nmodifier = {\nadd = 30\nhas_war = yes\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}\nmodifier = {\nadd = 20\nhas_government = fascism\n}" },
+    { "text": "Let the claimants settle it in the field.", "trigger": ["zin_realm_crisis_may_turn = yes", "zin_realm_crown_may_be_contested = yes"], "tip": "The realm splits between the claimants, and the crown goes to whoever holds the field.", "effect": ["set_temp_variable = { zin_arg_way = 2 }", "zin_realm_settle_crisis = yes"], "ai": "base = 5\nmodifier = {\nadd = 20\nzin_rules_is_free = yes\n}\nmodifier = {\nadd = 20\nhas_country_flag = zin_realm_kin_orcs\n}" },
+    { "text": "Accept the prince of our kin by marriage.", "trigger": ["zin_realm_crisis_may_turn = yes", "zin_realm_match_may_reign = yes"], "tip": "A prince of the house we married into takes the crown, and that house will expect to be remembered for it.", "effect": ["set_temp_variable = { zin_arg_way = 3 }", "zin_realm_settle_crisis = yes"], "ai": "base = 20\nmodifier = {\nadd = 40\nvar:zin_realm_match = { has_opinion = { target = PREV value > 50 } }\n}" }
+   ]
+  },
+  {
+   "id": 14, "kind": "country", "picture": "generic_court", "title": "The Regency Ends",
+   "fired_by": "zin_realm_tick_regency (G2): the timed idea zin_realm_regency has ended",
+   "desc": "[ROOT.GetLeader] is old enough now to rule without a council at the elbow, and the regents have handed back the seals with long speeches about how well they kept them. Some of them kept them very well indeed, and their own estates grew handsomely while they did.",
+   "options": [
+    { "text": "Thank the regents and send them home to their estates.", "effect": ["add_political_power = 75", "add_stability = -0.02"], "ai": "base = 50\nmodifier = {\nadd = 20\nhas_stability > 0.6\n}" },
+    { "text": "Keep the wisest of them on the council.", "effect": ["add_stability = 0.05"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_stability < 0.5\n}" }
+   ]
+  },
+  {
+   "id": 15, "kind": "country", "picture": "generic_peace", "title": "The Crisis Settled",
+   "fired_by": "zin_realm_settle_crisis (G3), with the way in zin_realm_crisis_way",
+   "desc": [
+    { "if": "check_variable = { zin_realm_crisis_way = 2 }", "text": "The claimants could not be reconciled, and the one the council would not have has raised a banner and called the lords who owe him to his side. The crown of [ROOT.GetName] will go to whoever holds the field when the fighting is done." },
+    { "if": "check_variable = { zin_realm_crisis_way = 3 }", "text": "A prince of the house we married into has ridden in with a retinue in foreign colours and taken the crown of [ROOT.GetName], and his kin will expect to be remembered for it. The claimants have bowed, some of them more deeply than others." },
+    { "if": "check_variable = { zin_realm_crisis_way = 4 }", "text": "The captain-general settled the matter the way captains do, by marching into the council hall with the officers of the host and asking who would object. Nobody did, and [ROOT.GetLeader] now wears the crown the claimants had been arguing over." },
+    { "if": "check_variable = { zin_realm_crisis_way = 5 }", "text": "The court proclaimed the nearest kinsman before the other claimants could reach the capital, and [ROOT.GetLeader] was crowned while their riders were still on the road. They will complain about it for a generation, and they will do their complaining from their own halls." },
+    { "text": "The council of [ROOT.GetName] sat for nine days and chose [ROOT.GetLeader], and the claimants who lost have gone home with gifts and promises, which is how these things are usually settled. Nobody is entirely happy, and the realm is at peace." }
+   ],
+   "options": [
+    { "text": "So the crown is settled.", "ai": 1 }
+   ]
+  },
+  {
+   "id": 20, "kind": "country", "picture": "generic_war", "title": "A Captain's Ambition",
+   "fired_by": "zin_realm_check_ambition (G4): the realm is unsettled and one of its captains has been marked zin_char_ambitious",
+   "desc": "With the realm unsettled and the court divided, one of the captains of [ROOT.GetName] has taken to dining with the other captains rather more often than friendship needs, and the soldiers of that host have started cheering their captain's name before the ruler's. The court is sure what it means, even if nobody will say it aloud.",
+   "options": [
+    { "text": "Buy the captain's loyalty with land and titles.", "trigger": ["has_political_power > 74"], "effect": ["add_political_power = -75", "add_stability = 0.02", "zin_realm_calm_captain = yes"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_political_power > 150\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_generous\n}" },
+    { "text": "Strip the captain of the command before anything moves.", "tip": "The captain may go quietly, or the host may follow its captain to the gates.", "effect": ["zin_realm_arrest_captain = yes"], "ai": "base = 40\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}" },
+    { "text": "Let the captain come, for the realm needs a strong hand.", "tip": "The captain takes the crown.", "effect": ["country_event = { id = zin_realm.21 days = 3 }"], "ai": "base = 0\nmodifier = {\nadd = 10\nzin_rules_is_free = yes\nhas_stability < 0.15\n}\nmodifier = {\nadd = 10\nhas_country_leader_with_trait = zin_trait_temper_weary\n}" }
+   ]
+  },
+  {
+   "id": 21, "kind": "country", "picture": "generic_court", "title": "The Usurper Crowned",
+   "fired_by": "zin_realm.20 options b (a third of the time) and c (G4)",
+   "immediate": ["zin_realm_crown_captain = yes"],
+   "desc": "The captain marched on the capital of [ROOT.GetName] with the host, and the guards at the gate, who had served in that host, opened it and stood aside. The old ruler has been put out of the palace, and [ROOT.GetLeader] now sits in the council chair with a sword across the knees, taking the lords' oaths one by one.",
+   "options": [
+    { "text": "Swear the oath and keep your heads down.", "effect": ["add_stability = -0.05", "add_war_support = 0.05"], "ai": "base = 60" },
+    { "text": "Purge the old ruler's friends from the court.", "effect": ["add_political_power = 75", "add_stability = -0.1"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_stability > 0.4\n}" }
+   ]
+  },
+  {
+   "id": 22, "kind": "country", "picture": "generic_court", "title": "The Usurper Fails",
+   "fired_by": "zin_realm.20 option b (two thirds of the time) (G4)",
+   "desc": "The captain was taken in camp before the host could be roused, and the officers who had dined there all winter have suddenly remembered their oaths to the crown of [ROOT.GetName]. The court wants the matter dealt with in a way that the next ambitious captain will remember.",
+   "options": [
+    { "text": "Hang the traitor at the city gate.", "effect": ["zin_realm_dismiss_captain = yes", "add_stability = 0.05", "add_war_support = -0.03"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}" },
+    { "text": "Send the captain over the border with a whole skin.", "effect": ["zin_realm_dismiss_captain = yes", "add_stability = 0.02", "add_political_power = 25"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_generous\n}" }
+   ]
+  },
+  {
+   "id": 30, "kind": "country", "picture": "generic_court", "title": "The Subject Stirs",
+   "fired_by": "zin_realm_check_subject (G5): a subject that thinks little of its overlord while the overlord is at war",
+   "desc": "[ROOT.GetName] has sent its levies and its tribute to [ROOT.Overlord.GetName] for many years, and with the overlord's hosts away at war, the lords of the council have begun to ask aloud what the bond is still worth to them. They want an answer from the throne before the overlord comes home.",
+   "options": [
+    { "text": "Break the bond while they cannot stop us.", "tip": "[ROOT.GetName] no longer answers to [ROOT.Overlord.GetName], which will not forgive it.", "effect": ["zin_realm_break_bond = yes"], "ai": "base = 10\nmodifier = {\nadd = 30\nOVERLORD = { has_capitulated = yes }\n}\nmodifier = {\nadd = 20\nzin_rules_is_free = yes\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}" },
+    { "text": "Demand a looser bond and a smaller tribute.", "tip": "The bond with [ROOT.Overlord.GetName] loosens, and the overlord thinks less of us for asking.", "effect": ["zin_realm_loosen_bond = yes"], "ai": "base = 40" },
+    { "text": "Keep faith with the oath we swore.", "effect": ["add_stability = 0.03", "zin_realm_keep_bond = yes"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_pious\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_cautious\n}" }
+   ]
+  },
+  {
+   "id": 31, "kind": "country", "picture": "generic_war", "title": "A Rising in Occupied Lands",
+   "fired_by": "zin_realm_check_risings (G5): a controlled state that is not our core and whose resistance is above 50",
+   "desc": "The folk of [zin_realm_rising_place.GetName] have had enough of foreign garrisons, and in the last few weeks the roads there have become places where couriers vanish and granaries burn in the night. The garrison captains write that they can hold the towns, but not the hills around them.",
+   "options": [
+    { "text": "Hang the ringleaders and burn their villages.", "effect": ["event_target:zin_realm_rising_place = { add_resistance = -15 }", "add_war_support = -0.02"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}\nmodifier = {\nadd = 20\nhas_government = fascism\n}" },
+    { "text": "Treat with the village elders and lighten the levies.", "trigger": ["has_political_power > 49"], "effect": ["add_political_power = -50", "event_target:zin_realm_rising_place = { add_compliance = 10 add_resistance = -5 }"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_government = democratic\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_generous\n}" },
+    { "text": "Leave the garrisons to deal with it.", "effect": ["event_target:zin_realm_rising_place = { add_resistance = 10 }"], "ai": "base = 10" }
+   ]
+  },
+  {
+   "id": 32, "kind": "country", "picture": "generic_wilds", "title": "The Rising Ends",
+   "fired_by": "zin_realm_check_risings (G5): the risen state is quiet again or no longer ours to hold",
+   "desc": [
+    { "if": "check_variable = { zin_realm_rising_way = 2 }", "text": "The rising in [zin_realm_rising_place.GetName] has ended the way the rebels hoped, for the land is no longer ours to garrison, and the last of our captains there has come home with whatever the wagons could carry." },
+    { "text": "The hills around [zin_realm_rising_place.GetName] are quiet again, and the couriers ride the roads there without an escort for the first time since the rising began. The garrison has sent home its spare levies and kept its gallows." }
+   ],
+   "options": [
+    { "text": "So it ends.", "ai": 1 }
+   ]
+  },
+  {
+   "id": 40, "kind": "country", "picture": "generic_peace", "title": "Terms Offered",
+   "fired_by": "zin_realm_offer_terms (G6): the decision Offer Terms, or an AI realm a year into a war that is not a story war",
+   "desc": [
+    { "if": "check_variable = { zin_realm_terms_kind = 2 }", "text": "Heralds have come from [zin_realm_terms_from.GetName] with terms: they will make peace if [zin_realm_terms_land.GetName], which their hosts already hold, is given to them by treaty. They point out, politely, that they could try to take a good deal more." },
+    { "if": "check_variable = { zin_realm_terms_kind = 3 }", "text": "Heralds have come from [zin_realm_terms_from.GetName] with chests of silver and a request for peace. Their masters will pay for the war to end on the old borders, which tells us a good deal about how it has been going for them." },
+    { "text": "Heralds have come from [zin_realm_terms_from.GetName] under a green branch, and they say their masters are tired of a war that has gained nobody anything. They offer peace on the old borders, with no tribute asked and none given." }
+   ],
+   "options": [
+    { "text": "Accept the terms.", "tip": "The war with [zin_realm_terms_from.GetName] ends on the terms the heralds brought.", "effect": ["zin_realm_accept_terms = yes"], "ai": "base = 20\nmodifier = {\nadd = 40\nsurrender_progress > 0.2\n}\nmodifier = {\nadd = 20\ncheck_variable = { zin_realm_war_months > 23 }\n}\nmodifier = {\nadd = 30\ncheck_variable = { zin_realm_terms_kind = 3 }\n}\nmodifier = {\nadd = -20\ncheck_variable = { zin_realm_terms_kind = 2 }\nNOT = { surrender_progress > 0.4 }\n}\nmodifier = {\nadd = 30\nzin_rules_is_historical = yes\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_weary\n}" },
+    { "text": "Send the heralds back with their branch.", "effect": ["zin_realm_refuse_terms = yes"], "ai": "base = 30\nmodifier = {\nadd = 50\nevent_target:zin_realm_terms_from = { surrender_progress > 0.3 }\n}\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}" }
+   ]
+  },
+  {
+   "id": 41, "kind": "country", "picture": "generic_court", "title": "The Answer to Our Terms",
+   "fired_by": "zin_realm_accept_terms and zin_realm_refuse_terms (G6), with the answer in zin_realm_terms_answer",
+   "desc": [
+    { "if": "check_variable = { zin_realm_terms_answer = 1 }", "text": "[zin_realm_terms_to.GetName] has accepted our terms, and the heralds have come home with a sealed treaty and the news that the hosts on both sides are already breaking camp." },
+    { "text": "[zin_realm_terms_to.GetName] has sent our heralds back with their branch and no answer worth repeating, and the war goes on." }
+   ],
+   "options": [
+    { "text": "Bring the hosts home.", "trigger": ["check_variable = { zin_realm_terms_answer = 1 }"], "effect": ["add_stability = 0.02"], "ai": 1 },
+    { "text": "Then we fight on, and harder.", "trigger": ["check_variable = { zin_realm_terms_answer = 2 }"], "effect": ["add_war_support = 0.03"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}" },
+    { "text": "We will ask again when they have lost another battle.", "trigger": ["check_variable = { zin_realm_terms_answer = 2 }"], "effect": ["add_political_power = 25"], "ai": "base = 50" }
+   ]
+  },
+  {
+   "id": 42, "kind": "country", "picture": "generic_peace", "title": "War Without Purpose",
+   "fired_by": "zin_realm_check_war (G6): a long war against a realm we cannot reach, or against a court of the East after zin_afrit_dead",
+   "desc": [
+    { "if": "has_global_flag = zin_afrit_dead\nevent_target:zin_realm_pointless_foe = { has_country_flag = zin_afrit_eastern_client }", "text": "The war that the King of the East began has outlived him, and the courts that knelt to him have nobody left to kneel to. [zin_realm_pointless_foe.GetName] is still at war with us only because nobody has told the heralds to stop." },
+    { "text": "Our hosts have been in the field against [zin_realm_pointless_foe.GetName] for a long time now, and the captains can no longer say what they are fighting for, since neither side can reach the other and the cause that started it is long forgotten. The levies want to go home for the harvest." }
+   ],
+   "options": [
+    { "text": "Send heralds and end it.", "tip": "The war with [zin_realm_pointless_foe.GetName] ends on the old borders.", "effect": ["zin_realm_end_pointless_war = yes"], "ai": "base = 70\nmodifier = {\nadd = 30\nzin_rules_is_historical = yes\n}\nmodifier = {\nadd = 20\nhas_global_flag = zin_afrit_dead\n}" },
+    { "text": "We have not bled this long for nothing.", "effect": ["add_war_support = 0.03"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}" }
+   ]
+  },
+  {
+   "id": 50, "kind": "country", "picture": "generic_court", "title": "A Court in Exile",
+   "fired_by": "zin_realm_found_exile_court (G9): on_capitulation and on_annex of a realm whose ruler lives, and zin_realm_house_golden_king when zin_golden_king_exiled is set",
+   "desc": [
+    { "if": "has_country_flag = zin_realm_shelters_golden_court", "text": "The Golden King has come to us with what is left of his court: a train of gilded carriages, a great many servants, rather fewer lords, and the crown of Aenor in an iron-bound chest. He asks for a hall worthy of him, and his steward has already been round to measure ours." },
+    { "text": "The court of [zin_realm_fallen.GetName] has fled its own country with its ruler, its seals and as much of the treasury as the wagons could carry, and it asks to be sheltered under our roof until better days. Whoever holds their land now will not thank us for it." }
+   ],
+   "options": [
+    { "text": "Give them a hall and a guard of honour.", "tip": "The fallen court lives under our roof. We gain claims on their lands that others hold, and one day they may go home.", "effect": ["zin_realm_keep_exile_court = yes"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_opinion = { target = event_target:zin_realm_fallen value > 25 }\n}\nmodifier = {\nadd = 40\nhas_country_flag = zin_realm_shelters_golden_court\n}\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_generous\n}" },
+    { "text": "We cannot feed another court, so send them on their way.", "effect": ["zin_realm_refuse_exile_court = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_grasping\n}" }
+   ]
+  },
+  {
+   "id": 51, "kind": "country", "picture": "generic_peace", "title": "The Exiles Return",
+   "fired_by": "zin_realm_check_exiles (G9): we own a core of the fallen realm that no longer exists (way 1), or the war that drove it out is over (way 2)",
+   "desc": [
+    { "if": "check_variable = { zin_realm_exile_way = 2 }", "text": "The war that drove the court of [zin_realm_fallen.GetName] from its country is over, and the exiles have taken their leave of us with a great deal of ceremony and a few unpaid debts. They are going home." },
+    { "if": "has_country_flag = zin_realm_shelters_golden_court", "text": "Our hosts hold the old lands of Aenor again, and the Golden Court that has eaten at our table for so long is packing its chests and polishing its crown. The King asks only to be given back what was his, and swears that he will remember who gave it." },
+    { "text": "Our hosts hold the old lands of [zin_realm_fallen.GetName] again, and the exiled court that has eaten at our table for so long is packing its chests. Their lords ask only to be given back what was theirs, and swear that they will remember who gave it." }
+   ],
+   "options": [
+    { "text": "Raise their banners and give the land back to them.", "trigger": ["check_variable = { zin_realm_exile_way = 1 }"], "tip": "[zin_realm_fallen.GetName] stands again on the lands we hold of theirs, free of any bond to us.", "effect": ["set_temp_variable = { zin_arg_way = 1 }", "zin_realm_restore_exiles = yes"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_generous\n}\nmodifier = {\nadd = 20\nhas_government = democratic\n}" },
+    { "text": "Restore them, under our protection.", "trigger": ["check_variable = { zin_realm_exile_way = 1 }"], "tip": "[zin_realm_fallen.GetName] stands again on the lands we hold of theirs, as a realm sworn to us.", "effect": ["set_temp_variable = { zin_arg_way = 2 }", "zin_realm_restore_exiles = yes"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_grasping\n}" },
+    { "text": "The land is ours now, and so it stays.", "trigger": ["check_variable = { zin_realm_exile_way = 1 }"], "effect": ["set_temp_variable = { zin_arg_way = 3 }", "zin_realm_restore_exiles = yes"], "ai": "base = 20\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_grasping\n}" },
+    { "text": "Wish them a safe road.", "trigger": ["check_variable = { zin_realm_exile_way = 2 }"], "effect": ["set_temp_variable = { zin_arg_way = 4 }", "zin_realm_restore_exiles = yes"], "ai": 1 }
+   ]
+  },
+  {
+   "id": 60, "kind": "country", "picture": "concord_council", "title": "A Royal Match Proposed",
+   "fired_by": "the decision Seek a Match (G7); the start variety's V9 courtship is set directly and fires nothing",
+   "desc": "Envoys from [zin_realm_suitor.GetName] have come with gifts, a portrait in a gilt frame and a proposal of marriage between their royal house and ours. The match would bind the two crowns in friendship, and the envoys hint that it might bind them in other ways too, should either ever need help.",
+   "options": [
+    { "text": "Accept the match.", "tip": "The two royal houses become kin by marriage.", "effect": ["zin_realm_accept_match = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_opinion = { target = event_target:zin_realm_suitor value > 25 }\n}\nmodifier = {\nadd = 30\nthreat > 0.4\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_generous\n}\nmodifier = {\nadd = 20\nevent_target:zin_realm_suitor = { is_major = yes }\n}" },
+    { "text": "Decline it with every courtesy.", "effect": ["zin_realm_refuse_match = yes"], "ai": "base = 30\nmodifier = {\nadd = 40\nhas_opinion = { target = event_target:zin_realm_suitor value < 0 }\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}" }
+   ]
+  },
+  {
+   "id": 61, "kind": "country", "picture": "generic_peace", "title": "The Match Accepted",
+   "fired_by": "zin_realm_accept_match (G7)",
+   "desc": "[zin_realm_match_answer.GetName] has accepted our proposal, and the wedding was held with the usual feasting, the usual speeches and rather more wine than usual. The two houses are kin now, and the envoys say that kin is a word their court takes seriously.",
+   "options": [
+    { "text": "Seal it with a pledge to defend them.", "trigger": ["zin_realm_may_pledge = yes"], "tip": "We guarantee the independence of [zin_realm_match_answer.GetName].", "effect": ["zin_realm_pledge_to_kin = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nthreat > 0.4\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}" },
+    { "text": "A wedding is bond enough.", "effect": ["add_stability = 0.02"], "ai": "base = 50\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_cautious\n}" }
+   ]
+  },
+  {
+   "id": 62, "kind": "country", "picture": "generic_court", "title": "The Match Refused",
+   "fired_by": "zin_realm_refuse_match (G7)",
+   "desc": "[zin_realm_match_answer.GetName] has sent our envoys home with the portrait, the gifts and a letter so full of courtesies that the clerks needed an evening to find the refusal in it. The court is offended, and the ladies of the household more offended still.",
+   "options": [
+    { "text": "We will remember it.", "effect": ["add_war_support = 0.02"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}" },
+    { "text": "Let it pass, for there are other houses.", "effect": ["add_stability = 0.01"], "ai": "base = 50" }
+   ]
+  },
+  {
+   "id": 63, "kind": "country", "picture": "generic_war", "title": "The Kinship Called",
+   "fired_by": "zin_realm_check_kinship (G7): our kin by marriage is fighting a defensive war we have no part in",
+   "desc": "Riders have come from [zin_realm_kin.GetName], whose house is bound to ours by marriage: they are fighting [zin_realm_kin_foe.GetName] and ask us, as kin, to send our hosts to stand beside theirs. The court knows that a family which does not answer such a call will not be asked to many weddings afterwards.",
+   "options": [
+    { "text": "Our kin shall not fight alone.", "trigger": ["zin_realm_may_answer_kin = yes"], "tip": "We go to war with [zin_realm_kin_foe.GetName] beside [zin_realm_kin.GetName].", "effect": ["zin_realm_join_kin = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_opinion = { target = event_target:zin_realm_kin value > 50 }\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}\nmodifier = {\nadd = -30\nhas_war = yes\n}\nmodifier = {\nadd = -40\nzin_rules_is_historical = yes\n}" },
+    { "text": "Send them silver instead of swords.", "trigger": ["has_political_power > 49"], "tip": "[zin_realm_kin.GetName] gains the authority we spend.", "effect": ["zin_realm_aid_kin = yes"], "ai": "base = 40\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_generous\n}" },
+    { "text": "We cannot spare the hosts.", "tip": "The marriage bond with [zin_realm_kin.GetName] is broken.", "effect": ["zin_realm_fail_kin = yes"], "ai": "base = 20\nmodifier = {\nadd = 30\nhas_war = yes\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_cautious\n}" }
+   ]
+  },
+  {
+   "id": 70, "kind": "country", "picture": "generic_wilds", "title": "Raiders on the March",
+   "fired_by": "zin_realm_check_raid (G8): a raiding realm rides into a neighbour",
+   "desc": "Raiders out of [zin_realm_raider.GetName] came over the border by night, burned two villages and a mill, and drove off every beast they could find before the levies were out of bed. They have gone home with their loot, and they will be back next season unless they are given a reason not to come.",
+   "options": [
+    { "text": "Ride out after them and burn their halls.", "tip": "We gain a cause of war against [zin_realm_raider.GetName] for a year, and the raiders learn of our answer.", "effect": ["set_temp_variable = { zin_arg_way = 1 }", "zin_realm_answer_raid = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_vengeful\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_bold\n}\nmodifier = {\nadd = -30\nhas_war = yes\n}" },
+    { "text": "Pay them to stay on their own side of the hills.", "trigger": ["has_political_power > 39"], "tip": "[zin_realm_raider.GetName] gains the authority we pay.", "effect": ["set_temp_variable = { zin_arg_way = 2 }", "zin_realm_answer_raid = yes"], "ai": "base = 30\nmodifier = {\nadd = 30\nhas_war = yes\n}\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_cautious\n}" },
+    { "text": "Bar the gates and wait for them to tire of it.", "tip": "The border villages live with the raiders for half a year.", "effect": ["set_temp_variable = { zin_arg_way = 3 }", "zin_realm_answer_raid = yes"], "ai": "base = 20\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_weary\n}" }
+   ]
+  },
+  {
+   "id": 71, "kind": "country", "picture": "generic_war", "title": "The Raid Answered",
+   "fired_by": "zin_realm_answer_raid (G8), with the victim's answer in zin_realm_raid_answer",
+   "desc": [
+    { "if": "check_variable = { zin_realm_raid_answer = 1 }", "text": "[zin_realm_raid_victim.GetName] did not wait for the next raid: their riders crossed into our hills, burned the outlying halls and hanged the first of our people they caught. The war-chiefs are shouting at each other about whose fault it was." },
+    { "if": "check_variable = { zin_realm_raid_answer = 2 }", "text": "[zin_realm_raid_victim.GetName] has sent silver to buy peace on its border, and the bands who rode there are boasting about it in every hall. The chiefs want to know how the silver will be shared out." },
+    { "text": "[zin_realm_raid_victim.GetName] has barred its gates and left its villages to fend for themselves, and the bands who rode there came home fat and laughing. They are already talking about going back." }
+   ],
+   "options": [
+    { "text": "Pull back into the hills until their tempers cool.", "trigger": ["check_variable = { zin_realm_raid_answer = 1 }"], "effect": ["add_stability = 0.03"], "ai": "base = 60" },
+    { "text": "Let them come, and we will see whose halls burn.", "trigger": ["check_variable = { zin_realm_raid_answer = 1 }"], "effect": ["add_war_support = 0.05"], "ai": "base = 40\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_bold\n}" },
+    { "text": "Share the silver among the bands.", "trigger": ["check_variable = { zin_realm_raid_answer = 2 }"], "effect": ["add_stability = 0.03", "add_war_support = 0.02"], "ai": "base = 50\nmodifier = {\nadd = 20\nhas_country_leader_with_trait = zin_trait_temper_generous\n}" },
+    { "text": "Keep it in the chief's own chest.", "trigger": ["check_variable = { zin_realm_raid_answer = 2 }"], "effect": ["add_political_power = 40"], "ai": "base = 50\nmodifier = {\nadd = 30\nhas_country_leader_with_trait = zin_trait_temper_grasping\n}" },
+    { "text": "Ride again next season.", "trigger": ["check_variable = { zin_realm_raid_answer = 3 }"], "tip": "The bands feast on what they brought home.", "effect": ["add_timed_idea = { idea = zin_realm_raid_spoils days = 180 }"], "ai": 1 }
+   ]
+  }
+ ]
+}

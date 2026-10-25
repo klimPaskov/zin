@@ -1,0 +1,43 @@
+{
+ "kind": "start_variety",
+ "source": "docs/design/alternate_history.md section 7 (V1 to V13) and docs/specs/04_mechanics/realm_life.md. The ranges are the design's; the values of each draw, the chances, the temper traits and their texts are proposed (25 October 2026). The owner allowed at most two small border feuds between minor realms under the full rule (K34). modules/start_variety.mjs builds the game files from this file.",
+ "rule": "zin_rule_start_variety",
+ "applyDays": 3,
+ "applyNote": "The draws are made once in on_startup (common/on_actions/zin_start_variety.txt sorts after zin_rules.txt, which sets the story pace). They are applied three days later by the hidden event zin_variety.1, after the owners' own start values: Aenor, the Council and Zol set theirs from on_startup events, Volgan and Lerendor on day 1, the heir's waking on day 2, and the West and the Gathering Dark in on_startup files that sort after this one.",
+ "runners": ["Aenor", "Lerendor", "Coldor", "Noris", "Stabilo"],
+ "aiOnly": "A drawn change that lands on one realm (a temper, a feud, a disputed land, a bond) is made only between AI realms, so a player's realm keeps the start the chronicle gives it, as every ZIN rule does.",
+ "V1": { "clockOffset": [-180, -120, -60, 0, 60, 120, 180], "clockMin": 30, "tempers": ["gilded", "restless", "fearful"] },
+ "V2": { "plot": [10, 15, 20, 25, 30, 35], "veil": [70, 75, 80, 85, 90] },
+ "V3": { "campShift": [-10, -5, 0, 5, 10], "camps": ["court", "faithful", "dominions", "host"], "eronelFavour": [0, 1, 2], "eronelCampStep": 5 },
+ "V4": { "chance": 50 },
+ "V5": { "volgan": [40, 42, 45, 48, 50], "zol": [30, 32, 35, 38, 40], "dark": [8, 9, 10, 11, 12] },
+ "V6": {
+  "max": 2, "chance": 50, "days": 90, "provinces": 2, "width": 40, "minimumDays": 14,
+  "groups": {
+   "dark_holds": ["Burnikit", "Belonton", "Bordon", "Dreson", "Dulundur", "The Darks", "Skragdurg", "Dun", "Britadon", "Wild Lands", "Troll Forest"],
+   "triton_lords": ["Halenor", "Santon", "Benan", "Nondondor", "Seite Islands", "Windy Lands", "The Lens", "Raerby", "Pollos"]
+  },
+  "note": "The grudges of the design: the orc and goblin holds of the Dark Lands, the Troll Forest among its neighbours, and the Triton island lordships (Adel and Fineger stay out: the Western Crossing counts on them). A feud needs two AI realms of one group that share a border."
+ },
+ "V7": { "truce": [30, 35, 40, 45, 50], "unity": [10, 12, 15, 18, 20] },
+ "V8": {
+  "pairs": [["Gunwyn", "Girdon"], ["Coldor", "Melkgard"], ["Noris", "Stabilo"], ["Goldoroth", "Dondor"], ["Herrodon", "Andos Enda"], ["Lerendor", "R'en"]],
+  "weights": { "none": 50, "first": 25, "second": 25 },
+  "note": "Each pair: one border state that is not a capital may start with the other claimant, who borders it; the giver keeps its core and gains a claim."
+ },
+ "V9": { "weights": { "none": 25, "courtship": 25, "guarantee": 25, "pact": 25 }, "courtship": ["Lerendor", "Andos Enda"], "guarantee": ["Stabilo", "Alerhia"], "pact": ["Coldor", "Nivaros"] },
+ "V10": { "plus": 2, "minus": 2, "cap": 3 },
+ "V11": { "passes": [-10, -5, 0, 5, 10], "proof": [-10, -5, 0, 5, 10] },
+ "V12": { "standing": [-15, -10, -5, 0, 5, 10, 15] },
+ "V13": { "extra": [0, 10, 20, 30, 40] },
+ "tempers": {
+  "bold": { "name": "Bold-Hearted", "desc": "Rides at the head of the host and expects the council to keep up.", "mods": { "army_attack_factor": 0.05, "war_support_factor": 0.05, "stability_factor": -0.03 } },
+  "cautious": { "name": "Cautious", "desc": "Counts the granaries twice before giving any order that cannot be taken back.", "mods": { "army_defence_factor": 0.05, "war_support_factor": -0.05, "stability_factor": 0.03 } },
+  "pious": { "name": "Pious", "desc": "Hears every rite of the temples and keeps a priest at the elbow in council.", "mods": { "stability_factor": 0.05, "research_speed_factor": -0.03 } },
+  "grasping": { "name": "Grasping", "desc": "Finds a tax, a fee or a fine for everything, and remembers who has not paid.", "mods": { "political_power_gain": 0.1, "stability_factor": -0.05 } },
+  "scholarly": { "name": "Scholarly", "desc": "Would rather read the old charters than ride out to inspect the levies.", "mods": { "research_speed_factor": 0.05, "army_org_factor": -0.03 } },
+  "vengeful": { "name": "Vengeful", "desc": "Keeps a list of every slight to the crown and means to answer each of them.", "mods": { "war_support_factor": 0.08, "political_power_gain": -0.05 } },
+  "generous": { "name": "Generous", "desc": "Gives feasts, alms and pardons with an open hand, and the treasurers despair of it.", "mods": { "stability_factor": 0.05, "political_power_gain": -0.05 } },
+  "weary": { "name": "Weary", "desc": "Has carried the crown a long time and would be glad to set it down.", "mods": { "political_power_gain": -0.1, "stability_factor": 0.02 } }
+ }
+}

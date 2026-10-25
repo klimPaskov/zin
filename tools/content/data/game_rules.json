@@ -54,6 +54,18 @@
       ]
     },
     {
+      "id": "zin_rule_start_variety", "owner": "realm_life.md (modules/start_variety.mjs draws it)", "power": "variety", "perPower": true,
+      "name": "The Shape of the Age",
+      "desc": "How far the realms may differ from the chronicle when the campaign begins.",
+      "branch": { "HISTORICAL": "OFF", "PLAUSIBLE": "LIGHT", "FREE": "FULL" },
+      "options": [
+        { "key": "DEFAULT", "name": "Follow the Course of the Age", "desc": "Off under As the Chronicle Tells, light under As It Might Have Been, full under As Each Court Wills." },
+        { "key": "OFF", "name": "As the Chronicle Tells", "desc": "Every realm begins exactly as the chronicle remembers it." },
+        { "key": "LIGHT", "name": "Small Differences", "desc": "Rulers' tempers, the readiness of old plots and the strength of hosts differ a little." },
+        { "key": "FULL", "name": "Another Spring", "desc": "Disputed lands, small feuds and loose bonds between crowns may also differ." }
+      ]
+    },
+    {
       "id": "zin_rule_ai_aenor_succession", "owner": "aenor_court_and_succession.md", "power": "aenor", "perPower": true,
       "name": "The Middle Kingdom's Succession",
       "desc": "Which camp the Middle Kingdom follows after the Golden King, when no player leads it.",

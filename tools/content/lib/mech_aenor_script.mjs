@@ -610,6 +610,17 @@ export function aenorScripts(D, T) {
     else = {
     	set_variable = { zin_aenor_camp_host = 0 }
     }
+    # Start variety V3 (modules/start_variety.mjs): the drawn shift of each camp and Prince Eronel's standing (all zero when the rule is off).
+    add_to_variable = { zin_aenor_camp_court = global.zin_sv_camp_court }
+    add_to_variable = { zin_aenor_camp_faithful = global.zin_sv_camp_faithful }
+    add_to_variable = { zin_aenor_camp_dominions = global.zin_sv_camp_dominions }
+    if = {
+    	limit = { zin_aenor_host_available = yes }
+    	add_to_variable = { zin_aenor_camp_host = global.zin_sv_camp_host }
+    }
+    set_temp_variable = { zin_ef = zin_aenor_eronel_favour }
+    multiply_temp_variable = { zin_ef = constant:zin_variety.eronel_favour_camp }
+    add_to_variable = { zin_aenor_camp_court = zin_ef }
     clamp_variable = { var = zin_aenor_camp_court min = 0 max = 100 }
     clamp_variable = { var = zin_aenor_camp_faithful min = 0 max = 100 }
     clamp_variable = { var = zin_aenor_camp_dominions min = 0 max = 100 }
