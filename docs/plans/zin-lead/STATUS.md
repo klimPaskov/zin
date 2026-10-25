@@ -31,6 +31,7 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 
 ## Next, in order
 
+00. Map write (25 October, afternoon): 4.5.0 is installed (`scratchpad/mcp_call.mjs` now defaults to runtime-v450). The create_world write is blocked by river synthesis: the Aenar, Andos Water and Giant River were fixed in the model (ae5583c2), but the Giant River still climbs 36 near the Goldoroth volcano. Three requests are filed with the MCP worker: baseline findings must not block a whole-map create_world; report every unreachable river with its divide in one preview; drawn rivers carve their valleys over synthesized relief. The write waits on that release.
 0. Owner decisions of 25 October waiting for work after the running agents: retire Yeldenne (K56: roster, seeds and `create_world_call.json`, history, characters, flags, `mech_yeldenne.mjs`; the town and castle become named places in Pertolor's land; Horos story only) once the flag and story agents finish; the Beasts of the black north as a custom unit (K55, Q-71; Meshy balance 110 credits on 25 October) once the tech agent releases the warfare files; portraits for the story agent's new heirs.
 
 1. When 4.5.0 is installed: preview then write `create_world` with `create_world_call.json` (preview false for the write; retires the 305 Y-tag files), rebuild and apply the content again (the bookmark and orders of battle come back), then the first Linux run on the new map (sync, start, run, capture; error profile).
