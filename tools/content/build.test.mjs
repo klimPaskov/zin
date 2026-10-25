@@ -43,7 +43,8 @@ test('Every country has exactly one table row with a known people and stance', a
 
 test('Startup applies a defined people spirit to every country', async () => {
   const startup = await read('common/on_actions/zin_startup.txt'), ideas = await read('common/ideas/zin_peoples.txt');
-  for (const tag of tags) assert.match(startup, new RegExp(`\\t${tag} = \\{ add_ideas = zin_people_(\\w+) set_country_flag = zin_people_\\1 \\}`), tag);
+  // after the people flag a realm may carry its minor peoples' and traditions' flags (peoples.mjs)
+  for (const tag of tags) assert.match(startup, new RegExp(`\\t${tag} = \\{ add_ideas = zin_people_(\\w+) set_country_flag = zin_people_\\1(?: set_country_flag = zin_(?:people_minor|tradition)_\\w+)* \\}`), tag);
   for (const key of Object.keys(PEOPLES)) assert.match(ideas, new RegExp(`zin_people_${key} = \\{`));
 });
 

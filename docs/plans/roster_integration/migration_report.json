@@ -1,8 +1,120 @@
 {
  "schema": 1,
  "written": "tools/migrations/roster_migration.mjs",
- "world": {},
- "renames": [],
+ "world": {
+  "cultures": {
+   "added": [
+    "wall_delvers",
+    "west_delvers",
+    "north_delvers",
+    "hearth_folk",
+    "holt_gnomes",
+    "road_warrens",
+    "baelim",
+    "mycid_rings",
+    "kingdom_forest_elves",
+    "roost_keepers",
+    "god_forest_keepers",
+    "vale_folk",
+    "strait_folk",
+    "hilofrim_herders",
+    "teste_valley_folk",
+    "quay_folk",
+    "reindeer_clans",
+    "woqood_sealers",
+    "naamis_sea_crown",
+    "orato_fishers",
+    "miaed_pass_lords",
+    "wahatud_oasis_folk",
+    "king_warrens",
+    "spring_warrens",
+    "ogre_clans",
+    "plateau_soldiery",
+    "cairn_giants",
+    "height_yeti",
+    "nether_houses",
+    "veshazel_court"
+   ],
+   "faiths": [
+    "deep_reckoning",
+    "hearth_table",
+    "full_pot",
+    "road_due",
+    "standing_silence",
+    "pass_vigil",
+    "flood_stair",
+    "pass_fires",
+    "water_share"
+   ],
+   "renames": [
+    "culture isengard_warlords -> melkgard_warlords",
+    "culture windwaith_seafarers -> vindael_seafarers",
+    "culture gunwaith_clans -> gunwyn_clans",
+    "culture wall_folk -> vale_folk",
+    "culture ember_lands_freeholds -> ember_freeholds",
+    "faith stone_vigil -> pass_vigil",
+    "faith river_temples -> flood_stair"
+   ],
+   "dialects": [
+    "gigantic:titanos -> nivaros",
+    "gigantic:hiloron -> hirolon"
+   ],
+   "peopleChanges": [
+    "goblin_warrens.people: orcs -> goblins"
+   ]
+  },
+  "culturesInput": "tools/content/data/world/cultures_new.json stays: the heraldry generator (tools/content/heraldry/build_heraldry.mjs) reads its grammars and renames"
+ },
+ "renames": [
+  {
+   "where": "tools/content/data/world/portrait_pools.base.json",
+   "from": "isengard_warlords",
+   "to": "melkgard_warlords",
+   "count": 10
+  },
+  {
+   "where": "tools/content/data/world/portrait_pools.base.json",
+   "from": "windwaith_seafarers",
+   "to": "vindael_seafarers",
+   "count": 12
+  },
+  {
+   "where": "tools/content/data/world/portrait_pools.base.json",
+   "from": "gunwaith_clans",
+   "to": "gunwyn_clans",
+   "count": 20
+  },
+  {
+   "where": "tools/content/data/world/portrait_pools.base.json",
+   "from": "ember_lands_freeholds",
+   "to": "ember_freeholds",
+   "count": 8
+  },
+  {
+   "where": "tools/content/data/world/portrait_pools.json",
+   "from": "isengard_warlords",
+   "to": "melkgard_warlords",
+   "count": 10
+  },
+  {
+   "where": "tools/content/data/world/portrait_pools.json",
+   "from": "windwaith_seafarers",
+   "to": "vindael_seafarers",
+   "count": 12
+  },
+  {
+   "where": "tools/content/data/world/portrait_pools.json",
+   "from": "gunwaith_clans",
+   "to": "gunwyn_clans",
+   "count": 20
+  },
+  {
+   "where": "tools/content/data/world/portrait_pools.json",
+   "from": "ember_lands_freeholds",
+   "to": "ember_freeholds",
+   "count": 8
+  }
+ ],
  "tags": [],
  "names": [],
  "keys": [],
@@ -10,21 +122,11 @@
  "dropped": [],
  "unresolved": [],
  "focusCountries": [],
- "special": [
-  {
-   "file": "tools/content/data/mech_regions_east.json",
-   "what": "Rows merged into Noris or Stabilo leave the courts' lean and friendship tables.",
-   "removed": [
-    "leans.Noris",
-    "leans.Stabilo",
-    "befriendNoris.Noris"
-   ]
-  }
- ],
+ "special": [],
  "code": {
   "tags": [
    {
-    "where": "tools/content/modules/countries.mjs:4",
+    "where": "tools/content/modules/countries.mjs:6",
     "tag": "Y01"
    }
   ],
@@ -95,224 +197,96 @@
     "tag": "Y02"
    },
    {
-    "where": "tools/content/calendar.test.mjs:264",
+    "where": "tools/content/calendar.test.mjs:265",
     "tag": "Y60"
    },
    {
-    "where": "tools/content/cultures.test.mjs:99",
-    "name": "Zol"
+    "where": "tools/content/calendar.test.mjs:266",
+    "tag": "Y60"
    },
    {
-    "where": "tools/content/cultures.test.mjs:191",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/diplomacy.test.mjs:164",
-    "name": "Demon"
-   },
-   {
-    "where": "tools/content/diplomacy.test.mjs:362",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/diplomacy.test.mjs:363",
+    "where": "tools/content/focus_major_b.test.mjs:178",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/diplomacy.test.mjs:589",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/economy.test.mjs:276",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/economy.test.mjs:303",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/events_crown.test.mjs:347",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/events_crown.test.mjs:744",
-    "tag": "Y0M"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:341",
-    "tag": "Y8D"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:367",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:367",
-    "name": "Hiloron"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:479",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:479",
-    "name": "Gunwaith"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:479",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:479",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/events_world.test.mjs:495",
-    "tag": "Y0M"
-   },
-   {
-    "where": "tools/content/focus_major_a.test.mjs:80",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/focus_major_b.test.mjs:175",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/focus_regional_a.test.mjs:19",
+    "where": "tools/content/focus_regional_a.test.mjs:22",
     "name": "Isengard"
    },
    {
-    "where": "tools/content/focus_regional_a.test.mjs:21",
+    "where": "tools/content/focus_regional_a.test.mjs:24",
     "name": "Windwaith"
    },
    {
-    "where": "tools/content/focus_regional_a.test.mjs:23",
+    "where": "tools/content/focus_regional_a.test.mjs:26",
     "name": "Titanos"
    },
    {
-    "where": "tools/content/focus_regional_a.test.mjs:32",
+    "where": "tools/content/focus_regional_a.test.mjs:35",
     "name": "Demon"
    },
    {
-    "where": "tools/content/focus_regional_a.test.mjs:242",
+    "where": "tools/content/focus_regional_a.test.mjs:245",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/focus_regional_a.test.mjs:430",
+    "where": "tools/content/focus_regional_a.test.mjs:433",
     "name": "Demon"
    },
    {
-    "where": "tools/content/focus_regional_b.test.mjs:51",
+    "where": "tools/content/focus_regional_b.test.mjs:54",
     "name": "Gondolin"
    },
    {
-    "where": "tools/content/focus_regional_b.test.mjs:51",
+    "where": "tools/content/focus_regional_b.test.mjs:54",
     "name": "Avalon"
    },
    {
-    "where": "tools/content/focus_regional_b.test.mjs:52",
+    "where": "tools/content/focus_regional_b.test.mjs:55",
     "name": "Godland"
    },
    {
-    "where": "tools/content/focus_regional_b.test.mjs:52",
-    "name": "Poyang"
-   },
-   {
-    "where": "tools/content/focus_regional_b.test.mjs:53",
+    "where": "tools/content/focus_regional_b.test.mjs:56",
     "name": "Hengyang"
    },
    {
-    "where": "tools/content/focus_regional_b.test.mjs:53",
+    "where": "tools/content/focus_regional_b.test.mjs:56",
     "name": "Heaven"
    },
    {
-    "where": "tools/content/focus_regional_b.test.mjs:369",
-    "tag": "Y16"
-   },
-   {
-    "where": "tools/content/focus_regional_c.test.mjs:29",
+    "where": "tools/content/focus_regional_c.test.mjs:30",
     "name": "The End"
    },
    {
-    "where": "tools/content/focus_regional_c.test.mjs:40",
+    "where": "tools/content/focus_regional_c.test.mjs:41",
     "name": "Hiloron"
    },
    {
-    "where": "tools/content/focus_regional_c.test.mjs:43",
+    "where": "tools/content/focus_regional_c.test.mjs:44",
     "name": "Asgard"
    },
    {
-    "where": "tools/content/focus_shared_a.test.mjs:356",
+    "where": "tools/content/focus_shared_a.test.mjs:380",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/focus_shared_a.test.mjs:442",
+    "where": "tools/content/focus_shared_a.test.mjs:466",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/focus_shared_a.test.mjs:442",
+    "where": "tools/content/focus_shared_a.test.mjs:466",
     "name": "Zol"
    },
    {
-    "where": "tools/content/focus_shared_a.test.mjs:680",
+    "where": "tools/content/focus_shared_a.test.mjs:704",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/focus_shared_b.test.mjs:263",
+    "where": "tools/content/focus_shared_b.test.mjs:287",
     "name": "Poyang"
    },
    {
-    "where": "tools/content/focus_shared_b.test.mjs:376",
+    "where": "tools/content/focus_shared_b.test.mjs:400",
     "name": "Poyang"
-   },
-   {
-    "where": "tools/content/focus_shared_b.test.mjs:382",
-    "name": "Belg"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:157",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:167",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:171",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:179",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:179",
-    "name": "Isengard"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:179",
-    "name": "Gunwaith"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:181",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:213",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:238",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:485",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/forces.test.mjs:517",
-    "name": "Zol"
    },
    {
     "where": "tools/content/geography/geography_steps.test.mjs:242",
@@ -323,7 +297,15 @@
     "name": "Asgard"
    },
    {
-    "where": "tools/content/geography/geography_steps.test.mjs:284",
+    "where": "tools/content/geography/geography_steps.test.mjs:273",
+    "name": "Isengard"
+   },
+   {
+    "where": "tools/content/geography/geography_steps.test.mjs:293",
+    "name": "Asgard"
+   },
+   {
+    "where": "tools/content/geography/geography_steps.test.mjs:317",
     "name": "Isengard"
    },
    {
@@ -335,288 +317,143 @@
     "tag": "Y0L"
    },
    {
-    "where": "tools/content/institutions.test.mjs:114",
-    "name": "Zol"
+    "where": "tools/content/names.test.mjs:91",
+    "name": "Titanos"
    },
    {
-    "where": "tools/content/institutions.test.mjs:145",
+    "where": "tools/content/names.test.mjs:92",
+    "name": "Titanos"
+   },
+   {
+    "where": "tools/content/names.test.mjs:159",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/institutions.test.mjs:145",
+    "where": "tools/content/names.test.mjs:159",
     "name": "Zol"
    },
    {
-    "where": "tools/content/institutions.test.mjs:147",
-    "name": "Zol"
+    "where": "tools/content/roster.test.mjs:47",
+    "tag": "Y0L"
    },
    {
-    "where": "tools/content/institutions.test.mjs:148",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/institutions.test.mjs:244",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/institutions.test.mjs:244",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/institutions.test.mjs:268",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/mech_cold.test.mjs:27",
-    "name": "Windwaith"
-   },
-   {
-    "where": "tools/content/mech_cold.test.mjs:27",
+    "where": "tools/content/roster.test.mjs:48",
     "name": "Isengard"
    },
    {
-    "where": "tools/content/mech_cold.test.mjs:27",
-    "name": "Gunwaith"
+    "where": "tools/content/roster.test.mjs:49",
+    "name": "Tieri"
    },
    {
-    "where": "tools/content/mech_cold.test.mjs:659",
-    "name": "Titanos"
+    "where": "tools/content/roster.test.mjs:50",
+    "name": "Tieri"
    },
    {
-    "where": "tools/content/mech_cold.test.mjs:689",
-    "name": "Gunwaith"
-   },
-   {
-    "where": "tools/content/mech_court.test.mjs:293",
-    "name": "Hiloron"
-   },
-   {
-    "where": "tools/content/mech_court.test.mjs:301",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/mech_court.test.mjs:301",
-    "name": "Demon"
-   },
-   {
-    "where": "tools/content/mech_court.test.mjs:301",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/mech_court.test.mjs:302",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/mech_dark.test.mjs:357",
-    "name": "Gord"
-   },
-   {
-    "where": "tools/content/mech_east.test.mjs:433",
-    "tag": "Y14"
-   },
-   {
-    "where": "tools/content/mech_east.test.mjs:501",
-    "name": "Delbiz Grasslands"
-   },
-   {
-    "where": "tools/content/mech_east.test.mjs:501",
-    "name": "The Moco"
-   },
-   {
-    "where": "tools/content/mech_east.test.mjs:505",
-    "name": "Gondolin"
-   },
-   {
-    "where": "tools/content/mech_east.test.mjs:512",
-    "name": "Gondolin"
-   },
-   {
-    "where": "tools/content/mech_east.test.mjs:512",
-    "name": "Mylunur"
-   },
-   {
-    "where": "tools/content/mech_east.test.mjs:603",
-    "tag": "Y16"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:255",
-    "tag": "Y0U"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:255",
+    "where": "tools/content/roster.test.mjs:51",
     "tag": "Y8D"
    },
    {
-    "where": "tools/content/mech_journey.test.mjs:304",
-    "tag": "Y8G"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:304",
-    "tag": "Y8D"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:308",
-    "tag": "Y0U"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:308",
-    "tag": "Y0U"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:319",
-    "tag": "Y8H"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:327",
-    "tag": "Y09"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:327",
-    "tag": "Y07"
-   },
-   {
-    "where": "tools/content/mech_journey.test.mjs:329",
-    "tag": "Y07"
-   },
-   {
-    "where": "tools/content/mech_powers.test.mjs:185",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/mech_powers.test.mjs:254",
-    "name": "Demon"
-   },
-   {
-    "where": "tools/content/mech_sun.test.mjs:36",
-    "name": "Gala Elves"
-   },
-   {
-    "where": "tools/content/mech_sun.test.mjs:36",
+    "where": "tools/content/roster.test.mjs:52",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/mech_sun.test.mjs:36",
-    "name": "Zol"
+    "where": "tools/content/roster.test.mjs:53",
+    "tag": "Y7Y"
    },
    {
-    "where": "tools/content/mech_sun.test.mjs:149",
-    "name": "North Gala"
+    "where": "tools/content/roster.test.mjs:112",
+    "tag": "Y0L"
    },
    {
-    "where": "tools/content/mech_sun.test.mjs:149",
-    "name": "Goodton"
-   },
-   {
-    "where": "tools/content/mech_sun.test.mjs:149",
-    "name": "Guuden"
-   },
-   {
-    "where": "tools/content/mech_sun.test.mjs:488",
-    "name": "Hiloron"
-   },
-   {
-    "where": "tools/content/names.test.mjs:82",
-    "name": "Titanos"
-   },
-   {
-    "where": "tools/content/names.test.mjs:83",
-    "name": "Titanos"
-   },
-   {
-    "where": "tools/content/names.test.mjs:150",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/names.test.mjs:150",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/names.test.mjs:311",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/names.test.mjs:312",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/names.test.mjs:314",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/names.test.mjs:327",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/names.test.mjs:415",
-    "name": "Zol"
+    "where": "tools/content/roster.test.mjs:113",
+    "tag": "Y01"
    },
    {
     "where": "tools/content/tags.test.mjs:42",
     "tag": "Y01"
    },
    {
-    "where": "tools/content/technologies.test.mjs:100",
+    "where": "tools/content/technologies.test.mjs:21",
     "name": "Volgan"
    },
    {
-    "where": "tools/content/technologies.test.mjs:179",
-    "tag": "Y8D"
-   },
-   {
-    "where": "tools/content/technologies.test.mjs:180",
+    "where": "tools/content/technologies.test.mjs:21",
     "name": "Zol"
    },
    {
-    "where": "tools/content/technologies.test.mjs:254",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/technologies.test.mjs:311",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/technologies.test.mjs:312",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/technologies.test.mjs:313",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/technologies.test.mjs:317",
-    "tag": "Y0U"
-   },
-   {
-    "where": "tools/content/technologies.test.mjs:331",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/warfare.test.mjs:403",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/warfare.test.mjs:403",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/warfare.test.mjs:415",
-    "name": "Volgan"
-   },
-   {
-    "where": "tools/content/warfare.test.mjs:474",
-    "name": "Zol"
-   },
-   {
-    "where": "tools/content/warfare.test.mjs:631",
+    "where": "tools/content/technologies.test.mjs:104",
     "name": "Volgan"
    }
   ]
  },
  "retired": [],
  "summary": {
-  "files": 1,
-  "world": {},
-  "idRenames": 0,
+  "files": 2,
+  "world": {
+   "cultures": {
+    "added": [
+     "wall_delvers",
+     "west_delvers",
+     "north_delvers",
+     "hearth_folk",
+     "holt_gnomes",
+     "road_warrens",
+     "baelim",
+     "mycid_rings",
+     "kingdom_forest_elves",
+     "roost_keepers",
+     "god_forest_keepers",
+     "vale_folk",
+     "strait_folk",
+     "hilofrim_herders",
+     "teste_valley_folk",
+     "quay_folk",
+     "reindeer_clans",
+     "woqood_sealers",
+     "naamis_sea_crown",
+     "orato_fishers",
+     "miaed_pass_lords",
+     "wahatud_oasis_folk",
+     "king_warrens",
+     "spring_warrens",
+     "ogre_clans",
+     "plateau_soldiery",
+     "cairn_giants",
+     "height_yeti",
+     "nether_houses",
+     "veshazel_court"
+    ],
+    "faiths": [
+     "deep_reckoning",
+     "hearth_table",
+     "full_pot",
+     "road_due",
+     "standing_silence",
+     "pass_vigil",
+     "flood_stair",
+     "pass_fires",
+     "water_share"
+    ],
+    "renames": [
+     "culture isengard_warlords -> melkgard_warlords",
+     "culture windwaith_seafarers -> vindael_seafarers",
+     "culture gunwaith_clans -> gunwyn_clans",
+     "culture wall_folk -> vale_folk",
+     "culture ember_lands_freeholds -> ember_freeholds",
+     "faith stone_vigil -> pass_vigil",
+     "faith river_temples -> flood_stair"
+    ],
+    "dialects": [
+     "gigantic:titanos -> nivaros",
+     "gigantic:hiloron -> hirolon"
+    ],
+    "peopleChanges": [
+     "goblin_warrens.people: orcs -> goblins"
+    ]
+   },
+   "culturesInput": "tools/content/data/world/cultures_new.json stays: the heraldry generator (tools/content/heraldry/build_heraldry.mjs) reads its grammars and renames"
+  },
+  "idRenames": 100,
   "tagsMigrated": 0,
   "namesMigrated": 0,
   "keysMigrated": 0,
@@ -624,10 +461,10 @@
   "dropped": 0,
   "unresolved": 0,
   "focusTrees": 0,
-  "special": 1,
+  "special": 0,
   "codeTags": 1,
   "codeNames": 0,
-  "testRefs": 145,
+  "testRefs": 63,
   "retired": [],
   "byFate": {}
  }

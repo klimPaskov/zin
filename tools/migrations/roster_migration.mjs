@@ -174,6 +174,9 @@ const DENY = [
   { file: `${DATA}/game_rules.json`, why: 'rule option names (Bold is an option, not the old country)' },
   { file: `${DATA}/mech_powers_volgan_text.json`, path: /^\$\.characters\./, why: 'character names (Volgan the person)' },
   { file: `${WORLD}/cultures.json`, path: /\.name$/, why: 'culture names' },
+  // The named portraits are people (Volgan the person, not the old country that became Puvulan).
+  { file: `${WORLD}/portrait_pools.json`, path: /^\$\.named\[\d+\]\.name$/, why: 'named portraits are people' },
+  { file: `${WORLD}/portrait_pools.base.json`, path: /^\$\.named\[\d+\]\.name$/, why: 'named portraits are people' },
 ];
 const denied = (file, p) => DENY.some(d => d.file === file && (!d.path || d.path.test(p)));
 
