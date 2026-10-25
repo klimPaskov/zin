@@ -667,6 +667,7 @@ For fictional people and impossible or supernatural entities, `hoi4_portrait_cre
 the image generator after the identity gate permits it.
 Reject generic, modern, meme, gore, stereotyped, text-bearing, or
 interchangeable output. If the image generator is unavailable, mark the portrait blocked.
+Use `hoi4-character-art-direction` for every portrait or event figure of a non-human people, creature, or pool of generated faces: anatomy sheets, visible scale, owner reference art, variety matrices, and the crop and finish gate.
 
 Full country-leader, commander, and operative textures are `156x210`. Never
 manufacture a smaller commander source merely because one UI view displays it
