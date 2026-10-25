@@ -1,5 +1,5 @@
 {
-  "source": "The foundation's game rules (docs/specs/00_foundation/05_defines_and_rules.md section 2) and the rows the Aenor, Afrit, Cold Lands, Dark Lands and start-situation specs supply to the same file. Read by tools/content/modules/rules.mjs. Option keys and order follow the spec; the texts never name Afrit or Eindil (the rules screen is seen before any campaign). zin_rule_gathering_dark and zin_rule_elections are not written: nothing reads zin_gathering_dark_rate or an election switch yet (their owners are the world tension and politics modules).",
+  "source": "The foundation's game rules (docs/specs/00_foundation/05_defines_and_rules.md section 2) and the rows the Aenor, Afrit, Cold Lands, Dark Lands and start-situation specs supply to the same file. Read by tools/content/modules/rules.mjs. Option keys and order follow the spec; the texts never name Afrit or Eindil (the rules screen is seen before any campaign). zin_rule_gathering_dark is read by modules/world_tension.mjs, whose on_startup sets zin_gathering_dark_rate from it; zin_rule_elections is not written: nothing reads an election switch yet (its owner is the politics module).",
   "group": "RULE_GROUP_ZIN",
   "path_rule": "zin_rule_historical_path",
   "rules": [
@@ -41,6 +41,16 @@
         { "key": "HISTORICAL", "name": "As the Chronicle Tells", "desc": "They keep their remembered seasons." },
         { "key": "AGGRESSIVE", "name": "Bold", "desc": "They move a year early, with stronger hosts." },
         { "key": "RESTRAINED", "name": "Restrained", "desc": "They never strike first, and fight only when attacked." }
+      ]
+    },
+    {
+      "id": "zin_rule_gathering_dark", "owner": "05_world_tension_and_endings.md",
+      "name": "The Gathering Dark",
+      "desc": "How quickly the dread of the age deepens as its dangers grow. Its falls are never slowed.",
+      "options": [
+        { "key": "NORMAL", "name": "As the Age Unfolds", "desc": "The dark gathers at its remembered pace." },
+        { "key": "SLOW", "name": "A Slow Dread", "desc": "Every new danger deepens the dark by half as much." },
+        { "key": "FAST", "name": "A Swift Dread", "desc": "Every new danger deepens the dark by half as much again." }
       ]
     },
     {

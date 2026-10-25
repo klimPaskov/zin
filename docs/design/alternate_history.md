@@ -1339,7 +1339,7 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 - **Kind:** start state contradicts canon (K13). **Beats:** B01, B08.
 
-- **Where:** tools/content/data/countries.json (row Y0Q "Hiloron", overlord "Aenor"); tools/content/data/mech_afrit.json (footholdRows: overlord Aenor, not men, start 1)
+- **Where:** tools/content/data/world/roster.json (row Y0Q "Hiloron", overlord "Aenor"); tools/content/data/mech_afrit.json (footholdRows: overlord Aenor, not men, start 1)
 
 - **Ids:** `Y0Q`, `zin_aenor_is_concord_dominion`
 
@@ -1529,7 +1529,7 @@ The second is that the Afrit chain has no way out except his death in the palace
 
 - **Kind:** text contradicts canon. **Beats:** B35.
 
-- **Where:** staged:localisation/english/zin_sun_l_english.yml (zin_sun_old_powers_stand_3_desc); tools/content/data/countries.json (Zol row scan "Kusmeel", regions "Kusven's Mistake")
+- **Where:** staged:localisation/english/zin_sun_l_english.yml (zin_sun_old_powers_stand_3_desc); tools/content/data/world/roster.json (Zol row scan "Kusmeel", regions "Kusven's Mistake")
 
 - **Ids:** `zin_sun_old_powers_stand_3`, `Kusmeel`
 

@@ -1,0 +1,50 @@
+{
+ "source": "Configuration of tools/content/checks/story_wiring.mjs (docs/design/alternate_history.md, SL-28, SL-29, SL-30). `enforce` lists the owners whose findings stop the build; every other owner's findings are reported in docs/design/validation/story_wiring_report.json and on the console. The lead flips the check to strict when the other story slices have landed by setting `enforceAll` to true (or by adding their owner names to `enforce`). `allowance` lists flags that are read before their owner sets them, with that owner; an allowed flag that is now set is reported as stale so the row can be removed.",
+ "enforceAll": false,
+ "enforce": [
+  "world systems",
+  "historical path"
+ ],
+ "owners": [
+  {
+   "owner": "world systems",
+   "pattern": "^(events/zin_world\\.txt|common/(scripted_triggers|scripted_effects|scripted_localisation)/zin_world_(tension|dates)\\.txt|common/on_actions/zin_world\\.txt|common/ideas/zin_world_endings\\.txt|common/script_constants/zin_world\\.txt)$"
+  },
+  {
+   "owner": "historical path",
+   "pattern": "^(common/(scripted_triggers|scripted_effects|scripted_localisation|script_constants)/zin_path\\.txt|events/zin_path\\.txt)$"
+  },
+  {
+   "owner": "pending stand-ins",
+   "pattern": "/zz_zin_pending_[a-z_]+\\.txt$"
+  },
+  {
+   "owner": "focus trees",
+   "pattern": "^common/national_focus/"
+  },
+  {
+   "owner": "crown and ending events",
+   "pattern": "/zin_(reign|ending|story|crown|world_endings)[a-z_]*\\.txt$"
+  },
+  {
+   "owner": "Afrit, Aenor, Eindil",
+   "pattern": "/zin_(afrit|aenor|eindil|worshipdom)[a-z_]*\\.txt$"
+  },
+  {
+   "owner": "Kusven, Volgan, Leren and the West",
+   "pattern": "/zin_(mistake|zol|dominion|volgan|leren|lerendor|west|lastwar)[a-z_]*\\.txt$"
+  },
+  {
+   "owner": "error-log causes (East, institutions, forces, warfare)",
+   "pattern": "/zin_(east|inst|institutions|forces|warfare|goldoroth)[a-z_]*\\.txt$"
+  }
+ ],
+ "allowance": [
+  {
+   "flag": "zin_aenor_regency_endures",
+   "scope": "global",
+   "owner": "Afrit, Aenor, Eindil",
+   "note": "E-04: the Regency of Gold rules Aenor (CP06 diverged; the Golden Court Endures)."
+  }
+ ]
+}

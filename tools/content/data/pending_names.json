@@ -104,29 +104,11 @@
   },
   {
    "id": "world",
-   "owner": "the world tension and endings module",
-   "spec": "docs/specs/03_gameplay/05_world_tension_and_endings.md",
+   "owner": "the magic and world systems module (zin_world ids 30 to 69; the world tension module, modules/world_tension.mjs, defines ids 1 to 29)",
+   "spec": "docs/specs/03_gameplay/04_magic_and_world_systems.md",
    "names": {
-    "effect": [
-     "zin_world_add_gathering_dark",
-     "zin_world_check_endings",
-     "zin_world_reach_ending"
-    ],
     "event": [
      "zin_world.45"
-    ],
-    "idea": [
-     "zin_world_lord_of_a_ruined_world",
-     "zin_world_no_crown_over_crowns",
-     "zin_world_outcome_eastern_king",
-     "zin_world_outcome_golden_court",
-     "zin_world_outcome_strait_master",
-     "zin_world_outcome_western_crown",
-     "zin_world_the_worshipped_king"
-    ],
-    "trigger": [
-     "zin_world_date_children",
-     "zin_world_date_last_crowns"
     ]
    }
   },

@@ -1,0 +1,88 @@
+{
+ "source": "docs/specs/03_gameplay/05_world_tension_and_endings.md and docs/design/alternate_history.md sections 5 and 10 (SL-01, SL-03, SL-25, SL-26). Read by tools/content/modules/world_tension.mjs. Every number of the Gathering Dark is tuned here; the module writes them into common/script_constants/zin_world.txt and the generated triggers. The tiers' names, the source labels, the event texts and the ending spirits are proposed (spec, Open questions 1 and 4).",
+ "start": 10,
+ "rule": {
+  "id": "zin_rule_gathering_dark",
+  "variable": "zin_gathering_dark_rate",
+  "rates": { "NORMAL": 1, "SLOW": 0.5, "FAST": 1.5 }
+ },
+ "damping": [ { "from": 50, "factor": 0.6 }, { "from": 75, "factor": 0.4 } ],
+ "tiers": [
+  { "n": 1, "from": 0, "name": "Seeming Peace" },
+  { "n": 2, "from": 25, "name": "Unease", "news": "zin_world.10" },
+  { "n": 3, "from": 50, "name": "The Gathering Dark", "news": "zin_world.11" },
+  { "n": 4, "from": 75, "name": "The Last Crowns", "news": "zin_world.12" }
+ ],
+ "turned": "The Age Has Turned",
+ "sources": {
+  "court": { "label": "The Court's Excess", "steps": [ [50, 0.05], [75, 0.10] ] },
+  "council": { "label": "A Hidden Cause", "labelRevealed": "The Hidden Council", "at": 60, "value": 0.05, "crowned": 0.10 },
+  "south": { "label": "The South Stirs", "steps": [ [50, 0.10], [75, 0.20] ] },
+  "north": { "label": "Black Ships in the North", "steps": [ [40, 0.10], [70, 0.20] ] },
+  "envoys": { "label": "Restless Envoys", "labelRevealed": "The Deliverer's Web", "steps": [ [150, 0.05], [300, 0.10] ] },
+  "wars": { "label": "Wars of the Living", "each": 0.10, "max": 0.40 },
+  "dead_march": { "label": "The Dead March", "each": 0.02, "max": 0.30 },
+  "dominion_march": { "label": "The Dominion Marches", "each": 0.02, "max": 0.30 },
+  "glo": { "label": "Glo Carried by the Worthy", "value": -0.10, "states": [1, 4] },
+  "league": { "label": "The Lost Cause Stands", "at": 60, "value": -0.10 },
+  "peace": { "label": "The Long Peace", "value": -0.05, "floor": 5 },
+  "age_turns": { "label": "The Age Turns", "value": -0.50, "floor": 10 }
+ },
+ "oneTime": [
+  { "flag": "zin_golden_king_dead", "value": 8 },
+  { "flag": "zin_aurevan_crowned", "value": 4 },
+  { "flag": "zin_aenor_eindil_denounced", "value": 2 },
+  { "flag": "zin_war_of_last_crowns", "value": 6 },
+  { "flag": "zin_eastern_invasion", "value": 2 },
+  { "flag": "zin_kusven_withdrawn", "value": -12 },
+  { "flag": "zin_varner_dead", "value": 1 },
+  { "flag": "zin_lorien_dead", "value": 1 },
+  { "flag": "zin_golbran_dead", "value": 1 },
+  { "flag": "zin_afrit_dead", "value": -15 },
+  { "flag": "zin_eindil_lost", "value": 10 },
+  { "flag": "zin_eindil_crowned", "value": -15 }
+ ],
+ "engine": { "offset": 10, "gap": 0.02, "steps": [ [0.10, 10], [0.05, 5], [0.02, 2] ], "repeat": 3, "riseShare": 0.5 },
+ "war": {
+  "plausibleMeter": 65,
+  "fronts": [ "zin_leren_withdrawal", "zin_western_crossing", "zin_eastern_invasion", "zin_mirolon_fallen", "zin_volgan_marches", "zin_zol_rising" ]
+ },
+ "dates": {
+  "last_crowns": "1755.4.1",
+  "plausible_meter": "1754.3.1",
+  "plausible_latest": "1756.3.1",
+  "children": "1756.3.1",
+  "judgement": "1762.1.1",
+  "judgement_deferred": "1764.1.1",
+  "unfinished": "1770.1.1"
+ },
+ "judgement": { "departure": 15, "reachStages": [9, 12] },
+ "runners": [ "Aenor", "Lerendor", "Coldor", "Noris", "Stabilo", "Puvulan", "Goldoroth", "Gala", "Selen", "Worshipdom" ],
+ "tickDays": 30,
+ "tickGuardDays": 25,
+ "endings": [
+  { "n": 1, "key": "lost_cause", "flag": "zin_ending_lost_cause", "news": "zin_world.100", "canon": true },
+  { "n": 2, "key": "children_of_volgan", "flag": "zin_ending_children_of_volgan", "news": "zin_world.101", "canon": true },
+  { "n": 3, "key": "ashen_throne", "flag": "zin_ending_ashen_throne", "news": "zin_world.102", "canon": true },
+  { "n": 4, "key": "golden_court", "flag": "zin_ending_golden_court", "news": "zin_world.103" },
+  { "n": 5, "key": "western_crown", "flag": "zin_ending_western_crown", "news": "zin_world.104" },
+  { "n": 6, "key": "strait_master", "flag": "zin_ending_strait_master", "news": "zin_world.105" },
+  { "n": 7, "key": "eastern_king", "flag": "zin_ending_eastern_king", "news": "zin_world.106" },
+  { "n": 8, "key": "unfinished", "flag": "zin_ending_unfinished", "news": "zin_world.107" }
+ ],
+ "spirits": {
+  "zin_world_no_crown_over_crowns": { "picture": "crown_witnesses", "name": "No Crown over Crowns", "desc": "The league that crowned this king did not fight for an empire, and the settlement it made binds the crown to that purpose: the realms that bled for Aenor kneel to no one in Parim.", "modifier": { "political_power_factor": 0.10, "annex_cost_factor": 0.50 } },
+  "zin_world_lord_of_a_ruined_world": { "picture": "grave_host", "name": "Lord of a Ruined World", "desc": "The grave hosts hold the plains, the client crowns kneel, and the world that remains is ruled by fear and by the dead who will not lie down.", "modifier": { "army_attack_factor": 0.10, "stability_factor": -0.10 } },
+  "zin_world_the_worshipped_king": { "picture": "throne_ashen", "name": "The Worshipped King", "desc": "The temples are full and the council sits in every court. Here the king is not obeyed so much as adored, and those who doubt him keep their doubts to themselves.", "modifier": { "stability_factor": 0.15, "political_power_factor": 0.10 } },
+  "zin_world_outcome_golden_court": { "picture": "throne_gold", "name": "The Golden Court Endures", "desc": "In this telling of the age the Golden Court outlasted every storm, and Parim still feasts beneath its gilded roofs.", "modifier": { "political_power_factor": 0.05, "stability_factor": 0.05 } },
+  "zin_world_outcome_western_crown": { "picture": "two_crowns", "name": "A Western Crown in Parim", "desc": "In this telling of the age a crown of the West took the oldest city of men and held it, and the western banners still fly over Parim.", "modifier": { "political_power_factor": 0.05, "stability_factor": 0.05 } },
+  "zin_world_outcome_strait_master": { "picture": "strait_chain", "name": "Master of the Strait", "desc": "In this telling of the age no ship passes the Narrow Sea without leave, and the chain across the strait answers to one crown alone.", "modifier": { "political_power_factor": 0.05, "stability_factor": 0.05 } },
+  "zin_world_outcome_eastern_king": { "picture": "eastern_throne", "name": "One King in the East", "desc": "In this telling of the age the caravan roads answer to one crown, and the courts of the East bow to a king of their own choosing.", "modifier": { "political_power_factor": 0.05, "stability_factor": 0.05 } }
+ },
+ "events": {
+  "zin_world.10": { "picture": "generic_court", "title": "An Uneasy Season", "desc": "In every court of Aoaz the talk has grown careful. Merchants price their cargoes against rumours from the south, envoys linger longer than their errands need, and old treaties are read again by lamplight, as though someone expected to need them.", "ok": "These are uneasy times." },
+  "zin_world.11": { "picture": "ember_lands_storm", "title": "The Gathering Dark", "desc": "No one in Aoaz still calls the peace a peace. Garrisons that slept for a generation are drilling again, the roads carry more soldiers than traders, and in the temples the priests pray for the old safety in words their grandfathers never needed.", "ok": "Let the realms prepare." },
+  "zin_world.12": { "picture": "generic_war", "title": "The Last Crowns", "desc": "The age has come to its edge. Every crown that still stands is arming, and the chroniclers write as though they were recording the last days of an age rather than a season of trouble.", "ok": "So the age turns." },
+  "zin_world.20": { "picture": "last_crowns", "title": "The War of the Last Crowns", "desc": "Crowns are arming on every shore of Aoaz. Old grudges have become plans of war and old legends have become banners, and the chroniclers have begun to call the many wars of these years by one name: the War of the Last Crowns.", "descPiecemeal": "No single blow began it. One war has followed another across Aoaz until the chroniclers could no longer tell where each began, and now they call them all by one name: the War of the Last Crowns.", "ok": "Let every crown look to its walls." }
+ }
+}

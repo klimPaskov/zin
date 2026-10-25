@@ -1,0 +1,1034 @@
+{
+ "source": "Generated from docs/design/alternate_history.json by tools/content/modules/historical_path.mjs (checkpointsFromDesign); do not edit. Run node tools/content/modules/historical_path.mjs --write after the design changes; tools/content/alternate_history.test.mjs compares this file with the design.",
+ "magnitudes": {
+  "historical": 0,
+  "shifted": 0.25,
+  "other_way": 0.5,
+  "successor": 0.75,
+  "never_or_opposite": 1,
+  "skipped": 0.5
+ },
+ "totalWeight": 93,
+ "checkpoints": [
+  {
+   "cp": "CP01",
+   "n": 1,
+   "weight": 0,
+   "beats": [
+    "B01"
+   ],
+   "target": "1748.3.1",
+   "latest": null,
+   "flags": [],
+   "divergences": {
+    "B01.D1": {
+     "kind": "different",
+     "magnitude": 0
+    },
+    "B01.D2": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B01.D3": {
+     "kind": "different",
+     "magnitude": 0
+    }
+   }
+  },
+  {
+   "cp": "CP02",
+   "n": 2,
+   "weight": 2,
+   "beats": [
+    "B03"
+   ],
+   "target": "1749.2.1",
+   "latest": "1752.1.1",
+   "flags": [
+    "zin_eindil_awake"
+   ],
+   "divergences": {
+    "B03.D1": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B03.D2": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B03.D3": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B03.D4": {
+     "kind": "actor_annexed",
+     "magnitude": 0
+    }
+   }
+  },
+  {
+   "cp": "CP03",
+   "n": 3,
+   "weight": 1,
+   "beats": [
+    "B05"
+   ],
+   "target": "1750.4.1",
+   "latest": "1750.10.1",
+   "flags": [
+    "zin_west_truce_broken",
+    "zin_west_grey_ford_war"
+   ],
+   "divergences": {
+    "B05.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B05.D2": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B05.D3": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B05.D4": {
+     "kind": "different",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP04",
+   "n": 4,
+   "weight": 2,
+   "beats": [
+    "B04",
+    "B06"
+   ],
+   "target": "1749.10.1",
+   "latest": "1751.3.1",
+   "flags": [
+    "zin_eindil_war_king",
+    "zin_eindil_stage_3_done"
+   ],
+   "divergences": {
+    "B04.D1": {
+     "kind": "different",
+     "magnitude": 0
+    },
+    "B04.D2": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B04.D3": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B04.D4": {
+     "kind": "actor_annexed",
+     "magnitude": 0
+    },
+    "B06.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B06.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B06.D3": {
+     "kind": "different",
+     "magnitude": 0.75
+    }
+   }
+  },
+  {
+   "cp": "CP05",
+   "n": 5,
+   "weight": 5,
+   "beats": [
+    "B02",
+    "B07"
+   ],
+   "target": "1750.10.15",
+   "latest": "1753.1.1",
+   "flags": [
+    "zin_afrit_regicide_ready",
+    "zin_afrit_plot_ready_seen",
+    "zin_golden_king_dead"
+   ],
+   "divergences": {
+    "B02.D1": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B02.D2": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B02.D3": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B02.D4": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B02.D5": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B02.D6": {
+     "kind": "actor_annexed",
+     "magnitude": 0.75
+    },
+    "B07.D1": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B07.D2": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B07.D3": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B07.D4": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B07.D5": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B07.D6": {
+     "kind": "actor_annexed",
+     "magnitude": 0.75
+    }
+   }
+  },
+  {
+   "cp": "CP06",
+   "n": 6,
+   "weight": 5,
+   "beats": [
+    "B08",
+    "B09",
+    "B10"
+   ],
+   "target": "1750.11.24",
+   "latest": "1752.1.1",
+   "flags": [
+    "zin_aenor_faithful_rule",
+    "zin_aurevan_crowned"
+   ],
+   "divergences": {
+    "B08.D1": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B08.D2": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B08.D3": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B08.D4": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B08.D5": {
+     "kind": "actor_annexed",
+     "magnitude": 0.75
+    },
+    "B09.D1": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B09.D2": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B09.D3": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B09.D4": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B10.D1": {
+     "kind": "different",
+     "magnitude": 0
+    },
+    "B10.D2": {
+     "kind": "different",
+     "magnitude": 0.25
+    },
+    "B10.D3": {
+     "kind": "different",
+     "magnitude": 0.25
+    }
+   }
+  },
+  {
+   "cp": "CP07",
+   "n": 7,
+   "weight": 1,
+   "beats": [
+    "B11"
+   ],
+   "target": "1751.3.1",
+   "latest": "1752.3.1",
+   "flags": [],
+   "divergences": {
+    "B11.D1": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B11.D2": {
+     "kind": "different",
+     "magnitude": 0.25
+    },
+    "B11.D3": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B11.D4": {
+     "kind": "actor_annexed",
+     "magnitude": 0
+    }
+   }
+  },
+  {
+   "cp": "CP08",
+   "n": 8,
+   "weight": 3,
+   "beats": [
+    "B12"
+   ],
+   "target": "1752.1.15",
+   "latest": "1753.1.1",
+   "flags": [
+    "zin_eindil_named"
+   ],
+   "divergences": {
+    "B12.D1": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B12.D2": {
+     "kind": "actor_annexed",
+     "magnitude": 0.75
+    },
+    "B12.D3": {
+     "kind": "different",
+     "magnitude": 0
+    }
+   }
+  },
+  {
+   "cp": "CP09",
+   "n": 9,
+   "weight": 5,
+   "beats": [
+    "B13",
+    "B14",
+    "B15"
+   ],
+   "target": "1753.1.1",
+   "latest": "1754.6.1",
+   "flags": [
+    "zin_afrit_at_yeldenne",
+    "global.zin_eindil_ambush_result",
+    "zin_horos_dead",
+    "zin_glo_with_eindil",
+    "zin_afrit_wounded"
+   ],
+   "divergences": {
+    "B13.D1": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B13.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B13.D3": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B13.D4": {
+     "kind": "different",
+     "magnitude": 0
+    },
+    "B13.D5": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B14.D1": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B14.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B14.D3": {
+     "kind": "different",
+     "magnitude": 0.25
+    },
+    "B14.D4": {
+     "kind": "actor_annexed",
+     "magnitude": 0
+    },
+    "B15.D1": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B15.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B15.D3": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B15.D4": {
+     "kind": "actor_dead",
+     "magnitude": 1
+    },
+    "B15.D5": {
+     "kind": "actor_annexed",
+     "magnitude": 0.75
+    },
+    "B15.D6": {
+     "kind": "late",
+     "magnitude": 0.25
+    }
+   }
+  },
+  {
+   "cp": "CP10",
+   "n": 10,
+   "weight": 3,
+   "beats": [
+    "B16"
+   ],
+   "target": "1754.5.1",
+   "latest": "1755.3.1",
+   "flags": [
+    "zin_aenor_eindil_denounced",
+    "zin_afrit_impostor_denounced"
+   ],
+   "divergences": {
+    "B16.D1": {
+     "kind": "opposite",
+     "magnitude": 1
+    },
+    "B16.D2": {
+     "kind": "actor_captured",
+     "magnitude": 0.25
+    },
+    "B16.D3": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B16.D4": {
+     "kind": "actor_absent",
+     "magnitude": 0.5
+    },
+    "B16.D5": {
+     "kind": "different",
+     "magnitude": 0.25
+    }
+   }
+  },
+  {
+   "cp": "CP11",
+   "n": 11,
+   "weight": 5,
+   "beats": [
+    "B18"
+   ],
+   "target": "1755.4.1",
+   "latest": "1756.3.1",
+   "flags": [
+    "zin_war_of_last_crowns"
+   ],
+   "divergences": {
+    "B18.D1": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B18.D2": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B18.D3": {
+     "kind": "never",
+     "magnitude": 1
+    }
+   }
+  },
+  {
+   "cp": "CP12",
+   "n": 12,
+   "weight": 3,
+   "beats": [
+    "B19"
+   ],
+   "target": "1755.5.1",
+   "latest": "1755.10.1",
+   "flags": [
+    "zin_leren_withdrawal"
+   ],
+   "divergences": {
+    "B19.D1": {
+     "kind": "opposite",
+     "magnitude": 1
+    },
+    "B19.D2": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B19.D3": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B19.D4": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP13",
+   "n": 13,
+   "weight": 4,
+   "beats": [
+    "B20"
+   ],
+   "target": "1755.5.15",
+   "latest": "1756.4.1",
+   "flags": [
+    "zin_western_crossing",
+    "zin_west_route_crossing"
+   ],
+   "divergences": {
+    "B20.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B20.D2": {
+     "kind": "opposite",
+     "magnitude": 1
+    },
+    "B20.D3": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B20.D4": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B20.D5": {
+     "kind": "actor_annexed",
+     "magnitude": 0
+    }
+   }
+  },
+  {
+   "cp": "CP14",
+   "n": 14,
+   "weight": 3,
+   "beats": [
+    "B21"
+   ],
+   "target": "1755.6.1",
+   "latest": "1756.4.1",
+   "flags": [
+    "zin_eastern_invasion",
+    "zin_east_coalition_formed"
+   ],
+   "divergences": {
+    "B21.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B21.D2": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B21.D3": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B21.D4": {
+     "kind": "early",
+     "magnitude": 0.25
+    }
+   }
+  },
+  {
+   "cp": "CP15",
+   "n": 15,
+   "weight": 5,
+   "beats": [
+    "B22",
+    "B23"
+   ],
+   "target": "1755.11.1",
+   "latest": "1756.9.1",
+   "flags": [
+    "zin_mirolon_fallen",
+    "zin_volgan_marches"
+   ],
+   "divergences": {
+    "B22.D1": {
+     "kind": "opposite",
+     "magnitude": 1
+    },
+    "B22.D2": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B22.D3": {
+     "kind": "different",
+     "magnitude": 1
+    },
+    "B22.D4": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B22.D5": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B23.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B23.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B23.D3": {
+     "kind": "different",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP16",
+   "n": 16,
+   "weight": 4,
+   "beats": [
+    "B24"
+   ],
+   "target": "1755.7.1",
+   "latest": "1756.3.1",
+   "flags": [
+    "zin_zol_rising"
+   ],
+   "divergences": {
+    "B24.D1": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B24.D2": {
+     "kind": "different",
+     "magnitude": 0.25
+    },
+    "B24.D3": {
+     "kind": "never",
+     "magnitude": 1
+    }
+   }
+  },
+  {
+   "cp": "CP17",
+   "n": 17,
+   "weight": 4,
+   "beats": [
+    "B25",
+    "B26"
+   ],
+   "target": "1756.3.1",
+   "latest": "1757.3.1",
+   "flags": [
+    "zin_afrit_abandoned_aenor",
+    "zin_afrit_revealed",
+    "zin_afrit_king_of_east"
+   ],
+   "divergences": {
+    "B25.D1": {
+     "kind": "opposite",
+     "magnitude": 1
+    },
+    "B25.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B25.D3": {
+     "kind": "early",
+     "magnitude": 0.5
+    },
+    "B25.D4": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B25.D5": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B26.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B26.D2": {
+     "kind": "different",
+     "magnitude": 0.25
+    },
+    "B26.D3": {
+     "kind": "different",
+     "magnitude": 0.25
+    },
+    "B26.D4": {
+     "kind": "different",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP18",
+   "n": 18,
+   "weight": 2,
+   "beats": [
+    "B27",
+    "B28"
+   ],
+   "target": "1756.6.1",
+   "latest": "1757.6.1",
+   "flags": [
+    "zin_west_parim_taken",
+    "zin_volgan_zol_clash",
+    "zin_west_evacuated"
+   ],
+   "divergences": {
+    "B27.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B27.D2": {
+     "kind": "different",
+     "magnitude": 0.75
+    },
+    "B27.D3": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B28.D1": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B28.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B28.D3": {
+     "kind": "different",
+     "magnitude": 0.25
+    }
+   }
+  },
+  {
+   "cp": "CP19",
+   "n": 19,
+   "weight": 5,
+   "beats": [
+    "B17",
+    "B29",
+    "B30"
+   ],
+   "target": "1756.6.1",
+   "latest": "1758.6.1",
+   "flags": [
+    "zin_eindil_dragon_pact",
+    "zin_eindil_returned"
+   ],
+   "divergences": {
+    "B17.D1": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B17.D2": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B17.D3": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B29.D1": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B29.D2": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B29.D3": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B29.D4": {
+     "kind": "different",
+     "magnitude": 0.25
+    },
+    "B30.D1": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B30.D2": {
+     "kind": "never",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP20",
+   "n": 20,
+   "weight": 3,
+   "beats": [
+    "B31",
+    "B32"
+   ],
+   "target": "1757.4.1",
+   "latest": "1758.3.1",
+   "flags": [
+    "zin_black_compact",
+    "zin_varner_dead"
+   ],
+   "divergences": {
+    "B31.D1": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B31.D2": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B32.D1": {
+     "kind": "never",
+     "magnitude": 1
+    }
+   }
+  },
+  {
+   "cp": "CP21",
+   "n": 21,
+   "weight": 4,
+   "beats": [
+    "B33"
+   ],
+   "target": "1757.7.1",
+   "latest": "1758.3.1",
+   "flags": [
+    "zin_eindil_restored"
+   ],
+   "divergences": {
+    "B33.D1": {
+     "kind": "actor_dead",
+     "magnitude": 1
+    },
+    "B33.D2": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B33.D3": {
+     "kind": "never",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP22",
+   "n": 22,
+   "weight": 5,
+   "beats": [
+    "B34"
+   ],
+   "target": "1757.8.1",
+   "latest": "1758.6.1",
+   "flags": [
+    "zin_volgan_body_destroyed"
+   ],
+   "divergences": {
+    "B34.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B34.D2": {
+     "kind": "actor_annexed",
+     "magnitude": 0.75
+    }
+   }
+  },
+  {
+   "cp": "CP23",
+   "n": 23,
+   "weight": 5,
+   "beats": [
+    "B35",
+    "B36"
+   ],
+   "target": "1757.8.8",
+   "latest": "1758.9.1",
+   "flags": [
+    "zin_kusven_forth",
+    "zin_horos_sword_broken",
+    "zin_kusven_wounded",
+    "zin_lorien_dead",
+    "zin_kusven_withdrawn"
+   ],
+   "divergences": {
+    "B35.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B35.D2": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B35.D3": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B35.D4": {
+     "kind": "different",
+     "magnitude": 0.5
+    },
+    "B36.D1": {
+     "kind": "different",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP24",
+   "n": 24,
+   "weight": 4,
+   "beats": [
+    "B38",
+    "B39",
+    "B40"
+   ],
+   "target": "1758.2.1",
+   "latest": "1759.6.1",
+   "flags": [
+    "zin_afrit_returned",
+    "zin_eindil_cast_down",
+    "zin_afrit_claims_aoaz",
+    "zin_eindil_recovered"
+   ],
+   "divergences": {
+    "B38.D1": {
+     "kind": "never",
+     "magnitude": 1
+    },
+    "B38.D2": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B38.D3": {
+     "kind": "actor_annexed",
+     "magnitude": 0.75
+    },
+    "B39.D1": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B39.D2": {
+     "kind": "never",
+     "magnitude": 0.5
+    },
+    "B40.D1": {
+     "kind": "actor_absent",
+     "magnitude": 0.25
+    }
+   }
+  },
+  {
+   "cp": "CP25",
+   "n": 25,
+   "weight": 5,
+   "beats": [
+    "B41"
+   ],
+   "target": "1759.3.1",
+   "latest": "1760.3.1",
+   "flags": [
+    "zin_afrit_dead",
+    "zin_golbran_dead",
+    "global.zin_afrit_artifacts"
+   ],
+   "divergences": {
+    "B41.D1": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B41.D2": {
+     "kind": "opposite",
+     "magnitude": 1
+    },
+    "B41.D3": {
+     "kind": "actor_absent",
+     "magnitude": 0.5
+    }
+   }
+  },
+  {
+   "cp": "CP26",
+   "n": 26,
+   "weight": 5,
+   "beats": [
+    "B37",
+    "B42"
+   ],
+   "target": "1757.10.1",
+   "latest": "1761.3.1",
+   "flags": [
+    "zin_eindil_stage_9_done",
+    "zin_eindil_crowned",
+    "zin_ending_lost_cause"
+   ],
+   "divergences": {
+    "B37.D1": {
+     "kind": "different",
+     "magnitude": 0
+    },
+    "B42.D1": {
+     "kind": "late",
+     "magnitude": 0.25
+    },
+    "B42.D2": {
+     "kind": "actor_annexed",
+     "magnitude": 0.5
+    },
+    "B42.D3": {
+     "kind": "early",
+     "magnitude": 0.25
+    },
+    "B42.D4": {
+     "kind": "different",
+     "magnitude": 0.5
+    }
+   }
+  }
+ ]
+}
