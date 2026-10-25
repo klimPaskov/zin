@@ -21,14 +21,17 @@ All owner questions of 24 October 2026 are answered and recorded as decisions K9
 | Work | Who | Writes |
 | --- | --- | --- |
 | MCP worker: release 4.5.0 | session "ZIN MCP worker (HOI4 Agent Tools)" | tool repository |
-| Skill `hoi4-character-art-direction` (K54) | subagent (skill maintainer) | `.claude/skills/`, mirrors, CLAUDE.md skill list |
-| Character sex rebalance (K54, about one woman in ten) | subagent | `data/world/characters/*.json`, references, pool membership; `docs/plans/zin-characters/sex_rebalance_handoff.md` |
-| Portrait redesign (K54): King of Demons crop from v4 A, named audit, non-human peoples from the owner's drawings, then human pools after the rebalance | subagent (portrait creator) | portrait pools and art, `docs/specs/08_art_and_assets/07_peoples_appearance.md`; `docs/plans/zin-art/portraits_v2_handoff.md`. Tell it when the rebalance lands. |
+| Character sex rebalance (K54/Q-104: 8 women of 1,033) | done, UNCOMMITTED in the working tree (`data/world/characters/*.json`, 187 id repoints); commit together with the portrait pools once the build is green | `docs/plans/zin-characters/sex_rebalance_handoff.md` |
+| Portrait redesign (K54, K57): head-and-shoulders named crops from the approved designs, all peoples from the owner's drawings, every held character its own culture's portrait; owns the three pool files now | subagent (portrait creator) | portrait pools and art, `docs/specs/08_art_and_assets/07_peoples_appearance.md`; `docs/plans/zin-art/portraits_v2_handoff.md` |
+| Regional technologies (K58) and the development research penalty | subagent (the K51 tech agent) | technology and warfare files |
+| Story changes from the owner's answers (K55, K59): Kusven named, decade reigns, Afrit hunt, piecemeal war, heirs and succession crises, raiders, tempers, player variety, PLAUSIBLE plans | subagent | story modules and data; `docs/plans/story/owner_answers_k59_handoff.md`; new heirs then need portraits |
 | Technology tree redesign (K51) | subagent | `data/technologies*.json`, `warfare_equipment.json`, `lib/tech_layout.mjs`, `lib/tech_tree_gui.mjs`, `modules/technologies.mjs`, gameplay specs 01 and 07 |
 | Super-event framework (K52) | subagent | super-event modules, interface and docs |
 | Flag redesign (K53): culture-rooted medieval banners, all 156 regenerated with luna | subagent | heraldry generator, `heraldry.json`, `06_heraldry.md`, `art/flag-jobs.mjs`, `realm-flags-cells.json`, new `realm-flags-v2-*` sheets; `docs/plans/zin-art/flags_v2_handoff.md` |
 
 ## Next, in order
+
+0. Owner decisions of 25 October waiting for work after the running agents: retire Yeldenne (K56: roster, seeds and `create_world_call.json`, history, characters, flags, `mech_yeldenne.mjs`; the town and castle become named places in Pertolor's land; Horos story only) once the flag and story agents finish; the Beasts of the black north as a custom unit (K55, Q-71; Meshy balance 110 credits on 25 October) once the tech agent releases the warfare files; portraits for the story agent's new heirs.
 
 1. When 4.5.0 is installed: preview then write `create_world` with `create_world_call.json` (preview false for the write; retires the 305 Y-tag files), rebuild and apply the content again (the bookmark and orders of battle come back), then the first Linux run on the new map (sync, start, run, capture; error profile).
 2. AI for the story: strategy plans, paced MTTH, the Gathering Dark tier AI, the magic module (and its weekly tick, `zin_world.45`), the world-tension widget, tick step 10's missing effects; AI-weight audits once the session runs a current server.
